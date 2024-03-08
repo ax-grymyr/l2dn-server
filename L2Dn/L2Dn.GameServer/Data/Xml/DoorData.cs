@@ -55,6 +55,7 @@ public class DoorData: DataReaderBase
 			{
 				stat.set("nodeX_" + count, nodeEl.GetAttributeValueAsInt32("x"));
 				stat.set("nodeY_" + count, nodeEl.GetAttributeValueAsInt32("y"));
+				count++;
 			});
 		});
 

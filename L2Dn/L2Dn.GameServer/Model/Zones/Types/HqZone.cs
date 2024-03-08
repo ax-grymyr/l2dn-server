@@ -13,7 +13,7 @@ public class HqZone : ZoneType
 	{
 	}
 	
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		if ("castleId".equals(name))
 		{

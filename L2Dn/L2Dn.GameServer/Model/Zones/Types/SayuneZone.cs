@@ -15,7 +15,7 @@ public class SayuneZone: ZoneType
 	{
 	}
 
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		switch (name)
 		{

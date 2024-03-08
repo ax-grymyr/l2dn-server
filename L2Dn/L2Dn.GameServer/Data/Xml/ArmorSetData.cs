@@ -42,6 +42,7 @@ public class ArmorSetData: DataReaderBase
 			_armorSets[armorSet.Key] = armorSet.Value;
 		}
 		
+		count = _armorSetItems.Keys.Max() + 1;
 		_itemSets = new List<ArmorSet>[count];
 		foreach (var armorSet in _armorSetItems)
 		{
@@ -126,7 +127,7 @@ public class ArmorSetData: DataReaderBase
 		});
 
 		ArmorSet set = new ArmorSet(id, minimumPieces, isVisual, requiredItems, optionalItems, skills, stats);
-		if (_armorSetMap.putIfAbsent(id, set) != null)
+		if (!_armorSetMap.TryAdd(id, set))
 		{
 			LOGGER.Warn("Duplicate set entry with id: " + id + " in file: " + filePath);
 		}

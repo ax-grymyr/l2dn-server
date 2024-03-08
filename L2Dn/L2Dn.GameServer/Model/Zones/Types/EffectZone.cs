@@ -34,7 +34,7 @@ public class EffectZone : ZoneType
 		_removeEffectsOnExit = false;
 	}
 	
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		switch (name)
 		{

@@ -60,7 +60,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 		return (Settings)base.getSettings();
 	}
 
-	public void parseLoc(int x, int y, int z, String type)
+	public override void parseLoc(int x, int y, int z, String type)
 	{
 		if ((type != null) && type.equals("spectatorSpawn"))
 		{

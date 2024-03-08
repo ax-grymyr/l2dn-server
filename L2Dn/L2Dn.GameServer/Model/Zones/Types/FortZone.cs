@@ -9,12 +9,11 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class FortZone : ResidenceZone
 {
-	public FortZone(int id):	base(id)
+	public FortZone(int id): base(id)
 	{
-	
 	}
 	
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		if (name.equals("fortId"))
 		{

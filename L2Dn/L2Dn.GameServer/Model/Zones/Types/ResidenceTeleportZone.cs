@@ -15,7 +15,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 	{
 	}
 	
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		if (name.equals("residenceId"))
 		{
@@ -37,7 +37,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 		creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false); // FIXME: Custom ?
 	}
 	
-	public void oustAllPlayers()
+	public override void oustAllPlayers()
 	{
 		foreach (Player player in getPlayersInside())
 		{

@@ -15,7 +15,7 @@ public class ClanHallZone : ResidenceZone
 	{
 	}
 	
-	public void setParameter(String name, String value)
+	public override void setParameter(String name, String value)
 	{
 		if (name.equals("clanHallId"))
 		{
@@ -43,7 +43,7 @@ public class ClanHallZone : ResidenceZone
 		}
 	}
 	
-	public Location getBanishSpawnLoc()
+	public override Location getBanishSpawnLoc()
 	{
 		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
 		if (clanHall == null)

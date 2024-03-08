@@ -598,7 +598,7 @@ public abstract class ZoneType: ListenersContainer
 		return _enabled;
 	}
 	
-	public void oustAllPlayers()
+	public virtual void oustAllPlayers()
 	{
 		foreach (Creature obj in _characterList.values())
 		{

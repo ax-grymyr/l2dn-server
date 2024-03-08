@@ -56,7 +56,7 @@ public class NoPvPZone : ZoneType
 		}
 	}
 	
-	public void setEnabled(bool value)
+	public override void setEnabled(bool value)
 	{
 		base.setEnabled(value);
 		if (value)

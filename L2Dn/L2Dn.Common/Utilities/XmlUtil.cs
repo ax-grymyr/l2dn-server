@@ -80,7 +80,7 @@ public static class XmlUtil
     public static double GetAttributeValueAsDouble(this XElement element, string attributeName, double defaultValue) => element.GetAttributeValue(attributeName, defaultValue);
     public static double? GetAttributeValueAsDoubleOrNull(this XElement element, string attributeName) => element.GetAttributeValueOrNull<double>(attributeName);
 
-    public static TEnum GetAttributeValueAsEnum<TEnum>(this XElement element, string attributeName)
+    public static TEnum GetAttributeValueAsEnum<TEnum>(this XElement element, string attributeName, bool ignoreCase = false)
         where TEnum: struct, Enum
     {
         XAttribute? attribute = element.Attribute(attributeName);
@@ -88,7 +88,7 @@ public static class XmlUtil
             throw new InvalidOperationException($"Attribute '{attributeName}' missing in '{element}'");
 
         string value = attribute.Value;
-        if (Enum.TryParse<TEnum>(value, false, out TEnum result))
+        if (Enum.TryParse<TEnum>(value, ignoreCase, out TEnum result))
             return result;
         
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");

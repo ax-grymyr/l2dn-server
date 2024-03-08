@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Globalization;
 using System.Text;
 using System.Xml.Linq;
 using L2Dn.GameServer.Model.Holders;
@@ -812,12 +813,43 @@ public class StatSet : IParserAdvUtils
 	public List<T> getList<T>(String key)
 	{
 		Object obj = _set.get(key);
-		if (!(obj is List<T>))
+		if (obj is null)
+			if (typeof(T).IsClass || typeof(T).IsInterface)
+				return default;
+			else
+				throw new NotSupportedException();
+			
+		if (obj is List<T> ts)
 		{
-			return null;
+			return ts;
+		}
+
+		if (obj is IEnumerable enumerable)
+		{
+			List<T> items = new List<T>();
+			foreach (object o in enumerable)
+			{
+				if (o is T t)
+					items.Add(t);
+				else if (o is string s)
+				{
+					try
+					{
+						items.Add((T)Convert.ChangeType(s, typeof(T)));
+					}
+					catch (Exception e)
+					{
+						throw new NotSupportedException("Invalid conversion", e);						
+					}
+				}
+				else
+					throw new NotSupportedException();
+			}
+
+			return items;
 		}
 		
-		List<Object> originalList = (List<Object>) obj;
+		List<Object> originalList = (List<Object>)obj;
 		if (originalList.Count!=0 && !originalList.All(o => o is T))
 		{
 			if (typeof(T).IsEnum)

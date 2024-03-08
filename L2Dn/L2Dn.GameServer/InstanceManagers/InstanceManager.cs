@@ -229,7 +229,7 @@ public class InstanceManager: DataReaderBase
 						}
 						else
 						{
-							DayOfWeek day = e.Attribute("day").GetEnum<DayOfWeek>();
+							DayOfWeek day = e.GetAttributeValueAsEnum<DayOfWeek>("day", true);
 							int hour = e.Attribute("hour").GetInt32(-1);
 							int minute = e.Attribute("minute").GetInt32(-1);
 							data.add(new InstanceReenterTimeHolder(day, hour, minute));
@@ -263,9 +263,11 @@ public class InstanceManager: DataReaderBase
 						try
 						{
 							// TODO create factory
-							string typeFullName = typeof(Condition).Namespace + "." + type;
+							string typeFullName = typeof(Condition).Namespace + ".Condition" + type;
 							Type classType = Assembly.GetExecutingAssembly().GetType(typeFullName);
-							Condition condition = (Condition)Activator.CreateInstance(classType, parameters, onlyLeader, showMessageAndHtml);
+							Condition condition = (Condition)Activator.CreateInstance(classType, template, parameters,
+								onlyLeader, showMessageAndHtml);
+							
 							conditions.add(condition);
 						}
 						catch (Exception ex)
@@ -274,6 +276,7 @@ public class InstanceManager: DataReaderBase
 							            template.getName() + " (" + id + ")!");
 						}
 					}
+					
 					template.setConditions(conditions);
 					break;
 				}

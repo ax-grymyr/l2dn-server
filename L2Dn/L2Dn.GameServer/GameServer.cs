@@ -27,6 +27,8 @@ public class GameServer
         ExperienceData.getInstance();
         ClassListData.getInstance();
         CategoryData.getInstance();
+        DoorData.getInstance();
+        InstanceManager.getInstance();
         ZoneManager.getInstance();
         SkillData.getInstance();
         SkillTreeData.getInstance();

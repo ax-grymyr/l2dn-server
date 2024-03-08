@@ -16,7 +16,6 @@ public class JailZone : ZoneType
 	
 	public JailZone(int id):base(id)
 	{
-		
 	}
 	
 	protected override void onEnter(Creature creature)

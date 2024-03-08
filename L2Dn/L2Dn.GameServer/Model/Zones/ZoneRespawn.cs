@@ -17,7 +17,7 @@ public abstract class ZoneRespawn: ZoneType
 	{
 	}
 
-	public void parseLoc(int x, int y, int z, String type)
+	public virtual void parseLoc(int x, int y, int z, String type)
 	{
 		if ((type == null) || type.isEmpty())
 		{
@@ -136,7 +136,7 @@ public abstract class ZoneRespawn: ZoneType
 		return getSpawnLoc();
 	}
 
-	public Location getBanishSpawnLoc()
+	public virtual Location getBanishSpawnLoc()
 	{
 		if (_banishSpawnLocs != null)
 		{

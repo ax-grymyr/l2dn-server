@@ -71,7 +71,7 @@ public class SkillTreeData: DataReaderBase
 	private long[] _allSkillsHashCodes; // Fishing, Collection, Transformations, Common Skills.
 	
 	/** Parent class Ids are read from XML and stored in this map, to allow easy customization. */
-	private static readonly Map<CharacterClass, CharacterClass> _parentClassMap = new();
+	private static readonly Map<CharacterClass, CharacterClass?> _parentClassMap = new();
 	
 	private bool _loading = true;
 	
@@ -362,12 +362,13 @@ public class SkillTreeData: DataReaderBase
 		Map<long, SkillLearn> skillTree = new();
 		// Add all skills that belong to all classes.
 		skillTree.putAll(_commonSkillTree);
-		CharacterClass currentClassId = classId;
-		while ((currentClassId != null) && (_classSkillTrees.get(currentClassId) != null))
+		CharacterClass? currentClassId = classId;
+		while ((currentClassId != null) && (_classSkillTrees.get(currentClassId.Value) != null))
 		{
-			skillTree.putAll(_classSkillTrees.get(currentClassId));
-			currentClassId = _parentClassMap.get(currentClassId);
+			skillTree.putAll(_classSkillTrees.get(currentClassId.Value));
+			currentClassId = _parentClassMap.get(currentClassId.Value);
 		}
+		
 		return skillTree;
 	}
 	
