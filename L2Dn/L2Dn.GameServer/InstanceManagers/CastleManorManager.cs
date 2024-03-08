@@ -86,7 +86,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	private void parseElement(XElement element)
 	{
-		int castleId = element.Attribute("id").GetInt32();
+		int castleId = element.GetAttributeValueAsInt32("id");
 		element.Elements("crop").ForEach(el =>
 		{
 			StatSet set = new StatSet(el);

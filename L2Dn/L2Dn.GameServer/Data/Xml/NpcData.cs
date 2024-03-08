@@ -58,7 +58,7 @@ public class NpcData: DataReaderBase
 	private void loadElement(string filePath, XElement element)
 	{
 		StatSet set = new StatSet();
-		int npcId = element.Attribute("id").GetInt32();
+		int npcId = element.GetAttributeValueAsInt32("id");
 		int level = element.Attribute("level").GetInt32(85);
 		String type = element.Attribute("type").GetString("Folk");
 		Map<String, Object> parameters = null;
@@ -68,14 +68,17 @@ public class NpcData: DataReaderBase
 		List<DropHolder> dropLists = null;
 		List<DropGroupHolder> dropGroups = null;
 		set.set("id", npcId);
-		set.set("displayId", element.Attribute("displayId").GetInt32());
+		
+		if (element.Attribute("displayId") != null)
+			set.set("displayId", element.GetAttributeValueAsInt32("displayId"));
+		
 		set.set("level", level);
 		set.set("type", type);
-		set.set("name", element.Attribute("name").GetString());
-		set.set("usingServerSideName", element.Attribute("usingServerSideName").GetBoolean());
-		set.set("title", element.Attribute("title").GetString());
-		set.set("usingServerSideTitle", element.Attribute("usingServerSideTitle").GetBoolean());
-		set.set("elementalType", element.Attribute("element").GetEnum<ElementalType>());
+		set.set("name", element.GetAttributeValueAsString("name"));
+		set.set("usingServerSideName", element.Attribute("usingServerSideName").GetBoolean(false));
+		set.set("title", element.GetAttributeValueAsString("title", null));
+		set.set("usingServerSideTitle", element.Attribute("usingServerSideTitle").GetBoolean(false));
+		set.set("elementalType", element.Attribute("element").GetEnum(ElementalType.NONE));
 
 		element.Elements("parameters").ForEach(el =>
 		{
@@ -107,63 +110,63 @@ public class NpcData: DataReaderBase
 
 		element.Elements("mpreward").ForEach(el =>
 		{
-			set.set("mpRewardValue", el.Attribute("value").GetInt32());
+			set.set("mpRewardValue", el.GetAttributeValueAsInt32("value"));
 			set.set("mpRewardType", el.Attribute("type").GetEnum<MpRewardType>());
-			set.set("mpRewardTicks", el.Attribute("ticks").GetInt32());
+			set.set("mpRewardTicks", el.GetAttributeValueAsInt32("ticks"));
 			set.set("mpRewardAffectType", el.Attribute("affects").GetEnum<MpRewardAffectType>());
 		});
 
 		element.Elements("stats").ForEach(el =>
 		{
-			set.set("baseSTR", el.Attribute("str").GetInt32());
-			set.set("baseINT", el.Attribute("int").GetInt32());
-			set.set("baseDEX", el.Attribute("dex").GetInt32());
-			set.set("baseWIT", el.Attribute("wit").GetInt32());
-			set.set("baseCON", el.Attribute("con").GetInt32());
-			set.set("baseMEN", el.Attribute("men").GetInt32());
+			set.set("baseSTR", el.GetAttributeValueAsInt32OrNull("str"));
+			set.set("baseINT", el.GetAttributeValueAsInt32OrNull("int"));
+			set.set("baseDEX", el.GetAttributeValueAsInt32OrNull("dex"));
+			set.set("baseWIT", el.GetAttributeValueAsInt32OrNull("wit"));
+			set.set("baseCON", el.GetAttributeValueAsInt32OrNull("con"));
+			set.set("baseMEN", el.GetAttributeValueAsInt32OrNull("men"));
 
 			el.Elements("vitals").forEach(e =>
 			{
-				set.set("baseHpMax", e.Attribute("hp").GetDouble());
-				set.set("baseHpReg", e.Attribute("hpRegen").GetDouble());
-				set.set("baseMpMax", e.Attribute("mp").GetDouble());
-				set.set("baseMpReg", e.Attribute("mpRegen").GetDouble());
+				set.set("baseHpMax", e.GetAttributeValueAsDouble("hp"));
+				set.set("baseHpReg", e.GetAttributeValueAsDoubleOrNull("hpRegen"));
+				set.set("baseMpMax", e.GetAttributeValueAsDouble("mp"));
+				set.set("baseMpReg", e.GetAttributeValueAsDoubleOrNull("mpRegen"));
 			});
 
 			el.Elements("attack").forEach(e =>
 			{
-				set.set("basePAtk", e.Attribute("physical").GetDouble());
-				set.set("baseMAtk", e.Attribute("magical").GetDouble());
-				set.set("baseRndDam", e.Attribute("random").GetInt32());
-				set.set("baseCritRate", e.Attribute("critical").GetDouble());
-				set.set("accuracy", e.Attribute("accuracy").GetFloat()); // TODO: Implement me
-				set.set("basePAtkSpd", e.Attribute("attackSpeed").GetFloat());
-				set.set("reuseDelay", e.Attribute("reuseDelay").GetInt32()); // TODO: Implement me
-				set.set("baseAtkType", e.Attribute("type").GetString());
-				set.set("baseAtkRange", e.Attribute("range").GetInt32());
-				set.set("distance", e.Attribute("distance").GetInt32()); // TODO: Implement me
-				set.set("width", e.Attribute("width").GetInt32()); // TODO: Implement me
+				set.set("basePAtk", e.GetAttributeValueAsDouble("physical"));
+				set.set("baseMAtk", e.GetAttributeValueAsDouble("magical"));
+				set.set("baseRndDam", e.GetAttributeValueAsInt32OrNull("random"));
+				set.set("baseCritRate", e.GetAttributeValueAsDoubleOrNull("critical"));
+				set.set("accuracy", e.GetAttributeValueAsFloatOrNull("accuracy")); // TODO: Implement me
+				set.set("basePAtkSpd", e.GetAttributeValueAsFloat("attackSpeed"));
+				set.set("reuseDelay", e.GetAttributeValueAsInt32OrNull("reuseDelay")); // TODO: Implement me
+				set.set("baseAtkType", e.GetAttributeValueAsString("type", null));
+				set.set("baseAtkRange", e.GetAttributeValueAsInt32("range"));
+				set.set("distance", e.GetAttributeValueAsInt32OrNull("distance")); // TODO: Implement me
+				set.set("width", e.GetAttributeValueAsInt32OrNull("width")); // TODO: Implement me
 			});
 
 			el.Elements("defence").forEach(e =>
 			{
-				set.set("basePDef", e.Attribute("physical").GetDouble());
-				set.set("baseMDef", e.Attribute("magical").GetDouble());
-				set.set("evasion", e.Attribute("evasion").GetInt32()); // TODO: Implement me
-				set.set("baseShldDef", e.Attribute("shield").GetInt32());
-				set.set("baseShldRate", e.Attribute("shieldRate").GetInt32());
+				set.set("basePDef", e.GetAttributeValueAsDouble("physical"));
+				set.set("baseMDef", e.GetAttributeValueAsDouble("magical"));
+				set.set("evasion", e.GetAttributeValueAsInt32OrNull("evasion")); // TODO: Implement me
+				set.set("baseShldDef", e.GetAttributeValueAsInt32OrNull("shield"));
+				set.set("baseShldRate", e.GetAttributeValueAsInt32OrNull("shieldRate"));
 			});
 
 			el.Elements("abnormalresist").forEach(e =>
 			{
-				set.set("physicalAbnormalResist", e.Attribute("physical").GetDouble());
-				set.set("magicAbnormalResist", e.Attribute("magic").GetDouble());
+				set.set("physicalAbnormalResist", e.GetAttributeValueAsDouble("physical"));
+				set.set("magicAbnormalResist", e.GetAttributeValueAsDouble("magic"));
 			});
 
 			el.Elements("attribute").Elements("attack").forEach(e =>
 			{
-				string attackAttributeType = e.Attribute("type").GetString();
-				int value = e.Attribute("value").GetInt32();
+				string attackAttributeType = e.GetAttributeValueAsString("type");
+				int value = e.GetAttributeValueAsInt32("value");
 				switch (attackAttributeType.toUpperCase())
 				{
 					case "FIRE":
@@ -203,29 +206,29 @@ public class NpcData: DataReaderBase
 
 			el.Elements("attribute").Elements("defence").forEach(e =>
 			{
-				set.set("baseFireRes", e.Attribute("fire").GetInt32());
-				set.set("baseWaterRes", e.Attribute("water").GetInt32());
-				set.set("baseWindRes", e.Attribute("wind").GetInt32());
-				set.set("baseEarthRes", e.Attribute("earth").GetInt32());
-				set.set("baseHolyRes", e.Attribute("holy").GetInt32());
-				set.set("baseDarkRes", e.Attribute("dark").GetInt32());
-				set.set("baseElementRes", e.Attribute("default").GetInt32());
+				set.set("baseFireRes", e.GetAttributeValueAsInt32("fire"));
+				set.set("baseWaterRes", e.GetAttributeValueAsInt32("water"));
+				set.set("baseWindRes", e.GetAttributeValueAsInt32("wind"));
+				set.set("baseEarthRes", e.GetAttributeValueAsInt32("earth"));
+				set.set("baseHolyRes", e.GetAttributeValueAsInt32("holy"));
+				set.set("baseDarkRes", e.GetAttributeValueAsInt32("dark"));
+				set.set("baseElementRes", e.GetAttributeValueAsInt32OrNull("default"));
 			});
 
 			el.Elements("speed").Elements("walk").forEach(e =>
 			{
-				double groundWalk = e.Attribute("ground").GetDouble();
+				double groundWalk = e.GetAttributeValueAsDouble("ground");
 				set.set("baseWalkSpd", groundWalk <= 0d ? 0.1 : groundWalk);
-				set.set("baseSwimWalkSpd", e.Attribute("swim").GetDouble());
-				set.set("baseFlyWalkSpd", e.Attribute("fly").GetDouble());
+				set.set("baseSwimWalkSpd", e.GetAttributeValueAsDoubleOrNull("swim"));
+				set.set("baseFlyWalkSpd", e.GetAttributeValueAsDoubleOrNull("fly"));
 			});
 
 			el.Elements("speed").Elements("run").forEach(e =>
 			{
-				double runSpeed = e.Attribute("ground").GetDouble();
+				double runSpeed = e.GetAttributeValueAsDouble("ground");
 				set.set("baseRunSpd", runSpeed <= 0d ? 0.1 : runSpeed);
-				set.set("baseSwimRunSpd", e.Attribute("swim").GetDouble());
-				set.set("baseFlyRunSpd", e.Attribute("fly").GetDouble());
+				set.set("baseSwimRunSpd", e.GetAttributeValueAsDoubleOrNull("swim"));
+				set.set("baseFlyRunSpd", e.GetAttributeValueAsDoubleOrNull("fly"));
 			});
 
 			el.Elements("hittime").forEach(e =>
@@ -236,29 +239,29 @@ public class NpcData: DataReaderBase
 
 		element.Elements("status").ForEach(el =>
 		{
-			set.set("unique", el.Attribute("unique").GetBoolean());
-			set.set("attackable", el.Attribute("attackable").GetBoolean());
-			set.set("targetable", el.Attribute("targetable").GetBoolean());
-			set.set("talkable", el.Attribute("talkable").GetBoolean());
-			set.set("undying", el.Attribute("undying").GetBoolean());
-			set.set("showName", el.Attribute("showName").GetBoolean());
-			set.set("randomWalk", el.Attribute("randomWalk").GetBoolean());
-			set.set("randomAnimation", el.Attribute("randomAnimation").GetBoolean());
-			set.set("flying", el.Attribute("flying").GetBoolean());
-			set.set("canMove", el.Attribute("canMove").GetBoolean());
-			set.set("noSleepMode", el.Attribute("noSleepMode").GetBoolean());
-			set.set("passableDoor", el.Attribute("passableDoor").GetBoolean());
-			set.set("hasSummoner", el.Attribute("hasSummoner").GetBoolean());
-			set.set("canBeSown", el.Attribute("canBeSown").GetBoolean());
-			set.set("isDeathPenalty", el.Attribute("isDeathPenalty").GetBoolean());
-			set.set("fakePlayer", el.Attribute("fakePlayer").GetBoolean());
-			set.set("fakePlayerTalkable", el.Attribute("fakePlayerTalkable").GetBoolean());
+			set.set("unique", el.GetAttributeValueAsBooleanOrNull("unique"));
+			set.set("attackable", el.GetAttributeValueAsBooleanOrNull("attackable"));
+			set.set("targetable", el.GetAttributeValueAsBooleanOrNull("targetable"));
+			set.set("talkable", el.GetAttributeValueAsBooleanOrNull("talkable"));
+			set.set("undying", el.GetAttributeValueAsBooleanOrNull("undying"));
+			set.set("showName", el.GetAttributeValueAsBooleanOrNull("showName"));
+			set.set("randomWalk", el.GetAttributeValueAsBooleanOrNull("randomWalk"));
+			set.set("randomAnimation", el.GetAttributeValueAsBooleanOrNull("randomAnimation"));
+			set.set("flying", el.GetAttributeValueAsBooleanOrNull("flying"));
+			set.set("canMove", el.GetAttributeValueAsBooleanOrNull("canMove"));
+			set.set("noSleepMode", el.GetAttributeValueAsBooleanOrNull("noSleepMode"));
+			set.set("passableDoor", el.GetAttributeValueAsBooleanOrNull("passableDoor"));
+			set.set("hasSummoner", el.GetAttributeValueAsBooleanOrNull("hasSummoner"));
+			set.set("canBeSown", el.GetAttributeValueAsBooleanOrNull("canBeSown"));
+			set.set("isDeathPenalty", el.GetAttributeValueAsBooleanOrNull("isDeathPenalty"));
+			set.set("fakePlayer", el.GetAttributeValueAsBooleanOrNull("fakePlayer"));
+			set.set("fakePlayerTalkable", el.GetAttributeValueAsBooleanOrNull("fakePlayerTalkable"));
 		});
 
 		element.Elements("skilllist").Elements("skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
@@ -274,10 +277,10 @@ public class NpcData: DataReaderBase
 
 		element.Elements("shots").ForEach(el =>
 		{
-			set.set("soulShot", el.Attribute("soul").GetInt32());
-			set.set("spiritShot", el.Attribute("spirit").GetInt32());
-			set.set("shotShotChance", el.Attribute("shotChance").GetInt32());
-			set.set("spiritShotChance", el.Attribute("spiritChance").GetInt32());
+			set.set("soulShot", el.GetAttributeValueAsInt32OrNull("soul"));
+			set.set("spiritShot", el.GetAttributeValueAsInt32OrNull("spirit"));
+			set.set("shotShotChance", el.GetAttributeValueAsInt32OrNull("shotChance"));
+			set.set("spiritShotChance", el.GetAttributeValueAsInt32OrNull("spiritChance"));
 		});
 
 		element.Elements("corpsetime").ForEach(el => { set.set("corpseTime", el.Value); });
@@ -294,21 +297,21 @@ public class NpcData: DataReaderBase
 
 		element.Elements("ai").ForEach(el =>
 		{
-			set.set("aiType", el.Attribute("type").GetString());
-			set.set("aggroRange", el.Attribute("aggroRange").GetInt32());
-			set.set("clanHelpRange", el.Attribute("clanHelpRange").GetInt32());
-			set.set("isChaos", el.Attribute("isChaos").GetBoolean());
-			set.set("isAggressive", el.Attribute("isAggressive").GetBoolean());
+			set.set("aiType", el.GetAttributeValueAsString("type", null));
+			set.set("aggroRange", el.GetAttributeValueAsInt32OrNull("aggroRange"));
+			set.set("clanHelpRange", el.GetAttributeValueAsInt32OrNull("clanHelpRange"));
+			set.set("isChaos", el.GetAttributeValueAsBooleanOrNull("isChaos"));
+			set.set("isAggressive", el.GetAttributeValueAsBooleanOrNull("isAggressive"));
 
 			el.Elements("skill").ForEach(e =>
 			{
-				set.set("minSkillChance", e.Attribute("minChance").GetInt32());
-				set.set("maxSkillChance", e.Attribute("maxChance").GetInt32());
-				set.set("primarySkillId", e.Attribute("primaryId").GetInt32());
-				set.set("shortRangeSkillId", e.Attribute("shortRangeId").GetInt32());
-				set.set("shortRangeSkillChance", e.Attribute("shortRangeChance").GetInt32());
-				set.set("longRangeSkillId", e.Attribute("longRangeId").GetInt32());
-				set.set("longRangeSkillChance", e.Attribute("longRangeChance").GetInt32());
+				set.set("minSkillChance", e.GetAttributeValueAsInt32OrNull("minChance"));
+				set.set("maxSkillChance", e.GetAttributeValueAsInt32OrNull("maxChance"));
+				set.set("primarySkillId", e.GetAttributeValueAsInt32OrNull("primaryId"));
+				set.set("shortRangeSkillId", e.GetAttributeValueAsInt32OrNull("shortRangeId"));
+				set.set("shortRangeSkillChance", e.GetAttributeValueAsInt32OrNull("shortRangeChance"));
+				set.set("longRangeSkillId", e.GetAttributeValueAsInt32OrNull("longRangeId"));
+				set.set("longRangeSkillChance", e.GetAttributeValueAsInt32OrNull("longRangeChance"));
 			});
 
 			el.Elements("clanlist").Elements("clan").ForEach(e =>
@@ -338,12 +341,12 @@ public class NpcData: DataReaderBase
 					dropGroups = new();
 				}
 
-				double chance = e.Attribute("chance").GetDouble();
+				double chance = e.GetAttributeValueAsDouble("chance");
 				DropGroupHolder group = new DropGroupHolder(chance);
 
 				e.Elements("item").ForEach(itemEl =>
 				{
-					int itemId = itemEl.Attribute("id").GetInt32();
+					int itemId = itemEl.GetAttributeValueAsInt32("id");
 
 					// Drop materials for random craft configuration.
 					if (!Config.DROP_RANDOM_CRAFT_MATERIALS && (itemId >= 92908) && (itemId <= 92919))
@@ -355,9 +358,9 @@ public class NpcData: DataReaderBase
 					}
 					else
 					{
-						long min = itemEl.Attribute("min").GetInt64();
-						long max = itemEl.Attribute("max").GetInt64();
-						double chance1 = itemEl.Attribute("chance").GetDouble();
+						long min = itemEl.GetAttributeValueAsInt64("min");
+						long max = itemEl.GetAttributeValueAsInt64("max");
+						double chance1 = itemEl.GetAttributeValueAsDouble("chance");
 						group.addDrop(new DropHolder(dropType, itemId, min, max, chance1));
 					}
 				});
@@ -372,7 +375,7 @@ public class NpcData: DataReaderBase
 					dropLists = new();
 				}
 
-				int itemId = e.Attribute("id").GetInt32();
+				int itemId = e.GetAttributeValueAsInt32("id");
 
 				// Drop materials for random craft configuration.
 				if (!Config.DROP_RANDOM_CRAFT_MATERIALS && (itemId >= 92908) && (itemId <= 92919))
@@ -384,9 +387,9 @@ public class NpcData: DataReaderBase
 				}
 				else
 				{
-					long min = e.Attribute("min").GetInt64();
-					long max = e.Attribute("max").GetInt64();
-					double chance1 = e.Attribute("chance").GetDouble();
+					long min = e.GetAttributeValueAsInt64("min");
+					long max = e.GetAttributeValueAsInt64("max");
+					double chance1 = e.GetAttributeValueAsDouble("chance");
 					dropLists.add(new DropHolder(dropType, itemId, min, max, chance1));
 				}
 			});
@@ -394,14 +397,14 @@ public class NpcData: DataReaderBase
 
 		element.Elements("collision").Elements("radius").ForEach(el =>
 		{
-			set.set("collision_radius", el.Attribute("normal").GetDouble());
-			set.set("collisionRadiusGrown", el.Attribute("grown").GetDouble());
+			set.set("collision_radius", el.GetAttributeValueAsDouble("normal"));
+			set.set("collisionRadiusGrown", el.GetAttributeValueAsDoubleOrNull("grown"));
 		});
 
 		element.Elements("collision").Elements("height").ForEach(el =>
 		{
-			set.set("collision_height", el.Attribute("normal").GetDouble());
-			set.set("collisionHeightGrown", el.Attribute("grown").GetDouble());
+			set.set("collision_height", el.GetAttributeValueAsDouble("normal"));
+			set.set("collisionHeightGrown", el.GetAttributeValueAsDoubleOrNull("grown"));
 		});
 
 		NpcTemplate template = _npcs.get(npcId);
@@ -765,25 +768,25 @@ public class NpcData: DataReaderBase
 		
 		element.Elements("param").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			string value = el.Attribute("value").GetString();
+			string name = el.GetAttributeValueAsString("name");
+			string value = el.GetAttributeValueAsString("value");
 			parameters.put(name, value);
 		});
 		
 		element.Elements("skill").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			int id = el.Attribute("id").GetInt32();
-			int level = el.Attribute("level").GetInt32();
+			string name = el.GetAttributeValueAsString("name");
+			int id = el.GetAttributeValueAsInt32("id");
+			int level = el.GetAttributeValueAsInt32("level");
 			parameters.put(name, new SkillHolder(id, level));
 		});
 		
 		element.Elements("location").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			int x = el.Attribute("x").GetInt32();
-			int y = el.Attribute("y").GetInt32();
-			int z = el.Attribute("z").GetInt32();
+			string name = el.GetAttributeValueAsString("name");
+			int x = el.GetAttributeValueAsInt32("x");
+			int y = el.GetAttributeValueAsInt32("y");
+			int z = el.GetAttributeValueAsInt32("z");
 			int heading = el.Attribute("heading").GetInt32(0);
 			parameters.put(name, new Location(x, y, z, heading));
 		});
@@ -793,16 +796,16 @@ public class NpcData: DataReaderBase
 			List<MinionHolder> minions = new();
 			el.Elements("npc").ForEach(e =>
 			{
-				int id = el.Attribute("id").GetInt32();
-				int count = el.Attribute("count").GetInt32();
-				int max = el.Attribute("max").GetInt32(0);
-				int respawnTime = el.Attribute("respawnTime").GetInt32();
-				int weightPoint = el.Attribute("weightPoint").GetInt32(0);
+				int id = e.GetAttributeValueAsInt32("id");
+				int count = e.GetAttributeValueAsInt32("count");
+				int max = e.Attribute("max").GetInt32(0);
+				int respawnTime = e.GetAttributeValueAsInt32("respawnTime");
+				int weightPoint = e.Attribute("weightPoint").GetInt32(0);
 				minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
 					
 			if (!minions.isEmpty())
-				parameters.put(el.Attribute("name").GetString(), minions);
+				parameters.put(el.GetAttributeValueAsString("name"), minions);
 		});
 
 		return parameters;

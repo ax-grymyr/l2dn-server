@@ -110,7 +110,7 @@ public class ZoneManager: DataReaderBase
 	
 	private void parseElement(string filePath, XElement element)
 	{
-		string zoneType = element.Attribute("type").GetString();
+		string zoneType = element.GetAttributeValueAsString("type");
 		int zoneId = element.Attribute("id").GetInt32(-1);
 		if (zoneId == -1)
 			zoneId = zoneType.equalsIgnoreCase("NpcSpawnTerritory") ? 0 : _lastDynamicId.incrementAndGet();
@@ -135,9 +135,9 @@ public class ZoneManager: DataReaderBase
 
 		Point2D[] coords;
 		
-		int minZ = element.Attribute("minZ").GetInt32();
-		int maxZ = element.Attribute("maxZ").GetInt32();
-		string zoneShape = element.Attribute("shape").GetString();
+		int minZ = element.GetAttributeValueAsInt32("minZ");
+		int maxZ = element.GetAttributeValueAsInt32("maxZ");
+		string zoneShape = element.GetAttributeValueAsString("shape");
 						
 		// Get the zone shape from xml
 		ZoneForm zoneForm = null;
@@ -147,8 +147,8 @@ public class ZoneManager: DataReaderBase
 			element.Elements("node").ForEach(el =>
 			{
 				
-				int x = el.Attribute("X").GetInt32();
-				int y = el.Attribute("Y").GetInt32();
+				int x = el.GetAttributeValueAsInt32("X");
+				int y = el.GetAttributeValueAsInt32("Y");
 				rs.Add(new Point2D(x, y));
 			});
 
@@ -197,7 +197,7 @@ public class ZoneManager: DataReaderBase
 			{
 				// A Cylinder zone requires a center point
 				// at x,y and a radius
-				int zoneRad = element.Attribute("rad").GetInt32();
+				int zoneRad = element.GetAttributeValueAsInt32("rad");
 				if ((coords.Length == 1) && (zoneRad > 0))
 				{
 					zoneForm = new ZoneCylinder(coords[0].getX(), coords[0].getY(), minZ, maxZ, zoneRad);
@@ -247,8 +247,8 @@ public class ZoneManager: DataReaderBase
 		// Check for additional parameters
 		element.Elements("stat").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			string val = el.Attribute("val").GetString();
+			string name = el.GetAttributeValueAsString("name");
+			string val = el.GetAttributeValueAsString("val");
 			temp.setParameter(name, val);
 		});
 
@@ -256,9 +256,9 @@ public class ZoneManager: DataReaderBase
 		{
 			element.Elements("spawn").ForEach(el =>
 			{
-				int spawnX = el.Attribute("X").GetInt32();
-				int spawnY = el.Attribute("Y").GetInt32();
-				int spawnZ = el.Attribute("Z").GetInt32();
+				int spawnX = el.GetAttributeValueAsInt32("X");
+				int spawnY = el.GetAttributeValueAsInt32("Y");
+				int spawnZ = el.GetAttributeValueAsInt32("Z");
 				string? val = el.Attribute("type")?.GetString();
 				zoneRespawn.parseLoc(spawnX, spawnY, spawnZ, val);
 			});
@@ -268,8 +268,8 @@ public class ZoneManager: DataReaderBase
 		{
 			element.Elements("race").ForEach(el =>
 			{
-				string race = el.Attribute("name").GetString();
-				string point = el.Attribute("point").GetString();
+				string race = el.GetAttributeValueAsString("name");
+				string point = el.GetAttributeValueAsString("point");
 				respawnZone.addRaceRespawnPoint(race, point);
 			});
 		}

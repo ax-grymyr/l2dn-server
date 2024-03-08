@@ -28,7 +28,7 @@ public class MissionLevel: DataReaderBase
 		_template.clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MissionLevel.xml");
-		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.Attribute("season").GetInt32());
+		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.GetAttributeValueAsInt32("season"));
 		document.Elements("list").Elements("missionLevel").ForEach(parseElement);
 		
 		if (_currentSeason > 0)
@@ -43,10 +43,10 @@ public class MissionLevel: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int season = element.Attribute("season").GetInt32();
-		int maxLevel = element.Attribute("maxLevel").GetInt32();
-		bool bonusRewardIsAvailable = element.Attribute("bonusRewardIsAvailable").GetBoolean();
-		bool bonusRewardByLevelUP = element.Attribute("bonusRewardByLevelUP").GetBoolean();
+		int season = element.GetAttributeValueAsInt32("season");
+		int maxLevel = element.GetAttributeValueAsInt32("maxLevel");
+		bool bonusRewardIsAvailable = element.GetAttributeValueAsBoolean("bonusRewardIsAvailable");
+		bool bonusRewardByLevelUP = element.GetAttributeValueAsBoolean("bonusRewardByLevelUP");
 
 		Map<int, ItemHolder> keyReward = new();
 		Map<int, ItemHolder> normalReward = new();
@@ -56,38 +56,38 @@ public class MissionLevel: DataReaderBase
 
 		element.Elements("expTable").Elements("exp").ForEach(el =>
 		{
-			int level = el.Attribute("level").GetInt32();
-			int amount = el.Attribute("amount").GetInt32();
+			int level = el.GetAttributeValueAsInt32("level");
+			int amount = el.GetAttributeValueAsInt32("amount");
 			xpForLevel.put(level, amount);
 		});
 
 		element.Elements("baseRewards").Elements("baseReward").ForEach(el =>
 		{
-			int level = el.Attribute("level").GetInt32();
-			int itemId = el.Attribute("itemId").GetInt32();
-			long itemCount = el.Attribute("itemCount").GetInt64();
+			int level = el.GetAttributeValueAsInt32("level");
+			int itemId = el.GetAttributeValueAsInt32("itemId");
+			long itemCount = el.GetAttributeValueAsInt64("itemCount");
 			normalReward.put(level, new ItemHolder(itemId, itemCount));
 		});
 
 		element.Elements("keyRewards").Elements("keyReward").ForEach(el =>
 		{
-			int level = el.Attribute("level").GetInt32();
-			int itemId = el.Attribute("itemId").GetInt32();
-			long itemCount = el.Attribute("itemCount").GetInt64();
+			int level = el.GetAttributeValueAsInt32("level");
+			int itemId = el.GetAttributeValueAsInt32("itemId");
+			long itemCount = el.GetAttributeValueAsInt64("itemCount");
 			keyReward.put(level, new ItemHolder(itemId, itemCount));
 		});
 
 		element.Elements("specialReward").ForEach(el =>
 		{
-			int itemId = el.Attribute("itemId").GetInt32();
-			long itemCount = el.Attribute("itemCount").GetInt64();
+			int itemId = el.GetAttributeValueAsInt32("itemId");
+			long itemCount = el.GetAttributeValueAsInt64("itemCount");
 			specialReward = new ItemHolder(itemId, itemCount);
 		});
 
 		element.Elements("bonusReward").ForEach(el =>
 		{
-			int itemId = el.Attribute("itemId").GetInt32();
-			long itemCount = el.Attribute("itemCount").GetInt64();
+			int itemId = el.GetAttributeValueAsInt32("itemId");
+			long itemCount = el.GetAttributeValueAsInt64("itemCount");
 			bonusReward = new ItemHolder(itemId, itemCount);
 		});
 

@@ -48,9 +48,9 @@ public class CursedWeaponsManager: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int skillId = element.Attribute("skillId").GetInt32();
-		string name = element.Attribute("name").GetString();
+		int id = element.GetAttributeValueAsInt32("id");
+		int skillId = element.GetAttributeValueAsInt32("skillId");
+		string name = element.GetAttributeValueAsString("name");
 		CursedWeapon cw = new CursedWeapon(id, skillId, name);
 		
 		int val;
@@ -59,27 +59,27 @@ public class CursedWeaponsManager: DataReaderBase
 			string nodeName = cd.Name.LocalName;
 			if ("dropRate".equalsIgnoreCase(nodeName))
 			{
-				val = cd.Attribute("val").GetInt32();
+				val = cd.GetAttributeValueAsInt32("val");
 				cw.setDropRate(val);
 			}
 			else if ("duration".equalsIgnoreCase(nodeName))
 			{
-				val = cd.Attribute("val").GetInt32();
+				val = cd.GetAttributeValueAsInt32("val");
 				cw.setDuration(val);
 			}
 			else if ("durationLost".equalsIgnoreCase(nodeName))
 			{
-				val = cd.Attribute("val").GetInt32();
+				val = cd.GetAttributeValueAsInt32("val");
 				cw.setDurationLost(val);
 			}
 			else if ("disapearChance".equalsIgnoreCase(nodeName))
 			{
-				val = cd.Attribute("val").GetInt32();
+				val = cd.GetAttributeValueAsInt32("val");
 				cw.setDisapearChance(val);
 			}
 			else if ("stageKills".equalsIgnoreCase(nodeName))
 			{
-				val = cd.Attribute("val").GetInt32();
+				val = cd.GetAttributeValueAsInt32("val");
 				cw.setStageKills(val);
 			}
 		}

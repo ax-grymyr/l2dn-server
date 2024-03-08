@@ -56,7 +56,7 @@ public class ItemAuctionManager: DataReaderBase
 	{
 		try
 		{
-			int instanceId = element.Attribute("id").GetInt32();
+			int instanceId = element.GetAttributeValueAsInt32("id");
 			if (_managerInstances.containsKey(instanceId))
 				throw new Exception("Dublicated instanceId " + instanceId);
 			

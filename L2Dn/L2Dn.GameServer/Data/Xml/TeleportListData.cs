@@ -35,23 +35,23 @@ public class TeleportListData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int tpId = element.Attribute("id").GetInt32();
-		int tpPrice = element.Attribute("price").GetInt32();
+		int tpId = element.GetAttributeValueAsInt32("id");
+		int tpPrice = element.GetAttributeValueAsInt32("price");
 		bool special = element.Attribute("special").GetBoolean(false);
 		List<Location> locations = new();
 		element.Elements("location").ForEach(el =>
 		{
-			int x = el.Attribute("x").GetInt32();
-			int y = el.Attribute("y").GetInt32();
-			int z = el.Attribute("z").GetInt32();
+			int x = el.GetAttributeValueAsInt32("x");
+			int y = el.GetAttributeValueAsInt32("y");
+			int z = el.GetAttributeValueAsInt32("z");
 			locations.add(new Location(x, y, z));
 		});
 
 		if (locations.isEmpty())
 		{
-			int x = element.Attribute("x").GetInt32();
-			int y = element.Attribute("y").GetInt32();
-			int z = element.Attribute("z").GetInt32();
+			int x = element.GetAttributeValueAsInt32("x");
+			int y = element.GetAttributeValueAsInt32("y");
+			int z = element.GetAttributeValueAsInt32("z");
 			locations.add(new Location(x, y, z));
 		}
 

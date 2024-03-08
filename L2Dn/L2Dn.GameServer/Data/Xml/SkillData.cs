@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Parsing;
 using L2Dn.Utilities;
 using NLog;
 
@@ -25,13 +26,13 @@ public class SkillData: DataReaderBase
 	private class NamedParamInfo
 	{
 		private readonly String _name;
-		private readonly int _fromLevel;
-		private readonly int _toLevel;
-		private readonly int _fromSubLevel;
-		private readonly int _toSubLevel;
+		private readonly int? _fromLevel;
+		private readonly int? _toLevel;
+		private readonly int? _fromSubLevel;
+		private readonly int? _toSubLevel;
 		private readonly Map<int, Map<int, StatSet>> _info;
 
-		public NamedParamInfo(String name, int fromLevel, int toLevel, int fromSubLevel, int toSubLevel,
+		public NamedParamInfo(String name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
 			Map<int, Map<int, StatSet>> info)
 		{
 			_name = name;
@@ -47,22 +48,22 @@ public class SkillData: DataReaderBase
 			return _name;
 		}
 
-		public int getFromLevel()
+		public int? getFromLevel()
 		{
 			return _fromLevel;
 		}
 
-		public int getToLevel()
+		public int? getToLevel()
 		{
 			return _toLevel;
 		}
 
-		public int getFromSubLevel()
+		public int? getFromSubLevel()
 		{
 			return _fromSubLevel;
 		}
 
-		public int getToSubLevel()
+		public int? getToSubLevel()
 		{
 			return _toSubLevel;
 		}
@@ -220,7 +221,7 @@ public class SkillData: DataReaderBase
 			{
 				case "variable":
 				{
-					string name = "@" + skillNode.Attribute("name").GetString();
+					string name = "@" + skillNode.GetAttributeValueAsString("name");
 					variableValues.put(name, parseValues(skillNode));
 					break;
 				}
@@ -257,7 +258,6 @@ public class SkillData: DataReaderBase
 				}
 			}
 		}
-
 
 		int fromLevel = generalSkillInfo.getInt(".fromLevel", 1);
 		int toLevel = generalSkillInfo.getInt(".toLevel", 0);
@@ -313,11 +313,11 @@ public class SkillData: DataReaderBase
 
 				if ((namedParamInfo.getFromLevel() != null) && (namedParamInfo.getToLevel() != null))
 				{
-					for (int i = namedParamInfo.getFromLevel(); i <= namedParamInfo.getToLevel(); i++)
+					for (int i = namedParamInfo.getFromLevel().Value; i <= namedParamInfo.getToLevel().Value; i++)
 					{
 						if ((namedParamInfo.getFromSubLevel() != null) && (namedParamInfo.getToSubLevel() != null))
 						{
-							for (int j = namedParamInfo.getFromSubLevel(); j <= namedParamInfo.getToSubLevel(); j++)
+							for (int j = namedParamInfo.getFromSubLevel().Value; j <= namedParamInfo.getToSubLevel().Value; j++)
 							{
 								levels.computeIfAbsent(i, k => new()).add(j);
 							}
@@ -450,17 +450,16 @@ public class SkillData: DataReaderBase
 
 	private NamedParamInfo parseNamedParamInfo(XElement element, Map<String, Map<int, Map<int, Object>>> variableValues)
 	{
-		String name = element.Attribute("name").GetString();
-		int level = element.Attribute("level").GetInt32();
-		int fromLevel = element.Attribute("fromLevel").GetInt32(level);
-		int toLevel = element.Attribute("toLevel").GetInt32(level);
-		int subLevel = element.Attribute("subLevel").GetInt32();
-		int fromSubLevel = element.Attribute("fromSubLevel").GetInt32(subLevel);
-		int toSubLevel = element.Attribute("toSubLevel").GetInt32(subLevel);
+		String name = element.GetAttributeValueAsString("name");
+		int? level = element.GetAttributeValueAsInt32OrNull("level");
+		int? fromLevel = element.GetAttributeValueAsInt32OrNull("fromLevel") ?? level;
+		int? toLevel = element.GetAttributeValueAsInt32OrNull("toLevel") ?? level;
+		int? subLevel = element.GetAttributeValueAsInt32OrNull("subLevel");
+		int? fromSubLevel = element.GetAttributeValueAsInt32OrNull("fromSubLevel") ?? subLevel;
+		int? toSubLevel = element.GetAttributeValueAsInt32OrNull("toSubLevel") ?? subLevel;
 
 		Map<int, Map<int, StatSet>> info = new();
-		if (!string.IsNullOrEmpty(element.Value))
-			parseInfo(element, variableValues, info);
+		element.Elements().ForEach(el => parseInfo(el, variableValues, info));
 
 		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
 	}
@@ -525,8 +524,8 @@ public class SkillData: DataReaderBase
 					}
 					else
 					{
-						int fromLevel = n.Attribute("fromLevel").GetInt32();
-						int toLevel = n.Attribute("toLevel").GetInt32();
+						int fromLevel = n.GetAttributeValueAsInt32("fromLevel");
+						int toLevel = n.GetAttributeValueAsInt32("toLevel");
 						int fromSubLevel = n.Attribute("fromSubLevel").GetInt32(-1);
 						int toSubLevel = n.Attribute("toSubLevel").GetInt32(-1);
 						for (int i = fromLevel; i <= toLevel; i++)
@@ -564,28 +563,27 @@ public class SkillData: DataReaderBase
 	{
 		StatSet statSet = null;
 		List<Object> list = null;
-		Object text = null;
+		object? text = null;
 		if (parseAttributes && (!element.Name.LocalName.equals("value") || !blockValue) && (element.Attributes().Any()))
 		{
 			statSet = new StatSet();
 			this.parseAttributes(element, "", statSet, variables);
 		}
 
+		if (!element.HasElements && !string.IsNullOrEmpty(element.Value))
+		{
+			string value = element.Value.Trim();
+			if (!value.isEmpty())
+			{
+				text = parseNodeValue(value, variables);
+			}
+		}
+		
 		foreach (XElement n in element.Elements())
 		{
 			String nodeName = n.Name.LocalName;
 			switch (nodeName)
 			{
-				case "#text":
-				{
-					String value = n.Value.Trim();
-					if (!value.isEmpty())
-					{
-						text = parseNodeValue(value, variables);
-					}
-
-					break;
-				}
 				case "item":
 				{
 					if (list == null)
@@ -683,12 +681,15 @@ public class SkillData: DataReaderBase
 		parseAttributes(element, prefix, statSet, new());
 	}
 
-	private Object parseNodeValue(string value, Map<string, double> variables)
+	private static object parseNodeValue(string value, Map<string, double> variables)
 	{
 		if (value.startsWith("{") && value.endsWith("}"))
 		{
-			throw new NotImplementedException();
-			//return new ExpressionBuilder(value).variables(variables.Keys).build().setVariables(variables).evaluate();
+			ParserResult<Expression> result = ExpressionParser.Parser(value.Substring(1, value.Length - 2));
+			if (!result.Success)
+				throw new InvalidOperationException($"Invalid expression '{value}'");
+
+			return result.Result.Evaluate(variables);
 		}
 
 		return value;

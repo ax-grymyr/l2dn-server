@@ -34,7 +34,7 @@ public class CastleData: DataReaderBase
 
 	private void loadElement(string filePath, XElement element)
 	{
-		int castleId = element.Attribute("id").GetInt32();
+		int castleId = element.GetAttributeValueAsInt32("id");
 
 		element.Elements("spawns").ForEach(el =>
 		{
@@ -42,12 +42,12 @@ public class CastleData: DataReaderBase
 
 			el.Elements("npc").ForEach(e =>
 			{
-				int npcId = e.Attribute("id").GetInt32();
+				int npcId = e.GetAttributeValueAsInt32("id");
 				CastleSide side = e.Attribute("castleSide").GetEnum(CastleSide.NEUTRAL);
-				int x = e.Attribute("x").GetInt32();
-				int y = e.Attribute("y").GetInt32();
-				int z = e.Attribute("z").GetInt32();
-				int heading = e.Attribute("heading").GetInt32();
+				int x = e.GetAttributeValueAsInt32("x");
+				int y = e.GetAttributeValueAsInt32("y");
+				int z = e.GetAttributeValueAsInt32("z");
+				int heading = e.GetAttributeValueAsInt32("heading");
 				spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
 			});
 
@@ -60,11 +60,11 @@ public class CastleData: DataReaderBase
 
 			el.Elements("guard").ForEach(e =>
 			{
-				int itemId = e.Attribute("itemId").GetInt32();
+				int itemId = e.GetAttributeValueAsInt32("itemId");
 				SiegeGuardType type = e.Attribute("type").GetEnum<SiegeGuardType>();
 				bool stationary = e.Attribute("stationary").GetBoolean(false);
-				int npcId = e.Attribute("npcId").GetInt32();
-				int npcMaxAmount = e.Attribute("npcMaxAmount").GetInt32();
+				int npcId = e.GetAttributeValueAsInt32("npcId");
+				int npcMaxAmount = e.GetAttributeValueAsInt32("npcMaxAmount");
 				guards.add(new SiegeGuardHolder(castleId, itemId, type, stationary, npcId, npcMaxAmount));
 			});
 

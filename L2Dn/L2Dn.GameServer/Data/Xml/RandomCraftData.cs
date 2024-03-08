@@ -67,15 +67,15 @@ public class RandomCraftData: DataReaderBase
 
 	private void parseExtractElement(XElement element)
 	{
-		int itemId = element.Attribute("id").GetInt32();
-		long points = element.Attribute("points").GetInt64();
-		long fee = element.Attribute("fee").GetInt64();
+		int itemId = element.GetAttributeValueAsInt32("id");
+		long points = element.GetAttributeValueAsInt64("points");
+		long fee = element.GetAttributeValueAsInt64("fee");
 		EXTRACT_DATA.put(itemId, new RandomCraftExtractDataHolder(points, fee));
 	}
 
 	private void parseRewardElement(XElement element)
 	{
-		int itemId = element.Attribute("id").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("id");
 		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 		if (item == null)
 		{

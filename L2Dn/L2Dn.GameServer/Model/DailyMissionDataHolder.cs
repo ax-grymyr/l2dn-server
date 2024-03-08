@@ -29,7 +29,7 @@ public class DailyMissionDataHolder
 	
 	public DailyMissionDataHolder(XElement element)
 	{
-		_id = element.Attribute("id").GetInt32();
+		_id = element.GetAttributeValueAsInt32("id");
 		_requiredCompletions = element.Attribute("requiredCompletion").GetInt32(0);
 		_dailyReset = element.Attribute("dailyReset").GetBoolean(true);
 		_isOneTime = element.Attribute("isOneTime").GetBoolean(true);
@@ -41,8 +41,8 @@ public class DailyMissionDataHolder
 		// reward items
 		element.Elements("items").Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			int itemCount = el.Attribute("count").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			int itemCount = el.GetAttributeValueAsInt32("count");
 			if ((itemId == AbstractDailyMissionHandler.MISSION_LEVEL_POINTS) && (MissionLevel.getInstance().getCurrentSeason() <= 0))
 			{
 				return;
@@ -62,13 +62,13 @@ public class DailyMissionDataHolder
 		XElement? handlerEl = element.Elements("handler").SingleOrDefault();
 		if (handlerEl is not null)
 		{
-			string handlerName = handlerEl.Attribute("name").GetString();
+			string handlerName = handlerEl.GetAttributeValueAsString("name");
 			Func<DailyMissionDataHolder, AbstractDailyMissionHandler> handler =
 				DailyMissionHandler.getInstance().getHandler(handlerName);
 
 			handlerEl.Elements("param").ForEach(paramEl =>
 			{
-				string paramName = paramEl.Attribute("name").GetString();
+				string paramName = paramEl.GetAttributeValueAsString("name");
 				string paramValue = paramEl.Value;
 				_params.set(paramName, paramValue);
 			});

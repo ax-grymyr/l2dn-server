@@ -1,0 +1,162 @@
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Skills.Targets;
+using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+
+namespace L2Dn.GameServer.Handlers.EffectHandlers;
+
+/**
+ * Call Pc effect implementation.
+ * @author Adry_85
+ */
+public class CallPc: AbstractEffect
+{
+	private readonly int _itemId;
+	private readonly int _itemCount;
+	
+	public CallPc(StatSet @params)
+	{
+		_itemId = @params.getInt("itemId", 0);
+		_itemCount = @params.getInt("itemCount", 0);
+	}
+	
+	public override bool isInstant()
+	{
+		return true;
+	}
+	
+	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	{
+		if (effector == effected)
+		{
+			return;
+		}
+		
+		Player target = effected.getActingPlayer();
+		Player player = effector.getActingPlayer();
+		if (player != null)
+		{
+			if (checkSummonTargetStatus(target, player))
+			{
+				if ((_itemId != 0) && (_itemCount != 0))
+				{
+					SystemMessagePacket sm;
+					if (target.getInventory().getInventoryItemCount(_itemId, 0) < _itemCount)
+					{
+						sm = new SystemMessagePacket(SystemMessageId.S1_IS_REQUIRED_FOR_SUMMONING);
+						sm.Params.addItemName(_itemId);
+						target.sendPacket(sm);
+						return;
+					}
+
+					target.getInventory().destroyItemByItemId("Consume", _itemId, _itemCount, player, target);
+					sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
+					sm.Params.addItemName(_itemId);
+					target.sendPacket(sm);
+				}
+
+				target.addScript(new SummonRequestHolder(player));
+				
+				ConfirmDialogPacket confirm = new ConfirmDialogPacket(30000, player.getObjectId(), SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT);
+				confirm.Params.addString(player.getName());
+				confirm.Params.addZoneName(player.getX(), player.getY(), player.getZ());
+				target.sendPacket(confirm);
+			}
+		}
+		else if (target != null)
+		{
+			if (skill.getTargetType() == TargetType.ENEMY)
+			{
+				effected.abortCast();
+				effected.abortAttack();
+				effected.stopMove(null);
+				effected.sendPacket(new FlyToLocationPacket(effected, effector, FlyType.DUMMY, 0, 0, 0));
+				effected.setLocation(effector.getLocation());
+			}
+			else
+			{
+				WorldObject previousTarget = target.getTarget();
+				target.teleToLocation(effector);
+				target.setTarget(previousTarget);
+			}
+		}
+	}
+	
+	public static bool checkSummonTargetStatus(Player target, Player effector)
+	{
+		if (target == effector)
+		{
+			return false;
+		}
+		
+		if (target.isAlikeDead())
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_DEAD_AT_THE_MOMENT_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
+			sm.Params.addPcName(target);
+			effector.sendPacket(sm);
+			return false;
+		}
+		
+		if (target.isInStoreMode())
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_CURRENTLY_TRADING_OR_OPERATING_A_PRIVATE_STORE_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
+			sm.Params.addPcName(target);
+			effector.sendPacket(sm);
+			return false;
+		}
+		
+		if (target.isRooted() || target.isInCombat())
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ENGAGED_IN_COMBAT_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
+			sm.Params.addPcName(target);
+			effector.sendPacket(sm);
+			return false;
+		}
+		
+		if (target.isInOlympiadMode())
+		{
+			effector.sendPacket(SystemMessageId.A_USER_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_USE_SUMMONING_OR_TELEPORTING);
+			return false;
+		}
+		
+		if (target.isOnEvent() || target.isFlyingMounted() || target.isCombatFlagEquipped() || target.isInTraingCamp() || target.isInsideZone(ZoneId.TIMED_HUNTING) || effector.isInsideZone(ZoneId.TIMED_HUNTING))
+		{
+			effector.sendPacket(SystemMessageId.YOU_CANNOT_USE_SUMMONING_OR_TELEPORTING_IN_THIS_AREA);
+			return false;
+		}
+		
+		if (target.inObserverMode() || OlympiadManager.getInstance().isRegisteredInComp(target))
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_IN_AN_AREA_WHERE_SUMMONING_OR_TELEPORTING_IS_BLOCKED_2);
+			sm.Params.addString(target.getName());
+			effector.sendPacket(sm);
+			return false;
+		}
+		
+		if (target.isInsideZone(ZoneId.NO_SUMMON_FRIEND) || target.isInsideZone(ZoneId.JAIL))
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_IN_AN_AREA_WHERE_SUMMONING_OR_TELEPORTING_IS_BLOCKED);
+			sm.Params.addString(target.getName());
+			effector.sendPacket(sm);
+			return false;
+		}
+		
+		Instance instance = effector.getInstanceWorld();
+		if ((instance != null) && !instance.isPlayerSummonAllowed())
+		{
+			effector.sendPacket(SystemMessageId.CANNOT_BE_SUMMONED_IN_THIS_LOCATION);
+			return false;
+		}
+		
+		return true;
+	}
+}

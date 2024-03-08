@@ -51,7 +51,7 @@ public class EnchantItemData: DataReaderBase
 			EnchantScroll item = new EnchantScroll(element);
 			element.Elements("item").ForEach(itemElement =>
 			{
-				int id = itemElement.Attribute("id").GetInt32();
+				int id = itemElement.GetAttributeValueAsInt32("id");
 				int altScrollGroupId = itemElement.Attribute("altScrollGroupId").GetInt32(-1);
 				item.addItem(id, altScrollGroupId);
 			});
@@ -61,7 +61,7 @@ public class EnchantItemData: DataReaderBase
 		catch (Exception e)
 		{
 			LOGGER.Error(GetType().Name + ": Unexistent enchant scroll or wrong data: " +
-			             element.Attribute("id").GetInt32() +
+			             element.GetAttributeValueAsInt32("id") +
 			             " defined in enchant data!: " + e);
 		}
 	}
@@ -76,7 +76,7 @@ public class EnchantItemData: DataReaderBase
 		catch (Exception e)
 		{
 			LOGGER.Error(GetType().Name + ": Unexistent enchant support item or wrong data: " +
-			            element.Attribute("id").GetInt32() + " defined in enchant data!: " + e);
+			            element.GetAttributeValueAsInt32("id") + " defined in enchant data!: " + e);
 		}
 	}
 	

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Text;
 using System.Xml.Linq;
 using L2Dn.Extensions;
@@ -38,6 +39,7 @@ public class ItemData: DataReaderBase
 	private readonly Map<int, EtcItem> _etcItems = new();
 	private readonly Map<int, Armor> _armors = new();
 	private readonly Map<int, Weapon> _weapons = new();
+	private readonly Map<string, ImmutableArray<string>> _tables = new();
 	
 	public static readonly Map<string, long> SLOTS = new();
 	
@@ -120,9 +122,9 @@ public class ItemData: DataReaderBase
 
 	private void loadElement(string fileName, XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		string name = element.Attribute("name").GetString();
-		string className = element.Attribute("type").GetString();
+		int id = element.GetAttributeValueAsInt32("id");
+		string name = element.GetAttributeValueAsString("name");
+		string className = element.GetAttributeValueAsString("type");
 		string additionalName = element.Attribute("additionalName").GetString(null);
 
 		StatSet set = new();
@@ -139,7 +141,9 @@ public class ItemData: DataReaderBase
 				{
 					if (item is not null)
 						throw new InvalidOperationException("Item created but table node found! Item " + id);
-					throw new NotImplementedException();
+					
+					parseTable(el);
+					break;
 				}
 
 				case "set":
@@ -147,11 +151,11 @@ public class ItemData: DataReaderBase
 					if (item is not null)
 						throw new InvalidOperationException("Item created but set node found! Item " + id);
 
-					string setName = el.Attribute("name").GetString().Trim();
-					string value = el.Attribute("val").GetString().Trim();
+					string setName = el.GetAttributeValueAsString("name").Trim();
+					string value = el.GetAttributeValueAsString("val").Trim();
 					char ch = string.IsNullOrEmpty(value) ? ' ' : value[0];
 					if ((ch == '#') || (ch == '-') || char.IsDigit(ch))
-						throw new NotImplementedException(); // set.set(setName, getValue(value, 1)));
+						set.set(setName, getValue(value, 1));
 					else
 						set.set(setName, value);
 					break;
@@ -162,7 +166,7 @@ public class ItemData: DataReaderBase
 					ItemTemplate currentItem = MakeItem(className, set, ref item);
 					el.Elements("stat").ForEach(e =>
 					{
-						Stat type = e.Attribute("type").GetEnum<Stat>();
+						Stat type = StatUtil.SearchByXmlName(e.GetAttributeValueAsString("type"));
 						double val = (double)e;
 						currentItem.addFunctionTemplate(new FuncTemplate(null, null, "add", 0x00, type, val));
 					});
@@ -174,8 +178,8 @@ public class ItemData: DataReaderBase
 					ItemTemplate currentItem = MakeItem(className, set, ref item);
 					el.Elements("skill").ForEach(e =>
 					{
-						int skillId = e.Attribute("id").GetInt32();
-						int level = e.Attribute("level").GetInt32();
+						int skillId = e.GetAttributeValueAsInt32("id");
+						int level = e.GetAttributeValueAsInt32("level");
 						ItemSkillType type = e.Attribute("type").GetEnum(ItemSkillType.NORMAL);
 						int chance = e.Attribute("type_chance").GetInt32(100);
 						int value = e.Attribute("type_value").GetInt32(0);
@@ -189,10 +193,10 @@ public class ItemData: DataReaderBase
 					ItemTemplate currentItem = MakeItem(className, set, ref item);
 					el.Elements("item").ForEach(e =>
 					{
-						int itemId = e.Attribute("id").GetInt32();
-						long min = e.Attribute("min").GetInt64();
-						long max = e.Attribute("max").GetInt64();
-						double chance = e.Attribute("chance").GetDouble();
+						int itemId = e.GetAttributeValueAsInt32("id");
+						long min = e.GetAttributeValueAsInt64("min");
+						long max = e.GetAttributeValueAsInt64("max");
+						double chance = e.GetAttributeValueAsDouble("chance");
 						int minEnchant = e.Attribute("minEnchant").GetInt32(0);
 						int maxEnchant = e.Attribute("maxEnchant").GetInt32(0);
 						currentItem.addCapsuledItem(new ExtractableProduct(itemId, min, max, chance, minEnchant, maxEnchant));
@@ -212,7 +216,7 @@ public class ItemData: DataReaderBase
 					else if (condition != null && msgId != null)
 					{
 						condition.setMessageId((SystemMessageId)int.Parse(msgId));
-						string? addName = conditionEl.Attribute("addName").GetString();
+						string? addName = conditionEl.GetAttributeValueAsString("addName");
 						if ((addName != null) && (int.Parse(msgId) > 0))
 							condition.addName();
 					}
@@ -255,6 +259,50 @@ public class ItemData: DataReaderBase
 		}
 	}
 
+	private String getTableValue(string name)
+	{
+		throw new NotImplementedException();
+		//return _tables.get(name)[_currentItem.currentLevel];
+	}
+
+	private String getTableValue(String name, int idx)
+	{
+		return _tables.get(name)[idx - 1];
+	}
+
+	private String getValue(String value, Object template)
+	{
+		// is it a table?
+		if (value[0] == '#')
+		{
+			if (template is Skill)
+				return getTableValue(value);
+
+			if (template is int)
+				return getTableValue(value, (int)template);
+
+			throw new InvalidOperationException();
+		}
+		
+		return value;
+	}
+	
+	private void parseTable(XElement element)
+	{
+		string name = element.GetAttributeValueAsString("name");
+		if (string.IsNullOrEmpty(name) || name[0] != '#')
+			throw new InvalidOperationException("Table name must start with #");
+
+		StringTokenizer data = new StringTokenizer(element.Value, " ");
+		List<String> array = new(data.countTokens());
+		while (data.hasMoreTokens())
+		{
+			array.add(data.nextToken());
+		}
+
+		_tables[name] = array.ToImmutableArray();
+	}
+	
 	private static Condition parseCondition(XElement element, ItemTemplate template)
 	{
 		string elementName = element.Name.LocalName;
@@ -301,7 +349,7 @@ public class ItemData: DataReaderBase
 		Condition cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
-			switch (attribute.Name.LocalName)
+			switch (attribute.Name.LocalName.ToLowerInvariant())
 			{
 				case "races":
 				{
@@ -844,7 +892,7 @@ public class ItemData: DataReaderBase
 		Condition cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
-			switch (attribute.Name.LocalName)
+			switch (attribute.Name.LocalName.ToLowerInvariant())
 			{
 				case "aggro":
 				{

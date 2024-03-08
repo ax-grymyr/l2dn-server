@@ -33,14 +33,14 @@ public class PetExtractData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int petId = element.Attribute("petId").GetInt32();
-		int petLevel = element.Attribute("petLevel").GetInt32();
-		long extractExp = element.Attribute("extractExp").GetInt64();
-		int extractItem = element.Attribute("extractItem").GetInt32();
-		int defaultCostId = element.Attribute("defaultCostId").GetInt32();
-		int defaultCostCount = element.Attribute("defaultCostCount").GetInt32();
-		int extractCostId = element.Attribute("extractCostId").GetInt32();
-		int extractCostCount = element.Attribute("extractCostCount").GetInt32();
+		int petId = element.GetAttributeValueAsInt32("petId");
+		int petLevel = element.GetAttributeValueAsInt32("petLevel");
+		long extractExp = element.GetAttributeValueAsInt64("extractExp");
+		int extractItem = element.GetAttributeValueAsInt32("extractItem");
+		int defaultCostId = element.GetAttributeValueAsInt32("defaultCostId");
+		int defaultCostCount = element.GetAttributeValueAsInt32("defaultCostCount");
+		int extractCostId = element.GetAttributeValueAsInt32("extractCostId");
+		int extractCostCount = element.GetAttributeValueAsInt32("extractCostCount");
 		
 		Map<int, PetExtractionHolder> data = _extractionData.get(petId);
 		if (data == null)

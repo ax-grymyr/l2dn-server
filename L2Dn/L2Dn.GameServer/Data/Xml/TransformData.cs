@@ -92,8 +92,8 @@ public class TransformData: DataReaderBase
 
 					z.Elements("skill").ForEach(s =>
 					{
-						int skillId = s.Attribute("id").GetInt32();
-						int skillLevel = s.Attribute("level").GetInt32();
+						int skillId = s.GetAttributeValueAsInt32("id");
+						int skillLevel = s.GetAttributeValueAsInt32("level");
 						templateData.addSkill(new SkillHolder(skillId, skillLevel));
 					});
 
@@ -116,9 +116,9 @@ public class TransformData: DataReaderBase
 
 					z.Elements("skill").ForEach(s =>
 					{
-						int skillId = s.Attribute("id").GetInt32();
-						int skillLevel = s.Attribute("level").GetInt32();
-						int minLevel = s.Attribute("minLevel").GetInt32();
+						int skillId = s.GetAttributeValueAsInt32("id");
+						int skillLevel = s.GetAttributeValueAsInt32("level");
+						int minLevel = s.GetAttributeValueAsInt32("minLevel");
 						templateData.addAdditionalSkill(new AdditionalSkillHolder(skillId, skillLevel, minLevel));
 					});
 
@@ -131,8 +131,8 @@ public class TransformData: DataReaderBase
 
 					z.Elements("item").ForEach(s =>
 					{
-						int itemId = s.Attribute("id").GetInt32();
-						bool allowed = s.Attribute("allowed").GetBoolean();
+						int itemId = s.GetAttributeValueAsInt32("id");
+						bool allowed = s.GetAttributeValueAsBoolean("allowed");
 						templateData.addAdditionalItem(new AdditionalItemHolder(itemId, allowed));
 					});
 

@@ -34,10 +34,10 @@ public class PetTypeData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		int skillId = element.Attribute("skillId").GetInt32(0);
 		int skillLvl = element.Attribute("skillLvl").GetInt32(0);
-		string name = element.Attribute("name").GetString();
+		string name = element.GetAttributeValueAsString("name");
 		_skills.put(id, new SkillHolder(skillId, skillLvl));
 		_names.put(id, name);
 	}

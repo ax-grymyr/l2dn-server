@@ -42,7 +42,7 @@ public class TimedHuntingZoneData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		String name = element.Attribute("name").GetString("");
 		int initialTime = 0;
 		int maxAddedTime = 0;

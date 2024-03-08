@@ -12,7 +12,7 @@ public class AdminCommandAccessRight
 
     public AdminCommandAccessRight(XElement element)
     {
-        _adminCommand = element.Attribute("command").GetString();
+        _adminCommand = element.GetAttributeValueAsString("command");
         _requireConfirm = element.Attribute("confirmDlg").GetBoolean(false);
         _accessLevel = element.Attribute("accessLevel").GetInt32(7);
     }

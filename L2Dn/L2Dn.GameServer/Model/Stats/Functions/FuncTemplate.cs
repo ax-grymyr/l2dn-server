@@ -22,7 +22,7 @@ public class FuncTemplate
 	public FuncTemplate(Condition attachCond, Condition applayCond, String functionName, int order, Stat stat,
 		double value)
 	{
-		Enums.StatFunction function = Enum.Parse<Enums.StatFunction>(functionName.toUpperCase());
+		Enums.StatFunction function = Enum.Parse<Enums.StatFunction>(functionName, true);
 		if (order >= 0)
 		{
 			_order = order;
@@ -38,7 +38,9 @@ public class FuncTemplate
 		_value = value;
 
 		string? ns = GetType().Namespace;
-		_functionClass = Assembly.GetExecutingAssembly().GetType($"{ns}.Func{function}") ??
+		string functionTypeName = function.ToString().ToLowerInvariant();
+		functionTypeName = char.ToUpperInvariant(functionTypeName[0]) + functionTypeName.Substring(1);
+		_functionClass = Assembly.GetExecutingAssembly().GetType($"{ns}.Func{functionTypeName}") ??
 		                 throw new InvalidOperationException($"Invalid function: {functionName}");
 	}
 

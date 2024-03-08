@@ -36,9 +36,9 @@ public abstract class DataReaderBase
 
     protected static Location parseLocation(XElement element)
     {
-        int x = element.Attribute("x").GetInt32();
-        int y = element.Attribute("y").GetInt32();
-        int z = element.Attribute("z").GetInt32();
+        int x = element.GetAttributeValueAsInt32("x");
+        int y = element.GetAttributeValueAsInt32("y");
+        int z = element.GetAttributeValueAsInt32("z");
         int heading = element.Attribute("heading").GetInt32(0);
         return new Location(x, y, z, heading);
     }
@@ -52,38 +52,38 @@ public abstract class DataReaderBase
             {
                 case "param":
                 {
-                    string name = parameterNode.Attribute("name").GetString();
-                    string value = parameterNode.Attribute("value").GetString();
+                    string name = parameterNode.GetAttributeValueAsString("name");
+                    string value = parameterNode.GetAttributeValueAsString("value");
                     parameters.put(name, value);
                     break;
                 }
                 
                 case "skill":
                 {
-                    string name = parameterNode.Attribute("name").GetString();
-                    int id = parameterNode.Attribute("id").GetInt32();
-                    int level = parameterNode.Attribute("level").GetInt32();
+                    string name = parameterNode.GetAttributeValueAsString("name");
+                    int id = parameterNode.GetAttributeValueAsInt32("id");
+                    int level = parameterNode.GetAttributeValueAsInt32("level");
                     parameters.put(name, new SkillHolder(id, level));
                     break;
                 }
                 
                 case "location":
                 {
-                    string name = parameterNode.Attribute("name").GetString();
+                    string name = parameterNode.GetAttributeValueAsString("name");
                     parameters.put(name, parseLocation(parameterNode));
                     break;
                 }
 
                 case "minions":
                 {
-                    string name = parameterNode.Attribute("name").GetString();
+                    string name = parameterNode.GetAttributeValueAsString("name");
                     List<MinionHolder> minions = new();
                     foreach (XElement minionsNode in parameterNode.Elements("npc"))
                     {
-                        int id = minionsNode.Attribute("id").GetInt32();
-                        int count = minionsNode.Attribute("count").GetInt32();
+                        int id = minionsNode.GetAttributeValueAsInt32("id");
+                        int count = minionsNode.GetAttributeValueAsInt32("count");
                         int max = minionsNode.Attribute("max").GetInt32(0);
-                        int respawnTime = minionsNode.Attribute("respawnTime").GetInt32();
+                        int respawnTime = minionsNode.GetAttributeValueAsInt32("respawnTime");
                         int weightPoint = minionsNode.Attribute("weightPoint").GetInt32(0);
                         minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
                     }

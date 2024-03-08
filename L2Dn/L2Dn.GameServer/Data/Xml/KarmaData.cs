@@ -35,11 +35,11 @@ public class KarmaData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int level = element.Attribute("lvl").GetInt32();
+		int level = element.GetAttributeValueAsInt32("lvl");
 		if (level >= Config.PLAYER_MAXIMUM_LEVEL)
 			return;
 
-		double val = element.Attribute("val").GetDouble();
+		double val = element.GetAttributeValueAsDouble("val");
 		_karmaTable.put(level, val);
 	}
 

@@ -66,16 +66,16 @@ public class CubicData: DataReaderBase
 			{
 				case "hp":
 					HpCondition.HpConditionType type = el.Attribute("type").GetEnum<HpCondition.HpConditionType>();
-					int hpPer = el.Attribute("percent").GetInt32();
+					int hpPer = el.GetAttributeValueAsInt32("percent");
 					holder.addCondition(new HpCondition(type, hpPer));
 					break;
 				case "range":
-					int range = el.Attribute("value").GetInt32();
+					int range = el.GetAttributeValueAsInt32("value");
 					holder.addCondition(new RangeCondition(range));
 					break;
 				case "healthPercent":
-					int min = el.Attribute("min").GetInt32();
-					int max = el.Attribute("max").GetInt32();
+					int min = el.GetAttributeValueAsInt32("min");
+					int max = el.GetAttributeValueAsInt32("max");
 					holder.addCondition(new HealthCondition(min, max));
 					break;
 				default:

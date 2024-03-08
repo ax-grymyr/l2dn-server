@@ -40,20 +40,20 @@ public class FishingData: DataReaderBase
 		{
 			el.Elements("baitDistance").ForEach(element =>
 			{
-				_baitDistanceMin = element.Attribute("min").GetInt32();
-				_baitDistanceMax = element.Attribute("max").GetInt32();
+				_baitDistanceMin = element.GetAttributeValueAsInt32("min");
+				_baitDistanceMax = element.GetAttributeValueAsInt32("max");
 			});
 
 			el.Elements("xpRate").ForEach(element =>
 			{
-				_expRateMin = element.Attribute("min").GetDouble();
-				_expRateMax = element.Attribute("max").GetDouble();
+				_expRateMin = element.GetAttributeValueAsDouble("min");
+				_expRateMax = element.GetAttributeValueAsDouble("max");
 			});
 
 			el.Elements("spRate").ForEach(element =>
 			{
-				_spRateMin = element.Attribute("min").GetDouble();
-				_spRateMax = element.Attribute("max").GetDouble();
+				_spRateMin = element.GetAttributeValueAsDouble("min");
+				_spRateMax = element.GetAttributeValueAsDouble("max");
 			});
 
 			el.Elements("baits").Elements("bait").ForEach(parseBaitElement);
@@ -65,14 +65,14 @@ public class FishingData: DataReaderBase
 
 	private void parseBaitElement(XElement element)
 	{
-		int itemId = element.Attribute("itemId").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("itemId");
 		int level = element.Attribute("level").GetInt32(1);
-		int minPlayerLevel = element.Attribute("minPlayerLevel").GetInt32();
+		int minPlayerLevel = element.GetAttributeValueAsInt32("minPlayerLevel");
 		int maxPlayerLevel = element.Attribute("maxPlayerLevel").GetInt32(Config.PLAYER_MAXIMUM_LEVEL);
-		double chance = element.Attribute("chance").GetDouble();
-		int timeMin = element.Attribute("timeMin").GetInt32();
+		double chance = element.GetAttributeValueAsDouble("chance");
+		int timeMin = element.GetAttributeValueAsInt32("timeMin");
 		int timeMax = element.Attribute("timeMax").GetInt32(timeMin);
-		int waitMin = element.Attribute("waitMin").GetInt32();
+		int waitMin = element.GetAttributeValueAsInt32("waitMin");
 		int waitMax = element.Attribute("waitMax").GetInt32(waitMin);
 		bool isPremiumOnly = element.Attribute("isPremiumOnly").GetBoolean(false);
 		if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -87,8 +87,8 @@ public class FishingData: DataReaderBase
 		
 		element.Elements("catch").ForEach(el =>
 		{
-			int cId = el.Attribute("itemId").GetInt32();
-			float cChance = el.Attribute("chance").GetFloat();
+			int cId = el.GetAttributeValueAsInt32("itemId");
+			float cChance = el.GetAttributeValueAsFloat("chance");
 			float cMultiplier = el.Attribute("multiplier").GetFloat(1f);
 			if (ItemData.getInstance().getTemplate(cId) == null)
 			{
@@ -104,7 +104,7 @@ public class FishingData: DataReaderBase
 	
 	private void parseRodElement(XElement element)
 	{
-		int itemId = element.Attribute("itemId").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("itemId");
 		TimeSpan reduceFishingTime = TimeSpan.FromMilliseconds(element.Attribute("reduceFishingTime").GetInt32(0));
 		float xpMultiplier = element.Attribute("xpMultiplier").GetFloat(1f);
 		float spMultiplier = element.Attribute("spMultiplier").GetFloat(1f);

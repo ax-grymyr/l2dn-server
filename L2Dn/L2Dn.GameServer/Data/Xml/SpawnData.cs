@@ -232,14 +232,14 @@ public class SpawnData: DataReaderBase
 		innerNode.Elements().ForEach(territoryNode =>
 		{
 			string name = territoryNode.Attribute("name").GetString(fileName + "_" + (spawnTemplate.getTerritories().size() + 1));
-			int minZ = territoryNode.Attribute("minZ").GetInt32();
-			int maxZ = territoryNode.Attribute("maxZ").GetInt32();
+			int minZ = territoryNode.GetAttributeValueAsInt32("minZ");
+			int maxZ = territoryNode.GetAttributeValueAsInt32("maxZ");
 			List<int> xNodes = new();
 			List<int> yNodes = new();
 			territoryNode.Elements("node").ForEach(node =>
 			{
-				xNodes.add(node.Attribute("x").GetInt32());
-				yNodes.add(node.Attribute("y").GetInt32());
+				xNodes.add(node.GetAttributeValueAsInt32("x"));
+				yNodes.add(node.GetAttributeValueAsInt32("y"));
 			});
 			int[] x = xNodes.ToArray();
 			int[] y = yNodes.ToArray();
@@ -261,7 +261,7 @@ public class SpawnData: DataReaderBase
 				}
 				case "Cylinder":
 				{
-					int zoneRad = territoryNode.Attribute("rad").GetInt32();
+					int zoneRad = territoryNode.GetAttributeValueAsInt32("rad");
 					zoneForm = new ZoneCylinder(x[0], y[0], minZ, maxZ, zoneRad);
 					break;
 				}
@@ -361,11 +361,11 @@ public class SpawnData: DataReaderBase
 		{
 			if ("location".equalsIgnoreCase(d.Name.LocalName))
 			{
-				int x = d.Attribute("x").GetInt32();
-				int y = d.Attribute("y").GetInt32();
-				int z = d.Attribute("z").GetInt32();
+				int x = d.GetAttributeValueAsInt32("x");
+				int y = d.GetAttributeValueAsInt32("y");
+				int z = d.GetAttributeValueAsInt32("z");
 				int heading = d.Attribute("heading").GetInt32(0);
-				double chance = d.Attribute("chance").GetDouble();
+				double chance = d.GetAttributeValueAsDouble("chance");
 				npcTemplate.addSpawnLocation(new ChanceLocation(x, y, z, heading, chance));
 			}
 		}
@@ -396,25 +396,25 @@ public class SpawnData: DataReaderBase
 		
 		element.Elements("param").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			string value = el.Attribute("value").GetString();
+			string name = el.GetAttributeValueAsString("name");
+			string value = el.GetAttributeValueAsString("value");
 			parameters.put(name, value);
 		});
 		
 		element.Elements("skill").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			int id = el.Attribute("id").GetInt32();
-			int level = el.Attribute("level").GetInt32();
+			string name = el.GetAttributeValueAsString("name");
+			int id = el.GetAttributeValueAsInt32("id");
+			int level = el.GetAttributeValueAsInt32("level");
 			parameters.put(name, new SkillHolder(id, level));
 		});
 		
 		element.Elements("location").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
-			int x = el.Attribute("x").GetInt32();
-			int y = el.Attribute("y").GetInt32();
-			int z = el.Attribute("z").GetInt32();
+			string name = el.GetAttributeValueAsString("name");
+			int x = el.GetAttributeValueAsInt32("x");
+			int y = el.GetAttributeValueAsInt32("y");
+			int z = el.GetAttributeValueAsInt32("z");
 			int heading = el.Attribute("heading").GetInt32(0);
 			parameters.put(name, new Location(x, y, z, heading));
 		});
@@ -424,16 +424,16 @@ public class SpawnData: DataReaderBase
 			List<MinionHolder> minions = new();
 			el.Elements("npc").ForEach(e =>
 			{
-				int id = el.Attribute("id").GetInt32();
-				int count = el.Attribute("count").GetInt32();
+				int id = el.GetAttributeValueAsInt32("id");
+				int count = el.GetAttributeValueAsInt32("count");
 				int max = el.Attribute("max").GetInt32(0);
-				int respawnTime = el.Attribute("respawnTime").GetInt32();
+				int respawnTime = el.GetAttributeValueAsInt32("respawnTime");
 				int weightPoint = el.Attribute("weightPoint").GetInt32(0);
 				minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
 					
 			if (!minions.isEmpty())
-				parameters.put(el.Attribute("name").GetString(), minions);
+				parameters.put(el.GetAttributeValueAsString("name"), minions);
 		});
 
 		return parameters;

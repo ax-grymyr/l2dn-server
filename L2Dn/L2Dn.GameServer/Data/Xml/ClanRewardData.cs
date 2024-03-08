@@ -40,13 +40,13 @@ public class ClanRewardData: DataReaderBase
 	{
 		node.Elements("players").ForEach(el =>
 		{
-			int requiredAmount = el.Attribute("size").GetInt32();
-			int level = el.Attribute("level").GetInt32();
+			int requiredAmount = el.GetAttributeValueAsInt32("size");
+			int level = el.GetAttributeValueAsInt32("level");
 			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.MEMBERS_ONLINE, level, requiredAmount);
 			el.Elements("skill").ForEach(e =>
 			{
-				int skillId = e.Attribute("id").GetInt32();
-				int skillLevel = e.Attribute("level").GetInt32();
+				int skillId = e.GetAttributeValueAsInt32("id");
+				int skillLevel = e.GetAttributeValueAsInt32("level");
 				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
 			});
 			
@@ -58,13 +58,13 @@ public class ClanRewardData: DataReaderBase
 	{
 		node.Elements("hunting").ForEach(el =>
 		{
-			int requiredAmount = el.Attribute("points").GetInt32();
-			int level = el.Attribute("level").GetInt32();
+			int requiredAmount = el.GetAttributeValueAsInt32("points");
+			int level = el.GetAttributeValueAsInt32("level");
 			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.HUNTING_MONSTERS, level, requiredAmount);
 			el.Elements("skill").ForEach(e =>
 			{
-				int skillId = e.Attribute("id").GetInt32();
-				int skillLevel = e.Attribute("level").GetInt32();
+				int skillId = e.GetAttributeValueAsInt32("id");
+				int skillLevel = e.GetAttributeValueAsInt32("level");
 				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
 			});
 			

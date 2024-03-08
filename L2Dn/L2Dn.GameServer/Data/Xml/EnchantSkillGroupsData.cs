@@ -43,28 +43,28 @@ public class EnchantSkillGroupsData: DataReaderBase
 
 	private void parseEnchant(XElement element)
 	{
-		int level = element.Attribute("level").GetInt32();
-		int enchantFailLevel = element.Attribute("enchantFailLevel").GetInt32();
+		int level = element.GetAttributeValueAsInt32("level");
+		int enchantFailLevel = element.GetAttributeValueAsInt32("enchantFailLevel");
 		EnchantSkillHolder enchantSkillHolder = new EnchantSkillHolder(level, enchantFailLevel);
 
 		element.Elements("sps").Elements("sp").ForEach(spElement =>
 		{
-			int amount = spElement.Attribute("amount").GetInt32();
+			int amount = spElement.GetAttributeValueAsInt32("amount");
 			SkillEnchantType type = spElement.Attribute("type").GetEnum<SkillEnchantType>();
 			enchantSkillHolder.addSp(type, amount);
 		});
 
 		element.Elements("chances").Elements("chance").ForEach(chanceElement =>
 		{
-			int value = chanceElement.Attribute("value").GetInt32();
+			int value = chanceElement.GetAttributeValueAsInt32("value");
 			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
 			enchantSkillHolder.addChance(type, value);
 		});
 
 		element.Elements("items").Elements("item").ForEach(chanceElement =>
 		{
-			int id = chanceElement.Attribute("id").GetInt32();
-			long count = chanceElement.Attribute("count").GetInt64();
+			int id = chanceElement.GetAttributeValueAsInt32("id");
+			long count = chanceElement.GetAttributeValueAsInt64("count");
 			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
 			enchantSkillHolder.addRequiredItem(type, new ItemHolder(id, count));
 		});

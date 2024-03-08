@@ -38,8 +38,8 @@ public class AccessLevel
 	
 	public AccessLevel(XElement element)
 	{
-		_accessLevel = element.Attribute("level").GetInt32();
-		_name = element.Attribute("name").GetString();
+		_accessLevel = element.GetAttributeValueAsInt32("level");
+		_name = element.GetAttributeValueAsString("name");
 		_nameColor = element.Attribute("nameColor").GetColor(Colors.White);
 		_titleColor = element.Attribute("titleColor").GetColor(Colors.White);
 		_child = element.Attribute("childAccess").GetInt32(0);

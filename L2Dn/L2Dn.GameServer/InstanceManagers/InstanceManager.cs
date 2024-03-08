@@ -53,8 +53,8 @@ public class InstanceManager: DataReaderBase
 		
 		LoadXmlDocument(DataFileLocation.Data, "InstanceNames.xml").Elements("list").Elements("instance").ForEach(el =>
 		{
-			int id = el.Attribute("id").GetInt32();
-			string name = el.Attribute("name").GetString();
+			int id = el.GetAttributeValueAsInt32("id");
+			string name = el.GetAttributeValueAsString("name");
 			_instanceNames.put(id, name);
 		});
 		
@@ -83,7 +83,7 @@ public class InstanceManager: DataReaderBase
 	private void parseInstanceTemplate(string filePath, XElement element)
 	{
 		// Parse "instance" node
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		if (_instanceTemplates.containsKey(id))
 		{
 			LOGGER.Warn(GetType().Name + ": Instance template with ID " + id + " already exists");
@@ -211,7 +211,7 @@ public class InstanceManager: DataReaderBase
 					InstanceRemoveBuffType removeBuffType = innerNode.Attribute("type").GetEnum<InstanceRemoveBuffType>();
 					List<int> exceptionBuffList = new();
 					foreach (XElement e in innerNode.Elements("skill"))
-						exceptionBuffList.add(e.Attribute("id").GetInt32());
+						exceptionBuffList.add(e.GetAttributeValueAsInt32("id"));
 					
 					template.setRemoveBuff(removeBuffType, exceptionBuffList);
 					break;
@@ -249,14 +249,14 @@ public class InstanceManager: DataReaderBase
 					List<Condition> conditions = new();
 					foreach (XElement conditionNode in innerNode.Elements("condition"))
 					{
-						String type = conditionNode.Attribute("type").GetString();
+						String type = conditionNode.GetAttributeValueAsString("type");
 						bool onlyLeader = conditionNode.Attribute("onlyLeader").GetBoolean(false);
 						bool showMessageAndHtml = conditionNode.Attribute("showMessageAndHtml").GetBoolean(false);
 						// Load parameters
 						StatSet parameters = new();
 						foreach (XElement f in conditionNode.Elements("param"))
 						{
-							parameters.set(f.Attribute("name").GetString(), f.Attribute("value").GetString());
+							parameters.set(f.GetAttributeValueAsString("name"), f.GetAttributeValueAsString("value"));
 						}
 						
 						// Now when everything is loaded register condition to template

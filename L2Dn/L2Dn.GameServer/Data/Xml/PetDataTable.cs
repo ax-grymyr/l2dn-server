@@ -61,8 +61,8 @@ public class PetDataTable: DataReaderBase
 
 	private void loadElement(string filePath, XElement element)
 	{
-		int npcId = element.Attribute("id").GetInt32();
-		int itemId = element.Attribute("itemId").GetInt32();
+		int npcId = element.GetAttributeValueAsInt32("id");
+		int itemId = element.GetAttributeValueAsInt32("itemId");
 		int index = element.Attribute("index").GetInt32(0);
 		int defaultPetType = element.Attribute("defaultPetType").GetInt32(0);
 		EvolveLevel evolveLevel = element.Attribute("evolveLevel").GetEnum<EvolveLevel>();
@@ -75,26 +75,26 @@ public class PetDataTable: DataReaderBase
 		{
 			el.Elements("food").ForEach(e =>
 			{
-				string[] val = e.Attribute("val").GetString().Split(";");
+				string[] val = e.GetAttributeValueAsString("val").Split(";");
 				foreach (string foodId in val)
 					data.addFood(int.Parse(foodId));
 			});
 
 			el.Elements("load").ForEach(e =>
 			{
-				int val = e.Attribute("val").GetInt32();
+				int val = e.GetAttributeValueAsInt32("val");
 				data.setLoad(val);
 			});
 
 			el.Elements("hungry_limit").ForEach(e =>
 			{
-				int val = e.Attribute("val").GetInt32();
+				int val = e.GetAttributeValueAsInt32("val");
 				data.setHungryLimit(val);
 			});
 
 			el.Elements("sync_level").ForEach(e =>
 			{
-				int val = e.Attribute("val").GetInt32();
+				int val = e.GetAttributeValueAsInt32("val");
 				data.setSyncLevel(val == 1);
 			});
 
@@ -103,34 +103,34 @@ public class PetDataTable: DataReaderBase
 
 		element.Elements("skills").Elements("skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("skillId").GetInt32();
-			int skillLevel = el.Attribute("skillLevel").GetInt32();
-			int minLevel = el.Attribute("minLevel").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("skillId");
+			int skillLevel = el.GetAttributeValueAsInt32("skillLevel");
+			int minLevel = el.GetAttributeValueAsInt32("minLevel");
 			data.addNewSkill(skillId, skillLevel, minLevel);
 		});
 
 		element.Elements("stats").Elements("stat").ForEach(el =>
 		{
-			int level = el.Attribute("level").GetInt32();
+			int level = el.GetAttributeValueAsInt32("level");
 			StatSet set = new StatSet();
 			el.Elements("set").ForEach(e =>
 			{
-				string name = e.Attribute("name").GetString();
-				string val = e.Attribute("val").GetString();
+				string name = e.GetAttributeValueAsString("name");
+				string val = e.GetAttributeValueAsString("val");
 				if (name == "speed_on_ride")
 				{
-					set.set("walkSpeedOnRide", e.Attribute("walk").GetString());
-					set.set("runSpeedOnRide", e.Attribute("run").GetString());
-					set.set("slowSwimSpeedOnRide", e.Attribute("slowSwim").GetString());
-					set.set("fastSwimSpeedOnRide", e.Attribute("fastSwim").GetString());
+					set.set("walkSpeedOnRide", e.GetAttributeValueAsString("walk"));
+					set.set("runSpeedOnRide", e.GetAttributeValueAsString("run"));
+					set.set("slowSwimSpeedOnRide", e.GetAttributeValueAsString("slowSwim"));
+					set.set("fastSwimSpeedOnRide", e.GetAttributeValueAsString("fastSwim"));
 					if (e.Attribute("slowFly") != null)
 					{
-						set.set("slowFlySpeedOnRide", e.Attribute("slowFly").GetString());
+						set.set("slowFlySpeedOnRide", e.GetAttributeValueAsString("slowFly"));
 					}
 
 					if (e.Attribute("fastFly") != null)
 					{
-						set.set("fastFlySpeedOnRide", e.Attribute("fastFly").GetString());
+						set.set("fastFlySpeedOnRide", e.GetAttributeValueAsString("fastFly"));
 					}
 				}
 				else

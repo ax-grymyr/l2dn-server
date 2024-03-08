@@ -33,7 +33,7 @@ public class AgathionData: DataReaderBase
 
 	private void loadElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		if (ItemData.getInstance().getTemplate(id) == null)
 		{
 			LOGGER.Info(GetType().Name + ": Could not find agathion with id " + id + ".");

@@ -42,36 +42,36 @@ public class SkillEnchantData: DataReaderBase
 
 	private void parseSkillElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int starLevel = element.Attribute("starLevel").GetInt32();
-		int maxEnchantLevel = element.Attribute("maxEnchantLevel").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		int starLevel = element.GetAttributeValueAsInt32("starLevel");
+		int maxEnchantLevel = element.GetAttributeValueAsInt32("maxEnchantLevel");
 		_skillEnchantMap.put(id, new SkillEnchantHolder(id, starLevel, maxEnchantLevel));
 	}
 
 	private void parseStarElement(XElement element)
 	{
-		int level = element.Attribute("level").GetInt32();
-		int expMax = element.Attribute("expMax").GetInt32();
-		int expOnFail = element.Attribute("expOnFail").GetInt32();
-		long feeAdena = element.Attribute("feeAdena").GetInt64();
+		int level = element.GetAttributeValueAsInt32("level");
+		int expMax = element.GetAttributeValueAsInt32("expMax");
+		int expOnFail = element.GetAttributeValueAsInt32("expOnFail");
+		long feeAdena = element.GetAttributeValueAsInt64("feeAdena");
 		EnchantStarHolder starHolder = new EnchantStarHolder(level, expMax, expOnFail, feeAdena);
 		_enchantStarMap.put(level, starHolder);
 	}
 
 	private void parseChanceElement(XElement element)
 	{
-		int enchantLevel = element.Attribute("enchantLevel").GetInt32();
-		int chance = element.Attribute("chance").GetInt32();
+		int enchantLevel = element.GetAttributeValueAsInt32("enchantLevel");
+		int chance = element.GetAttributeValueAsInt32("chance");
 		_chanceEnchantMap.put(enchantLevel, chance);
 	}
 
 	private void parseItemPointStarElement(XElement element)
 	{
-		int level = element.Attribute("level").GetInt32();
+		int level = element.GetAttributeValueAsInt32("level");
 		Map<int, EnchantItemExpHolder> itemMap = new();
 		element.Elements("item").ForEach(el =>
 		{
-			int id = el.Attribute("id").GetInt32();
+			int id = el.GetAttributeValueAsInt32("id");
 			int exp = el.Attribute("exp").GetInt32(1);
 			int starLevel = el.Attribute("starLevel").GetInt32(1);
 			itemMap.put(id, new EnchantItemExpHolder(id, exp, starLevel));

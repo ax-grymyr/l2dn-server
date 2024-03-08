@@ -71,8 +71,8 @@ public class PlayerTemplateData: DataReaderBase
 					}
 
 					if ("node".equalsIgnoreCase(eName))
-						creationPoints.add(new Location(e.Attribute("x").GetInt32(), e.Attribute("y").GetInt32(),
-							e.Attribute("z").GetInt32()));
+						creationPoints.add(new Location(e.GetAttributeValueAsInt32("x"), e.GetAttributeValueAsInt32("y"),
+							e.GetAttributeValueAsInt32("z")));
 					else if ("walk".equalsIgnoreCase(eName))
 						set.set("baseWalkSpd", e.Value);
 					else if ("run".equalsIgnoreCase(eName))
@@ -105,7 +105,7 @@ public class PlayerTemplateData: DataReaderBase
 		int level = 0;
 		lvlUpgainDataElement.Elements("level").ForEach(el =>
 		{
-			int lvl = el.Attribute("val").GetInt32();
+			int lvl = el.GetAttributeValueAsInt32("val");
 			if (lvl > level)
 				level = lvl;
 

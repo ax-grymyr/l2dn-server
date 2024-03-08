@@ -62,9 +62,9 @@ public class WalkingManager: DataReaderBase
 
 	private void parseRoute(XElement element)
 	{
-		string routeName = element.Attribute("name").GetString();
-		bool repeat = element.Attribute("repeat").GetBoolean();
-		string repeatStyle = element.Attribute("repeatStyle").GetString().ToLower();
+		string routeName = element.GetAttributeValueAsString("name");
+		bool repeat = element.GetAttributeValueAsBoolean("repeat");
+		string repeatStyle = element.GetAttributeValueAsString("repeatStyle").ToLower();
 		byte repeatType;
 		switch (repeatStyle)
 		{
@@ -100,11 +100,11 @@ public class WalkingManager: DataReaderBase
 		{
 			if (r.Name.LocalName.equals("point"))
 			{
-				int x = r.Attribute("X").GetInt32();
-				int y = r.Attribute("Y").GetInt32();
-				int z = r.Attribute("Z").GetInt32();
-				int delay = r.Attribute("delay").GetInt32();
-				bool run = r.Attribute("run").GetBoolean();
+				int x = r.GetAttributeValueAsInt32("X");
+				int y = r.GetAttributeValueAsInt32("Y");
+				int z = r.GetAttributeValueAsInt32("Z");
+				int delay = r.GetAttributeValueAsInt32("delay");
+				bool run = r.GetAttributeValueAsBoolean("run");
 				string? chatString = r.Attribute("string")?.GetString();
 				NpcStringId? npcString = (NpcStringId?)r.Attribute("npcString")?.GetInt32();
 				if (npcString is null)
@@ -123,10 +123,10 @@ public class WalkingManager: DataReaderBase
 			{
 				try
 				{
-					int npcId = r.Attribute("id").GetInt32();
-					int x = r.Attribute("spawnX").GetInt32();
-					int y = r.Attribute("spawnY").GetInt32();
-					int z = r.Attribute("spawnZ").GetInt32();
+					int npcId = r.GetAttributeValueAsInt32("id");
+					int x = r.GetAttributeValueAsInt32("spawnX");
+					int y = r.GetAttributeValueAsInt32("spawnY");
+					int z = r.GetAttributeValueAsInt32("spawnZ");
 					if (NpcData.getInstance().getTemplate(npcId) != null)
 					{
 						NpcRoutesHolder holder = _routesToAttach.containsKey(npcId)

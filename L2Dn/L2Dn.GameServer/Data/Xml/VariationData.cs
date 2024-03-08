@@ -44,7 +44,7 @@ public class VariationData: DataReaderBase
 
 	private void parseVariationElement(XElement element)
 	{
-		int mineralId = element.Attribute("mineralId").GetInt32();
+		int mineralId = element.GetAttributeValueAsInt32("mineralId");
 		int itemGroup = element.Attribute("itemGroup").GetInt32(-1);
 		if (ItemData.getInstance().getTemplate(mineralId) == null)
 		{
@@ -55,16 +55,16 @@ public class VariationData: DataReaderBase
 
 		element.Elements("optionGroup").ForEach(el =>
 		{
-			int order = el.Attribute("order").GetInt32();
+			int order = el.GetAttributeValueAsInt32("order");
 			List<OptionDataCategory> sets = new();
 			el.Elements("optionCategory").ForEach(e =>
 			{
-				double chance = e.Attribute("chance").GetDouble();
+				double chance = e.GetAttributeValueAsDouble("chance");
 				Map<Options, Double> options = new();
 				e.Elements("option").ForEach(optEl =>
 				{
-					double optionChance = optEl.Attribute("chance").GetDouble();
-					int optionId = optEl.Attribute("id").GetInt32();
+					double optionChance = optEl.GetAttributeValueAsDouble("chance");
+					int optionId = optEl.GetAttributeValueAsInt32("id");
 					Options opt = OptionData.getInstance().getOptions(optionId);
 					if (opt == null)
 					{
@@ -77,9 +77,9 @@ public class VariationData: DataReaderBase
 
 				e.Elements("optionRange").ForEach(optEl =>
 				{
-					double optionChance = optEl.Attribute("chance").GetDouble();
-					int fromId = optEl.Attribute("from").GetInt32();
-					int toId = optEl.Attribute("to").GetInt32();
+					double optionChance = optEl.GetAttributeValueAsDouble("chance");
+					int fromId = optEl.GetAttributeValueAsInt32("from");
+					int toId = optEl.GetAttributeValueAsInt32("to");
 					for (int id = fromId; id <= toId; id++)
 					{
 						Options op = OptionData.getInstance().getOptions(id);
@@ -97,14 +97,14 @@ public class VariationData: DataReaderBase
 				Set<int> itemIds = new();
 				e.Elements("item").ForEach(itemEl =>
 				{
-					int itemId = itemEl.Attribute("id").GetInt32();
+					int itemId = itemEl.GetAttributeValueAsInt32("id");
 					itemIds.add(itemId);
 				});
 
 				e.Elements("items").ForEach(itemEl =>
 				{
-					int fromId = itemEl.Attribute("from").GetInt32();
-					int toId = itemEl.Attribute("to").GetInt32();
+					int fromId = itemEl.GetAttributeValueAsInt32("from");
+					int toId = itemEl.GetAttributeValueAsInt32("to");
 					for (int id = fromId; id <= toId; id++)
 						itemIds.add(id);
 				});
@@ -129,11 +129,11 @@ public class VariationData: DataReaderBase
 
 	private void parseItemGroupElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		Set<int> items = new();
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("id");
 			if (ItemData.getInstance().getTemplate(itemId) == null)
 				LOGGER.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
 			
@@ -152,7 +152,7 @@ public class VariationData: DataReaderBase
 
 	private void parseFeeElement(XElement element)
 	{
-		int itemGroupId = element.Attribute("itemGroup").GetInt32();
+		int itemGroupId = element.GetAttributeValueAsInt32("itemGroup");
 		Set<int> itemGroup = _itemGroups.get(itemGroupId);
 		int itemId = element.Attribute("itemId").GetInt32(0);
 		long itemCount = element.Attribute("itemCount").GetInt64(0);
@@ -167,14 +167,14 @@ public class VariationData: DataReaderBase
 		Map<int, VariationFee> feeByMinerals = new();
 		element.Elements("mineral").ForEach(el =>
 		{
-			int mId = el.Attribute("id").GetInt32();
+			int mId = el.GetAttributeValueAsInt32("id");
 			feeByMinerals.put(mId, fee);
 		});
 
 		element.Elements("mineralRange").ForEach(el =>
 		{
-			int fromId = el.Attribute("from").GetInt32();
-			int toId = el.Attribute("to").GetInt32();
+			int fromId = el.GetAttributeValueAsInt32("from");
+			int toId = el.GetAttributeValueAsInt32("to");
 			for (int id = fromId; id <= toId; id++)
 				feeByMinerals.put(id, fee);
 		});

@@ -34,7 +34,7 @@ public class AppearanceStone
 
 	public AppearanceStone(XElement element)
 	{
-		_id = element.Attribute("id").GetInt32();
+		_id = element.GetAttributeValueAsInt32("id");
 		_visualId = element.Attribute("visualId").GetInt32(0);
 		_cost = element.Attribute("cost").GetInt32(0);
 		_lifeTime = element.Attribute("lifeTime").GetTimeSpan(TimeSpan.Zero);

@@ -6,14 +6,11 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.Packets;
-using NLog;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct CharacterListPacket: IOutgoingPacket
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharacterListPacket));
-	
 	private static readonly int[] PAPERDOLL_ORDER =
 	[
 		Inventory.PAPERDOLL_UNDER,
@@ -90,15 +87,15 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_HAIR2
 	];
 
-	private readonly int _accountId;
+	private readonly int _playKey1;
 	private readonly string _accountName;
 	private readonly int _activeId;
 	private readonly ImmutableArray<CharSelectInfoPackage> _characterPackages;
 
-	public CharacterListPacket(int accountId, string accountName, ImmutableArray<CharSelectInfoPackage> characters,
+	public CharacterListPacket(int playKey1, string accountName, ImmutableArray<CharSelectInfoPackage> characters,
 		int activeId = -1)
 	{
-		_accountId = accountId;
+		_playKey1 = playKey1;
 		_accountName = accountName;
 		_characterPackages = characters;
 		_activeId = activeId;
@@ -112,7 +109,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		writer.WriteInt32(size); // Created character count
 		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
 		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
-		writer.WriteByte(1); // 0=can't play, 1=can play free until level 85, 2=100% free play
+		writer.WriteByte(2); // 0=can't play, 1=can play free until level 85, 2=100% free play
 		writer.WriteInt32(2); // if 1, Korean client
 		writer.WriteByte(0); // Gift message for inactive accounts // 152
 		writer.WriteByte(0); // Balthus Knights, if 1 suggests premium account
@@ -137,7 +134,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteString(charInfoPackage.getName()); // Character name
 			writer.WriteInt32(charInfoPackage.getObjectId()); // Character ID
 			writer.WriteString(_accountName); // Account name
-			writer.WriteInt32(_accountId); // Account ID
+			writer.WriteInt32(_playKey1); // Account ID
 			writer.WriteInt32(0); // Clan ID
 			writer.WriteInt32(0); // Builder level
 			writer.WriteInt32((int)charInfoPackage.getSex()); // Sex

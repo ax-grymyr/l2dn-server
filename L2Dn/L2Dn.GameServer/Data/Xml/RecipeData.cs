@@ -44,46 +44,46 @@ public class RecipeData: DataReaderBase
 		List<RecipeStatHolder> recipeStatUseList = new();
 		List<RecipeStatHolder> recipeAltStatChangeList = new();
 
-		int id = element.Attribute("id").GetInt32();
-		int recipeId = element.Attribute("recipeId").GetInt32();
-		string name = element.Attribute("name").GetString();
-		int craftLevel = element.Attribute("craftLevel").GetInt32();
-		bool isDwarvenRecipe = element.Attribute("type").GetString() == "dwarven";
+		int id = element.GetAttributeValueAsInt32("id");
+		int recipeId = element.GetAttributeValueAsInt32("recipeId");
+		string name = element.GetAttributeValueAsString("name");
+		int craftLevel = element.GetAttributeValueAsInt32("craftLevel");
+		bool isDwarvenRecipe = element.GetAttributeValueAsString("type") == "dwarven";
 		int successRate = element.Attribute("successRate").GetInt32(100);
 
 		element.Elements("statUse").ForEach(el =>
 		{
-			string statName = el.Attribute("name").GetString();
-			int value = el.Attribute("value").GetInt32();
+			string statName = el.GetAttributeValueAsString("name");
+			int value = el.GetAttributeValueAsInt32("value");
 			recipeStatUseList.add(new RecipeStatHolder(statName, value));
 		});
 
 		element.Elements("altStatChange").ForEach(el =>
 		{
-			string statName = el.Attribute("name").GetString();
-			int value = el.Attribute("value").GetInt32();
+			string statName = el.GetAttributeValueAsString("name");
+			int value = el.GetAttributeValueAsInt32("value");
 			recipeAltStatChangeList.add(new RecipeStatHolder(statName, value));
 		});
 
 		element.Elements("ingredient").ForEach(el =>
 		{
-			int ingId = el.Attribute("id").GetInt32();
-			int ingCount = el.Attribute("count").GetInt32();
+			int ingId = el.GetAttributeValueAsInt32("id");
+			int ingCount = el.GetAttributeValueAsInt32("count");
 			recipePartList.add(new RecipeHolder(ingId, ingCount));
 		});
 
 		XElement prodElem = element.Elements("production").Single();
-		int prodId = prodElem.Attribute("id").GetInt32();
-		int prodCount = prodElem.Attribute("count").GetInt32();
+		int prodId = prodElem.GetAttributeValueAsInt32("id");
+		int prodCount = prodElem.GetAttributeValueAsInt32("count");
 		RecipeHolder production = new RecipeHolder(prodId, prodCount);
 
 		RecipeRareHolder? rareProduction = null;
 		XElement? prodRareElem = element.Elements("productionRare").SingleOrDefault();
 		if (prodRareElem != null)
 		{
-			prodId = prodRareElem.Attribute("id").GetInt32();
-			prodCount = prodRareElem.Attribute("count").GetInt32();
-			int rarity = prodRareElem.Attribute("rarity").GetInt32();
+			prodId = prodRareElem.GetAttributeValueAsInt32("id");
+			prodCount = prodRareElem.GetAttributeValueAsInt32("count");
+			int rarity = prodRareElem.GetAttributeValueAsInt32("rarity");
 			rareProduction = new RecipeRareHolder(prodId, prodCount, rarity);
 		}
 

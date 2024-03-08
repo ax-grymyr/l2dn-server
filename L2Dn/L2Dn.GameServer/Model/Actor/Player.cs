@@ -15231,7 +15231,7 @@ public class Player: Playable
 		return null;
 	}
 	
-	public void startTimedHuntingZone(int zoneId, long delay)
+	public void startTimedHuntingZone(int zoneId, DateTime delay)
 	{
 		// Stop previous task.
 		stopTimedHuntingZoneTask();

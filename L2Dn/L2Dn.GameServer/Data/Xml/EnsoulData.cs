@@ -45,7 +45,7 @@ public class EnsoulData: DataReaderBase
 	
 	private void parseFees(XElement element)
 	{
-		int stoneId = element.Attribute("stoneId").GetInt32();
+		int stoneId = element.GetAttributeValueAsInt32("stoneId");
 		EnsoulFee fee = new EnsoulFee(stoneId);
 		
 		element.Elements("first").ForEach(e => parseFee(e, fee, 0));
@@ -61,43 +61,43 @@ public class EnsoulData: DataReaderBase
 	
 	private void parseFee(XElement element, EnsoulFee fee, int index)
 	{
-		int id = element.Attribute("itemId").GetInt32();
-		int count = element.Attribute("count").GetInt32();
+		int id = element.GetAttributeValueAsInt32("itemId");
+		int count = element.GetAttributeValueAsInt32("count");
 		fee.setEnsoul(index, new ItemHolder(id, count));
 		_ensoulFees.put(fee.getStoneId(), fee);
 	}
 	
 	private void parseReFee(XElement element, EnsoulFee fee, int index)
 	{
-		int id = element.Attribute("itemId").GetInt32();
-		int count = element.Attribute("count").GetInt32();
+		int id = element.GetAttributeValueAsInt32("itemId");
+		int count = element.GetAttributeValueAsInt32("count");
 		fee.setResoul(index, new ItemHolder(id, count));
 	}
 	
 	private void parseRemove(XElement element, EnsoulFee fee)
 	{
-		int id = element.Attribute("itemId").GetInt32();
-		int count = element.Attribute("count").GetInt32();
+		int id = element.GetAttributeValueAsInt32("itemId");
+		int count = element.GetAttributeValueAsInt32("count");
 		fee.addRemovalFee(new ItemHolder(id, count));
 	}
 	
 	private void parseOptions(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		string name = element.Attribute("name").GetString();
-		string desc = element.Attribute("desc").GetString();
-		int skillId = element.Attribute("skillId").GetInt32();
-		int skillLevel = element.Attribute("skillLevel").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		string name = element.GetAttributeValueAsString("name");
+		string desc = element.GetAttributeValueAsString("desc");
+		int skillId = element.GetAttributeValueAsInt32("skillId");
+		int skillLevel = element.GetAttributeValueAsInt32("skillLevel");
 		EnsoulOption option = new EnsoulOption(id, name, desc, skillId, skillLevel);
 		_ensoulOptions.put(option.getId(), option);
 	}
 	
 	private void parseStones(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int slotType = element.Attribute("slotType").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		int slotType = element.GetAttributeValueAsInt32("slotType");
 		EnsoulStone stone = new EnsoulStone(id, slotType);
-		element.Elements("option").ForEach(optionNode => stone.addOption(optionNode.Attribute("id").GetInt32()));
+		element.Elements("option").ForEach(optionNode => stone.addOption(optionNode.GetAttributeValueAsInt32("id")));
 		_ensoulStones.put(stone.getId(), stone);
 		((EtcItem) ItemData.getInstance().getTemplate(stone.getId())).setEnsoulStone();
 	}

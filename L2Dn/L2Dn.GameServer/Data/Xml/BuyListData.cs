@@ -84,7 +84,7 @@ public class BuyListData: DataReaderBase
 
 		document.Elements("list").Elements("item").ForEach(node =>
 		{
-			int itemId = node.Attribute("id").GetInt32();
+			int itemId = node.GetAttributeValueAsInt32("id");
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 			if (item != null)
 			{

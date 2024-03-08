@@ -38,7 +38,7 @@ public class EnchantItemOptionsData: DataReaderBase
 
 	private void parseItem(XElement element)
 	{
-		int itemId = element.Attribute("id").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("id");
 		ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
 		if (template == null)
 		{
@@ -48,7 +48,7 @@ public class EnchantItemOptionsData: DataReaderBase
 
 		element.Elements("options").ForEach(optionsElement =>
 		{
-			int level = optionsElement.Attribute("level").GetInt32();
+			int level = optionsElement.GetAttributeValueAsInt32("level");
 			EnchantOptions op = new EnchantOptions(level);
 			for (byte i = 0; i < 3; i++)
 			{

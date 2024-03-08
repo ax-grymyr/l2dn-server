@@ -38,7 +38,7 @@ public class CombinationItemsData: DataReaderBase
 
 		element.Elements("reward").ForEach(el =>
 		{
-			int id = el.Attribute("id").GetInt32();
+			int id = el.GetAttributeValueAsInt32("id");
 			int count = el.Attribute("count").GetInt32(1);
 			int enchant = el.Attribute("enchant").GetInt32(0);
 			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();

@@ -45,10 +45,10 @@ public class HuntPassData: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int itemId = element.Attribute("id").GetInt32();
-		int itemCount = element.Attribute("count").GetInt32();
-		int premiumitemId = element.Attribute("premiumId").GetInt32();
-		int premiumitemCount = element.Attribute("premiumCount").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("id");
+		int itemCount = element.GetAttributeValueAsInt32("count");
+		int premiumitemId = element.GetAttributeValueAsInt32("premiumId");
+		int premiumitemCount = element.GetAttributeValueAsInt32("premiumCount");
 		if (ItemData.getInstance().getTemplate(itemId) == null)
 		{
 			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");

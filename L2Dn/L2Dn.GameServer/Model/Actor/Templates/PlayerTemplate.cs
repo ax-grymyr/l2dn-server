@@ -28,7 +28,7 @@ public class PlayerTemplate : CreatureTemplate
 	
 	public PlayerTemplate(StatSet set, List<Location> creationPoints): base(set)
 	{
-		_classId = (CharacterClass)set.getInt("classId");
+		_classId = set.getEnum<CharacterClass>("classId");
 		setRace(_classId.GetRace());
 		_baseHp = new float[ExperienceData.getInstance().getMaxLevel()];
 		_baseMp = new float[ExperienceData.getInstance().getMaxLevel()];

@@ -30,7 +30,7 @@ public class ActionData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ActionData.xml");
 		document.Elements("list").Elements("action").ForEach(node =>
 		{
-			int id = node.Attribute("id").GetInt32();
+			int id = node.GetAttributeValueAsInt32("id");
 			string handler = node.Attribute("handler").GetString("None");
 			int optionId = node.Attribute("optionId").GetInt32(0);
 			

@@ -29,7 +29,7 @@ public class NewQuestCondition
 		
 		element?.Elements("param").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
+			string name = el.GetAttributeValueAsString("name");
 			string value = (string)el;
 
 			switch (name)

@@ -52,14 +52,14 @@ public class HennaPatternPotentialData: DataReaderBase
 
 	private void parseFeeElement(XElement element)
 	{
-		int step = element.Attribute("step").GetInt32();
+		int step = element.GetAttributeValueAsInt32("step");
 		int dailyCount = 0;
 		Map<int, double> enchantExp = new();
 		List<ItemHolder> items = new();
 		
 		element.Elements("requiredItem").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.Attribute("count").GetInt64(1);
 			items.add(new ItemHolder(itemId, itemCount));
 		});
@@ -72,8 +72,8 @@ public class HennaPatternPotentialData: DataReaderBase
 		
 		element.Elements("enchantExp").ForEach(el =>
 		{
-			int count = el.Attribute("count").GetInt32();
-			double chance = el.Attribute("chance").GetDouble();
+			int count = el.GetAttributeValueAsInt32("count");
+			double chance = el.GetAttributeValueAsDouble("chance");
 			enchantExp.put(count, chance);
 		});
 
@@ -82,8 +82,8 @@ public class HennaPatternPotentialData: DataReaderBase
 
 	private void parseResetElement(XElement element)
 	{
-		int itemId = element.Attribute("itemid").GetInt32();
-		int itemCount = element.Attribute("count").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("itemid");
+		int itemCount = element.GetAttributeValueAsInt32("count");
 		if (ItemData.getInstance().getTemplate(itemId) == null)
 		{
 			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");
@@ -96,8 +96,8 @@ public class HennaPatternPotentialData: DataReaderBase
 
 	private void parseHiddenPowerElement(XElement element)
 	{
-		int level = element.Attribute("level").GetInt32();
-		int exp = element.Attribute("exp").GetInt32();
+		int level = element.GetAttributeValueAsInt32("level");
+		int exp = element.GetAttributeValueAsInt32("exp");
 		_potenExpTable.put(level, exp);
 		if (MAX_POTEN_LEVEL < level)
 		{
@@ -111,10 +111,10 @@ public class HennaPatternPotentialData: DataReaderBase
 
 	private void parseHiddenPotenElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int slotId = element.Attribute("slotId").GetInt32();
-		int maxSkillLevel = element.Attribute("maxSkillLevel").GetInt32();
-		int skillId = element.Attribute("skillId").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		int slotId = element.GetAttributeValueAsInt32("slotId");
+		int maxSkillLevel = element.GetAttributeValueAsInt32("maxSkillLevel");
+		int skillId = element.GetAttributeValueAsInt32("skillId");
 		_potentials.put(id, new DyePotential(id, slotId, skillId, maxSkillLevel));
 	}
 	

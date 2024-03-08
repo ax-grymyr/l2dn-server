@@ -34,8 +34,8 @@ public class ClanLevelData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ClanLevelData.xml");
 		document.Elements("list").Elements("clan").ForEach(element =>
 		{
-			int level = element.Attribute("level").GetInt32();
-			int exp = element.Attribute("exp").GetInt32();
+			int level = element.GetAttributeValueAsInt32("level");
+			int exp = element.GetAttributeValueAsInt32("exp");
 						
 			if (MAX_CLAN_LEVEL < level)
 			{

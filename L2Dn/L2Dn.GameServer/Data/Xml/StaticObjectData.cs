@@ -39,15 +39,15 @@ public class StaticObjectData: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		int type = element.Attribute("type").GetInt32(0);
-		string name = element.Attribute("name").GetString();
+		string name = element.GetAttributeValueAsString("name");
 		string texture = element.Attribute("texture").GetString("none");
 		int mapX = element.Attribute("map_x").GetInt32(0);
 		int mapY = element.Attribute("map_y").GetInt32(0);
-		int x = element.Attribute("x").GetInt32();
-		int y = element.Attribute("y").GetInt32();
-		int z = element.Attribute("z").GetInt32();
+		int x = element.GetAttributeValueAsInt32("x");
+		int y = element.GetAttributeValueAsInt32("y");
+		int z = element.GetAttributeValueAsInt32("z");
 				
 		StaticObject obj = new StaticObject(new CreatureTemplate(new StatSet()), id);
 		obj.setType(type);

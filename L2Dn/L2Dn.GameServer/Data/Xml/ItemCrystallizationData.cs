@@ -83,9 +83,9 @@ public class ItemCrystallizationData: DataReaderBase
 
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			long itemCount = el.Attribute("count").GetInt64();
-			double itemChance = el.Attribute("chance").GetDouble();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			long itemCount = el.GetAttributeValueAsInt64("count");
+			double itemChance = el.GetAttributeValueAsDouble("chance");
 			crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
 		});
 
@@ -94,14 +94,14 @@ public class ItemCrystallizationData: DataReaderBase
 
 	private void parseItem(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		List<ItemChanceHolder> crystallizeRewards = new();
 		
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			long itemCount = el.Attribute("count").GetInt64();
-			double itemChance = el.Attribute("chance").GetDouble();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			long itemCount = el.GetAttributeValueAsInt64("count");
+			double itemChance = el.GetAttributeValueAsDouble("chance");
 			crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
 		});
 
@@ -219,9 +219,9 @@ public class ItemCrystallizationData: DataReaderBase
 		RewardItemsOnFailure holder = new RewardItemsOnFailure();
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			int enchantLevel = el.Attribute("enchant").GetInt32();
-			double chance = el.Attribute("chance").GetDouble();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			int enchantLevel = el.GetAttributeValueAsInt32("enchant");
+			double chance = el.GetAttributeValueAsDouble("chance");
 			foreach (CrystalType grade in Enum.GetValues<CrystalType>())
 			{
 				long count = el.Attribute("amount" + grade).GetInt64(-1);

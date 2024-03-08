@@ -33,9 +33,9 @@ public class PetSkillData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int npcId = element.Attribute("npcId").GetInt32();
-		int skillId = element.Attribute("skillId").GetInt32();
-		int skillLevel = element.Attribute("skillLevel").GetInt32();
+		int npcId = element.GetAttributeValueAsInt32("npcId");
+		int skillId = element.GetAttributeValueAsInt32("skillId");
+		int skillLevel = element.GetAttributeValueAsInt32("skillLevel");
 		Map<long, SkillHolder> skillTree = _skillTrees.get(npcId);
 		if (skillTree == null)
 		{

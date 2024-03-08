@@ -39,7 +39,7 @@ public class HennaCombinationData: DataReaderBase
 		CombinationHenna henna = new CombinationHenna(element);
 		element.Elements("reward").ForEach(el =>
 		{
-			int hennaId = el.Attribute("dyeId").GetInt32();
+			int hennaId = el.GetAttributeValueAsInt32("dyeId");
 			int id = el.Attribute("id").GetInt32(-1);
 			int count = el.Attribute("count").GetInt32(0);
 			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();

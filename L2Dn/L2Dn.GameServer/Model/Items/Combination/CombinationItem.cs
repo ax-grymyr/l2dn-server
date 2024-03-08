@@ -20,9 +20,9 @@ public class CombinationItem
 
 	public CombinationItem(XElement element)
 	{
-		_itemOne = element.Attribute("one").GetInt32();
+		_itemOne = element.GetAttributeValueAsInt32("one");
 		_enchantOne = element.Attribute("enchantOne").GetInt32(0);
-		_itemTwo = element.Attribute("two").GetInt32();
+		_itemTwo = element.GetAttributeValueAsInt32("two");
 		_enchantTwo = element.Attribute("enchantTwo").GetInt32(0);
 		_commission = element.Attribute("commission").GetInt32(0);
 		_chance = element.Attribute("chance").GetFloat(33);

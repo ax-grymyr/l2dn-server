@@ -39,8 +39,8 @@ public static class BaseStatUtil
 			Dictionary<int, double> values = new Dictionary<int, double>();
 			foreach (XElement el in element.Elements("stat"))
 			{
-				int value = el.Attribute("value").GetInt32();
-				double bonus = el.Attribute("bonus").GetDouble();
+				int value = el.GetAttributeValueAsInt32("value");
+				double bonus = el.GetAttributeValueAsDouble("bonus");
 				values.Add(value, bonus);
 			}
 

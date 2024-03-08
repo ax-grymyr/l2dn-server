@@ -708,8 +708,8 @@ public class Formulas
 			}
 		}
 		
-		int activateRate = skill.getActivateRate();
-		if ((activateRate == -1))
+		double? activateRate = skill.getActivateRate();
+		if ((activateRate is null))
 		{
 			return true;
 		}
@@ -721,7 +721,7 @@ public class Formulas
 		}
 		
 		double targetBasicProperty = getAbnormalResist(skill.getBasicProperty(), target);
-		double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate) + 30.0) - targetBasicProperty);
+		double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate.Value) + 30.0) - targetBasicProperty);
 		double elementMod = calcAttributeBonus(attacker, target, skill);
 		double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);

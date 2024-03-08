@@ -40,8 +40,8 @@ public class AttendanceRewardData: DataReaderBase
 
 	private void loadElement(XElement element)
 	{
-		int itemId = element.Attribute("id").GetInt32();
-		int itemCount = element.Attribute("count").GetInt32();
+		int itemId = element.GetAttributeValueAsInt32("id");
+		int itemCount = element.GetAttributeValueAsInt32("count");
 		if (ItemData.getInstance().getTemplate(itemId) == null)
 		{
 			LOGGER.Info(GetType().Name + ": Item with id " + itemId + " does not exist.");

@@ -33,10 +33,10 @@ public class PrimeShopGroup
 
 	public PrimeShopGroup(XElement element, List<PrimeShopItem> items)
 	{
-		_brId = element.Attribute("id").GetInt32();
+		_brId = element.GetAttributeValueAsInt32("id");
 		_category = element.Attribute("cat").GetInt32(0);
 		_paymentType = element.Attribute("paymentType").GetInt32(0);
-		_price = element.Attribute("price").GetInt32();
+		_price = element.GetAttributeValueAsInt32("price");
 		_panelType = element.Attribute("panelType").GetInt32(0);
 		_recommended = element.Attribute("recommended").GetInt32(0);
 		_start = element.Attribute("startSale").GetInt32(0);

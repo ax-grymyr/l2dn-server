@@ -47,30 +47,30 @@ public class ShuttleData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		int x = element.Attribute("x").GetInt32(0);
 		int y = element.Attribute("y").GetInt32(0);
 		int z = element.Attribute("z").GetInt32(0);
 		int heading = element.Attribute("heading").GetInt32(0);
 		ShuttleDataHolder data = new ShuttleDataHolder(id, new Location(x, y, z, heading));
 
-		//string name = element.Attribute("name").GetString();
+		//string name = element.GetAttributeValueAsString("name");
 
 		element.Elements("doors").Elements("door").ForEach(el =>
 		{
-			int doorId = el.Attribute("id").GetInt32();
+			int doorId = el.GetAttributeValueAsInt32("id");
 			data.addDoor(doorId);
 		});
 
 		element.Elements("stops").Elements("stop").ForEach(el =>
 		{
-			int stopId = el.Attribute("id").GetInt32();
+			int stopId = el.GetAttributeValueAsInt32("id");
 			ShuttleStop stop = new ShuttleStop(stopId);
 			el.Elements("dimension").ForEach(e =>
 			{
-				int stopX = e.Attribute("x").GetInt32();
-				int stopY = e.Attribute("y").GetInt32();
-				int stopZ = e.Attribute("z").GetInt32();
+				int stopX = e.GetAttributeValueAsInt32("x");
+				int stopY = e.GetAttributeValueAsInt32("y");
+				int stopZ = e.GetAttributeValueAsInt32("z");
 				stop.addDimension(new Location(stopX, stopY, stopZ));
 			});
 
@@ -82,10 +82,10 @@ public class ShuttleData: DataReaderBase
 			List<Location> locs = new();
 			el.Elements("loc").ForEach(e =>
 			{
-				int locX = e.Attribute("x").GetInt32();
-				int locY = e.Attribute("y").GetInt32();
-				int locZ = e.Attribute("z").GetInt32();
-				int locHeading = e.Attribute("heading").GetInt32();
+				int locX = e.GetAttributeValueAsInt32("x");
+				int locY = e.GetAttributeValueAsInt32("y");
+				int locZ = e.GetAttributeValueAsInt32("z");
+				int locHeading = e.GetAttributeValueAsInt32("heading");
 				locs.add(new Location(locX, locY, locZ, locHeading));
 			});
 										

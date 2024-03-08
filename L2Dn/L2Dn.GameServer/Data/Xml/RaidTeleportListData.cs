@@ -33,11 +33,11 @@ public class RaidTeleportListData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int tpId = element.Attribute("id").GetInt32();
-		int x = element.Attribute("x").GetInt32();
-		int y = element.Attribute("y").GetInt32();
-		int z = element.Attribute("z").GetInt32();
-		int tpPrice = element.Attribute("price").GetInt32();
+		int tpId = element.GetAttributeValueAsInt32("id");
+		int x = element.GetAttributeValueAsInt32("x");
+		int y = element.GetAttributeValueAsInt32("y");
+		int z = element.GetAttributeValueAsInt32("z");
+		int tpPrice = element.GetAttributeValueAsInt32("price");
 		_teleports.put(tpId, new TeleportListHolder(tpId, x, y, z, tpPrice, false));
 	}
 

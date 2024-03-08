@@ -55,7 +55,7 @@ public class ArmorSetData: DataReaderBase
 
 	private void loadElement(string filePath, XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		int minimumPieces = element.Attribute("minimumPieces").GetInt32(0);
 		bool isVisual = element.Attribute("visual").GetBoolean(false);
 		Set<int> requiredItems = new();
@@ -67,7 +67,7 @@ public class ArmorSetData: DataReaderBase
 		{
 			el.Elements("item").ForEach(e =>
 			{
-				int itemId = e.Attribute("id").GetInt32();
+				int itemId = e.GetAttributeValueAsInt32("id");
 				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 				if (item == null)
 				{
@@ -85,7 +85,7 @@ public class ArmorSetData: DataReaderBase
 		{
 			el.Elements("item").ForEach(e =>
 			{
-				int itemId = e.Attribute("id").GetInt32();
+				int itemId = e.GetAttributeValueAsInt32("id");
 				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 				if (item == null)
 				{
@@ -103,8 +103,8 @@ public class ArmorSetData: DataReaderBase
 		{
 			el.Elements("skill").ForEach(e =>
 			{
-				int skillId = e.Attribute("id").GetInt32();
-				int skillLevel = e.Attribute("level").GetInt32();
+				int skillId = e.GetAttributeValueAsInt32("id");
+				int skillLevel = e.GetAttributeValueAsInt32("level");
 				int minPieces = e.Attribute("minimumPieces").GetInt32(minimumPieces);
 				int minEnchant = e.Attribute("minimumEnchant").GetInt32(0);
 				bool isOptional = e.Attribute("optional").GetBoolean(false);
@@ -120,7 +120,7 @@ public class ArmorSetData: DataReaderBase
 			el.Elements("stat").ForEach(e =>
 			{
 				BaseStat stat = e.Attribute("type").GetEnum<BaseStat>();
-				double val = e.Attribute("val").GetDouble();
+				double val = e.GetAttributeValueAsDouble("val");
 				stats.put(stat, val);
 			});
 		});

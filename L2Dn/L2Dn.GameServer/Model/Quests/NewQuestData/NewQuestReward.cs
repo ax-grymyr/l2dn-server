@@ -24,7 +24,7 @@ public class NewQuestReward
 		
 		element?.Elements("param").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
+			string name = el.GetAttributeValueAsString("name");
 			switch (name)
 			{
 				case "rewardExp":
@@ -47,8 +47,8 @@ public class NewQuestReward
 		
 		element?.Elements("items").Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			int itemCount = el.Attribute("count").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			int itemCount = el.GetAttributeValueAsInt32("count");
 			ItemHolder rewardItem = new ItemHolder(itemId, itemCount);
 			rewardItems.Add(rewardItem);
 		});

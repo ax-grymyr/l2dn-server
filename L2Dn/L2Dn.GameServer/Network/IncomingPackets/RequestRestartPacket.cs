@@ -70,7 +70,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         connection.Send(new RestartResponsePacket());
 		
         // Send character list
-        CharacterListPacket characterListPacket = new(session.AccountId, session.AccountName, session.Characters);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

@@ -23,6 +23,12 @@ namespace L2Dn.GameServer.Data;
 public class BotReportTable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(BotReportTable));
+
+	public const int ATTACK_ACTION_BLOCK_ID = -1;
+	public const int TRADE_ACTION_BLOCK_ID = -2;
+	public const int PARTY_ACTION_BLOCK_ID = -3;
+	public const int ACTION_BLOCK_ID = -4;
+	public const int CHAT_BLOCK_ID = -5;
 	
 	private Map<int, DateTime> _ipRegistry;
 	private Map<int, ReporterCharData> _charRegistry;

@@ -197,6 +197,8 @@ public static class CharacterClassUtil
 
 public class CharacterClassInfo
 {
+	private static readonly Dictionary<CharacterClass, CharacterClassInfo> _classIdMap = new();
+
 	public static readonly CharacterClassInfo FIGHTER = new(CharacterClass.FIGHTER, false, Race.HUMAN, null);
 	
 	public static readonly CharacterClassInfo WARRIOR = new(CharacterClass.WARRIOR, false, Race.HUMAN, CharacterClass.FIGHTER);
@@ -375,8 +377,6 @@ public class CharacterClassInfo
 	/** List of available Class for next transfer **/
 	private readonly List<CharacterClassInfo> _nextClassIds = new();
 	
-	private static Dictionary<CharacterClass, CharacterClassInfo> _classIdMap = new();
-	
 	public static CharacterClassInfo GetClassInfo(CharacterClass cId)
 	{
 		return _classIdMap[cId];
@@ -409,7 +409,7 @@ public class CharacterClassInfo
 		_isSummoner = pIsSummoner;
 		_race = race;
 		_parent = pParent;
-
+	
 		_classIdMap[pId] = this;
 		
 		if (_parent != null)

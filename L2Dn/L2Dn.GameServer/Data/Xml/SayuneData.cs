@@ -32,7 +32,7 @@ public class SayuneData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		SayuneEntry map = new SayuneEntry(id);
 		parseEntries(map, element);
 		_maps.put(map.getId(), map);
@@ -44,10 +44,10 @@ public class SayuneData: DataReaderBase
 		{
 			if (el.Name.LocalName == "selector" || el.Name.LocalName == "choice" || el.Name.LocalName == "loc")
 			{
-				int id = el.Attribute("id").GetInt32();
-				int x = el.Attribute("x").GetInt32();
-				int y = el.Attribute("y").GetInt32();
-				int z = el.Attribute("z").GetInt32();
+				int id = el.GetAttributeValueAsInt32("id");
+				int x = el.GetAttributeValueAsInt32("x");
+				int y = el.GetAttributeValueAsInt32("y");
+				int z = el.GetAttributeValueAsInt32("z");
 				parseEntries(lastEntry.addInnerEntry(new SayuneEntry(el.Name.LocalName == "selector", id, x, y, z)), el);
 			}
 		});

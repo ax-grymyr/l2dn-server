@@ -33,15 +33,15 @@ public class SubjugationData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int category = element.Attribute("category").GetInt32();
-		List<int[]> hottimes = element.Attribute("hottimes").GetString().Split(";")
+		int category = element.GetAttributeValueAsInt32("category");
+		List<int[]> hottimes = element.GetAttributeValueAsString("hottimes").Split(";")
 			.Select(it => it.Split("-").Select(int.Parse).ToArray()).ToList();
 		
 		Map<int, int> npcs = new();
 		element.Elements("npc").ForEach(el =>
 		{
-			int npcId = el.Attribute("id").GetInt32();
-			int points = el.Attribute("points").GetInt32();
+			int npcId = el.GetAttributeValueAsInt32("id");
+			int points = el.GetAttributeValueAsInt32("points");
 			npcs.put(npcId, points);
 		});
 

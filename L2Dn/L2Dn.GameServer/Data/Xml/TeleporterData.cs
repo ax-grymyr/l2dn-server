@@ -41,9 +41,9 @@ public class TeleporterData: DataReaderBase
 		Map<String, TeleportHolder> teleList = new();
 
 		// Parse npc node child
-		int npcId = element.Attribute("id").GetInt32();
+		int npcId = element.GetAttributeValueAsInt32("id");
 
-		element.Elements("npcs").Elements("npc").Select(e => e.Attribute("id").GetInt32())
+		element.Elements("npcs").Elements("npc").Select(e => e.GetAttributeValueAsInt32("id"))
 			.ForEach(npcId => registerTeleportList(npcId, teleList));
 
 		element.Elements("teleport").ForEach(el =>

@@ -42,15 +42,15 @@ public class CollectionData: DataReaderBase
 
 	private void loadElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int optionId = element.Attribute("optionId").GetInt32();
-		int category = element.Attribute("category").GetInt32();
-		int completeCount = element.Attribute("completeCount").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		int optionId = element.GetAttributeValueAsInt32("optionId");
+		int category = element.GetAttributeValueAsInt32("category");
+		int completeCount = element.GetAttributeValueAsInt32("completeCount");
 		List<ItemEnchantHolder> items = new();
 		
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.Attribute("count").GetInt64(1);
 			int itemEnchantLevel = el.Attribute("enchantLevel").GetInt32(0);
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);

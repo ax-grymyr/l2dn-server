@@ -12,7 +12,7 @@ public struct RequestGoToLobbyPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        CharacterListPacket characterListPacket = new(session.AccountId, session.AccountName, session.Characters);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
 
         return ValueTask.CompletedTask;

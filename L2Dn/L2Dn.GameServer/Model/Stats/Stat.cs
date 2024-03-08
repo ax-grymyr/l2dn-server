@@ -646,6 +646,15 @@ public static class StatUtil
 			new(Stat.RESURRECTION_FEE_MODIFIER, "resurrectionFeeModifier"),
 		}.ToImmutableDictionary(s => s.Stat);
 
+	public static Stat SearchByXmlName(string str)
+	{
+		var kvp = _stats.FirstOrDefault(r => string.Equals(r.Value.XmlName, str, StringComparison.OrdinalIgnoreCase));
+		if (kvp.Value is null)
+			throw new ArgumentException("Invalid stat name");
+		
+		return kvp.Key;
+	}
+
 	public static StatInfo? GetInfo(this Stat stat) => CollectionExtensions.GetValueOrDefault(_stats, stat);
 
 	public static double DoFinalize(this Stat stat, Creature creature, double? baseValue)

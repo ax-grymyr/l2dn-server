@@ -33,15 +33,15 @@ public class MagicLampData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int minLevel = element.Attribute("fromLevel").GetInt32();
-		int maxLevel = element.Attribute("toLevel").GetInt32();
+		int minLevel = element.GetAttributeValueAsInt32("fromLevel");
+		int maxLevel = element.GetAttributeValueAsInt32("toLevel");
 		
 		element.Elements("lamp").ForEach(el =>
 		{
 			LampType type = el.Attribute("type").GetEnum<LampType>();
-			long exp = el.Attribute("exp").GetInt64();
-			long sp = el.Attribute("sp").GetInt64();
-			double chance = el.Attribute("chance").GetDouble();
+			long exp = el.GetAttributeValueAsInt64("exp");
+			long sp = el.GetAttributeValueAsInt64("sp");
+			double chance = el.GetAttributeValueAsDouble("chance");
 			
 			LAMPS.add(new MagicLampDataHolder(type, exp, sp, chance, minLevel, maxLevel));
 		});

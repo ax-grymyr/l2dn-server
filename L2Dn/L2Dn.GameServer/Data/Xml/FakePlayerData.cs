@@ -48,7 +48,7 @@ public class FakePlayerData: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int npcId = element.Attribute("npcId").GetInt32();
+		int npcId = element.GetAttributeValueAsInt32("npcId");
 		NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
 		String name = template.getName();
 		if (CharInfoTable.getInstance().getIdByName(name) > 0)

@@ -85,7 +85,7 @@ public class Skill: IIdentifiable
 	
 	private readonly int _magicLevel;
 	private readonly int _lvlBonusRate;
-	private readonly int _activateRate;
+	private readonly double? _activateRate;
 	private readonly int _minChance;
 	private readonly int _maxChance;
 	
@@ -191,7 +191,7 @@ public class Skill: IIdentifiable
 		_abnormalLevel = set.getInt("abnormalLevel", 0);
 		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
-		TimeSpan abnormalTime = TimeSpan.FromMilliseconds(set.getInt("abnormalTime", 0));
+		TimeSpan abnormalTime = TimeSpan.FromMilliseconds(set.getDouble("abnormalTime", 0));
 		if (Config.ENABLE_MODIFY_SKILL_DURATION && Config.SKILL_DURATION_LIST.ContainsKey(_id) && (_operateType != SkillOperateType.T))
 		{
 			if ((_level < 100) || (_level > 140))
@@ -286,7 +286,7 @@ public class Skill: IIdentifiable
 		
 		_magicLevel = set.getInt("magicLevel", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
-		_activateRate = set.getInt("activateRate", -1);
+		_activateRate = set.contains("activateRate") ? set.getDouble("activateRate") : null;
 		_minChance = set.getInt("minChance", Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
 		_maxChance = set.getInt("maxChance", Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
 		_nextAction = set.getEnum("nextAction", NextActionType.NONE);
@@ -482,7 +482,7 @@ public class Skill: IIdentifiable
 		return _lvlBonusRate;
 	}
 	
-	public int getActivateRate()
+	public double? getActivateRate()
 	{
 		return _activateRate;
 	}

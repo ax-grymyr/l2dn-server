@@ -45,13 +45,13 @@ public class PrimeShopData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		List<PrimeShopItem> items = new();
 
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("itemId").GetInt32();
-			int count = el.Attribute("count").GetInt32();
+			int itemId = el.GetAttributeValueAsInt32("itemId");
+			int count = el.GetAttributeValueAsInt32("count");
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{

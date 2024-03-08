@@ -56,7 +56,7 @@ public struct CharacterDeletePacket: IIncomingPacket<GameSession>
             _logger.Error(e);
         }
 
-        CharacterListPacket characterListPacket = new(session.AccountId, session.AccountName, session.Characters);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

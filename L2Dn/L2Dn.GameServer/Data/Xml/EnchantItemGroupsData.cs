@@ -62,13 +62,13 @@ public class EnchantItemGroupsData: DataReaderBase
 
 	private void parseEnchantRateGroup(XElement element)
 	{
-		string name = element.Attribute("name").GetString();
+		string name = element.GetAttributeValueAsString("name");
 		EnchantItemGroup group = new EnchantItemGroup(name);
 		
 		element.Elements("current").ForEach(currentElement =>
 		{
-			string range = currentElement.Attribute("enchant").GetString();
-			double chance = currentElement.Attribute("chance").GetDouble();
+			string range = currentElement.GetAttributeValueAsString("enchant");
+			double chance = currentElement.GetAttributeValueAsDouble("chance");
 			int min = -1;
 			int max = 0;
 			if (range.contains("-"))
@@ -121,27 +121,27 @@ public class EnchantItemGroupsData: DataReaderBase
 
 	private void parseEnchantScrollGroup(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		EnchantScrollGroup group = new EnchantScrollGroup(id);
 		
 		element.Elements("enchantRate").ForEach(enchantElement =>
 		{
-			string name = enchantElement.Attribute("group").GetString();
+			string name = enchantElement.GetAttributeValueAsString("group");
 			EnchantRateItem rateGroup = new EnchantRateItem(name);
 			
 			enchantElement.Elements("item").ForEach(itemElement =>
 			{
 				if (itemElement.Attribute("slot") != null)
 				{
-					rateGroup.addSlot(ItemData.SLOTS.get(itemElement.Attribute("slot").GetString()));
+					rateGroup.addSlot(ItemData.SLOTS.get(itemElement.GetAttributeValueAsString("slot")));
 				}
 				if (itemElement.Attribute("magicWeapon") != null)
 				{
-					rateGroup.setMagicWeapon(itemElement.Attribute("magicWeapon").GetBoolean());
+					rateGroup.setMagicWeapon(itemElement.GetAttributeValueAsBoolean("magicWeapon"));
 				}
 				if (itemElement.Attribute("itemId") != null)
 				{
-					rateGroup.addItemId(itemElement.Attribute("itemId").GetInt32());
+					rateGroup.addItemId(itemElement.GetAttributeValueAsInt32("itemId"));
 				}
 			});
 

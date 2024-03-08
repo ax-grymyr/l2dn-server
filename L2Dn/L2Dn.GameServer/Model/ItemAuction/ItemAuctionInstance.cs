@@ -47,12 +47,12 @@ public class ItemAuctionInstance
 		{
 			try
 			{
-				int auctionItemId = el.Attribute("auctionItemId").GetInt32();
-				int auctionLength = el.Attribute("auctionLength").GetInt32();
-				long auctionInitBid = el.Attribute("auctionInitBid").GetInt32();
+				int auctionItemId = el.GetAttributeValueAsInt32("auctionItemId");
+				int auctionLength = el.GetAttributeValueAsInt32("auctionLength");
+				long auctionInitBid = el.GetAttributeValueAsInt32("auctionInitBid");
 
-				int itemId = el.Attribute("itemId").GetInt32();
-				int itemCount = el.Attribute("itemCount").GetInt32();
+				int itemId = el.GetAttributeValueAsInt32("itemId");
+				int itemCount = el.GetAttributeValueAsInt32("itemCount");
 
 				if (auctionLength < 1)
 				{

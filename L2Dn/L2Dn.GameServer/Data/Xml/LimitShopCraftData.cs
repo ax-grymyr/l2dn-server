@@ -42,8 +42,8 @@ public class LimitShopCraftData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		int category = element.Attribute("category").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
+		int category = element.GetAttributeValueAsInt32("category");
 		int minLevel = element.Attribute("minLevel").GetInt32(1);
 		int maxLevel = element.Attribute("maxLevel").GetInt32(999);
 		int[] ingredientIds = new int[5];
@@ -90,7 +90,7 @@ public class LimitShopCraftData: DataReaderBase
 
 		element.Elements("ingredient").ForEach(el =>
 		{
-			int ingredientId = el.Attribute("id").GetInt32();
+			int ingredientId = el.GetAttributeValueAsInt32("id");
 			long ingredientQuantity = el.Attribute("count").GetInt64(1);
 			int ingredientEnchant = el.Attribute("enchant").GetInt32(0);
 
@@ -171,7 +171,7 @@ public class LimitShopCraftData: DataReaderBase
 
 		element.Elements("production").ForEach(el =>
 		{
-			productionId = el.Attribute("id").GetInt32();
+			productionId = el.GetAttributeValueAsInt32("id");
 			count = el.Attribute("count").GetInt64(1);
 			chance = el.Attribute("chance").GetFloat(100f);
 			announce = el.Attribute("announce").GetBoolean(false);

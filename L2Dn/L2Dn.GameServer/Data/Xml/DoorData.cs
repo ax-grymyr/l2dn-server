@@ -48,13 +48,13 @@ public class DoorData: DataReaderBase
 
 		doorNode.Elements("nodes").ForEach(nodesEl =>
 		{
-			stat.set("nodeZ", nodesEl.Attribute("nodeZ").GetInt32());
+			stat.set("nodeZ", nodesEl.GetAttributeValueAsInt32("nodeZ"));
 			
 			int count = 0;
 			nodesEl.Elements("node").ForEach(nodeEl =>
 			{
-				stat.set("nodeX_" + count, nodeEl.Attribute("x").GetInt32());
-				stat.set("nodeY_" + count, nodeEl.Attribute("y").GetInt32());
+				stat.set("nodeX_" + count, nodeEl.GetAttributeValueAsInt32("x"));
+				stat.set("nodeY_" + count, nodeEl.GetAttributeValueAsInt32("y"));
 			});
 		});
 

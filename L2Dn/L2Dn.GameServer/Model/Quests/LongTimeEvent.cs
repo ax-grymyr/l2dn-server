@@ -125,9 +125,9 @@ public class LongTimeEvent: Quest
 			throw new InvalidOperationException("WARNING!!! " + getScriptName() + " event: bad config file!");
 		}
 
-		_eventName = root.Attribute("name").GetString();
+		_eventName = root.GetAttributeValueAsString("name");
 		_enableShrines = root.Attribute("enableShrines")?.GetBoolean() ?? false;
-		string period = root.Attribute("active").GetString();
+		string period = root.GetAttributeValueAsString("active");
 		if (period.Length == 21)
 		{
 			// dd MM yyyy-dd MM yyyy
@@ -162,10 +162,10 @@ public class LongTimeEvent: Quest
 						{
 							try
 							{
-								int itemId = d.Attribute("item").GetInt32();
-								int minCount = d.Attribute("min").GetInt32();
-								int maxCount = d.Attribute("max").GetInt32();
-								string chance = d.Attribute("chance").GetString();
+								int itemId = d.GetAttributeValueAsInt32("item");
+								int minCount = d.GetAttributeValueAsInt32("min");
+								int maxCount = d.GetAttributeValueAsInt32("max");
+								string chance = d.GetAttributeValueAsString("chance");
 								double finalChance = !chance.isEmpty() && chance.endsWith("%")
 									? double.Parse(chance.Substring(0, chance.Length - 1))
 									: 0;
@@ -222,10 +222,10 @@ public class LongTimeEvent: Quest
 						{
 							try
 							{
-								int npcId = d.Attribute("npc").GetInt32();
-								int xPos = d.Attribute("x").GetInt32();
-								int yPos = d.Attribute("y").GetInt32();
-								int zPos = d.Attribute("z").GetInt32();
+								int npcId = d.GetAttributeValueAsInt32("npc");
+								int xPos = d.GetAttributeValueAsInt32("x");
+								int yPos = d.GetAttributeValueAsInt32("y");
+								int zPos = d.GetAttributeValueAsInt32("z");
 								int heading = d.Attribute("heading")?.GetInt32() ?? 0;
 								TimeSpan respawnTime =
 									d.Attribute("respawnTime")?.GetTimeSpan() ?? TimeSpan.Zero;
@@ -282,7 +282,7 @@ public class LongTimeEvent: Quest
 			{
 				try
 				{
-					int itemId = d.Attribute("id").GetInt32();
+					int itemId = d.GetAttributeValueAsInt32("id");
 					if (ItemData.getInstance().getTemplate(itemId) == null)
 					{
 						LOGGER.Warn(getScriptName() + " event: Item " + itemId + " does not exist.");

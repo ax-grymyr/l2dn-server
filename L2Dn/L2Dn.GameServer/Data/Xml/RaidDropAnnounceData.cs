@@ -37,7 +37,7 @@ public class RaidDropAnnounceData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		ItemTemplate item = ItemData.getInstance().getTemplate(id);
 		if (item != null)
 		{

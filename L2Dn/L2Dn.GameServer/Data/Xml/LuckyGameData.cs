@@ -33,37 +33,37 @@ public class LuckyGameData: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int index = element.Attribute("index").GetInt32();
-		int turningPoints = element.Attribute("turning_point").GetInt32();
+		int index = element.GetAttributeValueAsInt32("index");
+		int turningPoints = element.GetAttributeValueAsInt32("turning_point");
 			LuckyGameDataHolder holder = new LuckyGameDataHolder(index, turningPoints);
 			
 			element.Elements("common_reward").Elements("item").ForEach(el =>
 			{
-				int id = el.Attribute("id").GetInt32();
-				double chance = el.Attribute("chance").GetDouble();
-				long count = el.Attribute("count").GetInt64();
+				int id = el.GetAttributeValueAsInt32("id");
+				double chance = el.GetAttributeValueAsDouble("chance");
+				long count = el.GetAttributeValueAsInt64("count");
 				holder.addCommonReward(new ItemChanceHolder(id, chance, count));
 			});
 			
 			element.Elements("common_reward").Elements("item").ForEach(el =>
 			{
-				int id = el.Attribute("id").GetInt32();
-				long count = el.Attribute("count").GetInt64();
-				int points = el.Attribute("points").GetInt32();
+				int id = el.GetAttributeValueAsInt32("id");
+				long count = el.GetAttributeValueAsInt64("count");
+				int points = el.GetAttributeValueAsInt32("points");
 				holder.addUniqueReward(new ItemPointHolder(id, count, points));
 			});
 
 			element.Elements("modify_reward").ForEach(el =>
 			{
-				int minGame = el.Attribute("min_game").GetInt32();
-				int maxGame = el.Attribute("max_game").GetInt32();
+				int minGame = el.GetAttributeValueAsInt32("min_game");
+				int maxGame = el.GetAttributeValueAsInt32("max_game");
 				holder.setMinModifyRewardGame(minGame);
 				holder.setMaxModifyRewardGame(maxGame);
 				el.Elements("item").ForEach(e =>
 				{
-					int id = el.Attribute("id").GetInt32();
-					double chance = el.Attribute("chance").GetDouble();
-					long count = el.Attribute("count").GetInt64();
+					int id = el.GetAttributeValueAsInt32("id");
+					double chance = el.GetAttributeValueAsDouble("chance");
+					long count = el.GetAttributeValueAsInt64("count");
 					holder.addModifyReward(new ItemChanceHolder(id, chance, count));
 				});
 			});

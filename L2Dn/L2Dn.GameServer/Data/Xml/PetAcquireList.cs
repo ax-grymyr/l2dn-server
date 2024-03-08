@@ -40,15 +40,15 @@ public class PetAcquireList: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int type = element.Attribute("type").GetInt32();
+		int type = element.GetAttributeValueAsInt32("type");
 
 		List<PetSkillAcquireHolder> list = new();
 		element.Elements("skill").ForEach(el =>
 		{
-			int id = el.Attribute("id").GetInt32();
-			int lvl = el.Attribute("lvl").GetInt32();
-			int reqLvl = el.Attribute("reqLvl").GetInt32();
-			int evolve = el.Attribute("evolve").GetInt32();
+			int id = el.GetAttributeValueAsInt32("id");
+			int lvl = el.GetAttributeValueAsInt32("lvl");
+			int reqLvl = el.GetAttributeValueAsInt32("reqLvl");
+			int evolve = el.GetAttributeValueAsInt32("evolve");
 			int item = el.Attribute("item").GetInt32(-1);
 			long itemAmount = el.Attribute("itemAmount").GetInt64(-1);
 

@@ -41,9 +41,9 @@ public class NpcNameLocalisationData: DataReaderBase
 
 				document.Elements("list").Elements("localisation").ForEach(el =>
 				{
-					int id = el.Attribute("id").GetInt32();
-					string name = el.Attribute("name").GetString();
-					string title = el.Attribute("title").GetString();
+					int id = el.GetAttributeValueAsInt32("id");
+					string name = el.GetAttributeValueAsString("name");
+					string title = el.GetAttributeValueAsString("title");
 					NPC_NAME_LOCALISATIONS.get(_lang).put(id, [name, title]);
 				});
 				

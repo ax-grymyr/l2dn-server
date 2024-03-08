@@ -85,6 +85,7 @@ public enum InstanceType
 
 public static class InstanceTypeUtil
 {
+	// TODO: this must be simple array
 	private static ImmutableSortedDictionary<InstanceType, InstanceType?> _parentInstanceTypes =
 		new (InstanceType, InstanceType?)[]
 		{
@@ -159,6 +160,23 @@ public static class InstanceTypeUtil
 	public static InstanceType? GetParent(this InstanceType instanceType)
 	{
 		return CollectionExtensions.GetValueOrDefault(_parentInstanceTypes, instanceType);
+	}
+
+	public static bool IsType(this InstanceType instanceType, InstanceType other)
+	{
+		// TODO make mask and use it
+		if (instanceType == other)
+			return true;
+
+		InstanceType? parent = instanceType.GetParent();
+		while (parent != null)
+		{
+			if (parent.Value == other)
+				return true;
+			parent = parent.Value.GetParent();
+		}
+
+		return false;
 	}
 }
 

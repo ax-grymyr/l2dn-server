@@ -22,7 +22,7 @@ public abstract class AbstractEffect
 	 * Gets the effect ticks
 	 * @return the ticks
 	 */
-	public int getTicks()
+	public virtual int getTicks()
 	{
 		return _ticks;
 	}
@@ -51,7 +51,7 @@ public abstract class AbstractEffect
 	 * @param skill
 	 * @return {@code true} if this effect land, {@code false} otherwise
 	 */
-	public bool calcSuccess(Creature effector, Creature effected, Skill skill)
+	public virtual bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return true;
 	}
@@ -64,24 +64,24 @@ public abstract class AbstractEffect
 	 * @param skill
 	 * @return {@code true} if all the start conditions are meet, {@code false} otherwise
 	 */
-	public bool canStart(Creature effector, Creature effected, Skill skill)
+	public virtual bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return true;
 	}
 	
-	public void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 	}
 	
-	public void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 	}
 	
-	public void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
 	}
 	
-	public void onExit(Creature effector, Creature effected, Skill skill)
+	public virtual void onExit(Creature effector, Creature effected, Skill skill)
 	{
 	}
 	
@@ -94,7 +94,7 @@ public abstract class AbstractEffect
 	 * @param item
 	 * @return if {@code true} this effect will continue forever, if {@code false} it will stop after abnormal time has passed
 	 */
-	public bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		return false;
 	}
@@ -103,12 +103,12 @@ public abstract class AbstractEffect
 	 * Get the effect flags.
 	 * @return bit flag for current effect
 	 */
-	public long getEffectFlags()
+	public virtual long getEffectFlags()
 	{
 		return 1L << (int)EffectFlag.NONE;
 	}
 	
-	public bool checkCondition(Object obj)
+	public virtual bool checkCondition(int id)
 	{
 		return true;
 	}
@@ -117,7 +117,7 @@ public abstract class AbstractEffect
 	 * Verify if this effect is an instant effect.
 	 * @return {@code true} if this effect is instant, {@code false} otherwise
 	 */
-	public bool isInstant()
+	public virtual bool isInstant()
 	{
 		return false;
 	}
@@ -128,7 +128,7 @@ public abstract class AbstractEffect
 	 * @param skill
 	 * @return {@code true} if pump can be invoked, {@code false} otherwise
 	 */
-	public bool canPump(Creature effector, Creature effected, Skill skill)
+	public virtual bool canPump(Creature effector, Creature effected, Skill skill)
 	{
 		return true;
 	}
@@ -137,7 +137,7 @@ public abstract class AbstractEffect
 	 * @param effected
 	 * @param skill
 	 */
-	public void pump(Creature effected, Skill skill)
+	public virtual void pump(Creature effected, Skill skill)
 	{
 	}
 	
@@ -146,7 +146,7 @@ public abstract class AbstractEffect
 	 * TODO: Remove.
 	 * @return the effect type
 	 */
-	public EffectType getEffectType()
+	public virtual EffectType getEffectType()
 	{
 		return EffectType.NONE;
 	}

@@ -43,8 +43,8 @@ public class SendMessageLocalisationData: DataReaderBase
 
 				document.Elements("list").Elements("localisation").ForEach(el =>
 				{
-					string[] message = el.Attribute("message").GetString().Split(SPLIT_STRING);
-					string[] translation = el.Attribute("translation").GetString().Split(SPLIT_STRING);
+					string[] message = el.GetAttributeValueAsString("message").Split(SPLIT_STRING);
+					string[] translation = el.GetAttributeValueAsString("translation").Split(SPLIT_STRING);
 					SEND_MESSAGE_LOCALISATIONS.get(_lang).put(message, translation);
 				});
 				

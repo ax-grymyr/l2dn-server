@@ -4,6 +4,15 @@ public class AtomicBoolean
 {
     private int _value;
 
+    public AtomicBoolean()
+    {
+    }
+
+    public AtomicBoolean(bool value)
+    {
+        _value = value ? 1 : 0;
+    }
+
     public void compareAndSet(bool expect, bool val)
     {
         Interlocked.CompareExchange(ref _value, val ? 1 : 0, expect ? 1 : 0);

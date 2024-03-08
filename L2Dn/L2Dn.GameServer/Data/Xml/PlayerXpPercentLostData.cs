@@ -33,11 +33,11 @@ public class PlayerXpPercentLostData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int level = element.Attribute("level").GetInt32();
+		int level = element.GetAttributeValueAsInt32("level");
 		if (level > _maxlevel)
 			return;
 
-		double val = element.Attribute("val").GetDouble();
+		double val = element.GetAttributeValueAsDouble("val");
 		_playerXpPercentLost[level] = val;
 	}
 

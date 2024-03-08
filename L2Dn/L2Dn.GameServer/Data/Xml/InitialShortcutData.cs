@@ -58,12 +58,12 @@ public class InitialShortcutData: DataReaderBase
 		
 		element.Elements("page").ForEach(pageElement =>
 		{
-			int pageId = pageElement.Attribute("pageId").GetInt32();
+			int pageId = pageElement.GetAttributeValueAsInt32("pageId");
 			pageElement.Elements("slot").ForEach(slotElement =>
 			{
-				int slotId = slotElement.Attribute("slotId").GetInt32();
+				int slotId = slotElement.GetAttributeValueAsInt32("slotId");
 				ShortcutType shortcutType = slotElement.Attribute("shortcutType").GetEnum<ShortcutType>();
-				int shortcutId = slotElement.Attribute("shortcutId").GetInt32();
+				int shortcutId = slotElement.GetAttributeValueAsInt32("shortcutId");
 				int shortcutLevel = slotElement.Attribute("shortcutLevel").GetInt32(0);
 				int characterType = slotElement.Attribute("characterType").GetInt32(0);
 				Shortcut shortcut = new Shortcut(slotId, pageId, shortcutType, shortcutId, shortcutLevel, 0, characterType);
@@ -87,11 +87,11 @@ public class InitialShortcutData: DataReaderBase
 		if (!enabled)
 			return;
 
-		int macroId = element.Attribute("macroId").GetInt32();
-		int icon = element.Attribute("icon").GetInt32();
-		String name = element.Attribute("name").GetString();
-		String description = element.Attribute("description").GetString();
-		String acronym = element.Attribute("acronym").GetString();
+		int macroId = element.GetAttributeValueAsInt32("macroId");
+		int icon = element.GetAttributeValueAsInt32("icon");
+		String name = element.GetAttributeValueAsString("name");
+		String description = element.GetAttributeValueAsString("description");
+		String acronym = element.GetAttributeValueAsString("acronym");
 		List<MacroCmd> commands = new();
 		int entry = 0;
 
@@ -105,14 +105,14 @@ public class InitialShortcutData: DataReaderBase
 			{
 				case MacroType.SKILL:
 				{
-					d1 = el.Attribute("skillId").GetInt32(); // Skill ID
+					d1 = el.GetAttributeValueAsInt32("skillId"); // Skill ID
 					d2 = el.Attribute("skillLevel").GetInt32(0); // Skill level
 					break;
 				}
 				case MacroType.ACTION:
 				{
 					// Not handled by client.
-					d1 = el.Attribute("actionId").GetInt32();
+					d1 = el.GetAttributeValueAsInt32("actionId");
 					break;
 				}
 				case MacroType.TEXT:
@@ -122,19 +122,19 @@ public class InitialShortcutData: DataReaderBase
 				}
 				case MacroType.SHORTCUT:
 				{
-					d1 = el.Attribute("page").GetInt32(); // Page
+					d1 = el.GetAttributeValueAsInt32("page"); // Page
 					d2 = el.Attribute("slot").GetInt32(0); // Slot
 					break;
 				}
 				case MacroType.ITEM:
 				{
 					// Not handled by client.
-					d1 = el.Attribute("itemId").GetInt32();
+					d1 = el.GetAttributeValueAsInt32("itemId");
 					break;
 				}
 				case MacroType.DELAY:
 				{
-					d1 = el.Attribute("delay").GetInt32(); // Delay in seconds
+					d1 = el.GetAttributeValueAsInt32("delay"); // Delay in seconds
 					break;
 				}
 			}

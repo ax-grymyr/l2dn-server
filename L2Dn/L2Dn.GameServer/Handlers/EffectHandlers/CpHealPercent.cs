@@ -1,0 +1,70 @@
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+
+namespace L2Dn.GameServer.Handlers.EffectHandlers;
+
+/**
+ * Cp Heal Percent effect implementation.
+ * @author UnAfraid
+ */
+public class CpHealPercent: AbstractEffect
+{
+	private readonly double _power;
+	
+	public CpHealPercent(StatSet @params)
+	{
+		_power = @params.getDouble("power", 0);
+	}
+	
+	public override bool isInstant()
+	{
+		return true;
+	}
+	
+	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	{
+		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
+		{
+			return;
+		}
+		
+		double amount = 0;
+		double power = _power;
+		bool full = (power == 100.0);
+		
+		amount = full ? effected.getMaxCp() : (effected.getMaxCp() * power) / 100.0;
+		if ((item != null) && (item.isPotion() || item.isElixir()))
+		{
+			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
+		}
+		
+		// Prevents overheal and negative amount
+		amount = Math.Max(Math.Min(amount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
+		if (amount != 0)
+		{
+			double newCp = amount + effected.getCurrentCp();
+			effected.setCurrentCp(newCp, false);
+			effected.broadcastStatusUpdate(effector);
+		}
+		
+		if ((effector != null) && (effector != effected))
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_CP_WITH_C1_S_HELP);
+			sm.Params.addString(effector.getName());
+			sm.Params.addInt((int) amount);
+			effected.sendPacket(sm);
+		}
+		else
+		{
+			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S1_CP);
+			sm.Params.addInt((int) amount);
+			effected.sendPacket(sm);
+		}
+	}
+}

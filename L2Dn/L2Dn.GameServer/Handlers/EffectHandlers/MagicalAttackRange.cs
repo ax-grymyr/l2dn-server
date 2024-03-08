@@ -1,0 +1,76 @@
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Model.Stats;
+
+namespace L2Dn.GameServer.Handlers.EffectHandlers;
+
+/**
+ * Magical Attack effect implementation.
+ * @author Adry_85
+ */
+public class MagicalAttackRange: AbstractEffect
+{
+	private readonly double _power;
+	private readonly double _shieldDefPercent;
+	
+	public MagicalAttackRange(StatSet @params)
+	{
+		_power = @params.getDouble("power");
+		_shieldDefPercent = @params.getDouble("shieldDefPercent", 0);
+	}
+	
+	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+	{
+		return !Formulas.calcSkillEvasion(effector, effected, skill);
+	}
+	
+	public override EffectType getEffectType()
+	{
+		return EffectType.MAGICAL_ATTACK;
+	}
+	
+	public override bool isInstant()
+	{
+		return true;
+	}
+	
+	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	{
+		if (effected.isPlayer() && effected.getActingPlayer().isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)
+		{
+			effected.stopFakeDeath(true);
+		}
+		
+		double mDef = effected.getMDef();
+		switch (Formulas.calcShldUse(effector, effected))
+		{
+			case Formulas.SHIELD_DEFENSE_SUCCEED:
+			{
+				mDef += ((effected.getShldDef() * _shieldDefPercent) / 100);
+				break;
+			}
+			case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
+			{
+				mDef = -1;
+				break;
+			}
+		}
+		
+		double damage = 1;
+		bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+		
+		if (mDef != -1)
+		{
+			bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
+			bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+			
+			damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, mDef, sps, bss, mcrit);
+		}
+		
+		effector.doAttack(damage, effected, skill, false, false, mcrit, false);
+	}
+}

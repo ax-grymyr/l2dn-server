@@ -52,7 +52,7 @@ public abstract class AbstractEnchantItem
 
 	public AbstractEnchantItem(XElement element)
 	{
-		_id = element.Attribute("id").GetInt32();
+		_id = element.GetAttributeValueAsInt32("id");
 
 		ItemTemplate itemTemplate = getItem();
 		if (itemTemplate == null)

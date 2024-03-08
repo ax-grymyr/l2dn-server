@@ -38,8 +38,8 @@ public class ClassListData: DataReaderBase
 	
 	private void loadElement(XElement element)
 	{
-		CharacterClass classId = (CharacterClass)element.Attribute("classId").GetInt32();
-		string className = element.Attribute("classId").GetString();
+		CharacterClass classId = (CharacterClass)element.GetAttributeValueAsInt32("classId");
+		string className = element.GetAttributeValueAsString("classId");
 
 		int parentId = element.Attribute("parentClassId").GetInt32(-1);
 		CharacterClass? parentClassId = parentId < 0 ? null : (CharacterClass)parentId;

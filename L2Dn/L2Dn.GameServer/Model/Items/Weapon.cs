@@ -93,6 +93,14 @@ public class Weapon: ItemTemplate
 	{
 		return _type;
 	}
+
+	/**
+	 * @return the type of Weapon
+	 */
+	public WeaponType getWeaponType()
+	{
+		return _type;
+	}
 	
 	/**
 	 * @return {@code true} if the weapon is magic, {@code false} otherwise.

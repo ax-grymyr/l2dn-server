@@ -95,8 +95,8 @@ public class MultisellData: DataReaderBase
 				
 				el.Elements("ingredient").ForEach(e =>
 				{
-					int id = e.Attribute("id").GetInt32();
-					long count = e.Attribute("count").GetInt64();
+					int id = e.GetAttributeValueAsInt32("id");
+					long count = e.GetAttributeValueAsInt64("count");
 					byte enchantmentLevel = e.Attribute("enchantmentLevel").GetByte(0);
 					Boolean maintainIngredient = e.Attribute("maintainIngredient").GetBoolean(false);
 					ItemChanceHolder ingredient = new ItemChanceHolder(id, 0, count, enchantmentLevel, maintainIngredient);
@@ -116,8 +116,8 @@ public class MultisellData: DataReaderBase
 
 				el.Elements("production").ForEach(e =>
 				{
-					int id = e.Attribute("id").GetInt32();
-					long count = e.Attribute("count").GetInt64();
+					int id = e.GetAttributeValueAsInt32("id");
+					long count = e.GetAttributeValueAsInt64("count");
 					double chance = e.Attribute("chance").GetDouble(double.NaN);
 					byte enchantmentLevel = e.Attribute("enchantmentLevel").GetByte(0);
 					if (enchantmentLevel > 0)

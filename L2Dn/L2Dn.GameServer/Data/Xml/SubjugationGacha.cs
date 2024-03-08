@@ -32,12 +32,12 @@ public class SubjugationGacha: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int category = element.Attribute("category").GetInt32();
+		int category = element.GetAttributeValueAsInt32("category");
 		Map<int, Double> items = new();
 		element.Elements("item").ForEach(el =>
 		{
-			int itemId = el.Attribute("id").GetInt32();
-			double rate = el.Attribute("rate").GetDouble();
+			int itemId = el.GetAttributeValueAsInt32("id");
+			double rate = el.GetAttributeValueAsDouble("rate");
 			items.put(itemId, rate);
 		});
 

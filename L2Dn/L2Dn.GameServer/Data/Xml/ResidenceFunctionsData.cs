@@ -37,14 +37,14 @@ public class ResidenceFunctionsData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		ResidenceFunctionType type = element.Attribute("type").GetEnum<ResidenceFunctionType>();
 
 		element.Elements("function").ForEach(el =>
 		{
-			int level = el.Attribute("level").GetInt32();
-			int costId = el.Attribute("costId").GetInt32();
-			long costCount = el.Attribute("costCount").GetInt64();
+			int level = el.GetAttributeValueAsInt32("level");
+			int costId = el.GetAttributeValueAsInt32("costId");
+			long costCount = el.GetAttributeValueAsInt64("costCount");
 			TimeSpan duration = el.Attribute("duration").GetTimeSpan();
 			double value = el.Attribute("value").GetDouble(0);
 

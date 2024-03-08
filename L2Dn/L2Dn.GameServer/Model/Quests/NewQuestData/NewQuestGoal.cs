@@ -21,7 +21,7 @@ public class NewQuestGoal
 
 		element?.Elements("param").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
+			string name = el.GetAttributeValueAsString("name");
 			switch (name)
 			{
 				case "goalItemId":

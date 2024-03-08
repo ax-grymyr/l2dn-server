@@ -32,8 +32,8 @@ public class EquipmentUpgradeData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		string[] item = element.Attribute("item").GetString().Split(",");
+		int id = element.GetAttributeValueAsInt32("id");
+		string[] item = element.GetAttributeValueAsString("item").Split(",");
 		int requiredItemId = int.Parse(item[0]);
 		int requiredItemEnchant = int.Parse(item[1]);
 		string materials = element.Attribute("materials").GetString("");
@@ -57,7 +57,7 @@ public class EquipmentUpgradeData: DataReaderBase
 		}
 
 		long adena = element.Attribute("adena").GetInt64(0);
-		String[] resultItem = element.Attribute("result").GetString().Split(",");
+		String[] resultItem = element.GetAttributeValueAsString("result").Split(",");
 		int resultItemId = int.Parse(resultItem[0]);
 		int resultItemEnchant = int.Parse(resultItem[1]);
 		if (ItemData.getInstance().getTemplate(requiredItemId) == null)

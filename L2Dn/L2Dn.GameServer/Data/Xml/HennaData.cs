@@ -60,9 +60,9 @@ public class HennaData: DataReaderBase
 		
 		element.Elements("wear").ForEach(e =>
 		{
-			int count = e.Attribute("count").GetInt32();
+			int count = e.GetAttributeValueAsInt32("count");
 			set.set("wear_count", count);
-			int fee = e.Attribute("fee").GetInt32();
+			int fee = e.GetAttributeValueAsInt32("fee");
 			set.set("wear_fee", fee);
 					
 			fee = e.Attribute("l2coinfee").GetInt32(0);
@@ -71,9 +71,9 @@ public class HennaData: DataReaderBase
 		
 		element.Elements("cancel").ForEach(e =>
 		{
-			int count = e.Attribute("count").GetInt32();
+			int count = e.GetAttributeValueAsInt32("count");
 			set.set("cancel_count", count);
-			int fee = e.Attribute("fee").GetInt32();
+			int fee = e.GetAttributeValueAsInt32("fee");
 			set.set("cancel_fee", fee);
 					
 			fee = e.Attribute("l2coinfee_cancel").GetInt32(0);
@@ -88,8 +88,8 @@ public class HennaData: DataReaderBase
 		
 		element.Elements("skill").ForEach(e =>
 		{
-			int id = e.Attribute("id").GetInt32();
-			int level = e.Attribute("level").GetInt32();
+			int id = e.GetAttributeValueAsInt32("id");
+			int level = e.GetAttributeValueAsInt32("level");
 			skills.add(SkillData.getInstance().getSkill(id, level));
 		});
 		

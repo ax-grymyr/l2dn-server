@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Xml.Linq;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
@@ -304,13 +305,15 @@ public class StatSet : IParserAdvUtils
 		{
 			return defaultValue;
 		}
-		if (val is int)
-		{
-			return ((int) val);
-		}
+		if (val is int i)
+			return i;
+
+		if (val is double d && Math.Round(d) == d)
+			return (int)d;
+		
 		try
 		{
-			return int.Parse((String) val);
+			return int.Parse(val.ToString() ?? string.Empty);
 		}
 		catch (Exception e)
 		{
@@ -579,13 +582,15 @@ public class StatSet : IParserAdvUtils
 		{
 			return defaultValue;
 		}
-		if (val is float)
-		{
-			return ((float) val);
-		}
+		if (val is float f)
+			return f;
+
+		if (val is IConvertible convertible)
+			return convertible.ToSingle(CultureInfo.InvariantCulture);
+		
 		try
 		{
-			return float.Parse((String) val);
+			return float.Parse(val.ToString() ?? string.Empty);
 		}
 		catch (Exception e)
 		{
@@ -635,13 +640,16 @@ public class StatSet : IParserAdvUtils
 		{
 			return defaultValue;
 		}
-		if (val is double)
-		{
-			return ((double) val);
-		}
+		
+		if (val is double d)
+			return d;
+
+		if (val is IConvertible convertible)
+			return convertible.ToDouble(CultureInfo.InvariantCulture);
+		
 		try
 		{
-			return double.Parse((String) val);
+			return double.Parse(val.ToString() ?? string.Empty);
 		}
 		catch (Exception e)
 		{
@@ -714,10 +722,9 @@ public class StatSet : IParserAdvUtils
 			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but not specified");
 		}
 
-		if (val is T)
-		{
-			return (T)val;
-		}
+		if (val is T value)
+			return value;
+		
 		try
 		{
 			return Enum.Parse<T>((string)val);
@@ -733,16 +740,14 @@ public class StatSet : IParserAdvUtils
 	{
 		Object val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is T)
-		{
-			return (T)val;
-		}
+		
+		if (val is T value)
+			return value;
+		
 		try
 		{
-			return Enum.Parse<T>((string)val);
+			return Enum.Parse<T>(val.ToString() ?? string.Empty, true);
 		}
 		catch (Exception e)
 		{

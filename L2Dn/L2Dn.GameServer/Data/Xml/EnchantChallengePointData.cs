@@ -46,8 +46,8 @@ public class EnchantChallengePointData: DataReaderBase
 		document.Elements("list").Elements("maxTicketCharge").ForEach(element => _maxTicketCharge = (int)element);
 		document.Elements("list").Elements("fees").Elements("option").ForEach(element =>
 		{
-			int index = element.Attribute("index").GetInt32();
-			int fee = element.Attribute("fee").GetInt32();
+			int index = element.GetAttributeValueAsInt32("index");
+			int fee = element.GetAttributeValueAsInt32("fee");
 			_fees.put(index, fee);
 		});
 
@@ -58,7 +58,7 @@ public class EnchantChallengePointData: DataReaderBase
 
 	private void parseGroup(XElement groupElement)
 	{
-		int groupId = groupElement.Attribute("id").GetInt32();
+		int groupId = groupElement.GetAttributeValueAsInt32("id");
 
 		Map<int, EnchantChallengePointsOptionInfo> options = _groupOptions.get(groupId);
 		if (options == null)
@@ -69,22 +69,22 @@ public class EnchantChallengePointData: DataReaderBase
 
 		groupElement.Elements("option").ForEach(optionElement =>
 		{
-			int index = optionElement.Attribute("index").GetInt32();
-			int chance = optionElement.Attribute("chance").GetInt32();
-			int minEnchant = optionElement.Attribute("minEnchant").GetInt32();
-			int maxEnchant = optionElement.Attribute("maxEnchant").GetInt32();
+			int index = optionElement.GetAttributeValueAsInt32("index");
+			int chance = optionElement.GetAttributeValueAsInt32("chance");
+			int minEnchant = optionElement.GetAttributeValueAsInt32("minEnchant");
+			int maxEnchant = optionElement.GetAttributeValueAsInt32("maxEnchant");
 			options.put(index, new EnchantChallengePointsOptionInfo(index, chance, minEnchant, maxEnchant));
 		});
 
 		groupElement.Elements("item").ForEach(itemElement =>
 		{
-			string[] itemIdsStr = itemElement.Attribute("id").GetString().Split(";");
+			string[] itemIdsStr = itemElement.GetAttributeValueAsString("id").Split(";");
 
 			Map<int, int> enchantLevels = new();
 			itemElement.Elements("enchant").ForEach(enchantElement =>
 			{
-				int enchantLevel = enchantElement.Attribute("level").GetInt32();
-				int points = enchantElement.Attribute("points").GetInt32();
+				int enchantLevel = enchantElement.GetAttributeValueAsInt32("level");
+				int points = enchantElement.GetAttributeValueAsInt32("points");
 				enchantLevels.put(enchantLevel, points);
 			});
 

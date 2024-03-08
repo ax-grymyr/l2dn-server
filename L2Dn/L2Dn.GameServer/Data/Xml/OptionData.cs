@@ -50,12 +50,12 @@ public class OptionData: DataReaderBase
 
 	private void loadElement(string filePath, XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		Options option = new Options(id);
 
 		element.Elements("effects").Elements("effect").ForEach(el =>
 		{
-			string name = el.Attribute("name").GetString();
+			string name = el.GetAttributeValueAsString("name");
 			StatSet parameters = new StatSet();
 			el.Elements().ForEach(e =>
 			{
@@ -68,8 +68,8 @@ public class OptionData: DataReaderBase
 
 		element.Elements("active_skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 				option.addActiveSkill(skill);
@@ -80,8 +80,8 @@ public class OptionData: DataReaderBase
 
 		element.Elements("passive_skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 				option.addPassiveSkill(skill);
@@ -92,12 +92,12 @@ public class OptionData: DataReaderBase
 
 		element.Elements("attack_skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
-				double chance = el.Attribute("chance").GetDouble();
+				double chance = el.GetAttributeValueAsDouble("chance");
 				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.ATTACK));
 			}
 			else
@@ -107,12 +107,12 @@ public class OptionData: DataReaderBase
 
 		element.Elements("magic_skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
-				double chance = el.Attribute("chance").GetDouble();
+				double chance = el.GetAttributeValueAsDouble("chance");
 				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.MAGIC));
 			}
 			else
@@ -122,12 +122,12 @@ public class OptionData: DataReaderBase
 
 		element.Elements("critical_skill").ForEach(el =>
 		{
-			int skillId = el.Attribute("id").GetInt32();
-			int skillLevel = el.Attribute("level").GetInt32();
+			int skillId = el.GetAttributeValueAsInt32("id");
+			int skillLevel = el.GetAttributeValueAsInt32("level");
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
-				double chance = el.Attribute("chance").GetDouble();
+				double chance = el.GetAttributeValueAsDouble("chance");
 				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.CRITICAL));
 			}
 			else

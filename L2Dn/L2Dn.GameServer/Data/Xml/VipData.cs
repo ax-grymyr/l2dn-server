@@ -38,13 +38,13 @@ public class VipData: DataReaderBase
 
 	private void parseElement(XElement element)
 	{
-		int tier = element.Attribute("tier").GetInt32();
+		int tier = element.GetAttributeValueAsInt32("tier");
 		int pointsRequired = element.Attribute("points-required").GetInt32();
 		int pointsLose = element.Attribute("points-lose").GetInt32();
 		VipInfo vipInfo = new VipInfo(tier, pointsRequired, pointsLose);
 		element.Elements("bonus").ForEach(el =>
 		{
-			int skill = el.Attribute("skill").GetInt32();
+			int skill = el.GetAttributeValueAsInt32("skill");
 			vipInfo.setSkill(skill);
 		});
 		

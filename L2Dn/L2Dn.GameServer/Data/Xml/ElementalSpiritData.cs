@@ -45,34 +45,34 @@ public class ElementalSpiritData: DataReaderBase
 	{
 		ElementalType type = (ElementalType)spiritNode.Attribute("type").GetByte();
 		byte stage = spiritNode.Attribute("stage").GetByte();
-		int npcId = spiritNode.Attribute("npcId").GetInt32();
-		int extractItem = spiritNode.Attribute("extractItem").GetInt32();
-		int maxCharacteristics = spiritNode.Attribute("maxCharacteristics").GetInt32();
+		int npcId = spiritNode.GetAttributeValueAsInt32("npcId");
+		int extractItem = spiritNode.GetAttributeValueAsInt32("extractItem");
+		int maxCharacteristics = spiritNode.GetAttributeValueAsInt32("maxCharacteristics");
 		ElementalSpiritTemplateHolder template = new ElementalSpiritTemplateHolder(type, stage, npcId, extractItem, maxCharacteristics);
 		SPIRIT_DATA.computeIfAbsent(type, x => new()).put(stage, template);
 
 		spiritNode.Elements("level").ForEach(levelNode =>
 		{
-			int level = levelNode.Attribute("id").GetInt32();
-			int attack = levelNode.Attribute("atk").GetInt32();
-			int defense = levelNode.Attribute("def").GetInt32();
-			int criticalRate = levelNode.Attribute("critRate").GetInt32();
-			int criticalDamage = levelNode.Attribute("critDam").GetInt32();
-			long maxExperience = levelNode.Attribute("maxExp").GetInt64();
+			int level = levelNode.GetAttributeValueAsInt32("id");
+			int attack = levelNode.GetAttributeValueAsInt32("atk");
+			int defense = levelNode.GetAttributeValueAsInt32("def");
+			int criticalRate = levelNode.GetAttributeValueAsInt32("critRate");
+			int criticalDamage = levelNode.GetAttributeValueAsInt32("critDam");
+			long maxExperience = levelNode.GetAttributeValueAsInt64("maxExp");
 			template.addLevelInfo(level, attack, defense, criticalRate, criticalDamage, maxExperience);
 		});
 		
 		spiritNode.Elements("itemToEvolve").ForEach(itemNode =>
 		{
-			int itemId = itemNode.Attribute("id").GetInt32();
+			int itemId = itemNode.GetAttributeValueAsInt32("id");
 			int count = itemNode.Attribute("count").GetInt32(1);
 			template.addItemToEvolve(itemId, count);
 		});
 		
 		spiritNode.Elements("absorbItem").ForEach(absorbItemNode =>
 		{
-			int itemId = absorbItemNode.Attribute("id").GetInt32();
-			int experience = absorbItemNode.Attribute("experience").GetInt32();
+			int itemId = absorbItemNode.GetAttributeValueAsInt32("id");
+			int experience = absorbItemNode.GetAttributeValueAsInt32("experience");
 			template.addAbsorbItem(itemId, experience);
 		});
 	}

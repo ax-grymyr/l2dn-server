@@ -40,7 +40,7 @@ public class BeautyShopData: DataReaderBase
 			BeautyData beautyData = new BeautyData();
 			el.Elements("hair").ForEach(he =>
 			{
-				int id = he.Attribute("id").GetInt32();
+				int id = he.GetAttributeValueAsInt32("id");
 				int adena = he.Attribute("adena").GetInt32(0);
 				int resetAdena = he.Attribute("reset_adena").GetInt32(0);
 				int beautyShopTicket = he.Attribute("beauty_shop_ticket").GetInt32(0);
@@ -48,7 +48,7 @@ public class BeautyShopData: DataReaderBase
 				
 				he.Elements("color").ForEach(ce =>
 				{
-					int colorId = ce.Attribute("id").GetInt32();
+					int colorId = ce.GetAttributeValueAsInt32("id");
 					int colorAdena = ce.Attribute("adena").GetInt32(0);
 					int colorResetAdena = ce.Attribute("reset_adena").GetInt32(0);
 					int colorBeautyShopTicket = ce.Attribute("beauty_shop_ticket").GetInt32(0);
@@ -61,7 +61,7 @@ public class BeautyShopData: DataReaderBase
 			
 			el.Elements("face").ForEach(fe =>
 			{
-				int id = fe.Attribute("id").GetInt32();
+				int id = fe.GetAttributeValueAsInt32("id");
 				int adena = fe.Attribute("adena").GetInt32(0);
 				int resetAdena = fe.Attribute("reset_adena").GetInt32(0);
 				int beautyShopTicket = fe.Attribute("beauty_shop_ticket").GetInt32(0);

@@ -45,12 +45,12 @@ public class InitialEquipmentData: DataReaderBase
 	 */
 	private void parseEquipment(XElement element)
 	{
-		CharacterClass classId = (CharacterClass)element.Attribute("classId").GetInt32();
+		CharacterClass classId = (CharacterClass)element.GetAttributeValueAsInt32("classId");
 		List<PlayerItemTemplate> equipList = new();
 		
 		element.Elements("item").ForEach(el =>
 		{
-			int id = el.Attribute("id").GetInt32();
+			int id = el.GetAttributeValueAsInt32("id");
 			long count = el.Attribute("count").GetInt64(1);
 			bool equipped = el.Attribute("equipped").GetBoolean(false); 
 			equipList.add(new PlayerItemTemplate(id, count, equipped));

@@ -21,7 +21,7 @@ public class CombinationHenna
 
 	public CombinationHenna(XElement element)
 	{
-		_henna = element.Attribute("dyeId").GetInt32();
+		_henna = element.GetAttributeValueAsInt32("dyeId");
 		_itemOne = element.Attribute("itemOne").GetInt32(-1);
 		_countOne = element.Attribute("countOne").GetInt64(1);
 		_itemTwo = element.Attribute("itemTwo").GetInt32(-1);

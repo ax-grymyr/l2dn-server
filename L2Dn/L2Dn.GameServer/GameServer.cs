@@ -21,8 +21,14 @@ public class GameServer
 
     public void Start()
     {
+        // Preload data
         Config.Load(@"Config");
-        PlayerTemplateData.getInstance().load();
+        ExperienceData.getInstance();
+        SkillData.getInstance();
+        ItemData.getInstance();
+        PlayerTemplateData.getInstance();
+        FakePlayerData.getInstance();
+        NpcData.getInstance();
         
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";

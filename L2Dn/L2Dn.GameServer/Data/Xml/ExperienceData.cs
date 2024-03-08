@@ -36,8 +36,8 @@ public class ExperienceData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/experience.xml");
 		document.Elements("table").ForEach(el =>
 		{
-			MAX_LEVEL = el.Attribute("maxLevel").GetInt32() + 1;
-			MAX_PET_LEVEL = el.Attribute("maxPetLevel").GetInt32() + 1;
+			MAX_LEVEL = el.GetAttributeValueAsInt32("maxLevel") + 1;
+			MAX_PET_LEVEL = el.GetAttributeValueAsInt32("maxPetLevel") + 1;
 			if (MAX_LEVEL > Config.PLAYER_MAXIMUM_LEVEL)
 			{
 				MAX_LEVEL = Config.PLAYER_MAXIMUM_LEVEL;
@@ -57,14 +57,14 @@ public class ExperienceData: DataReaderBase
 	
 	private void parseElement(XElement element)
 	{
-		int maxLevel = element.Attribute("level").GetInt32();
+		int maxLevel = element.GetAttributeValueAsInt32("level");
 		if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
 		{
 			return;
 		}
 
-		long toLevel = element.Attribute("tolevel").GetInt64();
-		double trainingRate = element.Attribute("trainingRate").GetDouble();
+		long toLevel = element.GetAttributeValueAsInt64("tolevel");
+		double trainingRate = element.GetAttributeValueAsDouble("trainingRate");
 		_expTable.put(maxLevel, toLevel);
 		_traningRateTable.put(maxLevel, trainingRate);
 	}

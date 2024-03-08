@@ -47,10 +47,10 @@ public class MapRegionManager: DataReaderBase
 	
 	private void parseElement(string filePath, XElement element)
 	{
-		string name = element.Attribute("name").GetString();
-		string town = element.Attribute("town").GetString();
-		int locId = element.Attribute("locId").GetInt32();
-		int bbs = element.Attribute("bbs").GetInt32();
+		string name = element.GetAttributeValueAsString("name");
+		string town = element.GetAttributeValueAsString("town");
+		int locId = element.GetAttributeValueAsInt32("locId");
+		int bbs = element.GetAttributeValueAsInt32("bbs");
 						
 		MapRegion region = new MapRegion(name, town, locId, bbs);
 		foreach (XElement c in element.Elements())
@@ -58,9 +58,9 @@ public class MapRegionManager: DataReaderBase
 			string nodeName = c.Name.LocalName;
 			if ("respawnPoint".equalsIgnoreCase(nodeName))
 			{
-				int spawnX = c.Attribute("X").GetInt32();
-				int spawnY = c.Attribute("Y").GetInt32();
-				int spawnZ = c.Attribute("Z").GetInt32();
+				int spawnX = c.GetAttributeValueAsInt32("X");
+				int spawnY = c.GetAttributeValueAsInt32("Y");
+				int spawnZ = c.GetAttributeValueAsInt32("Z");
 				bool other = c.Attribute("isOther").GetBoolean(false);
 				bool chaotic = c.Attribute("isChaotic").GetBoolean(false);
 				bool banish = c.Attribute("isBanish").GetBoolean(false);
@@ -83,11 +83,11 @@ public class MapRegionManager: DataReaderBase
 			}
 			else if ("map".equalsIgnoreCase(nodeName))
 			{
-				region.addMap(c.Attribute("X").GetInt32(), c.Attribute("Y").GetInt32());
+				region.addMap(c.GetAttributeValueAsInt32("X"), c.GetAttributeValueAsInt32("Y"));
 			}
 			else if ("banned".equalsIgnoreCase(nodeName))
 			{
-				region.addBannedRace(c.Attribute("race").GetString(), c.Attribute("point").GetString());
+				region.addBannedRace(c.GetAttributeValueAsString("race"), c.GetAttributeValueAsString("point"));
 			}
 		}
 		REGIONS.put(name, region);

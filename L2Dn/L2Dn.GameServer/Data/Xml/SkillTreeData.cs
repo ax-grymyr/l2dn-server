@@ -131,7 +131,7 @@ public class SkillTreeData: DataReaderBase
 		Map<long, SkillLearn> raceSkillTree = new();
 		Map<long, SkillLearn> revelationSkillTree = new();
 
-		string type = element.Attribute("type").GetString();
+		string type = element.GetAttributeValueAsString("type");
 		CharacterClass? classId = (CharacterClass?)element.Attribute("classId")?.GetInt32();
 		CharacterClass? parentClassId = (CharacterClass?)element.Attribute("parentClassId")?.GetInt32();
 		SubclassType? subType = element.Attribute("subType")?.GetEnum<SubclassType>();
@@ -156,8 +156,8 @@ public class SkillTreeData: DataReaderBase
 					case "item":
 					{
 						List<ItemHolder> itemList = new();
-						int count = b.Attribute("count").GetInt32();
-						foreach (string id in b.Attribute("id").GetString().Split(","))
+						int count = b.GetAttributeValueAsInt32("count");
+						foreach (string id in b.GetAttributeValueAsString("id").Split(","))
 							itemList.add(new ItemHolder(int.Parse(id), count));
 
 						skillLearn.addRequiredItem(itemList);
@@ -165,8 +165,8 @@ public class SkillTreeData: DataReaderBase
 					}
 					case "preRequisiteSkill":
 					{
-						skillLearn.addPreReqSkill(new SkillHolder(b.Attribute("id").GetInt32(),
-							b.Attribute("lvl").GetInt32()));
+						skillLearn.addPreReqSkill(new SkillHolder(b.GetAttributeValueAsInt32("id"),
+							b.GetAttributeValueAsInt32("lvl")));
 						break;
 					}
 					case "race":
@@ -186,7 +186,7 @@ public class SkillTreeData: DataReaderBase
 					}
 					case "removeSkill":
 					{
-						int removeSkillId = b.Attribute("id").GetInt32();
+						int removeSkillId = b.GetAttributeValueAsInt32("id");
 						skillLearn.addRemoveSkills(removeSkillId);
 						if (!b.Attribute("onlyReplaceByLearn").GetBoolean(false))
 						{

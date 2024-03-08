@@ -43,7 +43,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 		_upgrades.clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeNormalData.xml");
-		document.Elements("list").Elements("params").ForEach(el => _commission = el.Attribute("commission").GetInt32());
+		document.Elements("list").Elements("params").ForEach(el => _commission = el.GetAttributeValueAsInt32("commission"));
 		if (_commission < 0)
 		{
 			LOGGER.Warn(GetType().Name +
@@ -69,8 +69,8 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 
 	private void parseDiscountElement(XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
-		long count = element.Attribute("count").GetInt64();
+		int id = element.GetAttributeValueAsInt32("id");
+		long count = element.GetAttributeValueAsInt64("count");
 		_discount.add(new ItemHolder(id, count));
 	}
 
@@ -83,15 +83,15 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 			List<ItemEnchantHolder> bonusItems = new();
 			double bonusChance = 0;
 
-			int id = element.Attribute("id").GetInt32();
-			int type = element.Attribute("type").GetInt32();
-			double chance = element.Attribute("chance").GetDouble();
-			long commission = _commission == 0 ? 0 : ((element.Attribute("commission").GetInt64() / 100) * _commission);
+			int id = element.GetAttributeValueAsInt32("id");
+			int type = element.GetAttributeValueAsInt32("type");
+			double chance = element.GetAttributeValueAsDouble("chance");
+			long commission = _commission == 0 ? 0 : ((element.GetAttributeValueAsInt64("commission") / 100) * _commission);
 			
 			element.Elements("upgradeItem").ForEach(upgradeEl =>
 			{
-				int itemId = upgradeEl.Attribute("id").GetInt32();
-				long count =  upgradeEl.Attribute("count").GetInt64();
+				int itemId = upgradeEl.GetAttributeValueAsInt32("id");
+				long count =  upgradeEl.GetAttributeValueAsInt64("count");
 				byte enchantLevel = upgradeEl.Attribute("enchantLevel").GetByte();
 				initialItem = new ItemEnchantHolder(itemId, count, enchantLevel);
 				if (initialItem.getCount() < 0)
@@ -102,9 +102,9 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 
 			element.Elements("material").Elements("item").ForEach(materialEl =>
 			{
-				int itemId = materialEl.Attribute("id").GetInt32();
-				long count = materialEl.Attribute("count").GetInt64();
-				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+				int itemId = materialEl.GetAttributeValueAsInt32("id");
+				long count = materialEl.GetAttributeValueAsInt64("count");
+				int enchantLevel = materialEl.GetAttributeValueAsInt32("enchantLevel");
 				// {
 				// LOGGER.Warn(GetType().Name + ": material => item => count in file EquipmentUpgradeNormalData.xml for upgrade id " + id +" cant be less than 0!");
 				// }
@@ -113,23 +113,23 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 
 			element.Elements("successItems").Elements("item").ForEach(materialEl =>
 			{
-				int itemId = materialEl.Attribute("id").GetInt32();
-				long count = materialEl.Attribute("count").GetInt64();
-				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+				int itemId = materialEl.GetAttributeValueAsInt32("id");
+				long count = materialEl.GetAttributeValueAsInt64("count");
+				int enchantLevel = materialEl.GetAttributeValueAsInt32("enchantLevel");
 				onSuccessItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
 			});
 
 			element.Elements("failureItems").Elements("item").ForEach(materialEl =>
 			{
-				int itemId = materialEl.Attribute("id").GetInt32();
-				long count = materialEl.Attribute("count").GetInt64();
-				int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+				int itemId = materialEl.GetAttributeValueAsInt32("id");
+				long count = materialEl.GetAttributeValueAsInt64("count");
+				int enchantLevel = materialEl.GetAttributeValueAsInt32("enchantLevel");
 				onFailureItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
 			});
 
 			element.Elements("bonus_items").ForEach(bonusEl =>
 			{
-				bonusChance = bonusEl.Attribute("chance").GetDouble();
+				bonusChance = bonusEl.GetAttributeValueAsDouble("chance");
 				if (bonusChance < 0)
 				{
 					LOGGER.Warn(GetType().Name + ": bonus_items => chance in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cant be less than 0!");
@@ -137,9 +137,9 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 				
 				bonusEl.Elements("item").ForEach(materialEl =>
 				{
-					int itemId = materialEl.Attribute("id").GetInt32();
-					long count = materialEl.Attribute("count").GetInt64();
-					int enchantLevel = materialEl.Attribute("enchantLevel").GetInt32();
+					int itemId = materialEl.GetAttributeValueAsInt32("id");
+					long count = materialEl.GetAttributeValueAsInt64("count");
+					int enchantLevel = materialEl.GetAttributeValueAsInt32("enchantLevel");
 					bonusItems.add(new ItemEnchantHolder(itemId, count, enchantLevel));
 				});
 			});

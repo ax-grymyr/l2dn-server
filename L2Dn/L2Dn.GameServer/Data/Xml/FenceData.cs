@@ -47,13 +47,13 @@ public class FenceData: DataReaderBase
 	
 	private void spawnFence(XElement fenceNode)
 	{
-		int x = fenceNode.Attribute("x").GetInt32();
-		int y = fenceNode.Attribute("y").GetInt32();
-		int z = fenceNode.Attribute("z").GetInt32();
-		string name = fenceNode.Attribute("name").GetString();
-		int width = fenceNode.Attribute("width").GetInt32();
-		int length = fenceNode.Attribute("length").GetInt32();
-		int height = fenceNode.Attribute("height").GetInt32();
+		int x = fenceNode.GetAttributeValueAsInt32("x");
+		int y = fenceNode.GetAttributeValueAsInt32("y");
+		int z = fenceNode.GetAttributeValueAsInt32("z");
+		string name = fenceNode.GetAttributeValueAsString("name");
+		int width = fenceNode.GetAttributeValueAsInt32("width");
+		int length = fenceNode.GetAttributeValueAsInt32("length");
+		int height = fenceNode.GetAttributeValueAsInt32("height");
 		FenceState state = fenceNode.Attribute("state").GetEnum(FenceState.CLOSED);
 		spawnFence(x, y, z, name, width, length, height, 0, state);
 	}

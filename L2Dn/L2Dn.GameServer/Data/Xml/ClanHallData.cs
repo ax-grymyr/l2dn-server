@@ -38,36 +38,36 @@ public class ClanHallData: DataReaderBase
 	
 	private void loadElement(string filePath, XElement element)
 	{
-		int id = element.Attribute("id").GetInt32();
+		int id = element.GetAttributeValueAsInt32("id");
 		string name = element.Attribute("name").GetString("None");
 		ClanHallGrade grade = element.Attribute("grade").GetEnum(ClanHallGrade.GRADE_NONE);
 		ClanHallType type = element.Attribute("type").GetEnum(ClanHallType.OTHER);
 
 		XElement auctionEl = element.Elements("auction").Single();
-		int minBid = auctionEl.Attribute("minBid").GetInt32();
-		int lease = auctionEl.Attribute("lease").GetInt32();
-		int deposit = auctionEl.Attribute("deposit").GetInt32();
+		int minBid = auctionEl.GetAttributeValueAsInt32("minBid");
+		int lease = auctionEl.GetAttributeValueAsInt32("lease");
+		int deposit = auctionEl.GetAttributeValueAsInt32("deposit");
 
 		XElement rpEl = element.Elements("ownerRestartPoint").Single();
-		Location ownerRestartPoint = new Location(rpEl.Attribute("x").GetInt32(), rpEl.Attribute("z").GetInt32(),
-			rpEl.Attribute("z").GetInt32());
+		Location ownerRestartPoint = new Location(rpEl.GetAttributeValueAsInt32("x"), rpEl.GetAttributeValueAsInt32("z"),
+			rpEl.GetAttributeValueAsInt32("z"));
 		
 		XElement bpEl = element.Elements("banishPoint").Single();
-		Location banishPoint = new Location(bpEl.Attribute("x").GetInt32(), bpEl.Attribute("z").GetInt32(),
-			bpEl.Attribute("z").GetInt32());
+		Location banishPoint = new Location(bpEl.GetAttributeValueAsInt32("x"), bpEl.GetAttributeValueAsInt32("z"),
+			bpEl.GetAttributeValueAsInt32("z"));
 
 		ClanHall clanHall = new ClanHall(id, grade, type, minBid, lease, deposit, ownerRestartPoint, banishPoint);
 		clanHall.setName(name);
 		
 		element.Elements("npcs").Elements("npc").ForEach(el =>
 		{
-			int npcId = el.Attribute("id").GetInt32();
+			int npcId = el.GetAttributeValueAsInt32("id");
 			clanHall.getNpcs().add(npcId);
 		});
 		
 		element.Elements("doorlist").Elements("door").ForEach(el =>
 		{
-			int doorId = el.Attribute("id").GetInt32();
+			int doorId = el.GetAttributeValueAsInt32("id");
 			Door door = DoorData.getInstance().getDoor(doorId);
 			if (door != null)
 			{
@@ -77,12 +77,12 @@ public class ClanHallData: DataReaderBase
 		
 		element.Elements("teleportList").Elements("teleport").ForEach(el =>
 		{
-			NpcStringId npcStringId = (NpcStringId)el.Attribute("npcStringId").GetInt32();
-			int x = el.Attribute("x").GetInt32();
-			int y = el.Attribute("y").GetInt32();
-			int z = el.Attribute("z").GetInt32();
-			int minFunctionLevel = el.Attribute("minFunctionLevel").GetInt32();
-			int cost = el.Attribute("cost").GetInt32();
+			NpcStringId npcStringId = (NpcStringId)el.GetAttributeValueAsInt32("npcStringId");
+			int x = el.GetAttributeValueAsInt32("x");
+			int y = el.GetAttributeValueAsInt32("y");
+			int z = el.GetAttributeValueAsInt32("z");
+			int minFunctionLevel = el.GetAttributeValueAsInt32("minFunctionLevel");
+			int cost = el.GetAttributeValueAsInt32("cost");
 			clanHall.getTeleportList().add(new ClanHallTeleportHolder(npcStringId, x, y, z, minFunctionLevel, cost));
 		});
 
