@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers.ConditionHandlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Scripting;
@@ -11,6 +12,13 @@ namespace L2Dn.GameServer.Handlers;
 public class ConditionHandler
 {
 	private readonly Map<String, Func<StatSet, ICondition>> _conditionHandlerFactories = new();
+
+	private ConditionHandler()
+	{
+		registerHandler("CategoryType", stat => new CategoryTypeCondition(stat));
+		registerHandler("NpcLevel", stat => new NpcLevelCondition(stat));
+		registerHandler("PlayerLevel", stat => new PlayerLevelCondition(stat));
+	}
 	
 	public void registerHandler(String name, Func<StatSet, ICondition> handlerFactory)
 	{

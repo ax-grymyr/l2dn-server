@@ -25,12 +25,20 @@ public class GameServer
         // Preload data
         Config.Load(@"Config");
         ExperienceData.getInstance();
+        ClassListData.getInstance();
+        CategoryData.getInstance();
         ZoneManager.getInstance();
         SkillData.getInstance();
+        SkillTreeData.getInstance();
+        SkillEnchantData.getInstance();
         ItemData.getInstance();
+        ArmorSetData.getInstance();
+        EnchantItemData.getInstance();
+        RecipeData.getInstance();
         PlayerTemplateData.getInstance();
         FakePlayerData.getInstance();
         NpcData.getInstance();
+        SpawnData.getInstance();
         
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";

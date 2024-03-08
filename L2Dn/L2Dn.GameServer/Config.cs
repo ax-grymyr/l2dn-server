@@ -621,7 +621,7 @@ public class Config
 	public static ImmutableArray<double> NPC_SKILL_CHANCE_PENALTY = ImmutableArray<double>.Empty;
 	public static int DEFAULT_CORPSE_TIME;
 	public static int SPOILED_CORPSE_EXTEND_TIME;
-	public static int CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY;
+	public static TimeSpan CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY;
 	public static int MAX_DRIFT_RANGE;
 	public static bool AGGRO_DISTANCE_CHECK_ENABLED;
 	public static int AGGRO_DISTANCE_CHECK_RANGE;
@@ -2135,8 +2135,8 @@ public class Config
 		NPC_SKILL_CHANCE_PENALTY = parser.GetDoubleList("SkillChancePenaltyForLvLDifferences", ',', 2.5, 3.0, 3.25, 3.5);
 		DEFAULT_CORPSE_TIME = parser.getInt("DefaultCorpseTime", 7);
 		SPOILED_CORPSE_EXTEND_TIME = parser.getInt("SpoiledCorpseExtendTime", 10);
-		CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY =
-			parser.getInt("CorpseConsumeSkillAllowedTimeBeforeDecay", 2000);
+		CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY = TimeSpan.FromMilliseconds(
+			parser.getInt("CorpseConsumeSkillAllowedTimeBeforeDecay", 2000));
 		MAX_DRIFT_RANGE = parser.getInt("MaxDriftRange", 300);
 		AGGRO_DISTANCE_CHECK_ENABLED = parser.getBoolean("AggroDistanceCheckEnabled", true);
 		AGGRO_DISTANCE_CHECK_RANGE = parser.getInt("AggroDistanceCheckRange", 1500);
