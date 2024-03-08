@@ -102,6 +102,6 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 			player.setLastServerPosition(realX, realY, realZ);
 		}
 
-        return ValueTask.CompletedTask;
+		return ValueTask.CompletedTask;
     }
 }

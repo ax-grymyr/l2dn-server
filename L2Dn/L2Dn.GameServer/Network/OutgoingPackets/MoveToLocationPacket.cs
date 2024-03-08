@@ -29,11 +29,11 @@ internal readonly struct MoveToLocationPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.MOVE_TO_LOCATION);
 
         writer.WriteInt32(_objectId);
-        writer.WriteInt32(_x);
-        writer.WriteInt32(_y);
-        writer.WriteInt32(_z);
         writer.WriteInt32(_xDst);
         writer.WriteInt32(_yDst);
         writer.WriteInt32(_zDst);
+        writer.WriteInt32(_x);
+        writer.WriteInt32(_y);
+        writer.WriteInt32(_z);
     }
 }
