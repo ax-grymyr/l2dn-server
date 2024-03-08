@@ -8,6 +8,7 @@ public class ScheduledFuture
     private readonly Action _action;
     private readonly Timer _timer;
     private readonly bool _oneTime;
+    private bool _executing;
     private bool _cancelled;
     private bool _done;
 
@@ -20,20 +21,29 @@ public class ScheduledFuture
 
     private void Run(object? state)
     {
+        if (_executing)
+        {
+            return;
+        }
+        
+        _executing = true;
         try
         {
             _action();
+            if (_oneTime)
+            {
+                _timer.Change(Timeout.Infinite, Timeout.Infinite);
+                _timer.Dispose();
+                _done = true;
+            }
         }
         catch (Exception e)
         {
             _logger.Error("Unhandled exception in scheduled task: " + e);
         }
-
-        if (_oneTime)
+        finally
         {
-            _timer.Change(Timeout.Infinite, Timeout.Infinite);
-            _timer.Dispose();
-            _done = true;
+            _executing = false;
         }
     }
 
