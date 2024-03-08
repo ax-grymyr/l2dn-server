@@ -659,9 +659,13 @@ public static class StatUtil
 
 	public static double DoFinalize(this Stat stat, Creature creature, double? baseValue)
 	{
+		IStatFunction? finalizer = stat.GetInfo()?.Finalizer;
+		if (finalizer is null)
+			return defaultValue(creature, baseValue, stat);
+		
 		try
 		{
-			return stat.GetInfo().Finalizer.calc(creature, baseValue, stat);
+			return finalizer.calc(creature, baseValue, stat);
 		}
 		catch (Exception e)
 		{

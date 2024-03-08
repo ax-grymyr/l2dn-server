@@ -42,7 +42,7 @@ public class TimedHuntingZone : ZoneType
 				int remainingTime = player.getTimedHuntingZoneRemainingTime(holder.getZoneId());
 				if (remainingTime > 0)
 				{
-					player.startTimedHuntingZone(holder.getZoneId(), remainingTime);
+					player.startTimedHuntingZone(holder.getZoneId(), DateTime.UtcNow.AddMilliseconds(remainingTime));
 					player.getVariables().set(PlayerVariables.LAST_HUNTING_ZONE_ID, holder.getZoneId());
 					if (holder.isPvpZone())
 					{

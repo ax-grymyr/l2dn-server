@@ -325,7 +325,7 @@ public class Player: Playable
 	
 	// Clan related attributes
 	/** The Clan Identifier of the Player */
-	private int _clanId;
+	private int? _clanId;
 	
 	/** The Clan object of the Player */
 	private Clan _clan;
@@ -648,7 +648,7 @@ public class Player: Playable
 		// Set access level
 		player.setAccessLevel(0, false, false);
 		// Set Character's create time
-		player.setCreateDate(DateTime.Now);
+		player.setCreateDate(DateTime.UtcNow);
 		// Set the base class ID to that of the actual class ID.
 		player.setBaseClass(player.getClassId());
 		// Give 20 recommendations
@@ -856,8 +856,10 @@ public class Player: Playable
 	private Player(int objectId, PlayerTemplate template, int accountId, String accountName, PlayerAppearance app): base(objectId, template)
 	{
 		setInstanceType(InstanceType.Player);
-		base.initCharStatusUpdateValues();
-		initPcStatusUpdateValues();
+		_accountName = accountName;
+		_accountId = accountId;
+		app.setOwner(this);
+		_appearance = app;
 		
 		_contactList = new ContactList(this);
 		_inventory = new PlayerInventory(this);
@@ -868,27 +870,25 @@ public class Player: Playable
 		_request = new Model.Request(this);
 		_blockList = new BlockList(this);
 		_fishing = new Fishing(this);
-		
+
 		for (int i = 0; i < _htmlActionCaches.Length; ++i)
 		{
 			_htmlActionCaches[i] = new();
 		}
-		
-		_accountName = accountName;
-		_accountId = accountId;
-		app.setOwner(this);
-		_appearance = app;
-		
+
 		_huntPass = Config.ENABLE_HUNT_PASS ? new HuntPass(this) : null;
 		_achivemenetBox = Config.ENABLE_ACHIEVEMENT_BOX ? new AchievementBox(this) : null;
-		
-		// Create an AI
-		getAI();
-		
+
 		// Create a Radar object
 		_radar = new Radar(this);
 		_challengePoints = new ChallengePoint(this);
 		_rankingHistory = new RankingHistory(this);
+		
+		initCharStatusUpdateValues();
+		initPcStatusUpdateValues();
+		
+		// Create an AI
+		getAI();
 	}
 	
 	/**
@@ -4896,7 +4896,7 @@ public class Player: Playable
 		}
 		
 		Player pk = killer.getActingPlayer();
-		if ((getReputation() >= 0) && (pk != null) && (pk.getClan() != null) && (getClan() != null) && (pk.getClan().isAtWarWith(_clanId)
+		if ((getReputation() >= 0) && (pk != null) && (pk.getClan() != null) && (getClan() != null) && (pk.getClan().isAtWarWith(_clanId.Value)
 		// || _clan.isAtWarWith(((Player)killer).getClanId())
 		))
 		{
@@ -5674,7 +5674,7 @@ public class Player: Playable
 		if (clan == null)
 		{
 			setTitle("");
-			_clanId = 0;
+			_clanId = null;
 			_clanPrivileges = ClanPrivilege.None;
 			_pledgeType = 0;
 			_powerGrade = 0;
@@ -5694,7 +5694,7 @@ public class Player: Playable
 		}
 		
 		_clanId = clan.getId();
-		CharInfoTable.getInstance().setClanId(getObjectId(), _clanId);
+		CharInfoTable.getInstance().setClanId(getObjectId(), _clanId.Value);
 	}
 	
 	/**
@@ -6368,6 +6368,16 @@ public class Player: Playable
 		try
 		{
 			using GameServerDbContext ctx = new();
+			AccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
+			if (account is null)
+			{
+				account = new AccountRef();
+				account.Id = _accountId;
+				account.Login = _accountName;
+				ctx.AccountRefs.Add(account);
+				ctx.SaveChanges();
+			}
+			
 			ctx.Characters.Add(new Character()
 			{
 				Id = getObjectId(),
@@ -11426,7 +11436,7 @@ public class Player: Playable
 			}
 		}
 		
-		if (_clanId > 0)
+		if (_clanId != null)
 		{
 			_clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdatePacket(this), this);
 			_clan.broadcastToOnlineMembers(new ExPledgeCountPacket(_clan));

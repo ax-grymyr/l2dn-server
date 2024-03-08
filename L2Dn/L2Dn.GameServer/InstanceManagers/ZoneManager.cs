@@ -684,6 +684,9 @@ public class ZoneManager: DataReaderBase
 	 */
 	public static AbstractZoneSettings getSettings(String name)
 	{
+		if (name == null)
+			return null;
+		
 		return SETTINGS.get(name);
 	}
 	
