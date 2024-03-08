@@ -70,7 +70,9 @@ public class EffectZone : ZoneType
 			}
 			case "skillIdLvl":
 			{
-				String[] propertySplit = value.Split(";");
+				String[] propertySplit =
+					(value.EndsWith(';') ? value[..^1] : value).Split(";");
+				
 				_skills = new();
 				foreach (String skill in propertySplit)
 				{

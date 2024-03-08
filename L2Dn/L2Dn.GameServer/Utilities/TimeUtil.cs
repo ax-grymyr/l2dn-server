@@ -13,6 +13,9 @@ public static class TimeUtil
         if (s.EndsWith("min"))
             return TimeSpan.FromMinutes(int.Parse(s.Substring(0, s.Length - 3)));
 
+        if (s.EndsWith("hour"))
+            return TimeSpan.FromMinutes(int.Parse(s.Substring(0, s.Length - 4)));
+
         throw new FormatException();
     }
 }

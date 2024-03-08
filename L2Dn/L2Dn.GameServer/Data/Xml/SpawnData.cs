@@ -33,7 +33,7 @@ public class SpawnData: DataReaderBase
 	{
 		LoadXmlDocuments(DataFileLocation.Data, "spawns", true).ForEach(t =>
 		{
-			t.Document.Elements("list").Elements("skillTree").ForEach(x => loadElement(t.FilePath, x));
+			t.Document.Elements("list").Elements("spawn").ForEach(x => loadElement(t.FilePath, x));
 		});
 
 		LOGGER.Info(GetType().Name + ": Loaded " +
