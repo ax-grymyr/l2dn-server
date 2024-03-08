@@ -19,6 +19,7 @@ public readonly struct L2FriendListPacket: IOutgoingPacket
 
 	public L2FriendListPacket(Player player)
 	{
+		_info = new List<FriendInfo>();
 		foreach (int objId in player.getFriendList())
 		{
 			string name = CharInfoTable.getInstance().getNameById(objId);

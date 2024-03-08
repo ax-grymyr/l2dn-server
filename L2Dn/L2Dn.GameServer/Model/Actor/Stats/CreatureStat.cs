@@ -1122,7 +1122,9 @@ public class CreatureStat
 	 */
 	public bool addFixedValue(Stat stat, double value)
 	{
-		return _fixedValue.put(stat, value) == null;
+		bool result = !_fixedValue.ContainsKey(stat);
+		_fixedValue[stat] = value;
+		return result;
 	}
 	
 	/**
@@ -1131,6 +1133,6 @@ public class CreatureStat
 	 */
 	public bool removeFixedValue(Stat stat)
 	{
-		return _fixedValue.remove(stat) != null;
+		return _fixedValue.TryRemove(stat, out _);
 	}
 }

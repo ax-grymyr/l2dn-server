@@ -17,16 +17,16 @@ public class FileLoggerConfig: LoggerConfigBase
         string path = Path;
         if (!string.IsNullOrEmpty(path) && !path.EndsWith(System.IO.Path.DirectorySeparatorChar))
             path += System.IO.Path.DirectorySeparatorChar;
-        
+
         FileTarget fileTarget = new("file")
         {
-            FileName = path + "${date:format=yyyy-MM-dd-hh-mm-ss}.log",
+            FileName = path + "${cached:cached=true:Inner=${date:format=yyyy-MM-dd-hh-mm-ss}:CacheKey=${shortdate}}.log",
             Layout = @"[${date:format=yyyy-MM-dd HH\:mm\:ss.fff}][${level}] ${message} ${exception}",
             Encoding = Encoding.UTF8,
             AutoFlush = true,
             CreateDirs = true,
             KeepFileOpen = true,
-            ArchiveEvery = FileArchivePeriod.Monday,
+            ArchiveEvery = FileArchivePeriod.Day,
             ArchiveFileName = path + "${date:format=yyyy-MM-dd}.archive.log",
         };
 

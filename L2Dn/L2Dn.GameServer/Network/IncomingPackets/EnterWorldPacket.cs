@@ -267,7 +267,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		connection.Send(ExBasicActionListPacket.STATIC_PACKET);
 		
 		// Send blank skill list
-		connection.Send(new SkillListPacket());
+		connection.Send(new SkillListPacket(0));
 		
 		// Send GG check
 		// player.queryGameGuard();
@@ -713,7 +713,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 						connection.Send(new ExVipAttendanceNotifyPacket());
 					}
 				}
-			}, Config.ATTENDANCE_REWARD_DELAY * 60 * 1000);
+			}, Config.ATTENDANCE_REWARD_DELAY);
 			
 			if (Config.ATTENDANCE_POPUP_START)
 			{

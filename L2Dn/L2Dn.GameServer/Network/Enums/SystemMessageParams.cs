@@ -20,6 +20,7 @@ public sealed class SystemMessageParams
             throw new ArgumentOutOfRangeException(nameof(smId), smId, "Invalid SystemMessageId");
 
         _smId = smId;
+        _params = new List<SystemMessageParam>();
     }
 	
 	public SystemMessageParams(string text)
@@ -27,6 +28,7 @@ public sealed class SystemMessageParams
         ArgumentNullException.ThrowIfNull(text);
 
         _smId = SystemMessageId.S1_2;
+        _params = new List<SystemMessageParam>();
 		addString(text);
 	}
 

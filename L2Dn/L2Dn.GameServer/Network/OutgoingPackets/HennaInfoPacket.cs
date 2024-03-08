@@ -12,6 +12,7 @@ public readonly struct HennaInfoPacket: IOutgoingPacket
 
     public HennaInfoPacket(Player player)
     {
+        _hennas = new(); 
         _player = player;
         foreach (HennaPoten hennaPoten in _player.getHennaPotenList())
         {

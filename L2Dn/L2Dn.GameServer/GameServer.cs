@@ -30,6 +30,7 @@ public class GameServer
         DoorData.getInstance();
         InstanceManager.getInstance();
         ZoneManager.getInstance();
+        TimedHuntingZoneData.getInstance();
         SkillData.getInstance();
         SkillTreeData.getInstance();
         SkillEnchantData.getInstance();
@@ -37,7 +38,9 @@ public class GameServer
         ArmorSetData.getInstance();
         EnchantItemData.getInstance();
         RecipeData.getInstance();
+        BeautyShopData.getInstance();
         PlayerTemplateData.getInstance();
+        ActionData.getInstance();
         FakePlayerData.getInstance();
         NpcData.getInstance();
         SpawnData.getInstance();

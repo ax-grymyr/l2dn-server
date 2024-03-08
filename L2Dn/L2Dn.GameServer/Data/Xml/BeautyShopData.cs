@@ -36,7 +36,7 @@ public class BeautyShopData: DataReaderBase
 		Map<Sex, BeautyData> map = new(); 
 		element.Elements("sex").ForEach(el =>
 		{
-			Sex sex = el.Attribute("type").GetEnum<Sex>();
+			Sex sex = el.GetAttributeValueAsEnum<Sex>("type", true);
 			BeautyData beautyData = new BeautyData();
 			el.Elements("hair").ForEach(he =>
 			{

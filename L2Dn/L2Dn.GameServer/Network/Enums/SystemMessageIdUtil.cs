@@ -19,7 +19,7 @@ public static class SystemMessageIdUtil
 		_infos = Enum.GetValues<SystemMessageId>().Select(id =>
 		{
 			string? text = id.GetCustomAttribute<SystemMessageId, TextAttribute>()?.Text;
-			int paramCount = string.IsNullOrEmpty(text) ? 0 : ParseMessageParameters(text);
+			int paramCount = ParseMessageParameters(id.ToString());
 			return new SystemMessageInfo(id, text ?? string.Empty, paramCount);
 		}).ToImmutableDictionary(info => info.MessageId, info => info);
 	}
