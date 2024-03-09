@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.BypassHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -13,6 +14,32 @@ public class BypassHandler: IHandler<IBypassHandler, String>
 	protected BypassHandler()
 	{
 		_datatable = new();
+		
+		registerHandler(new Augment());
+		registerHandler(new Buy());
+		registerHandler(new ChatLink());
+		registerHandler(new ClanWarehouse());
+		registerHandler(new EnsoulWindow());
+		registerHandler(new FindPvP());
+		registerHandler(new Freight());
+		registerHandler(new ItemAuctionLink());
+		registerHandler(new Link());
+		registerHandler(new Multisell());
+		registerHandler(new NpcViewMod());
+		registerHandler(new Observation());
+		registerHandler(new PetExtractWindow());
+		registerHandler(new QuestLink());
+		registerHandler(new PlayerHelp());
+		registerHandler(new PrivateWarehouse());
+		registerHandler(new ReleaseAttribute());
+		registerHandler(new SkillList());
+		registerHandler(new SupportBlessing());
+		registerHandler(new SupportMagic());
+		registerHandler(new TerritoryStatus());
+		registerHandler(new TutorialClose());
+		registerHandler(new UpgradeEquipment());
+		registerHandler(new VoiceCommand());
+		registerHandler(new Wear());
 	}
 	
 	public void registerHandler(IBypassHandler handler)

@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.PunishmentHandlers;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Utilities;
 
@@ -14,6 +15,9 @@ public class PunishmentHandler: IHandler<IPunishmentHandler, PunishmentType>
 	
 	protected PunishmentHandler()
 	{
+		registerHandler(new BanHandler());
+		registerHandler(new ChatBanHandler());
+		registerHandler(new JailHandler());
 	}
 	
 	public void registerHandler(IPunishmentHandler handler)

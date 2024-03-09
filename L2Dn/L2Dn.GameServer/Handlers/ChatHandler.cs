@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers.ChatHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -17,6 +18,19 @@ public class ChatHandler: IHandler<IChatHandler, ChatType>
 	 */
 	protected ChatHandler()
 	{
+		registerHandler(new ChatGeneral());
+		registerHandler(new ChatAlliance());
+		registerHandler(new ChatClan());
+		registerHandler(new ChatHeroVoice());
+		registerHandler(new ChatParty());
+		registerHandler(new ChatPartyMatchRoom());
+		registerHandler(new ChatPartyRoomAll());
+		registerHandler(new ChatPartyRoomCommander());
+		registerHandler(new ChatPetition());
+		registerHandler(new ChatShout());
+		registerHandler(new ChatWhisper());
+		registerHandler(new ChatTrade());
+		registerHandler(new ChatWorld());
 	}
 	
 	/**

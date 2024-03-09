@@ -45,6 +45,15 @@ public readonly struct NpcHtmlMessagePacket: IOutgoingPacket // TODO: refactor
         _playSound = true;
     }
 	
+    public NpcHtmlMessagePacket(int npcObjId, int itemId, HtmlPacketHelper helper)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(itemId);
+        _helper = helper;
+        _npcObjectId = npcObjId;
+        _itemId = itemId;
+        _playSound = true;
+    }
+	
     public NpcHtmlMessagePacket(int npcObjId, int itemId, string html)
     {
         ArgumentOutOfRangeException.ThrowIfNegative(itemId);

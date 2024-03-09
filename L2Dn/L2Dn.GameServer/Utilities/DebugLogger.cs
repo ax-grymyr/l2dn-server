@@ -2,9 +2,9 @@
 
 namespace L2Dn.GameServer.Utilities;
 
-public static class DebugLogger
+public static class PacketLogger
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(DebugLogger));
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketLogger));
 
-    public static Logger Logger => _logger;
+    public static Logger Instance => _logger;
 }

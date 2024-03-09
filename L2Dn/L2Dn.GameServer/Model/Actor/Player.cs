@@ -5146,7 +5146,7 @@ public class Player: Playable
 			return;
 		}
 		
-		setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_NORMAL_TIME));
+		setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
 		if (!_pvpFlag)
 		{
 			startPvPFlag();
@@ -5180,11 +5180,11 @@ public class Player: Playable
 		{
 			if (checkIfPvP(targetPlayer))
 			{
-				setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_PVP_TIME));
+				setPvpFlagLasts(DateTime.UtcNow + Config.PVP_PVP_TIME);
 			}
 			else
 			{
-				setPvpFlagLasts(DateTime.UtcNow.AddMilliseconds(Config.PVP_NORMAL_TIME));
+				setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
 			}
 			if (!_pvpFlag)
 			{

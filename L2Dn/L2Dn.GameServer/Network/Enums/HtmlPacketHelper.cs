@@ -26,7 +26,7 @@ public class HtmlPacketHelper
         if (File.Exists(filePath))
             SetHtml(File.ReadAllText(filePath, Encoding.UTF8));
         else
-            SetHtml($"<html><body>Html file is missing:<br/>{filePath}</body></html>");
+            SetHtml($"<html><body>Html file is missing:<br/>{filePath.Replace("\\", "/")}</body></html>");
     }
     
     public void SetHtml(string html)
@@ -53,5 +53,10 @@ public class HtmlPacketHelper
     public void Replace(string oldValue, string newValue)
     {
         SetHtml(_html.Replace(oldValue, newValue));
+    }
+
+    public string getHtml()
+    {
+        return _html;
     }
 }

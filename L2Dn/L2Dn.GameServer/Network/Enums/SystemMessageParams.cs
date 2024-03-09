@@ -264,4 +264,9 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_ELEMENTAL_SPIRIT, (int)elementType);
 		return this;
 	}
+
+	public int getParamCount()
+	{
+		return _smId.GetParamCount();
+	}
 }

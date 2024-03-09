@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.TargetHandlers;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 
@@ -14,6 +15,28 @@ public class TargetHandler: IHandler<ITargetTypeHandler, TargetType>
 	protected TargetHandler()
 	{
 		_datatable = new();
+		registerHandler(new AdvanceBase());
+		registerHandler(new Artillery());
+		registerHandler(new DoorTreasure());
+		registerHandler(new Enemy());
+		registerHandler(new EnemyNot());
+		registerHandler(new EnemyOnly());
+		registerHandler(new FortressFlagpole());
+		registerHandler(new Ground());
+		registerHandler(new HolyThing());
+		registerHandler(new Item());
+		registerHandler(new MyMentor());
+		registerHandler(new MyParty());
+		registerHandler(new None());
+		registerHandler(new NpcBody());
+		registerHandler(new Others());
+		registerHandler(new OwnerPet());
+		registerHandler(new PcBody());
+		registerHandler(new Pet());
+		registerHandler(new Self());
+		registerHandler(new Summon());
+		registerHandler(new Target());
+		registerHandler(new WyvernTarget());
 	}
 	
 	public void registerHandler(ITargetTypeHandler handler)

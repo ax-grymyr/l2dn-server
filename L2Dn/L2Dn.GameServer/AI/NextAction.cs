@@ -58,6 +58,7 @@ public class NextAction
 		{
 			_intentions.add(intention);
 		}
+		
 		setCallback(callback);
 	}
 	

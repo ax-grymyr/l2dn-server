@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.UserCommandHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -13,6 +14,22 @@ public class UserCommandHandler: IHandler<IUserCommandHandler, int>
 	protected UserCommandHandler()
 	{
 		_datatable = new();
+		registerHandler(new ClanPenalty());
+		registerHandler(new ClanWarsList());
+		registerHandler(new Dismount());
+		//registerHandler(new ExperienceGain());
+		registerHandler(new Unstuck());
+		registerHandler(new InstanceZone());
+		registerHandler(new Loc());
+		registerHandler(new Mount());
+		registerHandler(new PartyInfo());
+		registerHandler(new Time());
+		registerHandler(new OlympiadStat());
+		registerHandler(new ChannelLeave());
+		registerHandler(new ChannelDelete());
+		registerHandler(new ChannelInfo());
+		registerHandler(new MyBirthday());
+		registerHandler(new SiegeStatus());
 	}
 	
 	public void registerHandler(IUserCommandHandler handler)

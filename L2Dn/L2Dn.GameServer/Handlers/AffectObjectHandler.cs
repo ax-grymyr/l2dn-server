@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.TargetHandlers.AffectObjects;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 
@@ -14,6 +15,18 @@ public class AffectObjectHandler: IHandler<IAffectObjectHandler, AffectObject>
 	protected AffectObjectHandler()
 	{
 		_datatable = new();
+		
+		registerHandler(new All());
+		registerHandler(new Clan());
+		registerHandler(new Friend());
+		registerHandler(new FriendPc());
+		registerHandler(new HiddenPlace());
+		registerHandler(new Invisible());
+		registerHandler(new NotFriend());
+		registerHandler(new NotFriendPc());
+		registerHandler(new ObjectDeadNpcBody());
+		registerHandler(new UndeadRealEnemy());
+		registerHandler(new WyvernObject());
 	}
 	
 	public void registerHandler(IAffectObjectHandler handler)

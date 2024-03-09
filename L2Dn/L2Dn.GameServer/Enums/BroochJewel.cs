@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Model.Holders;
 
 namespace L2Dn.GameServer.Enums;
 
@@ -70,6 +71,12 @@ public static class BroochJewelUtil
 	public static int GetItemId(this BroochJewel broochJewel)
 	{
 		return BroochJewelInfo.All[broochJewel].getItemId();
+	}
+
+	public static SkillHolder GetSkill(this BroochJewel broochJewel)
+	{
+		BroochJewelInfo info = BroochJewelInfo.All[broochJewel];
+		return new SkillHolder(info.getSkillId(), info.getSkillLevel());
 	}
 
 	public static bool isRuby(this BroochJewel broochJewel)

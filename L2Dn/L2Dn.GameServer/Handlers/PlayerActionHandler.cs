@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.PlayerActions;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -12,6 +13,30 @@ public class PlayerActionHandler: IHandler<IPlayerActionHandler, String>
 	
 	protected PlayerActionHandler()
 	{
+		registerHandler(new AirshipAction());
+		registerHandler(new BotReport());
+		registerHandler(new InstanceZoneInfo());
+		registerHandler(new PetAttack());
+		registerHandler(new PetHold());
+		registerHandler(new PetMove());
+		registerHandler(new PetSkillUse());
+		registerHandler(new PetStop());
+		registerHandler(new PrivateStore());
+		registerHandler(new Ride());
+		registerHandler(new RunWalk());
+		registerHandler(new ServitorAttack());
+		registerHandler(new ServitorHold());
+		registerHandler(new ServitorMode());
+		registerHandler(new ServitorMove());
+		registerHandler(new ServitorSkillUse());
+		registerHandler(new ServitorStop());
+		registerHandler(new SitStand());
+		registerHandler(new SocialAction());
+		registerHandler(new TacticalSignTarget());
+		registerHandler(new TacticalSignUse());
+		registerHandler(new TeleportBookmark());
+		registerHandler(new UnsummonPet());
+		registerHandler(new UnsummonServitor());
 	}
 	
 	public void registerHandler(IPlayerActionHandler handler)

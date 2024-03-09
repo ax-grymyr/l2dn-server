@@ -48,7 +48,7 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 		return entry != null ? entry.getStatus() : DailyMissionStatus.NOT_AVAILABLE;
 	}
 	
-	public int getProgress(Player player)
+	public virtual int getProgress(Player player)
 	{
 		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
 		return entry != null ? entry.getProgress() : 0;
@@ -61,7 +61,7 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public void reset()
+	public virtual void reset()
 	{
 		if (!_holder.dailyReset())
 		{

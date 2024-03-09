@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers.ItemHandlers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
 
@@ -18,6 +19,40 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	protected ItemHandler()
 	{
 		_datatable = new();
+		registerHandler(new AddSpiritExp());
+		registerHandler(new Appearance());
+		registerHandler(new BeastSoulShot());
+		registerHandler(new BeastSpiritShot());
+		registerHandler(new BlessedSoulShots());
+		registerHandler(new BlessedSpiritShot());
+		registerHandler(new BlessingScrolls());
+		registerHandler(new Book());
+		registerHandler(new Bypass());
+		registerHandler(new Calculator());
+		registerHandler(new ChallengePointsCoupon());
+		registerHandler(new ChangeAttributeCrystal());
+		registerHandler(new CharmOfCourage());
+		registerHandler(new Elixir());
+		registerHandler(new EnchantAttribute());
+		registerHandler(new EnchantScrolls());
+		registerHandler(new ExtractableItems());
+		registerHandler(new FatedSupportBox());
+		registerHandler(new FishShots());
+		registerHandler(new Harvester());
+		registerHandler(new ItemSkills());
+		registerHandler(new ItemSkillsTemplate());
+		registerHandler(new LimitedSayha());
+		registerHandler(new Maps());
+		registerHandler(new MercTicket());
+		registerHandler(new NicknameColor());
+		registerHandler(new PetFood());
+		registerHandler(new Recipes());
+		registerHandler(new RollingDice());
+		registerHandler(new Seed());
+		registerHandler(new SoulShots());
+		registerHandler(new SpecialXMas());
+		registerHandler(new SpiritShot());
+		registerHandler(new SummonItems());
 	}
 	
 	/**

@@ -1428,10 +1428,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * @param itemObjId the item object ID
 	 * @return if the item has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public TimeSpan? getItemRemainingReuseTime(int itemObjId)
+	public TimeSpan getItemRemainingReuseTime(int itemObjId)
 	{
 		TimeStamp reuseStamp = _reuseTimeStampsItems.get(itemObjId);
-		return reuseStamp != null ? reuseStamp.getRemaining() : null;
+		return reuseStamp != null ? reuseStamp.getRemaining() : TimeSpan.Zero;
 	}
 	
 	/**

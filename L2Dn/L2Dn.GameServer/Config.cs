@@ -814,8 +814,8 @@ public class Config
 	public static string GAME_SERVER_LOGIN_HOST;
 	public static List<string> GAME_SERVER_SUBNETS;
 	public static List<string> GAME_SERVER_HOSTS;
-	public static int PVP_NORMAL_TIME;
-	public static int PVP_PVP_TIME;
+	public static TimeSpan PVP_NORMAL_TIME;
+	public static TimeSpan PVP_PVP_TIME;
 	public static int MAX_REPUTATION;
 	public static int REPUTATION_INCREASE;
 
@@ -2282,8 +2282,8 @@ public class Config
 		ANTIFEED_INTERVAL = parser.getInt("AntiFeedInterval", 120) * 1000;
 		VAMPIRIC_ATTACK_AFFECTS_PVP = parser.getBoolean("VampiricAttackAffectsPvP", false);
 		MP_VAMPIRIC_ATTACK_AFFECTS_PVP = parser.getBoolean("MpVampiricAttackAffectsPvP", false);
-		PVP_NORMAL_TIME = parser.getInt("PvPVsNormalTime", 120000);
-		PVP_PVP_TIME = parser.getInt("PvPVsPvPTime", 60000);
+		PVP_NORMAL_TIME = TimeSpan.FromMilliseconds(parser.getInt("PvPVsNormalTime", 120000));
+		PVP_PVP_TIME = TimeSpan.FromMilliseconds(parser.getInt("PvPVsPvPTime", 60000));
 		MAX_REPUTATION = parser.getInt("MaxReputation", 500);
 		REPUTATION_INCREASE = parser.getInt("ReputationIncrease", 100);
 

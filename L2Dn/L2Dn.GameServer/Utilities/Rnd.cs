@@ -7,6 +7,11 @@ public static class Rnd
         return Random.Shared.Next(maxValue);
     }
     
+    public static long get(long maxValue)
+    {
+        return Random.Shared.NextInt64(maxValue);
+    }
+    
     public static double get(double maxValue)
     {
         return Random.Shared.NextDouble() * maxValue;

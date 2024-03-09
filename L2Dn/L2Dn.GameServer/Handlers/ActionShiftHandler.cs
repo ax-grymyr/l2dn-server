@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers.ActionShiftHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -14,6 +15,14 @@ public class ActionShiftHandler: IHandler<IActionShiftHandler, InstanceType>
 	protected ActionShiftHandler()
 	{
 		_actionsShift = new();
+		
+		// Action Shift Handlers
+		registerHandler(new DoorActionShift());
+		registerHandler(new ItemActionShift());
+		registerHandler(new NpcActionShift());
+		registerHandler(new PlayerActionShift());
+		registerHandler(new StaticObjectActionShift());
+		registerHandler(new SummonActionShift());
 	}
 	
 	public void registerHandler(IActionShiftHandler handler)

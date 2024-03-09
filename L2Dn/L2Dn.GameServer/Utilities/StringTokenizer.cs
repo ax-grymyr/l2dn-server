@@ -7,7 +7,7 @@ public struct StringTokenizer
     private readonly string[] _tokens;
     private int _index = 0;
 
-    public StringTokenizer(string input, string delimiters)
+    public StringTokenizer(string input, string delimiters = " \t\n\r\f")
     {
         _input = input;
         _delimiters = delimiters;
@@ -29,5 +29,10 @@ public struct StringTokenizer
     public int countTokens()
     {
         return _tokens.Length;
+    }
+
+    public bool hasMoreElements()
+    {
+        return hasMoreTokens();
     }
 }
