@@ -9,7 +9,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Vitality Point Up effect implementation.

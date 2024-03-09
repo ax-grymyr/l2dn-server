@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.ItemHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
 /**
  * @author Mode

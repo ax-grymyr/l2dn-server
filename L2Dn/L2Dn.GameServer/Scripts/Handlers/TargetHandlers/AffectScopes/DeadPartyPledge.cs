@@ -1,10 +1,11 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.TargetHandlers.AffectScopes;
+namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 
 /**
  * Dead Party and Clan affect scope implementation.

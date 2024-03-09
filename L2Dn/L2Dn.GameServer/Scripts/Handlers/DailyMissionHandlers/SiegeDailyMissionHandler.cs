@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -9,7 +10,7 @@ using L2Dn.GameServer.Utilities;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using SiegeClan = L2Dn.GameServer.Model.SiegeClan;
 
-namespace L2Dn.GameServer.Handlers.DailyMissionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
 /**
  * @author UnAfraid

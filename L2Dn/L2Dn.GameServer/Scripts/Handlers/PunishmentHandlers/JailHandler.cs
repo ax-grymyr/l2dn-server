@@ -1,5 +1,5 @@
-using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
@@ -14,7 +14,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
-namespace L2Dn.GameServer.Handlers.PunishmentHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.PunishmentHandlers;
 
 /**
  * This class handles jail punishment.

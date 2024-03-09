@@ -2,7 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 
-namespace L2Dn.GameServer.Handlers.ConditionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ConditionHandlers;
 
 /**
  * @author Sdw

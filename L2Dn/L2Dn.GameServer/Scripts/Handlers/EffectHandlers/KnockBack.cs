@@ -10,7 +10,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Check if this effect is not counted as being stunned.

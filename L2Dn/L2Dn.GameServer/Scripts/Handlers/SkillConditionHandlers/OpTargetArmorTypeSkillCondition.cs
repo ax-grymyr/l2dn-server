@@ -7,7 +7,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.SkillConditionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 /**
  * @author Mobius

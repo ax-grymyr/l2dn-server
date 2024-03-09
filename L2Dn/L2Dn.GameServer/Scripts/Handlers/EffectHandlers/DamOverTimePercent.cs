@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Damage Over Time Percent effect implementation.

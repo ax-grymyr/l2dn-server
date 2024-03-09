@@ -1,10 +1,10 @@
-using L2Dn.GameServer.Handlers.EffectHandlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-namespace L2Dn.GameServer.Handlers.SkillConditionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 /**
  * @author UnAfraid

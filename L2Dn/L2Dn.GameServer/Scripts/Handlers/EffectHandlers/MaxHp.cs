@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * @author NosBit

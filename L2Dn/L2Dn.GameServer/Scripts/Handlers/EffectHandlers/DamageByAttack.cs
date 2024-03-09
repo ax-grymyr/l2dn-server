@@ -4,9 +4,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
-using NLog;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * An effect that changes damage taken from an attack.<br>

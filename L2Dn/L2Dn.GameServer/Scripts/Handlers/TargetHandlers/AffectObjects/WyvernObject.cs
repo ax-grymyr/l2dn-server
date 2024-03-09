@@ -1,9 +1,10 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills.Targets;
 
-namespace L2Dn.GameServer.Handlers.TargetHandlers.AffectObjects;
+namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 
 /**
  * @author Nik

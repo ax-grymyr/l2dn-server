@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Handlers.PunishmentHandlers;
 using L2Dn.GameServer.Model.Punishment;
+using L2Dn.GameServer.Scripts.Handlers.PunishmentHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

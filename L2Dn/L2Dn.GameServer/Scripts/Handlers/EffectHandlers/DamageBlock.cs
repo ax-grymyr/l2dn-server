@@ -2,7 +2,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Effect that blocks damage and heals to HP/MP.<br>

@@ -1,8 +1,9 @@
 using System.Text;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
-namespace L2Dn.GameServer.Handlers.UserCommandHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 
 /**
  * Clan Penalty user command.

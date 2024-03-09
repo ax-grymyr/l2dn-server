@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Handlers.ActionShiftHandlers;
+using L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

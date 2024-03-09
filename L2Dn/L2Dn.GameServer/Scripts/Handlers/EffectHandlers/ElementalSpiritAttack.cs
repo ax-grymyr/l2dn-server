@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * @author JoeAlisson

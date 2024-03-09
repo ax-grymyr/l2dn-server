@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets.Variations;
 using NLog;
 
-namespace L2Dn.GameServer.Handlers.BypassHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 public class Augment: IBypassHandler
 {

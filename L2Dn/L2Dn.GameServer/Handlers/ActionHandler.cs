@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Handlers.ActionHandlers;
+using L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 using L2Dn.GameServer.Utilities;
 using PlayerAction = L2Dn.GameServer.Enums.PlayerAction;
 using TrapAction = L2Dn.GameServer.Enums.TrapAction;
@@ -28,11 +28,11 @@ public class ActionHandler: IHandler<IActionHandler, InstanceType>
 		registerHandler(new DoorAction());
 		registerHandler(new ItemAction());
 		registerHandler(new NpcAction());
-		registerHandler(new ActionHandlers.PlayerAction());
+		registerHandler(new Scripts.Handlers.ActionHandlers.PlayerAction());
 		registerHandler(new PetAction());
 		registerHandler(new StaticObjectAction());
 		registerHandler(new SummonAction());
-		registerHandler(new ActionHandlers.TrapAction());
+		registerHandler(new Scripts.Handlers.ActionHandlers.TrapAction());
 	}
 	
 	public void registerHandler(IActionHandler handler)

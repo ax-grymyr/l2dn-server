@@ -1,9 +1,10 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.ActionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 
 public class DecoyAction: IActionHandler
 {

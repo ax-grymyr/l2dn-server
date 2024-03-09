@@ -8,7 +8,7 @@ using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Block Action effect implementation.

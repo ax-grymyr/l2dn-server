@@ -11,7 +11,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using ArgumentException = System.ArgumentException;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * Summon effect implementation.

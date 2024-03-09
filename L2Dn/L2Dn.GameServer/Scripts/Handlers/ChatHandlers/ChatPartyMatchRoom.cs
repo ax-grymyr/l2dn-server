@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Matching;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
-namespace L2Dn.GameServer.Handlers.ChatHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 
 /**
  * Party Match Room chat handler.

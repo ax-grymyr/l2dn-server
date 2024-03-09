@@ -1,7 +1,7 @@
 using System.Text;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.ChatHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 
 /**
  * @author Mobius

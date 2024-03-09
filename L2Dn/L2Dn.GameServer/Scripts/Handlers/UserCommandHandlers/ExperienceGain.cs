@@ -1,7 +1,8 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.UserCommandHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 
 /**
  * @author xban1x

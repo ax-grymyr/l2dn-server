@@ -1,6 +1,7 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Handlers.BypassHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 /**
  * @author DS

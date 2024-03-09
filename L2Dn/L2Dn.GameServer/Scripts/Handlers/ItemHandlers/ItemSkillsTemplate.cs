@@ -1,5 +1,6 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
@@ -11,7 +12,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 
-namespace L2Dn.GameServer.Handlers.ItemHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
 /**
  * Template for item skills handler.

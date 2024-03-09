@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Handlers.BypassHandlers;
+using L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

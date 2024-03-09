@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
-namespace L2Dn.GameServer.Handlers.UserCommandHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 
 /**
  * Clan War Start, Under Attack List, War List user commands.

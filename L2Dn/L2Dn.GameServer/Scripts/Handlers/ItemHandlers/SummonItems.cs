@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.ItemHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
 /**
  * @author HorridoJoho, UnAfraid

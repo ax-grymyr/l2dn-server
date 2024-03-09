@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Handlers.TargetHandlers;
 using L2Dn.GameServer.Model.Skills.Targets;
+using L2Dn.GameServer.Scripts.Handlers.TargetHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

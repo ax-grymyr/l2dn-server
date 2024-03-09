@@ -1,9 +1,10 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 
-namespace L2Dn.GameServer.Handlers.TargetHandlers.AffectObjects;
+namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 
 /**
  * @author Nik

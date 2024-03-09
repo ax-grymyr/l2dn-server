@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
-namespace L2Dn.GameServer.Handlers.ItemHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
 public class Elixir: ItemSkills
 {

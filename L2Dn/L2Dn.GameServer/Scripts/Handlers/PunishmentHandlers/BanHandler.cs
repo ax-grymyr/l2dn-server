@@ -1,10 +1,11 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
-namespace L2Dn.GameServer.Handlers.PunishmentHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.PunishmentHandlers;
 
 /**
  * This class handles ban punishment.

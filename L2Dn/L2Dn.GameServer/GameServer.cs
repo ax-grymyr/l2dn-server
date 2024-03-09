@@ -1,6 +1,7 @@
 ﻿using L2Dn.Cryptography;
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.NetworkAuthServer;
@@ -24,6 +25,7 @@ public class GameServer
     {
         // Preload data
         Config.Load(@"Config");
+        GeoEngine.getInstance();
         ExperienceData.getInstance();
         ClassListData.getInstance();
         CategoryData.getInstance();

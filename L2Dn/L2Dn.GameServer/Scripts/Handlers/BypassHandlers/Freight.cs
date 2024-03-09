@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -5,7 +6,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.BypassHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 /**
  * @author UnAfraid

@@ -1,7 +1,7 @@
-using L2Dn.GameServer.Handlers.ConditionHandlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Scripting;
+using L2Dn.GameServer.Scripts.Handlers.ConditionHandlers;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

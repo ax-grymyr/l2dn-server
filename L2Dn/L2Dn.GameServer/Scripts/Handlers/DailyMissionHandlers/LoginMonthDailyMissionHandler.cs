@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Listeners;
 
-namespace L2Dn.GameServer.Handlers.DailyMissionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
 /**
  * @author Iris, Mobius

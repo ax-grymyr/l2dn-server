@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.TargetHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers;
 
 /**
  * Any friendly selected target. Works on dead targets or doors as well. Unable to force use.

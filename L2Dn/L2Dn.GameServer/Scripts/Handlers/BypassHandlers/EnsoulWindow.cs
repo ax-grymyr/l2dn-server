@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets.Ensoul;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.BypassHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 /**
  * @author St3eT

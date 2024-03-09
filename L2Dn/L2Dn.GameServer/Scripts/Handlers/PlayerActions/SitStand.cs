@@ -1,12 +1,13 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
-namespace L2Dn.GameServer.Handlers.PlayerActions;
+namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
 /**
  * Sit/Stand player action handler.

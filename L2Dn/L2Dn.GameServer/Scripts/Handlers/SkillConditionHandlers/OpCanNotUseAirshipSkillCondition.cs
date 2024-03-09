@@ -3,7 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
 
-namespace L2Dn.GameServer.Handlers.SkillConditionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 /**
  * @author UnAfraid

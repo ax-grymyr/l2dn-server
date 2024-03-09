@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Handlers.PlayerActions;
+namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
 /**
  * Bot Report button player action handler.

@@ -1,5 +1,6 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -9,7 +10,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
-namespace L2Dn.GameServer.Handlers.PlayerActions;
+namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
 /**
  * Social Action player action handler.

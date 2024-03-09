@@ -1,5 +1,3 @@
-using System.Collections.ObjectModel;
-using System.Data;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -9,7 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 
-namespace L2Dn.GameServer.Handlers.EffectHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 /**
  * @author Geremy

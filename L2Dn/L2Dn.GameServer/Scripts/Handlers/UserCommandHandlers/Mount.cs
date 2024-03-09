@@ -1,7 +1,8 @@
 using System.Runtime.CompilerServices;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Handlers.UserCommandHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 
 /**
  * Mount user command.

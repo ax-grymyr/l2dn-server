@@ -1,6 +1,7 @@
 using System.Text;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -10,7 +11,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
-namespace L2Dn.GameServer.Handlers.BypassHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 public class QuestLink: IBypassHandler
 {

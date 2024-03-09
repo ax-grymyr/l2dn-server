@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.SkillConditionHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 /**
  * @author Sdw

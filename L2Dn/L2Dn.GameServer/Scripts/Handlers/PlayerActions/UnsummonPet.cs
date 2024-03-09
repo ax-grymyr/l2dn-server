@@ -1,9 +1,10 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
 
-namespace L2Dn.GameServer.Handlers.PlayerActions;
+namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
 /**
  * Unsummon Pet player action handler.

@@ -1,8 +1,9 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Handlers.PlayerActions;
+namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
 /**
  * Airship Action player action handler.

@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Handlers.TargetHandlers.AffectScopes;
 using L2Dn.GameServer.Model.Skills.Targets;
+using L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 using L2Dn.GameServer.Utilities;
 using Range = System.Range;
 using Single = System.Single;
@@ -29,10 +29,10 @@ public class AffectScopeHandler: IHandler<IAffectScopeHandler, AffectScope>
 		registerHandler(new PartyPledge());
 		registerHandler(new Pledge());
 		registerHandler(new PointBlank());
-		registerHandler(new TargetHandlers.AffectScopes.Range());
+		registerHandler(new Scripts.Handlers.TargetHandlers.AffectScopes.Range());
 		registerHandler(new RangeSortByHp());
 		registerHandler(new RingRange());
-		registerHandler(new TargetHandlers.AffectScopes.Single());
+		registerHandler(new Scripts.Handlers.TargetHandlers.AffectScopes.Single());
 		registerHandler(new Square());
 		registerHandler(new SquarePB());
 		registerHandler(new StaticObjectScope());

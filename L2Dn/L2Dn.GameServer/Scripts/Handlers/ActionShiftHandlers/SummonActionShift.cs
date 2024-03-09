@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Handlers.ActionShiftHandlers;
+namespace L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 
 public class SummonActionShift: IActionShiftHandler
 {
