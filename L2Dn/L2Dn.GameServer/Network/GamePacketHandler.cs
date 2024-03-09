@@ -20,7 +20,11 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 11 */ RegisterPacket<EnterWorldPacket>(IncomingPacketCodes.ENTER_WORLD).WithAllowedStates(GameSessionState.EnteringGame);
         /* 12 */ RegisterPacket<CharacterSelectPacket>(IncomingPacketCodes.CHARACTER_SELECT).WithAllowedStates(GameSessionState.CharacterScreen);
         /* 13 */ RegisterPacket<NewCharacterPacket>(IncomingPacketCodes.NEW_CHARACTER).WithAllowedStates(GameSessionState.CharacterScreen);
+        /* 14 */ RegisterPacket<RequestItemListPacket>(IncomingPacketCodes.REQUEST_ITEM_LIST);
+        /* 19 */ RegisterPacket<UseItemPacket>(IncomingPacketCodes.USE_ITEM);
+        /* 1F */ RegisterPacket<ActionPacket>(IncomingPacketCodes.ACTION);
         /* 2B */ RegisterPacket<AuthLoginPacket>(IncomingPacketCodes.AUTH_LOGIN).WithAllowedStates(GameSessionState.Authorization);
+        /* 39 */ RegisterPacket<RequestMagicSkillUsePacket>(IncomingPacketCodes.REQUEST_MAGIC_SKILL_USE);
         /* 57 */ RegisterPacket<RequestRestartPacket>(IncomingPacketCodes.REQUEST_RESTART);
         /* 59 */ RegisterPacket<ValidatePositionPacket>(IncomingPacketCodes.VALIDATE_POSITION);
         /* 62 */ RegisterPacket<RequestQuestListPacket>(IncomingPacketCodes.REQUEST_QUEST_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
@@ -29,6 +33,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 7B */ RegisterPacket<CharacterRestorePacket>(IncomingPacketCodes.CHARACTER_RESTORE).WithAllowedStates(GameSessionState.CharacterScreen);
 
         /* D0:0001 */ RegisterPacket<RequestManorListPacket>(IncomingPacketCodes.REQUEST_MANOR_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
+        /* D0:0024 */ RegisterPacket<RequestSaveInventoryOrderPacket>(IncomingPacketCodes.REQUEST_SAVE_INVENTORY_ORDER);
         /* D0:0033 */ RegisterPacket<RequestGoToLobbyPacket>(IncomingPacketCodes.REQUEST_GOTO_LOBBY).WithAllowedStates(GameSessionState.CharacterScreen);
         /* D0:00A9 */ RegisterPacket<RequestCharacterNameCreatablePacket>(IncomingPacketCodes.REQUEST_CHARACTER_NAME_CREATABLE).WithAllowedStates(GameSessionState.CharacterScreen);
         /* D0:0166 */ RegisterPacket<ExRequestTeleportPacket>(IncomingPacketCodes.EX_REQUEST_TELEPORT);

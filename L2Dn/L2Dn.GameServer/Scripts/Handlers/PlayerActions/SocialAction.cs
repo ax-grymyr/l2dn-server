@@ -328,7 +328,7 @@ public class SocialAction: IPlayerActionHandler
 		    (partner.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE))
 		{
 			NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO,
-				new Callback(() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id))));
+				() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id)));
 			player.getAI().setNextAction(nextAction);
 			return;
 		}
@@ -336,16 +336,11 @@ public class SocialAction: IPlayerActionHandler
 		if (player.isCastingNow())
 		{
 			NextAction nextAction = new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST,
-				new Callback(() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id))));
+				() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id)));
 			player.getAI().setNextAction(nextAction);
 			return;
 		}
 
 		partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id));
-	}
-
-	private sealed class Callback(Action action): NextAction.NextActionCallback
-	{
-		public void doWork() => action();
 	}
 }

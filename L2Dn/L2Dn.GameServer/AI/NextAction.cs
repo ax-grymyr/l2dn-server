@@ -9,14 +9,9 @@ namespace L2Dn.GameServer.AI;
  */
 public class NextAction
 {
-	public interface NextActionCallback
-	{
-		void doWork();
-	}
-	
 	private List<CtrlEvent> _events;
 	private List<CtrlIntention> _intentions;
-	private NextActionCallback _callback;
+	private Action _callback;
 	
 	/**
 	 * Main constructor.
@@ -24,7 +19,7 @@ public class NextAction
 	 * @param intentions
 	 * @param callback
 	 */
-	public NextAction(List<CtrlEvent> events, List<CtrlIntention> intentions, NextActionCallback callback)
+	public NextAction(List<CtrlEvent> events, List<CtrlIntention> intentions, Action callback)
 	{
 		_events = events;
 		_intentions = intentions;
@@ -37,7 +32,7 @@ public class NextAction
 	 * @param intention
 	 * @param callback
 	 */
-	public NextAction(CtrlEvent @event, CtrlIntention intention, NextActionCallback callback)
+	public NextAction(CtrlEvent @event, CtrlIntention intention, Action callback)
 	{
 		if (_events == null)
 		{
@@ -69,7 +64,7 @@ public class NextAction
 	{
 		if (_callback != null)
 		{
-			_callback.doWork();
+			_callback();
 		}
 	}
 	
@@ -125,7 +120,7 @@ public class NextAction
 	/**
 	 * @return the _callback
 	 */
-	public NextActionCallback getCallback()
+	public Action getCallback()
 	{
 		return _callback;
 	}
@@ -133,7 +128,7 @@ public class NextAction
 	/**
 	 * @param callback the callback to set.
 	 */
-	public void setCallback(NextActionCallback callback)
+	public void setCallback(Action callback)
 	{
 		_callback = callback;
 	}

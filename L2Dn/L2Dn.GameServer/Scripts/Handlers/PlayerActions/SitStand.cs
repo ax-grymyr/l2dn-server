@@ -26,7 +26,7 @@ public class SitStand: IPlayerActionHandler
 			// Sit when arrive using next action.
 			// Creating next action class.
 			NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO,
-				new Callback(() => useSit(player, player.getTarget())));
+				() => useSit(player, player.getTarget()));
 			
 			// Binding next action to AI.
 			player.getAI().setNextAction(nextAction);
@@ -36,11 +36,6 @@ public class SitStand: IPlayerActionHandler
 	public bool isPetAction()
 	{
 		return false;
-	}
-
-	private sealed class Callback(Action action): NextAction.NextActionCallback
-	{
-		public void doWork() => action();
 	}
 	
 	/**
