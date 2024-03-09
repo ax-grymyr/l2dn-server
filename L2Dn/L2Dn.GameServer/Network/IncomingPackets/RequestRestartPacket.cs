@@ -25,7 +25,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
 		
         if (!player.canLogout())
         {
-            player.sendPacket(new RestartResponsePacket());
+            player.sendPacket(new RestartResponsePacket(false));
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
@@ -67,7 +67,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
 		
         // Return the client to the authenticated status.
         session.State = GameSessionState.CharacterScreen;
-        connection.Send(new RestartResponsePacket());
+        connection.Send(new RestartResponsePacket(true));
 		
         // Send character list
         CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
