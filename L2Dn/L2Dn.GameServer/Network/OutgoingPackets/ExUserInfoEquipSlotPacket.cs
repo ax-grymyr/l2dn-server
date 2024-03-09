@@ -11,19 +11,6 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
 {
     private readonly MaskablePacketHelper<InventorySlot> _helper;
     private readonly Player _player;
-
-    private readonly byte[] _masks = [0, 0, 0, 0, 0, 0, 0, 0];
-    private static readonly byte[] DEFAULT_FLAG_ARRAY =
-    {
-        (byte) 0x80,
-        0x40,
-        0x20,
-        0x10,
-        0x08,
-        0x04,
-        0x02,
-        0x01
-    };
     
     public ExUserInfoEquipSlotPacket(Player player, bool addAll = true)
     {
@@ -32,31 +19,7 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
         if (addAll)
         {
             _helper.AddAllComponents();
-            addComponentType(Enum.GetValues<InventorySlot>());
         }
-    }
-
-    private void addComponentType(InventorySlot[] values)
-    {
-        foreach (InventorySlot component in values)
-        {
-            if (!containsMask(component))
-            {
-                addMask((int)component);
-                //onNewMaskAdded(component);
-            }
-        }
-    }
-    
-    private void addMask(int mask)
-    {
-        _masks[mask >> 3] |= DEFAULT_FLAG_ARRAY[mask & 7];
-    }
-
-    private bool containsMask(InventorySlot component)
-    {
-        int mask = (int)component;
-        return (_masks[mask >> 3] & DEFAULT_FLAG_ARRAY[mask & 7]) != 0;
     }
 
     public void WriteContent(PacketBitWriter writer)
@@ -66,13 +29,11 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_EQUIP_SLOT);
         writer.WriteInt32(_player.getObjectId());
         writer.WriteInt16((short)allSlots.Length); // 152
-        //_helper.WriteMask(writer);
-        writer.WriteBytes(_masks);
+        _helper.WriteMask(writer);
         PlayerInventory inventory = _player.getInventory();
         foreach (InventorySlot slot in allSlots)
         {
-            //if (_helper.HasComponent(slot))
-            if (containsMask(slot))
+            if (_helper.HasComponent(slot))
             {
                 int paperdollSlot = slot.GetPaperdollSlot();
                 VariationInstance augment = inventory.getPaperdollAugmentation(paperdollSlot);
