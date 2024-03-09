@@ -160,13 +160,15 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_weight = set.getInt("weight", 0);
 		_materialType = set.getEnum("material", MaterialType.STEEL);
 		_equipReuseDelay = TimeSpan.FromSeconds(set.getInt("equip_reuse_delay", 0));
+		
 		_duration = set.getInt("duration", -1);
 		
 		int time = set.getInt("time", -1);
-		_time = time < 0 ? null : TimeSpan.FromMilliseconds(time);
+		_time = time < 0 ? null : TimeSpan.FromMinutes(time);
 
 		int autoDestroyTime = set.getInt("auto_destroy_time", -1); 
 		_autoDestroyTime = autoDestroyTime < 0 ? null : TimeSpan.FromSeconds(autoDestroyTime);
+		
 		_bodyPart = ItemData.SLOTS.get(set.getString("bodypart", "none"));
 		_referencePrice = set.getInt("price", 0);
 		_crystalType = set.getEnum("crystal_type", CrystalType.NONE);

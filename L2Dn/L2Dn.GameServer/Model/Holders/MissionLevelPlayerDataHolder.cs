@@ -65,7 +65,7 @@ public class MissionLevelPlayerDataHolder
 			}
 
 			List<int> valuesData = new();
-			String[] missions = values.Count == 0 ? Array.Empty<string>() : values[0].Split(",");
+			String[] missions = values.Count == 0 || string.IsNullOrEmpty(values[0]) ? Array.Empty<string>() : values[0].Split(",");
 			foreach (String mission in missions)
 			{
 				valuesData.Add(int.Parse(mission));

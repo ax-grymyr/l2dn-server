@@ -660,6 +660,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			connection.Send(new ExCollectionInfoPacket(player, category));
 		}
+		
 		connection.Send(new ExCollectionActiveEventPacket());
 		
 		connection.Send(new ExSubjugationSidebarPacket(player, player.getPurgePoints().get(player.getPurgeLastCategory())));
