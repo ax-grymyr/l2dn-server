@@ -54,7 +54,7 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 			return;
 		}
 		
-		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket();
+		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket(new List<BuffInfo>());
 		Creature creature = @event.getCaster();
 		foreach (BuffInfo info in creature.getEffectList().getEffects())
 		{

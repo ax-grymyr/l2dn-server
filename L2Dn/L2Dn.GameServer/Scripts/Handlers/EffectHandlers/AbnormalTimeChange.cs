@@ -63,7 +63,7 @@ public class AbnormalTimeChange: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket();
+		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket(new List<BuffInfo>());
 		
 		switch (_mode)
 		{

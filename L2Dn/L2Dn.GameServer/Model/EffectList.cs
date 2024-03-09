@@ -1050,7 +1050,7 @@ public class EffectList
 				if (player != null)
 				{
 					Party party = player.getParty();
-					AbnormalStatusUpdatePacket? asu = (_owner.isPlayer() && _updateAbnormalStatus.get()) ? new AbnormalStatusUpdatePacket() : null;
+					AbnormalStatusUpdatePacket? asu = (_owner.isPlayer() && _updateAbnormalStatus.get()) ? new AbnormalStatusUpdatePacket(new List<BuffInfo>()) : null;
 					PartySpelledPacket? ps = ((party != null) || _owner.isSummon()) ? new PartySpelledPacket(_owner) : null;
 					ExOlympiadSpelledInfoPacket? os = (player.isInOlympiadMode() && player.isOlympiadStart()) ? new ExOlympiadSpelledInfoPacket(player) : null;
 					if (_actives.Count != 0)

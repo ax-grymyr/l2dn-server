@@ -25,6 +25,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 1F */ RegisterPacket<ActionPacket>(IncomingPacketCodes.ACTION);
         /* 2B */ RegisterPacket<AuthLoginPacket>(IncomingPacketCodes.AUTH_LOGIN).WithAllowedStates(GameSessionState.Authorization);
         /* 39 */ RegisterPacket<RequestMagicSkillUsePacket>(IncomingPacketCodes.REQUEST_MAGIC_SKILL_USE);
+        /* 3A */ RegisterPacket<AppearingPacket>(IncomingPacketCodes.APPEARING);
         /* 57 */ RegisterPacket<RequestRestartPacket>(IncomingPacketCodes.REQUEST_RESTART);
         /* 59 */ RegisterPacket<ValidatePositionPacket>(IncomingPacketCodes.VALIDATE_POSITION);
         /* 62 */ RegisterPacket<RequestQuestListPacket>(IncomingPacketCodes.REQUEST_QUEST_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
