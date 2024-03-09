@@ -30,12 +30,12 @@ public class PlayerTemplate : CreatureTemplate
 	{
 		_classId = set.getEnum<CharacterClass>("classId");
 		setRace(_classId.GetRace());
-		_baseHp = new float[ExperienceData.getInstance().getMaxLevel()];
-		_baseMp = new float[ExperienceData.getInstance().getMaxLevel()];
-		_baseCp = new float[ExperienceData.getInstance().getMaxLevel()];
-		_baseHpReg = new double[ExperienceData.getInstance().getMaxLevel()];
-		_baseMpReg = new double[ExperienceData.getInstance().getMaxLevel()];
-		_baseCpReg = new double[ExperienceData.getInstance().getMaxLevel()];
+		_baseHp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseMp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseCp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseHpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseMpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseCpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
 		_baseSlotDef = new();
 		_baseSlotDef.put(Inventory.PAPERDOLL_CHEST, set.getInt("basePDefchest", 0));
 		_baseSlotDef.put(Inventory.PAPERDOLL_LEGS, set.getInt("basePDeflegs", 0));

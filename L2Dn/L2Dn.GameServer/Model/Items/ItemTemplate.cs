@@ -161,7 +161,8 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 		_materialType = set.getEnum("material", MaterialType.STEEL);
 		_equipReuseDelay = TimeSpan.FromSeconds(set.getInt("equip_reuse_delay", 0));
 		
-		_duration = set.getInt("duration", -1);
+		int duration = set.getInt("duration", -1);
+		_duration = duration < 0 ? null : duration;
 		
 		int time = set.getInt("time", -1);
 		_time = time < 0 ? null : TimeSpan.FromMinutes(time);

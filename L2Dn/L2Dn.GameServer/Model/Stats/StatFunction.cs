@@ -15,6 +15,9 @@ public abstract class StatFunction: IStatFunction
 	
     protected void throwIfPresent(double? @base)
     {
+        if (@base == 0.0)
+            return; // TODO hack for now
+        
         if (@base is not null)
         {
             throw new InvalidOperationException("base should not be set for " + GetType().Name);

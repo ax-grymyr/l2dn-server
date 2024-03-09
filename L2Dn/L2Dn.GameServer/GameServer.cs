@@ -46,6 +46,10 @@ public class GameServer
         FakePlayerData.getInstance();
         NpcData.getInstance();
         SpawnData.getInstance();
+        HuntPassData.getInstance();
+        HennaPatternPotentialData.getInstance();
+        MissionLevel.getInstance();
+        CollectionData.getInstance();
         
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";
