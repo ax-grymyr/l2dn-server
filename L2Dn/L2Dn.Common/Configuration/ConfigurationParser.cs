@@ -79,7 +79,7 @@ public class ConfigurationParser
         if (string.Equals(value, "false", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(value, "no", StringComparison.OrdinalIgnoreCase) ||
             string.Equals(value, "0", StringComparison.Ordinal))
-            return true;
+            return false;
 
         _logger.Error($"Invalid bool value '{value}' in entry '{key}' in configuration file '{_filePath}'");
         return defaultValue;

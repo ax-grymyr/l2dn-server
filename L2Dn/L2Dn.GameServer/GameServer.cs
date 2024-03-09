@@ -43,6 +43,8 @@ public class GameServer
         BeautyShopData.getInstance();
         PlayerTemplateData.getInstance();
         ActionData.getInstance();
+        AttendanceRewardData.getInstance();
+        ClanRewardData.getInstance();
         FakePlayerData.getInstance();
         NpcData.getInstance();
         SpawnData.getInstance();
