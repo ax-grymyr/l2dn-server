@@ -1,8 +1,6 @@
-﻿using System.Text;
-using L2Dn.GameServer.Data;
+﻿using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -13,7 +11,6 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Model.Residences;
@@ -94,6 +91,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			{
 				player.setInstance(instance);
 			}
+			
 			vars.remove("INSTANCE_RESTORE");
 		}
 		
@@ -407,6 +405,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		
 		// Friend list
 		connection.Send(new L2FriendListPacket(player));
+		
 		sm = new SystemMessagePacket(SystemMessageId.YOUR_FRIEND_S1_JUST_LOGGED_IN);
 		sm.Params.addString(player.getName());
 		foreach (int id in player.getFriendList())
@@ -424,7 +423,8 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		
 		if ((Config.SERVER_RESTART_SCHEDULE_ENABLED) && (Config.SERVER_RESTART_SCHEDULE_MESSAGE))
 		{
-			connection.Send(new CreatureSayPacket(null, ChatType.BATTLEFIELD, "[SERVER]", "Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
+			connection.Send(new CreatureSayPacket(null, ChatType.BATTLEFIELD, "[SERVER]",
+				"Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
 		}
 		
 		if (showClanNotice)
@@ -499,11 +499,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		
 		// Attacker or spectator logging in to a siege zone.
 		// Actually should be checked for inside castle only?
-		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) && (!player.isInSiege() || (player.getSiegeState() < 2)))
+		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) &&
+		    (!player.isInSiege() || (player.getSiegeState() < 2)))
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
-		
+
 		// Over-enchant protection.
 		if (Config.OVER_ENCHANT_PROTECTION && !player.isGM())
 		{
@@ -511,15 +512,20 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			foreach (Item item in player.getInventory().getItems())
 			{
 				if (item.isEquipable() //
-					&& ((item.isWeapon() && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
-						|| ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
-						|| (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
+				    && ((item.isWeapon() && (item.getEnchantLevel() >
+				                             EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
+				        || ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() >
+					        EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
+				        || (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) &&
+				            (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
 				{
-					_logger.Info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item + " has been removed from " + player);
+					_logger.Info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item +
+					             " has been removed from " + player);
 					player.getInventory().destroyItem("Over-enchant protection", item, player, null);
 					punish = true;
 				}
 			}
+
 			if (punish && (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
@@ -534,6 +540,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			player.destroyItem("Zariche", player.getInventory().getItemByItemId(8190), null, true);
 		}
+		
 		if ((player.getInventory().getItemByItemId(8689) != null) && !player.isCursedWeaponEquipped())
 		{
 			player.destroyItem("Akamanah", player.getInventory().getItemByItemId(8689), null, true);
