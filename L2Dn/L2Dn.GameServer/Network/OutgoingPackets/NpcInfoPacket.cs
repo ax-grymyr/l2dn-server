@@ -58,12 +58,13 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 
 		if (npc.getTeam() != Team.NONE)
 		{
-			if ((Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
+			    Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 				_helper.AddComponent(NpcInfoType.ABNORMALS);
 			else
 				_helper.AddComponent(NpcInfoType.TEAM);
 		}
-		
+
 		if (npc.getDisplayEffect() > 0)
 			_helper.AddComponent(NpcInfoType.DISPLAY_EFFECT);
 
@@ -115,9 +116,10 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (npc.isShowSummonAnimation())
 			_helper.AddComponent(NpcInfoType.SUMMONED);
 
-		if (npc.getClanId() > 0)
+		int? clanId = npc.getClanId(); 
+		if (clanId > 0)
 		{
-			Clan clan = ClanTable.getInstance().getClan(npc.getClanId().Value);
+			Clan clan = ClanTable.getInstance().getClan(clanId.Value);
 			if ((clan != null) && ((npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */) ||
 			                       (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
 			{
@@ -197,30 +199,33 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		// Calculate sizes
 		int initSize = 0;
 		int blockSize = 0;
-		foreach (NpcInfoType npcInfoType in Enum.GetValues<NpcInfoType>())
+		foreach (NpcInfoType npcInfoType in NpcInfoTypeUtil.AllValues)
 		{
-			switch (npcInfoType)
+			if (_helper.HasComponent(npcInfoType))
 			{
-				case NpcInfoType.ATTACKABLE:
-				case NpcInfoType.RELATIONS:
+				switch (npcInfoType)
 				{
-					initSize += npcInfoType.GetBlockLength();
-					break;
-				}
-				case NpcInfoType.TITLE:
-				{
-					initSize += npcInfoType.GetBlockLength() + _npc.getTitle().Length * 2;
-					break;
-				}
-				case NpcInfoType.NAME:
-				{
-					blockSize += npcInfoType.GetBlockLength() + _npc.getName().Length * 2;
-					break;
-				}
-				default:
-				{
-					blockSize += npcInfoType.GetBlockLength();
-					break;
+					case NpcInfoType.ATTACKABLE:
+					case NpcInfoType.RELATIONS:
+					{
+						initSize += npcInfoType.GetBlockLength();
+						break;
+					}
+					case NpcInfoType.TITLE:
+					{
+						initSize += npcInfoType.GetBlockLength() + _npc.getTitle().Length * 2;
+						break;
+					}
+					case NpcInfoType.NAME:
+					{
+						blockSize += npcInfoType.GetBlockLength() + _npc.getName().Length * 2;
+						break;
+					}
+					default:
+					{
+						blockSize += npcInfoType.GetBlockLength();
+						break;
+					}
 				}
 			}
 		}
@@ -380,11 +385,15 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		}
 		
 		if (_helper.HasComponent(NpcInfoType.VISUAL_STATE))
-			writer.WriteInt32(_statusMask); // Main writer.WriteByte, Essence writer.WriteInt32.
+			writer.WriteInt32(_statusMask); // Main writer.WriteByte, Essence writer.WriteInt32. // TODO: classic?
 
 		if (_helper.HasComponent(NpcInfoType.ABNORMALS))
 		{
-			Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _npc.getTeam() : Team.NONE;
+			Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
+			            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
+				? _npc.getTeam()
+				: Team.NONE;
+			
 			int effectSize = _abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0);
 			writer.WriteInt16((short)effectSize);
 
@@ -396,10 +405,10 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			
 			if (team == Team.BLUE)
 			{
-				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 					writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
-			else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+			else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 				writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
 		}
 	}

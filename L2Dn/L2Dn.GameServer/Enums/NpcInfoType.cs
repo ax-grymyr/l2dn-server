@@ -51,56 +51,65 @@ public enum NpcInfoType
 
 public static class NpcInfoTypeUtil
 {
-	private static readonly ImmutableSortedDictionary<NpcInfoType, int> _blockLengths = new[]
+	private static readonly ImmutableArray<NpcInfoType> _allValues = Enum.GetValues<NpcInfoType>().ToImmutableArray();
+	private static readonly ImmutableArray<int> _blockLengths;
+
+	static NpcInfoTypeUtil()
 	{
+		int[] blockLengths = new int[(int)_allValues.Max() + 1];
+		
 		// 0
-		(NpcInfoType.ID, 4),
-		(NpcInfoType.ATTACKABLE, 1),
-		(NpcInfoType.RELATIONS, 8),
-		(NpcInfoType.NAME, 2),
-		(NpcInfoType.POSITION, (3 * 4)),
-		(NpcInfoType.HEADING, 4),
-		(NpcInfoType.VEHICLE_ID, 4),
-		(NpcInfoType.ATK_CAST_SPEED, (2 * 4)),
+		blockLengths[(int)NpcInfoType.ID] = 4;
+		blockLengths[(int)NpcInfoType.ATTACKABLE] = 1;
+		blockLengths[(int)NpcInfoType.RELATIONS] = 8;
+		blockLengths[(int)NpcInfoType.NAME] = 2;
+		blockLengths[(int)NpcInfoType.POSITION] = 3 * 4;
+		blockLengths[(int)NpcInfoType.HEADING] = 4;
+		blockLengths[(int)NpcInfoType.VEHICLE_ID] = 4;
+		blockLengths[(int)NpcInfoType.ATK_CAST_SPEED] = 2 * 4;
 
 		// 1
-		(NpcInfoType.SPEED_MULTIPLIER, (2 * 4)),
-		(NpcInfoType.EQUIPPED, (3 * 4)),
-		(NpcInfoType.STOP_MODE, 1),
-		(NpcInfoType.MOVE_MODE, 1),
-		(NpcInfoType.SWIM_OR_FLY, 1),
-		(NpcInfoType.TEAM, 1),
+		blockLengths[(int)NpcInfoType.SPEED_MULTIPLIER] = 2 * 4;
+		blockLengths[(int)NpcInfoType.EQUIPPED] = 3 * 4;
+		blockLengths[(int)NpcInfoType.STOP_MODE] = 1;
+		blockLengths[(int)NpcInfoType.MOVE_MODE] = 1;
+		blockLengths[(int)NpcInfoType.SWIM_OR_FLY] = 1;
+		blockLengths[(int)NpcInfoType.TEAM] = 1;
 
 		// 2
-		(NpcInfoType.ENCHANT, 4),
-		(NpcInfoType.FLYING, 4),
-		(NpcInfoType.CLONE, 4),
-		(NpcInfoType.PET_EVOLUTION_ID, 4),
-		(NpcInfoType.DISPLAY_EFFECT, 4),
-		(NpcInfoType.TRANSFORMATION, 4),
+		blockLengths[(int)NpcInfoType.ENCHANT] = 4;
+		blockLengths[(int)NpcInfoType.FLYING] = 4;
+		blockLengths[(int)NpcInfoType.CLONE] = 4;
+		blockLengths[(int)NpcInfoType.PET_EVOLUTION_ID] = 4;
+		blockLengths[(int)NpcInfoType.DISPLAY_EFFECT] = 4;
+		blockLengths[(int)NpcInfoType.TRANSFORMATION] = 4;
 
 		// 3
-		(NpcInfoType.CURRENT_HP, 4),
-		(NpcInfoType.CURRENT_MP, 4),
-		(NpcInfoType.MAX_HP, 4),
-		(NpcInfoType.MAX_MP, 4),
-		(NpcInfoType.SUMMONED, 1),
-		(NpcInfoType.FOLLOW_INFO, (2 * 4)),
-		(NpcInfoType.TITLE, 2),
-		(NpcInfoType.NAME_NPCSTRINGID, 4),
+		blockLengths[(int)NpcInfoType.CURRENT_HP] = 4;
+		blockLengths[(int)NpcInfoType.CURRENT_MP] = 4;
+		blockLengths[(int)NpcInfoType.MAX_HP] = 4;
+		blockLengths[(int)NpcInfoType.MAX_MP] = 4;
+		blockLengths[(int)NpcInfoType.SUMMONED] = 1;
+		blockLengths[(int)NpcInfoType.FOLLOW_INFO] = 2 * 4;
+		blockLengths[(int)NpcInfoType.TITLE] = 2;
+		blockLengths[(int)NpcInfoType.NAME_NPCSTRINGID] = 4;
 
 		// 4
-		(NpcInfoType.TITLE_NPCSTRINGID, 4),
-		(NpcInfoType.PVP_FLAG, 1),
-		(NpcInfoType.REPUTATION, 4),
-		(NpcInfoType.CLAN, (5 * 4)),
-		(NpcInfoType.ABNORMALS, 0),
-		(NpcInfoType.VISUAL_STATE, 4),
-	}.ToImmutableSortedDictionary(t => t.Item1, t => t.Item2);
+		blockLengths[(int)NpcInfoType.TITLE_NPCSTRINGID] = 4;
+		blockLengths[(int)NpcInfoType.PVP_FLAG] = 1;
+		blockLengths[(int)NpcInfoType.REPUTATION] = 4;
+		blockLengths[(int)NpcInfoType.CLAN] = 5 * 4;
+		blockLengths[(int)NpcInfoType.ABNORMALS] = 0;
+		blockLengths[(int)NpcInfoType.VISUAL_STATE] = 4;
 
+		_blockLengths = blockLengths.ToImmutableArray();
+	}
+
+	public static ImmutableArray<NpcInfoType> AllValues => _allValues;
+	
 	public static int GetBlockLength(this NpcInfoType type)
 	{
-		return _blockLengths[type];
+		return _blockLengths[(int)type];
 	}
 }
 
