@@ -34,7 +34,7 @@ public class SiegeScheduleData: DataReaderBase
 	private void parseElement(XElement element)
 	{
 		int castleId = element.GetAttributeValueAsInt32("castleId");
-		DayOfWeek day = element.Attribute("day").GetEnum<DayOfWeek>();
+		DayOfWeek day = element.GetAttributeValueAsEnum<DayOfWeek>("day", true);
 		int hour = element.Attribute("hour").GetInt32(16);
 		int maxConcurrent = element.Attribute("maxConcurrent").GetInt32(5);
 		bool siegeEnabled = element.Attribute("siegeEnabled").GetBoolean(false);

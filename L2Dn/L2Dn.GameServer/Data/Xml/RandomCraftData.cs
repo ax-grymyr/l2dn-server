@@ -45,7 +45,7 @@ public class RandomCraftData: DataReaderBase
 		REWARD_DATA.clear();
 
 		{
-			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "data/RandomCraftRewardData.xml");
+			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "RandomCraftRewardData.xml");
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 			XDocument document = XDocument.Load(stream);
 			document.Elements("list").Elements("rewards").Elements("item").ForEach(parseRewardElement);

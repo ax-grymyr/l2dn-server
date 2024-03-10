@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -10,6 +11,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Warehouse = L2Dn.GameServer.Model.Actor.Instances.Warehouse;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;
 
@@ -1306,8 +1308,32 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		return _collisionHeightGrown;
 	}
 
-	public override Npc CreateInstance()
-	{
-		throw new NotImplementedException();
-	}
+	public override Npc CreateInstance() =>
+		_type switch
+		{
+			"Monster" => new Monster(this),
+			"RaidBoss" => new RaidBoss(this),
+			"Merchant" => new Merchant(this),
+			"Warehouse" => new Warehouse(this),
+			"Folk" => new Folk(this),
+			"Guard" => new Guard(this),
+			"Fisherman" => new Fisherman(this),
+			"Teleporter" => new Teleporter(this),
+			"Artefact" => new Artefact(this),
+			"BroadcastingTower" => new BroadcastingTower(this),
+			"RaceManager" => new RaceManager(this),
+			"PetManager" => new PetManager(this),
+			"FriendlyMob" => new FriendlyMob(this),
+			"Chest" => new Chest(this),
+			
+			"VillageMaster" => new VillageMaster(this),
+			"VillageMasterDElf" => new VillageMasterDElf(this),
+			"VillageMasterDwarf" => new VillageMasterDwarf(this),
+			"VillageMasterFighter" => new VillageMasterFighter(this),
+			"VillageMasterMystic" => new VillageMasterMystic(this),
+			"VillageMasterOrc" => new VillageMasterOrc(this),
+			"VillageMasterPriest" => new VillageMasterPriest(this),
+			
+			_ => throw new NotSupportedException()
+		};
 }

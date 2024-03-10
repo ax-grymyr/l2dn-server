@@ -45,7 +45,7 @@ public class LuckyGameData: DataReaderBase
 				holder.addCommonReward(new ItemChanceHolder(id, chance, count));
 			});
 			
-			element.Elements("common_reward").Elements("item").ForEach(el =>
+			element.Elements("unique_reward").Elements("item").ForEach(el =>
 			{
 				int id = el.GetAttributeValueAsInt32("id");
 				long count = el.GetAttributeValueAsInt64("count");
@@ -61,9 +61,9 @@ public class LuckyGameData: DataReaderBase
 				holder.setMaxModifyRewardGame(maxGame);
 				el.Elements("item").ForEach(e =>
 				{
-					int id = el.GetAttributeValueAsInt32("id");
-					double chance = el.GetAttributeValueAsDouble("chance");
-					long count = el.GetAttributeValueAsInt64("count");
+					int id = e.GetAttributeValueAsInt32("id");
+					double chance = e.GetAttributeValueAsDouble("chance");
+					long count = e.GetAttributeValueAsInt64("count");
 					holder.addModifyReward(new ItemChanceHolder(id, chance, count));
 				});
 			});

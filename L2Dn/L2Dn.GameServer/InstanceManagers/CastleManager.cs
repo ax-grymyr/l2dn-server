@@ -198,6 +198,41 @@ public class CastleManager
 			foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
 				_castles.put(castle.Id, new Castle(castle.Id));
 
+			if (_castles.Count == 0)
+			{
+				// TODO hack for now
+				ctx.Castles.Add(new DbCastle()
+				{
+					Id = 1,
+					Name = "Gludio",
+				});
+				ctx.Castles.Add(new DbCastle()
+				{
+					Id = 2,
+					Name = "Dion",
+				});
+				ctx.Castles.Add(new DbCastle()
+				{
+					Id = 3,
+					Name = "Giran",
+				});
+				ctx.Castles.Add(new DbCastle()
+				{
+					Id = 4,
+					Name = "Oren",
+				});
+				ctx.Castles.Add(new DbCastle()
+				{
+					Id = 5,
+					Name = "Aden",
+				});
+
+				ctx.SaveChanges();
+
+				foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
+					_castles.put(castle.Id, new Castle(castle.Id));
+			}
+			
 			LOGGER.Info(GetType().Name +": Loaded " + _castles.values().Count + " castles.");
 		}
 		catch (Exception e)

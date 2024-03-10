@@ -14,6 +14,10 @@ public abstract class DataReaderBase
     protected static IEnumerable<(string FilePath, XDocument Document)> LoadXmlDocuments(DataFileLocation location,
         string relativeDirPath, bool includeSubDirectories = false)
     {
+        string directoryPath = GetFullPath(location, relativeDirPath);
+        if (!Directory.Exists(directoryPath))
+            yield break;
+            
         IEnumerable<string> files = Directory.EnumerateFiles(GetFullPath(location, relativeDirPath), "*.xml",
             includeSubDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
 

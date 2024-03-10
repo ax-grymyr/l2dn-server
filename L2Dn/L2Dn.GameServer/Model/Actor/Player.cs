@@ -10369,6 +10369,7 @@ public class Player: Playable
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLogin(this), this);
 		}
+		
 		if (isMentee())
 		{
 			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MENTEE_STATUS, this))

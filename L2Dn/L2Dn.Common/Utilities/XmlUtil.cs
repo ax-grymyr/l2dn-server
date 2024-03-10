@@ -95,7 +95,7 @@ public static class XmlUtil
     }
 
     public static TEnum GetAttributeValueAsEnum<TEnum>(this XElement element, string attributeName, TEnum defaultValue)
-        where TEnum: struct, Enum, IParsable<TEnum>
+        where TEnum: struct, Enum
     {
         XAttribute? attribute = element.Attribute(attributeName);
         if (attribute is null)
@@ -245,11 +245,7 @@ public static class XmlUtil
             throw new InvalidOperationException("Attribute missing");
 
         string value = attribute.Value;
-        // TODO
-        //if (bool.TryParse(value, out bool result))
-        //    return result;
-        
-        throw new InvalidOperationException("Invalid attribute value");
+        return TimeUtil.ParseDuration(value);
     }
 
     public static TimeSpan GetTimeSpan(this XAttribute? attribute, TimeSpan defaultValue)
@@ -258,10 +254,6 @@ public static class XmlUtil
             return defaultValue;
 
         string value = attribute.Value;
-        // TODO
-        //if (bool.TryParse(value, out bool result))
-        //    return result;
-        
-        throw new InvalidOperationException("Invalid attribute value");
+        return TimeUtil.ParseDuration(value);
     }
 }

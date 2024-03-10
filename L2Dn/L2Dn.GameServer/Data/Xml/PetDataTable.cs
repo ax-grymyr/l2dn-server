@@ -65,7 +65,7 @@ public class PetDataTable: DataReaderBase
 		int itemId = element.GetAttributeValueAsInt32("itemId");
 		int index = element.Attribute("index").GetInt32(0);
 		int defaultPetType = element.Attribute("defaultPetType").GetInt32(0);
-		EvolveLevel evolveLevel = element.Attribute("evolveLevel").GetEnum<EvolveLevel>();
+		EvolveLevel evolveLevel = element.GetAttributeValueAsEnum("evolveLevel", EvolveLevel.None);
 		int petType = element.Attribute("type").GetInt32(0);
 
 		// index ignored for now

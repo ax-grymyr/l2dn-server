@@ -95,7 +95,7 @@ public class CubicData: DataReaderBase
 	{
 		element.Elements("skill").ForEach(el =>
 		{
-			StatSet set = new StatSet(element);
+			StatSet set = new StatSet(el);
 			CubicSkill skill = new CubicSkill(set);
 			el.Elements("conditions").ForEach(e => parseConditions(e, template, skill));
 			template.getCubicSkills().add(skill);

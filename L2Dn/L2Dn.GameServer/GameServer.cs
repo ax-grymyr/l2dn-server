@@ -1,12 +1,11 @@
 ﻿using L2Dn.Cryptography;
 using L2Dn.GameServer.Configuration;
-using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
 using NLog;
+using Task = System.Threading.Tasks.Task;
 
 namespace L2Dn.GameServer;
 
@@ -18,6 +17,7 @@ public class GameServer
     private Listener<GameSession>? _clientListener;
     private Connector<AuthServerSession>? _authServerConnector;
     private Task? _clientListenerTask;
+    private readonly DateTime _startTime = DateTime.UtcNow;
 
     public static DateTime ServerStarted => _serverStarted;
 
@@ -25,33 +25,13 @@ public class GameServer
     {
         // Preload data
         Config.Load(@"Config");
-        GeoEngine.getInstance();
-        ExperienceData.getInstance();
-        ClassListData.getInstance();
-        CategoryData.getInstance();
-        DoorData.getInstance();
-        InstanceManager.getInstance();
-        ZoneManager.getInstance();
-        TimedHuntingZoneData.getInstance();
-        SkillData.getInstance();
-        SkillTreeData.getInstance();
-        SkillEnchantData.getInstance();
-        ItemData.getInstance();
-        ArmorSetData.getInstance();
-        EnchantItemData.getInstance();
-        RecipeData.getInstance();
-        BeautyShopData.getInstance();
-        PlayerTemplateData.getInstance();
-        ActionData.getInstance();
-        AttendanceRewardData.getInstance();
-        ClanRewardData.getInstance();
-        FakePlayerData.getInstance();
-        NpcData.getInstance();
-        SpawnData.getInstance();
-        HuntPassData.getInstance();
-        HennaPatternPotentialData.getInstance();
-        MissionLevel.getInstance();
-        CollectionData.getInstance();
+        StaticData.Load();
+		
+		long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
+		long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;
+		_logger.Info(GetType().Name + ": Started, using " + usedMem + " of " + totalMem + " MB total memory.");
+		_logger.Info(GetType().Name + ": Maximum number of connected players is " + Config.MAXIMUM_ONLINE_USERS + ".");
+		_logger.Info(GetType().Name + ": Server loaded in " + (DateTime.UtcNow - _startTime).TotalSeconds + " seconds.");
         
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";

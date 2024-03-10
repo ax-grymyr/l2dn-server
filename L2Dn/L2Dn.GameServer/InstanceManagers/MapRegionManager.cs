@@ -39,7 +39,8 @@ public class MapRegionManager: DataReaderBase
 		
 		LoadXmlDocuments(DataFileLocation.Data, "mapregion").ForEach(t =>
 		{
-			t.Document.Elements("").ForEach(el => parseElement(t.FilePath, el));
+			t.Document.Elements("list").Where(e => e.GetAttributeValueAsBoolean("enabled")).Elements("region")
+				.ForEach(el => parseElement(t.FilePath, el));
 		});
 		
 		LOGGER.Info(GetType().Name +": Loaded " + REGIONS.size() + " map regions.");

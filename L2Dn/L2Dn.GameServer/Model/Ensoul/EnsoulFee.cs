@@ -1,23 +1,24 @@
 ﻿using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Items.Types;
 
 namespace L2Dn.GameServer.Model.Ensoul;
 
 public class EnsoulFee
 {
-    private readonly int _stoneId;
+    private readonly CrystalType _crystalType;
 	
     private readonly ItemHolder[] _ensoulFee = new ItemHolder[3];
     private readonly ItemHolder[] _resoulFees = new ItemHolder[3];
     private readonly List<ItemHolder> _removalFee = new();
 	
-    public EnsoulFee(int stoneId)
+    public EnsoulFee(CrystalType crystalType)
     {
-        _stoneId = stoneId;
+        _crystalType = crystalType;
     }
 	
-    public int getStoneId()
+    public CrystalType getCrystalType()
     {
-        return _stoneId;
+        return _crystalType;
     }
 	
     public void setEnsoul(int index, ItemHolder item)

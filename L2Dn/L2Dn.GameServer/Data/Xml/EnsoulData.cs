@@ -3,6 +3,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -15,7 +16,7 @@ namespace L2Dn.GameServer.Data.Xml;
 public class EnsoulData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnsoulData));
-	private readonly Map<int, EnsoulFee> _ensoulFees = new();
+	private readonly Map<CrystalType, EnsoulFee> _ensoulFees = new();
 	private readonly Map<int, EnsoulOption> _ensoulOptions = new();
 	private readonly Map<int, EnsoulStone> _ensoulStones = new();
 	
@@ -45,8 +46,9 @@ public class EnsoulData: DataReaderBase
 	
 	private void parseFees(XElement element)
 	{
-		int stoneId = element.GetAttributeValueAsInt32("stoneId");
-		EnsoulFee fee = new EnsoulFee(stoneId);
+		//int stoneId = element.GetAttributeValueAsInt32("stoneId"); // new essence
+		CrystalType crystalType = element.GetAttributeValueAsEnum<CrystalType>("crystalType"); // classic
+		EnsoulFee fee = new EnsoulFee(crystalType);
 		
 		element.Elements("first").ForEach(e => parseFee(e, fee, 0));
 		element.Elements("secondary").ForEach(e => parseFee(e, fee, 1));
@@ -64,7 +66,7 @@ public class EnsoulData: DataReaderBase
 		int id = element.GetAttributeValueAsInt32("itemId");
 		int count = element.GetAttributeValueAsInt32("count");
 		fee.setEnsoul(index, new ItemHolder(id, count));
-		_ensoulFees.put(fee.getStoneId(), fee);
+		_ensoulFees.put(fee.getCrystalType(), fee);
 	}
 	
 	private void parseReFee(XElement element, EnsoulFee fee, int index)
@@ -102,22 +104,19 @@ public class EnsoulData: DataReaderBase
 		((EtcItem) ItemData.getInstance().getTemplate(stone.getId())).setEnsoulStone();
 	}
 	
-	public ItemHolder getEnsoulFee(int stoneId, int index)
+	public ItemHolder getEnsoulFee(CrystalType crystalType, int index)
 	{
-		EnsoulFee fee = _ensoulFees.get(stoneId);
-		return fee != null ? fee.getEnsoul(index) : null;
+		return _ensoulFees.GetValueOrDefault(crystalType)?.getEnsoul(index);
 	}
 	
-	public ItemHolder getResoulFee(int stoneId, int index)
+	public ItemHolder getResoulFee(CrystalType crystalType, int index)
 	{
-		EnsoulFee fee = _ensoulFees.get(stoneId);
-		return fee != null ? fee.getResoul(index) : null;
+		return _ensoulFees.GetValueOrDefault(crystalType)?.getResoul(index);
 	}
 	
-	public ICollection<ItemHolder> getRemovalFee(int stoneId)
+	public ICollection<ItemHolder> getRemovalFee(CrystalType crystalType)
 	{
-		EnsoulFee fee = _ensoulFees.get(stoneId);
-		return fee != null ? fee.getRemovalFee() : new();
+		return _ensoulFees.GetValueOrDefault(crystalType)?.getRemovalFee() ?? new List<ItemHolder>();
 	}
 	
 	public EnsoulOption getOption(int id)
