@@ -33,12 +33,15 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 39 */ RegisterPacket<RequestMagicSkillUsePacket>(IncomingPacketCodes.REQUEST_MAGIC_SKILL_USE);
         /* 3A */ RegisterPacket<AppearingPacket>(IncomingPacketCodes.APPEARING);
         /* 48 */ RegisterPacket<RequestTargetCancelPacket>(IncomingPacketCodes.REQUEST_TARGET_CANCELD);
+        /* 50 */ RegisterPacket<RequestSkillListPacket>(IncomingPacketCodes.REQUEST_SKILL_LIST);
         /* 57 */ RegisterPacket<RequestRestartPacket>(IncomingPacketCodes.REQUEST_RESTART);
         /* 59 */ RegisterPacket<ValidatePositionPacket>(IncomingPacketCodes.VALIDATE_POSITION);
         /* 62 */ RegisterPacket<RequestQuestListPacket>(IncomingPacketCodes.REQUEST_QUEST_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
         /* 6C */ RegisterPacket<RequestShowMiniMapPacket>(IncomingPacketCodes.REQUEST_SHOW_MINI_MAP);
+        /* 73 */ RegisterPacket<RequestAcquireSkillInfoPacket>(IncomingPacketCodes.REQUEST_ACQUIRE_SKILL_INFO);
         /* 74 */ RegisterPacket<SendBypassBuildCmdPacket>(IncomingPacketCodes.SEND_BYPASS_BUILD_CMD);
         /* 7B */ RegisterPacket<CharacterRestorePacket>(IncomingPacketCodes.CHARACTER_RESTORE).WithAllowedStates(GameSessionState.CharacterScreen);
+        /* 7C */ RegisterPacket<RequestAcquireSkillPacket>(IncomingPacketCodes.REQUEST_ACQUIRE_SKILL);
         /* 7D */ RegisterPacket<RequestRestartPointPacket>(IncomingPacketCodes.REQUEST_RESTART_POINT);
         /* A6 */ RegisterPacket<RequestSkillCoolTimePacket>(IncomingPacketCodes.REQUEST_SKILL_COOL_TIME).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);;
 
