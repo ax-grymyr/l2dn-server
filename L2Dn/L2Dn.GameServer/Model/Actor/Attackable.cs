@@ -526,8 +526,11 @@ public class Attackable : Npc
 							// Distribute the Exp and SP between the Player and its Summon
 							if (!attacker.isDead())
 							{
-								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) * Config.EXP_AMOUNT_MULTIPLIERS[attacker.getClassId()];
-								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) * Config.SP_AMOUNT_MULTIPLIERS[attacker.getClassId()];
+								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) *
+								      Config.EXP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
+								
+								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) *
+								     Config.SP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
 								
 								// Premium rates
 								if (attacker.hasPremiumStatus())

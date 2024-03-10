@@ -147,17 +147,19 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		
 		if (_helper.HasComponent(UserInfoType.CURRENT_HPMPCP_EXP_SP))
 		{
+			int level = _player.getLevel();
+			long exp = _player.getExp();
+			long expForLevel = ExperienceData.getInstance().getExpForLevel(level);
+			long expForNextLevel = ExperienceData.getInstance().getExpForLevel(level + 1);
+			double expPercents = 1.0 * (exp - expForLevel) / (expForNextLevel - expForLevel);
+			
 			writer.WriteInt16(39);
 			writer.WriteInt32((int) Math.Round(_player.getCurrentHp()));
 			writer.WriteInt32((int) Math.Round(_player.getCurrentMp()));
 			writer.WriteInt32((int) Math.Round(_player.getCurrentCp()));
 			writer.WriteInt64(_player.getSp());
 			writer.WriteInt64(_player.getExp());
-			writer.WriteDouble(
-				(float)(_player.getExp() - ExperienceData.getInstance().getExpForLevel(_player.getLevel())) /
-				(ExperienceData.getInstance().getExpForLevel(_player.getLevel() + 1) -
-				 ExperienceData.getInstance().getExpForLevel(_player.getLevel())));
-
+			writer.WriteDouble(expPercents);
 			writer.WriteByte(0); // 430
 		}
 		
