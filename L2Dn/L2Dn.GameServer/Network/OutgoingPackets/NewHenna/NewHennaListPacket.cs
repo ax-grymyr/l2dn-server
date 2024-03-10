@@ -36,8 +36,8 @@ public readonly struct NewHennaListPacket: IOutgoingPacket
         writer.WriteInt16((short)_dailyCount);
         writer.WriteInt16((short)(_resetCount + 1)); // ResetCount
         writer.WriteInt16((short)_resetData.Count); // ResetMaxCount
-		
-        ItemHolder resetInfo = _resetData[_resetCount];
+
+        ItemHolder? resetInfo = _resetCount >= 0 && _resetCount < _resetData.Count ? _resetData[_resetCount] : null;
         if (resetInfo != null)
         {
             writer.WriteInt32(1);
