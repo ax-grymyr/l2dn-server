@@ -45,6 +45,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* D0:0024 */ RegisterPacket<RequestSaveInventoryOrderPacket>(IncomingPacketCodes.REQUEST_SAVE_INVENTORY_ORDER);
         /* D0:0033 */ RegisterPacket<RequestGoToLobbyPacket>(IncomingPacketCodes.REQUEST_GOTO_LOBBY).WithAllowedStates(GameSessionState.CharacterScreen);
         /* D0:00A9 */ RegisterPacket<RequestCharacterNameCreatablePacket>(IncomingPacketCodes.REQUEST_CHARACTER_NAME_CREATABLE).WithAllowedStates(GameSessionState.CharacterScreen);
+        /* D0:00FD */ RegisterPacket<RequestTargetActionMenuPacket>(IncomingPacketCodes.REQUEST_TARGET_ACTION_MENU);
         /* D0:011D */ RegisterPacket<RequestToDoListPacket>(IncomingPacketCodes.REQUEST_TODO_LIST);
         /* D0:015D */ RegisterPacket<ExRequestUserBanInfoPacket>(IncomingPacketCodes.EX_USER_BAN_INFO).WithAllowedStates(GameSessionState.CharacterScreen | GameSessionState.InGame);
         /* D0:0165 */ RegisterPacket<ExRequestChangeClassVerifyingPacket>(IncomingPacketCodes.EX_REQUEST_CLASS_CHANGE_VERIFYING);
