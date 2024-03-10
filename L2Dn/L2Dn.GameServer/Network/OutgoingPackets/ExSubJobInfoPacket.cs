@@ -1,7 +1,7 @@
-﻿using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.Model;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;

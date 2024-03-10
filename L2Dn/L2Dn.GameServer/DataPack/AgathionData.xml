@@ -1,24 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/AgathionData.xsd">
-	<!-- Agathion Aries - 60-day -->
+	<!-- Agathion Aries - 60 days -->
 	<agathion id="90894" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" />
 	<!-- Agathion Aries -->
 	<agathion id="90895" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" />
-	<!-- Agathion Joy - Sealed -->
+	<!-- Agathion Joy -->
 	<agathion id="90896" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1;51034,1" />
-	<!-- Agathion Joy - 7-day -->
+	<!-- Agathion Joy - 7 days -->
 	<agathion id="90897" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1;51034,1" />
-	<!-- Agathion Pisces - 15-day -->
+	<!-- Agathion Pisces - 15 days -->
 	<agathion id="90902" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" />
-	<!-- Agathion Cancer - 15-day -->
+	<!-- Agathion Cancer - 15 days -->
 	<agathion id="90903" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" />
-	<!-- Agathion Pisces - 30-day -->
+	<!-- Agathion Pisces - 30 days -->
 	<agathion id="91111" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" subSkill="51100,1" />
-	<!-- Agathion Cancer - 30-day -->
+	<!-- Agathion Cancer - 30 days -->
 	<agathion id="91112" enchant="0" mainSkill="51030,1;51031,1;51032,1;51033,1" subSkill="51100,1" />
-	<!-- Agathion Rudolph - 2-hour -->
+	<!-- Agathion Rudolph - 2 hours -->
 	<agathion id="90909" enchant="0" mainSkill="51035,1;51037,1" subSkill="51036,1" />
-	<!-- Penitent Agathion - Sealed -->
+	<!-- Penitent Agathion -->
 	<agathion id="91004" enchant="0" mainSkill="51068,1" />
 	<!-- Agathion Ignis -->
 	<agathion id="91129" enchant="0" mainSkill="51089,1" subSkill="51093,1" />
@@ -136,7 +136,7 @@
 	<agathion id="48058" enchant="8" subSkill="54003,9" />
 	<agathion id="48058" enchant="9" subSkill="54003,10" />
 	<agathion id="48058" enchant="10" subSkill="54003,11" />
-	<!-- High-grade Agathion Virgo (Fire Dragon) -->
+	<!-- High Quality Agathion Virgo - Fire Dragon -->
 	<agathion id="91606" enchant="0" subSkill="54004,12" />
 	<agathion id="91606" enchant="1" subSkill="54004,13" />
 	<agathion id="91606" enchant="2" subSkill="54004,14" />
@@ -148,7 +148,7 @@
 	<agathion id="91606" enchant="8" subSkill="54004,20;51346,3" />
 	<agathion id="91606" enchant="9" subSkill="54004,21;51346,4" />
 	<agathion id="91606" enchant="10" subSkill="54004,22;51346,5" />
-	<!-- High-grade Agathion Capricorn (Fire Dragon) -->
+	<!-- High Quality Agathion Capricorn - Fire Dragon -->
 	<agathion id="91607" enchant="0" subSkill="54006,12" />
 	<agathion id="91607" enchant="1" subSkill="54006,13" />
 	<agathion id="91607" enchant="2" subSkill="54006,14" />
@@ -160,7 +160,7 @@
 	<agathion id="91607" enchant="8" subSkill="54006,20;51347,3" />
 	<agathion id="91607" enchant="9" subSkill="54006,21;51347,4" />
 	<agathion id="91607" enchant="10" subSkill="54006,22;51347,5" />
-	<!-- High-grade Agathion Libra (Fire Dragon) -->
+	<!-- High Quality Agathion Libra - Fire Dragon -->
 	<agathion id="91608" enchant="0" subSkill="54007,12" />
 	<agathion id="91608" enchant="1" subSkill="54007,13" />
 	<agathion id="91608" enchant="2" subSkill="54007,14" />
@@ -172,7 +172,7 @@
 	<agathion id="91608" enchant="8" subSkill="54007,20;51348,3" />
 	<agathion id="91608" enchant="9" subSkill="54007,21;51348,4" />
 	<agathion id="91608" enchant="10" subSkill="54007,22;51348,5" />
-	<!-- High-grade Agathion Taurus (Fire Dragon) -->
+	<!-- High Quality Agathion Taurus - Fire Dragon -->
 	<agathion id="91609" enchant="0" subSkill="54000,12" />
 	<agathion id="91609" enchant="1" subSkill="54000,13" />
 	<agathion id="91609" enchant="2" subSkill="54000,14" />
@@ -184,7 +184,7 @@
 	<agathion id="91609" enchant="8" subSkill="54000,20;51349,3" />
 	<agathion id="91609" enchant="9" subSkill="54000,21;51349,4" />
 	<agathion id="91609" enchant="10" subSkill="54000,22;51349,5" />
-	<!-- High-grade Agathion Leo (Fire Dragon) -->
+	<!-- High Quality Agathion Leo - Fire Dragon -->
 	<agathion id="91610" enchant="0" subSkill="54001,12" />
 	<agathion id="91610" enchant="1" subSkill="54001,13" />
 	<agathion id="91610" enchant="2" subSkill="54001,14" />
@@ -196,7 +196,7 @@
 	<agathion id="91610" enchant="8" subSkill="54001,20;51350,3" />
 	<agathion id="91610" enchant="9" subSkill="54001,21;51350,4" />
 	<agathion id="91610" enchant="10" subSkill="54001,22;51350,5" />
-	<!-- High-grade Agathion Scorpio (Fire Dragon) -->
+	<!-- High Quality Agathion Scorpio - Fire Dragon -->
 	<agathion id="91611" enchant="0" subSkill="54002,12" />
 	<agathion id="91611" enchant="1" subSkill="54002,13" />
 	<agathion id="91611" enchant="2" subSkill="54002,14" />
@@ -208,7 +208,7 @@
 	<agathion id="91611" enchant="8" subSkill="54002,20;51351,3" />
 	<agathion id="91611" enchant="9" subSkill="54002,21;51351,4" />
 	<agathion id="91611" enchant="10" subSkill="54002,22;51351,5" />
-	<!-- High-grade Agathion Aquarius (Fire Dragon) -->
+	<!-- High Quality Agathion Aquarius - Fire Dragon -->
 	<agathion id="91612" enchant="0" subSkill="54005,12" />
 	<agathion id="91612" enchant="1" subSkill="54005,13" />
 	<agathion id="91612" enchant="2" subSkill="54005,14" />
@@ -220,7 +220,7 @@
 	<agathion id="91612" enchant="8" subSkill="54005,20;51352,3" />
 	<agathion id="91612" enchant="9" subSkill="54005,21;51352,4" />
 	<agathion id="91612" enchant="10" subSkill="54005,22;51352,5" />
-	<!-- High-grade Agathion Sagittarius (Fire Dragon) -->
+	<!-- High Quality Agathion Sagittarius - Fire Dragon -->
 	<agathion id="91613" enchant="0" subSkill="54003,12" />
 	<agathion id="91613" enchant="1" subSkill="54003,13" />
 	<agathion id="91613" enchant="2" subSkill="54003,14" />
@@ -232,7 +232,7 @@
 	<agathion id="91613" enchant="8" subSkill="54003,20;51353,3" />
 	<agathion id="91613" enchant="9" subSkill="54003,21;51353,4" />
 	<agathion id="91613" enchant="10" subSkill="54003,22;51353,5" />
-	<!-- High-grade Agathion Virgo (Earth Dragon) -->
+	<!-- High Quality Agathion Virgo - Land Dragon -->
 	<agathion id="91614" enchant="0" subSkill="54004,12" />
 	<agathion id="91614" enchant="1" subSkill="54004,13" />
 	<agathion id="91614" enchant="2" subSkill="54004,14" />
@@ -244,7 +244,7 @@
 	<agathion id="91614" enchant="8" subSkill="54004,20;51354,3" />
 	<agathion id="91614" enchant="9" subSkill="54004,21;51354,4" />
 	<agathion id="91614" enchant="10" subSkill="54004,22;51354,5" />
-	<!-- High-grade Agathion Capricorn (Earth Dragon) -->
+	<!-- High Quality Agathion Capricorn - Land Dragon -->
 	<agathion id="91615" enchant="0" subSkill="54006,12" />
 	<agathion id="91615" enchant="1" subSkill="54006,13" />
 	<agathion id="91615" enchant="2" subSkill="54006,14" />
@@ -256,7 +256,7 @@
 	<agathion id="91615" enchant="8" subSkill="54006,20;51355,3" />
 	<agathion id="91615" enchant="9" subSkill="54006,21;51355,4" />
 	<agathion id="91615" enchant="10" subSkill="54006,22;51355,5" />
-	<!-- High-grade Agathion Libra (Earth Dragon) -->
+	<!-- High Quality Agathion Libra - Land Dragon -->
 	<agathion id="91616" enchant="0" subSkill="54007,12" />
 	<agathion id="91616" enchant="1" subSkill="54007,13" />
 	<agathion id="91616" enchant="2" subSkill="54007,14" />
@@ -268,7 +268,7 @@
 	<agathion id="91616" enchant="8" subSkill="54007,20;51356,3" />
 	<agathion id="91616" enchant="9" subSkill="54007,21;51356,4" />
 	<agathion id="91616" enchant="10" subSkill="54007,22;51356,5" />
-	<!-- High-grade Agathion Taurus (Earth Dragon) -->
+	<!-- High Quality Agathion Taurus - Land Dragon -->
 	<agathion id="91617" enchant="0" subSkill="54000,12" />
 	<agathion id="91617" enchant="1" subSkill="54000,13" />
 	<agathion id="91617" enchant="2" subSkill="54000,14" />
@@ -280,7 +280,7 @@
 	<agathion id="91617" enchant="8" subSkill="54000,20;51357,3" />
 	<agathion id="91617" enchant="9" subSkill="54000,21;51357,4" />
 	<agathion id="91617" enchant="10" subSkill="54000,22;51357,5" />
-	<!-- High-grade Agathion Leo (Earth Dragon) -->
+	<!-- High Quality Agathion Leo - Land Dragon -->
 	<agathion id="91618" enchant="0" subSkill="54001,12" />
 	<agathion id="91618" enchant="1" subSkill="54001,13" />
 	<agathion id="91618" enchant="2" subSkill="54001,14" />
@@ -292,7 +292,7 @@
 	<agathion id="91618" enchant="8" subSkill="54001,20;51358,3" />
 	<agathion id="91618" enchant="9" subSkill="54001,21;51358,4" />
 	<agathion id="91618" enchant="10" subSkill="54001,22;51358,5" />
-	<!-- High-grade Agathion Scorpio (Earth Dragon) -->
+	<!-- High Quality Agathion Scorpio - Land Dragon -->
 	<agathion id="91619" enchant="0" subSkill="54002,12" />
 	<agathion id="91619" enchant="1" subSkill="54002,13" />
 	<agathion id="91619" enchant="2" subSkill="54002,14" />
@@ -304,7 +304,7 @@
 	<agathion id="91619" enchant="8" subSkill="54002,20;51359,3" />
 	<agathion id="91619" enchant="9" subSkill="54002,21;51359,4" />
 	<agathion id="91619" enchant="10" subSkill="54002,22;51359,5" />
-	<!-- High-grade Agathion Aquarius (Earth Dragon) -->
+	<!-- High Quality Agathion Aquarius - Land Dragon -->
 	<agathion id="91620" enchant="0" subSkill="54005,12" />
 	<agathion id="91620" enchant="1" subSkill="54005,13" />
 	<agathion id="91620" enchant="2" subSkill="54005,14" />
@@ -316,7 +316,7 @@
 	<agathion id="91620" enchant="8" subSkill="54005,20;51360,3" />
 	<agathion id="91620" enchant="9" subSkill="54005,21;51360,4" />
 	<agathion id="91620" enchant="10" subSkill="54005,22;51360,5" />
-	<!-- High-grade Agathion Sagittarius (Earth Dragon) -->
+	<!-- High Quality Agathion Sagittarius - Land Dragon -->
 	<agathion id="91621" enchant="0" subSkill="54003,12" />
 	<agathion id="91621" enchant="1" subSkill="54003,13" />
 	<agathion id="91621" enchant="2" subSkill="54003,14" />
@@ -328,7 +328,7 @@
 	<agathion id="91621" enchant="8" subSkill="54003,20;51361,3" />
 	<agathion id="91621" enchant="9" subSkill="54003,21;51361,4" />
 	<agathion id="91621" enchant="10" subSkill="54003,22;51361,5" />
-	<!-- High-grade Agathion Gemini -->
+	<!-- High Quality Agathion Gemini -->
 	<agathion id="91622" enchant="0" subSkill="54008,12" />
 	<agathion id="91622" enchant="1" subSkill="54008,13" />
 	<agathion id="91622" enchant="2" subSkill="54008,14" />
@@ -340,143 +340,459 @@
 	<agathion id="91622" enchant="8" subSkill="54008,20" />
 	<agathion id="91622" enchant="9" subSkill="54008,21" />
 	<agathion id="91622" enchant="10" subSkill="54008,22" />
-	<!-- Agathion Ignis - Sealed -->
-	<agathion id="93128" enchant="0" subSkill="50321,1" />
-	<agathion id="93128" enchant="1" subSkill="50321,2" />
-	<agathion id="93128" enchant="2" subSkill="50321,3" />
-	<agathion id="93128" enchant="3" subSkill="50321,4" />
-	<agathion id="93128" enchant="4" subSkill="50321,5" />
-	<agathion id="93128" enchant="5" subSkill="50321,6" />
-	<agathion id="93128" enchant="6" subSkill="50321,7" />
-	<agathion id="93128" enchant="7" subSkill="50321,8" />
-	<agathion id="93128" enchant="8" subSkill="50321,9" />
-	<agathion id="93128" enchant="9" subSkill="50321,10" />
-	<agathion id="93128" enchant="10" subSkill="50321,11" />
-	<!-- Agathion Nebula - Sealed -->
-	<agathion id="93129" enchant="0" subSkill="50322,1" />
-	<agathion id="93129" enchant="1" subSkill="50322,2" />
-	<agathion id="93129" enchant="2" subSkill="50322,3" />
-	<agathion id="93129" enchant="3" subSkill="50322,4" />
-	<agathion id="93129" enchant="4" subSkill="50322,5" />
-	<agathion id="93129" enchant="5" subSkill="50322,6" />
-	<agathion id="93129" enchant="6" subSkill="50322,7" />
-	<agathion id="93129" enchant="7" subSkill="50322,8" />
-	<agathion id="93129" enchant="8" subSkill="50322,9" />
-	<agathion id="93129" enchant="9" subSkill="50322,10" />
-	<agathion id="93129" enchant="10" subSkill="50322,11" />
-	<!-- Agathion Procella - Sealed -->
-	<agathion id="93130" enchant="0" subSkill="50323,1" />
-	<agathion id="93130" enchant="1" subSkill="50323,2" />
-	<agathion id="93130" enchant="2" subSkill="50323,3" />
-	<agathion id="93130" enchant="3" subSkill="50323,4" />
-	<agathion id="93130" enchant="4" subSkill="50323,5" />
-	<agathion id="93130" enchant="5" subSkill="50323,6" />
-	<agathion id="93130" enchant="6" subSkill="50323,7" />
-	<agathion id="93130" enchant="7" subSkill="50323,8" />
-	<agathion id="93130" enchant="8" subSkill="50323,9" />
-	<agathion id="93130" enchant="9" subSkill="50323,10" />
-	<agathion id="93130" enchant="10" subSkill="50323,11" />
-	<!-- Agathion Petram - Sealed -->
-	<agathion id="93131" enchant="0" subSkill="50324,1" />
-	<agathion id="93131" enchant="1" subSkill="50324,2" />
-	<agathion id="93131" enchant="2" subSkill="50324,3" />
-	<agathion id="93131" enchant="3" subSkill="50324,4" />
-	<agathion id="93131" enchant="4" subSkill="50324,5" />
-	<agathion id="93131" enchant="5" subSkill="50324,6" />
-	<agathion id="93131" enchant="6" subSkill="50324,7" />
-	<agathion id="93131" enchant="7" subSkill="50324,8" />
-	<agathion id="93131" enchant="8" subSkill="50324,9" />
-	<agathion id="93131" enchant="9" subSkill="50324,10" />
-	<agathion id="93131" enchant="10" subSkill="50324,11" />
-	<!-- Agathion Joy - Sealed -->
-	<agathion id="93132" enchant="0" subSkill="50325,1" />
-	<agathion id="93132" enchant="1" subSkill="50325,2" />
-	<agathion id="93132" enchant="2" subSkill="50325,3" />
-	<agathion id="93132" enchant="3" subSkill="50325,4" />
-	<agathion id="93132" enchant="4" subSkill="50325,5" />
-	<agathion id="93132" enchant="5" subSkill="50325,6" />
-	<agathion id="93132" enchant="6" subSkill="50325,7" />
-	<agathion id="93132" enchant="7" subSkill="50325,8" />
-	<agathion id="93132" enchant="8" subSkill="50325,9" />
-	<agathion id="93132" enchant="9" subSkill="50325,10" />
-	<agathion id="93132" enchant="10" subSkill="50325,11" />
-	<!-- Agathion Ignis (Time-limited) - Sealed -->
-	<agathion id="96190" enchant="0" subSkill="50321,1" />
-	<agathion id="96190" enchant="1" subSkill="50321,2" />
-	<agathion id="96190" enchant="2" subSkill="50321,3" />
-	<agathion id="96190" enchant="3" subSkill="50321,4" />
-	<agathion id="96190" enchant="4" subSkill="50321,5" />
-	<agathion id="96190" enchant="5" subSkill="50321,6" />
-	<agathion id="96190" enchant="6" subSkill="50321,7" />
-	<agathion id="96190" enchant="7" subSkill="50321,8" />
-	<agathion id="96190" enchant="8" subSkill="50321,9" />
-	<agathion id="96190" enchant="9" subSkill="50321,10" />
-	<agathion id="96190" enchant="10" subSkill="50321,11" />
-	<!-- Agathion Nebula (Time-limited) - Sealed -->
-	<agathion id="96191" enchant="0" subSkill="50322,1" />
-	<agathion id="96191" enchant="1" subSkill="50322,2" />
-	<agathion id="96191" enchant="2" subSkill="50322,3" />
-	<agathion id="96191" enchant="3" subSkill="50322,4" />
-	<agathion id="96191" enchant="4" subSkill="50322,5" />
-	<agathion id="96191" enchant="5" subSkill="50322,6" />
-	<agathion id="96191" enchant="6" subSkill="50322,7" />
-	<agathion id="96191" enchant="7" subSkill="50322,8" />
-	<agathion id="96191" enchant="8" subSkill="50322,9" />
-	<agathion id="96191" enchant="9" subSkill="50322,10" />
-	<agathion id="96191" enchant="10" subSkill="50322,11" />
-	<!-- Agathion Procella (Time-limited) - Sealed -->
-	<agathion id="96192" enchant="0" subSkill="50323,1" />
-	<agathion id="96192" enchant="1" subSkill="50323,2" />
-	<agathion id="96192" enchant="2" subSkill="50323,3" />
-	<agathion id="96192" enchant="3" subSkill="50323,4" />
-	<agathion id="96192" enchant="4" subSkill="50323,5" />
-	<agathion id="96192" enchant="5" subSkill="50323,6" />
-	<agathion id="96192" enchant="6" subSkill="50323,7" />
-	<agathion id="96192" enchant="7" subSkill="50323,8" />
-	<agathion id="96192" enchant="8" subSkill="50323,9" />
-	<agathion id="96192" enchant="9" subSkill="50323,10" />
-	<agathion id="96192" enchant="10" subSkill="50323,11" />
-	<!-- Agathion Petram (Time-limited) - Sealed -->
-	<agathion id="96193" enchant="0" subSkill="50324,1" />
-	<agathion id="96193" enchant="1" subSkill="50324,2" />
-	<agathion id="96193" enchant="2" subSkill="50324,3" />
-	<agathion id="96193" enchant="3" subSkill="50324,4" />
-	<agathion id="96193" enchant="4" subSkill="50324,5" />
-	<agathion id="96193" enchant="5" subSkill="50324,6" />
-	<agathion id="96193" enchant="6" subSkill="50324,7" />
-	<agathion id="96193" enchant="7" subSkill="50324,8" />
-	<agathion id="96193" enchant="8" subSkill="50324,9" />
-	<agathion id="96193" enchant="9" subSkill="50324,10" />
-	<agathion id="96193" enchant="10" subSkill="50324,11" />
-	<!-- Agathion Joy (Time-limited) - Sealed -->
-	<agathion id="96194" enchant="0" subSkill="50325,1" />
-	<agathion id="96194" enchant="1" subSkill="50325,2" />
-	<agathion id="96194" enchant="2" subSkill="50325,3" />
-	<agathion id="96194" enchant="3" subSkill="50325,4" />
-	<agathion id="96194" enchant="4" subSkill="50325,5" />
-	<agathion id="96194" enchant="5" subSkill="50325,6" />
-	<agathion id="96194" enchant="6" subSkill="50325,7" />
-	<agathion id="96194" enchant="7" subSkill="50325,8" />
-	<agathion id="96194" enchant="8" subSkill="50325,9" />
-	<agathion id="96194" enchant="9" subSkill="50325,10" />
-	<agathion id="96194" enchant="10" subSkill="50325,11" />
-	<!-- Agathion Dragon Egg - Sealed -->
-	<agathion id="98235" enchant="0" subSkill="50663,1" />
-	<agathion id="98235" enchant="1" subSkill="50663,2" />
-	<agathion id="98235" enchant="2" subSkill="50663,3" />
-	<agathion id="98235" enchant="3" subSkill="50663,4" />
-	<agathion id="98235" enchant="4" subSkill="50663,5" />
-	<agathion id="98235" enchant="5" subSkill="50663,6" />
-	<agathion id="98235" enchant="6" subSkill="50663,7" />
-	<agathion id="98235" enchant="7" subSkill="50663,8" />
-	<agathion id="98235" enchant="8" subSkill="50663,9" />
-	<agathion id="98235" enchant="9" subSkill="50663,10" />
-	<agathion id="98235" enchant="10" subSkill="50663,11" />
-	<!-- Agathion Valakas - Sealed -->
-	<agathion id="98236" enchant="0" subSkill="50663,12" />
-	<agathion id="98236" enchant="1" subSkill="50663,13" />
-	<agathion id="98236" enchant="2" subSkill="50663,14" />
-	<agathion id="98236" enchant="3" subSkill="50663,15" />
-	<agathion id="98236" enchant="4" subSkill="50663,16" />
-	<agathion id="98236" enchant="5" subSkill="50663,17" />
+	<!-- Agathion Love (Event) - 7 days -->
+	<agathion id="70933" enchant="0" mainSkill="5763,1" />
+	<!-- Agathion Nevit's Herald Kanna -->
+	<agathion id="70934" enchant="0" mainSkill="6917,1" />
+	<!-- Agathion Uthanka -->
+	<agathion id="70935" enchant="0" mainSkill="23087,1" />
+	<!-- Agathion Singer & Dancer -->
+	<agathion id="70960" enchant="0" mainSkill="23234,1" />
+	<!-- Agathion Singer & Dancer - 7 days -->
+	<agathion id="70961" enchant="0" mainSkill="23234,1;55270,1;55271,1;55272,1" />
+	<!-- Agathion Singer & Dancer - 30 days -->
+	<agathion id="70962" enchant="0" mainSkill="23234,1;55270,1;55271,1;55272,1" />
+	<!-- Agathion Singer & Dancer - 90-day -->
+	<agathion id="70963" enchant="0" mainSkill="23234,1;55270,1;55271,1;55272,1" />
+	<!-- Agathion Griffin - 30 days -->
+	<agathion id="70964" enchant="0" mainSkill="55060,1" />
+	<!-- Agathion Cheerleader Mae - 30 days -->
+	<agathion id="70965" enchant="0" mainSkill="55404,1;55405,1" />
+	<!-- Agathion One-eyed Bat Drove -->
+	<agathion id="70966" enchant="0" mainSkill="55440,1" />
+	<!-- Agathion Zaken's Spirit Swords -->
+	<agathion id="70967" enchant="0" mainSkill="55441,1" />
+	<!-- Agathion Pegasus -->
+	<agathion id="70968" enchant="0" mainSkill="55442,1" />
+	<!-- Agathion Guangong -->
+	<agathion id="70969" enchant="0" mainSkill="55443,1" />
+	<!-- Agathion God of Fortune -->
+	<agathion id="70970" enchant="0" mainSkill="55444,1" />
+	<!-- Agathion Phoenix -->
+	<agathion id="70971" enchant="0" mainSkill="55445,1" />
+	<!-- Agathion Saerom -->
+	<agathion id="70972" enchant="0" mainSkill="55446,1" />
+	<!-- Agathion Gwanseum Nyang -->
+	<agathion id="70973" enchant="0" mainSkill="55447,1" />
+	<!-- Agathion Blue Opera -->
+	<agathion id="70974" enchant="0" mainSkill="55448,1" />
+	<!-- Agathion Red Opera -->
+	<agathion id="70975" enchant="0" mainSkill="55449,1" />
+	<!-- Agathion Miss Chipao -->
+	<agathion id="70976" enchant="0" mainSkill="55450,1" />
+	<!-- Agathion Flower Fairy Spirit -->
+	<agathion id="70977" enchant="0" mainSkill="55451,1" />
+	<!-- Agathion Iken -->
+	<agathion id="70978" enchant="0" mainSkill="55452,1" />
+	<!-- Agathion Lanya -->
+	<agathion id="70979" enchant="0" mainSkill="55453,1" />
+	<!-- Agathion Gnosian -->
+	<agathion id="70980" enchant="0" mainSkill="55454,1" />
+	<!-- Agathion Cheerleader Orodriel -->
+	<agathion id="70981" enchant="0" mainSkill="55455,1" />
+	<!-- Agathion Lakinos -->
+	<agathion id="70982" enchant="0" mainSkill="55456,1" />
+	<!-- Agathion Mortia -->
+	<agathion id="70983" enchant="0" mainSkill="55457,1" />
+	<!-- Agathion Heintz -->
+	<agathion id="70984" enchant="0" mainSkill="55458,1" />
+	<!-- Agathion Meruril -->
+	<agathion id="70985" enchant="0" mainSkill="55459,1" />
+	<!-- Agathion Taman Zu Rapatui -->
+	<agathion id="70986" enchant="0" mainSkill="55460,1" />
+	<!-- Agathion Kaurin -->
+	<agathion id="70987" enchant="0" mainSkill="55461,1" />
+	<!-- Agathion Ahertbein -->
+	<agathion id="70988" enchant="0" mainSkill="55462,1" />
+	<!-- Agathion Naonin -->
+	<agathion id="70989" enchant="0" mainSkill="55463,1" />
+	<!-- Agathion Minion Eye - 7 days -->
+	<agathion id="70991" enchant="0" mainSkill="55552,1;55553,1" />
+	<!-- Agathion Minion Eye - 30 days -->
+	<agathion id="70992" enchant="0" mainSkill="55552,1;55553,1" />
+	<!-- Agathion Matryoshka - 7 days -->
+	<agathion id="70994" enchant="0" mainSkill="55554,1;55555,1;55548,1;55549,1;55550,1;55551,1" />
+	<!-- Agathion Matryoshka - 30 days -->
+	<agathion id="70995" enchant="0" mainSkill="55554,1;55555,1;55548,1;55549,1;55550,1;55551,1" />
+	<!-- Agathion Babayaga - 7 days -->
+	<agathion id="70997" enchant="0" mainSkill="55557,1;55558,1;55548,1;55549,1;55550,1;55551,1" />
+	<!-- Agathion Babayaga - 30 days -->
+	<agathion id="70998" enchant="0" mainSkill="55557,1;55558,1;55548,1;55549,1;55550,1;55551,1" />
+	<!-- Agathion Bugbear -->
+	<agathion id="71121" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Dryad -->
+	<agathion id="71122" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Griffin -->
+	<agathion id="71123" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Mermaid -->
+	<agathion id="71133" enchant="0" mainSkill="56010,1" subSkill="56009,1" />
+	<agathion id="71133" enchant="1" mainSkill="56010,1" subSkill="56009,2" />
+	<agathion id="71133" enchant="2" mainSkill="56010,1" subSkill="56009,3" />
+	<agathion id="71133" enchant="3" mainSkill="56010,1" subSkill="56009,4" />
+	<agathion id="71133" enchant="4" mainSkill="56010,2" subSkill="56009,5" />
+	<agathion id="71133" enchant="5" mainSkill="56010,2" subSkill="56009,6" />
+	<agathion id="71133" enchant="6" mainSkill="56010,2" subSkill="56009,7" />
+	<agathion id="71133" enchant="7" mainSkill="56010,3" subSkill="56009,8" />
+	<agathion id="71133" enchant="8" mainSkill="56010,3" subSkill="56009,9" />
+	<agathion id="71133" enchant="9" mainSkill="56010,3" subSkill="56009,10" />
+	<agathion id="71133" enchant="10" mainSkill="56010,4" subSkill="56009,11" />
+	<!-- Agathion Ball Trapping Gnosian -->
+	<agathion id="71157" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Ball Trapping Orodriel -->
+	<agathion id="71158" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Penalty Kick -->
+	<agathion id="71159" enchant="0" mainSkill="55995,1" />
+	<!-- Agathion Meliodas Lv. 1 -->
+	<agathion id="71184" enchant="0" mainSkill="56043,1" />
+	<agathion id="71184" enchant="1" mainSkill="56043,2" />
+	<agathion id="71184" enchant="2" mainSkill="56043,3" />
+	<agathion id="71184" enchant="3" mainSkill="56043,4" />
+	<agathion id="71184" enchant="4" mainSkill="56043,5" />
+	<agathion id="71184" enchant="5" mainSkill="56043,6" />
+	<agathion id="71184" enchant="6" mainSkill="56043,7" />
+	<agathion id="71184" enchant="7" mainSkill="56043,8" />
+	<!-- Agathion Elizabeth Lv. 1 -->
+	<agathion id="71185" enchant="0" mainSkill="56044,1" />
+	<agathion id="71185" enchant="1" mainSkill="56044,2" />
+	<agathion id="71185" enchant="2" mainSkill="56044,3" />
+	<agathion id="71185" enchant="3" mainSkill="56044,4" />
+	<agathion id="71185" enchant="4" mainSkill="56044,5" />
+	<agathion id="71185" enchant="5" mainSkill="56044,6" />
+	<agathion id="71185" enchant="6" mainSkill="56044,7" />
+	<agathion id="71185" enchant="7" mainSkill="56044,8" />
+	<!-- Agathion Hawk Lv. 1 -->
+	<agathion id="71186" enchant="0" mainSkill="56045,1" />
+	<agathion id="71186" enchant="1" mainSkill="56045,2" />
+	<agathion id="71186" enchant="2" mainSkill="56045,3" />
+	<agathion id="71186" enchant="3" mainSkill="56045,4" />
+	<agathion id="71186" enchant="4" mainSkill="56045,5" />
+	<agathion id="71186" enchant="5" mainSkill="56045,6" />
+	<agathion id="71186" enchant="6" mainSkill="56045,7" />
+	<agathion id="71186" enchant="7" mainSkill="56045,8" />
+	<!-- Agathion Ban Lv. 1 -->
+	<agathion id="71187" enchant="0" mainSkill="56046,1" />
+	<agathion id="71187" enchant="1" mainSkill="56046,2" />
+	<agathion id="71187" enchant="2" mainSkill="56046,3" />
+	<agathion id="71187" enchant="3" mainSkill="56046,4" />
+	<agathion id="71187" enchant="4" mainSkill="56046,5" />
+	<agathion id="71187" enchant="5" mainSkill="56046,6" />
+	<agathion id="71187" enchant="6" mainSkill="56046,7" />
+	<agathion id="71187" enchant="7" mainSkill="56046,8" />
+	<!-- Agathion Diane Lv. 1 -->
+	<agathion id="71188" enchant="0" mainSkill="56047,1" />
+	<agathion id="71188" enchant="1" mainSkill="56047,2" />
+	<agathion id="71188" enchant="2" mainSkill="56047,3" />
+	<agathion id="71188" enchant="3" mainSkill="56047,4" />
+	<agathion id="71188" enchant="4" mainSkill="56047,5" />
+	<agathion id="71188" enchant="5" mainSkill="56047,6" />
+	<agathion id="71188" enchant="6" mainSkill="56047,7" />
+	<agathion id="71188" enchant="7" mainSkill="56047,8" />
+	<!-- Agathion King Lv. 1 -->
+	<agathion id="71189" enchant="0" mainSkill="56048,1" />
+	<agathion id="71189" enchant="1" mainSkill="56048,2" />
+	<agathion id="71189" enchant="2" mainSkill="56048,3" />
+	<agathion id="71189" enchant="3" mainSkill="56048,4" />
+	<agathion id="71189" enchant="4" mainSkill="56048,5" />
+	<agathion id="71189" enchant="5" mainSkill="56048,6" />
+	<agathion id="71189" enchant="6" mainSkill="56048,7" />
+	<agathion id="71189" enchant="7" mainSkill="56048,8" />
+	<!-- Agathion Merlin Lv. 1 -->
+	<agathion id="71190" enchant="0" mainSkill="56049,1" />
+	<agathion id="71190" enchant="1" mainSkill="56049,2" />
+	<agathion id="71190" enchant="2" mainSkill="56049,3" />
+	<agathion id="71190" enchant="3" mainSkill="56049,4" />
+	<agathion id="71190" enchant="4" mainSkill="56049,5" />
+	<agathion id="71190" enchant="5" mainSkill="56049,6" />
+	<agathion id="71190" enchant="6" mainSkill="56049,7" />
+	<agathion id="71190" enchant="7" mainSkill="56049,8" />
+	<!-- Agathion Gowther Lv. 1 -->
+	<agathion id="71191" enchant="0" mainSkill="56050,1" />
+	<agathion id="71191" enchant="1" mainSkill="56050,2" />
+	<agathion id="71191" enchant="2" mainSkill="56050,3" />
+	<agathion id="71191" enchant="3" mainSkill="56050,4" />
+	<agathion id="71191" enchant="4" mainSkill="56050,5" />
+	<agathion id="71191" enchant="5" mainSkill="56050,6" />
+	<agathion id="71191" enchant="6" mainSkill="56050,7" />
+	<agathion id="71191" enchant="7" mainSkill="56050,8" />
+	<!-- Agathion Escanor Lv. 1 -->
+	<agathion id="71192" enchant="0" mainSkill="56051,1" />
+	<agathion id="71192" enchant="1" mainSkill="56051,2" />
+	<agathion id="71192" enchant="2" mainSkill="56051,3" />
+	<agathion id="71192" enchant="3" mainSkill="56051,4" />
+	<agathion id="71192" enchant="4" mainSkill="56051,5" />
+	<agathion id="71192" enchant="5" mainSkill="56051,6" />
+	<agathion id="71192" enchant="6" mainSkill="56051,7" />
+	<agathion id="71192" enchant="7" mainSkill="56051,8" />
+	<!-- Agathion Meliodas Lv. 2 -->
+	<agathion id="71193" enchant="0" mainSkill="56043,8" subSkill="56052,1" />
+	<agathion id="71193" enchant="1" mainSkill="56043,8" subSkill="56052,2" />
+	<agathion id="71193" enchant="2" mainSkill="56043,8" subSkill="56052,3" />
+	<agathion id="71193" enchant="3" mainSkill="56043,8" subSkill="56052,4" />
+	<agathion id="71193" enchant="4" mainSkill="56043,8" subSkill="56052,5" />
+	<agathion id="71193" enchant="5" mainSkill="56043,8" subSkill="56052,6" />
+	<agathion id="71193" enchant="6" mainSkill="56043,8" subSkill="56052,7" />
+	<agathion id="71193" enchant="7" mainSkill="56043,8" subSkill="56052,8" />
+	<!-- Agathion Elizabeth Lv. 2 -->
+	<agathion id="71194" enchant="0" mainSkill="56044,8" subSkill="56053,1" />
+	<agathion id="71194" enchant="1" mainSkill="56044,8" subSkill="56053,2" />
+	<agathion id="71194" enchant="2" mainSkill="56044,8" subSkill="56053,3" />
+	<agathion id="71194" enchant="3" mainSkill="56044,8" subSkill="56053,4" />
+	<agathion id="71194" enchant="4" mainSkill="56044,8" subSkill="56053,5" />
+	<agathion id="71194" enchant="5" mainSkill="56044,8" subSkill="56053,6" />
+	<agathion id="71194" enchant="6" mainSkill="56044,8" subSkill="56053,7" />
+	<agathion id="71194" enchant="7" mainSkill="56044,8" subSkill="56053,8" />
+	<!-- Agathion Hawk Lv. 2 -->
+	<agathion id="71195" enchant="0" mainSkill="56045,8" subSkill="56054,1" />
+	<agathion id="71195" enchant="1" mainSkill="56045,8" subSkill="56054,2" />
+	<agathion id="71195" enchant="2" mainSkill="56045,8" subSkill="56054,3" />
+	<agathion id="71195" enchant="3" mainSkill="56045,8" subSkill="56054,4" />
+	<agathion id="71195" enchant="4" mainSkill="56045,8" subSkill="56054,5" />
+	<agathion id="71195" enchant="5" mainSkill="56045,8" subSkill="56054,6" />
+	<agathion id="71195" enchant="6" mainSkill="56045,8" subSkill="56054,7" />
+	<agathion id="71195" enchant="7" mainSkill="56045,8" subSkill="56054,8" />
+	<!-- Agathion Ban Lv. 2 -->
+	<agathion id="71196" enchant="0" mainSkill="56046,8" subSkill="56055,1" />
+	<agathion id="71196" enchant="1" mainSkill="56046,8" subSkill="56055,2" />
+	<agathion id="71196" enchant="2" mainSkill="56046,8" subSkill="56055,3" />
+	<agathion id="71196" enchant="3" mainSkill="56046,8" subSkill="56055,4" />
+	<agathion id="71196" enchant="4" mainSkill="56046,8" subSkill="56055,5" />
+	<agathion id="71196" enchant="5" mainSkill="56046,8" subSkill="56055,6" />
+	<agathion id="71196" enchant="6" mainSkill="56046,8" subSkill="56055,7" />
+	<agathion id="71196" enchant="7" mainSkill="56046,8" subSkill="56055,8" />
+	<!-- Agathion Diane Lv. 2 -->
+	<agathion id="71197" enchant="0" mainSkill="56047,8" subSkill="56056,1" />
+	<agathion id="71197" enchant="1" mainSkill="56047,8" subSkill="56056,2" />
+	<agathion id="71197" enchant="2" mainSkill="56047,8" subSkill="56056,3" />
+	<agathion id="71197" enchant="3" mainSkill="56047,8" subSkill="56056,4" />
+	<agathion id="71197" enchant="4" mainSkill="56047,8" subSkill="56056,5" />
+	<agathion id="71197" enchant="5" mainSkill="56047,8" subSkill="56056,6" />
+	<agathion id="71197" enchant="6" mainSkill="56047,8" subSkill="56056,7" />
+	<agathion id="71197" enchant="7" mainSkill="56047,8" subSkill="56056,8" />
+	<!-- Agathion King Lv. 2 -->
+	<agathion id="71198" enchant="0" mainSkill="56048,8" subSkill="56057,1" />
+	<agathion id="71198" enchant="1" mainSkill="56048,8" subSkill="56057,2" />
+	<agathion id="71198" enchant="2" mainSkill="56048,8" subSkill="56057,3" />
+	<agathion id="71198" enchant="3" mainSkill="56048,8" subSkill="56057,4" />
+	<agathion id="71198" enchant="4" mainSkill="56048,8" subSkill="56057,5" />
+	<agathion id="71198" enchant="5" mainSkill="56048,8" subSkill="56057,6" />
+	<agathion id="71198" enchant="6" mainSkill="56048,8" subSkill="56057,7" />
+	<agathion id="71198" enchant="7" mainSkill="56048,8" subSkill="56057,8" />
+	<!-- Agathion Merlin Lv. 2 -->
+	<agathion id="71199" enchant="0" mainSkill="56049,8" subSkill="56058,1" />
+	<agathion id="71199" enchant="1" mainSkill="56049,8" subSkill="56058,2" />
+	<agathion id="71199" enchant="2" mainSkill="56049,8" subSkill="56058,3" />
+	<agathion id="71199" enchant="3" mainSkill="56049,8" subSkill="56058,4" />
+	<agathion id="71199" enchant="4" mainSkill="56049,8" subSkill="56058,5" />
+	<agathion id="71199" enchant="5" mainSkill="56049,8" subSkill="56058,6" />
+	<agathion id="71199" enchant="6" mainSkill="56049,8" subSkill="56058,7" />
+	<agathion id="71199" enchant="7" mainSkill="56049,8" subSkill="56058,8" />
+	<!-- Agathion Gowther Lv. 2 -->
+	<agathion id="71200" enchant="0" mainSkill="56050,8" subSkill="56059,1" />
+	<agathion id="71200" enchant="1" mainSkill="56050,8" subSkill="56059,2" />
+	<agathion id="71200" enchant="2" mainSkill="56050,8" subSkill="56059,3" />
+	<agathion id="71200" enchant="3" mainSkill="56050,8" subSkill="56059,4" />
+	<agathion id="71200" enchant="4" mainSkill="56050,8" subSkill="56059,5" />
+	<agathion id="71200" enchant="5" mainSkill="56050,8" subSkill="56059,6" />
+	<agathion id="71200" enchant="6" mainSkill="56050,8" subSkill="56059,7" />
+	<agathion id="71200" enchant="7" mainSkill="56050,8" subSkill="56059,8" />
+	<!-- Agathion Escanor Lv. 2 -->
+	<agathion id="71201" enchant="0" mainSkill="56051,8" subSkill="56060,1" />
+	<agathion id="71201" enchant="1" mainSkill="56051,8" subSkill="56060,2" />
+	<agathion id="71201" enchant="2" mainSkill="56051,8" subSkill="56060,3" />
+	<agathion id="71201" enchant="3" mainSkill="56051,8" subSkill="56060,4" />
+	<agathion id="71201" enchant="4" mainSkill="56051,8" subSkill="56060,5" />
+	<agathion id="71201" enchant="5" mainSkill="56051,8" subSkill="56060,6" />
+	<agathion id="71201" enchant="6" mainSkill="56051,8" subSkill="56060,7" />
+	<agathion id="71201" enchant="7" mainSkill="56051,8" subSkill="56060,8" />
+	<!-- Agathion Meliodas Lv. 3 -->
+	<agathion id="71202" enchant="0" mainSkill="56043,8" subSkill="56052,8;56061,1" />
+	<agathion id="71202" enchant="1" mainSkill="56043,8" subSkill="56052,8;56061,2" />
+	<agathion id="71202" enchant="2" mainSkill="56043,8" subSkill="56052,8;56061,3" />
+	<agathion id="71202" enchant="3" mainSkill="56043,8" subSkill="56052,8;56061,4" />
+	<agathion id="71202" enchant="4" mainSkill="56043,8" subSkill="56052,8;56061,5" />
+	<agathion id="71202" enchant="5" mainSkill="56043,8" subSkill="56052,8;56061,6" />
+	<agathion id="71202" enchant="6" mainSkill="56043,8" subSkill="56052,8;56061,7" />
+	<agathion id="71202" enchant="7" mainSkill="56043,9" subSkill="56052,9;56061,8" />
+	<!-- Agathion Elizabeth Lv. 3 -->
+	<agathion id="71203" enchant="0" mainSkill="56044,8" subSkill="56053,8;56062,1" />
+	<agathion id="71203" enchant="1" mainSkill="56044,8" subSkill="56053,8;56062,2" />
+	<agathion id="71203" enchant="2" mainSkill="56044,8" subSkill="56053,8;56062,3" />
+	<agathion id="71203" enchant="3" mainSkill="56044,8" subSkill="56053,8;56062,4" />
+	<agathion id="71203" enchant="4" mainSkill="56044,8" subSkill="56053,8;56062,5" />
+	<agathion id="71203" enchant="5" mainSkill="56044,8" subSkill="56053,8;56062,6" />
+	<agathion id="71203" enchant="6" mainSkill="56044,8" subSkill="56053,8;56062,7" />
+	<agathion id="71203" enchant="7" mainSkill="56044,9" subSkill="56053,9;56062,8" />
+	<!-- Agathion Hawk Lv. 3 -->
+	<agathion id="71204" enchant="0" mainSkill="56045,8" subSkill="56054,8;56063,1" />
+	<agathion id="71204" enchant="1" mainSkill="56045,8" subSkill="56054,8;56063,2" />
+	<agathion id="71204" enchant="2" mainSkill="56045,8" subSkill="56054,8;56063,3" />
+	<agathion id="71204" enchant="3" mainSkill="56045,8" subSkill="56054,8;56063,4" />
+	<agathion id="71204" enchant="4" mainSkill="56045,8" subSkill="56054,8;56063,5" />
+	<agathion id="71204" enchant="5" mainSkill="56045,8" subSkill="56054,8;56063,6" />
+	<agathion id="71204" enchant="6" mainSkill="56045,8" subSkill="56054,8;56063,7" />
+	<agathion id="71204" enchant="7" mainSkill="56045,9" subSkill="56054,8;56063,8" />
+	<!-- Agathion Ban Lv. 3 -->
+	<agathion id="71205" enchant="0" mainSkill="56046,8" subSkill="56055,8;56064,1" />
+	<agathion id="71205" enchant="1" mainSkill="56046,8" subSkill="56055,8;56064,2" />
+	<agathion id="71205" enchant="2" mainSkill="56046,8" subSkill="56055,8;56064,3" />
+	<agathion id="71205" enchant="3" mainSkill="56046,8" subSkill="56055,8;56064,4" />
+	<agathion id="71205" enchant="4" mainSkill="56046,8" subSkill="56055,8;56064,5" />
+	<agathion id="71205" enchant="5" mainSkill="56046,8" subSkill="56055,8;56064,6" />
+	<agathion id="71205" enchant="6" mainSkill="56046,8" subSkill="56055,8;56064,7" />
+	<agathion id="71205" enchant="7" mainSkill="56046,9" subSkill="56055,8;56064,8" />
+	<!-- Agathion Diane Lv. 3 -->
+	<agathion id="71206" enchant="0" mainSkill="56047,8" subSkill="56056,8;56065,1" />
+	<agathion id="71206" enchant="1" mainSkill="56047,8" subSkill="56056,8;56065,2" />
+	<agathion id="71206" enchant="2" mainSkill="56047,8" subSkill="56056,8;56065,3" />
+	<agathion id="71206" enchant="3" mainSkill="56047,8" subSkill="56056,8;56065,4" />
+	<agathion id="71206" enchant="4" mainSkill="56047,8" subSkill="56056,8;56065,5" />
+	<agathion id="71206" enchant="5" mainSkill="56047,8" subSkill="56056,8;56065,6" />
+	<agathion id="71206" enchant="6" mainSkill="56047,8" subSkill="56056,8;56065,7" />
+	<agathion id="71206" enchant="7" mainSkill="56047,9" subSkill="56056,8;56065,8" />
+	<!-- Agathion King Lv. 3 -->
+	<agathion id="71207" enchant="0" mainSkill="56048,8" subSkill="56057,8;56066,1" />
+	<agathion id="71207" enchant="1" mainSkill="56048,8" subSkill="56057,8;56066,2" />
+	<agathion id="71207" enchant="2" mainSkill="56048,8" subSkill="56057,8;56066,3" />
+	<agathion id="71207" enchant="3" mainSkill="56048,8" subSkill="56057,8;56066,4" />
+	<agathion id="71207" enchant="4" mainSkill="56048,8" subSkill="56057,8;56066,5" />
+	<agathion id="71207" enchant="5" mainSkill="56048,8" subSkill="56057,8;56066,6" />
+	<agathion id="71207" enchant="6" mainSkill="56048,8" subSkill="56057,8;56066,7" />
+	<agathion id="71207" enchant="7" mainSkill="56048,9" subSkill="56057,8;56066,8" />
+	<!-- Agathion Merlin Lv. 3 -->
+	<agathion id="71208" enchant="0" mainSkill="56049,8" subSkill="56058,8;56067,1" />
+	<agathion id="71208" enchant="1" mainSkill="56049,8" subSkill="56058,8;56067,2" />
+	<agathion id="71208" enchant="2" mainSkill="56049,8" subSkill="56058,8;56067,3" />
+	<agathion id="71208" enchant="3" mainSkill="56049,8" subSkill="56058,8;56067,4" />
+	<agathion id="71208" enchant="4" mainSkill="56049,8" subSkill="56058,8;56067,5" />
+	<agathion id="71208" enchant="5" mainSkill="56049,8" subSkill="56058,8;56067,6" />
+	<agathion id="71208" enchant="6" mainSkill="56049,8" subSkill="56058,8;56067,7" />
+	<agathion id="71208" enchant="7" mainSkill="56049,9" subSkill="56058,8;56067,8" />
+	<!-- Agathion Gowther Lv. 3 -->
+	<agathion id="71209" enchant="0" mainSkill="56050,8" subSkill="56059,8;56068,1" />
+	<agathion id="71209" enchant="1" mainSkill="56050,8" subSkill="56059,8;56068,2" />
+	<agathion id="71209" enchant="2" mainSkill="56050,8" subSkill="56059,8;56068,3" />
+	<agathion id="71209" enchant="3" mainSkill="56050,8" subSkill="56059,8;56068,4" />
+	<agathion id="71209" enchant="4" mainSkill="56050,8" subSkill="56059,8;56068,5" />
+	<agathion id="71209" enchant="5" mainSkill="56050,8" subSkill="56059,8;56068,6" />
+	<agathion id="71209" enchant="6" mainSkill="56050,8" subSkill="56059,8;56068,7" />
+	<agathion id="71209" enchant="7" mainSkill="56050,9" subSkill="56059,8;56068,8" />
+	<!-- Agathion Escanor Lv. 3 -->
+	<agathion id="71210" enchant="0" mainSkill="56051,8" subSkill="56060,8;56069,1" />
+	<agathion id="71210" enchant="1" mainSkill="56051,8" subSkill="56060,8;56069,2" />
+	<agathion id="71210" enchant="2" mainSkill="56051,8" subSkill="56060,8;56069,3" />
+	<agathion id="71210" enchant="3" mainSkill="56051,8" subSkill="56060,8;56069,4" />
+	<agathion id="71210" enchant="4" mainSkill="56051,8" subSkill="56060,8;56069,5" />
+	<agathion id="71210" enchant="5" mainSkill="56051,8" subSkill="56060,8;56069,6" />
+	<agathion id="71210" enchant="6" mainSkill="56051,8" subSkill="56060,8;56069,7" />
+	<agathion id="71210" enchant="7" mainSkill="56051,9" subSkill="56060,8;56069,8" />
+	<!-- Agathion Hawk Lv. 3 - 7 days -->
+	<agathion id="71237" enchant="5" mainSkill="56045,8" subSkill="56054,8;56063,6" />
+	<!-- Agathion Virgo -->
+	<agathion id="71303" enchant="0" subSkill="59109,1" />
+	<agathion id="71303" enchant="1" subSkill="59109,2" />
+	<agathion id="71303" enchant="2" subSkill="59109,3" />
+	<agathion id="71303" enchant="3" subSkill="59109,4" />
+	<agathion id="71303" enchant="4" subSkill="59109,5" />
+	<agathion id="71303" enchant="5" subSkill="59109,6" />
+	<agathion id="71303" enchant="6" subSkill="59109,7" />
+	<agathion id="71303" enchant="7" subSkill="59109,8" />
+	<agathion id="71303" enchant="8" subSkill="59109,9" />
+	<agathion id="71303" enchant="9" subSkill="59109,10" />
+	<agathion id="71303" enchant="10" subSkill="59109,11" />
+	<!-- Agathion Capricorn -->
+	<agathion id="71304" enchant="0" subSkill="59111,1" />
+	<agathion id="71304" enchant="1" subSkill="59111,2" />
+	<agathion id="71304" enchant="2" subSkill="59111,3" />
+	<agathion id="71304" enchant="3" subSkill="59111,4" />
+	<agathion id="71304" enchant="4" subSkill="59111,5" />
+	<agathion id="71304" enchant="5" subSkill="59111,6" />
+	<agathion id="71304" enchant="6" subSkill="59111,7" />
+	<agathion id="71304" enchant="7" subSkill="59111,8" />
+	<agathion id="71304" enchant="8" subSkill="59111,9" />
+	<agathion id="71304" enchant="9" subSkill="59111,10" />
+	<agathion id="71304" enchant="10" subSkill="59111,11" />
+	<!-- Agathion Libra -->
+	<agathion id="71305" enchant="0" subSkill="59112,1" />
+	<agathion id="71305" enchant="1" subSkill="59112,2" />
+	<agathion id="71305" enchant="2" subSkill="59112,3" />
+	<agathion id="71305" enchant="3" subSkill="59112,4" />
+	<agathion id="71305" enchant="4" subSkill="59112,5" />
+	<agathion id="71305" enchant="5" subSkill="59112,6" />
+	<agathion id="71305" enchant="6" subSkill="59112,7" />
+	<agathion id="71305" enchant="7" subSkill="59112,8" />
+	<agathion id="71305" enchant="8" subSkill="59112,9" />
+	<agathion id="71305" enchant="9" subSkill="59112,10" />
+	<agathion id="71305" enchant="10" subSkill="59112,11" />
+	<!-- Agathion Taurus -->
+	<agathion id="71306" enchant="0" subSkill="59105,1" />
+	<agathion id="71306" enchant="1" subSkill="59105,2" />
+	<agathion id="71306" enchant="2" subSkill="59105,3" />
+	<agathion id="71306" enchant="3" subSkill="59105,4" />
+	<agathion id="71306" enchant="4" subSkill="59105,5" />
+	<agathion id="71306" enchant="5" subSkill="59105,6" />
+	<agathion id="71306" enchant="6" subSkill="59105,7" />
+	<agathion id="71306" enchant="7" subSkill="59105,8" />
+	<agathion id="71306" enchant="8" subSkill="59105,9" />
+	<agathion id="71306" enchant="9" subSkill="59105,10" />
+	<agathion id="71306" enchant="10" subSkill="59105,11" />
+	<!-- Agathion Leo -->
+	<agathion id="71307" enchant="0" subSkill="59106,1" />
+	<agathion id="71307" enchant="1" subSkill="59106,2" />
+	<agathion id="71307" enchant="2" subSkill="59106,3" />
+	<agathion id="71307" enchant="3" subSkill="59106,4" />
+	<agathion id="71307" enchant="4" subSkill="59106,5" />
+	<agathion id="71307" enchant="5" subSkill="59106,6" />
+	<agathion id="71307" enchant="6" subSkill="59106,7" />
+	<agathion id="71307" enchant="7" subSkill="59106,8" />
+	<agathion id="71307" enchant="8" subSkill="59106,9" />
+	<agathion id="71307" enchant="9" subSkill="59106,10" />
+	<agathion id="71307" enchant="10" subSkill="59106,11" />
+	<!-- Agathion Gemini -->
+	<agathion id="71308" enchant="0" subSkill="59113,1" />
+	<agathion id="71308" enchant="1" subSkill="59113,2" />
+	<agathion id="71308" enchant="2" subSkill="59113,3" />
+	<agathion id="71308" enchant="3" subSkill="59113,4" />
+	<agathion id="71308" enchant="4" subSkill="59113,5" />
+	<agathion id="71308" enchant="5" subSkill="59113,6" />
+	<agathion id="71308" enchant="6" subSkill="59113,7" />
+	<agathion id="71308" enchant="7" subSkill="59113,8" />
+	<agathion id="71308" enchant="8" subSkill="59113,9" />
+	<agathion id="71308" enchant="9" subSkill="59113,10" />
+	<agathion id="71308" enchant="10" subSkill="59113,11" />
+	<!-- Agathion Scorpio -->
+	<agathion id="71309" enchant="0" subSkill="59107,1" />
+	<agathion id="71309" enchant="1" subSkill="59107,2" />
+	<agathion id="71309" enchant="2" subSkill="59107,3" />
+	<agathion id="71309" enchant="3" subSkill="59107,4" />
+	<agathion id="71309" enchant="4" subSkill="59107,5" />
+	<agathion id="71309" enchant="5" subSkill="59107,6" />
+	<agathion id="71309" enchant="6" subSkill="59107,7" />
+	<agathion id="71309" enchant="7" subSkill="59107,8" />
+	<agathion id="71309" enchant="8" subSkill="59107,9" />
+	<agathion id="71309" enchant="9" subSkill="59107,10" />
+	<agathion id="71309" enchant="10" subSkill="59107,11" />
+	<!-- Agathion Aquarius -->
+	<agathion id="71310" enchant="0" subSkill="59110,1" />
+	<agathion id="71310" enchant="1" subSkill="59110,2" />
+	<agathion id="71310" enchant="2" subSkill="59110,3" />
+	<agathion id="71310" enchant="3" subSkill="59110,4" />
+	<agathion id="71310" enchant="4" subSkill="59110,5" />
+	<agathion id="71310" enchant="5" subSkill="59110,6" />
+	<agathion id="71310" enchant="6" subSkill="59110,7" />
+	<agathion id="71310" enchant="7" subSkill="59110,8" />
+	<agathion id="71310" enchant="8" subSkill="59110,9" />
+	<agathion id="71310" enchant="9" subSkill="59110,10" />
+	<agathion id="71310" enchant="10" subSkill="59110,11" />
+	<!-- Agathion Sagittarius -->
+	<agathion id="71311" enchant="0" subSkill="59108,1" />
+	<agathion id="71311" enchant="1" subSkill="59108,2" />
+	<agathion id="71311" enchant="2" subSkill="59108,3" />
+	<agathion id="71311" enchant="3" subSkill="59108,4" />
+	<agathion id="71311" enchant="4" subSkill="59108,5" />
+	<agathion id="71311" enchant="5" subSkill="59108,6" />
+	<agathion id="71311" enchant="6" subSkill="59108,7" />
+	<agathion id="71311" enchant="7" subSkill="59108,8" />
+	<agathion id="71311" enchant="8" subSkill="59108,9" />
+	<agathion id="71311" enchant="9" subSkill="59108,10" />
+	<agathion id="71311" enchant="10" subSkill="59108,11" />
 </list>

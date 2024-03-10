@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="DwarvenTerritory">
+		<group>
+			<npc id="20317" x="119373" y="-187159" z="-3262" heading="4969" respawnTime="60sec" /> <!-- Black Wolf -->
+			<npc id="20317" x="118663" y="-185477" z="-3022" heading="28420" respawnTime="60sec" /> <!-- Black Wolf -->
+			<npc id="20317" x="118492" y="-184517" z="-2874" heading="26317" respawnTime="60sec" /> <!-- Black Wolf -->
+			<npc id="20327" x="118599" y="-185163" z="-2992" heading="20061" respawnTime="60sec" /> <!-- Goblin Snooper -->
+			<npc id="20327" x="119550" y="-184598" z="-3248" heading="4553" respawnTime="60sec" /> <!-- Goblin Snooper -->
+			<npc id="20446" x="119685" y="-185451" z="-3264" heading="12781" respawnTime="60sec" /> <!-- Utuku Orc -->
+			<npc id="20446" x="120246" y="-193706" z="-3509" heading="52415" respawnTime="60sec" /> <!-- Utuku Orc -->
+			<npc id="20447" x="119176" y="-194447" z="-3533" heading="56851" respawnTime="60sec" /> <!-- Utuku Orc Archer -->
+			<npc id="20447" x="117492" y="-194181" z="-3522" heading="32208" respawnTime="60sec" /> <!-- Utuku Orc Archer -->
+			<npc id="20447" x="121443" y="-193634" z="-3504" heading="196" respawnTime="60sec" /> <!-- Utuku Orc Archer -->
+			<npc id="20322" x="118234" y="-198290" z="-3637" heading="53646" respawnTime="60sec" /> <!-- Goblin Brigand -->
+			<npc id="20322" x="116736" y="-198927" z="-3610" heading="55209" respawnTime="60sec" /> <!-- Goblin Brigand -->
+			<npc id="20324" x="117998" y="-208446" z="-3732" heading="58696" respawnTime="60sec" /> <!-- Goblin Brigand Lieutenant -->
+			<npc id="20324" x="117529" y="-209528" z="-3714" heading="44885" respawnTime="60sec" /> <!-- Goblin Brigand Lieutenant -->
+			<npc id="20324" x="118518" y="-211032" z="-3524" heading="56621" respawnTime="60sec" /> <!-- Goblin Brigand Lieutenant -->
+			<npc id="20324" x="120142" y="-209335" z="-3732" heading="19400" respawnTime="60sec" /> <!-- Goblin Brigand Lieutenant -->
+			<npc id="20324" x="122339" y="-211757" z="-3701" heading="10831" respawnTime="60sec" /> <!-- Goblin Brigand Lieutenant -->
+			<npc id="20508" x="140431" y="-206388" z="-3734" heading="12529" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="140396" y="-204840" z="-3565" heading="16941" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="139034" y="-205536" z="-3568" heading="37046" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="138528" y="-206785" z="-3650" heading="45114" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="138130" y="-208077" z="-3431" heading="49738" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="137614" y="-207804" z="-3453" heading="29141" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20508" x="141173" y="-206032" z="-3730" heading="9380" respawnTime="60sec" /> <!-- Plunder Tarantula -->
+			<npc id="20403" x="138989" y="-207999" z="-3562" heading="46608" respawnTime="60sec" /> <!-- Hunter Tarantula -->
+			<npc id="20370" x="133419" y="-205268" z="-3599" heading="35991" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="132484" y="-204031" z="-3547" heading="18497" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="133840" y="-203651" z="-3732" heading="62308" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="132117" y="-208256" z="-3606" heading="45466" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="133077" y="-203136" z="-3665" heading="3781" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="130352" y="-203049" z="-3438" heading="43611" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20370" x="130632" y="-204164" z="-3498" heading="15249" respawnTime="60sec" /> <!-- Barbed Bat -->
+			<npc id="20510" x="126339" y="-199137" z="-3708" heading="17094" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="126003" y="-200802" z="-3707" heading="39939" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="125881" y="-201878" z="-3570" heading="61528" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="126576" y="-202579" z="-3525" heading="57628" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="127856" y="-202777" z="-3652" heading="64136" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="128460" y="-201766" z="-3730" heading="11943" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="129595" y="-201737" z="-3549" heading="1027" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="128314" y="-200737" z="-3732" heading="29787" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="129141" y="-198654" z="-3539" heading="12938" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="127914" y="-198180" z="-3412" heading="29416" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="124968" y="-199088" z="-3652" heading="47878" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="125100" y="-200425" z="-3626" heading="50961" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="126698" y="-200306" z="-3732" heading="2720" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="125842" y="-198772" z="-3709" heading="22985" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="129749" y="-200080" z="-3414" heading="327" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20510" x="130277" y="-202546" z="-3438" heading="54523" respawnTime="60sec" /> <!-- Crystal Puma -->
+			<npc id="20323" x="132364" y="-207775" z="-3646" heading="47330" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="131777" y="-208920" z="-3584" heading="44487" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="129910" y="-209773" z="-3533" heading="43987" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="128907" y="-210694" z="-3401" heading="42431" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="127942" y="-211110" z="-3373" heading="31746" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="127645" y="-209232" z="-3405" heading="19812" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+			<npc id="20323" x="126316" y="-207698" z="-3419" heading="21923" respawnTime="60sec" /> <!-- Goblin Brigand Leader -->
+		</group>
+	</spawn>
+</list>

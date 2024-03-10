@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="80600" name="option_id_80600">
+		<!-- Petrification Attack Success Rate +5% -->
+	</option>
+	<option id="80601" name="option_id_80601">
+		<!-- Petrification Attack Success Rate +6% -->
+	</option>
+	<option id="80602" name="option_id_80602">
+		<!-- Petrification Attack Success Rate +7.5% -->
+	</option>
+	<option id="80603" name="option_id_80603">
+		<!-- Petrification Attack Success Rate +15% -->
+	</option>
+	<option id="80604" name="option_id_80604">
+		<!-- Max HP +4% -->
+	</option>
+	<option id="80605" name="option_id_80605">
+		<!-- Max HP +4.5% -->
+	</option>
+	<option id="80606" name="option_id_80606">
+		<!-- Max HP +5% -->
+	</option>
+	<option id="80607" name="option_id_80607">
+		<!-- Max MP +4% -->
+	</option>
+	<option id="80608" name="option_id_80608">
+		<!-- Max MP +4.5% -->
+	</option>
+	<option id="80609" name="option_id_80609">
+		<!-- Max MP +5% -->
+	</option>
+	<option id="80610" name="option_id_80610">
+		<!-- Max CP +4% -->
+	</option>
+	<option id="80611" name="option_id_80611">
+		<!-- Max CP +4.5% -->
+	</option>
+	<option id="80612" name="option_id_80612">
+		<!-- Max CP +5% -->
+	</option>
+	<option id="80613" name="option_id_80613">
+		<!-- P. Atk. +4% -->
+	</option>
+	<option id="80614" name="option_id_80614">
+		<!-- P. Atk. +4.5% -->
+	</option>
+	<option id="80615" name="option_id_80615">
+		<!-- P. Atk. +5% -->
+	</option>
+	<option id="80616" name="option_id_80616">
+		<!-- P. Def. +4% -->
+	</option>
+	<option id="80617" name="option_id_80617">
+		<!-- P. Def. +4.5% -->
+	</option>
+	<option id="80618" name="option_id_80618">
+		<!-- P. Def. +5% -->
+	</option>
+	<option id="80619" name="option_id_80619">
+		<!-- Atk. Spd. +4% -->
+	</option>
+	<option id="80620" name="option_id_80620">
+		<!-- Atk. Spd. +4.5% -->
+	</option>
+	<option id="80621" name="option_id_80621">
+		<!-- Atk. Spd. +5% -->
+	</option>
+	<option id="80622" name="option_id_80622">
+		<!-- Speed +10 -->
+	</option>
+	<option id="80623" name="option_id_80623">
+		<!-- Speed +13 -->
+	</option>
+	<option id="80624" name="option_id_80624">
+		<!-- Speed +15 -->
+	</option>
+	<option id="80625" name="option_id_80625">
+		<!-- M. Atk. +4% -->
+	</option>
+	<option id="80626" name="option_id_80626">
+		<!-- M. Atk. +4.5% -->
+	</option>
+	<option id="80627" name="option_id_80627">
+		<!-- M. Atk. +5% -->
+	</option>
+	<option id="80628" name="option_id_80628">
+		<!-- M. Def +4% -->
+	</option>
+	<option id="80629" name="option_id_80629">
+		<!-- M. Def +4.5% -->
+	</option>
+	<option id="80630" name="option_id_80630">
+		<!-- M. Def +5% -->
+	</option>
+	<option id="80631" name="option_id_80631">
+		<!-- Casting Spd. +4% -->
+	</option>
+	<option id="80632" name="option_id_80632">
+		<!-- Casting Spd. +4.5% -->
+	</option>
+	<option id="80633" name="option_id_80633">
+		<!-- Casting Spd. +5% -->
+	</option>
+	<option id="80634" name="option_id_80634">
+		<!-- PvP Attack Damage +4% -->
+	</option>
+	<option id="80635" name="option_id_80635">
+		<!-- PvP Attack Damage +4.5% -->
+	</option>
+	<option id="80636" name="option_id_80636">
+		<!-- PvP Attack Damage +5% -->
+	</option>
+	<option id="80637" name="option_id_80637">
+		<!-- Received PvP Damage -4% -->
+	</option>
+	<option id="80638" name="option_id_80638">
+		<!-- Received PvP Damage -4.5% -->
+	</option>
+	<option id="80639" name="option_id_80639">
+		<!-- Received PvP Damage -5% -->
+	</option>
+	<option id="80640" name="option_id_80640">
+		<!-- PvE Damage +4% -->
+	</option>
+	<option id="80641" name="option_id_80641">
+		<!-- PvE Damage +4.5% -->
+	</option>
+	<option id="80642" name="option_id_80642">
+		<!-- PvE Damage +5% -->
+	</option>
+	<option id="80643" name="option_id_80643">
+		<!-- Received PvE Damage -4% -->
+	</option>
+	<option id="80644" name="option_id_80644">
+		<!-- Received PvE Damage -4.5% -->
+	</option>
+	<option id="80645" name="option_id_80645">
+		<!-- Received PvE Damage -5% -->
+	</option>
+	<option id="80646" name="option_id_80646">
+		<!-- XP When Hunting +4% -->
+	</option>
+	<option id="80647" name="option_id_80647">
+		<!-- XP When Hunting +4.5% -->
+	</option>
+	<option id="80648" name="option_id_80648">
+		<!-- XP When Hunting +5% -->
+	</option>
+	<option id="80649" name="option_id_80649">
+		<!-- SP When Hunting +4% -->
+	</option>
+	<option id="80650" name="option_id_80650">
+		<!-- SP When Hunting +4.5% -->
+	</option>
+	<option id="80651" name="option_id_80651">
+		<!-- SP When Hunting +5% -->
+	</option>
+	<option id="80652" name="option_id_80652">
+		<!-- Chance to recover 4% of damage as HP -->
+	</option>
+	<option id="80653" name="option_id_80653">
+		<!-- Chance to recover 4.5% of damage as HP -->
+	</option>
+	<option id="80654" name="option_id_80654">
+		<!-- Chance to recover 5% of damage as HP -->
+	</option>
+	<option id="80655" name="option_id_80655">
+		<!-- P. Skill MP Consumption -3% -->
+	</option>
+	<option id="80656" name="option_id_80656">
+		<!-- P. Skill MP Consumption -4% -->
+	</option>
+	<option id="80657" name="option_id_80657">
+		<!-- P. Skill MP Consumption -5% -->
+	</option>
+	<option id="80658" name="option_id_80658">
+		<!-- M. Skill MP Consumption -3% -->
+	</option>
+	<option id="80659" name="option_id_80659">
+		<!-- M. Skill MP Consumption -4% -->
+	</option>
+	<option id="80660" name="option_id_80660">
+		<!-- M. Skill MP Consumption -5% -->
+	</option>
+	<option id="80661" name="option_id_80661">
+		<!-- Fixed Damage Resistance +5 -->
+	</option>
+	<option id="80662" name="option_id_80662">
+		<!-- Fixed Damage Resistance +7 -->
+	</option>
+	<option id="80663" name="option_id_80663">
+		<!-- Fixed Damage Resistance +10 -->
+	</option>
+	<option id="80664" name="option_id_80664">
+		<!-- Reflects 1% all status effects to opponent -->
+	</option>
+	<option id="80665" name="option_id_80665">
+		<!-- Reflects 2% all status effects to opponent -->
+	</option>
+	<option id="80666" name="option_id_80666">
+		<!-- Reflects 5% all status effects to opponent -->
+	</option>
+	<option id="80667" name="option_id_80667">
+		<!-- When using an attack skill, activates Silense at certain rate -->
+	</option>
+	<option id="80668" name="option_id_80668">
+		<!-- Activates a shield that has a chance to absorb 1000 damage when hit -->
+	</option>
+	<option id="80669" name="option_id_80669">
+		<!-- Activates a shield that has a chance to absorb 1500 damage when hit -->
+	</option>
+	<option id="80670" name="option_id_80670">
+		<!-- Activates a shield that has a chance to absorb 2500 damage when hit -->
+	</option>
+	<option id="80671" name="option_id_80671">
+		<!-- P./M. Skill Power +1% -->
+	</option>
+	<option id="80672" name="option_id_80672">
+		<!-- P./M. Skill Power +2% -->
+	</option>
+	<option id="80673" name="option_id_80673">
+		<!-- P./M. Skill Power +5% -->
+	</option>
+	<option id="80674" name="option_id_80674">
+		<!-- Active Skill: Resurrects from death with full recovery. Buffs/debuffs stay when dying. However, the Noblesse Blessing and Lucky Charms disappear. -->
+	</option>
+	<option id="80675" name="option_id_80675">
+		<!-- Invincibility activated if damage received when HP is below 30%. -->
+	</option>
+	<option id="80676" name="option_id_80676">
+		<!-- P. Critical Damage +50 -->
+	</option>
+	<option id="80677" name="option_id_80677">
+		<!-- P. Critical Damage +125 -->
+	</option>
+	<option id="80678" name="option_id_80678">
+		<!-- P. Critical Damage +200 -->
+	</option>
+	<option id="80679" name="option_id_80679">
+		<!-- M. Critical Damage +1% -->
+	</option>
+	<option id="80680" name="option_id_80680">
+		<!-- M. Critical Damage +3% -->
+	</option>
+	<option id="80681" name="option_id_80681">
+		<!-- M. Critical Damage +10% -->
+	</option>
+	<option id="80682" name="option_id_80682">
+	</option>
+	<option id="80683" name="option_id_80683">
+	</option>
+	<option id="80684" name="option_id_80684">
+	</option>
+	<option id="80685" name="option_id_80685">
+	</option>
+	<option id="80686" name="option_id_80686">
+	</option>
+	<option id="80687" name="option_id_80687">
+	</option>
+	<option id="80688" name="option_id_80688">
+	</option>
+	<option id="80689" name="option_id_80689">
+	</option>
+	<option id="80690" name="option_id_80690">
+	</option>
+	<option id="80691" name="option_id_80691">
+	</option>
+	<option id="80692" name="option_id_80692">
+	</option>
+	<option id="80693" name="option_id_80693">
+	</option>
+	<option id="80694" name="option_id_80694">
+	</option>
+	<option id="80695" name="option_id_80695">
+	</option>
+	<option id="80696" name="option_id_80696">
+	</option>
+	<option id="80697" name="option_id_80697">
+	</option>
+	<option id="80698" name="option_id_80698">
+	</option>
+	<option id="80699" name="option_id_80699">
+	</option>
+</list>

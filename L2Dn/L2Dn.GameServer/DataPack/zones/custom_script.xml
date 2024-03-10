@@ -52,6 +52,22 @@
 		<node X="-16600" Y="-36925" />
 		<node X="-16100" Y="-36925" />
 	</zone>
+	<zone name="Hellbound" id="40101" type="ScriptZone" shape="NPoly" minZ="-30000" maxZ="30000">
+		<node X="-32768" Y="229376" />
+		<node X="32768" Y="229376" />
+		<node X="32768" Y="262143" />
+		<node X="-32768" Y="262143" />
+	</zone>
+	<zone name="Hellbound Dolmen" id="40107" type="ScriptZone" shape="Cuboid" minZ="-3200" maxZ="-3000">
+		<node X="-6230" Y="249000" />
+		<node X="-5230" Y="249880" />
+	</zone>
+	<zone name="Hellbound Quarry" id="40108" type="ScriptZone" shape="NPoly" minZ="-2509" maxZ="-1509">
+		<node X="-9675" Y="240402" />
+		<node X="-2401" Y="240307" />
+		<node X="-2393" Y="246927" />
+		<node X="-9590" Y="246820" />
+	</zone>
 	<zone name="Seed of Infinity AirShips dock" id="50600" type="ScriptZone" shape="Cylinder" minZ="-1000" maxZ="6200" rad="2900">
 		<node X="-212855" Y="209819" />
 	</zone>

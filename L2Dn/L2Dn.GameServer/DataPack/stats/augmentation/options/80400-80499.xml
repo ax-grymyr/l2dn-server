@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="80400" name="option_id_80400">
+		<!-- Atk. Spd. +13 -->
+	</option>
+	<option id="80401" name="option_id_80401">
+		<!-- Atk. Spd. +16 -->
+	</option>
+	<option id="80402" name="option_id_80402">
+		<!-- Atk. Spd. +18 -->
+	</option>
+	<option id="80403" name="option_id_80403">
+		<!-- Atk. Spd. +22 -->
+	</option>
+	<option id="80404" name="option_id_80404">
+		<!-- Atk. Spd. +45 -->
+	</option>
+	<option id="80405" name="option_id_80405">
+		<!-- Casting Spd. +5 -->
+	</option>
+	<option id="80406" name="option_id_80406">
+		<!-- Casting Spd. +6 -->
+	</option>
+	<option id="80407" name="option_id_80407">
+		<!-- Casting Spd. +7 -->
+	</option>
+	<option id="80408" name="option_id_80408">
+		<!-- Casting Spd. +9 -->
+	</option>
+	<option id="80409" name="option_id_80409">
+		<!-- Casting Spd. +11 -->
+	</option>
+	<option id="80410" name="option_id_80410">
+		<!-- Casting Spd. +13 -->
+	</option>
+	<option id="80411" name="option_id_80411">
+		<!-- Casting Spd. +16 -->
+	</option>
+	<option id="80412" name="option_id_80412">
+		<!-- Casting Spd. +18 -->
+	</option>
+	<option id="80413" name="option_id_80413">
+		<!-- Casting Spd. +22 -->
+	</option>
+	<option id="80414" name="option_id_80414">
+		<!-- Casting Spd. +45 -->
+	</option>
+	<option id="80415" name="option_id_80415">
+		<!-- P. Accuracy +1 -->
+	</option>
+	<option id="80416" name="option_id_80416">
+		<!-- P. Accuracy +2 -->
+	</option>
+	<option id="80417" name="option_id_80417">
+		<!-- P. Accuracy +3 -->
+	</option>
+	<option id="80418" name="option_id_80418">
+		<!-- M. Accuracy +1 -->
+	</option>
+	<option id="80419" name="option_id_80419">
+		<!-- M. Accuracy +2 -->
+	</option>
+	<option id="80420" name="option_id_80420">
+		<!-- M. Accuracy +3 -->
+	</option>
+	<option id="80421" name="option_id_80421">
+		<!-- Max HP +49 -->
+	</option>
+	<option id="80422" name="option_id_80422">
+		<!-- Max HP +58 -->
+	</option>
+	<option id="80423" name="option_id_80423">
+		<!-- Max HP +76 -->
+	</option>
+	<option id="80424" name="option_id_80424">
+		<!-- Max HP +94 -->
+	</option>
+	<option id="80425" name="option_id_80425">
+		<!-- Max HP +112 -->
+	</option>
+	<option id="80426" name="option_id_80426">
+		<!-- Max HP +135 -->
+	</option>
+	<option id="80427" name="option_id_80427">
+		<!-- Max HP +157 -->
+	</option>
+	<option id="80428" name="option_id_80428">
+		<!-- Max HP +180 -->
+	</option>
+	<option id="80429" name="option_id_80429">
+		<!-- Max HP +225 -->
+	</option>
+	<option id="80430" name="option_id_80430">
+		<!-- Max HP +450 -->
+	</option>
+	<option id="80431" name="option_id_80431">
+		<!-- Max MP +49 -->
+	</option>
+	<option id="80432" name="option_id_80432">
+		<!-- Max MP +58 -->
+	</option>
+	<option id="80433" name="option_id_80433">
+		<!-- Max MP +76 -->
+	</option>
+	<option id="80434" name="option_id_80434">
+		<!-- Max MP +94 -->
+	</option>
+	<option id="80435" name="option_id_80435">
+		<!-- Max MP +112 -->
+	</option>
+	<option id="80436" name="option_id_80436">
+		<!-- Max MP +135 -->
+	</option>
+	<option id="80437" name="option_id_80437">
+		<!-- Max MP +157 -->
+	</option>
+	<option id="80438" name="option_id_80438">
+		<!-- Max MP +180 -->
+	</option>
+	<option id="80439" name="option_id_80439">
+		<!-- Max MP +225 -->
+	</option>
+	<option id="80440" name="option_id_80440">
+		<!-- Max MP +450 -->
+	</option>
+	<option id="80441" name="option_id_80441">
+		<!-- Max CP +49 -->
+	</option>
+	<option id="80442" name="option_id_80442">
+		<!-- Max CP +58 -->
+	</option>
+	<option id="80443" name="option_id_80443">
+		<!-- Max CP +76 -->
+	</option>
+	<option id="80444" name="option_id_80444">
+		<!-- Max CP +94 -->
+	</option>
+	<option id="80445" name="option_id_80445">
+		<!-- Max CP +112 -->
+	</option>
+	<option id="80446" name="option_id_80446">
+		<!-- Max CP +135 -->
+	</option>
+	<option id="80447" name="option_id_80447">
+		<!-- Max CP +157 -->
+	</option>
+	<option id="80448" name="option_id_80448">
+		<!-- Max CP +180 -->
+	</option>
+	<option id="80449" name="option_id_80449">
+		<!-- Max CP +225 -->
+	</option>
+	<option id="80450" name="option_id_80450">
+		<!-- Max CP +450 -->
+	</option>
+	<option id="80451" name="option_id_80451">
+		<!-- STR +1 -->
+	</option>
+	<option id="80452" name="option_id_80452">
+		<!-- STR +1 -->
+	</option>
+	<option id="80453" name="option_id_80453">
+		<!-- CON +1 -->
+	</option>
+	<option id="80454" name="option_id_80454">
+		<!-- CON +1 -->
+	</option>
+	<option id="80455" name="option_id_80455">
+		<!-- MEN +1 -->
+	</option>
+	<option id="80456" name="option_id_80456">
+		<!-- MEN +1 -->
+	</option>
+	<option id="80457" name="option_id_80457">
+		<!-- DEX +1 -->
+	</option>
+	<option id="80458" name="option_id_80458">
+		<!-- DEX +1 -->
+	</option>
+	<option id="80459" name="option_id_80459">
+		<!-- WIT +1 -->
+	</option>
+	<option id="80460" name="option_id_80460">
+		<!-- WIT +1 -->
+	</option>
+	<option id="80461" name="option_id_80461">
+		<!-- INT +1 -->
+	</option>
+	<option id="80462" name="option_id_80462">
+		<!-- INT +1 -->
+	</option>
+	<option id="80463" name="option_id_80463">
+		<!-- P. Critical Rate +0.8% -->
+	</option>
+	<option id="80464" name="option_id_80464">
+		<!-- P. Critical Rate +1% -->
+	</option>
+	<option id="80465" name="option_id_80465">
+		<!-- P. Critical Rate +1.3% -->
+	</option>
+	<option id="80466" name="option_id_80466">
+		<!-- P. Critical Rate +1.6% -->
+	</option>
+	<option id="80467" name="option_id_80467">
+		<!-- P. Critical Rate +1.9% -->
+	</option>
+	<option id="80468" name="option_id_80468">
+		<!-- P. Critical Rate +2.2% -->
+	</option>
+	<option id="80469" name="option_id_80469">
+		<!-- P. Critical Rate +2.6% -->
+	</option>
+	<option id="80470" name="option_id_80470">
+		<!-- P. Critical Rate +3% -->
+	</option>
+	<option id="80471" name="option_id_80471">
+		<!-- P. Critical Rate +3.7% -->
+	</option>
+	<option id="80472" name="option_id_80472">
+		<!-- P. Critical Rate +7.5% -->
+	</option>
+	<option id="80473" name="option_id_80473">
+		<!-- P. Skill Critical Rate +0.9% -->
+	</option>
+	<option id="80474" name="option_id_80474">
+		<!-- P. Skill Critical Rate +1% -->
+	</option>
+	<option id="80475" name="option_id_80475">
+		<!-- P. Skill Critical Rate +1.3% -->
+	</option>
+	<option id="80476" name="option_id_80476">
+		<!-- P. Skill Critical Rate +1.6% -->
+	</option>
+	<option id="80477" name="option_id_80477">
+		<!-- P. Skill Critical Rate +1.9% -->
+	</option>
+	<option id="80478" name="option_id_80478">
+		<!-- P. Skill Critical Rate +2.3% -->
+	</option>
+	<option id="80479" name="option_id_80479">
+		<!-- P. Skill Critical Rate +2.7% -->
+	</option>
+	<option id="80480" name="option_id_80480">
+		<!-- P. Skill Critical Rate +3% -->
+	</option>
+	<option id="80481" name="option_id_80481">
+		<!-- P. Skill Critical Rate +3.8% -->
+	</option>
+	<option id="80482" name="option_id_80482">
+		<!-- P. Skill Critical Rate +7.5% -->
+	</option>
+	<option id="80483" name="option_id_80483">
+		<!-- M. Critical Rate +1% -->
+	</option>
+	<option id="80484" name="option_id_80484">
+		<!-- M. Critical Rate +2% -->
+	</option>
+	<option id="80485" name="option_id_80485">
+		<!-- M. Critical Rate +3% -->
+	</option>
+	<option id="80486" name="option_id_80486">
+		<!-- M. Critical Rate +4% -->
+	</option>
+	<option id="80487" name="option_id_80487">
+		<!-- M. Critical Rate +5% -->
+	</option>
+	<option id="80488" name="option_id_80488">
+		<!-- M. Critical Rate +6% -->
+	</option>
+	<option id="80489" name="option_id_80489">
+		<!-- M. Critical Rate +7% -->
+	</option>
+	<option id="80490" name="option_id_80490">
+		<!-- M. Critical Rate +8% -->
+	</option>
+	<option id="80491" name="option_id_80491">
+		<!-- M. Critical Rate +9% -->
+	</option>
+	<option id="80492" name="option_id_80492">
+		<!-- M. Critical Rate +15% -->
+	</option>
+	<option id="80493" name="option_id_80493">
+		<!-- P. Critical Damage +0.9% -->
+	</option>
+	<option id="80494" name="option_id_80494">
+		<!-- P. Critical Damage +1% -->
+	</option>
+	<option id="80495" name="option_id_80495">
+		<!-- P. Critical Damage +1.3% -->
+	</option>
+	<option id="80496" name="option_id_80496">
+		<!-- P. Critical Damage +1.6% -->
+	</option>
+	<option id="80497" name="option_id_80497">
+		<!-- P. Critical Damage +1.9% -->
+	</option>
+	<option id="80498" name="option_id_80498">
+		<!-- P. Critical Damage +2.3% -->
+	</option>
+	<option id="80499" name="option_id_80499">
+		<!-- P. Critical Damage +2.7% -->
+	</option>
+</list>

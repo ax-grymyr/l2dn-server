@@ -1,11 +1,11 @@
 ﻿using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Model;
 
 namespace L2Dn.GameServer.Network.Enums;
 

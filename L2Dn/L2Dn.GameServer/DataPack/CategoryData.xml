@@ -65,34 +65,6 @@
 		<id>193</id> <!-- Soul Finder -->
 		<id>194</id> <!-- Soul Breaker -->
 		<id>195</id> <!-- Soul Hound -->
-		<id>196</id> <!-- Death Pilgrim - Human -->
-		<id>197</id> <!-- Death Blade - Human -->
-		<id>198</id> <!-- Death Messenger - Human -->
-		<id>199</id> <!-- Death Knight - Human -->
-		<id>200</id> <!-- Death Pilgrim - Elf -->
-		<id>201</id> <!-- Death Blade - Elf -->
-		<id>202</id> <!-- Death Messenger - Elf -->
-		<id>203</id> <!-- Death Knight - Elf -->
-		<id>204</id> <!-- Death Pilgrim - Dark Elf -->
-		<id>205</id> <!-- Death Blade - Dark Elf -->
-		<id>206</id> <!-- Death Messenger - Dark Elf -->
-		<id>207</id> <!-- Death Knight - Dark Elf -->
-		<id>208</id> <!-- Sylph Gunner -->
-		<id>209</id> <!-- Sharpshooter -->
-		<id>210</id> <!-- Wind Sniper -->
-		<id>211</id> <!-- Storm Blaster -->
-		<id>217</id> <!-- Orc Lancer -->
-		<id>218</id> <!-- Rider -->
-		<id>219</id> <!-- Dragoon -->
-		<id>220</id> <!-- Vanguard Rider -->
-		<id>221</id> <!-- Male Assassin 0 -->
-		<id>222</id> <!-- Male Assassin 1 -->
-		<id>223</id> <!-- Male Assassin 2 -->
-		<id>224</id> <!-- Male Assassin 3 -->
-		<id>225</id> <!-- Female Assassin 0 -->
-		<id>226</id> <!-- Female Assassin 1 -->
-		<id>227</id> <!-- Female Assassin 2 -->
-		<id>228</id> <!-- Female Assassin 3 -->
 	</category>
 	<category name="MAGE_GROUP">
 		<id>10</id> <!-- mage -->
@@ -217,34 +189,6 @@
 		<id>193</id> <!-- Soul Finder -->
 		<id>194</id> <!-- Soul Breaker -->
 		<id>195</id> <!-- Soul Hound -->
-		<id>196</id> <!-- Death Pilgrim - Human -->
-		<id>197</id> <!-- Death Blade - Human -->
-		<id>198</id> <!-- Death Messenger - Human -->
-		<id>199</id> <!-- Death Knight - Human -->
-		<id>200</id> <!-- Death Pilgrim - Elf -->
-		<id>201</id> <!-- Death Blade - Elf -->
-		<id>202</id> <!-- Death Messenger - Elf -->
-		<id>203</id> <!-- Death Knight - Elf -->
-		<id>204</id> <!-- Death Pilgrim - Dark Elf -->
-		<id>205</id> <!-- Death Blade - Dark Elf -->
-		<id>206</id> <!-- Death Messenger - Dark Elf -->
-		<id>207</id> <!-- Death Knight - Dark Elf -->
-		<id>208</id> <!-- Sylph Gunner -->
-		<id>209</id> <!-- Sharpshooter -->
-		<id>210</id> <!-- Wind Sniper -->
-		<id>211</id> <!-- Storm Blaster -->
-		<id>217</id> <!-- Orc Lancer -->
-		<id>218</id> <!-- Rider -->
-		<id>219</id> <!-- Dragoon -->
-		<id>220</id> <!-- Vanguard Rider -->
-		<id>221</id> <!-- Male Assassin 0 -->
-		<id>222</id> <!-- Male Assassin 1 -->
-		<id>223</id> <!-- Male Assassin 2 -->
-		<id>224</id> <!-- Male Assassin 3 -->
-		<id>225</id> <!-- Female Assassin 0 -->
-		<id>226</id> <!-- Female Assassin 1 -->
-		<id>227</id> <!-- Female Assassin 2 -->
-		<id>228</id> <!-- Female Assassin 3 -->
 	</category>
 	<category name="FIRST_CLASS_GROUP">
 		<id>0</id> <!-- fighter -->
@@ -257,13 +201,6 @@
 		<id>49</id> <!-- orc_mage -->
 		<id>53</id> <!-- dwarven_fighter -->
 		<id>192</id> <!-- Jin Kamael Soldier -->
-		<id>196</id> <!-- Death Pilgrim - Human -->
-		<id>200</id> <!-- Death Pilgrim - Elf -->
-		<id>204</id> <!-- Death Pilgrim - Dark Elf -->
-		<id>208</id> <!-- Sylph Gunner -->
-		<id>217</id> <!-- Orc Lancer -->
-		<id>221</id> <!-- Male Assassin 0 -->
-		<id>225</id> <!-- Female Assassin 0 -->
 	</category>
 	<category name="SECOND_CLASS_GROUP">
 		<id>1</id> <!-- warrior -->
@@ -287,13 +224,6 @@
 		<id>125</id> <!-- trooper -->
 		<id>126</id> <!-- warder -->
 		<id>193</id> <!-- Soul Finder -->
-		<id>197</id> <!-- Death Blade - Human -->
-		<id>201</id> <!-- Death Blade - Elf -->
-		<id>205</id> <!-- Death Blade - Dark Elf -->
-		<id>209</id> <!-- Sharpshooter -->
-		<id>218</id> <!-- Rider -->
-		<id>222</id> <!-- Male Assassin 1 -->
-		<id>226</id> <!-- Female Assassin 1 -->
 	</category>
 	<category name="THIRD_CLASS_GROUP">
 		<id>2</id> <!-- gladiator -->
@@ -330,13 +260,6 @@
 		<id>127</id> <!-- berserker -->
 		<id>130</id> <!-- arbalester -->
 		<id>194</id> <!-- Soul Breaker -->
-		<id>198</id> <!-- Death Messenger - Human -->
-		<id>202</id> <!-- Death Messenger - Elf -->
-		<id>206</id> <!-- Death Messenger - Dark Elf -->
-		<id>210</id> <!-- Wind Sniper -->
-		<id>219</id> <!-- Dragoon -->
-		<id>223</id> <!-- Male Assassin 2 -->
-		<id>227</id> <!-- Female Assassin 2 -->
 	</category>
 	<category name="FOURTH_CLASS_GROUP">
 		<id>88</id> <!-- duelist -->
@@ -373,13 +296,6 @@
 		<id>131</id> <!-- doombringer -->
 		<id>134</id> <!-- trickster -->
 		<id>195</id> <!-- Soul Hound -->
-		<id>199</id> <!-- Death Knight - Human -->
-		<id>203</id> <!-- Death Knight - Elf -->
-		<id>207</id> <!-- Death Knight - Dark Elf -->
-		<id>211</id> <!-- Storm Blaster -->
-		<id>220</id> <!-- Vanguard Rider -->
-		<id>224</id> <!-- Male Assassin 3 -->
-		<id>228</id> <!-- Female Assassin 3 -->
 	</category>
 	<category name="BOUNTY_HUNTER_GROUP">
 		<id>53</id> <!-- dwarven_fighter -->
@@ -409,45 +325,7 @@
 		<id>16042</id> <!-- grown_up_wolf_ride_white -->
 	</category>
 	<category name="WYVERN_GROUP">
-		<id>15955</id> <!-- wyvern -->
-	</category>
-	<category name="PET_GROUP">
-		<id>16079</id> <!-- Buffalo Calf -->
-		<id>16080</id> <!-- Black Buffalo -->
-		<id>16081</id> <!-- White Buffalo -->
-		<id>16082</id> <!-- Black Combat Buffalo -->
-		<id>16083</id> <!-- White Combat Buffalo -->
-		<id>16084</id> <!-- Tiger Cub -->
-		<id>16085</id> <!-- White Tiger -->
-		<id>16086</id> <!-- Tiger -->
-		<id>16087</id> <!-- White Sharp clawed Tiger -->
-		<id>16088</id> <!-- Steel Sharp clawed Tiger -->
-		<id>16089</id> <!-- Kookaburra Chick -->
-		<id>16090</id> <!-- Red Kookaburra -->
-		<id>16091</id> <!-- Blue Kookaburra -->
-		<id>16092</id> <!-- Red Combat Kookaburra -->
-		<id>16093</id> <!-- Blue Combat Kookaburra -->
-		<id>16094</id> <!-- Dragon Hatchling -->
-		<id>16095</id> <!-- Green Dragon -->
-		<id>16096</id> <!-- Red Dragon -->
-		<id>16097</id> <!-- Earth Dragon -->
-		<id>16098</id> <!-- Fire Dragon -->
-		<id>16099</id> <!-- Hawk Hatchling -->
-		<id>16100</id> <!-- Red Hawk -->
-		<id>16101</id> <!-- Blue Hawk -->
-		<id>16102</id> <!-- Red Combat Hawk -->
-		<id>16103</id> <!-- Blue Combat Hawk -->
-		<id>16104</id> <!-- Wolf Cub -->
-		<id>16105</id> <!-- Black Wolf -->
-		<id>16106</id> <!-- While Wolf -->
-		<id>16107</id> <!-- Black Steel Wolf -->
-		<id>16108</id> <!-- White Steel Wolf -->
-		<id>16109</id> <!-- Fox Cub -->
-		<id>16110</id> <!-- Fox -->
-		<id>16111</id> <!-- Fox -->
-		<id>16112</id> <!-- Mystic Fox -->
-		<id>16113</id> <!-- Mystic Fox -->
-		<id>16114</id> <!-- Fox Cub -->
+		<id>12621</id> <!-- wyvern -->
 	</category>
 	<category name="SUBJOB_GROUP_KNIGHT">
 		<id>5</id> <!-- paladin -->
@@ -670,41 +548,5 @@
 		<id>112</id> <!-- shillien_saint -->
 		<id>34</id> <!-- bladedancer -->
 		<id>107</id> <!-- spectral_dancer -->
-	</category>
-	<category name="DEATH_KNIGHT_ALL_CLASS">
-		<id>196</id> <!-- Death Pilgrim - Human -->
-		<id>197</id> <!-- Death Blade - Human -->
-		<id>198</id> <!-- Death Messenger - Human -->
-		<id>199</id> <!-- Death Knight - Human -->
-		<id>200</id> <!-- Death Pilgrim - Elf -->
-		<id>201</id> <!-- Death Blade - Elf -->
-		<id>202</id> <!-- Death Messenger - Elf -->
-		<id>203</id> <!-- Death Knight - Elf -->
-		<id>204</id> <!-- Death Pilgrim - Dark Elf -->
-		<id>205</id> <!-- Death Blade - Dark Elf -->
-		<id>206</id> <!-- Death Messenger - Dark Elf -->
-		<id>207</id> <!-- Death Knight - Dark Elf -->
-	</category>
-	<category name="SYLPH_ALL_CLASS">
-		<id>208</id> <!-- Sylph Gunner -->
-		<id>209</id> <!-- Sharpshooter -->
-		<id>210</id> <!-- Wind Sniper -->
-		<id>211</id> <!-- Storm Blaster -->
-	</category>
-	<category name="VANGUARD_ALL_CLASS">
-		<id>217</id> <!-- Orc Lancer -->
-		<id>218</id> <!-- Rider -->
-		<id>219</id> <!-- Dragoon -->
-		<id>220</id> <!-- Vanguard Rider -->
-	</category>
-	<category name="ASSASSIN_ALL_CLASS">
-		<id>221</id> <!-- Male Assassin 0 -->
-		<id>222</id> <!-- Male Assassin 1 -->
-		<id>223</id> <!-- Male Assassin 2 -->
-		<id>224</id> <!-- Male Assassin 3 -->
-		<id>225</id> <!-- Female Assassin 0 -->
-		<id>226</id> <!-- Female Assassin 1 -->
-		<id>227</id> <!-- Female Assassin 2 -->
-		<id>228</id> <!-- Female Assassin 3 -->
 	</category>
 </list>

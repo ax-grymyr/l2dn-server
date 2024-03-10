@@ -6,6 +6,22 @@
 		<xs:attribute type="xs:positiveInteger" name="count" use="optional" />
 	</xs:complexType>
 
+	<xs:simpleType name="crystalType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NONE" />
+			<xs:enumeration value="D" />
+			<xs:enumeration value="C" />
+			<xs:enumeration value="B" />
+			<xs:enumeration value="A" />
+			<xs:enumeration value="S" />
+			<xs:enumeration value="S80" />
+			<xs:enumeration value="R" />
+			<xs:enumeration value="R95" />
+			<xs:enumeration value="R99" />
+			<xs:enumeration value="EVENT" />
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>
@@ -20,7 +36,7 @@
 							<xs:element name="reThird" minOccurs="0" type="fee" />
 							<xs:element name="remove" minOccurs="0" maxOccurs="unbounded" type="fee" />
 						</xs:sequence>
-						<xs:attribute name="stoneId" use="required" />
+						<xs:attribute type="crystalType" name="crystalType" use="required" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

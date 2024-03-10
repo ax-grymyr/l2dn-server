@@ -6,9 +6,6 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element type="xs:string" name="enterLocation" />
-							<xs:element type="xs:string" name="subEnterLocation1" minOccurs="0" />
-							<xs:element type="xs:string" name="subEnterLocation2" minOccurs="0" />
-							<xs:element type="xs:string" name="subEnterLocation3" minOccurs="0" />
 							<xs:element type="xs:string" name="exitLocation" minOccurs="0"/>
 							<xs:element type="xs:int" name="initialTime" />
 							<xs:element type="xs:int" name="resetDelay" minOccurs="0" />
@@ -24,8 +21,6 @@
 							<xs:element type="xs:boolean" name="pvpZone" minOccurs="0" />
 							<xs:element type="xs:boolean" name="noPvpZone" minOccurs="0" />
 							<xs:element type="xs:boolean" name="weekly" minOccurs="0" />
-							<xs:element type="xs:boolean" name="useWorldPrefix" minOccurs="0" />
-							<xs:element type="xs:boolean" name="zonePremiumUserOnly" minOccurs="0" />
 						</xs:sequence>
 						<xs:attribute type="xs:byte" name="id" use="optional" />
 						<xs:attribute type="xs:string" name="name" use="optional" />

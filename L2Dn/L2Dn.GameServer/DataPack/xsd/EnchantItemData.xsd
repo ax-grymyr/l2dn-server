@@ -95,7 +95,6 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
-						<xs:attribute name="isBlessed" type="xs:boolean" use="optional" />
 						<xs:attribute name="scrollGroupId" type="xs:int" use="optional" />
 					</xs:complexType>
 				</xs:element>

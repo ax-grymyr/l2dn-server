@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30840</npc> <!-- Lorenzo -->
+	</npcs>
+	<item>
+		<ingredient id="91397" count="100" /> <!-- Manuscript Fragment - Page 1 -->
+		<production id="91393" count="1" chance="100" /> <!-- Forgotten Manuscript - Page 1 -->
+	</item>
+	<item>
+		<ingredient id="91399" count="50" /> <!-- Manuscript Part - Page 2 -->
+		<ingredient id="57" count="3000000" /> <!-- Adena -->
+		<production id="91394" count="1" chance="100" /> <!-- Forgotten Manuscript - Page 2 -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91400" count="1" chance="100" /> <!-- Manuscript - Armor Break -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91401" count="1" chance="100" /> <!-- Manuscript - Disarm -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91402" count="1" chance="100" /> <!-- Manuscript - Spell Break -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91403" count="1" chance="100" /> <!-- Manuscript - Blaze -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91404" count="1" chance="100" /> <!-- Manuscript - Jump -->
+	</item>
+	<item>
+		<ingredient id="91393" count="1" /> <!-- Forgotten Manuscript - Page 1 -->
+		<ingredient id="91394" count="1" /> <!-- Forgotten Manuscript - Page 2 -->
+		<ingredient id="91395" count="1" /> <!-- Forgotten Manuscript - Page 3 -->
+		<ingredient id="91396" count="1" /> <!-- Forgotten Manuscript - Page 4 -->
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="91405" count="1" chance="100" /> <!-- Manuscript - Berserker Mode -->
+	</item>
+</list>

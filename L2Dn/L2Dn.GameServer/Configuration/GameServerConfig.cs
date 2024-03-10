@@ -1,8 +1,11 @@
-﻿namespace L2Dn.GameServer.Configuration;
+﻿using L2Dn.Model;
+
+namespace L2Dn.GameServer.Configuration;
 
 public class GameServerParamsConfig
 {
     public byte ServerId { get; set; }
+    public GameServerType ServerType { get; set; }
     public byte AgeLimit { get; set; } = 15;
     public short MaxPlayerCount { get; set; } = 5000;
     public bool IsPvpServer { get; set; }

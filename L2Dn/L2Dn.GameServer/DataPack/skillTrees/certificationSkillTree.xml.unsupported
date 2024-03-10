@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skillTrees.xsd">
+	<skillTree type="certificationSkillTree">		
+		<skill skillName="Warpaint" skillId="51271" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Warpaint" skillId="51271" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Warpaint" skillId="51271" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Warpaint" skillId="51271" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="30" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Warpaint" skillId="51271" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="45" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Didactic" skillId="51272" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Didactic" skillId="51272" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Didactic" skillId="51272" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Didactic" skillId="51272" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Didactic" skillId="51272" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Courage Mastery" skillId="51273" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Courage Mastery" skillId="51273" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Courage Mastery" skillId="51273" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Courage Mastery" skillId="51273" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="30" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Courage Mastery" skillId="51273" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="45" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Honor Recovery" skillId="51274" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Honor Recovery" skillId="51274" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Honor Recovery" skillId="51274" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Honor Recovery" skillId="51274" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="30" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Honor Recovery" skillId="51274" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="45" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Sword Resistance" skillId="51275" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Sword Resistance" skillId="51275" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Sword Resistance" skillId="51275" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Sword Resistance" skillId="51275" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Sword Resistance" skillId="51275" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Blunt Resistance" skillId="51276" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Blunt Resistance" skillId="51276" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Blunt Resistance" skillId="51276" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Blunt Resistance" skillId="51276" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Blunt Resistance" skillId="51276" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Spear Resistance" skillId="51277" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Spear Resistance" skillId="51277" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Spear Resistance" skillId="51277" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Spear Resistance" skillId="51277" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Spear Resistance" skillId="51277" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Fist Weapon Resistance" skillId="51278" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Fist Weapon Resistance" skillId="51278" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Fist Weapon Resistance" skillId="51278" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Fist Weapon Resistance" skillId="51278" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Fist Weapon Resistance" skillId="51278" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dagger Resistance" skillId="51279" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dagger Resistance" skillId="51279" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dagger Resistance" skillId="51279" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dagger Resistance" skillId="51279" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dagger Resistance" skillId="51279" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Bow Resistance" skillId="51280" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Bow Resistance" skillId="51280" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Bow Resistance" skillId="51280" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Bow Resistance" skillId="51280" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Bow Resistance" skillId="51280" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dual Sword Resistance" skillId="51281" skillLevel="1" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="1" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dual Sword Resistance" skillId="51281" skillLevel="2" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="3" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dual Sword Resistance" skillId="51281" skillLevel="3" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="5" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dual Sword Resistance" skillId="51281" skillLevel="4" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="10" /> <!-- Soul Crystal -->
+		</skill>
+		<skill skillName="Dual Sword Resistance" skillId="51281" skillLevel="5" getLevel="1" learnedByNpc="true">
+			<item id="91481" count="15" /> <!-- Soul Crystal -->
+		</skill>
+	</skillTree>
+</list>

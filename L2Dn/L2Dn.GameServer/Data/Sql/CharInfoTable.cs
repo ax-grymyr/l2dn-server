@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Sql;

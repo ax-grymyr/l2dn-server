@@ -397,7 +397,7 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:positiveInteger">
 									<xs:minInclusive value="1" />
-									<xs:maxInclusive value="65535" />
+									<xs:maxInclusive value="20019" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
@@ -405,7 +405,7 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:positiveInteger">
 									<xs:minInclusive value="1" />
-									<xs:maxInclusive value="65535" />
+									<xs:maxInclusive value="20007" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>

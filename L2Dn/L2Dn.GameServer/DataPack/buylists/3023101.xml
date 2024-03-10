@@ -3,13 +3,13 @@
 	<npcs>
 		<npc>30231</npc> <!-- Garette -->
 	</npcs>
-	<item id="908" price="11900" /> <!-- Necklace of Wisdom -->
-	<item id="845" price="8890" /> <!-- Cat's Eye Earring -->
-	<item id="877" price="5920" /> <!-- Ring of Wisdom -->
-	<item id="909" price="21300" /> <!-- Blue Diamond Necklace -->
-	<item id="846" price="16000" /> <!-- Coral Earring -->
-	<item id="878" price="10700" /> <!-- Blue Coral Ring -->
-	<item id="910" price="35900" /> <!-- Necklace of Devotion -->
-	<item id="847" price="26900" /> <!-- Red Crescent -->
-	<item id="890" price="18000" /> <!-- Ring of Devotion -->
+	<item id="908" price="15470" /> <!-- Necklace of Wisdom -->
+	<item id="845" price="11557" /> <!-- Cat's Eye Earring -->
+	<item id="877" price="7696" /> <!-- Ring of Wisdom -->
+	<item id="909" price="27690" /> <!-- Blue Diamond Necklace -->
+	<item id="846" price="20800" /> <!-- Coral Earring -->
+	<item id="878" price="13910" /> <!-- Blue Coral Ring -->
+	<item id="910" price="46670" /> <!-- Necklace of Devotion -->
+	<item id="847" price="34970" /> <!-- Red Crescent -->
+	<item id="890" price="23400" /> <!-- Ring of Devotion -->
 </list>

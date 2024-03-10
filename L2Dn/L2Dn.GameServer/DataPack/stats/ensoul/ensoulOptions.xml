@@ -1,5 +1,333 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/ensoulOptions.xsd">
+	<!-- Sigel -->
+	<option id="1" name="Sigel's Protection" desc="P. Def. +20.2" skillId="55253" skillLevel="1" /> <!-- Stone Id : 29818 -->
+	<option id="2" name="Sigel's Protection" desc="P. Def. +24.6" skillId="55253" skillLevel="2" /> <!-- Stone Id : 29819 -->
+	<option id="3" name="Sigel's Protection" desc="P. Def. +29.8" skillId="55253" skillLevel="3" /> <!-- Stone Id : 29820 -->
+	<option id="4" name="Sigel's Protection" desc="P. Def. +35.7" skillId="55253" skillLevel="4" /> <!-- Stone Id : 29821 -->
+	<option id="5" name="Sigel's Protection" desc="P. Def. +42.6" skillId="55253" skillLevel="5" /> <!-- Stone Id : 29822 -->
+	<option id="6" name="Sigel's Protection" desc="P. Def. +50.7" skillId="55253" skillLevel="6" /> <!-- Stone Id : 29823 -->
+	<option id="7" name="Sigel's Protection" desc="P. Def. +57.9" skillId="55253" skillLevel="7" /> <!-- Stone Id : 29824 -->
+	<option id="8" name="Sigel's Protection" desc="P. Def. +66.1" skillId="55253" skillLevel="8" /> <!-- Stone Id : 29825 -->
+	<option id="9" name="Sigel's Protection" desc="P. Def. +75.3" skillId="55253" skillLevel="9" /> <!-- Stone Id : 29826 -->
+	<option id="10" name="Sigel's Protection" desc="P. Def. +83.5" skillId="55253" skillLevel="10" /> <!-- Stone Id : 29827 -->
+	<option id="11" name="Sigel's Protection" desc="P. Def. +92.2" skillId="55253" skillLevel="11" /> <!-- Stone Id : 29828 -->
+	<option id="12" name="Sigel's Protection" desc="P. Def. +101.6" skillId="55253" skillLevel="12" /> <!-- Stone Id : 29829 -->
+	<option id="13" name="Sigel's Protection" desc="P. Def. +112.7" skillId="55253" skillLevel="13" /> <!-- Stone Id : 29830 -->
+	<option id="14" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="14" /> <!-- Stone Id : 29831 -->
+	<option id="15" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="15" /> <!-- Stone Id : 29832 -->
+	<option id="16" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="16" /> <!-- Stone Id : 29833 -->
+	<option id="17" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="17" /> <!-- Stone Id : 29834 -->
+	<option id="18" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="18" /> <!-- Stone Id : 29835 -->
+	<option id="19" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="19" /> <!-- Stone Id : 29836 -->
+	<option id="20" name="Sigel's Protection" desc="P. Def. +2" skillId="55253" skillLevel="20" /> <!-- Stone Id : 29837 -->
+	<option id="21" name="Sigel Protection" desc="Max HP +73" skillId="55254" skillLevel="1" /> <!-- Stone Id : 29818 -->
+	<option id="22" name="Sigel Protection" desc="Max HP +94" skillId="55254" skillLevel="2" /> <!-- Stone Id : 29819 -->
+	<option id="23" name="Sigel Protection" desc="Max HP +129" skillId="55254" skillLevel="3" /> <!-- Stone Id : 29820 -->
+	<option id="24" name="Sigel Protection" desc="Max HP +154" skillId="55254" skillLevel="4" /> <!-- Stone Id : 29821 -->
+	<option id="25" name="Sigel Protection" desc="Max HP +185" skillId="55254" skillLevel="5" /> <!-- Stone Id : 29822 -->
+	<option id="26" name="Sigel Protection" desc="Max HP +223" skillId="55254" skillLevel="6" /> <!-- Stone Id : 29823 -->
+	<option id="27" name="Sigel Protection" desc="Max HP +249" skillId="55254" skillLevel="7" /> <!-- Stone Id : 29824 -->
+	<option id="28" name="Sigel Protection" desc="Max HP +276" skillId="55254" skillLevel="8" /> <!-- Stone Id : 29825 -->
+	<option id="29" name="Sigel Protection" desc="Max HP +303" skillId="55254" skillLevel="9" /> <!-- Stone Id : 29826 -->
+	<option id="30" name="Sigel Protection" desc="Max HP +331" skillId="55254" skillLevel="10" /> <!-- Stone Id : 29827 -->
+	<option id="31" name="Sigel Protection" desc="Max HP +359" skillId="55254" skillLevel="11" /> <!-- Stone Id : 29828 -->
+	<option id="32" name="Sigel Protection" desc="Max HP +388" skillId="55254" skillLevel="12" /> <!-- Stone Id : 29829 -->
+	<option id="33" name="Sigel Protection" desc="Max HP +418" skillId="55254" skillLevel="13" /> <!-- Stone Id : 29830 -->
+	<option id="34" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="14" /> <!-- Stone Id : 29831 -->
+	<option id="35" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="15" /> <!-- Stone Id : 29832 -->
+	<option id="36" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="16" /> <!-- Stone Id : 29833 -->
+	<option id="37" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="17" /> <!-- Stone Id : 29834 -->
+	<option id="38" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="18" /> <!-- Stone Id : 29835 -->
+	<option id="39" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="19" /> <!-- Stone Id : 29836 -->
+	<option id="40" name="Sigel Protection" desc="Max HP +50" skillId="55254" skillLevel="20" /> <!-- Stone Id : 29837 -->
+	<!-- Tyrr -->
+	<option id="41" name="Tyrr Might" desc="P. Atk. +2.8" skillId="55255" skillLevel="1" /> <!-- Stone Id : 29838 -->
+	<option id="42" name="Tyrr Might" desc="P. Atk. +3.8" skillId="55255" skillLevel="2" /> <!-- Stone Id : 29839 -->
+	<option id="43" name="Tyrr Might" desc="P. Atk. +5.1" skillId="55255" skillLevel="3" /> <!-- Stone Id : 29840 -->
+	<option id="44" name="Tyrr Might" desc="P. Atk. +7.8" skillId="55255" skillLevel="4" /> <!-- Stone Id : 29841 -->
+	<option id="45" name="Tyrr Might" desc="P. Atk. +10.1" skillId="55255" skillLevel="5" /> <!-- Stone Id : 29842 -->
+	<option id="46" name="Tyrr Might" desc="P. Atk. +12.9" skillId="55255" skillLevel="6" /> <!-- Stone Id : 29843 -->
+	<option id="47" name="Tyrr Might" desc="P. Atk. +15.3" skillId="55255" skillLevel="7" /> <!-- Stone Id : 29844 -->
+	<option id="48" name="Tyrr Might" desc="P. Atk. +18.1" skillId="55255" skillLevel="8" /> <!-- Stone Id : 29845 -->
+	<option id="49" name="Tyrr Might" desc="P. Atk. +21.2" skillId="55255" skillLevel="9" /> <!-- Stone Id : 29846 -->
+	<option id="50" name="Tyrr Might" desc="P. Atk. +24.3" skillId="55255" skillLevel="10" /> <!-- Stone Id : 29847 -->
+	<option id="51" name="Tyrr Might" desc="P. Atk. +28" skillId="55255" skillLevel="11" /> <!-- Stone Id : 29848 -->
+	<option id="52" name="Tyrr Might" desc="P. Atk. +31.9" skillId="55255" skillLevel="12" /> <!-- Stone Id : 29849 -->
+	<option id="53" name="Tyrr Might" desc="P. Atk. +36.5" skillId="55255" skillLevel="13" /> <!-- Stone Id : 29850 -->
+	<option id="54" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="14" /> <!-- Stone Id : 29851 -->
+	<option id="55" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="15" /> <!-- Stone Id : 29852 -->
+	<option id="56" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="16" /> <!-- Stone Id : 29853 -->
+	<option id="57" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="17" /> <!-- Stone Id : 29854 -->
+	<option id="58" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="18" /> <!-- Stone Id : 29855 -->
+	<option id="59" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="19" /> <!-- Stone Id : 29856 -->
+	<option id="60" name="Tyrr Might" desc="P. Atk. +20" skillId="55255" skillLevel="20" /> <!-- Stone Id : 29857 -->
+	<option id="61" name="Tyrr Haste" desc="Atk. Spd. +2%" skillId="55256" skillLevel="1" /> <!-- Stone Id : 29838 -->
+	<option id="62" name="Tyrr Haste" desc="Atk. Spd. +2.25%" skillId="55256" skillLevel="2" /> <!-- Stone Id : 29839 -->
+	<option id="63" name="Tyrr Haste" desc="Atk. Spd. +2.5%" skillId="55256" skillLevel="3" /> <!-- Stone Id : 29840 -->
+	<option id="64" name="Tyrr Haste" desc="Atk. Spd. +2.75%" skillId="55256" skillLevel="4" /> <!-- Stone Id : 29841 -->
+	<option id="65" name="Tyrr Haste" desc="Atk. Spd. +3%" skillId="55256" skillLevel="5" /> <!-- Stone Id : 29842 -->
+	<option id="66" name="Tyrr Haste" desc="Atk. Spd. +3.25%" skillId="55256" skillLevel="6" /> <!-- Stone Id : 29843 -->
+	<option id="67" name="Tyrr Haste" desc="Atk. Spd. +3.5%" skillId="55256" skillLevel="7" /> <!-- Stone Id : 29844 -->
+	<option id="68" name="Tyrr Haste" desc="Atk. Spd. +3.75%" skillId="55256" skillLevel="8" /> <!-- Stone Id : 29845 -->
+	<option id="69" name="Tyrr Haste" desc="Atk. Spd. +4%" skillId="55256" skillLevel="9" /> <!-- Stone Id : 29846 -->
+	<option id="70" name="Tyrr Haste" desc="Atk. Spd. +4.25%" skillId="55256" skillLevel="10" /> <!-- Stone Id : 29847 -->
+	<option id="71" name="Tyrr Haste" desc="Atk. Spd. +4.5%" skillId="55256" skillLevel="11" /> <!-- Stone Id : 29848 -->
+	<option id="72" name="Tyrr Haste" desc="Atk. Spd. +4.75%" skillId="55256" skillLevel="12" /> <!-- Stone Id : 29849 -->
+	<option id="73" name="Tyrr Haste" desc="Atk. Spd. +5%" skillId="55256" skillLevel="13" /> <!-- Stone Id : 29850 -->
+	<option id="74" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="14" /> <!-- Stone Id : 29851 -->
+	<option id="75" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="15" /> <!-- Stone Id : 29852 -->
+	<option id="76" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="16" /> <!-- Stone Id : 29853 -->
+	<option id="77" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="17" /> <!-- Stone Id : 29854 -->
+	<option id="78" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="18" /> <!-- Stone Id : 29855 -->
+	<option id="79" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="19" /> <!-- Stone Id : 29856 -->
+	<option id="80" name="Tyrr Haste" desc="Atk. Spd. +1%" skillId="55256" skillLevel="20" /> <!-- Stone Id : 29857 -->
+	<!-- Othell -->
+	<option id="81" name="Othell's Focus" desc="P. Critical Rate +75" skillId="55257" skillLevel="1" /> <!-- Stone Id : 29858 -->
+	<option id="82" name="Othell's Focus" desc="P. Critical Rate +100" skillId="55257" skillLevel="2" /> <!-- Stone Id : 29859 -->
+	<option id="83" name="Othell's Focus" desc="P. Critical Rate +125" skillId="55257" skillLevel="3" /> <!-- Stone Id : 29860 -->
+	<option id="84" name="Othell's Focus" desc="P. Critical Rate +150" skillId="55257" skillLevel="4" /> <!-- Stone Id : 29861 -->
+	<option id="85" name="Othell's Focus" desc="P. Critical Rate +175" skillId="55257" skillLevel="5" /> <!-- Stone Id : 29862 -->
+	<option id="86" name="Othell's Focus" desc="P. Critical Rate +200" skillId="55257" skillLevel="6" /> <!-- Stone Id : 29863 -->
+	<option id="87" name="Othell's Focus" desc="P. Critical Rate +225" skillId="55257" skillLevel="7" /> <!-- Stone Id : 29864 -->
+	<option id="88" name="Othell's Focus" desc="P. Critical Rate +250" skillId="55257" skillLevel="8" /> <!-- Stone Id : 29865 -->
+	<option id="89" name="Othell's Focus" desc="P. Critical Rate +275" skillId="55257" skillLevel="9" /> <!-- Stone Id : 29866 -->
+	<option id="90" name="Othell's Focus" desc="P. Critical Rate +300" skillId="55257" skillLevel="10" /> <!-- Stone Id : 29867 -->
+	<option id="91" name="Othell's Focus" desc="P. Critical Rate +325" skillId="55257" skillLevel="11" /> <!-- Stone Id : 29868 -->
+	<option id="92" name="Othell's Focus" desc="P. Critical Rate +350" skillId="55257" skillLevel="12" /> <!-- Stone Id : 29869 -->
+	<option id="93" name="Othell's Focus" desc="P. Critical Rate +375" skillId="55257" skillLevel="13" /> <!-- Stone Id : 29870 -->
+	<option id="94" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="14" /> <!-- Stone Id : 29871 -->
+	<option id="95" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="15" /> <!-- Stone Id : 29872 -->
+	<option id="96" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="16" /> <!-- Stone Id : 29873 -->
+	<option id="97" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="17" /> <!-- Stone Id : 29874 -->
+	<option id="98" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="18" /> <!-- Stone Id : 29875 -->
+	<option id="99" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="19" /> <!-- Stone Id : 29876 -->
+	<option id="100" name="Othell's Focus" desc="P. Critical Rate +1.8" skillId="55257" skillLevel="20" /> <!-- Stone Id : 29877 -->
+	<option id="101" name="Othell's Critical Damage" desc="P. Critical Damage +80" skillId="55258" skillLevel="1" /> <!-- Stone Id : 29858 -->
+	<option id="102" name="Othell's Critical Damage" desc="P. Critical Damage +97" skillId="55258" skillLevel="2" /> <!-- Stone Id : 29859 -->
+	<option id="103" name="Othell's Critical Damage" desc="P. Critical Damage +114" skillId="55258" skillLevel="3" /> <!-- Stone Id : 29860 -->
+	<option id="104" name="Othell's Critical Damage" desc="P. Critical Damage +131" skillId="55258" skillLevel="4" /> <!-- Stone Id : 29861 -->
+	<option id="105" name="Othell's Critical Damage" desc="P. Critical Damage +148" skillId="55258" skillLevel="5" /> <!-- Stone Id : 29862 -->
+	<option id="106" name="Othell's Critical Damage" desc="P. Critical Damage +165" skillId="55258" skillLevel="6" /> <!-- Stone Id : 29863 -->
+	<option id="107" name="Othell's Critical Damage" desc="P. Critical Damage +182" skillId="55258" skillLevel="7" /> <!-- Stone Id : 29864 -->
+	<option id="108" name="Othell's Critical Damage" desc="P. Critical Damage +199" skillId="55258" skillLevel="8" /> <!-- Stone Id : 29865 -->
+	<option id="109" name="Othell's Critical Damage" desc="P. Critical Damage +216" skillId="55258" skillLevel="9" /> <!-- Stone Id : 29866 -->
+	<option id="110" name="Othell's Critical Damage" desc="P. Critical Damage +233" skillId="55258" skillLevel="10" /> <!-- Stone Id : 29867 -->
+	<option id="111" name="Othell's Critical Damage" desc="P. Critical Damage +251" skillId="55258" skillLevel="11" /> <!-- Stone Id : 29868 -->
+	<option id="112" name="Othell's Critical Damage" desc="P. Critical Damage +268" skillId="55258" skillLevel="12" /> <!-- Stone Id : 29869 -->
+	<option id="113" name="Othell's Critical Damage" desc="P. Critical Damage +285" skillId="55258" skillLevel="13" /> <!-- Stone Id : 29870 -->
+	<option id="114" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="14" /> <!-- Stone Id : 29871 -->
+	<option id="115" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="15" /> <!-- Stone Id : 29872 -->
+	<option id="116" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="16" /> <!-- Stone Id : 29873 -->
+	<option id="117" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="17" /> <!-- Stone Id : 29874 -->
+	<option id="118" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="18" /> <!-- Stone Id : 29875 -->
+	<option id="119" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="19" /> <!-- Stone Id : 29876 -->
+	<option id="120" name="Othell's Critical Damage" desc="P. Critical Damage +20" skillId="55258" skillLevel="20" /> <!-- Stone Id : 29877 -->
+	<!-- Yul -->
+	<option id="121" name="Yul Wind Walk" desc="Speed +4" skillId="55259" skillLevel="1" /> <!-- Stone Id : 29878 -->
+	<option id="122" name="Yul Wind Walk" desc="Speed +4.5" skillId="55259" skillLevel="2" /> <!-- Stone Id : 29879 -->
+	<option id="123" name="Yul Wind Walk" desc="Speed +5" skillId="55259" skillLevel="3" /> <!-- Stone Id : 29880 -->
+	<option id="124" name="Yul Wind Walk" desc="Speed +5.5" skillId="55259" skillLevel="4" /> <!-- Stone Id : 29881 -->
+	<option id="125" name="Yul Wind Walk" desc="Speed +6" skillId="55259" skillLevel="5" /> <!-- Stone Id : 29882 -->
+	<option id="126" name="Yul Wind Walk" desc="Speed +6.5" skillId="55259" skillLevel="6" /> <!-- Stone Id : 29883 -->
+	<option id="127" name="Yul Wind Walk" desc="Speed +7" skillId="55259" skillLevel="7" /> <!-- Stone Id : 29884 -->
+	<option id="128" name="Yul Wind Walk" desc="Speed +7.5" skillId="55259" skillLevel="8" /> <!-- Stone Id : 29885 -->
+	<option id="129" name="Yul Wind Walk" desc="Speed +8" skillId="55259" skillLevel="9" /> <!-- Stone Id : 29886 -->
+	<option id="130" name="Yul Wind Walk" desc="Speed +8.5" skillId="55259" skillLevel="10" /> <!-- Stone Id : 29887 -->
+	<option id="131" name="Yul Wind Walk" desc="Speed +9" skillId="55259" skillLevel="11" /> <!-- Stone Id : 29888 -->
+	<option id="132" name="Yul Wind Walk" desc="Speed +9.5" skillId="55259" skillLevel="12" /> <!-- Stone Id : 29889 -->
+	<option id="133" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="13" /> <!-- Stone Id : 29890 -->
+	<option id="134" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="14" /> <!-- Stone Id : 29891 -->
+	<option id="135" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="15" /> <!-- Stone Id : 29892 -->
+	<option id="136" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="16" /> <!-- Stone Id : 29893 -->
+	<option id="137" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="17" /> <!-- Stone Id : 29894 -->
+	<option id="138" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="18" /> <!-- Stone Id : 29895 -->
+	<option id="139" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="19" /> <!-- Stone Id : 29896 -->
+	<option id="140" name="Yul Wind Walk" desc="Speed +10" skillId="55259" skillLevel="20" /> <!-- Stone Id : 29897 -->
+	<option id="141" name="Yul Guidance" desc="Accuracy +2.47" skillId="55260" skillLevel="1" /> <!-- Stone Id : 29878 -->
+	<option id="142" name="Yul Guidance" desc="Accuracy +2.67" skillId="55260" skillLevel="2" /> <!-- Stone Id : 29879 -->
+	<option id="143" name="Yul Guidance" desc="Accuracy +2.87" skillId="55260" skillLevel="3" /> <!-- Stone Id : 29880 -->
+	<option id="144" name="Yul Guidance" desc="Accuracy +3.07" skillId="55260" skillLevel="4" /> <!-- Stone Id : 29881 -->
+	<option id="145" name="Yul Guidance" desc="Accuracy +3.27" skillId="55260" skillLevel="5" /> <!-- Stone Id : 29882 -->
+	<option id="146" name="Yul Guidance" desc="Accuracy +3.47" skillId="55260" skillLevel="6" /> <!-- Stone Id : 29883 -->
+	<option id="147" name="Yul Guidance" desc="Accuracy +3.62" skillId="55260" skillLevel="7" /> <!-- Stone Id : 29884 -->
+	<option id="148" name="Yul Guidance" desc="Accuracy +3.77" skillId="55260" skillLevel="8" /> <!-- Stone Id : 29885 -->
+	<option id="149" name="Yul Guidance" desc="Accuracy +3.92" skillId="55260" skillLevel="9" /> <!-- Stone Id : 29886 -->
+	<option id="150" name="Yul Guidance" desc="Accuracy +4.07" skillId="55260" skillLevel="10" /> <!-- Stone Id : 29887 -->
+	<option id="151" name="Yul Guidance" desc="Accuracy +4.22" skillId="55260" skillLevel="11" /> <!-- Stone Id : 29888 -->
+	<option id="152" name="Yul Guidance" desc="Accuracy +4.37" skillId="55260" skillLevel="12" /> <!-- Stone Id : 29889 -->
+	<option id="153" name="Yul Guidance" desc="Accuracy +4.52" skillId="55260" skillLevel="13" /> <!-- Stone Id : 29890 -->
+	<option id="154" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="14" /> <!-- Stone Id : 29891 -->
+	<option id="155" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="15" /> <!-- Stone Id : 29892 -->
+	<option id="156" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="16" /> <!-- Stone Id : 29893 -->
+	<option id="157" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="17" /> <!-- Stone Id : 29894 -->
+	<option id="158" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="18" /> <!-- Stone Id : 29895 -->
+	<option id="159" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="19" /> <!-- Stone Id : 29896 -->
+	<option id="160" name="Yul Guidance" desc="Accuracy +1" skillId="55260" skillLevel="20" /> <!-- Stone Id : 29897 -->
+	<!-- Feoh -->
+	<option id="161" name="Feoh's Magical Power" desc="M. Atk. +15.97, MP Consumption +15%" skillId="55261" skillLevel="1" /> <!-- Stone Id : 29898 -->
+	<option id="162" name="Feoh's Magical Power" desc="M. Atk. +19.84, MP Consumption +15%" skillId="55261" skillLevel="2" /> <!-- Stone Id : 29899 -->
+	<option id="163" name="Feoh's Magical Power" desc="M. Atk. +24.31, MP Consumption +15%" skillId="55261" skillLevel="3" /> <!-- Stone Id : 29900 -->
+	<option id="164" name="Feoh's Magical Power" desc="M. Atk. +30.48, MP Consumption +15%" skillId="55261" skillLevel="4" /> <!-- Stone Id : 29901 -->
+	<option id="165" name="Feoh's Magical Power" desc="M. Atk. +35.84, MP Consumption +15%" skillId="55261" skillLevel="5" /> <!-- Stone Id : 29902 -->
+	<option id="166" name="Feoh's Magical Power" desc="M. Atk. +49.24, MP Consumption +15%" skillId="55261" skillLevel="6" /> <!-- Stone Id : 29903 -->
+	<option id="167" name="Feoh's Magical Power" desc="M. Atk. +62.99, MP Consumption +15%" skillId="55261" skillLevel="7" /> <!-- Stone Id : 29904 -->
+	<option id="168" name="Feoh's Magical Power" desc="M. Atk. +75.86, MP Consumption +15%" skillId="55261" skillLevel="8" /> <!-- Stone Id : 29905 -->
+	<option id="169" name="Feoh's Magical Power" desc="M. Atk. +87.22, MP Consumption +15%" skillId="55261" skillLevel="9" /> <!-- Stone Id : 29906 -->
+	<option id="170" name="Feoh's Magical Power" desc="M. Atk. +99.39, MP Consumption +15%" skillId="55261" skillLevel="10" /> <!-- Stone Id : 29907 -->
+	<option id="171" name="Feoh's Magical Power" desc="M. Atk. +112.26, MP Consumption +15%" skillId="55261" skillLevel="11" /> <!-- Stone Id : 29908 -->
+	<option id="172" name="Feoh's Magical Power" desc="M. Atk. +125.66, MP Consumption +15%" skillId="55261" skillLevel="12" /> <!-- Stone Id : 29909 -->
+	<option id="173" name="Feoh's Magical Power" desc="M. Atk. +139.41, MP Consumption +15%" skillId="55261" skillLevel="13" /> <!-- Stone Id : 29910 -->
+	<option id="174" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="14" /> <!-- Stone Id : 29911 -->
+	<option id="175" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="15" /> <!-- Stone Id : 29912 -->
+	<option id="176" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="16" /> <!-- Stone Id : 29913 -->
+	<option id="177" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="17" /> <!-- Stone Id : 29914 -->
+	<option id="178" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="18" /> <!-- Stone Id : 29915 -->
+	<option id="179" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="19" /> <!-- Stone Id : 29916 -->
+	<option id="180" name="Feoh's Magical Power" desc="M. Atk. +10.1, MP Consumption +15%" skillId="55261" skillLevel="20" /> <!-- Stone Id : 29917 -->
+	<option id="181" name="Feoh's Empower" desc="M. Atk. +20" skillId="55262" skillLevel="1" /> <!-- Stone Id : 29898 -->
+	<option id="182" name="Feoh's Empower" desc="M. Atk. +27" skillId="55262" skillLevel="2" /> <!-- Stone Id : 29899 -->
+	<option id="183" name="Feoh's Empower" desc="M. Atk. +34" skillId="55262" skillLevel="3" /> <!-- Stone Id : 29900 -->
+	<option id="184" name="Feoh's Empower" desc="M. Atk. +41" skillId="55262" skillLevel="4" /> <!-- Stone Id : 29901 -->
+	<option id="185" name="Feoh's Empower" desc="M. Atk. +48" skillId="55262" skillLevel="5" /> <!-- Stone Id : 29902 -->
+	<option id="186" name="Feoh's Empower" desc="M. Atk. +55" skillId="55262" skillLevel="6" /> <!-- Stone Id : 29903 -->
+	<option id="187" name="Feoh's Empower" desc="M. Atk. +62" skillId="55262" skillLevel="7" /> <!-- Stone Id : 29904 -->
+	<option id="188" name="Feoh's Empower" desc="M. Atk. +69" skillId="55262" skillLevel="8" /> <!-- Stone Id : 29905 -->
+	<option id="189" name="Feoh's Empower" desc="M. Atk. +76" skillId="55262" skillLevel="9" /> <!-- Stone Id : 29906 -->
+	<option id="190" name="Feoh's Empower" desc="M. Atk. +83" skillId="55262" skillLevel="10" /> <!-- Stone Id : 29907 -->
+	<option id="191" name="Feoh's Empower" desc="M. Atk. +90" skillId="55262" skillLevel="11" /> <!-- Stone Id : 29908 -->
+	<option id="192" name="Feoh's Empower" desc="M. Atk. +97" skillId="55262" skillLevel="12" /> <!-- Stone Id : 29909 -->
+	<option id="193" name="Feoh's Empower" desc="M. Atk. +104" skillId="55262" skillLevel="13" /> <!-- Stone Id : 29910 -->
+	<option id="194" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="14" /> <!-- Stone Id : 29911 -->
+	<option id="195" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="15" /> <!-- Stone Id : 29912 -->
+	<option id="196" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="16" /> <!-- Stone Id : 29913 -->
+	<option id="197" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="17" /> <!-- Stone Id : 29914 -->
+	<option id="198" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="18" /> <!-- Stone Id : 29915 -->
+	<option id="199" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="19" /> <!-- Stone Id : 29916 -->
+	<option id="200" name="Feoh's Empower" desc="M. Atk. +20.36" skillId="55262" skillLevel="20" /> <!-- Stone Id : 29917 -->
+	<!-- Iss -->
+	<option id="201" name="Iss' Magic Regeneration" desc="MP Recovery bonus +12%" skillId="55263" skillLevel="1" /> <!-- Stone Id : 29918 -->
+	<option id="202" name="Iss' Magic Regeneration" desc="MP Recovery bonus +12.72%" skillId="55263" skillLevel="2" /> <!-- Stone Id : 29919 -->
+	<option id="203" name="Iss' Magic Regeneration" desc="MP Recovery bonus +13.44%" skillId="55263" skillLevel="3" /> <!-- Stone Id : 29920 -->
+	<option id="204" name="Iss' Magic Regeneration" desc="MP Recovery bonus +14.16%" skillId="55263" skillLevel="4" /> <!-- Stone Id : 29921 -->
+	<option id="205" name="Iss' Magic Regeneration" desc="MP Recovery bonus +14.88%" skillId="55263" skillLevel="5" /> <!-- Stone Id : 29922 -->
+	<option id="206" name="Iss' Magic Regeneration" desc="MP Recovery bonus +15.6%" skillId="55263" skillLevel="6" /> <!-- Stone Id : 29923 -->
+	<option id="207" name="Iss' Magic Regeneration" desc="MP Recovery bonus +16.32%" skillId="55263" skillLevel="7" /> <!-- Stone Id : 29924 -->
+	<option id="208" name="Iss' Magic Regeneration" desc="MP Recovery bonus +17.04%" skillId="55263" skillLevel="8" /> <!-- Stone Id : 29925 -->
+	<option id="209" name="Iss' Magic Regeneration" desc="MP Recovery bonus +17.76%" skillId="55263" skillLevel="9" /> <!-- Stone Id : 29926 -->
+	<option id="210" name="Iss' Magic Regeneration" desc="MP Recovery bonus +18.48%" skillId="55263" skillLevel="10" /> <!-- Stone Id : 29927 -->
+	<option id="211" name="Iss' Magic Regeneration" desc="MP Recovery bonus +19.2%" skillId="55263" skillLevel="11" /> <!-- Stone Id : 29928 -->
+	<option id="212" name="Iss' Magic Regeneration" desc="MP Recovery bonus +19.92%" skillId="55263" skillLevel="12" /> <!-- Stone Id : 29929 -->
+	<option id="213" name="Iss' Magic Regeneration" desc="MP Recovery bonus +20.64%" skillId="55263" skillLevel="13" /> <!-- Stone Id : 29930 -->
+	<option id="214" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="14" /> <!-- Stone Id : 29931 -->
+	<option id="215" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="15" /> <!-- Stone Id : 29932 -->
+	<option id="216" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="16" /> <!-- Stone Id : 29933 -->
+	<option id="217" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="17" /> <!-- Stone Id : 29934 -->
+	<option id="218" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="18" /> <!-- Stone Id : 29935 -->
+	<option id="219" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="19" /> <!-- Stone Id : 29936 -->
+	<option id="220" name="Iss' Magic Regeneration" desc="MP Recovery bonus +1%" skillId="55263" skillLevel="20" /> <!-- Stone Id : 29937 -->
+	<option id="221" name="Iss' Boost Mana" desc="Max MP +3.89" skillId="55264" skillLevel="1" /> <!-- Stone Id : 29918 -->
+	<option id="222" name="Iss' Boost Mana" desc="Max MP +5" skillId="55264" skillLevel="2" /> <!-- Stone Id : 29919 -->
+	<option id="223" name="Iss' Boost Mana" desc="Max MP +6.1" skillId="55264" skillLevel="3" /> <!-- Stone Id : 29920 -->
+	<option id="224" name="Iss' Boost Mana" desc="Max MP +7.2" skillId="55264" skillLevel="4" /> <!-- Stone Id : 29921 -->
+	<option id="225" name="Iss' Boost Mana" desc="Max MP +8.3" skillId="55264" skillLevel="5" /> <!-- Stone Id : 29922 -->
+	<option id="226" name="Iss' Boost Mana" desc="Max MP +9.4" skillId="55264" skillLevel="6" /> <!-- Stone Id : 29923 -->
+	<option id="227" name="Iss' Boost Mana" desc="Max MP +10.5" skillId="55264" skillLevel="7" /> <!-- Stone Id : 29924 -->
+	<option id="228" name="Iss' Boost Mana" desc="Max MP +11.6" skillId="55264" skillLevel="8" /> <!-- Stone Id : 29925 -->
+	<option id="229" name="Iss' Boost Mana" desc="Max MP +12.7" skillId="55264" skillLevel="9" /> <!-- Stone Id : 29926 -->
+	<option id="230" name="Iss' Boost Mana" desc="Max MP +13.8" skillId="55264" skillLevel="10" /> <!-- Stone Id : 29927 -->
+	<option id="231" name="Iss' Boost Mana" desc="Max MP +14.9" skillId="55264" skillLevel="11" /> <!-- Stone Id : 29928 -->
+	<option id="232" name="Iss' Boost Mana" desc="Max MP +16" skillId="55264" skillLevel="12" /> <!-- Stone Id : 29929 -->
+	<option id="233" name="Iss' Boost Mana" desc="Max MP +17.1" skillId="55264" skillLevel="13" /> <!-- Stone Id : 29930 -->
+	<option id="234" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="14" /> <!-- Stone Id : 29931 -->
+	<option id="235" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="15" /> <!-- Stone Id : 29932 -->
+	<option id="236" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="16" /> <!-- Stone Id : 29933 -->
+	<option id="237" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="17" /> <!-- Stone Id : 29934 -->
+	<option id="238" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="18" /> <!-- Stone Id : 29935 -->
+	<option id="239" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="19" /> <!-- Stone Id : 29936 -->
+	<option id="240" name="Iss' Boost Mana" desc="Max MP +3" skillId="55264" skillLevel="20" /> <!-- Stone Id : 29937 -->
+	<!-- Wynn -->
+	<option id="241" name="Wynn's Acumen" desc="Casting Spd. +2.665%" skillId="55265" skillLevel="1" /> <!-- Stone Id : 29938 -->
+	<option id="242" name="Wynn's Acumen" desc="Casting Spd. +3%" skillId="55265" skillLevel="2" /> <!-- Stone Id : 29939 -->
+	<option id="243" name="Wynn's Acumen" desc="Casting Spd. +3.33%" skillId="55265" skillLevel="3" /> <!-- Stone Id : 29940 -->
+	<option id="244" name="Wynn's Acumen" desc="Casting Spd. +3.66%" skillId="55265" skillLevel="4" /> <!-- Stone Id : 29941 -->
+	<option id="245" name="Wynn's Acumen" desc="Casting Spd. +4%" skillId="55265" skillLevel="5" /> <!-- Stone Id : 29942 -->
+	<option id="246" name="Wynn's Acumen" desc="Casting Spd. +4.32%" skillId="55265" skillLevel="6" /> <!-- Stone Id : 29943 -->
+	<option id="247" name="Wynn's Acumen" desc="Casting Spd. +4.65%" skillId="55265" skillLevel="7" /> <!-- Stone Id : 29944 -->
+	<option id="248" name="Wynn's Acumen" desc="Casting Spd. +4.98%" skillId="55265" skillLevel="8" /> <!-- Stone Id : 29945 -->
+	<option id="249" name="Wynn's Acumen" desc="Casting Spd. +5.31%" skillId="55265" skillLevel="9" /> <!-- Stone Id : 29946 -->
+	<option id="250" name="Wynn's Acumen" desc="Casting Spd. +5.64%" skillId="55265" skillLevel="10" /> <!-- Stone Id : 29947 -->
+	<option id="251" name="Wynn's Acumen" desc="Casting Spd. +5.97%" skillId="55265" skillLevel="11" /> <!-- Stone Id : 29948 -->
+	<option id="252" name="Wynn's Acumen" desc="Casting Spd. +6.3%" skillId="55265" skillLevel="12" /> <!-- Stone Id : 29949 -->
+	<option id="253" name="Wynn's Acumen" desc="Casting Spd. +6.63%" skillId="55265" skillLevel="13" /> <!-- Stone Id : 29950 -->
+	<option id="254" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="14" /> <!-- Stone Id : 29951 -->
+	<option id="255" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="15" /> <!-- Stone Id : 29952 -->
+	<option id="256" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="16" /> <!-- Stone Id : 29953 -->
+	<option id="257" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="17" /> <!-- Stone Id : 29954 -->
+	<option id="258" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="18" /> <!-- Stone Id : 29955 -->
+	<option id="259" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="19" /> <!-- Stone Id : 29956 -->
+	<option id="260" name="Wynn's Acumen" desc="Casting Spd. +1%" skillId="55265" skillLevel="20" /> <!-- Stone Id : 29957 -->
+	<option id="261" name="Wynn's Lightness" desc="Weight limit +1000" skillId="55266" skillLevel="1" /> <!-- Stone Id : 29938 -->
+	<option id="262" name="Wynn's Lightness" desc="Weight limit +1400" skillId="55266" skillLevel="2" /> <!-- Stone Id : 29939 -->
+	<option id="263" name="Wynn's Lightness" desc="Weight limit +1800" skillId="55266" skillLevel="3" /> <!-- Stone Id : 29940 -->
+	<option id="264" name="Wynn's Lightness" desc="Weight limit +2200" skillId="55266" skillLevel="4" /> <!-- Stone Id : 29941 -->
+	<option id="265" name="Wynn's Lightness" desc="Weight limit +2600" skillId="55266" skillLevel="5" /> <!-- Stone Id : 29942 -->
+	<option id="266" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="6" /> <!-- Stone Id : 29943 -->
+	<option id="267" name="Wynn's Lightness" desc="Weight limit +3400" skillId="55266" skillLevel="7" /> <!-- Stone Id : 29944 -->
+	<option id="268" name="Wynn's Lightness" desc="Weight limit +3800" skillId="55266" skillLevel="8" /> <!-- Stone Id : 29945 -->
+	<option id="269" name="Wynn's Lightness" desc="Weight limit +4200" skillId="55266" skillLevel="9" /> <!-- Stone Id : 29946 -->
+	<option id="270" name="Wynn's Lightness" desc="Weight limit +4600" skillId="55266" skillLevel="10" /> <!-- Stone Id : 29947 -->
+	<option id="271" name="Wynn's Lightness" desc="Weight limit +5000" skillId="55266" skillLevel="11" /> <!-- Stone Id : 29948 -->
+	<option id="272" name="Wynn's Lightness" desc="Weight limit +5600" skillId="55266" skillLevel="12" /> <!-- Stone Id : 29949 -->
+	<option id="273" name="Wynn's Lightness" desc="Weight limit +5900" skillId="55266" skillLevel="13" /> <!-- Stone Id : 29950 -->
+	<option id="274" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="14" /> <!-- Stone Id : 29951 -->
+	<option id="275" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="15" /> <!-- Stone Id : 29952 -->
+	<option id="276" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="16" /> <!-- Stone Id : 29953 -->
+	<option id="277" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="17" /> <!-- Stone Id : 29954 -->
+	<option id="278" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="18" /> <!-- Stone Id : 29955 -->
+	<option id="279" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="19" /> <!-- Stone Id : 29956 -->
+	<option id="280" name="Wynn's Lightness" desc="Weight limit +3000" skillId="55266" skillLevel="20" /> <!-- Stone Id : 29957 -->
+	<!-- Aeore -->
+	<option id="281" name="Aeore's Regeneration" desc="HP Recovery bonus +0.57" skillId="55267" skillLevel="1" /> <!-- Stone Id : 29958 -->
+	<option id="282" name="Aeore's Regeneration" desc="HP Recovery bonus +0.88" skillId="55267" skillLevel="2" /> <!-- Stone Id : 29959 -->
+	<option id="283" name="Aeore's Regeneration" desc="HP Recovery bonus +0.92" skillId="55267" skillLevel="3" /> <!-- Stone Id : 29960 -->
+	<option id="284" name="Aeore's Regeneration" desc="HP Recovery bonus +0.95" skillId="55267" skillLevel="4" /> <!-- Stone Id : 29961 -->
+	<option id="285" name="Aeore's Regeneration" desc="HP Recovery bonus +0.98" skillId="55267" skillLevel="5" /> <!-- Stone Id : 29962 -->
+	<option id="286" name="Aeore's Regeneration" desc="HP Recovery bonus +1.01" skillId="55267" skillLevel="6" /> <!-- Stone Id : 29963 -->
+	<option id="287" name="Aeore's Regeneration" desc="HP Recovery bonus +1.38" skillId="55267" skillLevel="7" /> <!-- Stone Id : 29964 -->
+	<option id="288" name="Aeore's Regeneration" desc="HP Recovery bonus +1.41" skillId="55267" skillLevel="8" /> <!-- Stone Id : 29965 -->
+	<option id="289" name="Aeore's Regeneration" desc="HP Recovery bonus +1.44" skillId="55267" skillLevel="9" /> <!-- Stone Id : 29966 -->
+	<option id="290" name="Aeore's Regeneration" desc="HP Recovery bonus +1.47" skillId="55267" skillLevel="10" /> <!-- Stone Id : 29967 -->
+	<option id="291" name="Aeore's Regeneration" desc="HP Recovery bonus +1.5" skillId="55267" skillLevel="11" /> <!-- Stone Id : 29968 -->
+	<option id="292" name="Aeore's Regeneration" desc="HP Recovery bonus +1.53" skillId="55267" skillLevel="12" /> <!-- Stone Id : 29969 -->
+	<option id="293" name="Aeore's Regeneration" desc="HP Recovery bonus +1.96" skillId="55267" skillLevel="13" /> <!-- Stone Id : 29970 -->
+	<option id="294" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="14" /> <!-- Stone Id : 29971 -->
+	<option id="295" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="15" /> <!-- Stone Id : 29972 -->
+	<option id="296" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="16" /> <!-- Stone Id : 29973 -->
+	<option id="297" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="17" /> <!-- Stone Id : 29974 -->
+	<option id="298" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="18" /> <!-- Stone Id : 29975 -->
+	<option id="299" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="19" /> <!-- Stone Id : 29976 -->
+	<option id="300" name="Aeore's Regeneration" desc="HP Recovery bonus +1.1" skillId="55267" skillLevel="20" /> <!-- Stone Id : 29977 -->
+	<option id="301" name="Aeore's Heal" desc="Healing Power +15.1" skillId="55268" skillLevel="1" /> <!-- Stone Id : 29958 -->
+	<option id="302" name="Aeore's Heal" desc="Healing Power +18.5" skillId="55268" skillLevel="2" /> <!-- Stone Id : 29959 -->
+	<option id="303" name="Aeore's Heal" desc="Healing Power +22.4" skillId="55268" skillLevel="3" /> <!-- Stone Id : 29960 -->
+	<option id="304" name="Aeore's Heal" desc="Healing Power +24.5" skillId="55268" skillLevel="4" /> <!-- Stone Id : 29961 -->
+	<option id="305" name="Aeore's Heal" desc="Healing Power +30.1" skillId="55268" skillLevel="5" /> <!-- Stone Id : 29962 -->
+	<option id="306" name="Aeore's Heal" desc="Healing Power +35" skillId="55268" skillLevel="6" /> <!-- Stone Id : 29963 -->
+	<option id="307" name="Aeore's Heal" desc="Healing Power +38.9" skillId="55268" skillLevel="7" /> <!-- Stone Id : 29964 -->
+	<option id="308" name="Aeore's Heal" desc="Healing Power +42.7" skillId="55268" skillLevel="8" /> <!-- Stone Id : 29965 -->
+	<option id="309" name="Aeore's Heal" desc="Healing Power +45.3" skillId="55268" skillLevel="9" /> <!-- Stone Id : 29966 -->
+	<option id="310" name="Aeore's Heal" desc="Healing Power +50.6" skillId="55268" skillLevel="10" /> <!-- Stone Id : 29967 -->
+	<option id="311" name="Aeore's Heal" desc="Healing Power +54.4" skillId="55268" skillLevel="11" /> <!-- Stone Id : 29968 -->
+	<option id="312" name="Aeore's Heal" desc="Healing Power +58.2" skillId="55268" skillLevel="12" /> <!-- Stone Id : 29969 -->
+	<option id="313" name="Aeore's Heal" desc="Healing Power +62.1" skillId="55268" skillLevel="13" /> <!-- Stone Id : 29970 -->
+	<option id="314" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="14" /> <!-- Stone Id : 29971 -->
+	<option id="315" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="15" /> <!-- Stone Id : 29972 -->
+	<option id="316" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="16" /> <!-- Stone Id : 29973 -->
+	<option id="317" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="17" /> <!-- Stone Id : 29974 -->
+	<option id="318" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="18" /> <!-- Stone Id : 29975 -->
+	<option id="319" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="19" /> <!-- Stone Id : 29976 -->
+	<option id="320" name="Aeore's Heal" desc="Healing Power +10" skillId="55268" skillLevel="20" /> <!-- Stone Id : 29977 -->
 	<!-- Super Runes Sigel -->
 	<option id="400" name="Sigel's Protection" desc="P. Def. +56" skillId="45002" skillLevel="1" /> <!-- Stone Id : 90534 -->
 	<option id="401" name="Sigel's Protection" desc="P. Def. +68" skillId="45002" skillLevel="2" /> <!-- Stone Id : 90535 -->
@@ -328,21 +656,16 @@
 	<option id="717" name="Aeore's Heal" desc="Received healing +126" skillId="45016" skillLevel="18" /> <!-- Stone Id : 90691 -->
 	<option id="718" name="Aeore's Heal" desc="Received healing +126" skillId="45016" skillLevel="19" /> <!-- Stone Id : 90692 -->
 	<option id="719" name="Aeore's Heal" desc="Received healing +126" skillId="45016" skillLevel="20" /> <!-- Stone Id : 90693 -->
-	<option id="1011" name="Lilith's Power Lv.1" desc="HP Recovery Rate +1, P. Atk. +1%." skillId="54035" skillLevel="1" /> <!-- Stone Id : 91173 -->
-	<option id="1012" name="Lilith's Power Lv.2" desc="HP Recovery Rate +2, P. Atk. +1%." skillId="54035" skillLevel="2" /> <!-- Stone Id : 91174 -->
-	<option id="1013" name="Lilith's Power Lv.3" desc="HP Recovery Rate +3, P. Atk. +2%." skillId="54035" skillLevel="3" /> <!-- Stone Id : 91175 -->
-	<option id="1014" name="Lilith's Power Lv.4" desc="HP Recovery Rate +4, P. Atk. +2%." skillId="54035" skillLevel="4" /> <!-- Stone Id : 91176 -->
-	<option id="1015" name="Lilith's Power Lv.5" desc="HP Recovery Rate +5, P. Atk. +3%." skillId="54035" skillLevel="5" /> <!-- Stone Id : 91177 -->
-	<option id="1016" name="Lilith's Power Lv.6" desc="HP Recovery Rate +6, P. Atk. +6%, recovers 100 HP after a basic attack." skillId="54035" skillLevel="6" /> <!-- Stone Id : 91178 -->
-	<option id="1017" name="Lilith's Power Lv.7" desc="HP Recovery Rate +7, P. Atk. +6%, restores 200 HP after a standard attack." skillId="54035" skillLevel="7" /> <!-- Stone Id : 91179 -->
-	<option id="1018" name="Lilith's Power Lv.8" desc="HP Recovery Rate +8, P. Atk. +7%, restores 300 HP after a standard attack." skillId="54035" skillLevel="8" /> <!-- Stone Id : 91180 -->
-	<option id="1019" name="Lilith's Power Lv.9" desc="HP Recovery Rate +9, P. Atk. +7%, restores 400 HP after a standard attack." skillId="54035" skillLevel="9" /> <!-- Stone Id : 91181 -->
-	<option id="1020" name="Lilith's Power Lv.10" desc="HP Recovery Rate +10, P. Atk. +8%, restores 500 HP after a standard attack." skillId="54035" skillLevel="10" /> <!-- Stone Id : 91182 -->
-	<option id="1026" name="Lilith' Power Lv.11" desc="HP Recovery Rate +11, P. Atk. +11%, restores 900 HP after a standard attack." skillId="54035" skillLevel="11" /> <!-- Stone Id : 92920 -->
-	<option id="1027" name="Lilith' Power Lv.12" desc="HP Recovery Rate +12, P. Atk. +11%, restores 900 HP after a standard attack, CON +1." skillId="54035" skillLevel="12" /> <!-- Stone Id : 92921 -->
-	<option id="1028" name="Lilith' Power Lv.13" desc="HP Recovery Rate +13, P. Atk. +12%, restores 900 HP after a standard attack, CON +1." skillId="54035" skillLevel="13" /> <!-- Stone Id : 92922 -->
-	<option id="1029" name="Lilith' Power Lv.14" desc="HP Recovery Rate +14, P. Atk. +12%, restores 900 HP after a standard attack, CON +2." skillId="54035" skillLevel="14" /> <!-- Stone Id : 92923 -->
-	<option id="1030" name="Lilith' Power Lv.15" desc="HP Recovery Rate +15, P. Atk. +15%, restores 900 HP after a standard attack, CON +3." skillId="54035" skillLevel="15" /> <!-- Stone Id : 92924 -->
+	<option id="1011" name="Lilith's Power Lv.1" desc="Received healing +1%, P.Atk +1%." skillId="54035" skillLevel="1" /> <!-- Stone Id : 91173 -->
+	<option id="1012" name="Lilith's Power Lv.2" desc="Received healing +2%, P.Atk +1%." skillId="54035" skillLevel="2" /> <!-- Stone Id : 91174 -->
+	<option id="1013" name="Lilith's Power Lv.3" desc="Received healing +3%, P.Atk +1%." skillId="54035" skillLevel="3" /> <!-- Stone Id : 91175 -->
+	<option id="1014" name="Lilith's Power Lv.4" desc="Received healing +4%, P.Atk +2%." skillId="54035" skillLevel="4" /> <!-- Stone Id : 91176 -->
+	<option id="1015" name="Lilith's Power Lv.5" desc="Received healing +5%, P.Atk +2%." skillId="54035" skillLevel="5" /> <!-- Stone Id : 91177 -->
+	<option id="1016" name="Lilith's Power Lv.6" desc="Received healing +5%, P.Atk +2%, restores 100 HP when striking." skillId="54035" skillLevel="6" /> <!-- Stone Id : 91178 -->
+	<option id="1017" name="Lilith's Power Lv.7" desc="Received healing +7%, P.Atk +5%, restores 200 HP when striking." skillId="54035" skillLevel="7" /> <!-- Stone Id : 91179 -->
+	<option id="1018" name="Lilith's Power Lv.8" desc="Received healing +9%, P.Atk +8%, restores 300 HP when striking." skillId="54035" skillLevel="8" /> <!-- Stone Id : 91180 -->
+	<option id="1019" name="Lilith's Power Lv.9" desc="Received healing +12%, P.Atk +11%, restores 400 HP when striking." skillId="54035" skillLevel="9" /> <!-- Stone Id : 91181 -->
+	<option id="1020" name="Lilith's Power Lv.10" desc="Received healing +15%, P.Atk +15%, restores 900 HP when striking." skillId="54035" skillLevel="10" /> <!-- Stone Id : 91182 -->
 	<option id="1001" name="Anakim's Power Lv.1" desc="When using the Recharge skill, MP Recovery Bonus +5, M.Atk +1%." skillId="54034" skillLevel="1" /> <!-- Stone Id : 91163 -->
 	<option id="1002" name="Anakim's Power Lv.2" desc="When using the Recharge skill, MP Recovery Bonus +10, M.Atk +1%." skillId="54034" skillLevel="2" /> <!-- Stone Id : 91164 -->
 	<option id="1003" name="Anakim's Power Lv.3" desc="When using the Recharge skill, MP Recovery Bonus +15, M.Atk +1%." skillId="54034" skillLevel="3" /> <!-- Stone Id : 91165 -->
@@ -353,492 +676,4 @@
 	<option id="1008" name="Anakim's Power Lv.8" desc="When using the Recharge skill, MP Recovery Bonus +55, M.Atk +8% recovers 225 MP when damage is dealt or skill used." skillId="54034" skillLevel="8" /> <!-- Stone Id : 91170 -->
 	<option id="1009" name="Anakim's Power Lv.9" desc="When using the Recharge skill, MP Recovery Bonus +70, M.Atk +11% recovers 300 MP when damage is dealt or skill used." skillId="54034" skillLevel="9" /> <!-- Stone Id : 91171 -->
 	<option id="1010" name="Anakim's Power Lv.10" desc="When using the Recharge skill, MP Recovery Bonus +90, M.Atk +15% recovers 600 MP when damage is dealt or skill used." skillId="54034" skillLevel="10" /> <!-- Stone Id : 91172 -->
-	<option id="1021" name="Anakim's Power Lv.11" desc="MP Recovery Rate +11, M. Atk. +11%. Recovers 600 MP after basic attacks and attack skills." skillId="54034" skillLevel="11" /> <!-- Stone Id : 92925 -->
-	<option id="1022" name="Anakim's Power Lv.12" desc="MP Recovery Rate +12, M. Atk. +11%. Recovers 600 MP after basic attacks and attack skills. MEN +1." skillId="54034" skillLevel="12" /> <!-- Stone Id : 92926 -->
-	<option id="1023" name="Anakim's Power Lv.13" desc="MP Recovery Rate +13, M. Atk. +12%. Recovers 600 MP after basic attacks and attack skills. MEN +1." skillId="54034" skillLevel="13" /> <!-- Stone Id : 92927 -->
-	<option id="1024" name="Anakim's Power Lv.14" desc="MP Recovery Rate +14, M. Atk. +12%. Recovers 600 MP after basic attacks and attack skills. MEN +2." skillId="54034" skillLevel="14" /> <!-- Stone Id : 92928 -->
-	<option id="1025" name="Anakim's Power Lv.15" desc="MP Recovery Rate +15, M. Atk. +15%. Recovers 600 MP after basic attacks and attack skills. MEN +3." skillId="54034" skillLevel="15" /> <!-- Stone Id : 92929 -->
-	<!-- Health Increase -->
-	<option id="1101" name="Health Increase" desc="Max HP +4%" skillId="82000" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1102" name="Health Increase" desc="Max HP +5%" skillId="82000" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1103" name="Health Increase" desc="Max HP +6%" skillId="82000" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1104" name="Health Increase" desc="Max HP +7%" skillId="82000" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1105" name="Health Increase" desc="Max HP +8%" skillId="82000" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1106" name="Health Increase" desc="Max HP +9%" skillId="82000" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1107" name="Health Increase" desc="Max HP +10%" skillId="82000" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1108" name="Health Increase" desc="Max HP +12%" skillId="82000" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1109" name="Health Increase" desc="Max HP +14%" skillId="82000" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1110" name="Health Increase" desc="Max HP +16%" skillId="82000" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1111" name="Health Increase" desc="Max HP +18%" skillId="82000" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1112" name="Health Increase" desc="Max HP +20%" skillId="82000" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1113" name="Health Increase" desc="Max HP +22%" skillId="82000" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1114" name="Health Increase" desc="Max HP +25%" skillId="82000" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1115" name="Health Increase" desc="Max HP +28%" skillId="82000" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1116" name="Health Increase" desc="Max HP +29%" skillId="82000" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1117" name="Health Increase" desc="Max HP +30%" skillId="82000" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1118" name="Health Increase" desc="Max HP +31%" skillId="82000" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1119" name="Health Increase" desc="Max HP +32%" skillId="82000" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1120" name="Health Increase" desc="Max HP +33%" skillId="82000" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Mana Boost -->
-	<option id="1151" name="Mana Boost" desc="Max MP +4%" skillId="82001" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1152" name="Mana Boost" desc="Max MP +5%" skillId="82001" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1153" name="Mana Boost" desc="Max MP +6%" skillId="82001" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1154" name="Mana Boost" desc="Max MP +7%" skillId="82001" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1155" name="Mana Boost" desc="Max MP +8%" skillId="82001" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1156" name="Mana Boost" desc="Max MP +9%" skillId="82001" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1157" name="Mana Boost" desc="Max MP +10%" skillId="82001" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1158" name="Mana Boost" desc="Max MP +12%" skillId="82001" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1159" name="Mana Boost" desc="Max MP +14%" skillId="82001" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1160" name="Mana Boost" desc="Max MP +16%" skillId="82001" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1161" name="Mana Boost" desc="Max MP +18%" skillId="82001" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1162" name="Mana Boost" desc="Max MP +20%" skillId="82001" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1163" name="Mana Boost" desc="Max MP +22%" skillId="82001" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1164" name="Mana Boost" desc="Max MP +25%" skillId="82001" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1165" name="Mana Boost" desc="Max MP +28%" skillId="82001" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1166" name="Mana Boost" desc="Max MP +29%" skillId="82001" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1167" name="Mana Boost" desc="Max MP +30%" skillId="82001" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1168" name="Mana Boost" desc="Max MP +31%" skillId="82001" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1169" name="Mana Boost" desc="Max MP +32%" skillId="82001" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1170" name="Mana Boost" desc="Max MP +33%" skillId="82001" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Attack -->
-	<option id="1201" name="Physical Attack" desc="P. Atk. +50" skillId="82002" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1202" name="Physical Attack" desc="P. Atk. +70" skillId="82002" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1203" name="Physical Attack" desc="P. Atk. +90" skillId="82002" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1204" name="Physical Attack" desc="P. Atk. +110" skillId="82002" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1205" name="Physical Attack" desc="P. Atk. +130" skillId="82002" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1206" name="Physical Attack" desc="P. Atk. +170" skillId="82002" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1207" name="Physical Attack" desc="P. Atk. +200" skillId="82002" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1208" name="Physical Attack" desc="P. Atk. +230" skillId="82002" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1209" name="Physical Attack" desc="P. Atk. +260" skillId="82002" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1210" name="Physical Attack" desc="P. Atk. +290" skillId="82002" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1211" name="Physical Attack" desc="P. Atk. +340" skillId="82002" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1212" name="Physical Attack" desc="P. Atk. +380" skillId="82002" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1213" name="Physical Attack" desc="P. Atk. +420" skillId="82002" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1214" name="Physical Attack" desc="P. Atk. +460" skillId="82002" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1215" name="Physical Attack" desc="P. Atk. +500" skillId="82002" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1216" name="Physical Attack" desc="P. Atk. +600" skillId="82002" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1217" name="Physical Attack" desc="P. Atk. +700" skillId="82002" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1218" name="Physical Attack" desc="P. Atk. +800" skillId="82002" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1219" name="Physical Attack" desc="P. Atk. +900" skillId="82002" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1220" name="Physical Attack" desc="P. Atk. +1000" skillId="82002" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Magic Attack -->
-	<option id="1251" name="Magic Attack" desc="M. Atk. +50" skillId="82003" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1252" name="Magic Attack" desc="M. Atk. +70" skillId="82003" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1253" name="Magic Attack" desc="M. Atk. +90" skillId="82003" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1254" name="Magic Attack" desc="M. Atk. +110" skillId="82003" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1255" name="Magic Attack" desc="M. Atk. +130" skillId="82003" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1256" name="Magic Attack" desc="M. Atk. +170" skillId="82003" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1257" name="Magic Attack" desc="M. Atk. +200" skillId="82003" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1258" name="Magic Attack" desc="M. Atk. +230" skillId="82003" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1259" name="Magic Attack" desc="M. Atk. +260" skillId="82003" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1260" name="Magic Attack" desc="M. Atk. +290" skillId="82003" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1261" name="Magic Attack" desc="M. Atk. +340" skillId="82003" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1262" name="Magic Attack" desc="M. Atk. +380" skillId="82003" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1263" name="Magic Attack" desc="M. Atk. +420" skillId="82003" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1264" name="Magic Attack" desc="M. Atk. +460" skillId="82003" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1265" name="Magic Attack" desc="M. Atk. +500" skillId="82003" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1266" name="Magic Attack" desc="M. Atk. +600" skillId="82003" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1267" name="Magic Attack" desc="M. Atk. +700" skillId="82003" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1268" name="Magic Attack" desc="M. Atk. +800" skillId="82003" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1269" name="Magic Attack" desc="M. Atk. +900" skillId="82003" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1270" name="Magic Attack" desc="M. Atk. +1000" skillId="82003" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Speed -->
-	<option id="1301" name="Physical Speed" desc="Atk. Spd. +3%" skillId="82004" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1302" name="Physical Speed" desc="Atk. Spd. +4%" skillId="82004" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1303" name="Physical Speed" desc="Atk. Spd. +5%" skillId="82004" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1304" name="Physical Speed" desc="Atk. Spd. +6%" skillId="82004" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1305" name="Physical Speed" desc="Atk. Spd. +7%" skillId="82004" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1306" name="Physical Speed" desc="Atk. Spd. +8%" skillId="82004" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1307" name="Physical Speed" desc="Atk. Spd. +9%" skillId="82004" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1308" name="Physical Speed" desc="Atk. Spd. +10%" skillId="82004" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1309" name="Physical Speed" desc="Atk. Spd. +11%" skillId="82004" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1310" name="Physical Speed" desc="Atk. Spd. +12%" skillId="82004" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1311" name="Physical Speed" desc="Atk. Spd. +14%" skillId="82004" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1312" name="Physical Speed" desc="Atk. Spd. +15%" skillId="82004" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1313" name="Physical Speed" desc="Atk. Spd. +16%" skillId="82004" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1314" name="Physical Speed" desc="Atk. Spd. +17%" skillId="82004" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1315" name="Physical Speed" desc="Atk. Spd. +18%" skillId="82004" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1316" name="Physical Speed" desc="Atk. Spd. +20%" skillId="82004" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1317" name="Physical Speed" desc="Atk. Spd. +21%" skillId="82004" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1318" name="Physical Speed" desc="Atk. Spd. +22%" skillId="82004" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1319" name="Physical Speed" desc="Atk. Spd. +23%" skillId="82004" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1320" name="Physical Speed" desc="Atk. Spd. +24%" skillId="82004" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Magical Speed -->
-	<option id="1351" name="Magical Speed" desc="Casting Spd. +3%" skillId="82005" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1352" name="Magical Speed" desc="Casting Spd. +4%" skillId="82005" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1353" name="Magical Speed" desc="Casting Spd. +5%" skillId="82005" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1354" name="Magical Speed" desc="Casting Spd. +6%" skillId="82005" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1355" name="Magical Speed" desc="Casting Spd. +7%" skillId="82005" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1356" name="Magical Speed" desc="Casting Spd. +8%" skillId="82005" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1357" name="Magical Speed" desc="Casting Spd. +9%" skillId="82005" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1358" name="Magical Speed" desc="Casting Spd. +10%" skillId="82005" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1359" name="Magical Speed" desc="Casting Spd. +11%" skillId="82005" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1360" name="Magical Speed" desc="Casting Spd. +12%" skillId="82005" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1361" name="Magical Speed" desc="Casting Spd. +14%" skillId="82005" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1362" name="Magical Speed" desc="Casting Spd. +15%" skillId="82005" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1363" name="Magical Speed" desc="Casting Spd. +16%" skillId="82005" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1364" name="Magical Speed" desc="Casting Spd. +17%" skillId="82005" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1365" name="Magical Speed" desc="Casting Spd. +18%" skillId="82005" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1366" name="Magical Speed" desc="Casting Spd. +20%" skillId="82005" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1367" name="Magical Speed" desc="Casting Spd. +21%" skillId="82005" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1368" name="Magical Speed" desc="Casting Spd. +22%" skillId="82005" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1369" name="Magical Speed" desc="Casting Spd. +23%" skillId="82005" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1370" name="Magical Speed" desc="Casting Spd. +24%" skillId="82005" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Movement Speed -->
-	<option id="1401" name="Movement Speed" desc="Speed +4" skillId="82006" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1402" name="Movement Speed" desc="Speed +4.5" skillId="82006" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1403" name="Movement Speed" desc="Speed +5" skillId="82006" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1404" name="Movement Speed" desc="Speed +5.5" skillId="82006" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1405" name="Movement Speed" desc="Speed +6" skillId="82006" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1406" name="Movement Speed" desc="Speed +6.5" skillId="82006" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1407" name="Movement Speed" desc="Speed +7" skillId="82006" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1408" name="Movement Speed" desc="Speed +7.5" skillId="82006" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1409" name="Movement Speed" desc="Speed +8" skillId="82006" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1410" name="Movement Speed" desc="Speed +8.5" skillId="82006" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1411" name="Movement Speed" desc="Speed +9" skillId="82006" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1412" name="Movement Speed" desc="Speed +9.5" skillId="82006" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1413" name="Movement Speed" desc="Speed +10" skillId="82006" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1414" name="Movement Speed" desc="Speed +10.5" skillId="82006" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1415" name="Movement Speed" desc="Speed +11" skillId="82006" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1416" name="Movement Speed" desc="Speed +11.2" skillId="82006" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1417" name="Movement Speed" desc="Speed +11.4" skillId="82006" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1418" name="Movement Speed" desc="Speed +11.6" skillId="82006" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1419" name="Movement Speed" desc="Speed +11.8" skillId="82006" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1420" name="Movement Speed" desc="Speed +12" skillId="82006" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Critical Rate -->
-	<option id="1451" name="Physical Critical Rate" desc="P. Critical Rate +30" skillId="82007" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1452" name="Physical Critical Rate" desc="P. Critical Rate +35" skillId="82007" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1453" name="Physical Critical Rate" desc="P. Critical Rate +40" skillId="82007" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1454" name="Physical Critical Rate" desc="P. Critical Rate +45" skillId="82007" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1455" name="Physical Critical Rate" desc="P. Critical Rate +50" skillId="82007" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1456" name="Physical Critical Rate" desc="P. Critical Rate +55" skillId="82007" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1457" name="Physical Critical Rate" desc="P. Critical Rate +60" skillId="82007" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1458" name="Physical Critical Rate" desc="P. Critical Rate +65%" skillId="82007" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1459" name="Physical Critical Rate" desc="P. Critical Rate +70" skillId="82007" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1460" name="Physical Critical Rate" desc="P. Critical Rate +75" skillId="82007" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1461" name="Physical Critical Rate" desc="P. Critical Rate +80" skillId="82007" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1462" name="Physical Critical Rate" desc="P. Critical Rate +85" skillId="82007" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1463" name="Physical Critical Rate" desc="P. Critical Rate +90" skillId="82007" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1464" name="Physical Critical Rate" desc="P. Critical Rate +95" skillId="82007" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1465" name="Physical Critical Rate" desc="P. Critical Rate +100" skillId="82007" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1466" name="Physical Critical Rate" desc="P. Critical Rate +110" skillId="82007" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1467" name="Physical Critical Rate" desc="P. Critical Rate +120" skillId="82007" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1468" name="Physical Critical Rate" desc="P. Critical Rate +130" skillId="82007" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1469" name="Physical Critical Rate" desc="P. Critical Rate +140" skillId="82007" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1470" name="Physical Critical Rate" desc="P. Critical Rate +150" skillId="82007" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Skill Critical Rate -->
-	<option id="1501" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +1%" skillId="82008" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1502" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +1.5%" skillId="82008" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1503" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +2%" skillId="82008" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1504" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +2.5%" skillId="82008" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1505" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +3%" skillId="82008" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1506" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +3.5%" skillId="82008" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1507" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +4%" skillId="82008" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1508" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +4.5%" skillId="82008" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1509" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +5%" skillId="82008" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1510" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +5.5%" skillId="82008" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1511" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +6%" skillId="82008" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1512" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +6.5%" skillId="82008" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1513" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +7%" skillId="82008" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1514" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +7.5%" skillId="82008" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1515" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +8%" skillId="82008" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1516" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +8.5%" skillId="82008" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1517" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +9%" skillId="82008" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1518" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +9.5%" skillId="82008" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1519" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +10%" skillId="82008" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1520" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +11%" skillId="82008" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Magical Skill Critical Rate -->
-	<option id="1551" name="Magical Skill Critical Rate" desc="P. Critical Rate +30" skillId="82009" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1552" name="Magical Skill Critical Rate" desc="P. Critical Rate +35" skillId="82009" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1553" name="Magical Skill Critical Rate" desc="P. Critical Rate +40" skillId="82009" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1554" name="Magical Skill Critical Rate" desc="P. Critical Rate +45" skillId="82009" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1555" name="Magical Skill Critical Rate" desc="P. Critical Rate +50" skillId="82009" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1556" name="Magical Skill Critical Rate" desc="P. Critical Rate +55" skillId="82009" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1557" name="Magical Skill Critical Rate" desc="P. Critical Rate +60" skillId="82009" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1558" name="Magical Skill Critical Rate" desc="P. Critical Rate +65%" skillId="82009" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1559" name="Magical Skill Critical Rate" desc="P. Critical Rate +70" skillId="82009" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1560" name="Magical Skill Critical Rate" desc="P. Critical Rate +75" skillId="82009" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1561" name="Magical Skill Critical Rate" desc="P. Critical Rate +80" skillId="82009" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1562" name="Magical Skill Critical Rate" desc="P. Critical Rate +85" skillId="82009" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1563" name="Magical Skill Critical Rate" desc="P. Critical Rate +90" skillId="82009" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1564" name="Magical Skill Critical Rate" desc="P. Critical Rate +95" skillId="82009" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1565" name="Magical Skill Critical Rate" desc="P. Critical Rate +100" skillId="82009" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1566" name="Magical Skill Critical Rate" desc="P. Critical Rate +110" skillId="82009" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1567" name="Magical Skill Critical Rate" desc="P. Critical Rate +120" skillId="82009" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1568" name="Magical Skill Critical Rate" desc="P. Critical Rate +130" skillId="82009" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1569" name="Magical Skill Critical Rate" desc="P. Critical Rate +140" skillId="82009" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1570" name="Magical Skill Critical Rate" desc="P. Critical Rate +150" skillId="82009" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Critical Damage -->
-	<option id="1601" name="Physical Critical Damage" desc="P. Critical Damage +95" skillId="82010" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1602" name="Physical Critical Damage" desc="P. Critical Damage +115" skillId="82010" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1603" name="Physical Critical Damage" desc="P. Critical Damage +135" skillId="82010" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1604" name="Physical Critical Damage" desc="P. Critical Damage +155" skillId="82010" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1605" name="Physical Critical Damage" desc="P. Critical Damage +175" skillId="82010" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1606" name="Physical Critical Damage" desc="P. Critical Damage +200" skillId="82010" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1607" name="Physical Critical Damage" desc="P. Critical Damage +220" skillId="82010" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1608" name="Physical Critical Damage" desc="P. Critical Damage +240" skillId="82010" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1609" name="Physical Critical Damage" desc="P. Critical Damage +260" skillId="82010" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1610" name="Physical Critical Damage" desc="P. Critical Damage +280" skillId="82010" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1611" name="Physical Critical Damage" desc="P. Critical Damage +300" skillId="82010" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1612" name="Physical Critical Damage" desc="P. Critical Damage +320" skillId="82010" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1613" name="Physical Critical Damage" desc="P. Critical Damage +340" skillId="82010" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1614" name="Physical Critical Damage" desc="P. Critical Damage +360" skillId="82010" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1615" name="Physical Critical Damage" desc="P. Critical Damage +380" skillId="82010" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1616" name="Physical Critical Damage" desc="P. Critical Damage +400" skillId="82010" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1617" name="Physical Critical Damage" desc="P. Critical Damage +420" skillId="82010" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1618" name="Physical Critical Damage" desc="P. Critical Damage +440" skillId="82010" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1619" name="Physical Critical Damage" desc="P. Critical Damage +460" skillId="82010" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1620" name="Physical Critical Damage" desc="P. Critical Damage +500" skillId="82010" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Skill Critical Damage -->
-	<option id="1651" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +0.5%" skillId="82011" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1652" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +0.7%" skillId="82011" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1653" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +0.9%" skillId="82011" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1654" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +1.1%" skillId="82011" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1655" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +1.3%" skillId="82011" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1656" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +1.5%" skillId="82011" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1657" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +1.7%" skillId="82011" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1658" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +1.9%" skillId="82011" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1659" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +2.1%" skillId="82011" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1660" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +2.3%" skillId="82011" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1661" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +2.5%" skillId="82011" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1662" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +2.7%" skillId="82011" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1663" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +2.9%" skillId="82011" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1664" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +3.1%" skillId="82011" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1665" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +3.3%" skillId="82011" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1666" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +3.5%" skillId="82011" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1667" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +3.7%" skillId="82011" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1668" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +3.9%" skillId="82011" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1669" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +4.1%" skillId="82011" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1670" name="Physical Skill Critical Damage" desc="P. Skill Critical Damage +4.3%" skillId="82011" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Magical Skill Critical Damage -->
-	<option id="1701" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +0.5%" skillId="82012" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1702" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +0.7%" skillId="82012" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1703" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +0.9%" skillId="82012" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1704" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +1.1%" skillId="82012" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1705" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +1.3%" skillId="82012" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1706" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +1.5%" skillId="82012" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1707" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +1.7%" skillId="82012" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1708" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +1.9%" skillId="82012" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1709" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +2.1%" skillId="82012" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1710" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +2.3%" skillId="82012" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1711" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +2.5%" skillId="82012" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1712" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +2.7%" skillId="82012" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1713" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +2.9%" skillId="82012" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1714" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +3.1%" skillId="82012" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1715" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +3.3%" skillId="82012" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1716" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +3.5%" skillId="82012" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1717" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +3.7%" skillId="82012" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1718" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +3.9%" skillId="82012" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1719" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +4.1%" skillId="82012" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1720" name="Magical Skill Critical Damage" desc="M. Skill Critical Damage +4.3%" skillId="82012" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Shock Attack -->
-	<option id="1751" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 3%)" skillId="82013" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1752" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 4%)" skillId="82013" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1753" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 5%)" skillId="82013" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1754" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 6%)" skillId="82013" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1755" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 7%)" skillId="82013" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1756" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 9%)" skillId="82013" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1757" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 10%)" skillId="82013" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1758" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 11%)" skillId="82013" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1759" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 12%)" skillId="82013" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1760" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 13%)" skillId="82013" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1761" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 15%)" skillId="82013" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1762" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 16%)" skillId="82013" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1763" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 17%)" skillId="82013" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1764" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 18%)" skillId="82013" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1765" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 19%)" skillId="82013" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1766" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 21%)" skillId="82013" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1767" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 22%)" skillId="82013" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1768" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 23%)" skillId="82013" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1769" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 24%)" skillId="82013" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1770" name="Shock Attack" desc="For 3 sec stuns the target after an attack. (Probability: 25%)" skillId="82013" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Silence Attack -->
-	<option id="1801" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 3%)" skillId="82015" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1802" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 4%)" skillId="82015" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1803" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 5%)" skillId="82015" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1804" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 6%)" skillId="82015" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1805" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 7%)" skillId="82015" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1806" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 9%)" skillId="82015" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1807" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 10%)" skillId="82015" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1808" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 11%)" skillId="82015" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1809" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 12%)" skillId="82015" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1810" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 13%)" skillId="82015" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1811" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 15%)" skillId="82015" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1812" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 16%)" skillId="82015" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1813" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 17%)" skillId="82015" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1814" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 18%)" skillId="82015" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1815" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 19%)" skillId="82015" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1816" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 21%)" skillId="82015" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1817" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 22%)" skillId="82015" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1818" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 23%)" skillId="82015" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1819" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 24%)" skillId="82015" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1820" name="Silence Attack" desc="For 5 sec inflicts Silence on the target after an attack. (Probability: 25%)" skillId="82015" skillLevel="20" /> <!-- Stone Id : 95802 -->
-	<!-- Physical Abilities -->
-	<option id="1851" name="Physical Abilities Lv.1" desc="P. Atk. +1% HP Recovery Rate +1" skillId="82018" skillLevel="1" /> <!-- Stone Id : 95803 -->
-	<option id="1852" name="Physical Abilities Lv.2" desc="P. Atk. +2% HP Recovery Rate +2" skillId="82018" skillLevel="2" /> <!-- Stone Id : 95804 -->
-	<option id="1853" name="Physical Abilities Lv.3" desc="P. Atk. +3% HP Recovery Rate +3" skillId="82018" skillLevel="3" /> <!-- Stone Id : 95805 -->
-	<option id="1854" name="Physical Abilities Lv.4" desc="P. Atk. +4% HP Recovery Rate +4" skillId="82018" skillLevel="4" /> <!-- Stone Id : 95806 -->
-	<option id="1855" name="Physical Abilities Lv.5" desc="P. Atk. +5% HP Recovery Rate +5" skillId="82018" skillLevel="5" /> <!-- Stone Id : 95807 -->
-	<option id="1856" name="Physical Abilities Lv.6" desc="P. Atk. +6% HP Recovery Rate +6 Recovers 100 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="6" /> <!-- Stone Id : 95808 -->
-	<option id="1857" name="Physical Abilities Lv.7" desc="P. Atk. +7% HP Recovery Rate +7 Recovers 200 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="7" /> <!-- Stone Id : 95809 -->
-	<option id="1858" name="Physical Abilities Lv.8" desc="P. Atk. +8% HP Recovery Rate +8 Recovers 300 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="8" /> <!-- Stone Id : 95810 -->
-	<option id="1859" name="Physical Abilities Lv.9" desc="P. Atk. +9% HP Recovery Rate +9 Recovers 400 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="9" /> <!-- Stone Id : 95811 -->
-	<option id="1860" name="Physical Abilities Lv.10" desc="P. Atk. +10% HP Recovery Rate +10 Recovers 500 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="10" /> <!-- Stone Id : 95812 -->
-	<option id="1861" name="Physical Abilities Lv.11" desc="P. Atk. +11% HP Recovery Rate +11 CON +1 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="11" /> <!-- Stone Id : 95813 -->
-	<option id="1862" name="Physical Abilities Lv.12" desc="P. Atk. +12% HP Recovery Rate +12 CON +1 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="12" /> <!-- Stone Id : 95814 -->
-	<option id="1863" name="Physical Abilities Lv.13" desc="P. Atk. +13% HP Recovery Rate +13 CON +2 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="13" /> <!-- Stone Id : 95815 -->
-	<option id="1864" name="Physical Abilities Lv.14" desc="P. Atk. +14% HP Recovery Rate +14 CON +2 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="14" /> <!-- Stone Id : 95816 -->
-	<option id="1865" name="Physical Abilities Lv.15" desc="P. Atk. +15% HP Recovery Rate +15 CON +3 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="15" /> <!-- Stone Id : 95817 -->
-	<option id="1866" name="Physical Abilities Lv.16" desc="P. Atk. +16% P. Skill Power +1% HP Recovery Rate +15 CON +3 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="16" /> <!-- Stone Id : 95818 -->
-	<option id="1867" name="Physical Abilities Lv.17" desc="P. Atk. +17% P. Skill Power +2% HP Recovery Rate +15 CON +4 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="17" /> <!-- Stone Id : 95819 -->
-	<option id="1868" name="Physical Abilities Lv.18" desc="P. Atk. +18% P. Skill Power +3% HP Recovery Rate +15 CON +4 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="18" /> <!-- Stone Id : 95820 -->
-	<option id="1869" name="Physical Abilities Lv.19" desc="P. Atk. +19% P. Skill Power +4% HP Recovery Rate +15 CON +5 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="19" /> <!-- Stone Id : 95821 -->
-	<option id="1870" name="Physical Abilities Lv.20" desc="P. Atk. +20% P. Skill Power +5% HP Recovery Rate +15 CON +5 Recovers 900 HP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82018" skillLevel="20" /> <!-- Stone Id : 95822 -->
-	<!-- Magical Abilities -->
-	<option id="1901" name="Magical Abilities Lv.1" desc="M. Atk. +1% MP Recovery Rate +1" skillId="82017" skillLevel="1" /> <!-- Stone Id : 95803 -->
-	<option id="1902" name="Magical Abilities Lv.2" desc="M. Atk. +2% MP Recovery Rate +2" skillId="82017" skillLevel="2" /> <!-- Stone Id : 95804 -->
-	<option id="1903" name="Magical Abilities Lv.3" desc="M. Atk. +3% MP Recovery Rate +3" skillId="82017" skillLevel="3" /> <!-- Stone Id : 95805 -->
-	<option id="1904" name="Magical Abilities Lv.4" desc="M. Atk. +4% MP Recovery Rate +4" skillId="82017" skillLevel="4" /> <!-- Stone Id : 95806 -->
-	<option id="1905" name="Magical Abilities Lv.5" desc="M. Atk. +5% MP Recovery Rate +5" skillId="82017" skillLevel="5" /> <!-- Stone Id : 95807 -->
-	<option id="1906" name="Magical Abilities Lv.6" desc="M. Atk. +6% MP Recovery Rate +6 Recovers 75 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="6" /> <!-- Stone Id : 95808 -->
-	<option id="1907" name="Magical Abilities Lv.7" desc="M. Atk. +7% MP Recovery Rate +7 Recovers 150 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="7" /> <!-- Stone Id : 95809 -->
-	<option id="1908" name="Magical Abilities Lv.8" desc="M. Atk. +8% MP Recovery Rate +8 Recovers 225 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="8" /> <!-- Stone Id : 95810 -->
-	<option id="1909" name="Magical Abilities Lv.9" desc="M. Atk. +9% MP Recovery Rate +9 Recovers 300 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="9" /> <!-- Stone Id : 95811 -->
-	<option id="1910" name="Magical Abilities Lv.10" desc="M. Atk. +10% MP Recovery Rate +10 Recovers 400 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="10" /> <!-- Stone Id : 95812 -->
-	<option id="1911" name="Magical Abilities Lv.11" desc="M. Atk. +11% MP Recovery Rate +11 MEN +1 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="11" /> <!-- Stone Id : 95813 -->
-	<option id="1912" name="Magical Abilities Lv.12" desc="M. Atk. +12% MP Recovery Rate +12 MEN +1 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="12" /> <!-- Stone Id : 95814 -->
-	<option id="1913" name="Magical Abilities Lv.13" desc="M. Atk. +13% MP Recovery Rate +13 MEN +2 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="13" /> <!-- Stone Id : 95815 -->
-	<option id="1914" name="Magical Abilities Lv.14" desc="M. Atk. +14% MP Recovery Rate +14 MEN +2 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="14" /> <!-- Stone Id : 95816 -->
-	<option id="1915" name="Magical Abilities Lv.15" desc="M. Atk. +15% MP Recovery Rate +15 MEN +3 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="15" /> <!-- Stone Id : 95817 -->
-	<option id="1916" name="Magical Abilities Lv.16" desc="M. Atk. +16% M. Skill Power +1% MP Recovery Rate +15 MEN +3 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="16" /> <!-- Stone Id : 95818 -->
-	<option id="1917" name="Magical Abilities Lv.17" desc="M. Atk. +17% M. Skill Power +2% MP Recovery Rate +15 MEN +4 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="17" /> <!-- Stone Id : 95819 -->
-	<option id="1918" name="Magical Abilities Lv.18" desc="M. Atk. +18% M. Skill Power +3% MP Recovery Rate +15 MEN +4 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="18" /> <!-- Stone Id : 95820 -->
-	<option id="1919" name="Magical Abilities Lv.19" desc="M. Atk. +19% M. Skill Power +4% MP Recovery Rate +15 MEN +5 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="19" /> <!-- Stone Id : 95821 -->
-	<option id="1920" name="Magical Abilities Lv.20" desc="M. Atk. +20% M. Skill Power +5% MP Recovery Rate +15 MEN +5 Recovers 600 MP after basic attacks and attack skills. (Probability: 30%, cooldown: 60 sec.)" skillId="82017" skillLevel="20" /> <!-- Stone Id : 95822 -->
-	<!-- Defense Property - Upper Armor -->
-	<option id="1921" name="Defense Property - Upper Armor" desc="P./ M. Def. +10" skillId="82201" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="1922" name="Defense Property - Upper Armor" desc="P./ M. Def. +25" skillId="82201" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="1923" name="Defense Property - Upper Armor" desc="P./ M. Def. +40" skillId="82201" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="1924" name="Defense Property - Upper Armor" desc="P./ M. Def. +55" skillId="82201" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="1925" name="Defense Property - Upper Armor" desc="P./ M. Def. +70" skillId="82201" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="1926" name="Defense Property - Upper Armor" desc="P./ M. Def. +100" skillId="82201" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="1927" name="Defense Property - Upper Armor" desc="P./ M. Def. +120" skillId="82201" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="1928" name="Defense Property - Upper Armor" desc="P./ M. Def. +140" skillId="82201" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="1929" name="Defense Property - Upper Armor" desc="P./ M. Def. +160" skillId="82201" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="1930" name="Defense Property - Upper Armor" desc="P./ M. Def. +180" skillId="82201" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="1931" name="Defense Property - Upper Armor" desc="P./ M. Def. +210" skillId="82201" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="1932" name="Defense Property - Upper Armor" desc="P./ M. Def. +230" skillId="82201" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="1933" name="Defense Property - Upper Armor" desc="P./ M. Def. +250" skillId="82201" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="1934" name="Defense Property - Upper Armor" desc="P./ M. Def. +270" skillId="82201" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="1935" name="Defense Property - Upper Armor" desc="P./ M. Def. +290" skillId="82201" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="1936" name="Defense Property - Upper Armor" desc="P./ M. Def. +320" skillId="82201" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="1937" name="Defense Property - Upper Armor" desc="P./ M. Def. +340" skillId="82201" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="1938" name="Defense Property - Upper Armor" desc="P./ M. Def. +360" skillId="82201" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="1939" name="Defense Property - Upper Armor" desc="P./ M. Def. +380" skillId="82201" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="1940" name="Defense Property - Upper Armor" desc="P./ M. Def. +400" skillId="82201" skillLevel="20" /> <!-- Stone Id : 96920 -->
-	<!-- Defense Property - Lower Armor -->
-	<option id="1941" name="Defense Property - Lower Armor" desc="P./ M. Def. +10" skillId="82202" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="1942" name="Defense Property - Lower Armor" desc="P./ M. Def. +25" skillId="82202" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="1943" name="Defense Property - Lower Armor" desc="P./ M. Def. +40" skillId="82202" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="1944" name="Defense Property - Lower Armor" desc="P./ M. Def. +55" skillId="82202" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="1945" name="Defense Property - Lower Armor" desc="P./ M. Def. +70" skillId="82202" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="1946" name="Defense Property - Lower Armor" desc="P./ M. Def. +100" skillId="82202" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="1947" name="Defense Property - Lower Armor" desc="P./ M. Def. +120" skillId="82202" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="1948" name="Defense Property - Lower Armor" desc="P./ M. Def. +140" skillId="82202" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="1949" name="Defense Property - Lower Armor" desc="P./ M. Def. +160" skillId="82202" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="1950" name="Defense Property - Lower Armor" desc="P./ M. Def. +180" skillId="82202" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="1951" name="Defense Property - Lower Armor" desc="P./ M. Def. +210" skillId="82202" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="1952" name="Defense Property - Lower Armor" desc="P./ M. Def. +230" skillId="82202" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="1953" name="Defense Property - Lower Armor" desc="P./ M. Def. +250" skillId="82202" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="1954" name="Defense Property - Lower Armor" desc="P./ M. Def. +270" skillId="82202" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="1955" name="Defense Property - Lower Armor" desc="P./ M. Def. +290" skillId="82202" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="1956" name="Defense Property - Lower Armor" desc="P./ M. Def. +320" skillId="82202" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="1957" name="Defense Property - Lower Armor" desc="P./ M. Def. +340" skillId="82202" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="1958" name="Defense Property - Lower Armor" desc="P./ M. Def. +360" skillId="82202" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="1959" name="Defense Property - Lower Armor" desc="P./ M. Def. +380" skillId="82202" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="1960" name="Defense Property - Lower Armor" desc="P./ M. Def. +400" skillId="82202" skillLevel="20" /> <!-- Stone Id : 96920 -->
-	<!-- Defense Property - Helmet -->
-	<option id="1961" name="Defense Property - Helmet" desc="P./ M. Def. +10" skillId="82203" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="1962" name="Defense Property - Helmet" desc="P./ M. Def. +25" skillId="82203" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="1963" name="Defense Property - Helmet" desc="P./ M. Def. +40" skillId="82203" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="1964" name="Defense Property - Helmet" desc="P./ M. Def. +55" skillId="82203" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="1965" name="Defense Property - Helmet" desc="P./ M. Def. +70" skillId="82203" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="1966" name="Defense Property - Helmet" desc="P./ M. Def. +100" skillId="82203" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="1967" name="Defense Property - Helmet" desc="P./ M. Def. +120" skillId="82203" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="1968" name="Defense Property - Helmet" desc="P./ M. Def. +140" skillId="82203" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="1969" name="Defense Property - Helmet" desc="P./ M. Def. +160" skillId="82203" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="1970" name="Defense Property - Helmet" desc="P./ M. Def. +180" skillId="82203" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="1971" name="Defense Property - Helmet" desc="P./ M. Def. +210" skillId="82203" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="1972" name="Defense Property - Helmet" desc="P./ M. Def. +230" skillId="82203" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="1973" name="Defense Property - Helmet" desc="P./ M. Def. +250" skillId="82203" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="1974" name="Defense Property - Helmet" desc="P./ M. Def. +270" skillId="82203" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="1975" name="Defense Property - Helmet" desc="P./ M. Def. +290" skillId="82203" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="1976" name="Defense Property - Helmet" desc="P./ M. Def. +320" skillId="82203" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="1977" name="Defense Property - Helmet" desc="P./ M. Def. +340" skillId="82203" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="1978" name="Defense Property - Helmet" desc="P./ M. Def. +360" skillId="82203" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="1979" name="Defense Property - Helmet" desc="P./ M. Def. +380" skillId="82203" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="1980" name="Defense Property - Helmet" desc="P./ M. Def. +400" skillId="82203" skillLevel="20" /> <!-- Stone Id : 96920 -->
-	<!-- Defense Property - Gloves -->
-	<option id="1981" name="Defense Property - Gloves" desc="P./ M. Def. +10" skillId="82204" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="1982" name="Defense Property - Gloves" desc="P./ M. Def. +25" skillId="82204" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="1983" name="Defense Property - Gloves" desc="P./ M. Def. +40" skillId="82204" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="1984" name="Defense Property - Gloves" desc="P./ M. Def. +55" skillId="82204" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="1985" name="Defense Property - Gloves" desc="P./ M. Def. +70" skillId="82204" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="1986" name="Defense Property - Gloves" desc="P./ M. Def. +100" skillId="82204" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="1987" name="Defense Property - Gloves" desc="P./ M. Def. +120" skillId="82204" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="1988" name="Defense Property - Gloves" desc="P./ M. Def. +140" skillId="82204" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="1989" name="Defense Property - Gloves" desc="P./ M. Def. +160" skillId="82204" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="1990" name="Defense Property - Gloves" desc="P./ M. Def. +180" skillId="82204" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="1991" name="Defense Property - Gloves" desc="P./ M. Def. +210" skillId="82204" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="1992" name="Defense Property - Gloves" desc="P./ M. Def. +230" skillId="82204" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="1993" name="Defense Property - Gloves" desc="P./ M. Def. +250" skillId="82204" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="1994" name="Defense Property - Gloves" desc="P./ M. Def. +270" skillId="82204" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="1995" name="Defense Property - Gloves" desc="P./ M. Def. +290" skillId="82204" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="1996" name="Defense Property - Gloves" desc="P./ M. Def. +320" skillId="82204" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="1997" name="Defense Property - Gloves" desc="P./ M. Def. +340" skillId="82204" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="1998" name="Defense Property - Gloves" desc="P./ M. Def. +360" skillId="82204" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="1999" name="Defense Property - Gloves" desc="P./ M. Def. +380" skillId="82204" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="2000" name="Defense Property - Gloves" desc="P./ M. Def. +400" skillId="82204" skillLevel="20" /> <!-- Stone Id : 96920 -->
-	<!-- Defense Property - Boots -->
-	<option id="2001" name="Defense Property - Boots" desc="P./ M. Def. +10" skillId="82205" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="2002" name="Defense Property - Boots" desc="P./ M. Def. +25" skillId="82205" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="2003" name="Defense Property - Boots" desc="P./ M. Def. +40" skillId="82205" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="2004" name="Defense Property - Boots" desc="P./ M. Def. +55" skillId="82205" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="2005" name="Defense Property - Boots" desc="P./ M. Def. +70" skillId="82205" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="2006" name="Defense Property - Boots" desc="P./ M. Def. +100" skillId="82205" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="2007" name="Defense Property - Boots" desc="P./ M. Def. +120" skillId="82205" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="2008" name="Defense Property - Boots" desc="P./ M. Def. +140" skillId="82205" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="2009" name="Defense Property - Boots" desc="P./ M. Def. +160" skillId="82205" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="2010" name="Defense Property - Boots" desc="P./ M. Def. +180" skillId="82205" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="2011" name="Defense Property - Boots" desc="P./ M. Def. +210" skillId="82205" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="2012" name="Defense Property - Boots" desc="P./ M. Def. +230" skillId="82205" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="2013" name="Defense Property - Boots" desc="P./ M. Def. +250" skillId="82205" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="2014" name="Defense Property - Boots" desc="P./ M. Def. +270" skillId="82205" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="2015" name="Defense Property - Boots" desc="P./ M. Def. +290" skillId="82205" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="2016" name="Defense Property - Boots" desc="P./ M. Def. +320" skillId="82205" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="2017" name="Defense Property - Boots" desc="P./ M. Def. +340" skillId="82205" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="2018" name="Defense Property - Boots" desc="P./ M. Def. +360" skillId="82205" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="2019" name="Defense Property - Boots" desc="P./ M. Def. +380" skillId="82205" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="2020" name="Defense Property - Boots" desc="P./ M. Def. +400" skillId="82205" skillLevel="20" /> <!-- Stone Id : 96920 -->
-	<!-- Defense Property - Upper/ Lower Armor -->
-	<option id="2021" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +18" skillId="82206" skillLevel="1" /> <!-- Stone Id : 96901 -->
-	<option id="2022" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +45" skillId="82206" skillLevel="2" /> <!-- Stone Id : 96902 -->
-	<option id="2023" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +72" skillId="82206" skillLevel="3" /> <!-- Stone Id : 96903 -->
-	<option id="2024" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +99" skillId="82206" skillLevel="4" /> <!-- Stone Id : 96904 -->
-	<option id="2025" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +126" skillId="82206" skillLevel="5" /> <!-- Stone Id : 96905 -->
-	<option id="2026" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +180" skillId="82206" skillLevel="6" /> <!-- Stone Id : 96906 -->
-	<option id="2027" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +216" skillId="82206" skillLevel="7" /> <!-- Stone Id : 96907 -->
-	<option id="2028" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +252" skillId="82206" skillLevel="8" /> <!-- Stone Id : 96908 -->
-	<option id="2029" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +288" skillId="82206" skillLevel="9" /> <!-- Stone Id : 96909 -->
-	<option id="2030" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +324" skillId="82206" skillLevel="10" /> <!-- Stone Id : 96910 -->
-	<option id="2031" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +378" skillId="82206" skillLevel="11" /> <!-- Stone Id : 96911 -->
-	<option id="2032" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +414" skillId="82206" skillLevel="12" /> <!-- Stone Id : 96912 -->
-	<option id="2033" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +450" skillId="82206" skillLevel="13" /> <!-- Stone Id : 96913 -->
-	<option id="2034" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +486" skillId="82206" skillLevel="14" /> <!-- Stone Id : 96914 -->
-	<option id="2035" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +522" skillId="82206" skillLevel="15" /> <!-- Stone Id : 96915 -->
-	<option id="2036" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +576" skillId="82206" skillLevel="16" /> <!-- Stone Id : 96916 -->
-	<option id="2037" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +612" skillId="82206" skillLevel="17" /> <!-- Stone Id : 96917 -->
-	<option id="2038" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +648" skillId="82206" skillLevel="18" /> <!-- Stone Id : 96918 -->
-	<option id="2039" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +684" skillId="82206" skillLevel="19" /> <!-- Stone Id : 96919 -->
-	<option id="2040" name="Defense Property - Upper/ Lower Armor" desc="P./ M. Def. +720" skillId="82206" skillLevel="20" /> <!-- Stone Id : 96920 -->
 </list>

@@ -101,38 +101,4 @@
 	<class classId="131" name="Doombringer" parentClassId="127" />
 	<class classId="195" name="Soul Hound" parentClassId="194" />
 	<class classId="134" name="Trickster" parentClassId="130" />
-	<!-- Death Knight - Human -->
-	<class classId="196" name="Death Pilgrim" />
-	<class classId="197" name="Death Blade" parentClassId="196" />
-	<class classId="198" name="Death Messenger" parentClassId="197" />
-	<class classId="199" name="Death Knight" parentClassId="198" />
-	<!-- Death Knight - Elf -->
-	<class classId="200" name="Death Pilgrim" />
-	<class classId="201" name="Death Blade" parentClassId="200" />
-	<class classId="202" name="Death Messenger" parentClassId="201" />
-	<class classId="203" name="Death Knight" parentClassId="202" />
-	<!-- Death Knight - Dark Elf -->
-	<class classId="204" name="Death Pilgrim" />
-	<class classId="205" name="Death Blade" parentClassId="204" />
-	<class classId="206" name="Death Messenger" parentClassId="205" />
-	<class classId="207" name="Death Knight" parentClassId="206" />
-	<!-- Sylph -->
-	<class classId="208" name="Sylph Gunner" />
-	<class classId="209" name="Sharpshooter" parentClassId="208" />
-	<class classId="210" name="Wind Sniper" parentClassId="209" />
-	<class classId="211" name="Storm Blaster" parentClassId="210" />
-	<!-- Vanguard -->
-	<class classId="217" name="Orc Lancer" />
-	<class classId="218" name="Rider" parentClassId="217" />
-	<class classId="219" name="Dragoon" parentClassId="218" />
-	<class classId="220" name="Vanguard Rider" parentClassId="219" />
-	<!-- Assassin -->
-	<class classId="221" name="Assassin" />
-	<class classId="222" name="Assassin" parentClassId="221" />
-	<class classId="223" name="Assassin" parentClassId="222" />
-	<class classId="224" name="Assassin" parentClassId="223" />
-	<class classId="225" name="Assassin" />
-	<class classId="226" name="Assassin" parentClassId="225" />
-	<class classId="227" name="Assassin" parentClassId="226" />
-	<class classId="228" name="Assassin" parentClassId="227" />
 </list>

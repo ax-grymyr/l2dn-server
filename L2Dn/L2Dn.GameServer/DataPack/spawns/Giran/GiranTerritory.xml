@@ -1,5 +1,51 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_041" minZ="-3742" maxZ="-3342">
+				<node x="88840" y="131531" />
+				<node x="92412" y="131567" />
+				<node x="92824" y="132595" />
+				<node x="89588" y="132879" />
+			</territory>
+		</territories>
+		<npc id="20199" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_040" minZ="-3734" maxZ="-3334">
+				<node x="95349" y="134485" />
+				<node x="97445" y="133497" />
+				<node x="97273" y="136309" />
+				<node x="95933" y="136705" />
+			</territory>
+		</territories>
+		<npc id="20199" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_039" minZ="-3767" maxZ="-3167">
+				<node x="95483" y="148332" />
+				<node x="97547" y="147012" />
+				<node x="97551" y="149976" />
+				<node x="95587" y="150732" />
+			</territory>
+		</territories>
+		<npc id="20199" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Amber Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_001" minZ="-3888" maxZ="-3488">
+				<node x="65689" y="131232" />
+				<node x="70017" y="131200" />
+				<node x="70285" y="133172" />
+				<node x="69161" y="133608" />
+				<node x="65693" y="132844" />
+			</territory>
+		</territories>
+		<npc id="20176" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Wyrm -->
+		<npc id="20550" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Guardian Basilisk -->
+	</spawn>
 	<spawn>
 		<territories>
 			<territory name="giran_t22_22_010" minZ="-3769" maxZ="-3269">
@@ -61,6 +107,18 @@
 	</spawn>
 	<spawn>
 		<territories>
+			<territory name="giran_t22_22_002" minZ="-3757" maxZ="-2757">
+				<node x="70840" y="131233" />
+				<node x="78424" y="131257" />
+				<node x="76744" y="133405" />
+				<node x="72988" y="134097" />
+			</territory>
+		</territories>
+		<npc id="20176" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Wyrm -->
+		<npc id="20550" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Guardian Basilisk -->
+	</spawn>
+	<spawn>
+		<territories>
 			<territory name="giran_t22_22_005" minZ="-3709" maxZ="-3109">
 				<node x="96206" y="131377" />
 				<node x="98010" y="131317" />
@@ -84,6 +142,17 @@
 			</territory>
 		</territories>
 		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran_t22_22_028" minZ="-3711" maxZ="-3111">
+				<node x="72362" y="131529" />
+				<node x="76550" y="131573" />
+				<node x="75070" y="132945" />
+				<node x="73102" y="132721" />
+			</territory>
+		</territories>
+		<npc id="20551" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Road Scavenger -->
 	</spawn>
 	<spawn>
 		<territories>

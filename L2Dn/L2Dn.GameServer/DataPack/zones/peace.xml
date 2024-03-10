@@ -882,6 +882,38 @@
 		<node X="-113768" Y="-150965" />
 		<node X="-115424" Y="-150965" />
 	</zone>
+	<zone name="The West Dungeon of Abyss" id="600000" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-120448" Y="-182800" />
+		<node X="-117264" Y="-180288" />
+	</zone>
+	<zone name="The West Dungeon of Abyss Boss Room" id="600004" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-117096" Y="-181856" />
+		<node X="-115562" Y="-181080" />
+	</zone>
+	<zone name="The West Dungeon of Abyss 2nd" id="600001" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-120448" Y="-180093" />
+		<node X="-117264" Y="-177472" />
+	</zone>
+	<zone name="The West Dungeon of Abyss 2nd Boss Room" id="600005" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-117097" Y="-179108" />
+		<node X="-115565" Y="-178261" />
+	</zone>
+	<zone name="The East Dungeon of Abyss" id="600002" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-109037" Y="-180186" />
+		<node X="-112257" Y="-182758" />
+	</zone>
+	<zone name="The East Dungeon of Abyss Boss Room" id="600006" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-112508" Y="-181094" />
+		<node X="-114023" Y="-181929" />
+	</zone>
+	<zone name="The East Dungeon of Abyss 2nd" id="600003" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-109152" Y="-177408" />
+		<node X="-112336" Y="-179920" />
+	</zone>
+	<zone name="The East Dungeon of Abyss 2nd Boss Room" id="600007" type="PeaceZone" shape="Cuboid" minZ="-7000" maxZ="-6500"> <!-- [16_12] -->
+		<node X="-112495" Y="-178268" />
+		<node X="-114025" Y="-179108" />
+	</zone>
 	
 	<!-- Classic Monster Race Track -->
 	<zone name="Monster_Race_Arena_Peace" type="PeaceZone" shape="NPoly" minZ="-3565" maxZ="-3200"> <!-- [20_23] -->
@@ -903,36 +935,5 @@
 		<node X="14073" Y="182918" />
 		<node X="14072" Y="182673" />
 		<node X="14404" Y="182674" />
-	</zone>
-	
-	<!-- Death Knight Base -->
-	<zone name="Death_Knight_Base_Peace" type="PeaceZone" shape="NPoly" minZ="-3054" maxZ="-1849"> <!-- [21_22] -->
-		<node X="46007" Y="150756" />
-		<node X="45355" Y="151090" />
-		<node X="44488" Y="151093" />
-		<node X="43562" Y="151509" />
-		<node X="42760" Y="151930" />
-		<node X="41967" Y="151950" />
-		<node X="42056" Y="152457" />
-		<node X="43882" Y="153046" />
-		<node X="44642" Y="153335" />
-		<node X="46869" Y="155987" />
-		<node X="50249" Y="156861" />
-		<node X="51740" Y="156167" />
-		<node X="50949" Y="154572" />
-		<node X="50850" Y="153697" />
-		<node X="49592" Y="151775" />
-		<node X="49175" Y="150811" />
-		<node X="48511" Y="150149" />
-		<node X="47505" Y="149939" />
-	</zone>
-	
-	<!-- Sylph Village -->
-	<zone name="Wind_Village" type="PeaceZone" shape="Cylinder" minZ="-5000" maxZ="-2800" rad="3000">
-		<node X="103781" Y="58005" />
-	</zone>
-	<!-- Frost Lord -->
-	<zone name="Castle_Area_Peace" type="PeaceZone" shape="Cylinder" minZ="-13071" maxZ="-11005" rad="900">
-		<node X="144665" Y="147259" />
 	</zone>
 </list>

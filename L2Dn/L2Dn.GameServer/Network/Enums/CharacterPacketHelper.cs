@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;

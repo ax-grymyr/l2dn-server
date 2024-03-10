@@ -19,6 +19,8 @@
 	</xs:complexType>
 
 	<xs:complexType name="TierBonusInfo">
+		<xs:attribute name="silverChance" type="xs:float" default="0"/>
+		<xs:attribute name="goldChance" type="xs:float" default="0"/>
 		<xs:attribute name="skill" type="xs:int" default="0"/>
 	</xs:complexType>
 </xs:schema>

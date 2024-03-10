@@ -1,81 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
-	<option id="50000" name="fire_dra_pd_lv_1_0">
-		<passive_skill id="35006" level="1" /> <!-- Fire Dragon Pendant -->
+	<option id="50000" name="option_id_50000">
+		<!-- M. Def +9. -->
 	</option>
-	<option id="50001" name="fire_dra_pd_lv_1_1">
-		<passive_skill id="35007" level="1" /> <!-- Fire Dragon Pendant -->
+	<option id="50001" name="option_id_50001">
+		<!-- Increases M. Def. by 10. -->
 	</option>
-	<option id="50002" name="fire_dra_pd_lv_1_2">
-		<passive_skill id="35007" level="2" /> <!-- Fire Dragon Pendant -->
+	<option id="50002" name="option_id_50002">
+		<!-- Increases M. Def. by 12. -->
 	</option>
-	<option id="50003" name="fire_dra_pd_lv_1_3">
-		<passive_skill id="35007" level="3" /> <!-- Fire Dragon Pendant -->
+	<option id="50003" name="option_id_50003">
+		<!-- Increases M. Def. by 13. -->
 	</option>
-	<option id="50004" name="fire_dra_pd_lv_1_4">
-		<passive_skill id="35007" level="4" /> <!-- Fire Dragon Pendant -->
+	<option id="50004" name="option_id_50004">
+		<!-- Increases M. Def. by 14. -->
+		<!-- Acquired XP/ SP +2%. -->
 	</option>
-	<option id="50005" name="fire_dra_pd_lv_1_5">
-		<passive_skill id="35007" level="5" /> <!-- Fire Dragon Pendant -->
+	<option id="50005" name="option_id_50005">
+		<!-- M. Def. +15. -->
+		<!-- Acquired XP/ SP +5%. -->
+		<!-- P./ M. Atk. +10. -->
 	</option>
-	<option id="50006" name="fire_dra_pd_lv_1_7">
-		<passive_skill id="35007" level="7" /> <!-- Fire Dragon Pendant -->
+	<option id="50006" name="option_id_50006">
+		<!-- Increases M. Def. by 16. -->
+		<!-- Acquired XP/ SP +10%. -->
+		<!-- P./ M. Atk. +20. -->
 	</option>
-	<option id="50007" name="fire_dra_pd_lv_1_7">
-		<passive_skill id="35007" level="7" /> <!-- Fire Dragon Pendant -->
+	<option id="50007" name="option_id_50007">
+		<!-- M. Def. +17. -->
+		<!-- Acquired XP/ SP +20%. -->
+		<!-- P./ M. Atk. +30. -->
 	</option>
-	<option id="50008" name="fire_dra_pd_lv_1_8">
-		<passive_skill id="35007" level="8" /> <!-- Fire Dragon Pendant -->
+	<option id="50008" name="option_id_50008">
+		<!-- Increases M. Def. by 18. -->
+		<!-- Acquired XP/ SP +25%. -->
+		<!-- P./ M. Atk. +40. P. / M. Critical Damage +5%. -->
 	</option>
-	<option id="50009" name="fire_dra_pd_lv_1_9">
-		<passive_skill id="35007" level="9" /> <!-- Fire Dragon Pendant -->
+	<option id="50009" name="option_id_50009">
+		<!-- Increases M. Def. by 20. -->
+		<!-- Acquired XP/ SP +30%. -->
+		<!-- P./ M. Atk. +50. P. / M. Critical Damage +5%. -->
 	</option>
-	<option id="50010" name="fire_dra_pd_lv_1_10">
-		<passive_skill id="35007" level="10" /> <!-- Fire Dragon Pendant -->
+	<option id="50010" name="option_id_50010">
+		<!-- Increases M. Def. by 21 when equipped. -->
+		<!-- Acquired XP/ SP +30%. -->
+		<!-- P./ M. Atk. +60. P. / M. Critical Damage +5%. -->
 	</option>
-	<option id="50011" name="fire_dra_pd_lv_1_11">
-		<active_skill id="35000" level="1" /> <!-- Fire Dragon Blessing -->
+	<option id="50011" name="option_id_50011">
+		<!-- Active: Blessing of a Fire Dragon -->
 	</option>
-	<option id="50012" name="fire_dra_pd_lv_1_11">
-		<active_skill id="35001" level="1" /> <!-- Fire Dragon Protection -->
+	<option id="50012" name="option_id_50012">
+		<!-- Active: Blessing / Protection of a Fire Dragon -->
 	</option>
-	<option id="50013" name="earth_dra_pd_lv_1_0">
-		<passive_skill id="35004" level="1" /> <!-- Earth Dragon Pendant -->
+	<option id="50013" name="option_id_50013">
+		<!-- M. Def +9. -->
 	</option>
-	<option id="50014" name="earth_dra_pd_lv_1_1">
-		<passive_skill id="35005" level="1" /> <!-- Earth Dragon Pendant -->
+	<option id="50014" name="option_id_50014">
+		<!-- Increases M. Def. by 10. -->
 	</option>
-	<option id="50015" name="earth_dra_pd_lv_1_2">
-		<passive_skill id="35005" level="2" /> <!-- Earth Dragon Pendant -->
+	<option id="50015" name="option_id_50015">
+		<!-- Increases M. Def. by 12. -->
 	</option>
-	<option id="50016" name="earth_dra_pd_lv_1_3">
-		<passive_skill id="35005" level="3" /> <!-- Earth Dragon Pendant -->
+	<option id="50016" name="option_id_50016">
+		<!-- Increases M. Def. by 13. -->
 	</option>
-	<option id="50017" name="earth_dra_pd_lv_1_4">
-		<passive_skill id="35005" level="4" /> <!-- Earth Dragon Pendant -->
+	<option id="50017" name="option_id_50017">
+		<!-- Increases M. Def. by 14. -->
+		<!-- Max HP +100, Max MP +40. -->
 	</option>
-	<option id="50018" name="earth_dra_pd_lv_1_5">
-		<passive_skill id="35005" level="5" /> <!-- Earth Dragon Pendant -->
+	<option id="50018" name="option_id_50018">
+		<!-- M. Def. +15. -->
+		<!-- Max HP +150, Max MP +50. -->
+		<!-- Received Damage -3% -->
 	</option>
-	<option id="50019" name="earth_dra_pd_lv_1_7">
-		<passive_skill id="35005" level="7" /> <!-- Earth Dragon Pendant -->
+	<option id="50019" name="option_id_50019">
+		<!-- Increases M. Def. by 16. -->
+		<!-- Max HP +200, Max MP +60, Max CP +200. -->
+		<!-- Received damage -5%. -->
 	</option>
-	<option id="50020" name="earth_dra_pd_lv_1_7">
-		<passive_skill id="35005" level="7" /> <!-- Earth Dragon Pendant -->
+	<option id="50020" name="option_id_50020">
+		<!-- M. Def. +17. -->
+		<!-- Max HP +300, Max MP +90, Max CP +300. -->
+		<!-- Received damage -10%. Speed +7. -->
 	</option>
-	<option id="50021" name="earth_dra_pd_lv_1_8">
-		<passive_skill id="35005" level="8" /> <!-- Earth Dragon Pendant -->
+	<option id="50021" name="option_id_50021">
+		<!-- Increases M. Def. by 18. -->
+		<!-- Max HP +400, Max MP +120, Max CP +400. -->
+		<!-- Received damage -20%. Speed +7. -->
 	</option>
-	<option id="50022" name="earth_dra_pd_lv_1_9">
-		<passive_skill id="35005" level="9" /> <!-- Earth Dragon Pendant -->
+	<option id="50022" name="option_id_50022">
+		<!-- Increases M. Def. by 20. -->
+		<!-- Max HP +500, Max MP +150, Max CP +500. -->
+		<!-- Received damage -20%. Speed +7. -->
 	</option>
-	<option id="50023" name="earth_dra_pd_lv_1_10">
-		<passive_skill id="35005" level="10" /> <!-- Earth Dragon Pendant -->
+	<option id="50023" name="option_id_50023">
+		<!-- Increases M. Def. by 21 when equipped. -->
+		<!-- Max HP +500, Max MP +150, Max CP +500. -->
+		<!-- Received damage -20%. Speed +7. -->
 	</option>
-	<option id="50024" name="earth_dra_pd_lv_1_11">
-		<active_skill id="35002" level="1" /> <!-- Earth Dragon Breath -->
+	<option id="50024" name="option_id_50024">
+		<!-- Active: Land Dragon Breath -->
 	</option>
-	<option id="50025" name="earth_dra_pd_lv_1_11">
-		<active_skill id="35003" level="1" /> <!-- Earth Dragon Breath / Defense -->
+	<option id="50025" name="option_id_50025">
+		<!-- Active: Land Dragon Defense / Breath -->
 	</option>
 </list>

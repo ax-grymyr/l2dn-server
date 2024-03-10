@@ -3,7 +3,7 @@
 	<npcs>
 		<npc>35186</npc> <!-- Arvid -->
 	</npcs>
-	<item id="3996" price="500000" />
-	<item id="3997" price="500000" />
-	<item id="3998" price="500000" />
+	<item id="3996" price="250000" />
+	<item id="3997" price="250000" />
+	<item id="3998" price="250000" />
 </list>

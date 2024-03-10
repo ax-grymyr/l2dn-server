@@ -68,7 +68,6 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:integer">
 									<xs:enumeration value="10" />
-									<xs:enumeration value="20" />
 									<xs:enumeration value="25" />
 									<xs:enumeration value="30" />
 									<xs:enumeration value="60" />

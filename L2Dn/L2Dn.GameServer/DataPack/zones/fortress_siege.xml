@@ -31,19 +31,6 @@
 		<node X="13658" Y="186916" />
 		<node X="14463" Y="185414" />
 	</zone>
-	<zone name="a_o_g_fort_siege" type="SiegeZone" shape="NPoly" minZ="-2505" maxZ="2495">
-		<stat name="fortId" val="117" />
-		<!-- battlefield_territory -->
-		<node X="108296" Y="-14184" />
-		<node X="108808" Y="-13736" />
-		<node X="113944" Y="-13688" />
-		<node X="114408" Y="-14104" />
-		<node X="115585" Y="-14406" />
-		<node X="114472" Y="-16776" />
-		<node X="113928" Y="-17208" />
-		<node X="108824" Y="-17224" />
-		<node X="107631" Y="-16922" />
-	</zone>
 	<zone name="giran_fort" type="SiegeZone" shape="NPoly" minZ="-4498" maxZ="502">
 		<stat name="fortId" val="104" />
 		<!-- battlefield_territory -->
@@ -224,19 +211,5 @@
 		<node X="76387" Y="-92770" />
 		<node X="71298" Y="-90403" />
 		<node X="68701" Y="-92263" />
-	</zone>
-	<zone name="orc_fortress" type="SiegeZone" shape="NPoly" minZ="-2505" maxZ="2495">
-		<stat name="fortId" val="122" />
-		<!-- battlefield_territory -->
-		<node X="114430" Y="-14392" />
-		<node X="114314" Y="-14188" />
-		<node X="113820" Y="-13733" />
-		<node X="108909" Y="-13728" />
-		<node X="108308" Y="-14343" />
-		<node X="108311" Y="-16544" />
-		<node X="108920" Y="-17142" />
-		<node X="113835" Y="-17137" />
-		<node X="114439" Y="-16522" />
-		<node X="114435" Y="-14329" />
 	</zone>
 </list>

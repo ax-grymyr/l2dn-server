@@ -3,25 +3,25 @@
 	<npcs>
 		<npc>30684</npc> <!-- Viktor -->
 	</npcs>
-	<item id="176" price="136000" /> <!-- Apprentice's Staff -->
-	<item id="310" price="136000" /> <!-- Relic of the Saints -->
-	<item id="177" price="244000" /> <!-- Mage Staff -->
-	<item id="311" price="244000" /> <!-- Crucifix of Blessing -->
-	<item id="100" price="244000" /> <!-- Voodoo Doll -->
-	<item id="178" price="409000" /> <!-- Bone Staff -->
-	<item id="101" price="409000" /> <!-- Scroll of Wisdom -->
-	<item id="7885" price="409000" /> <!-- Priest Sword -->
-	<item id="312" price="409000" /> <!-- Branch of Life -->
-	<item id="314" price="409000" /> <!-- Proof of Revenge -->
-	<item id="179" price="644000" /> <!-- Mace of Prayer -->
-	<item id="182" price="644000" /> <!-- Doom Hammer -->
-	<item id="183" price="644000" /> <!-- Mystic Staff -->
-	<item id="185" price="644000" /> <!-- Staff of Mana -->
-	<item id="315" price="644000" /> <!-- Divine Tome -->
-	<item id="83" price="716000" /> <!-- Sword of Magic -->
-	<item id="143" price="716000" /> <!-- Sword of Mystic -->
-	<item id="144" price="716000" /> <!-- Sword of Occult -->
-	<item id="238" price="967000" /> <!-- Dagger of Mana -->
-	<item id="239" price="967000" /> <!-- Mystic Knife -->
-	<item id="240" price="967000" /> <!-- Conjurer's Knife -->
+	<item id="176" price="176800" /> <!-- Apprentice's Staff -->
+	<item id="310" price="176800" /> <!-- Relic of the Saints -->
+	<item id="177" price="317200" /> <!-- Mage Staff -->
+	<item id="311" price="317200" /> <!-- Crucifix of Blessing -->
+	<item id="100" price="317200" /> <!-- Voodoo Doll -->
+	<item id="178" price="531700" /> <!-- Bone Staff -->
+	<item id="101" price="531700" /> <!-- Scroll of Wisdom -->
+	<item id="7885" price="531700" /> <!-- Priest Sword -->
+	<item id="312" price="531700" /> <!-- Branch of Life -->
+	<item id="314" price="531700" /> <!-- Proof of Revenge -->
+	<item id="179" price="837200" /> <!-- Mace of Prayer -->
+	<item id="182" price="837200" /> <!-- Doom Hammer -->
+	<item id="183" price="837200" /> <!-- Mystic Staff -->
+	<item id="185" price="837200" /> <!-- Staff of Mana -->
+	<item id="315" price="837200" /> <!-- Divine Tome -->
+	<item id="83" price="930800" /> <!-- Sword of Magic -->
+	<item id="143" price="930800" /> <!-- Sword of Mystic -->
+	<item id="144" price="930800" /> <!-- Sword of Occult -->
+	<item id="238" price="1257100" /> <!-- Dagger of Mana -->
+	<item id="239" price="1257100" /> <!-- Mystic Knife -->
+	<item id="240" price="1257100" /> <!-- Conjurer's Knife -->
 </list>

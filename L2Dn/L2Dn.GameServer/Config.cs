@@ -4,12 +4,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using L2Dn.Configuration;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using NLog;
 
 namespace L2Dn.GameServer;
@@ -763,7 +763,7 @@ public class Config
 	public static int REQUEST_ID;
 	public static bool RESERVE_HOST_ON_LOGIN = false;
 	public static ImmutableArray<int> PROTOCOL_LIST = ImmutableArray<int>.Empty;
-	public static ServerType SERVER_LIST_TYPE;
+	public static GameServerType SERVER_LIST_TYPE;
 	public static int SERVER_LIST_AGE;
 	public static bool SERVER_LIST_BRACKET;
 	public static bool LOGIN_SERVER_SCHEDULE_RESTART;
@@ -1471,7 +1471,7 @@ public class Config
 		}
 
 		PROTOCOL_LIST = parser.GetIntList("AllowedProtocolRevisions", ';', 447);
-		SERVER_LIST_TYPE = parser.GetEnum("ServerListType", ServerType.Free);
+		SERVER_LIST_TYPE = parser.GetEnum("ServerListType", GameServerType.Classic);
 		SERVER_LIST_AGE = parser.getInt("ServerListAge", 0);
 		SERVER_LIST_BRACKET = parser.getBoolean("ServerListBrackets", false);
 		SCHEDULED_THREAD_POOL_SIZE = parser.getInt("ScheduledThreadPoolSize", Environment.ProcessorCount * 4);

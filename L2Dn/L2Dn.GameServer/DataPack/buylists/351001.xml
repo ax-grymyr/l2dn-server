@@ -6,6 +6,7 @@
 	<item id="6838" price="500000" /> <!-- Circlet of Gludio -->
 	<item id="1540" price="10000" /> <!-- Quick Healing Potion -->
 	<item id="49087" price="20000" count="3" restock_delay="60" /> <!-- Improved Scroll of Escape -->
-	<item id="5593" price="50000" count="10" restock_delay="60" /> <!-- SP Scroll (Low-Grade) -->
-	<item id="5594" price="300000" count="10" restock_delay="60" /> <!-- SP Scroll (Mid-Grade) -->
+	<item id="5593" price="25000" count="10" restock_delay="60" /> <!-- SP Scroll (Low-Grade) -->
+	<item id="5594" price="150000" count="10" restock_delay="60" /> <!-- SP Scroll (Mid-Grade) -->
+	<item id="29668" price="1" count="8" restock_delay="60" /> <!-- Castle Owners' Coin -->
 </list>

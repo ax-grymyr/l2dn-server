@@ -5,10 +5,10 @@
 	</npcs>
 	<item>
 		<ingredient id="6391" count="10" /> <!-- Nectar -->
-		<production id="96952" count="1" /> <!-- Prime Watermelon's Seed -->
+		<production id="6389" count="1" /> <!-- Squash Seed -->
 	</item>
 	<item>
 		<ingredient id="6391" count="20" /> <!-- Nectar -->
-		<production id="96953" count="1" /> <!-- Large Prime Watermelon's Seed -->
+		<production id="6390" count="1" /> <!-- Large Squash Seed -->
 	</item>
 </list>

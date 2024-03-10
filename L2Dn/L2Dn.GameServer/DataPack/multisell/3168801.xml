@@ -89,6 +89,14 @@
 	</item>
 	<item>
 		<!-- Adena -->
+		<ingredient id="57" count="123483" />
+		<!-- Mark of Battle -->
+		<ingredient id="45584" count="140" />
+		<!-- Sealed Rune - Stage 1 -->
+		<production id="70000" count="1" />
+	</item>
+	<item>
+		<!-- Adena -->
 		<ingredient id="57" count="9400000" />
 		<!-- Mark of Battle -->
 		<ingredient id="45584" count="740" />
@@ -110,5 +118,13 @@
 		<ingredient id="45584" count="800" />
 		<!-- Talisman of Battle - Liberate -->
 		<production id="90159" count="1" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient id="57" count="100000" />
+		<!-- Mark of Battle -->
+		<ingredient id="45584" count="114" />
+		<!-- XP/SP Scroll -->
+		<production id="29565" count="1" />
 	</item>
 </list>

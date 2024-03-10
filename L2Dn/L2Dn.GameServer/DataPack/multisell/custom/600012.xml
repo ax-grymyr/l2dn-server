@@ -17,26 +17,56 @@
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="400000" id="57" />
+		<ingredient count="10000000" id="57" />
 		<!-- Blessed Scroll of Resurrection -->
 		<production count="1" id="3936" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="5000" id="57" />
-		<!-- HP Replenishing Potion (Exchangeable)) -->
-		<production count="1" id="1060" />
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Weapon (A-grade) -->
+		<production count="1" id="729" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="1000" id="57" />
-		<!-- Soulstone -->
-		<production count="1" id="1785" />
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Armor (A-grade) -->
+		<production count="1" id="730" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="500" id="57" />
-		<!-- Scroll: Spirit Ore -->
-		<production count="1" id="3031" />
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Weapon (B-grade) -->
+		<production count="1" id="947" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Armor (B-grade) -->
+		<production count="1" id="948" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Weapon (C-grade) -->
+		<production count="1" id="951" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Armor (C-grade) -->
+		<production count="1" id="952" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Armor (D-grade) -->
+		<production count="1" id="956" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000000" id="57" />
+		<!-- Scroll: Enchant Weapon (D-grade) -->
+		<production count="1" id="955" />
 	</item>
 </list>

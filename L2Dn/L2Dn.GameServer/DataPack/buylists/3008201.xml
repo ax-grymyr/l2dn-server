@@ -3,22 +3,22 @@
 	<npcs>
 		<npc>30082</npc> <!-- Denkus -->
 	</npcs>
-	<item id="908" price="11900" /> <!-- Necklace of Wisdom -->
-	<item id="845" price="8890" /> <!-- Cat's Eye Earring -->
-	<item id="877" price="5920" /> <!-- Ring of Wisdom -->
-	<item id="909" price="21300" /> <!-- Blue Diamond Necklace -->
-	<item id="846" price="16000" /> <!-- Coral Earring -->
-	<item id="878" price="10700" /> <!-- Blue Coral Ring -->
-	<item id="910" price="35900" /> <!-- Necklace of Devotion -->
-	<item id="847" price="26900" /> <!-- Red Crescent -->
-	<item id="890" price="18000" /> <!-- Ring of Devotion -->
-	<item id="911" price="56800" /> <!-- Magic Necklace -->
-	<item id="848" price="42600" /> <!-- Earring of Magic -->
-	<item id="879" price="28400" /> <!-- Ring of Magic -->
-	<item id="912" price="85700" /> <!-- Near Forest Necklace -->
-	<item id="849" price="64300" /> <!-- Tiger's Eye -->
-	<item id="880" price="42800" /> <!-- Black Pearl Ring -->
-	<item id="913" price="125000" /> <!-- Elven Necklace -->
-	<item id="850" price="93400" /> <!-- Elven Earring -->
-	<item id="881" price="62300" /> <!-- Elven Ring -->
+	<item id="908" price="13090" /> <!-- Necklace of Wisdom -->
+	<item id="845" price="9779" /> <!-- Cat's Eye -->
+	<item id="877" price="6512" /> <!-- Ring of Wisdom -->
+	<item id="909" price="23430" /> <!-- Blue Diamong Necklace -->
+	<item id="846" price="17600" /> <!-- Coral Earring -->
+	<item id="878" price="11770" /> <!-- Blue Coral Ring -->
+	<item id="910" price="39490" /> <!-- Necklace of Devotion -->
+	<item id="847" price="29590" /> <!-- Red Crescent -->
+	<item id="890" price="19800" /> <!-- Ring of Devotion -->
+	<item id="911" price="62480" /> <!-- Magic Necklace -->
+	<item id="848" price="46860" /> <!-- Earring of Magic -->
+	<item id="879" price="31240" /> <!-- Ring of Magic -->
+	<item id="912" price="94270" /> <!-- Near Forest Necklace -->
+	<item id="849" price="70730" /> <!-- Tige's Eye -->
+	<item id="880" price="47080" /> <!-- Black Pearl Ring -->
+	<item id="913" price="137500" /> <!-- Elven Necklace -->
+	<item id="850" price="102740" /> <!-- Elven Earring -->
+	<item id="881" price="68530" /> <!-- Elven Ring -->
 </list>

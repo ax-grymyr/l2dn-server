@@ -17,36 +17,28 @@
 	<!-- Human Mystic -->
 	<shortcuts classId="10">
 		<page pageId="0">
-			<slot slotId="0" shortcutType="SKILL" shortcutId="1147" shortcutLevel="1" /> <!-- Fireball -->
 			<slot slotId="1" shortcutType="SKILL" shortcutId="1177" shortcutLevel="1" /> <!-- Wind Strike -->
-			<slot slotId="2" shortcutType="SKILL" shortcutId="1184" shortcutLevel="1" /> <!-- Ice Bolt -->
 			<slot slotId="10" shortcutType="SKILL" shortcutId="1216" shortcutLevel="1" /> <!-- Self Heal -->
 		</page>
 	</shortcuts>
 	<!-- Elven Mystic -->
 	<shortcuts classId="25">
 		<page pageId="0">
-			<slot slotId="0" shortcutType="SKILL" shortcutId="1147" shortcutLevel="1" /> <!-- Fireball -->
 			<slot slotId="1" shortcutType="SKILL" shortcutId="1177" shortcutLevel="1" /> <!-- Wind Strike -->
-			<slot slotId="2" shortcutType="SKILL" shortcutId="1184" shortcutLevel="1" /> <!-- Ice Bolt -->
 			<slot slotId="10" shortcutType="SKILL" shortcutId="1216" shortcutLevel="1" /> <!-- Self Heal -->
 		</page>
 	</shortcuts>
 	<!-- Dark Mystic -->
 	<shortcuts classId="38">
 		<page pageId="0">
-			<slot slotId="0" shortcutType="SKILL" shortcutId="1147" shortcutLevel="1" /> <!-- Fireball -->
 			<slot slotId="1" shortcutType="SKILL" shortcutId="1177" shortcutLevel="1" /> <!-- Wind Strike -->
-			<slot slotId="2" shortcutType="SKILL" shortcutId="1184" shortcutLevel="1" /> <!-- Ice Bolt -->
 			<slot slotId="10" shortcutType="SKILL" shortcutId="1216" shortcutLevel="1" /> <!-- Self Heal -->
 		</page>
 	</shortcuts>
 	<!-- Orc Mystic -->
 	<shortcuts classId="49">
 		<page pageId="0">
-			<slot slotId="0" shortcutType="SKILL" shortcutId="1090" shortcutLevel="1" /> <!-- Life Drain -->
-			<slot slotId="1" shortcutType="SKILL" shortcutId="1001" shortcutLevel="1" /> <!-- Battle Cry -->
-			<slot slotId="2" shortcutType="ACTION" shortcutId="2" /> <!-- Attack -->
+			<slot slotId="1" shortcutType="SKILL" shortcutId="1001" shortcutLevel="1" /> <!-- Soul Cry -->
 		</page>
 	</shortcuts>
 	<!-- Kamael -->

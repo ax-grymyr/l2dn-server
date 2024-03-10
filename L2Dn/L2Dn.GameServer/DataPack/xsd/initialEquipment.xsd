@@ -3,7 +3,7 @@
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence minOccurs="1" maxOccurs="1">
-				<xs:element name="equipment" minOccurs="1" maxOccurs="217">
+				<xs:element name="equipment" minOccurs="1" maxOccurs="189">
 					<xs:complexType>
 						<xs:sequence minOccurs="1" maxOccurs="1">
 							<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
@@ -18,7 +18,7 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:nonNegativeInteger">
 									<xs:minInclusive value="0" />
-									<xs:maxInclusive value="225" />
+									<xs:maxInclusive value="192" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>

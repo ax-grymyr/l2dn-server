@@ -5,81 +5,75 @@
 	</npcs>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Great Sword -->
 		<production count="1" id="78" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Heavy War Axe -->
 		<production count="1" id="91" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Spirit's Staff -->
 		<production count="1" id="92" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Keshanberk -->
 		<production count="1" id="142" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Sword of Valhalla -->
 		<production count="1" id="148" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Kris -->
 		<production count="1" id="229" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Twilight Knife -->
 		<production count="1" id="243" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Arthro Nail -->
 		<production count="1" id="267" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Dark Elven Longbow -->
 		<production count="1" id="284" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Great Axe -->
 		<production count="1" id="300" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Spell Breaker -->
 		<production count="1" id="7892" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
+		<ingredient count="4340000" id="57" />
 		<!-- Ice Storm Hammer -->
 		<production count="1" id="7900" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient count="8680000" id="57" />
-		<!-- Ultimate Sword*Ultimate Sword -->
-		<production count="1" id="2612" />
 	</item>
 	<item>
 		<!-- Adena -->
@@ -146,11 +140,5 @@
 		<ingredient count="20741000" id="57" />
 		<!-- Dragon Grinder -->
 		<production count="1" id="270" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient count="20741000" id="57" />
-		<!-- Damascus Sword*Damascus Sword -->
-		<production count="1" id="5706" />
 	</item>
 </list>

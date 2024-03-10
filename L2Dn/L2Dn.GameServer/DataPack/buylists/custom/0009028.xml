@@ -2,5 +2,4 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
 	<item id="78" price="0" /> <!-- Great Sword -->
 	<item id="7883" price="0" /> <!-- Guardian's Sword -->
-	<item id="93431" price="0" /> <!-- Guardian's Sword - Sealed -->
 </list>

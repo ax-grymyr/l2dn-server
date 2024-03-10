@@ -30,6 +30,8 @@
 	<item id="4939" price="0" /> <!-- Recipe: Adamantite Necklace (70%) -->
 	<item id="4940" price="0" /> <!-- Recipe: Zubei's Breastplate (60%) -->
 	<item id="4941" price="0" /> <!-- Recipe: Zubei's Gaiters (60%) -->
+	<item id="4942" price="0" /> <!-- Recipe: Boots of Silence (60%) -->
+	<item id="4943" price="0" /> <!-- Recipe: Guardian's Boots (60%) -->
 	<item id="4944" price="0" /> <!-- Recipe: Avadon Breastplate (60%) -->
 	<item id="4945" price="0" /> <!-- Recipe: Avadon Gaiters (60%) -->
 	<item id="4946" price="0" /> <!-- Recipe: Zubei's Leather Shirt (60%) -->
@@ -40,6 +42,10 @@
 	<item id="4951" price="0" /> <!-- Recipe: Avadon Robe (60%) -->
 	<item id="4952" price="0" /> <!-- Recipe: Avadon Circlet (60%) -->
 	<item id="4953" price="0" /> <!-- Recipe: Sealed Avadon Gloves (60%) -->
+	<item id="4954" price="0" /> <!-- Recipe: Chain Gloves of Silence (60%) -->
+	<item id="4955" price="0" /> <!-- Recipe: Guardian's Gloves (60%) -->
+	<item id="4956" price="0" /> <!-- Recipe: Gloves of Blessing (60%) -->
+	<item id="4957" price="0" /> <!-- Recipe: Boots of Blessing (60%) -->
 	<item id="4958" price="0" /> <!-- Recipe: Sealed Zubei's Boots (60%) -->
 	<item id="4959" price="0" /> <!-- Recipe: Sealed Avadon Boots (60%) -->
 	<item id="4960" price="0" /> <!-- Recipe: Sealed Zubei's Gauntlets (60%) -->

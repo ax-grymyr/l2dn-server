@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using L2Dn.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.GameServer.Db;
 

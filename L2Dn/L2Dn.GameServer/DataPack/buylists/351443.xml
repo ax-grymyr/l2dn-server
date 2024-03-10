@@ -3,7 +3,7 @@
 	<npcs>
 		<npc>35144</npc> <!-- Sanford -->
 	</npcs>
-	<item id="3983" price="500000" />
-	<item id="3984" price="500000" />
-	<item id="3985" price="500000" />
+	<item id="3983" price="250000" />
+	<item id="3984" price="250000" />
+	<item id="3985" price="250000" />
 </list>

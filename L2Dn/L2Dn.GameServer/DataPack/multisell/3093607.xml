@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list applyTaxes="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+<list applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
 	<npcs>
 		<npc>30936</npc> <!-- Pona -->
 	</npcs>
 	<item>
-		<ingredient id="91245" count="1" /> <!-- Dragon Pendant Lv. 2 -->
-		<production id="93305" count="1" /> <!-- Package: Einhasad's Pendant Lv. 2 Sealed -->
+		<ingredient count="1" id="70441" /> <!-- Garnet Lv. 1 -->
+		<ingredient count="1" id="70441" /> <!-- Garnet Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
 	</item>
 	<item>
-		<ingredient id="91246" count="1" /> <!-- Dragon Pendant Lv. 3 -->
-		<production id="93306" count="1" /> <!-- Package: Einhasad's Pendant Lv. 3 Sealed -->
+		<ingredient count="1" id="70446" /> <!-- Jade Lv. 1 -->
+		<ingredient count="1" id="70446" /> <!-- Jade Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
 	</item>
 	<item>
-		<ingredient id="91247" count="1" /> <!-- Dragon Pendant Lv. 4 -->
-		<production id="93307" count="1" /> <!-- Package: Einhasad's Pendant Lv. 4 Sealed -->
+		<ingredient count="1" id="70451" /> <!-- Ruby Lv. 1 -->
+		<ingredient count="1" id="70451" /> <!-- Ruby Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="1" id="70456" /> <!-- Sapphire Lv. 1 -->
+		<ingredient count="1" id="70456" /> <!-- Sapphire Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="1" id="70461" /> <!-- Diamond Lv. 1 -->
+		<ingredient count="1" id="70461" /> <!-- Diamond Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="1" id="70466" /> <!-- Pearl Lv. 1 -->
+		<ingredient count="1" id="70466" /> <!-- Pearl Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="1" id="70471" /> <!-- Vital Stone Lv. 1 -->
+		<ingredient count="1" id="70471" /> <!-- Vital Stone Lv. 1 -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="2" id="70487" /> <!-- Topaz Chest -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="2" id="90936" /> <!-- Aquamarine Chest -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="2" id="70821" /> <!-- Red Cat's Eye Chest -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="2" id="70825" /> <!-- Blue Cat's Eye Chest -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
+	</item>
+	<item>
+		<ingredient count="2" id="71435" /> <!-- Emerald Chest -->
+		<production count="1" id="71438" /> <!-- Jewel Coin -->
 	</item>
 </list>

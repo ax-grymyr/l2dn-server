@@ -3,7 +3,7 @@
 	<npcs>
 		<npc>35228</npc> <!-- Morrison -->
 	</npcs>
-	<item id="4009" price="500000" />
-	<item id="4010" price="500000" />
-	<item id="4011" price="500000" />
+	<item id="4009" price="250000" />
+	<item id="4010" price="250000" />
+	<item id="4011" price="250000" />
 </list>

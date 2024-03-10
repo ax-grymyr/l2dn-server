@@ -19,7 +19,7 @@ parentClassId = CLASS ID PARENT
 
 type = SKILL TREE types like:
 - classSkillTree
-- collectSkillTree
+- certificationSkillTree
 - fishingSkillTree
 - gameMasterAuraSkillTree
 - gameMasterSkillTree

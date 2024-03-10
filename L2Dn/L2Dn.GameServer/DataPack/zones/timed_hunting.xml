@@ -1,47 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
 	<!-- Timed Hunting Zones -->
-	<zone name="primeval_isle_hz" type="TimedHuntingZone" shape="Cuboid" minZ="-16000" maxZ="10000">
-		<node X="0" Y="-32768" />
-		<node X="32767" Y="-1" />
-	</zone>
-	<zone name="alligator_island" type="TimedHuntingZone" shape="NPoly" minZ="-5000" maxZ="3350">
-		<node X="100275" Y="166011" />
-		<node X="128461" Y="164511" />
-		<node X="131253" Y="192880" />
-		<node X="100219" Y="193094" />
-	</zone>
-	<zone name="antharas_lair" type="TimedHuntingZone" shape="Cuboid" minZ="-6000" maxZ="1000">
-		<node X="133115" Y="107000" />
-		<node X="156000" Y="124000" />
-	</zone>
-	<zone name="frost_castle" type="TimedHuntingZone" shape="Cuboid" minZ="-16000" maxZ="10000">
-		<node X="130224" Y="170000" />
-		<node X="172224" Y="137000" />
-	</zone>
-	<zone name="Glakias_castle" type="TimedHuntingZone" shape="Cylinder" minZ="-13209" maxZ="-10209" rad="4000">
-		<node X="114724" Y="-114789" />
-	</zone>
-	<zone name="fg_entrance_thz" type="TimedHuntingZone" shape="Cuboid" minZ="-14300" maxZ="-11300">
-		<node X="89000" Y="230000" />
-		<node X="93000" Y="239000" />
-	</zone>
-	<zone name="fg_garden_of_eva_thz" type="TimedHuntingZone" shape="Cuboid" minZ="-14000" maxZ="-5100">
-		<node X="74000" Y="257000" />
-		<node X="90000" Y="245000" />
-	</zone>
-	<zone name="fg_primeval_garden_thz" type="TimedHuntingZone" shape="Cuboid" minZ="-14000" maxZ="-10500">
-		<node X="-122615" Y="220400" />
-		<node X="-107780" Y="206100" />
-	</zone>
-	<zone name="fg_authority_thz" type="TimedHuntingZone" shape="Cuboid" minZ="-6000" maxZ="-3000">
-		<node X="-62683" Y="74862" />
-		<node X="-42266" Y="87907" />
-	</zone>
-	<zone name="aztacan_temple" type="TimedHuntingZone" shape="NPoly" minZ="-15900" maxZ="-12000">
-		<node X="25402" Y="226161" />
-		<node X="25793" Y="213368" />
-		<node X="7582" Y="213285" />
-		<node X="7742" Y="226214" />
+	<zone name="pirate_tomb_hz" type="TimedHuntingZone" shape="Cuboid" minZ="-16000" maxZ="-5000">
+		<node X="0" Y="-98304" />
+		<node X="32767" Y="-65537" />
 	</zone>
 </list>

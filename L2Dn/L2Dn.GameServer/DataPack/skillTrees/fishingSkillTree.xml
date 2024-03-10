@@ -3,66 +3,66 @@
 	<skillTree type="fishingSkillTree">
 		<!-- Confirmed CT2.5 -->
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="1" getLevel="10" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="2" getLevel="20" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="3" getLevel="30" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="4" getLevel="40" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="5" getLevel="50" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="6" getLevel="60" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Warehouse" skillId="1371" skillLevel="7" getLevel="70" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="1" getLevel="10" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="2" getLevel="20" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="3" getLevel="28" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="4" getLevel="36" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="5" getLevel="43" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="6" getLevel="49" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="7" getLevel="55" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Dwarven Craft" skillId="1368" skillLevel="8" getLevel="62" learnedByNpc="true">
 			<race>DWARF</race>
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Trade" skillId="1370" skillLevel="1" getLevel="40" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Trade" skillId="1370" skillLevel="2" getLevel="55" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 		<skill skillName="Expand Trade" skillId="1370" skillLevel="3" getLevel="65" learnedByNpc="true">
-			<item id="45481,93614" count="2822" /> <!-- Fresh Blue Mackerel -->
+			<item id="45481" count="2822" /> <!-- Fresh Blue Mackerel -->
 		</skill>
 	</skillTree>
 </list>

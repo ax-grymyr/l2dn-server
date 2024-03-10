@@ -58,41 +58,4 @@
 		<node X="-98296" Y="-262136" />
 		<node X="-65544" Y="-229384" />
 	</zone>
-	
-	<!-- Dwelling of Spirits zones -->
-	<zone id="202201" name="dwelling_portal_enter_fire" type="NoLandingZone" shape="Cuboid" minZ="-12209" maxZ="-10700">
-		<node X="-115236" Y="-77408" />
-		<node X="-115617" Y="-77631" />
-	</zone>
-	<zone id="202202" name="dwelling_portal_enter_earth" type="NoLandingZone" shape="Cuboid" minZ="-12209" maxZ="-10700">
-		<node X="-113417" Y="-77633" />
-		<node X="-113032" Y="-77411" />
-	</zone>
-	<zone id="202203" name="dwelling_portal_enter_water" type="NoLandingZone" shape="NPoly" minZ="-12209" maxZ="-10700">
-		<node X="-115160" Y="-79013" />
-		<node X="-115333" Y="-79182" />
-		<node X="-115216" Y="-79282" />
-		<node X="-115053" Y="-79121" />
-	</zone>
-	<zone id="202204" name="dwelling_portal_enter_wind" type="NoLandingZone" shape="NPoly" minZ="-12209" maxZ="-10700">
-		<node X="-113596" Y="-79120" />
-		<node X="-113436" Y="-79275" />
-		<node X="-113325" Y="-79176" />
-		<node X="-113490" Y="-79012" />
-	</zone>
-	<zone id="202205" name="dwelling_portal_return_fire" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
-		<node X="202349" Y="170533" />
-	</zone>
-	<zone id="202206" name="dwelling_portal_return_earth" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
-		<node X="222065" Y="192767" />
-	</zone>
-	<zone id="202207" name="dwelling_portal_return_water" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
-		<node X="222127" Y="170488" />
-	</zone>
-	<zone id="202208" name="dwelling_portal_return_wind" type="NoLandingZone" shape="Cylinder" minZ="-15515" maxZ="-15400" rad="230">
-		<node X="212855" Y="181242" />
-	</zone>
-	<zone id="21400000" name="dwelling_central" type="NoLandingZone" shape="Cylinder" minZ="-12209" maxZ="-10700" rad="1000">
-		<node X="-114339" Y="-78005" />
-	</zone>
 </list>

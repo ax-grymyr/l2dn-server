@@ -16,6 +16,7 @@
 
   "GameServerParams": {
     "ServerId": 1,
+    "ServerType": "Classic", // Main, Essence, Classic
     "AgeLimit": 0,
     "IsPvpServer": false,
     "IsTestServer": false,

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<!-- Catacombs of the Witch -->
 	<spawn>
@@ -10,10 +10,10 @@
 				<node x="141569" y="80007" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -24,10 +24,10 @@
 				<node x="142874" y="79950" />
 			</territory>
 		</territories>
-		<npc id="21612" count="3" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21616" count="3" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="3" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21611" count="3" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21612" count="3" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="3" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="3" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="3" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -38,10 +38,10 @@
 				<node x="145102" y="80003" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -52,11 +52,11 @@
 				<node x="140464" y="82423" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -67,15 +67,15 @@
 				<node x="142524" y="83347" />
 			</territory>
 		</territories>
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -86,11 +86,11 @@
 				<node x="145076" y="82659" />
 			</territory>
 		</territories>
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -101,10 +101,10 @@
 				<node x="140482" y="84596" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -115,11 +115,11 @@
 				<node x="142515" y="84614" />
 			</territory>
 		</territories>
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -130,10 +130,10 @@
 				<node x="145094" y="84576" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -144,11 +144,11 @@
 				<node x="148876" y="80819" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -159,10 +159,10 @@
 				<node x="150748" y="80030" />
 			</territory>
 		</territories>
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -173,11 +173,11 @@
 				<node x="146125" y="80956" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -188,11 +188,11 @@
 				<node x="146151" y="82815" />
 			</territory>
 		</territories>
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -203,15 +203,15 @@
 				<node x="148645" y="82142" />
 			</territory>
 		</territories>
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -222,10 +222,10 @@
 				<node x="146177" y="84601" />
 			</territory>
 		</territories>
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -236,11 +236,11 @@
 				<node x="147569" y="84615" />
 			</territory>
 		</territories>
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -251,10 +251,10 @@
 				<node x="150780" y="84585" />
 			</territory>
 		</territories>
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -265,10 +265,10 @@
 				<node x="140443" y="85684" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -279,11 +279,11 @@
 				<node x="142248" y="85693" />
 			</territory>
 		</territories>
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -294,11 +294,11 @@
 				<node x="144097" y="86463" />
 			</territory>
 		</territories>
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -309,10 +309,10 @@
 				<node x="145102" y="85700" />
 			</territory>
 		</territories>
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -323,11 +323,11 @@
 				<node x="140432" y="87115" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -338,15 +338,15 @@
 				<node x="142916" y="89436" />
 			</territory>
 		</territories>
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -357,11 +357,11 @@
 				<node x="144338" y="88411" />
 			</territory>
 		</territories>
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -372,10 +372,10 @@
 				<node x="140475" y="90309" />
 			</territory>
 		</territories>
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -386,10 +386,10 @@
 				<node x="145108" y="90275" />
 			</territory>
 		</territories>
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -400,10 +400,10 @@
 				<node x="146171" y="79996" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -414,10 +414,10 @@
 				<node x="146178" y="85698" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -428,15 +428,15 @@
 				<node x="149482" y="86968" />
 			</territory>
 		</territories>
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -447,10 +447,10 @@
 				<node x="150787" y="85664" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -461,11 +461,11 @@
 				<node x="147265" y="87573" />
 			</territory>
 		</territories>
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -476,10 +476,10 @@
 				<node x="149498" y="88089" />
 			</territory>
 		</territories>
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -490,15 +490,15 @@
 				<node x="146202" y="88909" />
 			</territory>
 		</territories>
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Sage -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21618" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -509,10 +509,10 @@
 				<node x="149640" y="89184" />
 			</territory>
 		</territories>
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -523,10 +523,10 @@
 				<node x="146167" y="90279" />
 			</territory>
 		</territories>
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -537,11 +537,11 @@
 				<node x="148009" y="89974" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -552,10 +552,10 @@
 				<node x="150776" y="90270" />
 			</territory>
 		</territories>
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Archbishop -->
-		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Netherworld Guardian -->
-		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Guardian -->
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21613" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21617" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21615" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -566,10 +566,10 @@
 				<node x="151400" y="87560" />
 			</territory>
 		</territories>
-		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Royal Guard -->
-		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Graveyard Sage -->
-		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Assassin -->
-		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Lilim Soldier -->
-		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" /> <!-- Nephilim Praetorian -->
+		<npc id="21619" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21616" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21611" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21612" count="2" respawnTime="146sec" respawnRandom="40sec" />
+		<npc id="21614" count="2" respawnTime="146sec" respawnRandom="40sec" />
 	</spawn>
 </list>

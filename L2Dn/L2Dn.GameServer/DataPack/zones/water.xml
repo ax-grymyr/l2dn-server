@@ -1237,6 +1237,10 @@
 		<node X="98304" Y="27767" />
 		<node X="120320" Y="32767" />
 	</zone>
+	<zone name="23_19_water1" type="WaterZone" shape="Cuboid" minZ="-5656" maxZ="-4656">
+		<node X="103091" Y="37760" />
+		<node X="128091" Y="62760" />
+	</zone>
 	<zone name="23_20_water1" type="WaterZone" shape="Cuboid" minZ="-7184" maxZ="-4864">
 		<node X="110208" Y="84224" />
 		<node X="110848" Y="84864" />

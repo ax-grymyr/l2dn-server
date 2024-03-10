@@ -2,5 +2,16 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skillTrees.xsd">
 	<skillTree type="classSkillTree">
 		<skill skillName="Lucky" skillId="194" skillLevel="1" getLevel="1" autoGet="true" />
+		
+		<skill skillName="Pirate" skillId="1800" skillLevel="1" getLevel="45" autoGet="true" />
+		<skill skillName="Dark Assassin" skillId="1801" skillLevel="1" getLevel="60" autoGet="true" />
+		<skill skillName="White Assassin" skillId="1802" skillLevel="1" getLevel="70" autoGet="true" />
+		
+		<skill skillName="Disarm" skillId="51247" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
+		<skill skillName="Armor Break" skillId="51248" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
+		<skill skillName="Spell Break" skillId="51249" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
+		<skill skillName="Jump" skillId="51250" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
+		<skill skillName="Blaze" skillId="51251" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
+		<skill skillName="Berserker Mode" skillId="51252" skillLevel="1" getLevel="80" levelUpSp="0" autoGet="false" learnedByFS="true" />
 	</skillTree>
 </list>

@@ -11,10 +11,10 @@
 		<physicalAbnormalResist>10</physicalAbnormalResist>
 		<magicAbnormalResist>10</magicAbnormalResist>
 		<creationPoints>
-			<node x="-71315" y="257165" z="-3112" />
-			<node x="-71657" y="256818" z="-3112" />
-			<node x="-71562" y="256785" z="-3112" />
-			<node x="-71281" y="257016" z="-3112" />
+			<node x="-71338" y="258271" z="-3104" />
+			<node x="-71417" y="258270" z="-3104" />
+			<node x="-71453" y="258305" z="-3104" />
+			<node x="-71467" y="258378" z="-3104" />
 		</creationPoints>
 		<basePAtk>4</basePAtk>
 		<baseCritRate>4</baseCritRate>

@@ -22,14 +22,12 @@
 								<xs:complexType>
 									<xs:attribute name="count" type="xs:positiveInteger" use="required" />
 									<xs:attribute name="fee" type="xs:integer" use="required" />
-									<xs:attribute name="l2coinfee" type="xs:integer" use="optional" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="cancel" minOccurs="1" maxOccurs="1">
 								<xs:complexType>
 									<xs:attribute name="count" type="xs:integer" use="required" />
 									<xs:attribute name="fee" type="xs:integer" use="required" />
-									<xs:attribute name="l2coinfee_cancel" type="xs:integer" use="optional" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="duration" minOccurs="0" maxOccurs="1">
@@ -45,7 +43,10 @@
 							</xs:element>
 							<xs:element name="classId" minOccurs="0" maxOccurs="unbounded">
 								<xs:simpleType>
-									<xs:restriction base="xs:string"/>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:minInclusive value="0" />
+										<xs:maxInclusive value="189" />
+									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 						</xs:sequence>
@@ -53,7 +54,6 @@
 						<xs:attribute name="dyeName" type="xs:token" />
 						<xs:attribute name="dyeItemId" type="xs:positiveInteger" />
 						<xs:attribute name="dyeLevel" type="xs:positiveInteger" />
-						<xs:attribute name="patternLevel" type="xs:nonNegativeInteger" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

@@ -5,6 +5,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.Model;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -148,7 +149,13 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteDouble(charInfoPackage.getCurrentMp());
 			writer.WriteInt64(charInfoPackage.getSp());
 			writer.WriteInt64(charInfoPackage.getExp());
-			writer.WriteDouble((float) (charInfoPackage.getExp() - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())) / (ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel() + 1) - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())));
+			
+			writer.WriteDouble(1.0 *
+			                   (charInfoPackage.getExp() - ExperienceData.getInstance()
+				                   .getExpForLevel(charInfoPackage.getLevel())) /
+			                   (ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel() + 1) -
+			                    ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())));
+			
 			writer.WriteInt32(charInfoPackage.getLevel());
 			writer.WriteInt32(charInfoPackage.getReputation());
 			writer.WriteInt32(charInfoPackage.getPkKills());
@@ -205,7 +212,11 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(charInfoPackage.getLastAccess()?.getEpochSecond() ?? 0); // 235 - last play time
 			writer.WriteByte(0); // 338
 			writer.WriteInt32(charInfoPackage.getHairColor() + 1); // 338 - DK color.
-			writer.WriteByte((byte)(charInfoPackage.getClassId() == (CharacterClass)217 ? 1 : charInfoPackage.getClassId() == (CharacterClass)218 ? 2 : charInfoPackage.getClassId() == (CharacterClass)219 ? 3 : charInfoPackage.getClassId() == (CharacterClass)220 ? 4 : 0)); // 362
+
+			writer.WriteByte((byte)(charInfoPackage.getClassId() == CharacterClass.ORC_LANCER ? 1 :
+				charInfoPackage.getClassId() == CharacterClass.RIDER ? 2 :
+				charInfoPackage.getClassId() == CharacterClass.DRAGOON ? 3 :
+				charInfoPackage.getClassId() == CharacterClass.VANGUARD_RIDER ? 4 : 0)); // 362
 		}
 	}
 }

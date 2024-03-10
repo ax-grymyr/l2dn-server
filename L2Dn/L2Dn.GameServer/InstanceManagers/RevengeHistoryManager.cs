@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Revenge;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 

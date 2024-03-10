@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using L2Dn.Packets;
 using NLog;
 

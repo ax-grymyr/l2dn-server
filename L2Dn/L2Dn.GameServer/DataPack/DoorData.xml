@@ -2308,20 +2308,6 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 15_18 -->
-	<door id="15180100" name="Instant_du02_s.penetration.Instant_du02_em_02">
-		<nodes nodeZ="-9432">
-			<node x="-147210" y="13089" />
-			<node x="-147203" y="13215" />
-			<node x="-148111" y="13219" />
-			<node x="-148116" y="13090" />
-		</nodes>
-		<location x="-147664" y="13152" z="-9424" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="open" />
-	</door>
-	
 	<!-- 15_24 -->
 	<door id="15240001" name="Hellfire_Du_Boss_S.Hellfire_Boss_door">
 		<nodes nodeZ="-10250">
@@ -2773,7 +2759,7 @@
 			<node x="-88132" y="-142865" />
 		</nodes>
 		<location x="-87953" y="-142871" z="-9032" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2785,7 +2771,7 @@
 			<node x="-88133" y="-145477" />
 		</nodes>
 		<location x="-87954" y="-145483" z="-9032" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2797,7 +2783,7 @@
 			<node x="-88133" y="-148629" />
 		</nodes>
 		<location x="-87954" y="-148635" z="-9025" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2809,7 +2795,7 @@
 			<node x="-88019" y="-151271" />
 		</nodes>
 		<location x="-87780" y="-151317" z="-8987" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2821,7 +2807,7 @@
 			<node x="-88962" y="-140873" />
 		</nodes>
 		<location x="-88884" y="-141304" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2833,7 +2819,7 @@
 			<node x="-88967" y="-141763" />
 		</nodes>
 		<location x="-88615" y="-142001" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2845,7 +2831,7 @@
 			<node x="-88345" y="-142343" />
 		</nodes>
 		<location x="-87917" y="-142287" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2857,7 +2843,7 @@
 			<node x="-87485" y="-142353" />
 		</nodes>
 		<location x="-87225" y="-142010" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2869,7 +2855,7 @@
 			<node x="-86884" y="-141744" />
 		</nodes>
 		<location x="-86941" y="-141317" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2881,7 +2867,7 @@
 			<node x="-86869" y="-140882" />
 		</nodes>
 		<location x="-87212" y="-140616" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2893,7 +2879,7 @@
 			<node x="-87469" y="-140268" />
 		</nodes>
 		<location x="-87909" y="-140336" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2905,7 +2891,7 @@
 			<node x="-88336" y="-140264" />
 		</nodes>
 		<location x="-88601" y="-140606" z="-8948" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2917,7 +2903,7 @@
 			<node x="-87568" y="-148032" />
 		</nodes>
 		<location x="-87510" y="-148298" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2929,7 +2915,7 @@
 			<node x="-87313" y="-147423" />
 		</nodes>
 		<location x="-87386" y="-147793" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2941,7 +2927,7 @@
 			<node x="-87308" y="-146713" />
 		</nodes>
 		<location x="-87251" y="-147074" z="-8941" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2953,7 +2939,7 @@
 			<node x="-87575" y="-146104" />
 		</nodes>
 		<location x="-87376" y="-146353" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2965,7 +2951,7 @@
 			<node x="-87567" y="-145584" />
 		</nodes>
 		<location x="-87509" y="-145832" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2977,7 +2963,7 @@
 			<node x="-88435" y="-145577" />
 		</nodes>
 		<location x="-88382" y="-145832" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -2989,7 +2975,7 @@
 			<node x="-88431" y="-146046" />
 		</nodes>
 		<location x="-88506" y="-146336" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -3001,7 +2987,7 @@
 			<node x="-88706" y="-146666" />
 		</nodes>
 		<location x="-88641" y="-147056" z="-8941" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -3013,7 +2999,7 @@
 			<node x="-88710" y="-147458" />
 		</nodes>
 		<location x="-88516" y="-147777" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -3025,1285 +3011,7 @@
 			<node x="-88439" y="-148047" />
 		</nodes>
 		<location x="-88383" y="-148298" z="-8955" />
-		<stats basePDef="100000" baseHpMax="100000000" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	
-	<!-- 17_15 -->
-	<door id="17150001" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85967" y="-86412" />
-			<node x="-85841" y="-86412" />
-			<node x="-85841" y="-86389" />
-			<node x="-85967" y="-86390" />
-		</nodes>
-		<location x="-85904" y="-86402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150002" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83967" y="-86412" />
-			<node x="-83841" y="-86412" />
-			<node x="-83841" y="-86389" />
-			<node x="-83967" y="-86390" />
-		</nodes>
-		<location x="-83904" y="-86402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150003" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81967" y="-86412" />
-			<node x="-81841" y="-86412" />
-			<node x="-81841" y="-86389" />
-			<node x="-81967" y="-86390" />
-		</nodes>
-		<location x="-81904" y="-86402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150004" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79967" y="-86412" />
-			<node x="-79841" y="-86412" />
-			<node x="-79841" y="-86389" />
-			<node x="-79967" y="-86390" />
-		</nodes>
-		<location x="-79904" y="-86402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150005" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77967" y="-86412" />
-			<node x="-77841" y="-86412" />
-			<node x="-77841" y="-86389" />
-			<node x="-77967" y="-86390" />
-		</nodes>
-		<location x="-77904" y="-86402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150006" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86508" y="-85870" />
-			<node x="-86486" y="-85869" />
-			<node x="-86488" y="-85746" />
-			<node x="-86508" y="-85746" />
-		</nodes>
-		<location x="-86498" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150007" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-85320" y="-85868" />
-			<node x="-85300" y="-85868" />
-			<node x="-85300" y="-85747" />
-			<node x="-85320" y="-85746" />
-		</nodes>
-		<location x="-85310" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150008" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-84508" y="-85870" />
-			<node x="-84486" y="-85869" />
-			<node x="-84488" y="-85746" />
-			<node x="-84508" y="-85746" />
-		</nodes>
-		<location x="-84498" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150009" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-83320" y="-85868" />
-			<node x="-83300" y="-85868" />
-			<node x="-83300" y="-85747" />
-			<node x="-83320" y="-85746" />
-		</nodes>
-		<location x="-83310" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150010" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-82508" y="-85870" />
-			<node x="-82486" y="-85869" />
-			<node x="-82488" y="-85746" />
-			<node x="-82508" y="-85746" />
-		</nodes>
-		<location x="-82498" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150011" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-81320" y="-85868" />
-			<node x="-81300" y="-85868" />
-			<node x="-81300" y="-85747" />
-			<node x="-81320" y="-85746" />
-		</nodes>
-		<location x="-81310" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150012" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-80508" y="-85870" />
-			<node x="-80486" y="-85869" />
-			<node x="-80488" y="-85746" />
-			<node x="-80508" y="-85746" />
-		</nodes>
-		<location x="-80498" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150013" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-79320" y="-85868" />
-			<node x="-79300" y="-85868" />
-			<node x="-79300" y="-85747" />
-			<node x="-79320" y="-85746" />
-		</nodes>
-		<location x="-79310" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150014" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-78508" y="-85870" />
-			<node x="-78486" y="-85869" />
-			<node x="-78488" y="-85746" />
-			<node x="-78508" y="-85746" />
-		</nodes>
-		<location x="-78498" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150015" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-77320" y="-85868" />
-			<node x="-77300" y="-85868" />
-			<node x="-77300" y="-85747" />
-			<node x="-77320" y="-85746" />
-		</nodes>
-		<location x="-77310" y="-85808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150016" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85965" y="-85224" />
-			<node x="-85841" y="-85225" />
-			<node x="-85841" y="-85205" />
-			<node x="-85965" y="-85204" />
-		</nodes>
-		<location x="-85904" y="-85214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150017" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83965" y="-85224" />
-			<node x="-83841" y="-85225" />
-			<node x="-83841" y="-85205" />
-			<node x="-83965" y="-85204" />
-		</nodes>
-		<location x="-83904" y="-85214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150018" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81965" y="-85224" />
-			<node x="-81841" y="-85225" />
-			<node x="-81841" y="-85205" />
-			<node x="-81965" y="-85204" />
-		</nodes>
-		<location x="-81904" y="-85214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150019" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79965" y="-85224" />
-			<node x="-79841" y="-85225" />
-			<node x="-79841" y="-85205" />
-			<node x="-79965" y="-85204" />
-		</nodes>
-		<location x="-79904" y="-85214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150020" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77965" y="-85224" />
-			<node x="-77841" y="-85225" />
-			<node x="-77841" y="-85205" />
-			<node x="-77965" y="-85204" />
-		</nodes>
-		<location x="-77904" y="-85214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150021" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85969" y="-84414" />
-			<node x="-85840" y="-84415" />
-			<node x="-85839" y="-84391" />
-			<node x="-85968" y="-84389" />
-		</nodes>
-		<location x="-85904" y="-84402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150022" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83969" y="-84414" />
-			<node x="-83840" y="-84415" />
-			<node x="-83839" y="-84391" />
-			<node x="-83968" y="-84389" />
-		</nodes>
-		<location x="-83904" y="-84402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150023" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81969" y="-84414" />
-			<node x="-81840" y="-84415" />
-			<node x="-81839" y="-84391" />
-			<node x="-81968" y="-84389" />
-		</nodes>
-		<location x="-81904" y="-84402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150024" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79969" y="-84414" />
-			<node x="-79840" y="-84415" />
-			<node x="-79839" y="-84391" />
-			<node x="-79968" y="-84389" />
-		</nodes>
-		<location x="-79904" y="-84402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150025" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77969" y="-84414" />
-			<node x="-77840" y="-84415" />
-			<node x="-77839" y="-84391" />
-			<node x="-77968" y="-84389" />
-		</nodes>
-		<location x="-77904" y="-84402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150026" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86516" y="-83881" />
-			<node x="-86486" y="-83882" />
-			<node x="-86488" y="-83729" />
-			<node x="-86515" y="-83729" />
-		</nodes>
-		<location x="-86498" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150027" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-85321" y="-83876" />
-			<node x="-85299" y="-83875" />
-			<node x="-85298" y="-83736" />
-			<node x="-85321" y="-83737" />
-		</nodes>
-		<location x="-85310" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150028" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-84516" y="-83881" />
-			<node x="-84486" y="-83882" />
-			<node x="-84488" y="-83729" />
-			<node x="-84515" y="-83729" />
-		</nodes>
-		<location x="-84498" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150029" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-83321" y="-83876" />
-			<node x="-83299" y="-83875" />
-			<node x="-83298" y="-83736" />
-			<node x="-83321" y="-83737" />
-		</nodes>
-		<location x="-83310" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150030" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-82516" y="-83881" />
-			<node x="-82486" y="-83882" />
-			<node x="-82488" y="-83729" />
-			<node x="-82515" y="-83729" />
-		</nodes>
-		<location x="-82498" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150031" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-81321" y="-83876" />
-			<node x="-81299" y="-83875" />
-			<node x="-81298" y="-83736" />
-			<node x="-81321" y="-83737" />
-		</nodes>
-		<location x="-81310" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150032" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-80516" y="-83881" />
-			<node x="-80486" y="-83882" />
-			<node x="-80488" y="-83729" />
-			<node x="-80515" y="-83729" />
-		</nodes>
-		<location x="-80498" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150033" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-79321" y="-83876" />
-			<node x="-79299" y="-83875" />
-			<node x="-79298" y="-83736" />
-			<node x="-79321" y="-83737" />
-		</nodes>
-		<location x="-79310" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150034" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-78516" y="-83881" />
-			<node x="-78486" y="-83882" />
-			<node x="-78488" y="-83729" />
-			<node x="-78515" y="-83729" />
-		</nodes>
-		<location x="-78498" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150035" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-77321" y="-83876" />
-			<node x="-77299" y="-83875" />
-			<node x="-77298" y="-83736" />
-			<node x="-77321" y="-83737" />
-		</nodes>
-		<location x="-77310" y="-83808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150036" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85968" y="-83228" />
-			<node x="-85840" y="-83229" />
-			<node x="-85840" y="-83199" />
-			<node x="-85968" y="-83200" />
-		</nodes>
-		<location x="-85904" y="-83214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150037" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83968" y="-83228" />
-			<node x="-83840" y="-83229" />
-			<node x="-83840" y="-83199" />
-			<node x="-83968" y="-83200" />
-		</nodes>
-		<location x="-83904" y="-83214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150038" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81968" y="-83228" />
-			<node x="-81840" y="-83229" />
-			<node x="-81840" y="-83199" />
-			<node x="-81968" y="-83200" />
-		</nodes>
-		<location x="-81904" y="-83214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150039" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79968" y="-83228" />
-			<node x="-79840" y="-83229" />
-			<node x="-79840" y="-83199" />
-			<node x="-79968" y="-83200" />
-		</nodes>
-		<location x="-79904" y="-83214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="10" />
-	</door>
-	<door id="17150040" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77968" y="-83228" />
-			<node x="-77840" y="-83229" />
-			<node x="-77840" y="-83199" />
-			<node x="-77968" y="-83200" />
-		</nodes>
-		<location x="-77904" y="-83214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150041" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85984" y="-82416" />
-			<node x="-85824" y="-82416" />
-			<node x="-85824" y="-82392" />
-			<node x="-85984" y="-82392" />
-		</nodes>
-		<location x="-85904" y="-82402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150042" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83984" y="-82416" />
-			<node x="-83824" y="-82416" />
-			<node x="-83824" y="-82392" />
-			<node x="-83984" y="-82392" />
-		</nodes>
-		<location x="-83904" y="-82402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150043" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81984" y="-82416" />
-			<node x="-81824" y="-82416" />
-			<node x="-81824" y="-82392" />
-			<node x="-81984" y="-82392" />
-		</nodes>
-		<location x="-81904" y="-82402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150044" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79984" y="-82416" />
-			<node x="-79824" y="-82416" />
-			<node x="-79824" y="-82392" />
-			<node x="-79984" y="-82392" />
-		</nodes>
-		<location x="-79904" y="-82402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150045" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77984" y="-82416" />
-			<node x="-77824" y="-82416" />
-			<node x="-77824" y="-82392" />
-			<node x="-77984" y="-82392" />
-		</nodes>
-		<location x="-77904" y="-82402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150046" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86508" y="-81880" />
-			<node x="-86487" y="-81879" />
-			<node x="-86488" y="-81745" />
-			<node x="-86507" y="-81744" />
-		</nodes>
-		<location x="-86498" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150047" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-85325" y="-81888" />
-			<node x="-85297" y="-81888" />
-			<node x="-85298" y="-81728" />
-			<node x="-85323" y="-81728" />
-		</nodes>
-		<location x="-85310" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="14" randomTime="10" />
-	</door>
-	<door id="17150048" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-84508" y="-81880" />
-			<node x="-84487" y="-81879" />
-			<node x="-84488" y="-81745" />
-			<node x="-84507" y="-81744" />
-		</nodes>
-		<location x="-84498" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150049" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-83325" y="-81888" />
-			<node x="-83297" y="-81888" />
-			<node x="-83298" y="-81728" />
-			<node x="-83323" y="-81728" />
-		</nodes>
-		<location x="-83310" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150050" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-82508" y="-81880" />
-			<node x="-82487" y="-81879" />
-			<node x="-82488" y="-81745" />
-			<node x="-82507" y="-81744" />
-		</nodes>
-		<location x="-82498" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150051" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-81325" y="-81888" />
-			<node x="-81297" y="-81888" />
-			<node x="-81298" y="-81728" />
-			<node x="-81323" y="-81728" />
-		</nodes>
-		<location x="-81310" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="23" randomTime="10" />
-	</door>
-	<door id="17150052" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-80508" y="-81880" />
-			<node x="-80487" y="-81879" />
-			<node x="-80488" y="-81745" />
-			<node x="-80507" y="-81744" />
-		</nodes>
-		<location x="-80498" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150053" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-79325" y="-81888" />
-			<node x="-79297" y="-81888" />
-			<node x="-79298" y="-81728" />
-			<node x="-79323" y="-81728" />
-		</nodes>
-		<location x="-79310" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150054" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-78508" y="-81880" />
-			<node x="-78487" y="-81879" />
-			<node x="-78488" y="-81745" />
-			<node x="-78507" y="-81744" />
-		</nodes>
-		<location x="-78498" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150055" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-77325" y="-81888" />
-			<node x="-77297" y="-81888" />
-			<node x="-77298" y="-81728" />
-			<node x="-77323" y="-81728" />
-		</nodes>
-		<location x="-77310" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150056" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85965" y="-81230" />
-			<node x="-85841" y="-81230" />
-			<node x="-85840" y="-81200" />
-			<node x="-85968" y="-81200" />
-		</nodes>
-		<location x="-85904" y="-81214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150057" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83965" y="-81230" />
-			<node x="-83841" y="-81230" />
-			<node x="-83840" y="-81200" />
-			<node x="-83968" y="-81200" />
-		</nodes>
-		<location x="-83904" y="-81214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150058" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81965" y="-81230" />
-			<node x="-81841" y="-81230" />
-			<node x="-81840" y="-81200" />
-			<node x="-81968" y="-81200" />
-		</nodes>
-		<location x="-81904" y="-81214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="18" randomTime="10" />
-	</door>
-	<door id="17150059" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79965" y="-81230" />
-			<node x="-79841" y="-81230" />
-			<node x="-79840" y="-81200" />
-			<node x="-79968" y="-81200" />
-		</nodes>
-		<location x="-79904" y="-81214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150060" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77965" y="-81230" />
-			<node x="-77841" y="-81230" />
-			<node x="-77840" y="-81200" />
-			<node x="-77968" y="-81200" />
-		</nodes>
-		<location x="-77904" y="-81214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150061" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85968" y="-80415" />
-			<node x="-85840" y="-80416" />
-			<node x="-85841" y="-80390" />
-			<node x="-85968" y="-80389" />
-		</nodes>
-		<location x="-85904" y="-80402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150062" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83968" y="-80415" />
-			<node x="-83840" y="-80416" />
-			<node x="-83841" y="-80390" />
-			<node x="-83968" y="-80389" />
-		</nodes>
-		<location x="-83904" y="-80402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150063" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81968" y="-80415" />
-			<node x="-81840" y="-80416" />
-			<node x="-81841" y="-80390" />
-			<node x="-81968" y="-80389" />
-		</nodes>
-		<location x="-81904" y="-80402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150064" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79968" y="-80415" />
-			<node x="-79840" y="-80416" />
-			<node x="-79841" y="-80390" />
-			<node x="-79968" y="-80389" />
-		</nodes>
-		<location x="-79904" y="-80402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150065" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77968" y="-80415" />
-			<node x="-77840" y="-80416" />
-			<node x="-77841" y="-80390" />
-			<node x="-77968" y="-80389" />
-		</nodes>
-		<location x="-77904" y="-80402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150066" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86509" y="-79870" />
-			<node x="-86489" y="-79870" />
-			<node x="-86487" y="-79744" />
-			<node x="-86509" y="-79743" />
-		</nodes>
-		<location x="-86498" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150067" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-85320" y="-79868" />
-			<node x="-85300" y="-79868" />
-			<node x="-85300" y="-79747" />
-			<node x="-85320" y="-79747" />
-		</nodes>
-		<location x="-85310" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="26" randomTime="10" />
-	</door>
-	<door id="17150068" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-84509" y="-79870" />
-			<node x="-84489" y="-79870" />
-			<node x="-84487" y="-79744" />
-			<node x="-84509" y="-79743" />
-		</nodes>
-		<location x="-84498" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150069" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-83320" y="-79868" />
-			<node x="-83300" y="-79868" />
-			<node x="-83300" y="-79747" />
-			<node x="-83320" y="-79747" />
-		</nodes>
-		<location x="-83310" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150070" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-82509" y="-79870" />
-			<node x="-82489" y="-79870" />
-			<node x="-82487" y="-79744" />
-			<node x="-82509" y="-79743" />
-		</nodes>
-		<location x="-82498" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150071" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-81320" y="-79868" />
-			<node x="-81300" y="-79868" />
-			<node x="-81300" y="-79747" />
-			<node x="-81320" y="-79747" />
-		</nodes>
-		<location x="-81310" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150072" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-80509" y="-79870" />
-			<node x="-80489" y="-79870" />
-			<node x="-80487" y="-79744" />
-			<node x="-80509" y="-79743" />
-		</nodes>
-		<location x="-80498" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150073" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-79320" y="-79868" />
-			<node x="-79300" y="-79868" />
-			<node x="-79300" y="-79747" />
-			<node x="-79320" y="-79747" />
-		</nodes>
-		<location x="-79310" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150074" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-78509" y="-79870" />
-			<node x="-78489" y="-79870" />
-			<node x="-78487" y="-79744" />
-			<node x="-78509" y="-79743" />
-		</nodes>
-		<location x="-78498" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150075" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-77320" y="-79868" />
-			<node x="-77300" y="-79868" />
-			<node x="-77300" y="-79747" />
-			<node x="-77320" y="-79747" />
-		</nodes>
-		<location x="-77310" y="-79808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150076" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85969" y="-79225" />
-			<node x="-85841" y="-79225" />
-			<node x="-85840" y="-79202" />
-			<node x="-85969" y="-79204" />
-		</nodes>
-		<location x="-85904" y="-79214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="17150077" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83969" y="-79225" />
-			<node x="-83841" y="-79225" />
-			<node x="-83840" y="-79202" />
-			<node x="-83969" y="-79204" />
-		</nodes>
-		<location x="-83904" y="-79214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150078" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81969" y="-79225" />
-			<node x="-81841" y="-79225" />
-			<node x="-81840" y="-79202" />
-			<node x="-81969" y="-79204" />
-		</nodes>
-		<location x="-81904" y="-79214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="18" randomTime="10" />
-	</door>
-	<door id="17150079" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79969" y="-79225" />
-			<node x="-79841" y="-79225" />
-			<node x="-79840" y="-79202" />
-			<node x="-79969" y="-79204" />
-		</nodes>
-		<location x="-79904" y="-79214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150080" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77969" y="-79225" />
-			<node x="-77841" y="-79225" />
-			<node x="-77840" y="-79202" />
-			<node x="-77969" y="-79204" />
-		</nodes>
-		<location x="-77904" y="-79214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="17150081" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85967" y="-78415" />
-			<node x="-85841" y="-78413" />
-			<node x="-85840" y="-78392" />
-			<node x="-85968" y="-78390" />
-		</nodes>
-		<location x="-85904" y="-78402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150082" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83967" y="-78415" />
-			<node x="-83841" y="-78413" />
-			<node x="-83840" y="-78392" />
-			<node x="-83968" y="-78390" />
-		</nodes>
-		<location x="-83904" y="-78402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150083" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81967" y="-78415" />
-			<node x="-81841" y="-78413" />
-			<node x="-81840" y="-78392" />
-			<node x="-81968" y="-78390" />
-		</nodes>
-		<location x="-81904" y="-78402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150084" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79967" y="-78415" />
-			<node x="-79841" y="-78413" />
-			<node x="-79840" y="-78392" />
-			<node x="-79968" y="-78390" />
-		</nodes>
-		<location x="-79904" y="-78402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150085" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77967" y="-78415" />
-			<node x="-77841" y="-78413" />
-			<node x="-77840" y="-78392" />
-			<node x="-77968" y="-78390" />
-		</nodes>
-		<location x="-77904" y="-78402" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150086" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86507" y="-77868" />
-			<node x="-86488" y="-77868" />
-			<node x="-86488" y="-77749" />
-			<node x="-86506" y="-77748" />
-		</nodes>
-		<location x="-86498" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150087" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-85320" y="-77868" />
-			<node x="-85300" y="-77869" />
-			<node x="-85300" y="-77747" />
-			<node x="-85320" y="-77747" />
-		</nodes>
-		<location x="-85310" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="26" randomTime="10" />
-	</door>
-	<door id="17150088" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-84507" y="-77868" />
-			<node x="-84488" y="-77868" />
-			<node x="-84488" y="-77749" />
-			<node x="-84506" y="-77748" />
-		</nodes>
-		<location x="-84498" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150089" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-83320" y="-77868" />
-			<node x="-83300" y="-77869" />
-			<node x="-83300" y="-77747" />
-			<node x="-83320" y="-77747" />
-		</nodes>
-		<location x="-83310" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="17150090" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-82507" y="-77868" />
-			<node x="-82488" y="-77868" />
-			<node x="-82488" y="-77749" />
-			<node x="-82506" y="-77748" />
-		</nodes>
-		<location x="-82498" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150091" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-81320" y="-77868" />
-			<node x="-81300" y="-77869" />
-			<node x="-81300" y="-77747" />
-			<node x="-81320" y="-77747" />
-		</nodes>
-		<location x="-81310" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="17150092" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-80507" y="-77868" />
-			<node x="-80488" y="-77868" />
-			<node x="-80488" y="-77749" />
-			<node x="-80506" y="-77748" />
-		</nodes>
-		<location x="-80498" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150093" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-79320" y="-77868" />
-			<node x="-79300" y="-77869" />
-			<node x="-79300" y="-77747" />
-			<node x="-79320" y="-77747" />
-		</nodes>
-		<location x="-79310" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="17150094" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-78507" y="-77868" />
-			<node x="-78488" y="-77868" />
-			<node x="-78488" y="-77749" />
-			<node x="-78506" y="-77748" />
-		</nodes>
-		<location x="-78498" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17150095" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-77320" y="-77868" />
-			<node x="-77300" y="-77869" />
-			<node x="-77300" y="-77747" />
-			<node x="-77320" y="-77747" />
-		</nodes>
-		<location x="-77310" y="-77808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150096" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-85968" y="-77228" />
-			<node x="-85841" y="-77230" />
-			<node x="-85841" y="-77201" />
-			<node x="-85968" y="-77201" />
-		</nodes>
-		<location x="-85904" y="-77214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150097" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-83968" y="-77228" />
-			<node x="-83841" y="-77230" />
-			<node x="-83841" y="-77201" />
-			<node x="-83968" y="-77201" />
-		</nodes>
-		<location x="-83904" y="-77214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150098" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-81968" y="-77228" />
-			<node x="-81841" y="-77230" />
-			<node x="-81841" y="-77201" />
-			<node x="-81968" y="-77201" />
-		</nodes>
-		<location x="-81904" y="-77214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150099" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-79968" y="-77228" />
-			<node x="-79841" y="-77230" />
-			<node x="-79841" y="-77201" />
-			<node x="-79968" y="-77201" />
-		</nodes>
-		<location x="-79904" y="-77214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150100" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-77968" y="-77228" />
-			<node x="-77841" y="-77230" />
-			<node x="-77841" y="-77201" />
-			<node x="-77968" y="-77201" />
-		</nodes>
-		<location x="-77904" y="-77214" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150101" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-87094" y="-82407" />
-			<node x="-86978" y="-82406" />
-			<node x="-86978" y="-82391" />
-			<node x="-87093" y="-82390" />
-		</nodes>
-		<location x="-87036" y="-82398" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150102" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8384">
-			<node x="-86559" y="-81877" />
-			<node x="-86532" y="-81877" />
-			<node x="-86533" y="-81736" />
-			<node x="-86558" y="-81736" />
-		</nodes>
-		<location x="-86545" y="-81808" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17150103" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8384">
-			<node x="-87096" y="-81227" />
-			<node x="-86976" y="-81228" />
-			<node x="-86976" y="-81208" />
-			<node x="-87096" y="-81209" />
-		</nodes>
-		<location x="-87036" y="-81218" z="-8384" />
-		<stats basePDef="100000" baseHpMax="3258432" />
+		<stats basePDef="100000" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" />
 	</door>
@@ -5756,275 +4464,6 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 17_24 Classic -->
-	<door id="17240001" name="SSQ_dungeon02_S.SSQ_door01_02">
-		<nodes nodeZ="-7990">
-			<node x="-94479" y="210971" />
-			<node x="-94462" y="210971" />
-			<node x="-94462" y="211138" />
-			<node x="-94479" y="211137" />
-		</nodes>
-		<location x="-94470" y="211054" z="-7988" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240002" name="SSQ_dungeon02_S.SSQ_door01_01">
-		<nodes nodeZ="-7859">
-			<node x="-94479" y="210976" />
-			<node x="-94462" y="210975" />
-			<node x="-94462" y="211134" />
-			<node x="-94480" y="211137" />
-		</nodes>
-		<location x="-94470" y="211054" z="-7988" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17240003" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7992">
-			<node x="-93289" y="210899" />
-			<node x="-93290" y="211199" />
-			<node x="-93334" y="211200" />
-			<node x="-93340" y="210900" />
-		</nodes>
-		<location x="-93312" y="211050" z="-7986" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240004" name="SSQ_dungeon02_S.SSQ_door01_02">
-		<nodes nodeZ="-7890">
-			<node x="-90802" y="210962" />
-			<node x="-90782" y="210962" />
-			<node x="-90782" y="211132" />
-			<node x="-90801" y="211132" />
-		</nodes>
-		<location x="-90791" y="211046" z="-7888" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17240005" name="SSQ_dungeon02_S.SSQ_door01_01">
-		<nodes nodeZ="-7759">
-			<node x="-90802" y="210963" />
-			<node x="-90781" y="210964" />
-			<node x="-90782" y="211132" />
-			<node x="-90801" y="211132" />
-		</nodes>
-		<location x="-90791" y="211046" z="-7888" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240006" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7701">
-			<node x="-90191" y="213799" />
-			<node x="-89888" y="213798" />
-			<node x="-89888" y="213828" />
-			<node x="-90191" y="213830" />
-		</nodes>
-		<location x="-90039" y="213814" z="-7696" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="17240007" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7862">
-			<node x="-87812" y="214797" />
-			<node x="-87813" y="215097" />
-			<node x="-87857" y="215098" />
-			<node x="-87863" y="214798" />
-		</nodes>
-		<location x="-87835" y="214948" z="-7856" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240008" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87540" y="213410" />
-			<node x="-86671" y="213413" />
-			<node x="-86670" y="213468" />
-			<node x="-87539" y="213465" />
-		</nodes>
-		<location x="-87109" y="213438" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240009" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87588" y="213413" />
-			<node x="-87586" y="212563" />
-			<node x="-87537" y="212563" />
-			<node x="-87539" y="213411" />
-		</nodes>
-		<location x="-87562" y="212988" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240010" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87540" y="212503" />
-			<node x="-86671" y="212506" />
-			<node x="-86670" y="212561" />
-			<node x="-87539" y="212558" />
-		</nodes>
-		<location x="-87109" y="212531" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240011" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-86680" y="213413" />
-			<node x="-86678" y="212563" />
-			<node x="-86629" y="212563" />
-			<node x="-86631" y="213411" />
-		</nodes>
-		<location x="-86654" y="212988" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240021" name="SSQ_dungeon02_S.SSQ_door01_02">
-		<nodes nodeZ="-7990">
-			<node x="-94479" y="199443" />
-			<node x="-94462" y="199443" />
-			<node x="-94462" y="199610" />
-			<node x="-94479" y="199609" />
-		</nodes>
-		<location x="-94470" y="199526" z="-7988" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240022" name="SSQ_dungeon02_S.SSQ_door01_01">
-		<nodes nodeZ="-7859">
-			<node x="-94479" y="199448" />
-			<node x="-94462" y="199447" />
-			<node x="-94462" y="199606" />
-			<node x="-94480" y="199609" />
-		</nodes>
-		<location x="-94470" y="199526" z="-7988" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240023" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7992">
-			<node x="-93289" y="199371" />
-			<node x="-93290" y="199671" />
-			<node x="-93334" y="199672" />
-			<node x="-93340" y="199372" />
-		</nodes>
-		<location x="-93312" y="199522" z="-7986" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240024" name="SSQ_dungeon02_S.SSQ_door01_02">
-		<nodes nodeZ="-7890">
-			<node x="-90802" y="199434" />
-			<node x="-90782" y="199434" />
-			<node x="-90782" y="199604" />
-			<node x="-90801" y="199604" />
-		</nodes>
-		<location x="-90791" y="199518" z="-7888" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240025" name="SSQ_dungeon02_S.SSQ_door01_01">
-		<nodes nodeZ="-7759">
-			<node x="-90802" y="199435" />
-			<node x="-90781" y="199436" />
-			<node x="-90782" y="199604" />
-			<node x="-90801" y="199604" />
-		</nodes>
-		<location x="-90791" y="199518" z="-7888" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240026" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7701">
-			<node x="-90191" y="202271" />
-			<node x="-89888" y="202270" />
-			<node x="-89888" y="202300" />
-			<node x="-90191" y="202302" />
-		</nodes>
-		<location x="-90039" y="202286" z="-7696" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240027" name="SSQ_dungeon02_S.SSQ_Door02">
-		<nodes nodeZ="-7862">
-			<node x="-87812" y="203269" />
-			<node x="-87813" y="203569" />
-			<node x="-87857" y="203570" />
-			<node x="-87863" y="203270" />
-		</nodes>
-		<location x="-87835" y="203420" z="-7856" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240028" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87540" y="201882" />
-			<node x="-86671" y="201885" />
-			<node x="-86670" y="201940" />
-			<node x="-87539" y="201937" />
-		</nodes>
-		<location x="-87109" y="201910" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240029" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87588" y="201885" />
-			<node x="-87586" y="201035" />
-			<node x="-87537" y="201035" />
-			<node x="-87539" y="201883" />
-		</nodes>
-		<location x="-87562" y="201460" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240030" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-87540" y="200975" />
-			<node x="-86671" y="200978" />
-			<node x="-86670" y="201033" />
-			<node x="-87539" y="201030" />
-		</nodes>
-		<location x="-87109" y="201003" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="17240031" name="SSQ_dungeon02_S.pSSQ_wall_door">
-		<nodes nodeZ="-7702">
-			<node x="-86680" y="201885" />
-			<node x="-86678" y="201035" />
-			<node x="-86629" y="201035" />
-			<node x="-86631" y="201883" />
-		</nodes>
-		<location x="-86654" y="201460" z="-7694" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	
 	<!-- 18_11 -->
 	<door id="18110001" name="Glacia_kserth_S.G_kserth_az_gate_door">
 		<nodes nodeZ="4010">
@@ -6207,1284 +4646,6 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 18_15 -->
-	<door id="18150201" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52783" y="-87564" />
-			<node x="-52657" y="-87564" />
-			<node x="-52657" y="-87541" />
-			<node x="-52783" y="-87542" />
-		</nodes>
-		<location x="-52720" y="-87554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150202" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50783" y="-87564" />
-			<node x="-50657" y="-87564" />
-			<node x="-50657" y="-87541" />
-			<node x="-50783" y="-87542" />
-		</nodes>
-		<location x="-50720" y="-87554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150203" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48783" y="-87564" />
-			<node x="-48657" y="-87564" />
-			<node x="-48657" y="-87541" />
-			<node x="-48783" y="-87542" />
-		</nodes>
-		<location x="-48720" y="-87554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150204" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46783" y="-87564" />
-			<node x="-46657" y="-87564" />
-			<node x="-46657" y="-87541" />
-			<node x="-46783" y="-87542" />
-		</nodes>
-		<location x="-46720" y="-87554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150205" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44783" y="-87564" />
-			<node x="-44657" y="-87564" />
-			<node x="-44657" y="-87541" />
-			<node x="-44783" y="-87542" />
-		</nodes>
-		<location x="-44720" y="-87554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150206" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53324" y="-87022" />
-			<node x="-53302" y="-87021" />
-			<node x="-53304" y="-86898" />
-			<node x="-53324" y="-86898" />
-		</nodes>
-		<location x="-53314" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150207" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-52136" y="-87020" />
-			<node x="-52116" y="-87020" />
-			<node x="-52116" y="-86899" />
-			<node x="-52136" y="-86898" />
-		</nodes>
-		<location x="-52126" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150208" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-51324" y="-87022" />
-			<node x="-51302" y="-87021" />
-			<node x="-51304" y="-86898" />
-			<node x="-51324" y="-86898" />
-		</nodes>
-		<location x="-51314" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150209" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-50136" y="-87020" />
-			<node x="-50116" y="-87020" />
-			<node x="-50116" y="-86899" />
-			<node x="-50136" y="-86898" />
-		</nodes>
-		<location x="-50126" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150210" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-49324" y="-87022" />
-			<node x="-49302" y="-87021" />
-			<node x="-49304" y="-86898" />
-			<node x="-49324" y="-86898" />
-		</nodes>
-		<location x="-49314" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150211" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-48136" y="-87020" />
-			<node x="-48116" y="-87020" />
-			<node x="-48116" y="-86899" />
-			<node x="-48136" y="-86898" />
-		</nodes>
-		<location x="-48126" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150212" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-47324" y="-87022" />
-			<node x="-47302" y="-87021" />
-			<node x="-47304" y="-86898" />
-			<node x="-47324" y="-86898" />
-		</nodes>
-		<location x="-47314" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150213" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-46136" y="-87020" />
-			<node x="-46116" y="-87020" />
-			<node x="-46116" y="-86899" />
-			<node x="-46136" y="-86898" />
-		</nodes>
-		<location x="-46126" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150214" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-45324" y="-87022" />
-			<node x="-45302" y="-87021" />
-			<node x="-45304" y="-86898" />
-			<node x="-45324" y="-86898" />
-		</nodes>
-		<location x="-45314" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150215" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-44136" y="-87020" />
-			<node x="-44116" y="-87020" />
-			<node x="-44116" y="-86899" />
-			<node x="-44136" y="-86898" />
-		</nodes>
-		<location x="-44126" y="-86960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150216" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52781" y="-86376" />
-			<node x="-52657" y="-86377" />
-			<node x="-52657" y="-86357" />
-			<node x="-52781" y="-86356" />
-		</nodes>
-		<location x="-52720" y="-86366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150217" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50781" y="-86376" />
-			<node x="-50657" y="-86377" />
-			<node x="-50657" y="-86357" />
-			<node x="-50781" y="-86356" />
-		</nodes>
-		<location x="-50720" y="-86366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150218" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48781" y="-86376" />
-			<node x="-48657" y="-86377" />
-			<node x="-48657" y="-86357" />
-			<node x="-48781" y="-86356" />
-		</nodes>
-		<location x="-48720" y="-86366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150219" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46781" y="-86376" />
-			<node x="-46657" y="-86377" />
-			<node x="-46657" y="-86357" />
-			<node x="-46781" y="-86356" />
-		</nodes>
-		<location x="-46720" y="-86366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150220" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44781" y="-86376" />
-			<node x="-44657" y="-86377" />
-			<node x="-44657" y="-86357" />
-			<node x="-44781" y="-86356" />
-		</nodes>
-		<location x="-44720" y="-86366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150221" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52785" y="-85566" />
-			<node x="-52656" y="-85567" />
-			<node x="-52655" y="-85543" />
-			<node x="-52784" y="-85541" />
-		</nodes>
-		<location x="-52720" y="-85554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150222" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50785" y="-85566" />
-			<node x="-50656" y="-85567" />
-			<node x="-50655" y="-85543" />
-			<node x="-50784" y="-85541" />
-		</nodes>
-		<location x="-50720" y="-85554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150223" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48785" y="-85566" />
-			<node x="-48656" y="-85567" />
-			<node x="-48655" y="-85543" />
-			<node x="-48784" y="-85541" />
-		</nodes>
-		<location x="-48720" y="-85554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150224" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46785" y="-85566" />
-			<node x="-46656" y="-85567" />
-			<node x="-46655" y="-85543" />
-			<node x="-46784" y="-85541" />
-		</nodes>
-		<location x="-46720" y="-85554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150225" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44785" y="-85566" />
-			<node x="-44656" y="-85567" />
-			<node x="-44655" y="-85543" />
-			<node x="-44784" y="-85541" />
-		</nodes>
-		<location x="-44720" y="-85554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150226" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53332" y="-85033" />
-			<node x="-53302" y="-85034" />
-			<node x="-53304" y="-84881" />
-			<node x="-53331" y="-84881" />
-		</nodes>
-		<location x="-53314" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150227" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-52137" y="-85028" />
-			<node x="-52115" y="-85027" />
-			<node x="-52114" y="-84888" />
-			<node x="-52137" y="-84889" />
-		</nodes>
-		<location x="-52126" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150228" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-51332" y="-85033" />
-			<node x="-51302" y="-85034" />
-			<node x="-51304" y="-84881" />
-			<node x="-51331" y="-84881" />
-		</nodes>
-		<location x="-51314" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150229" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-50137" y="-85028" />
-			<node x="-50115" y="-85027" />
-			<node x="-50114" y="-84888" />
-			<node x="-50137" y="-84889" />
-		</nodes>
-		<location x="-50126" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150230" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-49332" y="-85033" />
-			<node x="-49302" y="-85034" />
-			<node x="-49304" y="-84881" />
-			<node x="-49331" y="-84881" />
-		</nodes>
-		<location x="-49314" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150231" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-48137" y="-85028" />
-			<node x="-48115" y="-85027" />
-			<node x="-48114" y="-84888" />
-			<node x="-48137" y="-84889" />
-		</nodes>
-		<location x="-48126" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150232" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-47332" y="-85033" />
-			<node x="-47302" y="-85034" />
-			<node x="-47304" y="-84881" />
-			<node x="-47331" y="-84881" />
-		</nodes>
-		<location x="-47314" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150233" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-46137" y="-85028" />
-			<node x="-46115" y="-85027" />
-			<node x="-46114" y="-84888" />
-			<node x="-46137" y="-84889" />
-		</nodes>
-		<location x="-46126" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150234" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-45332" y="-85033" />
-			<node x="-45302" y="-85034" />
-			<node x="-45304" y="-84881" />
-			<node x="-45331" y="-84881" />
-		</nodes>
-		<location x="-45314" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150235" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-44137" y="-85028" />
-			<node x="-44115" y="-85027" />
-			<node x="-44114" y="-84888" />
-			<node x="-44137" y="-84889" />
-		</nodes>
-		<location x="-44126" y="-84960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150236" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52784" y="-84380" />
-			<node x="-52656" y="-84381" />
-			<node x="-52656" y="-84351" />
-			<node x="-52784" y="-84352" />
-		</nodes>
-		<location x="-52720" y="-84366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150237" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50784" y="-84380" />
-			<node x="-50656" y="-84381" />
-			<node x="-50656" y="-84351" />
-			<node x="-50784" y="-84352" />
-		</nodes>
-		<location x="-50720" y="-84366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150238" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48784" y="-84380" />
-			<node x="-48656" y="-84381" />
-			<node x="-48656" y="-84351" />
-			<node x="-48784" y="-84352" />
-		</nodes>
-		<location x="-48720" y="-84366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150239" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46784" y="-84380" />
-			<node x="-46656" y="-84381" />
-			<node x="-46656" y="-84351" />
-			<node x="-46784" y="-84352" />
-		</nodes>
-		<location x="-46720" y="-84366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="10" />
-	</door>
-	<door id="18150240" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44784" y="-84380" />
-			<node x="-44656" y="-84381" />
-			<node x="-44656" y="-84351" />
-			<node x="-44784" y="-84352" />
-		</nodes>
-		<location x="-44720" y="-84366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150241" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52800" y="-83568" />
-			<node x="-52640" y="-83568" />
-			<node x="-52640" y="-83544" />
-			<node x="-52800" y="-83544" />
-		</nodes>
-		<location x="-52720" y="-83554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150242" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50800" y="-83568" />
-			<node x="-50640" y="-83568" />
-			<node x="-50640" y="-83544" />
-			<node x="-50800" y="-83544" />
-		</nodes>
-		<location x="-50720" y="-83554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150243" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48800" y="-83568" />
-			<node x="-48640" y="-83568" />
-			<node x="-48640" y="-83544" />
-			<node x="-48800" y="-83544" />
-		</nodes>
-		<location x="-48720" y="-83554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150244" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46800" y="-83568" />
-			<node x="-46640" y="-83568" />
-			<node x="-46640" y="-83544" />
-			<node x="-46800" y="-83544" />
-		</nodes>
-		<location x="-46720" y="-83554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150245" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44800" y="-83568" />
-			<node x="-44640" y="-83568" />
-			<node x="-44640" y="-83544" />
-			<node x="-44800" y="-83544" />
-		</nodes>
-		<location x="-44720" y="-83554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150246" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53324" y="-83032" />
-			<node x="-53303" y="-83031" />
-			<node x="-53304" y="-82897" />
-			<node x="-53323" y="-82896" />
-		</nodes>
-		<location x="-53314" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150247" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-52141" y="-83040" />
-			<node x="-52113" y="-83040" />
-			<node x="-52114" y="-82880" />
-			<node x="-52139" y="-82880" />
-		</nodes>
-		<location x="-52126" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="14" randomTime="10" />
-	</door>
-	<door id="18150248" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-51324" y="-83032" />
-			<node x="-51303" y="-83031" />
-			<node x="-51304" y="-82897" />
-			<node x="-51323" y="-82896" />
-		</nodes>
-		<location x="-51314" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150249" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-50141" y="-83040" />
-			<node x="-50113" y="-83040" />
-			<node x="-50114" y="-82880" />
-			<node x="-50139" y="-82880" />
-		</nodes>
-		<location x="-50126" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150250" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-49324" y="-83032" />
-			<node x="-49303" y="-83031" />
-			<node x="-49304" y="-82897" />
-			<node x="-49323" y="-82896" />
-		</nodes>
-		<location x="-49314" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150251" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-48141" y="-83040" />
-			<node x="-48113" y="-83040" />
-			<node x="-48114" y="-82880" />
-			<node x="-48139" y="-82880" />
-		</nodes>
-		<location x="-48126" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="23" randomTime="10" />
-	</door>
-	<door id="18150252" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-47324" y="-83032" />
-			<node x="-47303" y="-83031" />
-			<node x="-47304" y="-82897" />
-			<node x="-47323" y="-82896" />
-		</nodes>
-		<location x="-47314" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150253" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-46141" y="-83040" />
-			<node x="-46113" y="-83040" />
-			<node x="-46114" y="-82880" />
-			<node x="-46139" y="-82880" />
-		</nodes>
-		<location x="-46126" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150254" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-45324" y="-83032" />
-			<node x="-45303" y="-83031" />
-			<node x="-45304" y="-82897" />
-			<node x="-45323" y="-82896" />
-		</nodes>
-		<location x="-45314" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150255" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-44141" y="-83040" />
-			<node x="-44113" y="-83040" />
-			<node x="-44114" y="-82880" />
-			<node x="-44139" y="-82880" />
-		</nodes>
-		<location x="-44126" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150256" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52781" y="-82382" />
-			<node x="-52657" y="-82382" />
-			<node x="-52656" y="-82352" />
-			<node x="-52784" y="-82352" />
-		</nodes>
-		<location x="-52720" y="-82366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150257" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50781" y="-82382" />
-			<node x="-50657" y="-82382" />
-			<node x="-50656" y="-82352" />
-			<node x="-50784" y="-82352" />
-		</nodes>
-		<location x="-50720" y="-82366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150258" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48781" y="-82382" />
-			<node x="-48657" y="-82382" />
-			<node x="-48656" y="-82352" />
-			<node x="-48784" y="-82352" />
-		</nodes>
-		<location x="-48720" y="-82366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="18" randomTime="10" />
-	</door>
-	<door id="18150259" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46781" y="-82382" />
-			<node x="-46657" y="-82382" />
-			<node x="-46656" y="-82352" />
-			<node x="-46784" y="-82352" />
-		</nodes>
-		<location x="-46720" y="-82366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150260" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44781" y="-82382" />
-			<node x="-44657" y="-82382" />
-			<node x="-44656" y="-82352" />
-			<node x="-44784" y="-82352" />
-		</nodes>
-		<location x="-44720" y="-82366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150261" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52784" y="-81567" />
-			<node x="-52656" y="-81568" />
-			<node x="-52657" y="-81542" />
-			<node x="-52784" y="-81541" />
-		</nodes>
-		<location x="-52720" y="-81554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150262" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50784" y="-81567" />
-			<node x="-50656" y="-81568" />
-			<node x="-50657" y="-81542" />
-			<node x="-50784" y="-81541" />
-		</nodes>
-		<location x="-50720" y="-81554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150263" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48784" y="-81567" />
-			<node x="-48656" y="-81568" />
-			<node x="-48657" y="-81542" />
-			<node x="-48784" y="-81541" />
-		</nodes>
-		<location x="-48720" y="-81554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150264" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46784" y="-81567" />
-			<node x="-46656" y="-81568" />
-			<node x="-46657" y="-81542" />
-			<node x="-46784" y="-81541" />
-		</nodes>
-		<location x="-46720" y="-81554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150265" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44784" y="-81567" />
-			<node x="-44656" y="-81568" />
-			<node x="-44657" y="-81542" />
-			<node x="-44784" y="-81541" />
-		</nodes>
-		<location x="-44720" y="-81554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150266" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53325" y="-81022" />
-			<node x="-53305" y="-81022" />
-			<node x="-53303" y="-80896" />
-			<node x="-53325" y="-80895" />
-		</nodes>
-		<location x="-53314" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150267" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-52136" y="-81020" />
-			<node x="-52116" y="-81020" />
-			<node x="-52116" y="-80899" />
-			<node x="-52136" y="-80899" />
-		</nodes>
-		<location x="-52126" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="26" randomTime="10" />
-	</door>
-	<door id="18150268" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-51325" y="-81022" />
-			<node x="-51305" y="-81022" />
-			<node x="-51303" y="-80896" />
-			<node x="-51325" y="-80895" />
-		</nodes>
-		<location x="-51314" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150269" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-50136" y="-81020" />
-			<node x="-50116" y="-81020" />
-			<node x="-50116" y="-80899" />
-			<node x="-50136" y="-80899" />
-		</nodes>
-		<location x="-50126" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150270" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-49325" y="-81022" />
-			<node x="-49305" y="-81022" />
-			<node x="-49303" y="-80896" />
-			<node x="-49325" y="-80895" />
-		</nodes>
-		<location x="-49314" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150271" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-48136" y="-81020" />
-			<node x="-48116" y="-81020" />
-			<node x="-48116" y="-80899" />
-			<node x="-48136" y="-80899" />
-		</nodes>
-		<location x="-48126" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150272" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-47325" y="-81022" />
-			<node x="-47305" y="-81022" />
-			<node x="-47303" y="-80896" />
-			<node x="-47325" y="-80895" />
-		</nodes>
-		<location x="-47314" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150273" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-46136" y="-81020" />
-			<node x="-46116" y="-81020" />
-			<node x="-46116" y="-80899" />
-			<node x="-46136" y="-80899" />
-		</nodes>
-		<location x="-46126" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150274" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-45325" y="-81022" />
-			<node x="-45305" y="-81022" />
-			<node x="-45303" y="-80896" />
-			<node x="-45325" y="-80895" />
-		</nodes>
-		<location x="-45314" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150275" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-44136" y="-81020" />
-			<node x="-44116" y="-81020" />
-			<node x="-44116" y="-80899" />
-			<node x="-44136" y="-80899" />
-		</nodes>
-		<location x="-44126" y="-80960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150276" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52785" y="-80377" />
-			<node x="-52657" y="-80377" />
-			<node x="-52656" y="-80354" />
-			<node x="-52785" y="-80356" />
-		</nodes>
-		<location x="-52720" y="-80366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="25" randomTime="10" />
-	</door>
-	<door id="18150277" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50785" y="-80377" />
-			<node x="-50657" y="-80377" />
-			<node x="-50656" y="-80354" />
-			<node x="-50785" y="-80356" />
-		</nodes>
-		<location x="-50720" y="-80366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150278" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48785" y="-80377" />
-			<node x="-48657" y="-80377" />
-			<node x="-48656" y="-80354" />
-			<node x="-48785" y="-80356" />
-		</nodes>
-		<location x="-48720" y="-80366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="18" randomTime="10" />
-	</door>
-	<door id="18150279" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46785" y="-80377" />
-			<node x="-46657" y="-80377" />
-			<node x="-46656" y="-80354" />
-			<node x="-46785" y="-80356" />
-		</nodes>
-		<location x="-46720" y="-80366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150280" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44785" y="-80377" />
-			<node x="-44657" y="-80377" />
-			<node x="-44656" y="-80354" />
-			<node x="-44785" y="-80356" />
-		</nodes>
-		<location x="-44720" y="-80366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="20" randomTime="10" />
-	</door>
-	<door id="18150281" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52783" y="-79567" />
-			<node x="-52657" y="-79565" />
-			<node x="-52656" y="-79544" />
-			<node x="-52784" y="-79542" />
-		</nodes>
-		<location x="-52720" y="-79554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150282" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50783" y="-79567" />
-			<node x="-50657" y="-79565" />
-			<node x="-50656" y="-79544" />
-			<node x="-50784" y="-79542" />
-		</nodes>
-		<location x="-50720" y="-79554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150283" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48783" y="-79567" />
-			<node x="-48657" y="-79565" />
-			<node x="-48656" y="-79544" />
-			<node x="-48784" y="-79542" />
-		</nodes>
-		<location x="-48720" y="-79554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150284" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46783" y="-79567" />
-			<node x="-46657" y="-79565" />
-			<node x="-46656" y="-79544" />
-			<node x="-46784" y="-79542" />
-		</nodes>
-		<location x="-46720" y="-79554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150285" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44783" y="-79567" />
-			<node x="-44657" y="-79565" />
-			<node x="-44656" y="-79544" />
-			<node x="-44784" y="-79542" />
-		</nodes>
-		<location x="-44720" y="-79554" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150286" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53323" y="-79020" />
-			<node x="-53304" y="-79020" />
-			<node x="-53304" y="-78901" />
-			<node x="-53322" y="-78900" />
-		</nodes>
-		<location x="-53314" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150287" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-52136" y="-79020" />
-			<node x="-52116" y="-79021" />
-			<node x="-52116" y="-78899" />
-			<node x="-52136" y="-78899" />
-		</nodes>
-		<location x="-52126" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="26" randomTime="10" />
-	</door>
-	<door id="18150288" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-51323" y="-79020" />
-			<node x="-51304" y="-79020" />
-			<node x="-51304" y="-78901" />
-			<node x="-51322" y="-78900" />
-		</nodes>
-		<location x="-51314" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150289" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-50136" y="-79020" />
-			<node x="-50116" y="-79021" />
-			<node x="-50116" y="-78899" />
-			<node x="-50136" y="-78899" />
-		</nodes>
-		<location x="-50126" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="10" randomTime="5" />
-	</door>
-	<door id="18150290" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-49323" y="-79020" />
-			<node x="-49304" y="-79020" />
-			<node x="-49304" y="-78901" />
-			<node x="-49322" y="-78900" />
-		</nodes>
-		<location x="-49314" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150291" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-48136" y="-79020" />
-			<node x="-48116" y="-79021" />
-			<node x="-48116" y="-78899" />
-			<node x="-48136" y="-78899" />
-		</nodes>
-		<location x="-48126" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="15" randomTime="10" />
-	</door>
-	<door id="18150292" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-47323" y="-79020" />
-			<node x="-47304" y="-79020" />
-			<node x="-47304" y="-78901" />
-			<node x="-47322" y="-78900" />
-		</nodes>
-		<location x="-47314" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150293" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-46136" y="-79020" />
-			<node x="-46116" y="-79021" />
-			<node x="-46116" y="-78899" />
-			<node x="-46136" y="-78899" />
-		</nodes>
-		<location x="-46126" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus openMethod="BY_TIME" default="close" closeTime="15" openTime="30" randomTime="10" />
-	</door>
-	<door id="18150294" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-45323" y="-79020" />
-			<node x="-45304" y="-79020" />
-			<node x="-45304" y="-78901" />
-			<node x="-45322" y="-78900" />
-		</nodes>
-		<location x="-45314" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-		<event masterClose="act_close" />
-	</door>
-	<door id="18150295" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-44136" y="-79020" />
-			<node x="-44116" y="-79021" />
-			<node x="-44116" y="-78899" />
-			<node x="-44136" y="-78899" />
-		</nodes>
-		<location x="-44126" y="-78960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150296" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-52784" y="-78380" />
-			<node x="-52657" y="-78382" />
-			<node x="-52657" y="-78353" />
-			<node x="-52784" y="-78353" />
-		</nodes>
-		<location x="-52720" y="-78366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150297" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-50784" y="-78380" />
-			<node x="-50657" y="-78382" />
-			<node x="-50657" y="-78353" />
-			<node x="-50784" y="-78353" />
-		</nodes>
-		<location x="-50720" y="-78366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150298" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-48784" y="-78380" />
-			<node x="-48657" y="-78382" />
-			<node x="-48657" y="-78353" />
-			<node x="-48784" y="-78353" />
-		</nodes>
-		<location x="-48720" y="-78366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150299" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-46784" y="-78380" />
-			<node x="-46657" y="-78382" />
-			<node x="-46657" y="-78353" />
-			<node x="-46784" y="-78353" />
-		</nodes>
-		<location x="-46720" y="-78366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150300" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-44784" y="-78380" />
-			<node x="-44657" y="-78382" />
-			<node x="-44657" y="-78353" />
-			<node x="-44784" y="-78353" />
-		</nodes>
-		<location x="-44720" y="-78366" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150301" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-53910" y="-83559" />
-			<node x="-53794" y="-83558" />
-			<node x="-53794" y="-83543" />
-			<node x="-53909" y="-83542" />
-		</nodes>
-		<location x="-53852" y="-83550" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150302" name="Themepark_Valos_S.Valos_dungeon_doors_v">
-		<nodes nodeZ="-8352">
-			<node x="-53375" y="-83029" />
-			<node x="-53348" y="-83029" />
-			<node x="-53349" y="-82888" />
-			<node x="-53374" y="-82888" />
-		</nodes>
-		<location x="-53361" y="-82960" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18150303" name="Themepark_Valos_S.Valos_dungeon_doors">
-		<nodes nodeZ="-8352">
-			<node x="-53912" y="-82379" />
-			<node x="-53792" y="-82380" />
-			<node x="-53792" y="-82360" />
-			<node x="-53912" y="-82361" />
-		</nodes>
-		<location x="-53852" y="-82370" z="-8352" />
-		<stats basePDef="100000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	
 	<!-- 18_17 -->
 	<door id="18170002" name="Instant_du02_s.penetration.Instant_du02_em_02">
 		<nodes nodeZ="-12247">
@@ -7535,125 +4696,143 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 18_19 Classic -->
-	<door id="18190002" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-2223">
-			<node x="-55065" y="52809" />
-			<node x="-54951" y="52809" />
-			<node x="-54951" y="52833" />
-			<node x="-55065" y="52833" />
+	<!-- 18_20 Classic -->
+	<door id="18200001" name="L2fortress_02_s.fort02_wall_door">
+		<nodes nodeZ="-2870">
+			<node x="-54367" y="89535" />
+			<node x="-54139" y="89542" />
+			<node x="-54139" y="89639" />
+			<node x="-54367" y="89640" />
 		</nodes>
-		<location x="-54959" y="52821" z="-2212" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-54247" y="89585" z="-2870" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190004" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-2224">
-			<node x="-55164" y="52811" />
-			<node x="-55049" y="52808" />
-			<node x="-55049" y="52833" />
-			<node x="-55163" y="52834" />
+	<door id="18200002" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2849">
+			<node x="-53226" y="91814" />
+			<node x="-53311" y="91816" />
+			<node x="-53311" y="91831" />
+			<node x="-53227" y="91830" />
 		</nodes>
-		<location x="-55156" y="52821" z="-2212" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-53312" y="91823" z="-2849" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190006" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-2417">
-			<node x="-46998" y="50373" />
-			<node x="-46924" y="50450" />
-			<node x="-46944" y="50469" />
-			<node x="-47020" y="50390" />
+	<door id="18200003" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2849">
+			<node x="-53240" y="91814" />
+			<node x="-53144" y="91814" />
+			<node x="-53143" y="91833" />
+			<node x="-53240" y="91829" />
 		</nodes>
-		<location x="-46939" y="50454" z="-2406" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-53154" y="91823" z="-2849" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190008" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-2418">
-			<node x="-47074" y="50302" />
-			<node x="-46991" y="50381" />
-			<node x="-47012" y="50401" />
-			<node x="-47093" y="50321" />
+	<door id="18200004" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2851">
+			<node x="-51504" y="90348" />
+			<node x="-51521" y="90251" />
+			<node x="-51504" y="90251" />
+			<node x="-51521" y="90348" />
 		</nodes>
-		<location x="-47078" y="50315" z="-2406" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-51513" y="90259" z="-2851" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190010" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-3227">
-			<node x="-47603" y="59900" />
-			<node x="-47500" y="59932" />
-			<node x="-47506" y="59948" />
-			<node x="-47608" y="59917" />
+	<door id="18200005" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2851">
+			<node x="-51521" y="90328" />
+			<node x="-51521" y="90428" />
+			<node x="-51503" y="90427" />
+			<node x="-51504" y="90328" />
 		</nodes>
-		<location x="-47509" y="59937" z="-3216" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-51513" y="90417" z="-2851" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190012" name="Embryo_Astatine_S.E_A_Gate_door_01">
-		<nodes nodeZ="-3228">
-			<node x="-47698" y="59872" />
-			<node x="-47597" y="59902" />
-			<node x="-47601" y="59918" />
-			<node x="-47703" y="59886" />
+	<door id="18200006" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2819">
+			<node x="-55118" y="91764" />
+			<node x="-55114" y="91863" />
+			<node x="-55131" y="91863" />
+			<node x="-55130" y="91763" />
 		</nodes>
-		<location x="-47697" y="59880" z="-3216" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-55123" y="91775" z="-2819" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="18200007" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2819">
+			<node x="-55131" y="91845" />
+			<node x="-55129" y="91943" />
+			<node x="-55114" y="91944" />
+			<node x="-55115" y="91846" />
+		</nodes>
+		<location x="-55123" y="91933" z="-2819" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="18200008" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2811">
+			<node x="-51220" y="92018" />
+			<node x="-51142" y="91945" />
+			<node x="-51130" y="91960" />
+			<node x="-51208" y="92035" />
+		</nodes>
+		<location x="-51146" y="91961" z="-2811" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="18200009" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2811">
+			<node x="-51187" y="92015" />
+			<node x="-51274" y="92077" />
+			<node x="-51261" y="92091" />
+			<node x="-51200" y="91999" />
+		</nodes>
+		<location x="-51259" y="92074" z="-2811" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="18200010" name="L2fortress_02_s.fort02_wall_door">
+		<nodes nodeZ="-2869">
+			<node x="-52376" y="92935" />
+			<node x="-52148" y="92942" />
+			<node x="-52148" y="93039" />
+			<node x="-52376" y="93040" />
+		</nodes>
+		<location x="-52256" y="92985" z="-2869" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190100" name="Embryo_Astatine_S.E_A_F_effcet_00">
-		<nodes nodeZ="-8057">
-			<node x="-43343" y="44412" />
-			<node x="-43343" y="44521" />
-			<node x="-43355" y="44521" />
-			<node x="-43355" y="44413" />
+	<door id="18200011" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2849">
+			<node x="-53232" y="90612" />
+			<node x="-53317" y="90614" />
+			<node x="-53317" y="90629" />
+			<node x="-53233" y="90628" />
 		</nodes>
-		<location x="-43349" y="44516" z="-7952" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-53318" y="90621" z="-2849" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="18190102" name="Embryo_Astatine_S.E_A_F_effcet_00">
-		<nodes nodeZ="-8057">
-			<node x="-43347" y="44006" />
-			<node x="-43347" y="44115" />
-			<node x="-43359" y="44115" />
-			<node x="-43359" y="44007" />
+	<door id="18200012" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-2849">
+			<node x="-53246" y="90612" />
+			<node x="-53150" y="90612" />
+			<node x="-53149" y="90631" />
+			<node x="-53246" y="90627" />
 		</nodes>
-		<location x="-43353" y="44110" z="-7952" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18190104" name="Embryo_Astatine_S.E_A_F_effcet_00">
-		<nodes nodeZ="-8057">
-			<node x="-44696" y="44413" />
-			<node x="-44696" y="44522" />
-			<node x="-44708" y="44522" />
-			<node x="-44708" y="44414" />
-		</nodes>
-		<location x="-44702" y="44517" z="-7952" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="18190106" name="Embryo_Astatine_S.E_A_F_effcet_00">
-		<nodes nodeZ="-8057">
-			<node x="-44700" y="44007" />
-			<node x="-44700" y="44116" />
-			<node x="-44712" y="44116" />
-			<node x="-44712" y="44008" />
-		</nodes>
-		<location x="-44706" y="44111" z="-7952" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
+		<location x="-53160" y="90621" z="-2849" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	
@@ -8053,7 +5232,115 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 19_16 Classic -->
+	<!-- 19_16 -->
+	<door id="19160001" name="Rune_temple_of_heresy_s.Rune_toh_entrance">
+		<nodes nodeZ="-10759">
+			<node x="-16654" y="-36864" />
+			<node x="-16080" y="-36861" />
+			<node x="-16080" y="-36735" />
+			<node x="-16654" y="-36735" />
+		</nodes>
+		<location x="-16363" y="-36798" z="-10535" height="512" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus openMethod="BY_SKILL" default="close" closeTime="10" />
+	</door>
+	<door id="19160002" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10760">
+			<node x="-14982" y="-38989" />
+			<node x="-14768" y="-38989" />
+			<node x="-14764" y="-38936" />
+			<node x="-14981" y="-38936" />
+		</nodes>
+		<location x="-14870" y="-38964" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160003" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-14565" y="-39924" />
+			<node x="-14562" y="-39710" />
+			<node x="-14618" y="-39713" />
+			<node x="-14616" y="-39924" />
+		</nodes>
+		<location x="-14592" y="-39817" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160004" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-14565" y="-41789" />
+			<node x="-14562" y="-41575" />
+			<node x="-14618" y="-41579" />
+			<node x="-14616" y="-41789" />
+		</nodes>
+		<location x="-14592" y="-41682" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160005" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-14982" y="-42573" />
+			<node x="-14768" y="-42573" />
+			<node x="-14764" y="-42521" />
+			<node x="-14981" y="-42521" />
+		</nodes>
+		<location x="-14870" y="-42548" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160006" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-17974" y="-42573" />
+			<node x="-17760" y="-42573" />
+			<node x="-17756" y="-42521" />
+			<node x="-17973" y="-42521" />
+		</nodes>
+		<location x="-17862" y="-42548" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160007" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-18117" y="-41797" />
+			<node x="-18114" y="-41582" />
+			<node x="-18170" y="-41587" />
+			<node x="-18168" y="-41797" />
+		</nodes>
+		<location x="-18144" y="-41690" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160008" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10760">
+			<node x="-18117" y="-39931" />
+			<node x="-18115" y="-39720" />
+			<node x="-18170" y="-39720" />
+			<node x="-18168" y="-39931" />
+		</nodes>
+		<location x="-18144" y="-39824" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
+	<door id="19160009" name="Rune_temple_of_heresy_s.Rune_toh_altar_gate_door">
+		<nodes nodeZ="-10759">
+			<node x="-17970" y="-38989" />
+			<node x="-17756" y="-38989" />
+			<node x="-17752" y="-38936" />
+			<node x="-17969" y="-38936" />
+		</nodes>
+		<location x="-17858" y="-38964" z="-10576" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
+	</door>
 	<door id="19160010" name="Rune_temple_of_heresy_s.Rune_toh_door_L">
 		<nodes nodeZ="-10878">
 			<node x="-16653" y="-44231" />
@@ -8078,29 +5365,29 @@
 		<status showHp="false" />
 		<openStatus default="close" closeTime="10" />
 	</door>
-	<door id="19160066" name="Rune_temple_of_heresy_s.Rune_toh_entrance">
-		<nodes nodeZ="-10643">
-			<node x="-18085" y="-55001" />
-			<node x="-17830" y="-55003" />
-			<node x="-17831" y="-54943" />
-			<node x="-18084" y="-54947" />
+	<door id="19160012" name="Rune_temple_of_heresy_s.Rune_toh_aisle_door">
+		<nodes nodeZ="-11053">
+			<node x="-14560" y="-52655" />
+			<node x="-14496" y="-52657" />
+			<node x="-14495" y="-52307" />
+			<node x="-14557" y="-52307" />
 		</nodes>
-		<location x="-17959" y="-54974" z="-10498" height="512" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
+		<location x="-14531" y="-52484" z="-10932" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
 	</door>
-	<door id="19160088" name="Rune_temple_of_heresy_s.Rune_toh_entrance">
-		<nodes nodeZ="-10653">
-			<node x="-14959" y="-54999" />
-			<node x="-14704" y="-55001" />
-			<node x="-14705" y="-54941" />
-			<node x="-14958" y="-54945" />
+	<door id="19160013" name="Rune_temple_of_heresy_s.Rune_toh_aisle_door">
+		<nodes nodeZ="-11053">
+			<node x="-18303" y="-52657" />
+			<node x="-18225" y="-52655" />
+			<node x="-18224" y="-52305" />
+			<node x="-18302" y="-52305" />
 		</nodes>
-		<location x="-14833" y="-54972" z="-10497" height="512" />
-		<stats basePDef="100000" baseMDef="5000" baseHpMax="3258432" />
-		<status targetable="false" showHp="false" />
-		<openStatus default="close" />
+		<location x="-18260" y="-52485" z="-10932" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="126600" />
+		<status showHp="false" />
+		<openStatus default="close" closeTime="10" />
 	</door>
 	
 	<!-- 19_17 -->
@@ -8564,27 +5851,27 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 19_26 Classic -->
+	<!-- 19_26 -->
 	<door id="19260001" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-13344" y="275980" />
 			<node x="-13397" y="276108" />
 			<node x="-13419" y="276098" />
 			<node x="-13366" y="275970" />
 		</nodes>
-		<location x="-13381" y="276039" z="-12137" />
+		<location x="-13381" y="276039" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260002" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-13428" y="275723" />
 			<node x="-13527" y="275623" />
 			<node x="-13495" y="275594" />
 			<node x="-13398" y="275693" />
 		</nodes>
-		<location x="-13463" y="275658" z="-12137" />
+		<location x="-13463" y="275658" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
@@ -8602,217 +5889,289 @@
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260004" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-11823" y="275566" />
 			<node x="-11770" y="275695" />
 			<node x="-11792" y="275704" />
 			<node x="-11846" y="275574" />
 		</nodes>
-		<location x="-11808" y="275635" z="-12137" />
+		<location x="-11808" y="275635" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260005" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-12264" y="275453" />
 			<node x="-12115" y="275451" />
 			<node x="-12114" y="275493" />
 			<node x="-12262" y="275496" />
 		</nodes>
-		<location x="-12188" y="275473" z="-12137" />
+		<location x="-12188" y="275473" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260006" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-10479" y="274758" />
 			<node x="-10352" y="274812" />
 			<node x="-10362" y="274836" />
 			<node x="-10490" y="274781" />
 		</nodes>
-		<location x="-10421" y="274796" z="-12137" />
+		<location x="-10421" y="274796" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260007" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-10629" y="274424" />
 			<node x="-10630" y="274568" />
 			<node x="-10682" y="274568" />
 			<node x="-10681" y="274424" />
 		</nodes>
-		<location x="-10655" y="274496" z="-12137" />
+		<location x="-10655" y="274496" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260008" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-10970" y="274208" />
 			<node x="-10971" y="274352" />
 			<node x="-11023" y="274352" />
 			<node x="-11022" y="274208" />
 		</nodes>
-		<location x="-10996" y="274280" z="-12137" />
+		<location x="-10996" y="274280" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260009" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-10897" y="273236" />
 			<node x="-10765" y="273183" />
 			<node x="-10754" y="273208" />
 			<node x="-10886" y="273262" />
 		</nodes>
-		<location x="-10826" y="273222" z="-12137" />
+		<location x="-10826" y="273222" z="-9065" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260010" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
+		<nodes nodeZ="-9066">
+			<node x="-11238" y="273377" />
+			<node x="-11106" y="273324" />
+			<node x="-11095" y="273349" />
+			<node x="-11227" y="273403" />
+		</nodes>
+		<location x="-11167" y="273363" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260011" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-10767" y="273075" />
 			<node x="-10866" y="272975" />
 			<node x="-10834" y="272946" />
 			<node x="-10737" y="273045" />
 		</nodes>
-		<location x="-10802" y="273010" z="-12137" />
+		<location x="-10802" y="273010" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260012" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-11101" y="272496" />
 			<node x="-10998" y="272396" />
 			<node x="-10981" y="272414" />
 			<node x="-11079" y="272517" />
 		</nodes>
-		<location x="-11041" y="272456" z="-12137" />
+		<location x="-11041" y="272456" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260013" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-13160" y="272044" />
 			<node x="-13011" y="272042" />
 			<node x="-13010" y="272084" />
 			<node x="-13158" y="272087" />
 		</nodes>
-		<location x="-13084" y="272064" z="-12137" />
+		<location x="-13084" y="272064" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260014" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-12945" y="272384" />
 			<node x="-12796" y="272382" />
 			<node x="-12795" y="272424" />
 			<node x="-12943" y="272427" />
 		</nodes>
-		<location x="-12869" y="272404" z="-12137" />
+		<location x="-12869" y="272404" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260015" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-13522" y="272252" />
 			<node x="-13419" y="272153" />
 			<node x="-13390" y="272184" />
 			<node x="-13488" y="272286" />
 		</nodes>
-		<location x="-13455" y="272218" z="-12137" />
+		<location x="-13455" y="272218" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260016" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14564" y="273118" />
 			<node x="-14695" y="273064" />
 			<node x="-14684" y="273042" />
 			<node x="-14556" y="273096" />
 		</nodes>
-		<location x="-14625" y="273080" z="-12137" />
+		<location x="-14625" y="273080" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260017" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14168" y="273282" />
 			<node x="-14299" y="273228" />
 			<node x="-14288" y="273206" />
 			<node x="-14160" y="273260" />
 		</nodes>
-		<location x="-14229" y="273244" z="-12137" />
+		<location x="-14229" y="273244" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260018" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14035" y="273525" />
 			<node x="-14036" y="273669" />
 			<node x="-14088" y="273670" />
 			<node x="-14087" y="273525" />
 		</nodes>
-		<location x="-14061" y="273597" z="-12137" />
+		<location x="-14061" y="273597" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260019" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14549" y="273951" />
 			<node x="-14689" y="273951" />
 			<node x="-14689" y="273925" />
 			<node x="-14549" y="273926" />
 		</nodes>
-		<location x="-14619" y="273938" z="-12137" />
+		<location x="-14619" y="273938" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260020" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14035" y="274211" />
 			<node x="-14036" y="274355" />
 			<node x="-14088" y="274356" />
 			<node x="-14087" y="274211" />
 		</nodes>
-		<location x="-14061" y="274283" z="-12137" />
+		<location x="-14061" y="274283" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260021" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-14152" y="274637" />
 			<node x="-14279" y="274691" />
 			<node x="-14287" y="274668" />
 			<node x="-14160" y="274616" />
 		</nodes>
-		<location x="-14220" y="274653" z="-12137" />
+		<location x="-14220" y="274653" z="-9065" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260022" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
+		<nodes nodeZ="-9066">
+			<node x="-13811" y="274498" />
+			<node x="-13938" y="274552" />
+			<node x="-13946" y="274529" />
+			<node x="-13819" y="274477" />
+		</nodes>
+		<location x="-13879" y="274514" z="-9065" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
 	</door>
 	<door id="19260023" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
-		<nodes nodeZ="-12138">
+		<nodes nodeZ="-9066">
 			<node x="-13223" y="272311" />
 			<node x="-13277" y="272180" />
 			<node x="-13254" y="272172" />
 			<node x="-13201" y="272300" />
 		</nodes>
-		<location x="-13239" y="272241" z="-12137" />
+		<location x="-13239" y="272241" z="-9065" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260051" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
+		<nodes nodeZ="-9066">
+			<node x="-13677" y="273371" />
+			<node x="-13578" y="273272" />
+			<node x="-13550" y="273301" />
+			<node x="-13647" y="273402" />
+		</nodes>
+		<location x="-13614" y="273336" z="-9065" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260052" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_5F_door">
+		<nodes nodeZ="-9066">
+			<node x="-11889" y="272921" />
+			<node x="-11988" y="272821" />
+			<node x="-11956" y="272792" />
+			<node x="-11859" y="272891" />
+		</nodes>
+		<location x="-11924" y="272856" z="-9065" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260053" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_1F_door">
+		<nodes nodeZ="-15335">
+			<node x="-14035" y="273250" />
+			<node x="-13875" y="273250" />
+			<node x="-13875" y="273266" />
+			<node x="-14035" y="273266" />
+		</nodes>
+		<location x="-13955" y="273258" z="-15216" />
+		<stats basePDef="100000" baseHpMax="3258432" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" closeTime="120" />
+	</door>
+	<door id="19260054" name="Steel_castlein2_s.Steel_castle_Broom.Iron_B_1F_door">
+		<nodes nodeZ="-15335">
+			<node x="-13387" y="274602" />
+			<node x="-13227" y="274602" />
+			<node x="-13227" y="274618" />
+			<node x="-13387" y="274618" />
+		</nodes>
+		<location x="-13307" y="274610" z="-15216" />
 		<stats basePDef="100000" baseHpMax="3258432" />
 		<status targetable="false" showHp="false" />
 		<openStatus default="close" closeTime="120" />
@@ -9654,7 +7013,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 20_24 Classic -->
+	<!-- 20_24 -->
 	<door id="20240001" name="bereth_S.bereth_Door01">
 		<nodes nodeZ="-9399">
 			<node x="16223" y="210720" />
@@ -10070,7 +7429,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 21_15 Classic -->
+	<!-- 21_15 -->
 	<door id="21150001" name="Beast_arena_azit_s.Defense_Tree.Beast_azit_door">
 		<nodes nodeZ="-1382">
 			<node x="59945" y="-94174" />
@@ -10118,6 +7477,66 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<status showHp="false" />
 		<openStatus default="close" />
+	</door>
+	<door id="21150005" name="Beast_arena_azit_s.Defense_Tree.Beast_arena_farm_hedge">
+		<nodes nodeZ="-1391">
+			<node x="58323" y="-94077" />
+			<node x="58685" y="-93905" />
+			<node x="58665" y="-93846" />
+			<node x="58304" y="-94023" />
+		</nodes>
+		<location x="58500" y="-93965" z="-1380" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="21150006" name="Beast_arena_azit_s.Defense_Tree.Beast_arena_farm_hedge">
+		<nodes nodeZ="-1394">
+			<node x="57010" y="-93780" />
+			<node x="56731" y="-93497" />
+			<node x="56697" y="-93530" />
+			<node x="56977" y="-93815" />
+		</nodes>
+		<location x="56863" y="-93651" z="-1383" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="21150007" name="Beast_arena_azit_s.Defense_Tree.Beast_arena_farm_hedge">
+		<nodes nodeZ="-1391">
+			<node x="56555" y="-92178" />
+			<node x="56731" y="-91821" />
+			<node x="56694" y="-91807" />
+			<node x="56516" y="-92158" />
+		</nodes>
+		<location x="56629" y="-91998" z="-1380" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="21150008" name="Beast_arena_azit_s.Defense_Tree.Beast_arena_farm_hedge">
+		<nodes nodeZ="-1391">
+			<node x="58373" y="-91272" />
+			<node x="57987" y="-91198" />
+			<node x="57979" y="-91236" />
+			<node x="58362" y="-91316" />
+		</nodes>
+		<location x="58173" y="-91247" z="-1380" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="21150009" name="Beast_arena_azit_s.Defense_Tree.Beast_arena_farm_hedge">
+		<nodes nodeZ="-1391">
+			<node x="59368" y="-92713" />
+			<node x="59313" y="-92322" />
+			<node x="59264" y="-92328" />
+			<node x="59320" y="-92718" />
+		</nodes>
+		<location x="59320" y="-92518" z="-1380" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
+		<status showHp="false" />
+		<openStatus default="open" />
 	</door>
 	
 	<!-- 21_17 -->
@@ -10726,7 +8145,7 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 22_15 Classic -->
+	<!-- 22_15 -->
 	<door id="22150001" name="L2fortress_02_s.fort02_wall_door">
 		<nodes nodeZ="-1478">
 			<node x="72376" y="-96500" />
@@ -10960,7 +8379,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 22_17 Classic -->
+	<!-- 22_17 -->
 	<door id="22170001" name="Oren_mountain_hangout_S.Oren_mountain_hangout_gate_door_L">
 		<nodes nodeZ="-1822">
 			<node x="85413" y="-18300" />
@@ -11010,7 +8429,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 22_18 Classic -->
+	<!-- 22_18 -->
 	<door id="22180001" name="L2fortress_02_s.fort02_wall_door">
 		<nodes nodeZ="-3093">
 			<node x="74150" y="2726" />
@@ -11577,7 +8996,7 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 23_14 Classic -->
+	<!-- 23_14 -->
 	<door id="23140001" name="frozen_barrier_s.frozen_barrier_spear">
 		<nodes nodeZ="-3663">
 			<node x="113916" y="-126163" />
@@ -11601,6 +9020,18 @@
 		<stats basePDef="100000" baseMDef="10000" baseHpMax="150000" />
 		<status showHp="false" />
 		<openStatus default="open" />
+	</door>
+	<door id="23140101" name="Freya_S.Base.IceQueen_Door">
+		<nodes nodeZ="-11242">
+			<node x="114651" y="-113301" />
+			<node x="114785" y="-113301" />
+			<node x="114786" y="-113280" />
+			<node x="114653" y="-113276" />
+		</nodes>
+		<location x="114720" y="-113291" z="-11233" />
+		<stats basePDef="100000" />
+		<status targetable="false" showHp="false" />
+		<openStatus default="close" />
 	</door>
 	
 	<!-- 23_15 Classic -->
@@ -11761,119 +9192,141 @@
 	
 	<!-- 23_17 Classic -->
 	<door id="23170001" name="L2fortress_02_s.fort02_wall_door">
-		<nodes nodeZ="-1050">
-			<node x="112256" y="-17198" />
-			<node x="112483" y="-17191" />
-			<node x="112483" y="-17094" />
-			<node x="112255" y="-17093" />
+		<nodes nodeZ="-1045">
+			<node x="112232" y="-17023" />
+			<node x="112460" y="-17016" />
+			<node x="112460" y="-16919" />
+			<node x="112232" y="-16918" />
 		</nodes>
-		<location x="112372" y="-17148" z="-1050" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="112349" y="-16973" z="-1045" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
-	<door id="23170004" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1028">
-			<node x="111918" y="-14857" />
-			<node x="111833" y="-14855" />
-			<node x="111833" y="-14840" />
-			<node x="111917" y="-14841" />
+	<door id="23170002" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-995">
+			<node x="109876" y="-15931" />
+			<node x="109779" y="-15930" />
+			<node x="109778" y="-15908" />
+			<node x="109876" y="-15905" />
 		</nodes>
-		<location x="111832" y="-14848" z="-1028" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="109785" y="-15919" z="-995" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="23170003" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-995">
+			<node x="109846" y="-15931" />
+			<node x="109952" y="-15930" />
+			<node x="109952" y="-15905" />
+			<node x="109846" y="-15905" />
+		</nodes>
+		<location x="109943" y="-15919" z="-995" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<openStatus openMethod="BY_CLICK" default="close" />
+	</door>
+	<door id="23170004" name="L2fortress_02_s.Fort02_indoor">
+		<nodes nodeZ="-1023">
+			<node x="111375" y="-14559" />
+			<node x="111290" y="-14557" />
+			<node x="111290" y="-14542" />
+			<node x="111374" y="-14543" />
+		</nodes>
+		<location x="111289" y="-14550" z="-1023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170005" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1028">
-			<node x="111904" y="-14857" />
-			<node x="112000" y="-14857" />
-			<node x="112001" y="-14838" />
-			<node x="111904" y="-14842" />
+		<nodes nodeZ="-1023">
+			<node x="111361" y="-14559" />
+			<node x="111457" y="-14559" />
+			<node x="111458" y="-14540" />
+			<node x="111361" y="-14544" />
 		</nodes>
-		<location x="111990" y="-14848" z="-1028" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="111447" y="-14550" z="-1023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170006" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1029">
-			<node x="109610" y="-14618" />
-			<node x="109614" y="-14519" />
-			<node x="109597" y="-14519" />
-			<node x="109598" y="-14619" />
+		<nodes nodeZ="-1024">
+			<node x="109587" y="-14443" />
+			<node x="109591" y="-14344" />
+			<node x="109574" y="-14344" />
+			<node x="109575" y="-14444" />
 		</nodes>
-		<location x="109605" y="-14607" z="-1029" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="109582" y="-14432" z="-1024" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170007" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1029">
-			<node x="109597" y="-14537" />
-			<node x="109599" y="-14439" />
-			<node x="109614" y="-14438" />
-			<node x="109613" y="-14536" />
+		<nodes nodeZ="-1024">
+			<node x="109574" y="-14362" />
+			<node x="109576" y="-14264" />
+			<node x="109591" y="-14263" />
+			<node x="109590" y="-14362" />
 		</nodes>
-		<location x="109605" y="-14449" z="-1029" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="109582" y="-14274" z="-1024" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170008" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1028">
-			<node x="111918" y="-16057" />
-			<node x="111833" y="-16055" />
-			<node x="111833" y="-16040" />
-			<node x="111917" y="-16041" />
+		<nodes nodeZ="-1023">
+			<node x="111375" y="-15759" />
+			<node x="111290" y="-15757" />
+			<node x="111290" y="-15742" />
+			<node x="111374" y="-15743" />
 		</nodes>
-		<location x="111832" y="-16048" z="-1028" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="111289" y="-15750" z="-1023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170009" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-1028">
-			<node x="111904" y="-16057" />
-			<node x="112000" y="-16057" />
-			<node x="112001" y="-16038" />
-			<node x="111904" y="-16042" />
+		<nodes nodeZ="-1023">
+			<node x="111361" y="-15759" />
+			<node x="111457" y="-15759" />
+			<node x="111458" y="-15740" />
+			<node x="111361" y="-15744" />
 		</nodes>
-		<location x="111990" y="-16048" z="-1028" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="111447" y="-15750" z="-1023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
 	<door id="23170010" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-992">
-			<node x="113523" y="-14909" />
-			<node x="113507" y="-15017" />
-			<node x="113523" y="-15017" />
-			<node x="113507" y="-14910" />
+		<nodes nodeZ="-987">
+			<node x="113500" y="-14734" />
+			<node x="113484" y="-14842" />
+			<node x="113500" y="-14842" />
+			<node x="113484" y="-14735" />
 		</nodes>
-		<location x="113515" y="-15004" z="-992" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="113492" y="-14829" z="-987" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	<door id="23170011" name="L2fortress_02_s.Fort02_indoor">
-		<nodes nodeZ="-992">
-			<node x="113506" y="-14936" />
-			<node x="113507" y="-14833" />
-			<node x="113524" y="-14834" />
-			<node x="113525" y="-14936" />
+		<nodes nodeZ="-987">
+			<node x="113483" y="-14761" />
+			<node x="113484" y="-14658" />
+			<node x="113501" y="-14659" />
+			<node x="113502" y="-14761" />
 		</nodes>
-		<location x="113515" y="-14848" z="-992" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="113492" y="-14673" z="-987" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	<door id="23170012" name="L2fortress_02_s.fort02_wall_door">
-		<nodes nodeZ="-1052">
-			<node x="110254" y="-13774" />
-			<node x="110482" y="-13767" />
-			<node x="110482" y="-13670" />
-			<node x="110254" y="-13669" />
+		<nodes nodeZ="-1047">
+			<node x="110232" y="-13599" />
+			<node x="110459" y="-13592" />
+			<node x="110459" y="-13495" />
+			<node x="110231" y="-13494" />
 		</nodes>
-		<location x="110371" y="-13724" z="-1052" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="5091300" />
+		<location x="110348" y="-13549" z="-1047" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
 	
@@ -12026,7 +9479,7 @@
 			<node x="112864" y="144720" />
 		</nodes>
 		<location x="112857" y="144729" z="-2540" height="320" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="949500" />
 		<openStatus default="close" />
 	</door>
 	<door id="23220002" name="Castle_Kent_Door_S.Main_Gate_Door_R">
@@ -12037,7 +9490,7 @@
 			<node x="112864" y="144997" />
 		</nodes>
 		<location x="112857" y="144990" z="-2540" height="320" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="949500" />
 		<openStatus default="close" />
 	</door>
 	<door id="23220003" name="Castle_Kent_s.left_brokenwall_a">
@@ -12048,7 +9501,7 @@
 			<node x="114848" y="143360" />
 		</nodes>
 		<location x="114540" y="143297" z="-2755" height="460" />
-		<stats basePDef="837" baseMDef="674" baseHpMax="237375" />
+		<stats basePDef="837" baseMDef="674" baseHpMax="678840" />
 		<status isWall="true" />
 		<openStatus default="close" />
 	</door>
@@ -12060,7 +9513,7 @@
 			<node x="114848" y="146687" />
 		</nodes>
 		<location x="114540" y="146623" z="-2755" height="460" />
-		<stats basePDef="837" baseMDef="674" baseHpMax="237375" />
+		<stats basePDef="837" baseMDef="674" baseHpMax="678840" />
 		<status isWall="true" />
 		<openStatus default="close" />
 	</door>
@@ -12072,7 +9525,7 @@
 			<node x="115396" y="144956" />
 		</nodes>
 		<location x="115402" y="144965" z="-2349" height="255" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="474750" />
 		<openStatus default="close" />
 	</door>
 	<door id="23220006" name="Castle_Kent_Door_S.Front_Tower_Door">
@@ -12083,7 +9536,7 @@
 			<node x="115408" y="145236" />
 		</nodes>
 		<location x="115402" y="145227" z="-2349" height="255" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="474750" />
 		<openStatus default="close" />
 	</door>
 	<door id="23220007" name="Castle_Kent_Door_S.Castle_Wall_Back_DoorTower_Door">
@@ -12134,7 +9587,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 24_14 Classic -->
+	<!-- 24_14 -->
 	<door id="24140001" name="Door_Set_S.Elmore_Human_Door_Set.Godard_SPA_Azit_Mdoor">
 		<nodes nodeZ="-1895">
 			<node x="140729" y="-124489" />
@@ -12233,7 +9686,7 @@
 	</door>
 	
 	<!-- 24_15 Classic -->
-	<door id="24150001" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150001" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2865">
 			<node x="158555" y="-72041" />
 			<node x="158507" y="-72116" />
@@ -12244,7 +9697,7 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
-	<door id="24150002" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150002" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2865">
 			<node x="158550" y="-72051" />
 			<node x="158600" y="-71978" />
@@ -12255,7 +9708,7 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
-	<door id="24150003" name="StaticMeshActor714.BlockingVolume8">
+	<door id="24150003" name="L2fortress_02_s.fort02_wall_door">
 		<nodes nodeZ="-2916">
 			<node x="157280" y="-69194" />
 			<node x="157390" y="-69038" />
@@ -12266,7 +9719,7 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150004" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150004" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2892">
 			<node x="159661" y="-70644" />
 			<node x="159613" y="-70715" />
@@ -12278,7 +9731,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150005" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150005" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2892">
 			<node x="159656" y="-70652" />
 			<node x="159705" y="-70580" />
@@ -12290,7 +9743,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150006" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150006" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2892">
 			<node x="158663" y="-69978" />
 			<node x="158614" y="-70049" />
@@ -12302,7 +9755,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150007" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150007" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2892">
 			<node x="158660" y="-69986" />
 			<node x="158708" y="-69915" />
@@ -12314,7 +9767,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150008" name="StaticMeshActor714.BlockingVolume8">
+	<door id="24150008" name="L2fortress_02_s.fort02_wall_door">
 		<nodes nodeZ="-2916">
 			<node x="161350" y="-71924" />
 			<node x="161461" y="-71769" />
@@ -12325,7 +9778,7 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150009" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150009" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2899">
 			<node x="160805" y="-70612" />
 			<node x="160731" y="-70562" />
@@ -12337,7 +9790,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150010" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150010" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2899">
 			<node x="160807" y="-70584" />
 			<node x="160867" y="-70651" />
@@ -12349,7 +9802,7 @@
 		<status showHp="false" />
 		<openStatus default="close" />
 	</door>
-	<door id="24150011" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150011" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2853">
 			<node x="159919" y="-69042" />
 			<node x="159843" y="-68995" />
@@ -12360,7 +9813,7 @@
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
-	<door id="24150012" name="StaticMeshActor714.StaticMeshActor2213">
+	<door id="24150012" name="L2fortress_02_s.Fort02_indoor">
 		<nodes nodeZ="-2853">
 			<node x="159920" y="-69016" />
 			<node x="159984" y="-69087" />
@@ -12422,25 +9875,25 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	<door id="24160005" name="Door_Set_S.Elmore_Human_Door_Set.godard_azit_door">
-		<nodes nodeZ="-2821">
-			<node x="148299" y="-56483" />
-			<node x="148252" y="-56508" />
-			<node x="148260" y="-56523" />
-			<node x="148307" y="-56498" />
+		<nodes nodeZ="-2822">
+			<node x="148303" y="-56490" />
+			<node x="148256" y="-56515" />
+			<node x="148264" y="-56530" />
+			<node x="148311" y="-56505" />
 		</nodes>
-		<location x="148259" y="-56513" z="-2790" height="250" />
+		<location x="148263" y="-56520" z="-2791" height="250" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<status showHp="false" />
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	<door id="24160006" name="Door_Set_S.Elmore_Human_Door_Set.godard_azit_door">
-		<nodes nodeZ="-2822">
-			<node x="148299" y="-56502" />
-			<node x="148345" y="-56477" />
-			<node x="148338" y="-56463" />
-			<node x="148292" y="-56488" />
+		<nodes nodeZ="-2823">
+			<node x="148303" y="-56509" />
+			<node x="148349" y="-56484" />
+			<node x="148342" y="-56470" />
+			<node x="148296" y="-56495" />
 		</nodes>
-		<location x="148338" y="-56471" z="-2790" height="250" />
+		<location x="148342" y="-56478" z="-2791" height="250" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<status showHp="false" />
 		<openStatus openMethod="BY_CLICK" default="close" />
@@ -12477,7 +9930,7 @@
 			<node x="147448" y="-45552" />
 		</nodes>
 		<location x="147642" y="-45571" z="-1945" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="633000" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160010" name="godad_castle_door_s.godad_castle_door01">
@@ -12488,7 +9941,7 @@
 			<node x="147272" y="-45553" />
 		</nodes>
 		<location x="147290" y="-45571" z="-1945" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="633000" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160011" name="godad_castle_door_s.godad_castle_door02">
@@ -12499,7 +9952,7 @@
 			<node x="149130" y="-48385" />
 		</nodes>
 		<location x="149144" y="-48368" z="-2223" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="23738" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160012" name="godad_castle_door_s.godad_castle_door02">
@@ -12510,7 +9963,7 @@
 			<node x="145779" y="-48385" />
 		</nodes>
 		<location x="145793" y="-48368" z="-2223" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="23738" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160013" name="godad_castle_door_s.godad_castle_door05">
@@ -12521,7 +9974,7 @@
 			<node x="148974" y="-47698" />
 		</nodes>
 		<location x="148998" y="-47795" z="-1511" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="23738" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="633000" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160014" name="godad_castle_door_s.godad_castle_door05">
@@ -12532,7 +9985,7 @@
 			<node x="145989" y="-47714" />
 		</nodes>
 		<location x="145931" y="-47794" z="-1511" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="23738" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="633000" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160015" name="godad_castle_door_s.godad_castle_door04">
@@ -12543,7 +9996,7 @@
 			<node x="148650" y="-49092" />
 		</nodes>
 		<location x="148750" y="-49120" z="-588" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="2373750" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160016" name="godad_castle_door_s.godad_castle_door04">
@@ -12554,7 +10007,7 @@
 			<node x="146080" y="-49092" />
 		</nodes>
 		<location x="146180" y="-49121" z="-588" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="2373750" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="316500" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160017" name="godad_castle_door_s.godad_castle_door04">
@@ -12565,7 +10018,7 @@
 			<node x="150148" y="-48549" />
 		</nodes>
 		<location x="150248" y="-48577" z="-1659" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="2373750" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="79125" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160018" name="godad_castle_door_s.godad_castle_door04">
@@ -12576,7 +10029,7 @@
 			<node x="144582" y="-48549" />
 		</nodes>
 		<location x="144682" y="-48577" z="-1659" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="2373750" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="79125" />
 		<openStatus default="close" />
 	</door>
 	<door id="24160019" name="godad_castle_door_s.godad_castle_door06">
@@ -12587,7 +10040,7 @@
 			<node x="148764" y="-48528" />
 		</nodes>
 		<location x="148751" y="-48603" z="-2290" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="1357680" />
 		<status showHp="false" />
 		<openStatus default="open" />
 	</door>
@@ -12599,7 +10052,7 @@
 			<node x="146193" y="-48528" />
 		</nodes>
 		<location x="146180" y="-48603" z="-2290" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="1357680" />
 		<status showHp="false" />
 		<openStatus default="open" />
 	</door>
@@ -12611,7 +10064,7 @@
 			<node x="149636" y="-47345" />
 		</nodes>
 		<location x="150106" y="-47523" z="-2289" height="250" />
-		<stats basePDef="837" baseMDef="674" baseHpMax="1000" />
+		<stats basePDef="837" baseMDef="674" baseHpMax="1357680" />
 		<status isWall="true" />
 		<openStatus default="close" />
 	</door>
@@ -12623,7 +10076,7 @@
 			<node x="144480" y="-46922" />
 		</nodes>
 		<location x="144824" y="-47523" z="-2289" height="250" />
-		<stats basePDef="837" baseMDef="674" baseHpMax="1000" />
+		<stats basePDef="837" baseMDef="674" baseHpMax="1357680" />
 		<status isWall="true" />
 		<openStatus default="close" />
 	</door>
@@ -12635,7 +10088,7 @@
 			<node x="147366" y="-46170" />
 		</nodes>
 		<location x="147464" y="-46200" z="-1987" height="250" />
-		<stats basePDef="644" baseMDef="518" baseHpMax="237375" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="1357680" />
 		<status showHp="false" />
 		<openStatus default="open" />
 	</door>
@@ -12657,23 +10110,23 @@
 	<!-- 24_18 Classic -->
 	<door id="24180001" name="Aden_castle_door_S.Aden_caslte_door01">
 		<nodes nodeZ="-496">
-			<node x="147277" y="9786" />
-			<node x="147464" y="9786" />
-			<node x="147464" y="9804" />
-			<node x="147277" y="9804" />
+			<node x="147277" y="8474" />
+			<node x="147464" y="8474" />
+			<node x="147464" y="8492" />
+			<node x="147277" y="8492" />
 		</nodes>
-		<location x="147278" y="9795" z="-241" height="495" />
+		<location x="147278" y="8483" z="-241" height="495" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="949500" />
 		<openStatus default="close" />
 	</door>
 	<door id="24180002" name="Aden_castle_door_S.Aden_caslte_door01">
 		<nodes nodeZ="-495">
-			<node x="147448" y="9786" />
-			<node x="147635" y="9786" />
-			<node x="147635" y="9804" />
-			<node x="147448" y="9804" />
+			<node x="147448" y="8474" />
+			<node x="147635" y="8474" />
+			<node x="147635" y="8492" />
+			<node x="147448" y="8492" />
 		</nodes>
-		<location x="147634" y="9795" z="-241" height="495" />
+		<location x="147634" y="8483" z="-241" height="495" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="949500" />
 		<openStatus default="close" />
 	</door>
@@ -12713,12 +10166,12 @@
 	</door>
 	<door id="24180006" name="Aden_Castle_S.Aden_castle_wallhole02a">
 		<nodes nodeZ="-752">
-			<node x="144159" y="5119" />
-			<node x="144321" y="5119" />
-			<node x="144833" y="5889" />
-			<node x="144671" y="5889" />
+			<node x="144863" y="5119" />
+			<node x="145025" y="5119" />
+			<node x="145537" y="5889" />
+			<node x="145375" y="5889" />
 		</nodes>
-		<location x="144497" y="5504" z="-443" height="565" />
+		<location x="145201" y="5504" z="-443" height="565" />
 		<stats basePDef="837" baseMDef="674" baseHpMax="678840" />
 		<status isWall="true" />
 		<openStatus default="close" />
@@ -12769,12 +10222,12 @@
 	</door>
 	<door id="24180011" name="Aden_Castle_S.Aden_castle_wallhole02a">
 		<nodes nodeZ="-752">
-			<node x="150591" y="5119" />
-			<node x="150753" y="5119" />
-			<node x="150241" y="5889" />
-			<node x="150079" y="5889" />
+			<node x="149887" y="5119" />
+			<node x="150049" y="5119" />
+			<node x="149537" y="5889" />
+			<node x="149375" y="5889" />
 		</nodes>
-		<location x="150415" y="5504" z="-443" height="565" />
+		<location x="149711" y="5504" z="-443" height="565" />
 		<stats basePDef="837" baseMDef="674" baseHpMax="678840" />
 		<status isWall="true" />
 		<openStatus default="close" />
@@ -12836,12 +10289,12 @@
 	</door>
 	<door id="24180018" name="Aden_castle_door_S.Aden_caslte_door03">
 		<nodes nodeZ="-114">
-			<node x="150726" y="3904" />
-			<node x="150726" y="3776" />
-			<node x="150742" y="3776" />
-			<node x="150742" y="3904" />
+			<node x="150022" y="3904" />
+			<node x="150022" y="3776" />
+			<node x="150038" y="3776" />
+			<node x="150038" y="3904" />
 		</nodes>
-		<location x="150730" y="3784" z="9" height="243" />
+		<location x="150026" y="3784" z="9" height="243" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="474750" />
 		<status showHp="false" />
 		<openStatus default="open" />
@@ -12860,12 +10313,12 @@
 	</door>
 	<door id="24180020" name="Aden_castle_door_S.Aden_caslte_door03">
 		<nodes nodeZ="-115">
-			<node x="144162" y="3903" />
-			<node x="144162" y="3775" />
-			<node x="144193" y="3776" />
-			<node x="144195" y="3902" />
+			<node x="144866" y="3903" />
+			<node x="144866" y="3775" />
+			<node x="144897" y="3776" />
+			<node x="144899" y="3902" />
 		</nodes>
-		<location x="144173" y="3784" z="8" height="243" />
+		<location x="144877" y="3784" z="8" height="243" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="474750" />
 		<status showHp="false" />
 		<openStatus default="open" />
@@ -13027,7 +10480,7 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 24_19 Classic -->
+	<!-- 24_19 -->
 	<door id="24190001" name="Aden_Colosseum.Colosseum_Door">
 		<nodes nodeZ="-3435">
 			<node x="147075" y="46641" />
@@ -13167,58 +10620,6 @@
 		<location x="156135" y="56278" z="-3253" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<openStatus openMethod="BY_CLICK" default="close" />
-	</door>
-	
-	<!-- 24_21 Classic -->
-	
-	<!-- 24_22 Classic -->
-	<door id="24220001" name="Crystal_Palace_S.door_02">
-		<nodes nodeZ="-11886">
-			<node x="143596" y="142359" />
-			<node x="143819" y="142363" />
-			<node x="143821" y="142405" />
-			<node x="143597" y="142401" />
-		</nodes>
-		<location x="143708" y="142376" z="-11886" />
-		<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="24220002" name="Crystal_Palace_S.door_02">
-		<nodes nodeZ="-11886">
-			<node x="144446" y="142407" />
-			<node x="144479" y="142407" />
-			<node x="144481" y="142625" />
-			<node x="144447" y="142625" />
-		</nodes>
-		<location x="144464" y="142515" z="-11886" />
-		<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="24220003" name="Crystal_Palace_S.Door_03">
-		<nodes nodeZ="-12271">
-			<node x="147300" y="143631" />
-			<node x="147337" y="143629" />
-			<node x="147339" y="143858" />
-			<node x="147300" y="143858" />
-		</nodes>
-		<location x="147321" y="143743" z="-12271" />
-		<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
-	</door>
-	<door id="24220005" name="Crystal_Palace_S.door_01_B">
-		<nodes nodeZ="-12373">
-			<node x="149770" y="147171" />
-			<node x="149823" y="147198" />
-			<node x="149733" y="147406" />
-			<node x="149684" y="147389" />
-		</nodes>
-		<location x="149746" y="147291" z="-12373" />
-		<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
-		<status showHp="false" />
-		<openStatus default="close" />
 	</door>
 	
 	<!-- 24_24 -->
@@ -13395,7 +10796,7 @@
 		<openStatus default="close" />
 	</door>
 	
-	<!-- 25_15 Classic -->
+	<!-- 25_15 -->
 	<door id="25150001" name="Godad_Catacomb_S.cataking_door02">
 		<nodes nodeZ="-7254">
 			<node x="179508" y="-89163" />
@@ -13753,7 +11154,7 @@
 		<openStatus openMethod="BY_CLICK" default="close" />
 	</door>
 	
-	<!-- 25_18 Classic -->
+	<!-- 25_18 -->
 	<door id="25180001" name="sylen_sealing_du_s.Syl_seal_Door">
 		<nodes nodeZ="-7475">
 			<node x="179654" y="13605" />
@@ -14430,6 +11831,380 @@
 			<node x="224842" y="70411" />
 		</nodes>
 		<location x="224649" y="70309" z="1622" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	
+	<!-- 26_21 -->
+	<door id="26210001" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-10034">
+			<node x="208792" y="120693" />
+			<node x="208789" y="120456" />
+			<node x="208827" y="120458" />
+			<node x="208824" y="120695" />
+		</nodes>
+		<location x="208810" y="120575" z="-10023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210002" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-10034">
+			<node x="209338" y="120693" />
+			<node x="209335" y="120456" />
+			<node x="209373" y="120458" />
+			<node x="209370" y="120695" />
+		</nodes>
+		<location x="209356" y="120575" z="-10023" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210003" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-12588">
+			<node x="219048" y="108822" />
+			<node x="219045" y="108585" />
+			<node x="219083" y="108587" />
+			<node x="219080" y="108824" />
+		</nodes>
+		<location x="219066" y="108704" z="-12577" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210004" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-12589">
+			<node x="209525" y="108822" />
+			<node x="209522" y="108585" />
+			<node x="209560" y="108587" />
+			<node x="209557" y="108824" />
+		</nodes>
+		<location x="209543" y="108704" z="-12578" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210005" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-12527">
+			<node x="208860" y="118149" />
+			<node x="208608" y="118151" />
+			<node x="208611" y="118113" />
+			<node x="208860" y="118113" />
+		</nodes>
+		<location x="208736" y="118131" z="-12516" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210006" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-12525">
+			<node x="219996" y="118143" />
+			<node x="219744" y="118145" />
+			<node x="219747" y="118107" />
+			<node x="219996" y="118107" />
+		</nodes>
+		<location x="219872" y="118125" z="-12514" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210020" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1336">
+			<node x="217610" y="109201" />
+			<node x="217951" y="109195" />
+			<node x="217954" y="109273" />
+			<node x="217611" y="109277" />
+		</nodes>
+		<location x="217785" y="109234" z="-1322" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210021" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1334">
+			<node x="219656" y="110984" />
+			<node x="219751" y="110983" />
+			<node x="219751" y="111319" />
+			<node x="219656" y="111322" />
+		</nodes>
+		<location x="219702" y="111149" z="-1323" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210022" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1333">
+			<node x="217967" y="113019" />
+			<node x="217971" y="113130" />
+			<node x="217618" y="113135" />
+			<node x="217614" y="113018" />
+		</nodes>
+		<location x="217789" y="113074" z="-1322" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210023" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1334">
+			<node x="215820" y="111016" />
+			<node x="215915" y="111015" />
+			<node x="215915" y="111351" />
+			<node x="215820" y="111354" />
+		</nodes>
+		<location x="215866" y="111181" z="-1323" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210024" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1769">
+			<node x="215832" y="119196" />
+			<node x="215927" y="119195" />
+			<node x="215927" y="119531" />
+			<node x="215832" y="119534" />
+		</nodes>
+		<location x="215878" y="119361" z="-1758" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210025" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1771">
+			<node x="217622" y="117406" />
+			<node x="217963" y="117400" />
+			<node x="217966" y="117478" />
+			<node x="217623" y="117482" />
+		</nodes>
+		<location x="217797" y="117439" z="-1757" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210026" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1769">
+			<node x="219668" y="119179" />
+			<node x="219763" y="119178" />
+			<node x="219763" y="119514" />
+			<node x="219668" y="119517" />
+		</nodes>
+		<location x="219714" y="119344" z="-1758" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210027" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1768">
+			<node x="217979" y="121224" />
+			<node x="217983" y="121335" />
+			<node x="217630" y="121340" />
+			<node x="217626" y="121223" />
+		</nodes>
+		<location x="217801" y="121279" z="-1757" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210028" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1334">
+			<node x="211479" y="119201" />
+			<node x="211574" y="119200" />
+			<node x="211574" y="119536" />
+			<node x="211479" y="119539" />
+		</nodes>
+		<location x="211525" y="119366" z="-1323" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210029" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1336">
+			<node x="209433" y="117418" />
+			<node x="209774" y="117412" />
+			<node x="209777" y="117490" />
+			<node x="209434" y="117494" />
+		</nodes>
+		<location x="209608" y="117451" z="-1322" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210030" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1334">
+			<node x="207643" y="119207" />
+			<node x="207738" y="119206" />
+			<node x="207738" y="119542" />
+			<node x="207643" y="119545" />
+		</nodes>
+		<location x="207689" y="119372" z="-1323" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210031" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-1333">
+			<node x="209790" y="121236" />
+			<node x="209794" y="121347" />
+			<node x="209441" y="121352" />
+			<node x="209437" y="121235" />
+		</nodes>
+		<location x="209612" y="121291" z="-1322" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210032" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-927">
+			<node x="213886" y="117374" />
+			<node x="213890" y="117485" />
+			<node x="213537" y="117490" />
+			<node x="213533" y="117373" />
+		</nodes>
+		<location x="213708" y="117429" z="-916" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210033" name="Magmell_Genesis_S.Wall.Genesisdoor">
+		<nodes nodeZ="-925">
+			<node x="215820" y="115091" />
+			<node x="215915" y="115090" />
+			<node x="215915" y="115426" />
+			<node x="215820" y="115429" />
+		</nodes>
+		<location x="215866" y="115256" z="-914" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="open" />
+	</door>
+	<door id="26210041" name="Magmell_Field_S.magmell_Field_Genesis_raid02">
+		<nodes nodeZ="-902">
+			<node x="214366" y="114620" />
+			<node x="214366" y="115907" />
+			<node x="214331" y="115906" />
+			<node x="214327" y="114618" />
+		</nodes>
+		<location x="214346" y="115263" z="-893" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210042" name="Magmell_Field_S.magmell_Field_Genesis_raid02">
+		<nodes nodeZ="-903">
+			<node x="213057" y="114585" />
+			<node x="214332" y="114588" />
+			<node x="214331" y="114630" />
+			<node x="213056" y="114623" />
+		</nodes>
+		<location x="213694" y="114609" z="-893" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210043" name="Magmell_Field_S.magmell_Field_Genesis_raid02">
+		<nodes nodeZ="-903">
+			<node x="213066" y="114621" />
+			<node x="213056" y="115911" />
+			<node x="213033" y="115911" />
+			<node x="213024" y="114621" />
+		</nodes>
+		<location x="213044" y="115260" z="-894" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210044" name="Magmell_Field_S.magmell_Field_Genesis_raid02">
+		<nodes nodeZ="-905">
+			<node x="213054" y="115895" />
+			<node x="214334" y="115891" />
+			<node x="214333" y="115934" />
+			<node x="213055" y="115930" />
+		</nodes>
+		<location x="213696" y="115911" z="-895" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210101" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="206461" y="119024" />
+			<node x="206613" y="118960" />
+			<node x="206622" y="118981" />
+			<node x="206471" y="119044" />
+		</nodes>
+		<location x="206541" y="119002" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210102" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="207772" y="118961" />
+			<node x="207925" y="119024" />
+			<node x="207915" y="119043" />
+			<node x="207764" y="118980" />
+		</nodes>
+		<location x="207844" y="119002" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210103" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="208742" y="119844" />
+			<node x="208807" y="119994" />
+			<node x="208788" y="120003" />
+			<node x="208725" y="119851" />
+		</nodes>
+		<location x="208765" y="119923" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210104" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="208807" y="121156" />
+			<node x="208742" y="121308" />
+			<node x="208723" y="121299" />
+			<node x="208789" y="121148" />
+		</nodes>
+		<location x="208765" y="121227" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210105" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="207923" y="122125" />
+			<node x="207769" y="122189" />
+			<node x="207765" y="122171" />
+			<node x="207917" y="122106" />
+		</nodes>
+		<location x="207844" y="122147" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="26210106" name="Magmell_Orbis_S.boss.Orbis_BossStage_adoor">
+		<nodes nodeZ="-10035">
+			<node x="206616" y="122188" />
+			<node x="206462" y="122123" />
+			<node x="206470" y="122107" />
+			<node x="206621" y="122171" />
+		</nodes>
+		<location x="206542" y="122147" z="-10029" />
+		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
+		<status showHp="false" />
+		<openStatus default="close" />
+	</door>
+	<door id="27200006" name="Magmell_Orbis_S.B1F.Orbis_Passage_Door">
+		<nodes nodeZ="-12527">
+			<node x="252764" y="85375" />
+			<node x="252512" y="85377" />
+			<node x="252515" y="85339" />
+			<node x="252764" y="85339" />
+		</nodes>
+		<location x="252640" y="85357" z="-12516" />
 		<stats basePDef="644" baseMDef="518" baseHpMax="169710" />
 		<status showHp="false" />
 		<openStatus default="close" />

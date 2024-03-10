@@ -1,303 +1,311 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
-	<option id="50300" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="1" />
+	<option id="50300" name="option_id_50300">
+		<!-- Bleed Resistance/ Atk. Rate +1%. -->
 	</option>
-	<option id="50301" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="2" />
+	<option id="50301" name="option_id_50301">
+		<!-- Bleed Resistance/ Atk. Rate +1%. -->
 	</option>
-	<option id="50302" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="3" />
+	<option id="50302" name="option_id_50302">
+		<!-- Bleed Resistance/ Atk. Rate +1%. -->
 	</option>
-	<option id="50303" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="4" />
+	<option id="50303" name="option_id_50303">
+		<!-- Bleed Resistance/ Atk. Rate +1%. -->
 	</option>
-	<option id="50304" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="5" />
+	<option id="50304" name="option_id_50304">
+		<!-- Bleed Resistance/ Atk. Rate +6%. -->
 	</option>
-	<option id="50305" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="6" />
+	<option id="50305" name="option_id_50305">
+		<!-- Bleed Resistance/ Atk. Rate +8%. -->
 	</option>
-	<option id="50306" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="7" />
+	<option id="50306" name="option_id_50306">
+		<!-- Bleed Resistance/ Atk. Rate +10%. -->
 	</option>
-	<option id="50307" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="8" />
+	<option id="50307" name="option_id_50307">
+		<!-- Bleed Resistance/ Atk. Rate +10%, Stun Resistance/ Atk. Rate +3%. -->
 	</option>
-	<option id="50308" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="9" />
+	<option id="50308" name="option_id_50308">
+		<!-- Bleed Resistance/ Atk. Rate +10%, Stun Resistance/ Atk. Rate +3%, Received Healing +2%. -->
 	</option>
-	<option id="50309" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="10" />
+	<option id="50309" name="option_id_50309">
+		<!-- Bleed Resistance/ Atk. Rate +10%, Stun Resistance/ Atk. Rate +3%, Received Healing +2%, Skill MP Consumption -1%. -->
 	</option>
-	<option id="50310" name="Damaged Antharas' Earring">
-		<passive_skill id="3558" level="11" />
+	<option id="50310" name="option_id_50310">
+		<!-- Max MP +18, Bleed Resistance/ Atk. Rate +10%, Stun Resistance/ Atk. Rate +3%, Received Healing +2%, Skill MP Consumption -1%. -->
 	</option>
-	<option id="50311" name="Damaged Baium's Ring">
+	<option id="50311" name="option_id_50311">
 		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3561" level="1" />
 	</option>
-	<option id="50312" name="Damaged Baium's Ring">
+	<option id="50312" name="option_id_50312">
 		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3561" level="2" />
 	</option>
-	<option id="50313" name="Damaged Baium's Ring">
+	<option id="50313" name="option_id_50313">
 		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3561" level="3" />
 	</option>
-	<option id="50314" name="Damaged Baium's Ring">
+	<option id="50314" name="option_id_50314">
 		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3561" level="4" />
 	</option>
-	<option id="50315" name="Damaged Baium's Ring">
-		<!-- Bleed Resistance +3% -->
-		<passive_skill id="3561" level="5" />
+	<option id="50315" name="option_id_50315">
+		<!-- Bleed Resistance +3%. -->
 	</option>
-	<option id="50316" name="Damaged Baium's Ring">
-		<!-- Bleed Resistance +4% -->
-		<passive_skill id="3561" level="6" />
+	<option id="50316" name="option_id_50316">
+		<!-- Bleed Resistance +4%. -->
 	</option>
-	<option id="50317" name="Damaged Baium's Ring">
-		<!-- Bleed Resistance +5% -->
-		<passive_skill id="3561" level="7" />
+	<option id="50317" name="option_id_50317">
+		<!-- Bleed Resistance +5%. -->
 	</option>
-	<option id="50318" name="Damaged Baium's Ring">
+	<option id="50318" name="option_id_50318">
 		<!-- Bleed Resistance +5%, Stun Resistance +3% -->
-		<passive_skill id="3561" level="8" />
 	</option>
-	<option id="50319" name="Damaged Baium's Ring">
-		<!-- Bleed Resistance +5%, Stun Resistance +4%, P. Accuracy +1, M. Accuracy +1 -->
-		<passive_skill id="3561" level="9" />
+	<option id="50319" name="option_id_50319">
+		<!-- Bleed Resistance +5%, Stun Resistance +4%, P. Accuracy +1, M. Accuracy +1. -->
 	</option>
-	<option id="50320" name="Damaged Baium's Ring">
-		<!-- Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./ Casting Spd. +15, P. Accuracy +1, M. Accuracy +1 -->
-		<passive_skill id="3561" level="10" />
+	<option id="50320" name="option_id_50320">
+		<!-- Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./ Casting Spd. +15, P. Accuracy +1, M. Accuracy +1. -->
 	</option>
-	<option id="50321" name="Damaged Baium's Ring">
-		<!-- Max MP +10, Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./ Casting Spd. +15, P. Accuracy +1, M. Accuracy +1 -->
-		<passive_skill id="3561" level="11" />
+	<option id="50321" name="option_id_50321">
+		<!-- Max MP +10, Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./ Casting Spd. +15, P. Accuracy +1, M. Accuracy +1. -->
 	</option>
-	<option id="50322" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3559" level="1" />
+	<option id="50322" name="option_id_50322">
+		<!-- Bleed Resistance +1%. -->
 	</option>
-	<option id="50323" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3559" level="2" />
+	<option id="50323" name="option_id_50323">
+		<!-- Bleed Resistance +1%. -->
 	</option>
-	<option id="50324" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3559" level="3" />
+	<option id="50324" name="option_id_50324">
+		<!-- Bleed Resistance +1%. -->
 	</option>
-	<option id="50325" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance +1% -->
-		<passive_skill id="3559" level="4" />
+	<option id="50325" name="option_id_50325">
+		<!-- Bleed Resistance +1%. -->
 	</option>
-	<option id="50326" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance +6% -->
-		<passive_skill id="3559" level="5" />
+	<option id="50326" name="option_id_50326">
+		<!-- Bleed Resistance +6%. -->
 	</option>
-	<option id="50327" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance and Atk. Rate +8% -->
-		<passive_skill id="3559" level="6" />
+	<option id="50327" name="option_id_50327">
+		<!-- Bleed Resistance +8%. -->
 	</option>
-	<option id="50328" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance and Atk. Rate +10% -->
-		<passive_skill id="3559" level="7" />
+	<option id="50328" name="option_id_50328">
+		<!-- Bleed Resistance +10%. -->
 	</option>
-	<option id="50329" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance and Atk. Rate +10%, Stun Resistance and Atk. Rate +3% -->
-		<passive_skill id="3559" level="8" />
+	<option id="50329" name="option_id_50329">
+		<!-- Bleed Resistance +10%, Stun Resistance +3%. -->
 	</option>
-	<option id="50330" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance and Atk. Rate +10%, Stun Resistance and Atk. Rate +4%, Received Healing +2% -->
-		<passive_skill id="3559" level="9" />
+	<option id="50330" name="option_id_50330">
+		<!-- Bleed Resistance +10%, Stun Resistance +4%, Received Healing +1%. -->
 	</option>
-	<option id="50331" name="Damaged Zaken's Earring ">
-		<!-- Bleed Resistance and Atk. Rate +10%, Stun Resistance and Atk. Rate +5%, Received Healing +2%, Skill MP Consumption -1% -->
-		<passive_skill id="3559" level="10" />
+	<option id="50331" name="option_id_50331">
+		<!-- Bleed Resistance +10%, Stun Resistance +5%, Received Healing +1%, Skill MP Consumption -1%. -->
 	</option>
-	<option id="50332" name="Damaged Zaken's Earring ">
-		<!-- Max MP +18, Bleed Resistance and Atk. Rate +10%, Stun Resistance and Atk. Rate +5%, Received Healing +2%, Skill MP Consumption -1% -->
-		<passive_skill id="3559" level="11" />
+	<option id="50332" name="option_id_50332">
+		<!-- Max MP +12, Bleed Resistance +10%, Stun Resistance +5%, Received Healing +1%, HP Recovery Bonus +5%, Skill MP Consumption -1%. -->
 	</option>
-	<option id="50333" name="Ignis Necklace">
-		<passive_skill id="54030" level="1" />
+	<option id="50333" name="option_id_50333">
+		<!-- HP +50. -->
 	</option>
-	<option id="50334" name="Ignis' Necklace">
-		<passive_skill id="54030" level="2" />
+	<option id="50334" name="option_id_50334">
+		<!-- HP +50, P. Atk. +1%. -->
 	</option>
-	<option id="50335" name="Ignis' Necklace">
-		<passive_skill id="54030" level="3" />
+	<option id="50335" name="option_id_50335">
+		<!-- HP +100, P. Atk. +1%. -->
 	</option>
-	<option id="50336" name="Ignis' Necklace">
-		<passive_skill id="54030" level="4" />
+	<option id="50336" name="option_id_50336">
+		<!-- HP +100, P. Atk. +2%. -->
 	</option>
-	<option id="50337" name="Ignis' Necklace">
-		<passive_skill id="54030" level="5" />
+	<option id="50337" name="option_id_50337">
+		<!-- HP +150, P. Atk. +2%. -->
 	</option>
-	<option id="50338" name="Ignis' Necklace">
-		<passive_skill id="54030" level="6" />
+	<option id="50338" name="option_id_50338">
+		<!-- HP +150, P. Atk. +3%. -->
 	</option>
-	<option id="50339" name="Ignis' Necklace">
-		<passive_skill id="54030" level="7" />
+	<option id="50339" name="option_id_50339">
+		<!-- HP +200, P. Atk. +3%. -->
 	</option>
-	<option id="50340" name="Ignis' Necklace">
-		<passive_skill id="54030" level="8" />
+	<option id="50340" name="option_id_50340">
+		<!-- HP +200, P. Atk. +5%. -->
 	</option>
-	<option id="50341" name="Ignis' Necklace">
-		<passive_skill id="54030" level="9" />
+	<option id="50341" name="option_id_50341">
+		<!-- HP +300, P. Atk. +7%. -->
 	</option>
-	<option id="50342" name="Ignis' Necklace">
-		<passive_skill id="54030" level="10" />
+	<option id="50342" name="option_id_50342">
+		<!-- HP +300, P. Atk. +10%. -->
 	</option>
-	<option id="50343" name="Ignis' Necklace">
-		<passive_skill id="54030" level="11" />
+	<option id="50343" name="option_id_50343">
+		<!-- HP +500, P. Atk. +15%. -->
 	</option>
-	<option id="50344" name="Nebula's Necklace">
-		<passive_skill id="54031" level="1" />
+	<option id="50344" name="option_id_50344">
+		<!-- HP +50. -->
 	</option>
-	<option id="50345" name="Nebula's Necklace">
-		<passive_skill id="54031" level="2" />
+	<option id="50345" name="option_id_50345">
+		<!-- HP +50, M. Atk. +1%. -->
 	</option>
-	<option id="50346" name="Nebula's Necklace">
-		<passive_skill id="54031" level="3" />
+	<option id="50346" name="option_id_50346">
+		<!-- HP +100, M. Atk. +1%. -->
 	</option>
-	<option id="50347" name="Nebula's Necklace">
-		<passive_skill id="54031" level="4" />
+	<option id="50347" name="option_id_50347">
+		<!-- HP +100, M. Atk. +2%. -->
 	</option>
-	<option id="50348" name="Nebula's Necklace">
-		<passive_skill id="54031" level="5" />
+	<option id="50348" name="option_id_50348">
+		<!-- HP +150, M. Atk. +2%. -->
 	</option>
-	<option id="50349" name="Nebula's Necklace">
-		<passive_skill id="54031" level="6" />
+	<option id="50349" name="option_id_50349">
+		<!-- HP +150, M. Atk. +3%. -->
 	</option>
-	<option id="50350" name="Nebula's Necklace">
-		<passive_skill id="54031" level="7" />
+	<option id="50350" name="option_id_50350">
+		<!-- HP +200, M. Atk. +3%. -->
 	</option>
-	<option id="50351" name="Nebula's Necklace">
-		<passive_skill id="54031" level="8" />
+	<option id="50351" name="option_id_50351">
+		<!-- HP +200, M. Atk. +5%. -->
 	</option>
-	<option id="50352" name="Nebula's Necklace">
-		<passive_skill id="54031" level="9" />
+	<option id="50352" name="option_id_50352">
+		<!-- HP +300, M. Atk. +7%. -->
 	</option>
-	<option id="50353" name="Nebula's Necklace">
-		<passive_skill id="54031" level="10" />
+	<option id="50353" name="option_id_50353">
+		<!-- HP +300, M. Atk. +10%. -->
 	</option>
-	<option id="50354" name="Nebula's Necklace">
-		<passive_skill id="54031" level="11" />
+	<option id="50354" name="option_id_50354">
+		<!-- HP +500, M. Atk. +15%. -->
 	</option>
-	<option id="50355" name="Procella's Necklace">
-		<passive_skill id="54032" level="1" />
+	<option id="50355" name="option_id_50355">
+		<!-- HP +50. -->
 	</option>
-	<option id="50356" name="Procella's Necklace">
-		<passive_skill id="54032" level="2" />
+	<option id="50356" name="option_id_50356">
+		<!-- HP +50, M. Def. +1% -->
 	</option>
-	<option id="50357" name="Procella's Necklace">
-		<passive_skill id="54032" level="3" />
+	<option id="50357" name="option_id_50357">
+		<!-- HP +100, M. Def. +1%. -->
 	</option>
-	<option id="50358" name="Procella's Necklace">
-		<passive_skill id="54032" level="4" />
+	<option id="50358" name="option_id_50358">
+		<!-- HP +100, M. Def. +2%. -->
 	</option>
-	<option id="50359" name="Procella's Necklace">
-		<passive_skill id="54032" level="5" />
+	<option id="50359" name="option_id_50359">
+		<!-- HP +150, M. Def. +2%. -->
 	</option>
-	<option id="50360" name="Procella's Necklace">
-		<passive_skill id="54032" level="6" />
+	<option id="50360" name="option_id_50360">
+		<!-- HP +150, M. Def. +3%. -->
 	</option>
-	<option id="50361" name="Procella's Necklace">
-		<passive_skill id="54032" level="7" />
+	<option id="50361" name="option_id_50361">
+		<!-- HP +200, M. Def. +3%. -->
 	</option>
-	<option id="50362" name="Procella's Necklace">
-		<passive_skill id="54032" level="8" />
+	<option id="50362" name="option_id_50362">
+		<!-- HP +200, M. Def. +5%. -->
 	</option>
-	<option id="50363" name="Procella's Necklace">
-		<passive_skill id="54032" level="9" />
+	<option id="50363" name="option_id_50363">
+		<!-- HP +300, M. Def. +7%. -->
 	</option>
-	<option id="50364" name="Procella's Necklace">
-		<passive_skill id="54032" level="10" />
+	<option id="50364" name="option_id_50364">
+		<!-- HP +300, M. Def. +10%. -->
 	</option>
-	<option id="50365" name="Procella's Necklace">
-		<passive_skill id="54032" level="11" />
+	<option id="50365" name="option_id_50365">
+		<!-- HP +500, M. Def. +15%. -->
 	</option>
-	<option id="50366" name="Petram's Necklace">
-		<passive_skill id="54033" level="1" />
+	<option id="50366" name="option_id_50366">
+		<!-- HP +50. -->
 	</option>
-	<option id="50367" name="Petram's Necklace">
-		<passive_skill id="54033" level="2" />
+	<option id="50367" name="option_id_50367">
+		<!-- Max HP +50, P. Def. +1% -->
 	</option>
-	<option id="50368" name="Petram's Necklace">
-		<passive_skill id="54033" level="3" />
+	<option id="50368" name="option_id_50368">
+		<!-- HP +100, P. Def. +1%. -->
 	</option>
-	<option id="50369" name="Petram's Necklace">
-		<passive_skill id="54033" level="4" />
+	<option id="50369" name="option_id_50369">
+		<!-- HP +100, P. Def. +2%. -->
 	</option>
-	<option id="50370" name="Petram's Necklace">
-		<passive_skill id="54033" level="5" />
+	<option id="50370" name="option_id_50370">
+		<!-- HP +150, P. Def. +2%. -->
 	</option>
-	<option id="50371" name="Petram's Necklace">
-		<passive_skill id="54033" level="6" />
+	<option id="50371" name="option_id_50371">
+		<!-- HP +150, P. Def. +3%. -->
 	</option>
-	<option id="50372" name="Petram's Necklace">
-		<passive_skill id="54033" level="7" />
+	<option id="50372" name="option_id_50372">
+		<!-- HP +200, P. Def. +3%. -->
 	</option>
-	<option id="50373" name="Petram's Necklace">
-		<passive_skill id="54033" level="8" />
+	<option id="50373" name="option_id_50373">
+		<!-- HP +200, P. Def. +5%. -->
 	</option>
-	<option id="50374" name="Petram's Necklace">
-		<passive_skill id="54033" level="9" />
+	<option id="50374" name="option_id_50374">
+		<!-- HP +300, P. Def. +7%. -->
 	</option>
-	<option id="50375" name="Petram's Necklace">
-		<passive_skill id="54033" level="10" />
+	<option id="50375" name="option_id_50375">
+		<!-- HP +300, P. Def. +10%. -->
 	</option>
-	<option id="50376" name="Petram's Necklace">
-		<passive_skill id="54033" level="11" />
+	<option id="50376" name="option_id_50376">
+		<!-- HP +500, P. Def. +15%. -->
 	</option>
-	<option id="50377" name="Sayha's Cloak">
-		<passive_skill id="54038" level="1" />
+	<option id="50377" name="option_id_50377">
+		<!-- Max HP/ MP +3%. -->
 	</option>
-	<option id="50378" name="Sayha's Cloak">
-		<!-- P. Def. +5, M. Def. +5, Atk. Spd. +10, Casting Spd. +10, Max HP +100, Max MP +30 -->
-		<passive_skill id="54039" level="1" />
+	<option id="50378" name="option_id_50378">
+		<!-- Max HP/ MP +4%. -->
 	</option>
-	<option id="50379" name="Sayha's Cloak">
-		<!-- P. Def. +10, M. Def. +10, Atk. Spd. +12, Casting Spd. +12, Max HP +120, Max MP +50. -->
-		<passive_skill id="54039" level="2" />
+	<option id="50379" name="option_id_50379">
+		<!-- Max HP/ MP +5%, Acquired XP/ SP +3%. -->
 	</option>
-	<option id="50380" name="Sayha's Cloak">
-		<!-- P. Def. +15, M. Def. +20, Atk. Spd. +15, Casting Spd. +15, Max HP +150, Max MP +70. -->
-		<passive_skill id="54039" level="3" />
+	<option id="50380" name="option_id_50380">
+		<!-- Max HP/ MP +6%, Acquired XP/ SP +5%. -->
 	</option>
-	<option id="50381" name="Sayha's Cloak">
-		<!-- P. Def. +20, M. Def. +30, Atk. Spd. +20, Casting Spd. +20, Max HP +180, Max MP +100, Acquired XP/ SP +10%. -->
-		<passive_skill id="54039" level="4" />
+	<option id="50381" name="option_id_50381">
+		<!-- Max HP/ MP +7%, Acquired XP/ SP +7%, P. Def. +2%. -->
 	</option>
-	<option id="50382" name="Sayha's Cloak">
-		<!-- P. Atk. +50, M. Atk. +100, P. Def. +30, M. Def. +40, Atk. Spd. +25, Casting Spd. +25, Max HP +220, Max MP +130, Acquired XP/ SP +15%. -->
-		<passive_skill id="54039" level="5" />
+	<option id="50382" name="option_id_50382">
+		<!-- Max HP/ MP +8%, Acquired XP/ SP +10%, P. Def. +4%. -->
 	</option>
-	<option id="50383" name="Sayha's Cloak">
-		<!-- P. Atk. +80, M. Atk. +150, P. Def. +40, M. Def. +60, Atk. Spd. +40, Casting Spd. +45, Max HP +260, Max MP +160, Acquired XP/ SP +20%. -->
-		<passive_skill id="54039" level="6" />
+	<option id="50383" name="option_id_50383">
+		<!-- Max HP/ MP +9%, Acquired XP/ SP +15%, P. Def. +6%. -->
 	</option>
-	<option id="50384" name="Sayha's Cloak">
-		<!-- P. Atk. +135, M. Atk. +250, P. Def. +60, M. Def. +80, Atk. Spd. +70, Casting Spd. +75, Max HP +520, Max MP +320, Acquired XP/ SP +50%. -->
-		<passive_skill id="54039" level="7" />
+	<option id="50384" name="option_id_50384">
+		<!-- Max HP/ MP +10%, Acquired XP/ SP +20%, P. Def. +8%, P./ M. Critical Damage +5%. -->
 	</option>
-	<option id="50385" name="Sayha's Cloak">
-		<!-- P. Atk. +180, M. Atk. +360, P. Def. +80, M. Def. +120, Atk. Spd. +80, Casting Spd. +95, Max HP +640, Max MP +360, Acquired XP/ SP +50%. -->
-		<passive_skill id="54039" level="8" />
+	<option id="50385" name="option_id_50385">
+		<!-- Max HP/ MP +11%, Acquired XP/ SP +25%, P. Def. +10%, P./ M. Critical Damage +7%, M. Def. +2%. -->
 	</option>
-	<option id="50386" name="Sayha's Cloak">
-		<!-- P. Atk. +225, M. Atk. +420, P. Def. +120, M. Def. +160, Atk. Spd. +90, Casting Spd. +110, Max HP +910, Max MP +430, Acquired XP/ SP +50%. -->
-		<passive_skill id="54039" level="9" />
+	<option id="50386" name="option_id_50386">
+		<!-- Max HP/ MP +12%, Acquired XP/ SP +30%, P. Def. +10%, P./ M. Critical Damage +10%, M. Def. +4%, Received Critical Damage -5%. -->
 	</option>
-	<option id="50387" name="Sayha's Cloak">
-		<!-- P. Atk. +270, M. Atk. +490, P. Def. +160, M. Def. +200, Atk. Spd. +100, Casting Spd. +125, Max HP +1120, Max MP +530, Acquired XP/ SP +50%. -->
-		<passive_skill id="54039" level="10" />
+	<option id="50387" name="option_id_50387">
+		<!-- Max HP/ MP +15%, Acquired XP/ SP +30%, P. Def. +10%, P./ M. Critical Damage +15%, M. Def. +6%, Received Critical Damage -10%. -->
 	</option>
-	<option id="50388" name="Sayha's Cloak">
-		<!-- P. Atk. +270, M. Atk. +490, P. Def. +160, M. Def. +200, Atk. Spd. +100, Casting Spd. +125, Max HP +1120, Max MP +530, Acquired XP/ SP +50%. -->
-		<passive_skill id="54039" level="10" />
+	<option id="50388" name="option_id_50388">
+		<!-- Sayha's Blink: Attacks enemies, inflicting Stun and canceling their targets. Teleports you to the back. -->
+	</option>
+	<option id="50389" name="option_id_50389">
+		<!-- Increases M. Def. by 14. -->
+	</option>
+	<option id="50390" name="option_id_50390">
+		<!-- M. Def. +15. -->
+	</option>
+	<option id="50391" name="option_id_50391">
+		<!-- Increases M. Def. by 16. -->
+	</option>
+	<option id="50392" name="option_id_50392">
+		<!-- M. Def. +17. -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="50393" name="option_id_50393">
+		<!-- M. Def. +18, Received P./ M. Damage -3% -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="50394" name="option_id_50394">
+		<!-- M. Def. +19, Received P./ M. Damage -5%. -->
+		<!-- Acquired XP/ SP +10%. -->
+	</option>
+	<option id="50395" name="option_id_50395">
+		<!-- M. Def. +20, Received P./ M. Damage -10%, Atk. Spd./ Casting Spd. +2% -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="50396" name="option_id_50396">
+		<!-- M. Def. +21, Received P./ M. Damage -10%, Atk. Spd./ Casting Spd. +2% -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="50397" name="option_id_50397">
+		<!-- M. Def. +22, Received P./ M. Damage -10%, Atk. Spd./ Casting Spd. +2%. -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="50398" name="option_id_50398">
+		<!-- M. Def. +23, Received P./ M. Damage -10%, Atk. Spd./ Casting Spd. +2%. -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="50399" name="option_id_50399">
+		<!-- M. Def. +24, Received P./ M. Damage -10%, Atk. Spd./ Casting Spd. +3%. -->
+		<!-- Acquired XP/ SP +20%. -->
 	</option>
 </list>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn>
 		<territories>
@@ -9,15 +9,15 @@
 				<node x="173720" y="-10644" />
 			</territory>
 		</territories>
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -28,10 +28,10 @@
 				<node x="178631" y="-7025" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -42,15 +42,15 @@
 				<node x="179406" y="-9724" />
 			</territory>
 		</territories>
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -61,15 +61,15 @@
 				<node x="181903" y="-14680" />
 			</territory>
 		</territories>
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -80,15 +80,15 @@
 				<node x="175525" y="-17312" />
 			</territory>
 		</territories>
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -99,15 +99,15 @@
 				<node x="175084" y="-10853" />
 			</territory>
 		</territories>
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -118,15 +118,15 @@
 				<node x="181914" y="-8408" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -137,15 +137,15 @@
 				<node x="179595" y="-14059" />
 			</territory>
 		</territories>
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -157,15 +157,15 @@
 			</territory>
 		</territories>
 		<!-- проверить точное количество монстров в комнате. -->
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -176,10 +176,10 @@
 				<node x="177536" y="-13259" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -190,10 +190,10 @@
 				<node x="172384" y="-7017" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -204,10 +204,10 @@
 				<node x="183223" y="-13255" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -218,15 +218,15 @@
 				<node x="179414" y="-15426" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -237,15 +237,15 @@
 				<node x="176027" y="-16539" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -256,10 +256,10 @@
 				<node x="172382" y="-12175" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -270,10 +270,10 @@
 				<node x="176996" y="-7556" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -284,10 +284,10 @@
 				<node x="178628" y="-12722" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -298,10 +298,10 @@
 				<node x="177537" y="-11631" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -312,15 +312,15 @@
 				<node x="174348" y="-8358" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -331,10 +331,10 @@
 				<node x="182692" y="-7037" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -345,15 +345,15 @@
 				<node x="172361" y="-16485" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -364,15 +364,15 @@
 				<node x="176205" y="-15171" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -383,15 +383,15 @@
 				<node x="172369" y="-8835" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -402,15 +402,15 @@
 				<node x="179604" y="-8356" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -421,10 +421,10 @@
 				<node x="178626" y="-11631" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -435,10 +435,10 @@
 				<node x="178088" y="-17861" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -449,10 +449,10 @@
 				<node x="172915" y="-13258" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -463,10 +463,10 @@
 				<node x="176996" y="-17874" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -477,15 +477,15 @@
 				<node x="181440" y="-7001" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -496,10 +496,10 @@
 				<node x="182684" y="-17869" />
 			</territory>
 		</territories>
-		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Mausoleum Prophet -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Totem -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21895" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21897" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -510,19 +510,19 @@
 				<node x="176684" y="-9482" />
 			</territory>
 		</territories>
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -533,19 +533,19 @@
 				<node x="180809" y="-11346" />
 			</territory>
 		</territories>
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -556,19 +556,19 @@
 				<node x="174804" y="-13537" />
 			</territory>
 		</territories>
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -579,25 +579,25 @@
 				<node x="180807" y="-17050" />
 			</territory>
 		</territories>
-		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Hermit -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Witch -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
-		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Royal Knight -->
-		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Slayer -->
-		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Lillim Shaman -->
-		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Deadman -->
-		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" /> <!-- Ancient Holy Ground's Watchman -->
+		<npc id="21896" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21898" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21903" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21901" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21902" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21900" count="1" respawnTime="110sec" respawnRandom="30sec" />
+		<npc id="21899" count="1" respawnTime="110sec" respawnRandom="30sec" />
 	</spawn>
 	<spawn name="25_17">
 		<group>
-			<npc id="31083" x="171677" y="-17610" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31084" x="172656" y="-17601" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31087" x="183201" y="-11900" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Spirit -->
+			<npc id="31083" x="171677" y="-17610" z="-4896" heading="0" respawnTime="60sec" />
+			<npc id="31084" x="172656" y="-17601" z="-4896" heading="0" respawnTime="60sec" />
+			<npc id="31087" x="183201" y="-11900" z="-4896" heading="0" respawnTime="60sec" />
 		</group>
 	</spawn>
 </list>

@@ -89,7 +89,6 @@
 												<xs:enumeration value="FIXED" />
 												<xs:enumeration value="RANDOM" />
 												<xs:enumeration value="ORIGIN" />
-												<xs:enumeration value="TOWN" />
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<!-- The Patriot's Necropolis -->
 	<spawn>
@@ -10,15 +10,15 @@
 				<node x="-14725" y="82303" />
 			</territory>
 		</territories>
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -29,10 +29,10 @@
 				<node x="-14120" y="79304" />
 			</territory>
 		</territories>
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -43,11 +43,11 @@
 				<node x="-11893" y="80408" />
 			</territory>
 		</territories>
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -58,11 +58,11 @@
 				<node x="-15383" y="78392" />
 			</territory>
 		</territories>
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -73,10 +73,10 @@
 				<node x="-15400" y="77080" />
 			</territory>
 		</territories>
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -87,10 +87,10 @@
 				<node x="-17075" y="77096" />
 			</territory>
 		</territories>
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -101,10 +101,10 @@
 				<node x="-21096" y="83368" />
 			</territory>
 		</territories>
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21626" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -115,10 +115,10 @@
 				<node x="-21681" y="82282" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21626" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -129,11 +129,11 @@
 				<node x="-20367" y="81672" />
 			</territory>
 		</territories>
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -144,11 +144,11 @@
 				<node x="-20760" y="78920" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -159,15 +159,15 @@
 				<node x="-19640" y="77080" />
 			</territory>
 		</territories>
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -178,11 +178,11 @@
 				<node x="-18984" y="79592" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -193,11 +193,11 @@
 				<node x="-16792" y="84737" />
 			</territory>
 		</territories>
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -208,11 +208,11 @@
 				<node x="-17896" y="86056" />
 			</territory>
 		</territories>
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -223,11 +223,11 @@
 				<node x="-19816" y="86872" />
 			</territory>
 		</territories>
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -238,11 +238,11 @@
 				<node x="-19800" y="84696" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -253,10 +253,10 @@
 				<node x="-18696" y="84648" />
 			</territory>
 		</territories>
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -267,10 +267,10 @@
 				<node x="-19988" y="81128" />
 			</territory>
 		</territories>
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -281,15 +281,15 @@
 				<node x="-18384" y="80376" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -300,10 +300,10 @@
 				<node x="-19464" y="81016" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -314,10 +314,10 @@
 				<node x="-16488" y="82776" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -328,11 +328,11 @@
 				<node x="-17800" y="83384" />
 			</territory>
 		</territories>
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -343,10 +343,10 @@
 				<node x="-17080" y="82280" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -357,10 +357,10 @@
 				<node x="-17064" y="87976" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -371,10 +371,10 @@
 				<node x="-15992" y="82264" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -385,11 +385,11 @@
 				<node x="-14040" y="77384" />
 			</territory>
 		</territories>
-		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
+		<npc id="21628" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -400,10 +400,10 @@
 				<node x="-21688" y="87384" />
 			</territory>
 		</territories>
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -414,10 +414,10 @@
 				<node x="-18200" y="83928" />
 			</territory>
 		</territories>
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -428,10 +428,10 @@
 				<node x="-10792" y="81688" />
 			</territory>
 		</territories>
-		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Guard -->
-		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Medusa -->
-		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
+		<npc id="21625" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21621" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -442,10 +442,10 @@
 				<node x="-10792" y="77080" />
 			</territory>
 		</territories>
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -456,11 +456,11 @@
 				<node x="-10808" y="79160" />
 			</territory>
 		</territories>
-		<npc id="21624" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21628" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Inquisitor -->
-		<npc id="21627" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Archon -->
-		<npc id="21620" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21623" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Gargoyle -->
+		<npc id="21624" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21628" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21627" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21623" count="3" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -471,9 +471,9 @@
 				<node x="-14248" y="78792" />
 			</territory>
 		</territories>
-		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Swordsman -->
-		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Serpent -->
-		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Inquisitor -->
-		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Conjurer -->
+		<npc id="21624" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21620" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21626" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21622" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 </list>

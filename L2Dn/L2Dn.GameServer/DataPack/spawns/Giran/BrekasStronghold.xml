@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn>
 		<territories>
@@ -10,8 +10,8 @@
 				<node x="77168" y="121180" />
 			</territory>
 		</territories>
-		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -23,8 +23,9 @@
 				<node x="75181" y="123885" />
 			</territory>
 		</territories>
-		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20249" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -35,9 +36,9 @@
 				<node x="86209" y="130777" />
 			</territory>
 		</territories>
-		<npc id="20267" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc -->
-		<npc id="20268" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Archer -->
-		<npc id="20271" count="5" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Warrior -->
+		<npc id="20267" count="4" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20268" count="4" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20271" count="5" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -48,8 +49,9 @@
 				<node x="75526" y="130695" />
 			</territory>
 		</territories>
-		<npc id="20269" count="4" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="5" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20249" count="4" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20269" count="4" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="5" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -61,8 +63,8 @@
 				<node x="80088" y="124628" />
 			</territory>
 		</territories>
-		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -73,8 +75,8 @@
 				<node x="82661" y="126067" />
 			</territory>
 		</territories>
-		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -85,8 +87,8 @@
 				<node x="80530" y="127132" />
 			</territory>
 		</territories>
-		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -100,9 +102,9 @@
 				<node x="92742" y="122761" />
 			</territory>
 		</territories>
-		<npc id="20267" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc -->
-		<npc id="20268" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Archer -->
-		<npc id="20271" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Warrior -->
+		<npc id="20267" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20268" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20271" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -114,8 +116,8 @@
 				<node x="89907" y="125942" />
 			</territory>
 		</territories>
-		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -126,8 +128,8 @@
 				<node x="87541" y="124978" />
 			</territory>
 		</territories>
-		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="2" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -138,8 +140,8 @@
 				<node x="85883" y="127632" />
 			</territory>
 		</territories>
-		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Shaman -->
-		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Prefect -->
+		<npc id="20269" count="2" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20270" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -151,14 +153,14 @@
 				<node x="94955" y="121514" />
 			</territory>
 		</territories>
-		<npc id="20267" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc -->
-		<npc id="20268" count="1" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Archer -->
-		<npc id="20271" count="3" respawnTime="95sec" respawnRandom="0sec" /> <!-- Breka Orc Warrior -->
+		<npc id="20267" count="3" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20268" count="1" respawnTime="95sec" respawnRandom="0sec" />
+		<npc id="20271" count="3" respawnTime="95sec" respawnRandom="0sec" />
 	</spawn>
 	<spawn name="npc12">
 		<group>
-			<npc id="30615" x="80100" y="119991" z="-2264" heading="19000" respawnTime="60sec" /> <!-- Voltar - Breka Chief -->
-			<npc id="30557" x="70932" y="124558" z="-3460" heading="32768" respawnTime="60sec" /> <!-- Torai -->
+			<npc id="30615" x="80100" y="119991" z="-2264" heading="19000" respawnTime="60sec" />
+			<npc id="30557" x="70932" y="124558" z="-3460" heading="32768" respawnTime="60sec" />
 		</group>
 	</spawn>
 </list>

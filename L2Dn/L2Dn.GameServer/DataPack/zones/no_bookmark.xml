@@ -7384,24 +7384,13 @@
 		<node X="74691" Y="93089" />
 		<node X="76675" Y="89735" />
 	</zone>
-	<zone name="no_bookmark_a_o_g_fort" id="50001" type="ConditionZone" shape="NPoly" minZ="-2505" maxZ="2495">
+	<zone name="no_bookmark_a_o_g_fort" type="ConditionZone" shape="NPoly" minZ="-2505" maxZ="2495">
 		<stat name="NoBookmark" val="true" />
-		<node X="117768" Y="-20200" />
-		<node X="118232" Y="-19096" />
-		<node X="118760" Y="-13816" />
-		<node X="118760" Y="-11848" />
-		<node X="116936" Y="-10056" />
-		<node X="115000" Y="-7512" />
-		<node X="113128" Y="-5384" />
-		<node X="110312" Y="-5432" />
-		<node X="108040" Y="-5048" />
-		<node X="106744" Y="-6392" />
-		<node X="105888" Y="-7902" />
-		<node X="106856" Y="-9336" />
-		<node X="107351" Y="-11501" />
-		<node X="106968" Y="-14968" />
-		<node X="107418" Y="-16755" />
-		<node X="107043" Y="-18404" />
+		<node X="106731" Y="-19032" />
+		<node X="115932" Y="-19301" />
+		<node X="115716" Y="-11679" />
+		<node X="111792" Y="-9682" />
+		<node X="106440" Y="-13306" />
 	</zone>
 	<zone name="no_bookmark_aden_gi_fort" type="ConditionZone" shape="NPoly" minZ="-3988" maxZ="1012">
 		<stat name="NoBookmark" val="true" />
@@ -8232,41 +8221,5 @@
 		<node X="11774" Y="184091" />
 		<node X="11773" Y="183287" />
 		<node X="11994" Y="183055" />
-	</zone>
-	
-	<!-- Battle with Balok -->
-	<zone name="balok_area" type="ConditionZone" shape="Cuboid" minZ="-2000" maxZ="-4600">
-		<stat name="NoBookmark" val="true" />
-		<node X="-9095" Y="191592" />
-		<node X="-26826" Y="176629" />
-	</zone>
-	
-	<zone name="frost_castle_zone" type="ConditionZone" shape="Cuboid" minZ="-16000" maxZ="10000">
-		<stat name="NoBookmark" val="true" />
-		<node X="130224" Y="170000" />
-		<node X="172224" Y="137000" />
-	</zone>
-	
-	<zone name="frost_castle_zone2" type="ConditionZone" shape="Cuboid" minZ="-16000" maxZ="10000">
-		<stat name="NoBookmark" val="true" />
-		<node X="130224" Y="170000" />
-		<node X="172224" Y="137000" />
-	</zone>
-	
-	<zone name="orc_fortress_general_area" type="ConditionZone" shape="NPoly" minZ="-3000" maxZ="2495">
-		<stat name="NoBookmark" val="true" />
-		<node X="106736" Y="-6753" />
-		<node X="108477" Y="-9140" />
-		<node X="107420" Y="-18236" />
-		<node X="115767" Y="-17903" />
-		<node X="112821" Y="-6067" />
-		<node X="106725" Y="-6742" />
-	</zone>
-	<zone name="aztacan_territory" id="2922800" type="ConditionZone" shape="NPoly" minZ="-15900" maxZ="-12000">
-		<stat name="NoBookmark" val="true" />
-		<node X="25402" Y="226161" />
-		<node X="25793" Y="213368" />
-		<node X="7582" Y="213285" />
-		<node X="7742" Y="226214" />
 	</zone>
 </list>

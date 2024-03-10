@@ -18,4 +18,29 @@
 		<ingredient count="750000" id="57" /> <!-- Adena -->
 		<production count="1" id="90919" /> <!-- XP Scroll: 100,000,000 -->
 	</item>
+	<item>
+		<ingredient count="1" id="29978" /> <!-- Bracelet of Duty - Lv. 1 -->
+		<ingredient count="300" id="70024" /> <!-- Daily Coin -->
+		<production count="1" id="29979" /> <!-- Bracelet of Duty - Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="29979" /> <!-- Bracelet of Duty - Lv. 2 -->
+		<ingredient count="500" id="70024" /> <!-- Daily Coin -->
+		<production count="1" id="29980" /> <!-- Bracelet of Duty - Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="29980" /> <!-- Bracelet of Duty - Lv. 3 -->
+		<ingredient count="700" id="70024" /> <!-- Daily Coin -->
+		<production count="1" id="29981" /> <!-- Bracelet of Duty - Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="29981" /> <!-- Bracelet of Duty - Lv. 4 -->
+		<ingredient count="1000" id="70024" /> <!-- Daily Coin -->
+		<production count="1" id="29982" /> <!-- Bracelet of Duty - Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="29982" /> <!-- Bracelet of Duty - Lv. 5 -->
+		<ingredient count="3500" id="70024" /> <!-- Daily Coin -->
+		<production count="1" id="70922" /> <!-- Bracelet of Duty - Lv. 6 -->
+	</item>
 </list>

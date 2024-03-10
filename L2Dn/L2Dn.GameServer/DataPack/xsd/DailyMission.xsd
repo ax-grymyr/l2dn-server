@@ -33,8 +33,8 @@
 			<xs:element type="handlerType" name="handler" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element type="itemsType" name="items" />
 		</xs:sequence>
-		<xs:attribute type="xs:int" name="id" />
-		<xs:attribute type="xs:int" name="reward_id" />
+		<xs:attribute type="xs:short" name="id" />
+		<xs:attribute type="xs:short" name="reward_id" />
 		<xs:attribute type="xs:string" name="name" />
 		<xs:attribute type="xs:int" name="requiredCompletion" />
 		<xs:attribute type="xs:boolean" name="dailyReset" />

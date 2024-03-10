@@ -4,73 +4,127 @@
 		<npc>30012</npc> <!-- Fishing Guildsman -->
 	</npcs>
 	<item>
+		<!-- Blue Mackerel -->
+		<ingredient count="41538" id="45473" />
 		<!-- Fresh Blue Mackerel -->
-		<ingredient count="7650" id="45481" />
-		<!-- Fishing Rod Chest (10 days) -->
-		<production count="1" id="49507" />
+		<ingredient count="27000" id="45481" />
+		<!-- Agathion - Pisces (15-day) -->
+		<production count="1" id="49458" />
 	</item>
 	<item>
 		<!-- Blue Mackerel -->
-		<ingredient count="10384" id="45473" />
+		<ingredient count="41538" id="45473" />
 		<!-- Fresh Blue Mackerel -->
-		<ingredient count="2250" id="45481" />
-		<!-- Adena -->
-		<ingredient count="300000" id="57" />
-		<!-- Agathion Pisces 30 days -->
-		<production count="1" id="91111" />
-	</item>
-	<item>
-		<!-- Blue Mackerel -->
-		<ingredient count="10384" id="45473" />
-		<!-- Fresh Blue Mackerel -->
-		<ingredient count="2250" id="45481" />
-		<!-- Adena -->
-		<ingredient count="300000" id="57" />
-		<!-- Agathion Cancer 30 days -->
-		<production count="1" id="91112" />
-	</item>
-	<item>
-		<!-- Scroll for 2000 SP (Exchangeable) -->
-		<ingredient count="50" id="49595" />
-		<!-- Adena -->
-		<ingredient count="200000" id="57" />
-		<!-- Large SP Scroll (Tradable) -->
-		<production count="1" id="5595" />
-	</item>
-	<item>
-		<!-- Whale -->
-		<ingredient count="80" id="49594" />
-		<!-- Adena -->
-		<ingredient count="2000" id="57" />
-		<!-- Scroll for 2000 SP (Exchangeable) -->
-		<production count="1" id="49595" />
-	</item>
-	<item>
-		<!-- Sparkling whale -->
-		<ingredient count="40" id="90188" />
-		<!-- Adena -->
-		<ingredient count="2000" id="57" />
-		<!-- Scroll for 2000 SP (Exchangeable) -->
-		<production count="1" id="49595" />
-	</item>
-	<item>
-		<!-- Tuna -->
-		<ingredient count="100" id="90173" />
-		<!-- Adena -->
-		<ingredient count="2000" id="57" />
-		<!-- Scroll for 2000 SP (Exchangeable) -->
-		<production count="1" id="49595" />
+		<ingredient count="27000" id="45481" />
+		<!-- Agathion - Cancer (15-day) -->
+		<production count="1" id="49459" />
 	</item>
 	<item>
 		<!-- Blue Mackerel -->
 		<ingredient count="50" id="45473" />
-		<!-- Scroll of Escape - Giran Harbor -->
+		<!-- Teleport: Giran Harbor -->
 		<production count="1" id="49502" />
 	</item>
 	<item>
 		<!-- Blue Mackerel -->
 		<ingredient count="50" id="45473" />
-		<!-- Scroll of Escape - Gludin Harbor (Tradable) -->
+		<!-- Teleport: GLudin Harbor -->
 		<production count="1" id="49503" />
+	</item>
+	<item>
+		<!-- Scroll: Intense Slasher - Lv 1 -->
+		<ingredient count="2" id="70069" />
+		<!-- Scroll: Intense Slasher - Lv 2 -->
+		<production count="1" id="70070" />
+	</item>
+	<item>
+		<!-- Scroll: Intense Slasher - Lv 1 -->
+		<ingredient count="3" id="70069" />
+		<!-- Scroll: Intense Slasher - Lv 3 -->
+		<production count="1" id="70071" />
+	</item>
+	<item>
+		<!-- Scroll: Intense Slasher - Lv 1 -->
+		<ingredient count="4" id="70069" />
+		<!-- Scroll: Intense Slasher - Lv 4 -->
+		<production count="1" id="70072" />
+	</item>
+	<item>
+		<!-- Scroll: Intense Slasher - Lv 1 -->
+		<ingredient count="5" id="70069" />
+		<!-- Scroll: Intense Slasher - Lv 5 -->
+		<production count="1" id="70073" />
+	</item>
+	<item>
+		<!-- Purity Blast Scroll - Lv 1 -->
+		<ingredient count="2" id="70075" />
+		<!-- Purity Blast Scroll - Lv 2 -->
+		<production count="1" id="70076" />
+	</item>
+	<item>
+		<!-- Purity Blast Scroll - Lv 1 -->
+		<ingredient count="3" id="70075" />
+		<!-- Purity Blast Scroll - Lv 3 -->
+		<production count="1" id="70077" />
+	</item>
+	<item>
+		<!-- Purity Blast Scroll - Lv 1 -->
+		<ingredient count="4" id="70075" />
+		<!-- Purity Blast Scroll - Lv 4 -->
+		<production count="1" id="70078" />
+	</item>
+	<item>
+		<!-- Purity Blast Scroll - Lv 1 -->
+		<ingredient count="5" id="70075" />
+		<!-- Purity Blast Scroll - Lv 5 -->
+		<production count="1" id="70079" />
+	</item>
+	<item>
+		<!-- Grey Explosion Scroll - Lv 1 -->
+		<ingredient count="2" id="70081" />
+		<!-- Grey Explosion Scroll - Lv 2 -->
+		<production count="1" id="70082" />
+	</item>
+	<item>
+		<!-- Grey Explosion Scroll - Lv 1 -->
+		<ingredient count="3" id="70081" />
+		<!-- Grey Explosion Scroll - Lv 3 -->
+		<production count="1" id="70083" />
+	</item>
+	<item>
+		<!-- Grey Explosion Scroll - Lv 1 -->
+		<ingredient count="4" id="70081" />
+		<!-- Grey Explosion Scroll - Lv 4 -->
+		<production count="1" id="70084" />
+	</item>
+	<item>
+		<!-- Grey Explosion Scroll - Lv 1 -->
+		<ingredient count="5" id="70081" />
+		<!-- Grey Explosion Scroll - Lv 5 -->
+		<production count="1" id="70085" />
+	</item>
+	<item>
+		<!-- Platonic Tempest Scroll - Lv 1 -->
+		<ingredient count="2" id="70087" />
+		<!-- Platonic Tempest Scroll - Lv 2 -->
+		<production count="1" id="70088" />
+	</item>
+	<item>
+		<!-- Platonic Tempest Scroll - Lv 1 -->
+		<ingredient count="3" id="70087" />
+		<!-- Platonic Tempest Scroll - Lv 3 -->
+		<production count="1" id="70089" />
+	</item>
+	<item>
+		<!-- Platonic Tempest Scroll - Lv 1 -->
+		<ingredient count="4" id="70087" />
+		<!-- Platonic Tempest Scroll - Lv 4 -->
+		<production count="1" id="70090" />
+	</item>
+	<item>
+		<!-- Platonic Tempest Scroll - Lv 1 -->
+		<ingredient count="5" id="70087" />
+		<!-- Platonic Tempest Scroll - Lv 5 -->
+		<production count="1" id="70091" />
 	</item>
 </list>

@@ -38,7 +38,7 @@
 							<xs:element name="stats" minOccurs="1" maxOccurs="1">
 								<xs:complexType>
 									<xs:sequence minOccurs="1" maxOccurs="1">
-										<xs:element name="stat" minOccurs="1" maxOccurs="131">
+										<xs:element name="stat" minOccurs="1" maxOccurs="121">
 											<xs:complexType>
 												<xs:sequence minOccurs="1" maxOccurs="1">
 													<xs:element name="set" minOccurs="1" maxOccurs="unbounded">
@@ -92,8 +92,6 @@
 						<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 						<xs:attribute name="itemId" type="xs:integer" use="required" />
 						<xs:attribute name="index" type="xs:positiveInteger" use="required" />
-						<xs:attribute name="evolveLevel" type="xs:string" use="optional" />
-						<xs:attribute name="type" type="xs:int" use="optional" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

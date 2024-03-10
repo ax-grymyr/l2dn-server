@@ -1,6 +1,6 @@
-﻿using L2Dn.AuthServer.Db;
-using L2Dn.AuthServer.Model;
+﻿using L2Dn.AuthServer.Model;
 using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
+using L2Dn.Model;
 using L2Dn.Network;
 using L2Dn.Packets;
 

@@ -4,66 +4,136 @@
 		<npc>34053</npc> <!-- Attribute Master Svein -->
 	</npcs>
 	<item>
-		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<production id="91186" count="1" /> <!-- Advanced Spirit's Blessing -->
 	</item>
 	<item>
-		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<production id="91186" count="1" /> <!-- Advanced Spirit's Blessing -->
 	</item>
 	<item>
-		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<production id="91186" count="1" /> <!-- Advanced Spirit's Blessing -->
+	</item>
+	<item>
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<production id="91186" count="1" /> <!-- Advanced Spirit's Blessing -->
+	</item>
+
+	<item>
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91038" count="5" /> <!-- Earth Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91038" count="5" /> <!-- Earth Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91038" count="5" /> <!-- Earth Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91038" count="5" /> <!-- Earth Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91036" count="5" /> <!-- Fire Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91036" count="5" /> <!-- Fire Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91036" count="5" /> <!-- Fire Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91036" count="5" /> <!-- Fire Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91037" count="5" /> <!-- Wind Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91037" count="5" /> <!-- Wind Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91037" count="5" /> <!-- Wind Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91037" count="5" /> <!-- Wind Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91035" count="5" /> <!-- Water Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91035" count="5" /> <!-- Water Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91035" count="5" /> <!-- Water Spirit Rough Jewel -->
+	</item>
+
+	<item>
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<ingredient id="57" count="50000" /> <!-- Adena -->
+		<production id="91035" count="5" /> <!-- Water Spirit Rough Jewel -->
 	</item>
 	
 	<item>
-		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="91040" count="1" /> <!-- Fire Attribute Fragment -->
+		<production id="91185" count="3" /> <!-- Intermediate Spirit's Blessing -->
 	</item>
+
 	<item>
-		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="91039" count="1" /> <!-- Water Attribute Fragment -->
+		<production id="91185" count="3" /> <!-- Intermediate Spirit's Blessing -->
 	</item>
+
 	<item>
-		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
+		<ingredient id="91041" count="1" /> <!-- Wind Attribute Fragment -->
+		<production id="91185" count="3" /> <!-- Intermediate Spirit's Blessing -->
 	</item>
-	
+
 	<item>
-		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
+		<ingredient id="91042" count="1" /> <!-- Earth Attribute Fragment -->
+		<production id="91185" count="3" /> <!-- Intermediate Spirit's Blessing -->
 	</item>
-	<item>
-		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
-	</item>
-	<item>
-		<ingredient id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
-	</item>
-	
-	<item>
-		<ingredient id="91031" count="1" /> <!-- Water Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-	</item>
-	<item>
-		<ingredient id="91032" count="1" /> <!-- Fire Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-	</item>
-	<item>
-		<ingredient id="91033" count="1" /> <!-- Wind Spirit Evolution Stone -->
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production id="91034" count="1" /> <!-- Earth Spirit Evolution Stone -->
-	</item>
+
 </list>

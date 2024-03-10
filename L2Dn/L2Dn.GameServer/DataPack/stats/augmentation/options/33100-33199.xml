@@ -70,7 +70,7 @@
 		<!-- Can be exchanged for Shining Savior’s Earring when enchanted to +7. -->
 	</option>
 	<option id="33145" name="option_id_33145">
-		<!-- HP Recovery Rate +20, MP Recovery Rate +5 -->
+		<!-- HP/ MP Recovery Bonus +10% -->
 	</option>
 	<option id="33146" name="option_id_33146">
 	</option>

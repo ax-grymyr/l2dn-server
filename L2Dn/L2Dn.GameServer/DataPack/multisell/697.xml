@@ -189,11 +189,43 @@
 		<production id="1344" count="1" /> <!-- Mithril Arrow -->
 	</item>
 	<item>
+		<ingredient id="57" count="14" /> <!-- Adena -->
+		<production id="1463" count="1" /> <!-- Soulshot (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="22" /> <!-- Adena -->
+		<production id="1464" count="1" /> <!-- Soulshot (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="50" /> <!-- Adena -->
+		<production id="1465" count="1" /> <!-- Soulshot (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="80" /> <!-- Adena -->
+		<production id="1466" count="1" /> <!-- Soulshot (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="28" /> <!-- Adena -->
+		<production id="3948" count="1" /> <!-- Blessed Spiritshot (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="45" /> <!-- Adena -->
+		<production id="3949" count="1" /> <!-- Blessed Spiritshot (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="245" /> <!-- Adena -->
+		<production id="3950" count="1" /> <!-- Blessed Spiritshot (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="290" /> <!-- Adena -->
+		<production id="3951" count="1" /> <!-- Blessed Spiritshot (A-grade) -->
+	</item>
+	<item>
 		<ingredient id="57" count="20" /> <!-- Adena -->
 		<production id="6645" count="1" /> <!-- Beast Soulshot -->
 	</item>
 	<item>
-		<ingredient id="57" count="50" /> <!-- Adena -->
+		<ingredient id="57" count="40" /> <!-- Adena -->
 		<production id="6646" count="1" /> <!-- Beast Spiritshot -->
 	</item>
 </list>

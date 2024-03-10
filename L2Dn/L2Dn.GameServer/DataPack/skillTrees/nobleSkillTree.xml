@@ -2,6 +2,10 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/skillTrees.xsd">
 	<skillTree type="nobleSkillTree">
 		<!-- Noblesse -->
+		<skill skillName="Strider Siege Assault" skillId="325" skillLevel="1" getLevel="1" autoGet="true" />
 		<skill skillName="Build Advanced Headquarters" skillId="326" skillLevel="1" getLevel="1" autoGet="true" />
+		<skill skillName="Noblesse Blessing" skillId="1323" skillLevel="1" getLevel="1" autoGet="true" />
+		<skill skillName="Harmony of Noblesse" skillId="1326" skillLevel="1" getLevel="1" autoGet="true" />
+		<skill skillName="Symphony of Noblesse" skillId="1327" skillLevel="1" getLevel="1" autoGet="true" />
 	</skillTree>
 </list>

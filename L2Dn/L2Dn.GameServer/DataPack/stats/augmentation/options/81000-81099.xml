@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="81000" name="option_id_81000">
+	</option>
+	<option id="81001" name="option_id_81001">
+	</option>
+	<option id="81002" name="option_id_81002">
+	</option>
+	<option id="81003" name="option_id_81003">
+	</option>
+	<option id="81004" name="option_id_81004">
+	</option>
+	<option id="81005" name="option_id_81005">
+	</option>
+	<option id="81006" name="option_id_81006">
+	</option>
+	<option id="81007" name="option_id_81007">
+	</option>
+	<option id="81008" name="option_id_81008">
+	</option>
+	<option id="81009" name="option_id_81009">
+	</option>
+	<option id="81010" name="option_id_81010">
+	</option>
+	<option id="81011" name="option_id_81011">
+	</option>
+	<option id="81012" name="option_id_81012">
+	</option>
+	<option id="81013" name="option_id_81013">
+	</option>
+	<option id="81014" name="option_id_81014">
+	</option>
+	<option id="81015" name="option_id_81015">
+	</option>
+	<option id="81016" name="option_id_81016">
+	</option>
+	<option id="81017" name="option_id_81017">
+	</option>
+	<option id="81018" name="option_id_81018">
+	</option>
+	<option id="81019" name="option_id_81019">
+	</option>
+	<option id="81020" name="option_id_81020">
+	</option>
+	<option id="81021" name="option_id_81021">
+	</option>
+	<option id="81022" name="option_id_81022">
+	</option>
+	<option id="81023" name="option_id_81023">
+		<!-- M. Def +6. -->
+	</option>
+	<option id="81024" name="option_id_81024">
+		<!-- M. Def +7. -->
+	</option>
+	<option id="81025" name="option_id_81025">
+		<!-- M. Def +8. -->
+	</option>
+	<option id="81026" name="option_id_81026">
+		<!-- M. Def +9. -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="81027" name="option_id_81027">
+		<!-- M. Def +10, Received P./ M. Damage -2%. -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="81028" name="option_id_81028">
+		<!-- M. Def +12, Received P./ M. Damage -2%. -->
+		<!-- Acquired XP/ SP +10%. -->
+	</option>
+	<option id="81029" name="option_id_81029">
+		<!-- M. Def +15, Received P./ M. Damage -2%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +10%. -->
+	</option>
+	<option id="81030" name="option_id_81030">
+		<!-- M. Def +16, Received P./ M. Damage -3%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +11%. -->
+	</option>
+	<option id="81031" name="option_id_81031">
+		<!-- M. Def +17, Received P./ M. Damage -3%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +13%. -->
+	</option>
+	<option id="81032" name="option_id_81032">
+		<!-- M. Def +18, Received P./ M. Damage -4%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +13%. -->
+	</option>
+	<option id="81033" name="option_id_81033">
+		<!-- M. Def +19, Received P./ M. Damage -4%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +15%. -->
+	</option>
+	<option id="81034" name="option_id_81034">
+		<!-- M. Def +21, Received P./ M. Damage -5%, Casting Speed +3%, P. Atk. +2%, P. Critical Damage +5%. -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="81035" name="option_id_81035">
+		<!-- M. Def +25, Received P./ M. Damage -7%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +5%, Max HP +100/ Max MP +50. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81036" name="option_id_81036">
+		<!-- M. Def +25, Received P./ M. Damage -10%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +6%, Max HP +100/ Max MP +50. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81037" name="option_id_81037">
+		<!-- M. Def +26, Received P./ M. Damage -10%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +6%, Max HP +110/ Max MP +60. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81038" name="option_id_81038">
+		<!-- M. Def +26, Received P./ M. Damage -12%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +7%, Max HP +110/ Max MP +60. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81039" name="option_id_81039">
+		<!-- M. Def +27, Received P./ M. Damage -15%, Casting Speed +4%, P. Atk. +7%, P. Critical Damage +7%, Max HP +130/ Max MP +70. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81040" name="option_id_81040">
+		<!-- M. Def +27, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +8%, P. Critical Damage +8%, Max HP +160/ Max MP +100. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81041" name="option_id_81041">
+		<!-- M. Def +30, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200/ Max MP +140. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81042" name="option_id_81042">
+		<!-- M. Def +32, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200/ Max MP +140. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81043" name="option_id_81043">
+		<!-- M. Def +34, Received P./ M. Damage -25%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +250/ Max MP +150. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81044" name="option_id_81044">
+		<!-- M. Def +36, Received P./ M. Damage -25%, Casting Speed +6%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +250/ Max MP +160, Damage Reflection Resistance +5%. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81045" name="option_id_81045">
+		<!-- M. Def +38, Received P./ M. Damage -25%, Casting Speed +7%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +10%, Max HP +250/ Max MP +180, Damage Reflection Resistance +10%. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81046" name="option_id_81046">
+		<!-- M. Def +45, Received P./ M. Damage -30%, Casting Speed +10%, P. Atk. +15%, P. Critical Damage +15%, P. Critical Rate +15%, Max HP +300/ Max MP +200, Damage Reflection Resistance +15%. -->
+		<!-- Acquired XP/ SP +50%. -->
+	</option>
+	<option id="81047" name="option_id_81047">
+		<!-- M. Def +6. -->
+	</option>
+	<option id="81048" name="option_id_81048">
+		<!-- M. Def +7. -->
+	</option>
+	<option id="81049" name="option_id_81049">
+		<!-- M. Def +8. -->
+	</option>
+	<option id="81050" name="option_id_81050">
+		<!-- M. Def +9. -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="81051" name="option_id_81051">
+		<!-- M. Def +10, Received P./ M. Damage -2%. -->
+		<!-- Acquired XP/ SP +5%. -->
+	</option>
+	<option id="81052" name="option_id_81052">
+		<!-- M. Def +12, Received P./ M. Damage -2%. -->
+		<!-- Acquired XP/ SP +10%. -->
+	</option>
+	<option id="81053" name="option_id_81053">
+		<!-- M. Def +15, Received P./ M. Damage -2%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +10%. -->
+	</option>
+	<option id="81054" name="option_id_81054">
+		<!-- M. Def +16, Received P./ M. Damage -3%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +11%. -->
+	</option>
+	<option id="81055" name="option_id_81055">
+		<!-- M. Def +17, Received P./ M. Damage -3%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +13%. -->
+	</option>
+	<option id="81056" name="option_id_81056">
+		<!-- M. Def +18, Received P./ M. Damage -4%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +13%. -->
+	</option>
+	<option id="81057" name="option_id_81057">
+		<!-- M. Def +19, Received P./ M. Damage -4%, Casting Speed +2%. -->
+		<!-- Acquired XP/ SP +15%. -->
+	</option>
+	<option id="81058" name="option_id_81058">
+		<!-- M. Def +21, Received P./ M. Damage -5%, Casting Speed +3%, P. Atk. +2%, P. Critical Damage +5%. -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="81059" name="option_id_81059">
+		<!-- M. Def +25, Received P./ M. Damage -7%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +5%, Max HP +100/ Max MP +50. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81060" name="option_id_81060">
+		<!-- M. Def +25, Received P./ M. Damage -10%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +6%, Max HP +100/ Max MP +50. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81061" name="option_id_81061">
+		<!-- M. Def +26, Received P./ M. Damage -10%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +6%, Max HP +110/ Max MP +60. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81062" name="option_id_81062">
+		<!-- M. Def +26, Received P./ M. Damage -12%, Casting Speed +3%, P. Atk. +5%, P. Critical Damage +7%, Max HP +110/ Max MP +60. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81063" name="option_id_81063">
+		<!-- M. Def +27, Received P./ M. Damage -15%, Casting Speed +4%, P. Atk. +7%, P. Critical Damage +7%, Max HP +130/ Max MP +70. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81064" name="option_id_81064">
+		<!-- M. Def +27, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +8%, P. Critical Damage +8%, Max HP +160/ Max MP +100. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="81065" name="option_id_81065">
+		<!-- M. Def +30, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200/ Max MP +140. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81066" name="option_id_81066">
+		<!-- M. Def +32, Received P./ M. Damage -20%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200/ Max MP +140. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81067" name="option_id_81067">
+		<!-- M. Def +34, Received P./ M. Damage -25%, Casting Speed +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +250/ Max MP +150. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81068" name="option_id_81068">
+		<!-- M. Def +36, Received P./ M. Damage -25%, Casting Speed +6%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +250/ Max MP +160, Damage Reflection Resistance +5%. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81069" name="option_id_81069">
+		<!-- M. Def +38, Received P./ M. Damage -25%, Casting Speed +7%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +10%, Max HP +250/ Max MP +180, Damage Reflection Resistance +10%. -->
+		<!-- Acquired XP/ SP +40%. -->
+	</option>
+	<option id="81070" name="option_id_81070">
+		<!-- M. Def +45, Received P./ M. Damage -30%, Casting Speed +10%, P. Atk. +15%, P. Critical Damage +15%, P. Critical Rate +15%, Max HP +300/ Max MP +200, Damage Reflection Resistance +15%. -->
+		<!-- Acquired XP/ SP +50%. -->
+	</option>
+	<option id="81071" name="option_id_81071">
+		<!-- Active: Blessing of a Dragon -->
+	</option>
+	<option id="81072" name="option_id_81072">
+		<!-- Active: Blessing of a Dragon -->
+		<!-- Active: Dragon Invocation -->
+	</option>
+	<option id="81073" name="option_id_81073">
+		<!-- Active: Blessing / Protection of a Dragon -->
+		<!-- Active: Dragon Invocation -->
+	</option>
+	<option id="81074" name="option_id_81074">
+		<!-- Active: Blessing / Protection of a Dragon -->
+		<!-- Active: Dragon Invocation -->
+		<!-- Active: Dragon Barrier -->
+	</option>
+</list>

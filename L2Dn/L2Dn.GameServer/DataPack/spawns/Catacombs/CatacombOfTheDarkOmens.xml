@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn>
 		<territories>
@@ -9,16 +9,16 @@
 				<node x="-16183" y="13814" />
 			</territory>
 		</territories>
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -29,10 +29,10 @@
 				<node x="-14770" y="13784" />
 			</territory>
 		</territories>
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -43,16 +43,16 @@
 				<node x="-18007" y="15220" />
 			</territory>
 		</territories>
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -63,10 +63,10 @@
 				<node x="-18805" y="17825" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -77,10 +77,10 @@
 				<node x="-13664" y="24086" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -91,15 +91,15 @@
 				<node x="-12366" y="21378" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -110,15 +110,15 @@
 				<node x="-16648" y="20246" />
 			</territory>
 		</territories>
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -129,15 +129,15 @@
 				<node x="-8493" y="22682" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -148,15 +148,15 @@
 				<node x="-12152" y="18387" />
 			</territory>
 		</territories>
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -167,10 +167,10 @@
 				<node x="-14747" y="18935" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -181,10 +181,10 @@
 				<node x="-8518" y="23546" />
 			</territory>
 		</territories>
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -195,15 +195,15 @@
 				<node x="-10322" y="18402" />
 			</territory>
 		</territories>
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -214,10 +214,10 @@
 				<node x="-13659" y="13246" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -228,10 +228,10 @@
 				<node x="-14213" y="18368" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -242,15 +242,15 @@
 				<node x="-15158" y="14545" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -261,10 +261,10 @@
 				<node x="-9046" y="18370" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -275,15 +275,15 @@
 				<node x="-12348" y="15694" />
 			</territory>
 		</territories>
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -294,10 +294,10 @@
 				<node x="-14732" y="24081" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -308,10 +308,10 @@
 				<node x="-13126" y="18373" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -322,15 +322,15 @@
 				<node x="-15535" y="15950" />
 			</territory>
 		</territories>
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -341,10 +341,10 @@
 				<node x="-13122" y="19470" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -355,10 +355,10 @@
 				<node x="-8509" y="13769" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -369,14 +369,14 @@
 				<node x="-18047" y="20441" />
 			</territory>
 		</territories>
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -387,16 +387,16 @@
 				<node x="-9844" y="16411" />
 			</territory>
 		</territories>
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -407,15 +407,15 @@
 				<node x="-17967" y="24086" />
 			</territory>
 		</territories>
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -426,15 +426,15 @@
 				<node x="-19378" y="22269" />
 			</territory>
 		</territories>
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -445,10 +445,10 @@
 				<node x="-19349" y="18934" />
 			</territory>
 		</territories>
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -459,15 +459,15 @@
 				<node x="-12156" y="22735" />
 			</territory>
 		</territories>
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -478,15 +478,15 @@
 				<node x="-10309" y="23520" />
 			</territory>
 		</territories>
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -497,10 +497,10 @@
 				<node x="-18822" y="24068" />
 			</territory>
 		</territories>
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Guide -->
-		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Graveyard Prophet -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21906" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21904" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -511,18 +511,18 @@
 				<node x="-15057" y="21632" />
 			</territory>
 		</territories>
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -533,18 +533,18 @@
 				<node x="-11607" y="15938" />
 			</territory>
 		</territories>
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -555,19 +555,19 @@
 				<node x="-16923" y="17554" />
 			</territory>
 		</territories>
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -578,27 +578,27 @@
 				<node x="-10964" y="19781" />
 			</territory>
 		</territories>
-		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Royal Guard -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Prophet -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Gatekeeper -->
-		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim High Priest -->
-		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guard -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
-		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Escort -->
-		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Hermit -->
+		<npc id="21910" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21908" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21905" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21911" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21907" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21912" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21909" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn name="19_18">
 		<group>
-			<npc id="21909" x="-18160" y="14637" z="-4896" heading="58537" respawnTime="60sec" /> <!-- Sepulcher Hermit -->
-			<npc id="31085" x="-20004" y="13497" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31086" x="-19082" y="13509" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31089" x="-8527" y="19204" z="-4896" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Spirit -->
+			<npc id="21909" x="-18160" y="14637" z="-4896" heading="58537" respawnTime="60sec" />
+			<npc id="31085" x="-20004" y="13497" z="-4896" heading="0" respawnTime="60sec" />
+			<npc id="31086" x="-19082" y="13509" z="-4896" heading="0" respawnTime="60sec" />
+			<npc id="31089" x="-8527" y="19204" z="-4896" heading="0" respawnTime="60sec" />
 		</group>
 	</spawn>
 </list>

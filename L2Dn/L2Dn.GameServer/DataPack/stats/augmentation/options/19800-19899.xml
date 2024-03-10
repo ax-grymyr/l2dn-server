@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
 	<option id="19800" name="o_f_80_1g_12">
-		<!-- P. Accuracy +1.92 -->
+		<!-- P. Accuracy +1.92. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>1.919</amount>
@@ -34,7 +34,7 @@
 	</option>
 	<option id="19803" name="o_f_80_1g_15">
 		<!-- P. Def. +11.77. -->
-		<!-- Max HP +39.38 -->
+		<!-- Max HP +39.38. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -48,7 +48,7 @@
 	</option>
 	<option id="19804" name="o_f_80_1g_16">
 		<!-- P. Def. +11.77. -->
-		<!-- Max MP +12.9 -->
+		<!-- Max MP +12.9. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -62,7 +62,7 @@
 	</option>
 	<option id="19805" name="o_f_80_1g_17">
 		<!-- P. Def. +11.77. -->
-		<!-- Max CP +70.88 -->
+		<!-- Max CP +70.88. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -104,7 +104,7 @@
 	</option>
 	<option id="19808" name="o_f_80_1g_20">
 		<!-- P. Def. +11.77. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -118,7 +118,7 @@
 	</option>
 	<option id="19809" name="o_f_80_1g_21">
 		<!-- P. Def. +11.77. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -132,7 +132,7 @@
 	</option>
 	<option id="19810" name="o_f_80_1g_22">
 		<!-- P. Def. +11.77. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -146,7 +146,7 @@
 	</option>
 	<option id="19811" name="o_f_80_1g_23">
 		<!-- P. Def. +11.77. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -160,7 +160,7 @@
 	</option>
 	<option id="19812" name="o_f_80_1g_24">
 		<!-- P. Def. +11.77. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -174,7 +174,7 @@
 	</option>
 	<option id="19813" name="o_f_80_1g_25">
 		<!-- P. Def. +11.77. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>11.768</amount>
@@ -188,7 +188,7 @@
 	</option>
 	<option id="19814" name="o_f_80_1g_26">
 		<!-- M. Def. +9.29. -->
-		<!-- Max HP +39.38 -->
+		<!-- Max HP +39.38. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -202,7 +202,7 @@
 	</option>
 	<option id="19815" name="o_f_80_1g_27">
 		<!-- M. Def. +9.29. -->
-		<!-- Max MP +12.9 -->
+		<!-- Max MP +12.9. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -216,7 +216,7 @@
 	</option>
 	<option id="19816" name="o_f_80_1g_28">
 		<!-- M. Def. +9.29. -->
-		<!-- Max CP +70.88 -->
+		<!-- Max CP +70.88. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -258,7 +258,7 @@
 	</option>
 	<option id="19819" name="o_f_80_1g_31">
 		<!-- M. Def. +9.29. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -272,7 +272,7 @@
 	</option>
 	<option id="19820" name="o_f_80_1g_32">
 		<!-- M. Def. +9.29. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -286,7 +286,7 @@
 	</option>
 	<option id="19821" name="o_f_80_1g_33">
 		<!-- M. Def. +9.29. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -300,7 +300,7 @@
 	</option>
 	<option id="19822" name="o_f_80_1g_34">
 		<!-- M. Def. +9.29. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -314,7 +314,7 @@
 	</option>
 	<option id="19823" name="o_f_80_1g_35">
 		<!-- M. Def. +9.29. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -328,7 +328,7 @@
 	</option>
 	<option id="19824" name="o_f_80_1g_36">
 		<!-- M. Def. +9.29. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>9.286</amount>
@@ -341,8 +341,8 @@
 		</effects>
 	</option>
 	<option id="19825" name="o_f_80_1g_37">
-		<!-- Max HP +44.3 -->
-		<!-- Max MP +12.9 -->
+		<!-- Max HP +44.3. -->
+		<!-- Max MP +12.9. -->
 		<effects>
 			<effect name="MaxHp">
 				<amount>44.298</amount>
@@ -355,8 +355,8 @@
 		</effects>
 	</option>
 	<option id="19826" name="o_f_80_1g_38">
-		<!-- Max HP +44.3 -->
-		<!-- Max CP +70.88 -->
+		<!-- Max HP +44.3. -->
+		<!-- Max CP +70.88. -->
 		<effects>
 			<effect name="MaxHp">
 				<amount>44.298</amount>
@@ -369,7 +369,7 @@
 		</effects>
 	</option>
 	<option id="19827" name="o_f_80_1g_39">
-		<!-- Max HP +44.3 -->
+		<!-- Max HP +44.3. -->
 		<!-- P. Atk. +6.61. -->
 		<effects>
 			<effect name="MaxHp">
@@ -383,7 +383,7 @@
 		</effects>
 	</option>
 	<option id="19828" name="o_f_80_1g_40">
-		<!-- Max HP +44.3 -->
+		<!-- Max HP +44.3. -->
 		<!-- M. Atk. +8.14. -->
 		<effects>
 			<effect name="MaxHp">
@@ -397,8 +397,8 @@
 		</effects>
 	</option>
 	<option id="19829" name="o_f_80_1g_41">
-		<!-- Max HP +44.3 -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- Max HP +44.3. -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="MaxHp">
 				<amount>44.298</amount>
@@ -411,8 +411,8 @@
 		</effects>
 	</option>
 	<option id="19830" name="o_f_80_1g_42">
-		<!-- Max HP +44.3 -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- Max HP +44.3. -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -425,8 +425,8 @@
 		</effects>
 	</option>
 	<option id="19831" name="o_f_80_1g_43">
-		<!-- Max HP +44.3 -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- Max HP +44.3. -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -439,8 +439,8 @@
 		</effects>
 	</option>
 	<option id="19832" name="o_f_80_1g_44">
-		<!-- Max HP +44.3 -->
-		<!-- P. Evasion +0.9 -->
+		<!-- Max HP +44.3. -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -453,8 +453,8 @@
 		</effects>
 	</option>
 	<option id="19833" name="o_f_80_1g_45">
-		<!-- Max HP +44.3 -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- Max HP +44.3. -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -467,8 +467,8 @@
 		</effects>
 	</option>
 	<option id="19834" name="o_f_80_1g_46">
-		<!-- Max HP +44.3 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- Max HP +44.3. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -482,7 +482,7 @@
 	</option>
 	<option id="19835" name="o_f_80_1g_47">
 		<!-- Max MP +14.51. -->
-		<!-- Max CP +70.88 -->
+		<!-- Max CP +70.88. -->
 		<effects>
 			<effect name="MaxCp">
 				<amount>70.877</amount>
@@ -524,7 +524,7 @@
 	</option>
 	<option id="19838" name="o_f_80_1g_50">
 		<!-- Max MP +14.51. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="MaxMp">
 				<amount>14.506</amount>
@@ -538,7 +538,7 @@
 	</option>
 	<option id="19839" name="o_f_80_1g_51">
 		<!-- Max MP +14.51. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -552,7 +552,7 @@
 	</option>
 	<option id="19840" name="o_f_80_1g_52">
 		<!-- Max MP +14.51. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -566,7 +566,7 @@
 	</option>
 	<option id="19841" name="o_f_80_1g_53">
 		<!-- Max MP +14.51. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -580,7 +580,7 @@
 	</option>
 	<option id="19842" name="o_f_80_1g_54">
 		<!-- Max MP +14.51. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -594,7 +594,7 @@
 	</option>
 	<option id="19843" name="o_f_80_1g_55">
 		<!-- Max MP +14.51. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -636,7 +636,7 @@
 	</option>
 	<option id="19846" name="o_f_80_1g_58">
 		<!-- Max CP +79.74. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="MaxCp">
 				<amount>79.737</amount>
@@ -650,7 +650,7 @@
 	</option>
 	<option id="19847" name="o_f_80_1g_59">
 		<!-- Max CP +79.74. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -664,7 +664,7 @@
 	</option>
 	<option id="19848" name="o_f_80_1g_60">
 		<!-- Max CP +79.74. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -678,7 +678,7 @@
 	</option>
 	<option id="19849" name="o_f_80_1g_61">
 		<!-- Max CP +79.74. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -692,7 +692,7 @@
 	</option>
 	<option id="19850" name="o_f_80_1g_62">
 		<!-- Max CP +79.74. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -706,7 +706,7 @@
 	</option>
 	<option id="19851" name="o_f_80_1g_63">
 		<!-- Max CP +79.74. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -734,7 +734,7 @@
 	</option>
 	<option id="19853" name="o_f_80_1g_65">
 		<!-- P. Atk. +7.43. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="PAtk">
 				<amount>7.432</amount>
@@ -748,7 +748,7 @@
 	</option>
 	<option id="19854" name="o_f_80_1g_66">
 		<!-- P. Atk. +7.43. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -762,7 +762,7 @@
 	</option>
 	<option id="19855" name="o_f_80_1g_67">
 		<!-- P. Atk. +7.43. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -776,7 +776,7 @@
 	</option>
 	<option id="19856" name="o_f_80_1g_68">
 		<!-- P. Atk. +7.43. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -790,7 +790,7 @@
 	</option>
 	<option id="19857" name="o_f_80_1g_69">
 		<!-- P. Atk. +7.43. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -804,7 +804,7 @@
 	</option>
 	<option id="19858" name="o_f_80_1g_70">
 		<!-- P. Atk. +7.43. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -818,7 +818,7 @@
 	</option>
 	<option id="19859" name="o_f_80_1g_71">
 		<!-- M. Atk. +9.16. -->
-		<!-- HP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.18. -->
 		<effects>
 			<effect name="MAtk">
 				<amount>9.16</amount>
@@ -832,7 +832,7 @@
 	</option>
 	<option id="19860" name="o_f_80_1g_72">
 		<!-- M. Atk. +9.16. -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -846,7 +846,7 @@
 	</option>
 	<option id="19861" name="o_f_80_1g_73">
 		<!-- M. Atk. +9.16. -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -860,7 +860,7 @@
 	</option>
 	<option id="19862" name="o_f_80_1g_74">
 		<!-- M. Atk. +9.16. -->
-		<!-- P. Evasion +0.9 -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -874,7 +874,7 @@
 	</option>
 	<option id="19863" name="o_f_80_1g_75">
 		<!-- M. Atk. +9.16. -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -888,7 +888,7 @@
 	</option>
 	<option id="19864" name="o_f_80_1g_76">
 		<!-- M. Atk. +9.16. -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -901,8 +901,8 @@
 		</effects>
 	</option>
 	<option id="19865" name="o_f_80_1g_77">
-		<!-- HP Recovery Rate +0.2 -->
-		<!-- MP Recovery Rate +0.08 -->
+		<!-- HP Recovery +0.2. -->
+		<!-- MP Recovery +0.08. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.077</amount>
@@ -915,8 +915,8 @@
 		</effects>
 	</option>
 	<option id="19866" name="o_f_80_1g_78">
-		<!-- HP Recovery Rate +0.2 -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- HP Recovery +0.2. -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.181</amount>
@@ -929,8 +929,8 @@
 		</effects>
 	</option>
 	<option id="19867" name="o_f_80_1g_79">
-		<!-- HP Recovery Rate +0.2 -->
-		<!-- P. Evasion +0.9 -->
+		<!-- HP Recovery +0.2. -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>0.903</amount>
@@ -943,8 +943,8 @@
 		</effects>
 	</option>
 	<option id="19868" name="o_f_80_1g_80">
-		<!-- HP Recovery Rate +0.2 -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- HP Recovery +0.2. -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>0.903</amount>
@@ -957,8 +957,8 @@
 		</effects>
 	</option>
 	<option id="19869" name="o_f_80_1g_81">
-		<!-- HP Recovery Rate +0.2 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- HP Recovery +0.2. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CriticalRate">
 				<amount>7.039999999999999</amount>
@@ -971,8 +971,8 @@
 		</effects>
 	</option>
 	<option id="19870" name="o_f_80_1g_82">
-		<!-- MP Recovery Rate +0.09 -->
-		<!-- CP Recovery Rate +0.18 -->
+		<!-- MP Recovery +0.09. -->
+		<!-- CP Recovery +0.18. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.086</amount>
@@ -985,8 +985,8 @@
 		</effects>
 	</option>
 	<option id="19871" name="o_f_80_1g_83">
-		<!-- MP Recovery Rate +0.09 -->
-		<!-- P. Evasion +0.9 -->
+		<!-- MP Recovery +0.09. -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.086</amount>
@@ -999,8 +999,8 @@
 		</effects>
 	</option>
 	<option id="19872" name="o_f_80_1g_84">
-		<!-- MP Recovery Rate +0.09 -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- MP Recovery +0.09. -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.086</amount>
@@ -1013,8 +1013,8 @@
 		</effects>
 	</option>
 	<option id="19873" name="o_f_80_1g_85">
-		<!-- MP Recovery Rate +0.09 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- MP Recovery +0.09. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.086</amount>
@@ -1027,8 +1027,8 @@
 		</effects>
 	</option>
 	<option id="19874" name="o_f_80_1g_86">
-		<!-- CP Recovery Rate +0.2 -->
-		<!-- P. Evasion +0.9 -->
+		<!-- CP Recovery +0.2. -->
+		<!-- P. Evasion +0.9. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.204</amount>
@@ -1041,8 +1041,8 @@
 		</effects>
 	</option>
 	<option id="19875" name="o_f_80_1g_87">
-		<!-- CP Recovery Rate +0.2 -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- CP Recovery +0.2. -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.204</amount>
@@ -1055,8 +1055,8 @@
 		</effects>
 	</option>
 	<option id="19876" name="o_f_80_1g_88">
-		<!-- CP Recovery Rate +0.2 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- CP Recovery +0.2. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.204</amount>
@@ -1069,8 +1069,8 @@
 		</effects>
 	</option>
 	<option id="19877" name="o_f_80_1g_89">
-		<!-- P. Evasion +1.02 -->
-		<!-- P. Accuracy +0.9 -->
+		<!-- P. Evasion +1.02. -->
+		<!-- P. Accuracy +0.9. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>1.016</amount>
@@ -1083,8 +1083,8 @@
 		</effects>
 	</option>
 	<option id="19878" name="o_f_80_1g_90">
-		<!-- P. Evasion +1.02 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Evasion +1.02. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>1.016</amount>
@@ -1097,8 +1097,8 @@
 		</effects>
 	</option>
 	<option id="19879" name="o_f_80_1g_91">
-		<!-- P. Accuracy +1.02 -->
-		<!-- P. Critical Rate +7 -->
+		<!-- P. Accuracy +1.02. -->
+		<!-- P. Critical Rate +7. -->
 		<effects>
 			<effect name="Accuracy">
 				<amount>1.016</amount>

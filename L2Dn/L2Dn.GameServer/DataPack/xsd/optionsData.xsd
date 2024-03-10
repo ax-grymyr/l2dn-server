@@ -17,28 +17,6 @@
 													<xs:element type="xs:string" name="attribute" minOccurs="0" maxOccurs="1" />
 													<xs:element type="xs:byte" name="magicType" minOccurs="0" maxOccurs="1" />
 													<xs:element type="xs:string" name="stat" minOccurs="0" maxOccurs="1" />
-													<xs:element type="xs:string" name="slot" minOccurs="0" maxOccurs="1" />
-													<xs:element type="xs:string" name="type" minOccurs="0" />
-													<xs:element type="xs:float" name="BOW" minOccurs="0" />
-													<xs:element type="xs:float" name="SWORD" minOccurs="0" />
-													<xs:element type="xs:float" name="DUAL" minOccurs="0" />
-													<xs:element type="xs:float" name="POLE" minOccurs="0" />
-													<xs:element type="xs:float" name="FIST" minOccurs="0" />
-													<xs:element type="xs:float" name="DUALFIST" minOccurs="0" />
-													<xs:element type="xs:float" name="DAGGER" minOccurs="0" />
-													<xs:element type="xs:float" name="DUALDAGGER" minOccurs="0" />
-													<xs:element type="xs:float" name="ANCIENTSWORD" minOccurs="0" />
-													<xs:element type="xs:float" name="RAPIER" minOccurs="0" />
-													<xs:element type="xs:float" name="BLUNT" minOccurs="0" />
-													<xs:element type="xs:float" name="PISTOLS" minOccurs="0" />
-													<xs:element type="xs:byte" name="ANOMALY" minOccurs="0" />
-													<xs:element type="xs:byte" name="SUPPRESSION" minOccurs="0" />
-													<xs:element type="xs:byte" name="KNOCKDOWN" minOccurs="0" />
-													<xs:element type="xs:byte" name="KNOCKBACK" minOccurs="0" />
-													<xs:element type="xs:byte" name="HOLD" minOccurs="0" />
-													<xs:element type="xs:float" name="IMPRISON" minOccurs="0" />
-													<xs:element type="xs:float" name="PULL" minOccurs="0" />
-													<xs:element type="xs:float" name="PARALYZE" minOccurs="0" />
 												</xs:sequence>
 												<xs:attribute name="name" type="xs:string" />
 											</xs:complexType>
@@ -72,6 +50,7 @@
 										<xs:simpleType>
 											<xs:restriction base="xs:positiveInteger">
 												<xs:minInclusive value="1" />
+												<xs:maxInclusive value="65535" />
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="22_22">
+		<group>
+			<npc id="20248" x="98302" y="136197" z="-3528" heading="25104" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="97672" y="136440" z="-3520" heading="51590" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20248" x="97672" y="136440" z="-3520" heading="51590" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="98152" y="134216" z="-3611" heading="49900" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20248" x="98152" y="134216" z="-3611" heading="49900" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="98193" y="133402" z="-3563" heading="46411" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20248" x="97538" y="131859" z="-3485" heading="27092" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="97538" y="131859" z="-3485" heading="27092" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20248" x="96934" y="132462" z="-3546" heading="21877" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="96934" y="132462" z="-3546" heading="21877" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20249" x="96141" y="132150" z="-3521" heading="39113" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20248" x="96141" y="132150" z="-3521" heading="39113" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20248" x="95650" y="131672" z="-3494" heading="42556" respawnTime="60sec" /> <!-- Turak Bugbear -->
+			<npc id="20249" x="95650" y="131672" z="-3494" heading="42556" respawnTime="60sec" /> <!-- Turak Bugbear Warrior -->
+			<npc id="20176" x="98109" y="132266" z="-3483" heading="30889" respawnTime="60sec" /> <!-- Wyrm -->
+			<npc id="20176" x="97364" y="132853" z="-3544" heading="19664" respawnTime="60sec" /> <!-- Wyrm -->
+			<npc id="20176" x="98069" y="134836" z="-3644" heading="9720" respawnTime="60sec" /> <!-- Wyrm -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
+			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
+			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
+			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
+			<npc id="27262" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Death Lord Hallate -->
+			<npc id="25834" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Shadai -->
+			<npc id="21889" x="82775" y="148663" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Varka's Elite Escort -->
+			<npc id="21880" x="82290" y="149104" z="-3446" heading="33646" respawnTime="60sec" /> <!-- Varka Silenos Magus -->
+			<npc id="20995" x="82705" y="149165" z="-3464" heading="34663" respawnTime="60sec" /> <!-- Garden Guard -->
+			<npc id="34088" x="82913" y="148794" z="-3464" heading="59774" respawnTime="60sec" /> <!-- Christmas Tree -->
+			<npc id="21838" x="82716" y="148348" z="-3455" respawnTime="60sec" /> <!-- Hot Springs Nepenthes -->
+			<npc id="21772" x="82573" y="148287" z="-3464" heading="1221" respawnTime="60sec" /> <!-- Radin -->
+		</group>
+	</spawn>
+</list>

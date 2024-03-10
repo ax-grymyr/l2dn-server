@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="50400" name="option_id_50400">
+		<!-- M. Def. +25, Received P./ M. Damage -15%, Atk. Spd./ Casting Spd. +3%, P./ M. Critical Damage +5% -->
+		<!-- Acquired XP/ SP +20%. -->
+	</option>
+	<option id="50401" name="option_id_50401">
+		<!-- M. Def. +26, Received P./ M. Damage -15%, Atk. Spd./ Casting Spd. +3%, P./ M. Critical Damage +5%. -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50402" name="option_id_50402">
+		<!-- M. Def. +27, Received P./ M. Damage -15%, Atk. Spd./ Casting Spd. +3%, P./ M. Critical Damage +6%. -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50403" name="option_id_50403">
+		<!-- M. Def. +28, Received P./ M. Damage -15%, Atk. Spd./ Casting Spd. +4%, P./ M. Critical Damage +6%. -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50404" name="option_id_50404">
+		<!-- M. Def. +29, Received P./ M. Damage -15%, Atk. Spd./ Casting Spd. +4%, P./ M. Critical Damage +7%, P./ M. Atk. +5% -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50405" name="option_id_50405">
+		<!-- M. Def. +30, Received P./ M. Damage -20%, Atk. Spd./ Casting Spd. +4%, P./ M. Critical Damage +7%, P./ M. Atk. +5%. -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50406" name="option_id_50406">
+		<!-- M. Def. +31, Received P./ M. Damage -20%, Atk. Spd./ Casting Spd. +4%, P./ M. Critical Damage +8%, P./ M. Atk. +5%. -->
+		<!-- Acquired XP/ SP +25%. -->
+	</option>
+	<option id="50407" name="option_id_50407">
+		<!-- M. Def. +33, Received P./ M. Damage -20%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +8%, P./ M. Atk. +10%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50408" name="option_id_50408">
+		<!-- M. Def. +35, Received P./ M. Damage -20%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +9%, P./ M. Atk. +10%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50409" name="option_id_50409">
+		<!-- M. Def. +37, Received P./ M. Damage -25%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +9%, P./ M. Atk. +10%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50410" name="option_id_50410">
+		<!-- M. Def. +39, Received P./ M. Damage -25%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +10%, P./ M. Atk. +10%, Damage Reflection Resistance +10%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50411" name="option_id_50411">
+		<!-- M. Def. +41, Received P./ M. Damage -25%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +10%, P./ M. Atk. +15%, Damage Reflection Resistance +12%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50412" name="option_id_50412">
+		<!-- M. Def. +43, Received P./ M. Damage -25%, Atk. Spd./ Casting Spd. +10%, P./ M. Critical Damage +12%, P./ M. Atk. +15%, Damage Reflection Resistance +15%. -->
+		<!-- Acquired XP/ SP +30%. -->
+	</option>
+	<option id="50413" name="option_id_50413">
+		<!-- Active: Dragon Invocation -->
+	</option>
+	<option id="50414" name="option_id_50414">
+		<!-- Active: Dragon Barrier -->
+	</option>
+</list>

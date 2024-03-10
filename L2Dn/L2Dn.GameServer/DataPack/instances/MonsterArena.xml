@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Monster Arena -->
 <instance id="192" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<time duration="30" empty="0" />
+	<time duration="21" empty="0" />
 	<locations>
 		<enter type="FIXED">
 			<location x="12556" y="183701" z="-3717" />

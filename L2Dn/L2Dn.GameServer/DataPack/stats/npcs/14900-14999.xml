@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="14900" level="75" type="Pet" name="Magnus">
+	<npc id="14900" level="85" type="Pet" name="Magnus the Unicorn">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5138" level="1" />
 			<skill name="PhysicalSpecial2" id="5139" level="1" />
@@ -9,19 +9,18 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3066.63525666667" hpRegen="8.5" mp="1870" mpRegen="6" />
-			<attack physical="994.002873333333" magical="678.775106666667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="6" />
+			<attack physical="880.002873333333" magical="1000.775106666667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="364.40208" magical="266.653626666667" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -30,7 +29,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="5138" level="1" /> <!-- Whiplash -->
 			<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		</skillList>
@@ -43,7 +42,7 @@
 			<height normal="17" />
 		</collision>
 	</npc>
-	<npc id="14901" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14901" level="77" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -59,12 +58,11 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -73,7 +71,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -87,7 +85,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14902" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14902" level="77" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -103,12 +101,11 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -117,7 +114,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -131,7 +128,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14903" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14903" level="77" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -147,12 +144,11 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -161,7 +157,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -191,22 +187,21 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="1895" level="1" /> <!-- Spectral Potential -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="1895" level="1" /> <!-- Spectral Potential -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="2" /> <!-- Corpse Burst -->
 			<skill id="5140" level="2" /> <!-- Dark Curse -->
 			<skill id="5141" level="2" /> <!-- Dicing Death -->
@@ -236,22 +231,21 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="1895" level="1" /> <!-- Spectral Potential -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="1895" level="1" /> <!-- Spectral Potential -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="3" /> <!-- Corpse Burst -->
 			<skill id="5140" level="3" /> <!-- Dark Curse -->
 			<skill id="5141" level="3" /> <!-- Dicing Death -->
@@ -281,22 +275,21 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="1895" level="1" /> <!-- Spectral Potential -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="1895" level="1" /> <!-- Spectral Potential -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="4" /> <!-- Corpse Burst -->
 			<skill id="5140" level="4" /> <!-- Dark Curse -->
 			<skill id="5141" level="4" /> <!-- Dicing Death -->
@@ -326,22 +319,21 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="1895" level="1" /> <!-- Spectral Potential -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="1895" level="1" /> <!-- Spectral Potential -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="5" /> <!-- Corpse Burst -->
 			<skill id="5140" level="5" /> <!-- Dark Curse -->
 			<skill id="5141" level="5" /> <!-- Dicing Death -->
@@ -371,22 +363,21 @@
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="1895" level="1" /> <!-- Spectral Potential -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="1895" level="1" /> <!-- Spectral Potential -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="6" /> <!-- Corpse Burst -->
 			<skill id="5140" level="6" /> <!-- Dark Curse -->
 			<skill id="5141" level="6" /> <!-- Dicing Death -->
@@ -400,7 +391,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14909" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14909" level="90" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -409,19 +400,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2992.131666" hpRegen="8.5" mp="1791.92" mpRegen="6" />
+			<vitals hp="2992" hpRegen="8.5" mp="1791" mpRegen="6" />
 			<attack physical="954.30514" magical="651.6667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="355.191248" magical="259.91354" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -430,7 +420,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -444,7 +434,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14910" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14910" level="90" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -453,19 +443,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3004.54893111111" hpRegen="8.5" mp="1804.93333333333" mpRegen="6" />
+			<vitals hp="3004" hpRegen="8.5" mp="1804" mpRegen="6" />
 			<attack physical="960.921428888889" magical="656.184767777778" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="356.726386666667" magical="261.036887777778" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -474,7 +463,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -488,7 +477,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14911" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14911" level="90" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -497,19 +486,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3016.96619622222" hpRegen="8.5" mp="1817.94666666667" mpRegen="6" />
+			<vitals hp="3016" hpRegen="8.5" mp="1817" mpRegen="6" />
 			<attack physical="967.537717777778" magical="660.702835555556" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="358.261525333333" magical="262.160235555556" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -518,7 +506,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -532,7 +520,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14912" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14912" level="84" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -541,19 +529,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3029.38346133333" hpRegen="8.5" mp="1830.96" mpRegen="6" />
+			<vitals hp="3029" hpRegen="8.5" mp="1830" mpRegen="6" />
 			<attack physical="974.154006666667" magical="665.220903333333" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="359.796664" magical="263.283583333333" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -562,7 +549,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -576,7 +563,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14913" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14913" level="85" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -585,19 +572,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3041.80072644444" hpRegen="8.5" mp="1843.97333333333" mpRegen="6" />
+			<vitals hp="3041" hpRegen="8.5" mp="1843" mpRegen="6" />
 			<attack physical="980.770295555556" magical="669.738971111111" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="361.331802666667" magical="264.406931111111" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -606,7 +592,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -620,7 +606,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14914" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14914" level="85" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -629,19 +615,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3054.21799155555" hpRegen="8.5" mp="1856.98666666667" mpRegen="6" />
+			<vitals hp="3054" hpRegen="8.5" mp="1856" mpRegen="6" />
 			<attack physical="987.386584444444" magical="674.257038888889" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="362.866941333333" magical="265.530278888889" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -650,7 +635,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -664,7 +649,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14915" level="75" type="Pet" name="Spectral Lord">
+	<npc id="14915" level="85" type="Pet" name="Spectral Lord">
 		<parameters>
 			<skill name="PhysicalSpecial1" id="5142" level="1" />
 			<skill name="PhysicalSpecial2" id="5141" level="1" />
@@ -673,19 +658,18 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3066.63525666667" hpRegen="8.5" mp="1870" mpRegen="6" />
+			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="6" />
 			<attack physical="994.002873333333" magical="678.775106666667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="364.40208" magical="266.653626666667" />
 			<speed>
 				<walk ground="160" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -694,7 +678,7 @@
 			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="5142" level="1" /> <!-- Corpse Burst -->
 			<skill id="5140" level="1" /> <!-- Dark Curse -->
 			<skill id="5141" level="1" /> <!-- Dicing Death -->
@@ -708,268 +692,42 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="14916" level="75" type="Folk" name="Ricky">
+	<npc id="14916" level="80" type="Folk" name="Ricky">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ANIMAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="6" />
-			<attack physical="994.002873333333" magical="678.775106666667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="364.40208" magical="266.653626666667" />
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="8446" hpRegen="10.5" mp="1870" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<collision>
 			<radius normal="5" />
 			<height normal="9.3" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="4" /> <!-- Animals -->
-			<skill id="4408" level="4" /> <!-- HP High -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-		</skillList>
 	</npc>
-	<npc id="14917" level="75" type="Folk" name="Expert Ricky">
+	<npc id="14917" level="80" type="Folk" name="Advanced Ricky">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ANIMAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="6" />
-			<attack physical="994.002873333333" magical="678.775106666667" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="364.40208" magical="266.653626666667" />
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="8446" hpRegen="10.5" mp="1870" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<collision>
 			<radius normal="5" />
 			<height normal="9.3" />
-		</collision>
-		<skillList>
-			<skill id="4416" level="4" /> <!-- Animals -->
-			<skill id="4408" level="4" /> <!-- HP High -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-		</skillList>
-	</npc>
-	<npc id="14918" level="85" type="Pet" name="Cat Emperor">
-		<parameters>
-			<skill name="HealMagic" id="4025" level="12" />
-			<skill name="Buff1" id="47902" level="1" />
-			<skill name="PhysicalSpecial1" id="47903" level="1" />
-		</parameters>
-		<race>ETC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4600" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-		</stats>
-		<status attackable="true" />
-		<shots soul="1" spirit="1" />
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>1.21</sNpcPropHpRate>
-		<ai type="BALANCED" />
-		<collision>
-			<radius normal="12" />
-			<height normal="15.9" />
-		</collision>
-		<skillList>
-			<skill id="47902" level="1" /> <!-- Emperor's Blessing -->
-			<skill id="47903" level="1" /> <!-- Outcry -->
-			<skill id="4025" level="12" /> <!-- Master Recharge -->
-			<skill id="47923" level="1" /> <!-- Cat Emperor Lv1 (Basic Effect) -->
-		</skillList>
-	</npc>
-	<npc id="14919" level="85" type="Pet" name="Unicorn Guard">
-		<parameters>
-			<skill name="HealMagic" id="4025" level="12" />
-			<skill name="Buff1" id="47905" level="1" />
-			<skill name="PhysicalSpecial1" id="47906" level="1" />
-		</parameters>
-		<race>ETC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3800" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-		</stats>
-		<status attackable="true" />
-		<shots soul="1" spirit="1" />
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>1.21</sNpcPropHpRate>
-		<ai type="BALANCED" />
-		<collision>
-			<radius normal="10" />
-			<height normal="23" />
-		</collision>
-		<skillList>
-			<skill id="47905" level="1" /> <!-- Guard's Blessing -->
-			<skill id="47906" level="1" /> <!-- Trample -->
-			<skill id="4025" level="12" /> <!-- Master Recharge -->
-			<skill id="47924" level="1" /> <!-- Unicorn Guard Lv1 (Basic Effect) -->
-		</skillList>
-	</npc>
-	<npc id="14920" level="85" type="Pet" name="Lord Raise">
-		<parameters>
-			<skill name="HealMagic" id="4025" level="12" />
-			<skill name="Buff1" id="47908" level="1" />
-			<skill name="PhysicalSpecial1" id="47909" level="1" />
-		</parameters>
-		<race>ETC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4300" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
-			<speed>
-				<walk ground="60" />
-				<run ground="180" />
-			</speed>
-		</stats>
-		<status attackable="true" />
-		<shots soul="1" spirit="1" />
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>1.21</sNpcPropHpRate>
-		<ai type="BALANCED" />
-		<collision>
-			<radius normal="11" />
-			<height normal="27" />
-		</collision>
-		<skillList>
-			<skill id="47908" level="1" /> <!-- Lord's Blessing -->
-			<skill id="47909" level="1" /> <!-- Specter's Dance -->
-			<skill id="4025" level="12" /> <!-- Master Recharge -->
-			<skill id="47925" level="1" /> <!-- Lord Raise Lv1 (Basic Effect) -->
-		</skillList>
-	</npc>
-	<npc id="14921" level="85" type="Folk" name="Feline Queen">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ETC</race>
-		<sex>FEMALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="1828" hpRegen="10.5" mp="977" mpRegen="3.6" />
-			<speed>
-				<walk ground="26" />
-				<run ground="170" />
-			</speed>
-			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
-		</stats>
-		<status attackable="false" />
-		<collision>
-			<radius normal="8" />
-			<height normal="15" />
-		</collision>
-	</npc>
-	<npc id="14922" level="85" type="Folk" name="Cat Emperor">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ETC</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="98326" /> <!-- Arcana Reaper - Not Available -->
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="4600" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
-		</stats>
-		<status attackable="false" />
-		<collision>
-			<radius normal="12" />
-			<height normal="15.9" />
-		</collision>
-	</npc>
-	<npc id="14923" level="85" type="Folk" name="Unicorn Guard">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ETC</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="98327" /> <!-- Elemental Reaper - Not Available -->
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="3800" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
-		</stats>
-		<status attackable="false" />
-		<collision>
-			<radius normal="10" />
-			<height normal="23" />
-		</collision>
-	</npc>
-	<npc id="14924" level="85" type="Folk" name="Lord Raise">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ETC</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="98328" /> <!-- Spectral Reaper - Not Available -->
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="4300" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<speed>
-				<walk ground="60" />
-				<run ground="180" />
-			</speed>
-			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
-		</stats>
-		<status attackable="false" />
-		<collision>
-			<radius normal="11" />
-			<height normal="27" />
-		</collision>
-	</npc>
-	<npc id="14925" level="85" type="Folk" name="Lord Raise">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>ETC</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="98329" /> <!-- Envoy Weapon - Not Available -->
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="4300" hpRegen="10.5" mp="1778" mpRegen="3.6" />
-			<speed>
-				<walk ground="60" />
-				<run ground="180" />
-			</speed>
-			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
-		</stats>
-		<status attackable="false" />
-		<collision>
-			<radius normal="11" />
-			<height normal="27" />
 		</collision>
 	</npc>
 </list>

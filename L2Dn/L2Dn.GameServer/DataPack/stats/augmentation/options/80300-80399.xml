@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="80300" name="option_id_80300">
+		<!-- Pull Attack Success Rate +1.5% -->
+	</option>
+	<option id="80301" name="option_id_80301">
+		<!-- Pull Attack Success Rate +2.5% -->
+	</option>
+	<option id="80302" name="option_id_80302">
+		<!-- Pull Attack Success Rate +3% -->
+	</option>
+	<option id="80303" name="option_id_80303">
+		<!-- Pull Attack Success Rate +3.5% -->
+	</option>
+	<option id="80304" name="option_id_80304">
+		<!-- Pull Attack Success Rate +4.5% -->
+	</option>
+	<option id="80305" name="option_id_80305">
+		<!-- Pull Attack Success Rate +5% -->
+	</option>
+	<option id="80306" name="option_id_80306">
+		<!-- Pull Attack Success Rate +6% -->
+	</option>
+	<option id="80307" name="option_id_80307">
+		<!-- Pull Attack Success Rate +7.5% -->
+	</option>
+	<option id="80308" name="option_id_80308">
+		<!-- Pull Attack Success Rate +15% -->
+	</option>
+	<option id="80309" name="option_id_80309">
+		<!-- Petrification Attack Success Rate +1.5% -->
+	</option>
+	<option id="80310" name="option_id_80310">
+		<!-- Petrification Attack Success Rate +2.5% -->
+	</option>
+	<option id="80311" name="option_id_80311">
+		<!-- Petrification Attack Success Rate +3% -->
+	</option>
+	<option id="80312" name="option_id_80312">
+		<!-- Petrification Attack Success Rate +3.5% -->
+	</option>
+	<option id="80313" name="option_id_80313">
+		<!-- Petrification Attack Success Rate +4.5% -->
+	</option>
+	<option id="80314" name="option_id_80314">
+		<!-- Petrification Attack Success Rate +5% -->
+	</option>
+	<option id="80315" name="option_id_80315">
+		<!-- Petrification Attack Success Rate +6% -->
+	</option>
+	<option id="80316" name="option_id_80316">
+		<!-- Petrification Attack Success Rate +7.5% -->
+	</option>
+	<option id="80317" name="option_id_80317">
+		<!-- Petrification Attack Success Rate +15% -->
+	</option>
+	<option id="80318" name="option_id_80318">
+		<!-- Max HP +4% -->
+	</option>
+	<option id="80319" name="option_id_80319">
+		<!-- Max HP +4.5% -->
+	</option>
+	<option id="80320" name="option_id_80320">
+		<!-- Max HP +5% -->
+	</option>
+	<option id="80321" name="option_id_80321">
+		<!-- Max MP +4% -->
+	</option>
+	<option id="80322" name="option_id_80322">
+		<!-- Max MP +4.5% -->
+	</option>
+	<option id="80323" name="option_id_80323">
+		<!-- Max MP +5% -->
+	</option>
+	<option id="80324" name="option_id_80324">
+		<!-- Max CP +4% -->
+	</option>
+	<option id="80325" name="option_id_80325">
+		<!-- Max CP +4.5% -->
+	</option>
+	<option id="80326" name="option_id_80326">
+		<!-- Max CP +5% -->
+	</option>
+	<option id="80327" name="option_id_80327">
+		<!-- P. Atk. +4% -->
+	</option>
+	<option id="80328" name="option_id_80328">
+		<!-- P. Atk. +4.5% -->
+	</option>
+	<option id="80329" name="option_id_80329">
+		<!-- P. Atk. +5% -->
+	</option>
+	<option id="80330" name="option_id_80330">
+		<!-- P. Def. +4% -->
+	</option>
+	<option id="80331" name="option_id_80331">
+		<!-- P. Def. +4.5% -->
+	</option>
+	<option id="80332" name="option_id_80332">
+		<!-- P. Def. +5% -->
+	</option>
+	<option id="80333" name="option_id_80333">
+		<!-- Atk. Spd. +4% -->
+	</option>
+	<option id="80334" name="option_id_80334">
+		<!-- Atk. Spd. +4.5% -->
+	</option>
+	<option id="80335" name="option_id_80335">
+		<!-- Atk. Spd. +5% -->
+	</option>
+	<option id="80336" name="option_id_80336">
+		<!-- Speed +10 -->
+	</option>
+	<option id="80337" name="option_id_80337">
+		<!-- Speed +13 -->
+	</option>
+	<option id="80338" name="option_id_80338">
+		<!-- Speed +15 -->
+	</option>
+	<option id="80339" name="option_id_80339">
+		<!-- M. Atk. +4% -->
+	</option>
+	<option id="80340" name="option_id_80340">
+		<!-- M. Atk. +4.5% -->
+	</option>
+	<option id="80341" name="option_id_80341">
+		<!-- M. Atk. +5% -->
+	</option>
+	<option id="80342" name="option_id_80342">
+		<!-- M. Def. +4% -->
+	</option>
+	<option id="80343" name="option_id_80343">
+		<!-- M. Def +4.5% -->
+	</option>
+	<option id="80344" name="option_id_80344">
+		<!-- M. Def +5% -->
+	</option>
+	<option id="80345" name="option_id_80345">
+		<!-- Casting Spd. +4% -->
+	</option>
+	<option id="80346" name="option_id_80346">
+		<!-- Casting Spd. +4.5% -->
+	</option>
+	<option id="80347" name="option_id_80347">
+		<!-- Casting Spd. +5% -->
+	</option>
+	<option id="80348" name="option_id_80348">
+		<!-- PvP Damage +4% -->
+	</option>
+	<option id="80349" name="option_id_80349">
+		<!-- PvP Damage +4.5% -->
+	</option>
+	<option id="80350" name="option_id_80350">
+		<!-- PvP Damage +5% -->
+	</option>
+	<option id="80351" name="option_id_80351">
+		<!-- Received PvP Damage -4% -->
+	</option>
+	<option id="80352" name="option_id_80352">
+		<!-- Received PvP Damage -4.5% -->
+	</option>
+	<option id="80353" name="option_id_80353">
+		<!-- Received PvP Damage -5% -->
+	</option>
+	<option id="80354" name="option_id_80354">
+		<!-- PvE Damage +4% -->
+	</option>
+	<option id="80355" name="option_id_80355">
+		<!-- PvE Damage +4.5% -->
+	</option>
+	<option id="80356" name="option_id_80356">
+		<!-- PvE Damage +5% -->
+	</option>
+	<option id="80357" name="option_id_80357">
+		<!-- Received PvE Damage -4% -->
+	</option>
+	<option id="80358" name="option_id_80358">
+		<!-- Received PvE Damage -4.5% -->
+	</option>
+	<option id="80359" name="option_id_80359">
+		<!-- Received PvE Damage -5% -->
+	</option>
+	<option id="80360" name="option_id_80360">
+		<!-- XP When Hunting +4% -->
+	</option>
+	<option id="80361" name="option_id_80361">
+		<!-- XP When Hunting +4.5% -->
+	</option>
+	<option id="80362" name="option_id_80362">
+		<!-- XP When Hunting +5% -->
+	</option>
+	<option id="80363" name="option_id_80363">
+		<!-- SP When Hunting +4% -->
+	</option>
+	<option id="80364" name="option_id_80364">
+		<!-- SP When Hunting +4.5% -->
+	</option>
+	<option id="80365" name="option_id_80365">
+		<!-- SP When Hunting +5% -->
+	</option>
+	<option id="80366" name="option_id_80366">
+		<!-- Chance to recover 4% of damage as HP -->
+	</option>
+	<option id="80367" name="option_id_80367">
+		<!-- Chance to recover 4.5% of damage as HP -->
+	</option>
+	<option id="80368" name="option_id_80368">
+		<!-- Chance to recover 5% of damage as HP -->
+	</option>
+	<option id="80369" name="option_id_80369">
+		<!-- P. Skill MP Consumption -3% -->
+	</option>
+	<option id="80370" name="option_id_80370">
+		<!-- P. Skill MP Consumption -4% -->
+	</option>
+	<option id="80371" name="option_id_80371">
+		<!-- P. Skill MP Consumption -5% -->
+	</option>
+	<option id="80372" name="option_id_80372">
+		<!-- M. Skill MP Consumption -3% -->
+	</option>
+	<option id="80373" name="option_id_80373">
+		<!-- M. Skill MP Consumption -4% -->
+	</option>
+	<option id="80374" name="option_id_80374">
+		<!-- M. Skill MP Consumption -5% -->
+	</option>
+	<option id="80375" name="option_id_80375">
+		<!-- P. Atk. +3 -->
+	</option>
+	<option id="80376" name="option_id_80376">
+		<!-- P. Atk. +4 -->
+	</option>
+	<option id="80377" name="option_id_80377">
+		<!-- P. Atk. +5 -->
+	</option>
+	<option id="80378" name="option_id_80378">
+		<!-- P. Atk. +6 -->
+	</option>
+	<option id="80379" name="option_id_80379">
+		<!-- P. Atk. +7 -->
+	</option>
+	<option id="80380" name="option_id_80380">
+		<!-- P. Atk. +9 -->
+	</option>
+	<option id="80381" name="option_id_80381">
+		<!-- P. Atk. +11 -->
+	</option>
+	<option id="80382" name="option_id_80382">
+		<!-- P. Atk. +12 -->
+	</option>
+	<option id="80383" name="option_id_80383">
+		<!-- P. Atk. +15 -->
+	</option>
+	<option id="80384" name="option_id_80384">
+		<!-- P. Atk. +31 -->
+	</option>
+	<option id="80385" name="option_id_80385">
+		<!-- M. Atk. +3 -->
+	</option>
+	<option id="80386" name="option_id_80386">
+		<!-- M. Atk. +4 -->
+	</option>
+	<option id="80387" name="option_id_80387">
+		<!-- M. Atk. +5 -->
+	</option>
+	<option id="80388" name="option_id_80388">
+		<!-- M. Atk. +7 -->
+	</option>
+	<option id="80389" name="option_id_80389">
+		<!-- M. Atk. +8 -->
+	</option>
+	<option id="80390" name="option_id_80390">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="80391" name="option_id_80391">
+		<!-- M. Atk. +11 -->
+	</option>
+	<option id="80392" name="option_id_80392">
+		<!-- M. Atk. +13 -->
+	</option>
+	<option id="80393" name="option_id_80393">
+		<!-- M. Atk. +16 -->
+	</option>
+	<option id="80394" name="option_id_80394">
+		<!-- M. Atk. +33 -->
+	</option>
+	<option id="80395" name="option_id_80395">
+		<!-- Atk. Spd. +5 -->
+	</option>
+	<option id="80396" name="option_id_80396">
+		<!-- Atk. Spd. +6 -->
+	</option>
+	<option id="80397" name="option_id_80397">
+		<!-- Atk. Spd. +7 -->
+	</option>
+	<option id="80398" name="option_id_80398">
+		<!-- Atk. Spd. +9 -->
+	</option>
+	<option id="80399" name="option_id_80399">
+		<!-- Atk. Spd. +11 -->
+	</option>
+</list>

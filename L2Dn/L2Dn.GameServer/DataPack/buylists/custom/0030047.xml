@@ -7,6 +7,12 @@
 	<item id="4132" price="0" /> <!-- Recipe: Composite Shield (100%) -->
 	<item id="4133" price="0" /> <!-- Recipe: Zubei's Breastplate (100%) -->
 	<item id="4134" price="0" /> <!-- Recipe: Zubei's Gaiters (100%) -->
+	<item id="4135" price="0" /> <!-- Recipe: Implosion Boots (100%) -->
+	<item id="4136" price="0" /> <!-- Recipe: Boots of Silence (100%) -->
+	<item id="4137" price="0" /> <!-- Recipe: Guardian's Boots (100%) -->
+	<item id="4138" price="0" /> <!-- Recipe: Paradia Boots (100%) -->
+	<item id="4139" price="0" /> <!-- Recipe: Elemental Boots (100%) -->
+	<item id="4140" price="0" /> <!-- Recipe: Boots of Grace (100%) -->
 	<item id="4141" price="0" /> <!-- Recipe: Avadon Breastplate (100%) -->
 	<item id="4142" price="0" /> <!-- Recipe: Avadon Gaiters (100%) -->
 	<item id="4143" price="0" /> <!-- Recipe: Zubei's Leather Shirt (100%) -->
@@ -17,8 +23,12 @@
 	<item id="4148" price="0" /> <!-- Recipe: Avadon Robe (100%) -->
 	<item id="4149" price="0" /> <!-- Recipe: Avadon Circlet (100%) -->
 	<item id="4150" price="0" /> <!-- Recipe: Sealed Avadon Gloves (100%) -->
+	<item id="4151" price="0" /> <!-- Recipe: Chain Gloves of Silence (100%) -->
+	<item id="4152" price="0" /> <!-- Recipe: Guardian's Gloves (100%) -->
+	<item id="4153" price="0" /> <!-- Recipe: Gloves of Blessing (100%) -->
 	<item id="4154" price="0" /> <!-- Recipe: Doom Shield (100%) -->
 	<item id="4155" price="0" /> <!-- Recipe: Blue Wolf Breastplate (100%) -->
+	<item id="4156" price="0" /> <!-- Recipe: Boots of Blessing (100%) -->
 	<item id="4157" price="0" /> <!-- Recipe: Blue Wolf Gaiters (100%) -->
 	<item id="4158" price="0" /> <!-- Recipe: Doom Plate Armor (100%) -->
 	<item id="4159" price="0" /> <!-- Recipe: Blue Wolf Leather Armor (100%) -->
@@ -31,6 +41,10 @@
 	<item id="4166" price="0" /> <!-- Recipe: Doom Helmet (100%) -->
 	<item id="4167" price="0" /> <!-- Recipe: Sealed Blue Wolf Boots (100%) -->
 	<item id="4168" price="0" /> <!-- Recipe: Sealed Doom Gloves (100%) -->
+	<item id="4169" price="0" /> <!-- Recipe: Elemental Gloves (100%) -->
+	<item id="4170" price="0" /> <!-- Recipe: Gloves of Grace (100%) -->
+	<item id="4171" price="0" /> <!-- Recipe: Implosion Gauntlets (100%) -->
+	<item id="4172" price="0" /> <!-- Recipe: Paradia Gloves (100%) -->
 	<item id="4173" price="0" /> <!-- Recipe: Sealed Blue Wolf Gloves (100%) -->
 	<item id="4174" price="0" /> <!-- Recipe: Sealed Zubei's Boots (100%) -->
 	<item id="4175" price="0" /> <!-- Recipe: Sealed Avadon Boots (100%) -->

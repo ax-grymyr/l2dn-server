@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance id="205" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<time duration="60" empty="30" />
+	<time duration="120" empty="30" />
 	<locations>
 		<enter type="FIXED">
 			<location x="-88015" y="-141153" z="-9168" />
@@ -23,9 +23,8 @@
 		<condition type="Distance" />
 		<condition type="Reenter" />
 	</conditions>
-	<reenter apply="ON_FINISH">
+	<reenter apply="ON_ENTER">
 		<reset day="WEDNESDAY" hour="6" minute="30" />
-		<reset day="SATURDAY" hour="6" minute="30" />
 	</reenter>
 	<doorlist>
 		<door id="17130045" />

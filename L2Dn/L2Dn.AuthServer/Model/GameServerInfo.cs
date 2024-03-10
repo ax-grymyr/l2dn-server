@@ -1,4 +1,4 @@
-﻿using L2Dn.AuthServer.Db;
+﻿using L2Dn.Model;
 using L2Dn.Network;
 
 namespace L2Dn.AuthServer.Model;

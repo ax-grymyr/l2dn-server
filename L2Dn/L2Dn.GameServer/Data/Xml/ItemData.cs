@@ -21,6 +21,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;

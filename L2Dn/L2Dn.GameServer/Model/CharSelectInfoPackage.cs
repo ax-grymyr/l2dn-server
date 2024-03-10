@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.Model;
 
 namespace L2Dn.GameServer.Model;
 

@@ -4,18 +4,11 @@
 		<npc>30841</npc> <!-- Carson -->
 	</npcs>
 	<item>
-		<ingredient id="57" count="27000000" /> <!-- Adena -->
-		<ingredient id="93934" count="30" /> <!-- Dye Powder -->
-		<production id="93935" count="1" chance="100" /> <!-- Best Dye Chest + 3 / -1 3rd class class -->
+		<ingredient id="57" count="75" /> <!-- Adena -->
+		<production id="6645" count="1" chance="100" /> <!-- Scroll: Vengeance -->
 	</item>
 	<item>
-		<ingredient id="57" count="18000000" /> <!-- Adena -->
-		<ingredient id="93934" count="20" /> <!-- Dye Powder -->
-		<production id="93936" count="1" chance="100" /> <!-- Best Dye Chest + 4 / -2 3rd class class -->
-	</item>
-	<item>
-		<ingredient id="57" count="9000000" /> <!-- Adena -->
-		<ingredient id="93934" count="10" /> <!-- Dye Powder -->
-		<production id="93937" count="1" chance="100" /> <!-- Best Dye Chest + 4 / -3 3rd class transfer -->
+		<ingredient id="57" count="150" /> <!-- Adena -->
+		<production id="6646" count="1" chance="100" /> <!-- Scroll: Touch of Life -->
 	</item>
 </list>

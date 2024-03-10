@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Model;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -25,12 +26,12 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
 	
     public void WriteContent(PacketBitWriter writer)
     {
+        writer.WritePacketCode(OutgoingPacketCodes.ACQUIRE_SKILL_LIST);
         if (_player == null)
         {
+            writer.WriteInt16(0);
             return;
         }
-		
-        writer.WritePacketCode(OutgoingPacketCodes.ACQUIRE_SKILL_LIST);
         
         writer.WriteInt16((short)_learnable.Count);
         foreach (SkillLearn skill in _learnable)
@@ -38,15 +39,20 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             int skillId = _player.getReplacementSkill(skill.getSkillId());
             writer.WriteInt32(skillId);
 			
-            writer.WriteInt32(skill.getSkillLevel()); // 414 both Main and Essence writer.WriteInt32.
+            if (Config.SERVER_LIST_TYPE == GameServerType.Classic)
+                writer.WriteInt16((short)skill.getSkillLevel()); // Classic 16-bit integer
+            else
+                writer.WriteInt32(skill.getSkillLevel()); // 414 both Main and Essence 32-bit integer
+            
             writer.WriteInt64(skill.getLevelUpSp());
             writer.WriteByte((byte)skill.getGetLevel());
             writer.WriteByte(0); // Skill dual class level.
 			
             writer.WriteByte(_player.getKnownSkill(skillId) == null);
-			
-            writer.WriteByte((byte)skill.getRequiredItems().Count);
-            foreach (List<ItemHolder> item in skill.getRequiredItems())
+
+            List<List<ItemHolder>> requiredItems = skill.getRequiredItems();
+            writer.WriteByte((byte)requiredItems.Count);
+            foreach (List<ItemHolder> item in requiredItems)
             {
                 writer.WriteInt32(item[0].getId());
                 writer.WriteInt64(item[0].getCount());
@@ -64,7 +70,11 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             foreach (Skill removed in removeSkills)
             {
                 writer.WriteInt32(removed.getId());
-                writer.WriteInt32(removed.getLevel()); // 414 both Main and Essence writer.WriteInt32.
+
+                if (Config.SERVER_LIST_TYPE == GameServerType.Classic)
+                    writer.WriteInt16((short)removed.getLevel()); // Classic 16-bit integer
+                else
+                    writer.WriteInt32(removed.getLevel()); // 414 both Main and Essence 32-bit integer
             }
         }
     }

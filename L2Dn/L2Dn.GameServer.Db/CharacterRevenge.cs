@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using L2Dn.Model;
 
 namespace L2Dn.GameServer.Db;
 

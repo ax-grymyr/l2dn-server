@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 
 namespace L2Dn.GameServer.Model.Clans.Entries;
 

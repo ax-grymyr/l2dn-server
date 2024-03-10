@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="80100" name="option_id_80100">
+		<!-- M. Atk. +4 -->
+	</option>
+	<option id="80101" name="option_id_80101">
+		<!-- M. Atk. +5 -->
+	</option>
+	<option id="80102" name="option_id_80102">
+		<!-- M. Atk. +7 -->
+	</option>
+	<option id="80103" name="option_id_80103">
+		<!-- M. Atk. +8 -->
+	</option>
+	<option id="80104" name="option_id_80104">
+		<!-- M. Atk. +10 -->
+	</option>
+	<option id="80105" name="option_id_80105">
+		<!-- M. Atk. +11 -->
+	</option>
+	<option id="80106" name="option_id_80106">
+		<!-- M. Atk. +13 -->
+	</option>
+	<option id="80107" name="option_id_80107">
+		<!-- M. Atk. +16 -->
+	</option>
+	<option id="80108" name="option_id_80108">
+		<!-- M. Atk. +33 -->
+	</option>
+	<option id="80109" name="option_id_80109">
+		<!-- Atk. Spd. +5 -->
+	</option>
+	<option id="80110" name="option_id_80110">
+		<!-- Atk. Spd. +6 -->
+	</option>
+	<option id="80111" name="option_id_80111">
+		<!-- Atk. Spd. +7 -->
+	</option>
+	<option id="80112" name="option_id_80112">
+		<!-- Atk. Spd. +9 -->
+	</option>
+	<option id="80113" name="option_id_80113">
+		<!-- Atk. Spd. +11 -->
+	</option>
+	<option id="80114" name="option_id_80114">
+		<!-- Atk. Spd. +13 -->
+	</option>
+	<option id="80115" name="option_id_80115">
+		<!-- Atk. Spd. +16 -->
+	</option>
+	<option id="80116" name="option_id_80116">
+		<!-- Atk. Spd. +18 -->
+	</option>
+	<option id="80117" name="option_id_80117">
+		<!-- Atk. Spd. +22 -->
+	</option>
+	<option id="80118" name="option_id_80118">
+		<!-- Atk. Spd. +45 -->
+	</option>
+	<option id="80119" name="option_id_80119">
+		<!-- Casting Spd. +5 -->
+	</option>
+	<option id="80120" name="option_id_80120">
+		<!-- Casting Spd. +6 -->
+	</option>
+	<option id="80121" name="option_id_80121">
+		<!-- Casting Spd. +7 -->
+	</option>
+	<option id="80122" name="option_id_80122">
+		<!-- Casting Spd. +9 -->
+	</option>
+	<option id="80123" name="option_id_80123">
+		<!-- Casting Spd. +11 -->
+	</option>
+	<option id="80124" name="option_id_80124">
+		<!-- Casting Spd. +13 -->
+	</option>
+	<option id="80125" name="option_id_80125">
+		<!-- Casting Spd. +16 -->
+	</option>
+	<option id="80126" name="option_id_80126">
+		<!-- Casting Spd. +18 -->
+	</option>
+	<option id="80127" name="option_id_80127">
+		<!-- Casting Spd. +22 -->
+	</option>
+	<option id="80128" name="option_id_80128">
+		<!-- Casting Spd. +45 -->
+	</option>
+	<option id="80129" name="option_id_80129">
+		<!-- P. Accuracy +1 -->
+	</option>
+	<option id="80130" name="option_id_80130">
+		<!-- P. Accuracy +2 -->
+	</option>
+	<option id="80131" name="option_id_80131">
+		<!-- P. Accuracy +3 -->
+	</option>
+	<option id="80132" name="option_id_80132">
+		<!-- M. Accuracy +1 -->
+	</option>
+	<option id="80133" name="option_id_80133">
+		<!-- M. Accuracy +2 -->
+	</option>
+	<option id="80134" name="option_id_80134">
+		<!-- M. Accuracy +3 -->
+	</option>
+	<option id="80135" name="option_id_80135">
+		<!-- Max HP +49 -->
+	</option>
+	<option id="80136" name="option_id_80136">
+		<!-- Max HP +58 -->
+	</option>
+	<option id="80137" name="option_id_80137">
+		<!-- Max HP +76 -->
+	</option>
+	<option id="80138" name="option_id_80138">
+		<!-- Max HP +94 -->
+	</option>
+	<option id="80139" name="option_id_80139">
+		<!-- Max HP +112 -->
+	</option>
+	<option id="80140" name="option_id_80140">
+		<!-- Max HP +135 -->
+	</option>
+	<option id="80141" name="option_id_80141">
+		<!-- Max HP +157 -->
+	</option>
+	<option id="80142" name="option_id_80142">
+		<!-- Max HP +180 -->
+	</option>
+	<option id="80143" name="option_id_80143">
+		<!-- Max HP +225 -->
+	</option>
+	<option id="80144" name="option_id_80144">
+		<!-- Max HP +450 -->
+	</option>
+	<option id="80145" name="option_id_80145">
+		<!-- Max MP +49 -->
+	</option>
+	<option id="80146" name="option_id_80146">
+		<!-- Max MP +58 -->
+	</option>
+	<option id="80147" name="option_id_80147">
+		<!-- Max MP +76 -->
+	</option>
+	<option id="80148" name="option_id_80148">
+		<!-- Max MP +94 -->
+	</option>
+	<option id="80149" name="option_id_80149">
+		<!-- Max MP +112 -->
+	</option>
+	<option id="80150" name="option_id_80150">
+		<!-- Max MP +135 -->
+	</option>
+	<option id="80151" name="option_id_80151">
+		<!-- Max MP +157 -->
+	</option>
+	<option id="80152" name="option_id_80152">
+		<!-- Max MP +180 -->
+	</option>
+	<option id="80153" name="option_id_80153">
+		<!-- Max MP +225 -->
+	</option>
+	<option id="80154" name="option_id_80154">
+		<!-- Max MP +450 -->
+	</option>
+	<option id="80155" name="option_id_80155">
+		<!-- Max CP +49 -->
+	</option>
+	<option id="80156" name="option_id_80156">
+		<!-- Max CP +58 -->
+	</option>
+	<option id="80157" name="option_id_80157">
+		<!-- Max CP +76 -->
+	</option>
+	<option id="80158" name="option_id_80158">
+		<!-- Max CP +94 -->
+	</option>
+	<option id="80159" name="option_id_80159">
+		<!-- Max CP +112 -->
+	</option>
+	<option id="80160" name="option_id_80160">
+		<!-- Max CP +135 -->
+	</option>
+	<option id="80161" name="option_id_80161">
+		<!-- Max CP +157 -->
+	</option>
+	<option id="80162" name="option_id_80162">
+		<!-- Max CP +180 -->
+	</option>
+	<option id="80163" name="option_id_80163">
+		<!-- Max CP +225 -->
+	</option>
+	<option id="80164" name="option_id_80164">
+		<!-- Max CP +450 -->
+	</option>
+	<option id="80165" name="option_id_80165">
+		<!-- STR +1 -->
+	</option>
+	<option id="80166" name="option_id_80166">
+		<!-- STR +1 -->
+	</option>
+	<option id="80167" name="option_id_80167">
+		<!-- CON +1 -->
+	</option>
+	<option id="80168" name="option_id_80168">
+		<!-- CON +1 -->
+	</option>
+	<option id="80169" name="option_id_80169">
+		<!-- MEN +1 -->
+	</option>
+	<option id="80170" name="option_id_80170">
+		<!-- MEN +1 -->
+	</option>
+	<option id="80171" name="option_id_80171">
+		<!-- DEX +1 -->
+	</option>
+	<option id="80172" name="option_id_80172">
+		<!-- DEX +1 -->
+	</option>
+	<option id="80173" name="option_id_80173">
+		<!-- WIT +1 -->
+	</option>
+	<option id="80174" name="option_id_80174">
+		<!-- WIT +1 -->
+	</option>
+	<option id="80175" name="option_id_80175">
+		<!-- INT +1 -->
+	</option>
+	<option id="80176" name="option_id_80176">
+		<!-- INT +1 -->
+	</option>
+	<option id="80177" name="option_id_80177">
+		<!-- P. Critical Rate +0.8% -->
+	</option>
+	<option id="80178" name="option_id_80178">
+		<!-- P. Critical Rate +1% -->
+	</option>
+	<option id="80179" name="option_id_80179">
+		<!-- P. Critical Rate +1.3% -->
+	</option>
+	<option id="80180" name="option_id_80180">
+		<!-- P. Critical Rate +1.6% -->
+	</option>
+	<option id="80181" name="option_id_80181">
+		<!-- P. Critical Rate +1.9% -->
+	</option>
+	<option id="80182" name="option_id_80182">
+		<!-- P. Critical Rate +2.2% -->
+	</option>
+	<option id="80183" name="option_id_80183">
+		<!-- P. Critical Rate +2.6% -->
+	</option>
+	<option id="80184" name="option_id_80184">
+		<!-- P. Critical Rate +3% -->
+	</option>
+	<option id="80185" name="option_id_80185">
+		<!-- P. Critical Rate +3.7% -->
+	</option>
+	<option id="80186" name="option_id_80186">
+		<!-- P. Critical Rate +7.5% -->
+	</option>
+	<option id="80187" name="option_id_80187">
+		<!-- P. Skill Critical Rate +0.9% -->
+	</option>
+	<option id="80188" name="option_id_80188">
+		<!-- P. Skill Critical Rate +1% -->
+	</option>
+	<option id="80189" name="option_id_80189">
+		<!-- P. Skill Critical Rate +1.3% -->
+	</option>
+	<option id="80190" name="option_id_80190">
+		<!-- P. Skill Critical Rate +1.6% -->
+	</option>
+	<option id="80191" name="option_id_80191">
+		<!-- P. Skill Critical Rate +1.9% -->
+	</option>
+	<option id="80192" name="option_id_80192">
+		<!-- P. Skill Critical Rate +2.3% -->
+	</option>
+	<option id="80193" name="option_id_80193">
+		<!-- P. Skill Critical Rate +2.7% -->
+	</option>
+	<option id="80194" name="option_id_80194">
+		<!-- P. Skill Critical Rate +3% -->
+	</option>
+	<option id="80195" name="option_id_80195">
+		<!-- P. Skill Critical Rate +3.8% -->
+	</option>
+	<option id="80196" name="option_id_80196">
+		<!-- P. Skill Critical Rate +7.5% -->
+	</option>
+	<option id="80197" name="option_id_80197">
+		<!-- M. Critical Rate +1% -->
+	</option>
+	<option id="80198" name="option_id_80198">
+		<!-- M. Critical Rate +2% -->
+	</option>
+	<option id="80199" name="option_id_80199">
+		<!-- M. Critical Rate +3% -->
+	</option>
+</list>

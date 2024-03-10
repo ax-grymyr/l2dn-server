@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 

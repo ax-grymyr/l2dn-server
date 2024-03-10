@@ -39,6 +39,7 @@
 		<node X="150956" Y="47052" />
 		<node X="148049" Y="47053" />
 	</zone>
+	
 	<!-- Classic Monster Race Track Arena -->
 	<zone name="Monster_Race_Arena_PvP" type="ArenaZone" shape="NPoly" minZ="-3800" maxZ="-3550"> <!-- [20_23] -->
 		<node X="13081" Y="183060" />
@@ -49,19 +50,5 @@
 		<node X="11774" Y="184091" />
 		<node X="11773" Y="183287" />
 		<node X="11994" Y="183055" />
-	</zone>
-	<zone name="alligator_island" type="ArenaZone" shape="NPoly" minZ="-5000" maxZ="3350">
-		<node X="100275" Y="166011" />
-		<node X="128461" Y="164511" />
-		<node X="131253" Y="192880" />
-		<node X="100219" Y="193094" />
-	</zone>
-	<zone name="primeval_garden" type="ArenaZone" shape="Cuboid" minZ="-14000" maxZ="-10500">
-		<node X="-122615" Y="220400" />
-		<node X="-107780" Y="206100" />
-	</zone>
-	<zone name="antharas_lair" type="ArenaZone" shape="Cuboid" minZ="-6000" maxZ="1000">
-		<node X="133115" Y="107000" />
-		<node X="156000" Y="124000" />
 	</zone>
 </list>

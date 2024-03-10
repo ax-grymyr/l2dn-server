@@ -2,7 +2,6 @@
 <list isChanceMultisell="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
 	<npcs>
 		<npc>30254</npc> <!-- Harmony -->
-		<npc>30840</npc> <!-- Lorenzo -->
 	</npcs>
 	<item>
 		<ingredient id="90045" count="31" /> <!-- Magical Tablet -->

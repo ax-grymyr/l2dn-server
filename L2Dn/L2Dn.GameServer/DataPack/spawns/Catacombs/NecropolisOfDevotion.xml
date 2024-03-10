@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn>
 		<territories>
@@ -9,11 +9,11 @@
 				<node x="-41544" y="87576" />
 			</territory>
 		</territories>
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -24,24 +24,24 @@
 				<node x="-46392" y="87304" />
 			</territory>
 		</territories>
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -52,13 +52,13 @@
 				<node x="-45944" y="89704" />
 			</territory>
 		</territories>
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -69,23 +69,23 @@
 				<node x="-44056" y="80888" />
 			</territory>
 		</territories>
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -96,16 +96,16 @@
 				<node x="-43208" y="78792" />
 			</territory>
 		</territories>
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -116,16 +116,16 @@
 				<node x="-46536" y="79768" />
 			</territory>
 		</territories>
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -136,11 +136,11 @@
 				<node x="-52232" y="82264" />
 			</territory>
 		</territories>
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -151,11 +151,11 @@
 				<node x="-50024" y="78792" />
 			</territory>
 		</territories>
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -166,15 +166,15 @@
 				<node x="-50984" y="80840" />
 			</territory>
 		</territories>
-		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
+		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -185,11 +185,11 @@
 				<node x="-47592" y="82632" />
 			</territory>
 		</territories>
-		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
+		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -200,10 +200,10 @@
 				<node x="-47608" y="80472" />
 			</territory>
 		</territories>
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -214,10 +214,10 @@
 				<node x="-47600" y="79384" />
 			</territory>
 		</territories>
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -228,10 +228,10 @@
 				<node x="-45928" y="79400" />
 			</territory>
 		</territories>
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -242,11 +242,11 @@
 				<node x="-45912" y="80804" />
 			</territory>
 		</territories>
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -257,11 +257,11 @@
 				<node x="-44504" y="82626" />
 			</territory>
 		</territories>
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -272,10 +272,10 @@
 				<node x="-45944" y="83416" />
 			</territory>
 		</territories>
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="1" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -286,10 +286,10 @@
 				<node x="-45944" y="85080" />
 			</territory>
 		</territories>
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -300,10 +300,10 @@
 				<node x="-47016" y="83416" />
 			</territory>
 		</territories>
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -314,11 +314,11 @@
 				<node x="-48840" y="84024" />
 			</territory>
 		</territories>
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -329,10 +329,10 @@
 				<node x="-51640" y="83432" />
 			</territory>
 		</territories>
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -343,11 +343,11 @@
 				<node x="-43528" y="88056" />
 			</territory>
 		</territories>
-		<npc id="21634" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21636" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21632" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21630" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21634" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21636" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="3" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -358,15 +358,15 @@
 				<node x="-44520" y="86568" />
 			</territory>
 		</territories>
-		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Sage -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
+		<npc id="21636" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21637" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -377,11 +377,11 @@
 				<node x="-42552" y="84376" />
 			</territory>
 		</territories>
-		<npc id="21637" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Sepulcher Royal Guardian -->
-		<npc id="21632" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
-		<npc id="21634" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21630" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21629" count="3" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
+		<npc id="21637" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="3" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="3" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -392,10 +392,10 @@
 				<node x="-41320" y="85080" />
 			</territory>
 		</territories>
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -406,10 +406,10 @@
 				<node x="-41896" y="83992" />
 			</territory>
 		</territories>
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Scout -->
-		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Tarantula -->
-		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Priest -->
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21634" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21629" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21632" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -420,10 +420,10 @@
 				<node x="-41912" y="79400" />
 			</territory>
 		</territories>
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -434,10 +434,10 @@
 				<node x="-41912" y="89112" />
 			</territory>
 		</territories>
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -448,15 +448,15 @@
 				<node x="-45944" y="83416" />
 			</territory>
 		</territories>
-		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Purgatory Shadow -->
-		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Mausoleum Royal Guardian -->
-		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Hell Keeper Crimson Doll -->
-		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight -->
+		<npc id="21630" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21635" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21631" count="2" respawnTime="122sec" respawnRandom="40sec" />
+		<npc id="21633" count="2" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn name="teleport">
 		<group>
-			<npc id="31081" x="-52784" y="79104" z="-4736" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31082" x="-51920" y="79104" z="-4736" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
+			<npc id="31081" x="-52784" y="79104" z="-4736" heading="0" respawnTime="60sec" />
+			<npc id="31082" x="-51920" y="79104" z="-4736" heading="0" respawnTime="60sec" />
 		</group>
 	</spawn>
 </list>

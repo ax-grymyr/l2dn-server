@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="80200" name="option_id_80200">
+		<!-- M. Critical Rate +4% -->
+	</option>
+	<option id="80201" name="option_id_80201">
+		<!-- M. Critical Rate +5% -->
+	</option>
+	<option id="80202" name="option_id_80202">
+		<!-- M. Critical Rate +6% -->
+	</option>
+	<option id="80203" name="option_id_80203">
+		<!-- M. Critical Rate +7% -->
+	</option>
+	<option id="80204" name="option_id_80204">
+		<!-- M. Critical Rate +8% -->
+	</option>
+	<option id="80205" name="option_id_80205">
+		<!-- M. Critical Rate +9% -->
+	</option>
+	<option id="80206" name="option_id_80206">
+		<!-- M. Critical Rate +15% -->
+	</option>
+	<option id="80207" name="option_id_80207">
+		<!-- P. Critical Damage +0.9% -->
+	</option>
+	<option id="80208" name="option_id_80208">
+		<!-- P. Critical Damage +1% -->
+	</option>
+	<option id="80209" name="option_id_80209">
+		<!-- P. Critical Damage +1.3% -->
+	</option>
+	<option id="80210" name="option_id_80210">
+		<!-- P. Critical Damage +1.6% -->
+	</option>
+	<option id="80211" name="option_id_80211">
+		<!-- P. Critical Damage +1.9% -->
+	</option>
+	<option id="80212" name="option_id_80212">
+		<!-- P. Critical Damage +2.3% -->
+	</option>
+	<option id="80213" name="option_id_80213">
+		<!-- P. Critical Damage +2.7% -->
+	</option>
+	<option id="80214" name="option_id_80214">
+		<!-- P. Critical Damage +3% -->
+	</option>
+	<option id="80215" name="option_id_80215">
+		<!-- P. Critical Damage +3.8% -->
+	</option>
+	<option id="80216" name="option_id_80216">
+		<!-- P. Critical Damage +7.5% -->
+	</option>
+	<option id="80217" name="option_id_80217">
+		<!-- P. Skill Critical Damage +0.9% -->
+	</option>
+	<option id="80218" name="option_id_80218">
+		<!-- P. Skill Critical Damage +1% -->
+	</option>
+	<option id="80219" name="option_id_80219">
+		<!-- P. Skill Critical Damage +1.3% -->
+	</option>
+	<option id="80220" name="option_id_80220">
+		<!-- P. Skill Critical Damage +1.6% -->
+	</option>
+	<option id="80221" name="option_id_80221">
+		<!-- P. Skill Critical Damage +1.9% -->
+	</option>
+	<option id="80222" name="option_id_80222">
+		<!-- P. Skill Critical Damage +2.3% -->
+	</option>
+	<option id="80223" name="option_id_80223">
+		<!-- P. Skill Critical Damage +2.7% -->
+	</option>
+	<option id="80224" name="option_id_80224">
+		<!-- P. Skill Critical Damage +3% -->
+	</option>
+	<option id="80225" name="option_id_80225">
+		<!-- P. Skill Critical Damage +3.8% -->
+	</option>
+	<option id="80226" name="option_id_80226">
+		<!-- P. Skill Critical Damage +7.5% -->
+	</option>
+	<option id="80227" name="option_id_80227">
+		<!-- M. Critical Damage +1% -->
+	</option>
+	<option id="80228" name="option_id_80228">
+		<!-- M. Critical Damage +1% -->
+	</option>
+	<option id="80229" name="option_id_80229">
+		<!-- M. Critical Damage +2% -->
+	</option>
+	<option id="80230" name="option_id_80230">
+		<!-- M. Critical Damage +2% -->
+	</option>
+	<option id="80231" name="option_id_80231">
+		<!-- M. Critical Damage +3% -->
+	</option>
+	<option id="80232" name="option_id_80232">
+		<!-- M. Critical Damage +3% -->
+	</option>
+	<option id="80233" name="option_id_80233">
+		<!-- M. Critical Damage +4% -->
+	</option>
+	<option id="80234" name="option_id_80234">
+		<!-- M. Critical Damage +5% -->
+	</option>
+	<option id="80235" name="option_id_80235">
+		<!-- M. Critical Damage +6% -->
+	</option>
+	<option id="80236" name="option_id_80236">
+		<!-- M. Critical Damage +7% -->
+	</option>
+	<option id="80237" name="option_id_80237">
+		<!-- Stun Atk. Rate +1.5% -->
+	</option>
+	<option id="80238" name="option_id_80238">
+		<!-- Stun Atk. Rate +2.5% -->
+	</option>
+	<option id="80239" name="option_id_80239">
+		<!-- Stun Atk. Rate +3% -->
+	</option>
+	<option id="80240" name="option_id_80240">
+		<!-- Stun Atk. Rate +3.5% -->
+	</option>
+	<option id="80241" name="option_id_80241">
+		<!-- Stun Atk. Rate +4.5% -->
+	</option>
+	<option id="80242" name="option_id_80242">
+		<!-- Stun Atk. Rate +5% -->
+	</option>
+	<option id="80243" name="option_id_80243">
+		<!-- Stun Atk. Rate +6% -->
+	</option>
+	<option id="80244" name="option_id_80244">
+		<!-- Stun Atk. Rate +7.5% -->
+	</option>
+	<option id="80245" name="option_id_80245">
+		<!-- Stun Atk. Rate +15% -->
+	</option>
+	<option id="80246" name="option_id_80246">
+		<!-- Hold Attack Success Rate +1.5% -->
+	</option>
+	<option id="80247" name="option_id_80247">
+		<!-- Hold Attack Success Rate +2.5% -->
+	</option>
+	<option id="80248" name="option_id_80248">
+		<!-- Hold Attack Success Rate +3% -->
+	</option>
+	<option id="80249" name="option_id_80249">
+		<!-- Hold Attack Success Rate +3.5% -->
+	</option>
+	<option id="80250" name="option_id_80250">
+		<!-- Hold Attack Success Rate +4.5% -->
+	</option>
+	<option id="80251" name="option_id_80251">
+		<!-- Hold Attack Success Rate +5% -->
+	</option>
+	<option id="80252" name="option_id_80252">
+		<!-- Hold Attack Success Rate +6% -->
+	</option>
+	<option id="80253" name="option_id_80253">
+		<!-- Hold Attack Success Rate +7.5% -->
+	</option>
+	<option id="80254" name="option_id_80254">
+		<!-- Hold Attack Success Rate +15% -->
+	</option>
+	<option id="80255" name="option_id_80255">
+		<!-- Bleed Attack Success Rate +1.5% -->
+	</option>
+	<option id="80256" name="option_id_80256">
+		<!-- Bleed Attack Success Rate +2.5% -->
+	</option>
+	<option id="80257" name="option_id_80257">
+		<!-- Bleed Attack Success Rate +3% -->
+	</option>
+	<option id="80258" name="option_id_80258">
+		<!-- Bleed Attack Success Rate +3.5% -->
+	</option>
+	<option id="80259" name="option_id_80259">
+		<!-- Bleed Attack Success Rate +4.5% -->
+	</option>
+	<option id="80260" name="option_id_80260">
+		<!-- Bleed Attack Success Rate +5% -->
+	</option>
+	<option id="80261" name="option_id_80261">
+		<!-- Bleed Attack Success Rate +6% -->
+	</option>
+	<option id="80262" name="option_id_80262">
+		<!-- Bleed Attack Success Rate +7.5% -->
+	</option>
+	<option id="80263" name="option_id_80263">
+		<!-- Bleed Attack Success Rate +15% -->
+	</option>
+	<option id="80264" name="option_id_80264">
+		<!-- Paralysis Attack Success Rate +1.5% -->
+	</option>
+	<option id="80265" name="option_id_80265">
+		<!-- Paralysis Attack Success Rate +2.5% -->
+	</option>
+	<option id="80266" name="option_id_80266">
+		<!-- Paralysis Attack Success Rate +3% -->
+	</option>
+	<option id="80267" name="option_id_80267">
+		<!-- Paralysis Attack Success Rate +3.5% -->
+	</option>
+	<option id="80268" name="option_id_80268">
+		<!-- Paralysis Attack Success Rate +4.5% -->
+	</option>
+	<option id="80269" name="option_id_80269">
+		<!-- Paralysis Attack Success Rate +5% -->
+	</option>
+	<option id="80270" name="option_id_80270">
+		<!-- Paralysis Attack Success Rate +6% -->
+	</option>
+	<option id="80271" name="option_id_80271">
+		<!-- Paralysis Attack Success Rate +7.5% -->
+	</option>
+	<option id="80272" name="option_id_80272">
+		<!-- Paralysis Attack Success Rate +15% -->
+	</option>
+	<option id="80273" name="option_id_80273">
+		<!-- Mental Attack Success Rate +1.5% -->
+	</option>
+	<option id="80274" name="option_id_80274">
+		<!-- Mental Attack Success Rate +2.5% -->
+	</option>
+	<option id="80275" name="option_id_80275">
+		<!-- Mental Attack Success Rate +3% -->
+	</option>
+	<option id="80276" name="option_id_80276">
+		<!-- Mental Attack Success Rate +3.5% -->
+	</option>
+	<option id="80277" name="option_id_80277">
+		<!-- Mental Attack Success Rate +4.5% -->
+	</option>
+	<option id="80278" name="option_id_80278">
+		<!-- Mental Attack Success Rate +5% -->
+	</option>
+	<option id="80279" name="option_id_80279">
+		<!-- Mental Attack Success Rate +6% -->
+	</option>
+	<option id="80280" name="option_id_80280">
+		<!-- Mental Attack Success Rate +7.5% -->
+	</option>
+	<option id="80281" name="option_id_80281">
+		<!-- Mental Attack Success Rate +15% -->
+	</option>
+	<option id="80282" name="option_id_80282">
+		<!-- Sleep Attack Success Rate +1.5% -->
+	</option>
+	<option id="80283" name="option_id_80283">
+		<!-- Sleep Attack Success Rate +2.5% -->
+	</option>
+	<option id="80284" name="option_id_80284">
+		<!-- Sleep Attack Success Rate +3% -->
+	</option>
+	<option id="80285" name="option_id_80285">
+		<!-- Sleep Attack Success Rate +3.5% -->
+	</option>
+	<option id="80286" name="option_id_80286">
+		<!-- Sleep Attack Success Rate +4.5% -->
+	</option>
+	<option id="80287" name="option_id_80287">
+		<!-- Sleep Attack Success Rate +5% -->
+	</option>
+	<option id="80288" name="option_id_80288">
+		<!-- Sleep Attack Success Rate +6% -->
+	</option>
+	<option id="80289" name="option_id_80289">
+		<!-- Sleep Attack Success Rate +7.5% -->
+	</option>
+	<option id="80290" name="option_id_80290">
+		<!-- Sleep Attack Success Rate +15% -->
+	</option>
+	<option id="80291" name="option_id_80291">
+		<!-- Poison Attack Success Rate +1.5% -->
+	</option>
+	<option id="80292" name="option_id_80292">
+		<!-- Poison Attack Success Rate +2.5% -->
+	</option>
+	<option id="80293" name="option_id_80293">
+		<!-- Poison Attack Success Rate +3% -->
+	</option>
+	<option id="80294" name="option_id_80294">
+		<!-- Poison Attack Success Rate +3.5% -->
+	</option>
+	<option id="80295" name="option_id_80295">
+		<!-- Poison Attack Success Rate +4.5% -->
+	</option>
+	<option id="80296" name="option_id_80296">
+		<!-- Poison Attack Success Rate +5% -->
+	</option>
+	<option id="80297" name="option_id_80297">
+		<!-- Poison Attack Success Rate +6% -->
+	</option>
+	<option id="80298" name="option_id_80298">
+		<!-- Poison Attack Success Rate +7.5% -->
+	</option>
+	<option id="80299" name="option_id_80299">
+		<!-- Poison Attack Success Rate +15% -->
+	</option>
+</list>

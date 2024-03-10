@@ -1984,19 +1984,4 @@
 	<!-- Pailaka Tigress -->
 	<skill npcId="14916" skillId="5761" skillLevel="1" />
 	<skill npcId="14917" skillId="5761" skillLevel="2" />
-
-	<!-- SUMMON CAT EMPEROR ACTIVE SKILLS -->
-	<skill npcId="14918" skillId="47902" skillLevel="1" />
-	<skill npcId="14918" skillId="47903" skillLevel="1" />
-	<skill npcId="14918" skillId="4025" skillLevel="12" />
-
-	<!-- SUMMON UNICORN GUARD ACTIVE SKILLS -->
-	<skill npcId="14919" skillId="47905" skillLevel="1" />
-	<skill npcId="14919" skillId="47906" skillLevel="1" />
-	<skill npcId="14919" skillId="4025" skillLevel="12" />
-
-	<!-- SUMMON LORD RAISE ACTIVE SKILLS -->
-	<skill npcId="14920" skillId="47908" skillLevel="1" />
-	<skill npcId="14920" skillId="47909" skillLevel="1" />
-	<skill npcId="14920" skillId="4025" skillLevel="12" />
 </list>

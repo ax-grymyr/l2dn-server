@@ -68,6 +68,17 @@
 	</spawn>
 	<spawn>
 		<territories>
+			<territory name="rhion07_qm1814_00" minZ="-716" maxZ="-516">
+				<node x="-56808" y="-113944" />
+				<node x="-55732" y="-113948" />
+				<node x="-55748" y="-113264" />
+				<node x="-56804" y="-113268" />
+			</territory>
+		</territories>
+		<npc id="18342" count="20" respawnTime="2sec" /> <!-- Gremlin -->
+	</spawn>
+	<spawn>
+		<territories>
 			<territory name="schttgart07_qm2312_00" minZ="-604" maxZ="-304">
 				<node x="108756" y="-175200" />
 				<node x="109716" y="-174268" />

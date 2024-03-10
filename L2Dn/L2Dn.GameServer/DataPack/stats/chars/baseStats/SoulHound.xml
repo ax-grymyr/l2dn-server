@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/charTemplate.xsd">
-	<classId>195</classId>
+	<classId>195</classId> <!-- TODO update data -->
 	<staticData>
 		<baseINT>25</baseINT>
 		<baseSTR>41</baseSTR>

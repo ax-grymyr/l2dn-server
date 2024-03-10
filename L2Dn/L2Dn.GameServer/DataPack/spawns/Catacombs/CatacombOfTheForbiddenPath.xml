@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<!-- Catacomb of the Forbidden Path 23_20 -->
 	<spawn name="Catacomb_otfp_npc">
 		<group>
-			<npc id="31075" x="104192" y="84064" z="-4376" heading="0" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
-			<npc id="31076" x="-20208" y="-250800" z="-8160" heading="32768" respawnTime="60sec" /> <!-- Gatekeeper Ziggurat -->
+			<npc id="31075" x="104192" y="84064" z="-4376" heading="0" respawnTime="60sec" />
+			<npc id="31076" x="-20208" y="-250800" z="-8160" heading="32768" respawnTime="60sec" />
 		</group>
 	</spawn>
 	<spawn>
@@ -16,7 +16,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -27,7 +27,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -38,7 +38,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -49,7 +49,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -60,7 +60,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -71,7 +71,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -82,7 +82,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -93,7 +93,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -104,7 +104,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -115,7 +115,7 @@
 				<node x="-20475" y="-248430" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -126,7 +126,7 @@
 				<node x="-19858" y="-246433" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -137,7 +137,7 @@
 				<node x="-19858" y="-246433" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -148,7 +148,7 @@
 				<node x="-19858" y="-246433" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -159,8 +159,9 @@
 				<node x="-19858" y="-246433" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq15" minZ="-8160" maxZ="-8167">
@@ -170,7 +171,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -181,7 +182,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -192,7 +193,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -203,7 +204,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -214,7 +215,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -225,7 +226,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -236,7 +237,7 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -247,8 +248,9 @@
 				<node x="-20537" y="-245331" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq23" minZ="-8160" maxZ="-8167">
@@ -258,7 +260,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -269,7 +271,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -280,7 +282,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -291,7 +293,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -302,7 +304,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -313,7 +315,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -324,7 +326,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -335,7 +337,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -346,7 +348,7 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -357,8 +359,9 @@
 				<node x="-20248" y="-242338" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq33" minZ="-8160" maxZ="-8167">
@@ -368,7 +371,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -379,7 +382,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -390,7 +393,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -401,7 +404,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -412,7 +415,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -423,7 +426,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -434,7 +437,7 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -445,8 +448,9 @@
 				<node x="-20439" y="-240186" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq41" minZ="-8160" maxZ="-8167">
@@ -456,7 +460,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -467,7 +471,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -478,7 +482,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -489,7 +493,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -500,7 +504,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -511,7 +515,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -522,7 +526,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -533,7 +537,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -544,8 +548,9 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq411" minZ="-8160" maxZ="-8167">
@@ -555,7 +560,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -566,7 +571,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -577,7 +582,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -588,7 +593,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -599,7 +604,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -610,7 +615,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -621,7 +626,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -632,7 +637,7 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -643,8 +648,9 @@
 				<node x="-19211" y="-245873" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq50" minZ="-8160" maxZ="-8167">
@@ -654,7 +660,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -665,7 +671,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -676,7 +682,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -687,7 +693,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -698,7 +704,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -709,7 +715,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -720,7 +726,7 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -731,8 +737,9 @@
 				<node x="-19212" y="-248299" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq58" minZ="-8160" maxZ="-8167">
@@ -742,7 +749,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -753,7 +760,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -764,7 +771,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -775,7 +782,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -786,7 +793,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -797,7 +804,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -808,7 +815,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -819,7 +826,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -830,8 +837,9 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq581" minZ="-8160" maxZ="-8167">
@@ -841,7 +849,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -852,7 +860,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -863,7 +871,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -874,7 +882,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -885,7 +893,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -896,7 +904,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -907,7 +915,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -918,7 +926,7 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -929,8 +937,9 @@
 				<node x="-18664" y="-243418" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq62" minZ="-8160" maxZ="-8167">
@@ -940,7 +949,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -951,7 +960,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -962,7 +971,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -973,7 +982,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -984,7 +993,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -995,7 +1004,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1006,7 +1015,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1017,7 +1026,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1028,7 +1037,7 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1039,8 +1048,9 @@
 				<node x="-17164" y="-250182" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq72" minZ="-8160" maxZ="-8167">
@@ -1050,7 +1060,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1061,7 +1071,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1072,7 +1082,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1083,7 +1093,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1094,7 +1104,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1105,7 +1115,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1116,7 +1126,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1127,7 +1137,7 @@
 				<node x="-15873" y="-251057" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1138,7 +1148,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1149,7 +1159,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1160,7 +1170,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1171,7 +1181,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1182,7 +1192,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1193,7 +1203,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1204,7 +1214,7 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1215,8 +1225,9 @@
 				<node x="-14235" y="-251055" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq88" minZ="-8160" maxZ="-8167">
@@ -1226,7 +1237,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1237,7 +1248,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1248,7 +1259,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1259,7 +1270,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1270,7 +1281,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1281,7 +1292,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1292,7 +1303,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1303,7 +1314,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1314,7 +1325,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1325,7 +1336,7 @@
 				<node x="-14534" y="-248070" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1336,7 +1347,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1347,7 +1358,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1358,7 +1369,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1369,7 +1380,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1380,7 +1391,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1391,7 +1402,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1402,7 +1413,7 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1413,8 +1424,9 @@
 				<node x="-14243" y="-245907" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq106" minZ="-8160" maxZ="-8167">
@@ -1424,7 +1436,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1435,7 +1447,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1446,7 +1458,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1457,7 +1469,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1468,7 +1480,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1479,7 +1491,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1490,7 +1502,7 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1501,8 +1513,9 @@
 				<node x="-14238" y="-245354" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq114" minZ="-8160" maxZ="-8167">
@@ -1512,7 +1525,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1523,7 +1536,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1534,7 +1547,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1545,7 +1558,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1556,7 +1569,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1567,7 +1580,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1578,7 +1591,7 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1589,8 +1602,9 @@
 				<node x="-15330" y="-244819" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq122" minZ="-8160" maxZ="-8167">
@@ -1600,7 +1614,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1611,7 +1625,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1622,7 +1636,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1633,7 +1647,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1644,7 +1658,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1655,7 +1669,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1666,7 +1680,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1677,7 +1691,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1688,7 +1702,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1699,7 +1713,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1710,7 +1724,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1721,7 +1735,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1732,7 +1746,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1743,7 +1757,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1754,7 +1768,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1765,7 +1779,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1776,7 +1790,7 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1787,8 +1801,9 @@
 				<node x="-17342" y="-243421" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq131" minZ="-8160" maxZ="-8167">
@@ -1798,7 +1813,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1809,7 +1824,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1820,7 +1835,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1831,7 +1846,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1842,7 +1857,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1853,7 +1868,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1864,7 +1879,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1875,7 +1890,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1886,8 +1901,9 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq1311" minZ="-8160" maxZ="-8167">
@@ -1897,7 +1913,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1908,7 +1924,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1919,7 +1935,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1930,7 +1946,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1941,7 +1957,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1952,7 +1968,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1963,7 +1979,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1974,7 +1990,7 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -1985,8 +2001,9 @@
 				<node x="-15208" y="-241434" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq140" minZ="-8160" maxZ="-8167">
@@ -1996,7 +2013,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2007,7 +2024,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2018,7 +2035,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2029,7 +2046,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2040,7 +2057,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2051,7 +2068,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2062,7 +2079,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2073,7 +2090,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2084,7 +2101,7 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2095,8 +2112,9 @@
 				<node x="-18353" y="-240422" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq150" minZ="-8160" maxZ="-8167">
@@ -2106,7 +2124,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2117,7 +2135,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2128,7 +2146,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2139,7 +2157,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2150,7 +2168,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2161,7 +2179,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2172,7 +2190,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2183,7 +2201,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2194,7 +2212,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2205,7 +2223,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2216,7 +2234,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2227,7 +2245,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2238,7 +2256,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2249,7 +2267,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2260,7 +2278,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2271,7 +2289,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2282,7 +2300,7 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2293,8 +2311,9 @@
 				<node x="-15333" y="-249089" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq159" minZ="-8160" maxZ="-8167">
@@ -2304,7 +2323,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2315,7 +2334,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2326,7 +2345,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2337,7 +2356,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2348,7 +2367,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2359,7 +2378,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2370,7 +2389,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2381,7 +2400,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2392,7 +2411,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2403,7 +2422,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2414,7 +2433,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2425,7 +2444,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2436,7 +2455,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2447,7 +2466,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2458,7 +2477,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2469,7 +2488,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2480,7 +2499,7 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2491,8 +2510,9 @@
 				<node x="-12999" y="-249112" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq168" minZ="-8160" maxZ="-8167">
@@ -2502,7 +2522,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2513,7 +2533,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2524,7 +2544,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2535,7 +2555,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2546,7 +2566,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2557,7 +2577,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2568,7 +2588,7 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2579,8 +2599,9 @@
 				<node x="-19327" y="-249937" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq176" minZ="-8160" maxZ="-8167">
@@ -2590,7 +2611,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2601,7 +2622,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2612,7 +2633,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2623,7 +2644,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2634,7 +2655,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2645,7 +2666,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2656,7 +2677,7 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2667,8 +2688,9 @@
 				<node x="-15331" y="-245905" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq184" minZ="-8160" maxZ="-8169">
@@ -2678,7 +2700,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2689,7 +2711,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2700,7 +2722,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2711,7 +2733,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2722,7 +2744,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2733,7 +2755,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2744,7 +2766,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2755,7 +2777,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2766,7 +2788,7 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2777,8 +2799,9 @@
 				<node x="-17775" y="-248360" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq194" minZ="-8160" maxZ="-8169">
@@ -2788,7 +2811,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2799,7 +2822,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2810,7 +2833,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2821,7 +2844,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2832,7 +2855,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2843,7 +2866,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2854,7 +2877,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2865,7 +2888,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2876,7 +2899,7 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2887,8 +2910,9 @@
 				<node x="-12579" y="-246111" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq204" minZ="-8160" maxZ="-8169">
@@ -2898,7 +2922,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2909,7 +2933,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2920,7 +2944,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2931,7 +2955,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2942,7 +2966,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2953,7 +2977,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2964,7 +2988,7 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2975,8 +2999,9 @@
 				<node x="-10183" y="-240771" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq212" minZ="-8160" maxZ="-8169">
@@ -2986,7 +3011,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -2997,7 +3022,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3008,7 +3033,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3019,7 +3044,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3030,7 +3055,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3041,7 +3066,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3052,7 +3077,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3063,7 +3088,7 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3074,8 +3099,9 @@
 				<node x="-13419" y="-240758" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq221" minZ="-8160" maxZ="-8169">
@@ -3085,7 +3111,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3096,7 +3122,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3107,7 +3133,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3118,7 +3144,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3129,7 +3155,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3140,7 +3166,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3151,7 +3177,7 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3162,8 +3188,9 @@
 				<node x="-11272" y="-240201" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq229" minZ="-8160" maxZ="-8169">
@@ -3173,7 +3200,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3184,7 +3211,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3195,7 +3222,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3206,7 +3233,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3217,7 +3244,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3228,7 +3255,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3239,7 +3266,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3250,7 +3277,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3261,7 +3288,7 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3272,8 +3299,9 @@
 				<node x="-9594" y="-243191" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq234" minZ="-8160" maxZ="-8169">
@@ -3283,7 +3311,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3294,7 +3322,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3305,7 +3333,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3316,7 +3344,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3327,7 +3355,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3338,7 +3366,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3349,7 +3377,7 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3360,8 +3388,9 @@
 				<node x="-15882" y="-240766" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq242" minZ="-8160" maxZ="-8169">
@@ -3371,7 +3400,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3382,7 +3411,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3393,7 +3422,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3404,7 +3433,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3415,7 +3444,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3426,7 +3455,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3437,7 +3466,7 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3448,8 +3477,9 @@
 				<node x="-14787" y="-240764" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq250" minZ="-8160" maxZ="-8169">
@@ -3459,7 +3489,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3470,7 +3500,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3481,7 +3511,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3492,7 +3522,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3503,7 +3533,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3514,7 +3544,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3525,7 +3555,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3536,7 +3566,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3547,7 +3577,7 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3558,8 +3588,9 @@
 				<node x="-14205" y="-243413" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq260" minZ="-8160" maxZ="-8169">
@@ -3569,7 +3600,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3580,7 +3611,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3591,7 +3622,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3602,7 +3633,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3613,7 +3644,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3624,7 +3655,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3635,7 +3666,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3646,7 +3677,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3657,7 +3688,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3668,7 +3699,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3679,7 +3710,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3690,7 +3721,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3701,7 +3732,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3712,7 +3743,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3723,7 +3754,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3734,7 +3765,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3745,7 +3776,7 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3756,8 +3787,9 @@
 				<node x="-11664" y="-244138" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq269" minZ="-8160" maxZ="-8169">
@@ -3767,7 +3799,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3778,7 +3810,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3789,7 +3821,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3800,7 +3832,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3811,7 +3843,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3822,7 +3854,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3833,7 +3865,7 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3844,8 +3876,9 @@
 				<node x="-11671" y="-244781" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq277" minZ="-8160" maxZ="-8169">
@@ -3855,7 +3888,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3866,7 +3899,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3877,7 +3910,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3888,7 +3921,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3899,7 +3932,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3910,7 +3943,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3921,7 +3954,7 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3932,8 +3965,9 @@
 				<node x="-10181" y="-244821" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq285" minZ="-8160" maxZ="-8169">
@@ -3943,7 +3977,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3954,7 +3988,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3965,7 +3999,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3976,7 +4010,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3987,7 +4021,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -3998,7 +4032,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4009,7 +4043,7 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4020,8 +4054,9 @@
 				<node x="-10176" y="-246453" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq293" minZ="-8160" maxZ="-8169">
@@ -4031,7 +4066,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4042,7 +4077,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4053,7 +4088,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4064,7 +4099,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4075,7 +4110,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4086,7 +4121,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4097,7 +4132,7 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4108,8 +4143,9 @@
 				<node x="-10193" y="-250503" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq301" minZ="-8160" maxZ="-8169">
@@ -4119,7 +4155,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4130,7 +4166,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4141,7 +4177,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4152,7 +4188,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4163,7 +4199,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4174,7 +4210,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4185,7 +4221,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4196,7 +4232,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4207,7 +4243,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4218,7 +4254,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Royal Guard -->
+		<npc id="21609" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4229,7 +4265,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4240,7 +4276,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Cardinal -->
+		<npc id="21607" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4251,7 +4287,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Guardian Spirit -->
+		<npc id="21603" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4262,7 +4298,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4273,7 +4309,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4284,7 +4320,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Knight Captain -->
+		<npc id="21605" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4295,7 +4331,7 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4306,8 +4342,9 @@
 				<node x="-11023" y="-251004" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
+	
 	<spawn>
 		<territories>
 			<territory name="ssq310" minZ="-8160" maxZ="-8169">
@@ -4317,7 +4354,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4328,7 +4365,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Nephilim Commander -->
+		<npc id="21608" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4339,7 +4376,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4350,7 +4387,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Vision -->
+		<npc id="21604" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4361,7 +4398,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4372,7 +4409,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Lilim Great Magus -->
+		<npc id="21606" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4383,7 +4420,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4394,7 +4431,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Ancient Holy Ground's Wing -->
+		<npc id="21602" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4405,7 +4442,7 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 	<spawn>
 		<territories>
@@ -4416,6 +4453,6 @@
 				<node x="-10881" y="-247733" />
 			</territory>
 		</territories>
-		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" /> <!-- Netherworld Prophet -->
+		<npc id="21610" count="1" respawnTime="122sec" respawnRandom="40sec" />
 	</spawn>
 </list>

@@ -19,7 +19,7 @@
 		</effects>
 	</option>
 	<option id="19791" name="o_f_80_1g_3">
-		<!-- Max HP +83.68 -->
+		<!-- Max HP +83.68. -->
 		<effects>
 			<effect name="MaxHp">
 				<amount>83.675</amount>
@@ -37,7 +37,7 @@
 		</effects>
 	</option>
 	<option id="19793" name="o_f_80_1g_5">
-		<!-- Max CP +150.61 -->
+		<!-- Max CP +150.61. -->
 		<effects>
 			<effect name="MaxCp">
 				<amount>150.614</amount>
@@ -46,7 +46,7 @@
 		</effects>
 	</option>
 	<option id="19794" name="o_f_80_1g_6">
-		<!-- P. Atk. +14.04 -->
+		<!-- P. Atk. +14.04. -->
 		<effects>
 			<effect name="PAtk">
 				<amount>14.037</amount>
@@ -64,7 +64,7 @@
 		</effects>
 	</option>
 	<option id="19796" name="o_f_80_1g_8">
-		<!-- HP Recovery Rate +0.38 -->
+		<!-- HP Recovery +0.38. -->
 		<effects>
 			<effect name="HpRegen">
 				<amount>0.38</amount>
@@ -73,7 +73,7 @@
 		</effects>
 	</option>
 	<option id="19797" name="o_f_80_1g_9">
-		<!-- MP Recovery Rate +0.16 -->
+		<!-- MP Recovery +0.16. -->
 		<effects>
 			<effect name="MpRegen">
 				<amount>0.163</amount>
@@ -82,7 +82,7 @@
 		</effects>
 	</option>
 	<option id="19798" name="o_f_80_1g_10">
-		<!-- CP Recovery Rate +0.39 -->
+		<!-- CP Recovery +0.39. -->
 		<effects>
 			<effect name="CpRegen">
 				<amount>0.385</amount>
@@ -91,7 +91,7 @@
 		</effects>
 	</option>
 	<option id="19799" name="o_f_80_1g_11">
-		<!-- P. Evasion +1.92 -->
+		<!-- P. Evasion +1.92. -->
 		<effects>
 			<effect name="PhysicalEvasion">
 				<amount>1.919</amount>

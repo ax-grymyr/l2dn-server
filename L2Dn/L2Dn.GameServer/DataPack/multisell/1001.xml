@@ -12,8 +12,7 @@
 		<ingredient id="132" count="1" /> <!-- Ultimate Sword -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="203" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="30" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="121800" /> <!-- Adena -->
+		<ingredient id="1875" count="30" /> <!-- Stone of Purity -->
 		<production id="2567" count="1" chance="100" /> <!-- StormBringer*Ultimate Sword -->
 	</item>
 	<item>
@@ -21,8 +20,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="203" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="30" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="121800" /> <!-- Adena -->
+		<ingredient id="1875" count="30" /> <!-- Stone of Purity -->
 		<production id="2568" count="1" chance="100" /> <!-- StormBringer*Sword of Delusion -->
 	</item>
 	<item>
@@ -30,8 +28,7 @@
 		<ingredient id="134" count="1" /> <!-- Sword of Nightmare -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="203" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="30" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="121800" /> <!-- Adena -->
+		<ingredient id="1875" count="30" /> <!-- Stone of Purity -->
 		<production id="2569" count="1" chance="100" /> <!-- StormBringer*Sword of Nightmare -->
 	</item>
 	<item>
@@ -39,8 +36,7 @@
 		<ingredient id="77" count="1" /> <!-- Tsurugi -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="203" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="30" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="121800" /> <!-- Adena -->
+		<ingredient id="1875" count="30" /> <!-- Stone of Purity -->
 		<production id="2570" count="1" chance="100" /> <!-- StormBringer*Tsurugi -->
 	</item>
 	<item>
@@ -48,8 +44,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="230" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="35" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="138000" /> <!-- Adena -->
+		<ingredient id="1875" count="35" /> <!-- Stone of Purity -->
 		<production id="2578" count="1" chance="100" /> <!-- Shamshir*Sword of Delusion -->
 	</item>
 	<item>
@@ -57,8 +52,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="230" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="35" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="138000" /> <!-- Adena -->
+		<ingredient id="1875" count="35" /> <!-- Stone of Purity -->
 		<production id="2587" count="1" chance="100" /> <!-- Katana*Sword of Delusion -->
 	</item>
 	<item>
@@ -66,8 +60,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="230" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="35" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="138000" /> <!-- Adena -->
+		<ingredient id="1875" count="35" /> <!-- Stone of Purity -->
 		<production id="2595" count="1" chance="100" /> <!-- Spirit Sword*Sword of Delusion -->
 	</item>
 	<item>
@@ -75,8 +68,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="230" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="35" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="138000" /> <!-- Adena -->
+		<ingredient id="1875" count="35" /> <!-- Stone of Purity -->
 		<production id="2602" count="1" chance="100" /> <!-- Raid Sword*Sword of Delusion -->
 	</item>
 	<item>
@@ -84,8 +76,7 @@
 		<ingredient id="135" count="1" /> <!-- Samurai Long Sword -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2571" count="1" chance="100" /> <!-- StormBringer*Samurai Long sword -->
 	</item>
 	<item>
@@ -93,8 +84,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2608" count="1" chance="100" /> <!-- Caliburs*Sword of Delusion -->
 	</item>
 	<item>
@@ -102,8 +92,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2613" count="1" chance="100" /> <!-- Ultimate Sword*Sword of Delusion -->
 	</item>
 	<item>
@@ -111,8 +100,7 @@
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2617" count="1" chance="100" /> <!-- Sword of Delusion*Sword of Delusion -->
 	</item>
 	<item>
@@ -120,8 +108,7 @@
 		<ingredient id="134" count="1" /> <!-- Sword of Nightmare -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2618" count="1" chance="100" /> <!-- Sword of Delusion*Sword of Nightmare -->
 	</item>
 	<item>
@@ -129,17 +116,15 @@
 		<ingredient id="77" count="1" /> <!-- Tsurugi -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
 		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="150000" /> <!-- Adena -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2619" count="1" chance="100" /> <!-- Sword of Delusion*Tsurugi -->
 	</item>
 	<item>
 		<ingredient id="76" count="1" /> <!-- Sword of Delusion -->
 		<ingredient id="135" count="1" /> <!-- Samurai Long Sword -->
 		<ingredient id="5126" count="1" /> <!-- Dual Weapon Crafting Stamp -->
-		<ingredient id="1459" count="341" /> <!-- Crystal (C-grade) -->
-		<ingredient id="2131" count="40" /> <!-- Gemstone (C-grade) -->
-		<ingredient id="57" count="204600" /> <!-- Adena -->
+		<ingredient id="1459" count="250" /> <!-- Crystal (C-grade) -->
+		<ingredient id="1875" count="40" /> <!-- Stone of Purity -->
 		<production id="2620" count="1" chance="100" /> <!-- Sword of Delusion*Samurai Long Sword -->
 	</item>
 </list>

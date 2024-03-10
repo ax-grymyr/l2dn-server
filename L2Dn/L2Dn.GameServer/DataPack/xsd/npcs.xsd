@@ -29,9 +29,8 @@
 														<xs:complexType>
 															<xs:attribute name="id" type="xs:positiveInteger" use="required" />
 															<xs:attribute name="count" type="xs:positiveInteger" use="required" />
-															<xs:attribute name="max" type="xs:positiveInteger" use="optional" />
 															<xs:attribute name="respawnTime" type="xs:nonNegativeInteger" use="required" />
-															<xs:attribute name="weightPoint" type="xs:integer" use="optional" />
+															<xs:attribute name="weightPoint" type="xs:integer" use="required" />
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
@@ -289,24 +288,6 @@
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="lucky" minOccurs="0">
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="item" maxOccurs="unbounded" minOccurs="0">
-														<xs:complexType>
-															<xs:simpleContent>
-																<xs:extension base="xs:string">
-																	<xs:attribute type="xs:int" name="id" use="optional"/>
-																	<xs:attribute type="xs:long" name="min" use="optional"/>
-																	<xs:attribute type="xs:long" name="max" use="optional"/>
-																	<xs:attribute type="xs:double" name="chance" use="optional"/>
-																</xs:extension>
-															</xs:simpleContent>
-														</xs:complexType>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
 										<xs:element name="spoil" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
@@ -325,7 +306,7 @@
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="fortune" minOccurs="0">
+										<xs:element name="lucky" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="item" maxOccurs="unbounded" minOccurs="0">

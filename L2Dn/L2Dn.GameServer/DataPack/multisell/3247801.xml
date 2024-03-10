@@ -28,32 +28,38 @@
 		<production count="134" id="91930" />
 	</item>
 	<item>
-		<!-- Soulshot Ticket -->
-		<ingredient count="300" id="90907" />
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
 		<!-- Red Party Mask -->
 		<production count="1" id="6394" />
 	</item>
 	<item>
-		<!-- Soulshot Ticket -->
-		<ingredient count="300" id="90907" />
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
+		<!-- Top Hat -->
+		<production count="1" id="29040" />
+	</item>
+	<item>
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
 		<!-- Jester Hat -->
 		<production count="1" id="8562" />
 	</item>
 	<item>
-		<!-- Soulshot Ticket -->
-		<ingredient count="300" id="90907" />
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
 		<!-- Jester Hat -->
 		<production count="1" id="8563" />
 	</item>
 	<item>
-		<!-- Soulshot Ticket -->
-		<ingredient count="300" id="90907" />
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
 		<!-- Dapper Cap -->
 		<production count="1" id="8564" />
 	</item>
 	<item>
-		<!-- Soulshot Ticket -->
-		<ingredient count="300" id="90907" />
+		<!-- Attendance Coin -->
+		<ingredient count="600" id="29564" />
 		<!-- Cat Ears -->
 		<production count="1" id="6843" />
 	</item>

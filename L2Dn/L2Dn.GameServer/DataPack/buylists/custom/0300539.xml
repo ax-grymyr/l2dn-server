@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
-	<item id="49510" price="0" /> <!-- Pierre Letter -->
-	<item id="49504" price="0" /> <!-- Fish Report -->
-	<item id="49505" price="0" /> <!-- Sealed Bootle -->
-	<item id="6353" price="0" /> <!-- Blue Gemstone -->
-	<item id="8765" price="0" /> <!-- Red Gem -->
-	<item id="8868" price="0" /> <!-- Ziggo's Jewel -->
-	<item id="90045" price="0" /> <!-- Magical Tablet -->
-	<item id="91936" price="0" /> <!-- Adventure Rough Jewel Lv.1 -->
-	<item id="93065" price="0" /> <!-- Adventure Rough Jewel Lv.2 -->
-	<item id="91935" price="0" /> <!-- Adventurer's Aghation Griffin -->
-	<item id="93040" price="0" /> <!-- Enchant Scroll Adventurer's Aghation Griffin -->
-	<item id="93044" price="0" /> <!-- Adventurer's Sheep Hat -->
-	<item id="93042" price="0" /> <!-- Adventurer's Belt -->
-	<item id="93043" price="0" /> <!-- Enchant Scroll Adventurer's Sheep Hat -->
-	<item id="93046" price="0" /> <!-- Enchant Scroll Adventurer's Belt -->
-	<item id="93041" price="0" /> <!-- Adventurer's Cloak -->
-	<item id="93045" price="0" /> <!-- Enchant Scroll Adventurer's Cloak -->
-	<item id="91652" price="0" /> <!-- Giant Cobweb -->
-	<item id="91653" price="0" /> <!-- Venom Sac -->
+	<item id="6388" price="0" /> <!-- Lord of the Manor's Certificate of Approval -->
+	<item id="6389" price="0" /> <!-- Squash Seed -->
+	<item id="6390" price="0" /> <!-- Large Squash Seed -->
+	<item id="6391" price="0" /> <!-- Nectar -->
+	<item id="6392" price="0" /> <!-- Event - Medal -->
+	<item id="6393" price="0" /> <!-- Event - Glittering Medal -->
+	<item id="6399" price="0" /> <!-- Badge of Rabbit -->
+	<item id="6400" price="0" /> <!-- Badge of Hyena -->
+	<item id="6401" price="0" /> <!-- Badge of Fox -->
+	<item id="6402" price="0" /> <!-- Badge of Wolf -->
+	<item id="7082" price="0" /> <!-- Guild Report -->
+	<item id="7083" price="0" /> <!-- Guild Report -->
+	<item id="7084" price="0" /> <!-- Guild Report -->
+	<item id="7085" price="0" /> <!-- Guild Report -->
+	<item id="7086" price="0" /> <!-- Guild Report -->
+	<item id="7087" price="0" /> <!-- Tattered Book -->
+	<item id="7088" price="0" /> <!-- Tattered Book -->
+	<item id="7089" price="0" /> <!-- Tattered Book -->
+	<item id="7090" price="0" /> <!-- Tattered Book -->
+	<item id="7091" price="0" /> <!-- Guild Report -->
+	<item id="7092" price="0" /> <!-- Guild Report -->
+	<item id="7093" price="0" /> <!-- Sculpture of the Fallen Knight -->
+	<item id="7094" price="0" /> <!-- Record of Mother Tree Guardian -->
+	<item id="7095" price="0" /> <!-- Criticism of Biel's Song -->
+	<item id="7096" price="0" /> <!-- The Last Days of Swordsman Iron -->
+	<item id="7097" price="0" /> <!-- Contemplation of White Wing Army -->
+	<item id="7098" price="0" /> <!-- Record of Traitor Muhark -->
+	<item id="7099" price="0" /> <!-- Secret Book of Khavatari -->
+	<item id="7100" price="0" /> <!-- Importance of Strain -->
+	<item id="7101" price="0" /> <!-- Danger of Ice Spirit -->
+	<item id="7102" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 1 -->
+	<item id="7103" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 1 -->
+	<item id="7104" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 1 -->
+	<item id="7105" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 2 -->
+	<item id="7106" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 2 -->
+	<item id="7107" price="0" /> <!-- Guardian Angel of the Tablet - Vol. 2 -->
+	<item id="7108" price="0" /> <!-- Guild's Secret Report -->
+	<item id="7109" price="0" /> <!-- Guild's Secret Report -->
+	<item id="7110" price="0" /> <!-- Research Report -->
+	<item id="7111" price="0" /> <!-- Research Report -->
+	<item id="7112" price="0" /> <!-- Research Report -->
+	<item id="7139" price="0" /> <!-- Bracelet of Lizardman -->
 </list>

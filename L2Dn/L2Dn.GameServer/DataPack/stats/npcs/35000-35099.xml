@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="35010" level="50" type="Defender" name="Mercenary">
 		<parameters>
@@ -8,29 +8,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="128" lhand="628" /> <!-- Knight's Sword / Hoplon -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="410.03" magical="430.78" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="206.7" magical="151.26" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -52,29 +51,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="478.51" magical="430.78" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="206.7" magical="151.26" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -96,29 +94,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="533.04" magical="430.78" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="175.7" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -141,30 +138,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -187,30 +183,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -232,29 +227,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="128" lhand="628" /> <!-- Knight's Sword / Hoplon -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="410.03" magical="430.78" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="206.7" magical="151.26" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -276,29 +270,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="478.51" magical="430.78" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="206.7" magical="151.26" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -320,29 +313,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="533.04" magical="430.78" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="175.7" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -365,30 +357,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -411,30 +402,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -456,29 +446,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="924.43" magical="971.18" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="305.47" magical="223.53" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -500,29 +489,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="1078.81" magical="971.18" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="305.47" magical="223.53" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -544,29 +532,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="1201.76" magical="971.18" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="259.65" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -589,30 +576,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="325" /> <!-- Horn of Glory -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
+			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -635,30 +621,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="196" /> <!-- Stick of Eternity -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
+			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -680,29 +665,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="924.43" magical="971.18" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="305.47" magical="223.53" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -724,29 +708,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="1078.81" magical="971.18" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="305.47" magical="223.53" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -768,29 +751,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
+			<attack physical="1201.76" magical="971.18" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="259.65" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -813,30 +795,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="325" /> <!-- Horn of Glory -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
+			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -859,30 +840,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="196" /> <!-- Stick of Eternity -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
+			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -904,29 +884,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="132" /> <!-- Ultimate Sword -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="645.94" magical="678.62" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="255.64" magical="187.07" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -948,29 +927,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="301" /> <!-- Scorpion -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="753.82" magical="678.62" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="255.64" magical="187.07" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -992,29 +970,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="839.73" magical="678.62" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="217.3" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1037,30 +1014,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
+			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1079,34 +1055,33 @@
 			<skill name="DDMagic" id="4026" level="1" />
 			<param name="Attack_BoostValue" value="135" />
 		</parameters>
-		<race>CASTLE_GUARD</race>
+		<race>MERCENARY</race>
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
+			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1128,29 +1103,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="132" /> <!-- Ultimate Sword -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="645.94" magical="678.62" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="255.64" magical="187.07" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1172,29 +1146,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="301" /> <!-- Scorpion -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="753.82" magical="678.62" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="255.64" magical="187.07" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1216,29 +1189,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
+			<attack physical="839.73" magical="678.62" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="217.3" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1261,30 +1233,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
+			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1303,34 +1274,33 @@
 			<skill name="DDMagic" id="4026" level="1" />
 			<param name="Attack_BoostValue" value="135" />
 		</parameters>
-		<race>CASTLE_GUARD</race>
+		<race>MERCENARY</race>
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
+			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1352,29 +1322,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="20" /> <!-- Gladius / Buckler -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="520.83" magical="547.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="230.86" magical="168.93" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1396,29 +1365,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="607.81" magical="547.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="230.86" magical="168.93" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1440,29 +1408,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="274" /> <!-- Reinforced Bow -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="677.08" magical="547.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="196.23" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -1485,30 +1452,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
+			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -1531,30 +1497,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="154" /> <!-- Dwarven Mace -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
+			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -1576,29 +1541,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="20" /> <!-- Gladius / Buckler -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="520.83" magical="547.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="230.86" magical="168.93" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1620,29 +1584,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="607.81" magical="547.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="230.86" magical="168.93" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1664,29 +1627,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="274" /> <!-- Reinforced Bow -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
+			<attack physical="677.08" magical="547.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="196.23" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -1709,30 +1671,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
+			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -1755,30 +1716,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="154" /> <!-- Dwarven Mace -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="223.6362" magical="163.64727" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
+			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" clanHelpRange="1200" aggroRange="1000">
@@ -1800,29 +1760,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" /> <!-- Gladius -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="315.22" magical="331.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="183.53" magical="134.3" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1844,29 +1803,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="367.87" magical="331.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="183.53" magical="134.3" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1888,29 +1846,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="409.79" magical="331.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="156" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -1933,30 +1890,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="6" /> <!-- Apprentice's Wand -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -1979,30 +1935,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -2024,29 +1979,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" /> <!-- Gladius -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="315.22" magical="331.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="183.53" magical="134.3" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -2068,29 +2022,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="367.87" magical="331.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="183.53" magical="134.3" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -2112,29 +2065,28 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
+			<attack physical="409.79" magical="331.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="156" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1200" aggroRange="1000">
@@ -2157,30 +2109,29 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="6" /> <!-- Apprentice's Wand -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -2203,30 +2154,29 @@
 		<sex>MALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
-			<attack physical="234.89829" magical="160.40508" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="177.78746" magical="130.09715" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
+			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="1200" aggroRange="1000">
@@ -2249,31 +2199,30 @@
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" lhand="6377" /> <!-- Dark Legion's Edge / Imperial Crusader Shield -->
-		<acquire exp="563" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="47100" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
+		<acquire exp="980" sp="1" />
+		<stats str="84" int="76" dex="73" wit="70" con="71" men="80">
+			<vitals hp="1222866" hpRegen="178.3" mp="47100" mpRegen="2.3" />
+			<attack physical="563.79" magical="204.94" random="30" critical="4" accuracy="5" attackSpeed="325" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="638.49" magical="116.81" />
 			<speed>
 				<walk ground="36" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4071" level="4" /> <!-- Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 			<skill id="5112" level="7" /> <!-- Stun -->
 			<skill id="5113" level="7" /> <!-- Castle Self AE Dispell Buff -->
 		</skillList>
@@ -2296,33 +2245,32 @@
 			<param name="Attack_BoostValue" value="146" />
 		</parameters>
 		<race>MERCENARY</race>
-		<sex>FEMALE</sex>
+		<sex>MALE</sex>
 		<equipment rhand="8687" /> <!-- Cabrio's Hand -->
-		<acquire exp="518" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="44856" mpRegen="3" />
-			<attack physical="731.52506" magical="499.53679" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="305.35947" magical="223.44881" />
+		<acquire exp="920" sp="1" />
+		<stats str="84" int="76" dex="73" wit="70" con="71" men="80">
+			<vitals hp="1098324" hpRegen="178" mp="44856" mpRegen="2.3" />
+			<attack physical="523.12" magical="191.68" random="30" critical="4" accuracy="5" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="610.72" magical="111.73" />
 			<speed>
 				<walk ground="33" />
 				<run ground="195" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4071" level="4" /> <!-- Resist Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-			<skill id="4071" level="4" /> <!-- Bow Resistance -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 			<skill id="5052" level="6" /> <!-- Castle Long AE Fire -->
 			<skill id="5114" level="7" /> <!-- Hold -->
 		</skillList>
@@ -2345,30 +2293,29 @@
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="39.74519" hpRegen="2" mp="40" mpRegen="0.9" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="39" hpRegen="2" mp="40" mpRegen="0.9" />
 			<attack physical="8.47458" magical="5.78704" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="44.44444" magical="32.52252" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" canMove="false" />
+		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4390" level="1" /> <!-- NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="19" /> <!-- Others -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="1000" aggroRange="1000" />
@@ -2380,30 +2327,29 @@
 	<npc id="35063" level="20" type="Artefact" name="Gludio Holy Artifact">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="342.5127" hpRegen="2.5" mp="192" mpRegen="1.2" />
-			<attack physical="44.32863" magical="30.2707" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="342" hpRegen="2.5" mp="192" mpRegen="1.2" />
+			<attack physical="44.32863" magical="30.2707" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="86.87049" magical="63.56806" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" canMove="false" />
+		<status undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4390" level="1" /> <!-- NPC Abnormal Immunity -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="19" /> <!-- Others -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" aggroRange="1000" />
@@ -2419,30 +2365,20 @@
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
-		<acquire exp="423" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2944391.9202" hpRegen="7.5" mp="1842.64" mpRegen="2.7" />
-			<attack physical="6783.21" magical="4835.5647705" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="815.67099" magical="592.8934692" />
+		<acquire exp="422" sp="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="1145868.11078" hpRegen="7.5" mp="2008.95" mpRegen="2.7" />
+			<attack physical="2331.27036" magical="397.98887" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="271.89033" magical="198.95754" />
 			<speed>
 				<walk ground="50" />
 				<run ground="160" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2458,11 +2394,9 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<group chance="100">
-					<item id="49758" min="250" max="350" chance="95" /> <!-- Blood Crystal -->
-					<item id="49785" min="1" max="3" chance="2" /> <!-- A-grade Weapon Pack -->
-					<item id="49786" min="1" max="3" chance="3" /> <!-- A-grade Armor Pack -->
-				</group>
+				<item id="49758" min="250" max="350" chance="94.66" /> <!-- Blood Crystal -->
+				<item id="49786" min="1" max="3" chance="3.034" /> <!-- A-grade Armor Supply Box -->
+				<item id="49785" min="1" max="3" chance="2.017" /> <!-- Weapon Supply Box (A-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2473,30 +2407,20 @@
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- Keshanberk -->
-		<acquire exp="385" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="981463.9734" hpRegen="7.5" mp="1842.64" mpRegen="2.7" />
-			<attack physical="6824.11760145" magical="4900.1931639" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="772.02801" magical="561.170356" />
+		<acquire exp="384" sp="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="381955.87272" hpRegen="7.5" mp="2008.95" mpRegen="2.7" />
+			<attack physical="2084.49564" magical="355.86007" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="257.34267" magical="188.3122" />
 			<speed>
 				<walk ground="50" />
 				<run ground="160" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -2512,10 +2436,8 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<group chance="100">
-					<item id="49758" min="60" max="90" chance="97" /> <!-- Blood Crystal -->
-					<item id="49786" min="1" max="1" chance="3" /> <!-- A-grade Armor Pack -->
-				</group>
+				<item id="49758" min="60" max="90" chance="92.745" /> <!-- Blood Crystal -->
+				<item id="49786" min="1" max="1" chance="2.98" /> <!-- A-grade Armor Supply Box -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2527,20 +2449,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- Sword of Delusion / Full Plate Shield -->
 		<acquire exp="863" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14467" hpRegen="6.5" mp="2132" mpRegen="2.4" />
+			<attack physical="962.69102" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="247.65008" magical="181.21958" shield="124" shieldRate="20" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -2549,7 +2470,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2573,30 +2494,20 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2620,30 +2531,20 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2666,29 +2567,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2711,20 +2602,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -2732,8 +2622,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2756,29 +2646,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="2499" /> <!-- Elven Long Sword -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2801,29 +2681,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="276" /> <!-- Elven Bow -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2846,20 +2716,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -2867,8 +2736,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2891,20 +2760,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -2913,7 +2781,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2936,20 +2804,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -2957,8 +2824,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2981,20 +2848,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3002,8 +2868,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3026,20 +2892,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3048,7 +2913,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3071,20 +2936,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3092,8 +2956,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3116,20 +2980,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- Sword of Delusion / Full Plate Shield -->
 		<acquire exp="863" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="247.65008" magical="181.21958" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="14467" hpRegen="6.5" mp="2132" mpRegen="2.4" />
+			<attack physical="962.69102" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="247.65008" magical="181.21958" shield="124" shieldRate="20" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3138,7 +3001,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3162,30 +3025,20 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3209,30 +3062,20 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 			<skill id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3255,29 +3098,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
+			<attack physical="885.7984" magical="302.44274" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3300,29 +3133,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3345,29 +3168,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="2499" /> <!-- Elven Long Sword -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3390,29 +3203,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="276" /> <!-- Elven Bow -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
 			<skill id="4416" level="22" /> <!-- Defending Army -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
-			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3435,20 +3238,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3456,8 +3258,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3480,20 +3282,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3502,7 +3303,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3525,20 +3326,19 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3546,8 +3346,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3570,20 +3370,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3591,8 +3390,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spear -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="11" /> <!-- Spears -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3615,20 +3414,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3637,7 +3435,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3660,20 +3458,19 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
+			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 			<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
 			<skill id="4410" level="18" /> <!-- Extremely Strong P. Atk. -->
@@ -3681,8 +3478,8 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4415" level="9" /> <!-- Bows -->
+			<skill id="4416" level="22" /> <!-- Defending Army -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -3697,7 +3494,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35092" level="56" type="Monster" name="Gatekeeper" title="Gludio">
+	<npc id="35092" level="75" type="Monster" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -3722,29 +3519,28 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="1507.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="228.40135" magical="167.1342" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" canMove="false" />
+		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="1000">
@@ -3758,7 +3554,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35093" level="56" type="Monster" name="Gatekeeper" title="Gludio">
+	<npc id="35093" level="75" type="Monster" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -3783,29 +3579,28 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="1507.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="228.40135" magical="167.1342" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" canMove="false" />
+		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="1000">
@@ -3819,7 +3614,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35094" level="56" type="Monster" name="Gatekeeper" title="Gludio">
+	<npc id="35094" level="75" type="Monster" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -3844,29 +3639,28 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1724.6831" hpRegen="6.5" mp="1507.8" mpRegen="2.4" />
-			<attack physical="405.96455" magical="277.22116" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="228.40135" magical="167.1342" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
+			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="319.24623" magical="233.61053" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" canMove="false" />
+		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="1000">
@@ -3890,29 +3684,28 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" undying="true" canMove="false" />
 		<skillList>
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="14" /> <!-- Humans -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" />
@@ -3925,8 +3718,8 @@
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
-			<param name="DoorId1" value="19210001" />
-			<param name="DoorId2" value="19210002" />
+			<param name="DoorName1" value="gludio_castle_outter_001" />
+			<param name="DoorName2" value="gludio_castle_outter_002" />
 			<param name="pos_x01" value="-18372" />
 			<param name="pos_y01" value="113315" />
 			<param name="pos_z01" value="-2760" />
@@ -3937,29 +3730,28 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" undying="true" canMove="false" />
 		<skillList>
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="14" /> <!-- Humans -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" aggroRange="1000" />
@@ -3972,8 +3764,8 @@
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
-			<param name="DoorId1" value="19210005" />
-			<param name="DoorId2" value="19210006" />
+			<param name="DoorName1" value="gludio_castle_inner_001" />
+			<param name="DoorName2" value="gludio_castle_inner_002" />
 			<param name="pos_x01" value="-18115" />
 			<param name="pos_y01" value="110679" />
 			<param name="pos_z01" value="-2528" />
@@ -3984,29 +3776,28 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="1" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" undying="true" canMove="false" />
 		<skillList>
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="14" /> <!-- Humans -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="300" aggroRange="1000" />
@@ -4023,29 +3814,28 @@
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<equipment rhand="89" /> <!-- Big Hammer -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" undying="true" canMove="false" />
 		<skillList>
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" aggroRange="1000" />
@@ -4061,29 +3851,28 @@
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" undying="true" canMove="false" />
 		<skillList>
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
 			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" aggroRange="1000" />

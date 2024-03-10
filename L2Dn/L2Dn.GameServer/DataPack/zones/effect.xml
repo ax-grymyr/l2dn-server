@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
+	<!-- Effect Zones -->
 	<!-- Sea of Spores -->
 	<zone name="spore_boss_poison_zone" type="EffectZone" shape="NPoly" minZ="-4468" maxZ="-4118"> <!-- [21_18] -->
 		<stat name="skillIdLvl" val="4070-1;" /> <!-- s_area_a_speed_down -->
@@ -1939,6 +1940,111 @@
 		<node X="209405" Y="-115798" />
 		<node X="209059" Y="-115803" />
 	</zone>
+	<!-- Effect zones for Tower of Naia -->
+	<!-- Poison Zone for Naia's door -->
+	<zone name="18_25_core_naia" id="200100" type="EffectZone" shape="NPoly" minZ="-14240" maxZ="-13340">
+		<stat name="chance" val="100" />
+		<stat name="default_enabled" val="false" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="5000" />
+		<stat name="skillIdLvl" val="4148-12;" /> <!-- s_area_poison12 -->
+		<node X="-46980" Y="245979" />
+		<node X="-43925" Y="245982" />
+		<node X="-43925" Y="248990" />
+		<node X="-46986" Y="248990" />
+	</zone>
+	<zone name="18_25_naia_pillar_green" id="200101" type="EffectZone" shape="NPoly" minZ="-12440" maxZ="-12240">
+		<stat name="chance" val="100" />
+		<stat name="default_enabled" val="false" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="10000" />
+		<stat name="skillIdLvl" val="4625-8;" /> <!-- s_area_slow8 -->
+		<node X="-45029" Y="247050" />
+		<node X="-45009" Y="247046" />
+		<node X="-45008" Y="247062" />
+		<node X="-45026" Y="247065" />
+	</zone>
+	<zone name="18_25_naia_pillar_red" id="200102" type="EffectZone" shape="NPoly" minZ="-12440" maxZ="-12240">
+		<stat name="chance" val="100" />
+		<stat name="default_enabled" val="true" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="10000" />
+		<stat name="skillIdLvl" val="4625-8;" /> <!-- s_area_slow8 -->
+		<node X="-45029" Y="247050" />
+		<node X="-45009" Y="247046" />
+		<node X="-45008" Y="247062" />
+		<node X="-45026" Y="247065" />
+	</zone>
+	<!-- Hellbound Anomic Foundry Lava -->
+	<zone name="20_25_factory_lava01" type="EffectZone" shape="NPoly" minZ="-2916" maxZ="-2266">
+		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="chance" val="50" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="25385" Y="248647" />
+		<node X="25560" Y="248478" />
+		<node X="26089" Y="248776" />
+		<node X="26626" Y="248852" />
+		<node X="26720" Y="249103" />
+		<node X="26634" Y="249333" />
+		<node X="25960" Y="249587" />
+		<node X="25637" Y="249450" />
+	</zone>
+	<zone name="20_25_factory_lava02" type="EffectZone" shape="NPoly" minZ="-2004" maxZ="-1704">
+		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="chance" val="50" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="24695" Y="249093" />
+		<node X="26502" Y="252842" />
+		<node X="25614" Y="253321" />
+		<node X="23873" Y="252774" />
+		<node X="23275" Y="252071" />
+		<node X="23112" Y="251737" />
+		<node X="23227" Y="250934" />
+		<node X="23533" Y="249958" />
+	</zone>
+	<zone name="20_25_factory_lava03" type="EffectZone" shape="NPoly" minZ="-3220" maxZ="-3120">
+		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="chance" val="50" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="27681" Y="248719" />
+		<node X="27733" Y="248777" />
+		<node X="27685" Y="248814" />
+		<node X="27638" Y="248758" />
+	</zone>
+	<zone name="20_25_factory_lava04" type="EffectZone" shape="NPoly" minZ="-3212" maxZ="-3112">
+		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="chance" val="50" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="25946" Y="246597" />
+		<node X="25995" Y="246650" />
+		<node X="25953" Y="246689" />
+		<node X="25907" Y="246642" />
+	</zone>
+	<zone name="20_25_factory_lava05" type="EffectZone" shape="NPoly" minZ="-3704" maxZ="-3604">
+		<stat name="skillIdLvl" val="4150-7;" /> <!-- s_area_fire7 -->
+		<stat name="chance" val="50" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="27167" Y="246294" />
+		<node X="27201" Y="246351" />
+		<node X="27153" Y="246383" />
+		<node X="27116" Y="246329" />
+	</zone>
+	<zone name="area_dehydration_var" type="EffectZone" shape="NPoly" minZ="-5980" maxZ="1020"> <!-- [20_25] -->
+		<stat name="skillIdLvl" val="5399-1;" /> <!-- s_area_hot_ground1 -->
+		<stat name="chance" val="100" />
+		<!-- stat name="unitTick" val="10" / -->
+		<stat name="default_enabled" val="true" />
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="243" Y="231758" />
+		<node X="13742" Y="233542" />
+		<node X="13620" Y="242495" />
+		<node X="131" Y="242444" />
+	</zone>
 	<!-- Stakato Nest Buff -->
 	<zone name="22_16_stakato_mob_buff" id="200103" type="EffectZone" shape="NPoly" minZ="-6368" maxZ="-3296">
 		<stat name="skillIdLvl" val="6170-1;" /> <!-- s_area_stakato_nest_fury -->
@@ -2089,5 +2195,70 @@
 		<node X="25952" Y="-14264" />
 		<node X="25804" Y="-15088" />
 		<node X="26324" Y="-15704" />
+	</zone>
+	<zone name="19_25_hellbound_oasis" type="EffectZone" shape="NPoly" minZ="-3658" maxZ="-3258">
+		<stat name="skillIdLvl" val="16130-1;" /> <!-- Oasis Energy -->
+		<stat name="chance" val="100" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="initialDelay" val="1000" />
+		<stat name="default_enabled" val="true" />
+		<stat name="reuse" val="5000" /> <!-- Guess -->
+		<node X="-15152" Y="254031" />
+		<node X="-15083" Y="253576" />
+		<node X="-14940" Y="253209" />
+		<node X="-14674" Y="252617" />
+		<node X="-14618" Y="252384" />
+		<node X="-14714" Y="252136" />
+		<node X="-14871" Y="251823" />
+		<node X="-15095" Y="251604" />
+		<node X="-15577" Y="251211" />
+		<node X="-16021" Y="250571" />
+		<node X="-15727" Y="250232" />
+		<node X="-15967" Y="249977" />
+		<node X="-15760" Y="249973" />
+		<node X="-15645" Y="250050" />
+		<node X="-15387" Y="250186" />
+		<node X="-15204" Y="250112" />
+		<node X="-15152" Y="250169" />
+		<node X="-15099" Y="250359" />
+		<node X="-14787" Y="250323" />
+		<node X="-14775" Y="250342" />
+		<node X="-14925" Y="250461" />
+		<node X="-14805" Y="250674" />
+		<node X="-14577" Y="251052" />
+		<node X="-14226" Y="251114" />
+		<node X="-14027" Y="251075" />
+		<node X="-13855" Y="251212" />
+		<node X="-13579" Y="251535" />
+		<node X="-13422" Y="251790" />
+		<node X="-13494" Y="252025" />
+		<node X="-13854" Y="252527" />
+		<node X="-13880" Y="252892" />
+		<node X="-13729" Y="253180" />
+		<node X="-13486" Y="253415" />
+		<node X="-13355" Y="253390" />
+		<node X="-13377" Y="253210" />
+		<node X="-13296" Y="253126" />
+		<node X="-13107" Y="253106" />
+		<node X="-12921" Y="252991" />
+		<node X="-12874" Y="252790" />
+		<node X="-12885" Y="252507" />
+		<node X="-12985" Y="252142" />
+		<node X="-12839" Y="251938" />
+		<node X="-12581" Y="251554" />
+		<node X="-12419" Y="251366" />
+		<node X="-12099" Y="251595" />
+		<node X="-12012" Y="251927" />
+		<node X="-12029" Y="252274" />
+		<node X="-12363" Y="252647" />
+		<node X="-12515" Y="252990" />
+		<node X="-12548" Y="253238" />
+		<node X="-12541" Y="253481" />
+		<node X="-12670" Y="253700" />
+		<node X="-12749" Y="253846" />
+		<node X="-13011" Y="254157" />
+		<node X="-13452" Y="254422" />
+		<node X="-14188" Y="254493" />
+		<node X="-14650" Y="254393" />
 	</zone>
 </list>

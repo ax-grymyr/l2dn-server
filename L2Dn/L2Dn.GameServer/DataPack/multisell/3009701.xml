@@ -3,80 +3,164 @@
 	<npcs>
 		<npc>30097</npc> <!-- Galladucci -->
 	</npcs>
-	<!-- B-grade weapon for crafting ingredients -->
 	<item>
-		<ingredient id="92476" count="8680" /> <!-- Metal Ingot -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="142" count="1" /> <!-- Keshanberk -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Flamberge -->
+		<production count="1" id="71" />
 	</item>
 	<item>
-		<ingredient id="92476" count="4340" /> <!-- Metal Ingot -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="243" count="1" /> <!-- Twilight Knife -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Pa'agrian Sword -->
+		<production count="1" id="7882" />
 	</item>
 	<item>
-		<ingredient id="92476" count="4340" /> <!-- Metal Ingot -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="91" count="1" /> <!-- Heavy War Axe -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Stormbringer -->
+		<production count="1" id="72" />
 	</item>
 	<item>
-		<ingredient id="92477" count="8680" /> <!-- Wood -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="7900" count="1" /> <!-- Ice Storm Hammer -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Sword of Delusion -->
+		<production count="1" id="76" />
 	</item>
 	<item>
-		<ingredient id="92477" count="4340" /> <!-- Wood -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="229" count="1" /> <!-- Kris -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Silver Axe -->
+		<production count="1" id="161" />
 	</item>
 	<item>
-		<ingredient id="92477" count="4340" /> <!-- Wood -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="92" count="1" /> <!-- Spirit's Staff -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- War Axe -->
+		<production count="1" id="162" />
 	</item>
 	<item>
-		<ingredient id="92478" count="8680" /> <!-- Varnish -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="148" count="1" /> <!-- Sword of Valhalla -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Crystal Staff -->
+		<production count="1" id="192" />
 	</item>
 	<item>
-		<ingredient id="92478" count="4340" /> <!-- Varnish -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="91901" count="1" /> <!-- Military Fleuret -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Sage's Staff -->
+		<production count="1" id="200" />
 	</item>
 	<item>
-		<ingredient id="92478" count="4340" /> <!-- Varnish -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="267" count="1" /> <!-- Arthro Nail -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Cursed Dagger -->
+		<production count="1" id="226" />
 	</item>
 	<item>
-		<ingredient id="92479" count="4340" /> <!-- Metallograph -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="7892" count="1" /> <!-- Spell Breaker -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Dark Screamer -->
+		<production count="1" id="233" />
 	</item>
 	<item>
-		<ingredient id="92479" count="4340" /> <!-- Metallograph -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="284" count="1" /> <!-- Dark Elven Longbow -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Chakram -->
+		<production count="1" id="263" />
 	</item>
 	<item>
-		<ingredient id="92480" count="4340" /> <!-- Leather -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="91886" count="1" /> <!-- Innominate Victory -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Fisted Blade -->
+		<production count="1" id="265" />
 	</item>
 	<item>
-		<ingredient id="92480" count="4340" /> <!-- Leather -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="300" count="1" /> <!-- Great Axe -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Crystalized Ice Bow -->
+		<production count="1" id="281" />
 	</item>
 	<item>
-		<ingredient id="92481" count="4340" /> <!-- Cloth -->
-		<ingredient id="57" count="8680000" /> <!-- Adena -->
-		<production id="78" count="1" /> <!-- Great Sword -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Akat Longbow -->
+		<production count="1" id="283" />
 	</item>
 	<item>
-		<ingredient id="92481" count="3920" /> <!-- Cloth -->
-		<ingredient id="57" count="7830000" /> <!-- Adena -->
-		<production id="264" count="1" /> <!-- Pata -->
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Orcish Glaive -->
+		<production count="1" id="298" />
+	</item>
+	<item>
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Poleaxe -->
+		<production count="1" id="95" />
+	</item>
+	<item>
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Schlager -->
+		<production count="1" id="91884" />
+	</item>
+	<item>
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Immortal Edge -->
+		<production count="1" id="91883" />
+	</item>
+	<item>
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="573" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="2865" id="1458" />
+		<!-- Soldat Estoc -->
+		<production count="1" id="91899" />
+	</item>
+	<item>
+		<!-- Crystal (C-Grade) -->
+		<ingredient count="1075" id="1459" />
+		<!-- Crystal (D-Grade) -->
+		<ingredient count="5375" id="1458" />
+		<!-- Blinzlasher -->
+		<production count="1" id="91897" />
 	</item>
 </list>

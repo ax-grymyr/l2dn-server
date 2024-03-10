@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using L2Dn.Model;
 
 namespace L2Dn.GameServer.Db;
 
