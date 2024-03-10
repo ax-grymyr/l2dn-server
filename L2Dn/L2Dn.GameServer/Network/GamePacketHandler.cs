@@ -50,6 +50,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* D0:015D */ RegisterPacket<ExRequestUserBanInfoPacket>(IncomingPacketCodes.EX_USER_BAN_INFO).WithAllowedStates(GameSessionState.CharacterScreen | GameSessionState.InGame);
         /* D0:0165 */ RegisterPacket<ExRequestChangeClassVerifyingPacket>(IncomingPacketCodes.EX_REQUEST_CLASS_CHANGE_VERIFYING);
         /* D0:0166 */ RegisterPacket<ExRequestTeleportPacket>(IncomingPacketCodes.EX_REQUEST_TELEPORT);
+        /* D0:0170 */ RegisterPacket<ExRequestActivateAutoShortcutPacket>(IncomingPacketCodes.EX_ACTIVATE_AUTO_SHORTCUT);
         /* D0:0176 */ RegisterPacket<ExAutoPlaySettingsPacket>(IncomingPacketCodes.EX_AUTOPLAY_SETTING);
         /* D0:0188 */ RegisterPacket<ExMercenaryCastleWarCastleSiegeInfoPacket>(IncomingPacketCodes.EX_MERCENARY_CASTLEWAR_CASTLE_SIEGE_INFO);
         /* D0:0218 */ RegisterPacket<RequestNewHennaListPacket>(IncomingPacketCodes.EX_NEW_HENNA_LIST);
