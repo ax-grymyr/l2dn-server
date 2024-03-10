@@ -49,90 +49,45 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 		connection.Send(ExClassChangeSetAlarmPacket.STATIC_PACKET);
 		return ValueTask.CompletedTask;
 	}
-	
-	private static bool firstClassCheck(Player player)
-	{
-		QuestState qs = null;
-		if (player.isDeathKnight())
-		{
-			Quest quest = QuestManager.getInstance().getQuest(10101);
-			qs = player.getQuestState(quest.getName());
-		}
-		else if (player.isAssassin())
-		{
-			Quest quest = QuestManager.getInstance().getQuest(10123);
-			qs = player.getQuestState(quest.getName());
-		}
-		else
-		{
-			switch (player.getRace())
-			{
-				case Race.HUMAN:
-				{
-					if (player.getClassId() == CharacterClass.FIGHTER)
-					{
-						Quest quest = QuestManager.getInstance().getQuest(10009);
-						qs = player.getQuestState(quest.getName());
-					}
-					else
-					{
-						Quest quest = QuestManager.getInstance().getQuest(10020);
-						qs = player.getQuestState(quest.getName());
-					}
-					break;
-				}
-				case Race.ELF:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10033);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-				case Race.DARK_ELF:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10046);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-				case Race.ORC:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10057);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-				case Race.DWARF:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10079);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-				case Race.KAMAEL:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10090);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-				case Race.SYLPH:
-				{
-					Quest quest = QuestManager.getInstance().getQuest(10112);
-					qs = player.getQuestState(quest.getName());
-					break;
-				}
-			}
-		}
-		
-		return (qs != null) && qs.isCompleted();
-	}
-	
-	private static bool secondClassCheck(Player player)
+
+    private static bool firstClassCheck(Player player)
+    {
+	    int questId;
+	    if (player.isDeathKnight())
+		    questId = 10101;
+	    else if (player.isAssassin())
+		    questId = 10123;
+	    else
+		    questId = player.getRace() switch
+		    {
+			    Race.HUMAN => player.getClassId() == CharacterClass.FIGHTER ? 10009 : 10020,
+			    Race.ELF => 10033,
+			    Race.DARK_ELF => 10046,
+			    Race.ORC => 10057,
+			    Race.DWARF => 10079,
+			    Race.KAMAEL => 10090,
+			    Race.SYLPH => 10112,
+			    _ => 0
+		    };
+
+	    return questId > 0 && IsQuestCompleted(player, questId);
+    }
+
+    private static bool secondClassCheck(Player player)
 	{
 		// SecondClassChange.java has only level check.
 		return player.getLevel() >= 40;
 	}
-	
-	private static bool thirdClassCheck(Player player)
+
+	private static bool thirdClassCheck(Player player) => IsQuestCompleted(player, 19900);
+
+	private static bool IsQuestCompleted(Player player, int questId)
 	{
-		Quest quest = QuestManager.getInstance().getQuest(19900);
+		Quest quest = QuestManager.getInstance().getQuest(questId);
+		if (quest is null)
+			return false;
+		
 		QuestState qs = player.getQuestState(quest.getName());
-		return (qs != null) && qs.isCompleted();
+		return qs != null && qs.isCompleted();
 	}
 }
