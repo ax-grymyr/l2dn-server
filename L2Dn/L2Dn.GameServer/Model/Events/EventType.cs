@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
 using L2Dn.GameServer.Model.Events.Impl.Sieges;
 using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Events;
 
@@ -179,11 +180,11 @@ public static class EventTypeUtil
 
 	static EventTypeUtil()
 	{
-		int count = (int)Enum.GetValues<EventType>().Max() + 1;
+		int count = (int)EnumUtil.GetMaxValue<EventType>() + 1;
 		_classTypes = new Type?[count];
 		_returnTypes = new ImmutableArray<Type>[count];
 
-		foreach (EventType eventType in Enum.GetValues<EventType>())
+		foreach (EventType eventType in EnumUtil.GetValues<EventType>())
 		{
 			_classTypes[(int)eventType] = GetEventClassPrivate(eventType);
 			_returnTypes[(int)eventType] = GetReturnTypesPrivate(eventType).ToImmutableArray();

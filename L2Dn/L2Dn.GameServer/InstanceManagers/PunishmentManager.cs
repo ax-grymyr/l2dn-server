@@ -2,6 +2,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -23,7 +24,7 @@ public class PunishmentManager
 	private void load()
 	{
 		// Initiate task holders.
-		foreach (PunishmentAffect affect in Enum.GetValues<PunishmentAffect>())
+		foreach (PunishmentAffect affect in EnumUtil.GetValues<PunishmentAffect>())
 		{
 			_tasks.put(affect, new PunishmentHolder());
 		}

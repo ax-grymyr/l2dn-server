@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -320,7 +321,7 @@ public class RankManager
 		try
 		{
 			List<CharacterClass> classes =
-				Enum.GetValues<CharacterClass>().Where(c => c.GetRootClass() == classId).ToList();
+				EnumUtil.GetValues<CharacterClass>().Where(c => c.GetRootClass() == classId).ToList();
 
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters
@@ -354,7 +355,7 @@ public class RankManager
 	{
 		try 
 		{
-			List<CharacterClass> classes = Enum.GetValues<CharacterClass>().Where(c => c.GetRace() == race).ToList();
+			List<CharacterClass> classes = EnumUtil.GetValues<CharacterClass>().Where(c => c.GetRace() == race).ToList();
 			
 			using GameServerDbContext ctx = new();
 			var query = ctx.Characters

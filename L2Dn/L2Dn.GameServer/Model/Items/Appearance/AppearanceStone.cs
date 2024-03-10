@@ -68,7 +68,7 @@ public class AppearanceStone
 				case AppearanceTargetType.WEAPON:
 				case AppearanceTargetType.ARMOR:
 				{
-					foreach (CrystalType cryType in Enum.GetValues<CrystalType>())
+					foreach (CrystalType cryType in EnumUtil.GetValues<CrystalType>())
 					{
 						if ((cryType != CrystalType.NONE) && (cryType != CrystalType.EVENT))
 						{

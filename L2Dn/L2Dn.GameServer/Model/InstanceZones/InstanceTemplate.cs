@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.InstanceZones;
 
@@ -609,7 +610,7 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		
 		// When mask contains more group types but without player's group, choose nearest one
 		// player < party < command channel
-		foreach (GroupType t in Enum.GetValues<GroupType>())
+		foreach (GroupType t in EnumUtil.GetValues<GroupType>())
 		{
 			if ((t != playerGroup) && groupMaskContains(t))
 			{

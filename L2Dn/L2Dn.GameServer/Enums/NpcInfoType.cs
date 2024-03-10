@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Enums;
 
@@ -51,12 +52,11 @@ public enum NpcInfoType
 
 public static class NpcInfoTypeUtil
 {
-	private static readonly ImmutableArray<NpcInfoType> _allValues = Enum.GetValues<NpcInfoType>().ToImmutableArray();
 	private static readonly ImmutableArray<int> _blockLengths;
 
 	static NpcInfoTypeUtil()
 	{
-		int[] blockLengths = new int[(int)_allValues.Max() + 1];
+		int[] blockLengths = new int[(int)EnumUtil.GetMaxValue<NpcInfoType>() + 1];
 		
 		// 0
 		blockLengths[(int)NpcInfoType.ID] = 4;
@@ -105,8 +105,6 @@ public static class NpcInfoTypeUtil
 		_blockLengths = blockLengths.ToImmutableArray();
 	}
 
-	public static ImmutableArray<NpcInfoType> AllValues => _allValues;
-	
 	public static int GetBlockLength(this NpcInfoType type)
 	{
 		return _blockLengths[(int)type];

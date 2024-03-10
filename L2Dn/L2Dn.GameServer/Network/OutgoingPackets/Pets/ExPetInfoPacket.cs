@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Pets;
 
@@ -159,30 +160,33 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		}
 		
 		// Calculate sizes
-		foreach (NpcInfoType npcInfoType in Enum.GetValues<NpcInfoType>())
+		foreach (NpcInfoType npcInfoType in EnumUtil.GetValues<NpcInfoType>())
 		{
-			switch (npcInfoType)
+			if (_helper.HasComponent(npcInfoType))
 			{
-				case NpcInfoType.ATTACKABLE:
-				case NpcInfoType.RELATIONS:
+				switch (npcInfoType)
 				{
-					_initSize += npcInfoType.GetBlockLength();
-					break;
-				}
-				case NpcInfoType.TITLE:
-				{
-					_initSize += npcInfoType.GetBlockLength() + (_title.Length * 2);
-					break;
-				}
-				case NpcInfoType.NAME:
-				{
-					_blockSize += npcInfoType.GetBlockLength() + (summon.getName().Length * 2);
-					break;
-				}
-				default:
-				{
-					_blockSize += npcInfoType.GetBlockLength();
-					break;
+					case NpcInfoType.ATTACKABLE:
+					case NpcInfoType.RELATIONS:
+					{
+						_initSize += npcInfoType.GetBlockLength();
+						break;
+					}
+					case NpcInfoType.TITLE:
+					{
+						_initSize += npcInfoType.GetBlockLength() + (_title.Length * 2);
+						break;
+					}
+					case NpcInfoType.NAME:
+					{
+						_blockSize += npcInfoType.GetBlockLength() + (summon.getName().Length * 2);
+						break;
+					}
+					default:
+					{
+						_blockSize += npcInfoType.GetBlockLength();
+						break;
+					}
 				}
 			}
 		}

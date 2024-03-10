@@ -1163,6 +1163,7 @@ public class Config
 	public static string TITLE_FOR_PVP_AMOUNT5;
 	public static bool CHAT_ADMIN;
 
+	// TODO: change all multiplier's types from dictionary to array for fast lookup
 	public static ImmutableDictionary<CharacterClass, double> PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS =
 		ImmutableDictionary<CharacterClass, double>.Empty;
 

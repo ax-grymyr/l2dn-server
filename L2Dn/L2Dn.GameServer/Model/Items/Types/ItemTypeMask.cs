@@ -1,8 +1,10 @@
-﻿namespace L2Dn.GameServer.Model.Items.Types;
+﻿using L2Dn.Utilities;
+
+namespace L2Dn.GameServer.Model.Items.Types;
 
 public record struct ItemTypeMask(int MaskValue)
 {
-    private static readonly int _weaponCount = Enum.GetValues<WeaponType>().Length;
+    private static readonly int _weaponCount = EnumUtil.GetValues<WeaponType>().Length;
 
     public static readonly ItemTypeMask Zero = default;
     

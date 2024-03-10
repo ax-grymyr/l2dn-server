@@ -1,10 +1,12 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -614,7 +616,7 @@ public class EffectList
 	 * @param buffTypes the {@code SkillBuffType} of the skill.
 	 * @return {@code true} if the current effect count for any of the given types is greater than the limit, {@code false} otherwise.
 	 */
-	private bool isLimitExceeded(params SkillBuffType[] buffTypes)
+	private bool isLimitExceeded(ImmutableArray<SkillBuffType> buffTypes)
 	{
 		foreach (SkillBuffType buffType in buffTypes)
 		{
@@ -958,18 +960,19 @@ public class EffectList
 		increaseDecreaseCount(info, true);
 		
 		// Check if any effect limit is exceeded.
-		if (isLimitExceeded(Enum.GetValues<SkillBuffType>()))
+		if (isLimitExceeded(EnumUtil.GetValues<SkillBuffType>()))
 		{
 			// Check for each category.
 			foreach (BuffInfo existingInfo in _actives)
 			{
-				if (existingInfo.isInUse() && !skill.is7Signs() && isLimitExceeded(existingInfo.getSkill().getBuffType()))
+				if (existingInfo.isInUse() && !skill.is7Signs() &&
+				    isLimitExceeded([existingInfo.getSkill().getBuffType()]))
 				{
 					remove(existingInfo);
 				}
-				
+
 				// Break further loops if there is no any other limit exceeding.
-				if (!isLimitExceeded(Enum.GetValues<SkillBuffType>()))
+				if (!isLimitExceeded(EnumUtil.GetValues<SkillBuffType>()))
 				{
 					break;
 				}

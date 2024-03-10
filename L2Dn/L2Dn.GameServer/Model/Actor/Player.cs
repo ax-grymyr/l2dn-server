@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.CommunityBbs.Managers;
@@ -61,6 +62,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using ClanWar = L2Dn.GameServer.Model.Clans.ClanWar;
@@ -438,7 +440,7 @@ public class Player: Playable
 	private ScheduledFuture _taskWater;
 	
 	/** Last Html Npcs, 0 = last html was not bound to an npc */
-	private readonly int[] _htmlActionOriginObjectIds = new int[Enum.GetValues<HtmlActionScope>().Length];
+	private readonly int[] _htmlActionOriginObjectIds = new int[EnumUtil.GetValues<HtmlActionScope>().Length];
 	/**
 	 * Origin of the last incoming html action request.<br>
 	 * This can be used for htmls continuing the conversation with an npc.
@@ -9091,7 +9093,7 @@ public class Player: Playable
 	
 	public void updateActiveBroochJewel()
 	{
-		BroochJewel[] broochJewels = Enum.GetValues<BroochJewel>();
+		ImmutableArray<BroochJewel> broochJewels = EnumUtil.GetValues<BroochJewel>();
 		// Update active Ruby jewel.
 		setActiveRubyJewel(null);
 		for (int i = broochJewels.Length - 1; i > 0; i--)
@@ -14762,7 +14764,7 @@ public class Player: Playable
 		
 		if (_spirits == null)
 		{
-			ElementalType[] types = Enum.GetValues<ElementalType>();
+			ImmutableArray<ElementalType> types = EnumUtil.GetValues<ElementalType>();
 			_spirits = new ElementalSpirit[types.Length - 1]; // exclude None
 			foreach (ElementalType type in types)
 			{
@@ -14820,7 +14822,7 @@ public class Player: Playable
 		
 		if (!restoredSpirits.isEmpty())
 		{
-			_spirits = new ElementalSpirit[Enum.GetValues<ElementalType>().Length - 1];
+			_spirits = new ElementalSpirit[EnumUtil.GetValues<ElementalType>().Length - 1];
 			foreach (ElementalSpiritDataHolder spiritData in restoredSpirits)
 			{
 				_spirits[(int)spiritData.getType() - 1] = new ElementalSpirit(spiritData, this);

@@ -14,6 +14,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
@@ -833,7 +834,7 @@ public class VillageMaster: Folk
 			
 			if (player.getRace() == Race.KAMAEL)
 			{
-				foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
+				foreach (CharacterClass cid in EnumUtil.GetValues<CharacterClass>())
 				{
 					if (cid.GetRace() != Race.KAMAEL)
 					{
@@ -859,7 +860,7 @@ public class VillageMaster: Folk
 			{
 				if (player.getRace() == Race.ELF)
 				{
-					foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
+					foreach (CharacterClass cid in EnumUtil.GetValues<CharacterClass>())
 					{
 						if (cid.GetRace() == Race.DARK_ELF)
 						{
@@ -869,7 +870,7 @@ public class VillageMaster: Folk
 				}
 				else if (player.getRace() == Race.DARK_ELF)
 				{
-					foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
+					foreach (CharacterClass cid in EnumUtil.GetValues<CharacterClass>())
 					{
 						if (cid.GetRace() == Race.ELF)
 						{
@@ -878,7 +879,7 @@ public class VillageMaster: Folk
 					}
 				}
 				
-				foreach (CharacterClass cid in Enum.GetValues<CharacterClass>())
+				foreach (CharacterClass cid in EnumUtil.GetValues<CharacterClass>())
 				{
 					if (cid.GetRace() == Race.KAMAEL)
 					{

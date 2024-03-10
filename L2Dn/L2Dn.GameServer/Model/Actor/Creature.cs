@@ -36,6 +36,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -103,7 +104,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	private readonly Map<long, DateTime> _disabledSkills = new();
 	private bool _allSkillsDisabled;
 	
-	private readonly byte[] _zones = new byte[(int)Enum.GetValues<ZoneId>().Max() + 1];
+	private readonly byte[] _zones = new byte[(int)EnumUtil.GetMaxValue<ZoneId>() + 1];
 	protected readonly Location _lastZoneValidateLocation;
 	
 	private readonly object _attackLock = new();

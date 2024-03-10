@@ -1722,7 +1722,7 @@ public class SkillTreeData: DataReaderBase
 		// Race specific skills from Fishing and Transformation skill trees.
 		List<long> list = new();
 		_skillsByRaceHashCodes = new();
-		foreach (Race r  in  Enum.GetValues<Race>())
+		foreach (Race r  in  EnumUtil.GetValues<Race>())
 		{
 			foreach (SkillLearn s in  _fishingSkillTree.values())
 			{

@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -199,7 +200,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		// Calculate sizes
 		int initSize = 0;
 		int blockSize = 0;
-		foreach (NpcInfoType npcInfoType in NpcInfoTypeUtil.AllValues)
+		foreach (NpcInfoType npcInfoType in EnumUtil.GetValues<NpcInfoType>())
 		{
 			if (_helper.HasComponent(npcInfoType))
 			{

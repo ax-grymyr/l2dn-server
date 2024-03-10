@@ -1,3 +1,5 @@
+using L2Dn.Utilities;
+
 namespace L2Dn.GameServer.Model.Skills;
 
 /**
@@ -34,7 +36,7 @@ public static class EffectScopeUtil
 
 	public static EffectScope? FindByName(string name)
 	{
-		foreach (EffectScope effectScope in Enum.GetValues<EffectScope>())
+		foreach (EffectScope effectScope in EnumUtil.GetValues<EffectScope>())
 		{
 			if (string.Equals(name, effectScope.GetName()))
 				return effectScope;

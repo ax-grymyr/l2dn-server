@@ -1,9 +1,11 @@
-﻿namespace L2Dn.GameServer.Model.Items.Types;
+﻿using L2Dn.Utilities;
+
+namespace L2Dn.GameServer.Model.Items.Types;
 
 public record struct ItemType(int Value)
 {
-    private static readonly int _weaponCount = Enum.GetValues<WeaponType>().Length;
-    private static readonly int _armorCount = Enum.GetValues<ArmorType>().Length;
+    private static readonly int _weaponCount = EnumUtil.GetValues<WeaponType>().Length;
+    private static readonly int _armorCount = EnumUtil.GetValues<ArmorType>().Length;
     private static readonly int _weaponAndArmorCount = _weaponCount + _armorCount;
 
     public static implicit operator ItemType(WeaponType weaponType) => new((int)weaponType);

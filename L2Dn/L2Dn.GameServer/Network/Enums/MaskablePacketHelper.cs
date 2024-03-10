@@ -20,7 +20,7 @@ public class MaskablePacketHelper<T> // TODO refactor this, UserInfoType, NpcInf
     
     public void AddAllComponents()
     {
-        Enum.GetValues<T>().ForEach(AddComponent);
+        EnumUtil.GetValues<T>().ForEach(AddComponent);
     }
     
     public void AddComponent(T component)

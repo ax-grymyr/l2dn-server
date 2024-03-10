@@ -1,15 +1,15 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 
 namespace L2Dn.Utilities;
 
 public static class EnumUtil
 {
+    public static ImmutableArray<TEnum> GetValues<TEnum>()
+        where TEnum: struct, Enum => EnumInfo<TEnum>.Values;
+
     public static TEnum GetMaxValue<TEnum>()
-        where TEnum: struct, Enum
-    {
-        TEnum[] values = Enum.GetValues<TEnum>();
-        return values.Length == 0 ? default : values.Max();
-    }
+        where TEnum: struct, Enum => EnumInfo<TEnum>.MaxValue;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int ToInt32<TEnum>(this TEnum value)
@@ -209,5 +209,18 @@ public static class EnumUtil
             return BitUtil.Compare(Unsafe.As<TEnum, ulong>(ref left), Unsafe.As<TEnum, ulong>(ref right));
 
         throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    private static class EnumInfo<TEnum>
+        where TEnum: struct, Enum
+    {
+        public static ImmutableArray<TEnum> Values { get; }
+        public static TEnum MaxValue { get; }
+
+        static EnumInfo()
+        {
+            Values = Enum.GetValues<TEnum>().ToImmutableArray();
+            MaxValue = Values.Length > 0 ? Values.Max() : default;
+        }
     }
 }

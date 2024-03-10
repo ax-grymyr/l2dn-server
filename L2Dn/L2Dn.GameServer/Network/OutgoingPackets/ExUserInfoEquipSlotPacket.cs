@@ -1,9 +1,11 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -24,7 +26,7 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
 
     public void WriteContent(PacketBitWriter writer)
     {
-        InventorySlot[] allSlots = Enum.GetValues<InventorySlot>();
+        ImmutableArray<InventorySlot> allSlots = EnumUtil.GetValues<InventorySlot>();
         
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_EQUIP_SLOT);
         writer.WriteInt32(_player.getObjectId());

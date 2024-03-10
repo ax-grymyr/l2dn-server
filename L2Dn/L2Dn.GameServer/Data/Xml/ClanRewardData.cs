@@ -28,7 +28,7 @@ public class ClanRewardData: DataReaderBase
 		document.Elements("list").Elements("membersOnline").ForEach(parseMembersOnline);
 		document.Elements("list").Elements("huntingBonus").ForEach(parseHuntingBonus);
 
-		foreach (ClanRewardType type in Enum.GetValues<ClanRewardType>())
+		foreach (ClanRewardType type in EnumUtil.GetValues<ClanRewardType>())
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " +
 			            (_clanRewards.containsKey(type) ? _clanRewards.get(type).size() : 0) + " rewards for " +

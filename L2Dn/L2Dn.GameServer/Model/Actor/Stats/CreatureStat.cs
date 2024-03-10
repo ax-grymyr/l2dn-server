@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -30,8 +31,8 @@ public class CreatureStat
 	private readonly List<StatHolder> _additionalMul = new();
 	private readonly Map<Stat, double> _fixedValue = new();
 	
-	private readonly float[] _attackTraitValues = new float[Enum.GetValues<TraitType>().Length];
-	private readonly float[] _defenceTraitValues = new float[Enum.GetValues<TraitType>().Length];
+	private readonly float[] _attackTraitValues = new float[EnumUtil.GetValues<TraitType>().Length];
+	private readonly float[] _defenceTraitValues = new float[EnumUtil.GetValues<TraitType>().Length];
 	private readonly Set<TraitType> _attackTraits = new();
 	private readonly Set<TraitType> _defenceTraits = new();
 	private readonly Set<TraitType> _invulnerableTraits = new();
@@ -760,7 +761,7 @@ public class CreatureStat
 		_mpVampiricSum = 0;
 		
 		// Initialize default values
-		foreach (Stat stat in Enum.GetValues<Stat>())
+		foreach (Stat stat in EnumUtil.GetValues<Stat>())
 		{
 			StatInfo? info = stat.GetInfo();
 			if (info != null)
@@ -886,7 +887,7 @@ public class CreatureStat
 		{
 			// Calculate the difference between old and new stats
 			Set<Stat> changed = new();
-			foreach (Stat stat in Enum.GetValues<Stat>())
+			foreach (Stat stat in EnumUtil.GetValues<Stat>())
 			{
 				StatInfo? info = stat.GetInfo();
 				if (info != null)

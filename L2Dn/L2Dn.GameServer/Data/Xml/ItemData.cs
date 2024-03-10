@@ -1005,7 +1005,7 @@ public class ItemData: DataReaderBase
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						foreach (WeaponType wt in Enum.GetValues<WeaponType>())
+						foreach (WeaponType wt in EnumUtil.GetValues<WeaponType>())
 						{
 							if (wt.ToString().equals(item))
 							{
@@ -1014,7 +1014,7 @@ public class ItemData: DataReaderBase
 							}
 						}
 						
-						foreach (ArmorType at in Enum.GetValues<ArmorType>())
+						foreach (ArmorType at in EnumUtil.GetValues<ArmorType>())
 						{
 							if (at.ToString().equals(item))
 							{
@@ -1091,7 +1091,7 @@ public class ItemData: DataReaderBase
 					{
 						ItemTypeMask old = mask;
 						String item = st.nextToken().Trim();
-						foreach (WeaponType wt in Enum.GetValues<WeaponType>())
+						foreach (WeaponType wt in EnumUtil.GetValues<WeaponType>())
 						{
 							if (wt.ToString().equals(item))
 							{
@@ -1099,7 +1099,7 @@ public class ItemData: DataReaderBase
 							}
 						}
 						
-						foreach (ArmorType at in Enum.GetValues<ArmorType>())
+						foreach (ArmorType at in EnumUtil.GetValues<ArmorType>())
 						{
 							if (at.ToString().equals(item))
 							{

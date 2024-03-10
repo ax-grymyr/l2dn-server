@@ -35,7 +35,7 @@ public class ItemCrystallizationData: DataReaderBase
 	public void load()
 	{
 		_crystallizationTemplates.clear();
-		foreach (CrystalType crystalType in Enum.GetValues<CrystalType>())
+		foreach (CrystalType crystalType in EnumUtil.GetValues<CrystalType>())
 			_crystallizationTemplates.put(crystalType, new());
 		
 		_items.clear();
@@ -222,7 +222,7 @@ public class ItemCrystallizationData: DataReaderBase
 			int itemId = el.GetAttributeValueAsInt32("id");
 			int enchantLevel = el.GetAttributeValueAsInt32("enchant");
 			double chance = el.GetAttributeValueAsDouble("chance");
-			foreach (CrystalType grade in Enum.GetValues<CrystalType>())
+			foreach (CrystalType grade in EnumUtil.GetValues<CrystalType>())
 			{
 				long count = el.Attribute("amount" + grade).GetInt64(-1);
 				if (count <= 0)

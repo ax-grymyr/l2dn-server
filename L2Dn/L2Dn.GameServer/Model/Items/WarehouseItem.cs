@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items;
 
@@ -67,7 +68,7 @@ public class WarehouseItem
 		_time = item.isTimeLimitedItem() ? item.getRemainingTime() : null;
 		_elemAtkType = item.getAttackAttributeType();
 		_elemAtkPower = item.getAttackAttributePower();
-		foreach (AttributeType type in Enum.GetValues<AttributeType>())
+		foreach (AttributeType type in EnumUtil.GetValues<AttributeType>())
 		{
 			if (type != AttributeType.NONE)
 				_elemDefAttr[(int)type] = item.getDefenceAttribute(type);

@@ -6,6 +6,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model;
 
@@ -27,7 +28,7 @@ public class Petition
 	public Petition(Player petitioner, String petitionText, int petitionType)
 	{
 		_id = IdManager.getInstance().getNextId();
-		_type = Enum.GetValues<PetitionType>()[petitionType - 1];
+		_type = (PetitionType)(petitionType - 1);
 		_content = petitionText;
 		_petitioner = petitioner;
 	}

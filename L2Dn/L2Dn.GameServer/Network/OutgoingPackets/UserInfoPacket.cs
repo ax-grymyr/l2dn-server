@@ -3,12 +3,14 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -72,24 +74,27 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		}
 
 		int initSize = 5;
-		foreach (UserInfoType type in Enum.GetValues<UserInfoType>())
+		foreach (UserInfoType type in EnumUtil.GetValues<UserInfoType>())
 		{
-			switch (type)
+			if (_helper.HasComponent(type))
 			{
-				case UserInfoType.BASIC_INFO:
+				switch (type)
 				{
-					initSize += type.GetBlockLength() + (_player.getAppearance().getVisibleName().Length * 2);
-					break;
-				}
-				case UserInfoType.CLAN:
-				{
-					initSize += type.GetBlockLength() + (_title.Length * 2);
-					break;
-				}
-				default:
-				{
-					initSize += type.GetBlockLength();
-					break;
+					case UserInfoType.BASIC_INFO:
+					{
+						initSize += type.GetBlockLength() + (_player.getAppearance().getVisibleName().Length * 2);
+						break;
+					}
+					case UserInfoType.CLAN:
+					{
+						initSize += type.GetBlockLength() + (_title.Length * 2);
+						break;
+					}
+					default:
+					{
+						initSize += type.GetBlockLength();
+						break;
+					}
 				}
 			}
 		}
@@ -105,6 +110,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(_relation);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.BASIC_INFO))
 		{
 			writer.WriteInt16((short)(23 + (_player.getAppearance().getVisibleName().Length * 2)));
@@ -117,6 +123,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getLevel()); // 270
 			writer.WriteInt32((int)_player.getClassId()); // 286
 		}
+		
 		if (_helper.HasComponent(UserInfoType.BASE_STATS))
 		{
 			writer.WriteInt16(18);
@@ -129,6 +136,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16(0);
 			writer.WriteInt16(0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.MAX_HPCPMP))
 		{
 			writer.WriteInt16(14);
@@ -136,6 +144,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getMaxMp());
 			writer.WriteInt32(_player.getMaxCp());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.CURRENT_HPMPCP_EXP_SP))
 		{
 			writer.WriteInt16(39);
@@ -151,6 +160,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 
 			writer.WriteByte(0); // 430
 		}
+		
 		if (_helper.HasComponent(UserInfoType.ENCHANTLEVEL))
 		{
 			writer.WriteInt16(5); // 338
@@ -158,6 +168,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteByte((byte)_armorEnchant);
 			writer.WriteByte(0); // 338 - cBackEnchant?
 		}
+		
 		if (_helper.HasComponent(UserInfoType.APPAREANCE))
 		{
 			writer.WriteInt16(19); // 338
@@ -167,6 +178,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteByte(_player.isHairAccessoryEnabled());
 			writer.WriteInt32(_player.getVisualHairColor() + 1); // 338 - DK color.
 		}
+		
 		if (_helper.HasComponent(UserInfoType.STATUS))
 		{
 			writer.WriteInt16(6);
@@ -175,6 +187,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteByte(_player.hasDwarvenCraft() || (_player.getSkillLevel(248) > 0));
 			writer.WriteByte(0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.STATS))
 		{
 			writer.WriteInt16(64); // 270
@@ -195,6 +208,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getStat().getWeaponBonusPAtk()); // 270
 			writer.WriteInt32(_player.getStat().getWeaponBonusMAtk()); // 270
 		}
+		
 		if (_helper.HasComponent(UserInfoType.ELEMENTALS))
 		{
 			writer.WriteInt16(14);
@@ -205,6 +219,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16(0);
 			writer.WriteInt16(0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.POSITION))
 		{
 			writer.WriteInt16(18);
@@ -213,6 +228,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getZ());
 			writer.WriteInt32(_player.isInVehicle() ? _player.getVehicle().getObjectId() : 0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.SPEED))
 		{
 			writer.WriteInt16(18);
@@ -225,24 +241,28 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16((short)_flyRunSpd);
 			writer.WriteInt16((short)_flyWalkSpd);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.MULTIPLIER))
 		{
 			writer.WriteInt16(18);
 			writer.WriteDouble(_moveMultiplier);
 			writer.WriteDouble(_player.getAttackSpeedMultiplier());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.COL_RADIUS_HEIGHT))
 		{
 			writer.WriteInt16(18);
 			writer.WriteDouble(_player.getCollisionRadius());
 			writer.WriteDouble(_player.getCollisionHeight());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.ATK_ELEMENTAL))
 		{
 			writer.WriteInt16(5);
 			writer.WriteByte(0);
 			writer.WriteInt16(0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.CLAN))
 		{
 			writer.WriteInt16((short)(32 + (_title.Length * 2)));
@@ -257,6 +277,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getAllyCrestId() ?? 0);
 			writer.WriteByte(_player.isInMatchingRoom());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.SOCIAL))
 		{
 			writer.WriteInt16(34); // 447
@@ -281,6 +302,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(0); // 228
 			writer.WriteInt32(0); // 447
 		}
+		
 		if (_helper.HasComponent(UserInfoType.VITA_FAME))
 		{
 			writer.WriteInt16(19); // 196
@@ -292,6 +314,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16(0); // Henna Seal Engraving Gauge
 			writer.WriteByte(0); // 196
 		}
+		
 		if (_helper.HasComponent(UserInfoType.SLOTS))
 		{
 			writer.WriteInt16(12); // 152
@@ -311,18 +334,21 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			}
 			writer.WriteByte((byte)_player.getInventory().getArtifactSlots()); // Artifact set slots // 152
 		}
+		
 		if (_helper.HasComponent(UserInfoType.MOVEMENTS))
 		{
 			writer.WriteInt16(4);
 			writer.WriteByte((byte)(_player.isInsideZone(ZoneId.WATER) ? 1 : _player.isFlyingMounted() ? 2 : 0));
 			writer.WriteByte(_player.isRunning());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.COLOR))
 		{
 			writer.WriteInt16(10);
 			writer.WriteInt32(_player.getAppearance().getNameColor().Value);
 			writer.WriteInt32(_player.getAppearance().getTitleColor().Value);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.INVENTORY_LIMIT))
 		{
 			writer.WriteInt16(13);
@@ -335,6 +361,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteByte(0); // 196
 			writer.WriteByte(0); // 196
 		}
+		
 		if (_helper.HasComponent(UserInfoType.TRUE_HERO))
 		{
 			writer.WriteInt16(9);
@@ -342,6 +369,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt16(0);
 			writer.WriteByte((byte)(_player.isTrueHero() ? 100 : 0));
 		}
+		
 		if (_helper.HasComponent(UserInfoType.ATT_SPIRITS)) // 152
 		{
 			writer.WriteInt16(34);
@@ -354,34 +382,41 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32((int) _player.getWindSpiritDefense());
 			writer.WriteInt32((int) _player.getEarthSpiritDefense());
 		}
+		
 		if (_helper.HasComponent(UserInfoType.RANKING)) // 196
 		{
 			writer.WriteInt16(6);
 			writer.WriteInt32(RankManager.getInstance().getPlayerGlobalRank(_player) == 1 ? 1 : RankManager.getInstance().getPlayerRaceRank(_player) == 1 ? 2 : 0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.STAT_POINTS)) // 235
 		{
+			PlayerVariables playerVariables = _player.getVariables();
 			writer.WriteInt16(16);
 			writer.WriteInt16((short)(_player.getLevel() < 76 ? 0 : (_player.getLevel() - 75) + _player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0) + (int) _player.getStat().getValue(Stat.ELIXIR_USAGE_LIMIT, 0))); // Usable points
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_STR, 0));
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_DEX, 0));
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_CON, 0));
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_INT, 0));
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_WIT, 0));
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.STAT_MEN, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_STR, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_DEX, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_CON, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_INT, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_WIT, 0));
+			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_MEN, 0));
 		}
+		
 		if (_helper.HasComponent(UserInfoType.STAT_ABILITIES)) // 235
 		{
+			PlayerVariables playerVariables = _player.getVariables();
+			PlayerTemplate playerTemplate = _player.getTemplate();
 			writer.WriteInt16(18);
-			writer.WriteInt16((short)(_player.getSTR() - _player.getTemplate().getBaseSTR() - _player.getVariables().getInt(PlayerVariables.STAT_STR, 0))); // additional STR
-			writer.WriteInt16((short)(_player.getDEX() - _player.getTemplate().getBaseDEX() - _player.getVariables().getInt(PlayerVariables.STAT_DEX, 0))); // additional DEX
-			writer.WriteInt16((short)(_player.getCON() - _player.getTemplate().getBaseCON() - _player.getVariables().getInt(PlayerVariables.STAT_CON, 0))); // additional CON
-			writer.WriteInt16((short)(_player.getINT() - _player.getTemplate().getBaseINT() - _player.getVariables().getInt(PlayerVariables.STAT_INT, 0))); // additional INT
-			writer.WriteInt16((short)(_player.getWIT() - _player.getTemplate().getBaseWIT() - _player.getVariables().getInt(PlayerVariables.STAT_WIT, 0))); // additional WIT
-			writer.WriteInt16((short)(_player.getMEN() - _player.getTemplate().getBaseMEN() - _player.getVariables().getInt(PlayerVariables.STAT_MEN, 0))); // additional MEN
+			writer.WriteInt16((short)(_player.getSTR() - playerTemplate.getBaseSTR() - playerVariables.getInt(PlayerVariables.STAT_STR, 0))); // additional STR
+			writer.WriteInt16((short)(_player.getDEX() - playerTemplate.getBaseDEX() - playerVariables.getInt(PlayerVariables.STAT_DEX, 0))); // additional DEX
+			writer.WriteInt16((short)(_player.getCON() - playerTemplate.getBaseCON() - playerVariables.getInt(PlayerVariables.STAT_CON, 0))); // additional CON
+			writer.WriteInt16((short)(_player.getINT() - playerTemplate.getBaseINT() - playerVariables.getInt(PlayerVariables.STAT_INT, 0))); // additional INT
+			writer.WriteInt16((short)(_player.getWIT() - playerTemplate.getBaseWIT() - playerVariables.getInt(PlayerVariables.STAT_WIT, 0))); // additional WIT
+			writer.WriteInt16((short)(_player.getMEN() - playerTemplate.getBaseMEN() - playerVariables.getInt(PlayerVariables.STAT_MEN, 0))); // additional MEN
 			writer.WriteInt16(0);
 			writer.WriteInt16(0);
 		}
+		
 		if (_helper.HasComponent(UserInfoType.ELIXIR_USED)) // 286
 		{
 			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0)); // count

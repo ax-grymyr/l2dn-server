@@ -1,3 +1,5 @@
+using L2Dn.Utilities;
+
 namespace L2Dn.GameServer.Model.Skills;
 
 /**
@@ -25,7 +27,7 @@ public static class SkillConditionScopeUtil
 
 	public static SkillConditionScope? FindByXmlName(string name)
 	{
-		foreach (SkillConditionScope value in Enum.GetValues<SkillConditionScope>())
+		foreach (SkillConditionScope value in EnumUtil.GetValues<SkillConditionScope>())
 		{
 			if (GetName(value) == name)
 				return value;

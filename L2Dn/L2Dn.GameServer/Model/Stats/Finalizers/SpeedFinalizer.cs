@@ -1,9 +1,11 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -24,7 +26,7 @@ public class SpeedFinalizer: StatFunction
 		}
 
 		int speedStat = (int)creature.getStat().getAdd(Stat.STAT_BONUS_SPEED, -1);
-		BaseStat[] baseStats = Enum.GetValues<BaseStat>();
+		ImmutableArray<BaseStat> baseStats = EnumUtil.GetValues<BaseStat>();
 		if ((speedStat >= 0) && (speedStat < baseStats.Length))
 		{
 			BaseStat baseStat = baseStats[speedStat];

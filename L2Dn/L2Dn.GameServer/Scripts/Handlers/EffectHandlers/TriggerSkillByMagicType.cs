@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -93,13 +94,8 @@ public class TriggerSkillByMagicType: AbstractEffect
 		}
 		
 		// Ignore common skills.
-		foreach (CommonSkill skill in Enum.GetValues<CommonSkill>())
-		{
-			if ((int)skill == eventSkill.getId())
-			{
-				return;
-			}
-		}
+		if (EnumUtil.GetValues<CommonSkill>().Contains((CommonSkill)eventSkill.getId()))
+			return;
 		
 		Skill triggerSkill;
 		if (_skillLevelScaleTo <= 0)

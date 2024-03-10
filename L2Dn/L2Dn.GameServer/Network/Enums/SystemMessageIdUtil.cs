@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.CustomAttributes;
 using L2Dn.Extensions;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Network.Enums;
@@ -16,7 +17,7 @@ public static class SystemMessageIdUtil
 
 	static SystemMessageIdUtil()
 	{
-		_infos = Enum.GetValues<SystemMessageId>().Select(id =>
+		_infos = EnumUtil.GetValues<SystemMessageId>().Select(id =>
 		{
 			string? text = id.GetCustomAttribute<SystemMessageId, TextAttribute>()?.Text;
 			int paramCount = ParseMessageParameters(id.ToString());
