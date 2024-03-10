@@ -43,7 +43,7 @@ public class CellNodeBuffer
 	
 	public CellNode findPath(int x, int y, int z, int tx, int ty, int tz)
 	{
-		_timeStamp = DateTime.Now;
+		_timeStamp = DateTime.UtcNow;
 		_baseX = x + ((tx - x - _mapSize) / 2); // Middle of the line (x,y) - (tx,ty).
 		_baseY = y + ((ty - y - _mapSize) / 2); // Will be in the center of the buffer.
 		_targetX = tx;
@@ -92,7 +92,7 @@ public class CellNodeBuffer
 			Monitor.Exit(_lock);
 		}
 		
-		_lastElapsedTime = DateTime.Now - _timeStamp;
+		_lastElapsedTime = DateTime.UtcNow - _timeStamp;
 	}
 	
 	public TimeSpan getElapsedTime()

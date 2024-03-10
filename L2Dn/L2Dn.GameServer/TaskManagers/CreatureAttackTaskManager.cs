@@ -130,7 +130,7 @@ public class CreatureAttackTaskManager
 	private void scheduleAttack(ScheduledAttackType type, Creature creature, Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack, int taskDelay)
 	{
 		ScheduledAttack scheduledAttack = new ScheduledAttack(type, weapon, attack, hitTime, attackTime, delayForSecondAttack, 
-			DateTime.Now.AddMilliseconds(taskDelay));
+			DateTime.UtcNow.AddMilliseconds(taskDelay));
 		
 		foreach (Map<Creature, ScheduledAttack> pool in ATTACK_POOLS)
 		{
@@ -149,7 +149,7 @@ public class CreatureAttackTaskManager
 	
 	public void onAttackFinish(Creature creature, AttackPacket attack, int taskDelay)
 	{
-		ScheduledFinish scheduledFinish = new ScheduledFinish(attack, DateTime.Now.AddMilliseconds(taskDelay));
+		ScheduledFinish scheduledFinish = new ScheduledFinish(attack, DateTime.UtcNow.AddMilliseconds(taskDelay));
 		
 		foreach (Map<Creature, ScheduledFinish> pool in FINISH_POOLS)
 		{

@@ -27,7 +27,7 @@ public class PvpFlagTaskManager: Runnable
 		
 		if (!PLAYERS.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			foreach (Player player in PLAYERS)
 			{
 				if (currentTime > player.getPvpFlagLasts())

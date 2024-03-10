@@ -29,7 +29,7 @@ public class DecayTaskManager: Runnable
 
 		if (!DECAY_SCHEDULES.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			List<Creature> creatures = DECAY_SCHEDULES.Where(c => currentTime > c.Value).Select(x => x.Key).ToList();
 			foreach (Creature creature in creatures)
 			{
@@ -94,7 +94,7 @@ public class DecayTaskManager: Runnable
 		}
 		
 		// Add to decay schedules.
-		DECAY_SCHEDULES.put(creature, DateTime.Now.AddMilliseconds(delay * 1000));
+		DECAY_SCHEDULES.put(creature, DateTime.UtcNow.AddMilliseconds(delay * 1000));
 	}
 	
 	/**
@@ -114,7 +114,7 @@ public class DecayTaskManager: Runnable
 	public TimeSpan getRemainingTime(Creature creature)
 	{
 		if (DECAY_SCHEDULES.TryGetValue(creature, out DateTime time))
-			return time - DateTime.Now;
+			return time - DateTime.UtcNow;
 		
 		return TimeSpan.MaxValue;
 	}
@@ -130,7 +130,7 @@ public class DecayTaskManager: Runnable
 		ret.Append("Tasks dump:");
 		ret.Append(Environment.NewLine);
 		
-		DateTime time = DateTime.Now;
+		DateTime time = DateTime.UtcNow;
 		foreach (var entry in DECAY_SCHEDULES)
 		{
 			ret.Append("Class/Name: ");

@@ -27,7 +27,7 @@ public class ItemAppearanceTaskManager: Runnable
 		
 		if (!ITEMS.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			List<Item> itemsToDelete = ITEMS.Where(x => currentTime > x.Value).Select(x => x.Key).ToList();
 			foreach (Item item in itemsToDelete)
 			{

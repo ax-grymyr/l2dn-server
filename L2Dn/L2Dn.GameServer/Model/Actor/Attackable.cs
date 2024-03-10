@@ -148,7 +148,7 @@ public class Attackable : Npc
 						if (_firstCommandChannelAttacked != null)
 						{
 							_commandChannelTimer = new CommandChannelTimer(this);
-							_commandChannelLastAttack = DateTime.Now;
+							_commandChannelLastAttack = DateTime.UtcNow;
 							ThreadPool.schedule(_commandChannelTimer, 10000); // check for last attack
 							_firstCommandChannelAttacked.broadcastPacket(new CreatureSayPacket(null, ChatType.PARTYROOM_ALL, "", "You have looting rights!")); // TODO: retail msg
 						}
@@ -157,7 +157,7 @@ public class Attackable : Npc
 			}
 			else if (attacker.getParty().getCommandChannel().Equals(_firstCommandChannelAttacked)) // is in same channel
 			{
-				_commandChannelLastAttack = DateTime.Now; // update last attack time
+				_commandChannelLastAttack = DateTime.UtcNow; // update last attack time
 			}
 		}
 		
@@ -551,7 +551,7 @@ public class Attackable : Npc
 									}
 									if (useVitalityRate())
 									{
-										if (attacker.getSayhaGraceSupportEndTime() < DateTime.Now)
+										if (attacker.getSayhaGraceSupportEndTime() < DateTime.UtcNow)
 										{
 											attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), exp, _isRaid), true, false);
 										}

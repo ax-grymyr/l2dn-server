@@ -1013,7 +1013,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 				if (weaponItem.getItemType().isRanged())
 				{
 					// Check if bow delay is still active.
-					if (_disableRangedAttackEndTime > DateTime.Now)
+					if (_disableRangedAttackEndTime > DateTime.UtcNow)
 					{
 						if (isPlayer())
 						{
@@ -1093,7 +1093,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			bool isTwoHanded = (weaponItem != null) && (weaponItem.getBodyPart() == ItemTemplate.SLOT_LR_HAND);
 			int timeAtk = Formulas.calculateTimeBetweenAttacks(_stat.getPAtkSpd());
 			int timeToHit = Formulas.calculateTimeToHit(timeAtk, weaponType, isTwoHanded, false);
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			_attackEndTime = currentTime.AddMilliseconds(timeAtk);
 			// Precaution. It has happened in the past. Probably impossible to happen now, but will not risk it.
 			if (_attackEndTime < currentTime)
@@ -3025,7 +3025,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public bool isAttackingNow()
 	{
-		return _attackEndTime > DateTime.Now;
+		return _attackEndTime > DateTime.UtcNow;
 	}
 	
 	/**

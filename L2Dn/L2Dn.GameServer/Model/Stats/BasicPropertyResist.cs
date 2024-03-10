@@ -19,7 +19,7 @@ public class BasicPropertyResist
 	 */
 	public bool isExpired()
 	{
-		return DateTime.Now > _resistanceEndTime;
+		return DateTime.UtcNow > _resistanceEndTime;
 	}
 	
 	/**
@@ -28,7 +28,7 @@ public class BasicPropertyResist
 	 */
 	public TimeSpan getRemainTime()
 	{
-		return DateTime.Now - _resistanceEndTime;
+		return DateTime.UtcNow - _resistanceEndTime;
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class BasicPropertyResist
 		if (isExpired())
 		{
 			_resistanceLevel = 1;
-			_resistanceEndTime = DateTime.Now + RESIST_DURATION;
+			_resistanceEndTime = DateTime.UtcNow + RESIST_DURATION;
 		}
 		else
 		{

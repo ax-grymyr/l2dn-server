@@ -28,7 +28,7 @@ public class GameTimeTaskManager
 	{
 		//base.setPriority(MAX_PRIORITY); // Max priority thread
 
-		DateTime now = DateTime.Today;
+		DateTime now = DateTime.Today.ToUniversalTime();
 		_referenceTime = now;
 
 		System.Threading.Tasks.Task.Run(() => run()); // TODO: run as task for now 
@@ -43,7 +43,7 @@ public class GameTimeTaskManager
 	{
 		while (!_stopRequested)
 		{
-			_gameTicks = (int)((DateTime.Now - _referenceTime).TotalMilliseconds / MILLIS_IN_TICK);
+			_gameTicks = (int)((DateTime.UtcNow - _referenceTime).TotalMilliseconds / MILLIS_IN_TICK);
 			_gameTime = (_gameTicks % TICKS_PER_IG_DAY) / MILLIS_IN_TICK;
 			_gameHour = _gameTime / 60;
 			

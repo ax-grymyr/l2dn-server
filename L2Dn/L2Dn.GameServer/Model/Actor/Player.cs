@@ -95,7 +95,7 @@ public class Player: Playable
 	private readonly int _accountId;
 	private readonly String _accountName;
 	private DateTime? _deleteTime;
-	private DateTime _createDate = DateTime.Now;
+	private DateTime _createDate = DateTime.UtcNow;
 	
 	private String _lang = null;
 	private String _htmlPrefix = "";
@@ -11088,7 +11088,7 @@ public class Player: Playable
 				LOGGER.Error("deleteMe() called on offline character " + this);
 			}
 			setOnlineStatus(false, true);
-			CharInfoTable.getInstance().setLastAccess(getObjectId(), DateTime.Now);
+			CharInfoTable.getInstance().setLastAccess(getObjectId(), DateTime.UtcNow);
 		}
 		catch (Exception e)
 		{
@@ -14625,7 +14625,7 @@ public class Player: Playable
 	public bool isInTraingCamp()
 	{
 		TrainingHolder trainingHolder = getTraingCampInfo();
-		return (trainingHolder != null) && (trainingHolder.getEndTime() > DateTime.Now);
+		return (trainingHolder != null) && (trainingHolder.getEndTime() > DateTime.UtcNow);
 	}
 	
 	public AttendanceInfoHolder getAttendanceInfo()
@@ -14746,7 +14746,7 @@ public class Player: Playable
 			_vipTier = newTier;
 			if (newTier > 0)
 			{
-				getAccountVariables().set(AccountVariables.VIP_EXPIRATION, DateTime.Now.AddDays(30));
+				getAccountVariables().set(AccountVariables.VIP_EXPIRATION, DateTime.UtcNow.AddDays(30));
 				VipManager.getInstance().manageTier(this);
 			}
 			else

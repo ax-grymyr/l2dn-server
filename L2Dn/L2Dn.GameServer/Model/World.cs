@@ -263,7 +263,7 @@ public sealed class World
 	{
 		lock (_allStoreModeBuySellPlayers)
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			if (currentTime > _nextPrivateStoreUpdate)
 			{
 				_nextPrivateStoreUpdate = currentTime + TimeSpan.FromMilliseconds(Config.STORE_REVIEW_CACHE_TIME);

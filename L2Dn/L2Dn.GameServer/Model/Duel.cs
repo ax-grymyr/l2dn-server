@@ -66,7 +66,7 @@ public class Duel
 			_playerB.setStartingDuel();
 		}
 
-		_duelEndTime = DateTime.Now.AddSeconds(_partyDuel ? PARTY_DUEL_DURATION : PLAYER_DUEL_DURATION);
+		_duelEndTime = DateTime.UtcNow.AddSeconds(_partyDuel ? PARTY_DUEL_DURATION : PLAYER_DUEL_DURATION);
 		setFinished(false);
 		
 		if (_partyDuel)

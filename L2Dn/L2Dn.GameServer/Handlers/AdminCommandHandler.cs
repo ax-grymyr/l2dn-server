@@ -93,7 +93,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 			// Admin Commands must run through a long running task, otherwise a command that takes too much time will freeze the server, this way you'll feel only a minor spike.
 			ThreadPool.execute(() =>
 			{
-				DateTime begin = DateTime.Now;
+				DateTime begin = DateTime.UtcNow;
 				try
 				{
 					if (Config.GMAUDIT)
@@ -112,7 +112,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 				}
 				finally
 				{
-					TimeSpan runtime = DateTime.Now - begin;
+					TimeSpan runtime = DateTime.UtcNow - begin;
 					if (runtime > TimeSpan.FromSeconds(5))
 					{
 						player.sendMessage("The execution of '" + fullCommand + "' took " + runtime + ".");

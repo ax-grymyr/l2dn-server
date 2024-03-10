@@ -286,7 +286,7 @@ public class CreatureAI : AbstractAI
 			return;
 		}
 		
-		DateTime currentTime = DateTime.Now;
+		DateTime currentTime = DateTime.UtcNow;
 		DateTime attackEndTime = _actor.getAttackEndTime();
 		if (attackEndTime > currentTime)
 		{

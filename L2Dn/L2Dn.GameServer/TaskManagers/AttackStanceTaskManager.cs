@@ -37,7 +37,7 @@ public class AttackStanceTaskManager: Runnable
 		{
 			try
 			{
-				DateTime currentTime = DateTime.Now;
+				DateTime currentTime = DateTime.UtcNow;
 				List<Creature> toRemove = new List<Creature>();
 				foreach (var entry in CREATURE_ATTACK_STANCES)
 				{
@@ -90,7 +90,7 @@ public class AttackStanceTaskManager: Runnable
 			return;
 		}
 		
-		CREATURE_ATTACK_STANCES.put(creature, DateTime.Now);
+		CREATURE_ATTACK_STANCES.put(creature, DateTime.UtcNow);
 	}
 	
 	/**

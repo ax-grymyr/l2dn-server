@@ -28,7 +28,7 @@ public class RespawnTaskManager: Runnable
 
 		if (!PENDING_RESPAWNS.isEmpty())
 		{
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = DateTime.UtcNow;
 			List<Npc> npcs = PENDING_RESPAWNS.Where(x => currentTime > x.Value).Select(x => x.Key).ToList();
 			foreach (Npc npc in npcs)
 			{

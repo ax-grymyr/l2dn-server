@@ -143,7 +143,7 @@ public class CellPathFinding: PathFinding
 			return path;
 		}
 		
-		DateTime timeStamp = DateTime.Now;
+		DateTime timeStamp = DateTime.UtcNow;
 		_postFilterUses++;
 		if (playable)
 		{
@@ -203,7 +203,7 @@ public class CellPathFinding: PathFinding
 		}
 		
 		_findSuccess++;
-		_postFilterElapsed += DateTime.Now - timeStamp;
+		_postFilterElapsed += DateTime.UtcNow - timeStamp;
 		return path;
 	}
 	

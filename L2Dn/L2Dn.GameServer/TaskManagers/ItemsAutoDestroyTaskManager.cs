@@ -69,7 +69,7 @@ public class ItemsAutoDestroyTaskManager: Runnable
 	
 	public void addItem(Item item)
 	{
-		item.setDropTime(DateTime.Now);
+		item.setDropTime(DateTime.UtcNow);
 		ITEMS.add(item);
 	}
 	
