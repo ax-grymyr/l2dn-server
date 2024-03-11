@@ -9,11 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\Links.txt = Documentation\Links.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Utility", "L2Dn.Utility\L2Dn.Utility.csproj", "{4AFC09E6-5564-4911-B432-8CD5A239132F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Protocol", "L2Dn.Protocol\L2Dn.Protocol.csproj", "{9CE64212-70CD-4B05-B0FF-40CED4939EF8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.DbModel", "L2Dn.DbModel\L2Dn.DbModel.csproj", "{42E8EE05-D53A-4CBC-99B0-2B37934EAE7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.AuthServer", "L2Dn.AuthServer\L2Dn.AuthServer.csproj", "{44FBD2D2-EB06-4B69-A8CB-43ECEC193451}"
 EndProject
@@ -42,18 +38,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4AFC09E6-5564-4911-B432-8CD5A239132F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AFC09E6-5564-4911-B432-8CD5A239132F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AFC09E6-5564-4911-B432-8CD5A239132F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AFC09E6-5564-4911-B432-8CD5A239132F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CE64212-70CD-4B05-B0FF-40CED4939EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CE64212-70CD-4B05-B0FF-40CED4939EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE64212-70CD-4B05-B0FF-40CED4939EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE64212-70CD-4B05-B0FF-40CED4939EF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42E8EE05-D53A-4CBC-99B0-2B37934EAE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42E8EE05-D53A-4CBC-99B0-2B37934EAE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42E8EE05-D53A-4CBC-99B0-2B37934EAE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42E8EE05-D53A-4CBC-99B0-2B37934EAE7A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44FBD2D2-EB06-4B69-A8CB-43ECEC193451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44FBD2D2-EB06-4B69-A8CB-43ECEC193451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44FBD2D2-EB06-4B69-A8CB-43ECEC193451}.Release|Any CPU.ActiveCfg = Release|Any CPU

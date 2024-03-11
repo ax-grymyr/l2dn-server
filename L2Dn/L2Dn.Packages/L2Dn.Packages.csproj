@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\L2Dn.Cryptography\L2Dn.Cryptography.csproj" />
-      <ProjectReference Include="..\L2Dn.Utility\L2Dn.Utility.csproj" />
     </ItemGroup>
 
     <ItemGroup>
