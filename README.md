@@ -15,8 +15,8 @@ TBD: license, notes, etc.
 
 #### Milestones
 
-1) Make code compile
-2) Make the server able to run without crashes
+1) ~~Make code compile~~ Done
+2) ~~Make the server able to run without crashes~~ Done
 3) Make main functionality work
 4) Port scripts (quests, events, etc)
 5) TBD
