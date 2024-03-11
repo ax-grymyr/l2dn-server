@@ -19,7 +19,7 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override bool isAvailable(Player player)
 	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
+		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
 		return (entry != null) && (entry.getStatus() == DailyMissionStatus.AVAILABLE);
 	}
 	
@@ -31,7 +31,8 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 	
 	private void onPlayerLogin(OnPlayerLogin @event)
 	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(@event.getPlayer().getObjectId(), true);
+		Player player = @event.getPlayer();
+		DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 		if (entry.getStatus() != DailyMissionStatus.COMPLETED)
 		{
 			DateTime now = DateTime.Now;
@@ -44,6 +45,6 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 			}
 		}
 		
-		storePlayerEntry(entry);
+		player.getDailyMissions().storeEntry(entry);
 	}
 }

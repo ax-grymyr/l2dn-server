@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
 using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Quests;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -30,7 +31,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override bool isAvailable(Player player)
 	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
+		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
 		if (entry != null)
 		{
 			switch (entry.getStatus())
@@ -40,7 +41,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 					if (entry.getProgress() >= _amount)
 					{
 						entry.setStatus(DailyMissionStatus.AVAILABLE);
-						storePlayerEntry(entry);
+						player.getDailyMissions().storeEntry(entry);
 					}
 					break;
 				}
@@ -50,6 +51,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 				}
 			}
 		}
+        
 		return false;
 	}
 	
@@ -57,27 +59,31 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 	{
 		if (@event.getWinner() != null)
 		{
-			DailyMissionPlayerEntry winnerEntry = getPlayerEntry(@event.getWinner().getObjectId(), true);
+			Player player = @event.getWinner().getPlayer();
+			DailyMissionPlayerEntry winnerEntry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 			if (winnerEntry.getStatus() == DailyMissionStatus.NOT_AVAILABLE)
 			{
 				if (winnerEntry.increaseProgress() >= _amount)
 				{
 					winnerEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
-				storePlayerEntry(winnerEntry);
+
+				player.getDailyMissions().storeEntry(winnerEntry);
 			}
 		}
 		
 		if (!_winOnly && (@event.getLoser() != null))
 		{
-			DailyMissionPlayerEntry loseEntry = getPlayerEntry(@event.getLoser().getObjectId(), true);
+			Player player = @event.getLoser().getPlayer();
+			DailyMissionPlayerEntry loseEntry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 			if (loseEntry.getStatus() == DailyMissionStatus.NOT_AVAILABLE)
 			{
 				if (loseEntry.increaseProgress() >= _amount)
 				{
 					loseEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
-				storePlayerEntry(loseEntry);
+				
+				player.getDailyMissions().storeEntry(loseEntry);
 			}
 		}
 	}

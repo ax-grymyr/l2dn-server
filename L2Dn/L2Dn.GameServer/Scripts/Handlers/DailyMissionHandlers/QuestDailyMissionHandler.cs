@@ -29,7 +29,7 @@ public class QuestDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override bool isAvailable(Player player)
 	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
+		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
 		if (entry != null)
 		{
 			switch (entry.getStatus())
@@ -39,7 +39,7 @@ public class QuestDailyMissionHandler: AbstractDailyMissionHandler
 					if (entry.getProgress() >= _amount)
 					{
 						entry.setStatus(DailyMissionStatus.AVAILABLE);
-						storePlayerEntry(entry);
+						player.getDailyMissions().storeEntry(entry);
 					}
 					break;
 				}
@@ -49,6 +49,7 @@ public class QuestDailyMissionHandler: AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -57,14 +58,15 @@ public class QuestDailyMissionHandler: AbstractDailyMissionHandler
 		Player player = @event.getPlayer();
 		if (@event.getQuestType() == QuestType.DAILY)
 		{
-			DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), true);
+			DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 			if (entry.getStatus() == DailyMissionStatus.NOT_AVAILABLE)
 			{
 				if (entry.increaseProgress() >= _amount)
 				{
 					entry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
-				storePlayerEntry(entry);
+                
+				player.getDailyMissions().storeEntry(entry);
 			}
 		}
 	}

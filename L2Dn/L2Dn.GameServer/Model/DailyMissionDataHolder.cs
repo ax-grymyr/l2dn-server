@@ -168,17 +168,26 @@ public class DailyMissionDataHolder
 	
 	public DailyMissionStatus getStatus(Player player)
 	{
-		return _handler?.getStatus(player) ?? DailyMissionStatus.NOT_AVAILABLE;
+		if (_handler is null)
+			return DailyMissionStatus.NOT_AVAILABLE;
+		
+		return player.getDailyMissions().getStatus(_id);
 	}
 	
 	public int getProgress(Player player)
 	{
-		return _handler?.getProgress(player) ?? 0;
+		if (_handler is null)
+			return 0;
+		
+		return _handler.getProgress(player);
 	}
 	
 	public bool isRecentlyCompleted(Player player)
 	{
-		return _handler != null && _handler.isRecentlyCompleted(player);
+		if (_handler is null)
+			return false;
+		
+		return player.getDailyMissions().isRecentlyCompleted(_id);
 	}
 	
 	public void reset()

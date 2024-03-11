@@ -99,29 +99,24 @@ public class MissionLevelPlayerDataHolder
 	{
 		StringBuilder sb = new StringBuilder();
 		// CurrentLevel:5;LevelXP:10;ListOfBaseRewards:2,19,20;ListOfKeyRewards:;SpecialRewards:;BonusRewards:;ListOfBonusRewards:;
-		sb.Append("CurrentLevel").Append(":").Append(_currentLevel).Append(";");
-		sb.Append("LevelXP").Append(":").Append(_currentEXP).Append(";");
-		sb.Append("ListOfNormalRewards").Append(":");
-		sb.Append(getStringFromList(_collectedNormalRewards));
-		sb.Append(";");
-		sb.Append("ListOfKeyRewards").Append(":");
-		sb.Append(getStringFromList(_collectedKeyRewards));
-		sb.Append(";");
-		sb.Append("SpecialReward").Append(":");
+		sb.Append("CurrentLevel").Append(':').Append(_currentLevel).Append(';');
+		sb.Append("LevelXP").Append(':').Append(_currentEXP).Append(';');
+		sb.Append("ListOfNormalRewards").Append(':');
+		sb.AppendJoin(',', _collectedNormalRewards);
+		sb.Append(';');
+		sb.Append("ListOfKeyRewards").Append(':');
+		sb.AppendJoin(',', _collectedKeyRewards);
+		sb.Append(';');
+		sb.Append("SpecialReward").Append(':');
 		sb.Append(_collectedSpecialReward);
-		sb.Append(";");
-		sb.Append("BonusReward").Append(":");
+		sb.Append(';');
+		sb.Append("BonusReward").Append(':');
 		sb.Append(_collectedBonusReward);
-		sb.Append(";");
-		sb.Append("ListOfBonusRewards").Append(":");
-		sb.Append(getStringFromList(_listOfCollectedBonusRewards));
-		sb.Append(";");
+		sb.Append(';');
+		sb.Append("ListOfBonusRewards").Append(':');
+		sb.AppendJoin(',', _listOfCollectedBonusRewards);
+		sb.Append(';');
 		return sb.ToString();
-	}
-
-	private String getStringFromList(List<int> list)
-	{
-		return string.Join(",", list);
 	}
 
 	public void storeInfoInVariable(Player player)

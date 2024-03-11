@@ -1,13 +1,12 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
@@ -24,7 +23,6 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 	
 	protected readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractDailyMissionHandler));
 	
-	private readonly Map<int, DailyMissionPlayerEntry> _entries = new();
 	private readonly DailyMissionDataHolder _holder;
 	
 	protected AbstractDailyMissionHandler(DailyMissionDataHolder holder)
@@ -42,22 +40,9 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 	
 	public abstract void init();
 	
-	public DailyMissionStatus getStatus(Player player)
-	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
-		return entry != null ? entry.getStatus() : DailyMissionStatus.NOT_AVAILABLE;
-	}
-	
 	public virtual int getProgress(Player player)
 	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
-		return entry != null ? entry.getProgress() : 0;
-	}
-	
-	public bool isRecentlyCompleted(Player player)
-	{
-		DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), false);
-		return (entry != null) && entry.isRecentlyCompleted();
+		return player.getDailyMissions().getProgress(_holder.getId());
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
@@ -67,22 +52,21 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 		{
 			return;
 		}
+
+		int missionId = getHolder().getId();
 		
-		try 
+		try
 		{
 			using GameServerDbContext ctx = new();
-			int rewardId = _holder.getId();
-			ctx.CharacterDailyRewards.Where(r => r.RewardId == rewardId && r.Status == DailyMissionStatus.COMPLETED)
+			ctx.CharacterDailyRewards.Where(r => r.RewardId == missionId)
 				.ExecuteDelete();
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error while clearing data for: " + e);
+			LOGGER.Warn("Error while deleting rewards from database: " + e);
 		}
-		finally
-		{
-			_entries.clear();
-		}
+		
+		World.getInstance().getPlayers().ForEach(r => r.getDailyMissions().reset(missionId, false));
 	}
 	
 	public bool requestReward(Player player)
@@ -91,14 +75,14 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 		{
 			giveRewards(player);
 			
-			DailyMissionPlayerEntry entry = getPlayerEntry(player.getObjectId(), true);
+			DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(_holder.getId());
 			entry.setStatus(DailyMissionStatus.COMPLETED);
 			entry.setLastCompleted(DateTime.UtcNow);
 			entry.setRecentlyCompleted(true);
-			storePlayerEntry(entry);
-			
+			player.getDailyMissions().storeEntry(entry);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -139,71 +123,5 @@ public abstract class AbstractDailyMissionHandler: ListenersContainer
 				}
 			}
 		}
-	}
-	
-	protected void storePlayerEntry(DailyMissionPlayerEntry entry)
-	{
-		try 
-		{
-			using GameServerDbContext ctx = new();
-			
-			// TODO: delete existing record?
-			
-			ctx.CharacterDailyRewards.Add(new CharacterDailyReward
-			{
-				CharacterId = entry.getObjectId(),
-				RewardId = entry.getRewardId(),
-				Status = entry.getStatus(),
-				Progress = entry.getProgress(),
-				LastCompleted = entry.getLastCompleted()
-			});
-
-			ctx.SaveChanges();
-			
-			// Cache if not exists
-			_entries.computeIfAbsent(entry.getObjectId(), id => entry);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn("Error while saving reward " + entry.getRewardId() + " for player: " + entry.getObjectId() + " in database: " + e);
-		}
-	}
-	
-	protected DailyMissionPlayerEntry getPlayerEntry(int objectId, bool createIfNone)
-	{
-		DailyMissionPlayerEntry existingEntry = _entries.get(objectId);
-		if (existingEntry != null)
-		{
-			return existingEntry;
-		}
-
-		try
-		{
-			using GameServerDbContext ctx = new();
-			int rewardId = _holder.getId();
-			CharacterDailyReward? reward =
-				ctx.CharacterDailyRewards.SingleOrDefault(r => r.CharacterId == objectId && r.RewardId == rewardId);
-
-			if (reward is not null)
-			{
-				DailyMissionPlayerEntry entry = new DailyMissionPlayerEntry(reward.CharacterId, reward.RewardId,
-					reward.Status, reward.Progress, reward.LastCompleted);
-
-				_entries.put(objectId, entry);
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn("Error while loading reward " + _holder.getId() + " for player: " + objectId +
-			            " in database: " + e);
-		}
-
-		if (createIfNone)
-		{
-			DailyMissionPlayerEntry entry = new DailyMissionPlayerEntry(objectId, _holder.getId());
-			_entries.put(objectId, entry);
-			return entry;
-		}
-		return null;
 	}
 }

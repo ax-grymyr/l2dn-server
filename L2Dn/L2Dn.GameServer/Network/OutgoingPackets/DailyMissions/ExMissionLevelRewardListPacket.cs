@@ -11,11 +11,8 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
     private readonly Player _player;
     private readonly MissionLevelPlayerDataHolder _info;
     private readonly int _maxNormalLevel;
-    private readonly string _currentSeason = MissionLevel.getInstance().getCurrentSeason().ToString();
-
-    private readonly MissionLevelHolder _holder =
-        MissionLevel.getInstance().getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
-
+    private readonly int _currentSeason;
+    private readonly MissionLevelHolder _holder;
     private readonly List<int> _collectedNormalRewards;
     private readonly List<int> _collectedKeyRewards;
     private readonly List<int> _collectedBonusRewards;
@@ -25,7 +22,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
         _player = player;
 
         _holder = MissionLevel.getInstance().getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
-        _currentSeason = MissionLevel.getInstance().getCurrentSeason().ToString();
+        _currentSeason = MissionLevel.getInstance().getCurrentSeason();
 
         // After normal rewards there will be bonus.
         _maxNormalLevel = _holder.getBonusLevel();
@@ -52,12 +49,13 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             sendAvailableRewardsList(writer);
         }
 
+        int year = _currentSeason / 100;
+        int month = _currentSeason % 100;
+        
         writer.WriteInt32(_info.getCurrentLevel()); // Level
         writer.WriteInt32(getPercent()); // PointPercent
-        string year = _currentSeason.Substring(0, 4);
-        writer.WriteInt32(int.Parse(year)); // SeasonYear
-        string month = _currentSeason.Substring(4, 6);
-        writer.WriteInt32(int.Parse(month)); // SeasonMonth
+        writer.WriteInt32(year); // SeasonYear
+        writer.WriteInt32(month); // SeasonMonth
         writer.WriteInt32(getAvailableRewards()); // TotalRewardsAvailable
         if (_holder.getBonusRewardIsAvailable() && _holder.getBonusRewardByLevelUp())
         {

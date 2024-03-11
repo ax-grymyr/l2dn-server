@@ -20,6 +20,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Cubics;
+using L2Dn.GameServer.Model.DailyMissions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
@@ -512,6 +513,7 @@ public class Player: Playable
 	private int _questZoneId = -1;
 	
 	private readonly Fishing _fishing;
+	private readonly PlayerDailyMissionList _dailyMissions;
 	
 	public void setPvpFlagLasts(DateTime time)
 	{
@@ -873,6 +875,7 @@ public class Player: Playable
 		_request = new Model.Request(this);
 		_blockList = new BlockList(this);
 		_fishing = new Fishing(this);
+		_dailyMissions = new PlayerDailyMissionList(this);
 
 		for (int i = 0; i < _htmlActionCaches.Length; ++i)
 		{
@@ -7022,6 +7025,9 @@ public class Player: Playable
 		// Store collections.
 		storeCollections();
 		storeCollectionFavorites();
+		
+		// Store daily missions.
+		_dailyMissions.store();
 		
 		// Purge.
 		storeSubjugation();
@@ -14379,6 +14385,8 @@ public class Player: Playable
 		return _fishing.isFishing();
 	}
 	
+    public PlayerDailyMissionList getDailyMissions() => _dailyMissions;
+    
 	public override MoveType getMoveType()
 	{
 		if (_waitTypeSitting)
@@ -15742,6 +15750,7 @@ public class Player: Playable
 				_missionLevelProgress.storeInfoInVariable(this);
 			}
 		}
+		
 		return _missionLevelProgress;
 	}
 	

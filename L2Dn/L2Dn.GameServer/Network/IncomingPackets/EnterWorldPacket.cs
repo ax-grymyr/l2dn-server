@@ -188,13 +188,13 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				
 				if (siege.checkIsAttacker(clan))
 				{
-					player.setSiegeState((byte) 1);
+					player.setSiegeState(1);
 					player.setSiegeSide(siege.getCastle().getResidenceId());
 				}
 				
 				else if (siege.checkIsDefender(clan))
 				{
-					player.setSiegeState((byte) 2);
+					player.setSiegeState(2);
 					player.setSiegeSide(siege.getCastle().getResidenceId());
 				}
 			}
@@ -208,13 +208,13 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				
 				if (siege.checkIsAttacker(clan))
 				{
-					player.setSiegeState((byte) 1);
+					player.setSiegeState(1);
 					player.setSiegeSide(siege.getFort().getResidenceId());
 				}
 				
 				else if (siege.checkIsDefender(clan))
 				{
-					player.setSiegeState((byte) 2);
+					player.setSiegeState(2);
 					player.setSiegeSide(siege.getFort().getResidenceId());
 				}
 			}
