@@ -3,7 +3,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
-public struct ExRequestUserBanInfoPacket: IIncomingPacket<GameSession>
+public struct NotImplementedPacket: IIncomingPacket<GameSession>
 {
     public void ReadContent(PacketBitReader reader)
     {
@@ -11,7 +11,7 @@ public struct ExRequestUserBanInfoPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        // TODO: implement
+        // TODO: this packet is a stub for not implemented packets
         return ValueTask.CompletedTask;
     }
 }
