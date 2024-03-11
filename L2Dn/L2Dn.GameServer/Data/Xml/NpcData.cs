@@ -331,9 +331,9 @@ public class NpcData: DataReaderBase
 			});
 		});
 
-		element.Elements("droplists").Elements().ForEach(el =>
+		element.Elements("dropLists").Elements().ForEach(el =>
 		{
-			DropType dropType = Enum.Parse<DropType>(el.Name.LocalName);
+			DropType dropType = Enum.Parse<DropType>(el.Name.LocalName, true);
 			el.Elements("group").ForEach(e =>
 			{
 				if (dropGroups == null)

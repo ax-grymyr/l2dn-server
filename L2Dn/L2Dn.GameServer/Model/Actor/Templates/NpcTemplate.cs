@@ -771,9 +771,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					
 					// chance
 					double rateChance = 1;
-					if (Config.RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
+					if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out float value1))
 					{
-						rateChance *= Config.RATE_DROP_CHANCE_BY_ID[itemId];
+						rateChance *= value1;
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
 							rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
@@ -797,9 +797,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					{
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
+							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out double value))
 							{
-								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID[itemId];
+								rateChance *= value;
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -832,6 +832,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					{
 						totalChance = dropItem.getChance();
 					}
+					
 					double groupItemChance = totalChance * (group.getChance() / 100) * rateChance;
 					
 					// check if maximum drop occurrences have been reached
@@ -849,11 +850,13 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					}
 					
 					// prevent to drop item if level of monster lower then level of player by [Config]
-					if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID ? Config.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE : Config.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
+					if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID
+						    ? Config.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE
+						    : Config.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
 					{
 						continue;
 					}
-					
+
 					// calculate chances
 					ItemHolder drop = calculateGroupDrop(group, dropItem, victim, killer, groupItemChance);
 					if (drop == null)
@@ -872,8 +875,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					}
 					
 					// finally
-					float itemChance = Config.RATE_DROP_CHANCE_BY_ID[dropItem.getItemId()];
-					if (itemChance != null)
+					if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out float itemChance))
 					{
 						if ((groupItemChance * itemChance) < 100)
 						{
@@ -944,7 +946,8 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	
 	private List<ItemHolder> calculateUngroupedDrops(DropType dropType, Creature victim, Creature killer)
 	{
-		List<DropHolder> dropList = dropType == DropType.SPOIL ? _dropListSpoil : dropType == DropType.FORTUNE ? _dropListFortune : _dropListDeath;
+		List<DropHolder> dropList = dropType == DropType.SPOIL ? _dropListSpoil :
+			dropType == DropType.FORTUNE ? _dropListFortune : _dropListDeath;
 		
 		// level difference calculations
 		int levelDifference = killer.getLevel() - victim.getLevel();
@@ -969,11 +972,13 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				}
 				
 				// prevent to drop item if level of monster lower then level of player by [Config]
-				if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID ? Config.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE : Config.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
+				if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID
+					    ? Config.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE
+					    : Config.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
 				{
 					continue;
 				}
-				
+
 				// calculate chances
 				ItemHolder drop = calculateUngroupedDrop(dropItem, victim, killer);
 				if (drop == null)
@@ -992,8 +997,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				}
 				
 				// finally
-				float itemChance = Config.RATE_DROP_CHANCE_BY_ID[dropItem.getItemId()];
-				if (itemChance != null)
+				if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out float itemChance))
 				{
 					if ((dropItem.getChance() * itemChance) < 100)
 					{
@@ -1006,14 +1010,17 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					dropOccurrenceCounter--;
 					randomDrops.Add(drop);
 				}
+				
 				calculatedDrops.Add(drop);
 			}
 		}
+		
 		// add temporarily removed item when not replaced
 		if ((dropOccurrenceCounter > 0) && (cachedItem != null) && (calculatedDrops != null))
 		{
 			calculatedDrops.Add(cachedItem);
 		}
+		
 		// clear random drops
 		if (randomDrops != null)
 		{
@@ -1024,24 +1031,28 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		// champion extra drop
 		if (victim.isChampion())
 		{
-			if ((victim.getLevel() < killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE))
+			if ((victim.getLevel() < killer.getLevel()) &&
+			    (Rnd.get(100) < Config.CHAMPION_REWARD_LOWER_LEVEL_ITEM_CHANCE))
 			{
 				return calculatedDrops;
 			}
-			if ((victim.getLevel() > killer.getLevel()) && (Rnd.get(100) < Config.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE))
+
+			if ((victim.getLevel() > killer.getLevel()) &&
+			    (Rnd.get(100) < Config.CHAMPION_REWARD_HIGHER_LEVEL_ITEM_CHANCE))
 			{
 				return calculatedDrops;
 			}
-			
+
 			// create list
 			if (calculatedDrops == null)
 			{
 				calculatedDrops = new();
 			}
-			
+
 			if (!calculatedDrops.All(holder => Config.CHAMPION_REWARD_ITEMS.ContainsKey(holder.getId())))
 			{
-				calculatedDrops.AddRange(Config.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
+				calculatedDrops.AddRange(
+					Config.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
 			}
 		}
 		
@@ -1067,9 +1078,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		{
 			// amount is calculated after chance returned success
 			double rateAmount = 1;
-			if (Config.RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
+			if (Config.RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out float value))
 			{
-				rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID[itemId];
+				rateAmount *= value;
 				if (champion && (itemId == Inventory.ADENA_ID))
 				{
 					rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
@@ -1094,9 +1105,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 			{
 				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 				{
-					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
+					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out double value1))
 					{
-						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID[itemId];
+						rateAmount *= value1;
 					}
 					else if (item.hasExImmediateEffect())
 					{
@@ -1121,7 +1132,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 			}
 			
 			// finally
-			return new ItemHolder(itemId, (long) (Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
+			return new ItemHolder(itemId, (long)(Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
 		}
 		
 		return null;
@@ -1146,9 +1157,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				
 				// chance
 				double rateChance = 1;
-				if (Config.RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
+				if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out float value))
 				{
-					rateChance *= Config.RATE_DROP_CHANCE_BY_ID[itemId];
+					rateChance *= value;
 					if (champion && (itemId == Inventory.ADENA_ID))
 					{
 						rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
@@ -1173,9 +1184,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				{
 					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 					{
-						if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.ContainsKey(itemId))
+						if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out double value1))
 						{
-							rateChance *= Config.PREMIUM_RATE_DROP_CHANCE_BY_ID[itemId];
+							rateChance *= value1;
 						}
 						else if (item.hasExImmediateEffect())
 						{
@@ -1204,9 +1215,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 				{
 					// amount is calculated after chance returned success
 					double rateAmount = 1;
-					if (Config.RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
+					if (Config.RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out float value1))
 					{
-						rateAmount *= Config.RATE_DROP_AMOUNT_BY_ID[itemId];
+						rateAmount *= value1;
 						if (champion && (itemId == Inventory.ADENA_ID))
 						{
 							rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
@@ -1230,9 +1241,9 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					{
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.ContainsKey(itemId))
+							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out double value2))
 							{
-								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID[itemId];
+								rateAmount *= value2;
 							}
 							else if (item.hasExImmediateEffect())
 							{
@@ -1257,7 +1268,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					}
 					
 					// finally
-					return new ItemHolder(itemId, (long) (Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
+					return new ItemHolder(itemId, (long)(Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
 				}
 				break;
 			}
@@ -1290,7 +1301,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 					}
 					
 					// finally
-					return new ItemHolder(dropItem.getItemId(), (long) (Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
+					return new ItemHolder(dropItem.getItemId(), (long)(Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
 				}
 				break;
 			}
