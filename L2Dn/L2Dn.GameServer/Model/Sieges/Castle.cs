@@ -1150,14 +1150,14 @@ public class Castle: AbstractResidence
 		}
 	}
 	
-	public void giveResidentialSkills(Player player)
+	public override void giveResidentialSkills(Player player)
 	{
 		base.giveResidentialSkills(player);
 		Skill skill = _castleSide == CastleSide.DARK ? CommonSkill.ABILITY_OF_DARKNESS.getSkill() : CommonSkill.ABILITY_OF_LIGHT.getSkill();
 		player.addSkill(skill);
 	}
 	
-	public void removeResidentialSkills(Player player)
+	public override void removeResidentialSkills(Player player)
 	{
 		base.removeResidentialSkills(player);
 		player.removeSkill((int)CommonSkill.ABILITY_OF_DARKNESS);

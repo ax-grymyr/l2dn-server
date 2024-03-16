@@ -14,7 +14,7 @@ public class Point2D
 		_y = y;
 	}
 	
-	public Point2D clone()
+	public virtual Point2D clone()
 	{
 		return new Point2D(_x, _y);
 	}
@@ -60,7 +60,7 @@ public class Point2D
 		return (_x == x) && (_y == y);
 	}
 	
-	public int getX()
+	public virtual int getX()
 	{
 		return _x;
 	}
@@ -70,7 +70,7 @@ public class Point2D
 		_x = x;
 	}
 	
-	public int getY()
+	public virtual int getY()
 	{
 		return _y;
 	}
@@ -107,7 +107,7 @@ public class Point2D
 		_y += (yDiff < 0 ? y : -y);
 	}
 	
-	public void clean()
+	public virtual void clean()
 	{
 		_x = 0;
 		_y = 0;

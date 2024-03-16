@@ -50,7 +50,7 @@ public class Location : Point2D, IPositionable
 	 * Get the x coordinate.
 	 * @return the x coordinate
 	 */
-	public int getX()
+	public override int getX()
 	{
 		return _x;
 	}
@@ -59,7 +59,7 @@ public class Location : Point2D, IPositionable
 	 * Get the y coordinate.
 	 * @return the y coordinate
 	 */
-	public int getY()
+	public override int getY()
 	{
 		return _y;
 	}
@@ -126,13 +126,13 @@ public class Location : Point2D, IPositionable
 		_heading = loc.getHeading();
 	}
 	
-	public void clean()
+	public override void clean()
 	{
 		base.clean();
 		_z = 0;
 	}
 	
-	public Location clone()
+	public override Location clone()
 	{
 		return new Location(_x, _y, _z);
 	}

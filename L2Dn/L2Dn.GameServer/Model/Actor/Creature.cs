@@ -2137,7 +2137,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return the summon
 	 */
-	public Map<int, Summon> getServitors()
+	public virtual Map<int, Summon> getServitors()
 	{
 		return new();
 	}
@@ -3307,7 +3307,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return distFraction > 1.79; // Arrived.
 	}
 	
-	public void revalidateZone(bool force)
+	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
 		if (!force && (calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100)))
@@ -5827,7 +5827,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _reputation;
 	}
 	
-	public void setReputation(int reputation)
+	public virtual void setReputation(int reputation)
 	{
 		_reputation = reputation;
 	}

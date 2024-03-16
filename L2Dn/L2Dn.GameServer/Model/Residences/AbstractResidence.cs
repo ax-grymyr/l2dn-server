@@ -78,7 +78,7 @@ public abstract class AbstractResidence: INamable
 		_zone = zone;
 	}
 	
-	public void giveResidentialSkills(Player player)
+	public virtual void giveResidentialSkills(Player player)
 	{
 		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
@@ -94,7 +94,7 @@ public abstract class AbstractResidence: INamable
 		}
 	}
 	
-	public void removeResidentialSkills(Player player)
+	public virtual void removeResidentialSkills(Player player)
 	{
 		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{

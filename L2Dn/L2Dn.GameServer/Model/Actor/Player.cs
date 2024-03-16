@@ -1494,7 +1494,7 @@ public class Player: Playable
 		_pvpFlag = pvpFlag;
 	}
 	
-	public bool getPvpFlag()
+	public override bool getPvpFlag()
 	{
 		return _pvpFlag;
 	}
@@ -1564,7 +1564,7 @@ public class Player: Playable
 		});
 	}
 	
-	public void revalidateZone(bool force)
+	public override void revalidateZone(bool force)
 	{
 		// Cannot validate if not in a world region (happens during teleport)
 		if (getWorldRegion() == null)
@@ -1821,7 +1821,7 @@ public class Player: Playable
 	 * Set the reputation of the Player and send a Server=>Client packet StatusUpdate (broadcast).
 	 * @param value
 	 */
-	public void setReputation(int value)
+	public override void setReputation(int value)
 	{
 		// Notify to scripts.
 		if (Events.HasSubscribers<OnPlayerReputationChanged>())
@@ -5307,7 +5307,7 @@ public class Player: Playable
 		return _pet;
 	}
 	
-	public Map<int, Summon> getServitors()
+	public override Map<int, Summon> getServitors()
 	{
 		return _servitors;
 	}
