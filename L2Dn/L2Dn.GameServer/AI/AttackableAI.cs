@@ -145,7 +145,7 @@ public class AttackableAI: CreatureAI
 		AttackableThinkTaskManager.getInstance().add(getActiveChar());
 	}
 	
-	public void stopAITask()
+	public override void stopAITask()
 	{
 		AttackableThinkTaskManager.getInstance().remove(getActiveChar());
 		base.stopAITask();
@@ -158,7 +158,7 @@ public class AttackableAI: CreatureAI
 	 * @param args The first parameter of the Intention
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	void changeIntention(CtrlIntention newIntention, params Object[] args)
+	protected override void changeIntention(CtrlIntention newIntention, params Object[] args)
 	{
 		CtrlIntention intention = newIntention;
 		if ((intention == CtrlIntention.AI_INTENTION_IDLE) || (intention == CtrlIntention.AI_INTENTION_ACTIVE))

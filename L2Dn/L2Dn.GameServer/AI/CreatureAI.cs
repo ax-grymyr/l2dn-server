@@ -28,7 +28,7 @@ namespace L2Dn.GameServer.AI;
  * <li>SummonAI</li>
  * </ul>
  */
-public class CreatureAI : AbstractAI
+public class CreatureAI: AbstractAI
 {
 	private OnNpcMoveFinished? _onNpcMoveFinished;
 	
