@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Items;
-using L2Dn.GameServer.Model.Events.Listeners;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -26,8 +25,7 @@ public class PurgeRewardDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_ITEM_PURGE_REWARD,
-			@event => onItemPurgeReward((OnItemPurgeReward)@event), this));
+		GlobalEvents.Global.Subscribe<OnItemPurgeReward>(this, onItemPurgeReward);
 	}
 	
 	public override bool isAvailable(Player player)

@@ -1,13 +1,14 @@
-﻿using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;
 
-public class PlayerTemplate : CreatureTemplate
+public class PlayerTemplate: CreatureTemplate
 {
 	private readonly CharacterClass _classId;
 	
@@ -202,5 +203,10 @@ public class PlayerTemplate : CreatureTemplate
 	public int getSafeFallHeight()
 	{
 		return _baseSafeFallHeight;
+	}
+
+	protected override EventContainer CreateEventContainer()
+	{
+		return new EventContainer($"Player template {_classId}", GlobalEvents.Players);
 	}
 }

@@ -3,8 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -22,8 +21,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Monsters().addListener(new ConsumerEventListener(this, EventType.ON_ATTACKABLE_KILL,
-			@event => onAttackableKill((OnAttackableKill)@event), this));
+		GlobalEvents.Monsters.Subscribe<OnAttackableKill>(this, onAttackableKill);
 	}
 	
 	public override bool isAvailable(Player player)

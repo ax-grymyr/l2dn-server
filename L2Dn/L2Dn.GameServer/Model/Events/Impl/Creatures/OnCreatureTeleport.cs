@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 using L2Dn.GameServer.Model.InstanceZones;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
@@ -6,7 +7,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 /**
  * @author Nik
  */
-public class OnCreatureTeleport: IBaseEvent
+public class OnCreatureTeleport: LocationEventBase
 {
 	private readonly Creature _creature;
 	private readonly int _destX;
@@ -53,10 +54,5 @@ public class OnCreatureTeleport: IBaseEvent
 	public Instance getDestInstance()
 	{
 		return _destInstance;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CREATURE_TELEPORT;
 	}
 }

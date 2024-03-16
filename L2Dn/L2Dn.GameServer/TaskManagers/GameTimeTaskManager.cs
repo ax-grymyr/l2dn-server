@@ -51,9 +51,9 @@ public class GameTimeTaskManager
 			{
 				_isNight = !_isNight;
 				
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_DAY_NIGHT_CHANGE))
+				if (GlobalEvents.Global.HasSubscribers<OnDayNightChange>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(_isNight));
+					GlobalEvents.Global.NotifyAsync(new OnDayNightChange(_isNight));
 				}
 			}
 			

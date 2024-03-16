@@ -1,8 +1,9 @@
-﻿using L2Dn.GameServer.Model.Clans;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Model.Clans;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Clans;
 
-public class OnClanWarStart: IBaseEvent
+public class OnClanWarStart: EventBase
 {
     private readonly Clan _clan1;
     private readonly Clan _clan2;
@@ -21,10 +22,5 @@ public class OnClanWarStart: IBaseEvent
     public Clan getClan2()
     {
         return _clan2;
-    }
-
-    public EventType getType()
-    {
-        return EventType.ON_CLAN_WAR_START;
     }
 }

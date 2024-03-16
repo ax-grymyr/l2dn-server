@@ -2,8 +2,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -32,12 +31,9 @@ public class PremiumManager
 	// expireTasks
 	private readonly Map<int, ScheduledFuture> _expiretasks = new();
 	
-	// Listeners
-	private readonly ListenersContainer _listenerContainer = Containers.Players();
-	
 	protected PremiumManager()
 	{
-		Action<OnPlayerLogin> playerLoginEvent = @event =>
+		void PlayerLoginEvent(OnPlayerLogin @event)
 		{
 			Player player = @event.getPlayer();
 			int accountId = player.getAccountId();
@@ -53,18 +49,15 @@ public class PremiumManager
 			{
 				removePremiumStatus(accountId, false);
 			}
-		};
-	
-		Action<OnPlayerLogout> playerLogoutEvent = @event =>
+		}
+
+		void PlayerLogoutEvent(OnPlayerLogout @event)
 		{
 			stopExpireTask(@event.getPlayer());
-		};
+		}
 
-		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGIN,
-			ev => playerLoginEvent((OnPlayerLogin)ev), this));
-
-		_listenerContainer.addListener(new ConsumerEventListener(_listenerContainer, EventType.ON_PLAYER_LOGOUT,
-			ev => playerLogoutEvent((OnPlayerLogout)ev), this));
+		GlobalEvents.Players.Subscribe<OnPlayerLogin>(this, PlayerLoginEvent);
+		GlobalEvents.Players.Subscribe<OnPlayerLogout>(this, PlayerLogoutEvent);
 	}
 	
 	/**

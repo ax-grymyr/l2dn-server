@@ -21,8 +21,6 @@ public static class StaticData
     {
         GameTimeTaskManager.getInstance();
         IdManager.getInstance();
-
-        EventDispatcher.getInstance();
         
         World.getInstance();
         MapRegionManager.getInstance();
@@ -221,9 +219,9 @@ public static class StaticData
 			CustomMailManager.getInstance();
 		}
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_SERVER_START))
+		if (GlobalEvents.Global.HasSubscribers<OnServerStart>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnServerStart());
+			GlobalEvents.Global.NotifyAsync(new OnServerStart());
 		}
 		
 		PunishmentManager.getInstance();

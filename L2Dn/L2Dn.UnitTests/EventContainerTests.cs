@@ -9,63 +9,58 @@ public class EventContainerTests
     [Fact]
     public void Access()
     {
-        EventProvider eventProvider = new EventProvider();
+        EventContainer eventContainer = new EventContainer("Test");
 
-        List<EventListener> listeners = new List<EventListener>();
         for (int iter = 0; iter < 1000; iter++)
         {
             const int batchSize = 20;
             for (int i = 0; i < batchSize; i++)
             {
                 EventListener listener = new EventListener();
-                listeners.Add(listener);
-                eventProvider.Event += listener.OnEvent;
+                eventContainer.Subscribe<EventArgument>(this, listener.OnEvent);
             }
 
-            eventProvider.ListenerCount.Should().Be(batchSize);
+            eventContainer.HasSubscribers<EventArgument>().Should().Be(true);
 
             EventArgument argument = new EventArgument();
-            eventProvider.Notify(argument);
+            eventContainer.Notify(argument);
             
             argument.Count.Should().Be(batchSize);
                 
             // Unsubscribe
-            listeners.ForEach(x => eventProvider.Event -= x.OnEvent);
-            listeners.Clear();
+            eventContainer.UnsubscribeAll<EventArgument>(this);
         }
 
-        eventProvider.ListenerCount.Should().Be(0);
+        eventContainer.HasSubscribers<EventArgument>().Should().BeFalse();
     }
 
     [Fact]
     public void SimultaneousAccess()
     {
         const int threadCount = 4;
-        EventProvider eventProvider = new EventProvider();
+        EventContainer eventContainer = new EventContainer("Test");
         bool stop = false;
         
         void ThreadProc()
         {
-            List<EventListener> listeners = new List<EventListener>();
             while (!Volatile.Read(ref stop))
             {
+                object owner = new();
                 const int batchSize = 20;
                 for (int i = 0; i < batchSize; i++)
                 {
                     EventListener listener = new EventListener();
-                    listeners.Add(listener);
-                    eventProvider.Event += listener.OnEvent;
+                    eventContainer.Subscribe<EventArgument>(owner, listener.OnEvent);
                 }
 
-                eventProvider.ListenerCount.Should().BeGreaterOrEqualTo(batchSize);
+                eventContainer.HasSubscribers<EventArgument>().Should().Be(true);
 
                 EventArgument argument = new EventArgument();
-                eventProvider.Notify(argument);
+                eventContainer.Notify(argument);
                 argument.Count.Should().BeGreaterOrEqualTo(batchSize);
                 
                 // Unsubscribe
-                listeners.ForEach(x => eventProvider.Event -= x.OnEvent);
-                listeners.Clear();
+                eventContainer.UnsubscribeAll<EventArgument>(owner);
             }
         }
 
@@ -80,22 +75,7 @@ public class EventContainerTests
         
         threads.ForEach(x => x.Join());
 
-        eventProvider.ListenerCount.Should().Be(0);
-    }
-
-    private class EventProvider
-    {
-        private EventManager<EventArgument> _eventManager;
-
-        public int ListenerCount => _eventManager.SubscriberCount;
-        
-        public event Action<EventArgument> Event
-        {
-            add => _eventManager.Subscribe(value);
-            remove => _eventManager.Unsubscribe(value);
-        }
-
-        public void Notify(EventArgument argument) => _eventManager.Notify(argument);
+        eventContainer.HasSubscribers<EventArgument>().Should().BeFalse();
     }
 
     private class EventListener

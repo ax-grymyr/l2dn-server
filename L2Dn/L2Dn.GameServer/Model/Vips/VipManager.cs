@@ -1,8 +1,7 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -14,18 +13,14 @@ public class VipManager
 {
 	private static readonly byte VIP_MAX_TIER = (byte) Config.VIP_SYSTEM_MAX_TIER;
 	
-	private readonly ConsumerEventListener _vipLoginListener;
-	
 	protected VipManager()
 	{
 		if (!Config.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}
-		
-		_vipLoginListener = new ConsumerEventListener(null, EventType.ON_PLAYER_LOGIN, ev => onVipLogin((OnPlayerLogin)ev), this);
 	
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOAD, ev => onPlayerLoaded((OnPlayerLoad)ev), this));
+		GlobalEvents.Global.Subscribe<OnPlayerLoad>(this, onPlayerLoaded);
 	}
 	
 	private void onPlayerLoaded(OnPlayerLoad @event)
@@ -35,7 +30,7 @@ public class VipManager
 		if (player.getVipTier() > 0)
 		{
 			manageTier(player);
-			player.addListener(_vipLoginListener);
+			player.Events.Subscribe<OnPlayerLogin>(this, onVipLogin);
 		}
 		else
 		{
@@ -68,7 +63,8 @@ public class VipManager
 		{
 			player.sendPacket(new ExBRNewIconCashBtnWndPacket(0));
 		}
-		player.removeListener(_vipLoginListener);
+		
+		player.Events.Unsubscribe<OnPlayerLogin>(onVipLogin);
 		player.sendPacket(new ReceiveVipInfoPacket(player));
 	}
 	

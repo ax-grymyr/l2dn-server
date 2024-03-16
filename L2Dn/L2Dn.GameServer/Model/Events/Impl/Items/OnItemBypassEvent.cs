@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 
@@ -6,7 +7,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
 /**
  * @author UnAfraid
  */
-public class OnItemBypassEvent: IBaseEvent
+public class OnItemBypassEvent: EventBase
 {
 	private readonly Item _item;
 	private readonly Player _player;
@@ -32,10 +33,5 @@ public class OnItemBypassEvent: IBaseEvent
 	public String getEvent()
 	{
 		return _event;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_ITEM_BYPASS_EVENT;
 	}
 }

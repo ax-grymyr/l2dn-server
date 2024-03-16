@@ -5,7 +5,8 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
+using L2Dn.GameServer.Model.Events.Impl.Summons;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 
@@ -21,11 +22,12 @@ public class PetAction: IActionHandler
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			return false;
 		}
-		
-		bool isOwner = player.getObjectId() == ((Pet)target).getOwner().getObjectId();
-		if (isOwner && (player != ((Pet) target).getOwner()))
+
+		Pet pet = (Pet)target;
+		bool isOwner = player.getObjectId() == pet.getOwner().getObjectId();
+		if (isOwner && (player != pet.getOwner()))
 		{
-			((Pet) target).updateRefOwner(player);
+			pet.updateRefOwner(player);
 		}
 		if (player.getTarget() != target)
 		{
@@ -40,7 +42,7 @@ public class PetAction: IActionHandler
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				player.onActionRequest();
 			}
-			else if (!((Creature) target).isInsideRadius2D(player, 150))
+			else if (!pet.isInsideRadius2D(player, 150))
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				player.onActionRequest();
@@ -49,14 +51,15 @@ public class PetAction: IActionHandler
 			{
 				if (isOwner)
 				{
-					player.sendPacket(new PetStatusShowPacket((Pet) target));
+					player.sendPacket(new PetStatusShowPacket(pet));
 					
 					// Notify to scripts
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SUMMON_TALK, target))
+					if (pet.Events.HasSubscribers<OnSummonTalk>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((Summon) target), target);
+						pet.Events.NotifyAsync(new OnSummonTalk(pet));
 					}
 				}
+				
 				player.updateNotMoveUntil();
 			}
 		}

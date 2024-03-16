@@ -1,9 +1,9 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -123,9 +123,10 @@ public class PurgeRankingManager
 						Item item = attachment.getItemByItemId(reward);
 						if (player != null)
 						{
-							if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_PURGE_REWARD))
+							EventContainer itemEvents = item.getTemplate().Events;
+							if (itemEvents.HasSubscribers<OnItemPurgeReward>())
 							{
-								EventDispatcher.getInstance().notifyEventAsync(new OnItemPurgeReward(player, item));
+								itemEvents.NotifyAsync(new OnItemPurgeReward(player, item));
 							}
 						}
 

@@ -1,12 +1,13 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author UnAfraid
  */
-public class OnNpcSkillSee: IBaseEvent
+public class OnNpcSkillSee: EventBase
 {
 	private readonly Npc _npc;
 	private readonly Player _caster;
@@ -46,10 +47,5 @@ public class OnNpcSkillSee: IBaseEvent
 	public bool isSummon()
 	{
 		return _isSummon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_SKILL_SEE;
 	}
 }

@@ -2,8 +2,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Tasks.NpcTasks.TrapTasks;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Traps;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -58,7 +57,7 @@ public class Trap: Npc
 	{
 		_owner = owner;
 	}
-	
+
 	public override void broadcastPacket<TPacket>(TPacket packet, bool includeSelf)
 	{
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
@@ -269,9 +268,9 @@ public class Trap: Npc
 		_playersWhoDetectedMe.add(detector.getObjectId());
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_TRAP_ACTION, this))
+		if (Events.HasSubscribers<OnTrapAction>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(this, detector, TrapAction.TRAP_DETECTED), this);
+			Events.NotifyAsync(new OnTrapAction(this, detector, TrapAction.TRAP_DETECTED));
 		}
 		
 		if (detector.isPlayable())
@@ -301,9 +300,9 @@ public class Trap: Npc
 		broadcastPacket(new NpcInfoPacket(this));
 		setTarget(target);
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_TRAP_ACTION, this))
+		if (Events.HasSubscribers<OnTrapAction>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(this, target, TrapAction.TRAP_TRIGGERED), this);
+			Events.NotifyAsync(new OnTrapAction(this, target, TrapAction.TRAP_TRIGGERED));
 		}
 		
 		ThreadPool.schedule(new TrapTriggerTask(this), 500);

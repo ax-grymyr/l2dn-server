@@ -4,8 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Zones;
@@ -25,8 +24,7 @@ public class JailHandler: IPunishmentHandler
 	public JailHandler()
 	{
 		// Register global listener
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOGIN,
-			@event => onPlayerLogin((OnPlayerLogin)@event), this));
+		GlobalEvents.Global.Subscribe<OnPlayerLogin>(this, onPlayerLogin);
 	}
 	
 	private void onPlayerLogin(OnPlayerLogin @event)

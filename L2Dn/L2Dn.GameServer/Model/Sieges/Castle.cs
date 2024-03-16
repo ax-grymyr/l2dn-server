@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Residences;
@@ -25,7 +27,8 @@ namespace L2Dn.GameServer.Model.Sieges;
 public class Castle: AbstractResidence
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Castle));
-	
+
+	private readonly EventContainer _eventContainer;
 	private readonly List<Door> _doors = new();
 	private readonly List<Npc> _sideNpcs = new();
 	int _ownerId = 0;
@@ -50,6 +53,8 @@ public class Castle: AbstractResidence
 	public const int FUNC_RESTORE_MP = 3;
 	public const int FUNC_RESTORE_EXP = 4;
 	public const int FUNC_SUPPORT = 5;
+
+	public EventContainer Events => _eventContainer;
 	
 	public class CastleFunction
 	{
@@ -215,6 +220,8 @@ public class Castle: AbstractResidence
 	
 	public Castle(int castleId): base(castleId)
 	{
+		_eventContainer = new($"Castle template {castleId}", GlobalEvents.Global);
+		
 		load();
 		initResidenceZone();
 		// initFunctions();

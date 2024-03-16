@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Summons;
 
 /**
  * @author St3eT
  */
-public class OnSummonTalk: IBaseEvent
+public class OnSummonTalk: EventBase
 {
 	private readonly Summon _summon;
 	
@@ -17,10 +18,5 @@ public class OnSummonTalk: IBaseEvent
 	public Summon getSummon()
 	{
 		return _summon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_SUMMON_TALK;
 	}
 }

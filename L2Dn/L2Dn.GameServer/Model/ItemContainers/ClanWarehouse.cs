@@ -1,8 +1,8 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
@@ -46,10 +46,10 @@ public class ClanWarehouse: Warehouse
 		Item item = base.addItem(process, itemId, count, actor, reference);
 
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_WH_ITEM_ADD, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnClanWhItemAdd>())
 		{
-			EventDispatcher.getInstance()
-				.notifyEventAsync(new OnPlayerClanWHItemAdd(process, actor, item, this), item.getTemplate());
+			itemEvents.NotifyAsync(new OnClanWhItemAdd(process, actor, item, this));
 		}
 
 		return item;
@@ -58,10 +58,10 @@ public class ClanWarehouse: Warehouse
 	public override Item addItem(String process, Item item, Player actor, Object reference)
 	{
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_WH_ITEM_ADD, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnClanWhItemAdd>())
 		{
-			EventDispatcher.getInstance()
-				.notifyEventAsync(new OnPlayerClanWHItemAdd(process, actor, item, this), item.getTemplate());
+			itemEvents.NotifyAsync(new OnClanWhItemAdd(process, actor, item, this));
 		}
 
 		return base.addItem(process, item, actor, reference);
@@ -70,10 +70,10 @@ public class ClanWarehouse: Warehouse
 	public override Item destroyItem(String process, Item item, long count, Player actor, Object reference)
 	{
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_WH_ITEM_DESTROY, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnClanWhItemDestroy>())
 		{
-			EventDispatcher.getInstance()
-				.notifyEventAsync(new OnPlayerClanWHItemDestroy(process, actor, item, count, this), item.getTemplate());
+			itemEvents.NotifyAsync(new OnClanWhItemDestroy(process, actor, item, count, this));
 		}
 
 		return base.destroyItem(process, item, count, actor, reference);
@@ -85,11 +85,10 @@ public class ClanWarehouse: Warehouse
 		Item item = getItemByObjectId(objectId);
 
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_WH_ITEM_TRANSFER, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnClanWhItemTransfer>())
 		{
-			EventDispatcher.getInstance()
-				.notifyEventAsync(new OnPlayerClanWHItemTransfer(process, actor, item, count, target),
-					item.getTemplate());
+			itemEvents.NotifyAsync(new OnClanWhItemTransfer(process, actor, item, count, target));
 		}
 
 		return base.transferItem(process, objectId, count, target, actor, reference);

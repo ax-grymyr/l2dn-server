@@ -1,8 +1,9 @@
-﻿using L2Dn.GameServer.Model.Olympiads;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Model.Olympiads;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Olympiads;
 
-public class OnOlympiadMatchResult: IBaseEvent
+public class OnOlympiadMatchResult: EventBase
 {
     private readonly Participant _winner;
     private readonly Participant _loser;
@@ -28,10 +29,5 @@ public class OnOlympiadMatchResult: IBaseEvent
     public CompetitionType getCompetitionType()
     {
         return _type;
-    }
-
-    public EventType getType()
-    {
-        return EventType.ON_OLYMPIAD_MATCH_RESULT;
     }
 }

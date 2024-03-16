@@ -36,9 +36,9 @@ public class ClanWar
 		attacker.addWar(attacked.getId(), this);
 		attacked.addWar(attacker.getId(), this);
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CLAN_WAR_START))
+		if (GlobalEvents.Global.HasSubscribers<OnClanWarStart>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnClanWarStart(attacker, attacked));
+			GlobalEvents.Global.NotifyAsync(new OnClanWarStart(attacker, attacked));
 		}
 		
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_DECLARED_A_CLAN_WAR_WITH_S1);

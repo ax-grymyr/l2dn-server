@@ -1,5 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -295,10 +294,10 @@ public class CreatureStatus
 			{
 				_creature.broadcastStatusUpdate();
 			}
-			
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_HP_CHANGE, getActiveChar()))
+
+			if (_creature.Events.HasSubscribers<OnCreatureHpChange>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnCreatureHpChange(getActiveChar(), oldHp, _currentHp), getActiveChar());
+				_creature.Events.NotifyAsync(new OnCreatureHpChange(getActiveChar(), oldHp, _currentHp));
 			}
 		}
 		

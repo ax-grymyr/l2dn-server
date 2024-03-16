@@ -1,5 +1,8 @@
-﻿namespace L2Dn.GameServer.Model.Events.Impl.Base;
+﻿using L2Dn.Events;
 
-public class TerminateEventBase
+namespace L2Dn.GameServer.Model.Events.Impl.Base;
+
+public abstract class TerminateEventBase: EventBase
 {
+    public bool Terminate { get; set; }
 }

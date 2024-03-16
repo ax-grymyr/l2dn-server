@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author Sdw
  */
-public class OnPlayerChangeToAwakenedClass: IBaseEvent
+public class OnPlayerChangeToAwakenedClass: EventBase
 {
 	private readonly Player _player;
 	
@@ -17,10 +18,5 @@ public class OnPlayerChangeToAwakenedClass: IBaseEvent
 	public Player getPlayer()
 	{
 		return _player;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CHANGE_TO_AWAKENED_CLASS;
 	}
 }

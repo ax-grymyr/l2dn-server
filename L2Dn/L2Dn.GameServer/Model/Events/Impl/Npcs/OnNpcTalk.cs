@@ -5,12 +5,12 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
-public class OnNpcQuestStart: EventBase
+public class OnNpcTalk: EventBase
 {
     private readonly Npc _npc;
     private readonly Player _player;
 	
-    public OnNpcQuestStart(Npc npc, Player player)
+    public OnNpcTalk(Npc npc, Player player)
     {
         _npc = npc;
         _player = player;

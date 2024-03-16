@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.CommunityBbs.Managers;
@@ -22,10 +23,9 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.DailyMissions;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Items;
+using L2Dn.GameServer.Model.Events.Impl.Playables;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Fishings;
 using L2Dn.GameServer.Model.Holders;
@@ -907,7 +907,7 @@ public class Player: Playable
 		: this(IdManager.getInstance().getNextId(), template, accountId, accountName, app)
 	{
 	}
-	
+    
 	public override PlayerStat getStat()
 	{
 		return (PlayerStat) base.getStat();
@@ -1691,9 +1691,9 @@ public class Player: Playable
 	 */
 	public void setPkKills(int pkKills)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PK_CHANGED, this))
+		if (Events.HasSubscribers<OnPlayerPKChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPKChanged(this, _pkKills, pkKills), this);
+			Events.NotifyAsync(new OnPlayerPKChanged(this, _pkKills, pkKills));
 		}
 		
 		_pkKills = pkKills;
@@ -1824,9 +1824,9 @@ public class Player: Playable
 	public void setReputation(int value)
 	{
 		// Notify to scripts.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_REPUTATION_CHANGED, this))
+		if (Events.HasSubscribers<OnPlayerReputationChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerReputationChanged(this, getReputation(), value), this);
+			Events.NotifyAsync(new OnPlayerReputationChanged(this, getReputation(), value));
 		}
 		
 		int reputation = value;
@@ -2081,9 +2081,10 @@ public class Player: Playable
 				}
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_EQUIP, item.getTemplate()))
+				EventContainer events = item.getTemplate().Events; 
+				if (events.HasSubscribers<OnPlayerItemEquip>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemEquip(this, item), item.getTemplate());
+					events.NotifyAsync(new OnPlayerItemEquip(this, item));
 				}
 				
 				getDualInventorySet().set(item.getLocationSlot(), item.getObjectId());
@@ -2125,9 +2126,9 @@ public class Player: Playable
 	 */
 	public void setPvpKills(int pvpKills)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PVP_CHANGED, this))
+		if (Events.HasSubscribers<OnPlayerPvPChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPvPChanged(this, _pvpKills, pvpKills), this);
+			Events.NotifyAsync(new OnPlayerPvPChanged(this, _pvpKills, pvpKills));
 		}
 		
 		_pvpKills = pvpKills;
@@ -2157,9 +2158,9 @@ public class Player: Playable
 			newFame = 0;
 		}
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_FAME_CHANGED, this))
+		if (Events.HasSubscribers<OnPlayerFameChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerFameChanged(this, _fame, newFame), this);
+			Events.NotifyAsync(new OnPlayerFameChanged(this, _fame, newFame));
 		}
 		
 		_fame = newFame;
@@ -4673,9 +4674,9 @@ public class Player: Playable
 			{
 				if (pk != null)
 				{
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PVP_KILL, this))
+					if (Events.HasSubscribers<OnPlayerPvPKill>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPvPKill(pk, this), this);
+						Events.NotifyAsync(new OnPlayerPvPKill(pk, this));
 					}
 					
 					setTotalDeaths(getTotalDeaths() + 1);
@@ -6669,9 +6670,9 @@ public class Player: Playable
 				return null;
 			}
 			
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_LOAD, player))
+			if (player.Events.HasSubscribers<OnPlayerLoad>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLoad(player), player);
+				player.Events.NotifyAsync(new OnPlayerLoad(player));
 			}
 			
 			if (player.isGM())
@@ -7964,9 +7965,9 @@ public class Player: Playable
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_HENNA_REMOVE, this))
+		if (Events.HasSubscribers<OnPlayerHennaRemove>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaRemove(this, henna), this);
+			Events.NotifyAsync(new OnPlayerHennaRemove(this, henna));
 		}
 		
 		return true;
@@ -8031,9 +8032,9 @@ public class Player: Playable
 				broadcastUserInfo(UserInfoType.BASE_STATS, UserInfoType.STAT_ABILITIES, UserInfoType.STAT_POINTS, UserInfoType.MAX_HPCPMP, UserInfoType.STATS, UserInfoType.SPEED);
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_HENNA_ADD, this))
+				if (Events.HasSubscribers<OnPlayerHennaAdd>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaAdd(this, henna), this);
+					Events.NotifyAsync(new OnPlayerHennaAdd(this, henna));
 				}
 				
 				return true;
@@ -9877,10 +9878,10 @@ public class Player: Playable
 	public bool modifySubClass(int classIndex, CharacterClass newClassId, bool isDualClass)
 	{
 		// Notify to scripts before class is removed.
-		if (!getSubClasses().isEmpty() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PROFESSION_CANCEL, this))
+		if (!getSubClasses().isEmpty() && Events.HasSubscribers<OnPlayerProfessionCancel>())
 		{
 			CharacterClass classId = getSubClasses().get(classIndex).getClassDefinition();
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerProfessionCancel(this, classId), this);
+			Events.NotifyAsync(new OnPlayerProfessionCancel(this, classId));
 		}
 		
 		SubClassHolder subClass = getSubClasses().get(classIndex);
@@ -10037,9 +10038,9 @@ public class Player: Playable
 		setTemplate(pcTemplate);
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PROFESSION_CHANGE, this))
+		if (Events.HasSubscribers<OnPlayerProfessionChange>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerProfessionChange(this, pcTemplate, isSubClassActive()), this);
+			Events.NotifyAsync(new OnPlayerProfessionChange(this, pcTemplate, isSubClassActive()));
 		}
 	}
 	
@@ -10198,9 +10199,9 @@ public class Player: Playable
 			sendPacket(new SkillCoolTimePacket(this));
 			sendStorageMaxCount();
 			
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SUB_CHANGE, this))
+			if (Events.HasSubscribers<OnPlayerSubChange>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSubChange(this), this);
+				Events.NotifyAsync(new OnPlayerSubChange(this));
 			}
 		}
 		finally
@@ -10374,21 +10375,21 @@ public class Player: Playable
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_LOGIN, this))
+		if (Events.HasSubscribers<OnPlayerLogin>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLogin(this), this);
+			Events.NotifyAsync(new OnPlayerLogin(this));
 		}
 		
 		if (isMentee())
 		{
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MENTEE_STATUS, this))
+			if (Events.HasSubscribers<OnPlayerMenteeStatus>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerMenteeStatus(this, true), this);
+				Events.NotifyAsync(new OnPlayerMenteeStatus(this, true));
 			}
 		}
-		else if (isMentor() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MENTOR_STATUS, this))
+		else if (isMentor() && Events.HasSubscribers<OnPlayerMentorStatus>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerMentorStatus(this, true), this);
+			Events.NotifyAsync(new OnPlayerMentorStatus(this, true));
 		}
 	}
 	
@@ -11070,9 +11071,9 @@ public class Player: Playable
 	 */
 	public override bool deleteMe()
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_LOGOUT, this))
+		if (Events.HasSubscribers<OnPlayerLogout>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLogout(this), this);
+			Events.NotifyAsync(new OnPlayerLogout(this));
 		}
 		
 		try
@@ -11466,14 +11467,14 @@ public class Player: Playable
 		// Notify to scripts
 		if (isMentee())
 		{
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MENTEE_STATUS, this))
+			if (Events.HasSubscribers<OnPlayerMenteeStatus>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerMenteeStatus(this, false), this);
+				Events.NotifyAsync(new OnPlayerMenteeStatus(this, false));
 			}
 		}
-		else if (isMentor() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MENTOR_STATUS, this))
+		else if (isMentor() && Events.HasSubscribers<OnPlayerMentorStatus>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerMentorStatus(this, false), this);
+			Events.NotifyAsync(new OnPlayerMentorStatus(this, false));
 		}
 		
 		try
@@ -14044,9 +14045,9 @@ public class Player: Playable
 	 */
 	public void setAbilityPointsUsed(int points)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ABILITY_POINTS_CHANGED, this))
+		if (Events.HasSubscribers<OnPlayerAbilityPointsChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerAbilityPointsChanged(this, getAbilityPointsUsed(), points), this);
+			Events.NotifyAsync(new OnPlayerAbilityPointsChanged(this, getAbilityPointsUsed(), points));
 		}
 		
 		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, points);
@@ -14262,27 +14263,25 @@ public class Player: Playable
 		vars.storeMe();
 	}
 	
-	private TerminateReturn onExperienceReceived()
+	private void DisableExperienceReceived(OnPlayableExpChanged arg)
 	{
-		if (isDead())
+		if (!isDead())
 		{
-			return new TerminateReturn(false, false, false);
+			arg.Terminate = true;
+			arg.Abort = true;
 		}
-		
-		return new TerminateReturn(true, true, true);
 	}
 	
 	public void disableExpGain()
 	{
-		addListener(new FunctionEventListener(this, EventType.ON_PLAYABLE_EXP_CHANGED,
-			ev => onExperienceReceived(), this));
+		Events.Subscribe(this, (Action<OnPlayableExpChanged>)DisableExperienceReceived); 
 	}
 	
 	public void enableExpGain()
 	{
-		removeListenerIf(EventType.ON_PLAYABLE_EXP_CHANGED, listener => listener.getOwner() == this);
+		Events.Unsubscribe((Action<OnPlayableExpChanged>)DisableExperienceReceived); 
 	}
-	
+    
 	/**
 	 * Gets the last commission infos.
 	 * @return the last commission infos

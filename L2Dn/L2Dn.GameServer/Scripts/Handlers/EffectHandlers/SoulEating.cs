@@ -2,9 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Playables;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -34,11 +32,8 @@ public class SoulEating: AbstractEffect
 	{
 		if (effected.isPlayer())
 		{
-			effected.addListener(new ConsumerEventListener(effected, EventType.ON_PLAYABLE_EXP_CHANGED, @event =>
-			{
-				OnPlayableExpChanged onPlayableExpChanged = (OnPlayableExpChanged)@event;
-				onExperienceReceived(onPlayableExpChanged.getPlayable(), (onPlayableExpChanged.getNewExp() - onPlayableExpChanged.getOldExp()));
-			}, this));
+			Player player = (Player)effected;
+			player.Events.Subscribe<OnPlayableExpChanged>(this, onExperienceReceived);
 		}
 	}
 	
@@ -46,7 +41,8 @@ public class SoulEating: AbstractEffect
 	{
 		if (effected.isPlayer())
 		{
-			effected.removeListenerIf(EventType.ON_PLAYABLE_EXP_CHANGED, listener => listener.getOwner() == this);
+			Player player = (Player)effected;
+			player.Events.Unsubscribe<OnPlayableExpChanged>(onExperienceReceived);
 		}
 	}
 	
@@ -55,8 +51,11 @@ public class SoulEating: AbstractEffect
 		effected.getStat().mergeAdd(Stat.MAX_SOULS, _maxSouls);
 	}
 	
-	private void onExperienceReceived(Playable playable, long exp)
+	private void onExperienceReceived(OnPlayableExpChanged ev)
 	{
+		Playable playable = ev.getPlayable();
+		long exp = ev.getNewExp() - ev.getOldExp();
+		
 		// TODO: Verify logic.
 		if (playable.isPlayer() && (exp >= _expNeeded))
 		{

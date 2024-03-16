@@ -8,7 +8,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Clans;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
@@ -173,9 +173,9 @@ public class ClanTable
 		player.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_CREATE))
+		if (GlobalEvents.Global.HasSubscribers<OnClanCreate>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanCreate(player, clan));
+			GlobalEvents.Global.NotifyAsync(new OnClanCreate(player, clan));
 		}
 		
 		return clan;
@@ -266,9 +266,9 @@ public class ClanTable
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_DESTROY))
+		if (GlobalEvents.Global.HasSubscribers<OnClanDestroy>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanDestroy(leaderMember, clan));
+			GlobalEvents.Global.NotifyAsync(new OnClanDestroy(leaderMember, clan));
 		}
 	}
 	
@@ -334,9 +334,9 @@ public class ClanTable
 		Clan clan1 = getInstance().getClan(clanId1);
 		Clan clan2 = getInstance().getClan(clanId2);
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CLAN_WAR_FINISH))
+		if (GlobalEvents.Global.HasSubscribers<OnClanWarFinish>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnClanWarFinish(clan1, clan2));
+			GlobalEvents.Global.NotifyAsync(new OnClanWarFinish(clan1, clan2));
 		}
 		
 		clan1.deleteWar(clan2.getId());

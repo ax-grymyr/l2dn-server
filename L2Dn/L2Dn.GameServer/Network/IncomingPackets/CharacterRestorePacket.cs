@@ -1,7 +1,6 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
@@ -27,12 +26,10 @@ public struct CharacterRestorePacket: IIncomingPacket<GameSession>
 
         if (CharacterPacketHelper.RestoreChar(session, _charSlot))
         {
-            if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_RESTORE))
+            if (GlobalEvents.Players.HasSubscribers<OnPlayerRestore>())
             {
                 CharSelectInfoPackage charInfo = session.Characters[_charSlot];
-                EventDispatcher.getInstance()
-                    .notifyEvent<AbstractEventReturn>(new OnPlayerRestore(charInfo.getObjectId(), charInfo.getName(),
-                        session));
+                GlobalEvents.Players.Notify(new OnPlayerRestore(charInfo.getObjectId(), charInfo.getName(), session));
             }
 
             session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);

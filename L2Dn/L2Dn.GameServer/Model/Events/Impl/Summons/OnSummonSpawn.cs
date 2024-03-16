@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Summons;
@@ -5,11 +6,11 @@ namespace L2Dn.GameServer.Model.Events.Impl.Summons;
 /**
  * @author UnAfraid
  */
-public class OnPlayerSummonSpawn: IBaseEvent
+public class OnSummonSpawn: EventBase
 {
 	private readonly Summon _summon;
 	
-	public OnPlayerSummonSpawn(Summon summon)
+	public OnSummonSpawn(Summon summon)
 	{
 		_summon = summon;
 	}
@@ -17,10 +18,5 @@ public class OnPlayerSummonSpawn: IBaseEvent
 	public Summon getSummon()
 	{
 		return _summon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_SUMMON_SPAWN;
 	}
 }

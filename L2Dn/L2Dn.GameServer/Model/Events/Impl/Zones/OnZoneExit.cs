@@ -1,17 +1,18 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
+namespace L2Dn.GameServer.Model.Events.Impl.Zones;
 
 /**
  * @author UnAfraid
  */
-public class OnZoneExited: IBaseEvent
+public class OnZoneExit: EventBase
 {
 	private readonly Creature _creature;
 	private readonly ZoneType _zone;
 	
-	public OnZoneExited(Creature creature, ZoneType zone)
+	public OnZoneExit(Creature creature, ZoneType zone)
 	{
 		_creature = creature;
 		_zone = zone;
@@ -25,10 +26,5 @@ public class OnZoneExited: IBaseEvent
 	public ZoneType getZone()
 	{
 		return _zone;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CREATURE_ZONE_EXIT;
 	}
 }

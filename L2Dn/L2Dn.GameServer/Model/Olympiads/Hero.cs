@@ -9,8 +9,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
@@ -903,9 +902,9 @@ public class Hero
 		loadDiary(player.getObjectId());
 		HERO_MESSAGE.put(player.getObjectId(), "");
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_TAKE_HERO))
+		if (player.Events.HasSubscribers<OnPlayerTakeHero>())
 		{
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnPlayerTakeHero(player));
+			player.Events.NotifyAsync(new OnPlayerTakeHero(player));
 		}
 		
 		updateHeroes(false);

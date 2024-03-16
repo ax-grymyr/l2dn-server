@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using L2Dn.Configuration;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
@@ -20,7 +21,7 @@ namespace L2Dn.GameServer.Model.Olympiads;
 /**
  * @author godson
  */
-public class Olympiad: ListenersContainer
+public class Olympiad
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Olympiad));
 	protected static readonly Logger LOGGER_OLYMPIAD = LogManager.GetLogger("olympiad");
@@ -74,6 +75,8 @@ public class Olympiad: ListenersContainer
 	protected ScheduledFuture _scheduledValdationTask;
 	protected ScheduledFuture _gameManager = null;
 	protected ScheduledFuture _gameAnnouncer = null;
+
+	private readonly EventContainer _eventContainer = new("Olympiad", GlobalEvents.Global);
 	
 	protected Olympiad()
 	{
@@ -92,6 +95,8 @@ public class Olympiad: ListenersContainer
 			LOGGER.Info("Disabled.");
 		}
 	}
+
+	public EventContainer Events => _eventContainer;
 	
 	private void load()
 	{

@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
 
@@ -6,7 +7,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Instances;
 /**
  * @author malyelfik
  */
-public class OnInstanceEnter: IBaseEvent
+public class OnInstanceEnter: EventBase
 {
 	private readonly Player _player;
 	private readonly Instance _instance;
@@ -25,10 +26,5 @@ public class OnInstanceEnter: IBaseEvent
 	public Instance getInstanceWorld()
 	{
 		return _instance;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_INSTANCE_ENTER;
 	}
 }

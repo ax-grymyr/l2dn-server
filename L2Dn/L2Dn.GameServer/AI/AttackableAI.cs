@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
@@ -6,9 +7,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -363,10 +362,13 @@ public class AttackableAI: CreatureAI
 						}
 						else if (t.isPlayable())
 						{
-							if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_HATE, getActiveChar()))
+							EventContainer events = getActiveChar().Events;
+							if (events.HasSubscribers<OnAttackableHate>())
 							{
-								TerminateReturn term = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnAttackableHate(getActiveChar(), t.getActingPlayer(), t.isSummon()), getActiveChar());
-								if ((term != null) && term.terminate())
+								OnAttackableHate onAttackableHate =
+									new(getActiveChar(), t.getActingPlayer(), t.isSummon());
+								
+								if (events.Notify(onAttackableHate) && onAttackableHate.Terminate)
 								{
 									return;
 								}
@@ -711,9 +713,10 @@ public class AttackableAI: CreatureAI
 							// Notify the AI with EVT_AGGRESSION
 							called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
 							
-							if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_FACTION_CALL, called))
+							if (called.Events.HasSubscribers<OnAttackableFactionCall>())
 							{
-								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), finalTarget.getActingPlayer(), finalTarget.isSummon()), called);
+								called.Events.NotifyAsync(new OnAttackableFactionCall(called, getActiveChar(),
+									finalTarget.getActingPlayer(), finalTarget.isSummon()));
 							}
 						}
 						else if (called.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK)

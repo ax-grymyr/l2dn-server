@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Reflection;
+using L2Dn.Events;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -8,16 +9,17 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events.Annotations;
-using L2Dn.GameServer.Model.Events.Impl;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Impl.Instances;
 using L2Dn.GameServer.Model.Events.Impl.Items;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Events.Impl.Sieges;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Summons;
+using L2Dn.GameServer.Model.Events.Impl.Traps;
+using L2Dn.GameServer.Model.Events.Impl.Zones;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -47,7 +49,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractScript));
 	private readonly Map<ListenerRegisterType, Set<int>> _registeredIds = new();
-	private readonly ConcurrentQueue<AbstractEventListener> _listeners = new(); // PriorityBlockingQueue
+	//private readonly ConcurrentQueue<AbstractEventListener> _listeners = new(); // PriorityBlockingQueue
 	private TimerExecutor<String> _timerExecutor;
 	
 	public AbstractScript()
@@ -108,7 +110,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			if (registerEventAttribute is not null && registerTypeAttribute is not null)
 			{
 				ListenerRegisterType type = registerTypeAttribute.RegisterType;
-				EventType eventType = registerEventAttribute.EventType;
+				//EventType eventType = registerEventAttribute.EventType;
 				if (method.GetParameters().Length != 1)
 				{
 					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
@@ -117,24 +119,24 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 					continue;
 				}
 
-				if (eventType.GetEventClass() != method.GetParameters()[0].ParameterType)
-				{
-					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
-					            method.Name + " expected parameter to be type of: " +
-					            eventType.GetEventClass()?.FullName + " but found: " +
-					            method.GetParameters()[0].ParameterType.FullName);
-				
-					continue;
-				}
-
-				if (!eventType.GetReturnTypes().Contains(method.ReturnType))
-				{
-					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
-					            method.Name + " expected return type to be one of: " +
-					            string.Join(", ", eventType.GetReturnTypes().Select(t => t.FullName)) + " but found: " +
-					            method.ReturnType.FullName);
-					continue;
-				}
+				// if (eventType.GetEventClass() != method.GetParameters()[0].ParameterType)
+				// {
+				// 	LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
+				// 	            method.Name + " expected parameter to be type of: " +
+				// 	            eventType.GetEventClass()?.FullName + " but found: " +
+				// 	            method.GetParameters()[0].ParameterType.FullName);
+				//
+				// 	continue;
+				// }
+				//
+				// if (!eventType.GetReturnTypes().Contains(method.ReturnType))
+				// {
+				// 	LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
+				// 	            method.Name + " expected return type to be one of: " +
+				// 	            string.Join(", ", eventType.GetReturnTypes().Select(t => t.FullName)) + " but found: " +
+				// 	            method.ReturnType.FullName);
+				// 	continue;
+				// }
 
 				int priority = 0;
 				
@@ -197,7 +199,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 					_registeredIds.computeIfAbsent(type, k => new()).addAll(ids);
 				}
 				
-				registerAnnotation(method, eventType, type, priority, ids);
+				//registerAnnotation(method, eventType, type, priority, ids);
 			}
 		}
 	}
@@ -207,8 +209,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	public override bool unload()
 	{
-		_listeners.forEach(x => x.unregisterMe());
-		_listeners.Clear();
+		//_listeners.forEach(x => x.unregisterMe());
+		//_listeners.Clear();
 		if (_timerExecutor != null)
 		{
 			_timerExecutor.cancelAllTimers();
@@ -224,7 +226,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableKillId(Action<OnAttackableKill> callback, params int[] npcIds)
+	protected void setAttackableKillId(Action<OnAttackableKill> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -233,7 +235,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name + ": Found addKillId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_KILL, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -242,7 +245,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableKillId(Action<OnAttackableKill> callback, IReadOnlyCollection<int> npcIds)
+	protected void setAttackableKillId(Action<OnAttackableKill> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -251,7 +254,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name + ": Found addKillId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_KILL, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -262,10 +266,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> addCreatureKillId<T>(Func<OnCreatureDeath, T> callback, params int[] npcIds)
-		where T: AbstractEventReturn
+	protected void addCreatureKillId(Action<OnCreatureDeath> callback, params int[] npcIds)
 	{
-		return registerFunction(callback, EventType.ON_CREATURE_DEATH, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -274,9 +277,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureKillId(Action<OnCreatureDeath> callback, params int[] npcIds)
+	protected void setCreatureKillId(Action<OnCreatureDeath> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_DEATH, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -285,9 +288,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureKillId(Action<OnCreatureDeath> callback, IReadOnlyCollection<int> npcIds)
+	protected void setCreatureKillId(Action<OnCreatureDeath> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_DEATH, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -298,10 +301,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> addCreatureAttackedId<T>(Func<OnCreatureAttacked, T> callback, params int[] npcIds)
-		where T: AbstractEventReturn
+	protected void addCreatureAttackedId(Action<OnCreatureAttacked> callback, params int[] npcIds)
 	{
-		return registerFunction(callback, EventType.ON_CREATURE_ATTACKED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -310,9 +312,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureAttackedId(Action<OnCreatureAttacked> callback, params int[] npcIds)
+	protected void setCreatureAttackedId(Action<OnCreatureAttacked> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ATTACKED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -321,9 +323,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureAttackedId(Action<OnCreatureAttacked> callback, IReadOnlyCollection<int> npcIds)
+	protected void setCreatureAttackedId(Action<OnCreatureAttacked> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ATTACKED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -334,7 +336,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, params int[] npcIds)
+	protected void setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -343,7 +345,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addFirstTalkId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_FIRST_TALK, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -352,7 +355,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -361,7 +364,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addFirstTalkId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_FIRST_TALK, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -371,7 +375,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcTalkId(IReadOnlyCollection<int> npcIds)
+	protected void setNpcTalkId(Action<OnNpcTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -380,7 +384,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addTalkId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerDummy(EventType.ON_NPC_TALK, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -388,7 +393,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcTalkId(params int[] npcIds)
+	protected void setNpcTalkId(Action<OnNpcTalk> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -397,7 +402,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addTalkId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerDummy(EventType.ON_NPC_TALK, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -408,9 +414,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcTeleportId(Action<OnNpcTeleport> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcTeleportId(Action<OnNpcTeleport> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_TELEPORT, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -419,9 +425,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcTeleportId(Action<OnNpcTeleport> callback, params int[] npcIds)
+	protected void setNpcTeleportId(Action<OnNpcTeleport> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_TELEPORT, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -431,7 +437,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcQuestStartId(params int[] npcIds)
+	protected void setNpcQuestStartId(Action<OnNpcQuestStart> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -440,7 +446,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addStartNpc for non existing NPC: " + id + "!");
 			}
 		}
-		return registerDummy(EventType.ON_NPC_QUEST_START, ListenerRegisterType.NPC, npcIds);
+
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -448,7 +455,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcQuestStartId(IReadOnlyCollection<int> npcIds)
+	protected void setNpcQuestStartId(Action<OnNpcQuestStart> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -457,7 +464,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addStartNpc for non existing NPC: " + id + "!");
 			}
 		}
-		return registerDummy(EventType.ON_NPC_QUEST_START, ListenerRegisterType.NPC, npcIds);
+
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -468,7 +476,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSkillSeeId(Action<OnNpcSkillSee> callback, params int[] npcIds)
+	protected void setNpcSkillSeeId(Action<OnNpcSkillSee> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -477,7 +485,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSkillSeeId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SKILL_SEE, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -486,7 +495,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSkillSeeId(Action<OnNpcSkillSee> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcSkillSeeId(Action<OnNpcSkillSee> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -495,7 +504,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSkillSeeId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SKILL_SEE, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -506,7 +516,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, params int[] npcIds)
+	protected void setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -515,7 +525,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSpellFinishedId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SKILL_FINISHED, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -524,7 +535,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -533,7 +544,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSpellFinishedId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SKILL_FINISHED, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -544,7 +556,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSpawnId(Action<OnNpcSpawn> callback, params int[] npcIds)
+	protected void setNpcSpawnId(Action<OnNpcSpawn> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -553,7 +565,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSpawnId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SPAWN, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -562,7 +575,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcSpawnId(Action<OnNpcSpawn> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcSpawnId(Action<OnNpcSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -571,7 +584,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addSpawnId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_NPC_SPAWN, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -582,9 +596,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcDespawnId(Action<OnNpcDespawn> callback, params int[] npcIds)
+	protected void setNpcDespawnId(Action<OnNpcDespawn> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -593,9 +607,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcDespawnId(Action<OnNpcDespawn> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcDespawnId(Action<OnNpcDespawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -606,9 +620,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcEventReceivedId(Action<OnNpcEventReceived> callback, params int[] npcIds)
+	protected void setNpcEventReceivedId(Action<OnNpcEventReceived> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_EVENT_RECEIVED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -617,9 +631,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcEventReceivedId(Action<OnNpcEventReceived> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcEventReceivedId(Action<OnNpcEventReceived> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_EVENT_RECEIVED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -630,9 +644,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, params int[] npcIds)
+	protected void setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_MOVE_FINISHED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -641,9 +655,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_MOVE_FINISHED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -654,9 +668,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, params int[] npcIds)
+	protected void setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_MOVE_ROUTE_FINISHED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -665,9 +679,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_MOVE_ROUTE_FINISHED, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -678,9 +692,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcHateId(Action<OnAttackableHate> callback, params int[] npcIds)
+	protected void setNpcHateId(Action<OnAttackableHate> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_HATE, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -689,9 +703,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcHateId(Action<OnAttackableHate> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcHateId(Action<OnAttackableHate> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_HATE, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -700,9 +714,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> addNpcHateId(Func<OnAttackableHate, TerminateReturn> callback, params int[] npcIds)
+	protected void addNpcHateId(Action<OnAttackableHate> callback, params int[] npcIds)
 	{
-		return registerFunction(callback, EventType.ON_NPC_HATE, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -711,9 +725,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> addNpcHateId(Func<OnAttackableHate, TerminateReturn> callback, IReadOnlyCollection<int> npcIds)
+	protected void addNpcHateId(Action<OnAttackableHate> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerFunction(callback, EventType.ON_NPC_HATE, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -724,9 +738,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, params int[] npcIds)
+	protected void setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_CAN_BE_SEEN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -735,31 +749,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, IReadOnlyCollection<int> npcIds)
+	protected void setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_NPC_CAN_BE_SEEN, ListenerRegisterType.NPC, npcIds);
-	}
-	
-	/**
-	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
-	 * @param callback
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> setNpcCanBeSeenId(Func<OnNpcCanBeSeen, TerminateReturn> callback, params int[] npcIds)
-	{
-		return registerFunction(callback, EventType.ON_NPC_CAN_BE_SEEN, ListenerRegisterType.NPC, npcIds);
-	}
-	
-	/**
-	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
-	 * @param callback
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> setNpcCanBeSeenId(Func<OnNpcCanBeSeen, TerminateReturn> callback, IReadOnlyCollection<int> npcIds)
-	{
-		return registerFunction(callback, EventType.ON_NPC_CAN_BE_SEEN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -770,13 +762,14 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureSeeId(Action<OnCreatureSee> callback, params int[] npcIds)
+	protected void setCreatureSeeId(Action<OnCreatureSee> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
 			Npc.addCreatureSeeId(id);
 		}
-		return registerConsumer(callback, EventType.ON_CREATURE_SEE, ListenerRegisterType.NPC, npcIds);
+
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -785,13 +778,14 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureSeeId(Action<OnCreatureSee> callback, IReadOnlyCollection<int> npcIds)
+	protected void setCreatureSeeId(Action<OnCreatureSee> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
 			Npc.addCreatureSeeId(id);
 		}
-		return registerConsumer(callback, EventType.ON_CREATURE_SEE, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -802,9 +796,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, params int[] npcIds)
+	protected void setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_FACTION_CALL, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -813,9 +807,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, IReadOnlyCollection<int> npcIds)
+	protected void setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_FACTION_CALL, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -826,7 +820,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableAttackId(Action<OnAttackableAttack> callback, params int[] npcIds)
+	protected void setAttackableAttackId(Action<OnAttackableAttack> callback, params int[] npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -835,7 +829,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addAttackId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_ATTACK, ListenerRegisterType.NPC, npcIds);
+
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -844,7 +839,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableAttackId(Action<OnAttackableAttack> callback, IReadOnlyCollection<int> npcIds)
+	protected void setAttackableAttackId(Action<OnAttackableAttack> callback, IReadOnlyCollection<int> npcIds)
 	{
 		foreach (int id in npcIds)
 		{
@@ -853,7 +848,8 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				LOGGER.Error(base.GetType().Name+ ": Found addAttackId for non existing NPC: " + id + "!");
 			}
 		}
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_ATTACK, ListenerRegisterType.NPC, npcIds);
+		
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -864,9 +860,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, params int[] npcIds)
+	protected void setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_AGGRO_RANGE_ENTER, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -875,9 +871,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, IReadOnlyCollection<int> npcIds)
+	protected void setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ATTACKABLE_AGGRO_RANGE_ENTER, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -888,9 +884,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, params int[] npcIds)
+	protected void setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SKILL_LEARN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -899,9 +895,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, IReadOnlyCollection<int> npcIds)
+	protected void setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SKILL_LEARN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -912,9 +908,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSummonSpawnId(Action<OnPlayerSummonSpawn> callback, params int[] npcIds)
+	protected void setPlayerSummonSpawnId(Action<OnSummonSpawn> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SUMMON_SPAWN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -923,9 +919,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSummonSpawnId(Action<OnPlayerSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
+	protected void setPlayerSummonSpawnId(Action<OnSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SUMMON_SPAWN, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -936,9 +932,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSummonTalkId(Action<OnPlayerSummonTalk> callback, params int[] npcIds)
+	protected void setPlayerSummonTalkId(Action<OnSummonTalk> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SUMMON_TALK, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -947,9 +943,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerSummonTalkId(Action<OnPlayerSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
+	protected void setPlayerSummonTalkId(Action<OnSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_SUMMON_TALK, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -959,9 +955,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param callback
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerLoginId(Action<OnPlayerLogin> callback)
+	protected void setPlayerLoginId(Action<OnPlayerLogin> callback)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_LOGIN, ListenerRegisterType.GLOBAL);
+		registerConsumer(callback, ListenerRegisterType.GLOBAL);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -971,9 +967,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param callback
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerLogoutId(Action<OnPlayerLogout> callback)
+	protected void setPlayerLogoutId(Action<OnPlayerLogout> callback)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_LOGOUT, ListenerRegisterType.GLOBAL);
+		registerConsumer(callback, ListenerRegisterType.GLOBAL);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -984,9 +980,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureZoneEnterId(Action<OnCreatureZoneEnter> callback, params int[] npcIds)
+	protected void setCreatureZoneEnterId(Action<OnZoneEnter> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ZONE_ENTER, ListenerRegisterType.ZONE, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
 	}
 	
 	/**
@@ -995,9 +991,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureZoneEnterId(Action<OnCreatureZoneEnter> callback, IReadOnlyCollection<int> npcIds)
+	protected void setCreatureZoneEnterId(Action<OnZoneEnter> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ZONE_ENTER, ListenerRegisterType.ZONE, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1008,9 +1004,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureZoneExitId(Action<OnCreatureZoneExit> callback, params int[] npcIds)
+	protected void setCreatureZoneExitId(Action<OnZoneExit> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ZONE_EXIT, ListenerRegisterType.ZONE, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
 	}
 	
 	/**
@@ -1019,9 +1015,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCreatureZoneExitId(Action<OnCreatureZoneExit> callback, IReadOnlyCollection<int> npcIds)
+	protected void setCreatureZoneExitId(Action<OnZoneExit> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_CREATURE_ZONE_EXIT, ListenerRegisterType.ZONE, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1032,9 +1028,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setTrapActionId(Action<OnTrapAction> callback, params int[] npcIds)
+	protected void setTrapActionId(Action<OnTrapAction> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_TRAP_ACTION, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	/**
@@ -1043,9 +1039,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setTrapActionId(Action<OnTrapAction> callback, IReadOnlyCollection<int> npcIds)
+	protected void setTrapActionId(Action<OnTrapAction> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_TRAP_ACTION, ListenerRegisterType.NPC, npcIds);
+		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1056,9 +1052,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setItemBypassEvenId(Action<OnItemBypassEvent> callback, params int[] npcIds)
+	protected void setItemBypassEvenId(Action<OnItemBypassEvent> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ITEM_BYPASS_EVENT, ListenerRegisterType.ITEM, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
 	}
 	
 	/**
@@ -1067,9 +1063,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setItemBypassEvenId(Action<OnItemBypassEvent> callback, IReadOnlyCollection<int> npcIds)
+	protected void setItemBypassEvenId(Action<OnItemBypassEvent> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ITEM_BYPASS_EVENT, ListenerRegisterType.ITEM, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1080,9 +1076,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setItemTalkId(Action<OnItemTalk> callback, params int[] npcIds)
+	protected void setItemTalkId(Action<OnItemTalk> callback, params int[] npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ITEM_TALK, ListenerRegisterType.ITEM, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
 	}
 	
 	/**
@@ -1091,9 +1087,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setItemTalkId(Action<OnItemTalk> callback, IReadOnlyCollection<int> npcIds)
+	protected void setItemTalkId(Action<OnItemTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
-		return registerConsumer(callback, EventType.ON_ITEM_TALK, ListenerRegisterType.ITEM, npcIds);
+		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1103,9 +1099,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param callback
 	 * @return
 	 */
-	protected List<AbstractEventListener> setOlympiadMatchResult(Action<OnOlympiadMatchResult> callback)
+	protected void setOlympiadMatchResult(Action<OnOlympiadMatchResult> callback)
 	{
-		return registerConsumer(callback, EventType.ON_OLYMPIAD_MATCH_RESULT, ListenerRegisterType.OLYMPIAD);
+		registerConsumer(callback, ListenerRegisterType.OLYMPIAD);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1116,9 +1112,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, params int[] castleIds)
+	protected void setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, params int[] castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_START, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	/**
@@ -1127,9 +1123,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, IReadOnlyCollection<int> castleIds)
+	protected void setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, IReadOnlyCollection<int> castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_START, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1140,9 +1136,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, params int[] castleIds)
+	protected void setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, params int[] castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_OWNER_CHANGE, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	/**
@@ -1151,9 +1147,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, IReadOnlyCollection<int> castleIds)
+	protected void setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, IReadOnlyCollection<int> castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_OWNER_CHANGE, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1164,9 +1160,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, params int[] castleIds)
+	protected void setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, params int[] castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_FINISH, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	/**
@@ -1175,9 +1171,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param castleIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, IReadOnlyCollection<int> castleIds)
+	protected void setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, IReadOnlyCollection<int> castleIds)
 	{
-		return registerConsumer(callback, EventType.ON_CASTLE_SIEGE_FINISH, ListenerRegisterType.CASTLE, castleIds);
+		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1187,9 +1183,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param callback
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerProfessionChangeId(Action<OnPlayerProfessionChange> callback)
+	protected void setPlayerProfessionChangeId(Action<OnPlayerProfessionChange> callback)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_PROFESSION_CHANGE, ListenerRegisterType.GLOBAL);
+		registerConsumer(callback, ListenerRegisterType.GLOBAL);
 	}
 	
 	/**
@@ -1197,9 +1193,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param callback
 	 * @return
 	 */
-	protected List<AbstractEventListener> setPlayerProfessionCancelId(Action<OnPlayerProfessionCancel> callback)
+	protected void setPlayerProfessionCancelId(Action<OnPlayerProfessionCancel> callback)
 	{
-		return registerConsumer(callback, EventType.ON_PLAYER_PROFESSION_CANCEL, ListenerRegisterType.GLOBAL);
+		registerConsumer(callback, ListenerRegisterType.GLOBAL);
 	}
 	
 	/**
@@ -1208,9 +1204,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceCreatedId(Action<OnInstanceCreated> callback, params int[] templateIds)
+	protected void setInstanceCreatedId(Action<OnInstanceCreated> callback, params int[] templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	/**
@@ -1219,9 +1215,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceCreatedId(Action<OnInstanceCreated> callback, IReadOnlyCollection<int> templateIds)
+	protected void setInstanceCreatedId(Action<OnInstanceCreated> callback, IReadOnlyCollection<int> templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1232,9 +1228,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceDestroyId(Action<OnInstanceDestroy> callback, params int[] templateIds)
+	protected void setInstanceDestroyId(Action<OnInstanceDestroy> callback, params int[] templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	/**
@@ -1243,9 +1239,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceDestroyId(Action<OnInstanceDestroy> callback, IReadOnlyCollection<int> templateIds)
+	protected void setInstanceDestroyId(Action<OnInstanceDestroy> callback, IReadOnlyCollection<int> templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1256,9 +1252,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceEnterId(Action<OnInstanceEnter> callback, params int[] templateIds)
+	protected void setInstanceEnterId(Action<OnInstanceEnter> callback, params int[] templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	/**
@@ -1267,9 +1263,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceEnterId(Action<OnInstanceEnter> callback, IReadOnlyCollection<int> templateIds)
+	protected void setInstanceEnterId(Action<OnInstanceEnter> callback, IReadOnlyCollection<int> templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1280,9 +1276,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceLeaveId(Action<OnInstanceLeave> callback, params int[] templateIds)
+	protected void setInstanceLeaveId(Action<OnInstanceLeave> callback, params int[] templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	/**
@@ -1291,9 +1287,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceLeaveId(Action<OnInstanceLeave> callback, IReadOnlyCollection<int> templateIds)
+	protected void setInstanceLeaveId(Action<OnInstanceLeave> callback, IReadOnlyCollection<int> templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1304,9 +1300,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, params int[] templateIds)
+	protected void setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, params int[] templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_STATUS_CHANGE, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	/**
@@ -1315,9 +1311,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param templateIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, IReadOnlyCollection<int> templateIds)
+	protected void setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, IReadOnlyCollection<int> templateIds)
 	{
-		return registerConsumer(callback, EventType.ON_INSTANCE_STATUS_CHANGE, ListenerRegisterType.INSTANCE, templateIds);
+		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
 	}
 	
 	// --------------------------------------------------------------------------------------------------
@@ -1332,13 +1328,10 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type,
-		ListenerRegisterType registerType, params int[] npcIds)
-		where TEvent: IBaseEvent
+	protected void registerConsumer<TEvent>(Action<TEvent> callback, ListenerRegisterType registerType, params int[] npcIds)
+		where TEvent: EventBase
 	{
-		return registerListener(
-			container => new ConsumerEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
-			npcIds);
+		registerListener(callback, registerType, npcIds);
 	}
 
 	/**
@@ -1349,139 +1342,10 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param npcIds
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerConsumer<TEvent>(Action<TEvent> callback, EventType type,
-		ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
-		where TEvent: IBaseEvent
+	protected void registerConsumer<TEvent>(Action<TEvent> callback, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
+		where TEvent: EventBase
 	{
-		return registerListener(
-			container => new ConsumerEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
-			npcIds);
-	}
-
-	/**
-	 * Method that registers Function type of listeners (Listeners that need parameters and return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerFunction<TEvent, TReturn>(Func<TEvent, TReturn> callback,
-		EventType type, ListenerRegisterType registerType, params int[] npcIds)
-		where TEvent: IBaseEvent
-		where TReturn: AbstractEventReturn
-	{
-		return registerListener(
-			container => new FunctionEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
-			npcIds);
-	}
-
-	/**
-	 * Method that registers Function type of listeners (Listeners that need parameters and return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerFunction<TEvent, TReturn>(Func<TEvent, TReturn> callback, EventType type, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
-		where TEvent: IBaseEvent
-		where TReturn: AbstractEventReturn
-	{
-		return registerListener(
-			container => new FunctionEventListener(container, type, ev => callback((TEvent)ev), this), registerType,
-			npcIds);
-	}
-
-	/**
-	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type,
-		ListenerRegisterType registerType, params int[] npcIds)
-	{
-		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType,
-			npcIds);
-	}
-
-	/**
-	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerRunnable(Runnable callback, EventType type,
-		ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
-	{
-		return registerListener(container => new RunnableEventListener(container, type, callback, this), registerType,
-			npcIds);
-	}
-
-	// /**
-	//  * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
-	//  * @param callback
-	//  * @param type
-	//  * @param registerType
-	//  * @param priority
-	//  * @param npcIds
-	//  * @return
-	//  */
-	// protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type,
-	// 	ListenerRegisterType registerType, int priority, params int[] npcIds)
-	// {
-	// 	return registerListener(container => new AnnotationEventListener(container, type, callback, this, priority),
-	// 		registerType, npcIds);
-	// }
-
-	/**
-	 * Method that registers runnable type of listeners (Listeners that doesn't needs parameters or return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param priority
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerAnnotation(MethodInfo callback, EventType type,
-		ListenerRegisterType registerType, int priority, IReadOnlyCollection<int> npcIds)
-	{
-		Func<object, IBaseEvent, object> func =
-			(Func<object, IBaseEvent, object>)Delegate.CreateDelegate(typeof(Func<object, IBaseEvent, object>),
-				callback);
-		
-		return registerListener(container => new AnnotationEventListener(container, type, func, this, priority),
-			registerType, npcIds);
-	}
-
-	/**
-	 * Method that registers dummy type of listeners (Listeners doesn't gets notification but just used to check if their type present or not)
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerDummy(EventType type, ListenerRegisterType registerType, params int[] npcIds)
-	{
-		return registerListener(container => new DummyEventListener(container, type, this), registerType, npcIds);
-	}
-
-	/**
-	 * Method that registers dummy type of listeners (Listeners doesn't gets notification but just used to check if their type present or not)
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected List<AbstractEventListener> registerDummy(EventType type, ListenerRegisterType registerType,
-		IReadOnlyCollection<int> npcIds)
-	{
-		return registerListener(container => new DummyEventListener(container, type, this), registerType, npcIds);
+		registerListener(callback, registerType, npcIds);
 	}
 
 	// --------------------------------------------------------------------------------------------------
@@ -1495,9 +1359,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param ids
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerListener(Func<ListenersContainer, AbstractEventListener> action, ListenerRegisterType registerType, params int[] ids)
+	protected void registerListener<TEvent>(Action<TEvent> action, ListenerRegisterType registerType, params int[] ids)
+		where TEvent: EventBase
 	{
-		List<AbstractEventListener> listeners = new();
 		if (ids.Length > 0)
 		{
 			foreach (int id in ids)
@@ -1509,7 +1373,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						NpcTemplate template = NpcData.getInstance().getTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1518,7 +1382,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						ZoneType template = ZoneManager.getInstance().getZoneById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1527,7 +1391,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						ItemTemplate template = ItemData.getInstance().getTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1536,7 +1400,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						Castle template = CastleManager.getInstance().getCastleById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1545,7 +1409,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						Fort template = FortManager.getInstance().getFortById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1554,7 +1418,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1575,40 +1439,31 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				case ListenerRegisterType.OLYMPIAD:
 				{
 					Olympiad template = Olympiad.getInstance();
-					listeners.add(template.addListener(action(template)));
+					template.Events.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL: // Global Listener
 				{
-					ListenersContainer template = Containers.Global();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Global.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_NPCS: // Global Npcs Listener
 				{
-					ListenersContainer template = Containers.Npcs();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Npcs.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_MONSTERS: // Global Monsters Listener
 				{
-					ListenersContainer template = Containers.Monsters();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Monsters.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_PLAYERS: // Global Players Listener
 				{
-					ListenersContainer template = Containers.Players();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Players.Subscribe(this, action);
 					break;
 				}
 			}
 		}
-		
-		foreach (var listener in listeners)
-			_listeners.Enqueue(listener);
-
-		return listeners;
 	}
 	
 	/**
@@ -1618,10 +1473,10 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param ids
 	 * @return
 	 */
-	protected List<AbstractEventListener> registerListener(Func<ListenersContainer, AbstractEventListener> action, ListenerRegisterType registerType, IReadOnlyCollection<int> ids)
+	protected void registerListener<TEvent>(Action<TEvent> action, ListenerRegisterType registerType, IReadOnlyCollection<int> ids)
+		where TEvent: EventBase
 	{
-		List<AbstractEventListener> listeners = new();
-		if (ids.Count != 0)
+		if (ids.Count > 0)
 		{
 			foreach (int id in ids)
 			{
@@ -1632,7 +1487,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						NpcTemplate template = NpcData.getInstance().getTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1641,7 +1496,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						ZoneType template = ZoneManager.getInstance().getZoneById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1650,7 +1505,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						ItemTemplate template = ItemData.getInstance().getTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1659,7 +1514,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						Castle template = CastleManager.getInstance().getCastleById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1668,7 +1523,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						Fort template = FortManager.getInstance().getFortById(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1677,7 +1532,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
 						if (template != null)
 						{
-							listeners.add(template.addListener(action(template)));
+							template.Events.Subscribe(this, action);
 						}
 						break;
 					}
@@ -1687,9 +1542,9 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 						break;
 					}
 				}
+
+				_registeredIds.computeIfAbsent(registerType, k => new()).add(id);
 			}
-			
-			_registeredIds.computeIfAbsent(registerType, k => new()).addAll(ids);
 		}
 		else
 		{
@@ -1698,50 +1553,36 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 				case ListenerRegisterType.OLYMPIAD:
 				{
 					Olympiad template = Olympiad.getInstance();
-					listeners.add(template.addListener(action(template)));
+					template.Events.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL: // Global Listener
 				{
-					ListenersContainer template = Containers.Global();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Global.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_NPCS: // Global Npcs Listener
 				{
-					ListenersContainer template = Containers.Npcs();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Npcs.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_MONSTERS: // Global Monsters Listener
 				{
-					ListenersContainer template = Containers.Monsters();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Monsters.Subscribe(this, action);
 					break;
 				}
 				case ListenerRegisterType.GLOBAL_PLAYERS: // Global Players Listener
 				{
-					ListenersContainer template = Containers.Players();
-					listeners.add(template.addListener(action(template)));
+					GlobalEvents.Players.Subscribe(this, action);
 					break;
 				}
 			}
 		}
-
-		foreach (var listener in listeners)
-			_listeners.Enqueue(listener);
-
-		return listeners;
 	}
 	
 	public Set<int> getRegisteredIds(ListenerRegisterType type)
 	{
 		return _registeredIds.getOrDefault(type, new());
-	}
-	
-	public ConcurrentQueue<AbstractEventListener> getListeners()
-	{
-		return _listeners;
 	}
 	
 	/**

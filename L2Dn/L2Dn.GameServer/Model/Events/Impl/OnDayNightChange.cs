@@ -1,6 +1,8 @@
-﻿namespace L2Dn.GameServer.Model.Events.Impl;
+﻿using L2Dn.Events;
 
-public class OnDayNightChange: IBaseEvent
+namespace L2Dn.GameServer.Model.Events.Impl;
+
+public class OnDayNightChange: EventBase
 {
     private readonly bool _isNight;
 
@@ -12,10 +14,5 @@ public class OnDayNightChange: IBaseEvent
     public bool isNight()
     {
         return _isNight;
-    }
-
-    public EventType getType()
-    {
-        return EventType.ON_DAY_NIGHT_CHANGE;
     }
 }

@@ -8,8 +8,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
@@ -613,18 +613,20 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyTalk(Npc npc, Player player)
 	{
-		String res = null;
+		String res;
 		try
 		{
-			Set<Quest> startingQuests = new();
-			foreach (AbstractEventListener listener in npc.getListeners(EventType.ON_NPC_QUEST_START))
+			Set<Quest> startingQuests;
+			if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 			{
-				Object owner = listener.getOwner();
-				if (owner is Quest)
-				{
-					startingQuests.add((Quest) owner);
-				}
+				OnNpcQuestStart onNpcQuestStart = new OnNpcQuestStart(npc, player);
+				if (npc.Events.Notify(onNpcQuestStart))
+					startingQuests = onNpcQuestStart.Quests;
+				else
+					startingQuests = new();
 			}
+			else
+				startingQuests = new();
 			
 			String startConditionHtml = getStartConditionHtml(player, npc);
 			if (startingQuests.Contains(this) && (startConditionHtml != null))
@@ -1762,7 +1764,7 @@ public class Quest: AbstractScript, IIdentifiable
 	// TODO: Clean up these methods
 	public void addStartNpc(int npcId)
 	{
-		setNpcQuestStartId(npcId);
+		setNpcQuestStartId(ev => ev.Quests.Add(this), npcId);
 	}
 	
 	public void addFirstTalkId(int npcId)
@@ -1772,7 +1774,7 @@ public class Quest: AbstractScript, IIdentifiable
 	
 	public void addTalkId(int npcId)
 	{
-		setNpcTalkId(npcId);
+		setNpcTalkId(ev => ev.Quests.Add(this), npcId);
 	}
 	
 	public void addKillId(int npcId)
@@ -1791,7 +1793,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addStartNpc(params int[] npcIds)
 	{
-		setNpcQuestStartId(npcIds);
+		setNpcQuestStartId(ev => ev.Quests.Add(this), npcIds);
 	}
 	
 	/**
@@ -1800,7 +1802,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addStartNpc(IReadOnlyCollection<int> npcIds)
 	{
-		setNpcQuestStartId(npcIds);
+		setNpcQuestStartId(ev => ev.Quests.Add(this), npcIds);
 	}
 	
 	/**
@@ -1917,12 +1919,12 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addTalkId(params int[] npcIds)
 	{
-		setNpcTalkId(npcIds);
+		setNpcTalkId(ev => ev.Quests.Add(this), npcIds);
 	}
 	
 	public void addTalkId(IReadOnlyCollection<int> npcIds)
 	{
-		setNpcTalkId(npcIds);
+		setNpcTalkId(ev => ev.Quests.Add(this), npcIds);
 	}
 	
 	/**
@@ -2195,7 +2197,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addNpcHateId(params int[] npcIds)
 	{
-		addNpcHateId(@event => new TerminateReturn(!onNpcHate(@event.getNpc(), @event.getActiveChar(), @event.isSummon()), false, false), npcIds);
+		addNpcHateId(ev =>
+		{
+			if (!onNpcHate(ev.getNpc(), ev.getActiveChar(), ev.isSummon()))
+				ev.Terminate = true;
+		}, npcIds);
 	}
 	
 	/**
@@ -2204,7 +2210,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addNpcHateId(IReadOnlyCollection<int> npcIds)
 	{
-		addNpcHateId(@event => new TerminateReturn(!onNpcHate(@event.getNpc(), @event.getActiveChar(), @event.isSummon()), false, false), npcIds);
+		addNpcHateId(ev =>
+		{
+			if (!onNpcHate(ev.getNpc(), ev.getActiveChar(), ev.isSummon()))
+				ev.Terminate = true;
+		}, npcIds);
 	}
 	
 	/**
@@ -2249,7 +2259,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCanSeeMeId(params int[] npcIds)
 	{
-		addNpcHateId(@event => new TerminateReturn(!notifyOnCanSeeMe(@event.getNpc(), @event.getActiveChar()), false, false), npcIds);
+		addNpcHateId(ev =>
+		{
+			if (!notifyOnCanSeeMe(ev.getNpc(), ev.getActiveChar()))
+				ev.Terminate = true;
+		}, npcIds);
 	}
 	
 	/**
@@ -2258,7 +2272,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCanSeeMeId(IReadOnlyCollection<int> npcIds)
 	{
-		addNpcHateId(@event => new TerminateReturn(!notifyOnCanSeeMe(@event.getNpc(), @event.getActiveChar()), false, false), npcIds);
+		addNpcHateId(ev =>
+		{
+			if (!notifyOnCanSeeMe(ev.getNpc(), ev.getActiveChar()))
+				ev.Terminate = true;
+		}, npcIds);
 	}
 	
 	public void addOlympiadMatchFinishId()
@@ -2797,13 +2815,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		else
 		{
-			foreach (AbstractEventListener listener in getListeners())
-			{
-				if (listener.getType() == EventType.ON_PLAYER_LOGIN)
-				{
-					listener.unregisterMe();
-				}
-			}
+			GlobalEvents.Global.UnsubscribeAll<OnPlayerLogin>(this);
 		}
 	}
 	

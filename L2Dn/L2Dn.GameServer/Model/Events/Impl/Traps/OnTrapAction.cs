@@ -1,13 +1,14 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Traps;
 
 /**
  * @author UnAfraid
  */
-public class OnTrapAction: IBaseEvent
+public class OnTrapAction: EventBase
 {
 	private readonly Trap _trap;
 	private readonly Creature _trigger;
@@ -33,10 +34,5 @@ public class OnTrapAction: IBaseEvent
 	public TrapAction getAction()
 	{
 		return _action;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_TRAP_ACTION;
 	}
 }

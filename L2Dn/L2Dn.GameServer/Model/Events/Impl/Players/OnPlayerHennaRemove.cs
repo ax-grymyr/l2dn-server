@@ -1,12 +1,13 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Henna;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerHennaRemove: IBaseEvent
+public class OnPlayerHennaRemove: EventBase
 {
 	private readonly Player _player;
 	private readonly Henna _henna;
@@ -25,10 +26,5 @@ public class OnPlayerHennaRemove: IBaseEvent
 	public Henna getHenna()
 	{
 		return _henna;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_HENNA_REMOVE;
 	}
 }

@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 using L2Dn.GameServer.Network;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerSelect: IBaseEvent
+public class OnPlayerSelect: TerminateEventBase
 {
 	private readonly Player _player;
 	private readonly int _objectId;
@@ -39,10 +40,5 @@ public class OnPlayerSelect: IBaseEvent
 	public GameSession getClient()
 	{
 		return _client;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_SELECT;
 	}
 }

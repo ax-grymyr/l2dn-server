@@ -2,9 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -37,13 +35,12 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_USE,
-			@event => onCreatureSkillUse((OnCreatureSkillUse)@event), this));
+		effected.Events.Subscribe<OnCreatureSkillUse>(this, onCreatureSkillUse);
 	}
 
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureSkillUse>(onCreatureSkillUse);
 	}
 	
 	private void onCreatureSkillUse(OnCreatureSkillUse @event)

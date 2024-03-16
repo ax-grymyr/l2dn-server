@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.InstanceZones;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Instances;
@@ -5,7 +6,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Instances;
 /**
  * @author malyelfik
  */
-public class OnInstanceStatusChange: IBaseEvent
+public class OnInstanceStatusChange: EventBase
 {
 	private readonly Instance _world;
 	private readonly int _status;
@@ -24,10 +25,5 @@ public class OnInstanceStatusChange: IBaseEvent
 	public int getStatus()
 	{
 		return _status;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_INSTANCE_STATUS_CHANGE;
 	}
 }

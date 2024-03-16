@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
@@ -211,9 +211,9 @@ public class PlayerStat: PlayableStat
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_LEVEL_CHANGED, getActiveChar()))
+		if (getActiveChar().Events.HasSubscribers<OnPlayerLevelChanged>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLevelChanged(getActiveChar(), getLevel() - value, getLevel()), getActiveChar());
+			getActiveChar().Events.NotifyAsync(new OnPlayerLevelChanged(getActiveChar(), getLevel() - value, getLevel()));
 		}
 		
 		// Update daily mission count.

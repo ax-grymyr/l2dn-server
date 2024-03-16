@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -7,7 +8,6 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Sieges;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
@@ -302,9 +302,10 @@ public class Siege: Siegable
 			_castle.getZone().setSiegeInstance(null);
 			
 			// Notify to scripts.
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_CASTLE_SIEGE_FINISH, getCastle()))
+			EventContainer castleEvents = getCastle().Events;
+			if (castleEvents.HasSubscribers<OnCastleSiegeFinish>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnCastleSiegeFinish(this), getCastle());
+				castleEvents.NotifyAsync(new OnCastleSiegeFinish(this));
 			}
 		}
 	}
@@ -429,9 +430,10 @@ public class Siege: Siegable
 				updatePlayerSiegeStateFlags(false);
 				
 				// Notify to scripts.
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_CASTLE_SIEGE_OWNER_CHANGE, getCastle()))
+				EventContainer castleEvents = getCastle().Events;
+				if (castleEvents.HasSubscribers<OnCastleSiegeOwnerChange>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnCastleSiegeOwnerChange(this), getCastle());
+					castleEvents.NotifyAsync(new OnCastleSiegeOwnerChange(this));
 				}
 			}
 		}
@@ -495,9 +497,10 @@ public class Siege: Siegable
 			}
 			
 			// Notify to scripts.
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_CASTLE_SIEGE_START, getCastle()))
+			EventContainer castleEvents = getCastle().Events;
+			if (castleEvents.HasSubscribers<OnCastleSiegeStart>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnCastleSiegeStart(this), getCastle());
+				castleEvents.NotifyAsync(new OnCastleSiegeStart(this));
 			}
 		}
 	}

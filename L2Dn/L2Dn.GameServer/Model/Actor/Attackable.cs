@@ -10,7 +10,7 @@ using L2Dn.GameServer.Model.Actor.Tasks.AttackableTasks;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -25,32 +25,32 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
-public class Attackable : Npc
+public class Attackable: Npc
 {
 	// Raid
-	private bool _isRaid = false;
-	private bool _isRaidMinion = false;
+	private bool _isRaid;
+	private bool _isRaidMinion;
 	//
-	private bool _champion = false;
+	private bool _champion;
 	private readonly Map<Creature, AggroInfo> _aggroList = new();
 	private bool _canReturnToSpawnPoint = true;
-	private bool _seeThroughSilentMove = false;
+	private bool _seeThroughSilentMove;
 	// Manor
-	private bool _seeded = false;
-	private Seed _seed = null;
-	private int _seederObjId = 0;
+	private bool _seeded;
+	private Seed _seed;
+	private int _seederObjId;
 	private readonly AtomicReference<ItemHolder> _harvestItem = new();
 	// Spoil
 	private int _spoilerObjectId;
-	private bool _plundered = false;
+	private bool _plundered;
 	private readonly AtomicReference<ICollection<ItemHolder>> _sweepItems = new();
 	// Over-hit
 	private bool _overhit;
 	private double _overhitDamage;
 	private Creature _overhitAttacker;
 	// Command channel
-	private CommandChannel _firstCommandChannelAttacked = null;
-	private CommandChannelTimer _commandChannelTimer = null;
+	private CommandChannel _firstCommandChannelAttacked;
+	private CommandChannelTimer _commandChannelTimer;
 	private DateTime? _commandChannelLastAttack;
 	// Misc
 	private bool _mustGiveExpSp;
@@ -233,9 +233,9 @@ public class Attackable : Npc
 			}
 			
 			// Notify to scripts.
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_KILL, this))
+			if (Events.HasSubscribers<OnAttackableKill>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer.isSummon()), this);
+				Events.NotifyAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer.isSummon()));
 			}
 		}
 		
@@ -777,9 +777,9 @@ public class Attackable : Npc
 				addDamageHate(attacker, damage, (int) hateValue);
 				
 				Player player = attacker.getActingPlayer();
-				if ((player != null) && EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_ATTACK, this))
+				if (player != null && Events.HasSubscribers<OnAttackableAttack>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnAttackableAttack(player, this, damage, skill, attacker.isSummon()), this);
+					Events.NotifyAsync(new OnAttackableAttack(player, this, damage, skill, attacker.isSummon()));
 				}
 			}
 			catch (Exception e)
@@ -841,9 +841,9 @@ public class Attackable : Npc
 			}
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_AGGRO_RANGE_ENTER, this))
+			if (Events.HasSubscribers<OnAttackableAggroRangeEnter>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnAttackableAggroRangeEnter(this, targetPlayer, attacker.isSummon()), this);
+				Events.NotifyAsync(new OnAttackableAggroRangeEnter(this, targetPlayer, attacker.isSummon()));
 			}
 		}
 		else if ((targetPlayer == null) && (aggro == 0))

@@ -1,9 +1,6 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -21,21 +18,20 @@ public class SphericBarrier: AbstractStatAddEffect
 	
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.addListener(new FunctionEventListener(effected, EventType.ON_CREATURE_DAMAGE_RECEIVED,
-			@event => onDamageReceivedEvent((OnCreatureDamageReceived)@event), this));
+		effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_DAMAGE_RECEIVED, listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedEvent);
 	}
 	
-	private DamageReturn onDamageReceivedEvent(OnCreatureDamageReceived @event)
+	private void onDamageReceivedEvent(OnCreatureDamageReceived ev)
 	{
-		if (@event.getAttacker().calculateDistance3D(@event.getTarget()) > _amount)
+		if (ev.getAttacker().calculateDistance3D(ev.getTarget()) > _amount)
 		{
-			return new DamageReturn(false, true, false, 0);
+			ev.OverrideDamage = true;
+			ev.OverridenDamage = 0;
 		}
-		return new DamageReturn(false, false, false, @event.getDamage());
 	}
 }

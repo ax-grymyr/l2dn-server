@@ -3,7 +3,8 @@ using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -41,10 +42,7 @@ public class FriendlyNpc : Attackable
 			base.addDamage(attacker, damage, skill);
 		}
 		
-		if (attacker.isAttackable() && EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_ATTACK, this))
-		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnAttackableAttack(null, this, damage, skill, false), this);
-		}
+		Events.Notify(new OnAttackableAttack(null, this, damage, skill, false));
 	}
 	
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
@@ -64,10 +62,11 @@ public class FriendlyNpc : Attackable
 		}
 		
 		// Notify to scripts.
-		if ((killer != null) && killer.isAttackable() && EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_KILL, this))
+		if (killer != null)
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), this);
+			Events.Notify(new OnAttackableKill(null, this, false));
 		}
+		
 		return true;
 	}
 	
@@ -97,14 +96,14 @@ public class FriendlyNpc : Attackable
 				player.setLastFolkNPC(this);
 				
 				// Open a chat window on client with the text of the GuardInstance
-				if (hasListener(EventType.ON_NPC_QUEST_START))
+				if (Events.HasSubscribers<OnNpcQuestStart>())
 				{
 					player.setLastQuestNpcObject(getObjectId());
 				}
-				
-				if (hasListener(EventType.ON_NPC_FIRST_TALK))
+
+				if (Events.HasSubscribers<OnNpcFirstTalk>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnNpcFirstTalk(this, player), this);
+					Events.NotifyAsync(new OnNpcFirstTalk(this, player));
 				}
 				else
 				{

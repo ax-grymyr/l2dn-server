@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
@@ -7,22 +8,17 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
  * An instantly executed event when Creature attack miss Creature.
  * @author Zealar
  */
-public class OnCreatureAttackAvoid: IBaseEvent
+public class OnCreatureAttackAvoid: EventBase
 {
 	private Creature _attacker;
 	private Creature _target;
 	private bool _damageOverTime;
 	
-	public OnCreatureAttackAvoid()
-	{
-	}
-	
 	public Creature getAttacker()
 	{
 		return _attacker;
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)]
+
 	public void setAttacker(Creature attacker)
 	{
 		_attacker = attacker;
@@ -43,14 +39,8 @@ public class OnCreatureAttackAvoid: IBaseEvent
 		return _damageOverTime;
 	}
 	
-	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void setDamageOverTime(bool damageOverTime)
 	{
 		_damageOverTime = damageOverTime;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CREATURE_ATTACK_AVOID;
 	}
 }

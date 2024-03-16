@@ -8,8 +8,7 @@ using L2Dn.GameServer.Model.Actor.Appearance;
 using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
@@ -358,10 +357,9 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		// Register all shortcuts for actions, skills and items for this new character.
 		InitialShortcutData.getInstance().registerAllShortcuts(newChar);
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CREATE, Containers.Players()))
+		if (GlobalEvents.Players.HasSubscribers<OnPlayerCreate>())
 		{
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(
-				new OnPlayerCreate(newChar, newChar.getObjectId(), newChar.getName(), session), Containers.Players());
+			GlobalEvents.Players.Notify(new OnPlayerCreate(newChar, newChar.getObjectId(), newChar.getName(), session));
 		}
 		
 		newChar.setOnlineStatus(true, false);

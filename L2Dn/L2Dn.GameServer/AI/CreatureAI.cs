@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -30,7 +30,7 @@ namespace L2Dn.GameServer.AI;
  */
 public class CreatureAI : AbstractAI
 {
-	private OnNpcMoveFinished _onNpcMoveFinished;
+	private OnNpcMoveFinished? _onNpcMoveFinished;
 	
 	public class IntentionCommand
 	{
@@ -658,17 +658,15 @@ public class CreatureAI : AbstractAI
 		
 		if (_actor.isNpc())
 		{
-			Npc npc = (Npc) _actor;
+			Npc npc = (Npc)_actor;
 			WalkingManager.getInstance().onArrived(npc); // Walking Manager support
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_MOVE_FINISHED, npc))
+			if (npc.Events.HasSubscribers<OnNpcMoveFinished>())
 			{
-				if (_onNpcMoveFinished == null)
-				{
-					_onNpcMoveFinished = new OnNpcMoveFinished(npc);
-				}
-				EventDispatcher.getInstance().notifyEventAsync(_onNpcMoveFinished, npc);
+				_onNpcMoveFinished ??= new OnNpcMoveFinished(npc);
+				_onNpcMoveFinished.Abort = false;
+				npc.Events.NotifyAsync(_onNpcMoveFinished);
 			}
 		}
 		

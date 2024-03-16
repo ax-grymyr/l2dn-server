@@ -1,13 +1,5 @@
-﻿namespace L2Dn.GameServer.Model.Events.Impl;
+﻿using L2Dn.Events;
 
-public class OnServerStart: IBaseEvent
-{
-    public OnServerStart()
-    {
-    }
+namespace L2Dn.GameServer.Model.Events.Impl;
 
-    public EventType getType()
-    {
-        return EventType.ON_SERVER_START;
-    }
-}
+public class OnServerStart: EventBase;

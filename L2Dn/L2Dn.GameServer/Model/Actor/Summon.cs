@@ -11,8 +11,7 @@ using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Actor.Status;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Summons;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -30,7 +29,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
-public abstract class Summon : Playable
+public abstract class Summon: Playable
 {
 	private Player _owner;
 	private int _attackRange = 36; // Melee range
@@ -47,23 +46,26 @@ public abstract class Summon : Playable
 		14724, 14725, 14726, 14727, 14728, 14729, 14730, 14731, 14732, 14733, 14734, 14735, 14736,
 		15955
 	};
-	
-	public Summon(NpcTemplate template, Player owner): base(template)
+
+	public Summon(NpcTemplate template, Player owner)
+		: base(template)
 	{
 		setInstanceType(InstanceType.Summon);
 		setInstance(owner.getInstanceWorld()); // set instance to same as owner
 		setShowSummonAnimation(true);
 		_owner = owner;
 		getAI();
-		
+
 		// Make sure summon does not spawn in a wall.
 		int x = owner.getX();
 		int y = owner.getY();
 		int z = owner.getZ();
-		Location location = GeoEngine.getInstance().getValidLocation(x, y, z, x + Rnd.get(-100, 100), y + Rnd.get(-100, 100), z, getInstanceWorld());
+		Location location = GeoEngine.getInstance().getValidLocation(x, y, z, x + Rnd.get(-100, 100),
+			y + Rnd.get(-100, 100), z, getInstanceWorld());
+		
 		setXYZInvisible(location.getX(), location.getY(), location.getZ());
 	}
-	
+
 	public override void onSpawn()
 	{
 		base.onSpawn();
@@ -102,9 +104,9 @@ public abstract class Summon : Playable
 		rechargeShots(true, true, false);
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SUMMON_SPAWN, this))
+		if (Events.HasSubscribers<OnSummonSpawn>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonSpawn(this), this);
+			Events.NotifyAsync(new OnSummonSpawn(this));
 		}
 	}
 	

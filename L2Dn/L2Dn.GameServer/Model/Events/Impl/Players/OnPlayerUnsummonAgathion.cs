@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author Mobius
  */
-public class OnPlayerUnsummonAgathion: IBaseEvent
+public class OnPlayerUnsummonAgathion: EventBase
 {
 	private readonly Player _player;
 	private readonly int _agathionId;
@@ -24,10 +25,5 @@ public class OnPlayerUnsummonAgathion: IBaseEvent
 	public int getAgathionId()
 	{
 		return _agathionId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_UNSUMMON_AGATHION;
 	}
 }

@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author St3eT
  */
-public class OnPlayerPressTutorialMark: IBaseEvent
+public class OnPlayerPressTutorialMark: EventBase
 {
 	private readonly Player _player;
 	private readonly int _markId;
@@ -24,10 +25,5 @@ public class OnPlayerPressTutorialMark: IBaseEvent
 	public int getMarkId()
 	{
 		return _markId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_PRESS_TUTORIAL_MARK;
 	}
 }

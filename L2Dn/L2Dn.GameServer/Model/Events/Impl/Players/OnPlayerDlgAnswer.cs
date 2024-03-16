@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerDlgAnswer: IBaseEvent
+public class OnPlayerDlgAnswer: TerminateEventBase
 {
 	private readonly Player _player;
 	private readonly int _messageId;
@@ -38,10 +39,5 @@ public class OnPlayerDlgAnswer: IBaseEvent
 	public int getRequesterId()
 	{
 		return _requesterId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_DLG_ANSWER;
 	}
 }

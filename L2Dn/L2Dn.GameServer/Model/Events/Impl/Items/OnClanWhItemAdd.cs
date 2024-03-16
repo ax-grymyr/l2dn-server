@@ -1,13 +1,14 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Items;
 
 /**
  * @author UnAfraid
  */
-public class OnClanWhItemAdd: IBaseEvent
+public class OnClanWhItemAdd: EventBase
 {
 	private readonly String _process;
 	private readonly Player _player;
@@ -40,10 +41,5 @@ public class OnClanWhItemAdd: IBaseEvent
 	public ItemContainer getContainer()
 	{
 		return _container;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CLAN_WH_ITEM_ADD;
 	}
 }

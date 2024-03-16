@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Network;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerRestore: IBaseEvent
+public class OnPlayerRestore: EventBase
 {
 	private readonly int _objectId;
 	private readonly String _name;
@@ -31,10 +32,5 @@ public class OnPlayerRestore: IBaseEvent
 	public GameSession getClient()
 	{
 		return _client;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_RESTORE;
 	}
 }

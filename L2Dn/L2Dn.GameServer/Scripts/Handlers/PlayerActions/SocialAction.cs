@@ -3,8 +3,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
@@ -78,9 +77,9 @@ public class SocialAction: IPlayerActionHandler
 			player.broadcastPacket(new SocialActionPacket(player.getObjectId(), id));
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SOCIAL_ACTION, player))
+			if (player.Events.HasSubscribers<OnPlayerSocialAction>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSocialAction(player, id), player);
+				player.Events.NotifyAsync(new OnPlayerSocialAction(player, id));
 			}
 		}
 		

@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author UnAfraid
  */
-public class OnNpcFirstTalk: IBaseEvent
+public class OnNpcFirstTalk: EventBase
 {
 	private readonly Npc _npc;
 	private readonly Player _player;
@@ -24,10 +25,5 @@ public class OnNpcFirstTalk: IBaseEvent
 	public Player getActiveChar()
 	{
 		return _player;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_FIRST_TALK;
 	}
 }

@@ -2,8 +2,7 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -135,10 +134,10 @@ public class ElementalSpirit
 		_data.setLevel(1);
 		_data.setExperience(0);
 		_template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage());
-		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_ELEMENTAL_SPIRIT_UPGRADE, _owner))
+
+		if (_owner.Events.HasSubscribers<OnPlayerElementalSpiritUpgrade>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnElementalSpiritUpgrade(_owner, this), _owner);
+			_owner.Events.NotifyAsync(new OnPlayerElementalSpiritUpgrade(_owner, this));
 		}
 	}
 	

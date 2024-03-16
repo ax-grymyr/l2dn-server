@@ -5,8 +5,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -149,10 +148,10 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					session.Player = player;
 					player.setOnlineStatus(true, true);
 					
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SELECT, Containers.Players()))
+					if (GlobalEvents.Players.HasSubscribers<OnPlayerSelect>())
 					{
-						TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnPlayerSelect(player, player.getObjectId(), player.getName(), session), Containers.Players());
-						if ((terminate != null) && terminate.terminate())
+						OnPlayerSelect onPlayerSelect = new(player, player.getObjectId(), player.getName(), session);
+						if (GlobalEvents.Players.Notify(onPlayerSelect) && onPlayerSelect.Terminate)
 						{
 							LeaveWorldPacket leaveWorldPacket = new();
 							Disconnection.of(player).defaultSequence(ref leaveWorldPacket);

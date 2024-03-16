@@ -2,10 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
@@ -29,19 +26,19 @@ public class AbsorbDamage: AbstractEffect
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 	}
 	
-	private DamageReturn onDamageReceivedDiffEvent(OnCreatureDamageReceived @event, Creature effected, Skill skill)
+	private void onDamageReceivedDiffEvent(OnCreatureDamageReceived ev, Creature effected, Skill skill)
 	{
 		// DOT effects are not taken into account.
-		if (@event.isDamageOverTime())
+		if (ev.isDamageOverTime())
 		{
-			return null;
+			return;
 		}
 		
-		int objectId = @event.getTarget().getObjectId();
+		int objectId = ev.getTarget().getObjectId();
 		
 		double damageLeft = DIFF_DAMAGE_HOLDER.getOrDefault(objectId, 0d);
-		double newDamageLeft = Math.Max(damageLeft - @event.getDamage(), 0);
-		double newDamage = Math.Max(@event.getDamage() - damageLeft, 0);
+		double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
+		double newDamage = Math.Max(ev.getDamage() - damageLeft, 0);
 		
 		if (newDamageLeft > 0)
 		{
@@ -51,36 +48,39 @@ public class AbsorbDamage: AbstractEffect
 		{
 			effected.stopSkillEffects(skill);
 		}
-		
-		return new DamageReturn(false, true, false, newDamage);
+
+		ev.OverrideDamage = true;
+		ev.OverridenDamage = newDamage;
 	}
 	
-	private DamageReturn onDamageReceivedPerEvent(OnCreatureDamageReceived @event)
+	private void onDamageReceivedPerEvent(OnCreatureDamageReceived ev)
 	{
 		// DOT effects are not taken into account.
-		if (@event.isDamageOverTime())
+		if (ev.isDamageOverTime())
 		{
-			return null;
+			return;
 		}
 		
-		int objectId = @event.getTarget().getObjectId();
+		int objectId = ev.getTarget().getObjectId();
 		
 		double damagePercent = PER_DAMAGE_HOLDER.getOrDefault(objectId, 0d);
-		double currentDamage = @event.getDamage();
+		double currentDamage = ev.getDamage();
 		double newDamage = currentDamage - ((currentDamage / 100) * damagePercent);
-		
-		return new DamageReturn(false, true, false, newDamage);
+
+		ev.OverrideDamage = true;
+		ev.OverridenDamage = newDamage;
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_DAMAGE_RECEIVED, listener => listener.getOwner() == this);
 		if (_mode == StatModifierType.DIFF)
 		{
+			effected.Events.UnsubscribeAll<OnCreatureDamageReceived>(this);
 			DIFF_DAMAGE_HOLDER.remove(effected.getObjectId());
 		}
 		else
 		{
+			effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedPerEvent);
 			PER_DAMAGE_HOLDER.remove(effected.getObjectId());
 		}
 	}
@@ -90,14 +90,12 @@ public class AbsorbDamage: AbstractEffect
 		if (_mode == StatModifierType.DIFF)
 		{
 			DIFF_DAMAGE_HOLDER.put(effected.getObjectId(), _damage);
-			effected.addListener(new FunctionEventListener(effected, EventType.ON_CREATURE_DAMAGE_RECEIVED,
-				@event => onDamageReceivedDiffEvent((OnCreatureDamageReceived)@event, effected, skill), this));
+			effected.Events.Subscribe<OnCreatureDamageReceived>(this, ev => onDamageReceivedDiffEvent(ev, effected, skill));
 		}
 		else
 		{
 			PER_DAMAGE_HOLDER.put(effected.getObjectId(), _damage);
-			effected.addListener(new FunctionEventListener(effected, EventType.ON_CREATURE_DAMAGE_RECEIVED,
-				@event => onDamageReceivedPerEvent((OnCreatureDamageReceived)@event), this));
+			effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedPerEvent);
 		}
 	}
 }

@@ -4,9 +4,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Network.Enums;
@@ -219,11 +217,10 @@ public class TeleportHolder
 		}
 
 		// Notify listeners
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_TELEPORT_REQUEST, npc))
+		if (npc.Events.HasSubscribers<OnNpcTeleportRequest>())
 		{
-			TerminateReturn term = EventDispatcher.getInstance()
-				.notifyEvent<TerminateReturn>(new OnNpcTeleportRequest(player, npc, loc), npc);
-			if ((term != null) && term.terminate())
+			OnNpcTeleportRequest onNpcTeleportRequest = new OnNpcTeleportRequest(player, npc, loc);
+			if (npc.Events.Notify(onNpcTeleportRequest) && onNpcTeleportRequest.Terminate)
 			{
 				return;
 			}

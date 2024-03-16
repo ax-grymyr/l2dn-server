@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerMoveRequest: IBaseEvent
+public class OnPlayerMoveRequest: TerminateEventBase
 {
 	private readonly Player _player;
 	private readonly Location _location;
@@ -24,10 +25,5 @@ public class OnPlayerMoveRequest: IBaseEvent
 	public Location getLocation()
 	{
 		return _location;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_MOVE_REQUEST;
 	}
 }

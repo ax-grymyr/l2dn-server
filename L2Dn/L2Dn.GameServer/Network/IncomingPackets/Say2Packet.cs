@@ -3,9 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
@@ -175,15 +173,13 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 		if (hasItem && !parseAndPublishItem(player, text))
 			return ValueTask.CompletedTask;
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CHAT, player))
+		if (player.Events.HasSubscribers<OnPlayerChat>())
 		{
-			ChatFilterReturn filter = EventDispatcher.getInstance()
-				.notifyEvent<ChatFilterReturn>(new OnPlayerChat(player, _target, text, chatType), player);
-			
-			if (filter != null)
+			OnPlayerChat onPlayerChat = new OnPlayerChat(player, _target, text, chatType);
+			if (player.Events.Notify(onPlayerChat))
 			{
-				text = filter.getFilteredText();
-				chatType = filter.getChatType();
+				text = onPlayerChat.FilteredText;
+				chatType = onPlayerChat.FilteredType;
 			}
 		}
 		

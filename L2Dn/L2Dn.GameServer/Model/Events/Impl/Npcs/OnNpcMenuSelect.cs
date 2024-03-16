@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author St3eT
  */
-public class OnNpcMenuSelect: IBaseEvent
+public class OnNpcMenuSelect: EventBase
 {
 	private readonly Player _player;
 	private readonly Npc _npc;
@@ -44,10 +45,5 @@ public class OnNpcMenuSelect: IBaseEvent
 	public int getReply()
 	{
 		return _reply;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_MENU_SELECT;
 	}
 }

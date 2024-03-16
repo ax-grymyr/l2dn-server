@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Model.Residences;
 /**
  * @author xban1x
  */
-public abstract class AbstractResidence: ListenersContainer, INamable
+public abstract class AbstractResidence: INamable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractResidence));
 	

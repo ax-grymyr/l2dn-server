@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
@@ -27,7 +28,7 @@ namespace L2Dn.GameServer.Model.Items;
  * <li>Weapon</li>
  * </ul>
  */
-public abstract class ItemTemplate: ListenersContainer, IIdentifiable
+public abstract class ItemTemplate: IIdentifiable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemTemplate));
 	
@@ -82,6 +83,8 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	public const int SLOT_GREATWOLF = -104;
 	
 	public const int SLOT_MULTI_ALLWEAPON = SLOT_LR_HAND | SLOT_R_HAND;
+
+	private readonly EventContainer _eventContainer; 
 	
 	private int _itemId;
 	private int _displayId;
@@ -148,6 +151,7 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 	protected ItemTemplate(StatSet set)
 	{
 		this.set(set);
+		_eventContainer = new($"Item template {_itemId}", GlobalEvents.Global);
 	}
 	
 	public virtual void set(StatSet set)
@@ -232,6 +236,8 @@ public abstract class ItemTemplate: ListenersContainer, IIdentifiable
 			}
 		}
 	}
+
+	public EventContainer Events => _eventContainer;
 	
 	/**
 	 * Returns the itemType.

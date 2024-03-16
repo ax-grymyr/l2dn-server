@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 
@@ -6,7 +7,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
 /**
  * @author UnAfraid
  */
-public class OnItemCreate: IBaseEvent
+public class OnItemCreate: EventBase
 {
 	private readonly String _process;
 	private readonly Item _item;
@@ -39,10 +40,5 @@ public class OnItemCreate: IBaseEvent
 	public Object getReference()
 	{
 		return _reference;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_ITEM_CREATE;
 	}
 }

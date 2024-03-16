@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -6,9 +7,8 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Events.Impl.Sieges;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Zones;
@@ -23,7 +23,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
-public class FortSiege: ListenersContainer, Siegable
+public class FortSiege: Siegable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(FortSiege));
 	
@@ -418,21 +418,30 @@ public class FortSiege: ListenersContainer, Siegable
 		FortSiegeManager.getInstance().addSiege(this);
 		if (_fort.getResidenceId() == FortManager.ORC_FORTRESS)
 		{
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_START, ev => announceStartToPlayers((OnFortSiegeStart)ev), this));
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_FORT_SIEGE_FINISH, ev => announceEndToPlayers((OnFortSiegeFinish)ev), this));
-			Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_LOGIN, ev => showHUDToPlayer((OnPlayerLogin)ev), this));
+			_fort.Events.Subscribe<OnFortSiegeStart>(this, announceStartToPlayers);
+			_fort.Events.Subscribe<OnFortSiegeFinish>(this, announceEndToPlayers);
+			GlobalEvents.Global.Subscribe<OnPlayerLogin>(this, showHUDToPlayer);
 		}
 	}
-	
+
 	private void announceStartToPlayers(OnFortSiegeStart ev)
 	{
-		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUDPacket(ev.getSiege().getFort().getResidenceId(), 1, DateTime.UnixEpoch, TimeSpan.FromSeconds(30 * 60)));
-		Broadcast.toAllOnlinePlayers(new SystemMessagePacket(SystemMessageId.SEAL_THE_SEAL_TOWER_AND_CONQUER_ORC_FORTRESS));
-	}
+		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUDPacket(ev.getSiege().getFort().getResidenceId(), 1,
+			DateTime.UnixEpoch, TimeSpan.FromSeconds(30 * 60)));
 	
+		Broadcast.toAllOnlinePlayers(
+			new SystemMessagePacket(SystemMessageId.SEAL_THE_SEAL_TOWER_AND_CONQUER_ORC_FORTRESS));
+
+		_fort.Events.Unsubscribe<OnFortSiegeStart>(announceStartToPlayers);
+	}
+
 	private void announceEndToPlayers(OnFortSiegeFinish ev)
 	{
-		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUDPacket(ev.getSiege().getFort().getResidenceId(), 0, DateTime.UnixEpoch, TimeSpan.Zero));
+		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUDPacket(ev.getSiege().getFort().getResidenceId(), 0,
+			DateTime.UnixEpoch, TimeSpan.Zero));
+		
+		_fort.Events.Unsubscribe<OnFortSiegeFinish>(announceEndToPlayers);
+		GlobalEvents.Global.Unsubscribe<OnPlayerLogin>(showHUDToPlayer);
 	}
 	
 	private void showHUDToPlayer(OnPlayerLogin ev)
@@ -551,9 +560,10 @@ public class FortSiege: ListenersContainer, Siegable
 			LOGGER.Info(GetType().Name + ": Siege of " + _fort.getName() + " fort finished.");
 			
 			// Notify to scripts.
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_FORT_SIEGE_FINISH, getFort()))
+			EventContainer fortEvents = getFort().Events;
+			if (fortEvents.HasSubscribers<OnFortSiegeFinish>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnFortSiegeFinish(this), getFort());
+				fortEvents.NotifyAsync(new OnFortSiegeFinish(this));
 			}
 		}
 	}
@@ -691,10 +701,10 @@ public class FortSiege: ListenersContainer, Siegable
 		LOGGER.Info(GetType().Name + ": Siege of " + _fort.getName() + " fort started.");
 		
 		// Notify to scripts.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_FORT_SIEGE_START, getFort()))
+		EventContainer fortEvents = getFort().Events;
+		if (fortEvents.HasSubscribers<OnFortSiegeStart>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnFortSiegeStart(this), getFort());
-			
+			fortEvents.NotifyAsync(new OnFortSiegeStart(this));
 		}
 	}
 	

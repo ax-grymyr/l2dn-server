@@ -1,8 +1,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -44,9 +43,9 @@ public class SummonAgathion: AbstractEffect
 		player.sendPacket(new ExUserInfoCubicPacket(player));
 		player.broadcastCharInfo();
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SUMMON_AGATHION))
+		if (player.Events.HasSubscribers<OnPlayerSummonAgathion>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonAgathion(player, _npcId));
+			player.Events.NotifyAsync(new OnPlayerSummonAgathion(player, _npcId));
 		}
 	}
 }

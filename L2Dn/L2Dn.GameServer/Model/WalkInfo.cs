@@ -1,7 +1,7 @@
 ﻿using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model;
@@ -76,9 +76,9 @@ public class WalkInfo
 				if (_currentNode == getRoute().getNodesCount()) // Last node arrived
 				{
 					// Notify quest
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_MOVE_ROUTE_FINISHED, npc))
+					if (npc.Events.HasSubscribers<OnNpcMoveRouteFinished>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcMoveRouteFinished(npc), npc);
+						npc.Events.NotifyAsync(new OnNpcMoveRouteFinished(npc));
 					}
 
 					if (!getRoute().repeatWalk())

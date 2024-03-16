@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -41,9 +40,7 @@ public class NightStatModify: AbstractEffect
 			START_LISTENER = false;
 			
 			// Init a global day-night change listener.
-			ListenersContainer container = Containers.Global();
-			container.addListener(new ConsumerEventListener(container, EventType.ON_DAY_NIGHT_CHANGE,
-				@event => onDayNightChange((OnDayNightChange)@event), this));
+			GlobalEvents.Global.Subscribe<OnDayNightChange>(this, onDayNightChange);
 		}
 	}
 	
@@ -84,7 +81,10 @@ public class NightStatModify: AbstractEffect
 	public void onDayNightChange(OnDayNightChange @event)
 	{
 		// System message for Shadow Sense.
-		SystemMessagePacket msg = new SystemMessagePacket(@event.isNight() ? SystemMessageId.IT_IS_NOW_MIDNIGHT_AND_THE_EFFECT_OF_S1_CAN_BE_FELT : SystemMessageId.IT_IS_DAWN_AND_THE_EFFECT_OF_S1_WILL_NOW_DISAPPEAR);
+		SystemMessagePacket msg = new SystemMessagePacket(@event.isNight()
+			? SystemMessageId.IT_IS_NOW_MIDNIGHT_AND_THE_EFFECT_OF_S1_CAN_BE_FELT
+			: SystemMessageId.IT_IS_DAWN_AND_THE_EFFECT_OF_S1_WILL_NOW_DISAPPEAR);
+		
 		msg.Params.addSkillName(SHADOW_SENSE);
 		
 		foreach (Creature creature in NIGHT_STAT_CHARACTERS)

@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -271,9 +271,9 @@ public class Weapon: ItemTemplate
 				{
 					World.getInstance().forEachVisibleObjectInRange<Npc>(caster, 1000, npc =>
 					{
-						if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npc))
+						if (npc.Events.HasSubscribers<OnNpcSkillSee>())
 						{
-							EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npc, caster.getActingPlayer(), skill, false, target), npc);
+							npc.Events.NotifyAsync(new OnNpcSkillSee(npc, caster.getActingPlayer(), skill, false, target));
 						}
 					});
 				}

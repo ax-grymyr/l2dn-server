@@ -11,7 +11,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Tasks.NpcTasks.WalkerTasks;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -374,9 +374,9 @@ public class WalkingManager: DataReaderBase
 		}
 		
 		// Notify quest
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_MOVE_NODE_ARRIVED, npc))
+		if (npc.Events.HasSubscribers<OnNpcMoveNodeArrived>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnNpcMoveNodeArrived(npc), npc);
+			npc.Events.NotifyAsync(new OnNpcMoveNodeArrived(npc));
 		}
 		
 		WalkInfo walk = _activeRoutes.get(npc.getObjectId());

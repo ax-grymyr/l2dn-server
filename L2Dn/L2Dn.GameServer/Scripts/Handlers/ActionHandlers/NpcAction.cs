@@ -5,7 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -85,13 +85,14 @@ public class NpcAction: IActionHandler
 					}
 					
 					// Open a chat window on client with the text of the Npc
-					if (npc.hasListener(EventType.ON_NPC_QUEST_START))
+					if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 					{
 						player.setLastQuestNpcObject(target.getObjectId());
 					}
-					if (npc.hasListener(EventType.ON_NPC_FIRST_TALK))
+					
+					if (npc.Events.HasSubscribers<OnNpcFirstTalk>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcFirstTalk(npc, player), npc);
+						npc.Events.NotifyAsync(new OnNpcFirstTalk(npc, player));
 					}
 					else
 					{

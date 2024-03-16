@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerMenteeLeft: IBaseEvent
+public class OnPlayerMenteeLeft: EventBase
 {
 	private readonly Mentee _mentor;
 	private readonly Player _mentee;
@@ -24,10 +25,5 @@ public class OnPlayerMenteeLeft: IBaseEvent
 	public Player getMentee()
 	{
 		return _mentee;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_MENTEE_LEFT;
 	}
 }

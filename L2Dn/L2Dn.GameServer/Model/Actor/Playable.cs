@@ -6,9 +6,7 @@ using L2Dn.GameServer.Model.Actor.Status;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Quests;
@@ -44,13 +42,13 @@ public abstract class Playable: Creature
 	 * @param objectId the object id
 	 * @param template The CreatureTemplate to apply to the Playable
 	 */
-	public Playable(int objectId, CreatureTemplate template):base(objectId, template)
+	public Playable(int objectId, CreatureTemplate template): base(objectId, template)
 	{
 		setInstanceType(InstanceType.Playable);
 		setInvul(false);
 	}
 	
-	public Playable(CreatureTemplate template):base(template)
+	public Playable(CreatureTemplate template): base(template)
 	{
 		setInstanceType(InstanceType.Playable);
 		setInvul(false);
@@ -78,10 +76,10 @@ public abstract class Playable: Creature
 	
 	public override bool doDie(Creature killer)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DEATH, this))
+		if (Events.HasSubscribers<OnCreatureDeath>())
 		{
-			TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnCreatureDeath(killer, this), this);
-			if ((returnBack != null) && returnBack.terminate())
+			OnCreatureDeath onCreatureDeath = new(killer, this);
+			if (Events.Notify(onCreatureDeath) && onCreatureDeath.Terminate)
 			{
 				return false;
 			}

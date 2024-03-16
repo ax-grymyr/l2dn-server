@@ -1,9 +1,9 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -384,12 +384,17 @@ public class PlayerInventory: Inventory
 				actor.sendInventoryUpdate(playerIU);
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_ADD, actor, addedItem.getTemplate()))
+				EventContainer itemEvents = addedItem.getTemplate().Events;
+				EventContainer playerEvents = actor.Events;
+				if (itemEvents.HasSubscribers<OnPlayerItemAdd>() || playerEvents.HasSubscribers<OnPlayerItemAdd>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, addedItem), actor, addedItem.getTemplate());
+					OnPlayerItemAdd onPlayerItemAdd = new OnPlayerItemAdd(actor, addedItem);
+					playerEvents.NotifyAsync(onPlayerItemAdd);
+					itemEvents.NotifyAsync(onPlayerItemAdd);
 				}
 			}
 		}
+		
 		return addedItem;
 	}
 	
@@ -466,12 +471,17 @@ public class PlayerInventory: Inventory
 				}
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_ADD, actor, item.getTemplate()))
+				EventContainer itemEvents = item.getTemplate().Events;
+				EventContainer playerEvents = actor.Events;
+				if (itemEvents.HasSubscribers<OnPlayerItemAdd>() || playerEvents.HasSubscribers<OnPlayerItemAdd>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, item), actor, item.getTemplate());
+					OnPlayerItemAdd onPlayerItemAdd = new OnPlayerItemAdd(actor, item);
+					playerEvents.NotifyAsync(onPlayerItemAdd);
+					itemEvents.NotifyAsync(onPlayerItemAdd);
 				}
 			}
 		}
+        
 		return item;
 	}
 	
@@ -500,9 +510,10 @@ public class PlayerInventory: Inventory
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_TRANSFER, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnPlayerItemTransfer>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemTransfer(actor, item, target), item.getTemplate());
+			itemEvents.NotifyAsync(new OnPlayerItemTransfer(actor, item, target));
 		}
 		
 		return item;
@@ -567,9 +578,10 @@ public class PlayerInventory: Inventory
 			}
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_DESTROY, destroyedItem.getTemplate()))
+			EventContainer itemEvents = destroyedItem.getTemplate().Events;
+			if (itemEvents.HasSubscribers<OnPlayerItemDestroy>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemDestroy(actor, destroyedItem), destroyedItem.getTemplate());
+				itemEvents.NotifyAsync(new OnPlayerItemDestroy(actor, destroyedItem));
 			}
 		}
 		
@@ -675,9 +687,13 @@ public class PlayerInventory: Inventory
 		}
 		
 		// Notify to scripts
-		if ((droppedItem != null) && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_DROP, droppedItem.getTemplate()))
+		if (droppedItem != null)
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemDrop(actor, droppedItem, droppedItem.getLocation()), droppedItem.getTemplate());
+			EventContainer itemEvents = droppedItem.getTemplate().Events;
+			if (itemEvents.HasSubscribers<OnPlayerItemDrop>())
+			{
+				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, droppedItem, droppedItem.getLocation()));
+			}
 		}
 		
 		return droppedItem;
@@ -707,9 +723,13 @@ public class PlayerInventory: Inventory
 		}
 		
 		// Notify to scripts
-		if ((item != null) && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_DROP, item.getTemplate()))
+		if ((item != null))
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemDrop(actor, item, item.getLocation()), item.getTemplate());
+			EventContainer itemEvents = item.getTemplate().Events;
+			if (itemEvents.HasSubscribers<OnPlayerItemDrop>())
+			{
+				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, item, item.getLocation()));
+			}
 		}
 		
 		return item;

@@ -1,8 +1,8 @@
-﻿using L2Dn.GameServer.Db;
+﻿using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures;
+using L2Dn.GameServer.Model.Events.Impl.Zones;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network.Enums;
@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Model.Zones;
  * Abstract base class for any zone type handles basic operations.
  * @author durgus
  */
-public abstract class ZoneType: ListenersContainer
+public abstract class ZoneType
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneType));
 	
@@ -26,6 +26,7 @@ public abstract class ZoneType: ListenersContainer
 	protected ZoneForm _zone;
 	protected List<ZoneForm> _blockedZones;
 	private readonly Map<int, Creature> _characterList = new();
+	private readonly EventContainer _eventContainer;
 	
 	/** Parameters to affect specific characters */
 	private bool _checkAffected = false;
@@ -44,6 +45,7 @@ public abstract class ZoneType: ListenersContainer
 	
 	protected ZoneType(int id)
 	{
+		_eventContainer = new($"Zone template {id}", GlobalEvents.Global);
 		_id = id;
 		_minLevel = 0;
 		_maxLevel = 0xFF;
@@ -53,6 +55,8 @@ public abstract class ZoneType: ListenersContainer
 		_allowStore = true;
 		_enabled = true;
 	}
+
+	public EventContainer Events => _eventContainer;
 	
 	/**
 	 * @return Returns the id.
@@ -407,9 +411,9 @@ public abstract class ZoneType: ListenersContainer
 			if (_characterList.putIfAbsent(creature.getObjectId(), creature) == null)
 			{
 				// Notify to scripts.
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ZONE_ENTER, this))
+				if (_eventContainer.HasSubscribers<OnZoneEnter>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnCreatureZoneEnter(creature, this), this);
+					_eventContainer.NotifyAsync(new OnZoneEnter(creature, this));
 				}
 				
 				// Notify Zone implementation.
@@ -432,9 +436,9 @@ public abstract class ZoneType: ListenersContainer
 		if (_characterList.containsKey(creature.getObjectId()))
 		{
 			// Notify to scripts.
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ZONE_EXIT, this))
+			if (_eventContainer.HasSubscribers<OnZoneExit>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnCreatureZoneExit(creature, this), this);
+				_eventContainer.NotifyAsync(new OnZoneExit(creature, this));
 			}
 			
 			// Unregister player.

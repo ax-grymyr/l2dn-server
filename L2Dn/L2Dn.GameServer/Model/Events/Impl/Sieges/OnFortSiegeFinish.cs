@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Sieges;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Sieges;
@@ -5,7 +6,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Sieges;
 /**
  * @author UnAfraid
  */
-public class OnFortSiegeFinish: IBaseEvent
+public class OnFortSiegeFinish: EventBase
 {
 	private readonly FortSiege _siege;
 	
@@ -17,10 +18,5 @@ public class OnFortSiegeFinish: IBaseEvent
 	public FortSiege getSiege()
 	{
 		return _siege;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_FORT_SIEGE_FINISH;
 	}
 }

@@ -1,12 +1,13 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerChat: IBaseEvent
+public class OnPlayerChat: EventBase
 {
 	private readonly Player _player;
 	private readonly String _target;
@@ -19,6 +20,8 @@ public class OnPlayerChat: IBaseEvent
 		_target = target;
 		_text = text;
 		_type = type;
+		FilteredText = text;
+		FilteredType = type;
 	}
 	
 	public Player getPlayer()
@@ -41,8 +44,6 @@ public class OnPlayerChat: IBaseEvent
 		return _type;
 	}
 	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CHAT;
-	}
+	public string FilteredText { get; set; }
+	public ChatType FilteredType { get; set; }
 }

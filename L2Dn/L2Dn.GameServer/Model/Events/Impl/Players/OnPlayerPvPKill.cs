@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerPvPKill: IBaseEvent
+public class OnPlayerPvPKill: EventBase
 {
 	private readonly Player _player;
 	private readonly Player _target;
@@ -24,10 +25,5 @@ public class OnPlayerPvPKill: IBaseEvent
 	public Player getTarget()
 	{
 		return _target;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_PVP_KILL;
 	}
 }

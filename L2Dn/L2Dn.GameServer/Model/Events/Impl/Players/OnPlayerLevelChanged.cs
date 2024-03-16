@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerLevelChanged: IBaseEvent
+public class OnPlayerLevelChanged: EventBase
 {
 	private readonly Player _player;
 	private readonly int _oldLevel;
@@ -31,10 +32,5 @@ public class OnPlayerLevelChanged: IBaseEvent
 	public int getNewLevel()
 	{
 		return _newLevel;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_LEVEL_CHANGED;
 	}
 }

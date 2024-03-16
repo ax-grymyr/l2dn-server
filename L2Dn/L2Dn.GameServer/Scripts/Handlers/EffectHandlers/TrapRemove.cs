@@ -3,8 +3,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Traps;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
@@ -62,9 +61,9 @@ public class TrapRemove: AbstractEffect
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_TRAP_ACTION, trap))
+		if (trap.Events.HasSubscribers<OnTrapAction>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, effector, TrapAction.TRAP_DISARMED), trap);
+			trap.Events.NotifyAsync(new OnTrapAction(trap, effector, TrapAction.TRAP_DISARMED));
 		}
 		
 		trap.unSummon();

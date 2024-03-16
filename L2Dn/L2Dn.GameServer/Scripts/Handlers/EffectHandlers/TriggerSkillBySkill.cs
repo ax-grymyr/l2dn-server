@@ -4,9 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -45,13 +43,12 @@ public class TriggerSkillBySkill: AbstractEffect
 			return;
 		}
 
-		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_FINISH_CAST,
-			@event => onSkillUseEvent((OnCreatureSkillFinishCast)@event), this));
+		effected.Events.Subscribe<OnCreatureSkillFinishCast>(this, onSkillUseEvent);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_SKILL_FINISH_CAST, listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureSkillFinishCast>(onSkillUseEvent);
 	}
 	
 	private void onSkillUseEvent(OnCreatureSkillFinishCast @event)

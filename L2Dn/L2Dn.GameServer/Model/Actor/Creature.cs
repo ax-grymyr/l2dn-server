@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
@@ -14,11 +15,8 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
+using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
@@ -67,32 +65,32 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	
 	private Set<WeakReference<Creature>> _attackByList;
 	
-	private bool _isDead = false;
-	private bool _isImmobilized = false;
-	private bool _isOverloaded = false; // the char is carrying too much
-	private bool _isPendingRevive = false;
+	private bool _isDead;
+	private bool _isImmobilized;
+	private bool _isOverloaded; // the char is carrying too much
+	private bool _isPendingRevive;
 	private bool _isRunning;
-	protected bool _showSummonAnimation = false;
-	protected bool _isTeleporting = false;
-	private bool _isInvul = false;
-	private bool _isUndying = false;
-	private bool _isFlying = false;
+	protected bool _showSummonAnimation;
+	protected bool _isTeleporting;
+	private bool _isInvul;
+	private bool _isUndying;
+	private bool _isFlying;
 	
-	private bool _blockActions = false;
+	private bool _blockActions;
 	private readonly Map<int, AtomicInteger> _blockActionsAllowedSkills = new();
 	
 	private CreatureStat _stat;
 	private CreatureStatus _status;
 	private CreatureTemplate _template; // The link on the CreatureTemplate object containing generic and static properties of this Creature type (ex : Max HP, Speed...)
-	private String _title;
+	private string _title;
 	
 	public const double MAX_HP_BAR_PX = 352.0;
 	
-	private double _hpUpdateIncCheck = .0;
-	private double _hpUpdateDecCheck = .0;
-	private double _hpUpdateInterval = .0;
+	private double _hpUpdateIncCheck;
+	private double _hpUpdateDecCheck;
+	private double _hpUpdateInterval;
 	
-	private int _reputation = 0;
+	private int _reputation;
 	
 	/** Map containing all skills of this character. */
 	private readonly Map<int, Skill> _skills = new();
@@ -111,7 +109,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	
 	private Team _team = Team.NONE;
 	
-	protected long _exceptions = 0;
+	protected long _exceptions;
 	
 	private bool _lethalable = true;
 	
@@ -121,25 +119,25 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/** Creatures effect list. */
 	private readonly EffectList _effectList;
 	/** The creature that summons this character. */
-	private Creature _summoner = null;
+	private Creature _summoner;
 	
 	/** Map of summoned NPCs by this creature. */
-	private Map<int, Npc> _summonedNpcs = null;
+	private Map<int, Npc> _summonedNpcs;
 	
-	private SkillChannelizer _channelizer = null;
+	private SkillChannelizer _channelizer;
 	
-	private SkillChannelized _channelized = null;
+	private SkillChannelized _channelized;
 	
-	private BuffFinishTask _buffFinishTask = null;
+	private BuffFinishTask _buffFinishTask;
 	
 	private Transform? _transform;
 	
 	/** Movement data of this Creature */
 	protected MoveData _move;
-	private bool _cursorKeyMovement = false;
-	private bool _suspendedMovement = false;
+	private bool _cursorKeyMovement;
+	private bool _suspendedMovement;
 	
-	private ScheduledFuture _broadcastModifiedStatTask = null;
+	private ScheduledFuture _broadcastModifiedStatTask;
 	private readonly Set<Stat> _broadcastModifiedStatChanges = new();
 	
 	/** This creature's target. */
@@ -149,7 +147,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	private DateTime _attackEndTime;
 	private DateTime _disableRangedAttackEndTime;
 	
-	private CreatureAI _ai = null;
+	private CreatureAI _ai;
 	
 	/** Future Skill Cast */
 	protected Map<SkillCastingType, SkillCaster> _skillCasters = new();
@@ -158,7 +156,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	
 	private readonly Map<int, RelationCache> _knownRelations = new();
 	
-	private Set<Creature> _seenCreatures = null;
+	private Set<Creature> _seenCreatures;
 	private int _seenCreatureRange = Config.ALT_PARTY_RANGE;
 	
 	private readonly Map<StatusUpdateType, int> _statusUpdates = new();
@@ -171,14 +169,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	
 	/** A list containing the dropped items of this fake player. */
 	private readonly List<Item> _fakePlayerDrops = new();
-	
-	private OnCreatureAttack _onCreatureAttack = null;
-	private OnCreatureAttacked _onCreatureAttacked = null;
-	private OnCreatureDamageDealt _onCreatureDamageDealt = null;
-	private OnCreatureDamageReceived _onCreatureDamageReceived = null;
-	private OnCreatureAttackAvoid _onCreatureAttackAvoid = null;
-	public OnCreatureSkillFinishCast onCreatureSkillFinishCast = null;
-	public OnCreatureSkillUse onCreatureSkillUse = null;
+
+	private readonly EventContainer _eventContainer;
+	private OnCreatureAttack? _onCreatureAttack;
+	private OnCreatureAttacked? _onCreatureAttacked;
+	private OnCreatureDamageDealt? _onCreatureDamageDealt;
+	private OnCreatureDamageReceived? _onCreatureDamageReceived;
+	private OnCreatureAttackAvoid? _onCreatureAttackAvoid;
+	public OnCreatureSkillFinishCast? onCreatureSkillFinishCast;
+	public OnCreatureSkillUse? onCreatureSkillUse;
 	
 	/**
 	 * Creates a creature.
@@ -211,10 +210,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public Creature(int objectId, CreatureTemplate template): base(objectId)
 	{
-		if (template == null)
-		{
-			throw new ArgumentNullException(nameof(template), "Template is null!");
-		}
+		ArgumentNullException.ThrowIfNull(template, nameof(template));
 
 		_effectList = new EffectList(this);
 		_isRunning = isPlayer();
@@ -223,6 +219,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		setInstanceType(InstanceType.Creature);
 		// Set its template to the new Creature
 		_template = template;
+		_eventContainer = new EventContainer($"Creature {objectId}", template.Events);
 		initCharStat();
 		initCharStatus();
 		
@@ -249,7 +246,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		
 		setInvul(true);
 	}
-	
+
+	public EventContainer Events => _eventContainer;
+    
 	public EffectList getEffectList()
 	{
 		return _effectList;
@@ -263,14 +262,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return null;
 	}
 	
-	public virtual bool destroyItemByItemId(String process, int itemId, long count, WorldObject reference, bool sendMessage)
+	public virtual bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		// Default: NPCs consume virtual items for their skills
 		// TODO: should be logged if even happens.. should be false
 		return true;
 	}
 	
-	public virtual bool destroyItem(String process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public virtual bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		// Default: NPCs consume virtual items for their skills
 		// TODO: should be logged if even happens.. should be false
@@ -516,7 +515,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		{
 			if (Config.GRANDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				String name = NpcData.getInstance().getTemplate(getId()).getName();
+				string name = NpcData.getInstance().getTemplate(getId()).getName();
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -526,7 +525,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 		else if (isRaid() && Config.RAIDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			String name = NpcData.getInstance().getTemplate(getId()).getName();
+			string name = NpcData.getInstance().getTemplate(getId()).getName();
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -545,10 +544,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		
 		spawnMe(getX(), getY(), getZ());
 		setTeleporting(false);
-		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_TELEPORTED, this))
+
+		if (_eventContainer.HasSubscribers<OnCreatureTeleported>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnCreatureTeleported(this), this);
+			_eventContainer.NotifyAsync(new OnCreatureTeleported(this));
 		}
 	}
 	
@@ -712,7 +711,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @param text
 	 */
-	public virtual void sendMessage(String text)
+	public virtual void sendMessage(string text)
 	{
 		// default implementation
 	}
@@ -740,27 +739,28 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		int z = _isFlying ? zValue : GeoEngine.getInstance().getHeight(x, y, zValue);
 		int heading = headingValue;
 		Instance instance = instanceValue;
-		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_TELEPORT, this))
+
+		if (_eventContainer.HasSubscribers<OnCreatureTeleport>())
 		{
-			LocationReturn term = EventDispatcher.getInstance().notifyEvent<LocationReturn>(new OnCreatureTeleport(this, x, y, z, heading, instance), this);
-			if (term != null)
+			OnCreatureTeleport onCreatureTeleport = new(this, x, y, z, heading, instance);
+			if (_eventContainer.Notify(onCreatureTeleport))
 			{
-				if (term.terminate())
+				if (onCreatureTeleport.Terminate)
 				{
 					return;
 				}
-				else if (term.overrideLocation())
+
+				if (onCreatureTeleport.OverrideLocation)
 				{
-					x = term.getX();
-					y = term.getY();
-					z = term.getZ();
-					heading = term.getHeading();
-					instance = term.getInstance();
+					x = onCreatureTeleport.OverridenLocation.getX();
+					y = onCreatureTeleport.OverridenLocation.getY();
+					z = onCreatureTeleport.OverridenLocation.getZ();
+					heading = onCreatureTeleport.OverridenLocation.getHeading();
+					instance = onCreatureTeleport.OverridenInstance;
 				}
 			}
 		}
-		
+
 		// Prepare creature for teleport.
 		if (_isPendingRevive)
 		{
@@ -1678,16 +1678,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			setCurrentHp(0);
 			setDead(true);
 		}
-		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DEATH, this))
+
+		if (_eventContainer.HasSubscribers<OnCreatureDeath>())
 		{
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnCreatureDeath(killer, this), this);
+			_eventContainer.Notify(new OnCreatureDeath(killer, this));
 		}
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_KILLED, killer))
+
+		if (killer.Events.HasSubscribers<OnCreatureKilled>())
 		{
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnCreatureKilled(killer, this), killer);
+			killer._eventContainer.Notify(new OnCreatureKilled(killer, this));
 		}
-		
+
 		if ((killer != null) && killer.isPlayer())
 		{
 			Player player = killer.getActingPlayer();
@@ -1752,10 +1753,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 						
 						// By default, when a faction member calls for help, attack the caller's attacker.
 						called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, killer, 1);
-						
-						if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_FACTION_CALL, called))
+
+						if (called.Events.HasSubscribers<OnAttackableFactionCall>())
 						{
-							EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, (Attackable) this, killer.getActingPlayer(), killer.isSummon()), called);
+							called.Events.Notify(new OnAttackableFactionCall(called, (Attackable)this,
+								killer.getActingPlayer(), killer.isSummon()));
 						}
 					});
 				}
@@ -1789,7 +1791,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		{
 			if (Config.GRANDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				String name = NpcData.getInstance().getTemplate(getId()).getName();
+				string name = NpcData.getInstance().getTemplate(getId()).getName();
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -1799,7 +1801,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		}
 		else if (isRaid() && Config.RAIDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			String name = NpcData.getInstance().getTemplate(getId()).getName();
+			string name = NpcData.getInstance().getTemplate(getId()).getName();
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -2332,7 +2334,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	{
 		return _stat;
 	}
-	
+    
 	/**
 	 * Initializes the CharStat class of the WorldObject, is overwritten in classes that require a different CharStat Type.<br>
 	 * Removes the need for instanceof checks.
@@ -2390,17 +2392,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	/**
 	 * @return the Title of the Creature.
 	 */
-	public String getTitle()
+	public string getTitle()
 	{
 		// Custom level titles
 		if (isMonster() && (Config.SHOW_NPC_LEVEL || Config.SHOW_NPC_AGGRESSION))
 		{
-			String t1 = "";
+			string t1 = "";
 			if (Config.SHOW_NPC_LEVEL)
 			{
 				t1 += "Lv " + getLevel();
 			}
-			String t2 = "";
+			string t2 = "";
 			if (Config.SHOW_NPC_AGGRESSION)
 			{
 				if (!t1.isEmpty())
@@ -2441,7 +2443,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Set the Title of the Creature.
 	 * @param value
 	 */
-	public void setTitle(String value)
+	public void setTitle(string value)
 	{
 		if (value == null)
 		{
@@ -4079,29 +4081,28 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		doAttack(hit.getDamage(), target, null, false, false, hit.isCritical(), false);
 		
 		// Notify to scripts when the attack has been done.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ATTACK, this))
+		if (_eventContainer.HasSubscribers<OnCreatureAttack>())
 		{
-			if (_onCreatureAttack == null)
-			{
-				_onCreatureAttack = new OnCreatureAttack();
-			}
+			_onCreatureAttack ??= new OnCreatureAttack();
 			_onCreatureAttack.setAttacker(this);
 			_onCreatureAttack.setTarget(target);
 			_onCreatureAttack.setSkill(null);
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttack, this);
+			_onCreatureAttack.Terminate = false;
+			_onCreatureAttack.Abort = false;
+			_eventContainer.Notify(_onCreatureAttack);
 		}
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ATTACKED, target))
+
+		if (target.Events.HasSubscribers<OnCreatureAttacked>())
 		{
-			if (_onCreatureAttacked == null)
-			{
-				_onCreatureAttacked = new OnCreatureAttacked();
-			}
+			_onCreatureAttacked ??= new OnCreatureAttacked();
 			_onCreatureAttacked.setAttacker(this);
 			_onCreatureAttacked.setTarget(target);
 			_onCreatureAttacked.setSkill(null);
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttacked, target);
+			_onCreatureAttacked.Terminate = false;
+			_onCreatureAttacked.Abort = false;
+			target.Events.Notify(_onCreatureAttacked);
 		}
-		
+
 		if (_triggerSkills != null)
 		{
 			foreach (OptionSkillHolder holder in _triggerSkills.values())
@@ -4513,7 +4514,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return defaultLevelMod;
 	}
 	
-	private bool _disabledAI = false;
+	private bool _disabledAI;
 	
 	/**
 	 * Dummy value that gets overriden in Playable.
@@ -4869,12 +4870,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		double amount = amountValue;
 		
 		// Notify of this attack only if there is an attacking creature.
-		if ((attacker != null) && EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DAMAGE_DEALT, attacker))
+		if (attacker != null)
 		{
-			if (_onCreatureDamageDealt == null)
-			{
-				_onCreatureDamageDealt = new OnCreatureDamageDealt();
-			}
+			_onCreatureDamageDealt ??= new OnCreatureDamageDealt();
 			_onCreatureDamageDealt.setAttacker(attacker);
 			_onCreatureDamageDealt.setTarget(this);
 			_onCreatureDamageDealt.setDamage(amount);
@@ -4882,33 +4880,26 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			_onCreatureDamageDealt.setCritical(critical);
 			_onCreatureDamageDealt.setDamageOverTime(isDOT);
 			_onCreatureDamageDealt.setReflect(reflect);
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureDamageDealt, attacker);
+			_onCreatureDamageDealt.Abort = false;
+			attacker._eventContainer.Notify(_onCreatureDamageDealt);
 		}
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DAMAGE_RECEIVED, this))
+		
+		_onCreatureDamageReceived ??= new OnCreatureDamageReceived();
+		_onCreatureDamageReceived.setAttacker(attacker);
+		_onCreatureDamageReceived.setTarget(this);
+		_onCreatureDamageReceived.setDamage(amount);
+		_onCreatureDamageReceived.setSkill(skill);
+		_onCreatureDamageReceived.setCritical(critical);
+		_onCreatureDamageReceived.setDamageOverTime(isDOT);
+		_onCreatureDamageReceived.setReflect(reflect);
+		_onCreatureDamageReceived.Abort = false;
+		if (_eventContainer.Notify(_onCreatureDamageReceived))
 		{
-			if (_onCreatureDamageReceived == null)
-			{
-				_onCreatureDamageReceived = new OnCreatureDamageReceived();
-			}
-			_onCreatureDamageReceived.setAttacker(attacker);
-			_onCreatureDamageReceived.setTarget(this);
-			_onCreatureDamageReceived.setDamage(amount);
-			_onCreatureDamageReceived.setSkill(skill);
-			_onCreatureDamageReceived.setCritical(critical);
-			_onCreatureDamageReceived.setDamageOverTime(isDOT);
-			_onCreatureDamageReceived.setReflect(reflect);
-			DamageReturn term = EventDispatcher.getInstance().notifyEvent<DamageReturn>(_onCreatureDamageReceived, this);
-			if (term != null)
-			{
-				if (term.terminate())
-				{
-					return;
-				}
-				else if (term.@override())
-				{
-					amount = term.getDamage();
-				}
-			}
+			if (_onCreatureDamageReceived.Terminate)
+				return;
+
+			if (_onCreatureDamageReceived.OverrideDamage)
+				amount = _onCreatureDamageReceived.OverridenDamage;
 		}
 		
 		double elementalDamage = 0;
@@ -5319,16 +5310,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 */
 	public void notifyAttackAvoid(Creature target, bool isDot)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ATTACK_AVOID, target))
+		if (target.Events.HasSubscribers<OnCreatureAttackAvoid>())
 		{
-			if (_onCreatureAttackAvoid == null)
-			{
-				_onCreatureAttackAvoid = new OnCreatureAttackAvoid();
-			}
+			_onCreatureAttackAvoid ??= new OnCreatureAttackAvoid();
 			_onCreatureAttackAvoid.setAttacker(this);
 			_onCreatureAttackAvoid.setTarget(target);
 			_onCreatureAttackAvoid.setDamageOverTime(isDot);
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(_onCreatureAttackAvoid, target);
+			_onCreatureAttackAvoid.Abort = false;
+			target.Events.Notify(_onCreatureAttackAvoid);
 		}
 	}
 	
@@ -5593,39 +5582,6 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		return _ignoreSkillEffects;
 	}
 	
-	public override Set<AbstractEventListener> getListeners(EventType type)
-	{
-		Set<AbstractEventListener> objectListenres = base.getListeners(type);
-		Set<AbstractEventListener> templateListeners = _template.getListeners(type);
-		Set<AbstractEventListener> globalListeners = isNpc() && !isMonster() ? Containers.Npcs().getListeners(type) :
-			isMonster() ? Containers.Monsters().getListeners(type) :
-			isPlayer() ? Containers.Players().getListeners(type) : new();
-		
-		// Attempt to do not create collection
-		if (objectListenres.isEmpty() && templateListeners.isEmpty() && globalListeners.isEmpty())
-		{
-			return new();
-		}
-		else if (!objectListenres.isEmpty() && templateListeners.isEmpty() && globalListeners.isEmpty())
-		{
-			return objectListenres;
-		}
-		else if (!templateListeners.isEmpty() && objectListenres.isEmpty() && globalListeners.isEmpty())
-		{
-			return templateListeners;
-		}
-		else if (!globalListeners.isEmpty() && objectListenres.isEmpty() && templateListeners.isEmpty())
-		{
-			return globalListeners;
-		}
-		
-		Set<AbstractEventListener> both = new();
-		both.addAll(objectListenres);
-		both.addAll(templateListeners);
-		both.addAll(globalListeners);
-		return both;
-	}
-	
 	public virtual Race getRace()
 	{
 		return _template.getRace();
@@ -5763,9 +5719,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 		
 		World.getInstance().forEachVisibleObjectInRange<Creature>(this, _seenCreatureRange, creature =>
 		{
-			if (!creature.isInvisible() && _seenCreatures.add(creature) && EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_SEE, this))
+			if (!creature.isInvisible() && _seenCreatures.add(creature))
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnCreatureSee(this, creature), this);
+				_eventContainer.Notify(new OnCreatureSee(this, creature));
 			}
 		});
 	}

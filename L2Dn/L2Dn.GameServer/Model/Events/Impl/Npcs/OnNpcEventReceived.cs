@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author UnAfraid
  */
-public class OnNpcEventReceived: IBaseEvent
+public class OnNpcEventReceived: EventBase
 {
 	private readonly String _eventName;
 	private readonly Npc _sender;
@@ -38,10 +39,5 @@ public class OnNpcEventReceived: IBaseEvent
 	public WorldObject getReference()
 	{
 		return _reference;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_EVENT_RECEIVED;
 	}
 }

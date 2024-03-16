@@ -1,9 +1,8 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Playables;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
@@ -23,13 +22,11 @@ public class PlayableStat: CreatureStat
 	
 	public virtual bool addExp(long amount)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYABLE_EXP_CHANGED, getActiveChar()))
+		EventContainer charEvents = getActiveChar().Events;
+		if (charEvents.HasSubscribers<OnPlayableExpChanged>())
 		{
-			TerminateReturn term = EventDispatcher.getInstance()
-				.notifyEvent<TerminateReturn>(new OnPlayableExpChanged(getActiveChar(), getExp(), getExp() + amount),
-					getActiveChar());
-			
-			if ((term != null) && term.terminate())
+			OnPlayableExpChanged onPlayableExpChanged = new(getActiveChar(), getExp(), getExp() + amount);
+			if (charEvents.Notify(onPlayableExpChanged) && onPlayableExpChanged.Terminate)
 			{
 				return false;
 			}

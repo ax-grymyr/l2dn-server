@@ -5,7 +5,7 @@ using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
@@ -307,9 +307,9 @@ public class Fishing
 				_player.sendPacket(SystemMessageId.THE_BAIT_HAS_BEEN_LOST_BECAUSE_THE_FISH_GOT_AWAY);
 			}
 			
-			if (consumeBait && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_FISHING, _player))
+			if (consumeBait && _player.Events.HasSubscribers<OnPlayerFishing>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerFishing(_player, reason), _player);
+				_player.Events.NotifyAsync(new OnPlayerFishing(_player, reason));
 			}
 		}
 		finally

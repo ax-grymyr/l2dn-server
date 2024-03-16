@@ -3,7 +3,7 @@ using L2Dn.GameServer.Model.Cubics.Conditions;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;
 
-public class CubicTemplate : CreatureTemplate , ICubicConditionHolder
+public class CubicTemplate: CreatureTemplate, ICubicConditionHolder
 {
 	private readonly int _id;
 	private readonly int _level;

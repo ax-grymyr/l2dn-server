@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Attackables;
 
 /**
  * @author UnAfraid
  */
-public class OnAttackableHate: IBaseEvent
+public class OnAttackableHate: TerminateEventBase
 {
 	private readonly Attackable _npc;
 	private readonly Player _player;
@@ -31,10 +32,5 @@ public class OnAttackableHate: IBaseEvent
 	public bool isSummon()
 	{
 		return _isSummon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_HATE;
 	}
 }

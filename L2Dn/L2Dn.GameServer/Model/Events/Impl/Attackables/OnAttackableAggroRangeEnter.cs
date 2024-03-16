@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Attackables;
 
 /**
  * @author UnAfraid
  */
-public class OnAttackableAggroRangeEnter: IBaseEvent
+public class OnAttackableAggroRangeEnter: EventBase
 {
 	private readonly Attackable _npc;
 	private readonly Player _player;
@@ -31,10 +32,5 @@ public class OnAttackableAggroRangeEnter: IBaseEvent
 	public bool isSummon()
 	{
 		return _isSummon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_ATTACKABLE_AGGRO_RANGE_ENTER;
 	}
 }

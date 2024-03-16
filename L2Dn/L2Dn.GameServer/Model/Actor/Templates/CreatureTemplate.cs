@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.Events;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
@@ -11,7 +12,7 @@ namespace L2Dn.GameServer.Model.Actor.Templates;
  * Character template.
  * @author Zoey76
  */
-public class CreatureTemplate : ListenersContainer
+public class CreatureTemplate
 {
 	// BaseStats
 	private WeaponType _baseAttackType;
@@ -28,11 +29,16 @@ public class CreatureTemplate : ListenersContainer
 	
 	/** The creature's race. */
 	private Race _race;
+
+	private readonly EventContainer _eventContainer;
 	
 	public CreatureTemplate(StatSet set)
 	{
 		this.set(set);
+		_eventContainer = CreateEventContainer();
 	}
+
+	public EventContainer Events => _eventContainer;
 	
 	public virtual void set(StatSet set)
 	{
@@ -522,5 +528,10 @@ public class CreatureTemplate : ListenersContainer
 	public virtual Creature CreateInstance()
 	{
 		throw new NotImplementedException();
-	} 
+	}
+
+	protected virtual EventContainer CreateEventContainer()
+	{
+		return new EventContainer("Creature template", GlobalEvents.Global);
+	}
 }

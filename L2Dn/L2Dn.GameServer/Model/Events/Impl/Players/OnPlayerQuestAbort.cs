@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author Sdw
  */
-public class OnPlayerQuestAbort: IBaseEvent
+public class OnPlayerQuestAbort: EventBase
 {
 	private readonly Player _player;
 	private readonly int _questId;
@@ -24,10 +25,5 @@ public class OnPlayerQuestAbort: IBaseEvent
 	public int getQuestId()
 	{
 		return _questId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_QUEST_ABORT;
 	}
 }

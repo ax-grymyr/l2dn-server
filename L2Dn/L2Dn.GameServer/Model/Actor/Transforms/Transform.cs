@@ -1,8 +1,7 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Types;
@@ -300,9 +299,9 @@ public class Transform: IIdentifiable
 				player.broadcastUserInfo();
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_TRANSFORM, player))
+				if (player.Events.HasSubscribers<OnPlayerTransform>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(player, getId()), player);
+					player.Events.NotifyAsync(new OnPlayerTransform(player, getId()));
 				}
 			}
 			else
@@ -370,9 +369,9 @@ public class Transform: IIdentifiable
 				player.sendPacket(new ExUserInfoEquipSlotPacket(player));
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_TRANSFORM, player))
+				if (player.Events.HasSubscribers<OnPlayerTransform>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerTransform(player, 0), player);
+					player.Events.NotifyAsync(new OnPlayerTransform(player, 0));
 				}
 			}
 			else

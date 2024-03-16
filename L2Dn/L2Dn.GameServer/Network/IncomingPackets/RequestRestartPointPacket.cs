@@ -5,12 +5,10 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
@@ -60,16 +58,10 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		
 		// Custom event resurrection management.
-		if (player.isOnEvent())
+		if (player.isOnEvent() && player.Events.HasSubscribers<OnPlayerResurrectRequest>())
 		{
-			foreach (AbstractEventListener listener in player.getListeners(EventType.ON_CREATURE_DEATH))
-			{
-				if (listener.getOwner() is Event)
-				{
-					((Event) listener.getOwner()).notifyEvent("ResurrectPlayer", null, player);
-					return ValueTask.CompletedTask;
-				}
-			}
+			if (player.Events.Notify(new OnPlayerResurrectRequest(player)))
+				return ValueTask.CompletedTask;
 		}
 		
 		Castle castle = CastleManager.getInstance().getCastle(player.getX(), player.getY(), player.getZ());

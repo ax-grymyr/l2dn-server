@@ -19,8 +19,8 @@ public class Monster: Attackable
 {
 	protected bool _enableMinions = true;
 
-	private Monster _master = null;
-	private MinionList _minionList = null;
+	private Monster _master;
+	private MinionList _minionList;
 
 	/**
 	 * Constructor of Monster (use Creature and Npc constructor).<br>

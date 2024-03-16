@@ -1,10 +1,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
@@ -45,21 +42,20 @@ public class BlockSkill: AbstractEffect
 			return;
 		}
 		
-		effected.addListener(new FunctionEventListener(effected, EventType.ON_CREATURE_SKILL_USE, @event => onSkillUseEvent((OnCreatureSkillUse)@event), this));
+		effected.Events.Subscribe<OnCreatureSkillUse>(this, onSkillUseEvent);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureSkillUse>(onSkillUseEvent);
 	}
-	
-	private TerminateReturn onSkillUseEvent(OnCreatureSkillUse @event)
+
+	private void onSkillUseEvent(OnCreatureSkillUse ev)
 	{
-		if (_magicTypes.Contains(@event.getSkill().getMagicType()) || _skillIds.Contains(@event.getSkill().getId()))
+		if (_magicTypes.Contains(ev.getSkill().getMagicType()) || _skillIds.Contains(ev.getSkill().getId()))
 		{
-			return new TerminateReturn(true, true, true);
+			ev.Terminate = true;
+			ev.Abort = true;
 		}
-		
-		return null;
 	}
 }

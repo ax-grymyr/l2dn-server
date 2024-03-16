@@ -7,9 +7,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Instances;
-using L2Dn.GameServer.Model.Events.Returns;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
@@ -84,9 +82,9 @@ public class Instance : IIdentifiable, INamable
 		}
 		
 		// Notify DP scripts
-		if (!isDynamic() && EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_CREATED, _template))
+		if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceCreated>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnInstanceCreated(this, player), _template);
+			_template.Events.NotifyAsync(new OnInstanceCreated(this, player));
 		}
 	}
 	
@@ -172,9 +170,9 @@ public class Instance : IIdentifiable, INamable
 	{
 		_parameters.set("INSTANCE_STATUS", value);
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_STATUS_CHANGE, _template))
+		if (_template.Events.HasSubscribers<OnInstanceStatusChange>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnInstanceStatusChange(this, value), _template);
+			_template.Events.NotifyAsync(new OnInstanceStatusChange(this, value));
 		}
 	}
 	
@@ -828,9 +826,9 @@ public class Instance : IIdentifiable, INamable
 		_ejectDeadTasks.clear();
 		
 		// Notify DP scripts
-		if (!isDynamic() && EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_DESTROY, _template))
+		if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceDestroy>())
 		{
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(new OnInstanceDestroy(this), _template);
+			_template.Events.Notify(new OnInstanceDestroy(this));
 		}
 		
 		removePlayers();
@@ -1065,9 +1063,9 @@ public class Instance : IIdentifiable, INamable
 				}
 				
 				// Notify DP scripts
-				if (!isDynamic() && EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_ENTER, _template))
+				if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceEnter>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnInstanceEnter(player, this), _template);
+					_template.Events.NotifyAsync(new OnInstanceEnter(player, this));
 				}
 			}
 			else
@@ -1075,9 +1073,9 @@ public class Instance : IIdentifiable, INamable
 				removePlayer(player);
 				
 				// Notify DP scripts
-				if (!isDynamic() && EventDispatcher.getInstance().hasListener(EventType.ON_INSTANCE_LEAVE, _template))
+				if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceLeave>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnInstanceLeave(player, this), _template);
+					_template.Events.NotifyAsync(new OnInstanceLeave(player, this));
 				}
 			}
 		}

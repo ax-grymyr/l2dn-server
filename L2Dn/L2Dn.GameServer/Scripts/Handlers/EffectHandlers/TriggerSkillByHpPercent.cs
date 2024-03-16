@@ -3,9 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 
@@ -31,13 +29,12 @@ public class TriggerSkillByHpPercent: AbstractEffect
 	
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_HP_CHANGE,
-			@event => onHpChange((OnCreatureHpChange)@event), this));
+		effected.Events.Subscribe<OnCreatureHpChange>(this, onHpChange);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_HP_CHANGE, listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureHpChange>(onHpChange);
 	}
 	
 	private void onHpChange(OnCreatureHpChange @event)

@@ -4,8 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
-using L2Dn.GameServer.Model.Events.Listeners;
-using L2Dn.GameServer.Model.Quests;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -25,8 +23,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_OLYMPIAD_MATCH_RESULT,
-			@event => onOlympiadMatchResult((OnOlympiadMatchResult)@event), this));
+		GlobalEvents.Global.Subscribe<OnOlympiadMatchResult>(this, onOlympiadMatchResult);
 	}
 	
 	public override bool isAvailable(Player player)

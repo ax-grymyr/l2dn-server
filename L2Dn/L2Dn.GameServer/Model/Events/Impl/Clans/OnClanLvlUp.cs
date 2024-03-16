@@ -1,17 +1,18 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Clans;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerClanLvlUp: IBaseEvent
+public class OnClanLvlUp: EventBase
 {
 	private readonly Player _player;
 	private readonly Clan _clan;
 	
-	public OnPlayerClanLvlUp(Player player, Clan clan)
+	public OnClanLvlUp(Player player, Clan clan)
 	{
 		_player = player;
 		_clan = clan;
@@ -25,10 +26,5 @@ public class OnPlayerClanLvlUp: IBaseEvent
 	public Clan getClan()
 	{
 		return _clan;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CLAN_LEVELUP;
 	}
 }

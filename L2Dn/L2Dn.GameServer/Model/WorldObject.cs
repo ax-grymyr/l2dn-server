@@ -4,7 +4,6 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones;
@@ -18,7 +17,7 @@ namespace L2Dn.GameServer.Model;
 /**
  * Base class for all interactive objects.
  */
-public abstract class WorldObject: ListenersContainer, IIdentifiable, INamable, ISpawnable, IUniqueId, IDecayable, IPositionable
+public abstract class WorldObject: IIdentifiable, INamable, ISpawnable, IUniqueId, IDecayable, IPositionable
 {
 	/** Name */
 	private string _name;

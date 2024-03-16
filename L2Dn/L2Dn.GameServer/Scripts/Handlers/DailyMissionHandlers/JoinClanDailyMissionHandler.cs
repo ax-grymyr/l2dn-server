@@ -3,8 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Clans;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -25,21 +24,18 @@ public class JoinClanDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_CLAN_JOIN,
-			ev => onPlayerClanJoin((OnPlayerClanJoin)ev), this));
-
-		Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_CLAN_CREATE,
-			ev => onPlayerClanCreate((OnPlayerClanCreate)ev), this));
+		GlobalEvents.Global.Subscribe<OnClanJoin>(this, onPlayerClanJoin);
+		GlobalEvents.Global.Subscribe<OnClanCreate>(this, onPlayerClanCreate);
 	}
 	
-	private void onPlayerClanJoin(OnPlayerClanJoin @event)
+	private void onPlayerClanJoin(OnClanJoin @event)
 	{
 		Player player = @event.getClanMember().getPlayer();
 		DailyMissionPlayerEntry missionData = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 		processMission(player, missionData);
 	}
 	
-	private void onPlayerClanCreate(OnPlayerClanCreate @event)
+	private void onPlayerClanCreate(OnClanCreate @event)
 	{
 		Player player = @event.getPlayer();
 		DailyMissionPlayerEntry missionData = player.getDailyMissions().getOrCreateEntry(getHolder().getId());

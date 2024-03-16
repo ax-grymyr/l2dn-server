@@ -1,14 +1,14 @@
-using L2Dn.GameServer.Db;
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.Model;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author Krunchy
  * @since 2.6.0.0
  */
-public class OnPlayerProfessionCancel: IBaseEvent
+public class OnPlayerProfessionCancel: EventBase
 {
 	private readonly Player _player;
 	private readonly CharacterClass _classId;
@@ -27,10 +27,5 @@ public class OnPlayerProfessionCancel: IBaseEvent
 	public CharacterClass getClassId()
 	{
 		return _classId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_PROFESSION_CANCEL;
 	}
 }

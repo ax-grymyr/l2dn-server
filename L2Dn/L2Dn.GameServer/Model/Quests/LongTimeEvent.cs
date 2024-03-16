@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Xml.Linq;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -8,7 +7,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Announcements;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Scripts;
 using L2Dn.GameServer.Utilities;
@@ -35,11 +33,6 @@ public class LongTimeEvent: Quest
 	protected String _endMsg = "";
 	protected int _enterAnnounceId = -1;
 
-	/**
-	 * Event spawns must initialize after server loads scripts.
-	 */
-	private Action<IBaseEvent> _spawnNpcs;
-
 	// NPCs to spawn and their spawn points
 	protected readonly List<NpcSpawn> _spawnList = new();
 	
@@ -65,26 +58,6 @@ public class LongTimeEvent: Quest
 	
 	public LongTimeEvent(): base(-1)
 	{
-		_spawnNpcs = ev =>
-		{
-			TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
-			foreach (NpcSpawn npcSpawn in _spawnList)
-			{
-				Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(),
-					npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
-				TimeSpan respawnDelay = npcSpawn.respawnTime;
-				if (respawnDelay > TimeSpan.Zero)
-				{
-					Spawn spawn = npc.getSpawn();
-					spawn.setRespawnDelay(respawnDelay);
-					spawn.startRespawn();
-					ThreadPool.schedule(() => spawn.stopRespawn(), millisToEventEnd - respawnDelay);
-				}
-			}
-
-			Containers.Global().removeListenerIf(EventType.ON_SERVER_START, listener => listener.getOwner() == this);
-		};
-
 		loadConfig();
 
 		if (_eventPeriod != null)
@@ -110,6 +83,26 @@ public class LongTimeEvent: Quest
 		}
 	}
 
+	private void SpawnNpcs(OnServerStart serverStart)
+	{
+		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
+		foreach (NpcSpawn npcSpawn in _spawnList)
+		{
+			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(),
+				npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
+			TimeSpan respawnDelay = npcSpawn.respawnTime;
+			if (respawnDelay > TimeSpan.Zero)
+			{
+				Spawn spawn = npc.getSpawn();
+				spawn.setRespawnDelay(respawnDelay);
+				spawn.startRespawn();
+				ThreadPool.schedule(() => spawn.stopRespawn(), millisToEventEnd - respawnDelay);
+			}
+		}
+
+		GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);
+	}
+    
 	/**
 	 * Load event configuration file
 	 */
@@ -332,7 +325,7 @@ public class LongTimeEvent: Quest
 		// Add spawns on server start.
 		if (!_spawnList.isEmpty())
 		{
-			Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_SERVER_START, _spawnNpcs, this));
+			GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);
 		}
 		
 		// Enable town shrines.

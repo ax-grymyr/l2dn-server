@@ -4,8 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -23,8 +22,7 @@ public class QuestDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Players().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_QUEST_COMPLETE,
-			@event => onQuestComplete((OnPlayerQuestComplete)@event), this));
+		GlobalEvents.Players.Subscribe<OnPlayerQuestComplete>(this, onQuestComplete);
 	}
 	
 	public override bool isAvailable(Player player)

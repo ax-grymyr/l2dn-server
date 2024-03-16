@@ -6,10 +6,8 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -510,17 +508,15 @@ public class SkillCaster: Runnable
 		}
 		
 		// Notify skill is casted.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_SKILL_FINISH_CAST, caster))
+		if (caster.Events.HasSubscribers<OnCreatureSkillFinishCast>())
 		{
-			if (caster.onCreatureSkillFinishCast == null)
-			{
-				caster.onCreatureSkillFinishCast = new OnCreatureSkillFinishCast();
-			}
+			caster.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast();
 			caster.onCreatureSkillFinishCast.setCaster(caster);
 			caster.onCreatureSkillFinishCast.setTarget(target);
 			caster.onCreatureSkillFinishCast.setSkill(_skill);
 			caster.onCreatureSkillFinishCast.setSimultaneously(_skill.isWithoutAction());
-			EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(caster.onCreatureSkillFinishCast, caster);
+			caster.onCreatureSkillFinishCast.Abort = false;
+			caster.Events.Notify(caster.onCreatureSkillFinishCast);
 		}
 		
 		// Call the skill's effects and AI interraction and stuff.
@@ -675,9 +671,9 @@ public class SkillCaster: Runnable
 				// Mobs in range 1000 see spell
 				World.getInstance().forEachVisibleObjectInRange<Npc>(player, 1000, npcMob =>
 				{
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npcMob))
+					if (npcMob.Events.HasSubscribers<OnNpcSkillSee>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets.ToArray()), npcMob);
+						npcMob.Events.NotifyAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets.ToArray()));
 					}
 					
 					// On Skill See logic
@@ -903,17 +899,15 @@ public class SkillCaster: Runnable
 				skill.activateSkill(creature, item, targets);
 				
 				// Notify skill is casted.
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_SKILL_FINISH_CAST, creature))
+				if (creature.Events.HasSubscribers<OnCreatureSkillFinishCast>())
 				{
-					if (creature.onCreatureSkillFinishCast == null)
-					{
-						creature.onCreatureSkillFinishCast = new OnCreatureSkillFinishCast();
-					}
+					creature.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast();
 					creature.onCreatureSkillFinishCast.setCaster(creature);
 					creature.onCreatureSkillFinishCast.setTarget(target);
 					creature.onCreatureSkillFinishCast.setSkill(skill);
 					creature.onCreatureSkillFinishCast.setSimultaneously(skill.isWithoutAction());
-					EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(creature.onCreatureSkillFinishCast, creature);
+					creature.onCreatureSkillFinishCast.Abort = false;
+					creature.Events.Notify(creature.onCreatureSkillFinishCast);
 				}
 			}
 		}
@@ -1022,17 +1016,16 @@ public class SkillCaster: Runnable
 			return false;
 		}
 		
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_SKILL_USE, caster))
+		if (caster.Events.HasSubscribers<OnCreatureSkillUse>())
 		{
-			if (caster.onCreatureSkillUse == null)
-			{
-				caster.onCreatureSkillUse = new OnCreatureSkillUse();
-			}
+			caster.onCreatureSkillUse ??= new OnCreatureSkillUse();
 			caster.onCreatureSkillUse.setCaster(caster);
 			caster.onCreatureSkillUse.setSkill(skill);
 			caster.onCreatureSkillUse.setSimultaneously(skill.isWithoutAction());
-			TerminateReturn term = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(caster.onCreatureSkillUse, caster);
-			if ((term != null) && term.terminate())
+			caster.onCreatureSkillUse.Terminate = false;
+			caster.onCreatureSkillUse.Abort = false;
+			caster.Events.Notify(caster.onCreatureSkillUse);
+			if (caster.onCreatureSkillUse.Terminate)
 			{
 				caster.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return false;

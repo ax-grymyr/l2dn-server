@@ -1,12 +1,13 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author UnAfraid
  */
-public class OnNpcSkillFinished: IBaseEvent
+public class OnNpcSkillFinished: EventBase
 {
 	private readonly Npc _caster;
 	private readonly Player _target;
@@ -32,10 +33,5 @@ public class OnNpcSkillFinished: IBaseEvent
 	public Skill getSkill()
 	{
 		return _skill;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_SKILL_FINISHED;
 	}
 }

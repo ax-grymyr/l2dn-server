@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Clans;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Clans;
 
 /**
  * @author UnAfraid
  */
-public class OnClanLeaderChange: IBaseEvent
+public class OnClanLeaderChange: EventBase
 {
 	private readonly ClanMember _oldLeader;
 	private readonly ClanMember _newLeader;
@@ -31,10 +32,5 @@ public class OnClanLeaderChange: IBaseEvent
 	public Clan getClan()
 	{
 		return _clan;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CLAN_LEADER_CHANGE;
 	}
 }

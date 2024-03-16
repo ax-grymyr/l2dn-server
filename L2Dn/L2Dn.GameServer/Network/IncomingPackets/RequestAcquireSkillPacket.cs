@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Skills;
@@ -620,17 +620,11 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		}
 		
 		// Notify scripts of the skill learn.
-		if (trainer != null)
+		if (player.Events.HasSubscribers<OnPlayerSkillLearn>())
 		{
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SKILL_LEARN, trainer))
-			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSkillLearn(trainer, player, skill, _skillType), trainer);
-			}
+			player.Events.NotifyAsync(new OnPlayerSkillLearn(trainer, player, skill, _skillType));
 		}
-		else if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SKILL_LEARN, player))
-		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSkillLearn(trainer, player, skill, _skillType), player);
-		}
+		
 		player.restoreAutoShortcutVisual();
 	}
 	

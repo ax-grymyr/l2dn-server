@@ -2,18 +2,18 @@
 
 public interface RegisterEvent
 {
-    EventType value();
+    //EventType value();
 }
 
 [AttributeUsage(AttributeTargets.Method)]
 public sealed class RegisterEventAttribute: Attribute
 {
-    private readonly EventType _eventType;
-
-    public RegisterEventAttribute(EventType eventType)
-    {
-        _eventType = eventType;
-    }
-    
-    public EventType EventType => _eventType;
+    // private readonly EventType _eventType;
+    //
+    // public RegisterEventAttribute(EventType eventType)
+    // {
+    //     _eventType = eventType;
+    // }
+    //
+    // public EventType EventType => _eventType;
 }

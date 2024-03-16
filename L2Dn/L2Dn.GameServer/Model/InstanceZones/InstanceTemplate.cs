@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -18,9 +19,10 @@ namespace L2Dn.GameServer.Model.InstanceZones;
  * Template holder for instances.
  * @author malyelfik
  */
-public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
+public class InstanceTemplate: IIdentifiable, INamable
 {
 	// Basic instance parameters
+	private readonly EventContainer _eventContainer;
 	private int _templateId = -1;
 	private String _name = "UnknownInstance";
 	private TimeSpan _duration;
@@ -59,7 +61,11 @@ public class InstanceTemplate : ListenersContainer , IIdentifiable, INamable
 		_templateId = set.getInt("id", 0);
 		_name = set.getString("name", null);
 		_maxWorldCount = set.getInt("maxWorlds", -1);
+		
+		_eventContainer = new($"Instance template {_templateId}", GlobalEvents.Global);
 	}
+
+	public EventContainer Events => _eventContainer;
 	
 	// -------------------------------------------------------------
 	// Setters

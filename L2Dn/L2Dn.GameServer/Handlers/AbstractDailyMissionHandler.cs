@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Handlers;
 /**
  * @author Sdw
  */
-public abstract class AbstractDailyMissionHandler: ListenersContainer
+public abstract class AbstractDailyMissionHandler
 {
 	public const int MISSION_LEVEL_POINTS = 97224;
 	private const int CLAN_EXP = 94481;

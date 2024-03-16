@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -6,7 +7,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
@@ -139,9 +139,10 @@ public class AutoUseTaskManager
 								}
 								
 								// Notify events.
-								if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_USE, item.getTemplate()))
+								EventContainer itemEvents = item.getTemplate().Events;
+								if (itemEvents.HasSubscribers<OnItemUse>())
 								{
-									EventDispatcher.getInstance().notifyEventAsync(new OnItemUse(player, item), item.getTemplate());
+									itemEvents.NotifyAsync(new OnItemUse(player, item));
 								}
 							}
 						}
@@ -173,9 +174,10 @@ public class AutoUseTaskManager
 									}
 									
 									// Notify events.
-									if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_USE, item.getTemplate()))
+									EventContainer itemEvents = item.getTemplate().Events;
+									if (itemEvents.HasSubscribers<OnItemUse>())
 									{
-										EventDispatcher.getInstance().notifyEventAsync(new OnItemUse(player, item), item.getTemplate());
+										itemEvents.NotifyAsync(new OnItemUse(player, item));
 									}
 								}
 							}

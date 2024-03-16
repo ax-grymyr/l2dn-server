@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using System.Text;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
@@ -9,8 +10,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Ensoul;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -128,10 +127,8 @@ public class Item: WorldObject
 		_itemId = itemId;
 		_itemTemplate = ItemData.getInstance().getTemplate(itemId);
 		if ((_itemId == 0) || (_itemTemplate == null))
-		{
 			throw new ArgumentException();
-		}
-		
+
 		base.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
 		_type1 = 0;
@@ -146,18 +143,16 @@ public class Item: WorldObject
 	/**
 	 * Constructor of the Item from the objetId and the description of the item given by the Item.
 	 * @param objectId : int designating the ID of the object in the world
-	 * @param itemTemplate : Item containing informations of the item
+	 * @param itemTemplate : Item containing information of the item
 	 */
 	public Item(int objectId, ItemTemplate itemTemplate): base(objectId)
 	{
 		setInstanceType(InstanceType.Item);
-		_itemId = itemTemplate.getId();
 		_itemTemplate = itemTemplate;
+		_itemId = itemTemplate.getId();
 		if (_itemId == 0)
-		{
 			throw new ArgumentException();
-		}
-		
+
 		base.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
 		_mana = _itemTemplate.getDuration();
@@ -239,9 +234,10 @@ public class Item: WorldObject
 		World.getInstance().removeVisibleObject(this, oldregion);
 		
 		// Notify to scripts
-		if (creature.isPlayer() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_PICKUP, getTemplate()))
+		EventContainer events = getTemplate().Events;
+		if (creature.isPlayer() && events.HasSubscribers<OnPlayerItemPickup>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemPickup(creature.getActingPlayer(), this), getTemplate());
+			events.NotifyAsync(new OnPlayerItemPickup(creature.getActingPlayer(), this));
 		}
 	}
 	
@@ -1021,9 +1017,10 @@ public class Item: WorldObject
 		}
 		
 		// Notify to scripts.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_AUGMENT, getTemplate()))
+		EventContainer events = getTemplate().Events; 
+		if (events.HasSubscribers<OnPlayerItemAugment>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerAugment(getActingPlayer(), this, augmentation, true), getTemplate());
+			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augmentation, true));
 		}
 		
 		return true;
@@ -1055,9 +1052,10 @@ public class Item: WorldObject
 		}
 		
 		// Notify to scripts.
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_AUGMENT, getTemplate()))
+		EventContainer events = getTemplate().Events; 
+		if (events.HasSubscribers<OnPlayerItemAugment>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerAugment(getActingPlayer(), this, augment, false), getTemplate());
+			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augment, false));
 		}
 	}
 	
@@ -1600,9 +1598,10 @@ public class Item: WorldObject
 			_owner = null;
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_DROP, getTemplate()))
+			EventContainer events = getTemplate().Events;
+			if (events.HasSubscribers<OnPlayerItemDrop>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, new Location(x, y, z)), getTemplate());
+				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, new Location(x, y, z)));
 			}
 		}
 	}
@@ -2091,17 +2090,18 @@ public class Item: WorldObject
 			{
 				@event = questName.Substring(idx).Trim();
 			}
-			
+
+			EventContainer events = getTemplate().Events;
 			if (@event != null)
 			{
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_BYPASS_EVENT, getTemplate()))
+				if (events.HasSubscribers<OnItemBypassEvent>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnItemBypassEvent(this, player, @event), getTemplate());
+					events.NotifyAsync(new OnItemBypassEvent(this, player, @event));
 				}
 			}
-			else if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_TALK, getTemplate()))
+			else if (events.HasSubscribers<OnItemTalk>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnItemTalk(this, player), getTemplate());
+				events.NotifyAsync(new OnItemTalk(this, player));
 			}
 		}
 	}

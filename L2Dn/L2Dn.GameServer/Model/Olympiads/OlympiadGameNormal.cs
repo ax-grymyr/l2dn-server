@@ -1,6 +1,6 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
@@ -372,6 +372,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 		
 		// Create results for players if a player crashed
+		EventContainer olympiadEvents = Olympiad.getInstance().Events;
 		if (_pOneCrash || _pTwoCrash)
 		{
 			try
@@ -400,9 +401,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					}
 					
 					// Notify to scripts
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_OLYMPIAD_MATCH_RESULT, Olympiad.getInstance()))
+					if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(_playerOne, _playerTwo, getType()), Olympiad.getInstance());
+						olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(_playerOne, _playerTwo, getType()));
 					}
 				}
 				else if (_pOneCrash && !_pTwoCrash)
@@ -429,9 +430,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					}
 					
 					// Notify to scripts
-					if (EventDispatcher.getInstance().hasListener(EventType.ON_OLYMPIAD_MATCH_RESULT, Olympiad.getInstance()))
+					if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(_playerTwo, _playerOne, getType()), Olympiad.getInstance());
+						olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(_playerTwo, _playerOne, getType()));
 					}
 				}
 				else if (_pOneCrash && _pTwoCrash)
@@ -472,11 +473,12 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				stadium.broadcastPacket(result);
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_OLYMPIAD_MATCH_RESULT, Olympiad.getInstance()))
+				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(null, _playerOne, getType()), Olympiad.getInstance());
-					EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(null, _playerTwo, getType()), Olympiad.getInstance());
+					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(null, _playerOne, getType()));
+					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(null, _playerTwo, getType()));
 				}
+				
 				return;
 			}
 			catch (Exception e)
@@ -549,9 +551,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_OLYMPIAD_MATCH_RESULT, Olympiad.getInstance()))
+				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(_playerOne, _playerTwo, getType()), Olympiad.getInstance());
+					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(_playerOne, _playerTwo, getType()));
 				}
 			}
 			else if ((_playerOne.getPlayer() == null) || !_playerOne.getPlayer().isOnline() || ((playerOneHp == 0) && (playerTwoHp != 0)) || ((_damageP2 > _damageP1) && (playerOneHp != 0) && (playerTwoHp != 0)))
@@ -579,9 +581,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
 				
 				// Notify to scripts
-				if (EventDispatcher.getInstance().hasListener(EventType.ON_OLYMPIAD_MATCH_RESULT, Olympiad.getInstance()))
+				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnOlympiadMatchResult(_playerTwo, _playerOne, getType()), Olympiad.getInstance());
+					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(_playerTwo, _playerOne, getType()));
 				}
 			}
 			else

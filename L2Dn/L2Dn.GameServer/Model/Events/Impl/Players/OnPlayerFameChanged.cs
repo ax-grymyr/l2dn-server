@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerFameChanged: IBaseEvent
+public class OnPlayerFameChanged: EventBase
 {
 	private readonly Player _player;
 	private readonly int _oldFame;
@@ -31,10 +32,5 @@ public class OnPlayerFameChanged: IBaseEvent
 	public int getNewFame()
 	{
 		return _newFame;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_FAME_CHANGED;
 	}
 }

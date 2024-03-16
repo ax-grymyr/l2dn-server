@@ -1,7 +1,6 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
@@ -33,11 +32,10 @@ public struct CharacterDeletePacket: IIncomingPacket<GameSession>
                     connection.Send(ref deleteSuccessPacket);
 
                     CharSelectInfoPackage charInfo = session.Characters[_charSlot];
-                    if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_DELETE, Containers.Players()))
+                    if (GlobalEvents.Players.HasSubscribers<OnPlayerDelete>())
                     {
-                        EventDispatcher.getInstance().notifyEvent<AbstractEventReturn>(
-                            new OnPlayerDelete(charInfo.getObjectId(), charInfo.getName(), session),
-                            Containers.Players());
+                        GlobalEvents.Players.Notify(new OnPlayerDelete(charInfo.getObjectId(), charInfo.getName(),
+                            session));
                     }
 
                     session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);

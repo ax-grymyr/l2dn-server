@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Clans;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Clans;
 
 /**
  * @author UnAfraid
  */
-public class OnClanLeft: IBaseEvent
+public class OnClanLeft: EventBase
 {
 	private readonly ClanMember _clanMember;
 	private readonly Clan _clan;
@@ -24,10 +25,5 @@ public class OnClanLeft: IBaseEvent
 	public Clan getClan()
 	{
 		return _clan;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_CLAN_LEFT;
 	}
 }

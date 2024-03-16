@@ -1,8 +1,6 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -35,8 +33,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
 		if ((_hpPercent > 0) && !_updates.containsKey(effected))
 		{
 			_updates.put(effected, new AtomicBoolean(canPump(effector, effected, skill)));
-			ListenersContainer container = effected;
-			container.addListener(new ConsumerEventListener(container, EventType.ON_CREATURE_HP_CHANGE, @event => onHpChange((OnCreatureHpChange)@event), this));
+			effected.Events.Subscribe<OnCreatureHpChange>(this, onHpChange);
 		}
 	}
 	
@@ -48,7 +45,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
 			return;
 		}
 		
-		effected.removeListenerIf(listener => listener.getOwner() == this);
+		effected.Events.Unsubscribe<OnCreatureHpChange>(onHpChange);
 		_updates.remove(effected);
 	}
 	

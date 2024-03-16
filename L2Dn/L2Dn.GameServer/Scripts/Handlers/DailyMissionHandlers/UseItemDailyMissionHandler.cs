@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Items;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
@@ -40,8 +39,7 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_ITEM_USE,
-			@event => onItemUse((OnItemUse)@event), this));
+		GlobalEvents.Global.Subscribe<OnItemUse>(this, onItemUse);
 	}
 	
 	public override bool isAvailable(Player player)

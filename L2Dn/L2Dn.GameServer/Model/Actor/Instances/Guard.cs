@@ -2,8 +2,7 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -178,17 +177,14 @@ public class Guard: Attackable
 					player.setLastFolkNPC(this);
 
 					// Open a chat window on client with the text of the GuardInstance
-					if (hasListener(EventType.ON_NPC_QUEST_START))
+					if (Events.HasSubscribers<OnNpcQuestStart>())
 					{
 						player.setLastQuestNpcObject(getObjectId());
 					}
 
-					if (hasListener(EventType.ON_NPC_FIRST_TALK))
+					if (Events.HasSubscribers<OnNpcFirstTalk>())
 					{
-						if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_FIRST_TALK, this))
-						{
-							EventDispatcher.getInstance().notifyEventAsync(new OnNpcFirstTalk(this, player), this);
-						}
+						Events.NotifyAsync(new OnNpcFirstTalk(this, player));
 					}
 					else
 					{

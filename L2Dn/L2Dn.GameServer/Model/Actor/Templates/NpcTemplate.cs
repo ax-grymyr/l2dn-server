@@ -1,8 +1,9 @@
-﻿using System.Collections.Immutable;
+﻿using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -19,17 +20,17 @@ namespace L2Dn.GameServer.Model.Actor.Templates;
  * NPC template.
  * @author NosBit
  */
-public class NpcTemplate : CreatureTemplate , IIdentifiable
+public class NpcTemplate: CreatureTemplate, IIdentifiable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcTemplate));
 	
 	private int _id;
 	private int _displayId;
 	private int _level;
-	private String _type;
-	private String _name;
+	private string _type;
+	private string _name;
 	private bool _usingServerSideName;
-	private String _title;
+	private string _title;
 	private bool _usingServerSideTitle;
 	private StatSet _parameters;
 	private Sex _sex;
@@ -246,17 +247,17 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		return _level;
 	}
 	
-	public String getType()
+	public string getType()
 	{
 		return _type;
 	}
 	
-	public bool isType(String type)
+	public bool isType(string type)
 	{
 		return _type.equalsIgnoreCase(type);
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -266,7 +267,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 		return _usingServerSideName;
 	}
 	
-	public String getTitle()
+	public string getTitle()
 	{
 		return _title;
 	}
@@ -564,7 +565,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 	 * @param clanNames clan names to check if they belong to this NPC template clans.
 	 * @return {@code true} if at least one of the clan names belong to this NPC template clans, {@code false} otherwise.
 	 */
-	public bool isClan(String clanName, params String[] clanNames)
+	public bool isClan(string clanName, params string[] clanNames)
 	{
 		// Using local variable for the sake of reloading since it can be turned to null.
 		Set<int> clans = _clans;
@@ -585,7 +586,7 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 			return true;
 		}
 		
-		foreach (String name in clanNames)
+		foreach (string name in clanNames)
 		{
 			clanId = NpcData.getInstance().getClanId(name);
 			if (clans.Contains(clanId))
@@ -1347,4 +1348,12 @@ public class NpcTemplate : CreatureTemplate , IIdentifiable
 			
 			_ => throw new NotSupportedException()
 		};
+
+	protected override EventContainer CreateEventContainer()
+	{
+		if (_type == "Monster")
+			return new EventContainer($"Monster template {_id}", GlobalEvents.Monsters);
+
+		return new EventContainer($"Npc template {_id}", GlobalEvents.Npcs);
+	}
 }

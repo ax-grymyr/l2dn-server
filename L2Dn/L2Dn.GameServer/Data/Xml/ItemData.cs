@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Text;
 using System.Xml.Linq;
+using L2Dn.Events;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
@@ -9,7 +10,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Conditions;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -1406,10 +1406,10 @@ public class ItemData: DataReaderBase
 		}
 
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_CREATE, item.getTemplate()))
+		EventContainer itemEvents = item.getTemplate().Events;
+		if (itemEvents.HasSubscribers<OnItemCreate>())
 		{
-			EventDispatcher.getInstance()
-				.notifyEventAsync(new OnItemCreate(process, item, actor, reference), item.getTemplate());
+			itemEvents.NotifyAsync(new OnItemCreate(process, item, actor, reference));
 		}
 
 		return item;

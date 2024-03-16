@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerPKChanged: IBaseEvent
+public class OnPlayerPKChanged: EventBase
 {
 	private readonly Player _player;
 	private readonly int _oldPoints;
@@ -31,10 +32,5 @@ public class OnPlayerPKChanged: IBaseEvent
 	public int getNewPoints()
 	{
 		return _newPoints;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_PK_CHANGED;
 	}
 }

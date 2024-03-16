@@ -11,9 +11,7 @@ using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Actor.Status;
 using L2Dn.GameServer.Model.Actor.Tasks.NpcTasks;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -974,14 +972,14 @@ public class Npc: Creature
 		_isRandomWalkingEnabled = !WalkingManager.getInstance().isTargeted(this) && getTemplate().isRandomWalkEnabled();
 		if (isTeleporting())
 		{
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_TELEPORT, this))
+			if (Events.HasSubscribers<OnNpcTeleport>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnNpcTeleport(this), this);
+				Events.NotifyAsync(new OnNpcTeleport(this));
 			}
 		}
-		else if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SPAWN, this))
+		else if (Events.HasSubscribers<OnNpcSpawn>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnNpcSpawn(this), this);
+			Events.NotifyAsync(new OnNpcSpawn(this));
 		}
 		
 		if (!isTeleporting())
@@ -1081,9 +1079,9 @@ public class Npc: Creature
 		WalkingManager.getInstance().onDeath(this);
 		
 		// Notify DP scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_DESPAWN, this))
+		if (Events.HasSubscribers<OnNpcDespawn>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnNpcDespawn(this), this);
+			Events.NotifyAsync(new OnNpcDespawn(this));
 		}
 		
 		// Remove from instance world
@@ -1245,9 +1243,9 @@ public class Npc: Creature
 	
 	public override void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-		if ((target != null) && EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_FINISHED, this))
+		if ((target != null) && Events.HasSubscribers<OnNpcSkillFinished>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillFinished(this, target.getActingPlayer(), skill), this);
+			Events.NotifyAsync(new OnNpcSkillFinished(this, target.getActingPlayer(), skill));
 		}
 	}
 	
@@ -1426,9 +1424,9 @@ public class Npc: Creature
 	{
 		World.getInstance().forEachVisibleObjectInRange<Npc>(this, radius, obj =>
 		{
-			if (obj.hasListener(EventType.ON_NPC_EVENT_RECEIVED))
+			if (obj.Events.HasSubscribers<OnNpcEventReceived>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnNpcEventReceived(eventName, this, obj, reference), obj);
+				obj.Events.NotifyAsync(new OnNpcEventReceived(eventName, this, obj, reference));
 			}
 		});
 	}
@@ -1441,9 +1439,9 @@ public class Npc: Creature
 	 */
 	public void sendScriptEvent(String eventName, WorldObject receiver, WorldObject reference)
 	{
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_EVENT_RECEIVED, receiver))
+		if (reference is Npc npc && npc.Events.HasSubscribers<OnNpcEventReceived>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnNpcEventReceived(eventName, this, (Npc) receiver, reference), receiver);
+			npc.Events.NotifyAsync(new OnNpcEventReceived(eventName, this, npc, reference));
 		}
 	}
 	
@@ -1535,14 +1533,13 @@ public class Npc: Creature
 	
 	public override bool isVisibleFor(Player player)
 	{
-		if (hasListener(EventType.ON_NPC_CAN_BE_SEEN))
+		if (Events.HasSubscribers<OnNpcCanBeSeen>())
 		{
-			TerminateReturn term = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnNpcCanBeSeen(this, player), this);
-			if (term != null)
-			{
-				return term.terminate();
-			}
+			OnNpcCanBeSeen onNpcCanBeSeen = new OnNpcCanBeSeen(this, player);
+			if (Events.Notify(onNpcCanBeSeen))
+				return onNpcCanBeSeen.Visible;
 		}
+		
 		return base.isVisibleFor(player);
 	}
 	

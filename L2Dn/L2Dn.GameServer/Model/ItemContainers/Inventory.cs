@@ -1,11 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Events;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Appearance;
@@ -1687,9 +1687,13 @@ public abstract class Inventory: ItemContainer
 		if (old != null)
 		{
 			Creature owner = getOwner();
-			if ((owner != null) && owner.isPlayer() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_ITEM_UNEQUIP, old.getTemplate()))
+			if ((owner != null) && owner.isPlayer())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemUnequip(owner.getActingPlayer(), old), old.getTemplate());
+				EventContainer itemEvents = old.getTemplate().Events;
+				if (itemEvents.HasSubscribers<OnPlayerItemUnequip>())
+				{
+					itemEvents.NotifyAsync(new OnPlayerItemUnequip(owner.getActingPlayer(), old));
+				}
 			}
 		}
 		

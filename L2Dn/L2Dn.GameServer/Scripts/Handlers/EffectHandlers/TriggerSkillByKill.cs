@@ -1,9 +1,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Listeners;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -26,7 +24,7 @@ public class TriggerSkillByKill: AbstractEffect
 		_skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 0));
 	}
 	
-	private void onCreatureKilled(OnCreatureKilled @event, Creature target)
+	private void onCreatureKilled(OnCreatureKilled ev, Creature target)
 	{
 		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLevel() == 0)))
 		{
@@ -39,8 +37,8 @@ public class TriggerSkillByKill: AbstractEffect
 		}
 		
 		Skill triggerSkill = _skill.getSkill();
-		
-		if (@event.getAttacker() == target)
+
+		if (ev.getAttacker() == target)
 		{
 			SkillCaster.triggerCast(target, target, triggerSkill);
 		}
@@ -48,12 +46,11 @@ public class TriggerSkillByKill: AbstractEffect
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.removeListenerIf(EventType.ON_CREATURE_KILLED, listener => listener.getOwner() == this);
+		effected.Events.UnsubscribeAll<OnCreatureKilled>(this);
 	}
 	
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_KILLED,
-			@event => onCreatureKilled((OnCreatureKilled)@event, effected), this));
+		effected.Events.Subscribe<OnCreatureKilled>(this, ev => onCreatureKilled(ev, effected));
 	}
 }

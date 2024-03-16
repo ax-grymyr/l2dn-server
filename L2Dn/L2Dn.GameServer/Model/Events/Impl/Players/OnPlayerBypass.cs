@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerBypass: IBaseEvent
+public class OnPlayerBypass: TerminateEventBase
 {
 	private readonly Player _player;
 	private readonly String _command;
@@ -24,10 +25,5 @@ public class OnPlayerBypass: IBaseEvent
 	public String getCommand()
 	{
 		return _command;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_BYPASS;
 	}
 }

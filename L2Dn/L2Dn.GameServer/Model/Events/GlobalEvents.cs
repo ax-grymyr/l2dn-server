@@ -1,4 +1,4 @@
-﻿using L2Dn.GameServer.Model.Events.Containers;
+﻿using L2Dn.Events;
 
 namespace L2Dn.GameServer.Model.Events;
 
@@ -7,20 +7,20 @@ public static class GlobalEvents
     /// <summary>
     /// Global events.
     /// </summary>
-    public static GlobalEventContainer Global { get; } = new();
+    public static EventContainer Global { get; } = new("Global");
 
     /// <summary>
     /// Global npc events.
     /// </summary>
-    public static NpcEventContainer Npcs { get; } = new();
+    public static EventContainer Npcs { get; } = new("Global Npcs", Global);
 	
     /// <summary>
     /// Global monster events.
     /// </summary>
-    public static MonsterEventContainer Monsters { get; } = new();
+    public static EventContainer Monsters { get; } = new("Global Monsters", Global);
 
     /// <summary>
     /// Global player events.
     /// </summary>
-    public static PlayerEventContainer Players { get; } = new();
+    public static EventContainer Players { get; } = new("Global players", Global);
 }

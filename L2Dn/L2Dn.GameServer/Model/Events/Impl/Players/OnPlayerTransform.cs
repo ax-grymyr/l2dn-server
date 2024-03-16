@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerTransform: IBaseEvent
+public class OnPlayerTransform: EventBase
 {
 	private readonly Player _player;
 	private readonly int _transformId;
@@ -24,10 +25,5 @@ public class OnPlayerTransform: IBaseEvent
 	public int getTransformId()
 	{
 		return _transformId;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_TRANSFORM;
 	}
 }

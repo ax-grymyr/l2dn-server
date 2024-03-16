@@ -2,7 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Quests;
@@ -713,9 +713,9 @@ public class QuestState
 			_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 			_player.sendPacket(new ExQuestAcceptableListPacket(_player));
 			
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_QUEST_ACCEPT, _player, Containers.Players()))
+			if (_player.Events.HasSubscribers<OnPlayerQuestAccept>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestAccept(_player, getQuest().getId()), _player, Containers.Players());
+				_player.Events.NotifyAsync(new OnPlayerQuestAccept(_player, getQuest().getId()));
 			}
 		}
 	}
@@ -753,9 +753,9 @@ public class QuestState
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_QUEST_COMPLETE, _player))
+		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), type), _player);
+			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), type));
 		}
 	}
 	
@@ -854,9 +854,9 @@ public class QuestState
 		_player.sendPacket(new ExQuestUiPacket(_player));
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_QUEST_COMPLETE, _player))
+		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME), _player);
+			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME));
 		}
 	}
 	

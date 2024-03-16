@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
@@ -5,7 +6,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 /**
  * @author UnAfraid
  */
-public class OnCreatureTeleported: IBaseEvent
+public class OnCreatureTeleported: EventBase
 {
 	private readonly Creature _creature;
 	
@@ -17,10 +18,5 @@ public class OnCreatureTeleported: IBaseEvent
 	public Creature getCreature()
 	{
 		return _creature;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CREATURE_TELEPORTED;
 	}
 }

@@ -7,7 +7,8 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Clans;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Sieges;
@@ -196,9 +197,9 @@ public class Clan: IIdentifiable, INamable
 		Player exLeader = exMember.getPlayer();
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_LEADER_CHANGE))
+		if (GlobalEvents.Global.HasSubscribers<OnClanLeaderChange>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanLeaderChange(exMember, member, this));
+			GlobalEvents.Global.NotifyAsync(new OnClanLeaderChange(exMember, member, this));
 		}
 		
 		if (exLeader != null)
@@ -334,9 +335,9 @@ public class Clan: IIdentifiable, INamable
 		addSkillEffects(player);
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_JOIN))
+		if (GlobalEvents.Global.HasSubscribers<OnClanJoin>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanJoin(member, this));
+			GlobalEvents.Global.NotifyAsync(new OnClanJoin(member, this));
 		}
 	}
 	
@@ -503,9 +504,9 @@ public class Clan: IIdentifiable, INamable
 		}
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_LEFT))
+		if (GlobalEvents.Global.HasSubscribers<OnClanLeft>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanLeft(exMember, this));
+			GlobalEvents.Global.NotifyAsync(new OnClanLeft(exMember, this));
 		}
 	}
 	
@@ -2548,9 +2549,9 @@ public class Clan: IIdentifiable, INamable
 		changeLevel(_level + 1);
 		
 		// Notify to scripts
-		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_CLAN_LEVELUP))
+		if (GlobalEvents.Global.HasSubscribers<OnClanLvlUp>())
 		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerClanLvlUp(player, this));
+			GlobalEvents.Global.NotifyAsync(new OnClanLvlUp(player, this));
 		}
 		
 		return true;

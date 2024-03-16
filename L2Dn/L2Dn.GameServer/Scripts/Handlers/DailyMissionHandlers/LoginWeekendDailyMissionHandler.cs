@@ -3,8 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -25,8 +24,7 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 	
 	public override void init()
 	{
-		Containers.Global().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_LOGIN,
-			@event => onPlayerLogin((OnPlayerLogin)@event), this));
+		GlobalEvents.Global.Subscribe<OnPlayerLogin>(this, onPlayerLogin);
 	}
 	
 	private void onPlayerLogin(OnPlayerLogin @event)

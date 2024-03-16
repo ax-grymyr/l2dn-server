@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
 /**
  * @author UnAfraid
  */
-public class OnNpcCanBeSeen: IBaseEvent
+public class OnNpcCanBeSeen: EventBase
 {
 	private readonly Npc _npc;
 	private readonly Player _player;
@@ -26,8 +27,5 @@ public class OnNpcCanBeSeen: IBaseEvent
 		return _player;
 	}
 	
-	public EventType getType()
-	{
-		return EventType.ON_NPC_CAN_BE_SEEN;
-	}
+	public bool Visible { get; set; }
 }

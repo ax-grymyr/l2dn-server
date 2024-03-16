@@ -3,7 +3,7 @@ using NLog;
 
 namespace L2Dn.Events;
 
-public struct SubscriberList<TArg>
+internal sealed class SubscriberList<TArg>
     where TArg: EventBase
 {
     // TODO: think about weak events
@@ -15,16 +15,8 @@ public struct SubscriberList<TArg>
 
     public int SubscriberCount => _subscriberCount;
 
-    public void Subscribe(Action<TArg> action)
-    {
-        ArgumentNullException.ThrowIfNull(action.Target, nameof(action));
-        Subscribe(action.Target, action);
-    }
-
     public void Subscribe(object owner, Action<TArg> action)
     {
-        ArgumentNullException.ThrowIfNull(owner, nameof(owner));
-        
         Interlocked.Increment(ref _subscriberCount);
         if (AddSubscriberToArray(_array, owner, action))
             return;
@@ -34,7 +26,7 @@ public struct SubscriberList<TArg>
             node = GetOrCreateNode(ref node.Next);
     }
 
-    public void Unsubscribe(object owner)
+    public void UnsubscribeAll(object owner)
     {
         int removedCount = RemoveByOwnerFromArray(_array, owner);
         for (Node? node = _node; node != null; node = node.Next)

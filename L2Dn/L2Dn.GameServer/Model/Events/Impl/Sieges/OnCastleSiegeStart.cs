@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Sieges;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Sieges;
@@ -5,7 +6,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Sieges;
 /**
  * @author UnAfraid
  */
-public class OnCastleSiegeStart: IBaseEvent
+public class OnCastleSiegeStart: EventBase
 {
 	private readonly Siege _siege;
 	
@@ -17,10 +18,5 @@ public class OnCastleSiegeStart: IBaseEvent
 	public Siege getSiege()
 	{
 		return _siege;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CASTLE_SIEGE_START;
 	}
 }

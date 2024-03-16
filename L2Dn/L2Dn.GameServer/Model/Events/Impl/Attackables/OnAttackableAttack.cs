@@ -1,13 +1,14 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Npcs;
+namespace L2Dn.GameServer.Model.Events.Impl.Attackables;
 
 /**
  * An instantly executed event when Attackable is attacked by Player.
  * @author UnAfraid
  */
-public class OnAttackableAttack: IBaseEvent
+public class OnAttackableAttack: EventBase
 {
 	private readonly Player _attacker;
 	private readonly Attackable _target;
@@ -47,10 +48,5 @@ public class OnAttackableAttack: IBaseEvent
 	public bool isSummon()
 	{
 		return _isSummon;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_ATTACKABLE_ATTACK;
 	}
 }

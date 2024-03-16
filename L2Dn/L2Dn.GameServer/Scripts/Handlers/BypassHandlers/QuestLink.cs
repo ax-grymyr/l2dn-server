@@ -4,8 +4,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -67,12 +66,14 @@ public class QuestLink: IBypassHandler
 		StringBuilder sbCompleted = new StringBuilder(128);
 		
 		Set<Quest> startingQuests = new();
-		foreach (AbstractEventListener listener in npc.getListeners(EventType.ON_NPC_QUEST_START))
+		if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 		{
-			Object owner = listener.getOwner();
-			if ((owner is Quest) && (NewQuestData.getInstance().getQuestById(((Quest) owner).getId()) == null))
+			OnNpcQuestStart onNpcQuestStart = new OnNpcQuestStart(npc, player);
+			npc.Events.Notify(onNpcQuestStart);
+			foreach (Quest quest in onNpcQuestStart.Quests)
 			{
-				startingQuests.add((Quest) owner);
+				if (NewQuestData.getInstance().getQuestById(quest.getId()) == null)
+					startingQuests.Add(quest);
 			}
 		}
 		
@@ -289,13 +290,14 @@ public class QuestLink: IBypassHandler
 	private void showQuestWindow(Player player, Npc npc)
 	{
 		Set<Quest> quests = new();
-		foreach (AbstractEventListener listener in npc.getListeners(EventType.ON_NPC_TALK))
+		if (npc.Events.HasSubscribers<OnNpcTalk>())
 		{
-			Object owner = listener.getOwner();
-			if (owner is Quest)
+			OnNpcTalk onNpcTalk = new OnNpcTalk(npc, player);
+			npc.Events.Notify(onNpcTalk);
+			foreach (Quest quest in onNpcTalk.Quests)
 			{
-				Quest quest = (Quest) owner;
-				if ((quest.getId() > 0) && (quest.getId() < 20000) && (quest.getId() != 255) && !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
+				if ((quest.getId() > 0) && (quest.getId() < 20000) && (quest.getId() != 255) &&
+				    !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
 				{
 					quests.add(quest);
 				}

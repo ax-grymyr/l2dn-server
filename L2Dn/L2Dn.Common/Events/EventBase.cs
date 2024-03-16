@@ -1,7 +1,6 @@
-﻿HEADERnamespace NAMESPACE
+﻿namespace L2Dn.Events;
+
+public abstract class EventBase
 {
-public class CLASS
-{
-    
-}
+    public bool Abort { get; set; }
 }

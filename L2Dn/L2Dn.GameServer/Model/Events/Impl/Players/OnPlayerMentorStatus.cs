@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerMentorStatus: IBaseEvent
+public class OnPlayerMentorStatus: EventBase
 {
 	private readonly Player _mentor;
 	private readonly bool _isOnline;
@@ -24,10 +25,5 @@ public class OnPlayerMentorStatus: IBaseEvent
 	public bool isMentorOnline()
 	{
 		return _isOnline;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_MENTOR_STATUS;
 	}
 }

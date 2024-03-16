@@ -1,12 +1,13 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerFishing: IBaseEvent
+public class OnPlayerFishing: EventBase
 {
 	private readonly Player _player;
 	private readonly FishingEndReason _reason;
@@ -25,10 +26,5 @@ public class OnPlayerFishing: IBaseEvent
 	public FishingEndReason getReason()
 	{
 		return _reason;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_FISHING;
 	}
 }

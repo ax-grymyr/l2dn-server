@@ -1,13 +1,14 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerSkillLearn: IBaseEvent
+public class OnPlayerSkillLearn: EventBase
 {
 	private readonly Npc _trainer;
 	private readonly Player _player;
@@ -40,10 +41,5 @@ public class OnPlayerSkillLearn: IBaseEvent
 	public AcquireSkillType getAcquireType()
 	{
 		return _type;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_SKILL_LEARN;
 	}
 }

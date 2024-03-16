@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author St3eT
  */
-public class OnPlayerAbilityPointsChanged: IBaseEvent
+public class OnPlayerAbilityPointsChanged: EventBase
 {
 	private readonly Player _player;
 	private readonly int _newAbilityPoints;
@@ -31,10 +32,5 @@ public class OnPlayerAbilityPointsChanged: IBaseEvent
 	public long getOldAbilityPoints()
 	{
 		return _oldAbilityPoints;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_ABILITY_POINTS_CHANGED;
 	}
 }

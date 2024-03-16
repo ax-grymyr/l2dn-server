@@ -4,9 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Listeners;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -29,13 +27,11 @@ public class SpiritDailyMissionHandler: AbstractDailyMissionHandler
 		MissionKind kind = getHolder().getParams().getEnum("kind", MissionKind.UNKNOWN);
 		if (MissionKind.EVOLVE == kind)
 		{
-			Containers.Players().addListener(new ConsumerEventListener(this, EventType.ON_ELEMENTAL_SPIRIT_UPGRADE,
-				ev => onElementalSpiritUpgrade((OnElementalSpiritUpgrade)ev), this));
+			GlobalEvents.Players.Subscribe<OnPlayerElementalSpiritUpgrade>(this, onElementalSpiritUpgrade);
 		}
 		else if (MissionKind.LEARN == kind)
 		{
-			Containers.Players().addListener(new ConsumerEventListener(this, EventType.ON_ELEMENTAL_SPIRIT_LEARN,
-				ev => onElementalSpiritLearn((OnElementalSpiritLearn)ev), this));
+			GlobalEvents.Players.Subscribe<OnPlayerElementalSpiritLearn>(this, onElementalSpiritLearn);
 		}
 	}
 	
@@ -45,7 +41,7 @@ public class SpiritDailyMissionHandler: AbstractDailyMissionHandler
 		return (entry != null) && (entry.getStatus() == DailyMissionStatus.AVAILABLE);
 	}
 	
-	private void onElementalSpiritLearn(OnElementalSpiritLearn @event)
+	private void onElementalSpiritLearn(OnPlayerElementalSpiritLearn @event)
 	{
 		Player player = @event.getPlayer();
 		DailyMissionPlayerEntry missionData = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
@@ -54,7 +50,7 @@ public class SpiritDailyMissionHandler: AbstractDailyMissionHandler
 		player.getDailyMissions().storeEntry(missionData);
 	}
 	
-	private void onElementalSpiritUpgrade(OnElementalSpiritUpgrade @event)
+	private void onElementalSpiritUpgrade(OnPlayerElementalSpiritUpgrade @event)
 	{
 		ElementalSpirit spirit = @event.getSpirit();
 		if (spirit.getType() != _type)

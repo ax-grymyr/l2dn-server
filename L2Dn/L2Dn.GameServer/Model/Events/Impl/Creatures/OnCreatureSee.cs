@@ -1,3 +1,4 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
@@ -5,7 +6,7 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 /**
  * @author UnAfraid
  */
-public class OnCreatureSee: IBaseEvent
+public class OnCreatureSee: EventBase
 {
 	private readonly Creature _creature;
 	private readonly Creature _seen;
@@ -24,10 +25,5 @@ public class OnCreatureSee: IBaseEvent
 	public Creature getSeen()
 	{
 		return _seen;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_CREATURE_SEE;
 	}
 }

@@ -3,9 +3,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
-using L2Dn.GameServer.Model.Events.Returns;
+using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Sayune;
@@ -67,10 +65,10 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 		if (_movementMode == 1)
 		{
 			player.setCursorKeyMovement(false);
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_MOVE_REQUEST, player))
+			if (player.Events.HasSubscribers<OnPlayerMoveRequest>())
 			{
-				TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent<TerminateReturn>(new OnPlayerMoveRequest(player, new Location(_targetX, _targetY, _targetZ)), player);
-				if ((terminate != null) && terminate.terminate())
+				OnPlayerMoveRequest onPlayerMoveRequest = new(player, new Location(_targetX, _targetY, _targetZ));
+				if (player.Events.Notify(onPlayerMoveRequest) && onPlayerMoveRequest.Terminate)
 				{
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return ValueTask.CompletedTask;

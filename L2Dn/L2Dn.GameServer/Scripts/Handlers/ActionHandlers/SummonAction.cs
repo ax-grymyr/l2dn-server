@@ -4,8 +4,7 @@ using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+using L2Dn.GameServer.Model.Events.Impl.Summons;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
@@ -22,17 +21,18 @@ public class SummonAction: IActionHandler
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			return false;
 		}
-		
-		if ((player == ((Summon) target).getOwner()) && (player.getTarget() == target))
+
+		Summon summon = (Summon)target;
+		if ((player == summon.getOwner()) && (player.getTarget() == target))
 		{
 			player.sendPacket(new PetStatusShowPacket((Summon) target));
 			player.updateNotMoveUntil();
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			
 			// Notify to scripts
-			if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_SUMMON_TALK, target))
+			if (summon.Events.HasSubscribers<OnSummonTalk>())
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((Summon) target), target);
+				summon.Events.NotifyAsync(new OnSummonTalk(summon));
 			}
 		}
 		else if (player.getTarget() != target)

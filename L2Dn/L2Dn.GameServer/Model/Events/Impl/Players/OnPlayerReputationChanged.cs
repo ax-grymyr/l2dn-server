@@ -1,11 +1,12 @@
+using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayerReputationChanged: IBaseEvent
+public class OnPlayerReputationChanged: EventBase
 {
 	private readonly Player _player;
 	private readonly int _oldReputation;
@@ -31,10 +32,5 @@ public class OnPlayerReputationChanged: IBaseEvent
 	public int getNewReputation()
 	{
 		return _newReputation;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYER_REPUTATION_CHANGED;
 	}
 }

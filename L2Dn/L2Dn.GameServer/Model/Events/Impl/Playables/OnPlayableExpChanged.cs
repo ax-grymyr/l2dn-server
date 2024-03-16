@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events.Impl.Base;
 
-namespace L2Dn.GameServer.Model.Events.Impl.Creatures.Players;
+namespace L2Dn.GameServer.Model.Events.Impl.Playables;
 
 /**
  * @author UnAfraid
  */
-public class OnPlayableExpChanged: IBaseEvent
+public class OnPlayableExpChanged: TerminateEventBase
 {
 	private readonly Playable _playable;
 	private readonly long _oldExp;
@@ -31,10 +32,5 @@ public class OnPlayableExpChanged: IBaseEvent
 	public long getNewExp()
 	{
 		return _newExp;
-	}
-	
-	public EventType getType()
-	{
-		return EventType.ON_PLAYABLE_EXP_CHANGED;
 	}
 }
