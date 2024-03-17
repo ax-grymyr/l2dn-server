@@ -51,6 +51,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 7C */ RegisterPacket<RequestAcquireSkillPacket>(IncomingPacketCodes.REQUEST_ACQUIRE_SKILL);
         /* 7D */ RegisterPacket<RequestRestartPointPacket>(IncomingPacketCodes.REQUEST_RESTART_POINT);
         /* A6 */ RegisterPacket<RequestSkillCoolTimePacket>(IncomingPacketCodes.REQUEST_SKILL_COOL_TIME).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);;
+        /* B3 */ RegisterPacket<BypassUserCmdPacket>(IncomingPacketCodes.BYPASS_USER_CMD);
 
         /* D0:0001 */ RegisterPacket<RequestManorListPacket>(IncomingPacketCodes.REQUEST_MANOR_LIST).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
         /* D0:0021 */ RegisterPacket<RequestKeyMappingPacket>(IncomingPacketCodes.REQUEST_KEY_MAPPING).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
@@ -58,9 +59,11 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* D0:0033 */ RegisterPacket<RequestGoToLobbyPacket>(IncomingPacketCodes.REQUEST_GOTO_LOBBY).WithAllowedStates(GameSessionState.CharacterScreen);
         /* D0:0039 */ RegisterPacket<RequestAllCastleInfoPacket>(IncomingPacketCodes.REQUEST_ALL_CASTLE_INFO);
         /* D0:003A */ RegisterPacket<RequestAllFortressInfoPacket>(IncomingPacketCodes.REQUEST_ALL_FORTRESS_INFO);
+        /* D0:0048 */ RegisterPacket<RequestDispelPacket>(IncomingPacketCodes.REQUEST_DISPEL);
         /* D0:00A9 */ RegisterPacket<RequestCharacterNameCreatablePacket>(IncomingPacketCodes.REQUEST_CHARACTER_NAME_CREATABLE).WithAllowedStates(GameSessionState.CharacterScreen);
         /* D0:00FD */ RegisterPacket<RequestTargetActionMenuPacket>(IncomingPacketCodes.REQUEST_TARGET_ACTION_MENU);
         /* D0:011D */ RegisterPacket<RequestToDoListPacket>(IncomingPacketCodes.REQUEST_TODO_LIST);
+        /* D0:011F */ RegisterPacket<RequestOneDayRewardReceivePacket>(IncomingPacketCodes.REQUEST_ONE_DAY_REWARD_RECEIVE);
         /* D0:015D */ RegisterPacket<NotImplementedPacket>(IncomingPacketCodes.EX_USER_BAN_INFO).WithAllowedStates(GameSessionState.CharacterScreen | GameSessionState.InGame);
         /* D0:0161 */ RegisterPacket<RequestPurchaseLimitShopItemListPacket>(IncomingPacketCodes.EX_PURCHASE_LIMIT_SHOP_ITEM_LIST);
         /* D0:0165 */ RegisterPacket<ExRequestChangeClassVerifyingPacket>(IncomingPacketCodes.EX_REQUEST_CLASS_CHANGE_VERIFYING);
