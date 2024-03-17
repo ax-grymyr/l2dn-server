@@ -10,6 +10,20 @@ public class AuthServerDbContext: DbContext
     private static readonly Logger _logger = LogManager.GetLogger(nameof(AuthServerDbContext));
     public static string? ConnectionString { get; set; }
     public static bool Trace { get; set; }
+
+    public static void SetConfig(DatabaseConfig databaseConfig)
+    {
+        NpgsqlConnectionStringBuilder sb = new()
+        {
+            Host = databaseConfig.Server,
+            Database = databaseConfig.DatabaseName,
+            Username = databaseConfig.UserName,
+            Password = databaseConfig.Password
+        };
+
+        ConnectionString = sb.ToString();
+        Trace = databaseConfig.Trace;
+    }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -18,18 +32,7 @@ public class AuthServerDbContext: DbContext
             if (ConnectionString is null)
             {
                 ConfigBase config = ConfigurationUtil.LoadConfig<ConfigBase>();
-                DatabaseConfig databaseConfig = config.Database;
-
-                NpgsqlConnectionStringBuilder sb = new()
-                {
-                    Host = databaseConfig.Server,
-                    Database = databaseConfig.DatabaseName,
-                    Username = databaseConfig.UserName,
-                    Password = databaseConfig.Password
-                };
-
-                ConnectionString = sb.ToString();
-                Trace = databaseConfig.Trace;
+                SetConfig(config.Database);
             }
 
             optionsBuilder.UseNpgsql(ConnectionString);

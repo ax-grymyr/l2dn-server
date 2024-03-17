@@ -18,7 +18,7 @@ try
     Config.Instance.Logging.ConfigureLogger();
     
     logger.Info("Test database connection...");
-    AuthServerDbContext.Config = Config.Instance.Database;
+    AuthServerDbContext.SetConfig(Config.Instance.Database);
     GameServerManager.Instance.LoadServers();
 
     authServer.Start();
