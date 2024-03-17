@@ -66,6 +66,12 @@ public struct PacketBitReader
     public uint ReadUInt32() => ReadValue<uint>();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public long ReadInt64() => ReadValue<long>();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public ulong ReadUInt64() => ReadValue<ulong>();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void ReadBytes(scoped Span<byte> value)
     {
         ValidateLength(value.Length);
