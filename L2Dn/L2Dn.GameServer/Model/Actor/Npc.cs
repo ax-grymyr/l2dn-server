@@ -52,11 +52,11 @@ public class Npc: Creature
 	/** The Spawn object that manage this Npc */
 	private Spawn _spawn;
 	/** The flag to specify if this Npc is busy */
-	private bool _isBusy = false;
+	private bool _isBusy;
 	/** True if endDecayTask has already been called */
-	private volatile bool _isDecayed = false;
+	private volatile bool _isDecayed;
 	/** True if this Npc is autoattackable **/
-	private bool _isAutoAttackable = false;
+	private bool _isAutoAttackable;
 	/** Time of last social packet broadcast */
 	private DateTime _lastSocialBroadcast;
 	/** Minimum interval between social packets */
@@ -64,7 +64,7 @@ public class Npc: Creature
 	/** Support for random animation switching */
 	private bool _isRandomAnimationEnabled = true;
 	private bool _isRandomWalkingEnabled = true;
-	private bool _isWalker = false;
+	private bool _isWalker;
 	private bool _isTalkable;
 	private readonly bool _isQuestMonster;
 	private readonly bool _isFakePlayer;
@@ -75,9 +75,9 @@ public class Npc: Creature
 	private float _currentCollisionHeight; // used for npc grow effect skills
 	private float _currentCollisionRadius; // used for npc grow effect skills
 	
-	private int _soulshotamount = 0;
-	private int _spiritshotamount = 0;
-	private int _displayEffect = 0;
+	private int _soulshotamount;
+	private int _spiritshotamount;
+	private int _displayEffect;
 	
 	private int _killingBlowWeaponId;
 	
@@ -88,11 +88,11 @@ public class Npc: Creature
 	private NpcStringId? _nameString;
 	
 	private StatSet _params;
-	private volatile int _scriptValue = 0;
+	private volatile int _scriptValue;
 	private RaidBossStatus _raidStatus;
 	
 	/** Contains information about local tax payments. */
-	private TaxZone _taxZone = null;
+	private TaxZone _taxZone;
 	
 	private readonly List<QuestTimer> _questTimers = new();
 	private readonly List<TimerHolder> _timerHolders = new();

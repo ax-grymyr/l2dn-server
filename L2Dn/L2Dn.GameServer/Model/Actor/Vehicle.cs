@@ -18,14 +18,14 @@ namespace L2Dn.GameServer.Model.Actor;
 
 public abstract class Vehicle : Creature
 {
-	protected int _dockId = 0;
+	protected int _dockId;
 	protected readonly Set<Player> _passengers = new();
-	protected Location _oustLoc = null;
-	private Runnable _engine = null;
+	protected Location _oustLoc;
+	private Runnable _engine;
 	
-	protected VehiclePathPoint[] _currentPath = null;
-	protected int _runState = 0;
-	private ScheduledFuture _monitorTask = null;
+	protected VehiclePathPoint[] _currentPath;
+	protected int _runState;
+	private ScheduledFuture _monitorTask;
 	private readonly Location _monitorLocation;
 	
 	public Vehicle(CreatureTemplate template): base(template)

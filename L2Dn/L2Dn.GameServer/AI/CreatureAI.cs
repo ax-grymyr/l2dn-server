@@ -35,10 +35,10 @@ public class CreatureAI: AbstractAI
 	public class IntentionCommand
 	{
 		protected readonly CtrlIntention _crtlIntention;
-		protected readonly Object _arg0;
-		protected readonly Object _arg1;
+		protected readonly object _arg0;
+		protected readonly object _arg1;
 		
-		public IntentionCommand(CtrlIntention pIntention, Object pArg0, Object pArg1)
+		public IntentionCommand(CtrlIntention pIntention, object pArg0, object pArg1)
 		{
 			_crtlIntention = pIntention;
 			_arg0 = pArg0;

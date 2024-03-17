@@ -14,13 +14,13 @@ public class PlayerAI : PlayableAI
 {
 	private bool _thinking; // to prevent recursive thinking
 	
-	private IntentionCommand _nextIntention = null;
+	private IntentionCommand _nextIntention;
 	
 	public PlayerAI(Player player): base(player)
 	{
 	}
 	
-	private void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
+	private void saveNextIntention(CtrlIntention intention, object arg0, object arg1)
 	{
 		_nextIntention = new IntentionCommand(intention, arg0, arg1);
 	}
@@ -47,10 +47,10 @@ public class PlayerAI : PlayableAI
 			return;
 		}
 		
-		Object localArg0 = args.Length > 0 ? args[0] : null;
-		Object localArg1 = args.Length > 1 ? args[1] : null;
-		Object globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
-		Object globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
+		object localArg0 = args.Length > 0 ? args[0] : null;
+		object localArg1 = args.Length > 1 ? args[1] : null;
+		object globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
+		object globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
 		
 		// do nothing if next intention is same as current one.
 		if ((intention == _intention) && (globalArg0 == localArg0) && (globalArg1 == localArg1))

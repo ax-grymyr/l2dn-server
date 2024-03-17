@@ -23,14 +23,14 @@ public class InstanceTemplate: IIdentifiable, INamable
 {
 	// Basic instance parameters
 	private readonly EventContainer _eventContainer;
-	private int _templateId = -1;
-	private String _name = "UnknownInstance";
+	private readonly int _templateId;
+	private string _name;
 	private TimeSpan _duration;
 	private TimeSpan _emptyDestroyTime;
 	private TimeSpan _ejectTime = TimeSpan.FromMinutes(Config.EJECT_DEAD_PLAYER_TIME);
-	private int _maxWorldCount = -1;
-	private bool _isPvP = false;
-	private bool _allowPlayerSummon = false;
+	private readonly int _maxWorldCount;
+	private bool _isPvP;
+	private bool _allowPlayerSummon;
 	private float _expRate = Config.RATE_INSTANCE_XP;
 	private float _spRate = Config.RATE_INSTANCE_SP;
 	private float _expPartyRate = Config.RATE_INSTANCE_PARTY_XP;
@@ -40,9 +40,9 @@ public class InstanceTemplate: IIdentifiable, INamable
 	private readonly List<SpawnTemplate> _spawns = new();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
-	private List<Location> _enterLocations = null;
+	private List<Location> _enterLocations;
 	private InstanceTeleportType _exitLocationType = InstanceTeleportType.NONE;
-	private List<Location> _exitLocations = null;
+	private List<Location> _exitLocations;
 	// Reenter data
 	private InstanceReenterType _reenterType = InstanceReenterType.NONE;
 	private List<InstanceReenterTimeHolder> _reenterData = new();
@@ -75,7 +75,7 @@ public class InstanceTemplate: IIdentifiable, INamable
 	 * Set name of instance world.
 	 * @param name instance name
 	 */
-	public void setName(String name)
+	public void setName(string name)
 	{
 		if ((name != null) && !string.IsNullOrEmpty(name))
 		{
@@ -142,7 +142,7 @@ public class InstanceTemplate: IIdentifiable, INamable
 	 * Set parameters shared between instances with same template id.
 	 * @param set map containing parameters
 	 */
-	public void setParameters(Map<String, Object> set)
+	public void setParameters(Map<string, object> set)
 	{
 		if (!set.isEmpty())
 		{
@@ -278,7 +278,7 @@ public class InstanceTemplate: IIdentifiable, INamable
 		return _templateId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -491,10 +491,9 @@ public class InstanceTemplate: IIdentifiable, INamable
 			foreach (Playable playable in affected)
 			{
 				// Stop all buffs.
-				playable.getEffectList()
-					.stopEffects(
-						info => !info.getSkill().isIrreplacableBuff() && info.getSkill().getBuffType() == SkillBuffType.BUFF &&
-						        hasRemoveBuffException(info.getSkill()), true, true);
+				playable.getEffectList().stopEffects(info =>
+					!info.getSkill().isIrreplacableBuff() && info.getSkill().getBuffType() == SkillBuffType.BUFF &&
+					hasRemoveBuffException(info.getSkill()), true, true);
 			}
 		}
 	}
@@ -677,7 +676,7 @@ public class InstanceTemplate: IIdentifiable, INamable
 	 * @param htmlCallback callback function used to display fail HTML when condition validate failed
 	 * @return {@code true} when all condition are met, otherwise {@code false}
 	 */
-	public bool validateConditions(List<Player> group, Npc npc, Action<Player, String> htmlCallback)
+	public bool validateConditions(List<Player> group, Npc npc, Action<Player, string> htmlCallback)
 	{
 		foreach (Condition cond in _conditions)
 		{
@@ -775,7 +774,7 @@ public class InstanceTemplate: IIdentifiable, INamable
 		return InstanceManager.getInstance().getWorldCount(getId());
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "ID: " + _templateId + " Name: " + _name;
 	}

@@ -36,7 +36,7 @@ public abstract class Summon: Playable
 	private bool _follow = true;
 	private bool _previousFollowStatus = true;
 	protected bool _restoreSummon = true;
-	private int _summonPoints = 0;
+	private int _summonPoints;
 	private ScheduledFuture _abnormalEffectTask;
 	
 	private static readonly int[] PASSIVE_SUMMONS =

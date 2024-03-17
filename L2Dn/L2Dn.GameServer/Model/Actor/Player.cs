@@ -83,28 +83,28 @@ public class Player: Playable
 {
 	private const string COND_OVERRIDE_KEY = "cond_override";
 	
-	public const String NEWBIE_KEY = "NEWBIE";
+	public const string NEWBIE_KEY = "NEWBIE";
 	
 	public const int ID_NONE = -1;
 	
 	public const int REQUEST_TIMEOUT = 15;
 	
-	private int _pcCafePoints = 0;
+	private int _pcCafePoints;
 	
 	private GameSession? _client;
-	private String _ip = "N/A";
+	private string _ip = "N/A";
 	
 	private readonly int _accountId;
-	private readonly String _accountName;
+	private readonly string _accountName;
 	private DateTime? _deleteTime;
 	private DateTime _createDate = DateTime.UtcNow;
 	
-	private String _lang = null;
-	private String _htmlPrefix = "";
+	private string _lang;
+	private string _htmlPrefix = "";
 	
-	private volatile bool _isOnline = false;
-	private bool _offlinePlay = false;
-	private bool _enteredWorld = false;
+	private volatile bool _isOnline;
+	private bool _offlinePlay;
+	private bool _enteredWorld;
 	private TimeSpan _onlineTime;
 	private DateTime? _onlineBeginTime;
 	private DateTime? _lastAccess;
@@ -118,13 +118,13 @@ public class Player: Playable
 	private ScheduledFuture _updateAndBroadcastStatusTask;
 	private ScheduledFuture _broadcastCharInfoTask;
 	
-	private bool _subclassLock = false;
+	private bool _subclassLock;
 	protected CharacterClass _baseClass;
 	protected CharacterClass _activeClass;
-	protected int _classIndex = 0;
-	private bool _isDeathKnight = false;
-	private bool _isVanguard = false;
-	private bool _isAssassin = false;
+	protected int _classIndex;
+	private bool _isDeathKnight;
+	private bool _isVanguard;
+	private bool _isAssassin;
 	
 	/** data for mounted pets */
 	private int _controlItemId;
@@ -133,7 +133,7 @@ public class Player: Playable
 	private int _curFeed;
 	protected ScheduledFuture _mountFeedTask;
 	private ScheduledFuture _dismountTask;
-	private bool _petItems = false;
+	private bool _petItems;
 	
 	/** The list of sub-classes this character has. */
 	private readonly Map<int, SubClassHolder> _subClasses = new();
@@ -150,15 +150,15 @@ public class Player: Playable
 	private int _pkKills;
 	
 	/** The total kill counter of the Player */
-	private int _totalKills = 0;
+	private int _totalKills;
 	
 	/** The total death counter of the Player */
-	private int _totalDeaths = 0;
+	private int _totalDeaths;
 	
 	/** The PvP Flag state of the Player (0=White, 1=Purple) */
 	private bool _pvpFlag;
 	
-	private int _einhasadOverseeingLevel = 0;
+	private int _einhasadOverseeingLevel;
 	
 	private readonly List<DamageTakenHolder> _lastDamageTaken = new();
 	
@@ -172,47 +172,47 @@ public class Player: Playable
 	private ScheduledFuture _teleportWatchdog;
 	
 	/** The Siege state of the Player */
-	private byte _siegeState = 0;
+	private byte _siegeState;
 	
 	/** The id of castle/fort which the Player is registered for siege */
-	private int _siegeSide = 0;
+	private int _siegeSide;
 	
-	private int _curWeightPenalty = 0;
+	private int _curWeightPenalty;
 	
 	private int _lastCompassZone; // the last compass zone update send to the client
 	
 	private readonly ContactList _contactList;
 	
-	private int _bookmarkslot = 0; // The Teleport Bookmark Slot
+	private int _bookmarkslot; // The Teleport Bookmark Slot
 	
 	private readonly Map<int, TeleportBookmark> _tpbookmarks = new();
 	
 	private bool _canFeed;
 	private bool _isInSiege;
-	private bool _isInHideoutSiege = false;
+	private bool _isInHideoutSiege;
 	
 	/** Olympiad */
-	private bool _inOlympiadMode = false;
-	private bool _olympiadStart = false;
+	private bool _inOlympiadMode;
+	private bool _olympiadStart;
 	private int _olympiadGameId = -1;
 	private int _olympiadSide = -1;
 	
 	/** Duel */
-	private bool _isInDuel = false;
-	private bool _startingDuel = false;
+	private bool _isInDuel;
+	private bool _startingDuel;
 	private int _duelState = Duel.DUELSTATE_NODUEL;
-	private int _duelId = 0;
+	private int _duelId;
 	private SystemMessageId _noDuelReason = SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL;
 	
 	/** Boat and AirShip */
-	private Vehicle _vehicle = null;
+	private Vehicle _vehicle;
 	private Location _inVehiclePosition;
 	
 	private MountType _mountType = MountType.NONE;
 	private int _mountNpcId;
 	private int _mountLevel;
 	/** Store object used to summon the strider you are mounting **/
-	private int _mountObjectID = 0;
+	private int _mountObjectID;
 	
 	private AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
 	
@@ -229,11 +229,11 @@ public class Player: Playable
 	private readonly Map<int, PremiumItem> _premiumItems = new();
 	
 	/** True if the Player is sitting */
-	private bool _waitTypeSitting = false;
+	private bool _waitTypeSitting;
 	
 	/** Location before entering Observer Mode */
 	private Location _lastLoc;
-	private bool _observerMode = false;
+	private bool _observerMode;
 	
 	private Location _teleportLocation;
 	
@@ -249,7 +249,7 @@ public class Player: Playable
 	/** Recommendation task **/
 	private ScheduledFuture _recoGiveTask;
 	/** Recommendation Two Hours bonus **/
-	protected bool _recoTwoHoursGiven = false;
+	protected bool _recoTwoHoursGiven;
 	
 	private ScheduledFuture _onlineTimeUpdateTask;
 	
@@ -261,35 +261,35 @@ public class Player: Playable
 	private TradeList _activeTradeList;
 	private ItemContainer _activeWarehouse;
 	private Map<int, ManufactureItem> _manufactureItems;
-	private String _storeName = "";
+	private string _storeName = "";
 	private TradeList _sellList;
 	private TradeList _buyList;
 	
 	// Multisell
-	private PreparedMultisellListHolder _currentMultiSell = null;
+	private PreparedMultisellListHolder _currentMultiSell;
 	
-	private bool _noble = false;
-	private bool _hero = false;
-	private bool _trueHero = false;
+	private bool _noble;
+	private bool _hero;
+	private bool _trueHero;
 	
 	/** Premium System */
-	private bool _premiumStatus = false;
+	private bool _premiumStatus;
 	
 	/** Faction System */
-	private bool _isGood = false;
-	private bool _isEvil = false;
+	private bool _isGood;
+	private bool _isEvil;
 	
 	/** The Npc corresponding to the last Folk which one the player talked. */
-	private Npc _lastFolkNpc = null;
+	private Npc _lastFolkNpc;
 	
 	/** Last NPC Id talked on a quest */
-	private int _questNpcObject = 0;
+	private int _questNpcObject;
 	
 	/** Used for simulating Quest onTalk */
-	private bool _simulatedTalking = false;
+	private bool _simulatedTalking;
 	
 	/** The table containing all Quests began by the Player */
-	private readonly Map<String, QuestState> _quests = new();
+	private readonly Map<string, QuestState> _quests = new();
 	
 	/** The list containing all shortCuts of this player. */
 	private readonly ShortCuts _shortCuts;
@@ -308,16 +308,16 @@ public class Player: Playable
 	/** Hennas Potential */
 	
 	/** The Pet of the Player */
-	private Pet _pet = null;
+	private Pet _pet;
 	/** Servitors of the Player */
 	private readonly Map<int, Summon> _servitors = new();
 	/** The Agathion of the Player */
-	private int _agathionId = 0;
+	private int _agathionId;
 	// apparently, a Player CAN have both a summon AND a tamed beast at the same time!!
 	// after Freya players can control more than one tamed beast
 	private readonly Set<TamedBeast> _tamedBeast = new();
 	
-	private bool _minimapAllowed = false;
+	private bool _minimapAllowed;
 	
 	// client radar
 	// TODO: This needs to be better integrated and saved/loaded
@@ -335,13 +335,13 @@ public class Player: Playable
 	private Clan _clan;
 	
 	/** Apprentice and Sponsor IDs */
-	private int _apprentice = 0;
+	private int _apprentice;
 	private int? _sponsor;
 	
 	private DateTime? _clanJoinExpiryTime;
 	private DateTime? _clanCreateExpiryTime;
 	
-	private int _powerGrade = 0;
+	private int _powerGrade;
 	private ClanPrivilege _clanPrivileges;
 	
 	/** Player's pledge class (knight, Baron, etc.) */
@@ -349,13 +349,13 @@ public class Player: Playable
 	private int _pledgeType;
 	
 	/** Level at which the player joined the clan as an academy member */
-	private int _lvlJoinedAcademy = 0;
+	private int _lvlJoinedAcademy;
 	
 	private bool _wantsPeace;
 	
 	// charges
 	private readonly AtomicInteger _charges = new AtomicInteger();
-	private ScheduledFuture _chargeTask = null;
+	private ScheduledFuture _chargeTask;
 	
 	// Absorbed Souls
 	private const int KAMAEL_LIGHT_MASTER = 45178;
@@ -363,20 +363,20 @@ public class Player: Playable
 	private const int KAMAEL_LIGHT_TRANSFORMATION = 397;
 	private const int KAMAEL_SHADOW_TRANSFORMATION = 398;
 	private readonly Map<SoulType, int> _souls = new();
-	private ScheduledFuture _soulTask = null;
+	private ScheduledFuture _soulTask;
 	
 	// Death Points
 	private const int DEATH_POINTS_PASSIVE = 45352;
 	private const int DEVASTATING_MIND = 45300;
-	private int _deathPoints = 0;
-	private int _maxDeathPoints = 0;
+	private int _deathPoints;
+	private int _maxDeathPoints;
 	
 	// Beast points
-	private int _beastPoints = 0;
-	private int _maxBeastPoints = 0;
+	private int _beastPoints;
+	private int _maxBeastPoints;
 	
 	// Assasination points
-	private int _assassinationPoints = 0;
+	private int _assassinationPoints;
 	private readonly int _maxAssassinationPoints = 100000;
 	
 	// WorldPosition used by TARGET_SIGNET_GROUND
@@ -384,20 +384,20 @@ public class Player: Playable
 	
 	private AccessLevel _accessLevel;
 	
-	private bool _messageRefusal = false; // message refusal mode
+	private bool _messageRefusal; // message refusal mode
 	
-	private bool _silenceMode = false; // silence mode
+	private bool _silenceMode; // silence mode
 	private List<int> _silenceModeExcluded; // silence mode
-	private bool _dietMode = false; // ignore weight penalty
-	private bool _tradeRefusal = false; // Trade refusal
-	private bool _exchangeRefusal = false; // Exchange refusal
+	private bool _dietMode; // ignore weight penalty
+	private bool _tradeRefusal; // Trade refusal
+	private bool _exchangeRefusal; // Exchange refusal
 	
 	private Party _party;
 	
 	// this is needed to find the inviting player for Party response
 	// there can only be one active party request at once
 	private Player _activeRequester;
-	private long _requestExpireTime = 0;
+	private long _requestExpireTime;
 	private readonly Model.Request _request;
 	
 	// Used for protection after teleport
@@ -407,16 +407,16 @@ public class Player: Playable
 	private readonly Map<int, ExResponseCommissionInfoPacket> _lastCommissionInfos = new();
 	
 	// protects a char from aggro mobs when getting up from fake death
-	private long _recentFakeDeathEndTime = 0;
+	private long _recentFakeDeathEndTime;
 	
 	/** The fists Weapon of the Player (used when no weapon is equipped) */
 	private Weapon _fistsWeaponItem;
 	
-	private readonly Map<int, String> _chars = new();
+	private readonly Map<int, string> _chars = new();
 	
 	private readonly Map<Type, AbstractRequest> _requests = new();
 	
-	protected bool _inventoryDisable = false;
+	protected bool _inventoryDisable;
 	/** Player's cubics. */
 	private readonly Map<int, Cubic> _cubics = new();
 	/** Active shots. */
@@ -425,12 +425,12 @@ public class Player: Playable
 	private BroochJewel? _activeRubyJewel;
 	private BroochJewel? _activeShappireJewel;
 	
-	private int _lastAmmunitionId = 0;
+	private int _lastAmmunitionId;
 	
 	/** Event parameters */
-	private bool _isRegisteredOnEvent = false;
-	private bool _isOnSoloEvent = false;
-	private bool _isOnEvent = false;
+	private bool _isRegisteredOnEvent;
+	private bool _isOnSoloEvent;
+	private bool _isOnEvent;
 	
 	/** new race ticket **/
 	private readonly int[] _raceTickets = new int[2];
@@ -450,7 +450,7 @@ public class Player: Playable
 	private int _lastHtmlActionOriginObjId;
 	
 	/** Bypass validations */
-	private readonly List<String>[] _htmlActionCaches = new List<String>[0];
+	private readonly List<string>[] _htmlActionCaches = Array.Empty<List<string>>();
 	
 	private Forum _forumMail;
 	private Forum _forumMemo;
@@ -458,27 +458,27 @@ public class Player: Playable
 	/** Skills queued because a skill is already in progress */
 	private SkillUseHolder _queuedSkill;
 	
-	private int _cursedWeaponEquippedId = 0;
-	private bool _combatFlagEquippedId = false;
+	private int _cursedWeaponEquippedId;
+	private bool _combatFlagEquippedId;
 	
 	private bool _canRevive = true;
-	private int _reviveRequested = 0;
-	private double _revivePower = 0;
-	private int _reviveHpPercent = 0;
-	private int _reviveMpPercent = 0;
-	private int _reviveCpPercent = 0;
-	private bool _revivePet = false;
+	private int _reviveRequested;
+	private double _revivePower;
+	private int _reviveHpPercent;
+	private int _reviveMpPercent;
+	private int _reviveCpPercent;
+	private bool _revivePet;
 	
-	private double _cpUpdateIncCheck = .0;
-	private double _cpUpdateDecCheck = .0;
-	private double _cpUpdateInterval = .0;
-	private double _mpUpdateIncCheck = .0;
-	private double _mpUpdateDecCheck = .0;
-	private double _mpUpdateInterval = .0;
+	private double _cpUpdateIncCheck;
+	private double _cpUpdateDecCheck;
+	private double _cpUpdateInterval;
+	private double _mpUpdateIncCheck;
+	private double _mpUpdateDecCheck;
+	private double _mpUpdateInterval;
 	
-	private double _originalCp = .0;
-	private double _originalHp = .0;
-	private double _originalMp = .0;
+	private double _originalCp;
+	private double _originalHp;
+	private double _originalMp;
 	
 	/** Char Coords from Client */
 	private int _clientX;
@@ -489,15 +489,15 @@ public class Player: Playable
 	// during fall validations will be disabled for 1000 ms.
 	private static readonly TimeSpan FALLING_VALIDATION_DELAY = TimeSpan.FromSeconds(1);
 	private DateTime? _fallingTimestamp;
-	private volatile int _fallingDamage = 0;
-	private ScheduledFuture _fallingDamageTask = null;
+	private volatile int _fallingDamage;
+	private ScheduledFuture _fallingDamageTask;
 	
-	private int _multiSocialTarget = 0;
-	private int _multiSociaAction = 0;
+	private int _multiSocialTarget;
+	private int _multiSociaAction;
 	
-	private MovieHolder _movieHolder = null;
+	private MovieHolder _movieHolder;
 	
-	private String _adminConfirmCmd = null;
+	private string _adminConfirmCmd;
 	
 	private DateTime? _lastItemAuctionInfoRequest;
 	
@@ -547,27 +547,27 @@ public class Player: Playable
 	private const string TRAINING_CAMP_DURATION = "TRAINING_CAMP_DURATION";
 	
 	// Save responder name for log it
-	private String _lastPetitionGmName = null;
+	private string _lastPetitionGmName;
 	
-	private bool _hasCharmOfCourage = false;
+	private bool _hasCharmOfCourage;
 	
 	private readonly Set<int> _whisperers = new();
 	
 	private ElementalSpirit[] _spirits;
 	private ElementalType _activeElementalSpiritType;
 	
-	private int _vipTier = 0;
+	private int _vipTier;
 	
 	private DateTime _attendanceDelay;
 	
 	private readonly AutoPlaySettingsHolder _autoPlaySettings = new AutoPlaySettingsHolder();
 	private readonly AutoUseSettingsHolder _autoUseSettings = new AutoUseSettingsHolder();
 	private readonly AtomicBoolean _autoPlaying = new AtomicBoolean();
-	private bool _resumedAutoPlay = false;
+	private bool _resumedAutoPlay;
 	
-	private ScheduledFuture _timedHuntingZoneTask = null;
+	private ScheduledFuture _timedHuntingZoneTask;
 	
-	private PlayerRandomCraft _randomCraft = null;
+	private PlayerRandomCraft _randomCraft;
 	
 	private ScheduledFuture _statIncreaseSkillTask;
 	
@@ -585,9 +585,9 @@ public class Player: Playable
 	
 	private readonly Map<int, PetEvolveHolder> _petEvolves = new();
 	
-	private MissionLevelPlayerDataHolder _missionLevelProgress = null;
+	private MissionLevelPlayerDataHolder _missionLevelProgress;
 	
-	private int _dualInventorySlot = 0;
+	private int _dualInventorySlot;
 	private List<int> _dualInventorySetA;
 	private List<int> _dualInventorySetB;
 	
@@ -595,8 +595,8 @@ public class Player: Playable
 	private readonly List<TimerHolder> _timerHolders = new();
 	
 	// Selling buffs system
-	private bool _isSellingBuffs = false;
-	private List<SellBuffHolder> _sellingBuffs = null;
+	private bool _isSellingBuffs;
+	private List<SellBuffHolder> _sellingBuffs;
 	
 	public bool isSellingBuffs()
 	{
@@ -644,7 +644,7 @@ public class Player: Playable
 	 * @param app the player's appearance
 	 * @return The Player added to the database or null
 	 */
-	public static Player create(PlayerTemplate template, int accountId, String accountName, String name, PlayerAppearance app)
+	public static Player create(PlayerTemplate template, int accountId, string accountName, string name, PlayerAppearance app)
 	{
 		// Create a new Player with an account name
 		Player player = new Player(template, accountId, accountName, app);
@@ -673,17 +673,17 @@ public class Player: Playable
 		return _client == null ? _accountId : _client.AccountId;
 	}
 	
-	public String getAccountName()
+	public string getAccountName()
 	{
 		return _client == null ? _accountName : _client.AccountName;
 	}
 	
-	public String getAccountNamePlayer()
+	public string getAccountNamePlayer()
 	{
 		return _accountName;
 	}
 	
-	public Map<int, String> getAccountChars()
+	public Map<int, string> getAccountChars()
 	{
 		return _chars;
 	}
@@ -858,7 +858,7 @@ public class Player: Playable
 	 * @param accountName The name of the account including this Player
 	 * @param app
 	 */
-	private Player(int objectId, PlayerTemplate template, int accountId, String accountName, PlayerAppearance app): base(objectId, template)
+	private Player(int objectId, PlayerTemplate template, int accountId, string accountName, PlayerAppearance app): base(objectId, template)
 	{
 		setInstanceType(InstanceType.Player);
 		_accountName = accountName;
@@ -903,7 +903,7 @@ public class Player: Playable
 	 * @param accountName the account name
 	 * @param app the player appearance
 	 */
-	private Player(PlayerTemplate template, int accountId, String accountName, PlayerAppearance app)
+	private Player(PlayerTemplate template, int accountId, string accountName, PlayerAppearance app)
 		: this(IdManager.getInstance().getNextId(), template, accountId, accountName, app)
 	{
 	}
@@ -1181,7 +1181,7 @@ public class Player: Playable
 	 * @param quest The name of the quest
 	 * @return the QuestState object corresponding to the quest name.
 	 */
-	public QuestState getQuestState(String quest)
+	public QuestState getQuestState(string quest)
 	{
 		return _quests.get(quest);
 	}
@@ -1200,7 +1200,7 @@ public class Player: Playable
 	 * @param quest the quest state to check
 	 * @return {@code true} if the player has the quest state, {@code false} otherwise
 	 */
-	public bool hasQuestState(String quest)
+	public bool hasQuestState(string quest)
 	{
 		return _quests.containsKey(quest);
 	}
@@ -1221,7 +1221,7 @@ public class Player: Playable
 	 * Remove a QuestState from the table _quest containing all quests began by the Player.
 	 * @param quest The name of the quest
 	 */
-	public void delQuestState(String quest)
+	public void delQuestState(string quest)
 	{
 		_quests.remove(quest);
 	}
@@ -1258,7 +1258,7 @@ public class Player: Playable
 		return activeQuests;
 	}
 	
-	public void processQuestEvent(String questName, String ev)
+	public void processQuestEvent(string questName, string ev)
 	{
 		Quest quest = QuestManager.getInstance().getQuest(questName);
 		if ((quest == null) || (ev == null) || ev.isEmpty())
@@ -2883,7 +2883,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 */
-	public void addAdena(String process, long count, WorldObject reference, bool sendMessage)
+	public void addAdena(string process, long count, WorldObject reference, bool sendMessage)
 	{
 		if (sendMessage)
 		{
@@ -2917,7 +2917,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool reduceAdena(String process, long count, WorldObject reference, bool sendMessage)
+	public bool reduceAdena(string process, long count, WorldObject reference, bool sendMessage)
 	{
 		if (count > _inventory.getAdena())
 		{
@@ -2959,7 +2959,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool reduceBeautyTickets(String process, long count, WorldObject reference, bool sendMessage)
+	public bool reduceBeautyTickets(string process, long count, WorldObject reference, bool sendMessage)
 	{
 		if (count > _inventory.getBeautyTickets())
 		{
@@ -3010,7 +3010,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 */
-	public void addAncientAdena(String process, long count, WorldObject reference, bool sendMessage)
+	public void addAncientAdena(string process, long count, WorldObject reference, bool sendMessage)
 	{
 		if (sendMessage)
 		{
@@ -3037,7 +3037,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool reduceAncientAdena(String process, long count, WorldObject reference, bool sendMessage)
+	public bool reduceAncientAdena(string process, long count, WorldObject reference, bool sendMessage)
 	{
 		if (count > _inventory.getAncientAdena())
 		{
@@ -3087,7 +3087,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 */
-	public void addItem(String process, Item item, WorldObject reference, bool sendMessage)
+	public void addItem(string process, Item item, WorldObject reference, bool sendMessage)
 	{
 		if (item.getCount() > 0)
 		{
@@ -3145,7 +3145,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return
 	 */
-	public Item addItem(String process, int itemId, long count, WorldObject reference, bool sendMessage)
+	public Item addItem(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		return addItem(process, itemId, count, -1, reference, sendMessage);
 	}
@@ -3160,7 +3160,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return
 	 */
-	public Item addItem(String process, int itemId, long count, int enchantLevel, WorldObject reference, bool sendMessage)
+	public Item addItem(string process, int itemId, long count, int enchantLevel, WorldObject reference, bool sendMessage)
 	{
 		if (count > 0)
 		{
@@ -3254,7 +3254,7 @@ public class Player: Playable
 	 * @param reference the reference object
 	 * @param sendMessage if {@code true} a system message will be sent
 	 */
-	public void addItem(String process, ItemHolder item, WorldObject reference, bool sendMessage)
+	public void addItem(string process, ItemHolder item, WorldObject reference, bool sendMessage)
 	{
 		addItem(process, item.getId(), item.getCount(), reference, sendMessage);
 	}
@@ -3267,7 +3267,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool destroyItem(String process, Item item, WorldObject reference, bool sendMessage)
+	public bool destroyItem(string process, Item item, WorldObject reference, bool sendMessage)
 	{
 		return destroyItem(process, item, item.getCount(), reference, sendMessage);
 	}
@@ -3281,7 +3281,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool destroyItem(String process, Item item, long count, WorldObject reference, bool sendMessage)
+	public bool destroyItem(string process, Item item, long count, WorldObject reference, bool sendMessage)
 	{
 		Item destoyedItem = _inventory.destroyItem(process, item, count, this, reference);
 		if (destoyedItem == null)
@@ -3337,7 +3337,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public override bool destroyItem(String process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
 		if (item == null)
@@ -3360,7 +3360,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool destroyItemWithoutTrace(String process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public bool destroyItemWithoutTrace(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
 		if ((item == null) || (item.getCount() < count))
@@ -3384,7 +3384,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public override bool destroyItemByItemId(String process, int itemId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		if (itemId == Inventory.ADENA_ID)
 		{
@@ -3446,7 +3446,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(String process, int objectId, long count, Inventory target, WorldObject reference)
+	public Item transferItem(string process, int objectId, long count, Inventory target, WorldObject reference)
 	{
 		Item oldItem = checkItemManipulation(objectId, count, "transfer");
 		if (oldItem == null)
@@ -3510,7 +3510,7 @@ public class Player: Playable
 	 * @param sendMessage if {@code true} it will send messages to the acting player
 	 * @return {@code true} if the player successfully exchanged the items, {@code false} otherwise
 	 */
-	public bool exchangeItemsById(String process, WorldObject reference, int coinId, long cost, int rewardId, long count, bool sendMessage)
+	public bool exchangeItemsById(string process, WorldObject reference, int coinId, long cost, int rewardId, long count, bool sendMessage)
 	{
 		if (!_inventory.validateCapacityByItemId(rewardId, count))
 		{
@@ -3547,7 +3547,7 @@ public class Player: Playable
 	 * @param protectItem whether or not dropped item must be protected temporary against other players
 	 * @return bool informing if the action was successful
 	 */
-	public bool dropItem(String process, Item item, WorldObject reference, bool sendMessage, bool protectItem)
+	public bool dropItem(string process, Item item, WorldObject reference, bool sendMessage, bool protectItem)
 	{
 		Item droppedItem = _inventory.dropItem(process, item, this, reference);
 		if (droppedItem == null)
@@ -3602,7 +3602,7 @@ public class Player: Playable
 		return true;
 	}
 	
-	public bool dropItem(String process, Item item, WorldObject reference, bool sendMessage)
+	public bool dropItem(string process, Item item, WorldObject reference, bool sendMessage)
 	{
 		return dropItem(process, item, reference, sendMessage, false);
 	}
@@ -3620,7 +3620,7 @@ public class Player: Playable
 	 * @param protectItem
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item dropItem(String process, int objectId, long count, int x, int y, int z, WorldObject reference, bool sendMessage, bool protectItem)
+	public Item dropItem(string process, int objectId, long count, int x, int y, int z, WorldObject reference, bool sendMessage, bool protectItem)
 	{
 		Item invitem = _inventory.getItemByObjectId(objectId);
 		Item item = _inventory.dropItem(process, objectId, count, this, reference);
@@ -3674,7 +3674,7 @@ public class Player: Playable
 		return item;
 	}
 	
-	public Item checkItemManipulation(int objectId, long count, String action)
+	public Item checkItemManipulation(int objectId, long count, string action)
 	{
 		// TODO: if we remove objects that are not visible from the World, we'll have to remove this check
 		if (World.getInstance().findObject(objectId) == null)
@@ -3783,7 +3783,7 @@ public class Player: Playable
 		}
 	}
 	
-	public String getIPAddress()
+	public string getIPAddress()
 	{
 		return _ip;
 	}
@@ -4706,7 +4706,7 @@ public class Player: Playable
 				// announce pvp/pk
 				if (Config.ANNOUNCE_PK_PVP && (((pk != null) && !pk.isGM()) || fpcKill))
 				{
-					String msg = "";
+					string msg = "";
 					if (!_pvpFlag)
 					{
 						msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
@@ -5598,7 +5598,7 @@ public class Player: Playable
 	 * Get the store name, if any.
 	 * @return the store name
 	 */
-	public String getStoreName()
+	public string getStoreName()
 	{
 		return _storeName;
 	}
@@ -5607,7 +5607,7 @@ public class Player: Playable
 	 * Set the store name.
 	 * @param name the store name to set
 	 */
-	public void setStoreName(String name)
+	public void setStoreName(string name)
 	{
 		_storeName = name == null ? "" : name;
 	}
@@ -6963,7 +6963,7 @@ public class Player: Playable
 				int itemNum = record.ItemNumber;
 				int itemId = record.ItemId;
 				long itemCount = record.ItemCount;
-				String itemSender = record.ItemSender;
+				string itemSender = record.ItemSender;
 				_premiumItems.put(itemNum, new PremiumItem(itemId, itemCount, itemSender));
 			}
 		}
@@ -9194,7 +9194,7 @@ public class Player: Playable
 		sendPacket(new ExGetBookMarkInfoPacket(this));
 	}
 	
-	public override void sendMessage(String message)
+	public override void sendMessage(string message)
 	{
 		sendPacket(new SystemMessagePacket(SendMessageLocalisationData.getLocalisation(this, message)));
 	}
@@ -10815,7 +10815,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void broadcastSnoop(ChatType type, String name, String text)
+	public void broadcastSnoop(ChatType type, string name, string text)
 	{
 		if (!_snoopListener.isEmpty())
 		{
@@ -10856,7 +10856,7 @@ public class Player: Playable
 		_snoopedPlayer.remove(pci);
 	}
 	
-	public void addHtmlAction(HtmlActionScope scope, String action)
+	public void addHtmlAction(HtmlActionScope scope, string action)
 	{
 		_htmlActionCaches[(int)scope].add(action);
 	}
@@ -10881,9 +10881,9 @@ public class Player: Playable
 		return _lastHtmlActionOriginObjId;
 	}
 	
-	private bool validateHtmlAction(IEnumerable<String> actionIter, String action)
+	private bool validateHtmlAction(IEnumerable<string> actionIter, string action)
 	{
-		foreach (String cachedAction in actionIter)
+		foreach (string cachedAction in actionIter)
 		{
 			if (cachedAction[cachedAction.Length - 1] == Util.VAR_PARAM_START_CHAR)
 			{
@@ -10909,7 +10909,7 @@ public class Player: Playable
 	 * @param action the HTML action to check
 	 * @return NPC object ID, 0 or -1
 	 */
-	public int validateHtmlAction(String action)
+	public int validateHtmlAction(string action)
 	{
 		for (int i = 0; i < _htmlActionCaches.Length; ++i)
 		{
@@ -10936,7 +10936,7 @@ public class Player: Playable
 	 * @param action just for login porpouse
 	 * @return
 	 */
-	public bool validateItemManipulation(int objectId, String action)
+	public bool validateItemManipulation(int objectId, string action)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
 		if ((item == null) || (item.getOwnerId() != getObjectId()))
@@ -12055,10 +12055,10 @@ public class Player: Playable
 			sm.Params.addPcName(this);
 			
 			// Localisation related.
-			String targetName = target.getName();
+			string targetName = target.getName();
 			if (Config.MULTILANG_ENABLE && target.isNpc())
 			{
-				String[] localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang, target.getId());
+				string[] localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang, target.getId());
 				if (localisation != null)
 				{
 					targetName = localisation[0];
@@ -12513,7 +12513,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void teleportBookmarkModify(int id, int icon, String tag, String name)
+	public void teleportBookmarkModify(int id, int icon, string tag, string name)
 	{
 		if (isInsideZone(ZoneId.TIMED_HUNTING))
 		{
@@ -12662,7 +12662,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void teleportBookmarkAdd(int x, int y, int z, int icon, String tag, String name)
+	public void teleportBookmarkAdd(int x, int y, int z, int icon, string tag, string name)
 	{
 		if (!teleportBookmarkCondition(1))
 		{
@@ -13017,7 +13017,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void updateFriendMemo(String name, String memo)
+	public void updateFriendMemo(string name, string memo)
 	{
 		if (memo.Length > 50)
 		{
@@ -13320,7 +13320,7 @@ public class Player: Playable
 		return base.isMovementDisabled() || (_movieHolder != null) || _fishing.isFishing();
 	}
 	
-	public String getHtmlPrefix()
+	public string getHtmlPrefix()
 	{
 		if (!Config.MULTILANG_ENABLE)
 		{
@@ -13329,12 +13329,12 @@ public class Player: Playable
 		return _htmlPrefix;
 	}
 	
-	public String getLang()
+	public string getLang()
 	{
 		return _lang;
 	}
 	
-	public bool setLang(String lang)
+	public bool setLang(string lang)
 	{
 		bool result = false;
 		if (Config.MULTILANG_ENABLE)
@@ -13567,12 +13567,12 @@ public class Player: Playable
 		}
 	}
 	
-	public String getAdminConfirmCmd()
+	public string getAdminConfirmCmd()
 	{
 		return _adminConfirmCmd;
 	}
 	
-	public void setAdminConfirmCmd(String adminConfirmCmd)
+	public void setAdminConfirmCmd(string adminConfirmCmd)
 	{
 		_adminConfirmCmd = adminConfirmCmd;
 	}
@@ -13669,12 +13669,12 @@ public class Player: Playable
 		return Config.PREMIUM_SYSTEM_ENABLED && _premiumStatus;
 	}
 	
-	public void setLastPetitionGmName(String gmName)
+	public void setLastPetitionGmName(string gmName)
 	{
 		_lastPetitionGmName = gmName;
 	}
 	
-	public String getLastPetitionGmName()
+	public string getLastPetitionGmName()
 	{
 		return _lastPetitionGmName;
 	}
@@ -14592,7 +14592,7 @@ public class Player: Playable
 	
 	public TrainingHolder getTraingCampInfo()
 	{
-		String info = getAccountVariables().getString(TRAINING_CAMP_VAR, null);
+		string info = getAccountVariables().getString(TRAINING_CAMP_VAR, null);
 		if (info == null)
 		{
 			return null;
@@ -15738,7 +15738,7 @@ public class Player: Playable
 	{
 		if (_missionLevelProgress == null)
 		{
-			String variable = PlayerVariables.MISSION_LEVEL_PROGRESS + MissionLevel.getInstance().getCurrentSeason();
+			string variable = PlayerVariables.MISSION_LEVEL_PROGRESS + MissionLevel.getInstance().getCurrentSeason();
 			if (getVariables().hasVariable(variable))
 			{
 				_missionLevelProgress = new MissionLevelPlayerDataHolder(getVariables().getString(variable));

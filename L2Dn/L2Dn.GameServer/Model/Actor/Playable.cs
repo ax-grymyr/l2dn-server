@@ -26,8 +26,8 @@ namespace L2Dn.GameServer.Model.Actor;
  */
 public abstract class Playable: Creature
 {
-	private Creature _lockedTarget = null;
-	private Player transferDmgTo = null;
+	private Creature _lockedTarget;
+	private Player transferDmgTo;
 	
 	private readonly Map<int, int> _replacedSkills = new();
 	private readonly Map<int, int> _originalSkills = new();

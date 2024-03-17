@@ -23,7 +23,7 @@ public abstract class AbstractAI : Ctrl
 	/** Current long-term intention */
 	protected CtrlIntention _intention = CtrlIntention.AI_INTENTION_IDLE;
 	/** Current long-term intention parameter */
-	protected Object[] _intentionArgs = null;
+	protected object[] _intentionArgs;
 	
 	/** Flags about client's state, in order to know which messages to send */
 	protected volatile bool _clientMoving;
@@ -196,7 +196,7 @@ public abstract class AbstractAI : Ctrl
 	 * @param evt The event whose the AI must be notified
 	 * @param arg0 The first parameter of the Event (optional target)
 	 */
-	public void notifyEvent(CtrlEvent evt, Object arg0)
+	public void notifyEvent(CtrlEvent evt, object arg0)
 	{
 		notifyEvent(evt, arg0, null);
 	}
@@ -207,7 +207,7 @@ public abstract class AbstractAI : Ctrl
 	 * @param arg0 The first parameter of the Event (optional target)
 	 * @param arg1 The second parameter of the Event (optional target)
 	 */
-	public void notifyEvent(CtrlEvent evt, Object arg0, Object arg1)
+	public void notifyEvent(CtrlEvent evt, object arg0, object arg1)
 	{
 		if ((!_actor.isSpawned() && !_actor.isTeleporting()) || !_actor.hasAI())
 		{

@@ -15,21 +15,21 @@ public class SummonAI : PlayableAI, Runnable
 	
 	private volatile bool _thinking; // to prevent recursive thinking
 	private volatile bool _startFollow;
-	private Creature _lastAttack = null;
+	private Creature _lastAttack;
 	
 	private volatile bool _startAvoid;
 	private volatile bool _isDefending;
-	private ScheduledFuture _avoidTask = null;
+	private ScheduledFuture _avoidTask;
 	
 	// Fix: Infinite Atk. Spd. exploit
-	private IntentionCommand _nextIntention = null;
+	private IntentionCommand _nextIntention;
 	
 	public SummonAI(Summon summon): base(summon)
 	{
 		_startFollow = ((Summon)_actor).getFollowStatus();
 	}
 	
-	private void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
+	private void saveNextIntention(CtrlIntention intention, object arg0, object arg1)
 	{
 		_nextIntention = new IntentionCommand(intention, arg0, arg1);
 	}
@@ -60,7 +60,7 @@ public class SummonAI : PlayableAI, Runnable
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	protected override void changeIntention(CtrlIntention intention, params Object[] args)
+	protected override void changeIntention(CtrlIntention intention, params object[] args)
 	{
 		switch (intention)
 		{

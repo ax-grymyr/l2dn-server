@@ -41,7 +41,7 @@ public class AttackableAI: CreatureAI
 	 */
 	private bool _thinking;
 	
-	private int chaostime = 0;
+	private int chaostime;
 	
 	public AttackableAI(Attackable attackable): base(attackable)
 	{
