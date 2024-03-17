@@ -914,26 +914,33 @@ public class EffectList
 		// Manage effect stacking.
 		if (hasAbnormalType(skill.getAbnormalType()))
 		{
-			foreach (BuffInfo existingInfo in _actives)
+			int buffIndex = 0;
+			while (buffIndex < _actives.Count)
 			{
+				BuffInfo existingInfo = _actives[buffIndex];
 				Skill existingSkill = existingInfo.getSkill();
 				// Check if existing effect should be removed due to stack.
 				// Effects with no abnormal don't stack if their ID is the same. Effects of the same abnormal type don't stack.
-				if ((skill.getAbnormalType() == AbnormalType.NONE && (existingSkill.getId() == skill.getId())) || 
-				    (skill.getAbnormalType() != AbnormalType.NONE && (existingSkill.getAbnormalType() == skill.getAbnormalType())))
+				if ((skill.getAbnormalType() == AbnormalType.NONE && (existingSkill.getId() == skill.getId())) ||
+				    (skill.getAbnormalType() != AbnormalType.NONE &&
+				     (existingSkill.getAbnormalType() == skill.getAbnormalType())))
 				{
 					// Check if there is subordination abnormal. Skills with subordination abnormal stack with each other, unless the caster is the same.
-					if (skill.getSubordinationAbnormalType() != AbnormalType.NONE && (skill.getSubordinationAbnormalType() == existingSkill.getSubordinationAbnormalType()) //
-						&& ((info.getEffectorObjectId() == 0) || (existingInfo.getEffectorObjectId() == 0) || (info.getEffectorObjectId() != existingInfo.getEffectorObjectId())))
+					if (skill.getSubordinationAbnormalType() != AbnormalType.NONE &&
+					    (skill.getSubordinationAbnormalType() == existingSkill.getSubordinationAbnormalType()) //
+					    && ((info.getEffectorObjectId() == 0) || (existingInfo.getEffectorObjectId() == 0) ||
+					        (info.getEffectorObjectId() != existingInfo.getEffectorObjectId())))
 					{
+						buffIndex++;
 						continue;
 					}
-					
+
 					// The effect we are adding overrides the existing effect. Delete or disable the existing effect.
 					if (skill.getAbnormalLevel() >= existingSkill.getAbnormalLevel())
 					{
 						// If it is an herb, set as not in use the lesser buff, unless it is the same skill.
-						if ((skill.isAbnormalInstant() || existingSkill.isIrreplacableBuff()) && (skill.getId() != existingSkill.getId()))
+						if ((skill.isAbnormalInstant() || existingSkill.isIrreplacableBuff()) &&
+						    (skill.getId() != existingSkill.getId()))
 						{
 							existingInfo.setInUse(false);
 							_hiddenBuffs.incrementAndGet();
@@ -942,6 +949,7 @@ public class EffectList
 						{
 							// Remove effect that gets overridden.
 							remove(existingInfo);
+							continue;
 						}
 					}
 					else if (skill.isIrreplacableBuff()) // The effect we try to add should be hidden.
@@ -953,6 +961,8 @@ public class EffectList
 						return;
 					}
 				}
+
+				buffIndex++;
 			}
 		}
 		

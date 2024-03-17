@@ -219,7 +219,7 @@ public class Skill: IIdentifiable
 		_abnormalLevel = set.getInt("abnormalLevel", 0);
 		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
-		TimeSpan abnormalTime = TimeSpan.FromMilliseconds(set.getDouble("abnormalTime", 0));
+		TimeSpan abnormalTime = TimeSpan.FromSeconds(set.getDouble("abnormalTime", 0));
 		if (Config.ENABLE_MODIFY_SKILL_DURATION && Config.SKILL_DURATION_LIST.ContainsKey(_id) &&
 		    (_operateType != SkillOperateType.T))
 		{
