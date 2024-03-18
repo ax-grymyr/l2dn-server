@@ -20,7 +20,7 @@ public readonly struct ExMPCCRoomInfoPacket: IOutgoingPacket
         writer.WriteInt32(_room.getMaxMembers());
         writer.WriteInt32(_room.getMinLevel());
         writer.WriteInt32(_room.getMaxLevel());
-        writer.WriteInt32(_room.getLootType());
+        writer.WriteInt32((int)_room.getLootType());
         writer.WriteInt32(_room.getLocation());
         writer.WriteString(_room.getTitle());
     }

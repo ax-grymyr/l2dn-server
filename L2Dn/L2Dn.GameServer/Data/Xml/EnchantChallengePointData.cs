@@ -154,14 +154,10 @@ public class EnchantChallengePointData: DataReaderBase
 		
 		return [groupId, pointsToGive];
 	}
-	
-	public record EnchantChallengePointsOptionInfo(int index, int chance, int minEnchant, int maxEnchant)
-	{
-	}
-	
-	public record EnchantChallengePointsItemInfo(int itemId, int groupId, Map<int, int> pointsByEnchantLevel)
-	{
-	}
+
+	public record EnchantChallengePointsOptionInfo(int index, int chance, int minEnchant, int maxEnchant);
+
+	public record EnchantChallengePointsItemInfo(int itemId, int groupId, Map<int, int> pointsByEnchantLevel);
 	
 	public static EnchantChallengePointData getInstance()
 	{

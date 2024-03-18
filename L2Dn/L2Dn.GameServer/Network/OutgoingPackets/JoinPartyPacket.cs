@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -6,7 +7,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct JoinPartyPacket: IOutgoingPacket
 {
     private readonly int _response;
-    private readonly int _type;
+    private readonly PartyDistributionType _type;
 	
     public JoinPartyPacket(int response, Player requestor)
     {
@@ -19,7 +20,7 @@ public readonly struct JoinPartyPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.JOIN_PARTY);
         
         writer.WriteInt32(_response);
-        writer.WriteInt32(_type);
+        writer.WriteInt32((int)_type);
         if (_type != 0)
         {
             writer.WriteInt32(0); // TODO: Find me!

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
 using Org.BouncyCastle.Utilities;
@@ -14,7 +15,7 @@ public class ClientSettings
 	private bool _partyRequestRestrictedFromFriends;
 	private bool _friendRequestRestrictedFromOthers;
 	private bool _friendRequestRestrictedFromClan;
-	private int _partyContributionType;
+	private PartyDistributionType _partyContributionType;
 	
 	public ClientSettings(Player player)
 	{
@@ -40,7 +41,7 @@ public class ClientSettings
 		_partyRequestRestrictedFromFriends = settings.getBoolean("PARTY_REQUEST_RESTRICTED_FROM_FRIENDS", false);
 		_friendRequestRestrictedFromOthers = settings.getBoolean("FRIENDS_REQUEST_RESTRICTED_FROM_OTHERS", false);
 		_friendRequestRestrictedFromClan = settings.getBoolean("FRIENDS_REQUEST_RESTRICTED_FROM_CLAN", false);
-		_partyContributionType = settings.getInt("PARTY_CONTRIBUTION_TYPE", 0);
+		_partyContributionType = (PartyDistributionType)settings.getInt("PARTY_CONTRIBUTION_TYPE", 0);
 	}
 	
 	public void storeSettings()
@@ -117,12 +118,12 @@ public class ClientSettings
 		_friendRequestRestrictedFromClan = friendRequestRestrictedFromClan;
 	}
 	
-	public int getPartyContributionType()
+	public PartyDistributionType getPartyContributionType()
 	{
 		return _partyContributionType;
 	}
 	
-	public void setPartyContributionType(int partyContributionType)
+	public void setPartyContributionType(PartyDistributionType partyContributionType)
 	{
 		_partyContributionType = partyContributionType;
 		storeSettings();

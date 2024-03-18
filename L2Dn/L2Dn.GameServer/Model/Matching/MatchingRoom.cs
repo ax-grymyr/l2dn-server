@@ -14,14 +14,14 @@ public abstract class MatchingRoom: IIdentifiable
 
 	private readonly int _id;
 	private String _title;
-	private int _loot;
+	private PartyDistributionType _loot;
 	private int _minLevel;
 	private int _maxLevel;
 	private int _maxCount;
 	private Set<Player> _members;
 	private Player _leader;
 
-	public MatchingRoom(String title, int loot, int minLevel, int maxLevel, int maxmem, Player leader)
+	public MatchingRoom(String title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader)
 	{
 		_id = MatchingRoomManager.getInstance().addMatchingRoom(this);
 		_title = title;
@@ -123,7 +123,7 @@ public abstract class MatchingRoom: IIdentifiable
 		return _id;
 	}
 
-	public int getLootType()
+	public PartyDistributionType getLootType()
 	{
 		return _loot;
 	}
@@ -178,7 +178,7 @@ public abstract class MatchingRoom: IIdentifiable
 		_maxLevel = maxLevel;
 	}
 
-	public void setLootType(int loot)
+	public void setLootType(PartyDistributionType loot)
 	{
 		_loot = loot;
 	}

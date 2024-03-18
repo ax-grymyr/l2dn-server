@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Matching;
 
 public class PartyMatchingRoom: MatchingRoom
 {
-	public PartyMatchingRoom(String title, int loot, int minLevel, int maxLevel, int maxmem, Player leader): base(title,
+	public PartyMatchingRoom(String title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader): base(title,
 		loot, minLevel, maxLevel, maxmem, leader)
 	{
 	}

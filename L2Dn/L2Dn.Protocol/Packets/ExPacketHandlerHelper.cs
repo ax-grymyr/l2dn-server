@@ -47,8 +47,6 @@ internal sealed class ExPacketHandlerHelper<TSession, TPacket>(byte packetCode, 
         _logger.Trace($"S({session.Id})  Received packet {typeof(TPacket).Name} " +
                       $"(0x{packetCode:X2}:0x{packetExCode:X4}), length {reader.Length + 1}");
 
-        LogUtils.TracePacketData(reader, session.Id);
-
         long state = session.GetState();
         if (AllowedStates == 0 || (state & AllowedStates) == 0)
         {
