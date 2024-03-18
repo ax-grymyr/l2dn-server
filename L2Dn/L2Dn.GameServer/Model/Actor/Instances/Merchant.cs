@@ -36,7 +36,7 @@ public class Merchant: Folk
             pom = npcId + "-" + value;
         }
 
-        return "data/html/merchant/" + pom + ".htm";
+        return "html/merchant/" + pom + ".htm";
     }
 
     public void showBuyWindow(Player player, int value)
