@@ -17,7 +17,7 @@ internal sealed class ExPacketHandlerHelper<TSession>(byte packetCode): PacketHa
             return;
         }
 
-        _logger.Trace($"S({session.Id})  Unknown packet 0x{packetCode:X2}:0x{exPacketCode:X4}, " +
+        _logger.Trace($"S({session.Id})  Unknown packet {packetCode:X2}:{exPacketCode:X4}, " +
                       $"length {reader.Length + 1}");
 
         LogUtils.TracePacketData(reader, session.Id);
@@ -27,7 +27,7 @@ internal sealed class ExPacketHandlerHelper<TSession>(byte packetCode): PacketHa
         where TPacket: struct, IIncomingPacket<TSession>
     {
         if (_helpers.TryGetValue(exCode, out _))
-            throw new InvalidOperationException($"Packet with code {code:X8}{exCode:X16} already registered");
+            throw new InvalidOperationException($"Packet with code {code:X2}:{exCode:X4} already registered");
 
         PacketHandlerHelper<TSession> helper = new ExPacketHandlerHelper<TSession, TPacket>(code, exCode);
         helper.AllowedStates = defaultStates;
@@ -44,14 +44,12 @@ internal sealed class ExPacketHandlerHelper<TSession, TPacket>(byte packetCode, 
     public override async ValueTask HandlePacketAsync(PacketHandler<TSession> handler,
         Connection connection, TSession session, PacketBitReader reader)
     {
-        _logger.Trace($"S({session.Id})  Received packet {typeof(TPacket).Name} " +
-                      $"(0x{packetCode:X2}:0x{packetExCode:X4}), length {reader.Length + 1}");
+        _logger.Trace($"S({session.Id})  Received packet {typeof(TPacket).Name} ({packetCode:X2}:{packetExCode:X4}), length {reader.Length + 1}");
 
         long state = session.GetState();
         if (AllowedStates == 0 || (state & AllowedStates) == 0)
         {
-            _logger.Trace($"S({session.Id})  Packet {typeof(TPacket).Name} " +
-                          $"(0x{packetCode:X2}:0x{packetExCode:X4}) not allowed in state '{state:b64}'");
+            _logger.Trace($"S({session.Id})  Packet {typeof(TPacket).Name} ({packetCode:X2}:{packetExCode:X4}) not allowed in state '{state:b64}'");
 
             if (!handler.OnPacketInvalidStateInternal(connection, session))
             {
@@ -66,8 +64,7 @@ internal sealed class ExPacketHandlerHelper<TSession, TPacket>(byte packetCode, 
         }
         catch (Exception exception)
         {
-            _logger.Warn($"S({session.Id})  Exception reading packet 0x{packetCode:X2}:0x{packetExCode:X4}" +
-                         $": {exception}");
+            _logger.Warn($"S({session.Id})  Exception reading packet {typeof(TPacket).Name} ({packetCode:X2}:{packetExCode:X4}): {exception}");
         }
 
         try
@@ -76,8 +73,7 @@ internal sealed class ExPacketHandlerHelper<TSession, TPacket>(byte packetCode, 
         }
         catch (Exception exception)
         {
-            _logger.Warn($"S({session.Id})  Exception processing packet 0x{packetCode:X2}:0x{packetExCode:X4}" +
-                         $": {exception}");
+            _logger.Warn($"S({session.Id})  Exception processing packet {typeof(TPacket).Name} ({packetCode:X2}:{packetExCode:X4}): {exception}");
         }
     }
 }

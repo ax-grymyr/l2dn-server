@@ -251,7 +251,6 @@ public abstract class Connection
             return;
         }
 
-        _logger.Trace($"S({_sessionId})  Packet received: code 0x{buffer[0]:X2}, length {length}");
         ThreadPool.QueueUserWorkItem(_ => HandlePacket(buffer, length));
     }
 
