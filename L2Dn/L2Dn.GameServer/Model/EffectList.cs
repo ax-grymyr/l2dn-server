@@ -396,14 +396,16 @@ public class EffectList
 	 */
 	public void stopAllEffectsWithoutExclusions(bool update, bool broadcast)
 	{
-		foreach (BuffInfo info in _actives)
+		while (_actives.Count != 0)
 		{
-			remove(info);
+			remove(_actives[0]); // TODO: refactor buffs
 		}
+		
 		foreach (BuffInfo info in _passives)
 		{
 			remove(info);
 		}
+		
 		foreach (BuffInfo info in _options)
 		{
 			remove(info);
