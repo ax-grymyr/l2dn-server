@@ -135,6 +135,7 @@ internal sealed class GamePacketHandler: PacketHandler<GameSession>
         /* D0:011F */ RegisterPacket<RequestOneDayRewardReceivePacket>(IncomingPacketCodes.REQUEST_ONE_DAY_REWARD_RECEIVE);
         /* D0:0161 */ RegisterPacket<RequestPurchaseLimitShopItemListPacket>(IncomingPacketCodes.EX_PURCHASE_LIMIT_SHOP_ITEM_LIST);
         /* D0:0163 */ RegisterPacket<ExOpenHtmlPacket>(IncomingPacketCodes.EX_OPEN_HTML);
+        /* D0:0164 */ RegisterPacket<ExRequestClassChangePacket>(IncomingPacketCodes.EX_REQUEST_CLASS_CHANGE);
         /* D0:0165 */ RegisterPacket<ExRequestChangeClassVerifyingPacket>(IncomingPacketCodes.EX_REQUEST_CLASS_CHANGE_VERIFYING);
         /* D0:0166 */ RegisterPacket<ExRequestTeleportPacket>(IncomingPacketCodes.EX_REQUEST_TELEPORT);
         /* D0:0170 */ RegisterPacket<ExRequestActivateAutoShortcutPacket>(IncomingPacketCodes.EX_ACTIVATE_AUTO_SHORTCUT);

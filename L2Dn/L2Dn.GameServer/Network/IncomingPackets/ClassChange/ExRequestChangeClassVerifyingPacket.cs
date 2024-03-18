@@ -52,6 +52,11 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 
     private static bool firstClassCheck(Player player)
     {
+	    // TODO: for now, check only the level.
+	    // in the future, level and quest requirements must be in the data files
+	    // (for example in ClassTree.xml)
+	    // TODO: also in ExRequestClassChangePacket
+	    return player.getLevel() >= 20;
 	    int questId;
 	    if (player.isDeathKnight())
 		    questId = 10101;
