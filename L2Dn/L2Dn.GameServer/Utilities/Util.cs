@@ -346,11 +346,11 @@ public class Util
 			String bypass;
 			if ((hParamPos != -1) && (hParamPos < bypassEnd))
 			{
-				bypass = html.Substring(hParamPos + 3, bypassEnd).Trim();
+				bypass = html.Substring(hParamPos + 3, bypassEnd - hParamPos - 3).Trim();
 			}
 			else
 			{
-				bypass = html.Substring(bypassStartEnd, bypassEnd).Trim();
+				bypass = html.Substring(bypassStartEnd, bypassEnd - bypassStartEnd).Trim();
 			}
 			
 			int firstParameterStart = bypass.IndexOf(VAR_PARAM_START_CHAR);
@@ -384,7 +384,7 @@ public class Util
 				break;
 			}
 			
-			String htmlLink = html.Substring(linkStartEnd, linkEnd).Trim();
+			String htmlLink = html.Substring(linkStartEnd, linkEnd - linkStartEnd).Trim();
 			if (htmlLink.isEmpty())
 			{
 				LOGGER.Warn("Html link path is empty!");
@@ -517,7 +517,7 @@ public class Util
 		else if (html.Length < (16250 * 3))
 		{
 			player.sendPacket(new ShowBoardPacket(html.Substring(0, 16250), "101"));
-			player.sendPacket(new ShowBoardPacket(html.Substring(16250, 16250 * 2), "102"));
+			player.sendPacket(new ShowBoardPacket(html.Substring(16250, 16250), "102"));
 			player.sendPacket(new ShowBoardPacket(html.Substring(16250 * 2), "103"));
 		}
 		else

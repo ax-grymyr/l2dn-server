@@ -69,7 +69,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			if (bypassOriginId == -1)
 				return ValueTask.CompletedTask;
 			
-			if ((bypassOriginId > 0) && !Util.isInsideRangeOfObjectId(player, bypassOriginId, Npc.INTERACTION_DISTANCE))
+			if (bypassOriginId > 0 && !Util.isInsideRangeOfObjectId(player, bypassOriginId, Npc.INTERACTION_DISTANCE))
 			{
 				// No logging here, this could be a common case where the player has the html still open and run
 				// too far away and then clicks a html action
@@ -110,7 +110,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				string id;
 				if (endOfId > 0)
 				{
-					id = _command.Substring(4, endOfId);
+					id = _command.Substring(4, endOfId - 4);
 				}
 				else
 				{
@@ -120,7 +120,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				if (Util.isDigit(id))
 				{
 					WorldObject obj = World.getInstance().findObject(int.Parse(id));
-					if ((obj != null) && obj.isNpc() && (endOfId > 0) && player.isInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
+					if (obj != null && obj.isNpc() && endOfId > 0 && player.isInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
 					{
 						((Npc)obj).onBypassFeedback(player, _command.Substring(endOfId + 1));
 					}
@@ -134,7 +134,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				string id;
 				if (endOfId > 0)
 				{
-					id = _command.Substring(5, endOfId);
+					id = _command.Substring(5, endOfId - 5);
 				}
 				else
 				{
@@ -143,7 +143,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				try
 				{
 					Item item = player.getInventory().getItemByObjectId(int.Parse(id));
-					if ((item != null) && (endOfId > 0))
+					if (item != null && endOfId > 0)
 					{
 						item.onBypassFeedback(player, _command.Substring(endOfId + 1));
 					}
@@ -191,7 +191,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			else if (_command.startsWith("menu_select"))
 			{
 				Npc lastNpc = player.getLastFolkNPC();
-				if ((lastNpc != null) && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcMenuSelect>())
+				if (lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcMenuSelect>())
 				{
 					string[] split = _command.Substring(_command.IndexOf('?') + 1).Split("&");
 					int ask = int.Parse(split[0].Split("=")[1]);
@@ -202,7 +202,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			else if (_command.startsWith("manor_menu_select"))
 			{
 				Npc lastNpc = player.getLastFolkNPC();
-				if (Config.ALLOW_MANOR && (lastNpc != null) && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcManorBypass>())
+				if (Config.ALLOW_MANOR && lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcManorBypass>())
 				{
 					string[] split = _command.Substring(_command.IndexOf('?') + 1).Split("&");
 					int ask = int.Parse(split[0].Split("=")[1]);
@@ -227,7 +227,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 					if (bypassOriginId > 0)
 					{
 						WorldObject bypassOrigin = World.getInstance().findObject(bypassOriginId);
-						if ((bypassOrigin != null) && bypassOrigin.isCreature())
+						if (bypassOrigin != null && bypassOrigin.isCreature())
 						{
 							handler.useBypass(_command, player, (Creature) bypassOrigin);
 						}

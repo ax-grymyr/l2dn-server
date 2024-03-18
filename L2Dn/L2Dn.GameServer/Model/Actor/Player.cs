@@ -448,9 +448,10 @@ public class Player: Playable
 	 * This can be used for htmls continuing the conversation with an npc.
 	 */
 	private int _lastHtmlActionOriginObjId;
-	
+
 	/** Bypass validations */
-	private readonly List<string>[] _htmlActionCaches = Array.Empty<List<string>>();
+	private readonly List<string>[] _htmlActionCaches =
+		new List<string>[(int)EnumUtil.GetMaxValue<HtmlActionScope>() + 1];
 	
 	private Forum _forumMail;
 	private Forum _forumMemo;
@@ -10919,6 +10920,7 @@ public class Player: Playable
 				return _lastHtmlActionOriginObjId;
 			}
 		}
+		
 		return -1;
 	}
 	

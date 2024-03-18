@@ -93,6 +93,7 @@ public readonly struct NpcHtmlMessagePacket: IOutgoingPacket // TODO: refactor
             _helper.WriteHtml(writer);
         else
             writer.WriteString(HtmlPacketHelper.MissingHtml);
+        
         writer.WriteInt32(_itemId);
         writer.WriteInt32(!_playSound); // play sound - 0 = enabled, 1 = disabled
         writer.WriteByte((byte)_size);

@@ -754,6 +754,7 @@ public class Npc: Creature
 		helper.Replace("%npcname%", getName());
 		helper.Replace("%objectId%", getObjectId().ToString());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		Util.buildHtmlActionCache(player, HtmlActionScope.NPC_HTML, getObjectId(), helper.getHtml());
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -771,6 +772,7 @@ public class Npc: Creature
 		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
 		helper.Replace("%objectId%", getObjectId().ToString());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		Util.buildHtmlActionCache(player, HtmlActionScope.NPC_HTML, getObjectId(), helper.getHtml());
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
