@@ -197,9 +197,9 @@ public sealed class SystemMessageParams
 	 * @param type
 	 * @return
 	 */
-	public SystemMessageParams addAttribute(int type)
+	public SystemMessageParams addAttribute(AttributeType type)
 	{
-		append(SystemMessageParamType.TYPE_ELEMENT_NAME, type);
+		append(SystemMessageParamType.TYPE_ELEMENT_NAME, (int)type);
 		return this;
 	}
 	

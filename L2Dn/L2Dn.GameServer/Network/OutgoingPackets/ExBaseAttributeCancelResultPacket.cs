@@ -1,13 +1,14 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExBaseAttributeCancelResultPacket: IOutgoingPacket
 {
     private readonly int _objId;
-    private readonly byte _attribute;
+    private readonly AttributeType _attribute;
 	
-    public ExBaseAttributeCancelResultPacket(int objId, byte attribute)
+    public ExBaseAttributeCancelResultPacket(int objId, AttributeType attribute)
     {
         _objId = objId;
         _attribute = attribute;
@@ -19,6 +20,6 @@ public readonly struct ExBaseAttributeCancelResultPacket: IOutgoingPacket
         
         writer.WriteInt32(1); // result
         writer.WriteInt32(_objId);
-        writer.WriteInt32(_attribute);
+        writer.WriteInt32((int)_attribute);
     }
 }

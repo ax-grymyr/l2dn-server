@@ -920,6 +920,11 @@ public class Castle: AbstractResidence
 		return _siegeDate;
 	}
 	
+	public void setSiegeDate(DateTime siegeDate)
+	{
+		_siegeDate = siegeDate;
+	}
+	
 	public bool isTimeRegistrationOver()
 	{
 		return _isTimeRegistrationOver;

@@ -104,6 +104,16 @@ public struct PacketBitReader
         return new string(chars);
     }
 
+    public string ReadSizedString()
+    {
+        int length = ReadInt16();
+
+        // TODO: big endian architectures
+        string result = new(MemoryMarshal.Cast<byte, char>(_buffer.AsSpan(_offset)).Slice(0, length));
+        Advance(length * 2);
+        return result;
+    }
+    
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Skip(int length)
     {

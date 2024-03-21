@@ -4,10 +4,10 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExDuelAskStartPacket: IOutgoingPacket
 {
-    private readonly String _requestorName;
-    private readonly int _partyDuel;
+    private readonly string _requestorName;
+    private readonly bool _partyDuel;
 	
-    public ExDuelAskStartPacket(String requestor, int partyDuel)
+    public ExDuelAskStartPacket(string requestor, bool partyDuel)
     {
         _requestorName = requestor;
         _partyDuel = partyDuel;

@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Db.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -2579,6 +2579,39 @@ namespace L2Dn.GameServer.Db.Migrations
                     b.HasKey("PetItemObjectId", "SkillId", "SkillLevel");
 
                     b.ToTable("PetSkillReuses");
+                });
+
+            modelBuilder.Entity("L2Dn.GameServer.Db.DbPetitionFeedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CharacterName")
+                        .IsRequired()
+                        .HasMaxLength(35)
+                        .HasColumnType("character varying(35)");
+
+                    b.Property<string>("GmName")
+                        .IsRequired()
+                        .HasMaxLength(35)
+                        .HasColumnType("character varying(35)");
+
+                    b.Property<string>("Message")
+                        .HasMaxLength(4096)
+                        .HasColumnType("character varying(4096)");
+
+                    b.Property<byte>("Rate")
+                        .HasColumnType("smallint");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PetitionFeedbacks");
                 });
 
             modelBuilder.Entity("L2Dn.GameServer.Db.DbPunishment", b =>

@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Commission;
+﻿using System.Collections.Immutable;
+
+namespace L2Dn.GameServer.Model.Commission;
 
 public enum CommissionTreeType
 {
@@ -10,93 +12,64 @@ public enum CommissionTreeType
  	MISC
 }
 
-//
-// public enum CommissionTreeType
-// {
-// 	WEAPON(
-// 		0,
-// 		CommissionItemType.ONE_HAND_SWORD,
-// 		CommissionItemType.ONE_HAND_MAGIC_SWORD,
-// 		CommissionItemType.DAGGER,
-// 		CommissionItemType.RAPIER,
-// 		CommissionItemType.TWO_HAND_SWORD,
-// 		CommissionItemType.ANCIENT_SWORD,
-// 		CommissionItemType.DUALSWORD,
-// 		CommissionItemType.DUAL_DAGGER,
-// 		CommissionItemType.BLUNT_WEAPON,
-// 		CommissionItemType.ONE_HAND_MAGIC_BLUNT_WEAPON,
-// 		CommissionItemType.TWO_HAND_BLUNT_WEAPON,
-// 		CommissionItemType.TWO_HAND_MAGIC_BLUNT_WEAPON,
-// 		CommissionItemType.DUAL_BLUNT_WEAPON,
-// 		CommissionItemType.BOW,
-// 		CommissionItemType.CROSSBOW,
-// 		CommissionItemType.FIST_WEAPON,
-// 		CommissionItemType.SPEAR,
-// 		CommissionItemType.OTHER_WEAPON),
-// 	ARMOR(1, CommissionItemType.HELMET, CommissionItemType.ARMOR_TOP, CommissionItemType.ARMOR_PANTS, CommissionItemType.FULL_BODY, CommissionItemType.GLOVES, CommissionItemType.FEET, CommissionItemType.SHIELD, CommissionItemType.SIGIL, CommissionItemType.UNDERWEAR, CommissionItemType.CLOAK),
-// 	ACCESSORY(2, CommissionItemType.RING, CommissionItemType.EARRING, CommissionItemType.NECKLACE, CommissionItemType.BELT, CommissionItemType.BRACELET, CommissionItemType.AGATHION, CommissionItemType.HAIR_ACCESSORY, CommissionItemType.BROOCH_JEWEL, CommissionItemType.ARTIFACT),
-// 	SUPPLIES(3, CommissionItemType.POTION, CommissionItemType.SCROLL_ENCHANT_WEAPON, CommissionItemType.SCROLL_ENCHANT_ARMOR, CommissionItemType.SCROLL_OTHER, CommissionItemType.SOULSHOT, CommissionItemType.SPIRITSHOT, CommissionItemType.OTHER_SUPPLIES),
-// 	PET_GOODS(4, CommissionItemType.PET_EQUIPMENT, CommissionItemType.PET_SUPPLIES),
-// 	MISC(
-// 		5,
-// 		CommissionItemType.CRYSTAL,
-// 		CommissionItemType.RECIPE,
-// 		CommissionItemType.MAJOR_CRAFTING_INGREDIENTS,
-// 		CommissionItemType.LIFE_STONE,
-// 		CommissionItemType.SOUL_CRYSTAL,
-// 		CommissionItemType.ATTRIBUTE_STONE,
-// 		CommissionItemType.WEAPON_ENCHANT_STONE,
-// 		CommissionItemType.ARMOR_ENCHANT_STONE,
-// 		CommissionItemType.SPELLBOOK,
-// 		CommissionItemType.GEMSTONE,
-// 		CommissionItemType.POUCH,
-// 		CommissionItemType.PIN,
-// 		CommissionItemType.MAGIC_RUNE_CLIP,
-// 		CommissionItemType.MAGIC_ORNAMENT,
-// 		CommissionItemType.DYES,
-// 		CommissionItemType.OTHER_ITEM);
-// 	
-// 	private final int _clientId;
-// 	private final Set<CommissionItemType> _commissionItemTypes;
-// 	
-// 	CommissionTreeType(int clientId, CommissionItemType... commissionItemTypes)
-// 	{
-// 		_clientId = clientId;
-// 		_commissionItemTypes = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(commissionItemTypes)));
-// 	}
-// 	
-// 	/**
-// 	 * Gets the client id.
-// 	 * @return the client id
-// 	 */
-// 	public int getClientId()
-// 	{
-// 		return _clientId;
-// 	}
-// 	
-// 	/**
-// 	 * Gets the filter.
-// 	 * @return the filter
-// 	 */
-// 	public Set<CommissionItemType> getCommissionItemTypes()
-// 	{
-// 		return _commissionItemTypes;
-// 	}
-// 	
-// 	/**
-// 	 * Finds the commission tree type by the client id
-// 	 * @param clientId the client id
-// 	 * @return the commission tree type if its found, {@code null} otherwise
-// 	 */
-// 	public static CommissionTreeType findByClientId(int clientId)
-// 	{
-// 		for (CommissionTreeType value : values())
-// 		{
-// 			if (value.getClientId() == clientId)
-// 			{
-// 				return value;
-// 			}
-// 		}
-// 		return null;
-// 	}
-// }
+public static class CommissionTreeTypeUtil
+{
+	private static readonly ImmutableArray<CommissionItemType> _weaponItemTypes =
+	[
+		CommissionItemType.ONE_HAND_SWORD, CommissionItemType.ONE_HAND_MAGIC_SWORD, CommissionItemType.DAGGER,
+		CommissionItemType.RAPIER, CommissionItemType.TWO_HAND_SWORD, CommissionItemType.ANCIENT_SWORD,
+		CommissionItemType.DUALSWORD, CommissionItemType.DUAL_DAGGER, CommissionItemType.BLUNT_WEAPON,
+		CommissionItemType.ONE_HAND_MAGIC_BLUNT_WEAPON, CommissionItemType.TWO_HAND_BLUNT_WEAPON,
+		CommissionItemType.TWO_HAND_MAGIC_BLUNT_WEAPON, CommissionItemType.DUAL_BLUNT_WEAPON, CommissionItemType.BOW,
+		CommissionItemType.CROSSBOW, CommissionItemType.FIST_WEAPON, CommissionItemType.SPEAR,
+		CommissionItemType.OTHER_WEAPON
+	];
+	
+	private static readonly ImmutableArray<CommissionItemType> _armorItemTypes =
+	[
+		CommissionItemType.HELMET, CommissionItemType.ARMOR_TOP, CommissionItemType.ARMOR_PANTS,
+		CommissionItemType.FULL_BODY, CommissionItemType.GLOVES, CommissionItemType.FEET, CommissionItemType.SHIELD,
+		CommissionItemType.SIGIL, CommissionItemType.UNDERWEAR, CommissionItemType.CLOAK
+	];
+
+	private static readonly ImmutableArray<CommissionItemType> _accessoryItemTypes =
+	[
+		CommissionItemType.RING, CommissionItemType.EARRING, CommissionItemType.NECKLACE, CommissionItemType.BELT,
+		CommissionItemType.BRACELET, CommissionItemType.AGATHION, CommissionItemType.HAIR_ACCESSORY,
+		CommissionItemType.BROOCH_JEWEL, CommissionItemType.ARTIFACT
+	];
+
+	private static readonly ImmutableArray<CommissionItemType> _supplyItemTypes =
+	[
+		CommissionItemType.POTION, CommissionItemType.SCROLL_ENCHANT_WEAPON, CommissionItemType.SCROLL_ENCHANT_ARMOR,
+		CommissionItemType.SCROLL_OTHER, CommissionItemType.SOULSHOT, CommissionItemType.SPIRITSHOT,
+		CommissionItemType.OTHER_SUPPLIES
+	];
+
+	private static readonly ImmutableArray<CommissionItemType> _petGoodsItemTypes =
+	[
+		CommissionItemType.PET_EQUIPMENT, CommissionItemType.PET_SUPPLIES
+	];
+
+	private static readonly ImmutableArray<CommissionItemType> _miscItemTypes =
+	[
+		CommissionItemType.CRYSTAL, CommissionItemType.RECIPE, CommissionItemType.MAJOR_CRAFTING_INGREDIENTS,
+		CommissionItemType.LIFE_STONE, CommissionItemType.SOUL_CRYSTAL, CommissionItemType.ATTRIBUTE_STONE,
+		CommissionItemType.WEAPON_ENCHANT_STONE, CommissionItemType.ARMOR_ENCHANT_STONE, CommissionItemType.SPELLBOOK,
+		CommissionItemType.GEMSTONE, CommissionItemType.POUCH, CommissionItemType.PIN,
+		CommissionItemType.MAGIC_RUNE_CLIP, CommissionItemType.MAGIC_ORNAMENT, CommissionItemType.DYES,
+		CommissionItemType.OTHER_ITEM
+	];
+
+	public static ImmutableArray<CommissionItemType> GetCommissionItemTypes(this CommissionTreeType treeType) =>
+		treeType switch
+		{
+			CommissionTreeType.WEAPON => _weaponItemTypes,
+			CommissionTreeType.ARMOR => _armorItemTypes,
+			CommissionTreeType.ACCESSORY => _accessoryItemTypes,
+			CommissionTreeType.SUPPLIES => _supplyItemTypes,
+			CommissionTreeType.PET_GOODS => _petGoodsItemTypes,
+			CommissionTreeType.MISC => _miscItemTypes,
+			_ => ImmutableArray<CommissionItemType>.Empty
+		};
+}

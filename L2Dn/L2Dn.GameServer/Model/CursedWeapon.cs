@@ -626,7 +626,7 @@ public class CursedWeapon : INamable
 		}
 	}
 	
-	public ILocational getWorldPosition()
+	public Location getWorldPosition()
 	{
 		if (_isActivated && (_player != null))
 		{

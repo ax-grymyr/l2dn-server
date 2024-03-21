@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.Network;
 using L2Dn.Utilities;
 
@@ -22,5 +23,7 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public object PlayerLock { get; } = new();
     public string? MacAddress { get; set; }
     public bool IsDetached { get; set; }
+    public ClientHardwareInfoHolder? HardwareInfo { get; set; }
+
     protected override long GetState() => State.ToInt64();
 }

@@ -24,6 +24,11 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
         }
     }
 
+    public void AddComponent(InventorySlot slot)
+    {
+        _helper.AddComponent(slot);
+    }
+    
     public void WriteContent(PacketBitWriter writer)
     {
         ImmutableArray<InventorySlot> allSlots = EnumUtil.GetValues<InventorySlot>();

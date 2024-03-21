@@ -177,4 +177,6 @@ public class GameServerDbContext: DbContext
     public DbSet<DbEnchantChallengePointRecharge> EnchantChallengePointRecharges => Set<DbEnchantChallengePointRecharge>();
     public DbSet<DbGlobalTask> GlobalTasks => Set<DbGlobalTask>();
     public DbSet<DbMerchantLease> MerchantLeases => Set<DbMerchantLease>();
+
+    public DbSet<DbPetitionFeedback> PetitionFeedbacks => Set<DbPetitionFeedback>();
 }

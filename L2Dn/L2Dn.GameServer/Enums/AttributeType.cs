@@ -30,4 +30,9 @@ public static class AttributeTypeUtil
         AttributeType.HOLY,
         AttributeType.DARK
     ];
+
+    public static AttributeType getOpposite(this AttributeType attributeType)
+    {
+        return AttributeTypes[(int)attributeType % 2 == 0 ? (int)attributeType + 1 : (int)attributeType - 1];
+    }
 }

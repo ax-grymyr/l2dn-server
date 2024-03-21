@@ -1,0 +1,78 @@
+﻿using L2Dn.GameServer.InstanceManagers.Events;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Network;
+using L2Dn.Packets;
+
+namespace L2Dn.GameServer.Network.IncomingPackets;
+
+public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
+{
+    private int _wordId;
+
+    public void ReadContent(PacketBitReader reader)
+    {
+        _wordId = reader.ReadInt32();
+    }
+
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
+    {
+        Player? player = session.Player;
+        if (player == null)
+            return ValueTask.CompletedTask;
+
+        PlayerInventory inventory = player.getInventory();
+        if (inventory == null)
+            return ValueTask.CompletedTask;
+		
+        LetterCollectorManager.LetterCollectorRewardHolder lcrh = LetterCollectorManager.getInstance().getRewards(_wordId);
+        if (lcrh == null)
+            return ValueTask.CompletedTask;
+		
+        foreach (ItemHolder needLetter in LetterCollectorManager.getInstance().getWord(_wordId))
+        {
+            if (inventory.getInventoryItemCount(needLetter.getId(), -1) < needLetter.getCount())
+                return ValueTask.CompletedTask;
+        }
+
+        foreach (ItemHolder destroyLetter in LetterCollectorManager.getInstance().getWord(_wordId))
+        {
+            if (!player.destroyItemByItemId("LetterCollector", destroyLetter.getId(), destroyLetter.getCount(), player, true))
+                return ValueTask.CompletedTask;
+        }
+		
+        ItemChanceHolder rewardItem = getRandomReward(lcrh.getRewards(), lcrh.getChance());
+        if (rewardItem == null)
+        {
+            player.sendPacket(SystemMessageId.NOTHING_HAPPENED);
+            return ValueTask.CompletedTask;
+        }
+		
+        player.addItem("LetterCollector", rewardItem.getId(), rewardItem.getCount(), rewardItem.getEnchantmentLevel(), player, true);
+        return ValueTask.CompletedTask;
+    }
+	
+    private static ItemChanceHolder getRandomReward(List<ItemChanceHolder> rewards, double holderChance)
+    {
+        double chance = Rnd.get(holderChance);
+        double itemChance = 0;
+        foreach (ItemChanceHolder rewardItem in rewards)
+        {
+            itemChance += rewardItem.getChance();
+            if (chance <= itemChance)
+            {
+                if (rewardItem.getId() == -1)
+                {
+                    return null;
+                }
+ 
+                return rewardItem;
+            }
+        }
+ 
+        return null;
+    }
+}

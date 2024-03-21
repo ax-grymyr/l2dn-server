@@ -14,7 +14,7 @@ public readonly struct ExListPartyMatchingWaitingRoomPacket: IOutgoingPacket
     private readonly int _size;
     private readonly List<Player> _players;
 	
-    public ExListPartyMatchingWaitingRoomPacket(int page, int minLevel, int maxLevel, List<CharacterClass> classIds, String query)
+    public ExListPartyMatchingWaitingRoomPacket(int page, int minLevel, int maxLevel, List<CharacterClass> classIds, string query)
     {
         List<Player> players = MatchingRoomManager.getInstance().getPlayerInWaitingList(minLevel, maxLevel, classIds, query);
         _size = players.Count;

@@ -27,7 +27,7 @@ public class DuelManager
 		return _duels.get(duelId);
 	}
 	
-	public void addDuel(Player playerA, Player playerB, int partyDuel)
+	public void addDuel(Player playerA, Player playerB, bool partyDuel)
 	{
 		if ((playerA == null) || (playerB == null))
 		{
@@ -36,7 +36,7 @@ public class DuelManager
 		
 		// return if a player has PvPFlag
 		String engagedInPvP = "The duel was canceled because a duelist engaged in PvP combat.";
-		if (partyDuel == 1)
+		if (partyDuel)
 		{
 			bool playerInPvP = false;
 			foreach (Player temp in playerA.getParty().getMembers())

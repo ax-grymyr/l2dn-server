@@ -43,12 +43,12 @@ public class Duel
 	private readonly Map<int, PlayerCondition> _playerConditions = new();
 	Instance _duelInstance;
 	
-	public Duel(Player playerA, Player playerB, int partyDuel, int duelId)
+	public Duel(Player playerA, Player playerB, bool partyDuel, int duelId)
 	{
 		_duelId = duelId;
 		_playerA = playerA;
 		_playerB = playerB;
-		_partyDuel = partyDuel == 1;
+		_partyDuel = partyDuel;
 		if (_partyDuel)
 		{
 			foreach (Player member in _playerA.getParty().getMembers())
