@@ -24,10 +24,4 @@
       </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Model\Actor\Events\" />
-      <Folder Include="Scripts\AI\" />
-      <Folder Include="Scripts\Handlers\" />
-    </ItemGroup>
-
 </Project>
