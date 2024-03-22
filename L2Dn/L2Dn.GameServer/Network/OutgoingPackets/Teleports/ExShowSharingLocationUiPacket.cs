@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Teleports;
 
-public class ExShowSharingLocationUiPacket: IOutgoingPacket
+public readonly struct ExShowSharingLocationUiPacket: IOutgoingPacket
 {
     public static readonly ExShowSharingLocationUiPacket STATIC_PACKET = new();
 

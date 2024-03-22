@@ -11,9 +11,9 @@ public class PrimeShopGroup
 	private readonly int _price;
 	private readonly int _panelType;
 	private readonly int _recommended;
-	private readonly int _start;
-	private readonly int _end;
-	private readonly int _daysOfWeek;
+	private readonly DateTime? _start;
+	private readonly DateTime? _end;
+	private readonly DaysOfWeek _daysOfWeek;
 	private readonly int _startHour;
 	private readonly int _startMinute;
 	private readonly int _stopHour;
@@ -39,9 +39,14 @@ public class PrimeShopGroup
 		_price = element.GetAttributeValueAsInt32("price");
 		_panelType = element.Attribute("panelType").GetInt32(0);
 		_recommended = element.Attribute("recommended").GetInt32(0);
-		_start = element.Attribute("startSale").GetInt32(0);
-		_end = element.Attribute("endSale").GetInt32(0);
-		_daysOfWeek = element.Attribute("daysOfWeek").GetInt32(127);
+		
+		int start = element.Attribute("startSale").GetInt32(0);
+		_start = start == 0 ? null : DateTime.UnixEpoch.AddSeconds(start);
+		
+		int end = element.Attribute("endSale").GetInt32(0);
+		_end = start == 0 ? null : DateTime.UnixEpoch.AddSeconds(end);
+		
+		_daysOfWeek = (DaysOfWeek)element.Attribute("daysOfWeek").GetInt32(127);
 		_startHour = element.Attribute("startHour").GetInt32(0);
 		_startMinute = element.Attribute("startMinute").GetInt32(0);
 		_stopHour = element.Attribute("stopHour").GetInt32(0);
@@ -101,17 +106,17 @@ public class PrimeShopGroup
 		return _recommended;
 	}
 
-	public int getStartSale()
+	public DateTime? getStartSale()
 	{
 		return _start;
 	}
 
-	public int getEndSale()
+	public DateTime? getEndSale()
 	{
 		return _end;
 	}
 
-	public int getDaysOfWeek()
+	public DaysOfWeek getDaysOfWeek()
 	{
 		return _daysOfWeek;
 	}

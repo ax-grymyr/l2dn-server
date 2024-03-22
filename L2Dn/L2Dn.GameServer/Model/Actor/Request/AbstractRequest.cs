@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Actor.Request;
 public abstract class AbstractRequest
 {
     private readonly Player _player;
-    private long _timestamp;
+    private DateTime _timestamp;
     private volatile bool _isProcessing;
     private ScheduledFuture _timeOutTask;
 
@@ -21,14 +21,14 @@ public abstract class AbstractRequest
         return _player;
     }
 
-    public long getTimestamp()
+    public DateTime getTimestamp()
     {
-        return Interlocked.Read(ref _timestamp);
+        return _timestamp;
     }
 
-    public void setTimestamp(TimeSpan timestamp)
+    public void setTimestamp(DateTime timestamp)
     {
-        Interlocked.Exchange(ref _timestamp, timestamp.Ticks);
+        _timestamp = timestamp;
     }
 
     public void scheduleTimeout(TimeSpan delay)

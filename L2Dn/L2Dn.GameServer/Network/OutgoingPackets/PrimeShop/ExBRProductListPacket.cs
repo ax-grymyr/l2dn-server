@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.PrimeShop;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.Packets;
@@ -34,8 +35,8 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 			writer.WriteInt32(brItem.getPrice());
 			writer.WriteByte((byte)brItem.getPanelType()); // Item Panel Type: 0 - None, 1 - Event, 2 - Sale, 3 - New, 4 - Best
 			writer.WriteInt32(brItem.getRecommended()); // Recommended: (bit flags) 1 - Top, 2 - Left, 4 - Right
-			writer.WriteInt32(brItem.getStartSale());
-			writer.WriteInt32(brItem.getEndSale());
+			writer.WriteInt32(brItem.getStartSale()?.getEpochSecond() ?? 0);
+			writer.WriteInt32(brItem.getEndSale()?.getEpochSecond() ?? 0);
 			writer.WriteByte((byte)brItem.getDaysOfWeek());
 			writer.WriteByte((byte)brItem.getStartHour());
 			writer.WriteByte((byte)brItem.getStartMinute());
