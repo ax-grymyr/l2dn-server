@@ -284,7 +284,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (checkPlayerSkill(player, trainer, s, skillLevel))
 				{
 					PlayerVariables vars = player.getVariables();
-					String list = vars.getString("SubSkillList", "");
+					string list = vars.getString("SubSkillList", "");
 					if ((prevSkillLevel > 0) && list.contains(_id + "-" + prevSkillLevel))
 					{
 						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + skillLevel);
@@ -315,7 +315,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (checkPlayerSkill(player, trainer, s, skillLevel))
 				{
 					PlayerVariables vars = player.getVariables();
-					String list = vars.getString("DualSkillList", "");
+					string list = vars.getString("DualSkillList", "");
 					if ((prevSkillLevel > 0) && list.contains(_id + "-" + prevSkillLevel))
 					{
 						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + skillLevel);

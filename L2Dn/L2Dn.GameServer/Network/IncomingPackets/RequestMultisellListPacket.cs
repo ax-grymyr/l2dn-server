@@ -31,7 +31,7 @@ public struct RequestMultisellListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        MultisellData.getInstance().separateAndSend(_multiSellId, player, null, false, Double.NaN, Double.NaN, 4);
+        MultisellData.getInstance().separateAndSend(_multiSellId, player, null, false, double.NaN, double.NaN, 4);
         return ValueTask.CompletedTask;
     }
 }

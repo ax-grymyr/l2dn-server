@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
 {
-    private String _target;
+    private string _target;
 
     public void ReadContent(PacketBitReader reader)
     {

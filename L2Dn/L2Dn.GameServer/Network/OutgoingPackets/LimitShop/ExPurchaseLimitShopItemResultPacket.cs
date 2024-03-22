@@ -31,7 +31,7 @@ public readonly struct ExPurchaseLimitShopItemResultPacket: IOutgoingPacket
         {
             writer.WriteByte((byte)entry.getRewardIndex());
             writer.WriteInt32(entry.getItemId());
-            writer.WriteInt32(entry.getCount());
+            writer.WriteInt32(entry.Count);
         }
         
         writer.WriteInt32(_remainingInfo);

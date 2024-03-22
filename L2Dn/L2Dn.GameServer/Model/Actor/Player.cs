@@ -15848,7 +15848,7 @@ public class Player: Playable
 		return getVariables().getInt(PlayerVariables.SKILL_ENCHANT_STAR + level, 0);
 	}
 	
-	public void setSkillEnchantExp(int level, int exp)
+	public void setSkillEnchantExp(int level, long exp)
 	{
 		getVariables().set(PlayerVariables.SKILL_ENCHANT_STAR + level, exp);
 	}

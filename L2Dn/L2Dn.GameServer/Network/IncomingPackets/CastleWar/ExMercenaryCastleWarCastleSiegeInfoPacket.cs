@@ -21,6 +21,7 @@ public struct ExMercenaryCastleWarCastleSiegeInfoPacket: IIncomingPacket<GameSes
             return ValueTask.CompletedTask;
 		
         connection.Send(new MercenaryCastleWarCastleInfoPacket(_castleId));
+        
         return ValueTask.CompletedTask;
     }
 }

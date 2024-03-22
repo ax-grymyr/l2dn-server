@@ -6,13 +6,12 @@ namespace L2Dn.GameServer.Model.Holders;
 public class LimitShopRandomCraftReward
 {
 	private readonly int _itemId;
-	private int _count;
 	private readonly int _rewardIndex;
 	
 	public LimitShopRandomCraftReward(int itemId, int count, int rewardIndex)
 	{
 		_itemId = itemId;
-		_count = count;
+		Count = count;
 		_rewardIndex = rewardIndex;
 	}
 	
@@ -21,10 +20,7 @@ public class LimitShopRandomCraftReward
 		return _itemId;
 	}
 	
-	public int getCount()
-	{
-		return _count;
-	}
+	public int Count { get; set; }
 	
 	public int getRewardIndex()
 	{

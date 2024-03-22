@@ -20,9 +20,9 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 	
     private int _brId;
     private int _count;
-    private String _charName;
-    private String _mailTitle;
-    private String _mailBody;
+    private string _charName;
+    private string _mailTitle;
+    private string _mailBody;
 
     public void ReadContent(PacketBitReader reader)
     {

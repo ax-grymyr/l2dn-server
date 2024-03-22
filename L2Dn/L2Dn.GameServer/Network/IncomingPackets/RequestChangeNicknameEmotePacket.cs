@@ -35,7 +35,7 @@ public struct RequestChangeNicknameEmotePacket: IIncomingPacket<GameSession>
 
     private int _colorNum;
     private int _itemId;
-    private String _title;
+    private string _title;
 
     public void ReadContent(PacketBitReader reader)
     {

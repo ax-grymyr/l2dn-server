@@ -200,12 +200,12 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 		return ValueTask.CompletedTask;
 	}
 	
-	private static bool checkBot(String text) => WALKER_COMMAND_LIST.Any(text.StartsWith);
+	private static bool checkBot(string text) => WALKER_COMMAND_LIST.Any(text.StartsWith);
 
 	private static string checkText(string text)
 	{
 		string filteredText = text;
-		foreach (String pattern in Config.FILTER_LIST)
+		foreach (string pattern in Config.FILTER_LIST)
 		{
 			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
 		}

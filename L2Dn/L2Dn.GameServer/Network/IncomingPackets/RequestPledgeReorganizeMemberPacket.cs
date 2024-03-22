@@ -8,9 +8,9 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestPledgeReorganizeMemberPacket: IIncomingPacket<GameSession>
 {
     private int _isMemberSelected;
-    private String _memberName;
+    private string _memberName;
     private int _newPledgeType;
-    private String _selectedMember;
+    private string _selectedMember;
 
     public void ReadContent(PacketBitReader reader)
     {

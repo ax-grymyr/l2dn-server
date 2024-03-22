@@ -14,8 +14,8 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
 {
     private static readonly Logger LOGGER_CHAT = LogManager.GetLogger("chat");
 	
-    private String _message;
-    private String _reciever;
+    private string _message;
+    private string _reciever;
 
     public void ReadContent(PacketBitReader reader)
     {

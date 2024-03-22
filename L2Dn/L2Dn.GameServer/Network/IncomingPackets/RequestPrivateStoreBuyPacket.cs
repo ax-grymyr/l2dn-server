@@ -92,7 +92,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 		
 		if ((storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL) && (storeList.getItemCount() > _items.size()))
 		{
-			String msgErr = "[RequestPrivateStoreBuy] " + player + " tried to buy less items than sold by package-sell, ban this player for bot usage!";
+			string msgErr = "[RequestPrivateStoreBuy] " + player + " tried to buy less items than sold by package-sell, ban this player for bot usage!";
 			Util.handleIllegalPlayerAction(player, msgErr, Config.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}

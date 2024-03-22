@@ -16,7 +16,7 @@ public struct RequestPledgeWaitingApplyPacket: IIncomingPacket<GameSession>
 {
     private int _karma;
     private int _clanId;
-    private String _message;
+    private string _message;
 
     public void ReadContent(PacketBitReader reader)
     {
