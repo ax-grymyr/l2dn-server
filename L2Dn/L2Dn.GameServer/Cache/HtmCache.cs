@@ -84,11 +84,13 @@ public class HtmCache
 			content = content.replaceAll("[\\t\\n]", ""); // Remove tabs and new lines.
 			
 			filePath = Path.GetRelativePath(Config.DATAPACK_ROOT_PATH, filePath);
-			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("data/lang") &&
-			    content.All(c => c <= 127))
+			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
+			    content.Any(c => c >= 128))
 			{
 				LOGGER.Warn("HTML encoding check: File " + filePath + " contains non ASCII content.");
 			}
+
+			filePath = filePath.Replace("\\", "/");
 			
 			String oldContent = HTML_CACHE.put(filePath, content);
 			if (oldContent == null)
