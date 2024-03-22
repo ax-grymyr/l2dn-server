@@ -22,7 +22,7 @@ public class StatSet : IParserAdvUtils
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
 	public static readonly StatSet EMPTY_STATSET = new StatSet(new Map<string, object>());
 	
-	private readonly Map<String, Object> _set;
+	private readonly Map<string, object> _set;
 	
 	public StatSet(): this(new Map<string, object>())
 	{
@@ -35,7 +35,7 @@ public class StatSet : IParserAdvUtils
 			_set.put(attribute.Name.LocalName, attribute.Value);
 	}
 	
-	public StatSet(Func<Map<String, Object>> mapFactory): this(mapFactory())
+	public StatSet(Func<Map<string, object>> mapFactory): this(mapFactory())
 	{
 	}
 	
@@ -48,7 +48,7 @@ public class StatSet : IParserAdvUtils
 	 * Returns the set of values
 	 * @return HashMap
 	 */
-	public Map<String, Object> getSet()
+	public Map<string, object> getSet()
 	{
 		return _set;
 	}
@@ -77,7 +77,7 @@ public class StatSet : IParserAdvUtils
 	 * @return bool : value associated to the key
 	 * @throws IllegalArgumentException : If value is not set or value is not bool
 	 */
-	public bool getBoolean(String key)
+	public bool getBoolean(string key)
 	{
 		object val = _set.get(key);
 		if (val == null)
@@ -106,9 +106,9 @@ public class StatSet : IParserAdvUtils
 	 * @param key : String designating the key in the entry set
 	 * @return bool : value associated to the key
 	 */
-	public bool getBoolean(String key, bool defaultValue)
+	public bool getBoolean(string key, bool defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -119,7 +119,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return bool.Parse((String) val);
+			return bool.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -127,9 +127,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public byte getByte(String key)
+	public byte getByte(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Byte value required, but not specified");
@@ -140,7 +140,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return byte.Parse((String) val);
+			return byte.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -148,9 +148,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public byte getByte(String key, byte defaultValue)
+	public byte getByte(string key, byte defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -161,7 +161,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return byte.Parse((String)val);
+			return byte.Parse((string)val);
 		}
 		catch (Exception e)
 		{
@@ -169,23 +169,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public short increaseByte(String key, byte increaseWith)
+	public short increaseByte(string key, byte increaseWith)
 	{
 		byte newValue = (byte) (getByte(key) + increaseWith);
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public short increaseByte(String key, byte defaultValue, byte increaseWith)
+	public short increaseByte(string key, byte defaultValue, byte increaseWith)
 	{
 		byte newValue = (byte) (getByte(key, defaultValue) + increaseWith);
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public byte[] getByteArray(String key, String splitOn)
+	public byte[] getByteArray(string key, string splitOn)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Byte value required, but not specified");
@@ -195,9 +195,9 @@ public class StatSet : IParserAdvUtils
 			return new byte[] { (byte)val };
 		}
 		int c = 0;
-		String[] vals = ((string) val).Split(splitOn);
+		string[] vals = ((string) val).Split(splitOn);
 		byte[] result = new byte[vals.Length];
-		foreach (String v in vals)
+		foreach (string v in vals)
 		{
 			try
 			{
@@ -211,19 +211,19 @@ public class StatSet : IParserAdvUtils
 		return result;
 	}
 	
-	public List<Byte> getByteList(String key, String splitOn)
+	public List<byte> getByteList(string key, string splitOn)
 	{
-		List<Byte> result = new();
-		foreach (Byte i in getByteArray(key, splitOn))
+		List<byte> result = new();
+		foreach (byte i in getByteArray(key, splitOn))
 		{
 			result.Add(i);
 		}
 		return result;
 	}
 	
-	public short getShort(String key)
+	public short getShort(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Short value required, but not specified");
@@ -234,7 +234,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return short.Parse((String) val);
+			return short.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -242,9 +242,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public short getShort(String key, short defaultValue)
+	public short getShort(string key, short defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -255,7 +255,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return short.Parse((String) val);
+			return short.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -263,23 +263,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public short increaseShort(String key, short increaseWith)
+	public short increaseShort(string key, short increaseWith)
 	{
 		short newValue = (short) (getShort(key) + increaseWith);
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public short increaseShort(String key, short defaultValue, short increaseWith)
+	public short increaseShort(string key, short defaultValue, short increaseWith)
 	{
 		short newValue = (short) (getShort(key, defaultValue) + increaseWith);
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public virtual int getInt(String key)
+	public virtual int getInt(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Integer value required, but not specified: " + key + "!");
@@ -292,7 +292,7 @@ public class StatSet : IParserAdvUtils
 		
 		try
 		{
-			return int.Parse((String) val);
+			return int.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -300,9 +300,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public int getInt(String key, int defaultValue)
+	public int getInt(string key, int defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -323,23 +323,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public int increaseInt(String key, int increaseWith)
+	public int increaseInt(string key, int increaseWith)
 	{
 		int newValue = getInt(key) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public int increaseInt(String key, int defaultValue, int increaseWith)
+	public int increaseInt(string key, int defaultValue, int increaseWith)
 	{
 		int newValue = getInt(key, defaultValue) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public int[] getIntArray(String key, String splitOn)
+	public int[] getIntArray(string key, string splitOn)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Integer value required, but not specified");
@@ -349,9 +349,9 @@ public class StatSet : IParserAdvUtils
 			return new int[] { ((int) val) };
 		}
 		int c = 0;
-		String[] vals = ((String) val).Split(splitOn);
+		string[] vals = ((string) val).Split(splitOn);
 		int[] result = new int[vals.Length];
-		foreach (String v in vals)
+		foreach (string v in vals)
 		{
 			try
 			{
@@ -365,15 +365,15 @@ public class StatSet : IParserAdvUtils
 		return result;
 	}
 	
-	public List<int> getIntegerList(String key)
+	public List<int> getIntegerList(string key)
 	{
-		String val = getString(key, null);
+		string val = getString(key, null);
 		List<int> result;
 		if (val != null)
 		{
-			String[] splitVal = val.Split(",");
+			string[] splitVal = val.Split(",");
 			result = new(splitVal.Length + 1);
-			foreach (String split in splitVal)
+			foreach (string split in splitVal)
 			{
 				result.Add(int.Parse(split));
 			}
@@ -385,7 +385,7 @@ public class StatSet : IParserAdvUtils
 		return result;
 	}
 	
-	public void setIntegerList(String key, List<int> list)
+	public void setIntegerList(string key, List<int> list)
 	{
 		if (key == null)
 		{
@@ -410,17 +410,17 @@ public class StatSet : IParserAdvUtils
 		set(key, sb.ToString());
 	}
 	
-	public Map<int, int> getIntegerMap(String key)
+	public Map<int, int> getIntegerMap(string key)
 	{
-		String val = getString(key, null);
+		string val = getString(key, null);
 		Map<int, int> result;
 		if (val != null)
 		{
-			String[] splitVal = val.Split(",");
+			string[] splitVal = val.Split(",");
 			result = new();
-			foreach (String split in splitVal)
+			foreach (string split in splitVal)
 			{
-				String[] entry = split.Split("-");
+				string[] entry = split.Split("-");
 				result.put(int.Parse(entry[0]), int.Parse(entry[1]));
 			}
 		}
@@ -431,7 +431,7 @@ public class StatSet : IParserAdvUtils
 		return result;
 	}
 	
-	public void setIntegerMap(String key, Map<int, int> map)
+	public void setIntegerMap(string key, Map<int, int> map)
 	{
 		if (key == null)
 		{
@@ -458,9 +458,9 @@ public class StatSet : IParserAdvUtils
 		set(key, sb.ToString());
 	}
 	
-	public DateTime getDateTime(String key)
+	public DateTime getDateTime(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("DateTime value required, but not specified");
@@ -471,7 +471,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return DateTime.Parse((String) val);
+			return DateTime.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -479,9 +479,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public long getLong(String key)
+	public long getLong(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Long value required, but not specified");
@@ -492,7 +492,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return long.Parse((String) val);
+			return long.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -500,9 +500,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public DateTime getDateTime(String key, DateTime defaultValue)
+	public DateTime getDateTime(string key, DateTime defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -513,7 +513,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return DateTime.Parse((String) val);
+			return DateTime.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -521,9 +521,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public long getLong(String key, long defaultValue)
+	public long getLong(string key, long defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -534,7 +534,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return long.Parse((String) val);
+			return long.Parse((string) val);
 		}
 		catch (Exception e)
 		{
@@ -542,23 +542,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public long increaseLong(String key, long increaseWith)
+	public long increaseLong(string key, long increaseWith)
 	{
 		long newValue = getLong(key) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public long increaseLong(String key, long defaultValue, long increaseWith)
+	public long increaseLong(string key, long defaultValue, long increaseWith)
 	{
 		long newValue = getLong(key, defaultValue) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public float getFloat(String key)
+	public float getFloat(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Float value required, but not specified");
@@ -569,7 +569,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return float.Parse((String) val);
+			return float.Parse((string) val, CultureInfo.InvariantCulture);
 		}
 		catch (Exception e)
 		{
@@ -577,9 +577,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public float getFloat(String key, float defaultValue)
+	public float getFloat(string key, float defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -592,7 +592,7 @@ public class StatSet : IParserAdvUtils
 		
 		try
 		{
-			return float.Parse(val.ToString() ?? string.Empty);
+			return float.Parse(val.ToString() ?? string.Empty, CultureInfo.InvariantCulture);
 		}
 		catch (Exception e)
 		{
@@ -600,23 +600,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public float increaseFloat(String key, float increaseWith)
+	public float increaseFloat(string key, float increaseWith)
 	{
 		float newValue = getFloat(key) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public float increaseFloat(String key, float defaultValue, float increaseWith)
+	public float increaseFloat(string key, float defaultValue, float increaseWith)
 	{
 		float newValue = getFloat(key, defaultValue) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public double getDouble(String key)
+	public double getDouble(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Double value required, but not specified");
@@ -627,7 +627,7 @@ public class StatSet : IParserAdvUtils
 		}
 		try
 		{
-			return double.Parse((String) val);
+			return double.Parse((string) val, CultureInfo.InvariantCulture);
 		}
 		catch (Exception e)
 		{
@@ -635,9 +635,9 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public double getDouble(String key, double defaultValue)
+	public double getDouble(string key, double defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -659,23 +659,23 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public double increaseDouble(String key, double increaseWith)
+	public double increaseDouble(string key, double increaseWith)
 	{
 		double newValue = getDouble(key) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public double increaseDouble(String key, double defaultValue, double increaseWith)
+	public double increaseDouble(string key, double defaultValue, double increaseWith)
 	{
 		double newValue = getDouble(key, defaultValue) + increaseWith;
 		set(key, newValue);
 		return newValue;
 	}
 	
-	public String getString(String key)
+	public string getString(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("String value required, but not specified");
@@ -683,9 +683,9 @@ public class StatSet : IParserAdvUtils
 		return val.ToString() ?? string.Empty;
 	}
 	
-	public String getString(String key, String defaultValue)
+	public string getString(string key, string defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -693,9 +693,9 @@ public class StatSet : IParserAdvUtils
 		return val.ToString() ?? string.Empty;
 	}
 	
-	public TimeSpan getDuration(String key)
+	public TimeSpan getDuration(string key)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("String value required, but not specified");
@@ -704,9 +704,9 @@ public class StatSet : IParserAdvUtils
 		return TimeUtil.ParseDuration(val.ToString());
 	}
 	
-	public TimeSpan getDuration(String key, TimeSpan defaultValue)
+	public TimeSpan getDuration(string key, TimeSpan defaultValue)
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -715,10 +715,10 @@ public class StatSet : IParserAdvUtils
 		return TimeUtil.ParseDuration(val.ToString());
 	}
 	
-	public T getEnum<T>(String key)
+	public T getEnum<T>(string key)
 		where T: struct, Enum
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but not specified");
@@ -737,10 +737,10 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public T getEnum<T>(String key, T defaultValue)
+	public T getEnum<T>(string key, T defaultValue)
 		where T: struct, Enum
 	{
-		Object val = _set.get(key);
+		object val = _set.get(key);
 		if (val == null)
 			return defaultValue;
 		
@@ -757,10 +757,10 @@ public class StatSet : IParserAdvUtils
 		}
 	}
 	
-	public A getObject<A>(String name)
+	public A getObject<A>(string name)
 		where A: class
 	{
-		Object obj = _set.get(name);
+		object obj = _set.get(name);
 		if ((obj == null) || !(obj is A))
 		{
 			return null;
@@ -769,10 +769,10 @@ public class StatSet : IParserAdvUtils
 		return (A) obj;
 	}
 	
-	public A getObject<A>(String name, A defaultValue)
+	public A getObject<A>(string name, A defaultValue)
 		where A: class
 	{
-		Object obj = _set.get(name);
+		object obj = _set.get(name);
 		if ((obj == null) || !(obj is A))
 		{
 			return defaultValue;
@@ -780,9 +780,9 @@ public class StatSet : IParserAdvUtils
 		return (A) obj;
 	}
 	
-	public SkillHolder getSkillHolder(String key)
+	public SkillHolder getSkillHolder(string key)
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (!(obj is SkillHolder))
 		{
 			return null;
@@ -790,9 +790,9 @@ public class StatSet : IParserAdvUtils
 		return (SkillHolder) obj;
 	}
 	
-	public Location getLocation(String key)
+	public Location getLocation(string key)
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (!(obj is Location))
 		{
 			return null;
@@ -800,9 +800,9 @@ public class StatSet : IParserAdvUtils
 		return (Location) obj;
 	}
 	
-	public List<MinionHolder> getMinionList(String key)
+	public List<MinionHolder> getMinionList(string key)
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (!(obj is List<MinionHolder>))
 		{
 			return new();
@@ -811,9 +811,9 @@ public class StatSet : IParserAdvUtils
 		return (List<MinionHolder>) obj;
 	}
 	
-	public List<T> getList<T>(String key)
+	public List<T> getList<T>(string key)
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (obj is null)
 			if (typeof(T).IsClass || typeof(T).IsInterface)
 				return default;
@@ -850,7 +850,7 @@ public class StatSet : IParserAdvUtils
 			return items;
 		}
 		
-		List<Object> originalList = (List<Object>)obj;
+		List<object> originalList = (List<object>)obj;
 		if (originalList.Count!=0 && !originalList.All(o => o is T))
 		{
 			if (typeof(T).IsEnum)
@@ -875,16 +875,16 @@ public class StatSet : IParserAdvUtils
 		return (List<T>) obj;
 	}
 	
-	public List<T> getList<T>(String key, List<T> defaultValue)
+	public List<T> getList<T>(string key, List<T> defaultValue)
 	{
 		List<T> list = getList<T>(key);
 		return list == null ? defaultValue : list;
 	}
 	
-	public List<T> getEnumList<T>(String key)
+	public List<T> getEnumList<T>(string key)
 		where T: struct, Enum
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (!(obj is List<T>))
 		{
 			return null;
@@ -904,9 +904,9 @@ public class StatSet : IParserAdvUtils
 		throw new NotImplementedException();		
 	}
 	
-	public Map<K, V> getMap<K, V>(String key)
+	public Map<K, V> getMap<K, V>(string key)
 	{
-		Object obj = _set.get(key);
+		object obj = _set.get(key);
 		if (!(obj is Map<K, V>))
 		{
 			return null;
@@ -923,47 +923,47 @@ public class StatSet : IParserAdvUtils
 		return (Map<K, V>) obj;
 	}
 	
-	public virtual void set(String name, Object value)
+	public virtual void set(string name, object value)
 	{
 		_set.put(name, value);
 	}
 	
-	public virtual void set(String name, bool value)
+	public virtual void set(string name, bool value)
 	{
-		_set.put(name, value ? Boolean.TrueString : Boolean.FalseString);
+		_set.put(name, value ? bool.TrueString : bool.FalseString);
 	}
 	
-	public virtual void set(String key, byte value)
-	{
-		_set.put(key, value);
-	}
-	
-	public virtual void set(String key, short value)
+	public virtual void set(string key, byte value)
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void set(String key, int value)
+	public virtual void set(string key, short value)
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void set(String key, long value)
+	public virtual void set(string key, int value)
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void set(String key, float value)
+	public virtual void set(string key, long value)
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void set(String key, double value)
+	public virtual void set(string key, float value)
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void set(String key, String value)
+	public virtual void set(string key, double value)
+	{
+		_set.put(key, value);
+	}
+	
+	public virtual void set(string key, string value)
 	{
 		if (value == null)
 		{
@@ -972,23 +972,23 @@ public class StatSet : IParserAdvUtils
 		_set.put(key, value);
 	}
 	
-	public virtual void set<T>(String key, T value)
+	public virtual void set<T>(string key, T value)
 		where T: struct, Enum
 	{
 		_set.put(key, value);
 	}
 	
-	public virtual void remove(String key)
+	public virtual void remove(string key)
 	{
 		_set.remove(key);
 	}
 	
-	public bool Contains(String name)
+	public bool Contains(string name)
 	{
 		return _set.ContainsKey(name);
 	}
 	
-	public bool contains(String name)
+	public bool contains(string name)
 	{
 		return _set.ContainsKey(name);
 	}

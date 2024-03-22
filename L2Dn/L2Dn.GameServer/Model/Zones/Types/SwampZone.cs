@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
@@ -34,7 +35,7 @@ public class SwampZone : ZoneType
 	{
 		if (name.equals("move_bonus"))
 		{
-			_move_bonus = double.Parse(value);
+			_move_bonus = double.Parse(value, CultureInfo.InvariantCulture);
 		}
 		else if (name.equals("castleId"))
 		{
