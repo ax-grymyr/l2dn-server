@@ -219,9 +219,9 @@ public abstract class Summon: Playable
 		return _owner != null ? _owner.getReputation() : 0;
 	}
 	
-	public override bool getPvpFlag()
+	public override PvpFlagStatus getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : false;
+		return _owner != null ? _owner.getPvpFlag() : PvpFlagStatus.None;
 	}
 	
 	public override Team getTeam()

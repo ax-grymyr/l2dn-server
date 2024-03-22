@@ -330,7 +330,7 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		}
 		if (_helper.HasComponent(NpcInfoType.PVP_FLAG))
 		{
-			writer.WriteByte(_summon.getPvpFlag()); // PVP flag
+			writer.WriteByte((byte)_summon.getPvpFlag()); // PVP flag
 		}
 		if (_helper.HasComponent(NpcInfoType.REPUTATION))
 		{

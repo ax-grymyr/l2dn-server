@@ -107,9 +107,9 @@ public class EffectPoint : Npc
 		return (_owner != null) ? _owner.getAllyId() : null;
 	}
 	
-	public override bool getPvpFlag()
+	public override PvpFlagStatus getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : false;
+		return _owner != null ? _owner.getPvpFlag() : PvpFlagStatus.None;
 	}
 	
 	public override Team getTeam()

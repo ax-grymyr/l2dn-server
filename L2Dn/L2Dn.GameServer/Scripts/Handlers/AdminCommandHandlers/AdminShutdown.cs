@@ -1,0 +1,101 @@
+using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.TaskManagers;
+using L2Dn.GameServer.Utilities;
+
+namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
+
+/**
+ * This class handles following admin commands: - server_shutdown [sec] = shows menu or shuts down server in sec seconds
+ */
+public class AdminShutdown: IAdminCommandHandler
+{
+	private static readonly string[] ADMIN_COMMANDS =
+	{
+		"admin_server_shutdown",
+		"admin_server_restart",
+		"admin_server_abort"
+	};
+	
+	public bool useAdminCommand(String command, Player activeChar)
+	{
+		if (command.startsWith("admin_server_shutdown"))
+		{
+			try
+			{
+				String val = command.Substring(22);
+				if (Util.isDigit(val))
+				{
+					serverShutdown(activeChar, int.Parse(val), false);
+				}
+				else
+				{
+					BuilderUtil.sendSysMessage(activeChar, "Usage: //server_shutdown <seconds>");
+					sendHtmlForm(activeChar);
+				}
+			}
+			catch (IndexOutOfRangeException e)
+			{
+				sendHtmlForm(activeChar);
+			}
+		}
+		else if (command.startsWith("admin_server_restart"))
+		{
+			try
+			{
+				String val = command.Substring(21);
+				if (Util.isDigit(val))
+				{
+					serverShutdown(activeChar, int.Parse(val), true);
+				}
+				else
+				{
+					BuilderUtil.sendSysMessage(activeChar, "Usage: //server_restart <seconds>");
+					sendHtmlForm(activeChar);
+				}
+			}
+			catch (IndexOutOfRangeException e)
+			{
+				sendHtmlForm(activeChar);
+			}
+		}
+		else if (command.startsWith("admin_server_abort"))
+		{
+			serverAbort(activeChar);
+		}
+		return true;
+	}
+	
+	public String[] getAdminCommandList()
+	{
+		return ADMIN_COMMANDS;
+	}
+	
+	private void sendHtmlForm(Player activeChar)
+	{
+		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/shutdown.htm");
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
+		int t = GameTimeTaskManager.getInstance().getGameTime();
+		int h = t / 60;
+		int m = t % 60;
+		
+		helper.Replace("%count%", World.getInstance().getPlayers().Count.ToString());
+		helper.Replace("%used%", GC.GetTotalMemory(false).ToString());
+		helper.Replace("%time%", h + ":" + m);
+		activeChar.sendPacket(adminReply);
+	}
+	
+	private void serverShutdown(Player activeChar, int seconds, bool restart)
+	{
+		Shutdown.getInstance().startShutdown(activeChar, seconds, restart);
+	}
+	
+	private void serverAbort(Player activeChar)
+	{
+		Shutdown.getInstance().abort(activeChar);
+	}
+}

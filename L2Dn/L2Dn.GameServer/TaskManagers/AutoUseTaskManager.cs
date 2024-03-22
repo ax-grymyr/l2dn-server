@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -283,7 +284,7 @@ public class AutoUseTaskManager
 							
 							// Playable target cast.
 							Playable caster = pet != null ? pet : player;
-							if ((target != null) && target.isPlayable() && (!target.getActingPlayer().getPvpFlag()) && (target.getActingPlayer().getReputation() >= 0))
+							if ((target != null) && target.isPlayable() && (target.getActingPlayer().getPvpFlag() == PvpFlagStatus.None) && (target.getActingPlayer().getReputation() >= 0))
 							{
 								caster.doCast(skill);
 							}

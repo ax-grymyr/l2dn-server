@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -35,7 +36,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 		public long RelationCode;
 		public bool AutoAttackable;
 		public int Reputation;
-		public bool PvpFlag;
+		public PvpFlagStatus PvpFlag;
 	}
 
 	private readonly Relation _relation;
@@ -99,7 +100,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 			writer.WriteInt64(relation.RelationCode);
 			writer.WriteByte(relation.AutoAttackable);
 			writer.WriteInt32(relation.Reputation);
-			writer.WriteByte(relation.PvpFlag);
+			writer.WriteByte((byte)relation.PvpFlag);
 		}
 	}
 }

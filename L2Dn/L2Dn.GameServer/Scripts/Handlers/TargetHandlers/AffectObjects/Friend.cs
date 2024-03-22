@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -97,7 +98,7 @@ public class Friend: IAffectObjectHandler
 				}
 				
 				// By default any neutral non-flagged player is considered a friend.
-				return (!target.getActingPlayer().getPvpFlag()) && (target.getActingPlayer().getReputation() >= 0);
+				return (target.getActingPlayer().getPvpFlag() == PvpFlagStatus.None) && (target.getActingPlayer().getReputation() >= 0);
 			}
 			
 			// By default any npc that isnt mob is considered friend.

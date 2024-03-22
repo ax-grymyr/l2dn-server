@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -23,11 +24,11 @@ public class Flag: AbstractEffect
 	
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.updatePvPFlag(1);
+		effected.updatePvPFlag(PvpFlagStatus.Enabled);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.getActingPlayer().updatePvPFlag(0);
+		effected.getActingPlayer().updatePvPFlag(PvpFlagStatus.None);
 	}
 }

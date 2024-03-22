@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -36,11 +37,11 @@ public class PvpFlagTaskManager: Runnable
 				}
 				else if (currentTime > (player.getPvpFlagLasts() - TimeSpan.FromMilliseconds(20000)))
 				{
-					player.updatePvPFlag(2);
+					player.updatePvPFlag(PvpFlagStatus.Flashing);
 				}
 				else
 				{
-					player.updatePvPFlag(1);
+					player.updatePvPFlag(PvpFlagStatus.Enabled);
 				}
 			}
 		}

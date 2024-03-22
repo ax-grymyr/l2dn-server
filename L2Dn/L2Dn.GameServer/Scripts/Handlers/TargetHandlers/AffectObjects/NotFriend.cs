@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -118,7 +119,7 @@ public class NotFriend: IAffectObjectHandler
 			}
 			
 			// Auto play target mode check.
-			if (player.isAutoPlaying() && ((!targetPlayer.getPvpFlag()) || (targetPlayer.getReputation() > -1)))
+			if (player.isAutoPlaying() && ((targetPlayer.getPvpFlag() == PvpFlagStatus.None) || (targetPlayer.getReputation() > -1)))
 			{
 				int targetMode = player.getAutoPlaySettings().getNextTargetMode();
 				if ((targetMode != 0 /* Any Target */) && (targetMode != 2 /* Characters */))
@@ -134,7 +135,7 @@ public class NotFriend: IAffectObjectHandler
 			}
 			
 			// By default any flagged/PK player is considered enemy.
-			return (targetPlayer.getPvpFlag()) || (targetPlayer.getReputation() < 0);
+			return (targetPlayer.getPvpFlag() != PvpFlagStatus.None) || (targetPlayer.getReputation() < 0);
 		}
 		
 		return target.isAutoAttackable(creature);

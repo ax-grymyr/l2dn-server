@@ -134,7 +134,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		}
         
 		_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
-		if (npc.getPvpFlag())
+		if (npc.getPvpFlag() != PvpFlagStatus.None)
 			_helper.AddComponent(NpcInfoType.PVP_FLAG);
 
 		// TODO: Confirm me
@@ -371,7 +371,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		}
 		
 		if (_helper.HasComponent(NpcInfoType.PVP_FLAG))
-			writer.WriteByte(_npc.getPvpFlag()); // PVP flag
+			writer.WriteByte((byte)_npc.getPvpFlag()); // PVP flag
 
 		if (_helper.HasComponent(NpcInfoType.REPUTATION))
 			writer.WriteInt32(_npc.getReputation()); // Reputation

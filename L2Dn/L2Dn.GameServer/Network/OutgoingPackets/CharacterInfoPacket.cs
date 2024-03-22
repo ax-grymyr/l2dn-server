@@ -152,7 +152,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getInventory().getPaperdollItemVisualId(slot));
 		}
 
-		writer.WriteByte(_player.getPvpFlag());
+		writer.WriteByte((byte)_player.getPvpFlag());
 		writer.WriteInt32(_player.getReputation());
 		writer.WriteInt32(_mAtkSpd);
 		writer.WriteInt32(_pAtkSpd);

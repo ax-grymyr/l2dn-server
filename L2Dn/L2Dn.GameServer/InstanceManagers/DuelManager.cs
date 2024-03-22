@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
@@ -41,7 +42,7 @@ public class DuelManager
 			bool playerInPvP = false;
 			foreach (Player temp in playerA.getParty().getMembers())
 			{
-				if (temp.getPvpFlag())
+				if (temp.getPvpFlag() != PvpFlagStatus.None)
 				{
 					playerInPvP = true;
 					break;
@@ -51,7 +52,7 @@ public class DuelManager
 			{
 				foreach (Player temp in playerB.getParty().getMembers())
 				{
-					if (temp.getPvpFlag())
+					if (temp.getPvpFlag() != PvpFlagStatus.None)
 					{
 						playerInPvP = true;
 						break;
@@ -72,7 +73,7 @@ public class DuelManager
 				return;
 			}
 		}
-		else if ((playerA.getPvpFlag()) || (playerB.getPvpFlag()))
+		else if ((playerA.getPvpFlag() != PvpFlagStatus.None) || (playerB.getPvpFlag() != PvpFlagStatus.None))
 		{
 			playerA.sendMessage(engagedInPvP);
 			playerB.sendMessage(engagedInPvP);

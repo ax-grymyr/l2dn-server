@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public struct StatusUpdatePacket: IOutgoingPacket
 {
-    private readonly Map<StatusUpdateType, int> _updates = new();
+    private readonly Map<StatusUpdateType, int> _updates;
     private readonly int _objectId;
     private readonly bool _isPlayable;
     private int _casterObjectId = 0;
@@ -20,6 +20,7 @@ public struct StatusUpdatePacket: IOutgoingPacket
      */
     public StatusUpdatePacket(WorldObject obj)
     {
+        _updates = new();
         _objectId = obj.getObjectId();
         _isPlayable = obj.isPlayable();
     }

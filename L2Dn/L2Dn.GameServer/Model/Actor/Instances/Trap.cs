@@ -158,9 +158,9 @@ public class Trap: Npc
 		return _owner;
 	}
 	
-	public override bool getPvpFlag()
+	public override PvpFlagStatus getPvpFlag()
 	{
-		return _owner != null ? _owner.getPvpFlag() : false;
+		return _owner != null ? _owner.getPvpFlag() : PvpFlagStatus.None;
 	}
 	
 	public override Item getSecondaryWeaponInstance()
@@ -260,7 +260,7 @@ public class Trap: Npc
 			return;
 		}
 		
-		if ((_owner != null) && (!_owner.getPvpFlag()) && (_owner.getReputation() >= 0))
+		if ((_owner != null) && (_owner.getPvpFlag() == PvpFlagStatus.None) && (_owner.getReputation() >= 0))
 		{
 			return;
 		}

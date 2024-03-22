@@ -113,7 +113,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 		}
 		writer.WriteInt32(-1); // High Five NPCString ID
 		writer.WriteString(_summon.getTitle()); // owner name
-		writer.WriteByte(_summon.getPvpFlag()); // confirmed
+		writer.WriteByte((byte)_summon.getPvpFlag()); // confirmed
 		writer.WriteInt32(_summon.getReputation()); // confirmed
 		writer.WriteInt32(_curFed); // how fed it is
 		writer.WriteInt32(_maxFed); // max fed it can be

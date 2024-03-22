@@ -30,7 +30,7 @@ public class FindPvP: IBypassHandler
 		foreach (Player plr in World.getInstance().getPlayers())
 		{
 			if ((plr == null) //
-				|| (!plr.getPvpFlag()) //
+				|| (plr.getPvpFlag() == PvpFlagStatus.None) //
 				|| (plr.getInstanceId() != 0) //
 				|| plr.isGM() //
 				|| plr.isInsideZone(ZoneId.PEACE) //
@@ -43,7 +43,7 @@ public class FindPvP: IBypassHandler
 			int count = 0;
 			foreach (Player pl in World.getInstance().getVisibleObjects<Player>(plr))
 			{
-				if ((pl.getPvpFlag()) && !pl.isInsideZone(ZoneId.PEACE))
+				if ((pl.getPvpFlag() != PvpFlagStatus.None) && !pl.isInsideZone(ZoneId.PEACE))
 				{
 					count++;
 				}

@@ -156,7 +156,7 @@ public class Player: Playable
 	private int _totalDeaths;
 	
 	/** The PvP Flag state of the Player (0=White, 1=Purple) */
-	private bool _pvpFlag;
+	private PvpFlagStatus _pvpFlag;
 	
 	private int _einhasadOverseeingLevel;
 	
@@ -528,7 +528,7 @@ public class Player: Playable
 	
 	public void startPvPFlag()
 	{
-		updatePvPFlag(1);
+		updatePvPFlag(PvpFlagStatus.Enabled);
 		PvpFlagTaskManager.getInstance().add(this);
 	}
 	
@@ -540,7 +540,7 @@ public class Player: Playable
 	public void stopPvPFlag()
 	{
 		stopPvpRegTask();
-		updatePvPFlag(0);
+		updatePvPFlag(PvpFlagStatus.None);
 	}
 	
 	// Training Camp
@@ -1490,17 +1490,17 @@ public class Player: Playable
 	 * Set the PvP Flag of the Player.
 	 * @param pvpFlag
 	 */
-	public void setPvpFlag(bool pvpFlag)
+	public void setPvpFlag(PvpFlagStatus pvpFlag)
 	{
 		_pvpFlag = pvpFlag;
 	}
 	
-	public override bool getPvpFlag()
+	public override PvpFlagStatus getPvpFlag()
 	{
 		return _pvpFlag;
 	}
 	
-	public void updatePvPFlag(bool value)
+	public override void updatePvPFlag(PvpFlagStatus value)
 	{
 		if (_pvpFlag == value)
 		{
@@ -4692,12 +4692,12 @@ public class Player: Playable
 						!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 					{
 						// pvp
-						if (Config.REWARD_PVP_ITEM && (_pvpFlag))
+						if (Config.REWARD_PVP_ITEM && (_pvpFlag != PvpFlagStatus.None))
 						{
 							pk.addItem("PvP Item Reward", Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
 						}
 						// pk
-						if (Config.REWARD_PK_ITEM && (!_pvpFlag))
+						if (Config.REWARD_PK_ITEM && (_pvpFlag == PvpFlagStatus.None))
 						{
 							pk.addItem("PK Item Reward", Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
 						}
@@ -4708,7 +4708,7 @@ public class Player: Playable
 				if (Config.ANNOUNCE_PK_PVP && (((pk != null) && !pk.isGM()) || fpcKill))
 				{
 					string msg = "";
-					if (!_pvpFlag)
+					if (_pvpFlag == PvpFlagStatus.None)
 					{
 						msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
 						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
@@ -4722,7 +4722,7 @@ public class Player: Playable
 							Broadcast.toAllOnlinePlayers(msg, false);
 						}
 					}
-					else if (_pvpFlag)
+					else if (_pvpFlag != PvpFlagStatus.None)
 					{
 						msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
 						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
@@ -4738,7 +4738,7 @@ public class Player: Playable
 					}
 				}
 				
-				if (fpcKill && Config.FAKE_PLAYER_KILL_KARMA && (!_pvpFlag) && (getReputation() >= 0))
+				if (fpcKill && Config.FAKE_PLAYER_KILL_KARMA && (_pvpFlag != PvpFlagStatus.None) && (getReputation() >= 0))
 				{
 					killer.setReputation(killer.getReputation() - 150);
 				}
@@ -5155,7 +5155,7 @@ public class Player: Playable
 		}
 		
 		setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
-		if (!_pvpFlag)
+		if (_pvpFlag != PvpFlagStatus.None)
 		{
 			startPvPFlag();
 		}
@@ -5194,7 +5194,7 @@ public class Player: Playable
 			{
 				setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
 			}
-			if (!_pvpFlag)
+			if (_pvpFlag != PvpFlagStatus.None)
 			{
 				startPvPFlag();
 			}
@@ -8480,7 +8480,7 @@ public class Player: Playable
 		}
 		
 		// Check if the Player has Karma
-		if ((getReputation() < 0) || (_pvpFlag))
+		if ((getReputation() < 0) || (_pvpFlag != PvpFlagStatus.None))
 		{
 			return true;
 		}
@@ -13509,7 +13509,7 @@ public class Player: Playable
 			}
 			else if ((getClan() == null) || (target.getClan() == null))
 			{
-				if ((!target.getPvpFlag()) && (target.getReputation() >= 0))
+				if ((target.getPvpFlag() != PvpFlagStatus.None) && (target.getReputation() >= 0))
 				{
 					return false;
 				}

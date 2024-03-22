@@ -168,7 +168,7 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_player.getMagicEvasionRate());
 		writer.WriteInt32(_player.getMagicAccuracy());
 		writer.WriteInt32(_player.getMCriticalHit());
-		writer.WriteInt32(_player.getPvpFlag()); // 0-non-pvp 1-pvp = violett name
+		writer.WriteInt32((int)_player.getPvpFlag()); // 0-non-pvp 1-pvp = violett name
 		writer.WriteInt32(_player.getReputation());
 		writer.WriteInt32(_runSpd);
 		writer.WriteInt32(_walkSpd);

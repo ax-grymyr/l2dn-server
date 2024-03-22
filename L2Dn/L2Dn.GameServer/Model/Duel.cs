@@ -354,7 +354,7 @@ public class Duel
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if ((_playerA.getPvpFlag()) || (_playerB.getPvpFlag()))
+		else if ((_playerA.getPvpFlag() != PvpFlagStatus.None) || (_playerB.getPvpFlag() != PvpFlagStatus.None))
 		{
 			if (sendMessage)
 			{

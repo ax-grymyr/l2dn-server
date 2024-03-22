@@ -4300,7 +4300,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 			{
 				return false;
 			}
-			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getReputation() < 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag()))
+			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getReputation() < 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag() != PvpFlagStatus.None))
 			{
 				return false;
 			}
@@ -4520,12 +4520,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable
 	 * Dummy value that gets overriden in Playable.
 	 * @return 0
 	 */
-	public virtual bool getPvpFlag()
+	public virtual PvpFlagStatus getPvpFlag()
 	{
-		return false;
+		return PvpFlagStatus.None;
 	}
 	
-	public void updatePvPFlag(int value)
+	public virtual void updatePvPFlag(PvpFlagStatus value)
 	{
 		// Overridden in Player
 	}

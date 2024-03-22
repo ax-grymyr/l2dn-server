@@ -283,7 +283,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		if (_helper.HasComponent(UserInfoType.SOCIAL))
 		{
 			writer.WriteInt16(34); // 447
-			writer.WriteByte(_player.getPvpFlag());
+			writer.WriteByte((byte)_player.getPvpFlag());
 			writer.WriteInt32(_player.getReputation()); // Reputation
 			writer.WriteByte(_player.isNoble());
 			writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.GM_HERO_AURA) ? 2 : 0)); // 152 - Value for enabled changed to 2?

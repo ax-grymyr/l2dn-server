@@ -654,7 +654,7 @@ public class SkillCaster: Runnable
 					{
 						// Supporting monsters or players results in pvpflag.
 						if (((skill.getEffectPoint() > 0) && obj.isMonster()) //
-							|| (obj.isPlayable() && ((obj.getActingPlayer().getPvpFlag()) //
+							|| (obj.isPlayable() && ((obj.getActingPlayer().getPvpFlag() != PvpFlagStatus.None) //
 								|| (((Creature) obj).getReputation() < 0) //
 							)))
 						{

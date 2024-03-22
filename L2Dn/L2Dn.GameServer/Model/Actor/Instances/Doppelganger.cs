@@ -102,9 +102,9 @@ public class Doppelganger : Attackable
 		// TODO: Cast skills.
 	}
 	
-	public override bool getPvpFlag()
+	public override PvpFlagStatus getPvpFlag()
 	{
-		return getSummoner() != null ? getSummoner().getPvpFlag() : false;
+		return getSummoner() != null ? getSummoner().getPvpFlag() : PvpFlagStatus.None;
 	}
 	
 	public override Team getTeam()

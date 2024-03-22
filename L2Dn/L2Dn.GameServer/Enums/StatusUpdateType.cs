@@ -77,7 +77,7 @@ public static class StatusUpdateTypeUtil
 			StatusUpdateType.M_ATK => creature.getMAtk(),
 			StatusUpdateType.CAST_SPD => creature.getMAtkSpd(),
 			StatusUpdateType.M_DEF => creature.getMDef(),
-			StatusUpdateType.PVP_FLAG => creature.getPvpFlag() ? 1 : 0,
+			StatusUpdateType.PVP_FLAG => (int)creature.getPvpFlag(),
 			StatusUpdateType.REPUTATION => creature.isPlayer() ? creature.getActingPlayer().getReputation() : 0,
 
 			StatusUpdateType.CUR_CP => (int)creature.getCurrentCp(),

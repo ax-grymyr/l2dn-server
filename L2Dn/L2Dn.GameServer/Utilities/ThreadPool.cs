@@ -88,4 +88,9 @@ public static class ThreadPool
         
         return delay;
     }
+
+    public static List<string> getStats()
+    {
+        return ["TODO"];
+    }
 }

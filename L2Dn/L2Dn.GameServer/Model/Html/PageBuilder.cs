@@ -6,6 +6,19 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Html;
 
+public static class PageBuilder
+{
+	public static PageBuilder<T> newBuilder<T>(List<T> elements, int elementsPerPage, String bypass)
+	{
+		return new PageBuilder<T>(elements, elementsPerPage, bypass.Trim());
+	}
+	
+	public static PageBuilder<T> newBuilder<T>(T[] elements, int elementsPerPage, String bypass)
+	{
+		return new PageBuilder<T>(elements.ToList(), elementsPerPage, bypass.Trim());
+	}
+}
+
 public class PageBuilder<T>
 {
 	private readonly List<T> _elements;
@@ -15,9 +28,9 @@ public class PageBuilder<T>
 	private IPageHandler _pageHandler = DefaultPageHandler.INSTANCE;
 	private IBypassFormatter _formatter = DefaultFormatter.INSTANCE;
 	private IHtmlStyle _style = DefaultStyle.INSTANCE;
-	private IBodyHandler<T> _bodyHandler;
+	private Action<int, T, StringBuilder> _bodyHandler;
 	
-	private PageBuilder(List<T> elements, int elementsPerPage, String bypass)
+	public PageBuilder(List<T> elements, int elementsPerPage, String bypass)
 	{
 		_elements = elements;
 		_elementsPerPage = elementsPerPage;
@@ -30,12 +43,20 @@ public class PageBuilder<T>
 		return this;
 	}
 	
-	public PageBuilder<T> bodyHandler(IBodyHandler<T> bodyHandler)
+	public PageBuilder<T> bodyHandler(Action<int, T, StringBuilder> bodyHandler)
 	{
 		Objects.requireNonNull(bodyHandler, "Body Handler cannot be null!");
 		_bodyHandler = bodyHandler;
 		return this;
 	}
+	
+	public PageBuilder<T> bodyHandler(IBodyHandler<T> bodyHandler)
+	{
+		Objects.requireNonNull(bodyHandler, "Body Handler cannot be null!");
+		_bodyHandler = bodyHandler.apply;
+		return this;
+	}
+
 	
 	public PageBuilder<T> pageHandler(IPageHandler pageHandler)
 	{
@@ -76,17 +97,26 @@ public class PageBuilder<T>
 		
 		int start = Math.Max(_elementsPerPage * _currentPage, 0);
 		StringBuilder sb = new StringBuilder();
-		_bodyHandler.create(_elements, pages, start, _elementsPerPage, sb);
+		create(_bodyHandler, _elements, pages, start, _elementsPerPage, sb);
 		return new PageResult(pages, pagerTemplate, sb);
 	}
 	
-	public static PageBuilder<T> newBuilder(List<T> elements, int elementsPerPage, String bypass)
+	private static void create(Action<int, T, StringBuilder> apply, IEnumerable<T> elements, int pages, int start, int elementsPerPage, StringBuilder sb)
 	{
-		return new PageBuilder<T>(elements, elementsPerPage, bypass.Trim());
-	}
-	
-	public static PageBuilder<T> newBuilder(T[] elements, int elementsPerPage, String bypass)
-	{
-		return new PageBuilder<T>(elements.ToList(), elementsPerPage, bypass.Trim());
+		int i = 0;
+		foreach (T element in elements)
+		{
+			if (i++ < start)
+			{
+				continue;
+			}
+
+			apply(pages, element, sb);
+
+			if (i >= (elementsPerPage + start))
+			{
+				break;
+			}
+		}
 	}
 }

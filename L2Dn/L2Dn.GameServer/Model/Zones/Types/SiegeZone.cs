@@ -160,7 +160,7 @@ public class SiegeZone : ZoneType
 				player.exitedNoLanding();
 			}
 			// Set pvp flag
-			if (!player.getPvpFlag())
+			if (player.getPvpFlag() == PvpFlagStatus.None)
 			{
 				player.startPvPFlag();
 			}

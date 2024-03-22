@@ -1,4 +1,5 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -68,7 +69,7 @@ public class BlockActions: AbstractEffect
 			{
 				if ((effector != null) && !effector.isDead())
 				{
-					if (effector.isPlayable() && (!effected.getActingPlayer().getPvpFlag()))
+					if (effector.isPlayable() && (effected.getActingPlayer().getPvpFlag() == PvpFlagStatus.None))
 					{
 						effected.disableCoreAI(false);
 					}

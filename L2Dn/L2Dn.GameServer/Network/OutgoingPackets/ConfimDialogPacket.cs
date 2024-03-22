@@ -18,6 +18,13 @@ public readonly struct ConfirmDialogPacket: IOutgoingPacket
 	public ConfirmDialogPacket(SystemMessageId smId, int time = 0)
 	{
 		_params = new SystemMessageParams(smId);
+		_time = time;
+	}
+	
+	public ConfirmDialogPacket(string text, int time = 0)
+	{
+		_params = new SystemMessageParams(text);
+		_time = time;
 	}
 	
 	public ConfirmDialogPacket(string text)

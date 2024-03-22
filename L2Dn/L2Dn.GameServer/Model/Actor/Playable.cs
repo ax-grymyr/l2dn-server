@@ -186,7 +186,7 @@ public abstract class Playable: Creature
 			|| (target == null) //
 			|| (player == target) //
 			|| (target.getReputation() < 0) //
-			|| (target.getPvpFlag()) //
+			|| (target.getPvpFlag() != PvpFlagStatus.None) //
 			|| target.isOnDarkSide())
 		{
 			return true;
