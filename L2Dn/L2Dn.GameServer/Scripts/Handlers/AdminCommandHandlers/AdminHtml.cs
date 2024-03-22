@@ -58,7 +58,7 @@ public class AdminHtml: IAdminCommandHandler
 	 */
 	public static void showAdminHtml(Player activeChar, String path)
 	{
-		showHtml(activeChar, "data/html/admin/" + path, false);
+		showHtml(activeChar, "html/admin/" + path, false);
 	}
 	
 	/**
