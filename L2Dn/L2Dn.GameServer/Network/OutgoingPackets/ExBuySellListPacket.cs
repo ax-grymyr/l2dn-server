@@ -57,7 +57,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		_type = BUY_SELL_LIST_BUY;
 		_listId = list.getListId();
 		_list = list.getProducts();
-		_money = player.isGM() && (player.getAdena() == 0) && (list.getNpcsAllowed() == null)
+		_money = player.isGM() && player.getAdena() == 0 && list.getNpcsAllowed() == null
 			? 1000000000
 			: player.getAdena();
 		_inventorySlots = player.getInventory().getNonQuestSize();
@@ -73,7 +73,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		foreach (Item item in player.getInventory().getItems())
 		{
 			if (!item.isEquipped() && item.isSellable() &&
-			    ((pet == null) || (item.getObjectId() != pet.getControlObjectId())))
+			    (pet == null || item.getObjectId() != pet.getControlObjectId()))
 				_sellList.Add(item);
 		}
 
@@ -139,7 +139,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		writer.WriteInt16((short)_list.Count);
 		foreach (Product product in _list)
 		{
-			if ((product.getCount() > 0) || !product.hasLimitedStock())
+			if (product.getCount() > 0 || !product.hasLimitedStock())
 			{
 				InventoryPacketHelper.WriteItem(writer, new ItemInfo(product));
 				writer.WriteInt64((long)(product.getPrice() * (1.0 + _castleTaxRate + product.getBaseTaxRate())));
@@ -174,7 +174,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 				writer.WriteInt32(i++);
 				writer.WriteInt64(Config.MERCHANT_ZERO_SELL_PRICE
 					? 0
-					: (item.getTemplate().getReferencePrice() / 2) * item.getCount());
+					: item.getTemplate().getReferencePrice() / 2 * item.getCount());
 			}
 		}
 		else

@@ -93,7 +93,7 @@ public class AdminShop: IAdminCommandHandler
 		{
 			activeChar.sendPacket(new ExBuySellListPacket(buyList, activeChar, 0));
 			activeChar.sendPacket(new ExBuySellListPacket(activeChar, false));
-			activeChar.sendPacket(new ExBuySellListPacket());
+			activeChar.sendPacket(new ExBuySellListPacket(false));
 		}
 		else
 		{
