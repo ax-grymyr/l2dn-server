@@ -11655,10 +11655,11 @@ public class Player: Playable
 	 */
 	public bool isJailed()
 	{
+		string? macAddress = _client?.HardwareInfo?.getMacAddress();
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
-			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
-			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.JAIL) //
-			|| ((_client != null) && (_client.MacAddress != null) && PunishmentManager.getInstance().hasPunishment(_client.MacAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
+		       || PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
+		       || PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.JAIL) //
+		       || ((macAddress != null) && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
 	}
 	
 	/**
@@ -11666,10 +11667,11 @@ public class Player: Playable
 	 */
 	public bool isChatBanned()
 	{
+		string? macAddress = _client?.HardwareInfo?.getMacAddress();
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.CHAT_BAN) //
-			|| ((_client != null) && (_client.MacAddress != null) && PunishmentManager.getInstance().hasPunishment(_client.MacAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
+			|| ((macAddress != null) && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
 	}
 	
 	public void startFameTask(TimeSpan delay, int fameFixRate)

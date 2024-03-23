@@ -21,7 +21,6 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public ImmutableArray<CharSelectInfoPackage> Characters { get; set; } = ImmutableArray<CharSelectInfoPackage>.Empty;
     public Player? Player { get; set; }
     public object PlayerLock { get; } = new();
-    public string? MacAddress { get; set; }
     public bool IsDetached { get; set; }
     public ClientHardwareInfoHolder? HardwareInfo { get; set; }
 
