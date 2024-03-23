@@ -31,9 +31,10 @@ public sealed class HtmlContent
         _disableValidation = true;
     }
     
-    public void Replace(string pattern, string value)
+    public void Replace(string pattern, string? value)
     {
-        _html = _html.replaceAll(pattern, value.replaceAll(@"\$", @"\\\$"));
+        string val = value?.replaceAll(@"\$", @"\\\$") ?? string.Empty; 
+        _html = _html.replaceAll(pattern, val);
     }
 
     public void Replace<T>(string pattern, T value)
