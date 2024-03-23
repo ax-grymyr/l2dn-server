@@ -20,7 +20,7 @@ internal static class LogUtils
 
             _logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
             span = span[len..];
-            position += 8;
+            position += 16;
         }
     }
 
@@ -39,7 +39,7 @@ internal static class LogUtils
             }
 
             _logger.Trace($"S({sessionId})  0x{position:X8}: {bytes}");
-            position += 8;
+            position += 16;
         }
     }
 }
