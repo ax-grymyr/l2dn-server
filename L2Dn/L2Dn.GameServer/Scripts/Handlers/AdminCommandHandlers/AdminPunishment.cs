@@ -145,15 +145,15 @@ public class AdminPunishment: IAdminCommandHandler
 							{
 								target = activeChar.getTarget().getActingPlayer();
 							}
-							String content = HtmCache.getInstance().getHtm(activeChar, "data/html/admin/punishment-player.htm");
+							String content = HtmCache.getInstance().getHtm(activeChar, "html/admin/punishment-player.htm");
 							if (content != null)
 							{
 								content = content.Replace("%player_name%", target.getName());
 								content = content.Replace("%punishments%", string.Join(";", EnumUtil.GetValues<PunishmentType>()));
 								content = content.Replace("%acc%", target.getAccountName());
 								content = content.Replace("%char%", target.getName());
-								content = content.Replace("%ip%", target.getIPAddress());
-								content = content.Replace("%hwid%", (target.getClient() == null) || (target.getClient()?.HardwareInfo == null) ? "Unknown" : target.getClient().HardwareInfo.getMacAddress());
+								content = content.Replace("%ip%", target.getClient()?.IpAddress.ToString() ?? "-");
+								content = content.Replace("%hwid%", target.getClient()?.HardwareInfo?.getMacAddress() ?? "-");
 								activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, content));
 							}
 							else

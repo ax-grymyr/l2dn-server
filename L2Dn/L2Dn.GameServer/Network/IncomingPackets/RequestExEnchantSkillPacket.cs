@@ -128,7 +128,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 				StringBuilder sb = new StringBuilder();
 				LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName()).Append(" [")
 					.Append(player.getObjectId()).Append("] Account:").Append(player.getAccountName()).Append(" IP:")
-					.Append(player.getIPAddress()).Append(", +").Append(enchantedSkill.getLevel()).Append(" ")
+					.Append(session.IpAddress).Append(", +").Append(enchantedSkill.getLevel()).Append(" ")
 					.Append(enchantedSkill.getSubLevel()).Append(" - ").Append(enchantedSkill.getName()).Append(" (")
 					.Append(enchantedSkill.getId()).Append("), ").ToString());
 			}

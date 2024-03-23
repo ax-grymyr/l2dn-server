@@ -32,7 +32,7 @@ public class AdminOnline: IAdminCommandHandler
 			int combat = 0;
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				String ip = player.getIPAddress();
+				String? ip = player.getClient()?.IpAddress.ToString();
 				if ((ip != null) && !ips.Contains(ip))
 				{
 					ips.add(ip);

@@ -51,7 +51,8 @@ public class BanHandler: IPunishmentHandler
 				String ip = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
-					if (player.getIPAddress().Equals(ip))
+					string? ipAddress = player.getClient()?.IpAddress.ToString();
+					if (string.Equals(ipAddress, ip))
 					{
 						applyToPlayer(player);
 					}
@@ -60,16 +61,15 @@ public class BanHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.HWID:
 			{
-				// TODO: implement
-				// String hwid = task.getKey();
-				// foreach (Player player in World.getInstance().getPlayers())
-				// {
-				// 	GameSession client = player.getClient();
-				// 	if ((client != null) && client.getHardwareInfo().getMacAddress().equals(hwid))
-				// 	{
-				// 		applyToPlayer(player);
-				// 	}
-				// }
+				String hwid = task.getKey();
+				foreach (Player player in World.getInstance().getPlayers())
+				{
+					string? macAddress = player.getClient()?.HardwareInfo?.getMacAddress();  
+					if (string.Equals(macAddress, hwid))
+					{
+						applyToPlayer(player);
+					}
+				}
 				
 				break;
 			}

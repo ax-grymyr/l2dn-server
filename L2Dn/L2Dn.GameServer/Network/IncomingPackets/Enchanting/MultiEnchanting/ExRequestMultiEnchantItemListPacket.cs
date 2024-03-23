@@ -164,7 +164,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							{
 								LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName())
 									.Append(" [").Append(player.getObjectId()).Append("] Account:")
-									.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+									.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 									.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 									.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
 									.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
@@ -175,7 +175,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							{
 								LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName())
 									.Append(" [").Append(player.getObjectId()).Append("] Account:")
-									.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+									.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 									.Append(", ").Append(enchantItem.getName()).Append("(")
 									.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
 									.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
@@ -198,7 +198,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Safe Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
 										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
@@ -209,7 +209,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Safe Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
 										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
@@ -240,7 +240,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Blessed Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
 										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
@@ -251,7 +251,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Blessed Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
 										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
@@ -281,7 +281,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 										LOGGER_ENCHANT.Info(sb.Append("Unable to destroy, Character:")
 											.Append(player.getName()).Append(" [").Append(player.getObjectId())
 											.Append("] Account:").Append(player.getAccountName()).Append(" IP:")
-											.Append(player.getIPAddress()).Append(", +")
+											.Append(session.IpAddress).Append(", +")
 											.Append(enchantItem.getEnchantLevel()).Append(" ")
 											.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
 											.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
@@ -293,7 +293,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 										LOGGER_ENCHANT.Info(sb.Append("Unable to destroy, Character:")
 											.Append(player.getName()).Append(" [").Append(player.getObjectId())
 											.Append("] Account:").Append(player.getAccountName()).Append(" IP:")
-											.Append(player.getIPAddress()).Append(", ").Append(enchantItem.getName())
+											.Append(session.IpAddress).Append(", ").Append(enchantItem.getName())
 											.Append("(").Append(enchantItem.getCount()).Append(") [")
 											.Append(enchantItem.getObjectId()).Append("], ").Append(scroll.getName())
 											.Append("(").Append(scroll.getCount()).Append(") [")
@@ -359,7 +359,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
 										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
@@ -370,7 +370,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Fail, Character:").Append(player.getName())
 										.Append(" [").Append(player.getObjectId()).Append("] Account:")
-										.Append(player.getAccountName()).Append(" IP:").Append(player.getIPAddress())
+										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
 										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())

@@ -45,7 +45,8 @@ public class ChatBanHandler: IPunishmentHandler
 				String ip = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
-					if (player.getIPAddress().Equals(ip))
+					string? ipAddress = player.getClient()?.IpAddress.ToString();
+					if (string.Equals(ipAddress, ip))
 					{
 						applyToPlayer(task, player);
 					}
@@ -54,15 +55,15 @@ public class ChatBanHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.HWID:
 			{
-				// String hwid = task.getKey();
-				// foreach (Player player in World.getInstance().getPlayers())
-				// {
-				// 	GameSession? client = player.getClient();
-				// 	if ((client != null) && client.getHardwareInfo().getMacAddress().equals(hwid))
-				// 	{
-				// 		applyToPlayer(task, player);
-				// 	}
-				// }
+				String hwid = task.getKey();
+				foreach (Player player in World.getInstance().getPlayers())
+				{
+					string? macAddress = player.getClient()?.HardwareInfo?.getMacAddress();
+					if (string.Equals(macAddress, hwid))
+					{
+						applyToPlayer(task, player);
+					}
+				}
 				break;
 			}
 		}
@@ -101,7 +102,8 @@ public class ChatBanHandler: IPunishmentHandler
 				String ip = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
-					if (player.getIPAddress().Equals(ip))
+					string? ipAddress = player.getClient()?.IpAddress.ToString();
+					if (string.Equals(ipAddress, ip))
 					{
 						removeFromPlayer(player);
 					}
@@ -111,14 +113,14 @@ public class ChatBanHandler: IPunishmentHandler
 			case PunishmentAffect.HWID:
 			{
 				String hwid = task.getKey();
-				// foreach (Player player in World.getInstance().getPlayers())
-				// {
-				// 	GameClient client = player.getClient();
-				// 	if ((client != null) && client.getHardwareInfo().getMacAddress().equals(hwid))
-				// 	{
-				// 		removeFromPlayer(player);
-				// 	}
-				// }
+				foreach (Player player in World.getInstance().getPlayers())
+				{
+					string? macAddress = player.getClient()?.HardwareInfo?.getMacAddress();
+					if (string.Equals(macAddress, hwid))
+					{
+						removeFromPlayer(player);
+					}
+				}
 				break;
 			}
 		}

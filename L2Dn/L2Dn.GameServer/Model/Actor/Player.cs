@@ -92,7 +92,6 @@ public class Player: Playable
 	private int _pcCafePoints;
 	
 	private GameSession? _client;
-	private string _ip = "N/A";
 	
 	private readonly int _accountId;
 	private readonly string _accountName;
@@ -3778,15 +3777,6 @@ public class Player: Playable
 	public void setClient(GameSession? client)
 	{
 		_client = client;
-		if ((_client != null) && (_client.IpAddress != null))
-		{
-			_ip = _client.IpAddress.ToString();
-		}
-	}
-	
-	public string getIPAddress()
-	{
-		return _ip;
 	}
 	
 	public Location getCurrentSkillWorldPosition()
@@ -11655,11 +11645,12 @@ public class Player: Playable
 	 */
 	public bool isJailed()
 	{
+		string? ipAddress = _client?.IpAddress.ToString();
 		string? macAddress = _client?.HardwareInfo?.getMacAddress();
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
 		       || PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
-		       || PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.JAIL) //
-		       || ((macAddress != null) && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
+		       || (ipAddress != null && PunishmentManager.getInstance().hasPunishment(ipAddress, PunishmentAffect.IP, PunishmentType.JAIL)) //
+		       || (macAddress != null && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
 	}
 	
 	/**
@@ -11667,11 +11658,12 @@ public class Player: Playable
 	 */
 	public bool isChatBanned()
 	{
+		string? ipAddress = _client?.IpAddress.ToString();
 		string? macAddress = _client?.HardwareInfo?.getMacAddress();
 		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.CHAT_BAN) //
-			|| PunishmentManager.getInstance().hasPunishment(getIPAddress(), PunishmentAffect.IP, PunishmentType.CHAT_BAN) //
-			|| ((macAddress != null) && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
+			|| (ipAddress != null && PunishmentManager.getInstance().hasPunishment(ipAddress, PunishmentAffect.IP, PunishmentType.CHAT_BAN)) //
+			|| (macAddress != null && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
 	}
 	
 	public void startFameTask(TimeSpan delay, int fameFixRate)

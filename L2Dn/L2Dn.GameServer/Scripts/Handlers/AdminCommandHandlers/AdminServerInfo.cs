@@ -4,6 +4,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
@@ -110,11 +111,13 @@ public class AdminServerInfo: IAdminCommandHandler
 				Set<String> realPlayers = new();
 				foreach (Player onlinePlayer in World.getInstance().getPlayers())
 				{
-					if ((onlinePlayer != null) && (onlinePlayer.getClient() != null) && !onlinePlayer.getClient().IsDetached)
+					GameSession? client = onlinePlayer?.getClient(); 
+					if ((client != null) && !client.IsDetached)
 					{
-						realPlayers.add(onlinePlayer.getIPAddress());
+						realPlayers.add(client.IpAddress.ToString());
 					}
 				}
+				
 				return realPlayers.size();
 			}
 		}
