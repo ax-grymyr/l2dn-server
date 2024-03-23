@@ -13,6 +13,8 @@ public struct RequestExQuestAcceptPacket: IIncomingPacket<GameSession>
 
     public void ReadContent(PacketBitReader reader)
     {
+        _questId = reader.ReadInt32();
+        _isAccepted = reader.ReadBoolean();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
