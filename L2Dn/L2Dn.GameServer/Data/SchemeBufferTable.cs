@@ -1,8 +1,9 @@
-using System.Text;
 using System.Xml.Linq;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -11,13 +12,9 @@ namespace L2Dn.GameServer.Data;
 /**
  * This class loads available skills and stores players' buff schemes into _schemesTable.
  */
-public class SchemeBufferTable
+public class SchemeBufferTable: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SchemeBufferTable));
-
-	private const string LOAD_SCHEMES = "SELECT * FROM buffer_schemes";
-	private const string DELETE_SCHEMES = "TRUNCATE TABLE buffer_schemes";
-	private const string INSERT_SCHEME = "INSERT INTO buffer_schemes (object_id, scheme_name, skills) VALUES (?,?,?)";
 
 	private readonly Map<int, Map<String, List<int>>> _schemesTable = new();
 	private readonly Map<int, BuffSkillHolder> _availableBuffs = new();
@@ -26,28 +23,20 @@ public class SchemeBufferTable
 	{
 		try
 		{
-			using FileStream stream = new FileStream("./data/SchemeBufferSkills.xml", FileMode.Open, FileAccess.Read,
-				FileShare.Read);
-
-			XDocument document = XDocument.Load(stream);
-			var categories = document.Root.Elements("category");
-			foreach (var category in categories)
+			XDocument document = LoadXmlDocument(DataFileLocation.Data, "SchemeBufferSkills.xml");
+			document.Elements("list").Elements("category").ForEach(node =>
 			{
-				string? categoryType = category.Attribute("type")?.Value;
-				if (!string.IsNullOrEmpty(categoryType))
+				string categoryType = node.GetAttributeValueAsString("type");
+				foreach (var buff in node.Elements("buff"))
 				{
-					var buffs = category.Elements("buff");
-					foreach (var buff in buffs)
-					{
-						int buffId = int.Parse(buff.Attribute("id")?.Value);
-						int buffLevel = int.Parse(buff.Attribute("level")?.Value);
-						int price = int.Parse(buff.Attribute("price")?.Value);
-						string desc = buff.Attribute("desc")?.Value;
+					int buffId = buff.GetAttributeValueAsInt32("id");
+					int buffLevel = buff.GetAttributeValueAsInt32("level");
+					int price = buff.GetAttributeValueAsInt32("price");
+					string desc = buff.GetAttributeValueAsString("desc");
 
-						_availableBuffs.put(buffId, new BuffSkillHolder(buffId, buffLevel, price, categoryType, desc));
-					}
+					_availableBuffs.put(buffId, new BuffSkillHolder(buffId, buffLevel, price, categoryType, desc));
 				}
-			}
+			});
 		}
 		catch (Exception e)
 		{
