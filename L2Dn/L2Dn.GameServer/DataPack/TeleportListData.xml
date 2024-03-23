@@ -3,6 +3,7 @@
 	<teleport id="2" x="42111" y="148222" z="-3688" price="1650" /> <!-- Execution Grounds -->
 	<teleport id="3" x="46467" y="126885" z="-3720" price="1650" /> <!-- Partisan's Hideaway -->
 	<teleport id="4" x="15233" y="114153" z="-3576" price="1650" /> <!-- Cruma Marshlands -->
+	<teleport id="5" x="17146" y="114176" z="-3440" price="1000" /> <!-- Cruma Tower -->
 	<teleport id="7" x="15689" y="142953" z="-2696" price="12000" /> <!-- Town of Dion -->
 	<teleport id="11" x="20505" y="189036" z="-3368" price="1650" /> <!-- Bee Hive -->
 	<teleport id="14" x="630" y="179184" z="-3720" price="1650" /> <!-- Plains of Dion -->
@@ -57,6 +58,7 @@
 	<teleport id="131" x="-45158" y="-112583" z="-240" price="7200" /> <!-- Orc Village -->
 	<teleport id="133" x="9340" y="-112509" z="-2536" price="500" /> <!-- Cave of Trials -->
 	<teleport id="134" x="8652" y="-139941" z="-1144" price="500" /> <!-- Frozen Waterfalls -->
+	<teleport id="135" x="-34614" y="-114721" z="-2104" price="200" /> <!-- Valley of Heroes -->
 	<teleport id="136" x="-10983" y="-117484" z="-2464" price="500" /> <!-- Immortal Plateau, Northern Region -->
 	<teleport id="137" x="-4190" y="-80040" z="-2696" price="500" /> <!-- Immortal Plateau, Southern Region -->
 	<teleport id="140" x="115190" y="-178176" z="-896" price="12000" /> <!-- Dwarven Village -->
@@ -75,7 +77,7 @@
 	<teleport id="316" x="-99843" y="237583" z="-3568" price="500" /> <!-- Obelisk of Victory -->
 	<teleport id="317" x="115583" y="192261" z="-3488" price="3900" /> <!-- Alligator Island -->
 	<teleport id="318" x="-22224" y="14168" z="-3232" price="500" /> <!-- Dark Elven Forest -->
-	<teleport id="320" x="-61095" y="75104" z="-3352" price="500" /> <!-- Spider Nest -->
+	<teleport id="320" x="-61081" y="72072" z="-3289" price="500" /> <!-- Spider Nest -->
 	<teleport id="321" x="146856" y="25803" z="-2008" price="22500" /> <!-- Town of Aden -->
 	<teleport id="324" x="146440" y="46723" z="-3432" price="3000" /> <!-- Coliseum -->
 	<teleport id="402" x="-24653" y="78033" z="-3448" price="6750" /> <!-- The Patriot's Necropolis -->
