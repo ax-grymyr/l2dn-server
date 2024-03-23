@@ -11,7 +11,7 @@ public struct StringTokenizer
     {
         _input = input;
         _delimiters = delimiters;
-        _tokens = input.Split(delimiters.ToCharArray());
+        _tokens = input.Split(delimiters.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
         if (_tokens.Length == 1 && string.IsNullOrEmpty(_tokens[0]))
             _tokens = Array.Empty<string>();
     }
