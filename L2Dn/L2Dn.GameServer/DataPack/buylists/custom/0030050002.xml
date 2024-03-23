@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92788" price="0" /> <!-- Pata Blade -->
+	<item id="92789" price="0" /> <!-- Great Sword Blade -->
+	<item id="92790" price="0" /> <!-- Heavy War Axe Head -->
+	<item id="92791" price="0" /> <!-- Spirit's Staff Head -->
+	<item id="92792" price="0" /> <!-- Keshanberk Blade -->
+	<item id="92793" price="0" /> <!-- Sword of Valhalla Blade -->
+	<item id="92794" price="0" /> <!-- Kris Edge -->
+	<item id="92795" price="0" /> <!-- Twilight Knife Edge -->
+	<item id="92796" price="0" /> <!-- Arthro Nail Blade -->
+	<item id="92797" price="0" /> <!-- Dark Elven Longbow Shaft -->
+	<item id="92798" price="0" /> <!-- Great Axe Head -->
+	<item id="92799" price="0" /> <!-- Damascus Sword Blade -->
+	<item id="92800" price="0" /> <!-- Lance Blade -->
+	<item id="92801" price="0" /> <!-- Deadman's Glory Stone -->
+	<item id="92802" price="0" /> <!-- Art of Battle Axe Blade -->
+	<item id="92804" price="0" /> <!-- Demon's Dagger Edge -->
+	<item id="92805" price="0" /> <!-- Bellion Cestus Edge -->
+	<item id="92806" price="0" /> <!-- Bow of Peril Shaft -->
+</list>

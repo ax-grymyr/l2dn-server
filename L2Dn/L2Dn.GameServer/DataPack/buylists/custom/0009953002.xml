@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="439" price="0" /> <!-- Karmian Tunic -->
+	<item id="93646" price="0" /> <!-- Karmian Tunic - Sealed -->
+	<item id="471" price="0" /> <!-- Karmian Stockings -->
+	<item id="93647" price="0" /> <!-- Karmian Stockings - Sealed -->
+	<item id="2454" price="0" /> <!-- Karmian Gloves -->
+	<item id="93649" price="0" /> <!-- Karmian Gloves - Sealed -->
+	<item id="2430" price="0" /> <!-- Karmian Boots -->
+	<item id="93648" price="0" /> <!-- Karmian Boots - Sealed -->
+	<item id="441" price="0" /> <!-- Demon's Tunic -->
+	<item id="472" price="0" /> <!-- Demon's Stockings -->
+	<item id="2459" price="0" /> <!-- Demon's Gloves -->
+	<item id="2435" price="0" /> <!-- Demon's Boots -->
+	<item id="442" price="0" /> <!-- Divine Tunic -->
+	<item id="473" price="0" /> <!-- Divine Stockings -->
+	<item id="2463" price="0" /> <!-- Divine Gloves -->
+	<item id="603" price="0" /> <!-- Divine Boots -->
+	<item id="93111" price="0" /> <!-- Chain Sigil - Sealed -->
+	<item id="93112" price="0" /> <!-- Sigil of Demon - Sealed -->
+</list>

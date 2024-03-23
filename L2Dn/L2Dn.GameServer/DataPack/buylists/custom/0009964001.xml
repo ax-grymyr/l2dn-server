@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="924" price="0" /> <!-- Majestic Necklace -->
+	<item id="933" price="0" /> <!-- Phoenix Necklace -->
+	<item id="6323" price="0" /> <!-- Sealed Phoenix Necklace -->
+	<item id="6326" price="0" /> <!-- Sealed Majestic Necklace -->
+</list>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92838" price="0" /> <!-- Dragon Slayer Edge -->
+	<item id="92841" price="0" /> <!-- Meteor Shower Head -->
+	<item id="92842" price="0" /> <!-- Elysian Head -->
+	<item id="92843" price="0" /> <!-- Soul Bow Shaft -->
+	<item id="92844" price="0" /> <!-- Carnage Bow Shaft -->
+	<item id="92845" price="0" /> <!-- Bloody Orchid Head -->
+	<item id="92846" price="0" /> <!-- Soul Separator Head -->
+	<item id="92847" price="0" /> <!-- Dragon Grinder Edge -->
+	<item id="92848" price="0" /> <!-- Blood Tornado Edge -->
+	<item id="92849" price="0" /> <!-- Tallum Glaive Edge -->
+	<item id="92850" price="0" /> <!-- Halberd Edge -->
+	<item id="92851" price="0" /> <!-- Desparion's Staff Head Edge -->
+	<item id="92852" price="0" /> <!-- Branch of Mother Tree Head -->
+	<item id="92853" price="0" /> <!-- Dark Legion's Edge Blade -->
+	<item id="92854" price="0" /> <!-- Sword of Miracles -->
+	<item id="92855" price="0" /> <!-- Elemental Sword Edge -->
+	<item id="92856" price="0" /> <!-- Tallum Blade Edge -->
+	<item id="92892" price="0" /> <!-- Spiritual Eye Piece -->
+	<item id="92893" price="0" /> <!-- Flaming Dragon Skull Piece -->
+	<item id="92895" price="0" /> <!-- Destroyer Hammer Piece -->
+	<item id="92891" price="0" /> <!-- Infernal Master Blade -->
+	<item id="92897" price="0" /> <!-- Sirra's Blade Edge -->
+	<item id="92898" price="0" /> <!-- Sword of Ipos -->
+	<item id="92899" price="0" /> <!-- Barakiel's Axe Piece -->
+	<item id="92900" price="0" /> <!-- Behemoth's Tunning Piece -->
+	<item id="92901" price="0" /> <!-- Naga's Storm Piece -->
+	<item id="92902" price="0" /> <!-- Tiphon's Spear Edge -->
+	<item id="92903" price="0" /> <!-- Shyeed's Bow Shaft -->
+	<item id="92905" price="0" /> <!-- Themis'Tongue Piece -->
+	<item id="92907" price="0" /> <!-- Daimon Crystal Fragment -->
+</list>

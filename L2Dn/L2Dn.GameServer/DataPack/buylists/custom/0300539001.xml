@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90010" price="0" /> <!-- Key of West Wing -->
+	<item id="90011" price="0" /> <!-- Key of East Wing -->
+	<item id="49685" price="0" /> <!-- Energy of Insolence -->
+	<item id="49766" price="0" /> <!-- Unidentified of Insolence -->
+	<item id="49759" price="0" /> <!-- Celestial Shard -->
+	<item id="49767" price="0" /> <!-- Broken Celestial Shard -->
+</list>

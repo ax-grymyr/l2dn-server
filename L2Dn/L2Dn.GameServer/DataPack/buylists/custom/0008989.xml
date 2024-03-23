@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="92" price="0" /> <!-- Spirit's Staff -->
+	<item id="210" price="0" /> <!-- Staff of Evil Spirits -->
+	<item id="93426" price="0" /> <!-- Staff of Evil Spirits - Sealed -->
+</list>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="49598" price="0" /> <!-- Blue Talisman - P. Crit.(1-hour) -->
+	<item id="49599" price="0" /> <!-- Blue Talisman - P. Atk.(1-hour) -->
+	<item id="49600" price="0" /> <!-- Blue Talisman - P. Def.(1-hour) -->
+	<item id="49601" price="0" /> <!-- Blue Talisman - P. Skill Evasion(1-hour) -->
+	<item id="49602" price="0" /> <!-- Blue Talisman - M. Skill Critical Rate(1-hour) -->
+	<item id="49603" price="0" /> <!-- Blue Talisman - M. Atk.(1-hour) -->
+	<item id="49604" price="0" /> <!-- Blue Talisman - M. Def.(1-hour) -->
+	<item id="49605" price="0" /> <!-- Blue Talisman - M. Skill Evasion(1-hour) -->
+	<item id="49606" price="0" /> <!-- Blue Talisman - M. Max Hp(1-hour) -->
+	<item id="49607" price="0" /> <!-- Blue Talisman - M. Max Hp(1-hour) -->
+	<item id="49608" price="0" /> <!-- Grey Talisman - Guard(1-hour) -->
+	<item id="49609" price="0" /> <!-- Grey Talisman - Denial(1-hour) -->
+	<item id="49610" price="0" /> <!-- Grey Talisman - Benefaction(1-hour) -->
+	<item id="49611" price="0" /> <!-- Grey Talisman - Block(1-hour) -->
+	<item id="49612" price="0" /> <!-- Grey Talisman - Gravity(1-hour) -->
+	<item id="49613" price="0" /> <!-- White Talisman - Bond(1-hour) -->
+	<item id="49614" price="0" /> <!-- White Talisman - P. Crit.(1-hour) -->
+	<item id="49615" price="0" /> <!-- White Talisman - P. Atk.(1-hour) -->
+	<item id="49616" price="0" /> <!-- White Talisman - P. Def.(1-hour) -->
+	<item id="49617" price="0" /> <!-- White Talisman - P. Skill Evasion(1-hour) -->
+	<item id="49618" price="0" /> <!-- White Talisman - M. Skill Critical Rate(1-hour) -->
+	<item id="49619" price="0" /> <!-- White Talisman - M. Atk.(1-hour) -->
+	<item id="49620" price="0" /> <!-- White Talisman - M. Def.(1-hour) -->
+	<item id="49621" price="0" /> <!-- White Talisman - M. Skill Evasion(1-hour) -->
+	<item id="49622" price="0" /> <!-- White Talisman - Max HP(1-hour) -->
+	<item id="49623" price="0" /> <!-- White Talisman - Max MP(1-hour) -->
+	<item id="49624" price="0" /> <!-- Yellow Talisman - Guard(1-hour) -->
+	<item id="49625" price="0" /> <!-- Yellow Talisman - Denial(1-hour) -->
+	<item id="49626" price="0" /> <!-- Yellow Talisman - Benefaction(1-hour) -->
+	<item id="49627" price="0" /> <!-- Yellow Talisman - Block(1-hour) -->
+	<item id="49628" price="0" /> <!-- Yellow Talisman - Gravity(1-hour) -->
+	<item id="49629" price="0" /> <!-- Yellow Talisman - Bond(1-hour) -->
+	<item id="49676" price="0" /> <!-- Talisman of Insolence Lv. 1 -->
+	<item id="49677" price="0" /> <!-- Talisman of Insolence Lv. 2 -->
+	<item id="49678" price="0" /> <!-- Talisman of Insolence Lv. 3 -->
+	<item id="49679" price="0" /> <!-- Talisman of Insolence Lv. 4 -->
+	<item id="49680" price="0" /> <!-- Talisman of Insolence Lv. 5 -->
+	<item id="49681" price="0" /> <!-- Talisman of Insolence Lv. 6 -->
+	<item id="49683" price="0" /> <!-- Talisman of Baium -->
+	<item id="49707" price="0" /> <!-- Talisman of Darkness - P. Atk.(1-hour) -->
+	<item id="49708" price="0" /> <!-- Talisman of Darkness - M. Atk.(1-hour) -->
+	<item id="49709" price="0" /> <!-- Talisman of Darkness - P. Def.(1-hour) -->
+	<item id="49710" price="0" /> <!-- Talisman of Darkness - M. Def.(1-hour) -->
+	<item id="49711" price="0" /> <!-- Talisman of Darkness - P. Skill Evasion(1-hour) -->
+	<item id="49712" price="0" /> <!-- Talisman of Darkness - M. Skill Evasion(1-hour) -->
+	<item id="49713" price="0" /> <!-- Talisman of Darkness - Max HP(1-hour) -->
+	<item id="49714" price="0" /> <!-- Talisman of Darkness - Max MP(1-hour) -->
+	<item id="49715" price="0" /> <!-- Talisman of Darkness - Received Healing(1-hour) -->
+	<item id="49716" price="0" /> <!-- Talisman of Darkness - Healing Power(1-hour) -->
+	<item id="49727" price="0" /> <!-- Talisman of Border Lv. 1 -->
+	<item id="49728" price="0" /> <!-- Talisman of Border Lv. 2 -->
+	<item id="49729" price="0" /> <!-- Talisman of Border Lv. 3 -->
+	<item id="49730" price="0" /> <!-- Talisman of Border Lv. 4 -->
+	<item id="49731" price="0" /> <!-- Talisman of Border Lv. 5 -->
+	<item id="49732" price="0" /> <!-- Talisman of Border Lv. 6 -->
+	<item id="49733" price="0" /> <!-- Talisman of Border Lv. 7 -->
+	<item id="49734" price="0" /> <!-- Talisman of Border Lv. 8 -->
+	<item id="49735" price="0" /> <!-- Talisman of Border Lv. 9 -->
+	<item id="49736" price="0" /> <!-- Talisman of Border Lv. 10 -->
+	<item id="49737" price="0" /> <!-- Rare Talisman of Border -->
+	<item id="91061" price="0" /> <!-- Talisman of Authority -->
+	<item id="91062" price="0" /> <!-- Talisman of Authority Lv. 2 -->
+	<item id="91063" price="0" /> <!-- Talisman of Authority Lv. 3 -->
+	<item id="91064" price="0" /> <!-- Talisman of Authority Lv. 4 -->
+	<item id="91065" price="0" /> <!-- Talisman of Authority Lv. 5 -->
+	<item id="91066" price="0" /> <!-- Noble Talisman of Authority Lv. 1 -->
+	<item id="91067" price="0" /> <!-- Noble Talisman of Authority Lv. 2 -->
+	<item id="91068" price="0" /> <!-- Noble Talisman of Authority Lv. 3 -->
+	<item id="91069" price="0" /> <!-- Noble Talisman of Authority Lv. 4 -->
+	<item id="91070" price="0" /> <!-- Noble Talisman of Authority Lv. 5 -->
+	<item id="91071" price="0" /> <!-- Radiant Talisman of Authority Lv. 1 -->
+	<item id="91072" price="0" /> <!-- Radiant Talisman of Authority Lv. 2 -->
+	<item id="91073" price="0" /> <!-- Radiant Talisman of Authority Lv. 3 -->
+	<item id="91074" price="0" /> <!-- Radiant Talisman of Authority Lv. 4 -->
+	<item id="91075" price="0" /> <!-- Radiant Talisman of Authority Lv. 5 -->
+	<item id="91077" price="0" /> <!-- Venir's Talisman Lv. 1 -->
+	<item id="91078" price="0" /> <!-- Venir's Talisman Lv. 2 -->
+	<item id="91079" price="0" /> <!-- Venir's Talisman Lv. 3 -->
+	<item id="91080" price="0" /> <!-- Venir's Talisman Lv. 4 -->
+	<item id="91081" price="0" /> <!-- Venir's Talisman Lv. 5 -->
+	<item id="91082" price="0" /> <!-- Venir's Talisman Lv. 6 -->
+	<item id="91083" price="0" /> <!-- Venir's Talisman Lv. 7 -->
+	<item id="91084" price="0" /> <!-- Venir's Talisman Lv. 8 -->
+	<item id="91085" price="0" /> <!-- Venir's Talisman Lv. 9 -->
+	<item id="91086" price="0" /> <!-- Venir's Talisman Lv. 10 -->
+	<item id="91087" price="0" /> <!-- Venir's Talisman Lv. 11 -->
+	<item id="91088" price="0" /> <!-- Venir's Talisman Lv. 12 -->
+	<item id="91089" price="0" /> <!-- Venir's Talisman Lv. 13 -->
+	<item id="91090" price="0" /> <!-- Venir's Talisman Lv. 14 -->
+	<item id="91091" price="0" /> <!-- Venir's Talisman Lv. 15 -->
+	<item id="91092" price="0" /> <!-- Venir's Talisman Lv. 16 -->
+	<item id="91093" price="0" /> <!-- Venir's Talisman Lv. 17 -->
+	<item id="91094" price="0" /> <!-- Venir's Talisman Lv. 18 -->
+	<item id="91140" price="0" /> <!-- Venir's Talisman Lv. 19 -->
+	<item id="91141" price="0" /> <!-- Venir's Talisman Lv. 20 -->
+	<item id="91142" price="0" /> <!-- Venir's Talisman Lv. 21 -->
+	<item id="91143" price="0" /> <!-- Venir's Talisman Lv. 22 -->
+	<item id="91144" price="0" /> <!-- Venir's Talisman Lv. 23 -->
+	<item id="91145" price="0" /> <!-- Venir's Talisman Lv. 24 -->
+	<item id="91791" price="0" /> <!-- Venir's Talisman Lv. 25 -->
+	<item id="91792" price="0" /> <!-- Venir's Talisman Lv. 26 -->
+	<item id="91592" price="0" /> <!-- Dimensional Talisman Lv. 1 -->
+	<item id="91593" price="0" /> <!-- Dimensional Talisman Lv. 2 -->
+	<item id="91594" price="0" /> <!-- Dimensional Talisman Lv. 3 -->
+	<item id="91595" price="0" /> <!-- Dimensional Talisman Lv. 4 -->
+	<item id="91596" price="0" /> <!-- Dimensional Talisman Lv. 5 -->
+	<item id="91597" price="0" /> <!-- Dimensional Talisman Lv. 6 -->
+	<item id="91598" price="0" /> <!-- Dimensional Talisman Lv. 7 -->
+	<item id="91599" price="0" /> <!-- Dimensional Talisman Lv. 8 -->
+	<item id="91600" price="0" /> <!-- Dimensional Talisman Lv. 9 -->
+	<item id="91601" price="0" /> <!-- Dimensional Talisman Lv. 10 -->
+	<item id="91637" price="0" /> <!-- Anniversary Talisman -->
+	<item id="91745" price="0" /> <!-- Talisman of Aden -->
+	<item id="91937" price="0" /> <!-- Adventurer's Talisman -->
+	<item id="92403" price="0" /> <!-- Talisman of Speed -->
+	<item id="92018" price="0" /> <!-- Talisman of Eva -->
+	<item id="94119" price="0" /> <!-- Talisman of Baium(Sealed) -->
+</list>

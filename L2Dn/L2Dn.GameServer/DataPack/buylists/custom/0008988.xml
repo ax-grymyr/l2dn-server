@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="150" price="0" /> <!-- Elemental Sword -->
+	<item id="151" price="0" /> <!-- Sword of Miracles -->
+	<item id="8686" price="0" /> <!-- Themis' Tongue -->
+	<item id="92933" price="0" /> <!-- Elemental Sword - Sealed -->
+	<item id="92934" price="0" /> <!-- Sword of Miracles - Sealed -->
+	<item id="92963" price="0" /> <!-- Themis' Tongue - Sealed -->
+</list>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="6847" price="0" /> <!-- Recipe: Sealed Tateossian Earring (30%) -->
+	<item id="6849" price="0" /> <!-- Recipe: Sealed Tateossian Ring (30%) -->
+	<item id="6851" price="0" /> <!-- Recipe: Sealed Tateossian Necklace (30%) -->
+	<item id="6853" price="0" /> <!-- Recipe: Sealed Imperial Crusader Breastplate (30%) -->
+	<item id="6855" price="0" /> <!-- Recipe: Sealed Imperial Crusader Gaiters (30%) -->
+	<item id="6857" price="0" /> <!-- Recipe: Sealed Imperial Crusader Gauntlets (30%) -->
+	<item id="6859" price="0" /> <!-- Recipe: Sealed Imperial Crusader Boots (30%) -->
+	<item id="6861" price="0" /> <!-- Recipe: Sealed Imperial Crusader Shield (30%) -->
+	<item id="6863" price="0" /> <!-- Recipe: Sealed Imperial Crusader Helmet (30%) -->
+	<item id="6865" price="0" /> <!-- Recipe: Sealed Draconic Leather Armor (30%) -->
+	<item id="6867" price="0" /> <!-- Recipe: Sealed Draconic Leather Gloves (30%) -->
+	<item id="6869" price="0" /> <!-- Recipe: Sealed Draconic Leather Boots (30%) -->
+	<item id="6871" price="0" /> <!-- Recipe: Sealed Draconic Leather Helmet (30%) -->
+	<item id="6873" price="0" /> <!-- Recipe: Sealed Major Arcana Robe (30%) -->
+	<item id="6875" price="0" /> <!-- Recipe: Sealed Major Arcana Gloves (30%) -->
+	<item id="6877" price="0" /> <!-- Recipe: Sealed Major Arcana Boots (30%) -->
+	<item id="6879" price="0" /> <!-- Recipe: Sealed Major Arcana Circlet (30%) -->
+	<item id="6881" price="0" /> <!-- Recipe: Forgotten Blade (30%) -->
+	<item id="6883" price="0" /> <!-- Recipe: Basalt Battlehammer (30%) -->
+	<item id="6885" price="0" /> <!-- Recipe: Imperial Staff (30%) -->
+	<item id="6887" price="0" /> <!-- Recipe: Angel Slayer (30%) -->
+	<item id="6891" price="0" /> <!-- Recipe: Dragon Hunter Axe (30%) -->
+	<item id="6893" price="0" /> <!-- Recipe: Saint Spear (30%) -->
+	<item id="6895" price="0" /> <!-- Recipe: Demon Splinter (30%) -->
+	<item id="6897" price="0" /> <!-- Recipe: Haven's Divider (30%) -->
+	<item id="6899" price="0" /> <!-- Recipe: Arcana Mace (30%) -->
+	<item id="7580" price="0" /> <!-- Recipe: Draconic Bow (30%) -->
+	<item id="93912" price="0" /> <!-- Recipe: Flame Sword's Blade (10%) -->
+</list>

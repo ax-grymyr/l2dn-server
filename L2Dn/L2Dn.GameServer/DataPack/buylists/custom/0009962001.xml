@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="119" price="0" /> <!-- Necklace of Seal -->
+	<item id="916" price="0" /> <!-- Necklace of Protection -->
+	<item id="917" price="0" /> <!-- Necklace of Mermaid -->
+	<item id="919" price="0" /> <!-- Blessed Necklace -->
+</list>

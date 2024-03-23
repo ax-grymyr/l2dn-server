@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="21713" price="0" /> <!-- Zaken's Sealed Cloak -->
+	<item id="21716" price="0" /> <!-- Zaken's Cloak -->
+	<item id="90973" price="0" /> <!-- Zaken's Cloak (30-Day) -->
+	<item id="30372" price="0" /> <!-- Hero's Cloak -->
+	<item id="30373" price="0" /> <!-- Glorious Cloak -->
+	<item id="34925" price="0" /> <!-- Cloak of Light -->
+	<item id="34926" price="0" /> <!-- Cloak of Darkness -->
+	<item id="91210" price="0" /> <!-- Black Sayha's Cloak -->
+	<item id="91211" price="0" /> <!-- White Sayha's Cloak -->
+	<item id="91212" price="0" /> <!-- Red Sayha's Cloak -->
+	<item id="91719" price="0" /> <!-- Special Black Sayha's Cloak -->
+	<item id="91720" price="0" /> <!-- Special White Sayha's Cloak -->
+	<item id="91721" price="0" /> <!-- Special Red Sayha's Cloak -->
+	<item id="93041" price="0" /> <!-- Adventurer's Cloak -->
+	<item id="93301" price="0" /> <!-- Cloak of Protection -->
+	<item id="94372" price="0" /> <!-- Death Knight's Cloak BM -->
+	<item id="91227" price="0" /> <!-- Sayha's Cloak Coupon -->
+	<item id="93302" price="0" /> <!-- Scroll: Enchant Cloak of Protection -->
+</list>

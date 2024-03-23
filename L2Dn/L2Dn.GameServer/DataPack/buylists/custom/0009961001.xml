@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="910" price="0" /> <!-- Necklace of Devotion -->
+	<item id="911" price="0" /> <!-- Magic Necklace -->
+	<item id="912" price="0" /> <!-- Near Forest Necklace -->
+	<item id="913" price="0" /> <!-- Elven Necklace -->
+	<item id="914" price="0" /> <!-- Necklace of Darkness -->
+</list>

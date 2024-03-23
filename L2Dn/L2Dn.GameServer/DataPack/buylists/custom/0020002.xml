@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="90023" price="0" /> <!-- Belt -->
+	<item id="90024" price="0" /> <!-- Cloth Belt -->
+	<item id="90025" price="0" /> <!-- Leather Belt -->
+	<item id="90026" price="0" /> <!-- Iron Belt -->
+	<item id="90027" price="0" /> <!-- Mithril Belt -->
+	<item id="90132" price="0" /> <!-- Monster Arena Belt (7-Day) -->
+	<item id="90496" price="0" /> <!-- Earth Dragon Belt -->
+	<item id="90497" price="0" /> <!-- Fire Dragon Belt -->
+	<item id="90788" price="0" /> <!-- Fire Dragon Belt (7-Day) -->
+	<item id="90861" price="0" /> <!-- Fire Dragon Belt (30-Day) -->
+	<item id="90985" price="0" /> <!-- Earth Dragon Belt (30-Day) -->
+	<item id="91095" price="0" /> <!-- Earth Dragon Belt - Venir's Blessing Lv1 -->
+	<item id="91096" price="0" /> <!-- Earth Dragon Belt - Venir's Blessing Lv2 -->
+	<item id="91097" price="0" /> <!-- Earth Dragon Belt - Venir's Blessing Lv3 -->
+	<item id="91098" price="0" /> <!-- Fire Dragon Belt - Venir's Blessing Lv1 -->
+	<item id="91099" price="0" /> <!-- Fire Dragon Belt - Venir's Blessing Lv2 -->
+	<item id="91100" price="0" /> <!-- Fire Dragon Belt - Venir's Blessing Lv3 -->
+	<item id="91146" price="0" /> <!-- Earth Dragon Belt - Venir's Blessing Lv4 -->
+	<item id="91147" price="0" /> <!-- Fire Dragon Belt - Venir's Blessing Lv4 -->
+	<item id="91862" price="0" /> <!-- Dragon Belt -->
+	<item id="91862" price="0" /> <!-- Adventurer's Belt -->
+	<item id="94623" price="0" /> <!-- Belt Craft Coupon -->
+	<item id="91863" price="0" /> <!-- Scroll: Enchant Dragon Belt -->
+	<item id="93046" price="0" /> <!-- Scroll: Enchant Adventurer's Belt -->
+	<item id="93717" price="0" /> <!-- +3 Talisman/Belt Coupon -->
+	<item id="93718" price="0" /> <!-- +4 Talisman/Belt Coupon -->
+	<item id="93719" price="0" /> <!-- +5 Talisman/Belt Coupon -->
+	<item id="93720" price="0" /> <!-- +6 Talisman/Belt Coupon -->
+	<item id="93721" price="0" /> <!-- +7 Talisman/Belt Coupon -->
+	<item id="93722" price="0" /> <!-- +8 Talisman/Belt Coupon -->
+</list>

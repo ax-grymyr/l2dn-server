@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+	<item id="93960" price="0" /> <!-- Wolf Necklace -->
+	<item id="93961" price="0" /> <!-- Buffalo Necklace -->
+	<item id="93962" price="0" /> <!-- Tiger Necklace -->
+	<item id="93963" price="0" /> <!-- Kookaburra Necklace -->
+	<item id="93964" price="0" /> <!-- Dragon's Necklace -->
+	<item id="93965" price="0" /> <!-- Hawk Necklace -->
+</list>
