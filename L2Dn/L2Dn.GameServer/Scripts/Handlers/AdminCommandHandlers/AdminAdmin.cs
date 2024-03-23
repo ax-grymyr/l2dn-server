@@ -5,6 +5,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -431,7 +432,8 @@ public class AdminAdmin: IAdminCommandHandler
 		replyMSG.Append("<tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.Append("</table></body></html>");
 		
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(replyMSG.ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
 }

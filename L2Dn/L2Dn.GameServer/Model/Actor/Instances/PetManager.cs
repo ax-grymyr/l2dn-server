@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -38,10 +39,10 @@ public class PetManager: Merchant
 			filename = "html/petmanager/restore-unsummonpet.htm";
 		}
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
-		helper.Replace("%objectId%", getObjectId().ToString());
-		helper.Replace("%npcname%", getName());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%npcname%", getName());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 
@@ -108,8 +109,8 @@ public class PetManager: Merchant
 
 			if (!ok)
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/evolve_no.htm");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/evolve_no.htm", player);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}
@@ -150,8 +151,8 @@ public class PetManager: Merchant
 
 			if (!ok)
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/restore_no.htm");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/restore_no.htm", player);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}
@@ -167,14 +168,14 @@ public class PetManager: Merchant
 		{
 			player.addItem("", itemIdgive, 1, this, true);
 
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/" + getId() + ".htm");
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/" + getId() + ".htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/petmanager/exchange_no.htm");
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/exchange_no.htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 	}

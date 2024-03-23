@@ -143,8 +143,8 @@ public class AdminScan: IAdminCommandHandler
 	private void sendNpcList(Player activeChar, int radius, int page, Predicate<Npc> condition, BypassParser parser)
 	{
 		BypassBuilder bypassParser = createBypassBuilder(parser, "bypass -h admin_scan");
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/scan.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/scan.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(World.getInstance().getVisibleObjectsInRange<Npc>(activeChar, radius, condition), 15, bypassParser.ToString())
@@ -169,14 +169,14 @@ public class AdminScan: IAdminCommandHandler
 		
 		if (result.getPages() > 0)
 		{
-			helper.Replace("%pages%", "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>");
+			htmlContent.Replace("%pages%", "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>");
 		}
 		else
 		{
-			helper.Replace("%pages%", "");
+			htmlContent.Replace("%pages%", "");
 		}
 		
-		helper.Replace("%data%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		activeChar.sendPacket(html);
 	}
 	

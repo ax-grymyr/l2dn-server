@@ -18,7 +18,7 @@ public class TutorialClose: IBypassHandler
 	public bool useBypass(String command, Player player, Creature target)
 	{
 		player.sendPacket(TutorialCloseHtmlPacket.STATIC_PACKET);
-		player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
+		player.getClient()?.HtmlActionValidator.ClearActions(HtmlActionScope.TUTORIAL_HTML);
 		return false;
 	}
 	

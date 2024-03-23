@@ -6,6 +6,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
@@ -429,15 +430,15 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		
 		if (showClanNotice)
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/clanNotice.htm");
-			helper.Replace("%clan_name%", player.getClan().getName());
-			helper.Replace("%notice_text%", player.getClan().getNotice().replaceAll("(\r\n|\n)", "<br>"));
-			connection.Send(new NpcHtmlMessagePacket(helper));
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/clanNotice.htm", player);
+			htmlContent.Replace("%clan_name%", player.getClan().getName());
+			htmlContent.Replace("%notice_text%", player.getClan().getNotice().replaceAll("(\r\n|\n)", "<br>"));
+			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
 		}
 		else if (Config.SERVER_NEWS)
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/servnews.htm");
-			connection.Send(new NpcHtmlMessagePacket(helper));
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/servnews.htm", player);
+			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
 		}
 
 		if (Config.PETITIONING_ALLOWED)

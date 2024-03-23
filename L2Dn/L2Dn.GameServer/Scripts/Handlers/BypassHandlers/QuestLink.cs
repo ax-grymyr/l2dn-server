@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -205,7 +206,7 @@ public class QuestLink: IBypassHandler
 			return;
 		}
 		
-		String content;
+		string content;
 		if ((sbStarted.Length > 0) || (sbCanStart.Length > 0) || (sbCantStart.Length > 0) || (sbCompleted.Length > 0))
 		{
 			StringBuilder sb = new StringBuilder(128);
@@ -223,8 +224,10 @@ public class QuestLink: IBypassHandler
 		}
 		
 		// Send a Server=>Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
-		content = content.Replace("%objectId%", npc.getObjectId().ToString());
-		player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), content));
+		HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
+		htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+
+		player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent));
 	}
 	
 	/**
@@ -258,8 +261,8 @@ public class QuestLink: IBypassHandler
 			
 			if ((qs == null) && (q.getId() >= 1) && (q.getId() < 20000) && (player.getAllActiveQuests().Count > 40))
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fullquest.html");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fullquest.html", player);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
 				player.sendPacket(html);
 				return;
 			}
@@ -274,8 +277,9 @@ public class QuestLink: IBypassHandler
 		// Send a Server=>Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
 		if (content != null)
 		{
-			content = content.Replace("%objectId%", npc.getObjectId().ToString());
-			player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), content));
+			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
+			htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+			player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent));
 		}
 		
 		// Send a Server=>Client ActionFailedPacket to the Player in order to avoid that the client wait another packet

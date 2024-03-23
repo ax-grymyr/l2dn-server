@@ -8,6 +8,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
@@ -255,20 +256,19 @@ public class VillageMaster: Folk
 			}
 			else
 			{
-				HtmlPacketHelper helper;
+				string filePath;
 				if (clan.getNewLeaderId() == 0)
 				{
 					clan.setNewLeaderId(member.getObjectId(), true);
-					helper = new HtmlPacketHelper(DataFileLocation.Data,
-						"scripts/village_master/ClanMaster/9000-07-success.htm");
+					filePath = "scripts/village_master/ClanMaster/9000-07-success.htm";
 				}
 				else
 				{
-					helper = new HtmlPacketHelper(DataFileLocation.Data,
-						"scripts/village_master/ClanMaster/9000-07-in-progress.htm");
+					filePath = "scripts/village_master/ClanMaster/9000-07-in-progress.htm";
 				}
 				
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 				player.sendPacket(msg);
 			}
 		}
@@ -279,22 +279,22 @@ public class VillageMaster: Folk
 				player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 				return;
 			}
-			
-			HtmlPacketHelper helper;
+
+			HtmlContent htmlContent;
 			Clan clan = player.getClan();
 			if (clan.getNewLeaderId() != 0)
 			{
 				clan.setNewLeaderId(0, true);
-				helper = new HtmlPacketHelper(DataFileLocation.Data,
-					"scripts/village_master/ClanMaster/9000-07-canceled.htm");
+				htmlContent = HtmlContent.LoadFromFile("scripts/village_master/ClanMaster/9000-07-canceled.htm", player);
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(
-					"<html><body>You don't have clan leader delegation applications submitted yet!</body></html>");
+				htmlContent = HtmlContent.LoadFromText(
+					"<html><body>You don't have clan leader delegation applications submitted yet!</body></html>",
+					player);
 			}
 
-			NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+			NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(msg);
 		}
 		else if (actualCommand.equalsIgnoreCase("recover_clan"))
@@ -325,20 +325,16 @@ public class VillageMaster: Folk
 			// Subclasses may not be changed while a transformated state.
 			if (player.isTransformed())
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data,
-					"html/villagemaster/SubClass_NoTransformed.htm");
-				
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+				HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_NoTransformed.htm", player);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
 				player.sendPacket(msg);
 				return;
 			}
 			// Subclasses may not be changed while a summon is active.
 			if (player.hasSummon())
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data,
-					"html/villagemaster/SubClass_NoSummon.htm");
-				
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), helper);
+				HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_NoSummon.htm", player);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
 				player.sendPacket(msg);
 				return;
 			}
@@ -382,44 +378,45 @@ public class VillageMaster: Folk
 			}
 
 			Set<CharacterClass> subsAvailable;
-			HtmlPacketHelper? helper0 = null;
+			HtmlContent? htmlText = null;
 			NpcHtmlMessagePacket html;
 			switch (cmdChoice)
 			{
 				case 0: // Subclass change menu
-					helper0 = new HtmlPacketHelper(DataFileLocation.Data, getSubClassMenu(player.getRace()));
+					htmlText = HtmlContent.LoadFromFile(getSubClassMenu(player.getRace()), player);
 					break;
 				case 1: // Add Subclass - Initial
 					// Avoid giving player an option to add a new sub class, if they have max sub-classes already.
 					if (player.getTotalSubClasses() >= Config.MAX_SUBCLASS)
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, getSubClassFail());
+						htmlText = HtmlContent.LoadFromFile(getSubClassFail(), player);
 						break;
 					}
 					
 					subsAvailable = getAvailableSubClasses(player);
 					if ((subsAvailable != null) && !subsAvailable.isEmpty())
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Add.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Add.htm", player);
 						StringBuilder content1 = new StringBuilder(200);
 						foreach (CharacterClass subClass in subsAvailable)
 						{
 							content1.Append("<a action=\"bypass -h npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
 						}
-						helper0.Replace("%list%", content1.ToString());
+						
+						htmlText.Replace("%list%", content1.ToString());
 					}
 					else
 					{
 						if ((player.getRace() == Race.ELF) || (player.getRace() == Race.DARK_ELF))
 						{
-							HtmlPacketHelper helper1 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Fail_Elves.htm");
-							html = new NpcHtmlMessagePacket(getObjectId(), helper1);
+							HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Fail_Elves.htm", player);
+							html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
 							player.sendPacket(html);
 						}
 						else if (player.getRace() == Race.KAMAEL)
 						{
-							HtmlPacketHelper helper1 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Fail_Kamael.htm");
-							html = new NpcHtmlMessagePacket(getObjectId(), helper1);
+							HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Fail_Kamael.htm", player);
+							html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
 							player.sendPacket(html);
 						}
 						else
@@ -433,7 +430,7 @@ public class VillageMaster: Folk
 				case 2: // Change Class - Initial
 					if (player.getSubClasses().isEmpty())
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ChangeNo.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ChangeNo.htm", player);
 					}
 					else
 					{
@@ -456,26 +453,26 @@ public class VillageMaster: Folk
 						
 						if (content2.Length > 0)
 						{
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Change.htm");
-							helper0.Replace("%list%", content2.ToString());
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Change.htm", player);
+							htmlText.Replace("%list%", content2.ToString());
 						}
 						else
 						{
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ChangeNotFound.htm");
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ChangeNotFound.htm", player);
 						}
 					}
 					break;
 				case 3: // Change/Cancel Subclass - Initial
 					if ((player.getSubClasses() == null) || player.getSubClasses().isEmpty())
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyEmpty.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyEmpty.htm", player);
 						break;
 					}
 					
 					// custom value
 					if (player.getTotalSubClasses() > 3)
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyCustom.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyCustom.htm", player);
 						StringBuilder content3 = new StringBuilder(200);
 						int classIndex = 1;
 						foreach (SubClassHolder holder in player.getSubClasses().values())
@@ -486,37 +483,37 @@ public class VillageMaster: Folk
 							                ClassListData.getInstance().getClass(holder.getClassDefinition())
 								                .getClientCode() + "</a><br>");
 						}
-						helper0.Replace("%list%", content3.ToString());
+						htmlText.Replace("%list%", content3.ToString());
 					}
 					else
 					{
 						// retail html contain only 3 subclasses
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Modify.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Modify.htm", player);
 						if (player.getSubClasses().containsKey(1))
 						{
-							helper0.Replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1).getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1).getClassDefinition()).getClientCode());
 						}
 						else
 						{
-							helper0.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 1\">%sub1%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 1\">%sub1%</Button>", "");
 						}
 						
 						if (player.getSubClasses().containsKey(2))
 						{
-							helper0.Replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2).getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2).getClassDefinition()).getClientCode());
 						}
 						else
 						{
-							helper0.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 2\">%sub2%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 2\">%sub2%</Button>", "");
 						}
 						
 						if (player.getSubClasses().containsKey(3))
 						{
-							helper0.Replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3).getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3).getClassDefinition()).getClientCode());
 						}
 						else
 						{
-							helper0.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 3\">%sub3%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 3\">%sub3%</Button>", "");
 						}
 					}
 					break;
@@ -572,7 +569,7 @@ public class VillageMaster: Folk
 						
 						player.setActiveClass(player.getTotalSubClasses());
 						
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_AddOk.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_AddOk.htm", player);
 						
 						SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
 						msg.Params.addClassId(player.getClassId());
@@ -580,7 +577,7 @@ public class VillageMaster: Folk
 					}
 					else
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, getSubClassFail());
+						htmlText = HtmlContent.LoadFromFile(getSubClassFail(), player);
 					}
 					break;
 				case 5: // Change Class - Action
@@ -596,7 +593,7 @@ public class VillageMaster: Folk
 					
 					if (player.getClassIndex() == paramOne)
 					{
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_Current.htm");
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Current.htm", player);
 						break;
 					}
 					
@@ -653,20 +650,20 @@ public class VillageMaster: Folk
 					switch (paramOne)
 					{
 						case 1:
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyChoice1.htm");
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyChoice1.htm", player);
 							break;
 						case 2:
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyChoice2.htm");
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyChoice2.htm", player);
 							break;
 						case 3:
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyChoice3.htm");
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyChoice3.htm", player);
 							break;
 						default:
-							helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyChoice.htm");
+							htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyChoice.htm", player);
 							break;
 					}
 					
-					helper0.Replace("%list%", content6.ToString());
+					htmlText.Replace("%list%", content6.ToString());
 					break;
 				case 7: // Change Subclass - Action
 					/**
@@ -692,8 +689,8 @@ public class VillageMaster: Folk
 						player.stopCubics();
 						player.setActiveClass(paramOne);
 						
-						helper0 = new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/SubClass_ModifyOk.htm");
-						helper0.Replace("%name%", ClassListData.getInstance().getClass((CharacterClass)paramTwo).getClientCode());
+						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyOk.htm", player);
+						htmlText.Replace("%name%", ClassListData.getInstance().getClass((CharacterClass)paramTwo).getClientCode());
 						
 						SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
 						msg.Params.addClassId(player.getClassId());
@@ -711,10 +708,10 @@ public class VillageMaster: Folk
 					break;
 			}
 
-			if (helper0 is not null)
+			if (htmlText is not null)
 			{
-				helper0.Replace("%objectId%", getObjectId().ToString());
-				html = new NpcHtmlMessagePacket(getObjectId(), helper0);
+				htmlText.Replace("%objectId%", getObjectId().ToString());
+				html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText);
 				player.sendPacket(html);
 			}
 		}
@@ -1264,10 +1261,8 @@ public class VillageMaster: Folk
 	{
 		if (!player.isClanLeader())
 		{
-			HtmlPacketHelper helper =
-				new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/NotClanLeader.htm");
-			
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/villagemaster/NotClanLeader.htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 			
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -1292,9 +1287,8 @@ public class VillageMaster: Folk
 			}
 			else
 			{
-				HtmlPacketHelper helper =
-					new HtmlPacketHelper(DataFileLocation.Data, "html/villagemaster/NoMoreSkills.htm");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/villagemaster/NoMoreSkills.htm", player);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}
@@ -1302,6 +1296,7 @@ public class VillageMaster: Folk
 		{
 			player.sendPacket(new ExAcquirableSkillListByClassPacket(skills, AcquireSkillType.PLEDGE));
 		}
+		
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 	

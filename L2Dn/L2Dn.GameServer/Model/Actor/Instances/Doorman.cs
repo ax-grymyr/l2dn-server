@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -82,19 +83,20 @@ public class Doorman : Folk
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 
-		HtmlPacketHelper helper;
+		string filePath;
 		if (!isOwnerClan(player))
 		{
-			helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-no.htm");
+			filePath = "html/doorman/" + getTemplate().getId() + "-no.htm";
 		}
 		else
 		{
-			helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + ".htm");
+			filePath = "html/doorman/" + getTemplate().getId() + ".htm";
 		}
 		
-		helper.Replace("%objectId%", getObjectId().ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
@@ -124,8 +126,8 @@ public class Doorman : Folk
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-busy.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 	

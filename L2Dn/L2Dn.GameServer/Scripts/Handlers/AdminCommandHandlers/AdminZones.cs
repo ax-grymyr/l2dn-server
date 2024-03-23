@@ -220,7 +220,7 @@
 // 			}
 // 		}
 //
-// 		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/zone_editor.htm");
+// 		HtmlText helper = HtmlText.LoadFromFile("html/admin/zone_editor.htm");
 // 		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(0, 1, helper);
 // 		helper.Replace("%zones%", sb.ToString());
 // 		activeChar.sendPacket(msg);

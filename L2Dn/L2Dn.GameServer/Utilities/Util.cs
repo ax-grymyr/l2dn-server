@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
 using Org.BouncyCastle.Utilities;
@@ -17,7 +18,6 @@ namespace L2Dn.GameServer.Utilities;
 public class Util
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Util));
-	public const char VAR_PARAM_START_CHAR = '$';
 	
 	private static readonly NumberFormatInfo _adenaFormat;
 
@@ -327,111 +327,6 @@ public class Util
 		return date.ToString("yyyy-MM-dd");
 	}
 	
-	private static void buildHtmlBypassCache(Player player, HtmlActionScope scope, String html)
-	{
-		String htmlLower = html.ToLower(CultureInfo.InvariantCulture); // todo: english culture
-		int bypassEnd = 0;
-		int bypassStart = htmlLower.IndexOf("=\"bypass ", bypassEnd);
-		int bypassStartEnd;
-		while (bypassStart != -1)
-		{
-			bypassStartEnd = bypassStart + 9;
-			bypassEnd = htmlLower.IndexOf("\"", bypassStartEnd);
-			if (bypassEnd == -1)
-			{
-				break;
-			}
-			
-			int hParamPos = htmlLower.IndexOf("-h ", bypassStartEnd);
-			String bypass;
-			if ((hParamPos != -1) && (hParamPos < bypassEnd))
-			{
-				bypass = html.Substring(hParamPos + 3, bypassEnd - hParamPos - 3).Trim();
-			}
-			else
-			{
-				bypass = html.Substring(bypassStartEnd, bypassEnd - bypassStartEnd).Trim();
-			}
-			
-			int firstParameterStart = bypass.IndexOf(VAR_PARAM_START_CHAR);
-			if (firstParameterStart != -1)
-			{
-				bypass = bypass.Substring(0, firstParameterStart + 1);
-			}
-			
-			if (Config.HTML_ACTION_CACHE_DEBUG)
-			{
-				LOGGER.Info("Cached html bypass(" + scope + "): '" + bypass + "'");
-			}
-			
-			player.addHtmlAction(scope, bypass);
-			bypassStart = htmlLower.IndexOf("=\"bypass ", bypassEnd);
-		}
-	}
-	
-	private static void buildHtmlLinkCache(Player player, HtmlActionScope scope, String html)
-	{
-		String htmlLower = html.ToLower(CultureInfo.InvariantCulture); // todo: english culture
-		int linkEnd = 0;
-		int linkStart = htmlLower.IndexOf("=\"link ", linkEnd);
-		int linkStartEnd;
-		while (linkStart != -1)
-		{
-			linkStartEnd = linkStart + 7;
-			linkEnd = htmlLower.IndexOf("\"", linkStartEnd);
-			if (linkEnd == -1)
-			{
-				break;
-			}
-			
-			String htmlLink = html.Substring(linkStartEnd, linkEnd - linkStartEnd).Trim();
-			if (htmlLink.isEmpty())
-			{
-				LOGGER.Warn("Html link path is empty!");
-				continue;
-			}
-			
-			if (htmlLink.Contains(".."))
-			{
-				LOGGER.Warn("Html link path is invalid: " + htmlLink);
-				continue;
-			}
-			
-			if (Config.HTML_ACTION_CACHE_DEBUG)
-			{
-				LOGGER.Info("Cached html link(" + scope + "): '" + htmlLink + "'");
-			}
-			// let's keep an action cache with "link " lowercase literal kept
-			player.addHtmlAction(scope, "link " + htmlLink);
-			linkStart = htmlLower.IndexOf("=\"link ", linkEnd);
-		}
-	}
-	
-	/**
-	 * Builds the html action cache for the specified scope.<br>
-	 * An {@code npcObjId} of 0 means, the cached actions can be clicked<br>
-	 * without beeing near an npc which is spawned in the world.
-	 * @param player the player to build the html action cache for
-	 * @param scope the scope to build the html action cache for
-	 * @param npcObjId the npc object id the html actions are cached for
-	 * @param html the html code to parse
-	 */
-	public static void buildHtmlActionCache(Player player, HtmlActionScope scope, int npcObjId, String html)
-	{
-		if ((player == null) || (scope == null) || (npcObjId < 0) || (html == null))
-		{
-			throw new ArgumentException();
-		}
-		
-		if (Config.HTML_ACTION_CACHE_DEBUG)
-		{
-			LOGGER.Info("Set html action npc(" + scope + "): " + npcObjId);
-		}
-		player.setHtmlActionOriginObjectId(scope, npcObjId);
-		buildHtmlBypassCache(player, scope, html);
-		buildHtmlLinkCache(player, scope, html);
-	}
-	
 	/**
 	 * Helper method to send a community board html to the specified player.<br>
 	 * HtmlActionCache will be build with npc origin 0 which means the<br>
@@ -485,16 +380,18 @@ public class Util
 	 */
 	public static void sendCBHtml(Player player, String html, String fillMultiEdit, int npcObjId)
 	{
-		if ((player == null) || (html == null))
+		GameSession? session = player?.getClient();
+		if ((session == null) || (html == null))
 		{
 			return;
 		}
 		
-		player.clearHtmlActions(HtmlActionScope.COMM_BOARD_HTML);
+		session.HtmlActionValidator.ClearActions(HtmlActionScope.COMM_BOARD_HTML);
 		
 		if (npcObjId > -1)
 		{
-			buildHtmlActionCache(player, HtmlActionScope.COMM_BOARD_HTML, npcObjId, html);
+			session.HtmlActionValidator.BuildActions(HtmlActionScope.COMM_BOARD_HTML, html,
+				npcObjId == 0 ? null : npcObjId);
 		}
 		
 		if (fillMultiEdit != null)

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -24,37 +25,37 @@ public class TerritoryStatus: IBypassHandler
 		}
 		
 		Npc npc = (Npc) target;
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "");
+		HtmlContent htmlContent;
 		{
 			if (npc.getCastle().getOwnerId() > 0)
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/territorystatus.htm");
+				htmlContent = HtmlContent.LoadFromFile("html/territorystatus.htm", player);
 				Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
-				helper.Replace("%clanname%", clan.getName());
-				helper.Replace("%clanleadername%", clan.getLeaderName());
+				htmlContent.Replace("%clanname%", clan.getName());
+				htmlContent.Replace("%clanleadername%", clan.getLeaderName());
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/territorynoclan.htm");
+				htmlContent = HtmlContent.LoadFromFile("html/territorynoclan.htm", player);
 			}
 		}
 
-		helper.Replace("%castlename%", npc.getCastle().getName());
-		helper.Replace("%taxpercent%", npc.getCastle().getTaxPercent(TaxType.BUY).ToString());
-		helper.Replace("%objectId%", npc.getObjectId().ToString());
+		htmlContent.Replace("%castlename%", npc.getCastle().getName());
+		htmlContent.Replace("%taxpercent%", npc.getCastle().getTaxPercent(TaxType.BUY).ToString());
+		htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
 		
 		{
 			if (npc.getCastle().getResidenceId() > 6)
 			{
-				helper.Replace("%territory%", "The Kingdom of Elmore");
+				htmlContent.Replace("%territory%", "The Kingdom of Elmore");
 			}
 			else
 			{
-				helper.Replace("%territory%", "The Kingdom of Aden");
+				htmlContent.Replace("%territory%", "The Kingdom of Aden");
 			}
 		}
 		
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 		return true;
 	}

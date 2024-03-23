@@ -111,7 +111,12 @@ public class AdminReload: IAdminCommandHandler
 					else
 					{
 						HtmCache.getInstance().reload();
-						BuilderUtil.sendSysMessage(activeChar, "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance().getLoadedFiles() + " files loaded");
+
+						double memoryUsage = HtmCache.getInstance().getMemoryUsage() / 1048576.0;
+						BuilderUtil.sendSysMessage(activeChar,
+							"Cache[HTML]: " + memoryUsage + " megabytes on " +
+							HtmCache.getInstance().getLoadedFiles() + " files loaded");
+						
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Htms.");
 					}
 					break;

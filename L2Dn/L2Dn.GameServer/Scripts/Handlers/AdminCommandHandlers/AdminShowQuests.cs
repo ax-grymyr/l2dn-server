@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Network.Enums;
@@ -137,7 +138,9 @@ public class AdminShowQuests: IAdminCommandHandler
 		replyMSG.Append("<tr><td><br><br>Manual Edit by Quest number:<br></td></tr>");
 		replyMSG.Append("<tr><td><edit var=\"qn\" width=50 height=15><br><button value=\"Edit\" action=\"bypass -h admin_charquestmenu " + target.getName() + " $qn custom\" width=50 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.Append("</table></center></body></html>");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, replyMSG.ToString());
+		
+		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), actor);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		actor.sendPacket(adminReply);
 	}
 	
@@ -275,7 +278,8 @@ public class AdminShowQuests: IAdminCommandHandler
 				}
 			}
 			
-			NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, replyMSG.ToString());
+			HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), actor);
+			NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			actor.sendPacket(adminReply);
 		}
 		catch (Exception e)

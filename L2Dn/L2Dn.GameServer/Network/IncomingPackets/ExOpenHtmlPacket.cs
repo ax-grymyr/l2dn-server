@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -30,8 +31,8 @@ public struct ExOpenHtmlPacket: IIncomingPacket<GameSession>
             {
                 if (Config.PC_CAFE_ENABLED)
                 {
-                    HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/pccafe.htm");
-                    NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+                    HtmlContent htmlContent = HtmlContent.LoadFromFile("html/pccafe.htm", player);
+                    NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
                     connection.Send(html);
                 }
 
@@ -41,8 +42,8 @@ public struct ExOpenHtmlPacket: IIncomingPacket<GameSession>
             {
                 if (Config.GAME_ASSISTANT_ENABLED)
                 {
-                    connection.Send(new ExPremiumManagerShowHtmlPacket(HtmCache.getInstance()
-                        .getHtm(player, "data/scripts/ai/others/GameAssistant/32478.html")));
+                    HtmlContent htmlContent = HtmlContent.LoadFromFile("scripts/ai/others/GameAssistant/32478.html", player);
+                    connection.Send(new ExPremiumManagerShowHtmlPacket(htmlContent));
                 }
 
                 break;

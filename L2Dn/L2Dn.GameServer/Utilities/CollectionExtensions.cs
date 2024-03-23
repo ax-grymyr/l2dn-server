@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.RegularExpressions;
 
 namespace L2Dn.GameServer.Utilities;
 
@@ -91,7 +92,8 @@ public static class CollectionExtensions
         return s.Contains(ss);
     }
 
-    public static string replaceAll(this string input, string pattern, string replacement)
+    public static string replaceAll(this string input, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern,
+        string replacement)
     {
         return Regex.Replace(input, pattern, replacement);
     }

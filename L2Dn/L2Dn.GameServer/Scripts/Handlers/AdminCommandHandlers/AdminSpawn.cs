@@ -7,6 +7,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -163,7 +164,8 @@ public class AdminSpawn: IAdminCommandHandler
 						}
 						html.Append("<tr><td>Skipped:</td><td>" + skiped + "</td></tr></table></body></html>");
 						
-						NpcHtmlMessagePacket ms = new NpcHtmlMessagePacket(0, 1, html.ToString());
+						HtmlContent htmlContent = HtmlContent.LoadFromText(html.ToString(), activeChar);
+						NpcHtmlMessagePacket ms = new NpcHtmlMessagePacket(null, 1, htmlContent);
 						activeChar.sendPacket(ms);
 					}
 					else
@@ -665,7 +667,8 @@ public class AdminSpawn: IAdminCommandHandler
 			tb.Append("<br><center><button value=\"Next\" action=\"bypass -h admin_spawn_index " + level + " " + i + "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back\" action=\"bypass -h admin_show_spawns\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		}
 		
-		activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, tb.ToString()));
+		HtmlContent htmlContent = HtmlContent.LoadFromText(tb.ToString(), activeChar);
+		activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 	}
 	
 	private void showNpcs(Player activeChar, String starting, int from)
@@ -691,6 +694,7 @@ public class AdminSpawn: IAdminCommandHandler
 			tb.Append("<br><center><button value=\"Next\" action=\"bypass -h admin_npc_index " + starting + " " + i + "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back\" action=\"bypass -h admin_show_npcs\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		}
 		
-		activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, tb.ToString()));
+		HtmlContent htmlContent = HtmlContent.LoadFromText(tb.ToString(), activeChar);
+		activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 	}
 }

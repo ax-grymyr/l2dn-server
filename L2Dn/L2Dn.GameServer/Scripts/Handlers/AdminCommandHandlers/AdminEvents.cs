@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -128,8 +129,8 @@ public class AdminEvents: IAdminCommandHandler
 	
 	private void showMenu(Player activeChar)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/gm_events.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/gm_events.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		StringBuilder cList = new StringBuilder(500);
 		foreach (Quest ev in QuestManager.getInstance().getScripts().values())
 		{
@@ -139,7 +140,7 @@ public class AdminEvents: IAdminCommandHandler
 			}
 		}
 
-		helper.Replace("%LIST%", cList.ToString());
+		htmlContent.Replace("%LIST%", cList.ToString());
 		activeChar.sendPacket(html);
 	}
 }

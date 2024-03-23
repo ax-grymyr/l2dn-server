@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Events.Impl.Players;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -62,14 +63,14 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			}
 		}
 		
-		int bypassOriginId = 0;
+		int? bypassOriginId = null;
 		if (requiresBypassValidation)
 		{
-			bypassOriginId = player.validateHtmlAction(_command);
-			if (bypassOriginId == -1)
+			if (!session.HtmlActionValidator.IsValidAction(_command, out bypassOriginId))
 				return ValueTask.CompletedTask;
-			
-			if (bypassOriginId > 0 && !Util.isInsideRangeOfObjectId(player, bypassOriginId, Npc.INTERACTION_DISTANCE))
+
+			if (bypassOriginId != null &&
+			    !Util.isInsideRangeOfObjectId(player, bypassOriginId.Value, Npc.INTERACTION_DISTANCE))
 			{
 				// No logging here, this could be a common case where the player has the html still open and run
 				// too far away and then clicks a html action
@@ -224,9 +225,9 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				IBypassHandler handler = BypassHandler.getInstance().getHandler(_command);
 				if (handler != null)
 				{
-					if (bypassOriginId > 0)
+					if (bypassOriginId != null)
 					{
-						WorldObject bypassOrigin = World.getInstance().findObject(bypassOriginId);
+						WorldObject bypassOrigin = World.getInstance().findObject(bypassOriginId.Value);
 						if (bypassOrigin != null && bypassOrigin.isCreature())
 						{
 							handler.useBypass(_command, player, (Creature) bypassOrigin);
@@ -260,8 +261,9 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				sb.Append("</body></html>");
 				
 				// item html
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(0, 1, sb.ToString());
-				//msg.disableValidation();
+				HtmlContent htmlContent = HtmlContent.LoadFromText(sb.ToString(), player);
+				htmlContent.DisableValidation();
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				
 				player.sendPacket(msg);
 			}

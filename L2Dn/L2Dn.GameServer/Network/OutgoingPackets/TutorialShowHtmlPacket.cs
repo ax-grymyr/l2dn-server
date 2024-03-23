@@ -1,4 +1,6 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Html;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -9,15 +11,9 @@ public readonly struct TutorialShowHtmlPacket: IOutgoingPacket
     public const int LARGE_WINDOW = 2;
 	
     private readonly int _type;
-    private readonly string _html;
+    private readonly HtmlContent _html;
 	
-    public TutorialShowHtmlPacket(String html)
-    {
-        _type = NORMAL_WINDOW;
-        _html = html;
-    }
-	
-    public TutorialShowHtmlPacket(string html, int type)
+    public TutorialShowHtmlPacket(HtmlContent html, int type = NORMAL_WINDOW)
     {
         _type = type;
         _html = html;
@@ -28,6 +24,6 @@ public readonly struct TutorialShowHtmlPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.TUTORIAL_SHOW_HTML);
         
         writer.WriteInt32(_type);
-        writer.WriteString(_html);
+        writer.WriteString(_html.BuildHtml(HtmlActionScope.TUTORIAL_HTML));
     }
 }

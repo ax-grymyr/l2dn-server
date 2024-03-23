@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -368,7 +369,8 @@ public class AdminSkill: IAdminCommandHandler
 		
 		replyMSG.Append("</table><br><center><table>Remove skill by ID :<tr><td>Id: </td><td><edit var=\"id_to_remove\" width=110></td></tr></table></center><center><button value=\"Remove skill\" action=\"bypass -h admin_remove_skill $id_to_remove\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center><br><center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, replyMSG.ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), player);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -385,11 +387,11 @@ public class AdminSkill: IAdminCommandHandler
 		}
 		Player player = target.getActingPlayer();
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/charskills.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%name%", player.getName());
-		helper.Replace("%level%", player.getLevel().ToString());
-		helper.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charskills.htm", player);
+		htmlContent.Replace("%name%", player.getName());
+		htmlContent.Replace("%level%", player.getLevel().ToString());
+		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
 	

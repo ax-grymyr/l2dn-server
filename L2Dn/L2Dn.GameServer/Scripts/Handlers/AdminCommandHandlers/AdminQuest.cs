@@ -150,7 +150,7 @@
 // 					}
 // 				}
 //
-// 				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/npc-quests.htm");
+// 				HtmlText helper = HtmlText.LoadFromFile("html/admin/npc-quests.htm");
 // 				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(0, 1, helper);
 // 				helper.Replace("%quests%", sb.ToString());
 // 				helper.Replace("%objid%", creature.getObjectId().ToString());

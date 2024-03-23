@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -166,14 +167,13 @@ public class AdminPcCafePoints: IAdminCommandHandler
 	
 	private void showMenuHtml(Player activeChar)
 	{
-		HtmlPacketHelper helper =
-			new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, "html/admin/pccafe.htm"));
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/pccafe.htm", activeChar);
 		
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		Player target = getTarget(activeChar);
 		int points = target.getPcCafePoints();
-		helper.Replace("%points%", Util.formatAdena(points));
-		helper.Replace("%targetName%", target.getName());
+		htmlContent.Replace("%points%", Util.formatAdena(points));
+		htmlContent.Replace("%targetName%", target.getName());
 		activeChar.sendPacket(html);
 	}
 	

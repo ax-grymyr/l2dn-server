@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -69,8 +70,8 @@ public class AdminCursedWeapons: IAdminCommandHandler
 			{
 				ICollection<CursedWeapon> cws = cwm.getCursedWeapons();
 				StringBuilder replyMSG = new StringBuilder(cws.Count * 300);
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/cwinfo.htm");
-				NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/cwinfo.htm", activeChar);
+				NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				foreach (CursedWeapon cw in cwm.getCursedWeapons())
 				{
 					int itemId = cw.getItemId();
@@ -124,7 +125,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 					replyMSG.Append("</table><br>");
 				}
 				
-				helper.Replace("%cwinfo%", replyMSG.ToString());
+				htmlContent.Replace("%cwinfo%", replyMSG.ToString());
 				activeChar.sendPacket(adminReply);
 			}
 		}

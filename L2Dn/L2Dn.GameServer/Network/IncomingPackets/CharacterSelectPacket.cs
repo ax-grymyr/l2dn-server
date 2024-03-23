@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -87,13 +88,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					if ((Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0) && !AntiFeedManager.getInstance()
 						    .tryAddClient(AntiFeedManager.GAME_ID, session, Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
-						HtmlPacketHelper helper =
-							new HtmlPacketHelper(DataFileLocation.Data, "html/mods/IPRestriction.htm");
-						
-						helper.Replace("%max%", AntiFeedManager.getInstance()
+						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/IPRestriction.htm", null);
+
+						htmlContent.Replace("%max%", AntiFeedManager.getInstance()
 							.getLimit(session, Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP).ToString());
 
-						NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(helper);
+						NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 						connection.Send(ref msg);
 						return ValueTask.CompletedTask;
 					}
@@ -104,13 +104,11 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						                      (World.getInstance().getAllEvilPlayers().Count +
 						                       Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)))
 						{
-							HtmlPacketHelper helper =
-								new HtmlPacketHelper(DataFileLocation.Data, "html/mods/Faction/ExceededOnlineLimit.htm");
+							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
+							htmlContent.Replace("%more%", Config.FACTION_GOOD_TEAM_NAME);
+							htmlContent.Replace("%less%", Config.FACTION_EVIL_TEAM_NAME);
 
-							helper.Replace("%more%", Config.FACTION_GOOD_TEAM_NAME);
-							helper.Replace("%less%", Config.FACTION_EVIL_TEAM_NAME);
-
-							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(helper);
+							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 							connection.Send(ref msg);
 							return ValueTask.CompletedTask;
 						}
@@ -119,13 +117,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						                      (World.getInstance().getAllGoodPlayers().Count +
 						                       Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)))
 						{
-							HtmlPacketHelper helper =
-								new HtmlPacketHelper(DataFileLocation.Data, "html/mods/Faction/ExceededOnlineLimit.htm");
+							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
 
-							helper.Replace("%more%", Config.FACTION_EVIL_TEAM_NAME);
-							helper.Replace("%less%", Config.FACTION_GOOD_TEAM_NAME);
+							htmlContent.Replace("%more%", Config.FACTION_EVIL_TEAM_NAME);
+							htmlContent.Replace("%less%", Config.FACTION_GOOD_TEAM_NAME);
 
-							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(helper);
+							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 							connection.Send(ref msg);
 							return ValueTask.CompletedTask;
 						}
@@ -139,11 +136,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					CharInfoTable.getInstance().addName(player);
 					
 					// Prevent instant disappear of invisible GMs on login.
-					if (player.isGM() && Config.GM_STARTUP_INVISIBLE && AdminData.getInstance().hasAccess("admin_invisible", player.getAccessLevel()))
+					if (player.isGM() && Config.GM_STARTUP_INVISIBLE && AdminData.getInstance()
+						    .hasAccess("admin_invisible", player.getAccessLevel()))
 					{
 						player.setInvisible(true);
 					}
-					
+
 					player.setClient(session);
 					session.Player = player;
 					player.setOnlineStatus(true, true);

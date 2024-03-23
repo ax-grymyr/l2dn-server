@@ -6,6 +6,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Stats;
@@ -172,15 +173,15 @@ public class NpcViewMod: IBypassHandler
 	
 	public static void sendNpcView(Player player, Npc npc)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/mods/NpcView/Info.htm");
-		helper.Replace("%name%", npc.getName());
-		helper.Replace("%hpGauge%", HtmlUtil.getHpGauge(250, (long) npc.getCurrentHp(), npc.getMaxHp(), false));
-		helper.Replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) npc.getCurrentMp(), npc.getMaxMp(), false));
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/NpcView/Info.htm", player);
+		htmlContent.Replace("%name%", npc.getName());
+		htmlContent.Replace("%hpGauge%", HtmlUtil.getHpGauge(250, (long) npc.getCurrentHp(), npc.getMaxHp(), false));
+		htmlContent.Replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) npc.getCurrentMp(), npc.getMaxMp(), false));
 		
 		Spawn npcSpawn = npc.getSpawn();
 		if ((npcSpawn == null) || (npcSpawn.getRespawnMinDelay() == TimeSpan.Zero))
 		{
-			helper.Replace("%respawn%", "None");
+			htmlContent.Replace("%respawn%", "None");
 		}
 		else
 		{
@@ -188,43 +189,43 @@ public class NpcViewMod: IBypassHandler
 			TimeSpan maxRespawnDelay = npcSpawn.getRespawnMaxDelay();
 			if (npcSpawn.hasRespawnRandom())
 			{
-				helper.Replace("%respawn%", $"{minRespawnDelay:g}-{maxRespawnDelay:g}");
+				htmlContent.Replace("%respawn%", $"{minRespawnDelay:g}-{maxRespawnDelay:g}");
 			}
 			else
 			{
-				helper.Replace("%respawn%", minRespawnDelay.ToString("g"));
+				htmlContent.Replace("%respawn%", minRespawnDelay.ToString("g"));
 			}
 		}
 		
-		helper.Replace("%atktype%", CommonUtil.capitalizeFirst(npc.getAttackType().ToString().toLowerCase()));
-		helper.Replace("%atkrange%", npc.getStat().getPhysicalAttackRange().ToString());
-		helper.Replace("%patk%", npc.getPAtk().ToString());
-		helper.Replace("%pdef%", npc.getPDef().ToString());
-		helper.Replace("%matk%", npc.getMAtk().ToString());
-		helper.Replace("%mdef%", npc.getMDef().ToString());
-		helper.Replace("%atkspd%", npc.getPAtkSpd().ToString());
-		helper.Replace("%castspd%", npc.getMAtkSpd().ToString());
-		helper.Replace("%critrate%", npc.getStat().getCriticalHit().ToString());
-		helper.Replace("%evasion%", npc.getEvasionRate().ToString());
-		helper.Replace("%accuracy%", npc.getStat().getAccuracy().ToString());
-		helper.Replace("%speed%", ((int)npc.getStat().getMoveSpeed()).ToString());
-		helper.Replace("%attributeatktype%", npc.getStat().getAttackElement().ToString());
-		helper.Replace("%attributeatkvalue%", npc.getStat().getAttackElementValue(npc.getStat().getAttackElement()).ToString());
-		helper.Replace("%attributefire%", npc.getStat().getDefenseElementValue(AttributeType.FIRE).ToString());
-		helper.Replace("%attributewater%", npc.getStat().getDefenseElementValue(AttributeType.WATER).ToString());
-		helper.Replace("%attributewind%", npc.getStat().getDefenseElementValue(AttributeType.WIND).ToString());
-		helper.Replace("%attributeearth%", npc.getStat().getDefenseElementValue(AttributeType.EARTH).ToString());
-		helper.Replace("%attributedark%", npc.getStat().getDefenseElementValue(AttributeType.DARK).ToString());
-		helper.Replace("%attributeholy%", npc.getStat().getDefenseElementValue(AttributeType.HOLY).ToString());
-		helper.Replace("%dropListButtons%", getDropListButtons(npc));
+		htmlContent.Replace("%atktype%", CommonUtil.capitalizeFirst(npc.getAttackType().ToString().toLowerCase()));
+		htmlContent.Replace("%atkrange%", npc.getStat().getPhysicalAttackRange().ToString());
+		htmlContent.Replace("%patk%", npc.getPAtk().ToString());
+		htmlContent.Replace("%pdef%", npc.getPDef().ToString());
+		htmlContent.Replace("%matk%", npc.getMAtk().ToString());
+		htmlContent.Replace("%mdef%", npc.getMDef().ToString());
+		htmlContent.Replace("%atkspd%", npc.getPAtkSpd().ToString());
+		htmlContent.Replace("%castspd%", npc.getMAtkSpd().ToString());
+		htmlContent.Replace("%critrate%", npc.getStat().getCriticalHit().ToString());
+		htmlContent.Replace("%evasion%", npc.getEvasionRate().ToString());
+		htmlContent.Replace("%accuracy%", npc.getStat().getAccuracy().ToString());
+		htmlContent.Replace("%speed%", ((int)npc.getStat().getMoveSpeed()).ToString());
+		htmlContent.Replace("%attributeatktype%", npc.getStat().getAttackElement().ToString());
+		htmlContent.Replace("%attributeatkvalue%", npc.getStat().getAttackElementValue(npc.getStat().getAttackElement()).ToString());
+		htmlContent.Replace("%attributefire%", npc.getStat().getDefenseElementValue(AttributeType.FIRE).ToString());
+		htmlContent.Replace("%attributewater%", npc.getStat().getDefenseElementValue(AttributeType.WATER).ToString());
+		htmlContent.Replace("%attributewind%", npc.getStat().getDefenseElementValue(AttributeType.WIND).ToString());
+		htmlContent.Replace("%attributeearth%", npc.getStat().getDefenseElementValue(AttributeType.EARTH).ToString());
+		htmlContent.Replace("%attributedark%", npc.getStat().getDefenseElementValue(AttributeType.DARK).ToString());
+		htmlContent.Replace("%attributeholy%", npc.getStat().getDefenseElementValue(AttributeType.HOLY).ToString());
+		htmlContent.Replace("%dropListButtons%", getDropListButtons(npc));
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
 	private void sendNpcSkillView(Player player, Npc npc)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/mods/NpcView/Skills.htm");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/NpcView/Skills.htm", player);
 		
 		StringBuilder sb = new StringBuilder();
 		npc.getSkills().values().forEach(s =>
@@ -245,17 +246,17 @@ public class NpcViewMod: IBypassHandler
 			sb.Append("</td></tr></table>");
 		});
 		
-		helper.Replace("%skills%", sb.ToString());
-		helper.Replace("%npc_name%", npc.getName());
-		helper.Replace("%npcId%", npc.getId().ToString());
+		htmlContent.Replace("%skills%", sb.ToString());
+		htmlContent.Replace("%npc_name%", npc.getName());
+		htmlContent.Replace("%npcId%", npc.getId().ToString());
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
 	private void sendAggroListView(Player player, Npc npc)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/mods/NpcView/AggroList.htm");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/NpcView/AggroList.htm", player);
 		
 		StringBuilder sb = new StringBuilder();
 		if (npc.isAttackable())
@@ -275,12 +276,12 @@ public class NpcViewMod: IBypassHandler
 			});
 		}
 		
-		helper.Replace("%aggrolist%", sb.ToString());
-		helper.Replace("%npc_name%", npc.getName());
-		helper.Replace("%npcId%", npc.getId().ToString());
-		helper.Replace("%objid%", npc.getObjectId().ToString());
+		htmlContent.Replace("%aggrolist%", sb.ToString());
+		htmlContent.Replace("%npc_name%", npc.getName());
+		htmlContent.Replace("%npcId%", npc.getId().ToString());
+		htmlContent.Replace("%objid%", npc.getObjectId().ToString());
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
@@ -557,11 +558,11 @@ public class NpcViewMod: IBypassHandler
 		bodySb.Append("</td>");
 		bodySb.Append("</tr></table>");
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/mods/NpcView/DropList.htm");
-		helper.Replace("%name%", npc.getName());
-		helper.Replace("%dropListButtons%", getDropListButtons(npc));
-		helper.Replace("%pages%", pagesSb.ToString());
-		helper.Replace("%items%", bodySb.ToString() + limitReachedMsg);
-		Util.sendCBHtml(player, helper.getHtml());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/NpcView/DropList.htm", player);
+		htmlContent.Replace("%name%", npc.getName());
+		htmlContent.Replace("%dropListButtons%", getDropListButtons(npc));
+		htmlContent.Replace("%pages%", pagesSb.ToString());
+		htmlContent.Replace("%items%", bodySb + limitReachedMsg);
+		Util.sendCBHtml(player, htmlContent.BuildHtml(HtmlActionScope.COMM_BOARD_HTML));
 	}
 }

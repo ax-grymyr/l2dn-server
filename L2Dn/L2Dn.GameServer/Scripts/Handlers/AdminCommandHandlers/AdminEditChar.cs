@@ -1087,8 +1087,8 @@ public class AdminEditChar: IAdminCommandHandler
 		List<Player> players = new(World.getInstance().getPlayers());
 		players.Sort((x, y) => -x.getUptime().CompareTo(y.getUptime()));
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/charlist.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charlist.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		
 		PageResult result = PageBuilder.newBuilder(players, 20, "bypass -h admin_show_characters").currentPage(page).bodyHandler((pages, player, sb) =>
 		{
@@ -1100,14 +1100,14 @@ public class AdminEditChar: IAdminCommandHandler
 		
 		if (result.getPages() > 0)
 		{
-			helper.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
+			htmlContent.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
 		}
 		else
 		{
-			helper.Replace("%pages%", "");
+			htmlContent.Replace("%pages%", "");
 		}
 		
-		helper.Replace("%players%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%players%", result.getBodyTemplate().ToString());
 		activeChar.sendPacket(html);
 	}
 	
@@ -1162,55 +1162,55 @@ public class AdminEditChar: IAdminCommandHandler
 			ip = client.IpAddress.ToString();
 		}
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "data/html/admin/" + filename);
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%name%", player.getName());
-		helper.Replace("%level%", player.getLevel().ToString());
-		helper.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.getObjectId() + "\">" + player.getClan().getName() + "</a>" : null);
-		helper.Replace("%xp%", player.getExp().ToString());
-		helper.Replace("%sp%", player.getSp().ToString());
-		helper.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
-		helper.Replace("%ordinal%", player.getClassId().ToString());
-		helper.Replace("%classid%", player.getClassId().ToString());
-		helper.Replace("%baseclass%", ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode());
-		helper.Replace("%x%", player.getX().ToString());
-		helper.Replace("%y%", player.getY().ToString());
-		helper.Replace("%z%", player.getZ().ToString());
-		helper.Replace("%heading%", player.getHeading().ToString());
-		helper.Replace("%currenthp%", ((int) player.getCurrentHp()).ToString());
-		helper.Replace("%maxhp%", player.getMaxHp().ToString());
-		helper.Replace("%reputation%", player.getReputation().ToString());
-		helper.Replace("%currentmp%", ((int) player.getCurrentMp()).ToString());
-		helper.Replace("%maxmp%", player.getMaxMp().ToString());
-		helper.Replace("%pvpflag%", player.getPvpFlag().ToString());
-		helper.Replace("%currentcp%", ((int) player.getCurrentCp()).ToString());
-		helper.Replace("%maxcp%", player.getMaxCp().ToString());
-		helper.Replace("%pvpkills%", player.getPvpKills().ToString());
-		helper.Replace("%pkkills%", player.getPkKills().ToString());
-		helper.Replace("%currentload%", player.getCurrentLoad().ToString());
-		helper.Replace("%maxload%", player.getMaxLoad().ToString());
-		helper.Replace("%percent%", (100.0 * player.getCurrentLoad() / player.getMaxLoad()).ToString());
-		helper.Replace("%patk%", player.getPAtk().ToString());
-		helper.Replace("%matk%", player.getMAtk().ToString());
-		helper.Replace("%pdef%", player.getPDef().ToString());
-		helper.Replace("%mdef%", player.getMDef().ToString());
-		helper.Replace("%accuracy%", player.getAccuracy().ToString());
-		helper.Replace("%evasion%", player.getEvasionRate().ToString());
-		helper.Replace("%critical%", player.getCriticalHit().ToString());
-		helper.Replace("%runspeed%", player.getRunSpeed().ToString());
-		helper.Replace("%patkspd%", player.getPAtkSpd().ToString());
-		helper.Replace("%matkspd%", player.getMAtkSpd().ToString());
-		helper.Replace("%hpregen%", player.getStat().getHpRegen().ToString());
-		helper.Replace("%mpregen%", player.getStat().getMpRegen().ToString());
-		helper.Replace("%cpregen%", player.getStat().getCpRegen().ToString());
-		helper.Replace("%access%", player.getAccessLevel().getLevel() + " (" + player.getAccessLevel().getName() + ")");
-		helper.Replace("%account%", player.getAccountName());
-		helper.Replace("%ip%", ip);
-		helper.Replace("%protocol%", player.getClient() != null ? player.getClient().ProtocolVersion.ToString() : "NULL");
-		helper.Replace("%hwid%", (player.getClient() != null) && (player.getClient().HardwareInfo != null) ? player.getClient().HardwareInfo.getMacAddress() : "Unknown");
-		helper.Replace("%ai%", player.getAI().getIntention().ToString());
-		helper.Replace("%inst%", player.isInInstance() ? " " + player.getInstanceWorld().getName() + "</td><td><button value=\"Go\" action=\"bypass -h admin_instanceteleport " + player.getInstanceId() + "\"width=60 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">" : "NONE");
-		helper.Replace("%noblesse%", player.isNoble() ? "Yes" : "No");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/" + filename, activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%name%", player.getName());
+		htmlContent.Replace("%level%", player.getLevel().ToString());
+		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.getObjectId() + "\">" + player.getClan().getName() + "</a>" : null);
+		htmlContent.Replace("%xp%", player.getExp().ToString());
+		htmlContent.Replace("%sp%", player.getSp().ToString());
+		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		htmlContent.Replace("%ordinal%", player.getClassId().ToString());
+		htmlContent.Replace("%classid%", player.getClassId().ToString());
+		htmlContent.Replace("%baseclass%", ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode());
+		htmlContent.Replace("%x%", player.getX().ToString());
+		htmlContent.Replace("%y%", player.getY().ToString());
+		htmlContent.Replace("%z%", player.getZ().ToString());
+		htmlContent.Replace("%heading%", player.getHeading().ToString());
+		htmlContent.Replace("%currenthp%", ((int) player.getCurrentHp()).ToString());
+		htmlContent.Replace("%maxhp%", player.getMaxHp().ToString());
+		htmlContent.Replace("%reputation%", player.getReputation().ToString());
+		htmlContent.Replace("%currentmp%", ((int) player.getCurrentMp()).ToString());
+		htmlContent.Replace("%maxmp%", player.getMaxMp().ToString());
+		htmlContent.Replace("%pvpflag%", player.getPvpFlag().ToString());
+		htmlContent.Replace("%currentcp%", ((int) player.getCurrentCp()).ToString());
+		htmlContent.Replace("%maxcp%", player.getMaxCp().ToString());
+		htmlContent.Replace("%pvpkills%", player.getPvpKills().ToString());
+		htmlContent.Replace("%pkkills%", player.getPkKills().ToString());
+		htmlContent.Replace("%currentload%", player.getCurrentLoad().ToString());
+		htmlContent.Replace("%maxload%", player.getMaxLoad().ToString());
+		htmlContent.Replace("%percent%", (100.0 * player.getCurrentLoad() / player.getMaxLoad()).ToString());
+		htmlContent.Replace("%patk%", player.getPAtk().ToString());
+		htmlContent.Replace("%matk%", player.getMAtk().ToString());
+		htmlContent.Replace("%pdef%", player.getPDef().ToString());
+		htmlContent.Replace("%mdef%", player.getMDef().ToString());
+		htmlContent.Replace("%accuracy%", player.getAccuracy().ToString());
+		htmlContent.Replace("%evasion%", player.getEvasionRate().ToString());
+		htmlContent.Replace("%critical%", player.getCriticalHit().ToString());
+		htmlContent.Replace("%runspeed%", player.getRunSpeed().ToString());
+		htmlContent.Replace("%patkspd%", player.getPAtkSpd().ToString());
+		htmlContent.Replace("%matkspd%", player.getMAtkSpd().ToString());
+		htmlContent.Replace("%hpregen%", player.getStat().getHpRegen().ToString());
+		htmlContent.Replace("%mpregen%", player.getStat().getMpRegen().ToString());
+		htmlContent.Replace("%cpregen%", player.getStat().getCpRegen().ToString());
+		htmlContent.Replace("%access%", player.getAccessLevel().getLevel() + " (" + player.getAccessLevel().getName() + ")");
+		htmlContent.Replace("%account%", player.getAccountName());
+		htmlContent.Replace("%ip%", ip);
+		htmlContent.Replace("%protocol%", player.getClient() != null ? player.getClient().ProtocolVersion.ToString() : "NULL");
+		htmlContent.Replace("%hwid%", (player.getClient() != null) && (player.getClient().HardwareInfo != null) ? player.getClient().HardwareInfo.getMacAddress() : "Unknown");
+		htmlContent.Replace("%ai%", player.getAI().getIntention().ToString());
+		htmlContent.Replace("%inst%", player.isInInstance() ? " " + player.getInstanceWorld().getName() + "</td><td><button value=\"Go\" action=\"bypass -h admin_instanceteleport " + player.getInstanceId() + "\"width=60 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">" : "NONE");
+		htmlContent.Replace("%noblesse%", player.isNoble() ? "Yes" : "No");
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1269,8 +1269,8 @@ public class AdminEditChar: IAdminCommandHandler
 		int charactersFound = 0;
 		String name;
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/charfind.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charfind.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		
 		StringBuilder replyMSG = new StringBuilder(1000);
 		List<Player> players = new(World.getInstance().getPlayers().OrderByDescending(p=>p.getUptime()));
@@ -1295,7 +1295,7 @@ public class AdminEditChar: IAdminCommandHandler
 				break;
 			}
 		}
-		helper.Replace("%results%", replyMSG.ToString());
+		htmlContent.Replace("%results%", replyMSG.ToString());
 		
 		String replyMSG2;
 		if (charactersFound == 0)
@@ -1304,7 +1304,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (charactersFound > 20)
 		{
-			helper.Replace("%number%", " more than 20");
+			htmlContent.Replace("%number%", " more than 20");
 			replyMSG2 = "s.<br>Please refine your search to see all of the results.";
 		}
 		else if (charactersFound == 1)
@@ -1316,8 +1316,8 @@ public class AdminEditChar: IAdminCommandHandler
 			replyMSG2 = "s.";
 		}
 		
-		helper.Replace("%number%", charactersFound.ToString());
-		helper.Replace("%end%", replyMSG2);
+		htmlContent.Replace("%number%", charactersFound.ToString());
+		htmlContent.Replace("%end%", replyMSG2);
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1342,8 +1342,8 @@ public class AdminEditChar: IAdminCommandHandler
 		String ip = "0.0.0.0";
 		StringBuilder replyMSG = new StringBuilder(1000);
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/ipfind.htm"); 
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/ipfind.htm", activeChar); 
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 
 		List<Player> players = new(World.getInstance().getPlayers().OrderByDescending(p => p.getUptime()));
 		foreach (Player player in players)
@@ -1392,7 +1392,7 @@ public class AdminEditChar: IAdminCommandHandler
 				break;
 			}
 		}
-		helper.Replace("%results%", replyMSG.ToString());
+		htmlContent.Replace("%results%", replyMSG.ToString());
 		
 		String replyMSG2;
 		if (charactersFound == 0)
@@ -1401,7 +1401,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (charactersFound > 20)
 		{
-			helper.Replace("%number%", " more than " + charactersFound);
+			htmlContent.Replace("%number%", " more than " + charactersFound);
 			replyMSG2 = "s.<br>In order to avoid you a client crash I won't <br1>display results beyond the 20th character.";
 		}
 		else if (charactersFound == 1)
@@ -1412,9 +1412,9 @@ public class AdminEditChar: IAdminCommandHandler
 		{
 			replyMSG2 = "s.";
 		}
-		helper.Replace("%ip%", ipAdress);
-		helper.Replace("%number%", charactersFound.ToString());
-		helper.Replace("%end%", replyMSG2);
+		htmlContent.Replace("%ip%", ipAdress);
+		htmlContent.Replace("%number%", charactersFound.ToString());
+		htmlContent.Replace("%end%", replyMSG2);
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1433,11 +1433,11 @@ public class AdminEditChar: IAdminCommandHandler
 		Map<int, String> chars = player.getAccountChars();
 		string replyMSG = string.Join("<br1>", chars.values());
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/accountinfo.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1);
-		helper.Replace("%account%", player.getAccountName());
-		helper.Replace("%player%", characterName);
-		helper.Replace("%characters%", replyMSG);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/accountinfo.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%account%", player.getAccountName());
+		htmlContent.Replace("%player%", characterName);
+		htmlContent.Replace("%characters%", replyMSG);
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1489,11 +1489,11 @@ public class AdminEditChar: IAdminCommandHandler
 			results.Append("<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/dualbox.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%multibox%", multibox.ToString());
-		helper.Replace("%results%", results.ToString());
-		helper.Replace("%strict%", "");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/dualbox.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%multibox%", multibox.ToString());
+		htmlContent.Replace("%results%", results.ToString());
+		htmlContent.Replace("%strict%", "");
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1540,11 +1540,11 @@ public class AdminEditChar: IAdminCommandHandler
 			results.Append("<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/dualbox.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%multibox%", multibox.ToString());
-		helper.Replace("%results%", results.ToString());
-		helper.Replace("%strict%", "strict_");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/dualbox.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%multibox%", multibox.ToString());
+		htmlContent.Replace("%results%", results.ToString());
+		htmlContent.Replace("%strict%", "strict_");
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -1614,38 +1614,38 @@ public class AdminEditChar: IAdminCommandHandler
 	
 	private void gatherSummonInfo(Summon target, Player activeChar)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/petinfo.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/petinfo.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		String name = target.getName();
-		helper.Replace("%name%", name == null ? "N/A" : name);
-		helper.Replace("%level%", target.getLevel().ToString());
-		helper.Replace("%exp%", target.getStat().getExp().ToString());
+		htmlContent.Replace("%name%", name == null ? "N/A" : name);
+		htmlContent.Replace("%level%", target.getLevel().ToString());
+		htmlContent.Replace("%exp%", target.getStat().getExp().ToString());
 		String owner = target.getActingPlayer().getName();
-		helper.Replace("%owner%", " <a action=\"bypass -h admin_character_info " + owner + "\">" + owner + "</a>");
-		helper.Replace("%class%", target.GetType().Name);
-		helper.Replace("%ai%", target.hasAI() ? target.getAI().getIntention().ToString() : "NULL");
-		helper.Replace("%hp%", (int) target.getStatus().getCurrentHp() + "/" + target.getStat().getMaxHp());
-		helper.Replace("%mp%", (int) target.getStatus().getCurrentMp() + "/" + target.getStat().getMaxMp());
-		helper.Replace("%karma%", target.getReputation().ToString());
-		helper.Replace("%race%", target.getTemplate().getRace().ToString());
+		htmlContent.Replace("%owner%", " <a action=\"bypass -h admin_character_info " + owner + "\">" + owner + "</a>");
+		htmlContent.Replace("%class%", target.GetType().Name);
+		htmlContent.Replace("%ai%", target.hasAI() ? target.getAI().getIntention().ToString() : "NULL");
+		htmlContent.Replace("%hp%", (int) target.getStatus().getCurrentHp() + "/" + target.getStat().getMaxHp());
+		htmlContent.Replace("%mp%", (int) target.getStatus().getCurrentMp() + "/" + target.getStat().getMaxMp());
+		htmlContent.Replace("%karma%", target.getReputation().ToString());
+		htmlContent.Replace("%race%", target.getTemplate().getRace().ToString());
 		if (target.isPet())
 		{
 			int objId = target.getActingPlayer().getObjectId();
-			helper.Replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
+			htmlContent.Replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
 		}
 		else
 		{
-			helper.Replace("%inv%", "none");
+			htmlContent.Replace("%inv%", "none");
 		}
 		if (target.isPet())
 		{
-			helper.Replace("%food%", ((Pet) target).getCurrentFed() + "/" + ((Pet) target).getPetLevelData().getPetMaxFeed());
-			helper.Replace("%load%", target.getInventory().getTotalWeight() + "/" + target.getMaxLoad());
+			htmlContent.Replace("%food%", ((Pet) target).getCurrentFed() + "/" + ((Pet) target).getPetLevelData().getPetMaxFeed());
+			htmlContent.Replace("%load%", target.getInventory().getTotalWeight() + "/" + target.getMaxLoad());
 		}
 		else
 		{
-			helper.Replace("%food%", "N/A");
-			helper.Replace("%load%", "N/A");
+			htmlContent.Replace("%food%", "N/A");
+			htmlContent.Replace("%load%", "N/A");
 		}
 		activeChar.sendPacket(html);
 	}
@@ -1653,8 +1653,8 @@ public class AdminEditChar: IAdminCommandHandler
 	private void gatherPartyInfo(Player target, Player activeChar)
 	{
 		bool color = true;
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/partyinfo.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/partyinfo.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		StringBuilder text = new StringBuilder(400);
 		foreach (Player member in target.getParty().getMembers())
 		{
@@ -1670,8 +1670,8 @@ public class AdminEditChar: IAdminCommandHandler
 			text.Append("</td><td width=110 align=right>" + member.getClassId() + "</td></tr></table></td></tr>");
 			color = !color;
 		}
-		helper.Replace("%player%", target.getName());
-		helper.Replace("%party%", text.ToString());
+		htmlContent.Replace("%player%", target.getName());
+		htmlContent.Replace("%party%", text.ToString());
 		activeChar.sendPacket(html);
 	}
 }

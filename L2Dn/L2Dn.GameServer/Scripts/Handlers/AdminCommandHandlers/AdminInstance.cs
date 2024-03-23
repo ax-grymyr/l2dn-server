@@ -54,10 +54,10 @@ public class AdminInstance: IAdminCommandHandler
 			case "admin_instance":
 			case "admin_instances":
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/instances.htm");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-				helper.Replace("%instCount%", InstanceManager.getInstance().getInstances().Count.ToString());
-				helper.Replace("%tempCount%", InstanceManager.getInstance().getInstanceTemplates().Count.ToString());
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances.htm", activeChar);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
+				htmlContent.Replace("%instCount%", InstanceManager.getInstance().getInstances().Count.ToString());
+				htmlContent.Replace("%tempCount%", InstanceManager.getInstance().getInstanceTemplates().Count.ToString());
 				activeChar.sendPacket(html);
 				break;
 			}
@@ -177,16 +177,16 @@ public class AdminInstance: IAdminCommandHandler
 		{
 			InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
 
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/instances_detail.htm");
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances_detail.htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
-			helper.Replace("%templateId%", template.getId().ToString());
-			helper.Replace("%templateName%", template.getName());
-			helper.Replace("%activeWorlds%", template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()));
-			helper.Replace("%duration%", template.getDuration() + " minutes");
-			helper.Replace("%emptyDuration%", template.getEmptyDestroyTime().TotalMinutes + " minutes");
-			helper.Replace("%ejectDuration%", template.getEjectTime().TotalMinutes + " minutes");
-			helper.Replace("%removeBuff%", template.isRemoveBuffEnabled().ToString());
+			htmlContent.Replace("%templateId%", template.getId().ToString());
+			htmlContent.Replace("%templateName%", template.getName());
+			htmlContent.Replace("%activeWorlds%", template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()));
+			htmlContent.Replace("%duration%", template.getDuration() + " minutes");
+			htmlContent.Replace("%emptyDuration%", template.getEmptyDestroyTime().TotalMinutes + " minutes");
+			htmlContent.Replace("%ejectDuration%", template.getEjectTime().TotalMinutes + " minutes");
+			htmlContent.Replace("%removeBuff%", template.isRemoveBuffEnabled().ToString());
 			sb.Append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
 			sb.Append("<tr>");
 			sb.Append("<td fixwidth=\"83\"><font color=\"LEVEL\">Instance ID</font></td>");
@@ -206,7 +206,7 @@ public class AdminInstance: IAdminCommandHandler
 				sb.Append("</table>");
 			});
 			
-			helper.Replace("%instanceList%", sb.ToString());
+			htmlContent.Replace("%instanceList%", sb.ToString());
 			player.sendPacket(html);
 		}
 		else
@@ -218,8 +218,8 @@ public class AdminInstance: IAdminCommandHandler
 	
 	private void sendTemplateList(Player player, int page)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/instances_list.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances_list.htm", player);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		
 		InstanceManager instManager = InstanceManager.getInstance();
 		List<InstanceTemplate> templateList = instManager.getInstanceTemplates()
@@ -257,8 +257,8 @@ public class AdminInstance: IAdminCommandHandler
 		}).build();
 		//@formatter:on
 		
-		helper.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
-		helper.Replace("%data%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
+		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		player.sendPacket(html);
 	}
 	

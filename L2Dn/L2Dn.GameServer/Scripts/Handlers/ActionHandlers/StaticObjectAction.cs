@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
@@ -39,27 +40,20 @@ public class StaticObjectAction: IActionHandler
 			}
 			else if (staticObject.getType() == 2)
 			{
-				String filename = (staticObject.getId() == 24230101) ? "html/signboard/tomb_of_crystalgolem.htm" : "html/signboard/pvp_signboard.htm";
-				String content = HtmCache.getInstance().getHtm(player, filename);
-
-				HtmlPacketHelper helper;
-				if (content == null)
-				{
-					helper = new HtmlPacketHelper("<html><body>Signboard is missing:<br>" + filename + "</body></html>");
-				}
-				else
-				{
-					helper = new HtmlPacketHelper(content);
-				}
+				string filename = (staticObject.getId() == 24230101)
+					? "html/signboard/tomb_of_crystalgolem.htm"
+					: "html/signboard/pvp_signboard.htm";
 				
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(staticObject.getObjectId(), helper);
-				player.sendPacket(html);
+				HtmlContent html = HtmlContent.LoadFromFile(filename, player);
+				NpcHtmlMessagePacket htmlPacket = new NpcHtmlMessagePacket(staticObject.getObjectId(), 0, html);
+				player.sendPacket(htmlPacket);
 			}
 			else if (staticObject.getType() == 0)
 			{
 				player.sendPacket(staticObject.getMap());
 			}
 		}
+		
 		return true;
 	}
 	

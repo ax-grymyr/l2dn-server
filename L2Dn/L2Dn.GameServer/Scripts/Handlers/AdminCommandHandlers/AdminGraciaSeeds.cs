@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -42,18 +43,18 @@ public class AdminGraciaSeeds: IAdminCommandHandler
 	
 	private void showMenu(Player activeChar)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/graciaseeds.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%sodstate%", GraciaSeedsManager.getInstance().getSoDState().ToString());
-		helper.Replace("%sodtiatkill%", GraciaSeedsManager.getInstance().getSoDTiatKilled().ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/graciaseeds.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%sodstate%", GraciaSeedsManager.getInstance().getSoDState().ToString());
+		htmlContent.Replace("%sodtiatkill%", GraciaSeedsManager.getInstance().getSoDTiatKilled().ToString());
 		if (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() > TimeSpan.Zero)
 		{
 			DateTime nextChangeDate = DateTime.UtcNow + (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() ?? TimeSpan.Zero);
-			helper.Replace("%sodtime%", nextChangeDate.ToString());
+			htmlContent.Replace("%sodtime%", nextChangeDate.ToString());
 		}
 		else
 		{
-			helper.Replace("%sodtime%", "-1");
+			htmlContent.Replace("%sodtime%", "-1");
 		}
 		activeChar.sendPacket(html);
 	}

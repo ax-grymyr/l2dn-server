@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
@@ -49,7 +50,8 @@ public class AdminGrandBoss: IAdminCommandHandler
 				}
 				else
 				{
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, HtmCache.getInstance().getHtm(activeChar, "html/admin/grandboss/grandboss.htm"));
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/grandboss/grandboss.htm", activeChar);
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 					activeChar.sendPacket(html);
 				}
 				break;
@@ -292,12 +294,12 @@ public class AdminGrandBoss: IAdminCommandHandler
 			StatSet info = GrandBossManager.getInstance().getStatSet(grandBossId);
 			String bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
 
-			HtmlPacketHelper helper = new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, htmlPatch));
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-			helper.Replace("%bossStatus%", text);
-			helper.Replace("%bossColor%", textColor);
-			helper.Replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
-			helper.Replace("%playersInside%", bossZone != null ? bossZone.getPlayersInside().size().ToString() : "Zone not found!");
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(htmlPatch, activeChar);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
+			htmlContent.Replace("%bossStatus%", text);
+			htmlContent.Replace("%bossColor%", textColor);
+			htmlContent.Replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
+			htmlContent.Replace("%playersInside%", bossZone != null ? bossZone.getPlayersInside().size().ToString() : "Zone not found!");
 			activeChar.sendPacket(html);
 		}
 		else

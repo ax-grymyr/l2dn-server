@@ -4,6 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
@@ -61,12 +62,11 @@ public class SiegeStatus: IUserCommandHandler
 				sb.Append("</td></tr>");
 			}
 
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/siege/siege_status.htm");
-			helper.Replace("%kill_count%", clan.getSiegeKills().ToString());
-			helper.Replace("%death_count%", clan.getSiegeDeaths().ToString());
-			helper.Replace("%member_list%", sb.ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(helper);
-			player.sendPacket(html);
+			HtmlContent html = HtmlContent.LoadFromFile("html/siege/siege_status.htm", player);
+			html.Replace("%kill_count%", clan.getSiegeKills().ToString());
+			html.Replace("%death_count%", clan.getSiegeDeaths().ToString());
+			html.Replace("%member_list%", sb.ToString());
+			player.sendPacket(new NpcHtmlMessagePacket(null, 0, html));
 			
 			return true;
 		}

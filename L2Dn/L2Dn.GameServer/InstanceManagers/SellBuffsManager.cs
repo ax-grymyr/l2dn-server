@@ -47,20 +47,23 @@ public class SellBuffsManager: DataReaderBase
 	
 	public void sendSellMenu(Player player)
 	{
-		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + (player.isSellingBuffs() ? "BuffMenu_already.html" : "BuffMenu.html"));
+		String html = HtmCache.getInstance()
+			.getHtm(HTML_FOLDER + (player.isSellingBuffs() ? "BuffMenu_already.html" : "BuffMenu.html"),
+				player.getLang());
+		
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
 	public void sendBuffChoiceMenu(Player player, int index)
 	{
-		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffChoice.html");
+		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildSkillMenu(player, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
 	public void sendBuffEditMenu(Player player)
 	{
-		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffChoice.html");
+		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildEditMenu(player));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
@@ -72,7 +75,7 @@ public class SellBuffsManager: DataReaderBase
 			return;
 		}
 		
-		String html = HtmCache.getInstance().getHtm(player, HTML_FOLDER + "BuffBuyMenu.html");
+		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffBuyMenu.html", player.getLang());
 		html = html.Replace("%list%", buildBuffMenu(seller, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}

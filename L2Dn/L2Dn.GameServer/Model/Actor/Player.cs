@@ -98,8 +98,7 @@ public class Player: Playable
 	private DateTime? _deleteTime;
 	private DateTime _createDate = DateTime.UtcNow;
 	
-	private string _lang;
-	private string _htmlPrefix = "";
+	private string? _lang;
 	
 	private volatile bool _isOnline;
 	private bool _offlinePlay;
@@ -439,18 +438,6 @@ public class Player: Playable
 	private readonly Map<int, Skill> _transformSkills = new();
 	private ScheduledFuture _taskRentPet;
 	private ScheduledFuture _taskWater;
-	
-	/** Last Html Npcs, 0 = last html was not bound to an npc */
-	private readonly int[] _htmlActionOriginObjectIds = new int[EnumUtil.GetValues<HtmlActionScope>().Length];
-	/**
-	 * Origin of the last incoming html action request.<br>
-	 * This can be used for htmls continuing the conversation with an npc.
-	 */
-	private int _lastHtmlActionOriginObjId;
-
-	/** Bypass validations */
-	private readonly List<string>[] _htmlActionCaches =
-		new List<string>[(int)EnumUtil.GetMaxValue<HtmlActionScope>() + 1];
 	
 	private Forum _forumMail;
 	private Forum _forumMemo;
@@ -876,11 +863,6 @@ public class Player: Playable
 		_blockList = new BlockList(this);
 		_fishing = new Fishing(this);
 		_dailyMissions = new PlayerDailyMissionList(this);
-
-		for (int i = 0; i < _htmlActionCaches.Length; ++i)
-		{
-			_htmlActionCaches[i] = new();
-		}
 
 		_huntPass = Config.ENABLE_HUNT_PASS ? new HuntPass(this) : null;
 		_achivemenetBox = Config.ENABLE_ACHIEVEMENT_BOX ? new AchievementBox(this) : null;
@@ -10847,73 +10829,6 @@ public class Player: Playable
 		_snoopedPlayer.remove(pci);
 	}
 	
-	public void addHtmlAction(HtmlActionScope scope, string action)
-	{
-		_htmlActionCaches[(int)scope].add(action);
-	}
-	
-	public void clearHtmlActions(HtmlActionScope scope)
-	{
-		_htmlActionCaches[(int)scope].Clear();
-	}
-	
-	public void setHtmlActionOriginObjectId(HtmlActionScope scope, int npcObjId)
-	{
-		if (npcObjId < 0)
-		{
-			throw new ArgumentException();
-		}
-		
-		_htmlActionOriginObjectIds[(int)scope] = npcObjId;
-	}
-	
-	public int getLastHtmlActionOriginId()
-	{
-		return _lastHtmlActionOriginObjId;
-	}
-	
-	private bool validateHtmlAction(IEnumerable<string> actionIter, string action)
-	{
-		foreach (string cachedAction in actionIter)
-		{
-			if (cachedAction[cachedAction.Length - 1] == Util.VAR_PARAM_START_CHAR)
-			{
-				if (action.startsWith(cachedAction.Substring(0, cachedAction.Length - 1).Trim()))
-				{
-					return true;
-				}
-			}
-			else if (cachedAction.equals(action))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	/**
-	 * Check if the HTML action was sent in a HTML packet.<br>
-	 * If the HTML action was not sent for whatever reason, -1 is returned.<br>
-	 * Otherwise, the NPC object ID or 0 is returned.<br>
-	 * 0 means the HTML action was not bound to an NPC<br>
-	 * and no range checks need to be made.
-	 * @param action the HTML action to check
-	 * @return NPC object ID, 0 or -1
-	 */
-	public int validateHtmlAction(string action)
-	{
-		for (int i = 0; i < _htmlActionCaches.Length; ++i)
-		{
-			if (validateHtmlAction(_htmlActionCaches[i], action))
-			{
-				_lastHtmlActionOriginObjId = _htmlActionOriginObjectIds[i];
-				return _lastHtmlActionOriginObjId;
-			}
-		}
-		
-		return -1;
-	}
-	
 	/**
 	 * Performs following tests:
 	 * <ul>
@@ -13316,44 +13231,27 @@ public class Player: Playable
 		return base.isMovementDisabled() || (_movieHolder != null) || _fishing.isFishing();
 	}
 	
-	public string getHtmlPrefix()
-	{
-		if (!Config.MULTILANG_ENABLE)
-		{
-			return "";
-		}
-		return _htmlPrefix;
-	}
-	
 	public string getLang()
 	{
 		return _lang;
 	}
 	
-	public bool setLang(string lang)
+	public bool setLang(string? lang)
 	{
-		bool result = false;
-		if (Config.MULTILANG_ENABLE)
+		if (lang != null && Config.MULTILANG_ENABLE)
 		{
 			if (Config.MULTILANG_ALLOWED.Contains(lang))
 			{
 				_lang = lang;
-				result = true;
+				return true;
 			}
-			else
-			{
-				_lang = Config.MULTILANG_DEFAULT;
-			}
-			
-			_htmlPrefix = _lang.equals("en") ? "" : "data/lang/" + _lang + "/";
+
+			_lang = Config.MULTILANG_DEFAULT;
+			return false;
 		}
-		else
-		{
-			_lang = null;
-			_htmlPrefix = "";
-		}
-		
-		return result;
+
+		_lang = null;
+		return false;
 	}
 	
 	public DateTime? getOfflineStartTime()
@@ -15334,6 +15232,8 @@ public class Player: Playable
 	{
 		getInventory().getItems().forEach(it =>
 		{
+			// TODO: this needs to be optimized
+			
 			try 
 			{
 				using GameServerDbContext ctx = new();

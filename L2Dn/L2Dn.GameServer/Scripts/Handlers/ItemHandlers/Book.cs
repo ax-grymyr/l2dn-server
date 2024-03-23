@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -18,20 +19,12 @@ public class Book: IItemHandler
 		}
 		
 		Player player = (Player) playable;
-		int itemId = item.getId();
-		String filename = "data/html/help/" + itemId + ".htm";
-		String content = HtmCache.getInstance().getHtm(player, filename);
-		if (content == null)
-		{
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, item.getId(), "<html><body>My Text is missing:<br>" + filename + "</body></html>");
-			player.sendPacket(html);
-		}
-		else
-		{
-			NpcHtmlMessagePacket itemReply = new NpcHtmlMessagePacket(content);
-			player.sendPacket(itemReply);
-		}
 		
+		int itemId = item.getId();
+		string filename = "html/help/" + itemId + ".htm";
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		NpcHtmlMessagePacket itemReply = new NpcHtmlMessagePacket(null, 0, htmlContent);
+		player.sendPacket(itemReply);
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		return true;
 	}

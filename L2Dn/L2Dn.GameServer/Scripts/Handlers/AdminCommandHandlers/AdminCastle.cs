@@ -4,6 +4,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -202,7 +203,8 @@ public class AdminCastle: IAdminCommandHandler
 			}
 			else
 			{
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, HtmCache.getInstance().getHtm(activeChar, "html/admin/castlemanage.htm"));
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/castlemanage.htm", activeChar);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				activeChar.sendPacket(html);
 			}
 		}
@@ -216,15 +218,13 @@ public class AdminCastle: IAdminCommandHandler
 		{
 			Clan ownerClan = castle.getOwner();
 			
-			HtmlPacketHelper helper =
-				new HtmlPacketHelper(HtmCache.getInstance().getHtm(player, "html/admin/castlemanage_selected.htm"));
-			
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-			helper.Replace("%castleId%", castle.getResidenceId().ToString());
-			helper.Replace("%castleName%", castle.getName());
-			helper.Replace("%ownerName%", ownerClan != null ? ownerClan.getLeaderName() : "NPC");
-			helper.Replace("%ownerClan%", ownerClan != null ? ownerClan.getName() : "NPC");
-			helper.Replace("%castleSide%", CommonUtil.capitalizeFirst(castle.getSide().ToString().toLowerCase()));
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/castlemanage_selected.htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
+			htmlContent.Replace("%castleId%", castle.getResidenceId().ToString());
+			htmlContent.Replace("%castleName%", castle.getName());
+			htmlContent.Replace("%ownerName%", ownerClan != null ? ownerClan.getLeaderName() : "NPC");
+			htmlContent.Replace("%ownerClan%", ownerClan != null ? ownerClan.getName() : "NPC");
+			htmlContent.Replace("%castleSide%", CommonUtil.capitalizeFirst(castle.getSide().ToString().toLowerCase()));
 			player.sendPacket(html);
 		}
 	}

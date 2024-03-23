@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -80,13 +81,13 @@ public class AdminExpSp: IAdminCommandHandler
 			return;
 		}
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/expsp.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%name%", player.getName());
-		helper.Replace("%level%", player.getLevel().ToString());
-		helper.Replace("%xp%", player.getExp().ToString());
-		helper.Replace("%sp%", player.getSp().ToString());
-		helper.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/expsp.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%name%", player.getName());
+		htmlContent.Replace("%level%", player.getLevel().ToString());
+		htmlContent.Replace("%xp%", player.getExp().ToString());
+		htmlContent.Replace("%sp%", player.getSp().ToString());
+		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
 		activeChar.sendPacket(adminReply);
 	}
 	

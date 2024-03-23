@@ -5,6 +5,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Network.Enums;
@@ -154,9 +155,9 @@ public class TeleportHolder
 		sbF.Append(sb.ToString());
 
 		// Send html message
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/teleporter/teleports.htm");
-		helper.Replace("%locations%", sbF.ToString());
-		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/teleports.htm", player);
+		htmlContent.Replace("%locations%", sbF.ToString());
+		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
 		player.sendPacket(msg);
 	}
 
@@ -199,8 +200,8 @@ public class TeleportHolder
 		{
 			if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && npc.getCastle().getSiege().isInProgress())
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/teleporter/castleteleporter-busy.htm");
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/castleteleporter-busy.htm", player);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
 				player.sendPacket(msg);
 				return;
 			}

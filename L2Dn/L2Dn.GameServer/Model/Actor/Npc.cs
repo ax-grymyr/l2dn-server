@@ -14,6 +14,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -637,11 +638,11 @@ public class Npc: Creature
 	 */
 	private bool showPkDenyChatWindow(Player player, String type)
 	{
-		String html = HtmCache.getInstance().getHtm(player, "data/html/" + type + "/" + getId() + "-pk.htm");
-		if (html != null)
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + type + "/" + getId() + "-pk.htm", player);
+		if (htmlContent.FileLoaded)
 		{
-			html = html.Replace("%objectId%", getObjectId().ToString(CultureInfo.InvariantCulture));
-			player.sendPacket(new NpcHtmlMessagePacket(getObjectId(), html));
+			htmlContent.Replace("%objectId%", getObjectId().ToString(CultureInfo.InvariantCulture));
+			player.sendPacket(new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent));
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return true;
 		}
@@ -750,11 +751,10 @@ public class Npc: Creature
 		}
 		
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
-		helper.Replace("%npcname%", getName());
-		helper.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
-		Util.buildHtmlActionCache(player, HtmlActionScope.NPC_HTML, getObjectId(), helper.getHtml());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		htmlContent.Replace("%npcname%", getName());
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -769,10 +769,9 @@ public class Npc: Creature
 	public void showChatWindow(Player player, String filename)
 	{
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
-		helper.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
-		Util.buildHtmlActionCache(player, HtmlActionScope.NPC_HTML, getObjectId(), helper.getHtml());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet

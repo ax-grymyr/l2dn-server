@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -214,13 +215,13 @@ public class OlympiadManager
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
-					HtmlPacketHelper helper =
-						new HtmlPacketHelper(DataFileLocation.Data, "html/mods/OlympiadIPRestriction.htm");
-					
-					helper.Replace("%max%", AntiFeedManager.getInstance()
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/OlympiadIPRestriction.htm", player);
+					htmlContent.Replace("%max%", AntiFeedManager.getInstance()
 						.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+
+					NpcHtmlMessagePacket message =
+						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
 					
-					NpcHtmlMessagePacket message = new NpcHtmlMessagePacket(player.getLastHtmlActionOriginId(), helper);
 					player.sendPacket(message);
 					return false;
 				}
@@ -242,14 +243,14 @@ public class OlympiadManager
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
-					HtmlPacketHelper helper =
-						new HtmlPacketHelper(DataFileLocation.Data, "html/mods/OlympiadIPRestriction.htm");
-
-					helper.Replace("%max%",
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/OlympiadIPRestriction.htm", player);
+					htmlContent.Replace("%max%",
 						AntiFeedManager.getInstance()
 							.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+
+					NpcHtmlMessagePacket message =
+						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
 					
-					NpcHtmlMessagePacket message = new NpcHtmlMessagePacket(player.getLastHtmlActionOriginId(), helper);
 					player.sendPacket(message);
 					return false;
 				}

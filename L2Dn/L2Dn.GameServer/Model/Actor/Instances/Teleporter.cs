@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Model.Teleporters;
@@ -195,10 +196,10 @@ public class Teleporter: Npc
 	
 	private void sendHtmlMessage(Player player, String filename)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
-		helper.Replace("%objectId%", getObjectId().ToString());
-		helper.Replace("%npcname%", getName());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%npcname%", getName());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 }

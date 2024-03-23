@@ -2,6 +2,7 @@ using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
@@ -55,21 +56,15 @@ public class Link: IBypassHandler
 			_logger.Warn(player + " sent invalid link html: " + htmlPath);
 			return false;
 		}
-		
-		String content = VALID_LINKS.Contains(htmlPath) ? HtmCache.getInstance().getHtm(player, "html/" + htmlPath) : null;
-		// Precaution.
-		if (htmlPath.startsWith("teleporter/") && !(player.getTarget() is Teleporter))
+
+		if (VALID_LINKS.Contains(htmlPath) && (!htmlPath.startsWith("teleporter/") || player.getTarget() is Teleporter))
 		{
-			content = null;
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + htmlPath, player);
+			htmlContent.Replace("%objectId%", (target?.getObjectId() ?? 0).ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(target?.getObjectId(), 0, htmlContent);
+			player.sendPacket(html);
 		}
-		
-		if (content != null)
-		{
-			content = content.Replace("%objectId%", (target?.getObjectId() ?? 0).ToString());
-		}
-		
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(target != null ? target.getObjectId() : 0, content);
-		player.sendPacket(html);
+
 		return true;
 	}
 	

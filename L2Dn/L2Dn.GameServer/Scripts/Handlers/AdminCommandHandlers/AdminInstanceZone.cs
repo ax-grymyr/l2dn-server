@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -108,7 +109,8 @@ public class AdminInstanceZone: IAdminCommandHandler
 		
 		html.Append("</table></html>");
 		
-		NpcHtmlMessagePacket ms = new NpcHtmlMessagePacket(0, 1, html.ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromText(html.ToString(), activeChar);
+		NpcHtmlMessagePacket ms = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(ms);
 	}
 	

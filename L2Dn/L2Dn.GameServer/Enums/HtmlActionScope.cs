@@ -7,5 +7,7 @@ public enum HtmlActionScope
     NPC_QUEST_HTML,
     TUTORIAL_HTML,
     COMM_BOARD_HTML,
-    PREMIUM_HTML
+    PREMIUM_HTML,
+    
+    MaxValue = PREMIUM_HTML
 }

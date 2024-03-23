@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -36,16 +37,15 @@ public class AdminPcCondOverride: IAdminCommandHandler
 			{
 				case "admin_exceptions":
 				{
-					HtmlPacketHelper helper =
-						new HtmlPacketHelper(DataFileLocation.Data, "html/admin/cond_override.htm");
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/cond_override.htm", activeChar);
 					
-					NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(0, 1, helper);
+					NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 1, htmlContent);
 					StringBuilder sb = new StringBuilder();
 					foreach (PlayerCondOverride ex in EnumUtil.GetValues<PlayerCondOverride>())
 					{
 						sb.Append("<tr><td fixwidth=\"180\">" + ex + ":</td><td><a action=\"bypass -h admin_set_exception " + ex + "\">" + (activeChar.canOverrideCond(ex) ? "Disable" : "Enable") + "</a></td></tr>");
 					}
-					helper.Replace("%cond_table%", sb.ToString());
+					htmlContent.Replace("%cond_table%", sb.ToString());
 					activeChar.sendPacket(msg);
 					break;
 				}

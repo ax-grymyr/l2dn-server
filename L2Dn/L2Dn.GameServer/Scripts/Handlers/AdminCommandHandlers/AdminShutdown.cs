@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
@@ -77,15 +78,15 @@ public class AdminShutdown: IAdminCommandHandler
 	
 	private void sendHtmlForm(Player activeChar)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/shutdown.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/shutdown.htm", activeChar);
 		int t = GameTimeTaskManager.getInstance().getGameTime();
 		int h = t / 60;
 		int m = t % 60;
 		
-		helper.Replace("%count%", World.getInstance().getPlayers().Count.ToString());
-		helper.Replace("%used%", GC.GetTotalMemory(false).ToString());
-		helper.Replace("%time%", h + ":" + m);
+		htmlContent.Replace("%count%", World.getInstance().getPlayers().Count.ToString());
+		htmlContent.Replace("%used%", GC.GetTotalMemory(false).ToString());
+		htmlContent.Replace("%time%", h + ":" + m);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
 	

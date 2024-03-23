@@ -2,6 +2,7 @@ using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -31,21 +32,20 @@ public class AdminHwid: IAdminCommandHandler
 
 		ClientHardwareInfoHolder hardwareInfo = activeChar.getClient().HardwareInfo;
 
-		HtmlPacketHelper helper =
-			new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, "html/admin/charhwinfo.htm"));
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charhwinfo.htm", activeChar);
 		
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%name%", target.getName());
-		helper.Replace("%macAddress%", hardwareInfo.getMacAddress());
-		helper.Replace("%windowsPlatformId%", hardwareInfo.getWindowsPlatformId().ToString());
-		helper.Replace("%windowsMajorVersion%", hardwareInfo.getWindowsMajorVersion().ToString());
-		helper.Replace("%windowsMinorVersion%", hardwareInfo.getWindowsMinorVersion().ToString());
-		helper.Replace("%windowsBuildNumber%", hardwareInfo.getWindowsBuildNumber().ToString());
-		helper.Replace("%cpuName%", hardwareInfo.getCpuName());
-		helper.Replace("%cpuSpeed%", hardwareInfo.getCpuSpeed().ToString());
-		helper.Replace("%cpuCoreCount%", hardwareInfo.getCpuCoreCount().ToString());
-		helper.Replace("%vgaName%", hardwareInfo.getVgaName());
-		helper.Replace("%vgaDriverVersion%", hardwareInfo.getVgaDriverVersion());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%name%", target.getName());
+		htmlContent.Replace("%macAddress%", hardwareInfo.getMacAddress());
+		htmlContent.Replace("%windowsPlatformId%", hardwareInfo.getWindowsPlatformId().ToString());
+		htmlContent.Replace("%windowsMajorVersion%", hardwareInfo.getWindowsMajorVersion().ToString());
+		htmlContent.Replace("%windowsMinorVersion%", hardwareInfo.getWindowsMinorVersion().ToString());
+		htmlContent.Replace("%windowsBuildNumber%", hardwareInfo.getWindowsBuildNumber().ToString());
+		htmlContent.Replace("%cpuName%", hardwareInfo.getCpuName());
+		htmlContent.Replace("%cpuSpeed%", hardwareInfo.getCpuSpeed().ToString());
+		htmlContent.Replace("%cpuCoreCount%", hardwareInfo.getCpuCoreCount().ToString());
+		htmlContent.Replace("%vgaName%", hardwareInfo.getVgaName());
+		htmlContent.Replace("%vgaDriverVersion%", hardwareInfo.getVgaDriverVersion());
 		activeChar.sendPacket(html);
 		return true;
 	}

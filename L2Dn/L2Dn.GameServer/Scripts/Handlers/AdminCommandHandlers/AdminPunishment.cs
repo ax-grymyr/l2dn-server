@@ -6,6 +6,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -52,17 +53,10 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (!st.hasMoreTokens())
 				{
-					String content = HtmCache.getInstance().getHtm(activeChar, "html/admin/punishment.htm");
-					if (content != null)
-					{
-						content = content.Replace("%punishments%", string.Join(";", EnumUtil.GetValues<PunishmentType>()));
-						content = content.Replace("%affects%", string.Join(";", EnumUtil.GetValues<PunishmentAffect>()));
-						activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, content));
-					}
-					else
-					{
-						LOGGER.Warn(GetType().Name + ": html/admin/punishment.htm is missing");
-					}
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/punishment.htm", activeChar);
+					htmlContent.Replace("%punishments%", string.Join(";", EnumUtil.GetValues<PunishmentType>()));
+					htmlContent.Replace("%affects%", string.Join(";", EnumUtil.GetValues<PunishmentAffect>()));
+					activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 				}
 				else
 				{
@@ -93,35 +87,29 @@ public class AdminPunishment: IAdminCommandHandler
 								key = findCharId(key);
 							}
 							
-							String content = HtmCache.getInstance().getHtm(activeChar, "data/html/admin/punishment-info.htm");
-							if (content != null)
+							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/punishment-info.htm", activeChar);
+							StringBuilder sb = new StringBuilder();
+							foreach (PunishmentType type in EnumUtil.GetValues<PunishmentType>())
 							{
-								StringBuilder sb = new StringBuilder();
-								foreach (PunishmentType type in EnumUtil.GetValues<PunishmentType>())
+								if (PunishmentManager.getInstance().hasPunishment(key, affect, type))
 								{
-									if (PunishmentManager.getInstance().hasPunishment(key, affect, type))
+									DateTime? expiration = PunishmentManager.getInstance().getPunishmentExpiration(key, affect, type);
+									String expire = "never";
+									if (expiration != null)
 									{
-										DateTime? expiration = PunishmentManager.getInstance().getPunishmentExpiration(key, affect, type);
-										String expire = "never";
-										if (expiration != null)
-										{
-											expire = expiration.Value.ToString("yyyy.MM.dd HH:mm:ss");
-										}
-
-										sb.Append("<tr><td><font color=\"LEVEL\">" + type + "</font></td><td>" + expire + "</td><td><a action=\"bypass -h admin_punishment_remove " + name + " " + affect + " " + type + "\">Remove</a></td></tr>");
+										expire = expiration.Value.ToString("yyyy.MM.dd HH:mm:ss");
 									}
+
+									sb.Append("<tr><td><font color=\"LEVEL\">" + type + "</font></td><td>" + expire + "</td><td><a action=\"bypass -h admin_punishment_remove " + name + " " + affect + " " + type + "\">Remove</a></td></tr>");
 								}
+							}
 								
-								content = content.Replace("%player_name%", name);
-								content = content.Replace("%punishments%", sb.ToString());
-								content = content.Replace("%affects%", string.Join(";", EnumUtil.GetValues<PunishmentAffect>()));
-								content = content.Replace("%affect_type%", affect.ToString());
-								activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, content));
-							}
-							else
-							{
-								LOGGER.Warn(GetType().Name + ": html/admin/punishment-info.htm is missing");
-							}
+							htmlContent.Replace("%player_name%", name);
+							htmlContent.Replace("%punishments%", sb.ToString());
+							htmlContent.Replace("%affects%", string.Join(";", EnumUtil.GetValues<PunishmentAffect>()));
+							htmlContent.Replace("%affect_type%", affect.ToString());
+							activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
+
 							break;
 						}
 						case "player":
@@ -145,21 +133,16 @@ public class AdminPunishment: IAdminCommandHandler
 							{
 								target = activeChar.getTarget().getActingPlayer();
 							}
-							String content = HtmCache.getInstance().getHtm(activeChar, "html/admin/punishment-player.htm");
-							if (content != null)
-							{
-								content = content.Replace("%player_name%", target.getName());
-								content = content.Replace("%punishments%", string.Join(";", EnumUtil.GetValues<PunishmentType>()));
-								content = content.Replace("%acc%", target.getAccountName());
-								content = content.Replace("%char%", target.getName());
-								content = content.Replace("%ip%", target.getClient()?.IpAddress.ToString() ?? "-");
-								content = content.Replace("%hwid%", target.getClient()?.HardwareInfo?.getMacAddress() ?? "-");
-								activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, content));
-							}
-							else
-							{
-								LOGGER.Warn(GetType().Name + ": html/admin/punishment-player.htm is missing");
-							}
+							
+							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/punishment-player.htm", activeChar);
+							htmlContent.Replace("%player_name%", target.getName());
+							htmlContent.Replace("%punishments%", string.Join(";", EnumUtil.GetValues<PunishmentType>()));
+							htmlContent.Replace("%acc%", target.getAccountName());
+							htmlContent.Replace("%char%", target.getName());
+							htmlContent.Replace("%ip%", target.getClient()?.IpAddress.ToString() ?? "-");
+							htmlContent.Replace("%hwid%", target.getClient()?.HardwareInfo?.getMacAddress() ?? "-");
+							activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
+
 							break;
 						}
 					}

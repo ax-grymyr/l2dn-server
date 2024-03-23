@@ -1,6 +1,7 @@
 using System.Text;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
@@ -57,8 +58,9 @@ public class ClanPenalty: IUserCommandHandler
 		}
 		
 		htmlContent.Append("</tr></table><img src=\"L2UI.SquareWhite\" width=270 height=1></center></body></html>");
-		
-		NpcHtmlMessagePacket penaltyHtml = new NpcHtmlMessagePacket(htmlContent.ToString());
+
+		HtmlContent html = HtmlContent.LoadFromText(htmlContent.ToString(), player);
+		NpcHtmlMessagePacket penaltyHtml = new NpcHtmlMessagePacket(null, 0, html);
 		player.sendPacket(penaltyHtml);
 		
 		return true;

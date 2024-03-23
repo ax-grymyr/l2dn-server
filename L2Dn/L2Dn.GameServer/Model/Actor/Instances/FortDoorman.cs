@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -18,23 +19,23 @@ public class FortDoorman: Doorman
     {
         player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 
-        HtmlPacketHelper helper;
+        HtmlContent htmlContent;
         if (!isOwnerClan(player))
         {
-            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-no.htm");
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-no.htm", player);
         }
         else if (isUnderSiege())
         {
-            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + "-busy.htm");
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
         }
         else
         {
-            helper = new HtmlPacketHelper(DataFileLocation.Data, "html/doorman/" + getTemplate().getId() + ".htm");
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + ".htm", player);
         }
 
-        helper.Replace("%objectId%", getObjectId().ToString());
+        htmlContent.Replace("%objectId%", getObjectId().ToString());
 
-        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
         player.sendPacket(html);
     }
 

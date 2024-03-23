@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -34,23 +35,23 @@ public class FortLogistics : Merchant
 
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
-			HtmlPacketHelper helper;
+			HtmlContent htmlContent;
 			if (isMyLord)
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "data/html/fortress/logistics-rewards.htm");
-				helper.Replace("%bloodoath%", player.getClan().getBloodOathCount().ToString());
+				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-rewards.htm", player);
+				htmlContent.Replace("%bloodoath%", player.getClan().getBloodOathCount().ToString());
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
+				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId());
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
-			HtmlPacketHelper helper;
+			HtmlContent htmlContent;
 			if (isMyLord)
 			{
 				int blood = player.getClan().getBloodOathCount();
@@ -58,54 +59,54 @@ public class FortLogistics : Merchant
 				{
 					player.addItem("Quest", 9910, blood, this, true);
 					player.getClan().resetBloodOathCount();
-					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-blood.htm");
+					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-blood.htm", player);
 				}
 				else
 				{
-					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noblood.htm");
+					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noblood.htm", player);
 				}
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
+				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
 			
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
 		{
-			HtmlPacketHelper helper;
+			HtmlContent htmlContent;
 			if (getFort().getFortState() == 2)
 			{
 				if (player.isClanLeader())
 				{
-					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-supplylvl.htm");
-					helper.Replace("%supplylvl%", getFort().getSupplyLvL().ToString());
+					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supplylvl.htm", player);
+					htmlContent.Replace("%supplylvl%", getFort().getSupplyLvL().ToString());
 				}
 				else
 				{
-					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
+					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 				}
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-1.htm"); // TODO: Missing HTML?
+				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-1.htm", player); // TODO: Missing HTML?
 			}
 			
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
-			HtmlPacketHelper helper;
+			HtmlContent htmlContent;
 			if (isMyLord)
 			{
 				if (getFort().getSiege().isInProgress())
 				{
-					helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-siege.htm");
+					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-siege.htm", player);
 				}
 				else
 				{
@@ -122,21 +123,21 @@ public class FortLogistics : Merchant
 						getFort().setSupplyLvL(0);
 						getFort().saveFortVariables();
 						
-						helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-supply.htm");
+						htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supply.htm", player);
 					}
 					else
 					{
-						helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-nosupply.htm");
+						htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-nosupply.htm", player);
 					}
 				}
 			}
 			else
 			{
-				helper = new HtmlPacketHelper(DataFileLocation.Data, "html/fortress/logistics-noprivs.htm");
+				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
 			
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else
@@ -164,19 +165,19 @@ public class FortLogistics : Merchant
 			filename = "html/fortress/logistics-" + value + ".htm";
 		}
 		
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, filename);
-		helper.Replace("%objectId%", getObjectId().ToString());
-		helper.Replace("%npcId%", getId().ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%npcId%", getId().ToString());
 		if (getFort().getOwnerClan() != null)
 		{
-			helper.Replace("%clanname%", getFort().getOwnerClan().getName());
+			htmlContent.Replace("%clanname%", getFort().getOwnerClan().getName());
 		}
 		else
 		{
-			helper.Replace("%clanname%", "NPC");
+			htmlContent.Replace("%clanname%", "NPC");
 		}
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 	

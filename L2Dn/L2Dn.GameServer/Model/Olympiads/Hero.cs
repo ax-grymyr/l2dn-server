@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
@@ -407,14 +408,14 @@ public class Hero
 		List<StatSet> mainList = HERO_DIARY.get(charid);
 		if (mainList != null)
 		{
-			String htmContent = HtmCache.getInstance().getHtm(player, "data/html/olympiad/herodiary.htm");
+			String htmContent = HtmCache.getInstance().getHtm("html/olympiad/herodiary.htm", player.getLang());
 			String heroMessage = HERO_MESSAGE.get(charid);
 			if ((htmContent != null) && (heroMessage != null))
 			{
-				HtmlPacketHelper diaryReply = new HtmlPacketHelper(htmContent); 
+				HtmlContent diaryReply = HtmlContent.LoadFromText(htmContent, player); 
 				diaryReply.Replace("%heroname%", CharInfoTable.getInstance().getNameById(charid));
 				diaryReply.Replace("%message%", heroMessage);
-				//diaryReply.disableValidation(); // TODO disableValidation
+				diaryReply.DisableValidation();
 				
 				if (!mainList.isEmpty())
 				{
@@ -477,7 +478,7 @@ public class Hero
 					diaryReply.Replace("%buttnext%", "");
 				}
 				
-				NpcHtmlMessagePacket htmlMessagePacket = new NpcHtmlMessagePacket(diaryReply);
+				NpcHtmlMessagePacket htmlMessagePacket = new NpcHtmlMessagePacket(null, 0, diaryReply);
 				player.sendPacket(htmlMessagePacket);
 			}
 		}
@@ -493,10 +494,10 @@ public class Hero
 		List<StatSet> heroFights = HERO_FIGHTS.get(charid);
 		if (heroFights != null)
 		{
-			String htmContent = HtmCache.getInstance().getHtm(player, "data/html/olympiad/herohistory.htm");
+			String htmContent = HtmCache.getInstance().getHtm("data/html/olympiad/herohistory.htm", player.getLang());
 			if (htmContent != null)
 			{
-				HtmlPacketHelper fightReply = new HtmlPacketHelper(htmContent); 
+				HtmlContent fightReply = HtmlContent.LoadFromText(htmContent, player); 
 				fightReply.Replace("%heroname%", CharInfoTable.getInstance().getNameById(charid));
 				if (!heroFights.isEmpty())
 				{
@@ -568,7 +569,7 @@ public class Hero
 				fightReply.Replace("%draw%", draw.ToString());
 				fightReply.Replace("%loos%", loss.ToString());
 
-				NpcHtmlMessagePacket htmlMessagePacket = new NpcHtmlMessagePacket(fightReply);
+				NpcHtmlMessagePacket htmlMessagePacket = new NpcHtmlMessagePacket(null, 0, fightReply);
 				player.sendPacket(htmlMessagePacket);
 			}
 		}

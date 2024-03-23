@@ -132,8 +132,8 @@ public class AdminClanHall: IAdminCommandHandler
 	
 	private void sendClanHallList(Player player, int page)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/clanhall_list.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/clanhall_list.htm", player);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		List<ClanHall> clanHallList = ClanHallData.getInstance().getClanHalls().OrderBy(x => x.getResidenceId()).ToList();
 		
 		//@formatter:off
@@ -173,8 +173,8 @@ public class AdminClanHall: IAdminCommandHandler
 		}).build();
 		//@formatter:on
 		
-		helper.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
-		helper.Replace("%data%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
+		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		player.sendPacket(html);
 	}
 	
@@ -183,14 +183,14 @@ public class AdminClanHall: IAdminCommandHandler
 		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
 		if (clanHall != null)
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/clanhall_detail.htm");
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/clanhall_detail.htm", player);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
-			helper.Replace("%clanHallId%", clanHall.getResidenceId().ToString());
-			helper.Replace("%clanHallOwner%", (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>"));
+			htmlContent.Replace("%clanHallId%", clanHall.getResidenceId().ToString());
+			htmlContent.Replace("%clanHallOwner%", (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>"));
 			String grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
-			helper.Replace("%clanHallGrade%", grade);
-			helper.Replace("%clanHallSize%", clanHall.getGrade().ToString());
+			htmlContent.Replace("%clanHallGrade%", grade);
+			htmlContent.Replace("%clanHallSize%", clanHall.getGrade().ToString());
 			if (!clanHall.getFunctions().isEmpty())
 			{
 				sb.Append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
@@ -220,7 +220,7 @@ public class AdminClanHall: IAdminCommandHandler
 				sb.Append("This Clan Hall doesn't have any Function yet.");
 			}
 			
-			helper.Replace("%functionList%", sb.ToString());
+			htmlContent.Replace("%functionList%", sb.ToString());
 			player.sendPacket(html);
 		}
 		else

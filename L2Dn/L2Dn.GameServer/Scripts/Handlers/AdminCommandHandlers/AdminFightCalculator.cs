@@ -4,6 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -132,7 +133,8 @@ public class AdminFightCalculator: IAdminCommandHandler
 			replyMSG = "<html><title>Select mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td><edit var=\"lvl1\" width=80></td><td><edit var=\"lvl2\" width=80></td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator lvl1 $lvl1 lvl2 $lvl2\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
 		}
 		
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, replyMSG);
+		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG, activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
 	
@@ -309,7 +311,9 @@ public class AdminFightCalculator: IAdminCommandHandler
 		}
 		
 		replyMSG.Append("</center></body></html>");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, replyMSG.ToString());
+		
+		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 		
 		if (trimmedParams.Length != 0)

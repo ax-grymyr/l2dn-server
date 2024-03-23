@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -37,10 +38,10 @@ public class BroadcastingTower: Npc
             filename = "html/observation/" + getId() + "-" + value + ".htm";
         }
 
-        HtmlPacketHelper helper = new(DataFileLocation.Data, filename);
-        helper.Replace("%objectId%", getObjectId().ToString());
-        
-        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+        HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
+        htmlContent.Replace("%objectId%", getObjectId().ToString());
+       
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
         player.sendPacket(html);
     }
 }

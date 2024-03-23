@@ -1,8 +1,7 @@
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
@@ -21,9 +20,9 @@ public class Bypass: IItemHandler
 		
 		Player player = (Player)playable;
 		int itemId = item.getId();
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/item/" + itemId + ".htm");
-		helper.Replace("%itemId%", item.getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, item.getId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/item/" + itemId + ".htm", player);
+		htmlContent.Replace("%itemId%", item.getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, item.getId(), htmlContent);
 		player.sendPacket(html);
 		
 		return true;

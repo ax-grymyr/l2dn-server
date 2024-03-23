@@ -1,24 +1,17 @@
+using System.Collections.Concurrent;
 using System.Text;
-using L2Dn.GameServer.Model.Actor;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Cache;
 
-/**
- * @author Layane
- * @author Zoey76
- */
-public class HtmCache
+public sealed class HtmCache
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HtmCache));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(HtmCache));
+	private static readonly ConcurrentDictionary<string, string> _cache = new(StringComparer.OrdinalIgnoreCase);
 	
-	private static readonly Map<String, String> HTML_CACHE = Config.HTM_CACHE ? new() : new(); // concurrent if false
-	
-	private int _loadedFiles;
-	private long _bytesBuffLen;
-	
-	protected HtmCache()
+	private HtmCache()
 	{
 		reload();
 	}
@@ -32,41 +25,39 @@ public class HtmCache
 	{
 		if (Config.HTM_CACHE)
 		{
-			LOGGER.Info("Html cache start...");
-			parseDir(directoryPath);
-			LOGGER.Info("Cache[HTML]: " + getMemoryUsage() + " megabytes on " + _loadedFiles + " files loaded.");
+			_logger.Info("Html cache start...");
+			ParseDir(directoryPath);
+			_logger.Info("Cache[HTML]: " + getMemoryUsage() + " megabytes on " + _cache.Count + " files loaded.");
 		}
 		else
 		{
-			HTML_CACHE.clear();
-			_loadedFiles = 0;
-			_bytesBuffLen = 0;
-			LOGGER.Info("Cache[HTML]: Running lazy cache.");
+			_cache.Clear();
+			_logger.Info("Cache[HTML]: Running lazy cache.");
 		}
 	}
 	
 	public void reloadPath(string dirPath)
 	{
-		parseDir(dirPath);
-		LOGGER.Info("Cache[HTML]: Reloaded specified path.");
+		ParseDir(dirPath);
+		_logger.Info("Cache[HTML]: Reloaded specified path.");
 	}
 	
-	public double getMemoryUsage()
+	public long getMemoryUsage()
 	{
-		return (float) _bytesBuffLen / 1048576;
+		return _cache.Sum(x => (long)x.Value.Length);
 	}
 	
 	public int getLoadedFiles()
 	{
-		return _loadedFiles;
+		return _cache.Count;
 	}
 	
-	private void parseDir(string directoryPath)
+	private void ParseDir(string directoryPath)
 	{
-		Directory.EnumerateFiles(directoryPath, "*", SearchOption.AllDirectories).forEach(x => loadFile(x));
+		Directory.EnumerateFiles(directoryPath, "*", SearchOption.AllDirectories).ForEach(x => loadFile(x));
 	}
 	
-	public String loadFile(string filePath)
+	public string? loadFile(string filePath)
 	{
 		string extension = Path.GetExtension(filePath); 
 		if (!string.Equals(extension, ".htm", StringComparison.OrdinalIgnoreCase) && 
@@ -75,73 +66,76 @@ public class HtmCache
 			return null;
 		}
 		
-		String content = null;
+		string? content = null;
 		try
 		{
-			byte[] raw = File.ReadAllBytes(filePath);
-			content = Encoding.UTF8.GetString(raw);
+			content = File.ReadAllText(filePath, Encoding.UTF8);
 			content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments.
-			content = content.replaceAll("[\\t\\n]", ""); // Remove tabs and new lines.
+			content = content.replaceAll(@"[\t\n]", ""); // Remove tabs and new lines.
 			
 			filePath = Path.GetRelativePath(Config.DATAPACK_ROOT_PATH, filePath);
 			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
 			    content.Any(c => c >= 128))
 			{
-				LOGGER.Warn("HTML encoding check: File " + filePath + " contains non ASCII content.");
+				_logger.Warn("HTML encoding check: File " + filePath + " contains non ASCII content.");
 			}
 
 			filePath = filePath.Replace("\\", "/");
 			
-			String oldContent = HTML_CACHE.put(filePath, content);
-			if (oldContent == null)
-			{
-				_bytesBuffLen += raw.Length;
-				_loadedFiles++;
-			}
-			else
-			{
-				_bytesBuffLen = (_bytesBuffLen - oldContent.Length) + raw.Length;
-			}
+			_cache[filePath] = content;
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Problem with htm file:", e);
+			_logger.Warn("Problem with htm file: " + e);
 		}
+		
 		return content;
 	}
 	
-	public String getHtm(Player player, String path)
+	public string? getHtm(string path, string? language = null)
 	{
-		String prefix = player != null ? player.getHtmlPrefix() : "";
-		String newPath = prefix + path;
-		String content = HTML_CACHE.get(newPath);
-		if (!Config.HTM_CACHE && (content == null))
+		string prefix = string.Empty;
+		if (Config.MULTILANG_ENABLE && !string.IsNullOrEmpty(language))
 		{
-			content = loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, newPath));
-			if (content == null)
+			string lang = language;
+			if (!Config.MULTILANG_ALLOWED.Contains(lang))
+				lang = Config.MULTILANG_DEFAULT;
+
+			if (!string.Equals(lang, "en"))
+				prefix = "lang/" + lang + "/"; // TODO: cache prefixes
+		}
+		
+		string newPath = string.IsNullOrEmpty(prefix) ? path : prefix + path;
+		if (!_cache.TryGetValue(newPath, out string? content))
+		{
+			if (!Config.HTM_CACHE)
 			{
-				content = loadFile(Path.Combine(Config.SCRIPT_ROOT_PATH, newPath));
+				content = loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, newPath));
+				if (content == null)
+					content = loadFile(Path.Combine(Config.SCRIPT_ROOT_PATH, newPath));
+			}
+
+			// In case localisation does not exist try the default path.
+			if (string.IsNullOrEmpty(content) && !string.IsNullOrEmpty(prefix))
+			{
+				if (!_cache.TryGetValue(path, out content))
+				{
+					if (!Config.HTM_CACHE)
+					{
+						content = loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, path));
+						if (content == null)
+							content = loadFile(Path.Combine(Config.SCRIPT_ROOT_PATH, path));
+					}
+				}
 			}
 		}
 		
-		// In case localisation does not exist try the default path.
-		if ((content == null) && !string.IsNullOrEmpty(prefix))
-		{
-			content = HTML_CACHE.get(path);
-			newPath = path;
-		}
-		
-		if ((player != null) && player.isGM() && Config.GM_DEBUG_HTML_PATHS)
-		{
-			BuilderUtil.sendHtmlMessage(player, newPath.Substring(5));
-		}
-		
 		return content;
 	}
 	
-	public bool contains(String path)
+	public bool contains(string path)
 	{
-		return HTML_CACHE.containsKey(path);
+		return _cache.ContainsKey(path);
 	}
 	
 	/**

@@ -297,21 +297,21 @@ public class AdminBuffs: IAdminCommandHandler
 			}
 		}).build();
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/getbuffs.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/getbuffs.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		if (result.getPages() > 0)
 		{
-			helper.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
+			htmlContent.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
 		}
 		else
 		{
-			helper.Replace("%pages%", "");
+			htmlContent.Replace("%pages%", "");
 		}
 		
-		helper.Replace("%targetName%", target.getName());
-		helper.Replace("%targetObjId%", target.getObjectId().ToString());
-		helper.Replace("%buffs%", result.getBodyTemplate().ToString());
-		helper.Replace("%effectSize%", effects.size().ToString());
+		htmlContent.Replace("%targetName%", target.getName());
+		htmlContent.Replace("%targetObjId%", target.getObjectId().ToString());
+		htmlContent.Replace("%buffs%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%effectSize%", effects.size().ToString());
 		activeChar.sendPacket(html);
 		
 		if (Config.GMAUDIT)
@@ -408,7 +408,8 @@ public class AdminBuffs: IAdminCommandHandler
 			html.Append("</html>");
 			
 			// Send the packet
-			activeChar.sendPacket(new NpcHtmlMessagePacket(0, 1, html.ToString()));
+			HtmlContent htmlContent = HtmlContent.LoadFromText(html.ToString(), activeChar);
+			activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 			if (Config.GMAUDIT)
 			{
 				// TODO: GMAudit

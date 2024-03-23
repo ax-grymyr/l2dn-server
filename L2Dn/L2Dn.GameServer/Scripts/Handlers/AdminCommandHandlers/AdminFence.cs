@@ -186,18 +186,18 @@ public class AdminFence: IAdminCommandHandler
 			sb.Append("</td></tr>");
 		}).build();
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/fences.htm");
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/fences.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		if (result.getPages() > 0)
 		{
-			helper.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
+			htmlContent.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
 		}
 		else
 		{
-			helper.Replace("%pages%", "");
+			htmlContent.Replace("%pages%", "");
 		}
 		
-		helper.Replace("%fences%", result.getBodyTemplate().ToString());
+		htmlContent.Replace("%fences%", result.getBodyTemplate().ToString());
 		activeChar.sendPacket(html);
 	}
 }

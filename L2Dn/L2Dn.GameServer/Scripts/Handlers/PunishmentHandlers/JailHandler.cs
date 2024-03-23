@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Zones;
@@ -172,11 +173,11 @@ public class JailHandler: IPunishmentHandler
 		ThreadPool.schedule(new TeleportTask(player, JailZone.getLocationIn()), 2000);
 		
 		// Open a Html message to inform the player
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/jail_in.htm");
-		helper.Replace("%reason%", task != null ? task.getReason() : "");
-		helper.Replace("%punishedBy%", task != null ? task.getPunishedBy() : "");
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/jail_in.htm", player);
+		htmlContent.Replace("%reason%", task != null ? task.getReason() : "");
+		htmlContent.Replace("%punishedBy%", task != null ? task.getPunishedBy() : "");
 
-		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(helper);
+		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(msg);
 		
 		if (task != null)
@@ -202,8 +203,8 @@ public class JailHandler: IPunishmentHandler
 		ThreadPool.schedule(new TeleportTask(player, JailZone.getLocationOut()), 2000);
 		
 		// Open a Html message to inform the player
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/jail_out.htm");
-		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/jail_in.htm", player);
+		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(msg);
 	}
 	

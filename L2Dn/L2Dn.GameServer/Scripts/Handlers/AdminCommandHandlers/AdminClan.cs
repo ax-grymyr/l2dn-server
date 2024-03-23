@@ -7,6 +7,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -47,19 +48,19 @@ public class AdminClan: IAdminCommandHandler
 					return false;
 				}
 
-				HtmlPacketHelper helper = new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, "html/admin/claninfo.htm"));
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
-				helper.Replace("%clan_name%", clan.getName());
-				helper.Replace("%clan_leader%", clan.getLeaderName());
-				helper.Replace("%clan_level%", clan.getLevel().ToString());
-				helper.Replace("%clan_has_castle%", clan.getCastleId() > 0 ? CastleManager.getInstance().getCastleById(clan.getCastleId() ?? 0).getName() : "No");
-				helper.Replace("%clan_has_clanhall%", clan.getHideoutId() > 0 ? ClanHallData.getInstance().getClanHallById(clan.getHideoutId()).getName() : "No");
-				helper.Replace("%clan_has_fortress%", clan.getFortId() > 0 ? FortManager.getInstance().getFortById(clan.getFortId() ?? 0).getName() : "No");
-				helper.Replace("%clan_points%", clan.getReputationScore().ToString());
-				helper.Replace("%clan_players_count%", clan.getMembersCount().ToString());
-				helper.Replace("%clan_ally%", clan.getAllyId() > 0 ? clan.getAllyName() : "Not in ally");
-				helper.Replace("%current_player_objectId%", player.getObjectId().ToString());
-				helper.Replace("%current_player_name%", player.getName());
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/claninfo.htm", activeChar);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
+				htmlContent.Replace("%clan_name%", clan.getName());
+				htmlContent.Replace("%clan_leader%", clan.getLeaderName());
+				htmlContent.Replace("%clan_level%", clan.getLevel().ToString());
+				htmlContent.Replace("%clan_has_castle%", clan.getCastleId() > 0 ? CastleManager.getInstance().getCastleById(clan.getCastleId() ?? 0).getName() : "No");
+				htmlContent.Replace("%clan_has_clanhall%", clan.getHideoutId() > 0 ? ClanHallData.getInstance().getClanHallById(clan.getHideoutId()).getName() : "No");
+				htmlContent.Replace("%clan_has_fortress%", clan.getFortId() > 0 ? FortManager.getInstance().getFortById(clan.getFortId() ?? 0).getName() : "No");
+				htmlContent.Replace("%clan_points%", clan.getReputationScore().ToString());
+				htmlContent.Replace("%clan_players_count%", clan.getMembersCount().ToString());
+				htmlContent.Replace("%clan_ally%", clan.getAllyId() > 0 ? clan.getAllyName() : "Not in ally");
+				htmlContent.Replace("%current_player_objectId%", player.getObjectId().ToString());
+				htmlContent.Replace("%current_player_name%", player.getName());
 				activeChar.sendPacket(html);
 				break;
 			}
@@ -94,8 +95,8 @@ public class AdminClan: IAdminCommandHandler
 			}
 			case "admin_clan_show_pending":
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, "html/admin/clanchanges.htm"));
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/clanchanges.htm", activeChar);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				StringBuilder sb = new StringBuilder();
 				foreach (Clan clan in ClanTable.getInstance().getClans())
 				{
@@ -108,7 +109,7 @@ public class AdminClan: IAdminCommandHandler
 						sb.Append("</tr>");
 					}
 				}
-				helper.Replace("%data%", sb.ToString());
+				htmlContent.Replace("%data%", sb.ToString());
 				activeChar.sendPacket(html);
 				break;
 			}

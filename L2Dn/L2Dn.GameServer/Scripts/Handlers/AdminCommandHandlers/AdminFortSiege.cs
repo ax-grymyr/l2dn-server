@@ -5,6 +5,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -128,8 +129,8 @@ public class AdminFortSiege: IAdminCommandHandler
 	private void showFortSelectPage(Player activeChar)
 	{
 		int i = 0;
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/forts.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/forts.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		
 		ICollection<Fort> forts = FortManager.getInstance().getForts();
 		StringBuilder cList = new StringBuilder(forts.Count * 100);
@@ -148,16 +149,16 @@ public class AdminFortSiege: IAdminCommandHandler
 			}
 		}
 		
-		helper.Replace("%forts%", cList.ToString());
+		htmlContent.Replace("%forts%", cList.ToString());
 		activeChar.sendPacket(adminReply);
 	}
 	
 	private void showFortSiegePage(Player activeChar, Fort fort)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/fort.htm");
-		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(0, 1, helper);
-		helper.Replace("%fortName%", fort.getName());
-		helper.Replace("%fortId%", fort.getResidenceId().ToString());
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/fort.htm", activeChar);
+		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
+		htmlContent.Replace("%fortName%", fort.getName());
+		htmlContent.Replace("%fortId%", fort.getResidenceId().ToString());
 		activeChar.sendPacket(adminReply);
 	}
 

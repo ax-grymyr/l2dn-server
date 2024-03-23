@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -69,18 +70,21 @@ public class AdminHtml: IAdminCommandHandler
 	 */
 	private static void showHtml(Player activeChar, String path, bool reload)
 	{
-		String content = null;
+		String? content;
 		if (!reload)
 		{
-			content = HtmCache.getInstance().getHtm(activeChar, path);
+			content = HtmCache.getInstance().getHtm(path, activeChar.getLang());
 		}
 		else
 		{
 			content = HtmCache.getInstance().loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, path));
 		}
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1,
-			content != null ? content : "<html><body>My text is missing:<br>" + path + "</body></html>");
+		HtmlContent htmlContent =
+			HtmlContent.LoadFromText(content ?? "<html><body>My text is missing:<br>" + path + "</body></html>",
+				activeChar);
+		
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 
 		activeChar.sendPacket(html);
 	}

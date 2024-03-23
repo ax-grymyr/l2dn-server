@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
@@ -1505,14 +1506,14 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		else if (res.startsWith("<html>"))
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(res);
+			HtmlContent htmlContent = HtmlContent.LoadFromText(res, player);
 			if (npc != null)
 			{
-				helper.Replace("%objectId%", npc.getObjectId().ToString());
+				htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
 			}
-			helper.Replace("%playername%", player.getName());
+			htmlContent.Replace("%playername%", player.getName());
 
-			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, helper);
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -1725,7 +1726,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static String getNoQuestMsg(Player player)
 	{
-		String result = HtmCache.getInstance().getHtm(player, "data/html/noquest.htm");
+		String result = HtmCache.getInstance().getHtm("html/noquest.htm", player.getLang());
 		if ((result != null) && (result.Length > 0))
 		{
 			return result;
@@ -1739,7 +1740,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static String getNoQuestLevelRewardMsg(Player player)
 	{
-		return HtmCache.getInstance().getHtm(player, "data/html/noquestlevelreward.html");
+		return HtmCache.getInstance().getHtm("html/noquestlevelreward.html", player.getLang());
 	}
 	
 	/**
@@ -1758,7 +1759,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static String getAlreadyCompletedMsg(Player player, QuestType type)
 	{
-		return HtmCache.getInstance().getHtm(player, (type == QuestType.ONE_TIME ? "data/html/alreadyCompleted.html" : "data/html/alreadyCompletedDaily.html"));
+		return HtmCache.getInstance()
+			.getHtm(
+				(type == QuestType.ONE_TIME
+					? "html/alreadyCompleted.html"
+					: "html/alreadyCompletedDaily.html"), player.getLang());
 	}
 	
 	// TODO: Clean up these methods
@@ -2686,18 +2691,17 @@ public class Quest: AbstractScript, IIdentifiable
 				content = content.Replace("%objectId%", npc.getObjectId().ToString());
 			}
 			
+			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
+			htmlContent.Replace("%playername%", player.getName());
+
 			if (questwindow && (_questId > 0) && (_questId < 20000) && (_questId != 999))
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(content);
-				helper.Replace("%playername%", player.getName());
-				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, _questId, helper);
+				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.getObjectId(), _questId, htmlContent);
 				player.sendPacket(npcReply);
 			}
 			else
 			{
-				HtmlPacketHelper helper = new HtmlPacketHelper(content);
-				helper.Replace("%playername%", player.getName());
-				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc != null ? npc.getObjectId() : 0, helper);
+				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
 				player.sendPacket(npcReply);
 			}
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -2714,13 +2718,16 @@ public class Quest: AbstractScript, IIdentifiable
 	public String getHtm(Player player, String fileName)
 	{
 		HtmCache hc = HtmCache.getInstance();
-		String content = hc.getHtm(player, fileName.startsWith("data/") ? fileName : "data/scripts/" + getPath() + "/" + fileName);
+		String content =
+			hc.getHtm(fileName.startsWith("scripts/") ? fileName : "scripts/" + getPath() + "/" + fileName,
+				player.getLang());
+		
 		if (content == null)
 		{
-			content = hc.getHtm(player, "data/scripts/" + getPath() + "/" + fileName);
+			content = hc.getHtm("scripts/" + getPath() + "/" + fileName, player.getLang());
 			if (content == null)
 			{
-				content = hc.getHtm(player, "data/scripts/quests/" + getName() + "/" + fileName);
+				content = hc.getHtm("scripts/quests/" + getName() + "/" + fileName, player.getLang());
 			}
 		}
 		return content;

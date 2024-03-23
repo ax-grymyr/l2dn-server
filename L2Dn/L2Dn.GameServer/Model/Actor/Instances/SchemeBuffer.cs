@@ -3,6 +3,7 @@ using System.Text;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -27,9 +28,9 @@ public class SchemeBuffer : Npc
 		String currentCommand = st.nextToken();
 		if (currentCommand.startsWith("menu"))
 		{
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("cleanup"))
@@ -43,9 +44,9 @@ public class SchemeBuffer : Npc
 			}
 			player.getServitors().values().forEach(servitor => servitor.stopAllEffects());
 			
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("heal"))
@@ -60,9 +61,9 @@ public class SchemeBuffer : Npc
 			}
 			player.getServitors().values().forEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
-			HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 0, player));
-			helper.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("support"))
@@ -246,11 +247,11 @@ public class SchemeBuffer : Npc
 			}
 		}
 		
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 1, player));
-		helper.Replace("%schemes%", sb.ToString());
-		helper.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
-		helper.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 1, player), player);
+		htmlContent.Replace("%schemes%", sb.ToString());
+		htmlContent.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
@@ -265,16 +266,16 @@ public class SchemeBuffer : Npc
 	{
 		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
 
-		HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, getHtmlPath(getId(), 2, player));
-		helper.Replace("%schemename%", schemeName);
-		helper.Replace("%count%",
+		HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 2, player), player);
+		htmlContent.Replace("%schemename%", schemeName);
+		htmlContent.Replace("%count%",
 			getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " +
 			getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
 		
-		helper.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
-		helper.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
-		helper.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), helper);
+		htmlContent.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
+		htmlContent.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
+		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
 

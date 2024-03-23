@@ -513,18 +513,18 @@ public class AdminEffects: IAdminCommandHandler
 						
 					}).build();
 
-				HtmlPacketHelper helper = new HtmlPacketHelper(DataFileLocation.Data, "html/admin/ave_abnormal.htm");
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/ave_abnormal.htm", activeChar);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				if (result.getPages() > 0)
 				{
-					helper.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
+					htmlContent.Replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
 				}
 				else
 				{
-					helper.Replace("%pages%", "");
+					htmlContent.Replace("%pages%", "");
 				}
 				
-				helper.Replace("%abnormals%", result.getBodyTemplate().ToString());
+				htmlContent.Replace("%abnormals%", result.getBodyTemplate().ToString());
 				activeChar.sendPacket(html);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //" + command.Replace("admin_", "") + " <AbnormalVisualEffect> [radius]");
 				return true;

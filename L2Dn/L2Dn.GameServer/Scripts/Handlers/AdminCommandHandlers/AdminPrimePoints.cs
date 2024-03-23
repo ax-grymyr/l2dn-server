@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -152,14 +153,14 @@ public class AdminPrimePoints: IAdminCommandHandler
 	
 	private void showMenuHtml(Player activeChar)
 	{
-		HtmlPacketHelper helper = new HtmlPacketHelper(HtmCache.getInstance().getHtm(activeChar, "html/admin/primepoints.htm"));
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, helper);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/primepoints.htm", activeChar);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
 		
 		Player target = getTarget(activeChar);
 		int points = target.getPrimePoints();
 		
-		helper.Replace("%points%", Util.formatAdena(points));
-		helper.Replace("%targetName%", target.getName());
+		htmlContent.Replace("%points%", Util.formatAdena(points));
+		htmlContent.Replace("%targetName%", target.getName());
 		activeChar.sendPacket(html);
 	}
 	

@@ -1,12 +1,14 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Html;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExPremiumManagerShowHtmlPacket: IOutgoingPacket
 {
-    private readonly string _html;
+    private readonly HtmlContent _html;
 
-    public ExPremiumManagerShowHtmlPacket(string html)
+    public ExPremiumManagerShowHtmlPacket(HtmlContent html)
     {
         _html = html;
     }
@@ -15,8 +17,8 @@ public readonly struct ExPremiumManagerShowHtmlPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PREMIUM_MANAGER_SHOW_HTML);
         
-        writer.WriteInt32(0); // getNpcObjId()
-        writer.WriteString(_html);
+        writer.WriteInt32(0); // npc object id
+        writer.WriteString(_html.BuildHtml(HtmlActionScope.PREMIUM_HTML));
         writer.WriteInt32(-1);
         writer.WriteInt32(0);
     }
