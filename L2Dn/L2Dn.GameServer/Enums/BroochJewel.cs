@@ -226,6 +226,7 @@ public class BroochJewelInfo
 	
 	private BroochJewelInfo(BroochJewel jewel, int itemId, int skillId, int skillLevel, double bonus, bool isRuby, bool isSapphire)
 	{
+		_jewel = jewel;
 		_itemId = itemId;
 		_skillId = skillId;
 		_skillLevel = skillLevel;

@@ -58,7 +58,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			if (_command.startsWith(possibleNonHtmlCommand))
 			{
 				requiresBypassValidation = false;
-				return ValueTask.CompletedTask;
+				break;
 			}
 		}
 		
