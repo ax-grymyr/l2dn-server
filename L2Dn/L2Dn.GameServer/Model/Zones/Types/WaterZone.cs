@@ -63,8 +63,14 @@ public class WaterZone : ZoneType
 				creature.getActingPlayer().broadcastUserInfo();
 			}
 		}
-		else if (creature.isNpc())
+		else if (creature.isNpc()) 
 		{
+			// TODO temporary fix of monsters remaining corpses after respawn
+			// if Npc is deleted from the world, then forEachVisibleObject must return no visible object for it
+			// Changes in forEachVisibleObject may affect many functionality, so temporary fix here. 
+			if (((Npc)creature).isDecayed())
+				return;
+				
 			World.getInstance().forEachVisibleObject<Player>(creature, player =>
 			{
 				if (creature.isFakePlayer())
