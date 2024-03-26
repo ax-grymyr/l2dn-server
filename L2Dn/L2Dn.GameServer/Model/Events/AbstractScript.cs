@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+﻿using System.Collections.Immutable;
 using System.Reflection;
 using L2Dn.Events;
 using L2Dn.GameServer.AI;
@@ -29,32 +29,41 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Olympiads;
-using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 
 namespace L2Dn.GameServer.Model.Events;
 
 public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, IEventTimerCancel<String>
 {
-	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractScript));
-	private readonly Map<ListenerRegisterType, Set<int>> _registeredIds = new();
-	//private readonly ConcurrentQueue<AbstractEventListener> _listeners = new(); // PriorityBlockingQueue
-	private TimerExecutor<String> _timerExecutor;
-	
-	public AbstractScript()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(AbstractScript));
+	private readonly Set<EventContainer> _eventContainers = new();
+	private TimerExecutor<String>? _timerExecutor;
+
+	protected AbstractScript()
 	{
-		initializeAnnotationListeners();
+		MethodInfo[] methods =
+			GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+		
+		foreach (MethodInfo method in methods)
+		{
+			SubscribeEventAttribute? subscribeEventAttribute = method.GetCustomAttribute<SubscribeEventAttribute>();
+			if (subscribeEventAttribute is not null)
+			{
+				IReadOnlyCollection<EventContainer> containers =
+					SubscriptionHelper.Subscribe(subscribeEventAttribute.Type, this, method);
+				
+				foreach (EventContainer container in containers)
+					_eventContainers.Add(container);
+			}
+		}
 	}
 	
 	public virtual void onTimerEvent(TimerHolder<String> holder)
@@ -69,7 +78,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	
 	public virtual void onTimerEvent(String @event, StatSet @params, Npc npc, Player player)
 	{
-		LOGGER.Warn("[" + GetType().Name + "]: Timer event arrived at non overriden onTimerEvent method event: " +
+		_logger.Warn("[" + GetType().Name + "]: Timer event arrived at non overriden onTimerEvent method event: " +
 		            @event + " npc: " + npc + " player: " + player);
 	}
 	
@@ -100,121 +109,19 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		return _timerExecutor != null;
 	}
 	
-	private void initializeAnnotationListeners()
-	{
-		List<int> ids = new();
-		foreach (MethodInfo method in GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance))
-		{
-			RegisterEventAttribute? registerEventAttribute = method.GetCustomAttribute<RegisterEventAttribute>();
-			RegisterTypeAttribute? registerTypeAttribute = method.GetCustomAttribute<RegisterTypeAttribute>();
-			if (registerEventAttribute is not null && registerTypeAttribute is not null)
-			{
-				ListenerRegisterType type = registerTypeAttribute.RegisterType;
-				//EventType eventType = registerEventAttribute.EventType;
-				if (method.GetParameters().Length != 1)
-				{
-					LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
-					            method.Name + " expected parameter count is 1 but found: " +
-					            method.GetParameters().Length);
-					continue;
-				}
-
-				// if (eventType.GetEventClass() != method.GetParameters()[0].ParameterType)
-				// {
-				// 	LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
-				// 	            method.Name + " expected parameter to be type of: " +
-				// 	            eventType.GetEventClass()?.FullName + " but found: " +
-				// 	            method.GetParameters()[0].ParameterType.FullName);
-				//
-				// 	continue;
-				// }
-				//
-				// if (!eventType.GetReturnTypes().Contains(method.ReturnType))
-				// {
-				// 	LOGGER.Warn(GetType().Name + ": Non properly defined annotation listener on method: " +
-				// 	            method.Name + " expected return type to be one of: " +
-				// 	            string.Join(", ", eventType.GetReturnTypes().Select(t => t.FullName)) + " but found: " +
-				// 	            method.ReturnType.FullName);
-				// 	continue;
-				// }
-
-				int priority = 0;
-				
-				// Clear the list
-				ids.Clear();
-				
-				// Scan for possible Id filters
-				IdAttribute? idAttribute = method.GetCustomAttribute<IdAttribute>();
-				if (idAttribute is not null && idAttribute.Value is not null)
-				{
-					ids.AddRange(idAttribute.Value);					
-				}
-				
-				RangeAttribute? rangeAttribute = method.GetCustomAttribute<RangeAttribute>();
-				if (rangeAttribute is not null)
-				{
-					if (rangeAttribute.From > rangeAttribute.To)
-					{
-						LOGGER.Warn(GetType().Name + ": Wrong " + rangeAttribute.GetType().Name +
-						            " from is higher then to!");
-						continue;
-					}
-
-					for (int id = rangeAttribute.From; id <= rangeAttribute.To; id++)
-						ids.Add(id);
-				}
-				
-				NpcLevelRangeAttribute? npcLevelRangeAttribute = method.GetCustomAttribute<NpcLevelRangeAttribute>();
-				if (npcLevelRangeAttribute is not null)
-				{
-					if (npcLevelRangeAttribute.From > npcLevelRangeAttribute.To)
-					{
-						LOGGER.Warn(GetType().Name + ": Wrong " + npcLevelRangeAttribute.GetType().Name +
-						            " from is higher then to!");
-						continue;
-					}
-
-					if (type != ListenerRegisterType.NPC)
-					{
-						LOGGER.Warn(GetType().Name + ": ListenerRegisterType " + type + " for " +
-						            npcLevelRangeAttribute.GetType().Name + " NPC is expected!");
-						continue;
-					}
-
-					for (int level = npcLevelRangeAttribute.From; level <= npcLevelRangeAttribute.To; level++)
-					{
-						List<NpcTemplate> templates = NpcData.getInstance().getAllOfLevel(level);
-						templates.forEach(template => ids.add(template.getId()));
-					}
-				}
-
-				PriorityAttribute? priorityAttribute = method.GetCustomAttribute<PriorityAttribute>();
-				if (priorityAttribute is not null)
-				{
-					priority = priorityAttribute.Value;
-				}
-				
-				if (!ids.isEmpty())
-				{
-					_registeredIds.computeIfAbsent(type, k => new()).addAll(ids);
-				}
-				
-				//registerAnnotation(method, eventType, type, priority, ids);
-			}
-		}
-	}
-	
 	/**
 	 * Unloads all listeners registered by this class.
 	 */
 	public override bool unload()
 	{
-		//_listeners.forEach(x => x.unregisterMe());
-		//_listeners.Clear();
+		foreach (EventContainer container in _eventContainers)
+			container.UnsubscribeAllTypes(this);
+        
 		if (_timerExecutor != null)
 		{
 			_timerExecutor.cancelAllTimers();
 		}
+		
 		return true;
 	}
 	
@@ -228,15 +135,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableKillId(Action<OnAttackableKill> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name + ": Found addKillId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -247,15 +146,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableKillId(Action<OnAttackableKill> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name + ": Found addKillId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -268,7 +159,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void addCreatureKillId(Action<OnCreatureDeath> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -279,7 +170,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureKillId(Action<OnCreatureDeath> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -290,7 +181,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureKillId(Action<OnCreatureDeath> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -303,7 +194,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void addCreatureAttackedId(Action<OnCreatureAttacked> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -314,7 +205,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureAttackedId(Action<OnCreatureAttacked> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -325,7 +216,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureAttackedId(Action<OnCreatureAttacked> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -338,15 +229,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addFirstTalkId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -357,15 +240,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcFirstTalkId(Action<OnNpcFirstTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addFirstTalkId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -377,15 +252,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcTalkId(Action<OnNpcTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addTalkId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -395,15 +262,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcTalkId(Action<OnNpcTalk> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addTalkId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -416,7 +275,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcTeleportId(Action<OnNpcTeleport> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -427,7 +286,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcTeleportId(Action<OnNpcTeleport> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -439,15 +298,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcQuestStartId(Action<OnNpcQuestStart> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addStartNpc for non existing NPC: " + id + "!");
-			}
-		}
-
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -457,15 +308,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcQuestStartId(Action<OnNpcQuestStart> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addStartNpc for non existing NPC: " + id + "!");
-			}
-		}
-
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -478,15 +321,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSkillSeeId(Action<OnNpcSkillSee> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSkillSeeId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -497,15 +332,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSkillSeeId(Action<OnNpcSkillSee> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSkillSeeId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -518,15 +345,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSpellFinishedId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -537,15 +356,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSkillFinishedId(Action<OnNpcSkillFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSpellFinishedId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -558,15 +369,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSpawnId(Action<OnNpcSpawn> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSpawnId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -577,15 +380,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcSpawnId(Action<OnNpcSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addSpawnId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -598,7 +393,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcDespawnId(Action<OnNpcDespawn> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -609,7 +404,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcDespawnId(Action<OnNpcDespawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -622,7 +417,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcEventReceivedId(Action<OnNpcEventReceived> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -633,7 +428,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcEventReceivedId(Action<OnNpcEventReceived> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -646,7 +441,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -657,7 +452,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcMoveFinishedId(Action<OnNpcMoveFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -670,7 +465,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -681,7 +476,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcMoveRouteFinishedId(Action<OnNpcMoveRouteFinished> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -694,7 +489,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcHateId(Action<OnAttackableHate> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -705,7 +500,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcHateId(Action<OnAttackableHate> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -716,7 +511,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void addNpcHateId(Action<OnAttackableHate> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -727,7 +522,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void addNpcHateId(Action<OnAttackableHate> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -740,7 +535,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -751,7 +546,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setNpcCanBeSeenId(Action<OnNpcCanBeSeen> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -769,7 +564,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			Npc.addCreatureSeeId(id);
 		}
 
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -785,7 +580,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			Npc.addCreatureSeeId(id);
 		}
 		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -798,7 +593,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -809,7 +604,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableFactionIdId(Action<OnAttackableFactionCall> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -822,15 +617,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableAttackId(Action<OnAttackableAttack> callback, params int[] npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addAttackId for non existing NPC: " + id + "!");
-			}
-		}
-
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -841,15 +628,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableAttackId(Action<OnAttackableAttack> callback, IReadOnlyCollection<int> npcIds)
 	{
-		foreach (int id in npcIds)
-		{
-			if (NpcData.getInstance().getTemplate(id) == null)
-			{
-				LOGGER.Error(base.GetType().Name+ ": Found addAttackId for non existing NPC: " + id + "!");
-			}
-		}
-		
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -862,7 +641,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -873,7 +652,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setAttackableAggroRangeEnterId(Action<OnAttackableAggroRangeEnter> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -886,7 +665,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -897,7 +676,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSkillLearnId(Action<OnPlayerSkillLearn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -910,7 +689,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSummonSpawnId(Action<OnSummonSpawn> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -921,7 +700,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSummonSpawnId(Action<OnSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -934,7 +713,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSummonTalkId(Action<OnSummonTalk> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -945,7 +724,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerSummonTalkId(Action<OnSummonSpawn> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -957,7 +736,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerLoginId(Action<OnPlayerLogin> callback)
 	{
-		registerConsumer(callback, ListenerRegisterType.GLOBAL);
+		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -969,7 +748,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerLogoutId(Action<OnPlayerLogout> callback)
 	{
-		registerConsumer(callback, ListenerRegisterType.GLOBAL);
+		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -982,7 +761,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureZoneEnterId(Action<OnZoneEnter> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
 	
 	/**
@@ -993,7 +772,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureZoneEnterId(Action<OnZoneEnter> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1006,7 +785,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureZoneExitId(Action<OnZoneExit> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
 	
 	/**
@@ -1017,7 +796,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCreatureZoneExitId(Action<OnZoneExit> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ZONE, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1030,7 +809,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setTrapActionId(Action<OnTrapAction> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	/**
@@ -1041,7 +820,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setTrapActionId(Action<OnTrapAction> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.NPC, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1054,7 +833,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setItemBypassEvenId(Action<OnItemBypassEvent> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
 	
 	/**
@@ -1065,7 +844,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setItemBypassEvenId(Action<OnItemBypassEvent> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1078,7 +857,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setItemTalkId(Action<OnItemTalk> callback, params int[] npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
 	
 	/**
@@ -1089,7 +868,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setItemTalkId(Action<OnItemTalk> callback, IReadOnlyCollection<int> npcIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.ITEM, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1101,7 +880,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setOlympiadMatchResult(Action<OnOlympiadMatchResult> callback)
 	{
-		registerConsumer(callback, ListenerRegisterType.OLYMPIAD);
+		SubscribeToEvent(callback, SubscriptionType.Olympiad);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1114,7 +893,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, params int[] castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	/**
@@ -1125,7 +904,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeStartId(Action<OnCastleSiegeStart> callback, IReadOnlyCollection<int> castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1138,7 +917,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, params int[] castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	/**
@@ -1149,7 +928,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeOwnerChangeId(Action<OnCastleSiegeOwnerChange> callback, IReadOnlyCollection<int> castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1162,7 +941,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, params int[] castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	/**
@@ -1173,7 +952,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setCastleSiegeFinishId(Action<OnCastleSiegeFinish> callback, IReadOnlyCollection<int> castleIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.CASTLE, castleIds);
+		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1185,7 +964,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerProfessionChangeId(Action<OnPlayerProfessionChange> callback)
 	{
-		registerConsumer(callback, ListenerRegisterType.GLOBAL);
+		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
 	
 	/**
@@ -1195,7 +974,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setPlayerProfessionCancelId(Action<OnPlayerProfessionCancel> callback)
 	{
-		registerConsumer(callback, ListenerRegisterType.GLOBAL);
+		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
 	
 	/**
@@ -1206,7 +985,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceCreatedId(Action<OnInstanceCreated> callback, params int[] templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	/**
@@ -1217,7 +996,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceCreatedId(Action<OnInstanceCreated> callback, IReadOnlyCollection<int> templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1230,7 +1009,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceDestroyId(Action<OnInstanceDestroy> callback, params int[] templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	/**
@@ -1241,7 +1020,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceDestroyId(Action<OnInstanceDestroy> callback, IReadOnlyCollection<int> templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1254,7 +1033,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceEnterId(Action<OnInstanceEnter> callback, params int[] templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	/**
@@ -1265,7 +1044,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceEnterId(Action<OnInstanceEnter> callback, IReadOnlyCollection<int> templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1278,7 +1057,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceLeaveId(Action<OnInstanceLeave> callback, params int[] templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	/**
@@ -1289,7 +1068,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceLeaveId(Action<OnInstanceLeave> callback, IReadOnlyCollection<int> templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1302,7 +1081,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, params int[] templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 	
 	/**
@@ -1313,39 +1092,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 */
 	protected void setInstanceStatusChangeId(Action<OnInstanceStatusChange> callback, IReadOnlyCollection<int> templateIds)
 	{
-		registerConsumer(callback, ListenerRegisterType.INSTANCE, templateIds);
-	}
-	
-	// --------------------------------------------------------------------------------------------------
-	// --------------------------------Default listener register methods---------------------------------
-	// --------------------------------------------------------------------------------------------------
-
-	/**
-	 * Method that registers Function type of listeners (Listeners that need parameters but doesn't return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected void registerConsumer<TEvent>(Action<TEvent> callback, ListenerRegisterType registerType, params int[] npcIds)
-		where TEvent: EventBase
-	{
-		registerListener(callback, registerType, npcIds);
-	}
-
-	/**
-	 * Method that registers Function type of listeners (Listeners that need parameters but doesn't return objects)
-	 * @param callback
-	 * @param type
-	 * @param registerType
-	 * @param npcIds
-	 * @return
-	 */
-	protected void registerConsumer<TEvent>(Action<TEvent> callback, ListenerRegisterType registerType, IReadOnlyCollection<int> npcIds)
-		where TEvent: EventBase
-	{
-		registerListener(callback, registerType, npcIds);
+		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
 
 	// --------------------------------------------------------------------------------------------------
@@ -1359,113 +1106,12 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param ids
 	 * @return
 	 */
-	protected void registerListener<TEvent>(Action<TEvent> action, ListenerRegisterType registerType, params int[] ids)
+	protected void SubscribeToEvent<TEvent>(Action<TEvent> action, SubscriptionType subscriptionType, params int[] ids)
 		where TEvent: EventBase
 	{
-		if (ids.Length > 0)
-		{
-			foreach (int id in ids)
-			{
-				switch (registerType)
-				{
-					case ListenerRegisterType.NPC:
-					{
-						NpcTemplate template = NpcData.getInstance().getTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.ZONE:
-					{
-						ZoneType template = ZoneManager.getInstance().getZoneById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.ITEM:
-					{
-						ItemTemplate template = ItemData.getInstance().getTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.CASTLE:
-					{
-						Castle template = CastleManager.getInstance().getCastleById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.FORTRESS:
-					{
-						Fort template = FortManager.getInstance().getFortById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.INSTANCE:
-					{
-						InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					default:
-					{
-						LOGGER.Warn(GetType().Name+ ": Unhandled register type: " + registerType);
-						break;
-					}
-				}
-
-				_registeredIds.computeIfAbsent(registerType, k => new()).add(id);
-			}
-		}
-		else
-		{
-			switch (registerType)
-			{
-				case ListenerRegisterType.OLYMPIAD:
-				{
-					Olympiad template = Olympiad.getInstance();
-					template.Events.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL: // Global Listener
-				{
-					GlobalEvents.Global.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_NPCS: // Global Npcs Listener
-				{
-					GlobalEvents.Npcs.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_MONSTERS: // Global Monsters Listener
-				{
-					GlobalEvents.Monsters.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_PLAYERS: // Global Players Listener
-				{
-					GlobalEvents.Players.Subscribe(this, action);
-					break;
-				}
-			}
-		}
+		SubscribeToEvent(action, subscriptionType, (IReadOnlyCollection<int>)ids);
 	}
-	
+
 	/**
 	 * Generic listener register method
 	 * @param action
@@ -1473,116 +1119,19 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param ids
 	 * @return
 	 */
-	protected void registerListener<TEvent>(Action<TEvent> action, ListenerRegisterType registerType, IReadOnlyCollection<int> ids)
+	protected void SubscribeToEvent<TEvent>(Action<TEvent> action, SubscriptionType subscriptionType,
+		IReadOnlyCollection<int> ids)
 		where TEvent: EventBase
 	{
-		if (ids.Count > 0)
+		string typeName = "event " + typeof(TEvent).Name + ", class " + (GetType().FullName ?? nameof(AbstractScript));
+		ImmutableList<EventContainer> containers =
+			SubscriptionHelper.GetEventContainers(subscriptionType, typeName, ids);
+		
+		foreach (EventContainer container in containers)
 		{
-			foreach (int id in ids)
-			{
-				switch (registerType)
-				{
-					case ListenerRegisterType.NPC:
-					{
-						NpcTemplate template = NpcData.getInstance().getTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.ZONE:
-					{
-						ZoneType template = ZoneManager.getInstance().getZoneById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.ITEM:
-					{
-						ItemTemplate template = ItemData.getInstance().getTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.CASTLE:
-					{
-						Castle template = CastleManager.getInstance().getCastleById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.FORTRESS:
-					{
-						Fort template = FortManager.getInstance().getFortById(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					case ListenerRegisterType.INSTANCE:
-					{
-						InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
-						if (template != null)
-						{
-							template.Events.Subscribe(this, action);
-						}
-						break;
-					}
-					default:
-					{
-						LOGGER.Warn(GetType().Name+ ": Unhandled register type: " + registerType);
-						break;
-					}
-				}
-
-				_registeredIds.computeIfAbsent(registerType, k => new()).add(id);
-			}
+			container.Subscribe(this, action);
+			_eventContainers.Add(container);
 		}
-		else
-		{
-			switch (registerType)
-			{
-				case ListenerRegisterType.OLYMPIAD:
-				{
-					Olympiad template = Olympiad.getInstance();
-					template.Events.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL: // Global Listener
-				{
-					GlobalEvents.Global.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_NPCS: // Global Npcs Listener
-				{
-					GlobalEvents.Npcs.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_MONSTERS: // Global Monsters Listener
-				{
-					GlobalEvents.Monsters.Subscribe(this, action);
-					break;
-				}
-				case ListenerRegisterType.GLOBAL_PLAYERS: // Global Players Listener
-				{
-					GlobalEvents.Players.Subscribe(this, action);
-					break;
-				}
-			}
-		}
-	}
-	
-	public Set<int> getRegisteredIds(ListenerRegisterType type)
-	{
-		return _registeredIds.getOrDefault(type, new());
 	}
 	
 	/**
@@ -1647,6 +1196,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
+		
 		player.sendPacket(new ExShowScreenMessagePacket(text, time));
 	}
 	
@@ -1664,6 +1214,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			return;
 		}
+		
 		player.sendPacket(new ExShowScreenMessagePacket(npcString, position, time, @params));
 	}
 	
@@ -1894,7 +1445,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		{
 			if ((xValue == 0) && (yValue == 0))
 			{
-				LOGGER.Error("addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
+				_logger.Error("addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
 				return null;
 			}
 			
@@ -1951,7 +1502,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Could not spawn NPC #" + npcId + "; error: " + e);
+			_logger.Warn("Could not spawn NPC #" + npcId + "; error: " + e);
 		}
 		
 		return null;
@@ -2969,7 +2520,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		Door door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
-			LOGGER.Warn(GetType().Name + ": called openDoor(" + doorId + ", " + instanceId +
+			_logger.Warn(GetType().Name + ": called openDoor(" + doorId + ", " + instanceId +
 			            "); but door wasnt found!");
 		}
 		else if (!door.isOpen())
@@ -2988,7 +2539,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		Door door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
-			LOGGER.Warn(
+			_logger.Warn(
 				GetType().Name + ": called closeDoor(" + doorId + ", " + instanceId + "); but door wasnt found!");
 		}
 		else if (door.isOpen())

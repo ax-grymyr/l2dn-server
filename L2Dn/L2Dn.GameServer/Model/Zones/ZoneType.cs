@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Model.Zones;
  * Abstract base class for any zone type handles basic operations.
  * @author durgus
  */
-public abstract class ZoneType
+public abstract class ZoneType: IEventContainerProvider
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneType));
 	

@@ -80,7 +80,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 		registerHandler(new AdminPetition());
 		//registerHandler(new AdminPForge());
 		registerHandler(new AdminPledge());
-		//registerHandler(new AdminZones());
+		registerHandler(new AdminZones());
 		//registerHandler(new AdminPremium());
 		registerHandler(new AdminPrimePoints());
 		registerHandler(new AdminPunishment());

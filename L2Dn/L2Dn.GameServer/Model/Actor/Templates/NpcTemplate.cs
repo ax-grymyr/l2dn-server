@@ -20,7 +20,7 @@ namespace L2Dn.GameServer.Model.Actor.Templates;
  * NPC template.
  * @author NosBit
  */
-public class NpcTemplate: CreatureTemplate, IIdentifiable
+public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvider
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcTemplate));
 	

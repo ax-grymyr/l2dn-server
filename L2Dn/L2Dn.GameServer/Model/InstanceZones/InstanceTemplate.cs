@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Model.InstanceZones;
  * Template holder for instances.
  * @author malyelfik
  */
-public class InstanceTemplate: IIdentifiable, INamable
+public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 {
 	// Basic instance parameters
 	private readonly EventContainer _eventContainer;

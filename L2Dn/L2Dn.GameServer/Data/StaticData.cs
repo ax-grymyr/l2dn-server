@@ -225,6 +225,8 @@ public static class StaticData
 		}
 		
 		PunishmentManager.getInstance();
+
+		AdminCommandHandler.getInstance();
 		
 		//Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		

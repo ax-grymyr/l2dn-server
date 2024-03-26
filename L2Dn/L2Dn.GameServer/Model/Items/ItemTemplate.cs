@@ -28,7 +28,7 @@ namespace L2Dn.GameServer.Model.Items;
  * <li>Weapon</li>
  * </ul>
  */
-public abstract class ItemTemplate: IIdentifiable
+public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemTemplate));
 	

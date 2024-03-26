@@ -24,7 +24,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
-public class Castle: AbstractResidence
+public class Castle: AbstractResidence, IEventContainerProvider
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Castle));
 

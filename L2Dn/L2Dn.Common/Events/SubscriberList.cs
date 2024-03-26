@@ -3,7 +3,12 @@ using NLog;
 
 namespace L2Dn.Events;
 
-internal sealed class SubscriberList<TArg>
+internal abstract class SubscriberList
+{
+    public abstract void UnsubscribeAll(object owner);
+}
+
+internal sealed class SubscriberList<TArg>: SubscriberList
     where TArg: EventBase
 {
     // TODO: think about weak events
@@ -26,7 +31,7 @@ internal sealed class SubscriberList<TArg>
             node = GetOrCreateNode(ref node.Next);
     }
 
-    public void UnsubscribeAll(object owner)
+    public override void UnsubscribeAll(object owner)
     {
         int removedCount = RemoveByOwnerFromArray(_array, owner);
         for (Node? node = _node; node != null; node = node.Next)

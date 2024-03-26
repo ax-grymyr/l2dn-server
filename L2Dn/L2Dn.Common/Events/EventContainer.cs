@@ -33,6 +33,12 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
             list!.UnsubscribeAll(owner);
     }
 
+    public void UnsubscribeAllTypes(object owner)
+    {
+        foreach (SubscriberList list in _subscribers.Values)
+            list.UnsubscribeAll(owner);
+    }
+
     public void Unsubscribe<TEvent>(Action<TEvent> callback)
         where TEvent: EventBase
     {
