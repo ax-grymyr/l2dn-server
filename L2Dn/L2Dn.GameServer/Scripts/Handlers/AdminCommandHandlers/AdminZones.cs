@@ -522,7 +522,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	
 	private void buildHtmlWindow(Player activeChar, int page)
 	{
-		HtmlContent htmlContent = HtmlContent.LoadFromText("html/admin/zone_editor_create.htm", activeChar);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/zone_editor_create.htm", activeChar);
 		ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key => new ZoneNodeHolder(activeChar));
 		AtomicInteger position = new AtomicInteger(page * 20);
 
