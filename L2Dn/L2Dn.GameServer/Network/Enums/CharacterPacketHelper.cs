@@ -148,6 +148,7 @@ public static class CharacterPacketHelper
     
 	public static ImmutableArray<CharSelectInfoPackage> LoadCharacterSelectInfo(int accountId)
 	{
+		// TODO: optimize loading characters
 		List<CharSelectInfoPackage> characterList = new();
 		try
 		{
@@ -266,7 +267,7 @@ public static class CharacterPacketHelper
 				}
 			}
 
-			CharacterPacketHelper.DeleteCharByObjId(objectId);
+			DeleteCharByObjId(objectId);
 			return null;
 		}
 		

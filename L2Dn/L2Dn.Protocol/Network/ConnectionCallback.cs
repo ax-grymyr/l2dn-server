@@ -6,5 +6,5 @@ public abstract class ConnectionCallback
     {
     }
     
-    internal abstract void ConnectionClosed(int sessionId);
+    internal abstract void ConnectionClosed(Session session);
 }

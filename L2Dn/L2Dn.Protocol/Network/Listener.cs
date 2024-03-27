@@ -75,14 +75,15 @@ public sealed class Listener<TSession>: ConnectionCallback
         TSession session = _sessionFactory.Create();
 
         Connection<TSession> connection = _connections.GetOrAdd(session.Id,
-            id => new Connection<TSession>(this, client, session, _packetEncoderFactory.Create(session),
+            _ => new Connection<TSession>(this, client, session, _packetEncoderFactory.Create(session),
                 _packetHandler));
 
         connection.BeginReceivingAsync(cancellationToken);
     }
 
-    internal override void ConnectionClosed(int sessionId)
+    internal override void ConnectionClosed(Session session)
     {
-        _connections.TryRemove(sessionId, out _);
+        _connections.TryRemove(session.Id, out _);
+        session.Connection = null;
     }
 }

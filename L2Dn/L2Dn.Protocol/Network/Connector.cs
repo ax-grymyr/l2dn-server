@@ -57,7 +57,7 @@ public sealed class Connector<TSession>: ConnectionCallback
         }
     }
 
-    internal override void ConnectionClosed(int sessionId)
+    internal override void ConnectionClosed(Session session)
     {
         if (!_cancellationToken.IsCancellationRequested)
             ConnectAsync(_cancellationToken);

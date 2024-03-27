@@ -145,6 +145,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					player.setClient(session);
 					session.Player = player;
 					player.setOnlineStatus(true, true);
+					info.setLastAccess(DateTime.UtcNow);
 					
 					if (GlobalEvents.Players.HasSubscribers<OnPlayerSelect>())
 					{

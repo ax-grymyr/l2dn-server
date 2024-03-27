@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -54,6 +55,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
                 {
                     player.teleToLocation(TeleportWhereType.TOWN);
                 }
+                
                 player.getSummonedNpcs().ForEach(npc => npc.teleToLocation(player, true));
             }
             
@@ -70,6 +72,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         connection.Send(new RestartResponsePacket(true));
 		
         // Send character list
+        session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
         CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
