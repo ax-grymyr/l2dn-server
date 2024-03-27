@@ -121,7 +121,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		{
 			for (int i = 0; i < size; i++)
 			{
-				if (lastAccess < _characterPackages[i].getLastAccess())
+				if (lastAccess is null || lastAccess < _characterPackages[i].getLastAccess())
 				{
 					lastAccess = _characterPackages[i].getLastAccess();
 					activeId = i;
