@@ -27,4 +27,4 @@ TBD: license, notes, etc.
 #### Client
 
 The development branch is for protocol 447. 
-The instruction how to setup the client is here.
+The instruction how to setup the client is [here](L2Dn/Wiki/Client.md).
