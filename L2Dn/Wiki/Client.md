@@ -42,3 +42,6 @@ The last step is the modification of `L2.ini`.
 - Decrypt `L2.ini.txt` and replace `L2.ini` using the command `l2encdec.exe -e 413 L2.ini.txt L2.ini`
 
 Now you can run the server locally and connect with this client to the server.
+
+> [!NOTE]
+> The patched `Core.dll` was taken from [forum.ragezone.com](https://forum.ragezone.com/resources/l2j-share-l2jmobius-essence-7-3-sevensigns-1-dec-2023-protocol-447-client-447-source-code.38/).
