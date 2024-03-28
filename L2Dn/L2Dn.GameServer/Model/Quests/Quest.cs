@@ -92,11 +92,11 @@ public class Quest: AbstractScript, IIdentifiable
 		_questId = questId;
 		if (questId > 0)
 		{
-			QuestManager.getInstance().addQuest(this);
+			QuestManager.getInstance()?.addQuest(this);
 		}
 		else
 		{
-			QuestManager.getInstance().addScript(this);
+			QuestManager.getInstance()?.addScript(this);
 		}
 		
 		_questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
@@ -644,6 +644,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
+		
 		player.setLastQuestNpcObject(npc.getObjectId());
 		showResult(player, res, npc);
 	}
@@ -666,6 +667,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
+		
 		showResult(player, res, npc);
 	}
 	
@@ -688,6 +690,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
+		
 		showResult(player, res);
 	}
 	
@@ -1076,7 +1079,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the killer was the player's pet.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onKill(Npc npc, Player killer, bool isSummon)
+	public virtual String onKill(Npc npc, Player killer, bool isSummon)
 	{
 		if (!getNpcLogList(killer).isEmpty())
 		{
@@ -2715,21 +2718,23 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param fileName the html file to be get.
 	 * @return the HTML file contents
 	 */
-	public String getHtm(Player player, String fileName)
+	public string? getHtm(Player player, String fileName)
 	{
 		HtmCache hc = HtmCache.getInstance();
-		String content =
-			hc.getHtm(fileName.startsWith("scripts/") ? fileName : "scripts/" + getPath() + "/" + fileName,
-				player.getLang());
-		
+
+		string filePath = $"scripts/quests/{GetType().Name}/{fileName}";
+		string? content = hc.getHtm(filePath, player.getLang());
 		if (content == null)
 		{
-			content = hc.getHtm("scripts/" + getPath() + "/" + fileName, player.getLang());
+			filePath = "scripts/" + getPath() + "/" + fileName;
+			content = hc.getHtm(filePath, player.getLang());
 			if (content == null)
 			{
-				content = hc.getHtm("scripts/quests/" + getName() + "/" + fileName, player.getLang());
+				filePath = "scripts/quests/" + getName() + "/" + fileName;
+				content = hc.getHtm(filePath, player.getLang());
 			}
 		}
+
 		return content;
 	}
 	
@@ -2763,7 +2768,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void removeRegisteredQuestItems(Player player)
 	{
-		takeItems(player, -1, _questItemIds);
+		takeItemsByIds(player, -1, _questItemIds);
 	}
 	
 	public override String getScriptName()

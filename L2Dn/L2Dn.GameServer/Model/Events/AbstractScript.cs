@@ -2285,7 +2285,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param itemIds a list or an array of IDs of the items to take
 	 * @return {@code true} if all items were taken, {@code false} otherwise
 	 */
-	public static bool takeItems(Player player, int amount, params int[] itemIds)
+	public static bool takeItemsByIds(Player player, long amount, params int[] itemIds)
 	{
 		if (player.isSimulatingTalking())
 		{
