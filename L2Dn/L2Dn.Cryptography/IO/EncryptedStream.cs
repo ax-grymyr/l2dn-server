@@ -38,38 +38,40 @@ public sealed class EncryptedStream: WrapperStream
         version switch
         {
             // Xor
-            EncryptionVersion.Ver111 => new XorStream(stream, EncryptionKeys.XorKey111),
+            EncryptionVersion.Ver111 => new XorByteStream(stream, EncryptionKeys.XorKey111),
             EncryptionVersion.Ver120 => new L2Ver120Stream(stream),
-            EncryptionVersion.Ver121 => new XorStream(stream, EncryptionKeys.GetXorKey121(fileName)),
+            EncryptionVersion.Ver121 => new XorByteStream(stream, EncryptionKeys.GetXorKey121(fileName)),
 
             // LameCrypt Xor
-            EncryptionVersion.Ver811 => new XorStream(new LameCryptStream(stream), EncryptionKeys.XorKey111),
+            EncryptionVersion.Ver811 => new XorByteStream(new LameCryptStream(stream), EncryptionKeys.XorKey111),
             EncryptionVersion.Ver820 => new L2Ver120Stream(new LameCryptStream(stream)),
-            EncryptionVersion.Ver821 => new XorStream(new LameCryptStream(stream),
+            EncryptionVersion.Ver821 => new XorByteStream(new LameCryptStream(stream),
                 EncryptionKeys.GetXorKey121(fileName)),
 
             // Blowfish
-            EncryptionVersion.Ver211 => new BlowfishStream(stream, EncryptionKeys.BlowfishKey211),
-            EncryptionVersion.Ver212 => new BlowfishStream(stream, EncryptionKeys.BlowfishKey212),
+            EncryptionVersion.Ver211 => new BlowfishStream(stream, EncryptionKeys.BlowfishKey211.Span),
+            EncryptionVersion.Ver212 => new BlowfishStream(stream, EncryptionKeys.BlowfishKey212.Span),
 
             // LameCrypt Blowfish
-            EncryptionVersion.Ver911 => new BlowfishStream(new LameCryptStream(stream), EncryptionKeys.BlowfishKey211),
-            EncryptionVersion.Ver912 => new BlowfishStream(new LameCryptStream(stream), EncryptionKeys.BlowfishKey212),
+            EncryptionVersion.Ver911 => new BlowfishStream(new LameCryptStream(stream),
+                EncryptionKeys.BlowfishKey211.Span),
+            EncryptionVersion.Ver912 => new BlowfishStream(new LameCryptStream(stream),
+                EncryptionKeys.BlowfishKey212.Span),
 
             // RSA
-            EncryptionVersion.Ver411 => new L2Ver41xInputStream(stream, EncryptionKeys.RsaDecryption411),
-            EncryptionVersion.Ver412 => new L2Ver41xInputStream(stream, EncryptionKeys.RsaDecryption412),
-            EncryptionVersion.Ver413 => new L2Ver41xInputStream(stream, EncryptionKeys.RsaDecryption413),
-            EncryptionVersion.Ver414 => new L2Ver41xInputStream(stream, EncryptionKeys.RsaDecryption414),
+            EncryptionVersion.Ver411 => L2Ver41X.CreateInputStream(stream, EncryptionKeys.RsaDecryption411),
+            EncryptionVersion.Ver412 => L2Ver41X.CreateInputStream(stream, EncryptionKeys.RsaDecryption412),
+            EncryptionVersion.Ver413 => L2Ver41X.CreateInputStream(stream, EncryptionKeys.RsaDecryption413),
+            EncryptionVersion.Ver414 => L2Ver41X.CreateInputStream(stream, EncryptionKeys.RsaDecryption414),
 
             // LameCrypt RSA
-            EncryptionVersion.Ver611 => new L2Ver41xInputStream(new LameCryptStream(stream),
+            EncryptionVersion.Ver611 => L2Ver41X.CreateInputStream(new LameCryptStream(stream),
                 EncryptionKeys.RsaDecryption411),
-            EncryptionVersion.Ver612 => new L2Ver41xInputStream(new LameCryptStream(stream),
+            EncryptionVersion.Ver612 => L2Ver41X.CreateInputStream(new LameCryptStream(stream),
                 EncryptionKeys.RsaDecryption412),
-            EncryptionVersion.Ver613 => new L2Ver41xInputStream(new LameCryptStream(stream),
+            EncryptionVersion.Ver613 => L2Ver41X.CreateInputStream(new LameCryptStream(stream),
                 EncryptionKeys.RsaDecryption413),
-            EncryptionVersion.Ver614 => new L2Ver41xInputStream(new LameCryptStream(stream),
+            EncryptionVersion.Ver614 => L2Ver41X.CreateInputStream(new LameCryptStream(stream),
                 EncryptionKeys.RsaDecryption414),
 
             _ => throw new InvalidOperationException($"Encryption version {(int)version} is not supported.")

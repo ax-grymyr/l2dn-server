@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Packages;
+﻿namespace L2Dn.Packages.Unreal;
 
 /// <summary>
 /// Exported objects implicitly form a tree with the package as implicit root

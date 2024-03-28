@@ -1,6 +1,6 @@
 ﻿using L2Dn.Packages.Internal;
 
-namespace L2Dn.Packages;
+namespace L2Dn.Packages.Unreal;
 
 public sealed class UPackageManager
 {

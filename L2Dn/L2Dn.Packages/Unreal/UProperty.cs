@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace L2Dn.Packages;
+namespace L2Dn.Packages.Unreal;
 
 public class UProperty: ISerializableObject
 {

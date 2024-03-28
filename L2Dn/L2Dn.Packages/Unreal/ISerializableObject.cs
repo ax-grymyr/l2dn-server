@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Packages;
+﻿namespace L2Dn.Packages.Unreal;
 
 public interface ISerializableObject
 {

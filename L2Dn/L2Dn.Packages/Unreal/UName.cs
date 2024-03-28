@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Packages;
+﻿namespace L2Dn.Packages.Unreal;
 
 /// <summary>
 /// Generally the name table does not contain any duplicate entries,

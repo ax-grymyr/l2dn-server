@@ -1,4 +1,6 @@
-﻿namespace L2Dn.Packages.Internal;
+﻿using L2Dn.Packages.Unreal;
+
+namespace L2Dn.Packages.Internal;
 
 internal struct PackageHeader: ISerializableObject
 {

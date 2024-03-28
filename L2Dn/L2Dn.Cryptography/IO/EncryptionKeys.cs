@@ -6,9 +6,9 @@ namespace L2Dn.IO;
 
 public static class EncryptionKeys
 {
-    internal const int XorKey111 = 0xAC;
+    public const int XorKey111 = 0xAC;
 
-    internal static byte GetXorKey121(string fileName)
+    public static byte GetXorKey121(string fileName)
     {
         ReadOnlySpan<char> input = fileName;
         Span<char> lowerCase = stackalloc char[input.Length + 8];
@@ -25,8 +25,11 @@ public static class EncryptionKeys
         return (byte)sum;
     }
 
-    internal static readonly byte[] BlowfishKey211 = "31==-%&@!^+][;'.]94-\0"u8.ToArray();
-    internal static readonly byte[] BlowfishKey212 = "[;'.]94-&@%!^+]-31==\0"u8.ToArray();
+    public static ReadOnlyMemory<byte> LameCryptKey { get; } =
+        "Range check error while converting variant of type (%s) into type (%s)"u8.ToArray();
+    
+    public static ReadOnlyMemory<byte> BlowfishKey211 { get; } = "31==-%&@!^+][;'.]94-\0"u8.ToArray();
+    public static ReadOnlyMemory<byte> BlowfishKey212 { get; } = "[;'.]94-&@%!^+]-31==\0"u8.ToArray();
 
     public static readonly BigInteger RsaModulus411 = new(
         "8c9d5da87b30f5d7cd9dc88c746eaac5" +
@@ -99,9 +102,9 @@ public static class EncryptionKeys
     public static readonly BigInteger RsaPrivateExponentL2EncDec = new("1d", 16);
 
     public static RsaKeyParameters RsaDecryption411 { get; set; } = new(true, RsaModulus411, RsaPrivateExponent411);
-    public static RsaKeyParameters RsaDecryption412 { get; set; } = new(true, RsaModulus412, RsaPrivateExponent411);
-    public static RsaKeyParameters RsaDecryption413 { get; set; } = new(true, RsaModulus413, RsaPrivateExponent411);
-    public static RsaKeyParameters RsaDecryption414 { get; set; } = new(true, RsaModulus414, RsaPrivateExponent411);
+    public static RsaKeyParameters RsaDecryption412 { get; set; } = new(true, RsaModulus412, RsaPrivateExponent412);
+    public static RsaKeyParameters RsaDecryption413 { get; set; } = new(true, RsaModulus413, RsaPrivateExponent413);
+    public static RsaKeyParameters RsaDecryption414 { get; set; } = new(true, RsaModulus414, RsaPrivateExponent414);
 
     public static RsaKeyParameters RsaEncryption411 { get; set; } =
         new(false, RsaModulusL2EncDec, RsaPublicExponentL2EncDec);
@@ -114,4 +117,8 @@ public static class EncryptionKeys
 
     public static RsaKeyParameters RsaEncryption414 { get; set; } =
         new(false, RsaModulusL2EncDec, RsaPublicExponentL2EncDec);
+
+    public static RsaKeyParameters RsaDecryption413L2EncDec { get; set; } =
+        new(true, RsaModulusL2EncDec, RsaPrivateExponentL2EncDec);
+
 }

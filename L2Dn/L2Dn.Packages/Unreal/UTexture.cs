@@ -1,6 +1,6 @@
 ﻿using L2Dn.Packages.Textures;
 
-namespace L2Dn.Packages;
+namespace L2Dn.Packages.Unreal;
 
 public class UTexture: UMaterial, ISerializableObject
 {

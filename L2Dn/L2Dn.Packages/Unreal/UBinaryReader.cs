@@ -4,7 +4,7 @@ using System.Text;
 using L2Dn.Conversion;
 using L2Dn.IO;
 
-namespace L2Dn.Packages;
+namespace L2Dn.Packages.Unreal;
 
 public class UBinaryReader(Stream stream, long position = 0):
     BinaryReader<LittleEndianBitConverter>(stream, position)
@@ -63,26 +63,26 @@ public class UBinaryReader(Stream stream, long position = 0):
         try
         {
             ReadBytes(span);
+
+            if (unicode)
+            {
+                // TODO: big endian architectures
+                ReadOnlySpan<char> chars = MemoryMarshal.Cast<byte, char>(span);
+                if (chars[^1] == '\0')
+                    chars = chars[..^1];
+
+                return new string(chars);
+            }
+
+            if (span[^1] == 0)
+                span = span[..^1];
+
+            return Encoding.UTF8.GetString(span);
         }
         finally
         {
             ArrayPool<byte>.Shared.Return(buf);
         }
-
-        if (unicode)
-        {
-            // TODO: big endian architectures
-            ReadOnlySpan<char> chars = MemoryMarshal.Cast<byte, char>(span);
-            if (chars[^1] == '\0')
-                chars = chars[..^1];
-
-            return new string(chars);
-        }
-
-        if (span[^1] == 0)
-            span = span[..^1];
-
-        return Encoding.UTF8.GetString(span);
     }
 
     public IEnumerable<T> ReadValues<T>(int count)

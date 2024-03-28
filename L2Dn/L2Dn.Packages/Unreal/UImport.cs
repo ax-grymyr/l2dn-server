@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Packages;
+﻿namespace L2Dn.Packages.Unreal;
 
 /// <summary>
 /// The import table specifies objects from other packages
