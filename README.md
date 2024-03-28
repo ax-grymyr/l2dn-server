@@ -15,8 +15,16 @@ TBD: license, notes, etc.
 
 #### Milestones
 
-1) ~~Make code compile~~ Done
-2) ~~Make the server able to run without crashes~~ Done
-3) Make main functionality work
-4) Port scripts (quests, events, etc)
-5) TBD
+- [x] Make code compile
+- [x] Make the server able to run without crashes
+- [ ] Make main functionality work
+  * Teleports, skills, fighting are working         
+- [ ] Port scripts (quests, events, etc)
+  * Most of the handlers have been ported, including GM commands 
+  * Tutorial quest for Dwarf fighters has been ported as a quest example 
+- [ ] Datapack and Geodata
+
+#### Client
+
+The development branch is for protocol 447. 
+The instruction how to setup the client is here.

@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	ProjectSection(SolutionItems) = preProject
 		Documentation\Clients.md = Documentation\Clients.md
 		Documentation\Links.txt = Documentation\Links.txt
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Protocol", "L2Dn.Protocol\L2Dn.Protocol.csproj", "{9CE64212-70CD-4B05-B0FF-40CED4939EF8}"
@@ -28,6 +29,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.GameServer.Db", "L2Dn.GameServer.Db\L2Dn.GameServer.Db.csproj", "{E9336906-23E6-4B08-9198-8A71D428A115}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Model", "L2Dn.Model\L2Dn.Model.csproj", "{18FC3AFF-D35C-4E80-9935-AF065106DDC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.GameServer.Model", "L2Dn.GameServer.Model\L2Dn.GameServer.Model.csproj", "{9317B267-DE13-4F43-9F70-3FDD1CEC1C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.GameServer.Scripts", "L2Dn.GameServer.Scripts\L2Dn.GameServer.Scripts.csproj", "{3C481907-5B17-42B7-939A-AEA051AB413F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,5 +83,13 @@ Global
 		{18FC3AFF-D35C-4E80-9935-AF065106DDC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18FC3AFF-D35C-4E80-9935-AF065106DDC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18FC3AFF-D35C-4E80-9935-AF065106DDC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9317B267-DE13-4F43-9F70-3FDD1CEC1C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9317B267-DE13-4F43-9F70-3FDD1CEC1C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9317B267-DE13-4F43-9F70-3FDD1CEC1C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9317B267-DE13-4F43-9F70-3FDD1CEC1C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C481907-5B17-42B7-939A-AEA051AB413F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C481907-5B17-42B7-939A-AEA051AB413F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C481907-5B17-42B7-939A-AEA051AB413F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C481907-5B17-42B7-939A-AEA051AB413F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

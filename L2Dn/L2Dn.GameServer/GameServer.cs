@@ -12,20 +12,19 @@ namespace L2Dn.GameServer;
 public class GameServer
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServer));
-    private static DateTime _serverStarted;
     private readonly CancellationTokenSource _cancellationTokenSource = new();
     private Listener<GameSession>? _clientListener;
     private Connector<AuthServerSession>? _authServerConnector;
     private Task? _clientListenerTask;
     private readonly DateTime _startTime = DateTime.UtcNow;
 
-    public static DateTime ServerStarted => _serverStarted;
-
     public void Start()
     {
         // Preload data
         Config.Load(@"Config");
+        Scripts.Scripts.RegisterHandlers();
         StaticData.Load();
+        Scripts.Scripts.RegisterQuests();
 		
 		long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
 		long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;
@@ -48,7 +47,7 @@ public class GameServer
             new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
 
         _authServerConnector.Start(_cancellationTokenSource.Token);
-        _serverStarted = DateTime.UtcNow;
+        _logger.Info("Server started at " + ServerInfo.ServerStarted);
     }
 
     public async Task StopAsync()

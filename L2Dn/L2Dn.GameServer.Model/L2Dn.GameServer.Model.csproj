@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>L2Dn.GameServer</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\L2Dn.GameServer.Db\L2Dn.GameServer.Db.csproj" />
+      <ProjectReference Include="..\L2Dn.Protocol\L2Dn.Protocol.csproj" />
+    </ItemGroup>
+
+</Project>

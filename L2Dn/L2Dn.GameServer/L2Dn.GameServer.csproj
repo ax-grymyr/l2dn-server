@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\L2Dn.GameServer.Db\L2Dn.GameServer.Db.csproj" />
-      <ProjectReference Include="..\L2Dn.Protocol\L2Dn.Protocol.csproj" />
+      <ProjectReference Include="..\L2Dn.GameServer.Model\L2Dn.GameServer.Model.csproj" />
+      <ProjectReference Include="..\L2Dn.GameServer.Scripts\L2Dn.GameServer.Scripts.csproj" />
     </ItemGroup>
 
     <ItemGroup>
