@@ -1,6 +1,8 @@
 ﻿namespace L2Dn.Packages.DatDefinitions.Annotations;
 
-public sealed class ArrayLengthTypeAttribute(ArrayLengthType type): Attribute
+[AttributeUsage(AttributeTargets.Property)]
+public sealed class ArrayLengthTypeAttribute(ArrayLengthType type, int size = -1): Attribute
 {
     public ArrayLengthType Type { get; } = type;
+    public int Size { get; } = size;
 }

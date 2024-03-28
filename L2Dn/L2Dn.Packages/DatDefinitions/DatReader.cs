@@ -1,23 +1,54 @@
 ﻿using System.Reflection;
-using System.Text;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions.Annotations;
+using Org.BouncyCastle.X509.Store;
 
 namespace L2Dn.Packages.DatDefinitions;
 
 public static class DatReader
 {
+    private static readonly List<string> _nameData = new();
+    
+    public static void ReadNameData(string filePath)
+    {
+        L2NameData data = Read<L2NameData>(filePath);
+        _nameData.Clear();
+        _nameData.AddRange(data.Names);
+    }
+    
+    public static T[] ReadArray<T>(string filePath, ArrayLengthType lengthType = ArrayLengthType.Int32, int size = -1)
+    {
+        using EncryptedStream stream = EncryptedStream.OpenRead(filePath);
+        DatBinaryReader reader = new DatBinaryReader(stream);
+        int length = ReadArrayLength(reader, lengthType, size);
+
+        T[] array = new T[length];
+        for (int i = 0; i < length; i++)
+            array[i] = (T)ReadValue(typeof(T), reader, null);
+        
+        return array;
+    }
+
     public static T Read<T>(string filePath)
     {
         using EncryptedStream stream = EncryptedStream.OpenRead(filePath);
         DatBinaryReader reader = new DatBinaryReader(stream);
-        return (T)ReadValue(typeof(T), reader);
+        return (T)ReadValue(typeof(T), reader, null);
     }
 
-    private static object ReadValue(Type type, DatBinaryReader reader, ArrayLengthTypeAttribute? attribute = null)
+    private static object ReadValue(Type type, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
     {
         if (type == typeof(int))
             return reader.ReadInt32();
+
+        if (type == typeof(short))
+            return reader.ReadInt16();
+
+        if (type == typeof(byte))
+            return reader.ReadByte();
+
+        if (type == typeof(char))
+            return (char)reader.ReadByte();
 
         if (type == typeof(long))
             return reader.ReadInt64();
@@ -26,42 +57,78 @@ public static class DatReader
             return reader.ReadFloat();
 
         if (type == typeof(string))
-            return reader.ReadDatString();
+        {
+            StringType stringType = GetCustomAttribute<StringTypeAttribute>(attributeProvider)?.Type ?? StringType.Utf8;
+            return stringType switch
+            {
+                StringType.Utf8 => reader.ReadDatString(),
+                StringType.Utf16 => reader.ReadUnicodeString(),
+                StringType.NameDataIndex => GetNameData(reader.ReadInt32()),
+                _ => throw new NotSupportedException()
+            };
+        }
 
         if (type.IsArray)
-        {
-            int length = attribute != null && attribute.Type == ArrayLengthType.Int32
-                ? reader.ReadInt32()
-                : reader.ReadIndex();
-
-            Type elementType = type.GetElementType()!;
-            Array array = Array.CreateInstance(elementType, length);
-            for (int i = 0; i < length; i++)
-            {
-                object value = ReadValue(elementType, reader);
-                array.SetValue(value, i);
-            }
-
-            return array;
-        }
+            return ReadArray(type.GetElementType()!, reader, attributeProvider);
 
         if (type.IsClass)
-        {
-            object obj = Activator.CreateInstance(type);
-            foreach (PropertyInfo property in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
-            {
-                ArrayLengthTypeAttribute? attr = property.GetCustomAttribute<ArrayLengthTypeAttribute>();
-                object value = ReadValue(property.PropertyType, reader, attr);
-
-                string len = property.PropertyType.IsArray ? $" (len = {((Array)value).Length})" : "";
-                File.AppendAllText(@"D:\read.txt", $"{type.Name}.{property.Name} = {value}{len}\n\r", Encoding.UTF8);
-                
-                property.SetValue(obj, value);
-            }
-
-            return obj;
-        }
+            return ReadObject(type, reader);
 
         throw new NotSupportedException();
+    }
+
+    private static string GetNameData(int index) => _nameData.Count > index ? _nameData[index] : index.ToString();
+
+    private static object ReadObject(Type classType, DatBinaryReader reader)
+    {
+        object obj = Activator.CreateInstance(classType)!;
+        foreach (PropertyInfo property in classType.GetProperties(BindingFlags.Instance | BindingFlags.Public))
+        {
+            object value = ReadValue(property.PropertyType, reader, property);
+            property.SetValue(obj, value);
+
+            //string len = property.PropertyType.IsArray ? $" (len = {((Array)value).Length})" : "";
+            //File.AppendAllText(@"D:\read.txt", $"{type.Name}.{property.Name} = {value}{len}\n\r", Encoding.UTF8);
+        }
+
+        return obj;
+    }
+    
+    private static object ReadArray(Type elementType, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
+    {
+        ArrayLengthTypeAttribute? attr = GetCustomAttribute<ArrayLengthTypeAttribute>(attributeProvider);
+        int length = ReadArrayLength(reader, attr?.Type ?? ArrayLengthType.CompactInt, attr?.Size ?? -1);
+        Array array = Array.CreateInstance(elementType, length);
+        for (int i = 0; i < length; i++)
+        {
+            object value = ReadValue(elementType, reader, attributeProvider);
+            array.SetValue(value, i);
+        }
+
+        return array;
+    }
+
+    private static int ReadArrayLength(DatBinaryReader reader, ArrayLengthType lengthType, int size) =>
+        lengthType switch
+        {
+            ArrayLengthType.CompactInt => reader.ReadIndex(),
+            ArrayLengthType.Int32 => reader.ReadInt32(),
+            ArrayLengthType.Int16 => reader.ReadInt16(),
+            ArrayLengthType.Byte => reader.ReadByte(),
+            ArrayLengthType.Fixed => size,
+            _ => throw new NoSuchStoreException()
+        };
+
+    private static T? GetCustomAttribute<T>(ICustomAttributeProvider? attributeProvider)
+        where T: Attribute
+    {
+        if (attributeProvider is null)
+            return null;
+
+        object[] attributes = attributeProvider.GetCustomAttributes(typeof(T), false);
+        if (attributes.Length != 0)
+            return (T)attributes[0];
+
+        return null;
     }
 }

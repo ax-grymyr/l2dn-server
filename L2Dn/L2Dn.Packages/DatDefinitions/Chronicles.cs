@@ -1,0 +1,32 @@
+﻿namespace L2Dn.Packages.DatDefinitions;
+
+public enum Chronicles
+{
+    scions_of_destiny,
+    interlude,
+    epilogue,
+    high_five,
+    awakening,
+    lindvior,
+    valiance,
+    ertheia,
+    underground,
+    helios,
+    grand_crusade,
+    salvation,
+    etinas_fate,
+    fafurion,
+    prelude_of_war,
+    prelude_of_war_2,
+    prelude_of_war_3,
+    homunculus,
+    homunculus_2,
+    return_of_the_queen_ant,
+    return_of_the_queen_ant_2,
+    master_class,
+    master_class_2,
+    master_class_3,
+    the_source_of_flame,
+    age_of_magic,
+    shinemaker,
+}

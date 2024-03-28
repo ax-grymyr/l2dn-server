@@ -1,6 +1,8 @@
-﻿namespace L2Dn.Packages.DatDefinitions.Fafurion;
+﻿using L2Dn.Packages.DatDefinitions.Common;
 
-public class Quest
+namespace L2Dn.Packages.DatDefinitions.Helios;
+
+public class QuestName // not tested
 {
 	public int Tag { get; set; }
 	public int Id { get; set; }
@@ -27,11 +29,9 @@ public class Quest
 	public string Intro { get; set; } = string.Empty;
 	public int[] ClassLimits { get; set; } = Array.Empty<int>();
 	public int[] HaveItems { get; set; } = Array.Empty<int>();
-	public int ClanPetQuest { get; set; }
+	public int ClanPetQuest { get; set; } // OrAnd
 	public int ClearedQuest { get; set; }
 	public int MarkType { get; set; }
-	public int CategoryId { get; set; }
-	public int PriorityLevel { get; set; }
 	public int SearchZoneId { get; set; }
 	public int IsCategory { get; set; }
 	public int[] RewardIds { get; set; } = Array.Empty<int>();

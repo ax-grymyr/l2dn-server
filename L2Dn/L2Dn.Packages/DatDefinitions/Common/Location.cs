@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Packages.DatDefinitions.Fafurion;
+﻿namespace L2Dn.Packages.DatDefinitions.Common;
 
 public class Location
 {

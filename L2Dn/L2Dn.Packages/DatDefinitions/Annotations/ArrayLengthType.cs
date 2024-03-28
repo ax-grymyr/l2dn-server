@@ -2,6 +2,9 @@
 
 public enum ArrayLengthType
 {
-    Count,
+    CompactInt,
     Int32,
+    Int16,
+    Byte,
+    Fixed
 }
