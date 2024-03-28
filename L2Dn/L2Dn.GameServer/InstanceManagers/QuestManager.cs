@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Scripting;
+using L2Dn.GameServer.Scripts.Quests;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -20,6 +21,7 @@ public class QuestManager
 	
 	protected QuestManager()
 	{
+		addQuest(new Q00206Tutorial());
 	}
 	
 	public bool reload(String questFolder)

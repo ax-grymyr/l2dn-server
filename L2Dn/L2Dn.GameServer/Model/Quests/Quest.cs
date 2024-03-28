@@ -1036,7 +1036,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            This parameter may be {@code null} in certain circumstances.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onAdvEvent(String @event, Npc npc, Player player)
+	public virtual String onAdvEvent(String @event, Npc npc, Player player)
 	{
 		if (player != null)
 		{
@@ -1131,7 +1131,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who is talking to the NPC.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onFirstTalk(Npc npc, Player player)
+	public virtual string onFirstTalk(Npc npc, Player player)
 	{
 		return null;
 	}
