@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions;
@@ -10,7 +10,7 @@ namespace L2Dn;
 public class DatReaderTests
 {
     private const string SourcePath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
-    private const string DestPath = SourcePath;
+    private const string DestPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\";
     
     [Fact]
     public void ReadQuests()
@@ -18,10 +18,7 @@ public class DatReaderTests
         EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
 
         QuestName[] quests = DatReader.ReadArray<QuestName>(SourcePath + "QuestName_Classic-eu.dat");
-        JsonSerializerOptions options = new JsonSerializerOptions();
-        options.WriteIndented = true;
-        string json = JsonSerializer.Serialize(quests, options);
-        File.WriteAllText(DestPath + "QuestName_Classic-eu.json", json, Encoding.UTF8);
+        Serialize(DestPath + "QuestName_Classic-eu.json", quests);
     }
 
     [Fact]
@@ -31,10 +28,7 @@ public class DatReaderTests
 
         DatReader.ReadNameData(SourcePath + "L2GameDataName.dat");
         Items items = DatReader.Read<Items>(SourcePath + "ItemName_Classic-eu.dat");
-        JsonSerializerOptions options = new JsonSerializerOptions();
-        options.WriteIndented = true;
-        string json = JsonSerializer.Serialize(items, options);
-        File.WriteAllText(DestPath + "ItemName_Classic-eu.json", json, Encoding.UTF8);
+        Serialize(DestPath + "ItemName_Classic-eu.json", items);
     }
 
     [Fact]
@@ -43,9 +37,16 @@ public class DatReaderTests
         EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
 
         L2NameData names = DatReader.Read<L2NameData>(SourcePath + "L2GameDataName.dat");
+        Serialize(DestPath + "L2GameDataName.json", names.Names);
+    }
+
+    private static void Serialize<T>(string filePath, T obj)
+    {
         JsonSerializerOptions options = new JsonSerializerOptions();
         options.WriteIndented = true;
-        string json = JsonSerializer.Serialize(names, options);
-        File.WriteAllText(DestPath + "L2GameDataName.json", json, Encoding.UTF8);
+        options.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+
+        using FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
+        JsonSerializer.Serialize(stream, obj, options);
     }
 }
