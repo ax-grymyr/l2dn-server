@@ -25,7 +25,7 @@ public class SellBuffsManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SellBuffsManager));
 	private static readonly Set<int> ALLOWED_BUFFS = new();
-	private const string HTML_FOLDER = "data/html/mods/SellBuffs/";
+	private const string HTML_FOLDER = "html/mods/SellBuffs/";
 	
 	protected SellBuffsManager()
 	{

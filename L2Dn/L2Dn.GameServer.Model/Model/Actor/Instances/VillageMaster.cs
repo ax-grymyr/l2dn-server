@@ -107,7 +107,7 @@ public class VillageMaster: Folk
 		{
 			pom = npcId + "-" + value;
 		}
-		return "data/html/villagemaster/" + pom + ".htm";
+		return "html/villagemaster/" + pom + ".htm";
 	}
 	
 	public override void onBypassFeedback(Player player, string command)

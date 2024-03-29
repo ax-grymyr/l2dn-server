@@ -81,17 +81,17 @@ public class SupportMagic: IBypassHandler
 		int level = player.getLevel();
 		if (isSummon && !player.hasServitors())
 		{
-			npc.showChatWindow(player, "data/html/default/SupportMagicNoSummon.htm");
+			npc.showChatWindow(player, "html/default/SupportMagicNoSummon.htm");
 			return;
 		}
 		else if (level < LOWEST_LEVEL)
 		{
-			npc.showChatWindow(player, "data/html/default/SupportMagicLowLevel.htm");
+			npc.showChatWindow(player, "html/default/SupportMagicLowLevel.htm");
 			return;
 		}
 		else if (level > Config.MAX_NEWBIE_BUFF_LEVEL)
 		{
-			npc.showChatWindow(player, "data/html/default/SupportMagicHighLevel.htm");
+			npc.showChatWindow(player, "html/default/SupportMagicHighLevel.htm");
 			return;
 		}
 		else if (player.getClassId().GetLevel() == 3)

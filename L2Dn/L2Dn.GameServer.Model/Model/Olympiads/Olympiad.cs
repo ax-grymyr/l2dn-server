@@ -29,7 +29,7 @@ public class Olympiad
 	private static readonly Map<int, NobleData> NOBLES = new();
 	private static readonly Map<int, int> NOBLES_RANK = new();
 	
-	public const String OLYMPIAD_HTML_PATH = "data/html/olympiad/";
+	public const String OLYMPIAD_HTML_PATH = "html/olympiad/";
 	public const String UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
 	
 	private static readonly Set<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);

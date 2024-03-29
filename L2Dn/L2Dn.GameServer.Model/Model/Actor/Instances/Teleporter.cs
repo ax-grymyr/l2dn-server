@@ -46,7 +46,7 @@ public class Teleporter: Npc
 		{
 			case "showNoblesSelect":
 			{
-				sendHtmlMessage(player, "data/html/teleporter/" + (player.isNoble() ? "nobles_select" : "not_nobles") + ".htm");
+				sendHtmlMessage(player, "html/teleporter/" + (player.isNoble() ? "nobles_select" : "not_nobles") + ".htm");
 				break;
 			}
 			case "showTeleports":

@@ -17,7 +17,7 @@ public class SpawnTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SpawnTable));
 	private static readonly Map<int, Set<Spawn>> _spawnTable = new();
-	private const string OTHER_XML_FOLDER = "data/spawns/Others";
+	private const string OTHER_XML_FOLDER = "spawns/Others";
 	
 	/**
 	 * Gets the spawn data.

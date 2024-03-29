@@ -100,7 +100,7 @@ public class Guard: Attackable
 			pom = npcId + "-" + value;
 		}
 
-		return "data/html/guard/" + pom + ".htm";
+		return "html/guard/" + pom + ".htm";
 	}
 
 	/**

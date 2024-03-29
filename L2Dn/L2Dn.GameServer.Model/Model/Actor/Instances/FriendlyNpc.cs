@@ -126,7 +126,7 @@ public class FriendlyNpc : Attackable
 		{
 			pom = npcId + "-" + value;
 		}
-		return "data/html/default/" + pom + ".htm";
+		return "html/default/" + pom + ".htm";
 	}
 	
 	protected override CreatureAI initAI()

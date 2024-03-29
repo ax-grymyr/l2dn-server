@@ -494,7 +494,7 @@ public class Hero
 		List<StatSet> heroFights = HERO_FIGHTS.get(charid);
 		if (heroFights != null)
 		{
-			String htmContent = HtmCache.getInstance().getHtm("data/html/olympiad/herohistory.htm", player.getLang());
+			String htmContent = HtmCache.getInstance().getHtm("html/olympiad/herohistory.htm", player.getLang());
 			if (htmContent != null)
 			{
 				HtmlContent fightReply = HtmlContent.LoadFromText(htmContent, player); 

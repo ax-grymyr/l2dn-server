@@ -65,7 +65,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 					{
 						if (!st.hasMoreTokens())
 						{
-							String content2 = HtmCache.getInstance().getHtm("data/html/admin/announces-add.htm", activeChar.getLang());
+							String content2 = HtmCache.getInstance().getHtm("html/admin/announces-add.htm", activeChar.getLang());
 							Util.sendCBHtml(activeChar, content2);
 							break;
 						}
@@ -167,7 +167,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 						}
 						if (!st.hasMoreTokens())
 						{
-							String content = HtmCache.getInstance().getHtm("data/html/admin/announces-edit.htm", activeChar.getLang());
+							String content = HtmCache.getInstance().getHtm("html/admin/announces-edit.htm", activeChar.getLang());
 							String announcementId = announce.getId().ToString();
 							String announcementType = announce.getType().ToString();
 							String announcementInital = "0";
@@ -394,7 +394,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce != null)
 						{
-							String content = HtmCache.getInstance().getHtm("data/html/admin/announces-show.htm", activeChar.getLang());
+							String content = HtmCache.getInstance().getHtm("html/admin/announces-show.htm", activeChar.getLang());
 							String announcementId = announce.getId().ToString();
 							String announcementType = announce.getType().ToString();
 							String announcementInital = "0";
@@ -434,7 +434,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							}
 						}
 						
-						String content = HtmCache.getInstance().getHtm("data/html/admin/announces-list.htm", activeChar.getLang());
+						String content = HtmCache.getInstance().getHtm("html/admin/announces-list.htm", activeChar.getLang());
 						PageResult result = PageBuilder.newBuilder(AnnouncementsTable.getInstance().getAllAnnouncements().ToList(), 8, "bypass admin_announces list").
 							currentPage(page).bodyHandler((pages, announcement, sb) =>
 						{

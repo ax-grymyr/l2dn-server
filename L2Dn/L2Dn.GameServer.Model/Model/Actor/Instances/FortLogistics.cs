@@ -192,7 +192,7 @@ public class FortLogistics : Merchant
 		{
 			pom = "logistics-" + value;
 		}
-		return "data/html/fortress/" + pom + ".htm";
+		return "html/fortress/" + pom + ".htm";
 	}
 	
 	public override bool hasRandomAnimation()

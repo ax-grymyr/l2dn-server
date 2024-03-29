@@ -215,7 +215,7 @@ public class SchemeBuffer : Npc
 		{
 			filename = npcId + "-" + value;
 		}
-		return "data/html/mods/SchemeBuffer/" + filename + ".htm";
+		return "html/mods/SchemeBuffer/" + filename + ".htm";
 	}
 	
 	/**

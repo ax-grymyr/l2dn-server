@@ -38,6 +38,6 @@ public class Warehouse: Folk
             pom = npcId + "-" + value;
         }
 
-        return "data/html/warehouse/" + pom + ".htm";
+        return "html/warehouse/" + pom + ".htm";
     }
 }

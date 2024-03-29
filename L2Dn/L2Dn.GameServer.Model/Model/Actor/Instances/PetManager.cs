@@ -28,7 +28,7 @@ public class PetManager: Merchant
 			pom = npcId + "-" + value;
 		}
 
-		return "data/html/petmanager/" + pom + ".htm";
+		return "html/petmanager/" + pom + ".htm";
 	}
 
 	public override void showChatWindow(Player player)

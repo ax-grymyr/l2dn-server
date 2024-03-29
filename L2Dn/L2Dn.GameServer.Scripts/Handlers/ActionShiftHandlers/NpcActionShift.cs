@@ -93,7 +93,7 @@ public class NpcActionShift: IActionShiftHandler
 				{
 					String fileName = template.getSpawnTemplate().getFile().Replace('\\', '/');
 				
-					htmlContent.Replace("%spawnfile%", fileName.Replace("data/spawns/", ""));
+					htmlContent.Replace("%spawnfile%", fileName.Replace("spawns/", ""));
 					htmlContent.Replace("%spawnname%", template.getSpawnTemplate().getName() ?? string.Empty);
 					htmlContent.Replace("%spawngroup%", template.getGroup()?.getName() ?? string.Empty);
 					if (template.getSpawnTemplate().getAI() != null)

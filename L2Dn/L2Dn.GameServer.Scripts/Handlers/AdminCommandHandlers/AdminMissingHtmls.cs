@@ -117,11 +117,11 @@ public class AdminMissingHtmls: IAdminCommandHandler
 						Npc npc = (Npc) obj;
 						if (npc.isTalkable() && !npc.Events.HasSubscribers<OnNpcFirstTalk>())
 						{
-							if ((npc.getHtmlPath(npc.getId(), 0, null).equals("data/html/npcdefault.htm")) //
-								|| ((obj is Fisherman) && (HtmCache.getInstance().getHtm(null, "data/html/fisherman/" + npc.getId() + ".htm") == null)) //
-								|| ((obj is Warehouse) && (HtmCache.getInstance().getHtm(null, "data/html/warehouse/" + npc.getId() + ".htm") == null)) //
-								|| (((obj is Merchant) && !(obj is Fisherman)) && (HtmCache.getInstance().getHtm(null, "data/html/merchant/" + npc.getId() + ".htm") == null)) //
-								|| ((obj is Guard) && (HtmCache.getInstance().getHtm(null, "data/html/guard/" + npc.getId() + ".htm") == null)))
+							if ((npc.getHtmlPath(npc.getId(), 0, null).equals("html/npcdefault.htm")) //
+								|| ((obj is Fisherman) && (HtmCache.getInstance().getHtm(null, "html/fisherman/" + npc.getId() + ".htm") == null)) //
+								|| ((obj is Warehouse) && (HtmCache.getInstance().getHtm(null, "html/warehouse/" + npc.getId() + ".htm") == null)) //
+								|| (((obj is Merchant) && !(obj is Fisherman)) && (HtmCache.getInstance().getHtm(null, "html/merchant/" + npc.getId() + ".htm") == null)) //
+								|| ((obj is Guard) && (HtmCache.getInstance().getHtm(null, "html/guard/" + npc.getId() + ".htm") == null)))
 							{
 								activeChar.teleToLocation(npc);
 								BuilderUtil.sendSysMessage(activeChar, "NPC " + npc.getId() + " does not have a default html.");

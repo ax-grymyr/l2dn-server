@@ -26,7 +26,7 @@ public class Fisherman: Merchant
             pom = npcId + "-" + value;
         }
 
-        return "data/html/fisherman/" + pom + ".htm";
+        return "html/fisherman/" + pom + ".htm";
     }
 
     public override void onBypassFeedback(Player player, String command)
