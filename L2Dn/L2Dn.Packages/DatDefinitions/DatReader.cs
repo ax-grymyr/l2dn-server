@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions.Annotations;
-using Org.BouncyCastle.X509.Store;
 
 namespace L2Dn.Packages.DatDefinitions;
 
@@ -9,11 +8,17 @@ public static class DatReader
 {
     private static readonly List<string> _nameData = new();
     
-    public static void ReadNameData(string filePath)
+    public static L2NameData ReadNameData(string filePath)
     {
         L2NameData data = Read<L2NameData>(filePath);
         _nameData.Clear();
         _nameData.AddRange(data.Names);
+        return data;
+    }
+
+    public static void ClearNameData()
+    {
+        _nameData.Clear();
     }
     
     public static T[] ReadArray<T>(string filePath, ArrayLengthType lengthType = ArrayLengthType.Int32, int size = -1)
@@ -41,14 +46,17 @@ public static class DatReader
         if (type == typeof(int))
             return reader.ReadInt32();
 
+        if (type == typeof(uint))
+            return reader.ReadUInt32();
+
         if (type == typeof(short))
             return reader.ReadInt16();
 
+        if (type == typeof(ushort))
+            return reader.ReadUInt16();
+
         if (type == typeof(byte))
             return reader.ReadByte();
-
-        if (type == typeof(char))
-            return (char)reader.ReadByte();
 
         if (type == typeof(long))
             return reader.ReadInt64();
@@ -116,7 +124,7 @@ public static class DatReader
             ArrayLengthType.Int16 => reader.ReadInt16(),
             ArrayLengthType.Byte => reader.ReadByte(),
             ArrayLengthType.Fixed => size,
-            _ => throw new NoSuchStoreException()
+            _ => throw new NotSupportedException()
         };
 
     private static T? GetCustomAttribute<T>(ICustomAttributeProvider? attributeProvider)

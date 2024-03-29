@@ -1,9 +1,7 @@
-﻿namespace L2Dn.Packages.DatDefinitions.Common;
+﻿namespace L2Dn.Packages.DatDefinitions.Definitions.Shared;
 
 public class Location
 {
-    public static Location Zero { get; } = new Location();
-
     public float X { get; set; }
     public float Y { get; set; }
     public float Z { get; set; }
