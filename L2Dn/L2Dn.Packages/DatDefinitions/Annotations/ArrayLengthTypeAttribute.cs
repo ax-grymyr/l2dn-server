@@ -5,4 +5,5 @@ public sealed class ArrayLengthTypeAttribute(ArrayLengthType type, int size = -1
 {
     public ArrayLengthType Type { get; } = type;
     public int Size { get; } = size;
+    public string? ArrayPropertyName { get; set; }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions;
 using L2Dn.Packages.DatDefinitions.Definitions;
@@ -64,56 +65,61 @@ public class DatReaderTests
     {
         DatReader.ClearNameData();
 
+        DatConversion[] conversions = 
+        [
+            //new DatConversion<AbnormalAgathion>("AbnormalAgathion", "AbnormalAgathion-{0}", false),
+            //new DatConversion<AbnormalDefaultEffectV5>("AbnormalDefaultEffect", "AbnormalDefaultEffect-{0}", true),
+            //new DatConversion<AbnormalEdgeEffectDataV2>("AbnormalEdgeEffectData", "AbnormalEdgeEffectData-{0}", false),
+            //new DatConversion<ActionNameV4>("ActionName_Classic-{0}", "ActionName_Classic-{0}", true),
+            //new DatConversion<AdditionalEffectV7>("AdditionalEffect_Classic", "AdditionalEffect_Classic-{0}", true),
+            //new DatConversion<AdditionalItemGrpV4>("AdditionalItemGrp_Classic", "AdditionalItemGrp_Classic-{0}", false),
+            //new DatConversion<AdditionalJewelEquipEffect>("AdditionalJewelEquipEffect_Classic", "AdditionalJewelEquipEffect-{0}", false),
+            //new DatConversion<AdditionalNpcGrpPartsV4>("AdditionalNpcGrpParts_Classic", "AdditionalNpcGrpParts_Classic-{0}", false),
+            //new DatConversion<AdditionalSoulshotEffectV2>("AdditionalSoulshotEffect_Classic", "AdditionalSoulshotEffect_Classic-{0}", false),
+            //new DatConversion<AgathionData>("agathiondata_Classic", "AgathionData_Classic-{0}", false),
+            new DatConversion<ArmorGrpV14>("Armorgrp_Classic", "ArmorGrp_Classic-{0}", true),
+            //new DatConversion<NpcName>("NpcName_Classic-{0}", "NpcName_Classic-{0}", false),
+            //new DatConversion<NpcString>("NpcString_Classic-{0}", "NpcString_Classic-{0}", false),
+            //new DatConversion<NpcTeleporter>("NPCTeleporter_Classic", "NpcTeleporter_Classic-{0}", false),
+            //new DatConversion<ItemNameV18>("ItemName_Classic-{0}", "ItemName_Classic-{0}", true),
+            //new DatConversion<QuestNameV8>("QuestName_Classic-{0}", "QuestName_Classic-{0}", false),
+            //new DatConversion<SkillNameV6>("SkillName_Classic-{0}", "SkillName_Classic-{0}", false),
+            //new DatConversion<TeleportListV3>("teleportlist_Classic", "TeleportList_Classic-{0}", false),
+            //new DatConversion<TutorialNameV2>("TutorialName_Classic-{0}", "TutorialName_Classic-{0}", false),
+            //new DatConversion<ZoneNameV7>("ZoneName_Classic-{0}", "ZoneName_Classic-{0}", false),
+            //new DatConversion<SysString>("SysString_Classic-{0}", "SysString_Classic-{0}", false),
+            //new DatConversion<SystemMsgV6>("SystemMsg_Classic-{0}", "SystemMsg_Classic-{0}", true),
+            //new DatConversion<StaticObjectV2>("StaticObject_Classic-{0}", "StaticObject_Classic-{0}", true),
+            //new DatConversion<SteadyBox>("SteadyBox_Classic-{0}", "SteadyBox_Classic-{0}", false),
+            //new DatConversion<Subjugation>("Subjugation_Classic-{0}", "Subjugation_Classic-{0}", false),
+        ];
+
+        foreach (DatConversion conversion in conversions)
+        {
+            string srcFilePath = Path.Combine(srcPath, string.Format(conversion.SrcFile, langSuffix) + ".dat");
+            string suffix = conversion.UseDataNames ? ".NoNames.json" : ".json";
+            string dstFilePath = Path.Combine(dstPath, string.Format(conversion.DstFile, langDstSuffix) + suffix);
+            object obj = DatReader.Read(conversion.ObjectType, srcFilePath);
+            Serialize(dstFilePath, obj);
+        }
+
         string srcDataNamePath = Path.Combine(srcPath, "L2GameDataName.dat");
         string dstDataNamePath = Path.Combine(dstPath, $"L2GameDataName-{langDstSuffix}.dat");
-        
-        string srcItemNamePath = Path.Combine(srcPath, $"ItemName_Classic-{langSuffix}.dat");
-        string dstItemNamePath = Path.Combine(dstPath, $"ItemName_Classic-{langDstSuffix}.NoNames.json");
-        string dstItemNamePath2 = Path.Combine(dstPath, $"ItemName_Classic-{langDstSuffix}.json");
-
-        string srcQuestNamePath = Path.Combine(srcPath, $"QuestName_Classic-{langSuffix}.dat");
-        string dstQuestNamePath = Path.Combine(dstPath, $"QuestName_Classic-{langDstSuffix}.json");
-
-        string srcSkillNamePath = Path.Combine(srcPath, $"SkillName_Classic-{langSuffix}.dat");
-        string dstSkillNamePath = Path.Combine(dstPath, $"SkillName_Classic-{langDstSuffix}.json");
-
-        string srcTeleportListPath = Path.Combine(srcPath, "teleportlist_Classic.dat");
-        string dstTeleportListPath = Path.Combine(dstPath, $"teleportlist_Classic-{langDstSuffix}.json");
-
-        string srcTutorialNamePath = Path.Combine(srcPath, $"TutorialName_Classic-{langSuffix}.dat");
-        string dstTutorialNamePath = Path.Combine(dstPath, $"TutorialName_Classic-{langDstSuffix}.json");
-        
-        string srcZoneNamePath = Path.Combine(srcPath, $"ZoneName_Classic-{langSuffix}.dat");
-        string dstZoneNamePath = Path.Combine(dstPath, $"ZoneName_Classic-{langDstSuffix}.NoNames.json");
-        string dstZoneNamePath2 = Path.Combine(dstPath, $"ZoneName_Classic-{langDstSuffix}.json");
-        
-        ItemNameV18 itemName = DatReader.Read<ItemNameV18>(srcItemNamePath);
-        Serialize(dstItemNamePath, itemName);
-
-        SkillNameV6 skillName = DatReader.Read<SkillNameV6>(srcSkillNamePath);
-        Serialize(dstSkillNamePath, skillName);
-        
-        TeleportListV3 teleportList = DatReader.Read<TeleportListV3>(srcTeleportListPath);
-        Serialize(dstTeleportListPath, teleportList);
-        
-        TutorialNameV2 tutorialName = DatReader.Read<TutorialNameV2>(srcTutorialNamePath);
-        Serialize(dstTutorialNamePath, tutorialName);
-        
-        ZoneNameV7 zoneName = DatReader.Read<ZoneNameV7>(srcZoneNamePath);
-        Serialize(dstZoneNamePath, zoneName);
         
         // loading strings
         L2NameData names = DatReader.ReadNameData(srcDataNamePath);
         Serialize(dstDataNamePath, names.Names);
 
-        itemName = DatReader.Read<ItemNameV18>(srcItemNamePath);
-        Serialize(dstItemNamePath2, itemName);
-        
-        QuestNameV8 questName = DatReader.Read<QuestNameV8>(srcQuestNamePath);
-        Serialize(dstQuestNamePath, questName);
-
-        zoneName = DatReader.Read<ZoneNameV7>(srcZoneNamePath);
-        Serialize(dstZoneNamePath2, zoneName);
+        foreach (DatConversion conversion in conversions)
+        {
+            if (conversion.UseDataNames)
+            {
+                string srcFilePath = Path.Combine(srcPath, string.Format(conversion.SrcFile, langSuffix) + ".dat");
+                string dstFilePath = Path.Combine(dstPath, string.Format(conversion.DstFile, langDstSuffix) + ".json");
+                object obj = DatReader.Read(conversion.ObjectType, srcFilePath);
+                Serialize(dstFilePath, obj);
+            }
+        }
     }
     
     private static void Serialize<T>(string filePath, T obj)
@@ -121,8 +127,14 @@ public class DatReaderTests
         JsonSerializerOptions options = new JsonSerializerOptions();
         options.WriteIndented = true;
         options.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+        options.NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals;
 
         using FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
         JsonSerializer.Serialize(stream, obj, options);
     }
+
+    private record DatConversion(Type ObjectType, string SrcFile, string DstFile, bool UseDataNames);
+
+    private record DatConversion<T>(string SrcFile, string DstFile, bool UseDataNames)
+        : DatConversion(typeof(T), SrcFile, DstFile, UseDataNames);
 }

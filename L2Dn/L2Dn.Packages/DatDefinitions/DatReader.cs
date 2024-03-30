@@ -25,23 +25,25 @@ public static class DatReader
     {
         using EncryptedStream stream = EncryptedStream.OpenRead(filePath);
         DatBinaryReader reader = new DatBinaryReader(stream);
-        int length = ReadArrayLength(reader, lengthType, size);
+        int length = ReadArrayLength(null, reader, new ArrayLengthTypeAttribute(lengthType, size));
 
         T[] array = new T[length];
         for (int i = 0; i < length; i++)
-            array[i] = (T)ReadValue(typeof(T), reader, null);
+            array[i] = (T)ReadValue(null, typeof(T), reader, null);
         
         return array;
     }
 
-    public static T Read<T>(string filePath)
+    public static object Read(Type objectType, string filePath)
     {
         using EncryptedStream stream = EncryptedStream.OpenRead(filePath);
         DatBinaryReader reader = new DatBinaryReader(stream);
-        return (T)ReadValue(typeof(T), reader, null);
+        return ReadValue(null, objectType, reader, null);
     }
 
-    private static object ReadValue(Type type, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
+    public static T Read<T>(string filePath) => (T)Read(typeof(T), filePath);
+
+    private static object ReadValue(object? obj, Type type, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
     {
         if (type == typeof(int))
             return reader.ReadInt32();
@@ -77,7 +79,7 @@ public static class DatReader
         }
 
         if (type.IsArray)
-            return ReadArray(type.GetElementType()!, reader, attributeProvider);
+            return ReadArray(obj, type.GetElementType()!, reader, attributeProvider);
 
         if (type.IsClass)
             return ReadObject(type, reader);
@@ -92,7 +94,7 @@ public static class DatReader
         object obj = Activator.CreateInstance(classType)!;
         foreach (PropertyInfo property in classType.GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
-            object value = ReadValue(property.PropertyType, reader, property);
+            object value = ReadValue(obj, property.PropertyType, reader, property);
             property.SetValue(obj, value);
 
             //string len = property.PropertyType.IsArray ? $" (len = {((Array)value).Length})" : "";
@@ -102,30 +104,39 @@ public static class DatReader
         return obj;
     }
     
-    private static object ReadArray(Type elementType, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
+    private static object ReadArray(object? obj, Type elementType, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
     {
         ArrayLengthTypeAttribute? attr = GetCustomAttribute<ArrayLengthTypeAttribute>(attributeProvider);
-        int length = ReadArrayLength(reader, attr?.Type ?? ArrayLengthType.CompactInt, attr?.Size ?? -1);
+        int length = ReadArrayLength(obj, reader, attr);
         Array array = Array.CreateInstance(elementType, length);
         for (int i = 0; i < length; i++)
         {
-            object value = ReadValue(elementType, reader, attributeProvider);
+            object value = ReadValue(obj, elementType, reader, attributeProvider);
             array.SetValue(value, i);
         }
 
         return array;
     }
 
-    private static int ReadArrayLength(DatBinaryReader reader, ArrayLengthType lengthType, int size) =>
-        lengthType switch
+    private static int ReadArrayLength(object? obj, DatBinaryReader reader, ArrayLengthTypeAttribute? attribute)
+    {
+        if (attribute is null)
+            return reader.ReadIndex();
+
+        return attribute.Type switch
         {
             ArrayLengthType.CompactInt => reader.ReadIndex(),
             ArrayLengthType.Int32 => reader.ReadInt32(),
             ArrayLengthType.Int16 => reader.ReadInt16(),
             ArrayLengthType.Byte => reader.ReadByte(),
-            ArrayLengthType.Fixed => size,
+            ArrayLengthType.Fixed => attribute.Size,
+            ArrayLengthType.PropertyRef => ((Array)(obj?.GetType().GetProperty(attribute.ArrayPropertyName!)
+                                                        ?.GetValue(obj) ??
+                                                    throw new NotSupportedException())).Length,
+            
             _ => throw new NotSupportedException()
         };
+    }
 
     private static T? GetCustomAttribute<T>(ICustomAttributeProvider? attributeProvider)
         where T: Attribute

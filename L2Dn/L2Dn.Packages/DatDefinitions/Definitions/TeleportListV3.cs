@@ -12,7 +12,7 @@ public sealed class TeleportListV3
     {
         public uint HuntingZoneId { get; set; }
         public uint TownId { get; set; }
-        public uint Priority { get; set; }
+        public int Priority { get; set; }
         public TeleportPrice[] Prices { get; set; } = Array.Empty<TeleportPrice>();
         public uint UsableLevel { get; set; }
         public uint UsableTransferDegree { get; set; }

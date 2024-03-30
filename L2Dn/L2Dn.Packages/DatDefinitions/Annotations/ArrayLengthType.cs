@@ -6,5 +6,6 @@ public enum ArrayLengthType
     Int32,
     Int16,
     Byte,
-    Fixed
+    Fixed,
+    PropertyRef
 }
