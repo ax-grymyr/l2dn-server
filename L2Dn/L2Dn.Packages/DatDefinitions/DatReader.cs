@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Globalization;
+using System.Reflection;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions.Annotations;
 
@@ -94,6 +95,21 @@ public static class DatReader
         object obj = Activator.CreateInstance(classType)!;
         foreach (PropertyInfo property in classType.GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
+            ConditionAttribute? conditionAttribute = property.GetCustomAttribute<ConditionAttribute>();
+            if (conditionAttribute != null)
+            {
+                PropertyInfo? conditionProperty = classType.GetProperty(conditionAttribute.PropertyName,
+                    BindingFlags.Instance | BindingFlags.Public);
+
+                if (conditionProperty is null)
+                    throw new InvalidOperationException("Condition property not found");
+
+                object? conditionPropertyValue = conditionProperty.GetValue(obj);
+                object? conditionValue = conditionAttribute.Value;
+                if (!ValuesEqual(conditionPropertyValue, conditionValue))
+                    continue;
+            }
+            
             object value = ReadValue(obj, property.PropertyType, reader, property);
             property.SetValue(obj, value);
 
@@ -149,5 +165,23 @@ public static class DatReader
             return (T)attributes[0];
 
         return null;
+    }
+
+    private static bool ValuesEqual(object? left, object? right)
+    {
+        if (ReferenceEquals(left, right))
+            return true;
+        
+        if (left is null)
+            return right is null;
+
+        if (right is null)
+            return false;
+
+        if (left.GetType() == right.GetType())
+            return left.Equals(right);
+
+        object right1 = Convert.ChangeType(right, left.GetType(), CultureInfo.InvariantCulture);
+        return left.Equals(right1);
     }
 }
