@@ -21,7 +21,7 @@ public sealed class ActionNameV2
         public string Name { get; set; } = string.Empty;
         public uint ToggleGroupId { get; set; }
         
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string Description { get; set; } = string.Empty;
     }
 }

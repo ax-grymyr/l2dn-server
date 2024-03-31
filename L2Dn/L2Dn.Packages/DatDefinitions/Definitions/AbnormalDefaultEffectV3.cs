@@ -15,10 +15,7 @@ public sealed class AbnormalDefaultEffectV3
         public string EffectName { get; set; } = string.Empty;
         public uint IsScreenEffect { get; set; }
         public uint IsAttachToGround { get; set; }
-        
-        [StringType(StringType.NameDataIndex)]
-        public string AttachBoneName { get; set; } = string.Empty;
-        
+        public IndexedString AttachBoneName { get; set; }
         public uint AttachType { get; set; }
         public Location OffsetPosition { get; set; } = new Location();
         public uint IsScalingByCylinder { get; set; }

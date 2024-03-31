@@ -12,10 +12,10 @@ public sealed class ItemNameV3
     {
         public uint Id { get; set; }
         
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string Name { get; set; } = string.Empty;
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string AdditionalName { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;
@@ -23,7 +23,7 @@ public sealed class ItemNameV3
         public uint SuperCnt0 { get; set; }
 
         [ArrayLengthType(ArrayLengthType.Int32)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] SetIds { get; set; } = Array.Empty<string>();
         
         public string SetBonusDesc { get; set; } = string.Empty;
@@ -31,7 +31,7 @@ public sealed class ItemNameV3
         public uint SuperCnt1 { get; set; }
 
         [ArrayLengthType(ArrayLengthType.Int32)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] SetExtraIds { get; set; } = Array.Empty<string>();
         
         public string SetExtraDesc { get; set; } = string.Empty;

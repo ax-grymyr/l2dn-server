@@ -12,7 +12,7 @@ public sealed class StaticObject
     {
         public uint Id { get; set; }
         
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string Name { get; set; } = string.Empty;
     }
 }

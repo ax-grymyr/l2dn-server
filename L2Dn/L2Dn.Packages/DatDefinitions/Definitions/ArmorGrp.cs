@@ -19,37 +19,37 @@ public sealed class ArmorGrp
 	    public uint DropHeight { get; set; }
 	    public uint Unknown1 { get; set; }
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropMesh1 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropMesh2 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropMesh3 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropTexture1 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropTexture2 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropTexture3 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string Icon1 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string Icon2 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string Icon3 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string Icon4 { get; set; } = string.Empty;
 	
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string Icon5 { get; set; } = string.Empty;
 
 	    public int Durability { get; set; }
@@ -99,17 +99,17 @@ public sealed class ArmorGrp
 	    public Mtx Npc { get; set; } = new Mtx();
 	    public Mtx Aac { get; set; } = new Mtx();
 
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string AttackEffect { get; set; } = string.Empty;
 
 	    [ArrayLengthType(ArrayLengthType.Int32)]
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string[] Sounds { get; set; } = Array.Empty<string>();
 
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string DropSound { get; set; } = string.Empty;
 
-	    [StringType(StringType.Utf16)]
+	    [StringType(StringType.Utf16Le)]
 	    public string EquipSound { get; set; } = string.Empty;
 
 	    public uint Unknown4 { get; set; }

@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿using System.Collections.Immutable;
 using System.Reflection;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions.Annotations;
@@ -7,19 +7,23 @@ namespace L2Dn.Packages.DatDefinitions;
 
 public static class DatReader
 {
-    private static readonly List<string> _nameData = new();
+    private static ImmutableArray<string> _nameData = ImmutableArray<string>.Empty;
     
     public static L2NameData ReadNameData(string filePath)
     {
         L2NameData data = Read<L2NameData>(filePath);
-        _nameData.Clear();
-        _nameData.AddRange(data.Names);
+        _nameData = data.Names.ToImmutableArray();
         return data;
+    }
+    
+    public static void SetNameData(IReadOnlyCollection<string> nameData)
+    {
+        _nameData = nameData.ToImmutableArray();
     }
 
     public static void ClearNameData()
     {
-        _nameData.Clear();
+        _nameData = ImmutableArray<string>.Empty;
     }
     
     public static T[] ReadArray<T>(string filePath, ArrayLengthType lengthType = ArrayLengthType.Int32, int size = -1)
@@ -42,7 +46,14 @@ public static class DatReader
         return ReadValue(null, objectType, reader, null);
     }
 
+    public static object Read(Type objectType, Stream stream)
+    {
+        DatBinaryReader reader = new DatBinaryReader(stream);
+        return ReadValue(null, objectType, reader, null);
+    }
+
     public static T Read<T>(string filePath) => (T)Read(typeof(T), filePath);
+    public static T Read<T>(Stream stream) => (T)Read(typeof(T), stream);
 
     private static object ReadValue(object? obj, Type type, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
     {
@@ -67,14 +78,19 @@ public static class DatReader
         if (type == typeof(float))
             return reader.ReadFloat();
 
+        if (type == typeof(IndexedString))
+        {
+            int index = reader.ReadInt32();
+            return new IndexedString(_nameData, index);
+        }
+        
         if (type == typeof(string))
         {
-            StringType stringType = GetCustomAttribute<StringTypeAttribute>(attributeProvider)?.Type ?? StringType.Utf8;
+            StringType stringType = attributeProvider.GetCustomAttribute<StringTypeAttribute>()?.Type ?? StringType.Ascf;
             return stringType switch
             {
-                StringType.Utf8 => reader.ReadDatString(),
-                StringType.Utf16 => reader.ReadUnicodeString(),
-                StringType.NameDataIndex => GetNameData(reader.ReadInt32()),
+                StringType.Ascf => reader.ReadString(),
+                StringType.Utf16Le => reader.ReadUtfString(),
                 _ => throw new NotSupportedException()
             };
         }
@@ -87,8 +103,6 @@ public static class DatReader
 
         throw new NotSupportedException();
     }
-
-    private static string GetNameData(int index) => _nameData.Count > index ? _nameData[index] : index.ToString();
 
     private static object ReadObject(Type classType, DatBinaryReader reader)
     {
@@ -106,7 +120,7 @@ public static class DatReader
 
                 object? conditionPropertyValue = conditionProperty.GetValue(obj);
                 object? conditionValue = conditionAttribute.Value;
-                if (!ValuesEqual(conditionPropertyValue, conditionValue))
+                if (!Utils.ValuesEqual(conditionPropertyValue, conditionValue))
                     continue;
             }
             
@@ -122,7 +136,7 @@ public static class DatReader
     
     private static object ReadArray(object? obj, Type elementType, DatBinaryReader reader, ICustomAttributeProvider? attributeProvider)
     {
-        ArrayLengthTypeAttribute? attr = GetCustomAttribute<ArrayLengthTypeAttribute>(attributeProvider);
+        ArrayLengthTypeAttribute? attr = attributeProvider.GetCustomAttribute<ArrayLengthTypeAttribute>();
         int length = ReadArrayLength(obj, reader, attr);
         Array array = Array.CreateInstance(elementType, length);
         for (int i = 0; i < length; i++)
@@ -152,36 +166,5 @@ public static class DatReader
             
             _ => throw new NotSupportedException()
         };
-    }
-
-    private static T? GetCustomAttribute<T>(ICustomAttributeProvider? attributeProvider)
-        where T: Attribute
-    {
-        if (attributeProvider is null)
-            return null;
-
-        object[] attributes = attributeProvider.GetCustomAttributes(typeof(T), false);
-        if (attributes.Length != 0)
-            return (T)attributes[0];
-
-        return null;
-    }
-
-    private static bool ValuesEqual(object? left, object? right)
-    {
-        if (ReferenceEquals(left, right))
-            return true;
-        
-        if (left is null)
-            return right is null;
-
-        if (right is null)
-            return false;
-
-        if (left.GetType() == right.GetType())
-            return left.Equals(right);
-
-        object right1 = Convert.ChangeType(right, left.GetType(), CultureInfo.InvariantCulture);
-        return left.Equals(right1);
     }
 }

@@ -16,16 +16,9 @@ public sealed class CastleNameV4
         public string Name { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        
-        [StringType(StringType.NameDataIndex)]
-        public string Mark { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string MarkGray { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string FlagIcon { get; set; } = string.Empty;
-
+        public IndexedString Mark { get; set; }
+        public IndexedString MarkGray { get; set; }
+        public IndexedString FlagIcon { get; set; }
         public string MerchantName { get; set; } = string.Empty;
         public ushort RegionId { get; set; }
     }

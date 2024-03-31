@@ -22,8 +22,7 @@ public sealed class ArmorGrpV13
         public DropTexture[] DropTextures { get; set; } = Array.Empty<DropTexture>();
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 5)]
-        [StringType(StringType.NameDataIndex)]
-        public string[] Icons { get; set; } = Array.Empty<string>();
+        public IndexedString[] Icons { get; set; } = Array.Empty<IndexedString>();
 
         public short Durability { get; set; }
         public short Weight { get; set; }
@@ -35,13 +34,8 @@ public sealed class ArmorGrpV13
         
         public byte Color { get; set; }
         public byte IsAttribution { get; set; }
-
-        [StringType(StringType.NameDataIndex)]
-        public string IconPanel { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string CompleteItemDropSoundType { get; set; } = string.Empty;
-
+        public IndexedString IconPanel { get; set; }
+        public IndexedString CompleteItemDropSoundType { get; set; }
         public byte InventoryType { get; set; } // enum inventory_type
         public byte BodyPart { get; set; } // enum bodypart_v2_type
 
@@ -97,20 +91,13 @@ public sealed class ArmorGrpV13
 
         public MtxNew2 Npc { get; set; } = new MtxNew2();
         public Mtx3New2 NpcAdd { get; set; } = new Mtx3New2();
-
-        [StringType(StringType.NameDataIndex)]
-        public string AttackEffect { get; set; } = string.Empty;
+        public IndexedString AttackEffect { get; set; }
 
         [ArrayLengthType(ArrayLengthType.Byte)]
-        [StringType(StringType.NameDataIndex)]
-        public string[] Sounds { get; set; } = Array.Empty<string>();
+        public IndexedString[] Sounds { get; set; } = Array.Empty<IndexedString>();
 
-        [StringType(StringType.NameDataIndex)]
-        public string DropSound { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string EquipSound { get; set; } = string.Empty;
-
+        public IndexedString DropSound { get; set; }
+        public IndexedString EquipSound { get; set; }
         public uint Unknown6 { get; set; }
         public byte Unknown7 { get; set; }
         public byte ArmorType { get; set; } // enum armor_type
@@ -126,17 +113,12 @@ public sealed class ArmorGrpV13
 
     public sealed class DropTexture
     {
-        [StringType(StringType.NameDataIndex)]
-        public string DropMesh { get; set; } = string.Empty;
+        public IndexedString DropMesh { get; set; }
 
         [ArrayLengthType(ArrayLengthType.Int32)]
-        [StringType(StringType.NameDataIndex)]
-        public string[] DropTexture2 { get; set; } = Array.Empty<string>();
+        public IndexedString[] DropTexture2 { get; set; } = Array.Empty<IndexedString>();
     
-        [StringType(StringType.NameDataIndex)]
-        public string DropTexture3 { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string DropTexture4 { get; set; } = string.Empty;
+        public IndexedString DropTexture3 { get; set; }
+        public IndexedString DropTexture4 { get; set; }
     }
 }

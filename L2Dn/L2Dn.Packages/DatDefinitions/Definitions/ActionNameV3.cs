@@ -16,17 +16,10 @@ public sealed class ActionNameV3
         public uint Category { get; set; }
         public int[] Categories { get; set; } = Array.Empty<int>();
         public string Cmd { get; set; } = string.Empty;
-        
-        [StringType(StringType.NameDataIndex)] 
-        public string Icon { get; set; } = string.Empty;
-        
-        [StringType(StringType.NameDataIndex)] 
-        public string IconEx { get; set; } = string.Empty;
-        
+        public IndexedString Icon { get; set; }
+        public IndexedString IconEx { get; set; }
         public string Name { get; set; } = string.Empty;
         public uint ToggleGroupId { get; set; }
-
-        [StringType(StringType.NameDataIndex)] 
-        public string Description { get; set; } = string.Empty;
+        public IndexedString Description { get; set; }
     }
 }

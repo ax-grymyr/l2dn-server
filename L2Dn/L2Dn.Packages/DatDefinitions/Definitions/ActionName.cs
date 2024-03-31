@@ -20,7 +20,7 @@ public sealed class ActionName
         public string Icon { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string Description { get; set; } = string.Empty;
     }
 }

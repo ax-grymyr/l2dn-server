@@ -24,10 +24,7 @@ public sealed class ZoneNameV5
         public uint TownMapWidth { get; set; }
         public uint TownMapHeight { get; set; }
         public float TownMapScale { get; set; }
-        
-        [StringType(StringType.NameDataIndex)]
-        public string TownMapTex { get; set; } = string.Empty;
-        
+        public IndexedString TownMapTex { get; set; }
         public uint Continent { get; set; }
         public uint CurrentLayer { get; set; }
         public uint TotalLayers { get; set; }

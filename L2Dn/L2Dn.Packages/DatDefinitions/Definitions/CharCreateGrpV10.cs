@@ -22,11 +22,7 @@ public sealed class CharCreateGrpV10
         public uint Feet { get; set; }
         public uint RHand { get; set; }
         public uint LHand { get; set; }
-        
-        [StringType(StringType.NameDataIndex)]
-        public string IntroAnimName { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string IntroWaitAnimName { get; set; } = string.Empty;
+        public IndexedString IntroAnimName { get; set; }
+        public IndexedString IntroWaitAnimName { get; set; }
     }
 }

@@ -17,10 +17,8 @@ public sealed class CardCollectData
         public uint[] CardIds { get; set; } = Array.Empty<uint>();
         
         [ArrayLengthType(ArrayLengthType.Byte)]
-        [StringType(StringType.NameDataIndex)]
-        public string[] CardRewardTextures { get; set; } = Array.Empty<string>();
+        public IndexedString[] CardRewardTextures { get; set; } = Array.Empty<IndexedString>();
         
-        [StringType(StringType.NameDataIndex)]
-        public string SubTitle { get; set; } = string.Empty;
+        public IndexedString SubTitle { get; set; }
     }
 }

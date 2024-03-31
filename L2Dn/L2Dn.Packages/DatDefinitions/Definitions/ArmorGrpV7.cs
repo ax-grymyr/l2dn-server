@@ -20,11 +20,11 @@ public sealed class ArmorGrpV7
         public uint Unknown1 { get; set; }
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 3)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] DropMesh { get; set; } = Array.Empty<string>();
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 9)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] DropTexture { get; set; } = Array.Empty<string>();
 	
         public uint Unknown2 { get; set; }
@@ -32,7 +32,7 @@ public sealed class ArmorGrpV7
         public uint Unknown4 { get; set; }
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 5)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] Icons { get; set; } = Array.Empty<string>();
 
         public uint Durability { get; set; }
@@ -48,7 +48,7 @@ public sealed class ArmorGrpV7
         public uint IsAttribution { get; set; }
         public uint PropertyParams { get; set; }
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string IconPanel { get; set; } = string.Empty;
 
         public string CompleteItemDropSoundType { get; set; } = string.Empty;
@@ -103,17 +103,17 @@ public sealed class ArmorGrpV7
         public Mtx Npc { get; set; } = new Mtx();
         public Mtx3 NpcAdd { get; set; } = new Mtx3();
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string AttackEffect { get; set; } = string.Empty;
 
         [ArrayLengthType(ArrayLengthType.Int32)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] Sounds { get; set; } = Array.Empty<string>();
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string DropSound { get; set; } = string.Empty;
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string EquipSound { get; set; } = string.Empty;
 
         public uint Unknown6 { get; set; }

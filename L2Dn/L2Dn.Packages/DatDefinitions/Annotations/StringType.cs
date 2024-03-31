@@ -2,7 +2,6 @@
 
 public enum StringType
 {
-    Utf8,
-    Utf16,
-    NameDataIndex
+    Ascf,
+    Utf16Le,
 }

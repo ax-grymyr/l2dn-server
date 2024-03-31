@@ -16,13 +16,8 @@ public sealed class SystemMsgV3
         public string Message { get; set; } = string.Empty;
         public uint Group { get; set; }
         public RgbaColor Color { get; set; } = new RgbaColor();
-        
-        [StringType(StringType.NameDataIndex)]
-        public string Sound { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)]
-        public string Voice { get; set; } = string.Empty;
-        
+        public IndexedString Sound { get; set; }
+        public IndexedString Voice { get; set; }
         public uint Window { get; set; }
         public uint Font { get; set; }
         public uint LfTime { get; set; }

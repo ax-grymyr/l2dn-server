@@ -12,7 +12,7 @@ public sealed class ItemNameV8
     {
         public uint Id { get; set; }
 
-        [StringType(StringType.Utf16)] 
+        [StringType(StringType.Utf16Le)] 
         public string Name { get; set; } = string.Empty;
 
         public string AdditionalName { get; set; } = string.Empty;
@@ -23,7 +23,7 @@ public sealed class ItemNameV8
         public uint NameClass { get; set; }
         public uint Color { get; set; }
 
-        [StringType(StringType.Utf16)] 
+        [StringType(StringType.Utf16Le)] 
         public string TooltipTexture { get; set; } = string.Empty;
 
         public uint IsTrade { get; set; }

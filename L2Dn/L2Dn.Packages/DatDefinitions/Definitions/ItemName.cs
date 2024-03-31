@@ -12,10 +12,10 @@ public sealed class ItemName
     {
         public uint Id { get; set; }
         
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string Name { get; set; } = string.Empty;
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string AdditionalName { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;

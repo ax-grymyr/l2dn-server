@@ -11,23 +11,15 @@ public sealed class ItemNameV9
     public sealed class ItemNameRecord
     {
         public uint Id { get; set; }
-
-        [StringType(StringType.NameDataIndex)] 
-        public string Name { get; set; } = string.Empty;
-
-        [StringType(StringType.NameDataIndex)] 
-        public string AdditionalName { get; set; } = string.Empty;
-
+        public IndexedString Name { get; set; }
+        public IndexedString AdditionalName { get; set; }
         public string Description { get; set; } = string.Empty;
         public short Popup { get; set; }
         public string DefaultAction { get; set; } = string.Empty;
         public uint UseOrder { get; set; }
         public short NameClass { get; set; }
         public byte Color { get; set; }
-
-        [StringType(StringType.NameDataIndex)] 
-        public string TooltipTexture { get; set; } = string.Empty;
-
+        public IndexedString TooltipTexture { get; set; }
         public byte IsTrade { get; set; }
         public byte IsDrop { get; set; }
         public byte IsDestruct { get; set; }

@@ -9,9 +9,7 @@ public sealed class CharacterAbilityV2
 
     public sealed class CharacterAbilityRecord
     {
-        [StringType(StringType.NameDataIndex)]
-        public string Category { get; set; } = string.Empty;
-        
+        public IndexedString Category { get; set; }
         public string Name { get; set; } = string.Empty;
         public byte Unknown { get; set; }
         public string Detail { get; set; } = string.Empty;

@@ -14,10 +14,7 @@ public sealed class AbnormalDefaultEffectV4
         public uint Id { get; set; }
         public string EffectName { get; set; } = string.Empty;
         public uint IsScreenEffect { get; set; }
-        
-        [StringType(StringType.NameDataIndex)]
-        public string AttachBoneName { get; set; } = string.Empty;
-        
+        public IndexedString AttachBoneName { get; set; }
         public uint AttachType { get; set; }
         public Location OffsetPosition { get; set; } = new Location();
         public Location OffsetRotation { get; set; } = new Location();

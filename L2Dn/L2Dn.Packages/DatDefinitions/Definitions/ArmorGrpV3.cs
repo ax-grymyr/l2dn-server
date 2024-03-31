@@ -20,18 +20,18 @@ public sealed class ArmorGrpV3
         public uint Unknown1 { get; set; }
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 3)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] DropMesh { get; set; } = Array.Empty<string>();
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 4)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] DropTexture { get; set; } = Array.Empty<string>();
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 8)]
         public uint[] NewData { get; set; } = Array.Empty<uint>();
 	
         [ArrayLengthType(ArrayLengthType.Fixed, 5)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] Icons { get; set; } = Array.Empty<string>();
 
         public int Durability { get; set; }
@@ -47,7 +47,7 @@ public sealed class ArmorGrpV3
         public uint Color2 { get; set; }
         public uint Color3 { get; set; }
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string IconPanel { get; set; } = string.Empty;
 
         public uint BodyPart { get; set; }
@@ -95,17 +95,17 @@ public sealed class ArmorGrpV3
         public Mtx Npc { get; set; } = new Mtx();
         public Mtx3 NpcAdd { get; set; } = new Mtx3();
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string AttackEffect { get; set; } = string.Empty;
 
         [ArrayLengthType(ArrayLengthType.Int32)]
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string[] Sounds { get; set; } = Array.Empty<string>();
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string DropSound { get; set; } = string.Empty;
 
-        [StringType(StringType.Utf16)]
+        [StringType(StringType.Utf16Le)]
         public string EquipSound { get; set; } = string.Empty;
 
         public uint Unknown3 { get; set; }

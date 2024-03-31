@@ -6,12 +6,12 @@ namespace L2Dn.Packages.DatDefinitions;
 
 public class DatBinaryReader(Stream stream, long position = 0): UBinaryReader(stream, position)
 {
-    public string ReadDatString()
+    public string ReadString()
     {
         return ReadUString();
     }
-
-    public string ReadUnicodeString()
+    
+    public string ReadUtfString()
     {
         int size = ReadInt32();
         if (size <= 0)

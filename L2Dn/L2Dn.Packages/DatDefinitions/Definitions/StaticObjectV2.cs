@@ -11,8 +11,6 @@ public sealed class StaticObjectV2
     public sealed class StaticObjectRecord
     {
         public uint Id { get; set; }
-        
-        [StringType(StringType.NameDataIndex)]
-        public string Name { get; set; } = string.Empty;
+        public IndexedString Name { get; set; }
     }
 }
