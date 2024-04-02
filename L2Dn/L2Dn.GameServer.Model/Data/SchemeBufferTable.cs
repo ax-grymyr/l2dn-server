@@ -46,7 +46,7 @@ public class SchemeBufferTable: DataReaderBase
 		int count = 0;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var schemes = ctx.BufferSchemes;
 			foreach (var scheme in schemes)
 			{
@@ -86,7 +86,7 @@ public class SchemeBufferTable: DataReaderBase
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all entries from database.
 			ctx.BufferSchemes.ExecuteDelete();

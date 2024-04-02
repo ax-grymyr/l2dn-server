@@ -136,12 +136,12 @@ public class Post
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var post = new Db.Post
 			{
 				Id = cp.getPostId(),
 				OwnerName = cp.getPostOwner(),
-				OwnerId =cp.getPostOwnerId(),
+				OwnerId = cp.getPostOwnerId(),
 				Date = cp.getPostDate(),
 				TopicId = cp.getPostTopicId(),
 				ForumId = cp.getPostForumId(),
@@ -181,7 +181,7 @@ public class Post
 		PostBBSManager.getInstance().delPostByTopic(t);
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Posts.Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID()).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -194,8 +194,9 @@ public class Post
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
-			var posts = ctx.Posts.Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID()).OrderBy(p => p.Id)
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+			var posts = ctx.Posts.AsNoTracking().Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID())
+				.OrderBy(p => p.Id)
 				.ToList();
 
 			foreach (var post in posts)
@@ -221,7 +222,7 @@ public class Post
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			CPost cp = getCPost(i);
 			ctx.Posts.Where(p =>
 					p.Id == cp.getPostId() && p.TopicId == cp.getPostTopicId() && p.ForumId == cp.getPostForumId())

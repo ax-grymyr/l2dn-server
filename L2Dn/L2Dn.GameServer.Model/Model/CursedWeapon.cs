@@ -88,7 +88,7 @@ public class CursedWeapon : INamable
 
 				try
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 					
 					int recordCnt = ctx.Items.Where(r => r.OwnerId == _playerId && r.ItemId == _itemId).ExecuteDelete();
 					if (recordCnt != 1)
@@ -386,7 +386,7 @@ public class CursedWeapon : INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Delete previous datas
 			ctx.CursedWeapons.Where(r => r.ItemId == _itemId).ExecuteDelete();

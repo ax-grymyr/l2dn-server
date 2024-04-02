@@ -31,7 +31,7 @@ public class ItemAuctionManager: DataReaderBase
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			_auctionIds.set(ctx.ItemAuctions.Select(a => a.AuctionId).OrderByDescending(a => a).FirstOrDefault());
 		}
 		catch (Exception e)
@@ -91,7 +91,7 @@ public class ItemAuctionManager: DataReaderBase
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemAuctionBids.Where(a => a.AuctionId == auctionId).ExecuteDelete();
 			ctx.ItemAuctions.Where(a => a.AuctionId == auctionId).ExecuteDelete();
 		}

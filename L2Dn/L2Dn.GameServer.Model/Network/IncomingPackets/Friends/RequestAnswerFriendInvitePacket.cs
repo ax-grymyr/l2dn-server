@@ -48,7 +48,7 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterFriends.Add(new CharacterFriend()
 				{
 					CharacterId = requestor.getObjectId(),

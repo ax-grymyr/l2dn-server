@@ -24,7 +24,7 @@ public class CharInfoTable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var chars = ctx.Characters.Select(c => new { c.Id, c.Name, c.AccessLevel });
 
 			foreach (var ch in chars)
@@ -87,7 +87,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var ch = ctx.Characters.Where(c => c.Name == name).Select(c => new { c.Id, c.AccessLevel })
 				.SingleOrDefault();
 
@@ -127,7 +127,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var ch = ctx.Characters.Where(c => c.Id == id).Select(c => new { c.Name, c.AccessLevel })
 				.SingleOrDefault();
 
@@ -158,7 +158,7 @@ public class CharInfoTable
 		bool result = false;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			result = ctx.Characters.Any(c => c.Name == name);
 		}
 		catch (Exception e)
@@ -172,7 +172,7 @@ public class CharInfoTable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			return ctx.Characters.Count(c => c.Name == account);
 		}
 		catch (Exception e)
@@ -196,7 +196,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			byte? lv = ctx.Characters.Where(c => c.Id == objectId).Select(c => (byte?)c.Level).SingleOrDefault();
 			if (lv is not null)
 			{
@@ -226,7 +226,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			CharacterClass? clsId = ctx.Characters.Where(c => c.Id == objectId).Select(c => (CharacterClass?)c.Class).SingleOrDefault();
 			if (clsId is not null)
 			{
@@ -261,7 +261,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int? dbClanId = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.ClanId).SingleOrDefault();
 			if (dbClanId is not null)
 			{
@@ -332,7 +332,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			string memo = ctx.CharacterFriends.Where(cf => cf.CharacterId == charId && cf.FriendId == friendId)
 				.Select(cf => cf.Memo).SingleOrDefault() ?? string.Empty;
 
@@ -356,7 +356,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DateTime? createDate = ctx.Characters.Where(c => c.Id == objectId).Select(c => (DateTime?)c.Created)
 				.SingleOrDefault();
 			
@@ -389,7 +389,7 @@ public class CharInfoTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DateTime? dbLastAccess = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.LastAccess)
 				.SingleOrDefault();
 

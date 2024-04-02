@@ -238,7 +238,7 @@ public class ElementalSpirit
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int charId = _data.getCharId();
 			byte type = (byte)_data.getType();
 			CharacterSpirit? spirit = ctx.CharacterSpirits.SingleOrDefault(r => r.CharacterId == charId && r.Type == type);

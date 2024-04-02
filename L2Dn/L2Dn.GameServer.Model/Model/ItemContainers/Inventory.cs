@@ -2397,7 +2397,7 @@ public abstract class Inventory: ItemContainer
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int ownerId = getOwnerId();
 			ItemLocation baseLocation = getBaseLocation();
 			ItemLocation equipLocation = getEquipLocation();

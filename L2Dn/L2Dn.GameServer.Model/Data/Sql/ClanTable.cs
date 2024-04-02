@@ -42,7 +42,7 @@ public class ClanTable
 		List<int> cids;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			cids = ctx.Clans.Select(c => c.Id).ToList();
 		}
 		catch (Exception e)
@@ -239,7 +239,7 @@ public class ClanTable
 		try
 		{
 			// TODO: set cascade delete for dependent tables
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == clanId).ExecuteDelete();
 			ctx.ClanPrivileges.Where(c => c.ClanId == clanId).ExecuteDelete();
 			ctx.ClanSkills.Where(c => c.ClanId == clanId).ExecuteDelete();
@@ -307,7 +307,7 @@ public class ClanTable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var dbWar = new Db.ClanWar
 			{
 				Clan1Id = war.getAttackerClanId(),
@@ -346,7 +346,7 @@ public class ClanTable
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ClanWars.Where(cw => cw.Clan1Id == clanId1 && cw.Clan2Id == clanId2).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -359,7 +359,7 @@ public class ClanTable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var war in ctx.ClanWars)
 			{
 				Clan attacker = getClan(war.Clan1Id);

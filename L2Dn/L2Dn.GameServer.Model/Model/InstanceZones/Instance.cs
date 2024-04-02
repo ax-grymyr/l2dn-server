@@ -927,7 +927,7 @@ public class Instance : IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Save to database
 			foreach (int playerId in _allowed)

@@ -105,7 +105,7 @@ public class Olympiad
 		bool loaded = false;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var record = ctx.OlympiadData.SingleOrDefault(r => r.Id == 0);
 			if (record is not null)
 			{
@@ -183,7 +183,7 @@ public class Olympiad
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = from n in ctx.OlympiadNobles
 				from c in ctx.Characters
 				where n.CharacterId == c.Id
@@ -264,7 +264,7 @@ public class Olympiad
 		Map<int, int> tmpPlace = new();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.OlympiadNoblesEom.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
 				.OrderByDescending(r => r.OlympiadPoints).ThenByDescending(r => r.CompetitionsDone)
 				.ThenByDescending(r => r.CompetitionsWon);
@@ -331,7 +331,7 @@ public class Olympiad
 					// Remove previous record.
 					try 
 					{
-						using GameServerDbContext ctx = new();
+						using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 						ctx.CharacterVariables
 							.Where(r => r.CharacterId == noblesId && r.Name == UNCLAIMED_OLYMPIAD_POINTS_VAR)
 							.ExecuteDelete();
@@ -344,7 +344,7 @@ public class Olympiad
 					// Add new value.
 					try 
 					{
-						using GameServerDbContext ctx = new();
+						using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 						ctx.CharacterVariables.Add(new CharacterVariable()
 						{
 							CharacterId = noblesId,
@@ -474,7 +474,7 @@ public class Olympiad
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadNobles.Where(r => r.CharacterId == playerId).ExecuteDelete();
 			ctx.OlympiadNoblesEom.Where(r => r.CharacterId == playerId).ExecuteDelete();
 		}
@@ -803,7 +803,7 @@ public class Olympiad
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var entry in NOBLES)
 			{
 				NobleData nobleInfo = entry.Value;
@@ -847,7 +847,7 @@ public class Olympiad
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DbOlympiadData? record = ctx.OlympiadData.SingleOrDefault(r => r.Id == 0);
 			if (record is null)
 			{
@@ -876,7 +876,7 @@ public class Olympiad
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadNoblesEom.ExecuteDelete();
 
 			ctx.OlympiadNoblesEom.AddRange(ctx.OlympiadNobles.Select(r => new OlympiadNobleEom()
@@ -928,7 +928,7 @@ public class Olympiad
 		int legendId = 0;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			int? result = ctx.OlympiadNobles.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
 				.OrderByDescending(r => r.OlympiadPoints).Select(r => (int?)r.CharacterId).FirstOrDefault();
@@ -945,7 +945,7 @@ public class Olympiad
 
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (int element in HERO_IDS)
 			{
 				// Classic can have 2nd and 3rd class competitors, but only 1 hero
@@ -990,7 +990,7 @@ public class Olympiad
 		List<String> names = new();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			IQueryable<string> query;
 			if (Config.ALT_OLY_SHOW_MONTHLY_WINNERS)
@@ -1103,7 +1103,7 @@ public class Olympiad
 		int result = 0;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var record = ctx.OlympiadNoblesEom.Where(r => r.CharacterId == objId).Select(r => (int?)r.OlympiadPoints)
 				.SingleOrDefault();
 
@@ -1175,7 +1175,7 @@ public class Olympiad
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadNobles.ExecuteDelete();
 		}
 		catch (Exception e)

@@ -86,7 +86,7 @@ public class PremiumManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (AccountPremium? record in ctx.AccountPremiums.Where(r => r.AccountId == accountId))
 			{
 				_premiumData.put(record.AccountId, record.EndTime);
@@ -116,7 +116,7 @@ public class PremiumManager
 		// UPDATE DATABASE
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AccountPremiums.Where(r => r.AccountId == accountId)
 				.ExecuteUpdate(s => s.SetProperty(r => r.EndTime, newPremiumExpiration));
 		}
@@ -165,7 +165,7 @@ public class PremiumManager
 		// UPDATE DATABASE
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AccountPremiums.Where(r => r.AccountId == accountId).ExecuteDelete();
 		}
 		catch (Exception e)

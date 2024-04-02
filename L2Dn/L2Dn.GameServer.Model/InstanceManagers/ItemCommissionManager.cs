@@ -38,7 +38,7 @@ public class ItemCommissionManager
 		Map<int, Item> itemInstances = new();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbItem item in ctx.Items.Where(r => r.Location == (int)ItemLocation.COMMISSION))
 			{
 				Item itemInstance = new Item(item);
@@ -247,7 +247,7 @@ public class ItemCommissionManager
 			try
 			{
 				DateTime startTime = DateTime.UtcNow;
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				DbCommissionItem dbCommissionItem = new DbCommissionItem()
 				{
 					ItemObjectId = itemInstance.getObjectId(),
@@ -413,7 +413,7 @@ public class ItemCommissionManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int deleted = ctx.CommissionItems.Where(c => c.Id == commissionId).ExecuteDelete();				
 			if (deleted > 0)
 			{

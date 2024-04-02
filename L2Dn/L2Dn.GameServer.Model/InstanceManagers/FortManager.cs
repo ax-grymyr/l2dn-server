@@ -109,7 +109,7 @@ public class FortManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (int fortId in ctx.Forts.Select(f => f.Id).OrderBy(f => f))
 			{
 				_forts.put(fortId, new Fort(fortId));

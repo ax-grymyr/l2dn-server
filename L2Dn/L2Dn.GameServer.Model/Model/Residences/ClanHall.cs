@@ -94,7 +94,7 @@ public class ClanHall: AbstractResidence
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int residenceId = getResidenceId();
 			var record = ctx.ClanHalls.SingleOrDefault(r => r.Id == residenceId);
 			if (record is not null)
@@ -124,7 +124,7 @@ public class ClanHall: AbstractResidence
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int residenceId = getResidenceId();
 			ctx.ClanHalls.Where(r => r.Id == residenceId).ExecuteUpdate(s =>
 				s.SetProperty(r => r.OwnerId, getOwnerId()).SetProperty(r => r.PaidUntil, _paidUntil));

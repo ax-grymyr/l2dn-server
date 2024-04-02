@@ -58,7 +58,7 @@ public class RankManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Take(PLAYER_LIMIT);
@@ -101,7 +101,7 @@ public class RankManager
 		// load olympiad data.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = (from n in ctx.OlympiadNobles
 				from c in ctx.Characters
 				where c.Id == n.CharacterId
@@ -175,7 +175,7 @@ public class RankManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Select(c => new
@@ -226,7 +226,7 @@ public class RankManager
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			var query =
 				(from p in ctx.Pets
@@ -279,7 +279,7 @@ public class RankManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = (from c in ctx.Characters
 				from clan in ctx.Clans
 				where c.Id == clan.LeaderId && c.ClanId == clan.Id && clan.DissolvingExpireTime == null
@@ -324,7 +324,7 @@ public class RankManager
 			List<CharacterClass> classes =
 				EnumUtil.GetValues<CharacterClass>().Where(c => c.GetRootClass() == classId).ToList();
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
 				            classes.Contains(c.Class))
@@ -358,7 +358,7 @@ public class RankManager
 		{
 			List<CharacterClass> classes = EnumUtil.GetValues<CharacterClass>().Where(c => c.GetRace() == race).ToList();
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
 				            classes.Contains(c.Class))

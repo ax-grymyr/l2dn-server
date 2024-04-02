@@ -414,7 +414,7 @@ public class LongTimeEvent: Quest
 				// Update database.
 				try
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 					ctx.Items.Where(r => r.ItemId == itemId).ExecuteDelete();
 				}
 				catch (Exception e)

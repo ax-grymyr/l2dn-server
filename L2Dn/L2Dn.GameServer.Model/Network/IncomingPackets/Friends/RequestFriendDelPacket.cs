@@ -47,7 +47,7 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
 		
         try
         {
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             int playerId = player.getObjectId();
             ctx.CharacterFriends.Where(r =>
                     r.CharacterId == playerId && r.FriendId == id || r.CharacterId == id && r.FriendId == playerId)

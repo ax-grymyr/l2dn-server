@@ -38,7 +38,7 @@ public class ClanWarsList: IUserCommandHandler
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int clanId = clan.getId();
 
 			var query = id switch

@@ -35,7 +35,7 @@ public class PlayerRandomCraft
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.getObjectId();
 			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record != null)
@@ -72,7 +72,7 @@ public class PlayerRandomCraft
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.getObjectId();
 			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record is null)
@@ -178,7 +178,7 @@ public class PlayerRandomCraft
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.getObjectId();
 			CharacterRandomCraft? record = ctx.CharacterRandomCrafts.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record is null)

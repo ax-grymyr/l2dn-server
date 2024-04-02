@@ -834,7 +834,7 @@ public class PlayerInventory: Inventory
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Items.Where(r => r.OwnerId == objectId && r.Location == (int)ItemLocation.PAPERDOLL);
 			foreach (var record in query)
 			{

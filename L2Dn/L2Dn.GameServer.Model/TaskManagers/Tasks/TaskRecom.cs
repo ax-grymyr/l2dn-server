@@ -19,7 +19,7 @@ public class TaskRecom : Task
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterRecoBonuses.ExecuteUpdate(s =>
 				s.SetProperty(r => r.RecLeft, 20).SetProperty(r => r.RecHave, r => r.RecHave > 20 ? r.RecHave - 20 : 0)
 					.SetProperty(r => r.TimeLeft, TimeSpan.FromHours(1)));

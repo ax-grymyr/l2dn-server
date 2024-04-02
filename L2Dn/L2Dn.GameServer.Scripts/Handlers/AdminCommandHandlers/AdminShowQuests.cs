@@ -151,7 +151,7 @@ public class AdminShowQuests: IAdminCommandHandler
 			int ID = target.getObjectId();
 			StringBuilder replyMSG = new StringBuilder("<html><body>");
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			switch (val[0])
 			{
 				case "full":

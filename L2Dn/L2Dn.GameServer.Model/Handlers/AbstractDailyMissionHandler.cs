@@ -57,7 +57,7 @@ public abstract class AbstractDailyMissionHandler
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterDailyRewards.Where(r => r.RewardId == missionId)
 				.ExecuteDelete();
 		}

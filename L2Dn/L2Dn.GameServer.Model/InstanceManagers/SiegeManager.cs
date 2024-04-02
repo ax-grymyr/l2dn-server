@@ -64,7 +64,7 @@ public class SiegeManager
 		try
 		{
 			int clanId = clan.getId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			register = ctx.SiegeClans.Any(r => r.ClanId == clanId && r.CastleId == castleid);
 		}
 		catch (Exception e)
@@ -270,7 +270,7 @@ public class SiegeManager
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
 			{
 				_flameTowers.get(castleId).get(record.TowerIndex).setUpgradeLevel(record.Level);

@@ -28,7 +28,9 @@
     "Server": "db",
     "DatabaseName": "l2dev",
     "UserName": "l2dev_user",
-    "Password": "l2dev_user_pass"
+    "Password": "l2dev_user_pass",
+    "PoolSize": 1024,
+    "Trace": true
   },
 
   "Logging": {

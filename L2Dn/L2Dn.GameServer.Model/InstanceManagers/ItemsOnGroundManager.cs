@@ -49,7 +49,7 @@ public class ItemsOnGroundManager: Runnable
 			{
 				DateTime time = DateTime.UtcNow;
 
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var query = ctx.ItemsOnGround.Where(r => r.DropTime == null);
 
 				if (!Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
@@ -67,7 +67,7 @@ public class ItemsOnGroundManager: Runnable
 		try 
 		{
 			int count = 0;
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ItemOnGround itemOnGround in ctx.ItemsOnGround)
 			{
 				Item item;
@@ -146,7 +146,7 @@ public class ItemsOnGroundManager: Runnable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemsOnGround.ExecuteDelete();
 		}
 		catch (Exception e1)
@@ -172,7 +172,7 @@ public class ItemsOnGroundManager: Runnable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			foreach (Item item in _items)
 			{

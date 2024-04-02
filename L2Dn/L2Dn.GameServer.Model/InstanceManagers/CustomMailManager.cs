@@ -24,7 +24,7 @@ public class CustomMailManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				foreach (DbCustomMail record in ctx.CustomMails)
 				{
 					int playerId = record.ReceiverId;

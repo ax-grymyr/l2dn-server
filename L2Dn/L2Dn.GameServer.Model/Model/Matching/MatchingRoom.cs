@@ -71,7 +71,7 @@ public abstract class MatchingRoom: IIdentifiable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.PartyMatchingHistory.Add(new DbPartyMatchingHistory()
 			{
 				Title = _title,

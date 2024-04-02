@@ -27,7 +27,7 @@ public class IdManager
 		// Update characters online status.
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// TODO: this is not right place for this query
 			ctx.Characters.ExecuteUpdate(s => s.SetProperty(c => c.OnlineStatus, CharacterOnlineStatus.Offline));
@@ -44,7 +44,7 @@ public class IdManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				DateTime cleanupStart = DateTime.UtcNow;
 				int cleanCount = 0;
@@ -136,7 +136,7 @@ public class IdManager
 		// Cleanup timestamps.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			int cleanCount = 0;
 			cleanCount += ctx.CharacterInstances.Where(r => r.Time <= DateTime.UtcNow).ExecuteDelete();
@@ -154,7 +154,7 @@ public class IdManager
 		try
 		{
 			// Collect already used ids.
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			List<int> usedIds = ctx.Characters.Select(c => c.Id).Concat(ctx.Items.Select(i => i.ObjectId))
 				.Concat(ctx.Clans.Select(c => c.Id)).Concat(ctx.ItemsOnGround.Select(c => c.ObjectId))
 				.Concat(ctx.MailMessages.Select(c => c.MessageId)).ToList();

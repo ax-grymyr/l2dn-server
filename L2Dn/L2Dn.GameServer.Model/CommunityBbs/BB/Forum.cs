@@ -1,6 +1,7 @@
 using L2Dn.GameServer.CommunityBbs.Managers;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace L2Dn.GameServer.CommunityBbs.BB;
@@ -68,11 +69,11 @@ public class Forum
 	
 	private void load()
 	{
-		using GameServerDbContext ctx = new();
+		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 		try
 		{
-			var forum = ctx.Forums.SingleOrDefault(f => f.Id == _forumId);
+			var forum = ctx.Forums.AsNoTracking().SingleOrDefault(f => f.Id == _forumId);
 			if (forum is not null)
 			{
 				_forumName = forum.Name;
@@ -111,7 +112,7 @@ public class Forum
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var children = ctx.Forums.Where(f => f.ParentId == _forumId).Select(f => f.Id).ToList();
 			foreach (var child in children)
 			{
@@ -193,7 +194,7 @@ public class Forum
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			var forum = new Db.Forum()
 			{

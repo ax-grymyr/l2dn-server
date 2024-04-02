@@ -704,7 +704,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadFights.Add(new DbOlympiadFight()
 			{
 				Character1Id = one.getObjectId(),

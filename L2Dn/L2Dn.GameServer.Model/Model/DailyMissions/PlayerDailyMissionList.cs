@@ -32,7 +32,7 @@ public class PlayerDailyMissionList
 
         try
         {
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
@@ -57,7 +57,7 @@ public class PlayerDailyMissionList
 
         try
         {
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId && r.RewardId == rewardId)
                 .ExecuteDelete();
 
@@ -85,7 +85,7 @@ public class PlayerDailyMissionList
         try
         {
             // TODO: the server is the owner of all database data, it can track which records need to be stored
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
             ctx.CharacterDailyRewards.AddRange(_entries.Values.Select(e => new CharacterDailyReward()
@@ -158,7 +158,7 @@ public class PlayerDailyMissionList
 
             try
             {
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId && r.RewardId == rewardId)
                     .ExecuteDelete();
             }

@@ -29,7 +29,7 @@ public class ClanEntryManager
 	
 	private void load()
 	{
-		using GameServerDbContext ctx = new();
+		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 		try 
 		{
@@ -144,7 +144,7 @@ public class ClanEntryManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.PledgeApplicants.Where(a => a.CharacterId == playerId && a.ClanId == clanId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -163,7 +163,7 @@ public class ClanEntryManager
 			
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeApplicants.Add(new PledgeApplicant()
 				{
 					CharacterId = info.getPlayerId(),
@@ -202,7 +202,7 @@ public class ClanEntryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeWaitingLists.Add(new PledgeWaitingList
 				{
 					CharacterId = info.getPlayerId(),
@@ -228,7 +228,7 @@ public class ClanEntryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeWaitingLists.Where(x => x.CharacterId == playerId).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -249,7 +249,7 @@ public class ClanEntryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeRecruits.Add(new PledgeRecruit()
 				{
 					ClanId = info.getClanId(),
@@ -279,7 +279,7 @@ public class ClanEntryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeRecruits.Where(r => r.ClanId == clanId)
 					.ExecuteUpdate(s =>
 						s.SetProperty(r => r.Karma, info.getKarma())
@@ -307,7 +307,7 @@ public class ClanEntryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.PledgeRecruits.Where(r => r.ClanId == clanId).ExecuteDelete();
 			}
 			catch (Exception e)

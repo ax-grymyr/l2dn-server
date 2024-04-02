@@ -144,7 +144,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int objectId = _objectId;
 				ctx.Pets.Where(r => r.ItemObjectId == objectId).ExecuteDelete();
 			}

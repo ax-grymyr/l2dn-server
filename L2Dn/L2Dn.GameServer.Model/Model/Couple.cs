@@ -23,7 +23,7 @@ public class Couple
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var record = ctx.CharacterCouples.SingleOrDefault(r => r.Id == _id);
 			if (record != null)
 			{
@@ -52,7 +52,7 @@ public class Couple
 		{
 			_id = IdManager.getInstance().getNextId();
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterCouples.Add(new DbCharacterCouple()
 			{
 				Id = _id,
@@ -78,7 +78,7 @@ public class Couple
 			_weddingDate = DateTime.UtcNow;
 			_maried = true;
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterCouples.Where(r => r.Id == _id).ExecuteUpdate(s =>
 				s.SetProperty(r => r.Married, true).SetProperty(r => r.WeddingDate, _weddingDate));
 		}
@@ -92,7 +92,7 @@ public class Couple
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterCouples.Where(r => r.Id == _id).ExecuteDelete();
 		}
 		catch (Exception e)

@@ -41,7 +41,7 @@ public class ChallengePoint
 		try
 		{
 			// TODO: server is the owner of the database, so it should track the records to add or update
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			foreach (var pair in _challengePoints)
 			{
@@ -96,7 +96,7 @@ public class ChallengePoint
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			foreach (var record in ctx.EnchantChallengePoints.Where(r => r.CharacterId == characterId))
 			{

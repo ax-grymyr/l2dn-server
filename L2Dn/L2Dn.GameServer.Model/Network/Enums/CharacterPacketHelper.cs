@@ -63,7 +63,7 @@ public static class CharacterPacketHelper
         {
             try
             {
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.Characters.Where(c => c.Id == objectId).ExecuteUpdate(s =>
                     s.SetProperty(r => r.DeleteTime, DateTime.UtcNow.AddDays(Config.DELETE_DAYS)));
             }
@@ -85,7 +85,7 @@ public static class CharacterPacketHelper
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterContacts.Where(r => r.CharacterId == objectId || r.ContactId == objectId).ExecuteDelete();
 			ctx.CharacterFriends.Where(r => r.CharacterId == objectId || r.FriendId == objectId).ExecuteDelete();
 			ctx.CharacterHennas.Where(r => r.CharacterId == objectId).ExecuteDelete();
@@ -133,7 +133,7 @@ public static class CharacterPacketHelper
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Characters.Where(r => r.Id == objectId)
 				.ExecuteUpdate(s => s.SetProperty(r => r.DeleteTime, (DateTime?)null));
 		}
@@ -152,7 +152,7 @@ public static class CharacterPacketHelper
 		List<CharSelectInfoPackage> characterList = new();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var records = ctx.Characters.Where(r => r.AccountId == accountId).OrderBy(r => r.Created).ToList();
 			foreach (var record in records)
 			{

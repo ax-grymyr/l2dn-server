@@ -29,7 +29,7 @@ public struct RequestPetitionFeedbackPacket: IIncomingPacket<GameSession>
 		
         try
         {
-            await using GameServerDbContext ctx = new();
+            await using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.PetitionFeedbacks.Add(new DbPetitionFeedback()
             {
                 CharacterName = player.getName(),

@@ -40,7 +40,7 @@ public class BuyListData: DataReaderBase
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var buyLists = ctx.BuyLists;
 			foreach (DbBuyList dbBuyList in buyLists)
 			{

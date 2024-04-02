@@ -1102,7 +1102,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterRecipeBooks.Add(new CharacterRecipeBook()
 			{
 				CharacterId = getObjectId(),
@@ -1123,7 +1123,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			int classIndex = isDwarf ? _classIndex : 0;
 			ctx.CharacterRecipeBooks
@@ -6208,7 +6208,7 @@ public class Player: Playable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int characterId = getObjectId();
 				ctx.Characters.Where(c => c.Id == characterId)
 					.ExecuteUpdate(s => s.SetProperty(c => c.AccessLevel, accessLevel.getLevel()));
@@ -6328,7 +6328,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			ctx.Characters.Where(c => c.Id == characterId).ExecuteUpdate(s =>
 				s.SetProperty(c => c.OnlineStatus, getOnlineStatus()).SetProperty(c => c.LastAccess, DateTime.UtcNow));
@@ -6347,7 +6347,7 @@ public class Player: Playable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			AccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
 			if (account is null)
 			{
@@ -6427,7 +6427,7 @@ public class Player: Playable
 		double currentMp = 0;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Retrieve the Player from the characters table of the database
 			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
@@ -6787,7 +6787,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = player.getObjectId();
 			var query = ctx.CharacterSubClasses.Where(r => r.CharacterId == characterId).OrderBy(r => r.ClassIndex);
 			foreach (var record in query)
@@ -6886,7 +6886,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             int characterId = getObjectId();
             var query = loadCommon
 	            ? ctx.CharacterRecipeBooks.Where(r => r.CharacterId == characterId)
@@ -6928,7 +6928,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			var query = ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId);
 			foreach (var record in query)
@@ -6950,7 +6950,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
 				.ExecuteUpdate(s => s.SetProperty(c => c.ItemCount, newcount));
@@ -6965,7 +6965,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             int characterId = getObjectId();
             ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
 	            .ExecuteDelete();
@@ -7067,7 +7067,7 @@ public class Player: Playable
         
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
             Character? character = ctx.Characters.SingleOrDefault(r => r.Id == characterId);
             if (character is null)
@@ -7156,7 +7156,7 @@ public class Player: Playable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			foreach (SubClassHolder subClass in getSubClasses().values())
 			{
@@ -7198,7 +7198,7 @@ public class Player: Playable
 		try
 		{
 			int characterId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all current stored effects for char to avoid dupe
 			ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex)
@@ -7320,7 +7320,7 @@ public class Player: Playable
 		try 
 		{
 			int characterId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId).ExecuteDelete();
 			
 			DateTime currentTime = DateTime.UtcNow;
@@ -7468,7 +7468,7 @@ public class Player: Playable
 			{
                 int characterId = getObjectId();
                 int skillId = oldSkill.getId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Remove a Player skill from the character_skills table of the database
                 ctx.CharacterSkills.Where(r => r.CharacterId == characterId && r.SkillId == skillId).ExecuteDelete();
@@ -7510,7 +7510,7 @@ public class Player: Playable
 		try
 		{
   			int characterId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if ((oldSkill != null) && (newSkill != null))
 			{
                 int skillId = oldSkill.getId();
@@ -7568,7 +7568,7 @@ public class Player: Playable
 		{
             int characterId = getObjectId();
 			const string ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (Skill addSkill in newSkills)
 			{
                 int skillId = addSkill.getId();
@@ -7607,7 +7607,7 @@ public class Player: Playable
             
             int characterId = getObjectId();
             
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Retrieve all skills of this Player from the database
 			var query = ctx.CharacterSkills.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
@@ -7653,7 +7653,7 @@ public class Player: Playable
 		{
             int characterId = getObjectId();
             
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
             foreach (var record in query)
             {
@@ -7703,7 +7703,7 @@ public class Player: Playable
 		try 
         {
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId);
 			foreach (var record in query)
 			{
@@ -7770,7 +7770,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
 			DateTime currentTime = DateTime.UtcNow;
             foreach (var record in query)
@@ -7891,7 +7891,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex && r.Slot == slot).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -7968,7 +7968,7 @@ public class Player: Playable
 				
 				try 
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                     ctx.CharacterHennas.Add(new CharacterHenna()
                     {
                         CharacterId = getObjectId(),
@@ -8044,7 +8044,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterHennaPotens.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
@@ -8080,7 +8080,7 @@ public class Player: Playable
 					int characterId = getObjectId();
                     int slotPosition = _hennaPoten[i].getSlotPosition();
 					
-                    using GameServerDbContext ctx = new();
+                    using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
                     CharacterHennaPoten? record = ctx.CharacterHennaPotens.SingleOrDefault(r =>
 	                    r.CharacterId == characterId && r.SlotPosition == slotPosition);
@@ -9780,7 +9780,7 @@ public class Player: Playable
 			
 			try 
 			{
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Store the basic info about this new sub-class.
                 ctx.CharacterSubClasses.Add(new CharacterSubClass()
@@ -9886,7 +9886,7 @@ public class Player: Playable
 		{
             int characterId = getObjectId();
             
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Remove all henna info stored for this sub-class.
             ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex).ExecuteDelete();
@@ -12313,7 +12313,7 @@ public class Player: Playable
 		{
 			try
 			{
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.Pets.Where(p => p.ItemObjectId == _controlItemId)
 	                .ExecuteUpdate(s => s.SetProperty(p => p.Fed, _curFeed));
 
@@ -12441,7 +12441,7 @@ public class Player: Playable
 			try 
 			{
                 int characterId = getObjectId();
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteUpdate(s =>
 	                s.SetProperty(r => r.Icon, icon).SetProperty(r => r.Tag, tag).SetProperty(r => r.Name, name));
 			}
@@ -12461,7 +12461,7 @@ public class Player: Playable
 			try
 			{
                 int characterId = getObjectId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -12621,7 +12621,7 @@ public class Player: Playable
 		
 		try 
 		{
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterTeleportBookmarks.Add(new CharacterTeleportBookmark()
             {
                 CharacterId = getObjectId(),
@@ -12649,7 +12649,7 @@ public class Player: Playable
 		try
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
@@ -12866,7 +12866,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.Relation == 0)
 	            .Select(r => r.FriendId);
 
@@ -12910,7 +12910,7 @@ public class Player: Playable
 		try
 		{
 			int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterSurveillances.Where(r => r.CharacterId == characterId).Select(r => r.TargetId);
             foreach (int targetId in query)
             {
@@ -12940,7 +12940,7 @@ public class Player: Playable
             int characterId = getObjectId();
 			int friendId = CharInfoTable.getInstance().getIdByName(name);
             
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.FriendId == friendId).
                 ExecuteUpdate(s => s.SetProperty(r => r.Memo, memo));
 			
@@ -13009,7 +13009,7 @@ public class Player: Playable
 			try
 			{
                 int characterId = getObjectId(); 
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
                 ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
@@ -13046,7 +13046,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId(); 
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).OrderBy(r => r.Index);
 
             foreach (var record in query)
@@ -13448,7 +13448,7 @@ public class Player: Playable
 		try 
         {
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             bool petItems = ctx.Items.Where(r =>
 	            r.OwnerId == characterId &&
 	            (r.Location == (int)ItemLocation.PET || r.Location == (int)ItemLocation.PET_EQUIP)).Any();
@@ -13479,7 +13479,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             CharacterRecoBonus? record = ctx.CharacterRecoBonuses.Where(r => r.CharacterId == characterId).
                 SingleOrDefault();
             
@@ -13503,7 +13503,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             CharacterRecoBonus? record = ctx.CharacterRecoBonuses.SingleOrDefault(r => r.CharacterId == characterId);
 
             if (record is null)
@@ -14693,7 +14693,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId(); 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterSpirits.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
@@ -15236,7 +15236,7 @@ public class Player: Playable
 			
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 
                 int itemObjectId = it.getObjectId(); 
                 
@@ -15433,7 +15433,7 @@ public class Player: Playable
 	{
 		try
 		{
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             
             foreach (var data in _collections)
             {
@@ -15463,7 +15463,7 @@ public class Player: Playable
 	{
 		try 
         {
-		    using GameServerDbContext ctx = new();
+		    using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.AccountCollectionFavorites.Where(r => r.AccountId == _accountId).ExecuteDelete();
 
             foreach (var data in _collectionFavorites)
@@ -15489,7 +15489,7 @@ public class Player: Playable
 		
 		try 
 		{
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.AccountCollections.Where(r => r.AccountId == _accountId).
                 OrderBy(r => r.Index);
 
@@ -15545,7 +15545,7 @@ public class Player: Playable
 		
 		try 
         {
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             _collectionFavorites.AddRange(ctx.AccountCollectionFavorites.Where(r => r.AccountId == _accountId)
 	            .Select(r => (int)r.CollectionId));
         }
@@ -15565,7 +15565,7 @@ public class Player: Playable
 		try 
 		{
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 	
 			ctx.CharacterPurges.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
@@ -15602,7 +15602,7 @@ public class Player: Playable
 		try 
         {
             int characterId = getObjectId();
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterPurges.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {

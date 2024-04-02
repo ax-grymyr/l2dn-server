@@ -57,7 +57,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 			{
 				try
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 					int count = ctx.Characters.Where(c => c.Name == name)
 						.ExecuteUpdate(s => s.SetProperty(r => r.AccessLevel, lvl));
 

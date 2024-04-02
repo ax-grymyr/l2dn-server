@@ -40,7 +40,7 @@ public class CharSummonTable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var summons = ctx.CharacterSummons.Select(cs => new { cs.OwnerId, cs.SummonId });
 				foreach (var summon in summons)
 				{
@@ -57,7 +57,7 @@ public class CharSummonTable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var pets = ctx.Pets.Where(p => p.Restore).Select(p => new { p.OwnerId, p.ItemObjectId });
 				foreach (var pet in pets)
 				{
@@ -82,7 +82,7 @@ public class CharSummonTable
 		try
 		{
 			int ownerId = player.getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterSummons.Where(p => p.OwnerId == ownerId && p.SummonId == summonObjectId)
 				.ExecuteDelete();
 		}
@@ -146,7 +146,7 @@ public class CharSummonTable
 		try 
 		{
 			int ownerId = player.getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var summons = ctx.CharacterSummons.Where(s => s.OwnerId == ownerId);
 			Skill skill;
 			foreach (CharacterSummon dbSummon in summons)
@@ -208,7 +208,7 @@ public class CharSummonTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			TimeSpan? remainingTime = summon.getLifeTimeRemaining();
 			if (remainingTime < TimeSpan.Zero)
 				remainingTime = TimeSpan.Zero;

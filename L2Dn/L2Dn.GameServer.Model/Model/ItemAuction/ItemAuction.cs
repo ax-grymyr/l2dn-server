@@ -161,7 +161,7 @@ public class ItemAuction
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == _auctionId);
 			if (record is null)
 			{
@@ -199,7 +199,7 @@ public class ItemAuction
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int playerObjId = bid.getPlayerObjId();
 
 			if (delete)

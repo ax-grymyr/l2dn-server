@@ -238,7 +238,7 @@ public class Servitor : Summon, Runnable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all current stored effects for summon to avoid dupe
 			int ownerId = getOwner().getObjectId();
@@ -363,7 +363,7 @@ public class Servitor : Summon, Runnable
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int ownerId = getOwner().getObjectId();
 			int ownerClassIndex = getOwner().getClassIndex();
 			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().containsKey(getOwner().getObjectId()) || !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()) || !SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))

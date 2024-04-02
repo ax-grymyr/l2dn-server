@@ -111,7 +111,7 @@ public class MacroList: IRestorable
 
 			string text = sb.Length > 1000 ? sb.ToString(0, 1000) : sb.ToString();
             
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterMacros.Add(new DbCharacterMacros()
 			{
 				CharacterId = _owner.getObjectId(),
@@ -134,7 +134,7 @@ public class MacroList: IRestorable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			int macroId = macro.getId();
 			ctx.CharacterMacros.Where(r => r.CharacterId == characterId && r.Id == macroId).ExecuteDelete();
@@ -150,7 +150,7 @@ public class MacroList: IRestorable
 		_macroses.clear();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			var query = ctx.CharacterMacros.Where(r => r.CharacterId == characterId);
 			foreach (var record in query)

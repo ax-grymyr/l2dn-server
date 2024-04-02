@@ -54,7 +54,7 @@ public class Topic
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var topic = new Db.Topic
 			{
 				Id = _id,
@@ -111,7 +111,7 @@ public class Topic
 		f.rmTopicByID(_id);
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Topics.Where(t => t.Id == _id && t.ForumId == f.getID()).ExecuteDelete();
 		}
 		catch (Exception e)

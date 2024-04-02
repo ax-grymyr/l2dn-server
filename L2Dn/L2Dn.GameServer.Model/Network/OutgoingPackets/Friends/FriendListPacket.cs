@@ -35,7 +35,7 @@ public readonly struct FriendListPacket: IOutgoingPacket
 				// TODO: logic must not be in packets
 				try
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 					var record = ctx.Characters.Where(r => r.Id == objId)
 						.Select(r => new { r.Name, r.OnlineStatus, r.Class, r.Level })
 						.SingleOrDefault();

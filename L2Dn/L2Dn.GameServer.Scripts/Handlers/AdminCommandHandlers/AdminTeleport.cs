@@ -469,7 +469,7 @@ public class AdminTeleport: IAdminCommandHandler
 		int z = activeChar.getZ();
 		try
 		{
-			GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int count = ctx.Characters.Where(c => c.Name == name).ExecuteUpdate(s =>
 				s.SetProperty(r => r.X, x).SetProperty(r => r.Y, y).SetProperty(r => r.Z, z));
 

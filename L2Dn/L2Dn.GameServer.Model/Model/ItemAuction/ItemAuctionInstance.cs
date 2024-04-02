@@ -98,7 +98,7 @@ public class ItemAuctionInstance
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.ItemAuctions.Where(r => r.InstanceId == _instanceId);
 			foreach (var record in query)
 			{
@@ -490,7 +490,7 @@ public class ItemAuctionInstance
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == auctionId);
 			if (record is null)
 			{

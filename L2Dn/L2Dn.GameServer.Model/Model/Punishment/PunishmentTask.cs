@@ -158,7 +158,7 @@ public class PunishmentTask: Runnable
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				DbPunishment punishment = new DbPunishment()
 				{
 					Key = _key,
@@ -197,7 +197,7 @@ public class PunishmentTask: Runnable
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.Punishments.Where(r => r.Id == _id)
 					.ExecuteUpdate(s => s.SetProperty(r => r.ExpirationTime, DateTime.UtcNow));
 			}

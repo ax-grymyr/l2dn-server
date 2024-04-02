@@ -123,7 +123,7 @@ public class Product
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemId = _item.getId();
 			DbBuyList? record = ctx.BuyLists.SingleOrDefault(r => r.BuyListId == _buyListId && r.ItemId == itemId);
 			if (record is null)

@@ -28,7 +28,7 @@ public class Mentee
         {
             try 
             {
-                using GameServerDbContext ctx = new();
+                using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 var record = ctx.Characters.SingleOrDefault(r => r.Id == _objectId);
                 if (record != null)
                 {

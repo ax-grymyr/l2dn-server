@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 
@@ -20,7 +21,7 @@ public class ForumsBBSManager: BaseBBSManager
 		_table = new();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			List<int> forumIds = ctx.Forums.Where(f => f.Type == 0).Select(f => f.Id).ToList();
 
 			foreach (int forumId in forumIds)

@@ -436,7 +436,7 @@ public class InstanceManager: DataReaderBase
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CharacterInstance record in ctx.CharacterInstances.OrderBy(r => r.CharacterId))
 			{
 				// Check if instance penalty passed
@@ -489,7 +489,7 @@ public class InstanceManager: DataReaderBase
 			try 
 			{
 				int playerId = player.getObjectId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				foreach (int id in invalidPenalty)
 					ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
 
@@ -551,7 +551,7 @@ public class InstanceManager: DataReaderBase
 		try 
 		{
 			int playerId = player.getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
 			if (_playerTimes.get(player.getObjectId()) != null)
 			{

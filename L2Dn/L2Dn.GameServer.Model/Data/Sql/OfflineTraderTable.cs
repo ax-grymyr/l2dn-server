@@ -24,7 +24,7 @@ public class OfflineTraderTable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterOfflineTradeItems.ExecuteDelete();
 			ctx.CharacterOfflineTrades.ExecuteDelete();
 			foreach (Player pc in World.getInstance().getPlayers())
@@ -142,7 +142,7 @@ public class OfflineTraderTable
 		int nTraders = 0;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var trades = ctx.CharacterOfflineTrades.ToList();
 			foreach (var trade in trades)
 			{
@@ -299,7 +299,7 @@ public class OfflineTraderTable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int traderId = trader.getObjectId();
 			String title = null;
 			ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == traderId).ExecuteDelete();
@@ -424,7 +424,7 @@ public class OfflineTraderTable
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == traderObjId).ExecuteDelete();
 			ctx.CharacterOfflineTrades.Where(t => t.CharacterId == traderObjId).ExecuteDelete();
 		}

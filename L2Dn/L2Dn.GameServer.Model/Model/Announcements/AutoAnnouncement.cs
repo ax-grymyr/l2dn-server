@@ -64,7 +64,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var announcement = new Db.Announcement
 			{
 				Type = (int)getType(),
@@ -91,7 +91,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Announcements.Where(a => a.Id == _id).ExecuteUpdate(s =>
 				s.SetProperty(a => a.Type, (int)getType()).SetProperty(a => a.Content, getContent())
 					.SetProperty(a => a.Author, getAuthor()).SetProperty(a => a.InitialDelay, _initial)

@@ -139,7 +139,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		// Restore previous variables.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var record in GetQuery(ctx))
 			{
 				set(record.Name, record.Value);
@@ -167,7 +167,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Clear previous entries.
 			ctx.Set<T>().Where(r => r.Name == name).ExecuteDelete();
@@ -185,7 +185,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Clear previous entries.
 			GetQuery(ctx).ExecuteDelete();
@@ -212,7 +212,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Clear previous entries.
 			GetQuery(ctx).ExecuteDelete();

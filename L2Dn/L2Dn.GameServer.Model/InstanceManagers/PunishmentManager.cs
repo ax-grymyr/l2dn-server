@@ -35,7 +35,7 @@ public class PunishmentManager
 		// Load punishments.
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPunishment record in ctx.Punishments)
 			{
 				int id = record.Id;

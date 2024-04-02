@@ -1042,7 +1042,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemId = getObjectId();
 			ctx.ItemVariations.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
@@ -1063,7 +1063,7 @@ public class Item: WorldObject
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemId = getObjectId();
 			DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == itemId);
 			if (record is not null)
@@ -1097,7 +1097,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			updateItemOptions(ctx);
 		}
 		catch (Exception e)
@@ -1143,7 +1143,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			updateItemElements(ctx);
 		}
 		catch (Exception e)
@@ -1314,7 +1314,7 @@ public class Item: WorldObject
 		try
 		{
 			int itemId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemElementals.Where(r => r.ItemId == itemId && r.Type == (byte)type).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -1338,7 +1338,7 @@ public class Item: WorldObject
 		try 
 		{
 			int itemId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -1619,7 +1619,7 @@ public class Item: WorldObject
 		try
 		{
 			int itemId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DbItem? item = ctx.Items.SingleOrDefault(r => r.ObjectId == itemId);
 			if (item is null)
 			{
@@ -1672,7 +1672,7 @@ public class Item: WorldObject
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Items.Add(new DbItem()
 			{
 				OwnerId = _ownerId,
@@ -1724,7 +1724,7 @@ public class Item: WorldObject
 		try
 		{
 			int itemId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			ctx.ItemVariables.Where(r => r.ItemId == itemId).ExecuteDelete();
 			ctx.ItemVariations.Where(r => r.ItemId == itemId).ExecuteDelete();
@@ -2267,7 +2267,7 @@ public class Item: WorldObject
 		{
 			int itemObjectId = getObjectId();
 			int optionId = option.getId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId && r.OptionId == optionId).ExecuteDelete();
 			
 			Skill skill = option.getSkill();
@@ -2327,7 +2327,7 @@ public class Item: WorldObject
 		try
 		{
 			int itemObjectId = getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId).OrderBy(r => r.Position);
 			foreach (var record in query)
 			{
@@ -2351,7 +2351,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)

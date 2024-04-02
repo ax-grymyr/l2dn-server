@@ -71,7 +71,7 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var announcement = new Db.Announcement
 			{
 				Type = (int)_type,
@@ -95,7 +95,7 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Announcements.Where(a => a.Id == _id)
 				.ExecuteUpdate(s =>
 					s.SetProperty(a => a.Type, (int)_type).SetProperty(a => a.Content, _content)
@@ -113,7 +113,7 @@ public class Announcement: IAnnouncement
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Announcements.Where(a => a.Id == _id).ExecuteDelete();
 		}
 		catch (Exception e)

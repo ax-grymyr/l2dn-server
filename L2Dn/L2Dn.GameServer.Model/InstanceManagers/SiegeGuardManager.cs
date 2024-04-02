@@ -35,7 +35,7 @@ public class SiegeGuardManager
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r => r.IsHired))
 			{
 				int npcId = record.NpcId;
@@ -164,7 +164,7 @@ public class SiegeGuardManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CastleSiegeGuards.Add(new CastleSiegeGuard()
 				{
 					CastleId = (short)castle.getResidenceId(),
@@ -262,7 +262,7 @@ public class SiegeGuardManager
 			int castleId = castle.getResidenceId();
 			bool isHired = castle.getOwnerId() > 0;
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r =>
 				         r.CastleId == castleId && r.IsHired == isHired))
 			{
@@ -295,7 +295,7 @@ public class SiegeGuardManager
 			int y = pos.getY();
 			int z = pos.getZ();
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CastleSiegeGuards.Where(r => r.NpcId == npcId && r.X == x && r.Y == y && r.Z == z).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -313,7 +313,7 @@ public class SiegeGuardManager
 		try
 		{
 			int castleId = castle.getResidenceId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CastleSiegeGuards.Where(r => r.CastleId == castleId && r.IsHired).ExecuteDelete();
 		}
 		catch (Exception e)

@@ -21,7 +21,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
 
     public async Task<AccountInfo?> LoginAsync(string login, string password, string? clientAddress)
     {
-        await using AuthServerDbContext ctx = new();
+        await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
 
         if (_accounts.TryGetValue(login, out AccountInfo? accountInfo))
         {
@@ -90,7 +90,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
 
     public async Task UpdateSelectedGameServerAsync(int accountId, byte serverId)
     {
-        await using AuthServerDbContext ctx = new();
+        await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
         await ctx.Accounts.Where(a => a.Id == accountId)
             .ExecuteUpdateAsync(b =>
                 b.SetProperty(a => a.LastSelectedServerId, serverId));

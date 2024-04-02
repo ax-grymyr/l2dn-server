@@ -132,7 +132,7 @@ public class PurgeRankingManager
 
 						try
 						{
-							using GameServerDbContext ctx = new();
+							using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 							ctx.CharacterPurges.Where(c => c.CharacterId == charId && c.Category == category)
 								.ExecuteDelete();
 						}
@@ -169,7 +169,7 @@ public class PurgeRankingManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			int rank = 1;
 			Map<int, StatSet> rankingInCategory = new();

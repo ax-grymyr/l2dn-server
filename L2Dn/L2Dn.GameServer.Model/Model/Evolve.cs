@@ -210,7 +210,7 @@ public class Evolve
 		// pet control item no longer exists, delete the pet from the db
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemObjectId = removedItem.getObjectId();
 			ctx.Pets.Where(p => p.ItemObjectId == itemObjectId).ExecuteDelete();
 		}

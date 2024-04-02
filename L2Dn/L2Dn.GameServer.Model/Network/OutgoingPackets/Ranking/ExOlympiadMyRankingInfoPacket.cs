@@ -36,7 +36,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 		{
 			// TODO: Move query and store data at RankManager.
 			CharacterClass classId = _player.getBaseClass(); 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query1 = ctx.OlympiadNobles.Where(r => r.Class == classId).OrderByDescending(r => r.OlympiadPoints)
 				.ThenByDescending(r => r.CompetitionsWon).Take(RankManager.PLAYER_LIMIT);
 

@@ -179,7 +179,7 @@ public class CastleManager
 			// else offline-player circlet removal
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int ownerId = member.getObjectId(); 
 				ctx.Items.Where(item => item.OwnerId == ownerId && item.ItemId == circletId).ExecuteDelete();
 			}
@@ -194,7 +194,7 @@ public class CastleManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
 				_castles.put(castle.Id, new Castle(castle.Id));
 

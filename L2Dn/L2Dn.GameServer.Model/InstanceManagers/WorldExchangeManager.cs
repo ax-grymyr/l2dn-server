@@ -174,7 +174,7 @@ public class WorldExchangeManager: DataReaderBase
 		Map<int, Item> itemInstances = new();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbItem record in ctx.Items.Where(i => i.Location == (int)ItemLocation.EXCHANGE))
 			{
 				Item itemInstance = new Item(record);
@@ -203,7 +203,7 @@ public class WorldExchangeManager: DataReaderBase
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (WorldExchangeItem record in ctx.WorldExchangeItems)
 			{
 				bool needChange = false;
@@ -992,7 +992,7 @@ public class WorldExchangeManager: DataReaderBase
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (WorldExchangeHolder holder in _itemBids.values())
 			{
 				if (!holder.hasChanges())
@@ -1033,7 +1033,7 @@ public class WorldExchangeManager: DataReaderBase
 		{
 			WorldExchangeHolder holder = _itemBids.get(worldExchangeId);
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.WorldExchangeItems.Add(new WorldExchangeItem() // TODO: it was REPLACE statement
 			{
 				Id = holder.getWorldExchangeId(),

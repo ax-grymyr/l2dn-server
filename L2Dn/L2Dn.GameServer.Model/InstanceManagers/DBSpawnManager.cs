@@ -59,7 +59,7 @@ public class DBSpawnManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (NpcRespawn record in ctx.NpcRespawns)
 			{
 				int id = record.Id;
@@ -270,7 +270,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Add(new NpcRespawn()
 				{
 					Id = spawn.getId(),
@@ -330,7 +330,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Add(new NpcRespawn()
 				{
 					Id = spawn.getId(),
@@ -379,7 +379,7 @@ public class DBSpawnManager
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -399,7 +399,7 @@ public class DBSpawnManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var entry in _storedInfo)
 			{
 				int npcId = entry.Key;

@@ -92,7 +92,7 @@ public class CursedWeaponsManager: DataReaderBase
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Retrieve the Player from the characters table of the database
 			CursedWeapon cw;
@@ -117,7 +117,7 @@ public class CursedWeaponsManager: DataReaderBase
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// TODO: See comments below...
 			// This entire for loop should NOT be necessary, since it is already handled by
@@ -273,7 +273,7 @@ public class CursedWeaponsManager: DataReaderBase
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CursedWeapons.Where(cw => cw.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)

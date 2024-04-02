@@ -383,7 +383,7 @@ public class MonsterRace
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var records = ctx.DerbyHistory;
 			foreach (MonsterDerbyHistory record in records)
 			{
@@ -407,7 +407,7 @@ public class MonsterRace
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.DerbyHistory.Add(new MonsterDerbyHistory()
 			{
 				RaceId = history.getRaceId(),
@@ -431,7 +431,7 @@ public class MonsterRace
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.DerbyBets.ForEach(bet => setBetOnLane(bet.LaneId, bet.Bet, false));
 		}
 		catch (Exception e)
@@ -449,7 +449,7 @@ public class MonsterRace
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			MonsterDerbyBet? bet = ctx.DerbyBets.SingleOrDefault(b => b.LaneId == lane);
 			if (bet is null)
 			{
@@ -479,7 +479,7 @@ public class MonsterRace
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.DerbyBets.ExecuteUpdate(s => s.SetProperty(bet => bet.Bet, 0));
 		}
 		catch (Exception e)

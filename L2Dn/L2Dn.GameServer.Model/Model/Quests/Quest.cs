@@ -1536,7 +1536,7 @@ public class Quest: AbstractScript, IIdentifiable
 		try
 		{
 			int characterId = player.getObjectId();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Get list of quests owned by the player from database
 			var query = from q in ctx.CharacterQuests
@@ -1624,7 +1624,7 @@ public class Quest: AbstractScript, IIdentifiable
 			int characterId = qs.getPlayer().getObjectId();
 			string questName = qs.getQuestName();
 				
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var record = ctx.CharacterQuests.SingleOrDefault(r =>
 				r.CharacterId == characterId && r.Name == questName && r.Variable == var);
 
@@ -1669,7 +1669,7 @@ public class Quest: AbstractScript, IIdentifiable
 			int characterId = qs.getPlayer().getObjectId();
 			string questName = qs.getQuestName();
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName && r.Variable == var)
 				.ExecuteDelete();
 		}
@@ -1690,7 +1690,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			int characterId = qs.getPlayer().getObjectId();
 			string questName = qs.getQuestName();
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			IQueryable<CharacterQuest> query =
 				ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName);
 

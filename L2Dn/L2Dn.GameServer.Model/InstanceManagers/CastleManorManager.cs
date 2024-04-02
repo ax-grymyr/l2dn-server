@@ -99,7 +99,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			foreach (Castle castle in CastleManager.getInstance().getCastles())
 			{
@@ -369,7 +369,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Delete old data
 				ctx.CastleManorProduction.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
@@ -404,7 +404,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				
 				// Delete old data
 				ctx.CastleManorProcure.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
@@ -437,7 +437,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (SeedProduction sp in items)
 			{
 				int seedId = sp.getId();
@@ -456,7 +456,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CropProcure sp in items)
 			{
 				int seedId = sp.getId();
@@ -526,7 +526,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Delete old seeds
 			ctx.CastleManorProduction.ExecuteDelete();
@@ -603,7 +603,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Delete seeds
 				ctx.CastleManorProduction.Where(p => p.CastleId == castleId).ExecuteDelete();

@@ -95,7 +95,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
     public void LoadServers()
     {
         // Load servers synchronously and test db connection at the same time.
-        using AuthServerDbContext context = new();
+        using AuthServerDbContext context = DbFactory.Instance.CreateDbContext();
 
         _servers = context.GameServers.AsNoTracking()
             .Select(server => new GameServerInfo

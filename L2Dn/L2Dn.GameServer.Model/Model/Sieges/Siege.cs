@@ -731,7 +731,7 @@ public class Siege: Siegable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
 			ctx.CastleSiegeClans.Where(r => r.CastleId == castleId).ExecuteDelete();
 			
@@ -756,7 +756,7 @@ public class Siege: Siegable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
 			ctx.CastleSiegeClans.Where(r => r.CastleId == castleId && r.Type == 2).ExecuteDelete();
 			
@@ -960,7 +960,7 @@ public class Siege: Siegable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
 			ctx.CastleSiegeClans.Where(r => r.CastleId == castleId && r.ClanId == clanId).ExecuteDelete();
 			
@@ -1233,7 +1233,7 @@ public class Siege: Siegable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
 			
      		getAttackerClans().Clear();
@@ -1342,7 +1342,7 @@ public class Siege: Siegable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
 			var record = ctx.Castles.SingleOrDefault(r => r.Id == castleId);
 			if (record is null)
@@ -1392,7 +1392,7 @@ public class Siege: Siegable
 			
 			if (!isUpdateRegistration)
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CastleSiegeClans.Add(new DbCastleSiegeClan()
 				{
 					ClanId = clan.getId(),
@@ -1403,7 +1403,7 @@ public class Siege: Siegable
 			}
 			else
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = _castle.getResidenceId();
 				int clanId = clan.getId();
 

@@ -184,7 +184,7 @@ public class FortSiegeManager
 		bool register = false;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int clanId = clan.getId();
 			register = ctx.FortSiegeClans.Any(s => s.FortId == fortid && s.ClanId == clanId);
 		}

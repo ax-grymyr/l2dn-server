@@ -194,7 +194,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = _castle.getResidenceId();
 				var record = ctx.CastleFunctions.SingleOrDefault(r => r.CastleId == castleId && r.Type == _type);
 				if (record is null)
@@ -349,7 +349,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.Castles.Where(r => r.Id == castleId).ExecuteUpdate(s => s.SetProperty(r => r.Treasury, _treasury));
 		}
@@ -627,7 +627,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 
 			var record = ctx.Castles.SingleOrDefault(r => r.Id == castleId);
@@ -660,7 +660,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			var query = ctx.CastleFunctions.Where(r => r.CastleId == castleId);
 			foreach (var record in query)
@@ -685,7 +685,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		_function.remove(functionType);
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.CastleFunctions.Where(r => r.CastleId == castleId && r.Type == functionType).ExecuteDelete();
 		}
@@ -753,7 +753,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			var query = ctx.CastleDoorUpgrades.Where(r => r.CastleId == castleId);
 			foreach (var record in query)
@@ -777,7 +777,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.CastleDoorUpgrades.Where(r => r.CastleId == castleId).ExecuteDelete();
 		}
@@ -802,7 +802,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var record = ctx.CastleDoorUpgrades.SingleOrDefault(r => r.DoorId == doorId);
 				if (record is null)
 				{
@@ -836,7 +836,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 
 			// Need to remove has castle flag from clan_data, should be checked from castle table.
@@ -1031,7 +1031,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.Castles.Where(r => r.Id == castleId)
 				.ExecuteUpdate(s => s.SetProperty(r => r.ShowNpcCrest, _showNpcCrest));
@@ -1075,7 +1075,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.Castles.Where(r => r.Id == castleId)
 				.ExecuteUpdate(s => s.SetProperty(r => r.TicketBuyCount, _ticketBuyCount));
@@ -1098,7 +1098,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = getResidenceId();
 				var record = ctx.CastleTrapUpgrades.SingleOrDefault(r => r.CastleId == castleId && r.TowerIndex == towerIndex);
 				if (record is null)
@@ -1133,7 +1133,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.CastleTrapUpgrades.Where(r => r.CastleId == castleId).ExecuteDelete();
 		}
@@ -1218,7 +1218,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
 			ctx.Castles.Where(r => r.Id == castleId)
 				.ExecuteUpdate(s => s.SetProperty(r => r.Side, side));

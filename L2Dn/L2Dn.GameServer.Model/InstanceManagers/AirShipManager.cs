@@ -136,7 +136,7 @@ public class AirShipManager
 			
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AirShips.Add(new DbAirShip()
 				{
 					OwnerId = ownerId,
@@ -227,7 +227,7 @@ public class AirShipManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AirShips.ForEach(ship =>
 			{
 				StatSet info = new();
@@ -253,7 +253,7 @@ public class AirShipManager
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AirShips.Where(ship => ship.OwnerId == ownerId)
 				.ExecuteUpdate(s => s.SetProperty(ship => ship.Fuel, info.getInt("fuel")));
 		}

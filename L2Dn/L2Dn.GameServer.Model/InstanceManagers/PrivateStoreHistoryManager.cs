@@ -33,7 +33,7 @@ public class PrivateStoreHistoryManager
 		_items.Clear();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ItemTransactionHistory record in ctx.ItemTransactionHistory)
 			{
 				ItemHistoryTransaction item = new ItemHistoryTransaction(record);
@@ -53,7 +53,7 @@ public class PrivateStoreHistoryManager
 		_items.Clear();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemTransactionHistory.ExecuteDelete();
 		}
 		catch (Exception e)
@@ -237,7 +237,7 @@ public class PrivateStoreHistoryManager
 		{
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.ItemTransactionHistory.Add(new ItemTransactionHistory()
 				{
 					CreatedTime = _transactionDate,

@@ -37,7 +37,7 @@ public class ClanVariables: AbstractVariables<DbClanVariable>
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Clear previous entries.
 			GetQuery(ctx).Where(r => EF.Functions.Like(r.Name, "CONTRIBUTION_WEEKLY_%")).ExecuteDelete();

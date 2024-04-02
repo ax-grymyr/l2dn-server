@@ -106,7 +106,7 @@ public class BotReportTable
 				// Ignore.
 			}
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var reports = ctx.BotReports;
 			foreach (var report in reports)
 			{
@@ -156,7 +156,7 @@ public class BotReportTable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.BotReports.ExecuteDelete();
 			foreach (var entrySet in _reports)
 			{

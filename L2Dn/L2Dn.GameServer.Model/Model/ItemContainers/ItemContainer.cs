@@ -609,7 +609,7 @@ public abstract class ItemContainer
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int ownerId = getOwnerId();
 			ItemLocation location = getBaseLocation(); 
 			var query = ctx.Items.Where(r => r.OwnerId == ownerId && r.Location == (int)location);

@@ -46,7 +46,7 @@ public class RevengeHistoryManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CharacterRevenge record in ctx.CharacterRevenges)
 			{
 				int charId = record.CharacterId;
@@ -106,7 +106,7 @@ public class RevengeHistoryManager
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterRevenges.ExecuteDelete(); // TODO: delete everything and insert the data again is not a good idea
 			
 			foreach (var entry in REVENGE_HISTORY)

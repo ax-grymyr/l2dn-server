@@ -181,7 +181,7 @@ public class DailyTaskManager
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// TODO: possibly the expression was incorrect
 			
@@ -221,7 +221,7 @@ public class DailyTaskManager
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			ctx.CharacterSubClasses.ExecuteUpdate(s =>
 				s.SetProperty(c => c.VitalityPoints, PlayerStat.MAX_VITALITY_POINTS));
@@ -256,7 +256,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (int skillId in RESET_SKILLS)
 				ctx.CharacterSkillReuses.Where(s => s.SkillId == skillId).ExecuteDelete(); // TODO: delete all at once
 		}
@@ -295,7 +295,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (int itemId in RESET_ITEMS)
 				ctx.CharacterItemReuses.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
@@ -331,7 +331,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.CLAN_DONATION_POINTS).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -359,7 +359,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.WORLD_CHAT_VARIABLE_NAME)
 				.ExecuteUpdate(s => s.SetProperty(v => v.Value, "0"));
 		}
@@ -383,7 +383,7 @@ public class DailyTaskManager
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterRecoBonuses.ExecuteUpdate(s =>
 				s.SetProperty(c => c.RecLeft, 0)
 					.SetProperty(c => c.RecHave, c => c.RecHave >= 20 ? c.RecHave - 20 : 0));
@@ -409,7 +409,7 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == "TRAINING_CAMP_DURATION").ExecuteDelete();
 			}
 			catch (Exception e)
@@ -468,7 +468,7 @@ public class DailyTaskManager
 				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
 				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
 				
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
 					.ExecuteDelete();
 			}
@@ -507,7 +507,7 @@ public class DailyTaskManager
 				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
 				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
 				
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
 					.ExecuteDelete();
 			}
@@ -536,7 +536,7 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == "ATTENDANCE_DATE").ExecuteDelete();
 			}
 			catch (Exception e)
@@ -558,7 +558,7 @@ public class DailyTaskManager
 			// Update data for offline players.
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == "ATTENDANCE_DATE").ExecuteDelete();
 			}
 			catch (Exception e)
@@ -585,7 +585,7 @@ public class DailyTaskManager
 			try
 			{
 				string name = AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -611,7 +611,7 @@ public class DailyTaskManager
 			try 
 			{
 				string name = AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -637,7 +637,7 @@ public class DailyTaskManager
 			try
 			{
 				string name = AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == name).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -659,7 +659,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.HuntPasses.ExecuteDelete();
 		}
 		catch (Exception e)
@@ -680,7 +680,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.RESURRECT_BY_PAYMENT_COUNT).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -717,7 +717,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterVariables.Where(v => v.Name == PlayerVariables.DYE_POTENTIAL_DAILY_COUNT).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -740,7 +740,7 @@ public class DailyTaskManager
 		// Update data for offline players.
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterVariables.Where(v => v.Name == "MORGOS_MILITARY_FREE").ExecuteDelete();
 		}
 		catch (Exception e)

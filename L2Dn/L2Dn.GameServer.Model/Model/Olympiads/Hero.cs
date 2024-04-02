@@ -76,7 +76,7 @@ public class Hero
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			var query1 =
 				from h in ctx.Heroes
@@ -200,7 +200,7 @@ public class Hero
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			string? message = ctx.Heroes.Where(r => r.CharacterId == charId).Select(r => r.Message).SingleOrDefault();
 			
 			if (message != null)
@@ -218,7 +218,7 @@ public class Hero
 		int diaryentries = 0;
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.HeroesDiary.Where(r => r.CharacterId == charId).OrderBy(r => r.Time);
 			foreach (var record in query)
 			{
@@ -277,7 +277,7 @@ public class Hero
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.OlympiadFights
 				.Where(r => (r.Character1Id == charId || r.Character2Id == charId) && r.Start < data)
 				.OrderBy(r => r.Start);
@@ -672,7 +672,7 @@ public class Hero
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (setDefault)
 			{
 				ctx.Heroes.ExecuteUpdate(s => s.SetProperty(r => r.Played, false));
@@ -768,7 +768,7 @@ public class Hero
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.HeroesDiary.Add(new DbHeroDiary()
 			{
 				CharacterId = charId,
@@ -808,7 +808,7 @@ public class Hero
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			string message = HERO_MESSAGE.get(charId);
 			ctx.Heroes.Where(r => r.CharacterId == charId).ExecuteUpdate(s => s.SetProperty(r => r.Message, message));
 		}
@@ -822,7 +822,7 @@ public class Hero
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			ctx.Items.Where(r => new List<int>()
 				{

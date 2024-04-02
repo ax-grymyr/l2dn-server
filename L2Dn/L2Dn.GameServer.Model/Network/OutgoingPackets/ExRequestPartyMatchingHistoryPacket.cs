@@ -15,7 +15,7 @@ public readonly struct ExRequestPartyMatchingHistoryPacket: IOutgoingPacket
         writer.WriteInt32(100); // Maximum size according to retail.
         try
         {
-            using GameServerDbContext ctx = new();
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             foreach (var record in ctx.PartyMatchingHistory.OrderByDescending(r => r.Id).Take(100))
             {
                 writer.WriteString(record.Title);

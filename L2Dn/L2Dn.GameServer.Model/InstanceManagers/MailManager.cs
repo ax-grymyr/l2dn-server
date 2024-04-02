@@ -29,7 +29,7 @@ public class MailManager
 		int count = 0;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbMailMessage record in ctx.MailMessages.OrderBy(m=>m.ExpirationTime))
 			{
 				count++;
@@ -160,7 +160,7 @@ public class MailManager
 		_messages.put(msg.getId(), msg);
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Add(new DbMailMessage()
 			{
 				MessageId = msg.getId(),
@@ -204,7 +204,7 @@ public class MailManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsUnread, false));
 		}
 		catch (Exception e)
@@ -217,7 +217,7 @@ public class MailManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedBySender, true));
 		}
 		catch (Exception e)
@@ -230,7 +230,7 @@ public class MailManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedByReceiver, true));
 		}
 		catch (Exception e)
@@ -243,7 +243,7 @@ public class MailManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.HasAttachments, false));
 		}
 		catch (Exception e)
@@ -256,7 +256,7 @@ public class MailManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteDelete();
 		}
 		catch (Exception e)

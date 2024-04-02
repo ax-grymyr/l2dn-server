@@ -67,7 +67,7 @@ public class ShortCuts : IRestorable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			int classIndex = _owner.getClassIndex();
 			int slot = shortcut.getSlot();
@@ -131,7 +131,7 @@ public class ShortCuts : IRestorable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			int slot = shortcut.getSlot();
 			int page = shortcut.getPage();
@@ -151,7 +151,7 @@ public class ShortCuts : IRestorable
 		_shortCuts.clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			int classIndex = _owner.getClassIndex();
 			var query = ctx.CharacterShortCuts.Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex);

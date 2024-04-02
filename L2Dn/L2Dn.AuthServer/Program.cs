@@ -1,6 +1,5 @@
 ﻿using L2Dn.AuthServer;
 using L2Dn.AuthServer.Configuration;
-using L2Dn.AuthServer.Db;
 using L2Dn.AuthServer.Model;
 using L2Dn.Utilities;
 using NLog;
@@ -18,7 +17,7 @@ try
     Config.Instance.Logging.ConfigureLogger();
     
     logger.Info("Test database connection...");
-    AuthServerDbContext.SetConfig(Config.Instance.Database);
+    DbFactory.Initialize(Config.Instance.Database);
     GameServerManager.Instance.LoadServers();
 
     authServer.Start();

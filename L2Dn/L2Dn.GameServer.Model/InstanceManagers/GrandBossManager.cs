@@ -31,7 +31,7 @@ public class GrandBossManager: IStorable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			// Read all info from DB, and store it for AI to read and decide what to do faster than accessing DB in real time
 			foreach (DbGrandBoss boss in ctx.GrandBosses)
 			{
@@ -124,7 +124,7 @@ public class GrandBossManager: IStorable
 		{
 			const string UPDATE_GRAND_BOSS_DATA = "UPDATE grandboss_data set loc_x = ?, loc_y = ?, loc_z = ?, heading = ?, respawn_time = ?, currentHP = ?, currentMP = ?, status = ? where boss_id = ?";
 
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var e in _storedInfo)
 			{
 				int bossId = e.Key;
@@ -160,7 +160,7 @@ public class GrandBossManager: IStorable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			GrandBoss boss = _bosses.get(bossId);
 			StatSet info = _storedInfo.get(bossId);
 			int status = _bossStatus.get(bossId);

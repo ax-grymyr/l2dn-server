@@ -854,7 +854,7 @@ public class FortSiege: Siegable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = _fort.getResidenceId();
 			ctx.FortSiegeClans.Where(r => r.FortId == fortId).ExecuteDelete();
 			
@@ -1136,7 +1136,7 @@ public class FortSiege: Siegable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = _fort.getResidenceId();
 			var query = ctx.FortSiegeClans.Where(r => r.FortId == fortId);
 			if (clanId != null)
@@ -1377,7 +1377,7 @@ public class FortSiege: Siegable
 		_attackerClans.clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = _fort.getResidenceId();
 			var query = ctx.FortSiegeClans.Where(r => r.FortId == fortId).Select(r => r.ClanId);
 
@@ -1434,7 +1434,7 @@ public class FortSiege: Siegable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = _fort.getResidenceId();
 			DateTime? siegeDate = _fort.getSiegeDate();
 			ctx.Forts.Where(r => r.Id == fortId)
@@ -1459,7 +1459,7 @@ public class FortSiege: Siegable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.FortSiegeClans.Add(new FortSiegeClan()
 			{
 				FortId = (short)_fort.getResidenceId(),
@@ -1544,7 +1544,7 @@ public class FortSiege: Siegable
 		_siegeGuards.Clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = _fort.getResidenceId();
 			var query = ctx.FortSiegeGuards.Where(r => r.FortId == fortId);
 			foreach (var record in query)

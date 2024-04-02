@@ -56,7 +56,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 			
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.GlobalTasks.Where(r => r.Id == id)
 					.ExecuteUpdate(s => s.SetProperty(r => r.LastRun, lastActivation));
 			}
@@ -141,7 +141,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var record in ctx.GlobalTasks)
 			{
 				Task task = _tasks.get(record.TaskName.Trim().toLowerCase().GetHashCode());
@@ -274,7 +274,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (!ctx.GlobalTasks.Any(r => r.TaskName == task))
 			{
 				ctx.GlobalTasks.Add(new DbGlobalTask()
@@ -308,7 +308,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.GlobalTasks.Add(new DbGlobalTask()
 			{
 				TaskName = task,

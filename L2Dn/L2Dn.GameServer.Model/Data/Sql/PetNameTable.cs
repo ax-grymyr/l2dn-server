@@ -20,7 +20,7 @@ public class PetNameTable
 		{
 			int itemId = PetDataTable.getInstance().getPetItemsByNpc(petNpcId);
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			return (from pet in ctx.Pets
 				from item in ctx.Items
 				where pet.ItemObjectId == item.ObjectId && item.ItemId == itemId && pet.Name == name

@@ -190,7 +190,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			try
 			{
 				int fortId = _fort.getResidenceId();
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var record = ctx.FortFunctions.SingleOrDefault(r => r.FortId == fortId && r.Type == _type);
 				if (record is null)
 				{
@@ -470,7 +470,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			ctx.Forts.Where(r => r.Id == fortId).ExecuteUpdate(s => s.SetProperty(r => r.SupplyLevel, _supplyLvL));
 		}
@@ -576,7 +576,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			int? ownerId = null;
 			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
@@ -641,7 +641,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortFunctions.Where(r => r.FortId == fortId);
 			foreach (var record in query)
@@ -664,7 +664,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		_function.remove(functionType);
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			ctx.FortFunctions.Where(r => r.FortId == fortId && r.Type == functionType).ExecuteDelete();
 		}
@@ -755,7 +755,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortDoorUpgrades.Where(r => r.FortId == fortId);
 			foreach (var record in query)
@@ -773,7 +773,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			ctx.FortDoorUpgrades.Where(r => r.FortId == fortId).ExecuteDelete();
 		}
@@ -787,7 +787,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.FortDoorUpgrades.Add(new DbFortDoorUpgrade()
 			{
 				DoorId = doorId,
@@ -821,7 +821,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
 			if (record == null)
@@ -1037,7 +1037,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		_castleId = castleId;
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
 			if (record == null)
@@ -1181,7 +1181,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 0);
 			foreach (var record in query)
@@ -1207,7 +1207,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		_siegeNpcs.clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 2);
 			foreach (var record in query)
@@ -1231,7 +1231,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		_npcCommanders.clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 1);
 			foreach (var record in query)
@@ -1258,7 +1258,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		_availableCastles.clear();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
 			var query = ctx.FortSpawns.Where(r => r.FortId == fortId && r.Type == 3);
 			foreach (var record in query)

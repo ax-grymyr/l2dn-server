@@ -221,7 +221,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int leaderId = getLeaderId();
 				ctx.Characters.Where(c => c.Id == leaderId).ExecuteUpdate(s => s.SetProperty(c => c.ClanPrivileges, 0));
 			}
@@ -260,7 +260,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int leaderId = getLeaderId();
 				ctx.Characters.Where(c => c.Id == leaderId)
 					.ExecuteUpdate(s => s.SetProperty(c => c.ClanPrivileges, (int)ClanPrivilege.All));
@@ -860,7 +860,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId)
 				.ExecuteUpdate(s => s.SetProperty(c => c.BloodAllianceCount, _bloodAllianceCount));
 		}
@@ -903,7 +903,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId)
 				.ExecuteUpdate(s => s.SetProperty(c => c.BloodOathCount, _bloodOathCount));
 		}
@@ -931,7 +931,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.Clan? clan = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
 			if (clan is null)
 			{
@@ -978,7 +978,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Add(new Db.Clan()
 			{
 				Id = _clanId,
@@ -1012,7 +1012,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = member.getObjectId();
 			Character? record = ctx.Characters.SingleOrDefault(c => c.Id == characterId);
 			if (record is not null)
@@ -1042,7 +1042,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.Clan? record = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
 			if (record is not null)
 			{
@@ -1105,7 +1105,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ClanNotice? notice = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
 			if (notice is not null)
 			{
@@ -1134,7 +1134,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ClanNotice? record = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
 			if (record is null)
 			{
@@ -1194,7 +1194,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ClanSkill clanSkill in ctx.ClanSkills.Where(c => c.ClanId == _clanId))
 			{
 				int id = clanSkill.SkillId;
@@ -1308,7 +1308,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				if (oldSkill != null)
 				{
 					int skillId = oldSkill.getId();
@@ -1712,7 +1712,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ClanSubPledge record in ctx.ClanSubPledges.Where(c => c.ClanId == _clanId))
 			{
 				int id = record.SubPledgeId;
@@ -1806,7 +1806,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ClanSubPledges.Add(new ClanSubPledge()
 			{
 				ClanId = _clanId,
@@ -1889,7 +1889,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int leaderId = getSubPledge(pledgeType).getLeaderId();
 			string name = getSubPledge(pledgeType).getName();
 			ctx.ClanSubPledges.Where(r => r.ClanId == _clanId && r.SubPledgeId == pledgeType)
@@ -1905,7 +1905,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var record in ctx.ClanPrivileges.Where(c => c.ClanId == _clanId))
 			{
 				int rank = record.Rank;
@@ -1947,7 +1947,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ClanPrivileges? record =
 					ctx.ClanPrivileges.SingleOrDefault(r => r.ClanId == _clanId && r.Rank == rank && r.Party == 0);
 
@@ -1987,7 +1987,7 @@ public class Clan: IIdentifiable, INamable
 			
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ClanPrivileges? record =
 					ctx.ClanPrivileges.SingleOrDefault(r => r.ClanId == _clanId && r.Rank == rank && r.Party == 0);
 
@@ -2115,7 +2115,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.AuctionBidAt, id));
 			}
 			catch (Exception e)
@@ -2561,7 +2561,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.Level, level));
 		}
 		catch (Exception e)
@@ -2606,7 +2606,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.CrestId, crestId));
 		}
 		catch (Exception e)
@@ -2634,7 +2634,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = onlyThisClan ? ctx.Clans.Where(c => c.Id == _clanId) : ctx.Clans.Where(c => c.AllyId == _allyId);
 			query.ExecuteUpdate(s => s.SetProperty(c => c.AllyCrestId, crestId));
 		}
@@ -2679,7 +2679,7 @@ public class Clan: IIdentifiable, INamable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.LargeCrestId, crestId));
 		}
 		catch (Exception e)

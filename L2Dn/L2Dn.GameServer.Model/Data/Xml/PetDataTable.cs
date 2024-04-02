@@ -40,7 +40,7 @@ public class PetDataTable: DataReaderBase
 		
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var pets = ctx.Pets.Select(pet => new { pet.ItemObjectId, pet.Name });
 			foreach (var pet in pets)
 			{

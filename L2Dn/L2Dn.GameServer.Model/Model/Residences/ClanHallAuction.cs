@@ -31,7 +31,7 @@ public class ClanHallAuction
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.ClanHallBidders.Where(r => r.ClanHallId == _clanHallId);
 			foreach (var record in query)
 			{
@@ -72,7 +72,7 @@ public class ClanHallAuction
 
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ClanHallBidders.Add(new DbClanHallBidder()
 			{
 				ClanHallId = _clanHallId,
@@ -96,7 +96,7 @@ public class ClanHallAuction
 		getBids().remove(clan.getId());
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int clanId = clan.getId();
 			ctx.ClanHallBidders.Where(c => c.ClanId == clanId).ExecuteDelete();
 		}
@@ -146,7 +146,7 @@ public class ClanHallAuction
 			
 			try 
 			{
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.ClanHallBidders.Where(r => r.ClanHallId == _clanHallId).ExecuteDelete();
 			}
 			catch (Exception e)

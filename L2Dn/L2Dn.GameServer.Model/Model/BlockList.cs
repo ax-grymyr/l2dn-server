@@ -50,7 +50,7 @@ public class BlockList
 		Set<int> list = new();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterFriends.Where(r => r.CharacterId == objId && r.Relation == 1);
 			foreach (var record in query)
 			{
@@ -75,7 +75,7 @@ public class BlockList
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (state) // add
 			{
 				ctx.CharacterFriends.Add(new CharacterFriend()

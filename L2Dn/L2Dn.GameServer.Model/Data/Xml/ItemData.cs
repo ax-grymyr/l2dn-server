@@ -1527,7 +1527,7 @@ public class ItemData: DataReaderBase
 			{
 				try
 				{
-					using GameServerDbContext ctx = new();
+					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 					int itemId = item.getObjectId();
 					// Delete the pet in db
 					ctx.Pets.Where(pet => pet.ItemObjectId == itemId).ExecuteDelete();

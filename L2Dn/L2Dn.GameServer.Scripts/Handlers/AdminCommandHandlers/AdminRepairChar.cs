@@ -43,7 +43,7 @@ public class AdminRepairChar: IAdminCommandHandler
 		try
 		{
 			string charName = parts[1];
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			int? charId = ctx.Characters.Where(c => c.Name == charName).Select(c => (int?)c.Id).FirstOrDefault();
 			if (charId is null)

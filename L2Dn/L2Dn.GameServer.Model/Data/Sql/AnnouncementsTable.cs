@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Announcements;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using Announcement = L2Dn.GameServer.Model.Announcements.Announcement;
 
@@ -29,8 +30,8 @@ public class AnnouncementsTable
 		_announcements.clear();
 		try
 		{
-			using GameServerDbContext ctx = new();
-			var announcements = ctx.Announcements;
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+			var announcements = ctx.Announcements.AsNoTracking();
 			foreach (var announcement in announcements)
 			{
 				AnnouncementType type = (AnnouncementType)announcement.Type;
@@ -54,6 +55,7 @@ public class AnnouncementsTable
 						continue;
 					}
 				}
+				
 				_announcements.put(announce.getId(), announce);
 			}
 		}

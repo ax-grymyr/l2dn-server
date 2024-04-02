@@ -50,7 +50,7 @@ public class CrestTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var crests = ctx.Crests.OrderByDescending(c => c.Id);
 			foreach (var crest in crests)
 			{
@@ -131,7 +131,7 @@ public class CrestTable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Crest crest = new Crest(_nextId.getAndIncrement(), data, crestType);
 			ctx.Crests.Add(new()
 			{
@@ -168,7 +168,7 @@ public class CrestTable
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Crests.Where(c => c.Id == crestId).ExecuteDelete();
 		}
 		catch (Exception e)

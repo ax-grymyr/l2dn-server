@@ -46,7 +46,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -59,7 +59,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (PetEvolve record in ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId))
 			{
 				setEvolveLevel((EvolveLevel)record.Level);
@@ -76,7 +76,7 @@ public class Pet: Summon
 		deletePetEvolved();
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			PetEvolve? record = ctx.PetEvolves.SingleOrDefault(r =>
 				r.ItemObjectId == controlItemObjId && r.Index == index && r.Level == evolveLevel);
 
@@ -106,7 +106,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DbPetSkill? record = ctx.PetSkills.SingleOrDefault(r =>
 				r.PetItemObjectId == _controlObjectId && r.SkillId == skillId && r.SkillLevel == skillLevel);
 
@@ -133,7 +133,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPetSkill record in ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId))
 			{
 				Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
@@ -867,7 +867,7 @@ public class Pet: Summon
 		// pet control item no longer exists, delete the pet from the db
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Pets.Where(r => r.ItemObjectId == _controlObjectId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -922,7 +922,7 @@ public class Pet: Summon
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int controlObjectId = control.getObjectId();
 
 			Pet pet;
@@ -1021,7 +1021,7 @@ public class Pet: Summon
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == _controlObjectId);
 			if (record is null)
 			{
@@ -1081,7 +1081,7 @@ public class Pet: Summon
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all current stored effects for summon to avoid dupe
 			ctx.PetSkillReuses.Where(r => r.PetItemObjectId == _controlObjectId).ExecuteDelete();
@@ -1162,7 +1162,7 @@ public class Pet: Summon
 			const String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
 			const String DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			if (!SummonEffectTable.getInstance().getPetEffects().containsKey(getControlObjectId()))
 			{

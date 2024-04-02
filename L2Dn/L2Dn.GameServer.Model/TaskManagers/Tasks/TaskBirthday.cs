@@ -47,7 +47,7 @@ public class TaskBirthday: Task
 			// If character birthday is 29-Feb and year isn't leap, send gift on 28-feb
 			bool include29February = day == 228 && DateTime.IsLeapYear(DateTime.Today.Year);
 			
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters.Where(r => r.BirthDay == day || (include29February && r.BirthDay == 229)).Select(
 				r => new
 				{

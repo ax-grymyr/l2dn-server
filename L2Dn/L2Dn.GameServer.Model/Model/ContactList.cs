@@ -39,7 +39,7 @@ public class ContactList
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.getObjectId();
 			var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
 			foreach (var contactId in query)
@@ -100,7 +100,7 @@ public class ContactList
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterContacts.Add(new DbCharacterContact()
 			{
 				CharacterId = _player.getObjectId(),
@@ -140,7 +140,7 @@ public class ContactList
 		
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.getObjectId();
 			ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
 			

@@ -15,6 +15,9 @@ try
     logger.Info("Initialize logger...");
     ServerConfig.Instance.Logging.ConfigureLogger();
 
+    logger.Info("Initialize database factory...");
+    DbFactory.Initialize(ServerConfig.Instance.Database);
+
     gameServer.Start();
 }
 catch (Exception exception)

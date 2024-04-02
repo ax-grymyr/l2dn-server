@@ -26,7 +26,7 @@ public class ItemVariables: AbstractVariables<DbItemVariable>
 		// Restore previous variables.
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			return ctx.ItemVariables.Any(r => r.ItemId == objectId);
 		}
 		catch (Exception e)

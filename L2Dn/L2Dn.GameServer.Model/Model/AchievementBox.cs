@@ -80,7 +80,7 @@ public class AchievementBox
 		refreshPvpEndDate();
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record != null)
@@ -137,7 +137,7 @@ public class AchievementBox
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AchievementBoxes.Add(new DbAchievementBox()
 			{
 				CharacterId = _owner.getObjectId(),
@@ -160,7 +160,7 @@ public class AchievementBox
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.getObjectId();
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record is null)

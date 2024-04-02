@@ -112,7 +112,7 @@ public abstract class AbstractResidence: INamable
 	{
 		try
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId);
 			foreach (var record in query)
 			{
@@ -148,7 +148,7 @@ public abstract class AbstractResidence: INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int funcId = func.getId();
 			var record = ctx.ResidenceFunctions.SingleOrDefault(r =>
 				r.ResidenceId == _residenceId && r.Id == funcId);
@@ -187,7 +187,7 @@ public abstract class AbstractResidence: INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int funcId = func.getId();
 			ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId && r.Id == funcId).ExecuteDelete();
 		}
@@ -209,7 +209,7 @@ public abstract class AbstractResidence: INamable
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ResidenceFunctions.Where(r => r.ResidenceId == _residenceId).ExecuteDelete();
 		}
 		catch (Exception e)

@@ -28,7 +28,7 @@ public class MentorManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CharacterMentee mentee in ctx.CharacterMentees)
 			{
 				addMentor(mentee.MentorId, mentee.CharacterId);
@@ -49,7 +49,7 @@ public class MentorManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -66,7 +66,7 @@ public class MentorManager
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
 		}
 		catch (Exception e)

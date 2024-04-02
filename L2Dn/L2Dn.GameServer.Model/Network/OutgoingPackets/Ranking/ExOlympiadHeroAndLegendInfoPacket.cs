@@ -21,7 +21,7 @@ public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 			try
 			{
 				// TODO: Move query and store data at RankManager.
-				using GameServerDbContext ctx = new();
+				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var query = (from c in ctx.Characters
 					from h in ctx.Heroes
 					from op in ctx.OlympiadNoblesEom

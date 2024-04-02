@@ -225,7 +225,7 @@ public class ClanMember
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			ctx.Characters.Where(c => c.Id == characterId)
 				.ExecuteUpdate(s => s.SetProperty(c => c.SubPledge, _pledgeType));
@@ -270,7 +270,7 @@ public class ClanMember
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			ctx.Characters.Where(c => c.Id == characterId)
 				.ExecuteUpdate(s => s.SetProperty(c => c.PowerGrade, _powerGrade));
@@ -783,7 +783,7 @@ public class ClanMember
 	{
 		try 
 		{
-			using GameServerDbContext ctx = new();
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
 			ctx.Characters.Where(c => c.Id == characterId)
 				.ExecuteUpdate(s =>
