@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
@@ -90,23 +89,23 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 
 	private readonly int _playKey1;
 	private readonly string _accountName;
-	private readonly int _activeId;
+	private readonly int _activeIndex;
 	private readonly ImmutableArray<CharSelectInfoPackage> _characterPackages;
 
 	public CharacterListPacket(int playKey1, string accountName, ImmutableArray<CharSelectInfoPackage> characters,
-		int activeId = -1)
+		int activeIndex)
 	{
 		_playKey1 = playKey1;
 		_accountName = accountName;
 		_characterPackages = characters;
-		_activeId = activeId;
+		_activeIndex = activeIndex;
 	}
 
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTION_INFO);
 		
-		int size = _characterPackages.Length;
+		int size = _characterPackages.IsDefaultOrEmpty ? 0 : _characterPackages.Length;
 		writer.WriteInt32(size); // Created character count
 		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
 		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
@@ -115,9 +114,12 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		writer.WriteByte(0); // Gift message for inactive accounts // 152
 		writer.WriteByte(0); // Balthus Knights, if 1 suggests premium account
 		
+		if (size == 0)
+			return;
+        
 		DateTime? lastAccess = default;
-		int activeId = _activeId;
-		if (activeId == -1)
+		int activeId = _activeIndex;
+		if (activeId < 0 || activeId >= _characterPackages.Length)
 		{
 			for (int i = 0; i < size; i++)
 			{
@@ -169,14 +171,12 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(0);
 			writer.WriteInt32(0); // Ertheia
 			writer.WriteInt32(0); // Ertheia
+			
 			foreach (int slot in PAPERDOLL_ORDER)
-			{
 				writer.WriteInt32(charInfoPackage.getPaperdollItemId(slot));
-			}
+
 			foreach (int slot in PAPERDOLL_ORDER_VISUAL_ID)
-			{
 				writer.WriteInt32(charInfoPackage.getPaperdollItemVisualId(slot));
-			}
 			
 			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_CHEST)); // Upper Body enchant level
 			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_LEGS)); // Lower Body enchant level
@@ -188,12 +188,29 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(charInfoPackage.getFace());
 			writer.WriteDouble(charInfoPackage.getMaxHp()); // Maximum HP
 			writer.WriteDouble(charInfoPackage.getMaxMp()); // Maximum MP
-			writer.WriteInt32(charInfoPackage.getDeleteTimer() != null ? (int)(charInfoPackage.getDeleteTimer().Value - DateTime.UtcNow).TotalSeconds : 0);
+
+			DateTime? deleteTime = charInfoPackage.getDeleteTimer();
+			if (deleteTime != null)
+				writer.WriteInt32((int)(deleteTime.Value - DateTime.UtcNow).TotalSeconds);
+			else
+				writer.WriteInt32(0);
+			
 			writer.WriteInt32((int)charInfoPackage.getClassId());
 			writer.WriteInt32(i == activeId);
 			writer.WriteByte((byte)(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND) > 127 ? 127 : charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND)));
-			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption1Id() : 0);
-			writer.WriteInt32(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption2Id() : 0);
+
+			VariationInstance? augmentation = charInfoPackage.getAugmentation();
+			if (augmentation != null)
+			{
+				writer.WriteInt32(augmentation.getOption1Id());
+				writer.WriteInt32(augmentation.getOption2Id());
+			}
+			else
+			{
+				writer.WriteInt32(0);
+				writer.WriteInt32(0);
+			}
+
 			writer.WriteInt32(0); // Transformation: Currently on retail when you are on character select you don't see your transformation.
 			writer.WriteInt32(0); // Pet NpcId
 			writer.WriteInt32(0); // Pet level

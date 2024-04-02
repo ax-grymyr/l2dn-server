@@ -49,8 +49,10 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
 
                 // Load characters
                 session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
+
+                CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
+                    session.SelectedCharacterIndex);
                 
-                CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
                 connection.Send(ref characterListPacket);
                 return ValueTask.CompletedTask;
             }

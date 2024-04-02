@@ -15,6 +15,7 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     
     public GameSessionState State { get; set; } = GameSessionState.ProtocolVersion;
     public ServerConfig Config => ServerConfig.Instance;
+    
     public byte[]? EncryptionKey => encryptionKey;
     public int PlayKey1 { get; set; }
     public int AccountId { get; set; }
@@ -22,6 +23,8 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public int ProtocolVersion { get; set; }
     public bool IsProtocolOk { get; set; }
     public ImmutableArray<CharSelectInfoPackage> Characters { get; set; } = ImmutableArray<CharSelectInfoPackage>.Empty;
+    public int SelectedCharacterIndex { get; set; } = -1;
+    
     public Player? Player { get; set; }
     public object PlayerLock { get; } = new();
     public bool IsDetached { get; set; }

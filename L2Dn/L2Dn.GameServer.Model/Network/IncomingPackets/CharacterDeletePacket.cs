@@ -39,6 +39,7 @@ public struct CharacterDeletePacket: IIncomingPacket<GameSession>
                     }
 
                     session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
+                    session.SelectedCharacterIndex = -1;
                     break;
                 }
                 default:
@@ -54,7 +55,9 @@ public struct CharacterDeletePacket: IIncomingPacket<GameSession>
             _logger.Error(e);
         }
 
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
+            session.SelectedCharacterIndex);
+        
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

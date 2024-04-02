@@ -33,9 +33,12 @@ public struct CharacterRestorePacket: IIncomingPacket<GameSession>
             }
 
             session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
+            session.SelectedCharacterIndex = _charSlot < session.Characters.Length ? _charSlot : -1;
         }
+
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
+            session.SelectedCharacterIndex);
         
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         
         return ValueTask.CompletedTask;

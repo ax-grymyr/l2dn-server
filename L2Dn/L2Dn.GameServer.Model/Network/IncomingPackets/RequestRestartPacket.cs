@@ -73,7 +73,9 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
 		
         // Send character list
         session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
+            session.SelectedCharacterIndex);
+        
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

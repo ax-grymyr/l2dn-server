@@ -366,7 +366,10 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		Disconnection.of(session, newChar).storeMe().deleteMe();
 
 		session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
+		session.SelectedCharacterIndex = session.Characters.Length - 1;
+		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
+			session.SelectedCharacterIndex);
+		
 		connection.Send(ref characterListPacket);
     }
 
