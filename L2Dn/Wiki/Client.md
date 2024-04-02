@@ -8,7 +8,7 @@ You can download client from http://akumu.ru website. Any client for 447 protoco
 
 I use [L2EU-P447-D20240313-P-230809-240318-1](http://akumu.ru/lineage2/L2EU/P447/L2EU-P447-D20240313-P-230809-240318-1/) client version for testing the server.
 
-You can download ready-to-run `system` folder for this client version [here](https://mega.nz/folder/AS8mBIDC#HchW9hqrcNsQXCdvnAYcZQ).
+You can download ready-to-run `system` folder instead for this client version [here](https://mega.nz/folder/AS8mBIDC#HchW9hqrcNsQXCdvnAYcZQ).
 
 ### 2. Patching client files
 
@@ -26,9 +26,12 @@ Run `patcher.exe` from the client's `system`, `system\eu` directories, for examp
 
 Replace `Core.dll` in `system` with the patched one from the `Core.dll.zip` archive.
 
-### 3. Modifying ini files
+> [!WARNING]
+> The patched `Core.dll` was taken from [forum.ragezone.com](https://forum.ragezone.com/resources/l2j-share-l2jmobius-essence-7-3-sevensigns-1-dec-2023-protocol-447-client-447-source-code.38/). 
 
-The last step is the modification of `L2.ini`.
+### 3. `L2.ini` modification
+
+The next step is the modification of `L2.ini`.
 
 - Decrypt `L2.ini` using the command `l2encdec.exe -d L2.ini L2.ini.txt`.
 - Open `L2.ini.txt` in any text editor.
@@ -39,9 +42,17 @@ The last step is the modification of `L2.ini`.
   - `FreeUserTwoClient=false`
   - `FrostModule=false`
   - `UseAutoSoulShotClassic=true`
-- Decrypt `L2.ini.txt` and replace `L2.ini` using the command `l2encdec.exe -e 413 L2.ini.txt L2.ini`
+- Replace `L2.ini` with the modified version using the command `l2encdec.exe -e 413 L2.ini.txt L2.ini`
 
 Now you can run the server locally and connect with this client to the server.
 
+### 4. Replacing Russian item names with English names (optional)
+
+EU client contains Russian item names for Classic edition for some reason (probably left from Russian Classic client).
+To replace Russian item names with English names, replace 2 files from the [system.zip](https://mega.nz/folder/AS8mBIDC#HchW9hqrcNsQXCdvnAYcZQ).
+These 2 files are `eu\ItemName_Classic-eu.dat` and `eu\L2GameDataName.dat`.
+I generated these 2 files for the `L2EU-P447-D20240313-P-230809-240318-1` client version and they may not work for another version.
+
 > [!NOTE]
-> The patched `Core.dll` was taken from [forum.ragezone.com](https://forum.ragezone.com/resources/l2j-share-l2jmobius-essence-7-3-sevensigns-1-dec-2023-protocol-447-client-447-source-code.38/).
+> The code which replaces Russian item names with English names 
+> is currently in `L2Dn/L2Dn.UnitTests/DatReaderTests.cs` in `ReplaceRuItemNamesInEuClient` unit test. 
