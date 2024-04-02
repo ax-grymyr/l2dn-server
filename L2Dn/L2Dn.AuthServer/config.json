@@ -17,7 +17,7 @@
     "UserName": "l2dev_user",
     "Password": "l2dev_user_pass",
     "PoolSize": 128,
-    "Trace": true
+    "LogLevel": "Warn"
   },
   
   "Settings": {

@@ -1,4 +1,6 @@
-﻿namespace L2Dn.Configuration;
+﻿using NLog;
+
+namespace L2Dn.Configuration;
 
 public class DatabaseConfig
 {
@@ -7,5 +9,5 @@ public class DatabaseConfig
     public string UserName { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public int PoolSize { get; set; } = 1024;
-    public bool Trace { get; set; }
+    public LogLevel LogLevel { get; set; } = LogLevel.Warn;
 }

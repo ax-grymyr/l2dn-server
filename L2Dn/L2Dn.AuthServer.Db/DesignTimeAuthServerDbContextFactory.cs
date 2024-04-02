@@ -27,12 +27,10 @@ public sealed class DesignTimeAuthServerDbContextFactory: IDesignTimeDbContextFa
         DbContextOptionsBuilder<AuthServerDbContext> optionsBuilder = new();
         optionsBuilder.UseNpgsql(sb.ToString());
 
-        if (config.Trace)
-        {
-            Logger logger = LogManager.GetLogger("Database");
-            optionsBuilder.LogTo((_, _) => true,
-                data => { logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
-        }
+        Microsoft.Extensions.Logging.LogLevel logLevel = (Microsoft.Extensions.Logging.LogLevel)config.LogLevel.Ordinal;
+        Logger logger = LogManager.GetLogger("Database");
+        optionsBuilder.LogTo((_, level) => level >= logLevel,
+            data => { logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
         
         optionsBuilder.EnableThreadSafetyChecks(false);
         
