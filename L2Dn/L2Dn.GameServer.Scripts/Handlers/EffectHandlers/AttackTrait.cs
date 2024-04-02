@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -27,7 +28,7 @@ public class AttackTrait: AbstractEffect
 		foreach (var param in @params.getSet())
 		{
 			_attackTraits.put(Enum.Parse<TraitType>(param.Key),
-				float.Parse(param.Value?.ToString() ?? string.Empty) / 100);
+				float.Parse(param.Value?.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100);
 		}
 	}
 	
