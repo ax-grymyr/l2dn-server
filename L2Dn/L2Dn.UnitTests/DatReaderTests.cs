@@ -1,9 +1,7 @@
-﻿using System.Collections.Immutable;
-using System.Diagnostics;
-using System.Text;
-using System.Text.Encodings.Web;
+﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using FluentAssertions;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions;
 using L2Dn.Packages.DatDefinitions.Definitions;
@@ -54,45 +52,27 @@ public class DatReaderTests
 
         // Load EU item names from old EU 228 client
         L2NameData euOldNameData = DatReader.ReadNameData(euOldPath + "L2GameDataName.dat");
+        //Serialize(@"D:\L2\DatFiles\L2GameDataName-eu-P228.json", euOldNameData);
         ItemNameV11 euOldItemName = DatReader.Read<ItemNameV11>(euOldPath + "ItemName_Classic-eu.dat");
-        Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu-P228.json", euOldItemName);
+        //Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu-P228.json", euOldItemName);
 
         // Load EU item names (EU client has Russian names for items for some reason)
-        L2NameData euNameData = DatReader.ReadNameData(euPath + "L2GameDataName.dat");
-        List<string> euStrings = euNameData.Names.ToList();
-        ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat");
+        L2NameData euNameData = DatReader.ReadNameData(euPath + "L2GameDataName.dat.original");
+        //Serialize(@"D:\L2\DatFiles\L2GameDataName-eu.json", euNameData);
+        ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat.original");
+        //Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.json", euItemName);
         
         // Load NA item names
         DatReader.ReadNameData(naPath + "L2GameDataName.dat");
         ItemNameV18 naItemName = DatReader.Read<ItemNameV18>(naPath + "ItemName_Classic-e.dat");
         
-        // Collect names not in EU name data
-        bool euNameDataUpdateNeeded = false;
-        foreach (ItemNameV18.ItemNameRecord euItemNameRecord in euItemName.Records)
-        {
-            uint itemId = euItemNameRecord.Id;
-            ItemNameV11.ItemNameRecord? euOldItemNameRecord = euOldItemName.Records.FirstOrDefault(x => x.Id == itemId);
-            ItemNameV18.ItemNameRecord? naItemNameRecord = naItemName.Records.FirstOrDefault(x => x.Id == itemId);
-            if (euOldItemNameRecord != null)
-            {
-                if (!euStrings.Contains(euOldItemNameRecord.Name))
-                {
-                    euStrings.Add(euOldItemNameRecord.Name);
-                    euNameDataUpdateNeeded = true;
-                }
-            }
-            else if (naItemNameRecord != null)
-            {
-                if (!euStrings.Contains(naItemNameRecord.Name))
-                {
-                    euStrings.Add(naItemNameRecord.Name);
-                    euNameDataUpdateNeeded = true;
-                }
-            }
-        }
-
         // Replace item names
-        ImmutableArray<string> names = euStrings.ToImmutableArray();
+        bool euNameDataUpdateNeeded = false;
+        List<string> euStrings = euNameData.Names.ToList();
+        Dictionary<string, int> euStringIndexMap =
+            euStrings.Select((s, i) => new KeyValuePair<string, int>(s, i))
+                .ToDictionary(StringComparer.OrdinalIgnoreCase);
+        
         foreach (ItemNameV18.ItemNameRecord euItemNameRecord in euItemName.Records)
         {
             uint itemId = euItemNameRecord.Id;
@@ -101,17 +81,32 @@ public class DatReaderTests
             if (euOldItemNameRecord != null)
             {
                 // Replace name from EU client
-                int nameIndex = euStrings.IndexOf(euOldItemNameRecord.Name);
-                euItemNameRecord.Name = new IndexedString(names, nameIndex);
+                string newName = euOldItemNameRecord.Name.Text;
+                if (!euStringIndexMap.TryGetValue(newName, out int index))
+                {
+                    index = euStrings.Count;
+                    euStrings.Add(newName);
+                    euStringIndexMap.Add(newName, index);
+                    euNameDataUpdateNeeded = true;
+                }
+                
+                euItemNameRecord.Name = new IndexedString(newName, index);
                 euItemNameRecord.AdditionalName = euOldItemNameRecord.AdditionalName;
                 euItemNameRecord.Description = euOldItemNameRecord.Description;
             }
             else if (naItemNameRecord != null)
             {
                 // Replace name from NA client
-                int nameIndex = euStrings.IndexOf(naItemNameRecord.Name);
-                euItemNameRecord.Name = new IndexedString(names, nameIndex);
-                euItemNameRecord.Name = naItemNameRecord.Name;
+                string newName = naItemNameRecord.Name.Text;
+                if (!euStringIndexMap.TryGetValue(newName, out int index))
+                {
+                    index = euStrings.Count;
+                    euStrings.Add(newName);
+                    euStringIndexMap.Add(newName, index);
+                    euNameDataUpdateNeeded = true;
+                }
+
+                euItemNameRecord.Name = new IndexedString(newName, index);
                 euItemNameRecord.AdditionalName = naItemNameRecord.AdditionalName;
                 euItemNameRecord.Description = naItemNameRecord.Description;
             }
@@ -127,6 +122,7 @@ public class DatReaderTests
             // Verify output file
             using FileStream stream1 = File.OpenRead(euPath + "L2GameDataName.dat.modified");
             L2NameData euTestNameData = DatReader.Read<L2NameData>(stream1);
+            euNameData.Names.Should().BeEquivalentTo(euTestNameData.Names);
             DatReader.SetNameData(euTestNameData.Names);
             Serialize(@"D:\L2\DatFiles\L2GameDataName.modified.json", euTestNameData);
         }
@@ -137,6 +133,7 @@ public class DatReaderTests
         // Verify output file
         using FileStream stream = File.OpenRead(euPath + "ItemName_Classic-eu.dat.modified");
         ItemNameV18 euTestItemName = DatReader.Read<ItemNameV18>(stream);
+        //euTestItemName.Should().BeEquivalentTo(euItemName);
         Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.modified.json", euTestItemName);
     }
     
@@ -224,7 +221,7 @@ public class DatReaderTests
 
         // loading strings
         string srcDataNamePath = Path.Combine(srcPath, "L2GameDataName.dat");
-        string dstDataNamePath = Path.Combine(dstPath, $"L2GameDataName-{langDstSuffix}.dat");
+        string dstDataNamePath = Path.Combine(dstPath, $"L2GameDataName-{langDstSuffix}.json");
         L2NameData names = DatReader.ReadNameData(srcDataNamePath);
         Serialize(dstDataNamePath, names.Names);
 

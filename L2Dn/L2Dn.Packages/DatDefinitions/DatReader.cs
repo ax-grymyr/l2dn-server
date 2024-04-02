@@ -81,7 +81,7 @@ public static class DatReader
         if (type == typeof(IndexedString))
         {
             int index = reader.ReadInt32();
-            return new IndexedString(_nameData, index);
+            return new IndexedString(_nameData[index], index);
         }
         
         if (type == typeof(string))

@@ -22,19 +22,10 @@ public class DatBinaryWriter(Stream stream): UBinaryWriter(stream)
         if (value.Length > 1000000)
             throw new Exception("To much data.");
 
-        int length = value.Length;
-        bool addNullChar = value[^1] != '\0';
-        if (addNullChar)
-            length++;
-        
-        WriteInt32(length * 2);
-            
+        WriteInt32(value.Length * 2);
         
         // TODO: big endian architectures
         ReadOnlySpan<byte> bytes = MemoryMarshal.Cast<char, byte>(value);
         WriteBytes(bytes);
-        
-        if (addNullChar)
-            WriteInt16(0);
     }
 }
