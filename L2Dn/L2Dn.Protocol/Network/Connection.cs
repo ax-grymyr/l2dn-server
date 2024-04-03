@@ -67,12 +67,12 @@ public abstract class Connection
 
         if (offset >= 65536)
         {
-            _logger.Warn($"S({_session.Id})  Packet {typeof(T).Name} (0x{buffer[2]:X2}) is too long ({offset} bytes)");
+            _logger.Warn($"S({_session.Id})  Packet {typeof(T).Name} ({buffer[2]:X2}) is too long ({offset} bytes)");
             Close();
             return;
         }
 
-        _logger.Trace($"S({_session.Id})  Sending packet {typeof(T).Name} (0x{buffer[2]:X2}), length: {offset}");
+        _logger.Trace($"S({_session.Id})  Sending packet {typeof(T).Name} ({buffer[2]:X2}), length: {offset}");
         _sendQueue.Enqueue(new PacketData(buffer, offset, options));
         ThreadPool.QueueUserWorkItem(_ => SendPackets());
     }
