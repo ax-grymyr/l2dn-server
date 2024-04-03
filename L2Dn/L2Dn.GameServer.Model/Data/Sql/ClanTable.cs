@@ -89,7 +89,7 @@ public class ClanTable
 	 * @param clanId
 	 * @return
 	 */
-	public Clan getClan(int clanId)
+	public Clan? getClan(int clanId)
 	{
 		return _clans.get(clanId);
 	}

@@ -30,7 +30,7 @@ public sealed class DesignTimeGameServerDbContextFactory: IDesignTimeDbContextFa
         Microsoft.Extensions.Logging.LogLevel logLevel = (Microsoft.Extensions.Logging.LogLevel)config.LogLevel.Ordinal;
         Logger logger = LogManager.GetLogger("Database");
         optionsBuilder.LogTo((_, level) => level >= logLevel,
-            data => { logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); });
+            data => { logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); }).EnableDetailedErrors();
         
         optionsBuilder.EnableThreadSafetyChecks(false);
         

@@ -1,5 +1,4 @@
-﻿using L2Dn.GameServer.Data;
-using L2Dn.GameServer.Data.Sql;
+﻿using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -34,6 +33,13 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
+	    if (session.Characters is null)
+	    {
+		    // Characters must be loaded in AuthLoginPacket
+		    connection.Close();
+		    return ValueTask.CompletedTask;
+	    }
+        
 		// if (!client.getFloodProtectors().canSelectCharacter())
 		// {
 		// 	return;
@@ -55,20 +61,20 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 				// but if not then this is repeated packet and nothing should be done here
 				if (session.Player == null)
 				{
-					if (_charSlot < 0 || _charSlot >= session.Characters.Length)
+					if (_charSlot < 0 || _charSlot >= session.Characters.Count)
 						return ValueTask.CompletedTask;
 					
-					CharSelectInfoPackage info = session.Characters[_charSlot];
+					CharacterInfo charInfo = session.Characters[_charSlot];
 					
 					// Disconnect offline trader.
-					Player offlineTrader = World.getInstance().getPlayer(info.getObjectId());
+					Player offlineTrader = World.getInstance().getPlayer(charInfo.Id);
 					if (offlineTrader != null)
 					{
 						Disconnection.of(offlineTrader).storeMe().deleteMe();
 					}
 					
 					// Banned?
-					if (PunishmentManager.getInstance().hasPunishment(info.getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.BAN)
+					if (PunishmentManager.getInstance().hasPunishment(charInfo.Id.ToString(), PunishmentAffect.CHARACTER, PunishmentType.BAN)
 						|| PunishmentManager.getInstance().hasPunishment(session.AccountName, PunishmentAffect.ACCOUNT, PunishmentType.BAN)
 						|| PunishmentManager.getInstance().hasPunishment(session.IpAddress.ToString(), PunishmentAffect.IP, PunishmentType.BAN))
 					{
@@ -78,14 +84,14 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					}
 					
 					// Selected character is banned (compatibility with previous versions).
-					if (info.getAccessLevel() < 0)
+					if (charInfo.AccessLevel < 0)
 					{
 						ServerClosePacket serverClosePacket = new();
 						connection.Send(ref serverClosePacket, SendPacketOptions.CloseAfterSending);
 						return ValueTask.CompletedTask;
 					}
 
-					if ((Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0) && !AntiFeedManager.getInstance()
+					if (Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
 						    .tryAddClient(AntiFeedManager.GAME_ID, session, Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/IPRestriction.htm", null);
@@ -100,9 +106,9 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 
 					if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_BALANCE_ONLINE_PLAYERS)
 					{
-						if (info.isGood() && (World.getInstance().getAllGoodPlayers().Count >=
-						                      (World.getInstance().getAllEvilPlayers().Count +
-						                       Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)))
+						if (charInfo.IsGood && World.getInstance().getAllGoodPlayers().Count >=
+						    World.getInstance().getAllEvilPlayers().Count +
+						    Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
 						{
 							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
 							htmlContent.Replace("%more%", Config.FACTION_GOOD_TEAM_NAME);
@@ -113,9 +119,9 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 							return ValueTask.CompletedTask;
 						}
 
-						if (info.isEvil() && (World.getInstance().getAllEvilPlayers().Count >=
-						                      (World.getInstance().getAllGoodPlayers().Count +
-						                       Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)))
+						if (charInfo.IsEvil && World.getInstance().getAllEvilPlayers().Count >=
+						    World.getInstance().getAllGoodPlayers().Count +
+						    Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
 						{
 							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
 
@@ -129,7 +135,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					}
 
 					// load up character from disk
-					Player player = CharacterPacketHelper.LoadPlayer(session, _charSlot);
+					Player player = session.Characters.LoadPlayer(_charSlot);
 					if (player == null)
 						return ValueTask.CompletedTask; // handled in GameClient
 					
@@ -145,7 +151,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					player.setClient(session);
 					session.Player = player;
 					player.setOnlineStatus(true, true);
-					info.setLastAccess(DateTime.UtcNow);
+					session.Characters.UpdateLastAccessTime(_charSlot);
 					
 					if (GlobalEvents.Players.HasSubscribers<OnPlayerSelect>())
 					{

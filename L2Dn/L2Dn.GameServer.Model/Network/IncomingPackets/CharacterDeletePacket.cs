@@ -1,17 +1,15 @@
-﻿using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Events;
+﻿using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
-using NLog;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct CharacterDeletePacket: IIncomingPacket<GameSession>
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(CharacterDeletePacket)); 
     private int _charSlot;
 
     public void ReadContent(PacketBitReader reader)
@@ -21,43 +19,44 @@ public struct CharacterDeletePacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
+        if (session.Characters is null)
+        {
+            // Characters must be loaded in AuthLoginPacket
+            connection.Close();
+            return ValueTask.CompletedTask;
+        }
+        
         try
         {
-            CharacterDeleteFailReason failType = CharacterPacketHelper.MarkToDeleteChar(session, _charSlot);
-            switch (failType)
+            CharacterDeleteFailReason failType = session.Characters.MarkToDelete(_charSlot, out CharacterInfo? charInfo);
+            if (failType != CharacterDeleteFailReason.None)
             {
-                case CharacterDeleteFailReason.None: // Success
-                {
-                    CharacterDeleteSuccessPacket deleteSuccessPacket = new();
-                    connection.Send(ref deleteSuccessPacket);
+                CharacterDeleteFailPacket characterDeleteFailPacket = new(failType);
+                connection.Send(ref characterDeleteFailPacket);
+            }
+            else if (charInfo is null)
+            {
+                CharacterDeleteFailPacket characterDeleteFailPacket = new(CharacterDeleteFailReason.Unknown);
+                connection.Send(ref characterDeleteFailPacket);
+            }
+            else
+            {
+                CharacterDeleteSuccessPacket deleteSuccessPacket = new();
+                connection.Send(ref deleteSuccessPacket);
 
-                    CharSelectInfoPackage charInfo = session.Characters[_charSlot];
-                    if (GlobalEvents.Players.HasSubscribers<OnPlayerDelete>())
-                    {
-                        GlobalEvents.Players.Notify(new OnPlayerDelete(charInfo.getObjectId(), charInfo.getName(),
-                            session));
-                    }
-
-                    session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-                    session.SelectedCharacterIndex = -1;
-                    break;
-                }
-                default:
+                if (GlobalEvents.Players.HasSubscribers<OnPlayerDelete>())
                 {
-                    CharacterDeleteFailPacket characterDeleteFailPacket = new(failType);
-                    connection.Send(ref characterDeleteFailPacket);
-                    break;
+                    GlobalEvents.Players.Notify(new OnPlayerDelete(charInfo.Id, charInfo.Name,
+                        session));
                 }
             }
         }
         catch (Exception e)
         {
-            _logger.Error(e);
+            PacketLogger.Instance.Error(e);
         }
 
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-            session.SelectedCharacterIndex);
-        
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

@@ -17,13 +17,11 @@ using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Network;
 using L2Dn.Packets;
-using NLog;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 {
-	private static readonly Logger _logger = LogManager.GetLogger(nameof(CharacterCreatePacket)); 
     private string? _name;
     private Sex _sex;
     private Race _race;
@@ -47,7 +45,15 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-		// Last Verified: May 30, 2009 - Gracia Final - Players are able to create characters with names consisting of as little as 1,2,3 letter/number combinations.
+	    if (session.Characters is null)
+	    {
+		    // characters were not loaded in AuthLoginPacket
+		    connection.Close();
+		    return ValueTask.CompletedTask;
+	    }
+        
+		// Last Verified: May 30, 2009 - Gracia Final - Players are able to create characters with
+		// names consisting of as little as 1,2,3 letter/number combinations.
 		if (string.IsNullOrEmpty(_name) || _name.Length > 16)
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.LengthExceeded);
@@ -90,7 +96,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if ((_hairStyle < 0) || (_sex != Sex.Female && _hairStyle > 8) || (_sex == Sex.Female && _hairStyle > 11))
+		if (_hairStyle < 0 || (_sex != Sex.Female && _hairStyle > 8) || (_sex == Sex.Female && _hairStyle > 11))
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
 			connection.Send(ref createFailPacket);
@@ -110,14 +116,16 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		Player newChar;
 		lock (CharInfoTable.getInstance())
 		{
-			if ((CharInfoTable.getInstance().getAccountCharacterCount(session.AccountName) >=
-			     Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT) && (Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0))
+			if (Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0 &&
+			    (session.Characters.Count >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT ||
+			     CharInfoTable.getInstance().getAccountCharacterCount(session.AccountName) >=
+			     Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT))
 			{
 				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.TooManyCharacters);
 				connection.Send(ref createFailPacket);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (CharInfoTable.getInstance().doesCharNameExist(_name))
 			{
 				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.NameAlreadyExists);
@@ -132,140 +140,8 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				connection.Send(ref createFailPacket);
 				return ValueTask.CompletedTask;
 			}
-			
-			// Custom Feature: Disallow a race to be created.
-			// Example: Humans can not be created if AllowHuman = False in Custom.properties
-			switch (template.getRace())
-			{
-				case Race.HUMAN:
-				{
-					if (!Config.ALLOW_HUMAN)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, _class) && _sex == Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, _class) && _sex == Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.ELF:
-				{
-					if (!Config.ALLOW_ELF)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
 
-					if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, _class) && _sex == Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.DARK_ELF:
-				{
-					if (!Config.ALLOW_DARKELF)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, _class) && _sex == Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, _class) && _sex != Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.ORC:
-				{
-					if (!Config.ALLOW_ORC)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, _class) && _sex == Sex.Female)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.DWARF:
-				{
-					if (!Config.ALLOW_DWARF)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.KAMAEL:
-				{
-					if (!Config.ALLOW_KAMAEL)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-				case Race.SYLPH:
-				{
-					if (!Config.ALLOW_SYLPH)
-					{
-						CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-						connection.Send(ref createFailPacket);
-						return ValueTask.CompletedTask;
-					}
-					
-					break;
-				}
-			}
-			
-			if (!Config.ALLOW_DEATH_KNIGHT && CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, _class))
-			{
-				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
-				connection.Send(ref createFailPacket);
-				return ValueTask.CompletedTask;
-			}
-			
-			if (!Config.ALLOW_VANGUARD && CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, _class))
+			if (!CheckRaceAndClass(_race, _sex, _class))
 			{
 				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
 				connection.Send(ref createFailPacket);
@@ -279,16 +155,20 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		// HP and MP are at maximum and CP is zero by default.
 		newChar.setCurrentHp(newChar.getMaxHp());
 		newChar.setCurrentMp(newChar.getMaxMp());
-		// newChar.setMaxLoad(template.getBaseLoad());
+		
+		InitNewChar(session, newChar);
 		
 		CharacterCreateSuccessPacket createSuccessPacket = new();
 		connection.Send(ref createSuccessPacket);
 		
-		InitNewChar(connection, session, newChar);
+		session.Characters.AddNewChar(newChar);
+		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
+		connection.Send(ref characterListPacket);
+		
 		return ValueTask.CompletedTask;
 	}
 	
-	private static void InitNewChar(Connection connection, GameSession session, Player newChar)
+	private static void InitNewChar(GameSession session, Player newChar)
 	{
 		World.getInstance().addObject(newChar);
 		
@@ -338,7 +218,9 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				Item item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
 				if (item == null)
 				{
-					_logger.Error("Could not create item during char creation: itemId " + ie.getId() + ", amount " + ie.getCount() + ".");
+					PacketLogger.Instance.Error("Could not create item during char creation: itemId " + ie.getId() +
+					                            ", amount " + ie.getCount() + ".");
+					
 					continue;
 				}
 				
@@ -364,13 +246,6 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		
 		newChar.setOnlineStatus(true, false);
 		Disconnection.of(session, newChar).storeMe().deleteMe();
-
-		session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-		session.SelectedCharacterIndex = session.Characters.Length - 1;
-		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-			session.SelectedCharacterIndex);
-		
-		connection.Send(ref characterListPacket);
     }
 
     private static bool IsValidName(string name)
@@ -388,5 +263,97 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
         }
 
         return true;
+    }
+
+    private static bool CheckRaceAndClass(Race race, Sex sex, CharacterClass classId)
+    {
+	    switch (race)
+	    {
+		    case Race.HUMAN:
+		    {
+			    // Custom Feature: Disallow a race to be created.
+			    // Example: Humans can not be created if AllowHuman = False in Custom.properties
+			    if (!Config.ALLOW_HUMAN)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			        sex == Sex.Female)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
+			        sex == Sex.Female)
+				    return false;
+
+			    break;
+		    }
+		    case Race.ELF:
+		    {
+			    if (!Config.ALLOW_ELF)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			        sex == Sex.Female)
+				    return false;
+
+			    break;
+		    }
+		    case Race.DARK_ELF:
+		    {
+			    if (!Config.ALLOW_DARKELF)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			        sex == Sex.Female)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
+			        sex != Sex.Female)
+				    return false;
+
+			    break;
+		    }
+		    case Race.ORC:
+		    {
+			    if (!Config.ALLOW_ORC)
+				    return false;
+
+			    if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId) &&
+			        sex == Sex.Female)
+				    return false;
+
+			    break;
+		    }
+		    case Race.DWARF:
+		    {
+			    if (!Config.ALLOW_DWARF)
+				    return false;
+
+			    break;
+		    }
+		    case Race.KAMAEL:
+		    {
+			    if (!Config.ALLOW_KAMAEL)
+				    return false;
+
+			    break;
+		    }
+		    case Race.SYLPH:
+		    {
+			    if (!Config.ALLOW_SYLPH)
+				    return false;
+
+			    break;
+		    }
+	    }
+
+	    if (!Config.ALLOW_DEATH_KNIGHT &&
+	        CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId))
+		    return false;
+
+	    if (!Config.ALLOW_VANGUARD &&
+	        CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId))
+		    return false;
+
+	    return true;
     }
 }

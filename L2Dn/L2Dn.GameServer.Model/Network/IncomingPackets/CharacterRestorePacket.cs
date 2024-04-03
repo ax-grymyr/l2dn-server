@@ -1,5 +1,4 @@
-﻿using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Events;
+﻿using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -19,26 +18,27 @@ public struct CharacterRestorePacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
+        if (session.Characters is null)
+        {
+            // Characters must be loaded in AuthLoginPacket
+            connection.Close();
+            return ValueTask.CompletedTask;
+        }
+        
         // if (!client.getFloodProtectors().canSelectCharacter())
         // {
         //     return;
         // }
 
-        if (CharacterPacketHelper.RestoreChar(session, _charSlot))
+        if (session.Characters.RestoreCharacter(_charSlot, out CharacterInfo? charInfo))
         {
             if (GlobalEvents.Players.HasSubscribers<OnPlayerRestore>())
             {
-                CharSelectInfoPackage charInfo = session.Characters[_charSlot];
-                GlobalEvents.Players.Notify(new OnPlayerRestore(charInfo.getObjectId(), charInfo.getName(), session));
+                GlobalEvents.Players.Notify(new OnPlayerRestore(charInfo.Id, charInfo.Name, session));
             }
-
-            session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-            session.SelectedCharacterIndex = _charSlot < session.Characters.Length ? _charSlot : -1;
         }
 
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-            session.SelectedCharacterIndex);
-        
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         
         return ValueTask.CompletedTask;

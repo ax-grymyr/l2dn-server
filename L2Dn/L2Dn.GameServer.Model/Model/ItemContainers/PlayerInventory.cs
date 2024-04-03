@@ -826,37 +826,6 @@ public class PlayerInventory: Inventory
 		_beautyTickets = getItemByItemId(BEAUTY_TICKET_ID);
 	}
 	
-	public static int[][] restoreVisibleInventory(int objectId)
-	{
-		int[][] paperdoll = new int[Inventory.PAPERDOLL_TOTALSLOTS][];
-		for (int i = 0; i < paperdoll.Length; i++)
-			paperdoll[i] = new int[4];
-		
-		try 
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var query = ctx.Items.Where(r => r.OwnerId == objectId && r.Location == (int)ItemLocation.PAPERDOLL);
-			foreach (var record in query)
-			{
-				int slot = record.LocationData;
-				ItemVariables vars = new ItemVariables(record.ObjectId);
-				paperdoll[slot][0] = record.ObjectId;
-				paperdoll[slot][1] = record.ItemId;
-				paperdoll[slot][2] = record.EnchantLevel;
-				paperdoll[slot][3] = vars.getInt(ItemVariables.VISUAL_ID, 0);
-				if (paperdoll[slot][3] > 0) // fix for hair appearance conflicting with original model
-				{
-					paperdoll[slot][1] = paperdoll[slot][3];
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Warn("Could not restore inventory: " + e);
-		}
-		return paperdoll;
-	}
-	
 	/**
 	 * @param itemList the items that needs to be validated.
 	 * @param sendMessage if {@code true} will send a message of inventory full.

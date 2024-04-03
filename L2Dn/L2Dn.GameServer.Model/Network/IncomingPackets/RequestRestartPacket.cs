@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Olympiads;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -23,6 +22,13 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
+
+        if (session.Characters is null)
+        {
+            // Characters must be loaded in AuthLoginPacket
+            connection.Close();
+            return ValueTask.CompletedTask;
+        }
 		
         if (!player.canLogout())
         {
@@ -72,10 +78,8 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         connection.Send(new RestartResponsePacket(true));
 		
         // Send character list
-        session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-            session.SelectedCharacterIndex);
-        
+        session.Characters.UpdateActiveCharacter(player);
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
         return ValueTask.CompletedTask;
     }

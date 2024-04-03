@@ -1,5 +1,4 @@
-﻿using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.Network.OutgoingPackets;
+﻿using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -13,11 +12,14 @@ public struct RequestGoToLobbyPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
+        if (session.Characters is null)
+        {
+            // Characters must be loaded in AuthLoginPacket
+            connection.Close();
+            return ValueTask.CompletedTask;
+        }
 
-        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-            session.SelectedCharacterIndex);
-        
+        CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
 
         return ValueTask.CompletedTask;

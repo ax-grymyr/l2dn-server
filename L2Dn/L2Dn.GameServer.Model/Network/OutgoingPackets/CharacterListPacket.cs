@@ -1,17 +1,17 @@
-﻿using System.Collections.Immutable;
-using L2Dn.Extensions;
+﻿using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.Model;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-public readonly struct CharacterListPacket: IOutgoingPacket
+public readonly struct CharacterListPacket(int playKey1, string accountName, CharacterInfoList characters)
+	: IOutgoingPacket
 {
-	private static readonly int[] PAPERDOLL_ORDER =
+	private static readonly int[] _paperdollOrder =
 	[
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_REAR,
@@ -74,7 +74,7 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_ARTIFACT20, // 152
 		Inventory.PAPERDOLL_ARTIFACT21 // 152
 	];
-	private static readonly int[] PAPERDOLL_ORDER_VISUAL_ID =
+	private static readonly int[] _paperdollOrderVisualId =
 	[
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
@@ -87,25 +87,11 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_HAIR2
 	];
 
-	private readonly int _playKey1;
-	private readonly string _accountName;
-	private readonly int _activeIndex;
-	private readonly ImmutableArray<CharSelectInfoPackage> _characterPackages;
-
-	public CharacterListPacket(int playKey1, string accountName, ImmutableArray<CharSelectInfoPackage> characters,
-		int activeIndex)
-	{
-		_playKey1 = playKey1;
-		_accountName = accountName;
-		_characterPackages = characters;
-		_activeIndex = activeIndex;
-	}
-
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTION_INFO);
 		
-		int size = _characterPackages.IsDefaultOrEmpty ? 0 : _characterPackages.Length;
+		int size = characters.Count;
 		writer.WriteInt32(size); // Created character count
 		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
 		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
@@ -117,51 +103,37 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 		if (size == 0)
 			return;
         
-		DateTime? lastAccess = default;
-		int activeId = _activeIndex;
-		if (activeId < 0 || activeId >= _characterPackages.Length)
-		{
-			for (int i = 0; i < size; i++)
-			{
-				if (lastAccess is null || lastAccess < _characterPackages[i].getLastAccess())
-				{
-					lastAccess = _characterPackages[i].getLastAccess();
-					activeId = i;
-				}
-			}
-		}
-		
 		for (int i = 0; i < size; i++)
 		{
-			CharSelectInfoPackage charInfoPackage = _characterPackages[i];
-			writer.WriteString(charInfoPackage.getName()); // Character name
-			writer.WriteInt32(charInfoPackage.getObjectId()); // Character ID
-			writer.WriteString(_accountName); // Account name
-			writer.WriteInt32(_playKey1); // Account ID
+			CharacterInfo charInfo = characters.Characters[i];
+			writer.WriteString(charInfo.Name); // Character name
+			writer.WriteInt32(charInfo.Id); // Character ID
+			writer.WriteString(accountName); // Account name
+			writer.WriteInt32(playKey1); // Account ID
 			writer.WriteInt32(0); // Clan ID
 			writer.WriteInt32(0); // Builder level
-			writer.WriteInt32((int)charInfoPackage.getSex()); // Sex
-			writer.WriteInt32((int)charInfoPackage.getRace()); // Race
-			writer.WriteInt32((int)charInfoPackage.getBaseClassId());
+			writer.WriteInt32((int)charInfo.Sex); // Sex
+			writer.WriteInt32((int)charInfo.Race); // Race
+			writer.WriteInt32((int)charInfo.BaseClass);
 			writer.WriteInt32(Config.SERVER_ID);
-			writer.WriteInt32(charInfoPackage.getX());
-			writer.WriteInt32(charInfoPackage.getY());
-			writer.WriteInt32(charInfoPackage.getZ());
-			writer.WriteDouble(charInfoPackage.getCurrentHp());
-			writer.WriteDouble(charInfoPackage.getCurrentMp());
-			writer.WriteInt64(charInfoPackage.getSp());
-			writer.WriteInt64(charInfoPackage.getExp());
+			writer.WriteInt32(charInfo.X);
+			writer.WriteInt32(charInfo.Y);
+			writer.WriteInt32(charInfo.Z);
+			writer.WriteDouble(charInfo.CurrentHp);
+			writer.WriteDouble(charInfo.CurrentMp);
+			writer.WriteInt64(charInfo.Sp);
+			writer.WriteInt64(charInfo.Exp);
 			
 			writer.WriteDouble(1.0 *
-			                   (charInfoPackage.getExp() - ExperienceData.getInstance()
-				                   .getExpForLevel(charInfoPackage.getLevel())) /
-			                   (ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel() + 1) -
-			                    ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())));
+			                   (charInfo.Exp - ExperienceData.getInstance()
+				                   .getExpForLevel(charInfo.Level)) /
+			                   (ExperienceData.getInstance().getExpForLevel(charInfo.Level + 1) -
+			                    ExperienceData.getInstance().getExpForLevel(charInfo.Level)));
 			
-			writer.WriteInt32(charInfoPackage.getLevel());
-			writer.WriteInt32(charInfoPackage.getReputation());
-			writer.WriteInt32(charInfoPackage.getPkKills());
-			writer.WriteInt32(charInfoPackage.getPvPKills());
+			writer.WriteInt32(charInfo.Level);
+			writer.WriteInt32(charInfo.Reputation);
+			writer.WriteInt32(charInfo.PkKills);
+			writer.WriteInt32(charInfo.PvpKills);
 			writer.WriteInt32(0);
 			writer.WriteInt32(0);
 			writer.WriteInt32(0);
@@ -172,44 +144,35 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(0); // Ertheia
 			writer.WriteInt32(0); // Ertheia
 			
-			foreach (int slot in PAPERDOLL_ORDER)
-				writer.WriteInt32(charInfoPackage.getPaperdollItemId(slot));
+			foreach (int slot in _paperdollOrder)
+				writer.WriteInt32(charInfo.Paperdoll[slot].ItemId);
 
-			foreach (int slot in PAPERDOLL_ORDER_VISUAL_ID)
-				writer.WriteInt32(charInfoPackage.getPaperdollItemVisualId(slot));
+			foreach (int slot in _paperdollOrderVisualId)
+				writer.WriteInt32(charInfo.Paperdoll[slot].ItemVisualId);
 			
-			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_CHEST)); // Upper Body enchant level
-			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_LEGS)); // Lower Body enchant level
-			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_HEAD)); // Headgear enchant level
-			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_GLOVES)); // Gloves enchant level
-			writer.WriteInt16((short)charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_FEET)); // Boots enchant level
-			writer.WriteInt32(charInfoPackage.getHairStyle());
-			writer.WriteInt32(charInfoPackage.getHairColor());
-			writer.WriteInt32(charInfoPackage.getFace());
-			writer.WriteDouble(charInfoPackage.getMaxHp()); // Maximum HP
-			writer.WriteDouble(charInfoPackage.getMaxMp()); // Maximum MP
+			writer.WriteInt16((short)charInfo.ChestEnchantLevel); // Upper Body enchant level
+			writer.WriteInt16((short)charInfo.LegsEnchantLevel); // Lower Body enchant level
+			writer.WriteInt16((short)charInfo.HeadEnchantLevel); // Headgear enchant level
+			writer.WriteInt16((short)charInfo.GlovesEnchantLevel); // Gloves enchant level
+			writer.WriteInt16((short)charInfo.BootsEnchantLevel); // Boots enchant level
+			writer.WriteInt32(charInfo.HairStyle);
+			writer.WriteInt32(charInfo.HairColor);
+			writer.WriteInt32(charInfo.Face);
+			writer.WriteDouble(charInfo.MaxHp); // Maximum HP
+			writer.WriteDouble(charInfo.MaxMp); // Maximum MP
 
-			DateTime? deleteTime = charInfoPackage.getDeleteTimer();
+			DateTime? deleteTime = charInfo.DeleteTime;
 			if (deleteTime != null)
 				writer.WriteInt32((int)(deleteTime.Value - DateTime.UtcNow).TotalSeconds);
 			else
 				writer.WriteInt32(0);
 			
-			writer.WriteInt32((int)charInfoPackage.getClassId());
-			writer.WriteInt32(i == activeId);
-			writer.WriteByte((byte)(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND) > 127 ? 127 : charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND)));
+			writer.WriteInt32((int)charInfo.Class);
+			writer.WriteInt32(i == characters.SelectedIndex);
+			writer.WriteByte((byte)(charInfo.WeaponEnchantLevel > 127 ? 127 : charInfo.WeaponEnchantLevel));
 
-			VariationInstance? augmentation = charInfoPackage.getAugmentation();
-			if (augmentation != null)
-			{
-				writer.WriteInt32(augmentation.getOption1Id());
-				writer.WriteInt32(augmentation.getOption2Id());
-			}
-			else
-			{
-				writer.WriteInt32(0);
-				writer.WriteInt32(0);
-			}
+			writer.WriteInt32(charInfo.WeaponAugmentationOption1Id); // Weapon augmentation options
+			writer.WriteInt32(charInfo.WeaponAugmentationOption2Id);
 
 			writer.WriteInt32(0); // Transformation: Currently on retail when you are on character select you don't see your transformation.
 			writer.WriteInt32(0); // Pet NpcId
@@ -218,22 +181,22 @@ public readonly struct CharacterListPacket: IOutgoingPacket
 			writer.WriteInt32(0); // Pet Food Level
 			writer.WriteDouble(0); // Current pet HP
 			writer.WriteDouble(0); // Current pet MP
-			writer.WriteInt32(charInfoPackage.getVitalityPoints()); // Vitality
-			writer.WriteInt32((int) Config.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Percent
-			writer.WriteInt32(charInfoPackage.getVitalityItemsUsed()); // Remaining vitality item uses
-			writer.WriteInt32(charInfoPackage.getAccessLevel() != -100); // Char is active or not
-			writer.WriteByte(charInfoPackage.isNoble());
-			writer.WriteByte((byte)(Hero.getInstance().isHero(charInfoPackage.getObjectId()) ? 2 : 0)); // Hero glow
-			writer.WriteByte(charInfoPackage.isHairAccessoryEnabled()); // Show hair accessory if enabled
+			writer.WriteInt32(charInfo.VitalityPoints); // Vitality
+			writer.WriteInt32((int)Config.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Percent
+			writer.WriteInt32(charInfo.VitalityItemsUsed); // Remaining vitality item uses
+			writer.WriteInt32(charInfo.AccessLevel != -100); // Char is active or not // TODO add database field
+			writer.WriteByte(charInfo.IsNoble);
+			writer.WriteByte((byte)(Hero.getInstance().isHero(charInfo.Id) ? 2 : 0)); // Hero glow
+			writer.WriteByte(charInfo.HairAccessoryEnabled); // Show hair accessory if enabled
 			writer.WriteInt32(0); // 235 - ban time left
-			writer.WriteInt32(charInfoPackage.getLastAccess()?.getEpochSecond() ?? 0); // 235 - last play time
+			writer.WriteInt32(charInfo.LastAccessTime?.getEpochSecond() ?? 0); // 235 - last play time
 			writer.WriteByte(0); // 338
-			writer.WriteInt32(charInfoPackage.getHairColor() + 1); // 338 - DK color.
+			writer.WriteInt32(charInfo.HairColor + 1); // 338 - DK color.
 
-			writer.WriteByte((byte)(charInfoPackage.getClassId() == CharacterClass.ORC_LANCER ? 1 :
-				charInfoPackage.getClassId() == CharacterClass.RIDER ? 2 :
-				charInfoPackage.getClassId() == CharacterClass.DRAGOON ? 3 :
-				charInfoPackage.getClassId() == CharacterClass.VANGUARD_RIDER ? 4 : 0)); // 362
+			writer.WriteByte((byte)(charInfo.Class == CharacterClass.ORC_LANCER ? 1 :
+				charInfo.Class == CharacterClass.RIDER ? 2 :
+				charInfo.Class == CharacterClass.DRAGOON ? 3 :
+				charInfo.Class == CharacterClass.VANGUARD_RIDER ? 4 : 0)); // 362
 		}
 	}
 }

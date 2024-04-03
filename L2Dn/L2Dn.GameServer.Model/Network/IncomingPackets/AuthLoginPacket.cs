@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Network.Enums;
+﻿using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
@@ -48,11 +50,20 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
                 connection.Send(ref authSuccessPacket);
 
                 // Load characters
-                session.Characters = CharacterPacketHelper.LoadCharacterSelectInfo(session.AccountId);
-
-                CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters,
-                    session.SelectedCharacterIndex);
+                session.Characters = new(session.AccountId);
                 
+                // Disconnect offline traders
+                if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
+                {
+                    foreach (CharacterInfo charInfo in session.Characters)
+                    {
+                        Player player = World.getInstance().getPlayer(charInfo.Id);
+                        if (player != null)
+                            Disconnection.of(player).storeMe().deleteMe();
+                    }
+                }
+                
+                CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
                 connection.Send(ref characterListPacket);
                 return ValueTask.CompletedTask;
             }

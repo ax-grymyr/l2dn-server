@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Html;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.Network;
 using L2Dn.Utilities;
 
@@ -22,8 +23,7 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public string AccountName { get; set; } = string.Empty;
     public int ProtocolVersion { get; set; }
     public bool IsProtocolOk { get; set; }
-    public ImmutableArray<CharSelectInfoPackage> Characters { get; set; } = ImmutableArray<CharSelectInfoPackage>.Empty;
-    public int SelectedCharacterIndex { get; set; } = -1;
+    public CharacterInfoList? Characters { get; set; }
     
     public Player? Player { get; set; }
     public object PlayerLock { get; } = new();
