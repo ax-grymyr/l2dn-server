@@ -39,14 +39,13 @@ public class CreatureAttackTaskManager
 			}
 			
 			DateTime currentTime = DateTime.UtcNow;
-			List<Creature> toRemove = new List<Creature>();
 			foreach (var entry in _creatureAttackData)
 			{
 				ScheduledAttack scheduledAttack = entry.Value;
 				if (currentTime >= scheduledAttack.endTime)
 				{
 					Creature creature = entry.Key;
-					toRemove.add(creature);
+					_creatureAttackData.TryRemove(creature, out _);
 					switch (scheduledAttack.type)
 					{
 						case ScheduledAttackType.NORMAL:
@@ -66,11 +65,6 @@ public class CreatureAttackTaskManager
 						}
 					}
 				}
-			}
-
-			foreach (Creature creature in toRemove)
-			{
-				_creatureAttackData.remove(creature);
 			}
 		}
 	}
@@ -92,7 +86,6 @@ public class CreatureAttackTaskManager
 			}
 			
 			DateTime currentTime = DateTime.UtcNow;
-			List<Creature> toRemove = new List<Creature>();
 			foreach (var entry in _creatureFinishData)
 			{
 				ScheduledFinish scheduledFinish = entry.Value;
@@ -100,14 +93,9 @@ public class CreatureAttackTaskManager
 				if (currentTime >= scheduledFinish.endTime)
 				{
 					Creature creature = entry.Key;
-					toRemove.Add(creature);
+					_creatureFinishData.TryRemove(creature, out _);
 					creature.onAttackFinish(scheduledFinish.attack);
 				}
-			}
-
-			foreach (Creature creature in toRemove)
-			{
-				_creatureFinishData.remove(creature);
 			}
 		}
 	}
