@@ -11,41 +11,32 @@ namespace L2Dn.GameServer.TaskManagers;
  * Creature Attack task manager class.
  * @author Mobius
  */
-public class CreatureAttackTaskManager
+public sealed class CreatureAttackTaskManager
 {
 	private static readonly Set<Map<Creature, ScheduledAttack>> ATTACK_POOLS = new();
 	private static readonly Set<Map<Creature, ScheduledFinish>> FINISH_POOLS = new();
 	private const int POOL_SIZE = 300;
 	private const int TASK_DELAY = 10;
-	
-	protected CreatureAttackTaskManager()
+
+	private CreatureAttackTaskManager()
 	{
 	}
 	
-	private class ScheduleAttackTask: Runnable
+	private class ScheduleAttackTask(Map<Creature, ScheduledAttack> creatureAttackData): Runnable
 	{
-		private readonly Map<Creature, ScheduledAttack> _creatureAttackData;
-		
-		public ScheduleAttackTask(Map<Creature, ScheduledAttack> creatureattackData)
-		{
-			_creatureAttackData = creatureattackData;
-		}
-		
 		public void run()
 		{
-			if (_creatureAttackData.isEmpty())
-			{
+			if (creatureAttackData.isEmpty())
 				return;
-			}
 			
 			DateTime currentTime = DateTime.UtcNow;
-			foreach (var entry in _creatureAttackData)
+			foreach (var entry in creatureAttackData)
 			{
 				ScheduledAttack scheduledAttack = entry.Value;
 				if (currentTime >= scheduledAttack.endTime)
 				{
 					Creature creature = entry.Key;
-					_creatureAttackData.TryRemove(creature, out _);
+					creatureAttackData.TryRemove(creature, out _);
 					switch (scheduledAttack.type)
 					{
 						case ScheduledAttackType.NORMAL:
@@ -69,31 +60,22 @@ public class CreatureAttackTaskManager
 		}
 	}
 	
-	private class ScheduleAbortTask: Runnable
+	private class ScheduleAbortTask(Map<Creature, ScheduledFinish> creatureFinishData): Runnable
 	{
-		private Map<Creature, ScheduledFinish> _creatureFinishData;
-		
-		public ScheduleAbortTask(Map<Creature, ScheduledFinish> creatureFinishData)
-		{
-			_creatureFinishData = creatureFinishData;
-		}
-		
 		public void run()
 		{
-			if (_creatureFinishData.isEmpty())
-			{
+			if (creatureFinishData.isEmpty())
 				return;
-			}
 			
 			DateTime currentTime = DateTime.UtcNow;
-			foreach (var entry in _creatureFinishData)
+			foreach (var entry in creatureFinishData)
 			{
 				ScheduledFinish scheduledFinish = entry.Value;
 				
 				if (currentTime >= scheduledFinish.endTime)
 				{
 					Creature creature = entry.Key;
-					_creatureFinishData.TryRemove(creature, out _);
+					creatureFinishData.TryRemove(creature, out _);
 					creature.onAttackFinish(scheduledFinish.attack);
 				}
 			}
