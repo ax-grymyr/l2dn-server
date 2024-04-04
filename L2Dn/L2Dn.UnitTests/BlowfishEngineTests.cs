@@ -91,7 +91,7 @@ public class BlowfishEngineTests
             141, 204, 69, 99, 208, 169, 151, 111, 119, 234, 225, 168
         ];
 
-        OldBlowfishEngine engine = new OldBlowfishEngine(key);
+        BlowfishEngine engine = new BlowfishEngine(key);
         ReadOnlySpan<byte> textData = MemoryMarshal.Cast<char, byte>(text);
         Span<byte> encryptedData = stackalloc byte[textData.Length];
         engine.Encode(encryptedData, textData);

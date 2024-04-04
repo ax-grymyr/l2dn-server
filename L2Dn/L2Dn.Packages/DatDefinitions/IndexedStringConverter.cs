@@ -1,10 +1,9 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using L2Dn.Packages.DatDefinitions;
 
-namespace L2Dn;
+namespace L2Dn.Packages.DatDefinitions;
 
-internal sealed class IndexedStringConverter: JsonConverter<IndexedString>
+public sealed class IndexedStringConverter: JsonConverter<IndexedString>
 {
     public override IndexedString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
