@@ -19,27 +19,27 @@
 			<npc id="20176" x="98109" y="132266" z="-3483" heading="30889" respawnTime="60sec" /> <!-- Wyrm -->
 			<npc id="20176" x="97364" y="132853" z="-3544" heading="19664" respawnTime="60sec" /> <!-- Wyrm -->
 			<npc id="20176" x="98069" y="134836" z="-3644" heading="9720" respawnTime="60sec" /> <!-- Wyrm -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" /> <!-- Mage -->
-			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
-			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
-			<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" /> <!-- Fallen Angel Tanakia -->
-			<npc id="27262" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Death Lord Hallate -->
-			<npc id="25834" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Shadai -->
-			<npc id="21889" x="82775" y="148663" z="-3464" heading="55239" respawnTime="60sec" /> <!-- Varka's Elite Escort -->
-			<npc id="21880" x="82290" y="149104" z="-3446" heading="33646" respawnTime="60sec" /> <!-- Varka Silenos Magus -->
-			<npc id="20995" x="82705" y="149165" z="-3464" heading="34663" respawnTime="60sec" /> <!-- Garden Guard -->
-			<npc id="34088" x="82913" y="148794" z="-3464" heading="59774" respawnTime="60sec" /> <!-- Christmas Tree -->
-			<npc id="21838" x="82716" y="148348" z="-3455" respawnTime="60sec" /> <!-- Hot Springs Nepenthes -->
-			<npc id="21772" x="82573" y="148287" z="-3464" heading="1221" respawnTime="60sec" /> <!-- Radin -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="20802" x="82730" y="148651" z="-3464" heading="4024" respawnTime="60sec" />--> <!-- Mage -->
+			<!--<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" />--> <!-- Fallen Angel Tanakia -->
+			<!--<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" />--> <!-- Fallen Angel Tanakia -->
+			<!--<npc id="27277" x="82775" y="148663" z="-3464" heading="38241" respawnTime="60sec" />--> <!-- Fallen Angel Tanakia -->
+			<!--<npc id="27262" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" />--> <!-- Death Lord Hallate -->
+			<!--<npc id="25834" x="82845" y="148557" z="-3464" heading="55239" respawnTime="60sec" />--> <!-- Shadai -->
+			<!--<npc id="21889" x="82775" y="148663" z="-3464" heading="55239" respawnTime="60sec" />--> <!-- Varka's Elite Escort -->
+			<!--<npc id="21880" x="82290" y="149104" z="-3446" heading="33646" respawnTime="60sec" />--> <!-- Varka Silenos Magus -->
+			<!--<npc id="20995" x="82705" y="149165" z="-3464" heading="34663" respawnTime="60sec" />--> <!-- Garden Guard -->
+			<!--<npc id="34088" x="82913" y="148794" z="-3464" heading="59774" respawnTime="60sec" />--> <!-- Christmas Tree -->
+			<!--<npc id="21838" x="82716" y="148348" z="-3455" respawnTime="60sec" />--> <!-- Hot Springs Nepenthes -->
+			<!--<npc id="21772" x="82573" y="148287" z="-3464" heading="1221" respawnTime="60sec" />--> <!-- Radin -->
 		</group>
 	</spawn>
 </list>
