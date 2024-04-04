@@ -27,7 +27,7 @@ public sealed class HtmCache
 		{
 			_logger.Info("Html cache start...");
 			ParseDir(directoryPath);
-			_logger.Info("Cache[HTML]: " + getMemoryUsage() + " megabytes on " + _cache.Count + " files loaded.");
+			_logger.Info("Cache[HTML]: " + (getMemoryUsage() >> 20) + " megabytes on " + _cache.Count + " files loaded.");
 		}
 		else
 		{
