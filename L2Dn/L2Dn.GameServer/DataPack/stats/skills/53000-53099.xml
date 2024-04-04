@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="53001" toLevel="3" name="Critical Creation">
-		<!-- Critical Craft Success Rate +3%. (The effect depends on the item type and grade.) -->
+		<!-- Craft critical success rate +$s1. -->
 		<icon>icon.skill10701</icon>
 		<magicLevel>
 			<value level="1">76</value>
@@ -20,7 +20,7 @@
 		</effects>
 	</skill>
 	<skill id="53002" toLevel="3" name="Master of Creation">
-		<!-- Craft Success Rate +5% -->
+		<!-- Craft success rate +$s1. -->
 		<icon>icon.skill10312</icon>
 		<magicLevel>
 			<value level="1">78</value>
@@ -39,7 +39,7 @@
 		</effects>
 	</skill>
 	<skill id="53003" toLevel="3" name="Mass Chain Strike">
-		<!-- <Pull skill>. Pulls the target and enemies around them. -->
+		<!-- Pulls a selected target and nearby enemies to you and provokes. -->
 		<icon>icon.skill53003</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -48,9 +48,9 @@
 		</abnormalLevel>
 		<abnormalTime>1</abnormalTime>
 		<abnormalType>STUN</abnormalType>
-		<affectLimit>10-10</affectLimit>
-		<affectRange>200</affectRange>
-		<activateRate>80</activateRate>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>400</affectRange>
+		<activateRate>90</activateRate>
 		<lvlBonusRate>30</lvlBonusRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<magicLevel>
@@ -66,7 +66,7 @@
 			<value level="3">132</value>
 		</mpConsume>
 		<castRange>700</castRange>
-		<hitTime>500</hitTime>
+		<hitTime>1500</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>60000</reuseDelay>
 		<effectPoint>
@@ -75,7 +75,7 @@
 			<value level="3">-4232</value>
 		</effectPoint>
 		<hitCancelTime>0</hitCancelTime>
-		<effectRange>1100</effectRange>
+		<effectRange>1200</effectRange>
 		<trait>PULL</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY_ONLY</targetType>
@@ -90,13 +90,13 @@
 				<delay>600</delay>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
 	<skill id="53004" toLevel="5" name="Critical Vulnerability Decrease">
-		<!-- Received Vital Point Attack Rate -20%. Received P. Critical Rate -30% -->
+		<!-- Success rate of attacks targeting the character's vital points -$s1, chance of receiving P. Critical Attack -$s2. -->
 		<icon>icon.skill53004</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -130,36 +130,27 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="53005" toLevel="2" name="Detect Darkness">
-		<!-- <<font color="FF8000">Common de-stealthing skill</font>>. Removes the Hide effect from nearby enemies and prevents from using it again for 2 sec. De-stealthing range: 1000. -->
+	<skill id="53005" toLevel="1" name="Detect Darkness">
+		<!-- Allows to find invisible enemies nearby character. Target can't become invisible and cancel this effect for 2 sec. Requires a bow. -->
 		<icon>icon.skill53005</icon>
-		<affectRange>1000</affectRange>
+		<operateType>A2</operateType>
+		<magicLevel>76</magicLevel>
+		<mpConsume>70</mpConsume>
 		<hitTime>1200</hitTime>
 		<coolTime>300</coolTime>
-		<magicLevel>
-			<value level="1">76</value>
-			<value level="2">88</value>
-		</magicLevel>
-		<abnormalLevel>
-			<value level="1">1</value>
-			<value level="2">2</value>
-		</abnormalLevel>
-		<abnormalType>BLOCK_ESCAPE</abnormalType>
-		<mpConsume>70</mpConsume>
-		<operateType>A2</operateType>
+		<isMagic>0</isMagic>
+		<basicProperty>NONE</basicProperty>
 		<abnormalTime>2</abnormalTime>
-		<basicProperty>PHYSICAL</basicProperty>
+		<abnormalLevel>10</abnormalLevel>
+		<abnormalType>HIDE</abnormalType>
+		<effectPoint>-760</effectPoint>
+		<affectRange>1000</affectRange>
 		<reuseDelay>30000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
-		<affectScope>RANGE</affectScope>
+		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>INVISIBLE</affectObject>
-		<itemConsumeCount>
-			<value level="1">0</value>
-			<value level="2">1</value>
-		</itemConsumeCount>
-		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -168,22 +159,13 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="Detection" />
-			<effect name="BlockAbnormalSlot">
-				<slot>HIDE</slot>
-			</effect>
-			<effect name="DispelBySlotProbability" fromLevel="2" toLevel="2">
-				<dispel>STEALTH</dispel>
-				<rate>5</rate>
-			</effect>
-			<effect name="BlockAbnormalSlot" fromLevel="2" toLevel="2">
-				<slot>STEALTH</slot>
-				<rate>5</rate>
+			<effect name="DispelBySlot">
+				<dispel>HIDE,9</dispel>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="53006" toLevel="5" name="Bind">
-		<!-- <Silence Skill>. The effect lasts for 3 sec. Blocks enemy's physical skill usage. -->
+		<!-- Blocks all the enemy's physical skills for $s1 -->
 		<icon>icon.skill6320</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -192,12 +174,12 @@
 			<value level="4">4</value>
 			<value level="5">5</value>
 		</abnormalLevel>
-		<abnormalTime>3</abnormalTime>
+		<abnormalTime>10</abnormalTime>
 		<abnormalType>SILENCE_PHYSICAL</abnormalType>
 		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
 		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
-		<castRange>600</castRange>
+		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-666</value>
 			<value level="2">-670</value>
@@ -218,189 +200,82 @@
 			<value level="5">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">103</value>
-			<value level="2">107</value>
-			<value level="3">111</value>
-			<value level="4">115</value>
+			<value level="1">70</value>
+			<value level="2">103</value>
+			<value level="3">107</value>
+			<value level="4">111</value>
 			<value level="5">119</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
+		<reuseDelay>120000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalMute" />
 		</effects>
 	</skill>
-	<skill id="53007" toLevel="4" name="Power Stance">
-		<!-- P. Atk. +50. Atk. Spd. +6% -->
-		<icon>icon.skill10244</icon>
+	<skill id="53007" toLevel="3" name="Heavy Armor Mastery">
+		<!-- Temporarily P. Atk. +$s1 and Atk. Spd. +$s2. -->
+		<icon>icon.skill0232</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">4</value>
 		</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
-		<effectRange>900</effectRange>
-		<isMagic>5</isMagic> <!-- Magic Skill -->
+		<abnormalType>WEAPON_MASTERY</abnormalType>
 		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">76</value>
+		</magicLevel>
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PAtk">
 				<amount>
 					<value level="1">50</value>
-					<value level="2">75</value>
-					<value level="3">100</value>
-					<value level="4">200</value>
+					<value level="2">100</value>
+					<value level="3">150</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
-					<value level="1">6</value>
-					<value level="2">8</value>
-					<value level="3">10</value>
-					<value level="4">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="53008" toLevel="2" name="Children of Eva">
-		<!-- M. Atk. +10. M. Skill Critical Rate +5%. HP Recovery Rate +5% -->
-		<icon>
-			<value level="1">icon.skill1906</value>
-			<value level="2">icon.s_children_of_eva2</value>
-		</icon>
-		<magicLevel>1</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="MAtk">
-				<amount>
 					<value level="1">10</value>
-					<value level="2">150</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
 				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalDamage" fromLevel="2" toLevel="2">
-				<amount>40</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="HpRegen">
-				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="53009" toLevel="3" name="Sharpness">
-		<!-- Vital Point Attack Rate +10%. -->
+	<skill id="53009" toLevel="1" name="Sharpness">
+		<!-- Rate of attacks targeting the enemy's vital parts +10%. -->
 		<icon>icon.skill0409</icon>
-		<magicLevel>
-			<value level="1">40</value>
-			<value level="2">55</value>
-			<value level="3">70</value>
-		</magicLevel>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="FatalBlowRate">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
 	</skill>
-	<skill id="53010" toLevel="8" name="Knight's Protection">
-		<!-- Max HP +300. Shield Defense +120 -->
-		<icon>icon.skill3584</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
-		<abnormalType>KNIGHT_SHIELD</abnormalType>
+	<skill id="53010" toLevel="5" name="Knight's Protection">
+		<!-- For $s1, Shield Defense Rate +$s2, Shield Defense +$s3. <Auto-use> -->
+		<icon>icon.skill10012</icon>
+		<operateType>A2</operateType>
 		<hitTime>2500</hitTime>
-		<magicLevel>
-			<value level="1">50</value>
-			<value level="2">60</value>
-			<value level="3">65</value>
-			<value level="4">70</value>
-			<value level="5">75</value>
-			<value level="6">82</value>
-			<value level="7">88</value>
-			<value level="8">91</value>
-		</magicLevel>
+		<reuseDelay>10000</reuseDelay>
 		<mpConsume>
 			<value level="1">50</value>
 			<value level="2">55</value>
 			<value level="3">65</value>
 			<value level="4">70</value>
 			<value level="5">75</value>
-			<value level="6">80</value>
-			<value level="7">85</value>
-			<value level="8">90</value>
 		</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">300</value>
-					<value level="2">375</value>
-					<value level="3">450</value>
-					<value level="4">530</value>
-					<value level="5">610</value>
-					<value level="6">900</value>
-					<value level="7">1500</value>
-					<value level="8">1800</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ShieldDefence">
-				<amount>
-					<value level="1">120</value>
-					<value level="2">140</value>
-					<value level="3">160</value>
-					<value level="4">180</value>
-					<value level="5">200</value>
-					<value level="6">250</value>
-					<value level="7">300</value>
-					<value level="8">300</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="53011" toLevel="2" name="Knight's Fortress">
-		<!-- P. Atk. +50 -->
-		<icon>icon.skill10020</icon>
-		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
-		<abnormalTime>10</abnormalTime>
-		<effects>
-			<effect name="PAtk">
-				<amount>
-					<value level="1">180</value>
-					<value level="2">300</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</effects>
 	</skill>
 </list>

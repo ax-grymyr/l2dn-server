@@ -1,31 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="23300" toLevel="1" name="Ghost Piercing">
-		<!-- The ghost inflicts damage over time. -->
+		<!-- For 10 sec., flusters the target and inflicts damage of 300 every sec. -->
 		<icon>icon.skill0773</icon>
-		<affectLimit>5-12</affectLimit>
-		<affectRange>900</affectRange>
-		<castRange>700</castRange>
-		<effectPoint>-800</effectPoint>
-		<effectRange>1400</effectRange>
-		<fanRange>0;0;900;100</fanRange>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicLevel>80</magicLevel>
 		<operateType>A2</operateType>
-		<effectPoint>-800</effectPoint>
+		<effectPoint>-1000</effectPoint>
 		<basicProperty>MAGIC</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>1</lvlBonusRate>
-		<trait>INFECTION</trait>
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
-		<affectScope>SQUARE</affectScope>
-		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>300</power>

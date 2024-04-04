@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="53100" toLevel="1" name="Heroic Miracle">
-		<!-- A skill given only to Olympiad Heroes. Max HP +850. With a certain chance after an attack, activates a buff that increases Atk. Spd., Casting Spd. and Speed and continuously recovers MP. -->
+		<!-- Skill of the Olympiad Hero. Max HP +850. During attack Atk. Spd., Casting Spd. and Speed are increased. The buff of continual MP recovery is activated. -->
 		<icon>icon.skill0912</icon>
 		<operateType>P</operateType>
 		<magicLevel>1</magicLevel>
@@ -40,7 +40,7 @@
 		</effects>
 	</skill>
 	<skill id="53101" toLevel="1" name="Heroic Miracle">
-		<!-- Atk. Spd. +100. Casting Spd. +100. Speed +20. Continuously recovers MP. -->
+		<!-- Atk. Spd. by +100, Casting Spd. +100, Speed +20. Continual MP recovery is activated. -->
 		<icon>icon.skill0912</icon>
 		<operateType>A1</operateType>
 		<magicLevel>-1</magicLevel>

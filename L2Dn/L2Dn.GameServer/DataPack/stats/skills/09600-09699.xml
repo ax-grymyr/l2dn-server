@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="9618" toLevel="1" name="Yum Yum Candy">
 		<!-- Acquired XP/ SP +15%. Works in a pair with Nom Nom Candy. Only one Nom Nom Candy can work at a moment. -->
+		<icon>etc_whiteday_candy_i05</icon>
 		<operateType>P</operateType>
 		<hitTime>500</hitTime>
 		<effects>
@@ -15,6 +16,7 @@
 	</skill>
 	<skill id="9619" toLevel="1" name="Nom Nom Candy">
 		<!-- Acquired XP/ SP +15%. Works in a pair with Yum Yum Candy. Only one Yum Yum Candy can work at a moment. -->
+		<icon>etc_whiteday_candy_i06</icon>
 		<operateType>P</operateType>
 		<hitTime>500</hitTime>
 		<effects>

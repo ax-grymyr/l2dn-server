@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="1100" toLevel="2" name="Chill Flame">
-		<!-- <Infection skill>. Freezing flame strikes the enemy. Deals continuous damage for 15 sec. -->
+		<!-- Strikes the target with magical cold flame, causing loss of $s2 HP per sec. for $s1. -->
 		<icon>icon.skill1100</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -36,7 +36,6 @@
 			<value level="1">3</value>
 			<value level="2">5</value>
 		</mpInitialConsume>
-		<trait>INFECTION</trait>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -53,7 +52,7 @@
 		</effects>
 	</skill>
 	<skill id="1101" toLevel="2" name="Blaze Quake">
-		<!-- <Infection Skill>. Sets opponents in range ablaze. Deals continuous damage for 15 sec. -->
+		<!-- Ignites nearby enemies, causing loss of $s2 HP per sec. for $s1. -->
 		<icon>icon.skill1101</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
@@ -88,7 +87,6 @@
 			<value level="1">10</value>
 			<value level="2">14</value>
 		</mpInitialConsume>
-		<trait>INFECTION</trait>
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -106,7 +104,7 @@
 		</effects>
 	</skill>
 	<skill id="1102" toLevel="6" name="Aura Sink">
-		<!-- <Infection Skill>. Burns up the enemy's MP with 16 power. Causes loss of 8 MP per sec. for 15 sec. -->
+		<!-- Consumes the enemy's MP with $s1 Power added to M. Atk. and additionally causes loss of $s3 MP per sec. for $s2. -->
 		<icon>icon.skill1102</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
@@ -159,7 +157,6 @@
 			<value level="5">18</value>
 			<value level="6">20</value>
 		</mpInitialConsume>
-		<trait>INFECTION</trait>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -192,7 +189,7 @@
 		</effects>
 	</skill>
 	<skill id="1104" toLevel="22" name="Seal of Winter">
-		<!-- With a certain chance when using attack skills:. For 10 sec., the target's Atk. Spd. -23%. (Trigger rate: 33%, trigger cooldown: 10 sec.). Has the same trigger cooldown as Seal of Chaos and Seal of Slow. -->
+		<!-- Atk. Spd. of nearby enemies -$s2 for $s1. -->
 		<icon>icon.skill1104</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -315,7 +312,7 @@
 		</effects>
 	</skill>
 	<skill id="1105" toLevel="18" name="Madness">
-		<!-- Swaps the enemy's target for a random one. -->
+		<!-- Confuses the enemy into attacking random targets. -->
 		<icon>icon.skill1105</icon>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -414,7 +411,7 @@
 		</effects>
 	</skill>
 	<skill id="1107" toLevel="2" name="Frost Flame">
-		<!-- <Infection skill>. Deadly freezing flame strikes the enemy. Deals continuous damage for 15 sec. -->
+		<!-- Strikes the target with magical cold flame, causing loss of $s2 HP per sec. for $s1. -->
 		<icon>icon.skill1107</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
@@ -449,7 +446,6 @@
 			<value level="1">6</value>
 			<value level="2">8</value>
 		</mpInitialConsume>
-		<trait>INFECTION</trait>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -466,7 +462,7 @@
 		</effects>
 	</skill>
 	<skill id="1108" toLevel="4" name="Seal of Flame">
-		<!-- <Infection skill>. Sets nearby enemies on fire. Deals continuous damage for 15 sec. -->
+		<!-- Ignites nearby enemies, causing loss of $s2 HP per sec. for $s1. -->
 		<icon>icon.skill1108</icon>
 		<abnormalLevel>
 			<value level="1">5</value>
@@ -514,7 +510,6 @@
 			<value level="3">68</value>
 			<value level="4">74</value>
 		</magicLevel>
-		<trait>INFECTION</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -531,7 +526,7 @@
 		</effects>
 	</skill>
 	<skill id="1111" toLevel="18" name="Summon Kat the Cat">
-		<!-- <Summoning Skill>. Summons Kat the Cat. -->
+		<!-- Summons Kat the Cat. Consumes $s1 Spirit Ore. -->
 		<icon>icon.skill1111</icon>
 		<hitTime>6000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -597,7 +592,26 @@
 			<value level="18">28</value>
 		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>
+			<value level="1">10000</value>
+			<value level="2">10000</value>
+			<value level="3">10000</value>
+			<value level="4">10000</value>
+			<value level="5">5000</value>
+			<value level="6">5000</value>
+			<value level="7">5000</value>
+			<value level="8">5000</value>
+			<value level="9">5000</value>
+			<value level="10">5000</value>
+			<value level="11">5000</value>
+			<value level="12">5000</value>
+			<value level="13">5000</value>
+			<value level="14">5000</value>
+			<value level="15">5000</value>
+			<value level="16">5000</value>
+			<value level="17">5000</value>
+			<value level="18">5000</value>
+		</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">20</value>
@@ -650,7 +664,7 @@
 		</effects>
 	</skill>
 	<skill id="1126" toLevel="42" name="Servitor Recharge">
-		<!-- Recovers servitor's MP. Power 41. The MP recovery effect depends on servitor's MP. -->
+		<!-- Recovers the servitor's MP with up to $s1 Power depending on the servitor's level. -->
 		<icon>icon.skill1126</icon>
 		<castRange>400</castRange>
 		<effectPoint>
@@ -707,7 +721,7 @@
 			<value level="4">30</value>
 			<value level="5">33</value>
 			<value level="6">35</value>
-			<value level="7">40</value>
+			<value level="7">38</value>
 			<value level="8">40</value>
 			<value level="9">42</value>
 			<value level="10">44</value>
@@ -887,7 +901,7 @@
 		</effects>
 	</skill>
 	<skill id="1127" toLevel="53" name="Servitor Heal">
-		<!-- Recovers servitor's HP with 169 power. -->
+		<!-- Restores the servitor's HP by $s1 power. -->
 		<icon>icon.skill1127</icon>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -949,8 +963,8 @@
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">20</value>
-			<value level="2">20</value>
+			<value level="1">16</value>
+			<value level="2">18</value>
 			<value level="3">20</value>
 			<value level="4">23</value>
 			<value level="5">24</value>
@@ -961,8 +975,8 @@
 			<value level="10">33</value>
 			<value level="11">34</value>
 			<value level="12">35</value>
-			<value level="13">40</value>
-			<value level="14">40</value>
+			<value level="13">38</value>
+			<value level="14">39</value>
 			<value level="15">40</value>
 			<value level="16">42</value>
 			<value level="17">43</value>
@@ -1179,7 +1193,7 @@
 		</effects>
 	</skill>
 	<skill id="1128" toLevel="18" name="Summon Shadow">
-		<!-- <Summoning Skill>. Summons Shadow. -->
+		<!-- Summons Shadow. Consumes $s1 Spirit Ore. -->
 		<icon>icon.skill1128</icon>
 		<hitTime>6000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1317,7 +1331,7 @@
 		</effects>
 	</skill>
 	<skill id="1129" toLevel="8" name="Summon Reanimated Man">
-		<!-- <Summoning Skill>. Summons Reanimated Man. -->
+		<!-- Summons a Reanimated man. Consumes $s1 Spirit Ore. -->
 		<icon>icon.skill1129</icon>
 		<hitTime>3500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1388,7 +1402,7 @@
 		</effects>
 	</skill>
 	<skill id="1139" toLevel="2" name="Servitor Magic Shield">
-		<!-- For 20 min.s. servitor's M. Def. +23% -->
+		<!-- For $s1, Servitor's M. Def. +$s2. -->
 		<icon>icon.skill1139</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -1397,6 +1411,10 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>MD_UP</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">418</value>
+			<value level="2">495</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1409,7 +1427,7 @@
 			<value level="2">10</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
@@ -1429,7 +1447,7 @@
 		</effects>
 	</skill>
 	<skill id="1140" toLevel="3" name="Servitor Physical Shield">
-		<!-- Duration: 20 min. Servitor's P. Def. +8% -->
+		<!-- For $s1, Servitor's P. Def. +$s2. -->
 		<icon>icon.skill1140</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1439,6 +1457,11 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">379</value>
+			<value level="2">457</value>
+			<value level="3">532</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1453,7 +1476,7 @@
 			<value level="3">11</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
@@ -1475,7 +1498,7 @@
 		</effects>
 	</skill>
 	<skill id="1141" toLevel="2" name="Servitor Haste">
-		<!-- Duration: 20 min. Servitor's Atk. Spd. +15% -->
+		<!-- For $s1, Servitor's Atk. Spd. +$s2. -->
 		<icon>icon.skill1141</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1484,6 +1507,10 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">418</value>
+			<value level="2">495</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1496,7 +1523,7 @@
 			<value level="2">10</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
@@ -1515,33 +1542,38 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1144" toLevel="3" name="Servitor Wind Walk">
-		<!-- Duration: 20 min. Servitor's P. Def. +8%. Servitor's M. Def. +10%. Servitor's P. Atk. Spd. +10%. Servitor's Speed +20 -->
+	<skill id="1144" toLevel="2" name="Servitor Wind Walk">
+		<!-- For $s1, Servitor's Speed +$s2. -->
 		<icon>icon.skill1144</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
-			<value level="3">3</value>
 		</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">331</value>
+			<value level="2">457</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<mpConsume>
-			<value level="1">30</value>
-			<value level="2">46</value>
-			<value level="3">54</value>
+			<value level="1">24</value>
+			<value level="2">36</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">48</value>
+			<value level="1">35</value>
 			<value level="2">48</value>
-			<value level="3">56</value>
 		</magicLevel>
 		<targetType>SUMMON</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1549,39 +1581,14 @@
 			<effect name="Speed">
 				<amount>
 					<value level="1">20</value>
-					<value level="2">20</value>
-					<value level="3">35</value>
+					<value level="2">33</value>
 				</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">8</value>
-					<value level="2">12</value>
-					<value level="3">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">33</value>
-				</amount>
-				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1145" toLevel="3" name="Servitor Magic Boost">
-		<!-- Duration: 20 min. Servitor's M. Atk. +55%. Servitor's P. Def. +8%. Servitor's M. Def. +10%. Servitor's Atk. Spd. +10% -->
+		<!-- Servitor's M. Atk. +$s2 for $s1. -->
 		<icon>icon.skill1145</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1591,20 +1598,30 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">331</value>
+			<value level="2">457</value>
+			<value level="3">532</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<mpConsume>
-			<value level="1">30</value>
-			<value level="2">46</value>
-			<value level="3">54</value>
+			<value level="1">24</value>
+			<value level="2">36</value>
+			<value level="3">42</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">12</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">48</value>
+			<value level="1">35</value>
 			<value level="2">48</value>
 			<value level="3">56</value>
 		</magicLevel>
@@ -1619,34 +1636,10 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">8</value>
-					<value level="2">12</value>
-					<value level="3">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">33</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="1146" toLevel="3" name="Mighty Servitor">
-		<!-- Duration: 20 min. Servitor's P. Atk. +8%. Servitor's P. Def. +8%. Servitor's M. Def. +10%. Servitor's Atk. Spd. +10% -->
+		<!-- Servitor's P. Atk. +$s2 for $s1. -->
 		<icon>icon.skill1146</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1656,20 +1649,30 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">331</value>
+			<value level="2">457</value>
+			<value level="3">532</value>
+		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<mpConsume>
-			<value level="1">30</value>
-			<value level="2">46</value>
-			<value level="3">54</value>
+			<value level="1">24</value>
+			<value level="2">36</value>
+			<value level="3">42</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">10</value>
+			<value level="3">12</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">48</value>
+			<value level="1">35</value>
 			<value level="2">48</value>
 			<value level="3">56</value>
 		</magicLevel>
@@ -1684,180 +1687,144 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">8</value>
-					<value level="2">12</value>
-					<value level="3">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">30</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-					<value level="3">33</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="1147" toLevel="6" name="Fireball">
-		<!-- <Fixed cast time skill>. Creates a fireball. Inflicts magic damage on the enemy with 40 power. -->
-		<icon>icon.skill11298</icon>
+	<skill id="1147" toLevel="6" name="Vampiric Touch">
+		<!-- Inflicts damage by darkness on the enemy with $s1 Power added to M. Atk. Absorbs $s2 of the damage as HP. -->
+		<icon>icon.skill1147</icon>
 		<castRange>600</castRange>
 		<effectPoint>
-			<value level="1">-25</value>
-			<value level="2">-70</value>
-			<value level="3">-95</value>
-			<value level="4">-120</value>
-			<value level="5">-145</value>
-			<value level="6">-170</value>
+			<value level="1">-72</value>
+			<value level="2">-81</value>
+			<value level="3">-91</value>
+			<value level="4">-102</value>
+			<value level="5">-114</value>
+			<value level="6">-122</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
-		<attributeType>FIRE</attributeType>
+		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
-		<hitTime>5000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">1</value>
-			<value level="2">10</value>
-			<value level="3">15</value>
+			<value level="1">11</value>
+			<value level="2">14</value>
+			<value level="3">17</value>
 			<value level="4">20</value>
-			<value level="5">25</value>
-			<value level="6">30</value>
+			<value level="5">23</value>
+			<value level="6">25</value>
 		</magicLevel>
-		<mpConsume>5</mpConsume>
+		<mpConsume>
+			<value level="1">20</value>
+			<value level="2">22</value>
+			<value level="3">25</value>
+			<value level="4">28</value>
+			<value level="5">30</value>
+			<value level="6">32</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">5</value>
+			<value level="2">6</value>
+			<value level="3">7</value>
+			<value level="4">7</value>
+			<value level="5">8</value>
+			<value level="6">8</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>5000</reuseDelay>
+		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="MagicalAttack">
+			<effect name="HpDrain">
 				<power>
-					<value level="1">40</value>
-					<value level="2">40</value>
-					<value level="3">40</value>
-					<value level="4">40</value>
-					<value level="5">40</value>
-					<value level="6">40</value>
+					<value level="1">18</value>
+					<value level="2">21</value>
+					<value level="3">23</value>
+					<value level="4">26</value>
+					<value level="5">29</value>
+					<value level="6">32</value>
 				</power>
+				<percentage>40</percentage>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1148" toLevel="30" name="Death Spike">
-		<!-- Uses dark energy to attack the enemy. Deals damage with 84 power. -->
+	<skill id="1148" toLevel="20" name="Death Spike">
+		<!-- Throws a bone to inflict damage on the enemy with $s1 Power added to M. Atk. Requires $s2 Cursed Bone(s). -->
 		<icon>icon.skill1148</icon>
-		<castRange>700</castRange>
+		<castRange>900</castRange>
 		<effectPoint>
-			<value level="1">-220</value>
-			<value level="2">-235</value>
-			<value level="3">-250</value>
-			<value level="4">-265</value>
-			<value level="5">-280</value>
-			<value level="6">-295</value>
-			<value level="7">-310</value>
-			<value level="8">-320</value>
-			<value level="9">-330</value>
-			<value level="10">-340</value>
-			<value level="11">-350</value>
-			<value level="12">-360</value>
-			<value level="13">-370</value>
-			<value level="14">-380</value>
-			<value level="15">-390</value>
-			<value level="16">-400</value>
-			<value level="17">-405</value>
-			<value level="18">-410</value>
-			<value level="19">-415</value>
-			<value level="20">-420</value>
-			<value level="21">-425</value>
-			<value level="22">-430</value>
-			<value level="23">-435</value>
-			<value level="24">-440</value>
-			<value level="25">-445</value>
-			<value level="26">-450</value>
-			<value level="27">-455</value>
-			<value level="28">-460</value>
-			<value level="29">-465</value>
-			<value level="30">-470</value>
+			<value level="1">-209</value>
+			<value level="2">-229</value>
+			<value level="3">-248</value>
+			<value level="4">-266</value>
+			<value level="5">-275</value>
+			<value level="6">-283</value>
+			<value level="7">-291</value>
+			<value level="8">-299</value>
+			<value level="9">-306</value>
+			<value level="10">-312</value>
+			<value level="11">-318</value>
+			<value level="12">-323</value>
+			<value level="13">-328</value>
+			<value level="14">-330</value>
+			<value level="15">-332</value>
+			<value level="16">-336</value>
+			<value level="17">-338</value>
+			<value level="18">-340</value>
+			<value level="19">-342</value>
+			<value level="20">-344</value>
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>2508</itemConsumeId> <!-- Cursed Bone -->
 		<magicLevel>
-			<value level="1">40</value>
-			<value level="2">43</value>
-			<value level="3">46</value>
-			<value level="4">49</value>
-			<value level="5">52</value>
-			<value level="6">55</value>
-			<value level="7">58</value>
-			<value level="8">60</value>
-			<value level="9">62</value>
-			<value level="10">64</value>
-			<value level="11">66</value>
-			<value level="12">68</value>
-			<value level="13">70</value>
-			<value level="14">72</value>
-			<value level="15">74</value>
-			<value level="16">76</value>
-			<value level="17">77</value>
-			<value level="18">78</value>
-			<value level="19">79</value>
-			<value level="20">80</value>
-			<value level="21">81</value>
-			<value level="22">82</value>
-			<value level="23">83</value>
-			<value level="24">84</value>
-			<value level="25">85</value>
-			<value level="26">86</value>
-			<value level="27">87</value>
-			<value level="28">88</value>
-			<value level="29">89</value>
-			<value level="30">90</value>
+			<value level="1">44</value>
+			<value level="2">48</value>
+			<value level="3">52</value>
+			<value level="4">56</value>
+			<value level="5">58</value>
+			<value level="6">60</value>
+			<value level="7">62</value>
+			<value level="8">64</value>
+			<value level="9">66</value>
+			<value level="10">68</value>
+			<value level="11">70</value>
+			<value level="12">72</value>
+			<value level="13">74</value>
+			<value level="14">76</value>
+			<value level="15">78</value>
+			<value level="16">80</value>
+			<value level="17">81</value>
+			<value level="18">82</value>
+			<value level="19">83</value>
+			<value level="20">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">33</value>
-			<value level="2">35</value>
-			<value level="3">37</value>
-			<value level="4">39</value>
-			<value level="5">41</value>
-			<value level="6">42</value>
-			<value level="7">45</value>
-			<value level="8">46</value>
-			<value level="9">47</value>
-			<value level="10">49</value>
-			<value level="11">50</value>
-			<value level="12">51</value>
-			<value level="13">53</value>
-			<value level="14">54</value>
-			<value level="15">55</value>
-			<value level="16">56</value>
-			<value level="17">57</value>
-			<value level="18">58</value>
-			<value level="19">58</value>
-			<value level="20">59</value>
-			<value level="21">59</value>
-			<value level="22">60</value>
-			<value level="23">60</value>
-			<value level="24">62</value>
-			<value level="25">62</value>
-			<value level="26">63</value>
-			<value level="27">63</value>
-			<value level="28">64</value>
-			<value level="29">64</value>
-			<value level="30">65</value>
+			<value level="1">19</value>
+			<value level="2">22</value>
+			<value level="3">24</value>
+			<value level="4">28</value>
+			<value level="5">29</value>
+			<value level="6">31</value>
+			<value level="7">32</value>
+			<value level="8">33</value>
+			<value level="9">35</value>
+			<value level="10">36</value>
+			<value level="11">37</value>
+			<value level="12">38</value>
+			<value level="13">40</value>
+			<value level="14">43</value>
+			<value level="15">45</value>
+			<value level="16">61</value>
+			<value level="17">64</value>
+			<value level="18">67</value>
+			<value level="19">70</value>
+			<value level="20">73</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">4</value>
@@ -1880,61 +1847,42 @@
 			<value level="18">11</value>
 			<value level="19">12</value>
 			<value level="20">12</value>
-			<value level="21">12</value>
-			<value level="22">12</value>
-			<value level="23">12</value>
-			<value level="24">13</value>
-			<value level="25">13</value>
-			<value level="26">13</value>
-			<value level="27">13</value>
-			<value level="28">13</value>
-			<value level="29">13</value>
-			<value level="30">13</value>
 		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>1000</reuseDelay>
+		<reuseDelay>1200</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttackRange">
 				<power>
-					<value level="1">84</value>
-					<value level="2">87</value>
-					<value level="3">90</value>
-					<value level="4">93</value>
-					<value level="5">96</value>
-					<value level="6">99</value>
-					<value level="7">106</value>
-					<value level="8">110</value>
-					<value level="9">112</value>
-					<value level="10">114</value>
-					<value level="11">117</value>
-					<value level="12">121</value>
-					<value level="13">126</value>
-					<value level="14">130</value>
-					<value level="15">134</value>
-					<value level="16">138</value>
-					<value level="17">140</value>
-					<value level="18">142</value>
-					<value level="19">144</value>
-					<value level="20">147</value>
-					<value level="21">149</value>
-					<value level="22">151</value>
-					<value level="23">153</value>
-					<value level="24">155</value>
-					<value level="25">157</value>
-					<value level="26">160</value>
-					<value level="27">160</value>
-					<value level="28">166</value>
-					<value level="29">170</value>
-					<value level="30">173</value>
+					<value level="1">58</value>
+					<value level="2">65</value>
+					<value level="3">72</value>
+					<value level="4">78</value>
+					<value level="5">82</value>
+					<value level="6">85</value>
+					<value level="7">89</value>
+					<value level="8">92</value>
+					<value level="9">96</value>
+					<value level="10">99</value>
+					<value level="11">102</value>
+					<value level="12">105</value>
+					<value level="13">108</value>
+					<value level="14">112</value>
+					<value level="15">115</value>
+					<value level="16">121</value>
+					<value level="17">124</value>
+					<value level="18">127</value>
+					<value level="19">130</value>
+					<value level="20">133</value>
 				</power>
+				<shieldDefPercent>40</shieldDefPercent>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1151" toLevel="18" name="Corpse Life Drain">
-		<!-- HP Recovery from absorbing residual life energy from a corpse. -->
+		<!-- Drains HP from corpses and uses it to restore your HP. -->
 		<icon>icon.skill1151</icon>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
@@ -2035,7 +1983,7 @@
 		</effects>
 	</skill>
 	<skill id="1154" toLevel="6" name="Summon Corrupted Man">
-		<!-- <Summoning Skill>. Summons Corrupted Man. -->
+		<!-- Summons a Sinful man. Consumes $s1 Spirit Ore. -->
 		<icon>icon.skill1154</icon>
 		<!-- set name="castRange" val="40" / -->
 		<!-- set name="effectRange" val="400" / -->
@@ -2097,43 +2045,40 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1155" toLevel="26" name="Dark Burst">
-		<!-- Attacks the target and enemies around them with dark energy blast. Deals magic damage with 61 power. -->
-		<icon>icon.skill11032</icon>
-		<affectRange>250</affectRange>
-		<castRange>700</castRange>
+	<skill id="1155" toLevel="23" name="Corpse Burst">
+		<!-- Detonates a corpse to inflict dark damage on the enemies with $s1 Power added to M. Atk. -->
+		<icon>icon.skill1155</icon>
+		<affectRange>150</affectRange>
+		<castRange>400</castRange>
 		<effectPoint>
-			<value level="1">-460</value>
-			<value level="2">-480</value>
-			<value level="3">-500</value>
-			<value level="4">-520</value>
-			<value level="5">-540</value>
-			<value level="6">-560</value>
-			<value level="7">-580</value>
-			<value level="8">-600</value>
-			<value level="9">-620</value>
-			<value level="10">-640</value>
-			<value level="11">-660</value>
-			<value level="12">-680</value>
-			<value level="13">-700</value>
-			<value level="14">-720</value>
-			<value level="15">-740</value>
-			<value level="16">-760</value>
-			<value level="17">-780</value>
-			<value level="18">-790</value>
-			<value level="19">-800</value>
-			<value level="20">-810</value>
-			<value level="21">-820</value>
-			<value level="22">-830</value>
-			<value level="23">-840</value>
-			<value level="24">-860</value>
-			<value level="25">-880</value>
-			<value level="26">-900</value>
+			<value level="1">-110</value>
+			<value level="2">-115</value>
+			<value level="3">-120</value>
+			<value level="4">-124</value>
+			<value level="5">-129</value>
+			<value level="6">-133</value>
+			<value level="7">-138</value>
+			<value level="8">-142</value>
+			<value level="9">-146</value>
+			<value level="10">-150</value>
+			<value level="11">-153</value>
+			<value level="12">-156</value>
+			<value level="13">-159</value>
+			<value level="14">-162</value>
+			<value level="15">-164</value>
+			<value level="16">-166</value>
+			<value level="17">-167</value>
+			<value level="18">-168</value>
+			<value level="19">-169</value>
+			<value level="20">-170</value>
+			<value level="21">-171</value>
+			<value level="22">-172</value>
+			<value level="23">-173</value>
 		</effectPoint>
-		<effectRange>1000</effectRange>
+		<effectRange>900</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
-		<hitTime>4000</hitTime>
+		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
 			<value level="1">46</value>
@@ -2159,9 +2104,6 @@
 			<value level="21">82</value>
 			<value level="22">83</value>
 			<value level="23">84</value>
-			<value level="24">86</value>
-			<value level="25">88</value>
-			<value level="26">90</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">33</value>
@@ -2187,9 +2129,6 @@
 			<value level="21">70</value>
 			<value level="22">74</value>
 			<value level="23">76</value>
-			<value level="24">79</value>
-			<value level="25">81</value>
-			<value level="26">83</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">9</value>
@@ -2215,16 +2154,16 @@
 			<value level="21">18</value>
 			<value level="22">18</value>
 			<value level="23">19</value>
-			<value level="24">19</value>
-			<value level="25">20</value>
-			<value level="26">20</value>
 		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>7000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
+		<targetType>NPC_BODY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
+		<conditions>
+			<condition name="ConsumeBody" />
+		</conditions>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
@@ -2251,17 +2190,15 @@
 					<value level="21">126</value>
 					<value level="22">131</value>
 					<value level="23">135</value>
-					<value level="24">140</value>
-					<value level="25">144</value>
-					<value level="26">148</value>
 				</power>
 			</effect>
+			<effect name="ConsumeBody" />
 		</effects>
 	</skill>
 	<skill id="1156" toLevel="13" name="Forget">
-		<!-- The character stops attacking. -->
+		<!-- Takes away the enemy's will to attack. -->
 		<icon>icon.skill1156</icon>
-		<castRange>600</castRange>
+		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2313,7 +2250,7 @@
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -2322,8 +2259,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1157" toLevel="10" name="Body to Mind">
-		<!-- Sacrifices your own HP to regenerate MP with 60 Power. -->
+	<skill id="1157" toLevel="10" name="Body To Mind">
+		<!-- Sacrifices your own HP to regenerate MP with $s1 Power. -->
 		<icon>icon.skill1157</icon>
 		<effectPoint>
 			<value level="1">243</value>
@@ -2387,40 +2324,40 @@
 		</effects>
 	</skill>
 	<skill id="1159" toLevel="30" name="Curse Death Link">
-		<!-- Transfers your pain to the enemy. Attacks with magic. Power 68. The lower your HP, the stronger the skill effect. -->
+		<!-- Transfers your pain. Inflicts Dark damage on the enemy with $s1 Power added to M. Atk. Power increases as HP decreases. -->
 		<icon>icon.skill1159</icon>
-		<castRange>700</castRange>
+		<castRange>900</castRange>
 		<effectPoint>
-			<value level="1">-270</value>
-			<value level="2">-280</value>
-			<value level="3">-290</value>
-			<value level="4">-300</value>
-			<value level="5">-305</value>
-			<value level="6">-310</value>
-			<value level="7">-315</value>
-			<value level="8">-320</value>
-			<value level="9">-325</value>
-			<value level="10">-330</value>
-			<value level="11">-335</value>
-			<value level="12">-340</value>
-			<value level="13">-345</value>
-			<value level="14">-350</value>
-			<value level="15">-355</value>
-			<value level="16">-360</value>
-			<value level="17">-365</value>
-			<value level="18">-370</value>
-			<value level="19">-375</value>
-			<value level="20">-380</value>
-			<value level="21">-385</value>
-			<value level="22">-390</value>
-			<value level="23">-400</value>
-			<value level="24">-405</value>
-			<value level="25">-410</value>
-			<value level="26">-420</value>
-			<value level="27">-425</value>
-			<value level="28">-430</value>
-			<value level="29">-435</value>
-			<value level="30">-440</value>
+			<value level="1">-239</value>
+			<value level="2">-248</value>
+			<value level="3">-257</value>
+			<value level="4">-266</value>
+			<value level="5">-271</value>
+			<value level="6">-275</value>
+			<value level="7">-279</value>
+			<value level="8">-283</value>
+			<value level="9">-287</value>
+			<value level="10">-291</value>
+			<value level="11">-295</value>
+			<value level="12">-299</value>
+			<value level="13">-302</value>
+			<value level="14">-306</value>
+			<value level="15">-309</value>
+			<value level="16">-312</value>
+			<value level="17">-315</value>
+			<value level="18">-318</value>
+			<value level="19">-321</value>
+			<value level="20">-323</value>
+			<value level="21">-325</value>
+			<value level="22">-328</value>
+			<value level="23">-330</value>
+			<value level="24">-332</value>
+			<value level="25">-334</value>
+			<value level="26">-338</value>
+			<value level="27">-340</value>
+			<value level="28">-342</value>
+			<value level="29">-344</value>
+			<value level="30">-346</value>
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<attributeType>DARK</attributeType>
@@ -2524,7 +2461,7 @@
 			<value level="30">16</value>
 		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>1000</reuseDelay>
+		<reuseDelay>1200</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2565,8 +2502,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1160" toLevel="17" name="Slow">
-		<!-- <Suppression skill>. The effect lasts for 30 sec. The enemy's Speed -20% -->
+	<skill id="1160" toLevel="17" name="Decrease Speed">
+		<!-- For $s1, enemy's Speed -$s2. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2587,7 +2524,7 @@
 			<value level="16">3</value>
 			<value level="17">3</value>
 		</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>60</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
@@ -2673,9 +2610,8 @@
 			<value level="16">14</value>
 			<value level="17">14</value>
 		</mpInitialConsume>
-		<trait>SUPPRESSION</trait>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2782,14 +2718,15 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
+			<!-- FIXME: this should be "Distrust" effect -->
 			<effect name="Confuse" abnormalTime="20">
 				<chance>20</chance>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1164" toLevel="26" name="Weakness">
-		<!-- Weakens the target. P. Atk. 17%. M. Atk. 17% -->
-		<icon>icon.skill16872</icon>
+	<skill id="1164" toLevel="26" name="Curse Weakness">
+		<!-- For $s1, enemy's P. Atk. -$s2. -->
+		<icon>icon.skill1164</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2824,32 +2761,32 @@
 		<basicProperty>MAGIC</basicProperty>
 		<castRange>600</castRange>
 		<effectPoint>
-			<value level="1">-140</value>
-			<value level="2">-200</value>
-			<value level="3">-250</value>
-			<value level="4">-300</value>
-			<value level="5">-350</value>
-			<value level="6">-400</value>
-			<value level="7">-440</value>
-			<value level="8">-480</value>
-			<value level="9">-520</value>
-			<value level="10">-560</value>
-			<value level="11">-580</value>
-			<value level="12">-600</value>
-			<value level="13">-620</value>
-			<value level="14">-640</value>
-			<value level="15">-660</value>
-			<value level="16">-680</value>
-			<value level="17">-700</value>
-			<value level="18">-720</value>
-			<value level="19">-740</value>
-			<value level="20">-760</value>
-			<value level="21">-780</value>
-			<value level="22">-800</value>
-			<value level="23">-810</value>
-			<value level="24">-820</value>
-			<value level="25">-830</value>
-			<value level="26">-840</value>
+			<value level="1">-162</value>
+			<value level="2">-204</value>
+			<value level="3">-243</value>
+			<value level="4">-285</value>
+			<value level="5">-331</value>
+			<value level="6">-379</value>
+			<value level="7">-418</value>
+			<value level="8">-457</value>
+			<value level="9">-495</value>
+			<value level="10">-532</value>
+			<value level="11">-549</value>
+			<value level="12">-566</value>
+			<value level="13">-582</value>
+			<value level="14">-597</value>
+			<value level="15">-611</value>
+			<value level="16">-624</value>
+			<value level="17">-635</value>
+			<value level="18">-646</value>
+			<value level="19">-655</value>
+			<value level="20">-659</value>
+			<value level="21">-663</value>
+			<value level="22">-667</value>
+			<value level="23">-669</value>
+			<value level="24">-671</value>
+			<value level="25">-673</value>
+			<value level="26">-675</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
@@ -2857,7 +2794,7 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>30</lvlBonusRate>
 		<magicLevel>
-			<value level="1">10</value>
+			<value level="1">14</value>
 			<value level="2">20</value>
 			<value level="3">25</value>
 			<value level="4">30</value>
@@ -2885,32 +2822,32 @@
 			<value level="26">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">3</value>
-			<value level="2">10</value>
-			<value level="3">12</value>
-			<value level="4">14</value>
-			<value level="5">15</value>
-			<value level="6">35</value>
-			<value level="7">39</value>
-			<value level="8">44</value>
-			<value level="9">48</value>
-			<value level="10">52</value>
-			<value level="11">54</value>
-			<value level="12">55</value>
-			<value level="13">58</value>
-			<value level="14">60</value>
-			<value level="15">60</value>
-			<value level="16">64</value>
-			<value level="17">65</value>
-			<value level="18">67</value>
-			<value level="19">69</value>
-			<value level="20">75</value>
-			<value level="21">77</value>
-			<value level="22">79</value>
-			<value level="23">80</value>
-			<value level="24">81</value>
-			<value level="25">82</value>
-			<value level="26">83</value>
+			<value level="1">2</value>
+			<value level="2">8</value>
+			<value level="3">9</value>
+			<value level="4">11</value>
+			<value level="5">12</value>
+			<value level="6">28</value>
+			<value level="7">31</value>
+			<value level="8">35</value>
+			<value level="9">38</value>
+			<value level="10">41</value>
+			<value level="11">43</value>
+			<value level="12">44</value>
+			<value level="13">46</value>
+			<value level="14">48</value>
+			<value level="15">49</value>
+			<value level="16">51</value>
+			<value level="17">52</value>
+			<value level="18">53</value>
+			<value level="19">55</value>
+			<value level="20">61</value>
+			<value level="21">63</value>
+			<value level="22">63</value>
+			<value level="23">64</value>
+			<value level="24">65</value>
+			<value level="25">66</value>
+			<value level="26">66</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">1</value>
@@ -2977,41 +2914,10 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">-17</value>
-					<value level="2">-20</value>
-					<value level="3">-20</value>
-					<value level="4">-20</value>
-					<value level="5">-20</value>
-					<value level="6">-23</value>
-					<value level="7">-23</value>
-					<value level="8">-23</value>
-					<value level="9">-23</value>
-					<value level="10">-23</value>
-					<value level="11">-23</value>
-					<value level="12">-23</value>
-					<value level="13">-23</value>
-					<value level="14">-23</value>
-					<value level="15">-23</value>
-					<value level="16">-23</value>
-					<value level="17">-23</value>
-					<value level="18">-23</value>
-					<value level="19">-23</value>
-					<value level="20">-23</value>
-					<value level="21">-23</value>
-					<value level="22">-23</value>
-					<value level="23">-23</value>
-					<value level="24">-23</value>
-					<value level="25">-23</value>
-					<value level="26">-23</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="1167" toLevel="7" name="Poisonous Cloud">
-		<!-- <Infection skill>. The effect lasts for 30 sec. Poisons the target and enemies around them. -->
+		<!-- Creates a venomous cloud. For $s1, poisons the target and enemies around it, taking $s2 HP every sec. -->
 		<icon>icon.skill1167</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
@@ -3075,7 +2981,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>ANOMALY</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -3094,9 +3000,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1168" toLevel="10" name="Poison">
-		<!-- <Infection Skill>. The effect lasts for 30 sec. Poisons the target. -->
-		<icon>icon.skill0129</icon>
+	<skill id="1168" toLevel="7" name="Curse Poison">
+		<!-- Poisons the target, causing loss of $s2 HP per sec. for $s1 -->
+		<icon>icon.skill1168</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">3</value>
@@ -3105,9 +3011,6 @@
 			<value level="5">6</value>
 			<value level="6">7</value>
 			<value level="7">8</value>
-			<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="9">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="10">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<subordinationAbnormalType>POISON</subordinationAbnormalType>
@@ -3117,16 +3020,13 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>600</castRange>
 		<effectPoint>
-			<value level="1">-100</value>
-			<value level="2">-200</value>
-			<value level="3">-300</value>
-			<value level="4">-400</value>
-			<value level="5">-500</value>
-			<value level="6">-600</value>
-			<value level="7">-700</value>
-			<value level="8">-800</value>
-			<value level="9">-850</value>
-			<value level="10">-900</value>
+			<value level="1">-61</value>
+			<value level="2">-102</value>
+			<value level="3">-143</value>
+			<value level="4">-209</value>
+			<value level="5">-248</value>
+			<value level="6">-291</value>
+			<value level="7">-323</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>4000</hitTime>
@@ -3134,28 +3034,22 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<lvlBonusRate>20</lvlBonusRate>
 		<magicLevel>
-			<value level="1">10</value>
+			<value level="1">7</value>
 			<value level="2">20</value>
 			<value level="3">30</value>
-			<value level="4">40</value>
-			<value level="5">50</value>
-			<value level="6">60</value>
-			<value level="7">70</value>
-			<value level="8">80</value>
-			<value level="9">85</value>
-			<value level="10">90</value>
+			<value level="4">44</value>
+			<value level="5">52</value>
+			<value level="6">62</value>
+			<value level="7">72</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">20</value>
-			<value level="2">20</value>
-			<value level="3">30</value>
-			<value level="4">40</value>
-			<value level="5">50</value>
-			<value level="6">60</value>
-			<value level="7">70</value>
-			<value level="8">80</value>
-			<value level="9">90</value>
-			<value level="10">100</value>
+			<value level="1">8</value>
+			<value level="2">16</value>
+			<value level="3">21</value>
+			<value level="4">31</value>
+			<value level="5">38</value>
+			<value level="6">46</value>
+			<value level="7">53</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">2</value>
@@ -3165,14 +3059,11 @@
 			<value level="5">10</value>
 			<value level="6">12</value>
 			<value level="7">14</value>
-			<value level="8">14</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="9">14</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="10">14</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>ANOMALY</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3185,19 +3076,16 @@
 					<value level="5">50</value>
 					<value level="6">58</value>
 					<value level="7">63</value>
-					<value level="8">63</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="9">63</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="10">63</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</power>
 				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1169" toLevel="22" name="Curse Fear">
-		<!-- <Fear Skill>. The effect lasts for 3 sec. Frightens the enemy. -->
+	<skill id="1169" toLevel="16" name="Curse Fear">
+		<!-- For $s1, frightens the enemy into fleeing. -->
 		<icon>icon.skill1169</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>3</abnormalTime>
+		<abnormalTime>7</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
 		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<activateRate>40</activateRate>
@@ -3219,13 +3107,7 @@
 			<value level="13">-646</value>
 			<value level="14">-655</value>
 			<value level="15">-659</value>
-			<value level="16">-668</value>
-			<value level="17">-677</value>
-			<value level="18">-686</value>
-			<value level="19">-695</value>
-			<value level="20">-704</value>
-			<value level="21">-713</value>
-			<value level="22">-722</value>
+			<value level="16">-663</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>4000</hitTime>
@@ -3249,12 +3131,6 @@
 			<value level="14">74</value>
 			<value level="15">76</value>
 			<value level="16">78</value>
-			<value level="17">80</value>
-			<value level="18">82</value>
-			<value level="19">84</value>
-			<value level="20">86</value>
-			<value level="21">88</value>
-			<value level="22">90</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">28</value>
@@ -3273,12 +3149,6 @@
 			<value level="14">55</value>
 			<value level="15">62</value>
 			<value level="16">64</value>
-			<value level="17">65</value>
-			<value level="18">66</value>
-			<value level="19">68</value>
-			<value level="20">69</value>
-			<value level="21">71</value>
-			<value level="22">72</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">7</value>
@@ -3297,17 +3167,11 @@
 			<value level="14">14</value>
 			<value level="15">14</value>
 			<value level="16">14</value>
-			<value level="17">15</value>
-			<value level="18">15</value>
-			<value level="19">15</value>
-			<value level="20">15</value>
-			<value level="21">15</value>
-			<value level="22">15</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
+		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3315,13 +3179,13 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="1170" toLevel="23" name="Anchor">
-		<!-- <Paralyzing Skill>. For 3 sec., slowly stiffens the target's body, paralyzing them for 5 sec. -->
+	<skill id="1170" toLevel="20" name="Anchor">
+		<!-- Causes the enemy's body to go completely rigid for $s1 and causes paralysis for $s2 -->
 		<icon>icon.skill1170</icon>
-		<abnormalTime>3</abnormalTime>
+		<abnormalTime>5</abnormalTime>
 		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
-		<castRange>600</castRange>
+		<castRange>400</castRange>
 		<effectPoint>
 			<value level="1">-418</value>
 			<value level="2">-457</value>
@@ -3343,9 +3207,6 @@
 			<value level="18">-671</value>
 			<value level="19">-673</value>
 			<value level="20">-675</value>
-			<value level="21">-678</value>
-			<value level="22">-681</value>
-			<value level="23">-685</value>
 		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
@@ -3373,9 +3234,6 @@
 			<value level="18">82</value>
 			<value level="19">83</value>
 			<value level="20">84</value>
-			<value level="21">86</value>
-			<value level="22">88</value>
-			<value level="23">90</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">31</value>
@@ -3398,9 +3256,6 @@
 			<value level="18">65</value>
 			<value level="19">66</value>
 			<value level="20">66</value>
-			<value level="21">66</value>
-			<value level="22">66</value>
-			<value level="23">66</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">8</value>
@@ -3423,15 +3278,13 @@
 			<value level="18">16</value>
 			<value level="19">16</value>
 			<value level="20">17</value>
-			<value level="21">17</value>
-			<value level="22">17</value>
-			<value level="23">18</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>60000</reuseDelay>
 		<abnormalType>PARALYZE</abnormalType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<abnormalLevel>1</abnormalLevel>
+		<trait>PARALYZE</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3447,52 +3300,54 @@
 				<amount>-50</amount>
 				<mode>PER</mode>
 			</effect>
+		</effects>
+		<endEffects>
 			<effect name="CallSkill">
 				<skillId>6091</skillId> <!-- Anchor -->
 				<skillLevel>1</skillLevel>
 			</effect>
-		</effects>
+		</endEffects>
 	</skill>
 	<skill id="1171" toLevel="27" name="Blazing Circle">
-		<!-- A flame wreath hurts nearby enemies. Deals magic damage with 38 power. -->
+		<!-- Spreads ring-shaped flames to inflict Fire damage on nearby enemies with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1171</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>
-			<value level="1">-590</value>
-			<value level="2">-620</value>
-			<value level="3">-650</value>
-			<value level="4">-680</value>
-			<value level="5">-710</value>
-			<value level="6">-740</value>
-			<value level="7">-770</value>
-			<value level="8">-800</value>
-			<value level="9">-830</value>
-			<value level="10">-860</value>
-			<value level="11">-890</value>
-			<value level="12">-920</value>
-			<value level="13">-950</value>
-			<value level="14">-980</value>
-			<value level="15">-1010</value>
-			<value level="16">-1040</value>
-			<value level="17">-1070</value>
-			<value level="18">-1100</value>
-			<value level="19">-1130</value>
-			<value level="20">-1160</value>
-			<value level="21">-1190</value>
-			<value level="22">1205</value>
-			<value level="23">-1220</value>
-			<value level="24">-1235</value>
-			<value level="25">1250</value>
-			<value level="26">-1265</value>
-			<value level="27">-1280</value>
+			<value level="1">-90</value>
+			<value level="2">-95</value>
+			<value level="3">-100</value>
+			<value level="4">-105</value>
+			<value level="5">-110</value>
+			<value level="6">-115</value>
+			<value level="7">-120</value>
+			<value level="8">-124</value>
+			<value level="9">-129</value>
+			<value level="10">-133</value>
+			<value level="11">-138</value>
+			<value level="12">-142</value>
+			<value level="13">-146</value>
+			<value level="14">-150</value>
+			<value level="15">-153</value>
+			<value level="16">-156</value>
+			<value level="17">-159</value>
+			<value level="18">-162</value>
+			<value level="19">-164</value>
+			<value level="20">-169</value>
+			<value level="21">-172</value>
+			<value level="22">-177</value>
+			<value level="23">-182</value>
+			<value level="24">-187</value>
+			<value level="25">-192</value>
+			<value level="26">-197</value>
+			<value level="27">-202</value>
 		</effectPoint>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">40</value>
+			<value level="1">38</value>
 			<value level="2">40</value>
 			<value level="3">42</value>
 			<value level="4">44</value>
@@ -3619,24 +3474,24 @@
 		</effects>
 	</skill>
 	<skill id="1172" toLevel="8" name="Aura Burn">
-		<!-- Inflicts magic damage on the enemy with 26 power. -->
+		<!-- Inflicts magic damage on the enemy with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1172</icon>
 		<castRange>400</castRange>
 		<effectPoint>
-			<value level="1">-105</value>
-			<value level="2">-120</value>
-			<value level="3">-135</value>
-			<value level="4">-145</value>
-			<value level="5">-160</value>
-			<value level="6">-170</value>
-			<value level="7">-185</value>
-			<value level="8">-195</value>
+			<value level="1">-73</value>
+			<value level="2">-82</value>
+			<value level="3">-91</value>
+			<value level="4">-97</value>
+			<value level="5">-107</value>
+			<value level="6">-114</value>
+			<value level="7">-125</value>
+			<value level="8">-133</value>
 		</effectPoint>
 		<effectRange>650</effectRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">20</value>
+			<value level="1">17</value>
 			<value level="2">20</value>
 			<value level="3">23</value>
 			<value level="4">25</value>
@@ -3673,56 +3528,56 @@
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
-					<value level="1">26</value>
-					<value level="2">28</value>
-					<value level="3">33</value>
-					<value level="4">35</value>
-					<value level="5">40</value>
-					<value level="6">42</value>
-					<value level="7">47</value>
-					<value level="8">49</value>
+					<value level="1">19</value>
+					<value level="2">21</value>
+					<value level="3">24</value>
+					<value level="4">25</value>
+					<value level="5">28</value>
+					<value level="6">30</value>
+					<value level="7">33</value>
+					<value level="8">36</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1174" toLevel="31" name="Frost Wall">
-		<!-- Summons an ice wall. Attacks enemies in front of you with magic. Power 48. -->
+		<!-- Raises a wall of ice that inflicts Water damage on enemies with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1174</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>
-			<value level="1">-770</value>
-			<value level="2">-800</value>
-			<value level="3">-830</value>
-			<value level="4">-860</value>
-			<value level="5">-875</value>
-			<value level="6">-890</value>
-			<value level="7">-905</value>
-			<value level="8">-920</value>
-			<value level="9">-935</value>
-			<value level="10">-950</value>
-			<value level="11">-965</value>
-			<value level="12">-980</value>
-			<value level="13">-995</value>
-			<value level="14">-1010</value>
-			<value level="15">-1025</value>
-			<value level="16">-1040</value>
-			<value level="17">-1055</value>
-			<value level="18">-1070</value>
-			<value level="19">-1085</value>
-			<value level="20">-1100</value>
-			<value level="21">-1115</value>
-			<value level="22">-1130</value>
-			<value level="23">-1160</value>
-			<value level="24">-1175</value>
-			<value level="25">-1190</value>
-			<value level="26">-1205</value>
-			<value level="27">-1220</value>
-			<value level="28">-1235</value>
-			<value level="29">-1250</value>
-			<value level="30">-1265</value>
-			<value level="31">-1280</value>
+			<value level="1">-143</value>
+			<value level="2">-149</value>
+			<value level="3">-155</value>
+			<value level="4">-160</value>
+			<value level="5">-163</value>
+			<value level="6">-165</value>
+			<value level="7">-168</value>
+			<value level="8">-170</value>
+			<value level="9">-173</value>
+			<value level="10">-175</value>
+			<value level="11">-177</value>
+			<value level="12">-179</value>
+			<value level="13">-182</value>
+			<value level="14">-184</value>
+			<value level="15">-186</value>
+			<value level="16">-187</value>
+			<value level="17">-189</value>
+			<value level="18">-191</value>
+			<value level="19">-193</value>
+			<value level="20">-194</value>
+			<value level="21">-195</value>
+			<value level="22">-197</value>
+			<value level="23">-199</value>
+			<value level="24">-201</value>
+			<value level="25">-203</value>
+			<value level="26">-205</value>
+			<value level="27">-207</value>
+			<value level="28">-209</value>
+			<value level="29">-211</value>
+			<value level="30">-213</value>
+			<value level="31">-215</value>
 		</effectPoint>
 		<effectRange>400</effectRange>
 		<attributeType>WATER</attributeType>
@@ -3764,37 +3619,37 @@
 			<value level="31">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">68</value>
-			<value level="2">70</value>
-			<value level="3">74</value>
-			<value level="4">77</value>
-			<value level="5">79</value>
-			<value level="6">80</value>
-			<value level="7">82</value>
-			<value level="8">83</value>
-			<value level="9">85</value>
-			<value level="10">87</value>
-			<value level="11">88</value>
-			<value level="12">89</value>
-			<value level="13">90</value>
-			<value level="14">93</value>
-			<value level="15">94</value>
-			<value level="16">95</value>
-			<value level="17">97</value>
-			<value level="18">98</value>
-			<value level="19">99</value>
-			<value level="20">100</value>
-			<value level="21">102</value>
-			<value level="22">103</value>
-			<value level="23">113</value>
-			<value level="24">115</value>
-			<value level="25">117</value>
-			<value level="26">118</value>
-			<value level="27">121</value>
-			<value level="28">123</value>
-			<value level="29">125</value>
-			<value level="30">129</value>
-			<value level="31">132</value>
+			<value level="1">54</value>
+			<value level="2">56</value>
+			<value level="3">59</value>
+			<value level="4">61</value>
+			<value level="5">63</value>
+			<value level="6">64</value>
+			<value level="7">65</value>
+			<value level="8">66</value>
+			<value level="9">68</value>
+			<value level="10">69</value>
+			<value level="11">70</value>
+			<value level="12">71</value>
+			<value level="13">72</value>
+			<value level="14">74</value>
+			<value level="15">75</value>
+			<value level="16">76</value>
+			<value level="17">77</value>
+			<value level="18">78</value>
+			<value level="19">79</value>
+			<value level="20">80</value>
+			<value level="21">81</value>
+			<value level="22">82</value>
+			<value level="23">91</value>
+			<value level="24">92</value>
+			<value level="25">94</value>
+			<value level="26">94</value>
+			<value level="27">97</value>
+			<value level="28">98</value>
+			<value level="29">100</value>
+			<value level="30">103</value>
+			<value level="31">106</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">14</value>
@@ -3873,59 +3728,120 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1175" toLevel="40" name="Aqua Swirl">
-		<!-- Releases a water vortex. Inflicts magic damage with 31 power. -->
+	<skill id="1175" toLevel="33" name="Aqua Swirl">
+		<!-- Releases a water vortex to inflict Water damage on the enemy with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1175</icon>
-		<castRange>700</castRange>
+		<castRange>
+			<value level="1">750</value>
+			<value level="2">750</value>
+			<value level="3">750</value>
+			<value level="4">750</value>
+			<value level="5">750</value>
+			<value level="6">750</value>
+			<value level="7">750</value>
+			<value level="8">750</value>
+			<value level="9">900</value>
+			<value level="10">900</value>
+			<value level="11">900</value>
+			<value level="12">900</value>
+			<value level="13">900</value>
+			<value level="14">900</value>
+			<value level="15">900</value>
+			<value level="16">900</value>
+			<value level="17">900</value>
+			<value level="18">900</value>
+			<value level="19">900</value>
+			<value level="20">900</value>
+			<value level="21">900</value>
+			<value level="22">900</value>
+			<value level="23">900</value>
+			<value level="24">900</value>
+			<value level="25">900</value>
+			<value level="26">900</value>
+			<value level="27">900</value>
+			<value level="28">900</value>
+			<value level="29">900</value>
+			<value level="30">900</value>
+			<value level="31">900</value>
+			<value level="32">900</value>
+			<value level="33">900</value>
+		</castRange>
 		<effectPoint>
-			<value level="1">-105</value>
-			<value level="2">-120</value>
-			<value level="3">-135</value>
-			<value level="4">-145</value>
-			<value level="5">-160</value>
-			<value level="6">-170</value>
-			<value level="7">-185</value>
-			<value level="8">-195</value>
-			<value level="9">-220</value>
-			<value level="10">-230</value>
-			<value level="11">-240</value>
-			<value level="12">-250</value>
-			<value level="13">-260</value>
-			<value level="14">-270</value>
-			<value level="15">-280</value>
-			<value level="16">-290</value>
-			<value level="17">-300</value>
-			<value level="18">-310</value>
-			<value level="19">-320</value>
-			<value level="20">-330</value>
-			<value level="21">-340</value>
-			<value level="22">-350</value>
-			<value level="23">-360</value>
-			<value level="24">-370</value>
-			<value level="25">-380</value>
-			<value level="26">-390</value>
-			<value level="27">-400</value>
-			<value level="28">-410</value>
-			<value level="29">-415</value>
-			<value level="30">-420</value>
-			<value level="31">-425</value>
-			<value level="32">-430</value>
-			<value level="33">-435</value>
-			<value level="34">-440</value>
-			<value level="35">-445</value>
-			<value level="36">-450</value>
-			<value level="37">-455</value>
-			<value level="38">-460</value>
-			<value level="39">-465</value>
-			<value level="40">-470</value>
+			<value level="1">-91</value>
+			<value level="2">-102</value>
+			<value level="3">-114</value>
+			<value level="4">-122</value>
+			<value level="5">-134</value>
+			<value level="6">-143</value>
+			<value level="7">-157</value>
+			<value level="8">-166</value>
+			<value level="9">-190</value>
+			<value level="10">-200</value>
+			<value level="11">-209</value>
+			<value level="12">-219</value>
+			<value level="13">-229</value>
+			<value level="14">-239</value>
+			<value level="15">-248</value>
+			<value level="16">-257</value>
+			<value level="17">-266</value>
+			<value level="18">-271</value>
+			<value level="19">-275</value>
+			<value level="20">-279</value>
+			<value level="21">-283</value>
+			<value level="22">-287</value>
+			<value level="23">-291</value>
+			<value level="24">-295</value>
+			<value level="25">-299</value>
+			<value level="26">-302</value>
+			<value level="27">-306</value>
+			<value level="28">-309</value>
+			<value level="29">-312</value>
+			<value level="30">-315</value>
+			<value level="31">-318</value>
+			<value level="32">-321</value>
+			<value level="33">-323</value>
 		</effectPoint>
-		<effectRange>1250</effectRange>
+		<effectRange>
+			<value level="1">1250</value>
+			<value level="2">1250</value>
+			<value level="3">1250</value>
+			<value level="4">1250</value>
+			<value level="5">1250</value>
+			<value level="6">1250</value>
+			<value level="7">1250</value>
+			<value level="8">1250</value>
+			<value level="9">1400</value>
+			<value level="10">1400</value>
+			<value level="11">1400</value>
+			<value level="12">1400</value>
+			<value level="13">1400</value>
+			<value level="14">1400</value>
+			<value level="15">1400</value>
+			<value level="16">1400</value>
+			<value level="17">1400</value>
+			<value level="18">1400</value>
+			<value level="19">1400</value>
+			<value level="20">1400</value>
+			<value level="21">1400</value>
+			<value level="22">1400</value>
+			<value level="23">1400</value>
+			<value level="24">1400</value>
+			<value level="25">1400</value>
+			<value level="26">1400</value>
+			<value level="27">1400</value>
+			<value level="28">1400</value>
+			<value level="29">1400</value>
+			<value level="30">1400</value>
+			<value level="31">1400</value>
+			<value level="32">1400</value>
+			<value level="33">1400</value>
+		</effectRange>
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">20</value>
+			<value level="1">17</value>
 			<value level="2">20</value>
 			<value level="3">23</value>
 			<value level="4">25</value>
@@ -3953,119 +3869,133 @@
 			<value level="26">74</value>
 			<value level="27">76</value>
 			<value level="28">78</value>
-			<value level="29">79</value>
-			<value level="30">80</value>
-			<value level="31">81</value>
-			<value level="32">82</value>
-			<value level="33">83</value>
-			<value level="34">84</value>
-			<value level="35">85</value>
-			<value level="36">86</value>
-			<value level="37">87</value>
-			<value level="38">88</value>
-			<value level="39">89</value>
-			<value level="40">90</value>
+			<value level="29">80</value>
+			<value level="30">81</value>
+			<value level="31">82</value>
+			<value level="32">83</value>
+			<value level="33">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">18</value>
-			<value level="2">20</value>
-			<value level="3">22</value>
-			<value level="4">23</value>
-			<value level="5">26</value>
-			<value level="6">27</value>
-			<value level="7">28</value>
-			<value level="8">30</value>
-			<value level="9">33</value>
-			<value level="10">35</value>
-			<value level="11">36</value>
-			<value level="12">37</value>
-			<value level="13">38</value>
-			<value level="14">40</value>
-			<value level="15">41</value>
-			<value level="16">42</value>
-			<value level="17">44</value>
-			<value level="18">45</value>
-			<value level="19">46</value>
-			<value level="20">47</value>
-			<value level="21">49</value>
-			<value level="22">50</value>
-			<value level="23">51</value>
-			<value level="24">53</value>
-			<value level="25">54</value>
-			<value level="26">55</value>
-			<value level="27">56</value>
-			<value level="28">58</value>
-			<value level="29">58</value>
-			<value level="30">59</value>
-			<value level="31">59</value>
-			<value level="32">60</value>
-			<value level="33">60</value>
-			<value level="34">62</value>
-			<value level="35">62</value>
-			<value level="36">63</value>
-			<value level="37">63</value>
-			<value level="38">64</value>
-			<value level="39">64</value>
-			<value level="40">65</value>
+			<value level="1">14</value>
+			<value level="2">16</value>
+			<value level="3">17</value>
+			<value level="4">18</value>
+			<value level="5">20</value>
+			<value level="6">21</value>
+			<value level="7">23</value>
+			<value level="8">24</value>
+			<value level="9">28</value>
+			<value level="10">29</value>
+			<value level="11">30</value>
+			<value level="12">31</value>
+			<value level="13">32</value>
+			<value level="14">33</value>
+			<value level="15">34</value>
+			<value level="16">35</value>
+			<value level="17">36</value>
+			<value level="18">37</value>
+			<value level="19">38</value>
+			<value level="20">39</value>
+			<value level="21">40</value>
+			<value level="22">41</value>
+			<value level="23">42</value>
+			<value level="24">43</value>
+			<value level="25">44</value>
+			<value level="26">45</value>
+			<value level="27">48</value>
+			<value level="28">49</value>
+			<value level="29">50</value>
+			<value level="30">51</value>
+			<value level="31">52</value>
+			<value level="32">53</value>
+			<value level="33">54</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">4</value>
+			<value level="3">5</value>
+			<value level="4">5</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">6</value>
+			<value level="8">6</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+			<value level="11">10</value>
+			<value level="12">11</value>
+			<value level="13">11</value>
+			<value level="14">11</value>
+			<value level="15">12</value>
+			<value level="16">12</value>
+			<value level="17">12</value>
+			<value level="18">13</value>
+			<value level="19">13</value>
+			<value level="20">13</value>
+			<value level="21">14</value>
+			<value level="22">14</value>
+			<value level="23">14</value>
+			<value level="24">15</value>
+			<value level="25">15</value>
+			<value level="26">15</value>
+			<value level="27">18</value>
+			<value level="28">18</value>
+			<value level="29">18</value>
+			<value level="30">19</value>
+			<value level="31">19</value>
+			<value level="32">19</value>
+			<value level="33">20</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="MagicalAttackRange">
+			<effect name="MagicalAttack">
 				<power>
-					<value level="1">31</value>
+					<value level="1">32</value>
 					<value level="2">34</value>
-					<value level="3">39</value>
-					<value level="4">42</value>
-					<value level="5">47</value>
+					<value level="3">40</value>
+					<value level="4">43</value>
+					<value level="5">48</value>
 					<value level="6">51</value>
-					<value level="7">56</value>
-					<value level="8">59</value>
+					<value level="7">57</value>
+					<value level="8">60</value>
 					<value level="9">68</value>
-					<value level="10">69</value>
-					<value level="11">71</value>
-					<value level="12">73</value>
-					<value level="13">74</value>
-					<value level="14">76</value>
-					<value level="15">78</value>
-					<value level="16">79</value>
-					<value level="17">82</value>
-					<value level="18">85</value>
-					<value level="19">89</value>
-					<value level="20">90</value>
-					<value level="21">92</value>
-					<value level="22">95</value>
-					<value level="23">98</value>
+					<value level="10">70</value>
+					<value level="11">72</value>
+					<value level="12">74</value>
+					<value level="13">75</value>
+					<value level="14">77</value>
+					<value level="15">79</value>
+					<value level="16">80</value>
+					<value level="17">83</value>
+					<value level="18">86</value>
+					<value level="19">90</value>
+					<value level="20">91</value>
+					<value level="21">93</value>
+					<value level="22">96</value>
+					<value level="23">99</value>
 					<value level="24">102</value>
 					<value level="25">105</value>
-					<value level="26">108</value>
-					<value level="27">112</value>
-					<value level="28">115</value>
-					<value level="29">117</value>
-					<value level="30">119</value>
-					<value level="31">120</value>
-					<value level="32">122</value>
-					<value level="33">124</value>
-					<value level="34">125</value>
-					<value level="35">127</value>
-					<value level="36">130</value>
-					<value level="37">132</value>
-					<value level="38">135</value>
-					<value level="39">137</value>
-					<value level="40">140</value>
+					<value level="26">109</value>
+					<value level="27">113</value>
+					<value level="28">116</value>
+					<value level="29">119</value>
+					<value level="30">121</value>
+					<value level="31">123</value>
+					<value level="32">125</value>
+					<value level="33">126</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1176" toLevel="26" name="Tempest">
-		<!-- Creates a furious storm. Inflicts damage on the target and nearby enemies 48 power. -->
+	<skill id="1176" toLevel="23" name="Tempest">
+		<!-- Stirs up a hurricane that inflicts Wind damage on the target and nearby enemies with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1176</icon>
-		<affectLimit>1-20</affectLimit>
-		<affectRange>250</affectRange>
-		<castRange>700</castRange>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>200</affectRange>
+		<castRange>500</castRange>
 		<effectPoint>
 			<value level="1">-110</value>
 			<value level="2">-115</value>
@@ -4090,14 +4020,11 @@
 			<value level="21">-182</value>
 			<value level="22">-185</value>
 			<value level="23">-189</value>
-			<value level="24">-192</value>
-			<value level="25">-196</value>
-			<value level="26">-199</value>
 		</effectPoint>
 		<effectRange>1000</effectRange>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
-		<hitTime>4000</hitTime>
+		<hitTime>5000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
 			<value level="1">46</value>
@@ -4123,40 +4050,59 @@
 			<value level="21">82</value>
 			<value level="22">83</value>
 			<value level="23">84</value>
-			<value level="24">86</value>
-			<value level="25">88</value>
-			<value level="26">90</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">41</value>
-			<value level="2">42</value>
-			<value level="3">43</value>
-			<value level="4">45</value>
-			<value level="5">46</value>
-			<value level="6">47</value>
-			<value level="7">49</value>
-			<value level="8">50</value>
-			<value level="9">53</value>
-			<value level="10">54</value>
-			<value level="11">56</value>
-			<value level="12">58</value>
-			<value level="13">59</value>
-			<value level="14">61</value>
-			<value level="15">63</value>
-			<value level="16">68</value>
-			<value level="17">70</value>
-			<value level="18">72</value>
-			<value level="19">74</value>
-			<value level="20">76</value>
-			<value level="21">77</value>
-			<value level="22">80</value>
-			<value level="23">81</value>
-			<value level="24">84</value>
-			<value level="25">85</value>
-			<value level="26">88</value>
+			<value level="1">45</value>
+			<value level="2">47</value>
+			<value level="3">50</value>
+			<value level="4">50</value>
+			<value level="5">54</value>
+			<value level="6">56</value>
+			<value level="7">58</value>
+			<value level="8">60</value>
+			<value level="9">63</value>
+			<value level="10">65</value>
+			<value level="11">67</value>
+			<value level="12">69</value>
+			<value level="13">71</value>
+			<value level="14">72</value>
+			<value level="15">74</value>
+			<value level="16">82</value>
+			<value level="17">85</value>
+			<value level="18">86</value>
+			<value level="19">89</value>
+			<value level="20">91</value>
+			<value level="21">94</value>
+			<value level="22">95</value>
+			<value level="23">98</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">11</value>
+			<value level="2">12</value>
+			<value level="3">12</value>
+			<value level="4">13</value>
+			<value level="5">13</value>
+			<value level="6">14</value>
+			<value level="7">14</value>
+			<value level="8">15</value>
+			<value level="9">16</value>
+			<value level="10">16</value>
+			<value level="11">17</value>
+			<value level="12">17</value>
+			<value level="13">18</value>
+			<value level="14">18</value>
+			<value level="15">19</value>
+			<value level="16">20</value>
+			<value level="17">21</value>
+			<value level="18">22</value>
+			<value level="19">22</value>
+			<value level="20">23</value>
+			<value level="21">23</value>
+			<value level="22">24</value>
+			<value level="23">24</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>7000</reuseDelay>
+		<reuseDelay>4000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
@@ -4187,23 +4133,20 @@
 					<value level="21">94</value>
 					<value level="22">97</value>
 					<value level="23">100</value>
-					<value level="24">106</value>
-					<value level="25">112</value>
-					<value level="26">118</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1177" toLevel="5" name="Wind Strike">
-		<!-- Creates a powerful hurricane. Inflicts magic damage on the enemy with 12 power. -->
+		<!-- Creates a powerful hurricane, inflicting Wind damage on the enemy with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1177</icon>
 		<castRange>600</castRange>
 		<effectPoint>
-			<value level="1">-25</value>
-			<value level="2">-40</value>
-			<value level="3">-55</value>
-			<value level="4">-75</value>
-			<value level="5">-90</value>
+			<value level="1">-46</value>
+			<value level="2">-53</value>
+			<value level="3">-61</value>
+			<value level="4">-72</value>
+			<value level="5">-81</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
 		<attributeType>WIND</attributeType>
@@ -4218,11 +4161,11 @@
 			<value level="5">14</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">8</value>
-			<value level="2">10</value>
-			<value level="3">12</value>
-			<value level="4">14</value>
-			<value level="5">17</value>
+			<value level="1">7</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">11</value>
+			<value level="5">12</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">2</value>
@@ -4235,7 +4178,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>
-			<value level="1">ENEMY_ONLY</value>
+			<value level="1">ENEMY</value>
 			<value level="2">ENEMY</value>
 			<value level="3">ENEMY</value>
 			<value level="4">ENEMY</value>
@@ -4245,68 +4188,129 @@
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
-					<value level="1">12</value>
-					<value level="2">14</value>
-					<value level="3">16</value>
-					<value level="4">18</value>
-					<value level="5">20</value>
+					<value level="1">13</value>
+					<value level="2">15</value>
+					<value level="3">17</value>
+					<value level="4">19</value>
+					<value level="5">21</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1178" toLevel="40" name="Twister">
-		<!-- Summons a wind blade. Inflicts magic damage on the enemy with 31 power. -->
+	<skill id="1178" toLevel="33" name="Twister">
+		<!-- Creates a powerful cyclone and inflicts Wind damage on the enemy with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1178</icon>
-		<castRange>700</castRange>
+		<castRange>
+			<value level="1">750</value>
+			<value level="2">750</value>
+			<value level="3">750</value>
+			<value level="4">750</value>
+			<value level="5">750</value>
+			<value level="6">750</value>
+			<value level="7">750</value>
+			<value level="8">750</value>
+			<value level="9">900</value>
+			<value level="10">900</value>
+			<value level="11">900</value>
+			<value level="12">900</value>
+			<value level="13">900</value>
+			<value level="14">900</value>
+			<value level="15">900</value>
+			<value level="16">900</value>
+			<value level="17">900</value>
+			<value level="18">900</value>
+			<value level="19">900</value>
+			<value level="20">900</value>
+			<value level="21">900</value>
+			<value level="22">900</value>
+			<value level="23">900</value>
+			<value level="24">900</value>
+			<value level="25">900</value>
+			<value level="26">900</value>
+			<value level="27">900</value>
+			<value level="28">900</value>
+			<value level="29">900</value>
+			<value level="30">900</value>
+			<value level="31">900</value>
+			<value level="32">900</value>
+			<value level="33">900</value>
+		</castRange>
 		<effectPoint>
-			<value level="1">-105</value>
-			<value level="2">-120</value>
-			<value level="3">-135</value>
-			<value level="4">-145</value>
-			<value level="5">-160</value>
-			<value level="6">-170</value>
-			<value level="7">-185</value>
-			<value level="8">-195</value>
-			<value level="9">-220</value>
-			<value level="10">-230</value>
-			<value level="11">-240</value>
-			<value level="12">-250</value>
-			<value level="13">-260</value>
-			<value level="14">-270</value>
-			<value level="15">-280</value>
-			<value level="16">-290</value>
-			<value level="17">-300</value>
-			<value level="18">-310</value>
-			<value level="19">-320</value>
-			<value level="20">-330</value>
-			<value level="21">-340</value>
-			<value level="22">-350</value>
-			<value level="23">-360</value>
-			<value level="24">-370</value>
-			<value level="25">-380</value>
-			<value level="26">-390</value>
-			<value level="27">-400</value>
-			<value level="28">-410</value>
-			<value level="29">-415</value>
-			<value level="30">-420</value>
-			<value level="31">-425</value>
-			<value level="32">-430</value>
-			<value level="33">-435</value>
-			<value level="34">-440</value>
-			<value level="35">-445</value>
-			<value level="36">-450</value>
-			<value level="37">-455</value>
-			<value level="38">-460</value>
-			<value level="39">-465</value>
-			<value level="40">-470</value>
+			<value level="1">-46</value>
+			<value level="2">-102</value>
+			<value level="3">-114</value>
+			<value level="4">-122</value>
+			<value level="5">-134</value>
+			<value level="6">-143</value>
+			<value level="7">-157</value>
+			<value level="8">-166</value>
+			<value level="9">-190</value>
+			<value level="10">-200</value>
+			<value level="11">-209</value>
+			<value level="12">-219</value>
+			<value level="13">-229</value>
+			<value level="14">-239</value>
+			<value level="15">-248</value>
+			<value level="16">-257</value>
+			<value level="17">-266</value>
+			<value level="18">-271</value>
+			<value level="19">-275</value>
+			<value level="20">-279</value>
+			<value level="21">-283</value>
+			<value level="22">-287</value>
+			<value level="23">-291</value>
+			<value level="24">-295</value>
+			<value level="25">-299</value>
+			<value level="26">-302</value>
+			<value level="27">-306</value>
+			<value level="28">-309</value>
+			<value level="29">-312</value>
+			<value level="30">-315</value>
+			<value level="31">-318</value>
+			<value level="32">-321</value>
+			<value level="33">-323</value>
 		</effectPoint>
-		<effectRange>1250</effectRange>
+		<effectRange>
+			<value level="1">1250</value>
+			<value level="2">1250</value>
+			<value level="3">1250</value>
+			<value level="4">1250</value>
+			<value level="5">1250</value>
+			<value level="6">1250</value>
+			<value level="7">1250</value>
+			<value level="8">1250</value>
+			<value level="9">1400</value>
+			<value level="10">1400</value>
+			<value level="11">1400</value>
+			<value level="12">1400</value>
+			<value level="13">1400</value>
+			<value level="14">1400</value>
+			<value level="15">1400</value>
+			<value level="16">1400</value>
+			<value level="17">1400</value>
+			<value level="18">1400</value>
+			<value level="19">1400</value>
+			<value level="20">1400</value>
+			<value level="21">1400</value>
+			<value level="22">1400</value>
+			<value level="23">1400</value>
+			<value level="24">1400</value>
+			<value level="25">1400</value>
+			<value level="26">1400</value>
+			<value level="27">1400</value>
+			<value level="28">1400</value>
+			<value level="29">1400</value>
+			<value level="30">1400</value>
+			<value level="31">1400</value>
+			<value level="32">1400</value>
+			<value level="33">1400</value>
+		</effectRange>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">20</value>
+			<value level="1">17</value>
 			<value level="2">20</value>
 			<value level="3">23</value>
 			<value level="4">25</value>
@@ -4334,18 +4338,11 @@
 			<value level="26">74</value>
 			<value level="27">76</value>
 			<value level="28">78</value>
-			<value level="29">79</value>
-			<value level="30">80</value>
-			<value level="31">81</value>
-			<value level="32">82</value>
-			<value level="33">83</value>
-			<value level="34">84</value>
-			<value level="35">85</value>
-			<value level="36">86</value>
-			<value level="37">87</value>
-			<value level="38">88</value>
-			<value level="39">89</value>
-			<value level="40">90</value>
+			<value level="29">80</value>
+			<value level="30">81</value>
+			<value level="31">82</value>
+			<value level="32">83</value>
+			<value level="33">84</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">14</value>
@@ -4356,38 +4353,31 @@
 			<value level="6">21</value>
 			<value level="7">23</value>
 			<value level="8">24</value>
-			<value level="9">30</value>
-			<value level="10">31</value>
-			<value level="11">32</value>
-			<value level="12">34</value>
-			<value level="13">34</value>
-			<value level="14">35</value>
-			<value level="15">37</value>
-			<value level="16">38</value>
-			<value level="17">38</value>
-			<value level="18">40</value>
-			<value level="19">41</value>
-			<value level="20">42</value>
-			<value level="21">43</value>
-			<value level="22">44</value>
-			<value level="23">45</value>
-			<value level="24">46</value>
-			<value level="25">47</value>
-			<value level="26">48</value>
-			<value level="27">53</value>
-			<value level="28">54</value>
-			<value level="29">54</value>
-			<value level="30">56</value>
-			<value level="31">57</value>
-			<value level="32">58</value>
-			<value level="33">59</value>
-			<value level="34">62</value>
-			<value level="35">62</value>
-			<value level="36">63</value>
-			<value level="37">63</value>
-			<value level="38">64</value>
-			<value level="39">64</value>
-			<value level="40">65</value>
+			<value level="9">28</value>
+			<value level="10">29</value>
+			<value level="11">30</value>
+			<value level="12">31</value>
+			<value level="13">32</value>
+			<value level="14">33</value>
+			<value level="15">34</value>
+			<value level="16">35</value>
+			<value level="17">36</value>
+			<value level="18">37</value>
+			<value level="19">38</value>
+			<value level="20">39</value>
+			<value level="21">40</value>
+			<value level="22">41</value>
+			<value level="23">42</value>
+			<value level="24">43</value>
+			<value level="25">44</value>
+			<value level="26">45</value>
+			<value level="27">48</value>
+			<value level="28">49</value>
+			<value level="29">50</value>
+			<value level="30">51</value>
+			<value level="31">52</value>
+			<value level="32">53</value>
+			<value level="33">54</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">4</value>
@@ -4398,38 +4388,31 @@
 			<value level="6">6</value>
 			<value level="7">6</value>
 			<value level="8">6</value>
-			<value level="9">8</value>
-			<value level="10">8</value>
-			<value level="11">8</value>
-			<value level="12">8</value>
-			<value level="13">9</value>
-			<value level="14">9</value>
-			<value level="15">9</value>
-			<value level="16">9</value>
-			<value level="17">10</value>
-			<value level="18">10</value>
-			<value level="19">10</value>
-			<value level="20">10</value>
-			<value level="21">11</value>
-			<value level="22">11</value>
-			<value level="23">11</value>
-			<value level="24">12</value>
-			<value level="25">12</value>
-			<value level="26">12</value>
-			<value level="27">13</value>
-			<value level="28">13</value>
-			<value level="29">14</value>
-			<value level="30">14</value>
-			<value level="31">14</value>
-			<value level="32">14</value>
-			<value level="33">15</value>
-			<value level="34">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="35">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="36">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="37">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="38">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="39">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="40">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="9">10</value>
+			<value level="10">10</value>
+			<value level="11">10</value>
+			<value level="12">11</value>
+			<value level="13">11</value>
+			<value level="14">11</value>
+			<value level="15">12</value>
+			<value level="16">12</value>
+			<value level="17">12</value>
+			<value level="18">13</value>
+			<value level="19">13</value>
+			<value level="20">13</value>
+			<value level="21">14</value>
+			<value level="22">14</value>
+			<value level="23">14</value>
+			<value level="24">15</value>
+			<value level="25">15</value>
+			<value level="26">15</value>
+			<value level="27">18</value>
+			<value level="28">18</value>
+			<value level="29">18</value>
+			<value level="30">19</value>
+			<value level="31">19</value>
+			<value level="32">19</value>
+			<value level="33">20</value>
 		</mpInitialConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
@@ -4439,52 +4422,45 @@
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
-					<value level="1">31</value>
+					<value level="1">32</value>
 					<value level="2">34</value>
-					<value level="3">39</value>
-					<value level="4">42</value>
-					<value level="5">47</value>
+					<value level="3">40</value>
+					<value level="4">43</value>
+					<value level="5">48</value>
 					<value level="6">51</value>
-					<value level="7">56</value>
-					<value level="8">59</value>
+					<value level="7">57</value>
+					<value level="8">60</value>
 					<value level="9">68</value>
-					<value level="10">69</value>
-					<value level="11">71</value>
-					<value level="12">73</value>
-					<value level="13">74</value>
-					<value level="14">76</value>
-					<value level="15">78</value>
-					<value level="16">79</value>
-					<value level="17">82</value>
-					<value level="18">85</value>
-					<value level="19">89</value>
-					<value level="20">90</value>
-					<value level="21">92</value>
-					<value level="22">95</value>
-					<value level="23">98</value>
+					<value level="10">70</value>
+					<value level="11">72</value>
+					<value level="12">74</value>
+					<value level="13">75</value>
+					<value level="14">77</value>
+					<value level="15">79</value>
+					<value level="16">80</value>
+					<value level="17">83</value>
+					<value level="18">86</value>
+					<value level="19">90</value>
+					<value level="20">91</value>
+					<value level="21">93</value>
+					<value level="22">96</value>
+					<value level="23">99</value>
 					<value level="24">102</value>
 					<value level="25">105</value>
-					<value level="26">108</value>
-					<value level="27">112</value>
-					<value level="28">115</value>
-					<value level="29">117</value>
-					<value level="30">119</value>
-					<value level="31">120</value>
-					<value level="32">122</value>
-					<value level="33">124</value>
-					<value level="34">125</value>
-					<value level="35">127</value>
-					<value level="36">130</value>
-					<value level="37">132</value>
-					<value level="38">135</value>
-					<value level="39">137</value>
-					<value level="40">140</value>
+					<value level="26">109</value>
+					<value level="27">113</value>
+					<value level="28">116</value>
+					<value level="29">119</value>
+					<value level="30">121</value>
+					<value level="31">123</value>
+					<value level="32">125</value>
+					<value level="33">126</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1181" toLevel="3" name="Flame Strike">
-		<!-- Launches a flaming swath of energy. Inflicts damage on the target and nearby enemies with 13 power. -->
+		<!-- Launches a flaming swath of energy and inflicts Fire damage on the target and nearby enemies with $s1 Power added to M. Atk. -->
 		<icon>icon.skill1181</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -4532,6 +4508,7 @@
 	</skill>
 	<skill id="1182" toLevel="3" name="Water Resistance">
 		<!-- Water Resistance +$s2 for $s1. -->
+		<icon>icon.skill1182</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -4581,7 +4558,7 @@
 		</effects>
 	</skill>
 	<skill id="1183" toLevel="4" name="Freezing Shackle">
-		<!-- <Infection skill>. Freezes enemies with cold flames. Deals continuous damage for 15 sec. -->
+		<!-- Freezes the enemy with a powerful cold wind, causing loss of $s2 HP per sec. for $s1. -->
 		<icon>icon.skill1183</icon>
 		<abnormalLevel>
 			<value level="1">5</value>
@@ -4615,10 +4592,10 @@
 			<value level="4">74</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">59</value>
-			<value level="2">70</value>
-			<value level="3">89</value>
-			<value level="4">103</value>
+			<value level="1">47</value>
+			<value level="2">56</value>
+			<value level="3">71</value>
+			<value level="4">82</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">12</value>
@@ -4626,7 +4603,6 @@
 			<value level="3">18</value>
 			<value level="4">21</value>
 		</mpInitialConsume>
-		<trait>INFECTION</trait>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -4644,52 +4620,46 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1184" toLevel="10" name="Ice Bolt">
-		<!-- <Suppression Skill>. Momentarily freezes the surrounding air. Inflicts magic damage on the enemy with 11 power. For 30 sec. target's Speed -20%. -->
+	<skill id="1184" toLevel="6" name="Ice Bolt">
+		<!-- Momentarily freezes the surrounding air, inflicting damage on the enemy with $s1 Power and decreasing their Speed by $s3 for $s2. -->
 		<icon>icon.skill1184</icon>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>60</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<castRange>600</castRange>
 		<coolTime>200</coolTime>
 		<effectPoint>
-			<value level="1">-25</value>
-			<value level="2">-40</value>
-			<value level="3">-55</value>
-			<value level="4">-75</value>
-			<value level="5">-90</value>
-			<value level="6">-105</value>
-			<value level="7">-120</value>
-			<value level="8">-145</value>
-			<value level="9">-170</value>
-			<value level="10">-195</value>
+			<value level="1">-53</value>
+			<value level="2">-61</value>
+			<value level="3">-72</value>
+			<value level="4">-81</value>
+			<value level="5">-91</value>
+			<value level="6">-102</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
-		<hitTime>3000</hitTime>
+		<hitTime>3100</hitTime>
+		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<lvlBonusRate>20</lvlBonusRate>
 		<magicLevel>
-			<value level="1">1</value>
-			<value level="2">4</value>
-			<value level="3">7</value>
-			<value level="4">11</value>
-			<value level="5">14</value>
-			<value level="6">20</value>
-			<value level="7">20</value>
-			<value level="8">25</value>
-			<value level="9">30</value>
-			<value level="10">35</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">8</value>
-			<value level="2">10</value>
-			<value level="3">12</value>
+			<value level="1">4</value>
+			<value level="2">7</value>
+			<value level="3">11</value>
 			<value level="4">14</value>
 			<value level="5">17</value>
-			<value level="6">18</value>
-			<value level="7">20</value>
-			<value level="8">23</value>
-			<value level="9">27</value>
-			<value level="10">30</value>
+			<value level="6">20</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">7</value>
+			<value level="2">8</value>
+			<value level="3">11</value>
+			<value level="4">12</value>
+			<value level="5">14</value>
+			<value level="6">16</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">2</value>
@@ -4698,51 +4668,32 @@
 			<value level="4">3</value>
 			<value level="5">4</value>
 			<value level="6">4</value>
-			<value level="7">4</value>
-			<value level="8">4</value>
-			<value level="9">4</value>
-			<value level="10">4</value>
 		</mpInitialConsume>
-		<operateType>A1</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalAttack">
 				<power>
-					<value level="1">11</value>
-					<value level="2">13</value>
-					<value level="3">14</value>
-					<value level="4">17</value>
-					<value level="5">18</value>
-					<value level="6">20</value>
-					<value level="7">22</value>
-					<value level="8">27</value>
-					<value level="9">33</value>
-					<value level="10">38</value>
+					<value level="1">8</value>
+					<value level="2">9</value>
+					<value level="3">11</value>
+					<value level="4">13</value>
+					<value level="5">14</value>
+					<value level="6">16</value>
 				</power>
 			</effect>
-			<effect name="CallSkill">
-				<skillId>45508</skillId> <!-- Ice Bolt -->
-				<skillLevel>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">4</value>
-					<value level="5">5</value>
-					<value level="6">6</value>
-					<value level="7">7</value>
-					<value level="8">8</value>
-					<value level="9">9</value>
-					<value level="10">10</value>
-				</skillLevel>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1189" toLevel="3" name="Wind Resistance">
 		<!-- Wind Resistance +$s2 for $s1. -->
+		<icon>icon.skill1189</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -4793,6 +4744,7 @@
 	</skill>
 	<skill id="1191" toLevel="3" name="Fire Resistance">
 		<!-- Fire Resistance +$s2 for $s1. -->
+		<icon>icon.skill1191</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>

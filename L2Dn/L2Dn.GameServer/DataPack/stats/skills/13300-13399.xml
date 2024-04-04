@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="13339" toLevel="5" name="Enchanted Set Effect: Heavy Armor">
-		<!-- <Enchanted heavy armor set effect>. Max HP +360. M. Def. +30. HP Recovery Rate (standing/ sitting) +10. MP Recovery Rate +4 -->
+	<skill id="13339" toLevel="5" name="Enchantment Effect: Heavy Armor Set +6">
+		<!-- Set item is enchanted. Max HP +360, HP Recovery Bonus +10 when standing/ sitting, MP Recovery Bonus +4 when standing/ sitting. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -142,8 +142,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13340" toLevel="5" name="Enchanted Set Effect: Light Armor">
-		<!-- <Enchanted light armor set effect>. Max HP +200. Max MP +80. M. Def. +30. HP Recovery Rate (standing/ sitting) +10. MP Recovery Rate +4 -->
+	<skill id="13340" toLevel="5" name="Enchantment Effect: Light Armor Set +6">
+		<!-- Set item is enchanted. Max HP +200, Max MP +80, HP Recovery Bonus +10 when standing/ sitting, MP Recovery Bonus +4 when standing/ sitting. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -264,7 +264,7 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="4" toLevel="5">
-				<FEAR>5</FEAR>
+				<DERANGEMENT>5</DERANGEMENT>
 				<PARALYZE>5</PARALYZE>
 				<SHOCK>5</SHOCK>
 			</effect>
@@ -290,8 +290,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13341" toLevel="5" name="Enchanted Set Effect: Robe">
-		<!-- <Robe Enchanted Set Effect>. Max MP +140. HP Recovery Rate (standing/ sitting) +4. MP Recovery Rate +6 -->
+	<skill id="13341" toLevel="5" name="Enchantment Effect: Robe Set +6">
+		<!-- Set item is enchanted. Max MP +140, HP Recovery Bonus +4 when standing/ sitting, MP Recovery Bonus +6 when standing/ sitting. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>

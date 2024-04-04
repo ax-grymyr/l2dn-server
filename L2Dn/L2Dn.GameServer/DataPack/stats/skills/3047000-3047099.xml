@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3047001" toLevel="1" name="Goring Charge">
-		<!-- <font color="C270F6">P. Def. +1500. M. Def. +1500. Debuff Resistance +20%</font> -->
-		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
-	</skill>
-</list>

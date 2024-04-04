@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="4700" toLevel="13" name="Queen's Gift">
-		<!-- A buff used by Feline Queen. For 2 min., P. Atk. +10%, P. Accuracy +3. The effect doesn't not stack with that of Emperor's Blessing. -->
+	<skill id="4700" toLevel="13" name="Gift of Queen">
+		<!-- For $s1, party members' P. Atk. +$s2, P. Accuracy +$s3. -->
 		<icon>icon.skill1331</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">3</value>
-			<value level="5">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
 			<value level="6">3</value>
 			<value level="7">3</value>
 			<value level="8">3</value>
@@ -20,10 +20,10 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value level="1">120</value>
-			<value level="2">120</value>
-			<value level="3">120</value>
-			<value level="4">150</value>
-			<value level="5">165</value>
+			<value level="2">240</value>
+			<value level="3">360</value>
+			<value level="4">480</value>
+			<value level="5">600</value>
 			<value level="6">180</value>
 			<value level="7">195</value>
 			<value level="8">210</value>
@@ -53,11 +53,11 @@
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -68,11 +68,11 @@
 			<value level="13">86</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">202</value>
-			<value level="2">157</value>
-			<value level="3">194</value>
-			<value level="4">202</value>
-			<value level="5">207</value>
+			<value level="1">161</value>
+			<value level="2">163</value>
+			<value level="3">165</value>
+			<value level="4">167</value>
+			<value level="5">169</value>
 			<value level="6">212</value>
 			<value level="7">215</value>
 			<value level="8">220</value>
@@ -82,8 +82,23 @@
 			<value level="12">237</value>
 			<value level="13">242</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">41</value>
+			<value level="2">42</value>
+			<value level="3">43</value>
+			<value level="4">44</value>
+			<value level="5">45</value>
+			<value level="6">43</value>
+			<value level="7">43</value>
+			<value level="8">44</value>
+			<value level="9">45</value>
+			<value level="10">46</value>
+			<value level="11">47</value>
+			<value level="12">48</value>
+			<value level="13">49</value>
+		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -100,9 +115,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4701" toLevel="13" name="Queen's Cure">
-		<!-- A special magic of Feline Queen, it can remove curses. Removes Suppression, Accuracy Decrease State and P./ M. Atk. Decrease State from members. (Probability: 40%) -->
-		<icon>icon.skill0000</icon>
+	<skill id="4701" toLevel="13" name="Cure of Queen">
+		<!-- Has a $s1 chance to remove curses that decrease P. Accuracy, P./ M. Atk., Atk. Spd./ Casting Spd. and Speed from all party members. -->
 		<affectRange>1000</affectRange>
 		<effectPoint>
 			<value level="1">541</value>
@@ -122,11 +136,11 @@
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -137,12 +151,12 @@
 			<value level="13">86</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">102</value>
-			<value level="2">107</value>
-			<value level="3">110</value>
-			<value level="4">115</value>
-			<value level="5">104</value>
-			<value level="6">107</value>
+			<value level="1">81</value>
+			<value level="2">85</value>
+			<value level="3">88</value>
+			<value level="4">92</value>
+			<value level="5">96</value>
+			<value level="6">100</value>
 			<value level="7">108</value>
 			<value level="8">110</value>
 			<value level="9">113</value>
@@ -151,22 +165,37 @@
 			<value level="12">119</value>
 			<value level="13">122</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">21</value>
+			<value level="2">22</value>
+			<value level="3">22</value>
+			<value level="4">23</value>
+			<value level="5">24</value>
+			<value level="6">25</value>
+			<value level="7">43</value>
+			<value level="8">44</value>
+			<value level="9">45</value>
+			<value level="10">46</value>
+			<value level="11">47</value>
+			<value level="12">48</value>
+			<value level="13">49</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
-				<dispel>SPEED_DOWN;ATTACK_TIME_DOWN;CASTING_TIME_DOWN</dispel>
+				<dispel>ATTACK_TIME_UP;CASTING_TIME_UP;HIT_DOWN;PA_DOWN;MA_DOWN;SPEED_DOWN;ALL_SPEED_DOWN;WARRIOR_BANE;MAGE_BANE</dispel>
 				<rate>
 					<value level="1">40</value>
-					<value level="2">45</value>
-					<value level="3">50</value>
-					<value level="4">55</value>
-					<value level="5">60</value>
-					<value level="6">65</value>
+					<value level="2">50</value>
+					<value level="3">60</value>
+					<value level="4">70</value>
+					<value level="5">80</value>
+					<value level="6">90</value>
 					<value level="7">70</value>
 					<value level="8">75</value>
 					<value level="9">80</value>
@@ -178,15 +207,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4702" toLevel="13" name="Seraphim's Blessing">
-		<!-- A buff used by Seraphim. For 2 min., MP Recovery Rate +30%, M. Skill Critical Rate +25%. The effect doesn't not stack with that of Guard's Blessing. -->
+	<skill id="4702" toLevel="13" name="Blessing of Seraphim">
+		<!-- For $s1, party members' MP Recovery Bonus +$s2, M. Critical Rate +$s3. -->
 		<icon>icon.skill1332</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">3</value>
-			<value level="5">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
 			<value level="6">3</value>
 			<value level="7">3</value>
 			<value level="8">3</value>
@@ -198,10 +227,10 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value level="1">120</value>
-			<value level="2">120</value>
-			<value level="3">120</value>
-			<value level="4">150</value>
-			<value level="5">165</value>
+			<value level="2">240</value>
+			<value level="3">360</value>
+			<value level="4">480</value>
+			<value level="5">600</value>
 			<value level="6">180</value>
 			<value level="7">195</value>
 			<value level="8">210</value>
@@ -231,11 +260,11 @@
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -245,12 +274,27 @@
 			<value level="12">85</value>
 			<value level="13">86</value>
 		</magicLevel>
+		<mpInitialConsume>
+			<value level="1">41</value>
+			<value level="2">42</value>
+			<value level="3">43</value>
+			<value level="4">44</value>
+			<value level="5">45</value>
+			<value level="6">25</value>
+			<value level="7">22</value>
+			<value level="8">22</value>
+			<value level="9">23</value>
+			<value level="10">23</value>
+			<value level="11">24</value>
+			<value level="12">24</value>
+			<value level="13">25</value>
+		</mpInitialConsume>
 		<mpConsume>
-			<value level="1">202</value>
-			<value level="2">157</value>
-			<value level="3">194</value>
-			<value level="4">202</value>
-			<value level="5">207</value>
+			<value level="1">161</value>
+			<value level="2">163</value>
+			<value level="3">165</value>
+			<value level="4">167</value>
+			<value level="5">169</value>
 			<value level="6">212</value>
 			<value level="7">215</value>
 			<value level="8">220</value>
@@ -261,7 +305,7 @@
 			<value level="13">242</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -278,15 +322,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4703" toLevel="13" name="Seraphim's Gift">
-		<!-- A buff used by Seraphim. For 2 min., M. Skill Cooldown -10%, M. Atk. +30%. The effect doesn't not stack with that of Guard's Blessing. -->
+	<skill id="4703" toLevel="13" name="Gift of Seraphim">
+		<!-- For $s1, party members' M. Skill Cooldown -$s2, M. Atk. +$s3. -->
 		<icon>icon.skill1332</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">3</value>
-			<value level="5">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
 			<value level="6">3</value>
 			<value level="7">3</value>
 			<value level="8">3</value>
@@ -298,10 +342,10 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value level="1">120</value>
-			<value level="2">120</value>
-			<value level="3">120</value>
-			<value level="4">150</value>
-			<value level="5">165</value>
+			<value level="2">240</value>
+			<value level="3">360</value>
+			<value level="4">480</value>
+			<value level="5">600</value>
 			<value level="6">180</value>
 			<value level="7">195</value>
 			<value level="8">210</value>
@@ -331,11 +375,11 @@
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -345,12 +389,27 @@
 			<value level="12">85</value>
 			<value level="13">86</value>
 		</magicLevel>
+		<mpInitialConsume>
+			<value level="1">41</value>
+			<value level="2">42</value>
+			<value level="3">43</value>
+			<value level="4">44</value>
+			<value level="5">45</value>
+			<value level="6">25</value>
+			<value level="7">22</value>
+			<value level="8">22</value>
+			<value level="9">23</value>
+			<value level="10">23</value>
+			<value level="11">24</value>
+			<value level="12">24</value>
+			<value level="13">25</value>
+		</mpInitialConsume>
 		<mpConsume>
-			<value level="1">202</value>
-			<value level="2">157</value>
-			<value level="3">194</value>
-			<value level="4">202</value>
-			<value level="5">207</value>
+			<value level="1">161</value>
+			<value level="2">163</value>
+			<value level="3">165</value>
+			<value level="4">167</value>
+			<value level="5">169</value>
 			<value level="6">212</value>
 			<value level="7">215</value>
 			<value level="8">220</value>
@@ -361,7 +420,7 @@
 			<value level="13">242</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -379,9 +438,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4704" toLevel="13" name="Seraphim's Cure">
-		<!-- Seraphim's magic can remove curses. Removes Paralysis/ Shock/ Sleep/ Hold/ Fear/ Silence from party members. (Probability: 40%) -->
-		<icon>icon.skill0000</icon>
+	<skill id="4704" toLevel="13" name="Cure of Seraphim">
+		<!-- Has a $s1 chance to remove curses that inflicts Sleep, Hold, Stun, Paralysis and Mental from all party members. -->
 		<affectRange>1000</affectRange>
 		<effectPoint>
 			<value level="1">541</value>
@@ -415,13 +473,28 @@
 			<value level="12">85</value>
 			<value level="13">86</value>
 		</magicLevel>
+		<mpInitialConsume>
+			<value level="1">21</value>
+			<value level="2">22</value>
+			<value level="3">22</value>
+			<value level="4">23</value>
+			<value level="5">24</value>
+			<value level="6">25</value>
+			<value level="7">22</value>
+			<value level="8">22</value>
+			<value level="9">23</value>
+			<value level="10">23</value>
+			<value level="11">24</value>
+			<value level="12">24</value>
+			<value level="13">25</value>
+		</mpInitialConsume>
 		<mpConsume>
-			<value level="1">102</value>
-			<value level="2">107</value>
-			<value level="3">110</value>
-			<value level="4">115</value>
-			<value level="5">104</value>
-			<value level="6">107</value>
+			<value level="1">81</value>
+			<value level="2">85</value>
+			<value level="3">88</value>
+			<value level="4">92</value>
+			<value level="5">96</value>
+			<value level="6">100</value>
 			<value level="7">108</value>
 			<value level="8">110</value>
 			<value level="9">113</value>
@@ -431,21 +504,21 @@
 			<value level="13">122</value>
 		</mpConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>PARTY</affectScope>
 		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="DispelBySlotProbability">
-				<dispel>PARALYZE;STUN;SLEEP;ROOT_PHYSICALLY;ROOT_MAGICALLY;SILENCE;SILENCE_ALL;SILENCE_PHYSICAL</dispel>
+				<dispel>SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE;SILENCE_PHYSICAL;SILENCE_ALL;TURN_FLEE</dispel>
 				<rate>
-					<value level="1">55</value>
-					<value level="2">55</value>
+					<value level="1">40</value>
+					<value level="2">50</value>
 					<value level="3">60</value>
-					<value level="4">60</value>
-					<value level="5">65</value>
-					<value level="6">65</value>
+					<value level="4">70</value>
+					<value level="5">80</value>
+					<value level="6">90</value>
 					<value level="7">70</value>
 					<value level="8">70</value>
 					<value level="9">75</value>
@@ -457,15 +530,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4705" toLevel="13" name="Shadow's Curse">
-		<!-- Nightshade's debuff magic. Provokes the enemy to attack and then casts a curse. Momentarily P./ M. Def. -4% -->
+	<skill id="4705" toLevel="13" name="Curse of Shade">
+		<!-- Nightshade's debuff magic. Provokes the enemy to attack and then casts a curse. Momentarily P./ M. Def. -$s1 -->
 		<icon>icon.skill1333</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
 			<value level="4">4</value>
-			<value level="5">4</value>
+			<value level="5">5</value>
 			<value level="6">4</value>
 			<value level="7">4</value>
 			<value level="8">4</value>
@@ -477,23 +550,9 @@
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>DEBUFF_NIGHTSHADE</abnormalType>
-		<activateRate>
-			<value level="1">40</value>
-			<value level="2">40</value>
-			<value level="3">45</value>
-			<value level="4">45</value>
-			<value level="5">50</value>
-			<value level="6">50</value>
-			<value level="7">55</value>
-			<value level="8">55</value>
-			<value level="9">60</value>
-			<value level="10">60</value>
-			<value level="11">65</value>
-			<value level="12">65</value>
-			<value level="13">70</value>
-		</activateRate>
+		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
-		<castRange>400</castRange>
+		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-1621</value>
 			<value level="2">-1831</value>
@@ -509,19 +568,19 @@
 			<value level="12">-2066</value>
 			<value level="13">-2074</value>
 		</effectPoint>
-		<effectRange>900</effectRange>
+		<effectRange>1400</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
 		<hitTime>1000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>1</lvlBonusRate>
+		<lvlBonusRate>30</lvlBonusRate>
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -534,9 +593,9 @@
 		<mpConsume>
 			<value level="1">56</value>
 			<value level="2">58</value>
-			<value level="3">58</value>
-			<value level="4">59</value>
-			<value level="5">57</value>
+			<value level="3">60</value>
+			<value level="4">62</value>
+			<value level="5">64</value>
 			<value level="6">58</value>
 			<value level="7">58</value>
 			<value level="8">58</value>
@@ -549,9 +608,9 @@
 		<mpInitialConsume>
 			<value level="1">14</value>
 			<value level="2">15</value>
-			<value level="3">15</value>
-			<value level="4">15</value>
-			<value level="5">15</value>
+			<value level="3">16</value>
+			<value level="4">17</value>
+			<value level="5">18</value>
 			<value level="6">15</value>
 			<value level="7">15</value>
 			<value level="8">15</value>
@@ -562,7 +621,7 @@
 			<value level="13">15</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -572,10 +631,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-10</value>
-					<value level="3">-10</value>
-					<value level="4">-10</value>
+					<value level="1">-4</value>
+					<value level="2">-5</value>
+					<value level="3">-6</value>
+					<value level="4">-8</value>
 					<value level="5">-10</value>
 					<value level="6">-10</value>
 					<value level="7">-10</value>
@@ -590,10 +649,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-10</value>
-					<value level="3">-10</value>
-					<value level="4">-10</value>
+					<value level="1">-4</value>
+					<value level="2">-5</value>
+					<value level="3">-6</value>
+					<value level="4">-8</value>
 					<value level="5">-10</value>
 					<value level="6">-10</value>
 					<value level="7">-10</value>
@@ -608,15 +667,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4706" toLevel="13" name="Shadow's Mass Curse">
-		<!-- Nightshade's debuff magic. Provokes nearby enemies to attack and then casts a curse. Momentarily their P./ M. Def. -4% -->
+	<skill id="4706" toLevel="13" name="Mass Curse of Shade">
+		<!-- Nightshade's debuff magic. Provokes nearby enemies to attack and then casts a curse. Momentarily their P./ M. Def. -$s1 -->
 		<icon>icon.skill1333</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
 			<value level="4">4</value>
-			<value level="5">4</value>
+			<value level="5">5</value>
 			<value level="6">4</value>
 			<value level="7">4</value>
 			<value level="8">4</value>
@@ -628,21 +687,7 @@
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>DEBUFF_NIGHTSHADE</abnormalType>
-		<activateRate>
-			<value level="1">40</value>
-			<value level="2">40</value>
-			<value level="3">45</value>
-			<value level="4">45</value>
-			<value level="5">50</value>
-			<value level="6">50</value>
-			<value level="7">55</value>
-			<value level="8">55</value>
-			<value level="9">60</value>
-			<value level="10">60</value>
-			<value level="11">65</value>
-			<value level="12">65</value>
-			<value level="13">70</value>
-		</activateRate>
+		<activateRate>80</activateRate>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<basicProperty>MAGIC</basicProperty>
@@ -666,13 +711,13 @@
 		<hitTime>1000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>1</lvlBonusRate>
+		<lvlBonusRate>30</lvlBonusRate>
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -684,10 +729,10 @@
 		</magicLevel>
 		<mpConsume>
 			<value level="1">60</value>
-			<value level="2">84</value>
-			<value level="3">86</value>
-			<value level="4">87</value>
-			<value level="5">85</value>
+			<value level="2">64</value>
+			<value level="3">68</value>
+			<value level="4">72</value>
+			<value level="5">76</value>
 			<value level="6">86</value>
 			<value level="7">87</value>
 			<value level="8">87</value>
@@ -699,10 +744,10 @@
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">15</value>
-			<value level="2">21</value>
-			<value level="3">22</value>
-			<value level="4">22</value>
-			<value level="5">22</value>
+			<value level="2">16</value>
+			<value level="3">17</value>
+			<value level="4">18</value>
+			<value level="5">19</value>
 			<value level="6">22</value>
 			<value level="7">22</value>
 			<value level="8">22</value>
@@ -713,7 +758,7 @@
 			<value level="13">23</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
@@ -725,10 +770,10 @@
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-10</value>
-					<value level="3">-10</value>
-					<value level="4">-10</value>
+					<value level="1">-4</value>
+					<value level="2">-5</value>
+					<value level="3">-6</value>
+					<value level="4">-8</value>
 					<value level="5">-10</value>
 					<value level="6">-10</value>
 					<value level="7">-10</value>
@@ -743,10 +788,10 @@
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-10</value>
-					<value level="3">-10</value>
-					<value level="4">-10</value>
+					<value level="1">-4</value>
+					<value level="2">-5</value>
+					<value level="3">-6</value>
+					<value level="4">-8</value>
 					<value level="5">-10</value>
 					<value level="6">-10</value>
 					<value level="7">-10</value>
@@ -761,9 +806,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4707" toLevel="13" name="Shadow's Sacrifice">
-		<!-- Recovers HP with Nightshade's magic. Sacrifices one's own HP to heal nearby allies. Power 775. -->
-		<icon>icon.skill0000</icon>
+	<skill id="4707" toLevel="13" name="Shade Sacrifice">
+		<!-- Nightshade special HP recovery magic. Sacrifices one's own HP to restore HP of nearby allies. Power $s1 -->
 		<effectPoint>
 			<value level="1">250</value>
 			<value level="2">260</value>
@@ -782,12 +826,12 @@
 		<affectRange>1000</affectRange>
 		<hitTime>1000</hitTime>
 		<hpConsume>
-			<value level="1">1102</value>
-			<value level="2">1136</value>
-			<value level="3">1178</value>
-			<value level="4">1212</value>
-			<value level="5">972</value>
-			<value level="6">979</value>
+			<value level="1">930</value>
+			<value level="2">960</value>
+			<value level="3">990</value>
+			<value level="4">1020</value>
+			<value level="5">1050</value>
+			<value level="6">1080</value>
 			<value level="7">991</value>
 			<value level="8">1002</value>
 			<value level="9">1013</value>
@@ -821,25 +865,25 @@
 		<effects>
 			<effect name="Heal">
 				<power>
-					<value level="1">600</value>
-					<value level="2">659</value>
-					<value level="3">680</value>
-					<value level="4">700</value>
-					<value level="5">730</value>
-					<value level="6">759</value>
-					<value level="7">780</value>
-					<value level="8">810</value>
-					<value level="9">840</value>
-					<value level="10">880</value>
-					<value level="11">925</value>
-					<value level="12">948</value>
-					<value level="13">968</value>
+					<value level="1">775</value>
+					<value level="2">800</value>
+					<value level="3">825</value>
+					<value level="4">850</value>
+					<value level="5">875</value>
+					<value level="6">900</value>
+					<value level="7">900</value>
+					<value level="8">900</value>
+					<value level="9">900</value>
+					<value level="10">900</value>
+					<value level="11">900</value>
+					<value level="12">900</value>
+					<value level="13">900</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4708" toLevel="14" name="Cursed Strike">
-		<!-- The Cursed Man stuns the enemy dealing them damage. Power 1046. -->
+		<!-- Cursed Man inflicts damage and stun target simultaneously. Power $s1 -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
@@ -849,23 +893,53 @@
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<effectPoint>
-			<value level="1">-580</value>
-			<value level="2">-620</value>
-			<value level="3">-660</value>
-			<value level="4">-700</value>
-			<value level="5">-720</value>
-			<value level="6">-740</value>
-			<value level="7">-760</value>
-			<value level="8">-780</value>
-			<value level="9">-790</value>
-			<value level="10">-800</value>
-			<value level="11">-850</value>
-			<value level="12">-900</value>
-			<value level="13">-950</value>
-			<value level="14">-990</value>
+			<value level="1">-279</value>
+			<value level="2">-296</value>
+			<value level="3">-311</value>
+			<value level="4">-323</value>
+			<value level="5">-328</value>
+			<value level="6">-333</value>
+			<value level="7">-337</value>
+			<value level="8">-340</value>
+			<value level="9">-341</value>
+			<value level="10">-342</value>
+			<value level="11">-342</value>
+			<value level="12">-342</value>
+			<value level="13">-342</value>
+			<value level="14">-342</value>
 		</effectPoint>
-		<effectRange>200</effectRange>
-		<hitTime>2000</hitTime>
+		<effectRange>
+			<value level="1">200</value>
+			<value level="2">200</value>
+			<value level="3">200</value>
+			<value level="4">200</value>
+			<value level="5">200</value>
+			<value level="6">200</value>
+			<value level="7">200</value>
+			<value level="8">400</value>
+			<value level="9">400</value>
+			<value level="10">400</value>
+			<value level="11">400</value>
+			<value level="12">400</value>
+			<value level="13">400</value>
+			<value level="14">400</value>
+		</effectRange>
+		<hitTime>
+			<value level="1">2000</value>
+			<value level="2">2000</value>
+			<value level="3">2000</value>
+			<value level="4">2000</value>
+			<value level="5">2000</value>
+			<value level="6">2000</value>
+			<value level="7">2000</value>
+			<value level="8">1000</value>
+			<value level="9">1000</value>
+			<value level="10">1000</value>
+			<value level="11">1000</value>
+			<value level="12">1000</value>
+			<value level="13">1000</value>
+			<value level="14">1000</value>
+		</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
 		<magicLevel>
@@ -901,7 +975,22 @@
 			<value level="14">80</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>
+			<value level="1">10000</value>
+			<value level="2">10000</value>
+			<value level="3">10000</value>
+			<value level="4">10000</value>
+			<value level="5">10000</value>
+			<value level="6">10000</value>
+			<value level="7">10000</value>
+			<value level="8">5000</value>
+			<value level="9">5000</value>
+			<value level="10">5000</value>
+			<value level="11">5000</value>
+			<value level="12">5000</value>
+			<value level="13">5000</value>
+			<value level="14">5000</value>
+		</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
@@ -909,47 +998,76 @@
 		<effects>
 			<effect name="PhysicalAttack">
 				<power>
-					<value level="1">6459</value>
-					<value level="2">7443</value>
-					<value level="3">7800</value>
-					<value level="4">8200</value>
-					<value level="5">8560</value>
-					<value level="6">8870</value>
-					<value level="7">9250</value>
-					<value level="8">9560</value>
-					<value level="9">9980</value>
-					<value level="10">10500</value>
-					<value level="11">11000</value>
-					<value level="12">12000</value>
-					<value level="13">12900</value>
-					<value level="14">14000</value>
+					<value level="1">1046</value>
+					<value level="2">1230</value>
+					<value level="3">1425</value>
+					<value level="4">1626</value>
+					<value level="5">1727</value>
+					<value level="6">1827</value>
+					<value level="7">1925</value>
+					<value level="8">2020</value>
+					<value level="9">2067</value>
+					<value level="10">2112</value>
+					<value level="11">6459</value>
+					<value level="12">6593</value>
+					<value level="13">7004</value>
+					<value level="14">7443</value>
 				</power>
 			</effect>
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="4709" toLevel="14" name="Cursed Blow">
-		<!-- Cursed Man's attack that unleashes immense damage upon a targeted enemy. Power 4181. -->
-		<icon>icon.skill0000</icon>
+		<!-- Cursed Man's attack that unleashes immense damage upon a targeted enemy. Power $s1 -->
 		<castRange>40</castRange>
 		<effectPoint>
-			<value level="1">-580</value>
-			<value level="2">-620</value>
-			<value level="3">-660</value>
-			<value level="4">-700</value>
-			<value level="5">-720</value>
-			<value level="6">-740</value>
-			<value level="7">-760</value>
-			<value level="8">-780</value>
-			<value level="9">-790</value>
-			<value level="10">-800</value>
-			<value level="11">-850</value>
-			<value level="12">-900</value>
-			<value level="13">-950</value>
-			<value level="14">-990</value>
+			<value level="1">-279</value>
+			<value level="2">-296</value>
+			<value level="3">-311</value>
+			<value level="4">-323</value>
+			<value level="5">-328</value>
+			<value level="6">-333</value>
+			<value level="7">-337</value>
+			<value level="8">-340</value>
+			<value level="9">-341</value>
+			<value level="10">-342</value>
+			<value level="11">-342</value>
+			<value level="12">-342</value>
+			<value level="13">-342</value>
+			<value level="14">-342</value>
 		</effectPoint>
-		<effectRange>200</effectRange>
-		<hitTime>2000</hitTime>
+		<effectRange>
+			<value level="1">200</value>
+			<value level="2">200</value>
+			<value level="3">200</value>
+			<value level="4">200</value>
+			<value level="5">200</value>
+			<value level="6">200</value>
+			<value level="7">200</value>
+			<value level="8">400</value>
+			<value level="9">400</value>
+			<value level="10">400</value>
+			<value level="11">400</value>
+			<value level="12">400</value>
+			<value level="13">400</value>
+			<value level="14">400</value>
+		</effectRange>
+		<hitTime>
+			<value level="1">2000</value>
+			<value level="2">2000</value>
+			<value level="3">2000</value>
+			<value level="4">2000</value>
+			<value level="5">2000</value>
+			<value level="6">2000</value>
+			<value level="7">2000</value>
+			<value level="8">1500</value>
+			<value level="9">1500</value>
+			<value level="10">1500</value>
+			<value level="11">1500</value>
+			<value level="12">1500</value>
+			<value level="13">1500</value>
+			<value level="14">1500</value>
+		</hitTime>
 		<magicLevel>
 			<value level="1">58</value>
 			<value level="2">62</value>
@@ -983,27 +1101,42 @@
 			<value level="14">80</value>
 		</mpConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>
+			<value level="1">10000</value>
+			<value level="2">10000</value>
+			<value level="3">10000</value>
+			<value level="4">10000</value>
+			<value level="5">10000</value>
+			<value level="6">10000</value>
+			<value level="7">10000</value>
+			<value level="8">5000</value>
+			<value level="9">5000</value>
+			<value level="10">5000</value>
+			<value level="11">5000</value>
+			<value level="12">5000</value>
+			<value level="13">5000</value>
+			<value level="14">5000</value>
+		</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="FatalBlow">
 				<power>
-					<value level="1">8743</value>
-					<value level="2">9283</value>
-					<value level="3">9800</value>
-					<value level="4">10200</value>
-					<value level="5">10800</value>
-					<value level="6">11500</value>
-					<value level="7">12100</value>
-					<value level="8">12800</value>
-					<value level="9">13400</value>
-					<value level="10">14000</value>
-					<value level="11">14800</value>
-					<value level="12">15500</value>
-					<value level="13">16200</value>
-					<value level="14">16900</value>
+					<value level="1">4181</value>
+					<value level="2">4920</value>
+					<value level="3">5700</value>
+					<value level="4">6503</value>
+					<value level="5">6906</value>
+					<value level="6">7305</value>
+					<value level="7">7698</value>
+					<value level="8">8079</value>
+					<value level="9">8265</value>
+					<value level="10">8447</value>
+					<value level="11">8743</value>
+					<value level="12">8918</value>
+					<value level="13">9101</value>
+					<value level="14">9283</value>
 				</power>
 				<criticalChance>10</criticalChance>
 				<chanceBoost>200</chanceBoost>
@@ -1012,6 +1145,7 @@
 	</skill>
 	<skill id="4710" toLevel="12" name="Wild Stun">
 		<!-- Debuff attack used by Hatchling of Wind/ Strider. Inflicts damage and stun simultaneously. Power $s1 -->
+		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1093,7 +1227,8 @@
 		</effects>
 	</skill>
 	<skill id="4711" toLevel="12" name="Wild Defense">
-		<!-- Wind Strider's defensive skill to escape from a crisis situation. Increases P./ M. Def. significantly while greatly reducing Atk. Spd. and Speed. -->
+		<!-- Wind Strider's defensive skill to escape from a crisis situation. Increases P. Def. and M. Def. significantly while greatly reducing Atk. Spd. and Speed. -->
+		<icon>icon.skill0110</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_BUFF</abnormalType>
@@ -1183,7 +1318,8 @@
 		</effects>
 	</skill>
 	<skill id="4712" toLevel="12" name="Bright Burst">
-		<!-- Star Hatchling/ Strider's attack skill. Power $s1 -->
+		<!-- Star Hatchling/ Strider's attack skill. Power $s1. -->
+		<icon>icon.skill4712</icon>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>
@@ -1256,7 +1392,8 @@
 		</effects>
 	</skill>
 	<skill id="4713" toLevel="12" name="Bright Heal">
-		<!-- Star Hatchling/ Strider's recovery magic. Regenerates the pet's HP. Power $s1 -->
+		<!-- Star Hatchling/ Strider's recovery magic. Regenerates the pet's HP. Power $s1. -->
+		<icon>icon.skill4713</icon>
 		<coolTime>1000</coolTime>
 		<effectPoint>
 			<value level="1">33</value>
@@ -1329,24 +1466,28 @@
 	</skill>
 	<skill id="4714" toLevel="1" name="Twilight Dragon">
 		<!-- An active dragon with fast moving feet. -->
+		<icon>icon.skill1373</icon>
 		<magicLevel>35</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4715" toLevel="1" name="Wind Dragon">
-		<!-- A warrior type dragon that possesses great power. When it is equipped with a weapon, its P. Atk. increases greatly. When it is equipped with armor, P. Def. increases greatly and M. Def. also increases. -->
+		<!-- A warrior type dragon that possesses great power. When it is equipped with a weapon, its P. Atk increases greatly. When it is equipped with armor, P. Def. increases greatly and M. Def. also increases. -->
+		<icon>icon.skill1373</icon>
 		<magicLevel>35</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4716" toLevel="1" name="Star Dragon">
 		<!-- A mystic type dragon that possesses powerful magic capability. When it is equipped with a weapon, its M. Atk. increases greatly. When equipped with armor, its M. Def. increases greatly and P. Def. also increases. -->
+		<icon>icon.skill1373</icon>
 		<magicLevel>35</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4717" toLevel="12" name="Heal Trick">
-		<!-- Recovery magic used by a pet. Regenerates some of the master's HP. Power $s1 -->
+		<!-- A recovery magic used by a pet. Regenerates master's HP just a little bit. Power $s1. -->
+		<icon>icon.skill4717</icon>
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">9</value>
@@ -1405,7 +1546,8 @@
 		</effects>
 	</skill>
 	<skill id="4718" toLevel="12" name="Greater Heal Trick">
-		<!-- Recovery magic used by a pet. Regenerates its master's HP. Power $s1 -->
+		<!-- Recovery magic used by a pet. Regenerates its master's HP. Power $s1. -->
+		<icon>icon.skill4718</icon>
 		<castRange>600</castRange>
 		<effectPoint>
 			<value level="1">62</value>
@@ -1464,7 +1606,6 @@
 		</effects>
 	</skill>
 	<skill id="4719" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1522,7 +1663,6 @@
 		</effects>
 	</skill>
 	<skill id="4720" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1580,7 +1720,6 @@
 		</effects>
 	</skill>
 	<skill id="4721" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1638,7 +1777,6 @@
 		</effects>
 	</skill>
 	<skill id="4722" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1696,7 +1834,6 @@
 		</effects>
 	</skill>
 	<skill id="4723" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2159,7 +2296,6 @@
 		</effects>
 	</skill>
 	<skill id="4729" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2218,7 +2354,6 @@
 		</effects>
 	</skill>
 	<skill id="4730" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2277,7 +2412,6 @@
 		</effects>
 	</skill>
 	<skill id="4731" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2336,7 +2470,6 @@
 		</effects>
 	</skill>
 	<skill id="4732" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2395,7 +2528,6 @@
 		</effects>
 	</skill>
 	<skill id="4733" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2453,8 +2585,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4734" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4734" toLevel="12" name="Spinning Slasher">
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2511,8 +2642,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4735" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4735" toLevel="12" name="Spinning Slasher">
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2569,8 +2699,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4736" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4736" toLevel="12" name="Spinning Slasher">
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2627,8 +2756,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4737" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4737" toLevel="12" name="Spinning Slasher">
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2685,8 +2813,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4738" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4738" toLevel="12" name="Spinning Slasher">
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2744,7 +2871,6 @@
 		</effects>
 	</skill>
 	<skill id="4739" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2802,7 +2928,6 @@
 		</effects>
 	</skill>
 	<skill id="4740" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2860,7 +2985,6 @@
 		</effects>
 	</skill>
 	<skill id="4741" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2918,7 +3042,6 @@
 		</effects>
 	</skill>
 	<skill id="4742" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2976,7 +3099,6 @@
 		</effects>
 	</skill>
 	<skill id="4743" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3439,7 +3561,6 @@
 		</effects>
 	</skill>
 	<skill id="4749" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3498,7 +3619,6 @@
 		</effects>
 	</skill>
 	<skill id="4750" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3557,7 +3677,6 @@
 		</effects>
 	</skill>
 	<skill id="4751" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3616,7 +3735,6 @@
 		</effects>
 	</skill>
 	<skill id="4752" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3675,7 +3793,6 @@
 		</effects>
 	</skill>
 	<skill id="4753" toLevel="12" name="Mortal Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3734,7 +3851,6 @@
 		</effects>
 	</skill>
 	<skill id="4754" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3791,7 +3907,6 @@
 		</effects>
 	</skill>
 	<skill id="4755" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3848,7 +3963,6 @@
 		</effects>
 	</skill>
 	<skill id="4756" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3905,7 +4019,6 @@
 		</effects>
 	</skill>
 	<skill id="4757" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3962,7 +4075,6 @@
 		</effects>
 	</skill>
 	<skill id="4758" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -4419,7 +4531,6 @@
 		</effects>
 	</skill>
 	<skill id="4764" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -4476,7 +4587,6 @@
 		</effects>
 	</skill>
 	<skill id="4765" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -4533,7 +4643,6 @@
 		</effects>
 	</skill>
 	<skill id="4766" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -4590,7 +4699,6 @@
 		</effects>
 	</skill>
 	<skill id="4767" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -4647,7 +4755,6 @@
 		</effects>
 	</skill>
 	<skill id="4768" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5104,7 +5211,6 @@
 		</effects>
 	</skill>
 	<skill id="4774" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5161,7 +5267,6 @@
 		</effects>
 	</skill>
 	<skill id="4775" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5218,7 +5323,6 @@
 		</effects>
 	</skill>
 	<skill id="4776" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5275,7 +5379,6 @@
 		</effects>
 	</skill>
 	<skill id="4777" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5332,7 +5435,6 @@
 		</effects>
 	</skill>
 	<skill id="4778" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -5389,7 +5491,6 @@
 		</effects>
 	</skill>
 	<skill id="4779" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -5447,7 +5548,6 @@
 		</effects>
 	</skill>
 	<skill id="4780" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -5505,7 +5605,6 @@
 		</effects>
 	</skill>
 	<skill id="4781" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -5563,7 +5662,6 @@
 		</effects>
 	</skill>
 	<skill id="4782" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -5621,7 +5719,6 @@
 		</effects>
 	</skill>
 	<skill id="4783" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -5679,7 +5776,6 @@
 		</effects>
 	</skill>
 	<skill id="4784" toLevel="12" name="Chant of Life">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
 			<value level="2">12</value>
@@ -5757,7 +5853,6 @@
 		</effects>
 	</skill>
 	<skill id="4785" toLevel="12" name="Chant of Life">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
 			<value level="2">12</value>
@@ -5835,7 +5930,6 @@
 		</effects>
 	</skill>
 	<skill id="4786" toLevel="12" name="Chant of Life">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
 			<value level="2">12</value>
@@ -5913,7 +6007,6 @@
 		</effects>
 	</skill>
 	<skill id="4787" toLevel="12" name="Chant of Life">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
 			<value level="2">12</value>
@@ -5991,7 +6084,6 @@
 		</effects>
 	</skill>
 	<skill id="4788" toLevel="12" name="Chant of Life">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
 			<value level="2">12</value>
@@ -6069,7 +6161,6 @@
 		</effects>
 	</skill>
 	<skill id="4789" toLevel="10" name="High Lv.">
-		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -6113,14 +6204,14 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4791" toLevel="1" name="Raid Boss (Lv. 70)">
+	<skill id="4791" toLevel="1" name="Raid Boss (Lv. 30)">
 		<!-- The commander of the Katu Mercenaries. Prone to violent outbursts at any cause, he takes special joy in battling both elves and dark elves. He has no care for personal appearance or common courtesies, and some claim him touched by madness. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4792" toLevel="1" name="Raid Boss (Lv. 50)">
+	<skill id="4792" toLevel="1" name="Raid Boss (Lv. 42)">
 		<!-- A wicked Spider that once lived in the Wastelands while Beleth was free. After Beleth was sealed away, the Spider was chased away by a colony of Ants, empowered by M. Atk. of the Wastelands. The Spider was forced to retreat to this place. It swears that someday it will feed on the Ants and destroy them. It quietly grows in power while sharpening its fangs for vengeance. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
@@ -6134,7 +6225,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4794" toLevel="1" name="Raid Boss (Lv. 80)">
+	<skill id="4794" toLevel="1" name="Raid Boss (Lv. 50)">
 		<!-- One of the leaders of the peasants who resisted the merciless rule of Lord Ashton. He was ultimately captured and brutally executed by Ashton's cruel soldiers. Yet even that did not stop him. To overthrow Ashton, he made a contract with a devil and came back to life. But the devil's bargain turned his once noble ideals towards loathing, turning him into a monster with the power of evil magic. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
@@ -6142,7 +6233,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4795" toLevel="1" name="Raid Boss (Lv. 60)">
-		<!-- A mechanical golem owned by the Lord of Innadril Castle. The lord's family has been protected by Eva for generations. This golem was created by a Dwarven artisan to protect the Garden of Eva. Its role is to fend off the Water Dragon Fafurion's troops or other invaders threatening the garden. The Dwarven master made two other golems, but this third version was the strongest. -->
+		<!-- A mechanical golem owned by the Lord of Innadril Castle. The lord's family has been protected by Eva for generations. This golem was created to protect the Garden of Eva, made by a dwarven master artisan. It is a guard to fend off the Water Dragon Fafurion's troops, or invaders threatening the garden. The dwarven master made two other golems, but this third version was the strongest and became the last one remaining. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -6155,7 +6246,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4797" toLevel="1" name="Raid Boss (Lv. 50)">
+	<skill id="4797" toLevel="1" name="Raid Boss (Lv. 34)">
 		<!-- An Orc Dark Mage with superior talent. He was once known as "the Hope of the Breka Orc tribe," but he was tricked into plotting against his leader, and exiled. Now, he dreams of the day he will take vengeance on those who betrayed and exiled him. He grows in power, and uses summoning magic learned from the Dark Elves to harness powerful servitors and minions. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
@@ -6169,7 +6260,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4799" toLevel="1" name="Raid Boss (Lv. 80)">
+	<skill id="4799" toLevel="1" name="Raid Boss (Lv. 49)">
 		<!-- He is the Commander of the advance forces of the powerful Ketra Orc tribe, who hail from the Goddard Territory of Elmore Kingdom. He believes completely in the superiority of his tribe. He was dispatched to expand their influence upon Aden Kingdom. He greatly detests the Silenos as well as humans, and is a formidable enemy. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>

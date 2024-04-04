@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="8245" toLevel="1" name="Summon Agathion Love">
 		<!-- Summons Agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -16,8 +17,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="8256" toLevel="1" name="Summon Agathion Joy">
-		<!-- Summons an agathion. -->
+	<skill id="8256" toLevel="1" name="Release Agathion's Seal - Shiny">
+		<!-- Summon Agathion -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -33,8 +34,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="8292" toLevel="1" name="Olympiad Hero's Ring">
-		<!-- Hold Resistance +30%, Hold Atk. Rate +30%, P. Critical Damage +15%, P. Accuracy +2. -->
+	<skill id="8292" toLevel="1" name="Olympiad Warrior's Ring">
+		<!-- Hold Resistance and Atk. Rate +30%, P. Critical Damage +15%, P. Accuracy +2. -->
 		<icon>icon.accessory_tateossian_ring_i00</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -58,8 +59,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="8293" toLevel="1" name="Olympiad Hero's Earring">
-		<!-- Silence/ Fear/ Stun Resistance and Atk. Rate +20%. With a certain chance, absorbs 4% of inflicted damage as HP. -->
+	<skill id="8293" toLevel="1" name="Olympiad Warrior's Earring">
+		<!-- Stun/ Mental Attack Resistance and Atk. Rate +20%. With some probability, restores HP by 4% from damage dealt to a target. -->
 		<icon>icon.accessory_tateossian_earring_i00</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -67,13 +68,11 @@
 		<effects>
 			<effect name="AttackTrait">
 				<SHOCK>20</SHOCK>
-				<FEAR>20</FEAR>
-				<SILENCE>20</SILENCE>
+				<DERANGEMENT>20</DERANGEMENT>
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>20</SHOCK>
-				<FEAR>20</FEAR>
-				<SILENCE>20</SILENCE>
+				<DERANGEMENT>20</DERANGEMENT>
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>4</amount>
@@ -81,7 +80,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="8294" toLevel="1" name="Olympiad Hero's Necklace">
+	<skill id="8294" toLevel="1" name="Olympiad Warrior's Necklace">
 		<!-- Paralysis/ Stun/ Sleep Resistance +15%, Paralyzing/ Stunning attack bonus +15%. Skill Cooldown -5%. Returns 4% of received damage to the target. -->
 		<icon>icon.accessory_tateossian_necklace_i00</icon>
 		<magicLevel>75</magicLevel>

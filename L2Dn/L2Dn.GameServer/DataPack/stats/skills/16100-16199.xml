@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="16100" toLevel="1" name="Presentation">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -14,7 +13,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16101" toLevel="1" name="Tauti">
-		<!-- One of Bremnon's weapons, named by Shillien's the Lord of Hellfire. With its own ego and the ability to control living beings' emotions, Tauti is manipulating the class warfare among the races in the Seed in order to evolve itself and complete the sacrifices for Shillien. -->
+		<!-- One of Bremnon's weapons, named by Shilen as the Lord of Hellfire. With its own ego and the ability to control living beings' emotions, Tauti is manipulating the class warfare among the races in the Seed in order to evolve itself and complete the sacrifices for Shilen. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -26,7 +25,7 @@
 		</effects>
 	</skill>
 	<skill id="16102" toLevel="1" name="Dark Storm">
-		<!-- Deals a lot of magic damage to the target and nearby enemies. -->
+		<!-- Powerful magical attack on target and nearby enemies. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -36,8 +35,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16103" toLevel="6" name="Death Lift">
-		<!-- Deals increased damage to the enemy cancelling their target. -->
-		<icon>icon.skill0000</icon>
+		<!-- Deals damage and cancels target. -->
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">50</value>
@@ -61,7 +59,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16104" toLevel="7" name="Fatal Strike">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">50</value>
@@ -78,7 +75,7 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
-	<skill id="16106" toLevel="2" name="Chain Smash">
+	<skill id="16106" toLevel="2" name="Orc Thunder">
 		<!-- Pulls the target into your reach. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A2</operateType>
@@ -98,7 +95,6 @@
 	</skill>
 	<skill id="16107" toLevel="3" name="Fatal Blow">
 		<!-- Powerful blow on a vital spot. Critical. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>32</mpConsume>
 		<castRange>40</castRange>
@@ -108,7 +104,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16108" toLevel="7" name="Bloody Blades">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>79</mpConsume>
 		<hitTime>
@@ -142,7 +137,7 @@
 		</isMagic>
 	</skill>
 	<skill id="16109" toLevel="1" name="Heavy Armor Rise">
-		<!-- Deals significant P. Critical Damage. -->
+		<!-- Increases P. Critical Damage. -->
 		<icon>icon.m_class_heavy</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -199,8 +194,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16114" toLevel="5" name="Curse of the Dead">
-		<!-- The target's and their party members' HP -50%. -->
-		<icon>icon.skill0000</icon>
+		<!-- Cuts target and party members' HP by $s1. -->
 		<operateType>A1</operateType>
 		<mpConsume>59</mpConsume>
 		<castRange>1300</castRange>
@@ -208,15 +202,14 @@
 		<effectPoint>-10000</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16116" toLevel="2" name="Self-Destruct">
-		<icon>icon.skill0000</icon>
+	<skill id="16116" toLevel="2" name="Self-Devastation">
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>-1000</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16117" toLevel="1" name="Amplify Damage Lv. 1">
+	<skill id="16117" toLevel="1" name="Amplify Damage - Stage 1">
 		<!-- Damage +20% toward normal monsters. -->
 		<icon>icon.skill6367_1</icon>
 		<operateType>A2</operateType>
@@ -226,7 +219,7 @@
 		<effectPoint>650</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16118" toLevel="1" name="Amplify Damage Lv. 2">
+	<skill id="16118" toLevel="1" name="Amplify Damage - Stage 2">
 		<!-- Damage +30% toward normal monsters. -->
 		<icon>icon.skill6367_2</icon>
 		<operateType>A2</operateType>
@@ -237,8 +230,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16119" toLevel="1" name="Flare Chain">
-		<!-- Deals fire damage to the target and enemies around them. -->
-		<icon>icon.skill0000</icon>
+		<!-- Deals fire damage to target and nearby enemies. -->
 		<operateType>A1</operateType>
 		<mpConsume>90</mpConsume>
 		<castRange>450</castRange>
@@ -249,7 +241,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16121" toLevel="5" name="Sleeping Cloud">
-		<!-- Inflicts Sleep on nearby enemies for 30 sec. -->
+		<!-- Inflicts Sleep on nearby enemies for $s1. -->
 		<icon>icon.skill1072</icon>
 		<operateType>A2</operateType>
 		<mpConsume>
@@ -281,7 +273,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16123" toLevel="1" name="Flare Outburst">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>90</mpConsume>
 		<castRange>450</castRange>
@@ -293,7 +284,6 @@
 	</skill>
 	<skill id="16124" toLevel="1" name="Flare Life">
 		<!-- Restores Deathmoz' HP. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>90</mpConsume>
 		<castRange>900</castRange>
@@ -304,7 +294,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16125" toLevel="1" name="Volcano Sword Dance">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>20</mpConsume>
 		<castRange>600</castRange>
@@ -314,7 +303,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16126" toLevel="1" name="Volcano Buster">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>100</castRange>
@@ -324,7 +312,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16127" toLevel="1" name="Blind Flame">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>40</mpConsume>
 		<hitTime>2000</hitTime>
@@ -334,7 +321,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16128" toLevel="1" name="Flame Bog">
-		<!-- Burns the target and enemies around them, draining their HP for 5 sec. -->
+		<!-- Powerful flame attack on target and nearby enemies, draining HP for 5 sec. -->
 		<icon>icon.skill4279_new</icon>
 		<operateType>A2</operateType>
 		<mpConsume>81</mpConsume>
@@ -347,7 +334,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16129" toLevel="5" name="Desert Thirst">
-		<!-- You feel thirsty because of Kefensis' influence. P. Atk. +5%, M. Atk. +10%, Atk. Spd./ Casting Spd. -3%. -->
+		<!-- Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. +$s1, M. Atk. +$s2. Atk. Spd./ Casting Spd. -$s3. -->
 		<icon>
 			<value level="1">icon.desert_thirst_Lv1</value>
 			<value level="2">icon.desert_thirst_Lv2</value>
@@ -365,7 +352,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16130" toLevel="1" name="Oasis Energy">
-		<!-- The Oasis has quenched your thirst. Atk. Spd./ Casting Spd. -25%, Speed -50. -->
+		<!-- The Oasis has quenched your thirst, suddenly wearing you out. Atk./ Casting Spd. -25%, and Speed -50. -->
 		<icon>icon.oasis_feel</icon>
 		<abnormalTime>15</abnormalTime>
 		<operateType>A2</operateType>
@@ -394,7 +381,7 @@
 		</effects>
 	</skill>
 	<skill id="16131" toLevel="1" name="Thirst Quench">
-		<!-- Your thirst has been quenched. P. Atk./ M. Atk./ Atk. Spd./ Casting Spd. +50%. -->
+		<!-- Your thirst has been quenched. P./ M. Atk., and Atk./ Casting Spd. +50%. -->
 		<icon>icon.release_thirst</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -406,7 +393,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16132" toLevel="1" name="Oasis Mirage">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>89</mpConsume>
 		<hitTime>5000</hitTime>
@@ -416,7 +402,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16133" toLevel="1" name="Watery Grave">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>89</mpConsume>
 		<hitTime>5000</hitTime>
@@ -426,7 +411,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16134" toLevel="1" name="Doom Shrieker">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>45</mpConsume>
 		<hitTime>3000</hitTime>
@@ -470,7 +454,7 @@
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16139" toLevel="1" name="Reward x16">
+	<skill id="16139" toLevel="1" name="Reward x 16">
 		<!-- Hero's powers give you x 16 the rewards. Disappears upon death or expiration. -->
 		<icon>icon.etc_deco_star_i00</icon>
 		<operateType>A2</operateType>
@@ -537,7 +521,6 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="16147" toLevel="7" name="Fatal Wave">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">86</value>
@@ -563,7 +546,7 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="16148" toLevel="5" name="Fear">
-		<!-- The target runs away in fear. -->
+		<!-- Afflicted with Fear and moving against own will momentarily. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
 		<mpConsume>
@@ -581,7 +564,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16149" toLevel="5" name="Fatal Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<coolTime>500</coolTime>
@@ -600,7 +583,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16150" toLevel="5" name="Slow">
-		<!-- Momentarily the target's Speed -30%. -->
+		<!-- Immediately target's Speed -30%. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<mpConsume>
@@ -618,8 +601,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16151" toLevel="7" name="Aura Spike">
-		<!-- Attacks the enemy with magic. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks the target with magic. -->
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">30</value>
@@ -646,7 +628,6 @@
 	</skill>
 	<skill id="16152" toLevel="7" name="Fire Spike">
 		<!-- Powerful magical Fire attack. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">30</value>
@@ -672,7 +653,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16155" toLevel="1" name="Charmed Kefensis">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>89</mpConsume>
 		<hitTime>5000</hitTime>
@@ -681,7 +661,7 @@
 		<effectPoint>-1000</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16156" toLevel="7" name="Mass Slow">
+	<skill id="16156" toLevel="7" name="Mass Droop">
 		<!-- Decreases Atk. Spd. and Speed. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
@@ -715,7 +695,6 @@
 	</skill>
 	<skill id="16158" toLevel="1" name="Beleth's Volcano">
 		<!-- Powerful magical Fire attack. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>51</mpConsume>
 		<castRange>900</castRange>
@@ -726,8 +705,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16159" toLevel="1" name="Beleth's Blaze">
-		<!-- Deals fire damage to nearby enemies. -->
-		<icon>icon.skill0000</icon>
+		<!-- Deals powerful fire damage to nearby enemies. -->
 		<operateType>A1</operateType>
 		<mpConsume>51</mpConsume>
 		<hitTime>2000</hitTime>
@@ -761,7 +739,6 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16162" toLevel="1" name="Beleth's Meteor">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>96</mpConsume>
 		<hitTime>2000</hitTime>
@@ -771,7 +748,6 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16163" toLevel="1" name="Darion's Sword Storm">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>96</mpConsume>
 		<hitTime>2000</hitTime>
@@ -780,8 +756,7 @@
 		<effectPoint>-1500</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16164" toLevel="1" name="Flame Flare">
-		<icon>icon.skill0000</icon>
+	<skill id="16164" toLevel="1" name="Flame Blade">
 		<operateType>A1</operateType>
 		<mpConsume>101</mpConsume>
 		<castRange>40</castRange>
@@ -791,8 +766,7 @@
 		<effectPoint>-1578</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16165" toLevel="1" name="Dark Flash">
-		<icon>icon.skill0000</icon>
+	<skill id="16165" toLevel="1" name="Dark Blade">
 		<operateType>A1</operateType>
 		<mpConsume>96</mpConsume>
 		<hitTime>1000</hitTime>
@@ -802,7 +776,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16166" toLevel="3" name="Escape Death">
-		<!-- For some time, P. Evasion +10, M. Evasion +10, Evasion Rate against P. Skills +10%. -->
+		<!-- For some time, P. Evasion +$s1, M. Evasion +$s2, Evasion Rate against P. Skills +$s3. -->
 		<icon>icon.skill0078</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -816,13 +790,12 @@
 		</reuseDelay>
 	</skill>
 	<skill id="16167" toLevel="2" name="Increase P. Evasion 1">
-		<!-- P./ M. Evasion slightly increased. -->
+		<!-- P./ M. Evasion strengthened. -->
 		<icon>icon.skill0078</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16168" toLevel="1" name="Half-kill">
-		<!-- Inflicts a powerful attack that cuts the target's HP in half. -->
-		<icon>icon.skill0000</icon>
+		<!-- Cute target's HP in half. -->
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -832,7 +805,6 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16171" toLevel="1" name="Summon Poison Zone">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>300</hitTime>
@@ -841,7 +813,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16172" toLevel="1" name="Poisoned">
-		<!-- Fog poisoning. -->
+		<!-- HP drops by 75 per sec. due to a poisonous fog. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -849,12 +821,12 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16173" toLevel="1" name="Invincibility">
-		<!-- Makes you invincible. -->
+		<!-- Invincible. -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
 	</skill>
 	<skill id="16174" toLevel="1" name="Herb of Growth">
-		<!-- Due to Hellbound's mysterious energy, all party members' acquired XP/ SP while hunting +50% for 10 min. -->
+		<!-- Hellbound's mysterious powers give you 10 min. of acquired XP/ SP +50%. Entire party. -->
 		<icon>BranchSys2.icon.g_giant_gem</icon>
 		<operateType>A1</operateType>
 		<hitTime>100</hitTime>
@@ -863,7 +835,7 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="16175" toLevel="1" name="Major Herb of Growth">
-		<!-- Due to Hellbound's mysterious energy, all party members' acquired XP/ SP while hunting +100% for 10 min. -->
+		<!-- Hellbound's mysterious powers give you 10 min. of acquired XP/ SP +100%. Entire party. -->
 		<icon>BranchSys2.icon.g_dawn_gem</icon>
 		<operateType>P</operateType>
 		<hitTime>100</hitTime>
@@ -872,7 +844,7 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="16176" toLevel="1" name="Superior Herb of Growth">
-		<!-- Due to Hellbound's mysterious energy, all party members' acquired XP/ SP while hunting +300% for 2 min. -->
+		<!-- Hellbound's mysterious powers give you 2 min. of acquired XP/ SP +300%. Entire party. -->
 		<icon>icon.etc_str_symbol_i01</icon>
 		<operateType>P</operateType>
 		<hitTime>100</hitTime>
@@ -880,9 +852,8 @@
 		<effectPoint>100</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>
-	<skill id="16177" toLevel="5" name="Stun Resistance">
-		<!-- Resistant to Stun. -->
-		<icon>icon.skill0000</icon>
+	<skill id="16177" toLevel="5" name="Knock Down Resistance">
+		<!-- Resistant to Knock Down attack. -->
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16178" toLevel="1" name="Leona's Thunder Spear">
@@ -908,7 +879,6 @@
 	</skill>
 	<skill id="16181" toLevel="10" name="Special Armor">
 		<!-- Special armor reduces damage received from servitors. -->
-		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16183" toLevel="1" name="Skill Reflect Barrier">
@@ -922,7 +892,6 @@
 	</skill>
 	<skill id="16184" toLevel="1" name="Vengeful Petrify">
 		<!-- Inflicts Petrify for 5 sec. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -932,8 +901,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16185" toLevel="1" name="Sword Storm">
-		<!-- A sword attack on nearby enemies. -->
-		<icon>icon.skill0000</icon>
+		<!-- Sword attack of nearby enemies. -->
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -942,7 +910,6 @@
 	</skill>
 	<skill id="16186" toLevel="1" name="Belly Cut">
 		<!-- A powerful physical attack near the target. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -951,7 +918,6 @@
 	</skill>
 	<skill id="16187" toLevel="1" name="Head-on Crash">
 		<!-- Powerful attack on a single enemy. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -959,8 +925,7 @@
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="16188" toLevel="1" name="Darkness">
-		<!-- Deals magic damage to the target and enemies around them. -->
-		<icon>icon.skill0000</icon>
+		<!-- Magical AoE attack to target and surrounding area. -->
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -970,7 +935,6 @@
 	</skill>
 	<skill id="16189" toLevel="1" name="Disciple's Blow">
 		<!-- Powerful magic attack on a single enemy. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -989,7 +953,6 @@
 	</skill>
 	<skill id="16191" toLevel="1" name="Pandemonium">
 		<!-- Physical attck on target and surrounding area. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -997,8 +960,7 @@
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="16192" toLevel="1" name="Tyranny">
-		<!-- A powerful magic attack on nearby enemies. -->
-		<icon>icon.skill0000</icon>
+		<!-- Powerful magical AoE attack. -->
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -1007,8 +969,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16193" toLevel="1" name="Lurking Lunacy">
-		<!-- Inflicts Fear on the target and enemies around them for 2 sec. -->
-		<icon>icon.skill0000</icon>
+		<!-- Casts Fear on target and nearby enemies for 2 sec. -->
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -1019,7 +980,6 @@
 	</skill>
 	<skill id="16194" toLevel="1" name="Quiet Path to Death">
 		<!-- A lethal magical AoE attack. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>1000</castRange>
@@ -1028,8 +988,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16195" toLevel="1" name="Guided Death">
-		<!-- A powerful magic attack on nearby enemies. -->
-		<icon>icon.skill0000</icon>
+		<!-- Powerful magical AoE attack. -->
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>1000</castRange>
@@ -1039,7 +998,6 @@
 	</skill>
 	<skill id="16196" toLevel="1" name="Blood Shower">
 		<!-- A magical AoE attack with Bleed. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -1050,7 +1008,6 @@
 	</skill>
 	<skill id="16197" toLevel="1" name="Haughty Slaughter">
 		<!-- Physical AoE attack. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -1059,7 +1016,6 @@
 	</skill>
 	<skill id="16198" toLevel="1" name="Continuing Pain">
 		<!-- Physical AoE attack. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -1068,7 +1024,6 @@
 	</skill>
 	<skill id="16199" toLevel="1" name="Howling Abyss">
 		<!-- Magical attack on a single target. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>

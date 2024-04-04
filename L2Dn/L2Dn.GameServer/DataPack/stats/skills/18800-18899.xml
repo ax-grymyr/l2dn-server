@@ -21,7 +21,6 @@
 		<effectPoint>-1000</effectPoint>
 	</skill>
 	<skill id="18806" toLevel="1" name="Magic Woodpile">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -29,7 +28,6 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="18807" toLevel="1" name="Large Magic Woodpile">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -38,13 +36,11 @@
 	</skill>
 	<skill id="18808" toLevel="1" name="Flame Games">
 		<!-- 1st Flame Games skill after a successful raid. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="18809" toLevel="1" name="Magic Flame Festival">
 		<!-- 2nd Magic Flame Festival skill after a successful raid. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>

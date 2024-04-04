@@ -1,275 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="35000" toLevel="1" name="Fire Dragon's Blessing">
-		<!-- Buffs, debuffs and anomaly states remain after death. But Fire Dragon's Blessing disappears. -->
+	<skill id="35000" toLevel="1" name="Blessing of Fire Dragon">
+		<!-- Buff/ debuff effects remain after death, but Blessing of Fire Dragon is consumed. -->
 		<icon>icon.bm_blessing_dragon</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>3600</abnormalTime>
-		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
-		<canBeDispelled>false</canBeDispelled>
-		<castRange>400</castRange>
-		<effectPoint>1</effectPoint>
-		<effectRange>900</effectRange>
-		<hitTime>3000</hitTime>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>3000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="NoblesseBless" />
-		</effects>
+		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="35001" toLevel="1" name="Fire Dragon's Protection">
-		<!-- Resurrects from death fully recovered. Buffs, debuffs and anomaly states remain after death. But Fire Dragon's Blessing disappears. -->
+		<!-- Fully restores a dying character. Buff/ debuff effects remain after death, but Blessing of Fire Dragon is consumed. -->
 		<icon>icon.bm_salvation_dragon</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>3600</abnormalTime>
-		<abnormalType>RESURRECTION_SPECIAL</abnormalType>
+		<operateType>A1</operateType>
 		<castRange>400</castRange>
-		<effectPoint>1</effectPoint>
-		<effectRange>900</effectRange>
 		<hitTime>3000</hitTime>
-		<operateType>A1</operateType>
 		<reuseDelay>3600000</reuseDelay>
-		<staticReuse>true</staticReuse>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="ResurrectionSpecial">
-				<power>100</power>
-			</effect>
-		</effects>
+		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="35002" toLevel="1" name="Earth Dragon's Breath">
-		<!-- Decreases the target's Atk. Spd. The effect lasts for 15 sec. Atk. Spd. -30%. Casting Spd. -30% -->
-		<icon>icon.bm_s_dragon_breath</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<activateRate>80</activateRate>
-		<castRange>600</castRange>
-		<effectPoint>-190</effectPoint>
-		<effectRange>1100</effectRange>
-		<hitTime>1000</hitTime>
+	<skill id="35002" toLevel="1" name="Earth Dragon Breath">
+		<!-- For 15 sec., Atk. Spd. -50% and Casting Spd. -50%. -->
+		<icon>icon.bm_dragon_breath</icon>
+		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
-		<lvlBonusRate>30</lvlBonusRate>
-		<operateType>A1</operateType>
-		<reuseDelay>60000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<basicProperty>PHYSICAL</basicProperty>
-		<targetType>ENEMY_ONLY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalAttackSpeed">
-				<amount>-50</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>-50</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="35003" toLevel="1" name="Earth Dragon's Defense">
-		<!-- Increases character's protection skills. The effect lasts for 15 sec. P. Def. +3600. M. Def. +3240. Buff Cancel Resistance +80% -->
-		<icon>icon.bm_dragon_defence</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>HERO_BUFF</abnormalType>
-		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
-		<effectPoint>438</effectPoint>
+		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>-190</effectPoint>
+	</skill>
+	<skill id="35003" toLevel="1" name="Earth Dragon Defense">
+		<!-- For 15 sec., P. Def. +3600, M. Def. +3240, and Buff-canceling Attack Resistance +80%, and restricts movement. -->
+		<icon>icon.bm_dragon_defence</icon>
 		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
 		<reuseDelay>600000</reuseDelay>
-		<basicProperty>PHYSICAL</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="BlockMove" />
-			<effect name="PhysicalDefence">
-				<amount>3600</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>3240</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ResistDispelByCategory">
-				<amount>-80</amount>
-				<slot>BUFF</slot>
-			</effect>
-		</effects>
+		<effectPoint>438</effectPoint>
 	</skill>
 	<skill id="35004" toLevel="1" name="Earth Dragon Pendant">
-		<!-- M. Def. +9 -->
+		<!-- M. Def. +9. -->
 		<icon>icon.bm_pendant_pvp</icon>
-		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>9</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="35005" toLevel="11" name="+1 Earth Dragon Pendant">
-		<!-- M. Def. +10 -->
+		<!-- M. Def. +$s1. -->
 		<icon>icon.bm_pendant_pvp</icon>
-		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">12</value>
-					<value level="3">13</value>
-					<value level="4">14</value>
-					<value level="5">15</value>
-					<value level="6">16</value>
-					<value level="7">17</value>
-					<value level="8">18</value>
-					<value level="9">20</value>
-					<value level="10">21</value>
-					<value level="11">24</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MaxHp">
-				<amount>
-					<value fromLevel="1" toLevel="3">0</value>
-					<value level="4">100</value>
-					<value level="5">150</value>
-					<value level="6">200</value>
-					<value level="7">300</value>
-					<value level="8">400</value>
-					<value level="9">500</value>
-					<value level="10">500</value>
-					<value level="11">600</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>
-					<value fromLevel="1" toLevel="3">0</value>
-					<value level="4">40</value>
-					<value level="5">50</value>
-					<value level="6">60</value>
-					<value level="7">90</value>
-					<value level="8">120</value>
-					<value level="9">150</value>
-					<value level="10">150</value>
-					<value level="11">300</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>
-					<value fromLevel="1" toLevel="5">0</value>
-					<value level="6">200</value>
-					<value level="7">300</value>
-					<value level="8">400</value>
-					<value level="9">500</value>
-					<value level="10">500</value>
-					<value level="11">600</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PveMagicalSkillDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpMagicalSkillDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvePhysicalAttackDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalAttackDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvePhysicalSkillDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalSkillDefenceBonus">
-				<amount>
-					<value fromLevel="1" toLevel="4">0</value>
-					<value level="5">3</value>
-					<value level="6">5</value>
-					<value level="7">10</value>
-					<value level="8">20</value>
-					<value level="9">20</value>
-					<value level="10">20</value>
-					<value level="11">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DamageShieldResist">
-				<amount>
-					<value fromLevel="1" toLevel="10">0</value>
-					<value level="11">10</value>
-				</amount>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="35006" toLevel="1" name="Fire Dragon Pendant">
-		<!-- M. Def. +9 -->
+		<!-- M. Def. +9. -->
 		<icon>icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -282,7 +60,7 @@
 		</effects>
 	</skill>
 	<skill id="35007" toLevel="11" name="+1 Fire Dragon Pendant">
-		<!-- M. Def. +10 -->
+		<!-- M. Def. +$s1. -->
 		<icon>icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -300,7 +78,7 @@
 					<value level="8">18</value>
 					<value level="9">20</value>
 					<value level="10">21</value>
-					<value level="11">24</value>
+					<value level="11">21</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -330,7 +108,7 @@
 					<value level="11">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 			</effect>
-			<effect name="PAtk">
+			<effect name="PhysicalDefence">
 				<amount>
 					<value fromLevel="1" toLevel="4">0</value>
 					<value level="5">10</value>
@@ -339,11 +117,11 @@
 					<value level="8">40</value>
 					<value level="9">50</value>
 					<value level="10">60</value>
-					<value level="11">80</value>
+					<value level="11">60</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MAtk">
+			<effect name="MagicalDefence">
 				<amount>
 					<value fromLevel="1" toLevel="4">0</value>
 					<value level="5">10</value>
@@ -352,19 +130,19 @@
 					<value level="8">40</value>
 					<value level="9">50</value>
 					<value level="10">60</value>
-					<value level="11">80</value>
+					<value level="11">60</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalDamage">
+			<effect name="CriticalRate">
 				<amount>
 					<value fromLevel="1" toLevel="7">0</value>
 					<value level="8">5</value>
 					<value level="9">5</value>
 					<value level="10">5</value>
-					<value level="11">10</value>
+					<value level="11">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
-				<mode>PER</mode>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicCriticalDamage">
 				<amount>
@@ -372,46 +150,27 @@
 					<value level="8">5</value>
 					<value level="9">5</value>
 					<value level="10">5</value>
-					<value level="11">10</value>
+					<value level="11">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DamageShieldResist">
-				<amount>
-					<value fromLevel="1" toLevel="10">0</value>
-					<value level="11">10</value>
-				</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="35008" toLevel="1" name="Fire Dragon Resistance">
 		<!-- Debuff Resistance +50%. -->
 		<icon>icon.bm_salvation_dragon</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>5</abnormalTime>
-		<abnormalType>RESIST_DEBUFF_DISPEL</abnormalType>
-		<effectPoint>1</effectPoint>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<operateType>A1</operateType>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<reuseDelay>30000</reuseDelay>
-		<basicProperty>PHYSICAL</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="ResistAbnormalByCategory">
-				<amount>-50</amount>
-				<slot>DEBUFF</slot>
-			</effect>
-		</effects>
+		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="35009" toLevel="1" name="Black Mask Power">
-		<!-- STR +1, INT +1. -->
+		<!-- STR+1, INT+1. -->
 		<icon>icon.accessory_jjoro_masj_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35010" toLevel="1" name="Refined Romantic Chapeau">
-		<!-- STR +1, INT +1. -->
+		<!-- STR+1, INT+1. -->
 		<icon>icon.accessory_archer_hat2_i00</icon>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -433,9 +192,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="35011" toLevel="1" name="Refined Romantic Chapeau: Teleport">
-		<!-- Teleports to the nearest town. Cooldown: 2 h. -->
-		<icon>icon.skill0000</icon>
+	<skill id="35011" toLevel="1" name="Refined Romantic Chapeau Teleport">
+		<!-- Teleports character to the nearest village. Cooldown - 2 h. -->
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -457,31 +215,29 @@
 		</effects>
 	</skill>
 	<skill id="35012" toLevel="1" name="Pirate King Hat">
-		<!-- STR +1, INT +1. -->
+		<!-- STR+1, INT+1. -->
 		<icon>BranchSys2.icon.zaken_hair_accessary</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="35013" toLevel="1" name="Pirate King Hat: Teleport">
-		<!-- Teleports to the nearest town. Cooldown: 2 h. -->
-		<icon>icon.skill0000</icon>
+	<skill id="35013" toLevel="1" name="Pirate King Hat Escape">
+		<!-- Teleports character to the nearest village. Cooldown - 2 h. -->
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="35014" toLevel="1" name="Demon's Circlet">
-		<!-- STR +1, INT +1. -->
+		<!-- STR+1, INT+1. -->
 		<icon>icon.Accessary_demon_circlet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="35015" toLevel="1" name="Demon's Circlet: Teleport">
-		<!-- Teleports to the nearest town. Cooldown: 2 h. -->
-		<icon>icon.skill0000</icon>
+	<skill id="35015" toLevel="1" name="Demon's Circlet Teleport">
+		<!-- Teleports character to the nearest village. Cooldown - 2 h. -->
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
-	<skill id="35016" toLevel="1" name="Core's Blessing">
-		<!-- Removes debuffs and anomaly states from the target. -->
+	<skill id="35016" toLevel="1" name="Ring of Core - Special Ability">
+		<!-- Cancels all debuffs. Cannot be used if the character is inflicted with Fear/ Silence. -->
 		<icon>icon.accessory_ring_of_core_i03</icon>
 		<reuseDelay>120000</reuseDelay>
 		<hitTime>200</hitTime>
@@ -501,15 +257,16 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="35017" toLevel="6" name="Talisman of Insolence I">
-		<!-- <Effect>. P. Atk. +14. M. Atk. +22 -->
+	<skill id="35017" toLevel="7" name="Talisman of Insolence Lv. 1">
+		<!-- P. Atk. +14, M. Atk. +22. Effects from two such Talismans do not stack. -->
 		<icon>
-			<value level="1">icon.oman_tallisman_new_i02</value>
-			<value level="2">icon.oman_tallisman_new_i02</value>
-			<value level="3">icon.oman_tallisman_new_i02</value>
-			<value level="4">icon.oman_tallisman_new_i02</value>
-			<value level="5">icon.oman_tallisman_new_i02</value>
-			<value level="6">icon.oman_tallisman_new_i01</value>
+			<value level="1">icon.tallisman_oman_i02</value>
+			<value level="2">icon.tallisman_oman_i02</value>
+			<value level="3">icon.tallisman_oman_i02</value>
+			<value level="4">icon.tallisman_oman_i02</value>
+			<value level="5">icon.tallisman_oman_i02</value>
+			<value level="6">icon.tallisman_oman_i01</value>
+			<value level="7">icon.tallisman_baium</value>
 		</icon>
 		<operateType>P</operateType>
 		<magicLevel>55</magicLevel>
@@ -523,6 +280,7 @@
 					<value level="4">68</value>
 					<value level="5">81</value>
 					<value level="6">95</value>
+					<value level="7">135</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -534,6 +292,7 @@
 					<value level="4">109</value>
 					<value level="5">131</value>
 					<value level="6">153</value>
+					<value level="7">218</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -545,6 +304,7 @@
 					<value level="4">6</value>
 					<value level="5">7</value>
 					<value level="6">8</value>
+					<value level="7">10</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -556,6 +316,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -567,6 +328,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</BLUNT>
 				<SWORD>
 					<value level="1">0</value>
@@ -575,6 +337,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</SWORD>
 				<DUAL>
 					<value level="1">0</value>
@@ -583,6 +346,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</DUAL>
 				<BOW>
 					<value level="1">0</value>
@@ -591,6 +355,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</BOW>
 				<POLE>
 					<value level="1">0</value>
@@ -599,6 +364,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</POLE>
 				<DAGGER>
 					<value level="1">0</value>
@@ -607,6 +373,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</DAGGER>
 				<DUALFIST>
 					<value level="1">0</value>
@@ -615,6 +382,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</DUALFIST>
 				<DUALDAGGER>
 					<value level="1">0</value>
@@ -623,6 +391,7 @@
 					<value level="4">2</value>
 					<value level="5">2</value>
 					<value level="6">3</value>
+					<value level="7">5</value>
 				</DUALDAGGER>
 			</effect>
 			<effect name="StatUp">
@@ -633,6 +402,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>CON</stat>
 			</effect>
@@ -644,6 +414,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>MEN</stat>
 			</effect>
@@ -655,6 +426,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>STR</stat>
 			</effect>
@@ -666,6 +438,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>INT</stat>
 			</effect>
@@ -677,6 +450,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>DEX</stat>
 			</effect>
@@ -688,6 +462,7 @@
 					<value level="4">1</value>
 					<value level="5">1</value>
 					<value level="6">1</value>
+					<value level="7">1</value>
 				</amount>
 				<stat>WIT</stat>
 			</effect>
@@ -699,6 +474,7 @@
 					<value level="4">0</value>
 					<value level="5">0</value>
 					<value level="6">10</value>
+					<value level="7">20</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -710,6 +486,7 @@
 					<value level="4">0</value>
 					<value level="5">0</value>
 					<value level="6">10</value>
+					<value level="7">20</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -721,6 +498,7 @@
 					<value level="4">0</value>
 					<value level="5">-2</value>
 					<value level="6">-4</value>
+					<value level="7">-5</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
@@ -733,6 +511,7 @@
 					<value level="4">0</value>
 					<value level="5">-2</value>
 					<value level="6">-4</value>
+					<value level="7">-5</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
@@ -745,6 +524,7 @@
 					<value level="4">0</value>
 					<value level="5">0</value>
 					<value level="6">0</value>
+					<value level="7">-3</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
@@ -757,15 +537,16 @@
 					<value level="4">0</value>
 					<value level="5">0</value>
 					<value level="6">0</value>
+					<value level="7">-3</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="35018" toLevel="1" name="Talisman of Insolence">
-		<!-- Imbues with Talisman of Insolence power VI -->
-		<icon>icon.oman_tallisman_new_i01</icon>
+	<skill id="35018" toLevel="1" name="Equip Talisman of Insolence Lv. 6">
+		<!-- Imbues with Talisman of Insolence power. -->
+		<icon>icon.tallisman_oman_i01</icon>
 		<abnormalType>SEED_TALISMAN1</abnormalType>
 		<abnormalVisualEffect>SEED_TALISMAN5</abnormalVisualEffect>
 		<operateType>A2</operateType>
@@ -783,9 +564,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="35019" toLevel="1" name="Remove Talisman of Insolence">
-		<!-- The effect of Talisman of Insolence VI weakens. -->
-		<icon>icon.oman_tallisman_new_i01</icon>
+	<skill id="35019" toLevel="1" name="Unequip Talisman of Insolence Lv. 6">
+		<!-- The effect of Talisman of Insolence weakens. -->
+		<icon>icon.tallisman_oman_i01</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -803,7 +584,7 @@
 	</skill>
 	<skill id="35020" toLevel="1" name="Talisman of Baium">
 		<!-- Imbues with Talisman of Baium power. -->
-		<icon>icon.baium_talisman_new</icon>
+		<icon>icon.tallisman_baium</icon>
 		<abnormalType>SEED_TALISMAN1</abnormalType>
 		<abnormalVisualEffect>SEED_TALISMAN4</abnormalVisualEffect>
 		<operateType>A2</operateType>
@@ -823,7 +604,7 @@
 	</skill>
 	<skill id="35021" toLevel="1" name="Talisman of Baium - Removal">
 		<!-- The effect of Talisman of Baium weakens. -->
-		<icon>icon.baium_talisman_new</icon>
+		<icon>icon.tallisman_baium</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -840,30 +621,29 @@
 		</effects>
 	</skill>
 	<skill id="35022" toLevel="1" name="Chic Silver Chapeau">
-		<!-- STR +1. INT +1 -->
+		<!-- STR+1, INT+1. -->
 		<icon>BranchSys2.icon2.pi_silverchaperon</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="35023" toLevel="1" name="Chic Silver Chapeau Teleport">
-		<!-- Teleports to the nearest town. Cooldown: 2 h. -->
-		<icon>icon.skill0000</icon>
+	<skill id="35023" toLevel="1" name="Refined Romantic Chapeau: Silver Teleport">
+		<!-- Teleports character to the nearest village. Cooldown - 2 h. -->
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
-	<skill id="35024" toLevel="21" name="Talisman of Border">
-		<!-- Activates Dimensional Border Power. <Defense>: P./ M. Def. +12. -->
+	<skill id="35024" toLevel="21" name="Talisman of Border Lv. 1">
+		<!-- Activates Dimensional Border Power. <Defence>: P./ M. Def. +12. -->
 		<icon>
-			<value level="1">icon.magic_square_talisman_new</value>
-			<value level="2">icon.magic_square_talisman_new</value>
-			<value level="3">icon.magic_square_talisman_new</value>
-			<value level="4">icon.magic_square_talisman_new</value>
-			<value level="5">icon.magic_square_talisman_new</value>
-			<value level="6">icon.magic_square_talisman_new</value>
-			<value level="7">icon.magic_square_talisman_new</value>
-			<value level="8">icon.magic_square_talisman_new</value>
-			<value level="9">icon.magic_square_talisman_new</value>
-			<value level="10">icon.magic_square_talisman_new</value>
+			<value level="1">icon.bm_magic_square_talisman</value>
+			<value level="2">icon.bm_magic_square_talisman</value>
+			<value level="3">icon.bm_magic_square_talisman</value>
+			<value level="4">icon.bm_magic_square_talisman</value>
+			<value level="5">icon.bm_magic_square_talisman</value>
+			<value level="6">icon.bm_magic_square_talisman</value>
+			<value level="7">icon.bm_magic_square_talisman</value>
+			<value level="8">icon.bm_magic_square_talisman</value>
+			<value level="9">icon.bm_magic_square_talisman</value>
+			<value level="10">icon.bm_magic_square_talisman</value>
 			<value level="11">icon.bm_blessed_magic_square_talisman</value>
 			<value level="12">icon.bm_dimension_tallisman</value>
 			<value level="13">icon.bm_dimension_tallisman</value>
@@ -1318,9 +1098,6 @@
 				<dispel>BLEEDING,9</dispel>
 			</effect>
 			<effect name="DispelBySlot">
-				<dispel>DOT_MP,9</dispel>
-			</effect>
-			<effect name="DispelBySlot">
 				<dispel>PARALYZE,1</dispel>
 			</effect>
 			<effect name="DispelBySlot">
@@ -1329,7 +1106,7 @@
 		</effects>
 	</skill>
 	<skill id="35026" toLevel="1" name="Blessing of Borders">
-		<!-- HP/ MP/ CP +50%. -->
+		<!-- Restores 50% HP/ MP/ CP. -->
 		<icon>icon.skill10034</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1339,7 +1116,7 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="35027" toLevel="9" name="Dimensional Border Power">
-		<!-- P./ M. Atk. +2%, P. Critical Damage/ M. Skill Critical Damage +10%. -->
+		<!-- P./ M. Atk. +2%, P./ M. Critical Damage +10%. -->
 		<icon>icon.skill10030</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -1413,32 +1190,32 @@
 		</effects>
 	</skill>
 	<skill id="35028" toLevel="1" name="Bracelet of Border">
-		<!-- HP/ MP Recovery Rate +7%, P. Accuracy +1, M. Accuracy +1, weight limit +7000. -->
+		<!-- HP/ MP Recovery Bonus +7%, P./ M. Accuracy +1, Weight Limit +7000. -->
 		<icon>icon.dimension_bracelet_i05</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35029" toLevel="5" name="Item Skill: Might in Duel - PvE">
-		<!-- Item skill: P. Atk. in PvE +3%. -->
+		<!-- Passive: P. Atk. in PvE +3%. -->
 		<icon>icon.skill3123</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35030" toLevel="5" name="Item Skill: Defense in Duel - PvP">
-		<!-- Item skill: P. Def. in PvP +3%. -->
+		<!-- Passive: P. Def. in PvE +3%. -->
 		<icon>icon.skill3123</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35031" toLevel="5" name="Item Skill: Defense in Duel - PvE">
-		<!-- Item skill: P. Def. in PvE +3%. -->
+		<!-- Passive: P. Def. in PvE +3%. -->
 		<icon>icon.skill3123</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35032" toLevel="5" name="Item Skill: Enhance">
-		<!-- Item skill: Acquired XP/ SP +3%. -->
+		<!-- Passive: Acquired XP/ SP +3%. -->
 		<icon>icon.skill3123</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="35033" toLevel="3" name="Item Skill: Boost Atk. Spd.">
-		<!-- Active skill: Atk. Spd. +36. -->
+		<!-- Active: Atk. Spd. +36. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
@@ -1450,8 +1227,8 @@
 		</effectPoint>
 		<mpConsume>48</mpConsume>
 	</skill>
-	<skill id="35034" toLevel="3" name="Item Skill: Fast Spellcasting">
-		<!-- Active skill: Casting Spd. +21. -->
+	<skill id="35034" toLevel="3" name="Item Skill: Fast Spell Casting">
+		<!-- Active: Casting Spd. +21. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
@@ -1464,7 +1241,7 @@
 		<mpConsume>48</mpConsume>
 	</skill>
 	<skill id="35035" toLevel="1" name="Item Skill: Cleanse">
-		<!-- Skill: Removes a debuff. -->
+		<!-- Skill: Cancels debuffs. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -1474,7 +1251,7 @@
 		<mpConsume>48</mpConsume>
 	</skill>
 	<skill id="35036" toLevel="1" name="Warrior's Talisman - Attack">
-		<!-- PvE Damage +3%, P. Critical Damage/ M. Skill Critical Damage +20, P./ M. Skill Power +2%, M./ P. Accuracy +1. -->
+		<!-- Damage dealt in PvE +3%, M./ P. Critical Damage +20, M./ P. Skill Power +2%, M./ P. Accuracy +1. -->
 		<icon>icon.r90_sp_talisman_dr_mp_active</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1525,7 +1302,7 @@
 		</effects>
 	</skill>
 	<skill id="35037" toLevel="1" name="Warrior's Talisman - Defense">
-		<!-- PvE Damage +3%, M. Damage Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Pull Resistance +10%. -->
+		<!-- PvE Damage +3%, Magic Attack Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Pull Resistance +10%. -->
 		<icon>icon.r99_talisman_pd_up_passive</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1567,7 +1344,7 @@
 		</effects>
 	</skill>
 	<skill id="35038" toLevel="1" name="Hero's Talisman - Attack">
-		<!-- PvP Damage +3%, P. Critical Damage/ M. Skill Critical Damage +20, P./ M. Skill Power +2%, M./ P. Accuracy +1. -->
+		<!-- PvP Damage +3%, M./ P. Critical Damage +20, Skill Power +2%, M./ P. Accuracy +1. -->
 		<icon>icon.r90_sp_talisman_dr_hp_active</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1599,10 +1376,6 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalSkillPower">
-				<amount>2</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="Accuracy">
 				<amount>1</amount>
 				<mode>DIFF</mode>
@@ -1614,7 +1387,7 @@
 		</effects>
 	</skill>
 	<skill id="35039" toLevel="1" name="Hero's Talisman - Defense">
-		<!-- PvP Damage +3%, M. Damage Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Debuff Resistance +10%. -->
+		<!-- PvP Damage +3%, Magic Attack Resistance +2%, P./ M. Skill Evasion +4%, Debuff Resistance +3%, Debuff Resistance +10%. -->
 		<icon>icon.r95_talisman_ca_down_active</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1653,7 +1426,7 @@
 		</effects>
 	</skill>
 	<skill id="35040" toLevel="1" name="Belt">
-		<!-- Inventory Slots +2, Weight Limit +1000. Can be upgraded to Cloth Belt with a Magic Pin. -->
+		<!-- Inventory Slots +2, Weight Limit +1000. Use a Magic Rune Clip to upgrade it to Rag Belt. -->
 		<icon>icon.belt_i00</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1666,8 +1439,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="35041" toLevel="1" name="Cloth Belt">
-		<!-- When equipped, inventory slots +2, weight limit +2000, HP Recovery Rate +1.24, MP Recovery Rate +0.83, CP Recovery Rate +1.66. Can be upgraded to Leather Belt with magic. -->
+	<skill id="35041" toLevel="1" name="Rag Belt">
+		<!-- When using the Belt, Inventory slot +2, weight limit +2000. HP Recovery Bonus +1.24, MP Recovery Bonus +0.83, CP Recovery +1.66. You can enhance it to Leather Belt with magic. -->
 		<icon>icon.belt_i01</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1693,7 +1466,7 @@
 		</effects>
 	</skill>
 	<skill id="35042" toLevel="1" name="Leather Belt">
-		<!-- When equipped, inventory slots +3, weight limit +3000, HP Recovery Rate +1.47, MP Recovery Rate +0.98, CP Recovery Rate +1.96, Max HP/ MP/ CP +100. Can be upgraded to Iron Belt with magic. -->
+		<!-- When using the Belt, Inventory slot +3, weight limit +3000. HP Recovery Bonus +1.47, MP Recovery Bonus +0.98, CP Recovery +1.96, Max HP/ MP/ CP +100. You can enhance it to Iron Belt with magic. -->
 		<icon>icon.belt_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1731,7 +1504,7 @@
 		</effects>
 	</skill>
 	<skill id="35043" toLevel="1" name="Iron Belt">
-		<!-- When equipped, inventory slots +4, weight limit +4000, HP Recovery Rate +1.70, MP Recovery Rate +1.13, CP Recovery Rate +2.26, Max HP/ MP/ CP +150. Can be upgraded to Mithril Belt with magic. -->
+		<!-- When using the Belt, Inventory slot +4, weight limit +4000. HP Recovery Bonus +1.70, MP Recovery Bonus +1.13, CP Recovery +2.26, Max HP/ MP/ CP +150. You can enhance it to Mithril Belt with magic. -->
 		<icon>icon.belt_i03</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1769,7 +1542,7 @@
 		</effects>
 	</skill>
 	<skill id="35044" toLevel="1" name="Mithril Belt">
-		<!-- When equipped, inventory slots +5, weight limit +5000, HP Recovery Rate +1.92, MP Recovery Rate +1.28, CP Recovery Rate +2.56, Max HP/ MP/ CP +200. -->
+		<!-- When using the Belt, Inventory slot +5, weight limit +5000. HP Recovery Bonus +1.92, MP Recovery Bonus +1.28, CP Recovery +2.56, Max HP/ MP/ CP +200. -->
 		<icon>icon.belt_i04</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1807,7 +1580,7 @@
 		</effects>
 	</skill>
 	<skill id="35045" toLevel="1" name="Talisman of Battle - Liberate">
-		<!-- Removes all debuffs. Cooldown: 10 min. -->
+		<!-- Cancels all debuffs. Cooldown: 10 min. -->
 		<icon>icon.etc_talisman_i03</icon>
 		<operateType>A1</operateType>
 		<mpConsume>50</mpConsume>
@@ -1828,7 +1601,7 @@
 		</effects>
 	</skill>
 	<skill id="35046" toLevel="1" name="Earth Dragon Belt">
-		<!-- When equipped, inventory slots +6, weight limit +7000, CON +1, MEN +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +15%, HP Recovery Potions' Effect +100, received damage -6%. -->
+		<!-- When using the Belt, adds 6 slots to the inventory, Weight Limit +7000, CON +1, MEN +1, HP Recovery Bonus +2.31, MP Recovery Bonus +1.54, CP Recovery Bonus +3.07, Max HP/ MP/ CP +15%, Healing Potions Effect +100. (Can be applied to Melissa's High Grade Recovery Potion, Melissa's Recovery Potion, Warrior's Quick Healing Potion) -->
 		<icon>icon.bm_antaras_belt</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1877,7 +1650,7 @@
 		</effects>
 	</skill>
 	<skill id="35047" toLevel="1" name="Fire Dragon Belt">
-		<!-- Inventory Slots +6, Weight Limit +7000, STR/ INT +1, HP Recovery Rate +2.31, MP Recovery Rate +1.54, CP Recovery Rate +3.07, Max HP/ MP/ CP +10%, HP Recovery Potions' Effect +100, P. Critical Damage/ M. Skill Critical Damage +4%. -->
+		<!-- When using the Belt, adds 6 slots to the inventory, Weight Limit +7000, STR +1, INT +1, HP Recovery Bonus +2.31, MP Recovery Bonus +1.54, CP Recovery Bonus +3.07, Max HP/ MP/ CP +10%, Healing Potions Effect +100, M. Critical Rate +4%. (Can be applied to Melissa's High Grade Recovery Potion, Melissa's Recovery Potion, Warrior's Quick Healing Potion) -->
 		<icon>icon.bm_vallakas_belt</icon>
 		<operateType>P</operateType>
 		<effects>

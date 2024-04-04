@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="55100" toLevel="1" name="Water Dragon Pendant Base Effect Lv. 1">
-		<!-- M. Atk. +9. -->
+	<skill id="55100" toLevel="1" name="Water Dragon Pendant Basic Effect Lv. 1">
+		<!-- M. Atk. +9 when equipped. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -13,8 +13,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55101" toLevel="10" name="Water Dragon Pendant Lv. 1: Enchant Effect">
-		<!-- M. Atk. +13. -->
+	<skill id="55101" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 1">
+		<!-- M. Atk. +13 when equipped. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -37,8 +37,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55102" toLevel="1" name="Water Dragon Pendant Base Effect Lv. 2">
-		<!-- M. Atk. +9, M. Skill Critical Damage +62. -->
+	<skill id="55102" toLevel="1" name="Water Dragon Pendant Basic Effect Lv. 2">
+		<!-- M. Atk. +9, M. Critical Damage +62. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -54,8 +54,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55103" toLevel="10" name="Water Dragon Pendant Lv. 2: Enchant Effect">
-		<!-- M. Atk. +13, M. Skill Critical Damage +89. -->
+	<skill id="55103" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 2">
+		<!-- M. Atk. +13, M. Critical Damage +89. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -93,8 +93,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55104" toLevel="1" name="Water Dragon Pendant Base Effect Lv. 3">
-		<!-- M. Atk. +9, M. Skill Critical Damage +62, M. Skill Critical Rate +1%. -->
+	<skill id="55104" toLevel="1" name="Water Dragon Pendant Basic Effect Lv. 3">
+		<!-- M. Atk. +9, M. Critical Damage +62, M. Critical Rate +1%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -114,8 +114,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55105" toLevel="10" name="Water Dragon Pendant Lv. 3: Enchant Effect">
-		<!-- M. Atk. +13, M. Skill Critical Damage +89, M. Skill Critical Rate +2%. -->
+	<skill id="55105" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 3">
+		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -168,8 +168,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55106" toLevel="1" name="Water Dragon Pendant Base Effect Lv. 4">
-		<!-- M. Atk. +9, M. Skill Critical Damage +62, M. Skill Critical Rate +1%, M. Atk. +1%. -->
+	<skill id="55106" toLevel="1" name="Water Dragon Pendant Basic Effect Lv. 4">
+		<!-- M. Atk. +9, M. Critical Damage +62, M. Critical Rate +1%, M. Atk. +1%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -193,8 +193,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55107" toLevel="10" name="Water Dragon Pendant Lv. 4: Enchant Effect">
-		<!-- M. Atk. +13, M. Skill Critical Damage +89, M. Skill Critical Rate +2%, M. Atk. +1.5%. -->
+	<skill id="55107" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 4">
+		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%, M. Atk. +1.5%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -262,8 +262,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55108" toLevel="1" name="Water Dragon Pendant Base Effect Lv. 5">
-		<!-- M. Atk. +9, M. Skill Critical Damage +62, M. Skill Critical Rate +1%, M. Atk. +1%, M. Skill Critical Damage +1%. -->
+	<skill id="55108" toLevel="1" name="Water Dragon Pendant Basic Effect Lv. 5">
+		<!-- M. Atk. +9, M. Critical Damage +62, M. Critical Rate +1%, M. Atk. +1%, M. Critical Damage +1%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -291,8 +291,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55109" toLevel="10" name="Water Dragon Pendant Lv. 5: Enchant Effect">
-		<!-- M. Atk. +13, M. Skill Critical Damage +89, M. Skill Critical Rate +2%, M. Atk. +1.5%, M. Skill Critical Damage +2%. -->
+	<skill id="55109" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 5">
+		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%, M. Atk. +1.5%, M. Critical Damage +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -375,7 +375,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55110" toLevel="1" name="Wind Dragon Pendant Base Effect Lv. 1">
+	<skill id="55110" toLevel="1" name="Wind Dragon Pendant Basic Effect Lv. 1">
 		<!-- MP +21. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -388,7 +388,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55111" toLevel="10" name="Wind Dragon Pendant Lv. 1: Enchant Effect">
+	<skill id="55111" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 1">
 		<!-- MP +33. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -412,7 +412,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55112" toLevel="1" name="Wind Dragon Pendant Base Effect Lv. 2">
+	<skill id="55112" toLevel="1" name="Wind Dragon Pendant Basic Effect Lv. 2">
 		<!-- MP +21, HP +31. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -429,7 +429,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55113" toLevel="10" name="Wind Dragon Pendant Lv. 2: Enchant Effect">
+	<skill id="55113" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 2">
 		<!-- MP +33, HP +50. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -468,8 +468,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55114" toLevel="1" name="Wind Dragon Pendant Base Effect Lv. 3">
-		<!-- MP +21, HP +31, HP Recovery Rate +1.8, MP Recovery Rate +0.5. -->
+	<skill id="55114" toLevel="1" name="Wind Dragon Pendant Basic Effect Lv. 3">
+		<!-- MP +21, HP +31, HP Recovery Bonus +1.8, MP Recovery Bonus +0.5. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -493,8 +493,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55115" toLevel="10" name="Wind Dragon Pendant Lv. 3: Enchant Effect">
-		<!-- MP +33, HP +50, HP Recovery Rate +1.9, MP Recovery Rate +0.7. -->
+	<skill id="55115" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 3">
+		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -562,8 +562,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55116" toLevel="1" name="Wind Dragon Pendant Base Effect Lv. 4">
-		<!-- MP +21, HP +31, HP Recovery Rate +1.8, MP Recovery Rate +0.5. With a 1% chance, recovers 12 MP when using skills. -->
+	<skill id="55116" toLevel="1" name="Wind Dragon Pendant Basic Effect Lv. 4">
+		<!-- MP +21, HP +31, HP Recovery Bonus +1.8, MP Recovery Bonus +0.5, 1% chance to restore 12 MP when using skills. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -594,13 +594,13 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55117" toLevel="10" name="Wind Dragon Pendant Lv. 4: Enchant Effect">
-		<!-- MP +33, HP +50, HP Recovery Rate +1.9, MP Recovery Rate +0.7. With a 1% chance, recovers 12 MP when using skills. -->
+	<skill id="55117" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 4">
+		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7, 1% chance to restore 12 MP when using skills. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -676,7 +676,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
@@ -688,7 +688,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="3" toLevel="3">
@@ -700,7 +700,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="4" toLevel="4">
@@ -712,7 +712,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="5">
@@ -724,7 +724,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="6">
@@ -736,7 +736,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
@@ -748,7 +748,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
@@ -760,7 +760,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
@@ -772,7 +772,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
@@ -784,13 +784,13 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55118" toLevel="1" name="Wind Dragon Pendant Base Effect Lv. 5">
-		<!-- MP +21, HP +31, HP Recovery Rate +1.8, MP Recovery Rate +0.5, M. Skill MP Consumption -3%. With a 1% chance, recovers 12 MP when using skills. -->
+	<skill id="55118" toLevel="1" name="Wind Dragon Pendant Basic Effect Lv. 5">
+		<!-- MP +21, HP +31, HP Recovery Bonus +1.8, MP Recovery Bonus +0.5, 1% chance to restore 12 MP when using skills, MP Skill Consumption -3%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -829,8 +829,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55119" toLevel="10" name="Wind Dragon Pendant Lv. 5: Enchant Effect">
-		<!-- MP +33, HP +50, HP Recovery Rate +1.9, MP Recovery Rate +0.7, M. Skill MP Consumption -5%. With a 1% chance, recovers 12 MP when using skills. -->
+	<skill id="55119" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 5">
+		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7, 1% chance to restore 12 MP when using skills, MP Skill Consumption -5%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -953,7 +953,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
@@ -965,7 +965,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="3" toLevel="3">
@@ -977,7 +977,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="4" toLevel="4">
@@ -989,7 +989,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="5">
@@ -1001,7 +1001,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="6">
@@ -1013,7 +1013,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
@@ -1025,7 +1025,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
@@ -1037,7 +1037,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
@@ -1049,7 +1049,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
@@ -1061,7 +1061,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId> <!-- Recover MP -->
+				<skillId>55153</skillId>
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
@@ -1070,7 +1070,7 @@
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55121" toLevel="1" name="Earth Dragon Pendant Base Effect Lv. 1">
+	<skill id="55121" toLevel="1" name="Earth Dragon Pendant Basic Effect Lv. 1">
 		<!-- M. Def. +6. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1083,7 +1083,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55122" toLevel="10" name="Earth Dragon Pendant Lv. 1: Enchant Effect">
+	<skill id="55122" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 1">
 		<!-- M. Def. +8. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1107,7 +1107,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55123" toLevel="1" name="Earth Dragon Pendant Base Effect Lv. 2">
+	<skill id="55123" toLevel="1" name="Earth Dragon Pendant Basic Effect Lv. 2">
 		<!-- M. Def. +6, P. Def. +11. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1124,7 +1124,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55124" toLevel="10" name="Earth Dragon Pendant Lv. 2: Enchant Effect">
+	<skill id="55124" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 2">
 		<!-- M. Def. +8, P. Def. +14. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1163,7 +1163,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55125" toLevel="1" name="Earth Dragon Pendant Base Effect Lv. 3">
+	<skill id="55125" toLevel="1" name="Earth Dragon Pendant Basic Effect Lv. 3">
 		<!-- M. Def. +6, P. Def. +11, Shield Defense Rate +10%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1184,7 +1184,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55126" toLevel="10" name="Earth Dragon Pendant Lv. 3: Enchant Effect">
+	<skill id="55126" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 3">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1238,7 +1238,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55127" toLevel="1" name="Earth Dragon Pendant Base Effect Lv. 4">
+	<skill id="55127" toLevel="1" name="Earth Dragon Pendant Basic Effect Lv. 4">
 		<!-- M. Def. +6, P. Def. +11, Shield Defense Rate +10%, Shield Defense +3%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1263,7 +1263,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55128" toLevel="10" name="Earth Dragon Pendant Lv. 4: Enchant Effect">
+	<skill id="55128" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 4">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%, Shield Defense +6%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1332,7 +1332,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55129" toLevel="1" name="Earth Dragon Pendant Base Effect Lv. 5">
+	<skill id="55129" toLevel="1" name="Earth Dragon Pendant Basic Effect Lv. 5">
 		<!-- M. Def. +6, P. Def. +11, Shield Defense Rate +10%, Shield Defense +3%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1357,7 +1357,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55130" toLevel="10" name="Earth Dragon Pendant Lv. 5: Enchant Effect">
+	<skill id="55130" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 5">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%, Shield Defense +6%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1498,7 +1498,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55133" toLevel="6" name="Pendant: Enchant Effect">
+	<skill id="55133" toLevel="6" name="Enchantment Effect: Pendant">
 		<!-- Acquired XP/ SP +5%. -->
 		<icon>BranchIcon.Icon.bm_blessing_dragon</icon>
 		<magicLevel>1</magicLevel>
@@ -1527,20 +1527,16 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55134" toLevel="1" name="Scroll: Enchant B-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="55134" toLevel="1" name="Scroll: Enchant Weapon (B-grade)">
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55135" toLevel="1" name="Scroll: Enchant B-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="55135" toLevel="1" name="Scroll: Enchant Armor (B-grade)">
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55136" toLevel="1" name="Protecting Scroll: Enchant B-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="55136" toLevel="1" name="Blessed Scroll: Enchant Weapon (B-grade)">
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55137" toLevel="1" name="Protecting Scroll: Enchant B-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="55137" toLevel="1" name="Blessed Scroll: Enchant Armor (B-grade)">
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55138" toLevel="1" name="Shaft with Antharas treasures">
@@ -1549,58 +1545,67 @@
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
-	<skill id="55141" toLevel="1" name="Movement Block">
-		<!-- You are under suspicion of using an illegal program. Your actions have been restricted. -->
+	<skill id="55141" toLevel="1" name="Report Status">
+		<!-- You are suspected to have used an illegal program. Your actions have been restricted. -->
 		<icon>icon.skill6038</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55142" toLevel="1" name="MP Potion">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55143" toLevel="1" name="Golden Mermaid's Fancy Fishing Rod">
-		<!-- Acquired XP/ SP while fishing +50%. -->
+	<skill id="55143" toLevel="1" name="Elite Fishing Rod of Golden Mermaid">
+		<!-- Acquired XP/ SP through fishing +50%. -->
 		<icon>icon.bm_gold_fishing_pole</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55144" toLevel="20" name="P. Atk.">
 		<!-- P. Atk. +$s1. -->
+		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55145" toLevel="20" name="M. Atk.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55146" toLevel="20" name="P. Def.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55147" toLevel="20" name="M. Def.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55148" toLevel="20" name="P. Accuracy.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55149" toLevel="20" name="P. Evasion">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55150" toLevel="20" name="HP">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55151" toLevel="20" name="MP">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55152" toLevel="20" name="Recover HP">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55153" toLevel="20" name="Recover MP">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>8</magicLevel>
 		<operateType>A1</operateType>
@@ -1612,44 +1617,50 @@
 		<effects>
 			<effect name="ManaHealByLevel">
 				<power>
-					<value level="1">12</value>
-					<value level="2">16</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-					<value level="5">40</value>
-					<value level="6">50</value>
-					<value level="7">60</value>
-					<value level="8">70</value>
+					<value level="1">49</value>
+					<value level="2">52</value>
+					<value level="3">57</value>
+					<value level="4">60</value>
+					<value level="5">66</value>
+					<value level="6">70</value>
+					<value level="7">73</value>
+					<value level="8">77</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="55154" toLevel="20" name="Atk. Spd.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55155" toLevel="20" name="Casting Spd.">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55156" toLevel="20" name="P. Critical Rate">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55157" toLevel="20" name="P. Critical Damage">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55158" toLevel="20" name="M. Critical Rate">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55159" toLevel="20" name="M. Critical Damage">
 		<!-- M. Atk. +$s1. -->
+		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55160" toLevel="1" name="Special Pirate Fruit">
-		<!-- For 20 min., P./ M. Atk. +7%, P./ M. Def. +10%, Max HP/ MP/ CP +15%, HP/ MP Recovery Rate +20%, acquired XP/ SP +5%. With a certain chance, absorbs 3% of the inflicted damage as HP. Cooldown: 1 min. The effect remains after death. -->
+		<!-- For 20 min., P./ M. Atk. +7%, P./ M. Def. +10%, Max. HP/ CP/ MP +15%, HP/ MP Recovery Bonus +20%. Has a chance of absorbing 3% of damage inflicted on enemy as HP. Cooldown is 1 min. Effect remains after death. -->
 		<icon>icon.etc_codran_i09</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1719,8 +1730,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55161" toLevel="1" name="VIP Lv. 1">
-		<!-- You can obtain a daily VIP chest Lv. 1. Acquired XP/ SP +3%, item drop rate +50%. -->
+	<skill id="55161" toLevel="1" name="VIP Level 1">
+		<!-- The right to VIP 1st level chest. Acquired XP/ SP +3%, item drop rate +50%. -->
 		<icon>BranchIcon.Icon.g_skill_vip1</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1736,8 +1747,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55162" toLevel="1" name="VIP Lv. 2">
-		<!-- You can obtain a daily VIP chest Lv. 2. Acquired XP/ SP +7%, item drop rate +150%. You can use the world chat at any level (world chat messages +3). -->
+	<skill id="55162" toLevel="1" name="VIP Level 2">
+		<!-- The right to VIP 2nd level chest. Acquired XP/ SP +7%, item drop rate +150%. World chat on any level, number of usage attempts +3. -->
 		<icon>BranchIcon.Icon.g_skill_vip2</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1757,8 +1768,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55163" toLevel="1" name="VIP Lv. 3">
-		<!-- You can obtain a daily VIP chest Lv. 3. Acquired XP/ SP +15%, item drop rate +200%, Death XP Penalty -10%. You can use the world chat at any level (world chat messages +3). -->
+	<skill id="55163" toLevel="1" name="VIP Level 3">
+		<!-- The right to VIP 3rd level chest. Acquired XP/ SP +15%, item drop rate +200%. Experience loss and chance to lose items upon death is -10%. World chat on any level, number of usage attempts +3. -->
 		<icon>BranchIcon.Icon.g_skill_vip3</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1784,8 +1795,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55164" toLevel="1" name="VIP Lv. 4">
-		<!-- You can obtain a daily VIP chest Lv. 4. Acquired XP/ SP +25%, item drop rate +250%, Death XP Penalty -15%, acquired XP/ SP (fishing) +20%. You can use the world chat at any level (world chat messages +5). -->
+	<skill id="55164" toLevel="1" name="VIP Level 4">
+		<!-- The right to VIP 4th level chest. Acquired XP/ SP +25%, item drop rate +250%. Experience loss and chance to lose items upon death is -15%. Acquired XP/ SP +20% during fishing. World chat on any level, number of usage attempts +5. -->
 		<icon>BranchIcon.Icon.g_skill_vip4</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1815,8 +1826,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55165" toLevel="1" name="VIP Lv. 5">
-		<!-- You can obtain a daily VIP chest Lv. 5. Acquired XP/ SP +30%, item drop rate +250%, Death XP Penalty -20%, acquired XP/ SP (fishing) +20%. Increases PvE damage. You can use the world chat at any level (world chat messages +10). -->
+	<skill id="55165" toLevel="1" name="VIP Level 5">
+		<!-- The right to VIP 5th level chest. Acquired XP/ SP +30%, item drop rate +250%. Experience loss and chance to lose items upon death -20%. Acquired XP/ SP +20% during fishing. PvE damage is increased. World chat on any level, number of usage attempts +10. -->
 		<icon>BranchIcon.Icon.g_skill_vip5</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1858,8 +1869,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55166" toLevel="1" name="VIP Lv. 6">
-		<!-- You can obtain a daily VIP chest Lv. 6. Acquired XP/ SP +30%, item drop rate +250%, Death XP Penalty -20%, acquired XP/ SP (fishing) +20%. Increases PvE damage. STR/ DEX/ CON/ INT/ WIT/ MEN +2. You can use the world chat at any level (world chat messages +10). -->
+	<skill id="55166" toLevel="1" name="VIP Level 6">
+		<!-- The right to VIP 6th level chest. Acquired XP/ SP +30%, item drop rate +250%. Experience loss and chance to lose items upon death -20%. Acquired XP/ SP +20% during fishing. PvE damage is increased, STR/ DEX/ INT/ WIT/ MEN +2. World chat on any level, number of usage attempts +10. -->
 		<icon>BranchIcon.Icon.g_skill_vip6</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1921,8 +1932,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55167" toLevel="1" name="VIP Lv. 7">
-		<!-- You can obtain a daily VIP chest Lv. 7. Acquired XP/ SP +30%, item drop rate +250%, Death XP Penalty -20%, acquired XP/ SP (fishing) +20%. Increases PvP/ PvE damage. STR/ DEX/ CON/ INT/ WIT/ MEN +2. You can use the world chat at any level (world chat messages +10). -->
+	<skill id="55167" toLevel="1" name="VIP Level 7">
+		<!-- The right to VIP 7th level chest. Acquired XP/ SP +30%, item drop rate +250%. Experience loss and chance to lose items upon death -20%. Acquired XP/ SP +20% during fishing. PvE/ PvP damage is increased, STR/ DEX/ INT/ WIT/ MEN +2. World chat on any level, number of usage attempts +10. -->
 		<icon>BranchIcon.Icon.g_skill_vip7</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1996,7 +2007,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55168" toLevel="1" name="Clan's Unity Lv. 1">
+	<skill id="55168" toLevel="1" name="Clan Unity - Lv. 1">
 		<!-- Clan Alliance Buff. For 3 h., acquired XP/ SP +3%. -->
 		<icon>icon.skill19011</icon>
 		<operateType>A2</operateType>
@@ -2015,8 +2026,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55169" toLevel="1" name="Clan's Unity Lv. 2">
-		<!-- A clan alliance buff. For 3 h., acquired XP/ SP +5%, received PvE damage -2%. -->
+	<skill id="55169" toLevel="1" name="Clan Unity - Lv. 2">
+		<!-- Clan Alliance Buff. For 3 h., acquired XP/ SP +5%, Received PvE Damage -2%. -->
 		<icon>icon.skill19011</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
@@ -2046,8 +2057,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55170" toLevel="1" name="Clan's Unity Lv. 3">
-		<!-- A clan alliance buff. For 3 h., acquired XP/ SP +7%, received PvE damage -5%. -->
+	<skill id="55170" toLevel="1" name="Clan Unity - Lv. 3">
+		<!-- Clan Alliance Buff. For 3 h., acquired XP/ SP +7%, Received PvE Damage -5%. -->
 		<icon>icon.skill19011</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
@@ -2077,8 +2088,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55171" toLevel="1" name="Clan's Unity Lv. 4">
-		<!-- A clan alliance buff. For 3 h., acquired XP/ SP +10%, PvE damage +7%, received PvE damage -8%. -->
+	<skill id="55171" toLevel="1" name="Clan Unity - Lv. 4">
+		<!-- Clan Alliance Buff. For 3 h., Acquired XP/ SP +10%, PvE damage +7%, Received PvE Damage -8%. -->
 		<icon>icon.skill19011</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
@@ -2121,7 +2132,6 @@
 		</effects>
 	</skill>
 	<skill id="55172" toLevel="1" name="Clan's Special Supplies">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70025</itemConsumeId>
@@ -2184,7 +2194,6 @@
 		</effects>
 	</skill>
 	<skill id="55173" toLevel="1" name="Clan's Special Supplies">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70026</itemConsumeId>
@@ -2210,40 +2219,40 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="0.7">
-						<item id="1894" count="1" /> <!-- Quality Leather -->
+						<item id="1894" count="1" /> <!-- Crafted Leather -->
 					</item>
 					<item chance="6.2">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
 					</item>
 					<item chance="0.57">
-						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. - Not Available -->
+						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. -->
 					</item>
 					<item chance="0.57">
-						<item id="70038" count="1" /> <!-- Yellow Talisman - Healing - Not Available -->
+						<item id="70038" count="1" /> <!-- Yellow Talisman - Received Healing -->
 					</item>
 					<item chance="0.57">
-						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. - Not Available -->
+						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. -->
 					</item>
 					<item chance="0.57">
-						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. - Not Available -->
+						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. -->
 					</item>
 					<item chance="0.57">
-						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. - Not Available -->
+						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. -->
 					</item>
 					<item chance="0.57">
-						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. - Not Available -->
+						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. -->
 					</item>
 					<item chance="0.57">
-						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. - Not Available -->
+						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. -->
 					</item>
 					<item chance="0.57">
-						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed - Not Available -->
+						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed -->
 					</item>
 					<item chance="0.57">
-						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy - Not Available -->
+						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy -->
 					</item>
 					<item chance="0.57">
-						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion - Not Available -->
+						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion -->
 					</item>
 					<item chance="3.3">
 						<item id="1875" count="1" /> <!-- Stone of Purity -->
@@ -2273,7 +2282,7 @@
 						<item id="1889" count="1" /> <!-- Synthetic Braid -->
 					</item>
 					<item chance="0.4">
-						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility - Not Available -->
+						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility -->
 					</item>
 					<item chance="5.9">
 						<item id="1880" count="1" /> <!-- Steel -->
@@ -2286,7 +2295,6 @@
 		</effects>
 	</skill>
 	<skill id="55174" toLevel="1" name="Clan's Special Supplies">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70027</itemConsumeId>
@@ -2315,40 +2323,40 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="1.5">
-						<item id="1894" count="1" /> <!-- Quality Leather -->
+						<item id="1894" count="1" /> <!-- Crafted Leather -->
 					</item>
 					<item chance="6.2">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
 					</item>
 					<item chance="0.51">
-						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. - Not Available -->
+						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. -->
 					</item>
 					<item chance="0.51">
-						<item id="70038" count="1" /> <!-- Yellow Talisman - Healing - Not Available -->
+						<item id="70038" count="1" /> <!-- Yellow Talisman - Received Healing -->
 					</item>
 					<item chance="0.51">
-						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. - Not Available -->
+						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. -->
 					</item>
 					<item chance="0.51">
-						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. - Not Available -->
+						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. -->
 					</item>
 					<item chance="0.51">
-						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. - Not Available -->
+						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. -->
 					</item>
 					<item chance="0.51">
-						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. - Not Available -->
+						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. -->
 					</item>
 					<item chance="0.51">
-						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. - Not Available -->
+						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. -->
 					</item>
 					<item chance="0.51">
-						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed - Not Available -->
+						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed -->
 					</item>
 					<item chance="0.51">
-						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy - Not Available -->
+						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy -->
 					</item>
 					<item chance="0.51">
-						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion - Not Available -->
+						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion -->
 					</item>
 					<item chance="3.5">
 						<item id="1875" count="1" /> <!-- Stone of Purity -->
@@ -2393,16 +2401,16 @@
 						<item id="1889" count="1" /> <!-- Synthetic Braid -->
 					</item>
 					<item chance="0.1">
-						<item id="956" count="1" /> <!-- Scroll: Enchant D-grade Armor -->
+						<item id="956" count="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
 					</item>
 					<item chance="0.05">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="0.4">
 						<item id="1886" count="1" /> <!-- Silver Mold -->
 					</item>
 					<item chance="0.5">
-						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility - Not Available -->
+						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility -->
 					</item>
 					<item chance="1.1">
 						<item id="1888" count="1" /> <!-- Synthetic Cokes -->
@@ -2427,7 +2435,6 @@
 		</effects>
 	</skill>
 	<skill id="55175" toLevel="1" name="Clan's Special Supplies">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70028</itemConsumeId>
@@ -2456,49 +2463,49 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="1.6">
-						<item id="1894" count="1" /> <!-- Quality Leather -->
+						<item id="1894" count="1" /> <!-- Crafted Leather -->
 					</item>
 					<item chance="6.9">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
 					</item>
 					<item chance="0.72">
-						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. - Not Available -->
+						<item id="70035" count="1" /> <!-- Yellow Talisman - P. Def. -->
 					</item>
 					<item chance="0.72">
-						<item id="70038" count="1" /> <!-- Yellow Talisman - Healing - Not Available -->
+						<item id="70038" count="1" /> <!-- Yellow Talisman - Received Healing -->
 					</item>
 					<item chance="0.72">
-						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. - Not Available -->
+						<item id="70031" count="1" /> <!-- Yellow Talisman - M. Def. -->
 					</item>
 					<item chance="0.72">
-						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. - Not Available -->
+						<item id="70032" count="1" /> <!-- Yellow Talisman - M. Atk. -->
 					</item>
 					<item chance="0.72">
-						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. - Not Available -->
+						<item id="70033" count="1" /> <!-- Yellow Talisman - Casting Spd. -->
 					</item>
 					<item chance="0.72">
-						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. - Not Available -->
+						<item id="70030" count="1" /> <!-- Yellow Talisman - Atk. Spd. -->
 					</item>
 					<item chance="0.72">
-						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. - Not Available -->
+						<item id="70029" count="1" /> <!-- Yellow Talisman - P. Atk. -->
 					</item>
 					<item chance="0.72">
-						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed - Not Available -->
+						<item id="70036" count="1" /> <!-- Yellow Talisman - Speed -->
 					</item>
 					<item chance="0.72">
-						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy - Not Available -->
+						<item id="70034" count="1" /> <!-- Yellow Talisman - Accuracy -->
 					</item>
 					<item chance="0.72">
-						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion - Not Available -->
+						<item id="70037" count="1" /> <!-- Yellow Talisman - Evasion -->
 					</item>
 					<item chance="0.1">
-						<item id="1892" count="1" /> <!-- Blacksmith' Frame -->
+						<item id="1892" count="1" /> <!-- Blacksmith's Frame -->
 					</item>
 					<item chance="0.2">
-						<item id="4048" count="1" /> <!-- Maestro's Mold -->
+						<item id="4048" count="1" /> <!-- Maestro Mold -->
 					</item>
 					<item chance="0.1">
-						<item id="4047" count="1" /> <!-- Craftsman's Mold -->
+						<item id="4047" count="1" /> <!-- Craftsman Mold -->
 					</item>
 					<item chance="0.1">
 						<item id="1891" count="1" /> <!-- Artisan's Frame -->
@@ -2552,22 +2559,22 @@
 						<item id="4045" count="1" /> <!-- Maestro Holder -->
 					</item>
 					<item chance="0.2">
-						<item id="956" count="1" /> <!-- Scroll: Enchant D-grade Armor -->
+						<item id="956" count="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
 					</item>
 					<item chance="0.1">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="0.5">
-						<item id="955" count="1" /> <!-- Scroll: Enchant D-grade Weapon -->
+						<item id="955" count="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 					</item>
 					<item chance="0.1">
-						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+						<item id="951" count="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="1.2">
 						<item id="1886" count="1" /> <!-- Silver Mold -->
 					</item>
 					<item chance="0.4">
-						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility - Not Available -->
+						<item id="70039" count="1" /> <!-- Blue Talisman - Invisibility -->
 					</item>
 					<item chance="1.7">
 						<item id="1888" count="1" /> <!-- Synthetic Cokes -->
@@ -2603,7 +2610,7 @@
 		</effects>
 	</skill>
 	<skill id="55177" toLevel="1" name="Yellow Talisman - Atk. Spd.">
-		<!-- Increases Atk. Spd. -->
+		<!-- Increases Atk. Spd. when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -2613,7 +2620,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55178" toLevel="1" name="Yellow Talisman - M. Def.">
+	<skill id="55178" toLevel="1" name="Yellow Talisman: M. Def.">
 		<!-- Increases M. Def. when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
@@ -2625,7 +2632,7 @@
 		</effects>
 	</skill>
 	<skill id="55179" toLevel="1" name="Yellow Talisman - M. Atk.">
-		<!-- Increases M. Atk. when equipped. -->
+		<!-- Increases magic power when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -2636,7 +2643,7 @@
 		</effects>
 	</skill>
 	<skill id="55180" toLevel="1" name="Yellow Talisman - Casting Spd.">
-		<!-- Increases Casting Spd. -->
+		<!-- Increases Casting Speed when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -2646,8 +2653,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55181" toLevel="1" name="Yellow Talisman - P. Accuracy">
-		<!-- Increases P. Accuracy, when equipped. -->
+	<skill id="55181" toLevel="1" name="Yellow Talisman: P. Accuracy.">
+		<!-- Increases P. Accuracy when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -2684,7 +2691,7 @@
 		</effects>
 	</skill>
 	<skill id="55184" toLevel="1" name="Yellow Talisman: P. Evasion.">
-		<!-- Increases P. Evasion, when equipped. -->
+		<!-- Increases P. Evasion when equipped. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -2710,7 +2717,7 @@
 		</effects>
 	</skill>
 	<skill id="55186" toLevel="1" name="Blue Talisman - Invisibility">
-		<!-- Makes you invisible for monsters, protecting from their preemptive strikes, when the talisman is equpped. -->
+		<!-- Protects from preemptive attacks from monsters by making your character invisible. -->
 		<icon>icon.etc_talisman_i01</icon>
 		<reuseDelay>240000</reuseDelay>
 		<hitTime>4000</hitTime>
@@ -2734,7 +2741,7 @@
 		</effects>
 	</skill>
 	<skill id="55187" toLevel="1" name="Roast Blue Mackerel - STR">
-		<!-- For 20 min., STR +1. -->
+		<!-- For 20 min. STR +1. -->
 		<icon>BranchIcon.Icon.roasted_mackerel_buff</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -2753,7 +2760,7 @@
 		</effects>
 	</skill>
 	<skill id="55188" toLevel="1" name="Roast Blue Mackerel - INT">
-		<!-- For 20 min., INT +1. -->
+		<!-- For 20 min. INT +1. -->
 		<icon>BranchIcon.Icon.roasted_mackerel_buff</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -2772,7 +2779,7 @@
 		</effects>
 	</skill>
 	<skill id="55189" toLevel="1" name="Roast Blue Mackerel - CON">
-		<!-- For 20 min., CON +1. -->
+		<!-- For 20 min. CON +1. -->
 		<icon>BranchIcon.Icon.roasted_mackerel_buff</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -2791,7 +2798,7 @@
 		</effects>
 	</skill>
 	<skill id="55190" toLevel="1" name="Roast Blue Mackerel - DEX">
-		<!-- For 20 min., DEX +1. -->
+		<!-- For 20 min. DEX +1. -->
 		<icon>BranchIcon.Icon.roasted_mackerel_buff</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -2870,28 +2877,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29818" count="1" /> <!-- Sigel's Rune Lv. 1 - Not Available -->
+						<item id="29818" count="1" /> <!-- Sigel's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29838" count="1" /> <!-- Tyrr's Rune Lv. 1 - Not Available -->
+						<item id="29838" count="1" /> <!-- Tyrr's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29858" count="1" /> <!-- Othell's Rune Lv. 1 - Not Available -->
+						<item id="29858" count="1" /> <!-- Othell's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29878" count="1" /> <!-- Yul's Rune Lv. 1 - Not Available -->
+						<item id="29878" count="1" /> <!-- Yul's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29898" count="1" /> <!-- Feoh's Rune Lv. 1 - Not Available -->
+						<item id="29898" count="1" /> <!-- Feoh's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29918" count="1" /> <!-- Iss' Rune Lv. 1 - Not Available -->
+						<item id="29918" count="1" /> <!-- Iss?Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29938" count="1" /> <!-- Wynn's Rune Lv. 1 - Not Available -->
+						<item id="29938" count="1" /> <!-- Wynn's Rune - Stage 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29958" count="1" /> <!-- Aeore's Rune Lv. 1 - Not Available -->
+						<item id="29958" count="1" /> <!-- Aeore's Rune - Stage 1 -->
 					</item>
 				</items>
 			</effect>
@@ -2920,28 +2927,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29819" count="1" /> <!-- Sigel's Rune Lv. 2 - Not Available -->
+						<item id="29819" count="1" /> <!-- Sigel's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29839" count="1" /> <!-- Tyrr's Rune Lv. 2 - Not Available -->
+						<item id="29839" count="1" /> <!-- Tyrr's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29859" count="1" /> <!-- Othell's Rune Lv. 2 - Not Available -->
+						<item id="29859" count="1" /> <!-- Othell's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29879" count="1" /> <!-- Yul's Rune Lv. 2 - Not Available -->
+						<item id="29879" count="1" /> <!-- Yul's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29899" count="1" /> <!-- Feoh's Rune Lv. 2 - Not Available -->
+						<item id="29899" count="1" /> <!-- Feoh's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29919" count="1" /> <!-- Iss' Rune Lv. 2 - Not Available -->
+						<item id="29919" count="1" /> <!-- Iss?Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29939" count="1" /> <!-- Wynn's Rune Lv. 2 - Not Available -->
+						<item id="29939" count="1" /> <!-- Wynn's Rune - Stage 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29959" count="1" /> <!-- Aeore's Rune Lv. 2 - Not Available -->
+						<item id="29959" count="1" /> <!-- Aeore's Rune - Stage 2 -->
 					</item>
 				</items>
 			</effect>
@@ -2970,28 +2977,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29820" count="1" /> <!-- Sigel's Rune Lv. 3 - Not Available -->
+						<item id="29820" count="1" /> <!-- Sigel's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29840" count="1" /> <!-- Tyrr's Rune Lv. 3 - Not Available -->
+						<item id="29840" count="1" /> <!-- Tyrr's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29860" count="1" /> <!-- Othell's Rune Lv. 3 - Not Available -->
+						<item id="29860" count="1" /> <!-- Othell's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29880" count="1" /> <!-- Yul's Rune Lv. 3 - Not Available -->
+						<item id="29880" count="1" /> <!-- Yul's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29900" count="1" /> <!-- Feoh's Rune Lv. 3 - Not Available -->
+						<item id="29900" count="1" /> <!-- Feoh's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29920" count="1" /> <!-- Iss' Rune Lv. 3 - Not Available -->
+						<item id="29920" count="1" /> <!-- Iss?Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29940" count="1" /> <!-- Wynn's Rune Lv. 3 - Not Available -->
+						<item id="29940" count="1" /> <!-- Wynn's Rune - Stage 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29960" count="1" /> <!-- Aeore's Rune Lv. 3 - Not Available -->
+						<item id="29960" count="1" /> <!-- Aeore's Rune - Stage 3 -->
 					</item>
 				</items>
 			</effect>
@@ -3020,28 +3027,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29821" count="1" /> <!-- Sigel's Rune Lv. 4 - Not Available -->
+						<item id="29821" count="1" /> <!-- Sigel's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29841" count="1" /> <!-- Tyrr's Rune Lv. 4 - Not Available -->
+						<item id="29841" count="1" /> <!-- Tyrr's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29861" count="1" /> <!-- Othell's Rune Lv. 4 - Not Available -->
+						<item id="29861" count="1" /> <!-- Othell's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29881" count="1" /> <!-- Yul's Rune Lv. 4 - Not Available -->
+						<item id="29881" count="1" /> <!-- Yul's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29901" count="1" /> <!-- Feoh's Rune Lv. 4 - Not Available -->
+						<item id="29901" count="1" /> <!-- Feoh's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29921" count="1" /> <!-- Iss' Rune Lv. 4 - Not Available -->
+						<item id="29921" count="1" /> <!-- Iss?Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29941" count="1" /> <!-- Wynn's Rune Lv. 4 - Not Available -->
+						<item id="29941" count="1" /> <!-- Wynn's Rune - Stage 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29961" count="1" /> <!-- Aeore's Rune Lv. 4 - Not Available -->
+						<item id="29961" count="1" /> <!-- Aeore's Rune - Stage 4 -->
 					</item>
 				</items>
 			</effect>
@@ -3070,28 +3077,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29822" count="1" /> <!-- Sigel's Rune Lv. 5 - Not Available -->
+						<item id="29822" count="1" /> <!-- Sigel's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29842" count="1" /> <!-- Tyrr's Rune Lv. 5 - Not Available -->
+						<item id="29842" count="1" /> <!-- Tyrr's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29862" count="1" /> <!-- Othell's Rune Lv. 5 - Not Available -->
+						<item id="29862" count="1" /> <!-- Othell's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29882" count="1" /> <!-- Yul's Rune Lv. 5 - Not Available -->
+						<item id="29882" count="1" /> <!-- Yul's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29902" count="1" /> <!-- Feoh's Rune Lv. 5 - Not Available -->
+						<item id="29902" count="1" /> <!-- Feoh's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29922" count="1" /> <!-- Iss' Rune Lv. 5 - Not Available -->
+						<item id="29922" count="1" /> <!-- Iss?Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29942" count="1" /> <!-- Wynn's Rune Lv. 5 - Not Available -->
+						<item id="29942" count="1" /> <!-- Wynn's Rune - Stage 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29962" count="1" /> <!-- Aeore's Rune Lv. 5 - Not Available -->
+						<item id="29962" count="1" /> <!-- Aeore's Rune - Stage 5 -->
 					</item>
 				</items>
 			</effect>
@@ -3120,28 +3127,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29823" count="1" /> <!-- Sigel's Rune Lv. 6 - Not Available -->
+						<item id="29823" count="1" /> <!-- Sigel's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29843" count="1" /> <!-- Tyrr's Rune Lv. 6 - Not Available -->
+						<item id="29843" count="1" /> <!-- Tyrr's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29863" count="1" /> <!-- Othell's Rune Lv. 6 - Not Available -->
+						<item id="29863" count="1" /> <!-- Othell's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29883" count="1" /> <!-- Yul's Rune Lv. 6 - Not Available -->
+						<item id="29883" count="1" /> <!-- Yul's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29903" count="1" /> <!-- Feoh's Rune Lv. 6 - Not Available -->
+						<item id="29903" count="1" /> <!-- Feoh's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29923" count="1" /> <!-- Iss' Rune Lv. 6 - Not Available -->
+						<item id="29923" count="1" /> <!-- Iss?Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29943" count="1" /> <!-- Wynn's Rune Lv. 6 - Not Available -->
+						<item id="29943" count="1" /> <!-- Wynn's Rune - Stage 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29963" count="1" /> <!-- Aeore's Rune Lv. 6 - Not Available -->
+						<item id="29963" count="1" /> <!-- Aeore's Rune - Stage 6 -->
 					</item>
 				</items>
 			</effect>
@@ -3170,28 +3177,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29824" count="1" /> <!-- Sigel's Rune Lv. 7 - Not Available -->
+						<item id="29824" count="1" /> <!-- Sigel's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29844" count="1" /> <!-- Tyrr's Rune Lv. 7 - Not Available -->
+						<item id="29844" count="1" /> <!-- Tyrr's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29864" count="1" /> <!-- Othell's Rune Lv. 7 - Not Available -->
+						<item id="29864" count="1" /> <!-- Othell's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29884" count="1" /> <!-- Yul's Rune Lv. 7 - Not Available -->
+						<item id="29884" count="1" /> <!-- Yul's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29904" count="1" /> <!-- Feoh's Rune Lv. 7 - Not Available -->
+						<item id="29904" count="1" /> <!-- Feoh's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29924" count="1" /> <!-- Iss' Rune Lv. 7 - Not Available -->
+						<item id="29924" count="1" /> <!-- Iss?Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29944" count="1" /> <!-- Wynn's Rune Lv. 7 - Not Available -->
+						<item id="29944" count="1" /> <!-- Wynn's Rune - Stage 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29964" count="1" /> <!-- Aeore's Rune Lv. 7 - Not Available -->
+						<item id="29964" count="1" /> <!-- Aeore's Rune - Stage 7 -->
 					</item>
 				</items>
 			</effect>

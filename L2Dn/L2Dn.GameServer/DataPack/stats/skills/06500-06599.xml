@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6500" toLevel="28" name="Holy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -104,7 +103,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6501" toLevel="28" name="Holy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -209,7 +207,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6502" toLevel="28" name="Holy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -314,7 +311,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6503" toLevel="28" name="Holy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -419,7 +415,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6504" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -522,7 +517,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6505" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -625,7 +619,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6506" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -728,7 +721,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6507" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -833,7 +825,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6508" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -938,7 +929,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6509" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1043,7 +1033,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6510" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1146,7 +1135,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6511" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1249,7 +1237,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6512" toLevel="28" name="Holy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1352,7 +1339,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6513" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1455,7 +1441,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6514" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1558,7 +1543,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6515" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1661,7 +1645,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6516" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1764,7 +1747,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6517" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1867,7 +1849,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6518" toLevel="28" name="Unholy Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1970,7 +1951,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6519" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2073,7 +2053,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6520" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2176,7 +2155,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6521" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2279,7 +2257,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6522" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2384,7 +2361,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6523" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2489,7 +2465,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6524" toLevel="28" name="Unholy Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2594,7 +2569,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6525" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2697,7 +2671,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6526" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2800,7 +2773,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6527" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2903,7 +2875,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6528" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3008,7 +2979,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6529" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3113,7 +3083,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6530" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3218,7 +3187,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6531" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3321,7 +3289,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6532" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3424,7 +3391,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6533" toLevel="28" name="Unholy Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3527,7 +3493,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6534" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3630,7 +3595,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6535" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3733,7 +3697,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6536" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3836,7 +3799,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6537" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -3939,7 +3901,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6538" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4042,7 +4003,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6539" toLevel="28" name="Fire Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4145,7 +4105,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6540" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4248,7 +4207,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6541" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4351,7 +4309,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6542" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4454,7 +4411,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6543" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4559,7 +4515,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6544" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4664,7 +4619,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6545" toLevel="28" name="Fire Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4769,7 +4723,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6546" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4872,7 +4825,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6547" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -4975,7 +4927,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6548" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5078,7 +5029,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6549" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5183,7 +5133,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6550" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5288,7 +5237,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6551" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5393,7 +5341,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6552" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5496,7 +5443,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6553" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5599,7 +5545,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6554" toLevel="28" name="Fire Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5702,7 +5647,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6555" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5805,7 +5749,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6556" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -5908,7 +5851,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6557" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6011,7 +5953,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6558" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6114,7 +6055,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6559" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6217,7 +6157,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6560" toLevel="28" name="Water Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6320,7 +6259,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6561" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6423,7 +6361,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6562" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6526,7 +6463,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6563" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6629,7 +6565,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6564" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6734,7 +6669,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6565" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6839,7 +6773,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6566" toLevel="28" name="Water Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -6944,7 +6877,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6567" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7047,7 +6979,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6568" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7150,7 +7081,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6569" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7253,7 +7183,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6570" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7358,7 +7287,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6571" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7463,7 +7391,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6572" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7568,7 +7495,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6573" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7671,7 +7597,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6574" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7774,7 +7699,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6575" toLevel="28" name="Water Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7877,7 +7801,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6576" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -7980,7 +7903,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6577" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8083,7 +8005,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6578" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8186,7 +8107,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6579" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8289,7 +8209,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6580" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8392,7 +8311,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6581" toLevel="28" name="Wind Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8495,7 +8413,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6582" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8598,7 +8515,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6583" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8701,7 +8617,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6584" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8804,7 +8719,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6585" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -8909,7 +8823,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6586" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9014,7 +8927,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6587" toLevel="28" name="Wind Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9119,7 +9031,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6588" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9222,7 +9133,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6589" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9325,7 +9235,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6590" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9428,7 +9337,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6591" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9533,7 +9441,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6592" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9638,7 +9545,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6593" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9743,7 +9649,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6594" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9846,7 +9751,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6595" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -9949,7 +9853,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6596" toLevel="28" name="Wing Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -10052,7 +9955,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6597" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -10155,7 +10057,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6598" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -10258,7 +10159,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6599" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>

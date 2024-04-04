@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="9504" toLevel="1" name="Scroll: PK">
-		<icon>icon.skill0000</icon>
+	<skill id="9504" toLevel="1" name="Scroll: PK (Low-grade)">
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -26,7 +25,6 @@
 		</effects>
 	</skill>
 	<skill id="9505" toLevel="1" name="Scroll: PK (Mid-grade)">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -51,7 +49,6 @@
 		</effects>
 	</skill>
 	<skill id="9506" toLevel="1" name="Scroll: PK (High-grade)">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
@@ -76,7 +73,6 @@
 		</effects>
 	</skill>
 	<skill id="9507" toLevel="1" name="Scroll: PK (Top-grade)">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>

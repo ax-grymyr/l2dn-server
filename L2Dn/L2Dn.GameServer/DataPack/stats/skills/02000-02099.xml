@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="2001" toLevel="1" name="Red Potion">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>HP_RECOVER</abnormalType>
@@ -21,7 +20,6 @@
 		</effects>
 	</skill>
 	<skill id="2002" toLevel="1" name="Healing Drug">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>HP_RECOVER</abnormalType>
@@ -40,8 +38,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2003" toLevel="1" name="Pumpkin Seed">
-		<icon>icon.skill0000</icon>
+	<skill id="2003" toLevel="1" name="Squash Seed">
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -58,14 +55,13 @@
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
-				<npcId>12774</npcId> <!-- Young Pumpkin -->
+				<npcId>12774</npcId> <!-- Young Squash -->
 				<npcCount>1</npcCount>
 				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2004" toLevel="1" name="Large Pumpkin Seed">
-		<icon>icon.skill0000</icon>
+	<skill id="2004" toLevel="1" name="Large Squash Seed">
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -82,14 +78,13 @@
 		</conditions>
 		<effects>
 			<effect name="SummonNpc">
-				<npcId>12777</npcId> <!-- Young Large Pumpkin -->
+				<npcId>12777</npcId> <!-- Large Young Squash -->
 				<npcCount>1</npcCount>
 				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2005" toLevel="1" name="Nectar">
-		<icon>icon.skill0000</icon>
 		<castRange>200</castRange>
 		<effectPoint>-150</effectPoint>
 		<effectRange>300</effectRange>
@@ -115,20 +110,11 @@
 					<item>12779</item>
 					<item>13016</item>
 					<item>13017</item>
-					<item>13271</item>
-					<item>13272</item>
-					<item>13273</item>
-					<item>13274</item>
-					<item>13275</item>
-					<item>13276</item>
-					<item>13277</item>
-					<item>13278</item>
 				</npcIds>
 			</condition>
 		</conditions>
 	</skill>
-	<skill id="2006" toLevel="1" name="Scroll: Enchant A-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2006" toLevel="1" name="Scroll: Enchant Weapon (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -137,8 +123,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2007" toLevel="1" name="Scroll: Enchant A-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2007" toLevel="1" name="Scroll: Enchant Armor (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -148,7 +133,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2008" toLevel="1" name="Item - Beast Spirit Shot">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -158,7 +142,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2009" toLevel="1" name="Item - Blessed Beast Spirit Shot">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -168,7 +151,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2010" toLevel="1" name="Endeavor Potion">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>HIT_UP</abnormalType>
@@ -230,7 +212,6 @@
 		</effects>
 	</skill>
 	<skill id="2013" toLevel="2" name="Scroll of Escape">
-		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -250,7 +231,6 @@
 		</effects>
 	</skill>
 	<skill id="2014" toLevel="1" name="Scroll of Resurrection">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
 		<effectRange>600</effectRange>
@@ -271,8 +251,7 @@
 			<effect name="Resurrection" />
 		</effects>
 	</skill>
-	<skill id="2015" toLevel="1" name="Scroll: Enchant B-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2015" toLevel="1" name="Scroll: Enchant Weapon (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -281,8 +260,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2016" toLevel="1" name="Scroll: Enchant B-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2016" toLevel="1" name="Scroll: Enchant Armor (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -291,8 +269,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2017" toLevel="1" name="Scroll: Enchant C-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2017" toLevel="1" name="Scroll: Enchant Weapon (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -301,8 +278,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2018" toLevel="1" name="Scroll: Enchant C-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2018" toLevel="1" name="Scroll: Enchant Armor (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -311,8 +287,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2019" toLevel="1" name="Scroll: Enchant D-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2019" toLevel="1" name="Scroll: Enchant Weapon (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -321,8 +296,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2020" toLevel="1" name="Scroll: Enchant D-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2020" toLevel="1" name="Scroll: Enchant Armor (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -331,8 +305,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2021" toLevel="1" name="Scroll: Enchant S-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2021" toLevel="1" name="Scroll: Enchant Weapon (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -341,8 +314,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2022" toLevel="1" name="Scroll: Enchant S-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2022" toLevel="1" name="Scroll: Enchant Armor (S-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -352,7 +324,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2023" toLevel="1" name="Star Shard">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>6403</itemConsumeId> <!-- Star Shard -->
@@ -364,8 +335,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2024" toLevel="2" name="Firecrackers">
-		<icon>icon.skill0000</icon>
+	<skill id="2024" toLevel="2" name="Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>6406</itemConsumeId> <!-- Firework -->
@@ -377,8 +347,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2025" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="2025" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>6407</itemConsumeId> <!-- Large Firework -->
@@ -390,8 +359,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2027" toLevel="1" name="Protecting Scroll: Enchant A-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2027" toLevel="1" name="Blessed Scroll: Enchant Weapon (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -400,8 +368,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2028" toLevel="1" name="Protecting Scroll: Enchant B-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2028" toLevel="1" name="Blessed Scroll: Enchant Weapon (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -410,8 +377,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2029" toLevel="1" name="Protecting Scroll: Enchant C-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2029" toLevel="1" name="Blessed Scroll: Enchant Weapon (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -420,8 +386,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2030" toLevel="1" name="Protecting Scroll: Enchant D-grade Weapon">
-		<icon>icon.skill0000</icon>
+	<skill id="2030" toLevel="1" name="Blessed Scroll: Enchant Weapon (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -430,8 +395,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2031" toLevel="1" name="Healing Potion">
-		<!-- Increases HP Recovery Rate. -->
+	<skill id="2031" toLevel="1" name="HP Potion">
+		<!-- Increases HP Recovery Bonus. -->
 		<icon>icon.etc_lesser_potion_red_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -451,8 +416,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2032" toLevel="1" name="Greater Healing Potion">
-		<!-- Slightly increases HP Recovery Rate. -->
+	<skill id="2032" toLevel="1" name="Greater HP Potion">
+		<!-- Slightly increases HP Recovery Bonus. -->
 		<icon>icon.etc_potion_scarlet_i00</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -472,8 +437,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2033" toLevel="1" name="Item - Beast Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="2033" toLevel="1" name="Item - Beast Soul Shot">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -524,8 +488,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2036" toLevel="2" name="Improved Scroll of Escape">
-		<icon>icon.skill0000</icon>
+	<skill id="2036" toLevel="2" name="Blessed Scroll of Escape">
 		<hitTime>200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -548,8 +511,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2037" toLevel="1" name="Major Healing Potion">
-		<!-- Greatly increases HP Recovery Rate. -->
+	<skill id="2037" toLevel="1" name="Major HP Potion">
+		<!-- Greatly increases HP Recovery Bonus. -->
 		<icon>icon.etc_reagent_white_i00</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -569,8 +532,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2038" toLevel="1" name="High-grade HP Recovery Potion">
-		<icon>icon.skill0000</icon>
+	<skill id="2038" toLevel="1" name="High-grade HP Potion">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -585,8 +547,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2039" toLevel="1" name="Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="2039" toLevel="1" name="Soulshot (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -596,7 +557,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2040" toLevel="1" name="Scroll of Escape: Clan Hall">
-		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -616,7 +576,6 @@
 		</effects>
 	</skill>
 	<skill id="2041" toLevel="1" name="Scroll of Escape: Castle">
-		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -636,7 +595,6 @@
 		</effects>
 	</skill>
 	<skill id="2042" toLevel="1" name="Antidote">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -650,8 +608,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2043" toLevel="1" name="Refined Antidote">
-		<icon>icon.skill0000</icon>
+	<skill id="2043" toLevel="1" name="Greater Antidote">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -666,7 +623,6 @@
 		</effects>
 	</skill>
 	<skill id="2044" toLevel="1" name="Bandage">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -676,14 +632,11 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
-				<dispel>
-					<value level="1">POISON,3;BLEEDING,3;DOT_MP,3</value>
-				</dispel>
+				<dispel>BLEEDING,3</dispel>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2045" toLevel="1" name="Emergency Dressing">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -698,7 +651,6 @@
 		</effects>
 	</skill>
 	<skill id="2046" toLevel="2" name="Summon Pet">
-		<icon>icon.skill0000</icon>
 		<hitTime>5000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
@@ -710,8 +662,6 @@
 			<condition name="CanSummonPet" />
 			<condition name="OpCheckResidence">
 				<residenceIds>
-					<item>32</item>
-					<item>33</item>
 					<item>36</item>
 					<item>37</item>
 					<item>38</item>
@@ -733,8 +683,7 @@
 			<effect name="SummonPet" />
 		</effects>
 	</skill>
-	<skill id="2047" toLevel="1" name="Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="2047" toLevel="1" name="Spiritshot (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -744,22 +693,22 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2048" toLevel="1" name="Wolf Food">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
-		<targetType>PET</targetType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>93966</itemConsumeId>
 		<effects>
 			<effect name="Feed">
-				<normal>1000</normal>
+				<normal>100</normal>
+				<ride>100</ride>
+				<wyvern>0</wyvern>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2049" toLevel="1" name="Blessed Scroll of Resurrection">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
 		<effectRange>600</effectRange>
@@ -852,7 +801,7 @@
 		</effects>
 	</skill>
 	<skill id="2053" toLevel="1" name="Scroll: Acumen">
-		<!-- For 20 min., Casting Spd. +15%. -->
+		<!-- Casting Spd. +15% for 20 min. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -944,7 +893,7 @@
 		</effects>
 	</skill>
 	<skill id="2057" toLevel="1" name="Scroll: Might">
-		<!-- For 20 min., P. Atk. +230. -->
+		<!-- P. Atk. +15% for 20 min. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1013,14 +962,12 @@
 		</effects>
 	</skill>
 	<skill id="2060" toLevel="1" name="Healing Medicine">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
-		<abnormalTime>300</abnormalTime>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<targetType>PET</targetType>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DispelBySlot">
@@ -1028,8 +975,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2061" toLevel="1" name="Blessed Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="2061" toLevel="1" name="Blessed Spiritshot (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1039,7 +985,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2062" toLevel="1" name="Blessed Scroll of Resurrection">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
 		<effectRange>600</effectRange>
@@ -1063,7 +1008,6 @@
 		</effects>
 	</skill>
 	<skill id="2063" toLevel="1" name="Hatchling Food">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1080,7 +1024,7 @@
 		</effects>
 	</skill>
 	<skill id="2064" toLevel="1" name="Scroll: Mana Regeneration">
-		<!-- Increases MP Recovery Rate. -->
+		<!-- Increases MP Recovery Bonus. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1103,7 +1047,6 @@
 		</effects>
 	</skill>
 	<skill id="2065" toLevel="8" name="Box Key">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-1</value>
@@ -1137,8 +1080,7 @@
 			<effect name="OpenChest" />
 		</effects>
 	</skill>
-	<skill id="2066" toLevel="1" name="Item - Theme Sound Crystal">
-		<icon>icon.skill0000</icon>
+	<skill id="2066" toLevel="1" name="Item - Fight Song Crystal">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1147,8 +1089,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2067" toLevel="1" name="Item - Theme Sound Crystal">
-		<icon>icon.skill0000</icon>
+	<skill id="2067" toLevel="1" name="Item - Fight Song Crystal">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1158,7 +1099,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2068" toLevel="1" name="Item - Race Sound Crystal">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1168,7 +1108,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2069" toLevel="1" name="Item - Race Sound Crystal">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1178,7 +1117,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2070" toLevel="1" name="Item - Race Sound Crystal">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1188,7 +1126,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2071" toLevel="1" name="Item - Race Sound Crystal">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1198,7 +1135,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2072" toLevel="1" name="Item - Race Sound Crystal">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1207,8 +1143,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2073" toLevel="1" name="Item - Theme Sound Crystal">
-		<icon>icon.skill0000</icon>
+	<skill id="2073" toLevel="1" name="Item - Fight Song Crystal">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1246,7 +1181,6 @@
 		</effects>
 	</skill>
 	<skill id="2075" toLevel="1" name="Scroll: Decrease Hate">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>800</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1262,8 +1196,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2076" toLevel="1" name="Blessing of Eva">
-		<!-- Breath gauge +40%. -->
+	<skill id="2076" toLevel="1" name="Eva's Blessing">
+		<!-- Lung capacity +40%. -->
 		<icon>icon.etc_bless_of_eva_i00</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>400</abnormalTime>
@@ -1284,7 +1218,7 @@
 		</effects>
 	</skill>
 	<skill id="2077" toLevel="1" name="Potion of Revenge">
-		<!-- P. Def. -17%, reflects a certain amount of damage back to the enemy -->
+		<!-- P. Def -17%, reflects a certain amount of damage back to the enemy -->
 		<icon>icon.etc_potion_blue_i00</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1307,8 +1241,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2078" toLevel="1" name="Compressed Package: No-grade Soulshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2078" toLevel="1" name="Soulshot Compressed Package (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1329,8 +1262,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2079" toLevel="1" name="Compressed Package: D-grade Soulshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2079" toLevel="1" name="Soulshot Compressed Package (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1351,8 +1283,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2080" toLevel="1" name="Compressed Package: C-grade Soulshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2080" toLevel="1" name="Soulshot Compressed Package (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1373,8 +1304,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2081" toLevel="1" name="Compressed Package: B-grade Soulshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2081" toLevel="1" name="Soulshot Compressed Package (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1395,8 +1325,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2082" toLevel="1" name="Compressed Package: A-grade Soulshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2082" toLevel="1" name="Soulshot Compressed Package (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1417,8 +1346,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2084" toLevel="1" name="Compressed Package: No-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2084" toLevel="1" name="Spiritshot Compressed Package (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1439,8 +1367,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2085" toLevel="1" name="Compressed Package: D-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2085" toLevel="1" name="Spiritshot Compressed Package (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1461,8 +1388,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2086" toLevel="1" name="Compressed Package: C-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2086" toLevel="1" name="Spiritshot Compressed Package (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1483,8 +1409,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2087" toLevel="1" name="Compressed Package: B-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2087" toLevel="1" name="Spiritshot Compressed Package (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1505,8 +1430,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2088" toLevel="1" name="Compressed Package: A-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2088" toLevel="1" name="Spiritshot Compressed Package (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1527,8 +1451,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2090" toLevel="1" name="Compressed Package: Blessed No-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2090" toLevel="1" name="Blessed Spiritshot Compressed Package (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1549,8 +1472,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2091" toLevel="1" name="Compressed Package: Blessed D-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2091" toLevel="1" name="Blessed Spiritshot Compressed Package (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1571,8 +1493,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2092" toLevel="1" name="Compressed Package: Blessed C-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2092" toLevel="1" name="Blessed Spiritshot Compressed Package (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1593,8 +1514,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2093" toLevel="1" name="Compressed Package: Blessed B-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2093" toLevel="1" name="Blessed Spiritshot Compressed Package (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1615,8 +1535,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2094" toLevel="1" name="Compressed Package: Blessed A-grade Spiritshots">
-		<icon>icon.skill0000</icon>
+	<skill id="2094" toLevel="1" name="Blessed Spiritshot Compressed Package (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1638,7 +1557,6 @@
 		</effects>
 	</skill>
 	<skill id="2096" toLevel="1" name="Soul Crystal">
-		<icon>icon.skill0000</icon>
 		<castRange>300</castRange>
 		<effectPoint>-150</effectPoint>
 		<effectRange>500</effectRange>
@@ -1653,8 +1571,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2099" toLevel="1" name="Escape (5 min.)">
-		<icon>icon.skill0000</icon>
+	<skill id="2099" toLevel="1" name="Escape (5-minute)">
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>300000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->

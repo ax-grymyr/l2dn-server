@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="8906" toLevel="1" name="Mysterious Blessed B-grade Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8906" toLevel="1" name="Mysterious Blessed Spiritshot (B-grade)">
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="8907" toLevel="1" name="Mysterious Blessed A-grade Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8907" toLevel="1" name="Mysterious Blessed Spiritshot (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -14,8 +12,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8908" toLevel="1" name="Mysterious B-grade Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8908" toLevel="1" name="Mysterious Spiritshot (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -24,8 +21,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8909" toLevel="1" name="Mysterious A-grade Spiritshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8909" toLevel="1" name="Mysterious Spiritshot (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -34,8 +30,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8910" toLevel="1" name="Mysterious Blessed No-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8910" toLevel="1" name="Mysterious Blessed Soulshot (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -44,8 +39,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8911" toLevel="1" name="Mysterious Blessed D-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8911" toLevel="1" name="Mysterious Blessed Soulshot (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -54,8 +48,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8912" toLevel="1" name="Mysterious Blessed C-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8912" toLevel="1" name="Mysterious Blessed Soulshot (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -64,8 +57,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8913" toLevel="1" name="Mysterious Blessed B-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8913" toLevel="1" name="Mysterious Blessed Soulshot (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -74,8 +66,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8914" toLevel="1" name="Mysterious Blessed A-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8914" toLevel="1" name="Mysterious Blessed Soulshot (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -84,8 +75,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8915" toLevel="1" name="Blessed No-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8915" toLevel="1" name="Blessed Soulshot (No-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -94,8 +84,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8916" toLevel="1" name="Blessed D-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8916" toLevel="1" name="Blessed Soulshot (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -104,8 +93,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8917" toLevel="1" name="Blessed C-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8917" toLevel="1" name="Blessed Soulshot (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -114,8 +102,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8918" toLevel="1" name="Blessed B-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8918" toLevel="1" name="Blessed Soulshot (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -124,8 +111,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8919" toLevel="1" name="Blessed A-grade Soulshot">
-		<icon>icon.skill0000</icon>
+	<skill id="8919" toLevel="1" name="Blessed Soulshot (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -134,7 +120,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="8920" toLevel="1" name="Blessed S-grade Soulshot">
+	<skill id="8920" toLevel="1" name="Blessed Soulshot (S-grade)">
 		<icon>icon.etc_spirit_bullet_white_i00</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>

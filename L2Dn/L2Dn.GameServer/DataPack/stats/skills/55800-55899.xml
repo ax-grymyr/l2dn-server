@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="55800" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- EXP when hunting +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -18,6 +19,7 @@
 	</skill>
 	<skill id="55801" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- SP when hunting +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -34,6 +36,7 @@
 	</skill>
 	<skill id="55802" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- Has a chance to recover $s1 of damage as HP. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -50,6 +53,7 @@
 	</skill>
 	<skill id="55803" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- P. Skill MP Consumption -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -67,6 +71,7 @@
 	</skill>
 	<skill id="55804" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- M. Skill MP Consumption -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -84,6 +89,7 @@
 	</skill>
 	<skill id="55805" toLevel="3" name="Empire Cloak Augmentation">
 		<!-- Reflect $s1 of received damage -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -99,6 +105,7 @@
 	</skill>
 	<skill id="55806" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Atk. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -122,6 +129,7 @@
 	</skill>
 	<skill id="55807" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Atk. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -145,6 +153,7 @@
 	</skill>
 	<skill id="55808" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- Atk. Spd. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -168,6 +177,7 @@
 	</skill>
 	<skill id="55809" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- Casting Spd. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -191,6 +201,7 @@
 	</skill>
 	<skill id="55810" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Accuracy +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -206,6 +217,7 @@
 	</skill>
 	<skill id="55811" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Accuracy +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -221,6 +233,7 @@
 	</skill>
 	<skill id="55812" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- Max HP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -244,6 +257,7 @@
 	</skill>
 	<skill id="55813" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- Max MP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -267,6 +281,7 @@
 	</skill>
 	<skill id="55814" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- Max CP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -290,6 +305,7 @@
 	</skill>
 	<skill id="55815" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- STR +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -302,6 +318,7 @@
 	</skill>
 	<skill id="55816" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- CON +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -314,6 +331,7 @@
 	</skill>
 	<skill id="55817" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- MEN +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -326,6 +344,7 @@
 	</skill>
 	<skill id="55818" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- DEX +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -338,6 +357,7 @@
 	</skill>
 	<skill id="55819" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- WIT +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -350,6 +370,7 @@
 	</skill>
 	<skill id="55820" toLevel="2" name="Empire Legendary Cloak Augmentation">
 		<!-- INT +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -362,6 +383,7 @@
 	</skill>
 	<skill id="55821" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Critical Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -385,6 +407,7 @@
 	</skill>
 	<skill id="55822" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Skill Critical Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -408,6 +431,7 @@
 	</skill>
 	<skill id="55823" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Critical Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -431,6 +455,7 @@
 	</skill>
 	<skill id="55824" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Critical Damage Boost -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -454,6 +479,7 @@
 	</skill>
 	<skill id="55825" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Skill Critical Damage Boost -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -477,6 +503,7 @@
 	</skill>
 	<skill id="55826" toLevel="10" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Critical Damage Boost -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -500,6 +527,7 @@
 	</skill>
 	<skill id="55827" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Stun Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -521,6 +549,7 @@
 	</skill>
 	<skill id="55828" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Hold Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -542,12 +571,13 @@
 	</skill>
 	<skill id="55829" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Bleeding Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<INFECTION>
+				<BLEED>
 					<value level="1">1.5</value>
 					<value level="2">2.5</value>
 					<value level="3">3</value>
@@ -557,12 +587,13 @@
 					<value level="7">6</value>
 					<value level="8">7.5</value>
 					<value level="9">15</value>
-				</INFECTION>
+				</BLEED>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="55830" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Paralysis Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -584,12 +615,13 @@
 	</skill>
 	<skill id="55831" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Mind Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<SILENCE>
+				<DERANGEMENT>
 					<value level="1">1.5</value>
 					<value level="2">2.5</value>
 					<value level="3">3</value>
@@ -599,23 +631,13 @@
 					<value level="7">6</value>
 					<value level="8">7.5</value>
 					<value level="9">15</value>
-				</SILENCE>
-				<FEAR>
-					<value level="1">1.5</value>
-					<value level="2">2.5</value>
-					<value level="3">3</value>
-					<value level="4">3.5</value>
-					<value level="5">4.5</value>
-					<value level="6">5</value>
-					<value level="7">6</value>
-					<value level="8">7.5</value>
-					<value level="9">15</value>
-				</FEAR>
+				</DERANGEMENT>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="55832" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Sleep Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -637,12 +659,13 @@
 	</skill>
 	<skill id="55833" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Poison Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<INFECTION>
+				<POISON>
 					<value level="1">1.5</value>
 					<value level="2">2.5</value>
 					<value level="3">3</value>
@@ -652,12 +675,13 @@
 					<value level="7">6</value>
 					<value level="8">7.5</value>
 					<value level="9">15</value>
-				</INFECTION>
+				</POISON>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="55835" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Pull Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -679,6 +703,7 @@
 	</skill>
 	<skill id="55836" toLevel="9" name="Empire Legendary Cloak Augmentation">
 		<!-- Petrification Attack Success Rate +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -700,6 +725,7 @@
 	</skill>
 	<skill id="55837" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Max HP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -716,6 +742,7 @@
 	</skill>
 	<skill id="55838" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Max MP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -732,6 +759,7 @@
 	</skill>
 	<skill id="55839" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Max CP +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -748,6 +776,7 @@
 	</skill>
 	<skill id="55840" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Atk. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -764,6 +793,7 @@
 	</skill>
 	<skill id="55841" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Def. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -780,6 +810,7 @@
 	</skill>
 	<skill id="55842" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Atk. Spd. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -796,6 +827,7 @@
 	</skill>
 	<skill id="55843" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Speed +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -812,6 +844,7 @@
 	</skill>
 	<skill id="55844" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Atk. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -828,6 +861,7 @@
 	</skill>
 	<skill id="55845" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Def. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -844,6 +878,7 @@
 	</skill>
 	<skill id="55846" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Casting Spd. +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -860,6 +895,7 @@
 	</skill>
 	<skill id="55847" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- PvP Damage +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -892,6 +928,7 @@
 	</skill>
 	<skill id="55848" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Received PvP Damage -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -924,6 +961,7 @@
 	</skill>
 	<skill id="55849" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- PvE Damage +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -956,6 +994,7 @@
 	</skill>
 	<skill id="55850" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Received PvE Damage -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -988,6 +1027,7 @@
 	</skill>
 	<skill id="55851" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- EXP when hunting +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1004,6 +1044,7 @@
 	</skill>
 	<skill id="55852" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- SP when hunting +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1020,6 +1061,7 @@
 	</skill>
 	<skill id="55853" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Has a chance to recover $s1 of damage as HP. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1036,6 +1078,7 @@
 	</skill>
 	<skill id="55854" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Skill MP Consumption -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1053,6 +1096,7 @@
 	</skill>
 	<skill id="55855" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Skill MP Consumption -$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1070,6 +1114,7 @@
 	</skill>
 	<skill id="55856" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Fixed damage resistance +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1085,6 +1130,7 @@
 	</skill>
 	<skill id="55857" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Has a $s1 chance to return all status effects to the enemy. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1110,6 +1156,7 @@
 	</skill>
 	<skill id="55858" toLevel="1" name="Empire Legendary Cloak Augmentation">
 		<!-- When using a single attack skill, there's a chance for Silence to be activated. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1131,6 +1178,7 @@
 	</skill>
 	<skill id="55859" toLevel="1" name="Legendary Cloak - Silence">
 		<!-- Skills are sealed momentarily because of Silence. Ignores debuff immunity. -->
+		<icon>icon.skill1064</icon>
 		<isDebuff>true</isDebuff>
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>-100</effectPoint>
@@ -1148,7 +1196,6 @@
 		<magicLevel>81</magicLevel>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SILENCE</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1157,6 +1204,7 @@
 	</skill>
 	<skill id="55860" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- Activates a shield that has a chance to absorb $s1 damage when hit. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1192,6 +1240,11 @@
 	</skill>
 	<skill id="55861" toLevel="3" name="Legendary Cloak - Barrier">
 		<!-- Activates a shield that has a chance to absorb $s2 damage when hit for $s1. -->
+		<icon>
+			<value level="1">icon.skill1514</value>
+			<value level="2">icon.skill1515</value>
+			<value level="3">icon.skill1516</value>
+		</icon>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -1226,6 +1279,7 @@
 	</skill>
 	<skill id="55862" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P./M. Skill Power +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1250,6 +1304,7 @@
 	</skill>
 	<skill id="55863" toLevel="1" name="Empire Legendary Cloak Augmentation">
 		<!-- Resurrects from death with full recovery. Buffs/debuffs stay when dying. However, the Noblesse Blessing and Lucky Charms disappear. -->
+		<icon>icon.skill11826</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<castRange>600</castRange>
 		<hitTime>4000</hitTime>
@@ -1274,6 +1329,7 @@
 	</skill>
 	<skill id="55864" toLevel="1" name="Empire Legendary Cloak Augmentation">
 		<!-- Invincibility activated for 5 seconds if damage received when HP is below 30%. This effect is only activated once every 5 minutes. -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1292,6 +1348,7 @@
 	</skill>
 	<skill id="55865" toLevel="1" name="Legendary Cloak - Invincibility">
 		<!-- Become invincible. -->
+		<icon>icon.skill1917</icon>
 		<hitTime>200</hitTime>
 		<reuseDelay>300000</reuseDelay>
 		<abnormalLevel>1</abnormalLevel>
@@ -1323,6 +1380,7 @@
 	</skill>
 	<skill id="55866" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- P. Critical Damage +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1339,6 +1397,7 @@
 	</skill>
 	<skill id="55867" toLevel="3" name="Empire Legendary Cloak Augmentation">
 		<!-- M. Critical Damage +$s1 -->
+		<icon>BranchIcon.icon.g_bm_cloak_mineral_normal</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1432,6 +1491,7 @@
 	</skill>
 	<skill id="55884" toLevel="1" name="Bracelet of Duty - Lv. 6">
 		<!-- Up to 4 Talismans can be equipped. Additionally STR/ INT/ DEX/ WIT/ CON/ MEN +1. -->
+		<icon>BranchIcon.Icon.g_pledge_bracelet_05</icon>
 		<magicLevel>20</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1467,6 +1527,7 @@
 	</skill>
 	<skill id="55885" toLevel="2" name="Agathion Bracelet Stats Increase">
 		<!-- STR/ INT/ CON/ MEN +$s1. -->
+		<icon>icon.skill6343_2</icon>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="StatUp">
@@ -1513,6 +1574,7 @@
 	</skill>
 	<skill id="55886" toLevel="2" name="Agathion Bracelet Resistance Increase">
 		<!-- Mental/ Stun/ Sleep/ Paralysis Attack Resistance +$s1. -->
+		<icon>icon.skill6366_2</icon>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="DefenceTrait">
@@ -1537,6 +1599,7 @@
 	</skill>
 	<skill id="55887" toLevel="5" name="Clan Exuberance">
 		<!-- Clan members' HP/ MP/ CP Recovery Bonus +$s1, received PVE damage -$s2, Acquired XP/ SP +$s3. -->
+		<icon>icon.skill19014</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
@@ -1641,6 +1704,7 @@
 	</skill>
 	<skill id="55888" toLevel="4" name="Halloween Blessing">
 		<!-- Rico's Halloween buff. Acquired XP/SP +$s1, P./M. Atk. +$s2, Atk. Spd./Casting Spd. +$s3. You can receive a Halloween Gift once the Lv. 3 buff expires. -->
+		<icon>icon.event_halloween_pumpkin_i00</icon>
 		<isMagic>4</isMagic>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
@@ -1705,6 +1769,7 @@
 		</endEffects>
 	</skill>
 	<skill id="55889" toLevel="1" name="Halloween Blessing">
+		<icon>icon.event_halloween_pumpkin_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<effectPoint>1</effectPoint>
@@ -1739,6 +1804,7 @@
 	</skill>
 	<skill id="55892" toLevel="1" name="Dragon's Miracle Potion">
 		<!-- For 20 min., Acquired XP/ SP +50%, P./ M. Atk. +18%, P./ M. Def. +22%, Atk. Spd./ Casting Spd. +5%, P./ M. Crirical Rate +30, P./ M. Critical Damage +10%, HP/ MP/ CP +25%, HP/ MP Recovery +30%. At a certain chance absorbs 5% of the damage inflicted on target as HP. Effect remains after death. -->
+		<icon>icon.bm_dragon_posion_brave</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>5000</reuseDelay>
@@ -1750,6 +1816,7 @@
 	</skill>
 	<skill id="55894" toLevel="1" name="Transformation into Teddy Bear">
 		<!-- Transforms into teddy bear. During transformation HP/ MP +20%, P./ M. Def. +3%, acquired XP/ SP +5%. Effect remains after death. -->
+		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>10000</reuseDelay>
@@ -1757,6 +1824,7 @@
 	</skill>
 	<skill id="55895" toLevel="1" name="Transformation into Panda">
 		<!-- Transforms into panda. During transformation HP/ MP +10%, P./ M. Def. +2%, acquired XP/ SP +5%. Effect remains after death. -->
+		<icon>icon.sayha2017_panda</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>10000</reuseDelay>
@@ -1764,86 +1832,27 @@
 	</skill>
 	<skill id="55896" toLevel="1" name="Transformation into Cat">
 		<!-- Transforms into cat. During transformation HP/ MP +10%, P./ M. Def. +1%, acquired XP/ SP +5%. Effect remains after death. -->
+		<icon>icon.sayha2017_cat</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>10000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55897" toLevel="1" name="Campfire">
-		<icon>icon.skill0000</icon>
+	<skill id="55897" toLevel="1" name="Bonfire">
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>1</effectPoint>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="OpCanNotUseAirship" />
-		</conditions>
-		<effects>
-			<effect name="SummonNpc">
-				<npcId>9023</npcId> <!-- Campfire -->
-				<npcCount>1</npcCount>
-				<despawnDelay>30000</despawnDelay>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="55898" toLevel="1" name="Regular Dish">
-		<!-- For 30 min., acquired XP/ SP +30%, Max HP/ MP/ CP +5%, P. Atk./ M. Atk./ P. Def./ M. Def. +5%. -->
+		<!-- For 30 min., STR/ DEX/ CON/ INT/ WIT/ MEN +1. Additionally, acquired XP/ SP +5%. -->
 		<icon>icon.etc_food_dish_i00</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>1800</abnormalTime>
-		<abnormalType>REGULAR_DISH</abnormalType>
-		<operateType>A2</operateType>
+		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>5000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<stayAfterDeath>true</stayAfterDeath>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<irreplacableBuff>true</irreplacableBuff>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="ExpModify">
-				<amount>30</amount>
-			</effect>
-			<effect name="SpModify">
-				<amount>30</amount>
-			</effect>
-			<effect name="MaxHp">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PAtk">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MAtk">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="55899" toLevel="1" name="Match Girls' Gift">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>

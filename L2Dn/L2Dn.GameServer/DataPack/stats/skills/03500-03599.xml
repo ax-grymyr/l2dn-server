@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3500" toLevel="1" name="Set Effect: Wooden Light Armor, 3-piece">
-		<!-- <Set effect>. P. Def. +2%. Max HP +41 -->
+	<skill id="3500" toLevel="1" name="Set Effect - Wooden Light Armor, 3-piece">
+		<!-- Max HP +41, P. Def. +2%. -->
 		<icon>icon.armor_t06_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -17,8 +17,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3501" toLevel="1" name="Set Effect: Robe of Devotion, 3-piece">
-		<!-- <Set effect>. Casting Spd. +15% -->
+	<skill id="3501" toLevel="1" name="Set Effect - Robe of Devotion, 3-piece">
+		<!-- Atk. Spd. +15%. -->
 		<icon>icon.armor_t55_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -30,8 +30,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3502" toLevel="2" name="Set Effect: Mithril Heavy Armor, 2-piece">
-		<!-- <Set effect>. Max HP +126 -->
+	<skill id="3502" toLevel="2" name="Set Effect - Mithril Heavy Armor, 2-piece">
+		<!-- Max HP +126. -->
 		<icon>icon.armor_t19_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -42,12 +42,12 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="2" toLevel="2">
-				<INFECTION>30</INFECTION>
+				<POISON>30</POISON>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3503" toLevel="2" name="Set Effect: Reinforced Leather Light Armor, 2-piece">
-		<!-- <Set effect>. Max HP +126. Infection Resistance +20% -->
+	<skill id="3503" toLevel="2" name="Set Effect - Reinforced Leather Light Armor, 2-piece">
+		<!-- Max MP +80. -->
 		<icon>icon.armor_t13_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -63,8 +63,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3504" toLevel="2" name="Set Effect: Knowledge Robe, 2-piece">
-		<!-- <Set effect>. Max MP +40 -->
+	<skill id="3504" toLevel="2" name="Set Effect - Knowledge Robe Armor, 2-piece">
+		<!-- Max MP +40. -->
 		<icon>icon.armor_t41_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -80,8 +80,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3505" toLevel="2" name="Set Effect: Manticore Light Armor, 2-piece">
-		<!-- <Set effect>. Max MP +92 -->
+	<skill id="3505" toLevel="2" name="Set Effect - Manticore Light Armor, 2-piece">
+		<!-- Max MP +92. -->
 		<icon>icon.armor_t42_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -97,8 +97,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3506" toLevel="2" name="Set Effect: Brigandine Heavy Armor, 2-piece">
-		<!-- <Set effect>. Max HP +153 -->
+	<skill id="3506" toLevel="2" name="Set Effect - Brigandine Heavy Armor, 2-piece">
+		<!-- Max HP +153. -->
 		<icon>icon.armor_t43_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -114,8 +114,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3507" toLevel="2" name="Set Effect: Elven Mithril Robe, 2-piece">
-		<!-- <Set effect>. MP Recovery Rate +5.24% -->
+	<skill id="3507" toLevel="2" name="Set Effect - Elven Mithril Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_elven_tunic_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -131,8 +131,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3508" toLevel="2" name="Set Effect: Reinforced Mithril Light Armor, 2-piece">
-		<!-- <Set effect>. P. Evasion +4 -->
+	<skill id="3508" toLevel="2" name="Set Effect - Reinforced Mithril Light Armor, 2-piece">
+		<!-- P. Evasion +4. -->
 		<icon>icon.armor_t47_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -143,12 +143,13 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="2" toLevel="2">
-				<INFECTION>30</INFECTION>
+				<POISON>30</POISON>
+				<BLEED>30</BLEED>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3509" toLevel="2" name="Set Effect: Chain Heavy Armor, 2-piece">
-		<!-- <Set effect>. Max HP +198. Sleep Resistance +20%. Hold Resistance +20% -->
+	<skill id="3509" toLevel="2" name="Set Effect - Chain Heavy Armor, 2-piece">
+		<!-- Sleep/ Hold Resistance +20%, Max HP +198. -->
 		<icon>icon.armor_t48_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -168,8 +169,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3510" toLevel="2" name="Set Effect: Karmian Robe, 2-piece">
-		<!-- <Set effect>. Sleep Resistance +20%. Hold Resistance +20% -->
+	<skill id="3510" toLevel="2" name="Set Effect - Karmian Robe Armor, 2-piece">
+		<!-- Sleep/ Hold Resistance +20%. -->
 		<icon>icon.armor_t53_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -189,8 +190,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3511" toLevel="2" name="Set Effect: Plate Light Armor, 2-piece">
-		<!-- <Set effect>. Sleep Resistance +20%. Hold Resistance +20% -->
+	<skill id="3511" toLevel="2" name="Set Effect - Plate Light Armor, 2-piece">
+		<!-- Sleep/ Hold Resistance +20%. -->
 		<icon>icon.armor_t47_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -210,8 +211,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3512" toLevel="1" name="Set Effect: Compound Heavy Armor, 2-piece">
-		<!-- <Set effect>. M. Def. +5%. Overweight limit +5795. Paralysis Resistance +10% -->
+	<skill id="3512" toLevel="1" name="Set Effect - Compound Heavy Armor, 2-piece">
+		<!-- Weight Limit +5795, M. Def. +5%, Paralysis Resistance +10%. -->
 		<icon>icon.armor_t61_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -231,12 +232,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3513" toLevel="2" name="Set Effect: Demon Robe, 2-piece">
-		<!-- <Set effect>. Shock Resistance +10% -->
+	<skill id="3513" toLevel="2" name="Set Effect - Demon's Robe, 2-piece">
+		<!-- Stun Resistance +10%. -->
 		<icon>icon.armor_t54_u_i00</icon>
+		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
+			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
 				<SHOCK>10</SHOCK>
 			</effect>
 			<effect name="StatUp" fromLevel="2" toLevel="2">
@@ -253,8 +256,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3514" toLevel="2" name="Set Effect: Theca Light Armor, 2-piece">
-		<!-- <Set effect>. Paralysis Resistance +10% -->
+	<skill id="3514" toLevel="2" name="Set Effect - Theca Light Armor, 2-piece">
+		<!-- Paralysis Resistance +10%. -->
 		<icon>icon.armor_t63_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -269,8 +272,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3515" toLevel="1" name="Set Effect: Drake Light Armor, 2-piece">
-		<!-- <Set effect>. M. Def. +5%. Shock Resistance +10% -->
+	<skill id="3515" toLevel="1" name="Set Effect - Drake Light Armor, 2-piece">
+		<!-- M. Def. +5%, Stun Resistance +10%. -->
 		<icon>icon.armor_t45_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -285,8 +288,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3516" toLevel="1" name="Set Effect: Full Plate Heavy Armor, 2-piece">
-		<!-- <Set effect>. P. Def. +5%. Max HP +270. Shock Resistance +10% -->
+	<skill id="3516" toLevel="1" name="Set Effect - Full Plate Heavy Armor, 2-piece">
+		<!-- Max HP +270, M. Def. +5%, Stun Resistance +10%. -->
 		<icon>icon.armor_t62_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -305,8 +308,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3517" toLevel="2" name="Set Effect: Divine Robe, 2-piece">
-		<!-- <Set effect>. Paralysis Resistance +10% -->
+	<skill id="3517" toLevel="2" name="Set Effect - Robe of Divinity, 2-piece">
+		<!-- Paralysis Resistance +10%. -->
 		<icon>icon.armor_t57_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -329,8 +332,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3518" toLevel="4" name="Set Effect: Zubei's Heavy Armor, 2-piece">
-		<!-- <Set effect>. HP Recovery Rate +5.24% -->
+	<skill id="3518" toLevel="4" name="Set Effect - Zubei Heavy Armor, 2-piece">
+		<!-- HP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_t64_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -344,21 +347,17 @@
 				<amount>294</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
+			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<PARALYZE>30</PARALYZE>
 			</effect>
-			<effect name="PhysicalDefence" fromLevel="3" toLevel="4">
+			<effect name="PhysicalDefence" fromLevel="4" toLevel="4">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="4" toLevel="4">
-				<amount>44</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3519" toLevel="4" name="Set Effect: Avadon Heavy Armor, 2-piece">
-		<!-- <Set effect>. Max HP +294 -->
+	<skill id="3519" toLevel="4" name="Set Effect - Avadon Heavy Armor, 2-piece">
+		<!-- Max HP +294. -->
 		<icon>icon.armor_t66_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -372,21 +371,18 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
-				<INFECTION>60</INFECTION>
+			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
+				<POISON>60</POISON>
+				<BLEED>60</BLEED>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="4">
+			<effect name="StatUp" fromLevel="4" toLevel="4">
 				<amount>1</amount>
 				<stat>CON</stat>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="4" toLevel="4">
-				<amount>44</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3520" toLevel="4" name="Set Effect: Zubei's Light Armor, 2-piece">
-		<!-- <Set effect>. P. Evasion +4 -->
+	<skill id="3520" toLevel="4" name="Set Effect - Zubei Light Armor, 2-piece">
+		<!-- P. Evasion +4. -->
 		<icon>icon.armor_t65_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -400,21 +396,17 @@
 				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
+			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<PARALYZE>30</PARALYZE>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="4">
+			<effect name="StatUp" fromLevel="4" toLevel="4">
 				<amount>1</amount>
 				<stat>DEX</stat>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="4" toLevel="4">
-				<amount>44</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3521" toLevel="3" name="Set Effect: Avadon Light Armor, 2-piece">
-		<!-- <Set effect>. P. Critical Damage +30. Overweight limit +5759 -->
+	<skill id="3521" toLevel="3" name="Set Effect - Avadon Light Armor, 2-piece">
+		<!-- Weight limit +5759. -->
 		<icon>icon.armor_t67_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -424,25 +416,22 @@
 				<amount>5795</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalDamage" fromLevel="1" toLevel="3">
+			<effect name="CriticalDamage" fromLevel="2" toLevel="3">
 				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
-				<INFECTION>60</INFECTION>
+			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
+				<POISON>30</POISON>
+				<BLEED>30</BLEED>
 			</effect>
 			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
 				<amount>5.25</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
-				<amount>44</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3522" toLevel="4" name="Set Effect: Zubei's Robe, 2-piece">
-		<!-- <Set effect>. Max MP +102. MP Recovery Rate +5.26% -->
+	<skill id="3522" toLevel="4" name="Set Effect - Zubei Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t56_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -452,158 +441,123 @@
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MaxMp" fromLevel="1" toLevel="4">
+			<effect name="MaxMp" fromLevel="2" toLevel="4">
 				<amount>102</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
+			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<PARALYZE>30</PARALYZE>
 			</effect>
-			<effect name="MAtk" fromLevel="3" toLevel="4">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="MAtk" fromLevel="4" toLevel="4">
-				<amount>2</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3523" toLevel="3" name="Set Effect: Avadon Robe, 2-piece">
-		<!-- <Set effect>. Infection Resistance +60% -->
+	<skill id="3523" toLevel="3" name="Set Effect - Avadon Robe Armor, 2-piece">
+		<!-- Poison/ Bleed Resistance +60%. -->
 		<icon>icon.armor_t59_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="DefenceTrait" fromLevel="1" toLevel="3">
-				<INFECTION>60</INFECTION>
+				<POISON>60</POISON>
+				<BLEED>60</BLEED>
 			</effect>
 			<effect name="PhysicalDefence" fromLevel="2" toLevel="3">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="2" toLevel="3">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="3">
-				<amount>5</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3524" toLevel="4" name="Set Effect: Blue Wolf Heavy Armor, 2-piece">
-		<!-- <Set effect>. STR +3. CON -1. DEX -2. HP Recovery Rate +5.24% -->
+	<skill id="3524" toLevel="4" name="Set Effect - Blue Wolf Heavy Armor, 2-piece">
+		<!-- HP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_t68_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>3</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>-1</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>-2</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="4">
-				<amount>1</amount>
-				<stat>DEX</stat>
+			<effect name="HpRegen" fromLevel="1" toLevel="4">
+				<amount>5.24</amount>
+				<mode>PER</mode>
 			</effect>
 			<effect name="Speed" fromLevel="2" toLevel="4">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="4">
-				<amount>1</amount>
-				<stat>CON</stat>
-			</effect>
 			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<SHOCK>30</SHOCK>
 			</effect>
 			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
-				<stat>DEX</stat>
+				<amount>3</amount>
+				<stat>STR</stat>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="4" toLevel="4">
-				<amount>44</amount>
-				<mode>DIFF</mode>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-2</amount>
+				<stat>DEX</stat>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3525" toLevel="3" name="Set Effect: Doom Heavy Armor, 2-piece">
-		<!-- <Set effect>. STR -2. CON +3. Max HP +320 -->
+	<skill id="3525" toLevel="3" name="Set Effect - Doom Heavy Armor, 2-piece">
+		<!-- Max HP +320. -->
 		<icon>icon.armor_t71_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="3">
-				<amount>-2</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="3">
-				<amount>3</amount>
-				<stat>CON</stat>
-			</effect>
 			<effect name="MaxHp" fromLevel="1" toLevel="3">
 				<amount>320</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>1</amount>
-				<stat>STR</stat>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
 				<SLEEP>50</SLEEP>
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>1</amount>
+				<amount>-3</amount>
 				<stat>STR</stat>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
-				<amount>44</amount>
-				<mode>DIFF</mode>
+			<effect name="StatUp" fromLevel="3" toLevel="3">
+				<amount>3</amount>
+				<stat>CON</stat>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3526" toLevel="3" name="Set Effect: Wolf Light Armor, 2-piece">
-		<!-- <Set effect>. INT -2,. MEN +3. MP Recovery Rate +5.26% -->
+	<skill id="3526" toLevel="3" name="Set Effect - Blue Wolf Light Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t69_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="3">
-				<amount>3</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="3">
-				<amount>-2</amount>
-				<stat>INT</stat>
-			</effect>
 			<effect name="MpRegen" fromLevel="1" toLevel="3">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>1</amount>
+				<amount>3</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="2" toLevel="3">
+				<amount>-1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="2" toLevel="3">
+				<amount>-2</amount>
 				<stat>INT</stat>
 			</effect>
 			<effect name="PhysicalDefence" fromLevel="2" toLevel="3">
 				<amount>5.26</amount>
 				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>1</amount>
-				<stat>INT</stat>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
 				<SHOCK>30</SHOCK>
@@ -612,144 +566,108 @@
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
-				<amount>44</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3527" toLevel="3" name="Set Effect: Doom Light Armor, 2-piece">
-		<!-- <Set effect>. DEX +1. P. Atk. +2.7%. MP Recovery Rate +5.26% -->
+	<skill id="3527" toLevel="3" name="Set Effect - Doom Light Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t72_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="3">
-				<amount>1</amount>
-				<stat>DEX</stat>
-			</effect>
 			<effect name="MpRegen" fromLevel="1" toLevel="3">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PAtk" fromLevel="1" toLevel="3">
+			<effect name="PAtk" fromLevel="2" toLevel="3">
 				<amount>2.7</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>1</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
+			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
 				<SLEEP>50</SLEEP>
 				<HOLD>50</HOLD>
 			</effect>
 			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>1</amount>
+				<amount>3</amount>
 				<stat>DEX</stat>
-			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
-				<amount>44</amount>
-				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3528" toLevel="4" name="Set Effect: Blue Wolf Robe, 2-piece">
-		<!-- <Set effect>. INT -2. MEN -1. WIT +3. MP Recovery Rate +5.26% -->
+	<skill id="3528" toLevel="4" name="Set Effect - Blue Wolf Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t70_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>-2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>-1</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>3</amount>
-				<stat>WIT</stat>
-			</effect>
 			<effect name="MpRegen" fromLevel="1" toLevel="4">
 				<amount>5.26</amount>
 				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="4">
-				<amount>1</amount>
-				<stat>INT</stat>
 			</effect>
 			<effect name="MaxMp" fromLevel="2" toLevel="4">
 				<amount>206</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="4">
-				<amount>1</amount>
-				<stat>INT</stat>
-			</effect>
 			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<SHOCK>30</SHOCK>
 			</effect>
 			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
+				<amount>-2</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-1</amount>
 				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>3</amount>
+				<stat>WIT</stat>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3529" toLevel="4" name="Set Effect: Doom Robe, 2-piece">
-		<!-- <Set effect>. INT +2. MEN +1. WIT -3. MP Recovery Rate +5.26% -->
+	<skill id="3529" toLevel="4" name="Set Effect - Doom Robe, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t73_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>1</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="1" toLevel="4">
-				<amount>-3</amount>
-				<stat>WIT</stat>
-			</effect>
 			<effect name="MpRegen" fromLevel="1" toLevel="4">
 				<amount>5.26</amount>
 				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="4">
-				<amount>1</amount>
-				<stat>WIT</stat>
 			</effect>
 			<effect name="Speed" fromLevel="2" toLevel="4">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="4">
-				<amount>1</amount>
-				<stat>WIT</stat>
-			</effect>
 			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
 				<SLEEP>50</SLEEP>
 				<HOLD>50</HOLD>
 			</effect>
-			<effect name="MagicCriticalDamage" fromLevel="3" toLevel="4">
-				<amount>30</amount>
+			<effect name="Breath" fromLevel="3" toLevel="4">
+				<amount>200</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
 				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp" fromLevel="4" toLevel="4">
+				<amount>-3</amount>
 				<stat>WIT</stat>
+			</effect>
+			<effect name="MagicCriticalDamage" fromLevel="4" toLevel="4">
+				<amount>30</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3530" toLevel="4" name="Set Effect - Dark Crystal Heavy Armor, 2-piece">
-		<!-- HP Recovery Rate +5.24%. -->
+		<!-- HP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_t74_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -781,7 +699,7 @@
 		</effects>
 	</skill>
 	<skill id="3531" toLevel="3" name="Set Effect - Tallum Heavy Armor, 2-piece">
-		<!-- Overweight limit +5759. -->
+		<!-- Weight limit +5759. -->
 		<icon>icon.armor_t77_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -792,7 +710,8 @@
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
-				<INFECTION>80</INFECTION>
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
 			</effect>
 			<effect name="Speed" fromLevel="2" toLevel="3">
 				<amount>4</amount>
@@ -849,7 +768,7 @@
 		</effects>
 	</skill>
 	<skill id="3533" toLevel="3" name="Set Effect - Tallum Light Armor, 2-piece">
-		<!-- MP Recovery Rate +8%. -->
+		<!-- MP Recovery Bonus +8%. -->
 		<icon>icon.armor_t78_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -872,12 +791,13 @@
 				<stat>WIT</stat>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<INFECTION>80</INFECTION>
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3534" toLevel="4" name="Set Effect - Tallum Robe, 2-piece">
-		<!-- MP Recovery Rate +5.26%. -->
+	<skill id="3534" toLevel="4" name="Set Effect - Tallum Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t79_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -888,7 +808,8 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
-				<INFECTION>80</INFECTION>
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
 			</effect>
 			<effect name="MagicalDefence" fromLevel="3" toLevel="4">
 				<amount>8</amount>
@@ -909,7 +830,7 @@
 		</effects>
 	</skill>
 	<skill id="3535" toLevel="3" name="Set Effect - Dark Crystal Robe, 2-piece">
-		<!-- Speed +7. Decreases Casting Interruption Rate. -->
+		<!-- Speed +1. Decreases probability of magic being canceled due to damage received. -->
 		<icon>icon.armor_t76_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -944,8 +865,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3536" toLevel="3" name="Set Effect - Heavy Armor of Nightmare, 2-piece">
-		<!-- P. Accuracy +3, HP Recovery Rate +5.24%. -->
+	<skill id="3536" toLevel="3" name="Set Effect - Nightmare Heavy Armor, 2-piece">
+		<!-- P. Accuracy +3, HP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_t80_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -981,7 +902,7 @@
 		</effects>
 	</skill>
 	<skill id="3537" toLevel="3" name="Set Effect - Majestic Heavy Armor, 2-piece">
-		<!-- P. Accuracy +3, HP Recovery Rate +5.24%. -->
+		<!-- P. Accuracy +3, HP Recovery Bonus +5.24%. -->
 		<icon>icon.armor_t83_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1016,8 +937,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3538" toLevel="3" name="Set Effect - Light Armor of Nightmare, 2-piece">
-		<!-- MP Recovery Rate +5.26%. -->
+	<skill id="3538" toLevel="3" name="Set Effect - Nightmare Light Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t81_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1050,7 +971,7 @@
 		</effects>
 	</skill>
 	<skill id="3539" toLevel="3" name="Set Effect - Majestic Light Armor, 2-piece">
-		<!-- Overweight limit +5759, Overweight limit +3. -->
+		<!-- Weight Limit +5759, P. Accuracy +3 at night. -->
 		<icon>icon.armor_t84_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1089,8 +1010,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3540" toLevel="3" name="Set Effect - Robe of Nightmare, 2-piece">
-		<!-- MP Recovery Rate +5.26%. -->
+	<skill id="3540" toLevel="3" name="Set Effect - Nightmare Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +5.26%. -->
 		<icon>icon.armor_t82_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1122,8 +1043,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3541" toLevel="3" name="Set Effect - Majestic Robe, 2-piece">
-		<!-- MP Recovery Rate +8%. -->
+	<skill id="3541" toLevel="3" name="Set Effect - Majestic Robe Armor, 2-piece">
+		<!-- MP Recovery Bonus +8%. -->
 		<icon>icon.armor_t85_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1154,8 +1075,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3542" toLevel="9" name="Special Property: P. Critical Damage">
-		<!-- Increases P. Critical Damage. -->
+	<skill id="3542" toLevel="9" name="Special Ability: P. Critical Damage">
+		<!-- P. Critical Damage Boost -->
 		<icon>icon.skill1242</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -1164,9 +1085,9 @@
 			<value level="4">55</value>
 			<value level="5">58</value>
 			<value level="6">61</value>
-			<value level="7">63</value>
-			<value level="8">65</value>
-			<value level="9">67</value>
+			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="8">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="9">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1179,16 +1100,16 @@
 					<value level="4">269.91</value>
 					<value level="5">289.4</value>
 					<value level="6">306.42</value>
-					<value level="7">309.2</value>
-					<value level="8">312.56</value>
-					<value level="9">316.65</value>
+					<value level="7">306.42</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">306.42</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">306.42</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3543" toLevel="1" name="Set Effect: Hoplon">
-		<!-- <Set effect>. Shield Defense Rate +2.63% -->
+	<skill id="3543" toLevel="1" name="Equip Shield">
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1200,8 +1121,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3544" toLevel="1" name="Set Effect: Brigandine Shield">
-		<!-- <Set effect>. Max HP +20 -->
+	<skill id="3544" toLevel="1" name="Equip Shield">
+		<!-- Increases Max HP. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1213,8 +1134,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3545" toLevel="1" name="Set Effect: Chain Shield">
-		<!-- <Set effect>. Shield Defense Rate +5.26% -->
+	<skill id="3545" toLevel="1" name="Equip Shield">
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1226,8 +1147,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3546" toLevel="1" name="Set Effect: Compound Shield">
-		<!-- <Set effect>. M. Damage Resistance +3% -->
+	<skill id="3546" toLevel="1" name="Equip Shield">
+		<!-- Increases resistance to magic attack. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1239,8 +1160,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3547" toLevel="1" name="Set Effect: Full Plate Shield">
-		<!-- <Set effect>. Shield Defense Rate +5.26% -->
+	<skill id="3547" toLevel="1" name="Equip Shield">
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1252,8 +1173,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3548" toLevel="1" name="Set Effect: Avadon Shield">
-		<!-- <Set effect>. Shield Defense Rate +24% -->
+	<skill id="3548" toLevel="1" name="Equip Shield">
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1265,8 +1186,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3549" toLevel="1" name="Set Effect: Doom Shield">
-		<!-- <Set effect>. Shield Defense Rate +24% -->
+	<skill id="3549" toLevel="1" name="Equip Shield">
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1304,8 +1225,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3553" toLevel="4" name="Set Effect - Imperial Crusader Armor, 2-piece">
-		<!-- HP Recovery Rate +6%. -->
+	<skill id="3553" toLevel="4" name="Set Effect - Imperial Crusader, 2-piece">
+		<!-- HP Recovery Bonus +6%. -->
 		<icon>icon.armor_t88_u_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1350,8 +1271,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3555" toLevel="3" name="Set Effect - Draconic Leather Armor, 2-piece">
-		<!-- Overweight limit +5759, Max MP +289. -->
+	<skill id="3555" toLevel="3" name="Set Effect - Draconic Leather, 2-piece">
+		<!-- Weight limit +5759, Max MP +289. -->
 		<icon>icon.armor_t89_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1386,8 +1307,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3556" toLevel="3" name="Set Effect - Arcana Robe, 2-piece">
-		<!-- Overweight limit +5759, Speed +7. -->
+	<skill id="3556" toLevel="3" name="Set Effect - Major Arcana Robe, 2-piece">
+		<!-- Weight limit +5759, Speed +7. -->
 		<icon>icon.armor_t90_ul_i00</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -1470,17 +1391,30 @@
 		</effects>
 	</skill>
 	<skill id="3558" toLevel="15" name="Damaged Antharas' Earring">
-		<!-- <Effect>. Bleed Resistance +1%. Bleed Atk. Rate +1% -->
-		<icon>icon.accessory_earring_of_antaras_i00</icon>
+		<!-- Bleed Resistance/ Atk. Rate +1%. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_antaras_i00</value>
+			<value level="2">icon.accessory_earring_of_antaras_i00</value>
+			<value level="3">icon.accessory_earring_of_antaras_i00</value>
+			<value level="4">icon.accessory_earring_of_antaras_i00</value>
+			<value level="5">icon.accessory_earring_of_antaras_i00</value>
+			<value level="6">icon.accessory_earring_of_antaras_i00</value>
+			<value level="7">icon.accessory_earring_of_antaras_i00</value>
+			<value level="8">icon.accessory_earring_of_antaras_i00</value>
+			<value level="9">icon.accessory_earring_of_antaras_i00</value>
+			<value level="10">icon.accessory_earring_of_antaras_i00</value>
+			<value level="11">icon.accessory_earring_of_antaras_i00</value>
+			<value level="12">icon.accessory_earring_of_antaras_i00</value>
+			<value level="13">icon.accessory_earring_of_antaras_i01</value>
+			<value level="14">icon.accessory_earring_of_antaras_i02</value>
+			<value level="15">icon.accessory_earring_of_antaras_i04</value>
+		</icon>
+		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
-	</skill>
-	<skill id="3559" toLevel="11" name="Damaged Zaken's Earring">
-		<!-- Bleed Resistance +1%. -->
-		<icon>icon.accessory_earring_of_zaken_i00</icon>
-		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<INFECTION>
+			<effect name="AttackTrait">
+				<BLEED>
 					<value level="1">1</value>
 					<value level="2">1</value>
 					<value level="3">1</value>
@@ -1492,50 +1426,72 @@
 					<value level="9">10</value>
 					<value level="10">10</value>
 					<value level="11">10</value>
-				</INFECTION>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
+					<value level="12">10</value>
+					<value level="13">20</value>
+					<value level="14">30</value>
+					<value level="15">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
+				<DERANGEMENT>
 					<value level="8">3</value>
 					<value level="9">4</value>
 					<value level="10">5</value>
 					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">10</value>
+					<value level="14">20</value>
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
+				<SHOCK>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">10</value>
+					<value level="14">20</value>
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</SHOCK>
 			</effect>
-			<effect name="AttackTrait">
-				<INFECTION>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
+			<effect name="DefenceTrait">
+				<BLEED>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">6</value>
 					<value level="6">8</value>
 					<value level="7">10</value>
 					<value level="8">10</value>
 					<value level="9">10</value>
 					<value level="10">10</value>
 					<value level="11">10</value>
-				</INFECTION>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
+					<value level="12">10</value>
+					<value level="13">20</value>
+					<value level="14">30</value>
+					<value level="15">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
+				<DERANGEMENT>
 					<value level="8">3</value>
 					<value level="9">4</value>
 					<value level="10">5</value>
 					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">10</value>
+					<value level="14">20</value>
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
+				<SHOCK>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value>
+					<value level="13">10</value>
+					<value level="14">20</value>
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</SHOCK>
 			</effect>
-			<effect name="HealEffect">
+			<effect name="VampiricAttack">
 				<amount>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -1545,15 +1501,25 @@
 					<value level="6">0</value>
 					<value level="7">0</value>
 					<value level="8">0</value>
+					<value level="9">0</value>
+					<value level="10">0</value>
+					<value level="11">0</value>
+					<value level="12">2</value>
+					<value level="13">3</value>
+					<value level="14">6</value>
+					<value level="15">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<chance>80</chance>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
 					<value level="9">2</value>
 					<value level="10">2</value>
 					<value level="11">2</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>
-					<value level="11">18</value>
+					<value level="12">6</value>
+					<value level="13">10</value>
+					<value level="14">15</value>
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1561,6 +1527,10 @@
 				<amount>
 					<value level="10">-1</value>
 					<value level="11">-1</value>
+					<value level="12">-3</value>
+					<value level="13">-4</value>
+					<value level="14">-6</value>
+					<value level="15">-6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
@@ -1569,22 +1539,213 @@
 				<amount>
 					<value level="10">-1</value>
 					<value level="11">-1</value>
+					<value level="12">-3</value>
+					<value level="13">-4</value>
+					<value level="14">-6</value>
+					<value level="15">-6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
 			</effect>
-			<effect name="MagicMpCost">
+			<effect name="DamageShieldResist">
 				<amount>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
+					<value level="13">7</value>
+					<value level="14">15</value>
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="14">1</value>
+					<value level="15">1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="14">1</value>
+					<value level="15">1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3559" toLevel="15" name="Damaged Zaken's Earring">
+		<!-- Bleed Resistance +1%. -->
+		<icon>
+			<value level="1">icon.accessory_earring_of_zaken_i00</value>
+			<value level="2">icon.accessory_earring_of_zaken_i00</value>
+			<value level="3">icon.accessory_earring_of_zaken_i00</value>
+			<value level="4">icon.accessory_earring_of_zaken_i00</value>
+			<value level="5">icon.accessory_earring_of_zaken_i00</value>
+			<value level="6">icon.accessory_earring_of_zaken_i00</value>
+			<value level="7">icon.accessory_earring_of_zaken_i00</value>
+			<value level="8">icon.accessory_earring_of_zaken_i00</value>
+			<value level="9">icon.accessory_earring_of_zaken_i00</value>
+			<value level="10">icon.accessory_earring_of_zaken_i00</value>
+			<value level="11">icon.accessory_earring_of_zaken_i00</value>
+			<value level="12">icon.accessory_earring_of_zaken_i00</value>
+			<value level="13">icon.accessory_earring_of_zaken_i02</value>
+			<value level="14">icon.accessory_earring_of_zaken_i03</value>
+			<value level="15">icon.accessory_earring_of_zaken_i04</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="AttackTrait">
+				<BLEED>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
+				<DERANGEMENT>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+			</effect>
+			<effect name="DefenceTrait">
+				<BLEED>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
+				<DERANGEMENT>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
+				<SHOCK>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">4</value>
+					<value level="2">6</value>
+					<value level="3">8</value>
+					<value level="4">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
-				<magicType>3</magicType>
+			</effect>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="VampiricAttack" fromLevel="3" toLevel="15">
+				<amount>8</amount>
+				<chance>80</chance>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3560" toLevel="4" name="Orfen's Earring">
-		<!-- An earring imbued with Orfen's power. <Effect>. Max MP +19. Hold Atk. Rate +10%. Silence Atk. Rate +5%. Fear Atk. Rate +5%. Hold Resistance +10%. Silence Resistance +5%. Fear Resistance +5%. Received Healing +2%. Skill MP Consumption -2% -->
+		<!-- Hold Resistance and Atk. Rate +10%, Mental Resistance and Atk. Rate +5%, Healing Power +2%, Skill MP Consumption -2%. -->
 		<icon>
 			<value level="1">icon.accessory_earring_of_orfen_i00</value>
 			<value level="2">icon.accessory_earring_of_orfen_i02</value>
@@ -1596,31 +1757,31 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="DefenceTrait">
-				<FEAR>
+				<DERANGEMENT>
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="4">20</value>
-				</FEAR>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
 				<HOLD>
 					<value level="1">10</value>
 					<value level="2">15</value>
 					<value level="3">20</value>
-					<value level="4">30</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</HOLD>
 			</effect>
 			<effect name="AttackTrait">
-				<FEAR>
+				<DERANGEMENT>
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="4">20</value>
-				</FEAR>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
 				<HOLD>
 					<value level="1">10</value>
 					<value level="2">15</value>
 					<value level="3">20</value>
-					<value level="4">30</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</HOLD>
 			</effect>
 			<effect name="HealEffect">
@@ -1628,7 +1789,7 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">12</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1637,7 +1798,7 @@
 					<value level="1">2</value>
 					<value level="2">3</value>
 					<value level="3">5</value>
-					<value level="4">10</value>
+					<value level="4">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1646,73 +1807,193 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3561" toLevel="11" name="Damaged Baium's Ring">
+	<skill id="3561" toLevel="15" name="Damaged Baium's Ring">
 		<!-- Bleed Resistance +1%. -->
-		<icon>icon.accessory_ring_of_baium_i00</icon>
+		<icon>
+			<value level="1">icon.accessory_ring_of_baium_i00</value>
+			<value level="2">icon.accessory_ring_of_baium_i00</value>
+			<value level="3">icon.accessory_ring_of_baium_i00</value>
+			<value level="4">icon.accessory_ring_of_baium_i00</value>
+			<value level="5">icon.accessory_ring_of_baium_i00</value>
+			<value level="6">icon.accessory_ring_of_baium_i00</value>
+			<value level="7">icon.accessory_ring_of_baium_i00</value>
+			<value level="8">icon.accessory_ring_of_baium_i00</value>
+			<value level="9">icon.accessory_ring_of_baium_i00</value>
+			<value level="10">icon.accessory_ring_of_baium_i00</value>
+			<value level="11">icon.accessory_ring_of_baium_i00</value>
+			<value level="12">icon.accessory_ring_of_baium_i00</value>
+			<value level="13">icon.accessory_ring_of_baium_i02</value>
+			<value level="14">icon.accessory_ring_of_baium_i03</value>
+			<value level="15">icon.accessory_ring_of_baium_i04</value>
+		</icon>
+		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait">
-				<INFECTION>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">3</value>
-					<value level="6">4</value>
-					<value level="7">5</value>
-					<value level="8">5</value>
-					<value level="9">5</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-				</INFECTION>
+			<effect name="AttackTrait">
 				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">3</value>
-					<value level="9">4</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</SHOCK>
+				<BLEED>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
+			</effect>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</SHOCK>
+				<BLEED>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</BLEED>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>
-					<value level="10">15</value>
-					<value level="11">15</value>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
 				<amount>
-					<value level="10">15</value>
-					<value level="11">15</value>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">4</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Accuracy">
+			<effect name="MagicalSkillPower">
 				<amount>
-					<value level="9">1</value>
-					<value level="10">1</value>
-					<value level="11">1</value>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
-				<mode>DIFF</mode>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MagicAccuracy">
+			<effect name="PhysicalSkillPower">
 				<amount>
-					<value level="9">1</value>
-					<value level="10">1</value>
-					<value level="11">1</value>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="6">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="8">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="9">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="10">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="11">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="12">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="13">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="14">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
-				<mode>DIFF</mode>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage" fromLevel="3" toLevel="15">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage" fromLevel="3" toLevel="15">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3562" toLevel="4" name="Queen Ant's Ring">
-		<!-- A ring imbued with Queen Ant's power. <Effect>. Max MP +9. P. Accuracy +1. M. Accuracy +1. P. Atk. +4%. M. Atk. +4%. Poison Atk. Rate +4%. Poison Resistance +10% -->
+		<!-- Poison Resistance and Atk. Rate +10%, P./ M. Accuracy +1, P./ M. Atk. +4%. -->
 		<icon>
 			<value level="1">icon.accessory_ring_of_queen_ant_i00</value>
 			<value level="2">icon.accessory_ring_of_queen_ant_i02</value>
@@ -1724,27 +2005,27 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="AttackTrait">
-				<INFECTION>
-					<value level="1">4</value>
-					<value level="2">6</value>
-					<value level="3">8</value>
-					<value level="4">10</value>
-				</INFECTION>
-			</effect>
-			<effect name="DefenceTrait">
-				<INFECTION>
+				<POISON>
 					<value level="1">10</value>
 					<value level="2">15</value>
 					<value level="3">20</value>
-					<value level="4">30</value>
-				</INFECTION>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</POISON>
+			</effect>
+			<effect name="DefenceTrait">
+				<POISON>
+					<value level="1">10</value>
+					<value level="2">15</value>
+					<value level="3">20</value>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</POISON>
 			</effect>
 			<effect name="Accuracy">
 				<amount>
 					<value level="1">1</value>
 					<value level="2">2</value>
 					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1753,7 +2034,7 @@
 					<value level="1">1</value>
 					<value level="2">2</value>
 					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1762,7 +2043,7 @@
 					<value level="1">4</value>
 					<value level="2">6</value>
 					<value level="3">10</value>
-					<value level="4">10</value>
+					<value level="4">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1771,7 +2052,7 @@
 					<value level="1">4</value>
 					<value level="2">6</value>
 					<value level="3">10</value>
-					<value level="4">10</value>
+					<value level="4">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1780,7 +2061,7 @@
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">10</value>
-					<value level="4">15</value>
+					<value level="4">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1789,14 +2070,14 @@
 					<value level="1">0</value>
 					<value level="2">0</value>
 					<value level="3">10</value>
-					<value level="4">15</value>
+					<value level="4">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3563" toLevel="4" name="Ring of Core">
-		<!-- A ring imbued with Core's power. <Effect>. Max MP +9. P. Evasion +1. M. Evasion +1. Silence Atk. Rate +10%. Fear Atk. Rate +10%. Silence Resistance +10%. Fear Resistance +10%. Received damage -2% -->
+		<!-- Mental Resistance and Atk. Rate +10%, P./ M. Evasion +1, Received Damage -2%. -->
 		<icon>
 			<value level="1">icon.accessory_ring_of_core_i00</value>
 			<value level="2">icon.accessory_ring_of_core_i02</value>
@@ -1807,37 +2088,28 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">15</value>
-					<value level="3">21</value>
-					<value level="4">30</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
 			<effect name="AttackTrait">
-				<FEAR>
+				<DERANGEMENT>
 					<value level="1">10</value>
 					<value level="2">15</value>
 					<value level="3">20</value>
-					<value level="4">20</value>
-				</FEAR>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
 			</effect>
 			<effect name="DefenceTrait">
-				<SLEEP>
+				<DERANGEMENT>
 					<value level="1">10</value>
 					<value level="2">15</value>
 					<value level="3">20</value>
-					<value level="4">20</value>
-				</SLEEP>
+					<value level="4">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+				</DERANGEMENT>
 			</effect>
 			<effect name="PhysicalEvasion">
 				<amount>
 					<value level="1">1</value>
 					<value level="2">2</value>
 					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1846,7 +2118,7 @@
 					<value level="1">1</value>
 					<value level="2">2</value>
 					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1855,7 +2127,7 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">10</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
@@ -1865,7 +2137,7 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">10</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<type>ENEMY_ALL</type>
 				<mode>PER</mode>
@@ -1875,7 +2147,7 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">10</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1884,7 +2156,7 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">10</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -1893,13 +2165,13 @@
 					<value level="1">2</value>
 					<value level="2">4</value>
 					<value level="3">6</value>
-					<value level="4">10</value>
+					<value level="4">6</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3571" toLevel="2" name="Special Property: Critical Stun">
+	<skill id="3571" toLevel="2" name="Special Ability: Critical Stun">
 		<!-- Immobilizes and stuns target. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -1932,7 +2204,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="3574" toLevel="3" name="Special Property: Critical Slow">
+	<skill id="3574" toLevel="3" name="Special Ability: Critical Slow">
 		<!-- Temporarily target's Speed -30%. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>3</abnormalLevel>
@@ -1967,8 +2239,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3577" toLevel="3" name="Special Property: Magic Hold">
-		<!-- Holds the target. -->
+	<skill id="3577" toLevel="3" name="Special Ability: Magic Hold">
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1997,7 +2269,7 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="3578" toLevel="1" name="Special Property: Infinity Sword">
+	<skill id="3578" toLevel="1" name="Special Ability: Infinity Sword">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, Atk. Speed +5%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_sword_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2039,7 +2311,7 @@
 		</effects>
 	</skill>
 	<skill id="3579" toLevel="1" name="Infinity Power - Reflect">
-		<!-- For 5 min., reflects 8% of the received damage back to the enemy. -->
+		<!-- For 5 min., returns 8% of damage received by the target back to the enemy. -->
 		<icon>icon.skill0086</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2060,7 +2332,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3580" toLevel="1" name="Special Property: Infinity Axe">
+	<skill id="3580" toLevel="1" name="Special Ability: Infinity Axe">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, Atk. Speed +5%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_axe_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2102,8 +2374,7 @@
 		</effects>
 	</skill>
 	<skill id="3581" toLevel="1" name="Infinity Power - Tenacity">
-		<!-- For 2 min. returns 10% of the received damage back to the enemy. Recovers 460 HP. -->
-		<icon>icon.skill0000</icon>
+		<!-- For $s1 returns $s2 of the received damage back to the enemy. Recovers $s3 HP. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<operateType>A2</operateType>
@@ -2127,7 +2398,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3582" toLevel="1" name="Special Property: Infinity Slasher">
+	<skill id="3582" toLevel="1" name="Special Ability: Infinity Slasher">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, P. Critical Damage +10%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_two_handed_sword_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2169,7 +2440,7 @@
 		</effects>
 	</skill>
 	<skill id="3584" toLevel="1" name="Infinity Power - Protection">
-		<!-- For 2 min., blocks debuffs (up to 5). -->
+		<!-- For 2 min. makes you immune to debuffs 5 times. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
@@ -2186,7 +2457,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3585" toLevel="1" name="Special Property: Infinity Dual Swords">
+	<skill id="3585" toLevel="1" name="Special Ability: Infinity Dualsword">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +5%, P. Critical Damage +5%, Atk. Spd. +5%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_dualsword_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2232,7 +2503,7 @@
 		</effects>
 	</skill>
 	<skill id="3586" toLevel="1" name="Infinity Power - Refresh">
-		<!-- For 5 min. decreases cooldown for all skills (except those with fixed cooldown). -->
+		<!-- For 5 min. Skill Cooldown -10% (except for the skills with a fixed cooldown). -->
 		<icon>icon.skill3123</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2261,7 +2532,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3587" toLevel="1" name="Special Property: Infinity Fighter">
+	<skill id="3587" toLevel="1" name="Special Ability: Infinity Fighter">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Critical Rate +20, Atk. Spd. +5%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_fist_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2325,8 +2596,8 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="3589" toLevel="1" name="Special Property: Infinity Dagger">
-		<!-- Max HP +15%, Max MP +25%, Max CP +30%, M. Critical Rate +20, P. Critical Damage +20%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
+	<skill id="3589" toLevel="1" name="Special Ability: Infinity Dagger">
+		<!-- Max HP +15%, Max MP +25%, Max CP +30%, P. Critical Rate +20, P. Critical Damage +20%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_dagger_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
@@ -2367,7 +2638,7 @@
 		</effects>
 	</skill>
 	<skill id="3590" toLevel="1" name="Infinity Power - Immortal">
-		<!-- For 5 min., Vital Point Attack Rate +20%. -->
+		<!-- For 5 min., chance of deadly attack +20%. -->
 		<icon>icon.skill0410</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2385,7 +2656,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3591" toLevel="1" name="Special Property: Infinity Spear">
+	<skill id="3591" toLevel="1" name="Special Ability: Infinity Spear">
 		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, P. Critical Damage +10%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_pole_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2426,7 +2697,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3593" toLevel="1" name="Special Property: Infinity Bow">
+	<skill id="3593" toLevel="1" name="Special Ability: Infinity Bow">
 		<!-- Max HP +15%, Max MP +25%, Max CP +30%, MP Consumption -5%, Atk. Spd. +10%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_bow_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
@@ -2493,8 +2764,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3595" toLevel="1" name="Special Property: Infinity Scepter">
-		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Atk. +10%, M. Skill Critical Damage +10%. PvP Damage +5%. -->
+	<skill id="3595" toLevel="1" name="Special Ability: Infinity Scepter">
+		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Atk. +10%, M. Critical Damage +10%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_staff_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
@@ -2535,7 +2806,7 @@
 		</effects>
 	</skill>
 	<skill id="3596" toLevel="1" name="Infinity Power - Vampiric Mana">
-		<!-- With a certain chance, absorbs 3% of the inflicted damage as MP. Duration: 5 min. -->
+		<!-- For 5 min. recovers MP, equal to 3% of inflicted damage with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2553,8 +2824,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3597" toLevel="1" name="Special Property: Infinity Rod">
-		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Skill Critical Rate +20, Casting Spd. +5%. PvP Damage +5%. -->
+	<skill id="3597" toLevel="1" name="Special Ability: Infinity Rod">
+		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Critical Rate +20, Casting Spd. +5%. Inflicts additional damage during PvP by 5%, grants weapon with special effects. -->
 		<icon>icon.weapon_the_mace_of_hero_i00</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
@@ -2596,7 +2867,6 @@
 	</skill>
 	<skill id="3598" toLevel="1" name="Infinity Power - Mana Limit">
 		<!-- For 30 sec. magic skills don't consume MP. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<operateType>A2</operateType>
@@ -2625,8 +2895,8 @@
 		</effects>
 	</skill>
 	<skill id="3599" toLevel="1" name="Polearm Multi-attack">
-		<!-- Allows to attack multiple opponents, when using a spear. <Low HP/ MP absorption, when using a spear> -->
-		<icon>icon.skill0215</icon>
+		<!-- Enables the character to attack multiple opponents. -->
+		<icon>icon.skill0216</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>

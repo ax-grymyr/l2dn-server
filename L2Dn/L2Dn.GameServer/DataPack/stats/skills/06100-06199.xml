@@ -2,7 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6100" toLevel="3" name="Turkey's Choice - Scissors">
 		<!-- Turkey's Choice - Scissors. -->
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -14,7 +13,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6103" toLevel="5" name="Showdown with the Turkey - 1st Win">
-		<!-- 1st win. -->
+		<!-- $s1st win. -->
 		<icon>
 			<value level="1">icon.xmas_pcwin1_i00</value>
 			<value level="2">icon.xmas_pcwin2_i00</value>
@@ -45,7 +44,6 @@
 	</skill>
 	<skill id="6104" toLevel="1" name="Event Cancel">
 		<!-- Reset score. -->
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
@@ -56,7 +54,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6105" toLevel="1" name="Turkey's Mistake">
-		<!-- The stupid turkey's mistake. For 1 h., Max HP +10%, Max MP +10%, Max CP +10%, Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, M. Skill Critical Rate +20. -->
+		<!-- The stupid turkey's mistake. For 1 h., Max HP +10%, Max MP +10%, Max CP +10%, Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, M. Critical Rate +20. -->
 		<icon>icon.turkey_buff_i00</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -222,7 +220,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6114" toLevel="1" name="Winter Holiday Blessing - Town of Rune">
+	<skill id="6114" toLevel="1" name="Winter Holiday Blessing - Rune">
 		<!-- Holiday Blessing - Registered in Town of Rune territory. If the corresponding territory Santa is rescued, you get the chance to receive a gift from Santa. -->
 		<icon>icon.skill5762</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -260,7 +258,6 @@
 	</skill>
 	<skill id="6116" toLevel="1" name="Attack Turkey">
 		<!-- Attacks the turkey. -->
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -272,7 +269,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6117" toLevel="3" name="Choice - Scissors">
-		<!-- You have selected Scissors. You cannot move for 30 sec. -->
+		<!-- You have selected Scissors. You cannot move for $s1. -->
 		<icon>
 			<value level="1">icon.xmas_gawi_i00</value>
 			<value level="2">icon.xmas_bawi_i00</value>
@@ -307,7 +304,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="6119" toLevel="1" name="Blessing of Plenty">
+	<skill id="6119" toLevel="1" name="Blessing of Abundance">
 		<!-- Grants for 1 h. the following effects: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk. -->
 		<icon>icon.skill5662</icon>
 		<operateType>A1</operateType>
@@ -315,8 +312,8 @@
 		<hitTime>200</hitTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
-	<skill id="6120" toLevel="1" name="Christmas Gift">
-		<!-- For 1 h., Max HP +10%, Max MP +10%, Max CP +10%, Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, M. Skill Critical Rate +2. -->
+	<skill id="6120" toLevel="1" name="Santa's Reward">
+		<!-- For 1 h., Max HP +10%, Max MP +10%, Max CP +10%, Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, M. Critical Rate +2. -->
 		<icon>icon.etc_pi_gift_box_i04</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -373,7 +370,7 @@
 		</effects>
 	</skill>
 	<skill id="6124" toLevel="1" name="Agathion Cute Trick - Neolithica">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -387,7 +384,7 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="6125" toLevel="1" name="Cubic Paralysis">
+	<skill id="6125" toLevel="1" name="Paralysis">
 		<!-- Paralyzed and unable to move momentarily. -->
 		<icon>icon.skill1170</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -432,7 +429,6 @@
 		</effects>
 	</skill>
 	<skill id="6127" toLevel="1" name="Anti-limit">
-		<icon>icon.skill0000</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -442,8 +438,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6128" toLevel="1" name="Cow's Rage">
-		<icon>icon.skill0000</icon>
+	<skill id="6128" toLevel="1" name="Presentation - Cow Rage">
 		<hitTime>3000</hitTime>
 		<magicLevel>76</magicLevel>
 		<operateType>A1</operateType>
@@ -505,7 +500,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6131" toLevel="1" name="Decrease Speed">
-		<!-- Mutant Curse: Immediately target's Speed -10%. -->
+		<!-- Mutant Curse: Speed -8%. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -521,7 +516,6 @@
 		<mpConsume>12</mpConsume>
 		<reuseDelay>8000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<hitCancelTime>1.5</hitCancelTime>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
@@ -530,7 +524,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6132" toLevel="1" name="Decrease Atk. Spd.">
-		<!-- Mutant Curse: Immediately Atk. Spd. -17%. -->
+		<!-- Mutant Curse: Atk. Spd. -8%. -->
 		<icon>icon.skill4038</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -546,7 +540,6 @@
 		<mpConsume>13</mpConsume>
 		<reuseDelay>8000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
@@ -554,7 +547,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6133" toLevel="1" name="Mysterious Effect">
-		<!-- Increases your head's size. -->
+		<!-- The target's head is enlarged. -->
 		<icon>icon.skill2513</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
@@ -622,8 +615,8 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6136" toLevel="1" name="Agathion Chuchu's Cute Trick">
-		<!-- See the summoned agathion perform cute tricks. -->
+	<skill id="6136" toLevel="1" name="Agathion Cute Trick - Juju">
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -638,8 +631,8 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
-	<skill id="6137" toLevel="1" name="Agathion Chuchu - Mysterious Effect">
-		<!-- Increases your head's size. -->
+	<skill id="6137" toLevel="1" name="Agathion Juju - Mysterious Effect">
+		<!-- The target's head is enlarged. -->
 		<icon>icon.skill2513</icon>
 		<abnormalLevel>0</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -659,8 +652,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6138" toLevel="1" name="Agathion Chuchu - Large Firecracker">
-		<!-- Ignites firecrackers. -->
+	<skill id="6138" toLevel="1" name="Agathion Juju - Large Firecracker">
+		<!-- Can set off large firecrackers. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -673,7 +666,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6139" toLevel="1" name="Fake Tears">
-		<!-- For 10 min., weapon appearances change through the effect of the "Fake Tears" that were scattered by "Pierre Baguette." But, weapons don't change their abilities. -->
+		<!-- For 10 min., weapon appearances change through the effect of the "Fake Tears" that were scattered by "Pierre Baguette." But weapons don't change their abilities. -->
 		<icon>icon.etc_water_of_silen_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -694,7 +687,6 @@
 		<affectObject>ALL</affectObject>
 	</skill>
 	<skill id="6140" toLevel="3" name="Bog Stride">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -714,7 +706,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6141" toLevel="1" name="Source of Marsh">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>-1</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
@@ -730,7 +721,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6142" toLevel="3" name="Tar Trap">
-		<!-- You are covered in hot and sticky tar. Your Speed -30% for 5 min. P. Def. and P. Evasion -10%. -->
+		<!-- You are covered in hot and sticky tar. Your Speed -$s2 for $s1. P. Def. and P. Evasion -$s3. -->
 		<icon>icon.skill0770</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -786,7 +777,6 @@
 		</effects>
 	</skill>
 	<skill id="6143" toLevel="1" name="Ancient Beam">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>82</magicLevel>
@@ -801,7 +791,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6144" toLevel="1" name="Ancient Beam">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>82</magicLevel>
@@ -816,7 +805,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6145" toLevel="1" name="Earth Wyrm's Evil Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -832,7 +820,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6146" toLevel="1" name="Forfeiture of Will">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
@@ -849,7 +836,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6147" toLevel="1" name="Kasha's Divine Protection">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>DMG_SHIELD</abnormalType>
@@ -900,7 +886,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>1.5</hitCancelTime>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1014,7 +1000,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6152" toLevel="4" name="Kasha's Yearning">
-		<!-- Kasha's yearning. Increases P. Atk. -->
+		<!-- Kasha's Yearning. P. Atk. increases. -->
 		<icon>
 			<value level="1">icon.skill6152_1</value>
 			<value level="2">icon.skill6152_2</value>
@@ -1093,7 +1079,7 @@
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1129,7 +1115,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
@@ -1192,7 +1178,7 @@
 		</effects>
 	</skill>
 	<skill id="6166" toLevel="1" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>2</abnormalTime>
@@ -1319,7 +1305,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6169" toLevel="1" name="Shyeed's Rage">
+	<skill id="6169" toLevel="1" name="Shyeed's Fury">
 		<!-- Shyeed's cries continue to be heard. Nearby monsters seem to get stronger. -->
 		<icon>icon.skill6169</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -1335,7 +1321,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6170" toLevel="1" name="Shyeed's Rage">
+	<skill id="6170" toLevel="1" name="Shyeed's Fury">
 		<icon>icon.skill6169</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -1415,7 +1401,6 @@
 		</effects>
 	</skill>
 	<skill id="6172" toLevel="1" name="Presentation - Tyranno">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>SIGNAL_A</abnormalType>
@@ -1438,7 +1423,6 @@
 		</effects>
 	</skill>
 	<skill id="6173" toLevel="1" name="Presentation - Memorial Service for Repose">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>20000</hitTime>
@@ -1451,7 +1435,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6174" toLevel="1" name="Presentation - Incense for Relic">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1463,7 +1446,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6175" toLevel="1" name="Presentation - High Ranking Dawn Priest's Prayer">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>15000</hitTime>
@@ -1476,7 +1458,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6176" toLevel="1" name="Presentation - Dawn's Seal Stone">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1488,7 +1469,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6177" toLevel="1" name="Presentation - Anakim's Message">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>6000</hitTime>
@@ -1501,7 +1481,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6178" toLevel="1" name="Presentation - Ultimate Seal Motion1">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1513,7 +1492,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6179" toLevel="1" name="Presentation - Ultimate Seal Motion2">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1525,7 +1503,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6180" toLevel="1" name="Presentation - Lilith Presentation1">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<hitTime>12000</hitTime>
@@ -1538,7 +1515,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6181" toLevel="1" name="Presentation - Lilith Presentation2">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1550,7 +1526,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6182" toLevel="1" name="Presentation - Lilith Presentation3">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1562,7 +1537,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6183" toLevel="1" name="Presentation - Lilith Presentation4">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1574,7 +1548,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6184" toLevel="1" name="Presentation - Anakim's Presentation1">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1586,7 +1559,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6185" toLevel="1" name="Presentation - Anakim's Presentation2">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1598,7 +1570,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6186" toLevel="1" name="Presentation - Anakim's Presentation3">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1610,7 +1581,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6187" toLevel="1" name="Presentation - Lilith Battle">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1624,7 +1594,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6188" toLevel="1" name="Presentation - Lilith' Steward Battle1">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1637,7 +1606,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6189" toLevel="1" name="Presentation - Lilith' Steward Battle2">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1647,12 +1615,11 @@
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6190" toLevel="1" name="Presentation - Lilith' Bodyguards Battle1">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1667,7 +1634,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6191" toLevel="1" name="Presentation - Anakim Battle">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1680,7 +1646,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6192" toLevel="1" name="Presentation - Anakim's Guardian Battle1">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1694,7 +1659,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6193" toLevel="1" name="Presentation - Anakim's Guardian Battle2">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1708,7 +1672,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6194" toLevel="1" name="Presentation - Anakim's Royal Guard Battle">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1722,7 +1685,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6195" toLevel="1" name="Presentation - Anakim's Executor Battle">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1736,7 +1698,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6197" toLevel="1" name="Agathion Cute Trick - Oink Oink">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1751,7 +1713,7 @@
 		</conditions>
 	</skill>
 	<skill id="6198" toLevel="1" name="Agathion Cute Trick - Light of the Dawn">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>55</magicLevel>
@@ -1767,7 +1729,6 @@
 	</skill>
 	<skill id="6199" toLevel="7" name="Tail Strike">
 		<!-- Tail Strike -->
-		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>
 			<value level="1">-1044</value>

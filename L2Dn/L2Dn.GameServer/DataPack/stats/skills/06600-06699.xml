@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6600" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -104,7 +103,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6601" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -207,7 +205,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6602" toLevel="28" name="Earth Attack">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -310,7 +307,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6603" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -413,7 +409,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6604" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -516,7 +511,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6605" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -619,7 +613,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6606" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -724,7 +717,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6607" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -829,7 +821,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6608" toLevel="28" name="Earth Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -934,7 +925,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6609" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1037,7 +1027,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6610" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1140,7 +1129,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6611" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1243,7 +1231,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6612" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1348,7 +1335,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6613" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1453,7 +1439,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6614" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1558,7 +1543,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6615" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1661,7 +1645,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6616" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1764,7 +1747,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6617" toLevel="28" name="Earth Magic">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1866,8 +1848,8 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="6618" toLevel="7" name="Maguen's Strike">
-		<!-- For 10 sec., Speed -50%. -->
+	<skill id="6618" toLevel="7" name="Maguen Strike">
+		<!-- For $s1, Speed -$s2. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1921,8 +1903,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6619" toLevel="7" name="Maguen's Power Strike">
-		<!-- For 10 sec., Speed -90%. -->
+	<skill id="6619" toLevel="7" name="Maguen Power Strike">
+		<!-- For $s1, Speed -$s2. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1977,8 +1959,7 @@
 		</effects>
 	</skill>
 	<skill id="6620" toLevel="7" name="Maguen Plasma">
-		<!-- Increases P./ M. Atk. -->
-		<icon>icon.skill0000</icon>
+		<!-- P. Atk. and M. Atk. are increased. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>IMPROVE_MA_MD_UP</abnormalType>
@@ -2026,7 +2007,6 @@
 	</skill>
 	<skill id="6621" toLevel="7" name="Maguen Plasma">
 		<!-- Increases P./ M. Atk. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>IMPROVE_MA_MD_UP</abnormalType>
@@ -2073,7 +2053,7 @@
 		</effects>
 	</skill>
 	<skill id="6622" toLevel="1" name="Stun">
-		<!-- For 20 sec. immobilizes and stuns the target, target's Received P. Critical Rate +50%. -->
+		<!-- For 20 sec. immobilizes and stuns target, P. Critical Rate +50%. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -2105,7 +2085,6 @@
 		</effects>
 	</skill>
 	<skill id="6623" toLevel="1" name="Fungus Herb">
-		<icon>icon.skill0000</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>84</magicLevel>
 		<operateType>A1</operateType>
@@ -2118,7 +2097,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6624" toLevel="1" name="Stun">
-		<!-- For 9 sec. immobilizes and stuns the target, target's Received P. Critical Rate +50%. -->
+		<!-- For 9 sec. immobilizes and stuns target, P. Critical Rate +50%. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -2137,7 +2116,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6625" toLevel="1" name="Energy of Life">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2156,7 +2134,6 @@
 		</effects>
 	</skill>
 	<skill id="6626" toLevel="1" name="Major Energy of Life">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2175,7 +2152,6 @@
 		</effects>
 	</skill>
 	<skill id="6627" toLevel="1" name="Superior Energy of Life">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2194,7 +2170,6 @@
 		</effects>
 	</skill>
 	<skill id="6628" toLevel="1" name="Energy of Mana">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2213,7 +2188,6 @@
 		</effects>
 	</skill>
 	<skill id="6629" toLevel="1" name="Major Energy of Mana">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2232,7 +2206,6 @@
 		</effects>
 	</skill>
 	<skill id="6630" toLevel="1" name="Superior Energy of Mana">
-		<icon>icon.skill0000</icon>
 		<castRange>2000</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2373,7 +2346,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6636" toLevel="1" name="Energy of Speed">
+	<skill id="6636" toLevel="1" name="Energy of Movement Speed">
 		<!-- Temporarily Speed +33. -->
 		<icon>icon.etc_move_herb_i00</icon>
 		<abnormalInstant>true</abnormalInstant>
@@ -2401,7 +2374,7 @@
 		</effects>
 	</skill>
 	<skill id="6637" toLevel="1" name="Energy of HP Drain">
-		<!-- Temporarily increases the amount of HP restored while absorbing part of the inflicted damage as HP. -->
+		<!-- Temporarily increases the ability to restore some HP from the damage inflicted on the enemy temporarily with a certain probability. -->
 		<icon>icon.skill6637</icon>
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLevel>4</abnormalLevel>
@@ -2432,7 +2405,7 @@
 		</effects>
 	</skill>
 	<skill id="6638" toLevel="1" name="Mysterious Aura">
-		<!-- Increases your head's size. -->
+		<!-- The target's head is enlarged. -->
 		<icon>icon.skill2513</icon>
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLevel>1</abnormalLevel>
@@ -2496,7 +2469,6 @@
 		</effects>
 	</skill>
 	<skill id="6641" toLevel="1" name="Holy Ball">
-		<icon>icon.skill0000</icon>
 		<castRange>650</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2521,7 +2493,6 @@
 		</effects>
 	</skill>
 	<skill id="6642" toLevel="1" name="Dash">
-		<icon>icon.skill0000</icon>
 		<castRange>650</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -2548,7 +2519,6 @@
 		</effects>
 	</skill>
 	<skill id="6643" toLevel="1" name="Holy Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -2570,15 +2540,14 @@
 		</effects>
 	</skill>
 	<skill id="6644" toLevel="1" name="Ice Queen Freya">
-		<!-- A creature created by awakening the ice witch's soul in Maliss' body. Sirra's Frozen Core was used for the ritual, however, it has not been completed. -->
+		<!-- Once known as friendly and kind, Princess Felicia was the darling of the kingdom. until she was betrayed and exiled for crimes she did not commit. Through the trickery of those rebels who would see her kingdom fall, Felicia was touched by the power of ice and was henceforth known as Freya. Fueled by hatred, she now maliciously wields the power of ice in hopes of destroying the land she once called home. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6645" toLevel="1" name="Cooker Invincibility On">
-		<!-- Invincible to basic attacks, skills and debuffs. -->
-		<icon>icon.skill0000</icon>
+		<!-- Invincibility to regular hits and skills, as well as debuffs. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -2593,7 +2562,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6646" toLevel="1" name="Cooker Invincibility Off">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2601,8 +2569,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6647" toLevel="1" name="Presentation - Frozen Labyrinth' Knight">
-		<icon>icon.skill0000</icon>
+	<skill id="6647" toLevel="1" name="Presentation - Ice Knight">
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2611,7 +2578,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6648" toLevel="1" name="Komodo Heal">
-		<icon>icon.skill0000</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>84</magicLevel>
 		<operateType>A1</operateType>
@@ -2624,7 +2590,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6650" toLevel="1" name="Tacrakahn's Alienation">
-		<!-- All actions are sealed by Taklacan's special ability. -->
+		<!-- All actions are sealed by Tacrakahn's special ability. Impossible to dispel. -->
 		<icon>icon.skill4111</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2643,7 +2609,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6651" toLevel="1" name="Dopagen's Alienation">
-		<!-- All actions are sealed by Dopagen's special ability. -->
+		<!-- All actions are sealed by Dopagen's special ability. Impossible to dispel. -->
 		<icon>icon.skill4111</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2662,34 +2628,32 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6652" toLevel="1" name="Raid Boss (Lv. 89)">
-		<!-- Head of the Bistakon, he rose to power due to his physical prowess. At odds with Kokracon and Reptilikon, but maintains the balance of power. -->
+		<!-- Head of the Bistakon, a race that is one of Istina's numerous descendants. He became the head of the race through physical strength and superior power. They are enemies with the Kokracon and Reptilikon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6653" toLevel="1" name="Raid Boss (Lv. 89)">
-		<!-- Head of the Reptilikon, he boasts perfect defense, but is weak against Treykan. At odds with Kokracon and Bistakon, but maintains the balance of power. -->
+		<!-- Head of the Leptilikon, a race that is one of Istina's numerous descendants. He boasts perfect defense, but is weak against Treykan. They are enemies with the Kokracon and Bistakon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6654" toLevel="1" name="Raid Boss (Lv. 89)">
-		<!-- Head of the Kokracon, he has exceptional intelligence among his race. At odds with Reptilikon and Bistakon, but maintains the balance of power. -->
+		<!-- Head of the Kokracon, a race that is one of Istina's numerous descendants. He has exceptional intelligence among his race. They are enemies with the Bistakon and Leptilikon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6655" toLevel="1" name="Tarask's Carapace">
-		<icon>icon.skill0000</icon>
+	<skill id="6655" toLevel="1" name="Tarask Carapace">
 		<magicLevel>99</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6656" toLevel="1" name="Lavasaurus Alpha Attack">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>99</magicLevel>
 		<operateType>A1</operateType>
@@ -2706,7 +2670,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6657" toLevel="1" name="Lavasaurus Alpha Heal">
-		<icon>icon.skill0000</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>99</magicLevel>
 		<operateType>A1</operateType>
@@ -2720,36 +2683,36 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6658" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6658" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Raid Boss Darnel -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6659" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6659" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Raid Boss Kechi -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6660" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6660" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Raid Boss Tears -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6661" toLevel="1" name="Raid Boss (Lv. 85)">
+	<skill id="6661" toLevel="1" name="85 Lv. Raid Boss">
 		<!-- Ice warrior created by blowing life into Freya's crystal fragment. It has no understanding of self and only obeys the commands of its master Freya. It will even walk into death if it is her will. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6662" toLevel="2" name="Ice Crystal">
-		<!-- Immobilizes for 7 sec. and 115 HP is lost per sec. -->
+	<skill id="6662" toLevel="2" name="Freeze">
+		<!-- All actions are prohibited for $s1, and you lose $s2 HP per sec. -->
 		<icon>icon.skill6274</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2780,7 +2743,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="DamOverTime">
 				<power>115</power>
@@ -2794,14 +2757,14 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="6663" toLevel="1" name="Raid Boss (Lv. 76)">
-		<!-- This powerful Chaos Golem was made from Star Stones gathered from the Ruins of Pavel by the mad scientist Dr. Chaos, who styles himself the Emperor of Evil. Once a Golem Maestro, Dr. Chaos was expelled from the Black Anvil Guild for trying to steal a blueprint from the elders. He swore revenge on the Black Anvil Guild, conquering the Ruins of Pavel with the horrifying golem army he created. He views all outsiders as assassins sent by the Guild and will attack immediately. His ultimate goal is world domination. -->
+	<skill id="6663" toLevel="1" name="76 Lv. Raid Boss">
+		<!-- Powerful gigantic golem created by Dr. Kaos using the Pael ruins star stone. Dr. Chaos was once the Golem Maestro for all guilds, but he tried to steal the Leader's Blueprints. Was assigned to obtaining revenge for the Black Anvil Guild, and he led the golem army that he made to Pavel's Ruins. When an outsider is found, in order to punish himself, consider it troops from the Black Anvil Guild, and just attack. His ultimate goal is world domination. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6664" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6664" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Though it appears human, it is actually an archangel who speaks directly with Einhasad. The ancient religious text discovered at the Tower of Insolence gave evidence that the grail was hidden somewhere in the Monastery of Silence. Afterward, extensive searches for the grail took place in the Temple of Bishop, but no one could escape the judgment of the Master of Splendor. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
@@ -2809,7 +2772,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6665" toLevel="1" name="Aggression">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2821,7 +2783,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6666" toLevel="1" name="Feral Shield">
-		<!-- Increases P. Def. by 18% by 5 min. -->
+		<!-- P. Def. +18% for 5 min. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>315</abnormalTime>
@@ -2848,7 +2810,7 @@
 		</effects>
 	</skill>
 	<skill id="6667" toLevel="1" name="Feral Wind Walk">
-		<!-- Speed +33 for 5 min. -->
+		<!-- For 5 min., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>315</abnormalTime>
@@ -2902,7 +2864,7 @@
 		</effects>
 	</skill>
 	<skill id="6669" toLevel="1" name="Feral Blessed Body">
-		<!-- For 5 min., Max HP +35%. -->
+		<!-- Max HP +35% for 5 min. -->
 		<icon>icon.skill1045</icon>
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>315</abnormalTime>
@@ -2929,7 +2891,7 @@
 		</effects>
 	</skill>
 	<skill id="6670" toLevel="1" name="Feral Vampiric Rage">
-		<!-- With a certain chance, absorbs 9% of the inflicted damage as HP. Duration: 5 min. -->
+		<!-- For 5 min., recovers as HP 9% of the physical damage inflicted on the enemy with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>315</abnormalTime>
@@ -3011,7 +2973,7 @@
 		</effects>
 	</skill>
 	<skill id="6672" toLevel="1" name="Feral Blessed Shield">
-		<!-- Increases Shield defense rate by 5% for 30 min. -->
+		<!-- Shield defense rate +5% for 30 min. -->
 		<icon>icon.skill1243</icon>
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>315</abnormalTime>
@@ -3038,7 +3000,6 @@
 		</effects>
 	</skill>
 	<skill id="6673" toLevel="1" name="Presentation - Attain Noblesse">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -3081,7 +3042,6 @@
 		</effects>
 	</skill>
 	<skill id="6675" toLevel="1" name="Lavasaurus Alpha Attack">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>99</magicLevel>
 		<operateType>A1</operateType>
@@ -3095,7 +3055,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6676" toLevel="1" name="Magician's Perversity">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-684</effectPoint>
@@ -3116,7 +3075,7 @@
 		</effects>
 	</skill>
 	<skill id="6677" toLevel="1" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3139,7 +3098,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6678" toLevel="1" name="Cancel Hold">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>95</magicLevel>
@@ -3153,7 +3111,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6679" toLevel="1" name="Summoner's Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-684</effectPoint>
@@ -3174,7 +3131,6 @@
 		</effects>
 	</skill>
 	<skill id="6680" toLevel="1" name="Faint Plus">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>-684</effectPoint>
 		<magicLevel>83</magicLevel>
@@ -3245,7 +3201,6 @@
 		</effects>
 	</skill>
 	<skill id="6683" toLevel="1" name="Maguen Return">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>900</effectRange>
@@ -3268,7 +3223,6 @@
 		</effects>
 	</skill>
 	<skill id="6684" toLevel="1" name="Maguen Party Return">
-		<icon>icon.skill0000</icon>
 		<affectRange>1000</affectRange>
 		<castRange>400</castRange>
 		<effectPoint>100</effectPoint>
@@ -3293,7 +3247,6 @@
 		</effects>
 	</skill>
 	<skill id="6686" toLevel="1" name="Cancel Holy Protection">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>1</effectPoint>
 		<magicLevel>83</magicLevel>
@@ -3310,6 +3263,7 @@
 	</skill>
 	<skill id="6687" toLevel="1" name="Patience">
 		<!-- P. Skill Power is increased. -->
+		<icon>icon.skill0983</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7</abnormalTime>
 		<abnormalType>PATIENCE</abnormalType>
@@ -3330,8 +3284,7 @@
 		</effects>
 	</skill>
 	<skill id="6688" toLevel="1" name="Awful Soup">
-		<!-- Atk. Spd. increases by 20% and HP decreases 0.5% per second for 3 min. -->
-		<icon>icon.skill0000</icon>
+		<!-- Atk. Spd. +20% and HP -0.5% per sec. for 3 min. -->
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>180</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
@@ -3345,7 +3298,6 @@
 		<reuseDelay>1000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>FRIEND</affectObject>
@@ -3360,8 +3312,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6689" toLevel="1" name="HP/ MP Drain">
-		<icon>icon.skill0000</icon>
+	<skill id="6689" toLevel="1" name="HP/MP Drain">
 		<coolTime>2000</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>83</magicLevel>
@@ -3377,18 +3328,15 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
+			<!-- TODO i_hp_drain 131 40 -->
 			<effect name="Mp">
 				<amount>-491</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Hp">
-				<amount>-131</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6690" toLevel="1" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3409,8 +3357,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6691" toLevel="1" name="Dual Sword Deadly Move">
-		<icon>icon.skill0000</icon>
+	<skill id="6691" toLevel="1" name="Dualsword Deadly Move">
 		<coolTime>900</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>83</magicLevel>
@@ -3422,8 +3369,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6692" toLevel="1" name="Dual Sword Range Deadly Move">
-		<icon>icon.skill0000</icon>
+	<skill id="6692" toLevel="1" name="Dualsword Range Deadly Move">
 		<coolTime>1500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>83</magicLevel>
@@ -3436,7 +3382,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6693" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>
@@ -3477,7 +3422,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6694" toLevel="12" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>
@@ -3516,8 +3460,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6695" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="6695" toLevel="12" name="Spinning Slasher">
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>
@@ -3556,8 +3499,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="6696" toLevel="1" name="Presentation - Quest Complete">
-		<icon>icon.skill0000</icon>
+	<skill id="6696" toLevel="1" name="Presentation - Quest Done">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -3592,13 +3534,13 @@
 				<power>45257</power>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>6698</skillId> <!-- Ice Crystal -->
+				<skillId>6698</skillId> <!-- Freeze -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6698" toLevel="1" name="Ice Crystal">
-		<!-- Actions prohibited for 15 sec. HP decreases by 115 and MP decreases by 5% per second. -->
+	<skill id="6698" toLevel="1" name="Freeze - Eternal Ice">
+		<!-- Actions prohibited for 15 sec. HP -115 and MP -5% per sec. -->
 		<icon>icon.skill6274</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -3614,7 +3556,6 @@
 		<operateType>A2</operateType>
 		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
 		<specialLevel>-1</specialLevel>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
@@ -3637,8 +3578,8 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="6699" toLevel="1" name="Agathion Cute Trick - Ball-trapping Gnosian">
-		<!-- See the summoned agathion perform cute tricks. -->
+	<skill id="6699" toLevel="1" name="Ball Trapping Gnosian Agathion Cute Trick">
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<blockedInOlympiad>false</blockedInOlympiad>
 		<operateType>A1</operateType>

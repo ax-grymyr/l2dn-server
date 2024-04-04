@@ -17,7 +17,7 @@
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
 	</skill>
-	<skill id="50002" toLevel="1" name="Zaken's Curse">
+	<skill id="50002" toLevel="1" name="Curse Zaken">
 		<!-- Speed -30%, HP decreases temporarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A1</operateType>
@@ -33,9 +33,8 @@
 		<hitTime>1500</hitTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
-	<skill id="50004" toLevel="2" name="Ghost Shooter">
+	<skill id="50004" toLevel="2" name="Phantom Archer">
 		<!-- Releases Skeletal Ghost from the sword. The Ghost breaks free and deals damage to the target. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
@@ -51,7 +50,7 @@
 		<hitTime>1500</hitTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
-	<skill id="50006" toLevel="2" name="Blood to Flesh">
+	<skill id="50006" toLevel="2" name="Blood To Flesh">
 		<!-- Decreases HP/ MP of the target and restores player's HP. -->
 		<icon>icon.skill0289</icon>
 		<operateType>A1</operateType>
@@ -68,7 +67,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50008" toLevel="2" name="Pirate King Fury">
-		<!-- Attacks and knocks down the target. The attack energy dissolves among multiple enemies. -->
+		<!-- Attacks and knocks down a target. Attack energy dissolves among multiple targets. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -77,8 +76,8 @@
 		<reuseDelay>3000</reuseDelay>
 		<effectPoint>-52</effectPoint>
 	</skill>
-	<skill id="50009" toLevel="53" name="Raid Boss (Lv. 60)">
-		<!-- A rift that appeared after an earthquake had weakened Maphr's Seal. It shifted to the material world and brought chaos and pain with it. -->
+	<skill id="50009" toLevel="43" name="Raid Boss (Lv. 55)">
+		<!-- A rift that had appeared after an earthquake and weakened the Maphr's Seal, now shifted to the material world and brought chaos and pain with it. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -118,7 +117,7 @@
 		</mpConsume>
 	</skill>
 	<skill id="50013" toLevel="1" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -128,7 +127,7 @@
 		<effectPoint>-100</effectPoint>
 		<mpConsume>136</mpConsume>
 	</skill>
-	<skill id="50014" toLevel="1" name="Holiday Blessing">
+	<skill id="50014" toLevel="1" name="Christmas Blessing">
 		<!-- For 1 h., grants the following effects: Might, Shield, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Focus, Death Whisper, Guidance, Clarity, Wild Magic, Concentration. Cannot be used with Scroll of Mood Melody. -->
 		<icon>icon.etc_x_mas_tree_i00</icon>
 		<operateType>A1</operateType>
@@ -137,7 +136,6 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="50015" toLevel="20" name="Mega Strike">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -147,7 +145,6 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50016" toLevel="20" name="Mega Smash">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -192,7 +189,7 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50020" toLevel="1" name="Berserk">
-		<!-- Increases Atk. Spd. and P. Atk. -->
+		<!-- Increases Atk. Spd. And P. Atk. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
@@ -202,20 +199,17 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50021" toLevel="3" name="Body Enlargement">
-		<!-- Increases your body's size. -->
-		<icon>icon.skill0000</icon>
+		<!-- Increases the size of the body. -->
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50022" toLevel="1" name="Head Enlargement">
-		<!-- Increases your head's size. -->
-		<icon>icon.skill0000</icon>
+		<!-- Increases the size of the head. -->
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50023" toLevel="20" name="Deadshot">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>700</castRange>
 		<hitTime>4000</hitTime>
@@ -223,8 +217,7 @@
 		<effectPoint>-100</effectPoint>
 		<mpConsume>10</mpConsume>
 	</skill>
-	<skill id="50024" toLevel="20" name="Arrow Multishot">
-		<icon>icon.skill0000</icon>
+	<skill id="50024" toLevel="20" name="Multi-arrow Shot">
 		<operateType>A1</operateType>
 		<castRange>700</castRange>
 		<hitTime>4000</hitTime>
@@ -233,7 +226,7 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="50025" toLevel="1" name="Aggression">
-		<!-- Provokes the enemy into attacking you by forcefully changing their target. -->
+		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -242,7 +235,6 @@
 		<effectPoint>-10000</effectPoint>
 	</skill>
 	<skill id="50026" toLevel="20" name="Magic Strike">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<castRange>600</castRange>
@@ -252,8 +244,7 @@
 		<mpConsume>15</mpConsume>
 	</skill>
 	<skill id="50027" toLevel="2" name="Heal">
-		<!-- Recovers 30,000 of the target's HP. -->
-		<icon>icon.skill0000</icon>
+		<!-- Restores 30000 HP of the target. -->
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>4000</hitTime>
@@ -262,28 +253,27 @@
 		<effectPoint>100</effectPoint>
 		<mpConsume>10</mpConsume>
 	</skill>
-	<skill id="50028" toLevel="25" name="Raid Boss (Lv. 62)">
+	<skill id="50028" toLevel="25" name="62 Lv. Raid Boss">
 		<!-- This is one of the strongest Arena bosses, but nothing the brave heroes of Aden cannot handle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50029" toLevel="1" name="Dancing Bard">
 		<!-- Performs a dance. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<isDebuff>true</isDebuff>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50030" toLevel="1" name="Dandy's Precise Swing">
-		<!-- Throws back the target and inflicts heavy physical damage. -->
+		<!-- Throws the target back and inflicts heavy physical damage. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
 		<hitTime>3000</hitTime>
 		<effectPoint>-250</effectPoint>
 	</skill>
-	<skill id="50031" toLevel="1" name="Chain Smash">
+	<skill id="50031" toLevel="1" name="Orc Thunder">
 		<!-- Pulls the target into your reach. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A1</operateType>
@@ -311,16 +301,14 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="50034" toLevel="2" name="Aqua Blow">
-		<!-- Deals magic damage to nearby enemies. Power 85. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with 85 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50035" toLevel="1" name="Aqua Arrow">
-		<!-- Deals magic damage to the target. Power 260. Freezes the target for 30 sec. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks with 260 Power added to M. Atk. Freezes the target for 30 sec. -->
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -328,7 +316,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50036" toLevel="5" name="Aqua Rage">
-		<!-- Speed/ Atk. Spd./ Casting Spd. -20, received damage +10%. New debuffs add up. -->
+		<!-- Speed -20++, Received Damage +10%++. New debuffs add up. 50% chance of cancelling the buff if you attack Water Slime. -->
 		<icon>
 			<value level="1">icon.skill50036_1</value>
 			<value level="2">icon.skill50036_2</value>
@@ -344,7 +332,7 @@
 			<value level="4">4</value>
 			<value level="5">5</value>
 		</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>-1</abnormalTime>
 		<activateRate>100</activateRate>
 		<abnormalType>FREEZING</abnormalType>
 		<isDebuff>true</isDebuff>
@@ -361,7 +349,6 @@
 					<value level="2">-20</value>
 					<value level="3">-40</value>
 					<value level="4">-70</value>
-					<value level="5">-70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -371,7 +358,6 @@
 					<value level="2">-20</value>
 					<value level="3">-40</value>
 					<value level="4">-70</value>
-					<value level="5">-70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -381,7 +367,6 @@
 					<value level="2">-20</value>
 					<value level="3">-40</value>
 					<value level="4">-70</value>
-					<value level="5">-70</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -391,7 +376,6 @@
 					<value level="2">-40</value>
 					<value level="3">-60</value>
 					<value level="4">-80</value>
-					<value level="5">-80</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -399,22 +383,19 @@
 	</skill>
 	<skill id="50037" toLevel="1" name="Aqua Summon">
 		<!-- Summons water drops. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
-	<skill id="50038" toLevel="2" name="Water Wave">
-		<!-- Deals magic damage to nearby enemies. Power 138. -->
-		<icon>icon.skill0000</icon>
+	<skill id="50038" toLevel="2" name="Aqua Wave">
+		<!-- Attacks nearby enemies with 138 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50039" toLevel="1" name="Aqua Destruction">
-		<!-- Creates a copy after self-destruction. -->
-		<icon>icon.skill0000</icon>
+		<!-- 50% chance to cancel Aqua Rage. -->
 		<operateType>A2</operateType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>1</abnormalTime>
@@ -432,14 +413,13 @@
 		</effects>
 	</skill>
 	<skill id="50040" toLevel="2" name="Aqua Self-Destruction">
-		<!-- Attacks nearby enemies with 328 power dealing magical damage. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with 170 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50041" toLevel="2" name="Hurricane Cutter">
-		<!-- A wind blade makes a powerful attack decreasing HP. Power 8000. -->
+		<!-- Attacks by a hurricane blade with 10000 Power. Decreases HP. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -449,13 +429,12 @@
 	</skill>
 	<skill id="50042" toLevel="1" name="Hurricane Summon">
 		<!-- Resets Hurricane Summon cooldown. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="50043" toLevel="2" name="Hurricane Bolt">
-		<!-- A lightning bolt deals magic damage and paralyzes for 5 sec. Power 138. -->
+		<!-- Bolt of lightning attacks with 138 Power added to M. Atk., paralyses for 5 sec. -->
 		<icon>icon.skill1170</icon>
 		<abnormalTime>5</abnormalTime>
 		<activateRate>80</activateRate>
@@ -487,15 +466,14 @@
 		</effects>
 	</skill>
 	<skill id="50044" toLevel="2" name="Hurricane Destruction">
-		<!-- A strong whirlwind deals magic damage to nearby enemies knocking them down. Power 176. -->
+		<!-- Strong whirlwind attacks with 170 Power added to M. Atk. and knocks down nereby enemies. -->
 		<icon>icon.skill10262</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50045" toLevel="2" name="Hurricane">
-		<!-- Attacks nearby enemies with 214 power dealing magical damage. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with 138 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
@@ -539,8 +517,7 @@
 		</effects>
 	</skill>
 	<skill id="50049" toLevel="2" name="Fire Breath">
-		<!-- Attacks enemies in front of the boss with 214 power dealing magical damage. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks enemies in front of the boss with 220 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -548,7 +525,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50050" toLevel="10" name="Fire Rage">
-		<!-- Power of King Ignis. Constantly decreases HP. Debuffs add up decreasing HP even more. -->
+		<!-- Power of King Ignis. Constantly decreases HP. Debuffs add up decreasing HP even more. The debuff can be cancelled if you speak to Freya. -->
 		<icon>
 			<value level="1">icon.skill50050_1</value>
 			<value level="2">icon.skill50050_2</value>
@@ -651,15 +628,13 @@
 		</effects>
 	</skill>
 	<skill id="50051" toLevel="2" name="Tears of Fire">
-		<!-- Attacks nearby enemies with 214 power dealing magical damage. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with 138 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50052" toLevel="1" name="Freya's Safety Zone">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<effectPoint>100</effectPoint>
@@ -672,8 +647,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50054" toLevel="2" name="Stone Crusher">
-		<!-- Deals physical damage to nearby enemies. Power 10,000. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with $s1 Power added to P. Atk. -->
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -705,7 +679,7 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="50057" toLevel="2" name="Stone Earthquake">
-		<!-- Unleashed power of King Petram attacks nearby enemies with 10000 Power and stuns them for some time. -->
+		<!-- Unleashed power of King Petram attacks nearby enemies with $s1 Power and stuns them for some time. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -714,7 +688,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50058" toLevel="2" name="Stone Slide">
-		<!-- Attacks nearby enemies with 10 000 power. -->
+		<!-- Attacks nearby enemies with $s1 Power added to P. Atk. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -731,8 +705,7 @@
 		</effects>
 	</skill>
 	<skill id="50059" toLevel="2" name="Earth Fury">
-		<!-- Attacks nearby enemies with 15 000 power and temporarily stuns them. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with $s1 Power added to P. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
@@ -747,7 +720,7 @@
 		</effects>
 	</skill>
 	<skill id="50060" toLevel="1" name="Stone Destruction">
-		<!-- Paralyzes for 1 min., P./ M. Def. -50%. -->
+		<!-- Paralysis for 1 min., P./ M. Def. -50%. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -756,14 +729,14 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50061" toLevel="2" name="Earth Life">
-		<!-- Continuously restores HP. -->
-		<icon>icon.skill0000</icon>
+		<!-- Resores HP for prolonged time thanks to the Earth Attribute power. -->
+		<icon>icon.skill1610</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
 		<effectPoint>100</effectPoint>
 	</skill>
-	<skill id="50062" toLevel="2" name="Conflagration">
-		<!-- Powerful flame stream of King Ignis. If you do not remove it, HP will drop to 1, Received Healing -100%. -->
+	<skill id="50062" toLevel="2" name="Ignition">
+		<!-- Powerful flame stream of King Ignis. HP will drop to 1 if you do not speak to Freya, Received Healing -100%. -->
 		<icon>icon.skill11365</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -801,7 +774,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="50067" toLevel="1" name="Stone Earthquake">
-		<!-- Powerful strike, which stuns the enemy. -->
+		<!-- Stuns enemies with a powerful blow. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -814,7 +787,6 @@
 	</skill>
 	<skill id="50068" toLevel="1" name="Stone Crusher">
 		<!-- Deals damage to the targets around the boss. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>1500</hitTime>
@@ -823,8 +795,6 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50069" toLevel="1" name="Fire Breath">
-		<!-- Deals fire damage to the targets around the boss. -->
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1</effectPoint>
@@ -848,14 +818,13 @@
 		</effects>
 	</skill>
 	<skill id="50070" toLevel="1" name="Tears of Fire">
-		<!-- Affects the area. Deals a lot of damage. -->
-		<icon>icon.skill0000</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>-338</effectPoint>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>150</attributeValue>
 		<hitTime>4000</hitTime>
+		<icon>icon.skill50070</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>82</magicLevel>
 		<mpConsume>125</mpConsume>
@@ -876,7 +845,6 @@
 	</skill>
 	<skill id="50071" toLevel="1" name="Aqua Arrow">
 		<!-- Deals M. Damage to a random target. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<castRange>300</castRange>
@@ -885,9 +853,8 @@
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-100</effectPoint>
 	</skill>
-	<skill id="50072" toLevel="1" name="Water Wave">
+	<skill id="50072" toLevel="1" name="Aqua Wave">
 		<!-- Affects the area. Deals a lot of damage. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2000</hitTime>
@@ -908,7 +875,6 @@
 	</skill>
 	<skill id="50074" toLevel="1" name="Hurricane">
 		<!-- Affects the area. Deals a lot of damage. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2000</hitTime>
@@ -954,42 +920,42 @@
 		<reuseDelay>8000</reuseDelay>
 		<effectPoint>-100</effectPoint>
 	</skill>
-	<skill id="50079" toLevel="1" name="Raid Boss (Lv. 82)">
+	<skill id="50079" toLevel="1" name="82 Lv. Raid Boss">
 		<!-- King Ignis, the ruler of Fire Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and burn the continent with the power of raging flame. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50080" toLevel="1" name="Raid Boss (Lv. 82)">
+	<skill id="50080" toLevel="1" name="82 Lv. Raid Boss">
 		<!-- Queen Nebula, the ruler of Water Spirits invading Aden. She is waiting for a right moment to leave her secret hideout and drown the continent with the power of raging water. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50081" toLevel="1" name="Raid Boss (Lv. 82)">
+	<skill id="50081" toLevel="1" name="82 Lv. Raid Boss">
 		<!-- King Procella, the ruler of Wind Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and tear the continent down with the power of raging winds. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50082" toLevel="1" name="Raid Boss (Lv. 82)">
+	<skill id="50082" toLevel="1" name="82 Lv. Raid Boss">
 		<!-- King Petram, the ruler of Earth Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and shake the continent with the power of raging earth. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50083" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="50083" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- King Ignis, the ruler of Fire Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and burn the continent with the power of raging flame. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50084" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="50084" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Queen Nebula, the ruler of Water Spirits invading Aden. She is waiting for a right moment to leave her secret hideout and drown the continent with the power of raging water. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50085" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="50085" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- King Procella, the ruler of Wind Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and tear the continent down with the power of raging winds. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50086" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="50086" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- King Petram, the ruler of Earth Spirits invading Aden. He is waiting for a right moment to leave his secret hideout and shake the continent with the power of raging earth. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -1015,7 +981,6 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50088" toLevel="2" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>830</hitTime>
@@ -1028,14 +993,13 @@
 	</skill>
 	<skill id="50089" toLevel="2" name="Hurricane Attack">
 		<!-- Attacks nearby enemies with 102 Power added to M. Atk. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="50090" toLevel="2" name="Slow">
-		<!-- Momentarily the target's Speed -30%. -->
+		<!-- Immediately target's Speed -30%. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -1046,8 +1010,7 @@
 		<mpConsume>206</mpConsume>
 	</skill>
 	<skill id="50091" toLevel="2" name="Fire Attack">
-		<!-- Attacks enemies in front of the character with 88 Power added to M. Atk. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks enemies in front of the boss with $s1 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -1063,8 +1026,7 @@
 		</effects>
 	</skill>
 	<skill id="50092" toLevel="2" name="Water Attack">
-		<!-- Attacks nearby enemies with 55 Power added to M. Atk. -->
-		<icon>icon.skill0000</icon>
+		<!-- Attacks nearby enemies with $s1 Power added to M. Atk. -->
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1078,9 +1040,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="50093" toLevel="2" name="Stone Attack">
-		<!-- Attacks nearby enemies with 542 Power added to M. Atk. and inflicts Stun for 5 sec. -->
-		<icon>icon.skill0000</icon>
+	<skill id="50093" toLevel="2" name="Stun Attack">
+		<!-- Attacks nearby enemies with $s1 Power added to M. Atk. and inflicts Stun for 5 sec. -->
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -1096,10 +1057,10 @@
 		</effects>
 	</skill>
 	<skill id="50094" toLevel="6" name="Shadow's Despair">
-		<!-- Nightshade's debuff magic. Nearby enemy's Sleep/ Hold/ Shock/ Paralysis/ Fear/ Silence/ Pull Resistance -10. -->
-		<icon>icon.skill50094</icon>
+		<!-- Nightshade's debuff magic. Nearby enemy's Sleep/ Hold/ Stun/ Mental/ Pull/ Knockdown Resistance -$s1. -->
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
+		<icon>icon.skill50094</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<isDebuff>true</isDebuff>
@@ -1178,30 +1139,14 @@
 					<value level="5">-18</value>
 					<value level="6">-20</value>
 				</PARALYZE>
-				<FEAR>
+				<DERANGEMENT>
 					<value level="1">-10</value>
 					<value level="2">-12</value>
 					<value level="3">-14</value>
 					<value level="4">-16</value>
 					<value level="5">-18</value>
 					<value level="6">-20</value>
-				</FEAR>
-				<SILENCE>
-					<value level="1">-10</value>
-					<value level="2">-12</value>
-					<value level="3">-14</value>
-					<value level="4">-16</value>
-					<value level="5">-18</value>
-					<value level="6">-20</value>
-				</SILENCE>
-				<PULL>
-					<value level="1">-10</value>
-					<value level="2">-12</value>
-					<value level="3">-14</value>
-					<value level="4">-16</value>
-					<value level="5">-18</value>
-					<value level="6">-20</value>
-				</PULL>
+				</DERANGEMENT>
 			</effect>
 		</effects>
 	</skill>
@@ -1226,14 +1171,8 @@
 	</skill>
 	<skill id="50096" toLevel="4" name="Frintezza Demon Field">
 		<!-- Powerful attack on nearby enemies. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<hitTime>
-			<value level="1">5000</value>
-			<value level="2">6600</value>
-			<value level="3">5000</value>
-			<value level="4">6600</value>
-		</hitTime>
+		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-100</effectPoint>
@@ -1247,14 +1186,8 @@
 	</skill>
 	<skill id="50098" toLevel="4" name="Frintezza Demon Field">
 		<!-- Powerful attack on nearby enemies. -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<hitTime>
-			<value level="1">5000</value>
-			<value level="2">6600</value>
-			<value level="3">5000</value>
-			<value level="4">6600</value>
-		</hitTime>
+		<hitTime>5000</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-100</effectPoint>

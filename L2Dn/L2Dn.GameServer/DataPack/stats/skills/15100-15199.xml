@@ -53,7 +53,7 @@
 		</effects>
 	</skill>
 	<skill id="15141" toLevel="1" name="Super CP Lv. 1">
-		<!-- For test. Wizard Full Buff Lv. 1. Increases abilities through Kyu's power. -->
+		<!-- For test. Wizard Full Buff stage 1. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -69,7 +69,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15142" toLevel="1" name="Super CP Lv. 2">
-		<!-- For test. Wizard Full Buff Lv. 2. Increases abilities through Kyu's power. -->
+		<!-- For test. Wizard Full Buff stage 2. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -85,7 +85,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15143" toLevel="1" name="Super CP Lv. 3">
-		<!-- For test. Wizard Full Buff Lv. 3. Increases abilities through Kyu's power. -->
+		<!-- For test. Wizard Full Buff stage 3. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -101,7 +101,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15144" toLevel="1" name="Super CP Lv. 4">
-		<!-- For test. Wizard Full Buff Lv. 4. Increases abilities through Kyu's power. -->
+		<!-- For test. Wizard Full Buff stage 4. Increases abilities through Kyu's power. -->
 		<icon>icon.skill11065</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -131,7 +131,7 @@
 		<magicLevel>99</magicLevel>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
@@ -152,7 +152,7 @@
 		<magicLevel>99</magicLevel>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<reuseDelay>120000</reuseDelay>
 		<targetType>SELF</targetType>
@@ -282,8 +282,8 @@
 		<affectScope>SINGLE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="15155" toLevel="1" name="Petrification">
-		<!-- Petrification -->
+	<skill id="15155" toLevel="1" name="Petrify">
+		<!-- Petrify status. -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
 		<hitTime>500</hitTime>
@@ -301,7 +301,7 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="HpRegen">
 				<amount>-100</amount>
@@ -371,7 +371,7 @@
 		<magicLevel>99</magicLevel>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<irreplacableBuff>true</irreplacableBuff>
 		<affectRange>1500</affectRange>
 		<isDebuff>true</isDebuff>
@@ -380,7 +380,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15170" toLevel="1" name="Chaos Shield">
-		<!-- Increases P./ M. Def. -->
+		<!-- P. Def. and M. Def. are increased. -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
 		<hitTime>5000</hitTime>
@@ -414,7 +414,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15172" toLevel="1" name="Tauti Air Binding">
-		<!-- Bound in the air from Tauti's gaze. -->
+		<!-- Bound in the air from Tauti's gaze. Cannot be removed with a de-buff removing skill. -->
 		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
 		<castRange>200</castRange>
@@ -439,7 +439,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15173" toLevel="1" name="Tauti Air Binding">
-		<!-- Bound in the air from Tauti's gaze. -->
+		<!-- Bound in the air from Tauti's gaze. Cannot be removed with a de-buff removing skill. -->
 		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
 		<castRange>200</castRange>
@@ -463,7 +463,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="15174" toLevel="1" name="Petra Injection - Increase HP Recovery Rate">
+	<skill id="15174" toLevel="1" name="Petra Injection - Enhance HP Recovery Bonus">
 		<icon>icon.skill1434</icon>
 		<operateType>CA2</operateType>
 		<castRange>2500</castRange>
@@ -475,7 +475,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>3000</effectRange>
 		<magicLevel>99</magicLevel>
-		<channelingSkillId>15175</channelingSkillId> <!-- Petra Injection - Increase HP Recovery Rate -->
+		<channelingSkillId>15175</channelingSkillId> <!-- Petra Injection - Enhance HP Recovery Bonus -->
 		<channelingStart>1.2</channelingStart>
 		<channelingTickInterval>2</channelingTickInterval>
 		<isMagic>2</isMagic>
@@ -483,8 +483,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15175" toLevel="1" name="Petra Injection - Increase HP Recovery Rate">
-		<!-- Increases Tauti's HP Recovery Rate. -->
+	<skill id="15175" toLevel="1" name="Petra Injection - Enhance HP Recovery Bonus">
+		<!-- Increases Tauti's HP Recovery Bonus. -->
 		<icon>icon.skill1434</icon>
 		<operateType>A2</operateType>
 		<castRange>2500</castRange>
@@ -615,8 +615,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15182" toLevel="1" name="Adolph: Superior Aggression Aura">
-		<!-- Provokes the enemy into attacking you by forcefully changing their target. -->
+	<skill id="15182" toLevel="1" name="Adolph's Superior Aggression Aura">
+		<!-- Provokes target into attacking you by forcefully changing their target. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -638,8 +638,8 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="15183" toLevel="1" name="Adolph: Superior Aggression Aura">
-		<!-- Provokes the enemy into attacking you by forcefully changing their target. -->
+	<skill id="15183" toLevel="1" name="Adolph's Superior Aggression Aura">
+		<!-- Provokes target into attacking you by forcefully changing their target. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -661,8 +661,8 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="15184" toLevel="1" name="Adolph: Superior Aggression Aura">
-		<!-- Provokes the enemy into attacking you by forcefully changing their target. -->
+	<skill id="15184" toLevel="1" name="Adolph's Superior Aggression Aura">
+		<!-- Provokes target into attacking you by forcefully changing their target. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -684,8 +684,8 @@
 			<effect name="GetAgro" />
 		</effects>
 	</skill>
-	<skill id="15185" toLevel="1" name="Adolph: Shield Wave">
-		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
+	<skill id="15185" toLevel="1" name="Adolph's Shield Wave">
+		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -715,12 +715,12 @@
 				<power>9516</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15186" toLevel="1" name="Adolph: Shield Wave">
-		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
+	<skill id="15186" toLevel="1" name="Adolph's Shield Wave">
+		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -750,12 +750,12 @@
 				<power>11162</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15187" toLevel="1" name="Adolph: Shield Wave">
-		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
+	<skill id="15187" toLevel="1" name="Adolph's Shield Wave">
+		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -785,12 +785,12 @@
 				<power>12809</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15188" toLevel="1" name="Hayuk: Multiple Arrows">
-		<!-- Attacks the target and surrounding enemies with 23391 power. -->
+	<skill id="15188" toLevel="1" name="Hayuk's Multiple Arrow">
+		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 23391 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -813,8 +813,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15189" toLevel="1" name="Hayuk: Multiple Arrows">
-		<!-- Attacks the target and surrounding enemies with 27459 power. -->
+	<skill id="15189" toLevel="1" name="Hayuk's Multiple Arrow">
+		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 27459 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -837,8 +837,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15190" toLevel="1" name="Hayuk: Multiple Arrows">
-		<!-- Attacks the target and surrounding enemies with 31527 power. -->
+	<skill id="15190" toLevel="1" name="Hayuk's Multiple Arrow">
+		<!-- Focuses on a target at the front and inflicts a long range attack. Attacks the target with 31527 power added to P. Atk. -->
 		<icon>icon.skill10771</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -861,8 +861,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15191" toLevel="1" name="Hayuk: Heavy Arrow Rain">
-		<!-- Rains down arrows on the target and nearby enemies with 22526 power. -->
+	<skill id="15191" toLevel="1" name="Hayuk's Heavy Arrow Rain">
+		<!-- Rains down arrows like rain on the target and its surrounding area with 22526 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -884,8 +884,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15192" toLevel="1" name="Hayuk: Heavy Arrow Rain">
-		<!-- Rains down arrows on the target and nearby enemies with 26448 power. -->
+	<skill id="15192" toLevel="1" name="Hayuk's Heavy Arrow Rain">
+		<!-- Rains down arrows like rain on the target and its surrounding area with 26448 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -907,8 +907,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15193" toLevel="1" name="Hayuk: Heavy Arrow Rain">
-		<!-- Rains down arrows on the target and nearby enemies with 30371 power. -->
+	<skill id="15193" toLevel="1" name="Hayuk's Heavy Arrow Rain">
+		<!-- Rains down arrows like rain on the target and its surrounding area with 30371 power added to P. Atk. -->
 		<icon>icon.skill10772</icon>
 		<operateType>A1</operateType>
 		<castRange>1100</castRange>
@@ -930,11 +930,11 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15194" toLevel="1" name="Eliyah: Mass Exile">
-		<!-- Banishes surrounding enemies to another dimension. They become immobile and invincible against debuffs. Also, they cannot attack and use skills, and lose 282 HP per sec. -->
+	<skill id="15194" toLevel="1" name="Eliyah's Mass Exile">
+		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. -282 HP per sec. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<trait>SHOCK</trait>
+		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -959,7 +959,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="DamOverTime">
 				<power>282</power>
@@ -975,11 +975,11 @@
 			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
-	<skill id="15195" toLevel="1" name="Eliyah: Mass Exile">
-		<!-- Banishes surrounding enemies to another dimension. They become immobile and invincible against debuffs. Also, they cannot attack and use skills, and lose 296 HP per sec. -->
+	<skill id="15195" toLevel="1" name="Eliyah's Mass Exile">
+		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. -296 HP per sec. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<trait>SHOCK</trait>
+		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1004,7 +1004,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="DamOverTime">
 				<power>296</power>
@@ -1020,11 +1020,11 @@
 			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
-	<skill id="15196" toLevel="1" name="Eliyah: Mass Exile">
-		<!-- Banishes surrounding enemies to another dimension. They become immobile and invincible against debuffs. Also, they cannot attack and use skills, and lose 313 HP per sec. -->
+	<skill id="15196" toLevel="1" name="Eliyah's Mass Exile">
+		<!-- Banishes enemies near the target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. -313 HP per sec. -->
 		<icon>icon.skill11296</icon>
 		<operateType>A2</operateType>
-		<trait>SHOCK</trait>
+		<trait>DEPORT</trait>
 		<castRange>600</castRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1049,7 +1049,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="DamOverTime">
 				<power>313</power>
@@ -1065,9 +1065,8 @@
 			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
-	<skill id="15197" toLevel="1" name="Guardian Spirit's Rage">
-		<!-- Attacks nearby enemies. -->
-		<icon>icon.skill0000</icon>
+	<skill id="15197" toLevel="1" name="Guardian Spirit's Wrath">
+		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1081,9 +1080,8 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="15198" toLevel="1" name="Guardian Spirit's Rage">
-		<!-- Attacks nearby enemies. -->
-		<icon>icon.skill0000</icon>
+	<skill id="15198" toLevel="1" name="Guardian Spirit's Wrath">
+		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1097,9 +1095,8 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="15199" toLevel="1" name="Guardian Spirit's Rage">
-		<!-- Attacks nearby enemies. -->
-		<icon>icon.skill0000</icon>
+	<skill id="15199" toLevel="1" name="Guardian Spirit's Wrath">
+		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>

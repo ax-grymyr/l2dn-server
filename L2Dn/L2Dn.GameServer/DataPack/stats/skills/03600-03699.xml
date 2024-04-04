@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3600" toLevel="6" name="Special Property: Anger">
-		<!-- Decreases Max HP and increases P. Atk. and the number of targets hit with a spear. -->
+	<skill id="3600" toLevel="6" name="Special Ability: Anger">
+		<!-- Decreases Max HP and increases P. Atk. Enables the character to attack multiple opponents. -->
 		<icon>icon.skill1062</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -71,8 +71,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3601" toLevel="6" name="Special Property: Haste">
-		<!-- Increases Atk. Spd. and the number of targets hit with a spear. -->
+	<skill id="3601" toLevel="6" name="Special Ability: Haste">
+		<!-- Increases Atk. Spd. Enables the character to attack multiple opponents. -->
 		<icon>icon.skill1086</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -127,8 +127,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3602" toLevel="6" name="Special Property: Guidance">
-		<!-- Increases P. Accuracy. Allows to attack multiple enemies simultaneously. -->
+	<skill id="3602" toLevel="6" name="Special Ability: Guidance">
+		<!-- Increases P. Accuracy and enables the character to attack multiple opponents. -->
 		<icon>icon.skill1240</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -430,21 +430,23 @@
 		</effects>
 	</skill>
 	<skill id="3604" toLevel="1" name="Frintezza's Necklace">
-		<!-- Increases Dark Attack/ Poison/ Bleed/ Paralyze/ Stun/ Sleep Resistance, and Poison/ Bleed/ Paralyze/ Stun/ Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
+		<!-- Increases Dark Attack/ Poison/ Bleed/ Paralysis/ Stun/ Sleep Resistance, and Poison/ Bleed/ Paralysis/ Stun/ Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
 		<icon>icon.accessory_necklace_of_frintessa_i00</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="AttackTrait">
-				<INFECTION>25</INFECTION>
+				<POISON>25</POISON>
 				<PARALYZE>15</PARALYZE>
 				<SLEEP>15</SLEEP>
+				<BLEED>25</BLEED>
 				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="DefenceTrait">
+				<BLEED>25</BLEED>
 				<SHOCK>15</SHOCK>
-				<INFECTION>25</INFECTION>
+				<POISON>25</POISON>
 				<SLEEP>15</SLEEP>
 				<PARALYZE>15</PARALYZE>
 			</effect>
@@ -467,8 +469,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3605" toLevel="1" name="Set Effect: Moon Heavy Armor, 4-piece">
-		<!-- <Set effect>. P. Def. +3%. Max HP +25. HP Recovery Rate +3% -->
+	<skill id="3605" toLevel="1" name="Set Effect - Moonshadow Heavy Armor, 4-piece">
+		<!-- HP Recovery Bonus +3%, Max HP +25, P. Def. +3%. -->
 		<icon>icon.armor_t1001_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -488,8 +490,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3606" toLevel="1" name="Set Effect: Moon Light Armor, 4-piece">
-		<!-- <Set effect>. P. Atk. +2%. Max MP +10. MP Recovery Rate +3% -->
+	<skill id="3606" toLevel="1" name="Set Effect - Moonshadow Light Armor, 4-piece">
+		<!-- MP Recovery Bonus +3%, Max MP +10, P. Atk. +2%. -->
 		<icon>icon.armor_t1002_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -509,8 +511,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3607" toLevel="1" name="Set Effect: Moon Robe, 4-piece">
-		<!-- <Set effect>. M. Atk. +2%. Max HP +20. MP Recovery Rate +3% -->
+	<skill id="3607" toLevel="1" name="Set Effect - Moonshadow Robe, 4-piece">
+		<!-- MP Recovery Bonus +3%, Max MP +20, M. Atk. +2%. -->
 		<icon>icon.armor_t1003_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -531,7 +533,7 @@
 		</effects>
 	</skill>
 	<skill id="3608" toLevel="3" name="Set Effect - Apella Heavy Armor">
-		<!-- Increases Max CP/ CP Recovery Rate, and decreases Death XP Penalty. Increases M. Def. and decreases received P. Critical Rate, when hit. -->
+		<!-- Increases Max CP/ CP Recovery Bonus, and decreases the skill player's death XP penalty. Increases one's own M. Def. when attacked. Decreases P. Critical Damage success rate. -->
 		<icon>icon.armor_t1004_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -601,7 +603,7 @@
 		</effects>
 	</skill>
 	<skill id="3609" toLevel="3" name="Set Effect - Apella Light Armor">
-		<!-- Increases Max CP/ CP Recovery Rate, and decreases Death XP Penalty. Increases P. Evasion and decreases received P. Critical Damage, when hit. -->
+		<!-- Increases Max CP/ CP Recovery Bonus, decreases the skill player's death XP penalty. Increases one's own P. Evasion when attacked. Decreases Received P. Critical Damage. -->
 		<icon>icon.armor_t1005_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -671,7 +673,7 @@
 		</effects>
 	</skill>
 	<skill id="3610" toLevel="3" name="Set Effect - Apella Robe">
-		<!-- Increases Max CP/ CP Recovery Rate, and decreases Death XP Penalty. Increases Speed and P. Def., when hit. -->
+		<!-- Increases Max CP/ CP Recovery Bonus, and decreases death XP penalty. Increases Speed and P. Def. when attacked. -->
 		<icon>icon.armor_t1006_ul_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -740,8 +742,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3611" toLevel="1" name="Enchant D-grade Heavy Armor">
-		<!-- Enchanting set items increases P. Def. and MP Recovery Rate. -->
+	<skill id="3611" toLevel="1" name="Enchant Heavy Armor (D-grade)">
+		<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -766,8 +768,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3612" toLevel="1" name="Enchant D-grade Light Armor">
-		<!-- Enchanting set items increases M. Def. and P. Evasion. -->
+	<skill id="3612" toLevel="1" name="Enchant Light Armor (D-grade)">
+		<!-- Increases M. Def. and Evasion by enchanting set items. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -789,8 +791,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3613" toLevel="1" name="Enchant D-grade Robe">
-		<!-- Enchanting set items increases P. Def. and weight limit. -->
+	<skill id="3613" toLevel="1" name="Enchant Robe (D-grade)">
+		<!-- Increases M. Def. and weight limit by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -809,8 +811,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3614" toLevel="1" name="Enchant C-grade Heavy Armor">
-		<!-- Enchanting set items increases P. Def. and MP Recovery Rate. -->
+	<skill id="3614" toLevel="1" name="Enchant Heavy Armor (C-grade)">
+		<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -835,8 +837,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3615" toLevel="1" name="Enchant C-grade Light Armor">
-		<!-- Enchanting set items increases M. Def. and P. Evasion. -->
+	<skill id="3615" toLevel="1" name="Enchant Light Armor (C-grade)">
+		<!-- Increases M. Def. and Evasion by enchanting set items. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -858,8 +860,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3616" toLevel="1" name="Enchant C-grade Robe">
-		<!-- Enchanting set items increases P. Def. and weight limit. -->
+	<skill id="3616" toLevel="1" name="Enchant Robe (C-grade)">
+		<!-- Increases M. Def. and weight limit by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -878,8 +880,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3617" toLevel="1" name="Enchant B-grade Heavy Armor">
-		<!-- Enchanting set items increases P. Def. and MP Recovery Rate. -->
+	<skill id="3617" toLevel="1" name="Enchant Heavy Armor (B-grade)">
+		<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -904,8 +906,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3618" toLevel="1" name="Enchant B-grade Light Armor">
-		<!-- Enchanting set items increases M. Def. and P. Evasion. -->
+	<skill id="3618" toLevel="1" name="Enchant Light Armor (B-grade)">
+		<!-- Increases M. Def. and Evasion by enchanting set items. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -927,8 +929,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3619" toLevel="1" name="Enchant B-grade Robe">
-		<!-- Enchanting set items increases P. Def. and weight limit. -->
+	<skill id="3619" toLevel="1" name="Enchant Robe (B-grade)">
+		<!-- Increases M. Def. and weight limit by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -947,8 +949,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3620" toLevel="1" name="Enchant A-grade Heavy Armor">
-		<!-- Enchanting set items increases P. Def. and MP Recovery Rate. -->
+	<skill id="3620" toLevel="1" name="Enchant Heavy Armor (A-grade)">
+		<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -973,8 +975,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3621" toLevel="1" name="Enchant A-grade Light Armor">
-		<!-- Enchanting set items increases M. Def. and P. Evasion. -->
+	<skill id="3621" toLevel="1" name="Enchant Light Armor (A-grade)">
+		<!-- Increases M. Def. and Evasion by enchanting set items. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -996,8 +998,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3622" toLevel="1" name="Enchant D-grade Robe">
-		<!-- Enchanting set items increases P. Def. and weight limit. -->
+	<skill id="3622" toLevel="1" name="Enchant Robe (A-grade)">
+		<!-- Increases M. Def. and weight limit by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1016,8 +1018,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3623" toLevel="3" name="Enchant S-grade Heavy Armor">
-		<!-- Enchanting set items increases P. Def. and MP Recovery Rate. -->
+	<skill id="3623" toLevel="3" name="Enchant Heavy Armor (S-grade)">
+		<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 		<icon>icon.skill0231</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1042,8 +1044,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3624" toLevel="3" name="Enchant S-grade Light Armor">
-		<!-- Enchanting set items increases M. Def. and P. Evasion. -->
+	<skill id="3624" toLevel="3" name="Enchant Light Armor (S-grade)">
+		<!-- Increases M. Def. and Evasion by enchanting set items. -->
 		<icon>icon.skill0233</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1065,8 +1067,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3625" toLevel="3" name="Enchant S-grade Robe">
-		<!-- Enchanting set items increases P. Def. and weight limit. -->
+	<skill id="3625" toLevel="3" name="Enchant Robe (S-grade)">
+		<!-- Increases M. Def. and weight limit by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1363,7 +1365,7 @@
 		</effects>
 	</skill>
 	<skill id="3632" toLevel="1" name="Clan Gate">
-		<!-- Active skill: Creates a gate that summons clan members. You cannot move while this skill is active. -->
+		<!-- Active: Creates a gate that summons clan members. You cannot move while this skill is active. -->
 		<icon>icon.accessory_crown_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
@@ -1386,12 +1388,12 @@
 				<id>1923</id>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3633" toLevel="2" name="Residential Stun Immunity">
-		<!-- Active skill: Temporarily increases Stun Resistance. -->
+		<!-- Active: Temporarily increases Stun Resistance. -->
 		<icon>icon.accessory_pledge_cap1_i05</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7</abnormalTime>

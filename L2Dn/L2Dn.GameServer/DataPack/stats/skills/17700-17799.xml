@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="17701" toLevel="10" name="Topaz">
-		<!-- Interrupts the target's skill casting. Inflicts fixed PvP damage, ignoring CР. Power 475. -->
+	<skill id="17701" toLevel="10" name="Gem - Topaz">
+		<!-- Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of $s1. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_topaz_i00</value>
 			<value level="2">icon.etc_bm_jewel_topaz_i00</value>
@@ -21,8 +21,8 @@
 		<reuseDelay>30000</reuseDelay>
 		<effectPoint>-1000</effectPoint>
 	</skill>
-	<skill id="17702" toLevel="1" name="Greater Topaz - Special Property">
-		<!-- Cancels 3 buffs of nearby enemies. -->
+	<skill id="17702" toLevel="1" name="Greater Topaz - Special Ability">
+		<!-- Cancels up to 3 debuffs. -->
 		<icon>icon.bm_jewel_absdmg_high_lv1_lavianrose</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -31,8 +31,15 @@
 		<reuseDelay>300000</reuseDelay>
 		<effectPoint>-1000</effectPoint>
 	</skill>
-	<skill id="17706" toLevel="10" name="Vital Stone">
-		<!-- While Sayha's Grace is active, acquired XP/ SP while hunting +3%. -->
+	<skill id="17706" toLevel="10" name="Gem - Vital Stone">
+		<!-- Acquired XP/ SP from Sayha Grace +$s1 while hunting. -->
+		<!-- TODO: from lv 4 Sayha Grace Consumption -10% effect -->
+		<!-- TODO: from lv 5 Sayha Grace Consumption -30% effect -->
+		<!-- TODO: from lv 6 Sayha Grace Consumption -30% effect -->
+		<!-- TODO: from lv 7 Sayha Grace Consumption -32% effect -->
+		<!-- TODO: from lv 8 Sayha Grace Consumption -32% effect -->
+		<!-- TODO: from lv 9 Sayha Grace Consumption -32% effect -->
+		<!-- TODO: from lv 10 Sayha Grace Consumption -35% effect -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_vital</value>
 			<value level="2">icon.etc_bm_jewel_vital</value>
@@ -47,11 +54,6 @@
 		</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<passiveConditions>
-			<condition name="HasVitalityPoints">
-				<amount>35000</amount>
-			</condition>
-		</passiveConditions>
 		<effects>
 			<effect name="ExpModify">
 				<amount>
@@ -88,8 +90,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17707" toLevel="10" name="Jade">
-		<!-- Atk. Spd./ Casting Spd. +1%. -->
+	<skill id="17707" toLevel="10" name="Gem - Jade">
+		<!-- Atk. Spd./ Casting Spd. +$s1. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_jade_i00</value>
 			<value level="2">icon.etc_bm_jewel_jade_i00</value>
@@ -155,7 +157,8 @@
 		</effects>
 	</skill>
 	<skill id="17708" toLevel="10" name="Diamond">
-		<!-- P. Def. +11 -->
+		<!-- P. Def. +$s1. -->
+		<!-- TODO: on level 10 add chance of receiving P. critical attack -20% -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_diamond_i00</value>
 			<value level="2">icon.etc_bm_jewel_diamond_i00</value>
@@ -200,8 +203,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17709" toLevel="10" name="Pearl">
-		<!-- M. Def. +7 -->
+	<skill id="17709" toLevel="10" name="Gem - Pearl">
+		<!-- M. Def. +$s1. -->
+		<!-- TODO: on level 10 add Chance of receiving M. Critical Attack -20% -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_pearl_i00</value>
 			<value level="2">icon.etc_bm_jewel_pearl_i00</value>

@@ -23,28 +23,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29825" count="1" /> <!-- Sigel's Rune Lv. 8 - Not Available -->
+						<item id="29825" count="1" /> <!-- Sigel's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29845" count="1" /> <!-- Tyrr's Rune Lv. 8 - Not Available -->
+						<item id="29845" count="1" /> <!-- Tyrr's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29865" count="1" /> <!-- Othell's Rune Lv. 8 - Not Available -->
+						<item id="29865" count="1" /> <!-- Othell's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29885" count="1" /> <!-- Yul's Rune Lv. 8 - Not Available -->
+						<item id="29885" count="1" /> <!-- Yul's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29905" count="1" /> <!-- Feoh's Rune Lv. 8 - Not Available -->
+						<item id="29905" count="1" /> <!-- Feoh's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29925" count="1" /> <!-- Iss' Rune Lv. 8 - Not Available -->
+						<item id="29925" count="1" /> <!-- Iss?Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29945" count="1" /> <!-- Wynn's Rune Lv. 8 - Not Available -->
+						<item id="29945" count="1" /> <!-- Wynn's Rune - Stage 8 -->
 					</item>
 					<item chance="12.5">
-						<item id="29965" count="1" /> <!-- Aeore's Rune Lv. 8 - Not Available -->
+						<item id="29965" count="1" /> <!-- Aeore's Rune - Stage 8 -->
 					</item>
 				</items>
 			</effect>
@@ -73,28 +73,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29826" count="1" /> <!-- Sigel's Rune Lv. 9 - Not Available -->
+						<item id="29826" count="1" /> <!-- Sigel's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29846" count="1" /> <!-- Tyrr's Rune Lv. 9 - Not Available -->
+						<item id="29846" count="1" /> <!-- Tyrr's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29866" count="1" /> <!-- Othell's Rune Lv. 9 - Not Available -->
+						<item id="29866" count="1" /> <!-- Othell's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29886" count="1" /> <!-- Yul's Rune Lv. 9 - Not Available -->
+						<item id="29886" count="1" /> <!-- Yul's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29906" count="1" /> <!-- Feoh's Rune Lv. 9 - Not Available -->
+						<item id="29906" count="1" /> <!-- Feoh's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29926" count="1" /> <!-- Iss' Rune Lv. 9 - Not Available -->
+						<item id="29926" count="1" /> <!-- Iss?Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29946" count="1" /> <!-- Wynn's Rune Lv. 9 - Not Available -->
+						<item id="29946" count="1" /> <!-- Wynn's Rune - Stage 9 -->
 					</item>
 					<item chance="12.5">
-						<item id="29966" count="1" /> <!-- Aeore's Rune Lv. 9 - Not Available -->
+						<item id="29966" count="1" /> <!-- Aeore's Rune - Stage 9 -->
 					</item>
 				</items>
 			</effect>
@@ -123,28 +123,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29827" count="1" /> <!-- Sigel's Rune Lv. 10 - Not Available -->
+						<item id="29827" count="1" /> <!-- Sigel's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29847" count="1" /> <!-- Tyrr's Rune Lv. 10 - Not Available -->
+						<item id="29847" count="1" /> <!-- Tyrr's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29867" count="1" /> <!-- Othell's Rune Lv. 10 - Not Available -->
+						<item id="29867" count="1" /> <!-- Othell's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29887" count="1" /> <!-- Yul's Rune Lv. 10 - Not Available -->
+						<item id="29887" count="1" /> <!-- Yul's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29907" count="1" /> <!-- Feoh's Rune Lv. 10 - Not Available -->
+						<item id="29907" count="1" /> <!-- Feoh's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29927" count="1" /> <!-- Iss' Rune Lv. 10 - Not Available -->
+						<item id="29927" count="1" /> <!-- Iss?Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29947" count="1" /> <!-- Wynn's Rune Lv. 10 - Not Available -->
+						<item id="29947" count="1" /> <!-- Wynn's Rune - Stage 10 -->
 					</item>
 					<item chance="12.5">
-						<item id="29967" count="1" /> <!-- Aeore's Rune Lv. 10 - Not Available -->
+						<item id="29967" count="1" /> <!-- Aeore's Rune - Stage 10 -->
 					</item>
 				</items>
 			</effect>
@@ -173,28 +173,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29828" count="1" /> <!-- Sigel's Rune Lv. 11 - Not Available -->
+						<item id="29828" count="1" /> <!-- Sigel's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29848" count="1" /> <!-- Tyrr's Rune Lv. 11 - Not Available -->
+						<item id="29848" count="1" /> <!-- Tyrr's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29868" count="1" /> <!-- Othell's Rune Lv. 11 - Not Available -->
+						<item id="29868" count="1" /> <!-- Othell's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29888" count="1" /> <!-- Yul's Rune Lv. 11 - Not Available -->
+						<item id="29888" count="1" /> <!-- Yul's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29908" count="1" /> <!-- Feoh's Rune Lv. 11 - Not Available -->
+						<item id="29908" count="1" /> <!-- Feoh's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29928" count="1" /> <!-- Iss' Rune Lv. 11 - Not Available -->
+						<item id="29928" count="1" /> <!-- Iss?Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29948" count="1" /> <!-- Wynn's Rune Lv. 11 - Not Available -->
+						<item id="29948" count="1" /> <!-- Wynn's Rune - Stage 11 -->
 					</item>
 					<item chance="12.5">
-						<item id="29968" count="1" /> <!-- Aeore's Rune Lv. 11 - Not Available -->
+						<item id="29968" count="1" /> <!-- Aeore's Rune - Stage 11 -->
 					</item>
 				</items>
 			</effect>
@@ -223,28 +223,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29829" count="1" /> <!-- Sigel's Rune Lv. 12 - Not Available -->
+						<item id="29829" count="1" /> <!-- Sigel's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29849" count="1" /> <!-- Tyrr's Rune Lv. 12 - Not Available -->
+						<item id="29849" count="1" /> <!-- Tyrr's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29869" count="1" /> <!-- Othell's Rune Lv. 12 - Not Available -->
+						<item id="29869" count="1" /> <!-- Othell's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29889" count="1" /> <!-- Yul's Rune Lv. 12 - Not Available -->
+						<item id="29889" count="1" /> <!-- Yul's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29909" count="1" /> <!-- Feoh's Rune Lv. 12 - Not Available -->
+						<item id="29909" count="1" /> <!-- Feoh's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29929" count="1" /> <!-- Iss' Rune Lv. 12 - Not Available -->
+						<item id="29929" count="1" /> <!-- Iss?Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29949" count="1" /> <!-- Wynn's Rune Lv. 12 - Not Available -->
+						<item id="29949" count="1" /> <!-- Wynn's Rune - Stage 12 -->
 					</item>
 					<item chance="12.5">
-						<item id="29969" count="1" /> <!-- Aeore's Rune Lv. 12 - Not Available -->
+						<item id="29969" count="1" /> <!-- Aeore's Rune - Stage 12 -->
 					</item>
 				</items>
 			</effect>
@@ -273,28 +273,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29830" count="1" /> <!-- Sigel's Rune Lv. 13 - Not Available -->
+						<item id="29830" count="1" /> <!-- Sigel's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29850" count="1" /> <!-- Tyrr's Rune Lv. 13 - Not Available -->
+						<item id="29850" count="1" /> <!-- Tyrr's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29870" count="1" /> <!-- Othell's Rune Lv. 13 - Not Available -->
+						<item id="29870" count="1" /> <!-- Othell's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29890" count="1" /> <!-- Yul's Rune Lv. 13 - Not Available -->
+						<item id="29890" count="1" /> <!-- Yul's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29910" count="1" /> <!-- Feoh's Rune Lv. 13 - Not Available -->
+						<item id="29910" count="1" /> <!-- Feoh's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29930" count="1" /> <!-- Iss' Rune Lv. 13 - Not Available -->
+						<item id="29930" count="1" /> <!-- Iss?Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29950" count="1" /> <!-- Wynn's Rune Lv. 13 - Not Available -->
+						<item id="29950" count="1" /> <!-- Wynn's Rune - Stage 13 -->
 					</item>
 					<item chance="12.5">
-						<item id="29970" count="1" /> <!-- Aeore's Rune Lv. 13 - Not Available -->
+						<item id="29970" count="1" /> <!-- Aeore's Rune - Stage 13 -->
 					</item>
 				</items>
 			</effect>
@@ -347,78 +347,63 @@
 		<icon>icon.etc_potion_green_i00</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="55214" toLevel="1" name="Scroll of Escape: Mithril Mines' Entrance">
-		<icon>icon.skill0000</icon>
+	<skill id="55214" toLevel="1" name="Teleport: Entrance to Mithril Mines">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55215" toLevel="1" name="Scroll of Escape: Entrance to the School of Dark Arts">
-		<icon>icon.skill0000</icon>
+	<skill id="55215" toLevel="1" name="Teleport: Entrance to the School of Dark Arts">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55216" toLevel="1" name="Scroll of Escape: Entrance to Orc Barracks">
-		<icon>icon.skill0000</icon>
+	<skill id="55216" toLevel="1" name="Teleport: Entrance to Orc Barracks">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55217" toLevel="1" name="Scroll of Escape: Entrance to Ruins of Agony">
-		<icon>icon.skill0000</icon>
+	<skill id="55217" toLevel="1" name="Teleport: Entrance to Ruins of Agony">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55218" toLevel="1" name="Scroll of Escape: Entrance to Ruins of Despair">
-		<icon>icon.skill0000</icon>
+	<skill id="55218" toLevel="1" name="Teleport: Entrance to Ruins of Despair">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55219" toLevel="1" name="Scroll of Escape: Abandoned Camp">
-		<icon>icon.skill0000</icon>
+	<skill id="55219" toLevel="1" name="Teleport: Abandoned Camp">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55220" toLevel="1" name="Scroll of Escape: Entrance to Ant Nest">
-		<icon>icon.skill0000</icon>
+	<skill id="55220" toLevel="1" name="Teleport: Entrance to Ant Nest">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55221" toLevel="1" name="Scroll of Escape: Entrance to Cruma Tower">
-		<icon>icon.skill0000</icon>
+	<skill id="55221" toLevel="1" name="Teleport: Entrance to Cruma Tower">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55222" toLevel="1" name="Scroll of Escape: Death Pass">
-		<icon>icon.skill0000</icon>
+	<skill id="55222" toLevel="1" name="Teleport: Death Pass">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55223" toLevel="1" name="Scroll of Escape: Dragon Valley's Crossroads">
-		<icon>icon.skill0000</icon>
+	<skill id="55223" toLevel="1" name="Teleport: Three-way crossroads at Dragon Valley">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55224" toLevel="1" name="Scroll of Escape: Entrance to Antharas' Lair">
-		<icon>icon.skill0000</icon>
+	<skill id="55224" toLevel="1" name="Teleport: Entrance to Antharas' Lair">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55225" toLevel="1" name="Scroll of Escape: Outlaw Forest">
-		<icon>icon.skill0000</icon>
+	<skill id="55225" toLevel="1" name="Teleport: Outlaw Forest">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55226" toLevel="1" name="Scroll of Escape: Alligator Island">
-		<icon>icon.skill0000</icon>
+	<skill id="55226" toLevel="1" name="Teleport: Alligator Island">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55227" toLevel="1" name="Scroll of Escape: Entrance to Forgotten Temple">
-		<icon>icon.skill0000</icon>
+	<skill id="55227" toLevel="1" name="Teleport: Entrance to Forgotten Temple">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55228" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeId>37115</itemConsumeId>
@@ -444,32 +429,27 @@
 		</effects>
 	</skill>
 	<skill id="55229" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55230" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55231" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55232" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55233" toLevel="1" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55234" toLevel="1" name="XP and SP Rune 100%">
-		<!-- Acquired XP/ SP while hunting +100%. -->
+		<!-- Acquired XP/ SP +100%. -->
 		<icon>icon.skill19226</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -493,14 +473,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55235" toLevel="1" name="Adventurer's Greater Haste Potion">
+	<skill id="55235" toLevel="1" name="Adventurer's Potion - Atk. Spd.">
 		<!-- Increases Atk. Spd. -->
 		<icon>icon.etc_reagent_green_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>70102</itemConsumeId> <!-- Adventurer's Potion -->
+		<itemConsumeId>70102</itemConsumeId> <!-- Adventurerâ€™s Potion -->
 		<mpConsume>75</mpConsume>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
@@ -518,7 +498,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55236" toLevel="1" name="Adventurer's Cast Quickening Potion">
+	<skill id="55236" toLevel="1" name="Adventurer's Potion - Casting Spd.">
 		<!-- Increases Casting Spd. -->
 		<icon>icon.etc_potion_of_acumen2_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -543,7 +523,7 @@
 		</effects>
 	</skill>
 	<skill id="55237" toLevel="1" name="Scroll: Vampiric Rage">
-		<!-- With a certain chance, absorbs 6% of the inflicted damage as HP. Duration: 20 min. -->
+		<!-- For 20 min., with a certain chance, absorbs 6% of the inflicted melee damage as HP. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70104</itemConsumeId> <!-- Scroll: Vampiric Rage -->
@@ -569,13 +549,13 @@
 		</effects>
 	</skill>
 	<skill id="55238" toLevel="1" name="Side Effect">
-		<!-- Enlarges your head for 10 min. Cooldown: 30 min. -->
+		<!-- Enlarges the user's head for 10 min. Cooldown - 30 min. -->
 		<icon>icon.skill2513</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>1800000</reuseDelay>
 	</skill>
 	<skill id="55239" toLevel="1" name="Holiday Hat">
-		<!-- Resurrects a dead party member restoring them 50% XP. Consumes 1 Spirit Ore. Cooldown: 30 min. -->
+		<!-- Resurrects a dead target restoring them 50% XP. Consumes 1 Spirit Ore. Cooldown: 30 min. -->
 		<icon>icon.bm_romantic_chaperon_gold</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -584,8 +564,8 @@
 		<reuseDelay>1800000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55240" toLevel="1" name="Holiday Hat's Overwhelming Power">
-		<!-- For 20 min., acquired XP/ SP +5%. Cooldown: 60 min. The effect remains after death. -->
+	<skill id="55240" toLevel="1" name="Overwhelming Power of a Holiday Hat">
+		<!-- For 20 min., acquired XP/ SP +5%. Effect remains after death. -->
 		<icon>icon.skill19226</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -593,7 +573,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55241" toLevel="1" name="Scroll: Mana Regeneration">
-		<!-- Increases MP Recovery Rate. -->
+		<!-- Increases MP Recovery Bonus. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70105</itemConsumeId> <!-- Scroll: Mana Regeneration lvl 1 -->
@@ -617,7 +597,7 @@
 		</effects>
 	</skill>
 	<skill id="55242" toLevel="1" name="Scroll: Berserker Spirit">
-		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
+		<!-- For 20 min., P. Def. -5%, M. Def. -10%, P. Evasion -2, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -671,8 +651,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55243" toLevel="2" name="Scroll: Dance of the Warrior">
-		<!-- For 10 min., P. Atk. +12%. -->
+	<skill id="55243" toLevel="1" name="Scroll: Dance of the Warrior">
+		<!-- For 10 min., P. Atk +12%. -->
 		<icon>icon.skill0271</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -696,8 +676,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55244" toLevel="2" name="Scroll: Dance of the Mystic">
-		<!-- For 10 min., M. Atk. +20%. -->
+	<skill id="55244" toLevel="1" name="Scroll: Dance of the Mystic">
+		<!-- For 10 min., M. Atk +20%. -->
 		<icon>icon.skill0273</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -706,7 +686,7 @@
 		<itemConsumeId>70111</itemConsumeId>
 		<hitTime>2500</hitTime>
 		<reuseDelay>3000</reuseDelay>
-		<effectPoint>467</effectPoint>
+		<effectPoint>523</effectPoint>
 		<isMagic>3</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A2</operateType>
@@ -721,13 +701,12 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55245" toLevel="8" name="Scroll of Escape: Aden">
-		<icon>icon.skill0000</icon>
+	<skill id="55245" toLevel="8" name="Scroll of Escape: Town of Aden">
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55246" toLevel="1" name="Rune of Boost">
-		<!-- When in inventory, STR +1, INT +1, CON +1, MEN +1, DEX +1, WIT +1. -->
+		<!-- When in inventory STR +1, INT +1, CON +1, MEN +1, DEX +1, WIT +1. -->
 		<icon>BranchSys3.lcon.g_rune_itemdrop_up</icon>
 		<operateType>P</operateType>
 		<basicProperty>NONE</basicProperty>
@@ -795,7 +774,7 @@
 		</effects>
 	</skill>
 	<skill id="55249" toLevel="1" name="Bracelet of Duty - Lv. 2">
-		<!-- Unlocks 1 talisman slot. Additionally, CON +1. -->
+		<!-- Activates 1 talisman slot. CON +1. -->
 		<icon>BranchIcon.Icon.g_pledge_bracelet_02</icon>
 		<magicLevel>20</magicLevel>
 		<operateType>P</operateType>
@@ -811,7 +790,7 @@
 		</effects>
 	</skill>
 	<skill id="55250" toLevel="1" name="Bracelet of Duty - Lv. 3">
-		<!-- Unlocks 2 talisman slots. Additionally, CON +1, MEN +1. -->
+		<!-- Activates 2 talisman slots. CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_pledge_bracelet_03</icon>
 		<magicLevel>20</magicLevel>
 		<operateType>P</operateType>
@@ -831,7 +810,7 @@
 		</effects>
 	</skill>
 	<skill id="55251" toLevel="1" name="Bracelet of Duty - Lv. 4">
-		<!-- Unlocks 2 talisman slots. Additionally, DEX +1, WIT +1, CON +1, MEN +1. -->
+		<!-- Activates 2 talisman slots. DEX +1, WIT +1, CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_pledge_bracelet_04</icon>
 		<magicLevel>20</magicLevel>
 		<operateType>P</operateType>
@@ -859,7 +838,7 @@
 		</effects>
 	</skill>
 	<skill id="55252" toLevel="1" name="Bracelet of Duty - Lv. 5">
-		<!-- Unlocks 3 talisman slots. Additionally, STR +1, INT +1, DEX +1, WIT +1, CON +1, MEN +1. -->
+		<!-- Activates 3 talisman slots. STR +1, INT +1, DEX +1, WIT +1, CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_pledge_bracelet_05</icon>
 		<magicLevel>20</magicLevel>
 		<operateType>P</operateType>
@@ -894,8 +873,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55253" toLevel="20" name="Sigel's Defense">
-		<!-- P. Def. +20.2 -->
+	<skill id="55253" toLevel="20" name="Sigel's Protection">
+		<!-- P. Def. +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_sigel_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_sigel_lv00</value>
@@ -947,8 +926,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55254" toLevel="20" name="Sigel's Protection">
-		<!-- Max HP +73. -->
+	<skill id="55254" toLevel="20" name="Sigel Protection">
+		<!-- Max HP +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_sigel_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_sigel_lv00</value>
@@ -1000,8 +979,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55255" toLevel="20" name="Tyrr's Might">
-		<!-- P. Atk. +2.8 -->
+	<skill id="55255" toLevel="20" name="Tyrr Might">
+		<!-- P. Atk. +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_tir_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_tir_lv00</value>
@@ -1054,7 +1033,7 @@
 		</effects>
 	</skill>
 	<skill id="55256" toLevel="20" name="Tyrr's Haste">
-		<!-- Increases Atk. Spd. -->
+		<!-- Atk. Spd. +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_tir_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_tir_lv00</value>
@@ -1107,7 +1086,7 @@
 		</effects>
 	</skill>
 	<skill id="55257" toLevel="20" name="Othell's Focus">
-		<!-- Increases P. Critical Rate. -->
+		<!-- P. Critical Rate +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_othel_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_othel_lv01</value>
@@ -1160,7 +1139,7 @@
 		</effects>
 	</skill>
 	<skill id="55258" toLevel="20" name="Othell's Critical Damage">
-		<!-- P. Critical Damage +80. -->
+		<!-- P. Critical Damage +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_othel_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_othel_lv01</value>
@@ -1213,7 +1192,7 @@
 		</effects>
 	</skill>
 	<skill id="55259" toLevel="20" name="Yul Wind Walk">
-		<!-- Speed +4 -->
+		<!-- Speed +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_yr_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_yr_lv01</value>
@@ -1265,8 +1244,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55260" toLevel="20" name="Yul's Guidance">
-		<!-- P. Accuracy +2.47 -->
+	<skill id="55260" toLevel="20" name="Yul Guidance">
+		<!-- P. Accuracy +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_yr_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_yr_lv01</value>
@@ -1318,8 +1297,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55261" toLevel="20" name="Feoh Magic Might">
-		<!-- Increases M. Atk. and MP Consumption. -->
+	<skill id="55261" toLevel="20" name="Feoh's Magical Power">
+		<!-- M. Atk. +$s1 and skill MP Consumption +15%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_feoh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_feoh_lv01</value>
@@ -1397,7 +1376,7 @@
 		</effects>
 	</skill>
 	<skill id="55262" toLevel="20" name="Feoh's Empower">
-		<!-- Increases M. Atk. -->
+		<!-- M. Atk. +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_feoh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_feoh_lv01</value>
@@ -1450,7 +1429,7 @@
 		</effects>
 	</skill>
 	<skill id="55263" toLevel="20" name="Iss' Magic Regeneration">
-		<!-- MP Recovery Rate +12. -->
+		<!-- MP Recovery Bonus +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_is_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_is_lv01</value>
@@ -1502,8 +1481,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55264" toLevel="20" name="Iss' Mana Effect Boost">
-		<!-- Increases Max MP. -->
+	<skill id="55264" toLevel="20" name="Iss' Boost Mana">
+		<!-- Max MP +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_is_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_is_lv01</value>
@@ -1556,7 +1535,7 @@
 		</effects>
 	</skill>
 	<skill id="55265" toLevel="20" name="Wynn's Acumen">
-		<!-- Increases Casting Spd. -->
+		<!-- Casting Spd. +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_wynn_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_wynn_lv01</value>
@@ -1608,8 +1587,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55266" toLevel="20" name="Wynn's Decrease Weight">
-		<!-- Increases weight limit. -->
+	<skill id="55266" toLevel="20" name="Wynn's Lightness">
+		<!-- Weight limit +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_wynn_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_wynn_lv01</value>
@@ -1662,7 +1641,7 @@
 		</effects>
 	</skill>
 	<skill id="55267" toLevel="20" name="Aeore's Regeneration">
-		<!-- Increases HP Recovery Rate. -->
+		<!-- HP Recovery Bonus +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_eolh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_eolh_lv01</value>
@@ -1715,7 +1694,7 @@
 		</effects>
 	</skill>
 	<skill id="55268" toLevel="20" name="Aeore's Heal">
-		<!-- Increases Healing Power. -->
+		<!-- Received healing +$s1. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_eolh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_eolh_lv01</value>
@@ -1773,7 +1752,7 @@
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
-	<skill id="55270" toLevel="1" name="Agathion Dance of Fury">
+	<skill id="55270" toLevel="1" name="Agathion - Dance of Fury">
 		<!-- For 20 min., Atk. Spd. +5%. -->
 		<icon>icon.bm_agathion_fury</icon>
 		<operateType>A1</operateType>
@@ -1799,7 +1778,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55271" toLevel="1" name="Agathion Dance of Concentration">
+	<skill id="55271" toLevel="1" name="Agathion - Dance of Concentration">
 		<!-- For 20 min., Casting Spd. +5%. -->
 		<icon>icon.bm_agathion_concentration</icon>
 		<operateType>A1</operateType>
@@ -1825,7 +1804,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55272" toLevel="1" name="Agathion Song of Wind">
+	<skill id="55272" toLevel="1" name="Agathion - Song of Wind">
 		<!-- For 5 min., Speed +20. -->
 		<icon>icon.bm_agathion_wind</icon>
 		<operateType>A2</operateType>
@@ -1852,7 +1831,7 @@
 		</effects>
 	</skill>
 	<skill id="55273" toLevel="3" name="Energy of Development">
-		<!-- For 10 min., acquired XP/ SP while hunting +5%. -->
+		<!-- For 10 min., Acquired XP/ SP +$s1. -->
 		<icon>BranchIcon.Icon.etc_g_bonus_herb_i00</icon>
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLevel>3</abnormalLevel>
@@ -1879,7 +1858,7 @@
 		</effects>
 	</skill>
 	<skill id="55274" toLevel="3" name="Energy of Speed">
-		<!-- For 10 min., P. Accuracy +2. -->
+		<!-- For 10 min., P. Accuracy +$s1. -->
 		<icon>BranchIcon.Icon.etc_g_bonus_herb_i01</icon>
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLevel>3</abnormalLevel>
@@ -1907,7 +1886,7 @@
 		</effects>
 	</skill>
 	<skill id="55275" toLevel="3" name="Energy of Accuracy">
-		<!-- For 10 min., P. Accuracy 1, M. Accuracy 1. -->
+		<!-- For 10 min., P. Accuracy +$s1, M. Accuracy +$s2. -->
 		<icon>BranchIcon.Icon.etc_g_bonus_herb_i02</icon>
 		<abnormalInstant>true</abnormalInstant>
 		<abnormalLevel>3</abnormalLevel>
@@ -1935,7 +1914,7 @@
 		</effects>
 	</skill>
 	<skill id="55282" toLevel="1" name="Buff for the Hero of Ruins of Agony">
-		<!-- A buff for those who fight in the Ruins of Agony. P./ M. Atk. +10%. A chance to obtain Box of Tears when the buff is canceled. Note!. The box cannot be obtained if your character is dead or if there is no space in your inventory. -->
+		<!-- A Buff for a warrior fighting in the Ruins of Agony. P. Atk. and M. Atk. +10%. You can receive a Box of Tears when the Buff is no longer in effect. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -1955,31 +1934,26 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55285" toLevel="1" name="Box of Tears">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55286" toLevel="1" name="Decayed Box">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55287" toLevel="1" name="Shabby Box">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55288" toLevel="1" name="Crude Box">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55289" toLevel="1" name="Old Box">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -2016,7 +1990,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55292" toLevel="1" name="Devi's Earring">
-		<!-- Increases MP Recovery Rate and Received Healing. -->
+		<!-- Increases MP recovery rate and healing power. -->
 		<icon>icon.ev_11th_rare_acc_earing</icon>
 		<magicLevel>55</magicLevel>
 		<operateType>P</operateType>
@@ -2038,12 +2012,12 @@
 		</effects>
 	</skill>
 	<skill id="55293" toLevel="1" name="Devi's Earring">
-		<!-- Increases MP Recovery Rate and Received Healing. -->
+		<!-- Increases MP recovery rate and healing power. -->
 		<icon>icon.ev_11th_rare_acc_earing</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55294" toLevel="1" name="Devi's Necklace">
-		<!-- Increases P./ M. Def. -->
+		<!-- P. Def. and M. Def. are increased. -->
 		<icon>icon.ev_11th_rare_acc_necklace</icon>
 		<!-- A 15-day item. Max MP +20, M. Def. +3, P. Def. +5. -->
 		<magicLevel>55</magicLevel>
@@ -2071,12 +2045,12 @@
 		</effects>
 	</skill>
 	<skill id="55295" toLevel="1" name="Devi's Necklace">
-		<!-- Increases P./ M. Def. -->
+		<!-- P. Def. and M. Def. are increased. -->
 		<icon>icon.ev_11th_rare_acc_necklace</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55296" toLevel="1" name="Scroll of Invisibility">
-		<!-- Makes the player invisible to monsters. Speed -40%. Disappears if your character attacks or dies. -->
+		<!-- Makes the player invisible and invincible to enemy's attacks. Speed -40%. The effect fades upon attack. -->
 		<icon>icon.etc_aidcharm_cancel_valbreath_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
@@ -2084,7 +2058,7 @@
 		<effectPoint>532</effectPoint>
 	</skill>
 	<skill id="55297" toLevel="1" name="Buff for the Hero of Ruins of Despair">
-		<!-- A buff for those who fight in the Ruins of Despair. P./ M. Atk. +10%. There is a chance to obtain Decayed Box when the buff expires. Note!. The box cannot be obtained if you are dead or if there is no free space in your inventory. -->
+		<!-- A Buff for a warrior fighting in the Ruins of Despair. P. Atk. and M. Atk. +10%. You can receive a Decayed Box when the Buff is no longer in effect. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

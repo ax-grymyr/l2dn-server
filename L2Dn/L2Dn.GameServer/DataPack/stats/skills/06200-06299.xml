@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6200" toLevel="1" name="Dispel NPC Transformation">
-		<!-- Cancel Transformation -->
+		<!-- Undo the transformation. -->
 		<icon>icon.skilltransform2</icon>
 		<castRange>900</castRange>
 		<effectPoint>10</effectPoint>
@@ -22,9 +22,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6205" toLevel="19" name="Strider's Bite">
-		<!-- Commands the mounted strider to bite the enemies at the front. Deals damage with 1649 Power, causes Bleed for 20 sec., constantly draining HP. Critical. Over-hit. -->
-		<icon>icon.skill0000</icon>
+	<skill id="6205" toLevel="19" name="Strider Bite">
+		<!-- Commands the mounted strider to bite the enemies at the front. Attacks the enemy with $s1 Power added to P. Atk., causes bleed for $s2, and makes him consume $s3 HP every sec. Critical. Over-hit. -->
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
@@ -105,7 +104,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -159,9 +158,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6206" toLevel="19" name="Strider's Fear">
-		<!-- Inflicts Fear on the enemy forcing them to flee for 10 sec. -->
-		<icon>icon.skill0000</icon>
+	<skill id="6206" toLevel="19" name="Strider Fear">
+		<!-- Frightens the enemy into fleeing for $s1. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -261,7 +259,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>5000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -270,7 +268,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="6207" toLevel="1" name="Strider's Dash">
+	<skill id="6207" toLevel="1" name="Strider Dash">
 		<!-- For 15 sec., Speed +66. -->
 		<icon>icon.action108</icon>
 		<abnormalLevel>2</abnormalLevel>
@@ -309,8 +307,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6209" toLevel="4" name="Grade Penalty">
-		<!-- The equipped weapon's grade doesn't match your level, so the following penalties are incurred: P. Accuracy -16, P. Critical Rate -10%, P. Critical Damage -10%, Atk. Spd. -10%, P. Atk. -10%. -->
+	<skill id="6209" toLevel="4" name="Weapon Grade Penalty">
+		<!-- The equipped weapon's grade doesn't match your Lv., so the following penalties are incurred: P. Accuracy -$s1, P. Critical Rate -$s2, P. Critical Damage -$s3, Atk. Spd. -$s4, and P. Atk. -$s5. -->
 		<icon>
 			<value level="1">icon.skill6209_1</value>
 			<value level="2">icon.skill6209_2</value>
@@ -364,8 +362,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6213" toLevel="4" name="Grade Penalty">
-		<!-- When equipped with armor or accessories whose grade doesn't fit with your Lv., a penalty is incurred with decreases in P. Evasion -2.5, Atk. Spd./ Casting Spd./ Speed -16.67%. -->
+	<skill id="6213" toLevel="4" name="Armor Grade Penalty">
+		<!-- When equipped with armor or accessories whose grade doesn't fit with your Lv., a penalty is incurred with decreases in P. Evasion -$s1, Atk. Spd./ Casting Spd./ Speed -$s2. -->
 		<icon>
 			<value level="1">icon.skill6213_1</value>
 			<value level="2">icon.skill6213_2</value>
@@ -415,127 +413,126 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6217" toLevel="1" name="Raid Boss (Lv. 81)">
+	<skill id="6217" toLevel="1" name="81 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6218" toLevel="1" name="Raid Boss (Lv. 81)">
+	<skill id="6218" toLevel="1" name="81 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6219" toLevel="1" name="Raid Boss (Lv. 81)">
+	<skill id="6219" toLevel="1" name="81 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6220" toLevel="1" name="Raid Boss (Lv. 81)">
+	<skill id="6220" toLevel="1" name="81 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6221" toLevel="1" name="Raid Boss (Lv. 82)">
+	<skill id="6221" toLevel="1" name="82 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6222" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6222" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Evil existence trying to invade the real world along the border between dreams and reality. It is recognized differently by different people, as if it were created by a collection of nightmares. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6223" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6223" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Leader of the Cannibalistic Stakatos appointed by the Stakato Queen Shyeed to guard their nest. Unlike other Stakatos, it has the ability to jump through invisible space. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6224" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6224" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Leader of the Cannibalistic Stakatos appointed by the Stakato Queen Shyeed to guard their nest. Unlike other Stakatos, it has the ability to jump through invisible space. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6225" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6225" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Leader of the Cannibalistic Stakatos appointed by the Stakato Queen Shyeed to guard their nest. Unlike other Stakatos, it has the ability to jump through invisible space. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6226" toLevel="1" name="Raid Boss (Lv. 84)">
+	<skill id="6226" toLevel="1" name="84 Lv. Raid Boss">
 		<!-- Leader of the Cannibalistic Stakatos appointed by the Stakato Queen Shyeed to guard their nest. Unlike other Stakatos, it has the ability to jump through invisible space. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6227" toLevel="1" name="Raid Boss (Lv. 84)">
-		<!-- The queen of Spiked Stakatos. -->
+	<skill id="6227" toLevel="1" name="84 Lv. Raid Boss">
+		<!-- Queen of the Spike Stakatos who commands and propagates the Spike Stakatos. It knows that its life is coming to an end, and it orders the nest guarded so that it is a good environment for the next Stakato Queen to grow up. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6228" toLevel="1" name="Raid Boss (Lv. 83)">
-		<!-- One of the monsters born of the Goddess Shillien. When the Great Spirit Gildor is weakened, it leads the Tasaba Lizardmen into the Reed Field, but when the Tasaba Lizardmen are wiped out by the appearance of the Mucrokians, it spews tremendous anger. -->
+	<skill id="6228" toLevel="1" name="83 Lv. Raid Boss">
+		<!-- One of the monsters born of the Goddess Shilen. When the Great Spirit Gildor is weakened, it leads the Tasaba Lizardmen into the Reed Field, but when the Tasaba Lizardmen are wiped out by the appearance of the Mucrokians, it spews tremendous anger. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6229" toLevel="1" name="Raid Boss (Lv. 84)">
-		<!-- Water spirit born from the magical waters of Innadril. It's the Goddess Eva's favourite. -->
+	<skill id="6229" toLevel="1" name="84 Lv. Raid Boss">
+		<!-- Water spirit born from the powerful waters of Innadril. It is greatly beloved by the Goddess Eva. It's a trickster that does whatever it wants, like snatching babies or causing floods in the middle of the night. Eva fears retaliation one day because of Lian's severe tricks, and she puts him in the care of guardian spirits. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6230" toLevel="1" name="Raid Boss (Lv. 82)">
-		<!-- It believes that it is a Giant. Now it guards a cave that served as a Giants' fortress in the Hekaton Prime days. -->
+	<skill id="6230" toLevel="1" name="82 Lv. Raid Boss">
+		<!-- Because of the item that was made in the image of the giants by the Ivory Tower magicians, it believes it is a giant itself. It is controlled by Hekaton Prime, and it guards the cave that was once the fortress of the giants. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6231" toLevel="1" name="Raid Boss (Lv. 82)">
-		<!-- A lifeform created by the Giants that were fleeing from the wrath of Einhasad. At one time, it broke free from the control of the Giants and fought against them. Its mind is now controlled by Hekaton Prime, and it protects the Giants once again. -->
+	<skill id="6231" toLevel="1" name="82 Lv. Raid Boss">
+		<!-- Lifeform created by the giants that were fleeing by night the wrath of Einhasad. It was improved with a Monster Eye as its foundation and it was created to exterminate the pursuers of the gods. At one time, it broke free from the control of the giants and fought against them. Its mind is now controlled by Hekaton prime, and it again protects the giants. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6232" toLevel="1" name="Raid Boss (Lv. 83)">
+	<skill id="6232" toLevel="1" name="83 Lv. Raid Boss">
 		<!-- Last Lesser Giant hiding deep inside the Giant's Cave. Though it is physically the same as the other Lesser Giants, it contains the secret of the ancient lesser giant civilization, and it protects this secret. It is currently controlled by Hekaton Prime. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="6233" toLevel="1" name="Raid Boss (Lv. 83)">
-		<!-- A control device created by the ancient Giants. Its primary goal was changed to protecting the gates. Now it controls all creatures that guard the entrance to the Cave. -->
+	<skill id="6233" toLevel="1" name="83 Lv. Raid Boss">
+		<!-- Control device created by the ancient giants civilization. It has outgrown its original research goal. It's only goal now is to protect the cave. It is transforming it into a powerful protected fortress by controlling the minds of the other races and by maintaining the Giant's Cave. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6234" toLevel="1" name="Presentation - Adena Firecracker">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>80</magicLevel>
 		<operateType>A1</operateType>
@@ -561,7 +558,6 @@
 		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6236" toLevel="1" name="Presentation - Party Return">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -586,7 +582,6 @@
 		<magicLevel>84</magicLevel>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -614,7 +609,6 @@
 		<magicLevel>84</magicLevel>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<hitTime>2000</hitTime>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
@@ -638,7 +632,7 @@
 		</effects>
 	</skill>
 	<skill id="6240" toLevel="5" name="Heatstroke">
-		<!-- Heatstroke Lv. 1. You are extremely hot and fatigued. -->
+		<!-- Heatstroke stage $s1. Inflicted with heatstroke. You are extremely hot and fatigued. -->
 		<icon>icon.etc_ashes_white_i00</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -854,7 +848,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6251" toLevel="1" name="Summon Sultriness">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -871,7 +864,6 @@
 		</effects>
 	</skill>
 	<skill id="6252" toLevel="1" name="Sultriness Attack">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-1111</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -1055,7 +1047,6 @@
 		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6262" toLevel="1" name="EMP Power">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>76</magicLevel>
@@ -1070,7 +1061,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6263" toLevel="1" name="EMP Shock">
-		<!-- Immobilizes and stuns the target for 2 sec. -->
+		<!-- Immobilizes and stuns target for 2 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>2</abnormalTime>
@@ -1094,8 +1085,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="6264" toLevel="1" name="Boom Golem">
-		<icon>icon.skill0000</icon>
+	<skill id="6264" toLevel="1" name="Golem Boom">
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
 		<magicLevel>75</magicLevel>
@@ -1109,7 +1099,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6265" toLevel="1" name="Smokescreen">
-		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
 		<magicLevel>75</magicLevel>
@@ -1123,7 +1112,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6266" toLevel="1" name="Stun">
-		<!-- Immobilizes and stuns the target for 30 sec. -->
+		<!-- Immobilizes and stuns target for 30 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1146,7 +1135,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6267" toLevel="1" name="Soul Drain">
-		<!-- Absorbs the target's stamina and makes it your own. -->
+		<!-- Absorbs opponent's HP to add to one's own. -->
 		<icon>icon.skill1042</icon>
 		<effectPoint>-2</effectPoint>
 		<magicLevel>90</magicLevel>
@@ -1167,7 +1156,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6268" toLevel="1" name="Jump Attack">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-273</effectPoint>
 		<magicLevel>84</magicLevel>
 		<operateType>A1</operateType>
@@ -1191,7 +1179,7 @@
 		</effects>
 	</skill>
 	<skill id="6269" toLevel="1" name="Trojan Poison">
-		<!-- A toxin that decreases HP over time. -->
+		<!-- Poisons the enemy for 10 sec. and inflicts 345 HP damage per sec. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>10</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1212,7 +1200,7 @@
 		<hitTime>2500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>1100</castRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
@@ -1224,12 +1212,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<affectRange>200</affectRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="6271" toLevel="5" name="Grima Power Up">
-		<!-- P. Atk. +10% -->
+		<!-- P. Atk. +$s1. -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1268,7 +1256,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6273" toLevel="1" name="Underbug Self Blasting">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -1277,7 +1264,7 @@
 		<affectRange>200</affectRange>
 		<hitTime>10000</hitTime>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1305,7 +1292,7 @@
 				<power>38976</power>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>6662</skillId> <!-- Ice Crystal -->
+				<skillId>6662</skillId> <!-- Freeze -->
 				<skillLevel>2</skillLevel>
 			</effect>
 		</effects>
@@ -1333,7 +1320,7 @@
 				<power>45256</power>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>6662</skillId> <!-- Ice Crystal -->
+				<skillId>6662</skillId> <!-- Freeze -->
 				<skillLevel>2</skillLevel>
 			</effect>
 		</effects>
@@ -1357,7 +1344,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="6277" toLevel="1" name="Summon Spirits">
-		<icon>icon.skill0000</icon>
 		<castRange>800</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1372,7 +1358,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6278" toLevel="1" name="Ice Ball">
-		<icon>icon.skill0000</icon>
 		<affectRange>250</affectRange>
 		<castRange>800</castRange>
 		<coolTime>500</coolTime>
@@ -1396,7 +1381,6 @@
 		</effects>
 	</skill>
 	<skill id="6279" toLevel="1" name="Attack Nearby Range">
-		<icon>icon.skill0000</icon>
 		<affectRange>450</affectRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1418,7 +1402,7 @@
 		</effects>
 	</skill>
 	<skill id="6280" toLevel="1" name="Announcement of Death">
-		<!-- Cold Judgement will be passed in 10 sec. -->
+		<!-- Freya's Cruel Sentence. Verdict will be made after 10 sec. -->
 		<icon>icon.skill6280</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1447,7 +1431,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6281" toLevel="1" name="Cold Judgement">
-		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<isTriggeredSkill>true</isTriggeredSkill>
@@ -1468,7 +1451,6 @@
 	</skill>
 	<skill id="6282" toLevel="1" name="Reflect Magic">
 		<!-- Reflects magic damage back to the enemy for 10 sec. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>REFLECT_MAGIC_DD</abnormalType>
@@ -1487,12 +1469,10 @@
 		<effects>
 			<effect name="ReflectMagic">
 				<amount>20</amount>
-				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6283" toLevel="1" name="Snow Storm">
-		<icon>icon.skill0000</icon>
+	<skill id="6283" toLevel="1" name="Ice Storm">
 		<castRange>1100</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1515,7 +1495,6 @@
 	</skill>
 	<skill id="6284" toLevel="1" name="Freya's Blessing">
 		<!-- P. Atk, P. Def. and Atk. Spd. +15%. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -1546,9 +1525,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6285" toLevel="1" name="Ice Rage">
+	<skill id="6285" toLevel="1" name="Rage of Ice">
 		<!-- Casting Spd. +15% for 20 min. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>CASTING_TIME_DOWN</abnormalType>
@@ -1570,7 +1548,7 @@
 		</effects>
 	</skill>
 	<skill id="6286" toLevel="1" name="Divine Protection of Sword">
-		<!-- For 20 min., HP Recovery Rate +15%, P. Def. +10%. -->
+		<!-- HP Recovery Bonus +15% and P. Def. +10% for 20 min. -->
 		<icon>icon.skill6286</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -1628,7 +1606,7 @@
 		</effects>
 	</skill>
 	<skill id="6288" toLevel="1" name="Jinia's Prayer">
-		<!-- P./ M. Def. +300%. -->
+		<!-- P. Def. and M. Def. +300%. -->
 		<icon>icon.skill6288</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1657,7 +1635,7 @@
 		</effects>
 	</skill>
 	<skill id="6289" toLevel="1" name="Kegor's Courage">
-		<!-- Increase P. Atk. by 300%, M. Atk. by 300%, Atk. Spd. by 25% and Casting Spd. by 25%. -->
+		<!-- P. Atk. +300%, M. Atk. +300%, Atk. Spd. +25% and Casting Spd. +25%. -->
 		<icon>icon.skill6289</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1694,7 +1672,6 @@
 		</effects>
 	</skill>
 	<skill id="6290" toLevel="1" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-574</effectPoint>
 		<effectRange>400</effectRange>
@@ -1714,7 +1691,6 @@
 		</effects>
 	</skill>
 	<skill id="6291" toLevel="1" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<effectPoint>-574</effectPoint>
 		<attributeType>WATER</attributeType>
@@ -1734,7 +1710,6 @@
 		</effects>
 	</skill>
 	<skill id="6292" toLevel="1" name="Rush">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>200</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -1761,7 +1736,6 @@
 		</effects>
 	</skill>
 	<skill id="6293" toLevel="1" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>250</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>-574</effectPoint>
@@ -1810,8 +1784,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6295" toLevel="1" name="Designation">
-		<icon>icon.skill0000</icon>
+	<skill id="6295" toLevel="1" name="Point Target">
 		<castRange>800</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1824,7 +1797,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6296" toLevel="1" name="Rush">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>200</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -1851,7 +1823,6 @@
 		</effects>
 	</skill>
 	<skill id="6297" toLevel="1" name="Cylinder Throw">
-		<icon>icon.skill0000</icon>
 		<castRange>1100</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1872,7 +1843,6 @@
 		</effects>
 	</skill>
 	<skill id="6298" toLevel="1" name="Summon Subordinate Knight">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
@@ -1885,7 +1855,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6299" toLevel="1" name="Icy Breath - Ice Storm">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-689</effectPoint>
@@ -1906,7 +1875,7 @@
 				<power>1547</power>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>6662</skillId> <!-- Ice Crystal -->
+				<skillId>6662</skillId> <!-- Freeze -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>

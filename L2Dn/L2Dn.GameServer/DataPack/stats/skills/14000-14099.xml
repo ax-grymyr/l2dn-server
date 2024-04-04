@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14000" toLevel="1" name="Berserk">
-		<!-- Greatly enhances attack abilities. -->
+		<!-- P. Atk. is greatly increased because of rage. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>6000</reuseDelay>

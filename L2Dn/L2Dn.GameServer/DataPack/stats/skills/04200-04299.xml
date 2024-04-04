@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="4200" toLevel="12" name="Decrease Atk. Spd.">
-		<!-- Momentarily decreases Atk. Spd. -->
+		<!-- Immediately decreases Atk. Spd. -->
 		<icon>icon.skill1206</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -56,7 +56,6 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -145,7 +144,7 @@
 		</effects>
 	</skill>
 	<skill id="4202" toLevel="12" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>
@@ -264,7 +263,6 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -345,7 +343,7 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -489,7 +487,6 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -513,7 +510,6 @@
 		</effects>
 	</skill>
 	<skill id="4207" toLevel="12" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -650,7 +646,6 @@
 		</effects>
 	</skill>
 	<skill id="4209" toLevel="12" name="Heal">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -708,7 +703,7 @@
 		</effects>
 	</skill>
 	<skill id="4210" toLevel="12" name="Chant of Life">
-		<!-- HP is restored. -->
+		<!-- HP is recovered. -->
 		<icon>icon.skill1229</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
@@ -790,7 +785,7 @@
 		</effects>
 	</skill>
 	<skill id="4211" toLevel="12" name="Might">
-		<!-- P. Atk. +50% -->
+		<!-- P. Atk. +$s1 -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -841,7 +836,7 @@
 		</effects>
 	</skill>
 	<skill id="4212" toLevel="12" name="Shield">
-		<!-- P. Def. +50% -->
+		<!-- P. Def. +$s1 -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -891,8 +886,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4213" toLevel="13" name="Haste">
-		<!-- Atk. Spd. +50% -->
+	<skill id="4213" toLevel="12" name="Haste">
+		<!-- Atk. Spd. +$s1. -->
 		<icon>icon.skill1086</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -913,7 +908,6 @@
 			<value level="10">89</value>
 			<value level="11">94</value>
 			<value level="12">99</value>
-			<value level="13">99</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</magicLevel>
 		<mpConsume>
 			<value level="1">6</value>
@@ -943,8 +937,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4214" toLevel="12" name="Damage Reflection">
-		<!-- Reflects 20% of the received damage. -->
+	<skill id="4214" toLevel="12" name="Reflect Damage">
+		<!-- Received damage is reflected by $s1. -->
 		<icon>icon.skill0086</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -994,7 +988,7 @@
 		</effects>
 	</skill>
 	<skill id="4215" toLevel="1" name="Raid Curse">
-		<!-- You are cursed by the Raid Boss guardian spirit. You can't use P./ M. skills for a certain time period. This curse befalls those who attempt to challenge a raid boss who is 9 or more levels below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
+		<!-- You have been cursed by a Guardian Spirit. No magic or physical skills can be used at this time. This curse befalls those who attempt to challenge a raid boss who is 9 or more levels below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
 		<icon>icon.skill1064</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1019,7 +1013,6 @@
 		</effects>
 	</skill>
 	<skill id="4216" toLevel="1" name="Scatter Enemy">
-		<icon>icon.skill0000</icon>
 		<castRange>800</castRange>
 		<coolTime>100</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1031,8 +1024,7 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="4217" toLevel="1" name="Mass Scatter Enemy">
-		<icon>icon.skill0000</icon>
+	<skill id="4217" toLevel="1" name="">
 		<affectRange>300</affectRange>
 		<castRange>800</castRange>
 		<coolTime>100</coolTime>
@@ -1047,7 +1039,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="4218" toLevel="1" name="Drain">
-		<icon>icon.skill0000</icon>
 		<affectRange>100</affectRange>
 		<castRange>600</castRange>
 		<coolTime>2000</coolTime>
@@ -1074,7 +1065,7 @@
 		</effects>
 	</skill>
 	<skill id="4219" toLevel="1" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1099,7 +1090,6 @@
 		</effects>
 	</skill>
 	<skill id="4220" toLevel="1" name="Dual Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>50</castRange>
 		<coolTime>900</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1117,7 +1107,6 @@
 		</effects>
 	</skill>
 	<skill id="4221" toLevel="1" name="Range Dual Attack">
-		<icon>icon.skill0000</icon>
 		<affectRange>100</affectRange>
 		<coolTime>1500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1134,8 +1123,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4222" toLevel="1" name="Instant Teleport">
-		<icon>icon.skill0000</icon>
+	<skill id="4222" toLevel="1" name="Teleport">
 		<hitTime>500</hitTime>
 		<magicLevel>60</magicLevel>
 		<operateType>A1</operateType>
@@ -1144,7 +1132,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4223" toLevel="1" name="Daytime Zaken">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>14400</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1160,7 +1147,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4224" toLevel="1" name="Nighttime Zaken">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1174,9 +1160,9 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="4225" toLevel="5" name="Shock Attack Resistance">
-		<!-- Resistance to attacks inflicting Shock. -->
-		<icon>icon.skill30888</icon>
+	<skill id="4225" toLevel="5" name="Stun Attack Resistance">
+		<!-- Resistance to Stun. -->
+		<icon>icon.skill4225</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1192,8 +1178,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4226" toLevel="2" name="Ban Heal">
-		<icon>icon.skill0000</icon>
+	<skill id="4226" toLevel="1" name="Ban Heal">
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1205,7 +1190,6 @@
 		</effects>
 	</skill>
 	<skill id="4227" toLevel="1" name="Zaken Regeneration">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>11</abnormalLevel>
 		<abnormalTime>14400</abnormalTime>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -1225,7 +1209,6 @@
 		</effects>
 	</skill>
 	<skill id="4228" toLevel="12" name="Double Dagger Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1283,7 +1266,6 @@
 		</effects>
 	</skill>
 	<skill id="4229" toLevel="12" name="Double Wind Fist">
-		<icon>icon.skill0000</icon>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1200</effectRange>
@@ -1341,8 +1323,7 @@
 		</effects>
 	</skill>
 	<skill id="4230" toLevel="1" name="Wild Cannon">
-		<!-- Makes a powerful attack on castle gates and walls. -->
-		<icon>icon.skill0000</icon>
+		<!-- Powerful attack on castle doors and walls. -->
 		<castRange>2500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>3000</effectRange>
@@ -1360,7 +1341,6 @@
 		</effects>
 	</skill>
 	<skill id="4231" toLevel="12" name="Spit Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1420,8 +1400,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4232" toLevel="12" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="4232" toLevel="12" name="Spinning Slasher">
 		<affectRange>20</affectRange>
 		<castRange>40</castRange>
 		<coolTime>800</coolTime>
@@ -1480,7 +1459,6 @@
 		</effects>
 	</skill>
 	<skill id="4234" toLevel="12" name="Spear Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -1536,8 +1514,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4235" toLevel="1" name="Ram">
-		<icon>icon.skill0000</icon>
+	<skill id="4235" toLevel="1" name="Devastated Return">
 		<hitTime>15000</hitTime>
 		<magicLevel>70</magicLevel>
 		<operateType>A1</operateType>
@@ -1579,7 +1556,7 @@
 		</effects>
 	</skill>
 	<skill id="4237" toLevel="1" name="Decrease Speed">
-		<!-- Momentarily the target's Speed -30%. -->
+		<!-- Immediately target's Speed -30%. -->
 		<icon>icon.skill1236</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -1599,7 +1576,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>75000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1708,7 +1684,6 @@
 		</effects>
 	</skill>
 	<skill id="4242" toLevel="1" name="Zaken Regeneration">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>12</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -1738,7 +1713,6 @@
 		<operateType>A2</operateType>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1750,7 +1724,6 @@
 		</effects>
 	</skill>
 	<skill id="4244" toLevel="12" name="Wild Sweep">
-		<icon>icon.skill0000</icon>
 		<affectRange>80</affectRange>
 		<castRange>40</castRange>
 		<coolTime>800</coolTime>
@@ -1811,8 +1784,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4245" toLevel="1" name="Mimic's Rage">
-		<icon>icon.skill0000</icon>
+	<skill id="4245" toLevel="1" name="Mimic of Wrath">
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1841,14 +1813,13 @@
 		</effects>
 	</skill>
 	<skill id="4246" toLevel="1" name="Bow Magic Resistance">
-		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
 			<effect name="DefenceTrait">
 				<BOW>50</BOW>
-				<INFECTION>50</INFECTION>
+				<BLEED>50</BLEED>
 			</effect>
 			<effect name="MagicalDefence">
 				<amount>100</amount>
@@ -1857,7 +1828,6 @@
 		</effects>
 	</skill>
 	<skill id="4247" toLevel="12" name="Storm Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -1918,7 +1888,6 @@
 		</effects>
 	</skill>
 	<skill id="4248" toLevel="12" name="Energy Drain">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -1980,7 +1949,7 @@
 		</effects>
 	</skill>
 	<skill id="4249" toLevel="12" name="Decrease Speed">
-		<!-- Momentarily the target's Speed -20%. -->
+		<!-- Immediately target's Speed -20%. -->
 		<icon>icon.skill1184</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2027,7 +1996,6 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<hitCancelTime>1.5</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2055,7 +2023,6 @@
 		</effects>
 	</skill>
 	<skill id="4250" toLevel="12" name="Twister">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -2116,7 +2083,6 @@
 		</effects>
 	</skill>
 	<skill id="4251" toLevel="12" name="Beam Cannon">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -2175,7 +2141,6 @@
 		</effects>
 	</skill>
 	<skill id="4252" toLevel="12" name="Flame Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -2238,7 +2203,6 @@
 		</effects>
 	</skill>
 	<skill id="4253" toLevel="12" name="Blaze">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -2299,7 +2263,6 @@
 		</effects>
 	</skill>
 	<skill id="4254" toLevel="12" name="Prominence">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -2360,7 +2323,6 @@
 		</effects>
 	</skill>
 	<skill id="4255" toLevel="12" name="Beam Cannon">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -2418,9 +2380,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4256" toLevel="1" name="Shock Immunity">
-		<!-- Immune to Shock. -->
-		<icon>icon.skill0000</icon>
+	<skill id="4256" toLevel="1" name="Stun Resistance">
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2431,7 +2391,6 @@
 		</effects>
 	</skill>
 	<skill id="4257" toLevel="12" name="Hydro Blast">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -2521,7 +2480,7 @@
 		</effects>
 	</skill>
 	<skill id="4259" toLevel="12" name="Toxic Smoke">
-		<!-- HP is draining. -->
+		<!-- Noxious fumes gradually decrease your HP. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2650,7 +2609,7 @@
 		</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>1.5</hitCancelTime>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -2688,7 +2647,6 @@
 		</effects>
 	</skill>
 	<skill id="4260" toLevel="12" name="Steal Blood">
-		<icon>icon.skill0000</icon>
 		<castRange>
 			<value level="1">600</value>
 			<value level="2">750</value>
@@ -2720,7 +2678,20 @@
 		</effectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
-		<hitTime>4000</hitTime>
+		<hitTime>
+			<value level="1">4000</value>
+			<value level="2">2000</value>
+			<value level="3">2000</value>
+			<value level="4">2000</value>
+			<value level="5">2000</value>
+			<value level="6">2000</value>
+			<value level="7">2000</value>
+			<value level="8">2000</value>
+			<value level="9">2000</value>
+			<value level="10">2000</value>
+			<value level="11">2000</value>
+			<value level="12">2000</value>
+		</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
 			<value level="1">10</value>
@@ -2737,21 +2708,48 @@
 			<value level="12">95</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">17</value>
-			<value level="2">28</value>
-			<value level="3">38</value>
-			<value level="4">49</value>
-			<value level="5">63</value>
-			<value level="6">78</value>
-			<value level="7">92</value>
-			<value level="8">97</value>
-			<value level="9">102</value>
-			<value level="10">105</value>
-			<value level="11">108</value>
-			<value level="12">109</value>
+			<value level="1">13</value>
+			<value level="2">22</value>
+			<value level="3">30</value>
+			<value level="4">39</value>
+			<value level="5">50</value>
+			<value level="6">62</value>
+			<value level="7">73</value>
+			<value level="8">77</value>
+			<value level="9">81</value>
+			<value level="10">84</value>
+			<value level="11">86</value>
+			<value level="12">87</value>
 		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">4</value>
+			<value level="2">6</value>
+			<value level="3">8</value>
+			<value level="4">10</value>
+			<value level="5">13</value>
+			<value level="6">16</value>
+			<value level="7">19</value>
+			<value level="8">20</value>
+			<value level="9">21</value>
+			<value level="10">21</value>
+			<value level="11">22</value>
+			<value level="12">22</value>
+		</mpInitialConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>
+			<value level="1">8000</value>
+			<value level="2">1000</value>
+			<value level="3">1000</value>
+			<value level="4">1000</value>
+			<value level="5">1000</value>
+			<value level="6">1000</value>
+			<value level="7">1000</value>
+			<value level="8">1000</value>
+			<value level="9">1000</value>
+			<value level="10">1000</value>
+			<value level="11">1000</value>
+			<value level="12">1000</value>
+		</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2777,7 +2775,6 @@
 	</skill>
 	<skill id="4261" toLevel="12" name="Mega Storm Strike">
 		<!-- Amasses a hurricane and fires it. -->
-		<icon>icon.skill0000</icon>
 		<castRange>
 			<value level="1">600</value>
 			<value level="2">750</value>
@@ -2951,7 +2948,7 @@
 		</effects>
 	</skill>
 	<skill id="4264" toLevel="1" name="Holiday Empower">
-		<!-- Temporarily M. Atk. +200. -->
+		<!-- Temporarily M. Atk. +55%. -->
 		<icon>icon.skill1059</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -3031,7 +3028,7 @@
 		</effects>
 	</skill>
 	<skill id="4267" toLevel="1" name="Grade Penalty">
-		<!-- The grade of your equipment is not appropriate for your level. -->
+		<!-- A penalty applied when the grade of equipment one is wearing is not appropriate for one's Lv.. -->
 		<icon>icon.skill4267</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3053,7 +3050,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4270" toLevel="4" name="Weight Penalty">
-		<!-- Your inventory weight limit exceeds 50%. HP/ MP regeneration is greatly decreased. -->
+		<!-- Your inventory weight limit exceeds $s1. HP/ MP regeneration is greatly decreased. -->
 		<icon>
 			<value level="1">icon.skill4270_1</value>
 			<value level="2">icon.skill4270_2</value>
@@ -3095,7 +3092,7 @@
 		</effects>
 	</skill>
 	<skill id="4271" toLevel="50" name="Momentum">
-		<!-- Momentum Lv. 1. -->
+		<!-- Momentum Lv. $s1. -->
 		<icon>
 			<value level="1">icon.skill_ct3_force01</value>
 			<value level="2">icon.skill_ct3_force02</value>
@@ -3166,7 +3163,7 @@
 		</effects>
 	</skill>
 	<skill id="4273" toLevel="5" name="Dagger Resistance">
-		<!-- Increases Dagger Resistance. -->
+		<!-- Resistance to dagger. -->
 		<icon>icon.skill4273_new</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3198,7 +3195,7 @@
 		</effects>
 	</skill>
 	<skill id="4274" toLevel="5" name="Blunt Weapon Vulnerability">
-		<!-- Vulnerable to blunt weapon attacks. -->
+		<!-- Vulnerable to blunt weapon. -->
 		<icon>icon.skill4274_new</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3247,21 +3244,21 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4277" toLevel="5" name="Infection Resistance">
-		<!-- Resistant to Infection attacks. -->
-		<icon>icon.skill30888</icon>
+	<skill id="4277" toLevel="5" name="Poison Resistance">
+		<!-- Resistant to Poison. -->
+		<icon>icon.skill4277</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
 			<effect name="DefenceTrait">
-				<INFECTION>
+				<POISON>
 					<value level="1">10</value>
 					<value level="2">20</value>
 					<value level="3">30</value>
 					<value level="4">40</value>
 					<value level="5">50</value>
-				</INFECTION>
+				</POISON>
 			</effect>
 		</effects>
 	</skill>
@@ -3306,8 +3303,8 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="4283" toLevel="1" name="Greater Magic Damage Resistance">
-		<!-- Increased M. Damage Resistance. -->
+	<skill id="4283" toLevel="1" name="Greater Magic Attack Resistance">
+		<!-- Very resistant to magic attack. -->
 		<icon>icon.skill4283_new</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3319,27 +3316,27 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4284" toLevel="5" name="Infection Resistance">
-		<!-- Resistant to Infection attacks. -->
-		<icon>icon.skill30888</icon>
+	<skill id="4284" toLevel="5" name="Bleed Resistance">
+		<!-- Resistant to Bleed. -->
+		<icon>icon.skill4284</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
 			<effect name="DefenceTrait">
-				<INFECTION>
+				<BLEED>
 					<value level="1">10</value>
 					<value level="2">20</value>
 					<value level="3">30</value>
 					<value level="4">40</value>
 					<value level="5">50</value>
-				</INFECTION>
+				</BLEED>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4285" toLevel="5" name="Sleep Resistance">
 		<!-- Resistant to Sleep. -->
-		<icon>icon.skill30888</icon>
+		<icon>icon.skill4285</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3356,7 +3353,7 @@
 		</effects>
 	</skill>
 	<skill id="4286" toLevel="1" name="Greater Sleep Resistance">
-		<!-- Highly resistant to Sleep. -->
+		<!-- Very resistant to Sleep. -->
 		<icon>icon.skill4286</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3368,8 +3365,8 @@
 		</effects>
 	</skill>
 	<skill id="4287" toLevel="7" name="Hold Resistance">
-		<!-- Resistant to Hold. -->
-		<icon>icon.skill30888</icon>
+		<!-- Resistant to Hold attack. -->
+		<icon>icon.skill4287</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3381,14 +3378,14 @@
 					<value level="3">30</value>
 					<value level="4">40</value>
 					<value level="5">50</value>
-					<value level="6">60</value>
-					<value level="7">70</value>
+					<value level="6">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="7">50</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</HOLD>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4288" toLevel="1" name="Greater Hold Resistance">
-		<!-- Highly resistant to Hold. -->
+		<!-- Very resistant to Hold. -->
 		<icon>icon.skill4288</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3463,7 +3460,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4295" toLevel="1" name="Race">
-		<!-- Humanoids -->
+		<!-- Humanoid -->
 		<icon>icon.skill4295</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3477,7 +3474,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4297" toLevel="1" name="Race">
-		<!-- Angels -->
+		<!-- Angel -->
 		<icon>icon.skill4297</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="5900" toLevel="1" name="Spark of Oblivion">
-		<!-- When receiving damage, the character's target is cancelled, and they can't use skills. -->
+	<skill id="5900" toLevel="1" name="Burst of Oblivion">
+		<!-- When a blow is incurred, the target is continuously removed, and skills and magic cannot be used. -->
 		<icon>icon.skill1481</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -22,7 +22,7 @@
 		<effectRange>400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>40</castRange>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -41,7 +41,7 @@
 		</effects>
 	</skill>
 	<skill id="5901" toLevel="2" name="Mist of Oblivion">
-		<!-- When receiving damage, the character's target is cancelled, and they can't use skills. -->
+		<!-- When a blow is incurred, the target is continuously removed, and skills and magic cannot be used. -->
 		<icon>icon.skill1481</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -66,7 +66,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -85,7 +85,6 @@
 		</effects>
 	</skill>
 	<skill id="5902" toLevel="1" name="Cancel NPC Trigger Target">
-		<icon>icon.skill0000</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -193,13 +192,12 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
 		<isDebuff>true</isDebuff>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5906" toLevel="1" name="Ritual of Revive">
-		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -211,7 +209,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5907" toLevel="2" name="Ritual of Entombment">
-		<!-- Temporarily inflicts Hold on the target. The target cannot be affected by any additional Hold attacks while the effect is active. -->
+		<!-- Momentarily inflicts Hold on the enemy. Additional Hold is not available while effects last. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -244,7 +242,7 @@
 		</effects>
 	</skill>
 	<skill id="5908" toLevel="2" name="Ritual of Entombment">
-		<!-- Temporarily inflicts Hold on the target. The target cannot be affected by any additional Hold attacks while the effect is active. -->
+		<!-- Momentarily inflicts Hold on the enemy. Additional Hold is not available while effects last. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -277,7 +275,6 @@
 		</effects>
 	</skill>
 	<skill id="5909" toLevel="1" name="Stronghold Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectRange>400</effectRange>
 		<hitTime>1000</hitTime>
@@ -290,12 +287,12 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
-				<power>3100</power>
+				<!-- FIXME: value unconfirmed -->
+				<power>3000</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5910" toLevel="1" name="Stronghold Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>300</castRange>
 		<effectRange>600</effectRange>
 		<hitTime>1000</hitTime>
@@ -308,18 +305,18 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalAttack">
-				<power>5200</power>
+				<!-- FIXME: value unconfirmed -->
+				<power>5000</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5911" toLevel="1" name="Pestilence Cleanse">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5912" toLevel="1" name="Pestilence Cleanse">
-		<!-- Decreases P./ M. Atk., Atk. Spd., P. Accuracy, P. Critical Rate and P. Critical Damage. Increases Skill Cooldown. -->
+		<!-- P./ M. Atk., Atk. Spd., P. Accuracy, P. Critical Rate and P. Critical Damage are decreased, Skill Cooldown is increased. -->
 		<icon>icon.skill1337</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -334,12 +331,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<trait>SUPPRESSION</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5913" toLevel="1" name="Putrefaction Cleanse">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -358,7 +354,7 @@
 		</effects>
 	</skill>
 	<skill id="5914" toLevel="1" name="Putrefaction Cleanse">
-		<!-- Decreases P./ M. Def., P. Evasion and Speed. -->
+		<!-- P./ M. Def., P. Evasion and Speed are decreased. -->
 		<icon>icon.skill1337</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -375,12 +371,11 @@
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
-		<trait>SUPPRESSION</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5915" toLevel="9" name="Mummifying Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -406,7 +401,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5916" toLevel="9" name="Cruising Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -432,7 +426,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5917" toLevel="9" name="Shrouding Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -457,9 +450,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5918" toLevel="10" name="Hold Vulnerability">
-		<!-- Vulnerable to Hold. -->
-		<icon>icon.skill0000</icon>
+	<skill id="5918" toLevel="10" name="Physical Root Vulnerability">
+		<!-- Physical Root Vulnerability -->
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -518,7 +510,6 @@
 		</effects>
 	</skill>
 	<skill id="5920" toLevel="1" name="Tentacle of Agony">
-		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<coolTime>2000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -541,7 +532,7 @@
 		</effects>
 	</skill>
 	<skill id="5921" toLevel="1" name="Inhale">
-		<!-- Decreases P. Atk., Atk. Spd., M. Atk., P. Accuracy, P. Critical Rate and P. Critical Damage. -->
+		<!-- P./ M. Atk., Atk. Spd., P. Accuracy, P. Critical Rate and P. Critical Damage are decreased. -->
 		<icon>icon.skill1337</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -647,7 +638,6 @@
 		</effects>
 	</skill>
 	<skill id="5923" toLevel="1" name="Soul Retain">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -683,7 +673,6 @@
 		</effects>
 	</skill>
 	<skill id="5924" toLevel="1" name="Devour Soul">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>5000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -697,7 +686,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5925" toLevel="1" name="Goring Charge">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>800</hitTime>
 		<magicLevel>85</magicLevel>
@@ -720,7 +708,6 @@
 		</effects>
 	</skill>
 	<skill id="5926" toLevel="1" name="Breath Corruption">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<effectPoint>-100</effectPoint>
 		<fanRange>0;0;300;90</fanRange>
@@ -737,7 +724,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5927" toLevel="4" name="Immortal Frenzy">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -757,7 +743,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5928" toLevel="4" name="Immortal Resilience">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -777,7 +762,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5929" toLevel="1" name="Pairing of the Lost">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>COUNTER_SKILL</abnormalType>
@@ -792,7 +776,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5930" toLevel="1" name="Shielding of the Lost">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PD_UP_BOW</abnormalType>
@@ -813,7 +796,6 @@
 		</effects>
 	</skill>
 	<skill id="5931" toLevel="1" name="Ultimate Shield">
-		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<mpConsume>1</mpConsume>
 		<operateType>T</operateType>
@@ -833,8 +815,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5932" toLevel="1" name="Dark Flash">
-		<icon>icon.skill0000</icon>
+	<skill id="5932" toLevel="1" name="Dark Blade">
 		<affectLimit>5-15</affectLimit>
 		<affectRange>300</affectRange>
 		<castRange>900</castRange>
@@ -858,8 +839,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5933" toLevel="1" name="Dark Flash">
-		<icon>icon.skill0000</icon>
+	<skill id="5933" toLevel="1" name="Dark Blade">
 		<affectLimit>5-15</affectLimit>
 		<affectRange>300</affectRange>
 		<castRange>900</castRange>
@@ -903,7 +883,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5935" toLevel="1" name="Dark Ring">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<affectRange>300</affectRange>
 		<castRange>900</castRange>
@@ -927,7 +906,6 @@
 		</effects>
 	</skill>
 	<skill id="5936" toLevel="1" name="Earth Ring">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<affectRange>300</affectRange>
 		<castRange>900</castRange>
@@ -965,7 +943,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5938" toLevel="5" name="Enhance Attack">
+	<skill id="5938" toLevel="5" name="P. Atk. Up">
 		<!-- Attack abilities are enhanced. -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -981,7 +959,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5939" toLevel="5" name="Enhance Defense">
+	<skill id="5939" toLevel="5" name="P. Def. Up">
 		<!-- Defense abilities are enhanced. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -997,8 +975,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5940" toLevel="12" name="Restorative Energy">
-		<!-- Increases HP/ MP Recovery. -->
+	<skill id="5940" toLevel="12" name="Energy of Generation">
+		<!-- HP recovery bonus and MP recovery bonus are increased. -->
 		<icon>icon.skill1044</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
@@ -1058,7 +1036,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5942" toLevel="1" name="Energy of Pollution">
-		<!-- Temporarily decreases Received Healing and MP Recovery Rate. -->
+		<!-- Temporarily Received Healing and MP Recovery Bonus are decreased. -->
 		<icon>icon.skill0052</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -1075,7 +1053,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5943" toLevel="1" name="Energy of Contamination">
-		<!-- Decreases P. Def. -->
+		<!-- P. Def. is decreased and Skill MP Consumption is increased. -->
 		<icon>icon.skill0103</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -1092,7 +1070,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5944" toLevel="1" name="Energy of Oblivion">
-		<!-- P. Accuracy decreased. -->
+		<!-- Decreases P. Accuracy. -->
 		<icon>icon.skill0107</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -1110,7 +1088,6 @@
 	</skill>
 	<skill id="5945" toLevel="1" name="Region2 Rotation5">
 		<!-- Resurrection is decreased. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>MAX_MP_UP</abnormalType>
@@ -1125,8 +1102,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5946" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5946" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1138,8 +1114,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5947" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5947" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1151,8 +1126,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5948" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5948" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1164,8 +1138,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5949" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5949" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1223,7 +1196,7 @@
 		</conditions>
 	</skill>
 	<skill id="5954" toLevel="1" name="Agathion Cute Trick - Tinplate Golem">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1238,7 +1211,7 @@
 		</conditions>
 	</skill>
 	<skill id="5955" toLevel="1" name="Agathion Cute Trick - Joy">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1253,7 +1226,7 @@
 		</conditions>
 	</skill>
 	<skill id="5956" toLevel="1" name="Agathion Cute Trick - Angry Devil">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1268,7 +1241,7 @@
 		</conditions>
 	</skill>
 	<skill id="5957" toLevel="1" name="Agathion Cute Trick - Sorrow">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1283,7 +1256,7 @@
 		</conditions>
 	</skill>
 	<skill id="5958" toLevel="1" name="Agathion Cute Trick - Teddy Boy">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1298,7 +1271,7 @@
 		</conditions>
 	</skill>
 	<skill id="5959" toLevel="1" name="Agathion Cute Trick - Teddy Girl">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1329,7 +1302,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
@@ -1360,7 +1333,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5962" toLevel="1" name="Air Defense Cannon">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>7000</hitTime>
 		<magicLevel>99</magicLevel>
@@ -1373,7 +1345,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5963" toLevel="1" name="Emery Conversion">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLevel>99</magicLevel>
@@ -1386,7 +1357,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5964" toLevel="1" name="Star Shard">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1398,8 +1368,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5965" toLevel="1" name="Firecrackers">
-		<icon>icon.skill0000</icon>
+	<skill id="5965" toLevel="1" name="Fireworks">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1411,8 +1380,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5966" toLevel="1" name="Lightning Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5966" toLevel="1" name="Large Firecracker">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1446,7 +1414,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5968" toLevel="2" name="Rapid Shot">
-		<!-- Temporarily increases Atk. Spd. when using a bow. -->
+		<!-- With a bow Atk. Spd. +8% for a certain amount of time. -->
 		<icon>icon.skill0099</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1476,7 +1444,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5969" toLevel="2" name="Punch of Doom">
-		<!-- Deals great damage to the enemy and inflicts stun on them. Power 10331. Requires a fist weapon. Ignores Shield Defense. Critical. Over-hit. -->
+		<!-- Inflicts great damage on the enemy with iron-fist and inflicts Stun. Requires a fist weapon. Ignores Shield Defense. Over-hit. Critical. Power $s1. -->
 		<icon>icon.skill005969</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
@@ -1544,7 +1512,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5971" toLevel="1" name="Seduced Ranger's Help">
-		<!-- Ranger's help. Increases HP Recovery. -->
+		<!-- Seduced Ranger's help. HP recovery bonus increases. -->
 		<icon>icon.skill5970</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1586,7 +1554,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5973" toLevel="1" name="Seduced Warrior's Help">
-		<!-- Warrior's help. Increases MP Recovery. -->
+		<!-- Seduced Warrior's help. MP recovery bonus increases. -->
 		<icon>icon.skill5970</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1608,7 +1576,6 @@
 	</skill>
 	<skill id="5974" toLevel="1" name="Tiat Transformation">
 		<!-- Tiat's Transformation -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7800</abnormalTime>
 		<abnormalType>TRANSFORM</abnormalType>
@@ -1625,7 +1592,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5975" toLevel="3" name="Dark Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-484</value>
@@ -1660,7 +1626,6 @@
 		</effects>
 	</skill>
 	<skill id="5976" toLevel="3" name="Dark Storm">
-		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>100</affectRange>
 		<effectPoint>
@@ -1696,7 +1661,6 @@
 		</effects>
 	</skill>
 	<skill id="5977" toLevel="3" name="Dark Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>
 			<value level="1">-484</value>
 			<value level="2">-572</value>
@@ -1722,7 +1686,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5978" toLevel="1" name="Devil Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-653</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -1736,7 +1699,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5979" toLevel="1" name="Forced Teleport">
-		<icon>icon.skill0000</icon>
 		<hitTime>2500</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -1747,8 +1709,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5980" toLevel="3" name="Release Seal">
-		<icon>icon.skill0000</icon>
+	<skill id="5980" toLevel="3" name="Seal Isolation">
 		<affectLimit>10-10</affectLimit>
 		<affectRange>300</affectRange>
 		<effectPoint>
@@ -1785,7 +1746,6 @@
 	</skill>
 	<skill id="5981" toLevel="3" name="Lilith' Curse">
 		<!-- Max HP and Speed are decreased. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
@@ -1805,7 +1765,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5984" toLevel="1" name="Hand of Death">
-		<!-- Decreases P./ M. Def. and Speed. -->
+		<!-- P./ M. Def. and Speed are decreased. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -1824,7 +1784,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5985" toLevel="9" name="Decaying Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1849,7 +1808,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5986" toLevel="9" name="Vampiric Aura">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1938,7 +1896,7 @@
 		</effects>
 	</skill>
 	<skill id="5988" toLevel="1" name="Armor Maintenance">
-		<!-- Maintains the armor in optimal condition to increase Def. -->
+		<!-- Maintains the armor to increase defense ability. -->
 		<icon>icon.skill0828</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -1995,8 +1953,7 @@
 		</effects>
 	</skill>
 	<skill id="5989" toLevel="1" name="Invincibility">
-		<!-- Invincible to basic attacks, skills and debuffs. -->
-		<icon>icon.skill0000</icon>
+		<!-- Invincibility to regular hits and skills, as well as debuffs. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -2013,8 +1970,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5990" toLevel="3" name="Lesser Heal">
-		<!-- Quickly restores HP. Power 817. -->
-		<icon>icon.skill0000</icon>
+		<!-- Quickly restores HP. Power $s1. -->
 		<effectPoint>
 			<value level="1">595</value>
 			<value level="2">610</value>
@@ -2039,7 +1995,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5991" toLevel="1" name="Presentation - Summon Tiat">
-		<icon>icon.skill0000</icon>
 		<hitTime>11760</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2095,7 +2050,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5993" toLevel="1" name="Command of Anchor">
-		<!-- When receiving damage, the character's target is cancelled, and they can't use skills. -->
+		<!-- When a blow is incurred, the target is continuously removed, and skills and magic cannot be used. -->
 		<icon>icon.skill1481</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -2115,7 +2070,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -2137,7 +2092,7 @@
 		</effects>
 	</skill>
 	<skill id="5994" toLevel="1" name="Mysterious Effect">
-		<!-- Increases your head's size. -->
+		<!-- The target's head is enlarged. -->
 		<icon>icon.skill2513</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
@@ -2159,31 +2114,26 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5995" toLevel="1" name="not_used">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5996" toLevel="1" name="not_used">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5997" toLevel="1" name="not_used">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5998" toLevel="1" name="not_used">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5999" toLevel="1" name="not_used">
-		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>

@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="7100" toLevel="1" name="Clan-exclusive Pet Stun">
 		<!-- Stuns for 3 sec. -->
+		<icon>icon.skill5168</icon>
 		<operateType>A2</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>900</castRange>
@@ -22,12 +23,13 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="7101" toLevel="1" name="Clan-exclusive Pet Aerial Thrust">
 		<!-- Lifts and holds the target in the air for 3 sec. -->
+		<icon>icon.skill11276</icon>
 		<operateType>A2</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>900</castRange>
@@ -50,16 +52,17 @@
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
 				<SLEEP>100</SLEEP>
-				<FEAR>100</FEAR>
-				<SILENCE>100</SILENCE>
+				<DERANGEMENT>100</DERANGEMENT>
 				<CHANGEBODY>100</CHANGEBODY>
 				<SHOCK>100</SHOCK>
 				<AIRBIND>100</AIRBIND>
+				<KNOCKBACK>100</KNOCKBACK>
+				<KNOCKDOWN>100</KNOCKDOWN>
 			</effect>
 		</effects>
 	</skill>
@@ -96,7 +99,8 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="7104" toLevel="1" name="Pa'agrio's Hand">
-		<!-- Raises the temperature of Draco Eggs through Pa'agrio's Hand. The temperature is raised by 1-10 degrees for a Small Draco Egg and 0.1-1.0 degree for a Large Draco Egg. Can be used only when Fire Spirit agathion is summoned. -->
+		<!-- Raise the temperature of the Draco Egg through Pa'agrio's Hand. It raises the temperature by 1 - 10 degrees on a Small Draco Egg and 0.1 - 1.0 degrees on a Large Draco Egg. The Spirit of Flame Agathion must be summoned for it to be used. -->
+		<icon>icon.skill11775</icon>
 		<operateType>A1</operateType>
 		<castRange>100</castRange>
 		<hitTime>1000</hitTime>
@@ -111,7 +115,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7105" toLevel="1" name="Attempt Incubation">
-		<!-- Incubation Possible -->
+		<!-- Attempt Incubation -->
 		<operateType>A1</operateType>
 		<castRange>100</castRange>
 		<effectPoint>-1</effectPoint>
@@ -201,6 +205,7 @@
 	</skill>
 	<skill id="7113" toLevel="1" name="Pet Invincibility Effect">
 		<!-- Invincibility Effect -->
+		<icon>icon.skill0442</icon>
 		<operateType>A2</operateType>
 		<mpConsume>78</mpConsume>
 		<hitTime>500</hitTime>
@@ -227,6 +232,7 @@
 	</skill>
 	<skill id="7115" toLevel="1" name="Energy of Chaos">
 		<!-- Character's hair and cloak have been changed due to participation in the Ceremony of Chaos. -->
+		<icon>icon.skill0810</icon>
 		<abnormalTime>600</abnormalTime>
 		<abnormalVisualEffect>CURIOUS_HOUSE</abnormalVisualEffect>
 		<canBeDispelled>false</canBeDispelled>
@@ -243,28 +249,28 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="7122" toLevel="1" name="Raid Boss (Lv. 85)">
-		<!-- Enchanted by Shillien, enshrouded in darkness, Antharas' minion is guarding the lands near the Ant Nest. -->
+	<skill id="7122" toLevel="1" name="Raid Boss (Lv. 75)">
+		<!-- Enchanted by Shilen, enshrouded in darkness, Queen Ant's minion is guarding the lands near the Ant Nest. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="7123" toLevel="1" name="Raid Boss (Lv. 85)">
-		<!-- Enchanted by Shillien, enshrouded in darkness, Giran is guarding the lands and praying about resurrection. -->
+	<skill id="7123" toLevel="1" name="Raid Boss (Lv. 75)">
+		<!-- Enchanted by Shilen, enshrouded in darkness, Giran is guarding the lands and praying about resurrection. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="7124" toLevel="1" name="Raid Boss (Lv. 85)">
-		<!-- Enchanted by Shillien, enshrouded in darkness, minion of Core is guarding the lands around Cruma Tower. -->
+	<skill id="7124" toLevel="1" name="Raid Boss (Lv. 75)">
+		<!-- Enchanted by Shilen, enshrouded in darkness, minion of Core is guarding the lands around Cruma Tower. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="7125" toLevel="1" name="Raid Boss (Lv. 85)">
-		<!-- Enchanted by Shillien, enshrouded in darkness, minion of Orfen is guarding the Plains of the Lizardmen. -->
+	<skill id="7125" toLevel="1" name="Raid Boss (Lv. 75)">
+		<!-- Enchanted by Shilen, enshrouded in darkness, minion of Orfen is guarding the Plains of the Lizardmen. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="7126" toLevel="3" name="Master's Blessing - Holy Weapon">
-		<!-- The GM is always by your side. For 1 h., party members' Holy Attack +20. -->
+	<skill id="7126" toLevel="1" name="Master's Blessing - Holy Weapon">
+		<!-- The GM is always by your side. All party members' Holy Attack damage +20 for 1 h. -->
 		<icon>icon.skill1043</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -272,8 +278,8 @@
 		<reuseDelay>1000</reuseDelay>
 		<effectPoint>243</effectPoint>
 	</skill>
-	<skill id="7127" toLevel="3" name="Master's Blessing - Stun Resistance">
-		<!-- The GM is always by your side. For 1 h., Stun Resistance +40%. -->
+	<skill id="7127" toLevel="1" name="Master's Blessing - Stun Resistance">
+		<!-- The GM is always by your side. Stun Resistance +40% for 1 h. -->
 		<icon>icon.skill1259</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -282,7 +288,6 @@
 		<effectPoint>646</effectPoint>
 	</skill>
 	<skill id="7129" toLevel="4" name="Triple Sonic Slash">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1800</hitTime>
@@ -296,7 +301,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="7130" toLevel="4" name="Sonic Blaster">
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1900</hitTime>

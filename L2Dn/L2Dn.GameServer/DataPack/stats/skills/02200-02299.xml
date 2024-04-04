@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="2209" toLevel="1" name="Protecting Scroll: Enchant A-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2209" toLevel="1" name="Blessed Scroll: Enchant Armor (A-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -10,8 +9,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2210" toLevel="1" name="Protecting Scroll: Enchant B-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2210" toLevel="1" name="Blessed Scroll: Enchant Armor (B-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -20,8 +18,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2211" toLevel="1" name="Protecting Scroll: Enchant C-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2211" toLevel="1" name="Blessed Scroll: Enchant Armor (C-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -30,8 +27,7 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="2212" toLevel="1" name="Protecting Scroll: Enchant D-grade Armor">
-		<icon>icon.skill0000</icon>
+	<skill id="2212" toLevel="1" name="Blessed Scroll: Enchant Armor (D-grade)">
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -41,7 +37,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2213" toLevel="15" name="Scroll of Escape: Talking Island Village">
-		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -91,7 +86,7 @@
 					<value level="12">147087</value>
 					<value level="13">82916</value>
 					<value level="14">85289</value>
-					<value level="15">85289</value>
+					<value level="15">85289</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</x>
 				<y>
 					<value level="1">244566</value>
@@ -108,7 +103,7 @@
 					<value level="12">25751</value>
 					<value level="13">53210</value>
 					<value level="14">16225</value>
-					<value level="15">16225</value>
+					<value level="15">16225</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</y>
 				<z>
 					<value level="1">-3728</value>
@@ -125,7 +120,7 @@
 					<value level="12">-2018</value>
 					<value level="13">-1488</value>
 					<value level="14">-3672</value>
-					<value level="15">-3672</value>
+					<value level="15">-3672</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</z>
 			</effect>
 		</effects>

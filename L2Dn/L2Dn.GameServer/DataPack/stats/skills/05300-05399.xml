@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5300" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
 		<coolTime>800</coolTime>
@@ -115,7 +114,7 @@
 		</effects>
 	</skill>
 	<skill id="5302" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -165,7 +164,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -249,7 +248,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -346,7 +345,7 @@
 		</effects>
 	</skill>
 	<skill id="5305" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -385,7 +384,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>150</affectRange>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -542,7 +541,7 @@
 		</effects>
 	</skill>
 	<skill id="5308" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -591,7 +590,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -674,7 +673,7 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -708,7 +707,6 @@
 		</effects>
 	</skill>
 	<skill id="5310" toLevel="9" name="Aura Burn">
-		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>650</effectRange>
@@ -768,7 +766,6 @@
 		</effects>
 	</skill>
 	<skill id="5311" toLevel="9" name="Aura Flare">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -828,7 +825,6 @@
 		</effects>
 	</skill>
 	<skill id="5312" toLevel="9" name="Blaze">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -891,7 +887,6 @@
 		</effects>
 	</skill>
 	<skill id="5313" toLevel="9" name="Flame Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -955,7 +950,6 @@
 		</effects>
 	</skill>
 	<skill id="5314" toLevel="9" name="Blazing Circle">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -1018,7 +1012,6 @@
 		</effects>
 	</skill>
 	<skill id="5315" toLevel="9" name="Blazing Circle">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -1057,7 +1050,6 @@
 		</effects>
 	</skill>
 	<skill id="5316" toLevel="9" name="Hydro Blast">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1120,7 +1112,6 @@
 		</effects>
 	</skill>
 	<skill id="5317" toLevel="9" name="Mass Hydro Blast">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1184,7 +1175,6 @@
 		</effects>
 	</skill>
 	<skill id="5318" toLevel="9" name="Frost Wall">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>WATER</attributeType>
@@ -1247,7 +1237,6 @@
 		</effects>
 	</skill>
 	<skill id="5319" toLevel="9" name="Hurricane">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1283,7 +1272,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5320" toLevel="9" name="Tempest">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1321,7 +1309,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5321" toLevel="9" name="Tempest">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1358,7 +1345,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5322" toLevel="9" name="Rock Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1394,7 +1380,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5323" toLevel="9" name="Earthquake">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1432,7 +1417,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5324" toLevel="9" name="Earthquake">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1469,7 +1453,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5325" toLevel="9" name="Holy Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1505,7 +1488,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5326" toLevel="9" name="Holy Blast">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1543,7 +1525,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5327" toLevel="9" name="Holy Circle">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1580,7 +1561,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5328" toLevel="9" name="Unholy Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1643,7 +1623,6 @@
 		</effects>
 	</skill>
 	<skill id="5329" toLevel="9" name="Unholy Blast">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1707,7 +1686,6 @@
 		</effects>
 	</skill>
 	<skill id="5330" toLevel="9" name="Unholy Circle">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>DARK</attributeType>
@@ -1769,8 +1747,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5331" toLevel="9" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="5331" toLevel="9" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>DARK</attributeType>
@@ -1811,7 +1788,6 @@
 		</effects>
 	</skill>
 	<skill id="5332" toLevel="9" name="Mana Burn">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1875,7 +1851,7 @@
 		</effects>
 	</skill>
 	<skill id="5333" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -1939,7 +1915,7 @@
 		<attributeValue>20</attributeValue>
 		<affectRange>200</affectRange>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1960,7 +1936,6 @@
 		</effects>
 	</skill>
 	<skill id="5334" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2009,7 +1984,6 @@
 		</effects>
 	</skill>
 	<skill id="5335" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -2056,8 +2030,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5336" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5336" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2096,7 +2069,6 @@
 		</effects>
 	</skill>
 	<skill id="5337" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2132,7 +2104,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5338" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2183,7 +2154,6 @@
 		</effects>
 	</skill>
 	<skill id="5339" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLevel>
@@ -2217,8 +2187,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5340" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5340" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2260,7 +2229,6 @@
 		</effects>
 	</skill>
 	<skill id="5341" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2298,7 +2266,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5342" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2349,7 +2316,6 @@
 		</effects>
 	</skill>
 	<skill id="5343" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLevel>
@@ -2383,8 +2349,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5344" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5344" toLevel="9" name="Spinning Slasher">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -2420,7 +2385,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5345" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2458,7 +2422,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5346" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2509,7 +2472,6 @@
 		</effects>
 	</skill>
 	<skill id="5347" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLevel>
@@ -2543,8 +2505,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5348" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5348" toLevel="9" name="Spinning Slasher">
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -2580,7 +2541,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5349" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2618,7 +2578,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5350" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2669,7 +2628,6 @@
 		</effects>
 	</skill>
 	<skill id="5351" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLevel>
@@ -2703,8 +2661,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5352" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5352" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2745,7 +2702,6 @@
 		</effects>
 	</skill>
 	<skill id="5353" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2783,7 +2739,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5354" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>830</hitTime>
@@ -2819,7 +2774,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5355" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4500</hitTime>
 		<magicLevel>
@@ -2853,8 +2807,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5356" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5356" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2895,7 +2848,6 @@
 		</effects>
 	</skill>
 	<skill id="5357" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -2933,7 +2885,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5358" toLevel="9" name="Power Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2984,7 +2935,6 @@
 		</effects>
 	</skill>
 	<skill id="5359" toLevel="9" name="Power Shot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3033,8 +2983,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5360" toLevel="9" name="Vortex">
-		<icon>icon.skill0000</icon>
+	<skill id="5360" toLevel="9" name="Spinning Slasher">
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3075,7 +3024,6 @@
 		</effects>
 	</skill>
 	<skill id="5361" toLevel="9" name="Burst Shot">
-		<icon>icon.skill0000</icon>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3200</hitTime>
@@ -3174,7 +3122,7 @@
 		</effects>
 	</skill>
 	<skill id="5363" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -3224,7 +3172,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3308,7 +3256,7 @@
 		</mpConsume>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3393,7 +3341,7 @@
 		</effects>
 	</skill>
 	<skill id="5366" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -3432,7 +3380,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -3562,7 +3510,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5369" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -3611,7 +3559,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3694,12 +3642,11 @@
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5371" toLevel="9" name="Aura Burn">
-		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>650</effectRange>
@@ -3759,7 +3706,6 @@
 		</effects>
 	</skill>
 	<skill id="5372" toLevel="9" name="Aura Flare">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -3819,7 +3765,6 @@
 		</effects>
 	</skill>
 	<skill id="5373" toLevel="9" name="Blaze">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3855,7 +3800,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5374" toLevel="9" name="Flame Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -3919,7 +3863,6 @@
 		</effects>
 	</skill>
 	<skill id="5375" toLevel="9" name="Blazing Circle">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3956,7 +3899,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5376" toLevel="9" name="Blazing Circle">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -3996,7 +3938,6 @@
 		</effects>
 	</skill>
 	<skill id="5377" toLevel="9" name="Hydro Blast">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4032,7 +3973,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5378" toLevel="9" name="Mass Hydro Blast">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4070,7 +4010,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5379" toLevel="9" name="Frost Wall">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4107,7 +4046,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5380" toLevel="9" name="Hurricane">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4158,7 +4096,6 @@
 		</effects>
 	</skill>
 	<skill id="5381" toLevel="9" name="Tempest">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4196,7 +4133,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5382" toLevel="9" name="Tempest">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>WIND</attributeType>
@@ -4247,7 +4183,6 @@
 		</effects>
 	</skill>
 	<skill id="5383" toLevel="9" name="Rock Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4298,7 +4233,6 @@
 		</effects>
 	</skill>
 	<skill id="5384" toLevel="9" name="Earthquake">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4336,7 +4270,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5385" toLevel="9" name="Earthquake">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4373,7 +4306,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5386" toLevel="9" name="Holy Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4409,7 +4341,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5387" toLevel="9" name="Holy Blast">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4447,7 +4378,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5388" toLevel="9" name="Holy Circle">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -4484,7 +4414,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5389" toLevel="9" name="Unholy Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>40</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4535,7 +4464,6 @@
 		</effects>
 	</skill>
 	<skill id="5390" toLevel="9" name="Unholy Blast">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -4599,7 +4527,6 @@
 		</effects>
 	</skill>
 	<skill id="5391" toLevel="9" name="Unholy Circle">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>DARK</attributeType>
@@ -4661,8 +4588,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5392" toLevel="9" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="5392" toLevel="9" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4725,7 +4651,6 @@
 		</effects>
 	</skill>
 	<skill id="5393" toLevel="9" name="Mana Burn">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4789,7 +4714,7 @@
 		</effects>
 	</skill>
 	<skill id="5394" toLevel="9" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">8</value>
@@ -4853,7 +4778,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -4874,7 +4799,6 @@
 		</effects>
 	</skill>
 	<skill id="5395" toLevel="3" name="Super Might Haste">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -4931,7 +4855,6 @@
 		</effects>
 	</skill>
 	<skill id="5396" toLevel="1" name="Spell Stance">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<channelingSkillId>5397</channelingSkillId> <!-- Spell Force -->
 		<channelingTickInterval>2</channelingTickInterval>
@@ -4966,7 +4889,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5398" toLevel="1" name="Final Burn">
-		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>

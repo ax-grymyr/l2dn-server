@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="55300" toLevel="1" name="Buff for the Hero of Abandoned Camp">
-		<!-- A buff for those who fight in the Abandoned Camp. P./ M. Atk. +10%. There is a chance to obtain Shabby Box when the buff expires. Note!. The box cannot be obtained if you are dead or if there is no free space in your inventory. -->
+		<!-- A Buff for a warrior fighting in the Abandoned Camp. P. Atk. and M. Atk. +10%. You can receive a Shabby Box when the Buff is no longer in effect. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i02</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<castRange>900</castRange>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55301" toLevel="1" name="Shabby Box Acquisition Effect">
+	<skill id="55301" toLevel="1" name="Buff for the Hero of Abandoned Camp">
 		<!-- You can receive a Shabby Box when the Buff is no longer in effect. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i02</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55302" toLevel="1" name="Shabby Box Acquisition Effect">
+	<skill id="55302" toLevel="1" name="Buff for the Hero of Abandoned Camp">
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i02</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55303" toLevel="1" name="Buff for the Hero of Orc Barracks">
-		<!-- A buff for those who fight in the Orc Barracks. P./ M. Atk. +10%. There is a chance to obtain Crude Box when the buff expires. Note!. The box cannot be obtained if you are dead or if there is no free space in your inventory. -->
+	<skill id="55303" toLevel="1" name="Crude Box Acquisition Effect">
+		<!-- A Buff for a warrior fighting in Orc Barracks. P. Atk. and M. Atk. +10%. You can receive a Crude Box when the Buff is no longer in effect. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -40,8 +40,8 @@
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55306" toLevel="1" name="Buff for the Hero of the Cruma Tower's 2nd Floor">
-		<!-- A buff for those who fight on the 2nd floor of the Cruma Tower. P./ M. Atk. +10%. There is a chance to obtain Old Box when the buff expires. Note!. The box cannot be obtained if you are dead or if there is no free space in your inventory. -->
+	<skill id="55306" toLevel="1" name="Buff for the Hero of 2nd Floor of Cruma Tower">
+		<!-- A Buff for a warrior fighting on the 2nd floor of Cruma Tower. P. Atk. and M. Atk. +10%. You can receive an Old Box when the Buff is no longer in effect. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchIcon.Icon.skill_g_field_special_buff_i04</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -61,12 +61,12 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55309" toLevel="10" name="Earring of Chronicle Heir">
-		<!-- MP Recovery Rate +1%, Max MP +1%. -->
+		<!-- MP Recovery Bonus +$s1, Max MP +$s2. -->
 		<icon>icon.event_classic_ring</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55310" toLevel="1" name="Holiday Hat">
-		<!-- Resurrects a dead party member restoring them 100% XP. Consumes 1 Spirit Ore. Cooldown: 600 min. -->
+		<!-- Resurrects a dead target and restores 100% XP. Consumes 1 Spirit Ore. Cooldown: 360 min. -->
 		<icon>icon.bm_romantic_chaperon_gold</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -75,26 +75,25 @@
 		<reuseDelay>21600000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55311" toLevel="1" name="Holiday Hat's Overwhelming Power">
-		<!-- For 60 min., acquired XP/ SP +5%. Cooldown: 60 min. The effect remains after death. -->
+	<skill id="55311" toLevel="1" name="Overwhelming Power of a Holiday Hat">
+		<!-- For 60 min., acquired XP/ SP +5%. Effect remains after death. -->
 		<icon>icon.skill19226</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>3600000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="55312" toLevel="1" name="Test Cube">
-		<icon>icon.skill0000</icon>
+	<skill id="55312" toLevel="1" name="Wondrous Cubic">
 		<operateType>A1</operateType>
 		<reuseDelay>82800000</reuseDelay>
 	</skill>
-	<skill id="55313" toLevel="1" name="Test Cube">
-		<icon>icon.skill0000</icon>
+	<skill id="55313" toLevel="1" name="Wondrous Cubic">
 		<operateType>A1</operateType>
 		<reuseDelay>82800000</reuseDelay>
 	</skill>
 	<skill id="55314" toLevel="1" name="Attempt to Forget">
 		<!-- Nothing serious, but you have a strange feeling of unease. You are trying to calm yourself down. For 1 h., grants the following effects: Might Lv. 3, Shield Lv. 3, Focus Lv. 3, Haste Lv. 2, Acumen Lv. 3, Empower Lv. 3, and Wind Walk Lv. 2. -->
+		<icon>icon.skill0763</icon>
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<abnormalLevel>1</abnormalLevel>
@@ -140,6 +139,7 @@
 		</effects>
 	</skill>
 	<skill id="55315" toLevel="1" name="Lindvior's Treasure Chest">
+		<icon>icon.bm_pirate_king_box</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -169,63 +169,63 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="2.777777777777778">
-						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49666" count="1" /> <!-- B-grade Accessory Pack -->
+						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49668" count="1" /> <!-- C-grade Armor Pack -->
+						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49669" count="1" /> <!-- C-grade Accessory Pack -->
+						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49541" count="1" /> <!-- Spellbook Chest - Not Available -->
+						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="2.777777777777778">
-						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+						<item id="951" count="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="947" count="1" /> <!-- Scroll: Enchant B-grade Weapon -->
+						<item id="947" count="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="948" count="1" /> <!-- Scroll: Enchant B-grade Armor -->
+						<item id="948" count="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6573" count="1" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+						<item id="6573" count="1" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6574" count="1" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
+						<item id="6574" count="1" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6571" count="1" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
+						<item id="6571" count="1" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6572" count="1" /> <!-- Protecting Scroll: Enchant B-grade Armor -->
+						<item id="6572" count="1" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<!-- Mics -->
 					<item chance="2.777777777777778">
 						<item id="3936" count="1" /> <!-- Blessed Scroll of Resurrection -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="1538" count="1" /> <!-- Improved Scroll of Escape -->
+						<item id="1538" count="1" /> <!-- Blessed Scroll of Escape -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49081" count="1" /> <!-- XP Growth Scroll -->
+						<item id="49081" count="1" /> <!-- Rice Cake of Flaming Fighting Spirit -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49518" count="1" /> <!-- Special Pirate Fruit -->
@@ -243,16 +243,16 @@
 						<item id="70235" count="1" /> <!-- Cherry Juice -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Not Available -->
+						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="29695" count="1" /> <!-- Quick Healing Potion - Not Available -->
+						<item id="29695" count="1" /> <!-- Quick Healing Potion - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 - Not Available -->
+						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 - Not Available -->
+						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.777777777777778">
@@ -310,72 +310,72 @@
 						<item id="49756" count="1" /> <!-- Cloth Piece -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49785" count="1" /> <!-- A-grade Weapon Pack -->
+						<item id="49785" count="1" /> <!-- Weapon Supply Box (A-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49666" count="1" /> <!-- B-grade Accessory Pack -->
+						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49668" count="1" /> <!-- C-grade Armor Pack -->
+						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49669" count="1" /> <!-- C-grade Accessory Pack -->
+						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49541" count="1" /> <!-- Spellbook Chest - Not Available -->
+						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="2.083333333333333">
-						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+						<item id="951" count="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="947" count="1" /> <!-- Scroll: Enchant B-grade Weapon -->
+						<item id="947" count="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="948" count="1" /> <!-- Scroll: Enchant B-grade Armor -->
+						<item id="948" count="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="730" count="1" /> <!-- Scroll: Enchant A-grade Armor -->
+						<item id="730" count="1" /> <!-- Scroll: Enchant Armor (A-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="6573" count="1" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+						<item id="6573" count="1" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="6574" count="1" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
+						<item id="6574" count="1" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="6571" count="1" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
+						<item id="6571" count="1" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="6572" count="1" /> <!-- Protecting Scroll: Enchant B-grade Armor -->
+						<item id="6572" count="1" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="6569" count="1" /> <!-- Protecting Scroll: Enchant A-grade Weapon -->
+						<item id="6569" count="1" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
 					</item>
 					<!-- Mics -->
 					<item chance="2.083333333333333">
 						<item id="3936" count="1" /> <!-- Blessed Scroll of Resurrection -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="1538" count="1" /> <!-- Improved Scroll of Escape -->
+						<item id="1538" count="1" /> <!-- Blessed Scroll of Escape -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49081" count="1" /> <!-- XP Growth Scroll -->
+						<item id="49081" count="1" /> <!-- Rice Cake of Flaming Fighting Spirit -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="49518" count="1" /> <!-- Special Pirate Fruit -->
@@ -393,23 +393,23 @@
 						<item id="70235" count="1" /> <!-- Cherry Juice -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Not Available -->
+						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Event -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="29695" count="1" /> <!-- Quick Healing Potion - Not Available -->
+						<item id="29695" count="1" /> <!-- Quick Healing Potion - Event -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="90020" count="1" /> <!-- Best Dye Pack - 3rd Class -->
+						<item id="90020" count="1" /> <!-- Box of Best Dye - 3rd Class Transfer -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 - Not Available -->
+						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.083333333333333">
 						<item id="1891" count="1" /> <!-- Artisan's Frame -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="1892" count="1" /> <!-- Blacksmith' Frame -->
+						<item id="1892" count="1" /> <!-- Blacksmith's Frame -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="1893" count="1" /> <!-- Oriharukon -->
@@ -445,7 +445,7 @@
 						<item id="4040" count="1" /> <!-- Mold Lubricant -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="1894" count="1" /> <!-- Quality Leather -->
+						<item id="1894" count="1" /> <!-- Crafted Leather -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="1883" count="1" /> <!-- Steel Mold -->
@@ -478,63 +478,63 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="2.777777777777778">
-						<item id="49664" count="1" /> <!-- B-grade Weapon Pack -->
+						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49665" count="1" /> <!-- B-grade Armor Pack -->
+						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49666" count="1" /> <!-- B-grade Accessory Pack -->
+						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49668" count="1" /> <!-- C-grade Armor Pack -->
+						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49669" count="1" /> <!-- C-grade Accessory Pack -->
+						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49541" count="1" /> <!-- Spellbook Chest - Not Available -->
+						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="2.777777777777778">
-						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+						<item id="951" count="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="947" count="1" /> <!-- Scroll: Enchant B-grade Weapon -->
+						<item id="947" count="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="948" count="1" /> <!-- Scroll: Enchant B-grade Armor -->
+						<item id="948" count="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6573" count="1" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+						<item id="6573" count="1" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6574" count="1" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
+						<item id="6574" count="1" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6571" count="1" /> <!-- Protecting Scroll: Enchant B-grade Weapon -->
+						<item id="6571" count="1" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="6572" count="1" /> <!-- Protecting Scroll: Enchant B-grade Armor -->
+						<item id="6572" count="1" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 					</item>
 					<!-- Mics -->
 					<item chance="2.777777777777778">
 						<item id="3936" count="1" /> <!-- Blessed Scroll of Resurrection -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="1538" count="1" /> <!-- Improved Scroll of Escape -->
+						<item id="1538" count="1" /> <!-- Blessed Scroll of Escape -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49081" count="1" /> <!-- XP Growth Scroll -->
+						<item id="49081" count="1" /> <!-- Rice Cake of Flaming Fighting Spirit -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49518" count="1" /> <!-- Special Pirate Fruit -->
@@ -552,16 +552,16 @@
 						<item id="70235" count="1" /> <!-- Cherry Juice -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Not Available -->
+						<item id="29698" count="1" /> <!-- 2nd Class Buff Scroll - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="29695" count="1" /> <!-- Quick Healing Potion - Not Available -->
+						<item id="29695" count="1" /> <!-- Quick Healing Potion - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 - Not Available -->
+						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 - Not Available -->
+						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.777777777777778">
@@ -613,54 +613,54 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="1.0">
-						<item id="49667" count="1" /> <!-- C-grade Weapon Pack -->
+						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49668" count="1" /> <!-- C-grade Armor Pack -->
+						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49669" count="1" /> <!-- C-grade Accessory Pack -->
+						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49541" count="1" /> <!-- Spellbook Chest - Not Available -->
+						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<item chance="1.0">
-						<item id="49491" count="1" /> <!-- D-grade Weapon Pack - Sealed -->
+						<item id="49491" count="1" /> <!-- Weapon Supply Box (D-grade) -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="4.0">
-						<item id="955" count="1" /> <!-- Scroll: Enchant D-grade Weapon -->
+						<item id="955" count="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 					</item>
 					<item chance="4.0">
-						<item id="956" count="1" /> <!-- Scroll: Enchant D-grade Armor -->
+						<item id="956" count="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
 					</item>
 					<item chance="3.5">
-						<item id="951" count="1" /> <!-- Scroll: Enchant C-grade Weapon -->
+						<item id="951" count="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="3.5">
-						<item id="952" count="1" /> <!-- Scroll: Enchant C-grade Armor -->
+						<item id="952" count="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<item chance="1.5">
-						<item id="6573" count="1" /> <!-- Protecting Scroll: Enchant C-grade Weapon -->
+						<item id="6573" count="1" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 					</item>
 					<item chance="1.5">
-						<item id="6574" count="1" /> <!-- Protecting Scroll: Enchant C-grade Armor -->
+						<item id="6574" count="1" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 					</item>
 					<!-- Mics -->
 					<item chance="6.299666666666667">
 						<item id="3936" count="1" /> <!-- Blessed Scroll of Resurrection -->
 					</item>
 					<item chance="6.299666666666667">
-						<item id="1538" count="1" /> <!-- Improved Scroll of Escape -->
+						<item id="1538" count="1" /> <!-- Blessed Scroll of Escape -->
 					</item>
 					<item chance="6.299666666666667">
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="0.001">
-						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 - Not Available -->
+						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
 					</item>
 					<item chance="0.1">
-						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 - Not Available -->
+						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
 					</item>
 					<!-- Buff Scroll -->
 					<item chance="3.0">
@@ -673,16 +673,16 @@
 						<item id="3930" count="1" /> <!-- Scroll: Haste -->
 					</item>
 					<item chance="3.0">
-						<item id="29686" count="1" /> <!-- Scroll: Concentration - Not Available -->
+						<item id="29686" count="1" /> <!-- Scroll: Concentration -->
 					</item>
 					<item chance="3.0">
-						<item id="29689" count="1" /> <!-- Scroll: Magic Barrier - Not Available -->
+						<item id="29689" count="1" /> <!-- Scroll: Magic Barrier -->
 					</item>
 					<item chance="3.0">
-						<item id="29690" count="1" /> <!-- Scroll: Blessed Body - Not Available -->
+						<item id="29690" count="1" /> <!-- Scroll: Blessed Body -->
 					</item>
 					<item chance="3.0">
-						<item id="29691" count="1" /> <!-- Scroll: Blessed Soul - Not Available -->
+						<item id="29691" count="1" /> <!-- Scroll: Blessed Soul -->
 					</item>
 					<item chance="3.0">
 						<item id="3928" count="1" /> <!-- Scroll: Focus -->
@@ -738,18 +738,22 @@
 		</effects>
 	</skill>
 	<skill id="55322" toLevel="1" name="Normal VIP Gain Scroll">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55323" toLevel="1" name="Medium VIP Gain Scroll">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55324" toLevel="1" name="Good VIP Gain Scroll">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55325" toLevel="1" name="Perfect VIP Gain Scroll">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
@@ -758,6 +762,7 @@
 	</skill>
 	<skill id="55327" toLevel="1" name="Sweet Chocolate Energy">
 		<!-- Eat some chocolate from Coco Brownie to feel life-giving energy. For 2 h., acquired XP/ SP +5%, Atk. Spd./ Casting Spd. +10%, Speed +10. Cannot be stacked with Blessing of Light. -->
+		<icon>icon.etc_whiteday_choco</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<abnormalLevel>1</abnormalLevel>
@@ -801,11 +806,13 @@
 	</skill>
 	<skill id="55328" toLevel="1" name="PA Progression Support - Event">
 		<!-- Event buff for PA only. Acquired XP/ SP +20%. Item drop rate +100%. Cannot be used on servitors. -->
+		<icon>icon.etc_pccafe_exp_i00</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55329" toLevel="1" name="Strawberry Juice">
 		<!-- For 5 min. Max HP+10%, HP Recovery Bonus +10%, P. Atk. +10%, P. Def. +10%, Atk. Spd. +5%, Debuff Resistance +10%. -->
+		<icon>icon.etc_fruit_cocktail_i01</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -848,6 +855,7 @@
 	</skill>
 	<skill id="55330" toLevel="1" name="Mango Juice">
 		<!-- For 5 min. MP Recovery Bonus +10%, M. Atk. +10%, M. Def. +10%, Casting Spd. +5%, Debuff Resistance +10%. Skill MP Consumption -3%. -->
+		<icon>icon.etc_fruit_cocktail_i03</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -885,6 +893,7 @@
 	</skill>
 	<skill id="55331" toLevel="1" name="Cherry Juice">
 		<!-- For 5 min., Evasion +3, Accuracy +3, Critical Rate +10%, Critical Damage +15%, Speed +10%, Debuff Resistance +10%. -->
+		<icon>icon.etc_fruit_cocktail_i02</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -941,135 +950,171 @@
 	</skill>
 	<skill id="55335" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55336" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55337" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55338" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55339" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55340" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55341" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55342" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55343" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55344" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55345" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55346" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55347" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55348" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55349" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55350" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55351" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55352" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55353" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55354" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55355" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55356" toLevel="1" name="Irene's Hourglass - 1 Hour">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55357" toLevel="1" name="Irene's Hourglass - 2 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55358" toLevel="1" name="Irene's Hourglass - 3 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55359" toLevel="1" name="Irene's Hourglass - 4 Hours">
 		<!-- Acquired XP/ SP +50% for the duration of the effect -->
+		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="55360" toLevel="8" name="Irene's Song">
 		<!-- Acquired XP/ SP +$s1. -->
+		<icon>
+			<value level="1">br_cashtex.skill.br_cash_rune_of_exp_buff_1</value>
+			<value level="2">br_cashtex.skill.br_cash_rune_of_exp_buff_1</value>
+			<value level="3">br_cashtex.skill.br_cash_rune_of_exp_buff_1</value>
+			<value level="4">br_cashtex.skill.br_cash_rune_of_exp_buff_1</value>
+			<value level="5">br_cashtex.skill.br_cash_rune_of_exp_buff_2</value>
+			<value level="6">br_cashtex.skill.br_cash_rune_of_exp_buff_2</value>
+			<value level="7">br_cashtex.skill.br_cash_rune_of_exp_buff_2</value>
+			<value level="8">br_cashtex.skill.br_cash_rune_of_exp_buff_2</value>
+		</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55361" toLevel="1" name="Superspeed Potion">
 		<!-- Greatly increases Speed for a short period of time. -->
+		<icon>icon.etc_potion_red_i00</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
@@ -1148,59 +1193,69 @@
 		</effects>
 	</skill>
 	<skill id="55365" toLevel="1" name="King Pirate's Treasure Chest">
+		<icon>icon.card_event_blue_box</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55366" toLevel="1" name="Weapon Pack (B-grade)">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55367" toLevel="1" name="Weapon Pack (C-grade)">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55368" toLevel="1" name="Armor Pack (B-grade)">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55369" toLevel="1" name="Armor Pack (C-grade)">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55370" toLevel="1" name="B-grade Weapons Ingredient Box">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55371" toLevel="1" name="C-grade Weapons Ingredient Box">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55372" toLevel="1" name="B-grade Armor Ingredient Box">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55373" toLevel="1" name="C-grade Armor Ingredient Box">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55374" toLevel="1" name="Baium Treasure Chest">
+		<icon>icon.etc_box_of_adventure_1_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -1220,10 +1275,33 @@
 	</skill>
 	<skill id="55378" toLevel="20" name="Effect of the Talisman of Border Lv. 1">
 		<!-- Talisman's magical power gives P. Def. +12, M. Def. +4, HP/ MP/ CP +3. Casting/ Atk. Spd. +2. -->
+		<icon>
+			<value level="1">icon.bm_magic_square_talisman</value>
+			<value level="2">icon.bm_magic_square_talisman</value>
+			<value level="3">icon.bm_magic_square_talisman</value>
+			<value level="4">icon.bm_magic_square_talisman</value>
+			<value level="5">icon.bm_magic_square_talisman</value>
+			<value level="6">icon.bm_magic_square_talisman</value>
+			<value level="7">icon.bm_magic_square_talisman</value>
+			<value level="8">icon.bm_magic_square_talisman</value>
+			<value level="9">icon.bm_magic_square_talisman</value>
+			<value level="10">icon.bm_magic_square_talisman</value>
+			<value level="11">icon.bm_dimension_tallisman</value>
+			<value level="12">icon.bm_dimension_tallisman</value>
+			<value level="13">icon.bm_dimension_tallisman</value>
+			<value level="14">icon.bm_dimension_tallisman</value>
+			<value level="15">icon.bm_dimension_tallisman</value>
+			<value level="16">icon.bm_dimension_tallisman</value>
+			<value level="17">icon.bm_dimension_tallisman</value>
+			<value level="18">icon.bm_dimension_tallisman</value>
+			<value level="19">icon.bm_dimension_tallisman</value>
+			<value level="20">icon.bm_dimension_tallisman</value>
+		</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55379" toLevel="1" name="Border Purification">
 		<!-- Cancels paralysis and petrification and cures severe poison/ bleed condition. Restores 15% HP. -->
+		<icon>icon.skill10036</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<castRange>600</castRange>
@@ -1233,16 +1311,40 @@
 	</skill>
 	<skill id="55380" toLevel="20" name="Enchantment Effect: Talisman of Border">
 		<!-- Acquired XP/ SP +3%. -->
+		<icon>
+			<value level="1">icon.bm_magic_square_talisman</value>
+			<value level="2">icon.bm_magic_square_talisman</value>
+			<value level="3">icon.bm_magic_square_talisman</value>
+			<value level="4">icon.bm_magic_square_talisman</value>
+			<value level="5">icon.bm_magic_square_talisman</value>
+			<value level="6">icon.bm_magic_square_talisman</value>
+			<value level="7">icon.bm_magic_square_talisman</value>
+			<value level="8">icon.bm_magic_square_talisman</value>
+			<value level="9">icon.bm_magic_square_talisman</value>
+			<value level="10">icon.bm_magic_square_talisman</value>
+			<value level="11">icon.bm_dimension_tallisman</value>
+			<value level="12">icon.bm_dimension_tallisman</value>
+			<value level="13">icon.bm_dimension_tallisman</value>
+			<value level="14">icon.bm_dimension_tallisman</value>
+			<value level="15">icon.bm_dimension_tallisman</value>
+			<value level="16">icon.bm_dimension_tallisman</value>
+			<value level="17">icon.bm_dimension_tallisman</value>
+			<value level="18">icon.bm_dimension_tallisman</value>
+			<value level="19">icon.bm_dimension_tallisman</value>
+			<value level="20">icon.bm_dimension_tallisman</value>
+		</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55381" toLevel="7" name="Border Power">
 		<!-- P./ M. Atk. +1%, P./ M. Critical Damage +3%. -->
+		<icon>icon.skill10030</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>30000</reuseDelay>
 	</skill>
 	<skill id="55382" toLevel="1" name="Blessing of Borders">
 		<!-- Restores 100% HP/ CP and 50% MP when used. -->
+		<icon>icon.skill10034</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>3000</hitTime>
@@ -1300,42 +1402,67 @@
 	</skill>
 	<skill id="55389" toLevel="2" name="Olympiad Hero's Potion - STR">
 		<!-- For 20 min., STR +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_red_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i10</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55390" toLevel="2" name="Olympiad Hero's Potion - INT">
 		<!-- For 20 min., INT +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_scarlet_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i11</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55391" toLevel="2" name="Olympiad Hero's Potion - CON">
 		<!-- For 20 min., CON +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_yellow_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i07</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55392" toLevel="2" name="Olympiad Hero's Potion - DEX">
 		<!-- For 20 min., DEX +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_green_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i03</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55393" toLevel="2" name="Olympiad Hero's Potion - MEN">
 		<!-- For 20 min., MEN +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_blue_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i05</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55394" toLevel="2" name="Olympiad Hero's Potion - WIT">
 		<!-- For 20 min., WIT +4. -->
+		<icon>
+			<value level="1">icon.etc_lesser_potion_purple_i00</value>
+			<value level="2">icon.etc_fruit_juice_glass_bottle_i04</value>
+		</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55395" toLevel="1" name="Olympiad Opening Commemorative XP/ SP Scroll">
 		<!-- For 20 min., acquired XP/ SP +50%. -->
+		<icon>icon.exp_bottle</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>20000</reuseDelay>
@@ -1343,6 +1470,7 @@
 	</skill>
 	<skill id="55396" toLevel="1" name="Olympiad Hero's Special Fruit">
 		<!-- For 20 min., acquired XP/ SP +10%, P./ M. Atk. +10%, P./ M. Def. +5%, Max. HP/ MP/ CP +15%, HP/ MP Recovery Bonus +20%, PvE damage +10%. Has a chance of absorbing 3% of damage inflicted on enemy as HP. -->
+		<icon>icon.etc_cobol_i04</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>20000</reuseDelay>
@@ -1350,6 +1478,7 @@
 	</skill>
 	<skill id="55397" toLevel="1" name="Olympiad Commemorative Amulet - 100%">
 		<!-- Acquired XP/ SP +100%. -->
+		<icon>icon.skill19226</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55398" toLevel="1" name="Olympiad Hero's SP Scroll">
@@ -1359,6 +1488,7 @@
 	</skill>
 	<skill id="55399" toLevel="1" name="Tryout Glorious Cloak">
 		<!-- P./ M. Def. +3%, Speed +10. -->
+		<icon>BranchSys2.Icon.7anni_cloack_i02</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>

@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="800" toLevel="3" name="Master Ability: M. Def.">
 		<!-- Increases M. Def. -->
+		<icon>icon.skill0142</icon>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -19,6 +20,7 @@
 	</skill>
 	<skill id="801" toLevel="1" name="Warrior Ability: Boost CP">
 		<!-- Increases Max. CP. -->
+		<icon>icon.skill0440</icon>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -32,6 +34,7 @@
 	</skill>
 	<skill id="802" toLevel="1" name="Wizard Ability: Anti-magic">
 		<!-- Resistance to magic attack +5%. -->
+		<icon>icon.skill0146</icon>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -45,6 +48,7 @@
 	</skill>
 	<skill id="803" toLevel="1" name="Healer Ability: Divine Protection">
 		<!-- Increases Dark/ Holy Attack Resistance. -->
+		<icon>icon.skill1353</icon>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -62,6 +66,7 @@
 	</skill>
 	<skill id="804" toLevel="1" name="Knight Ability: Critical Damage Resistance">
 		<!-- Decreases Received P. Critical Damage. -->
+		<icon>icon.skill0232</icon>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -74,12 +79,14 @@
 		</effects>
 	</skill>
 	<skill id="805" toLevel="1" name="Not in Use">
+		<icon>icon.skill0142</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
 	<skill id="806" toLevel="1" name="Magic Obstacle">
 		<!-- Blows away Enhanced Abnormal Conditions of the enemies around the golem. -->
+		<icon>icon.skill_transform_etc</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1500</hitTime>
@@ -101,6 +108,7 @@
 	</skill>
 	<skill id="807" toLevel="1" name="Over-hit">
 		<!-- Increases the golem's power more by filling him up with special fuel. -->
+		<icon>icon.skill_transform_buff</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -122,7 +130,8 @@
 		</effects>
 	</skill>
 	<skill id="808" toLevel="1" name="Golem Punch">
-		<!-- Throws a strong punch to inflict damage and stun the enemy with 11,205 power. Over-hit. -->
+		<!-- Throws a powerful punch with 11205 Power that both stuns and inflicts damage to the enemy. Over-hit. -->
+		<icon>icon.skill_transform_debuff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -153,7 +162,8 @@
 		</effects>
 	</skill>
 	<skill id="809" toLevel="1" name="Golem Tornado Swing">
-		<!-- Spins attacking the enemy with 6199 power. Over-hit. -->
+		<!-- Spinning attack strikes enemy with 6199 Power. Over-hit. -->
+		<icon>icon.skill_transform_s_attack</icon>
 		<affectRange>200</affectRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -174,23 +184,23 @@
 		</effects>
 	</skill>
 	<skill id="814" toLevel="9" name="Full Swing">
-		<!-- A powerful strike with the two-handed sword. Attacks the enemy with 2424 power. Ignores Shield Defense. Critical. -->
+		<!-- Widely swings a two-handed weapon to attack nearby enemies with $s1 Power added to P. Atk. Ignores Shield Defense. Requires a two-handed sword/ two-handed blunt to be equipped. Critical. Over-hit. -->
 		<icon>icon.skill0814</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>100</affectRange>
 		<coolTime>733</coolTime>
 		<effectPoint>
-			<value level="1">-1160</value>
-			<value level="2">-1175</value>
-			<value level="3">-1190</value>
-			<value level="4">-1205</value>
-			<value level="5">-1220</value>
-			<value level="6">-1235</value>
-			<value level="7">-1250</value>
-			<value level="8">-1265</value>
-			<value level="9">-1280</value>
+			<value level="1">-169</value>
+			<value level="2">-172</value>
+			<value level="3">-175</value>
+			<value level="4">-178</value>
+			<value level="5">-181</value>
+			<value level="6">-184</value>
+			<value level="7">-187</value>
+			<value level="8">-190</value>
+			<value level="9">-193</value>
 		</effectPoint>
-		<hitTime>1000</hitTime>
+		<hitTime>1067</hitTime>
 		<magicLevel>
 			<value level="1">76</value>
 			<value level="2">77</value>
@@ -203,18 +213,18 @@
 			<value level="9">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">90</value>
-			<value level="2">90</value>
-			<value level="3">91</value>
-			<value level="4">93</value>
-			<value level="5">94</value>
-			<value level="6">94</value>
-			<value level="7">96</value>
-			<value level="8">97</value>
-			<value level="9">99</value>
+			<value level="1">70</value>
+			<value level="2">78</value>
+			<value level="3">85</value>
+			<value level="4">92</value>
+			<value level="5">99</value>
+			<value level="6">106</value>
+			<value level="7">113</value>
+			<value level="8">120</value>
+			<value level="9">127</value>
 		</mpConsume>
 		<operateType>A1</operateType>
-		<reuseDelay>3000</reuseDelay>
+		<reuseDelay>15000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
@@ -248,6 +258,7 @@
 	</skill>
 	<skill id="815" toLevel="43" name="Blade Hurricane">
 		<!-- Attacks nearby enemies with $s1 Power added to P. Atk. Requires a dual sword. Ignores Shield Defense. Critical. Over-hit. -->
+		<icon>icon.skill0815</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
 		<coolTime>733</coolTime>
@@ -456,6 +467,7 @@
 	</skill>
 	<skill id="816" toLevel="43" name="Cleave">
 		<!-- Attack with $s1 Power added to P. Atk. Ignores Shield Defense. Requires a two-handed sword/ two-handed blunt to be equipped. Critical. Over-hit. -->
+		<icon>icon.skill0816</icon>
 		<castRange>40</castRange>
 		<coolTime>1080</coolTime>
 		<effectPoint>
@@ -665,6 +677,7 @@
 	</skill>
 	<skill id="817" toLevel="43" name="Double Attack">
 		<!-- Attacks by powerful strike of dual sword with $s1 Power added to P. Atk. Requires a dual sword. Ignores Shield Defense. Critical. Over-hit. -->
+		<icon>icon.skill0817</icon>
 		<castRange>40</castRange>
 		<coolTime>167</coolTime>
 		<effectPoint>
@@ -873,6 +886,7 @@
 	</skill>
 	<skill id="818" toLevel="1" name="Evasion Counter">
 		<!-- After successful P. Evasion has a chance to counter attack and stun the enemy. -->
+		<icon>icon.skill0818</icon>
 		<magicLevel>74</magicLevel>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -888,6 +902,7 @@
 	</skill>
 	<skill id="819" toLevel="1" name="Evasion Chance">
 		<!-- After successful P. Evasion, increases the rate of successfully striking the enemy's vital organs. -->
+		<icon>icon.skill0819</icon>
 		<magicLevel>74</magicLevel>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -903,6 +918,7 @@
 	</skill>
 	<skill id="820" toLevel="1" name="Evasion Haste">
 		<!-- During P. Evasion, increases your Atk. Spd. -->
+		<icon>icon.skill0820</icon>
 		<magicLevel>74</magicLevel>
 		<magicCriticalRate>5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -916,32 +932,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="821" toLevel="12" name="Shadow Step">
-		<!-- <Suppression Skill>. Teleports behind the target's back. Their Speed -30% for 10 sec. -->
+	<skill id="821" toLevel="8" name="Shadow Step">
+		<!-- Moves a character behind enemy's back. Cancels the target and Stuns. -->
 		<icon>icon.skill0821</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>SPEED_DOWN</abnormalType>
-		<activateRate>70</activateRate>
 		<castRange>600</castRange>
-		<effectPoint>
-			<value level="1">-500</value>
-			<value level="2">-540</value>
-			<value level="3">-580</value>
-			<value level="4">-620</value>
-			<value level="5">-660</value>
-			<value level="6">-700</value>
-			<value level="7">-740</value>
-			<value level="8">-780</value>
-			<value level="9">-820</value>
-			<value level="10">-860</value>
-			<value level="11">-880</value>
-			<value level="12">-900</value>
-		</effectPoint>
+		<coolTime>200</coolTime>
+		<effectPoint>-1</effectPoint>
 		<effectRange>1100</effectRange>
-		<hitTime>500</hitTime>
-		<isDebuff>true</isDebuff>
-		<lvlBonusRate>20</lvlBonusRate>
+		<hitTime>100</hitTime>
 		<magicLevel>
 			<value level="1">50</value>
 			<value level="2">54</value>
@@ -951,43 +949,40 @@
 			<value level="6">70</value>
 			<value level="7">74</value>
 			<value level="8">78</value>
-			<value level="9">82</value>
-			<value level="10">86</value>
-			<value level="11">88</value>
-			<value level="12">90</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">37</value>
-			<value level="2">41</value>
-			<value level="3">45</value>
-			<value level="4">48</value>
-			<value level="5">52</value>
-			<value level="6">56</value>
-			<value level="7">60</value>
-			<value level="8">63</value>
-			<value level="9">67</value>
-			<value level="10">71</value>
-			<value level="11">75</value>
-			<value level="12">80</value>
+			<value level="1">50</value>
+			<value level="2">55</value>
+			<value level="3">60</value>
+			<value level="4">65</value>
+			<value level="5">70</value>
+			<value level="6">75</value>
+			<value level="7">80</value>
+			<value level="8">85</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>60000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>70</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
-		<trait>ANOMALY</trait>
+		<lvlBonusRate>20</lvlBonusRate>
+		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="TeleportToTarget" />
-			<effect name="TargetCancel" />
-			<effect name="Speed">
-				<amount>-30</amount>
-				<mode>PER</mode>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="822" toLevel="3" name="Repair Golem">
-		<!-- Repairs the summoned golem to recover the golem's HP by 8%. -->
+		<!-- Repairs the summoned golem to recover the golem's HP by $s1. -->
 		<icon>icon.skill0822</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
@@ -1029,15 +1024,20 @@
 		</effects>
 	</skill>
 	<skill id="823" toLevel="3" name="Strengthen Golem">
-		<!-- Duration: 20 min. Servitor's P. Atk. +8%. Servitor's Atk. Spd. +3% -->
+		<!-- Summoned golem's P. Atk. +$s2 and Atk. Spd. +$s3 for $s1. -->
 		<icon>icon.skill0823</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">408</value>
+			<value level="2">495</value>
+			<value level="3">549</value>
+		</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>2500</hitTime>
+		<hitTime>4000</hitTime>
 		<magicLevel>
 			<value level="1">43</value>
 			<value level="2">52</value>
@@ -1049,7 +1049,7 @@
 			<value level="3">42</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
@@ -1079,7 +1079,7 @@
 		</effects>
 	</skill>
 	<skill id="824" toLevel="3" name="Golem Reinforcement">
-		<!-- Duration: 20 min. Servitor's P. Def. +8%. Servitor's Max HP +5% -->
+		<!-- For $s1, equips a summoned golem with an additional armor plate to get P. Def. +$s2 and Max HP +$s3. -->
 		<icon>icon.skill0824</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1092,7 +1092,7 @@
 			<value level="3">523</value>
 		</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>2500</hitTime>
+		<hitTime>4000</hitTime>
 		<magicLevel>
 			<value level="1">40</value>
 			<value level="2">49</value>
@@ -1104,7 +1104,7 @@
 			<value level="3">44</value>
 		</mpConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>10000</reuseDelay>
+		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>SUMMON</targetType>
@@ -1135,6 +1135,7 @@
 	</skill>
 	<skill id="825" toLevel="1" name="Sharpen Edge">
 		<!-- Sharpens a bladed weapon to get P. Atk. +5% and P. Critical Rate +20% for 20 min. -->
+		<icon>icon.skill0825</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>DWARF_ATTACK_BUFF</abnormalType>
@@ -1182,40 +1183,41 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="826" toLevel="2" name="Spike">
-		<!-- M. Atk. +10%. P. Atk. +120. Shock Atk. Rate +15% -->
+	<skill id="826" toLevel="1" name="Spike">
+		<!-- For 20 min., adds a spike to a blunt weapon to get P. Atk. +10%. Additionally, Stun Atk. Rate +15%. -->
 		<icon>icon.skill0826</icon>
-		<magicLevel>
-			<value level="1">49</value>
-			<value level="2">80</value>
-		</magicLevel>
-		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>DWARF_ATTACK_BUFF</abnormalType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>467</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>4000</hitTime>
+		<magicLevel>49</magicLevel>
+		<mpConsume>44</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="AttackTrait">
-				<SHOCK>
-					<value level="1">15</value>
-					<value level="2">20</value>
-				</SHOCK>
-			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-				</amount>
-				<mode>PER</mode>
+				<SHOCK>15</SHOCK>
 			</effect>
 			<effect name="PAtk">
-				<amount>
-					<value level="1">120</value>
-					<value level="2">200</value>
-				</amount>
-				<mode>DIFF</mode>
+				<amount>10</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>BLUNT</item>
+				</weaponType>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="827" toLevel="1" name="Bowstring">
 		<!-- Enhances the string of a bow to get P. Atk. +5% and range +100 for 20 min. -->
+		<icon>icon.skill0827</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>DWARF_ATTACK_BUFF</abnormalType>
@@ -1251,27 +1253,45 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="828" toLevel="2" name="Encase Armor">
-		<!-- P. Def. +100 -->
+	<skill id="828" toLevel="1" name="Face Harden">
+		<!-- Thickens the surface of heavy armor to get P. Def. +5% and M. Def. +5% for 20 min. -->
 		<icon>icon.skill0828</icon>
-		<magicLevel>
-			<value level="1">46</value>
-			<value level="2">78</value>
-		</magicLevel>
-		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>DWARF_DEFENCE_BUFF</abnormalType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>438</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>4000</hitTime>
+		<magicLevel>46</magicLevel>
+		<mpConsume>41</mpConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>2000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">100</value>
-					<value level="2">200</value>
-				</amount>
-				<mode>DIFF</mode>
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="829" toLevel="1" name="Hard Tanning">
 		<!-- Tans light armor to get P. Def. +5% and P. Evasion +2 for 20 min. Cannot be used on pets. -->
+		<icon>icon.skill0829</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>DWARF_DEFENCE_BUFF</abnormalType>
@@ -1307,6 +1327,7 @@
 	</skill>
 	<skill id="830" toLevel="1" name="Embroider">
 		<!-- Embroiders a robe to get P. Def. +5% and MP Recovery Bonus +2 for 20 min. -->
+		<icon>icon.skill0830</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>DWARF_DEFENCE_BUFF</abnormalType>
@@ -1342,6 +1363,7 @@
 	</skill>
 	<skill id="832" toLevel="2" name="Fast Recovery">
 		<!-- Increases HP/ MP/ CP Recovery Bonus. -->
+		<icon>icon.skill0832</icon>
 		<magicLevel>
 			<value level="1">43</value>
 			<value level="2">49</value>
@@ -1374,6 +1396,7 @@
 	</skill>
 	<skill id="833" toLevel="1" name="Body Reconstruction">
 		<!-- Recovers all HP by reconstructing your body. -->
+		<icon>icon.skill0833</icon>
 		<effectPoint>562</effectPoint>
 		<hitTime>1500</hitTime>
 		<magicLevel>52</magicLevel>
@@ -1391,6 +1414,7 @@
 	</skill>
 	<skill id="834" toLevel="1" name="Blood Pact">
 		<!-- Through a blood contract, party members' Max HP +10% and HP Recovery Bonus +10 for 2 min. -->
+		<icon>icon.skill0834</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>BLOOD_CONSTRACT</abnormalType>
@@ -1419,6 +1443,7 @@
 	</skill>
 	<skill id="835" toLevel="4" name="Imbue Seed of Destruction">
 		<!-- Plants a Seed of Destruction in the enemy's body. The seed grows inside the body, sucking up the enemy's mana, and blocks the enemy's skill use when it becomes fully grown. Consumes $s1 Dark Seed. -->
+		<icon>icon.skill0835</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>DARK_SEED</abnormalType>
@@ -1450,7 +1475,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>15000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1478,6 +1503,7 @@
 	</skill>
 	<skill id="837" toLevel="1" name="Painkiller">
 		<!-- For 8 sec., becomes invincible, suppressing pain and not incurring damage. -->
+		<icon>icon.skill0837</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>8</abnormalTime>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -1506,6 +1532,7 @@
 	</skill>
 	<skill id="838" toLevel="1" name="Switch Stance">
 		<!-- Switches from an attack stance to a basic stance. -->
+		<icon>icon.skilltransform2</icon>
 		<effectPoint>10</effectPoint>
 		<hitTime>5000</hitTime>
 		<magicLevel>43</magicLevel>
@@ -1540,6 +1567,7 @@
 	</skill>
 	<skill id="843" toLevel="1" name="Shooting Star">
 		<!-- Fires a star fragment. Power 3422. -->
+		<icon>icon.skill0843</icon>
 		<castRange>900</castRange>
 		<effectPoint>-689</effectPoint>
 		<effectRange>1500</effectRange>
@@ -1623,7 +1651,7 @@
 		</effects>
 	</skill>
 	<skill id="847" toLevel="1" name="Ward Transport">
-		<!-- With an opposing banner in hand, go back to your outpost and use this skill to move the banner back to your castle. -->
+		<!-- With an opposing ward in hand, go back to your outpost and use this skill to move the ward back to your castle. -->
 		<icon>icon.weapon_fort_flag_i00</icon>
 		<castRange>85</castRange>
 		<effectPoint>0</effectPoint>
@@ -1640,7 +1668,8 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="848" toLevel="1" name="Gludio Territory Benefaction">
-		<!-- STR +1/ INT +1 -->
+		<!-- STR+ 1/ INT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1656,7 +1685,8 @@
 		</effects>
 	</skill>
 	<skill id="849" toLevel="1" name="Dion Territory Benefaction">
-		<!-- DEX +1/ WIT +1 -->
+		<!-- DEX+ 1/ WIT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1672,7 +1702,8 @@
 		</effects>
 	</skill>
 	<skill id="850" toLevel="1" name="Giran Territory Benefaction">
-		<!-- STR +1/ MEN +1 -->
+		<!-- STR+ 1/ MEN+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1688,7 +1719,8 @@
 		</effects>
 	</skill>
 	<skill id="851" toLevel="1" name="Oren Territory Benefaction">
-		<!-- CON +1/ MEN +1 -->
+		<!-- CON+ 1/ MEN+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1704,7 +1736,8 @@
 		</effects>
 	</skill>
 	<skill id="852" toLevel="1" name="Aden Territory Benefaction">
-		<!-- DEX +1/ MEN +1 -->
+		<!-- DEX+ 1/ MEN+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1720,7 +1753,8 @@
 		</effects>
 	</skill>
 	<skill id="853" toLevel="1" name="Innadril Territory Benefaction">
-		<!-- CON +1/ INT +1 -->
+		<!-- CON+ 1/ INT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1736,7 +1770,8 @@
 		</effects>
 	</skill>
 	<skill id="854" toLevel="1" name="Goddard Territory Benefaction">
-		<!-- DEX +1/ INT +1 -->
+		<!-- DEX+ 1/ INT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1752,7 +1787,8 @@
 		</effects>
 	</skill>
 	<skill id="855" toLevel="1" name="Rune Territory Benefaction">
-		<!-- STR +1/ WIT +1 -->
+		<!-- STR+ 1/ WIT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1768,7 +1804,8 @@
 		</effects>
 	</skill>
 	<skill id="856" toLevel="1" name="Schuttgart Territory Benefaction">
-		<!-- CON +1/ WIT +1 -->
+		<!-- CON+ 1/ WIT+ 1 -->
+		<icon>icon.weapon_fort_flag_i00</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1785,6 +1822,7 @@
 	</skill>
 	<skill id="869" toLevel="9" name="Mercenary Power Strike">
 		<!-- Delivers a powerful blow that strikes the target with $s1 Power added to P. Atk. -->
+		<icon>icon.skill0003</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -1826,6 +1864,7 @@
 	</skill>
 	<skill id="870" toLevel="8" name="Royal Guard Captain Power Strike">
 		<!-- Delivers a powerful blow that strikes the target with $s1 Power added to P. Atk. -->
+		<icon>icon.skill0003</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>
@@ -1873,7 +1912,8 @@
 		</effects>
 	</skill>
 	<skill id="871" toLevel="1" name="Might">
-		<!-- For 20 min., P. Atk. +15%. -->
+		<!-- P. Atk. +15% for 20 min. -->
+		<icon>icon.skill1068</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -1899,7 +1939,8 @@
 		</effects>
 	</skill>
 	<skill id="872" toLevel="8" name="Archer Captain Power Shot">
-		<!-- Uses a bow to attack a distant enemy with $s1 power. Over-hit. -->
+		<!-- Uses a bow to attack a distant enemy with $s1 Power added to P. Atk. Over-hit. -->
+		<icon>icon.skill0056</icon>
 		<castRange>700</castRange>
 		<coolTime>800</coolTime>
 		<effectPoint>
@@ -1948,6 +1989,7 @@
 	</skill>
 	<skill id="873" toLevel="1" name="Rapid Shot">
 		<!-- Bow Atk. Spd. +12% for 20 min. -->
+		<icon>icon.skill0099</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>ATTACK_SPEED_UP_BOW</abnormalType>
@@ -1972,7 +2014,8 @@
 		</effects>
 	</skill>
 	<skill id="874" toLevel="8" name="Wizard Captain Flame Strike">
-		<!-- Launches an exploding fireball that inflicts damage on the enemy with $s1 Power. -->
+		<!-- Launches a flaming swath of energy that inflicts Fire damage on the enemy with $s1 Power. -->
+		<icon>icon.skill1181</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -2034,7 +2077,8 @@
 		</effects>
 	</skill>
 	<skill id="875" toLevel="1" name="Empower">
-		<!-- For 20 min., M. Atk. +75%. -->
+		<!-- M. Atk. power +75% for 20 min. -->
+		<icon>icon.skill1059</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -2061,6 +2105,7 @@
 	</skill>
 	<skill id="876" toLevel="8" name="Centurion Enuma Elish">
 		<!-- Attacks the enemy using the mighty Sword of Creation with $s1 Power added to P. Atk. -->
+		<icon>icon.skill0526</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>400</affectRange>
 		<castRange>40</castRange>
@@ -2113,7 +2158,8 @@
 		</effects>
 	</skill>
 	<skill id="877" toLevel="8" name="Centurion Disarm">
-		<!-- Disarms the enemy and prevents them from equipping a weapon for $s1 -->
+		<!-- Disarms the enemy and prevents him from equipping a weapon for $s1. -->
+		<icon>icon.skill0485</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>DISARM</abnormalType>
@@ -2164,6 +2210,7 @@
 	</skill>
 	<skill id="878" toLevel="7" name="Knight Captain Power Strike">
 		<!-- Delivers a powerful blow that strikes the target with $s1 Power added to P. Atk. -->
+		<icon>icon.skill0003</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>
@@ -2209,6 +2256,7 @@
 	</skill>
 	<skill id="879" toLevel="7" name="Knight Captain Curse Fear">
 		<!-- Causes your enemy to flee in fear. -->
+		<icon>icon.skill1169</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>TURN_FLEE</abnormalType>
@@ -2236,7 +2284,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -2245,7 +2293,8 @@
 		</effects>
 	</skill>
 	<skill id="880" toLevel="1" name="Knight Captain Ultimate Defense">
-		<!-- For 30 sec., P. Def. +3600, M. Def. +2700, Buff Cancel Resistance +80%. Impossible to move while the effect is active. -->
+		<!-- For 30 sec., P. Def. +3600, M. Def. +2700 and Buff-canceling Attack Resistance +80%. The player cannot move while the effect lasts. -->
+		<icon>icon.skill0110</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -2278,7 +2327,8 @@
 		</effects>
 	</skill>
 	<skill id="881" toLevel="7" name="Commander Twister">
-		<!-- Creates a powerful cyclone that inflicts damage on the enemy. $s1 Power. -->
+		<!-- Creates a powerful cyclone that inflicts Wind damage on the enemy. $s1 Power. -->
+		<icon>icon.skill1178</icon>
 		<castRange>750</castRange>
 		<effectPoint>-1</effectPoint>
 		<effectRange>1250</effectRange>
@@ -2326,7 +2376,8 @@
 		</effects>
 	</skill>
 	<skill id="882" toLevel="7" name="Commander Blaze">
-		<!-- Ignites your body. Power $s1 -->
+		<!-- Ignites your body. Power $s1. -->
+		<icon>icon.skill1220</icon>
 		<castRange>750</castRange>
 		<effectPoint>-1</effectPoint>
 		<effectRange>1250</effectRange>
@@ -2373,7 +2424,8 @@
 		</effects>
 	</skill>
 	<skill id="883" toLevel="7" name="Commander Seal of Binding">
-		<!-- Immobilizes nearby enemies for $s1 -->
+		<!-- Holds nearby enemies for $s1. -->
+		<icon>icon.skill1208</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -2414,6 +2466,7 @@
 	</skill>
 	<skill id="884" toLevel="11" name="Air Assault">
 		<!-- Moves forward quickly and inflicts damage on nearby enemies. -->
+		<icon>icon.skill_transform_etc</icon>
 		<affectRange>100</affectRange>
 		<castRange>2500</castRange>
 		<coolTime>200</coolTime>
@@ -2453,6 +2506,7 @@
 	</skill>
 	<skill id="886" toLevel="11" name="Air Shock Bomb">
 		<!-- Damages and stuns the target with $s1 Power, momentarily preventing movement. -->
+		<icon>icon.skill_transform_debuff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -2532,6 +2586,7 @@
 	</skill>
 	<skill id="887" toLevel="11" name="Sky Clutch">
 		<!-- Inflicts damage and simultaneously holds the targeted enemy with $s1 Power. Only one root effect can be used at a time. -->
+		<icon>icon.skill_transform_debuff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
@@ -2610,6 +2665,7 @@
 	</skill>
 	<skill id="888" toLevel="11" name="Energy Storm">
 		<!-- Delivers a powerful strike with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>200</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -2677,6 +2733,7 @@
 	</skill>
 	<skill id="889" toLevel="11" name="Energy Storm">
 		<!-- Delivers a powerful strike with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>200</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -2744,6 +2801,7 @@
 	</skill>
 	<skill id="890" toLevel="11" name="Prodigious Flare">
 		<!-- Delivers a powerful strike with $s1 Power. -->
+		<icon>icon.skill_transform_s_attack</icon>
 		<castRange>200</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -2811,6 +2869,7 @@
 	</skill>
 	<skill id="891" toLevel="11" name="Energy Shot">
 		<!-- Inflicts a powerful ranged attack with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -2879,6 +2938,7 @@
 	</skill>
 	<skill id="892" toLevel="11" name="Energy Shot">
 		<!-- Inflicts a powerful ranged attack with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -2947,6 +3007,7 @@
 	</skill>
 	<skill id="893" toLevel="11" name="Concentrated Energy Shot">
 		<!-- Gathers strength to inflict a powerful ranged attack with $s1 Power. -->
+		<icon>icon.skill_transform_s_attack</icon>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -3015,6 +3076,7 @@
 	</skill>
 	<skill id="894" toLevel="1" name="Exhilarate">
 		<!-- Increases your overall attack abilities. -->
+		<icon>icon.skill_transform_buff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -3049,6 +3111,7 @@
 	</skill>
 	<skill id="895" toLevel="1" name="Exhilarate">
 		<!-- Increases your overall attack abilities. -->
+		<icon>icon.skill_transform_buff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>MULTI_BUFF</abnormalType>
@@ -3095,6 +3158,7 @@
 	</skill>
 	<skill id="896" toLevel="6" name="Rolling Attack">
 		<!-- Delivers a powerful strike with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-676</value>
@@ -3155,6 +3219,7 @@
 	</skill>
 	<skill id="897" toLevel="6" name="Double Blast">
 		<!-- Inflicts a powerful ranged attack with $s1 Power. -->
+		<icon>icon.skill_transform_etc</icon>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-676</value>
@@ -3214,6 +3279,7 @@
 	</skill>
 	<skill id="898" toLevel="6" name="Tornado Slash">
 		<!-- Attacks enemies in front of you. Power $s1. -->
+		<icon>icon.skill_transform_etc</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>
@@ -3274,6 +3340,7 @@
 	</skill>
 	<skill id="899" toLevel="6" name="Cat Roar">
 		<!-- Uses the cry of danger to decrease P. Def./ M. Def./ Speed/ Atk. Spd. and Magic Spd. of nearby enemies. Power $s1. -->
+		<icon>icon.skill_transform_debuff</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MULTI_DEBUFF</abnormalType>
@@ -3311,7 +3378,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>

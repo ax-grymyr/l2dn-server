@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="1800" toLevel="1" name="Transformation: Pirate">
-		<!-- Duration: 20 min. Max HP +3%. Max MP +3%. P. Atk. +2%. M. Atk. +2%. P. Def. +2%. M. Def. +2%. Atk. Spd. +2%. P. Accuracy +1. M. Accuracy +1. M. Skill Critical Rate +10. Speed +3. <Story>. This pirate once ruled the ancient lands of Giran. His own crew started a riot, but didn't manage to cope with their captain that became even more powerful with the dark forces. Zaken killed all the remaining rebels and disappeared. -->
+	<skill id="1800" toLevel="1" name="Pirate Transformation">
+		<!-- For 20 min., Max HP/MP +3%, P./M. Accuracy +1, P./M. Atk. +2%, P./M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +3. Consumes 1 Elemental Stone. 
+			<Story> Pirates used to dominate the Giran area. Pirate King Zaken became a vampire and started to kill other pirates. His crew rose in mutiny against Zaken only to lead him to acquire the Power of Darkness. Surviving pirates had no choice but to run away... <Auto Use Skill> -->
 		<icon>icon.skill1800</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -10,27 +11,18 @@
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic> <!-- Magic Skill -->
-		<magicLevel>45</magicLevel>
+		<magicLevel>56</magicLevel>
 		<operateType>A2</operateType>
 		<reuseDelay>7200000</reuseDelay>
 		<stayAfterDeath>true</stayAfterDeath>
-		<coolTime>500</coolTime>
-		<hitTime>500</hitTime>
+		<hitTime>3000</hitTime>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<itemConsumeId>3031</itemConsumeId>
-		<itemConsumeCount>20</itemConsumeCount>
-		<conditions>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1801</skillId> <!-- Dark Assassin Transformation -->
-			</condition>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1802</skillId> <!-- White Assassin Transformation -->
-			</condition>
-		</conditions>
+		<itemConsumeId>49543</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<effects>
 			<effect name="MaxHp">
 				<amount>3</amount>
@@ -40,12 +32,24 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="Accuracy">
 				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicAccuracy">
 				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PAtk">
@@ -64,22 +68,12 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>3</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>3</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="1801" toLevel="1" name="Dark Assassin Transformation">
-		<!-- Duration: 20 min. Max HP +5%. Max MP +5%. P. Atk. +2%. M. Atk. +2%. P. Def. +2%. M. Def. +2%. Atk. Spd. +3%. P. Accuracy +1. M. Accuracy +1. M. Skill Critical Rate +10. Speed +4. <Story>. A powerful organization of assassins founded by Mercenary Captain Sieghardt Ein to carry out secret missions. After becoming the leader of the Dawn, Sieghardt Ein disappeared without a trace, but the society continues to operate from the shadows. -->
+		<!-- For 20 min., Max HP/MP +5%, P./M. Accuracy +1, P./M. Atk. +2%, P./M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +4. Consumes 1 Elemental Stones. <Story> 
+
+		A clandestine organization founded by Mercenary Captain Sieghardt Ein. Sieghardt Ein joined the Lords of Dawn and disappeared without a trace. However, his organization still leads its shadowy deals… <Auto Use Skill> -->
 		<icon>icon.skill1801</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -88,27 +82,18 @@
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic> <!-- Magic Skill -->
-		<magicLevel>60</magicLevel>
+		<magicLevel>56</magicLevel>
 		<operateType>A2</operateType>
 		<reuseDelay>7200000</reuseDelay>
+		<hitTime>3000</hitTime>
 		<stayAfterDeath>true</stayAfterDeath>
-		<coolTime>500</coolTime>
-		<hitTime>500</hitTime>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<itemConsumeId>3031</itemConsumeId>
-		<itemConsumeCount>20</itemConsumeCount>
-		<conditions>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1800</skillId> <!-- Transformation: Pirate -->
-			</condition>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1802</skillId> <!-- White Assassin Transformation -->
-			</condition>
-		</conditions>
+		<itemConsumeId>49543</itemConsumeId>
+		<itemConsumeCount>1</itemConsumeCount>
 		<effects>
 			<effect name="MaxHp">
 				<amount>5</amount>
@@ -118,12 +103,24 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="Accuracy">
 				<amount>1</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicAccuracy">
 				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PAtk">
@@ -142,22 +139,11 @@
 				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>3</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>4</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="1802" toLevel="1" name="White Assassin Transformation">
-		<!-- Duration: 20 min. Max HP +7%. Max MP +7%. P. Atk. +3%. M. Atk. +3%. P. Def. +3%. M. Def. +3%. Atk. Spd. +5%. P. Accuracy +2. M. Accuracy +2. M. Skill Critical Rate +20. Speed +5. <Story>. Rune noble Erica Ken Weber was the right hand of Sieghardt Ein. She wasn't influenced by the organization of dark assassins. She created an organization of white assassins in her own interests, continuing to be an informer. -->
+		<!-- For 20 min., Max HP/MP +7%, P./M. Accuracy +2, P./M. Atk. +3%, P./M. Def. +3%, Atk. Spd. +5%, M. Critical Rate +20, Speed +5. Consumes 2 Elemental Stones. <Story> 
+		A Rune noblewoman, Erica Ken Weber, is the right hand of Sieghardt Ein. She created the White Assassins to distract attention from the Dark Assassins and help it carry out secret missions... <Auto Use Skill> -->
 		<icon>icon.skill1802</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -166,27 +152,18 @@
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic> <!-- Magic Skill -->
-		<magicLevel>70</magicLevel>
+		<magicLevel>56</magicLevel>
 		<operateType>A2</operateType>
 		<reuseDelay>3600000</reuseDelay>
+		<hitTime>3000</hitTime>
 		<stayAfterDeath>true</stayAfterDeath>
-		<coolTime>500</coolTime>
-		<hitTime>500</hitTime>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<itemConsumeId>3031</itemConsumeId>
-		<itemConsumeCount>40</itemConsumeCount>
-		<conditions>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1800</skillId> <!-- Transformation: Pirate -->
-			</condition>
-			<condition name="OpNotAffectedBySkill">
-				<skillId>1801</skillId> <!-- Dark Assassin Transformation -->
-			</condition>
-		</conditions>
+		<itemConsumeId>49543</itemConsumeId>
+		<itemConsumeCount>2</itemConsumeCount>
 		<effects>
 			<effect name="MaxHp">
 				<amount>7</amount>
@@ -196,12 +173,24 @@
 				<amount>7</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="Accuracy">
 				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicAccuracy">
 				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PAtk">
@@ -220,22 +209,10 @@
 				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>5</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="1810" toLevel="1" name="Adventurer - Might">
-		<!-- For 20 min., P. Atk. +15% -->
+	<skill id="1810" toLevel="1" name="Cadmus - Might">
+		<!-- Increases P. Atk. by 15% for 20 minutes -->
 		<icon>icon.skill1068</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -253,8 +230,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1811" toLevel="1" name="Adventurer - Shield">
-		<!-- For 20 min., P. Def. +15% -->
+	<skill id="1811" toLevel="1" name="Cadmus - Shield">
+		<!-- For 20 min., P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -272,8 +249,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1812" toLevel="1" name="Adventurer - Wind Walk">
-		<!-- For 20 min., Speed +33 -->
+	<skill id="1812" toLevel="1" name="Cadmus - Wind Walk">
+		<!-- For 20 min., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -290,8 +267,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1813" toLevel="1" name="Adventurer - Return">
-		<!-- Teleports to the nearest village. Cannot be used in special places such as the GM Consultation Service. -->
+	<skill id="1813" toLevel="1" name="Cadmus - Return">
+		<!-- Teleports to a town. Cannot be used in a specially designated place such as the GM Consultation Service. -->
 		<icon>Icon.skill1050</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -304,8 +281,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1814" toLevel="1" name="Adventurer - Focus">
-		<!-- For 20 min., P. Critical Rate +30% -->
+	<skill id="1814" toLevel="1" name="Cadmus - Focus">
+		<!-- For 20 minutes, P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -323,8 +300,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1815" toLevel="1" name="Adventurer - Death Whisper">
-		<!-- For 20 min., P. Critical Damage +35% -->
+	<skill id="1815" toLevel="1" name="Cadmus - Death Whisper">
+		<!-- For 20 minutes, P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -342,8 +319,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1816" toLevel="1" name="Adventurer - Guidance">
-		<!-- For 20 min., P. Accuracy +4 -->
+	<skill id="1816" toLevel="1" name="Cadmus - Guidance">
+		<!-- For 20 minutes, P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -360,8 +337,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1817" toLevel="1" name="Adventurer - Heal">
-		<!-- Momentarily recovers the target's HP. Power 301. -->
+	<skill id="1817" toLevel="1" name="Cadmus - Heal">
+		<!-- Recovers the target's HP with 301 Power -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -377,8 +354,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1818" toLevel="1" name="Adventurer - Haste">
-		<!-- For 20 min., Atk. Spd. +33% -->
+	<skill id="1818" toLevel="1" name="Cadmus - Haste">
+		<!-- Increases Atk. Spd. by 33% for 20 minutes. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -396,8 +373,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1819" toLevel="1" name="Adventurer - Acumen">
-		<!-- For 20 min., Casting Spd. +30% -->
+	<skill id="1819" toLevel="1" name="Cadmus - Acumen">
+		<!-- For 20 minutes, Casting Spd. +30% -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -415,8 +392,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1820" toLevel="1" name="Adventurer - Vampiric Rage">
-		<!-- For 20 min., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
+	<skill id="1820" toLevel="1" name="Cadmus - Vampiric Rage">
+		<!-- For 20 minutes, recovers as HP 9% of the physical damage inflicted on the enemy with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -434,8 +411,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1821" toLevel="1" name="Adventurer - Empower">
-		<!-- For 20 min., M. Atk. +75% -->
+	<skill id="1821" toLevel="1" name="Cadmus - Empower">
+		<!-- Increases M. Atk. power by 75% for 20 minutes. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -453,7 +430,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1822" toLevel="1" name="Adventurer - Clarity">
+	<skill id="1822" toLevel="1" name="Cadmus - Clarity">
 		<!-- For 20 min., MP Consumption for physical skills -20%, MP Consumption for magical skills -10%, and song/ dance skill's MP consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
@@ -482,8 +459,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1823" toLevel="1" name="Adventurer - Agility">
-		<!-- For 20 min., P. Evasion +4 -->
+	<skill id="1823" toLevel="1" name="Cadmus - Agility">
+		<!-- For 20 minutes, P. Evasion +4 -->
 		<icon>icon.skill1087</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -500,8 +477,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1824" toLevel="1" name="Adventurer - Decrease Weight">
-		<!-- For 20 min., overweight limit +9000 -->
+	<skill id="1824" toLevel="1" name="Cadmus - Lightness">
+		<!-- Increases weight limit up to 9000 for 20 min. -->
 		<icon>icon.skill1257</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -518,8 +495,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1825" toLevel="1" name="Adventurer - Recharge">
-		<!-- Recovers MP up to 94 power depending on the target's level. -->
+	<skill id="1825" toLevel="1" name="Cadmus - Recharge">
+		<!-- Recovers MP up to 94 power depending on the target's Lv.. -->
 		<icon>icon.skill1013</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -536,7 +513,7 @@
 		</effects>
 
 	</skill>
-	<skill id="1826" toLevel="1" name="Adventurer - Greater Heal">
+	<skill id="1826" toLevel="1" name="Cadmus - Greater Heal">
 		<!-- Immediately restores the target's HP with 506 Power. -->
 		<icon>icon.skill1217</icon>
 		<operateType>A1</operateType>
@@ -555,105 +532,78 @@
 	</skill>
 	<skill id="1827" toLevel="1" name="Transformation Block">
 		<!-- You cannot attack while transformed. -->
-		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="1828" toLevel="2" name="Transformation Protection">
 		<!-- P. Def. Enhance at Transformation. -->
-		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="1829" toLevel="4" name="Spell Master">
-		<!-- M. Atk. +10. Casting Spd. +50 -->
+	<skill id="1829" toLevel="1" name="Spell Master">
+		<!-- Casting Spd. +10%, M. Critical Rate +10. -->
 		<icon>icon.skill1901</icon>
-		<magicLevel>
-			<value level="1">40</value>
-			<value level="2">60</value>
-			<value level="3">70</value>
-			<value level="4">80</value>
-		</magicLevel>
+		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
-				<amount>50</amount>
-				<mode>DIFF</mode>
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">30</value>
-					<value level="3">50</value>
-					<value level="4">80</value>
-				</amount>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1830" toLevel="4" name="Spell Master">
-		<!-- M. Atk. +10. Casting Spd. +50 -->
+	<skill id="1830" toLevel="1" name="Spell Master">
+		<!-- Casting Spd. +13%, M. Critical Rate +10. -->
 		<icon>icon.skill1908</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
 				<amount>13</amount>
-				<mode>DIFF</mode>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">30</value>
-					<value level="3">50</value>
-					<value level="4">80</value>
-				</amount>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1831" toLevel="4" name="Spell Master">
-		<!-- M. Atk. +10. Casting Spd. +50 -->
+	<skill id="1831" toLevel="1" name="Spell Master">
+		<!-- Casting Spd. +9%, M. Critical Rate +10. -->
 		<icon>icon.skill1911</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
-				<amount>50</amount>
-				<mode>DIFF</mode>
+				<amount>9</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">30</value>
-					<value level="3">50</value>
-					<value level="4">80</value>
-				</amount>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1832" toLevel="4" name="Spell Master">
-		<!-- M. Atk. +10. Casting Spd. +50 -->
+	<skill id="1832" toLevel="1" name="Spell Master">
+		<!-- Casting Spd. +5%, M. Critical Rate +10. -->
 		<icon>icon.skill1916</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="MagicalAttackSpeed">
-				<amount>50</amount>
-				<mode>DIFF</mode>
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MAtk">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">30</value>
-					<value level="3">50</value>
-					<value level="4">80</value>
-				</amount>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1833" toLevel="1" name="Mount Golden Lion">
-		<!-- Allows to mount Golden Lion. -->
+	<skill id="1833" toLevel="1" name="Mount - Gold Maned Lion">
+		<!-- Allows to mount a Golden Lion. -->
 		<icon>icon.skill1833</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -668,7 +618,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<magicLevel>76</magicLevel>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -683,7 +632,7 @@
 		</effects>
 	</skill>
 	<skill id="1834" toLevel="1" name="Mount Pegasus">
-		<!-- Allows to mount Pegasus. -->
+		<!-- Allows to mount a Pegasus. -->
 		<icon>icon.skill1834</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -698,7 +647,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<magicLevel>76</magicLevel>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -712,8 +660,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1835" toLevel="1" name="Mount Saber-toothed Cougar">
-		<!-- Allows to mount Saber-toothed Cougar. -->
+	<skill id="1835" toLevel="1" name="Mount Saber Tooth Cougar">
+		<!-- Allows to mount a Saber Tooth Cougar. -->
 		<icon>icon.skill1835</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -728,7 +676,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<magicLevel>76</magicLevel>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -743,7 +690,7 @@
 		</effects>
 	</skill>
 	<skill id="1836" toLevel="1" name="Mount Kukuru">
-		<!-- Allows to mount Kukuru. -->
+		<!-- Mount Kukuru -->
 		<icon>icon.skill1836</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -758,7 +705,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<magicLevel>76</magicLevel>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -773,7 +719,7 @@
 		</effects>
 	</skill>
 	<skill id="1837" toLevel="1" name="Mount Black Bear">
-		<!-- Allows to mount Black Bear. -->
+		<!-- Allows to mount a Black Bear. -->
 		<icon>icon.skill1837</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -788,7 +734,6 @@
 		<irreplacableBuff>true</irreplacableBuff>
 		<isMagic>2</isMagic>
 		<hitTime>1000</hitTime>
-		<magicLevel>76</magicLevel>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -802,8 +747,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1838" toLevel="1" name="Adventurer - Prophecy of Water">
-		<!-- PA only. For 10 min., a party member's MP Recovery Rate +10%, M. Atk. +10%, M. Def. +10%, Casting Spd. +5%, Debuff Resistance +10%, Skill MP Consumption -3%. Consumes 10 Spirit Ore. -->
+	<skill id="1838" toLevel="1" name="PC Cadmus - Prophecy of Water">
+		<!-- PC-exclusive. A party member's MP Recovery bonus +10%, M. Atk. +10%, M. Def +10%, Casting Spd. +5%, Debuff Resistance +10%, and Skill MP Consumption -3% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1355</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -813,8 +758,8 @@
 		<effectPoint>666</effectPoint>
 		<mpConsume>72</mpConsume>
 	</skill>
-	<skill id="1839" toLevel="1" name="Adventurer - Prophecy of Fire">
-		<!-- PA only. For 10 min., a party member's Max HP +10%, HP Recovery Rate +10%, P. Atk. +10%, P. Def. +10%, Speed +5%, Debuff Resistance +10%. Consumes 10 Spirit Ore. -->
+	<skill id="1839" toLevel="1" name="PC Cadmus - Prophecy of Fire">
+		<!-- PC-exclusive. A party member's Max HP +10%, HP Recovery Bonus +10%, P. Atk. +10%, P. Def +10%, Atk. Spd. +5%, and Debuff Resistance +10% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1356</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -824,8 +769,8 @@
 		<effectPoint>666</effectPoint>
 		<mpConsume>72</mpConsume>
 	</skill>
-	<skill id="1840" toLevel="1" name="Adventurer - Prophecy of Wind">
-		<!-- PA only. For 10 min., a party member's. P./ M. Accuracy +3, P./ M. Evasion +3, P. Critical Rate/ M. Skill Critical Rate +10%, P. Critical Damage/ M. Skill Critical Damage +15%, Speed +10%, Debuff Resistance +10%, damage to Raid Bosses +15%. Consumes 10 Spirit Ore. -->
+	<skill id="1840" toLevel="1" name="PC Room Chapa - Prophecy of Wind">
+		<!-- PC-exclusive. A party member's P. Accuracy/M. Accuracy +3, P. Evasion/M. Evasion +3, P. Critical/M. Critical Rate +10%, P. Critical/M. Critical Damage +15%, Movement Speed +10%, Debuff Resistance +10%, and P. Atk. against Raid Boss +15% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1357</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -835,8 +780,8 @@
 		<effectPoint>666</effectPoint>
 		<mpConsume>72</mpConsume>
 	</skill>
-	<skill id="1841" toLevel="1" name="Adventurer - Might">
-		<!-- For 20 min., P. Atk. +15%. PA only. -->
+	<skill id="1841" toLevel="1" name="PC Cadmus - Might">
+		<!-- For 20 minutes, P. Atk +15%. PC-exclusive. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -846,8 +791,8 @@
 		<effectPoint>379</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1842" toLevel="1" name="Adventurer - Shield">
-		<!-- For 20 min., P.Def +15%. PA only. -->
+	<skill id="1842" toLevel="1" name="PC Cadmus - Shield">
+		<!-- For 20 minutes, P. Def. +15%. PC-exclusive. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -857,8 +802,8 @@
 		<effectPoint>418</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1843" toLevel="1" name="Adventurer - Wind Walk">
-		<!-- For 20 min., Speed +33. PA only. -->
+	<skill id="1843" toLevel="1" name="PC Cadmus - Wind Walk">
+		<!-- For 20 minutes, Movement Speed +33. PC-exclusive. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -868,8 +813,8 @@
 		<effectPoint>285</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1844" toLevel="1" name="Adventurer - Return">
-		<!-- Teleports to the nearest village. Cannot be used in special places such as the GM Consultation Service. PA only. -->
+	<skill id="1844" toLevel="1" name="PC Cadmus - Return">
+		<!-- Teleports to a town. Cannot be used in a special locations such as the GM Consultation Service. PC-exclusive. -->
 		<icon>Icon.skill1050</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -877,8 +822,8 @@
 		<reuseDelay>75000</reuseDelay>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1845" toLevel="1" name="Adventurer - Focus">
-		<!-- For 20 min., P. Critical Rate +30%. PA only. -->
+	<skill id="1845" toLevel="1" name="PC Cadmus - Focus">
+		<!-- For 20 minutes, P. Critical Rate +30%. PC-exclusive. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -888,8 +833,8 @@
 		<effectPoint>495</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1846" toLevel="1" name="Adventurer - Death Whisper">
-		<!-- For 20 min., P. Critical Damage +35%. PA only. -->
+	<skill id="1846" toLevel="1" name="PC Cadmus - Death Whisper">
+		<!-- For 20 minutes, P. Critical Damage +35%. PC-exclusive. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -899,8 +844,8 @@
 		<effectPoint>532</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1847" toLevel="1" name="Adventurer - Guidance">
-		<!-- For 20 min., P. Accuracy +4. PA only. -->
+	<skill id="1847" toLevel="1" name="PC Cadmus - Guidance">
+		<!-- For 20 minutes, P. Accuracy +4. PC-exclusive. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -910,8 +855,8 @@
 		<effectPoint>532</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1848" toLevel="1" name="Adventurer - Heal">
-		<!-- Momentarily recovers the target's HP with 301 power. PA only. -->
+	<skill id="1848" toLevel="1" name="PC Cadmus - Heal">
+		<!-- Recovers the target's HP with 301 Power. PC-exclusive. -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -921,8 +866,8 @@
 		<effectPoint>301</effectPoint>
 		<mpConsume>52</mpConsume>
 	</skill>
-	<skill id="1849" toLevel="1" name="Adventurer - Haste">
-		<!-- For 20 min., Atk. Spd +33%. PA only. -->
+	<skill id="1849" toLevel="1" name="PC Cadmus - Haste">
+		<!-- For 20 minutes, Atk. Spd. +33%. PC-exclusive -->
 		<icon>icon.skill1086</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -932,8 +877,8 @@
 		<effectPoint>495</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1850" toLevel="1" name="Adventurer - Acumen">
-		<!-- For 20 min., Casting Spd +30%. PA only. -->
+	<skill id="1850" toLevel="1" name="PC Cadmus - Acumen">
+		<!-- For 20 minutes, Casting Spd. +30%. PC-exclusive. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -943,8 +888,8 @@
 		<effectPoint>457</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1851" toLevel="1" name="Adventurer - Vampiric Rage">
-		<!-- For 20 min., with a certain chance, absorbs 5% of the inflicted damage as HP. PA only. -->
+	<skill id="1851" toLevel="1" name="PC Cadmus - Vampiric Rage">
+		<!-- For 20 minutes, has a chance to absorb 9% of physical damage dealt to enemies as HP. PC-exclusive. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -954,8 +899,8 @@
 		<effectPoint>646</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1852" toLevel="1" name="Adventurer - Empower">
-		<!-- For 20 min., M. Atk. +75%. PA only. -->
+	<skill id="1852" toLevel="1" name="PC Cadmus - Empower">
+		<!-- For 20 minutes, M. Atk +75%. PC-exclusive. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -965,8 +910,8 @@
 		<effectPoint>495</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1853" toLevel="1" name="Adventurer - Clarity">
-		<!-- For 60 min., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Song/ Dance MP Consumption -20%. PA only. -->
+	<skill id="1853" toLevel="1" name="PC Cadmus - Clarity">
+		<!-- For 20 minutes, P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, and song/dance skill MP Consumption -20%. PC-exclusive. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -976,8 +921,8 @@
 		<effectPoint>655</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1854" toLevel="1" name="Adventurer - Agility">
-		<!-- For 20 min., P. Evasion +4. PA only. -->
+	<skill id="1854" toLevel="1" name="PC Cadmus - Agility">
+		<!-- For 20 minutes, P. Evasion +4. PC-exclusive. -->
 		<icon>icon.skill1087</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -987,8 +932,8 @@
 		<effectPoint>495</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1855" toLevel="1" name="Adventurer - Decrease Weight">
-		<!-- For 20 min., overweight limit +9000. PA only. -->
+	<skill id="1855" toLevel="1" name="PC Cadmus - Lightness">
+		<!-- For 20 minutes, Weight Penalty Segment +9000. PC-exclusive. -->
 		<icon>icon.skill1257</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -998,8 +943,8 @@
 		<effectPoint>495</effectPoint>
 		<mpConsume>12</mpConsume>
 	</skill>
-	<skill id="1856" toLevel="1" name="Adventurer - Recharge">
-		<!-- Recovers up to 94 MP depending on the target's level. PA only. -->
+	<skill id="1856" toLevel="1" name="PC Cadmus - Recharge">
+		<!-- Recovers MP with up to 94 Power depending on the target's level. PC-exclusive. -->
 		<icon>icon.skill1013</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1009,8 +954,8 @@
 		<effectPoint>655</effectPoint>
 		<mpConsume>98</mpConsume>
 	</skill>
-	<skill id="1857" toLevel="1" name="Adventurer - Greater Heal">
-		<!-- Momentarily recovers the target's HP with 506 power. PA only. -->
+	<skill id="1857" toLevel="1" name="PC Cadmus - Greater Heal">
+		<!-- Recovers the target's HP with 506 Power. PC-exclusive. -->
 		<icon>icon.skill1217</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1020,8 +965,8 @@
 		<effectPoint>365</effectPoint>
 		<mpConsume>83</mpConsume>
 	</skill>
-	<skill id="1858" toLevel="1" name="Adventurer - Blessed Body">
-		<!-- For 20 min., Max HP +25%. PA only. -->
+	<skill id="1858" toLevel="1" name="PC Cadmus - Blessed Body">
+		<!-- For 20 minutes, Max HP +25%. PC-exclusive. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1031,8 +976,8 @@
 		<effectPoint>646</effectPoint>
 		<mpConsume>52</mpConsume>
 	</skill>
-	<skill id="1859" toLevel="1" name="Adventurer - Blessed Soul">
-		<!-- For 20 min., Max MP +25%. PA only. -->
+	<skill id="1859" toLevel="1" name="PC Cadmus - Blessed Soul">
+		<!-- For 20 minutes, Max MP +25%. PC-exclusive. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1042,8 +987,8 @@
 		<effectPoint>635</effectPoint>
 		<mpConsume>52</mpConsume>
 	</skill>
-	<skill id="1860" toLevel="1" name="Adventurer - Shock Resistance">
-		<!-- For 20 min., Stun Resistance +15%. PA only. -->
+	<skill id="1860" toLevel="1" name="PC Cadmus - Stun Resistance">
+		<!-- For 20 minutes, Stun Resistance +15%. PC-exclusive. -->
 		<icon>icon.skill1259</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1053,8 +998,8 @@
 		<effectPoint>646</effectPoint>
 		<mpConsume>35</mpConsume>
 	</skill>
-	<skill id="1861" toLevel="1" name="Adventurer - Advanced Block">
-		<!-- For 20 min., Shield Defense +20%. PA only. -->
+	<skill id="1861" toLevel="1" name="PC Cadmus - Advanced Block">
+		<!-- For 20 minutes, Shield Def. +20%. PC-exclusive. -->
 		<icon>icon.skill1304</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1064,8 +1009,8 @@
 		<effectPoint>714</effectPoint>
 		<mpConsume>49</mpConsume>
 	</skill>
-	<skill id="1862" toLevel="1" name="Adventurer - Wild Magic">
-		<!-- PA only. Shield M. Skill Critical Rate +10 for 20 min. -->
+	<skill id="1862" toLevel="1" name="PC Cadmus - Wild Magic">
+		<!-- For 20 minutes, M. Critical Rate +10. PC-exclusive. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1075,8 +1020,8 @@
 		<effectPoint>635</effectPoint>
 		<mpConsume>58</mpConsume>
 	</skill>
-	<skill id="1863" toLevel="1" name="Adventurer - Stigma of Shillien">
-		<!-- For 30 sec., Melee Weapon Resistance -24, M. Def. -12. PA only. -->
+	<skill id="1863" toLevel="1" name="PC Cadmus - Stigma of Shilen">
+		<!-- For 30 seconds, Melee Weapon Resistance -24. M. Def. -12. PC-exclusive. -->
 		<icon>icon.skill1539</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -1086,8 +1031,8 @@
 		<effectPoint>-635</effectPoint>
 		<mpConsume>24</mpConsume>
 	</skill>
-	<skill id="1864" toLevel="1" name="Adventurer - Berserker Spirit">
-		<!-- For 20 min., a party member's P. Def. -8%, M. Def. -16%, P. Evasion -4, P. Atk. +8%, M. Atk. +16%, Atk. Spd. +8%, Casting Spd. +8%, Speed +8. For PA. -->
+	<skill id="1864" toLevel="1" name="PC Cadmus - Berserker Spirit">
+		<!-- For 20 minutes, a party member's P. Def. -8%, M. Def. -16%, P. Evasion -4, P. Atk. +8%, M. Atk. +16, Atk. Spd. +8%, Casting Spd. +8%, and Movement Speed +8. PC-exclusive -->
 		<icon>icon.skill1062</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1099,140 +1044,22 @@
 	</skill>
 	<skill id="1865" toLevel="1" name="Transformation Attack">
 		<!-- Increases P. Atk. during Transformation. -->
-		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="1867" toLevel="7" name="Clan's Exuberance">
-		<!-- HP/ MP/ CP Recovery Rate +4%. Acquired XP/ SP +5%. Sayha's Grace Consumption -5% -->
+	<skill id="1867" toLevel="5" name="Clan Abundant">
+		<!-- Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP gain +$s2, Received PVE Damage -$s3, and Sayha's Grace Consumption -$s4
+			1 - 4%, 5%, 3%, 5%
+			2 - 8%, 5%, 5%, 8%
+			3 - 12%, 10%, 7%, 11%
+
+			Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP/Attribute XP gain +$s2, Received PVE Damage -$s3, and Sayha's Grace Consumption -$s4.
+			4 - 20%, 15%, 10%, 15%
+
+			Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP/Attribute XP gain +$s2, Stun/MEN/Paralysis Attack Success Rate +$s3, Received PVE Damage -$s4, and Sayha's Grace Consumption -$s5.
+			5 - 30%, 20%, 5%, 10%, 15%
+		-->
 		<icon>icon.skill19014</icon>
 		<operateType>P</operateType>
-		<effects>
-			<effect name="HpRegen">
-				<amount>
-					<value level="1">4</value>
-					<value level="2">8</value>
-					<value level="3">12</value>
-					<value level="4">20</value>
-					<value level="5">30</value>
-					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MpRegen">
-				<amount>
-					<value level="1">4</value>
-					<value level="2">8</value>
-					<value level="3">12</value>
-					<value level="4">20</value>
-					<value level="5">30</value>
-					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CpRegen">
-				<amount>
-					<value level="1">4</value>
-					<value level="2">8</value>
-					<value level="3">12</value>
-					<value level="4">20</value>
-					<value level="5">30</value>
-					<value level="6">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">30</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="GiveExpAndSp">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">5</value>
-					<value level="3">10</value>
-					<value level="4">15</value>
-					<value level="5">20</value>
-					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">7</value>
-					<value level="4">10</value>
-					<value level="5">10</value>
-					<value level="6">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvePhysicalAttackDefenceBonus">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">7</value>
-					<value level="4">10</value>
-					<value level="5">10</value>
-					<value level="6">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="VitalityPointsRate">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">8</value>
-					<value level="3">11</value>
-					<value level="4">15</value>
-					<value level="5">15</value>
-					<value level="6">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="SpiritExpModify">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">10</value>
-					<value level="4">15</value>
-					<value level="5">20</value>
-					<value level="6">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">20</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="AttackTrait">
-				<FEAR>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">5</value>
-					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</FEAR>
-				<PARALYZE>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">5</value>
-					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</PARALYZE>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">5</value>
-					<value level="6">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-				</SHOCK>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="1893" toLevel="1" name="Cat's Potential">
 		<!-- Unravels Cat's true potential. Damage to raid bosses +5%, Damage received from raid bosses -10%. -->
@@ -1275,27 +1102,27 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="PveRaidPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalAttackDefenceBonus">
-				<amount>10</amount>
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalSkillDefenceBonus">
-				<amount>10</amount>
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>10</amount>
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1308,54 +1135,42 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<effects>
 			<effect name="PveRaidPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidPhysicalAttackDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidPhysicalSkillDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>10</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1896" toLevel="4" name="Full Knockdown">
-		<!-- <Knockback skill>. Attacks the target with 4937 power, knocking them down for 3 sec. Ignores Shield Defense. Critical. -->
+	<skill id="1896" toLevel="4" name="Fall Down">
+		<!-- Inflicts a powerful strike on target with $s1 Power added to P. Atk., knocking down for $s2 Requires a sword, blunt weapon, spear, fist weapon, or dual sword. Critical. Ignores Shield Defense. -->
 		<icon>icon.skill1896</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">4</value>
 		</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
 		<activateRate>60</activateRate>
 		<castRange>40</castRange>
+		<lvlBonusRate>20</lvlBonusRate>
 		<coolTime>500</coolTime>
 		<basicProperty>PHYSICAL</basicProperty>
 		<effectPoint>
-			<value level="1">-357</value>
-			<value level="2">-359</value>
-			<value level="3">-361</value>
-			<value level="4">-363</value>
+			<value level="1">-713</value>
+			<value level="2">-717</value>
+			<value level="3">-721</value>
+			<value level="4">-725</value>
 		</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>1600</hitTime>
+		<hitTime>1690</hitTime>
 		<magicLevel>
 			<value level="1">81</value>
 			<value level="2">82</value>
@@ -1368,6 +1183,7 @@
 			<value level="3">109</value>
 			<value level="4">110</value>
 		</mpConsume>
+		<nextAction>ATTACK</nextAction>
 		<operateType>A2</operateType>
 		<isDebuff>true</isDebuff>
 		<reuseDelay>15000</reuseDelay>
@@ -1397,24 +1213,16 @@
 				<criticalChance>15</criticalChance>
 			</effect>
 			<effect name="KnockBack">
-				<distance>100</distance>
-				<speed>300</speed>
+				<distance>200</distance>
+				<speed>400</speed>
 				<knockDown>true</knockDown>
-			</effect>
-			<effect name="CallSkill">
-				<skillId>45482</skillId> <!-- Full Knockdown -->
-				<skillLevel>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">4</value>
-				</skillLevel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1897" toLevel="15" name="Mass Stigma of Shillien">
-		<!-- Debuffs nearby enemies with the Shillien's curse. The effect lasts for 30 sec. Weapon Resistance -20%. M. Def. -10% -->
+	<skill id="1897" toLevel="11" name="Curse Field of Shilen">
+		<!-- For $s1, Melee Weapon Resistance of the target and nearby enemies -$s2. -->
 		<icon>icon.skill1897</icon>
+		<affectLimit>9-10</affectLimit>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1427,296 +1235,240 @@
 			<value level="9">9</value>
 			<value level="10">10</value>
 			<value level="11">11</value>
-			<value level="12">12</value>
-			<value level="13">13</value>
-			<value level="14">14</value>
-			<value level="15">15</value>
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>STIGMA_OF_SILEN</abnormalType>
 		<abnormalVisualEffect>STIGMA_OF_SILEN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
 		<basicProperty>MAGIC</basicProperty>
-		<castRange>600</castRange>
-		<affectLimit>5-12</affectLimit>
-		<affectRange>200</affectRange>
+		<castRange>900</castRange>
 		<effectPoint>
-			<value level="1">-2000</value>
-			<value level="2">-2500</value>
-			<value level="3">-3000</value>
-			<value level="4">-3500</value>
-			<value level="5">-3750</value>
-			<value level="6">-3800</value>
-			<value level="7">-3850</value>
-			<value level="8">-3900</value>
-			<value level="9">-3950</value>
-			<value level="10">-4000</value>
-			<value level="11">-4050</value>
-			<value level="12">-4100</value>
-			<value level="13">-4150</value>
-			<value level="14">-4200</value>
-			<value level="15">-4250</value>
+			<value level="1">-379</value>
+			<value level="2">-495</value>
+			<value level="3">-582</value>
+			<value level="4">-635</value>
+			<value level="5">-639</value>
+			<value level="6">-643</value>
+			<value level="7">-646</value>
+			<value level="8">-649</value>
+			<value level="9">-652</value>
+			<value level="10">-654</value>
+			<value level="11">-656</value>
 		</effectPoint>
-		<effectRange>200</effectRange>
+		<effectRange>1400</effectRange>
+		<affectRange>200</affectRange>
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>20</lvlBonusRate>
 		<magicLevel>
 			<value level="1">40</value>
-			<value level="2">50</value>
-			<value level="3">60</value>
+			<value level="2">52</value>
+			<value level="3">62</value>
 			<value level="4">70</value>
-			<value level="5">75</value>
-			<value level="6">76</value>
-			<value level="7">77</value>
-			<value level="8">78</value>
-			<value level="9">79</value>
-			<value level="10">80</value>
-			<value level="11">81</value>
-			<value level="12">82</value>
-			<value level="13">83</value>
-			<value level="14">84</value>
-			<value level="15">85</value>
+			<value level="5">78</value>
+			<value level="6">79</value>
+			<value level="7">80</value>
+			<value level="8">81</value>
+			<value level="9">82</value>
+			<value level="10">83</value>
+			<value level="11">84</value>
 		</magicLevel>
+		<mpInitialConsume>
+			<value level="1">12</value>
+			<value level="2">15</value>
+			<value level="3">18</value>
+			<value level="4">21</value>
+			<value level="5">24</value>
+			<value level="6">24</value>
+			<value level="7">27</value>
+			<value level="8">27</value>
+			<value level="9">30</value>
+			<value level="10">30</value>
+			<value level="11">33</value>
+		</mpInitialConsume>
 		<mpConsume>
-			<value level="1">45</value>
-			<value level="2">60</value>
-			<value level="3">75</value>
-			<value level="4">90</value>
-			<value level="5">105</value>
-			<value level="6">111</value>
-			<value level="7">117</value>
-			<value level="8">123</value>
-			<value level="9">129</value>
-			<value level="10">135</value>
-			<value level="11">141</value>
-			<value level="12">147</value>
-			<value level="13">153</value>
-			<value level="14">159</value>
-			<value level="15">165</value>
+			<value level="1">42</value>
+			<value level="2">57</value>
+			<value level="3">69</value>
+			<value level="4">78</value>
+			<value level="5">102</value>
+			<value level="6">105</value>
+			<value level="7">105</value>
+			<value level="8">108</value>
+			<value level="9">108</value>
+			<value level="10">111</value>
+			<value level="11">111</value>
 		</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>3000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
+		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<effects>
 			<effect name="MagicalDefence">
 				<amount>
 					<value level="1">-10</value>
-					<value level="2">-15</value>
-					<value level="3">-15</value>
-					<value level="4">-20</value>
-					<value level="5">-20</value>
-					<value level="6">-25</value>
-					<value level="7">-25</value>
-					<value level="8">-25</value>
-					<value level="9">-25</value>
-					<value level="10">-25</value>
-					<value level="11">-30</value>
-					<value level="12">-30</value>
-					<value level="13">-30</value>
-					<value level="14">-30</value>
-					<value level="15">-30</value>
+					<value level="2">-12</value>
+					<value level="3">-14</value>
+					<value level="4">-16</value>
+					<value level="5">-17</value>
+					<value level="6">-18</value>
+					<value level="7">-19</value>
+					<value level="8">-20</value>
+					<value level="9">-21</value>
+					<value level="10">-22</value>
+					<value level="11">-23</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait">
 				<SWORD>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</SWORD>
 				<DAGGER>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</DAGGER>
 				<DUALFIST>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</DUALFIST>
 				<ANCIENTSWORD>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</ANCIENTSWORD>
 				<DUALDAGGER>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</DUALDAGGER>
 				<BLUNT>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</BLUNT>
 				<POLE>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</POLE>
 				<DUAL>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</DUAL>
 				<RAPIER>
-					<value level="1">-20</value>
-					<value level="2">-25</value>
-					<value level="3">-30</value>
-					<value level="4">-35</value>
-					<value level="5">-40</value>
-					<value level="6">-42</value>
-					<value level="7">-44</value>
-					<value level="8">-46</value>
+					<value level="1">-16</value>
+					<value level="2">-24</value>
+					<value level="3">-32</value>
+					<value level="4">-40</value>
+					<value level="5">-48</value>
+					<value level="6">-48</value>
+					<value level="7">-48</value>
+					<value level="8">-48</value>
 					<value level="9">-48</value>
-					<value level="10">-50</value>
-					<value level="11">-52</value>
-					<value level="12">-54</value>
-					<value level="13">-56</value>
-					<value level="14">-58</value>
-					<value level="15">-60</value>
+					<value level="10">-48</value>
+					<value level="11">-48</value>
 				</RAPIER>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">-10</value>
-					<value level="2">-15</value>
-					<value level="3">-15</value>
-					<value level="4">-20</value>
-					<value level="5">-20</value>
-					<value level="6">-25</value>
-					<value level="7">-25</value>
-					<value level="8">-25</value>
-					<value level="9">-25</value>
-					<value level="10">-25</value>
-					<value level="11">-30</value>
-					<value level="12">-30</value>
-					<value level="13">-30</value>
-					<value level="14">-30</value>
-					<value level="15">-30</value>
-				</amount>
-				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="1898" toLevel="9" name="Shield Charge">
-		<!-- <Shock skill>. Attacks the enemy with the shield. Power 2191. Stuns the enemies affected by the skill for 3 sec. -->
+		<!-- Attacks enemies in front of character with $s1 Power added to P. Atk., stunning target for $s2 Requires a shield. Over-hit. -->
 		<icon>icon.skill1898</icon>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<effectPoint>
-			<value level="1">-5800</value>
-			<value level="2">-5875</value>
-			<value level="3">-5950</value>
-			<value level="4">-6025</value>
-			<value level="5">-6100</value>
-			<value level="6">-6175</value>
-			<value level="7">-6250</value>
-			<value level="8">-6325</value>
-			<value level="9">-6400</value>
+			<value level="1">-213</value>
+			<value level="2">-219</value>
+			<value level="3">-225</value>
+			<value level="4">-231</value>
+			<value level="5">-237</value>
+			<value level="6">-242</value>
+			<value level="7">-248</value>
+			<value level="8">-254</value>
+			<value level="9">-260</value>
 		</effectPoint>
 		<effectRange>800</effectRange>
 		<fanRange>0;0;600;60</fanRange>
 		<hitTime>800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
 		<magicLevel>
 			<value level="1">76</value>
 			<value level="2">77</value>
@@ -1729,21 +1481,22 @@
 			<value level="9">84</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">90</value>
-			<value level="2">90</value>
-			<value level="3">91</value>
-			<value level="4">93</value>
-			<value level="5">94</value>
-			<value level="6">94</value>
-			<value level="7">96</value>
-			<value level="8">97</value>
-			<value level="9">99</value>
+			<value level="1">110</value>
+			<value level="2">121</value>
+			<value level="3">123</value>
+			<value level="4">125</value>
+			<value level="5">129</value>
+			<value level="6">131</value>
+			<value level="7">133</value>
+			<value level="8">135</value>
+			<value level="9">137</value>
 		</mpConsume>
 		<nextAction>ATTACK</nextAction>
-		<operateType>DA1</operateType>
+		<operateType>DA2</operateType>
 		<coolTime>200</coolTime>
-		<reuseDelay>60000</reuseDelay>
+		<reuseDelay>30000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
+		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>FAN_PB</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1751,6 +1504,9 @@
 			<condition name="EquipShield" />
 		</conditions>
 		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
 			<effect name="PhysicalAttack">
 				<power>
 					<value level="1">2191</value>
@@ -1764,20 +1520,6 @@
 					<value level="9">2608</value>
 				</power>
 				<overHit>true</overHit>
-			</effect>
-			<effect name="CallSkill">
-				<skillId>45488</skillId> <!-- Shield Charge -->
-				<skillLevel>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">4</value>
-					<value level="5">5</value>
-					<value level="6">6</value>
-					<value level="7">7</value>
-					<value level="8">8</value>
-					<value level="9">9</value>
-				</skillLevel>
 			</effect>
 		</effects>
 	</skill>

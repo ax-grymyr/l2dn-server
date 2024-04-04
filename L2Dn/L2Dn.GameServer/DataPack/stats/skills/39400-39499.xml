@@ -10,8 +10,8 @@
 		<reuseDelay>600000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="39466" toLevel="1" name="Anniversary Talisman">
-		<!-- Acquired XP/ SP +15% -->
+	<skill id="39466" toLevel="1" name="15th Anniversary Talisman">
+		<!-- Acquired XP/ SP +15%. -->
 		<icon>icon.ev_L2_soul_ore</icon>
 		<operateType>P</operateType>
 	</skill>

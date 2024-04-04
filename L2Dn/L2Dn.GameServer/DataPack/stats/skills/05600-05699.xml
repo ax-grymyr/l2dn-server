@@ -1,43 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5600" toLevel="1" name="Rush Impact">
-		<!-- Stuns making unable to move. -->
-		<icon>icon.skill0793</icon>
+		<operateType>A2</operateType>
+		<magicLevel>85</magicLevel>
+		<isMagic>0</isMagic> <!-- Physical Skill -->
 		<castRange>700</castRange>
-		<abnormalLevel>2</abnormalLevel>
+		<effectRange>1200</effectRange>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>150</affectRange>
+		<activateRate>80</activateRate>
+		<lvlBonusRate>30</lvlBonusRate>
+		<reuseDelay>20000</reuseDelay>
+		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<effectPoint>
-			<value level="1">-600</value>
-			<value level="2">-700</value>
-			<value level="3">-800</value>
-			<value level="4">-850</value>
-			<value level="5">-900</value>
-			<value level="6">-910</value>
-		</effectPoint>
-		<activateRate>80</activateRate>
-		<affectLimit>5-12</affectLimit>
-		<affectRange>600</affectRange>
-		<effectRange>800</effectRange>
-		<fanRange>0;0;600;60</fanRange>
-		<isDebuff>true</isDebuff>
-		<reuseDelay>20000</reuseDelay>
-		<trait>ANOMALY</trait>
-		<basicProperty>PHYSICAL</basicProperty>
-		<operateType>DA2</operateType>
+		<effectPoint>-800</effectPoint>
+		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicCriticalRate>5</magicCriticalRate>
+		<isDebuff>true</isDebuff>
+		<basicProperty>PHYSICAL</basicProperty>
+		<trait>SHOCK</trait>
 		<targetType>ENEMY</targetType>
-		<affectScope>FAN</affectScope>
+		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>35016</allowedSkills>
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5601" toLevel="12" name="Melee Attack Resistance">
-		<!-- Resistant to physical melee attacks. -->
+		<!-- Resistant to melee attacks. -->
 		<icon>icon.skill5601</icon>
 		<magicLevel>
 			<value level="1">10</value>
@@ -201,7 +195,7 @@
 		</effects>
 	</skill>
 	<skill id="5603" toLevel="1" name="Dagger Mastery">
-		<!-- Skill MP consumption is greatly decreased, and Vital Point Attack Rate is increased. -->
+		<!-- A state in which MP consumption of skills is greatly decreased, and the vital points attacks success rate is increased. -->
 		<icon>icon.skill0209</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -228,8 +222,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5604" toLevel="1" name="Blessing of Stun">
-		<!-- P. Skill MP Consumption -60%. Shock Atk. Rate +30% -->
+	<skill id="5604" toLevel="1" name="Sword/Blunt Weapon Mastery">
+		<!-- A state in which MP consumption of skills is greatly decreased, and the success rate of stun attack is increased. -->
 		<icon>icon.skill0217</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -256,8 +250,7 @@
 		</effects>
 	</skill>
 	<skill id="5605" toLevel="2" name="Power of Apella">
-		<!-- The power of Apella, increases M. Def., but decreases received P. Critical Rate. -->
-		<icon>icon.skill0000</icon>
+		<!-- Power of Apella increases M. Def., but decreases P. Critical Rate. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>APELLA</abnormalType>
@@ -299,8 +292,7 @@
 		</effects>
 	</skill>
 	<skill id="5607" toLevel="2" name="Power of Apella">
-		<!-- The power of Apella, increases P. Evasion, decreases received P. Critical Damage. -->
-		<icon>icon.skill0000</icon>
+		<!-- Power of Apella increases P. Evasion, but decreases P. Critical Rate. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>APELLA</abnormalType>
@@ -342,8 +334,7 @@
 		</effects>
 	</skill>
 	<skill id="5608" toLevel="2" name="Power of Apella">
-		<!-- The power of Apella, increased P. Def. and M. Atk., decreased Speed. -->
-		<icon>icon.skill0000</icon>
+		<!-- Power of Apella. Increased P. Def., increased M. Atk., and decreased Speed. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>APELLA</abnormalType>
@@ -382,7 +373,6 @@
 		</effects>
 	</skill>
 	<skill id="5609" toLevel="1" name="Sound 1">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -392,7 +382,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5610" toLevel="1" name="Sound 2">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -402,7 +391,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5611" toLevel="1" name="Sound 3">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -412,7 +400,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5612" toLevel="1" name="Sound 4">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -422,7 +409,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5613" toLevel="4" name="Vampiric Rage">
-		<!-- Temporarily increases the amount of HP restored while absorbing part of the inflicted damage as HP. -->
+		<!-- Temporarily increases the ability to restore some HP from the damage inflicted on the enemy temporarily with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -471,7 +458,6 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5619" toLevel="1" name="Presentation - Super Giant Mutated Animal Union">
-		<icon>icon.skill0000</icon>
 		<hitTime>5800</hitTime>
 		<magicLevel>76</magicLevel>
 		<operateType>A1</operateType>
@@ -616,7 +602,6 @@
 		</effects>
 	</skill>
 	<skill id="5621" toLevel="12" name="Aerial Recharge">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
@@ -658,8 +643,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5622" toLevel="7" name="Double Attack">
-		<icon>icon.skill0000</icon>
+	<skill id="5622" toLevel="7" name="Double Skill Attack">
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -683,7 +667,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5624" toLevel="1" name="Soul's Confinement">
+	<skill id="5624" toLevel="1" name="Soul Confinement">
 		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -703,7 +687,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5625" toLevel="1" name="Soul's Confinement">
+	<skill id="5625" toLevel="1" name="Soul Confinement">
 		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. -->
 		<icon>icon.skill1201</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -731,7 +715,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5627" toLevel="1" name="Adventurer's Wind Walk">
-		<!-- For 60 min., Speed +33. -->
+		<!-- Speed increases temporarily. Effect 2. -->
 		<icon>icon.skill1204</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -754,7 +738,7 @@
 		</effects>
 	</skill>
 	<skill id="5628" toLevel="1" name="Adventurer's Shield">
-		<!-- For 60 min., P. Def. +15%. -->
+		<!-- For 60 min., P. Def. +15% -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -800,7 +784,7 @@
 		</effects>
 	</skill>
 	<skill id="5630" toLevel="1" name="Adventurer's Vampiric Rage">
-		<!-- For 60 min., absorbs 9% of the inflicted damage as HP with a certain chance. -->
+		<!-- For 60 min., recovers as HP 9% of the physical damage inflicted on the enemy with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -823,7 +807,7 @@
 		</effects>
 	</skill>
 	<skill id="5631" toLevel="1" name="Adventurer's Regeneration">
-		<!-- For 60 min., HP Recovery Rate +20%. -->
+		<!-- For 60 min., HP Recovery Bonus +20%. -->
 		<icon>icon.skill1044</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -846,7 +830,7 @@
 		</effects>
 	</skill>
 	<skill id="5632" toLevel="1" name="Adventurer's Haste">
-		<!-- For 60 min., Atk. Spd. +33%. -->
+		<!-- Atk. Spd. +33% for 60 min. -->
 		<icon>icon.skill1086</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -869,7 +853,7 @@
 		</effects>
 	</skill>
 	<skill id="5633" toLevel="1" name="Adventurer's Blessed Soul">
-		<!-- For 60 min., Max MP +35%. -->
+		<!-- For 60 min., Max HP +35%. -->
 		<icon>icon.skill1048</icon>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -892,7 +876,7 @@
 		</effects>
 	</skill>
 	<skill id="5634" toLevel="1" name="Adventurer's Acumen">
-		<!-- For 60 min., Casting Spd. +30%. -->
+		<!-- For 60 min., Casting Spd. +30% -->
 		<icon>icon.skill1085</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -915,7 +899,7 @@
 		</effects>
 	</skill>
 	<skill id="5635" toLevel="1" name="Adventurer's Concentration">
-		<!-- Buff Cancel Rate -18 for 60 min. -->
+		<!-- For 60 min., magic cancel rate -18. -->
 		<icon>icon.skill1078</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -938,7 +922,7 @@
 		</effects>
 	</skill>
 	<skill id="5636" toLevel="1" name="Adventurer's Empower">
-		<!-- For 60 min., M. Atk. +100. -->
+		<!-- For 60 min., M. Atk. +55%. -->
 		<icon>icon.skill1059</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -961,7 +945,7 @@
 		</effects>
 	</skill>
 	<skill id="5637" toLevel="1" name="Adventurer's Magic Barrier">
-		<!-- For 60 min., M. Def. +30%. -->
+		<!-- M. Def. +30% for 60 min. -->
 		<icon>icon.skill1036</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1143,6 +1127,7 @@
 		</effects>
 	</skill>
 	<skill id="5641" toLevel="1" name="not_used">
+		<icon>icon.skill1086</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -1162,6 +1147,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5642" toLevel="4" name="not_used">
+		<icon>icon.skill1243</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
 			<value level="2">4</value>
@@ -1228,6 +1214,7 @@
 		</effects>
 	</skill>
 	<skill id="5644" toLevel="1" name="not_used">
+		<icon>icon.skill1204</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
@@ -1247,6 +1234,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5645" toLevel="3" name="not_used">
+		<icon>icon.skill1035</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
 			<value level="2">3</value>
@@ -1300,22 +1288,29 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5646" toLevel="2" name="Seraphim the Unicorn - Wild Magic">
-		<!-- Temporarily increases M. Skill Critical Rate. -->
-		<icon>icon.skill1303</icon>
+	<skill id="5646" toLevel="3" name="Seraphim the Unicorn - Wild Magic">
+		<!-- Increases M. Critical Rate for a certain amount of time. -->
+		<icon>
+			<value level="1">icon.skill1303</value>
+			<value level="2">icon.skill1303</value>
+			<value level="3">icon.skill1240</value>
+		</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
+			<value level="3">3</value>
 		</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>
 			<value level="1">MAGIC_CRITICAL_UP</value>
 			<value level="2">MAGIC_CRITICAL_UP</value>
+			<value level="3">HIT_UP</value>
 		</abnormalType>
 		<castRange>400</castRange>
 		<effectPoint>
 			<value level="1">582</value>
 			<value level="2">635</value>
+			<value level="3">532</value>
 		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>4000</hitTime>
@@ -1323,14 +1318,17 @@
 		<magicLevel>
 			<value level="1">64</value>
 			<value level="2">72</value>
+			<value level="3">56</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">46</value>
 			<value level="2">52</value>
+			<value level="3">42</value>
 		</mpConsume>
 		<mpInitialConsume>
 			<value level="1">12</value>
 			<value level="2">13</value>
+			<value level="3">10</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
@@ -1343,13 +1341,14 @@
 				<amount>
 					<value level="1">2</value>
 					<value level="2">3</value>
+					<value level="3">4</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5647" toLevel="3" name="Seraphim the Unicorn - Clarity">
-		<!-- Temporarily decreases the target's Skill MP Consumption. Consumes 1 Spirit Ore. -->
+		<!-- Decreases the MP consumption of skills of the target for a certain amount of time. Consumes $s1 Spirit Ore. -->
 		<icon>icon.skill1397</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1470,6 +1469,7 @@
 		</effects>
 	</skill>
 	<skill id="5649" toLevel="2" name="not_used">
+		<icon>icon.skill1087</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
 			<value level="2">3</value>
@@ -1500,6 +1500,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5650" toLevel="3" name="not_used">
+		<icon>icon.skill1078</icon>
 		<abnormalLevel>
 			<value level="1">4</value>
 			<value level="2">5</value>
@@ -1534,6 +1535,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5651" toLevel="1" name="not_used">
+		<icon>icon.skill1068</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -1698,8 +1700,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5657" toLevel="85" name="Gatekeeper's Prominence">
-		<!-- Detonates a fireball by compressing the air around the caster. Power 75. -->
+	<skill id="5657" toLevel="85" name="Gatekeeper Prominence">
+		<!-- Condenses air to burst flames. Power $s1. -->
 		<icon>icon.skill1230</icon>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -2157,7 +2159,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5658" toLevel="85" name="Gatekeeper Flame Strike">
-		<!-- Sets the closest area on fire and hurls a fireball. Power 38. -->
+		<!-- Hurls a fireball with a wide range that causes a burning trail. Power $s1. -->
 		<icon>icon.skill1181</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -2618,7 +2620,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5659" toLevel="2" name="Gatekeeper Berserker Spirit">
-		<!-- Temporarily Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
+		<!-- Temporarily decreases P./ M. Def. and P. Evasion, and increases P./ M. Atk., Atk. Spd., Casting Spd. and Speed. -->
 		<icon>icon.skill1062</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2823,7 +2825,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5663" toLevel="5" name="Ancient Sword Resistance">
-		<!-- Resistant to ancient sword attacks. -->
+		<!-- Resistance to ancient sword. -->
 		<icon>icon.skill5663</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -2841,7 +2843,7 @@
 		</effects>
 	</skill>
 	<skill id="5664" toLevel="5" name="Ancient Sword Vulnerability">
-		<!-- Vulnerable to ancient sword attacks. -->
+		<!-- Vulnerable to ancient sword. -->
 		<icon>icon.skill5664</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -2937,7 +2939,7 @@
 		</effects>
 	</skill>
 	<skill id="5668" toLevel="1" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -2957,7 +2959,7 @@
 		<hitCancelTime>0</hitCancelTime>
 		<effectRange>200</effectRange>
 		<castRange>40</castRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3072,6 +3074,7 @@
 		</effects>
 	</skill>
 	<skill id="5673" toLevel="1" name="Evasion Counter">
+		<icon>icon.skill0818</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -3098,6 +3101,7 @@
 	</skill>
 	<skill id="5674" toLevel="1" name="Evasion Chance">
 		<!-- For 2 min., vital points attacks success rate +10%. -->
+		<icon>icon.skill0819</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>EVASION_BUFF</abnormalType>
@@ -3121,6 +3125,7 @@
 	</skill>
 	<skill id="5675" toLevel="1" name="Evasion Haste">
 		<!-- Atk. Spd. +15% for 10 sec. -->
+		<icon>icon.skill0820</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>EVASION_BUFF</abnormalType>
@@ -3230,7 +3235,6 @@
 		</effects>
 	</skill>
 	<skill id="5680" toLevel="1" name="Oblivion Trap">
-		<icon>icon.skill0000</icon>
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<isTriggeredSkill>true</isTriggeredSkill>
@@ -3473,7 +3477,7 @@
 		</effects>
 	</skill>
 	<skill id="5689" toLevel="1" name="PvP Shield - Reflect Damage">
-		<!-- Temporarily reflects some of the received damage back to the enemy. -->
+		<!-- Able to return some of the received damage back to the enemy momentarily. -->
 		<icon>icon.skill0086</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -3498,7 +3502,6 @@
 		</effects>
 	</skill>
 	<skill id="5695" toLevel="1" name="Talisman - Increase Momentum">
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>100</hitTime>
 		<isTriggeredSkill>true</isTriggeredSkill>
@@ -3569,7 +3572,7 @@
 		</magicLevel>
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -3578,6 +3581,7 @@
 		</effects>
 	</skill>
 	<skill id="5698" toLevel="37" name="Blessed Blood">
+		<icon>icon.skill3080</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>
@@ -3671,7 +3675,7 @@
 		</effects>
 	</skill>
 	<skill id="5699" toLevel="7" name="Decrease P. Def.">
-		<!-- P. Def. decreased. -->
+		<!-- P. Def. -66%. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>

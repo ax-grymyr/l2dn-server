@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="4600" toLevel="12" name="Decrease P. Def. and Stun">
-		<!-- Instantly decreases P. Def. Immobilizes and stuns target. -->
+	<skill id="4600" toLevel="12" name="Stunned and P. Def. decreased.">
+		<!-- Immediately P. Def. -17%, target is immobilized because of stun. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
@@ -87,7 +87,6 @@
 		</effects>
 	</skill>
 	<skill id="4601" toLevel="3" name="Acumen Focus">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -136,7 +135,7 @@
 		</effects>
 	</skill>
 	<skill id="4602" toLevel="12" name="Decrease P. Atk.">
-		<!-- Momentarily decreases P. Atk. -->
+		<!-- Immediately P. Atk. -17%. -->
 		<icon>icon.skill4037</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -235,7 +234,7 @@
 		</effects>
 	</skill>
 	<skill id="4603" toLevel="12" name="Decrease P. Atk.">
-		<!-- Momentarily decreases P. Atk. -->
+		<!-- Immediately P. Atk. -17%. -->
 		<icon>icon.skill4037</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -533,7 +532,7 @@
 		</effects>
 	</skill>
 	<skill id="4606" toLevel="12" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -593,7 +592,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -634,7 +633,6 @@
 		</effects>
 	</skill>
 	<skill id="4607" toLevel="1" name="Magma Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -654,8 +652,6 @@
 		</effects>
 	</skill>
 	<skill id="4608" toLevel="2" name="Berserker Spirit">
-		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -734,7 +730,6 @@
 		</effects>
 	</skill>
 	<skill id="4609" toLevel="4" name="Vampiric Rage">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -779,7 +774,6 @@
 		</effects>
 	</skill>
 	<skill id="4610" toLevel="3" name="Focus">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -820,7 +814,6 @@
 		</effects>
 	</skill>
 	<skill id="4611" toLevel="3" name="Death Whisper">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -861,7 +854,6 @@
 		</effects>
 	</skill>
 	<skill id="4612" toLevel="12" name="Wide Sweep">
-		<icon>icon.skill0000</icon>
 		<affectRange>1000</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
@@ -922,7 +914,6 @@
 		</effects>
 	</skill>
 	<skill id="4613" toLevel="12" name="Clan Heal">
-		<icon>icon.skill0000</icon>
 		<affectRange>900</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>2000</hitTime>
@@ -981,7 +972,6 @@
 		</effects>
 	</skill>
 	<skill id="4614" toLevel="12" name="Death Bomb">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isSuicideAttack>true</isSuicideAttack>
@@ -1100,7 +1090,7 @@
 		<reuseDelay>6000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>200</affectRange>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1125,7 +1115,6 @@
 		</effects>
 	</skill>
 	<skill id="4616" toLevel="1" name="Fake Petrification">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>360</abnormalTime>
 		<abnormalType>TURN_STONE</abnormalType>
@@ -1150,7 +1139,6 @@
 		</effects>
 	</skill>
 	<skill id="4617" toLevel="1" name="Dispel Petrification">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>80</magicLevel>
@@ -1168,7 +1156,6 @@
 		</effects>
 	</skill>
 	<skill id="4618" toLevel="1" name="Target Cancellation">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -1188,7 +1175,6 @@
 		</effects>
 	</skill>
 	<skill id="4619" toLevel="1" name="Dispel Sleep">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1261,8 +1247,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="4621" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4621" toLevel="12" name="Drain Energy">
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1000</effectRange>
@@ -1325,8 +1310,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4622" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4622" toLevel="12" name="Drain Energy">
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1389,8 +1373,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4623" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4623" toLevel="12" name="Drain Energy">
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -1491,7 +1474,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4625" toLevel="12" name="Slow">
+	<skill id="4625" toLevel="12" name="Decrease Speed">
 		<!-- Speed decreased temporarily. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>
@@ -1556,7 +1539,6 @@
 		</effects>
 	</skill>
 	<skill id="4626" toLevel="12" name="Physical Barrier">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1631,8 +1613,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4627" toLevel="12" name="Magic Barrier">
-		<icon>icon.skill0000</icon>
+	<skill id="4627" toLevel="12" name="Magical Barrier">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1708,7 +1689,6 @@
 		</effects>
 	</skill>
 	<skill id="4628" toLevel="1" name="Mysterious Aura">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -1717,8 +1697,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="4629" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4629" toLevel="12" name="Drain Energy">
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -1781,7 +1760,6 @@
 		</effects>
 	</skill>
 	<skill id="4630" toLevel="12" name="Twister">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -1841,8 +1819,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4631" toLevel="3" name="Acumen+Shield+Wild Magic">
-		<!-- Casting Spd. +15%, P. Def. +8%, M. Skill Critical Rate +200%. -->
+	<skill id="4631" toLevel="3" name="Acumen Shield Wild Magic">
+		<!-- Casting Spd. +$s1, P. Def. +$s2, and critical rate of damage attack magic +$s3. -->
 		<icon>icon.skill1085</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1898,8 +1876,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4632" toLevel="3" name="Acumen+Empower+Wild Magic">
-		<icon>icon.skill0000</icon>
+	<skill id="4632" toLevel="3" name="Acumen Empower Wild Magic">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1954,8 +1931,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4633" toLevel="3" name="Acumen+Berserker+Empower">
-		<icon>icon.skill0000</icon>
+	<skill id="4633" toLevel="3" name="Acumen Berserker Empower">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2042,8 +2018,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4634" toLevel="3" name="Acumen+Empower+Damage Shield">
-		<icon>icon.skill0000</icon>
+	<skill id="4634" toLevel="3" name="Acumen Empower Damage Shield">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2098,7 +2073,6 @@
 		</effects>
 	</skill>
 	<skill id="4635" toLevel="3" name="Acumen Berserker Wild Magic">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2194,7 +2168,6 @@
 		</effects>
 	</skill>
 	<skill id="4636" toLevel="3" name="Acumen Berserker Damage Shield">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2289,7 +2262,6 @@
 		</effects>
 	</skill>
 	<skill id="4637" toLevel="3" name="Acumen Wild Magic Damage Shield">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2343,8 +2315,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4638" toLevel="3" name="Acumen+Empower+Wild Magic">
-		<icon>icon.skill0000</icon>
+	<skill id="4638" toLevel="3" name="Acumen Empower Wild Magic">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2401,8 +2372,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4639" toLevel="3" name="Acumen+Empower+Berserker">
-		<icon>icon.skill0000</icon>
+	<skill id="4639" toLevel="3" name="Acumen Empower Berserker">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2550,7 +2520,6 @@
 		</effects>
 	</skill>
 	<skill id="4641" toLevel="12" name="Super Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
@@ -2607,8 +2576,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4642" toLevel="9" name="Fast Spellcasting">
-		<icon>icon.skill0000</icon>
+	<skill id="4642" toLevel="9" name="Fast Spell Casting">
 		<magicLevel>
 			<value level="1">20</value>
 			<value level="2">40</value>
@@ -2697,7 +2665,6 @@
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -2737,7 +2704,6 @@
 		</effects>
 	</skill>
 	<skill id="4644" toLevel="2" name="Haste">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2767,7 +2733,6 @@
 		</effects>
 	</skill>
 	<skill id="4645" toLevel="3" name="Focus">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2800,7 +2765,6 @@
 		</effects>
 	</skill>
 	<skill id="4646" toLevel="3" name="Death Whisper">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2832,19 +2796,11 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4647" toLevel="4" name="Might">
-		<!-- An enhancing effect that's granted by Leona's Force Aura. Acquired XP +200%. Acquired SP +200%. Absorbs 8% of the inflicted damage as HP (triggered with a certain chance). -->
-		<icon>
-			<value level="1">icon.skill0000</value>
-			<value level="2">icon.skill0000</value>
-			<value level="3">icon.skill0000</value>
-			<value level="4">icon.skill32656</value>
-		</icon>
+	<skill id="4647" toLevel="3" name="Might">
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -2853,7 +2809,6 @@
 			<value level="1">20</value>
 			<value level="2">40</value>
 			<value level="3">60</value>
-			<value level="4">60</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</magicLevel>
 		<operateType>A2</operateType>
 		<basicProperty>NONE</basicProperty>
@@ -2868,14 +2823,12 @@
 					<value level="1">8</value>
 					<value level="2">12</value>
 					<value level="3">15</value>
-					<value level="4">15</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4648" toLevel="3" name="Shield">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2908,7 +2861,7 @@
 		</effects>
 	</skill>
 	<skill id="4649" toLevel="12" name="Poison">
-		<!-- Instantly decreases HP. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2966,7 +2919,7 @@
 		<operateType>A2</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -2991,7 +2944,6 @@
 		</effects>
 	</skill>
 	<skill id="4650" toLevel="1" name="Dispel Hold">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3011,7 +2963,6 @@
 		</effects>
 	</skill>
 	<skill id="4651" toLevel="3" name="Dispel Slow">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3047,7 +2998,6 @@
 		</effects>
 	</skill>
 	<skill id="4652" toLevel="1" name="Dispel Silence">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -3067,7 +3017,6 @@
 		</effects>
 	</skill>
 	<skill id="4653" toLevel="12" name="Corpse Life Drain">
-		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectRange>900</effectRange>
 		<hitTime>2000</hitTime>
@@ -3130,7 +3079,6 @@
 		</effects>
 	</skill>
 	<skill id="4654" toLevel="12" name="Death Link">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3191,7 +3139,6 @@
 		</effects>
 	</skill>
 	<skill id="4655" toLevel="12" name="Death Link">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3252,7 +3199,6 @@
 		</effects>
 	</skill>
 	<skill id="4656" toLevel="12" name="Death Link">
-		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -3313,7 +3259,7 @@
 		</effects>
 	</skill>
 	<skill id="4657" toLevel="12" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3398,7 +3344,7 @@
 		</effects>
 	</skill>
 	<skill id="4658" toLevel="12" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3483,7 +3429,7 @@
 		</effects>
 	</skill>
 	<skill id="4659" toLevel="12" name="Hold">
-		<!-- Holds the target. -->
+		<!-- Inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3826,7 +3772,6 @@
 		</effects>
 	</skill>
 	<skill id="4663" toLevel="1" name="Aggression">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3842,8 +3787,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4664" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4664" toLevel="12" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -3918,8 +3862,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4665" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4665" toLevel="12" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -3994,8 +3937,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4666" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4666" toLevel="12" name="Drain Energy">
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -4070,8 +4012,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4667" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4667" toLevel="12" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4146,8 +4087,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4668" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4668" toLevel="12" name="Drain Energy">
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4222,8 +4162,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4669" toLevel="12" name="Drain HP">
-		<icon>icon.skill0000</icon>
+	<skill id="4669" toLevel="12" name="Drain Energy">
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -4299,7 +4238,7 @@
 		</effects>
 	</skill>
 	<skill id="4670" toLevel="12" name="Stun">
-		<!-- Immobilizes and stuns a target for a short time. -->
+		<!-- Immobilizes and stuns target for a short time. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>2</abnormalTime>
@@ -4352,7 +4291,6 @@
 		</effects>
 	</skill>
 	<skill id="4671" toLevel="1" name="Teleport">
-		<icon>icon.skill0000</icon>
 		<effectRange>2000</effectRange>
 		<magicLevel>40</magicLevel>
 		<operateType>A1</operateType>
@@ -4366,7 +4304,6 @@
 		</effects>
 	</skill>
 	<skill id="4672" toLevel="1" name="Corpse Remove">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>40</magicLevel>
@@ -4381,7 +4318,6 @@
 		</conditions>
 	</skill>
 	<skill id="4673" toLevel="12" name="Dispel Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4441,7 +4377,6 @@
 		</effects>
 	</skill>
 	<skill id="4674" toLevel="12" name="Dispel Defense">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4501,7 +4436,6 @@
 		</effects>
 	</skill>
 	<skill id="4675" toLevel="12" name="Dispel Fighter">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4561,7 +4495,6 @@
 		</effects>
 	</skill>
 	<skill id="4676" toLevel="12" name="Dispel Mage Empower">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4621,7 +4554,6 @@
 		</effects>
 	</skill>
 	<skill id="4677" toLevel="12" name="Dispel Fighter Shield">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4681,7 +4613,6 @@
 		</effects>
 	</skill>
 	<skill id="4678" toLevel="12" name="Dispel Mage Barrier">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -4741,7 +4672,7 @@
 		</effects>
 	</skill>
 	<skill id="4679" toLevel="1" name="Valakas">
-		<!-- One of the six dragon children of Shillien. Valakas is the Fire Dragon who commands hot flames and summons fire storms. After taking severe wounds in the war against the gods, he has hidden away in the Forge of Gods. He is waiting for Shillien's call to end his long slumber. -->
+		<!-- Vulnerable to water, impervious to fire. -->
 		<icon>icon.skillboss</icon>
 		<magicLevel>99</magicLevel>
 		<operateType>P</operateType>
@@ -4755,7 +4686,6 @@
 		</effects>
 	</skill>
 	<skill id="4680" toLevel="1" name="Valakas Lava Skin">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -4778,8 +4708,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4681" toLevel="1" name="Valakas: Trample">
-		<icon>icon.skill0000</icon>
+	<skill id="4681" toLevel="1" name="Valakas Trample">
 		<affectRange>250</affectRange>
 		<castRange>50</castRange>
 		<coolTime>1500</coolTime>
@@ -4804,8 +4733,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4682" toLevel="1" name="Valakas: Trample">
-		<icon>icon.skill0000</icon>
+	<skill id="4682" toLevel="1" name="Valakas Trample">
 		<affectRange>250</affectRange>
 		<castRange>50</castRange>
 		<coolTime>1500</coolTime>
@@ -4830,8 +4758,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4683" toLevel="1" name="Valakas: Dragon Breath">
-		<!-- You are engulfed in flames and rapidly lose HP. -->
+	<skill id="4683" toLevel="1" name="Valakas Dragon Breath">
+		<!-- HP decreases rapidly from flame momentarily. -->
 		<icon>icon.skill4683</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -4867,8 +4795,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4684" toLevel="1" name="Valakas: Dragon Breath">
-		<!-- You are engulfed in flames and rapidly lose HP. -->
+	<skill id="4684" toLevel="1" name="Valakas Dragon Breath">
+		<!-- HP decreases rapidly from flame momentarily. -->
 		<icon>icon.skill4683</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -4904,8 +4832,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4685" toLevel="1" name="Valakas: Tail Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="4685" toLevel="1" name="Valakas Tail Stamp">
 		<affectRange>1000</affectRange>
 		<coolTime>1000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -4927,8 +4854,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4686" toLevel="1" name="Valakas: Tail Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="4686" toLevel="1" name="Valakas Tail Stamp">
 		<affectRange>500</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -4948,8 +4874,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4687" toLevel="1" name="Valakas: Tail Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="4687" toLevel="1" name="Valakas Tail Stamp">
 		<hitTime>3000</hitTime>
 		<magicLevel>99</magicLevel>
 		<operateType>A1</operateType>
@@ -4958,8 +4883,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="4689" toLevel="2" name="Valakas: Fear">
-		<!-- The target runs away in fear. -->
+	<skill id="4689" toLevel="2" name="Valakas Fear">
+		<!-- Afflicted with Fear and moving against own will momentarily. -->
 		<icon>icon.skill4689</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -4992,10 +4917,10 @@
 		</lvlBonusRate>
 		<magicLevel>99</magicLevel>
 		<operateType>A2</operateType>
-		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;SILENCE;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectHeight>-100;300</affectHeight>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -5004,8 +4929,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="4690" toLevel="1" name="Valakas: Meteor Storm">
-		<icon>icon.skill0000</icon>
+	<skill id="4690" toLevel="1" name="Valakas Meteor Storm">
 		<affectRange>300</affectRange>
 		<coolTime>2000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -5026,7 +4950,7 @@
 		</effects>
 	</skill>
 	<skill id="4691" toLevel="5" name="Valakas Recovery">
-		<!-- Valakas recovery stage 1. -->
+		<!-- Valakas recovery stage $s1. -->
 		<icon>icon.skill1044</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
@@ -5059,7 +4983,6 @@
 		</effects>
 	</skill>
 	<skill id="4692" toLevel="1" name="Body Enlargement">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BIG_BODY</abnormalType>
@@ -5079,7 +5002,6 @@
 		</effects>
 	</skill>
 	<skill id="4693" toLevel="1" name="Annul Enlargement">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>76</magicLevel>
@@ -5095,7 +5017,6 @@
 		</effects>
 	</skill>
 	<skill id="4694" toLevel="1" name="Absolute Curse">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
@@ -5140,7 +5061,6 @@
 		</effects>
 	</skill>
 	<skill id="4695" toLevel="1" name="Absolute Curse">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
@@ -5161,7 +5081,6 @@
 		</effects>
 	</skill>
 	<skill id="4696" toLevel="1" name="Absolute Curse">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
@@ -5186,7 +5105,6 @@
 		</effects>
 	</skill>
 	<skill id="4697" toLevel="12" name="Aggression">
-		<icon>icon.skill0000</icon>
 		<effectPoint>
 			<value level="1">-410</value>
 			<value level="2">-608</value>
@@ -5239,7 +5157,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="4698" toLevel="12" name="Regeneration">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">3</value>
 			<value level="2">4</value>
@@ -5299,15 +5216,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4699" toLevel="13" name="Queen's Blessing">
-		<!-- A buff used by Feline Queen. For 2 min., P. Critical Rate +25%, P. Critical Damage +20%. The effect doesn't not stack with that of Emperor's Blessing. -->
+	<skill id="4699" toLevel="13" name="Blessing of Queen">
+		<!-- For $s1, party members' P. Critical Rate +$s2, P. Critical Damage +$s3. -->
 		<icon>icon.skill1331</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">3</value>
-			<value level="5">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
 			<value level="6">3</value>
 			<value level="7">3</value>
 			<value level="8">3</value>
@@ -5319,10 +5236,10 @@
 		</abnormalLevel>
 		<abnormalTime>
 			<value level="1">120</value>
-			<value level="2">120</value>
-			<value level="3">120</value>
-			<value level="4">150</value>
-			<value level="5">165</value>
+			<value level="2">240</value>
+			<value level="3">360</value>
+			<value level="4">480</value>
+			<value level="5">600</value>
 			<value level="6">180</value>
 			<value level="7">195</value>
 			<value level="8">210</value>
@@ -5352,11 +5269,11 @@
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>
-			<value level="1">57</value>
-			<value level="2">66</value>
-			<value level="3">75</value>
-			<value level="4">77</value>
-			<value level="5">78</value>
+			<value level="1">77</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
 			<value level="6">79</value>
 			<value level="7">80</value>
 			<value level="8">81</value>
@@ -5367,11 +5284,11 @@
 			<value level="13">86</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">162</value>
-			<value level="2">125</value>
-			<value level="3">155</value>
-			<value level="4">161</value>
-			<value level="5">165</value>
+			<value level="1">161</value>
+			<value level="2">163</value>
+			<value level="3">165</value>
+			<value level="4">167</value>
+			<value level="5">169</value>
 			<value level="6">169</value>
 			<value level="7">172</value>
 			<value level="8">176</value>
@@ -5382,11 +5299,11 @@
 			<value level="13">193</value>
 		</mpConsume>
 		<mpInitialConsume>
-			<value level="1">40</value>
-			<value level="2">32</value>
-			<value level="3">39</value>
-			<value level="4">41</value>
-			<value level="5">42</value>
+			<value level="1">41</value>
+			<value level="2">42</value>
+			<value level="3">43</value>
+			<value level="4">44</value>
+			<value level="5">45</value>
 			<value level="6">43</value>
 			<value level="7">43</value>
 			<value level="8">44</value>
@@ -5397,7 +5314,7 @@
 			<value level="13">49</value>
 		</mpInitialConsume>
 		<operateType>A2</operateType>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>5000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>

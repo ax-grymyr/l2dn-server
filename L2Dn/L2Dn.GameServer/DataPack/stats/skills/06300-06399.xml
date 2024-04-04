@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6300" toLevel="1" name="Self-destruction">
-		<icon>icon.skill0000</icon>
 		<affectRange>350</affectRange>
 		<effectPoint>-574</effectPoint>
 		<attributeType>WATER</attributeType>
@@ -22,13 +21,13 @@
 				<power>3194</power>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>6662</skillId> <!-- Ice Crystal -->
+				<skillId>6662</skillId> <!-- Freeze -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6301" toLevel="2" name="Cold Mana Fragment">
-		<!-- MP +60 per sec. -->
+		<!-- Each second MP +$s1. -->
 		<icon>icon.skill6301</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -62,7 +61,7 @@
 		</effects>
 	</skill>
 	<skill id="6302" toLevel="1" name="Icy Air">
-		<!-- P./ M. Def. +15%. -->
+		<!-- P. Def. and M. Def. +15%. -->
 		<icon>icon.skill6302</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -90,7 +89,6 @@
 		</effects>
 	</skill>
 	<skill id="6303" toLevel="1" name="Trial of the Coup">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -112,7 +110,7 @@
 		</effects>
 	</skill>
 	<skill id="6304" toLevel="1" name="Stun">
-		<!-- Immobilizes and stuns the target for 2 sec. -->
+		<!-- Immobilizes and stuns target for 2 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>2</abnormalTime>
@@ -142,7 +140,6 @@
 		</effects>
 	</skill>
 	<skill id="6305" toLevel="1" name="Divine Gnosis">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -164,7 +161,7 @@
 		</effects>
 	</skill>
 	<skill id="6306" toLevel="1" name="Solina Strike">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+		<!-- Causes bleeding for 10 sec., draining 139 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -188,7 +185,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>4000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -199,7 +196,6 @@
 		</effects>
 	</skill>
 	<skill id="6307" toLevel="1" name="Opus of the Hand">
-		<icon>icon.skill0000</icon>
 		<affectRange>180</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -225,7 +221,6 @@
 		</effects>
 	</skill>
 	<skill id="6308" toLevel="1" name="Opus of the Wave">
-		<icon>icon.skill0000</icon>
 		<affectRange>270</affectRange>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
@@ -251,7 +246,6 @@
 		</effects>
 	</skill>
 	<skill id="6309" toLevel="1" name="Pain of the Ascetic">
-		<icon>icon.skill0000</icon>
 		<affectRange>180</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -277,7 +271,6 @@
 		</effects>
 	</skill>
 	<skill id="6310" toLevel="1" name="Loss of Quest">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -299,8 +292,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6311" toLevel="1" name="Solina's Thrust">
-		<icon>icon.skill0000</icon>
+	<skill id="6311" toLevel="1" name="Solina Thrust">
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -322,7 +314,6 @@
 		</effects>
 	</skill>
 	<skill id="6312" toLevel="1" name="Launch Holy Sword Energy">
-		<icon>icon.skill0000</icon>
 		<affectRange>180</affectRange>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
@@ -347,7 +338,6 @@
 		</effects>
 	</skill>
 	<skill id="6313" toLevel="1" name="Solina Bless">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -377,7 +367,6 @@
 		</effects>
 	</skill>
 	<skill id="6314" toLevel="1" name="Divine Judgment">
-		<icon>icon.skill0000</icon>
 		<affectRange>270</affectRange>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
@@ -405,7 +394,6 @@
 		</effects>
 	</skill>
 	<skill id="6315" toLevel="1" name="Divine Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -427,7 +415,6 @@
 		</effects>
 	</skill>
 	<skill id="6316" toLevel="1" name="Execution of Authority">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -448,7 +435,6 @@
 		</effects>
 	</skill>
 	<skill id="6317" toLevel="1" name="Divinity Tacit">
-		<icon>icon.skill0000</icon>
 		<affectRange>180</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -474,7 +460,7 @@
 		</effects>
 	</skill>
 	<skill id="6318" toLevel="1" name="Holy Shield Defense">
-		<!-- Increases P. Def. by 10% for 3 sec. -->
+		<!-- P. Def. +10% for 3 sec. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -491,6 +477,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
+		<!-- FIXME: Aura Friendly ? -->
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
@@ -519,6 +506,7 @@
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
+		<!-- FIXME: Aura Friendly ? -->
 		<targetType>SELF</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>FRIEND</affectObject>
@@ -530,7 +518,7 @@
 		</effects>
 	</skill>
 	<skill id="6320" toLevel="1" name="Summon Holy Magic Circle">
-		<!-- Decreases enemy's P. Def. by 23% for 15 sec. -->
+		<!-- Enemy's P. Def. -23% for 15 sec. -->
 		<icon>icon.skill6320</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -564,7 +552,6 @@
 		</effects>
 	</skill>
 	<skill id="6321" toLevel="1" name="Divine Flash">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -590,7 +577,6 @@
 		</effects>
 	</skill>
 	<skill id="6322" toLevel="1" name="Divine Impact">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -616,7 +602,6 @@
 		</effects>
 	</skill>
 	<skill id="6323" toLevel="1" name="Divine Bolt">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
@@ -636,7 +621,6 @@
 		</effects>
 	</skill>
 	<skill id="6324" toLevel="1" name="Divine Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>270</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -660,7 +644,6 @@
 		</effects>
 	</skill>
 	<skill id="6325" toLevel="1" name="Divine Nova">
-		<icon>icon.skill0000</icon>
 		<affectRange>270</affectRange>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
@@ -684,7 +667,6 @@
 		</effects>
 	</skill>
 	<skill id="6326" toLevel="1" name="Martyr's Happiness">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>-574</effectPoint>
@@ -707,7 +689,6 @@
 		</effects>
 	</skill>
 	<skill id="6327" toLevel="1" name="Divinity Worship">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -729,7 +710,6 @@
 		</effects>
 	</skill>
 	<skill id="6328" toLevel="1" name="Fighter Judgement">
-		<icon>icon.skill0000</icon>
 		<affectRange>270</affectRange>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
@@ -756,7 +736,6 @@
 		</effects>
 	</skill>
 	<skill id="6329" toLevel="1" name="Fighter Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -777,8 +756,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6330" toLevel="1" name="Salmon Porridge Effect">
-		<icon>icon.skill0000</icon>
+	<skill id="6330" toLevel="1" name="Salmon Porridge Attack">
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -796,7 +774,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6331" toLevel="1" name="Dying Campfire">
+	<skill id="6331" toLevel="1" name="Campfire Tired">
 		<!-- Atk. Spd. is decreased. -->
 		<icon>icon.skill1206</icon>
 		<abnormalLevel>3</abnormalLevel>
@@ -820,7 +798,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6332" toLevel="1" name="Glowing Campfire">
+	<skill id="6332" toLevel="1" name="Campfire Full">
 		<!-- Speed and Atk. Spd. are decreased. -->
 		<icon>icon.skill1206</icon>
 		<abnormalLevel>3</abnormalLevel>
@@ -849,7 +827,7 @@
 		</effects>
 	</skill>
 	<skill id="6333" toLevel="1" name="Electric Bolt 1">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+		<!-- Causes bleeding for 3 sec., draining 200 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -871,7 +849,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -885,7 +863,7 @@
 		</effects>
 	</skill>
 	<skill id="6334" toLevel="1" name="Stun">
-		<!-- Immobilizes and stuns the target for 4 sec. -->
+		<!-- Immobilizes and stuns target for 4 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>4</abnormalTime>
@@ -916,7 +894,6 @@
 		</effects>
 	</skill>
 	<skill id="6335" toLevel="1" name="Electric Rain 1">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -940,7 +917,6 @@
 		</effects>
 	</skill>
 	<skill id="6336" toLevel="1" name="Electric Rain 2">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -964,7 +940,6 @@
 		</effects>
 	</skill>
 	<skill id="6337" toLevel="1" name="Red Slash 1">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -984,7 +959,6 @@
 		</effects>
 	</skill>
 	<skill id="6338" toLevel="1" name="Red Slash 2">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -1004,7 +978,7 @@
 		</effects>
 	</skill>
 	<skill id="6339" toLevel="1" name="Divine Hammer Attack">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+		<!-- Causes bleeding for 3 sec, draining 200 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -1027,7 +1001,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1042,7 +1016,7 @@
 		</effects>
 	</skill>
 	<skill id="6340" toLevel="1" name="Stun">
-		<!-- Immobilizes and stuns the target for 4 sec. -->
+		<!-- Immobilizes and stuns target for 4 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>4</abnormalTime>
@@ -1074,7 +1048,6 @@
 		</effects>
 	</skill>
 	<skill id="6342" toLevel="1" name="Trap Over Steam">
-		<icon>icon.skill0000</icon>
 		<affectRange>400</affectRange>
 		<effectPoint>-574</effectPoint>
 		<hitTime>2000</hitTime>
@@ -1094,7 +1067,7 @@
 		</effects>
 	</skill>
 	<skill id="6343" toLevel="2" name="Maguen Plasma - Power">
-		<!-- The Wild Maguen blesses you with a buff that slightly increases your M. Atk. and P. Atk. for 10 min. -->
+		<!-- The Wild Maguen blesses you with a buff that slightly increases your M. Atk. and P. Atk. for $s1. -->
 		<icon>
 			<value level="1">icon.skill6343_1</value>
 			<value level="2">icon.skill6343_2</value>
@@ -1136,7 +1109,7 @@
 		</effects>
 	</skill>
 	<skill id="6365" toLevel="2" name="Maguen Plasma - Speed">
-		<!-- The Wild Maguen blesses you with a buff that slightly increases your Speed, Atk. Spd. and Casting Spd. for 10 min. -->
+		<!-- The Wild Maguen blesses you with a buff that slightly increases your Speed, Atk. Spd. and Casting Spd. For $s1. -->
 		<icon>
 			<value level="1">icon.skill6365_1</value>
 			<value level="2">icon.skill6365_2</value>
@@ -1185,7 +1158,7 @@
 		</effects>
 	</skill>
 	<skill id="6366" toLevel="2" name="Maguen Plasma - Critical">
-		<!-- The Wild Maguen blesses you with a buff that slightly increases your P. Critical Rate, P. Critical Damage and M. Skill Critical Damage for 10 min. -->
+		<!-- The Wild Maguen blesses you with a buff that slightly increases your P. Critical Rate, P. Critical Damage and M. Critical Damage for $s1 -->
 		<icon>
 			<value level="1">icon.skill6366_1</value>
 			<value level="2">icon.skill6366_2</value>
@@ -1324,7 +1297,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6370" toLevel="1" name="Thunderbolt">
-		<!-- Received damage is increased. -->
+		<!-- Receive damage is amplified. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1347,8 +1320,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6371" toLevel="1" name="Invincibility">
-		<!-- Invincible to basic attacks, skills and debuffs. -->
-		<icon>icon.skill0000</icon>
+		<!-- Invincibility to regular hits and skills, as well as debuffs. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -1365,7 +1337,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6372" toLevel="10" name="Power Up">
-		<!-- Atk. Spd. +2%., P. Skill Power +100%. -->
+		<!-- Atk. Spd. +$s1, P. Skill Power +$s2. -->
 		<icon>icon.skill0917</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1396,7 +1368,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6373" toLevel="1" name="Thunderbolt">
-		<!-- Received damage is increased. -->
+		<!-- Receive damage is amplified. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1419,7 +1391,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6374" toLevel="1" name="Notification - Thunderbolts">
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -1433,7 +1404,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6375" toLevel="1" name="Notification - Thunderbolts">
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -1446,8 +1416,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6376" toLevel="9" name="Sonic Flash">
-		<!-- For 5 min., Max HP -10%, Max MP -10%, HP -20 from Dopagen's Sonic Strike. -->
+	<skill id="6376" toLevel="9" name="Sonic Strike">
+		<!-- For $s1, 10% of max HP, $s2 of max MP and $s3 HP per sec decrease from Dopagen's Sonic Strike. -->
 		<icon>icon.skill1417</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1477,7 +1447,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6377" toLevel="10" name="Speed Up">
-		<!-- Atk. Spd. +5% -->
+		<!-- Atk. Spd. +$s1 -->
 		<icon>icon.skill1086</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1528,8 +1498,8 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="6379" toLevel="1" name="Critical Strike">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+	<skill id="6379" toLevel="1" name="Critical Hit">
+		<!-- Causes bleeding for 15 sec., draining 93 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -1552,7 +1522,7 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<castRange>150</castRange>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1578,7 +1548,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>SELF</targetType>
 		<affectScope>RING_RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1588,7 +1558,7 @@
 		</effects>
 	</skill>
 	<skill id="6381" toLevel="2" name="Bistakon Soul Beam">
-		<!-- Blocks all the enemy's physical and magical skills for 20 sec. -->
+		<!-- Blocks all the enemy's physical and magical skills for $s1. -->
 		<icon>icon.skill1336</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1612,7 +1582,7 @@
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<affectRange>300</affectRange>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1622,7 +1592,7 @@
 		</effects>
 	</skill>
 	<skill id="6382" toLevel="1" name="Bistakon Rolling Claw">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+		<!-- Causes bleeding for 15 sec., draining 93 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -1644,7 +1614,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>RING_RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1676,7 +1646,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SILENCE</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1685,7 +1655,6 @@
 		</effects>
 	</skill>
 	<skill id="6384" toLevel="2" name="Bistakon Deadly Blow">
-		<icon>icon.skill0000</icon>
 		<castRange>60</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-574</effectPoint>
@@ -1708,8 +1677,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6385" toLevel="1" name="Bistakon Critical Claw">
-		<!-- Inflicts Bleed, constantly drains HP. -->
+	<skill id="6385" toLevel="1" name="Bistakon Critical Klaus">
+		<!-- Causes bleeding for 15 sec., draining 95 HP per sec. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -1732,7 +1701,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1744,7 +1713,7 @@
 		</effects>
 	</skill>
 	<skill id="6386" toLevel="1" name="Bistakon Earth Rise">
-		<!-- Immobilizes and stuns the target for 3 sec. -->
+		<!-- Immobilizes and stuns target for 3 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -1776,8 +1745,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="6387" toLevel="1" name="Bistakon's Ground Shaker">
-		<icon>icon.skill0000</icon>
+	<skill id="6387" toLevel="1" name="Bistakon Earthquake">
 		<affectRange>200</affectRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-1000</effectPoint>

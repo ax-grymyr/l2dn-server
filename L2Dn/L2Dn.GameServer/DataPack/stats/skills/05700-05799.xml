@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5700" toLevel="7" name="Decrease M. Def.">
-		<!-- M. Def. is decreased. -->
+		<!-- M. Def. -66%. -->
 		<icon>icon.skill1263</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -23,7 +23,7 @@
 		</effects>
 	</skill>
 	<skill id="5701" toLevel="7" name="Decrease P. Atk.">
-		<!-- Decreases P. Atk. -->
+		<!-- P. Atk. -66%. -->
 		<icon>icon.skill4037</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -45,7 +45,6 @@
 		</effects>
 	</skill>
 	<skill id="5702" toLevel="2" name="Adiantum Round Fighter">
-		<icon>icon.skill0000</icon>
 		<affectRange>400</affectRange>
 		<castRange>
 			<value level="1">0</value>
@@ -82,7 +81,6 @@
 		</effects>
 	</skill>
 	<skill id="5703" toLevel="2" name="Adiantum Water Strike Deflect">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>6</abnormalTime>
 		<abnormalType>ARMOR_FIRE</abnormalType>
@@ -103,7 +101,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5704" toLevel="1" name="Water Strike">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-341</effectPoint>
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -121,7 +118,6 @@
 		<affectScope>RANGE</affectScope>
 	</skill>
 	<skill id="5705" toLevel="1" name="Fire Trap">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-341</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>36</magicLevel>
@@ -136,7 +132,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5706" toLevel="1" name="Poison">
-		<!-- Momentarily decreases HP because of the poison. Soon your body will be paralyzed. -->
+		<!-- HP decreases from Poison momentarily. The body is paralyzed after a set amount of time. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -158,7 +154,7 @@
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
@@ -182,7 +178,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5708" toLevel="2" name="Water Cannon">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -215,8 +210,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5709" toLevel="2" name="Whirlpool Pit">
-		<icon>icon.skill0000</icon>
+	<skill id="5709" toLevel="2" name="Whirlpool">
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-574</value>
@@ -249,7 +243,6 @@
 		</effects>
 	</skill>
 	<skill id="5710" toLevel="2" name="Triple Sword">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -280,8 +273,7 @@
 		</effects>
 	</skill>
 	<skill id="5711" toLevel="1" name="Power of Rage">
-		<!-- Greatly enhances attack skills. -->
-		<icon>icon.skill0000</icon>
+		<!-- P. Atk. is greatly increased because of rage. -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -302,7 +294,6 @@
 	</skill>
 	<skill id="5712" toLevel="1" name="Energy Ditch">
 		<!-- Delivers one's own energy to Lematan. The delivery status is cancelled when damage is incurred. -->
-		<icon>icon.skill0000</icon>
 		<castRange>1300</castRange>
 		<effectPoint>1</effectPoint>
 		<hitTime>15000</hitTime>
@@ -326,8 +317,7 @@
 		</effects>
 	</skill>
 	<skill id="5713" toLevel="5" name="Energy Ditch">
-		<!-- Increases HP Recovery Rate from your servitor's magic powers. -->
-		<icon>icon.skill0000</icon>
+		<!-- Has been given minions' M. Atk. Recovery bonus increased. -->
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -349,7 +339,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5714" toLevel="1" name="Boom Up">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-574</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>61</magicLevel>
@@ -430,7 +419,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5717" toLevel="1" name="Fire Breath">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-650</effectPoint>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -465,7 +453,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5719" toLevel="1" name="Kanabion Susceptibility">
-		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
@@ -481,7 +468,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5720" toLevel="6" name="Blade Cut">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -522,7 +508,6 @@
 		</effects>
 	</skill>
 	<skill id="5721" toLevel="6" name="Blade Strike">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -563,7 +548,6 @@
 		</effects>
 	</skill>
 	<skill id="5722" toLevel="6" name="Hammer Assault">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -603,7 +587,6 @@
 		</effects>
 	</skill>
 	<skill id="5723" toLevel="6" name="Hammer Swing">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>100</castRange>
 		<effectPoint>-100</effectPoint>
@@ -645,7 +628,6 @@
 		</effects>
 	</skill>
 	<skill id="5724" toLevel="6" name="Broom Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -685,7 +667,6 @@
 		</effects>
 	</skill>
 	<skill id="5725" toLevel="6" name="Broom Thrust">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -725,7 +706,6 @@
 		</effects>
 	</skill>
 	<skill id="5726" toLevel="6" name="Scissors Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1000</effectRange>
@@ -765,7 +745,6 @@
 		</effects>
 	</skill>
 	<skill id="5727" toLevel="6" name="Scissors Strike">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -805,7 +784,6 @@
 		</effects>
 	</skill>
 	<skill id="5728" toLevel="6" name="Shovel Attack">
-		<icon>icon.skill0000</icon>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1000</effectRange>
@@ -845,7 +823,6 @@
 		</effects>
 	</skill>
 	<skill id="5729" toLevel="6" name="Shovel Whirlwind">
-		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
@@ -885,7 +862,6 @@
 		</effects>
 	</skill>
 	<skill id="5730" toLevel="6" name="Made Fireball">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -936,7 +912,6 @@
 		</effects>
 	</skill>
 	<skill id="5731" toLevel="6" name="Incense of Death">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1046,7 +1021,7 @@
 		</effects>
 	</skill>
 	<skill id="5733" toLevel="6" name="Fear of Steward">
-		<!-- The target runs away in fear. -->
+		<!-- Afflicted with Fear and moving against own will momentarily. -->
 		<icon>icon.skill1092</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -1089,7 +1064,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>6000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -1108,7 +1083,6 @@
 		</effects>
 	</skill>
 	<skill id="5734" toLevel="6" name="Gust of Wind">
-		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -1159,7 +1133,7 @@
 		</effects>
 	</skill>
 	<skill id="5735" toLevel="6" name="Curse of Steward">
-		<!-- Momentarily inflicts Sleep on the target. The target cannot be affected by any Sleep attacks while the effect is active. -->
+		<!-- Momentarily inflicts Sleep on the target. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
 		<icon>icon.skill1069</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -1230,7 +1204,6 @@
 		</effects>
 	</skill>
 	<skill id="5736" toLevel="6" name="Katar Trusting">
-		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
@@ -1269,8 +1242,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5737" toLevel="6" name="Power Strike">
-		<icon>icon.skill0000</icon>
+	<skill id="5737" toLevel="6" name="Power Stamp">
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
@@ -1310,7 +1282,6 @@
 		</effects>
 	</skill>
 	<skill id="5738" toLevel="6" name="Power Roar">
-		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
@@ -1350,7 +1321,7 @@
 		</effects>
 	</skill>
 	<skill id="5739" toLevel="1" name="Invincibility">
-		<!-- Resurrects and grants invincibility for some time. -->
+		<!-- Recently resurrected and temporarily immobile. -->
 		<icon>icon.skill5739</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -1377,7 +1348,6 @@
 		</effects>
 	</skill>
 	<skill id="5740" toLevel="1" name="Recovery Pot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectRange>1400</effectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1401,7 +1371,6 @@
 		</effects>
 	</skill>
 	<skill id="5741" toLevel="1" name="Mental Pot">
-		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectRange>1400</effectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1418,7 +1387,6 @@
 		</effects>
 	</skill>
 	<skill id="5742" toLevel="5" name="Recharge">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<magicLevel>
 			<value level="1">10</value>
@@ -1434,7 +1402,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5743" toLevel="1" name="Full Recovery">
-		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<magicLevel>99</magicLevel>
 		<operateType>A1</operateType>
@@ -1462,8 +1429,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5745" toLevel="12" name="Death Blow">
-		<!-- Draws on your HP to summon your strength and unleash a punishing attack. Power 183. -->
-		<icon>icon.skill0000</icon>
+		<!-- Draws on your HP to summon your strength and unleash a punishing attack. Power $s1. -->
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-206</value>
@@ -1549,8 +1515,7 @@
 		</effects>
 	</skill>
 	<skill id="5746" toLevel="12" name="Double Attack">
-		<!-- Inflicts 2 devastatingly rapid attacks. Power 137. -->
-		<icon>icon.skill0000</icon>
+		<!-- Inflicts 2 devastatingly rapid attacks. Power $s1. -->
 		<castRange>40</castRange>
 		<coolTime>167</coolTime>
 		<effectPoint>
@@ -1623,7 +1588,7 @@
 		</effects>
 	</skill>
 	<skill id="5747" toLevel="12" name="Spin Attack">
-		<!-- Momentarily stuns an enemy. Power 55. -->
+		<!-- Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. $s1 power. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
@@ -1707,7 +1672,7 @@
 		</effects>
 	</skill>
 	<skill id="5748" toLevel="12" name="Meteor Shower">
-		<!-- Drops meteors to attack surrounding enemies. Power 23. -->
+		<!-- Drops meteors to attack surrounding enemies. Power $s1. -->
 		<icon>icon.skill1467</icon>
 		<affectLimit>5-12</affectLimit>
 		<coolTime>720</coolTime>
@@ -1764,8 +1729,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5749" toLevel="12" name="Thunder Bolt">
-		<!-- Pours the power of thunder upon the enemies at the front. Power 18. -->
-		<icon>icon.skill0000</icon>
+		<!-- Pours forth the power of thunder upon the enemy. Power $s1. -->
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -1854,8 +1818,8 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5750" toLevel="12" name="Blaze">
-		<!-- Inflicts a swift magic attack upon enemies nearby. Power 11. -->
+	<skill id="5750" toLevel="12" name="Flash">
+		<!-- Inflicts a swift magic attack upon contacted enemies nearby. Power $s1. -->
 		<icon>icon.skill1417</icon>
 		<castRange>40</castRange>
 		<effectPoint>
@@ -1946,8 +1910,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5751" toLevel="12" name="Lightning Wave">
-		<!-- Inflicts the power of thunder upon surrounding enemies. Power 9. -->
-		<icon>icon.skill0000</icon>
+		<!-- Inflicts the power of thunder upon surrounding enemies. Power $s1. -->
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>
@@ -2038,8 +2001,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5752" toLevel="12" name="Flare">
-		<!-- Consumes one's own HP to inflict powerful magic on the enemy. Power 35. -->
-		<icon>icon.skill0000</icon>
+		<!-- Consumes one's own HP to inflict powerful magic on the enemy. Power $s1. -->
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-138</value>
@@ -2160,7 +2122,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5754" toLevel="1" name="Presentation - Adiantum Round Fighter">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2173,7 +2134,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5755" toLevel="1" name="Presentation - Trap On">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2186,7 +2146,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5756" toLevel="1" name="Presentation - Summon Follower">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2197,7 +2156,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5757" toLevel="1" name="Presentation - Energy Ditch">
-		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>15000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2216,7 +2174,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5758" toLevel="1" name="Presentation - Large Firecracker">
-		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -2227,7 +2184,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5759" toLevel="1" name="Presentation - The Rise of Latana">
-		<icon>icon.skill0000</icon>
 		<hitTime>9700</hitTime>
 		<magicLevel>73</magicLevel>
 		<operateType>A1</operateType>
@@ -2236,8 +2192,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5760" toLevel="9" name="Critical Strike">
-		<!-- P. Critical Rate +30%, Atk. Spd. +33%. Allows you to gather energy for powerful long-ranged attacks from critical basic hits. -->
+	<skill id="5760" toLevel="9" name="Critical Hit">
+		<!-- P. Critical Rate +30%, Atk. Spd. +33%. Successful physical critical attacks allow to gather energy for powerful distance attacks. -->
 		<icon>icon.skill5760</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2263,8 +2219,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5761" toLevel="2" name="Power Strike">
-		<!-- A powerful attack. -->
-		<icon>icon.skill0000</icon>
+		<!-- Strong pounding attack. -->
 		<castRange>40</castRange>
 		<effectPoint>-574</effectPoint>
 		<effectRange>400</effectRange>
@@ -2308,7 +2263,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5763" toLevel="1" name="Wink">
-		<!-- See the summoned agathion perform cute tricks. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2343,12 +2298,11 @@
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
-		<trait>FEAR</trait>
+		<trait>DERANGEMENT</trait>
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5765" toLevel="1" name="Naia Sprout">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2369,7 +2323,6 @@
 		</effects>
 	</skill>
 	<skill id="5766" toLevel="1" name="Naia Sprout">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2390,7 +2343,6 @@
 		</effects>
 	</skill>
 	<skill id="5767" toLevel="1" name="Naia Sprout">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2411,7 +2363,6 @@
 		</effects>
 	</skill>
 	<skill id="5768" toLevel="1" name="Naia Sprout">
-		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -2432,7 +2383,6 @@
 		</effects>
 	</skill>
 	<skill id="5769" toLevel="12" name="not_used">
-		<icon>icon.skill0000</icon>
 		<effectPoint>418</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2460,7 +2410,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5770" toLevel="12" name="not_used">
-		<icon>icon.skill0000</icon>
 		<effectPoint>418</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2488,7 +2437,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5771" toLevel="1" name="Buff Control">
-		<!-- Blocks applying buffs to the master. -->
+		<!-- Limits to prevent a buff upon the master. -->
 		<icon>icon.action113</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -2562,14 +2511,14 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5776" toLevel="1" name="Raid Boss">
-		<!-- Lost Warden (Kamaloka) - The leader of those who watch over the Labyrinth of the Abyss. His job is to make sure they properly perform their roles in Kamaloka. -->
+		<!-- Lost Warden: Kamaloka - Leader of those who watch over the Labyrinth of the Abyss. He watches over those inside Kamaloka to make sure they properly perform their roles. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5777" toLevel="1" name="Raid Boss">
-		<!-- Lost Captain (Kamaloka) - The leader of those who guard the Labyrinth of the Abyss. They protect Kamaloka from enemies. -->
+		<!-- Lost Captain: Kamaloka - Leader of those who guard the Labyrinth of the Abyss. They protect Kamaloka from all enemies to try to infiltrate Kamaloka. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -2718,7 +2667,6 @@
 		</passiveConditions>
 	</skill>
 	<skill id="5781" toLevel="1" name="Presentation - Lindvior Approach">
-		<icon>icon.skill0000</icon>
 		<hitTime>17000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2728,7 +2676,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5782" toLevel="1" name="Presentation - Lindvior Gust">
-		<icon>icon.skill0000</icon>
 		<hitTime>10000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2738,7 +2685,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5783" toLevel="1" name="Presentation - Lindvior Descent">
-		<icon>icon.skill0000</icon>
 		<hitTime>15000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2748,7 +2694,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5784" toLevel="1" name="Presentation - Lindvior Dust">
-		<icon>icon.skill0000</icon>
 		<hitTime>5000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2758,7 +2703,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5785" toLevel="1" name="Presentation - Dimensional Door">
-		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2767,7 +2711,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5786" toLevel="1" name="Presentation - Ekimus Separation">
-		<icon>icon.skill0000</icon>
 		<hitTime>22000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2778,7 +2721,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5787" toLevel="1" name="Presentation - Ekimus Approach">
-		<icon>icon.skill0000</icon>
 		<hitTime>11000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2789,7 +2731,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5788" toLevel="1" name="Presentation - Ekimus Blood Hail">
-		<icon>icon.skill0000</icon>
 		<hitTime>2100</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2800,7 +2741,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5789" toLevel="1" name="Presentation - Ekimus Sneer">
-		<icon>icon.skill0000</icon>
 		<hitTime>13000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2811,7 +2751,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5790" toLevel="1" name="Presentation - Ekimus Aftereffect">
-		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2820,7 +2759,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5791" toLevel="1" name="Presentation - Magyun's Entrance">
-		<icon>icon.skill0000</icon>
 		<hitTime>4200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -2831,7 +2769,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5792" toLevel="1" name="Presentation - Summon Banshee Queen Boomeye">
-		<icon>icon.skill0000</icon>
 		<hitTime>2000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2841,7 +2778,6 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5793" toLevel="1" name="Presentation - Summon Boomeye">
-		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -2851,7 +2787,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5794" toLevel="1" name="Decrease Speed">
-		<!-- Momentarily the target's Speed -30%. -->
+		<!-- Immediately target's Speed -30%. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2869,7 +2805,6 @@
 		<mpConsume>74</mpConsume>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<effectRange>1400</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>900</castRange>
@@ -2899,12 +2834,12 @@
 		<effectRange>1100</effectRange>
 		<isDebuff>true</isDebuff>
 		<castRange>600</castRange>
-		<trait>INFECTION</trait>
+		<trait>POISON</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5796" toLevel="1" name="Decrease Speed">
-		<!-- Momentarily the target's Speed -30%. -->
+		<!-- Immediately target's Speed -30%. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2922,7 +2857,6 @@
 		<mpConsume>74</mpConsume>
 		<reuseDelay>3000</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<trait>SUPPRESSION</trait>
 		<effectRange>1400</effectRange>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
@@ -2933,7 +2867,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5797" toLevel="1" name="Bursting Flame">
-		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<effectPoint>-676</effectPoint>
 		<fanRange>0;0;600;60</fanRange>
@@ -2954,7 +2887,6 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5798" toLevel="1" name="Fireball">
-		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2994,7 +2926,7 @@
 		<attributeValue>50</attributeValue>
 		<affectRange>600</affectRange>
 		<isDebuff>true</isDebuff>
-		<trait>INFECTION</trait>
+		<trait>BLEED</trait>
 		<targetType>SELF</targetType>
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>

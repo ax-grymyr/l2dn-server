@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14765" toLevel="5" name="Blood Siphon Resistance">
-		<!-- Resistant to Blood Siphon. -->
+		<!-- Blood Siphon resistance. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="14767" toLevel="1" name="Siege Punch">
-		<!-- A powerful attack on nearby targets. -->
-		<icon>icon.skill0000</icon>
+		<!-- Launches a powerful attack on the target around you -->
 		<operateType>A1</operateType>
 		<hitTime>4600</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -27,6 +26,7 @@
 	</skill>
 	<skill id="14768" toLevel="1" name="Raid Boss (Lv. 85)">
 		<!-- After being killed by Frintezza, who lost his soul to the devil, it was reborn as a monster called Scarlet van Halisha. It has lost sense of self, and it only makes sacrifices for the demon Halisha. -->
+		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="17608" toLevel="1" name="Energy of Fantasy">
-		<!-- A fishing spot filled with Energy of Fantasy. -->
+	<skill id="17608" toLevel="1" name="Fantastical Energy">
+		<!-- Fishing place, filled with Fantastical Energy. -->
 		<icon>icon.etc_dragons_blood_i03</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
 	</skill>
-	<skill id="17613" toLevel="1" name="Summon Agathion Aries">
-		<!-- Summons an agathion. -->
+	<skill id="17613" toLevel="1" name="Release Agathion Seal- Aries">
+		<!-- Summon Agathion -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -21,8 +21,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17619" toLevel="1" name="Summon Agathion Pisces">
-		<!-- Summons an agathion. -->
+	<skill id="17619" toLevel="1" name="Release Agathion's Seal - Pisces">
+		<!-- Summon Agathion -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -36,8 +36,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17621" toLevel="1" name="Summon Agathion Cancer">
-		<!-- Summons an agathion. -->
+	<skill id="17621" toLevel="1" name="Release Agathion's Seal - Cancer">
+		<!-- Summon Agathion -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -51,19 +51,18 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17625" toLevel="1" name="Agathion Cute Trick - Aries">
-		<!-- Makes an agathion perform a cute trick. -->
+	<skill id="17625" toLevel="1" name="Agathion Trick- Aries">
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 	</skill>
-	<skill id="17685" toLevel="1" name="Rarra's Gift">
-		<icon>icon.skill0000</icon>
+	<skill id="17685" toLevel="1" name="Team Leader Lara's Gift">
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="17686" toLevel="2" name="Rarra's Energy">
-		<!-- A buff from Team Captain Rarra the Cat. For 2 h., acquired XP/ SP while hunting +10%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. A chance to obtain Rarra's Elite Gift when the buff is cancelled. Note!. The gift can't be obtained if your character is dead or if there is no free space in your inventory. -->
+	<skill id="17686" toLevel="2" name="Team Leader Lara's Energy">
+		<!-- Buff from Uldie. For 2 h., acquired XP/ SP +$s1, P. Atk./ M. Atk. +$s2, Atk. Spd./ Casting Spd. +$s3. A chance to receive an Elite Gift from the Captain of Lara's Team when removing the Buff. <Warning> You cannot receive the gift if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>BranchSys.icon.br_sevenlove_girlpresent_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>
@@ -73,11 +72,10 @@
 		<effectPoint>1</effectPoint>
 		<isMagic>4</isMagic>
 	</skill>
-	<skill id="17689" toLevel="1" name="Rarra's Valuable Gift">
-		<icon>icon.skill0000</icon>
+	<skill id="17689" toLevel="1" name="Team Leader Lara's Valuable Gift">
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="17695" toLevel="1" name="Pumpkin Seed">
+	<skill id="17695" toLevel="1" name="Summon Squash">
 		<!-- Skill for summoning a Pumpkin for an anniversary. -->
 		<icon>icon.skill17695</icon>
 		<operateType>A1</operateType>
@@ -85,7 +83,7 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
-	<skill id="17696" toLevel="1" name="Large Pumpkin Seed">
+	<skill id="17696" toLevel="1" name="Summon Large Squash">
 		<!-- Skill for summoning a Pumpkin for an anniversary. -->
 		<icon>icon.skill17696</icon>
 		<operateType>A1</operateType>

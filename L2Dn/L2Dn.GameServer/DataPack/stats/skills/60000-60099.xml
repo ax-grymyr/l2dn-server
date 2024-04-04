@@ -1,27 +1,61 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="60001" toLevel="1" name="Siege Spectator Mode">
-		<!-- Turn on Siege Spectator Mode -->
+	<skill id="60001" toLevel="1" name="Siege Observation Mode">
+		<!-- Turn on Siege Observation Mode -->
 		<icon>icon.skill0922</icon>
 		<operateType>P</operateType>
 		<effectPoint>5000</effectPoint>
 	</skill>
-	<skill id="60002" toLevel="15" name="Einhasad Overseeing">
-		<!-- If attacking a character with the Counterattack setting active, a counterattack is triggered. After death in PvP/ PK:. The chance of dropping items is increased. Up to 2 items can be dropped. -->
+	<skill id="60002" toLevel="3" name="Einhasad Overseeing">
+		<!-- Dishonorable killings have drawn attention of Einhasad. P./ M. Def. -$s1, Speed -$s2. -->
 		<icon>icon.karma</icon>
 		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalType>PK_DEBUFF1</abnormalType>
+		<abnormalTime>-1</abnormalTime>
+		<canBeDispelled>false</canBeDispelled>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<isMagic>4</isMagic>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>-1</abnormalTime>
-		<isTriggeredSkill>true</isTriggeredSkill>
+		<effectPoint>0</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
 		<irreplacableBuff>true</irreplacableBuff>
-		<canBeDispelled>false</canBeDispelled>
 		<stayAfterDeath>true</stayAfterDeath>
+		<canBeDispelled>false</canBeDispelled>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-30</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="60003" toLevel="1" name="Server Level Ranking I">
-		<!-- A buff for the 1st place in the server level ranking. STR +1. INT +1. CON +1. MEN +1. DEX +1. WIT +1. Recovery Potions' Effect +50. Weight limit +100,000. P. Evasion +20 -->
+	<skill id="60003" toLevel="1" name="1st Place in the List of Ranks for Level on the Server">
+		<!-- Bonus for the 1st place in the list of ranks for level on the server. All basic characteristics +1, HP Recovery Potions' Effect +50, Weight Limit +100,000, P. Evasion +20. -->
 		<icon>icon.server_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -60,8 +94,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60004" toLevel="1" name="Server Level Ranking II">
-		<!-- A buff for the 2nd~30th places in the server level ranking. CON +1. MEN +1. DEX +1. WIT +1. Weight limit +10,000 -->
+	<skill id="60004" toLevel="1" name="2nd Place in the List of Ranks for Level on the Server">
+		<!-- Bonus for 2nd-30th places in the list of ranks for level on the server. CON/ MEN/ DEX/ WIT/ +1, Weight Limit +10,000. -->
 		<icon>icon.server_ranking_2</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -89,8 +123,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60005" toLevel="1" name="Server Level Ranking III">
-		<!-- A buff for the 31st~100th places in the server level ranking. CON +1. MEN +1. Weight limit +5000 -->
+	<skill id="60005" toLevel="1" name="3rd Place in the List of Ranks for Level on the Server">
+		<!-- Bonus for 31-100th places in the list of ranks for level on the server. CON/ MEN/ +1, Weight Limit +5,000. -->
 		<icon>icon.server_ranking_3</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -110,8 +144,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60006" toLevel="1" name="Human Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Humans. All Critical Damage +300 -->
+	<skill id="60006" toLevel="1" name="Human Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among humans. P./ M. Critical Damage +300. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -127,8 +161,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60007" toLevel="1" name="Elf Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Elves. Max HP +500. Max MP +400. Max CP +300 -->
+	<skill id="60007" toLevel="1" name="Elf Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among elves. P./ M. Atk. +300. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -144,8 +178,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60008" toLevel="1" name="Dark Elf Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Dark Elves. Received skill damage -1.8% -->
+	<skill id="60008" toLevel="1" name="Dark Elf Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among dark elves. Atk. Spd./ Casting Spd. +200. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -161,8 +195,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60009" toLevel="1" name="Orc Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Orcs. All Critical Rate +2% -->
+	<skill id="60009" toLevel="1" name="Orc Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among orcs. P./ M. Critical Rate +20. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -178,8 +212,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60010" toLevel="1" name="Dwarf Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Dwarves. Enchant success rate +1% when using weapon enchant scrolls. Enchant success rate +1% when using armor enchant scrolls. P. Atk. +300. Max HP +500 -->
+	<skill id="60010" toLevel="1" name="Dwarf Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among dwarves. Enchant success rate is increased. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -190,8 +224,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60011" toLevel="1" name="Kamael Level Ranking - 1st Place">
-		<!-- A buff for the 1st place in the level ranking among Kamaels. Debuff Resistance +2%. Anomaly Resistance +2% -->
+	<skill id="60011" toLevel="1" name="Kamael Level Ranking 1st Class">
+		<!-- Bonus for 1st place in the list of ranks for level among Kamael. P./ M. Accuracy, P./ M. Evasion +5. -->
 		<icon>icon.race_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -215,8 +249,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60012" toLevel="1" name="Server Level Ranking Effect I">
-		<!-- CON +1. MEN +1. Weight limit +5000 -->
+	<skill id="60012" toLevel="1" name="Bonuses for 1st Rank on the Server">
+		<!-- CON/ MEN +1, Weight Limit +5,000. -->
 		<icon>icon.UI_server_ranking_1</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -236,9 +270,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60013" toLevel="1" name="Server Level Ranking Effect II">
-		<!-- DEX +1. WIT +1. Weight limit +5000 -->
-		<icon>icon.UI_server_ranking_2</icon>
+	<skill id="60013" toLevel="1" name="Bonuses for 2nd Rank on the Server">
+		<!-- DEX/ WIT +1, Weight Limit +5000. -->
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -257,8 +290,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60014" toLevel="1" name="Server Level Ranking Effect III">
-		<!-- STR +1. INT +1. Weight limit +90,000. P. Evasion +20. HP Recovery Potions' Effect +50 -->
+	<skill id="60014" toLevel="1" name="Bonuses for 3rd Rank on the Server">
+		<!-- STR/ INT +1, Hero's HP Recovery Potion and Maliss' HP Recovery Potion Effect +50, Weight Limit +90,000, P. Evasion +20. -->
 		<icon>icon.UI_server_ranking_3</icon>
 		<magicLevel>40</magicLevel>
 		<operateType>P</operateType>
@@ -285,21 +318,19 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="60015" toLevel="1" name="Race Ranking Effect">
-		<!-- For adventurers who have taken the 1st place in rankings among their race. Humans: Skill Critical Damage increased. Elves: Max HP/ MP/ CP increased. Dark Elves: Received skill damage decreased. Orcs: All Critical Rate increased. Dwarves: Weapon/ armor enchant success rate/ P. Atk./ Max HP increased. Kamaels: Debuff/ Anomaly Resistance increased. Sylphs: Soulshot damage increased. For those who placed 1st-3rd:. All races: Worthy Warrior Transformation with unique appearance available. Death Knights: Unique cloak appearance (only for the 1st place) and Worthy Warrior Bonus available. Sylphs: Unique transformation and appearance modification via the Elemental Spirit Lv. 5 skill. -->
+	<skill id="60015" toLevel="1" name="Bonus for Rank Among Races">
+		<!-- Humans: P./ M. Critical Damage is increased. Elves: P./ M. Atk. is increased. Dark Elves: Atk./ Casting Spd. is increased. Orc: P./ M. Critical Rate is increased. Dwarves: Enchant success rate is increased. Kamael: P./ M. Accuracy, P./ M. Evasion is increased. -->
 		<icon>icon.UI_race_ranking_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="60016" toLevel="1" name="Effect of Holy Relic 1">
 		<!-- Activate the effect of Holy Relic -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>3500</hitTime>
 	</skill>
 	<skill id="60017" toLevel="1" name="Effect of Holy Relic 2">
 		<!-- Activate the effect of Holy Relic -->
-		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>3500</hitTime>
