@@ -38,33 +38,34 @@ public class Quest: AbstractScript, IIdentifiable
 	public static readonly Logger LOGGER = LogManager.GetLogger(nameof(Quest));
 	
 	/** Map containing lists of timers from the name of the timer. */
-	private readonly Map<String, List<QuestTimer>> _questTimers = new();
+	private readonly Map<string, List<QuestTimer>> _questTimers = new();
+
 	/** Map containing all the start conditions. */
 	private readonly Set<QuestCondition> _startCondition = new();
 	
 	private readonly int _questId;
 	private readonly byte _initialState = State.CREATED;
-	private bool _isCustom = false;
+	private bool _isCustom;
 	private NpcStringId _questNameNpcStringId;
 	
-	private int[] _questItemIds = null;
+	private int[] _questItemIds;
 	
 	private readonly NewQuest _questData;
 	
-	private const String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, " +
+	private const string DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, " +
 	                                            "or you don't meet this NPC's minimum quest requirements.</body></html>";
 	
 	private const int RESET_HOUR = 6;
 	private const int RESET_MINUTES = 30;
 	
-	private static readonly SkillHolder[] STORY_QUEST_BUFFS =
-	{
+	private static readonly SkillHolder[] _storyQuestBuffs =
+	[
 		new SkillHolder(1068, 1), // Might
 		new SkillHolder(1040, 1), // Shield
 		new SkillHolder(1204, 1), // Wind Walk
 		new SkillHolder(1086, 1), // Haste
-		new SkillHolder(1085, 1), // Acumen
-	};
+		new SkillHolder(1085, 1) // Acumen
+	];
 	
 	/**
 	 * @return the reset hour for a daily quest, could be overridden on a script.
@@ -111,7 +112,7 @@ public class Quest: AbstractScript, IIdentifiable
 					addFirstTalkId(_questData.getStartNpcId());
 				}
 				
-				if ((_questData.getEndNpcId() > 0) && (_questData.getEndNpcId() != _questData.getStartNpcId()))
+				if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
 				{
 					addFirstTalkId(_questData.getEndNpcId());
 				}
@@ -166,7 +167,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public int getNpcStringId()
 	{
-		return _questNameNpcStringId != null ? (int)_questNameNpcStringId / 100 : (_questId > 10000 ? _questId - 5000 : _questId);
+		return _questNameNpcStringId != null ? (int)_questNameNpcStringId / 100 : _questId > 10000 ? _questId - 5000 : _questId;
 	}
 	
 	public NpcStringId getQuestNameNpcStringId()
@@ -201,7 +202,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public QuestState getQuestState(Player player, bool initIfNone)
 	{
 		QuestState qs = player.getQuestState(getName());
-		if ((qs != null) || !initIfNone)
+		if (qs != null || !initIfNone)
 		{
 			return qs;
 		}
@@ -219,7 +220,7 @@ public class Quest: AbstractScript, IIdentifiable
 	/**
 	 * @return the name of the quest
 	 */
-	public virtual String getName()
+	public virtual string getName()
 	{
 		return GetType().Name;
 	}
@@ -227,9 +228,9 @@ public class Quest: AbstractScript, IIdentifiable
 	/**
 	 * @return the path of the quest script
 	 */
-	public String getPath()
+	public string getPath()
 	{
-		String path = GetType().FullName.Replace('.', '/');
+		string path = GetType().FullName.Replace('.', '/');
 		return path.Substring(0, path.LastIndexOf('/' + GetType().Name)); // TODO
 	}
 	
@@ -241,7 +242,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player associated with this timer (can be null)
 	 * @see #startQuestTimer(String, long, Npc, Player, bool)
 	 */
-	public void startQuestTimer(String name, TimeSpan time, Npc npc, Player player)
+	public void startQuestTimer(string name, TimeSpan time, Npc npc, Player player)
 	{
 		startQuestTimer(name, time, npc, player, false);
 	}
@@ -250,7 +251,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Gets the quest timers.
 	 * @return the quest timers
 	 */
-	public Map<String, List<QuestTimer>> getQuestTimers()
+	public Map<string, List<QuestTimer>> getQuestTimers()
 	{
 		return _questTimers;
 	}
@@ -264,7 +265,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param repeating indicates whether the timer is repeatable or one-time.<br>
 	 *            If {@code true}, the task is repeated every {@code time} milliseconds until explicitly stopped.
 	 */
-	public void startQuestTimer(String name, TimeSpan time, Npc npc, Player player, bool repeating)
+	public void startQuestTimer(string name, TimeSpan time, Npc npc, Player player, bool repeating)
 	{
 		if (name == null)
 		{
@@ -293,7 +294,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player associated with the quest timer to get
 	 * @return the quest timer that matches the specified parameters or {@code null} if nothing was found
 	 */
-	public QuestTimer getQuestTimer(String name, Npc npc, Player player)
+	public QuestTimer getQuestTimer(string name, Npc npc, Player player)
 	{
 		if (name == null)
 		{
@@ -301,14 +302,14 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return null;
 		}
 		
 		foreach (QuestTimer timer in timers)
 		{
-			if ((timer != null) && timer.equals(this, name, npc, player))
+			if (timer != null && timer.equals(this, name, npc, player))
 			{
 				return timer;
 			}
@@ -321,7 +322,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Cancel all quest timers with the specified name.
 	 * @param name the name of the quest timers to cancel
 	 */
-	public void cancelQuestTimers(String name)
+	public void cancelQuestTimers(string name)
 	{
 		if (name == null)
 		{
@@ -329,7 +330,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return;
 		}
@@ -351,7 +352,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc the NPC associated with the quest timer to cancel
 	 * @param player the player associated with the quest timer to cancel
 	 */
-	public void cancelQuestTimer(String name, Npc npc, Player player)
+	public void cancelQuestTimer(string name, Npc npc, Player player)
 	{
 		if (name == null)
 		{
@@ -359,14 +360,14 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return;
 		}
 		
 		foreach (QuestTimer timer in timers)
 		{
-			if ((timer != null) && timer.equals(this, name, npc, player))
+			if (timer != null && timer.equals(this, name, npc, player))
 			{
 				timer.cancel();
 			}
@@ -403,7 +404,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onAttack(npc, attacker, damage, isSummon, skill);
@@ -423,7 +424,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyDeath(Creature killer, Creature victim, QuestState qs)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onDeath(killer, victim, qs);
@@ -442,7 +443,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyItemUse(ItemTemplate item, Player player)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onItemUse(item, player);
@@ -462,7 +463,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifySpellFinished(Npc instance, Player player, Skill skill)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onSpellFinished(instance, player, skill);
@@ -483,7 +484,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyTrapAction(Trap trap, Creature trigger, TrapAction action)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onTrapAction(trap, trigger, action);
@@ -538,9 +539,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc
 	 * @param player
 	 */
-	public void notifyEvent(String @event, Npc npc, Player player)
+	public void notifyEvent(string @event, Npc npc, Player player)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			// Simulated talk should not exist when event runs.
@@ -563,7 +564,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyEnterWorld(Player player)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onEnterWorld(player);
@@ -583,7 +584,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyKill(Npc npc, Player killer, bool isSummon)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			// Simulated talk should not exist when killing.
@@ -614,7 +615,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyTalk(Npc npc, Player player)
 	{
-		String res;
+		string res;
 		try
 		{
 			Set<Quest> startingQuests;
@@ -629,8 +630,8 @@ public class Quest: AbstractScript, IIdentifiable
 			else
 				startingQuests = new();
 			
-			String startConditionHtml = getStartConditionHtml(player, npc);
-			if (startingQuests.Contains(this) && (startConditionHtml != null))
+			string startConditionHtml = getStartConditionHtml(player, npc);
+			if (startingQuests.Contains(this) && startConditionHtml != null)
 			{
 				res = startConditionHtml;
 			}
@@ -657,7 +658,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyFirstTalk(Npc npc, Player player)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onFirstTalk(npc, player);
@@ -680,7 +681,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onAcquireSkill(npc, player, skill, type);
@@ -700,7 +701,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyItemTalk(Item item, Player player)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onItemTalk(item, player);
@@ -718,7 +719,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player
 	 * @return
 	 */
-	public String onItemTalk(Item item, Player player)
+	public string onItemTalk(Item item, Player player)
 	{
 		return null;
 	}
@@ -728,13 +729,13 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player
 	 * @param event
 	 */
-	public void notifyItemEvent(Item item, Player player, String @event)
+	public void notifyItemEvent(Item item, Player player, string @event)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onItemEvent(item, player, @event);
-			if ((res != null) && (res.equalsIgnoreCase("true") || res.equalsIgnoreCase("false")))
+			if (res != null && (res.equalsIgnoreCase("true") || res.equalsIgnoreCase("false")))
 			{
 				return;
 			}
@@ -756,7 +757,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifySkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onSkillSee(npc, caster, skill, targets, isSummon);
@@ -777,7 +778,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onFactionCall(npc, caller, attacker, isSummon);
@@ -797,7 +798,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAggroRangeEnter(Npc npc, Player player, bool isSummon)
 	{
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onAggroRangeEnter(npc, player, isSummon);
@@ -821,7 +822,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			player = creature.getActingPlayer();
 		}
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onCreatureSee(npc, creature);
@@ -846,7 +847,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param receiver - NPC, who received event
 	 * @param reference - WorldObject to pass, if needed
 	 */
-	public void notifyEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
+	public void notifyEventReceived(string eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		try
 		{
@@ -865,7 +866,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void notifyEnterZone(Creature creature, ZoneType zone)
 	{
 		Player player = creature.getActingPlayer();
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onEnterZone(creature, zone);
@@ -891,7 +892,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void notifyExitZone(Creature creature, ZoneType zone)
 	{
 		Player player = creature.getActingPlayer();
-		String res = null;
+		string res = null;
 		try
 		{
 			res = onExitZone(creature, zone);
@@ -985,7 +986,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the damage was actually dealt by the player's pet.
 	 * @return
 	 */
-	public String onAttack(Npc npc, Player attacker, int damage, bool isSummon)
+	public string onAttack(Npc npc, Player attacker, int damage, bool isSummon)
 	{
 		return null;
 	}
@@ -1000,7 +1001,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill parameter is the skill that player used to attack NPC.
 	 * @return
 	 */
-	public String onAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
+	public string onAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
 	{
 		return onAttack(npc, attacker, damage, isSummon);
 	}
@@ -1013,9 +1014,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs this parameter contains a reference to the QuestState of whomever was interested (waiting) for this kill.
 	 * @return
 	 */
-	public String onDeath(Creature killer, Creature victim, QuestState qs)
+	public string onDeath(Creature killer, Creature victim, QuestState qs)
 	{
-		return onAdvEvent("", (killer is Npc) ? (Npc) killer : null, qs.getPlayer());
+		return onAdvEvent("", killer is Npc ? (Npc) killer : null, qs.getPlayer());
 	}
 	
 	/**
@@ -1039,7 +1040,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            This parameter may be {@code null} in certain circumstances.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual String onAdvEvent(String @event, Npc npc, Player player)
+	public virtual string onAdvEvent(string @event, Npc npc, Player player)
 	{
 		if (player != null)
 		{
@@ -1067,7 +1068,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs this parameter contains a reference to the quest state of the player who used the link or started the timer.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onEvent(String @event, QuestState qs)
+	public string onEvent(string @event, QuestState qs)
 	{
 		return null;
 	}
@@ -1079,7 +1080,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the killer was the player's pet.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual String onKill(Npc npc, Player killer, bool isSummon)
+	public virtual string onKill(Npc npc, Player killer, bool isSummon)
 	{
 		if (!getNpcLogList(killer).isEmpty())
 		{
@@ -1095,7 +1096,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param simulated Used by QuestLink to determine state of quest.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onTalk(Npc npc, Player talker, bool simulated)
+	public string onTalk(Npc npc, Player talker, bool simulated)
 	{
 		QuestState qs = talker.getQuestState(getName());
 		if (qs != null)
@@ -1112,7 +1113,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param talker this parameter contains a reference to the exact instance of the player who is talking to the NPC.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public String onTalk(Npc npc, Player talker)
+	public string onTalk(Npc npc, Player talker)
 	{
 		return null;
 	}
@@ -1145,7 +1146,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param event
 	 * @return
 	 */
-	public String onItemEvent(Item item, Player player, String @event)
+	public string onItemEvent(Item item, Player player, string @event)
 	{
 		return null;
 	}
@@ -1157,7 +1158,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who requested the skill list.
 	 * @return
 	 */
-	public String onAcquireSkillList(Npc npc, Player player)
+	public string onAcquireSkillList(Npc npc, Player player)
 	{
 		return null;
 	}
@@ -1169,7 +1170,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill this parameter contains a reference to the skill that the player requested its info.
 	 * @return
 	 */
-	public String onAcquireSkillInfo(Npc npc, Player player, Skill skill)
+	public string onAcquireSkillInfo(Npc npc, Player player, Skill skill)
 	{
 		return null;
 	}
@@ -1183,7 +1184,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param type the skill learn type
 	 * @return
 	 */
-	public String onAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
+	public string onAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
 	{
 		return null;
 	}
@@ -1195,7 +1196,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player who used the item
 	 * @return
 	 */
-	public String onItemUse(ItemTemplate item, Player player)
+	public string onItemUse(ItemTemplate item, Player player)
 	{
 		return null;
 	}
@@ -1214,7 +1215,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon if {@code true}, the skill was actually cast by the player's summon, not the player himself
 	 * @return
 	 */
-	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
+	public string onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
 	{
 		return null;
 	}
@@ -1226,7 +1227,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill the actual skill that was used by the NPC.
 	 * @return
 	 */
-	public String onSpellFinished(Npc npc, Player player, Skill skill)
+	public string onSpellFinished(Npc npc, Player player, Skill skill)
 	{
 		return null;
 	}
@@ -1238,7 +1239,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param action this parameter contains a reference to the action that was triggered.
 	 * @return
 	 */
-	public String onTrapAction(Trap trap, Creature trigger, TrapAction action)
+	public string onTrapAction(Trap trap, Creature trigger, TrapAction action)
 	{
 		return null;
 	}
@@ -1250,7 +1251,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc this parameter contains a reference to the exact instance of the NPC who just (re)spawned.
 	 * @return
 	 */
-	public String onSpawn(Npc npc)
+	public string onSpawn(Npc npc)
 	{
 		return null;
 	}
@@ -1271,7 +1272,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the attacker was the player's summon.
 	 * @return
 	 */
-	public String onFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
+	public string onFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
 	{
 		return null;
 	}
@@ -1283,7 +1284,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the character that entered the aggression range was indeed the player, else it specifies that the character was the player's summon.
 	 * @return
 	 */
-	public String onAggroRangeEnter(Npc npc, Player player, bool isSummon)
+	public string onAggroRangeEnter(Npc npc, Player player, bool isSummon)
 	{
 		return null;
 	}
@@ -1294,7 +1295,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param creature the creature seen by the NPC
 	 * @return
 	 */
-	public String onCreatureSee(Npc npc, Creature creature)
+	public string onCreatureSee(Npc npc, Creature creature)
 	{
 		return null;
 	}
@@ -1304,7 +1305,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who is entering to the world.
 	 * @return
 	 */
-	public String onEnterWorld(Player player)
+	public string onEnterWorld(Player player)
 	{
 		return null;
 	}
@@ -1315,7 +1316,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public String onEnterZone(Creature creature, ZoneType zone)
+	public string onEnterZone(Creature creature, ZoneType zone)
 	{
 		return null;
 	}
@@ -1326,7 +1327,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public String onExitZone(Creature creature, ZoneType zone)
+	public string onExitZone(Creature creature, ZoneType zone)
 	{
 		return null;
 	}
@@ -1338,7 +1339,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param reference - WorldObject to pass, if needed
 	 * @return
 	 */
-	public String onEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
+	public string onEventReceived(string eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		return null;
 	}
@@ -1463,9 +1464,9 @@ public class Quest: AbstractScript, IIdentifiable
 	public bool showError(Player player, Exception exception)
 	{
 		LOGGER.Warn(getScriptFile() + " " + exception);
-		if ((player != null) && player.getAccessLevel().isGm())
+		if (player != null && player.getAccessLevel().isGm())
 		{
-			String res = "<html><body><title>Script error</title>" + exception + "</body></html>";
+			string res = "<html><body><title>Script error</title>" + exception + "</body></html>";
 			return showResult(player, res);
 		}
 		return false;
@@ -1477,7 +1478,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @return {@code false} if the message was sent, {@code true} otherwise
 	 * @see #showResult(Player, String, Npc)
 	 */
-	public bool showResult(Player player, String res)
+	public bool showResult(Player player, string res)
 	{
 		return showResult(player, res, null);
 	}
@@ -1496,9 +1497,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param res the message to show to the player
 	 * @return {@code false} if the message was sent, {@code true} otherwise
 	 */
-	public bool showResult(Player player, String res, Npc npc)
+	public bool showResult(Player player, string res, Npc npc)
 	{
-		if ((res == null) || res.isEmpty() || (player == null))
+		if (res == null || res.isEmpty() || player == null)
 		{
 			return true;
 		}
@@ -1550,8 +1551,8 @@ public class Quest: AbstractScript, IIdentifiable
 			foreach (var record in query)
 			{
 				// Get the ID of the quest and its state
-				String questId = record.Name;
-				String statename = record.Value;
+				string questId = record.Name;
+				string statename = record.Value;
 
 				// Search quest associated with the ID
 				Quest q = QuestManager.getInstance().getQuest(questId);
@@ -1583,9 +1584,9 @@ public class Quest: AbstractScript, IIdentifiable
 
 			foreach (var record in query2)
 			{
-				String questId = record.Name;
-				String var = record.Variable;
-				String value = record.Value;
+				string questId = record.Name;
+				string var = record.Variable;
+				string value = record.Value;
 				// Get the QuestState saved in the loop before
 				QuestState qs = player.getQuestState(questId);
 				if (qs == null)
@@ -1617,7 +1618,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param var the name of the variable
 	 * @param value the value of the variable
 	 */
-	public static void createQuestVarInDb(QuestState qs, String var, String value)
+	public static void createQuestVarInDb(QuestState qs, string var, string value)
 	{
 		try 
 		{
@@ -1652,7 +1653,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param var the name of the variable
 	 * @param value the value of the variable
 	 */
-	public static void updateQuestVarInDb(QuestState qs, String var, String value)
+	public static void updateQuestVarInDb(QuestState qs, string var, string value)
 	{
 		createQuestVarInDb(qs, var, value);
 	}
@@ -1662,7 +1663,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs the {@link QuestState} object whose variable to delete
 	 * @param var the name of the variable to delete
 	 */
-	public static void deleteQuestVarInDb(QuestState qs, String var)
+	public static void deleteQuestVarInDb(QuestState qs, string var)
 	{
 		try 
 		{
@@ -1727,10 +1728,10 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when no quest is available: "You are either not on a quest that involves this NPC.."
 	 */
-	public static String getNoQuestMsg(Player player)
+	public static string getNoQuestMsg(Player player)
 	{
-		String result = HtmCache.getInstance().getHtm("html/noquest.htm", player.getLang());
-		if ((result != null) && (result.Length > 0))
+		string result = HtmCache.getInstance().getHtm("html/noquest.htm", player.getLang());
+		if (result != null && result.Length > 0)
 		{
 			return result;
 		}
@@ -1741,7 +1742,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when player don't have minimum level for reward: "You cannot receive quest rewards as your character.."
 	 */
-	public static String getNoQuestLevelRewardMsg(Player player)
+	public static string getNoQuestLevelRewardMsg(Player player)
 	{
 		return HtmCache.getInstance().getHtm("html/noquestlevelreward.html", player.getLang());
 	}
@@ -1750,7 +1751,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when quest is already completed
 	 */
-	public static String getAlreadyCompletedMsg(Player player)
+	public static string getAlreadyCompletedMsg(Player player)
 	{
 		return getAlreadyCompletedMsg(player, QuestType.ONE_TIME);
 	}
@@ -1760,13 +1761,13 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param type the Quest type
 	 * @return the default html for when quest is already completed
 	 */
-	public static String getAlreadyCompletedMsg(Player player, QuestType type)
+	public static string getAlreadyCompletedMsg(Player player, QuestType type)
 	{
 		return HtmCache.getInstance()
 			.getHtm(
-				(type == QuestType.ONE_TIME
+				type == QuestType.ONE_TIME
 					? "html/alreadyCompleted.html"
-					: "html/alreadyCompletedDaily.html"), player.getLang());
+					: "html/alreadyCompletedDaily.html", player.getLang());
 	}
 	
 	// TODO: Clean up these methods
@@ -2377,7 +2378,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		Party party = player.getParty();
-		if ((party == null) || (party.getMembers().isEmpty()))
+		if (party == null || party.getMembers().isEmpty())
 		{
 			return player;
 		}
@@ -2406,7 +2407,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 *         If the {@code var} parameter is {@code null}, a random party member is selected without any conditions.<br>
 	 *         The party member must be within a range of 1500 ingame units of the target of the reference player, or, if no target exists, within the same range of the player itself
 	 */
-	public Player getRandomPartyMember(Player player, String var, String value)
+	public Player getRandomPartyMember(Player player, string var, string value)
 	{
 		// if no valid player instance is passed, there is nothing to check...
 		if (player == null)
@@ -2424,10 +2425,10 @@ public class Quest: AbstractScript, IIdentifiable
 		QuestState temp = null;
 		Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if ((party == null) || (party.getMembers().isEmpty()))
+		if (party == null || party.getMembers().isEmpty())
 		{
 			temp = player.getQuestState(getName());
-			if ((temp != null) && temp.isSet(var) && temp.get(var).equalsIgnoreCase(value))
+			if (temp != null && temp.isSet(var) && temp.get(var).equalsIgnoreCase(value))
 			{
 				return player; // match
 			}
@@ -2450,7 +2451,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			temp = partyMember.getQuestState(getName());
-			if ((temp != null) && (temp.get(var) != null) && (temp.get(var)).equalsIgnoreCase(value) && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
+			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
 			}
@@ -2484,10 +2485,10 @@ public class Quest: AbstractScript, IIdentifiable
 		QuestState temp = null;
 		Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if ((party == null) || (party.getMembers().isEmpty()))
+		if (party == null || party.getMembers().isEmpty())
 		{
 			temp = player.getQuestState(getName());
-			if ((temp != null) && (temp.getState() == state))
+			if (temp != null && temp.getState() == state)
 			{
 				return player; // match
 			}
@@ -2513,7 +2514,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			temp = partyMember.getQuestState(getName());
-			if ((temp != null) && (temp.getState() == state) && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
+			if (temp != null && temp.getState() == state && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
 			}
@@ -2539,7 +2540,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public Player getRandomPartyMember(Player player, Npc npc)
 	{
-		if ((player == null) || !checkDistanceToTarget(player, npc))
+		if (player == null || !checkDistanceToTarget(player, npc))
 		{
 			return null;
 		}
@@ -2558,14 +2559,14 @@ public class Quest: AbstractScript, IIdentifiable
 			foreach (Player member in party.getMembers())
 			{
 				int rnd = getRandom(1000);
-				if ((rnd > highestRoll) && checkPartyMember(member, npc))
+				if (rnd > highestRoll && checkPartyMember(member, npc))
 				{
 					highestRoll = rnd;
 					luckyPlayer = member;
 				}
 			}
 		}
-		return (luckyPlayer != null) && checkDistanceToTarget(luckyPlayer, npc) ? luckyPlayer : null;
+		return luckyPlayer != null && checkDistanceToTarget(luckyPlayer, npc) ? luckyPlayer : null;
 	}
 	
 	/**
@@ -2592,7 +2593,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public QuestState getRandomPartyMemberState(Player player, QuestCondType condition, int playerChance, Npc target)
 	{
-		if ((player == null) || (playerChance < 1))
+		if (player == null || playerChance < 1)
 		{
 			return null;
 		}
@@ -2604,7 +2605,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestState> candidates = new();
-		if (checkPartyMemberConditions(qs, condition, target) && (playerChance > 0))
+		if (checkPartyMemberConditions(qs, condition, target) && playerChance > 0)
 		{
 			for (int i = 0; i < playerChance; i++)
 			{
@@ -2637,12 +2638,12 @@ public class Quest: AbstractScript, IIdentifiable
 	
 	private bool checkPartyMemberConditions(QuestState qs, QuestCondType condition, Npc npc)
 	{
-		return (qs != null) && ((condition == (QuestCondType)(-1)) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
+		return qs != null && (condition == (QuestCondType)(-1) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
 	}
 	
 	private static bool checkDistanceToTarget(Player player, Npc target)
 	{
-		return (target == null) || Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, target, true);
+		return target == null || Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, target, true);
 	}
 	
 	/**
@@ -2666,7 +2667,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public String showHtmlFile(Player player, String filename)
+	public string showHtmlFile(Player player, string filename)
 	{
 		return showHtmlFile(player, filename, null);
 	}
@@ -2679,12 +2680,12 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public String showHtmlFile(Player player, String filename, Npc npc)
+	public string showHtmlFile(Player player, string filename, Npc npc)
 	{
 		bool questwindow = !filename.endsWith(".html");
 		
 		// Create handler to file linked to the quest
-		String content = getHtm(player, filename);
+		string content = getHtm(player, filename);
 		
 		// Send message to client if message not empty
 		if (content != null)
@@ -2697,7 +2698,7 @@ public class Quest: AbstractScript, IIdentifiable
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
 			htmlContent.Replace("%playername%", player.getName());
 
-			if (questwindow && (_questId > 0) && (_questId < 20000) && (_questId != 999))
+			if (questwindow && _questId > 0 && _questId < 20000 && _questId != 999)
 			{
 				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.getObjectId(), _questId, htmlContent);
 				player.sendPacket(npcReply);
@@ -2718,7 +2719,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param fileName the html file to be get.
 	 * @return the HTML file contents
 	 */
-	public string? getHtm(Player player, String fileName)
+	public string? getHtm(Player player, string fileName)
 	{
 		HtmCache hc = HtmCache.getInstance();
 
@@ -2754,7 +2755,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		foreach (int id in items)
 		{
-			if ((id != 0) && (ItemData.getInstance().getTemplate(id) == null))
+			if (id != 0 && ItemData.getInstance().getTemplate(id) == null)
 			{
 				LOGGER.Error(GetType().Name + ": Found registerQuestItems for non existing item: " + id + "!");
 			}
@@ -2771,7 +2772,7 @@ public class Quest: AbstractScript, IIdentifiable
 		takeItemsByIds(player, -1, _questItemIds);
 	}
 	
-	public override String getScriptName()
+	public override string getScriptName()
 	{
 		return getName();
 	}
@@ -2858,7 +2859,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public bool isTarget<T>(int[] ids, WorldObject target)
 		where T: WorldObject
 	{
-		if ((target != null) && (target is T))
+		if (target != null && target is T)
 		{
 			return CommonUtil.contains(ids, target.getId());
 		}
@@ -2911,10 +2912,10 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc
 	 * @return the HTML
 	 */
-	public String getStartConditionHtml(Player player, Npc npc)
+	public string getStartConditionHtml(Player player, Npc npc)
 	{
 		QuestState qs = getQuestState(player, false);
-		if ((qs != null) && !qs.isCreated())
+		if (qs != null && !qs.isCreated())
 		{
 			return null;
 		}
@@ -2935,7 +2936,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param questStartRequirement the predicate condition
 	 * @param html the HTML to display if that condition is not met
 	 */
-	public void addCondStart(Predicate<Player> questStartRequirement, String html)
+	public void addCondStart(Predicate<Player> questStartRequirement, string html)
 	{
 		getStartConditions().add(new QuestCondition(questStartRequirement, html));
 	}
@@ -2945,7 +2946,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param questStartRequirement the predicate condition
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondStart(Predicate<Player> questStartRequirement, params KeyValuePair<int, String>[] pairs)
+	public void addCondStart(Predicate<Player> questStartRequirement, params KeyValuePair<int, string>[] pairs)
 	{
 		getStartConditions().add(new QuestCondition(questStartRequirement, pairs));
 	}
@@ -2956,9 +2957,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondLevel(int minLevel, int maxLevel, String html)
+	public void addCondLevel(int minLevel, int maxLevel, string html)
 	{
-		addCondStart(p => (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), html);
+		addCondStart(p => p.getLevel() >= minLevel && p.getLevel() <= maxLevel, html);
 	}
 	
 	/**
@@ -2967,9 +2968,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondMinLevel(int minLevel, int maxLevel, params KeyValuePair<int, String>[] pairs)
+	public void addCondMinLevel(int minLevel, int maxLevel, params KeyValuePair<int, string>[] pairs)
 	{
-		addCondStart(p => (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), pairs);
+		addCondStart(p => p.getLevel() >= minLevel && p.getLevel() <= maxLevel, pairs);
 	}
 	
 	/**
@@ -2977,7 +2978,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param minLevel the minimum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondMinLevel(int minLevel, String html)
+	public void addCondMinLevel(int minLevel, string html)
 	{
 		addCondStart(p => p.getLevel() >= minLevel, html);
 	}
@@ -2987,7 +2988,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param minLevel the minimum player's level to start the quest
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondMinLevel(int minLevel, params KeyValuePair<int, String>[] pairs)
+	public void addCondMinLevel(int minLevel, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getLevel() >= minLevel, pairs);
 	}
@@ -2997,7 +2998,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondMaxLevel(int maxLevel, String html)
+	public void addCondMaxLevel(int maxLevel, string html)
 	{
 		addCondStart(p => p.getLevel() <= maxLevel, html);
 	}
@@ -3007,7 +3008,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondMaxLevel(int maxLevel, params KeyValuePair<int, String>[] pairs)
+	public void addCondMaxLevel(int maxLevel, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getLevel() <= maxLevel, pairs);
 	}
@@ -3017,7 +3018,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param race the race
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondRace(Race race, String html)
+	public void addCondRace(Race race, string html)
 	{
 		addCondStart(p => p.getRace() == race, html);
 	}
@@ -3027,7 +3028,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param race the race
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondRace(Race race, params KeyValuePair<int, String>[] pairs)
+	public void addCondRace(Race race, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getRace() == race, pairs);
 	}
@@ -3037,7 +3038,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param race the race
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondNotRace(Race race, String html)
+	public void addCondNotRace(Race race, string html)
 	{
 		addCondStart(p => p.getRace() != race, html);
 	}
@@ -3047,7 +3048,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param race the race
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondNotRace(Race race, params KeyValuePair<int, String>[] pairs)
+	public void addCondNotRace(Race race, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getRace() != race, pairs);
 	}
@@ -3057,7 +3058,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param name the quest name
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondCompletedQuest(String name, String html)
+	public void addCondCompletedQuest(string name, string html)
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), html);
 	}
@@ -3067,7 +3068,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param name the quest name
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondCompletedQuest(String name, params KeyValuePair<int, String>[] pairs)
+	public void addCondCompletedQuest(string name, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
 	}
@@ -3077,7 +3078,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param name the quest name
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondStartedQuest(String name, String html)
+	public void addCondStartedQuest(string name, string html)
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), html);
 	}
@@ -3087,7 +3088,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param name the quest name
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondStartedQuest(String name, params KeyValuePair<int, String>[] pairs)
+	public void addCondStartedQuest(string name, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), pairs);
 	}
@@ -3097,7 +3098,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondClassId(CharacterClass classId, String html)
+	public void addCondClassId(CharacterClass classId, string html)
 	{
 		addCondStart(p => p.getClassId() == classId, html);
 	}
@@ -3107,7 +3108,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondClassId(CharacterClass classId, params KeyValuePair<int, String>[] pairs)
+	public void addCondClassId(CharacterClass classId, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getClassId() == classId, pairs);
 	}
@@ -3117,12 +3118,12 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classIds the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondClassIds(List<CharacterClass> classIds, String html)
+	public void addCondClassIds(List<CharacterClass> classIds, string html)
 	{
 		addCondStart(p => classIds.Contains(p.getClassId()), html);
 	}
 	
-	public void addNewQuestConditions(NewQuestCondition condition, String html)
+	public void addNewQuestConditions(NewQuestCondition condition, string html)
 	{
 		if (!condition.getAllowedClassIds().isEmpty())
 		{
@@ -3157,7 +3158,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondNotClassId(CharacterClass classId, String html)
+	public void addCondNotClassId(CharacterClass classId, string html)
 	{
 		addCondStart(p => p.getClassId() != classId, html);
 	}
@@ -3167,7 +3168,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param classId the class ID
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondNotClassId(CharacterClass classId, params KeyValuePair<int, String>[] pairs)
+	public void addCondNotClassId(CharacterClass classId, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.getClassId() != classId, pairs);
 	}
@@ -3176,7 +3177,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Adds a subclass active start condition to the quest.
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondIsSubClassActive(String html)
+	public void addCondIsSubClassActive(string html)
 	{
 		addCondStart(p => p.isSubClassActive(), html);
 	}
@@ -3185,7 +3186,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Adds a subclass active start condition to the quest.
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondIsSubClassActive(params KeyValuePair<int, String>[] pairs)
+	public void addCondIsSubClassActive(params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.isSubClassActive(), pairs);
 	}
@@ -3194,7 +3195,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Adds a not-subclass active start condition to the quest.
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondIsNotSubClassActive(String html)
+	public void addCondIsNotSubClassActive(string html)
 	{
 		addCondStart(p => !p.isSubClassActive() && !p.isDualClassActive(), html);
 	}
@@ -3203,7 +3204,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * Adds a not-subclass active start condition to the quest.
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondIsNotSubClassActive(params KeyValuePair<int, String>[] pairs)
+	public void addCondIsNotSubClassActive(params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => !p.isSubClassActive() && !p.isDualClassActive(), pairs);
 	}
@@ -3213,7 +3214,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param categoryType the category type
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondInCategory(CategoryType categoryType, String html)
+	public void addCondInCategory(CategoryType categoryType, string html)
 	{
 		addCondStart(p => p.isInCategory(categoryType), html);
 	}
@@ -3223,7 +3224,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param categoryType the category type
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondInCategory(CategoryType categoryType, params KeyValuePair<int, String>[] pairs)
+	public void addCondInCategory(CategoryType categoryType, params KeyValuePair<int, string>[] pairs)
 	{
 		addCondStart(p => p.isInCategory(categoryType), pairs);
 	}
@@ -3233,9 +3234,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param clanLevel the clan level
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondClanLevel(int clanLevel, String html)
+	public void addCondClanLevel(int clanLevel, string html)
 	{
-		addCondStart(p => (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), html);
+		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, html);
 	}
 	
 	/**
@@ -3243,9 +3244,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param clanLevel the clan level
 	 * @param pairs the HTML to display if the condition is not met per each npc
 	 */
-	public void addCondClanLevel(int clanLevel, params KeyValuePair<int, String>[] pairs)
+	public void addCondClanLevel(int clanLevel, params KeyValuePair<int, string>[] pairs)
 	{
-		addCondStart(p => (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), pairs);
+		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, pairs);
 	}
 	
 	public void onQuestAborted(Player player)
@@ -3256,7 +3257,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		if (Config.ENABLE_STORY_QUEST_BUFF_REWARD)
 		{
-			foreach (SkillHolder holder in STORY_QUEST_BUFFS)
+			foreach (SkillHolder holder in _storyQuestBuffs)
 			{
 				SkillCaster.triggerCast(npc, player, holder.getSkill());
 			}
@@ -3273,7 +3274,7 @@ public class Quest: AbstractScript, IIdentifiable
 		NewQuestReward reward = _questData.getRewards();
 		if (reward.getItems() != null)
 		{
-			if ((reward.getItems() != null) && !reward.getItems().isEmpty())
+			if (reward.getItems() != null && !reward.getItems().isEmpty())
 			{
 				foreach (ItemHolder item in reward.getItems())
 				{
@@ -3323,7 +3324,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		// Players should not be able to teleport if in a special location.
-		if ((player.getMovieHolder() != null) || player.isFishing() || player.isInInstance() || player.isOnEvent() || player.isInOlympiadMode() || player.inObserverMode() || player.isInTraingCamp() || player.isInsideZone(ZoneId.TIMED_HUNTING))
+		if (player.getMovieHolder() != null || player.isFishing() || player.isInInstance() || player.isOnEvent() || player.isInOlympiadMode() || player.inObserverMode() || player.isInTraingCamp() || player.isInsideZone(ZoneId.TIMED_HUNTING))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;
@@ -3337,7 +3338,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
+		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;

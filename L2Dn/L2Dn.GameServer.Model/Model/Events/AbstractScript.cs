@@ -41,11 +41,11 @@ using NLog;
 
 namespace L2Dn.GameServer.Model.Events;
 
-public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, IEventTimerCancel<String>
+public abstract class AbstractScript: ManagedScript, IEventTimerEvent<string>, IEventTimerCancel<string>
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(AbstractScript));
 	private readonly Set<EventContainer> _eventContainers = new();
-	private TimerExecutor<String>? _timerExecutor;
+	private TimerExecutor<string>? _timerExecutor;
 
 	protected AbstractScript()
 	{
@@ -66,30 +66,30 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		}
 	}
 	
-	public virtual void onTimerEvent(TimerHolder<String> holder)
+	public virtual void onTimerEvent(TimerHolder<string> holder)
 	{
 		onTimerEvent(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
 	
-	public virtual void onTimerCancel(TimerHolder<String> holder)
+	public virtual void onTimerCancel(TimerHolder<string> holder)
 	{
 		onTimerCancel(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
 	
-	public virtual void onTimerEvent(String @event, StatSet @params, Npc npc, Player player)
+	public virtual void onTimerEvent(string @event, StatSet @params, Npc npc, Player player)
 	{
 		_logger.Warn("[" + GetType().Name + "]: Timer event arrived at non overriden onTimerEvent method event: " +
 		            @event + " npc: " + npc + " player: " + player);
 	}
 	
-	public void onTimerCancel(String @event, StatSet @params, Npc npc, Player player)
+	public void onTimerCancel(string @event, StatSet @params, Npc npc, Player player)
 	{
 	}
 	
 	/**
 	 * @return the {@link TimerExecutor} object that manages timers
 	 */
-	public TimerExecutor<String> getTimers()
+	public TimerExecutor<string> getTimers()
 	{
 		if (_timerExecutor == null)
 		{
@@ -97,7 +97,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 			{
 				if (_timerExecutor == null)
 				{
-					_timerExecutor = new TimerExecutor<String>(this, this);
+					_timerExecutor = new TimerExecutor<string>(this, this);
 				}
 			}
 		}
@@ -1190,7 +1190,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param text the message to display
 	 * @param time the duration of the message in milliseconds
 	 */
-	public static void showOnScreenMsg(Player player, String text, int time)
+	public static void showOnScreenMsg(Player player, string text, int time)
 	{
 		if (player.isSimulatingTalking())
 		{
@@ -1244,7 +1244,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 	 * @param time the duration of the message in milliseconds
 	 * @param params values of parameters to replace in the system message (like S1, C1 etc.)
 	 */
-	public static void showOnScreenMsg(Player player, SystemMessageId systemMsg, int position, int time, params String[] @params)
+	public static void showOnScreenMsg(Player player, SystemMessageId systemMsg, int position, int time, params string[] @params)
 	{
 		if (player.isSimulatingTalking())
 		{
@@ -2303,7 +2303,7 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<String>, I
 		return check;
 	}
 	
-	public static void playSound(Instance world, String sound)
+	public static void playSound(Instance world, string sound)
 	{
 		world.broadcastPacket().SendPackets(new PlaySoundPacket(sound));
 	}
