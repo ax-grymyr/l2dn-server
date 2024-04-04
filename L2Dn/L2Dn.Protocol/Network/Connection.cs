@@ -130,7 +130,11 @@ public abstract class Connection
         }
         catch (Exception exception)
         {
-            if (exception is SocketException { SocketErrorCode: SocketError.Success or SocketError.OperationAborted })
+            if (exception is SocketException
+                {
+                    SocketErrorCode: SocketError.Success or SocketError.OperationAborted
+                    or SocketError.ConnectionReset
+                })
             {
                 return;
             }
