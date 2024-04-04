@@ -20,7 +20,7 @@ public class FileLoggerConfig: LoggerConfigBase
 
         FileTarget fileTarget = new("file")
         {
-            FileName = path + "${cached:cached=true:Inner=${date:format=yyyy-MM-dd-HH-mm-ss}:CacheKey=${shortdate}}.log",
+            FileName = path + "${cached:cached=true:Inner=${date:format=yyyyMMdd-HHmmss}:CacheKey=${shortdate}}.log",
             Layout = @"[${date:format=yyyy-MM-dd HH\:mm\:ss.fff}][${level}] ${message} ${exception}",
             Encoding = Encoding.UTF8,
             AutoFlush = true,
