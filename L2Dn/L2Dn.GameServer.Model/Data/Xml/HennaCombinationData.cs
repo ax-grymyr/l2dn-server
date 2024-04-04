@@ -44,14 +44,14 @@ public class HennaCombinationData: DataReaderBase
 			int count = el.Attribute("count").GetInt32(0);
 			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();
 			henna.addReward(new CombinationHennaReward(hennaId, id, count, type));
-			if ((id != -1) && (ItemData.getInstance().getTemplate(id) == null))
+			if (id != -1 && ItemData.getInstance().getTemplate(id) == null)
 			{
 				LOGGER.Error(GetType().Name + ": Could not find item with id " + id);
 			}
 
-			if ((hennaId != 0) && (HennaData.getInstance().getHenna(hennaId) == null))
+			if (hennaId != 0 && HennaData.getInstance().getHenna(hennaId) == null)
 			{
-				LOGGER.Error(GetType().Name + ": Could not find henna with id " + id);
+				LOGGER.Error(GetType().Name + ": Could not find henna with id " + hennaId);
 			}
 		});
 
