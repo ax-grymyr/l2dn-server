@@ -57,7 +57,7 @@ public class TeleporterData: DataReaderBase
 			el.Elements("location").ForEach(e => { holder.registerLocation(new StatSet(e)); });
 
 			// Register holder
-			if (teleList.putIfAbsent(name, holder) != null)
+			if (!teleList.TryAdd(name, holder))
 			{
 				LOGGER.Error("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
 			}
