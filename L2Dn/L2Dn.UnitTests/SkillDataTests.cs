@@ -28,7 +28,7 @@ public class SkillDataTests
         Dictionary<int, string> strings = euSkillName.Texts.ToDictionary(x => (int)x.Index, x => x.Text);
 
         // Skills
-        string GetString(int index) => index >= 0 ? strings[index] : string.Empty;
+        string GetString(int index) => index >= 0 ? strings[index].Trim() : string.Empty;
         List<Skill> skills = euSkillName.Records.Select(x => new Skill((int)x.SkillId, x.SkillLevel, x.SkillSubLevel,
                 GetString(x.Name), GetString(x.Description),
                 GetString(x.DescriptionParam), GetString(x.EnchantName), GetString(x.EnchantNameParam),
@@ -42,7 +42,7 @@ public class SkillDataTests
         List<XmlSkill> xmlSkills = Directory
             .EnumerateFiles(classic30DataPackPath, "*.xml", SearchOption.AllDirectories)
             .SelectMany(file => XDocument.Load(file).Elements("list").Elements("skill")).Select(el =>
-                new XmlSkill((int)el.Attribute("id"), (int)el.Attribute("toLevel"), (string)el.Attribute("name")))
+                new XmlSkill((int)el.Attribute("id"), (int)el.Attribute("toLevel"), ((string)el.Attribute("name")).Trim()))
             .OrderBy(x => x.Id)
             .ToList();
         
@@ -66,11 +66,11 @@ public class SkillDataTests
                 continue;
             }
             
-            if (euSkills.Count == 0)
-            {
-                writer.WriteLine(
-                    $"Skill id={xmlSkill.Id}, name='{xmlSkill.Name}' from Classic 3.0 data pack not found in EU client");
-            }
+            // if (euSkills.Count == 0)
+            // {
+            //     writer.WriteLine(
+            //         $"Skill id={xmlSkill.Id}, name='{xmlSkill.Name}' from Classic 3.0 data pack not found in EU client");
+            // }
 
             foreach (Skill skill in euSkills)
             {
