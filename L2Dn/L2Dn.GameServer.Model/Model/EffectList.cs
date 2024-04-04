@@ -24,38 +24,52 @@ namespace L2Dn.GameServer.Model;
 public class EffectList
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EffectList));
+	
 	/** Queue containing all effects from buffs for this effect list. */
-	private readonly List<BuffInfo> _actives = new();
+	private readonly Set<BuffInfo> _actives = new();
+	
 	/** List containing all passives for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private readonly Set<BuffInfo> _passives = new();
+	
 	/** List containing all options for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private readonly Set<BuffInfo> _options = new();
+	
 	/** Map containing the all stacked effect in progress for each {@code AbnormalType}. */
 	private Set<AbnormalType> _stackedEffects = new();
+	
 	/** Set containing all {@code AbnormalType}s that shouldn't be added to this creature effect list. */
 	private readonly Set<AbnormalType> _blockedAbnormalTypes = new();
+	
 	/** Set containing all abnormal visual effects this creature currently displays. */
 	private Set<AbnormalVisualEffect> _abnormalVisualEffects = new();
+	
 	/** Short buff skill ID. */
-	private BuffInfo _shortBuff = null;
+	private BuffInfo? _shortBuff;
+	
 	/** Count of specific types of buffs. */
 	private readonly AtomicInteger _buffCount = new AtomicInteger();
 	private readonly AtomicInteger _triggerBuffCount = new AtomicInteger();
 	private readonly AtomicInteger _danceCount = new AtomicInteger();
 	private readonly AtomicInteger _toggleCount = new AtomicInteger();
 	private readonly AtomicInteger _debuffCount = new AtomicInteger();
+	
 	/** If {@code true} this effect list has buffs removed on any action. */
 	private readonly AtomicInteger _hasBuffsRemovedOnAnyAction = new AtomicInteger();
+	
 	/** If {@code true} this effect list has buffs removed on damage. */
 	private readonly AtomicInteger _hasBuffsRemovedOnDamage = new AtomicInteger();
+	
 	/** Effect flags. */
 	private long _effectFlags;
+	
 	/** The owner of this effect list. */
 	private readonly Creature _owner;
+	
 	/** Hidden buffs count, prevents iterations. */
 	private readonly AtomicInteger _hiddenBuffs = new AtomicInteger();
+	
 	/** Delay task **/
-	private ScheduledFuture _updateEffectIconTask;
+	private ScheduledFuture? _updateEffectIconTask;
 	private readonly AtomicBoolean _updateAbnormalStatus = new AtomicBoolean();
 	
 	/**
@@ -246,7 +260,7 @@ public class EffectList
 	 * @param type the abnormal skill type
 	 * @return the {@code BuffInfo} if it's present, {@code null} otherwise
 	 */
-	public BuffInfo getFirstBuffInfoByAbnormalType(AbnormalType type)
+	public BuffInfo? getFirstBuffInfoByAbnormalType(AbnormalType type)
 	{
 		if (hasAbnormalType(type))
 		{
@@ -293,7 +307,7 @@ public class EffectList
 	 * Sets the Short Buff data and sends an update if the effected is a player.
 	 * @param info the {@code BuffInfo}
 	 */
-	public void shortBuffStatusUpdate(BuffInfo info)
+	public void shortBuffStatusUpdate(BuffInfo? info)
 	{
 		if (_owner.isPlayer())
 		{
@@ -317,7 +331,7 @@ public class EffectList
 	 */
 	public int getBuffCount()
 	{
-		return _actives.Count != 0 ? (_buffCount.get() - _hiddenBuffs.get()) : 0;
+		return _actives.Count != 0 ? _buffCount.get() - _hiddenBuffs.get() : 0;
 	}
 	
 	/**
@@ -396,9 +410,9 @@ public class EffectList
 	 */
 	public void stopAllEffectsWithoutExclusions(bool update, bool broadcast)
 	{
-		while (_actives.Count != 0)
+		foreach (BuffInfo info in _actives)
 		{
-			remove(_actives[0]); // TODO: refactor buffs
+			remove(info);
 		}
 		
 		foreach (BuffInfo info in _passives)
@@ -433,7 +447,7 @@ public class EffectList
 	{
 		if (_toggleCount.get() > 0)
 		{
-			stopEffects(b => b.getSkill().isToggle() && (b.getSkill().getToggleGroupId() == toggleGroup), true, true);
+			stopEffects(b => b.getSkill().isToggle() && b.getSkill().getToggleGroupId() == toggleGroup, true, true);
 		}
 	}
 	
@@ -464,7 +478,8 @@ public class EffectList
 	{
 		if (!_options.isEmpty())
 		{
-			_options.forEach(x => remove(x));
+			_options.forEach(remove);
+			
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -486,7 +501,7 @@ public class EffectList
 			{
 				foreach (AbstractEffect effect in info.getEffects())
 				{
-					if ((effect != null) && ((effect.getEffectFlags() & effectFlag.getMask()) != 0))
+					if (effect != null && (effect.getEffectFlags() & effectFlag.getMask()) != 0)
 					{
 						remove(info);
 						update = true;
@@ -757,7 +772,7 @@ public class EffectList
 		{
 			return;
 		}
-		
+
 		if (info.getOption() != null)
 		{
 			// Remove separately if its an option.
@@ -839,7 +854,7 @@ public class EffectList
 		Skill skill = info.getSkill();
 		
 		// Prevent adding and initializing buffs/effects on dead creatures.
-		if (info.getEffected().isDead() && (skill != null) && !skill.isPassive() && !skill.isStayAfterDeath())
+		if (info.getEffected().isDead() && skill != null && !skill.isPassive() && !skill.isStayAfterDeath())
 		{
 			return;
 		}
@@ -874,7 +889,7 @@ public class EffectList
 			return;
 		}
 		
-		if ((_blockedAbnormalTypes != null) && _blockedAbnormalTypes.Contains(skill.getAbnormalType()))
+		if (_blockedAbnormalTypes != null && _blockedAbnormalTypes.Contains(skill.getAbnormalType()))
 		{
 			return;
 		}
@@ -883,7 +898,7 @@ public class EffectList
 		if (skill.isTriggeredSkill())
 		{
 			BuffInfo triggerInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(skill.getId());
-			if ((triggerInfo != null) && (triggerInfo.getSkill().getLevel() >= skill.getLevel()))
+			if (triggerInfo != null && triggerInfo.getSkill().getLevel() >= skill.getLevel())
 			{
 				return;
 			}
@@ -892,10 +907,10 @@ public class EffectList
 		if (info.getEffector() != null)
 		{
 			// Check for debuffs against target.
-			if ((info.getEffector() != info.getEffected()) && skill.isBad())
+			if (info.getEffector() != info.getEffected() && skill.isBad())
 			{
 				// Check if effected is debuff blocked.
-				if ((info.getEffected().isDebuffBlocked() || (info.getEffector().isGM() && !info.getEffector().getAccessLevel().canGiveDamage())))
+				if (info.getEffected().isDebuffBlocked() || (info.getEffector().isGM() && !info.getEffector().getAccessLevel().canGiveDamage()))
 				{
 					return;
 				}
@@ -916,24 +931,21 @@ public class EffectList
 		// Manage effect stacking.
 		if (hasAbnormalType(skill.getAbnormalType()))
 		{
-			int buffIndex = 0;
-			while (buffIndex < _actives.Count)
+			foreach (BuffInfo existingInfo in _actives)
 			{
-				BuffInfo existingInfo = _actives[buffIndex];
 				Skill existingSkill = existingInfo.getSkill();
 				// Check if existing effect should be removed due to stack.
 				// Effects with no abnormal don't stack if their ID is the same. Effects of the same abnormal type don't stack.
-				if ((skill.getAbnormalType() == AbnormalType.NONE && (existingSkill.getId() == skill.getId())) ||
+				if ((skill.getAbnormalType() == AbnormalType.NONE && existingSkill.getId() == skill.getId()) ||
 				    (skill.getAbnormalType() != AbnormalType.NONE &&
-				     (existingSkill.getAbnormalType() == skill.getAbnormalType())))
+				     existingSkill.getAbnormalType() == skill.getAbnormalType()))
 				{
 					// Check if there is subordination abnormal. Skills with subordination abnormal stack with each other, unless the caster is the same.
 					if (skill.getSubordinationAbnormalType() != AbnormalType.NONE &&
-					    (skill.getSubordinationAbnormalType() == existingSkill.getSubordinationAbnormalType()) //
-					    && ((info.getEffectorObjectId() == 0) || (existingInfo.getEffectorObjectId() == 0) ||
-					        (info.getEffectorObjectId() != existingInfo.getEffectorObjectId())))
+					    skill.getSubordinationAbnormalType() == existingSkill.getSubordinationAbnormalType() //
+					    && (info.getEffectorObjectId() == 0 || existingInfo.getEffectorObjectId() == 0 ||
+					        info.getEffectorObjectId() != existingInfo.getEffectorObjectId()))
 					{
-						buffIndex++;
 						continue;
 					}
 
@@ -942,7 +954,7 @@ public class EffectList
 					{
 						// If it is an herb, set as not in use the lesser buff, unless it is the same skill.
 						if ((skill.isAbnormalInstant() || existingSkill.isIrreplacableBuff()) &&
-						    (skill.getId() != existingSkill.getId()))
+						    skill.getId() != existingSkill.getId())
 						{
 							existingInfo.setInUse(false);
 							_hiddenBuffs.incrementAndGet();
@@ -951,7 +963,6 @@ public class EffectList
 						{
 							// Remove effect that gets overridden.
 							remove(existingInfo);
-							continue;
 						}
 					}
 					else if (skill.isIrreplacableBuff()) // The effect we try to add should be hidden.
@@ -963,8 +974,6 @@ public class EffectList
 						return;
 					}
 				}
-
-				buffIndex++;
 			}
 		}
 		
@@ -1011,7 +1020,7 @@ public class EffectList
 		// Remove previous passives of this id.
 		foreach (BuffInfo b in _passives)
 		{
-			if ((b != null) && (b.getSkill().getId() == skill.getId()))
+			if (b != null && b.getSkill().getId() == skill.getId())
 			{
 				b.setInUse(false);
 				_passives.remove(b);
@@ -1031,7 +1040,7 @@ public class EffectList
 			// Remove previous options of this id.
 			foreach (BuffInfo b in _options)
 			{
-				if ((b != null) && (b.getOption().getId() == info.getOption().getId()))
+				if (b != null && b.getOption().getId() == info.getOption().getId())
 				{
 					b.setInUse(false);
 					_options.remove(b);
@@ -1065,14 +1074,14 @@ public class EffectList
 				if (player != null)
 				{
 					Party party = player.getParty();
-					AbnormalStatusUpdatePacket? asu = (_owner.isPlayer() && _updateAbnormalStatus.get()) ? new AbnormalStatusUpdatePacket(new List<BuffInfo>()) : null;
-					PartySpelledPacket? ps = ((party != null) || _owner.isSummon()) ? new PartySpelledPacket(_owner) : null;
-					ExOlympiadSpelledInfoPacket? os = (player.isInOlympiadMode() && player.isOlympiadStart()) ? new ExOlympiadSpelledInfoPacket(player) : null;
+					AbnormalStatusUpdatePacket? asu = _owner.isPlayer() && _updateAbnormalStatus.get() ? new AbnormalStatusUpdatePacket(new List<BuffInfo>()) : null;
+					PartySpelledPacket? ps = party != null || _owner.isSummon() ? new PartySpelledPacket(_owner) : null;
+					ExOlympiadSpelledInfoPacket? os = player.isInOlympiadMode() && player.isOlympiadStart() ? new ExOlympiadSpelledInfoPacket(player) : null;
 					if (_actives.Count != 0)
 					{
-						foreach (BuffInfo info in _actives)
+						foreach (BuffInfo info in _actives.OrderBy(x => x.getPeriodStartTicks()))
 						{
-							if ((info != null) && info.isInUse())
+							if (info != null && info.isInUse())
 							{
 								if (info.getSkill().isHealingPotionSkill())
 								{
@@ -1114,7 +1123,7 @@ public class EffectList
 					if (os != null)
 					{
 						OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
-						if ((game != null) && game.isBattleStarted())
+						if (game != null && game.isBattleStarted())
 						{
 							game.getStadium().broadcastPacketToObservers(os.Value);
 						}
@@ -1125,13 +1134,13 @@ public class EffectList
 				ExAbnormalStatusUpdateFromTargetPacket upd = new ExAbnormalStatusUpdateFromTargetPacket(_owner);
 				foreach (Creature creature in _owner.getStatus().getStatusListener())
 				{
-					if ((creature != null) && creature.isPlayer())
+					if (creature != null && creature.isPlayer())
 					{
 						creature.sendPacket(upd);
 					}
 				}
 				
-				if (_owner.isPlayer() && (_owner.getTarget() == _owner))
+				if (_owner.isPlayer() && _owner.getTarget() == _owner)
 				{
 					_owner.sendPacket(upd);
 				}
@@ -1202,25 +1211,29 @@ public class EffectList
 		// Recalculate new flags
 		foreach (BuffInfo info in _actives)
 		{
-			if ((info != null) && info.isDisplayedForEffected())
+			if (info != null && info.isDisplayedForEffected())
 			{
 				Skill skill = info.getSkill();
 				
 				// Handle hidden buffs. Check if there was such abnormal before so we can continue.
-				if ((_hiddenBuffs.get() > 0) && _stackedEffects.Contains(skill.getAbnormalType()))
+				if (_hiddenBuffs.get() > 0 && _stackedEffects.Contains(skill.getAbnormalType()))
 				{
 					// If incoming buff isnt hidden, remove any hidden buffs with its abnormal type.
 					if (info.isInUse())
 					{
 						unhideBuffs.removeIf(b => b.isAbnormalType(skill.getAbnormalType()));
 					}
-					// If this incoming buff is hidden and its first of its abnormal, or it removes any previous hidden buff with the same or lower abnormal level and add this instead.
-					else if (!abnormalTypeFlags.Contains(skill.getAbnormalType()) || unhideBuffs.removeIf(b => (b.isAbnormalType(skill.getAbnormalType())) && (b.getSkill().getAbnormalLevel() <= skill.getAbnormalLevel())))
+				
+					// If this incoming buff is hidden and its first of its abnormal, or it removes
+					// any previous hidden buff with the same or lower abnormal level and add this instead.
+					else if (!abnormalTypeFlags.Contains(skill.getAbnormalType()) || unhideBuffs.removeIf(b =>
+						         b.isAbnormalType(skill.getAbnormalType()) &&
+						         b.getSkill().getAbnormalLevel() <= skill.getAbnormalLevel()))
 					{
 						unhideBuffs.add(info);
 					}
 				}
-				
+
 				// Add the EffectType flag.
 				foreach (AbstractEffect e in info.getEffects())
 				{

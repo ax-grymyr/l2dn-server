@@ -11,11 +11,10 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
 
-/**
- * Buff Info.<br>
- * Complex DTO that holds all the information for a given buff (or debuff or dance/song) set of effects issued by an skill.
- * @author Zoey76
- */
+/// <summary>
+/// Buff Info.
+/// Complex DTO that holds all the information for a given buff (or debuff or dance/song) set of effects issued by an skill.
+/// </summary>
 public class BuffInfo
 {
 	// Data
@@ -28,7 +27,7 @@ public class BuffInfo
 	private readonly List<AbstractEffect> _effects = new(1);
 	// Tasks
 	/** Effect tasks for ticks. */
-	private Map<AbstractEffect, EffectTaskInfo> _tasks;
+	private Map<AbstractEffect, EffectTaskInfo>? _tasks;
 	// Time and ticks
 	/** Abnormal time. */
 	private TimeSpan? _abnormalTime;
@@ -54,7 +53,7 @@ public class BuffInfo
 	 */
 	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item item, Options.Options option)
 	{
-		_effectorObjectId = (effector != null) ? effector.getObjectId() : 0;
+		_effectorObjectId = effector?.getObjectId() ?? 0;
 		_effector = effector;
 		_effected = effected;
 		_skill = skill;
@@ -101,6 +100,7 @@ public class BuffInfo
 				}
 			}
 		}
+		
 		_tasks.put(effect, effectTaskInfo);
 	}
 	
@@ -109,9 +109,9 @@ public class BuffInfo
 	 * @param effect the effect
 	 * @return the task
 	 */
-	private EffectTaskInfo getEffectTask(AbstractEffect effect)
+	private EffectTaskInfo? getEffectTask(AbstractEffect effect)
 	{
-		return (_tasks == null) ? null : _tasks.get(effect);
+		return _tasks == null ? null : _tasks.get(effect);
 	}
 	
 	/**
@@ -212,7 +212,7 @@ public class BuffInfo
 		_isInUse = value;
 		
 		// Send message that the effect is applied or removed.
-		if ((_skill != null) && !_skill.isHidingMessages() && _effected.isPlayer())
+		if (_skill != null && !_skill.isHidingMessages() && _effected.isPlayer())
 		{
 			if (value)
 			{
@@ -277,7 +277,7 @@ public class BuffInfo
 	
 	public void initializeEffects()
 	{
-		if ((_effected == null) || (_skill == null))
+		if (_effected == null || _skill == null)
 		{
 			return;
 		}
@@ -348,7 +348,7 @@ public class BuffInfo
 			if (task != null)
 			{
 				ScheduledFuture schedule = task.getScheduledFuture();
-				if ((schedule != null) && !schedule.isCancelled() && !schedule.isDone())
+				if (schedule != null && !schedule.isCancelled() && !schedule.isDone())
 				{
 					schedule.cancel(true); // Don't allow to finish current run.
 				}
@@ -365,7 +365,7 @@ public class BuffInfo
 			foreach (EffectTaskInfo effectTask in _tasks.values())
 			{
 				ScheduledFuture schedule = effectTask.getScheduledFuture();
-				if ((schedule != null) && !schedule.isCancelled() && !schedule.isDone())
+				if (schedule != null && !schedule.isCancelled() && !schedule.isDone())
 				{
 					schedule.cancel(true); // Don't allow to finish current run.
 				}
@@ -383,10 +383,10 @@ public class BuffInfo
 		}
 		
 		// Set the proper system message.
-		if ((_skill != null) && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMessages())
+		if (_skill != null && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMessages())
 		{
 			SystemMessageId? smId = null;
-			if ((_finishType == SkillFinishType.SILENT) || !isDisplayedForEffected())
+			if (_finishType == SkillFinishType.SILENT || !isDisplayedForEffected())
 			{
 				// smId is null.
 			}
@@ -403,7 +403,7 @@ public class BuffInfo
 				smId = SystemMessageId.S1_HAS_WORN_OFF;
 			}
 			
-			if ((smId != null) && (_effected.getActingPlayer() != null) && _effected.getActingPlayer().isOnline())
+			if (smId != null && _effected.getActingPlayer() != null && _effected.getActingPlayer().isOnline())
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(smId.Value);
 				sm.Params.addSkillName(_skill);
@@ -435,6 +435,6 @@ public class BuffInfo
 	 */
 	public bool isDisplayedForEffected()
 	{
-		return !_skill.isSelfContinuous() || (_effected == _effector) || !_skill.hasEffects(EffectScope.SELF);
+		return !_skill.isSelfContinuous() || _effected == _effector || !_skill.hasEffects(EffectScope.SELF);
 	}
 }
