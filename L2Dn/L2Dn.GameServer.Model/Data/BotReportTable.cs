@@ -51,16 +51,15 @@ public class BotReportTable
 					FileAccess.Read, FileShare.Read);
 
 				XDocument document = XDocument.Load(stream);
-				var elements = document.Root.Elements("punishment");
-				foreach (XElement element in elements)
+				foreach (XElement element in document.Elements("list").Elements("punishment"))
 				{
 					try
 					{
-						int reportCount = int.Parse(element.Attribute("neededReportCount")?.Value);
-						int skillId = int.Parse(element.Attribute("skillId")?.Value);
-						int skillLevel = int.Parse(element.Attribute("skillLevel")?.Value);
-						SystemMessageId messageId =
-							(SystemMessageId)int.Parse(element.Attribute("sysMessageId")?.Value);
+						int reportCount = element.GetAttributeValueAsInt32("neededReportCount");
+						int skillId = element.GetAttributeValueAsInt32("skillId");
+						int skillLevel = element.GetAttributeValueAsInt32("skillLevel");
+						SystemMessageId? messageId =
+							(SystemMessageId?)element.GetAttributeValueAsInt32OrNull("sysMessageId");
 						
 						addPunishment(reportCount, skillId, skillLevel, messageId);
 					}
@@ -343,10 +342,10 @@ public class BotReportTable
 			ph.Punish.applyEffects(bot, bot);
 			if (ph.MessageId >= 0)
 			{
-				SystemMessageId id = ph.MessageId;
+				SystemMessageId? id = ph.MessageId;
 				if (id != null)
 				{
-					bot.sendPacket(id);
+					bot.sendPacket(id.Value);
 				}
 			}
 		}
@@ -359,7 +358,7 @@ public class BotReportTable
 	 * @param skillLevel
 	 * @param sysMsg (id of a system message to send when applying the punish)
 	 */
-	void addPunishment(int neededReports, int skillId, int skillLevel, SystemMessageId sysMsg)
+	void addPunishment(int neededReports, int skillId, int skillLevel, SystemMessageId? sysMsg)
 	{
 		Skill sk = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (sk != null)
@@ -524,10 +523,10 @@ public class BotReportTable
 		}
 	}
 	
-	private class PunishHolder(Skill sk, SystemMessageId sysMsg)
+	private class PunishHolder(Skill sk, SystemMessageId? sysMsg)
 	{
 		public Skill Punish => sk;
-		public SystemMessageId MessageId => sysMsg;
+		public SystemMessageId? MessageId => sysMsg;
 	}
 	
 	private class ResetPointTask(BotReportTable table): Runnable
