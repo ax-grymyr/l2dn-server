@@ -91,14 +91,14 @@ public class Quest: AbstractScript, IIdentifiable
 	public Quest(int questId)
 	{
 		_questId = questId;
-		if (questId > 0)
-		{
-			QuestManager.getInstance()?.addQuest(this);
-		}
-		else
-		{
-			QuestManager.getInstance()?.addScript(this);
-		}
+		// if (questId > 0)
+		// {
+		// 	QuestManager.getInstance()?.addQuest(this);
+		// }
+		// else
+		// {
+		// 	QuestManager.getInstance()?.addScript(this);
+		// }
 		
 		_questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
 		if (_questData != null)
