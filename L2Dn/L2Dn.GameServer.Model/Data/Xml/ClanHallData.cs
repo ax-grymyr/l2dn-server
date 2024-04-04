@@ -49,11 +49,11 @@ public class ClanHallData: DataReaderBase
 		int deposit = auctionEl.GetAttributeValueAsInt32("deposit");
 
 		XElement rpEl = element.Elements("ownerRestartPoint").Single();
-		Location ownerRestartPoint = new Location(rpEl.GetAttributeValueAsInt32("x"), rpEl.GetAttributeValueAsInt32("z"),
+		Location ownerRestartPoint = new Location(rpEl.GetAttributeValueAsInt32("x"), rpEl.GetAttributeValueAsInt32("y"),
 			rpEl.GetAttributeValueAsInt32("z"));
 		
 		XElement bpEl = element.Elements("banishPoint").Single();
-		Location banishPoint = new Location(bpEl.GetAttributeValueAsInt32("x"), bpEl.GetAttributeValueAsInt32("z"),
+		Location banishPoint = new Location(bpEl.GetAttributeValueAsInt32("x"), bpEl.GetAttributeValueAsInt32("y"),
 			bpEl.GetAttributeValueAsInt32("z"));
 
 		ClanHall clanHall = new ClanHall(id, grade, type, minBid, lease, deposit, ownerRestartPoint, banishPoint);
