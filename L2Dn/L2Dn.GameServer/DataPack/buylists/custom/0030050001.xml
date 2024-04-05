@@ -11,7 +11,7 @@
 	<item id="92765" price="0" /> <!-- Sealed Avadon Circlet Pattern -->
 	<item id="92766" price="0" /> <!-- Sealed Avadon Glove Pattern -->
 	<item id="92783" price="0" /> <!-- Sealed Avadon Boot Design -->
-	<item id="92783" price="0" /> <!-- Sealed Avadon Shield Fragment -->
+	<item id="92808" price="0" /> <!-- Avadon Shield Fragment -->
 	<item id="92767" price="0" /> <!-- Doom Shield Fragment -->
 	<item id="92770" price="0" /> <!-- Doom Plate Armor Temper -->
 	<item id="92772" price="0" /> <!-- Doom Leather Armor Design -->
@@ -27,5 +27,5 @@
 	<item id="92775" price="0" /> <!-- Blue Wolf Stocking Pattern -->
 	<item id="92777" price="0" /> <!-- Sealed Blue Wolf Helmet Design -->
 	<item id="92779" price="0" /> <!-- Sealed Blue Wolf Boot Design -->
-	<item id="92779" price="0" /> <!-- Sealed Blue Wolf Glove Fabric -->
+	<item id="92781" price="0" /> <!-- Sealed Blue Wolf Glove Fabric -->
 </list>

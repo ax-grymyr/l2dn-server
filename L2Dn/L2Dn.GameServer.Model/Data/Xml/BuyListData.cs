@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using L2Dn.Extensions;
@@ -54,12 +55,14 @@ public class BuyListData: DataReaderBase
 					LOGGER.Warn("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
 					continue;
 				}
+				
 				Product product = buyList.getProductByItemId(itemId);
 				if (product == null)
 				{
 					LOGGER.Warn("ItemId found in database but not loaded from xml! BuyListId: " + buyListId + " ItemId: " + itemId);
 					continue;
 				}
+				
 				if (count < product.getMaxCount())
 				{
 					product.setCount(count);
@@ -76,11 +79,13 @@ public class BuyListData: DataReaderBase
 	private void loadFile(string filePath, XDocument document)
 	{
 		//int defaultBaseTax = parseInteger(list.getAttributes(), "baseTax", 0);
-		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath)); // TODO: is it required somewhere to be a number?
-		ProductList buyList = new ProductList(buyListId);
+		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath));
 
+		List<int> allowedNpc = new();
+		List<Product> products = new();
+		
 		document.Elements("list").Elements("npcs").Elements("npc").Select(n => (int)n)
-			.ForEach(x => buyList.addAllowedNpc(x));
+			.ForEach(x => allowedNpc.Add(x));
 
 		document.Elements("list").Elements("item").ForEach(node =>
 		{
@@ -93,21 +98,25 @@ public class BuyListData: DataReaderBase
 				long count = node.Attribute("count").GetInt64(-1);
 				int baseTax = node.Attribute("baseTax").GetInt32(0);
 				int sellPrice = item.getReferencePrice() / 2;
-				if (Config.CORRECT_PRICES && (price > -1) && (sellPrice > price) && (buyList.getNpcsAllowed() != null))
+				if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price > -1 && sellPrice > price)
 				{
-					LOGGER.Warn("Buy price " + price + " is less than sell price " + sellPrice + " for ItemID:" + itemId + " of buylist " + buyList.getListId() + ".");
-					buyList.addProduct(new Product(buyListId, item, sellPrice, restockDelay, count, baseTax));
+					LOGGER.Warn(
+						$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");
+
+					price = sellPrice;
 				}
+
+				if (products.Any(x => x.getItemId() == itemId))
+					LOGGER.Warn($"Buylist={buyListId} contains duplicated ItemId={itemId}.");
 				else
-				{
-					buyList.addProduct(new Product(buyListId, item, price, restockDelay, count, baseTax));
-				}
+					products.Add(new Product(buyListId, item, price, restockDelay, count, baseTax));
 			}
 			else
 			{
 				LOGGER.Warn("Item not found. BuyList:" + buyListId + " ItemID:" + itemId + " File:" + filePath);
 			}
 
+			ProductList buyList = new ProductList(buyListId, products.ToImmutableArray(), allowedNpc.ToImmutableSortedSet());
 			_buyLists.put(buyListId, buyList);
 		});
 	}

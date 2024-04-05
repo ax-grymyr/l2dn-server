@@ -2,7 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
 	<item id="93687" price="0" /> <!-- Full Moon Blessing Event -->
 	<item id="93634" price="0" /> <!-- Party Cube Event -->
-	<item id="4318" price="0" /> <!-- Extra Pass: Transcendent Instance Zone Event -->
 	<item id="93949" price="0" /> <!-- Extra Pass: Transcendent Instance Zone Event -->
 	<item id="93098" price="0" /> <!-- Battle Scroll Event -->
 	<item id="4318" price="0" /> <!-- Event Clothes -->
@@ -68,7 +67,7 @@
 	<item id="90408" price="0" /> <!-- Chef's Fish Stew - Fire Event -->
 	<item id="90409" price="0" /> <!-- Chef's Fish Stew - Water Event -->
 	<item id="90410" price="0" /> <!-- Chef's Fish Stew - Wind Event -->
-	<item id="90410" price="0" /> <!-- Chef's Fish Stew Box Event -->
+	<item id="70838" price="0" /> <!-- Chef's Fish Stew Box Event -->
 	<item id="90793" price="0" /> <!-- Shiny Jewelry Box Event -->
 	<item id="90508" price="0" /> <!-- Special Dragon Fruit Lv.1 Event -->
 	<item id="90794" price="0" /> <!-- Shining Scroll of Mood Melody Event -->
@@ -107,7 +106,7 @@
 	<item id="91867" price="0" /> <!-- Enchant Scroll (PA Event) -->
 	<item id="91868" price="0" /> <!-- Special Enchant Scroll (PA Event) -->
 	<item id="91911" price="0" /> <!-- Sayha's Buff Scroll Event -->
-	<item id="93753" price="0" /> <!-- Sayha's Cookie Event -->
+	<item id="93274" price="0" /> <!-- Sayha's Cookie Event -->
 	<item id="93999" price="0" /> <!-- Sayha's Blessing Cube (5000 pcs) Event -->
 	<item id="91975" price="0" /> <!-- Combat Scroll Event -->
 	<item id="91983" price="0" /> <!-- Primeval Isle's Time Stone Event -->
@@ -122,7 +121,7 @@
 	<item id="93693" price="0" /> <!-- Honey Event -->
 	<item id="93694" price="0" /> <!-- Beans Event -->
 	<item id="93695" price="0" /> <!-- Sesame Event -->
-	<item id="93695" price="0" /> <!-- Letter of Congratulations Event -->
+	<item id="93696" price="0" /> <!-- Letter of Congratulations Event -->
 	<item id="93701" price="0" /> <!-- Charging Stone of Random Craft - Charge Event -->
 	<item id="93707" price="0" /> <!-- Mark of Revenge Event -->
 	<item id="93709" price="0" /> <!-- High-grade Spellbook Chest Event -->
@@ -136,9 +135,8 @@
 	<item id="93921" price="0" /> <!-- Drakan's Reward Pack - Angel Event -->
 	<item id="93922" price="0" /> <!-- Drakan's Reward Pack - Demon Event -->
 	<item id="93923" price="0" /> <!-- Drakan's Reward Pack - Orc Event -->
-	<item id="93923" price="0" /> <!-- Drakan's Reward Pack - Orc Event -->
 	<item id="93993" price="0" /> <!-- Anniversary Gift Box Event -->
-	<item id="93993" price="0" /> <!-- Anniversary Cake Event -->
+	<item id="93998" price="0" /> <!-- Anniversary Cake Event -->
 	<item id="94052" price="0" /> <!-- Anniversary Coin Event -->
 	<item id="94142" price="0" /> <!-- Dumpling Soup Event -->
 	<item id="94144" price="0" /> <!-- Christmas Cube Event -->
@@ -180,7 +178,7 @@
 	<item id="94274" price="0" /> <!-- White Chocolate Event -->
 	<item id="94290" price="0" /> <!-- Valentine's Day Gift Basket Event -->
 	<item id="94291" price="0" /> <!-- White Day's Gift Basket Event -->
-	<item id="94291" price="0" /> <!-- Iron Gate Guild Gift Box Event -->
+	<!--<item id="94291" price="0" />--> <!-- Iron Gate Guild Gift Box Event -->
 	<item id="94380" price="0" /> <!-- Scroll: Boost Attack Event -->
 	<item id="94381" price="0" /> <!-- Scroll: Boost Defense Event -->
 	<item id="94384" price="0" /> <!-- Scroll: Enchant Rare Accessories Event -->

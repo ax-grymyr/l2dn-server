@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -38,7 +39,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 	// buy type - BUY
 	private long _money;
 	private double _castleTaxRate;
-	private ICollection<Product> _list;
+	private ImmutableArray<Product> _list;
 	private int _listId;
 
 	// buy type - SELL
@@ -57,7 +58,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		_type = BUY_SELL_LIST_BUY;
 		_listId = list.getListId();
 		_list = list.getProducts();
-		_money = player.isGM() && player.getAdena() == 0 && list.getNpcsAllowed() == null
+		_money = player.isGM() && player.getAdena() == 0 && list.getNpcsAllowed().IsEmpty
 			? 1000000000
 			: player.getAdena();
 		_inventorySlots = player.getInventory().getNonQuestSize();
@@ -136,7 +137,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		writer.WriteInt64(_money); // current money
 		writer.WriteInt32(_listId);
 		writer.WriteInt32(_inventorySlots);
-		writer.WriteInt16((short)_list.Count);
+		writer.WriteInt16((short)_list.Length);
 		foreach (Product product in _list)
 		{
 			if (product.getCount() > 0 || !product.hasLimitedStock())
