@@ -93,7 +93,7 @@ public class PacketHandler<TSession>
             await helper.HandlePacketAsync(this, connection, session, reader);
         else
         {
-            _logger.Trace($"S({session.Id})  Unknown packet 0x{packetCode:X2}, length {reader.Length + 1}");
+            _logger.Trace($"S({session.Id})  Unknown packet {packetCode:X2}, length {reader.Length + 1}");
             LogUtils.TracePacketData(reader, session.Id);
         }
     }

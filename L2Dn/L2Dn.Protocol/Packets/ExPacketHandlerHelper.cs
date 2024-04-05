@@ -18,7 +18,7 @@ internal sealed class ExPacketHandlerHelper<TSession>(byte packetCode): PacketHa
         }
 
         _logger.Trace($"S({session.Id})  Unknown packet {packetCode:X2}:{exPacketCode:X4}, " +
-                      $"length {reader.Length + 1}");
+                      $"length {reader.Length + 3}");
 
         LogUtils.TracePacketData(reader, session.Id);
     }
