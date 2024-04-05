@@ -139,7 +139,7 @@ public sealed class GamePacketHandler: PacketHandler<GameSession>
         /* 6C */ RegisterPacket<RequestShowMiniMapPacket>(IncomingPacketCodes.REQUEST_SHOW_MINI_MAP);
         /* 70 */ RegisterPacket<RequestHennaRemoveListPacket>(IncomingPacketCodes.REQUEST_HENNA_REMOVE_LIST);
         /* 71 */ RegisterPacket<RequestHennaItemRemoveInfoPacket>(IncomingPacketCodes.REQUEST_HENNA_ITEM_REMOVE_INFO);
-        /* 73 */ RegisterPacket<RequestAcquireSkillInfoPacket>(IncomingPacketCodes.REQUEST_ACQUIRE_SKILL_INFO);
+        /* 73 */ RegisterPacket<RequestAcquireSkillInfoPacket>(IncomingPacketCodes.REQUEST_ACQUIRE_SKILL_INFO).WithAllowedStates(GameSessionState.EnteringGame | GameSessionState.InGame);
         /* 74 */ RegisterPacket<SendBypassBuildCmdPacket>(IncomingPacketCodes.SEND_BYPASS_BUILD_CMD);
         /* 75 */ RegisterPacket<RequestMoveToLocationInVehiclePacket>(IncomingPacketCodes.REQUEST_MOVE_TO_LOCATION_IN_VEHICLE);
         /* 76 */ RegisterPacket<CannotMoveAnymoreInVehiclePacket>(IncomingPacketCodes.CANNOT_MOVE_ANYMORE_IN_VEHICLE);
