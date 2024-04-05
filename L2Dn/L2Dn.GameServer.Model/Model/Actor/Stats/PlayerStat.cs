@@ -5,7 +5,6 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -15,6 +14,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Network.OutgoingPackets.ClassChange;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
 using L2Dn.GameServer.Network.OutgoingPackets.Friends;
 using L2Dn.GameServer.Utilities;
@@ -254,11 +254,21 @@ public class PlayerStat: PlayableStat
 			}
 		}
 		
+		// Check if class change available // TODO: add Config setting, also 3rd class change
+		if (getLevel() >= 20 && getActiveChar().getActiveClass().GetLevel() == 0 ||
+		    getLevel() >= 40 && getActiveChar().getActiveClass().GetLevel() == 1)
+		{
+			getActiveChar().sendPacket(new ExClassChangeSetAlarmPacket());			
+		}
+		
 		getActiveChar().broadcastStatusUpdate();
+		
 		// Update the overloaded status of the Player
 		getActiveChar().refreshOverloaded(true);
+		
 		// Send a Server->Client packet UserInfo to the Player
 		getActiveChar().updateUserInfo();
+		
 		// Send acquirable skill list
 		getActiveChar().sendPacket(new AcquireSkillListPacket(getActiveChar()));
 		getActiveChar().sendPacket(new ExVoteSystemInfoPacket(getActiveChar()));
