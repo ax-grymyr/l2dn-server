@@ -42,12 +42,18 @@ public abstract class Connection
     public void Send<T>(T packet, SendPacketOptions options = SendPacketOptions.None)
         where T: struct, IOutgoingPacket
     {
+        if (_closed)
+            return;
+        
         Send(ref packet, options);
     }
 
     public void Send<T>(ref T packet, SendPacketOptions options = SendPacketOptions.None)
         where T: struct, IOutgoingPacket
     {
+        if (_closed)
+            return;
+        
         // Serialize the packet
         byte[] buffer = RentBuffer(65536);
         int offset = 0;
@@ -60,7 +66,6 @@ public abstract class Connection
         catch (Exception exception)
         {
             _logger.Error($"S({_session.Id})  Error serializing packet: {exception}");
-            ReturnBuffer(buffer);
             Close();
             return;
         }
@@ -84,7 +89,7 @@ public abstract class Connection
 
         try
         {
-            _client.Client.Close(100);
+            _client.Client.Close(1000);
         }
         catch (Exception exception)
         {
@@ -108,8 +113,13 @@ public abstract class Connection
             _callback.ConnectionClosed(_session);
         }
 
+        // return buffers in queue
+        while (_sendQueue.TryDequeue(out PacketData packetData))
+            ReturnBuffer(packetData.Buffer);
+        
         _logger.Trace($"S({_session.Id})  Session disconnected");
-        if (_buffersInRent != 0)
+        
+        if (_buffersInRent > 2)
             _logger.Warn($"S({_session.Id})  Rented buffers count = {_buffersInRent}");
     }
 
@@ -155,12 +165,21 @@ public abstract class Connection
         try
         {
             _sendLock.Enter(ref lockTaken);
+            if (!lockTaken)
+                throw new SynchronizationLockException("Could not enter send lock");
 
             // Encrypting and sending packet must be in critical section
-            while (_sendQueue.TryDequeue(out var data))
+            while (_sendQueue.TryDequeue(out PacketData data))
             {
-                if (!_closed)
-                    SendPacket(data);
+                try
+                {
+                    if (!_closed)
+                        SendPacket(data);
+                }
+                finally
+                {
+                    ReturnBuffer(data.Buffer);
+                }
             }
         }
         finally
@@ -176,52 +195,57 @@ public abstract class Connection
         int length = data.Length;
         SendPacketOptions options = data.Options;
 
-        try
+        if ((options & SendPacketOptions.DontEncrypt) == 0)
         {
-            if ((options & SendPacketOptions.DontEncrypt) == 0)
-            {
-                try
-                {
-                    length = 2 + _packetEncoder.Encode(buffer.AsSpan(2), length - 2);
-                }
-                catch (Exception exception)
-                {
-                    _logger.Error($"S({_session.Id})  Error encoding packet: {exception}");
-                    Close();
-                    return;
-                }
-            }
-            else if ((options & SendPacketOptions.NoPadding) == 0)
-            {
-                int newLength = 2 + _packetEncoder.GetRequiredLength(length - 2);
-                buffer.AsSpan(length, newLength - length).Clear();
-                length = newLength;
-            }
-
-            if (length >= 65536)
-            {
-                _logger.Error($"S({_session.Id})  Encrypted packet is too long ({length} bytes)");
-                Close();
-                return;
-            }
-
-            // Set packet length
-            LittleEndianBitConverter.WriteUInt16(buffer, (ushort)length);
-
             try
             {
-                SendBuffer(buffer.AsSpan(0, length));
+                length = 2 + _packetEncoder.Encode(buffer.AsSpan(2), length - 2);
             }
             catch (Exception exception)
             {
-                _logger.Error($"S({_session.Id})  Error sending packet: {exception}");
+                _logger.Error($"S({_session.Id})  Error encoding packet: {exception}");
                 Close();
                 return;
             }
         }
-        finally
+        else if ((options & SendPacketOptions.NoPadding) == 0)
         {
-            ReturnBuffer(buffer);
+            int newLength = 2 + _packetEncoder.GetRequiredLength(length - 2);
+            buffer.AsSpan(length, newLength - length).Clear();
+            length = newLength;
+        }
+
+        if (length >= 65536)
+        {
+            _logger.Error($"S({_session.Id})  Encrypted packet is too long ({length} bytes)");
+            Close();
+            return;
+        }
+
+        // Set packet length
+        LittleEndianBitConverter.WriteUInt16(buffer, (ushort)length);
+
+        try
+        {
+            SendBuffer(buffer.AsSpan(0, length));
+        }
+        catch (SocketException socketException)
+        {
+            SocketError errorCode = socketException.SocketErrorCode;
+            if (errorCode == SocketError.Success)
+                return;
+            
+            if (errorCode != SocketError.OperationAborted && errorCode != SocketError.ConnectionReset)
+                _logger.Warn($"S({_session.Id})  Error sending packet: {socketException}");
+            
+            Close();
+            return;
+        }
+        catch (Exception exception)
+        {
+            _logger.Error($"S({_session.Id})  Error sending packet: {exception}");
+            Close();
+            return;
         }
 
         if ((options & SendPacketOptions.CloseAfterSending) != 0)
@@ -230,10 +254,19 @@ public abstract class Connection
 
     private async ValueTask ReceivePacketAsync(CancellationToken cancellationToken)
     {
-        byte[] buffer = RentBuffer(1024);
+        byte[] buffer = RentBuffer(4096);
 
         // Packet length
-        await ReceiveAsync(buffer, 2, cancellationToken).ConfigureAwait(false);
+        try
+        {
+            await ReceiveAsync(buffer, 2, cancellationToken).ConfigureAwait(false);
+        }
+        catch
+        {
+            ReturnBuffer(buffer);
+            throw;
+        }
+
         int length = LittleEndianBitConverter.ToUInt16(buffer) - 2;
         if (length > buffer.Length)
         {
@@ -254,6 +287,7 @@ public abstract class Connection
         if (!_packetEncoder.Decode(buffer.AsSpan(0, length)))
         {
             _logger.Warn($"S({_session.Id})  Error decoding packet");
+            ReturnBuffer(buffer);
             Close();
             return;
         }
@@ -287,7 +321,7 @@ public abstract class Connection
                 .ConfigureAwait(false);
 
             if (bytesReceived == 0)
-                throw new SocketException();
+                throw new SocketException((int)SocketError.OperationAborted, "Error receiving data");
 
             offset += bytesReceived;
             count -= bytesReceived;
@@ -304,7 +338,7 @@ public abstract class Connection
         {
             int bytesSent = _client.Client.Send(data, SocketFlags.None);
             if (bytesSent == 0)
-                throw new SocketException();
+                throw new SocketException((int)SocketError.OperationAborted, "Error sending data");
 
             data = data[bytesSent..];
         }
@@ -313,20 +347,20 @@ public abstract class Connection
     private void ConfigureSocket()
     {
         Socket socket = _client.Client;
-        socket.LingerState = new LingerOption(true, 30);
+        socket.LingerState = new LingerOption(true, 10);
         socket.NoDelay = true;
     }
 
     private byte[] RentBuffer(int size)
     {
-        _buffersInRent++;
+        Interlocked.Increment(ref _buffersInRent);
         return ArrayPool<byte>.Shared.Rent(size);
     }
 
     private void ReturnBuffer(byte[] buffer)
     {
-        _buffersInRent--;
         ArrayPool<byte>.Shared.Return(buffer);
+        Interlocked.Decrement(ref _buffersInRent);
     }
 }
 
