@@ -23,12 +23,12 @@ public struct StringTokenizer
 
     public bool hasMoreTokens()
     {
-        return _index < _tokens.Length;
+        return countTokens() > 0;
     }
 
     public int countTokens()
     {
-        return _tokens.Length;
+        return Math.Max(_tokens.Length - _index, 0);
     }
 
     public bool hasMoreElements()
