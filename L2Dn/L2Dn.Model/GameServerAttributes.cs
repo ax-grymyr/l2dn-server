@@ -4,11 +4,14 @@
 public enum GameServerAttributes
 {
     None = 0,
-    Normal = 1,
-    Relax = 2,
-    PublicTest = 4,
-    NoLabel = 8,
-    CharacterCreationRestricted = 16,
-    Event = 32,
-    Free = 64,
+    Normal = 0b1,
+    Relax = 0b10,
+    PublicTest = 0b100,
+    NoLabel = 0b1000,
+    CharacterCreationRestricted = 0b1_0000,
+    Event = 0b10_0000,
+    Free = 0b100_0000,
+    World = 0b1_0000_0000,
+    New = 0b10_0000_0000,
+    EssenceOrClassic = 0b100_0000_0000,
 }

@@ -1,6 +1,6 @@
-﻿using L2Dn.Conversion;
-using L2Dn.GameServer.Configuration;
+﻿using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model;
+using L2Dn.Model;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
@@ -28,9 +28,12 @@ internal readonly struct RegisterGameServerPacket: IOutgoingPacket
             ipAddress = IPAddressUtil.Loopback;
         }
 
-        GameServerAttributes attributes = GameServerAttributes.Normal; // todo
+        GameServerAttributes attributes = GameServerAttributes.None;
         if (serverParams.IsTestServer)
             attributes |= GameServerAttributes.PublicTest;
+
+        if (serverParams.ServerType is GameServerType.Classic or GameServerType.Essence)
+            attributes |= GameServerAttributes.EssenceOrClassic;
         
         writer.WritePacketCode(OutgoingPacketCodes.RegisterGameServer);
         writer.WriteByte(serverParams.ServerId);
@@ -45,18 +48,5 @@ internal readonly struct RegisterGameServerPacket: IOutgoingPacket
         writer.WriteUInt16((ushort)serverParams.MaxPlayerCount);
         writer.WriteInt32((int)attributes);
         writer.WriteByte(serverParams.Brackets);
-    }
-
-    [Flags]
-    private enum GameServerAttributes
-    {
-        None = 0,
-        Normal = 1,
-        Relax = 2,
-        PublicTest = 4,
-        NoLabel = 8,
-        CharacterCreationRestricted = 16,
-        Event = 32,
-        Free = 64,
     }
 }
