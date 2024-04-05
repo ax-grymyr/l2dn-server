@@ -4069,10 +4069,7 @@ public class Player: Playable
 	
 	public override void sendPacket<TPacket>(TPacket packet)
 	{
-		if (_client != null)
-		{
-			_client.Connection.Send(ref packet);
-		}
+		_client?.Connection?.Send(ref packet);
 	}
 	
 	/**
