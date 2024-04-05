@@ -174,7 +174,7 @@ public static class XmlUtil
     }
 
     public static T GetValue<T>(this XAttribute? attribute, T defaultValue)
-        where T: IParsable<T>
+        where T: struct, IParsable<T>
     {
         if (attribute is null)
             return defaultValue;

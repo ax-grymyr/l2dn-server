@@ -74,7 +74,8 @@ public static class ExpressionParser
 
         Parser<Expression> variableParser = Parse.Ident.Select(x => (Expression)new VariableExpression(x));
 
-        Parser<Expression> subExprParser = Parse.Char('(').Then(Parse.Ref(() => _expressionParser))
+        Parser<Expression> subExprParser = Parse.Char('(')
+            .Then(Parse.Ref(() => _expressionParser ?? Parse.Fail<Expression>("Parser not assigned")))
             .Then(Parse.Char(')'))
             .Select(t => t.Item1.Item2);
 

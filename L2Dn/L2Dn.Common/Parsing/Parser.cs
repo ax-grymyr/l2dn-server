@@ -21,7 +21,8 @@ public readonly record struct ParserError(string Error, ParserInput Input);
 
 public readonly record struct ParserResult<T>(bool Success, T Result, ParserInput Input, string Error)
 {
-    public static implicit operator ParserResult<T>(ParserError error) => new(false, default, error.Input, error.Error);
+    public static implicit operator ParserResult<T>(ParserError error) =>
+        new(false, default!, error.Input, error.Error);
 }
 
 public delegate ParserResult<T> Parser<T>(ParserInput input);
@@ -453,8 +454,7 @@ public static class Parse
 
     public static Parser<string> AsText(this Parser<IEnumerable<char>> parser) => parser.Select(CollectChars);
 
-    public static Parser<TResult> Optional<TResult>(this Parser<TResult> parser,
-        TResult defaultValue = default) => input =>
+    public static Parser<TResult> Optional<TResult>(this Parser<TResult> parser, TResult defaultValue) => input =>
     {
         ParserResult<TResult> result = parser(input);
         return result.Success ? result : Success(defaultValue, input, result.Error);
@@ -484,7 +484,7 @@ public static class Parse
         Parser<TEnclosing> enclosingParser) => parser.Enclose(enclosingParser, enclosingParser);
 
     public static Parser<TResult> Trim<TResult>(this Parser<TResult> parser) =>
-        _whitespaces.Optional().Then(parser).Select(t => t.Item2).Then(_whitespaces.Optional())
+        _whitespaces.Optional(string.Empty).Then(parser).Select(t => t.Item2).Then(_whitespaces.Optional(string.Empty))
             .Select(t => t.Item1);
 
     private static ParserResult<T> Success<T>(T result, ParserInput next, string? errorMessage = null) =>

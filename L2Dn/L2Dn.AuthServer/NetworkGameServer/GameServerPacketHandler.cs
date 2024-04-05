@@ -2,11 +2,14 @@
 using L2Dn.AuthServer.NetworkGameServer.IncomingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
+using NLog;
 
 namespace L2Dn.AuthServer.NetworkGameServer;
 
 internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession>
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(GameServerPacketHandler));
+    
     public GameServerPacketHandler()
     {
         SetDefaultAllowedStates(GameServerSessionState.Default);
@@ -21,6 +24,7 @@ internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession>
         GameServerInfo? serverInfo = session.ServerInfo;
         if (serverInfo is not null)
         {
+            _logger.Info($"Game server {serverInfo.ServerId} is OFFLINE now.");
             serverInfo.Connection = null;
             serverInfo.IsOnline = false;
         }

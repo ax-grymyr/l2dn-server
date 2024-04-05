@@ -1,6 +1,5 @@
 ﻿using L2Dn.AuthServer.Model;
 using L2Dn.AuthServer.Network.OutgoingPackets;
-using L2Dn.AuthServer.NetworkGameServer;
 using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -25,8 +24,7 @@ internal struct RequestServerLoginPacket: IIncomingPacket<AuthSession>
         AccountInfo? accountInfo = session.AccountInfo;
         
         byte serverId = _serverId;
-        GameServerInfo? serverInfo = GameServerManager.Instance.Servers.SingleOrDefault(x => x.ServerId == serverId);
-        
+        GameServerInfo? serverInfo = GameServerManager.Instance.GetServerInfo(serverId);
         if (_loginKey1 != session.LoginKey1 || _loginKey2 != session.LoginKey2 || accountInfo is null || 
             serverInfo is null || !serverInfo.IsOnline)
         {
