@@ -1,5 +1,6 @@
 ﻿using L2Dn.Model;
 using L2Dn.Network;
+using L2Dn.Utilities;
 
 namespace L2Dn.AuthServer.Model;
 
@@ -7,7 +8,7 @@ internal sealed class GameServerInfo
 {
     public byte ServerId { get; set; }
 
-    public int Address { get; set; } = 0x0100007F; // 127.0.0.1
+    public int Address { get; set; } = IPAddressUtil.Loopback;
     public int Port { get; set; } = 7777;
 
     public int PlayerCount { get; set; }

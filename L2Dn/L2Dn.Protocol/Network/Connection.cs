@@ -127,18 +127,21 @@ public abstract class Connection
         }
         catch (OperationCanceledException)
         {
+            Close();
+        }
+        catch (SocketException socketException)
+        {
+            SocketError errorCode = socketException.SocketErrorCode;
+            if (errorCode == SocketError.Success)
+                return;
+            
+            if (errorCode != SocketError.OperationAborted && errorCode != SocketError.ConnectionReset)
+                _logger.Warn($"S({_session.Id})  Error receiving data: {socketException}");
+            
+            Close();
         }
         catch (Exception exception)
         {
-            if (exception is SocketException
-                {
-                    SocketErrorCode: SocketError.Success or SocketError.OperationAborted
-                    or SocketError.ConnectionReset
-                })
-            {
-                return;
-            }
-
             _logger.Warn($"S({_session.Id})  Error receiving data: {exception}");
             Close();
         }

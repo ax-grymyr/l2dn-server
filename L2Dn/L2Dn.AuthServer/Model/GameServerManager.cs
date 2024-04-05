@@ -87,9 +87,10 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
         // set server online
         if (!actualValue.IsOnline)
         {
-            actualValue.IsOnline = true;
             _logger.Info($"Game server {actualValue.ServerId} is ONLINE now.");
         }
+
+        actualValue.IsOnline = true;
 
         return RegistrationResult.Success;
     }
@@ -136,7 +137,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
         catch (ArgumentException)
         {
             _logger.Error($"Invalid IPv4 address '{address}' in {nameof(GameServer)}s table, server id '{serverId}'");
-            return 0x0100007F; // 127.0.0.1
+            return IPAddressUtil.Loopback;
         }
     }
 }
