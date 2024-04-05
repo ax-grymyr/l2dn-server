@@ -23,7 +23,6 @@
 	<item id="49576" price="0" /> <!-- Ring of Core Lv. 2 -->
 	<item id="49579" price="0" /> <!-- Ring of Core Lv. 3 -->
 	<item id="91380" price="0" /> <!-- Ring of Core Lv. 4 -->
-	<item id="49041" price="0" /> <!-- Ring (Novice) -->
 	<item id="49580" price="0" /> <!-- Baium's Ring -->
 	<item id="49581" price="0" /> <!-- Baium's Ring Lv. 2 -->
 	<item id="49582" price="0" /> <!-- Baium's Ring Lv. 3 -->
@@ -31,5 +30,6 @@
 	<item id="91550" price="0" /> <!-- Frintezza's Necklace -->
 	<item id="91551" price="0" /> <!-- Frintezza's Necklace Lv. 2 -->
 	<item id="91552" price="0" /> <!-- Frintezza's Necklace Lv. 3 -->
-	<item id="91553" price="0" /> <!-- Frintezza's Necklace Lv. 3 -->
+	<item id="91553" price="0" /> <!-- Frintezza's Necklace Lv. 4 -->
+	<item id="49041" price="0" /> <!-- Ring (Novice) -->
 </list>
