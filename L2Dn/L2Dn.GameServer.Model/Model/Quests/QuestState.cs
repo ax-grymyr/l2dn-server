@@ -57,7 +57,7 @@ public class QuestState
 	 */
 	public QuestState(Quest quest, Player player, byte state)
 	{
-		_questName = quest.getName();
+		_questName = quest.Name;
 		_player = player;
 		_state = state;
 		player.setQuestState(this);

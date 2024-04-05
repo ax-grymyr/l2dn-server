@@ -5,7 +5,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -179,7 +178,7 @@ public class AdminReload: IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.EFFECT_MASTER_HANDLER_FILE);
+						// TODO ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.EFFECT_MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded effect master handler.");
 					}
 					catch (Exception e)
@@ -193,7 +192,7 @@ public class AdminReload: IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.MASTER_HANDLER_FILE);
+						// TODO ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded master handler.");
 					}
 					catch (Exception e)

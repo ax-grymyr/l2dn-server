@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LimitShop.xsd">
-	<product id="388" category="0">
+	<product id="10001" category="0">
 		<ingredient id="91663" count="1000" /> <!-- L-Coin -->
 		<production id="97638" accountDailyLimit="3" /> <!-- Daily Kit: Jewel Craft -->
 	</product>
-	<product id="9" category="1">
+	<product id="10002" category="1">
 		<ingredient id="91663" count="20" /> <!-- L-Coin -->
 		<production id="91641" /> <!-- Sayha's Blessing (Sealed) -->
 	</product>
-	<product id="12" category="1">
+	<product id="10003" category="1">
 		<ingredient id="91663" count="6" /> <!-- L-Coin -->
 		<production id="91690" /> <!-- Special HP Recovery Potion (Sealed) -->
 	</product>
-	<product id="13" category="1">
+	<product id="10004" category="1">
 		<ingredient id="91663" count="20" /> <!-- L-Coin -->
 		<production id="91689" /> <!-- Blessed Scroll of Escape (Sealed) -->
 	</product>
-	<product id="340" category="1">
+	<product id="10005" category="1">
 		<ingredient id="91663" count="800" /> <!-- L-Coin -->
 		<production id="91031" /> <!-- Water Spirit Evolution Stone -->
 	</product>
-	<product id="341" category="1">
+	<product id="10006" category="1">
 		<ingredient id="91663" count="800" /> <!-- L-Coin -->
 		<production id="91032" /> <!-- Fire Spirit Evolution Stone -->
 	</product>
-	<product id="342" category="1">
+	<product id="10007" category="1">
 		<ingredient id="91663" count="800" /> <!-- L-Coin -->
 		<production id="91033" /> <!-- Wind Spirit Evolution Stone -->
 	</product>
-	<product id="343" category="1">
+	<product id="10008" category="1">
 		<ingredient id="91663" count="800" /> <!-- L-Coin -->
 		<production id="91034" /> <!-- Earth Spirit Evolution Stone -->
 	</product>
-	<product id="567" category="1">
+	<product id="10009" category="1">
 		<ingredient id="91663" count="200" /> <!-- L-Coin -->
 		<production id="97147" /> <!-- Hidden Power Booster (Sealed) -->
 	</product>
-	<product id="14" category="2">
+	<product id="10010" category="2">
 		<ingredient id="91663" count="300" /> <!-- L-Coin -->
 		<production id="90404" /> <!-- My Teleport Book (Sealed) -->
 	</product>
-	<product id="15" category="2">
+	<product id="10011" category="2">
 		<ingredient id="91663" count="20" /> <!-- L-Coin -->
 		<production id="90405" /> <!-- My Teleport Scroll (Sealed) -->
 	</product>
-	<product id="16" category="2">
+	<product id="10012" category="2">
 		<ingredient id="91663" count="50" /> <!-- L-Coin -->
 		<production id="91996" /> <!-- Scroll of Escape Pack: Tower of Insolence (Floors 1-7) -->
 	</product>
-	<product id="17" category="2">
+	<product id="10013" category="2">
 		<ingredient id="91663" count="100" /> <!-- L-Coin -->
 		<production id="92973" /> <!-- Scroll of Escape Pack: Tower of Insolence (Floors 8-12) -->
 	</product>
-	<product id="410" category="2">
+	<product id="10014" category="2">
 		<ingredient id="91663" count="5000" /> <!-- L-Coin -->
 		<production id="94828" accountBuyLimit="1" /> <!-- Class Change Coupon (Sealed) -->
 	</product>
-	<product id="485" category="2">
+	<product id="10015" category="2">
 		<ingredient id="91663" count="350" /> <!-- L-Coin -->
 		<production id="91772" /> <!-- Scroll: PK (Sealed) -->
 	</product>
-	<product id="305" category="3">
+	<product id="10016" category="3">
 		<ingredient id="97145" count="15000" /> <!-- Ancient Adena -->
 		<production id="97176" accountBuyLimit="1" /> <!-- Spellbook Coupon - 2 Stars (Sealed) -->
 	</product>
-	<product id="306" category="3">
+	<product id="10017" category="3">
 		<ingredient id="97145" count="20000" /> <!-- Ancient Adena -->
 		<production id="95329" accountBuyLimit="1" /> <!-- Ring of Core (Sealed) -->
 	</product>
-	<product id="314" category="3">
+	<product id="10018" category="3">
 		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
 		<production id="95328" accountBuyLimit="1" /> <!-- Orfen's Earring (Sealed) -->
 	</product>
-	<product id="315" category="3">
+	<product id="10019" category="3">
 		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
 		<production id="95327" accountBuyLimit="1" /> <!-- Queen Ant's Ring (Sealed) -->
 	</product>
-	<product id="316" category="3">
+	<product id="10020" category="3">
 		<ingredient id="97145" count="50000" /> <!-- Ancient Adena -->
 		<production id="95331" accountBuyLimit="1" /> <!-- Zaken's Earring (Sealed) -->
 	</product>
-	<product id="317" category="3">
+	<product id="10021" category="3">
 		<ingredient id="97145" count="80000" /> <!-- Ancient Adena -->
 		<production id="97177" accountBuyLimit="1" /> <!-- Spellbook Coupon - 3 Stars (Sealed) -->
 	</product>
-	<product id="318" category="3">
+	<product id="10022" category="3">
 		<ingredient id="97145" count="80000" /> <!-- Ancient Adena -->
 		<production id="95330" accountBuyLimit="1" /> <!-- Baium's Ring (Sealed) -->
 	</product>

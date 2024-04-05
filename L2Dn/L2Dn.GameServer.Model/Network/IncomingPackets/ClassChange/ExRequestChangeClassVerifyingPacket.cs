@@ -92,7 +92,7 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 		if (quest is null)
 			return false;
 		
-		QuestState qs = player.getQuestState(quest.getName());
+		QuestState qs = player.getQuestState(quest.Name);
 		return qs != null && qs.isCompleted();
 	}
 }

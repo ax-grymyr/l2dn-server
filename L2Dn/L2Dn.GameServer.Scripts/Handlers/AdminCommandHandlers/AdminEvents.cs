@@ -3,6 +3,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
@@ -132,11 +133,16 @@ public class AdminEvents: IAdminCommandHandler
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/gm_events.htm", activeChar);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		StringBuilder cList = new StringBuilder(500);
-		foreach (Quest ev in QuestManager.getInstance().getScripts().values())
+		foreach (AbstractScript ev in ScriptManager.GetScripts())
 		{
 			if (ev is Event)
 			{
-				cList.Append("<tr><td><font color=\"LEVEL\">" + ev.getName() + ":</font></td><br><td><button value=\"Start\" action=\"bypass -h admin_event_start_menu " + ev.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><button value=\"Stop\" action=\"bypass -h admin_event_stop_menu " + ev.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+				cList.Append("<tr><td><font color=\"LEVEL\">" + ev.Name +
+				             ":</font></td><br><td><button value=\"Start\" action=\"bypass -h admin_event_start_menu " +
+				             ev.Name +
+				             "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><button value=\"Stop\" action=\"bypass -h admin_event_stop_menu " +
+				             ev.Name +
+				             "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 			}
 		}
 

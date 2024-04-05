@@ -625,5 +625,5 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		}
 	}
 
-	public override string getScriptName() => nameof(AdminZones);
+	public override string Name => nameof(AdminZones);
 }

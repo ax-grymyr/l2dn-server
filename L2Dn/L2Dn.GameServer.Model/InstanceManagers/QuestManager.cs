@@ -1,5 +1,4 @@
 using L2Dn.GameServer.Model.Quests;
-using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -14,22 +13,22 @@ public class QuestManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(QuestManager));
 	
 	/** Map containing all the quests. */
-	private readonly Map<String, Quest> _quests = new();
-	/** Map containing all the scripts. */
-	private readonly Map<String, Quest> _scripts = new();
+	private readonly Map<string, Quest> _quests = new();
 	
 	protected QuestManager()
 	{
 	}
 	
-	public bool reload(String questFolder)
+	public bool reload(string questName)
 	{
-		Quest q = getQuest(questFolder);
+		Quest q = getQuest(questName);
 		if (q == null)
 		{
 			return false;
 		}
-		return q.reload();
+		
+		q.Reload();
+		return true;
 	}
 	
 	/**
@@ -44,7 +43,8 @@ public class QuestManager
 		{
 			return false;
 		}
-		return q.reload();
+		q.Reload();
+		return true;
 	}
 	
 	/**
@@ -55,14 +55,6 @@ public class QuestManager
 		unloadAllScripts();
 		
 		LOGGER.Info("Reloading all server scripts.");
-		try
-		{
-			ScriptEngineManager.getInstance().executeScriptList();
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Failed executing script list!" + e);
-		}
 		
 		getInstance().report();
 	}
@@ -83,15 +75,6 @@ public class QuestManager
 			}
 		}
 		_quests.clear();
-		// Unload scripts.
-		foreach (Quest script in _scripts.values())
-		{
-			if (script != null)
-			{
-				script.unload(false);
-			}
-		}
-		_scripts.clear();
 	}
 	
 	/**
@@ -100,7 +83,6 @@ public class QuestManager
 	public void report()
 	{
 		LOGGER.Info(GetType().Name +": Loaded " + _quests.size() + " quests.");
-		LOGGER.Info(GetType().Name +": Loaded " + _scripts.size() + " scripts.");
 	}
 	
 	/**
@@ -113,12 +95,6 @@ public class QuestManager
 		{
 			quest.onSave();
 		}
-		
-		// Save scripts.
-		foreach (Quest script in _scripts.values())
-		{
-			script.onSave();
-		}
 	}
 	
 	/**
@@ -127,13 +103,14 @@ public class QuestManager
 	 * @param name the quest name
 	 * @return the quest
 	 */
-	public Quest getQuest(String name)
+	public Quest getQuest(string name)
 	{
 		if (_quests.containsKey(name))
 		{
 			return _quests.get(name);
 		}
-		return _scripts.get(name);
+
+		return null;
 	}
 	
 	/**
@@ -173,16 +150,16 @@ public class QuestManager
 		// or taken any other action which it might re-take by re-reading the data.
 		// the current solution properly closes the running tasks of the old quest but
 		// ignores the data; perhaps the least of all evils...
-		Quest old = _quests.put(quest.getName(), quest);
+		Quest old = _quests.put(quest.Name, quest);
 		if (old != null)
 		{
-			old.unload();
-			LOGGER.Info("Replaced quest " + old.getName() + " (" + old.getId() + ") with a new version!");
+			old.Unload();
+			LOGGER.Info("Replaced quest " + old.Name + " (" + old.getId() + ") with a new version!");
 		}
 		
 		if (Config.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
 		{
-			String questName = quest.getName().Contains("_") ? quest.getName().Substring(quest.getName().IndexOf('_') + 1) : quest.getName();
+			string questName = quest.Name.Contains("_") ? quest.Name.Substring(quest.Name.IndexOf('_') + 1) : quest.Name;
 			LOGGER.Info("Loaded quest " + questName + ".");
 		}
 	}
@@ -194,20 +171,16 @@ public class QuestManager
 	 */
 	public bool removeScript(Quest script)
 	{
-		if (_quests.containsKey(script.getName()))
+		if (_quests.containsKey(script.Name))
 		{
-			_quests.remove(script.getName());
+			_quests.remove(script.Name);
 			return true;
 		}
-		else if (_scripts.containsKey(script.getName()))
-		{
-			_scripts.remove(script.getName());
-			return true;
-		}
+
 		return false;
 	}
 	
-	public Map<String, Quest> getQuests()
+	public Map<string, Quest> getQuests()
 	{
 		return _quests;
 	}
@@ -216,34 +189,6 @@ public class QuestManager
 	{
 		ms.onSave();
 		return removeScript(ms);
-	}
-	
-	/**
-	 * Gets all the registered scripts.
-	 * @return all the scripts
-	 */
-	public Map<String, Quest> getScripts()
-	{
-		return _scripts;
-	}
-	
-	/**
-	 * Adds a script.
-	 * @param script the script to be added
-	 */
-	public void addScript(Quest script)
-	{
-		Quest old = _scripts.put(script.GetType().Name, script);
-		if (old != null)
-		{
-			old.unload();
-			LOGGER.Info("Replaced script " + old.getName() + " with a new version!");
-		}
-		
-		if (Config.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
-		{
-			LOGGER.Info("Loaded script " + script.GetType().Name + ".");
-		}
 	}
 	
 	/**

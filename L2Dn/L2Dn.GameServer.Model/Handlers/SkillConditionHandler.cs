@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -29,18 +28,6 @@ public class SkillConditionHandler
 	public int size()
 	{
 		return _skillConditionHandlerFactories.size();
-	}
-	
-	public void executeScript()
-	{
-		try
-		{
-			ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.SKILL_CONDITION_HANDLER_FILE);
-		}
-		catch (Exception e)
-		{
-			throw new Exception("Problems while running SkillMasterHandler", e);
-		}
 	}
 	
 	private static class SingletonHolder

@@ -14,7 +14,6 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Network.OutgoingPackets.ClassChange;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
 using L2Dn.GameServer.Network.OutgoingPackets.Friends;
 using L2Dn.GameServer.Utilities;
@@ -252,13 +251,6 @@ public class PlayerStat: PlayableStat
 				pet.broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
 				pet.updateAndBroadcastStatus(1);
 			}
-		}
-		
-		// Check if class change available // TODO: add Config setting, also 3rd class change
-		if (getLevel() >= 20 && getActiveChar().getActiveClass().GetLevel() == 0 ||
-		    getLevel() >= 40 && getActiveChar().getActiveClass().GetLevel() == 1)
-		{
-			getActiveChar().sendPacket(new ExClassChangeSetAlarmPacket());			
 		}
 		
 		getActiveChar().broadcastStatusUpdate();

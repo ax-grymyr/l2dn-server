@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Conditions;
-using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;
@@ -29,18 +28,6 @@ public class ConditionHandler
 	public int size()
 	{
 		return _conditionHandlerFactories.size();
-	}
-	
-	public void executeScript()
-	{
-		try
-		{
-			ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.CONDITION_HANDLER_FILE);
-		}
-		catch (Exception e)
-		{
-			throw new Exception("Problems while running ConditionMasterHandler", e);
-		}
 	}
 	
 	private static class SingletonHolder

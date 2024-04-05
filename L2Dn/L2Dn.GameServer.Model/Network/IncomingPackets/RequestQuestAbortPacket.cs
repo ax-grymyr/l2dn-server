@@ -27,7 +27,7 @@ public struct RequestQuestAbortPacket: IIncomingPacket<GameSession>
         Quest qe = QuestManager.getInstance().getQuest(_questId);
         if (qe != null)
         {
-            QuestState qs = player.getQuestState(qe.getName());
+            QuestState qs = player.getQuestState(qe.Name);
             if (qs != null)
             {
                 qs.setSimulated(false);

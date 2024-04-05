@@ -363,7 +363,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				Quest quest = QuestManager.getInstance().getQuest(newQuest.getId());
 				if (quest != null)
 				{
-					QuestState questState = player.getQuestState(quest.getScriptName());
+					QuestState questState = player.getQuestState(quest.Name);
 					if ((questState == null) && quest.canStartQuest(player) && !newQuest.getConditions().getSpecificStart())
 					{
 						connection.Send(new ExQuestDialogPacket(quest.getId(), QuestDialogType.ACCEPT));

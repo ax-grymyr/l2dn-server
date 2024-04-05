@@ -21,7 +21,7 @@ public abstract class AbstractNpcAI: Quest
 	/**
 	 * Simple on first talk event handler.
 	 */
-	public String onFirstTalk(Npc npc, Player player) //  TODO: override
+	public override string onFirstTalk(Npc npc, Player player)
 	{
 		return npc.getId() + ".html";
 	}
@@ -50,7 +50,7 @@ public abstract class AbstractNpcAI: Quest
 		addFactionCallId(mobs);
 	}
 	
-	public void spawnMinions(Npc npc, String spawnName)
+	public void spawnMinions(Npc npc, string spawnName)
 	{
 		foreach (MinionHolder mh in npc.getParameters().getMinionList(spawnName))
 		{

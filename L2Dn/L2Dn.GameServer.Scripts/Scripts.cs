@@ -1,5 +1,7 @@
-﻿using L2Dn.GameServer.Handlers;
+﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Scripts.AI.Players;
 using L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 using L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 using L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -17,9 +19,11 @@ using L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 using L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 using L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 using L2Dn.GameServer.Scripts.Quests;
+using PlayerAction = L2Dn.GameServer.Scripts.Handlers.ActionHandlers.PlayerAction;
 using Range = L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes.Range;
 using Single = L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes.Single;
 using Summon = L2Dn.GameServer.Scripts.Handlers.EffectHandlers.Summon;
+using TrapAction = L2Dn.GameServer.Scripts.Handlers.ActionHandlers.TrapAction;
 
 namespace L2Dn.GameServer.Scripts;
 
@@ -900,5 +904,10 @@ public static class Scripts
 	    // Quests
 	    QuestManager questManager = QuestManager.getInstance();
 	    questManager.addQuest(new Q00206Tutorial());
+    }
+
+    public static void RegisterScripts()
+    {
+	    ScriptManager.AddScript(new PlayerClassChange());
     }
 }

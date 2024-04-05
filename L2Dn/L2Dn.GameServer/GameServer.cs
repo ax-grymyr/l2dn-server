@@ -25,6 +25,7 @@ public class GameServer
         Scripts.Scripts.RegisterHandlers();
         StaticData.Load();
         Scripts.Scripts.RegisterQuests();
+        Scripts.Scripts.RegisterScripts();
 		
 		long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
 		long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;

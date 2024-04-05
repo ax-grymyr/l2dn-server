@@ -29,7 +29,7 @@ public readonly struct ExQuestAcceptableListPacket: IOutgoingPacket
             Quest quest = questManager.getQuest(newQuest.getId());
             if ((quest != null) && quest.canStartQuest(_player))
             {
-                QuestState questState = _player.getQuestState(quest.getName());
+                QuestState questState = _player.getQuestState(quest.Name);
                 if (questState == null)
                 {
                     availableQuests.Add(quest);

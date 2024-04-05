@@ -34,20 +34,28 @@ using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Scripting;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Events;
 
-public abstract class AbstractScript: ManagedScript, IEventTimerEvent<string>, IEventTimerCancel<string>
+public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCancel<string>
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(AbstractScript));
 	private readonly Set<EventContainer> _eventContainers = new();
+	private readonly DateTime _loadTime = DateTime.UtcNow;
 	private TimerExecutor<string>? _timerExecutor;
 
 	protected AbstractScript()
+	{
+		SubscribeToEvents();
+	}
+
+	public virtual string Name => GetType().FullName!;
+	public DateTime LoadTime => _loadTime;
+
+	private void SubscribeToEvents()
 	{
 		MethodInfo[] methods =
 			GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
@@ -66,6 +74,24 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<string>, I
 		}
 	}
 	
+	/// <summary>
+	/// Unsubscribe from all events by this class.
+	/// </summary>
+	public virtual void Unload()
+	{
+		foreach (EventContainer container in _eventContainers)
+			container.UnsubscribeAllTypes(this);
+        
+		if (_timerExecutor != null)
+			_timerExecutor.cancelAllTimers();
+	}
+
+	public virtual void Reload()
+	{
+		Unload();
+		SubscribeToEvents();
+	}
+    
 	public virtual void onTimerEvent(TimerHolder<string> holder)
 	{
 		onTimerEvent(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
@@ -107,22 +133,6 @@ public abstract class AbstractScript: ManagedScript, IEventTimerEvent<string>, I
 	public bool hasTimers()
 	{
 		return _timerExecutor != null;
-	}
-	
-	/**
-	 * Unloads all listeners registered by this class.
-	 */
-	public override bool unload()
-	{
-		foreach (EventContainer container in _eventContainers)
-			container.UnsubscribeAllTypes(this);
-        
-		if (_timerExecutor != null)
-		{
-			_timerExecutor.cancelAllTimers();
-		}
-		
-		return true;
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------

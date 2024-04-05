@@ -101,7 +101,7 @@ public class NpcActionShift: IActionShiftHandler
 						Quest script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
 						if (script != null)
 						{
-							htmlContent.Replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.getName() + "\"><font color=\"LEVEL\">" + script.getName() + "</font></a>");
+							htmlContent.Replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.Name + "\"><font color=\"LEVEL\">" + script.Name + "</font></a>");
 						}
 					}
 					htmlContent.Replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");

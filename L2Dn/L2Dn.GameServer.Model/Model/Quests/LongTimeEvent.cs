@@ -108,14 +108,14 @@ public class LongTimeEvent: Quest
 	 */
 	private void loadConfig()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "scripts/events", getScriptName(), "config.xml");
+		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "scripts/events", Name, "config.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
 
 		XElement? root = document.Element("event");
 		if (root == null)
 		{
-			throw new InvalidOperationException("WARNING!!! " + getScriptName() + " event: bad config file!");
+			throw new InvalidOperationException("WARNING!!! " + Name + " event: bad config file!");
 		}
 
 		_eventName = root.GetAttributeValueAsString("name");
@@ -138,7 +138,7 @@ public class LongTimeEvent: Quest
 
 		if (_eventPeriod == null)
 		{
-			throw new InvalidOperationException("WARNING!!! " + getName() + " event: illegal event period");
+			throw new InvalidOperationException("WARNING!!! " + Name + " event: illegal event period");
 		}
 
 		DateTime today = DateTime.Today;
@@ -176,21 +176,21 @@ public class LongTimeEvent: Quest
 
 								if (ItemData.getInstance().getTemplate(itemId) == null)
 								{
-									LOGGER.Warn(getName() + " event: " + itemId +
+									LOGGER.Warn(Name + " event: " + itemId +
 									            " is wrong item id, item was not added in droplist");
 									continue;
 								}
 
 								if (minCount > maxCount)
 								{
-									LOGGER.Warn(getName() + " event: item " + itemId +
+									LOGGER.Warn(Name + " event: item " + itemId +
 									            " - min greater than max, item was not added in droplist");
 									continue;
 								}
 
 								if ((finalChance < 0) || (finalChance > 100))
 								{
-									LOGGER.Warn(getName() + " event: item " + itemId +
+									LOGGER.Warn(Name + " event: item " + itemId +
 									            " - incorrect drop chance, item was not added in droplist");
 									continue;
 								}
@@ -200,7 +200,7 @@ public class LongTimeEvent: Quest
 							}
 							catch (FormatException nfe)
 							{
-								LOGGER.Warn("Wrong number format in config.xml droplist block for " + getName() +
+								LOGGER.Warn("Wrong number format in config.xml droplist block for " + Name +
 								            " event");
 							}
 						}
@@ -225,7 +225,7 @@ public class LongTimeEvent: Quest
 
 								if (NpcData.getInstance().getTemplate(npcId) == null)
 								{
-									LOGGER.Warn(getName() + " event: " + npcId +
+									LOGGER.Warn(Name + " event: " + npcId +
 									            " is wrong NPC id, NPC was not added in spawnlist");
 									continue;
 								}
@@ -235,7 +235,7 @@ public class LongTimeEvent: Quest
 							}
 							catch (FormatException nfe)
 							{
-								LOGGER.Warn("Wrong number format in config.xml spawnlist block for " + getName() +
+								LOGGER.Warn("Wrong number format in config.xml spawnlist block for " + Name +
 								            " event");
 							}
 						}
@@ -278,7 +278,7 @@ public class LongTimeEvent: Quest
 					int itemId = d.GetAttributeValueAsInt32("id");
 					if (ItemData.getInstance().getTemplate(itemId) == null)
 					{
-						LOGGER.Warn(getScriptName() + " event: Item " + itemId + " does not exist.");
+						LOGGER.Warn(Name + " event: Item " + itemId + " does not exist.");
 						continue;
 					}
 
@@ -292,7 +292,7 @@ public class LongTimeEvent: Quest
 				}
 				catch (FormatException nfe)
 				{
-					LOGGER.Warn("Wrong number format in config.xml destroyItemsOnEnd block for " + getScriptName() +
+					LOGGER.Warn("Wrong number format in config.xml destroyItemsOnEnd block for " + Name +
 					            " event");
 				}
 			}

@@ -29,7 +29,7 @@ public class ConditionQuest: Condition
 			return false;
 		}
 
-		QuestState qs = player.getQuestState(q.getName());
+		QuestState qs = player.getQuestState(q.Name);
 		if (qs == null)
 		{
 			return false;

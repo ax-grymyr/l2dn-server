@@ -97,7 +97,7 @@ public class QuestLink: IBypassHandler
 		String startQuest = null;
 		foreach (Quest quest in questList)
 		{
-			QuestState qs = player.getQuestState(quest.getScriptName());
+			QuestState qs = player.getQuestState(quest.Name);
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
 				String startConditionHtml = quest.getStartConditionHtml(player, npc);
@@ -108,10 +108,10 @@ public class QuestLink: IBypassHandler
 				else if (startingQuests.Contains(quest) && quest.canStartQuest(player))
 				{
 					startCount++;
-					startQuest = quest.getName();
+					startQuest = quest.Name;
 					
 					sbCanStart.Append("<font color=\"bbaa88\">");
-					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
 
 					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
@@ -133,7 +133,7 @@ public class QuestLink: IBypassHandler
 				else
 				{
 					sbCantStart.Append("<font color=\"a62f31\">");
-					sbCantStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+					sbCantStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
 					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
 					// {
@@ -158,10 +158,10 @@ public class QuestLink: IBypassHandler
 			else if (qs.isStarted())
 			{
 				startCount++;
-				startQuest = quest.getName();
+				startQuest = quest.Name;
 				
 				sbStarted.Append("<font color=\"ffdd66\">");
-				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
 				String localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
@@ -181,7 +181,7 @@ public class QuestLink: IBypassHandler
 			else if (qs.isCompleted())
 			{
 				sbCompleted.Append("<font color=\"787878\">");
-				sbCompleted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+				sbCompleted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
 				String localisation = quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
@@ -314,7 +314,7 @@ public class QuestLink: IBypassHandler
 		}
 		else if (quests.size() == 1)
 		{
-			showQuestWindow(player, npc, quests.FirstOrDefault()?.getName() ?? string.Empty);
+			showQuestWindow(player, npc, quests.FirstOrDefault()?.Name ?? string.Empty);
 		}
 		else
 		{

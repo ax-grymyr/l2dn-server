@@ -47,8 +47,8 @@ public static class StaticData
         
         SkillConditionHandler.getInstance(); //.executeScript();
         EffectHandler.getInstance(); //.executeScript();
-        SkillTreeData.getInstance();
         SkillData.getInstance();
+        SkillTreeData.getInstance();
         PetSkillData.getInstance();
         PetAcquireList.getInstance();
         SkillEnchantData.getInstance();

@@ -23,7 +23,7 @@ public readonly struct GMViewQuestInfoPacket: IOutgoingPacket
         writer.WriteInt16((short)_questList.Count); // quest count
         foreach (Quest quest in _questList)
         {
-            QuestState qs = _player.getQuestState(quest.getName());
+            QuestState qs = _player.getQuestState(quest.Name);
             writer.WriteInt32(quest.getId());
             writer.WriteInt32(qs == null ? 0 : (int)qs.getCond());
         }

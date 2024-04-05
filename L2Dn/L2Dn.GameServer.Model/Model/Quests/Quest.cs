@@ -201,7 +201,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public QuestState getQuestState(Player player, bool initIfNone)
 	{
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = player.getQuestState(Name);
 		if (qs != null || !initIfNone)
 		{
 			return qs;
@@ -220,10 +220,7 @@ public class Quest: AbstractScript, IIdentifiable
 	/**
 	 * @return the name of the quest
 	 */
-	public virtual string getName()
-	{
-		return GetType().Name;
-	}
+	public override string Name => GetType().Name;
 	
 	/**
 	 * @return the path of the quest script
@@ -414,6 +411,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(attacker, e);
 			return;
 		}
+		
 		showResult(attacker, res);
 	}
 	
@@ -1044,7 +1042,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		if (player != null)
 		{
-			QuestState qs = player.getQuestState(getName());
+			QuestState qs = player.getQuestState(Name);
 			if (qs != null)
 			{
 				return onEvent(@event, qs);
@@ -1098,7 +1096,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public string onTalk(Npc npc, Player talker, bool simulated)
 	{
-		QuestState qs = talker.getQuestState(getName());
+		QuestState qs = talker.getQuestState(Name);
 		if (qs != null)
 		{
 			qs.setSimulated(simulated);
@@ -1463,7 +1461,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public bool showError(Player player, Exception exception)
 	{
-		LOGGER.Warn(getScriptFile() + " " + exception);
+		LOGGER.Warn(Name + " " + exception);
 		if (player != null && player.getAccessLevel().isGm())
 		{
 			string res = "<html><body><title>Script error</title>" + exception + "</body></html>";
@@ -2427,7 +2425,7 @@ public class Quest: AbstractScript, IIdentifiable
 		// if this player is not in a party, just check if this player instance matches the conditions itself
 		if (party == null || party.getMembers().isEmpty())
 		{
-			temp = player.getQuestState(getName());
+			temp = player.getQuestState(Name);
 			if (temp != null && temp.isSet(var) && temp.get(var).equalsIgnoreCase(value))
 			{
 				return player; // match
@@ -2450,7 +2448,7 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				continue;
 			}
-			temp = partyMember.getQuestState(getName());
+			temp = partyMember.getQuestState(Name);
 			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
@@ -2487,7 +2485,7 @@ public class Quest: AbstractScript, IIdentifiable
 		// if this player is not in a party, just check if this player instance matches the conditions itself
 		if (party == null || party.getMembers().isEmpty())
 		{
-			temp = player.getQuestState(getName());
+			temp = player.getQuestState(Name);
 			if (temp != null && temp.getState() == state)
 			{
 				return player; // match
@@ -2513,7 +2511,7 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				continue;
 			}
-			temp = partyMember.getQuestState(getName());
+			temp = partyMember.getQuestState(Name);
 			if (temp != null && temp.getState() == state && partyMember.isInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
@@ -2598,7 +2596,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = player.getQuestState(Name);
 		if (!player.isInParty())
 		{
 			return !checkPartyMemberConditions(qs, condition, target) || !checkDistanceToTarget(player, target) ? null : qs;
@@ -2620,7 +2618,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			
-			qs = member.getQuestState(getName());
+			qs = member.getQuestState(Name);
 			if (checkPartyMemberConditions(qs, condition, target))
 			{
 				candidates.add(qs);
@@ -2731,7 +2729,7 @@ public class Quest: AbstractScript, IIdentifiable
 			content = hc.getHtm(filePath, player.getLang());
 			if (content == null)
 			{
-				filePath = "scripts/quests/" + getName() + "/" + fileName;
+				filePath = "scripts/quests/" + Name + "/" + fileName;
 				content = hc.getHtm(filePath, player.getLang());
 			}
 		}
@@ -2772,32 +2770,17 @@ public class Quest: AbstractScript, IIdentifiable
 		takeItemsByIds(player, -1, _questItemIds);
 	}
 	
-	public override string getScriptName()
-	{
-		return getName();
-	}
 	
-	public override void setActive(bool status)
+	public override void Unload()
 	{
-		// TODO: Implement me.
-	}
-	
-	public override bool reload()
-	{
-		unload();
-		return base.reload();
-	}
-	
-	public override bool unload()
-	{
-		return unload(true);
+		unload(true);
 	}
 	
 	/**
 	 * @param removeFromList
 	 * @return
 	 */
-	public bool unload(bool removeFromList)
+	public void unload(bool removeFromList)
 	{
 		onSave();
 		
@@ -2815,9 +2798,11 @@ public class Quest: AbstractScript, IIdentifiable
 		
 		if (removeFromList)
 		{
-			return QuestManager.getInstance().removeScript(this) && base.unload();
+			QuestManager.getInstance().removeScript(this);
+			base.Unload();
 		}
-		return base.unload();
+		
+		base.Unload();
 	}
 	
 	public void setOnEnterWorld(bool value)
@@ -2868,7 +2853,7 @@ public class Quest: AbstractScript, IIdentifiable
 	
 	public void sendNpcLogList(Player player)
 	{
-		if (player.getQuestState(getName()) != null)
+		if (player.getQuestState(Name) != null)
 		{
 			ExQuestNpcLogListPacket packet = new ExQuestNpcLogListPacket(_questId);
 			foreach (NpcLogListHolder holder in getNpcLogList(player))
@@ -3139,7 +3124,7 @@ public class Quest: AbstractScript, IIdentifiable
 				{
 					if (!condition.getOneOfPreQuests())
 					{
-						addCondStart(p => p.hasQuestState(quest.getName()) && p.getQuestState(quest.getName()).isCompleted(), html);
+						addCondStart(p => p.hasQuestState(quest.Name) && p.getQuestState(quest.Name).isCompleted(), html);
 					}
 					else
 					{

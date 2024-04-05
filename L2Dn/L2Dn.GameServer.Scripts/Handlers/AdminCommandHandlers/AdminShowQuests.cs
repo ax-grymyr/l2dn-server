@@ -220,7 +220,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					Quest quest = QuestManager.getInstance().getQuest(qnumber);
 					if (quest != null)
 					{
-						qname = quest.getName();
+						qname = quest.Name;
 						qs = target.getQuestState(qname);
 					}
 					else
@@ -319,7 +319,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					qs.setCond(QuestCondType.STARTED);
 					target.sendPacket(new QuestListPacket(target));
 					target.sendPacket(new ExShowQuestMarkPacket(qs.getQuest().getId(), (int)qs.getCond()));
-					val[0] = qs.getQuest().getName();
+					val[0] = qs.getQuest().Name;
 					break;
 				}
 				case "CC":
@@ -328,7 +328,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					qs.exitQuest(QuestType.ONE_TIME);
 					target.sendPacket(new QuestListPacket(target));
 					target.sendPacket(new ExShowQuestMarkPacket(qs.getQuest().getId(), (int)qs.getCond()));
-					val[0] = qs.getQuest().getName();
+					val[0] = qs.getQuest().Name;
 					break;
 				}
 			}
