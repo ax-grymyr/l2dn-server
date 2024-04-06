@@ -2,6 +2,7 @@
 using System.Reflection;
 using L2Dn.Events;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -22,6 +23,7 @@ using L2Dn.GameServer.Model.Events.Impl.Traps;
 using L2Dn.GameServer.Model.Events.Impl.Zones;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -52,7 +54,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		SubscribeToEvents();
 	}
 
-	public virtual string Name => GetType().FullName!;
+	public virtual string Name => GetType().Name;
 	public DateTime LoadTime => _loadTime;
 
 	private void SubscribeToEvents()
@@ -136,6 +138,217 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
+
+	public void addTalkId(int npcId)
+	{
+		setNpcTalkId(ev => ev.Scripts.Add(this), npcId);
+	}
+
+	/**
+	 * Add this quest to the list of quests that the passed npc will respond to for Talk Events.
+	 * @param npcIds the IDs of the NPCs to register
+	 */
+	public void addTalkId(params int[] npcIds)
+	{
+		setNpcTalkId(ev => ev.Scripts.Add(this), npcIds);
+	}
+	
+	public void addTalkId(IReadOnlyCollection<int> npcIds)
+	{
+		setNpcTalkId(ev => ev.Scripts.Add(this), npcIds);
+	}
+	
+	/**
+	 * This function is called whenever a player clicks to the "Quest" link of an NPC that is registered for the quest.
+	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player is talking with.
+	 * @param talker this parameter contains a reference to the exact instance of the player who is talking to the NPC.
+	 * @return the text returned by the event (may be {@code null}, a filename or just text)
+	 */
+	public virtual string onTalk(Npc npc, Player talker)
+	{
+		return null;
+	}
+	
+	/**
+	 * @param npc
+	 * @param player
+	 */
+	public virtual void notifyTalk(Npc npc, Player player)
+	{
+		string? res = null;
+		try
+		{
+			// TODO: this is just the check that the script subscribed to OnNpcTalk event of Npc
+			// the check must be implemented differently, because it is THIS script instance
+			// subscribed to Npc OnNpcTalk event and it can store the Npc ids  
+			if (npc.Events.HasSubscribers<OnNpcTalk>())
+			{
+				OnNpcTalk onNpcTalk = new OnNpcTalk(npc, player);
+				if (npc.Events.Notify(onNpcTalk) && onNpcTalk.Scripts.Contains(this))
+				{
+					res = onTalk(npc, player);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			showError(player, e);
+			return;
+		}
+		
+		player.setLastQuestNpcObject(npc.getObjectId());
+		showResult(player, res, npc);
+	}
+	/**
+	 * Show an error message to the specified player.
+	 * @param player the player to whom to send the error (must be a GM)
+	 * @param t the {@link Throwable} to get the message/stacktrace from
+	 * @return {@code false}
+	 */
+	public bool showError(Player player, Exception exception)
+	{
+		_logger.Warn(Name + " " + exception);
+		if (player != null && player.getAccessLevel().isGm())
+		{
+			string res = "<html><body><title>Script error</title>" + exception + "</body></html>";
+			return showResult(player, res);
+		}
+		return false;
+	}
+	
+	/**
+	 * @param player the player to whom to show the result
+	 * @param res the message to show to the player
+	 * @return {@code false} if the message was sent, {@code true} otherwise
+	 * @see #showResult(Player, String, Npc)
+	 */
+	public bool showResult(Player player, string res)
+	{
+		return showResult(player, res, null);
+	}
+	
+	/**
+	 * Show a message to the specified player.<br>
+	 * <u><i>Concept:</i></u><br>
+	 * Three cases are managed according to the value of the {@code res} parameter:<br>
+	 * <ul>
+	 * <li><u>{@code res} ends with ".htm" or ".html":</u> the contents of the specified HTML file are shown in a dialog window</li>
+	 * <li><u>{@code res} starts with "&lt;html&gt;":</u> the contents of the parameter are shown in a dialog window</li>
+	 * <li><u>all other cases :</u> the text contained in the parameter is shown in chat</li>
+	 * </ul>
+	 * @param player the player to whom to show the result
+	 * @param npc npc to show the result for
+	 * @param res the message to show to the player
+	 * @return {@code false} if the message was sent, {@code true} otherwise
+	 */
+	public bool showResult(Player player, string res, Npc npc)
+	{
+		if (res == null || res.isEmpty() || player == null)
+		{
+			return true;
+		}
+		
+		if (res.endsWith(".htm") || res.endsWith(".html"))
+		{
+			showHtmlFile(player, res, npc);
+		}
+		else if (res.startsWith("<html>"))
+		{
+			HtmlContent htmlContent = HtmlContent.LoadFromText(res, player);
+			if (npc != null)
+			{
+				htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+			}
+			htmlContent.Replace("%playername%", player.getName());
+
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+			player.sendPacket(npcReply);
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+		}
+		else
+		{
+			player.sendMessage(res);
+		}
+		return false;
+	}
+	/**
+	 * Send an HTML file to the specified player.
+	 * @param player the player to send the HTML to
+	 * @param filename the name of the HTML file to show
+	 * @return the contents of the HTML file that was sent to the player
+	 * @see #showHtmlFile(Player, String, Npc)
+	 */
+	public string showHtmlFile(Player player, string filename)
+	{
+		return showHtmlFile(player, filename, null);
+	}
+	
+	/**
+	 * Send an HTML file to the specified player.
+	 * @param player the player to send the HTML file to
+	 * @param filename the name of the HTML file to show
+	 * @param npc the NPC that is showing the HTML file
+	 * @return the contents of the HTML file that was sent to the player
+	 * @see #showHtmlFile(Player, String, Npc)
+	 */
+	public virtual string showHtmlFile(Player player, string filename, Npc npc)
+	{
+		// Create handler to file linked to the quest
+		string content = getHtm(player, filename);
+		
+		// Send message to client if message not empty
+		if (content != null)
+		{
+			if (npc != null)
+			{
+				content = content.Replace("%objectId%", npc.getObjectId().ToString());
+			}
+			
+			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
+			htmlContent.Replace("%playername%", player.getName());
+
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+			player.sendPacket(npcReply);
+			
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+		}
+		
+		return content;
+	}
+	
+	/**
+	 * @param player for language prefix.
+	 * @param fileName the html file to be get.
+	 * @return the HTML file contents
+	 */
+	public string? getHtm(Player player, string fileName)
+	{
+		HtmCache hc = HtmCache.getInstance();
+
+		string filePath = $"scripts/quests/{GetType().Name}/{fileName}";
+		string? content = hc.getHtm(filePath, player.getLang());
+		if (content == null)
+		{
+			filePath = "scripts/" + getPath() + "/" + fileName;
+			content = hc.getHtm(filePath, player.getLang());
+			if (content == null)
+			{
+				filePath = "scripts/quests/" + Name + "/" + fileName;
+				content = hc.getHtm(filePath, player.getLang());
+			}
+		}
+
+		return content;
+	}
+	
+	/**
+	 * @return the path of the quest script
+	 */
+	public string getPath()
+	{
+		string path = GetType().FullName.Replace('.', '/');
+		return path.Substring(0, path.LastIndexOf('/' + GetType().Name)); // TODO
+	}
 	
 	/**
 	 * Provides callback operation when Attackable dies from a player.

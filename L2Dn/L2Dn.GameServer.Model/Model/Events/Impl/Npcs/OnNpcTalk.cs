@@ -1,6 +1,5 @@
 ﻿using L2Dn.Events;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
@@ -26,5 +25,7 @@ public class OnNpcTalk: EventBase
         return _player;
     }
 
-    public Set<Quest> Quests { get; } = new();
+    // TODO: this event must be refactored
+    // QuestLink should have another way to get Scripts adding NPC interaction 
+    public Set<AbstractScript> Scripts { get; } = new();
 }

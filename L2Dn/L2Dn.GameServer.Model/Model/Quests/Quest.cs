@@ -216,19 +216,47 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _initialState;
 	}
-	
 	/**
-	 * @return the name of the quest
+	 * Send an HTML file to the specified player.
+	 * @param player the player to send the HTML file to
+	 * @param filename the name of the HTML file to show
+	 * @param npc the NPC that is showing the HTML file
+	 * @return the contents of the HTML file that was sent to the player
+	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public override string Name => GetType().Name;
-	
-	/**
-	 * @return the path of the quest script
-	 */
-	public string getPath()
+	public override string showHtmlFile(Player player, string filename, Npc npc)
 	{
-		string path = GetType().FullName.Replace('.', '/');
-		return path.Substring(0, path.LastIndexOf('/' + GetType().Name)); // TODO
+		bool questwindow = !filename.endsWith(".html");
+		
+		// Create handler to file linked to the quest
+		string content = getHtm(player, filename);
+		
+		// Send message to client if message not empty
+		if (content != null)
+		{
+			if (npc != null)
+			{
+				content = content.Replace("%objectId%", npc.getObjectId().ToString());
+			}
+			
+			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
+			htmlContent.Replace("%playername%", player.getName());
+
+			if (questwindow && _questId > 0 && _questId < 20000 && _questId != 999)
+			{
+				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.getObjectId(), _questId, htmlContent);
+				player.sendPacket(npcReply);
+			}
+			else
+			{
+				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+				player.sendPacket(npcReply);
+			}
+			
+			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+		}
+		
+		return content;
 	}
 	
 	/**
@@ -611,32 +639,28 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc
 	 * @param player
 	 */
-	public void notifyTalk(Npc npc, Player player)
+	public override void notifyTalk(Npc npc, Player player)
 	{
-		string res;
+		string? res = null;
 		try
 		{
-			Set<Quest> startingQuests;
 			if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 			{
 				OnNpcQuestStart onNpcQuestStart = new OnNpcQuestStart(npc, player);
-				if (npc.Events.Notify(onNpcQuestStart))
-					startingQuests = onNpcQuestStart.Quests;
-				else
-					startingQuests = new();
+				if (npc.Events.Notify(onNpcQuestStart) && onNpcQuestStart.Quests.Contains(this))
+				{
+					string startConditionHtml = getStartConditionHtml(player, npc);
+					if (startConditionHtml != null)
+					{
+						res = startConditionHtml;
+					}
+					else
+					{
+						res = onTalk(npc, player, false);
+					}
+				}
 			}
-			else
-				startingQuests = new();
 			
-			string startConditionHtml = getStartConditionHtml(player, npc);
-			if (startingQuests.Contains(this) && startConditionHtml != null)
-			{
-				res = startConditionHtml;
-			}
-			else
-			{
-				res = onTalk(npc, player, false);
-			}
 		}
 		catch (Exception e)
 		{
@@ -1104,18 +1128,7 @@ public class Quest: AbstractScript, IIdentifiable
 		talker.setSimulatedTalking(simulated);
 		return onTalk(npc, talker);
 	}
-	
-	/**
-	 * This function is called whenever a player clicks to the "Quest" link of an NPC that is registered for the quest.
-	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player is talking with.
-	 * @param talker this parameter contains a reference to the exact instance of the player who is talking to the NPC.
-	 * @return the text returned by the event (may be {@code null}, a filename or just text)
-	 */
-	public string onTalk(Npc npc, Player talker)
-	{
-		return null;
-	}
-	
+
 	/**
 	 * This function is called whenever a player talks to an NPC that is registered for the quest.<br>
 	 * That is, it is triggered from the very first click on the NPC, not via another dialog.<br>
@@ -1454,79 +1467,6 @@ public class Quest: AbstractScript, IIdentifiable
 	}
 	
 	/**
-	 * Show an error message to the specified player.
-	 * @param player the player to whom to send the error (must be a GM)
-	 * @param t the {@link Throwable} to get the message/stacktrace from
-	 * @return {@code false}
-	 */
-	public bool showError(Player player, Exception exception)
-	{
-		LOGGER.Warn(Name + " " + exception);
-		if (player != null && player.getAccessLevel().isGm())
-		{
-			string res = "<html><body><title>Script error</title>" + exception + "</body></html>";
-			return showResult(player, res);
-		}
-		return false;
-	}
-	
-	/**
-	 * @param player the player to whom to show the result
-	 * @param res the message to show to the player
-	 * @return {@code false} if the message was sent, {@code true} otherwise
-	 * @see #showResult(Player, String, Npc)
-	 */
-	public bool showResult(Player player, string res)
-	{
-		return showResult(player, res, null);
-	}
-	
-	/**
-	 * Show a message to the specified player.<br>
-	 * <u><i>Concept:</i></u><br>
-	 * Three cases are managed according to the value of the {@code res} parameter:<br>
-	 * <ul>
-	 * <li><u>{@code res} ends with ".htm" or ".html":</u> the contents of the specified HTML file are shown in a dialog window</li>
-	 * <li><u>{@code res} starts with "&lt;html&gt;":</u> the contents of the parameter are shown in a dialog window</li>
-	 * <li><u>all other cases :</u> the text contained in the parameter is shown in chat</li>
-	 * </ul>
-	 * @param player the player to whom to show the result
-	 * @param npc npc to show the result for
-	 * @param res the message to show to the player
-	 * @return {@code false} if the message was sent, {@code true} otherwise
-	 */
-	public bool showResult(Player player, string res, Npc npc)
-	{
-		if (res == null || res.isEmpty() || player == null)
-		{
-			return true;
-		}
-		
-		if (res.endsWith(".htm") || res.endsWith(".html"))
-		{
-			showHtmlFile(player, res, npc);
-		}
-		else if (res.startsWith("<html>"))
-		{
-			HtmlContent htmlContent = HtmlContent.LoadFromText(res, player);
-			if (npc != null)
-			{
-				htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
-			}
-			htmlContent.Replace("%playername%", player.getName());
-
-			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
-			player.sendPacket(npcReply);
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		}
-		else
-		{
-			player.sendMessage(res);
-		}
-		return false;
-	}
-	
-	/**
 	 * Loads all quest states and variables for the specified player.
 	 * @param player the player who is entering the world
 	 */
@@ -1779,11 +1719,6 @@ public class Quest: AbstractScript, IIdentifiable
 		setNpcFirstTalkId(@event => notifyFirstTalk(@event.getNpc(), @event.getActiveChar()), npcId);
 	}
 	
-	public void addTalkId(int npcId)
-	{
-		setNpcTalkId(ev => ev.Quests.Add(this), npcId);
-	}
-	
 	public void addKillId(int npcId)
 	{
 		setAttackableKillId(kill => notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), npcId);
@@ -1918,20 +1853,6 @@ public class Quest: AbstractScript, IIdentifiable
 	public void addKillId(IReadOnlyCollection<int> npcIds)
 	{
 		setAttackableKillId(kill => notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), npcIds);
-	}
-	
-	/**
-	 * Add this quest to the list of quests that the passed npc will respond to for Talk Events.
-	 * @param npcIds the IDs of the NPCs to register
-	 */
-	public void addTalkId(params int[] npcIds)
-	{
-		setNpcTalkId(ev => ev.Quests.Add(this), npcIds);
-	}
-	
-	public void addTalkId(IReadOnlyCollection<int> npcIds)
-	{
-		setNpcTalkId(ev => ev.Quests.Add(this), npcIds);
 	}
 	
 	/**
@@ -2656,85 +2577,6 @@ public class Quest: AbstractScript, IIdentifiable
 	public bool checkPartyMember(QuestState qs, Npc npc)
 	{
 		return true;
-	}
-	
-	/**
-	 * Send an HTML file to the specified player.
-	 * @param player the player to send the HTML to
-	 * @param filename the name of the HTML file to show
-	 * @return the contents of the HTML file that was sent to the player
-	 * @see #showHtmlFile(Player, String, Npc)
-	 */
-	public string showHtmlFile(Player player, string filename)
-	{
-		return showHtmlFile(player, filename, null);
-	}
-	
-	/**
-	 * Send an HTML file to the specified player.
-	 * @param player the player to send the HTML file to
-	 * @param filename the name of the HTML file to show
-	 * @param npc the NPC that is showing the HTML file
-	 * @return the contents of the HTML file that was sent to the player
-	 * @see #showHtmlFile(Player, String, Npc)
-	 */
-	public string showHtmlFile(Player player, string filename, Npc npc)
-	{
-		bool questwindow = !filename.endsWith(".html");
-		
-		// Create handler to file linked to the quest
-		string content = getHtm(player, filename);
-		
-		// Send message to client if message not empty
-		if (content != null)
-		{
-			if (npc != null)
-			{
-				content = content.Replace("%objectId%", npc.getObjectId().ToString());
-			}
-			
-			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
-			htmlContent.Replace("%playername%", player.getName());
-
-			if (questwindow && _questId > 0 && _questId < 20000 && _questId != 999)
-			{
-				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.getObjectId(), _questId, htmlContent);
-				player.sendPacket(npcReply);
-			}
-			else
-			{
-				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
-				player.sendPacket(npcReply);
-			}
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		}
-		
-		return content;
-	}
-	
-	/**
-	 * @param player for language prefix.
-	 * @param fileName the html file to be get.
-	 * @return the HTML file contents
-	 */
-	public string? getHtm(Player player, string fileName)
-	{
-		HtmCache hc = HtmCache.getInstance();
-
-		string filePath = $"scripts/quests/{GetType().Name}/{fileName}";
-		string? content = hc.getHtm(filePath, player.getLang());
-		if (content == null)
-		{
-			filePath = "scripts/" + getPath() + "/" + fileName;
-			content = hc.getHtm(filePath, player.getLang());
-			if (content == null)
-			{
-				filePath = "scripts/quests/" + Name + "/" + fileName;
-				content = hc.getHtm(filePath, player.getLang());
-			}
-		}
-
-		return content;
 	}
 	
 	/**

@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Scripts.AI.Players;
+using L2Dn.GameServer.Scripts.AI.Teleporters;
 using L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 using L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 using L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -909,5 +910,6 @@ public static class Scripts
     public static void RegisterScripts()
     {
 	    ScriptManager.AddScript(new PlayerClassChange());
+	    ScriptManager.AddScript(new TeleportToRaceTrack());
     }
 }

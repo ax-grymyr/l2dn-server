@@ -1,9 +1,9 @@
 using System.Text;
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
@@ -246,11 +246,16 @@ public class QuestLink: IBypassHandler
 	private void showQuestWindow(Player player, Npc npc, String questId)
 	{
 		String content = null;
-		
+
+		AbstractScript? script = ScriptManager.GetScript(questId);
+		if (script != null)
+		{
+			// TODO: handle bypass link Script, i.e. handle also "npc_<id>_Script <script name>" in addition to "npc_<id>_Quest <quest name>"
+			script.notifyTalk(npc, player);
+			return;
+		}
+
 		Quest q = QuestManager.getInstance().getQuest(questId);
-		
-		// Get the state of the selected quest
-		QuestState qs = player.getQuestState(questId);
 		if (q != null)
 		{
 			if (((q.getId() >= 1) && (q.getId() < 20000)) && ((player.getWeightPenalty() >= 3) || !player.isInventoryUnder90(true)))
@@ -259,6 +264,8 @@ public class QuestLink: IBypassHandler
 				return;
 			}
 			
+			// Get the state of the selected quest
+			QuestState qs = player.getQuestState(questId);
 			if ((qs == null) && (q.getId() >= 1) && (q.getId() < 20000) && (player.getAllActiveQuests().Count > 40))
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fullquest.html", player);
@@ -298,12 +305,15 @@ public class QuestLink: IBypassHandler
 		{
 			OnNpcTalk onNpcTalk = new OnNpcTalk(npc, player);
 			npc.Events.Notify(onNpcTalk);
-			foreach (Quest quest in onNpcTalk.Quests)
+			foreach (AbstractScript script in onNpcTalk.Scripts)
 			{
-				if ((quest.getId() > 0) && (quest.getId() < 20000) && (quest.getId() != 255) &&
-				    !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
+				if (script is Quest quest)
 				{
-					quests.add(quest);
+					if ((quest.getId() > 0) && (quest.getId() < 20000) && (quest.getId() != 255) &&
+					    !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
+					{
+						quests.add(quest);
+					}
 				}
 			}
 		}

@@ -25,8 +25,6 @@ public static class ScriptManager
         }
     }
 
-    public static ICollection<AbstractScript> GetScripts()
-    {
-        return _scripts.Values;
-    }
+    public static ICollection<AbstractScript> GetScripts() => _scripts.Values;
+    public static AbstractScript? GetScript(string scriptName) => _scripts.GetValueOrDefault(scriptName);
 }
