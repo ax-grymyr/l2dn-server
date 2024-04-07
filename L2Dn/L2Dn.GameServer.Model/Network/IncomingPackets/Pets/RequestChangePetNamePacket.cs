@@ -31,7 +31,7 @@ public struct RequestChangePetNamePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (pet.getName() != null)
+        if (!string.IsNullOrEmpty(pet.getName()))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_SET_THE_NAME_OF_THE_PET);
             return ValueTask.CompletedTask;

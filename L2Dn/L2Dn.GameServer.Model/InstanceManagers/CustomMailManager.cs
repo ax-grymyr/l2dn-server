@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -29,34 +30,41 @@ public class CustomMailManager
 				{
 					int playerId = record.ReceiverId;
 					Player player = World.getInstance().getPlayer(playerId);
-					if ((player != null) && player.isOnline())
+					if (player != null && player.isOnline())
 					{
 						// Create message.
 						String items = record.Items;
 						Message msg = new Message(playerId, record.Subject, record.Message, items.Length > 0 ? MailType.PRIME_SHOP_GIFT : MailType.REGULAR);
-						List<ItemHolder> itemHolders = new();
+						List<ItemEnchantHolder> itemHolders = new();
 						foreach (String str in items.Split(";"))
 						{
-							if (str.Contains(" "))
+							if (str.Contains(' '))
 							{
-								String itemId = str.Split(" ")[0];
-								String itemCount = str.Split(" ")[1];
+								string[] split = str.Split(" ");
+								String itemId = split[0];
+								String itemCount = split[1];
+								string enchant = split.Length > 2 ? split[2] : "0";
 								if (Util.isDigit(itemId) && Util.isDigit(itemCount))
 								{
-									itemHolders.add(new ItemHolder(int.Parse(itemId), long.Parse(itemCount)));
+									itemHolders.add(new ItemEnchantHolder(int.Parse(itemId), long.Parse(itemCount), int.Parse(enchant)));
 								}
 							}
 							else if (Util.isDigit(str))
 							{
-								itemHolders.add(new ItemHolder(int.Parse(str), 1));
+								itemHolders.add(new ItemEnchantHolder(int.Parse(str), 1));
 							}
 						}
+						
 						if (!itemHolders.isEmpty())
 						{
 							Mail attachments = msg.createAttachments();
-							foreach (ItemHolder itemHolder in itemHolders)
+							foreach (ItemEnchantHolder itemHolder in itemHolders)
 							{
-								attachments.addItem("Custom-Mail", itemHolder.getId(), itemHolder.getCount(), null, null);
+								Item item = attachments.addItem("Custom-Mail", itemHolder.getId(),
+									itemHolder.getCount(), null, null);
+								
+								if (itemHolder.getEnchantLevel() > 0)
+									item.setEnchantLevel(itemHolder.getEnchantLevel());
 							}
 						}
 						

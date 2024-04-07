@@ -335,6 +335,11 @@ public class PlayerStat: PlayableStat
 	 */
 	public int getTalismanSlots()
 	{
+		if (!getActiveChar().hasEnteredWorld())
+		{
+			return 6; // TODO: dirty hack, slots must be handled differently 
+		}
+		
 		return _talismanSlots;
 	}
 	
