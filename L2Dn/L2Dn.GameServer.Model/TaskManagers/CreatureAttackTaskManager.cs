@@ -113,7 +113,7 @@ public sealed class CreatureAttackTaskManager
 		
 		Map<Creature, ScheduledAttack> pool1 = new();
 		pool1.put(creature, scheduledAttack);
-		ThreadPool.scheduleAtFixedRate(new ScheduleAttackTask(pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new ScheduleAttackTask(pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		ATTACK_POOLS.add(pool1);
 	}
 	

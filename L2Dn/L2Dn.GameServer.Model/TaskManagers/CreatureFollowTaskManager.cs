@@ -18,8 +18,8 @@ public class CreatureFollowTaskManager
 	
 	protected CreatureFollowTaskManager()
 	{
-		ThreadPool.scheduleAtFixedRate(new CreatureFollowNormalTask(this), 1000, 1000);
-		ThreadPool.scheduleAtFixedRate(new CreatureFollowAttackTask(this), 500, 500);
+		ThreadPool.scheduleAtFixedRate(new CreatureFollowNormalTask(this), 1000, 1000); // TODO: high priority task
+		ThreadPool.scheduleAtFixedRate(new CreatureFollowAttackTask(this), 500, 500); // TODO: high priority task
 	}
 	
 	protected class CreatureFollowNormalTask: Runnable

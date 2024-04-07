@@ -21,7 +21,7 @@ public class AttackStanceTaskManager: Runnable
 	
 	protected AttackStanceTaskManager()
 	{
-		ThreadPool.scheduleAtFixedRate(this, 0, 1000);
+		ThreadPool.scheduleAtFixedRate(this, 0, 1000); // TODO: high priority task
 	}
 	
 	public void run()

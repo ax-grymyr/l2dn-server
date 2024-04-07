@@ -34,6 +34,7 @@ public struct FinishRotatingPacket: IIncomingPacket<GameSession>
         }
         else
         {
+            player.setHeading(_degree);
             sr = new StopRotationPacket(player.getObjectId(), _degree, 0);
             player.broadcastPacket(sr);
         }

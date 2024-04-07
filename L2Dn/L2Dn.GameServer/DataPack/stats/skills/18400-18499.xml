@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="18448" toLevel="1" name="Scroll: Summon Piero">
 		<!-- Summon NPC Piero -->
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>46219</itemConsumeId> <!-- Summon Scroll: Piero -->
 		<operateType>A1</operateType>
@@ -19,13 +20,15 @@
 	</skill>
 	<skill id="18449" toLevel="1" name="Magic Number Cube">
 		<!-- Group gift distribution -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>1500</castRange>
 		<hitTime>1500</hitTime>
 		<reuseDelay>6000</reuseDelay>
 	</skill>
-	<skill id="18450" toLevel="6" name="Check Giveaway Number">
-		<!-- Shows number $s1. -->
+	<skill id="18450" toLevel="6" name="Confirm Number">
+		<!-- Shows number 1. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>75</mpConsume>
 		<castRange>900</castRange>
@@ -34,7 +37,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="18451" toLevel="2" name="11th Anniversary Buff">
-		<!-- Acquired XP/ SP +$s1. Receive a $s2th Anniversary Coins once the buff ends. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
+		<!-- Acquired XP/ SP +50%. Receive a 5th Anniversary Coins once the buff ends. <Warning> You cannot receive the item if your character dies when receiving or if there is no empty slot in your Inventory. -->
 		<icon>icon.ev_buff_11th</icon>
 		<abnormalTime>
 			<value level="1">3600</value>
@@ -56,7 +59,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="18472" toLevel="6" name="Giveaway Number 1">
+	<skill id="18472" toLevel="6" name="Lucky number 1">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="18475" toLevel="1" name="11th Anniversary Coin">

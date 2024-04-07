@@ -18,7 +18,7 @@ public class PcCafePointsManager
 			return;
 		}
 		
-		ThreadPool.scheduleAtFixedRate(() => giveRetailPcCafePont(player), 300000, 300000);
+		ThreadPool.scheduleAtFixedRate(() => giveRetailPcCafePont(player), Config.PC_CAFE_REWARD_TIME, Config.PC_CAFE_REWARD_TIME);
 	}
 	
 	public void giveRetailPcCafePont(Player player)

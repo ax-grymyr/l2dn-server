@@ -48,6 +48,7 @@
 	<!-- ADMIN BUFFS -->
 	<admin command="admin_buff" accessLevel="100" />
 	<admin command="admin_getbuffs" accessLevel="100" />
+	<admin command="admin_getbuffs_ps" accessLevel="100" />
 	<admin command="admin_stopbuff" accessLevel="100" />
 	<admin command="admin_stopallbuffs" accessLevel="100" confirmDlg="true" />
 	<admin command="admin_viewblockedeffects" accessLevel="100" />
@@ -92,6 +93,9 @@
 	<admin command="admin_cw_reload" accessLevel="100" />
 	<admin command="admin_cw_add" accessLevel="100" confirmDlg="true" />
 	<admin command="admin_cw_info_menu" accessLevel="100" />
+
+	<!-- ADMIN DEBUG -->
+	<admin command="admin_debug" accessLevel="100" />
 
 	<!-- ADMIN DELETE -->
 	<admin command="admin_delete" accessLevel="100" />
@@ -259,6 +263,27 @@
 	<admin command="admin_geo_can_move" accessLevel="100" />
 	<admin command="admin_geogrid" accessLevel="100" />
 	<admin command="admin_geomap" accessLevel="100" />
+	<admin command="admin_geocell" accessLevel="100" />
+	<admin command="admin_geosave" accessLevel="100" />
+	<admin command="admin_geosaveall" accessLevel="100" confirmDlg="true" />
+	<admin command="admin_geoenablenorth" accessLevel="100" />
+	<admin command="admin_en" accessLevel="100" />
+	<admin command="admin_geodisablenorth" accessLevel="100" />
+	<admin command="admin_dn" accessLevel="100" />
+	<admin command="admin_geoenablesouth" accessLevel="100" />
+	<admin command="admin_es" accessLevel="100" />
+	<admin command="admin_geodisablesouth" accessLevel="100" />
+	<admin command="admin_ds" accessLevel="100" />
+	<admin command="admin_geoenableeast" accessLevel="100" />
+	<admin command="admin_ee" accessLevel="100" />
+	<admin command="admin_geodisableeast" accessLevel="100" />
+	<admin command="admin_de" accessLevel="100" />
+	<admin command="admin_geoenablewest" accessLevel="100" />
+	<admin command="admin_ew" accessLevel="100" />
+	<admin command="admin_geodisablewest" accessLevel="100" />
+	<admin command="admin_dw" accessLevel="100" />
+	<admin command="admin_geoedit" accessLevel="100" />
+	<admin command="admin_ge" accessLevel="100" />
 
 	<!-- ADMIN MISSING HTMLS -->
 	<admin command="admin_geomap_missing_htmls" accessLevel="100" />

@@ -92,6 +92,8 @@
 					<xs:enumeration value="is_oly_restricted" />
 					<xs:enumeration value="is_event_restricted" />
 					<xs:enumeration value="isAppearanceable" />
+					<xs:enumeration value="ensoulNormalSlots" />
+					<xs:enumeration value="ensoulSpecialSlots" />
 					<xs:enumeration value="is_premium" />
 					<xs:enumeration value="is_questitem" />
 					<xs:enumeration value="is_sellable" />

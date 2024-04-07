@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_01" minZ="-3664" maxZ="-3064">
+				<node x="69452" y="36716" />
+				<node x="70752" y="36332" />
+				<node x="73856" y="39204" />
+				<node x="70760" y="40964" />
+			</territory>
+		</territories>
+		<npc id="20587" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_02" minZ="-3868" maxZ="-3268">
+				<node x="65716" y="36564" />
+				<node x="69412" y="36644" />
+				<node x="70716" y="40920" />
+				<node x="65700" y="41880" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_02s" minZ="-3832" maxZ="-3432">
+				<node x="66728" y="37900" />
+				<node x="69348" y="37364" />
+				<node x="70180" y="40600" />
+				<node x="67944" y="40612" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_03" minZ="-3964" maxZ="-3064">
+				<node x="65704" y="41848" />
+				<node x="68660" y="41284" />
+				<node x="67840" y="45804" />
+				<node x="65712" y="45876" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_04" minZ="-3996" maxZ="-3296">
+				<node x="65596" y="45772" />
+				<node x="67508" y="45740" />
+				<node x="69616" y="48732" />
+				<node x="69100" y="50864" />
+				<node x="65704" y="54152" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_04s" minZ="-3936" maxZ="-3536">
+				<node x="66292" y="48160" />
+				<node x="68816" y="48232" />
+				<node x="68856" y="50288" />
+				<node x="66308" y="51520" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_05" minZ="-3764" maxZ="-3264">
+				<node x="65760" y="54168" />
+				<node x="69128" y="50884" />
+				<node x="72104" y="53112" />
+				<node x="71412" y="56440" />
+				<node x="65748" y="56868" />
+			</territory>
+		</territories>
+		<npc id="20587" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_05s" minZ="-3728" maxZ="-3428">
+				<node x="67740" y="52892" />
+				<node x="70276" y="52088" />
+				<node x="70508" y="55632" />
+				<node x="68900" y="56336" />
+			</territory>
+		</territories>
+		<npc id="20587" count="1" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_06" minZ="-3760" maxZ="-3260">
+				<node x="69624" y="48708" />
+				<node x="74092" y="48860" />
+				<node x="72052" y="53092" />
+				<node x="69112" y="50864" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_07" minZ="-3720" maxZ="-3020">
+				<node x="71496" y="48744" />
+				<node x="73892" y="45372" />
+				<node x="75268" y="46100" />
+				<node x="73908" y="48836" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_08" minZ="-3268" maxZ="-2668">
+				<node x="75376" y="42856" />
+				<node x="76448" y="44300" />
+				<node x="75268" y="46072" />
+				<node x="73932" y="45356" />
+				<node x="74488" y="43468" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_09" minZ="-3220" maxZ="-2620">
+				<node x="74760" y="40128" />
+				<node x="75376" y="40744" />
+				<node x="75368" y="42848" />
+				<node x="74476" y="43464" />
+				<node x="73492" y="42404" />
+				<node x="73588" y="41156" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_10" minZ="-3844" maxZ="-2844">
+				<node x="67164" y="56844" />
+				<node x="71872" y="56452" />
+				<node x="73020" y="57660" />
+				<node x="71368" y="60184" />
+			</territory>
+		</territories>
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20588" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Prefect -->
+		<npc id="20586" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_11" minZ="-3768" maxZ="-3168">
+				<node x="69048" y="58284" />
+				<node x="71364" y="60128" />
+				<node x="72388" y="62488" />
+				<node x="68776" y="65288" />
+			</territory>
+		</territories>
+		<npc id="20587" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+		<npc id="20585" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_12" minZ="-3764" maxZ="-3264">
+				<node x="72380" y="62548" />
+				<node x="75444" y="63548" />
+				<node x="74568" y="65284" />
+				<node x="68816" y="65268" />
+			</territory>
+		</territories>
+		<npc id="20585" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20587" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_13" minZ="-3188" maxZ="-2688">
+				<node x="76536" y="58652" />
+				<node x="77064" y="59460" />
+				<node x="75100" y="62072" />
+				<node x="74236" y="62288" />
+				<node x="72740" y="61092" />
+				<node x="72744" y="59672" />
+				<node x="74284" y="57804" />
+				<node x="75388" y="58080" />
+			</territory>
+		</territories>
+		<npc id="20585" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20587" count="3" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_05" minZ="-3932" maxZ="-3532">
+				<node x="67604" y="65788" />
+				<node x="74916" y="65664" />
+				<node x="75472" y="70192" />
+				<node x="67232" y="71080" />
+			</territory>
+		</territories>
+		<npc id="20585" count="8" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="6" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20587" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_05s" minZ="-3852" maxZ="-3452">
+				<node x="71692" y="67532" />
+				<node x="74552" y="68140" />
+				<node x="75060" y="69644" />
+				<node x="72192" y="70208" />
+			</territory>
+		</territories>
+		<npc id="20585" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_06" minZ="-3876" maxZ="-3176">
+				<node x="72476" y="70600" />
+				<node x="75376" y="70288" />
+				<node x="76996" y="72864" />
+				<node x="77104" y="79076" />
+				<node x="72836" y="78816" />
+			</territory>
+		</territories>
+		<npc id="20585" count="7" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="6" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_06s" minZ="-3836" maxZ="-3336">
+				<node x="73436" y="72148" />
+				<node x="76404" y="73456" />
+				<node x="76304" y="76860" />
+				<node x="73588" y="76792" />
+			</territory>
+		</territories>
+		<npc id="20585" count="6" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="6" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_07" minZ="-3780" maxZ="-3280">
+				<node x="67264" y="71080" />
+				<node x="72472" y="70564" />
+				<node x="72828" y="78832" />
+				<node x="68024" y="80016" />
+			</territory>
+		</territories>
+		<npc id="20585" count="8" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="8" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_071s" minZ="-3812" maxZ="-3612">
+				<node x="70124" y="75432" />
+				<node x="71480" y="76248" />
+				<node x="71300" y="77528" />
+				<node x="70308" y="78136" />
+				<node x="69104" y="77332" />
+				<node x="69068" y="76044" />
+			</territory>
+		</territories>
+		<npc id="20585" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_072s" minZ="-3804" maxZ="-3604">
+				<node x="71264" y="70956" />
+				<node x="72024" y="71500" />
+				<node x="72080" y="72212" />
+				<node x="71440" y="72860" />
+				<node x="70664" y="72352" />
+				<node x="70556" y="71580" />
+			</territory>
+		</territories>
+		<npc id="20585" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20586" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Warrior -->
+		<npc id="20584" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_08" minZ="-3704" maxZ="-3204">
+				<node x="72888" y="78864" />
+				<node x="77052" y="79140" />
+				<node x="77336" y="82840" />
+				<node x="67816" y="82824" />
+				<node x="68004" y="80048" />
+			</territory>
+		</territories>
+		<npc id="20585" count="7" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="6" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_08s" minZ="-3724" maxZ="-3324">
+				<node x="70176" y="80096" />
+				<node x="74240" y="79580" />
+				<node x="74440" y="82112" />
+				<node x="70884" y="82216" />
+			</territory>
+		</territories>
+		<npc id="20585" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_09" minZ="-3708" maxZ="-3008">
+				<node x="67804" y="82812" />
+				<node x="71184" y="82804" />
+				<node x="73576" y="88844" />
+				<node x="70784" y="91300" />
+				<node x="68020" y="89924" />
+			</territory>
+		</territories>
+		<npc id="20585" count="7" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_09s" minZ="-3640" maxZ="-3040">
+				<node x="69116" y="84652" />
+				<node x="71032" y="84104" />
+				<node x="72440" y="89076" />
+				<node x="68744" y="88124" />
+			</territory>
+		</territories>
+		<npc id="20585" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_10" minZ="-3704" maxZ="-3004">
+				<node x="71324" y="82964" />
+				<node x="77248" y="82936" />
+				<node x="77100" y="88148" />
+				<node x="73616" y="88848" />
+			</territory>
+		</territories>
+		<npc id="20585" count="8" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="8" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="5" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2220_11" minZ="-3632" maxZ="-3032">
+				<node x="73592" y="88864" />
+				<node x="77104" y="88140" />
+				<node x="72572" y="92232" />
+				<node x="70792" y="91312" />
+			</territory>
+		</territories>
+		<npc id="20585" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Soldier -->
+		<npc id="20583" count="4" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc -->
+		<npc id="20584" count="2" respawnTime="70sec" respawnRandom="10sec" /> <!-- Timak Orc Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p01" minZ="-3664" maxZ="-3064">
+				<node x="69452" y="36716" />
+				<node x="70752" y="36332" />
+				<node x="73856" y="39204" />
+				<node x="70760" y="40964" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p02" minZ="-3868" maxZ="-3268">
+				<node x="65716" y="36564" />
+				<node x="69412" y="36644" />
+				<node x="70716" y="40920" />
+				<node x="65700" y="41880" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p03" minZ="-3964" maxZ="-3064">
+				<node x="65704" y="41848" />
+				<node x="68660" y="41284" />
+				<node x="67840" y="45804" />
+				<node x="65712" y="45876" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p04" minZ="-3996" maxZ="-3296">
+				<node x="65596" y="45772" />
+				<node x="67508" y="45740" />
+				<node x="69616" y="48732" />
+				<node x="69100" y="50864" />
+				<node x="65704" y="54152" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p05" minZ="-3764" maxZ="-3264">
+				<node x="65760" y="54168" />
+				<node x="69128" y="50884" />
+				<node x="72104" y="53112" />
+				<node x="71412" y="56440" />
+				<node x="65748" y="56868" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p06" minZ="-3760" maxZ="-3260">
+				<node x="69624" y="48708" />
+				<node x="74092" y="48860" />
+				<node x="72052" y="53092" />
+				<node x="69112" y="50864" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p07" minZ="-3720" maxZ="-3020">
+				<node x="71496" y="48744" />
+				<node x="73892" y="45372" />
+				<node x="75268" y="46100" />
+				<node x="73908" y="48836" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p08" minZ="-3268" maxZ="-2668">
+				<node x="75376" y="42856" />
+				<node x="76448" y="44300" />
+				<node x="75268" y="46072" />
+				<node x="73932" y="45356" />
+				<node x="74488" y="43468" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p09" minZ="-3220" maxZ="-2620">
+				<node x="74760" y="40128" />
+				<node x="75376" y="40744" />
+				<node x="75368" y="42848" />
+				<node x="74476" y="43464" />
+				<node x="73492" y="42404" />
+				<node x="73588" y="41156" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p10" minZ="-3844" maxZ="-2844">
+				<node x="67164" y="56844" />
+				<node x="71872" y="56452" />
+				<node x="73020" y="57660" />
+				<node x="71368" y="60184" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p11" minZ="-3768" maxZ="-3168">
+				<node x="69048" y="58284" />
+				<node x="71364" y="60128" />
+				<node x="72388" y="62488" />
+				<node x="68776" y="65288" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p12" minZ="-3764" maxZ="-3264">
+				<node x="72380" y="62548" />
+				<node x="75444" y="63548" />
+				<node x="74568" y="65284" />
+				<node x="68816" y="65268" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_2219_p13" minZ="-3188" maxZ="-2688">
+				<node x="76536" y="58652" />
+				<node x="77064" y="59460" />
+				<node x="75100" y="62072" />
+				<node x="74236" y="62288" />
+				<node x="72740" y="61092" />
+				<node x="72744" y="59672" />
+				<node x="74284" y="57804" />
+				<node x="75388" y="58080" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_05" minZ="-3932" maxZ="-3532">
+				<node x="67604" y="65788" />
+				<node x="74916" y="65664" />
+				<node x="75472" y="70192" />
+				<node x="67232" y="71080" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_06" minZ="-3876" maxZ="-3176">
+				<node x="72476" y="70600" />
+				<node x="75376" y="70288" />
+				<node x="76996" y="72864" />
+				<node x="77104" y="79076" />
+				<node x="72836" y="78816" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_07" minZ="-3780" maxZ="-3280">
+				<node x="67264" y="71080" />
+				<node x="72472" y="70564" />
+				<node x="72828" y="78832" />
+				<node x="68024" y="80016" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_08" minZ="-3704" maxZ="-3204">
+				<node x="72888" y="78864" />
+				<node x="77052" y="79140" />
+				<node x="77336" y="82840" />
+				<node x="67816" y="82824" />
+				<node x="68004" y="80048" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_09" minZ="-3708" maxZ="-3008">
+				<node x="67804" y="82812" />
+				<node x="71184" y="82804" />
+				<node x="73576" y="88844" />
+				<node x="70784" y="91300" />
+				<node x="68020" y="89924" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_10" minZ="-3704" maxZ="-3004">
+				<node x="71324" y="82964" />
+				<node x="77248" y="82936" />
+				<node x="77100" y="88148" />
+				<node x="73616" y="88848" />
+			</territory>
+		</territories>
+		<npc id="20767" count="4" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren28_p2220_11" minZ="-3632" maxZ="-3032">
+				<node x="73592" y="88864" />
+				<node x="77104" y="88140" />
+				<node x="72572" y="92232" />
+				<node x="70792" y="91312" />
+			</territory>
+		</territories>
+		<npc id="20767" count="3" respawnTime="50sec" respawnRandom="10sec" /> <!-- Timak Orc Troop Captain -->
+	</spawn>
+</list>

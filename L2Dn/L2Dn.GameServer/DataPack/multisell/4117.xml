@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>33977</npc> <!-- Veruti -->
+	</npcs>
+	<item>
+		<ingredient id="49727" count="1" /> <!-- Consumable: Talisman of Border Lv. 1 -->
+		<ingredient id="49704" count="1" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49728" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 2 -->
+		<production id="49728" count="1" chance="80" /> <!-- Receivable: Talisman of Border Lv. 2 -->
+		<production id="49727" count="1" chance="20" /> <!-- Receivable: Talisman of Border Lv. 1 -->
+	</item>
+	<item>
+		<ingredient id="49728" count="1" /> <!-- Consumable: Talisman of Border Lv. 2 -->
+		<ingredient id="49704" count="5" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49729" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 3 -->
+		<production id="49729" count="1" chance="70" /> <!-- Receivable: Talisman of Border Lv. 3 -->
+		<production id="49728" count="1" chance="30" /> <!-- Receivable: Talisman of Border Lv. 2 -->
+	</item>
+	<item>
+		<ingredient id="49729" count="1" /> <!-- Consumable: Talisman of Border Lv. 3 -->
+		<ingredient id="49704" count="10" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49730" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+		<production id="49730" count="1" chance="70" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+		<production id="49729" count="1" chance="30" /> <!-- Receivable: Talisman of Border Lv. 3 -->
+	</item>
+	<item>
+		<ingredient id="49729" count="1" /> <!-- Consumable: Talisman of Border Lv. 3 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49730" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+		<production id="49730" count="1" chance="47" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+		<production id="49729" count="1" chance="53" /> <!-- Receivable: Talisman of Border Lv. 3 -->
+	</item>
+	<item>
+		<ingredient id="49730" count="1" /> <!-- Consumable: Talisman of Border Lv. 4 -->
+		<ingredient id="49704" count="12" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49731" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+		<production id="49731" count="1" chance="70" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+		<production id="49730" count="1" chance="30" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+	</item>
+	<item>
+		<ingredient id="49730" count="1" /> <!-- Consumable: Talisman of Border Lv. 4 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49731" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+		<production id="49731" count="1" chance="39" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+		<production id="49730" count="1" chance="61" /> <!-- Receivable: Talisman of Border Lv. 4 -->
+	</item>
+	<item>
+		<ingredient id="49731" count="1" /> <!-- Consumable: Talisman of Border Lv. 5 -->
+		<ingredient id="49704" count="15" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49732" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+		<production id="49732" count="1" chance="70" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+		<production id="49731" count="1" chance="30" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+	</item>
+	<item>
+		<ingredient id="49731" count="1" /> <!-- Consumable: Talisman of Border Lv. 5 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49732" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+		<production id="49732" count="1" chance="31" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+		<production id="49731" count="1" chance="69" /> <!-- Receivable: Talisman of Border Lv. 5 -->
+	</item>
+	<item>
+		<ingredient id="49732" count="1" /> <!-- Consumable: Talisman of Border Lv. 6 -->
+		<ingredient id="49704" count="18" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49733" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+		<production id="49733" count="1" chance="30" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+		<production id="49732" count="1" chance="70" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+	</item>
+	<item>
+		<ingredient id="49732" count="1" /> <!-- Consumable: Talisman of Border Lv. 6 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49733" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+		<production id="49733" count="1" chance="11.11" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+		<production id="49732" count="1" chance="88.89" /> <!-- Receivable: Talisman of Border Lv. 6 -->
+	</item>
+	<item>
+		<ingredient id="49733" count="1" /> <!-- Consumable: Talisman of Border Lv. 7 -->
+		<ingredient id="49704" count="21" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49734" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+		<production id="49734" count="1" chance="10" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+		<production id="49733" count="1" chance="90" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+	</item>
+	<item>
+		<ingredient id="49733" count="1" /> <!-- Consumable: Talisman of Border Lv. 7 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49734" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+		<production id="49734" count="1" chance="3.17" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+		<production id="49733" count="1" chance="96.83" /> <!-- Receivable: Talisman of Border Lv. 7 -->
+	</item>
+	<item>
+		<ingredient id="49734" count="1" /> <!-- Consumable: Talisman of Border Lv. 8 -->
+		<ingredient id="49704" count="24" /> <!-- Consumable: Talisman of Border's Fragment -->
+		<production id="49735" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 9 -->
+		<production id="49735" count="1" chance="10" /> <!-- Receivable: Talisman of Border Lv. 9 -->
+		<production id="49734" count="1" chance="90" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+	</item>
+	<item>
+		<ingredient id="49734" count="1" /> <!-- Consumable: Talisman of Border Lv. 8 -->
+		<ingredient id="90172" count="1" /> <!-- Consumable: Gemstone of Border -->
+		<production id="49735" count="1" chance="0" /> <!-- Receivable: Talisman of Border Lv. 9 -->
+		<production id="49735" count="1" chance="2.78" /> <!-- Receivable: Talisman of Border Lv. 9 -->
+		<production id="49734" count="1" chance="97.22" /> <!-- Receivable: Talisman of Border Lv. 8 -->
+	</item>
+</list>

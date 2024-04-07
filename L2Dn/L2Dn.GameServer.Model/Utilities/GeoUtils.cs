@@ -12,22 +12,22 @@ public class GeoUtils
 {
 	public static void debug2DLine(Player player, int x, int y, int tx, int ty, int z)
 	{
-		int gx = GeoEngine.getInstance().getGeoX(x);
-		int gy = GeoEngine.getInstance().getGeoY(y);
+		int gx = GeoEngine.getGeoX(x);
+		int gy = GeoEngine.getGeoY(y);
 
-		int tgx = GeoEngine.getInstance().getGeoX(tx);
-		int tgy = GeoEngine.getInstance().getGeoY(ty);
+		int tgx = GeoEngine.getGeoX(tx);
+		int tgy = GeoEngine.getGeoY(ty);
 
 		ExServerPrimitivePacket prim = new ExServerPrimitivePacket("Debug2DLine", x, y, z);
-		prim.addLine(Colors.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
-			GeoEngine.getInstance().getWorldX(tgx), GeoEngine.getInstance().getWorldY(tgy), z);
+		prim.addLine(Colors.BLUE, GeoEngine.getWorldX(gx), GeoEngine.getWorldY(gy), z,
+			GeoEngine.getWorldX(tgx), GeoEngine.getWorldY(tgy), z);
 
 		LinePointIterator iter = new LinePointIterator(gx, gy, tgx, tgy);
 
 		while (iter.next())
 		{
-			int wx = GeoEngine.getInstance().getWorldX(iter.x());
-			int wy = GeoEngine.getInstance().getWorldY(iter.y());
+			int wx = GeoEngine.getWorldX(iter.x());
+			int wy = GeoEngine.getWorldY(iter.y());
 
 			prim.addPoint(Colors.RED, wx, wy, z);
 		}
@@ -37,22 +37,22 @@ public class GeoUtils
 
 	public static void debug3DLine(Player player, int x, int y, int z, int tx, int ty, int tz)
 	{
-		int gx = GeoEngine.getInstance().getGeoX(x);
-		int gy = GeoEngine.getInstance().getGeoY(y);
+		int gx = GeoEngine.getGeoX(x);
+		int gy = GeoEngine.getGeoY(y);
 
-		int tgx = GeoEngine.getInstance().getGeoX(tx);
-		int tgy = GeoEngine.getInstance().getGeoY(ty);
+		int tgx = GeoEngine.getGeoX(tx);
+		int tgy = GeoEngine.getGeoY(ty);
 
 		ExServerPrimitivePacket prim = new ExServerPrimitivePacket("Debug3DLine", x, y, z);
-		prim.addLine(Colors.BLUE, GeoEngine.getInstance().getWorldX(gx), GeoEngine.getInstance().getWorldY(gy), z,
-			GeoEngine.getInstance().getWorldX(tgx), GeoEngine.getInstance().getWorldY(tgy), tz);
+		prim.addLine(Colors.BLUE, GeoEngine.getWorldX(gx), GeoEngine.getWorldY(gy), z,
+			GeoEngine.getWorldX(tgx), GeoEngine.getWorldY(tgy), tz);
 
 		LinePointIterator3D iter = new LinePointIterator3D(gx, gy, z, tgx, tgy, tz);
 		iter.next();
 		int prevX = iter.x();
 		int prevY = iter.y();
-		int wx = GeoEngine.getInstance().getWorldX(prevX);
-		int wy = GeoEngine.getInstance().getWorldY(prevY);
+		int wx = GeoEngine.getWorldX(prevX);
+		int wy = GeoEngine.getWorldY(prevY);
 		int wz = iter.z();
 		prim.addPoint(Colors.RED, wx, wy, wz);
 
@@ -63,8 +63,8 @@ public class GeoUtils
 
 			if ((curX != prevX) || (curY != prevY))
 			{
-				wx = GeoEngine.getInstance().getWorldX(curX);
-				wy = GeoEngine.getInstance().getWorldY(curY);
+				wx = GeoEngine.getWorldX(curX);
+				wy = GeoEngine.getWorldY(curY);
 				wz = iter.z();
 
 				prim.addPoint(Colors.RED, wx, wy, wz);
@@ -97,8 +97,8 @@ public class GeoUtils
 
 		ExServerPrimitivePacket exsp = default;
 		GeoEngine ge = GeoEngine.getInstance();
-		int playerGx = ge.getGeoX(player.getX());
-		int playerGy = ge.getGeoY(player.getY());
+		int playerGx = GeoEngine.getGeoX(player.getX());
+		int playerGy = GeoEngine.getGeoY(player.getY());
 		for (int dx = -geoRadius; dx <= geoRadius; ++dx)
 		{
 			for (int dy = -geoRadius; dy <= geoRadius; ++dy)
@@ -123,8 +123,8 @@ public class GeoUtils
 				int gx = playerGx + dx;
 				int gy = playerGy + dy;
 
-				int x = ge.getWorldX(gx);
-				int y = ge.getWorldY(gy);
+				int x = GeoEngine.getWorldX(gx);
+				int y = GeoEngine.getWorldY(gy);
 				int z = ge.getNearestZ(gx, gy, player.getZ());
 
 				// north arrow
@@ -159,6 +159,52 @@ public class GeoUtils
 		}
 
 		player.sendPacket(exsp);
+	}
+	public static void hideDebugGrid(Player player)
+	{
+		const int geoRadius = 20;
+		const int blocksPerPacket = 40;
+		
+		int iBlock = blocksPerPacket;
+		int iPacket = 0;
+		
+		ExServerPrimitivePacket? exsp = null;
+		int playerGx = GeoEngine.getGeoX(player.getX());
+		int playerGy = GeoEngine.getGeoY(player.getY());
+		for (int dx = -geoRadius; dx <= geoRadius; ++dx)
+		{
+			for (int dy = -geoRadius; dy <= geoRadius; ++dy)
+			{
+				if (iBlock >= blocksPerPacket)
+				{
+					iBlock = 0;
+					if (exsp != null)
+					{
+						++iPacket;
+						player.sendPacket(exsp.Value);
+					}
+					
+					exsp = new ExServerPrimitivePacket("DebugGrid_" + iPacket, player.getX(), player.getY(), -16000);
+				}
+				
+				if (exsp == null)
+				{
+					throw new InvalidOperationException();
+				}
+				
+				int gx = playerGx + dx;
+				int gy = playerGy + dy;
+				
+				int x = GeoEngine.getWorldX(gx);
+				int y = GeoEngine.getWorldY(gy);
+				
+				// Nothing.
+				exsp.Value.addLine(Colors.Black, x, y, -16000, x, y, -16000);
+				++iBlock;
+			}
+		}
+		
+		player.sendPacket(exsp.Value);
 	}
 
 	/**

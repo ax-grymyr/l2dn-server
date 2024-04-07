@@ -665,9 +665,9 @@ public class CreatureStat
 	 * Sets the maximum buff count.
 	 * @param buffCount the buff count
 	 */
-	public void setMaxBuffCount(int buffCount)
+	public void setMaxBuffCount(int value)
 	{
-		_maxBuffCount = buffCount;
+		_maxBuffCount = value;
 	}
 	
 	/**
@@ -713,6 +713,29 @@ public class CreatureStat
 	}
 	
 	/**
+	 * Non blocking stat ADD getter.<br>
+	 * WARNING: Only use with effect handlers!
+	 * @param stat
+	 * @return the add value
+	 */
+	public double getAddValue(Stat stat)
+	{
+		return getAddValue(stat, 0d);
+	}
+	
+	/**
+	 * Non blocking stat ADD getter.<br>
+	 * WARNING: Only use with effect handlers!
+	 * @param stat
+	 * @param defaultValue
+	 * @return the add value
+	 */
+	public double getAddValue(Stat stat, double defaultValue)
+	{
+		return _statsAdd.GetValueOrDefault(stat, defaultValue);
+	}
+	
+	/**
 	 * @param stat
 	 * @return the mul value
 	 */
@@ -732,6 +755,28 @@ public class CreatureStat
 		{
 			return _statsMul.GetValueOrDefault(stat, defaultValue);
 		}
+	}
+	/**
+	 * Non blocking stat MUL getter.<br>
+	 * WARNING: Only use with effect handlers!
+	 * @param stat
+	 * @return the mul value
+	 */
+	public double getMulValue(Stat stat)
+	{
+		return getMulValue(stat, 1d);
+	}
+	
+	/**
+	 * Non blocking stat MUL getter.<br>
+	 * WARNING: Only use with effect handlers!
+	 * @param stat
+	 * @param defaultValue
+	 * @return the mul value
+	 */
+	public double getMulValue(Stat stat, double defaultValue)
+	{
+		return _statsMul.GetValueOrDefault(stat, defaultValue);
 	}
 	
 	/**
@@ -885,19 +930,26 @@ public class CreatureStat
 		
 		if (broadcast)
 		{
-			// Calculate the difference between old and new stats
+			// Calculate the difference between old and new stats.
 			Set<Stat> changed = new();
+			double statAddResetValue;
+			double statMulResetValue;
+			double statAddValue;
+			double statMulValue;
+			double addsValue;
+			double mulsValue;
 			foreach (Stat stat in EnumUtil.GetValues<Stat>())
 			{
-				StatInfo? info = stat.GetInfo();
-				if (info != null)
+				statAddResetValue = stat.GetInfo().ResetAddValue;
+				statMulResetValue = stat.GetInfo().ResetMulValue;
+				addsValue = adds.getOrDefault(stat, statAddResetValue);
+				mulsValue = muls.getOrDefault(stat, statMulResetValue);
+				statAddValue = _statsAdd.getOrDefault(stat, statAddResetValue);
+				statMulValue = _statsMul.getOrDefault(stat, statMulResetValue);
+				if (addsValue.Equals(statAddResetValue) || mulsValue.Equals(statMulResetValue) ||
+				    !addsValue.Equals(statAddValue) || !mulsValue.Equals(statMulValue))
 				{
-					if (_statsAdd.getOrDefault(stat, info.ResetAddValue) !=
-					    adds.getOrDefault(stat, info.ResetAddValue) ||
-					    _statsMul.getOrDefault(stat, info.ResetMulValue) != muls.getOrDefault(stat, info.ResetMulValue))
-					{
-						changed.add(stat);
-					}
+					changed.add(stat);
 				}
 			}
 			_creature.broadcastModifiedStats(changed);

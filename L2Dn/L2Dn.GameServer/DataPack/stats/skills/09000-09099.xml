@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="9029" toLevel="1" name="Watermelon Seed">
+		<icon>icon.skill0000</icon>
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -19,10 +20,12 @@
 			<effect name="SummonNpc">
 				<npcId>13271</npcId> <!-- Young Watermelon -->
 				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="9030" toLevel="1" name="Honey Watermelon Seed">
+		<icon>icon.skill0000</icon>
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -41,10 +44,12 @@
 			<effect name="SummonNpc">
 				<npcId>13275</npcId> <!-- Young Honey Watermelon -->
 				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="9031" toLevel="1" name="Copied Watermelon Seed">
+		<icon>icon.skill0000</icon>
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -63,10 +68,12 @@
 			<effect name="SummonNpc">
 				<npcId>13271</npcId> <!-- Young Watermelon -->
 				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="9032" toLevel="1" name="Copied Honey Watermelon Seed">
+		<icon>icon.skill0000</icon>
 		<hitTime>1500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -85,6 +92,7 @@
 			<effect name="SummonNpc">
 				<npcId>13275</npcId> <!-- Young Honey Watermelon -->
 				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
 			</effect>
 		</effects>
 	</skill>

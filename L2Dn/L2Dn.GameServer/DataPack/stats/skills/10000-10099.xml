@@ -3,14 +3,10 @@
 	<skill id="10015" toLevel="3" name="Chain Strike">
 		<!-- Pulls a selected target to you and attacks. -->
 		<icon>icon.skill10015</icon>
-		<abnormalLevel>
-			<value level="1">1</value>
-			<value level="2">2</value>
-			<value level="3">3</value>
-		</abnormalLevel>
+		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1</abnormalTime>
-		<abnormalType>STUN</abnormalType>
-		<activateRate>190</activateRate>
+		<abnormalType>PULLING</abnormalType>
+		<activateRate>90</activateRate>
 		<lvlBonusRate>30</lvlBonusRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<magicLevel>
@@ -40,12 +36,13 @@
 		<isDebuff>true</isDebuff>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="EquipShield" />
-		</conditions>
 		<effects>
 			<effect name="PullBack">
-				<speed>600</speed>
+				<speed>
+					<value level="1">600</value>
+					<value level="2">650</value>
+					<value level="3">700</value>
+				</speed>
 				<delay>600</delay>
 			</effect>
 			<effect name="BlockActions">
@@ -55,22 +52,20 @@
 		</effects>
 	</skill>
 	<skill id="10094" toLevel="5" name="Mass Lightning Strike">
-		<!-- A lightning strike inflicts damage to the target and nearby enemies. Power $s1. Paralyzes enemies for $s2 Consumes $s3 Soulstone(s). -->
+		<!-- Strikes the target and nearby enemies with a lightning bolt that inflicts non-attribute damage with 1997 power. Paralyzes enemies for 5 sec. Consumes 1 Soulstone(s). -->
 		<icon>icon.skll10094</icon>
-		<abnormalLevel>1</abnormalLevel>
+		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<activateRate>40</activateRate>
-		<affectLimit>10-10</affectLimit>
-		<affectRange>150</affectRange>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>400</affectRange>
 		<basicProperty>PHYSICAL</basicProperty>
-		<icon>icon.skll10094</icon>
 		<itemConsumeId>1785</itemConsumeId> <!-- Soulstone -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<lvlBonusRate>20</lvlBonusRate>
 		<operateType>A2</operateType>
-		<isMagic>0</isMagic>
 		<magicLevel>
 			<value level="1">80</value>
 			<value level="2">81</value>
@@ -87,6 +82,7 @@
 		</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<castRange>400</castRange>
+		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>60000</reuseDelay>
@@ -111,9 +107,13 @@
 					<value level="4">2266</value>
 					<value level="5">2356</value>
 				</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>100</PARALYZE>
 			</effect>
 		</effects>
 	</skill>

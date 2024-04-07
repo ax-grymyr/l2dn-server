@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="32000" toLevel="1" name="Morale Bean Cake">
-		<!-- Acquired XP/ SP +20% for 20 min. Cooldown - 10 min. Effect remains after death. -->
+	<skill id="32000" toLevel="1" name="Rice Cake of Fighting Spirit">
+		<!-- For 20 min., Acquired XP/ SP +20%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.bm_rice_cake_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -24,8 +24,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32001" toLevel="1" name="Morale Bean Cake - Event">
-		<!-- Acquired XP/ SP +20% for 20 min. Cooldown - 10 min. Effect remains after death. -->
+	<skill id="32001" toLevel="1" name="Rice Cake of Fighting Spirit - Event">
+		<!-- For 20 min., Acquired XP/ SP +20%. Cooldown - 1 min. Effect remains after death. -->
 		<icon>icon.bm_rice_cake_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -48,8 +48,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32002" toLevel="1" name="XP Boost Scroll - Exchangeable">
-		<!-- Acquired XP/ SP +30% for 3 min. Cooldown - 10 min. Effect remains after death. -->
+	<skill id="32002" toLevel="1" name="Rice Cake of Flaming Fighting Spirit">
+		<!-- For 20 min., Acquired XP/ SP +30%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.bm_rice_cake_i01</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -72,11 +72,11 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32003" toLevel="1" name="Get-Rich-Quick Supply Chest">
+	<skill id="32003" toLevel="1" name="Rich Supplies">
 		<icon>icon.event_high_oriental_park_i00</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32004" toLevel="1" name="Greater Scroll of Resurrection">
+	<skill id="32004" toLevel="1" name="Improved Scroll of Resurrection">
 		<icon>icon.etc_scroll_of_resurrection_i01</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
@@ -88,7 +88,7 @@
 		<icon>icon.etc_marguene_collection_box_i00</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32006" toLevel="1" name="Power of Commander">
+	<skill id="32006" toLevel="1" name="Commander's Power">
 		<!-- Inflicts 50 damage. Can be used only in PvP. -->
 		<icon>icon.weapon_shining_knife_i00</icon>
 		<operateType>A1</operateType>
@@ -100,18 +100,19 @@
 	</skill>
 	<skill id="32007" toLevel="3" name="Scroll of Escape: Entrance to Cruma Tower">
 		<!-- Teleports to Entrance to Cruma Tower -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="32010" toLevel="1" name="Beauty Chest">
+	<skill id="32010" toLevel="1" name="Potion Box">
 		<icon>icon.etc_box_of_adventure_2_i00</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32011" toLevel="1" name="Buff Scrolls Chest">
+	<skill id="32011" toLevel="1" name="Enchantment Scroll Box">
 		<icon>icon.etc_box_of_adventure_3_i00</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32012" toLevel="1" name="High-grade Dye Chest">
+	<skill id="32012" toLevel="1" name="High-Quality Dye Chest">
 		<icon>icon.etc_box_of_adventure_4_i00</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -171,7 +172,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32013" toLevel="1" name="Dye Chest">
+	<skill id="32013" toLevel="1" name="Wind Dye Pack">
 		<icon>icon.etc_box_of_adventure_5_i00</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -239,11 +240,11 @@
 		<icon>icon.etc_treasure_box_i03</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32016" toLevel="1" name="Spear Chest">
+	<skill id="32016" toLevel="1" name="Spear Weapon Pack">
 		<icon>icon.etc_treasure_box_i04</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32017" toLevel="1" name="Blunt Weapon Chest">
+	<skill id="32017" toLevel="1" name="Blunt Weapon Pack">
 		<icon>icon.etc_treasure_box_i05</icon>
 		<operateType>A1</operateType>
 	</skill>
@@ -259,11 +260,11 @@
 		<icon>icon.etc_treasure_box_i08</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32021" toLevel="1" name="Souvenir Box">
+	<skill id="32021" toLevel="1" name="Tulio's Gift Box">
 		<icon>icon.new_user_box</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="32022" toLevel="1" name="Beginner Venezia's Rune">
+	<skill id="32022" toLevel="1" name="Venezia Rune - Low-Grade">
 		<!-- When in inventory, acquired XP/ SP +22%. Only usable up to level 40. -->
 		<icon>icon.skill19226</icon>
 		<operateType>P</operateType>
@@ -298,20 +299,21 @@
 		<icon>icon.ev_11th_rare_acc_necklace</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="32029" toLevel="1" name="Advanced Venezia's Rune">
+	<skill id="32029" toLevel="1" name="Venezia Rune - High-Grade">
 		<!-- When in inventory, Acquired XP/ SP +11%. -->
 		<icon>icon.skill19226</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="32030" toLevel="1" name="Dandy's Homerun Ball">
+	<skill id="32030" toLevel="1" name="Dandy's Home Run Ball">
 		<!-- For 1 h., acquired XP/ SP +100%. Cannot be stacked with Fish Stew - The Guild's Gratitude. Changes the appearance of your armor into that of a Lineage II Uniform. Effect remains after death. -->
 		<icon>BranchIcon.icon.g_ev_homerunball</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>15000</reuseDelay>
 	</skill>
-	<skill id="32031" toLevel="1" name="Scroll of Escape: Talking Island Village">
+	<skill id="32031" toLevel="1" name="Teleport Stone: Talking Island Village">
 		<!-- Teleports to Talking Island Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -339,6 +341,7 @@
 	</skill>
 	<skill id="32032" toLevel="1" name="Scroll of Escape: Elven Village">
 		<!-- Teleports to Elven Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -366,6 +369,7 @@
 	</skill>
 	<skill id="32033" toLevel="1" name="Scroll of Escape: Dark Elf Village">
 		<!-- Teleports to Dark Elf Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -393,6 +397,7 @@
 	</skill>
 	<skill id="32034" toLevel="1" name="Scroll of Escape: Orc Village">
 		<!-- Teleports to Orc Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -420,6 +425,7 @@
 	</skill>
 	<skill id="32035" toLevel="1" name="Scroll of Escape: Dwarven Village">
 		<!-- Teleports to Dwarven Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -447,6 +453,7 @@
 	</skill>
 	<skill id="32036" toLevel="1" name="Scroll of Escape: Gludin Village">
 		<!-- Teleports to Gludin. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -472,8 +479,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32037" toLevel="1" name="Scroll of Escape: Town of Gludio">
+	<skill id="32037" toLevel="1" name="Scroll of Escape: Gludio">
 		<!-- Teleports to Gludio. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -501,42 +509,49 @@
 	</skill>
 	<skill id="32038" toLevel="1" name="Scroll of Escape: Dion">
 		<!-- Teleports to Dion. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
-	<skill id="32039" toLevel="1" name="Scroll of Escape: Floran">
+	<skill id="32039" toLevel="1" name="Scroll of Escape: Floran Village">
 		<!-- Teleports to Floran. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="32040" toLevel="1" name="Scroll of Escape: Giran">
 		<!-- Teleports to Giran. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="32041" toLevel="1" name="Scroll of Escape: Oren">
 		<!-- Teleports to Oren. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="32042" toLevel="1" name="Scroll of Escape: Ivory Tower">
 		<!-- Teleports to Ivory Tower. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="32043" toLevel="1" name="Scroll of Escape: Hunter's Village">
 		<!-- Teleports to Hunters Village. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
-	<skill id="32044" toLevel="1" name="Scroll of Escape: Cruma Tower Entrance">
+	<skill id="32044" toLevel="1" name="Teleport: Entrance to Cruma Tower">
 		<!-- Teleports to Entrance to Cruma Tower. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -562,8 +577,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32045" toLevel="1" name="Scroll of Escape: Entrance to Dragon Valley">
+	<skill id="32045" toLevel="1" name="Teleport: Entrance to Dragon Valley">
 		<!-- Teleports to Entrance to Dragon Valley. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -589,8 +605,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32046" toLevel="1" name="Scroll of Escape: Dragon Valley Bridge">
+	<skill id="32046" toLevel="1" name="Teleport: Dragon Valley Bridge">
 		<!-- Teleports to Dragon Valley Bridge. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>

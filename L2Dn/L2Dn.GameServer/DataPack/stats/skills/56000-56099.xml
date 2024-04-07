@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="56000" toLevel="1" name="Stable Scroll: Enchant Cloak">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="56001" toLevel="1" name="High-grade Life Stone Pack - Legendary">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="56002" toLevel="1" name="High-grade Life Stone Pack - Cloak">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -38,11 +41,13 @@
 	</skill>
 	<skill id="56007" toLevel="1" name="Shining Fishing Box">
 		<!-- Double click to obtain a random item. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="56008" toLevel="1" name="Fishing XP Scroll">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>5000</reuseDelay>
 	</skill>
@@ -52,7 +57,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="56010" toLevel="4" name="Blessing of Mermaid">
-		<!-- For $s1, Acquired XP/SP during fishing +$s2. -->
+		<!-- For 60 min., Acquired XP/SP during fishing +5%. -->
 		<icon>icon.skill_agathion_special</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -61,6 +66,7 @@
 		<effectPoint>379</effectPoint>
 	</skill>
 	<skill id="56011" toLevel="1" name="Complete Arms Supplies Pack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -93,7 +99,7 @@
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="56016" toLevel="1" name="Reinforced Castle Ring">
-		<!-- Increases Max ?? and P./ M. Atk. -->
+		<!-- Increases Max НР and P./ M. Atk. -->
 		<icon>icon.ev_11th_rare_acc_ring</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -109,21 +115,25 @@
 	</skill>
 	<skill id="56019" toLevel="1" name="+7 Elmoreden Cloak Box">
 		<!-- Double-click to obtain a +7 Elmoreden Cloak. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="56020" toLevel="1" name="+7 Aden Cloak Box">
 		<!-- Double-click to obtain a +7 Aden Cloak. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="56021" toLevel="1" name="+7 Elmore Cloak Box">
 		<!-- Double-click to obtain a +7 Elmore Cloak. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="56022" toLevel="1" name="+7 Ferios Cloak Box">
 		<!-- Double-click to obtain a +7 Ferios Cloak. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
@@ -146,6 +156,7 @@
 		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="56026" toLevel="1" name="Seven Signs Miracle Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -375,6 +386,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="56070" toLevel="1" name="Seven Sins Agathion Charm Growth Book">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="56071" toLevel="1" name="Merlin's Magical Bracelet">
@@ -496,7 +508,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="56088" toLevel="1" name="Seven Deadly Sins: Magic Barrier">
-		<!-- Special buff of the Seven Deadly Sins squad. For 20 min., M. Def. +30%. -->
+		<!-- Special buff of the Seven Deadly Sins squad. For 20 min, M. Def. +30%. -->
 		<icon>icon.skill1036</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -512,12 +524,13 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="56090" toLevel="1" name="Snake's Blessing Effect">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="56091" toLevel="24" name="Snake's Blessing Lv. 1">
-		<!-- Allows obtaining the Seven Deadly Sins cards. Allows obtaining one card after $s1 h. You can get total of $s2 cards for $s3 levels. As soon as the effect is over, the character can get it again from Snake. <Warning> If the character is dead, it is impossible to get a card or to increase the Snake's Blessing level. Also the character cannot get a card if the inventary is full. -->
+		<!-- Allows obtaining the Seven Deadly Sins cards. Allows obtaining one card after 1 h. You can get total of 23 cards for 23 levels. As soon as the effect is over, the character can get it again from Snake. <Warning> If the character is dead, it is impossible to get a card or to increase the Snake's Blessing level. Also the character cannot get a card if the inventary is full. -->
 		<icon>icon.card_event_everyday_gift</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -525,10 +538,11 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="56092" toLevel="1" name="Purse with the Seven Deadly Sins Cards">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="56093" toLevel="1" name="Agathion Cute Trick">
-		<!-- See the tricks performed by the summoned Agathion. -->
+		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -539,6 +553,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="56095" toLevel="1" name="+5 Agathion Hawk - Lv. 3 (7-day) Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
@@ -563,7 +578,7 @@
 		</effects>
 	</skill>
 	<skill id="56098" toLevel="24" name="Venir's Talisman">
-		<!-- When equipped, CON +$s1. -->
+		<!-- When equipped, CON +1. -->
 		<icon>
 			<value level="1">icon.etc_all_stat_talisman_i00</value>
 			<value level="2">icon.etc_all_stat_talisman_i00</value>

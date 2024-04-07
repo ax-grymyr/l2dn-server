@@ -54,7 +54,7 @@ public class RealDamage: AbstractEffect
 		double damage;
 		if (_mode == StatModifierType.DIFF)
 		{
-			damage = _power - (_power * (Math.Min(effected.getStat().getMul(Stat.REAL_DAMAGE_RESIST, 1), 1.8) - 1));
+			damage = _power - (_power * (Math.Min(effected.getStat().getMulValue(Stat.REAL_DAMAGE_RESIST, 1), 1.8) - 1));
 		}
 		else // PER
 		{

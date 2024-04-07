@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_01" minZ="-3837" maxZ="-3237">
+				<node x="104628" y="176783" />
+				<node x="107993" y="178074" />
+				<node x="106605" y="179551" />
+				<node x="104967" y="180118" />
+				<node x="103399" y="178771" />
+			</territory>
+		</territories>
+		<npc id="20805" count="6" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="5" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_02" minZ="-3822" maxZ="-3122">
+				<node x="107376" y="174567" />
+				<node x="109557" y="175729" />
+				<node x="108259" y="178061" />
+				<node x="104674" y="176632" />
+				<node x="104234" y="175221" />
+			</territory>
+		</territories>
+		<npc id="20805" count="7" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="8" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_03" minZ="-3845" maxZ="-3145">
+				<node x="108003" y="169603" />
+				<node x="111108" y="170278" />
+				<node x="109237" y="173621" />
+				<node x="107702" y="173135" />
+			</territory>
+		</territories>
+		<npc id="20805" count="5" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="6" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_04" minZ="-3607" maxZ="-3107">
+				<node x="108366" y="167487" />
+				<node x="109865" y="167556" />
+				<node x="111170" y="170215" />
+				<node x="108069" y="169469" />
+			</territory>
+		</territories>
+		<npc id="20805" count="2" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="2" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="2" respawnTime="45sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_05" minZ="-3574" maxZ="-3074">
+				<node x="112481" y="166383" />
+				<node x="114906" y="167428" />
+				<node x="113704" y="170001" />
+				<node x="111381" y="170249" />
+				<node x="110057" y="167640" />
+			</territory>
+		</territories>
+		<npc id="20805" count="5" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="7" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_06" minZ="-3574" maxZ="-2874">
+				<node x="117691" y="166776" />
+				<node x="118605" y="169886" />
+				<node x="115890" y="170365" />
+				<node x="114133" y="169338" />
+				<node x="115022" y="167441" />
+			</territory>
+		</territories>
+		<npc id="20806" count="6" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="7" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="5" respawnTime="45sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_07" minZ="-3549" maxZ="-3149">
+				<node x="119100" y="166684" />
+				<node x="121510" y="167963" />
+				<node x="121892" y="168991" />
+				<node x="118673" y="169794" />
+				<node x="117749" y="166749" />
+			</territory>
+		</territories>
+		<npc id="20806" count="5" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="3" respawnTime="45sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_08" minZ="-3840" maxZ="-3240">
+				<node x="109547" y="185085" />
+				<node x="111425" y="185885" />
+				<node x="108076" y="190208" />
+				<node x="105992" y="187035" />
+				<node x="108123" y="184725" />
+			</territory>
+		</territories>
+		<npc id="20135" count="9" respawnTime="45sec" /> <!-- Alligator -->
+		<npc id="20804" count="16" respawnTime="45sec" /> <!-- Crokian Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_09" minZ="-3860" maxZ="-3160">
+				<node x="113588" y="186881" />
+				<node x="113215" y="189814" />
+				<node x="111062" y="190668" />
+				<node x="108486" y="189788" />
+				<node x="111497" y="185914" />
+			</territory>
+		</territories>
+		<npc id="20135" count="9" respawnTime="45sec" /> <!-- Alligator -->
+		<npc id="20804" count="16" respawnTime="45sec" /> <!-- Crokian Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_10" minZ="-3848" maxZ="-3148">
+				<node x="117007" y="186532" />
+				<node x="117511" y="188443" />
+				<node x="116997" y="190909" />
+				<node x="113295" y="189840" />
+				<node x="113656" y="186898" />
+			</territory>
+		</territories>
+		<npc id="20135" count="9" respawnTime="45sec" /> <!-- Alligator -->
+		<npc id="20804" count="16" respawnTime="45sec" /> <!-- Crokian Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_11" minZ="-3833" maxZ="-3433">
+				<node x="121723" y="189825" />
+				<node x="121031" y="191156" />
+				<node x="117140" y="190802" />
+				<node x="117565" y="188450" />
+			</territory>
+		</territories>
+		<npc id="20135" count="7" respawnTime="45sec" /> <!-- Alligator -->
+		<npc id="20804" count="9" respawnTime="45sec" /> <!-- Crokian Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_12" minZ="-3844" maxZ="-3344">
+				<node x="117629" y="188365" />
+				<node x="117105" y="186532" />
+				<node x="119683" y="185071" />
+				<node x="120727" y="185790" />
+				<node x="120445" y="188822" />
+			</territory>
+		</territories>
+		<npc id="20804" count="8" respawnTime="45sec" /> <!-- Crokian Lad -->
+		<npc id="20805" count="8" respawnTime="45sec" /> <!-- Dailaon Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_13" minZ="-3844" maxZ="-3344">
+				<node x="117128" y="186410" />
+				<node x="114808" y="182865" />
+				<node x="116367" y="181630" />
+				<node x="116914" y="180045" />
+				<node x="119626" y="184946" />
+			</territory>
+		</territories>
+		<npc id="20804" count="7" respawnTime="45sec" /> <!-- Crokian Lad -->
+		<npc id="20805" count="7" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="6" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_14" minZ="-3859" maxZ="-3159">
+				<node x="117055" y="186454" />
+				<node x="113657" y="186777" />
+				<node x="109685" y="184974" />
+				<node x="111297" y="182576" />
+				<node x="114607" y="182717" />
+			</territory>
+		</territories>
+		<npc id="20804" count="9" respawnTime="45sec" /> <!-- Crokian Lad -->
+		<npc id="20805" count="9" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="5" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_15" minZ="-3844" maxZ="-3144">
+				<node x="114465" y="182577" />
+				<node x="111626" y="182457" />
+				<node x="109676" y="179701" />
+				<node x="113393" y="179860" />
+			</territory>
+		</territories>
+		<npc id="20804" count="5" respawnTime="45sec" /> <!-- Crokian Lad -->
+		<npc id="20805" count="6" respawnTime="45sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="5" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_16" minZ="-3864" maxZ="-3064">
+				<node x="119201" y="182015" />
+				<node x="119966" y="179871" />
+				<node x="122699" y="179881" />
+				<node x="124635" y="183126" />
+				<node x="122261" y="184514" />
+				<node x="120465" y="184416" />
+			</territory>
+		</territories>
+		<npc id="20807" count="7" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="7" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_17" minZ="-3864" maxZ="-3164">
+				<node x="117595" y="179184" />
+				<node x="119428" y="176130" />
+				<node x="122423" y="177663" />
+				<node x="122645" y="179567" />
+				<node x="119181" y="179822" />
+			</territory>
+		</territories>
+		<npc id="20807" count="6" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="6" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_18" minZ="-3864" maxZ="-3364">
+				<node x="119441" y="176035" />
+				<node x="120774" y="173343" />
+				<node x="122784" y="174524" />
+				<node x="123900" y="175774" />
+				<node x="122192" y="177364" />
+			</territory>
+		</territories>
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="6" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_19" minZ="-3864" maxZ="-3364">
+				<node x="117710" y="174418" />
+				<node x="118189" y="171450" />
+				<node x="120324" y="170244" />
+				<node x="120615" y="173433" />
+				<node x="119224" y="175813" />
+			</territory>
+		</territories>
+		<npc id="20807" count="6" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="5" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_20" minZ="-3864" maxZ="-3264">
+				<node x="114292" y="176728" />
+				<node x="116023" y="173783" />
+				<node x="117354" y="174178" />
+				<node x="119342" y="176103" />
+				<node x="117517" y="178950" />
+			</territory>
+		</territories>
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="6" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_21" minZ="-3836" maxZ="-3336">
+				<node x="112204" y="174708" />
+				<node x="114008" y="171445" />
+				<node x="115215" y="171237" />
+				<node x="116757" y="172286" />
+				<node x="114547" y="176088" />
+			</territory>
+		</territories>
+		<npc id="20806" count="4" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="4" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="5" respawnTime="45sec" /> <!-- Nos Lad -->
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_22" minZ="-3844" maxZ="-3344">
+				<node x="110438" y="173445" />
+				<node x="111512" y="171004" />
+				<node x="113550" y="172111" />
+				<node x="112446" y="174137" />
+			</territory>
+		</territories>
+		<npc id="20807" count="5" respawnTime="45sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="5" respawnTime="45sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_25s" minZ="-3713" maxZ="-3213">
+				<node x="116575" y="186099" />
+				<node x="112043" y="185565" />
+				<node x="112856" y="184494" />
+				<node x="115962" y="185031" />
+			</territory>
+		</territories>
+		<npc id="20806" count="6" respawnTime="45sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril08_2323_26" minZ="-3605" maxZ="-2605">
+				<node x="122994" y="167569" />
+				<node x="124450" y="168171" />
+				<node x="125800" y="169479" />
+				<node x="123380" y="169697" />
+				<node x="122688" y="169650" />
+				<node x="122137" y="169147" />
+				<node x="121646" y="167694" />
+			</territory>
+		</territories>
+		<npc id="20991" count="2" respawnTime="80sec" respawnRandom="30sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_001" minZ="-2900" maxZ="-2700">
+				<node x="125883" y="182382" />
+				<node x="126996" y="182447" />
+				<node x="127193" y="183093" />
+				<node x="125923" y="183540" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_002" minZ="-2911" maxZ="-2711">
+				<node x="126236" y="183030" />
+				<node x="126268" y="183642" />
+				<node x="126932" y="184372" />
+				<node x="125914" y="184248" />
+				<node x="126063" y="184022" />
+				<node x="125825" y="183679" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_003" minZ="-2879" maxZ="-2679">
+				<node x="126924" y="182786" />
+				<node x="127183" y="183094" />
+				<node x="127173" y="183733" />
+				<node x="126640" y="184129" />
+				<node x="126066" y="183813" />
+				<node x="126726" y="183803" />
+				<node x="126836" y="183449" />
+				<node x="126354" y="183178" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_005" minZ="-3041" maxZ="-2841">
+				<node x="125193" y="184152" />
+				<node x="125636" y="183728" />
+				<node x="125633" y="184216" />
+				<node x="125899" y="184227" />
+				<node x="125811" y="185020" />
+				<node x="125686" y="185042" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_006" minZ="-2829" maxZ="-2629">
+				<node x="127077" y="183854" />
+				<node x="127825" y="184153" />
+				<node x="127444" y="184581" />
+				<node x="127071" y="184847" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_007" minZ="-2809" maxZ="-2609">
+				<node x="127527" y="183225" />
+				<node x="127103" y="182971" />
+				<node x="127524" y="182853" />
+				<node x="127840" y="183595" />
+				<node x="127319" y="183479" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_008" minZ="-2886" maxZ="-2686">
+				<node x="127053" y="182021" />
+				<node x="127365" y="182362" />
+				<node x="127152" y="182653" />
+				<node x="126514" y="182180" />
+				<node x="126204" y="182364" />
+				<node x="126221" y="182037" />
+				<node x="126674" y="181906" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_011" minZ="-3217" maxZ="-3017">
+				<node x="125980" y="174585" />
+				<node x="126444" y="174127" />
+				<node x="127405" y="174512" />
+				<node x="126316" y="175488" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_012" minZ="-3202" maxZ="-2902">
+				<node x="126056" y="174663" />
+				<node x="127266" y="175121" />
+				<node x="126532" y="176277" />
+				<node x="126674" y="175516" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_013" minZ="-3416" maxZ="-3016">
+				<node x="125543" y="175986" />
+				<node x="126220" y="174395" />
+				<node x="126890" y="175602" />
+				<node x="125610" y="176153" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_014" minZ="-3176" maxZ="-2876">
+				<node x="126215" y="173894" />
+				<node x="127285" y="174564" />
+				<node x="126676" y="175327" />
+				<node x="126106" y="174313" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_021" minZ="-3494" maxZ="-3294">
+				<node x="106419" y="167811" />
+				<node x="107669" y="167913" />
+				<node x="107930" y="168595" />
+				<node x="106924" y="168849" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="40sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="40sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_022" minZ="-3498" maxZ="-3198">
+				<node x="106411" y="167784" />
+				<node x="107473" y="167487" />
+				<node x="107294" y="168317" />
+				<node x="106940" y="168871" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="40sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="40sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_023" minZ="-3513" maxZ="-3313">
+				<node x="106738" y="168326" />
+				<node x="107836" y="167722" />
+				<node x="107828" y="168672" />
+				<node x="107589" y="169094" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="40sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="40sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="40sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_031" minZ="-3363" maxZ="-3163">
+				<node x="125180" y="189908" />
+				<node x="125735" y="190156" />
+				<node x="125741" y="190870" />
+				<node x="125245" y="191113" />
+				<node x="124647" y="190834" />
+				<node x="124647" y="190834" />
+				<node x="124651" y="190163" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_032" minZ="-3382" maxZ="-3182">
+				<node x="125186" y="189694" />
+				<node x="126258" y="189676" />
+				<node x="126301" y="191426" />
+				<node x="125316" y="191211" />
+				<node x="125949" y="190909" />
+				<node x="125927" y="190079" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_033" minZ="-3367" maxZ="-3167">
+				<node x="125516" y="190316" />
+				<node x="126459" y="189864" />
+				<node x="126662" y="191235" />
+				<node x="126358" y="191363" />
+			</territory>
+		</territories>
+		<npc id="20805" count="1" respawnTime="70sec" /> <!-- Dailaon Lad -->
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_034" minZ="-3406" maxZ="-3206">
+				<node x="124544" y="189935" />
+				<node x="124773" y="190222" />
+				<node x="124360" y="190151" />
+				<node x="124414" y="190772" />
+				<node x="124831" y="190831" />
+				<node x="124421" y="191039" />
+				<node x="125152" y="191504" />
+				<node x="125103" y="189698" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="1" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_044" minZ="-3382" maxZ="-3182">
+				<node x="125186" y="189694" />
+				<node x="126258" y="189676" />
+				<node x="126301" y="191426" />
+				<node x="125316" y="191211" />
+				<node x="125949" y="190909" />
+				<node x="125927" y="190079" />
+			</territory>
+		</territories>
+		<npc id="20991" count="2" respawnTime="120sec" respawnRandom="60sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_051" minZ="-3446" maxZ="-3046">
+				<node x="104533" y="181652" />
+				<node x="106119" y="182213" />
+				<node x="106555" y="183866" />
+				<node x="103458" y="183456" />
+			</territory>
+		</territories>
+		<npc id="20806" count="2" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="2" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20991" count="1" respawnTime="120sec" respawnRandom="60sec" /> <!-- Swamp Tribe -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_052" minZ="-3470" maxZ="-3070">
+				<node x="103245" y="180469" />
+				<node x="106249" y="180990" />
+				<node x="107195" y="182407" />
+				<node x="103194" y="181785" />
+			</territory>
+		</territories>
+		<npc id="20806" count="2" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="2" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_053" minZ="-3482" maxZ="-3082">
+				<node x="106002" y="182654" />
+				<node x="109223" y="182859" />
+				<node x="108916" y="183746" />
+				<node x="107809" y="183575" />
+				<node x="106982" y="184526" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="2" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="2" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_054" minZ="-3518" maxZ="-3118">
+				<node x="106983" y="180958" />
+				<node x="108325" y="181047" />
+				<node x="108439" y="182020" />
+				<node x="106821" y="182830" />
+				<node x="107237" y="181560" />
+			</territory>
+		</territories>
+		<npc id="20806" count="1" respawnTime="50sec" /> <!-- Crokian Lad Warrior -->
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_055" minZ="-3453" maxZ="-3053">
+				<node x="108385" y="181712" />
+				<node x="109231" y="181770" />
+				<node x="109430" y="182845" />
+				<node x="108535" y="183064" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="2" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="innadril02_2323_056" minZ="-3494" maxZ="-3094">
+				<node x="102360" y="181463" />
+				<node x="103445" y="181615" />
+				<node x="103674" y="183483" />
+				<node x="102508" y="182612" />
+			</territory>
+		</territories>
+		<npc id="20807" count="1" respawnTime="50sec" /> <!-- Farhite Lad -->
+		<npc id="20808" count="2" respawnTime="50sec" /> <!-- Nos Lad -->
+	</spawn>
+</list>

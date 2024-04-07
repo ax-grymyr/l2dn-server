@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="16001" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -13,6 +14,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16002" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -25,6 +27,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16003" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -37,6 +40,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16004" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -48,6 +52,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16005" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -59,6 +64,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16006" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -70,6 +76,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16007" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -81,6 +88,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16008" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -93,6 +101,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16009" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -104,6 +113,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16010" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -115,6 +125,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16011" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -126,6 +137,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16012" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -137,6 +149,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16013" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -148,6 +161,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16014" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -159,6 +173,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16015" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -171,6 +186,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16016" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -183,6 +199,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16017" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -194,6 +211,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16018" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -206,6 +224,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16019" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -218,6 +237,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16020" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -230,6 +250,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16021" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -241,7 +262,8 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="16022" toLevel="1" name="Ground Slam">
+	<skill id="16022" toLevel="1" name="Ground Shaker">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>4600</hitTime>
@@ -256,6 +278,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16023" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>10000</hitTime>
@@ -270,6 +293,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16024" toLevel="1" name="Seeds Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>4800</hitTime>
@@ -284,6 +308,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16025" toLevel="1" name="Whistle">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -296,6 +321,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16026" toLevel="1" name="Chat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -308,6 +334,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16027" toLevel="1" name="Chat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -320,6 +347,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16028" toLevel="1" name="Ball Kicking">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -332,6 +360,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16029" toLevel="1" name="Jump">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -344,6 +373,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16030" toLevel="1" name="Sheep Herding">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -356,6 +386,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16032" toLevel="1" name="Gi-Sung Bae's Lineage II">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -366,6 +397,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16033" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -378,6 +410,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16034" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -390,6 +423,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16035" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>CA1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -435,7 +469,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>250</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -485,6 +519,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16039" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -497,6 +532,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16040" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -509,6 +545,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16041" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -521,6 +558,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16042" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -533,6 +571,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16043" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -545,6 +584,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16044" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -557,6 +597,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16045" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -569,6 +610,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16046" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -581,6 +623,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16047" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -593,6 +636,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16048" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -605,6 +649,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16049" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -617,6 +662,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16050" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -629,6 +675,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16051" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -641,6 +688,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16052" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -653,6 +701,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16053" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -665,6 +714,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16054" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -677,6 +727,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16055" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -689,6 +740,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16056" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -701,6 +753,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16057" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -713,6 +766,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16058" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -725,6 +779,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16059" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -737,6 +792,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16060" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -749,6 +805,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16061" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -761,6 +818,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16062" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -773,6 +831,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16063" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -785,6 +844,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16064" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -797,6 +857,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16065" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -809,6 +870,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16066" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -821,6 +883,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16067" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -833,6 +896,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16068" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -845,6 +909,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16069" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -857,6 +922,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16070" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -869,6 +935,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16071" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -881,6 +948,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16072" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -893,6 +961,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16073" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -905,6 +974,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16074" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -917,6 +987,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16075" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -929,6 +1000,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16076" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -941,6 +1013,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16077" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -953,6 +1026,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16078" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -965,6 +1039,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16079" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -977,6 +1052,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16080" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -989,6 +1065,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16081" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1001,6 +1078,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16082" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1013,6 +1091,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16083" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1025,6 +1104,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16084" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1037,6 +1117,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16085" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1049,6 +1130,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16086" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1061,6 +1143,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16087" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1073,6 +1156,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16088" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1085,6 +1169,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16089" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1097,6 +1182,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16090" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1109,6 +1195,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16091" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1121,6 +1208,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16092" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1133,6 +1221,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16093" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1145,6 +1234,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16094" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1157,6 +1247,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16095" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1169,6 +1260,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16096" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1181,6 +1273,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16097" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1193,6 +1286,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16098" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -1205,6 +1299,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="16099" toLevel="1" name="Presentation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>

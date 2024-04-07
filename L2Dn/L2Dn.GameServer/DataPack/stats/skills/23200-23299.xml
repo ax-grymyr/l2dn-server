@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="23234" toLevel="1" name="Singer &amp; Dancer Agathion Cute Trick">
+	<skill id="23234" toLevel="1" name="Singer and Dancer Agathion Cute Trick">
 		<!-- See Agathion's cute trick. -->
 		<icon>icon.skill_agathion_cute</icon>
 		<operateType>A1</operateType>
@@ -22,14 +22,10 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
-		<attributeType>FIRE</attributeType>
-		<attributeValue>20</attributeValue>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>80</magicLevel>
 		<operateType>A2</operateType>
-		<basicProperty>MAGIC</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>1</lvlBonusRate>
 		<isDebuff>true</isDebuff>
 		<targetType>SELF</targetType>
@@ -37,7 +33,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>250</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -48,23 +44,19 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
-		<attributeType>WIND</attributeType>
-		<attributeValue>20</attributeValue>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>80</magicLevel>
 		<operateType>A2</operateType>
 		<effectPoint>100</effectPoint>
-		<basicProperty>MAGIC</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>1</lvlBonusRate>
 		<isDebuff>true</isDebuff>
-		<targetType>TARGET</targetType>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>250</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>

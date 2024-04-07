@@ -181,22 +181,22 @@
 		<!-- Item Skill: Acquired XP/ SP +10%. -->
 	</option>
 	<option id="40750" name="option_id_40750">
-		<!-- Active: Temporarily increases Atk. Spd.. -->
+		<!-- Active: Temporarily increases Atk. Spd. -->
 	</option>
 	<option id="40751" name="option_id_40751">
-		<!-- Active: Temporarily increases Atk. Spd.. -->
+		<!-- Active: Temporarily increases Atk. Spd. -->
 	</option>
 	<option id="40752" name="option_id_40752">
-		<!-- Active: Temporarily increases Atk. Spd.. -->
+		<!-- Active: Temporarily increases Atk. Spd. -->
 	</option>
 	<option id="40753" name="option_id_40753">
-		<!-- Active: Temporarily increases Casting Spd.. -->
+		<!-- Active: Temporarily increases Casting Spd. -->
 	</option>
 	<option id="40754" name="option_id_40754">
-		<!-- Active: Temporarily increases Casting Spd.. -->
+		<!-- Active: Temporarily increases Casting Spd. -->
 	</option>
 	<option id="40755" name="option_id_40755">
-		<!-- Active: Temporarily increases Casting Spd.. -->
+		<!-- Active: Temporarily increases Casting Spd. -->
 	</option>
 	<option id="40756" name="option_id_40756">
 		<!-- Active: Removes all debuffs -->

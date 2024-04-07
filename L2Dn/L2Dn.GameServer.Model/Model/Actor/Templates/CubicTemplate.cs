@@ -26,7 +26,7 @@ public class CubicTemplate: CreatureTemplate, ICubicConditionHolder
 		_delay = set.getInt("delay");
 		_maxCount = set.getInt("maxCount");
 		_useUp = set.getInt("useUp");
-		_power = set.getDouble("power");
+		_power = set.getDouble("power") / 10;
 		_targetType = set.getEnum("targetType", CubicTargetType.TARGET);
 	}
 	
@@ -77,12 +77,12 @@ public class CubicTemplate: CreatureTemplate, ICubicConditionHolder
 	
 	public override int getBasePAtk()
 	{
-		return (int) _power;
+		return (int)_power;
 	}
 	
 	public override int getBaseMAtk()
 	{
-		return (int) _power;
+		return (int)_power;
 	}
 	
 	public bool validateConditions(Cubic cubic, Creature owner, WorldObject target)

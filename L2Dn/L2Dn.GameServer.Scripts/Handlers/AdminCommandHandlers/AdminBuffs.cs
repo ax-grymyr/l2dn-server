@@ -308,6 +308,8 @@ public class AdminBuffs: IAdminCommandHandler
 			htmlContent.Replace("%pages%", "");
 		}
 		
+		htmlContent.Replace("%buffsText%", passive ? "Hide Passives" : "Show Passives");
+		htmlContent.Replace("%passives%", passive ? "" : "_ps");
 		htmlContent.Replace("%targetName%", target.getName());
 		htmlContent.Replace("%targetObjId%", target.getObjectId().ToString());
 		htmlContent.Replace("%buffs%", result.getBodyTemplate().ToString());
@@ -393,7 +395,7 @@ public class AdminBuffs: IAdminCommandHandler
 			Set<AbnormalType> blockedAbnormals = target.getEffectList().getBlockedAbnormalTypes();
 			int blockedAbnormalsSize = blockedAbnormals != null ? blockedAbnormals.size() : 0;
 			StringBuilder html = new StringBuilder(500 + (blockedAbnormalsSize * 50));
-			html.Append("<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Blocked effects of ");
+			html.Append("<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Blocked effects of ");
 			html.Append(target.getName());
 			html.Append("</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_getbuffs" + (target.isPlayer() ? (" " + target.getName()) : "") + "\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>");
 			if ((blockedAbnormals != null) && !blockedAbnormals.isEmpty())

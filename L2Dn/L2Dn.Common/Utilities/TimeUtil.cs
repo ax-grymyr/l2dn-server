@@ -21,4 +21,22 @@ public static class TimeUtil
 
         throw new FormatException();
     }
+    
+    public static DateTime GetCloseNextDay(DayOfWeek dayOfWeek, int hour, int minute)
+    {
+        DateTime calendar = DateTime.Now; // Today, now
+        if (calendar.DayOfWeek != dayOfWeek)
+        {
+            calendar = calendar.AddDays((dayOfWeek + 7 - calendar.DayOfWeek) % 7);
+        }
+        else
+        {
+            int minOfDay = calendar.Hour * 60 + calendar.Minute;
+            if (minOfDay >= hour * 60 + minute)
+                calendar = calendar.AddDays(7); // Bump to next week
+        }
+
+        calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, hour, minute, 0);
+        return calendar;
+    }
 }

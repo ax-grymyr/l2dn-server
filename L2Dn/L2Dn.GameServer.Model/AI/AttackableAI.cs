@@ -6,6 +6,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Holders;
@@ -663,15 +664,16 @@ public class AttackableAI: CreatureAI
 			moveTo(target);
 			return;
 		}
-		
-		int collision = npc.getTemplate().getCollisionRadius();
+
+		NpcTemplate template = npc.getTemplate();
+		int collision = template.getCollisionRadius();
 		
 		// Handle all WorldObject of its Faction inside the Faction Range
 		
-		Set<int> clans = getActiveChar().getTemplate().getClans();
+		Set<int> clans = template.getClans();
 		if ((clans != null) && !clans.isEmpty())
 		{
-			int factionRange = npc.getTemplate().getClanHelpRange() + collision;
+			int factionRange = template.getClanHelpRange() + collision;
 			// Go through all WorldObject that belong to its faction
 			try
 			{
@@ -689,40 +691,43 @@ public class AttackableAI: CreatureAI
 				}
 				if (targetExistsInAttackByList)
 				{
-					World.getInstance().forEachVisibleObjectInRange<Attackable>(npc, factionRange, called =>
+					World.getInstance().forEachVisibleObjectInRange<Attackable>(npc, factionRange, nearby =>
 					{
 						// Don't call dead npcs, npcs without ai or npcs which are too far away.
-						if (called.isDead() || !called.hasAI() || (Math.Abs(finalTarget.getZ() - called.getZ()) > 600))
+						if (nearby.isDead() || !nearby.hasAI() || (Math.Abs(finalTarget.getZ() - nearby.getZ()) > 600))
 						{
 							return;
 						}
 						// Don't call npcs who are already doing some action (e.g. attacking, casting).
-						if ((called.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE) && (called.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE))
+						if ((nearby.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE) && (nearby.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE))
 						{
 							return;
 						}
 						// Don't call npcs who aren't in the same clan.
-						if (!getActiveChar().getTemplate().isClan(called.getTemplate().getClans()))
+						NpcTemplate nearbyTemplate = nearby.getTemplate();
+						if (!template.isClan(nearbyTemplate.getClans()) || (nearbyTemplate.hasIgnoreClanNpcIds() &&
+						                                                    nearbyTemplate.getIgnoreClanNpcIds()
+							                                                    .Contains(npc.getId())))
 						{
 							return;
 						}
-						
+
 						if (finalTarget.isPlayable())
 						{
 							// By default, when a faction member calls for help, attack the caller's attacker.
 							// Notify the AI with EVT_AGGRESSION
-							called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
+							nearby.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
 							
-							if (called.Events.HasSubscribers<OnAttackableFactionCall>())
+							if (nearby.Events.HasSubscribers<OnAttackableFactionCall>())
 							{
-								called.Events.NotifyAsync(new OnAttackableFactionCall(called, getActiveChar(),
+								nearby.Events.NotifyAsync(new OnAttackableFactionCall(nearby, npc,
 									finalTarget.getActingPlayer(), finalTarget.isSummon()));
 							}
 						}
-						else if (called.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK)
+						else if (nearby.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK)
 						{
-							called.addDamageHate(finalTarget, 0, npc.getHating(finalTarget));
-							called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, finalTarget);
+							nearby.addDamageHate(finalTarget, 0, npc.getHating(finalTarget));
+							nearby.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, finalTarget);
 						}
 					});
 				}
@@ -738,22 +743,22 @@ public class AttackableAI: CreatureAI
 			return;
 		}
 		
-		List<Skill> aiSuicideSkills = npc.getTemplate().getAISkills(AISkillScope.SUICIDE);
+		List<Skill> aiSuicideSkills = template.getAISkills(AISkillScope.SUICIDE);
 		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30) && npc.hasSkillChance())
 		{
 			Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.size()));
 			if (SkillCaster.checkUseConditions(npc, skill) && checkSkillTarget(skill, target))
 			{
 				npc.doCast(skill);
-				LOGGER.Info(this + " used suicide skill " + skill);
+				//LOGGER.Info(this + " used suicide skill " + skill);
 				return;
 			}
 		}
 		
 		// ------------------------------------------------------
-		// In case many mobs are trying to hit from same place, move a bit, circling around the target
+		// In case many mobs are trying to hit from same place, move a bit, circling around the target.
 		// Note from Gnacik:
-		// On l2js because of that sometimes mobs don't attack player only running around player without any sense, so decrease chance for now
+		// On l2js because of that sometimes mobs don't attack player only running around player without any sense, so decrease chance for now.
 		int combinedCollision = collision + target.getTemplate().getCollisionRadius();
 		if (!npc.isMovementDisabled() && (Rnd.get(100) <= 3))
 		{
@@ -871,12 +876,12 @@ public class AttackableAI: CreatureAI
 			setTarget(target);
 		}
 		
-		if (npc.hasSkillChance())
+		if ((!npc.isMoving() && npc.hasSkillChance()) || (npc.getAiType() == AIType.MAGE))
 		{
 			// First use the most important skill - heal. Even reconsider target.
-			if (!npc.getTemplate().getAISkills(AISkillScope.HEAL).isEmpty())
+			if (!template.getAISkills(AISkillScope.HEAL).isEmpty())
 			{
-				Skill healSkill = npc.getTemplate().getAISkills(AISkillScope.HEAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.HEAL).size()));
+				Skill healSkill = template.getAISkills(AISkillScope.HEAL).get(Rnd.get(template.getAISkills(AISkillScope.HEAL).size()));
 				if (SkillCaster.checkUseConditions(npc, healSkill))
 				{
 					Creature healTarget = skillTargetReconsider(healSkill, false);
@@ -887,7 +892,7 @@ public class AttackableAI: CreatureAI
 						{
 							setTarget(healTarget);
 							npc.doCast(healSkill);
-							LOGGER.Info(this + " used heal skill " + healSkill + " with target " + getTarget());
+							//LOGGER.Info(this + " used heal skill " + healSkill + " with target " + getTarget());
 							return;
 						}
 					}
@@ -895,9 +900,9 @@ public class AttackableAI: CreatureAI
 			}
 			
 			// Then use the second most important skill - buff. Even reconsider target.
-			if (!npc.getTemplate().getAISkills(AISkillScope.BUFF).isEmpty())
+			if (!template.getAISkills(AISkillScope.BUFF).isEmpty())
 			{
-				Skill buffSkill = npc.getTemplate().getAISkills(AISkillScope.BUFF).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.BUFF).size()));
+				Skill buffSkill = template.getAISkills(AISkillScope.BUFF).get(Rnd.get(template.getAISkills(AISkillScope.BUFF).size()));
 				if (SkillCaster.checkUseConditions(npc, buffSkill))
 				{
 					Creature buffTarget = skillTargetReconsider(buffSkill, true);
@@ -905,44 +910,44 @@ public class AttackableAI: CreatureAI
 					{
 						setTarget(buffTarget);
 						npc.doCast(buffSkill);
-						LOGGER.Info(this + " used buff skill " + buffSkill + " with target " + getTarget());
+						//LOGGER.Info(this + " used buff skill " + buffSkill + " with target " + getTarget());
 						return;
 					}
 				}
 			}
 			
 			// Then try to immobolize target if moving.
-			if (target.isMoving() && !npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).isEmpty())
+			if (target.isMoving() && !template.getAISkills(AISkillScope.IMMOBILIZE).isEmpty())
 			{
-				Skill immobolizeSkill = npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.IMMOBILIZE).size()));
+				Skill immobolizeSkill = template.getAISkills(AISkillScope.IMMOBILIZE).get(Rnd.get(template.getAISkills(AISkillScope.IMMOBILIZE).size()));
 				if (SkillCaster.checkUseConditions(npc, immobolizeSkill) && checkSkillTarget(immobolizeSkill, target))
 				{
 					npc.doCast(immobolizeSkill);
-					LOGGER.Info(this + " used immobolize skill " + immobolizeSkill + " with target " + getTarget());
+					//LOGGER.Info(this + " used immobolize skill " + immobolizeSkill + " with target " + getTarget());
 					return;
 				}
 			}
 			
 			// Then try to mute target if he is casting.
-			if (target.isCastingNow() && !npc.getTemplate().getAISkills(AISkillScope.COT).isEmpty())
+			if (target.isCastingNow() && !template.getAISkills(AISkillScope.COT).isEmpty())
 			{
-				Skill muteSkill = npc.getTemplate().getAISkills(AISkillScope.COT).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.COT).size()));
+				Skill muteSkill = template.getAISkills(AISkillScope.COT).get(Rnd.get(template.getAISkills(AISkillScope.COT).size()));
 				if (SkillCaster.checkUseConditions(npc, muteSkill) && checkSkillTarget(muteSkill, target))
 				{
 					npc.doCast(muteSkill);
-					LOGGER.Info(this + " used mute skill " + muteSkill + " with target " + getTarget());
+					//LOGGER.Info(this + " used mute skill " + muteSkill + " with target " + getTarget());
 					return;
 				}
 			}
 			
 			// Try cast short range skill.
-			if (!npc.getShortRangeSkills().isEmpty())
+			if (!npc.getShortRangeSkills().isEmpty() && (npc.calculateDistance2D(target) <= 150))
 			{
 				Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
 				if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
 				{
 					npc.doCast(shortRangeSkill);
-					LOGGER.Info(this + " used short range skill " + shortRangeSkill + " with target " + getTarget());
+					//LOGGER.Info(this + " used short range skill " + shortRangeSkill + " with target " + getTarget());
 					return;
 				}
 			}
@@ -954,19 +959,19 @@ public class AttackableAI: CreatureAI
 				if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
 				{
 					npc.doCast(longRangeSkill);
-					LOGGER.Info(this + " used long range skill " + longRangeSkill + " with target " + getTarget());
+					//LOGGER.Info(this + " used long range skill " + longRangeSkill + " with target " + getTarget());
 					return;
 				}
 			}
 			
 			// Finally, if none succeed, try to cast any skill.
-			if (!npc.getTemplate().getAISkills(AISkillScope.GENERAL).isEmpty())
+			if (!template.getAISkills(AISkillScope.GENERAL).isEmpty())
 			{
-				Skill generalSkill = npc.getTemplate().getAISkills(AISkillScope.GENERAL).get(Rnd.get(npc.getTemplate().getAISkills(AISkillScope.GENERAL).size()));
+				Skill generalSkill = template.getAISkills(AISkillScope.GENERAL).get(Rnd.get(template.getAISkills(AISkillScope.GENERAL).size()));
 				if (SkillCaster.checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
 				{
 					npc.doCast(generalSkill);
-					LOGGER.Info(this + " used general skill " + generalSkill + " with target " + getTarget());
+					//LOGGER.Info(this + " used general skill " + generalSkill + " with target " + getTarget());
 					return;
 				}
 			}

@@ -32,7 +32,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>52</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -96,6 +96,7 @@
 		</effects>
 	</skill>
 	<skill id="5503" toLevel="1" name="Ultimate Guard">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>
@@ -132,6 +133,7 @@
 		</effects>
 	</skill>
 	<skill id="5504" toLevel="1" name="Shield Defense">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -143,6 +145,7 @@
 		</effects>
 	</skill>
 	<skill id="5505" toLevel="1" name="Fire Blossom">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1063</effectPoint>
@@ -165,6 +168,7 @@
 		</effects>
 	</skill>
 	<skill id="5506" toLevel="1" name="Water Blossom">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1063</effectPoint>
@@ -188,6 +192,7 @@
 		</effects>
 	</skill>
 	<skill id="5507" toLevel="1" name="Wind Blossom">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1063</effectPoint>
@@ -210,6 +215,7 @@
 		</effects>
 	</skill>
 	<skill id="5508" toLevel="1" name="Earth Blossom">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1063</effectPoint>
@@ -349,6 +355,7 @@
 	</skill>
 	<skill id="5513" toLevel="1" name="Fire Taint">
 		<!-- Continuously damaged by the fire attribute. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1063</effectPoint>
 		<hitTime>15000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -371,6 +378,7 @@
 	</skill>
 	<skill id="5514" toLevel="1" name="Water Taint">
 		<!-- Continuously damaged by the water attribute. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1063</effectPoint>
 		<hitTime>15000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -393,6 +401,7 @@
 	</skill>
 	<skill id="5515" toLevel="1" name="Wind Taint">
 		<!-- Continuously damaged by the wind attribute. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1063</effectPoint>
 		<hitTime>15000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -415,6 +424,7 @@
 	</skill>
 	<skill id="5516" toLevel="1" name="Earth Taint">
 		<!-- Continuously damaged by the Earth attribute. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1063</effectPoint>
 		<hitTime>15000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -436,6 +446,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="5517" toLevel="1" name="Nurture">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -457,6 +468,7 @@
 		</effects>
 	</skill>
 	<skill id="5518" toLevel="1" name="Last Stand">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -467,6 +479,7 @@
 	</skill>
 	<skill id="5519" toLevel="1" name="Chain Buff - Power Up">
 		<!-- Made the contract of greed with the devil. Cannot wait to take every soul. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
@@ -503,6 +516,7 @@
 	</skill>
 	<skill id="5520" toLevel="1" name="Chain Buff - Vampiric Shield">
 		<!-- Made the contract of desire with the devil. The pain feels like pleasure. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
@@ -531,6 +545,7 @@
 	</skill>
 	<skill id="5521" toLevel="1" name="Chain Buff - Critical Sense">
 		<!-- Made the contract of wrath with the devil. Every enemy will fear your wrath. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>CRITICAL_DMG_UP</abnormalType>
@@ -562,6 +577,7 @@
 		</effects>
 	</skill>
 	<skill id="5522" toLevel="1" name="Chain Magic - Dark Explosion">
+		<icon>icon.skill0000</icon>
 		<affectRange>600</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-1063</effectPoint>
@@ -619,6 +635,7 @@
 	</skill>
 	<skill id="5524" toLevel="1" name="Chain Buff - Bow/Magic Resistance">
 		<!-- You have made the contract of arrogance with the devil. No one can stop you. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>MD_UP</abnormalType>
@@ -650,6 +667,7 @@
 	</skill>
 	<skill id="5525" toLevel="1" name="Chain Buff - Melee Resistance">
 		<!-- You have made the contract of gluttony with the devil. Everything you eat is good for your strength. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -718,6 +736,7 @@
 		</effects>
 	</skill>
 	<skill id="5527" toLevel="1" name="Overflow">
+		<icon>icon.skill0000</icon>
 		<affectRange>2000</affectRange>
 		<castRange>400</castRange>
 		<effectPoint>-2833</effectPoint>
@@ -739,6 +758,7 @@
 		</effects>
 	</skill>
 	<skill id="5528" toLevel="1" name="Self-Destruct">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -911,6 +931,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5531" toLevel="1" name="Presentation - Beleth Magic Skill 1">
+		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -922,6 +943,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5532" toLevel="1" name="Presentation - Beleth Summon Skill 1">
+		<icon>icon.skill0000</icon>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -935,6 +957,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5533" toLevel="1" name="Presentation - Beleth Self-destruction Skill 1">
+		<icon>icon.skill0000</icon>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -945,6 +968,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="5534" toLevel="1" name="Presentation - Beleth Transformation Skill 1">
+		<icon>icon.skill0000</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -1013,7 +1037,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5539" toLevel="1" name="Little Angel Agathion Special Skill: Mysterious Power">
-		<!-- A mysterious power that no one knows. Use with caution! -->
+		<!-- Mysterious power with no explanation. Be careful when using! -->
 		<icon>icon.skill_agathion_special</icon>
 		<abnormalLevel>0</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -1054,7 +1078,7 @@
 		</effects>
 	</skill>
 	<skill id="5541" toLevel="1" name="Little Angel Agathion Special Skill: Blessed Resurrection">
-		<!-- Allows the use of Blessed Resurrection. -->
+		<!-- Blessed Resurrection is available. -->
 		<icon>icon.skill_agathion_special</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
@@ -1131,7 +1155,7 @@
 		</effects>
 	</skill>
 	<skill id="5545" toLevel="1" name="Little Devil Agathion Special Skill: Blessed Resurrection">
-		<!-- Allows the use of Blessed Resurrection. -->
+		<!-- Blessed Resurrection is available. -->
 		<icon>icon.skill_agathion_special</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
@@ -1155,6 +1179,7 @@
 		</effects>
 	</skill>
 	<skill id="5546" toLevel="1" name="Alert">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>85</magicLevel>
@@ -1168,6 +1193,7 @@
 	</skill>
 	<skill id="5547" toLevel="1" name="Maximum Ability">
 		<!-- Increases P. Atk., M. Atk., and received heal amount. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>8</abnormalTime>
 		<abnormalType>MAXIMUM_ABILITY</abnormalType>
@@ -1210,6 +1236,7 @@
 	</skill>
 	<skill id="5548" toLevel="4" name="Critical Momentum Attack">
 		<!-- Absorbs soul in case of successful P. Critical Atk. -->
+		<icon>icon.skill0000</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>
 			<value level="1">20</value>
@@ -1234,6 +1261,7 @@
 	</skill>
 	<skill id="5549" toLevel="1" name="Melee Attack Vulnerability">
 		<!-- NPC Physical weakness -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>70</magicLevel>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<operateType>P</operateType>
@@ -1251,6 +1279,7 @@
 		</effects>
 	</skill>
 	<skill id="5550" toLevel="12" name="Trigger Stun">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1337,6 +1366,7 @@
 		</effects>
 	</skill>
 	<skill id="5552" toLevel="12" name="Heal Up">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1374,6 +1404,7 @@
 		</effects>
 	</skill>
 	<skill id="5553" toLevel="12" name="Recovery Bonus">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1411,6 +1442,7 @@
 		</effects>
 	</skill>
 	<skill id="5554" toLevel="12" name="Enhanced Silence Resistance">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1446,7 +1478,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5555" toLevel="12" name="Weakened Silence Resistance">
+	<skill id="5555" toLevel="12" name="Enhanced Silence Resistance">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1482,424 +1515,6 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5556" toLevel="1" name="Protection Power">
-		<!-- M. Def. and Attribute Resistance are momentarily increased. -->
-		<icon>icon.skill0755</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>PROTECTION</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>1000</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>FIRE</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>WATER</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>WIND</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>EARTH</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>HOLY</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>20</amount>
-				<attribute>DARK</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5557" toLevel="1" name="Blessing of Resistance">
-		<!-- M. Def. and Attribute Resistance are momentarily increased. -->
-		<icon>icon.skill0755</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>PROTECTION</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<magicLevel>99</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-	</skill>
-	<skill id="5558" toLevel="1" name="Protection of Alignment">
-		<!-- Characteristic attack resistance maximized. -->
-		<icon>icon.skill0757</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>PROTECTION</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-	</skill>
-	<skill id="5559" toLevel="1" name="Physical Pose">
-		<!-- P. Critical Damage and P. Skill Power are increased. -->
-		<icon>icon.skill0758</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>WILL</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalSkillPower">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5560" toLevel="1" name="Archer's Will">
-		<icon>icon.skill0759</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>WILL</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-	</skill>
-	<skill id="5561" toLevel="3" name="Seed of Revenge">
-		<!-- The growing seed of revenge. P. Atk. increases. -->
-		<icon>
-			<value level="1">icon.skill0761</value>
-			<value level="2">icon.skill0761_2</value>
-			<value level="3">icon.skill0761_3</value>
-		</icon>
-		<abnormalLevel>
-			<value level="1">2</value>
-			<value level="2">3</value>
-			<value level="3">4</value>
-		</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
-		<abnormalType>SEED_OF_KNIGHT</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="TriggerSkillByDamage">
-				<!-- Seed of Revenge -->
-				<attackerType>Creature</attackerType>
-				<chance>
-					<value level="1">10</value>
-					<value level="2">10</value>
-					<value level="3">0</value>
-				</chance>
-				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>5561</skillId> <!-- Seed of Revenge -->
-				<skillLevel>
-					<value level="1">2</value>
-					<value level="2">3</value>
-					<value level="3">0</value>
-				</skillLevel>
-			</effect>
-			<effect name="PAtk">
-				<amount>300</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">25</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">30</value>
-					<value level="3">30</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5562" toLevel="3" name="Spirit of the Phoenix">
-		<!-- Growing Spirit of the Phoenix. Increases P. Def. -->
-		<icon>
-			<value level="1">icon.skill0784</value>
-			<value level="2">icon.skill0784_2</value>
-			<value level="3">icon.skill0784_3</value>
-		</icon>
-		<abnormalLevel>
-			<value level="1">2</value>
-			<value level="2">3</value>
-			<value level="3">4</value>
-		</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
-		<abnormalType>SEED_OF_KNIGHT</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="TriggerSkillByDamage">
-				<!-- Spirit of Phoenix -->
-				<attackerType>Creature</attackerType>
-				<chance>
-					<value level="1">10</value>
-					<value level="2">10</value>
-					<value level="3">0</value>
-				</chance>
-				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>5562</skillId> <!-- Spirit of the Phoenix -->
-				<skillLevel>
-					<value level="1">2</value>
-					<value level="2">3</value>
-					<value level="3">0</value>
-				</skillLevel>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>500</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="HealEffect">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">30</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">30</value>
-					<value level="3">30</value>
-				</amount>
-				<attribute>FIRE</attribute>
-			</effect>
-			<effect name="DefenceAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">30</value>
-					<value level="3">30</value>
-				</amount>
-				<attribute>DARK</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5563" toLevel="3" name="Eva's Will">
-		<!-- The growing will of Eva. Increases M. Def. -->
-		<icon>
-			<value level="1">icon.skill0786</value>
-			<value level="2">icon.skill0786_2</value>
-			<value level="3">icon.skill0786_3</value>
-		</icon>
-		<abnormalLevel>
-			<value level="1">2</value>
-			<value level="2">3</value>
-			<value level="3">4</value>
-		</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
-		<abnormalType>SEED_OF_KNIGHT</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="TriggerSkillByDamage">
-				<!-- Eva's Will -->
-				<attackerType>Creature</attackerType>
-				<chance>
-					<value level="1">10</value>
-					<value level="2">10</value>
-					<value level="3">0</value>
-				</chance>
-				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>5563</skillId> <!-- Eva's Will -->
-				<skillLevel>
-					<value level="1">2</value>
-					<value level="2">3</value>
-					<value level="3">0</value>
-				</skillLevel>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>400</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="AttackAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">20</value>
-					<value level="3">20</value>
-				</amount>
-				<attribute>WATER</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5564" toLevel="3" name="Pain of Shilen">
-		<!-- Shilen's Growing Pain - P. Critical Damage is increased. -->
-		<icon>
-			<value level="1">icon.skill0788</value>
-			<value level="2">icon.skill0788_2</value>
-			<value level="3">icon.skill0788_3</value>
-		</icon>
-		<abnormalLevel>
-			<value level="1">2</value>
-			<value level="2">3</value>
-			<value level="3">4</value>
-		</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
-		<abnormalType>SEED_OF_KNIGHT</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="TriggerSkillByDamage">
-				<!-- Pain of Shillien -->
-				<attackerType>Creature</attackerType>
-				<chance>
-					<value level="1">10</value>
-					<value level="2">10</value>
-					<value level="3">0</value>
-				</chance>
-				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>5564</skillId> <!-- Pain of Shilen -->
-				<skillLevel>
-					<value level="1">2</value>
-					<value level="2">3</value>
-					<value level="3">0</value>
-				</skillLevel>
-			</effect>
-			<effect name="VampiricAttack" fromLevel="3" toLevel="3">
-				<amount>8</amount>
-				<chance>80</chance>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="AttackAttribute">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">20</value>
-					<value level="3">20</value>
-				</amount>
-				<attribute>WIND</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5565" toLevel="1" name="Expose Vulnerability">
-		<!-- Increases P. Critical Rate, decreases P. Def. -->
-		<icon>icon.skill0767</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
-		<abnormalType>EXPOSE_WEAK_POINT</abnormalType>
-		<activateRate>80</activateRate>
-		<basicProperty>PHYSICAL</basicProperty>
-		<castRange>40</castRange>
-		<effectPoint>-671</effectPoint>
-		<effectRange>400</effectRange>
-		<hitTime>1500</hitTime>
-		<isDebuff>true</isDebuff>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<lvlBonusRate>2</lvlBonusRate>
-		<magicLevel>81</magicLevel>
-		<mpConsume>43</mpConsume>
-		<nextAction>ATTACK</nextAction>
-		<operateType>A2</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ENEMY_ONLY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalDefence">
-				<amount>-20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceCriticalRate">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="5566" toLevel="1" name="Force of Destruction">
 		<icon>Icon.skill1050</icon>
 		<effectPoint>-100</effectPoint>
@@ -1911,309 +1526,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5567" toLevel="1" name="Fire Armor">
-		<icon>icon.skill1492</icon>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A1</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<isDebuff>true</isDebuff>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="MagicalAttack">
-				<power>71</power>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5568" toLevel="1" name="Frost Armor">
-		<!-- Speed has been slowed down. -->
-		<icon>icon.skill1493</icon>
-		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>60</abnormalTime>
-		<abnormalType>SPEED_DOWN</abnormalType>
-		<activateRate>100</activateRate>
-		<basicProperty>MAGIC</basicProperty>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<lvlBonusRate>2</lvlBonusRate>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="Speed">
-				<amount>-30</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5569" toLevel="1" name="Hurricane Armor">
-		<!-- Attacking speed has been slowed down. -->
-		<icon>icon.skill1494</icon>
-		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
-		<abnormalType>ATTACK_TIME_UP</abnormalType>
-		<activateRate>100</activateRate>
-		<basicProperty>MAGIC</basicProperty>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<lvlBonusRate>2</lvlBonusRate>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalAttackSpeed">
-				<amount>-23</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5570" toLevel="1" name="Excessive Loyalty">
-		<!-- Summoner's Wrath. -->
-		<icon>icon.skill1497</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
-		<abnormalType>SUMMON_CONDITION</abnormalType>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<effectRange>900</effectRange>
-		<castRange>400</castRange>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PAtk">
-				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MAtk">
-				<amount>75</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5571" toLevel="1" name="Mutual Response">
-		<icon>icon.skill1498</icon>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>81</magicLevel>
-		<operateType>A1</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="Heal">
-				<power>418</power>
-			</effect>
-			<effect name="ManaHealByLevel">
-				<power>73</power>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5572" toLevel="1" name="Warrior Ability: Haste">
-		<!-- Immediately increases Atk. Spd. -->
-		<icon>icon.skill1086</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>SUB_TRIGGER_HASTE</abnormalType>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalAttackSpeed">
-				<amount>32</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5573" toLevel="1" name="Knight Ability: Defense">
-		<!-- Immediately P./ M. Def. are increased. -->
-		<icon>icon.skill0110</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>SUB_TRIGGER_DEFENCE</abnormalType>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>24</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>24</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5574" toLevel="1" name="Rogue Ability: Critical Chance">
-		<!-- Immediately increases P. Critical Rate. -->
-		<icon>icon.skill1077</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>SUB_TRIGGER_CRT_RATE_UP</abnormalType>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="CriticalRate">
-				<amount>32</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5575" toLevel="1" name="Wizard Ability: Mana Steal">
-		<!-- Steals MP. -->
-		<icon>icon.skill1398</icon>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>85</magicLevel>
-		<operateType>A1</operateType>
-		<reuseDelay>10000</reuseDelay>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="ManaHealByLevel">
-				<power>10</power>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5576" toLevel="1" name="Enchanter Ability: Barrier">
-		<!-- Immediately receive invincibility effect. -->
-		<icon>icon.skill1418</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>5</abnormalTime>
-		<abnormalType>SUB_TRIGGER_DEFENCE</abnormalType>
-		<abnormalVisualEffect>INVINCIBILITY</abnormalVisualEffect>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="DispelBySlotMyself">
-				<dispel>MAGICAL_STANCE</dispel>
-			</effect>
-			<effect name="DamageBlock">
-				<type>BLOCK_HP</type>
-			</effect>
-			<effect name="DamageBlock">
-				<type>BLOCK_MP</type>
-			</effect>
-			<effect name="DebuffBlock" />
-		</effects>
-	</skill>
-	<skill id="5577" toLevel="1" name="Healer Ability: Heal">
-		<!-- Recovers HP. -->
-		<icon>icon.skill1011</icon>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A1</operateType>
-		<reuseDelay>10000</reuseDelay>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="Heal">
-				<power>150</power>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="5578" toLevel="1" name="Summoner Ability: Spirit">
-		<!-- Summoner's Possessed Soul. Due to being possessed by the ancient summoner, P. Atk./ Atk. Spd./ M. Atk./ Casting Spd. increase. -->
-		<icon>icon.skill1349</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>SUB_TRIGGER_SPIRIT</abnormalType>
-		<castRange>400</castRange>
-		<effectRange>900</effectRange>
-		<isMagic>4</isMagic> <!-- Item Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>80</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>20000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>TARGET</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PAtk">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MAtk">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="5579" toLevel="1" name="Cubic Cure">
+		<icon>icon.skill0000</icon>
 		<effectPoint>408</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>80</magicLevel>
@@ -2234,6 +1548,7 @@
 	</skill>
 	<skill id="5580" toLevel="1" name="Divine Beast Bite">
 		<!-- Bite ferociously with sharp teeth. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>-475</effectPoint>
@@ -2253,7 +1568,7 @@
 		</effects>
 	</skill>
 	<skill id="5581" toLevel="1" name="Divine Beast Stun Attack">
-		<!-- Damages and stuns the target simultaneously. Over-hit. Power 704. -->
+		<!-- Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit is possible. 704 power. -->
 		<icon>icon.skill0100</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
@@ -2280,6 +1595,7 @@
 	</skill>
 	<skill id="5582" toLevel="1" name="Divine Beast Fire Breath">
 		<!-- Attack the enemy by breathing fire. Power 875. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>250</affectRange>
 		<castRange>100</castRange>
@@ -2306,6 +1622,7 @@
 	</skill>
 	<skill id="5583" toLevel="1" name="Divine Beast Roar">
 		<!-- Dominate nearby enemies with a mighty roar. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PA_DOWN</abnormalType>
@@ -2399,7 +1716,7 @@
 		</effects>
 	</skill>
 	<skill id="5586" toLevel="3" name="Pet Might">
-		<!-- Temporarily P. Atk. +8%. -->
+		<!-- Increases P. Atk. for a certain amount of time. -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2450,7 +1767,7 @@
 		</effects>
 	</skill>
 	<skill id="5587" toLevel="3" name="Pet Shield">
-		<!-- Temporarily P. Def. +8%. -->
+		<!-- Increases P. Def. for a certain amount of time. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2501,7 +1818,7 @@
 		</effects>
 	</skill>
 	<skill id="5588" toLevel="3" name="Pet Focus">
-		<!-- Temporarily P. Critical Rate +20%. -->
+		<!-- Increases P. Critical Rate for a certain amount of time. -->
 		<icon>icon.skill1077</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2552,7 +1869,7 @@
 		</effects>
 	</skill>
 	<skill id="5589" toLevel="3" name="Pet Death Whisper">
-		<!-- Temporarily P. Critical Damage +25%. -->
+		<!-- Increases P. Critical Damage for a certain amount of time. -->
 		<icon>icon.skill1242</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2603,7 +1920,7 @@
 		</effects>
 	</skill>
 	<skill id="5590" toLevel="12" name="Pet Battle Heal">
-		<!-- Quickly restores HP. Power $s1. -->
+		<!-- Quickly restores HP. Power 91 -->
 		<icon>icon.skill1218</icon>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -2689,43 +2006,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5591" toLevel="8" name="Light Flow">
-		<icon>icon.skill1511</icon>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>
-			<value level="1">60</value>
-			<value level="2">62</value>
-			<value level="3">64</value>
-			<value level="4">66</value>
-			<value level="5">68</value>
-			<value level="6">70</value>
-			<value level="7">72</value>
-			<value level="8">74</value>
-		</magicLevel>
-		<operateType>A1</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="Heal">
-				<power>
-					<value level="1">189</value>
-					<value level="2">196</value>
-					<value level="3">203</value>
-					<value level="4">210</value>
-					<value level="5">217</value>
-					<value level="6">223</value>
-					<value level="7">229</value>
-					<value level="8">234</value>
-				</power>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="5592" toLevel="5" name="Lightning Barrier">
-		<!-- Momentarily stiffened. -->
-		<icon>icon.skill1515</icon>
+		<!-- Makes the target unable to move. -->
+		<icon>icon.skill32617</icon>
 		<operateType>A2</operateType>
 		<magicLevel>
 			<value level="1">76</value>
@@ -2765,6 +2048,7 @@
 		</effects>
 	</skill>
 	<skill id="5593" toLevel="1" name="Vampiric Mana Burn">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-689</effectPoint>
 		<effectRange>1400</effectRange>
@@ -2791,7 +2075,7 @@
 		</effects>
 	</skill>
 	<skill id="5594" toLevel="1" name="Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>10</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -2860,6 +2144,7 @@
 		</effects>
 	</skill>
 	<skill id="5597" toLevel="1" name="Cancel Invalid Skill">
+		<icon>icon.skill0000</icon>
 		<magicLevel>95</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2871,6 +2156,8 @@
 		</effects>
 	</skill>
 	<skill id="5598" toLevel="12" name="Petrification Resistance">
+		<!-- Resist against Petrification. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -2907,6 +2194,8 @@
 		</effects>
 	</skill>
 	<skill id="5599" toLevel="12" name="Stun Resistance">
+		<!-- Stun Resistance -->
+		<icon>icon.skill1259</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>

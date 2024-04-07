@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_01" minZ="-3779" maxZ="-3179">
+				<node x="16408" y="180568" />
+				<node x="16480" y="178522" />
+				<node x="21406" y="176021" />
+				<node x="23048" y="176980" />
+				<node x="18228" y="181493" />
+			</territory>
+		</territories>
+		<npc id="20930" count="11" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_02" minZ="-3803" maxZ="-2603">
+				<node x="18901" y="183727" />
+				<node x="18505" y="181619" />
+				<node x="20114" y="180171" />
+				<node x="23435" y="183518" />
+				<node x="21520" y="185588" />
+			</territory>
+		</territories>
+		<npc id="20930" count="11" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_03" minZ="-3751" maxZ="-2751">
+				<node x="13840" y="187882" />
+				<node x="15902" y="186121" />
+				<node x="18102" y="186609" />
+				<node x="20664" y="189680" />
+				<node x="19670" y="191185" />
+			</territory>
+		</territories>
+		<npc id="20930" count="5" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="5" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="5" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_04" minZ="-3778" maxZ="-2778">
+				<node x="21941" y="191302" />
+				<node x="20124" y="186943" />
+				<node x="22713" y="184915" />
+				<node x="25709" y="187964" />
+				<node x="25019" y="191298" />
+			</territory>
+		</territories>
+		<npc id="20930" count="8" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="8" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="8" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_05" minZ="-3599" maxZ="-2399">
+				<node x="22619" y="184555" />
+				<node x="23554" y="183483" />
+				<node x="27426" y="184121" />
+				<node x="25785" y="187791" />
+			</territory>
+		</territories>
+		<npc id="20930" count="6" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="5" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="5" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_06" minZ="-3793" maxZ="-3093">
+				<node x="25097" y="191330" />
+				<node x="25850" y="188003" />
+				<node x="29170" y="189525" />
+				<node x="27992" y="192300" />
+			</territory>
+		</territories>
+		<npc id="20930" count="5" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="5" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="6" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_07" minZ="-3793" maxZ="-3093">
+				<node x="28563" y="192576" />
+				<node x="29246" y="189554" />
+				<node x="32541" y="189964" />
+				<node x="32484" y="191495" />
+				<node x="31438" y="192611" />
+			</territory>
+		</territories>
+		<npc id="20930" count="4" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="4" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="4" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_08" minZ="-3778" maxZ="-3078">
+				<node x="25925" y="187828" />
+				<node x="27599" y="184116" />
+				<node x="29205" y="183933" />
+				<node x="30699" y="189602" />
+				<node x="29242" y="189474" />
+			</territory>
+		</territories>
+		<npc id="20934" count="5" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="5" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="6" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="5" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="6" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_09" minZ="-3769" maxZ="-3069">
+				<node x="30817" y="189537" />
+				<node x="29347" y="183893" />
+				<node x="32459" y="183920" />
+				<node x="32523" y="189475" />
+			</territory>
+		</territories>
+		<npc id="20934" count="6" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="7" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="6" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="7" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="6" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_10" minZ="-3488" maxZ="-2788">
+				<node x="26355" y="183858" />
+				<node x="26803" y="179072" />
+				<node x="28547" y="180691" />
+				<node x="27223" y="184005" />
+			</territory>
+		</territories>
+		<npc id="20934" count="3" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="3" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="3" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="3" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="3" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_11" minZ="-3756" maxZ="-2956">
+				<node x="27759" y="183948" />
+				<node x="29302" y="180880" />
+				<node x="32593" y="180679" />
+				<node x="32603" y="183120" />
+			</territory>
+		</territories>
+		<npc id="20934" count="4" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="5" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="4" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="4" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="4" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_12" minZ="-3756" maxZ="-2956">
+				<node x="26825" y="178459" />
+				<node x="29810" y="177233" />
+				<node x="32545" y="177682" />
+				<node x="32566" y="180615" />
+				<node x="29339" y="180729" />
+			</territory>
+		</territories>
+		<npc id="20934" count="6" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="7" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="7" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="7" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="6" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_13s" minZ="-3642" maxZ="-3042">
+				<node x="18628" y="178285" />
+				<node x="20809" y="176685" />
+				<node x="21752" y="177615" />
+				<node x="19797" y="179381" />
+			</territory>
+		</territories>
+		<npc id="20930" count="3" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2023_14s" minZ="-3664" maxZ="-2964">
+				<node x="21405" y="188531" />
+				<node x="24525" y="188598" />
+				<node x="24828" y="190554" />
+				<node x="21999" y="191193" />
+			</territory>
+		</territories>
+		<npc id="20930" count="4" respawnTime="32sec" /> <!-- Hatu Brown Bear -->
+		<npc id="20934" count="3" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="3" respawnTime="32sec" /> <!-- Wasp Leader -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2123_01" minZ="-3539" maxZ="-2639">
+				<node x="35071" y="179715" />
+				<node x="36895" y="181491" />
+				<node x="35545" y="183322" />
+				<node x="32876" y="183763" />
+				<node x="32908" y="178604" />
+			</territory>
+		</territories>
+		<npc id="20934" count="5" respawnTime="32sec" /> <!-- Wasp Worker -->
+		<npc id="20935" count="6" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="6" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="6" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="6" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="dion14_2123_02" minZ="-3419" maxZ="-2719">
+				<node x="32850" y="183841" />
+				<node x="34801" y="184910" />
+				<node x="34153" y="187319" />
+				<node x="32863" y="187637" />
+			</territory>
+		</territories>
+		<npc id="20935" count="3" respawnTime="32sec" /> <!-- Wasp Leader -->
+		<npc id="20931" count="2" respawnTime="32sec" /> <!-- Hatu Onyx Beast -->
+		<npc id="20932" count="2" respawnTime="32sec" /> <!-- Hatu Crimson Bear -->
+		<npc id="20933" count="2" respawnTime="32sec" /> <!-- Hatu Windsus -->
+	</spawn>
+</list>

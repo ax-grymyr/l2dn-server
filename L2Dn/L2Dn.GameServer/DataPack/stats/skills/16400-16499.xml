@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="16400" toLevel="1" name="Ferin's Recharge">
-		<!-- Instantly recovers the target's MP with a maximum of 166 power depending on the target's Lv. Also, for 10 sec., recovers 12 MP per sec. -->
+		<!-- Instantly recovers the target's MP with a maximum of 166 power depending on the target's level. Also, for 10 sec., recovers 12 MP per second. -->
 		<icon>icon.skill11760</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -31,6 +31,7 @@
 	</skill>
 	<skill id="16403" toLevel="1" name="Dimensional Judgment">
 		<!-- Sentence target to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
@@ -40,6 +41,7 @@
 	</skill>
 	<skill id="16404" toLevel="1" name="Dimensional Wide Judgment">
 		<!-- Sentence enemies to the front to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
@@ -49,6 +51,7 @@
 	</skill>
 	<skill id="16405" toLevel="1" name="Dimensional Mass Judgment">
 		<!-- Sentence all nearby enemies to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<reuseDelay>3000</reuseDelay>
@@ -86,7 +89,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16409" toLevel="3" name="Trap Hold">
-		<!-- Afflicted with Hold and unable to move temporarily. -->
+		<!-- Immobilized. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
@@ -118,7 +121,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16413" toLevel="3" name="Trap Poison">
-		<!-- Bite ferociously to ifect target. HP decreases by $s1 per sec. -->
+		<!-- Bites ferociously to infect the target. HP -1000 per sec. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<reuseDelay>10000</reuseDelay>
@@ -126,12 +129,13 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16414" toLevel="1" name="Peace Zone Cure">
-		<!-- Recover 10% of Max HP and 30% of Max MP of self and everyone within 200 grids. Cooldown is 10 sec. -->
+		<!-- Max HP +10%, Max MP +30%. Skill Cooldown: 10 sec. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="16415" toLevel="4" name="Dimensional Dark Forces">
-		<!-- P. Atk -$s1, M. Atk. -$s2, and P. Critical Rate -$s3, M. Critical Rate -$s4. -->
+		<!-- P. Atk -10%, M. Atk. -10%, P. Critical Rate -30, M. Critical Rate -30. -->
 		<icon>icon.skill1298</icon>
 		<operateType>A2</operateType>
 		<effectPoint>-100</effectPoint>
@@ -148,7 +152,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16418" toLevel="10" name="Seduction Resistance">
-		<!-- Slightly increases Seduction Resistance. -->
+		<!-- Slightly resistant to Seduction. -->
 		<icon>icon.skill5934</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -210,7 +214,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16437" toLevel="1" name="Master's Blessing - GM's Cheers">
-		<!-- The GM is always with you. XP and SP +100% for 1 h. Cannot be stacked with Toy Knight's Home Run Ball -->
+		<!-- The GM is always with you. For 1 h., XP and SP +100%. Cannot be stacked with Toy Knight's Home Run Ball -->
 		<icon>icon.skill0919</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

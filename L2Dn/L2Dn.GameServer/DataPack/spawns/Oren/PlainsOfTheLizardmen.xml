@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_12" minZ="-3808" maxZ="-3308">
+				<node x="76384" y="92276" />
+				<node x="79696" y="94872" />
+				<node x="77012" y="94644" />
+				<node x="73480" y="92636" />
+				<node x="74976" y="91384" />
+			</territory>
+		</territories>
+		<npc id="20577" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_13" minZ="-3676" maxZ="-2676">
+				<node x="75748" y="87606" />
+				<node x="76806" y="88249" />
+				<node x="74938" y="91248" />
+				<node x="73501" y="90339" />
+			</territory>
+		</territories>
+		<npc id="20577" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_14" minZ="-3720" maxZ="-3420">
+				<node x="82956" y="92532" />
+				<node x="82820" y="94256" />
+				<node x="79820" y="93924" />
+				<node x="77120" y="91980" />
+				<node x="78960" y="89880" />
+				<node x="80804" y="89672" />
+				<node x="81732" y="90572" />
+			</territory>
+		</territories>
+		<npc id="20577" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_14s" minZ="-3728" maxZ="-3528">
+				<node x="79128" y="91676" />
+				<node x="80724" y="90812" />
+				<node x="81760" y="93360" />
+				<node x="79520" y="93108" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_15" minZ="-3588" maxZ="-3288">
+				<node x="83036" y="92524" />
+				<node x="81868" y="90632" />
+				<node x="85208" y="90620" />
+				<node x="85220" y="92620" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_16" minZ="-3496" maxZ="-3296">
+				<node x="83000" y="92680" />
+				<node x="85280" y="92784" />
+				<node x="85624" y="93672" />
+				<node x="85360" y="95308" />
+				<node x="82884" y="94596" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_17" minZ="-3572" maxZ="-3372">
+				<node x="87880" y="93844" />
+				<node x="88628" y="94580" />
+				<node x="87108" y="95852" />
+				<node x="85424" y="95300" />
+				<node x="85676" y="93660" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_18" minZ="-3460" maxZ="-3260">
+				<node x="86492" y="90416" />
+				<node x="88236" y="90404" />
+				<node x="87888" y="93060" />
+				<node x="85684" y="93064" />
+				<node x="85604" y="90760" />
+			</territory>
+		</territories>
+		<npc id="20577" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_19" minZ="-3416" maxZ="-3216">
+				<node x="88280" y="90416" />
+				<node x="89596" y="90656" />
+				<node x="89420" y="94080" />
+				<node x="87912" y="93032" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_20" minZ="-3492" maxZ="-3192">
+				<node x="89580" y="90668" />
+				<node x="93216" y="90708" />
+				<node x="93228" y="92868" />
+				<node x="89460" y="93500" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_21" minZ="-3584" maxZ="-3384">
+				<node x="93828" y="90348" />
+				<node x="95604" y="90612" />
+				<node x="95648" y="92716" />
+				<node x="93872" y="92748" />
+			</territory>
+		</territories>
+		<npc id="20578" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="6" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_22" minZ="-3788" maxZ="-3588">
+				<node x="95156" y="86244" />
+				<node x="95768" y="86380" />
+				<node x="95784" y="90124" />
+				<node x="94240" y="89964" />
+			</territory>
+		</territories>
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_23" minZ="-3628" maxZ="-3328">
+				<node x="91452" y="86204" />
+				<node x="94200" y="86108" />
+				<node x="93752" y="90248" />
+				<node x="90724" y="90148" />
+			</territory>
+		</territories>
+		<npc id="20577" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_24" minZ="-3812" maxZ="-3612">
+				<node x="95744" y="82244" />
+				<node x="96256" y="84732" />
+				<node x="96096" y="86376" />
+				<node x="95188" y="86188" />
+				<node x="93960" y="85064" />
+				<node x="93484" y="82412" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_25" minZ="-3776" maxZ="-3576">
+				<node x="91716" y="83004" />
+				<node x="92976" y="82840" />
+				<node x="93476" y="85468" />
+				<node x="91808" y="85696" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_26" minZ="-3788" maxZ="-3488">
+				<node x="94092" y="79252" />
+				<node x="96160" y="79904" />
+				<node x="94324" y="82324" />
+				<node x="93456" y="82416" />
+				<node x="92384" y="81256" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20578" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_27" minZ="-3776" maxZ="-3476">
+				<node x="98056" y="79316" />
+				<node x="98116" y="76416" />
+				<node x="97108" y="76352" />
+				<node x="94120" y="79232" />
+				<node x="96132" y="79892" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_28" minZ="-3660" maxZ="-3460">
+				<node x="94420" y="74456" />
+				<node x="97076" y="76324" />
+				<node x="94100" y="79208" />
+				<node x="92696" y="77868" />
+				<node x="92808" y="75884" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_29" minZ="-3772" maxZ="-3372">
+				<node x="93820" y="72580" />
+				<node x="94392" y="74436" />
+				<node x="92792" y="75864" />
+				<node x="87932" y="71784" />
+				<node x="90760" y="71604" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_30" minZ="-3768" maxZ="-3368">
+				<node x="87924" y="71792" />
+				<node x="92808" y="75888" />
+				<node x="92684" y="77880" />
+				<node x="87968" y="75652" />
+				<node x="86776" y="73560" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_31" minZ="-3752" maxZ="-3352">
+				<node x="87932" y="75660" />
+				<node x="92696" y="77884" />
+				<node x="94060" y="79184" />
+				<node x="92376" y="81192" />
+				<node x="87280" y="80128" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_31s" minZ="-3784" maxZ="-3384">
+				<node x="89544" y="76976" />
+				<node x="91116" y="77688" />
+				<node x="90528" y="80416" />
+				<node x="88016" y="79452" />
+			</territory>
+		</territories>
+		<npc id="20580" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_32" minZ="-3748" maxZ="-3148">
+				<node x="84576" y="82916" />
+				<node x="85792" y="79924" />
+				<node x="92328" y="81304" />
+				<node x="90328" y="83136" />
+			</territory>
+		</territories>
+		<npc id="20580" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20579" count="6" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_33b" minZ="-3436" maxZ="-2936">
+				<node x="86936" y="78874" />
+				<node x="87417" y="78874" />
+				<node x="87417" y="79381" />
+				<node x="86936" y="79381" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_34" minZ="-3788" maxZ="-3488">
+				<node x="80160" y="74696" />
+				<node x="85008" y="74968" />
+				<node x="83600" y="78136" />
+				<node x="79940" y="78088" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_35" minZ="-3708" maxZ="-3408">
+				<node x="78108" y="73400" />
+				<node x="80132" y="74692" />
+				<node x="79940" y="78084" />
+				<node x="78148" y="78092" />
+			</territory>
+		</territories>
+		<npc id="20582" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_36" minZ="-3764" maxZ="-3264">
+				<node x="78152" y="78120" />
+				<node x="79904" y="78112" />
+				<node x="82732" y="81652" />
+				<node x="80920" y="85352" />
+				<node x="79048" y="83988" />
+				<node x="78096" y="81696" />
+			</territory>
+		</territories>
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_37" minZ="-3788" maxZ="-3388">
+				<node x="79936" y="78140" />
+				<node x="83576" y="78184" />
+				<node x="85764" y="79892" />
+				<node x="84252" y="83528" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_38" minZ="-3564" maxZ="-3164">
+				<node x="82752" y="81692" />
+				<node x="84236" y="83528" />
+				<node x="84068" y="84816" />
+				<node x="81000" y="85264" />
+			</territory>
+		</territories>
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_39" minZ="-3692" maxZ="-3292">
+				<node x="79052" y="88036" />
+				<node x="82480" y="86484" />
+				<node x="83084" y="89360" />
+				<node x="78572" y="89188" />
+			</territory>
+		</territories>
+		<npc id="20577" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_40" minZ="-3528" maxZ="-3128">
+				<node x="82528" y="86516" />
+				<node x="83320" y="86472" />
+				<node x="86044" y="88364" />
+				<node x="86544" y="90032" />
+				<node x="83136" y="89352" />
+			</territory>
+		</territories>
+		<npc id="20577" count="6" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p23" minZ="-3628" maxZ="-3328">
+				<node x="91452" y="86204" />
+				<node x="94200" y="86108" />
+				<node x="93752" y="90248" />
+				<node x="90724" y="90148" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p24" minZ="-3812" maxZ="-3612">
+				<node x="95744" y="82244" />
+				<node x="96256" y="84732" />
+				<node x="96096" y="86376" />
+				<node x="95188" y="86188" />
+				<node x="93960" y="85064" />
+				<node x="93484" y="82412" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p25" minZ="-3776" maxZ="-3576">
+				<node x="91716" y="83004" />
+				<node x="92976" y="82840" />
+				<node x="93476" y="85468" />
+				<node x="91808" y="85696" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p26" minZ="-3788" maxZ="-3488">
+				<node x="94092" y="79252" />
+				<node x="96160" y="79904" />
+				<node x="94324" y="82324" />
+				<node x="93456" y="82416" />
+				<node x="92384" y="81256" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p27" minZ="-3776" maxZ="-3476">
+				<node x="98056" y="79316" />
+				<node x="98116" y="76416" />
+				<node x="97108" y="76352" />
+				<node x="94120" y="79232" />
+				<node x="96132" y="79892" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p29" minZ="-3772" maxZ="-3372">
+				<node x="93820" y="72580" />
+				<node x="94392" y="74436" />
+				<node x="92792" y="75864" />
+				<node x="87932" y="71784" />
+				<node x="90760" y="71604" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p30" minZ="-3768" maxZ="-3368">
+				<node x="87924" y="71792" />
+				<node x="92808" y="75888" />
+				<node x="92684" y="77880" />
+				<node x="87968" y="75652" />
+				<node x="86776" y="73560" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p31" minZ="-3752" maxZ="-3352">
+				<node x="87932" y="75660" />
+				<node x="92696" y="77884" />
+				<node x="94060" y="79184" />
+				<node x="92376" y="81192" />
+				<node x="87280" y="80128" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p32" minZ="-3748" maxZ="-3148">
+				<node x="84576" y="82916" />
+				<node x="85792" y="79924" />
+				<node x="92328" y="81304" />
+				<node x="90328" y="83136" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p33" minZ="-3824" maxZ="-3324">
+				<node x="86768" y="73636" />
+				<node x="87880" y="75492" />
+				<node x="87208" y="80140" />
+				<node x="85776" y="79908" />
+				<node x="83604" y="78216" />
+				<node x="85320" y="74368" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p34" minZ="-3788" maxZ="-3488">
+				<node x="80160" y="74696" />
+				<node x="85008" y="74968" />
+				<node x="83600" y="78136" />
+				<node x="79940" y="78088" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p36" minZ="-3764" maxZ="-3264">
+				<node x="78152" y="78120" />
+				<node x="79904" y="78112" />
+				<node x="82732" y="81652" />
+				<node x="80920" y="85352" />
+				<node x="79048" y="83988" />
+				<node x="78096" y="81696" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren21_2220_p37" minZ="-3788" maxZ="-3388">
+				<node x="79936" y="78140" />
+				<node x="83576" y="78184" />
+				<node x="85764" y="79892" />
+				<node x="84252" y="83528" />
+			</territory>
+		</territories>
+		<npc id="20763" count="1" respawnTime="50sec" respawnRandom="10sec" /> <!-- Lord of the Plains -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p14" minZ="-3812" maxZ="-2812">
+				<node x="77664" y="62308" />
+				<node x="80196" y="61216" />
+				<node x="83092" y="65240" />
+				<node x="75916" y="65356" />
+			</territory>
+		</territories>
+		<npc id="20577" count="6" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p15" minZ="-3784" maxZ="-3084">
+				<node x="83384" y="58832" />
+				<node x="89204" y="60176" />
+				<node x="89292" y="65308" />
+				<node x="83104" y="65372" />
+				<node x="80092" y="61168" />
+			</territory>
+		</territories>
+		<npc id="20580" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_15s" minZ="-3792" maxZ="-3392">
+				<node x="84652" y="59960" />
+				<node x="88696" y="60652" />
+				<node x="88640" y="63920" />
+				<node x="83844" y="64008" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p16" minZ="-3760" maxZ="-3160">
+				<node x="89180" y="60160" />
+				<node x="94236" y="62732" />
+				<node x="93676" y="65364" />
+				<node x="89260" y="65332" />
+			</territory>
+		</territories>
+		<npc id="20580" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p17" minZ="-3800" maxZ="-3400">
+				<node x="85536" y="52948" />
+				<node x="89156" y="52864" />
+				<node x="92944" y="57268" />
+				<node x="91000" y="60608" />
+				<node x="84740" y="59096" />
+			</territory>
+		</territories>
+		<npc id="20577" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="5" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p17s" minZ="-3792" maxZ="-3592">
+				<node x="86632" y="54428" />
+				<node x="89176" y="54084" />
+				<node x="89620" y="58464" />
+				<node x="86548" y="57736" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p18" minZ="-3864" maxZ="-3364">
+				<node x="90600" y="51188" />
+				<node x="94572" y="51236" />
+				<node x="96140" y="53384" />
+				<node x="92900" y="57176" />
+				<node x="89264" y="52868" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p18s" minZ="-3816" maxZ="-3416">
+				<node x="91360" y="51936" />
+				<node x="94432" y="52460" />
+				<node x="93268" y="55000" />
+				<node x="90936" y="53652" />
+			</territory>
+		</territories>
+		<npc id="20580" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p19" minZ="-3820" maxZ="-3620">
+				<node x="93176" y="46784" />
+				<node x="95188" y="47828" />
+				<node x="94552" y="51296" />
+				<node x="90552" y="51232" />
+				<node x="90552" y="49332" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p20" minZ="-3828" maxZ="-3228">
+				<node x="93684" y="44148" />
+				<node x="95876" y="44704" />
+				<node x="95144" y="47740" />
+				<node x="93192" y="46744" />
+			</territory>
+		</territories>
+		<npc id="20577" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="1" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p21" minZ="-3768" maxZ="-3368">
+				<node x="90500" y="43528" />
+				<node x="94068" y="42104" />
+				<node x="93200" y="46748" />
+				<node x="91464" y="48424" />
+				<node x="89752" y="46772" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2219_p22" minZ="-3664" maxZ="-3264">
+				<node x="92676" y="40392" />
+				<node x="93996" y="42096" />
+				<node x="89772" y="43780" />
+				<node x="89212" y="42816" />
+				<node x="90136" y="40752" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2220_p01" minZ="-3804" maxZ="-3204">
+				<node x="90464" y="65660" />
+				<node x="94504" y="65592" />
+				<node x="95272" y="67464" />
+				<node x="94160" y="68840" />
+				<node x="90724" y="66816" />
+			</territory>
+		</territories>
+		<npc id="20580" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2220_p02" minZ="-3800" maxZ="-3500">
+				<node x="86480" y="65588" />
+				<node x="90364" y="65648" />
+				<node x="90656" y="66780" />
+				<node x="88272" y="68116" />
+			</territory>
+		</territories>
+		<npc id="20577" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="3" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2220_p03" minZ="-3736" maxZ="-2936">
+				<node x="82432" y="65660" />
+				<node x="86408" y="65680" />
+				<node x="88148" y="68064" />
+				<node x="85448" y="68036" />
+				<node x="82504" y="67396" />
+			</territory>
+		</territories>
+		<npc id="20577" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman -->
+		<npc id="20578" count="2" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Archer -->
+		<npc id="20579" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Soldier -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren22_2220_p04" minZ="-3756" maxZ="-2656">
+				<node x="75980" y="65620" />
+				<node x="82376" y="65652" />
+				<node x="82456" y="67396" />
+				<node x="81620" y="69048" />
+				<node x="76704" y="69084" />
+			</territory>
+		</territories>
+		<npc id="20580" count="7" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Warrior -->
+		<npc id="20582" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Overlord -->
+		<npc id="20581" count="4" respawnTime="70sec" respawnRandom="5sec" /> <!-- Leto Lizardman Shaman -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_01" minZ="-3808" maxZ="-3308">
+				<node x="76384" y="92276" />
+				<node x="79696" y="94872" />
+				<node x="77012" y="94644" />
+				<node x="73480" y="92636" />
+				<node x="74976" y="91384" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_02" minZ="-3676" maxZ="-2676">
+				<node x="75748" y="87606" />
+				<node x="76806" y="88249" />
+				<node x="74938" y="91248" />
+				<node x="73501" y="90339" />
+			</territory>
+		</territories>
+		<npc id="20780" count="2" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_03" minZ="-3720" maxZ="-3420">
+				<node x="82956" y="92532" />
+				<node x="82820" y="94256" />
+				<node x="79820" y="93924" />
+				<node x="77120" y="91980" />
+				<node x="78960" y="89880" />
+				<node x="80804" y="89672" />
+				<node x="81732" y="90572" />
+			</territory>
+		</territories>
+		<npc id="20780" count="2" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_04" minZ="-3728" maxZ="-3528">
+				<node x="79128" y="91676" />
+				<node x="80724" y="90812" />
+				<node x="81760" y="93360" />
+				<node x="79520" y="93108" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_05" minZ="-3588" maxZ="-3288">
+				<node x="83036" y="92524" />
+				<node x="81868" y="90632" />
+				<node x="85208" y="90620" />
+				<node x="85220" y="92620" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_06" minZ="-3496" maxZ="-3296">
+				<node x="83000" y="92680" />
+				<node x="85280" y="92784" />
+				<node x="85624" y="93672" />
+				<node x="85360" y="95308" />
+				<node x="82884" y="94596" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_07" minZ="-3572" maxZ="-3372">
+				<node x="87880" y="93844" />
+				<node x="88628" y="94580" />
+				<node x="87108" y="95852" />
+				<node x="85424" y="95300" />
+				<node x="85676" y="93660" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_08" minZ="-3460" maxZ="-3260">
+				<node x="86492" y="90416" />
+				<node x="88236" y="90404" />
+				<node x="87888" y="93060" />
+				<node x="85684" y="93064" />
+				<node x="85604" y="90760" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_09" minZ="-3708" maxZ="-3408">
+				<node x="78108" y="73400" />
+				<node x="80132" y="74692" />
+				<node x="79940" y="78084" />
+				<node x="78148" y="78092" />
+			</territory>
+		</territories>
+		<npc id="20780" count="3" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_10" minZ="-3764" maxZ="-3264">
+				<node x="78152" y="78120" />
+				<node x="79904" y="78112" />
+				<node x="82732" y="81652" />
+				<node x="80920" y="85352" />
+				<node x="79048" y="83988" />
+				<node x="78096" y="81696" />
+			</territory>
+		</territories>
+		<npc id="20780" count="5" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_11" minZ="-3564" maxZ="-3164">
+				<node x="82752" y="81692" />
+				<node x="84236" y="83528" />
+				<node x="84068" y="84816" />
+				<node x="81000" y="85264" />
+			</territory>
+		</territories>
+		<npc id="20780" count="1" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_12" minZ="-3692" maxZ="-3292">
+				<node x="79052" y="88036" />
+				<node x="82480" y="86484" />
+				<node x="83084" y="89360" />
+				<node x="78572" y="89188" />
+			</territory>
+		</territories>
+		<npc id="20780" count="4" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="oren01_qm2220_13" minZ="-3528" maxZ="-3128">
+				<node x="82528" y="86516" />
+				<node x="83320" y="86472" />
+				<node x="86044" y="88364" />
+				<node x="86544" y="90032" />
+				<node x="83136" y="89352" />
+			</territory>
+		</territories>
+		<npc id="20780" count="5" respawnTime="30sec" respawnRandom="5sec" /> <!-- Bloody Axe's Escort -->
+	</spawn>
+</list>

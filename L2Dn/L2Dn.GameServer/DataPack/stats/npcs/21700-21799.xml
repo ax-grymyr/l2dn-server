@@ -1276,9 +1276,9 @@
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire exp="266169" sp="7186" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1418.9098066667" hpRegen="8.5" mp="2739.075" mpRegen="3" />
-			<attack physical="970.5375485" magical="662.7513291" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="970.5375485" magical="662.7513291" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<speed>
 				<walk ground="60" />
@@ -1381,9 +1381,9 @@
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire exp="1772332" sp="47852" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2758.7130516667" hpRegen="8.5" mp="2739.075" mpRegen="3" />
-			<attack physical="970.5375485" magical="662.7513291" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="970.5375485" magical="662.7513291" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<speed>
 				<walk ground="60" />
@@ -2511,9 +2511,9 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="240547" sp="7216" attributeExp="684" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1453.96793" hpRegen="8.5" mp="2850.585" mpRegen="3" />
-			<attack physical="494.5442" magical="438.8752173913" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="494.5442" magical="438.8752173913" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="1009.413" magical="1682.355" />
 			<speed>
 				<walk ground="39" />
@@ -2543,9 +2543,9 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="374272" sp="11228" attributeExp="948" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2450.6202933333" hpRegen="8.5" mp="3483.36" mpRegen="3" />
-			<attack physical="817.728" magical="739.71130434783" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="817.728" magical="739.71130434783" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="1701.336" magical="2835.56" />
 			<speed>
 				<walk ground="13" />
@@ -2812,7 +2812,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="240547" sp="7216" attributeExp="684" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1453.96793" hpRegen="8.5" mp="2850.585" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -2864,7 +2864,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="359475" sp="10784" attributeExp="770" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2450.5997675" hpRegen="8.5" mp="3483.36" mpRegen="3" />
 			<speed>
 				<walk ground="45" />
@@ -2916,7 +2916,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="1207859" sp="36235" attributeExp="1230" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3063.234315" hpRegen="8.5" mp="3828.51" mpRegen="3" />
 			<speed>
 				<walk ground="80" />
@@ -2957,9 +2957,9 @@
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<acquire exp="101142" sp="3034" attributeExp="1230" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2423.44409" hpRegen="8.5" mp="2850.585" mpRegen="3" />
-			<attack physical="1055.28566" magical="720.6233026" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1055.28566" magical="720.6233026" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<speed>
 				<walk ground="54" />
@@ -3047,7 +3047,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire exp="182745" sp="5482" attributeExp="1040" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1453.96793" hpRegen="8.5" mp="2850.585" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3093,7 +3093,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="45295" sp="1358" attributeExp="684" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1380.32124" hpRegen="8.5" mp="2629.335" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3139,7 +3139,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="82723" sp="2481" attributeExp="684" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1399.902885" hpRegen="8.5" mp="2683.32" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3185,7 +3185,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="50337" sp="1510" attributeExp="770" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1399.77973" hpRegen="8.5" mp="2683.32" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3230,7 +3230,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="86338" sp="2590" attributeExp="770" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1418.868755" hpRegen="8.5" mp="2739.075" mpRegen="3" />
 			<speed>
 				<walk ground="39" />
@@ -3276,7 +3276,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="54208" sp="1626" attributeExp="858" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1418.99191" hpRegen="8.5" mp="2739.075" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3322,7 +3322,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="97356" sp="2920" attributeExp="858" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1436.72623" hpRegen="8.5" mp="2794.83" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3368,7 +3368,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="93128" sp="2793" attributeExp="948" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1436.849385" hpRegen="8.5" mp="2794.83" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3414,7 +3414,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="98745" sp="2962" attributeExp="948" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1453.96793" hpRegen="8.5" mp="2850.585" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3460,7 +3460,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="169228" sp="5076" attributeExp="1040" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3029.1819575" hpRegen="8.5" mp="2850.585" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3506,7 +3506,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="172684" sp="5180" attributeExp="1040" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2423.3825125" hpRegen="8.5" mp="3415.215" mpRegen="3" />
 			<speed>
 				<walk ground="39" />
@@ -3552,7 +3552,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="170380" sp="5111" attributeExp="1040" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3029.1819575" hpRegen="8.5" mp="2850.585" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3598,7 +3598,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="143410" sp="4302" attributeExp="1134" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2423.3825125" hpRegen="8.5" mp="3753.285" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3645,7 +3645,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="137190" sp="4115" attributeExp="1134" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2450.5997675" hpRegen="8.5" mp="3166.53" mpRegen="3" />
 			<speed>
 				<walk ground="39" />
@@ -3691,7 +3691,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="182264" sp="5467" attributeExp="1134" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2859.043325" hpRegen="8.5" mp="3483.36" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3737,7 +3737,7 @@
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="184089" sp="5522" attributeExp="1230" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2859.043325" hpRegen="8.5" mp="3483.36" mpRegen="3" />
 			<speed>
 				<walk ground="60" />
@@ -3784,7 +3784,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire exp="186389" sp="5591" attributeExp="1230" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2940.744352" hpRegen="8.5" mp="2907.225" mpRegen="3" />
 			<speed>
 				<walk ground="36" />
@@ -3830,7 +3830,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="193247" sp="5797" attributeExp="1230" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2940.744352" hpRegen="8.5" mp="3828.51" mpRegen="3" />
 			<speed>
 				<walk ground="60" />

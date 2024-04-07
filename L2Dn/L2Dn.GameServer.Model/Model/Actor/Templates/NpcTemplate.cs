@@ -631,6 +631,11 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		return _ignoreClanNpcIds;
 	}
 	
+	public bool hasIgnoreClanNpcIds()
+	{
+		return _ignoreClanNpcIds != null;
+	}
+	
 	/**
 	 * @param ignoreClanNpcIds the ignore clan npc ids
 	 */

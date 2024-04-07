@@ -287,7 +287,7 @@ public class Player: Playable
 	private bool _simulatedTalking;
 	
 	/** The table containing all Quests began by the Player */
-	private readonly Map<string, QuestState> _quests = new();
+	private readonly Map<string, QuestState> _quests = new(StringComparer.InvariantCultureIgnoreCase);
 	
 	/** The list containing all shortCuts of this player. */
 	private readonly ShortCuts _shortCuts;
@@ -8573,6 +8573,7 @@ public class Player: Playable
 			}
 			
 			sendPacket(sm);
+			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
 		
@@ -10303,14 +10304,6 @@ public class Player: Playable
 			restoreEffects();
 		}
 		
-		// TODO : Need to fix that hack!
-		if (!isDead())
-		{
-			setCurrentCp(_originalCp);
-			setCurrentHp(_originalHp);
-			setCurrentMp(_originalMp);
-		}
-		
 		revalidateZone(true);
 		
 		notifyFriends(FriendStatusPacket.MODE_ONLINE);
@@ -10360,6 +10353,18 @@ public class Player: Playable
 		else if (isMentor() && Events.HasSubscribers<OnPlayerMentorStatus>())
 		{
 			Events.NotifyAsync(new OnPlayerMentorStatus(this, true));
+		}
+
+		// TODO : Need to fix that hack!
+		if (!isDead())
+		{
+			// Run on a separate thread to give time to above events to be notified.
+			ThreadPool.schedule(() =>
+			{
+				setCurrentCp(_originalCp);
+				setCurrentHp(_originalHp);
+				setCurrentMp(_originalMp);
+			}, 300);
 		}
 	}
 	
@@ -14947,19 +14952,19 @@ public class Player: Playable
 				Skill knownSkill = getKnownSkill(shortcut.getId());
 				if (knownSkill != null)
 				{
-					sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
+					shortcut.setAutoUse(true);
 				}
 			}
 			else if (shortcut.getType() == ShortcutType.ACTION)
 			{
-				sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
+				shortcut.setAutoUse(true);
 			}
 			else
 			{
 				Item item = getInventory().getItemByObjectId(shortcut.getId());
 				if (item != null)
 				{
-					sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
+					shortcut.setAutoUse(true);
 				}
 			}
 		}
@@ -14983,7 +14988,7 @@ public class Player: Playable
 			
 			if (shortcut.getType() == ShortcutType.ACTION)
 			{
-				sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
+				shortcut.setAutoUse(true);
 				AutoUseTaskManager.getInstance().addAutoAction(this, shortcut.getId());
 				continue;
 			}
@@ -14992,7 +14997,6 @@ public class Player: Playable
 			if (knownSkill != null)
 			{
 				shortcut.setAutoUse(true);
-				sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
 				if (knownSkill.isBad())
 				{
 					AutoUseTaskManager.getInstance().addAutoSkill(this, shortcut.getId());
@@ -15008,7 +15012,6 @@ public class Player: Playable
 				if (item != null)
 				{
 					shortcut.setAutoUse(true);
-					sendPacket(new ExActivateAutoShortcutPacket(shortcut, true));
 					if (item.isPotion())
 					{
 						AutoUseTaskManager.getInstance().setAutoPotionItem(this, item.getId());

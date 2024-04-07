@@ -11,14 +11,14 @@
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="59602" toLevel="1" name="Shadow Master">
-		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> If a character is attacked when the transformation is active, it summons a clone every 120 sec. The clone provokes the enemies while the character is hiding for 10 sec. -->
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability>. If a character is attacked when the transformation is active, it summons a clone every 120 sec. The clone provokes the enemies while the character is hiding for 10 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_thief</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59603" toLevel="1" name="Shadow Master">
-		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> If a character is attacked when the transformation is active, it summons a clone every 60 sec. The clone provokes the enemies while the character is hiding for 20 sec. -->
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability>. If a character is attacked when the transformation is active, it summons a clone every 60 sec. The clone provokes the enemies while the character is hiding for 20 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_thief</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -31,7 +31,7 @@
 		<reuseDelay>100000</reuseDelay>
 	</skill>
 	<skill id="59605" toLevel="2" name="Shadow Master - Hide">
-		<!-- Grants invisibility for $s1. Effect cancels upon any action except for moving. -->
+		<!-- Grants invisibility for 10 sec.. Effect cancels upon any action except for moving. -->
 		<icon>BranchIcon.Icon.g_bm_costume_thief</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
@@ -42,14 +42,14 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="59607" toLevel="1" name="Admiral">
-		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> When the transformation is active: P./ M. Atk. +150% in case of successful attack or skill usage, P./ M. Def. +150% in case of receiving damage. Cooldown: 100 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability>. When the transformation is active: P./ M. Atk. +150% in case of successful attack or skill usage, P./ M. Def. +150% in case of receiving damage. Cooldown: 100 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
 		<icon>BranchIcon.Icon.g_bm_costume_navy</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59608" toLevel="1" name="Admiral">
-		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> When the transformation is active: P./ M. Atk. +200% in case of successful attack or skill usage, P./ M. Def. +200% in case of receiving damage. Cooldown: 600 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability>. When the transformation is active: P./ M. Atk. +200% in case of successful attack or skill usage, P./ M. Def. +200% in case of receiving damage. Cooldown: 600 sec. During the cooldown only 1 buff (attack or defense bonus) is active. -->
 		<icon>BranchIcon.Icon.g_bm_costume_navy</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -70,26 +70,26 @@
 		<reuseDelay>100000</reuseDelay>
 	</skill>
 	<skill id="59611" toLevel="2" name="Admiral - Attack">
-		<!-- For $s1 P. Atk/ M. Atk +$s2. -->
+		<!-- For 10 sec., P./ M. Atk. +150%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_navy</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="59612" toLevel="2" name="Admiral - Defense">
-		<!-- For $s1 P./ M. Def. +$s2. -->
+		<!-- For 10 sec. P./ M. Def. +150%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_navy</icon>
 		<operateType>A2</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="59613" toLevel="1" name="Nymph">
-		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability> Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 100 sec. the target receives the Lure debuff when attacks or uses skills. -->
+		<!-- Legendary transformation. Acquired XP +30%, P./ M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. The effect remains after death. <Special ability>. Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 100 sec. the target receives the Lure debuff when attacks or uses skills. -->
 		<icon>BranchIcon.Icon.g_bm_costume_nymph</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59614" toLevel="1" name="Nymph">
-		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 60 sec. the target receives the Lure debuff when attacks or uses skills. -->
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability>. Acquired adena/ item drop rate/ Spoil drop rate +50%. When the transformation is active, every 60 sec. the target receives the Lure debuff when attacks or uses skills. -->
 		<icon>BranchIcon.Icon.g_bm_costume_nymph</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -115,7 +115,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="59617" toLevel="1" name="Demon">
-		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability> Every 60 sec. when receiving damage the Barrier is activated for 20 sec. In 10 sec. after the Barrier effect is over, activates Inferno that deals 1000 damage to all attacking enemies. -->
+		<!-- Mythic transformation. Acquired XP +50%, P./ M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. The effect remains after death. <Special ability>. Every 60 sec. when receiving damage the Barrier is activated for 20 sec. In 10 sec. after the Barrier effect is over, activates Inferno that deals 1000 damage to all attacking enemies. -->
 		<icon>BranchIcon.Icon.g_bm_costume_devil</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -162,6 +162,7 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="59634" toLevel="1" name="Dragon Scroll (Event)">
+		<!-- For 20 min., P./ M. Atk. +150, P./ M. Critical Rate +30, Atk. Spd./ Casting Spd. +50, P./ M. Def. +200, Max HP/ MP/ CP +500. The effect remains after death. -->
 		<icon>icon.ev_charge_scroll</icon>
 		<operateType>A2</operateType>
 		<reuseDelay>60000</reuseDelay>
@@ -228,14 +229,14 @@
 		</effects>
 	</skill>
 	<skill id="59635" toLevel="9" name="Dimensional Border Power">
-		<!-- P./ M. Atk. +$s1, P./ M. Critical Damage +$s2. -->
+		<!-- P./ M. Atk. +2%, P./ M. Critical Damage +10%. -->
 		<icon>icon.skill10030</icon>
 		<operateType>P</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>30000</reuseDelay>
 	</skill>
 	<skill id="59636" toLevel="10" name="Dimensional Guard">
-		<!-- For $s1 success rate of attacks targeting the character's vital points -$s2. -->
+		<!-- Because of dimensional protaction for 15 sec. rate of attacks targeting the character's vital points -2%. -->
 		<icon>icon.skill11876</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -276,6 +277,7 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="59641" toLevel="1" name="Improved Supply Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -583,8 +585,8 @@
 		<operateType>A1</operateType>
 		<reuseDelay>500</reuseDelay>
 	</skill>
-	<skill id="59687" toLevel="1" name="null">
-		<!-- null -->
+	<skill id="59687" toLevel="1" name="Storm Power">
+		<!-- Acquired XP/ SP +50% for 2 h. Cooldown: 2 h. Effect remains after death. -->
 		<icon>icon.power_of_storm</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

@@ -30,5 +30,8 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="45048" level="1" /> <!-- Glorious Cloak -->
+		</skills>
 	</item>
 </list>

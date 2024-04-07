@@ -76,7 +76,8 @@ public enum TraitType
 	IMPRISON,
 	FEAR,
 	SILENCE,
-	INFECTION
+	INFECTION,
+	BLUFF,
 }
 
 public static class TraitTypeUtil
@@ -182,6 +183,7 @@ public static class TraitTypeUtil
 			TraitType.FEAR => 3,
 			TraitType.SILENCE => 3,
 			TraitType.INFECTION => 3,
+			TraitType.BLUFF => 3,
 			
 			_ => 0
 		};

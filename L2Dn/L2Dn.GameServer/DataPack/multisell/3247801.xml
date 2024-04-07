@@ -5,25 +5,25 @@
 	</npcs>
 	<item>
 		<!-- Soulshot Ticket -->
-		<ingredient count="1" id="90907" />
+		<ingredient count="1" id="49487" />
 		<!-- Soulshots -->
 		<production count="500" id="91927" />
 	</item>
 	<item>
 		<!-- Soulshot Ticket -->
-		<ingredient count="1" id="90907" />
+		<ingredient count="1" id="49487" />
 		<!-- Spiritshot -->
 		<production count="334" id="91928" />
 	</item>
 	<item>
 		<!-- Soulshot Ticket -->
-		<ingredient count="1" id="90907" />
+		<ingredient count="1" id="49487" />
 		<!-- Blessed SoulShots -->
 		<production count="200" id="91929" />
 	</item>
 	<item>
 		<!-- Soulshot Ticket -->
-		<ingredient count="1" id="90907" />
+		<ingredient count="1" id="49487" />
 		<!-- Blessed Spiritshot -->
 		<production count="134" id="91930" />
 	</item>

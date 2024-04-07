@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3200" toLevel="3" name="Item Skill: Spell Refresh">
-		<!-- Active: Temporarily decreases the Cooldown for magic skills. -->
+		<!-- Active: Temporarily decreases M. Skill Cooldown. -->
 		<icon>icon.skill3123</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -43,7 +43,7 @@
 		</effects>
 	</skill>
 	<skill id="3201" toLevel="3" name="Item Skill: Music Refresh">
-		<!-- Active: Temporarily decreases the Cooldown for songs and dances. -->
+		<!-- Active: Temporarily decreases the cooldown for songs and dances. -->
 		<icon>icon.skill3123</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -85,7 +85,7 @@
 		</effects>
 	</skill>
 	<skill id="3202" toLevel="3" name="Item Skill: Refresh">
-		<!-- Active: Temporarily decreases the Cooldown for all skills except for those with a fixed Cooldown time. -->
+		<!-- Active: Temporarily decreases the cooldown for all skills except for those with a fixed cooldown time. -->
 		<icon>icon.skill3123</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -201,7 +201,7 @@
 		</effects>
 	</skill>
 	<skill id="3205" toLevel="2" name="Item Skill: Party Return">
-		<!-- Teleports party members to the nearest village. Cannot be used in a specially designated place such as the GM Consultation Service. -->
+		<!-- Teleports party members to the nearest village. Cannot be used in special places such as the GM Consultation Service. -->
 		<icon>icon.skill3123</icon>
 		<affectRange>1000</affectRange>
 		<blockedInOlympiad>true</blockedInOlympiad>
@@ -691,7 +691,7 @@
 		</effects>
 	</skill>
 	<skill id="3217" toLevel="10" name="Item Skill: Might in Duel - PvP">
-		<!-- In case of success: Has a chance of increasing P. Atk. in PvP for a certain amount of time when you are attacked. -->
+		<!-- In case of success: Has a chance of increasing PvP Damage for a certain amount of time when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -831,7 +831,7 @@
 		</effects>
 	</skill>
 	<skill id="3220" toLevel="10" name="Item Skill: Weakness in Duel">
-		<!-- In case of success: Decreases enemy's P. Atk. in PvP for a certain amount of time when you are attacked. -->
+		<!-- In case of success: Decreases enemy's PvP Damage for a certain amount of time when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -1129,7 +1129,7 @@
 				<chance>2</chance>
 				<targetType>ENEMY</targetType>
 				<minDamage>1</minDamage>
-				<skillId>5166</skillId> <!-- Decrease Speed -->
+				<skillId>5166</skillId> <!-- Slow -->
 				<skillLevel>
 					<value level="1">1</value>
 					<value level="2">2</value>
@@ -1748,7 +1748,7 @@
 		</effects>
 	</skill>
 	<skill id="3243" toLevel="10" name="Item Skill: Might in Duel - PvP">
-		<!-- Passive: Increases your P. Atk. in PvP. -->
+		<!-- Passive: Increases your PvP Damage. -->
 		<icon>icon.skill3238</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -2007,7 +2007,7 @@
 		</effects>
 	</skill>
 	<skill id="3251" toLevel="10" name="Item Skill: Weight Limit">
-		<!-- Weight limit +$s1 times. -->
+		<!-- Weight limit +2 times. -->
 		<icon>icon.skill3238</icon>
 		<magicLevel>
 			<value level="1">46</value>
@@ -2267,8 +2267,9 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="3263" toLevel="1" name="Blessed Resurrection">
-		<!-- Allows the use of Blessed Resurrection. -->
+	<skill id="3263" toLevel="1" name="Blessed Resurrection Power">
+		<!-- Blessed Resurrection is available. -->
+		<icon>icon.skill0000</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
@@ -2292,8 +2293,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3264" toLevel="1" name="Blessed Escape">
+	<skill id="3264" toLevel="1" name="Bless Teleport Power">
 		<!-- Allows the use of Blessed Teleport. -->
+		<icon>icon.skill0000</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2316,7 +2318,8 @@
 		</effects>
 	</skill>
 	<skill id="3265" toLevel="1" name="Mysterious Ability">
-		<!-- The target's head is enlarged. -->
+		<!-- Increases the size of your head. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>0</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>BIG_HEAD</abnormalType>
@@ -2334,7 +2337,8 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="3266" toLevel="1" name="Large Firecracker's Ability">
-		<!-- Can set off large firecrackers. -->
+		<!-- Allows the use of Large Fireworks. -->
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<mpConsume>19</mpConsume>
@@ -2362,7 +2366,7 @@
 		</effects>
 	</skill>
 	<skill id="3268" toLevel="1" name="Release Agathion's Seal - Castle">
-		<!-- Summon Agathion -->
+		<!-- Summons Agathion. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2379,7 +2383,7 @@
 		</effects>
 	</skill>
 	<skill id="3269" toLevel="1" name="Release Agathion's Seal - Rainbow Clan Hall">
-		<!-- Summon Agathion -->
+		<!-- Summons Agathion. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2396,7 +2400,7 @@
 		</effects>
 	</skill>
 	<skill id="3270" toLevel="1" name="Release Agathion's Seal - Beast Farm">
-		<!-- Summon Agathion -->
+		<!-- Summons Agathion. -->
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2653,7 +2657,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3281" toLevel="1" name="Grey Talisman Box - Protection">
+	<skill id="3281" toLevel="1" name="Grey Talisman Box - Guard">
 		<!-- For 10 sec., can protect from debuffs 5 times, when used. Effects from two such Talismans do not stack. Cooldown - 5 min. -->
 		<icon>icon.etc_talisman_i07</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2676,7 +2680,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3282" toLevel="1" name="Grey Talisman - Disarm">
+	<skill id="3282" toLevel="1" name="Grey Talisman - Denial">
 		<!-- Removes a debuff when used. Effects from two such Talismans do not stack. Cooldown - 5 min. -->
 		<icon>icon.etc_talisman_i07</icon>
 		<effectPoint>532</effectPoint>
@@ -2698,7 +2702,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3283" toLevel="1" name="Grey Talisman - Divine Protection">
+	<skill id="3283" toLevel="1" name="Grey Talisman - Benefaction">
 		<!-- For 10 sec., P. Def. +1800 and M. Def. +1620. Buff-canceling Attack Resistance +80%. Effects from two such Talismans do not stack. Cooldown - 15 min. -->
 		<icon>icon.etc_talisman_i07</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2756,7 +2760,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3285" toLevel="1" name="Grey Talisman - Torpor">
+	<skill id="3285" toLevel="1" name="Grey Talisman - Gravity">
 		<!-- For 15 sec., target's Atk. Spd. and Casting Spd. by -20%. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
 		<icon>icon.etc_talisman_i07</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2786,7 +2790,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3286" toLevel="1" name="Grey Talisman - Shackles">
+	<skill id="3286" toLevel="1" name="Grey Talisman - Bond">
 		<!-- For 15 sec., target's Speed -30%, when used. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
 		<icon>icon.etc_talisman_i07</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2811,7 +2815,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3287" toLevel="1" name="Yellow Talisman - Protection">
+	<skill id="3287" toLevel="1" name="Yellow Talisman - Guard">
 		<!-- For 10 sec., can protect from debuffs 5 times, when used. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2832,7 +2836,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3288" toLevel="1" name="Yellow Talisman - Disarm">
+	<skill id="3288" toLevel="1" name="Yellow Talisman - Denial">
 		<!-- Removes a debuff when used. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<effectPoint>532</effectPoint>
@@ -2853,7 +2857,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3289" toLevel="1" name="Yellow Talisman - Divine Protection">
+	<skill id="3289" toLevel="1" name="Yellow Talisman - Benefaction">
 		<!-- For 10 sec., P. Def. +3600 and M. Def. +3240, when used. Buff-canceling Attack Resistance +80%. Effects from two such Talismans do not stack. Cooldown - 15 min. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2908,7 +2912,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3291" toLevel="1" name="Yellow Talisman - Torpor">
+	<skill id="3291" toLevel="1" name="Yellow Talisman - Gravity">
 		<!-- For 15 sec., target's Atk. Spd. and Casting Spd. by -20%. Effects from two such Talismans do not stack. Cooldown - 3 min. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2937,7 +2941,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3292" toLevel="1" name="Yellow Talisman - Shackles">
+	<skill id="3292" toLevel="1" name="Yellow Talisman - Bond">
 		<!-- For 15 sec., target's Speed -30%, when used. Effects from two such Talismans do not stack. Cooldown - 3 min. -->
 		<icon>icon.etc_talisman_i02</icon>
 		<abnormalLevel>1</abnormalLevel>

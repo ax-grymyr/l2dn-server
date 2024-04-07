@@ -1,21 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3001" toLevel="1" name="int_1">
+		<icon>icon.skill0000</icon>
 		<magicLevel>0</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
 	<skill id="3002" toLevel="1" name="int_2">
+		<icon>icon.skill0000</icon>
 		<magicLevel>0</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
 	<skill id="3003" toLevel="1" name="str_2">
+		<icon>icon.skill0000</icon>
 		<magicLevel>0</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
 	<skill id="3004" toLevel="1" name="maxmp_5">
+		<icon>icon.skill0000</icon>
 		<magicLevel>0</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -42,7 +46,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>44</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -144,28 +148,28 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">46</value>
-			<value level="2">49</value>
-			<value level="3">52</value>
-			<value level="4">55</value>
-			<value level="5">58</value>
-			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="9">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="1">30</value>
+			<value level="2">38</value>
+			<value level="3">46</value>
+			<value level="4">49</value>
+			<value level="5">52</value>
+			<value level="6">55</value>
+			<value level="7">58</value>
+			<value level="8">61</value>
+			<value level="9">64</value>
 		</magicLevel>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
-					<value level="1">86.7</value>
-					<value level="2">82.2</value>
-					<value level="3">77.8</value>
-					<value level="4">73.3</value>
-					<value level="5">68.9</value>
-					<value level="6">64.5</value>
-					<value level="7">64.5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">64.5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="9">64.5</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="1">75</value>
+					<value level="2">73</value>
+					<value level="3">71</value>
+					<value level="4">68</value>
+					<value level="5">65</value>
+					<value level="6">62</value>
+					<value level="7">58</value>
+					<value level="8">54</value>
+					<value level="9">52</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -177,24 +181,24 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">46</value>
-			<value level="2">49</value>
-			<value level="3">52</value>
-			<value level="4">55</value>
-			<value level="5">58</value>
-			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="1">38</value>
+			<value level="2">46</value>
+			<value level="3">49</value>
+			<value level="4">52</value>
+			<value level="5">55</value>
+			<value level="6">58</value>
+			<value level="7">61</value>
 		</magicLevel>
 		<effects>
 			<effect name="CriticalRate">
 				<amount>
-					<value level="1">90.5</value>
-					<value level="2">85.9</value>
-					<value level="3">81.2</value>
-					<value level="4">76.6</value>
-					<value level="5">71.9</value>
-					<value level="6">67.3</value>
-					<value level="7">67.3</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="1">73</value>
+					<value level="2">70</value>
+					<value level="3">85.9</value>
+					<value level="4">66</value>
+					<value level="5">76.6</value>
+					<value level="6">61</value>
+					<value level="7">58</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -278,7 +282,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3014" toLevel="1" name="Special Ability: Mana Up">
+	<skill id="3014" toLevel="1" name="Special Ability: Boost Mana">
 		<!-- Increases Max MP. -->
 		<icon>icon.skill0213</icon>
 		<operateType>P</operateType>
@@ -313,9 +317,10 @@
 	</skill>
 	<skill id="3016" toLevel="7" name="Special Ability: Critical Stun">
 		<!-- Immobilizes and stuns target. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>9</abnormalTime>
+		<abnormalTime>7</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<activateRate>
@@ -325,7 +330,7 @@
 			<value level="4">29</value>
 			<value level="5">27</value>
 			<value level="6">25</value>
-			<value level="7">25</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="7">24</value>
 		</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<effectPoint>-92</effectPoint>
@@ -338,20 +343,21 @@
 			<value level="4">55</value>
 			<value level="5">58</value>
 			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="7">64</value>
 		</magicLevel>
 		<magicCriticalRate>5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<trait>SHOCK</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3017" toLevel="4" name="Special Ability: Magic Regeneration">
-		<!-- MP Recovery Bonus +$s2 for $s1. -->
+		<!-- MP Recovery Bonus +12% for 10 min. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -520,7 +526,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3022" toLevel="6" name="Special Ability: Critical Drain">
+	<skill id="3022" toLevel="6" name="Special Ability: Critical Absorption">
 		<icon>icon.skill0070</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -568,41 +574,41 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3023" toLevel="9" name="Special Ability: Critical Damage">
+	<skill id="3023" toLevel="9" name="Special Ability: P. Critical Damage">
 		<!-- P. Critical Damage Boost -->
 		<icon>icon.skill1242</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">46</value>
-			<value level="2">49</value>
-			<value level="3">52</value>
-			<value level="4">55</value>
-			<value level="5">58</value>
-			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="9">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="1">38</value>
+			<value level="2">46</value>
+			<value level="3">49</value>
+			<value level="4">52</value>
+			<value level="5">55</value>
+			<value level="6">58</value>
+			<value level="7">61</value>
+			<value level="8">64</value>
+			<value level="9">67</value>
 		</magicLevel>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
-					<value level="1">174.78</value>
-					<value level="2">194.1</value>
-					<value level="3">213.12</value>
-					<value level="4">231.29</value>
-					<value level="5">247.98</value>
-					<value level="6">262.57</value>
-					<value level="7">262.57</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">262.57</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="9">262.57</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="1">136</value>
+					<value level="2">157</value>
+					<value level="3">174</value>
+					<value level="4">191</value>
+					<value level="5">208</value>
+					<value level="6">223</value>
+					<value level="7">236</value>
+					<value level="8">247</value>
+					<value level="9">255</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3024" toLevel="6" name="Special Ability: Critical Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>
@@ -668,6 +674,7 @@
 		</effects>
 	</skill>
 	<skill id="3025" toLevel="6" name="Special Ability: Critical Anger">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hpConsume>
 			<value level="1">12</value>
@@ -717,7 +724,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3027" toLevel="7" name="Special Ability: Risk Focus">
+	<skill id="3027" toLevel="7" name="Special Ability: Rsk. Focus">
 		<!-- Increases P. Critical Rate in critical situation. -->
 		<icon>icon.skill1077</icon>
 		<operateType>P</operateType>
@@ -783,7 +790,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3028" toLevel="6" name="Special Ability: Risk Evasion">
+	<skill id="3028" toLevel="6" name="Special Ability: Rsk. Evasion">
 		<!-- Increases P. Evasion in critical situation. -->
 		<icon>icon.skill0198</icon>
 		<operateType>P</operateType>
@@ -811,7 +818,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3029" toLevel="6" name="Special Ability: Risk Evasion">
+	<skill id="3029" toLevel="6" name="Special Ability: Rsk. Evasion">
 		<!-- Increases P. Evasion in critical situation. -->
 		<icon>icon.skill0198</icon>
 		<operateType>P</operateType>
@@ -839,7 +846,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3030" toLevel="6" name="Special Ability: Risk Evasion">
+	<skill id="3030" toLevel="6" name="Special Ability: Rsk. Evasion">
 		<!-- Increases P. Evasion in critical situation. -->
 		<icon>icon.skill0198</icon>
 		<operateType>P</operateType>
@@ -867,7 +874,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3031" toLevel="6" name="Special Ability: Risk Evasion">
+	<skill id="3031" toLevel="6" name="Special Ability: Rsk. Evasion">
 		<!-- Increases P. Evasion in critical situation. -->
 		<icon>icon.skill0198</icon>
 		<operateType>P</operateType>
@@ -895,7 +902,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3032" toLevel="6" name="Special Ability: Risk Haste">
+	<skill id="3032" toLevel="6" name="Special Ability: Rsk. Haste">
 		<!-- Increases Atk. Spd. in critical situation. -->
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
@@ -922,7 +929,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3033" toLevel="6" name="Special Ability: Risk Haste">
+	<skill id="3033" toLevel="6" name="Special Ability: Rsk. Haste">
 		<!-- Increases Atk. Spd. in critical situation. -->
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
@@ -949,7 +956,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3034" toLevel="6" name="Special Ability: Risk Haste">
+	<skill id="3034" toLevel="6" name="Special Ability: Rsk. Haste">
 		<!-- Increases Atk. Spd. in critical situation. -->
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
@@ -1138,7 +1145,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3039" toLevel="7" name="Special Ability: Critical Drain">
+	<skill id="3039" toLevel="7" name="Special Ability: Critical Absorption">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
 			<value level="1">0</value>
@@ -1198,7 +1206,7 @@
 		</effects>
 	</skill>
 	<skill id="3040" toLevel="6" name="Special Ability: Critical Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>
@@ -1263,7 +1271,7 @@
 		</effects>
 	</skill>
 	<skill id="3041" toLevel="6" name="Special Ability: Critical Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>
@@ -1327,7 +1335,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3042" toLevel="16" name="Special Ability: Critical Damage">
+	<skill id="3042" toLevel="16" name="Special Ability: P. Critical Damage">
 		<!-- P. Critical Damage Boost -->
 		<icon>
 			<value level="1">icon.skill0193</value>
@@ -1454,7 +1462,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3043" toLevel="8" name="Special Ability: Critical Damage">
+	<skill id="3043" toLevel="8" name="Special Ability: P. Critical Damage">
 		<!-- P. Critical Damage Boost -->
 		<icon>icon.skill0193</icon>
 		<operateType>P</operateType>
@@ -1466,20 +1474,20 @@
 			<value level="4">55</value>
 			<value level="5">58</value>
 			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="7">64</value>
+			<value level="8">67</value>
 		</magicLevel>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
 					<value level="1">106.45</value>
-					<value level="2">118.22</value>
-					<value level="3">129.81</value>
-					<value level="4">140.87</value>
-					<value level="5">151.04</value>
-					<value level="6">159.93</value>
-					<value level="7">159.93</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">159.93</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="2">106</value>
+					<value level="3">129</value>
+					<value level="4">140</value>
+					<value level="5">151</value>
+					<value level="6">159</value>
+					<value level="7">167</value>
+					<value level="8">172</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1856,6 +1864,7 @@
 		</effects>
 	</skill>
 	<skill id="3049" toLevel="2" name="Special Ability: Magic Damage">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -2003,7 +2012,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3056" toLevel="1" name="Special Ability: Risk Haste">
+	<skill id="3056" toLevel="1" name="Special Ability: Rsk. Haste">
 		<!-- Increases Atk. Spd. in critical situation. -->
 		<icon>icon.skill1086</icon>
 		<operateType>P</operateType>
@@ -2036,7 +2045,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3059" toLevel="2" name="Special Ability: Critical Drain">
+	<skill id="3059" toLevel="2" name="Special Ability: Critical Absorption">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
@@ -2059,7 +2069,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3060" toLevel="2" name="Special Ability: Critical Drain">
+	<skill id="3060" toLevel="2" name="Special Ability: Critical Absorption">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
@@ -2083,7 +2094,7 @@
 		</effects>
 	</skill>
 	<skill id="3061" toLevel="3" name="Special Ability: Critical Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>7</abnormalLevel>
@@ -2120,7 +2131,7 @@
 		</effects>
 	</skill>
 	<skill id="3062" toLevel="2" name="Special Ability: Critical Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>7</abnormalLevel>
@@ -2186,7 +2197,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3069" toLevel="1" name="Special Ability: Risk Evasion">
+	<skill id="3069" toLevel="1" name="Special Ability: Rsk. Evasion">
 		<!-- Increases P. Evasion in critical situation. -->
 		<icon>icon.skill0198</icon>
 		<operateType>P</operateType>
@@ -2234,7 +2245,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="3071" toLevel="1" name="Special Ability: Risk Focus">
+	<skill id="3071" toLevel="1" name="Special Ability: Rsk. Focus">
 		<!-- Increases P. Critical Rate in critical situation. -->
 		<icon>icon.skill1077</icon>
 		<operateType>P</operateType>
@@ -2295,7 +2306,7 @@
 			<effect name="Mute" />
 		</effects>
 	</skill>
-	<skill id="3075" toLevel="2" name="Special Ability: Magic Paralyze">
+	<skill id="3075" toLevel="2" name="Special Ability: Magic Paralysis">
 		<!-- Causes the enemy's body to go completely rigid for 10 sec. and causes paralysis for 10 sec. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
@@ -2352,29 +2363,29 @@
 			<value level="4">55</value>
 			<value level="5">28</value>
 			<value level="6">61</value>
-			<value level="7">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="9">61</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="7">64</value>
+			<value level="8">67</value>
+			<value level="9">70</value>
 		</magicLevel>
 		<effects>
 			<effect name="MAtk">
 				<amount>
 					<value level="1">20.36</value>
-					<value level="2">22.51</value>
-					<value level="3">24.59</value>
-					<value level="4">26.53</value>
-					<value level="5">28.27</value>
-					<value level="6">29.7</value>
-					<value level="7">29.7</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">29.7</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="9">29.7</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="2">20</value>
+					<value level="3">46</value>
+					<value level="4">50</value>
+					<value level="5">96</value>
+					<value level="6">100</value>
+					<value level="7">144</value>
+					<value level="8">151</value>
+					<value level="9">159</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3077" toLevel="6" name="Special Ability: Magic Power">
-		<!-- Increases M. Atk. and MP Consumption -->
+	<skill id="3077" toLevel="6" name="Special Ability: M. Atk.">
+		<!-- Increases M. Atk. and MP Consumption. -->
 		<icon>icon.skill1059</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2438,8 +2449,8 @@
 			<effect name="Mute" />
 		</effects>
 	</skill>
-	<skill id="3079" toLevel="6" name="Special Ability: Magic Paralyze">
-		<!-- Slows the enemy down for $s1, after that the enemy is fully paralysed for $s2. -->
+	<skill id="3079" toLevel="6" name="Special Ability: Magic Paralysis">
+		<!-- Slows the enemy down for 15 sec., after that the enemy is fully paralysed for 10 sec. -->
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2488,7 +2499,7 @@
 		</endEffects>
 	</skill>
 	<skill id="3080" toLevel="15" name="Item Skill: Aggression">
-		<!-- In case of success: Provokes a target to attack during an standard physical attack. Power $s1. -->
+		<!-- In case of success: Provokes a target to attack during a normal physical attack. Power 438. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -2539,8 +2550,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3081" toLevel="15" name="Item Skill: Charm (Physical)">
-		<!-- In case of success: Decreases the target's urge to attack during a standard physical attack. Power $s1. -->
+	<skill id="3081" toLevel="15" name="Item Skill: Charm (phys.)">
+		<!-- In case of success: Decreases the target's urge to attack during a normal physical attack. Power 219 -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -2592,7 +2603,7 @@
 		</effects>
 	</skill>
 	<skill id="3082" toLevel="10" name="Item Skill: Mana Burn">
-		<!-- In case of success: Burns up the target's MP during an standard physical attack. Power $s1. -->
+		<!-- In case of success: Burns up the target's MP during a normal physical attack. Power 49. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -2634,7 +2645,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3083" toLevel="15" name="Item Skill: Slow (Physical)">
+	<skill id="3083" toLevel="15" name="Item Skill: Slow (phys.)">
 		<!-- In case of success: Momentarily target's Speed -30% during a normal physical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -2677,7 +2688,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3084" toLevel="10" name="Item Skill: Winter (Physical)">
+	<skill id="3084" toLevel="10" name="Item Skill: Winter (phys.)">
 		<!-- In case of success: Momentarily target's Atk. Spd. -23% during a normal physical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -2838,7 +2849,7 @@
 		</effects>
 	</skill>
 	<skill id="3088" toLevel="10" name="Item Skill: Paralyze">
-		<!-- In case of success: A normal physical attack Slows the enemy down for $s1, after that the enemy is fully paralysed for $s2 -->
+		<!-- In case of success: Normal physical attacks slow the enemy down for 15 sec., after that the enemy is fully paralysed for 10 sec. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2966,7 +2977,7 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="3091" toLevel="15" name="Item Skill: Poison (Physical)">
+	<skill id="3091" toLevel="15" name="Item Skill: Poison (phys.)">
 		<!-- In case of success: Momentarily inflicts Poison on the target during a normal physical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -3040,11 +3051,11 @@
 					<value level="14">87</value>
 					<value level="15">98</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3092" toLevel="15" name="Item Skill: Bleed (Physical)">
+	<skill id="3092" toLevel="15" name="Item Skill: Bleed (phys.)">
 		<!-- In case of success: Momentarily inflicts Bleed on the target during a normal physical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
@@ -3119,7 +3130,7 @@
 					<value level="14">87</value>
 					<value level="15">98</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3199,7 +3210,7 @@
 		</effects>
 	</skill>
 	<skill id="3095" toLevel="10" name="Item Skill: Mana Burn">
-		<!-- Chance: Burns up the target's MP during magic use. Power $s1. -->
+		<!-- In case of success: Burns up the target's MP during magic use. Power 49 -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<castRange>1000</castRange>
@@ -3364,7 +3375,7 @@
 		</effects>
 	</skill>
 	<skill id="3099" toLevel="15" name="Item Skill: Hold">
-		<!-- Chance: Momentarily inflicts Hold on the target during magic use. The target cannot be affected by any additional hold attacks while the effect lasts. -->
+		<!-- In case of success: Momentarily inflicts Hold on the target when using magic. The target cannot be affected by any additional hold attacks while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<abnormalLevel>1</abnormalLevel>

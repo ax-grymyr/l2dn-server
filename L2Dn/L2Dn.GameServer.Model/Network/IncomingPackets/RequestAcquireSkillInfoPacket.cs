@@ -15,18 +15,20 @@ public struct RequestAcquireSkillInfoPacket: IIncomingPacket<GameSession>
 {
     private int _id;
     private int _level;
+    private int _subLevel;
     private AcquireSkillType _skillType;
 
     public void ReadContent(PacketBitReader reader)
     {
         _id = reader.ReadInt32();
-        _level = reader.ReadInt32();
+        _level = reader.ReadInt16();
+        _subLevel = reader.ReadInt16();
         _skillType = (AcquireSkillType)reader.ReadInt32();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-		if ((_id <= 0) || (_level <= 0))
+		if (_id <= 0 || _level <= 0)
 		{
 			PacketLogger.Instance.Warn(GetType().Name + ": Invalid Id: " + _id + " or level: " + _level + "!");
 			return ValueTask.CompletedTask;
@@ -37,8 +39,8 @@ public struct RequestAcquireSkillInfoPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		
 		Npc trainer = player.getLastFolkNPC();
-		if ((_skillType != AcquireSkillType.CLASS) &&
-		    ((trainer == null) || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
+		if (_skillType != AcquireSkillType.CLASS &&
+		    (trainer == null || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
 			return ValueTask.CompletedTask;
 		
 		// Consider skill replacements.

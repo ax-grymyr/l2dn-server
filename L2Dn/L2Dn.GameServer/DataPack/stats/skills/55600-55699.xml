@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="55600" toLevel="1" name="Blessed Support Cube">
-		<icon>icon.etc_golden_ore_cube_pc_i00</icon>
+		<icon>[icon.etc_golden_ore_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55601" toLevel="1" name="Party Support Cube - Lv. 2">
-		<icon>icon.etc_silver_ore_cube_pc_i00</icon>
+		<icon>[icon.etc_silver_ore_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55602" toLevel="1" name="Fishing Support Cube">
-		<icon>icon.etc_cupreous_ore_cube_pc_i00</icon>
+		<icon>[icon.etc_cupreous_ore_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55603" toLevel="1" name="Potion Support Cube - Lv. 2">
-		<icon>icon.etc_earthen_ore_cube_pc_i00</icon>
+		<icon>[icon.etc_earthen_ore_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55604" toLevel="1" name="Growth Support Cube">
-		<icon>icon.etc_crystal_cube_event_i00</icon>
+		<icon>[icon.etc_crystal_cube_event_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55605" toLevel="1" name="Artisan's Goggles (STR+1 INT+1)">
@@ -1445,12 +1445,15 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55676" toLevel="1" name="Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55677" toLevel="1" name="Shining Pendant Varnish">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55678" toLevel="1" name="Improved Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55679" toLevel="1" name="Strawberry Juice">
@@ -1562,6 +1565,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55686" toLevel="1" name="The Royal Confectionary Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 	</skill>
@@ -1579,7 +1583,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55689" toLevel="1" name="Newbie Talisman">
-		<!-- P. Def. +18, M. Def. +9, P./ M. Skill Evasion +1, Max. HP/ MP/ CP +50, Atk. Spd./ Casting Spd. +6, Speed +4. -->
+		<!-- When equipped P. Def. +18, M. Def. +9, P./ M. Skill Evasion +1, Max. HP/ MP/ CP +50, Atk. Spd./ Casting Spd. +6, Speed +4. -->
 		<icon>icon.npoint_talisman_stat</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -1628,6 +1632,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55697" toLevel="1" name="Kusto Lucky Enchant Pack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>

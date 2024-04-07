@@ -6,6 +6,8 @@ public class PlayerVariables: AbstractVariables<CharacterVariable>
 {
 	// Public variable names.
 	public const String INSTANCE_ORIGIN = "INSTANCE_ORIGIN";
+	public const String INSTANCE_RESTORE = "INSTANCE_RESTORE";
+	public const String RESTORE_LOCATION = "RESTORE_LOCATION";
 	public const String HAIR_ACCESSORY_VARIABLE_NAME = "HAIR_ACCESSORY_ENABLED";
 	public const String WORLD_CHAT_VARIABLE_NAME = "WORLD_CHAT_USED";
 	public const String VITALITY_ITEMS_USED_VARIABLE_NAME = "VITALITY_ITEMS_USED";

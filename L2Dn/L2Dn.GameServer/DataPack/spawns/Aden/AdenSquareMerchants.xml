@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="AdenSquareMerchants">
+		<group>
+			<npc id="30839" x="147293" y="29017" z="-2264" heading="65239" respawnTime="60sec" /> <!-- Holly -->
+			<npc id="33977" x="147296" y="28915" z="-2264" heading="63763" respawnTime="60sec" /> <!-- Veruti -->
+			<npc id="30936" x="147287" y="28760" z="-2264" heading="62728" respawnTime="60sec" /> <!-- Pona -->
+			<npc id="34276" x="147632" y="28768" z="-2264" heading="28465" respawnTime="60sec" /> <!-- Jeris' Anvil -->
+			<npc id="34275" x="147636" y="28817" z="-2264" heading="32767" respawnTime="60sec" /> <!-- Jeris -->
+			<npc id="30846" x="147628" y="28915" z="-2264" heading="30771" respawnTime="60sec" /> <!-- Wilbert -->
+			<npc id="30020" x="147624" y="29008" z="-2264" heading="32314" respawnTime="60sec" /> <!-- Baggins -->
+		</group>
+	</spawn>
+</list>

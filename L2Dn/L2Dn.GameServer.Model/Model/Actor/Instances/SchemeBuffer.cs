@@ -241,9 +241,9 @@ public class SchemeBuffer : Npc
 				          "\">Use on Me</a>&nbsp;|&nbsp;");
 				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
 				          ";pet\">Use on Pet</a>&nbsp;|&nbsp;");
-				sb.Append("<a action=\"bypass -h npc_%objectId%_editschemes;Buffs;" + scheme.Key +
+				sb.Append("<a action=\"bypass npc_%objectId%_editschemes;Buffs;" + scheme.Key +
 				          ";1\">Edit</a>&nbsp;|&nbsp;");
-				sb.Append("<a action=\"bypass -h npc_%objectId%_deletescheme;" + scheme.Key + "\">Delete</a><br>");
+				sb.Append("<a action=\"bypass npc_%objectId%_deletescheme;" + scheme.Key + "\">Delete</a><br>");
 			}
 		}
 		
@@ -320,7 +320,7 @@ public class SchemeBuffer : Npc
 				          "\" width=32 height=32></td><td width=190>" + skill.getName() +
 				          "<br1><font color=\"B09878\">" +
 				          SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() +
-				          "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillunselect;" +
+				          "</font></td><td><button value=\" \" action=\"bypass npc_%objectId%_skillunselect;" +
 				          groupType + ";" + schemeName + ";" + skillId + ";" + page +
 				          "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomout2\" fore=\"L2UI_CH3.mapbutton_zoomout1\"></td>");
 			}
@@ -330,7 +330,7 @@ public class SchemeBuffer : Npc
 				          "\" width=32 height=32></td><td width=190>" + skill.getName() +
 				          "<br1><font color=\"B09878\">" +
 				          SchemeBufferTable.getInstance().getAvailableBuff(skillId).getDescription() +
-				          "</font></td><td><button value=\" \" action=\"bypass -h npc_%objectId%_skillselect;" +
+				          "</font></td><td><button value=\" \" action=\"bypass npc_%objectId%_skillselect;" +
 				          groupType + ";" + schemeName + ";" + skillId + ";" + page +
 				          "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomin2\" fore=\"L2UI_CH3.mapbutton_zoomin1\"></td>");
 			}
@@ -343,7 +343,7 @@ public class SchemeBuffer : Npc
 		sb.Append("<br><img src=\"L2UI.SquareGray\" width=277 height=1><table width=\"100%\" bgcolor=000000><tr>");
 		if (page > 1)
 		{
-			sb.Append("<td align=left width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" +
+			sb.Append("<td align=left width=70><a action=\"bypass npc_" + getObjectId() + "_editschemes;" +
 			          groupType + ";" + schemeName + ";" + (page - 1) + "\">Previous</a></td>");
 		}
 		else
@@ -354,7 +354,7 @@ public class SchemeBuffer : Npc
 		sb.Append("<td align=center width=100>Page " + page + "</td>");
 		if (page < max)
 		{
-			sb.Append("<td align=right width=70><a action=\"bypass -h npc_" + getObjectId() + "_editschemes;" +
+			sb.Append("<td align=right width=70><a action=\"bypass npc_" + getObjectId() + "_editschemes;" +
 			          groupType + ";" + schemeName + ";" + (page + 1) + "\">Next</a></td>");
 		}
 		else
@@ -390,7 +390,7 @@ public class SchemeBuffer : Npc
 			}
 			else
 			{
-				sb.Append("<td width=65><a action=\"bypass -h npc_%objectId%_editschemes;" + type + ";" + schemeName + ";1\">" + type + "</a></td>");
+				sb.Append("<td width=65><a action=\"bypass npc_%objectId%_editschemes;" + type + ";" + schemeName + ";1\">" + type + "</a></td>");
 			}
 			
 			count++;

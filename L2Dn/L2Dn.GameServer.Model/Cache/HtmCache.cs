@@ -72,6 +72,13 @@ public sealed class HtmCache
 			content = File.ReadAllText(filePath, Encoding.UTF8);
 			content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments.
 			content = content.replaceAll(@"[\t\n]", ""); // Remove tabs and new lines.
+
+			// Automatic removal of -h parameter from specific bypasses.
+			if (Config.HIDE_BYPASS_REMOVAL)
+			{
+				content = content.replaceAll("bypass -h npc_%objectId%_Chat ", "bypass npc_%objectId%_Chat ");
+				content = content.replaceAll("bypass -h npc_%objectId%_Quest", "bypass npc_%objectId%_Quest");
+			}
 			
 			filePath = Path.GetRelativePath(Config.DATAPACK_ROOT_PATH, filePath);
 			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&

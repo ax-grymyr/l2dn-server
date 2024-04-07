@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s01" minZ="-10945" maxZ="-10745">
+				<node x="83760" y="250849" />
+				<node x="83061" y="251201" />
+				<node x="83085" y="248570" />
+				<node x="83870" y="248596" />
+				<node x="84780" y="249239" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s02" minZ="-10945" maxZ="-10745">
+				<node x="85941" y="250730" />
+				<node x="84236" y="251458" />
+				<node x="83857" y="250836" />
+				<node x="84851" y="249269" />
+				<node x="85647" y="249915" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s03" minZ="-10945" maxZ="-10745">
+				<node x="86311" y="252001" />
+				<node x="85923" y="253402" />
+				<node x="83728" y="252226" />
+				<node x="84326" y="251747" />
+				<node x="86122" y="251235" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s04" minZ="-10945" maxZ="-10745">
+				<node x="85645" y="254136" />
+				<node x="84953" y="254648" />
+				<node x="83857" y="253380" />
+				<node x="84293" y="252601" />
+				<node x="85894" y="253456" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s05" minZ="-10945" maxZ="-10745">
+				<node x="83846" y="255388" />
+				<node x="83115" y="255407" />
+				<node x="83009" y="253893" />
+				<node x="83248" y="253161" />
+				<node x="84559" y="254963" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s06" minZ="-10945" maxZ="-10745">
+				<node x="81657" y="255394" />
+				<node x="80906" y="254924" />
+				<node x="81536" y="253867" />
+				<node x="82958" y="253878" />
+				<node x="83058" y="255403" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s07" minZ="-10945" maxZ="-10745">
+				<node x="80543" y="254602" />
+				<node x="79870" y="254096" />
+				<node x="79493" y="253059" />
+				<node x="80739" y="252483" />
+				<node x="81302" y="253474" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s08" minZ="-10945" maxZ="-10745">
+				<node x="81416" y="252103" />
+				<node x="79462" y="252992" />
+				<node x="79167" y="251992" />
+				<node x="79460" y="251186" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s09" minZ="-10945" maxZ="-10745">
+				<node x="80868" y="251185" />
+				<node x="79571" y="250665" />
+				<node x="79895" y="249868" />
+				<node x="80653" y="249287" />
+				<node x="81838" y="250320" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s10" minZ="-10945" maxZ="-10745">
+				<node x="82011" y="250375" />
+				<node x="80728" y="249237" />
+				<node x="81672" y="248607" />
+				<node x="82559" y="248588" />
+				<node x="82584" y="250302" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s11" minZ="-10407" maxZ="-10207">
+				<node x="81629" y="248208" />
+				<node x="81441" y="247736" />
+				<node x="84097" y="247731" />
+				<node x="83950" y="248206" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s12" minZ="-10407" maxZ="-10207">
+				<node x="84014" y="248250" />
+				<node x="84145" y="247839" />
+				<node x="86303" y="249390" />
+				<node x="85983" y="249627" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s13" minZ="-10407" maxZ="-10207">
+				<node x="86009" y="249732" />
+				<node x="86374" y="249445" />
+				<node x="87255" y="251990" />
+				<node x="86748" y="251997" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s14" minZ="-10407" maxZ="-10207">
+				<node x="86705" y="252082" />
+				<node x="87121" y="252100" />
+				<node x="86332" y="254604" />
+				<node x="85992" y="254327" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s15" minZ="-10407" maxZ="-10207">
+				<node x="85914" y="254374" />
+				<node x="86270" y="254680" />
+				<node x="84127" y="256239" />
+				<node x="83983" y="255795" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s16" minZ="-10407" maxZ="-10207">
+				<node x="83864" y="255776" />
+				<node x="84031" y="256194" />
+				<node x="81420" y="256204" />
+				<node x="81521" y="255799" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s17" minZ="-10407" maxZ="-10207">
+				<node x="81459" y="255733" />
+				<node x="81314" y="256191" />
+				<node x="79227" y="254686" />
+				<node x="79568" y="254386" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s18" minZ="-10407" maxZ="-10207">
+				<node x="79509" y="254326" />
+				<node x="79197" y="254565" />
+				<node x="78372" y="252120" />
+				<node x="78771" y="252102" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s19" minZ="-10407" maxZ="-10207">
+				<node x="78742" y="251988" />
+				<node x="78272" y="251997" />
+				<node x="79150" y="249330" />
+				<node x="79554" y="249602" />
+			</territory>
+		</territories>
+		<npc id="20794" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s20" minZ="-10407" maxZ="-10207">
+				<node x="79620" y="249589" />
+				<node x="79296" y="249351" />
+				<node x="81344" y="247828" />
+				<node x="81514" y="248215" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s21" minZ="-9891" maxZ="-9691">
+				<node x="81281" y="247301" />
+				<node x="81162" y="246883" />
+				<node x="84384" y="246890" />
+				<node x="84259" y="247299" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s22" minZ="-9891" maxZ="-9691">
+				<node x="84345" y="247390" />
+				<node x="84484" y="246909" />
+				<node x="87112" y="248801" />
+				<node x="86667" y="249086" />
+			</territory>
+		</territories>
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s23" minZ="-9891" maxZ="-9691">
+				<node x="86710" y="249188" />
+				<node x="87091" y="248898" />
+				<node x="88115" y="251936" />
+				<node x="87652" y="251953" />
+			</territory>
+		</territories>
+		<npc id="20792" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s24" minZ="-9891" maxZ="-9691">
+				<node x="87662" y="252027" />
+				<node x="88137" y="252040" />
+				<node x="87144" y="255183" />
+				<node x="86721" y="254716" />
+			</territory>
+		</territories>
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s25" minZ="-9891" maxZ="-9691">
+				<node x="86633" y="254906" />
+				<node x="87016" y="255188" />
+				<node x="84421" y="257126" />
+				<node x="84299" y="256666" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s26" minZ="-9891" maxZ="-9691">
+				<node x="84204" y="256679" />
+				<node x="84336" y="257167" />
+				<node x="80946" y="257102" />
+				<node x="81086" y="256646" />
+			</territory>
+		</territories>
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s27" minZ="-9891" maxZ="-9691">
+				<node x="81028" y="256474" />
+				<node x="80871" y="256937" />
+				<node x="78571" y="255278" />
+				<node x="79016" y="255033" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s28" minZ="-9891" maxZ="-9691">
+				<node x="78792" y="255012" />
+				<node x="78424" y="255217" />
+				<node x="77334" y="252065" />
+				<node x="77840" y="252132" />
+			</territory>
+		</territories>
+		<npc id="20795" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s29" minZ="-9891" maxZ="-9691">
+				<node x="77766" y="252056" />
+				<node x="77413" y="252018" />
+				<node x="78401" y="248809" />
+				<node x="78793" y="249130" />
+			</territory>
+		</territories>
+		<npc id="20792" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Coral -->
+		<npc id="20796" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20797" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Drone -->
+		<npc id="20799" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_s30" minZ="-9891" maxZ="-9691">
+				<node x="78804" y="249049" />
+				<node x="78443" y="248745" />
+				<node x="81061" y="246862" />
+				<node x="81177" y="247332" />
+			</territory>
+		</territories>
+		<npc id="20795" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Worker -->
+		<npc id="20796" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Stakato Warrior -->
+		<npc id="20798" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Water Giant -->
+		<npc id="20799" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Queen Lad -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p31" minZ="-9378" maxZ="-9128">
+				<node x="80898" y="246443" />
+				<node x="80849" y="246180" />
+				<node x="84441" y="246134" />
+				<node x="84433" y="246423" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p32" minZ="-9378" maxZ="-9128">
+				<node x="84560" y="246455" />
+				<node x="84585" y="246245" />
+				<node x="87521" y="248341" />
+				<node x="87244" y="248459" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p33" minZ="-9378" maxZ="-9178">
+				<node x="87531" y="248553" />
+				<node x="87683" y="248460" />
+				<node x="88805" y="252029" />
+				<node x="88596" y="252038" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p34" minZ="-9378" maxZ="-9178">
+				<node x="88557" y="252138" />
+				<node x="88783" y="252098" />
+				<node x="87646" y="255460" />
+				<node x="87465" y="255415" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p35" minZ="-9378" maxZ="-9178">
+				<node x="87407" y="255537" />
+				<node x="87641" y="255654" />
+				<node x="84634" y="257815" />
+				<node x="84527" y="257622" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p36" minZ="-9378" maxZ="-9178">
+				<node x="84413" y="257556" />
+				<node x="84543" y="257896" />
+				<node x="80849" y="257839" />
+				<node x="81239" y="257537" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p37" minZ="-9378" maxZ="-9178">
+				<node x="80840" y="257419" />
+				<node x="80754" y="257847" />
+				<node x="77648" y="255602" />
+				<node x="77943" y="255366" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p38" minZ="-9378" maxZ="-9178">
+				<node x="77977" y="255184" />
+				<node x="77673" y="255392" />
+				<node x="76611" y="252199" />
+				<node x="77031" y="252230" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p39" minZ="-9378" maxZ="-9178">
+				<node x="76858" y="252081" />
+				<node x="76510" y="252037" />
+				<node x="77737" y="248354" />
+				<node x="77999" y="248526" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p40" minZ="-9378" maxZ="-9178">
+				<node x="78047" y="248457" />
+				<node x="77889" y="248359" />
+				<node x="80717" y="246223" />
+				<node x="80833" y="246479" />
+			</territory>
+		</territories>
+		<npc id="20800" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Eva's Watchman -->
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p41" minZ="-9366" maxZ="-9066">
+				<node x="83344" y="245135" />
+				<node x="83345" y="245675" />
+				<node x="81710" y="245688" />
+				<node x="81708" y="245130" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p42" minZ="-8875" maxZ="-8625">
+				<node x="84771" y="245748" />
+				<node x="84989" y="245256" />
+				<node x="88203" y="247709" />
+				<node x="87856" y="248019" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p43" minZ="-8875" maxZ="-8625">
+				<node x="88064" y="248239" />
+				<node x="88394" y="248113" />
+				<node x="89617" y="251757" />
+				<node x="89241" y="251848" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p44" minZ="-8875" maxZ="-8625">
+				<node x="89262" y="252153" />
+				<node x="89663" y="252260" />
+				<node x="88350" y="255996" />
+				<node x="88046" y="255776" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p45" minZ="-8875" maxZ="-8625">
+				<node x="87865" y="256022" />
+				<node x="88152" y="256312" />
+				<node x="84926" y="258775" />
+				<node x="84681" y="258405" />
+			</territory>
+		</territories>
+		<npc id="20801" count="1" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p46" minZ="-9366" maxZ="-8966">
+				<node x="83469" y="258300" />
+				<node x="83484" y="258862" />
+				<node x="81423" y="258849" />
+				<node x="81413" y="258314" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p47" minZ="-8875" maxZ="-8625">
+				<node x="80386" y="258093" />
+				<node x="80132" y="258683" />
+				<node x="76887" y="256373" />
+				<node x="77403" y="255970" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p48" minZ="-8875" maxZ="-8625">
+				<node x="77271" y="255884" />
+				<node x="76696" y="256071" />
+				<node x="75402" y="252284" />
+				<node x="76050" y="252020" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p49" minZ="-8875" maxZ="-8625">
+				<node x="76056" y="251940" />
+				<node x="75390" y="251813" />
+				<node x="76580" y="248020" />
+				<node x="77236" y="248289" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p50" minZ="-8875" maxZ="-8625">
+				<node x="77285" y="248174" />
+				<node x="76874" y="247660" />
+				<node x="80046" y="245267" />
+				<node x="80399" y="245947" />
+			</territory>
+		</territories>
+		<npc id="20801" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="2" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p51" minZ="-10419" maxZ="-10169">
+				<node x="75520" y="245495" />
+				<node x="75515" y="244525" />
+				<node x="77869" y="244516" />
+				<node x="77874" y="247025" />
+				<node x="75467" y="247059" />
+				<node x="75492" y="246049" />
+				<node x="76708" y="246044" />
+				<node x="76713" y="245525" />
+			</territory>
+		</territories>
+		<npc id="20801" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p52" minZ="-10415" maxZ="-10165">
+				<node x="87520" y="247033" />
+				<node x="87602" y="244503" />
+				<node x="89955" y="244494" />
+				<node x="89961" y="245529" />
+				<node x="88767" y="245519" />
+				<node x="88770" y="246027" />
+				<node x="89965" y="246022" />
+				<node x="89970" y="247020" />
+			</territory>
+		</territories>
+		<npc id="20801" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p53" minZ="-10419" maxZ="-10169">
+				<node x="76357" y="257452" />
+				<node x="77866" y="257446" />
+				<node x="77861" y="258983" />
+				<node x="76394" y="259021" />
+			</territory>
+		</territories>
+		<npc id="20801" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p54" minZ="-10423" maxZ="-10173">
+				<node x="87628" y="257453" />
+				<node x="89137" y="257447" />
+				<node x="89132" y="258984" />
+				<node x="87665" y="259022" />
+			</territory>
+		</territories>
+		<npc id="20801" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20803" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Doll Master -->
+		<npc id="20994" count="3" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard Captain -->
+		<npc id="20995" count="4" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="giran25_2225_p55" minZ="-11734" maxZ="-11484">
+				<node x="83481" y="254842" />
+				<node x="87682" y="254810" />
+				<node x="87677" y="259092" />
+				<node x="83439" y="259025" />
+			</territory>
+		</territories>
+		<npc id="20801" count="6" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Piker -->
+		<npc id="20802" count="6" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Mage -->
+		<npc id="20849" count="5" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Light Worm -->
+		<npc id="20995" count="6" respawnTime="15sec" respawnRandom="5sec" chaseRange="3000" /> <!-- Garden Guard -->
+	</spawn>
+</list>

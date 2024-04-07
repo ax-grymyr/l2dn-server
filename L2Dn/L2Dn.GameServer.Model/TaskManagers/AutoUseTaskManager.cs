@@ -235,6 +235,12 @@ public class AutoUseTaskManager
 						{
 							break;
 						}
+
+						// Attacking.
+						if (player.isAttackingNow())
+						{
+							break;
+						}
 						
 						// Player is teleporting.
 						if (player.isTeleporting())
@@ -319,6 +325,7 @@ public class AutoUseTaskManager
 						
 						// Acquire next skill.
 						Playable pet = null;
+						WorldObject target = player.getTarget();
 						int skillId = player.getAutoUseSettings().getNextSkillId();
 						Skill skill = player.getKnownSkill(skillId);
 						if (skill == null)
@@ -328,9 +335,14 @@ public class AutoUseTaskManager
 								foreach (Summon summon in player.getServitors().values())
 								{
 									skill = summon.getKnownSkill(skillId);
+									if (skill == null)
+									{
+										skill = PetSkillData.getInstance().getKnownSkill(summon, skillId);
+									}
 									if (skill != null)
 									{
 										pet = summon;
+										pet.setTarget(target);
 										break;
 									}
 								}
@@ -339,6 +351,10 @@ public class AutoUseTaskManager
 							{
 								pet = player.getPet();
 								skill = pet.getKnownSkill(skillId);
+								if (skill == null)
+								{
+									skill = PetSkillData.getInstance().getKnownSkill((Summon) pet, skillId);
+								}
 								if (pet.isSkillDisabled(skill))
 								{
 									player.getAutoUseSettings().incrementSkillOrder();
@@ -354,7 +370,6 @@ public class AutoUseTaskManager
 						}
 						
 						// Casting on self stops movement.
-						WorldObject target = player.getTarget();
 						if (target == player)
 						{
 							break;
@@ -382,7 +397,8 @@ public class AutoUseTaskManager
 							}
 						}
 						
-						if (!canUseMagic(player, target, skill) || (pet != null ? pet : player).useMagic(skill, null, true, false))
+						Playable caster = pet != null ? pet : player;
+						if (!canUseMagic(player, target, skill) || caster.useMagic(skill, null, true, false))
 						{
 							player.getAutoUseSettings().incrementSkillOrder();
 						}
@@ -497,28 +513,34 @@ public class AutoUseTaskManager
 			return buffInfo == null;
 		}
 		
-		private bool canUseMagic(Player player, WorldObject target, Skill skill)
+		private bool canUseMagic(Playable playable, WorldObject target, Skill skill)
 		{
-			if ((skill.getItemConsumeCount() > 0) && (player.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount()))
+			if ((skill.getItemConsumeCount() > 0) && (playable.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount()))
 			{
 				return false;
 			}
 			
-			if ((skill.getMpConsume() > 0) && (player.getCurrentMp() < skill.getMpConsume()))
+			if ((skill.getMpConsume() > 0) && (playable.getCurrentMp() < skill.getMpConsume()))
+			{
+				return false;
+			}
+			
+			// Check if monster is spoiled to avoid Spoil (254) skill recast.
+			if ((skill.getId() == 254) && (target != null) && target.isMonster() && ((Monster) target).isSpoiled())
 			{
 				return false;
 			}
 			
 			foreach (AttachSkillHolder holder in skill.getAttachSkills())
 			{
-				if (player.isAffectedBySkill(holder.getRequiredSkillId()) //
-					&& (player.hasSkillReuse(holder.getSkill().getReuseHashCode()) || player.isAffectedBySkill(holder)))
+				if (playable.isAffectedBySkill(holder.getRequiredSkillId()) //
+					&& (playable.hasSkillReuse(holder.getSkill().getReuseHashCode()) || playable.isAffectedBySkill(holder)))
 				{
 					return false;
 				}
 			}
 			
-			return !player.isSkillDisabled(skill) && skill.checkCondition(player, target, false);
+			return !playable.isSkillDisabled(skill) && skill.checkCondition(playable, target, false);
 		}
 		
 		private bool canSummonCastSkill(Player player, Summon summon, Skill skill)
@@ -597,7 +619,7 @@ public class AutoUseTaskManager
 		
 		Set<Player> pool1 = new();
 		pool1.add(player);
-		ThreadPool.scheduleAtFixedRate(new AutoUse(this, pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new AutoUse(this, pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		POOLS.add(pool1);
 	}
 	

@@ -63,7 +63,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		private readonly Fort _fort;
 		private readonly int _type;
-		private int _lvl;
+		private int _level;
 		protected int _fee;
 		protected int _tempFee;
 		private readonly TimeSpan _rate;
@@ -71,11 +71,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		protected bool _inDebt;
 		public bool _cwh;
 		
-		public FortFunction(Fort fort, int type, int lvl, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
+		public FortFunction(Fort fort, int type, int level, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
 		{
 			_fort = fort;
 			_type = type;
-			_lvl = lvl;
+			_level = level;
 			_fee = lease;
 			_tempFee = tempLease;
 			_rate = rate;
@@ -88,9 +88,9 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			return _type;
 		}
 		
-		public int getLvl()
+		public int getLevel()
 		{
-			return _lvl;
+			return _level;
 		}
 		
 		public int getLease()
@@ -110,7 +110,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		
 		public void setLvl(int lvl)
 		{
-			_lvl = lvl;
+			_level = lvl;
 		}
 		
 		public void setLease(int lease)
@@ -200,7 +200,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 					ctx.FortFunctions.Add(record);
 				}
 
-				record.Level = (short)_lvl;
+				record.Level = (short)_level;
 				record.Lease = _fee;
 				record.Rate = _rate;
 				record.EndTime = _endDate;
@@ -403,7 +403,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			FortManager.getInstance().getFortByOwner(clan).removeOwner(true);
 		}
 		
-		setSupplyLvL(0);
+		setSupplyLevel(0);
 		setOwnerClan(clan);
 		updateOwnerInDB(); // Update in database
 		saveFortVariables();
@@ -434,7 +434,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			clan.setFortId(0);
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 			setOwnerClan(null);
-			setSupplyLvL(0);
+			setSupplyLevel(0);
 			saveFortVariables();
 			removeAllFunctions();
 			if (updateDB)
@@ -453,7 +453,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 	}
 	
-	public void setSupplyLvL(int value)
+	public void setSupplyLevel(int value)
 	{
 		if (value <= Config.FS_MAX_SUPPLY_LEVEL)
 		{
@@ -461,7 +461,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 	}
 	
-	public int getSupplyLvL()
+	public int getSupplyLevel()
 	{
 		return _supplyLvL;
 	}

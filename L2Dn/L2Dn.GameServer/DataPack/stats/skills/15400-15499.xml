@@ -107,6 +107,7 @@
 	</skill>
 	<skill id="15405" toLevel="1" name="Master's Blessing (Awakening)">
 		<!-- Uses the Master's Blessing buff. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
@@ -118,6 +119,7 @@
 	</skill>
 	<skill id="15406" toLevel="1" name="Warrior's Harmony Zone">
 		<!-- Creates a zone that provides the Harmony skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
@@ -129,6 +131,7 @@
 	</skill>
 	<skill id="15407" toLevel="1" name="Knight's Harmony Zone">
 		<!-- Creates a zone that provides the Harmony skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
@@ -140,6 +143,7 @@
 	</skill>
 	<skill id="15408" toLevel="1" name="Wizard's Harmony Zone">
 		<!-- Creates a zone that provides the Harmony skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
@@ -151,6 +155,7 @@
 	</skill>
 	<skill id="15409" toLevel="1" name="Summon Buff Servant">
 		<!-- Summons the Buff Servant. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<reuseDelay>1000</reuseDelay>
@@ -193,7 +198,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15412" toLevel="1" name="Toad Cannon Explosion - Presentation">
+	<skill id="15412" toLevel="1" name="Presentation - Toad Cannon Explosion">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -203,14 +209,14 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15413" toLevel="1" name="Raid Boss (Lv. 97)">
+	<skill id="15413" toLevel="1" name="Raid Boss (Lv. 96)">
 		<!-- Giant golem created by Dr. Chaos to excavate the Nornil Ruins. This Detector Golem is equipped with attack functions as well, and is a complete collection of all of Dr. Chaos' technological wonders. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="15414" toLevel="1" name="Raid Boss (Lv. 97)">
+	<skill id="15414" toLevel="1" name="Raid Boss (Lv. 96)">
 		<!-- Leader of the Spiculas that activated the Intruder Elimination Project under Mother Nornil's orders. This prototype Spicula is emotionless and almost machine-like. It is currently creating mutations in various machines by spreading the Laido Virus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -218,7 +224,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="15415" toLevel="1" name="Appearance Modification (No-grade)">
-		<!-- Appearance Modification (No-grade) (Raid) -->
+		<!-- Changed to the appearance of a No-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -239,7 +245,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15416" toLevel="1" name="Appearance Modification (D-grade)">
-		<!-- Appearance Modification (D-grade) (Raid) -->
+		<!-- Changed to the appearance of a D-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -260,7 +266,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15417" toLevel="1" name="Appearance Modification (C-grade)">
-		<!-- Appearance Modification (C-grade) (Raid) -->
+		<!-- Changed to the appearance of a C-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -281,7 +287,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15418" toLevel="1" name="Appearance Modification (B-grade)">
-		<!-- Appearance Modification (B-grade) (Raid) -->
+		<!-- Changed to the appearance of a B-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -302,7 +308,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15419" toLevel="1" name="Appearance Modification (A-grade)">
-		<!-- Appearance Modification (A-grade) (Raid) -->
+		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -323,6 +329,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15420" toLevel="1" name="Before Lind Attack">
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 	</skill>
 	<skill id="15421" toLevel="1" name="Lind Attack">
@@ -332,6 +339,7 @@
 		<reuseDelay>1500</reuseDelay>
 	</skill>
 	<skill id="15426" toLevel="1" name="Energy Drain">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>145000</castRange>
 		<effectPoint>100</effectPoint>
@@ -347,7 +355,7 @@
 		<effectPoint>-574</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15429" toLevel="1" name="Yoke">
+	<skill id="15429" toLevel="1" name="Hold">
 		<!-- Lindvior's AoE Aerial Yoke. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
@@ -358,6 +366,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15431" toLevel="1" name="Supersonic Blaster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>42</mpConsume>
 		<castRange>1200</castRange>
@@ -376,6 +385,7 @@
 		</effects>
 	</skill>
 	<skill id="15432" toLevel="1" name="Power Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>80</mpConsume>
 		<castRange>40</castRange>
@@ -395,7 +405,7 @@
 		</effects>
 	</skill>
 	<skill id="15433" toLevel="1" name="Surrender to Dark">
-		<!-- Dark Attack Resistance decreased, and Holy Attack Resistance increases momentarily. -->
+		<!-- Dark Resistance has been momentarily decreased, while Holy Resistance has been increased. -->
 		<icon>icon.skill4336_new</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -429,6 +439,7 @@
 		</effects>
 	</skill>
 	<skill id="15434" toLevel="1" name="Drain Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>73</mpConsume>
 		<castRange>600</castRange>
@@ -451,6 +462,7 @@
 		</effects>
 	</skill>
 	<skill id="15435" toLevel="1" name="Power Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>20</mpConsume>
 		<castRange>40</castRange>
@@ -470,6 +482,7 @@
 		</effects>
 	</skill>
 	<skill id="15436" toLevel="1" name="Wide Sweep">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>119</mpConsume>
 		<castRange>40</castRange>
@@ -490,6 +503,7 @@
 		</effects>
 	</skill>
 	<skill id="15437" toLevel="1" name="Sonic Blaster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>80</mpConsume>
 		<castRange>600</castRange>
@@ -508,7 +522,7 @@
 		</effects>
 	</skill>
 	<skill id="15438" toLevel="1" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -536,6 +550,7 @@
 		</effects>
 	</skill>
 	<skill id="15439" toLevel="1" name="Drain Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>109</mpConsume>
 		<castRange>600</castRange>
@@ -558,6 +573,7 @@
 		</effects>
 	</skill>
 	<skill id="15440" toLevel="1" name="Aura Burn">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>150</castRange>
@@ -577,6 +593,7 @@
 		</effects>
 	</skill>
 	<skill id="15441" toLevel="1" name="Death Bomb">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>-100</effectPoint>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -594,7 +611,7 @@
 		</effects>
 	</skill>
 	<skill id="15442" toLevel="1" name="Bleed">
-		<!-- HP decreases from bleeding. -->
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -622,11 +639,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15443" toLevel="1" name="Drain Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>102</mpConsume>
 		<castRange>400</castRange>
@@ -650,7 +668,7 @@
 		</effects>
 	</skill>
 	<skill id="15444" toLevel="1" name="Bleed">
-		<!-- HP decreases from bleeding. -->
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -679,11 +697,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15445" toLevel="1" name="Super Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>247</mpConsume>
 		<castRange>40</castRange>
@@ -702,6 +721,7 @@
 		</effects>
 	</skill>
 	<skill id="15446" toLevel="1" name="Drain Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>282</mpConsume>
 		<castRange>500</castRange>
@@ -726,7 +746,7 @@
 		</effects>
 	</skill>
 	<skill id="15447" toLevel="1" name="Bleed">
-		<!-- HP decreases from bleeding. -->
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -754,11 +774,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15448" toLevel="1" name="Aura Burn">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>3</mpConsume>
 		<castRange>150</castRange>
@@ -772,7 +793,8 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15449" toLevel="1" name="Storm Strike">
+	<skill id="15449" toLevel="1" name="Dagger Storm">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>7</mpConsume>
 		<castRange>600</castRange>
@@ -794,7 +816,7 @@
 		</effects>
 	</skill>
 	<skill id="15450" toLevel="1" name="Weakness">
-		<!-- P. Atk. decreases momentarily. -->
+		<!-- Momentarily decreases P. Atk. -->
 		<icon>icon.skill4037</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -823,7 +845,7 @@
 		</effects>
 	</skill>
 	<skill id="15451" toLevel="1" name="Bleed">
-		<!-- HP decreases from bleeding. -->
+		<!-- Causes target to bleed severely, momentarily reducing HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -847,12 +869,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>78</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15452" toLevel="1" name="Decrease P. Atk.">
-		<!-- P. Atk. decreases momentarily. -->
+		<!-- Momentarily decreases P. Atk. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<mpConsume>112</mpConsume>
@@ -878,6 +900,7 @@
 		</effects>
 	</skill>
 	<skill id="15453" toLevel="1" name="Vampiric Touch">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>135</mpConsume>
 		<castRange>750</castRange>
@@ -898,7 +921,7 @@
 		</effects>
 	</skill>
 	<skill id="15454" toLevel="1" name="Memorable Raid Blessing">
-		<!-- For 2 hr., P. Atk. +5%, M. Atk. +20%, P. Def. +5%, M. Def. +5%, Atk. Spd. +5%, Casting Spd. +5%, Max HP/ MP +5%, and acquired XP/ SP +30%. -->
+		<!-- For 2 h., P. Atk. +5%, M. Atk. +20%, P. Def. +5%, M. Def. +5%, Atk. Spd. +5%, Casting Spd. +5%, Max HP/ MP +5%, and Acquired XP/ SP +30%. -->
 		<icon>icon.skilltransform4</icon>
 		<operateType>A2</operateType>
 		<castRange>900</castRange>
@@ -919,14 +942,15 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15455" toLevel="1" name="Sensitive Skin">
+	<skill id="15455" toLevel="1" name="Thin Skin">
 		<!-- Received damage increases due to skin sensitivity. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>97</magicLevel>
 	</skill>
 	<skill id="15456" toLevel="1" name="Triol's Voice">
-		<!-- Triol's Voice -->
+		<!-- Triol's Voice. -->
 		<icon>icon.skill0223</icon>
 		<operateType>A1</operateType>
 		<hitTime>5000</hitTime>
@@ -947,7 +971,7 @@
 		</effects>
 	</skill>
 	<skill id="15457" toLevel="2" name="Triol's Reign">
-		<!-- Blood is drained by Triol, one of the 4 Demons of Hell. -->
+		<!-- Blood is drained by Triol, one of the 4 Demons of Hell, decreasing the character's HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -970,7 +994,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>450</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -997,6 +1021,7 @@
 		</effects>
 	</skill>
 	<skill id="15459" toLevel="1" name="Blaze">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>73</mpConsume>
 		<castRange>1000</castRange>
@@ -1018,7 +1043,7 @@
 		</effects>
 	</skill>
 	<skill id="15460" toLevel="1" name="Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill4036</icon>
 		<abnormalLevel>9</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1044,11 +1069,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>350</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15461" toLevel="1" name="Drain Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>52</mpConsume>
 		<castRange>600</castRange>
@@ -1071,6 +1097,7 @@
 		</effects>
 	</skill>
 	<skill id="15462" toLevel="1" name="Heal">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>127</mpConsume>
 		<castRange>600</castRange>
@@ -1090,6 +1117,7 @@
 		</effects>
 	</skill>
 	<skill id="15463" toLevel="1" name="Prominence">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>37</mpConsume>
 		<castRange>600</castRange>
@@ -1111,6 +1139,7 @@
 		</effects>
 	</skill>
 	<skill id="15464" toLevel="1" name="Death Link">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>37</mpConsume>
 		<castRange>900</castRange>
@@ -1146,7 +1175,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15467" toLevel="1" name="Triol's Def. Increase">
+	<skill id="15467" toLevel="1" name="Triol's P. Def. Increase">
 		<!-- P. Def. +200%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>P</operateType>
@@ -1211,7 +1240,7 @@
 		</effects>
 	</skill>
 	<skill id="15471" toLevel="1" name="Appearance Modification (No-grade) (Raid)">
-		<!-- Appearance Modification (No-grade) (Raid) -->
+		<!-- Changed to the appearance of a No-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -1232,7 +1261,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15472" toLevel="1" name="Appearance Modification (D-grade) (Raid)">
-		<!-- Appearance Modification (D-grade) (Raid) -->
+		<!-- Changed to the appearance of a D-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -1253,7 +1282,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15473" toLevel="1" name="Appearance Modification (C-grade) (Raid)">
-		<!-- Appearance Modification (C-grade) (Raid) -->
+		<!-- Changed to the appearance of a C-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -1274,7 +1303,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15474" toLevel="1" name="Appearance Modification (B-grade) (Raid)">
-		<!-- Appearance Modification (B-grade) (Raid) -->
+		<!-- Changed to the appearance of a B-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -1295,7 +1324,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15475" toLevel="1" name="Appearance Modification (A-grade) (Raid)">
-		<!-- Appearance Modification (A-grade) (Raid) -->
+		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -1338,7 +1367,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -1379,7 +1408,7 @@
 		</effects>
 	</skill>
 	<skill id="15478" toLevel="1" name="Spread Disease">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill0096</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1410,7 +1439,7 @@
 		</effects>
 	</skill>
 	<skill id="15479" toLevel="1" name="Vomit Mucus">
-		<!-- P. Accuracy decreased due to mucus. -->
+		<!-- Decreases enemy's P. Accuracy. -->
 		<icon>icon.skill1222</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1458,12 +1487,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15481" toLevel="1" name="Shoot Spider Web">
-		<!-- The web decreases Speed by 10%. -->
+		<!-- Target's Speed -10%. -->
 		<icon>icon.skill0102</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1490,11 +1519,13 @@
 	</skill>
 	<skill id="15482" toLevel="1" name="Presentation - Lind">
 		<!-- Lindvior's Event Presentation Skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>10000</hitTime>
 	</skill>
 	<skill id="15483" toLevel="1" name="Destroy">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -1504,6 +1535,7 @@
 	</skill>
 	<skill id="15484" toLevel="1" name="Lightning">
 		<!-- M. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -1514,6 +1546,7 @@
 	</skill>
 	<skill id="15485" toLevel="1" name="Eliminate">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -1535,6 +1568,7 @@
 	</skill>
 	<skill id="15487" toLevel="1" name="Disarray">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -1544,6 +1578,7 @@
 	</skill>
 	<skill id="15488" toLevel="1" name="Penetrate">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -1562,6 +1597,7 @@
 	</skill>
 	<skill id="15490" toLevel="1" name="Rush">
 		<!-- Rush toward enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<effectPoint>-100</effectPoint>
@@ -1569,6 +1605,7 @@
 	</skill>
 	<skill id="15491" toLevel="1" name="Deadly Weapon">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -1588,8 +1625,9 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15493" toLevel="1" name="Forward March">
+	<skill id="15493" toLevel="1" name="Charge">
 		<!-- Rush toward enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<effectPoint>-100</effectPoint>
@@ -1616,6 +1654,7 @@
 	</skill>
 	<skill id="15496" toLevel="1" name="Travis' Authority">
 		<!-- AoE M. Atk. On target's area. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -1624,15 +1663,16 @@
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="15497" toLevel="1" name="Summon Royal Guard">
+	<skill id="15497" toLevel="1" name="Summons Royal Guard Member.">
 		<!-- Summons Royal Guard Member. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="15498" toLevel="1" name="Dragon Defender">
-		<!-- For 2 hr., Atk. Spd. +10%, Casting Spd. +10%, Max HP/ MP +10%, and Speed +10. -->
+		<!-- For 2 h., Atk. Spd. +10%, Casting Spd. +10%, Max HP/ MP +10%, and Speed +10. -->
 		<icon>icon.skill4689</icon>
 		<operateType>A2</operateType>
 		<reuseDelay>1000</reuseDelay>
@@ -1640,6 +1680,7 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="15499" toLevel="1" name="Energy of Life">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="false" applyTaxes="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>33977</npc> <!-- Veruti -->
+	</npcs>
+	<item>
+		<ingredient id="49735" count="1" /> <!-- Consumable: Talisman of Border Lv. 9 -->
+		<ingredient id="49735" count="1" /> <!-- Consumable: Talisman of Border Lv. 9 -->
+		<production id="49736" count="1" /> <!-- Receivable: Talisman of Border Lv. 10 -->
+	</item>
+	<item>
+		<ingredient id="49736" count="1" /> <!-- Consumable: Talisman of Border Lv. 10 -->
+		<ingredient id="49736" count="1" /> <!-- Consumable: Talisman of Border Lv. 10 -->
+		<production id="49737" count="1" /> <!-- Receivable: Talisman of Border Lv. 11 -->
+	</item>
+</list>

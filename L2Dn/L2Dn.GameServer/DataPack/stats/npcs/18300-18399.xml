@@ -762,7 +762,7 @@
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire exp="44" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="15.27122" hpRegen="2" mp="43.365" mpRegen="0.9" />
 			<attack physical="8.47458" magical="5.78704" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="44.44444" magical="32.52252" />
@@ -1051,16 +1051,18 @@
 		</collision>
 	</npc>
 	<npc id="18357" level="80" type="Monster" name="Goldberg's Treasure Chest">
-		<race>ETC</race>
+		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="6076.8" hpRegen="8.5" mp="2794.785" mpRegen="3" />
-			<attack physical="970.5375485" magical="662.7513291" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="341.375" magical="249.80341" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6076.74" hpRegen="17" mp="2512.2" mpRegen="6" />
+			<attack physical="15528.6" magical="7953.02" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="983.16" magical="539.5753656" />
 			<speed>
 				<walk ground="80" />
 				<run ground="150" />
 			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -1070,87 +1072,21 @@
 		<skillList>
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 		</skillList>
-		<dropLists>
-			<drop>
-				<item id="57" min="200000" max="500000" chance="5" /> <!-- Adena -->
-				<item id="1462" min="1" max="2" chance="2" /> <!-- Crystal (S-grade) -->
-				<item id="1808" min="1" max="1" chance="2" /> <!-- Recipe: Soulshot (S-grade) (100%) -->
-				<item id="3957" min="1" max="1" chance="2" /> <!-- Recipe: Blessed Spiritshot (S-grade) (100%) -->
-				<item id="1888" min="1" max="1" chance="2" /> <!-- Synthetic Cokes -->
-				<item id="1894" min="1" max="1" chance="2" /> <!-- Crafted Leather -->
-				<item id="5553" min="1" max="1" chance="2" /> <!-- Arcsmith' Anvil -->
-				<item id="5550" min="1" max="1" chance="2" /> <!-- Reinforced Metal Plate -->
-				<item id="1889" min="1" max="1" chance="2" /> <!-- Synthetic Braid -->
-				<item id="6688" min="1" max="1" chance="0.5" /> <!-- Forgotten Blade Edge -->
-				<item id="6689" min="1" max="1" chance="0.5" /> <!-- Basalt Battlehammer Head -->
-				<item id="6690" min="1" max="1" chance="0.5" /> <!-- Imperial Staff Head -->
-				<item id="6691" min="1" max="1" chance="0.5" /> <!-- Angel Slayer Blade -->
-				<item id="6693" min="1" max="1" chance="0.5" /> <!-- Dragon Hunter Axe Blade -->
-				<item id="6694" min="1" max="1" chance="0.5" /> <!-- Saint Spear Blade -->
-				<item id="6695" min="1" max="1" chance="0.5" /> <!-- Demon Splinter Blade -->
-				<item id="6696" min="1" max="1" chance="0.5" /> <!-- Heaven's Divider Edge -->
-				<item id="6697" min="1" max="1" chance="0.5" /> <!-- Arcana Mace Head -->
-				<item id="6698" min="1" max="1" chance="0.5" /> <!-- Sealed Tateossian Earring Part -->
-				<item id="6699" min="1" max="1" chance="0.5" /> <!-- Sealed Tateossian Ring Gem -->
-				<item id="6847" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Tateossian Earring (30%) -->
-				<item id="6849" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Tateossian Ring (30%) -->
-				<item id="6851" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Tateossian Necklace (30%) -->
-				<item id="6853" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Breastplate (30%) -->
-				<item id="6855" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Gaiters (30%) -->
-				<item id="6857" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Gauntlets (30%) -->
-				<item id="6859" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Boots (30%) -->
-				<item id="6861" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Shield (30%) -->
-				<item id="6863" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Imperial Crusader Helmet (30%) -->
-				<item id="6865" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Draconic Leather Armor (30%) -->
-				<item id="6867" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Draconic Leather Gloves (30%) -->
-				<item id="6869" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Draconic Leather Boots (30%) -->
-				<item id="6871" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Draconic Leather Helmet (30%) -->
-				<item id="6873" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Major Arcana Robe (30%) -->
-				<item id="6875" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Major Arcana Gloves (30%) -->
-				<item id="6877" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Major Arcana Boots (30%) -->
-				<item id="6879" min="1" max="1" chance="0.5" /> <!-- Recipe: Sealed Major Arcana Circlet (30%) -->
-				<item id="6881" min="1" max="1" chance="0.5" /> <!-- Recipe: Forgotten Blade (30%) -->
-				<item id="6883" min="1" max="1" chance="0.5" /> <!-- Recipe: Basalt Battlehammer (30%) -->
-				<item id="6885" min="1" max="1" chance="0.5" /> <!-- Recipe: Imperial Staff (30%) -->
-				<item id="6887" min="1" max="1" chance="0.5" /> <!-- Recipe: Angel Slayer (30%) -->
-				<item id="6891" min="1" max="1" chance="0.5" /> <!-- Recipe: Dragon Hunter Axe (30%) -->
-				<item id="6893" min="1" max="1" chance="0.5" /> <!-- Recipe: Saint Spear (30%) -->
-				<item id="6895" min="1" max="1" chance="0.5" /> <!-- Recipe: Demon Splinter (30%) -->
-				<item id="6897" min="1" max="1" chance="0.5" /> <!-- Recipe: Heaven's Divider (30%) -->
-				<item id="6899" min="1" max="1" chance="0.5" /> <!-- Recipe: Arcana Mace (30%) -->
-				<item id="2134" min="1" max="1" chance="0.5" /> <!-- Gemstone (S-grade) -->
-				<item id="6700" min="1" max="1" chance="0.5" /> <!-- Sealed Tateossian Necklace Chain -->
-				<item id="6701" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Breastplate Part -->
-				<item id="6702" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Gaiter Pattern -->
-				<item id="6703" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Gauntlets Design -->
-				<item id="6704" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Boots Design -->
-				<item id="6705" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Shield Fragment -->
-				<item id="6706" min="1" max="1" chance="0.5" /> <!-- Sealed Imperial Crusader Helmet Pattern -->
-				<item id="6707" min="1" max="1" chance="0.5" /> <!-- Sealed Draconic Leather Armor Part -->
-				<item id="6708" min="1" max="1" chance="0.5" /> <!-- Sealed Draconic Leather Glove Fabric -->
-				<item id="6709" min="1" max="1" chance="0.5" /> <!-- Sealed Draconic Leather Boots Design -->
-				<item id="6710" min="1" max="1" chance="0.5" /> <!-- Sealed Draconic Leather Helmet Pattern -->
-				<item id="6711" min="1" max="1" chance="0.5" /> <!-- Sealed Major Arcana Robe Part -->
-				<item id="6712" min="1" max="1" chance="0.5" /> <!-- Sealed Major Arcana Gloves fabric -->
-				<item id="6713" min="1" max="1" chance="0.5" /> <!-- Sealed Major Arcana Boots Design -->
-				<item id="6714" min="1" max="1" chance="0.5" /> <!-- Sealed Major Arcana Circlet Pattern -->
-				<item id="91012" min="1" max="1" chance="0.5" /> <!-- Weapon Supply Box (Best A-grade) -->
-				<item id="49786" min="1" max="1" chance="0.5" /> <!-- A-grade Armor Supply Box -->
-			</drop>
-		</dropLists>
 	</npc>
 	<npc id="18358" level="82" type="Monster" name="Goldberg's Steward">
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire exp="134480" sp="3631" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="6228.087" hpRegen="8.5" mp="2908.563" mpRegen="3" />
-			<attack physical="1055.28566" magical="720.6233026" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="349.77477" magical="255.95" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6227.54" hpRegen="17" mp="2614.5" mpRegen="6" />
+			<attack physical="16884.57" magical="8647.48" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1007.3513376" magical="552.852" />
 			<speed>
 				<walk ground="39" />
 				<run ground="175" />
 			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -1170,26 +1106,35 @@
 		</dropLists>
 	</npc>
 	<npc id="18359" level="83" type="Monster" name="Goldberg" title="Ancient Pirate Captain">
+		<parameters>
+			<skill name="PhysicalSpecial" id="50113" level="1" /> <!-- Pirate Storm Assault -->
+			<skill name="PhysicalSpecial" id="50114" level="1" /> <!-- Pirate Shield Strike -->
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="3556791" sp="96034" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="19837.487603306" hpRegen="8.5" mp="3554.208" mpRegen="3" />
-			<attack physical="1099.423617" magical="750.7638096" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="353.86144" magical="258.94045" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="200000" hpRegen="17" mp="2666.1" mpRegen="6" />
+			<attack physical="17590.78" magical="9009.17" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1019.1209472" magical="559.311372" />
 			<speed>
 				<walk ground="40" />
 				<run ground="175" />
 			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
 		<collision>
 			<radius normal="50" />
 			<height normal="87" />
 		</collision>
+		<sNpcPropHpRate>12</sNpcPropHpRate>
+		<ai aggroRange="300" />
 		<skillList>
 			<skill id="4416" level="1" /> <!-- Undead -->
 			<skill id="4408" level="20" /> <!-- HP Increase (12x) -->
+			<skill id="4409" level="3" /> <!-- MP Increase (21%) -->
 			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
 			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
 			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
@@ -1197,6 +1142,9 @@
 			<skill id="4085" level="1" /> <!-- Critical Damage -->
 			<skill id="4086" level="1" /> <!-- Critical Chance -->
 			<skill id="4458" level="1" /> <!-- Spear Vulnerability -->
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="50113" level="1" /> <!-- Pirate Storm Assault -->
+			<skill id="50114" level="1" /> <!-- Pirate Shield Strike -->
 		</skillList>
 	</npc>
 	<npc id="18360" level="85" type="Folk" name="Sayha's Dor">

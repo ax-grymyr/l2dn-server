@@ -1106,7 +1106,7 @@ public class Instance : IIdentifiable, INamable
 		removePlayer(player);
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
-			player.getVariables().set("INSTANCE_RESTORE", _id);
+			player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, _id);
 		}
 		else
 		{

@@ -81,6 +81,16 @@ public abstract class AbstractStatEffect: AbstractEffect
 		{
 			_conditions.Add(new ConditionPlayerIsInCombat(@params.getBoolean("inCombat")));
 		}
+
+		if (@params.contains("magicWeapon"))
+		{
+			_conditions.add(new ConditionUsingMagicWeapon(@params.getBoolean("magicWeapon")));
+		}
+		
+		if (@params.contains("twoHandWeapon"))
+		{
+			_conditions.add(new ConditionUsingTwoHandWeapon(@params.getBoolean("twoHandWeapon")));
+		}
 	}
 	
 	public override void pump(Creature effected, Skill skill)

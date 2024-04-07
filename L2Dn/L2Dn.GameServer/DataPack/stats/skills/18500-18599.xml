@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="18564" toLevel="1" name="Shiny Jewelry Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
-	<skill id="18566" toLevel="10" name="Gem - Garnet">
-		<!-- Stun/ Pulling/ Silence/ Paralyze/ Fear Resistance +$s1. -->
-		<!-- TODO: Resist to Fear and Silence -->
+	<skill id="18566" toLevel="10" name="Garnet">
+		<!-- Stun/ Pulling/ Silence/ Paralyze/ Fear Resistance +3%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_garnet</value>
 			<value level="2">icon.etc_bm_jewel_garnet</value>
@@ -73,7 +73,7 @@
 		</effects>
 	</skill>
 	<skill id="18567" toLevel="7" name="Garnet - Special Ability">
-		<!-- Becomes invincible from debuffs for $s1 -->
+		<!-- Becomes invincible from debuffs for 5 sec. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_garnet</value>
 			<value level="2">icon.etc_bm_jewel_garnet</value>
@@ -114,7 +114,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="18577" toLevel="1" name="Call to Battle">
-		<!-- Received Damage in PvP -5%, Debuff Resistance +10%. -->
+		<!-- Received PvP Damage -5%, Debuff Resistance +10%. -->
 		<icon>icon.skill18577</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -124,6 +124,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="18588" toLevel="1" name="Fortune Brooch">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>

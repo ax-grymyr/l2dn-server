@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_02" minZ="-3044" maxZ="-2244">
+				<node x="145941" y="-25568" />
+				<node x="147085" y="-26580" />
+				<node x="147861" y="-25807" />
+				<node x="146447" y="-24356" />
+			</territory>
+		</territories>
+		<npc id="21114" count="1" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="1" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="1" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_03" minZ="-3524" maxZ="-2824">
+				<node x="148088" y="-25056" />
+				<node x="148924" y="-26444" />
+				<node x="151596" y="-23608" />
+				<node x="149684" y="-22508" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="4" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_04" minZ="-3588" maxZ="-2688">
+				<node x="146642" y="-24200" />
+				<node x="147666" y="-25178" />
+				<node x="149522" y="-22512" />
+				<node x="147934" y="-20768" />
+			</territory>
+		</territories>
+		<npc id="21114" count="4" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="3" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_05" minZ="-3484" maxZ="-2584">
+				<node x="144856" y="-22684" />
+				<node x="146736" y="-23748" />
+				<node x="147924" y="-20712" />
+				<node x="146936" y="-19676" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="4" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_06" minZ="-3308" maxZ="-2508">
+				<node x="142500" y="-23056" />
+				<node x="144776" y="-22628" />
+				<node x="146076" y="-20748" />
+				<node x="145252" y="-20336" />
+				<node x="142592" y="-21240" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="4" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_07" minZ="-3416" maxZ="-2816">
+				<node x="142292" y="-21264" />
+				<node x="144936" y="-20412" />
+				<node x="144780" y="-19028" />
+				<node x="143824" y="-18252" />
+				<node x="142156" y="-17848" />
+				<node x="140892" y="-18052" />
+				<node x="140356" y="-19536" />
+				<node x="141120" y="-20784" />
+			</territory>
+		</territories>
+		<npc id="21114" count="7" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="8" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="5" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_08" minZ="-3472" maxZ="-2772">
+				<node x="148692" y="-20900" />
+				<node x="150624" y="-23016" />
+				<node x="150632" y="-21540" />
+				<node x="150312" y="-20924" />
+			</territory>
+		</territories>
+		<npc id="21114" count="1" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="2" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="1" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_09" minZ="-3416" maxZ="-2416">
+				<node x="148664" y="-20788" />
+				<node x="150072" y="-20792" />
+				<node x="152976" y="-16608" />
+				<node x="151064" y="-16184" />
+				<node x="147964" y="-17984" />
+			</territory>
+		</territories>
+		<npc id="21114" count="6" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="7" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="6" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_10" minZ="-3828" maxZ="-3028">
+				<node x="145024" y="-18548" />
+				<node x="146876" y="-18000" />
+				<node x="146812" y="-17128" />
+				<node x="144716" y="-17456" />
+			</territory>
+		</territories>
+		<npc id="21114" count="1" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="2" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="1" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_11" minZ="-4568" maxZ="-3768">
+				<node x="140059" y="-17163" />
+				<node x="142960" y="-16706" />
+				<node x="142516" y="-12605" />
+				<node x="137245" y="-13286" />
+			</territory>
+		</territories>
+		<npc id="21111" count="8" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="8" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="5" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_12" minZ="-4536" maxZ="-3136">
+				<node x="143148" y="-16612" />
+				<node x="144708" y="-17444" />
+				<node x="146804" y="-17076" />
+				<node x="147272" y="-14108" />
+				<node x="145352" y="-12052" />
+				<node x="142652" y="-12624" />
+			</territory>
+		</territories>
+		<npc id="21111" count="7" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="9" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="4" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_13" minZ="-4500" maxZ="-3500">
+				<node x="146832" y="-17112" />
+				<node x="149548" y="-16076" />
+				<node x="149532" y="-13756" />
+				<node x="147376" y="-14064" />
+			</territory>
+		</territories>
+		<npc id="21111" count="3" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="3" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="2" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_14" minZ="-4592" maxZ="-3992">
+				<node x="149600" y="-15645" />
+				<node x="152675" y="-15093" />
+				<node x="152427" y="-13124" />
+				<node x="149590" y="-13767" />
+			</territory>
+		</territories>
+		<npc id="21111" count="3" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="4" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="2" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_15" minZ="-4604" maxZ="-4004">
+				<node x="147128" y="-14064" />
+				<node x="149004" y="-13796" />
+				<node x="148964" y="-11036" />
+				<node x="146708" y="-10288" />
+				<node x="144976" y="-11800" />
+			</territory>
+		</territories>
+		<npc id="21111" count="4" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="4" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="3" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_16" minZ="-4600" maxZ="-4000">
+				<node x="149036" y="-13832" />
+				<node x="152976" y="-13004" />
+				<node x="153176" y="-10236" />
+				<node x="149008" y="-10984" />
+			</territory>
+		</territories>
+		<npc id="21111" count="5" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="6" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="4" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_17" minZ="-4724" maxZ="-4324">
+				<node x="138152" y="-11656" />
+				<node x="141128" y="-11428" />
+				<node x="139724" y="-9836" />
+				<node x="138532" y="-9860" />
+			</territory>
+		</territories>
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="2" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_18" minZ="-4736" maxZ="-4536">
+				<node x="141192" y="-11360" />
+				<node x="144268" y="-11576" />
+				<node x="143516" y="-8664" />
+				<node x="141860" y="-7636" />
+				<node x="139760" y="-9812" />
+			</territory>
+		</territories>
+		<npc id="21108" count="5" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="3" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="6" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_19" minZ="-4792" maxZ="-4192">
+				<node x="144400" y="-11432" />
+				<node x="146604" y="-10100" />
+				<node x="146424" y="-7328" />
+				<node x="143660" y="-8692" />
+			</territory>
+		</territories>
+		<npc id="21111" count="3" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="4" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="2" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_20" minZ="-4588" maxZ="-3988">
+				<node x="146668" y="-10168" />
+				<node x="148952" y="-10920" />
+				<node x="150624" y="-10572" />
+				<node x="149636" y="-8056" />
+				<node x="146464" y="-7312" />
+			</territory>
+		</territories>
+		<npc id="20676" count="3" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="4" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="4" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="4" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_21" minZ="-4596" maxZ="-3996">
+				<node x="150676" y="-10688" />
+				<node x="153348" y="-10208" />
+				<node x="153556" y="-8384" />
+				<node x="150732" y="-7636" />
+				<node x="149676" y="-8192" />
+			</territory>
+		</territories>
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="3" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="3" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_22" minZ="-4856" maxZ="-4456">
+				<node x="139396" y="-8640" />
+				<node x="140204" y="-8288" />
+				<node x="141696" y="-6944" />
+				<node x="140504" y="-5300" />
+				<node x="139036" y="-7184" />
+			</territory>
+		</territories>
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_23" minZ="-4780" maxZ="-4180">
+				<node x="141648" y="-7220" />
+				<node x="143596" y="-8592" />
+				<node x="146424" y="-7268" />
+				<node x="145588" y="-6096" />
+				<node x="141872" y="-6808" />
+			</territory>
+		</territories>
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_24" minZ="-4856" maxZ="-4256">
+				<node x="141672" y="-6808" />
+				<node x="143900" y="-6404" />
+				<node x="142476" y="-4712" />
+				<node x="140484" y="-4508" />
+			</territory>
+		</territories>
+		<npc id="20676" count="3" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="2" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="3" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_25" minZ="-4812" maxZ="-3812">
+				<node x="143952" y="-6332" />
+				<node x="145584" y="-6024" />
+				<node x="145852" y="-3876" />
+				<node x="143708" y="-3884" />
+				<node x="142628" y="-4768" />
+			</territory>
+		</territories>
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="2" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="2" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_26" minZ="-4672" maxZ="-4072">
+				<node x="145696" y="-6004" />
+				<node x="146536" y="-7260" />
+				<node x="148356" y="-7740" />
+				<node x="148704" y="-5236" />
+				<node x="145908" y="-3836" />
+			</territory>
+		</territories>
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="3" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="2" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_27" minZ="-4600" maxZ="-4400">
+				<node x="148420" y="-7740" />
+				<node x="149624" y="-8056" />
+				<node x="150708" y="-7544" />
+				<node x="150852" y="-5948" />
+				<node x="148732" y="-5624" />
+			</territory>
+		</territories>
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_28" minZ="-4600" maxZ="-4000">
+				<node x="150796" y="-7524" />
+				<node x="153600" y="-8336" />
+				<node x="154460" y="-7372" />
+				<node x="153816" y="-5852" />
+				<node x="150884" y="-5960" />
+			</territory>
+		</territories>
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="2" respawnTime="40sec" /> <!-- Tulben -->
+		<npc id="21108" count="2" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="2" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="3" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_31" minZ="-3285" maxZ="-2985">
+				<node x="137775" y="-24587" />
+				<node x="138411" y="-22284" />
+				<node x="137829" y="-21454" />
+				<node x="136780" y="-22321" />
+				<node x="136463" y="-24238" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="3" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_32" minZ="-3541" maxZ="-3141">
+				<node x="136418" y="-22198" />
+				<node x="140569" y="-18977" />
+				<node x="137733" y="-19249" />
+				<node x="135764" y="-20723" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="4" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_33" minZ="-3416" maxZ="-3116">
+				<node x="139179" y="-22837" />
+				<node x="141163" y="-21857" />
+				<node x="140527" y="-19324" />
+				<node x="137862" y="-21402" />
+			</territory>
+		</territories>
+		<npc id="21114" count="3" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="4" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="3" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_81" minZ="-3876" maxZ="-2676">
+				<node x="157004" y="-11916" />
+				<node x="160032" y="-10972" />
+				<node x="160580" y="-9332" />
+				<node x="160412" y="-7464" />
+				<node x="157916" y="-7320" />
+				<node x="156548" y="-9512" />
+			</territory>
+		</territories>
+		<npc id="21108" count="7" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="3" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="8" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_82" minZ="-3080" maxZ="-2080">
+				<node x="155516" y="-15604" />
+				<node x="157112" y="-15568" />
+				<node x="158352" y="-14892" />
+				<node x="158516" y="-13584" />
+				<node x="156344" y="-13044" />
+				<node x="155092" y="-14880" />
+			</territory>
+		</territories>
+		<npc id="21111" count="2" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="3" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="2" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_83" minZ="-4076" maxZ="-3076">
+				<node x="153440" y="-14928" />
+				<node x="154136" y="-15008" />
+				<node x="155332" y="-12660" />
+				<node x="155088" y="-11720" />
+				<node x="154112" y="-12456" />
+				<node x="153288" y="-14096" />
+			</territory>
+		</territories>
+		<npc id="21111" count="1" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="21112" count="2" respawnTime="40sec" /> <!-- Hames Orc Foot Soldier -->
+		<npc id="21113" count="1" respawnTime="40sec" /> <!-- Hames Orc Sniper -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_84" minZ="-4316" maxZ="-3316">
+				<node x="155148" y="-11588" />
+				<node x="155532" y="-11508" />
+				<node x="155216" y="-10124" />
+				<node x="154316" y="-9896" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_85" minZ="-4300" maxZ="-3300">
+				<node x="154484" y="-9712" />
+				<node x="155220" y="-9976" />
+				<node x="156348" y="-8080" />
+				<node x="155704" y="-7844" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_86" minZ="-4316" maxZ="-3316">
+				<node x="155436" y="-7388" />
+				<node x="156364" y="-8004" />
+				<node x="157716" y="-6064" />
+				<node x="156516" y="-5212" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="2" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_87" minZ="-4616" maxZ="-4416">
+				<node x="153984" y="-3260" />
+				<node x="155960" y="-4172" />
+				<node x="156196" y="-3596" />
+				<node x="154160" y="-2840" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_88" minZ="-4600" maxZ="-4400">
+				<node x="151900" y="-2664" />
+				<node x="153524" y="-3156" />
+				<node x="153680" y="-2588" />
+				<node x="152052" y="-2136" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_89" minZ="-4612" maxZ="-4412">
+				<node x="149524" y="-2192" />
+				<node x="151864" y="-2672" />
+				<node x="152008" y="-2088" />
+				<node x="149560" y="-1564" />
+			</territory>
+		</territories>
+		<npc id="21111" count="1" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_90" minZ="-4636" maxZ="-4436">
+				<node x="146924" y="-2172" />
+				<node x="149480" y="-2180" />
+				<node x="149504" y="-1584" />
+				<node x="146904" y="-1600" />
+			</territory>
+		</territories>
+		<npc id="21111" count="1" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_91" minZ="-4636" maxZ="-4436">
+				<node x="143972" y="-2188" />
+				<node x="146472" y="-2140" />
+				<node x="146460" y="-1664" />
+				<node x="143952" y="-1664" />
+			</territory>
+		</territories>
+		<npc id="21111" count="1" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_93" minZ="-4632" maxZ="-4432">
+				<node x="139428" y="-2660" />
+				<node x="143892" y="-2164" />
+				<node x="143852" y="-1644" />
+				<node x="141464" y="-1800" />
+				<node x="139292" y="-2232" />
+			</territory>
+		</territories>
+		<npc id="21111" count="3" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="2" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="2" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_94" minZ="-4476" maxZ="-4276">
+				<node x="137764" y="-3616" />
+				<node x="139012" y="-2808" />
+				<node x="138816" y="-2368" />
+				<node x="137324" y="-3064" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_95" minZ="-4496" maxZ="-4296">
+				<node x="136004" y="-4624" />
+				<node x="136544" y="-4912" />
+				<node x="137640" y="-3636" />
+				<node x="137244" y="-3220" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_96" minZ="-3996" maxZ="-3496">
+				<node x="137052" y="-5808" />
+				<node x="137852" y="-6420" />
+				<node x="138612" y="-4560" />
+				<node x="137968" y="-4204" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="2" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_97" minZ="-4476" maxZ="-3876">
+				<node x="135872" y="-6452" />
+				<node x="136624" y="-7244" />
+				<node x="136464" y="-5020" />
+				<node x="136028" y="-4780" />
+				<node x="135676" y="-5144" />
+			</territory>
+		</territories>
+		<npc id="21108" count="1" respawnTime="40sec" /> <!-- Glow Wisp -->
+		<npc id="21109" count="1" respawnTime="40sec" /> <!-- Hames Orc Scout -->
+		<npc id="21110" count="1" respawnTime="40sec" /> <!-- Swamp Predator -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_98" minZ="-3968" maxZ="-3368">
+				<node x="137552" y="-17024" />
+				<node x="137964" y="-18544" />
+				<node x="139060" y="-17100" />
+				<node x="137836" y="-16264" />
+			</territory>
+		</territories>
+		<npc id="21111" count="1" respawnTime="40sec" /> <!-- Lava Wyrm -->
+		<npc id="20676" count="1" respawnTime="40sec" /> <!-- Judge of Marsh -->
+		<npc id="20677" count="1" respawnTime="40sec" /> <!-- Tulben -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_99" minZ="-2084" maxZ="-1084">
+				<node x="154024" y="-19728" />
+				<node x="155416" y="-20264" />
+				<node x="156044" y="-18472" />
+				<node x="154516" y="-17844" />
+				<node x="153180" y="-17852" />
+				<node x="152876" y="-18588" />
+			</territory>
+		</territories>
+		<npc id="21114" count="2" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="3" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="2" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_100" minZ="-1824" maxZ="-824">
+				<node x="154020" y="-22548" />
+				<node x="156424" y="-21692" />
+				<node x="155144" y="-20788" />
+				<node x="153688" y="-20960" />
+			</territory>
+		</territories>
+		<npc id="21114" count="1" respawnTime="40sec" /> <!-- Cursed Guardian -->
+		<npc id="21115" count="2" respawnTime="40sec" /> <!-- Hames Orc Shaman -->
+		<npc id="21116" count="1" respawnTime="40sec" /> <!-- Hames Orc Prefect -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p07" minZ="-3416" maxZ="-2816">
+				<node x="142292" y="-21264" />
+				<node x="144936" y="-20412" />
+				<node x="144780" y="-19028" />
+				<node x="143824" y="-18252" />
+				<node x="142156" y="-17848" />
+				<node x="140892" y="-18052" />
+				<node x="140356" y="-19536" />
+				<node x="141120" y="-20784" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p09" minZ="-3416" maxZ="-2416">
+				<node x="148664" y="-20788" />
+				<node x="150072" y="-20792" />
+				<node x="152976" y="-16608" />
+				<node x="151064" y="-16184" />
+				<node x="147964" y="-17984" />
+			</territory>
+		</territories>
+		<npc id="20773" count="2" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p11" minZ="-4568" maxZ="-3768">
+				<node x="140059" y="-17163" />
+				<node x="142960" y="-16706" />
+				<node x="142516" y="-12605" />
+				<node x="137245" y="-13286" />
+			</territory>
+		</territories>
+		<npc id="20773" count="2" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p12" minZ="-4536" maxZ="-3136">
+				<node x="143148" y="-16612" />
+				<node x="144708" y="-17444" />
+				<node x="146804" y="-17076" />
+				<node x="147272" y="-14108" />
+				<node x="145352" y="-12052" />
+				<node x="142652" y="-12624" />
+			</territory>
+		</territories>
+		<npc id="20773" count="3" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p13" minZ="-4500" maxZ="-3500">
+				<node x="146832" y="-17112" />
+				<node x="149548" y="-16076" />
+				<node x="149532" y="-13756" />
+				<node x="147376" y="-14064" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p14" minZ="-4592" maxZ="-3992">
+				<node x="149600" y="-15645" />
+				<node x="152675" y="-15093" />
+				<node x="152427" y="-13124" />
+				<node x="149590" y="-13767" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p15" minZ="-4604" maxZ="-4004">
+				<node x="147128" y="-14064" />
+				<node x="149004" y="-13796" />
+				<node x="148964" y="-11036" />
+				<node x="146708" y="-10288" />
+				<node x="144976" y="-11800" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p16" minZ="-4600" maxZ="-4000">
+				<node x="149036" y="-13832" />
+				<node x="152976" y="-13004" />
+				<node x="153176" y="-10236" />
+				<node x="149008" y="-10984" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p18" minZ="-4736" maxZ="-4536">
+				<node x="141192" y="-11360" />
+				<node x="144268" y="-11576" />
+				<node x="143516" y="-8664" />
+				<node x="141860" y="-7636" />
+				<node x="139760" y="-9812" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p19" minZ="-4792" maxZ="-4192">
+				<node x="144400" y="-11432" />
+				<node x="146604" y="-10100" />
+				<node x="146424" y="-7328" />
+				<node x="143660" y="-8692" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p20" minZ="-4588" maxZ="-3988">
+				<node x="146668" y="-10168" />
+				<node x="148952" y="-10920" />
+				<node x="150624" y="-10572" />
+				<node x="149636" y="-8056" />
+				<node x="146464" y="-7312" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden03_2417_p21" minZ="-4596" maxZ="-3996">
+				<node x="150676" y="-10688" />
+				<node x="153348" y="-10208" />
+				<node x="153556" y="-8384" />
+				<node x="150732" y="-7636" />
+				<node x="149676" y="-8192" />
+			</territory>
+		</territories>
+		<npc id="20773" count="1" respawnTime="90sec" respawnRandom="50sec" /> <!-- Conjurer Bat Lord -->
+	</spawn>
+</list>

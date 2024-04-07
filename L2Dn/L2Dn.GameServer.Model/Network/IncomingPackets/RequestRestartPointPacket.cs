@@ -173,7 +173,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					Fort.FortFunction fortFunction = fort.getFortFunction(Fort.FUNC_RESTORE_EXP);
 					if (fortFunction != null)
 					{
-						player.restoreExp(fortFunction.getLvl());
+						player.restoreExp(fortFunction.getLevel());
 					}
 				}
 				break;

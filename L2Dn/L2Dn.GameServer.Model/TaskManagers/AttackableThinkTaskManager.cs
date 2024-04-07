@@ -80,7 +80,7 @@ public class AttackableThinkTaskManager
 		
 		Set<Attackable> pool1 = new();
 		pool1.add(attackable);
-		ThreadPool.scheduleAtFixedRate(new AttackableThink(pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new AttackableThink(pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		POOLS.add(pool1);
 	}
 	

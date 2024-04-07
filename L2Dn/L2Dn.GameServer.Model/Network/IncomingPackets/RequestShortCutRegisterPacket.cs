@@ -120,6 +120,7 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
         player.registerShortCut(sc);
         player.sendPacket(new ShortCutRegisterPacket(sc, player));
         player.sendPacket(new ExActivateAutoShortcutPacket(sc, _active));
+        player.sendSkillList();
 		
         // When id is not auto used, deactivate auto shortcuts.
         if (!player.getAutoUseSettings().isAutoSkill(_id) && !player.getAutoUseSettings().getAutoSupplyItems().Contains(_id))

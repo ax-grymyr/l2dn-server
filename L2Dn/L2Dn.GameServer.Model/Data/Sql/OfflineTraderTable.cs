@@ -175,13 +175,8 @@ public class OfflineTraderTable
 
 				try
 				{
-					GameSession client = new GameSession(null);
-					client.IsDetached = true;
 					player = Player.load(trade.CharacterId);
-					client.Player = player;
 					player.setOnlineStatus(true, false);
-					client.AccountName = player.getAccountNamePlayer();
-					player.setClient(client);
 					player.setOfflineStartTime(time);
 
 					if (isSellBuff)

@@ -2779,19 +2779,17 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public Door getDoor(int doorId, int instanceId)
 	{
-		Door door = null;
-		if (instanceId <= 0)
+		Door door;
+		Instance instance = InstanceManager.getInstance().getInstance(instanceId);
+		if (instance != null)
 		{
-			door = DoorData.getInstance().getDoor(doorId);
+			door = instance.getDoor(doorId);
 		}
 		else
 		{
-			Instance inst = InstanceManager.getInstance().getInstance(instanceId);
-			if (inst != null)
-			{
-				door = inst.getDoor(doorId);
-			}
+			door = DoorData.getInstance().getDoor(doorId);
 		}
+
 		return door;
 	}
 	

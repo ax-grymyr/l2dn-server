@@ -1028,19 +1028,13 @@ public class CreatureAI: AbstractAI
 	 */
 	protected bool checkTargetLostOrDead(Creature target)
 	{
-		if ((target == null) || target.isAlikeDead())
+		if (target == null || target.isDead())
 		{
-			// check if player is fakedeath
-			if ((target != null) && target.isPlayer() && ((Player) target).isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)
-			{
-				target.stopFakeDeath(true);
-				return false;
-			}
-			
 			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			return true;
 		}
+
 		return false;
 	}
 	
@@ -1063,14 +1057,7 @@ public class CreatureAI: AbstractAI
 	 */
 	protected bool checkTargetLost(WorldObject target)
 	{
-		// Check if player is fakedeath.
-		if ((target != null) && target.isPlayer() && target.getActingPlayer().isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)
-		{
-			target.getActingPlayer().stopFakeDeath(true);
-			return false;
-		}
-		
-		if ((target == null) || ((_actor != null) && (_skill != null) && _skill.isBad() && (_skill.getAffectRange() > 0) && (_actor.isPlayer() && _actor.isMoving() ? 
+		if (target == null || (_actor != null && _skill != null && _skill.isBad() && _skill.getAffectRange() > 0 && (_actor.isPlayer() && _actor.isMoving() ? 
 			    !GeoEngine.getInstance().canMoveToTarget(_actor, target) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -1247,7 +1234,7 @@ public class CreatureAI: AbstractAI
 					hasLongRangeDamageSkill = true;
 				}
 				
-				if (castRange > 70)
+				if (castRange > 150)
 				{
 					hasLongRangeSkills = true;
 					if (hasLongRangeDamageSkill)

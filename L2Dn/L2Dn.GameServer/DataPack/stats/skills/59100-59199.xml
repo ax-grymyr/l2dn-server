@@ -1,71 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="59100" toLevel="1" name="Workman's Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59101" toLevel="1" name="Divine Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59102" toLevel="1" name="Bright Jewel Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="59103" toLevel="1" name="Bright Jewel Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="59104" toLevel="1" name="Fortune Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="59105" toLevel="11" name="Taurus Agathion Unique Ability">
-		<!-- P. Def. +$s1. P. Def. increases when Agathion is upgraded. -->
+		<!-- P. Def. +1%. P. Def. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_tau_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59106" toLevel="11" name="Leo Agathion Unique Ability">
-		<!-- P. Atk. +$s1. P. Atk. increases when Agathion is upgraded. -->
+		<!-- P. Atk. +1%. P. Atk. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_leo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59107" toLevel="11" name="Scorpio Agathion Unique Ability">
-		<!-- P. Critical Rate +$s1. P. Critical Rate increases when Agathion is upgraded. -->
+		<!-- P. Critical Rate +1%. P. Critical Rate increases when Agathion is upgraded. -->
 		<icon>icon.agathion_sco_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59108" toLevel="11" name="Sagittarius Agathion Unique Ability">
-		<!-- Atk. Spd. +$s1. Atk. Spd. increases when Agathion is upgraded. -->
+		<!-- Atk. Spd. +2. Atk. Spd. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_sag_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59109" toLevel="11" name="Virgo Agathion Unique Ability">
-		<!-- M. Def. +$s1. M. Def. increases when Agathion is upgraded. -->
+		<!-- M. Def. +1%. M. Def. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_virgo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59110" toLevel="11" name="Aquarius Agathion Unique Ability">
-		<!-- M. Atk. +$s1. M. Atk. increases when Agathion is upgraded. -->
+		<!-- M. Atk. +1%. M. Atk. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_aqu_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59111" toLevel="11" name="Capricorn Agathion Unique Ability">
-		<!-- M. Critical Rate +$s1. M. Critical Rate increases when Agathion is upgraded. -->
+		<!-- M. Critical Rate +1%. M. Critical Rate increases when Agathion is upgraded. -->
 		<icon>icon.agathion_capr_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59112" toLevel="11" name="Libra Agathion Unique Ability">
-		<!-- Casting Spd. +$s1. M. Casting Spd. increases when Agathion is upgraded. -->
+		<!-- Casting Spd. +2. M. Casting Spd. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_lib_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59113" toLevel="11" name="Gemini Agathion Unique Ability">
-		<!-- Acquired XP/ SP +$s1. Acquired XP/ SP increases when Agathion is upgraded. -->
+		<!-- Acquired XP/ SP +1%. Acquired XP/ SP increases when Agathion is upgraded. -->
 		<icon>icon.agathion_gem_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -176,6 +181,7 @@
 		</effects>
 	</skill>
 	<skill id="59129" toLevel="1" name="Transformation Sealbook: Kat the Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
@@ -187,18 +193,21 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="59131" toLevel="1" name="Angler's Fishing Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="59132" toLevel="1" name="Angler's Silver Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="59133" toLevel="1" name="Angler's Gold Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -206,50 +215,57 @@
 	</skill>
 	<skill id="59134" toLevel="1" name="Scroll: Enchant Fishing Weapon">
 		<!-- Can only be used together with fishing weapons. Does not disappear after an unsuccessful Enchant. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59135" toLevel="1" name="Pumpkin Seed">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="59136" toLevel="1" name="Honey Pumpkin Seed">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="59137" toLevel="1" name="Monster Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
 		<reuseDelay>2000</reuseDelay>
 		<effectPoint>-150</effectPoint>
 	</skill>
 	<skill id="59138" toLevel="1" name="Halloween Pumpkin - Level Up">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59139" toLevel="1" name="Halloween Pumpkin - Poison">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59140" toLevel="1" name="Halloween Gift">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="59141" toLevel="1" name="Halloween Feeling">
-		<!-- Acquired XP/ SP +10%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used diring Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
+		<!-- Acquired XP/ SP +10%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used during Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
 		<icon>icon.event_halloween_pumpkin_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="59142" toLevel="1" name="Halloween Feeling">
-		<!-- Acquired XP/ SP +20%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used diring Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
+		<!-- Acquired XP/ SP +20%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used during Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
 		<icon>icon.event_halloween_pumpkin_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="59143" toLevel="1" name="Halloween Feeling">
-		<!-- Acquired XP/ SP +30%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used diring Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
+		<!-- Acquired XP/ SP +30%, P./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. Cannot be used during Halloween buff from Rico. If you get another Halloween buff from Rico, current buff will disappear. -->
 		<icon>icon.event_halloween_pumpkin_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -271,6 +287,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59147" toLevel="1" name="Party Member Teleport Scroll">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>5500</hitTime>
 		<reuseDelay>1800000</reuseDelay>
@@ -289,7 +306,7 @@
 		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="59150" toLevel="10" name="Ruby">
-		<!-- Soulshot, Blessed Soulshot and Beast Soulshot damage +$s1. -->
+		<!-- Soulshot, Blessed Soulshot and Beast Soulshot damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
 			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
@@ -324,7 +341,7 @@
 		</effects>
 	</skill>
 	<skill id="59151" toLevel="10" name="Sapphire">
-		<!-- Spiritshot, Blessed Spiritshot and Beast Spiritshot damage +$s1. -->
+		<!-- Spiritshot, Blessed Spiritshot and Beast Spiritshot damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
 			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
@@ -396,7 +413,7 @@
 		</effects>
 	</skill>
 	<skill id="59155" toLevel="1" name="Greater Topaz - Special Ability">
-		<!-- Cancels up to 3 debuffs. -->
+		<!-- Cancels 3 buffs of nearby enemies. -->
 		<icon>icon.bm_jewel_absdmg_high_lv1_lavianrose</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -424,28 +441,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59159" toLevel="1" name="Santa Claus">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59160" toLevel="1" name="Santa Claus">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59161" toLevel="1" name="Santa Claus">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59162" toLevel="1" name="Santa Claus">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -459,28 +476,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59164" toLevel="1" name="School Uniform A">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchSys3.icon1.Br_schoollook</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59165" toLevel="1" name="School Uniform A">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>BranchSys3.icon1.Br_schoollook</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59166" toLevel="1" name="School Uniform A">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>BranchSys3.icon1.Br_schoollook</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59167" toLevel="1" name="School Uniform A">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>BranchSys3.icon1.Br_schoollook</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -494,28 +511,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59169" toLevel="1" name="Beach Swimsuit">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59170" toLevel="1" name="Beach Swimsuit">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59171" toLevel="1" name="Beach Swimsuit">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59172" toLevel="1" name="Beach Swimsuit">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -529,28 +546,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59174" toLevel="1" name="Teddy Bear">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59175" toLevel="1" name="Teddy Bear">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59176" toLevel="1" name="Teddy Bear">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59177" toLevel="1" name="Teddy Bear">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -564,28 +581,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59179" toLevel="1" name="Toy Cat">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>icon.sayha2017_cat</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59180" toLevel="1" name="Toy Cat">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>icon.sayha2017_cat</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59181" toLevel="1" name="Toy Cat">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>icon.sayha2017_cat</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59182" toLevel="1" name="Toy Cat">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>icon.sayha2017_cat</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -599,28 +616,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59184" toLevel="1" name="Toy Panda">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>icon.sayha2017_panda</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59185" toLevel="1" name="Toy Panda">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>icon.sayha2017_panda</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59186" toLevel="1" name="Toy Panda">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>icon.sayha2017_panda</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59187" toLevel="1" name="Toy Panda">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>icon.sayha2017_panda</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -634,28 +651,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59189" toLevel="1" name="Baseball Uniform">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59190" toLevel="1" name="Baseball Uniform">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59191" toLevel="1" name="Baseball Uniform">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59192" toLevel="1" name="Baseball Uniform">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -669,28 +686,28 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59194" toLevel="1" name="Seductive Swimsuit">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59195" toLevel="1" name="Seductive Swimsuit">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> CON +1, MEN +1, DEX +1. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. CON +1, MEN +1, DEX +1. -->
 		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59196" toLevel="1" name="Seductive Swimsuit">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1. -->
 		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59197" toLevel="1" name="Seductive Swimsuit">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> All characteristics +3. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. All characteristics +3. -->
 		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -704,7 +721,7 @@
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59199" toLevel="1" name="School Uniform B">
-		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability> CON +1, MEN +1. -->
+		<!-- High-grade transformation. Acquired XP +10%, P. Atk. +5%, M. Atk. +5%. Transformation effect remains after death. <Special ability>. CON +1, MEN +1. -->
 		<icon>BranchIcon.Icon.g_bm_costume_schoollook_b</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>

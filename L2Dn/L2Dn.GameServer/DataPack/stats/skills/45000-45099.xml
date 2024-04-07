@@ -46,7 +46,7 @@
 		</passiveConditions>
 	</skill>
 	<skill id="45002" toLevel="25" name="Sigel's Protection">
-		<!-- P. Def. +$s1. -->
+		<!-- P. Def. +56. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_sigel_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_sigel_lv00</value>
@@ -109,7 +109,7 @@
 		</effects>
 	</skill>
 	<skill id="45003" toLevel="25" name="Sigel Protection">
-		<!-- Max HP +$s1 -->
+		<!-- Max HP +4%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_sigel_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_sigel_lv00</value>
@@ -172,7 +172,7 @@
 		</effects>
 	</skill>
 	<skill id="45004" toLevel="25" name="Tyrr's Haste">
-		<!-- Atk. Spd. +$s1 -->
+		<!-- Atk. Spd. +3% -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_tir_lv00</value>
 			<value level="2">BranchIcon.Icon.g_rune_tir_lv00</value>
@@ -235,7 +235,7 @@
 		</effects>
 	</skill>
 	<skill id="45005" toLevel="25" name="Othell's Focus">
-		<!-- P. Critical Rate +$s1. -->
+		<!-- P. Critical Rate +25. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_othel_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_othel_lv01</value>
@@ -298,7 +298,7 @@
 		</effects>
 	</skill>
 	<skill id="45006" toLevel="25" name="Othell's Mortal Strike">
-		<!-- Vital Point Attack Rate +$s1. -->
+		<!-- Vital Point Attack Rate +14%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_othel_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_othel_lv01</value>
@@ -361,7 +361,7 @@
 		</effects>
 	</skill>
 	<skill id="45007" toLevel="22" name="Yul's Critical Damage">
-		<!-- P. Critical Damage +$s1. -->
+		<!-- P. Critical Damage +92. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_yr_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_yr_lv01</value>
@@ -418,7 +418,7 @@
 		</effects>
 	</skill>
 	<skill id="45008" toLevel="22" name="Yul Guidance">
-		<!-- P. Accuracy +$s1. -->
+		<!-- P. Accuracy +2. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_yr_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_yr_lv01</value>
@@ -475,7 +475,7 @@
 		</effects>
 	</skill>
 	<skill id="45009" toLevel="20" name="Feoh Magic Focus">
-		<!-- M. Critical Rate +$s1. -->
+		<!-- M. Critical Rate +3%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_feoh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_feoh_lv01</value>
@@ -528,7 +528,7 @@
 		</effects>
 	</skill>
 	<skill id="45010" toLevel="20" name="Feoh's Empower">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +28. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_feoh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_feoh_lv01</value>
@@ -581,7 +581,7 @@
 		</effects>
 	</skill>
 	<skill id="45011" toLevel="25" name="Iss Acumen">
-		<!-- Casting Spd. +$s1. -->
+		<!-- Casting Spd. +3%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_is_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_is_lv01</value>
@@ -644,7 +644,7 @@
 		</effects>
 	</skill>
 	<skill id="45012" toLevel="25" name="Iss Wind Walk">
-		<!-- Speed +$s1. -->
+		<!-- Speed +4. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_is_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_is_lv01</value>
@@ -707,7 +707,7 @@
 		</effects>
 	</skill>
 	<skill id="45013" toLevel="20" name="Wynn Boost Mana">
-		<!-- Max MP +$s1 -->
+		<!-- Max MP +4%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_wynn_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_wynn_lv01</value>
@@ -760,7 +760,7 @@
 		</effects>
 	</skill>
 	<skill id="45014" toLevel="20" name="Wynn's Lightness">
-		<!-- Weight limit +$s1. -->
+		<!-- Weight limit +1000. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_wynn_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_wynn_lv01</value>
@@ -813,7 +813,7 @@
 		</effects>
 	</skill>
 	<skill id="45015" toLevel="25" name="Aeore Magic Regeneration">
-		<!-- MP Recovery Bonus +$s1. -->
+		<!-- MP Recovery Bonus +6.5%. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_eolh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_eolh_lv01</value>
@@ -876,7 +876,7 @@
 		</effects>
 	</skill>
 	<skill id="45016" toLevel="25" name="Aeore's Heal">
-		<!-- Healing Power +$s1. -->
+		<!-- Healing Power +30. -->
 		<icon>
 			<value level="1">BranchIcon.Icon.g_rune_eolh_lv01</value>
 			<value level="2">BranchIcon.Icon.g_rune_eolh_lv01</value>
@@ -1382,22 +1382,22 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="45040" toLevel="6" name="Dragon Pendant Effect Lv. 1">
-		<!-- M. Def. +$s1. -->
+		<!-- M. Def. +14. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="45041" toLevel="6" name="Dragon Pendant Effect Lv. 2">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, P./ M. Damage Received -$s3, Atk. Spd./ Casting Spd. +$s4. -->
+		<!-- M. Def. +20, Acquired XP/ SP +20%, P./ M. Damage Received -10%, Atk. Spd./ Casting Spd. +2%. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="45042" toLevel="6" name="Dragon Pendant Effect Lv. 3">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, P./ M. Damage Received -$s3, Atk. Spd./ Casting Spd. +$s4, P./ M. Critical Damage +$s5. -->
+		<!-- M. Def. +26, Acquired XP/ SP +25%, P./ M. Damage Received -15%, Atk. Spd./ Casting Spd. +3%, P./ M. Critical Damage +5%. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="45043" toLevel="6" name="Dragon Pendant Effect Lv. 4">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, P./ M. Damage Received -$s3, Atk. Spd./ Casting Spd. +$s4, P./ M. Critical Damage +$s5, P./M. Atk. +$s6. -->
+		<!-- M. Def. +33, Acquired XP/ SP +30%, P./ M. Damage Received -20%, Atk. Spd./ Casting Spd. +5%, P./ M. Critical Damage +8%, P./M. Atk. +10%. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -1432,5 +1432,54 @@
 		<!-- Max HP/ MP/ CP +10%, P. Def. +5%, M. Def. +10%, all weapon resistance +5, M./ P. Critical Rate +20, received PvP damage -10%. Reflects 4% of the damage received back to the enemy. -->
 		<icon>icon.vesper_cloack_i00</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<POLE>5</POLE>
+				<SWORD>5</SWORD>
+				<DUAL>5</DUAL>
+				<DUALFIST>5</DUALFIST>
+				<BLUNT>5</BLUNT>
+				<DAGGER>5</DAGGER>
+				<RAPIER>5</RAPIER>
+				<ANCIENTSWORD>5</ANCIENTSWORD>
+				<FIST>5</FIST>
+				<BOW>5</BOW>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-10</amount>
+				<type>PK</type>
+			</effect>
+			<effect name="DamageShield">
+				<amount>4</amount>
+			</effect>
+		</effects>
 	</skill>
 </list>

@@ -266,7 +266,7 @@
 		</effects>
 	</skill>
 	<skill id="54113" toLevel="1" name="Sayha's Wild Magic">
-		<!-- For 20 min., M. Critical Rate +20%. -->
+		<!-- For 20 min., M. Critical Rate +20. -->
 		<icon>icon.skill1303</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -396,11 +396,11 @@
 	<skill id="54117" toLevel="1" name="Sayha's Recover HP">
 		<!-- For 20 min., recovers HP. -->
 		<icon>icon.skill0211</icon>
-		<abnormalLevel>1</abnormalLevel>
+		<magicLevel>76</magicLevel>
+		<hitTime>500</hitTime>
+		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
-		<abnormalType>HP_REGEN_UP</abnormalType>
-		<effectPoint>100</effectPoint>
-		<hitTime>1800</hitTime>
+		<abnormalType>HEALER_BUFF1</abnormalType>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
@@ -409,20 +409,20 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="HpRegen">
-				<amount>1.1</amount> <!-- TODO: Correct value -->
-				<mode>DIFF</mode>
+			<effect name="HealOverTime">
+				<power>52</power>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="54118" toLevel="1" name="Sayha's Recover MP">
 		<!-- For 20 min., recovers MP. The Sayha's Effect Scroll cannot be used if the buff is active. -->
 		<icon>icon.skill0213</icon>
-		<abnormalLevel>1</abnormalLevel>
+		<magicLevel>76</magicLevel>
+		<hitTime>500</hitTime>
+		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
-		<abnormalType>MP_REGEN_UP</abnormalType>
-		<effectPoint>100</effectPoint>
-		<hitTime>1800</hitTime>
+		<abnormalType>CUBIC_BUFF1</abnormalType>
 		<operateType>A2</operateType>
 		<reuseDelay>2000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
@@ -431,26 +431,28 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="MpRegen">
-				<amount>1.1</amount> <!-- TODO: Correct value -->
-				<mode>DIFF</mode>
+			<effect name="ManaHealOverTime">
+				<power>11</power>
+				<ticks>15</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="54119" toLevel="1" name="Chef's Fish Stew - Victory">
-		<!-- For 3 h., HP/ MP Recovery Bonus +20%, P./ M. Accuracy +4, P./ M. Evasion +4, PvE Damage +15%, Atk. Spd./ Casting Spd. +10%, P./ M. Critical Rate +15%, P./ M. Critical Damage +15%. The effect remains after death. -->
+		<!-- For 3 h., HP/ MP Recovery Rate +20%, P./ M. Accuracy +4, P./ M. Evasion +4, PvE Damage +15%, Atk. Spd./ Casting Spd. +10%, P./ M. Critical Rate +15%, P./ M. Critical Damage +15%. The effect remains after death. -->
 		<icon>icon.fish_stew_residence_cha</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>60000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="54120" toLevel="1" name="Adventurer's Chest: High Priest Transformation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54121" toLevel="1" name="Adventurer's Chest: Valkyrie Transformation">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -537,6 +539,7 @@
 		</effects>
 	</skill>
 	<skill id="54126" toLevel="3" name="Saiha's Grace Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>

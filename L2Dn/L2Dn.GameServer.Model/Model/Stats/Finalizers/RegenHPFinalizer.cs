@@ -92,7 +92,7 @@ public class RegenHPFinalizer: StatFunction
 						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_HP);
 						if (func != null)
 						{
-							baseValue *= (func.getLvl() / 100);
+							baseValue *= (func.getLevel() / 100);
 						}
 					}
 				}

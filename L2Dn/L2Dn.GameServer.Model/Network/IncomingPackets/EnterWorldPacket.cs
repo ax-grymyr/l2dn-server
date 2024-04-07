@@ -83,17 +83,17 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		
 		connection.Send(new UserInfoPacket(player));
 		
-		// Restore to instanced area if enabled
+		// Restore to instanced area if enabled.
+		PlayerVariables vars = player.getVariables();
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
-			PlayerVariables vars = player.getVariables();
 			Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-			if ((instance != null) && (instance.getId() == vars.getInt("INSTANCE_RESTORE", 0)))
+			if ((instance != null) && (instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0)))
 			{
 				player.setInstance(instance);
 			}
 			
-			vars.remove("INSTANCE_RESTORE");
+			vars.remove(PlayerVariables.INSTANCE_RESTORE);
 		}
 		
 		if (!player.isGM())
@@ -571,7 +571,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 		
 		// Check if expoff is enabled.
-		if (player.getVariables().getBoolean("EXPOFF", false))
+		if (vars.getBoolean("EXPOFF", false))
 		{
 			player.disableExpGain();
 			player.sendMessage("Experience gain is disabled.");

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3498" toLevel="1" name="Special Ability: Light">
+	<skill id="3498" toLevel="1" name="Special Ability: Lightness">
 		<!-- Increases weight Limit. -->
 		<icon>icon.skill0150</icon>
 		<magicLevel>46</magicLevel>

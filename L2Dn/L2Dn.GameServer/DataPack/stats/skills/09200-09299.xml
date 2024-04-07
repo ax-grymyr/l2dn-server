@@ -24,7 +24,7 @@
 		</effects>
 	</skill>
 	<skill id="9210" toLevel="1" name="Dismount">
-		<!-- Dismounts from a ridable mount. -->
+		<!-- Dismounts from a kukuru. -->
 		<icon>icon.skill9210</icon>
 		<operateType>A1</operateType>
 		<hitTime>2500</hitTime>
@@ -41,7 +41,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="9244" toLevel="1" name="Greater Scroll: Enchant Weapon (D-grade)">
+	<skill id="9244" toLevel="1" name="Improved Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -50,7 +51,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9245" toLevel="1" name="Greater Scroll: Enchant Armor (D-grade)">
+	<skill id="9245" toLevel="1" name="Improved Scroll: Enchant Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -59,7 +61,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9246" toLevel="1" name="Greater Scroll: Enchant Weapon (C-grade)">
+	<skill id="9246" toLevel="1" name="Improved Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -68,7 +71,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9247" toLevel="1" name="Greater Scroll: Enchant Armor (C-grade)">
+	<skill id="9247" toLevel="1" name="Improved Scroll: Enchant Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -77,7 +81,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9248" toLevel="1" name="Greater Scroll: Enchant Weapon (B-grade)">
+	<skill id="9248" toLevel="1" name="Improved Scroll: Enchant Weapon (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -86,7 +91,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9249" toLevel="1" name="Greater Scroll: Enchant Armor (B-grade)">
+	<skill id="9249" toLevel="1" name="Improved Scroll: Enchant Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -96,6 +102,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9250" toLevel="1" name="Improved Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -105,6 +112,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9251" toLevel="1" name="Improved Scroll: Enchant Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -114,6 +122,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9257" toLevel="1" name="Mentor's Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -123,6 +132,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9259" toLevel="1" name="Mentor's Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -131,8 +141,8 @@
 		<targetType>ITEM</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9279" toLevel="1" name="PC Progression Support">
-		<!-- Acquired XP/ SP +10%. Not for servitors. PA only. -->
+	<skill id="9279" toLevel="1" name="PA Progression Support">
+		<!-- PA buff. Acquired XP/ SP +10%. Does not apply to the servitor. -->
 		<icon>icon.etc_pccafe_exp_i00</icon>
 		<operateType>A2</operateType>
 		<effectPoint>1</effectPoint>
@@ -149,7 +159,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="9293" toLevel="1" name="Mysterious Soulshot (No-grade)">
+	<skill id="9293" toLevel="1" name="Mysterious No-grade Soulshot">
 		<icon>icon.etc_spirit_bullet_white_i00</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -180,6 +190,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9296" toLevel="1" name="Mysterious Soulshot (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -189,6 +200,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="9297" toLevel="1" name="Mysterious Soulshot (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="15500" toLevel="1" name="Major Energy of Life">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>
@@ -8,6 +9,7 @@
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="15501" toLevel="1" name="Superior Energy of Life">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>
@@ -15,6 +17,7 @@
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="15502" toLevel="1" name="Energy of Mana">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>
@@ -22,6 +25,7 @@
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="15503" toLevel="1" name="Major Energy of Mana">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>
@@ -29,6 +33,7 @@
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="15504" toLevel="1" name="Superior Energy of Mana">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2000</castRange>
 		<hitTime>100</hitTime>
@@ -55,6 +60,7 @@
 	</skill>
 	<skill id="15508" toLevel="4" name="Special Armor">
 		<!-- Special armor reduces damage received from servitors. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="15509" toLevel="1" name="Laido Destruction">
@@ -79,7 +85,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="15511" toLevel="1" name="Laido Punch">
-		<!-- Attacks a single enemy. -->
+		<!-- Powerful attack on enemy. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
@@ -120,6 +126,7 @@
 	</skill>
 	<skill id="15515" toLevel="1" name="Penetrating Eyes">
 		<!-- Emits power from the eyes for powerful damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
@@ -130,6 +137,7 @@
 	</skill>
 	<skill id="15516" toLevel="1" name="Summon Giant Illusion">
 		<!-- Twists the flow of time to summon a bigger version of the self upon death (Presentation). -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -137,7 +145,8 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="15517" toLevel="1" name="Chaos Attack">
-		<!-- Swings arms to attack target. -->
+		<!-- Inflicts powerful physical damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>70</castRange>
@@ -146,7 +155,7 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="15518" toLevel="2" name="Confuse Body">
-		<!-- Confuses the interior of the target's body, decreasing P. Def./ M. Def. by $s1. -->
+		<!-- Confuses the interior of the target's body, decreasing P. Def./ M. Def. by 10%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
 		<castRange>300</castRange>
@@ -157,6 +166,7 @@
 	</skill>
 	<skill id="15519" toLevel="1" name="Summon Undead">
 		<!-- Summons real body. (Presentation) -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>1000</hitTime>
@@ -165,6 +175,7 @@
 	</skill>
 	<skill id="15520" toLevel="1" name="Rush Raid">
 		<!-- Powerful rush attack on enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -173,7 +184,8 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="15521" toLevel="1" name="Flailing Spin">
-		<!-- Swings arms to attack target. -->
+		<!-- Inflicts powerful physical damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>70</castRange>
@@ -205,6 +217,7 @@
 	</skill>
 	<skill id="15524" toLevel="1" name="Suck Blood">
 		<!-- Sucks blood from the enemy, continuously draining HP. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -215,6 +228,7 @@
 	</skill>
 	<skill id="15525" toLevel="2" name="Rush Attack">
 		<!-- Powerful rush attack on enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -233,6 +247,7 @@
 	</skill>
 	<skill id="15527" toLevel="1" name="Chaos Breath">
 		<!-- AoE M. Atk. On target's area. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
@@ -243,6 +258,7 @@
 	</skill>
 	<skill id="15528" toLevel="1" name="Kaonel Rush">
 		<!-- Powerful rush attack on enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -250,7 +266,7 @@
 		<hitTime>100</hitTime>
 	</skill>
 	<skill id="15529" toLevel="1" name="Absorb Spirit">
-		<!-- Soul is drained. P./ M. Def. -30%, and Atk. Spd. +10%. -->
+		<!-- Soul is drained. P. Def./ M. Def. -30%, and Atk. Spd. +10%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
 		<castRange>300</castRange>
@@ -272,7 +288,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15531" toLevel="1" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
 		<mpConsume>13</mpConsume>
@@ -285,6 +301,7 @@
 	</skill>
 	<skill id="15532" toLevel="1" name="Pupil Focus">
 		<!-- Emits power from the eyes for powerful damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>40</castRange>
@@ -306,6 +323,7 @@
 	</skill>
 	<skill id="15534" toLevel="1" name="Mutilate Body">
 		<!-- Cuts enemy for powerful damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>70</castRange>
@@ -315,6 +333,7 @@
 	</skill>
 	<skill id="15535" toLevel="1" name="Bloody Breath">
 		<!-- Breathes a crimson breath on enemies within 120 degrees in front of you to inflict damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
@@ -332,8 +351,8 @@
 		<effectPoint>1</effectPoint>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
-	<skill id="15537" toLevel="2" name="Blood Sacrifice: Decrease Movement Speed">
-		<!-- Restores $s1 of enemy's HP and gives an abnormal status debuff. -->
+	<skill id="15537" toLevel="2" name="Blood Sacrifice: Decrease Speed">
+		<!-- The target's HP +50%, also inflicts debuff. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -341,7 +360,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15538" toLevel="2" name="Blood Sacrifice: Decrease P. Accuracy">
-		<!-- Restores $s1 of enemy's HP and gives an abnormal status debuff. -->
+		<!-- The target's HP +50%, also inflicts debuff. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -349,7 +368,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15539" toLevel="2" name="Blood Sacrifice: Decrease P. Def.">
-		<!-- Restores $s1 of enemy's HP and gives an abnormal status debuff. -->
+		<!-- The target's HP +50%, also inflicts debuff. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -357,7 +376,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15540" toLevel="2" name="Blood Sacrifice: Decrease M. Def.">
-		<!-- Restores $s1 of enemy's HP and gives an abnormal status debuff. -->
+		<!-- The target's HP +50%, also inflicts debuff. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -366,6 +385,7 @@
 	</skill>
 	<skill id="15541" toLevel="1" name="Flame Pillar">
 		<!-- A pillar of fire rushes from beneath your target's feet for damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
@@ -375,6 +395,7 @@
 	</skill>
 	<skill id="15542" toLevel="1" name="Rush Raid">
 		<!-- Rush toward target, inflicts damage. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -395,6 +416,7 @@
 	</skill>
 	<skill id="15544" toLevel="1" name="Rush Attack">
 		<!-- Powerful rush attack on enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>300</castRange>
@@ -423,6 +445,7 @@
 	</skill>
 	<skill id="15547" toLevel="1" name="Point Attack">
 		<!-- Swings sword at an enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>150</castRange>
@@ -498,6 +521,7 @@
 	</skill>
 	<skill id="15555" toLevel="1" name="Cunning Strike">
 		<!-- Hits enemy's vital point. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>200</castRange>
@@ -516,8 +540,8 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15557" toLevel="1" name="Crossbow Attack">
-		<!-- Target's Atk. Spd. -10%. -->
+	<skill id="15557" toLevel="1" name="Crane Strike">
+		<!-- Decreases target's Atk. Spd. by 10%. -->
 		<icon>icon.skill0101</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -576,6 +600,7 @@
 	</skill>
 	<skill id="15564" toLevel="2" name="Theor's Attack">
 		<!-- P. Atk. On a single enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>70</castRange>
@@ -613,8 +638,9 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15568" toLevel="1" name="Forward March">
+	<skill id="15568" toLevel="1" name="Charge">
 		<!-- Powerful rush attack on enemy. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>600</castRange>
@@ -633,7 +659,7 @@
 		<reuseDelay>150000</reuseDelay>
 	</skill>
 	<skill id="15571" toLevel="1" name="Master Siege Attack">
-		<!-- Launches a powerful attack on the target. -->
+		<!-- Powerful attack on enemy. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<mpConsume>100</mpConsume>
@@ -663,7 +689,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="15575" toLevel="1" name="Dedicated Blow">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>150</castRange>
@@ -673,7 +699,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="15576" toLevel="1" name="Dedicated Shot">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<castRange>250</castRange>
@@ -755,7 +781,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="15584" toLevel="1" name="Despairing Bombing">
-		<!-- Powerful attack on surrounding area. -->
+		<!-- Powerful attack on nearby enemies. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
@@ -806,7 +832,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="15589" toLevel="1" name="Painful Blow">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill1275</icon>
 		<operateType>A1</operateType>
 		<castRange>150</castRange>
@@ -843,7 +869,7 @@
 		<effectPoint>-867</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="15594" toLevel="1" name="Lindvior Decrease Movement Speed">
+	<skill id="15594" toLevel="1" name="Lindvior's Speed Decrease">
 		<!-- Stomping on the ground when enraged. -->
 		<icon>icon.skill0127</icon>
 		<operateType>A2</operateType>
@@ -861,16 +887,19 @@
 	</skill>
 	<skill id="15596" toLevel="1" name="Presentation - Lindvior's Takeoff">
 		<!-- Lindvior takes off. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>4200</hitTime>
 	</skill>
 	<skill id="15597" toLevel="1" name="Presentation - Lindvior's Landing">
-		<!-- Lindvior's Fall -->
+		<!-- Lindvior lands. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>5000</hitTime>
 	</skill>
 	<skill id="15598" toLevel="1" name="Mighty Wind Strike">
 		<!-- Ranged projectile. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>2500</castRange>
 		<hitTime>2500</hitTime>

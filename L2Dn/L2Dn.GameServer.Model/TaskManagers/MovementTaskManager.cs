@@ -39,27 +39,21 @@ public class MovementTaskManager
 				return;
 			}
 
-			List<Creature> toRemove = new List<Creature>(); // TODO figure out if it is possible to remove item during enumeration
 			foreach (Creature creature in _creatures)
 			{
 				try
 				{
 					if (creature.updatePosition())
 					{
-						toRemove.Add(creature);
+						_creatures.Remove(creature);
 						creature.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 					}
 				}
 				catch (Exception e)
 				{
-					toRemove.Add(creature);
+					_creatures.Remove(creature);
 					LOGGER.Warn("MovementTaskManager: Problem updating position of " + creature + ": " + e);
 				}
-			}
-
-			foreach (Creature creature in toRemove)
-			{
-				_creatures.remove(creature);
 			}
 		}
 	}
@@ -90,7 +84,7 @@ public class MovementTaskManager
 		
 		Set<Creature> pool1 = new();
 		pool1.add(creature);
-		ThreadPool.scheduleAtFixedRate(new Movement(pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new Movement(pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		POOLS.add(pool1);
 	}
 	

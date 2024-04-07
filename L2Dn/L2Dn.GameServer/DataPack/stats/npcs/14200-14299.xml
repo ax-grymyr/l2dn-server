@@ -7,7 +7,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="8.5" mp="1803" mpRegen="3" />
 			<attack physical="954.22815" magical="735.9804506" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -48,7 +48,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="8.5" mp="1812" mpRegen="3" />
 			<attack physical="958.5072" magical="742.5704702" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -89,7 +89,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="8.5" mp="1820" mpRegen="3" />
 			<attack physical="962.78625" magical="749.1604898" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -130,7 +130,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="8.5" mp="1829" mpRegen="3" />
 			<attack physical="967.0653" magical="755.7505094" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -171,7 +171,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="8.5" mp="1846" mpRegen="3" />
 			<attack physical="971.34435" magical="762.340529" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -212,7 +212,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
 			<attack physical="975.6234" magical="768.9305486" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -253,7 +253,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
 			<attack physical="979.90245" magical="775.5205681" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -294,9 +294,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1050" hpRegen="5.5" mp="531" mpRegen="2.1" />
-			<attack physical="218.180501" magical="135.44454" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1050.81652" hpRegen="5.5" mp="531" mpRegen="2.1" />
+			<attack physical="198.34591" magical="135.44454" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="164.88513" magical="120.65578" />
 			<speed>
 				<walk ground="48" />
@@ -310,16 +310,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="4" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -334,9 +334,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1229" hpRegen="5.5" mp="637" mpRegen="2.1" />
-			<attack physical="272.85786" magical="169.38777" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1229.78678" hpRegen="5.5" mp="637.8" mpRegen="2.1" />
+			<attack physical="248.0526" magical="169.38777" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="182.18816" magical="133.31739" />
 			<speed>
 				<walk ground="48" />
@@ -350,16 +350,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="4" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -374,9 +374,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1421" hpRegen="5.5" mp="747" mpRegen="2.1" />
-			<attack physical="336.103966" magical="208.6504" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
+			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="200.23844" magical="146.5258" />
 			<speed>
 				<walk ground="48" />
@@ -390,16 +390,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="5" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -414,9 +414,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1621" hpRegen="6.5" mp="861" mpRegen="2.4" />
-			<attack physical="407.757944" magical="253.13256" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1621.75618" hpRegen="6.5" mp="861" mpRegen="2.4" />
+			<attack physical="370.68904" magical="253.13256" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="218.89589" magical="160.17851" />
 			<speed>
 				<walk ground="48" />
@@ -430,16 +430,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="5" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -454,9 +454,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1828" hpRegen="6.5" mp="977" mpRegen="2.4" />
-			<attack physical="487.18912" magical="302.44274" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1828.68266" hpRegen="6.5" mp="977.4" mpRegen="2.4" />
+			<attack physical="442.8992" magical="302.44274" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="48" />
@@ -470,16 +470,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="5" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="3" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -494,9 +494,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1933" hpRegen="6.5" mp="1036" mpRegen="2.4" />
-			<attack physical="529.480061" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
+			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
 			<speed>
 				<walk ground="48" />
@@ -510,16 +510,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="6" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="3" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -534,9 +534,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2037" hpRegen="7.5" mp="1097" mpRegen="2.7" />
-			<attack physical="573.236301" magical="355.86007" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2037.81082" hpRegen="7.5" mp="1097" mpRegen="2.7" />
+			<attack physical="521.12391" magical="355.86007" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="257.34267" magical="188.3122" />
 			<speed>
 				<walk ground="48" />
@@ -550,16 +550,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="6" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="3" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -574,9 +574,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2141" hpRegen="7.5" mp="1158" mpRegen="2.7" />
-			<attack physical="618.225025" magical="383.78868" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
+			<attack physical="562.02275" magical="383.78868" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="267.04468" magical="195.41171" />
 			<speed>
 				<walk ground="48" />
@@ -590,16 +590,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="6" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="3" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -614,9 +614,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2244" hpRegen="7.5" mp="1219" mpRegen="2.7" />
-			<attack physical="664.178933" magical="412.31647" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2244.67715" hpRegen="7.5" mp="1219.8" mpRegen="2.7" />
+			<attack physical="603.79903" magical="412.31647" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="276.72752" magical="202.49719" />
 			<speed>
 				<walk ground="48" />
@@ -630,16 +630,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="6" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="3" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -654,9 +654,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2345" hpRegen="7.5" mp="1282" mpRegen="2.7" />
-			<attack physical="710.797648" magical="441.25696" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2345.76698" hpRegen="7.5" mp="1282.4" mpRegen="2.7" />
+			<attack physical="646.17968" magical="441.25696" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="286.3615" magical="209.54692" />
 			<speed>
 				<walk ground="48" />
@@ -670,16 +670,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="6" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -694,9 +694,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="757.750103" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="48" />
@@ -710,16 +710,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="7" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -734,9 +734,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2540" hpRegen="8.5" mp="1410" mpRegen="3" />
-			<attack physical="804.677566" magical="499.53679" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
+			<attack physical="731.52506" magical="499.53679" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
 			<speed>
 				<walk ground="48" />
@@ -750,16 +750,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="7" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -774,9 +774,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2632" hpRegen="8.5" mp="1475" mpRegen="3" />
-			<attack physical="851.197578" magical="528.41601" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2632.19636" hpRegen="8.5" mp="1475" mpRegen="3" />
+			<attack physical="773.81598" magical="528.41601" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="314.65987" magical="230.25444" />
 			<speed>
 				<walk ground="48" />
@@ -790,16 +790,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="7" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -814,9 +814,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
-			<attack physical="920.908595" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<attack physical="815.37145" magical="556.793" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<speed>
 				<walk ground="48" />
@@ -830,16 +830,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="3" /> <!-- HP Medium-High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
 			<skill id="4378" level="7" /> <!-- Damage Shield -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.21</sNpcPropHpRate>
 		<collision>
@@ -854,7 +854,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
 			<attack physical="941.391" magical="584.41" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -894,7 +894,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2812" hpRegen="8.5" mp="1615" mpRegen="3" />
 			<attack physical="946.097955" magical="591.0000196" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -934,7 +934,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2822" hpRegen="8.5" mp="1624" mpRegen="3" />
 			<attack physical="950.80491" magical="597.5900392" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -974,7 +974,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2832" hpRegen="8.5" mp="1632" mpRegen="3" />
 			<attack physical="955.511865" magical="604.1800588" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1014,7 +1014,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2842" hpRegen="8.5" mp="1641" mpRegen="3" />
 			<attack physical="960.21882" magical="610.7700784" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1054,7 +1054,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2852" hpRegen="8.5" mp="1649" mpRegen="3" />
 			<attack physical="964.925775" magical="617.360098" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1094,7 +1094,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2862" hpRegen="8.5" mp="1657" mpRegen="3" />
 			<attack physical="969.63273" magical="623.9501175" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1134,7 +1134,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2871" hpRegen="8.5" mp="1666" mpRegen="3" />
 			<attack physical="974.339685" magical="630.5401371" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1174,7 +1174,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
 			<attack physical="979.04664" magical="637.1301567" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1214,7 +1214,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2889" hpRegen="8.5" mp="1683" mpRegen="3" />
 			<attack physical="983.753595" magical="643.7201763" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1254,7 +1254,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2899" hpRegen="8.5" mp="1691" mpRegen="3" />
 			<attack physical="988.46055" magical="650.3101959" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1294,7 +1294,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2908" hpRegen="8.5" mp="1700" mpRegen="3" />
 			<attack physical="993.167505" magical="656.9002155" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1334,7 +1334,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2916" hpRegen="8.5" mp="1708" mpRegen="3" />
 			<attack physical="997.87446" magical="663.4902351" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1374,7 +1374,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2926" hpRegen="8.5" mp="1717" mpRegen="3" />
 			<attack physical="1002.581415" magical="670.0802547" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1414,7 +1414,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2935" hpRegen="8.5" mp="1725" mpRegen="3" />
 			<attack physical="1007.28837" magical="676.6702743" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1454,7 +1454,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2944" hpRegen="8.5" mp="1734" mpRegen="3" />
 			<attack physical="1011.995325" magical="683.2602939" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1494,7 +1494,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2951" hpRegen="8.5" mp="1743" mpRegen="3" />
 			<attack physical="1016.70228" magical="689.8503135" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1534,7 +1534,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2960" hpRegen="8.5" mp="1751" mpRegen="3" />
 			<attack physical="1021.409235" magical="696.440333" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1574,7 +1574,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2969" hpRegen="8.5" mp="1760" mpRegen="3" />
 			<attack physical="1026.11619" magical="703.0303526" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1614,7 +1614,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2978" hpRegen="8.5" mp="1768" mpRegen="3" />
 			<attack physical="1030.823145" magical="709.6203722" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1654,7 +1654,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2985" hpRegen="8.5" mp="1777" mpRegen="3" />
 			<attack physical="1035.5301" magical="716.2103918" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1694,7 +1694,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2993" hpRegen="8.5" mp="1786" mpRegen="3" />
 			<attack physical="1040.237055" magical="722.8004114" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1734,7 +1734,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3001" hpRegen="8.5" mp="1794" mpRegen="3" />
 			<attack physical="1044.94401" magical="729.390431" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1774,7 +1774,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="8.5" mp="1803" mpRegen="3" />
 			<attack physical="1049.650965" magical="735.9804506" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1814,7 +1814,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="8.5" mp="1812" mpRegen="3" />
 			<attack physical="1054.35792" magical="742.5704702" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1855,7 +1855,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="8.5" mp="1820" mpRegen="3" />
 			<attack physical="1059.064875" magical="749.1604898" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1896,7 +1896,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="8.5" mp="1829" mpRegen="3" />
 			<attack physical="1063.77183" magical="755.7505094" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1937,7 +1937,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="8.5" mp="1846" mpRegen="3" />
 			<attack physical="1068.478785" magical="762.340529" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -1978,7 +1978,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
 			<attack physical="1073.18574" magical="768.9305486" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -2019,7 +2019,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
 			<attack physical="1077.892695" magical="775.5205681" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
@@ -2058,19 +2058,13 @@
 			<skill name="Buff1" id="4699" level="1" />
 			<skill name="Buff2" id="4700" level="1" />
 			<skill name="DDMagic" id="4701" level="1" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2889" hpRegen="8.5" mp="1683" mpRegen="3" />
-			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="332.70061" magical="243.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2762.08447" hpRegen="8.5" mp="1574" mpRegen="3" />
+			<attack physical="835.75573" magical="570.71283" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="328.27073" magical="240.21427" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2093,11 +2087,8 @@
 			<skill id="4699" level="1" /> <!-- Blessing of Queen -->
 			<skill id="4700" level="1" /> <!-- Gift of Queen -->
 			<skill id="4701" level="1" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="1" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2110,19 +2101,13 @@
 			<skill name="Buff1" id="4699" level="2" />
 			<skill name="Buff2" id="4700" level="2" />
 			<skill name="DDMagic" id="4701" level="2" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3000" hpRegen="8.5" mp="1783" mpRegen="3" />
-			<attack physical="315.05" magical="596.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="340.70061" magical="249.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2842.35387" hpRegen="8.5" mp="1641" mpRegen="3" />
+			<attack physical="875.49759" magical="597.85136" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2145,11 +2130,8 @@
 			<skill id="4699" level="2" /> <!-- Blessing of Queen -->
 			<skill id="4700" level="2" /> <!-- Gift of Queen -->
 			<skill id="4701" level="2" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2162,19 +2144,13 @@
 			<skill name="Buff1" id="4699" level="3" />
 			<skill name="Buff2" id="4700" level="3" />
 			<skill name="DDMagic" id="4701" level="3" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3200" hpRegen="8.5" mp="1983" mpRegen="3" />
-			<attack physical="330.05" magical="615.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="360.70061" magical="260.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2916.89894" hpRegen="8.5" mp="1708.8" mpRegen="3" />
+			<attack physical="913.54847" magical="623.83518" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="345.61127" magical="252.90333" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2197,11 +2173,8 @@
 			<skill id="4699" level="3" /> <!-- Blessing of Queen -->
 			<skill id="4700" level="3" /> <!-- Gift of Queen -->
 			<skill id="4701" level="3" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2214,19 +2187,13 @@
 			<skill name="Buff1" id="4699" level="4" />
 			<skill name="Buff2" id="4700" level="4" />
 			<skill name="DDMagic" id="4701" level="4" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3450" hpRegen="8.5" mp="2050" mpRegen="3" />
-			<attack physical="350.05" magical="625.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="379.70061" magical="280.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2985.1835" hpRegen="8.5" mp="1777.4" mpRegen="3" />
+			<attack physical="949.52401" magical="648.40181" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="353.86144" magical="258.94045" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2249,11 +2216,8 @@
 			<skill id="4699" level="4" /> <!-- Blessing of Queen -->
 			<skill id="4700" level="4" /> <!-- Gift of Queen -->
 			<skill id="4701" level="4" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2266,19 +2230,13 @@
 			<skill name="Buff1" id="4699" level="5" />
 			<skill name="Buff2" id="4700" level="5" />
 			<skill name="DDMagic" id="4701" level="5" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3650" hpRegen="8.5" mp="2150" mpRegen="3" />
-			<attack physical="370.05" magical="640.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="398.70061" magical="295.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3016.82079" hpRegen="8.5" mp="1812" mpRegen="3" />
+			<attack physical="966.61544" magical="660.07304" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="357.86723" magical="261.87171" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2301,11 +2259,8 @@
 			<skill id="4699" level="5" /> <!-- Blessing of Queen -->
 			<skill id="4700" level="5" /> <!-- Gift of Queen -->
 			<skill id="4701" level="5" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2315,22 +2270,16 @@
 	</npc>
 	<npc id="14256" level="85" type="Pet" name="Feline Queen">
 		<parameters>
-			<skill name="Buff1" id="4699" level="6" />
-			<skill name="Buff2" id="4700" level="6" />
+			<skill name="Buff1" id="4699" level="5" />
+			<skill name="Buff2" id="4700" level="5" />
 			<skill name="DDMagic" id="4701" level="6" />
-			<!-- <skill name="buff3" id="5638" level="1" />
-			<skill name="buff4" id="5639" level="1" />
-			<skill name="buff5" id="5640" level="1" />
-			<param name="buff_action3" value="1051" />
-			<param name="buff_action4" value="1052" />
-			<param name="buff_action5" value="1053" /> -->
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3790" hpRegen="8.5" mp="2280" mpRegen="3" />
-			<attack physical="390.05" magical="660.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="410.70061" magical="305.45587" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3046.70947" hpRegen="8.5" mp="1846.8" mpRegen="3" />
+			<attack physical="983.0479" magical="671.29428" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="361.78814" magical="264.74086" />
 			<speed>
 				<walk ground="26" />
 				<run ground="170" />
@@ -2350,14 +2299,11 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4699" level="6" /> <!-- Blessing of Queen -->
-			<skill id="4700" level="6" /> <!-- Gift of Queen -->
+			<skill id="4699" level="5" /> <!-- Blessing of Queen -->
+			<skill id="4700" level="5" /> <!-- Gift of Queen -->
 			<skill id="4701" level="6" /> <!-- Cure of Queen -->
-			<!-- <skill id="5639" level="1" /> Feline Queen - Blessed Soul
-			<skill id="5638" level="1" /> Feline Queen - Blessed Body 
-			<skill id="5640" level="1" /> Feline Queen - Haste -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" />
 		<collision>
@@ -2379,7 +2325,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
 			<attack physical="255.62" magical="470.4" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.92" magical="216.54" />
@@ -2431,7 +2377,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2540" hpRegen="8.5" mp="1410" mpRegen="3" />
 			<attack physical="268.07" magical="499.54" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.36" magical="223.45" />
@@ -2483,7 +2429,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2632" hpRegen="8.5" mp="1475" mpRegen="3" />
 			<attack physical="280.09" magical="528.42" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="314.66" magical="230.25" />
@@ -2535,7 +2481,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<attack physical="291.56" magical="556.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78" magical="236.93" />
@@ -2587,7 +2533,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2639,7 +2585,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2812" hpRegen="8.5" mp="1615" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2691,7 +2637,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2822" hpRegen="8.5" mp="1624" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2743,7 +2689,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2832" hpRegen="8.5" mp="1632" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2795,7 +2741,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2842" hpRegen="8.5" mp="1641" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2847,7 +2793,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2852" hpRegen="8.5" mp="1649" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2899,7 +2845,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2862" hpRegen="8.5" mp="1657" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -2951,7 +2897,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2871" hpRegen="8.5" mp="1666" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3003,7 +2949,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3055,7 +3001,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2889" hpRegen="8.5" mp="1683" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3107,7 +3053,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2899" hpRegen="8.5" mp="1691" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3159,7 +3105,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2908" hpRegen="8.5" mp="1700" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3211,7 +3157,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2916" hpRegen="8.5" mp="1708" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3263,7 +3209,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2926" hpRegen="8.5" mp="1717" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3315,7 +3261,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2935" hpRegen="8.5" mp="1725" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3367,7 +3313,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2944" hpRegen="8.5" mp="1734" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3419,7 +3365,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2951" hpRegen="8.5" mp="1743" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3471,7 +3417,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2960" hpRegen="8.5" mp="1751" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3523,7 +3469,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2969" hpRegen="8.5" mp="1760" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3575,7 +3521,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2978" hpRegen="8.5" mp="1768" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3627,7 +3573,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2985" hpRegen="8.5" mp="1777" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3679,7 +3625,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2993" hpRegen="8.5" mp="1786" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3731,7 +3677,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3001" hpRegen="8.5" mp="1794" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3783,7 +3729,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="8.5" mp="1803" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3835,7 +3781,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="8.5" mp="1812" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3887,7 +3833,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="8.5" mp="1820" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3939,7 +3885,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="8.5" mp="1829" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -3991,7 +3937,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="8.5" mp="1846" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -4043,7 +3989,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -4095,7 +4041,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
 			<attack physical="297.05" magical="584.40994" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.70061" magical="243.45587" />
@@ -4140,9 +4086,9 @@
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
-			<attack physical="51.75278" magical="35.34044" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="387.02878" hpRegen="3.5" mp="218.52" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="92.65694" magical="67.80232" />
 			<speed>
 				<walk ground="27" />
@@ -4156,10 +4102,10 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!-- HP Very High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
@@ -4173,16 +4119,56 @@
 			<height normal="18" />
 		</collision>
 	</npc>
-	<npc id="14296" level="32" type="Pet" name="Boxer the Unicorn">
+	<npc id="14296" level="27" type="Pet" name="Boxer the Unicorn">
+		<parameters>
+			<skill name="HealMagic" id="4025" level="2" />
+			<param name="step1_action01" value="45" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="515.17856" hpRegen="3.5" mp="286.92" mpRegen="1.5" />
+			<attack physical="74.99121" magical="51.20928" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="108.28767" magical="79.24022" />
+			<speed>
+				<walk ground="27" />
+				<run ground="140" />
+			</speed>
+			<hitTime>710</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="false" undying="false" />
+		<skillList>
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4408" level="6" /> <!-- HP Very High -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="4025" level="2" /> <!-- Master Recharge -->
+		</skillList>
+		<shots soul="1" spirit="1" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
+		<collision>
+			<radius normal="11" />
+			<height normal="18" />
+		</collision>
+	</npc>
+	<npc id="14297" level="32" type="Pet" name="Boxer the Unicorn">
 		<parameters>
 			<skill name="HealMagic" id="4025" level="3" />
 			<param name="step1_action01" value="45" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="515" hpRegen="4.5" mp="286" mpRegen="1.8" />
-			<attack physical="106.16525" magical="72.49711" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
+			<attack physical="106.16525" magical="72.49711" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="125.57727" magical="91.89199" />
 			<speed>
 				<walk ground="27" />
@@ -4196,10 +4182,10 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!-- HP Very High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
@@ -4213,16 +4199,56 @@
 			<height normal="18" />
 		</collision>
 	</npc>
-	<npc id="14297" level="42" type="Pet" name="Boxer the Unicorn">
+	<npc id="14298" level="37" type="Pet" name="Boxer the Unicorn">
+		<parameters>
+			<skill name="HealMagic" id="4025" level="3" />
+			<param name="step1_action01" value="45" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="847.31754" hpRegen="4.5" mp="432.72" mpRegen="1.8" />
+			<attack physical="146.82587" magical="100.26304" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="144.47758" magical="105.72243" />
+			<speed>
+				<walk ground="27" />
+				<run ground="140" />
+			</speed>
+			<hitTime>710</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="false" undying="false" />
+		<skillList>
+			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4408" level="6" /> <!-- HP Very High -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="4025" level="3" /> <!-- Master Recharge -->
+		</skillList>
+		<shots soul="1" spirit="1" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
+		<collision>
+			<radius normal="11" />
+			<height normal="18" />
+		</collision>
+	</npc>
+	<npc id="14299" level="42" type="Pet" name="Boxer the Unicorn">
 		<parameters>
 			<skill name="HealMagic" id="4025" level="4" />
 			<param name="step1_action01" value="45" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="668" hpRegen="5.5" mp="358" mpRegen="2.1" />
-			<attack physical="198.34591" magical="135.44454" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1050.81652" hpRegen="5.5" mp="531" mpRegen="2.1" />
+			<attack physical="198.34591" magical="135.44454" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="164.88513" magical="120.65578" />
 			<speed>
 				<walk ground="27" />
@@ -4236,96 +4262,16 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="6" /> <!-- HP Very High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4025" level="3" /> <!-- Master Recharge -->
+			<skill id="4025" level="4" /> <!-- Master Recharge -->
 		</skillList>
-		<shots soul="2" spirit="1" />
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
-		<collision>
-			<radius normal="11" />
-			<height normal="18" />
-		</collision>
-	</npc>
-	<npc id="14298" level="50" type="Pet" name="Boxer the Unicorn">
-		<parameters>
-			<skill name="HealMagic" id="4025" level="5" />
-			<param name="step1_action01" value="45" />
-		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="847" hpRegen="5.5" mp="432" mpRegen="2.1" />
-			<attack physical="305.54906" magical="208.6504" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="200.23844" magical="146.5258" />
-			<speed>
-				<walk ground="27" />
-				<run ground="140" />
-			</speed>
-			<hitTime>710</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="false" />
-		<skillList>
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="4408" level="6" /> <!-- HP Very High -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4025" level="5" /> <!-- Master Recharge -->
-		</skillList>
-		<shots soul="2" spirit="1" />
-		<exCrtEffect>false</exCrtEffect>
-		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
-		<collision>
-			<radius normal="11" />
-			<height normal="18" />
-		</collision>
-	</npc>
-	<npc id="14299" level="58" type="Pet" name="Boxer the Unicorn">
-		<parameters>
-			<skill name="HealMagic" id="4025" level="5" />
-			<param name="step1_action01" value="45" />
-		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1050" hpRegen="6.5" mp="531" mpRegen="2.4" />
-			<attack physical="442.8992" magical="302.44274" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="237.99429" magical="174.1539" />
-			<speed>
-				<walk ground="27" />
-				<run ground="140" />
-			</speed>
-			<hitTime>710</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="false" />
-		<skillList>
-			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="4408" level="6" /> <!-- HP Very High -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4025" level="5" /> <!-- Master Recharge -->
-		</skillList>
-		<shots soul="3" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.61051</sNpcPropHpRate>
 		<collision>

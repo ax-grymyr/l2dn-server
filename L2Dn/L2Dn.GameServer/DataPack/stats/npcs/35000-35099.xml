@@ -8,7 +8,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="128" lhand="628" /> <!-- Knight's Sword / Hoplon -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="410.03" magical="430.78" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="206.7" magical="151.26" />
@@ -51,7 +51,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="478.51" magical="430.78" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="206.7" magical="151.26" />
@@ -94,7 +94,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="533.04" magical="430.78" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="175.7" magical="151.26" evasion="10" />
@@ -138,9 +138,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="410.03" magical="430.78" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -183,9 +183,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="410.03" magical="430.78" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -227,7 +227,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="128" lhand="628" /> <!-- Knight's Sword / Hoplon -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="410.03" magical="430.78" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="206.7" magical="151.26" />
@@ -270,7 +270,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="478.51" magical="430.78" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="206.7" magical="151.26" />
@@ -313,7 +313,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="533.04" magical="430.78" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="175.7" magical="151.26" evasion="10" />
@@ -357,9 +357,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="410.03" magical="430.78" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -402,9 +402,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="410.03" magical="430.78" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="410.03" magical="430.78" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="228.41" magical="151.26" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -446,7 +446,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="924.43" magical="971.18" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.47" magical="223.53" />
@@ -489,7 +489,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="1078.81" magical="971.18" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="305.47" magical="223.53" />
@@ -532,7 +532,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="1201.76" magical="971.18" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="259.65" magical="223.53" evasion="10" />
@@ -576,9 +576,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="325" /> <!-- Horn of Glory -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
-			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="924.43" magical="971.18" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -621,9 +621,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="196" /> <!-- Stick of Eternity -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
-			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="924.43" magical="971.18" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -665,7 +665,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="924.43" magical="971.18" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.47" magical="223.53" />
@@ -708,7 +708,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="1078.81" magical="971.18" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="305.47" magical="223.53" />
@@ -751,7 +751,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="2.7" />
 			<attack physical="1201.76" magical="971.18" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="259.65" magical="223.53" evasion="10" />
@@ -795,9 +795,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="325" /> <!-- Horn of Glory -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
-			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="924.43" magical="971.18" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -840,9 +840,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="196" /> <!-- Stick of Eternity -->
 		<acquire exp="883" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14547" hpRegen="2.7" mp="2169" mpRegen="4.1" />
-			<attack physical="924.43" magical="971.18" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="924.43" magical="971.18" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="337.55" magical="223.53" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -884,7 +884,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="132" /> <!-- Ultimate Sword -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="645.94" magical="678.62" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="255.64" magical="187.07" />
@@ -927,7 +927,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="301" /> <!-- Scorpion -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="753.82" magical="678.62" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="255.64" magical="187.07" />
@@ -970,7 +970,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="839.73" magical="678.62" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="217.3" magical="187.07" evasion="10" />
@@ -1014,9 +1014,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
-			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="645.94" magical="678.62" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1059,9 +1059,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
-			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="645.94" magical="678.62" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1103,7 +1103,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="132" /> <!-- Ultimate Sword -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="645.94" magical="678.62" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="255.64" magical="187.07" />
@@ -1146,7 +1146,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="301" /> <!-- Scorpion -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="753.82" magical="678.62" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="255.64" magical="187.07" />
@@ -1189,7 +1189,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- Light Crossbow -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="2.4" />
 			<attack physical="839.73" magical="678.62" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="217.3" magical="187.07" evasion="10" />
@@ -1233,9 +1233,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
-			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="645.94" magical="678.62" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1278,9 +1278,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="810" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13886" hpRegen="2.4" mp="2023" mpRegen="3.6" />
-			<attack physical="645.94" magical="678.62" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="645.94" magical="678.62" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="282.49" magical="187.07" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1322,7 +1322,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="20" /> <!-- Gladius / Buckler -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="520.83" magical="547.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="230.86" magical="168.93" />
@@ -1365,7 +1365,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="607.81" magical="547.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="230.86" magical="168.93" />
@@ -1408,7 +1408,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="274" /> <!-- Reinforced Bow -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="677.08" magical="547.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="196.23" magical="168.93" evasion="10" />
@@ -1452,9 +1452,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
-			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="520.83" magical="547.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1497,9 +1497,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="154" /> <!-- Dwarven Mace -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
-			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="520.83" magical="547.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1541,7 +1541,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="20" /> <!-- Gladius / Buckler -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="520.83" magical="547.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="230.86" magical="168.93" />
@@ -1584,7 +1584,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="607.81" magical="547.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="230.86" magical="168.93" />
@@ -1627,7 +1627,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="274" /> <!-- Reinforced Bow -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="2.4" />
 			<attack physical="677.08" magical="547.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="196.23" magical="168.93" evasion="10" />
@@ -1671,9 +1671,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
-			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="520.83" magical="547.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1716,9 +1716,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="154" /> <!-- Dwarven Mace -->
 		<acquire exp="738" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13256" hpRegen="2.4" mp="1881" mpRegen="3.6" />
-			<attack physical="520.83" magical="547.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="520.83" magical="547.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="255.1" magical="168.93" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1760,7 +1760,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" /> <!-- Gladius -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="315.22" magical="331.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="183.53" magical="134.3" />
@@ -1803,7 +1803,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="367.87" magical="331.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="183.53" magical="134.3" />
@@ -1846,7 +1846,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="409.79" magical="331.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="156" magical="134.3" evasion="10" />
@@ -1890,9 +1890,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="6" /> <!-- Apprentice's Wand -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="315.22" magical="331.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1935,9 +1935,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="315.22" magical="331.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -1979,7 +1979,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="66" /> <!-- Gladius -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="315.22" magical="331.16" random="30" critical="4" accuracy="4.75" attackSpeed="379" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="183.53" magical="134.3" />
@@ -2022,7 +2022,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="367.87" magical="331.16" random="30" critical="4" accuracy="0" attackSpeed="325" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="183.53" magical="134.3" />
@@ -2065,7 +2065,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="2.1" />
 			<attack physical="409.79" magical="331.16" random="10" critical="8" accuracy="0" attackSpeed="293" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="156" magical="134.3" evasion="10" />
@@ -2109,9 +2109,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="6" /> <!-- Apprentice's Wand -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="315.22" magical="331.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -2154,9 +2154,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
 		<acquire exp="722" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13188" hpRegen="2.1" mp="1846" mpRegen="3.2" />
-			<attack physical="315.22" magical="331.16" random="50" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="315.22" magical="331.16" random="10" critical="1" accuracy="9" attackSpeed="379" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="202.8" magical="134.3" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -2293,7 +2293,7 @@
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="2" mp="40" mpRegen="0.9" />
 			<attack physical="8.47458" magical="5.78704" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="44.44444" magical="32.52252" />
@@ -2327,7 +2327,7 @@
 	<npc id="35063" level="20" type="Artefact" name="Gludio Holy Artifact">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="342" hpRegen="2.5" mp="192" mpRegen="1.2" />
 			<attack physical="44.32863" magical="30.2707" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="86.87049" magical="63.56806" />
@@ -2366,7 +2366,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
 		<acquire exp="422" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1145868.11078" hpRegen="7.5" mp="2008.95" mpRegen="2.7" />
 			<attack physical="2331.27036" magical="397.98887" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="271.89033" magical="198.95754" />
@@ -2408,7 +2408,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- Keshanberk -->
 		<acquire exp="384" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="381955.87272" hpRegen="7.5" mp="2008.95" mpRegen="2.7" />
 			<attack physical="2084.49564" magical="355.86007" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="257.34267" magical="188.3122" />
@@ -2449,7 +2449,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- Sword of Delusion / Full Plate Shield -->
 		<acquire exp="863" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14467" hpRegen="6.5" mp="2132" mpRegen="2.4" />
 			<attack physical="962.69102" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" shield="124" shieldRate="20" />
@@ -2494,9 +2494,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
-			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="885.7984" magical="302.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
@@ -2531,9 +2531,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
-			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="885.7984" magical="302.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
@@ -2567,7 +2567,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
 			<attack physical="885.7984" magical="302.44274" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
@@ -2602,7 +2602,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2646,7 +2646,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2499" /> <!-- Elven Long Sword -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2681,7 +2681,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="276" /> <!-- Elven Bow -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2716,7 +2716,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2760,7 +2760,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2804,7 +2804,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2848,7 +2848,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2892,7 +2892,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2936,7 +2936,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -2980,7 +2980,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- Sword of Delusion / Full Plate Shield -->
 		<acquire exp="863" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14467" hpRegen="6.5" mp="2132" mpRegen="2.4" />
 			<attack physical="962.69102" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" shield="124" shieldRate="20" />
@@ -3025,9 +3025,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
-			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="885.7984" magical="302.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
@@ -3062,9 +3062,9 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
-			<attack physical="885.7984" magical="302.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="885.7984" magical="302.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
 			<speed>
 				<walk ground="50" />
@@ -3098,7 +3098,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
 		<acquire exp="336" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5691.23886" hpRegen="6.5" mp="3164.76" mpRegen="2.4" />
 			<attack physical="885.7984" magical="302.44274" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
@@ -3133,7 +3133,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="93" /> <!-- Winged Spear -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3168,7 +3168,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2499" /> <!-- Elven Long Sword -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3203,7 +3203,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="276" /> <!-- Elven Bow -->
 		<acquire exp="313" sp="0" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="5367.34121" hpRegen="6.5" mp="2973.6" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3238,7 +3238,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3282,7 +3282,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3326,7 +3326,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3370,7 +3370,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="0" attackSpeed="216" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3414,7 +3414,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="811.9291" magical="277.22116" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3458,7 +3458,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="792" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="13812" hpRegen="6.5" mp="1988" mpRegen="2.4" />
 			<attack physical="1804.10646" magical="277.22116" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="228.40135" magical="167.1342" />
@@ -3519,7 +3519,7 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
@@ -3579,7 +3579,7 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
@@ -3639,7 +3639,7 @@
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="8.5" mp="1507" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
@@ -3684,7 +3684,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
@@ -3718,8 +3718,8 @@
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
-			<param name="DoorName1" value="gludio_castle_outter_001" />
-			<param name="DoorName2" value="gludio_castle_outter_002" />
+			<param name="DoorId1" value="19210001" />
+			<param name="DoorId2" value="19210002" />
 			<param name="pos_x01" value="-18372" />
 			<param name="pos_y01" value="113315" />
 			<param name="pos_z01" value="-2760" />
@@ -3730,7 +3730,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
@@ -3764,8 +3764,8 @@
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
-			<param name="DoorName1" value="gludio_castle_inner_001" />
-			<param name="DoorName2" value="gludio_castle_inner_002" />
+			<param name="DoorId1" value="19210005" />
+			<param name="DoorId2" value="19210006" />
 			<param name="pos_x01" value="-18115" />
 			<param name="pos_y01" value="110679" />
 			<param name="pos_z01" value="-2528" />
@@ -3776,7 +3776,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
@@ -3814,7 +3814,7 @@
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<equipment rhand="89" /> <!-- Big Hammer -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
@@ -3851,7 +3851,7 @@
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2676" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />

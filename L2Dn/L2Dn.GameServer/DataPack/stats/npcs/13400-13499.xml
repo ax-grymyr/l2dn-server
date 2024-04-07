@@ -3,7 +3,7 @@
 	<npc id="13400" level="1" type="Monster" name="Snowy Ripe Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -37,7 +37,7 @@
 	<npc id="13401" level="1" type="Monster" name="Snowy Rotten Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -71,7 +71,7 @@
 	<npc id="13402" level="1" type="Monster" name="Snowy Royal Ripe Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -105,7 +105,7 @@
 	<npc id="13403" level="1" type="Monster" name="Snowy Large Young Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -139,7 +139,7 @@
 	<npc id="13404" level="1" type="Monster" name="Snowy Large Ripe Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -173,9 +173,9 @@
 	<npc id="13405" level="80" type="Monster" name="Snowy Large Rotten Squash">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="80.58" mp="40" mpRegen="3.09" />
-			<attack physical="1578.5" magical="1211.7" random="50" critical="1" accuracy="9" attackSpeed="278" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="1578.5" magical="1211.7" random="10" critical="1" accuracy="9" attackSpeed="278" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="373.8" magical="303.1" />
 			<speed>
 				<walk ground="50" />
@@ -207,9 +207,9 @@
 	<npc id="13406" level="81" type="Monster" name="Snowy Royal Large Ripe Squash">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="80.58" mp="40" mpRegen="3.09" />
-			<attack physical="1578.5" magical="1211.7" random="50" critical="1" accuracy="9" attackSpeed="278" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="1578.5" magical="1211.7" random="10" critical="1" accuracy="9" attackSpeed="278" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="373.8" magical="303.1" />
 			<speed>
 				<walk ground="50" />
@@ -242,7 +242,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -280,7 +280,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -318,7 +318,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -470,7 +470,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="85" hpRegen="2" mp="40" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -492,7 +492,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="85" hpRegen="2" mp="40" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -514,7 +514,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1845" hpRegen="2" mp="40" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -536,7 +536,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1845" hpRegen="2" mp="40" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -558,7 +558,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1764" hpRegen="2" mp="889" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -580,7 +580,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1764" hpRegen="2" mp="889" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
@@ -602,7 +602,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1764" hpRegen="2" mp="889" mpRegen="0.9" />
 			<speed>
 				<walk ground="50" />
