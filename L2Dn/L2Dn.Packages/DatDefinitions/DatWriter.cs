@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Globalization;
+using System.Reflection;
 using L2Dn.Packages.DatDefinitions.Annotations;
 
 namespace L2Dn.Packages.DatDefinitions;
@@ -91,6 +92,12 @@ public static class DatWriter
                 return;
                 
             default:
+                if (value.GetType().IsEnum)
+                {
+                    WriteEnum(obj, writer, attributeProvider, value);
+                    return;
+                }
+                
                 if (value.GetType().IsClass)
                 {
                     WriteObject(writer, value);
@@ -98,6 +105,43 @@ public static class DatWriter
                 }
 
                 throw new NotSupportedException();
+        }
+    }
+
+    private static void WriteEnum(object? obj, DatBinaryWriter writer, ICustomAttributeProvider? attributeProvider, object value)
+    {
+        EnumValueTypeAttribute? enumValueTypeAttribute =
+            attributeProvider.GetCustomAttribute<EnumValueTypeAttribute>();
+
+        if (enumValueTypeAttribute != null)
+        {
+            long val = Convert.ToInt64(value, CultureInfo.InvariantCulture);
+            switch (enumValueTypeAttribute.Type)
+            {
+                case EnumValueType.Byte:
+                    writer.WriteByte((byte)val);
+                    break;
+                    
+                case EnumValueType.Int16:
+                    writer.WriteInt16((short)val);
+                    break;
+
+                case EnumValueType.Int32:
+                    writer.WriteInt32((int)val);
+                    break;
+                    
+                case EnumValueType.Int64:
+                    writer.WriteInt64(val);
+                    break;
+                
+                default:
+                    throw new NotSupportedException();
+            };
+        }
+        else
+        {
+            WriteValue(obj, writer, attributeProvider,
+                Convert.ChangeType(value, Enum.GetUnderlyingType(value.GetType()), CultureInfo.InvariantCulture));
         }
     }
 

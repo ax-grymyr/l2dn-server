@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
 
@@ -12,7 +13,7 @@ public sealed class ActionNameV4
     {
         public uint Id { get; set; }
         public int Type { get; set; }
-        public byte Category { get; set; } // enum action_category
+        public ActionCategory Category { get; set; }
         public int[] Categories { get; set; } = Array.Empty<int>();
         public string Name { get; set; } = string.Empty;
         public IndexedString Icon { get; set; }

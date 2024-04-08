@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
 
@@ -10,9 +11,9 @@ public sealed class CharacterInitialStatExData
 
     public sealed class CharacterInitialStatExDataRecord
     {
-        public uint Class { get; set; } // enum class
-        public byte Race { get; set; } // enum race
-        public byte Sex { get; set; } // enum sex
+        public CharacterClass Class { get; set; }
+        public Race Race { get; set; }
+        public Sex Sex { get; set; }
         public ushort Str { get; set; }
         public ushort Dex { get; set; }
         public ushort Con { get; set; }

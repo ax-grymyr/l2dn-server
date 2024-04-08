@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
 
@@ -21,7 +22,7 @@ public sealed class CombinationItemDataV7
         public uint Slot2ItemEnchant { get; set; }
         public ResultItem[] ResultItems { get; set; } = Array.Empty<ResultItem>();
         public byte ResultEffectType { get; set; }
-        public uint[] ApplyCountry { get; set; } = Array.Empty<uint>(); // enum localization_type
+        public LocalizationType[] ApplyCountry { get; set; } = Array.Empty<LocalizationType>();
         public long Commission { get; set; }
     }
 

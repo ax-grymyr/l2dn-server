@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
 
@@ -10,17 +11,17 @@ public sealed class BlessOptionV2
 
     public sealed class BlessOptionRecord
     {
-        public uint ItemType { get; set; } // enum bless_item_type
-        public byte Grade { get; set; } // enum grade_type
+        public BlessItemType ItemType { get; set; }
+        public GradeType Grade { get; set; }
         public byte Unknown1 { get; set; }
-        public byte BodyPart { get; set; } // enum bodypart_v2_type
-        public byte WeaponType { get; set; } // enum item_weapon_v2_type
+        public BodyPartV2Type BodyPart { get; set; }
+        public ItemWeaponV2Type WeaponType { get; set; }
         public BlessOptionEffect[] Effects { get; set; } = Array.Empty<BlessOptionEffect>();
     }
 
     public sealed class BlessOptionEffect
     {
-        public uint OptionType { get; set; } // enum blessoption_type
+        public BlessOptionType OptionType { get; set; }
         public uint EnchantValue { get; set; }
         public uint OptionDescSkillId { get; set; }
         public uint OptionDescSkillLevel { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Globalization;
 using System.Reflection;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions.Annotations;
@@ -95,6 +96,31 @@ public static class DatReader
             };
         }
 
+        if (type.IsEnum)
+        {
+            EnumValueTypeAttribute? enumValueTypeAttribute =
+                attributeProvider.GetCustomAttribute<EnumValueTypeAttribute>();
+
+            object value;
+            if (enumValueTypeAttribute != null)
+            {
+                value = enumValueTypeAttribute.Type switch
+                {
+                    EnumValueType.Byte => reader.ReadByte(),
+                    EnumValueType.Int16 => reader.ReadInt16(),
+                    EnumValueType.Int32 => reader.ReadInt32(),
+                    EnumValueType.Int64 => reader.ReadInt64(),
+                    _ => throw new NotSupportedException()
+                };
+            }
+            else
+            {
+                value = ReadValue(obj, Enum.GetUnderlyingType(type), reader, attributeProvider);
+            }
+
+            return Enum.ToObject(type, value);
+        }
+        
         if (type.IsArray)
             return ReadArray(obj, type.GetElementType()!, reader, attributeProvider);
 

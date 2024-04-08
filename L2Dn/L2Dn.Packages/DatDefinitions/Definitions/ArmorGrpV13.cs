@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 using L2Dn.Packages.DatDefinitions.Definitions.Shared;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
@@ -26,7 +27,7 @@ public sealed class ArmorGrpV13
 
         public short Durability { get; set; }
         public short Weight { get; set; }
-        public byte MaterialType { get; set; } // enum material_type
+        public MaterialType MaterialType { get; set; }
         public byte Crystallizable { get; set; }
         
         [ArrayLengthType(ArrayLengthType.Byte)]
@@ -36,8 +37,8 @@ public sealed class ArmorGrpV13
         public byte IsAttribution { get; set; }
         public IndexedString IconPanel { get; set; }
         public IndexedString CompleteItemDropSoundType { get; set; }
-        public byte InventoryType { get; set; } // enum inventory_type
-        public byte BodyPart { get; set; } // enum bodypart_v2_type
+        public InventoryType InventoryType { get; set; }
+        public BodyPartV2Type BodyPart { get; set; }
 
         public MtxNew2 MHumanFighter { get; set; } = new MtxNew2();
         public Mtx3New2 MHumanFighterAdd { get; set; } = new Mtx3New2();
@@ -100,8 +101,8 @@ public sealed class ArmorGrpV13
         public IndexedString EquipSound { get; set; }
         public uint Unknown6 { get; set; }
         public byte Unknown7 { get; set; }
-        public byte ArmorType { get; set; } // enum armor_type
-        public byte CrystalType { get; set; } // enum grade_type
+        public ArmorType ArmorType { get; set; }
+        public GradeType CrystalType { get; set; }
         public short MpBonus { get; set; }
         public short HideMask { get; set; }
         public byte UnderwearBodyPart1 { get; set; }

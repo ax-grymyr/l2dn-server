@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 using L2Dn.Packages.DatDefinitions.Definitions.Shared;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
@@ -14,7 +15,7 @@ public sealed class SystemMsgV6
         public uint Id { get; set; }
         public uint Unknown1 { get; set; }
         public string Message { get; set; } = string.Empty;
-        public uint Group { get; set; } // enum system_message_group_type
+        public SystemMessageGroupType Group { get; set; }
         public RgbaColor Color { get; set; } = new RgbaColor();
         public IndexedString Sound { get; set; }
         public IndexedString Voice { get; set; }

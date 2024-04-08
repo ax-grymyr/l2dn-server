@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
 
@@ -14,14 +15,14 @@ public sealed class LCoinShopProductV6
     {
         public ushort ProductId { get; set; }
         public byte Category { get; set; }
-        public byte MarkType { get; set; } // enum lcoinshopproduct_mark_type
+        public LCoinShopProductMarkType MarkType { get; set; }
 
         [ArrayLengthType(ArrayLengthType.Byte)]
         public LCoinShopProductBuyItem[] BuyItems { get; set; } = Array.Empty<LCoinShopProductBuyItem>();
 
         public byte ProductType { get; set; }
         public byte LimitType { get; set; }
-        public byte ResetType { get; set; } // enum lcoin_reset_type
+        public LCoinResetType ResetType { get; set; }
         public uint LimitCountMax { get; set; }
         public string ProductDescription { get; set; } = string.Empty;
         public string ProductHtml { get; set; } = string.Empty;

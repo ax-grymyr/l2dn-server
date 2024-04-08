@@ -202,6 +202,7 @@ public class DatReaderTests
             new DatConversion<CommonLook>("CommonLook_Classic", "CommonLook_Classic-{0}"),
             new DatConversion<Costume>("Costume_Classic", "Costume_Classic-{0}"),
             
+            new DatConversion<EtcItemGrpV9>("EtcItemgrp_Classic", "EtcItemGrp_Classic-{0}"),
             new DatConversion<ItemNameV18>("ItemName_Classic-{0}", "ItemName_Classic-{0}"),
             new DatConversion<LCoinShopProductV6>("LCoinShopProduct_Classic-{0}", "LCoinShopProduct_Classic-{0}"),
             new DatConversion<NpcName>("NpcName_Classic-{0}", "NpcName_Classic-{0}"),
@@ -217,6 +218,7 @@ public class DatReaderTests
             new DatConversion<Subjugation>("Subjugation_Classic-{0}", "Subjugation_Classic-{0}"),
             new DatConversion<TeleportListV3>("teleportlist_Classic", "TeleportList_Classic-{0}"),
             new DatConversion<TutorialNameV2>("TutorialName_Classic-{0}", "TutorialName_Classic-{0}"),
+            new DatConversion<WeaponGrpV12>("Weapongrp_Classic", "WeaponGrp_Classic-{0}"),
             new DatConversion<ZoneNameV7>("ZoneName_Classic-{0}", "ZoneName_Classic-{0}"),
         ];
 

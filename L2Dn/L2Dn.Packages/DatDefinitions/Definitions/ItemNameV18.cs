@@ -1,4 +1,5 @@
 ﻿using L2Dn.Packages.DatDefinitions.Annotations;
+using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 using L2Dn.Packages.DatDefinitions.Definitions.Shared;
 
 namespace L2Dn.Packages.DatDefinitions.Definitions;
@@ -21,7 +22,7 @@ public sealed class ItemNameV18
         public string AdditionalName { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public short Popup { get; set; }
-        public uint DefaultAction { get; set; } // enum item_default_action
+        public ItemDefaultAction DefaultAction { get; set; }
         public uint UseOrder { get; set; }
         public short NameClass { get; set; }
         public byte Color { get; set; }
@@ -61,7 +62,7 @@ public sealed class ItemNameV18
     public sealed class ItemEx
     {
         public uint ItemExId { get; set; }
-        public byte KeepTypeSelection { get; set; } // enum keep_type_selection
+        public KeepTypeSelection KeepTypeSelection { get; set; }
         public uint KeepEnchantCondition { get; set; }
         public byte KeepOption1 { get; set; }
         public byte KeepOption2 { get; set; }
