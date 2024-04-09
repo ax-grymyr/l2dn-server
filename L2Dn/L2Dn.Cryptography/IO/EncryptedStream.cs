@@ -3,18 +3,37 @@ using System.Runtime.InteropServices;
 
 namespace L2Dn.IO;
 
-public sealed class EncryptedStream: WrapperStream
+public sealed class EncryptedStream: Stream
 {
+    private readonly Stream _baseStream;
     private readonly EncryptionVersion _version;
     internal const int HeaderSize = 28;
     private const string _headerPrefix = "Lineage2Ver";
 
-    private EncryptedStream(Stream stream, EncryptionVersion version): base(stream)
+    private EncryptedStream(Stream baseStream, EncryptionVersion version)
     {
+        _baseStream = baseStream;
         _version = version;
     }
 
     public EncryptionVersion Version => _version;
+
+    public override void Flush() => _baseStream.Flush();
+    public override int Read(byte[] buffer, int offset, int count) => _baseStream.Read(buffer, offset, count);
+    public override long Seek(long offset, SeekOrigin origin) => _baseStream.Seek(offset, origin);
+    public override void SetLength(long value) => throw new NotSupportedException();
+    public override void Write(byte[] buffer, int offset, int count) => _baseStream.Write(buffer, offset, count);
+
+    public override bool CanRead => _baseStream.CanRead;
+    public override bool CanSeek => _baseStream.CanSeek;
+    public override bool CanWrite => _baseStream.CanWrite;
+    public override long Length => _baseStream.Length;
+
+    public override long Position
+    {
+        get => _baseStream.Position;
+        set => throw new NotSupportedException();
+    }
 
     public static EncryptedStream OpenRead(string filePath) => OpenRead(
         new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read),

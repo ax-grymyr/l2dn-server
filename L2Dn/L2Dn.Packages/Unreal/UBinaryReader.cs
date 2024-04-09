@@ -18,6 +18,8 @@ public class UBinaryReader(Stream stream, long position = 0):
         set => (_packageVersion, _newVersionIndex) = (value, value >= 178);
     }
 
+    public int LicenseeVersion { get; set; }
+
     public IReadOnlyList<UName> Names { get; set; } = Array.Empty<UName>();
 
     public UPackage? Package { get; set; } // TODO: refactor

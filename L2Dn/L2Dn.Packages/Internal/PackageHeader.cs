@@ -170,7 +170,8 @@ internal struct PackageHeader: ISerializableObject
         }
 
         LicenseeVersion = reader.ReadInt16();
-
+        reader.LicenseeVersion = LicenseeVersion;
+        
         if (Version >= 249)
         {
             HeaderSize = reader.ReadUInt32();

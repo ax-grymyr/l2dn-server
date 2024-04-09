@@ -95,6 +95,7 @@ public sealed class UPackage: ISerializableObject
         UBinaryReader reader = new(stream)
         {
             PackageVersion = _header.Version,
+            LicenseeVersion = _header.LicenseeVersion,
             Names = _names,
             Package = this
         };

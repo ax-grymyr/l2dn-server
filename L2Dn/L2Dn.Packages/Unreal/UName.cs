@@ -32,4 +32,6 @@ public sealed class UName: ISerializableObject
         else
             Flags = (UObjectFlags)reader.ReadUInt32();
     }
+
+    public override string ToString() => Name;
 }

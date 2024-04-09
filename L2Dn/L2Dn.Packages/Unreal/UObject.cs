@@ -4,7 +4,7 @@ public class UObject: ISerializableObject
 {
     public Dictionary<string, UProperty> Properties { get; } = new(StringComparer.OrdinalIgnoreCase);
 
-    public void Read(UBinaryReader reader)
+    public virtual void Read(UBinaryReader reader)
     {
         _typeRegistrations.TryGetValue(GetType(), out var typeRegistration);
 

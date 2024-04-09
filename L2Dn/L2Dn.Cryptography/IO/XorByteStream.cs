@@ -3,12 +3,15 @@
 public sealed class XorByteStream: Stream
 {
     private readonly Stream _baseStream;
+    private readonly long _offset;
     private readonly int _xorKey;
 
     public XorByteStream(Stream baseStream, byte xorKey)
     {
         _baseStream = baseStream;
         _xorKey = xorKey;
+        if (baseStream.CanSeek)
+            _offset = baseStream.Position;
     }
 
     public override void Flush()
@@ -25,7 +28,10 @@ public sealed class XorByteStream: Stream
 
     public override long Seek(long offset, SeekOrigin origin)
     {
-        throw new NotSupportedException();
+        if (origin == SeekOrigin.Current)
+            return _baseStream.Seek(offset, origin) - _offset;
+        
+        return _baseStream.Seek(offset + _offset, origin) - _offset;
     }
 
     public override void SetLength(long value)
@@ -40,13 +46,13 @@ public sealed class XorByteStream: Stream
     }
 
     public override bool CanRead => _baseStream.CanRead;
-    public override bool CanSeek => false;
+    public override bool CanSeek => _baseStream.CanSeek;
     public override bool CanWrite => _baseStream.CanWrite;
-    public override long Length => _baseStream.Length;
+    public override long Length => _baseStream.Length - _offset;
 
     public override long Position
     {
-        get => _baseStream.Position;
+        get => _baseStream.Position - _offset;
         set => throw new NotSupportedException();
     }
 

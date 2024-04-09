@@ -35,9 +35,9 @@ internal static class DxtHelper
                             ref Rgba32 targetPixel = ref output[width * sy + sx];
 
                             // copy the rgba value
-                            targetPixel.R = sourcePixel[0];
+                            targetPixel.R = sourcePixel[2];
                             targetPixel.G = sourcePixel[1];
-                            targetPixel.B = sourcePixel[2];
+                            targetPixel.B = sourcePixel[0];
                             targetPixel.A = sourcePixel[3];
                         }
 
