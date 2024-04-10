@@ -57,7 +57,8 @@ public sealed class UPackage: ISerializableObject
         if (_header.ExportCount > 0)
         {
             tables.Add(new OffsetActionPair(_header.ExportOffset,
-                static (p, reader) => p._exports.AddRange(reader.ReadObjects<UExport>(p._header.ExportCount))));
+                static (p, reader) =>
+                    p._exports.AddRange(reader.ReadObjects<UExport>(p._header.ExportCount, () => new UExport(p)))));
         }
 
         if (_header.ImportCount > 0)
@@ -83,28 +84,6 @@ public sealed class UPackage: ISerializableObject
             export.ReadData(reader);
     }
 
-    public UObject LoadObject(string name)
-    {
-        UExport export = _exports.Find(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase)) ??
-                         throw new KeyNotFoundException($"Object with name '{name}' not found");
-
-        string className = export.Class?.Name ??
-                           throw new InvalidOperationException($"Object '{name}' is a class");
-
-        MemoryStream stream = new MemoryStream(export.RawData, false);
-        UBinaryReader reader = new(stream)
-        {
-            PackageVersion = _header.Version,
-            LicenseeVersion = _header.LicenseeVersion,
-            Names = _names,
-            Package = this
-        };
-
-        UObject obj = _packageManager.CreateObject(className);
-        obj.Read(reader);
-        return obj;
-    }
-
     public static UPackage LoadFrom(UPackageManager packageManager, Stream stream)
     {
         UBinaryReader reader = new(stream);
@@ -128,6 +107,25 @@ public sealed class UPackage: ISerializableObject
         }
 
         return LoadFrom(packageManager, stream);
+    }
+
+    internal UObject LoadObject(UExport export)
+    {
+        string className = export.Class?.Name ??
+                           throw new InvalidOperationException($"Object '{export.Name}' is a class");
+
+        MemoryStream stream = new(export.RawData, false);
+        UBinaryReader reader = new(stream)
+        {
+            PackageVersion = _header.Version,
+            LicenseeVersion = _header.LicenseeVersion,
+            Names = _names,
+            Package = this
+        };
+
+        UObject obj = _packageManager.CreateObject(export, className);
+        obj.Read(reader);
+        return obj;
     }
 }
 

@@ -2,5 +2,7 @@
 
 public class UPalette: UObject
 {
-
+    internal UPalette(UExport export): base(export)
+    {
+    }
 }

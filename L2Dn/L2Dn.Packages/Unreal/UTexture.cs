@@ -1,15 +1,21 @@
-﻿using L2Dn.Packages.Textures;
+﻿using System.Diagnostics;
+using L2Dn.Packages.Textures;
 
 namespace L2Dn.Packages.Unreal;
 
-public class UTexture: UMaterial, ISerializableObject
+public class UTexture: UMaterial
 {
+    internal UTexture(UExport export): base(export)
+    {
+    }
+
     public int Width { get; set; }
     public int Height { get; set; }
     public UTextureFormat Format { get; set; } = UTextureFormat.Rgba8;
     public int UClamp { get; set; }
     public int VClamp { get; set; }
     public string TextureName { get; set; } = string.Empty;
+    public string Lineage2Name { get; set; } = string.Empty;
     public List<UBitmap> Bitmaps { get; set; } = new();
 
     static UTexture()
@@ -27,7 +33,7 @@ public class UTexture: UMaterial, ISerializableObject
     public override void Read(UBinaryReader reader)
     {
         base.Read(reader);
-        ReadGarbage(reader);
+        Lineage2Name = ReadGarbage(reader);
         
         switch (Format)
         {
@@ -63,8 +69,10 @@ public class UTexture: UMaterial, ISerializableObject
         return reader.ReadObjects<T>(count).Cast<UBitmap>().ToList();
     }
 
-    private static void ReadGarbage(UBinaryReader reader)
+    private static string ReadGarbage(UBinaryReader reader)
     {
+        string lineage2Name = string.Empty;
+        
         if (reader is { PackageVersion: >= 123, LicenseeVersion: >= 16 and < 37 })
             reader.ReadInt32(); // Unknown int in Lineage 2
 
@@ -128,6 +136,14 @@ public class UTexture: UMaterial, ISerializableObject
             FLineageShaderProperty ShaderProp = default;
             ShaderProp.Read(reader);
             string ShaderCode = reader.ReadUString();
+
+            if (ShaderProp.Stages != null && ShaderProp.Stages.Length > 0)
+            {
+                if (ShaderProp.Stages.Length > 1 || ShaderProp.Stages[0].Unknown2.Length > 0)
+                    Debugger.Break();
+                    
+                lineage2Name = ShaderProp.Stages[0].Unknown1;
+            }
         }
         
         if (reader.PackageVersion >= 123 && reader.LicenseeVersion >= 31)
@@ -136,6 +152,8 @@ public class UTexture: UMaterial, ISerializableObject
             ver1 = reader.ReadUInt16();
             ver2 = reader.ReadUInt16();
         }
+
+        return lineage2Name;
     }
     
     private struct FLineageMaterialStageProperty: ISerializableObject

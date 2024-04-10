@@ -2,6 +2,15 @@
 
 public class UObject: ISerializableObject
 {
+    private readonly UExport _export;
+    
+    internal UObject(UExport export)
+    {
+        _export = export;
+    }
+
+    public string Name => _export.Name;
+    
     public Dictionary<string, UProperty> Properties { get; } = new(StringComparer.OrdinalIgnoreCase);
 
     public virtual void Read(UBinaryReader reader)

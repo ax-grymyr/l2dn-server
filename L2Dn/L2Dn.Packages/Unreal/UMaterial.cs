@@ -2,4 +2,7 @@
 
 public class UMaterial: UObject
 {
+    internal UMaterial(UExport export): base(export)
+    {
+    }
 }

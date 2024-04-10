@@ -112,4 +112,15 @@ public class UBinaryReader(Stream stream, long position = 0):
             yield return value;
         }
     }
+
+    public IEnumerable<T> ReadObjects<T>(int count, Func<T> factory)
+        where T: ISerializableObject
+    {
+        for (int i = 0; i < count; i++)
+        {
+            T value = factory();
+            value.Read(this);
+            yield return value;
+        }
+    }
 }

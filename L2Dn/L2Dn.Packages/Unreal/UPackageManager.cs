@@ -8,23 +8,19 @@ public sealed class UPackageManager
 
     public UPackageManager()
     {
-        RegisterClass<UTexture>("Texture");
-        RegisterClass<UPalette>("Palette");
+        RegisterClass<UTexture>("Texture", export => new UTexture(export));
+        RegisterClass<UPalette>("Palette", export => new UPalette(export));
     }
 
-    public void RegisterClass<TObject>(string className, Func<TObject> factory)
+    public void RegisterClass<TObject>(string className, Func<UExport, TObject> factory)
         where TObject: UObject =>
         _factories.Add(className, new ObjectFactory<TObject>(factory));
 
-    public void RegisterClass<TObject>(string className)
-        where TObject: UObject, new() =>
-        RegisterClass(className, () => new TObject());
-
-    internal UObject CreateObject(string className)
+    internal UObject CreateObject(UExport export, string className)
     {
         if (_factories.TryGetValue(className, out ObjectFactory? factory))
-            return factory.Create();
+            return factory.Create(export);
 
-        return new UObject();
+        return new UObject(export);
     }
 }

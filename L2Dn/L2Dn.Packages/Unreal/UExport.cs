@@ -10,6 +10,9 @@
 /// </summary>
 public sealed class UExport: UObjectRef, ISerializableObject
 {
+    private readonly UPackage _package;
+    private UObject? _object;
+
     /// <summary>
     /// The class of this object. None means this is a class itself.
     /// </summary>
@@ -40,40 +43,49 @@ public sealed class UExport: UObjectRef, ISerializableObject
     /// <summary>
     /// Object data.
     /// </summary>
-    private byte[] _data = Array.Empty<byte>();
+    private byte[] _data = [];
 
+    public UExport(UPackage package)
+    {
+        _package = package;
+    }
+
+    public UPackage Package => _package;
+
+    public UObject Object => _object ??= _package.LoadObject(this);
+    
     /// <summary>
     /// The class of the object. Null means this is a class itself.
     /// </summary>
-    public UObjectRef? Class { get; set; }
+    public UObjectRef? Class { get; private set; }
 
     /// <summary>
     /// The object this object inherits from. Only used for struct, states, classes and functions.
     /// </summary>
-    public UObjectRef? Super { get; set; }
+    public UObjectRef? Super { get; private set; }
 
     /// <summary>
     /// The object's archetype reference.
     /// Version >= 220
     /// </summary>
-    public UObjectRef? Archetype { get; set; }
+    public UObjectRef? Archetype { get; private set; }
 
     /// <summary>
     /// This object's flags.
     /// </summary>
-    public UObjectFlags ObjectFlags { get; set; }
+    public UObjectFlags ObjectFlags { get; private set; }
 
     /// <summary>
     /// The size of this object's data in the package file.
     /// Some objects do not include any data.
     /// </summary>
-    public int SerialSize { get; set; }
+    public int SerialSize { get; private set; }
 
     /// <summary>
     /// The position of this object's data in the package file.
     /// This field is only present if the serial size is non-zero.
     /// </summary>
-    public int SerialOffset { get; set; }
+    public int SerialOffset { get; private set; }
 
     public byte[] RawData => _data;
 
