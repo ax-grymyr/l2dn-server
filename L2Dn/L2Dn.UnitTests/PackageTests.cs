@@ -52,16 +52,22 @@ public class PackageTests
     [Fact]
     public void Test3()
     {
-        const string clientPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1"; 
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "Icon.utx"), @"D:\L2\Icon", "Icon");
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "BranchIcon.utx"), @"D:\L2\BranchIcon", "BranchIcon");
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "branchSys.utx"), @"D:\L2\branchSys", "branchSys");
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "BranchSys2.utx"), @"D:\L2\BranchSys2", "BranchSys2");
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "BranchSys3.utx"), @"D:\L2\BranchSys3", "BranchSys3");
-        ExportIcons(Path.Combine(clientPath, "SysTextures", "br_L2Icon.utx"), @"D:\L2\br_L2Icon", "br_L2Icon");
+        const string clientPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1";
+        const string savePath = @"D:\L2";
+
+        string[] files =
+        [
+            "Icon.utx", "BranchIcon.utx", "branchSys.utx", "BranchSys2.utx", "BranchSys3.utx",
+            "br_L2Icon.utx"
+        ];
+
+        foreach (string file in files)
+        {
+            ExportIcons(Path.Combine(clientPath, "SysTextures", file), savePath);
+        }
     }
 
-    private static void ExportIcons(string filePath, string savePath, string packageName)
+    private static void ExportIcons(string filePath, string savePath)
     {
         UPackageManager packageManager = new();
         UPackage package = UPackage.LoadFrom(packageManager, filePath);
@@ -70,6 +76,7 @@ public class PackageTests
             .Select(x => (UTexture)x.Object);
 
         StringBuilder sb = new StringBuilder();
+        string packageName = Path.GetFileNameWithoutExtension(filePath);
         sb.AppendLine($"Package: {packageName}");
         sb.AppendLine();
         foreach (UTexture texture in list)
@@ -83,9 +90,10 @@ public class PackageTests
 
             sb.AppendLine();
         }
-        
-        Directory.CreateDirectory(savePath);
-        File.WriteAllText(Path.Combine(savePath, $"..\\{packageName}.txt"), sb.ToString(), Encoding.UTF8);
+
+        string iconPath = Path.Combine(savePath, packageName);
+        Directory.CreateDirectory(iconPath);
+        File.WriteAllText(Path.Combine(savePath, $"{packageName}.txt"), sb.ToString(), Encoding.UTF8);
         
         foreach (UTexture texture in list)
         {
@@ -93,10 +101,16 @@ public class PackageTests
             {
                 UBitmap bitmap = texture.Bitmaps[index];
                 string fileName = texture.Bitmaps.Count == 1
-                    ? $"{packageName}.{texture.Name}.png"
-                    : $"{packageName}.{texture.Name}_{bitmap.Width}x{bitmap.Height}_{index + 1}.png";
+                    ? $"{texture.Lineage2Name}.png"
+                    : $"{texture.Lineage2Name}_{bitmap.Width}x{bitmap.Height}_{index + 1}.png";
 
-                string saveFilePath = Path.Combine(savePath, fileName);
+                string saveFilePath = Path.Combine(iconPath, fileName);
+                if (File.Exists(saveFilePath))
+                {
+                    Directory.CreateDirectory(Path.Combine(iconPath, "DuplicatedNames"));
+                    saveFilePath = Path.Combine(iconPath, "DuplicatedNames", fileName);
+                }
+                
                 bitmap.Image?.SaveAsPng(saveFilePath);
             }
         }
