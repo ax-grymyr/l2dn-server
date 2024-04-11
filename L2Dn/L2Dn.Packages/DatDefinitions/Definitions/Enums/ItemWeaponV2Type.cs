@@ -2,7 +2,7 @@
 
 public enum ItemWeaponV2Type: byte
 {
-    Fist = 0,
+    Shield = 0,
     Sword = 1,
     TwoHandSword = 2,
     Buster = 3,
@@ -16,7 +16,7 @@ public enum ItemWeaponV2Type: byte
     Bow = 11,
     WeaponEtc = 12,
     Dual = 13,
-    Fist2 = 14,
+    Fist = 14,
     FishingRod = 15,
     Rapier = 16,
     Crossbow = 17,

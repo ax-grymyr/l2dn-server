@@ -210,6 +210,7 @@ public class DatReaderTests
             new DatConversion<NpcTeleporter>("NPCTeleporter_Classic", "NpcTeleporter_Classic-{0}"),
             new DatConversion<QuestNameV8>("QuestName_Classic-{0}", "QuestName_Classic-{0}"),
             new DatConversion<ServerNameV5>("ServerName-{0}", "ServerName-{0}"),
+            new DatConversion<SetItemGrp>("SetItemGrp_Classic-{0}", "SetItemGrp_Classic-{0}"),
             new DatConversion<SkillNameV6>("SkillName_Classic-{0}", "SkillName_Classic-{0}"),
             new DatConversion<StaticObjectV2>("StaticObject_Classic-{0}", "StaticObject_Classic-{0}"),
             new DatConversion<SysString>("SysString_Classic-{0}", "SysString_Classic-{0}"),

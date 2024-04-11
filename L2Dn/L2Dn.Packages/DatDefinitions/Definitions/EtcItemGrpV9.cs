@@ -30,7 +30,7 @@ public sealed class EtcItemGrpV9
         public byte Crystallizable { get; set; }
         
         [ArrayLengthType(ArrayLengthType.Byte)]
-        public RelatedQuest[] RelatedQuestIds { get; set; } = Array.Empty<RelatedQuest>();
+        public RelatedQuest[] RelatedQuests { get; set; } = Array.Empty<RelatedQuest>();
         
         public byte Color { get; set; }
         public byte IsAttribution { get; set; }
