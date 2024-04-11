@@ -430,7 +430,7 @@
 		</effects>
 	</skill>
 	<skill id="3604" toLevel="1" name="Frintezza's Necklace">
-		<!-- Increases Dark Attack/ Poison/ Bleed/ Paralysis/ Stun/ Sleep Resistance, and Poison/ Bleed/ Paralysis/ Stun/ Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
+		<!-- Increases Dark Attack/ Poison/ Bleed/ Paralyze/ Stun/ Sleep Resistance, and Poison/ Bleed/ Paralyze/ Stun/ Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
 		<icon>icon.accessory_necklace_of_frintessa_i00</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
@@ -469,7 +469,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3605" toLevel="1" name="Set Effect - Moonshadow Heavy Armor, 4-piece">
+	<skill id="3605" toLevel="1" name="Set Effect - Moon Heavy Armor, 4-piece">
 		<!-- HP Recovery Bonus +3%, Max HP +25, P. Def. +3%. -->
 		<icon>icon.armor_t1001_ul_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -490,7 +490,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3606" toLevel="1" name="Set Effect - Moonshadow Light Armor, 4-piece">
+	<skill id="3606" toLevel="1" name="Set Effect - Moon Light Armor, 4-piece">
 		<!-- MP Recovery Bonus +3%, Max MP +10, P. Atk. +2%. -->
 		<icon>icon.armor_t1002_ul_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -511,7 +511,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3607" toLevel="1" name="Set Effect - Moonshadow Robe, 4-piece">
+	<skill id="3607" toLevel="1" name="Set Effect - Moon Robe Armor, 4-piece">
 		<!-- MP Recovery Bonus +3%, Max MP +20, M. Atk. +2%. -->
 		<icon>icon.armor_t1003_ul_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -672,7 +672,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3610" toLevel="3" name="Set Effect - Apella Robe">
+	<skill id="3610" toLevel="3" name="Set Effect - Apella Robe Armor">
 		<!-- Increases Max CP/ CP Recovery Bonus, and decreases death XP penalty. Increases Speed and P. Def. when attacked. -->
 		<icon>icon.armor_t1006_ul_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -792,7 +792,7 @@
 		</effects>
 	</skill>
 	<skill id="3613" toLevel="1" name="Enchant Robe (D-grade)">
-		<!-- Increases M. Def. and weight limit by enchanting set items. -->
+		<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -861,7 +861,7 @@
 		</effects>
 	</skill>
 	<skill id="3616" toLevel="1" name="Enchant Robe (C-grade)">
-		<!-- Increases M. Def. and weight limit by enchanting set items. -->
+		<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -930,7 +930,7 @@
 		</effects>
 	</skill>
 	<skill id="3619" toLevel="1" name="Enchant Robe (B-grade)">
-		<!-- Increases M. Def. and weight limit by enchanting set items. -->
+		<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -999,7 +999,7 @@
 		</effects>
 	</skill>
 	<skill id="3622" toLevel="1" name="Enchant Robe (A-grade)">
-		<!-- Increases M. Def. and weight limit by enchanting set items. -->
+		<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1068,7 +1068,7 @@
 		</effects>
 	</skill>
 	<skill id="3625" toLevel="3" name="Enchant Robe (S-grade)">
-		<!-- Increases M. Def. and weight limit by enchanting set items. -->
+		<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 		<icon>icon.skill0234</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1393,7 +1393,7 @@
 		</effects>
 	</skill>
 	<skill id="3633" toLevel="2" name="Residential Stun Immunity">
-		<!-- Active: Temporarily increases Stun Resistance. -->
+		<!-- Applied skill: Significantly increases Stun Resistance momentarily. -->
 		<icon>icon.accessory_pledge_cap1_i05</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7</abnormalTime>

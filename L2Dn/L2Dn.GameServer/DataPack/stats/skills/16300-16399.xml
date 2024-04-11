@@ -21,32 +21,32 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16304" toLevel="1" name="98Lv. Raid Boss">
-		<!-- A wizard of Aden buried in the Cemetary, Afjak was forcefully awakened by Shilen's Disciple Lavidos as Dark Messenger Afjak. -->
+		<!-- A wizard of Aden buried in the Cemetery, Afjak was forcefully awakened by Shilen's Disciple Lavidos as Dark Messenger Afjak. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16305" toLevel="1" name="98Lv. Raid Boss">
-		<!-- A knight of Aden buried in the Cemetary, Feilnor was forcefully awakened by Shilen's Disciple Lavidos as a Dusk Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+		<!-- A knight of Aden buried in the Cemetery, Feilnor was forcefully awakened by Shilen's Disciple Lavidos as a Dusk Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16306" toLevel="1" name="98Lv. Raid Boss">
-		<!-- A wizard of Aden buried in the Cemetary, Amormio was forcefully awakened by Shilen's Disciple Lavidos as a Chaos Wizard, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+		<!-- A wizard of Aden buried in the Cemetery, Amormio was forcefully awakened by Shilen's Disciple Lavidos as a Chaos Wizard, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16307" toLevel="1" name="98Lv. Raid Boss">
-		<!-- A knight of Aden buried in the Cemetary, Lahav was forcefully awakened by Shilen's Disciple Lavidos as an Insolence Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+		<!-- A knight of Aden buried in the Cemetery, Lahav was forcefully awakened by Shilen's Disciple Lavidos as an Insolence Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16308" toLevel="1" name="98Lv. Raid Boss">
-		<!-- A priest of Aden buried in the Cemetary, Borhunt was forcefully awakened by Shilen's Disciple Lavidos as a Death Priest, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+		<!-- A priest of Aden buried in the Cemetery, Borhunt was forcefully awakened by Shilen's Disciple Lavidos as a Death Priest, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="16309" toLevel="1" name="98Lv. Raid Boss">
-		<!-- Once a famous knight of Aden, Zeruel was forcefully awakened from the Cemetary by Shilen's Disciple Lavidos as a Destruction Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16309" toLevel="1" name="Raid Boss (Lv. 98)">
+		<!-- Once a famous knight of Aden, Zeruel was forcefully awakened from the Cemetery by Shilen's Disciple Lavidos as a Destruction Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -86,29 +86,31 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16317" toLevel="10" name="Pull Resistance">
-		<!-- Slightly increases Pull Resistance. -->
+		<!-- Slightly resistant to Pull attack. -->
 		<icon>icon.skill10015</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16318" toLevel="2" name="Damage 1">
-		<!-- Maximum Damage is $s1. -->
+		<!-- Maximum Damage is 1. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16319" toLevel="1" name="Dance Time">
 		<!-- Presentation skill -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>100</effectPoint>
 		<hitTime>5000</hitTime>
 	</skill>
 	<skill id="16320" toLevel="1" name="Dance Time">
 		<!-- For 10 sec., dance against your will to Frintezza's music. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="16321" toLevel="1" name="Orc Cyclone">
-		<!-- Blown away. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A1</operateType>
 		<hitTime>10000</hitTime>
@@ -117,7 +119,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16323" toLevel="1" name="Orc Typhoon">
-		<!-- Blown away. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<hitTime>10000</hitTime>
@@ -136,7 +138,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16326" toLevel="1" name="Phoenix Rush">
-		<!-- Charges the enemy and inflicts damage. -->
+		<!-- Rush toward enemy and inflict damage. -->
 		<icon>icon.skill6041</icon>
 		<operateType>A2</operateType>
 		<castRange>500</castRange>
@@ -147,12 +149,14 @@
 	</skill>
 	<skill id="16327" toLevel="1" name="Evil Fragment's Power">
 		<!-- Event presentation skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="16328" toLevel="1" name="Explosive Light">
 		<!-- Event presentation skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic>
 	</skill>
@@ -163,11 +167,13 @@
 	</skill>
 	<skill id="16330" toLevel="1" name="Wind Loyalty">
 		<!-- Event presentation skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="16331" toLevel="1" name="Power Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>40</castRange>
@@ -177,6 +183,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16332" toLevel="1" name="Double Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>40</castRange>
@@ -186,6 +193,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16333" toLevel="1" name="Long Attack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>700</castRange>
@@ -208,7 +216,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16335" toLevel="1" name="Fear">
-		<!-- Afflicted with Fear and moving against own will momentarily. -->
+		<!-- Moving against your will due to Fear. -->
 		<icon>icon.skill1092</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -228,7 +236,8 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="16337" toLevel="3" name="Magical Blast">
+	<skill id="16337" toLevel="3" name="Magic Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>500</castRange>
@@ -238,7 +247,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16338" toLevel="2" name="Stiff Charge">
-		<!-- Petrify status. -->
+		<!-- Petrified. -->
 		<icon>icon.skill4111</icon>
 		<operateType>A2</operateType>
 		<mpConsume>15</mpConsume>
@@ -247,6 +256,7 @@
 	</skill>
 	<skill id="16340" toLevel="1" name="Reaper's Seal">
 		<!-- Branded with a seal and targeted by the Undead of Dragon Valley. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>42</mpConsume>
 		<isDebuff>true</isDebuff>
@@ -258,6 +268,7 @@
 	</skill>
 	<skill id="16342" toLevel="1" name="Lift Target">
 		<!-- Inflicts damage while removing target. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>40</castRange>
@@ -267,6 +278,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16343" toLevel="1" name="Fire Breath">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>40</castRange>
@@ -275,6 +287,7 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="16344" toLevel="1" name="Death's Bolt">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>25</mpConsume>
 		<castRange>600</castRange>
@@ -282,7 +295,7 @@
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16345" toLevel="2" name="Fire Spike">
+	<skill id="16345" toLevel="2" name="Fire Flare">
 		<!-- Causes target to bleed severely, momentarily reducing HP. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
@@ -293,6 +306,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16346" toLevel="1" name="Deadly Fear">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>40</castRange>
@@ -303,6 +317,7 @@
 	</skill>
 	<skill id="16347" toLevel="3" name="Breeze Shell">
 		<!-- Atk. Spd., Casting Spd. Speed are decreased. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>600</castRange>
@@ -313,6 +328,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16348" toLevel="3" name="Breeze Point">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>600</castRange>
@@ -322,6 +338,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16349" toLevel="1" name="Blot Pierce">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>40</castRange>
@@ -331,6 +348,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16350" toLevel="3" name="Blot Hail">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>500</castRange>
@@ -360,6 +378,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="16354" toLevel="1" name="Sacred Assault">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>5</mpConsume>
 		<castRange>40</castRange>
@@ -369,6 +388,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16356" toLevel="1" name="Sacred Sphere">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>30</mpConsume>
 		<castRange>900</castRange>
@@ -383,7 +403,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16358" toLevel="3" name="Dimensional Armor">
-		<!-- Half-kill Resistance +$s1, and Received P. Critical Damage +$s2. -->
+		<!-- Half-kill Resistance +40%, and Received P. Critical Damage +10%. -->
 		<icon>icon.skill0329</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -453,6 +473,7 @@
 	</skill>
 	<skill id="16368" toLevel="1" name="Dimensional Strike">
 		<!-- Attacks target with 150% of P. Atk. power. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -462,6 +483,7 @@
 	</skill>
 	<skill id="16369" toLevel="1" name="Dimensional Crush">
 		<!-- Attacks target with 200% of P. Atk. power. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -471,6 +493,7 @@
 	</skill>
 	<skill id="16370" toLevel="1" name="Dimensional Slasher">
 		<!-- Attacks target with 250% of P. Atk. power. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -478,8 +501,9 @@
 		<effectPoint>-100</effectPoint>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
-	<skill id="16371" toLevel="1" name="Dimensional Storm">
+	<skill id="16371" toLevel="1" name="Dimension Storm">
 		<!-- Attacks nearby enemies with 200% of P. Atk. power. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1500</hitTime>
@@ -489,6 +513,7 @@
 	</skill>
 	<skill id="16372" toLevel="1" name="Dimensional Spike">
 		<!-- Attacks target with 200 Power added to M. Atk. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -499,6 +524,7 @@
 	</skill>
 	<skill id="16373" toLevel="1" name="Dimensional Crash">
 		<!-- Attacks target with 250 Power added to M. Atk. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -509,6 +535,7 @@
 	</skill>
 	<skill id="16374" toLevel="1" name="Dimensional Destruction">
 		<!-- Attacks target with 300 Power added to M. Atk. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>2000</hitTime>
@@ -538,6 +565,7 @@
 	</skill>
 	<skill id="16379" toLevel="1" name="Dimensional Remedy">
 		<!-- Recover 40% of Max HP. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2500</hitTime>
 		<effectPoint>-100</effectPoint>
@@ -552,6 +580,7 @@
 	</skill>
 	<skill id="16382" toLevel="1" name="Dimensional Death Ring">
 		<!-- Attacks target's nearby enemies with 250 Power added to M. Atk. Damage increases as number of enemies affected increases. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<hitTime>3000</hitTime>
@@ -582,6 +611,7 @@
 	</skill>
 	<skill id="16385" toLevel="1" name="Dimesional Devil">
 		<!-- Attacks target's nearby enemies with 300% of P. Atk. power. Damage decreases as number of enemies affected increases. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2500</hitTime>
@@ -590,6 +620,7 @@
 	</skill>
 	<skill id="16388" toLevel="1" name="Kain's Wrath">
 		<!-- Consumed by vengeful fury toward all who harm Giselle. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<coolTime>1000</coolTime>
@@ -598,6 +629,7 @@
 	</skill>
 	<skill id="16389" toLevel="1" name="Absorb Wind">
 		<!-- PC's CP/ HP/ MP all drop to 1. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -617,6 +649,7 @@
 	</skill>
 	<skill id="16390" toLevel="1" name="Wynn Summoner's Power">
 		<!-- Wynn Summoner's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -628,6 +661,7 @@
 	</skill>
 	<skill id="16391" toLevel="1" name="Feoh Wizard's Power">
 		<!-- Feoh Wizard's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -639,6 +673,7 @@
 	</skill>
 	<skill id="16392" toLevel="1" name="Tyrr Warrior's Power">
 		<!-- Tyrr Warrior's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -650,6 +685,7 @@
 	</skill>
 	<skill id="16393" toLevel="1" name="Othell Rogue's Power">
 		<!-- Othell Rogue's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -661,6 +697,7 @@
 	</skill>
 	<skill id="16394" toLevel="1" name="Iss Enchanter's Power">
 		<!-- Iss Enchanter's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -672,6 +709,7 @@
 	</skill>
 	<skill id="16395" toLevel="1" name="Yul Archer's Power">
 		<!-- Yul Archer's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -683,6 +721,7 @@
 	</skill>
 	<skill id="16396" toLevel="1" name="Sigel Knight's Power">
 		<!-- Sigel Knight's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -694,6 +733,7 @@
 	</skill>
 	<skill id="16397" toLevel="1" name="Aeore Healer's Power">
 		<!-- Aeore Healer's power is infused into Atelia. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -715,7 +755,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16399" toLevel="1" name="Ferin's Cure">
-		<!-- Heals target with 1488 Power added to M. Atk. If HP is full, CP is restored. -->
+		<!-- Heals the target with 1488 power. If HP is full, CP is restored with the remaining power. -->
 		<icon>icon.skill11756</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>

@@ -26,7 +26,6 @@ public class Config
 	// --------------------------------------------------
 	// Config File Definitions
 	// --------------------------------------------------
-	public const string NETWORK_CONFIG_FILE = "./config/Network.ini";
 	public const string OLYMPIAD_CONFIG_FILE = "./config/Olympiad.ini";
 
 	public const string FORTSIEGE_CONFIG_FILE = "./config/FortSiege.ini";
@@ -458,6 +457,7 @@ public class Config
 	public static bool MULTIPLE_ITEM_DROP;
 	public static bool HTM_CACHE;
 	public static bool CHECK_HTML_ENCODING;
+	public static bool HIDE_BYPASS_REMOVAL;
 	public static int MIN_NPC_ANIMATION;
 	public static int MAX_NPC_ANIMATION;
 	public static int MIN_MONSTER_ANIMATION;
@@ -781,20 +781,6 @@ public class Config
 	public static int PRECAUTIONARY_RESTART_DELAY;
 
 	// --------------------------------------------------
-	// Network Settings
-	// --------------------------------------------------
-	public static int CLIENT_READ_POOL_SIZE;
-	public static int CLIENT_SEND_POOL_SIZE;
-	public static int CLIENT_EXECUTE_POOL_SIZE;
-	public static int PACKET_QUEUE_LIMIT;
-	public static bool PACKET_FLOOD_DISCONNECT;
-	public static bool PACKET_FLOOD_DROP;
-	public static bool PACKET_FLOOD_LOGGED;
-	public static bool PACKET_ENCRYPTION;
-	public static bool FAILED_DECRYPTION_LOGGED;
-	public static bool TCP_NO_DELAY;
-
-	// --------------------------------------------------
 	// Vitality Settings
 	// --------------------------------------------------
 	public static bool ENABLE_VITALITY;
@@ -949,6 +935,7 @@ public class Config
 	// --------------------------------------------------
 	public static string GEODATA_PATH;
 	public static string PATHNODE_PATH;
+	public static string GEOEDIT_PATH;
 	public static int PATHFINDING;
 	public static string PATHFIND_BUFFERS;
 	public static float LOW_WEIGHT;
@@ -1403,6 +1390,7 @@ public class Config
 	public static bool PC_CAFE_ONLY_PREMIUM;
 	public static bool PC_CAFE_ONLY_VIP;
 	public static bool PC_CAFE_RETAIL_LIKE;
+	public static int PC_CAFE_REWARD_TIME;
 	public static int PC_CAFE_MAX_POINTS;
 	public static bool PC_CAFE_ENABLE_DOUBLE_POINTS;
 	public static int PC_CAFE_DOUBLE_POINTS_CHANCE;
@@ -1450,7 +1438,7 @@ public class Config
 		DATABASE_URL = parser.getString("URL", "jdbc:mariadb://localhost/l2jmobius");
 		DATABASE_LOGIN = parser.getString("Login", "root");
 		DATABASE_PASSWORD = parser.getString("Password", "");
-		DATABASE_MAX_CONNECTIONS = parser.getInt("MaximumDbConnections", 10);
+		DATABASE_MAX_CONNECTIONS = parser.getInt("MaximumDatabaseConnections", 10);
 		BACKUP_DATABASE = parser.getBoolean("BackupDatabase", false);
 		MYSQL_BIN_PATH = parser.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
 		BACKUP_PATH = parser.getString("BackupPath", "../backup/");
@@ -1494,18 +1482,6 @@ public class Config
 		PRECAUTIONARY_RESTART_CHECKS = parser.getBoolean("PrecautionaryRestartChecks", true);
 		PRECAUTIONARY_RESTART_PERCENTAGE = parser.getInt("PrecautionaryRestartPercentage", 95);
 		PRECAUTIONARY_RESTART_DELAY = parser.getInt("PrecautionaryRestartDelay", 60) * 1000;
-
-		parser.LoadConfig(NETWORK_CONFIG_FILE);
-		CLIENT_READ_POOL_SIZE = parser.getInt("ClientReadPoolSize", 100);
-		CLIENT_SEND_POOL_SIZE = parser.getInt("ClientSendPoolSize", 100);
-		CLIENT_EXECUTE_POOL_SIZE = parser.getInt("ClientExecutePoolSize", 100);
-		PACKET_QUEUE_LIMIT = parser.getInt("PacketQueueLimit", 80);
-		PACKET_FLOOD_DISCONNECT = parser.getBoolean("PacketFloodDisconnect", false);
-		PACKET_FLOOD_DROP = parser.getBoolean("PacketFloodDrop", false);
-		PACKET_FLOOD_LOGGED = parser.getBoolean("PacketFloodLogged", true);
-		PACKET_ENCRYPTION = parser.getBoolean("PacketEncryption", false);
-		FAILED_DECRYPTION_LOGGED = parser.getBoolean("FailedDecryptionLogged", true);
-		TCP_NO_DELAY = parser.getBoolean("TcpNoDelay", true);
 
 		// Hosts and Subnets
 		// TODO: what we need here is the list of IP addresses to listen, and IP to report to the Login server
@@ -2016,6 +1992,7 @@ public class Config
 		MULTIPLE_ITEM_DROP = parser.getBoolean("MultipleItemDrop", true);
 		HTM_CACHE = parser.getBoolean("HtmCache", true);
 		CHECK_HTML_ENCODING = parser.getBoolean("CheckHtmlEncoding", true);
+		HIDE_BYPASS_REMOVAL = parser.getBoolean("HideBypassRemoval", true);
 		MIN_NPC_ANIMATION = parser.getInt("MinNpcAnimation", 5);
 		MAX_NPC_ANIMATION = parser.getInt("MaxNpcAnimation", 60);
 		MIN_MONSTER_ANIMATION = parser.getInt("MinMonsterAnimation", 5);
@@ -2380,6 +2357,7 @@ public class Config
 		parser.LoadConfig(GEOENGINE_CONFIG_FILE);
 		GEODATA_PATH = Path.Combine(DATAPACK_ROOT_PATH, parser.getString("GeoDataPath", "geodata"));
 		PATHNODE_PATH = Path.Combine(DATAPACK_ROOT_PATH, parser.getString("PathnodePath", "pathnode"));
+		GEOEDIT_PATH = Path.Combine(DATAPACK_ROOT_PATH, parser.getString("GeoEditPath", "geodata_save"));
 		PATHFINDING = parser.getInt("PathFinding", 0);
 		PATHFIND_BUFFERS = parser.getString("PathFindBuffers", "100x6;128x6;192x6;256x4;320x4;384x4;500x2");
 		LOW_WEIGHT = parser.getFloat("LowWeight", 0.5f);
@@ -2713,6 +2691,7 @@ public class Config
 		PC_CAFE_ONLY_PREMIUM = parser.getBoolean("PcCafeOnlyPremium", false);
 		PC_CAFE_ONLY_VIP = parser.getBoolean("PcCafeOnlyVip", false);
 		PC_CAFE_RETAIL_LIKE = parser.getBoolean("PcCafeRetailLike", true);
+		PC_CAFE_REWARD_TIME = parser.getInt("PcCafeRewardTime", 300000);
 		PC_CAFE_MAX_POINTS = parser.getInt("MaxPcCafePoints", 200000);
 		if (PC_CAFE_MAX_POINTS < 0)
 		{

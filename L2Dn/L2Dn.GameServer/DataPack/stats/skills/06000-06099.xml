@@ -1,96 +1,115 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="6000" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6001" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6002" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6003" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6004" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6005" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6006" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6007" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6008" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6009" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6010" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6011" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6012" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6013" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6014" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6015" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6016" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6017" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6018" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -103,6 +122,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6020" toLevel="1" name="Soul Retain">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>10800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -138,6 +158,7 @@
 		</effects>
 	</skill>
 	<skill id="6021" toLevel="1" name="Soul Retain">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>10800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -173,6 +194,7 @@
 		</effects>
 	</skill>
 	<skill id="6022" toLevel="1" name="Soul Retain">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>10800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -208,6 +230,7 @@
 		</effects>
 	</skill>
 	<skill id="6023" toLevel="1" name="Soul Retain">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>10800</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -243,47 +266,56 @@
 		</effects>
 	</skill>
 	<skill id="6025" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6026" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6027" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6028" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6029" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6030" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6031" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6032" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>83</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6033" toLevel="1" name="Treasure Seeker's Betrayal">
 		<!-- Carrying this mark of betrayal makes one the target of nearby monsters. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>STIGMA_A</abnormalType>
@@ -300,8 +332,9 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6034" toLevel="1" name="Freeze">
+	<skill id="6034" toLevel="1" name="Freezing">
 		<!-- Target cannot move until the match starts. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>INVINCIBILITY</abnormalType>
@@ -336,6 +369,7 @@
 		</effects>
 	</skill>
 	<skill id="6037" toLevel="1" name="Soul Unleash">
+		<icon>icon.skill0000</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -454,7 +488,7 @@
 		</effects>
 	</skill>
 	<skill id="6043" toLevel="1" name="Phoenix Flame Feather">
-		<!-- Spreads ring-shaped flames. Power 70. -->
+		<!-- Spreads defensive ring-shaped flames. Power 70. -->
 		<icon>icon.skill6043</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>200</affectRange>
@@ -503,6 +537,7 @@
 		</effects>
 	</skill>
 	<skill id="6045" toLevel="1" name="Presentation - Fortune Bug">
+		<icon>icon.skill0000</icon>
 		<hitTime>2000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -513,6 +548,7 @@
 	</skill>
 	<skill id="6046" toLevel="14" name="Piercing Attack">
 		<!-- A powerful stab pierces the target. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-136</value>
@@ -592,6 +628,7 @@
 	</skill>
 	<skill id="6047" toLevel="14" name="Whirlwind">
 		<!-- Caster spins rapidly, targeting nearby enemies. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<affectRange>200</affectRange>
 		<effectPoint>
@@ -670,8 +707,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6048" toLevel="14" name="Lance Smash">
+	<skill id="6048" toLevel="14" name="Spear Smash">
 		<!-- Flourishes a lance and frontally attacks enemies. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<castRange>40</castRange>
 		<effectPoint>
@@ -817,6 +855,7 @@
 	</skill>
 	<skill id="6050" toLevel="14" name="Power Smash">
 		<!-- Powerfully strikes a target. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>
 			<value level="1">-136</value>
@@ -896,6 +935,7 @@
 	</skill>
 	<skill id="6051" toLevel="14" name="Energy Burst">
 		<!-- Fires energy gathered in one's body at the enemies to the front. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<effectPoint>
 			<value level="1">-273</value>
@@ -977,6 +1017,7 @@
 	</skill>
 	<skill id="6052" toLevel="14" name="Shock Wave">
 		<!-- Fires energy gathered in one's body at the enemies to the front. -->
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>
 			<value level="1">-273</value>
@@ -1136,6 +1177,7 @@
 	</skill>
 	<skill id="6054" toLevel="1" name="Switch State">
 		<!-- The pet's condition changes. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1186,7 +1228,7 @@
 		</effects>
 	</skill>
 	<skill id="6057" toLevel="1" name="Report Status">
-		<!-- You are under suspicion of using this program illegally. You are no longer permitted to move. -->
+		<!-- You are under suspicion of using this program illegally. you're no longer permitted to move. -->
 		<icon>icon.skill6038</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7200</abnormalTime>
@@ -1209,7 +1251,7 @@
 		</effects>
 	</skill>
 	<skill id="6058" toLevel="1" name="Report Status">
-		<!-- You are under suspicion of using this program illegally. You are no longer permitted to move. -->
+		<!-- You are under suspicion of using this program illegally. you're no longer permitted to move. -->
 		<icon>icon.skill6038</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7200</abnormalTime>
@@ -1232,7 +1274,7 @@
 		</effects>
 	</skill>
 	<skill id="6059" toLevel="1" name="Counter Critical">
-		<!-- P. Critical Damage is greatly increased. -->
+		<!-- P. Critical Damage +100%. -->
 		<icon>icon.skill1542</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>8</abnormalTime>
@@ -1266,7 +1308,7 @@
 		</effects>
 	</skill>
 	<skill id="6060" toLevel="1" name="Great Fury">
-		<!-- Atk. Spd. +30% for 8 sec. -->
+		<!-- Atk. Spd. +30%. -->
 		<icon>icon.skill1543</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>8</abnormalTime>
@@ -1285,7 +1327,7 @@
 		<affectObject>FRIEND</affectObject>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
-				<amount>50</amount>
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1480,11 +1522,13 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6088" toLevel="1" name="Block Buff">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6089" toLevel="1" name="Attack Motion">
+		<icon>icon.skill0000</icon>
 		<coolTime>500</coolTime>
 		<hitTime>3500</hitTime>
 		<magicLevel>1</magicLevel>
@@ -1541,7 +1585,7 @@
 			<effect name="BlockActions" />
 		</effects>
 	</skill>
-	<skill id="6092" toLevel="1" name="Lightning Shock">
+	<skill id="6092" toLevel="1" name="Lightning">
 		<!-- The target is paralyzed. -->
 		<icon>icon.skill0791</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -1565,7 +1609,7 @@
 		</effects>
 	</skill>
 	<skill id="6093" toLevel="1" name="Panther Hide">
-		<!-- Allows one to stay hidden. Movement speed -10%. The effect is canceled if any action other than movement is initiated. -->
+		<!-- Allows one to stay hidden. Movement speed is decreased by 10%. The effect is canceled if any action other than movement is initiated. -->
 		<icon>icon.skill0922</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1592,7 +1636,7 @@
 		</effects>
 	</skill>
 	<skill id="6094" toLevel="11" name="Panther Cancel">
-		<!-- Cancels multiple enemy buffs. -->
+		<!-- Cancels one or several of the target's buffs. -->
 		<icon>icon.skill6094</icon>
 		<castRange>40</castRange>
 		<effectPoint>-475</effectPoint>
@@ -1625,8 +1669,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6095" toLevel="15" name="Panther Dark Claw">
-		<!-- Damages the target, decreasing Dark Attack Resistance by $s3 for $s2. -->
+	<skill id="6095" toLevel="15" name="Panther Cancel">
+		<!-- Attacker's P. Atk. is supplemented with 469 power, decreasing Dark Attack Resistance by 25 for 30 sec. -->
 		<icon>icon.skill1445</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -1691,7 +1735,7 @@
 		</effects>
 	</skill>
 	<skill id="6096" toLevel="13" name="Panther Fatal Claw">
-		<!-- Panther's P. Atk. is supplemented with $s1 Power added to P. Atk., in a deadly attack. -->
+		<!-- Panther's P. Atk. is supplemented with 3408 Power added to P. Atk., in a deadly attack. -->
 		<icon>icon.skill6096</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>

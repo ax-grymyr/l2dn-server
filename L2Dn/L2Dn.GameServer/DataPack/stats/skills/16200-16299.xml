@@ -2,6 +2,7 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="16200" toLevel="1" name="Empty Cry">
 		<!-- Magical AoE attack. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>300</castRange>
@@ -10,7 +11,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16201" toLevel="6" name="Ekimus' Vitality">
-		<!-- Ekimus' M. Atk. +$s1. -->
+		<!-- Ekimus' M. Atk. +10%. -->
 		<icon>icon.skill1296</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -20,6 +21,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16202" toLevel="4" name="Fatal Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>40</castRange>
@@ -29,6 +31,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16203" toLevel="4" name="Fatal Shot">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -38,6 +41,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16204" toLevel="4" name="Fatal Slasher">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -46,6 +50,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="16205" toLevel="4" name="Burst Shot">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>500</castRange>
@@ -58,7 +63,8 @@
 		</effectPoint>
 		<coolTime>1000</coolTime>
 	</skill>
-	<skill id="16206" toLevel="4" name="Holy Spike">
+	<skill id="16206" toLevel="4" name="Divine Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -73,6 +79,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16207" toLevel="4" name="Dark Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>600</castRange>
@@ -87,6 +94,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16208" toLevel="4" name="Fire Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -101,6 +109,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16209" toLevel="4" name="Water Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -115,6 +124,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16210" toLevel="4" name="Wind Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -129,6 +139,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16211" toLevel="4" name="Earth Spike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -142,7 +153,8 @@
 		</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16212" toLevel="4" name="Holy Buster">
+	<skill id="16212" toLevel="4" name="Divine Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -152,6 +164,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16213" toLevel="4" name="Dark Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -166,6 +179,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16214" toLevel="4" name="Fire Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -175,6 +189,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16215" toLevel="4" name="Water Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -184,6 +199,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16216" toLevel="4" name="Wind Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -193,6 +209,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16217" toLevel="4" name="Earth Buster">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<hitTime>2000</hitTime>
@@ -202,6 +219,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16218" toLevel="4" name="Holy Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -211,7 +229,8 @@
 		<effectPoint>-700</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16219" toLevel="4" name="Dark Blast">
+	<skill id="16219" toLevel="4" name="Unholy Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -222,6 +241,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16220" toLevel="4" name="Fire Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -232,6 +252,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16221" toLevel="4" name="Water Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -242,6 +263,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16222" toLevel="4" name="Wind Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -252,6 +274,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16223" toLevel="4" name="Earth Blast">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -262,7 +285,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16224" toLevel="4" name="Mass Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -287,6 +310,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16226" toLevel="1" name="Battle Recovery">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -296,6 +320,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="16227" toLevel="1" name="Greater Recovery">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>1</mpConsume>
 		<castRange>900</castRange>
@@ -304,8 +329,8 @@
 		<effectPoint>83</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="16228" toLevel="4" name="Wide Stun">
-		<!-- Attacks nearby enemies and stuns them for $s1. -->
+	<skill id="16228" toLevel="4" name="Mass Stun">
+		<!-- Attacks nearby enemies, stuns for 10 sec. -->
 		<icon>icon.skill10265</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -317,7 +342,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16229" toLevel="4" name="Mass Hold">
-		<!-- Casts Hold on target and nearby enemies for $s1. -->
+		<!-- Casts hold on a target and nearby enemies for 10 sec. -->
 		<icon>icon.skill10090new</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -331,7 +356,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16230" toLevel="4" name="Sleeping Cloud">
-		<!-- Casts Sleep on target and nearby enemies for $s1. -->
+		<!-- Casts sleep on target and nearby enemies for 10 sec. -->
 		<icon>icon.skill1072</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -345,7 +370,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="16231" toLevel="4" name="Mass Airbind">
-		<!-- Throws nearby enemies into the air and binds them for $s1. -->
+		<!-- Throws nearby enemies into the air and binds them for 10 sec. -->
 		<icon>icon.skill11052</icon>
 		<operateType>A2</operateType>
 		<mpConsume>1</mpConsume>
@@ -447,12 +472,12 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16251" toLevel="1" name="92Lv. Raid Boss">
-		<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turation has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turamathia retains the tribe's aggression and stamina. -->
+		<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turamathia has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turamathia retains the tribe's aggression and stamina. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16252" toLevel="1" name="92Lv. Raid Boss">
-		<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turation has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turabait retains the tribe's aggression and stamina. -->
+		<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turabait has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turabait retains the tribe's aggression and stamina. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -552,7 +577,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16272" toLevel="1" name="Raid Boss (Lv. 94)">
-		<!-- A race of enhanced monsters created by DIsciple Lavidos using Kel Mahum, staff-wielding Tiverga is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
+		<!-- A race of enhanced monsters created by Disciple Lavidos using Kel Mahum, staff-wielding Tiverga is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -622,32 +647,32 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16286" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Zetahl is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Zetahl resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Zetahl is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Zetahl resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16287" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Tabris is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Tabris resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Tabris is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Tabris resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16288" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Stelos is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelos resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Stelos is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelos resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16289" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Ravolas is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Ravolas resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Ravolas is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Ravolas resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16290" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Stelo Soma is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelo Soma resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Stelo Soma is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelo Soma resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="16291" toLevel="1" name="Raid Boss (Lv. 97)">
-		<!-- Dephracor is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Dephracor resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
+		<!-- Dephracor is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Dephracor resides in an area between the Breka's Stronghold and Gorgon Flower Garden, and plays a part in creating the monster magic circle. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 	</skill>

@@ -1,55 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="301" toLevel="5" name="Summon Big Boom">
-		<!-- Summons a self-destructing Big Boom. Requires $s1 D-grade Crystals. Takes away $s2 of acquired XP. -->
-		<icon>icon.skill0301</icon>
-		<hitTime>6000</hitTime>
-		<itemConsumeCount>
-			<value level="1">3</value>
-			<value level="2">3</value>
-			<value level="3">4</value>
-			<value level="4">4</value>
-			<value level="5">5</value>
-		</itemConsumeCount>
-		<itemConsumeId>1458</itemConsumeId>
-		<magicLevel>
-			<value level="1">58</value>
-			<value level="2">62</value>
-			<value level="3">66</value>
-			<value level="4">70</value>
-			<value level="5">74</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">74</value>
-			<value level="2">82</value>
-			<value level="3">88</value>
-			<value level="4">94</value>
-			<value level="5">100</value>
-		</mpConsume>
-		<operateType>A1</operateType>
-		<reuseDelay>5000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="CanSummon" />
-		</conditions>
-		<effects>
-			<effect name="Summon">
-				<npcId>
-					<value level="1">14702</value>
-					<value level="2">14703</value>
-					<value level="3">14704</value>
-					<value level="4">14705</value>
-					<value level="5">14706</value>
-				</npcId>
-				<lifeTime>1200</lifeTime>
-				<consumeItemId>1458</consumeItemId>
-				<consumeItemCount>5</consumeItemCount>
-				<expMultiplier>0.7</expMultiplier>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="302" toLevel="14" name="Spoil Festival">
 		<!-- Causes Spoil around the enemy. -->
 		<icon>icon.skill0302</icon>
@@ -118,56 +68,8 @@
 			<effect name="Spoil" />
 		</effects>
 	</skill>
-	<skill id="303" toLevel="4" name="Soul of Sagittarius">
-		<!-- Max MP +$s2 for $s1. -->
-		<icon>icon.skill0303</icon>
-		<abnormalLevel>
-			<value level="1">1</value>
-			<value level="2">2</value>
-			<value level="3">3</value>
-			<value level="4">4</value>
-		</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
-		<abnormalType>MAX_MP_UP</abnormalType>
-		<effectPoint>
-			<value level="1">438</value>
-			<value level="2">549</value>
-			<value level="3">597</value>
-			<value level="4">635</value>
-		</effectPoint>
-		<hitTime>2000</hitTime>
-		<hpConsume>
-			<value level="1">185</value>
-			<value level="2">271</value>
-			<value level="3">316</value>
-			<value level="4">364</value>
-		</hpConsume>
-		<magicLevel>
-			<value level="1">40</value>
-			<value level="2">58</value>
-			<value level="3">64</value>
-			<value level="4">70</value>
-		</magicLevel>
-		<operateType>A2</operateType>
-		<reuseDelay>4000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">25</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="304" toLevel="2" name="Song of Vitality">
-		<!-- All party members' Max HP +30% for 5 min. MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. -->
+		<!-- All party members' Max HP +30% for 5 min. Additionally increases MP Consumption if the skill is used while song/ dance is in effect. -->
 		<icon>icon.skill0304</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -232,127 +134,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="306" toLevel="1" name="Flame Guard's Song">
-		<!-- For 2 min., increases party members' Fire Resistance by 30. Additionally increases MP Consumption when singing while song/ dance is in effect. -->
-		<icon>icon.skill0306</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>SONG_OF_FLAME_GUARD</abnormalType>
-		<affectRange>1000</affectRange>
-		<effectPoint>582</effectPoint>
-		<hitTime>2500</hitTime>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
-		<magicLevel>62</magicLevel>
-		<mpConsume>60</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<effects>
-			<effect name="DefenceAttribute">
-				<amount>30</amount>
-				<attribute>FIRE</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="307" toLevel="1" name="Dance of Aqua Guard">
-		<!-- All party members' Dark resistance +30 for 2 min. MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. -->
-		<icon>icon.skill0307</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>DANCE_OF_AQUA_GUARD</abnormalType>
-		<affectRange>1000</affectRange>
-		<effectPoint>635</effectPoint>
-		<hitTime>2500</hitTime>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
-		<magicLevel>70</magicLevel>
-		<mpConsume>60</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<item>DUAL</item>
-					<item>DUALBLUNT</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="DefenceAttribute">
-				<amount>30</amount>
-				<attribute>WATER</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="308" toLevel="1" name="Storm Guard's Song">
-		<!-- All party members' Dark resistance +30 for 2 min. MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. -->
-		<icon>icon.skill0308</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>SONG_OF_STORM_GUARD</abnormalType>
-		<affectRange>1000</affectRange>
-		<effectPoint>635</effectPoint>
-		<hitTime>2500</hitTime>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
-		<magicLevel>70</magicLevel>
-		<mpConsume>60</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<effects>
-			<effect name="DefenceAttribute">
-				<amount>30</amount>
-				<attribute>WIND</attribute>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="309" toLevel="1" name="Dance of Earth Guard">
-		<!-- Party members' Earth Resistance +30 for 20 min. Additionally increases MP Consumption when dancing while song/ dance is in effect. -->
-		<icon>icon.skill0309</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>DANCE_OF_EARTH_GUARD</abnormalType>
-		<affectRange>1000</affectRange>
-		<effectPoint>582</effectPoint>
-		<hitTime>2500</hitTime>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
-		<magicLevel>62</magicLevel>
-		<mpConsume>60</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<item>DUAL</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="DefenceAttribute">
-				<amount>30</amount>
-				<attribute>EARTH</attribute>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="310" toLevel="1" name="Dance of the Vampire">
-		<!-- For 5 min., recovers as HP 8% of the physical melee damage inflicted on the enemy with a certain probability. Additionally increases MP Consumption when dancing while song/ dance is in effect. Requires a dual sword. -->
+		<!-- For 5 min., recovers as HP 8% of the melee damage inflicted on the enemy with a certain probability. Additionally increases MP Consumption when dancing while song/ dance is in effect. Requires a dual sword. -->
 		<icon>icon.skill0310</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -386,7 +169,7 @@
 		</effects>
 	</skill>
 	<skill id="311" toLevel="2" name="Dance of Protection">
-		<!-- For 5 min., grants all party members +10% Damage Reflect Resistance. Additionally increases MP Consumption when dancing while song/ dance is in effect. Requires dual swords. -->
+		<!-- For 5 min., grants all party members +10% Damage Reflect Resistance. Additionally increases MP Consumption if the skill is used while song/ dance is in effect. Requires dual swords. -->
 		<icon>icon.skill0311</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -424,7 +207,7 @@
 		</effects>
 	</skill>
 	<skill id="312" toLevel="20" name="Vicious Stance">
-		<!-- P. Critical Damage +$s1. Continuously consumes MP proportionately to your level. -->
+		<!-- P. Critical Damage +35. Continuously consumes MP proportionately to your level. -->
 		<icon>icon.skill0312</icon>
 		<magicLevel>
 			<value level="1">20</value>
@@ -506,7 +289,7 @@
 		</effects>
 	</skill>
 	<skill id="313" toLevel="9" name="Snipe">
-		<!-- For $s1, P. Accuracy +$s2, P. Atk. +$s3, Range +$s4, P. Critical Rate +$s5. Movement is impossible while skill is being used. Requires a bow. -->
+		<!-- For 20 min., P. Accuracy +3, P. Atk. +124, Range +50, P. Critical Rate +20%. Movement is impossible while skill is being used. Requires a bow. <Auto-use> -->
 		<icon>icon.skill0313</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -583,9 +366,6 @@
 					<value level="9">-20</value>
 				</amount>
 				<mode>DIFF</mode>
-				<weaponType>
-					<item>BOW</item>
-				</weaponType>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -648,7 +428,7 @@
 		</effects>
 	</skill>
 	<skill id="314" toLevel="19" name="Fatal Counter">
-		<!-- Fires an agony-inducing arrow at the target with $s1 Power added to P. Atk. The power of the attack increases as your HP decreases. Requires a bow. Over-hit. -->
+		<!-- Fires an agony-inducing arrow at the target with 2908 Power added to P. Atk. The power of the attack increases as your HP decreases. Requires a bow. Over-hit. -->
 		<icon>icon.skill0314</icon>
 		<castRange>900</castRange>
 		<coolTime>1000</coolTime>
@@ -756,107 +536,6 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="315" toLevel="16" name="Crush of Doom">
-		<!-- Attacks the target with $s1 Power added to P. Atk. Requires a sword or blunt weapon to be equipped. Ignores Shield Defense. Over-hit. -->
-		<icon>icon.skill0315</icon>
-		<castRange>40</castRange>
-		<coolTime>1080</coolTime>
-		<effectPoint>
-			<value level="1">-213</value>
-			<value level="2">-216</value>
-			<value level="3">-219</value>
-			<value level="4">-222</value>
-			<value level="5">-225</value>
-			<value level="6">-228</value>
-			<value level="7">-230</value>
-			<value level="8">-233</value>
-			<value level="9">-236</value>
-			<value level="10">-238</value>
-			<value level="11">-240</value>
-			<value level="12">-242</value>
-			<value level="13">-244</value>
-			<value level="14">-246</value>
-			<value level="15">-248</value>
-			<value level="16">-250</value>
-		</effectPoint>
-		<effectRange>400</effectRange>
-		<hitTime>1620</hitTime>
-		<hpConsume>
-			<value level="1">208</value>
-			<value level="2">212</value>
-			<value level="3">212</value>
-			<value level="4">217</value>
-			<value level="5">221</value>
-			<value level="6">225</value>
-			<value level="7">229</value>
-			<value level="8">233</value>
-			<value level="9">237</value>
-			<value level="10">240</value>
-			<value level="11">244</value>
-			<value level="12">248</value>
-			<value level="13">251</value>
-			<value level="14">255</value>
-			<value level="15">258</value>
-			<value level="16">261</value>
-		</hpConsume>
-		<magicLevel>
-			<value level="1">59</value>
-			<value level="2">60</value>
-			<value level="3">61</value>
-			<value level="4">62</value>
-			<value level="5">63</value>
-			<value level="6">64</value>
-			<value level="7">65</value>
-			<value level="8">66</value>
-			<value level="9">67</value>
-			<value level="10">68</value>
-			<value level="11">69</value>
-			<value level="12">70</value>
-			<value level="13">71</value>
-			<value level="14">72</value>
-			<value level="15">73</value>
-			<value level="16">74</value>
-		</magicLevel>
-		<nextAction>ATTACK</nextAction>
-		<operateType>A1</operateType>
-		<reuseDelay>7000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="Op2hWeapon">
-				<weaponType>
-					<item>SWORD</item>
-					<item>BLUNT</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">4558</value>
-					<value level="2">4750</value>
-					<value level="3">4944</value>
-					<value level="4">5142</value>
-					<value level="5">5342</value>
-					<value level="6">5545</value>
-					<value level="7">5751</value>
-					<value level="8">5958</value>
-					<value level="9">6166</value>
-					<value level="10">6376</value>
-					<value level="11">6586</value>
-					<value level="12">6797</value>
-					<value level="13">7008</value>
-					<value level="14">7218</value>
-					<value level="15">7427</value>
-					<value level="16">7635</value>
-				</power>
-				<ignoreShieldDefence>true</ignoreShieldDefence>
-				<criticalChance>15</criticalChance>
-				<overHit>true</overHit>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="316" toLevel="1" name="Aegis">
 		<!-- Enables Shield Defense in all directions. -->
 		<icon>icon.skill0316</icon>
@@ -868,7 +547,7 @@
 		</effects>
 	</skill>
 	<skill id="317" toLevel="6" name="Focus Attack">
-		<!-- Attacks a single enemy when equipped with a spear. Additionally, P. Accuracy +$s1 and P. Critical Damage +$s2. Applies to standard attacks only. -->
+		<!-- Attacks a single enemy when equipped with a spear. Additionally, P. Accuracy +2 and P. Critical Damage +3%. Applies to standard attacks only. -->
 		<icon>icon.skill0317</icon>
 		<magicLevel>
 			<value level="1">40</value>
@@ -922,239 +601,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="318" toLevel="1" name="Aegis Stance">
-		<!-- Enables Shield Defense from all directions and Shield Defense -30%. -->
-		<icon>icon.skill0318</icon>
-		<magicLevel>46</magicLevel>
-		<mpInitialConsume>9</mpInitialConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="PhysicalShieldAngleAll" />
-			<effect name="ShieldDefence">
-				<amount>-30</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="319" toLevel="2" name="Agile Movement">
-		<!-- P. Accuracy +$s1 and Speed +$s2 when equipped with light armor. -->
-		<icon>icon.skill0319</icon>
-		<magicLevel>
-			<value level="1">20</value>
-			<value level="2">40</value>
-		</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="Speed">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
-				<mode>DIFF</mode>
-				<armorType>
-					<item>LIGHT</item>
-				</armorType>
-			</effect>
-			<effect name="Accuracy">
-				<amount>
-					<value level="1">2</value>
-					<value level="2">3</value>
-				</amount>
-				<mode>DIFF</mode>
-				<armorType>
-					<item>LIGHT</item>
-				</armorType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="320" toLevel="14" name="Wrath">
-		<!-- Swings a spear to decrease nearby enemies' CP -$s1. Requires a polearm to be equipped. -->
-		<icon>icon.skill0320</icon>
-		<affectLimit>5-12</affectLimit>
-		<affectRange>80</affectRange>
-		<castRange>40</castRange>
-		<coolTime>720</coolTime>
-		<effectPoint>
-			<value level="1">-307</value>
-			<value level="2">-311</value>
-			<value level="3">-314</value>
-			<value level="4">-317</value>
-			<value level="5">-320</value>
-			<value level="6">-323</value>
-			<value level="7">-326</value>
-			<value level="8">-328</value>
-			<value level="9">-331</value>
-			<value level="10">-333</value>
-			<value level="11">-333</value>
-			<value level="12">-333</value>
-			<value level="13">-333</value>
-			<value level="14">-333</value>
-		</effectPoint>
-		<effectRange>400</effectRange>
-		<fanRange>0;0;80;150</fanRange>
-		<hitTime>1080</hitTime>
-		<magicLevel>
-			<value level="1">65</value>
-			<value level="2">66</value>
-			<value level="3">67</value>
-			<value level="4">68</value>
-			<value level="5">69</value>
-			<value level="6">70</value>
-			<value level="7">71</value>
-			<value level="8">72</value>
-			<value level="9">73</value>
-			<value level="10">74</value>
-			<value level="11">85</value>
-			<value level="12">90</value>
-			<value level="13">95</value>
-			<value level="14">99</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">66</value>
-			<value level="2">67</value>
-			<value level="3">68</value>
-			<value level="4">69</value>
-			<value level="5">70</value>
-			<value level="6">71</value>
-			<value level="7">72</value>
-			<value level="8">73</value>
-			<value level="9">74</value>
-			<value level="10">75</value>
-			<value level="11">80</value>
-			<value level="12">85</value>
-			<value level="13">90</value>
-			<value level="14">100</value>
-		</mpConsume>
-		<operateType>A1</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
-		<affectScope>FAN</affectScope>
-		<affectObject>NOT_FRIEND</affectObject>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<item>POLE</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="Cp">
-				<amount>
-					<value level="1">-7</value>
-					<value level="2">-10</value>
-					<value level="3">-12</value>
-					<value level="4">-15</value>
-					<value level="5">-17</value>
-					<value level="6">-20</value>
-					<value level="7">-22</value>
-					<value level="8">-25</value>
-					<value level="9">-27</value>
-					<value level="10">-30</value>
-					<value level="11">-33</value>
-					<value level="12">-36</value>
-					<value level="13">-40</value>
-					<value level="14">-45</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="321" toLevel="10" name="Blinding Blow">
-		<!-- Attacks the target's vital points with $s1 Power added to P. Atk. and turns his/ her back to you. Speed +$s2. Requires a dagger. Over-hit. Half-kill. -->
-		<icon>icon.skill0321</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
-		<castRange>40</castRange>
-		<coolTime>720</coolTime>
-		<effectPoint>
-			<value level="1">-307</value>
-			<value level="2">-311</value>
-			<value level="3">-314</value>
-			<value level="4">-317</value>
-			<value level="5">-320</value>
-			<value level="6">-323</value>
-			<value level="7">-326</value>
-			<value level="8">-328</value>
-			<value level="9">-331</value>
-			<value level="10">-333</value>
-		</effectPoint>
-		<effectRange>400</effectRange>
-		<hitTime>1080</hitTime>
-		<magicLevel>
-			<value level="1">65</value>
-			<value level="2">66</value>
-			<value level="3">67</value>
-			<value level="4">68</value>
-			<value level="5">69</value>
-			<value level="6">70</value>
-			<value level="7">71</value>
-			<value level="8">72</value>
-			<value level="9">73</value>
-			<value level="10">74</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">63</value>
-			<value level="2">64</value>
-			<value level="3">65</value>
-			<value level="4">66</value>
-			<value level="5">67</value>
-			<value level="6">68</value>
-			<value level="7">69</value>
-			<value level="8">70</value>
-			<value level="9">71</value>
-			<value level="10">72</value>
-		</mpConsume>
-		<nextAction>ATTACK</nextAction>
-		<operateType>A3</operateType>
-		<reuseDelay>30000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<item>DAGGER</item>
-					<item>DUALDAGGER</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="FatalBlow">
-				<power>
-					<value level="1">2751</value>
-					<value level="2">2850</value>
-					<value level="3">2850</value>
-					<value level="4">3050</value>
-					<value level="5">3151</value>
-					<value level="6">3252</value>
-					<value level="7">3353</value>
-					<value level="8">3453</value>
-					<value level="9">3553</value>
-					<value level="10">3653</value>
-				</power>
-				<overHit>true</overHit>
-				<chanceBoost>250</chanceBoost>
-			</effect>
-			<effect name="Bluff">
-				<chance>80</chance>
-			</effect>
-		</effects>
-		<!-- TODO : Move to effects after A3 skills rework -->
-		<selfEffects>
-			<effect name="Speed">
-				<amount>40</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</selfEffects>
-	</skill>
-	<skill id="322" toLevel="6" name="Shield Fortress">
-		<!-- Shield Defense +$s1. Continuously consumes MP proportionately to your level. -->
+	<skill id="322" toLevel="6" name="Ultimate Shield">
+		<!-- Shield Defense +446. Continuously consumes MP proportionately to your level. -->
 		<icon>icon.skill0322</icon>
 		<magicLevel>
 			<value level="1">64</value>
@@ -1177,7 +625,7 @@
 		<targetType>NONE</targetType>
 		<effects>
 			<effect name="MpConsumePerLevel">
-				<power>0.8</power>
+				<power>0.6</power>
 				<ticks>5</ticks>
 			</effect>
 			<effect name="ShieldDefence">
@@ -1190,36 +638,6 @@
 					<value level="6">560</value>
 				</amount>
 				<mode>DIFF</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="325" toLevel="1" name="Strider Siege Assault">
-		<!-- Uses 15005 Power to attack a castle's gate. Can be used while mounted on a Strider. Consumes 5 Spirit Ore. -->
-		<icon>icon.skill0325</icon>
-		<castRange>40</castRange>
-		<coolTime>720</coolTime>
-		<effectPoint>-100</effectPoint>
-		<effectRange>400</effectRange>
-		<hitTime>1080</hitTime>
-		<itemConsumeCount>5</itemConsumeCount>
-		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<magicLevel>-1</magicLevel>
-		<mpConsume>151</mpConsume>
-		<operateType>A1</operateType>
-		<reuseDelay>1000</reuseDelay>
-		<magicCriticalRate>5</magicCriticalRate>
-		<specialLevel>-1</specialLevel>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<targetConditions>
-			<condition name="OpSiegeHammer" />
-		</targetConditions>
-		<conditions>
-			<condition name="OpStrider" />
-		</conditions>
-		<effects>
-			<effect name="PhysicalAttack">
-				<power>15005</power>
 			</effect>
 		</effects>
 	</skill>
@@ -1249,46 +667,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="327" toLevel="1" name="Wyvern Aegis">
-		<!-- For 9 sec., P. Def. +7000, M. Def. +6000 and Buff-canceling Attack Resistance +100%. Can be used while mounted on a Wyvern. Consumes 20 Spirit Ore. -->
-		<icon>icon.skill0327</icon>
-		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>9</abnormalTime>
-		<abnormalType>PD_UP_SPECIAL</abnormalType>
-		<effectPoint>662</effectPoint>
-		<hitTime>1000</hitTime>
-		<itemConsumeCount>20</itemConsumeCount>
-		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
-		<magicLevel>-1</magicLevel>
-		<mpConsume>69</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>600000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<specialLevel>-1</specialLevel>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="OpWyvern" />
-		</conditions>
-		<effects>
-			<effect name="PhysicalDefence">
-				<amount>7000</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>6000</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ResistDispelByCategory">
-				<amount>-100</amount>
-				<slot>BUFF</slot>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="328" toLevel="1" name="Dignity of Kamael">
-		<!-- With the original power of Kamael, Speed +$s1, Atk. Spd. +$s2, Casting Spd. +$s3. -->
-		<icon>icon.skill0328</icon>
+	<skill id="328" toLevel="1" name="Kamael's Dignity">
+		<!-- Speed +20, Atk. Spd. +20, Casting Spd. +20. -->
+		<icon>icon.skill1923</icon>
 		<magicLevel>10</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1308,8 +689,8 @@
 		</effects>
 	</skill>
 	<skill id="329" toLevel="1" name="Pride of Kamael">
-		<!-- With the original power of Kamael, Poison/Bleed/Hold/Sleep/Stun/Mental Attack Resistance +20 -->
-		<icon>icon.skill0329</icon>
+		<!-- Poison/ Hold/ Bleed/ Sleep/ Stun/ Mental Resistance +20. -->
+		<icon>icon.skill1925</icon>
 		<magicLevel>10</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1321,80 +702,6 @@
 				<SLEEP>20</SLEEP>
 				<SHOCK>20</SHOCK>
 				<DERANGEMENT>20</DERANGEMENT>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="330" toLevel="1" name="Skill Mastery">
-		<!-- Depending on your STR, resets Cooldown resets or doubles the duration. -->
-		<icon>icon.skill0330</icon>
-		<magicLevel>77</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="SkillMastery">
-				<stat>STR</stat>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="331" toLevel="1" name="Skill Mastery">
-		<!-- Depending on your INT, resets Cooldown resets or doubles the duration. -->
-		<icon>icon.skill0330</icon>
-		<magicLevel>77</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="SkillMastery">
-				<stat>INT</stat>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="332" toLevel="1" name="Extra Inventory">
-		<!-- Inventory slots +1. -->
-		<icon>icon.skill0332</icon>
-		<magicLevel>76</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="EnlargeSlot">
-				<amount>1</amount>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="333" toLevel="1" name="Extra Sales Slots">
-		<!-- Private store transaction slots +1. -->
-		<icon>icon.skill0333</icon>
-		<magicLevel>76</magicLevel>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="EnlargeSlot">
-				<amount>1</amount>
-				<mode>DIFF</mode>
-				<type>TRADE_BUY</type>
-			</effect>
-			<effect name="EnlargeSlot">
-				<amount>1</amount>
-				<mode>DIFF</mode>
-				<type>TRADE_SELL</type>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="334" toLevel="1" name="Focus Skill Mastery">
-		<!-- By the effect of Skill Mastery Critical Rate +1000%. Continuously consumes MP proportionately to your level. -->
-		<icon>icon.skill0334</icon>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="MpConsumePerLevel">
-				<power>2</power>
-				<ticks>5</ticks>
-			</effect>
-			<effect name="SkillMasteryRate">
-				<amount>100</amount>
-				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1417,32 +724,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="336" toLevel="1" name="Arcane Wisdom">
-		<!-- Maximizes magic efficiency, MP Consumption -30% and Casting Spd. -10%. 50 HP is consumed per sec. -->
-		<icon>icon.skill0336</icon>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="HealOverTime">
-				<power>-50</power>
-				<ticks>5</ticks>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>-10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-30</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="337" toLevel="8" name="Arcane Power">
-		<!-- Maximizes magic efficiency, M. Atk. +$s1 and MP Consumption +$s2. Every sec., $s3 HP is consumed. -->
+		<!-- Maximizes magic efficiency, M. Atk. +10% and MP Consumption +5%. Every sec., 15 HP is consumed. -->
 		<icon>icon.skill0337</icon>
 		<magicLevel>
 			<value level="1">77</value>
@@ -1456,13 +739,12 @@
 		</magicLevel>
 		<mpConsume>36</mpConsume>
 		<operateType>T</operateType>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>NONE</targetType>
 		<effects>
 			<effect name="HealOverTime">
 				<power>-15</power>
-				<ticks>2</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MAtk">
 				<amount>
@@ -1481,109 +763,6 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="338" toLevel="1" name="Arcane Agility">
-		<!-- Maximizes magic efficiency, MP Consumption +10% and Casting Spd. +20% and Cooldown time -10%. 50 HP is consumed per sec. -->
-		<icon>icon.skill0338</icon>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="HealOverTime">
-				<power>-50</power>
-				<ticks>5</ticks>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>10</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="Reuse">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="339" toLevel="1" name="Parry Stance">
-		<!-- Blocks an attack using a weapon. P. Def. +25% and M. Def. +25%. Speed -10%, Atk. Spd. -20%, and P. Accuracy -4. Continuously consumes MP proportionately to your level. -->
-		<icon>icon.skill0339</icon>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="MpConsumePerLevel">
-				<power>1</power>
-				<ticks>5</ticks>
-			</effect>
-			<effect name="Speed">
-				<amount>-10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>25</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>25</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Accuracy">
-				<amount>-4</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="340" toLevel="1" name="Riposte Stance">
-		<!-- Parries and returns an attack using a weapon. Returns 30% of received damage back to the enemy, and reflects buff/ de-buff with a 30% chance. Speed -10%, Atk. Spd. -20%, and P. Accuracy -4. Continuously consumes MP proportionately to your level. -->
-		<icon>icon.skill0340</icon>
-		<magicLevel>77</magicLevel>
-		<mpConsume>35</mpConsume>
-		<operateType>T</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>NONE</targetType>
-		<effects>
-			<effect name="MpConsumePerLevel">
-				<power>1</power>
-				<ticks>5</ticks>
-			</effect>
-			<effect name="Speed">
-				<amount>-10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Accuracy">
-				<amount>-4</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DamageShield">
-				<amount>30</amount>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>
@@ -1613,7 +792,7 @@
 			</effect>
 			<effect name="HealOverTime">
 				<power>30</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="HealEffect">
 				<amount>10</amount>
@@ -1680,7 +859,7 @@
 		</effects>
 	</skill>
 	<skill id="343" toLevel="9" name="Lethal Shot">
-		<!-- Shoots an arrow at a vital spot. Attacks the enemy with $s1 Power added to P. Atk. Ignores $s2 enemy's defense. Requires a bow. Critical. Over-hit. -->
+		<!-- Attacks the target with 6503 power. Ignores the target's defense. Requires a bow. Critical. Over-hit. -->
 		<icon>icon.skill0343</icon>
 		<castRange>900</castRange>
 		<effectPoint>
@@ -1746,22 +925,12 @@
 				</power>
 				<overHit>true</overHit>
 				<criticalChance>50</criticalChance>
-				<pDefMod>
-					<value level="1">0.8</value>
-					<value level="2">0.79</value>
-					<value level="3">0.78</value>
-					<value level="4">0.77</value>
-					<value level="5">0.76</value>
-					<value level="6">0.75</value>
-					<value level="7">0.74</value>
-					<value level="8">0.72</value>
-					<value level="9">0.7</value>
-				</pDefMod>
+				<pDefMod>0.9</pDefMod>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="344" toLevel="2" name="Lethal Blow">
-		<!-- Attacks the target's vital points with $s1 Power added to P. Atk. Requires a dagger. Critical. Over-hit. -->
+		<!-- Attacks the target's vital points with 7148 Power added to P. Atk. Requires a dagger. Critical. Over-hit. -->
 		<icon>icon.skill0344</icon>
 		<castRange>40</castRange>
 		<effectPoint>
@@ -1799,18 +968,18 @@
 					<value level="2">8577</value>
 				</power>
 				<criticalChance>20</criticalChance>
-				<chanceBoost>300</chanceBoost>
+				<chanceBoost>250</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="345" toLevel="5" name="Sonic Rage">
-		<!-- Attacks the target with a deadly energy storm with $s1 Power, P. Def -30%, absorbs Momentum. Requires a sword, spear, blunt weapon, fist weapon, or dual sword. -->
+		<!-- Attacks the target with a burst of sword energy. P. Def -30%, absorbs Momentum. Power 195 Requires a sword, blunt weapon, or dual sword. -->
 		<icon>icon.skill0345</icon>
-		<abnormalLevel>5</abnormalLevel>
+		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
-		<activateRate>80</activateRate>
+		<activateRate>120</activateRate>
 		<castRange>600</castRange>
 		<coolTime>300</coolTime>
 		<effectPoint>
@@ -1848,6 +1017,7 @@
 					<item>SWORD</item>
 					<item>BLUNT</item>
 					<item>DUALFIST</item>
+					<item>POLE</item>
 					<item>DUAL</item>
 				</weaponType>
 			</condition>
@@ -1861,9 +1031,10 @@
 					<value level="4">225</value>
 					<value level="5">235</value>
 				</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="PhysicalDefence">
-				<amount>-23</amount>
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1874,7 +1045,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="346" toLevel="5" name="Raging Force">
-		<!-- Attacks the target with a devastating burst of wind with $s1 Power, P. Def -30%, absorbs Momentum. Requires a sword, spear, blunt weapon, fist weapon, or dual sword. -->
+		<!-- Attacks the enemy with Power 195. P. Def. -30%, absorbs Momentum. Requires a sword weapon/ blunt weapon/ dual sword. -->
 		<icon>icon.skill0346</icon>
 		<castRange>600</castRange>
 		<effectPoint>
@@ -1887,9 +1058,8 @@
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
-		<activateRate>80</activateRate>
+		<activateRate>120</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
-		<lvlBonusRate>30</lvlBonusRate>
 		<effectRange>1100</effectRange>
 		<hitTime>1200</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1933,9 +1103,10 @@
 					<value level="4">225</value>
 					<value level="5">235</value>
 				</power>
+				<criticalChance>5</criticalChance>
 			</effect>
 			<effect name="PhysicalDefence">
-				<amount>-23</amount>
+				<amount>-30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1946,7 +1117,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="347" toLevel="9" name="Earthquake">
-		<!-- Attacks nearby enemies with a powerful strike with $s1 Power added to P. Atk. Ignores Shield Defense. Requires a polearm. Over-hit. Critical. Target cancel is possible. -->
+		<!-- Strikes nearby enemies with 3878 power added to P. Atk. Ignores Shield Defense. Requires a spear. Critical, over-hit. -->
 		<icon>icon.skill0347</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>150</affectRange>
@@ -1961,8 +1132,6 @@
 			<value level="8">-392</value>
 			<value level="9">-400</value>
 		</effectPoint>
-		<attributeType>EARTH</attributeType>
-		<attributeValue>20</attributeValue>
 		<hitTime>1800</hitTime>
 		<hpConsume>
 			<value level="1">340</value>
@@ -2031,7 +1200,7 @@
 		</effects>
 	</skill>
 	<skill id="348" toLevel="8" name="Spoil Crush">
-		<!-- Causes a change inside the monster while attacking the enemy and permits use of the Sweeper skill. Requires a sword or blunt weapon to be equipped. Critical. Over-hit. -->
+		<!-- Causes a change inside the monster while attacking it with 2288 power. Allows use of the Sweeper skill. Requires a sword, a blunt weapon, or a spear. Critical. Over-hit. -->
 		<icon>icon.skill0348</icon>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
@@ -2101,7 +1270,7 @@
 		</effects>
 	</skill>
 	<skill id="349" toLevel="2" name="Song of Renewal">
-		<!-- For $s1, all party members' physical/ magic/ song/ dance skills' MP Consumption -$s2, and physical/ magic skills' Cooldown -$s3. MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. -->
+		<!-- For 5 min., all party members' physical/ magic/ song/ dance skills' MP Consumption -5%, and Skill Cooldown -20%. Additionally increases MP Consumption if the skill is used while song/ dance is in effect. -->
 		<icon>icon.skill0349</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2166,88 +1335,14 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="350" toLevel="1" name="Physical Mirror">
-		<!-- For 5 min., reflects physical buffs/ debuffs with 30% probability and magic buffs/ debuffs with 10% probability. Requires a shield. -->
-		<icon>icon.skill0350</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>REFLECT_ABNORMAL</abnormalType>
-		<effectPoint>669</effectPoint>
-		<hitTime>2000</hitTime>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>150000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="EquipShield" />
-		</conditions>
-		<effects>
-			<effect name="ReflectSkill">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-				<type>MAGIC</type>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="351" toLevel="1" name="Magical Mirror">
-		<!-- For 5 min., reflects physical buffs/ debuffs with 10% probability and magic buffs/ debuffs with 30% probability. Requires a shield. -->
-		<icon>icon.skill0351</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>REFLECT_ABNORMAL</abnormalType>
-		<effectPoint>669</effectPoint>
-		<hitTime>2000</hitTime>
-		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>150000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="EquipShield" />
-		</conditions>
-		<effects>
-			<effect name="ReflectSkill">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-				<type>MAGIC</type>
-				<armorTYpe>
-					<item>SHIELD</item>
-				</armorTYpe>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="352" toLevel="10" name="Shield Bash">
-		<!-- Attacks the enemy with shield with $s1 Power added to P. Atk, stunning them for $s2 Requires a shield. Target cancel is possible. -->
+		<!-- Strikes the target with a shield with 1425 power added to P. Atk, stunning them for 2 sec. Requires a shield. -->
 		<icon>icon.skill0352</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>2</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<activateRate>80</activateRate>
+		<activateRate>60</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<effectPoint>
@@ -2322,7 +1417,7 @@
 		</effects>
 	</skill>
 	<skill id="353" toLevel="1" name="Shield Slam">
-		<!-- Attacks the enemy with shield, blocking the enemy's physical skills for 1 min. Requires a shield. Target cancel is possible. -->
+		<!-- Attacks the enemy with the shield, blocking their physical skills for 1 min. Cancels enemy's target. Requires a shield. -->
 		<icon>icon.skill0353</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2362,7 +1457,7 @@
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>SPEED_DOWN</abnormalType>
 		<activateRate>40</activateRate>
-		<basicProperty>MAGIC</basicProperty>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>900</castRange>
 		<effectPoint>-507</effectPoint>
 		<effectRange>1400</effectRange>
@@ -2396,15 +1491,15 @@
 		</effects>
 	</skill>
 	<skill id="355" toLevel="1" name="Focus Death">
-		<!-- For 2 min. P. Critical Rate -20%, frontal P. Critical Damage -30%. Vital points attacks success rate +40%, rear P. Critical Damage +90%. Requires a dagger. -->
+		<!-- For 20 min. P. Critical Rate -20%, frontal P. Critical Damage -30%. Vital points attacks success rate +40%, rear P. Critical Damage +90%. Requires a dagger. <Auto-use> -->
 		<icon>icon.skill0355</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>120</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<abnormalType>FOCUS_DAGGER</abnormalType>
 		<effectPoint>669</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
+		<mpConsume>108</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
@@ -2440,15 +1535,15 @@
 		</effects>
 	</skill>
 	<skill id="356" toLevel="1" name="Focus Chance">
-		<!-- For 2 min., frontal P. Critical Rate -30%. Vital points attacks success rate +20%, side P. Critical Rate +30%, and rear P. Critical Rate +60%. Requires a dagger. -->
+		<!-- For 20 min., frontal P. Critical Rate -30%. Vital points attacks success rate +20%, side P. Critical Rate +30%, and rear P. Critical Rate +60%. Requires a dagger. <Auto-use> -->
 		<icon>icon.skill0356</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>120</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<abnormalType>FOCUS_DAGGER</abnormalType>
 		<effectPoint>669</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
+		<mpConsume>108</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
@@ -2485,15 +1580,15 @@
 		</effects>
 	</skill>
 	<skill id="357" toLevel="1" name="Focus Power">
-		<!-- For 2 min., frontal P. Critical Damage -30%. Side P. Critical Damage +30% and rear P. Critical Damage +60%. Requires a dagger. -->
+		<!-- For 20 min., frontal P. Critical Damage -30%. Side P. Critical Damage +30% and rear P. Critical Damage +60%. Requires a dagger. <Auto-use> -->
 		<icon>icon.skill0357</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>120</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<abnormalType>FOCUS_DAGGER</abnormalType>
 		<effectPoint>669</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>78</magicLevel>
-		<mpConsume>36</mpConsume>
+		<mpConsume>108</mpConsume>
 		<operateType>A2</operateType>
 		<reuseDelay>30000</reuseDelay>
 		<basicProperty>NONE</basicProperty>
@@ -2526,7 +1621,7 @@
 		</effects>
 	</skill>
 	<skill id="358" toLevel="9" name="Bluff">
-		<!-- Deceives the enemy into turning his back, losing his urge to attack and becoming stunned for $s1 Requires a dagger. Target cancel is possible. -->
+		<!-- Deceives the target into turning around and stuns them for 3 sec. Requires a dagger. -->
 		<icon>icon.skill0358</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -2565,7 +1660,7 @@
 		<operateType>A2</operateType>
 		<reuseDelay>8000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
-		<trait>DERANGEMENT</trait>
+		<trait>BLUFF</trait>
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<conditions>
@@ -2588,57 +1683,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="359" toLevel="1" name="Eye of Hunter">
-		<!-- For 10 min., P. Atk. for insects/ plants/ animals +5%. -->
-		<icon>icon.skill0359</icon>
-		<abnormalLevel>2</abnormalLevel>
-		<abnormalTime>600</abnormalTime>
-		<abnormalType>DETECT_WEAKNESS</abnormalType>
-		<effectPoint>666</effectPoint>
-		<hitTime>2000</hitTime>
-		<magicLevel>77</magicLevel>
-		<mpConsume>70</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="AttackTrait">
-				<BUG_WEAKNESS>30</BUG_WEAKNESS>
-				<ANIMAL_WEAKNESS>30</ANIMAL_WEAKNESS>
-				<PLANT_WEAKNESS>30</PLANT_WEAKNESS>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="360" toLevel="1" name="Eye of Slayer">
-		<!-- For 10 min., P. Atk. against monsters/ magic creatures/ giants/ dragons +5%. -->
-		<icon>icon.skill0360</icon>
-		<abnormalLevel>2</abnormalLevel>
-		<abnormalTime>600</abnormalTime>
-		<abnormalType>DETECT_WEAKNESS</abnormalType>
-		<effectPoint>669</effectPoint>
-		<hitTime>2000</hitTime>
-		<magicLevel>77</magicLevel>
-		<mpConsume>71</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="AttackTrait">
-				<BEAST_WEAKNESS>30</BEAST_WEAKNESS>
-				<GIANT_WEAKNESS>30</GIANT_WEAKNESS>
-				<CONSTRUCT_WEAKNESS>30</CONSTRUCT_WEAKNESS>
-				<DRAGON_WEAKNESS>30</DRAGON_WEAKNESS>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="361" toLevel="3" name="Stun Blast">
-		<!-- Creates a powerful shock wave with $s1 Power added to P. Atk., inflicting damage and stunning the target and nearby enemies for $s2 Their P. Def. -$s3 and M. Def. -$s4. Requires a polearm. Critical. Over-hit. Ignores Shield Defense. Target cancel is possible. -->
+	<skill id="361" toLevel="3" name="Stun Burst">
+		<!-- Creates a powerful shock wave with 2486 power added to P. Atk. Stuns the target and nearby enemies for 7 sec. Their P. Def. -30%, M. Def. -30%. Requires a spear. Ignores Shield Defense. Critical, over-hit. -->
 		<icon>icon.skill0361</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>7</abnormalTime>
@@ -2689,14 +1735,14 @@
 		</conditions>
 		<effects>
 			<effect name="PhysicalAttack">
-				<criticalChance>20</criticalChance>
-				<overHit>true</overHit>
 				<power>
 					<value level="1">2486</value>
 					<value level="2">2731</value>
 					<value level="3">2991</value>
 				</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>20</criticalChance>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
@@ -2712,7 +1758,7 @@
 		</effects>
 	</skill>
 	<skill id="362" toLevel="8" name="Armor Crush">
-		<!-- Attacks the enemy with $s1 Power added to P. Atk. Stuns the enemy for 7 sec., and their P. Def. -30% and M. Def. -30%. Requires a sword, blunt weapon, two-handed sword or two-handed blunt weapon. Ignores Shield Defense. Critical. Over-hit. -->
+		<!-- Attacks the target with 3077 power, stunning them for 7 sec., their P. Def. -30%, M. Def. -30%. Requires a sword, blunt weapon or spear. Ignores Shield Defense. Critical. Over-hit. -->
 		<icon>icon.skill0362</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>7</abnormalTime>
@@ -2778,6 +1824,7 @@
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>
+					<item>POLE</item>
 				</weaponType>
 			</condition>
 		</conditions>
@@ -2810,38 +1857,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="363" toLevel="1" name="Song of Meditation">
-		<!-- All party members' MP Recovery bonus +20% for 2 min. and Skill MP Consumption -10%. MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. -->
-		<icon>icon.skill0363</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<abnormalType>SONG_OF_MEDITATION</abnormalType>
-		<affectRange>1000</affectRange>
-		<effectPoint>666</effectPoint>
-		<hitTime>2500</hitTime>
-		<isMagic>3</isMagic> <!-- Dance Skill -->
-		<magicLevel>77</magicLevel>
-		<mpConsume>60</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>3000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<effects>
-			<effect name="MpRegen">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="364" toLevel="1" name="Song of Champion">
+	<skill id="364" toLevel="1" name="Champion Song">
 		<!-- For 5 min., all party members' physical/ sing/ dance skill use MP Consumption -20% and physical/ sing/ dance skill Cooldown -10%. Additionally increases MP Consumption when singing while song/ dance is in effect. -->
 		<icon>icon.skill0364</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2884,7 +1900,7 @@
 		</effects>
 	</skill>
 	<skill id="365" toLevel="2" name="Dance of Siren">
-		<!-- All party members' M. Critical Rate +$s2 for $s1 MP Consumption is additionally increased if the skill is used while song/ dance effect is in place. Requires a dual sword to be equipped. -->
+		<!-- All party members' M. Critical Rate +50% for 5 min. Additionally increases MP Consumption if the skill is used while song/ dance is in effect. Requires a dual sword to be equipped. -->
 		<icon>icon.skill0365</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2932,7 +1948,7 @@
 		</effects>
 	</skill>
 	<skill id="366" toLevel="3" name="Dance of Shadows">
-		<!-- For $s1, all party members' Speed -$s2 prevents them from being pre-emptively attacked by monsters. The effect will be canceled if any party member launches an attack. Additionally increases MP Consumption when dancing while song/ dance is in effect. Requires a dual sword. -->
+		<!-- For 5 min., party members' Speed -50%, they are protected from monsters' preemptive attacks. The effect disappears if any party member launches an attack. Song/ dance MP Consumption is increased if other song/ dance effects are active. Requires a dual sword. -->
 		<icon>icon.skill0366</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3020,7 +2036,7 @@
 		</effects>
 	</skill>
 	<skill id="367" toLevel="3" name="Dance of Medusa">
-		<!-- Dances to stir up the illusion of Medusa. Petrifies nearby enemies for $s1. Requires a dual sword. -->
+		<!-- Dance that evokes the mirage of Medusa. Petrifies nearby enemies for 10 sec. Requires a dual sword. -->
 		<icon>icon.skill0367</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3115,9 +2131,6 @@
 			</effect>
 		</effects>
 		<selfEffects>
-			<effect name="TargetMeProbability">
-				<chance>40</chance>
-			</effect>
 			<effect name="MagicalDefence">
 				<amount>4050</amount>
 				<mode>DIFF</mode>
@@ -3136,46 +2149,8 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="369" toLevel="1" name="Evade Shot">
-		<!-- Attacks the enemy with 2020 Power added to P. Atk. and P. Evasion +6 for 30 sec. Requires a bow. Over-hit. -->
-		<icon>icon.skill0369</icon>
-		<abnormalLevel>2</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
-		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
-		<castRange>900</castRange>
-		<effectPoint>-337</effectPoint>
-		<effectRange>1400</effectRange>
-		<hitTime>4000</hitTime>
-		<magicLevel>78</magicLevel>
-		<mpConsume>114</mpConsume>
-		<operateType>A3</operateType>
-		<reuseDelay>75000</reuseDelay>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="EquipWeapon">
-				<weaponType>
-					<item>BOW</item>
-				</weaponType>
-			</condition>
-		</conditions>
-		<effects>
-			<effect name="PhysicalAttack">
-				<power>2020</power>
-				<overHit>true</overHit>
-			</effect>
-		</effects>
-		<selfEffects>
-			<effect name="PhysicalEvasion">
-				<amount>6</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</selfEffects>
-	</skill>
 	<skill id="370" toLevel="5" name="Clan Body">
-		<!-- Clan members' Max HP +$s1. -->
+		<!-- Clan members' Max HP +100. -->
 		<icon>icon.skill0370</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3194,7 +2169,7 @@
 		</effects>
 	</skill>
 	<skill id="371" toLevel="5" name="Clan Spirituality">
-		<!-- Clan members' Max CP +$s1. -->
+		<!-- Clan members' Max CP +200. -->
 		<icon>icon.skill0371</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3213,7 +2188,7 @@
 		</effects>
 	</skill>
 	<skill id="372" toLevel="5" name="Clan Soul">
-		<!-- Clan members' Max MP +$s1. -->
+		<!-- Clan members' Max MP +70. -->
 		<icon>icon.skill0372</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3232,7 +2207,7 @@
 		</effects>
 	</skill>
 	<skill id="373" toLevel="5" name="Clan Regeneration">
-		<!-- Clan members' HP Recovery Bonus +$s1. -->
+		<!-- Clan members' HP Recovery Rate +3%. -->
 		<icon>icon.skill0373</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3251,7 +2226,7 @@
 		</effects>
 	</skill>
 	<skill id="374" toLevel="5" name="Clan Morale">
-		<!-- Clan members' CP Recovery Bonus +$s1. -->
+		<!-- Clan members' CP Recovery Bonus +6%. -->
 		<icon>icon.skill0374</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3270,7 +2245,7 @@
 		</effects>
 	</skill>
 	<skill id="375" toLevel="5" name="Clan Clarity">
-		<!-- Clan members' MP Recovery Bonus +$s1. -->
+		<!-- Clan members' MP Recovery Bonus +3%. -->
 		<icon>icon.skill0375</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3289,7 +2264,7 @@
 		</effects>
 	</skill>
 	<skill id="376" toLevel="5" name="Clan Might">
-		<!-- Clan members' P. Atk. +$s1. -->
+		<!-- Clan members' P. Atk. +3%. -->
 		<icon>icon.skill0376</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3308,7 +2283,7 @@
 		</effects>
 	</skill>
 	<skill id="377" toLevel="5" name="Clan Shield">
-		<!-- Clan members' P. Def. +$s1. -->
+		<!-- Сlan members' P. Def. +3%. -->
 		<icon>icon.skill0377</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3327,7 +2302,7 @@
 		</effects>
 	</skill>
 	<skill id="378" toLevel="5" name="Clan Empower">
-		<!-- Clan members' M. Atk. +$s1. -->
+		<!-- Сlan members' M. Atk. +4%. -->
 		<icon>icon.skill0378</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3346,7 +2321,7 @@
 		</effects>
 	</skill>
 	<skill id="379" toLevel="5" name="Clan M. Def.">
-		<!-- Clan members' M. Def. +$s1. -->
+		<!-- Сlan members' M. Def. +6%. -->
 		<icon>icon.skill0379</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3365,7 +2340,7 @@
 		</effects>
 	</skill>
 	<skill id="380" toLevel="5" name="Clan Guidance">
-		<!-- Clan members' P. Accuracy +$s1. -->
+		<!-- Clan members' P. Accuracy +1. -->
 		<icon>icon.skill0380</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3384,7 +2359,7 @@
 		</effects>
 	</skill>
 	<skill id="381" toLevel="5" name="Clan Agility">
-		<!-- Clan members' P. Evasion +$s1. -->
+		<!-- Clan members' P. Evasion +1. -->
 		<icon>icon.skill0381</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3403,7 +2378,7 @@
 		</effects>
 	</skill>
 	<skill id="382" toLevel="5" name="Clan Shield Defense">
-		<!-- Clan members' Shield Defense Rate +$s1. -->
+		<!-- Сlan members' Shield Defense Rate +12%. -->
 		<icon>icon.skill0382</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3422,7 +2397,7 @@
 		</effects>
 	</skill>
 	<skill id="383" toLevel="5" name="Clan Shield Block">
-		<!-- Clan members' Shield Defense +$s1. -->
+		<!-- Сlan members' Shield Defense +24%. -->
 		<icon>icon.skill0383</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3441,7 +2416,7 @@
 		</effects>
 	</skill>
 	<skill id="384" toLevel="5" name="Clan Cyclonic Resistance">
-		<!-- Clan members' Water/ Wind Resistance +$s1. -->
+		<!-- Сlan members' Water/ Wind Resistance +3. -->
 		<icon>icon.skill0384</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3470,7 +2445,7 @@
 		</effects>
 	</skill>
 	<skill id="385" toLevel="5" name="Clan Magmatic Resistance">
-		<!-- Clan members' Fire/ Earth Resistance +$s1. -->
+		<!-- Сlan members' Fire/ Earth Resistance +3. -->
 		<icon>icon.skill0385</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3499,7 +2474,7 @@
 		</effects>
 	</skill>
 	<skill id="386" toLevel="5" name="Clan Stun Resistance">
-		<!-- Clan members' Stun Resistance +$s1. -->
+		<!-- Сlan members' Stun Resistance +12. -->
 		<icon>icon.skill0386</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3517,7 +2492,7 @@
 		</effects>
 	</skill>
 	<skill id="387" toLevel="5" name="Clan Hold Resistance">
-		<!-- Clan members' Hold Resistance +$s1. -->
+		<!-- Сlan members' Hold Resistance +12. -->
 		<icon>icon.skill0387</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3535,7 +2510,7 @@
 		</effects>
 	</skill>
 	<skill id="388" toLevel="5" name="Clan Sleep Resistance">
-		<!-- Clan members' Sleep Resistance +$s1. -->
+		<!-- Сlan members' Sleep Resistance +12. -->
 		<icon>icon.skill0388</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3553,7 +2528,7 @@
 		</effects>
 	</skill>
 	<skill id="389" toLevel="5" name="Clan Wind Walk">
-		<!-- For clan members Speed +$s1. -->
+		<!-- For clan members Speed +3. -->
 		<icon>icon.skill0389</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -3572,8 +2547,8 @@
 		</effects>
 	</skill>
 	<skill id="390" toLevel="5" name="Clan Luck">
-		<!-- When killed by PC, XP decrease rate and item drop rate -$s1. When killed by an ordinary monster, XP decrease rate and item drop rate -$s2. -->
-		<icon>icon.skill0390</icon>
+		<!-- The character will not lose any items in case of death by hands of regular monsters. Cannot be used by chaotic characters. -->
+		<icon>icon.skill1510</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -3616,14 +2591,14 @@
 		</effects>
 	</skill>
 	<skill id="391" toLevel="1" name="Clan Imperium">
-		<!-- Grants the privilege of Command Channel formation. -->
+		<!-- Grants Command Channel formation. -->
 		<icon>icon.skill0391</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 	</skill>
 	<skill id="392" toLevel="5" name="Clan Fortune">
-		<!-- Clan XP Gain +$s1. -->
+		<!-- Clan XP Gain +3%. -->
 		<icon>icon.skill0390</icon>
 		<magicLevel>
 			<value level="1">1</value>
@@ -3653,7 +2628,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="393" toLevel="1" name="Shine Soul Finding">
+	<skill id="393" toLevel="1" name="Absorb Light Souls">
+		<!-- Collects 2 Light Souls. -->
+		<icon>icon.skill55474</icon>
 		<isMagic>4</isMagic>
 		<effectPoint>150</effectPoint>
 		<hitTime>500</hitTime>
@@ -3679,7 +2656,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="394" toLevel="1" name="Shadow Soul Finding">
+	<skill id="394" toLevel="1" name="Absorb Shadow Souls">
+		<!-- Collects 2 Shadow Souls. -->
+		<icon>icon.skill55475</icon>
 		<isMagic>4</isMagic>
 		<effectPoint>150</effectPoint>
 		<hitTime>500</hitTime>
@@ -3818,8 +2797,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="397" toLevel="2" name="Shine Side">
-		<!-- Enough Shine Souls have been gathered to be in the Shine Side state. <Acceleration Stage 1>. P. Atk. +130, Atk. Spd. +30, Casting Spd. +40, Speed +10. P./M. Def. +5%. Has a chance to recover MP when attacking. -->
+	<skill id="397" toLevel="2" name="Light Veil">
+		<!-- Uses collected Light Souls to boost your parameters. <Evolved Wings Lv. 1>. P. Atk. +130, Atk. Spd. +30, Casting Spd. +40, Speed +10. P./ M. Def. +5%. With a certain chance, absorbs part of the inflicted damage as MP. -->
+		<icon>icon.skill_kamael_shineside</icon>
 		<operateType>A2</operateType>
 		<magicLevel>85</magicLevel>
 		<isMagic>2</isMagic>
@@ -3920,8 +2900,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="398" toLevel="2" name="Shadow Side">
-		<!-- Enough Shadow Souls have been gathered to be in the Shadow Side state. <Acceleration Stage 2>. P. Atk. +280, Atk. Spd. +80, Casting Spd. +120, Speed +15. Has a chance to activate powerful attack skills. -->
+	<skill id="398" toLevel="2" name="Shadow Veil">
+		<!-- Uses collected Shadow Souls to boost your parameters. <Evolved Wings Lv. 2>. P. Atk. +280, Atk. Spd. +80, Casting Spd. +120, Speed +15. Activates a powerful ability with a certain chance when attacking. -->
+		<icon>icon.skill_kamael_shadowside</icon>
 		<operateType>A2</operateType>
 		<magicLevel>85</magicLevel>
 		<isMagic>2</isMagic>
@@ -4048,7 +3029,8 @@
 		</effects>
 	</skill>
 	<skill id="399" toLevel="10" name="Heavy Armor Mastery">
-		<!-- P. Def. +%s, Max HP +%s, P. Critical Attack Received Rate and P. Critical Damage Received -%s when equipped with heavy armor -->
+		<!-- P. Def. +10, Max HP +20, Received P. Critical Rate/ Damage -5% when equipped with heavy armor. -->
+		<icon>icon.m_class_heavy</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>

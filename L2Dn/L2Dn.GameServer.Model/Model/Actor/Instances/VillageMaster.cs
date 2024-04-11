@@ -400,7 +400,7 @@ public class VillageMaster: Folk
 						StringBuilder content1 = new StringBuilder(200);
 						foreach (CharacterClass subClass in subsAvailable)
 						{
-							content1.Append("<a action=\"bypass -h npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
+							content1.Append("<a action=\"bypass npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
 						}
 						
 						htmlText.Replace("%list%", content1.ToString());
@@ -495,7 +495,7 @@ public class VillageMaster: Folk
 						}
 						else
 						{
-							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 1\">%sub1%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass npc_%objectId%_Subclass 6 1\">%sub1%</Button>", "");
 						}
 						
 						if (player.getSubClasses().containsKey(2))
@@ -504,7 +504,7 @@ public class VillageMaster: Folk
 						}
 						else
 						{
-							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 2\">%sub2%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass npc_%objectId%_Subclass 6 2\">%sub2%</Button>", "");
 						}
 						
 						if (player.getSubClasses().containsKey(3))
@@ -513,7 +513,7 @@ public class VillageMaster: Folk
 						}
 						else
 						{
-							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_%objectId%_Subclass 6 3\">%sub3%</Button>", "");
+							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass npc_%objectId%_Subclass 6 3\">%sub3%</Button>", "");
 						}
 					}
 					break;
@@ -642,7 +642,7 @@ public class VillageMaster: Folk
 					StringBuilder content6 = new StringBuilder(200);
 					foreach (CharacterClass subClass in subsAvailable)
 					{
-						content6.Append("<a action=\"bypass -h npc_%objectId%_Subclass 7 " + paramOne + " " +
+						content6.Append("<a action=\"bypass npc_%objectId%_Subclass 7 " + paramOne + " " +
 						                (int)subClass + "\" msg=\"1445;\">" +
 						                ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
 					}

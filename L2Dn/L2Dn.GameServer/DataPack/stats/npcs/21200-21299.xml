@@ -18,9 +18,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="18777" sp="1630" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2719" hpRegen="26" mp="1036" mpRegen="2.4" />
-			<attack physical="582.4280671" magical="328.69659" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="582.4280671" magical="328.69659" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="204.6694876" magical="181.21958" />
 			<speed>
 				<walk ground="50" />
@@ -89,7 +89,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="25956" sp="2344" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2939" hpRegen="30" mp="1127" mpRegen="2.7" />
 			<attack physical="655.1517654" magical="369.73862" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="216.6894711" magical="191.86238" />
@@ -158,7 +158,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="40958" sp="1228" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3157" hpRegen="30" mp="1219" mpRegen="2.7" />
 			<attack physical="730.5968263" magical="412.31647" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="194.3953653" magical="202.49719" evasion="10" />
@@ -250,9 +250,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="52536" sp="1576" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3369" hpRegen="30" mp="1314" mpRegen="2.7" />
-			<attack physical="807.6793681" magical="455.81844" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="807.6793681" magical="455.81844" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="240.6203554" magical="213.05139" />
 			<speed>
 				<walk ground="50" />
@@ -342,7 +342,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="54586" sp="1637" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3572" hpRegen="34" mp="1410" mpRegen="3" />
 			<attack physical="885.1453226" magical="499.53679" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="252.3631983" magical="223.44881" />
@@ -431,7 +431,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="35478" sp="3742" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<attack physical="961.5979021" magical="542.68324" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="224.2638806" magical="233.61053" evasion="10" />
@@ -495,9 +495,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="55488" sp="1664" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
-			<attack physical="1035.534783" magical="584.40994" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="1035.534783" magical="584.40994" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="274.9591818" magical="243.45587" />
 			<speed>
 				<walk ground="50" />
@@ -581,7 +581,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="55820" sp="1674" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<attack physical="1082.657833" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="282.1280992" magical="249.80341" />
@@ -656,7 +656,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="481" hpRegen="10" mp="192" mpRegen="1.2" />
 			<speed>
 				<walk ground="60" />
@@ -675,13 +675,13 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="544" hpRegen="14" mp="218" mpRegen="1.5" />
 			<speed>
 				<walk ground="10" />
 				<run ground="110" />
 			</speed>
-			<attack physical="51.75278" magical="35.34044" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="51.75278" magical="35.34044" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="78.758399" magical="67.80232" evasion="10" />
 		</stats>
 		<status attackable="false" />
@@ -694,7 +694,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>FAIRY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="648" hpRegen="14" mp="259" mpRegen="1.5" />
 			<speed>
 				<walk ground="60" />
@@ -795,7 +795,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="69" />
 		<acquire exp="5742" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="849" hpRegen="14" mp="329" mpRegen="1.5" />
 			<attack physical="92.64226" magical="63.26266" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="118.46427" magical="86.68702" shield="59" shieldRate="20" />
@@ -838,13 +838,13 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="940" hpRegen="18" mp="358" mpRegen="1.8" />
 			<speed>
 				<walk ground="10" />
 				<run ground="110" />
 			</speed>
-			<attack physical="106.16525" magical="72.49711" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="106.16525" magical="72.49711" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="106.7406795" magical="91.89199" evasion="10" />
 		</stats>
 		<status attackable="false" />
@@ -857,7 +857,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>FAIRY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1086" hpRegen="18" mp="402" mpRegen="1.8" />
 			<speed>
 				<walk ground="60" />
@@ -876,7 +876,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1191" hpRegen="18" mp="432" mpRegen="1.8" />
 			<speed>
 				<walk ground="60" />
@@ -908,7 +908,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="129" />
 		<acquire exp="10209" sp="2" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1359" hpRegen="18" mp="478" mpRegen="1.8" />
 			<attack physical="193.996847" magical="120.43155" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="142.3185" magical="114.55675" shield="78" shieldRate="20" />
@@ -951,7 +951,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1477" hpRegen="22" mp="531" mpRegen="2.1" />
 			<speed>
 				<walk ground="80" />
@@ -971,7 +971,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="297" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1664" hpRegen="22" mp="610" mpRegen="2.1" />
 			<speed>
 				<walk ground="100" />
@@ -990,7 +990,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1795" hpRegen="22" mp="665" mpRegen="2.1" />
 			<speed>
 				<walk ground="80" />
@@ -1022,7 +1022,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="131" lhand="107" /> <!-- Spirit Sword / Compound Shield -->
 		<acquire exp="15952" sp="3" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1998" hpRegen="22" mp="747" mpRegen="2.1" />
 			<attack physical="336.103966" magical="208.6504" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="182.0349455" magical="146.5258" shield="100" shieldRate="20" />
@@ -1065,7 +1065,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2138" hpRegen="26" mp="804" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1121,7 +1121,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="298" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2353" hpRegen="26" mp="889" mpRegen="2.4" />
 			<speed>
 				<walk ground="100" />
@@ -1166,7 +1166,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2498" hpRegen="26" mp="948" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1220,7 +1220,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="233" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2719" hpRegen="26" mp="1036" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1264,7 +1264,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="311" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2866" hpRegen="30" mp="1097" mpRegen="2.7" />
 			<speed>
 				<walk ground="70" />
@@ -1314,7 +1314,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3084" hpRegen="30" mp="1188" mpRegen="2.7" />
 			<speed>
 				<walk ground="27" />
@@ -1357,7 +1357,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3228" hpRegen="30" mp="1251" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -1376,7 +1376,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3438" hpRegen="30" mp="1345" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -1395,7 +1395,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3572" hpRegen="34" mp="1410" mpRegen="3" />
 			<speed>
 				<walk ground="70" />
@@ -1414,7 +1414,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<speed>
 				<walk ground="27" />
@@ -1433,7 +1433,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<speed>
 				<walk ground="80" />
@@ -1460,7 +1460,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- Dirk -->
 		<acquire exp="3126" sp="92" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="481" hpRegen="10" mp="192" mpRegen="1.2" />
 			<attack physical="44.32863" magical="30.2707" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="86.87049" magical="63.56806" />
@@ -1514,9 +1514,9 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="3675" sp="116" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="544" hpRegen="14" mp="218" mpRegen="1.5" />
-			<attack physical="51.75278" magical="35.34044" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="51.75278" magical="35.34044" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="78.758399" magical="67.80232" evasion="10" />
 			<speed>
 				<walk ground="10" />
@@ -1567,7 +1567,7 @@
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire exp="4681" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="648" hpRegen="14" mp="259" mpRegen="1.5" />
 			<attack physical="64.83203" magical="44.27187" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="101.83533" magical="74.51868" />
@@ -1620,7 +1620,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire exp="4982" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="724" hpRegen="14" mp="286" mpRegen="1.5" />
 			<attack physical="74.99121" magical="51.20928" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="92.0445195" magical="79.24022" evasion="10" />
@@ -1663,7 +1663,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="69" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="849" hpRegen="14" mp="329" mpRegen="1.5" />
 			<speed>
 				<walk ground="60" />
@@ -1682,13 +1682,13 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="940" hpRegen="18" mp="358" mpRegen="1.8" />
 			<speed>
 				<walk ground="10" />
 				<run ground="110" />
 			</speed>
-			<attack physical="106.16525" magical="72.49711" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="106.16525" magical="72.49711" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="106.7406795" magical="91.89199" evasion="10" />
 		</stats>
 		<status attackable="false" />
@@ -1701,7 +1701,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>FAIRY</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1086" hpRegen="18" mp="402" mpRegen="1.8" />
 			<speed>
 				<walk ground="60" />
@@ -1720,7 +1720,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1191" hpRegen="18" mp="432" mpRegen="1.8" />
 			<speed>
 				<walk ground="60" />
@@ -1740,7 +1740,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="129" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1359" hpRegen="18" mp="478" mpRegen="1.8" />
 			<speed>
 				<walk ground="40" />
@@ -1759,7 +1759,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1477" hpRegen="22" mp="531" mpRegen="2.1" />
 			<speed>
 				<walk ground="80" />
@@ -1779,7 +1779,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="297" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1664" hpRegen="22" mp="610" mpRegen="2.1" />
 			<speed>
 				<walk ground="100" />
@@ -1798,7 +1798,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1795" hpRegen="22" mp="665" mpRegen="2.1" />
 			<speed>
 				<walk ground="80" />
@@ -1818,7 +1818,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="131" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1998" hpRegen="22" mp="747" mpRegen="2.1" />
 			<speed>
 				<walk ground="40" />
@@ -1837,7 +1837,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2138" hpRegen="26" mp="804" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1857,7 +1857,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="298" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2353" hpRegen="26" mp="889" mpRegen="2.4" />
 			<speed>
 				<walk ground="100" />
@@ -1876,7 +1876,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2498" hpRegen="26" mp="948" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1896,7 +1896,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="233" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2719" hpRegen="26" mp="1036" mpRegen="2.4" />
 			<speed>
 				<walk ground="80" />
@@ -1940,7 +1940,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="311" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2866" hpRegen="30" mp="1097" mpRegen="2.7" />
 			<speed>
 				<walk ground="70" />
@@ -1983,7 +1983,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3084" hpRegen="30" mp="1188" mpRegen="2.7" />
 			<speed>
 				<walk ground="27" />
@@ -2031,7 +2031,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3228" hpRegen="30" mp="1251" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -2079,7 +2079,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3438" hpRegen="30" mp="1345" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -2120,7 +2120,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3572" hpRegen="34" mp="1410" mpRegen="3" />
 			<speed>
 				<walk ground="70" />
@@ -2140,7 +2140,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<speed>
 				<walk ground="27" />
@@ -2183,7 +2183,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3764" hpRegen="34" mp="1507" mpRegen="3" />
 			<speed>
 				<walk ground="80" />
@@ -2226,13 +2226,13 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="577" hpRegen="3.5" mp="231" mpRegen="1.5" />
 			<speed>
 				<walk ground="50" />
 				<run ground="135" />
 			</speed>
-			<attack physical="55.84125" magical="38.13234" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="55.84125" magical="38.13234" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="81.302296" magical="69.99234" evasion="10" />
 		</stats>
 		<status attackable="false" />
@@ -2252,9 +2252,9 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire exp="792" sp="23" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="123.64762" hpRegen="2.5" mp="189.39" mpRegen="1.2" />
-			<attack physical="37.82932" magical="25.83252" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="37.82932" magical="25.83252" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="69.1457235" magical="59.52687" evasion="10" />
 			<speed>
 				<walk ground="90" />
@@ -2318,9 +2318,9 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="9" /> <!-- Cedar Staff -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1023.17174" hpRegen="8.5" mp="1501.845" mpRegen="3" />
-			<attack physical="602.6356364" magical="482.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="602.6356364" magical="482.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="321.793719" magical="214.1539" />
 			<speed>
 				<walk ground="10" />
@@ -2358,9 +2358,9 @@
 		<sex>MALE</sex>
 		<acquire exp="20524" sp="615" />
 		<equipment rhand="175" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1042.63023" hpRegen="8.5" mp="1537.245" mpRegen="3" />
-			<attack physical="632.6356364" magical="502.44274" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="632.6356364" magical="502.44274" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="331.793719" magical="224.1539" />
 			<speed>
 				<walk ground="36" />
@@ -2405,7 +2405,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="74" /> <!-- Katana -->
 		<acquire exp="6644" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1998" hpRegen="5.5" mp="747" mpRegen="2.1" />
 			<attack physical="305.54906" magical="208.6504" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="200.23844" magical="146.5258" />
@@ -2459,7 +2459,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
 		<acquire exp="21946" sp="5" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1998" hpRegen="5.5" mp="747" mpRegen="2.1" />
 			<attack physical="305.54906" magical="208.6504" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="170.202674" magical="146.5258" evasion="10" />
@@ -2514,7 +2514,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="127" lhand="102" /> <!-- Crimson Sword / Round Shield -->
 		<acquire exp="27201" sp="6" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2209" hpRegen="6.5" mp="832" mpRegen="2.4" />
 			<attack physical="353.71092" magical="241.5387" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="214.18326" magical="156.73001" />
@@ -2569,7 +2569,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
 		<acquire exp="38153" sp="9" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2353" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="388.11142" magical="265.02979" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="223.6362" magical="163.64727" />
@@ -2624,7 +2624,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
 		<acquire exp="50071" sp="12" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2571" hpRegen="6.5" mp="977" mpRegen="2.4" />
 			<attack physical="442.8992" magical="302.44274" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="237.99429" magical="174.1539" />
@@ -2677,7 +2677,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="2854" sp="115" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1138" hpRegen="4.5" mp="417" mpRegen="1.8" />
 			<attack physical="137.86467" magical="94.1437" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="140.57278" magical="102.86506" />
@@ -2737,7 +2737,7 @@
 		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1138" hpRegen="4.5" mp="417" mpRegen="1.8" />
 			<attack physical="137.86467" magical="94.1437" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="140.57278" magical="102.86506" />
@@ -2797,7 +2797,7 @@
 		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1138" hpRegen="4.5" mp="417" mpRegen="1.8" />
 			<attack physical="137.86467" magical="94.1437" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="140.57278" magical="102.86506" />
@@ -2858,7 +2858,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="5309" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1138" hpRegen="9" mp="417" mpRegen="1.8" />
 			<attack physical="125.3315182" magical="94.1437" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="154.630058" magical="102.86506" />
@@ -2922,7 +2922,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="6061" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1191" hpRegen="4.5" mp="432" mpRegen="1.8" />
 			<attack physical="146.82587" magical="100.26304" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="122.805943" magical="105.72243" evasion="10" />
@@ -2974,7 +2974,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="7005" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1246" hpRegen="4.5" mp="447" mpRegen="1.8" />
 			<attack physical="156.22273" magical="106.67987" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="148.44287" magical="108.62405" />
@@ -3031,7 +3031,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="4136" sp="169" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1191" hpRegen="4.5" mp="432" mpRegen="1.8" />
 			<attack physical="146.82587" magical="100.26304" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="122.805943" magical="105.72243" evasion="10" />
@@ -3087,7 +3087,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="7353" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1246" hpRegen="4.5" mp="447" mpRegen="1.8" />
 			<attack physical="156.22273" magical="106.67987" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="148.44287" magical="108.62405" />
@@ -3145,7 +3145,7 @@
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire exp="21304" sp="5" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1302" hpRegen="9" mp="463" mpRegen="1.8" />
 			<attack physical="182.671236" magical="113.4007" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="138.6068364" magical="111.56912" />

@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Punishment;
+using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
@@ -148,6 +149,16 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						player.setInvisible(true);
 					}
 
+					// Restore player location.
+					PlayerVariables vars = player.getVariables();
+					String restore = vars.getString(PlayerVariables.RESTORE_LOCATION, "");
+					if (!string.IsNullOrEmpty(restore))
+					{
+						string[] split = restore.Split(";");
+						player.setXYZ(int.Parse(split[0]), int.Parse(split[1]), int.Parse(split[2]));
+						vars.remove(PlayerVariables.RESTORE_LOCATION);
+					}
+					
 					player.setClient(session);
 					session.Player = player;
 					player.setOnlineStatus(true, true);

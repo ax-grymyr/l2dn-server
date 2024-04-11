@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="39300" toLevel="1" name="Gracia's Rice Bread">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>600000</reuseDelay>
 	</skill>
@@ -28,30 +29,30 @@
 		</effects>
 	</skill>
 	<skill id="39302" toLevel="2" name="Baium's Doll Spell">
-		<!-- Mental Resistance +$s1, Paralysis/ Knockdown/ Pull Resistance +$s2, P./ M. Def. +$s3, Skill Cooldown -$s4. -->
+		<!-- Mental Resistance +40%, Paralysis/ Knockdown/ Pull Resistance +20%, P./ M. Def. +12%, Skill Cooldown -3%. -->
 		<icon>icon.bm_baium_doll_30d</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39303" toLevel="2" name="Queen Ant's Doll Spell">
-		<!-- P. Atk. +$s1, P. Critical Damage +$s2, Max HP +$s3. -->
+		<!-- P. Atk. +8%, P. Critical Damage +8%, Max HP +12%. -->
 		<icon>icon.bm_queen_ant_doll_30d</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39304" toLevel="2" name="Orfen's Doll Spell">
-		<!-- M. Atk. +$s1, M. Critical Damage +$s2, Max MP +$s3. -->
+		<!-- M. Atk. +8%, M. Critical Damage +8%, Max MP +12%. -->
 		<icon>icon.bm_orfen_doll_30d</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39305" toLevel="3" name="Transformation Scroll: Dark Knight">
-		<!-- You are transformed into Dark Knight. For 15 min., Max HP/ MP +10%, P. Atk. in PvP +5%, P. Def. in PvP +5%, Stun/ Paralysis/ Mental Resistance +5%. Effect remains after death. -->
+	<skill id="39305" toLevel="3" name="Dark Knight Transformation">
+		<!-- Dark Knight transformation. For 20 min., Max HP/ MP +10%, P. Atk. in PvP +5%, P. Def. in PvP +5%, Stun/ Paralysis/ Mental Resistance +5%. The effect remains after death. -->
 		<icon>icon.etc_charm_of_courage_i05</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<effectPoint>1</effectPoint>
 	</skill>
-	<skill id="39306" toLevel="1" name="Transformation Scroll: White Assassin">
-		<!-- You are transformed into White Assassin. For 15 min., Max HP/ MP +7%, P./ M. Accuracy +2, P./ M. Atk. +3%, P./ M. Def. +3%, Atk. Spd. +5%, M. Critical Rate +20, Speed +5. Effect remains after death. -->
-		<icon>icon.etc_charm_of_courage_i00</icon>
+	<skill id="39306" toLevel="1" name="White Assassin Transformation">
+		<!-- You are transformed into White Assassin. For 20 min., Max HP/ MP +7%, P./ M. Accuracy +2, P./ M. Atk. +3%, P./ M. Def. +3%, Atk. Spd. +5%, M. Critical Rate +20, Speed +5. Effect remains after death. -->
+		<icon>icon.scroll_of_verification_i06</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<effectPoint>1</effectPoint>
@@ -62,7 +63,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39308" toLevel="1" name="Life Control Tower's Scroll of Blessing">
-		<!-- For 60 min., Max HP/ MP +5%, Paralysis Resistance +15, Mental Attack Resistance +15, and Acquired XP/ SP +30%. -->
+		<!-- For 60 min., Max HP/ MP +5%, Paralysis/ Mental Resistance +15, acquired XP/ SP +30%. -->
 		<icon>icon.etc_aidcharm_cancel_valbreath_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -71,82 +72,85 @@
 	</skill>
 	<skill id="39309" toLevel="1" name="Stabilized Eva's Scroll: Enchant Hair Accessory">
 		<!-- To Enchant Hair Accessory. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="39310" toLevel="1" name="Eva's Enhancement Pack - Hair Accessory">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39311" toLevel="1" name="Eva's Hair Accessory Pack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
-	<skill id="39312" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39312" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +2%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39313" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39313" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +4%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39314" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39314" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +8%, Max MP +2%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39315" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39315" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +12%, Max MP +6%, Max CP +6%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39316" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39316" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +16%, Max MP +10%, Max CP +10%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="39317" toLevel="1" name="Hair Accessory Enchantment Effect">
+	<skill id="39317" toLevel="1" name="Enchant Effect - Hair Accessory">
 		<!-- Max HP +20%, Max MP +14%, Max CP +14%, P./ M. Damage Received -4%. -->
 		<icon>icon.etc_scroll_of_enchant_armor_i05</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39318" toLevel="3" name="Item Skill: Mental Attack Resistance">
-		<!-- Mental Attack Resistance +$s1. -->
+		<!-- Mental Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39319" toLevel="3" name="Item Skill: Stun Resistance">
-		<!-- Stun Resistance +$s1. -->
+		<!-- Stun Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39320" toLevel="3" name="Item Skill: Paralysis Resistance">
-		<!-- Paralysis Resistance +$s1. -->
+		<!-- Paralysis Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39321" toLevel="3" name="Item Skill: Bleed Resistance">
-		<!-- Bleed Resistance +$s1. -->
+		<!-- Bleed Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39322" toLevel="3" name="Item Skill: Poison Resistance">
-		<!-- Poison Resistance +$s1. -->
+		<!-- Poison Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39323" toLevel="3" name="Item Skill: Hold Resistance">
-		<!-- Hold Resistance +$s1. -->
+		<!-- Hold Resistance +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39324" toLevel="3" name="Item Skill: XP Gain">
-		<!-- When in inventory, Acquired XP +$s1. -->
+		<!-- When in inventory, Acquired XP +5%. -->
 		<icon>icon.skill11825</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -368,7 +372,7 @@
 		<mpConsume>1</mpConsume>
 	</skill>
 	<skill id="39348" toLevel="1" name="Vampiric Rage - Event">
-		<!-- For 1 h., 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
+		<!-- For 1 h., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -468,7 +472,7 @@
 		<mpConsume>1</mpConsume>
 	</skill>
 	<skill id="39358" toLevel="1" name="Prophecy of Wind - 13th Anniversary Event">
-		<!-- For 1 h., for a party member P. Evasion +3, P. Accuracy +3, P. Critical Rate +10%, P. Critical Damage +15%, Speed +10%, Debuff Resistance +10%, damage to Raid Bosses +15%. -->
+		<!-- For 1 h., powerful spirit acts to get a party member's. P./ M. Accuracy +3, P./ M. Evasion +3, P./ M. Critical Rate +10%, P./ M. Critical Damage +15%, Speed +10%, Debuff Resistance +10%, damage to Raid Bosses +15%. -->
 		<icon>icon.skill1357</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
@@ -478,19 +482,21 @@
 		<mpConsume>1</mpConsume>
 	</skill>
 	<skill id="39359" toLevel="1" name="Shining Jewelry Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39360" toLevel="1" name="Greater Jewel Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39361" toLevel="3" name="Angler's Blessing">
-		<!-- For $s1, Acquired XP/ SP during fishing +100%. Effect remains after death. -->
+		<!-- For 2 h., Acquired XP/ SP during fishing +100%. Effect remains after death. -->
 		<icon>icon.fishing_zone_ticket</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -498,18 +504,21 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="39362" toLevel="1" name="Angler's Fishing Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39363" toLevel="1" name="Angler's Silver Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39364" toLevel="1" name="Angler's Gold Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -517,13 +526,15 @@
 	</skill>
 	<skill id="39365" toLevel="1" name="Scroll: Enchant Fishing Weapon">
 		<!-- Can only be used together with fishing weapons. Does not disappear after an unsuccessful Enchant. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="39366" toLevel="1" name="Improved Scroll: Enchant Fishing Weapon">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="39367" toLevel="1" name="Transformation Scroll: Teddy Bear">
-		<!-- Transforms into a Teddy Bear. Max HP/ MP +20%, Sayha Grace XP/ SP +20%, while hunting. Effect remains after death. -->
+	<skill id="39367" toLevel="1" name="Transformation into Teddy Bear">
+		<!-- Teddy Bear transformation. Max HP/ MP +20%, Acquired XP/ SP +20% while Sayha's Grace is active. The effect remains after death. -->
 		<icon>icon.gomdori_chest_change</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -655,8 +666,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="39369" toLevel="1" name="Transformation Scroll: White Knight">
-		<!-- Transforms into White Knight. Max HP/ MP +10%, Stun/ Paralysis/ Mental Resistance +5%, PvE P. Atk. +5%, Received Damage -5%. -->
+	<skill id="39369" toLevel="1" name="White Knight Transformation">
+		<!-- White Knight transformation. For 20 min., Max HP/ MP +10%, Paralysis/ Mental/ Stun Resistance +5%, PvE Damage +5%, Received Damage -5%. The effect remains after death. -->
 		<icon>icon.etc_charm_of_courage_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

@@ -63,12 +63,12 @@ public class NodeLoc: AbstractNodeLoc
 	
 	public override int getX()
 	{
-		return GeoEngine.getInstance().getWorldX(_x);
+		return GeoEngine.getWorldX(_x);
 	}
 	
 	public override int getY()
 	{
-		return GeoEngine.getInstance().getWorldY(_y);
+		return GeoEngine.getWorldY(_y);
 	}
 	
 	public override int getZ()

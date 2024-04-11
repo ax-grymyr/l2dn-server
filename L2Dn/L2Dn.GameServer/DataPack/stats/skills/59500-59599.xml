@@ -271,6 +271,7 @@
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="59554" toLevel="1" name="Holiday Joy Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -292,6 +293,7 @@
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="59558" toLevel="1" name="Transformation Sealbook: Kat the Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
@@ -301,7 +303,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59560" toLevel="5" name="Dragon Pendant - Attack Lv. 1 +1">
-		<!-- M. Def. +$s1. -->
+		<!-- M. Def. +7. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -311,7 +313,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59562" toLevel="5" name="Dragon Pendant - Attack Lv. 2 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4. -->
+		<!-- M. Def. +16, Acquired XP/ SP +11%, Received P./ M. Damage -3%, Atk. Spd. +2%. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -321,7 +323,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59564" toLevel="5" name="Dragon Pendant - Attack Lv. 3 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4, P. Atk. +$s5, P. Critical Damage +$s6, Max HP +$s7, Max MP +$s8. -->
+		<!-- M. Def. +25, Acquired XP/ SP +30%, Received P./ M. Damage -10%, Atk. Spd. +3%, P. Atk. +5%, P. Critical Damage +6%, Max HP +100, Max MP +50. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -331,7 +333,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59566" toLevel="5" name="Dragon Pendant - Attack Lv. 4 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Atk. Spd. +$s4, P. Atk. +$s5, P. Critical Damage +$s6, P. Critical Rate +$s7, Max HP +$s8, Max MP +$s9. -->
+		<!-- M. Def. +32, Acquired XP/ SP +40%, Received P./ M. Damage -20%, Atk. Spd. +5%, P. Atk. +10%, P. Critical Damage +10%, P. Critical Rate +6%, Max HP +200, Max MP +140. -->
 		<icon>icon.bm_pendant_dragon_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -341,7 +343,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59568" toLevel="5" name="Dragon Pendant - Magic Power Lv. 1 +1">
-		<!-- M. Def. +$s1. -->
+		<!-- M. Def. +7. -->
 		<icon>BranchIcon.icon.g_bm_pendant_dragon_m</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -351,7 +353,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59570" toLevel="5" name="Dragon Pendant - Magic Power Lv. 2 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4. -->
+		<!-- M. Def. +16, Acquired XP/ SP +11%, Received P./ M. Damage -3%, Casting Speed +2%. -->
 		<icon>BranchIcon.icon.g_bm_pendant_dragon_m</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -361,7 +363,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59572" toLevel="5" name="Dragon Pendant - Magic Power Lv. 3 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4, M. Atk. +$s5, M. Skill Critical Damage +$s6, Max HP +$s7, Max MP +$s8. -->
+		<!-- M. Def. +25, Acquired XP/ SP +30%, Received P./ M. Damage -10%, Casting Speed +3%, M. Atk. +5%, M. Skill Critical Damage +6%, Max HP +100, Max MP +50. -->
 		<icon>BranchIcon.icon.g_bm_pendant_dragon_m</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -371,7 +373,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="59574" toLevel="5" name="Dragon Pendant - Magic Power Lv. 4 +1">
-		<!-- M. Def. +$s1, Acquired XP/ SP +$s2, Received P./ M. Damage -$s3, Casting Speed +$s4, M. Atk. +$s5, M. Skill Critical Damage +$s6, M. Skill Critical Rate +$s7, Max HP +$s8, Max MP +$s9. -->
+		<!-- M. Def. +32, Acquired XP/ SP +40%, Received P./ M. Damage -20%, Casting Speed +5%, M. Atk. +10%, M. Skill Critical Damage +10%, M. Skill Critical Rate +6%, Max HP +200, Max MP +140. -->
 		<icon>BranchIcon.icon.g_bm_pendant_dragon_m</icon>
 		<operateType>P</operateType>
 	</skill>

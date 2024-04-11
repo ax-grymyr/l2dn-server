@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
+using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -67,13 +68,13 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
 			if (update.get())
 			{
 				update.set(false);
-				creature.getStat().recalculateStats(true);
+				ThreadPool.execute(() => creature.getStat().recalculateStats(true));
 			}
 		}
 		else if (!update.get())
 		{
 			update.set(true);
-			creature.getStat().recalculateStats(true);
+			ThreadPool.execute(() => creature.getStat().recalculateStats(true));
 		}
 	}
 }

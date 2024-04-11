@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="18024" toLevel="24" name="Venir's Talisman">
-		<!-- When equipped, CON +$s1. -->
+		<!-- When equipped, CON +1. -->
 		<icon>
 			<value level="1">icon.etc_all_stat_talisman_i00</value>
 			<value level="2">icon.etc_all_stat_talisman_i00</value>

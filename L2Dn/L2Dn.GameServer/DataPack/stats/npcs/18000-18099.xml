@@ -12,7 +12,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire exp="6804" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="4234" hpRegen="6.5" mp="1846" mpRegen="2.4" />
 			<attack physical="481.34551" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
@@ -78,7 +78,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire exp="6480" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1933" hpRegen="6.5" mp="40" mpRegen="2.4" />
 			<attack physical="529.48" magical="328.7" random="30" critical="4" accuracy="3.75" attackSpeed="257" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="247.65" magical="181.22" />
@@ -140,7 +140,7 @@
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire exp="44" sp="2" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="2" mp="1345" mpRegen="0.9" />
 			<attack physical="4" magical="5.79" random="30" critical="8" accuracy="0" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="44.44" magical="32.52" />
@@ -174,7 +174,7 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1372" hpRegen="5.5" mp="1345" mpRegen="2.1" />
 			<attack physical="290.45" magical="198.34" random="30" critical="4" accuracy="20" attackSpeed="257" type="BOW" range="50" distance="80" width="120" />
 			<defence physical="195.66" magical="143.18" />
@@ -211,7 +211,7 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire exp="4867" sp="1" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1569" hpRegen="6.5" mp="1507" mpRegen="2.4" />
 			<attack physical="348.07" magical="230.26" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="216.26" magical="153.3" />
@@ -254,7 +254,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
 		<acquire exp="9086" sp="2" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2421" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="667.04" magical="441.26" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.61" magical="209.55" />
@@ -306,7 +306,7 @@
 		<sex>FEMALE</sex>
 		<acquire exp="9189932" sp="275697" />
 		<equipment rhand="5800" lhand="5799" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1241577.52641" hpRegen="7.5" mp="2284.185" mpRegen="2.7" />
 			<attack physical="734.25" magical="501.4" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="291.15" magical="213.05" />
@@ -349,7 +349,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire exp="9555" sp="2" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2444" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<attack physical="757.75" magical="517.45" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.92" magical="216.54" />
@@ -402,7 +402,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
 		<acquire exp="2630" sp="102" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="4.5" mp="1507" mpRegen="1.8" />
 			<attack physical="121.20802" magical="82.76936" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="132.9486" magical="97.28601" />
@@ -453,7 +453,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="218" /> <!-- Throwing Knife -->
 		<acquire exp="2285" sp="86" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="4.5" mp="1507" mpRegen="1.8" />
 			<attack physical="92.89459375" magical="72.49711" random="10" critical="8" accuracy="0" attackSpeed="216" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="106.7406795" magical="91.89199" evasion="10" />
@@ -497,7 +497,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
 		<acquire exp="1500" sp="53" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="3.5" mp="1507" mpRegen="1.5" />
 			<attack physical="178.9611243" magical="54.99876" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
 			<defence physical="94.871628" magical="81.67405" evasion="10" />
@@ -540,7 +540,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="125" /> <!-- Spinebone Sword -->
 		<acquire exp="1538" sp="55" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="3.5" mp="1507" mpRegen="1.5" />
 			<attack physical="86.42002" magical="59.01367" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="115.00598" magical="84.15638" />
@@ -590,7 +590,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
 		<acquire exp="1840" sp="66" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="3.5" mp="1507" mpRegen="1.5" />
 			<attack physical="75.6175175" magical="59.01367" random="10" critical="8" accuracy="0" attackSpeed="216" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="97.755083" magical="84.15638" evasion="10" />
@@ -639,7 +639,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="292" /> <!-- Pike -->
 		<acquire exp="3414" sp="140" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="4.5" mp="1507" mpRegen="1.8" />
 			<attack physical="146.82587" magical="100.26304" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="144.47758" magical="105.72243" />
@@ -688,7 +688,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="5800" /> <!-- Tarbar -->
 		<acquire exp="163287" sp="4898" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="4394.90933" hpRegen="7.5" mp="1643.445" mpRegen="2.7" />
 			<attack physical="106.0570175" magical="82.76936" random="10" critical="8" accuracy="0" attackSpeed="216" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="113.00631" magical="97.28601" evasion="10" />
@@ -724,7 +724,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="273" /> <!-- Compound Bow -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2845.61943" hpRegen="7.5" mp="3197.505" mpRegen="2.7" />
 			<attack physical="235.8991855" magical="72.49711" random="10" critical="8" accuracy="0" attackSpeed="227" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
 			<defence physical="106.7406795" magical="91.89199" evasion="10" />

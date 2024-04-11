@@ -25,6 +25,7 @@ public class NpcData: DataReaderBase
 	private readonly Map<int, NpcTemplate> _npcs = new();
 	private readonly Map<String, int> _clans = new();
 	private static readonly Set<int> _masterMonsterIDs = new();
+	private static int? _genericClanId;
 	
 	protected NpcData()
 	{
@@ -809,5 +810,25 @@ public class NpcData: DataReaderBase
 		});
 
 		return parameters;
+	}
+
+	public int getGenericClanId()
+	{
+		if (_genericClanId != null)
+		{
+			return _genericClanId.Value;
+		}
+		
+		lock (this)
+		{
+			_genericClanId = _clans.get("ALL");
+			
+			if (_genericClanId == null)
+			{
+				_genericClanId = -1;
+			}
+		}
+		
+		return _genericClanId.Value;
 	}
 }

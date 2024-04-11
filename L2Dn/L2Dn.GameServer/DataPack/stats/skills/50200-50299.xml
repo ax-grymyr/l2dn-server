@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="50200" toLevel="10" name="Onyx">
-		<!-- Damage from Beast Soulshot +$s1. -->
+		<!-- Damage from Beast Soulshot +2%. -->
 		<icon>icon.etc_bm_jewel_onyx_i00</icon>
 		<operateType>A2</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -22,7 +22,7 @@
 		</effects>
 	</skill>
 	<skill id="50201" toLevel="10" name="Onyx">
-		<!-- Spiritshot Damage +$s1. -->
+		<!-- Spiritshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_onyx_i00</icon>
 		<operateType>A2</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -43,7 +43,7 @@
 		</effects>
 	</skill>
 	<skill id="50202" toLevel="10" name="Onyx">
-		<!-- Blessed Spiritshot Damage +$s1. -->
+		<!-- Blessed Spiritshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_onyx_i00</icon>
 		<operateType>A2</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -64,7 +64,7 @@
 		</effects>
 	</skill>
 	<skill id="50203" toLevel="10" name="Onyx">
-		<!-- Beast Spiritshot Damage +$s1. -->
+		<!-- Beast Spiritshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_onyx_i00</icon>
 		<operateType>A2</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -85,7 +85,7 @@
 		</effects>
 	</skill>
 	<skill id="50204" toLevel="10" name="Onyx">
-		<!-- Damage from Soulshot, Spiritshot, Blessed Soulshot, Blessed Spiritshot, Beast Soulshot and Beast Spiritshot +$s1. -->
+		<!-- Soulshot/ Blessed Soulshot/ Beast Soulshot/ Spiritshot/ Blessed Spiritshot/ Beast Spiritshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_onyx_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -180,7 +180,7 @@
 		</effects>
 	</skill>
 	<skill id="50206" toLevel="10" name="Spinel">
-		<!-- P. Def. +$s1, M. Def. +$s2, CON +$s3. With a certain chance, recovers $s4 MP when using skills. -->
+		<!-- P. Def. +20, M. Def. +10, CON +1. With a certain chance, recovers 12 MP when using skills. -->
 		<icon>icon.etc_bm_jewel_garnet_i00</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -308,7 +308,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>
 					<value level="1">1</value>
 					<value level="2">2</value>
@@ -323,7 +323,7 @@
 		</effects>
 	</skill>
 	<skill id="50207" toLevel="10" name="Zircon">
-		<!-- P./ M. Critical Damage +$s1. -->
+		<!-- P./ M. Critical Damage +2%. -->
 		<icon>icon.etc_bm_jewel_bloodstone_i00</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -371,7 +371,7 @@
 		</effects>
 	</skill>
 	<skill id="50208" toLevel="10" name="Moonstone">
-		<!-- When Sayha's Grace is active Acquired XP/ SP (hunting) +$s1. -->
+		<!-- While Sayha's Grace is active, Acquired XP/ SP +3%. -->
 		<icon>icon.etc_bm_jewel_moonstone_i00</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -404,297 +404,297 @@
 		</effects>
 	</skill>
 	<skill id="50209" toLevel="1" name="Dark Crystal Helmet - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% HP Recovery Rate +5.5% Max HP +100 -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +5.5%. Max HP +100 -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50210" toLevel="1" name="Dark Crystal Helmet - Magic Armor">
-		<!-- Effect of A-grade equipment MEN +1 Weight Limit +1500 P. Def. +10 M. Atk. +8% MP Recovery Bonus +5.5% P. Def. +8%. -->
+		<!-- Effect of A-grade equipment. MEN +1. Weight Limit +1500. P. Def. +10. M. Atk. +8%. MP Recovery Bonus +5.5%. P. Def. +8%. -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50211" toLevel="1" name="Dark Crystal Helmet - Light Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% HP Recovery Bonus +5.5% P. Critical Damage +30. -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Bonus +5.5%. P. Critical Damage +30. -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50212" toLevel="1" name="Majestic Circlet - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% HP Recovery Rate +8% -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8% -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50213" toLevel="1" name="Majestic Circlet - Magic Armor">
-		<!-- A-grade equipment effect MEN +1 Weight Limit +1500 P. Def. +10 M. Atk. +8% MP Recovery Bonus +8% Max MP +300. -->
+		<!-- A-grade equipment effect. MEN +1. Weight Limit +1500. P. Def. +10. M. Atk. +8%. MP Recovery Bonus +8%. Max MP +300. -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50214" toLevel="1" name="Majestic Circlet - Light Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 Max P. Atk. +4% MP Recovery Bonus +5.5% P. Atk. +8% when using a bow. -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. Max P. Atk. +4%. MP Recovery Bonus +5.5%. P. Atk. +8% when using a bow. -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50215" toLevel="1" name="Helm of Nightmare - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% HP Recovery Rate +8% Received Damage -5% -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +8%. Received Damage -5% -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50216" toLevel="1" name="Helm of Nightmare - Magic Armor">
-		<!-- Effect of A-grade equipment MEN +1 Weight Limit +1500 P. Def. +10 M. Atk. +8% MP Recovery Bonus +8% M. Critical Damage +30. -->
+		<!-- Effect of A-grade equipment. MEN +1. Weight Limit +1500. P. Def. +10. M. Atk. +8%. MP Recovery Bonus +8%. M. Critical Damage +30. -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50217" toLevel="1" name="Helm of Nightmare - Light Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% MP Recovery Rate +8% -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. MP Recovery Rate +8% -->
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50218" toLevel="1" name="Tallum Helmet - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +10 P. Atk. +4% HP Recovery Rate +5.5% Max MP +50 -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +10. P. Atk. +4%. HP Recovery Rate +5.5%. Max MP +50 -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50219" toLevel="1" name="Tallum Helmet - Magic Armor">
-		<!-- A-grade equipment effect MEN +1 Weight Limit +1500 M. Def. +10 M. Atk. +8% MP Recovery Bonus +5.5% M. Def. +8%. -->
+		<!-- A-grade equipment effect. MEN +1. Weight Limit +1500. M. Def. +10. M. Atk. +8%. MP Recovery Bonus +5.5%. M. Def. +8%. -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50220" toLevel="1" name="Tallum Helmet - Light Armor">
-		<!-- Effect of A-grade equipment MEN +1 Weight Limit +1500 P. Def. +10 M. Atk. +8% MP Recovery Bonus +8%. -->
+		<!-- Effect of A-grade equipment. MEN +1. Weight Limit +1500. P. Def. +10. M. Atk. +8%. MP Recovery Bonus +8%. -->
 		<icon>icon.armor_helmet_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50221" toLevel="1" name="Dark Crystal Breastplate - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1500 M. Def. +15 Paralysis Resistance +50%. -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1500. M. Def. +15. Paralysis Resistance +50%. -->
 		<icon>icon.armor_t74_u_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50222" toLevel="1" name="Dark Crystal Leather Armor - Light Armor">
-		<!-- A-grade equipment effect DEX +1 Weight Limit +1500 M. Def. +15 Paralysis Resistance +50%. -->
+		<!-- A-grade equipment effect. DEX +1. Weight Limit +1500. M. Def. +15. Paralysis Resistance +50%. -->
 		<icon>icon.armor_t75_u_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50223" toLevel="1" name="Tallum Tunic - Magic Armor">
-		<!-- A-grade equipment effect WIT +1 Weight Limit +1500 M. Def. +15 Mental Resistance +50%. -->
+		<!-- A-grade equipment effect. WIT +1. Weight Limit +1500. M. Def. +15. Mental Resistance +50%. -->
 		<icon>icon.armor_t79_u_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50224" toLevel="1" name="Dark Crystal Gaiters - Heavy Armor">
-		<!-- A-grade equipment effect CON +1 Weight Limit +1000 M. Def. +10 Max HP +200 -->
+		<!-- A-grade equipment effect. CON +1. Weight Limit +1000. M. Def. +10. Max HP +200 -->
 		<icon>icon.armor_t74_l_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50225" toLevel="1" name="Dark Crystal Leggings - Light Armor">
-		<!-- A-grade equipment effect DEX +1 Weight Limit +1000 M. Def. +10 Max HP +150 Max MP +80 -->
+		<!-- A-grade equipment effect. DEX +1. Weight Limit +1000. M. Def. +10. Max HP +150. Max MP +80 -->
 		<icon>icon.armor_t75_l_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50226" toLevel="1" name="Tallum Stockings - Magic Armor">
-		<!-- A-grade equipment effect WIT +1 Weight Limit +1000 M. Def. +10 Max HP +100 Max MP +120 -->
+		<!-- A-grade equipment effect. WIT +1. Weight Limit +1000. M. Def. +10. Max HP +100. Max MP +120 -->
 		<icon>icon.armor_t79_l_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50227" toLevel="1" name="Dark Crystal Robe - Magic Armor">
-		<!-- A-grade equipment effect WIT +2 Weight Limit +2500 M. Def. +25 Max HP +100 Max MP +120 Paralysis Resistance +50% -->
+		<!-- A-grade equipment effect. WIT +2. Weight Limit +2500. M. Def. +25. Max HP +100. Max MP +120. Paralysis Resistance +50% -->
 		<icon>icon.armor_t76_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50228" toLevel="1" name="Majestic Plate Armor - Heavy Armor">
-		<!-- A-grade equipment effect CON +2 Weight Limit +2500 M. Def. +25 Max HP +200 Stun Resistance +50% -->
+		<!-- A-grade equipment effect. CON +2. Weight Limit +2500. M. Def. +25. Max HP +200. Stun Resistance +50% -->
 		<icon>icon.armor_t83_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50229" toLevel="1" name="Majestic Robe - Magic Armor">
-		<!-- A-grade equipment effect WIT +2 Weight Limit +2500 M. Def. +25 Max HP +100 Max MP +120 Paralysis Resistance +50% -->
+		<!-- A-grade equipment effect. WIT +2. Weight Limit +2500. M. Def. +25. Max HP +100. Max MP +120. Stun Resistance +50% -->
 		<icon>icon.armor_t85_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50230" toLevel="1" name="Majestic Leather Armor - Light Armor">
-		<!-- A-grade equipment effect DEX +2 Weight Limit +2500 M. Def. +25 Max HP +150 Max MP +80 Paralysis Resistance +50% -->
+		<!-- A-grade equipment effect. DEX +2. Weight Limit +2500. M. Def. +25. Max HP +150. Max MP +80. Stun Resistance +50% -->
 		<icon>icon.armor_t84_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50231" toLevel="1" name="Armor of Nightmare - Heavy Armor">
-		<!-- A-grade equipment effect CON +2 Weight Limit +2500 M. Def. +25 Max HP +200 Sleep Resistance +70% Hold Resistance +70%. -->
+		<!-- A-grade equipment effect. CON +2. Weight Limit +2500. M. Def. +25. Max HP +200. Sleep Resistance +70%. Hold Resistance +70%. -->
 		<icon>icon.armor_t80_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50232" toLevel="1" name="Robe of Nightmare - Magic Armor">
-		<!-- A-grade equipment effect WIT +2 Weight Limit +2500 M. Def. +25 Max HP +100 Max MP +120 Sleep Resistance +70% Hold Resistance +70%. -->
+		<!-- A-grade equipment effect. WIT +2. Weight Limit +2500. M. Def. +25. Max HP +100. Max MP +120. Sleep Resistance +70%. Hold Resistance +70%. -->
 		<icon>icon.armor_t82_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50233" toLevel="1" name="Leather Armor of Nightmare - Light Armor">
-		<!-- A-grade equipment effect DEX +2 Weight Limit +2500 M. Def. +25 Max HP +150 Max MP +80 Sleep Resistance +70% Hold Resistance +70%. -->
+		<!-- A-grade equipment effect. DEX +2. Weight Limit +2500. M. Def. +25. Max HP +150. Max MP +80. Sleep Resistance +70%. Hold Resistance +70%. -->
 		<icon>icon.armor_t81_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50234" toLevel="1" name="Tallum Plate Armor - Heavy Armor">
-		<!-- A-grade equipment effect CON +2 Weight Limit +2500 M. Def. +25 Max HP +200 Mental Resistance +50%. -->
+		<!-- A-grade equipment effect. CON +2. Weight Limit +2500. M. Def. +25. Max HP +200. Mental Resistance +50% -->
 		<icon>icon.armor_t77_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50235" toLevel="1" name="Tallum Leather Armor - Light Armor">
-		<!-- A-grade equipment effect WIT +2 Weight Limit +2500 M. Def. +25 Max HP +150 Max MP +80 Mental Resistance +50%. -->
+		<!-- A-grade equipment effect. WIT +2. Weight Limit +2500. M. Def. +25. Max HP +150. Max MP +80. Mental Resistance +50%. -->
 		<icon>icon.armor_t78_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50236" toLevel="1" name="Dark Crystal Gloves - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +200 Atk. Spd. +8% Received Healing +2% -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +200. Atk. Spd. +8%. Received Healing +2% -->
 		<icon>icon.armor_t74_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50237" toLevel="1" name="Dark Crystal Gloves - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Casting Spd. +15% Casting Interruption Rate -25. -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Interruption Rate -25% -->
 		<icon>icon.armor_t76_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50238" toLevel="1" name="Dark Crystal Gloves - Light Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Atk. Spd. +8% P. Evasion +2. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Evasion +2. -->
 		<icon>icon.armor_t75_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50239" toLevel="1" name="Majestic Gauntlets - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Atk. Spd. +8% Atk. Spd. +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. Atk. Spd. +50. -->
 		<icon>icon.armor_t83_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50240" toLevel="1" name="Majestic Gauntlets - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Casting Spd. +15% Casting Spd. +50. -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. Casting Spd. +50. -->
 		<icon>icon.armor_t85_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50241" toLevel="1" name="Majestic Gauntlets - Light Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Atk. Spd. +8% P. Skill Critical Damage +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Skill Critical Damage +50. -->
 		<icon>icon.armor_t84_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50242" toLevel="1" name="Gauntlets of Nightmare - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 P. Atk. +8% P. Atk. +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. P. Atk. +8%. P. Atk. +50. -->
 		<icon>icon.armor_t80_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50243" toLevel="1" name="Gauntlets of Nightmare - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Casting Spd. +15% M. Atk. +50. -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Casting Spd. +15%. M. Atk. +50. -->
 		<icon>icon.armor_t82_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50244" toLevel="1" name="Gauntlets of Nightmare - Light Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Atk. Spd. +8% Restores 2% of the damage inflicted by the enemy. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. With a certain chance, absorbs 2% of the inflicted damage as HP. -->
 		<icon>icon.armor_t81_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50245" toLevel="1" name="Tallum Gloves - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Atk. Spd. +8% P. Def. +10. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Atk. Spd. +8%. P. Def. +10. -->
 		<icon>icon.armor_t77_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50246" toLevel="1" name="Tallum Gloves - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +20 Max HP +50 Casting Spd. +15% -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +20. Max HP +50. Casting Spd. +15% -->
 		<icon>icon.armor_t79_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50247" toLevel="1" name="Tallum Gloves - Light Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Max MP +120 Casting Spd. +15% -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Max MP +120. Casting Spd. +15% -->
 		<icon>icon.armor_t78_g_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50248" toLevel="1" name="Dark Crystal Boots (Heavy Armor)">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +200 Speed +4 Received Healing +2% -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +200. Speed +4. Received Healing +2% -->
 		<icon>icon.armor_t74_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="50249" toLevel="1" name="Steel Dark Crystal Boots (Robe)">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +7 Casting Interruption Rate -25. -->
+	<skill id="50249" toLevel="1" name="Dark Crystal Boots (Robe)">
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +7. Casting Interruption Rate -25% -->
 		<icon>icon.armor_t76_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50250" toLevel="1" name="Dark Crystal Boots (Light Armor)">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 P. Evasion +2. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Evasion +2. -->
 		<icon>icon.armor_t75_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50251" toLevel="1" name="Majestic Boots - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +7 Atk. Spd. +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +7. Atk. Spd. +50. -->
 		<icon>icon.armor_t83_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50252" toLevel="1" name="Majestic Boots - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 Casting Spd.+50. -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. Casting Spd.+50. -->
 		<icon>icon.armor_t85_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50253" toLevel="1" name="Majestic Boots - Light Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 P. Skill Critical Damage +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Skill Critical Damage +50. -->
 		<icon>icon.armor_t84_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50254" toLevel="1" name="Boots of Nightmare - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 P. Atk. +50. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Atk. +50. -->
 		<icon>icon.armor_t80_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50255" toLevel="1" name="Boots of Nightmare - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 M. Atk. +50. -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. M. Atk. +50. -->
 		<icon>icon.armor_t82_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50256" toLevel="1" name="Boots of Nightmare - Light Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 Restores 2% of the damage inflicted by the enemy. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. With a certain chance, absorbs 2% of the inflicted damage as HP. -->
 		<icon>icon.armor_t81_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50257" toLevel="1" name="Tallum Boots - Heavy Armor">
-		<!-- A-grade equipment effect STR +1 Weight Limit +1000 M. Def. +10 Max HP +50 Speed +4 P. Def. +10. -->
+		<!-- A-grade equipment effect. STR +1. Weight Limit +1000. M. Def. +10. Max HP +50. Speed +4. P. Def. +10. -->
 		<icon>icon.armor_t77_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50258" toLevel="1" name="Tallum Boots - Magic Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +20 Max HP +50 Speed +4 -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +20. Max HP +50. Speed +4 -->
 		<icon>icon.armor_t79_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50259" toLevel="1" name="Tallum Boots - Light Armor">
-		<!-- A-grade equipment effect INT +1 Weight Limit +1000 M. Def. +10 Max HP +50 Max MP +120 Speed +4 -->
+		<!-- A-grade equipment effect. INT +1. Weight Limit +1000. M. Def. +10. Max HP +50. Max MP +120. Speed +4 -->
 		<icon>icon.armor_t78_b_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50260" toLevel="10" name="Enchantment Effect: Top and Bottom Parts of A-Grade Equipment">
-		<!-- Enchantment effect of top and bottom parts of A-grade equipment HP Recovery Bonus +$s1 MP Recovery Bonus +$s2. -->
+		<!-- Enchant effect of A-grade top and bottom armor. HP Recovery Rate +5. MP Recovery Rate +3. -->
 		<icon>icon.armor_t89_ul_i02</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50261" toLevel="10" name="Enchantment Effect: Top Part of A-Grade Equipment">
-		<!-- Enchantment effect of A-grade top parts HP Recovery Bonus +$s1. -->
+		<!-- Enchant effect of A-grade top armor. HP Recovery Rate +5. -->
 		<icon>icon.armor_t601_u_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50262" toLevel="10" name="Enchantment Effect: Bottom Part of A-Grade Equipment">
-		<!-- Enchantment effect of A-grade bottom parts MP Recovery Bonus +$s1. -->
+		<!-- Enchant effect of A-grade bottom armor. MP Recovery Rate +3. -->
 		<icon>icon.armor_t601_l_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50263" toLevel="10" name="Enchantment Effect: A-Grade Gloves (Physical)">
-		<!-- Enchantment effect of A-grade gloves P. Skill Power +$s1. -->
+		<!-- Enchant effect of A-grade gloves. P. Skill Power +2%. -->
 		<icon>icon.armor_t601_g_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50264" toLevel="10" name="Enchantment Effect: A-Grade Gloves (Magic)">
-		<!-- Enchantment effect of A-grade gloves M. Skill Power +$s1. -->
+		<!-- Enchant effect of A-grade gloves. M. Skill Power +2%. -->
 		<icon>icon.armor_t601_g_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50265" toLevel="10" name="Enchantment Effect: A-Grade Boots (Physical)">
-		<!-- Enchantment effect of A-grade boots P. Skill Cooldown -$s1. -->
+		<!-- Enchant effect of A-grade boots. P. Skill Cooldown -1%. -->
 		<icon>icon.armor_t601_b_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50266" toLevel="10" name="Enchantment Effect: A-Grade Boots (Magic)">
-		<!-- Enchantment effect of A-grade boots M. Skill Cooldown -$s1. -->
+		<!-- Enchant effect of A-grade boots. M. Skill Cooldown -1%. -->
 		<icon>icon.armor_t601_b_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="50267" toLevel="10" name="Enchantment Effect: A-Grade Helmet">
-		<!-- A-grade helmet enchantment effect Max HP +$s1. -->
+		<!-- Enchant effect of A-grade helmet. Max HP +50. -->
 		<icon>icon.armor_helmet_i02</icon>
 		<operateType>P</operateType>
 	</skill>

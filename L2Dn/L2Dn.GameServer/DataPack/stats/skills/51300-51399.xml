@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="51300" toLevel="1" name="Wind Fist">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>500</castRange>
 		<hitTime>1500</hitTime>
@@ -43,14 +44,14 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
-	<skill id="51308" toLevel="1" name="Solid Scroll: Enchant Box">
+	<skill id="51308" toLevel="1" name="Stable Scroll: Enchant Box">
 		<icon>icon.etc_treasure_box_i04</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
-	<skill id="51309" toLevel="1" name="Solid Scroll: Enchant Large Box">
+	<skill id="51309" toLevel="1" name="Stable Scroll: Enchant Large Box">
 		<icon>icon.etc_treasure_box_i04</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
@@ -93,6 +94,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="51315" toLevel="1" name="Scroll: Enchant Excalibur">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="51316" toLevel="1" name="Excalibur Weak Energy">
@@ -223,24 +225,28 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="51339" toLevel="1" name="Agathion Gift Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51340" toLevel="1" name="Weapon Pack (S-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51341" toLevel="1" name="Armor Pack (S-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51342" toLevel="1" name="+10 Armor Pack (A-grade)">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>91627</itemConsumeId>
@@ -263,7 +269,7 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="3.44">
-						<item id="5287" count="1" minEnchant="10" maxEnchant="10" /> <!-- Sealed Dark Crystal Breastplate -->
+						<item id="5287" count="1" minEnchant="10" maxEnchant="10" /> <!-- Sealed Dark Crystal breastplate -->
 					</item>
 					<item chance="3.44">
 						<item id="5288" count="1" minEnchant="10" maxEnchant="10" /> <!-- Sealed Dark Crystal Gaiters -->
@@ -354,104 +360,108 @@
 		</effects>
 	</skill>
 	<skill id="51343" toLevel="1" name="+10 Armor Pack (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51344" toLevel="1" name="+10 Accessory Supply Box (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51345" toLevel="1" name="+10 Accessory Supply Box (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51346" toLevel="5" name="Fire Dragon Power: Virgo">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_virgo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51347" toLevel="5" name="Fire Dragon Power: Capricorn">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_capr_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51348" toLevel="5" name="Fire Dragon Power: Libra">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_lib_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51349" toLevel="5" name="Fire Dragon Power: Taurus">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_tau_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51350" toLevel="5" name="Fire Dragon Power: Leo">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_leo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51351" toLevel="5" name="Fire Dragon Power: Scorpio">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_sco_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51352" toLevel="5" name="Fire Dragon Power: Aquarius">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_aqu_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51353" toLevel="5" name="Fire Dragon Power: Sagittarius">
-		<!-- P. Atk. in PvE +$s1. -->
+		<!-- P. Atk. in PvE +1%. -->
 		<icon>icon.agathion_sag_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51354" toLevel="5" name="Land Dragon Power: Virgo">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_virgo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51355" toLevel="5" name="Land Dragon Power: Capricorn">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_capr_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51356" toLevel="5" name="Land Dragon Power: Libra">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_lib_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51357" toLevel="5" name="Land Dragon Power: Taurus">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_tau_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51358" toLevel="5" name="Land Dragon Power: Leo">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_leo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51359" toLevel="5" name="Land Dragon Power: Scorpio">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_sco_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51360" toLevel="5" name="Land Dragon Power: Aquarius">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_aqu_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51361" toLevel="5" name="Land Dragon Power: Sagittarius">
-		<!-- PvP Damage +$s1. -->
+		<!-- PvP Damage +1%. -->
 		<icon>icon.agathion_sag_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="51363" toLevel="1" name="Master Fisherman's Treasure Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -538,7 +548,7 @@
 		<hitTime>500</hitTime>
 		<reuseDelay>2000</reuseDelay>
 	</skill>
-	<skill id="51373" toLevel="1" name="Decrease Weight of the Meow Unit">
+	<skill id="51373" toLevel="1" name="Meow Unit's Decrease Weight">
 		<!-- For 8 h., Weight Limit +9000. -->
 		<icon>icon.skill1257</icon>
 		<operateType>A2</operateType>
@@ -558,6 +568,7 @@
 	</skill>
 	<skill id="51375" toLevel="1" name="Refined Romantic Gold Chapeau Teleport">
 		<!-- Teleports the character to the nearest village. Cooldown: 20 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<reuseDelay>1200000</reuseDelay>
@@ -569,15 +580,18 @@
 		<reuseDelay>1200000</reuseDelay>
 	</skill>
 	<skill id="51377" toLevel="1" name="Sayha's Blessing (Event)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="51378" toLevel="1" name="15th Anniversary Gift Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51379" toLevel="1" name="Chronicle Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -585,6 +599,7 @@
 	</skill>
 	<skill id="51380" toLevel="1" name="15th Anniversary Wondrous Fork">
 		<!-- Group gift distribution -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<castRange>1500</castRange>
@@ -593,6 +608,7 @@
 	</skill>
 	<skill id="51381" toLevel="1" name="Scroll of Escape: Unbearable Wolves' Howling">
 		<!-- Magical scroll that relocates you to Jackson in Talking Island Village. Cannot be exchanged, dropped, or sold. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -619,6 +635,7 @@
 	</skill>
 	<skill id="51382" toLevel="1" name="Scroll of Escape: Troubled Forest">
 		<!-- A magical scroll that relocates you to Herbiel in Elven Village. Cannot be exchanged, dropped, or sold. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -645,6 +662,7 @@
 	</skill>
 	<skill id="51383" toLevel="1" name="Scroll of Escape: Cleaning-up the Grounds">
 		<!-- A magical scroll that relocates you to Vollodos in Dark Elf Village. Cannot be exchanged, dropped, or sold. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -671,6 +689,7 @@
 	</skill>
 	<skill id="51384" toLevel="1" name="Scroll of Escape: Plundered Graves">
 		<!-- A magical scroll that relocates you to Uska in Orc Barracks. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -697,6 +716,7 @@
 	</skill>
 	<skill id="51385" toLevel="1" name="Scroll of Escape: Dangerous Predators">
 		<!-- A magical scroll that relocates you to Gerald in Dwarven Village. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -723,6 +743,7 @@
 	</skill>
 	<skill id="51386" toLevel="1" name="Scroll of Escape: Captain Bathis">
 		<!-- A magical scroll that relocates you to the Captain Bathis in Gludio. Cannot be exchanged, dropped, or sold. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -748,7 +769,7 @@
 		</effects>
 	</skill>
 	<skill id="51387" toLevel="5" name="Adventurer's Mark">
-		<!-- The effect of Adventurer's Mark Lv. $s1: HP Recovery Bonus +$s2, MP Recovery Bonus +$s3. -->
+		<!-- The effect of Adventurer's Mark Lv. 1: HP Recovery Bonus +5%, MP Recovery Bonus +10%. -->
 		<icon>icon.etc_crest_blue_i00</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -775,6 +796,7 @@
 		</effects>
 	</skill>
 	<skill id="51388" toLevel="1" name="Chicken Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -842,15 +864,17 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="51396" toLevel="1" name="Scroll: 10,000 SP">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51397" toLevel="1" name="Scroll: 100,000 SP">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="51398" toLevel="1" name="Sayha's Storm Lv. 1 (Event)">
-		<!-- For 20 min., Momentum Consumption +100%, Acquired XP/ SP +100%. Cooldown: 1 min. The effect remains after death. -->
+		<!-- For 20 min., Sayha's Grace Consumption +100%, Acquired XP/ SP +100%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.bm_sayha_storm</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

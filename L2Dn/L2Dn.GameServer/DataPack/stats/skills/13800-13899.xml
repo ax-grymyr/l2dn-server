@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="13856" toLevel="15" name="Might">
-		<!-- P. Atk. +$s1. -->
+		<!-- P. Atk. +2%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -26,7 +26,7 @@
 		</effects>
 	</skill>
 	<skill id="13857" toLevel="15" name="Wrath">
-		<!-- Atk. Spd. +$s1. -->
+		<!-- Atk. Spd. +11%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -51,7 +51,7 @@
 		</effects>
 	</skill>
 	<skill id="13858" toLevel="15" name="Focus">
-		<!-- P. Critical Rate +$s1. -->
+		<!-- P. Critical Rate +58. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -76,7 +76,7 @@
 		</effects>
 	</skill>
 	<skill id="13859" toLevel="15" name="Death">
-		<!-- P. Critical Damage +$s1. -->
+		<!-- P. Critical Damage +3%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -101,17 +101,17 @@
 		</effects>
 	</skill>
 	<skill id="13860" toLevel="15" name="Hunter">
-		<!-- P. Skills Critical Rate +$s1. -->
+		<!-- P. Skills Critical Rate +6%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13861" toLevel="15" name="Fire">
-		<!-- P. Skill Critical Damage +$s1 -->
+		<!-- P. Skill Critical Damage +6% -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13862" toLevel="15" name="Body">
-		<!-- Max HP +$s1 -->
+		<!-- Max HP +21%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -136,7 +136,7 @@
 		</effects>
 	</skill>
 	<skill id="13863" toLevel="15" name="Empower">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -161,7 +161,7 @@
 		</effects>
 	</skill>
 	<skill id="13864" toLevel="15" name="Acumen">
-		<!-- Casting Spd. +$s1 -->
+		<!-- Casting Spd. +11% -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -195,7 +195,7 @@
 		</effects>
 	</skill>
 	<skill id="13865" toLevel="15" name="Savagery">
-		<!-- M. Critical Rate +$s1. -->
+		<!-- M. Critical Rate +21%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -220,7 +220,7 @@
 		</effects>
 	</skill>
 	<skill id="13866" toLevel="15" name="Mystic">
-		<!-- M. Critical Power +$s1. -->
+		<!-- M. Critical Power +3%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -245,7 +245,7 @@
 		</effects>
 	</skill>
 	<skill id="13867" toLevel="15" name="Soul">
-		<!-- Max MP +$s1 -->
+		<!-- Max MP +26%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -270,7 +270,7 @@
 		</effects>
 	</skill>
 	<skill id="13868" toLevel="15" name="Speed Focus">
-		<!-- Atk. Spd. +$s1, P. Critical Rate +$s2. -->
+		<!-- Atk. Spd. +5%, P. Critical Rate +26. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -308,7 +308,7 @@
 		</effects>
 	</skill>
 	<skill id="13869" toLevel="15" name="Speed Death">
-		<!-- Atk. Spd. +$s1, P. Critical Damage +$s2. -->
+		<!-- Atk. Spd. +5%, P. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -353,17 +353,17 @@
 		</effects>
 	</skill>
 	<skill id="13870" toLevel="15" name="Speed Hunter">
-		<!-- Atk. Spd. +$s1, P. Skills Critical Rate +$s2. -->
+		<!-- Atk. Spd. +5%, P. Skills Critical Rate +3%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13871" toLevel="15" name="Speed Fire">
-		<!-- Atk. Spd. +$s1, P. Skills Critical Damage +$s2. -->
+		<!-- Atk. Spd. +5%, P. Skills Critical Damage +3%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13872" toLevel="15" name="Speed Body">
-		<!-- Atk. Spd. +$s1 and Max HP +$s2. -->
+		<!-- Atk. Spd. +5%, Max HP +10%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -407,8 +407,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13873" toLevel="15" name="Critical Death">
-		<!-- P. Critical Rate +$s1, P. Critical Damage +$s2. -->
+	<skill id="13873" toLevel="15" name="Crit. Death">
+		<!-- P. Critical Rate +26, P. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -445,18 +445,18 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13874" toLevel="15" name="Critical Hunter">
-		<!-- P. Critical Rate +$s1, P. Skills Critical Rate +$s2. -->
+	<skill id="13874" toLevel="15" name="Crit. Hunter">
+		<!-- P. Critical Rate +26, P. Skills Critical Rate +3%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="13875" toLevel="15" name="Critical Fire">
-		<!-- P. Critical Rate +$s1, P. Skills Critical Damage +$s2. -->
+	<skill id="13875" toLevel="15" name="Critical Flame">
+		<!-- P. Critical Rate +26, P. Skills Critical Damage +3%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13876" toLevel="15" name="Critical Body">
-		<!-- P. Critical Rate +$s1, Max HP +$s2. -->
+		<!-- P. Critical Rate +26, Max HP +10%. -->
 		<icon>icon.ensoul_big_pp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -493,8 +493,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13877" toLevel="15" name="Acumen Wild">
-		<!-- Casting Spd. +$s1, M. Critical Rate +$s2. -->
+	<skill id="13877" toLevel="15" name="Acumen Savagery">
+		<!-- Casting Spd. +5%, M. Critical Rate +10%. -->
 		<icon>icon.ensoul_big_mm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -538,8 +538,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13878" toLevel="15" name="Acumen Mystic">
-		<!-- Casting Spd. +$s1, M. Critical Damage +$s2. -->
+	<skill id="13878" toLevel="15" name="Acumen Wizard">
+		<!-- Casting Spd. +5%, M. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_mm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -583,8 +583,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13879" toLevel="15" name="Acumen Soul">
-		<!-- Casting Spd. +$s1, Max HP +$s2. -->
+	<skill id="13879" toLevel="15" name="Soul Acumen">
+		<!-- Casting Spd. +5%, Max HP +13%. -->
 		<icon>icon.ensoul_big_mm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -628,8 +628,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13880" toLevel="15" name="Wild Mystic">
-		<!-- M. Critical Rate +$s1, M. Critical Damage +$s2. -->
+	<skill id="13880" toLevel="15" name="Wild Wizard">
+		<!-- M. Critical Rate +10%, M. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_mm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -674,7 +674,7 @@
 		</effects>
 	</skill>
 	<skill id="13881" toLevel="15" name="Wild Soul">
-		<!-- M. Critical Rate +$s1, Max MP +$s2. -->
+		<!-- M. Critical Rate +10%, Max MP +13%. -->
 		<icon>icon.ensoul_big_mm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -719,7 +719,7 @@
 		</effects>
 	</skill>
 	<skill id="13882" toLevel="15" name="HP Acumen">
-		<!-- Max HP +$s1, Casting Spd. +$s2. -->
+		<!-- Max HP +10%, Casting Spd. +5%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -763,8 +763,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13883" toLevel="15" name="HP Savagery">
-		<!-- Max HP +$s1, M. Critical Rate +$s2. -->
+	<skill id="13883" toLevel="15" name="HP-Savagery">
+		<!-- Max HP +10%, M. Critical Rate +10%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -809,7 +809,7 @@
 		</effects>
 	</skill>
 	<skill id="13884" toLevel="15" name="HP Mystic">
-		<!-- Max HP +$s1, M. Critical Damage +$s2. -->
+		<!-- Max HP +10%, M. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -854,7 +854,7 @@
 		</effects>
 	</skill>
 	<skill id="13885" toLevel="15" name="HP Soul">
-		<!-- Max CP +$s1, Max HP +$s2. -->
+		<!-- Max CP +10%, Max HP +13%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -898,8 +898,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="13886" toLevel="15" name="MP Fury">
-		<!-- Max MP +$s1, Atk. Spd +$s2. -->
+	<skill id="13886" toLevel="15" name="MP Wrath">
+		<!-- Max MP +13%, Atk. Spd +5%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -944,7 +944,7 @@
 		</effects>
 	</skill>
 	<skill id="13887" toLevel="15" name="MP Focus">
-		<!-- Max MP +$s1, P. Critical Rate +$s2. -->
+		<!-- Max MP +13%, P. Critical Rate +26. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -996,7 +996,7 @@
 		</effects>
 	</skill>
 	<skill id="13888" toLevel="15" name="MP Death">
-		<!-- Max MP +$s1, P. Critical Damage +$s2. -->
+		<!-- Max MP +13%, P. Critical Damage +1%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -1041,12 +1041,12 @@
 		</effects>
 	</skill>
 	<skill id="13889" toLevel="15" name="MP Hunter">
-		<!-- Max MP +$s1, P. Skills Critical Rate +$s2. -->
+		<!-- Max MP +13%, P. Skills Critical Rate +3%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13890" toLevel="15" name="MP Fire">
-		<!-- Max MP +$s1, P. Skills Critical Damage +$s2. -->
+		<!-- Max MP +13%, P. Skills Critical Damage +3%. -->
 		<icon>icon.ensoul_big_pm</icon>
 		<operateType>P</operateType>
 	</skill>

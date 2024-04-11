@@ -16,6 +16,16 @@ public class FlatBlock: IBlock
 	{
 		return true;
 	}
+
+	public void setNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		throw new InvalidOperationException("Cannot set NSWE on a flat block!");
+	}
+	
+	public void unsetNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		throw new InvalidOperationException("Cannot unset NSWE on a flat block!");
+	}
 	
 	public int getNearestZ(int geoX, int geoY, int worldZ)
 	{
@@ -30,5 +40,10 @@ public class FlatBlock: IBlock
 	public int getNextHigherZ(int geoX, int geoY, int worldZ)
 	{
 		return _height >= worldZ ? _height : worldZ;
+	}
+	
+	public short getHeight()
+	{
+		return _height;
 	}
 }

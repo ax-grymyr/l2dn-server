@@ -6,7 +6,7 @@
 		<table width="100%">
 			<tr>
 				<td width=45>
-					<button value="Main" action="bypass -h admin_admin" width=45 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
+					<button value="Main" action="bypass admin_admin" width=45 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
 				</td>
 				<td width=180>
 					<center><font color="LEVEL">Effects of %targetName%</font></center>
@@ -26,9 +26,12 @@
 			%buffs%
 		</table>
 		<br>%pages%<br>
+		<center>
 		<button value="View Blocked Effects" action="bypass -h admin_viewblockedeffects %targetObjId%" width=160 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
-		<button value="Remove All" action="bypass -h admin_stopallbuffs %targetObjId%" width=80 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
+		<button value="%buffsText%" action="bypass -h admin_getbuffs%passives% %targetName%" width=160 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
+		<button value="Remove All" action="bypass -h admin_stopallbuffs %targetObjId%" width=160 height=21 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
 		<br>
 		Total buff count: %effectSize%
+		</center>
 	</body>
 </html>

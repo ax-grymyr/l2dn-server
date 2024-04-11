@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="1800" toLevel="1" name="Pirate Transformation">
-		<!-- For 20 min., Max HP/MP +3%, P./M. Accuracy +1, P./M. Atk. +2%, P./M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +3. Consumes 1 Elemental Stone. 
-			<Story> Pirates used to dominate the Giran area. Pirate King Zaken became a vampire and started to kill other pirates. His crew rose in mutiny against Zaken only to lead him to acquire the Power of Darkness. Surviving pirates had no choice but to run away... <Auto Use Skill> -->
+		<!-- For 20 min., Max HP/ MP +3%, P./ M. Accuracy +1, P./ M. Atk. +2%, P./ M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +3. Requires 1 Elemental Stone. <Story>. This pirate once ruled ancient lands of Giran. His own crew started a riot, but didn't manage to cope with their captain that became even more powerful with the dark forces. Zaken killed all the remaining rebels and disappeared. <Auto-use> -->
 		<icon>icon.skill1800</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -71,9 +70,7 @@
 		</effects>
 	</skill>
 	<skill id="1801" toLevel="1" name="Dark Assassin Transformation">
-		<!-- For 20 min., Max HP/MP +5%, P./M. Accuracy +1, P./M. Atk. +2%, P./M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +4. Consumes 1 Elemental Stones. <Story> 
-
-		A clandestine organization founded by Mercenary Captain Sieghardt Ein. Sieghardt Ein joined the Lords of Dawn and disappeared without a trace. However, his organization still leads its shadowy deals… <Auto Use Skill> -->
+		<!-- For 20 min., Max HP/ MP +5%, P./ M. Accuracy +1, P./ M. Atk. +2%, P./ M. Def. +2%, Atk. Spd. +3%, M. Critical Rate +10, Speed +4. Requires 1 Elemental Stone. <Story>. A powerful organization of assassins founded by Mercenary Captain Sieghardt Ein to carry out secret missions and executions. After creating the Dawn Organization Sieghardt Ein disappeared without a trace, but the society continues to operate from the shadows. <Auto-use> -->
 		<icon>icon.skill1801</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -142,8 +139,7 @@
 		</effects>
 	</skill>
 	<skill id="1802" toLevel="1" name="White Assassin Transformation">
-		<!-- For 20 min., Max HP/MP +7%, P./M. Accuracy +2, P./M. Atk. +3%, P./M. Def. +3%, Atk. Spd. +5%, M. Critical Rate +20, Speed +5. Consumes 2 Elemental Stones. <Story> 
-		A Rune noblewoman, Erica Ken Weber, is the right hand of Sieghardt Ein. She created the White Assassins to distract attention from the Dark Assassins and help it carry out secret missions... <Auto Use Skill> -->
+		<!-- For 20 min., Max HP/ MP +7%, P./ M. Accuracy +2, P./ M. Atk. +3%, P./ M. Def. +3%, Atk. Spd. +5%, M. Critical Rate +20, Speed +5. Requires 2 Elemental Stones.n. <Story>. Rune noble Erica Ken Weber was the right hand of Sieghardt Ein. She wasn't influenced by the organization of dark assassins. She created an organization of white assassins in her own interests, continuing to be an informer. <Auto-use> -->
 		<icon>icon.skill1802</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -212,7 +208,7 @@
 		</effects>
 	</skill>
 	<skill id="1810" toLevel="1" name="Cadmus - Might">
-		<!-- Increases P. Atk. by 15% for 20 minutes -->
+		<!-- P. Atk. +15% for 20 min. -->
 		<icon>icon.skill1068</icon>
 		<abnormalTime>1200</abnormalTime>
 		<operateType>A2</operateType>
@@ -282,7 +278,7 @@
 		</effects>
 	</skill>
 	<skill id="1814" toLevel="1" name="Cadmus - Focus">
-		<!-- For 20 minutes, P. Critical Rate +30%. -->
+		<!-- For 20 min., P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -301,7 +297,7 @@
 		</effects>
 	</skill>
 	<skill id="1815" toLevel="1" name="Cadmus - Death Whisper">
-		<!-- For 20 minutes, P. Critical Damage +35%. -->
+		<!-- For 20 min., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -320,7 +316,7 @@
 		</effects>
 	</skill>
 	<skill id="1816" toLevel="1" name="Cadmus - Guidance">
-		<!-- For 20 minutes, P. Accuracy +4. -->
+		<!-- For 20 min., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -338,7 +334,7 @@
 		</effects>
 	</skill>
 	<skill id="1817" toLevel="1" name="Cadmus - Heal">
-		<!-- Recovers the target's HP with 301 Power -->
+		<!-- Immediately restores the target's HP with 301 Power. -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -355,7 +351,7 @@
 		</effects>
 	</skill>
 	<skill id="1818" toLevel="1" name="Cadmus - Haste">
-		<!-- Increases Atk. Spd. by 33% for 20 minutes. -->
+		<!-- Atk. Spd. +33% for 20 min. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -374,7 +370,7 @@
 		</effects>
 	</skill>
 	<skill id="1819" toLevel="1" name="Cadmus - Acumen">
-		<!-- For 20 minutes, Casting Spd. +30% -->
+		<!-- Casting Spd. +30% for 20 min. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -393,7 +389,7 @@
 		</effects>
 	</skill>
 	<skill id="1820" toLevel="1" name="Cadmus - Vampiric Rage">
-		<!-- For 20 minutes, recovers as HP 9% of the physical damage inflicted on the enemy with a certain probability. -->
+		<!-- For 20 min., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -412,7 +408,7 @@
 		</effects>
 	</skill>
 	<skill id="1821" toLevel="1" name="Cadmus - Empower">
-		<!-- Increases M. Atk. power by 75% for 20 minutes. -->
+		<!-- M. Atk. power +75% for 20 min. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -460,7 +456,7 @@
 		</effects>
 	</skill>
 	<skill id="1823" toLevel="1" name="Cadmus - Agility">
-		<!-- For 20 minutes, P. Evasion +4 -->
+		<!-- For 20 min. P. Evasion +4. -->
 		<icon>icon.skill1087</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>1200</abnormalTime>
@@ -496,7 +492,7 @@
 		</effects>
 	</skill>
 	<skill id="1825" toLevel="1" name="Cadmus - Recharge">
-		<!-- Recovers MP up to 94 power depending on the target's Lv.. -->
+		<!-- Recovers MP up to 94 power depending on the target's level. -->
 		<icon>icon.skill1013</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -532,10 +528,12 @@
 	</skill>
 	<skill id="1827" toLevel="1" name="Transformation Block">
 		<!-- You cannot attack while transformed. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="1828" toLevel="2" name="Transformation Protection">
 		<!-- P. Def. Enhance at Transformation. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="1829" toLevel="1" name="Spell Master">
@@ -748,7 +746,7 @@
 		</effects>
 	</skill>
 	<skill id="1838" toLevel="1" name="PC Cadmus - Prophecy of Water">
-		<!-- PC-exclusive. A party member's MP Recovery bonus +10%, M. Atk. +10%, M. Def +10%, Casting Spd. +5%, Debuff Resistance +10%, and Skill MP Consumption -3% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
+		<!-- PA only. For 10 min., for a party member MP Recovery Bonus +10%, M. Atk. +10%, M. Def. +10%, Casting Spd. +5%, Debuff Resistance +10%. Skill MP Consumption -3%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1355</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -759,7 +757,7 @@
 		<mpConsume>72</mpConsume>
 	</skill>
 	<skill id="1839" toLevel="1" name="PC Cadmus - Prophecy of Fire">
-		<!-- PC-exclusive. A party member's Max HP +10%, HP Recovery Bonus +10%, P. Atk. +10%, P. Def +10%, Atk. Spd. +5%, and Debuff Resistance +10% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
+		<!-- PA only. For 10 min., for a party member Max HP +10%, HP Recovery Bonus +10%, P. Atk +10%, P. Def. +10%, Speed +5%, Debuff Resistance +10%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1356</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -769,8 +767,8 @@
 		<effectPoint>666</effectPoint>
 		<mpConsume>72</mpConsume>
 	</skill>
-	<skill id="1840" toLevel="1" name="PC Room Chapa - Prophecy of Wind">
-		<!-- PC-exclusive. A party member's P. Accuracy/M. Accuracy +3, P. Evasion/M. Evasion +3, P. Critical/M. Critical Rate +10%, P. Critical/M. Critical Damage +15%, Movement Speed +10%, Debuff Resistance +10%, and P. Atk. against Raid Boss +15% for 10 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
+	<skill id="1840" toLevel="1" name="PC Cadmus - Prophecy of Wind">
+		<!-- PA only. A powerful spirit acts to get a party member's for 10 min. P./ M. Accuracy +3, P./ M. Evasion +3, P./ M. Critical Rate +10%, P./ M. Critical Damage +15%, Speed +10%, Debuff Resistance +10%, damage to Raid Bosses +15%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill1357</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -781,7 +779,7 @@
 		<mpConsume>72</mpConsume>
 	</skill>
 	<skill id="1841" toLevel="1" name="PC Cadmus - Might">
-		<!-- For 20 minutes, P. Atk +15%. PC-exclusive. -->
+		<!-- For 20 min., P. Atk +15%. PA only. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -792,7 +790,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1842" toLevel="1" name="PC Cadmus - Shield">
-		<!-- For 20 minutes, P. Def. +15%. PC-exclusive. -->
+		<!-- For 20 min., P.Def +15%. PA only. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -803,7 +801,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1843" toLevel="1" name="PC Cadmus - Wind Walk">
-		<!-- For 20 minutes, Movement Speed +33. PC-exclusive. -->
+		<!-- For 20 min., Speed +33. PA only. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -814,7 +812,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1844" toLevel="1" name="PC Cadmus - Return">
-		<!-- Teleports to a town. Cannot be used in a special locations such as the GM Consultation Service. PC-exclusive. -->
+		<!-- Teleports to a town. Cannot be used in a specially designated place such as the GM Consultation Service. PA only. -->
 		<icon>Icon.skill1050</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -823,7 +821,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1845" toLevel="1" name="PC Cadmus - Focus">
-		<!-- For 20 minutes, P. Critical Rate +30%. PC-exclusive. -->
+		<!-- For 20 min., P. Critical Rate +30%. PA only. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -834,7 +832,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1846" toLevel="1" name="PC Cadmus - Death Whisper">
-		<!-- For 20 minutes, P. Critical Damage +35%. PC-exclusive. -->
+		<!-- For 20 min., P. Critical Damage +35%. PA only. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -845,7 +843,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1847" toLevel="1" name="PC Cadmus - Guidance">
-		<!-- For 20 minutes, P. Accuracy +4. PC-exclusive. -->
+		<!-- For 20 min., P. Accuracy +4. PA only. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -856,7 +854,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1848" toLevel="1" name="PC Cadmus - Heal">
-		<!-- Recovers the target's HP with 301 Power. PC-exclusive. -->
+		<!-- Immediately restores the target's HP with 301 Power. PA only. -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -867,7 +865,7 @@
 		<mpConsume>52</mpConsume>
 	</skill>
 	<skill id="1849" toLevel="1" name="PC Cadmus - Haste">
-		<!-- For 20 minutes, Atk. Spd. +33%. PC-exclusive -->
+		<!-- For 20 min., Atk. Spd +33%. PA only. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -878,7 +876,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1850" toLevel="1" name="PC Cadmus - Acumen">
-		<!-- For 20 minutes, Casting Spd. +30%. PC-exclusive. -->
+		<!-- For 20 min., Casting Spd +30%. PA only. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -889,7 +887,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1851" toLevel="1" name="PC Cadmus - Vampiric Rage">
-		<!-- For 20 minutes, has a chance to absorb 9% of physical damage dealt to enemies as HP. PC-exclusive. -->
+		<!-- For 20 min., with a certain chance, absorbs 5% of the inflicted damage as HP. PA only. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -900,7 +898,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1852" toLevel="1" name="PC Cadmus - Empower">
-		<!-- For 20 minutes, M. Atk +75%. PC-exclusive. -->
+		<!-- For 20 min., M. Atk +75%. PA only. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -911,7 +909,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1853" toLevel="1" name="PC Cadmus - Clarity">
-		<!-- For 20 minutes, P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, and song/dance skill MP Consumption -20%. PC-exclusive. -->
+		<!-- For 60 min., MP Consumption for physical skills -20%, MP Consumption for magical skills -10%, and song/ dance skill's MP consumption -20%. PA only. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -922,7 +920,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1854" toLevel="1" name="PC Cadmus - Agility">
-		<!-- For 20 minutes, P. Evasion +4. PC-exclusive. -->
+		<!-- For 20 min., P. Evasion +4. PA only. -->
 		<icon>icon.skill1087</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -933,7 +931,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1855" toLevel="1" name="PC Cadmus - Lightness">
-		<!-- For 20 minutes, Weight Penalty Segment +9000. PC-exclusive. -->
+		<!-- Increases weight limit up to 9000 for 20 min. PA only. -->
 		<icon>icon.skill1257</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -944,7 +942,7 @@
 		<mpConsume>12</mpConsume>
 	</skill>
 	<skill id="1856" toLevel="1" name="PC Cadmus - Recharge">
-		<!-- Recovers MP with up to 94 Power depending on the target's level. PC-exclusive. -->
+		<!-- Recovers MP up to 94 power depending on the target's level. PA only. -->
 		<icon>icon.skill1013</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -955,7 +953,7 @@
 		<mpConsume>98</mpConsume>
 	</skill>
 	<skill id="1857" toLevel="1" name="PC Cadmus - Greater Heal">
-		<!-- Recovers the target's HP with 506 Power. PC-exclusive. -->
+		<!-- Immediately restores the target's HP with 506 Power. PA only. -->
 		<icon>icon.skill1217</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -966,7 +964,7 @@
 		<mpConsume>83</mpConsume>
 	</skill>
 	<skill id="1858" toLevel="1" name="PC Cadmus - Blessed Body">
-		<!-- For 20 minutes, Max HP +25%. PC-exclusive. -->
+		<!-- For 20 min., Max HP +25%. PA only. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -977,7 +975,7 @@
 		<mpConsume>52</mpConsume>
 	</skill>
 	<skill id="1859" toLevel="1" name="PC Cadmus - Blessed Soul">
-		<!-- For 20 minutes, Max MP +25%. PC-exclusive. -->
+		<!-- For 20 min., Max MP +25%. PA only. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -988,7 +986,7 @@
 		<mpConsume>52</mpConsume>
 	</skill>
 	<skill id="1860" toLevel="1" name="PC Cadmus - Stun Resistance">
-		<!-- For 20 minutes, Stun Resistance +15%. PC-exclusive. -->
+		<!-- For 20 min., Stun Resistance +15%. PA only. -->
 		<icon>icon.skill1259</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -999,7 +997,7 @@
 		<mpConsume>35</mpConsume>
 	</skill>
 	<skill id="1861" toLevel="1" name="PC Cadmus - Advanced Block">
-		<!-- For 20 minutes, Shield Def. +20%. PC-exclusive. -->
+		<!-- For 20 min., Shield Defense +20%. PA only. -->
 		<icon>icon.skill1304</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1010,7 +1008,7 @@
 		<mpConsume>49</mpConsume>
 	</skill>
 	<skill id="1862" toLevel="1" name="PC Cadmus - Wild Magic">
-		<!-- For 20 minutes, M. Critical Rate +10. PC-exclusive. -->
+		<!-- For 20 min., M. Critical Rate +10. PA only. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1021,7 +1019,7 @@
 		<mpConsume>58</mpConsume>
 	</skill>
 	<skill id="1863" toLevel="1" name="PC Cadmus - Stigma of Shilen">
-		<!-- For 30 seconds, Melee Weapon Resistance -24. M. Def. -12. PC-exclusive. -->
+		<!-- For 30 sec., Melee Weapon Resistance -24, M. Def. -12. For PA. -->
 		<icon>icon.skill1539</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -1032,7 +1030,7 @@
 		<mpConsume>24</mpConsume>
 	</skill>
 	<skill id="1864" toLevel="1" name="PC Cadmus - Berserker Spirit">
-		<!-- For 20 minutes, a party member's P. Def. -8%, M. Def. -16%, P. Evasion -4, P. Atk. +8%, M. Atk. +16, Atk. Spd. +8%, Casting Spd. +8%, and Movement Speed +8. PC-exclusive -->
+		<!-- For 20 min. party member's P. Def. -8%, M. Def. -16%, P. Evasion -4, P. Atk. +8%, M. Atk. +16%, Atk. Spd. +8%, Casting Spd. +8% and Speed +8. PA only. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1044,20 +1042,11 @@
 	</skill>
 	<skill id="1865" toLevel="1" name="Transformation Attack">
 		<!-- Increases P. Atk. during Transformation. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="1867" toLevel="5" name="Clan Abundant">
-		<!-- Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP gain +$s2, Received PVE Damage -$s3, and Sayha's Grace Consumption -$s4
-			1 - 4%, 5%, 3%, 5%
-			2 - 8%, 5%, 5%, 8%
-			3 - 12%, 10%, 7%, 11%
-
-			Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP/Attribute XP gain +$s2, Received PVE Damage -$s3, and Sayha's Grace Consumption -$s4.
-			4 - 20%, 15%, 10%, 15%
-
-			Clan member's HP Recovery Bonus/MP Recovery Bonus/CP Recovery Bonus +$s1, XP/SP/Attribute XP gain +$s2, Stun/MEN/Paralysis Attack Success Rate +$s3, Received PVE Damage -$s4, and Sayha's Grace Consumption -$s5.
-			5 - 30%, 20%, 5%, 10%, 15%
-		-->
+	<skill id="1867" toLevel="5" name="Clan Exuberance">
+		<!-- Clan members' HP/ MP/ CP Recovery Bonus +4%, Aquired XP/ SP +5%, received PVE damage -3%, Sayha Grace Consumption -5%. -->
 		<icon>icon.skill19014</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -1080,17 +1069,9 @@
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PveRaidPhysicalAttackDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidPhysicalSkillDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="DamageByAttack">
+				<amount>-10</amount>
+				<type>BOSS</type>
 			</effect>
 		</effects>
 	</skill>
@@ -1113,17 +1094,9 @@
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PveRaidPhysicalAttackDefenceBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidPhysicalSkillDefenceBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
+			<effect name="DamageByAttack">
+				<amount>-5</amount>
+				<type>BOSS</type>
 			</effect>
 		</effects>
 	</skill>
@@ -1148,8 +1121,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1896" toLevel="4" name="Fall Down">
-		<!-- Inflicts a powerful strike on target with $s1 Power added to P. Atk., knocking down for $s2 Requires a sword, blunt weapon, spear, fist weapon, or dual sword. Critical. Ignores Shield Defense. -->
+	<skill id="1896" toLevel="4" name="Full Knockdown">
+		<!-- Inflicts a powerful strike on target with 4937 Power added to P. Atk., knocking down for 3 sec. Requires a sword, blunt weapon, spear, fist weapon, or dual sword. Critical. Ignores Shield Defense. -->
 		<icon>icon.skill1896</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -1158,7 +1131,7 @@
 		</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
-		<activateRate>60</activateRate>
+		<activateRate>120</activateRate>
 		<castRange>40</castRange>
 		<lvlBonusRate>20</lvlBonusRate>
 		<coolTime>500</coolTime>
@@ -1186,6 +1159,7 @@
 		<nextAction>ATTACK</nextAction>
 		<operateType>A2</operateType>
 		<isDebuff>true</isDebuff>
+		<trait>KNOCKDOWN</trait>
 		<reuseDelay>15000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
@@ -1210,17 +1184,24 @@
 					<value level="4">5261</value>
 				</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
-				<criticalChance>15</criticalChance>
+				<criticalChance>10</criticalChance>
 			</effect>
 			<effect name="KnockBack">
-				<distance>200</distance>
-				<speed>400</speed>
+				<distance>50</distance>
+				<speed>600</speed>
 				<knockDown>true</knockDown>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>100</KNOCKBACK>
+				<AIRBIND>100</AIRBIND>
+				<HOLD>100</HOLD>
+				<SLEEP>100</SLEEP>
+				<SHOCK>100</SHOCK>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1897" toLevel="11" name="Curse Field of Shilen">
-		<!-- For $s1, Melee Weapon Resistance of the target and nearby enemies -$s2. -->
+	<skill id="1897" toLevel="11" name="Shilen's Cursed Field">
+		<!-- Curses the target and nearby enemies for 30 sec. Their Melee Weapon Resistance -16, M. Def. -10%. -->
 		<icon>icon.skill1897</icon>
 		<affectLimit>9-10</affectLimit>
 		<abnormalLevel>
@@ -1444,28 +1425,29 @@
 		</effects>
 	</skill>
 	<skill id="1898" toLevel="9" name="Shield Charge">
-		<!-- Attacks enemies in front of character with $s1 Power added to P. Atk., stunning target for $s2 Requires a shield. Over-hit. -->
+		<!-- Attacks enemies at the front with 2191 power, stunning them for 5 sec. Requires a shield. Over-hit. -->
 		<icon>icon.skill1898</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<activateRate>80</activateRate>
+		<activateRate>70</activateRate>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<effectPoint>
-			<value level="1">-213</value>
-			<value level="2">-219</value>
-			<value level="3">-225</value>
-			<value level="4">-231</value>
-			<value level="5">-237</value>
-			<value level="6">-242</value>
-			<value level="7">-248</value>
-			<value level="8">-254</value>
-			<value level="9">-260</value>
+			<value level="1">-2130</value>
+			<value level="2">-2190</value>
+			<value level="3">-2250</value>
+			<value level="4">-2310</value>
+			<value level="5">-2370</value>
+			<value level="6">-2420</value>
+			<value level="7">-2480</value>
+			<value level="8">-2540</value>
+			<value level="9">-2600</value>
 		</effectPoint>
-		<effectRange>800</effectRange>
-		<fanRange>0;0;600;60</fanRange>
+		<effectRange>400</effectRange>
+		<fanRange>0;0;150;180</fanRange>
+		<affectLimit>5-12</affectLimit>
 		<hitTime>800</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>20</lvlBonusRate>
@@ -1497,8 +1479,8 @@
 		<reuseDelay>30000</reuseDelay>
 		<magicCriticalRate>5</magicCriticalRate>
 		<trait>SHOCK</trait>
-		<targetType>ENEMY_ONLY</targetType>
-		<affectScope>FAN_PB</affectScope>
+		<targetType>ENEMY</targetType>
+		<affectScope>FAN</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<conditions>
 			<condition name="EquipShield" />

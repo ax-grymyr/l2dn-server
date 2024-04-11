@@ -4,7 +4,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -21,7 +21,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -56,7 +56,7 @@
 	<npc id="34016" level="80" type="Folk" name="Teleport" title="Escape Device">
 		<!-- Confirmed Antharas -->
 		<race>ETC</race>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="1" />
@@ -73,7 +73,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -109,7 +109,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -126,7 +126,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -143,7 +143,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -160,7 +160,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -177,7 +177,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="80" />
@@ -270,7 +270,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -287,7 +287,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -323,7 +323,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="39" />
@@ -340,7 +340,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -357,7 +357,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="40" />
@@ -374,7 +374,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="18" />
@@ -391,7 +391,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="22" />
@@ -427,7 +427,7 @@
 		<!-- Confirmed Antharas -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -443,7 +443,7 @@
 	<npc id="34038" level="80" type="Teleporter" name="Teleport">
 		<!-- Confirmed Antharas -->
 		<race>ETC</race>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -478,7 +478,7 @@
 	<npc id="34040" level="78" type="Teleporter" name="Tyron" title="Treasure Hunter">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -609,7 +609,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="2" lhand="102" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -625,7 +625,7 @@
 	<npc id="34048" level="80" type="Teleporter" name="Wiri" title="Researcher">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -641,7 +641,7 @@
 	<npc id="34049" level="78" type="Teleporter" name="Tritan" title="Researcher">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -714,7 +714,7 @@
 	<npc id="34053" level="78" type="Merchant" name="Svein" title="Attribute Master">
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="36" />
@@ -768,7 +768,7 @@
 	<npc id="34056" level="78" type="Teleporter" name="Tyren" title="Researcher">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="1507" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1202,7 +1202,7 @@
 	<npc id="34079" level="80" type="Merchant" name="Macken" title="Rarities Merchant">
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1218,7 +1218,7 @@
 	<npc id="34080" level="80" type="Merchant" name="Pritty" title="Beauty Merchant">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1234,7 +1234,7 @@
 	<npc id="34081" level="80" type="Merchant" name="Supree" title="Grocer">
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1250,7 +1250,7 @@
 	<npc id="34082" level="80" type="Folk" name="Tyke" title="Jolly">
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1267,7 +1267,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1284,7 +1284,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="1" />
@@ -1301,7 +1301,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="95000000" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="1" />
@@ -1318,7 +1318,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="1" />
@@ -1335,7 +1335,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3290" hpRegen="7.5" mp="1674" mpRegen="2.7" />
 			<speed>
 				<walk ground="50" />
@@ -1352,7 +1352,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="7.5" mp="40" mpRegen="2.7" />
 			<speed>
 				<walk ground="1" />
@@ -1369,7 +1369,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8446" hpRegen="7.5" mp="2355" mpRegen="2.7" />
 			<speed>
 				<walk ground="64" />

@@ -3,7 +3,7 @@
 	<npc id="25500" level="44" type="Monster" name="Alligator of Istary" title="Raid Fighter">
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="41" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="41" dex="30" wit="20" con="43" men="20">
 			<vitals hp="33571" hpRegen="35.16" mp="26409" mpRegen="9" />
 			<attack physical="258.908" magical="29.731" random="30" critical="4" accuracy="20" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="693.8" magical="253.82" />

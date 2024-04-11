@@ -10,7 +10,8 @@ public struct ProtocolVersionPacket: IIncomingPacket<GameSession>
 
     public void ReadContent(PacketBitReader reader)
     {
-        _protocolVersion = reader.ReadInt32();
+        if (reader.Length >= 4)
+            _protocolVersion = reader.ReadInt32();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)

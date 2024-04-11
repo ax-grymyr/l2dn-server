@@ -1325,7 +1325,7 @@ public class Npc: Creature
 			}
 			if (magic)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2061, 1, TimeSpan.Zero, TimeSpan.Zero), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2159, 1, TimeSpan.Zero, TimeSpan.Zero), 600);
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}
@@ -1348,7 +1348,7 @@ public class Npc: Creature
 					return;
 				}
 				_spiritshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2061, 1, TimeSpan.Zero, TimeSpan.Zero), 600);
+				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2159, 1, TimeSpan.Zero, TimeSpan.Zero), 600);
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}

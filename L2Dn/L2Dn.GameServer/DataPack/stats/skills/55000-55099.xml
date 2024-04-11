@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="55000" toLevel="4" name="XP/SP Scroll">
-		<!-- For $s1, Acquired XP/ SP +$s2. Effect remains after death. -->
+		<!-- For 20 min., Acquired XP/ SP +30%. Effect remains after death. -->
 		<icon>icon.etc_recall_exp_scroll</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -40,10 +40,12 @@
 		</effects>
 	</skill>
 	<skill id="55001" toLevel="1" name="Blessed Scroll of Escape">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>200</hitTime>
 	</skill>
 	<skill id="55002" toLevel="1" name="Blessed Scroll of Resurrection">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -171,34 +173,44 @@
 		</selfEffects>
 	</skill>
 	<skill id="55005" toLevel="1" name="Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55006" toLevel="1" name="Scroll: Enchant Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55007" toLevel="1" name="Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55008" toLevel="1" name="Scroll: Enchant Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55009" toLevel="1" name="Blessed Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55010" toLevel="1" name="Blessed Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55011" toLevel="1" name="Blessed Scroll: Enchant Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55012" toLevel="1" name="Blessed Scroll: Enchant Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55013" toLevel="1" name="Blessed Scroll of Escape">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>200</hitTime>
 	</skill>
 	<skill id="55014" toLevel="1" name="Blessed Scroll of Resurrection">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -206,6 +218,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55015" toLevel="1" name="Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29031</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -223,6 +236,7 @@
 		</effects>
 	</skill>
 	<skill id="55016" toLevel="1" name="Major Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29032</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -240,30 +254,37 @@
 		</effects>
 	</skill>
 	<skill id="55017" toLevel="1" name="Scroll of Escape: Talking Island Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55018" toLevel="1" name="Scroll of Escape: Elven Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55019" toLevel="1" name="Scroll of Escape: Dark Elf Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55020" toLevel="1" name="Scroll of Escape: Orc Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55021" toLevel="1" name="Scroll of Escape: Dwarven Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="55022" toLevel="1" name="Scroll of Escape: Gludin Village">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="55023" toLevel="1" name="Scroll of Escape: Town of Gludio">
+	<skill id="55023" toLevel="1" name="Scroll of Escape: Gludio">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
@@ -663,10 +684,12 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55033" toLevel="1" name="Blessed Scroll of Escape">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>200</hitTime>
 	</skill>
 	<skill id="55034" toLevel="1" name="Blessed Scroll of Resurrection">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -806,6 +829,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="55037" toLevel="1" name="Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29554</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -823,6 +847,7 @@
 		</effects>
 	</skill>
 	<skill id="55038" toLevel="1" name="Major Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29555</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -889,6 +914,7 @@
 		</effects>
 	</skill>
 	<skill id="55043" toLevel="1" name="Rare Accessory Pack">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29701</itemConsumeId>
@@ -908,19 +934,20 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="100.0">
-						<item id="29575" count="1" /> <!-- Queen Ant's Ring - 30-day -->
+						<item id="29575" count="1" /> <!-- Queen Ant's Ring Lv. 1 - 30 days -->
 					</item>
 					<item chance="100.0">
-						<item id="29576" count="1" /> <!-- Orfen's Earring - 30-day -->
+						<item id="29576" count="1" /> <!-- Orfen's Earring Lv. 1 - 30 days -->
 					</item>
 					<item chance="100.0">
-						<item id="29577" count="1" /> <!-- Ring of Core - 30-day -->
+						<item id="29577" count="1" /> <!-- Ring of Core Lv. 1 - 30 days -->
 					</item>
 				</items>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="55044" toLevel="1" name="Lineage II Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29581</itemConsumeId>
@@ -944,25 +971,25 @@
 						<item id="49756" count="1" /> <!-- Cloth Piece -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49785" count="1" /> <!-- Weapon Supply Box (A-grade) -->
+						<item id="49785" count="1" /> <!-- Weapon Pack (A-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
+						<item id="49664" count="1" /> <!-- Weapon Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
+						<item id="49665" count="1" /> <!-- Armor Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
+						<item id="49666" count="1" /> <!-- Accessory Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
@@ -1036,7 +1063,7 @@
 						<item id="90020" count="1" /> <!-- Box of Best Dye - 3rd Class Transfer -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.083333333333333">
@@ -1079,7 +1106,7 @@
 						<item id="4040" count="1" /> <!-- Mold Lubricant -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="1894" count="1" /> <!-- Crafted Leather -->
+						<item id="1894" count="1" /> <!-- Quality Leather -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="1883" count="1" /> <!-- Steel Mold -->
@@ -1092,6 +1119,7 @@
 		</effects>
 	</skill>
 	<skill id="55045" toLevel="1" name="Chronicle Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29582</itemConsumeId>
@@ -1112,22 +1140,22 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="2.777777777777778">
-						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
+						<item id="49664" count="1" /> <!-- Weapon Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
+						<item id="49665" count="1" /> <!-- Armor Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
+						<item id="49666" count="1" /> <!-- Accessory Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
@@ -1192,10 +1220,10 @@
 						<item id="29695" count="1" /> <!-- Quick Healing Potion - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
+						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.777777777777778">
@@ -1227,6 +1255,7 @@
 		</effects>
 	</skill>
 	<skill id="55046" toLevel="1" name="Memories Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29583</itemConsumeId>
@@ -1247,19 +1276,19 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="1.0">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<item chance="1.0">
-						<item id="49491" count="1" /> <!-- Weapon Supply Box (D-grade) -->
+						<item id="49491" count="1" /> <!-- Weapon Pack (D-grade) -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="4.0">
@@ -1291,10 +1320,10 @@
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="0.001">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<item chance="0.1">
-						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
+						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 -->
 					</item>
 					<!-- Buff Scroll -->
 					<item chance="3.0">
@@ -1418,13 +1447,15 @@
 		</effects>
 	</skill>
 	<skill id="55049" toLevel="1" name="Chronic Noble Successor Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55050" toLevel="1" name="Chronic Noble Successor Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55051" toLevel="4" name="XP/SP Scroll">
-		<!-- For $s1, Acquired XP/ SP +$s2. Effect remains after death. -->
+		<!-- For 20 min., Acquired XP/ SP +30%. Effect remains after death. -->
 		<icon>icon.etc_recall_exp_scroll</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1446,30 +1477,6 @@
 				<amount>30</amount>
 			</effect>
 		</effects>
-	</skill>
-	<skill id="55052" toLevel="2" name="XP/SP Scroll - Normal">
-		<!-- For $s1, Acquired XP/ SP +$s2. Effect remains after death. -->
-		<icon>icon.etc_recall_exp_scroll</icon>
-		<operateType>A1</operateType>
-		<isMagic>4</isMagic>
-		<reuseDelay>60000</reuseDelay>
-		<effectPoint>1</effectPoint>
-	</skill>
-	<skill id="55053" toLevel="3" name="XP/SP Scroll - Medium">
-		<!-- For $s1, Acquired XP/ SP +$s2. Effect remains after death. -->
-		<icon>icon.etc_recall_exp_scroll</icon>
-		<operateType>A1</operateType>
-		<isMagic>4</isMagic>
-		<reuseDelay>60000</reuseDelay>
-		<effectPoint>1</effectPoint>
-	</skill>
-	<skill id="55054" toLevel="4" name="XP/SP Scroll - High">
-		<!-- For $s1, Acquired XP/ SP +$s2. Effect remains after death. -->
-		<icon>icon.etc_recall_exp_scroll</icon>
-		<operateType>A1</operateType>
-		<isMagic>4</isMagic>
-		<reuseDelay>60000</reuseDelay>
-		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55055" toLevel="1" name="1st Class Buff Scroll">
 		<!-- For 20 min., grants the following buffs: Shield Lv. 2, Might Lv. 2, Concentration Lv. 2, Acumen Lv. 1, Wind Walk Lv. 1, Focus Lv. 1, Agility Lv. 1, Empower Lv. 1. -->
@@ -1694,40 +1701,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55062" toLevel="2" name="Castle XP/SP Scroll - Medium">
-		<!-- For 20 min., Acquired XP/ SP +45%. Effect remains after death. -->
-		<icon>icon.etc_recall_exp_scroll</icon>
-		<abnormalLevel>
-			<value level="1">3</value>
-			<value level="2">3</value>
-		</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
-		<abnormalType>VOTE</abnormalType>
-		<operateType>A2</operateType>
-		<isMagic>4</isMagic>
-		<reuseDelay>60000</reuseDelay>
-		<effectPoint>1</effectPoint>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<stayAfterDeath>true</stayAfterDeath>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="ExpModify">
-				<amount>
-					<value level="1">45</value>
-					<value level="2">45</value>
-				</amount>
-			</effect>
-			<effect name="SpModify">
-				<amount>
-					<value level="1">45</value>
-					<value level="2">45</value>
-				</amount>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="55063" toLevel="1" name="Quick Castle Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29671</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1745,6 +1720,7 @@
 		</effects>
 	</skill>
 	<skill id="55064" toLevel="1" name="Major Quick Castle Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29672</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1834,6 +1810,7 @@
 		</effects>
 	</skill>
 	<skill id="55067" toLevel="1" name="Blessed Castle Scroll of Escape">
+		<icon>icon.skill0000</icon>
 		<hitTime>200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -1939,6 +1916,7 @@
 		</effects>
 	</skill>
 	<skill id="55072" toLevel="1" name="Lineage II Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29692</itemConsumeId>
@@ -1962,25 +1940,25 @@
 						<item id="49756" count="1" /> <!-- Cloth Piece -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49785" count="1" /> <!-- Weapon Supply Box (A-grade) -->
+						<item id="49785" count="1" /> <!-- Weapon Pack (A-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
+						<item id="49664" count="1" /> <!-- Weapon Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
+						<item id="49665" count="1" /> <!-- Armor Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
+						<item id="49666" count="1" /> <!-- Accessory Pack (B-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
@@ -2054,7 +2032,7 @@
 						<item id="90020" count="1" /> <!-- Box of Best Dye - 3rd Class Transfer -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.083333333333333">
@@ -2097,7 +2075,7 @@
 						<item id="4040" count="1" /> <!-- Mold Lubricant -->
 					</item>
 					<item chance="2.083333333333333">
-						<item id="1894" count="1" /> <!-- Crafted Leather -->
+						<item id="1894" count="1" /> <!-- Quality Leather -->
 					</item>
 					<item chance="2.083333333333333">
 						<item id="1883" count="1" /> <!-- Steel Mold -->
@@ -2110,6 +2088,7 @@
 		</effects>
 	</skill>
 	<skill id="55073" toLevel="1" name="Chronicle Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29693</itemConsumeId>
@@ -2130,22 +2109,22 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="2.777777777777778">
-						<item id="49664" count="1" /> <!-- Weapon Supply Box (B-grade) -->
+						<item id="49664" count="1" /> <!-- Weapon Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49665" count="1" /> <!-- Armor Supply Box (B-grade) -->
+						<item id="49665" count="1" /> <!-- Armor Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49666" count="1" /> <!-- Ornament Supply Box (B-grade) -->
+						<item id="49666" count="1" /> <!-- Accessory Pack (B-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="2.777777777777778">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
@@ -2210,10 +2189,10 @@
 						<item id="29695" count="1" /> <!-- Quick Healing Potion - Event -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<item chance="2.777777777777778">
-						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
+						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 -->
 					</item>
 					<!-- Material -->
 					<item chance="2.777777777777778">
@@ -2245,6 +2224,7 @@
 		</effects>
 	</skill>
 	<skill id="55074" toLevel="1" name="Memories Chest">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29694</itemConsumeId>
@@ -2265,19 +2245,19 @@
 				<items>
 					<!-- Supply Box -->
 					<item chance="1.0">
-						<item id="49667" count="1" /> <!-- Weapon Supply Box (C-grade) -->
+						<item id="49667" count="1" /> <!-- Weapon Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49668" count="1" /> <!-- Armor Supply Box (C-grade) -->
+						<item id="49668" count="1" /> <!-- Armor Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
-						<item id="49669" count="1" /> <!-- Ornament Supply Box (C-grade) -->
+						<item id="49669" count="1" /> <!-- Accessory Pack (C-grade) -->
 					</item>
 					<item chance="1.0">
 						<item id="49541" count="1" /> <!-- Spellbook Chest -->
 					</item>
 					<item chance="1.0">
-						<item id="49491" count="1" /> <!-- Weapon Supply Box (D-grade) -->
+						<item id="49491" count="1" /> <!-- Weapon Pack (D-grade) -->
 					</item>
 					<!-- Enchant Scroll -->
 					<item chance="4.0">
@@ -2309,10 +2289,10 @@
 						<item id="49080" count="1" /> <!-- Rice Cake of Fighting Spirit -->
 					</item>
 					<item chance="0.001">
-						<item id="70005" count="1" /> <!-- Sealed Rune - Stage 6 -->
+						<item id="70005" count="1" /> <!-- Sealed Rune Lv. 6 -->
 					</item>
 					<item chance="0.1">
-						<item id="70000" count="1" /> <!-- Sealed Rune - Stage 1 -->
+						<item id="70000" count="1" /> <!-- Sealed Rune Lv. 1 -->
 					</item>
 					<!-- Buff Scroll -->
 					<item chance="3.0">
@@ -2478,6 +2458,7 @@
 		<mpConsume>39</mpConsume>
 	</skill>
 	<skill id="55083" toLevel="1" name="Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29695</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2495,6 +2476,7 @@
 		</effects>
 	</skill>
 	<skill id="55084" toLevel="1" name="Major Quick Healing Potion">
+		<icon>icon.skill0000</icon>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>29696</itemConsumeId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2644,10 +2626,12 @@
 		</selfEffects>
 	</skill>
 	<skill id="55087" toLevel="1" name="Minor Blessed Scroll of Escape">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 	</skill>
 	<skill id="55088" toLevel="1" name="Minor Blessed Scroll of Resurrection">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -2655,6 +2639,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55089" toLevel="1" name="Rare Accessory Pack">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>49525</itemConsumeId>
@@ -2674,13 +2659,13 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="100.0">
-						<item id="49477" count="1" /> <!-- Queen Ant's Ring - 15-day -->
+						<item id="49477" count="1" /> <!-- Queen Ant's Ring Lv. 1 - 15 days -->
 					</item>
 					<item chance="100.0">
-						<item id="49509" count="1" /> <!-- Ring of Core - 15-day -->
+						<item id="49509" count="1" /> <!-- Ring of Core Lv. 1 - 15 days -->
 					</item>
 					<item chance="100.0">
-						<item id="49493" count="1" /> <!-- Orfen's Earring - 15-day -->
+						<item id="49493" count="1" /> <!-- Orfen's Earring Lv. 1 - 15 days -->
 					</item>
 				</items>
 			</effect>
@@ -2699,7 +2684,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55091" toLevel="10" name="Enchantment Effect: Fire Dragon Pendant Lv. 1">
+	<skill id="55091" toLevel="10" name="Enchant Effect - Fire Dragon Pendant Lv. 1">
 		<!-- P. Atk. +6. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
@@ -2740,7 +2725,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55093" toLevel="10" name="Enchantment Effect: Fire Dragon Pendant Lv. 2">
+	<skill id="55093" toLevel="10" name="Enchant Effect - Fire Dragon Pendant Lv. 2">
 		<!-- P. Atk. +6 and P. Critical Damage +38. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
@@ -2800,7 +2785,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55095" toLevel="10" name="Enchantment Effect: Fire Dragon Pendant Lv. 3">
+	<skill id="55095" toLevel="10" name="Enchant Effect - Fire Dragon Pendant Lv. 3">
 		<!-- P. Atk. +6, P. Critical Damage +38, P. Critical Rate +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
@@ -2879,7 +2864,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55097" toLevel="10" name="Enchantment Effect: Fire Dragon Pendant Lv. 4">
+	<skill id="55097" toLevel="10" name="Enchant Effect - Fire Dragon Pendant Lv. 4">
 		<!-- P. Atk. +6, P. Critical Damage +38, P. Critical Rate +2%, P. Atk. +1.5%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>
@@ -2977,7 +2962,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55099" toLevel="10" name="Enchantment Effect: Fire Dragon Pendant Lv. 5">
+	<skill id="55099" toLevel="10" name="Enchant Effect - Fire Dragon Pendant Lv. 5">
 		<!-- P. Atk. +6, P. Critical Damage +38, P. Critical Rate +2%, P. Atk. +1.5%, P. Critical Damage +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
 		<magicLevel>1</magicLevel>

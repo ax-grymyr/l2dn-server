@@ -8,9 +8,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
+			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="204.85194" magical="149.90176" />
 			<speed>
 				<walk ground="25" />
@@ -24,17 +24,17 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="6094" level="1" /> <!-- Panther Cancel -->
 			<skill id="6095" level="2" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="3" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -53,9 +53,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1933" hpRegen="6.5" mp="1036" mpRegen="2.4" />
-			<attack physical="481.34551" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
+			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
 			<speed>
 				<walk ground="25" />
@@ -69,10 +69,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -80,7 +80,7 @@
 			<skill id="6096" level="1" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="3" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -99,9 +99,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2141" hpRegen="7.5" mp="1158" mpRegen="2.7" />
-			<attack physical="562.02275" magical="383.78868" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
+			<attack physical="562.02275" magical="383.78868" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="267.04468" magical="195.41171" />
 			<speed>
 				<walk ground="25" />
@@ -115,10 +115,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -126,7 +126,7 @@
 			<skill id="6096" level="2" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="4" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="4" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -148,9 +148,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2345" hpRegen="7.5" mp="1282" mpRegen="2.7" />
-			<attack physical="646.17968" magical="441.25696" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2345.76698" hpRegen="7.5" mp="1282.4" mpRegen="2.7" />
+			<attack physical="646.17968" magical="441.25696" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="286.3615" magical="209.54692" />
 			<speed>
 				<walk ground="25" />
@@ -164,10 +164,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -175,7 +175,7 @@
 			<skill id="6096" level="3" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="5" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -197,9 +197,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2540" hpRegen="8.5" mp="1410" mpRegen="3" />
-			<attack physical="731.52506" magical="499.53679" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
+			<attack physical="731.52506" magical="499.53679" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
 			<speed>
 				<walk ground="25" />
@@ -213,10 +213,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -224,7 +224,7 @@
 			<skill id="6096" level="4" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="6" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -246,9 +246,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
-			<attack physical="805.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<attack physical="815.37145" magical="556.793" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<speed>
 				<walk ground="25" />
@@ -262,10 +262,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -273,7 +273,7 @@
 			<skill id="6096" level="5" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="7" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -295,9 +295,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2902" hpRegen="8.5" mp="1607" mpRegen="3" />
-			<attack physical="860.08905" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="860.08905" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -311,10 +311,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -344,9 +344,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3612" hpRegen="8.5" mp="1615" mpRegen="3" />
-			<attack physical="980.3681" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="980.3681" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="378.7" magical="273.46" />
 			<speed>
 				<walk ground="25" />
@@ -360,10 +360,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -393,9 +393,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3922" hpRegen="8.5" mp="1624" mpRegen="3" />
-			<attack physical="1020.64715" magical="610.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1020.64715" magical="610.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="395.7" magical="286.46" />
 			<speed>
 				<walk ground="25" />
@@ -409,10 +409,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -442,9 +442,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="4432" hpRegen="8.5" mp="1632" mpRegen="3" />
-			<attack physical="1180.9262" magical="640.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1180.9262" magical="640.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="410.7" magical="295.46" />
 			<speed>
 				<walk ground="25" />
@@ -458,10 +458,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -491,9 +491,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2842" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="877.20525" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="877.20525" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -507,10 +507,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -518,7 +518,7 @@
 			<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -540,9 +540,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2852" hpRegen="8.5" mp="1649" mpRegen="3" />
-			<attack physical="881.4843" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="881.4843" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -556,10 +556,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -567,7 +567,7 @@
 			<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -589,10 +589,10 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2862" hpRegen="8.5" mp="1657" mpRegen="3" />
-			<attack physical="885.76335" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="332.7" magical="243.46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2862.08086" hpRegen="8.5" mp="1657.8" mpRegen="3" />
+			<attack physical="885.33945" magical="604.57207" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="339.254815" magical="248.251955" />
 			<speed>
 				<walk ground="25" />
 				<run ground="150" />
@@ -605,10 +605,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -616,7 +616,7 @@
 			<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -638,9 +638,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2871" hpRegen="8.5" mp="1666" mpRegen="3" />
-			<attack physical="890.0424" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="890.0424" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -654,10 +654,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -665,7 +665,7 @@
 			<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -690,9 +690,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
-			<attack physical="894.32145" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="894.32145" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -706,10 +706,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -717,7 +717,7 @@
 			<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -742,9 +742,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2889" hpRegen="8.5" mp="1683" mpRegen="3" />
-			<attack physical="898.6005" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="898.6005" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -758,10 +758,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -769,7 +769,7 @@
 			<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -794,9 +794,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2899" hpRegen="8.5" mp="1691" mpRegen="3" />
-			<attack physical="902.87955" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="902.87955" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -810,10 +810,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -821,7 +821,7 @@
 			<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -846,9 +846,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2908" hpRegen="8.5" mp="1700" mpRegen="3" />
-			<attack physical="907.1586" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="907.1586" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -862,10 +862,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -873,7 +873,7 @@
 			<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -881,7 +881,7 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="14818" level="79" type="Pet" name="Dark Panther">
+	<npc id="14818" level="82" type="Pet" name="Dark Panther">
 		<parameters>
 			<skill name="step_skill01" id="6095" level="11" />
 			<skill name="step_skill02" id="6096" level="9" />
@@ -898,10 +898,10 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2916" hpRegen="8.5" mp="1708" mpRegen="3" />
-			<attack physical="911.43765" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="332.7" magical="243.46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2916.89894" hpRegen="8.5" mp="1708.8" mpRegen="3" />
+			<attack physical="913.54847" magical="623.83518" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="345.61127" magical="252.90333" />
 			<speed>
 				<walk ground="25" />
 				<run ground="150" />
@@ -914,10 +914,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -925,7 +925,7 @@
 			<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -933,7 +933,7 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="14819" level="79" type="Pet" name="Dark Panther">
+	<npc id="14819" level="83" type="Pet" name="Dark Panther">
 		<parameters>
 			<skill name="step_skill01" id="6095" level="11" />
 			<skill name="step_skill02" id="6096" level="9" />
@@ -950,10 +950,10 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2926" hpRegen="8.5" mp="1717" mpRegen="3" />
-			<attack physical="915.7167" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="332.7" magical="243.46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2926.029605" hpRegen="8.5" mp="1717.3" mpRegen="3" />
+			<attack physical="918.2459525" magical="627.0429525" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="346.6703375" magical="253.67831" />
 			<speed>
 				<walk ground="25" />
 				<run ground="150" />
@@ -966,10 +966,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="14" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -977,7 +977,7 @@
 			<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -985,7 +985,7 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="14820" level="79" type="Pet" name="Dark Panther">
+	<npc id="14820" level="84" type="Pet" name="Dark Panther">
 		<parameters>
 			<skill name="step_skill01" id="6095" level="11" />
 			<skill name="step_skill02" id="6096" level="9" />
@@ -1002,10 +1002,10 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2935" hpRegen="8.5" mp="1725" mpRegen="3" />
-			<attack physical="919.99575" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="332.7" magical="243.46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2935.16027" hpRegen="8.5" mp="1725.8" mpRegen="3" />
+			<attack physical="922.943435" magical="630.250725" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="347.729405" magical="254.45329" />
 			<speed>
 				<walk ground="25" />
 				<run ground="150" />
@@ -1018,10 +1018,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="15" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1029,7 +1029,7 @@
 			<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1054,9 +1054,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2944" hpRegen="8.5" mp="1734" mpRegen="3" />
-			<attack physical="924.2748" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="924.2748" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1070,10 +1070,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1081,7 +1081,7 @@
 			<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1106,9 +1106,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2951" hpRegen="8.5" mp="1743" mpRegen="3" />
-			<attack physical="928.55385" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="928.55385" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1122,10 +1122,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1133,7 +1133,7 @@
 			<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1158,9 +1158,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2960" hpRegen="8.5" mp="1751" mpRegen="3" />
-			<attack physical="932.8329" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="932.8329" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1174,10 +1174,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1185,7 +1185,7 @@
 			<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1210,9 +1210,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2969" hpRegen="8.5" mp="1760" mpRegen="3" />
-			<attack physical="937.11195" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="937.11195" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1226,10 +1226,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1237,7 +1237,7 @@
 			<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1262,9 +1262,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2978" hpRegen="8.5" mp="1768" mpRegen="3" />
-			<attack physical="941.391" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="941.391" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1278,10 +1278,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1289,7 +1289,7 @@
 			<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1314,9 +1314,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2985" hpRegen="8.5" mp="1777" mpRegen="3" />
-			<attack physical="945.67005" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="945.67005" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1330,10 +1330,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1341,7 +1341,7 @@
 			<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1366,9 +1366,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2993" hpRegen="8.5" mp="1786" mpRegen="3" />
-			<attack physical="949.9491" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="949.9491" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1382,10 +1382,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1393,7 +1393,7 @@
 			<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1418,9 +1418,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3001" hpRegen="8.5" mp="1794" mpRegen="3" />
-			<attack physical="954.22815" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="954.22815" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1434,10 +1434,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1445,7 +1445,7 @@
 			<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1470,9 +1470,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="8.5" mp="1803" mpRegen="3" />
-			<attack physical="958.5072" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="958.5072" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1486,10 +1486,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1497,7 +1497,7 @@
 			<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1522,9 +1522,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="8.5" mp="1812" mpRegen="3" />
-			<attack physical="962.78625" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="962.78625" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1538,10 +1538,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1549,7 +1549,7 @@
 			<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1574,9 +1574,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="8.5" mp="1820" mpRegen="3" />
-			<attack physical="967.0653" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="967.0653" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1590,10 +1590,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1601,7 +1601,7 @@
 			<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1626,9 +1626,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="8.5" mp="1829" mpRegen="3" />
-			<attack physical="971.34435" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="971.34435" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1642,10 +1642,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1653,7 +1653,7 @@
 			<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1678,9 +1678,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="8.5" mp="1846" mpRegen="3" />
-			<attack physical="975.6234" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="975.6234" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1694,10 +1694,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1705,7 +1705,7 @@
 			<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1730,9 +1730,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
-			<attack physical="979.90245" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="979.90245" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1746,10 +1746,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1757,7 +1757,7 @@
 			<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1782,9 +1782,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
-			<attack physical="984.1815" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="984.1815" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="25" />
@@ -1798,10 +1798,10 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
@@ -1809,7 +1809,7 @@
 			<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 			<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="5" spirit="2" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>
@@ -1826,7 +1826,7 @@
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2980" hpRegen="8.5" mp="1674.8" mpRegen="6" />
+			<vitals hp="2880.37628" hpRegen="8.5" mp="1674.8" mpRegen="6" />
 			<attack physical="894.75854" magical="611.00409" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<speed>
@@ -1840,10 +1840,10 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
@@ -1882,10 +1882,10 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="7" /> <!-- Spirits -->
@@ -1924,10 +1924,10 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4410" level="16" /> <!-- Strong P. Atk. -->
+			<skill id="4411" level="14" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="9" /> <!-- Demons -->
@@ -1946,9 +1946,9 @@
 	<npc id="14839" level="68" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -1982,9 +1982,9 @@
 	<npc id="14840" level="69" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2018,9 +2018,9 @@
 	<npc id="14841" level="70" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2054,9 +2054,9 @@
 	<npc id="14842" level="71" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2090,9 +2090,9 @@
 	<npc id="14843" level="72" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2126,9 +2126,9 @@
 	<npc id="14844" level="73" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2162,9 +2162,9 @@
 	<npc id="14845" level="74" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2198,9 +2198,9 @@
 	<npc id="14846" level="75" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2234,9 +2234,9 @@
 	<npc id="14847" level="76" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2270,9 +2270,9 @@
 	<npc id="14848" level="77" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2306,9 +2306,9 @@
 	<npc id="14849" level="78" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2342,9 +2342,9 @@
 	<npc id="14850" level="79" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2378,9 +2378,9 @@
 	<npc id="14851" level="80" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2414,9 +2414,9 @@
 	<npc id="14852" level="81" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2450,9 +2450,9 @@
 	<npc id="14853" level="82" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2486,9 +2486,9 @@
 	<npc id="14854" level="83" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2522,9 +2522,9 @@
 	<npc id="14855" level="84" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2558,9 +2558,9 @@
 	<npc id="14856" level="85" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2594,9 +2594,9 @@
 	<npc id="14857" level="86" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2630,9 +2630,9 @@
 	<npc id="14858" level="87" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2666,9 +2666,9 @@
 	<npc id="14859" level="88" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2702,9 +2702,9 @@
 	<npc id="14860" level="89" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2738,9 +2738,9 @@
 	<npc id="14861" level="90" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2774,9 +2774,9 @@
 	<npc id="14862" level="91" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2810,9 +2810,9 @@
 	<npc id="14863" level="92" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2846,9 +2846,9 @@
 	<npc id="14864" level="93" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2882,9 +2882,9 @@
 	<npc id="14865" level="94" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2918,9 +2918,9 @@
 	<npc id="14866" level="95" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2954,9 +2954,9 @@
 	<npc id="14867" level="96" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -2990,9 +2990,9 @@
 	<npc id="14868" level="97" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -3026,9 +3026,9 @@
 	<npc id="14869" level="98" type="Servitor" name="Swoop Cannon">
 		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="50000" hpRegen="11.85" mp="889" mpRegen="2.78" />
-			<attack physical="15.4" magical="299.6" random="50" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="15.4" magical="299.6" random="10" critical="1" accuracy="9" attackSpeed="165" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="919.8" magical="947.8" />
 			<speed>
 				<walk ground="60" />
@@ -3085,7 +3085,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="6" />
 			<attack physical="894.75854" magical="611.00409" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />

@@ -130,7 +130,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15308" toLevel="1" name="Half-Chop">
-		<!-- Inflicts a powerful P. Atk. on the target and causes Stun. -->
+		<!-- Inflicts a powerful P. Atk. on the target and Stuns them. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -154,7 +154,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15309" toLevel="1" name="Model Blood Siphon">
-		<!-- Instantly kills an ally and P. Atk./ Atk. Spd./ Max HP/ HP Recovery Rate +200% for 1 min. -->
+		<!-- Instantly kills an ally and increases your P. Atk./ Atk. Spd./ Max HP/ HP Recovery Rate by 200% for 1 min. -->
 		<icon>icon.skill11544</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -268,6 +268,7 @@
 	</skill>
 	<skill id="15315" toLevel="1" name="Alfred's Nemesis">
 		<!-- Able to inflict a powerful attack on Alfred. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>1000</castRange>
@@ -335,7 +336,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15318" toLevel="1" name="Memory Deterioration">
-		<!-- Attacks the target's area with magic and skill Cooldown +100%. -->
+		<!-- Attacks the target's area with magic and increases skill Cooldown by 100%. -->
 		<icon>icon.skill1248</icon>
 		<operateType>A2</operateType>
 		<mpConsume>10</mpConsume>
@@ -383,6 +384,7 @@
 	</skill>
 	<skill id="15320" toLevel="1" name="Hell Strike">
 		<!-- Inflicts P. Atk. on the target. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<castRange>100</castRange>
@@ -453,6 +455,7 @@
 	</skill>
 	<skill id="15324" toLevel="1" name="Hell Fang">
 		<!-- Inflicts a ranged physical attack in a fan-shaped range around you. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<mpConsume>10</mpConsume>
 		<hitTime>1500</hitTime>
@@ -552,7 +555,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15330" toLevel="7" name="Reputation Penalty">
-		<!-- You're being penalized for your reputation. Your XP does not refill even after resurrection. -->
+		<!-- You're being penalized for you'reputation. Your XP does not refill even after resurrection. -->
 		<icon>icon.skill5076_c</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -579,7 +582,7 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="15332" toLevel="1" name="Power Smash">
-		<!-- Inflicts a powerful attack on a target. -->
+		<!-- Powerful attack on one target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
@@ -645,7 +648,8 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15336" toLevel="1" name="Trouble Benefit">
-		<!-- P. Atk. and M. Atk. +10%. -->
+		<!-- P. Atk./ M. Atk. +10%. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
 		<hitTime>1000</hitTime>
@@ -668,7 +672,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15339" toLevel="1" name="Half-kill">
-		<!-- Cute target's HP in half. -->
+		<!-- Inflicts a powerful attack that cuts the target's HP in half. -->
 		<icon>icon.skill11755</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
@@ -698,7 +702,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15341" toLevel="1" name="Crane Strike">
-		<!-- Attacks a single enemy. -->
+		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
@@ -759,7 +763,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15345" toLevel="1" name="Spanner Attack">
-		<!-- Attacks a single enemy. -->
+		<!-- Inflicts a powerful attack on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -796,6 +800,7 @@
 	</skill>
 	<skill id="15348" toLevel="1" name="Ally Spread">
 		<!-- Presentation Skill (range). -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -810,6 +815,7 @@
 	</skill>
 	<skill id="15349" toLevel="1" name="Mental Collapse">
 		<!-- Presentation Skill (range). -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>1000</castRange>
 		<hitTime>3000</hitTime>
@@ -859,7 +865,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15352" toLevel="1" name="Strife">
-		<!-- Powerful attack on enemies in a fan-shaped radius of you. -->
+		<!-- Inflicts powerful damage on targets within a fan-shaped range. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
@@ -922,7 +928,7 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="15355" toLevel="1" name="Shackles">
+	<skill id="15355" toLevel="1" name="Yoke">
 		<!-- Damages a target with Yoke. -->
 		<icon>icon.skill1042</icon>
 		<operateType>A2</operateType>
@@ -968,7 +974,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15357" toLevel="1" name="Heavy Attack">
-		<!-- Inflicts a powerful attack on a target. -->
+		<!-- Inflicts a powerful damage on a target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
@@ -1085,6 +1091,7 @@
 	</skill>
 	<skill id="15365" toLevel="1" name="Shoot Cannon">
 		<!-- Presentation Skill. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>1500</castRange>
 		<hitTime>5000</hitTime>
@@ -1101,7 +1108,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="15366" toLevel="1" name="Cannon Fire">
-		<!-- Bleeding -->
+		<!-- Bleeding. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<castRange>1200</castRange>
@@ -1130,6 +1137,7 @@
 	</skill>
 	<skill id="15368" toLevel="1" name="Massive Blow">
 		<!-- Presentation Skill (range). -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>1500</castRange>
 		<hitTime>5000</hitTime>
@@ -1171,7 +1179,7 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="15370" toLevel="1" name="Body Slash">
+	<skill id="15370" toLevel="1" name="Body Slice">
 		<!-- Inflicts a powerful blow on the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
@@ -1212,6 +1220,7 @@
 	</skill>
 	<skill id="15372" toLevel="1" name="Zero Absorption">
 		<!-- Absorbs Zero's body. -->
+		<icon>icon.skill0000</icon>
 		<operateType>CA1</operateType>
 		<castRange>1200</castRange>
 		<hitTime>1000</hitTime>
@@ -1249,6 +1258,7 @@
 	</skill>
 	<skill id="15389" toLevel="1" name="Focus Shot">
 		<!-- Inflicts a powerful attack on the target. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>200</castRange>
 		<hitTime>2000</hitTime>
@@ -1286,6 +1296,7 @@
 	</skill>
 	<skill id="15391" toLevel="1" name="Check Increase in Handicrafting">
 		<!-- Presentation Skill for increasing handicrafting. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1296,6 +1307,7 @@
 	</skill>
 	<skill id="15392" toLevel="1" name="Check Increase in Alterations">
 		<!-- Presentation Skill for increasing alterations. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1306,6 +1318,7 @@
 	</skill>
 	<skill id="15393" toLevel="1" name="Check Increase in Production">
 		<!-- Presentation Skill for increasing production. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1332,6 +1345,7 @@
 	</skill>
 	<skill id="15395" toLevel="1" name="Repair Broken Toad Cannon">
 		<!-- Presentation Skill used when the Repair Robot repairs the Toad Cannon. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<hitCancelTime>0</hitCancelTime>
@@ -1412,6 +1426,7 @@
 	</skill>
 	<skill id="15399" toLevel="1" name="Cursed Blow">
 		<!-- Presentation Skill for destroying the cocoon. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>100</castRange>
 		<effectPoint>-100</effectPoint>

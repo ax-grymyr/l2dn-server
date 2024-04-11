@@ -17,7 +17,7 @@ public class AutoPotionTaskManager: Runnable
 	
 	protected AutoPotionTaskManager()
 	{
-		ThreadPool.scheduleAtFixedRate(this, 0, 1000);
+		ThreadPool.scheduleAtFixedRate(this, 0, 1000); // TODO: high priority task
 	}
 	
 	public void run()

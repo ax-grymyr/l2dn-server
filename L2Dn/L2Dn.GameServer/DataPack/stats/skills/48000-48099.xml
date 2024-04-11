@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="48001" toLevel="9" name="Piggy's Good Luck - Lv. 1">
-		<!-- Changing appearance for Hanbok for $s1. Atk./ Casting Spd. +$s2, Speed +$s3. Additionally you can get items after 2 h., 5 h. and 8 h. If your character is dead or the game is restarted, the effect won't disappear. <Note!> If your character is dead when the effect is disappeared, you won't get the sack. Also there must be empty slots in the inventory. If your character is dead you can't get the next level effect. -->
+		<!-- Changing appearance for Hanbok for 60 min.. Atk./ Casting Spd. +100, Speed +10. Additionally you can get items after 2 h., 5 h. and 8 h. If your character is dead or the game is restarted, the effect won't disappear. <Note!> If your character is dead when the effect is disappeared, you won't get the sack. Also there must be empty slots in the inventory. If your character is dead you can't get the next level effect. -->
 		<icon>icon.skill_piggy_bless</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -22,7 +22,7 @@
 		<effectPoint>-100</effectPoint>
 	</skill>
 	<skill id="48012" toLevel="1" name="Mark of Wild Orc.">
-		<!-- Knock back and stun. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -31,7 +31,7 @@
 		<effectPoint>-1</effectPoint>
 	</skill>
 	<skill id="48013" toLevel="1" name="Mark of Wild Orc.">
-		<!-- Knock back and stun. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill4107</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -39,7 +39,7 @@
 		<effectPoint>-1</effectPoint>
 	</skill>
 	<skill id="48014" toLevel="1" name="Typhoon of Wild Orc">
-		<!-- Knock back and stun. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -48,7 +48,7 @@
 		<effectPoint>-1</effectPoint>
 	</skill>
 	<skill id="48015" toLevel="1" name="Typhoon of Wild Orc">
-		<!-- Knock back and stun. -->
+		<!-- Knocks back and stuns the target. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -73,6 +73,7 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="48018" toLevel="1" name="Sayha's Grace Recovery">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<castRange>400</castRange>
@@ -112,7 +113,7 @@
 		<hitTime>500</hitTime>
 	</skill>
 	<skill id="48023" toLevel="2" name="Raid Reward - Berserker Spirit">
-		<!-- For $s1, Max HP/ MP -$s2, P. Atk. +$s3, M. Atk. +$s4, Atk. Spd. +$s5, Casting Spd. +$s6, Speed +$s7. -->
+		<!-- For 60 min., Max HP/ MP -15%, P. Atk. +10%, M. Atk. +20%, Atk. Spd. +8%, Casting Spd. +8%, Speed +8. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -249,7 +250,7 @@
 		</effects>
 		<endEffects>
 			<effect name="CallSkill">
-				<skillId>6090</skillId>
+				<skillId>6090</skillId> <!-- Lightning Strike -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
@@ -275,6 +276,7 @@
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="48041" toLevel="1" name="Cancel Blessing of Protection">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>709</effectPoint>
 	</skill>

@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="17814" toLevel="4" name="Ruby">
-		<!-- Damage received from Soulshots +$s1. -->
+		<!-- Soulshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17815" toLevel="2" name="Ruby">
-		<!-- Soulshot Damage +$s1. -->
+		<!-- Soulshot Damage +5%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17816" toLevel="2" name="Ruby">
-		<!-- Soulshot Damage +$s1. -->
+		<!-- Soulshot Damage +8%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17817" toLevel="10" name="Ruby">
-		<!-- Soulshot Damage +$s1. -->
+		<!-- Soulshot Damage +16%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
 			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="3">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="4">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="5">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="3">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
 			<value level="6">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
 			<value level="7">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
 			<value level="8">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
@@ -50,29 +50,29 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17818" toLevel="4" name="Frintezza Requiem">
-		<!-- Induces Sleep to enemies around for 30 seconds. -->
+	<skill id="17818" toLevel="4" name="Sapphire">
+		<!-- Spiritshot Damage +2%. -->
 		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17819" toLevel="2" name="Sapphire">
-		<!-- Spiritshot Damage +$s1. -->
+		<!-- Spiritshot Damage +5%. -->
 		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17820" toLevel="2" name="Sapphire">
-		<!-- Spiritshot Damage +$s1. -->
+		<!-- Spiritshot Damage +8%. -->
 		<icon>icon.etc_bm_jewel_sapphire_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17821" toLevel="10" name="Sapphire">
-		<!-- Spiritshot Damage +$s1. -->
+		<!-- Spiritshot Damage +16%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
 			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
-			<value level="3">icon.etc_bm_jewel_sapphire_i00</value>
-			<value level="4">icon.etc_bm_jewel_sapphire_i00</value>
-			<value level="5">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="3">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
 			<value level="6">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
 			<value level="7">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
 			<value level="8">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
@@ -100,8 +100,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="17823" toLevel="10" name="Gem - Aquamarine">
-		<!-- $s1 chance of recovering $s2 MP. -->
+	<skill id="17823" toLevel="10" name="Aquamarine">
+		<!-- 10% chance of recovering 12 MP. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_aquamarine_i00</value>
 			<value level="2">icon.etc_bm_jewel_aquamarine_i00</value>
@@ -118,11 +118,11 @@
 	</skill>
 	<skill id="17824" toLevel="10" name="Aquamarine - Mana Drain">
 		<icon>
-			<value level="1">icon.skill0000</value>
-			<value level="2">icon.skill0000</value>
-			<value level="3">icon.skill0000</value>
-			<value level="4">icon.skill0000</value>
-			<value level="5">icon.skill0000</value>
+			<value level="1">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="2">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="3">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="4">icon.etc_bm_jewel_aquamarine_i00</value>
+			<value level="5">icon.etc_bm_jewel_aquamarine_i00</value>
 			<value level="6">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
 			<value level="7">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
 			<value level="8">icon.bm_jewel_castmpup_high_lv1_lavianrose</value>
@@ -139,33 +139,34 @@
 		<reuseDelay>300000</reuseDelay>
 	</skill>
 	<skill id="17888" toLevel="2" name="Ruby">
-		<!-- Beast Soulshot Damage +$s1. -->
+		<!-- Damage from Beast Soulshot +2%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17889" toLevel="1" name="Ruby">
-		<!-- Beast Soulshot Damage +5%. -->
+		<!-- Damage from Beast Soulshot +5%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17890" toLevel="1" name="Ruby">
-		<!-- Beast Soulshot Damage +8%. -->
+		<!-- Damage from Beast Soulshot +8%. -->
 		<icon>icon.etc_bm_jewel_ruby_i00</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="17891" toLevel="5" name="Ruby">
-		<!-- Beast Soulshot Damage +$s1. -->
+		<!-- Damage from Beast Soulshot +16%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="3">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="4">icon.etc_bm_jewel_ruby_i00</value>
-			<value level="5">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="2">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="3">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
 		</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="17896" toLevel="1" name="Aquamarine - Mana Drain">
+	<skill id="17896" toLevel="1" name="Orc Recovery Ban">
 		<!-- No HP recovery. -->
+		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<hitTime>2000</hitTime>
 		<reuseDelay>8000</reuseDelay>

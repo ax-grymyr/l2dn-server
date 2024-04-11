@@ -3,7 +3,7 @@
 	<npc id="12774" level="1" type="Monster" name="Young Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -37,7 +37,7 @@
 	<npc id="12775" level="1" type="Monster" name="High Quality Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -71,7 +71,7 @@
 	<npc id="12776" level="1" type="Monster" name="Defective Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -105,7 +105,7 @@
 	<npc id="12777" level="1" type="Monster" name="Large Young Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -139,7 +139,7 @@
 	<npc id="12778" level="1" type="Monster" name="High Quality Large Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />
@@ -173,7 +173,7 @@
 	<npc id="12779" level="1" type="Monster" name="Defective Large Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="39" hpRegen="0.9" mp="40" mpRegen="0" />
 			<attack physical="4" magical="5.79" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="45.88" magical="33.57" />

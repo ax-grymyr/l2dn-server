@@ -13,7 +13,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55101" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 1">
+	<skill id="55101" toLevel="10" name="Enchant Effect - Water Dragon Pendant Lv. 1">
 		<!-- M. Atk. +13 when equipped. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
@@ -54,7 +54,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55103" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 2">
+	<skill id="55103" toLevel="10" name="Enchant Effect - Water Dragon Pendant Lv. 2">
 		<!-- M. Atk. +13, M. Critical Damage +89. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
@@ -114,7 +114,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55105" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 3">
+	<skill id="55105" toLevel="10" name="Enchant Effect - Water Dragon Pendant Lv. 3">
 		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
@@ -193,7 +193,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55107" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 4">
+	<skill id="55107" toLevel="10" name="Enchant Effect - Water Dragon Pendant Lv. 4">
 		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%, M. Atk. +1.5%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
@@ -291,7 +291,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55109" toLevel="10" name="Enchantment Effect: Water Dragon Pendant Lv. 5">
+	<skill id="55109" toLevel="10" name="Enchant Effect - Water Dragon Pendant Lv. 5">
 		<!-- M. Atk. +13, M. Critical Damage +89, M. Critical Rate +2%, M. Atk. +1.5%, M. Critical Damage +2%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp_blue</icon>
 		<magicLevel>1</magicLevel>
@@ -388,7 +388,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55111" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 1">
+	<skill id="55111" toLevel="10" name="Enchant Effect - Wind Dragon Pendant Lv. 1">
 		<!-- MP +33. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -429,7 +429,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55113" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 2">
+	<skill id="55113" toLevel="10" name="Enchant Effect - Wind Dragon Pendant Lv. 2">
 		<!-- MP +33, HP +50. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -493,7 +493,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55115" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 3">
+	<skill id="55115" toLevel="10" name="Enchant Effect - Wind Dragon Pendant Lv. 3">
 		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -594,12 +594,12 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55117" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 4">
+	<skill id="55117" toLevel="10" name="Enchant Effect - Wind Dragon Pendant Lv. 4">
 		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7, 1% chance to restore 12 MP when using skills. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -676,7 +676,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
@@ -688,7 +688,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="3" toLevel="3">
@@ -700,7 +700,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="4" toLevel="4">
@@ -712,7 +712,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="5">
@@ -724,7 +724,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="6">
@@ -736,7 +736,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
@@ -748,7 +748,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
@@ -760,7 +760,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
@@ -772,7 +772,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
@@ -784,7 +784,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
@@ -829,7 +829,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55119" toLevel="10" name="Enchantment Effect: Wind Dragon Pendant Lv. 5">
+	<skill id="55119" toLevel="10" name="Enchant Effect - Wind Dragon Pendant Lv. 5">
 		<!-- MP +33, HP +50, HP Recovery Bonus +1.9, MP Recovery Bonus +0.7, 1% chance to restore 12 MP when using skills, MP Skill Consumption -5%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pve_white</icon>
 		<magicLevel>1</magicLevel>
@@ -953,7 +953,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="2" toLevel="2">
@@ -965,7 +965,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="3" toLevel="3">
@@ -977,7 +977,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="4" toLevel="4">
@@ -989,7 +989,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="5" toLevel="5">
@@ -1001,7 +1001,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="6" toLevel="6">
@@ -1013,7 +1013,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="7" toLevel="7">
@@ -1025,7 +1025,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="8" toLevel="8">
@@ -1037,7 +1037,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="9" toLevel="9">
@@ -1049,7 +1049,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="TriggerSkillByAttack" fromLevel="10" toLevel="10">
@@ -1061,7 +1061,7 @@
 				<allowNormalAttack>false</allowNormalAttack>
 				<isCritical>false</isCritical>
 				<allowWeapons>ALL</allowWeapons>
-				<skillId>55153</skillId>
+				<skillId>55153</skillId> <!-- Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
@@ -1083,7 +1083,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55122" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 1">
+	<skill id="55122" toLevel="10" name="Enchant Effect - Land Dragon Pendant Lv. 1">
 		<!-- M. Def. +8. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1124,7 +1124,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55124" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 2">
+	<skill id="55124" toLevel="10" name="Enchant Effect - Land Dragon Pendant Lv. 2">
 		<!-- M. Def. +8, P. Def. +14. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1184,7 +1184,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55126" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 3">
+	<skill id="55126" toLevel="10" name="Enchant Effect - Land Dragon Pendant Lv. 3">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1263,7 +1263,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55128" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 4">
+	<skill id="55128" toLevel="10" name="Enchant Effect - Land Dragon Pendant Lv. 4">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%, Shield Defense +6%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1357,7 +1357,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55130" toLevel="10" name="Enchantment Effect: Land Dragon Pendant Lv. 5">
+	<skill id="55130" toLevel="10" name="Enchant Effect - Land Dragon Pendant Lv. 5">
 		<!-- M. Def. +8, P. Def. +14, Shield Defense Rate +15%, Shield Defense +6%. -->
 		<icon>BranchIcon.Icon.bm_pendant_pvp</icon>
 		<magicLevel>1</magicLevel>
@@ -1498,7 +1498,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="55133" toLevel="6" name="Enchantment Effect: Pendant">
+	<skill id="55133" toLevel="6" name="Enchant Effect - Pendant">
 		<!-- Acquired XP/ SP +5%. -->
 		<icon>BranchIcon.Icon.bm_blessing_dragon</icon>
 		<magicLevel>1</magicLevel>
@@ -1528,15 +1528,19 @@
 		</effects>
 	</skill>
 	<skill id="55134" toLevel="1" name="Scroll: Enchant Weapon (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55135" toLevel="1" name="Scroll: Enchant Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55136" toLevel="1" name="Blessed Scroll: Enchant Weapon (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55137" toLevel="1" name="Blessed Scroll: Enchant Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55138" toLevel="1" name="Shaft with Antharas treasures">
@@ -1551,6 +1555,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55142" toLevel="1" name="MP Potion">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55143" toLevel="1" name="Elite Fishing Rod of Golden Mermaid">
@@ -1559,52 +1564,52 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55144" toLevel="20" name="P. Atk.">
-		<!-- P. Atk. +$s1. -->
+		<!-- P. Atk. +2%. -->
 		<icon>icon.ensoul_big_p</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55145" toLevel="20" name="M. Atk.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55146" toLevel="20" name="P. Def.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55147" toLevel="20" name="M. Def.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55148" toLevel="20" name="P. Accuracy.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55149" toLevel="20" name="P. Evasion">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55150" toLevel="20" name="HP">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55151" toLevel="20" name="MP">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55152" toLevel="20" name="Recover HP">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55153" toLevel="20" name="Recover MP">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>8</magicLevel>
@@ -1630,32 +1635,32 @@
 		</effects>
 	</skill>
 	<skill id="55154" toLevel="20" name="Atk. Spd.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55155" toLevel="20" name="Casting Spd.">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55156" toLevel="20" name="P. Critical Rate">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55157" toLevel="20" name="P. Critical Damage">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55158" toLevel="20" name="M. Critical Rate">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55159" toLevel="20" name="M. Critical Damage">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +2%. -->
 		<icon>icon.ensoul_big_m</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -2132,6 +2137,7 @@
 		</effects>
 	</skill>
 	<skill id="55172" toLevel="1" name="Clan's Special Supplies">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70025</itemConsumeId>
@@ -2194,6 +2200,7 @@
 		</effects>
 	</skill>
 	<skill id="55173" toLevel="1" name="Clan's Special Supplies">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70026</itemConsumeId>
@@ -2219,7 +2226,7 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="0.7">
-						<item id="1894" count="1" /> <!-- Crafted Leather -->
+						<item id="1894" count="1" /> <!-- Quality Leather -->
 					</item>
 					<item chance="6.2">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
@@ -2295,6 +2302,7 @@
 		</effects>
 	</skill>
 	<skill id="55174" toLevel="1" name="Clan's Special Supplies">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70027</itemConsumeId>
@@ -2323,7 +2331,7 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="1.5">
-						<item id="1894" count="1" /> <!-- Crafted Leather -->
+						<item id="1894" count="1" /> <!-- Quality Leather -->
 					</item>
 					<item chance="6.2">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
@@ -2435,6 +2443,7 @@
 		</effects>
 	</skill>
 	<skill id="55175" toLevel="1" name="Clan's Special Supplies">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>70028</itemConsumeId>
@@ -2463,7 +2472,7 @@
 						<item id="1884" count="1" /> <!-- Cord -->
 					</item>
 					<item chance="1.6">
-						<item id="1894" count="1" /> <!-- Crafted Leather -->
+						<item id="1894" count="1" /> <!-- Quality Leather -->
 					</item>
 					<item chance="6.9">
 						<item id="1881" count="1" /> <!-- Coarse Bone Powder -->
@@ -2729,7 +2738,7 @@
 		<effects>
 			<effect name="ManaDamOverTime">
 				<power>9</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="SilentMove">
 				<chance>100</chance>
@@ -2877,28 +2886,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29818" count="1" /> <!-- Sigel's Rune - Stage 1 -->
+						<item id="29818" count="1" /> <!-- Sigel's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29838" count="1" /> <!-- Tyrr's Rune - Stage 1 -->
+						<item id="29838" count="1" /> <!-- Tyrr's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29858" count="1" /> <!-- Othell's Rune - Stage 1 -->
+						<item id="29858" count="1" /> <!-- Othell's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29878" count="1" /> <!-- Yul's Rune - Stage 1 -->
+						<item id="29878" count="1" /> <!-- Yul's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29898" count="1" /> <!-- Feoh's Rune - Stage 1 -->
+						<item id="29898" count="1" /> <!-- Feoh's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29918" count="1" /> <!-- Iss?Rune - Stage 1 -->
+						<item id="29918" count="1" /> <!-- Iss' Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29938" count="1" /> <!-- Wynn's Rune - Stage 1 -->
+						<item id="29938" count="1" /> <!-- Wynn's Rune Lv. 1 -->
 					</item>
 					<item chance="12.5">
-						<item id="29958" count="1" /> <!-- Aeore's Rune - Stage 1 -->
+						<item id="29958" count="1" /> <!-- Aeore's Rune Lv. 1 -->
 					</item>
 				</items>
 			</effect>
@@ -2927,28 +2936,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29819" count="1" /> <!-- Sigel's Rune - Stage 2 -->
+						<item id="29819" count="1" /> <!-- Sigel's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29839" count="1" /> <!-- Tyrr's Rune - Stage 2 -->
+						<item id="29839" count="1" /> <!-- Tyrr's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29859" count="1" /> <!-- Othell's Rune - Stage 2 -->
+						<item id="29859" count="1" /> <!-- Othell's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29879" count="1" /> <!-- Yul's Rune - Stage 2 -->
+						<item id="29879" count="1" /> <!-- Yul's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29899" count="1" /> <!-- Feoh's Rune - Stage 2 -->
+						<item id="29899" count="1" /> <!-- Feoh's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29919" count="1" /> <!-- Iss?Rune - Stage 2 -->
+						<item id="29919" count="1" /> <!-- Iss' Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29939" count="1" /> <!-- Wynn's Rune - Stage 2 -->
+						<item id="29939" count="1" /> <!-- Wynn's Rune Lv. 2 -->
 					</item>
 					<item chance="12.5">
-						<item id="29959" count="1" /> <!-- Aeore's Rune - Stage 2 -->
+						<item id="29959" count="1" /> <!-- Aeore's Rune Lv. 2 -->
 					</item>
 				</items>
 			</effect>
@@ -2977,28 +2986,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29820" count="1" /> <!-- Sigel's Rune - Stage 3 -->
+						<item id="29820" count="1" /> <!-- Sigel's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29840" count="1" /> <!-- Tyrr's Rune - Stage 3 -->
+						<item id="29840" count="1" /> <!-- Tyrr's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29860" count="1" /> <!-- Othell's Rune - Stage 3 -->
+						<item id="29860" count="1" /> <!-- Othell's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29880" count="1" /> <!-- Yul's Rune - Stage 3 -->
+						<item id="29880" count="1" /> <!-- Yul's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29900" count="1" /> <!-- Feoh's Rune - Stage 3 -->
+						<item id="29900" count="1" /> <!-- Feoh's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29920" count="1" /> <!-- Iss?Rune - Stage 3 -->
+						<item id="29920" count="1" /> <!-- Iss' Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29940" count="1" /> <!-- Wynn's Rune - Stage 3 -->
+						<item id="29940" count="1" /> <!-- Wynn's Rune Lv. 3 -->
 					</item>
 					<item chance="12.5">
-						<item id="29960" count="1" /> <!-- Aeore's Rune - Stage 3 -->
+						<item id="29960" count="1" /> <!-- Aeore's Rune Lv. 3 -->
 					</item>
 				</items>
 			</effect>
@@ -3027,28 +3036,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29821" count="1" /> <!-- Sigel's Rune - Stage 4 -->
+						<item id="29821" count="1" /> <!-- Sigel's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29841" count="1" /> <!-- Tyrr's Rune - Stage 4 -->
+						<item id="29841" count="1" /> <!-- Tyrr's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29861" count="1" /> <!-- Othell's Rune - Stage 4 -->
+						<item id="29861" count="1" /> <!-- Othell's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29881" count="1" /> <!-- Yul's Rune - Stage 4 -->
+						<item id="29881" count="1" /> <!-- Yul's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29901" count="1" /> <!-- Feoh's Rune - Stage 4 -->
+						<item id="29901" count="1" /> <!-- Feoh's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29921" count="1" /> <!-- Iss?Rune - Stage 4 -->
+						<item id="29921" count="1" /> <!-- Iss' Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29941" count="1" /> <!-- Wynn's Rune - Stage 4 -->
+						<item id="29941" count="1" /> <!-- Wynn's Rune Lv. 4 -->
 					</item>
 					<item chance="12.5">
-						<item id="29961" count="1" /> <!-- Aeore's Rune - Stage 4 -->
+						<item id="29961" count="1" /> <!-- Aeore's Rune Lv. 4 -->
 					</item>
 				</items>
 			</effect>
@@ -3077,28 +3086,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29822" count="1" /> <!-- Sigel's Rune - Stage 5 -->
+						<item id="29822" count="1" /> <!-- Sigel's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29842" count="1" /> <!-- Tyrr's Rune - Stage 5 -->
+						<item id="29842" count="1" /> <!-- Tyrr's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29862" count="1" /> <!-- Othell's Rune - Stage 5 -->
+						<item id="29862" count="1" /> <!-- Othell's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29882" count="1" /> <!-- Yul's Rune - Stage 5 -->
+						<item id="29882" count="1" /> <!-- Yul's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29902" count="1" /> <!-- Feoh's Rune - Stage 5 -->
+						<item id="29902" count="1" /> <!-- Feoh's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29922" count="1" /> <!-- Iss?Rune - Stage 5 -->
+						<item id="29922" count="1" /> <!-- Iss' Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29942" count="1" /> <!-- Wynn's Rune - Stage 5 -->
+						<item id="29942" count="1" /> <!-- Wynn's Rune Lv. 5 -->
 					</item>
 					<item chance="12.5">
-						<item id="29962" count="1" /> <!-- Aeore's Rune - Stage 5 -->
+						<item id="29962" count="1" /> <!-- Aeore's Rune Lv. 5 -->
 					</item>
 				</items>
 			</effect>
@@ -3127,28 +3136,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29823" count="1" /> <!-- Sigel's Rune - Stage 6 -->
+						<item id="29823" count="1" /> <!-- Sigel's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29843" count="1" /> <!-- Tyrr's Rune - Stage 6 -->
+						<item id="29843" count="1" /> <!-- Tyrr's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29863" count="1" /> <!-- Othell's Rune - Stage 6 -->
+						<item id="29863" count="1" /> <!-- Othell's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29883" count="1" /> <!-- Yul's Rune - Stage 6 -->
+						<item id="29883" count="1" /> <!-- Yul's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29903" count="1" /> <!-- Feoh's Rune - Stage 6 -->
+						<item id="29903" count="1" /> <!-- Feoh's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29923" count="1" /> <!-- Iss?Rune - Stage 6 -->
+						<item id="29923" count="1" /> <!-- Iss' Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29943" count="1" /> <!-- Wynn's Rune - Stage 6 -->
+						<item id="29943" count="1" /> <!-- Wynn's Rune Lv. 6 -->
 					</item>
 					<item chance="12.5">
-						<item id="29963" count="1" /> <!-- Aeore's Rune - Stage 6 -->
+						<item id="29963" count="1" /> <!-- Aeore's Rune Lv. 6 -->
 					</item>
 				</items>
 			</effect>
@@ -3177,28 +3186,28 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="12.5">
-						<item id="29824" count="1" /> <!-- Sigel's Rune - Stage 7 -->
+						<item id="29824" count="1" /> <!-- Sigel's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29844" count="1" /> <!-- Tyrr's Rune - Stage 7 -->
+						<item id="29844" count="1" /> <!-- Tyrr's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29864" count="1" /> <!-- Othell's Rune - Stage 7 -->
+						<item id="29864" count="1" /> <!-- Othell's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29884" count="1" /> <!-- Yul's Rune - Stage 7 -->
+						<item id="29884" count="1" /> <!-- Yul's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29904" count="1" /> <!-- Feoh's Rune - Stage 7 -->
+						<item id="29904" count="1" /> <!-- Feoh's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29924" count="1" /> <!-- Iss?Rune - Stage 7 -->
+						<item id="29924" count="1" /> <!-- Iss' Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29944" count="1" /> <!-- Wynn's Rune - Stage 7 -->
+						<item id="29944" count="1" /> <!-- Wynn's Rune Lv. 7 -->
 					</item>
 					<item chance="12.5">
-						<item id="29964" count="1" /> <!-- Aeore's Rune - Stage 7 -->
+						<item id="29964" count="1" /> <!-- Aeore's Rune Lv. 7 -->
 					</item>
 				</items>
 			</effect>

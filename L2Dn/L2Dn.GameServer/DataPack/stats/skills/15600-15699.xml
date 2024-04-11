@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="15600" toLevel="1" name="Lindvior's Attack">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill1275</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -11,7 +11,7 @@
 		<reuseDelay>5000</reuseDelay>
 	</skill>
 	<skill id="15601" toLevel="1" name="Lindvior's Attack">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill1275</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -63,7 +63,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15608" toLevel="7" name="Power Strike">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -88,8 +88,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15609" toLevel="7" name="Decreased Defense">
-		<!-- Decreases P. Def. by $s1. -->
+	<skill id="15609" toLevel="7" name="Decrease P. Def.">
+		<!-- Decreases P. Def. by 30%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
 		<castRange>300</castRange>
@@ -99,7 +99,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15610" toLevel="7" name="Spinning Slasher">
-		<!-- Powerful attack on surrounding area. -->
+		<!-- Powerful attack on nearby enemies. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A1</operateType>
 		<hitTime>6000</hitTime>
@@ -124,7 +124,7 @@
 		</effects>
 	</skill>
 	<skill id="15611" toLevel="7" name="Tornado Slasher">
-		<!-- Powerful attack on surrounding area. -->
+		<!-- Powerful attack on nearby enemies. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A1</operateType>
 		<hitTime>6000</hitTime>
@@ -149,7 +149,7 @@
 		</effects>
 	</skill>
 	<skill id="15612" toLevel="7" name="Thunder Storm">
-		<!-- Stuns for $s1. -->
+		<!-- Stuns for 2 sec. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<hitTime>2000</hitTime>
@@ -168,8 +168,8 @@
 		<effectPoint>-264</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="15614" toLevel="7" name="Decreased M. Def.">
-		<!-- Decreases M. Def. by $s1. -->
+	<skill id="15614" toLevel="7" name="Decrease M. Def.">
+		<!-- M. Def. -20%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
 		<hitTime>2000</hitTime>
@@ -178,8 +178,9 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15615" toLevel="7" name="Increase P. Atk.">
-		<!-- P. Atk./ M. Atk. +$s1. -->
+	<skill id="15615" toLevel="7" name="Increases P. Atk.">
+		<!-- P./ M. Atk. +10%. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -197,7 +198,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15617" toLevel="7" name="Power Smash">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -216,7 +217,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15620" toLevel="7" name="Power Shot">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
@@ -225,7 +226,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="15621" toLevel="7" name="Stun Shot">
-		<!-- Attacks and Stuns target for $s1. -->
+		<!-- Attacks and stuns a target for 2 sec. -->
 		<icon>icon.skill0056</icon>
 		<operateType>A2</operateType>
 		<castRange>600</castRange>
@@ -282,6 +283,7 @@
 	</skill>
 	<skill id="15629" toLevel="1" name="Nerva's Mental Blow">
 		<!-- Powerful attack on enemies in a fan-shaped radius of you. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>70</castRange>
 		<hitTime>1500</hitTime>
@@ -323,6 +325,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="15636" toLevel="1" name="Dimensional Teleport">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
@@ -330,6 +333,7 @@
 	</skill>
 	<skill id="15637" toLevel="1" name="Dimensional Space">
 		<!-- You are in the Dimensional Space. You can either restart the game or go through Mermoden in the village to return. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>1</effectPoint>
 		<isMagic>3</isMagic>
@@ -361,7 +365,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15654" toLevel="1" name="Master's Blessing - GM's Courage">
-		<!-- The GM is always by your side. P. Atk. toward monsters +100% for 5 min. -->
+		<!-- The GM is always by your side. Increases P. Atk. toward monsters by 100% for 5 min. -->
 		<icon>icon.skill5661</icon>
 		<operateType>A2</operateType>
 		<hitTime>500</hitTime>
@@ -377,7 +381,7 @@
 		<isMagic>3</isMagic>
 	</skill>
 	<skill id="15656" toLevel="1" name="Power Strike">
-		<!-- Powerful physical attack on target. -->
+		<!-- Deals a lot of physical damage to the target. -->
 		<icon>icon.skill0003</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -385,7 +389,7 @@
 		<effectPoint>-100</effectPoint>
 		<coolTime>500</coolTime>
 	</skill>
-	<skill id="15657" toLevel="1" name="Decreased Defense">
+	<skill id="15657" toLevel="1" name="Decrease P. Def.">
 		<!-- P. Def. -30%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
@@ -396,7 +400,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15658" toLevel="1" name="Spinning Slasher">
-		<!-- Powerful attack on surrounding area. -->
+		<!-- Powerful attack on nearby enemies. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A1</operateType>
 		<hitTime>6000</hitTime>
@@ -404,7 +408,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="15659" toLevel="1" name="Tornado Slasher">
-		<!-- Powerful attack on surrounding area. -->
+		<!-- Powerful attack on nearby enemies. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A1</operateType>
 		<hitTime>6000</hitTime>
@@ -421,7 +425,7 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15661" toLevel="1" name="Dark Buster">
-		<!-- Attacks frontal enemies with the power of darkness. -->
+		<!-- Attacks enemies at the front with the power of darkness. -->
 		<icon>icon.skill1167</icon>
 		<operateType>A1</operateType>
 		<castRange>1200</castRange>
@@ -430,7 +434,7 @@
 		<effectPoint>-264</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="15662" toLevel="1" name="Decreased M. Def.">
+	<skill id="15662" toLevel="1" name="Decrease M. Def.">
 		<!-- M. Def. -20%. -->
 		<icon>icon.skill1422</icon>
 		<operateType>A2</operateType>
@@ -440,8 +444,9 @@
 		<effectPoint>-100</effectPoint>
 		<isDebuff>true</isDebuff>
 	</skill>
-	<skill id="15663" toLevel="1" name="Increase P. Atk.">
+	<skill id="15663" toLevel="1" name="Increases P. Atk.">
 		<!-- P. Atk. and M. Atk. +10%. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -459,53 +464,54 @@
 		<isDebuff>true</isDebuff>
 	</skill>
 	<skill id="15665" toLevel="1" name="Presentation - Anakim / Lilith">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>
 	</skill>
 	<skill id="15666" toLevel="5" name="HP Increase 1">
-		<!-- Max HP +$s1 -->
+		<!-- Max. HP +20%. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15667" toLevel="5" name="P. Atk. Boost 1">
-		<!-- P. Atk. +$s1. -->
+	<skill id="15667" toLevel="5" name="Enhance P. Atk. 1">
+		<!-- P. Atk. +10%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15668" toLevel="5" name="M. Atk Boost 1">
-		<!-- M. Atk. +$s1. -->
+	<skill id="15668" toLevel="5" name="Enhance M. Atk. 1">
+		<!-- M. Atk. +10%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15669" toLevel="5" name="P. Def. Boost 1">
-		<!-- P. Def. +$s1, when equipped. -->
+	<skill id="15669" toLevel="5" name="Enhance P. Def. 1">
+		<!-- P. Def. +20%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15670" toLevel="5" name="M. Def. Boost 1">
-		<!-- M. Def. +$s1. -->
+	<skill id="15670" toLevel="5" name="Enhance M. Def. 1">
+		<!-- M. Def. +20%. -->
 		<icon>icon.skill1010</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15671" toLevel="5" name="Atk. Spd. Boost 1">
-		<!-- Atk. Spd. +$s1. -->
+	<skill id="15671" toLevel="5" name="Enhance Atk. Spd. 1">
+		<!-- Atk. Spd. +10%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
 	<skill id="15672" toLevel="5" name="Physical Attack Resistance 1">
-		<!-- Physical Attack Resistance +$s1. -->
+		<!-- Physical Attack Resistance +10. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
 	<skill id="15673" toLevel="5" name="Terminal State">
-		<!-- For $s1, HP doesn't drop below 1. Stuns the target. -->
+		<!-- For 5 sec., HP doesn't drop below 1. Stuns the target. -->
 		<icon>icon.skill1608</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -513,7 +519,7 @@
 		<mpConsume>38</mpConsume>
 	</skill>
 	<skill id="15674" toLevel="1" name="Mass Shackling">
-		<!-- Provokes nearby enemies and inflicts Hold for 10 sec. -->
+		<!-- Provokes nearby enemies and inflicts hold on them for 10 sec. -->
 		<icon>icon.skill0404</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -542,7 +548,7 @@
 		</effects>
 	</skill>
 	<skill id="15676" toLevel="1" name="Shield Stun">
-		<!-- Makes an attack with a shield, stunning the target for 9 sec. Requires a shield. -->
+		<!-- Uses a shield to shock the enemy. Inflicts stun on the target for 9 sec. Requires a shield. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
@@ -557,16 +563,14 @@
 		</conditions>
 	</skill>
 	<skill id="15677" toLevel="1" name="Bloody Attack">
+		<icon>icon.skill0000</icon>
 		<magicLevel>80</magicLevel>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
-		<isMagic>0</isMagic> <!-- Physical Skill -->
-		<hitTime>0</hitTime>
 		<nextAction>NONE</nextAction>
 		<reuseDelay>500</reuseDelay>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -576,6 +580,7 @@
 		</effects>
 	</skill>
 	<skill id="15678" toLevel="1" name="Sayha's Blessing">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
 	</skill>
@@ -604,7 +609,7 @@
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 	</skill>
-	<skill id="15682" toLevel="3" name="Orc Thunder">
+	<skill id="15682" toLevel="3" name="Chain Smash">
 		<!-- Pulls the target into your reach. -->
 		<icon>icon.skill10015</icon>
 		<operateType>A1</operateType>
@@ -621,6 +626,7 @@
 	</skill>
 	<skill id="15683" toLevel="3" name="Front Drain">
 		<!-- Inflicts heavy physical damage on enemies in fron of your character. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
@@ -637,14 +643,16 @@
 		</mpConsume>
 	</skill>
 	<skill id="15684" toLevel="4" name="Arena Administrator's Recovery">
-		<!-- Max HP/ MP +$s1. -->
+		<!-- Max. HP/ MP +30%. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>900</castRange>
 		<hitTime>1000</hitTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="15685" toLevel="4" name="Heal">
-		<!-- Restores $s1 of target's HP. -->
+		<!-- Recovers 10% HP of the target. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>400</castRange>
 		<hitTime>2000</hitTime>
@@ -652,7 +660,8 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="15686" toLevel="3" name="Multi-healing">
-		<!-- Restores $s1 of allies' HP. -->
+		<!-- Recovers 10% HP of the allies. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>2500</reuseDelay>
@@ -690,6 +699,7 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="15690" toLevel="2" name="Fearsome Defensive Strike">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>1000</hitTime>
@@ -700,6 +710,7 @@
 	</skill>
 	<skill id="15691" toLevel="1" name="Defense Break">
 		<!-- Inflicts heavy physical damage on enemies in fron of your character. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
 		<hitTime>2000</hitTime>
@@ -710,6 +721,7 @@
 	</skill>
 	<skill id="15692" toLevel="1" name="Smashing Attack">
 		<!-- Inflicts heavy physical damage on enemies surrounding your character. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>500</coolTime>
@@ -740,7 +752,7 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="15695" toLevel="15" name="Hex">
-		<!-- Enemy's P. Def. -$s2 for $s1. -->
+		<!-- Enemy's P. Def. -23% for 30 sec. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>

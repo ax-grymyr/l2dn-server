@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_03" minZ="-4688" maxZ="-4488">
+				<node x="109240" y="40968" />
+				<node x="110128" y="40976" />
+				<node x="110240" y="41932" />
+				<node x="109704" y="42400" />
+				<node x="109148" y="42484" />
+				<node x="109076" y="41252" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_04" minZ="-4680" maxZ="-4430">
+				<node x="106724" y="41112" />
+				<node x="108004" y="41396" />
+				<node x="107892" y="41824" />
+				<node x="106832" y="41940" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_05" minZ="-4672" maxZ="-4422">
+				<node x="102868" y="42180" />
+				<node x="105500" y="40368" />
+				<node x="106664" y="41172" />
+				<node x="106556" y="42384" />
+				<node x="104992" y="43620" />
+				<node x="104012" y="43836" />
+			</territory>
+		</territories>
+		<npc id="20589" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20591" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_06" minZ="-4636" maxZ="-4436">
+				<node x="103244" y="44320" />
+				<node x="103876" y="44276" />
+				<node x="104008" y="46332" />
+				<node x="103468" y="46268" />
+				<node x="102864" y="45656" />
+				<node x="102828" y="44892" />
+			</territory>
+		</territories>
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_07" minZ="-4644" maxZ="-4444">
+				<node x="105012" y="47188" />
+				<node x="105268" y="46984" />
+				<node x="105756" y="47204" />
+				<node x="106456" y="47912" />
+				<node x="106452" y="48464" />
+				<node x="106104" y="48896" />
+				<node x="105128" y="48172" />
+			</territory>
+		</territories>
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_08" minZ="-4556" maxZ="-4356">
+				<node x="105128" y="49680" />
+				<node x="105608" y="49312" />
+				<node x="106432" y="50348" />
+				<node x="106108" y="51488" />
+				<node x="105160" y="50960" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_09" minZ="-4696" maxZ="-4496">
+				<node x="104880" y="52124" />
+				<node x="105948" y="52004" />
+				<node x="106232" y="53356" />
+				<node x="105404" y="54656" />
+				<node x="103940" y="54644" />
+				<node x="104024" y="53648" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_10" minZ="-4688" maxZ="-4488">
+				<node x="106264" y="53452" />
+				<node x="107204" y="54376" />
+				<node x="107192" y="55684" />
+				<node x="106804" y="55992" />
+				<node x="105488" y="54680" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_11" minZ="-4624" maxZ="-4124">
+				<node x="102752" y="57424" />
+				<node x="103940" y="57520" />
+				<node x="107208" y="60816" />
+				<node x="107372" y="61732" />
+				<node x="105112" y="61532" />
+				<node x="102904" y="58852" />
+			</territory>
+		</territories>
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20591" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20593" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_12" minZ="-4628" maxZ="-4428">
+				<node x="109464" y="60440" />
+				<node x="110688" y="60440" />
+				<node x="111852" y="61204" />
+				<node x="108472" y="61168" />
+			</territory>
+		</territories>
+		<npc id="20590" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_13" minZ="-4656" maxZ="-4196">
+				<node x="112824" y="62460" />
+				<node x="117268" y="61748" />
+				<node x="116568" y="62892" />
+				<node x="115272" y="63376" />
+				<node x="113304" y="63312" />
+				<node x="112492" y="62808" />
+			</territory>
+		</territories>
+		<npc id="20589" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20591" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_14" minZ="-4628" maxZ="-4428">
+				<node x="106012" y="56144" />
+				<node x="106476" y="56204" />
+				<node x="107940" y="58292" />
+				<node x="106844" y="58012" />
+				<node x="105976" y="57144" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_15" minZ="-4616" maxZ="-4116">
+				<node x="109992" y="57248" />
+				<node x="112444" y="57388" />
+				<node x="112156" y="58296" />
+				<node x="108864" y="58292" />
+				<node x="109032" y="57696" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_16" minZ="-4620" maxZ="-4420">
+				<node x="113160" y="56676" />
+				<node x="114324" y="56732" />
+				<node x="113944" y="58040" />
+				<node x="112340" y="58064" />
+			</territory>
+		</territories>
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_17" minZ="-4600" maxZ="-4400">
+				<node x="118776" y="48641" />
+				<node x="117333" y="49953" />
+				<node x="117421" y="50168" />
+				<node x="118731" y="49317" />
+			</territory>
+		</territories>
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_18" minZ="-4612" maxZ="-4312">
+				<node x="114652" y="53880" />
+				<node x="115732" y="53756" />
+				<node x="114768" y="55004" />
+				<node x="114232" y="55016" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_19" minZ="-4696" maxZ="-4296">
+				<node x="114824" y="51168" />
+				<node x="116784" y="50448" />
+				<node x="116168" y="51956" />
+				<node x="115580" y="51952" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_20" minZ="-4648" maxZ="-4148">
+				<node x="119776" y="48240" />
+				<node x="121748" y="48968" />
+				<node x="121576" y="49528" />
+				<node x="118744" y="48688" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_21" minZ="-4692" maxZ="-4242">
+				<node x="123096" y="47668" />
+				<node x="123984" y="47692" />
+				<node x="124124" y="48356" />
+				<node x="122300" y="49648" />
+				<node x="121664" y="49512" />
+				<node x="121728" y="49128" />
+			</territory>
+		</territories>
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_22" minZ="-4720" maxZ="-4520">
+				<node x="125616" y="47700" />
+				<node x="126404" y="47576" />
+				<node x="126940" y="48132" />
+				<node x="126456" y="48756" />
+				<node x="125940" y="48788" />
+				<node x="125440" y="48284" />
+			</territory>
+		</territories>
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_23" minZ="-4692" maxZ="-4492">
+				<node x="126976" y="50508" />
+				<node x="127564" y="50196" />
+				<node x="128480" y="51396" />
+				<node x="128304" y="52492" />
+				<node x="127560" y="53056" />
+				<node x="126768" y="51276" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_24" minZ="-4700" maxZ="-4500">
+				<node x="124068" y="51552" />
+				<node x="126692" y="51316" />
+				<node x="127568" y="53240" />
+				<node x="126660" y="54016" />
+				<node x="125312" y="53928" />
+				<node x="124440" y="52956" />
+			</territory>
+		</territories>
+		<npc id="20589" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20591" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_25" minZ="-4696" maxZ="-4496">
+				<node x="119504" y="52572" />
+				<node x="120152" y="52216" />
+				<node x="121696" y="53816" />
+				<node x="120300" y="53740" />
+				<node x="119560" y="53208" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_26" minZ="-4704" maxZ="-4504">
+				<node x="117300" y="54968" />
+				<node x="118036" y="54688" />
+				<node x="118576" y="54996" />
+				<node x="118124" y="55900" />
+				<node x="117412" y="55528" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_27" minZ="-4620" maxZ="-4420">
+				<node x="117856" y="58232" />
+				<node x="118444" y="58268" />
+				<node x="118488" y="60040" />
+				<node x="117792" y="60148" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_28" minZ="-4656" maxZ="-4456">
+				<node x="120064" y="54944" />
+				<node x="121296" y="55108" />
+				<node x="122236" y="55924" />
+				<node x="122128" y="56144" />
+				<node x="120928" y="56188" />
+				<node x="119888" y="55220" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_29" minZ="-4624" maxZ="-4274">
+				<node x="123040" y="58176" />
+				<node x="124464" y="59356" />
+				<node x="124016" y="59500" />
+				<node x="123224" y="59172" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_30" minZ="-4704" maxZ="-4404">
+				<node x="126560" y="43268" />
+				<node x="126960" y="43424" />
+				<node x="126564" y="45160" />
+				<node x="125840" y="44932" />
+				<node x="125784" y="44020" />
+			</territory>
+		</territories>
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_31" minZ="-4680" maxZ="-4280">
+				<node x="122676" y="38892" />
+				<node x="124816" y="38192" />
+				<node x="125768" y="38272" />
+				<node x="126696" y="39668" />
+				<node x="127036" y="41936" />
+				<node x="123500" y="41640" />
+				<node x="122512" y="40444" />
+			</territory>
+		</territories>
+		<npc id="20591" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_32" minZ="-4644" maxZ="-4294">
+				<node x="123892" y="41724" />
+				<node x="124936" y="41816" />
+				<node x="123904" y="42852" />
+				<node x="123088" y="42992" />
+			</territory>
+		</territories>
+		<npc id="20591" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_33" minZ="-4624" maxZ="-4424">
+				<node x="120580" y="42336" />
+				<node x="121368" y="42100" />
+				<node x="123264" y="43856" />
+				<node x="122120" y="44044" />
+			</territory>
+		</territories>
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_34" minZ="-4636" maxZ="-4436">
+				<node x="119380" y="40632" />
+				<node x="120696" y="40408" />
+				<node x="121216" y="40896" />
+				<node x="121304" y="41588" />
+				<node x="119244" y="41236" />
+			</territory>
+		</territories>
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_35" minZ="-4604" maxZ="-4404">
+				<node x="117332" y="40032" />
+				<node x="118236" y="39944" />
+				<node x="119288" y="40600" />
+				<node x="117036" y="41296" />
+				<node x="116840" y="40552" />
+			</territory>
+		</territories>
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_36" minZ="-4668" maxZ="-4468">
+				<node x="120048" y="37408" />
+				<node x="121216" y="37360" />
+				<node x="122520" y="38808" />
+				<node x="121528" y="39184" />
+			</territory>
+		</territories>
+		<npc id="20591" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant -->
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_37" minZ="-4612" maxZ="-4412">
+				<node x="115720" y="37568" />
+				<node x="117344" y="36192" />
+				<node x="117628" y="36916" />
+				<node x="116656" y="37984" />
+			</territory>
+		</territories>
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_38" minZ="-4660" maxZ="-4360">
+				<node x="114148" y="39944" />
+				<node x="115660" y="39940" />
+				<node x="115036" y="41044" />
+				<node x="113632" y="41104" />
+			</territory>
+		</territories>
+		<npc id="20590" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+		<npc id="20592" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_39" minZ="-4716" maxZ="-4416">
+				<node x="110960" y="41836" />
+				<node x="112448" y="40828" />
+				<node x="113656" y="40952" />
+				<node x="112416" y="41960" />
+			</territory>
+		</territories>
+		<npc id="20589" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline -->
+		<npc id="20590" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_40" minZ="-4012" maxZ="-3212">
+				<node x="106072" y="39332" />
+				<node x="108612" y="39480" />
+				<node x="109232" y="40168" />
+				<node x="108604" y="40864" />
+				<node x="106740" y="40564" />
+				<node x="105804" y="39680" />
+			</territory>
+		</territories>
+		<npc id="20592" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_41" minZ="-3876" maxZ="-3276">
+				<node x="109848" y="38212" />
+				<node x="113164" y="35616" />
+				<node x="114432" y="37616" />
+				<node x="114384" y="39200" />
+				<node x="113080" y="40248" />
+				<node x="112132" y="40240" />
+			</territory>
+		</territories>
+		<npc id="20592" count="7" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="7" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="7" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_42" minZ="-3860" maxZ="-3410">
+				<node x="110516" y="39924" />
+				<node x="111012" y="39304" />
+				<node x="112224" y="40348" />
+				<node x="111536" y="40840" />
+				<node x="110660" y="40860" />
+			</territory>
+		</territories>
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_43" minZ="-3808" maxZ="-3358">
+				<node x="113280" y="35764" />
+				<node x="116844" y="35688" />
+				<node x="115460" y="37176" />
+				<node x="114420" y="37584" />
+			</territory>
+		</territories>
+		<npc id="20593" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_44" minZ="-3820" maxZ="-3520">
+				<node x="118428" y="35980" />
+				<node x="121284" y="36580" />
+				<node x="119788" y="36820" />
+			</territory>
+		</territories>
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_45" minZ="-3848" maxZ="-3548">
+				<node x="121448" y="36852" />
+				<node x="123172" y="36932" />
+				<node x="124724" y="37680" />
+				<node x="122744" y="38184" />
+			</territory>
+		</territories>
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_46" minZ="-3888" maxZ="-3438">
+				<node x="104780" y="44372" />
+				<node x="107296" y="42500" />
+				<node x="110100" y="43844" />
+				<node x="110732" y="44760" />
+				<node x="109064" y="47240" />
+				<node x="106332" y="46892" />
+				<node x="104692" y="45800" />
+			</territory>
+		</territories>
+		<npc id="20596" count="7" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="6" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+		<npc id="20598" count="6" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr Elder -->
+		<npc id="20599" count="7" respawnTime="80sec" respawnRandom="15sec" /> <!-- Elder the Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_48" minZ="-4264" maxZ="-3464">
+				<node x="111636" y="43004" />
+				<node x="113596" y="41528" />
+				<node x="115016" y="41472" />
+				<node x="115104" y="41724" />
+				<node x="113728" y="43628" />
+			</territory>
+		</territories>
+		<npc id="20594" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_49" minZ="-4024" maxZ="-3424">
+				<node x="118216" y="37356" />
+				<node x="120648" y="38884" />
+				<node x="121160" y="40108" />
+				<node x="116460" y="38808" />
+			</territory>
+		</territories>
+		<npc id="20594" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_50" minZ="-4132" maxZ="-3732">
+				<node x="121872" y="42036" />
+				<node x="121496" y="40072" />
+				<node x="122932" y="41604" />
+				<node x="122516" y="42552" />
+			</territory>
+		</territories>
+		<npc id="20594" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_51" minZ="-4352" maxZ="-3352">
+				<node x="117148" y="43828" />
+				<node x="118580" y="42368" />
+				<node x="119720" y="42000" />
+				<node x="121304" y="44064" />
+				<node x="120060" y="45592" />
+				<node x="117212" y="44704" />
+			</territory>
+		</territories>
+		<npc id="20596" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+		<npc id="20598" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr Elder -->
+		<npc id="20599" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Elder the Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_52" minZ="-3792" maxZ="-3192">
+				<node x="115588" y="45116" />
+				<node x="116936" y="44280" />
+				<node x="120044" y="45696" />
+				<node x="117872" y="48224" />
+			</territory>
+		</territories>
+		<npc id="20596" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+		<npc id="20598" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr Elder -->
+		<npc id="20599" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Elder the Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_53" minZ="-4184" maxZ="-3384">
+				<node x="120984" y="44512" />
+				<node x="123132" y="44608" />
+				<node x="121548" y="46120" />
+				<node x="120080" y="45764" />
+			</territory>
+		</territories>
+		<npc id="20596" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+		<npc id="20598" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr Elder -->
+		<npc id="20599" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Elder the Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_54" minZ="-3948" maxZ="-3348">
+				<node x="121744" y="45972" />
+				<node x="124404" y="43500" />
+				<node x="125660" y="45408" />
+				<node x="125296" y="47056" />
+				<node x="122340" y="47352" />
+			</territory>
+		</territories>
+		<npc id="20596" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+		<npc id="20598" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr Elder -->
+		<npc id="20599" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Elder the Unicorn -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_55" minZ="-3992" maxZ="-3592">
+				<node x="119660" y="47028" />
+				<node x="121548" y="47544" />
+				<node x="121912" y="48420" />
+				<node x="119116" y="47556" />
+			</territory>
+		</territories>
+		<npc id="20595" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_56" minZ="-3996" maxZ="-3396">
+				<node x="102232" y="46368" />
+				<node x="104196" y="47016" />
+				<node x="104756" y="48868" />
+				<node x="104492" y="51344" />
+				<node x="103620" y="52580" />
+				<node x="102064" y="47212" />
+			</territory>
+		</territories>
+		<npc id="20594" count="6" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+		<npc id="20595" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="6" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_57" minZ="-3828" maxZ="-3428">
+				<node x="104172" y="55760" />
+				<node x="105284" y="55764" />
+				<node x="106196" y="58884" />
+				<node x="103788" y="56628" />
+			</territory>
+		</territories>
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_58" minZ="-3820" maxZ="-3220">
+				<node x="106368" y="58684" />
+				<node x="110424" y="58916" />
+				<node x="111072" y="59756" />
+				<node x="107720" y="60120" />
+			</territory>
+		</territories>
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_59" minZ="-4008" maxZ="-3408">
+				<node x="107800" y="54052" />
+				<node x="109548" y="54380" />
+				<node x="109740" y="56692" />
+				<node x="108240" y="57196" />
+				<node x="107656" y="56688" />
+			</territory>
+		</territories>
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_60" minZ="-3784" maxZ="-3384">
+				<node x="110316" y="53048" />
+				<node x="112716" y="52956" />
+				<node x="113624" y="54012" />
+				<node x="113276" y="55800" />
+				<node x="111552" y="56388" />
+				<node x="109792" y="55956" />
+			</territory>
+		</territories>
+		<npc id="20595" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_61" minZ="-3912" maxZ="-3512">
+				<node x="114080" y="51816" />
+				<node x="114976" y="51888" />
+				<node x="115376" y="52908" />
+				<node x="113588" y="53912" />
+				<node x="112820" y="52992" />
+			</territory>
+		</territories>
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_62" minZ="-3936" maxZ="-3536">
+				<node x="112460" y="58752" />
+				<node x="114468" y="58568" />
+				<node x="114968" y="60504" />
+				<node x="113224" y="60524" />
+			</territory>
+		</territories>
+		<npc id="20595" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_63" minZ="-3796" maxZ="-3396">
+				<node x="115456" y="54924" />
+				<node x="116784" y="54828" />
+				<node x="117264" y="58388" />
+				<node x="115600" y="60160" />
+				<node x="114560" y="58584" />
+			</territory>
+		</territories>
+		<npc id="20595" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_64" minZ="-3980" maxZ="-3380">
+				<node x="120032" y="49520" />
+				<node x="121516" y="50504" />
+				<node x="121996" y="51764" />
+				<node x="121284" y="52504" />
+				<node x="118688" y="50268" />
+			</territory>
+		</territories>
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_65" minZ="-3816" maxZ="-3416">
+				<node x="121768" y="50504" />
+				<node x="124964" y="48536" />
+				<node x="126224" y="50556" />
+				<node x="124480" y="50736" />
+			</territory>
+		</territories>
+		<npc id="20595" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Fline Elder -->
+		<npc id="20596" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Liele Elder -->
+		<npc id="20597" count="3" respawnTime="80sec" respawnRandom="15sec" /> <!-- Valley Treant Elder -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_66" minZ="-3900" maxZ="-3500">
+				<node x="118940" y="52720" />
+				<node x="119872" y="54328" />
+				<node x="118620" y="54388" />
+				<node x="118508" y="52856" />
+			</territory>
+		</territories>
+		<npc id="20592" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="2" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="1" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_67" minZ="-3940" maxZ="-3340">
+				<node x="121512" y="54900" />
+				<node x="123228" y="53224" />
+				<node x="124412" y="54396" />
+				<node x="123712" y="56056" />
+			</territory>
+		</territories>
+		<npc id="20592" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="5" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden08_2319_68" minZ="-3812" maxZ="-3012">
+				<node x="124380" y="54688" />
+				<node x="126412" y="54760" />
+				<node x="125656" y="57292" />
+				<node x="124016" y="57432" />
+				<node x="123756" y="56056" />
+			</territory>
+		</territories>
+		<npc id="20592" count="6" respawnTime="80sec" respawnRandom="15sec" /> <!-- Satyr -->
+		<npc id="20593" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Unicorn -->
+		<npc id="20594" count="4" respawnTime="80sec" respawnRandom="15sec" /> <!-- Forest Runner -->
+	</spawn>
+</list>

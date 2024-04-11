@@ -38,7 +38,7 @@ public class ReduceDamage: AbstractEffect
 		}
 		else // DIFF
 		{
-			newDamage = ev.getDamage() - Math.Max((_amount - ev.getAttacker().getStat().getAdd(Stat.IGNORE_REDUCE_DAMAGE)), 0.0);
+			newDamage = ev.getDamage() - Math.Max((_amount - ev.getAttacker().getStat().getAddValue(Stat.IGNORE_REDUCE_DAMAGE)), 0.0);
 		}
 
 		ev.OverrideDamage = true;

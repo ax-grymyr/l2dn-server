@@ -29,6 +29,7 @@
 		</effects>
 	</skill>
 	<skill id="9620" toLevel="1" name="Yummy Gift Box">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>36081</itemConsumeId>

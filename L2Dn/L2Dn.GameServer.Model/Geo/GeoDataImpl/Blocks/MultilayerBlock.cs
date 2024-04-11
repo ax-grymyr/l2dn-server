@@ -100,6 +100,90 @@ public class MultilayerBlock: IBlock
 		return (getNearestNSWE(geoX, geoY, worldZ) & nswe) == nswe;
 	}
 	
+	public void setNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		int startOffset = getCellDataOffset(geoX, geoY);
+		byte nLayers = _data[startOffset];
+		int endOffset = startOffset + 1 + (nLayers * 2);
+		
+		int nearestDZ = 0;
+		int nearestLayerZ = 0;
+		int nearestOffset = 0;
+		short nearestLayerData = 0;
+		for (int offset = startOffset + 1; offset < endOffset; offset += 2)
+		{
+			short layerData = extractLayerData(offset);
+			int layerZ = extractLayerHeight(layerData);
+			if (layerZ == worldZ)
+			{
+				nearestLayerZ = layerZ;
+				nearestOffset = offset;
+				nearestLayerData = layerData;
+				break;
+			}
+			
+			int layerDZ = Math.Abs(layerZ - worldZ);
+			if ((offset == (startOffset + 1)) || (layerDZ < nearestDZ))
+			{
+				nearestDZ = layerDZ;
+				nearestLayerZ = layerZ;
+				nearestOffset = offset;
+			}
+		}
+		
+		short currentNswe = (short) extractLayerNswe(nearestLayerData);
+		if ((currentNswe & nswe) == 0)
+		{
+			short encodedHeight = (short) (nearestLayerZ << 1); // Shift left by 1 bit.
+			short newNswe = (short) (currentNswe | nswe); // Combine NSWE.
+			short newCombinedData = (short) (encodedHeight | newNswe); // Combine height and NSWE.
+			_data[nearestOffset] = (byte) (newCombinedData & 0xff); // Update the first byte at offset.
+			_data[nearestOffset + 1] = (byte) ((newCombinedData >> 8) & 0xff); // Update the second byte at offset + 1.
+		}
+	}
+	
+	public void unsetNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		int startOffset = getCellDataOffset(geoX, geoY);
+		byte nLayers = _data[startOffset];
+		int endOffset = startOffset + 1 + (nLayers * 2);
+		
+		int nearestDZ = 0;
+		int nearestLayerZ = 0;
+		int nearestOffset = 0;
+		short nearestLayerData = 0;
+		for (int offset = startOffset + 1; offset < endOffset; offset += 2)
+		{
+			short layerData = extractLayerData(offset);
+			int layerZ = extractLayerHeight(layerData);
+			if (layerZ == worldZ)
+			{
+				nearestLayerZ = layerZ;
+				nearestOffset = offset;
+				nearestLayerData = layerData;
+				break;
+			}
+			
+			int layerDZ = Math.Abs(layerZ - worldZ);
+			if ((offset == (startOffset + 1)) || (layerDZ < nearestDZ))
+			{
+				nearestDZ = layerDZ;
+				nearestLayerZ = layerZ;
+				nearestOffset = offset;
+			}
+		}
+		
+		short currentNswe = (short) extractLayerNswe(nearestLayerData);
+		if ((currentNswe & nswe) != 0)
+		{
+			short encodedHeight = (short) (nearestLayerZ << 1); // Shift left by 1 bit.
+			short newNswe = (short) (currentNswe & ~nswe); // Subtract NSWE.
+			short newCombinedData = (short) (encodedHeight | newNswe); // Combine height and NSWE.
+			_data[nearestOffset] = (byte) (newCombinedData & 0xff); // Update the first byte at offset.
+			_data[nearestOffset + 1] = (byte) ((newCombinedData >> 8) & 0xff); // Update the second byte at offset + 1.
+		}
+	}
+	
 	public int getNearestZ(int geoX, int geoY, int worldZ)
 	{
 		return extractLayerHeight(getNearestLayer(geoX, geoY, worldZ));
@@ -157,5 +241,10 @@ public class MultilayerBlock: IBlock
 		}
 		
 		return higherZ == int.MaxValue ? worldZ : higherZ;
+	}
+	
+	public byte[] getData()
+	{
+		return _data;
 	}
 }

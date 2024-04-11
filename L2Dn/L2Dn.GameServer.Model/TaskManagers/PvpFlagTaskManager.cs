@@ -15,7 +15,7 @@ public class PvpFlagTaskManager: Runnable
 	
 	protected PvpFlagTaskManager()
 	{
-		ThreadPool.scheduleAtFixedRate(this, 1000, 1000);
+		ThreadPool.scheduleAtFixedRate(this, 1000, 1000); // TODO: high priority task
 	}
 	
 	public void run()

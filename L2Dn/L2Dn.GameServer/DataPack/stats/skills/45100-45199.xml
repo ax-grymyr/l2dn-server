@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="45104" toLevel="3" name="Acumen">
-		<!-- For $s1, Casting Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Casting Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -9,7 +9,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45105" toLevel="3" name="Empower">
-		<!-- For $s1, M. Atk. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Atk. +100. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -17,7 +17,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45106" toLevel="2" name="Wild Magic">
-		<!-- For $s1, M. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Critical Rate +10. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -25,7 +25,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45107" toLevel="2" name="Wind Walk">
-		<!-- For $s1, Speed +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Speed +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -33,7 +33,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45108" toLevel="2" name="Magic Barrier">
-		<!-- For $s1, M. Def. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Def. +250. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1036</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -41,7 +41,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45109" toLevel="3" name="Focus">
-		<!-- For $s1, P. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Rate +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -49,7 +49,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45110" toLevel="3" name="Death Whisper">
-		<!-- For $s1, P. Critical Damage +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Damage +25%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -57,7 +57,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45111" toLevel="2" name="Haste">
-		<!-- For $s1, Atk. Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Atk. Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -65,7 +65,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45112" toLevel="2" name="Berserker Spirit">
-		<!-- For $s1, Max HP/ MP -$s2, P. Atk. +$s3, M. Atk. +$s4, Atk. Spd. +$s5, Casting Spd. +$s6, Speed +$s7. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -73,7 +73,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45113" toLevel="3" name="Clarity">
-		<!-- For $s1, P. Skill MP Consumption -$s2, M. Skill MP Consumption -$s3, song/ dance MP Consumption -$s4. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Skill MP Consumption -10%, M. Skill MP Consumption -4%, song/ dance MP Consumption -10%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -81,7 +81,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45114" toLevel="3" name="Maphr's Focus">
-		<!-- For $s1, P. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Rate +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1466</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -89,7 +89,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45115" toLevel="3" name="Maphr's Death Whisper">
-		<!-- For $s1, P. Critical Damage +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Damage +25%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill19004</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -97,7 +97,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45116" toLevel="2" name="Maphr's Haste">
-		<!-- For $s1, Atk. Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Atk. Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill0426</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -105,7 +105,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45117" toLevel="2" name="Maphr's Wind Walk">
-		<!-- For $s1, Speed +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Speed +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill0225</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -113,7 +113,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45118" toLevel="2" name="Maphr's Magic Barrier">
-		<!-- For $s1, M. Def. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Def. +250. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill0383</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -121,7 +121,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45119" toLevel="3" name="Maphr's Might">
-		<!-- For $s1, P. Atk. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Atk. +80. <Auto-use> -->
 		<icon>icon.skill10252</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -129,7 +129,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45120" toLevel="3" name="Maphr's Shield">
-		<!-- For $s1, P. Def. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Def. +100. <Auto-use> -->
 		<icon>icon.skill11252</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -137,7 +137,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45121" toLevel="3" name="Chant of Focus">
-		<!-- For $s1, P. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Rate +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1308</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -145,7 +145,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45122" toLevel="3" name="Chant of Death Whisper">
-		<!-- For $s1, P. Critical Damage +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Damage +25%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1253</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -153,7 +153,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45123" toLevel="2" name="Chant of Haste">
-		<!-- For $s1, Atk. Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Atk. Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1251</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -161,7 +161,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45124" toLevel="2" name="Chant of Wind Walk">
-		<!-- For $s1, Speed +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Speed +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1535</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -169,7 +169,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45125" toLevel="2" name="Chant of Magic Barrier">
-		<!-- For $s1, M. Def. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Def. +250. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1549</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -177,7 +177,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45126" toLevel="3" name="Chant of Might">
-		<!-- For $s1, P. Atk. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Atk. +80. <Auto-use> -->
 		<icon>icon.skill1007</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -185,7 +185,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45127" toLevel="3" name="Chant of Shield">
-		<!-- For $s1, P. Def. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Def. +100. <Auto-use> -->
 		<icon>icon.skill1009</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -193,7 +193,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45128" toLevel="2" name="Chant of Berserker Spirit">
-		<!-- For $s1, Max HP/ MP -$s2, P. Atk. +$s3, M. Atk. +$s4, Atk. Spd. +$s5, Casting Spd. +$s6, Speed +$s7. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill19207</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -201,7 +201,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45129" toLevel="3" name="Chant of Clarity">
-		<!-- For $s1, P. Skill MP Consumption -$s2, M. Skill MP Consumption -$s3, song/ dance MP Consumption -$s4. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Skill MP Consumption -10%, M. Skill MP Consumption -4%, song/ dance MP Consumption -10%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1600</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -209,7 +209,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45130" toLevel="3" name="Maphr's Acumen">
-		<!-- For $s1, Casting Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Casting Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11184</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -217,7 +217,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45131" toLevel="3" name="Maphr's Empower">
-		<!-- For $s1, M. Atk. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Atk. +100. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11068</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -225,7 +225,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45132" toLevel="2" name="Maphr's Wild Magic">
-		<!-- For $s1, M. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Critical Rate +10. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11151</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -233,7 +233,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45133" toLevel="2" name="Maphr's Berserker Spirit">
-		<!-- For $s1, Max HP/ MP -$s2, P. Atk. +$s3, M. Atk. +$s4, Atk. Spd. +$s5, Casting Spd. +$s6, Speed +$s7. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill19192</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -241,7 +241,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45134" toLevel="3" name="Maphr's Clarity">
-		<!-- For $s1, P. Skill MP Consumption -$s2, M. Skill MP Consumption -$s3, song/ dance MP Consumption -$s4. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Skill MP Consumption -10%, M. Skill MP Consumption -4%, song/ dance MP Consumption -10%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill10256</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -249,7 +249,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45135" toLevel="3" name="Chant of Acumen">
-		<!-- For $s1, Casting Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Casting Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1006</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -257,7 +257,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45136" toLevel="3" name="Chant of Empower">
-		<!-- For $s1, M. Atk. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Atk. +100. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1002</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -265,7 +265,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45137" toLevel="2" name="Chant of Wild Magic">
-		<!-- For $s1, M. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Critical Rate +10. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1413</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -273,7 +273,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45138" toLevel="3" name="Chant of Clarity">
-		<!-- For $s1, P. Skill MP Consumption -$s2, M. Skill MP Consumption -$s3, song/ dance MP Consumption -$s4. <Auto-use> -->
+		<!-- For 20 min., P. Skill MP Consumption -10%, M. Skill MP Consumption -4%, song/ dance MP Consumption -10%. <Auto-use> -->
 		<icon>icon.skill1600</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -281,7 +281,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45139" toLevel="3" name="Soul Focus">
-		<!-- For $s1, P. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Rate +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill19299</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -289,7 +289,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45140" toLevel="3" name="Soul Death Whisper">
-		<!-- For $s1, P. Critical Damage +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Critical Damage +25%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1523</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -297,7 +297,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45141" toLevel="2" name="Soul Haste">
-		<!-- For $s1, Atk. Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Atk. Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill0427</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -305,7 +305,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45142" toLevel="2" name="Soul Wind Walk">
-		<!-- For $s1, Speed +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Speed +20. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11823</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -313,7 +313,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45143" toLevel="2" name="Soul Magic Barrier">
-		<!-- For $s1, M. Def. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Def. +250. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11360</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -321,7 +321,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45144" toLevel="3" name="Soul Might">
-		<!-- For $s1, P. Atk. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Atk. +80. <Auto-use> -->
 		<icon>icon.skill19298</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -329,7 +329,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45145" toLevel="3" name="Soul Shield">
-		<!-- For $s1, P. Def. +$s2. <Auto-use> -->
+		<!-- For 20 min., P. Def. +100. <Auto-use> -->
 		<icon>icon.skill30516</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -337,7 +337,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45146" toLevel="3" name="Soul Acumen">
-		<!-- For $s1, Casting Spd. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Casting Spd. +15%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1520</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -345,7 +345,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45147" toLevel="3" name="Soul Empower">
-		<!-- For $s1, M. Atk. +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Atk. +100. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1441</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -353,7 +353,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45148" toLevel="2" name="Soul Wild Magic">
-		<!-- For $s1, M. Critical Rate +$s2. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., M. Critical Rate +10. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill1479</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -361,7 +361,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45149" toLevel="2" name="Soul Berserker Spirit">
-		<!-- For $s1, Max HP/ MP -$s2, P. Atk. +$s3, M. Atk. +$s4, Atk. Spd. +$s5, Casting Spd. +$s6, Speed +$s7. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., Max HP/ MP -20%, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill30520</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -369,7 +369,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45150" toLevel="3" name="Soul Clarity">
-		<!-- For $s1, P. Skill MP Consumption -$s2, M. Skill MP Consumption -$s3, song/ dance MP Consumption -$s4. Consumes 3 Spirit Ores. <Auto-use> -->
+		<!-- For 20 min., P. Skill MP Consumption -10%, M. Skill MP Consumption -4%, song/ dance MP Consumption -10%. Consumes 3 Spirit Ores. <Auto-use> -->
 		<icon>icon.skill11760</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -377,7 +377,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45151" toLevel="2" name="Collect Light Souls">
-		<!-- Collects $s1 Light Souls. Consumes $s2 Spirit Ores. -->
+		<!-- Collects 70 Light Souls. Consumes 30 Spirit Ores. -->
 		<icon>icon.skill55474</icon>
 		<magicLevel>
 			<value level="1">50</value>
@@ -413,7 +413,7 @@
 		</effects>
 	</skill>
 	<skill id="45152" toLevel="2" name="Collect Shadow Souls">
-		<!-- Collects $s1 Shadow Souls. Consumes $s2 Spirit Ores. -->
+		<!-- Collects 70 Shadow Souls. Consumes 30 Spirit Ores. -->
 		<icon>icon.skill55475</icon>
 		<magicLevel>
 			<value level="1">50</value>
@@ -449,7 +449,7 @@
 		</effects>
 	</skill>
 	<skill id="45153" toLevel="1" name="Shadow Veil">
-		<!-- Doubles the inflicted damage. -->
+		<!-- Doubles the damage inflicted. -->
 		<icon>icon.skill19187</icon>
 		<castRange>900</castRange>
 		<effectRange>1200</effectRange>
@@ -471,7 +471,7 @@
 		</effects>
 	</skill>
 	<skill id="45154" toLevel="5" name="Death Mark Lv. 1">
-		<!-- P./ M. Critical Damage +$s1 when attacking enemies with the applied Death Mark. -->
+		<!-- P./ M. Critical Damage +10% when attacking enemies with the applied Death Mark. -->
 		<icon>icon.skill1435</icon>
 		<operateType>A2</operateType>
 		<activateRate>70</activateRate>
@@ -529,7 +529,7 @@
 		</effects>
 	</skill>
 	<skill id="45155" toLevel="8" name="Soul Impulse">
-		<!-- Strikes the target with $s1 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Over-hit. -->
+		<!-- Strikes the target with 500 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Over-hit. -->
 		<icon>icon.skill0497</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -599,7 +599,7 @@
 		</effects>
 	</skill>
 	<skill id="45156" toLevel="8" name="Ultimate Soul Impulse">
-		<!-- <Ultimate skill> Attacks the target from a distance with $s1 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Critical, over-hit. -->
+		<!-- <Ultimate skill>. Attacks the target from a distance with 650 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Critical, over-hit. -->
 		<icon>icon.wizard_danger_warppow</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -670,7 +670,7 @@
 		</effects>
 	</skill>
 	<skill id="45157" toLevel="6" name="Enuma Elish">
-		<!-- Attacks the enemies at the front with $s1 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Over-hit. -->
+		<!-- Attacks the enemies at the front with 1800 power added to P. Atk. Requires an ancient sword or a two-handed sword. Ignores Shield Defense. Over-hit. -->
 		<icon>icon.skill0526</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -734,7 +734,7 @@
 		</effects>
 	</skill>
 	<skill id="45158" toLevel="6" name="Ultimate Enuma Elish">
-		<!-- <Ultimate skill> Attacks the enemies at the front with $s1 power added to P. Atk. Requires an ancient sword or a two-handed sword. Critical, over-hit. -->
+		<!-- <Ultimate skill>. Attacks the enemies at the front with 2250 power added to P. Atk. Requires an ancient sword or a two-handed sword. Critical, over-hit. -->
 		<icon>icon.skill10265</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -800,7 +800,7 @@
 		</effects>
 	</skill>
 	<skill id="45159" toLevel="3" name="Rush Impact">
-		<!-- Rushes forward to attack enemies at the front with $s1 power added to P. Atk. Inflicts stun for $s2 Can be used if the distance to the target is more than $s3. -->
+		<!-- Rushes forward to attack enemies at the front with 1500 power added to P. Atk. Inflicts stun for 3 sec. Can be used if the distance to the target is more than 150. -->
 		<icon>icon.skill0793</icon>
 		<castRange>
 			<value level="1">500</value>
@@ -868,7 +868,7 @@
 		</effects>
 	</skill>
 	<skill id="45160" toLevel="10" name="Soul Slash">
-		<!-- Attacks the target with $s1 power added to P. Atk. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
+		<!-- Attacks the target with 125 power added to P. Atk. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
 		<icon>icon.skill0505</icon>
 		<operateType>A1</operateType>
 		<castRange>120</castRange>
@@ -955,7 +955,7 @@
 		</effects>
 	</skill>
 	<skill id="45161" toLevel="8" name="Soul Thrust">
-		<!-- Attacks the opponents twice with $s1 power added to P. Atk. Deals additional magic damage. M. Def. -10%. In PvE knocks the opponents back. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
+		<!-- Attacks 2 opponents with 259 power added to P. Atk. Deals additional magic damage. M. Def. -10%. In PvE knocks the opponents back. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
 		<icon>icon.skill0478</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -1078,7 +1078,7 @@
 		</effects>
 	</skill>
 	<skill id="45162" toLevel="8" name="Ultimate Soul Thrust">
-		<!-- <Ultimate skill> Attacks 3 opponents with $s1 power added to P. Atk. Deals additional magic damage. M. Def. -10%. In PvE knocks the opponents back. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
+		<!-- <Ultimate skill>. Attacks 3 opponents with 276 power added to P. Atk. Deals additional magic damage. M. Def. -10%. In PvE knocks the opponents back. Requires a rapier. Ignores Shield Defense. Critical, over-hit. -->
 		<icon>icon.skill0504</icon>
 		<operateType>A1</operateType>
 		<mpConsume>
@@ -1218,7 +1218,7 @@
 		</effects>
 	</skill>
 	<skill id="45163" toLevel="8" name="Soul Spark">
-		<!-- Deals magic damage to the target with $s1 power. Requires a rapier. -->
+		<!-- Deals magic damage to the target with 80 power. Requires a rapier. -->
 		<icon>icon.skill11361</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1294,7 +1294,7 @@
 		</effects>
 	</skill>
 	<skill id="45164" toLevel="8" name="Ultimate Soul Spark">
-		<!-- <Ultimate skill> Deals 2 magic strikes to the target with $s1 power. Requires a rapier. -->
+		<!-- <Ultimate skill>. Deals 2 magic strikes to the target with 60 power. Requires a rapier. -->
 		<icon>icon.skill14216</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1324,7 +1324,7 @@
 		</mpConsume>
 	</skill>
 	<skill id="45165" toLevel="10" name="Soul Strike">
-		<!-- Inflicts magic damage on the enemy with $s1 power. -->
+		<!-- Inflicts magic damage on the enemy with 55 power. -->
 		<icon>icon.skill1528</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1377,7 +1377,7 @@
 		</effects>
 	</skill>
 	<skill id="45166" toLevel="10" name="Soul Strike">
-		<!-- Inflicts magic damage on the enemy with $s1 power. -->
+		<!-- Inflicts magic damage on the enemy with 65 power. -->
 		<icon>icon.skill1528</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1430,7 +1430,7 @@
 		</effects>
 	</skill>
 	<skill id="45167" toLevel="10" name="Soul Strike">
-		<!-- Inflicts magic damage on the enemy with $s1 power. -->
+		<!-- Inflicts magic damage on the enemy with 70 power. -->
 		<icon>icon.skill1528</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1483,7 +1483,7 @@
 		</effects>
 	</skill>
 	<skill id="45168" toLevel="10" name="Twin Shot">
-		<!-- Makes 2 arrow shots with $s1 power. Requires a bow. Critical, over-hit. -->
+		<!-- Makes 2 arrow shots with 150 power. Requires a bow. Critical, over-hit. -->
 		<icon>icon.skill0487</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -1596,7 +1596,7 @@
 		</effects>
 	</skill>
 	<skill id="45169" toLevel="10" name="Ultimate Twin Shot">
-		<!-- <Ultimate skill> Makes 2 arrow shots with $s1 power. Ignores target's defense. Requires a bow. Critical, over-hit. -->
+		<!-- <Ultimate skill>. Makes 2 arrow shots with 180 power. Ignores target's defense. Requires a bow. Critical, over-hit. -->
 		<icon>icon.skill0507</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -1711,7 +1711,7 @@
 		</effects>
 	</skill>
 	<skill id="45170" toLevel="8" name="Multiple Shot">
-		<!-- Attacks enemies at the front with $s1 power. Requires a bow. Over-hit. -->
+		<!-- Attacks enemies at the front with 340 power. Requires a bow. Over-hit. -->
 		<icon>icon.skill10260</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -1782,7 +1782,7 @@
 		</effects>
 	</skill>
 	<skill id="45171" toLevel="8" name="Ultimate Multiple Shot">
-		<!-- <Ultimate skill> Attacks multiple enemies at the front with $s1 power. Ignores target's defense. Requires a bow. Critical, over-hit. -->
+		<!-- <Ultimate skill>. Attacks multiple enemies at the front with 408 power. Ignores target's defense. Requires a bow. Critical, over-hit. -->
 		<icon>icon.skill10953</icon>
 		<operateType>A1</operateType>
 		<magicLevel>
@@ -1795,13 +1795,13 @@
 			<value level="7">85</value>
 			<value level="8">90</value>
 		</magicLevel>
-		<affectLimit>8-9</affectLimit>
-		<affectRange>900</affectRange>
-		<affectHeight>-200;200</affectHeight>
-		<effectRange>1400</effectRange>
-		<fanRange>0;0;500;90</fanRange>
-		<magicCriticalRate>5</magicCriticalRate>
 		<castRange>900</castRange>
+		<effectRange>1400</effectRange>
+		<affectHeight>-200;200</affectHeight>
+		<affectLimit>9-9</affectLimit>
+		<fanRange>0;0;500;90</fanRange>
+		<affectHeight>-200;200</affectHeight>
+		<magicCriticalRate>5</magicCriticalRate>
 		<hitTime>2800</hitTime>
 		<coolTime>1000</coolTime>
 		<reuseDelay>3000</reuseDelay>
@@ -1856,7 +1856,7 @@
 		</effects>
 	</skill>
 	<skill id="45172" toLevel="9" name="Sharp Aiming">
-		<!-- For $s1, P. Accuracy +$s2, P. Atk. +$s3, Atk. Spd. +$s4, P. Skill Power +$s5. Decreases target's bow resistance when attacking. Requires a bow. <Auto-use> -->
+		<!-- For 20 min., P. Accuracy +3, P. Atk. +120, Atk. Spd. +30, P. Skill Power +5%. Decreases target's bow resistance when attacking. Requires a bow. <Auto-use> -->
 		<icon>icon.skill10763</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2005,7 +2005,7 @@
 			</effect>
 			<effect name="TriggerSkillByMagicType">
 				<magicTypes>0</magicTypes>
-				<skillId>45173</skillId> <!-- Increase Critical -->
+				<skillId>45173</skillId> <!-- Aim Guidance -->
 				<skillLevel>1</skillLevel>
 				<chance>80</chance>
 				<targetType>ENEMY_ONLY</targetType>
@@ -2013,7 +2013,7 @@
 		</effects>
 	</skill>
 	<skill id="45173" toLevel="3" name="Aim Guidance">
-		<!-- Bow resistance -$s1. -->
+		<!-- Bow resistance -10%. -->
 		<icon>icon.skill0506</icon>
 		<operateType>A2</operateType>
 		<isDebuff>true</isDebuff>
@@ -2049,7 +2049,7 @@
 		</effects>
 	</skill>
 	<skill id="45174" toLevel="100" name="Light Soul">
-		<!-- Collects $s1 Light Soul(s). -->
+		<!-- Collects 1 Light Soul(s). -->
 		<icon>
 			<value level="1">icon.skill55463_001</value>
 			<value level="2">icon.skill55463_002</value>
@@ -2157,7 +2157,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="45175" toLevel="100" name="Shadow Soul">
-		<!-- Collects $s1 Shadow Soul(s). -->
+		<!-- Collects 1 Shadow Soul(s). -->
 		<icon>
 			<value level="1">icon.skill55464_001</value>
 			<value level="2">icon.skill55464_002</value>
@@ -2281,7 +2281,7 @@
 		<reuseDelay>10000</reuseDelay>
 	</skill>
 	<skill id="45178" toLevel="2" name="Light Master">
-		<!-- Allows to absorb the power of light. Collect 100 Light Souls to assume the Light Veil. <Light Veil> Grants Evolved Wings Lv. 1 that allows to absorb MP and increases defense. -->
+		<!-- Allows to absorb the power of light. Collect 100 Light Souls to assume the Light Veil. <Light Veil>. Grants Evolved Wings Lv. 1 that allows to absorb MP and increases defense. -->
 		<icon>icon.skill_jinkama_white1</icon>
 		<magicLevel>
 			<value level="1">20</value>
@@ -2331,7 +2331,7 @@
 		</effects>
 	</skill>
 	<skill id="45179" toLevel="2" name="Shadow Master">
-		<!-- Allows to absorb the power of shadows. Collect 100 Shadow Souls to assume the Shadow Veil. <Shadow Veil> Grants Evolved Wings Lv. 2 that allows to make powerful attacks. -->
+		<!-- Allows to absorb the power of shadows. Collect 100 Shadow Souls to assume the Shadow Veil. <Shadow Veil>. Grants Evolved Wings Lv. 2 that allows to make powerful attacks. -->
 		<icon>icon.skill_jinkama_black1</icon>
 		<magicLevel>
 			<value level="1">20</value>
@@ -2385,6 +2385,7 @@
 	</skill>
 	<skill id="45180" toLevel="4" name="Light Soul Absorption">
 		<!-- Activates when attacking. -->
+		<icon>icon.skill0000</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>20</magicLevel>
 		<operateType>A1</operateType>
@@ -2404,6 +2405,8 @@
 		</effects>
 	</skill>
 	<skill id="45181" toLevel="4" name="Shadow Soul Absorption">
+		<!-- Activates when attacking. -->
+		<icon>icon.skill0000</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>40</magicLevel>
 		<operateType>A1</operateType>
@@ -2423,7 +2426,7 @@
 		</effects>
 	</skill>
 	<skill id="45182" toLevel="8" name="Soul Thrust">
-		<!-- M. Def. -$s1. -->
+		<!-- M. Def. -10%. -->
 		<icon>icon.skill_crofin_stun</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2491,7 +2494,7 @@
 		</conditions>
 	</skill>
 	<skill id="45184" toLevel="3" name="Potion Mastery">
-		<!-- HP Recovery Potions' Effect +$s1. -->
+		<!-- HP Recovery Potions' Effect +10%. -->
 		<icon>icon.skill19225</icon>
 		<magicLevel>
 			<value level="1">40</value>
@@ -2517,7 +2520,7 @@
 		<effectPoint>-1000</effectPoint>
 	</skill>
 	<skill id="45187" toLevel="5" name="Guard Crush">
-		<!-- Attacks the target with $s1 Power. Requires a sword/ blunt weapon/ dual sword. Ignores Defense. Over-hit. -->
+		<!-- Attacks the target with 811 Power. Requires a sword/ blunt weapon/ dual sword. Ignores Defense. Over-hit. -->
 		<icon>icon.skill0496</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -2540,12 +2543,12 @@
 		</mpConsume>
 	</skill>
 	<skill id="45188" toLevel="1" name="Evolution Defense">
-		<!-- P. Def. +-1400@0:20, M. Def. +-1050@0:15. <Stats depends on the character level> Required level: 76. P. Def. +20, M. Def. +15 with each level. -->
+		<!-- P. Def. +-1400@0:20, M. Def. +-1050@0:15. <Stats depends on the character level>. Required level: 76. P. Def. +20, M. Def. +15 with each level. -->
 		<icon>icon.skill19131</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="45189" toLevel="1" name="Evolution Power">
-		<!-- P. Atk. +-1400@0:20, M. Atk. +-1400@0:20. <Stats depends on the character level> Required level: 80. P. Atk. +20, M. Atk. +20 with each level. -->
+		<!-- P. Atk. +-1400@0:20, M. Atk. +-1400@0:20. <Stats depends on the character level>. Required level: 80. P. Atk. +20, M. Atk. +20 with each level. -->
 		<icon>icon.skill19132</icon>
 		<operateType>P</operateType>
 	</skill>

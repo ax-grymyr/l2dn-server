@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5100" toLevel="1" name="Cancel Capture B">
+		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -12,6 +13,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5101" toLevel="1" name="Cancel Capture C">
+		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -23,6 +25,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5102" toLevel="1" name="Cancel All Capture">
+		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -34,6 +37,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5103" toLevel="1" name="">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -107,6 +111,7 @@
 		</effects>
 	</skill>
 	<skill id="5106" toLevel="4" name="Capture A State">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -128,6 +133,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5107" toLevel="4" name="Capture B State">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -149,6 +155,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5108" toLevel="4" name="Capture C State">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -170,6 +177,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5109" toLevel="1" name="Presentation - Clan Gate">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -182,7 +190,8 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5110" toLevel="1" name="Cannon Fodder">
-		<!-- Bombards enemies that are either above you or protected by structures such as castle walls or doors. Consumes 5 Flash Gunpowder. -->
+		<!-- Bombards enemies that are either above you or protected by structures such as castle walls or doors. Consumes 4 Flash Gunpowder. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>1600</castRange>
 		<effectPoint>-100</effectPoint>
@@ -248,6 +257,7 @@
 	</skill>
 	<skill id="5111" toLevel="1" name="Big Bang">
 		<!-- Bombards enemies that are either above you or protected by structures such as castle walls or doors. Consumes 5 Flash Gunpowder. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>2000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -366,6 +376,7 @@
 		</effects>
 	</skill>
 	<skill id="5113" toLevel="12" name="Buff Dispel">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>6000</hitTime>
@@ -413,7 +424,7 @@
 		</effects>
 	</skill>
 	<skill id="5114" toLevel="12" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -482,7 +493,7 @@
 		</effects>
 	</skill>
 	<skill id="5115" toLevel="9" name="Cubic Hate">
-		<!-- Draw enemy's attention. -->
+		<!-- Draws enemies' attention to you. -->
 		<icon>icon.skill0100</icon>
 		<effectPoint>
 			<value level="1">-9585</value>
@@ -503,12 +514,11 @@
 			<value level="5">76</value>
 			<value level="6">78</value>
 			<value level="7">80</value>
-			<value level="8">81</value>
-			<value level="9">82</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
 		</magicLevel>
 		<operateType>A1</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -521,14 +531,13 @@
 		<!-- Temporarily inflicted with Hold and unable to move. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>15</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
-		<activateRate>70</activateRate>
+		<activateRate>100</activateRate>
 		<basicProperty>MAGIC</basicProperty>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>1</lvlBonusRate>
 		<magicLevel>
 			<value level="1">62</value>
 			<value level="2">66</value>
@@ -537,12 +546,11 @@
 			<value level="5">76</value>
 			<value level="6">78</value>
 			<value level="7">80</value>
-			<value level="8">81</value>
-			<value level="9">82</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
 		</magicLevel>
 		<operateType>A2</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
 		<trait>HOLD</trait>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -586,6 +594,7 @@
 		</effects>
 	</skill>
 	<skill id="5118" toLevel="1" name="Cancel Sailren Use">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2500</hitTime>
@@ -663,6 +672,7 @@
 		</effects>
 	</skill>
 	<skill id="5121" toLevel="1" name="Presentation - Corpse Revival">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -672,7 +682,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5122" toLevel="1" name="Sailren Use Might">
-		<!-- P. Atk. +50%. -->
+		<!-- Increases P. Atk. by 50%. -->
 		<icon>icon.skill4028</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
@@ -726,6 +736,7 @@
 		</effects>
 	</skill>
 	<skill id="5124" toLevel="1" name="Anti-music">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>80</magicLevel>
@@ -795,7 +806,7 @@
 		</effects>
 	</skill>
 	<skill id="5127" toLevel="1" name="Recover Momentum">
-		<!-- Maximizes P. Atk. and Momentum+1 every 5 sec. -->
+		<!-- Maximizes P. Atk. and increases Momentum by 1 every 5 sec. -->
 		<icon>icon.skill0458</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7</abnormalTime>
@@ -886,6 +897,7 @@
 		</effects>
 	</skill>
 	<skill id="5130" toLevel="1" name="Volcano">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<attributeType>FIRE</attributeType>
 		<attributeValue>20</attributeValue>
@@ -906,6 +918,7 @@
 		</effects>
 	</skill>
 	<skill id="5131" toLevel="1" name="Tsunami">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<attributeType>WATER</attributeType>
 		<attributeValue>20</attributeValue>
@@ -926,6 +939,7 @@
 		</effects>
 	</skill>
 	<skill id="5132" toLevel="1" name="Cyclone">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<attributeType>WIND</attributeType>
 		<attributeValue>20</attributeValue>
@@ -946,6 +960,7 @@
 		</effects>
 	</skill>
 	<skill id="5133" toLevel="1" name="Gehenna">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<attributeType>DARK</attributeType>
 		<attributeValue>20</attributeValue>
@@ -1004,7 +1019,8 @@
 		</effects>
 	</skill>
 	<skill id="5135" toLevel="6" name="Slash">
-		<!-- Inflicts damage on the enemy with $s1 Power. -->
+		<!-- Inflicts damage on the enemy with 8264 Power. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1047,7 +1063,8 @@
 		</effects>
 	</skill>
 	<skill id="5136" toLevel="6" name="Spin Slash">
-		<!-- Inflicts damage on the enemy with $s1 Power. -->
+		<!-- Inflicts damage on the enemy with 4132 Power. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>733</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1139,7 +1156,7 @@
 		</effects>
 	</skill>
 	<skill id="5138" toLevel="6" name="Whiplash">
-		<!-- Attack of Magnus the Unicorn stuns target for 15 sec. -->
+		<!-- Attack of Magnus the Unicorn stuns a target for 15 sec. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -1195,7 +1212,8 @@
 		</effects>
 	</skill>
 	<skill id="5139" toLevel="6" name="Tidal Wave">
-		<!-- Inflicts magic damage on the enemy with $s1 Power added to M. Atk. -->
+		<!-- Inflicts magic damage on the enemy with 228 power. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
@@ -1315,7 +1333,8 @@
 		</effects>
 	</skill>
 	<skill id="5141" toLevel="6" name="Dicing Death">
-		<!-- Inflicts damage on the enemy with $s1 Power. Has a chance to cancel target. -->
+		<!-- Inflicts damage on the enemy with 8264 Power. Has a chance to cancel target. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1354,7 +1373,8 @@
 		</effects>
 	</skill>
 	<skill id="5142" toLevel="6" name="Corpse Burst">
-		<!-- Inflicts magic damage on the enemy with $s1 Power added to M. Atk. -->
+		<!-- Inflicts magic damage on the enemy with 228 Power added to M. Atk. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1409,6 +1429,7 @@
 		</effects>
 	</skill>
 	<skill id="5143" toLevel="1" name="Sailren Use Blow">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<coolTime>660</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -1425,20 +1446,6 @@
 				<power>39544</power>
 				<chanceBoost>1150</chanceBoost>
 			</effect>
-		</effects>
-	</skill>
-	<skill id="5144" toLevel="1" name="Mirage">
-		<castRange>900</castRange>
-		<effectRange>1400</effectRange>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>79</magicLevel>
-		<operateType>A1</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="TargetCancel" />
 		</effects>
 	</skill>
 	<skill id="5145" toLevel="1" name="Day of Doom">
@@ -1641,7 +1648,7 @@
 		</effects>
 	</skill>
 	<skill id="5149" toLevel="10" name="Recharge">
-		<!-- Active: Restores MP. Power $s1. -->
+		<!-- In case of success: Restores MP. Power 33. -->
 		<icon>icon.skill3080</icon>
 		<hitTime>6000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1681,7 +1688,7 @@
 		</effects>
 	</skill>
 	<skill id="5150" toLevel="10" name="Blessed Soul">
-		<!-- In case of success: Max. MP +$s1 for a certain amount of time. -->
+		<!-- In case of success: Max. MP +16 for a certain amount of time. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -1765,7 +1772,7 @@
 		</effects>
 	</skill>
 	<skill id="5152" toLevel="10" name="Ritual">
-		<!-- Active: Restores CP. Power $s1. -->
+		<!-- In case of success: Restores CP. Power 264. -->
 		<icon>icon.skill3080</icon>
 		<hitTime>5000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -1806,7 +1813,7 @@
 		</effects>
 	</skill>
 	<skill id="5153" toLevel="10" name="Cheer">
-		<!-- In case of success: Max. CP +$s1 for a certain amount of time. -->
+		<!-- In case of success: Max. CP +24 for a certain amount of time. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -1960,8 +1967,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5157" toLevel="10" name="Duel Might">
-		<!-- In case of success: Increases P. Atk. in PvP for a certain amount of time. -->
+	<skill id="5157" toLevel="10" name="Power in Duel">
+		<!-- In case of success: Increases PvP Damage for a certain amount of time. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2108,8 +2115,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5160" toLevel="10" name="Duel Weakness">
-		<!-- In case of success: Decreases enemy's P. Atk. in PvP for a certain amount of time. -->
+	<skill id="5160" toLevel="10" name="Weakness in Duel">
+		<!-- In case of success: Decreases enemy's PvP Damage for a certain amount of time. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2352,7 +2359,7 @@
 		</effects>
 	</skill>
 	<skill id="5165" toLevel="15" name="Charm">
-		<!-- Active: Decreases the target's urge to attack. Power $s1. -->
+		<!-- In case of success: Decreases the target's urge to attack. Power 219 -->
 		<icon>icon.skill3080</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
@@ -2404,8 +2411,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5166" toLevel="15" name="Decrease Speed">
-		<!-- In case of success: Momentarily target's Speed -30%. -->
+	<skill id="5166" toLevel="15" name="Slow">
+		<!-- In case of success: Immediately decreases the target's Speed. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -2449,7 +2456,7 @@
 		</effects>
 	</skill>
 	<skill id="5167" toLevel="15" name="Winter">
-		<!-- In case of success: Momentarily target's Atk. Spd. -23%. -->
+		<!-- In case of success: Immediately decreases the target's Atk. Spd. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -2531,7 +2538,7 @@
 		</effects>
 	</skill>
 	<skill id="5169" toLevel="10" name="Hold">
-		<!-- Active: Momentarily inflicts Hold on the target. Chance to father be inflicted with Hold greatly decreases while effect lasts. -->
+		<!-- In case of success: Temporarily inflicts Hold on the target. The chance to further be inflicted with Hold greatly decreases while the effect is active. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -2612,8 +2619,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5171" toLevel="10" name="Paralyze">
-		<!-- Active: Momentarily paralyzes the target. -->
+	<skill id="5171" toLevel="10" name="Paralysis">
+		<!-- In case of success: Temporarily paralyzes the target. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -2651,7 +2658,7 @@
 		</effects>
 	</skill>
 	<skill id="5172" toLevel="10" name="Medusa">
-		<!-- Active: Momentarily petrifies the target. -->
+		<!-- In case of success: Temporarily petrifies the target. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -2690,7 +2697,7 @@
 		</effects>
 	</skill>
 	<skill id="5173" toLevel="10" name="Fear">
-		<!-- Active: Momentarily inflicts Fear on the target, causing it to flee. -->
+		<!-- In case of success: Inflicts Fear on the target, causing it to flee. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -2804,7 +2811,7 @@
 					<value level="14">83</value>
 					<value level="15">88</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2884,12 +2891,12 @@
 					<value level="14">71</value>
 					<value level="15">72</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5176" toLevel="10" name="Silence">
-		<!-- Active: Momentarily blocks the target's magic skills. -->
+		<!-- In case of success: Temporarily prevents the target from using M. skills. -->
 		<icon>icon.skill3080</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -3008,7 +3015,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5182" toLevel="1" name="Blessing of Protection">
-		<!-- Keeps you safe from an attack by a chaotic character who is more than 10 levels apart from you. -->
+		<!-- Keeps you safe from attacks of chaotic characters who are stronger than you by 10 levels or more. The effect disappears if you are attacking or using skills. -->
 		<icon>icon.skill0194</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7200</abnormalTime>
@@ -3030,6 +3037,7 @@
 		</effects>
 	</skill>
 	<skill id="5184" toLevel="1" name="Dragon Breath">
+		<icon>icon.skill0000</icon>
 		<affectRange>1200</affectRange>
 		<castRange>600</castRange>
 		<coolTime>2000</coolTime>
@@ -3046,6 +3054,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5185" toLevel="1" name="Presentation - Magic-type Guard">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-655</effectPoint>
 		<effectRange>1400</effectRange>
@@ -3107,7 +3116,7 @@
 		</effects>
 	</skill>
 	<skill id="5187" toLevel="4" name="Pet Vampiric Rage">
-		<!-- Temporarily increases the ability to restore some HP from the damage inflicted on the enemy temporarily with a certain probability. -->
+		<!-- Temporarily increases the amount of HP restored while absorbing part of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>
 			<value level="1">1</value>

@@ -7,23 +7,19 @@
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
 		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
-		<attributeType>DARK</attributeType>
-		<attributeValue>20</attributeValue>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLevel>80</magicLevel>
 		<operateType>A2</operateType>
 		<effectPoint>-1000</effectPoint>
-		<basicProperty>MAGIC</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<lvlBonusRate>1</lvlBonusRate>
 		<isDebuff>true</isDebuff>
-		<targetType>ENEMY</targetType>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="DamOverTime">
 				<power>300</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>

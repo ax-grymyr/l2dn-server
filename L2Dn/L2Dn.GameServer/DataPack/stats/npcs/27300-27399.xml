@@ -15,7 +15,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="8.5" mp="1507" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
@@ -66,7 +66,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="8.5" mp="1507" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
@@ -111,7 +111,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -151,7 +151,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -191,7 +191,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -231,7 +231,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -271,7 +271,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -311,7 +311,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -351,7 +351,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="229" /> <!-- Kris -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="799.3549113" magical="623.83518" random="10" critical="8" accuracy="0" attackSpeed="289" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -391,7 +391,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="229" /> <!-- Kris -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="799.3549113" magical="623.83518" random="10" critical="8" accuracy="0" attackSpeed="289" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="293.7695795" magical="252.90333" evasion="10" />
@@ -430,7 +430,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -469,7 +469,7 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
@@ -508,7 +508,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2975" hpRegen="76.5" mp="1742" mpRegen="3" />
 			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="293.7695795" magical="252.90333" evasion="10" />
@@ -552,9 +552,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="161" /> <!-- Silver Axe -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="8.5" mp="1507" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="815.37145" magical="556.793" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="275.2168675" magical="236.93149" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -598,9 +598,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="161" /> <!-- Silver Axe -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="8.5" mp="1507" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="815.37145" magical="556.793" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="275.2168675" magical="236.93149" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -644,9 +644,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="161" /> <!-- Silver Axe -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="8.5" mp="1507" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="815.37145" magical="556.793" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="275.2168675" magical="236.93149" evasion="10" />
 			<speed>
 				<walk ground="50" />
@@ -685,9 +685,9 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="6.5" mp="1507" mpRegen="2.4" />
-			<attack physical="388.11142" magical="265.02979" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="190.09077" magical="163.64727" evasion="10" />
 			<speed>
 				<walk ground="20" />
@@ -723,9 +723,9 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="251.5285745" magical="216.53847" evasion="10" />
 			<speed>
 				<walk ground="60" />
@@ -761,7 +761,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="5.5" mp="1507" mpRegen="2.1" />
 			<attack physical="248.0526" magical="169.38777" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="182.18816" magical="133.31739" />
@@ -799,7 +799,7 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="2.5" mp="1507" mpRegen="1.2" />
 			<attack physical="37.82932" magical="25.83252" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="81.34791" magical="59.52687" />
@@ -838,9 +838,9 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="13.43" mp="1507" mpRegen="3.09" />
-			<attack physical="6300" magical="4200" random="50" critical="1" accuracy="9" attackSpeed="300" type="FIST" range="80" distance="80" width="120" />
+			<attack physical="6300" magical="4200" random="10" critical="1" accuracy="9" attackSpeed="300" type="FIST" range="80" distance="80" width="120" />
 			<defence physical="3500" magical="4200" />
 			<speed>
 				<walk ground="60" />
@@ -872,9 +872,9 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="291" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2823" hpRegen="13.43" mp="1507" mpRegen="3.09" />
-			<attack physical="36.4" magical="57.4" random="50" critical="1" accuracy="9" attackSpeed="300" type="FIST" range="80" distance="80" width="120" />
+			<attack physical="36.4" magical="57.4" random="10" critical="1" accuracy="9" attackSpeed="300" type="FIST" range="80" distance="80" width="120" />
 			<defence physical="70" magical="50.4" />
 			<speed>
 				<walk ground="30" />

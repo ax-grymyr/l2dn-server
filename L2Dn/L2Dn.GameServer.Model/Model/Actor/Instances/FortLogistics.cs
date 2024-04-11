@@ -83,7 +83,7 @@ public class FortLogistics : Merchant
 				if (player.isClanLeader())
 				{
 					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supplylvl.htm", player);
-					htmlContent.Replace("%supplylvl%", getFort().getSupplyLvL().ToString());
+					htmlContent.Replace("%supplylvl%", getFort().getSupplyLevel().ToString());
 				}
 				else
 				{
@@ -110,7 +110,7 @@ public class FortLogistics : Merchant
 				}
 				else
 				{
-					int level = getFort().getSupplyLvL();
+					int level = getFort().getSupplyLevel();
 					if (level > 0)
 					{
 						// spawn box
@@ -120,7 +120,7 @@ public class FortLogistics : Merchant
 						box.setCurrentMp(box.getMaxMp());
 						box.setHeading(0);
 						box.spawnMe(getX() - 23, getY() + 41, getZ());
-						getFort().setSupplyLvL(0);
+						getFort().setSupplyLevel(0);
 						getFort().saveFortVariables();
 						
 						htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supply.htm", player);

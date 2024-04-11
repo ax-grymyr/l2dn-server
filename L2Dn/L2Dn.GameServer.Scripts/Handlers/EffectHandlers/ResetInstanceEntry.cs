@@ -42,6 +42,8 @@ public class ResetInstanceEntry: AbstractEffect
 		foreach (int instanceId in _instanceId)
 		{
 			InstanceManager.getInstance().deleteInstanceTime(effector.getActingPlayer(), instanceId);
+			String instanceName = InstanceManager.getInstance().getInstanceName(instanceId);
+			effector.sendMessage(instanceName + " entry has been reset.");
 		}
 	}
 }

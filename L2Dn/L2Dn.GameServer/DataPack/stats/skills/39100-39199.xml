@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="39100" toLevel="1" name="Agathion Teleport - Hunters Village">
-		<!-- Teleports to Hunters Village. -->
+		<!-- Teleports to Hunter's Village. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<hitTime>3000</hitTime>
@@ -38,7 +39,7 @@
 		</effects>
 	</skill>
 	<skill id="39102" toLevel="1" name="Secret Investigation">
-		<!-- Protected from preemptive attacks from monsters. -->
+		<!-- Makes you invisible for monsters. -->
 		<icon>icon.skill10518</icon>
 		<operateType>T</operateType>
 		<mpConsume>1</mpConsume>
@@ -50,13 +51,25 @@
 		<effects>
 			<effect name="ChameleonRest">
 				<power>2</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="39103" toLevel="1" name="Warrior's Quick Healing Potion">
+	<skill id="39103" toLevel="1" name="Hero's HP Recovery Potion">
 		<icon>icon.etc_reagent_white_i00</icon>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="HpCpHeal">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="39104" toLevel="1" name="Hero Cube - 7-day">
 		<icon>icon.sa_cube</icon>
@@ -64,21 +77,25 @@
 	</skill>
 	<skill id="39105" toLevel="1" name="Teleport: Dragon Valley Bridge">
 		<!-- Teleports to Dragon Valley Bridge. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="39106" toLevel="1" name="Teleport: Antharas' Lair">
+	<skill id="39106" toLevel="1" name="Scroll of Escape: Antharas' Lair">
 		<!-- Teleports to Antharas' Lair. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="39107" toLevel="1" name="Teleport: Entrance to Cruma Tower">
+	<skill id="39107" toLevel="1" name="Scroll of Escape: Entrance to Cruma Tower">
 		<!-- Teleports to Entrance to Cruma Tower. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
-	<skill id="39108" toLevel="1" name="Teleport: Entrance to Orc Barracks">
+	<skill id="39108" toLevel="1" name="Scroll of Escape: Entrance to Orc Barracks">
 		<!-- Teleports to Entrance to Orc Barracks. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
@@ -86,7 +103,7 @@
 		<icon>icon.etc_scroll_of_resurrection_i01</icon>
 		<castRange>400</castRange>
 		<effectPoint>1</effectPoint>
-		<effectRange>600</effectRange>
+		<effectRange>900</effectRange>
 		<hitTime>1000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -99,6 +116,9 @@
 		<affectScope>SINGLE</affectScope>
 		<conditions>
 			<condition name="OpResurrection" />
+			<condition name="TargetMyParty">
+				<includeMe>false</includeMe>
+			</condition>
 		</conditions>
 		<effects>
 			<effect name="Resurrection">
@@ -108,10 +128,12 @@
 	</skill>
 	<skill id="39110" toLevel="1" name="Teleport Device - Entrance to Enchanted Valley">
 		<!-- Teleports to Entrance to Enchanted Valley. Cooldown - 60 min. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>20000</hitTime>
 	</skill>
 	<skill id="39111" toLevel="1" name="Assistant Roa's Gift">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -123,7 +145,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="39113" toLevel="1" name="Golden Mermaid's Tears">
-		<!-- For 1 h., Acquired XP/ SP +50%. Effect remains after death. -->
+		<!-- For 1 h., Acquired XP/ SP +50%. The effect remains after death. -->
 		<icon>icon.general_fuel_i00</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -147,17 +169,17 @@
 		</effects>
 	</skill>
 	<skill id="39114" toLevel="3" name="Refined Queen Ant's Ring">
-		<!-- Poison Resistance and Atk. Rate +20%, P./ M. Accuracy +3, P./ M. Atk. +7%, P. Critical Damage +10%, M. Critical Damage +5%. -->
+		<!-- Poison Resistance/ Atk. Rate +20%, P./ M. Accuracy +3, P./ M. Atk. +7%, P. Critical Damage +10%, M. Critical Damage +5%. -->
 		<icon>icon.accessory_ring_of_queen_ant_i03</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39115" toLevel="3" name="Refined Orfen's Earring">
-		<!-- Hold Chance and Resistance +20%, mental attacks Chance and Resistance +15%, Received Healing +6%, MP Skill consumption -5%. With some probability, restores MP by inflicting damage to a target. -->
+		<!-- Hold Resistance/ Atk. Rate +20%, Mental Resistance/ Atk. Rate +15%, Received Healing +6%, Skill MP Consumption -5%. With some probability to recover part of the damage inflicted to the target as MP. -->
 		<icon>icon.accessory_earring_of_orfen_i03</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="39116" toLevel="3" name="Refined Ring of Core">
-		<!-- Mental Resistance and Atk. Rate +20%, P./ M. Evasion +3, Received Damage -6%. -->
+		<!-- Mental Resistance/ Atk. Rate +20%, P./ M. Evasion +3, Received Damage -6%. -->
 		<icon>icon.accessory_ring_of_core_i03</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -206,12 +228,14 @@
 	</skill>
 	<skill id="39120" toLevel="1" name="Teleport: Giran Harbor">
 		<!-- Teleports to Giran Harbor. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="39121" toLevel="1" name="Teleport: Gludin Harbor">
 		<!-- Teleports to Gludin Harbor. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>60000</reuseDelay>
@@ -222,7 +246,7 @@
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
-	<skill id="39123" toLevel="1" name="Melissa's Healing Potion">
+	<skill id="39123" toLevel="1" name="Maliss' HP Recovery Potion">
 		<icon>icon.etc_bm_hero_red_potion</icon>
 		<operateType>A1</operateType>
 	</skill>
@@ -647,7 +671,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="39134" toLevel="1" name="Rice Cake of Flaming Fighting Spirit - Event">
-		<!-- Acquired XP/ SP +30% for 3 min. Cooldown - 10 min. Effect remains after death. -->
+		<!-- For 20 min., Acquired XP/ SP +30%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.bm_rice_cake_i01</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -677,6 +701,7 @@
 	</skill>
 	<skill id="39136" toLevel="1" name="Chic Silver Chapeau Teleport - 30-day">
 		<!-- Teleports character to the nearest village. Cooldown - 2 h. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
 		<reuseDelay>7200000</reuseDelay>
@@ -688,14 +713,14 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="39138" toLevel="1" name="Blue Dynasty Transformation">
-		<!-- Armor Appearance changes to "Blue Dynasty" for 1 h. -->
+		<!-- The armor appearance changes to Blue Dynasty for 1 h. -->
 		<icon>icon.general_stone_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="39139" toLevel="1" name="Transformation into Red Zubei">
-		<!-- Armor Appearance changes to "Red Zubei" for 1 h. -->
+		<!-- The armor appearance changes to Red Zubei for 1 h. -->
 		<icon>icon.general_stone_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -726,7 +751,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39144" toLevel="1" name="Special Pirate Fruit">
-		<!-- For 20 min., P./ M. Atk. +7%, P./ M. Def. +10%, Max. HP/ CP/ MP +15%, HP/ MP Recovery Bonus +20%. With a certain chance, converts 3% of melee damage dealt into HP. Cooldown is 1 min. Effect remains after death. -->
+		<!-- For 20 min., P./ M. Atk. +7%, P./ M. Def. +10%, Max HP/ MP/ CP +15%, HP/ MP Recovery Bonus +20%. With a certain chance, absorbs 3% of the inflicted melee damage as HP. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.etc_codran_i09</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -922,13 +947,13 @@
 						<item id="49683" count="1" /> <!-- Talisman of Baium -->
 					</item>
 					<item chance="0.01">
-						<item id="49682" count="1" /> <!-- Baium? Soul -->
+						<item id="49682" count="1" /> <!-- Baium's Soul -->
 					</item>
 					<item chance="70.0">
-						<item id="49676" count="1" /> <!-- Talisman of Insolence I -->
+						<item id="49676" count="1" /> <!-- Talisman of Insolence Lv. 1 -->
 					</item>
 					<item chance="20.0">
-						<item id="49677" count="1" /> <!-- Talisman of Insolence II -->
+						<item id="49677" count="1" /> <!-- Talisman of Insolence Lv. 2 -->
 					</item>
 					<item chance="5.0">
 						<item id="49685" count="1" /> <!-- Energy of Insolence -->
@@ -944,6 +969,7 @@
 		</effects>
 	</skill>
 	<skill id="39150" toLevel="1" name="Sayha's Holy Water">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>600000</reuseDelay>
 	</skill>
@@ -1205,7 +1231,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="39155" toLevel="1" name="Life Control Tower's Scroll of Blessing">
-		<!-- For 60 min., Max. HP/ MP +5%, Paralysis Resistance +15, Mental Attack Resistance +15, and Acquired XP/ SP +30%. -->
+		<!-- For 60 min., Max HP/ MP +5%, Paralysis/ Mental Resistance +15, acquired XP/ SP +30%. -->
 		<icon>icon.etc_aidcharm_cancel_valbreath_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -1213,7 +1239,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="39156" toLevel="1" name="Scroll of Heavenly Protection">
-		<!-- For 20 min., Paralysis Resistance +15, Mental Attack Resistance +10. -->
+		<!-- For 20 min., Paralysis Resistance +15, Mental Resistance +10. -->
 		<icon>icon.scroll_of_verification_i08</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1254,10 +1280,10 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="90">
-						<item id="49767" count="1" />
+						<item id="49767" count="1" /> <!-- Broken Celestial Shard -->
 					</item>
 					<item chance="10">
-						<item id="49759" count="1" />
+						<item id="49759" count="1" /> <!-- Celestial Shard -->
 					</item>
 				</items>
 			</effect>
@@ -1270,6 +1296,7 @@
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="39159" toLevel="1" name="Sayha's Energy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
@@ -1284,7 +1311,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="39162" toLevel="1" name="Special Pirate Fruit - Attack">
-		<!-- P./ M. Atk. +7%, P./ M. Def. +10%, Max. HP/ CP/ MP +15%, HP/ MP Recovery Bonus +20%. With a certain chance, converts 3% of damage dealt into HP. PvP damage +5%. Cooldown is 1 min. Effect remains after death. Duration is 20 min. -->
+		<!-- For 20 min., P./ M. Atk. +7%, P./ M. Def. +10%, Max HP/ MP/ CP +15%, HP/ MP Recovery Bonus +20%, PvP Damage +5%. With a certain chance, absorbs 3% of the inflicted damage as HP. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.etc_codran_i09</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1361,7 +1388,7 @@
 		</effects>
 	</skill>
 	<skill id="39163" toLevel="1" name="Special Pirate Fruit - Defense">
-		<!-- P./ M. Atk. +7%, P./ M. Def. +10%, Max. HP/ CP/ MP +15%, HP/ MP Recovery Bonus +20%. With a certain chance, converts 3% of damage dealt into HP. PvP damage +5%. Cooldown is 1 min. Effect remains after death. Duration is 20 min. -->
+		<!-- P./ M. Atk. +7%, P./ M. Def. +10%, Max. HP/ CP/ MP +15%, HP/ MP Recovery Bonus +20%. Has a chance of absorbing 3% of damage inflicted on enemy as HP. PvP damage +5%. Cooldown is 1 min. Effect remains after death. Duration is 20 min. -->
 		<icon>icon.etc_codran_i09</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
@@ -1437,8 +1464,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="39164" toLevel="1" name="Scroll of Mood Melody">
-		<!-- For 20 min., grants the following effects: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk, Death Whisper, and Vampiric Rage. -->
+	<skill id="39164" toLevel="1" name="Mood Melody">
+		<!-- For 20 min., grants the following effects: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk, Death Whisper, and Vampiric Rage. Effect remains after death. -->
 		<icon>icon.bm_magmeld</icon>
 		<operateType>A1</operateType>
 		<itemConsumeId>49772</itemConsumeId>
@@ -2081,7 +2108,7 @@
 		</effects>
 	</skill>
 	<skill id="39185" toLevel="1" name="Support Blow">
-		<!-- Inflicts 50 damage. Can be used only in PvP. -->
+		<!-- Strikes the target with 50 power. PvP only. -->
 		<icon>icon.ev_12th_weapon</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -2126,20 +2153,23 @@
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="39191" toLevel="1" name="Sayha's Blessing">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>600000</reuseDelay>
 	</skill>
 	<skill id="39192" toLevel="1" name="Sayha's Silver Light Blessing">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>600000</reuseDelay>
 	</skill>
 	<skill id="39193" toLevel="1" name="Sayha's Golden Light Blessing">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>600000</reuseDelay>
 	</skill>
-	<skill id="39194" toLevel="1" name="Sayha's Gust">
-		<!-- Momentum consumption speed while hunting +100%, acquired XP/ SP +100% for 10 min. Buff does not disappear after death. Cooldown: 10 min. -->
-		<icon>icon.skill11137</icon>
+	<skill id="39194" toLevel="1" name="Sayha's Storm Lv. 1">
+		<!-- For 20 min., Sayha's Grace Consumption +100%, Acquired XP/ SP +100%. Cooldown: 1 min. The effect remains after death. -->
+		<icon>icon.bm_sayha_storm</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>600000</reuseDelay>
@@ -2159,14 +2189,14 @@
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
-	<skill id="39197" toLevel="1" name="Land Dragon Pendant Chest +10">
+	<skill id="39197" toLevel="1" name="+10 Land Dragon Pendant Chest">
 		<icon>icon.etc_treasure_box_i04</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
-	<skill id="39198" toLevel="1" name="Melissa's MP Recovery Potion">
+	<skill id="39198" toLevel="1" name="Maliss' MP Recovery Potion">
 		<icon>icon.etc_bm_hero_red_potion</icon>
 		<blockedInOlympiad>true</blockedInOlympiad>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -2186,6 +2216,59 @@
 	</skill>
 	<skill id="39199" toLevel="1" name="Hero's Wondrous Cubic - 7-day">
 		<icon>icon.sa_cube</icon>
+		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
+		<reuseDelay>-1</reuseDelay>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="16">
+						<item id="49487" count="2"/> <!-- Soulshot Ticket -->
+					</item>
+					<item chance="4">
+						<item id="49772" count="1"/> <!-- Scroll of Mood Melody -->
+					</item>
+					<item chance="16.49">
+						<item id="49488" count="5"/> <!-- Major Healing Potion -->
+					</item>
+					<item chance="20">
+						<item id="35669" count="1"/> <!-- Angel Cat's Blessing -->
+					</item>
+					<item chance="5">
+						<item id="49533" count="1"/> <!-- Quick Hero Healing Potion -->
+					</item>
+					<item chance="10">
+						<item id="49542" count="1"/> <!-- Improved Scroll of Resurrection -->
+					</item>
+					<item chance="14.5">
+						<item id="49536" count="1"/> <!-- Box of Scroll of Escape to the Base -->
+					</item>
+					<item chance="2">
+						<item id="49489" count="3"/> <!-- Parts of Enchantment Scrolls Chest -->
+					</item>
+					<item chance="10">
+						<item id="49416" count="1"/> <!-- Blade Spirit -->
+					</item>
+					<item chance="0.01">
+						<item id="49859" count="1"/> <!-- Weapon Exchange Coupon -->
+					</item>
+					<item chance="2">
+						<item id="49490" count="1"/> <!-- Fishing Kit -->
+					</item>
+				</items>
+			</effect>
+		</effects>
 	</skill>
 </list>

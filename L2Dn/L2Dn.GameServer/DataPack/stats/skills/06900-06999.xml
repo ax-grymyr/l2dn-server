@@ -22,7 +22,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="6903" toLevel="1" name="84 Lv. Raid Boss">
-		<!-- A monsters summoned from Purgatory by the demon Maluk in exchange for one finger. As part of their agreement, Maluk presented an endless supply of hunting prey. The Spike Slasher accepted the proposal and came above ground with its subordinates in tow from Purgatory. -->
+		<!-- A monster summoned from Purgatory by the demon Maluk in exchange for one finger. As part of their agreement, Maluk presented an endless supply of hunting prey. The Spike Slasher accepted the proposal and came above ground with its subordinates in tow from Purgatory. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -78,7 +78,7 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6911" toLevel="1" name="Greeting">
+	<skill id="6911" toLevel="1" name="Cheer">
 		<!-- Shows the game master's greeting. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>A1</operateType>
@@ -90,7 +90,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6912" toLevel="1" name="Stigma Aftermath">
-		<!-- Antharas' Stigma Aftermath. For 10 sec., -500 HP and 300 MP per sec. -->
+		<!-- Antharas' Stigma Aftermath. For 10 sec., decreases 500 HP and 300 MP per second. -->
 		<icon>icon.skill5860</icon>
 		<operateType>A2</operateType>
 		<effectPoint>-10000</effectPoint>
@@ -111,39 +111,8 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="6913" toLevel="1" name="Challenge for Fate">
-		<!-- As a result of the challenge, for 15 sec., P. Def. +360 and M. Def. +270. -->
-		<icon>icon.skill0985</icon>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<blockedInOlympiad>false</blockedInOlympiad>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>83</magicLevel>
-		<operateType>A2</operateType>
-		<effectPoint>673</effectPoint>
-		<abnormalType>KNIGHT_SHIELD</abnormalType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<affectRange>1000</affectRange>
-		<reuseDelay>60000</reuseDelay>
-		<isMagic>4</isMagic>
-		<targetType>SELF</targetType>
-		<affectScope>PARTY</affectScope>
-		<affectObject>FRIEND</affectObject>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>270</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>360</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="6914" toLevel="10" name="Haste">
-		<!-- Atk. Spd. +$s1 -->
+		<!-- Atk. Spd. +10%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
@@ -158,7 +127,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="6915" toLevel="10" name="Acumen">
-		<!-- Casting Spd. +$s1 -->
+		<!-- Casting Spd. +10%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<abnormalType>CASTING_TIME_DOWN</abnormalType>
@@ -219,6 +188,7 @@
 		</conditions>
 	</skill>
 	<skill id="6919" toLevel="1" name="Challenge Acceptance">
+		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<abnormalType>MORALE_UP</abnormalType>
 		<basicProperty>MAGIC</basicProperty>
@@ -232,75 +202,8 @@
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="6920" toLevel="1" name="Collector's Fortune">
-		<!-- A collector's luck. P. Atk. +15%, P. Critical Rate +10%, P. Critical Damage +10%, Atk. Spd. + 3%, and Speed +5. -->
-		<icon>BranchSys2.icon.skill0952</icon>
-		<abnormalTime>10</abnormalTime>
-		<blockedInOlympiad>false</blockedInOlympiad>
-		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicLevel>0</magicLevel>
-		<operateType>A2</operateType> <!-- FIXME: value unconfirmed -->
-		<abnormalType>PATIENCE</abnormalType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<abnormalLevel>1</abnormalLevel>
-		<isMagic>4</isMagic>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PAtk">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>5</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>3</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="6921" toLevel="1" name="Penetrating Attack">
-		<!-- P. Def. decreases temporarily. -->
-		<icon>icon.skill0122</icon>
-		<abnormalTime>5</abnormalTime>
-		<activateRate>80</activateRate>
-		<basicProperty>MAGIC</basicProperty>
-		<blockedInOlympiad>false</blockedInOlympiad>
-		<effectPoint>-100</effectPoint>
-		<operateType>A2</operateType>
-		<mpConsume>1</mpConsume>
-		<abnormalType>PD_DOWN</abnormalType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<effectRange>1000</effectRange>
-		<lvlBonusRate>2</lvlBonusRate>
-		<magicLevel>80</magicLevel>
-		<abnormalLevel>3</abnormalLevel>
-		<isMagic>1</isMagic>
-		<isDebuff>true</isDebuff>
-		<castRange>500</castRange>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="PhysicalDefence">
-				<amount>-23</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="6922" toLevel="3" name="Adventurer's Might">
-		<!-- P. Atk. +$s1 -->
+		<!-- P. Atk. +8% -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -312,7 +215,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6923" toLevel="3" name="Adventurer's Empower">
-		<!-- M. Atk. +$s1. -->
+		<!-- M. Atk. +55%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -324,7 +227,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6924" toLevel="3" name="Adventurer's Shield">
-		<!-- P. Def. +$s1 -->
+		<!-- P. Def. +8%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -336,7 +239,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6925" toLevel="2" name="Adventurer's Magic Barrier">
-		<!-- M. Def. +$s1. -->
+		<!-- M. Def. +23%. -->
 		<icon>icon.skill1036</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -347,7 +250,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6926" toLevel="6" name="Adventurer's Blessed Body">
-		<!-- Max HP +$s1 -->
+		<!-- Max HP +10%. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -362,7 +265,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6927" toLevel="6" name="Adventurer's Blessed Soul">
-		<!-- Max MP +$s1 -->
+		<!-- Max MP +10%. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -377,7 +280,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6928" toLevel="3" name="Adventurer's Focus">
-		<!-- P. Critical Rate +$s1. -->
+		<!-- P. Critical Rate +20%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -389,7 +292,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6929" toLevel="2" name="Adventurer's Wild Magic">
-		<!-- M. Critical Rate +$s1. -->
+		<!-- M. Critical Rate +1. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -400,7 +303,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6930" toLevel="2" name="Adventurer's Haste">
-		<!-- Atk. Spd. +$s1 -->
+		<!-- Atk. Spd. +15% -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -411,7 +314,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6931" toLevel="3" name="Adventurer's Acumen">
-		<!-- Casting Spd. +$s1 -->
+		<!-- Casting Spd. +15%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -423,7 +326,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6932" toLevel="4" name="Adventurer's Vampiric Rage">
-		<!-- Recovers as HP $s1 of the physical damage inflicted on the enemy with a certain probability. -->
+		<!-- With a certain chance, absorbs 6% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -436,7 +339,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6933" toLevel="2" name="Adventurer's Berserker Spirit">
-		<!-- P. Def. -$s1, M. Def. -$s2, P. Evasion -$s3, P. Atk. +$s4, M. Atk. +$s5, Atk. Spd. +$s6, Casting Spd. +$s7, Speed +$s8. -->
+		<!-- P. Def. -5%, M. Def. -10%, P. Evasion -2, P. Atk. +5%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -447,7 +350,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6934" toLevel="3" name="Adventurer's Death Whisper">
-		<!-- P. Critical Damage +$s1. -->
+		<!-- P. Critical Damage +25%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -459,7 +362,7 @@
 		<isMagic>1</isMagic>
 	</skill>
 	<skill id="6935" toLevel="2" name="Adventurer's Wind Walk">
-		<!-- Speed +$s1. -->
+		<!-- Speed +20. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<castRange>400</castRange>
@@ -469,7 +372,7 @@
 		</effectPoint>
 		<isMagic>1</isMagic>
 	</skill>
-	<skill id="6936" toLevel="2" name="Set Effect - Salamander Light Armor, 2-piece">
+	<skill id="6936" toLevel="2" name="Set Effect - Salamander Skin Light Armor, 2-piece">
 		<!-- Max MP +50. -->
 		<icon>icon.armor_t45_ul_i00</icon>
 		<operateType>P</operateType>
@@ -489,27 +392,27 @@
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="6940" toLevel="1" name="Set Effect - Medium's Robe, 2-piece">
+	<skill id="6940" toLevel="1" name="Set Effect - Medium's Robe Armor, 2-piece">
 		<!-- Casting Spd. +5%. -->
 		<icon>icon.armor_t58_u_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="6941" toLevel="1" name="Set Effect - Warrior's Heavy Armor, 2-piece">
+	<skill id="6941" toLevel="1" name="Set Effect - Warrior's Heavy Armor,2-piece">
 		<!-- P. Def. +3%. -->
 		<icon>icon.armor_t33_u_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="6942" toLevel="1" name="Set Effect - Warrior's Heavy Armor, 4-piece">
+	<skill id="6942" toLevel="1" name="Set Effect - Hero's Heavy Armor, 2-piece">
 		<!-- Max HP +270, M. Def. +5%, Stun Resistance +10%. -->
 		<icon>icon.armor_t62_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="6943" toLevel="1" name="Set Effect - Warrior's Light Armor, 4-piece">
+	<skill id="6943" toLevel="1" name="Set Effect - Hero's Light Armor, 4-piece">
 		<!-- M. Def. +5%, Stun Resistance +10%. -->
 		<icon>icon.armor_t45_ul_i00</icon>
 		<operateType>P</operateType>
 	</skill>
-	<skill id="6944" toLevel="1" name="Set Effect - Warrior's Robe, 5-piece">
+	<skill id="6944" toLevel="1" name="Set Effect - Hero's Robe Armor, 5-piece">
 		<!-- WIT +1, Max MP +171, P. Def. +5.26%, Paralysis Resistance +10%. -->
 		<icon>icon.armor_t57_u_i00</icon>
 		<operateType>P</operateType>
@@ -531,49 +434,64 @@
 		<effectPoint>100</effectPoint>
 	</skill>
 	<skill id="6950" toLevel="1" name="Lucky Enchant Stone: Save Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6951" toLevel="1" name="Lucky Enchant Stone: Save Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6952" toLevel="1" name="Lucky Enchant Stone: Save Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6953" toLevel="1" name="Lucky Enchant Stone: Save Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6954" toLevel="1" name="Lucky Enchant Stone: Protect Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6955" toLevel="1" name="Lucky Enchant Stone: Protect Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6956" toLevel="1" name="Lucky Enchant Stone: Protect Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6957" toLevel="1" name="Lucky Enchant Stone: Protect Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6958" toLevel="1" name="Lucky Enchant Stone: Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6959" toLevel="1" name="Lucky Enchant Stone: Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6960" toLevel="1" name="Lucky Enchant Stone: Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6961" toLevel="1" name="Lucky Enchant Stone: Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6962" toLevel="1" name="Giant's Lucky Enchant Stone (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="6963" toLevel="1" name="Blessed Lucky Enchant Stone (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="6964" toLevel="1" name="Eva's Enchant Scroll - Hair Accessory">
-		<!-- Enchants Hair Accessory. -->
+	<skill id="6964" toLevel="1" name="Scroll: Enchant Hair Accessory">
+		<!-- To Enchant Hair Accessory. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 </list>

@@ -258,7 +258,7 @@ public class FortManager : Merchant
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile(
 							"html/fortress/" + getId() + "-t" +
-							getFort().getFortFunction(Fort.FUNC_TELEPORT).getLvl() + ".htm", player); 
+							getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() + ".htm", player); 
 
 						sendHtmlMessage(player, htmlContent);
 					}
@@ -273,7 +273,7 @@ public class FortManager : Merchant
 					else
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile(
-							"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() + ".htm",
+							"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm",
 							player); 
 
 						htmlContent.Replace("%mp%", ((int)getCurrentMp()).ToString());
@@ -290,7 +290,7 @@ public class FortManager : Merchant
 					
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 					{
-						htmlContent.Replace("%xp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLvl().ToString()));
+						htmlContent.Replace("%xp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel().ToString()));
 					}
 					else
 					{
@@ -298,7 +298,7 @@ public class FortManager : Merchant
 					}
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 					{
-						htmlContent.Replace("%hp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLvl().ToString()));
+						htmlContent.Replace("%hp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel().ToString()));
 					}
 					else
 					{
@@ -306,7 +306,7 @@ public class FortManager : Merchant
 					}
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 					{
-						htmlContent.Replace("%mp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLvl().ToString()));
+						htmlContent.Replace("%mp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel().ToString()));
 					}
 					else
 					{
@@ -443,7 +443,7 @@ public class FortManager : Merchant
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLvl() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() == int.Parse(val))
 										{
 											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
 											htmlContent.Replace("%val%", val + "%");
@@ -501,7 +501,7 @@ public class FortManager : Merchant
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLvl() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() == int.Parse(val))
 										{
 											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
 
@@ -553,7 +553,7 @@ public class FortManager : Merchant
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLvl() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() == int.Parse(val))
 										{
 											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
 
@@ -608,7 +608,7 @@ public class FortManager : Merchant
 							if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 							{
 								htmlContent.Replace("%hp_recovery%",
-									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLvl() +
+									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() +
 									"%</font> (<font color=\"FFAABB\">" +
 									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLease() + "</font>Adena /" +
 									(Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
@@ -629,7 +629,7 @@ public class FortManager : Merchant
 							if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 							{
 								htmlContent.Replace("%exp_recovery%",
-									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLvl() +
+									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() +
 									"%</font> (<font color=\"FFAABB\">" +
 									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLease() + "</font>Adena /" +
 									(Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
@@ -650,7 +650,7 @@ public class FortManager : Merchant
 							if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 							{
 								htmlContent.Replace("%mp_recovery%",
-									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLvl() +
+									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() +
 									"%</font> (<font color=\"FFAABB\">" +
 									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLease() + "</font>Adena /" +
 									(Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
@@ -758,7 +758,7 @@ public class FortManager : Merchant
 									
 									if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLvl() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() == int.Parse(val))
 										{
 											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
 											htmlContent.Replace("%val%", "Stage " + val);
@@ -809,7 +809,7 @@ public class FortManager : Merchant
 
 									if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == int.Parse(val))
 										{
 											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
 
@@ -863,7 +863,7 @@ public class FortManager : Merchant
 							if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
 							{
 								htmlContent.Replace("%tele%",
-									"Stage " + getFort().getFortFunction(Fort.FUNC_TELEPORT).getLvl() +
+									"Stage " + getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() +
 									"</font> (<font color=\"FFAABB\">" +
 									getFort().getFortFunction(Fort.FUNC_TELEPORT).getLease() + "</font>Adena /" +
 									(Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
@@ -884,7 +884,7 @@ public class FortManager : Merchant
 							if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
 							{
 								htmlContent.Replace("%support%",
-									"Stage " + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() +
+									"Stage " + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() +
 									"</font> (<font color=\"FFAABB\">" +
 									getFort().getFortFunction(Fort.FUNC_SUPPORT).getLease() + "</font>Adena /" +
 									(Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
@@ -940,7 +940,7 @@ public class FortManager : Merchant
 						{
 							return;
 						}
-						if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() == 0)
+						if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == 0)
 						{
 							return;
 						}
@@ -985,13 +985,13 @@ public class FortManager : Merchant
 			}
 			else if (actualCommand.equalsIgnoreCase("support_back"))
 			{
-				if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() == 0)
+				if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == 0)
 				{
 					return;
 				}
 
 				HtmlContent htmlContent = HtmlContent.LoadFromFile(
-					"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLvl() + ".htm", player);
+					"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm", player);
 
 				htmlContent.Replace("%mp%", ((int) getStatus().getCurrentMp()).ToString());
 				sendHtmlMessage(player, htmlContent);
@@ -1006,7 +1006,7 @@ public class FortManager : Merchant
 				}
 				
 				 int funcLvl = (val.Length >= 4) ? CommonUtil.parseInt(val.Substring(3), -1) : -1;
-				if (func.getLvl() == funcLvl)
+				if (func.getLevel() == funcLvl)
 				{
 					TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), val);
 					if (holder != null)

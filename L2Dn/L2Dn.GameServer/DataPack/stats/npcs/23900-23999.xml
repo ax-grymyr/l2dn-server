@@ -4,7 +4,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="74262" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -26,7 +26,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="80450" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="105" />
@@ -48,7 +48,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3094" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -70,7 +70,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27848" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="55" />
@@ -92,7 +92,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="30942" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="25" />
@@ -114,7 +114,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="74262" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -136,7 +136,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="80450" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="34" />
@@ -158,7 +158,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3094" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -180,7 +180,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -202,7 +202,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="41019" hpRegen="10.5" mp="1377" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -225,7 +225,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="5800" lhand="5799" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="96461" hpRegen="10.5" mp="1410" mpRegen="3.6" />
 			<speed>
 				<walk ground="56" />
@@ -247,7 +247,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="98227" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -269,7 +269,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3331" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -292,7 +292,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="80" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -315,7 +315,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="2504" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="41019" hpRegen="10.5" mp="1377" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -338,7 +338,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="97" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="96461" hpRegen="10.5" mp="1410" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -361,7 +361,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="97" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="98227" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
@@ -383,7 +383,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3331" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -405,7 +405,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -445,7 +445,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3443" hpRegen="10.5" mp="1540" mpRegen="3.6" />
 			<speed>
 				<walk ground="46" />
@@ -467,7 +467,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3496" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -489,7 +489,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3496" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="57" />
@@ -511,7 +511,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3547" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -533,7 +533,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="33" />
@@ -555,7 +555,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3443" hpRegen="10.5" mp="1540" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -577,7 +577,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3496" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="54" />
@@ -599,7 +599,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3496" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -621,7 +621,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3547" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="105" />
@@ -643,7 +643,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="81358" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="120" />
@@ -665,7 +665,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="81358" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="15" />
@@ -687,7 +687,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="86639" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -709,7 +709,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="86639" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -731,7 +731,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="109952" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -753,7 +753,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="109952" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -775,7 +775,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="117083" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="64" />
@@ -797,7 +797,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="117083" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -820,7 +820,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="160" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="4894" hpRegen="10.5" mp="1036" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -843,7 +843,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="160" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="4894" hpRegen="10.5" mp="1036" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -866,7 +866,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="1472" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="10844" hpRegen="10.5" mp="1158" mpRegen="3.6" />
 			<speed>
 				<walk ground="100" />
@@ -888,7 +888,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="10844" hpRegen="10.5" mp="1158" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -910,7 +910,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="26151" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
@@ -932,7 +932,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="26151" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="55" />
@@ -954,7 +954,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -977,7 +977,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="80" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -999,7 +999,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1021,7 +1021,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="33" />
@@ -1044,7 +1044,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="160" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="6188" hpRegen="10.5" mp="1036" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -1067,7 +1067,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="160" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="6188" hpRegen="10.5" mp="1036" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -1090,7 +1090,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="84" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="12377" hpRegen="10.5" mp="1158" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -1112,7 +1112,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="12377" hpRegen="10.5" mp="1158" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -1134,7 +1134,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27848" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="45" />
@@ -1156,7 +1156,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27848" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="140" />
@@ -1178,7 +1178,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="36" />
@@ -1201,7 +1201,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="80" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="21659" hpRegen="10.5" mp="1345" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -1223,7 +1223,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1245,7 +1245,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3388" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="33" />
@@ -1267,7 +1267,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14528" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1308,7 +1308,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="14528" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="75" />
@@ -1330,7 +1330,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="7883" hpRegen="10.5" mp="1314" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -1352,7 +1352,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="7883" hpRegen="10.5" mp="1314" mpRegen="3.6" />
 			<speed>
 				<walk ground="21" />
@@ -1374,7 +1374,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="19645" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="80" />
@@ -1417,7 +1417,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="193" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="19645" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
@@ -1439,7 +1439,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27119" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -1461,7 +1461,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27119" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="15" />
@@ -1483,7 +1483,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="28879" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="28" />
@@ -1505,7 +1505,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="28879" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -1527,7 +1527,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27488" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="25" />
@@ -1549,7 +1549,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27488" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="25" />
@@ -1571,7 +1571,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1593,7 +1593,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -1615,7 +1615,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="33" />
@@ -1637,7 +1637,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="15471" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1678,7 +1678,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="15471" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="75" />
@@ -1700,7 +1700,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8045" hpRegen="10.5" mp="1314" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -1722,7 +1722,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="8045" hpRegen="10.5" mp="1314" mpRegen="3.6" />
 			<speed>
 				<walk ground="21" />
@@ -1744,7 +1744,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="19645" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="80" />
@@ -1787,7 +1787,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="193" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="19645" hpRegen="10.5" mp="1442" mpRegen="3.6" />
 			<speed>
 				<walk ground="30" />
@@ -1809,7 +1809,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27119" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -1831,7 +1831,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27119" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="15" />
@@ -1853,7 +1853,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="28879" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="28" />
@@ -1875,7 +1875,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="28879" hpRegen="10.5" mp="1251" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -1897,7 +1897,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27488" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="25" />
@@ -1919,7 +1919,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="27488" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="25" />
@@ -1941,7 +1941,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="70" />
@@ -1963,7 +1963,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />
@@ -1985,7 +1985,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="29270" hpRegen="10.5" mp="1475" mpRegen="3.6" />
 			<speed>
 				<walk ground="33" />
@@ -2008,7 +2008,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="98" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="67763" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="64" />
@@ -2031,7 +2031,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="5233" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="67763" hpRegen="10.5" mp="1507" mpRegen="3.6" />
 			<speed>
 				<walk ground="64" />
@@ -2053,7 +2053,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="151492" hpRegen="10.5" mp="1540" mpRegen="3.6" />
 			<speed>
 				<walk ground="80" />
@@ -2075,7 +2075,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="55088" hpRegen="10.5" mp="1540" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -2097,7 +2097,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="55088" hpRegen="10.5" mp="1540" mpRegen="3.6" />
 			<speed>
 				<walk ground="40" />
@@ -2119,7 +2119,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="167822" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -2141,7 +2141,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="62933" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -2163,7 +2163,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="62933" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="60" />
@@ -2185,7 +2185,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="188800" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="42" />
@@ -2207,7 +2207,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="188800" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="42" />
@@ -2229,7 +2229,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="69926" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="14" />
@@ -2251,7 +2251,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="69926" hpRegen="10.5" mp="1574" mpRegen="3.6" />
 			<speed>
 				<walk ground="11" />
@@ -2273,7 +2273,7 @@
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="212878" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="80" />
@@ -2296,7 +2296,7 @@
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="97" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="70959" hpRegen="10.5" mp="1607" mpRegen="3.6" />
 			<speed>
 				<walk ground="50" />

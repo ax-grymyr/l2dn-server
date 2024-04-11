@@ -1,9 +1,11 @@
 ﻿using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -42,31 +44,37 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         {
             OlympiadManager.getInstance().unRegisterNoble(player);
         }
-		
+
+        Location location = null;
         Instance world = player.getInstanceWorld();
         if (world != null)
         {
             if (Config.RESTORE_PLAYER_INSTANCE)
             {
-                player.getVariables().set("INSTANCE_RESTORE", world.getId());
+                player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, world.getId());
             }
             else
             {
-                Location location = world.getExitLocation(player);
-                if (location != null)
+                location = world.getExitLocation(player);
+                if (location == null)
                 {
-                    player.teleToLocation(location);
+                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
                 }
-                else
-                {
-                    player.teleToLocation(TeleportWhereType.TOWN);
-                }
-                
-                player.getSummonedNpcs().ForEach(npc => npc.teleToLocation(player, true));
             }
             
-            world.onInstanceChange(player, false);
+            player.setInstance(null);
         }
+        else if (player.isInTimedHuntingZone())
+        {
+            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+        }
+
+        if (location != null)
+        {
+            player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.getX() + ";" + location.getY() + ";" + location.getZ());
+        }
+
+        //LOGGER_ACCOUNTING.info("Logged out, " + client);
 		
         if (!OfflineTradeUtil.enteredOfflineMode(player))
         {

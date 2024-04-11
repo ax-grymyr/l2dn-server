@@ -132,6 +132,12 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 					.Append(enchantedSkill.getSubLevel()).Append(" - ").Append(enchantedSkill.getName()).Append(" (")
 					.Append(enchantedSkill.getId()).Append("), ").ToString());
 			}
+
+			TimeSpan reuse = player.getSkillRemainingReuseTime(skill.getReuseHashCode());
+			if (reuse > TimeSpan.Zero)
+			{
+				player.addTimeStamp(enchantedSkill, reuse);
+			}
 			
 			player.addSkill(enchantedSkill, true);
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.SKILL_ENCHANT_WAS_SUCCESSFUL_S1_HAS_BEEN_ENCHANTED);

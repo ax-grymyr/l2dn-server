@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="4400" toLevel="3" name="Acumen">
-		<!-- Temporarily Atk. Spd. +15%. -->
+		<!-- Increases Casting Spd. for a certain amount of time. -->
 		<icon>icon.skill1085</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -32,7 +32,7 @@
 		</effects>
 	</skill>
 	<skill id="4401" toLevel="3" name="Empower">
-		<!-- Temporarily M. Atk. +55%. -->
+		<!-- Increases M. Atk. for a certain amount of time. -->
 		<icon>icon.skill1059</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -63,7 +63,7 @@
 		</effects>
 	</skill>
 	<skill id="4402" toLevel="2" name="Haste">
-		<!-- Temporarily Atk. Spd. +15%. -->
+		<!-- Increases Atk. Spd. for a certain amount of time. -->
 		<icon>icon.skill1086</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -92,7 +92,7 @@
 		</effects>
 	</skill>
 	<skill id="4403" toLevel="3" name="Guidance">
-		<!-- Temporarily P. Accuracy +2. -->
+		<!-- Increases P. Accuracy for a certain amount of time. -->
 		<icon>icon.skill1240</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -123,7 +123,7 @@
 		</effects>
 	</skill>
 	<skill id="4404" toLevel="3" name="Focus">
-		<!-- Temporarily P. Critical Rate +20%. -->
+		<!-- Increases P. Critical Rate for a certain amount of time. -->
 		<icon>icon.skill1077</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -154,7 +154,7 @@
 		</effects>
 	</skill>
 	<skill id="4405" toLevel="3" name="Death Whisper">
-		<!-- Temporarily P. Critical Damage +25%. -->
+		<!-- Increases P. Critical Damage for a certain amount of time. -->
 		<icon>icon.skill1242</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -185,7 +185,7 @@
 		</effects>
 	</skill>
 	<skill id="4406" toLevel="3" name="Agility">
-		<!-- Temporarily P. Evasion +2. -->
+		<!-- Increases P. Evasion for a certain amount of time. -->
 		<icon>icon.skill1087</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -644,6 +644,7 @@
 		</effects>
 	</skill>
 	<skill id="4415" toLevel="26" name="Bare Hands">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -746,7 +747,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
+			<effect name="DefenceTrait">
 				<CONSTRUCT_WEAKNESS>
 					<value level="1">0</value>
 					<value level="2">-15</value>
@@ -1132,7 +1133,7 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<effects>
-			<effect name="DefenceTrait"> <!-- TODO: Verify me! -->
+			<effect name="DefenceTrait">
 				<BOW>
 					<value level="1">0</value>
 					<value level="2">0</value>
@@ -1456,7 +1457,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4418" toLevel="5" name="Fire Attack">
+	<skill id="4418" toLevel="5" name="Fire Attribute">
 		<!-- Unleashes an attack fortified with Fire. Resistant to Fire attacks. -->
 		<icon>icon.etc_fire_crystal_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -1479,7 +1480,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4419" toLevel="5" name="Water Attack">
+	<skill id="4419" toLevel="5" name="Water Attribute">
 		<!-- Unleashes an attack fortified with Water. Resistant to Water attacks. -->
 		<icon>icon.etc_water_crystal_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -1502,7 +1503,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4420" toLevel="5" name="Wind Attack">
+	<skill id="4420" toLevel="5" name="Wind Attribute">
 		<!-- Unleashes an attack fortified with Wind. Resistant to Wind attacks. -->
 		<icon>icon.etc_wind_crystal_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -1548,7 +1549,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4422" toLevel="5" name="Dark Attack">
+	<skill id="4422" toLevel="5" name="Darkness Protection">
 		<!-- Unleashes an attack fortified with Dark. Resistant to Dark attacks. -->
 		<icon>icon.etc_unholy_crystal_i00</icon>
 		<magicLevel>1</magicLevel>
@@ -1630,7 +1631,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4426" toLevel="5" name="Dualsword Resistance">
+	<skill id="4426" toLevel="5" name="Dual Sword Resistance">
 		<!-- Resistance to dual sword. -->
 		<icon>icon.skill4426</icon>
 		<magicLevel>1</magicLevel>
@@ -1787,7 +1788,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4435" toLevel="5" name="Greater Stun Resistance">
+	<skill id="4435" toLevel="5" name="High Stun Attack Resistance">
 		<!-- Very resistant to Stun. -->
 		<icon>icon.skill4435</icon>
 		<magicLevel>1</magicLevel>
@@ -1895,8 +1896,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4441" toLevel="5" name="Greater Mental Attack Resistance">
-		<!-- Very resistant to Mental Attack. -->
+	<skill id="4441" toLevel="5" name="High Mental Resistance">
+		<!-- High resistance to Mental Attack. -->
 		<icon>icon.skill4441</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -1992,7 +1993,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4446" toLevel="5" name="Greater Dualsword Resistance">
+	<skill id="4446" toLevel="5" name="Greater Dual Sword Resistance">
 		<!-- Very resistant to dual sword. -->
 		<icon>icon.skill4446</icon>
 		<magicLevel>1</magicLevel>
@@ -2175,7 +2176,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4456" toLevel="5" name="Mental Attack Vulnerability">
+	<skill id="4456" toLevel="5" name="Vulnerability to Mental Attacks">
 		<!-- Vulnerable to Mental Attacks. -->
 		<icon>icon.skill4456</icon>
 		<magicLevel>1</magicLevel>
@@ -2229,7 +2230,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4459" toLevel="5" name="Dualsword Vulnerability">
+	<skill id="4459" toLevel="5" name="Dual Sword Vulnerability">
 		<!-- Vulnerable to dual sword. -->
 		<icon>icon.skill4459</icon>
 		<magicLevel>1</magicLevel>
@@ -2507,7 +2508,7 @@
 		</effects>
 	</skill>
 	<skill id="4466" toLevel="3" name="Surrender to Dark">
-		<!-- Immediately decreases Dark Resistance decreased and increases Holy Resistance. -->
+		<!-- Dark Resistance has been momentarily decreased, while Holy Resistance has been increased. -->
 		<icon>icon.skill4336_new</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2625,6 +2626,7 @@
 		</effects>
 	</skill>
 	<skill id="4468" toLevel="2" name="Wind Walk">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2655,6 +2657,7 @@
 		</effects>
 	</skill>
 	<skill id="4469" toLevel="1" name="Potion Drinking">
+		<icon>icon.skill0000</icon>
 		<magicLevel>35</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2663,6 +2666,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4470" toLevel="1" name="Spoil">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -2677,6 +2681,7 @@
 	</skill>
 	<skill id="4471" toLevel="12" name="Anger">
 		<!-- Increases NPC's P. Atk. and P. Def. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -2782,7 +2787,8 @@
 		</effects>
 	</skill>
 	<skill id="4472" toLevel="12" name="Golem Strike">
-		<!-- For powerful Golems that are $s1x stronger. -->
+		<!-- For powerful Golems that are 1.5x stronger. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
@@ -2909,6 +2915,7 @@
 		</effects>
 	</skill>
 	<skill id="4474" toLevel="5" name="Restore Life">
+		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<magicLevel>
 			<value level="1">10</value>
@@ -2936,6 +2943,7 @@
 	</skill>
 	<skill id="4475" toLevel="1" name="Complete Bleed Resistance">
 		<!-- Completely resistant to Bleed. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>10</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BLEEDING</abnormalType>
@@ -3009,6 +3017,7 @@
 		</effects>
 	</skill>
 	<skill id="4477" toLevel="12" name="Frost Wall">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
@@ -3086,6 +3095,7 @@
 		</effects>
 	</skill>
 	<skill id="4478" toLevel="1" name="Aqua Splash">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>700</castRange>
 		<effectPoint>-100</effectPoint>
@@ -3135,6 +3145,7 @@
 		</effects>
 	</skill>
 	<skill id="4480" toLevel="1" name="Curse Gloom">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>MD_DOWN</abnormalType>
@@ -3161,6 +3172,7 @@
 		</effects>
 	</skill>
 	<skill id="4481" toLevel="1" name="Hex">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1800</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
@@ -3211,7 +3223,7 @@
 		</effects>
 	</skill>
 	<skill id="4483" toLevel="12" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3291,6 +3303,7 @@
 		</effects>
 	</skill>
 	<skill id="4484" toLevel="1" name="Devour Subordinate">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -3309,6 +3322,7 @@
 		</effects>
 	</skill>
 	<skill id="4485" toLevel="1" name="Devour Subordinate">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -3319,7 +3333,7 @@
 		<targetType>TARGET</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="4486" toLevel="12" name="Weakened Defense">
+	<skill id="4486" toLevel="12" name="Decrease P. Def.">
 		<!-- Temporarily decreases the enemy's P. Def. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>
@@ -3418,6 +3432,7 @@
 	</skill>
 	<skill id="4487" toLevel="12" name="Decrease M. Def.">
 		<!-- Temporarily decreases the enemy's M. Def. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -3513,7 +3528,7 @@
 		</effects>
 	</skill>
 	<skill id="4488" toLevel="12" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -3565,6 +3580,7 @@
 		</effects>
 	</skill>
 	<skill id="4489" toLevel="12" name="Death Bomb">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>
@@ -3623,6 +3639,7 @@
 		</effects>
 	</skill>
 	<skill id="4490" toLevel="12" name="Holy War">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
@@ -3764,6 +3781,7 @@
 	</skill>
 	<skill id="4492" toLevel="12" name="Enlarging Head Curse">
 		<!-- Increases your head size a certain amount of time. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>BIG_HEAD</abnormalType>
@@ -3830,6 +3848,7 @@
 		</effects>
 	</skill>
 	<skill id="4493" toLevel="12" name="Mystic Immunity">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>DEBUFF_SHIELD</abnormalType>
@@ -3912,13 +3931,14 @@
 		</effects>
 	</skill>
 	<skill id="4494" toLevel="2" name="Raid Boss">
-		<!-- If the person who made the greatest contribution is $s1 or more levels higher than the Raid Boss, then the item/ adena rewards will decrease. If the difference is $s2 levels or more, then the monster will drop nothing at all. -->
+		<!-- If the person who made the greatest contribution is 3 or more levels higher than the Raid Boss, then the item/ adena rewards will decrease. If the difference is 9 levels or more, then the monster will drop nothing at all. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4495" toLevel="12" name="Power Shot">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>

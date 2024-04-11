@@ -95,18 +95,21 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55409" toLevel="1" name="Kusto's Support Box: Enhance Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55410" toLevel="1" name="Kusto's Support Box: Enhance Weapon (B-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55411" toLevel="1" name="Kusto's Support Box: Enhance Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -134,6 +137,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55415" toLevel="1" name="Scroll: Enchant Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55416" toLevel="1" name="Summon Agathion One-eyed Bat Drove">
@@ -926,6 +930,7 @@
 	</skill>
 	<skill id="55467" toLevel="1" name="Remove Lv. 2 Brooch">
 		<!-- Bright light fades. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
@@ -966,7 +971,7 @@
 		</effects>
 	</skill>
 	<skill id="55471" toLevel="10" name="Topaz">
-		<!-- Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of $s1. -->
+		<!-- Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 475. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_topaz_i00</value>
 			<value level="2">icon.etc_bm_jewel_topaz_i00</value>
@@ -987,7 +992,7 @@
 		<effectPoint>-1000</effectPoint>
 	</skill>
 	<skill id="55472" toLevel="10" name="Vital Stone">
-		<!-- Acquired XP/ SP from Sayha Grace +$s1 while hunting. -->
+		<!-- XP/ SP +3%, while hunting. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_vital</value>
 			<value level="2">icon.etc_bm_jewel_vital</value>
@@ -1039,14 +1044,14 @@
 		</effects>
 	</skill>
 	<skill id="55473" toLevel="6" name="Vital Stone - Special Ability">
-		<!-- For $s1, XP/ SP +$s2, while hunting. Cooldown: 20 min. -->
+		<!-- For 15 sec., XP/ SP +50%, while hunting. Cooldown: 20 min. -->
 		<icon>icon.etc_bm_jewel_vital</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>1200000</reuseDelay>
 	</skill>
 	<skill id="55474" toLevel="10" name="Jade">
-		<!-- Atk. Spd./ Casting Spd. +$s1. -->
+		<!-- Atk. Spd./ Casting Spd. +1%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_jade_i00</value>
 			<value level="2">icon.etc_bm_jewel_jade_i00</value>
@@ -1112,8 +1117,7 @@
 		</effects>
 	</skill>
 	<skill id="55475" toLevel="10" name="Diamond">
-		<!-- P. Def. +$s1. -->
-		<!-- TODO: on level 10 add chance of receiving P. critical attack -20% -->
+		<!-- When equipped P. Def. +11. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_diamond_i00</value>
 			<value level="2">icon.etc_bm_jewel_diamond_i00</value>
@@ -1159,7 +1163,7 @@
 		</effects>
 	</skill>
 	<skill id="55476" toLevel="10" name="Pearl">
-		<!-- M. Def. +$s1. -->
+		<!-- M. Def. +7. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_pearl_i00</value>
 			<value level="2">icon.etc_bm_jewel_pearl_i00</value>
@@ -1205,7 +1209,7 @@
 		</effects>
 	</skill>
 	<skill id="55477" toLevel="10" name="Ruby">
-		<!-- Damage received from Soulshots +$s1. -->
+		<!-- Soulshot Damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
 			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
@@ -1221,7 +1225,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55478" toLevel="10" name="Ruby">
-		<!-- Damage received from Blessed Soulshots +$s1. -->
+		<!-- Blessed Soulshot Damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
 			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
@@ -1237,7 +1241,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55479" toLevel="10" name="Ruby">
-		<!-- Damage from Beast Soulshot +$s1. -->
+		<!-- Damage from Beast Soulshot +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
 			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
@@ -1253,7 +1257,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55481" toLevel="10" name="Sapphire">
-		<!-- Damage received from Spiritshots +$s1. -->
+		<!-- Spiritshot Damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
 			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
@@ -1269,7 +1273,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55482" toLevel="10" name="Sapphire">
-		<!-- Damage received from Blessed Spiritshots +$s1. -->
+		<!-- Blessed Spiritshot Damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
 			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
@@ -1285,7 +1289,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55483" toLevel="10" name="Sapphire">
-		<!-- Damage from Beast Spiritshot +$s1. -->
+		<!-- Beast Spiritshot Damage +2%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
 			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
@@ -1301,8 +1305,7 @@
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55485" toLevel="10" name="Garnet">
-		<!-- Stun/ Pulling/ Silence/ Petrification/ Fear Resistance +$s1. -->
-		<!-- TODO: Resist to Fear and Silence -->
+		<!-- Stun/ Pulling/ Silence/ Petrification/ Fear Resistance +3%. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_garnet</value>
 			<value level="2">icon.etc_bm_jewel_garnet</value>
@@ -1365,7 +1368,7 @@
 		</effects>
 	</skill>
 	<skill id="55486" toLevel="7" name="Garnet - Special Ability">
-		<!-- Becomes invincible for debuffs for $s1 -->
+		<!-- Becomes invincible from debuffs for 5 sec. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_garnet</value>
 			<value level="2">icon.etc_bm_jewel_garnet</value>
@@ -1380,30 +1383,35 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55495" toLevel="1" name="Fortune Brooch">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55496" toLevel="1" name="Topaz Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55497" toLevel="1" name="Garnet Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55498" toLevel="1" name="Jade Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55499" toLevel="1" name="Ruby Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>

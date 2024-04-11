@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="54000" toLevel="22" name="Agathion Taurus">
-		<!-- P. Def. +$s1. P. Def. increases when Agathion is upgraded. -->
+		<!-- P. Def. +1%. P. Def. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_tau_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54001" toLevel="22" name="Agathion Leo">
-		<!-- P. Atk. +$s1. P. Atk. increases when Agathion is upgraded. -->
+		<!-- P. Atk. +1%. P. Atk. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_leo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54002" toLevel="22" name="Agathion Scorpio">
-		<!-- P. Critical Rate +$s1. P. Critical Rate increases when Agathion is upgraded. -->
+		<!-- P. Critical Rate +1%. P. Critical Rate increases when Agathion is upgraded. -->
 		<icon>icon.agathion_sco_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54003" toLevel="22" name="Agathion Sagittarius">
-		<!-- Atk. Spd. +$s1. Atk. Spd. increases when Agathion is upgraded. -->
+		<!-- Atk. Spd. +2. Atk. Spd. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_sag_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54004" toLevel="22" name="Agathion Virgo">
-		<!-- M. Def. +$s1. M. Def. increases when Agathion is upgraded. -->
+		<!-- M. Def. +1%. M. Def. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_virgo_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54005" toLevel="22" name="Agathion Aquarius">
-		<!-- M. Atk. +$s1. M. Atk. increases when Agathion is upgraded. -->
+		<!-- M. Atk. +1%. M. Atk. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_aqu_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54006" toLevel="22" name="Agathion Capricorn">
-		<!-- M. Critical Rate +$s1. M. Critical Rate increases when Agathion is upgraded. -->
+		<!-- M. Critical Rate +1%. M. Critical Rate increases when Agathion is upgraded. -->
 		<icon>icon.agathion_capr_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54007" toLevel="22" name="Agathion Libra">
-		<!-- Casting Spd. +$s1. M. Casting Spd. increases when Agathion is upgraded. -->
+		<!-- Casting Spd. +2. M. Casting Spd. increases when Agathion is upgraded. -->
 		<icon>icon.agathion_lib_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54008" toLevel="22" name="Agathion Gemini">
-		<!-- When Sayha's Grace is active Acquired XP/ SP (hunting) +$s1. The effect of Sayha's Grace increases when Agathion is upgraded. -->
+		<!-- When Sayha's Grace is active Acquired XP/ SP (hunting) +1%. The effect of Sayha's Grace increases when Agathion is upgraded. -->
 		<icon>icon.agathion_gem_star_1</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -114,7 +114,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54020" toLevel="1" name="Bracelet of Power">
-		<!-- HP/ MP Recovery +15%, P. Accuracy +2, M. Accuracy +2, Weight Limit +10,000. -->
+		<!-- HP/ MP Recovery Rate +15%, P. Accuracy +2, M. Accuracy +2, Weight Limit +10,000. -->
 		<icon>icon.ertheia_bracelet_i01</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -259,7 +259,7 @@
 		</effects>
 	</skill>
 	<skill id="54029" toLevel="4" name="Venir's Blessing">
-		<!-- When equipped, CON, MEN, DEX, WIT, STR, INT +$s1. -->
+		<!-- When equipped, CON, MEN, DEX, WIT, STR, INT +1. -->
 		<icon>
 			<value level="1">icon.etc_all_stat_talisman_i00</value>
 			<value level="2">icon.etc_all_stat_talisman_i01</value>
@@ -432,12 +432,14 @@
 	</skill>
 	<skill id="54036" toLevel="5" name="Anakim Recovery">
 		<!-- Recovers 75 MP when skills are used. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>60000</reuseDelay>
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="54037" toLevel="5" name="Lilith Recovery">
 		<!-- Restores 100 HP when striking. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>60000</reuseDelay>
 		<effectPoint>1</effectPoint>
@@ -448,7 +450,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54039" toLevel="10" name="Sayha's Cloak +1">
-		<!-- Max HP/ MP +$s1. -->
+		<!-- Max HP/ MP +4%. -->
 		<icon>BranchSys2.br_wing_of_sylphide_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -522,6 +524,24 @@
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-5</value>
+					<value level="4">-10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">-2</value>
+					<value level="4">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="DamageShieldResist">
 				<amount>
 					<value level="1">2</value>
@@ -530,12 +550,23 @@
 					<value level="4">10</value>
 				</amount>
 			</effect>
-			<effect name="ResistDispelByCategory">
+			<effect name="PhysicalSkillPower">
 				<amount>
-					<value level="3">-10</value>
-					<value level="4">-20</value>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
 				</amount>
-				<slot>BUFF</slot>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+				</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -562,7 +593,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54045" toLevel="10" name="Special Sayha's Cloak +1">
-		<!-- Max HP/ MP +$s1, Acquired XP/ SP +$s2, P. Def. +$s3, M. Def. +$s4, P. Critical Damage +$s5, M. Critical Damage +$s6, Received Critical Damage -$s7. -->
+		<!-- Max HP/ MP +15%, Acquired XP/ SP +30%, P. Def. +12%, M. Def. +8%, P. Critical Damage +15%, M. Critical Damage +16%, Received Critical Damage -10%. -->
 		<icon>BranchSys2.br_wing_of_sylphide_i00</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -572,7 +603,7 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54047" toLevel="10" name="Talisman of Aden">
-		<!-- P. Def. +5, M. Def. +5, Atk. Spd. +10, Casting Spd. +10, Max HP +100, Max MP +30 -->
+		<!-- A talisman for the warriors of Aden. P. Def. +5, M. Def. +5, Atk. Spd. +10, Casting Spd. +10, Max. HP +100, Max. MP +30. -->
 		<icon>icon.bm_ensoul_stone_pvp</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -709,107 +740,122 @@
 	</skill>
 	<skill id="54050" toLevel="1" name="Scroll of Escape: High Priest Orven">
 		<!-- A magical scroll that relocates you to High Priest Orven in Aden. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="54051" toLevel="1" name="Magic Lantern Acceleration Potion - 1 h.">
-		<!-- Magic Lantern recharge speed +20%. -->
+		<!-- Magic Lantern refill speed +20%. -->
 		<icon>icon.etc_recall_potion2</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="54052" toLevel="1" name="Scroll: PK - Event">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>2000</hitTime>
 		<coolTime>200</coolTime>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="54053" toLevel="1" name="PA Treasure Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54054" toLevel="1" name="PA Treasure Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54055" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54056" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54057" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54058" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54059" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54060" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54061" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54062" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54063" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54064" toLevel="1" name="PA Points">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54065" toLevel="1" name="Sayha's Grace Set">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54066" toLevel="1" name="Rudolph the Red Nose Blessing">
-		<!-- For 5 min. P./ M. Atk. +150, P./ M. Def. +100, Atk. Spd./ Casting Spd. +100, Speed +10, HP/ MP Recovery Bonus +30%. Changes the appearance to that of Rudolph. Effect remains after death and after a restart. -->
+		<!-- For 5 min., P./ M. Atk. +150, P./ M. Def. +100, Atk. Spd./ Casting Spd. +100, Speed +10, HP/ MP Recovery Rate +30%. Changes the appearance to that of Rudolph. The effect remains after death and logout. -->
 		<icon>BranchSys2.icon.event_lbracelet_rudolph</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 	</skill>
 	<skill id="54067" toLevel="1" name="Sayha's Storm Lv. 3 - 1 h.">
-		<!-- For 1 h., momentum consumption speed while hunting +100%, acquired XP/ SP +200%. Buff does not disappear after death. Cooldown: 1 min. -->
+		<!-- For 1 h., Sayha's Grace Consumption +100%, Acquired XP/ SP +200%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.bm_sayha_storm</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -817,14 +863,14 @@
 		<reuseDelayGroup>51398</reuseDelayGroup>
 	</skill>
 	<skill id="54068" toLevel="1" name="Sayha's Gust - Event">
-		<!-- For 20 min., momentum consumption speed while hunting +100%, acquired XP/ SP +300%. Buff does not disappear after death. Cooldown: 1 min. -->
+		<!-- For 20 min., Sayha's Grace Consumption +100%, Acquired XP/ SP +300%. Cooldown: 1 min. The effect remains after death. -->
 		<icon>icon.ev_magic_flame_game_wind2</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="54069" toLevel="1" name="Magic Fire (Event)">
-		<!-- Magic Lantern recharge speed +100%. -->
+		<!-- Magic Lantern refill speed +100%. -->
 		<icon>icon.bm_soul_of_shilen</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -833,20 +879,14 @@
 	<skill id="54070" toLevel="1" name="Sayha's Effect Scroll (Event)">
 		<!-- A magic scroll which allows getting various buffs. -->
 		<icon>icon.etc_ssq_i00</icon>
-		<operateType>A2</operateType>
+		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
-		<abnormalTime>1200</abnormalTime>
 		<itemConsumeId>91781</itemConsumeId>
 		<itemConsumeCount>1</itemConsumeCount>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<abnormalTime>-1</abnormalTime> <!-- 60000 TODO:aaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-		<abnormalType>MULTI_BUFF</abnormalType>
-		<canBeDispelled>false</canBeDispelled>
-		<stayAfterDeath>true</stayAfterDeath>
 		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>5</magicCriticalRate>
-		<abnormalLevel>1</abnormalLevel>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>1</magicLevel>
 		<selfEffects>
@@ -911,11 +951,11 @@
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>54117</skillId> <!-- Sayha's Recover Hp -->
+				<skillId>54117</skillId> <!-- Sayha's Recover HP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>54118</skillId> <!-- Sayha's Recover Mp -->
+				<skillId>54118</skillId> <!-- Sayha's Recover MP -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</selfEffects>
@@ -989,54 +1029,63 @@
 		</effects>
 	</skill>
 	<skill id="54072" toLevel="1" name="Aden Treasure Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54073" toLevel="1" name="Nuia's Gift">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54074" toLevel="1" name="Einhasad's Spellbook Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54075" toLevel="1" name="Eva's Spellbook Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54076" toLevel="1" name="Shilen's Spellbook Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54077" toLevel="1" name="Pa'agrio's Spellbook Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54078" toLevel="1" name="Maphr's Spellbook Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54079" toLevel="1" name="Dragon Belt Chest">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54080" toLevel="1" name="Dragon Belt's Decoration">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="54081" toLevel="1" name="Dragon Belt">
@@ -1045,35 +1094,40 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54082" toLevel="10" name="Dragon Belt">
-		<!-- Weight Limit +$s1, Inventory Slots +$s2, DEX +$s3, WIT +$s4, CON +$s5, MEN +$s6. -->
+		<!-- Weight Limit +2000, Inventory Slots +2, DEX +1, WIT +1, CON +1, MEN +1. -->
 		<icon>icon.r2_belt_i01</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="54083" toLevel="1" name="Lucky Sack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54084" toLevel="1" name="Lucky Sack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54085" toLevel="1" name="Golden Lucky Sack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54086" toLevel="1" name="Golden Lucky Sack">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>500</reuseDelay>
 	</skill>
 	<skill id="54087" toLevel="1" name="Rare Accessory Pack of Immortals (15-day)">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -1092,6 +1146,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="54090" toLevel="1" name="Lakfi-Lakfi's Star Candy">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="54091" toLevel="5" name="Lakfi-Lakfi's Energy">

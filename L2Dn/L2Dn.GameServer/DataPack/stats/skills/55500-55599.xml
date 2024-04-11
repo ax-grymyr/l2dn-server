@@ -1,46 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="55500" toLevel="1" name="Sapphire Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55501" toLevel="1" name="Diamond Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55502" toLevel="1" name="Pearl Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55503" toLevel="1" name="Vital Stone Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55504" toLevel="1" name="Shiny Jewelry Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55505" toLevel="1" name="Shiny Jewelry Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="55506" toLevel="2" name="Aquamarine">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55507" toLevel="10" name="Aquamarine">
-		<!-- When using a skill, there is a $s1 chance of recovering $s2 MP. -->
+		<!-- When using a skill, there is a 1% chance of recovering 136 MP. -->
 		<icon>
 			<value level="1">icon.etc_bm_jewel_aquamarine_i00</value>
 			<value level="2">icon.etc_bm_jewel_aquamarine_i00</value>
@@ -63,6 +70,7 @@
 	</skill>
 	<skill id="55509" toLevel="1" name="Remove Lv. 3 Brooch">
 		<!-- Bright light fades. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>1</effectPoint>
 	</skill>
@@ -88,6 +96,7 @@
 		</effects>
 	</skill>
 	<skill id="55512" toLevel="1" name="Aquamarine Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -393,24 +402,28 @@
 	</skill>
 	<skill id="55548" toLevel="1" name="Agathion Teleport: Gludio">
 		<!-- Teleport to Gludio -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="55549" toLevel="1" name="Agathion Teleport: Dion">
 		<!-- Teleport to Dion -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="55550" toLevel="1" name="Agathion Teleport: Giran">
 		<!-- Teleport to the Town of Giran. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
 	</skill>
 	<skill id="55551" toLevel="1" name="Agathion Teleport: Town of Aden">
 		<!-- Teleports you to the Town of Aden. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>3000</hitTime>
 		<reuseDelay>3600000</reuseDelay>
@@ -594,7 +607,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55571" toLevel="1" name="Golden Maned Lion's Invisibility">
-		<!-- Makes a character invisible and invincible to enemy attacks. Speed -30%. Disappears if your character attacks. -->
+		<!-- Makes a character invisible to monsters. Speed -30%. Disappears if your character attacks. -->
 		<icon>icon.skill_agathion_special</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
@@ -609,7 +622,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55573" toLevel="1" name="Princess Ant's Invisibility">
-		<!-- Makes a character invisible and invincible to enemy attacks. Speed -30%. Disappears if your character attacks. -->
+		<!-- Makes a character invisible to monsters. Speed -30%. Disappears if your character attacks. -->
 		<icon>icon.skill_agathion_special</icon>
 		<operateType>A1</operateType>
 		<hitTime>4000</hitTime>
@@ -648,12 +661,12 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55579" toLevel="2" name="XP Growth Amulet">
-		<!-- Acquired XP/ SP +$s1. -->
+		<!-- Acquired XP/ SP +40%. -->
 		<icon>icon.skill19226</icon>
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55580" toLevel="2" name="Fishing XP Growth Amulet">
-		<!-- Acquired XP/ SP during fishing +$s1. -->
+		<!-- Acquired XP/ SP during fishing +30%. -->
 		<icon>icon.fishing_zone_ticket</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -791,7 +804,7 @@
 		</effects>
 	</skill>
 	<skill id="55593" toLevel="1" name="Returning Hero's Talisman">
-		<!-- P. Def. +22, M. Def. +11, P./ M. Evasion +1, Max. HP/ MP/ CP +80, Atk./ Casting Spd. +9, Speed +4. -->
+		<!-- When equipped P. Def. +22, M. Def. +11, P./ M. Skill Evasion +1, Max. HP/ MP/ CP +80, Atk. Spd./ Casting Spd. +9, Speed +4. -->
 		<icon>icon.npoint_talisman_stat</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -844,23 +857,23 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55595" toLevel="1" name="Party Support Cube - Lv. 1">
-		<icon>icon.etc_clear_crystal_cube_pc_i00</icon>
+		<icon>[icon.etc_clear_crystal_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55596" toLevel="1" name="Soulshot Support Cube">
-		<icon>icon.etc_violet_crystal_cube_pc_i00</icon>
+		<icon>[icon.etc_violet_crystal_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55597" toLevel="1" name="Spiritshot Support Cube">
-		<icon>icon.etc_pink_crystal_cube_pc_i00</icon>
+		<icon>[icon.etc_pink_crystal_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55598" toLevel="1" name="Buff Support Cube">
-		<icon>icon.etc_dkbrown_crystal_cube_pc_i00</icon>
+		<icon>[icon.etc_dkbrown_crystal_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55599" toLevel="1" name="Potion Support Cube - Lv. 1">
-		<icon>icon.etc_black_crystal_cube_pc_i00</icon>
+		<icon>[icon.etc_black_crystal_cube_pc_i00]</icon>
 		<operateType>A1</operateType>
 	</skill>
 </list>

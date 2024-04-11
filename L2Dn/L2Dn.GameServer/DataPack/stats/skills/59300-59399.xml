@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="59300" toLevel="1" name="White Noblesse">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 80 sec. enemy's M. Def. -30%. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 80 sec. enemy's M. Def. -30%. -->
 		<icon>icon.bm2018_whitenoblesse_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59301" toLevel="1" name="White Noblesse">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 30 sec. enemy's M. Def. -40%. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 30 sec. enemy's M. Def. -40%. -->
 		<icon>icon.bm2018_whitenoblesse_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59302" toLevel="3" name="White Noblesse - Curse Gloom">
-		<!-- P. Def. -$s1. -->
+		<!-- P. Def. -23%. -->
 		<icon>icon.bm2018_whitenoblesse_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -25,21 +25,21 @@
 		<effectPoint>-5</effectPoint>
 	</skill>
 	<skill id="59303" toLevel="1" name="Purple Cowboy">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 180 sec. attacks with powerful strikes. Power 3939. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 180 sec. attacks with powerful strikes. Power 3939. -->
 		<icon>icon.bm2018_cowboy_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59304" toLevel="1" name="Purple Cowboy">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 80 sec. attacks with powerful strikes. Power 6000. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 80 sec. attacks with powerful strikes. Power 6000. -->
 		<icon>icon.bm2018_cowboy_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59305" toLevel="1" name="Purple Cowboy">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 30 sec. attacks with powerful strikes. Power 8000. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 30 sec. attacks with powerful strikes. Power 8000. -->
 		<icon>icon.bm2018_cowboy_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -55,21 +55,21 @@
 		<effectPoint>-5</effectPoint>
 	</skill>
 	<skill id="59307" toLevel="1" name="Blue Musketeer">
-		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 180 sec. inflicts Stun for 5 sec. -->
+		<!-- Rare transformation. Acquired XP +20%, P. Atk. +10%, M. Atk. +10%, P./ M. Critical Damage +5%, Speed +5. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 180 sec. inflicts Stun for 5 sec. -->
 		<icon>icon.bm2018_bluemusketeer_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>10800000</reuseDelay>
 	</skill>
 	<skill id="59308" toLevel="1" name="Blue Musketeer">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 80 sec. inflicts Stun for 5 sec. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 80 sec. inflicts Stun for 5 sec. -->
 		<icon>icon.bm2018_bluemusketeer_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59309" toLevel="1" name="Blue Musketeer">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 30 sec. inflicts Stun for 5 sec. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 30 sec. inflicts Stun for 5 sec. -->
 		<icon>icon.bm2018_bluemusketeer_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -86,21 +86,21 @@
 		<effectPoint>-5</effectPoint>
 	</skill>
 	<skill id="59311" toLevel="1" name="Dragon Berserker">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 290 sec. P./ M. Atk. +50%, Atk. Spd./ Casting Spd. +50%, Damage Reflection +15%. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 290 sec. P./ M. Atk. +50%, Atk. Spd./ Casting Spd. +50%, Damage Reflection +15%. -->
 		<icon>icon.bm2018_dragon_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59312" toLevel="1" name="Dragon Berserker">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> During transformation in case of successful attack or skill use for 190 sec. P./ M. Atk. +70%, Atk. Spd./ Casting Spd. +70%, Damage Reflection +20%. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. During transformation in case of successful attack or skill use for 190 sec. P./ M. Atk. +70%, Atk. Spd./ Casting Spd. +70%, Damage Reflection +20%. -->
 		<icon>icon.bm2018_dragon_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59313" toLevel="2" name="Soul of Berserker">
-		<!-- Grants the power of Berserker. During Berserker effect P. Atk. +$s1, M. Atk. +$s2, Atk. Spd. +$s3, Casting Spd. +$s4. Reflects $s5 damage to enemy. -->
+		<!-- Grants the power of Berserker. During Berserker effect P. Atk. +50%, M. Atk. +50%, Atk. Spd. +50%, Casting Spd. +50%. Reflects 15% damage to enemy. -->
 		<icon>icon.bm2018_dragon_i01</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -108,21 +108,21 @@
 		<effectPoint>20</effectPoint>
 	</skill>
 	<skill id="59314" toLevel="1" name="Zaken">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> P. Def. +25%, M. Def. +25%. During transformation in case of successful attack or skill use for 100 sec. party member's Atk. Spd./ Casting Spd./ Speed +30%. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. P. Def. +25%, M. Def. +25%. During transformation in case of successful attack or skill use for 100 sec. party member's Atk. Spd./ Casting Spd./ Speed +30%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_zaken</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59315" toLevel="1" name="Zaken">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> P. Def. +40%, M. Def. +40%. During transformation in case of successful attack or skill use for 60 sec. party member's Atk. Spd./ Casting Spd./ Speed +50%. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. P. Def. +40%, M. Def. +40%. During transformation in case of successful attack or skill use for 60 sec. party member's Atk. Spd./ Casting Spd./ Speed +50%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_zaken</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59316" toLevel="2" name="Zaken's Soul">
-		<!-- Atk. Spd. +$s1, Casting Spd. +$s2, Speed +$s3. -->
+		<!-- Atk. Spd. +30%, Casting Spd. +30%, Speed +30%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_zaken</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -130,14 +130,14 @@
 		<effectPoint>20</effectPoint>
 	</skill>
 	<skill id="59317" toLevel="1" name="Anakim">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage 1, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> Recovers as HP 15% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 100 sec. inflicts Silence for 3 sec. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage 1, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. Recovers as HP 15% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 100 sec. inflicts Silence for 3 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_anakim</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59318" toLevel="1" name="Anakim">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> Recovers as HP 25% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 60 sec. inflicts Silence for 5 sec. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. Recovers as HP 25% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 60 sec. inflicts Silence for 5 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_anakim</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -153,21 +153,21 @@
 		<effectPoint>-5</effectPoint>
 	</skill>
 	<skill id="59320" toLevel="1" name="Lilith">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> MP Consumption -25%. During transformation in case of successful attack or skill use for 100 sec. character and party member's P. Critical Damage +30%, M. Critical Damage +30% for 5 sec. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. MP Consumption -25%. During transformation in case of successful attack or skill use for 100 sec. character and party member's P. Critical Damage +30%, M. Critical Damage +30% for 5 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_lilith</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59321" toLevel="1" name="Lilith">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> MP Consumption -40%. During transformation in case of successful attack or skill use for 60 sec. character and party member's P. Critical Damage +50%, M. Critical Damage +50% for 10 sec. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. MP Consumption -40%. During transformation in case of successful attack or skill use for 60 sec. character and party member's P. Critical Damage +50%, M. Critical Damage +50% for 10 sec. -->
 		<icon>BranchIcon.Icon.g_bm_costume_lilith</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59322" toLevel="2" name="Lilith's Soul">
-		<!-- Party member's P. Critical Damage +$s1, M. Critical Damage +$s2. -->
+		<!-- Party member's P. Critical Damage +30%, M. Critical Damage +30%. -->
 		<icon>BranchIcon.Icon.g_bm_costume_lilith</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -175,14 +175,14 @@
 		<effectPoint>20</effectPoint>
 	</skill>
 	<skill id="59323" toLevel="1" name="Freya">
-		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability> Recovers as HP 10% and as MP 5% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 110 sec. dispels 1 buff from a target. -->
+		<!-- Legendary transformation. Acquired XP +30%, P. Atk. +15%, M. Atk. +15%, P./ M. Critical Damage +10%, Speed +10, Received PvP Damage -10%. Transformation effect remains after death. <Special ability>. Recovers as HP 10% and as MP 5% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 110 sec. dispels 1 buff from a target. -->
 		<icon>BranchIcon.Icon.g_bm_costume_freya</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
 		<reuseDelay>7200000</reuseDelay>
 	</skill>
 	<skill id="59324" toLevel="1" name="Freya">
-		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability> Recovers as HP 15% and as MP 10% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 60 sec. dispels 1 buff from a target. -->
+		<!-- Mythic transformation. Acquired XP +50%, P. Atk. +20%, M. Atk. +20%, P./ M. Critical Damage +15%, Speed +20, PvP Damage +10%, Received PvP Damage -20%. Transformation effect remains after death. <Special ability>. Recovers as HP 15% and as MP 10% of the melee damage inflicted on the enemy with a certain probability. During transformation in case of successful attack or skill use for 60 sec. dispels 1 buff from a target. -->
 		<icon>BranchIcon.Icon.g_bm_costume_freya</icon>
 		<operateType>A1</operateType>
 		<isMagic>50</isMagic>
@@ -198,6 +198,7 @@
 		<effectPoint>-5</effectPoint>
 	</skill>
 	<skill id="59326" toLevel="1" name="Radiant Jewelry Box">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -217,7 +218,7 @@
 			<effect name="RestorationRandom">
 				<items>
 					<item chance="8.3333333333333">
-						<item id="70525" count="1" /> <!-- Aquamarine Chest -->
+						<item id="70525" count="1" /> <!-- Aquamarine Box -->
 					</item>
 					<item chance="8.3333333333333">
 						<item id="70825" count="1" /> <!-- Blue Cat's Eye Chest -->
@@ -257,6 +258,7 @@
 		</effects>
 	</skill>
 	<skill id="59327" toLevel="1" name="Shining Jewel Box">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -301,7 +303,7 @@
 		</effects>
 	</skill>
 	<skill id="59328" toLevel="4" name="Clan Luck">
-		<!-- When killed by an ordinary monster, XP decrease rate and item drop rate -$s1. Cannot be used by chaotic characters. -->
+		<!-- When killed by an ordinary monster, XP decrease rate and item drop rate -50%. Cannot be used by chaotic characters. -->
 		<icon>icon.skill0390</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -426,22 +428,22 @@
 		<effectPoint>867</effectPoint>
 	</skill>
 	<skill id="59345" toLevel="6" name="Decrease Transformation Cooldown">
-		<!-- Cooldown of transformation skills -$s1. -->
+		<!-- Cooldown of transformation skills -2.5%. -->
 		<icon>BranchIcon.Icon.s_g_bm_collection_bonus_reuse</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59346" toLevel="6" name="Increase Transformation Duration">
-		<!-- Duration of transformation skills +$s1 -->
+		<!-- Duration of transformation skills +15% -->
 		<icon>BranchIcon.Icon.s_g_bm_collection_bonus_timeup</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59347" toLevel="3" name="Attribute XP Increase">
-		<!-- Acquired attribute XP +$s1. -->
+		<!-- Acquired attribute XP +10%. -->
 		<icon>BranchIcon.Icon.s_g_bm_collection_elemental_exp</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="59348" toLevel="3" name="Increase Attribute Damage">
-		<!-- Attribute Damage +$s1. -->
+		<!-- Attribute Damage +15. -->
 		<icon>BranchIcon.Icon.s_g_bm_collection_elemental_dmg</icon>
 		<operateType>A1</operateType>
 	</skill>

@@ -80,7 +80,7 @@ public class RegenMPFinalizer: StatFunction
 						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_MP);
 						if (func != null)
 						{
-							baseValue *= (func.getLvl() / 100);
+							baseValue *= (func.getLevel() / 100);
 						}
 					}
 				}

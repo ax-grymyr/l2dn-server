@@ -1,24 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="20001" toLevel="1" name="Block Checker Hammer Punch">
-		<!-- Slams the treasure chest down with a hammer to break it open. -->
-		<icon>BranchSys2.icon.br_s_hammerpunch_treasure1_i001</icon>
-		<operateType>A1</operateType>
-		<effectPoint>-1</effectPoint>
-		<magicCriticalRate>5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
-		<effectRange>400</effectRange>
-		<magicLevel>85</magicLevel>
-		<hitTime>1000</hitTime>
-		<reuseDelay>60000</reuseDelay>
-		<castRange>40</castRange>
-		<isMagic>2</isMagic>
-		<targetType>DOOR_TREASURE</targetType>
-		<affectScope>SINGLE</affectScope>
-		<conditions>
-			<condition name="OpUnlock" />
-		</conditions>
-	</skill>
 	<skill id="20002" toLevel="1" name="Dragon Kick">
 		<!-- Powerful blow containing the power of a dragon. Attack targets with 3420 Power added to P. Atk. Critical. Over-hit. -->
 		<icon>icon.skill_transform_s_attack</icon>
@@ -67,7 +48,7 @@
 		</effects>
 	</skill>
 	<skill id="20004" toLevel="1" name="Dragon Dash">
-		<!-- Speed +100% for 5 sec. with a dragon's strength. -->
+		<!-- Increases Speed by 100% for 5 sec. with a dragon's strength. -->
 		<icon>icon.skill_transform_buff</icon>
 		<abnormalTime>5</abnormalTime>
 		<mpConsume>1</mpConsume>
@@ -111,37 +92,6 @@
 		<effects>
 			<effect name="CriticalRate">
 				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="20006" toLevel="1" name="Soul Roar">
-		<!-- Instantly recovers Max HP/ CP by 15% and for 10 min., and your Max HP/ CP +15%. -->
-		<icon>BranchSys2.icon.skill20006</icon>
-		<abnormalTime>600</abnormalTime>
-		<effectPoint>635</effectPoint>
-		<hitTime>1500</hitTime>
-		<magicLevel>62</magicLevel>
-		<mpConsume>58</mpConsume>
-		<operateType>A2</operateType>
-		<reuseDelay>240000</reuseDelay>
-		<abnormalType>MAX_HP_UP_K</abnormalType>
-		<basicProperty>NONE</basicProperty>
-		<magicCriticalRate>5</magicCriticalRate>
-		<abnormalLevel>1</abnormalLevel>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<effects>
-			<effect name="CpHealPercent">
-				<power>15</power>
-			</effect>
-			<effect name="MaxHp">
-				<amount>15</amount>
-				<mode>PER</mode>
-				<heal>true</heal>
-			</effect>
-			<effect name="MaxCp">
-				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>

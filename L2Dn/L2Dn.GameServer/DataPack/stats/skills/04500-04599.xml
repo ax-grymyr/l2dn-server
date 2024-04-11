@@ -92,6 +92,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4513" toLevel="1" name="Squash - Level Up">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -100,6 +101,7 @@
 		<affectScope>NONE</affectScope>
 	</skill>
 	<skill id="4514" toLevel="1" name="Squash - Poisoned">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -108,7 +110,7 @@
 		<affectScope>NONE</affectScope>
 	</skill>
 	<skill id="4515" toLevel="1" name="Raid Curse">
-		<!-- The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more levels below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
+		<!-- The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
 		<icon>icon.skill4111</icon>
 		<abnormalLevel>99</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
@@ -134,6 +136,7 @@
 		</effects>
 	</skill>
 	<skill id="4516" toLevel="1" name="Orfen Heal">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -154,6 +157,7 @@
 		</effects>
 	</skill>
 	<skill id="4517" toLevel="1" name="Shield">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -174,6 +178,7 @@
 		</effects>
 	</skill>
 	<skill id="4518" toLevel="1" name="Might">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -194,6 +199,7 @@
 		</effects>
 	</skill>
 	<skill id="4519" toLevel="1" name="Shield">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -209,6 +215,7 @@
 		</effects>
 	</skill>
 	<skill id="4520" toLevel="1" name="Might">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -223,7 +230,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4521" toLevel="1" name="Bow Attack Resistance">
+	<skill id="4521" toLevel="1" name="Bow Resistance">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -265,6 +273,7 @@
 		</effects>
 	</skill>
 	<skill id="4523" toLevel="1" name="Ultimate Evasion">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -286,6 +295,7 @@
 		</effects>
 	</skill>
 	<skill id="4524" toLevel="1" name="Bluff">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -301,6 +311,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4525" toLevel="1" name="Shield">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -320,6 +331,7 @@
 		</effects>
 	</skill>
 	<skill id="4526" toLevel="1" name="Summon">
+		<icon>icon.skill0000</icon>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>76</magicLevel>
 		<operateType>A1</operateType>
@@ -335,6 +347,7 @@
 		</effects>
 	</skill>
 	<skill id="4527" toLevel="1" name="Restore">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -359,6 +372,7 @@
 		</effects>
 	</skill>
 	<skill id="4528" toLevel="1" name="Wind Walk">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>120</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -382,6 +396,7 @@
 		</effects>
 	</skill>
 	<skill id="4529" toLevel="1" name="Self-destruction">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -399,6 +414,7 @@
 		</effects>
 	</skill>
 	<skill id="4530" toLevel="1" name="Heal">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -417,6 +433,7 @@
 		</effects>
 	</skill>
 	<skill id="4531" toLevel="1" name="Heal">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -435,6 +452,7 @@
 		</effects>
 	</skill>
 	<skill id="4532" toLevel="1" name="Reflect Damage">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -646,7 +664,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4540" toLevel="1" name="Curse of Weakness">
+	<skill id="4540" toLevel="1" name="Curse Weakness">
 		<!-- Temporarily decreases P. Def. and Speed. Shield skill can remove the curse. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>3</abnormalLevel>
@@ -676,7 +694,7 @@
 		</effects>
 	</skill>
 	<skill id="4541" toLevel="1" name="Nihilistic Curse">
-		<!-- Temporarily decreases P. Atk., Atk. Spd. and M. Atk.. Might skill can remove the curse. -->
+		<!-- Temporarily decreases P. Atk., Atk. Spd. and M. Atk. The curse can be removed with the Might skill. -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
@@ -709,6 +727,7 @@
 		</effects>
 	</skill>
 	<skill id="4542" toLevel="1" name="Sleep/Stun Resistance">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -720,6 +739,7 @@
 		</effects>
 	</skill>
 	<skill id="4543" toLevel="1" name="Weakened Stun">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -730,6 +750,7 @@
 		</effects>
 	</skill>
 	<skill id="4544" toLevel="3" name="Weakness">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -775,6 +796,7 @@
 		</effects>
 	</skill>
 	<skill id="4545" toLevel="1" name="Reflect Damage">
+		<icon>icon.skill0000</icon>
 		<magicLevel>76</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -794,6 +816,7 @@
 		</effects>
 	</skill>
 	<skill id="4546" toLevel="1" name="Consume Slate">
+		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectRange>1500</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -823,6 +846,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4548" toLevel="1" name="Annulment">
+		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectRange>1500</effectRange>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -839,6 +863,7 @@
 		</effects>
 	</skill>
 	<skill id="4549" toLevel="1" name="Quest - Unsealed Altar">
+		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>99</magicLevel>
@@ -848,6 +873,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4550" toLevel="1" name="Quest - Cursed Altar">
+		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>99</magicLevel>
@@ -1118,6 +1144,7 @@
 		</effects>
 	</skill>
 	<skill id="4555" toLevel="1" name="Mutation Resistance">
+		<icon>icon.skill0000</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1132,6 +1159,7 @@
 		</effects>
 	</skill>
 	<skill id="4556" toLevel="1" name="Dispel Hot Spring Disease A D">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1150,6 +1178,7 @@
 		</effects>
 	</skill>
 	<skill id="4557" toLevel="1" name="Dispel Hot Spring Disease B D">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1168,6 +1197,7 @@
 		</effects>
 	</skill>
 	<skill id="4558" toLevel="1" name="Dispel Hot Spring Disease C D">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectRange>1100</effectRange>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1187,6 +1217,7 @@
 	</skill>
 	<skill id="4559" toLevel="1" name="Hot Spring Illusion">
 		<!-- Temporary optical illusion caused by the Hot Spring. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>600</abnormalTime>
 		<abnormalType>BIG_HEAD</abnormalType>
@@ -1204,6 +1235,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="4560" toLevel="12" name="Fire Burn">
+		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>650</effectRange>
@@ -1265,6 +1297,7 @@
 		</effects>
 	</skill>
 	<skill id="4561" toLevel="12" name="Fire Burn">
+		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>650</effectRange>
@@ -1325,6 +1358,7 @@
 		</effects>
 	</skill>
 	<skill id="4562" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -1399,6 +1433,7 @@
 		</effects>
 	</skill>
 	<skill id="4563" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1400</effectRange>
@@ -1473,6 +1508,7 @@
 		</effects>
 	</skill>
 	<skill id="4564" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -1547,6 +1583,7 @@
 		</effects>
 	</skill>
 	<skill id="4565" toLevel="12" name="Rain of Fire">
+		<icon>icon.skill0000</icon>
 		<affectRange>100</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1609,6 +1646,7 @@
 		</effects>
 	</skill>
 	<skill id="4566" toLevel="12" name="Rain of Fire">
+		<icon>icon.skill0000</icon>
 		<affectRange>100</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1671,6 +1709,7 @@
 		</effects>
 	</skill>
 	<skill id="4567" toLevel="12" name="Rain of Fire">
+		<icon>icon.skill0000</icon>
 		<affectRange>100</affectRange>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1733,6 +1772,7 @@
 		</effects>
 	</skill>
 	<skill id="4568" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1809,6 +1849,7 @@
 		</effects>
 	</skill>
 	<skill id="4569" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1885,6 +1926,7 @@
 		</effects>
 	</skill>
 	<skill id="4570" toLevel="12" name="Solar Flare">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1961,6 +2003,7 @@
 		</effects>
 	</skill>
 	<skill id="4571" toLevel="12" name="Blazing Circle">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -2021,6 +2064,7 @@
 		</effects>
 	</skill>
 	<skill id="4572" toLevel="12" name="Triple Sonic Slash">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -2080,6 +2124,7 @@
 		</effects>
 	</skill>
 	<skill id="4573" toLevel="12" name="Sonic Blaster">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -2138,6 +2183,7 @@
 		</effects>
 	</skill>
 	<skill id="4574" toLevel="12" name="Sonic Storm">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -2240,7 +2286,7 @@
 		</effects>
 	</skill>
 	<skill id="4576" toLevel="3" name="Reflect Damage">
-		<!-- Reflect 10% of damage. -->
+		<!-- Reflects 10% damage. -->
 		<icon>icon.skill0086</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -2506,7 +2552,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2591,7 +2637,7 @@
 		</effects>
 	</skill>
 	<skill id="4581" toLevel="12" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -2644,7 +2690,7 @@
 		</effects>
 	</skill>
 	<skill id="4582" toLevel="12" name="Poison">
-		<!-- HP decreases from bleeding momentarily. -->
+		<!-- Instantly decreases HP. -->
 		<icon>icon.skill4035</icon>
 		<abnormalLevel>
 			<value level="1">2</value>
@@ -2722,7 +2768,7 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2806,8 +2852,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4584" toLevel="12" name="Stunned and P. Def. decreased.">
-		<!-- Immediately decreases P. Def., target is immobilized because of stun. -->
+	<skill id="4584" toLevel="12" name="Decrease P. Def. and Stun">
+		<!-- Instantly decreases P. Def. Immobilizes and stuns target. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>
 			<value level="1">11</value>
@@ -2903,8 +2949,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4585" toLevel="3" name="Berserker Spirit">
-		<!-- P. Def. -$s1, M. Def. -$s2, P. Evasion -$s3, P. Atk. +$s4, M. Atk. +$s5, Atk. Spd. +$s6, Casting Spd. +$s7, Speed +$s8. -->
+	<skill id="4585" toLevel="3" name="Soul of Berserker">
+		<!-- P. Def. -5%, M. Def. -10%, P. Evasion -2, P. Atk. +13%, M. Atk. +10%, Atk. Spd. +5%, Casting Spd. +5%, Speed +5. -->
 		<icon>icon.skill1062</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3166,6 +3212,7 @@
 		</effects>
 	</skill>
 	<skill id="4588" toLevel="2" name="Berserker Haste">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -3503,7 +3550,7 @@
 		</effects>
 	</skill>
 	<skill id="4592" toLevel="12" name="Decrease P. Def.">
-		<!-- Immediately P. Def. -17%. -->
+		<!-- Decreases P. Def. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3586,7 +3633,7 @@
 		</effects>
 	</skill>
 	<skill id="4593" toLevel="12" name="Decrease P. Def.">
-		<!-- Immediately P. Def. -17%. -->
+		<!-- Decreases P. Def. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3669,7 +3716,7 @@
 		</effects>
 	</skill>
 	<skill id="4594" toLevel="12" name="Decrease P. Def.">
-		<!-- Immediately P. Def. -17%. -->
+		<!-- Decreases P. Def. -->
 		<icon>icon.skill0122</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -3752,6 +3799,7 @@
 		</effects>
 	</skill>
 	<skill id="4595" toLevel="3" name="Acumen Shield">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -3884,7 +3932,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3968,7 +4016,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -4052,12 +4100,12 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4599" toLevel="12" name="Decrease Speed">
-		<!-- Immediately target's Speed -10%. -->
+		<!-- Speed decreased temporarily. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>
 			<value level="1">1</value>

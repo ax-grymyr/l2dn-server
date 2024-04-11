@@ -15,7 +15,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4802" toLevel="1" name="70 Lv. Raid Boss">
-		<!-- Reaper is the page of the Goddess of Death, Shilen. Reaper is in charge of collecting the countless souls who wander about on earth, and bringing them to the underground world of Shilen. His loyalty to Shilen is absolute, and he stays close to the Seal of Shilen in order to serve the goddess better. He diligently carries out his duty while waiting for the day of the goddess' resurrection. -->
+		<!-- Reaper's the page of the Goddess of Death, Shilen. Reaper's in charge of collecting the countless souls who wander about on earth, and bringing them to the underground world of Shilen. His loyalty to Shilen's absolute, and he stays close to the Seal of Shilen in order to serve the goddess better. He diligently carries out his duty while waiting for the day of the goddess' resurrection. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -470,7 +470,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4867" toLevel="1" name="Raid Boss (Lv. 50)">
-		<!-- She was a beautiful lady of a respectable family from her birth, but she angered Einhasad by her arrogance and was turned into a Medusa. She could not adjust to her new state and became a brutal monster that takes her anger out on people near her. She even turned her fianc? who remained true to her into stone, and then smashed him to pieces. -->
+		<!-- She was a beautiful lady of a respectable family from her birth, but she angered Einhasad by her arrogance and was turned into a Medusa. She could not adjust to her new state and became a brutal monster that takes her anger out on people near her. She even turned her fiance who remained true to her into stone, and then smashed him to pieces. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -484,7 +484,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="4869" toLevel="1" name="Raid Boss (Lv. 35)">
-		<!-- A mercenary hired by a lord during the Dion Peasant Riot. He was once told that he could achieve eternal life if he collected souls and dedicated them to Shilen, so he slaughtered countless innocent peasants. Disgusted with his brutality, Duke Ashton finally executed him. Even after his death, his desire to gain eternal life was still strong, and he came back to life again as one of the Undead. Presently, he lurks near Dion Castle and kills innocent people. -->
+		<!-- A mercenary hired by a lord during the Dion Peasant Riot. He was once told that he could achieve eternal life if he collected souls and dedicated them to Shilen'so he slaughtered countless innocent peasants. Disgusted with his brutality, Duke Ashton finally executed him. Even after his death, his desire to gain eternal life was still strong, and he came back to life again as one of the Undead. Presently, he lurks near Dion Castle and kills innocent people. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>

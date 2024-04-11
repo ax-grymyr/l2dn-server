@@ -1554,6 +1554,7 @@ public abstract class Inventory: ItemContainer
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public Item setPaperdollItem(int slot, Item item)
 	{
+		Creature owner = getOwner();
 		Item old = _paperdoll[slot];
 		if (old != item)
 		{
@@ -1591,25 +1592,26 @@ public abstract class Inventory: ItemContainer
 				old.updateDatabase();
 				
 				// Remove agathion skills.
-				if ((slot >= PAPERDOLL_AGATHION1) && (slot <= PAPERDOLL_AGATHION5) && getOwner().isPlayer())
+				if ((slot >= PAPERDOLL_AGATHION1) && (slot <= PAPERDOLL_AGATHION5) && owner.isPlayer())
 				{
 					AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(old.getId());
 					if (agathionSkills != null)
 					{
 						bool update = false;
+						Player player = owner.getActingPlayer();
 						foreach (Skill skill in agathionSkills.getMainSkills(old.getEnchantLevel()))
 						{
-							getOwner().getActingPlayer().removeSkill(skill, false, skill.isPassive());
+							player.removeSkill(skill, false, skill.isPassive());
 							update = true;
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(old.getEnchantLevel()))
 						{
-							getOwner().getActingPlayer().removeSkill(skill, false, skill.isPassive());
+							player.removeSkill(skill, false, skill.isPassive());
 							update = true;
 						}
 						if (update)
 						{
-							getOwner().getActingPlayer().sendSkillList();
+							player.sendSkillList();
 						}
 					}
 				}
@@ -1639,56 +1641,66 @@ public abstract class Inventory: ItemContainer
 				item.updateDatabase();
 				
 				// Add agathion skills.
-				if ((slot >= PAPERDOLL_AGATHION1) && (slot <= PAPERDOLL_AGATHION5) && getOwner().isPlayer())
+				if ((slot >= PAPERDOLL_AGATHION1) && (slot <= PAPERDOLL_AGATHION5) && owner.isPlayer())
 				{
 					AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(item.getId());
 					if (agathionSkills != null)
 					{
 						bool update = false;
+						Player player = owner.getActingPlayer();
 						if (slot == PAPERDOLL_AGATHION1)
 						{
 							foreach (Skill skill in agathionSkills.getMainSkills(item.getEnchantLevel()))
 							{
-								if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, getOwner().getActingPlayer(), getOwner().getActingPlayer()))
+								if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
 								{
 									continue;
 								}
-								getOwner().getActingPlayer().addSkill(skill, false);
+								player.addSkill(skill, false);
 								update = true;
 							}
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
-							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, getOwner().getActingPlayer(), getOwner().getActingPlayer()))
+							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
 							{
 								continue;
 							}
-							getOwner().getActingPlayer().addSkill(skill, false);
+							player.addSkill(skill, false);
 							update = true;
 						}
 						if (update)
 						{
-							getOwner().getActingPlayer().sendSkillList();
+							player.sendSkillList();
 						}
 					}
 				}
 			}
 			
 			_paperdollCache.clearCachedStats();
-			getOwner().getStat().recalculateStats(!getOwner().isPlayer());
+			owner.getStat().recalculateStats(!owner.isPlayer());
 			
-			if (getOwner().isPlayer())
+			if (owner.isPlayer())
 			{
-				getOwner().sendPacket(new ExUserInfoEquipSlotPacket(getOwner().getActingPlayer()));
+				owner.sendPacket(new ExUserInfoEquipSlotPacket(owner.getActingPlayer()));
 			}
 		}
 		
 		// Notify to scripts
 		if (old != null)
 		{
-			Creature owner = getOwner();
 			if ((owner != null) && owner.isPlayer())
 			{
+				// Proper talisman display on login.
+				Player player = owner.getActingPlayer();
+				if (slot == PAPERDOLL_RBRACELET && !player.hasEnteredWorld())
+				{
+					foreach (ItemSkillHolder skill in old.getTemplate().getAllSkills())
+					{
+						player.addSkill(skill.getSkill(), false);
+					}
+				}
+				
 				EventContainer itemEvents = old.getTemplate().Events;
 				if (itemEvents.HasSubscribers<OnPlayerItemUnequip>())
 				{

@@ -36,9 +36,9 @@ public class Op2hWeaponSkillCondition: ISkillCondition
 		
 		foreach (WeaponType weaponType in _weaponTypes)
 		{
-			if ((weapon.getItemType() == weaponType) && ((weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) != 0))
+			if (weapon.getItemType() == weaponType)
 			{
-				return true;
+				return (weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) != 0;
 			}
 		}
 		

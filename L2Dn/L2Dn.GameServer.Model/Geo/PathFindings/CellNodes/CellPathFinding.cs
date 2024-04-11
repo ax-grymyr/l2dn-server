@@ -59,15 +59,15 @@ public class CellPathFinding: PathFinding
 	
 	public override List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, bool playable)
 	{
-		int gx = GeoEngine.getInstance().getGeoX(x);
-		int gy = GeoEngine.getInstance().getGeoY(y);
+		int gx = GeoEngine.getGeoX(x);
+		int gy = GeoEngine.getGeoY(y);
 		if (!GeoEngine.getInstance().hasGeo(x, y))
 		{
 			return null;
 		}
 		int gz = GeoEngine.getInstance().getHeight(x, y, z);
-		int gtx = GeoEngine.getInstance().getGeoX(tx);
-		int gty = GeoEngine.getInstance().getGeoY(ty);
+		int gtx = GeoEngine.getGeoX(tx);
+		int gty = GeoEngine.getGeoY(ty);
 		if (!GeoEngine.getInstance().hasGeo(tx, ty))
 		{
 			return null;

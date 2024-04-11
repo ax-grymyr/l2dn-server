@@ -121,10 +121,10 @@ public abstract class Vehicle : Creature
 						MoveData m = new MoveData();
 						m.disregardingGeodata = false;
 						m.onGeodataPathIndex = -1;
-						m._xDestination = point.getX();
-						m._yDestination = point.getY();
-						m._zDestination = point.getZ();
-						m._heading = 0;
+						m.xDestination = point.getX();
+						m.yDestination = point.getY();
+						m.zDestination = point.getZ();
+						m.heading = 0;
 						
 						double distance = MathUtil.hypot(point.getX() - getX(), point.getY() - getY());
 						if (distance > 1)
@@ -132,7 +132,7 @@ public abstract class Vehicle : Creature
 							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.getX(), point.getY()));
 						}
 						
-						m._moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();
+						m.moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();
 						_move = m;
 						MovementTaskManager.getInstance().registerMovingObject(this);
 						

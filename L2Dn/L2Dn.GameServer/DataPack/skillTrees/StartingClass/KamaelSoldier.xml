@@ -7,19 +7,15 @@
 			<item id="92004" count="1" /> <!-- Inventory Expansion Ticket Lv. 1 -->
 		</skill>
 		<skill skillName="Extra Inventory" skillId="1372" skillLevel="2" getLevel="1" levelUpSp="0">
-			<preRequisiteSkill id="1372" lvl="1" /> <!-- Extra Inventory lv 1 -->
 			<item id="92005" count="1" /> <!-- Inventory Expansion Ticket Lv. 2 -->
 		</skill>
 		<skill skillName="Extra Inventory" skillId="1372" skillLevel="3" getLevel="1" levelUpSp="0">
-			<preRequisiteSkill id="1372" lvl="2" /> <!-- Extra Inventory lv 2 -->
 			<item id="92006" count="1" /> <!-- Inventory Expansion Ticket Lv. 3 -->
 		</skill>
 		<skill skillName="Extra Inventory" skillId="1372" skillLevel="4" getLevel="1" levelUpSp="0">
-			<preRequisiteSkill id="1372" lvl="3" /> <!-- Extra Inventory lv 3 -->
 			<item id="92007" count="1" /> <!-- Inventory Expansion Ticket Lv. 4 -->
 		</skill>
 		<skill skillName="Extra Inventory" skillId="1372" skillLevel="5" getLevel="1" levelUpSp="0">
-			<preRequisiteSkill id="1372" lvl="4" /> <!-- Extra Inventory lv 4 -->
 			<item id="92008" count="1" /> <!-- Inventory Expansion Ticket Lv. 5 -->
 		</skill>
 		

@@ -2,32 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="GiranMonsterSpawns">
 		<group>
-			<npc id="20933" x="33696" y="183127" z="-3251" heading="63443" respawnTime="32sec" />
-			<npc id="20935" x="34906" y="182770" z="-3153" heading="11328" respawnTime="32sec" />
-			<npc id="20933" x="32990" y="181767" z="-3250" heading="5014" respawnTime="32sec" />
-			<npc id="20935" x="34429" y="179980" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="35234" y="181048" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="33120" y="180514" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="35838" y="181048" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="34630" y="180336" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="35234" y="180336" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="34932" y="180158" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="34830" y="181048" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="35938" y="180158" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="35435" y="180336" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="35334" y="180158" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="35938" y="180514" z="-3539" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="33410" y="184121" z="-3419" heading="0" respawnTime="32sec" />
-			<npc id="20935" x="33612" y="184477" z="-3419" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="33814" y="184833" z="-3419" heading="0" respawnTime="32sec" />
-			<npc id="20933" x="33670" y="186844" z="-3256" heading="63031" respawnTime="32sec" />
-			<npc id="20944" x="59297" y="163977" z="-2850" heading="64228" respawnTime="45sec" />
-			<npc id="20944" x="56562" y="164003" z="-2657" heading="30377" respawnTime="45sec" />
-			<npc id="20944" x="46885" y="165094" z="-3101" heading="15905" respawnTime="45sec" />
-			<npc id="20944" x="46183" y="168101" z="-2777" heading="18414" respawnTime="45sec" />
-			<npc id="20944" x="53849" y="163987" z="-2580" heading="226" respawnTime="45sec" />
-			<npc id="20944" x="50866" y="165086" z="-2859" heading="21969" respawnTime="45sec" />
-			<npc id="20944" x="48410" y="163787" z="-2937" heading="33699" respawnTime="45sec" />
 			<npc id="20832" x="40355" y="196013" z="-4696" heading="0" respawnTime="55sec" />
 			<npc id="20832" x="39697" y="195199" z="-4656" heading="9376" respawnTime="55sec" />
 			<npc id="20836" x="38385" y="195442" z="-4639" heading="30079" respawnTime="55sec" />
@@ -409,23 +383,6 @@
 			<npc id="20145" x="97415" y="130420" z="-3320" heading="48668" respawnTime="27sec" />
 			<npc id="20249" x="95880" y="129662" z="-3268" heading="27982" respawnTime="27sec" />
 			<npc id="20249" x="96392" y="130127" z="-3335" heading="19040" respawnTime="27sec" />
-			<npc id="20944" x="67788" y="143056" z="-3529" heading="16575" respawnTime="45sec" />
-			<npc id="20944" x="68202" y="142246" z="-3617" heading="46582" respawnTime="45sec" />
-			<npc id="20944" x="67444" y="140949" z="-3796" heading="0" respawnTime="45sec" />
-			<npc id="20941" x="69123" y="141612" z="-3638" heading="62857" respawnTime="45sec" />
-			<npc id="20941" x="69105" y="144917" z="-3205" heading="12743" respawnTime="45sec" />
-			<npc id="20941" x="65863" y="141725" z="-3692" heading="60699" respawnTime="45sec" />
-			<npc id="20941" x="65788" y="143595" z="-3689" heading="24340" respawnTime="45sec" />
-			<npc id="20944" x="67083" y="144262" z="-3501" heading="10367" respawnTime="45sec" />
-			<npc id="20944" x="66373" y="145545" z="-3796" heading="0" respawnTime="45sec" />
-			<npc id="20941" x="66092" y="147610" z="-3677" heading="14800" respawnTime="45sec" />
-			<npc id="20944" x="65927" y="148999" z="-3681" heading="52103" respawnTime="45sec" />
-			<npc id="20944" x="67612" y="158751" z="-3660" heading="18823" respawnTime="45sec" />
-			<npc id="20944" x="67475" y="156680" z="-3658" heading="3830" respawnTime="45sec" />
-			<npc id="20944" x="66983" y="155192" z="-3716" heading="57199" respawnTime="45sec" />
-			<npc id="20941" x="66033" y="155761" z="-3796" heading="0" respawnTime="45sec" />
-			<npc id="20941" x="66234" y="155761" z="-3796" heading="0" respawnTime="45sec" />
-			<npc id="20941" x="65932" y="156295" z="-3796" heading="0" respawnTime="45sec" />
 			<npc id="20199" x="71525" y="131770" z="-3554" heading="37919" respawnTime="35sec" />
 			<npc id="20267" x="72948" y="133218" z="-3519" heading="9253" respawnTime="33sec" />
 			<npc id="20267" x="71845" y="132058" z="-3532" heading="40939" respawnTime="33sec" />
@@ -450,15 +407,6 @@
 			<npc id="20248" x="97429" y="136610" z="-3519" heading="29829" respawnTime="27sec" />
 			<npc id="20145" x="97585" y="147868" z="-3568" heading="46147" respawnTime="27sec" />
 			<npc id="20249" x="98100" y="150835" z="-3464" heading="46408" respawnTime="27sec" />
-			<npc id="20784" x="73354" y="183562" z="-3072" heading="2604" respawnTime="25sec" />
-			<npc id="20784" x="72598" y="183526" z="-3057" heading="43297" respawnTime="25sec" />
-			<npc id="20784" x="73704" y="184074" z="-3252" heading="25456" respawnTime="25sec" />
-			<npc id="21639" x="73056" y="183962" z="-3140" heading="53843" respawnTime="25sec" />
-			<npc id="21639" x="73568" y="183350" z="-3077" heading="3650" respawnTime="25sec" />
-			<npc id="20785" x="71606" y="184075" z="-3053" heading="32207" respawnTime="25sec" />
-			<npc id="21640" x="75060" y="181761" z="-3330" heading="59449" respawnTime="25sec" />
-			<npc id="21640" x="72047" y="183620" z="-3024" heading="2733" respawnTime="25sec" />
-			<npc id="21639" x="79840" y="181678" z="-3765" heading="26492" respawnTime="25sec" />
 			<npc id="20781" x="68742" y="165652" z="-3560" heading="0" respawnTime="30sec" />
 			<npc id="20781" x="68943" y="166008" z="-3560" heading="0" respawnTime="30sec" />
 			<npc id="20781" x="68440" y="165830" z="-3560" heading="0" respawnTime="30sec" />

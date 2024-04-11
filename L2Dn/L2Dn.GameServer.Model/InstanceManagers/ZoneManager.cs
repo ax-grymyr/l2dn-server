@@ -346,7 +346,7 @@ public class ZoneManager: DataReaderBase
 		
 		LoadXmlDocuments(DataFileLocation.Data, "zones").ForEach(t =>
 		{
-			t.Document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(true)).Elements("zone")
+			t.Document.Elements("list").Where(e => e.GetAttributeValueAsBoolean("enabled")).Elements("zone")
 				.ForEach(e => parseElement(t.FilePath, e));
 		});
 		

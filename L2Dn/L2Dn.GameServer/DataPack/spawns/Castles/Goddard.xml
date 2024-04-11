@@ -2,16 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="GoddardCastle">
 		<group>
-			<npc id="31276" x="148880" y="-52608" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Bernhard -->
-			<npc id="31277" x="149008" y="-52560" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Felix -->
-			<npc id="31278" x="148736" y="-52560" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Bronwyn -->
-			<npc id="31279" x="147712" y="-52688" z="-2728" heading="49000" respawnTime="60sec" /> <!-- Gregory -->
-			<npc id="31280" x="148048" y="-52416" z="-2728" heading="49000" respawnTime="60sec" /> <!-- Bastian -->
-			<npc id="31281" x="147376" y="-52416" z="-2728" heading="49000" respawnTime="60sec" /> <!-- Cerenas -->
-			<npc id="31282" x="146688" y="-52576" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Justin -->
-			<npc id="31283" x="146416" y="-52564" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Alminas -->
-			<npc id="31585" x="146688" y="-52592" z="-2728" heading="16000" respawnTime="60sec" /> <!-- Sparky the Cat -->
-			<npc id="31587" x="146553" y="-52608" z="-2728" heading="49500" respawnTime="60sec" /> <!-- Halaster -->
 			<npc id="35322" x="146601" y="-50441" z="-1496" heading="32768" respawnTime="60sec" /> <!-- Goddard Holy Artifact -->
 			<npc id="35323" x="148353" y="-50457" z="-1496" respawnTime="60sec" /> <!-- Goddard Holy Artifact -->
 		</group>

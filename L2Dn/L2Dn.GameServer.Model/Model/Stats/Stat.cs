@@ -676,8 +676,8 @@ public static class StatUtil
 
 	public static double defaultValue(Creature creature, double? @base, Stat stat)
 	{
-		double mul = creature.getStat().getMul(stat);
-		double add = creature.getStat().getAdd(stat);
+		double mul = creature.getStat().getMulValue(stat);
+		double add = creature.getStat().getAddValue(stat);
 		return @base != null
 			? defaultValue(creature, stat, @base.Value)
 			: mul * (add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()));
@@ -685,8 +685,8 @@ public static class StatUtil
 
 	public static double defaultValue(Creature creature, Stat stat, double baseValue)
 	{
-		double mul = creature.getStat().getMul(stat);
-		double add = creature.getStat().getAdd(stat);
+		double mul = creature.getStat().getMulValue(stat);
+		double add = creature.getStat().getAddValue(stat);
 		return (mul * baseValue) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }

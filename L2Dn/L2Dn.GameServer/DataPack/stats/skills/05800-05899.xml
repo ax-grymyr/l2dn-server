@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5800" toLevel="1" name="Self-destruction">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -16,6 +17,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5801" toLevel="1" name="Drake Breath">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<effectPoint>-676</effectPoint>
 		<fanRange>0;0;600;45</fanRange>
@@ -65,6 +67,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5803" toLevel="3" name="Green Chili">
+		<icon>icon.skill0000</icon>
 		<effectPoint>
 			<value level="1">-659</value>
 			<value level="2">-669</value>
@@ -94,6 +97,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5804" toLevel="3" name="Fireball">
+		<icon>icon.skill0000</icon>
 		<effectPoint>
 			<value level="1">-635</value>
 			<value level="2">-659</value>
@@ -123,6 +127,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5805" toLevel="1" name="Air Assault">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1332</effectPoint>
 		<hitTime>800</hitTime>
 		<magicLevel>77</magicLevel>
@@ -143,6 +148,7 @@
 		</effects>
 	</skill>
 	<skill id="5806" toLevel="1" name="High Wave Beam">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-659</effectPoint>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -160,6 +166,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5807" toLevel="1" name="Self-destruction">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<magicLevel>75</magicLevel>
 		<operateType>A1</operateType>
@@ -174,7 +181,8 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5808" toLevel="1" name="Burst Flame">
+	<skill id="5808" toLevel="1" name="Bursting Flame">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -192,6 +200,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5809" toLevel="1" name="Dark Blood">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-659</effectPoint>
 		<hitTime>1700</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -237,6 +246,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5811" toLevel="1" name="Sonic Bomb">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-635</effectPoint>
 		<hitTime>1700</hitTime>
 		<magicLevel>78</magicLevel>
@@ -251,6 +261,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5812" toLevel="1" name="Fire Breath">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<effectPoint>-676</effectPoint>
 		<fanRange>0;0;600;60</fanRange>
@@ -271,6 +282,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5813" toLevel="1" name="Sand Ball">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-676</effectPoint>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -288,6 +300,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5814" toLevel="3" name="Self-destruction">
+		<icon>icon.skill0000</icon>
 		<effectPoint>
 			<value level="1">-635</value>
 			<value level="2">-659</value>
@@ -315,6 +328,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5815" toLevel="1" name="Presentation - Mercenary Troops Shout">
+		<icon>icon.skill0000</icon>
 		<hitTime>2300</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -325,6 +339,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5816" toLevel="1" name="Presentation - Female Priest Transformation">
+		<icon>icon.skill0000</icon>
 		<hitTime>7700</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -335,6 +350,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5817" toLevel="1" name="Presentation - Dragon Shout">
+		<icon>icon.skill0000</icon>
 		<hitTime>3000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -344,6 +360,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5818" toLevel="1" name="Presentation - Repentance">
+		<icon>icon.skill0000</icon>
 		<hitTime>2430</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -354,6 +371,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5819" toLevel="1" name="Presentation - Victory">
+		<icon>icon.skill0000</icon>
 		<hitTime>5930</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -364,6 +382,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5820" toLevel="1" name="Presentation - Cancel">
+		<icon>icon.skill0000</icon>
 		<hitTime>7000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -374,6 +393,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5821" toLevel="1" name="Presentation - Female Priest Exit">
+		<icon>icon.skill0000</icon>
 		<hitTime>5330</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -384,6 +404,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5823" toLevel="1" name="Boss Defeat">
+		<icon>icon.skill0000</icon>
 		<hitTime>2500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -394,6 +415,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5824" toLevel="1" name="Boss Arise">
+		<icon>icon.skill0000</icon>
 		<hitTime>2500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
@@ -404,6 +426,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5825" toLevel="1" name="Presentation - Algraia Exit">
+		<icon>icon.skill0000</icon>
 		<hitTime>5330</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -413,6 +436,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5826" toLevel="3" name="Fire Breath">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<affectRange>600</affectRange>
 		<castRange>600</castRange>
@@ -455,6 +479,7 @@
 		</effects>
 	</skill>
 	<skill id="5827" toLevel="6" name="Fireball">
+		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<affectRange>150</affectRange>
 		<castRange>600</castRange>
@@ -508,6 +533,7 @@
 		</effects>
 	</skill>
 	<skill id="5828" toLevel="6" name="Unholy Flare">
+		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -565,6 +591,7 @@
 		</effects>
 	</skill>
 	<skill id="5829" toLevel="6" name="Fire Flare">
+		<icon>icon.skill0000</icon>
 		<castRange>150</castRange>
 		<effectPoint>
 			<value level="1">-659</value>
@@ -622,6 +649,7 @@
 		</effects>
 	</skill>
 	<skill id="5830" toLevel="1" name="Polearm Thrust">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
@@ -661,7 +689,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -750,6 +778,7 @@
 		</effects>
 	</skill>
 	<skill id="5835" toLevel="1" name="Major Heal">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>867</effectPoint>
 		<effectRange>1100</effectRange>
@@ -803,6 +832,7 @@
 		</effects>
 	</skill>
 	<skill id="5837" toLevel="1" name="Double Throw Javelin">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -821,6 +851,7 @@
 		</effects>
 	</skill>
 	<skill id="5838" toLevel="1" name="Throw Javelin">
+		<icon>icon.skill0000</icon>
 		<castRange>900</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1500</effectRange>
@@ -839,6 +870,7 @@
 		</effects>
 	</skill>
 	<skill id="5839" toLevel="1" name="Breath">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<affectRange>1200</affectRange>
 		<castRange>900</castRange>
@@ -863,6 +895,7 @@
 		</effects>
 	</skill>
 	<skill id="5840" toLevel="1" name="Fire Breath">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<affectRange>1200</affectRange>
 		<castRange>900</castRange>
@@ -890,6 +923,7 @@
 	</skill>
 	<skill id="5841" toLevel="1" name="Multi Defense">
 		<!-- P. Def. and M. Def. are increased. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>INSTINCT</abnormalType>
@@ -921,6 +955,7 @@
 		</effects>
 	</skill>
 	<skill id="5842" toLevel="1" name="Spinning Slasher">
+		<icon>icon.skill0000</icon>
 		<affectLimit>6-12</affectLimit>
 		<affectRange>400</affectRange>
 		<coolTime>733</coolTime>
@@ -942,7 +977,7 @@
 		</effects>
 	</skill>
 	<skill id="5843" toLevel="1" name="Fear">
-		<!-- Afflicted with Fear and moving against own will momentarily. -->
+		<!-- Afflicted with Fear and moving against own will. -->
 		<icon>icon.skill1092</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
@@ -973,6 +1008,7 @@
 		</effects>
 	</skill>
 	<skill id="5844" toLevel="1" name="Thunder Storm">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<coolTime>2000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -994,6 +1030,7 @@
 		</effects>
 	</skill>
 	<skill id="5845" toLevel="12" name="Trigger Bleed">
+		<icon>icon.skill0000</icon>
 		<magicLevel>
 			<value level="1">10</value>
 			<value level="2">20</value>
@@ -1104,11 +1141,12 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5847" toLevel="1" name="Flip Nearby Blocks">
+		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -1121,6 +1159,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 	</skill>
 	<skill id="5848" toLevel="1" name="Block Trigger Slow">
+		<icon>icon.skill0000</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1153,6 +1192,7 @@
 		</effects>
 	</skill>
 	<skill id="5850" toLevel="1" name="Block Trigger Stun">
+		<icon>icon.skill0000</icon>
 		<magicLevel>80</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1292,7 +1332,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5860" toLevel="1" name="Wrath of Valakas">
-		<!-- Magic skills are blocked and Speed decreases momentarily. Destruction of the Body is activated, inflicting major damage on the stamina of nearby party members after 10 sec. -->
+		<!-- Temporarily blocks magic skills and decreases Speed. In 10 sec. Destruction of Body is activated, inflicting major physical damage on nearby allies. -->
 		<icon>icon.skill5860</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1315,7 +1355,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5861" toLevel="1" name="Authority of Valakas">
-		<!-- Magic skills are blocked and Speed decreases momentarily. Destruction of the Mind is activated, inflicting major damage on the minds of nearby party members after 10 sec. -->
+		<!-- Temporarily blocks magic skills and decreases Speed. In 10 sec. Destruction of Soul is activated, inflicting major mental damage on nearby allies. -->
 		<icon>icon.skill5861</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
@@ -1337,7 +1377,8 @@
 		<targetType>ENEMY_ONLY</targetType>
 		<affectScope>SINGLE</affectScope>
 	</skill>
-	<skill id="5862" toLevel="1" name="Destruction of the Body">
+	<skill id="5862" toLevel="1" name="Destruction of Body">
+		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<effectPoint>-1000</effectPoint>
 		<magicLevel>99</magicLevel>
@@ -1357,7 +1398,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5863" toLevel="1" name="Destruction of the Soul">
+	<skill id="5863" toLevel="1" name="Destruction of Soul">
+		<icon>icon.skill0000</icon>
 		<affectLimit>10-10</affectLimit>
 		<effectPoint>-1000</effectPoint>
 		<magicLevel>99</magicLevel>
@@ -1378,6 +1420,7 @@
 		</effects>
 	</skill>
 	<skill id="5864" toLevel="1" name="Decrease Valakas Defense">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
@@ -1397,6 +1440,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5865" toLevel="1" name="Wide-bodied Valakas">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>BERSERKER</abnormalType>
@@ -1867,6 +1911,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5877" toLevel="4" name="Chant of Worm Waking">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLevel>
@@ -1942,7 +1987,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>145</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2054,7 +2099,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>145</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2189,7 +2234,7 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
-	<skill id="5888" toLevel="2" name="Earth Shaker">
+	<skill id="5888" toLevel="2" name="Earthquake">
 		<!-- Equipment are removed. Unable to use weapons while the effect lasts. -->
 		<icon>icon.skill0100</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -2291,6 +2336,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5891" toLevel="1" name="Threatening Bellow">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLevel>83</magicLevel>
@@ -2305,7 +2351,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5892" toLevel="2" name="Cunning Coercion">
-		<!-- Makes the enemy show his back, removes its desire for attack, and cancels its target state. Inflicts mental shock on the enemy momentarily. -->
+		<!-- Makes the enemy show his back, removes its desire for attack, and cancels its target state. Momentarily inflicts mental shock on the enemy. -->
 		<icon>icon.skill0358</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
@@ -2340,6 +2386,7 @@
 		</effects>
 	</skill>
 	<skill id="5893" toLevel="1" name="Ritual of Cannibalism">
+		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLevel>84</magicLevel>
@@ -2425,7 +2472,6 @@
 	<skill id="5895" toLevel="1" name="Mark of Cowardice">
 		<!-- Significantly decreases Max HP, P./ M. Def. and P. Evasion. The use of attack and skills, HP Recovery Bonus are limited, but Speed is slightly increased. -->
 		<icon>icon.skill1337</icon>
-		<!-- TODO JEY -->
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MULTI_DEBUFF_B</abnormalType>
@@ -2473,6 +2519,7 @@
 		</effects>
 	</skill>
 	<skill id="5896" toLevel="2" name="Soulless">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -2583,6 +2630,7 @@
 		</effects>
 	</skill>
 	<skill id="5899" toLevel="2" name="Burst of Pain">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-15</affectLimit>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>

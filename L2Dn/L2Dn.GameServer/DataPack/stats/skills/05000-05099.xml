@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5000" toLevel="1" name="Alfred Strike">
+		<icon>icon.skill0000</icon>
 		<castRange>1000</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -19,6 +20,7 @@
 		</effects>
 	</skill>
 	<skill id="5001" toLevel="1" name="Alfred Life Drain">
+		<icon>icon.skill0000</icon>
 		<castRange>750</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1250</effectRange>
@@ -37,6 +39,7 @@
 		</effects>
 	</skill>
 	<skill id="5002" toLevel="1" name="Giselle Vampiric Rage">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
@@ -61,6 +64,7 @@
 		</effects>
 	</skill>
 	<skill id="5003" toLevel="1" name="Giselle Tempest">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -92,6 +96,7 @@
 	</skill>
 	<skill id="5005" toLevel="1" name="Frintezza Pose">
 		<!-- Frintezza is in temporary state of paralysis. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
@@ -113,6 +118,7 @@
 	</skill>
 	<skill id="5006" toLevel="1" name="Frintezza Music">
 		<!-- A general performance. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<hitTime>34000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
@@ -125,6 +131,7 @@
 	</skill>
 	<skill id="5007" toLevel="5" name="Frintezza Heal Music">
 		<!-- Music to soothe the soul. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<hitTime>
 			<value level="1">32000</value>
@@ -310,6 +317,7 @@
 	</skill>
 	<skill id="5009" toLevel="1" name="Frintezza Ghost Fighter">
 		<!-- A portrait ghost that can make physical attacks. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>150</castRange>
 		<effectPoint>-100</effectPoint>
@@ -331,6 +339,7 @@
 	</skill>
 	<skill id="5010" toLevel="1" name="Frintezza Ghost Mage">
 		<!-- A portrait ghost that can make magical attacks. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -353,6 +362,7 @@
 	</skill>
 	<skill id="5011" toLevel="1" name="Frintezza Ghost Bomb">
 		<!-- A portrait ghost who can create a suicide explosion. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>DARK</attributeType>
@@ -372,7 +382,7 @@
 		</effects>
 	</skill>
 	<skill id="5012" toLevel="1" name="Breath of Scarlet">
-		<!-- Afflicted with Hold and unable to move temporarily. -->
+		<!-- Unable to move momentarily. -->
 		<icon>icon.skill5012</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
@@ -393,11 +403,14 @@
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5013" toLevel="1" name="Frintezza Energy Drain">
 		<!-- Portrait ghost drains HP. -->
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -407,7 +420,6 @@
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<hitCancelTime>0</hitCancelTime>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effects>
@@ -418,7 +430,8 @@
 		</effects>
 	</skill>
 	<skill id="5014" toLevel="3" name="Frintezza Demon Attack">
-		<!-- Demon $s1 general attack. -->
+		<!-- Demon 1 general attack. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>150</castRange>
 		<coolTime>1200</coolTime>
@@ -453,67 +466,16 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5015" toLevel="6" name="Frintezza Charge">
-		<!-- Demon $s1 charge. -->
-		<affectRange>
-			<value level="1">400</value>
-			<value level="2">500</value>
-			<value level="3">700</value>
-			<value level="4">400</value>
-			<value level="5">500</value>
-			<value level="6">700</value>
-		</affectRange>
-		<castRange>150</castRange>
-		<coolTime>
-			<value level="1">0</value>
-			<value level="2">0</value>
-			<value level="3">0</value>
-			<value level="4">1500</value>
-			<value level="5">1500</value>
-			<value level="6">1500</value>
-		</coolTime>
-		<effectPoint>-100</effectPoint>
-		<effectRange>650</effectRange>
-		<attributeType>DARK</attributeType>
-		<attributeValue>180</attributeValue>
-		<fanRange>
-			<value level="1">0;0;400;150</value>
-			<value level="2">0;0;500;170</value>
-			<value level="3">0;0;700;200</value>
-			<value level="4">0;0;400;150</value>
-			<value level="5">0;0;500;170</value>
-			<value level="6">0;0;700;200</value>
-		</fanRange>
-		<hitTime>1500</hitTime>
-		<magicLevel>85</magicLevel>
-		<operateType>A1</operateType>
-		<magicCriticalRate>-5</magicCriticalRate>
-		<targetType>ENEMY</targetType>
-		<affectScope>SQUARE</affectScope>
-		<affectObject>NOT_FRIEND</affectObject>
-		<effects>
-			<effect name="PhysicalAttack">
-				<power>
-					<value level="1">48761</value>
-					<value level="2">52970</value>
-					<value level="3">68074</value>
-					<value level="4">48761</value>
-					<value level="5">52970</value>
-					<value level="6">68074</value>
-				</power>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="5016" toLevel="1" name="Yoke of Scarlet">
-		<!-- Yoked status. -->
+		<!-- Immobilized. -->
 		<icon>icon.skill5016</icon>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
+		<abnormalTime>10</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>FLOATING_ROOT</abnormalVisualEffect>
 		<activateRate>80</activateRate>
 		<affectRange>200</affectRange>
-		<basicProperty>MAGIC</basicProperty>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>500</castRange>
 		<coolTime>1000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -529,23 +491,24 @@
 		<affectScope>RANGE</affectScope>
 		<affectObject>NOT_FRIEND</affectObject>
 		<effects>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="5017" toLevel="1" name="Demon">
+	<skill id="5017" toLevel="1" name="Demons">
 		<!-- Demon Transformation -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>7200</abnormalTime>
 		<abnormalType>BIG_BODY</abnormalType>
 		<abnormalVisualEffect>BIG_BODY</abnormalVisualEffect>
-		<activateRate>0</activateRate>
 		<coolTime>1000</coolTime>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>85</magicLevel>
 		<operateType>A2</operateType>
-		<basicProperty>NONE</basicProperty>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<specialLevel>-1</specialLevel>
 		<targetType>SELF</targetType>
@@ -563,7 +526,8 @@
 		</effects>
 	</skill>
 	<skill id="5018" toLevel="2" name="Frintezza Demon Field">
-		<!-- Demon $s1 magic field. -->
+		<!-- Demon 2 magic field. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>
 			<value level="1">700</value>
 			<value level="2">1000</value>
@@ -590,6 +554,7 @@
 	</skill>
 	<skill id="5019" toLevel="1" name="Frintezza Demon Energy Drain">
 		<!-- Demon 3 HP drain range. -->
+		<icon>icon.skill0000</icon>
 		<affectRange>1000</affectRange>
 		<coolTime>4000</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -611,6 +576,7 @@
 	</skill>
 	<skill id="5020" toLevel="1" name="Forced Action">
 		<!-- Crumples to the ground because of unknown power. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -671,7 +637,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5022" toLevel="12" name="Decrease Speed">
-		<!-- Immediately Speed -10%. -->
+		<!-- Immediately decreases Speed. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -718,7 +684,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5023" toLevel="12" name="Hold">
-		<!-- Inflicted with Hold and unable to move. -->
+		<!-- Holds the target. -->
 		<icon>icon.skill4047</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
@@ -754,7 +720,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5024" toLevel="12" name="Decrease Atk. Spd.">
-		<!-- Immediately Atk. Spd. -17%. -->
+		<!-- Immediately decreases Atk. Spd. -->
 		<icon>icon.skill4038</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -829,7 +795,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5029" toLevel="1" name="Raid Boss (Lv. 52)">
-		<!-- Powerful gigantic golem created by Dr. Kaos using the Pael ruins star stone. Dr. Chaos was once the Golem Maestro for all guilds, but he tried to steal the Leader's Blueprints. Was assigned to obtaining revenge for the Black Anvil Guild, and he led the golem army that he made to Pavel's Ruins. When an outsider is found, in order to punish himself, consider it troops from the Black Anvil Guild, and just attack. His ultimate goal is world domination. -->
+		<!-- This powerful Chaos Golem was made from Star Stones gathered from the Ruins of Pavel by the mad scientist Dr. Chaos, who styles himself the Emperor of Evil. Once a Golem Maestro, Dr. Chaos was expelled from the Black Anvil Guild for trying to steal the blueprint from the elders. He swore revenge on the Black Anvil Guild, conquering the Ruins of Pavel with the Horrifying Golem Army he created. He views all outsiders as assassins sent by the Guild and will attack immediately. His ultimate goal is 'world domination.' -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -850,7 +816,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5032" toLevel="1" name="80 Lv. Raid Boss">
-		<!-- Though it appears human, it is actually an archangel who speaks directly with Einhasad. The ancient religious text discovered at the Tower of Insolence gave evidence that the grail was hidden somewhere in the Monastery of Silence. Afterward, extensive searches for the grail took place in the Temple of Bishop, but no one could escape the judgment of the Master of Splendor. -->
+		<!-- Although he appears human, he is actually a high-ranking Angel who directly interacts with Einhasad and worships the Grail. Recently an ancient religious document found in the Tower of Insolence provided proof that the Grail is hidden in the Monastery of Silence. Since then, adherents of the Pagan Temple have frequently tried to steal it, but none has avoided the judgment of the Lord of Splendor. -->
 		<icon>icon.skillraid</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
@@ -885,7 +851,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5037" toLevel="3" name="Decrease Casting Spd.">
-		<!-- Immediately Casting Spd. -17%. -->
+		<!-- Immediately decreases Casting Spd. -->
 		<icon>icon.skill1206</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
@@ -909,6 +875,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5039" toLevel="1" name="Ultra Bomb">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -919,6 +886,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5040" toLevel="12" name="Healing Potion">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -1018,6 +986,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="5042" toLevel="12" name="Bomb Dispel">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>
@@ -1079,6 +1048,7 @@
 		</effects>
 	</skill>
 	<skill id="5043" toLevel="12" name="Supersonic Blaster">
+		<icon>icon.skill0000</icon>
 		<castRange>1200</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1700</effectRange>
@@ -1199,6 +1169,7 @@
 		</effects>
 	</skill>
 	<skill id="5045" toLevel="12" name="Power Strike">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
@@ -1257,6 +1228,7 @@
 		</effects>
 	</skill>
 	<skill id="5046" toLevel="12" name="Power Shot">
+		<icon>icon.skill0000</icon>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -1314,6 +1286,7 @@
 		</effects>
 	</skill>
 	<skill id="5047" toLevel="12" name="Spinning Slasher">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>
@@ -1353,6 +1326,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5048" toLevel="12" name="Burst Shot">
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
@@ -1395,6 +1369,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5049" toLevel="12" name="Mortal Blow">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>2000</hitTime>
 		<magicLevel>
@@ -1434,6 +1409,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5050" toLevel="12" name="Blaze">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1475,6 +1451,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5051" toLevel="12" name="Blazing Circle">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -1548,6 +1525,7 @@
 		</effects>
 	</skill>
 	<skill id="5052" toLevel="12" name="Flame Strike">
+		<icon>icon.skill0000</icon>
 		<affectRange>200</affectRange>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
@@ -1623,6 +1601,7 @@
 		</effects>
 	</skill>
 	<skill id="5053" toLevel="12" name="Hydro Blast">
+		<icon>icon.skill0000</icon>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -1682,6 +1661,7 @@
 		</effects>
 	</skill>
 	<skill id="5054" toLevel="12" name="Aqua Splash">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1723,6 +1703,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5055" toLevel="12" name="Aqua Splash">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1766,6 +1747,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5056" toLevel="12" name="Hurricane">
+		<icon>icon.skill0000</icon>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -1839,6 +1821,7 @@
 		</effects>
 	</skill>
 	<skill id="5057" toLevel="12" name="Tempest">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1880,6 +1863,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5058" toLevel="12" name="Tempest">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1923,6 +1907,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5059" toLevel="12" name="Rock Strike">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1964,6 +1949,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5060" toLevel="12" name="Earthquake">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2005,6 +1991,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5061" toLevel="12" name="Earthquake">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2048,6 +2035,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5062" toLevel="12" name="Holy Strike">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2089,6 +2077,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5063" toLevel="12" name="Holy Circle">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2130,6 +2119,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5064" toLevel="12" name="Holy Blast">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2173,6 +2163,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5065" toLevel="12" name="Unholy Strike">
+		<icon>icon.skill0000</icon>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2232,6 +2223,7 @@
 		</effects>
 	</skill>
 	<skill id="5066" toLevel="12" name="Unholy Circle">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2273,6 +2265,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5067" toLevel="12" name="Unholy Blast">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -2316,7 +2309,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="5068" toLevel="12" name="Decrease Speed">
-		<!-- Immediately target's Speed -30%. -->
+		<!-- Speed decreased temporarily. -->
 		<icon>icon.skill1160</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
@@ -2365,7 +2358,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5069" toLevel="12" name="Decrease Atk. Spd.">
-		<!-- Immediately Atk. Spd. -23%. -->
+		<!-- Immediately decreases Atk. Spd. -->
 		<icon>icon.skill4038</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -2414,7 +2407,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5070" toLevel="12" name="Decrease Casting Spd.">
-		<!-- Immediately Casting Spd. -23%. -->
+		<!-- Immediately decreases Casting Spd. -->
 		<icon>icon.skill1206</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -2463,7 +2456,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5071" toLevel="12" name="Decrease P. Atk.">
-		<!-- Immediately P. Atk. -23%. -->
+		<!-- Momentarily decreases P. Atk. -->
 		<icon>icon.skill4037</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
@@ -2512,7 +2505,8 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5072" toLevel="12" name="Decrease M. Atk.">
-		<!-- Immediately M. Atk. -50%. -->
+		<!-- Immediately decreases M. Atk. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>MA_DOWN</abnormalType>
@@ -2560,6 +2554,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5073" toLevel="12" name="Power Shot">
+		<icon>icon.skill0000</icon>
 		<castRange>1500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>2000</effectRange>
@@ -2835,6 +2830,7 @@
 		</effects>
 	</skill>
 	<skill id="5077" toLevel="1" name="Remove Death Penalty">
+		<icon>icon.skill0000</icon>
 		<hitTime>500</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
@@ -2847,6 +2843,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5078" toLevel="1" name="Frintezza Critical Damage">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -2957,6 +2954,7 @@
 		</effects>
 	</skill>
 	<skill id="5082" toLevel="4" name="Spinning Slasher">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
@@ -3028,6 +3026,7 @@
 		</effects>
 	</skill>
 	<skill id="5084" toLevel="4" name="Blinding Blow">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>SPEED_UP_SPECIAL</abnormalType>
@@ -3111,11 +3110,12 @@
 			<effect name="DamOverTime">
 				<canKill>true</canKill>
 				<power>12</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5087" toLevel="2" name="Berserk">
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3145,6 +3145,7 @@
 		</effects>
 	</skill>
 	<skill id="5088" toLevel="1" name="Signal">
+		<icon>icon.skill0000</icon>
 		<affectRange>300</affectRange>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
@@ -3157,6 +3158,7 @@
 		<affectObject>FRIEND</affectObject>
 	</skill>
 	<skill id="5089" toLevel="1" name="Presentation - Enter the Sailren Nest Quest">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -3169,6 +3171,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5090" toLevel="1" name="Sailren Production">
+		<icon>icon.skill0000</icon>
 		<effectPoint>100</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -3179,6 +3182,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5091" toLevel="1" name="Sailren Production">
+		<icon>icon.skill0000</icon>
 		<hitTime>1000</hitTime>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -3188,7 +3192,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="5092" toLevel="1" name="Antharas Fear">
-		<!-- Afflicted with Fear and moving against own will momentarily. -->
+		<!-- Inflicted with Fear and moving against own will momentarily. -->
 		<icon>icon.skill4108</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
@@ -3218,6 +3222,7 @@
 		</effects>
 	</skill>
 	<skill id="5093" toLevel="1" name="Antharas Meteor">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<castRange>600</castRange>
 		<effectPoint>-1</effectPoint>
@@ -3241,6 +3246,7 @@
 		</effects>
 	</skill>
 	<skill id="5094" toLevel="1" name="Antharas Self-destruction">
+		<icon>icon.skill0000</icon>
 		<affectRange>250</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -3261,6 +3267,7 @@
 		</effects>
 	</skill>
 	<skill id="5095" toLevel="1" name="Antharas Strike">
+		<icon>icon.skill0000</icon>
 		<castRange>40</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
@@ -3278,6 +3285,7 @@
 		</effects>
 	</skill>
 	<skill id="5096" toLevel="1" name="Antharas Power Shot">
+		<icon>icon.skill0000</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
@@ -3295,6 +3303,7 @@
 		</effects>
 	</skill>
 	<skill id="5097" toLevel="1" name="Antharas Self-destruction">
+		<icon>icon.skill0000</icon>
 		<affectRange>150</affectRange>
 		<effectPoint>-100</effectPoint>
 		<attributeType>FIRE</attributeType>
@@ -3314,6 +3323,7 @@
 		</effects>
 	</skill>
 	<skill id="5098" toLevel="2" name="Capture Penalty">
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
@@ -3341,6 +3351,7 @@
 		</effects>
 	</skill>
 	<skill id="5099" toLevel="1" name="Cancel Capture A">
+		<icon>icon.skill0000</icon>
 		<effectPoint>1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->

@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Geo.GeoDataImpl;
+using L2Dn.GameServer.Geo.GeoDataImpl.Regions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
@@ -16,6 +17,7 @@ public class GeoEngine
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GeoEngine));
 	
+	public const string FILE_NAME_FORMAT = "{0}_{1}.l2j";
 	private const int ELEVATED_SEE_OVER_DISTANCE = 2;
 	private const int MAX_SEE_OVER_HEIGHT = 48;
 	private const int SPAWN_Z_DELTA_LIMIT = 100;
@@ -96,6 +98,16 @@ public class GeoEngine
 		
 		return can && checkNearestNswe(geoX, geoY, worldZ, nswe);
 	}
+
+	public void setNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		_geodata.setNearestNswe(geoX, geoY, worldZ, nswe);
+	}
+	
+	public void unsetNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+		_geodata.unsetNearestNswe(geoX, geoY, worldZ, nswe);
+	}
 	
 	public int getNearestZ(int geoX, int geoY, int worldZ)
 	{
@@ -112,24 +124,34 @@ public class GeoEngine
 		return _geodata.getNextHigherZ(geoX, geoY, worldZ);
 	}
 	
-	public int getGeoX(int worldX)
+	public static int getGeoX(int worldX)
 	{
-		return _geodata.getGeoX(worldX);
+		return GeoData.getGeoX(worldX);
 	}
 	
-	public int getGeoY(int worldY)
+	public static int getGeoY(int worldY)
 	{
-		return _geodata.getGeoY(worldY);
+		return GeoData.getGeoY(worldY);
 	}
 	
-	public int getWorldX(int geoX)
+	public static int getWorldX(int geoX)
 	{
-		return _geodata.getWorldX(geoX);
+		return GeoData.getWorldX(geoX);
 	}
 	
-	public int getWorldY(int geoY)
+	public static int getWorldY(int geoY)
 	{
-		return _geodata.getWorldY(geoY);
+		return GeoData.getWorldY(geoY);
+	}
+	
+	public IRegion getRegion(int geoX, int geoY)
+	{
+		return _geodata.getRegion(geoX, geoY);
+	}
+	
+	public void setRegion(int regionX, int regionY, Region region)
+	{
+		_geodata.setRegion(regionX, regionY, region);
 	}
 	
 	/**

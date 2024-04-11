@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets.AutoPlay;
 using L2Dn.GameServer.Utilities;
@@ -73,10 +74,60 @@ public class AutoPlayTaskManager
 					creature = (Creature) target;
 					if (creature.isAlikeDead() || !isTargetModeValid(targetMode, player, creature))
 					{
+						// Logic for Spoil (254) skill.
+						if (creature.isMonster() && creature.isDead() && player.getAutoUseSettings().getAutoSkills().Contains(254))
+						{
+							Skill sweeper = player.getKnownSkill(42); // TODO: Check skill ids 254 and 42, add to CommonSkills 
+							if (sweeper != null)
+							{
+								Monster monster = ((Monster) target);
+								if (monster.checkSpoilOwner(player, false))
+								{
+									// Move to target.
+									if (player.calculateDistance2D(target) > 40)
+									{
+										if (!player.isMoving())
+										{
+											player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target);
+										}
+										continue; // play
+									}
+									
+									// Sweep target.
+									player.doCast(sweeper);
+									continue; // play
+								}
+							}
+						}
+
+						// Clear target.
 						player.setTarget(null);
 					}
 					else if ((creature.getTarget() == player) || (creature.getTarget() == null))
 					{
+						// GeoEngine can see target check.
+						if (!GeoEngine.getInstance().canSeeTarget(player, creature))
+						{
+							player.setTarget(null);
+							continue; // play
+						}
+
+						// Logic adjustment for summons not attacking when in offline play.
+						if (player.isOfflinePlay() && player.hasSummon())
+						{
+							foreach (Summon summon in player.getServitors().values())
+							{
+								if (summon.hasAI() && !summon.isMoving() && !summon.isDisabled() &&
+								    (summon.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) &&
+								    (summon.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST) &&
+								    creature.isAutoAttackable(player) &&
+								    GeoEngine.getInstance().canSeeTarget(player, creature))
+								{
+									summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
+								}
+							}
+						}
+
 						// Pet Attack.
 						Pet pet = player.getPet();
 						if ((pet != null) && player.getAutoUseSettings().getAutoActions().Contains(PET_ATTACK_ACTION) && pet.hasAI() && !pet.isMoving() && !pet.isDisabled() && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST) && creature.isAutoAttackable(player) && GeoEngine.getInstance().canSeeTarget(player, creature))
@@ -338,7 +389,7 @@ public class AutoPlayTaskManager
 		Set<Player> pool1 = new();
 		player.onActionRequest();
 		pool1.add(player);
-		ThreadPool.scheduleAtFixedRate(new AutoPlay(this, pool1), TASK_DELAY, TASK_DELAY);
+		ThreadPool.scheduleAtFixedRate(new AutoPlay(this, pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		POOLS.add(pool1);
 	}
 	

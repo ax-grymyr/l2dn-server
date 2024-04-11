@@ -75,22 +75,27 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="55911" toLevel="1" name="Sealbook: One-eyed ParaPara Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="55912" toLevel="1" name="Sealbook: Smiling ParaPara Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="55913" toLevel="1" name="Sealbook: Charming ParaPara Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="55914" toLevel="1" name="Sealbook: Ferocious ParaPara Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
 	<skill id="55915" toLevel="1" name="Sealbook: Merchant ParaPara Cat">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 	</skill>
@@ -130,7 +135,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55921" toLevel="3" name="Fishermen's Guild Support Certificate">
-		<!-- For $s1 h., acquired XP/ SP during fishing +$s2 when used. Effect remains after death. -->
+		<!-- For 1 h., acquired XP/ SP during fishing +20% when used. Effect remains after death. -->
 		<icon>icon.event_orc_memo</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -138,6 +143,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55922" toLevel="1" name="Christmas Surprise Sox">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
@@ -178,62 +184,73 @@
 		<hitTime>3000</hitTime>
 	</skill>
 	<skill id="55927" toLevel="1" name="Blessing of Protection">
-		<!-- Has a high chance of resisting debuffs and keeps you safe from damage by chaotic characters who are more than 10 levels apart from you. In addition, has a high chance of resisting debuffs from normal characters who are more than 10 levels apart from you. -->
+		<!-- Has a high chance of resisting abnormal state attacks and keeps you safe from attacks by chaotic characters who are more than 10 levels apart from you. -->
 		<icon>icon.skill0194</icon>
 		<operateType>P</operateType>
 		<castRange>700</castRange>
 	</skill>
 	<skill id="55928" toLevel="1" name="Glittering Enchant Scroll of Border">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55929" toLevel="1" name="Highest Grade Talisman of Border Sealed Case">
 		<!-- Double click to obtain +10 Talisman of Border - Lv. 5. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55930" toLevel="1" name="Talisman of Border Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55931" toLevel="1" name="Fire Dragon Pendant Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55932" toLevel="1" name="Water Dragon Pendant Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55933" toLevel="1" name="Wind Dragon Pendant Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55934" toLevel="1" name="Earth Dragon Pendant Fortune Box">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>500</hitTime>
 		<coolTime>500</coolTime>
 	</skill>
 	<skill id="55935" toLevel="1" name="Highest Grade Fire Dragon Pendant Sealed Case">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55936" toLevel="1" name="Highest Grade Water Dragon Pendant Sealed Case">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55937" toLevel="1" name="Highest Grade Wind Dragon Pendant Sealed Case">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55938" toLevel="1" name="Highest Grade Earth Dragon Pendant Sealed Case">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<reuseDelay>3000</reuseDelay>
 	</skill>
 	<skill id="55989" toLevel="2" name="Uldie's Full Buff">
-		<!-- Ultimate buff from Uldie. For 2 h., Acquired XP/ SP +$s1, P. Atk./ M. Atk. +$s2, Atk. Spd./ Casting Spd. +$s3. -->
+		<!-- Ultimate buff from Uldie. For 2 h., Acquired XP/ SP +10%, P. Atk./ M. Atk. +5%, Atk. Spd./ Casting Spd. +5%. -->
 		<icon>BranchSys.icon.br_sevenlove_girlpresent_i00</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
@@ -241,7 +258,7 @@
 		<effectPoint>1</effectPoint>
 	</skill>
 	<skill id="55990" toLevel="1" name="Bracelet of Power">
-		<!-- HP/ MP Recovery +15%, Accuracy +2, M. Accuracy +2, Weight Limit +10,000. -->
+		<!-- HP/ MP Recovery Rate +15%, Accuracy +2, M. Accuracy +2, Weight Limit +10,000. -->
 		<icon>icon.ertheia_bracelet_i01</icon>
 		<operateType>P</operateType>
 	</skill>
@@ -277,6 +294,7 @@
 		<reuseDelay>300000</reuseDelay>
 	</skill>
 	<skill id="55993" toLevel="1" name="Summon Big Wedding Cake">
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="55994" toLevel="1" name="Summon Your Spouse">

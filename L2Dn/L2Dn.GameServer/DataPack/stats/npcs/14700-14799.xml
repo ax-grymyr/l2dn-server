@@ -7,9 +7,9 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
-			<attack physical="979.90245" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="979.90245" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="30" />
@@ -47,9 +47,9 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
-			<attack physical="984.1815" magical="584.41" random="50" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="984.1815" magical="584.41" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="332.7" magical="243.46" />
 			<speed>
 				<walk ground="30" />
@@ -87,7 +87,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="1933" hpRegen="6.5" mp="1036" mpRegen="2.4" />
 			<attack physical="481.34551" magical="328.69659" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
@@ -125,7 +125,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2141" hpRegen="7.5" mp="1158" mpRegen="2.7" />
 			<attack physical="562.02275" magical="383.78868" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="267.04468" magical="195.41171" />
@@ -163,7 +163,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2345" hpRegen="7.5" mp="1282" mpRegen="2.7" />
 			<attack physical="646.17968" magical="441.25696" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="286.3615" magical="209.54692" />
@@ -201,7 +201,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2540" hpRegen="8.5" mp="1410" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
@@ -239,7 +239,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
@@ -277,7 +277,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -315,7 +315,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2812" hpRegen="8.5" mp="1615" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -353,7 +353,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2822" hpRegen="8.5" mp="1624" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -391,7 +391,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2832" hpRegen="8.5" mp="1632" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -429,7 +429,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2842" hpRegen="8.5" mp="1641" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -467,7 +467,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2852" hpRegen="8.5" mp="1649" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -505,7 +505,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2862" hpRegen="8.5" mp="1657" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -543,7 +543,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2871" hpRegen="8.5" mp="1666" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -581,7 +581,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -619,7 +619,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2889" hpRegen="8.5" mp="1683" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -657,7 +657,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2899" hpRegen="8.5" mp="1691" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -695,7 +695,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2908" hpRegen="8.5" mp="1700" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -733,7 +733,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2916" hpRegen="8.5" mp="1708" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -771,7 +771,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2926" hpRegen="8.5" mp="1717" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -809,7 +809,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2935" hpRegen="8.5" mp="1725" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -847,7 +847,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2944" hpRegen="8.5" mp="1734" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -885,7 +885,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2951" hpRegen="8.5" mp="1743" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -923,7 +923,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2960" hpRegen="8.5" mp="1751" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -961,7 +961,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2969" hpRegen="8.5" mp="1760" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -999,7 +999,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2978" hpRegen="8.5" mp="1768" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1037,7 +1037,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2985" hpRegen="8.5" mp="1777" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1075,7 +1075,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2993" hpRegen="8.5" mp="1786" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1113,7 +1113,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3001" hpRegen="8.5" mp="1794" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1151,7 +1151,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="8.5" mp="1803" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1189,7 +1189,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="8.5" mp="1812" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1227,7 +1227,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="8.5" mp="1820" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1265,7 +1265,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="8.5" mp="1829" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1303,7 +1303,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="8.5" mp="1846" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1341,7 +1341,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="8.5" mp="1858" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1379,7 +1379,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="8.5" mp="1870" mpRegen="3" />
 			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="331.16875" magical="249.80341" />
@@ -1413,9 +1413,9 @@
 	<npc id="14737" level="55" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
-			<attack physical="1500" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="500000" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="1500" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="837" magical="674" />
 			<speed>
 				<walk ground="40" />
@@ -1448,7 +1448,7 @@
 	<npc id="14738" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1515" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1483,7 +1483,7 @@
 	<npc id="14739" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1530" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1518,7 +1518,7 @@
 	<npc id="14740" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1545" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1553,7 +1553,7 @@
 	<npc id="14741" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1560" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1588,7 +1588,7 @@
 	<npc id="14742" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1575" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1623,7 +1623,7 @@
 	<npc id="14743" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1590" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1658,7 +1658,7 @@
 	<npc id="14744" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1605" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1693,7 +1693,7 @@
 	<npc id="14745" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1620" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1728,7 +1728,7 @@
 	<npc id="14746" level="78" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1635" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1763,7 +1763,7 @@
 	<npc id="14747" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1650" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1798,7 +1798,7 @@
 	<npc id="14748" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1665" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1833,7 +1833,7 @@
 	<npc id="14749" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1680" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1868,7 +1868,7 @@
 	<npc id="14750" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1695" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1903,7 +1903,7 @@
 	<npc id="14751" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1710" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1938,7 +1938,7 @@
 	<npc id="14752" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1725" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -1973,7 +1973,7 @@
 	<npc id="14753" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1740" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2008,7 +2008,7 @@
 	<npc id="14754" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1755" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2043,7 +2043,7 @@
 	<npc id="14755" level="79" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1770" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2078,7 +2078,7 @@
 	<npc id="14756" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1785" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2113,7 +2113,7 @@
 	<npc id="14757" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1800" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2148,7 +2148,7 @@
 	<npc id="14758" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1815" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2183,7 +2183,7 @@
 	<npc id="14759" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1830" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2218,7 +2218,7 @@
 	<npc id="14760" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1845" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2253,7 +2253,7 @@
 	<npc id="14761" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1860" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2288,7 +2288,7 @@
 	<npc id="14762" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1875" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2323,7 +2323,7 @@
 	<npc id="14763" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1890" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2358,7 +2358,7 @@
 	<npc id="14764" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1905" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2393,7 +2393,7 @@
 	<npc id="14765" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1920" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2428,7 +2428,7 @@
 	<npc id="14766" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1935" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2463,7 +2463,7 @@
 	<npc id="14767" level="80" type="Servitor" name="Siege Golem">
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="500000" hpRegen="6.5" mp="889" mpRegen="2.4" />
 			<attack physical="1950" magical="265.03" random="30" critical="4" accuracy="4.75" attackSpeed="150" type="POLE" range="80" distance="300" width="120" />
 			<defence physical="837" magical="674" />
@@ -2501,10 +2501,10 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1933" hpRegen="6.5" mp="1036" mpRegen="2.4" />
-			<attack physical="496.88" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="476" magical="383" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
+			<attack physical="481.34551" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
 			<speed>
 				<walk ground="10" />
 				<run ground="10" />
@@ -2539,7 +2539,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2802" hpRegen="6.5" mp="1607" mpRegen="2.4" />
 			<attack physical="505" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2577,7 +2577,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2812" hpRegen="6.5" mp="1615" mpRegen="2.4" />
 			<attack physical="510" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2615,7 +2615,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2822" hpRegen="6.5" mp="1624" mpRegen="2.4" />
 			<attack physical="515" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2653,7 +2653,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2832" hpRegen="6.5" mp="1632" mpRegen="2.4" />
 			<attack physical="520" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2691,7 +2691,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2842" hpRegen="6.5" mp="1641" mpRegen="2.4" />
 			<attack physical="525" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2729,7 +2729,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2852" hpRegen="6.5" mp="1649" mpRegen="2.4" />
 			<attack physical="530" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2767,7 +2767,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2862" hpRegen="6.5" mp="1657" mpRegen="2.4" />
 			<attack physical="535" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2805,7 +2805,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2871" hpRegen="6.5" mp="1666" mpRegen="2.4" />
 			<attack physical="540" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2843,7 +2843,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2880" hpRegen="6.5" mp="1674" mpRegen="2.4" />
 			<attack physical="545" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2881,7 +2881,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2889" hpRegen="6.5" mp="1683" mpRegen="2.4" />
 			<attack physical="550" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2919,7 +2919,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2899" hpRegen="6.5" mp="1691" mpRegen="2.4" />
 			<attack physical="555" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2957,7 +2957,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2908" hpRegen="6.5" mp="1700" mpRegen="2.4" />
 			<attack physical="560" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -2995,7 +2995,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2916" hpRegen="6.5" mp="1708" mpRegen="2.4" />
 			<attack physical="565" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3033,7 +3033,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2926" hpRegen="6.5" mp="1717" mpRegen="2.4" />
 			<attack physical="570" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3071,7 +3071,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2935" hpRegen="6.5" mp="1725" mpRegen="2.4" />
 			<attack physical="575" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3109,7 +3109,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2944" hpRegen="6.5" mp="1734" mpRegen="2.4" />
 			<attack physical="580" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3147,7 +3147,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2951" hpRegen="6.5" mp="1743" mpRegen="2.4" />
 			<attack physical="585" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3185,7 +3185,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2960" hpRegen="6.5" mp="1751" mpRegen="2.4" />
 			<attack physical="590" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3223,7 +3223,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2969" hpRegen="6.5" mp="1760" mpRegen="2.4" />
 			<attack physical="595" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3261,7 +3261,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2978" hpRegen="6.5" mp="1768" mpRegen="2.4" />
 			<attack physical="600" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3299,7 +3299,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2985" hpRegen="6.5" mp="1777" mpRegen="2.4" />
 			<attack physical="605" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3337,7 +3337,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2993" hpRegen="6.5" mp="1786" mpRegen="2.4" />
 			<attack physical="610" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3375,7 +3375,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3001" hpRegen="6.5" mp="1794" mpRegen="2.4" />
 			<attack physical="615" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3413,7 +3413,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3010" hpRegen="6.5" mp="1803" mpRegen="2.4" />
 			<attack physical="620" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3451,7 +3451,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3016" hpRegen="6.5" mp="1812" mpRegen="2.4" />
 			<attack physical="625" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3489,7 +3489,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3024" hpRegen="6.5" mp="1820" mpRegen="2.4" />
 			<attack physical="630" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3527,7 +3527,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3032" hpRegen="6.5" mp="1829" mpRegen="2.4" />
 			<attack physical="635" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3565,7 +3565,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3046" hpRegen="6.5" mp="1846" mpRegen="2.4" />
 			<attack physical="640" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3603,7 +3603,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3056" hpRegen="6.5" mp="1858" mpRegen="2.4" />
 			<attack physical="645" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3641,7 +3641,7 @@
 		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3066" hpRegen="6.5" mp="1870" mpRegen="2.4" />
 			<attack physical="650" magical="328.7" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="476" magical="383" />
@@ -3681,9 +3681,9 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1050" hpRegen="5.5" mp="531" mpRegen="2.1" />
-			<attack physical="198.34591" magical="135.44454" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1050.81652" hpRegen="5.5" mp="531" mpRegen="2.1" />
+			<attack physical="198.34591" magical="135.44454" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="164.88513" magical="120.65578" />
 			<speed>
 				<walk ground="25" />
@@ -3697,17 +3697,17 @@
 			<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4408" level="4" /> <!-- HP High -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Average M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Average P. Def. -->
+			<skill id="4413" level="12" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="6094" level="1" /> <!-- Panther Cancel -->
 			<skill id="6095" level="1" /> <!-- Panther Dark Claw -->
 		</skillList>
-		<shots soul="2" spirit="1" />
+		<shots soul="2" spirit="2" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>1.331</sNpcPropHpRate>
 		<collision>

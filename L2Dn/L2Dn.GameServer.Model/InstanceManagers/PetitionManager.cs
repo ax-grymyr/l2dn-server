@@ -337,7 +337,7 @@ public class PetitionManager
 	{
 		StringBuilder content = new StringBuilder(600 + (_pendingPetitions.size() * 300));
 		content.Append(
-			"<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass -h " +
+			"<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass " +
 			"admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +
 			"</td><td width=180><center>Petition Menu</center></td><td width=45><button value=\"Back\" " +
 			"action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" " +

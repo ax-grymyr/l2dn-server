@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -120,6 +121,46 @@ public class PetSkillData: DataReaderBase
 		}
 		
 		return skillIds;
+	}
+	
+	public List<Skill> getKnownSkills(Summon pet)
+	{
+		List<Skill> skills = new();
+		if (!_skillTrees.containsKey(pet.getId()))
+		{
+			return skills;
+		}
+		
+		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		{
+			Skill skill = skillHolder.getSkill();
+			if (skills.Contains(skill))
+			{
+				continue;
+			}
+			
+			skills.add(skill);
+		}
+		
+		return skills;
+	}
+	
+	public Skill getKnownSkill(Summon pet, int skillId)
+	{
+		if (!_skillTrees.containsKey(pet.getId()))
+		{
+			return null;
+		}
+		
+		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		{
+			if (skillHolder.getSkillId() == skillId)
+			{
+				return skillHolder.getSkill();
+			}
+		}
+		
+		return null;
 	}
 	
 	public static PetSkillData getInstance()

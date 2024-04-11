@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_01" minZ="-4172" maxZ="-3572">
+				<node x="134340" y="120" />
+				<node x="136996" y="212" />
+				<node x="135356" y="2096" />
+				<node x="133880" y="1332" />
+			</territory>
+		</territories>
+		<npc id="20684" count="3" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="3" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="3" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_02" minZ="-3812" maxZ="-3412">
+				<node x="132992" y="1888" />
+				<node x="133848" y="1312" />
+				<node x="134644" y="1868" />
+				<node x="134416" y="2672" />
+				<node x="133552" y="3116" />
+				<node x="132924" y="2656" />
+			</territory>
+		</territories>
+		<npc id="20684" count="2" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="3" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="2" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_03" minZ="-4200" maxZ="-3600">
+				<node x="133104" y="4652" />
+				<node x="135380" y="2860" />
+				<node x="135520" y="3684" />
+				<node x="134480" y="4656" />
+			</territory>
+		</territories>
+		<npc id="20684" count="2" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="2" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="2" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_t03" minZ="-4200" maxZ="-3600">
+				<node x="133104" y="4652" />
+				<node x="135380" y="2860" />
+				<node x="135520" y="3684" />
+				<node x="134480" y="4656" />
+			</territory>
+		</territories>
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_04" minZ="-4580" maxZ="-3980">
+				<node x="138228" y="212" />
+				<node x="141620" y="192" />
+				<node x="140400" y="2708" />
+				<node x="135688" y="2804" />
+			</territory>
+		</territories>
+		<npc id="20684" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="5" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_05" minZ="-4576" maxZ="-3976">
+				<node x="138544" y="2960" />
+				<node x="140364" y="2880" />
+				<node x="141196" y="3628" />
+				<node x="140456" y="6660" />
+				<node x="138368" y="7108" />
+			</territory>
+		</territories>
+		<npc id="20684" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="5" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_06" minZ="-4588" maxZ="-4188">
+				<node x="136740" y="3176" />
+				<node x="137664" y="3016" />
+				<node x="137848" y="7096" />
+				<node x="136028" y="7220" />
+				<node x="134516" y="5780" />
+			</territory>
+		</territories>
+		<npc id="20684" count="5" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="4" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_07" minZ="-4512" maxZ="-3712">
+				<node x="131296" y="6064" />
+				<node x="132436" y="5332" />
+				<node x="134368" y="5948" />
+				<node x="135812" y="7348" />
+				<node x="133572" y="12036" />
+				<node x="131268" y="12096" />
+			</territory>
+		</territories>
+		<npc id="20684" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_08" minZ="-4412" maxZ="-3712">
+				<node x="135968" y="7452" />
+				<node x="137812" y="7324" />
+				<node x="138896" y="13324" />
+				<node x="135232" y="14504" />
+				<node x="134024" y="11940" />
+			</territory>
+		</territories>
+		<npc id="20684" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Warrior -->
+		<npc id="20685" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Shaman -->
+		<npc id="20686" count="8" respawnTime="20sec" /> <!-- Vanor Silenos Chieftain -->
+		<npc id="24014" count="2" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_11" minZ="-4040" maxZ="-3440">
+				<node x="135412" y="14676" />
+				<node x="139528" y="13264" />
+				<node x="141372" y="15620" />
+				<node x="139260" y="18148" />
+			</territory>
+		</territories>
+		<npc id="20681" count="7" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="7" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="7" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_12" minZ="-3852" maxZ="-3252">
+				<node x="135568" y="21920" />
+				<node x="137652" y="17888" />
+				<node x="138420" y="19364" />
+				<node x="138332" y="20596" />
+				<node x="137364" y="22240" />
+			</territory>
+		</territories>
+		<npc id="20681" count="4" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="3" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="5" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_13" minZ="-3884" maxZ="-3084">
+				<node x="134376" y="21940" />
+				<node x="137168" y="22452" />
+				<node x="137008" y="26988" />
+				<node x="132480" y="27216" />
+				<node x="132004" y="24500" />
+			</territory>
+		</territories>
+		<npc id="20681" count="7" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="7" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="8" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="2" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_14" minZ="-3944" maxZ="-2944">
+				<node x="132220" y="27736" />
+				<node x="137284" y="27732" />
+				<node x="138004" y="28780" />
+				<node x="137128" y="30060" />
+				<node x="133608" y="29696" />
+				<node x="132212" y="28952" />
+			</territory>
+		</territories>
+		<npc id="20681" count="4" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="5" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="3" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_15" minZ="-3924" maxZ="-3524">
+				<node x="131256" y="29288" />
+				<node x="134540" y="30724" />
+				<node x="134712" y="32472" />
+				<node x="131288" y="32456" />
+			</territory>
+		</territories>
+		<npc id="20681" count="4" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="3" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="3" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+	<spawn>
+		<territories>
+			<territory name="aden25_2418_16" minZ="-3924" maxZ="-3124">
+				<node x="134756" y="30792" />
+				<node x="139312" y="31184" />
+				<node x="139468" y="32476" />
+				<node x="134856" y="32420" />
+			</territory>
+		</territories>
+		<npc id="20681" count="3" respawnTime="30sec" /> <!-- Vanor Silenos -->
+		<npc id="20682" count="3" respawnTime="30sec" /> <!-- Vanor Silenos Solider -->
+		<npc id="20683" count="4" respawnTime="30sec" /> <!-- Vanor Silenos Scout -->
+		<npc id="24014" count="1" respawnTime="90sec" respawnRandom="25sec" /> <!-- Vanor - Mercenary of Glory -->
+	</spawn>
+</list>

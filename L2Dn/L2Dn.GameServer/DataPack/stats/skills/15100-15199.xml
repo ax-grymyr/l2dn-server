@@ -282,7 +282,7 @@
 		<affectScope>SINGLE</affectScope>
 		<affectObject>FRIEND</affectObject>
 	</skill>
-	<skill id="15155" toLevel="1" name="Petrify">
+	<skill id="15155" toLevel="1" name="Petrifies the target.">
 		<!-- Petrify status. -->
 		<icon>icon.skill1540</icon>
 		<operateType>A2</operateType>
@@ -616,7 +616,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="15182" toLevel="1" name="Adolph's Superior Aggression Aura">
-		<!-- Provokes target into attacking you by forcefully changing their target. -->
+		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -639,7 +639,7 @@
 		</effects>
 	</skill>
 	<skill id="15183" toLevel="1" name="Adolph's Superior Aggression Aura">
-		<!-- Provokes target into attacking you by forcefully changing their target. -->
+		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -662,7 +662,7 @@
 		</effects>
 	</skill>
 	<skill id="15184" toLevel="1" name="Adolph's Superior Aggression Aura">
-		<!-- Provokes target into attacking you by forcefully changing their target. -->
+		<!-- Provokes nearby enemies into attacking you. -->
 		<icon>icon.skill10027</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -685,7 +685,7 @@
 		</effects>
 	</skill>
 	<skill id="15185" toLevel="1" name="Adolph's Shield Wave">
-		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
+		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -720,7 +720,7 @@
 		</effects>
 	</skill>
 	<skill id="15186" toLevel="1" name="Adolph's Shield Wave">
-		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
+		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -755,7 +755,7 @@
 		</effects>
 	</skill>
 	<skill id="15187" toLevel="1" name="Adolph's Shield Wave">
-		<!-- Attacks targets at the front and inflicts Stun for 9 sec. -->
+		<!-- Attacks the targets in the front and inflicts Stun for 9 sec. -->
 		<icon>icon.skill10012</icon>
 		<operateType>A2</operateType>
 		<hitTime>1000</hitTime>
@@ -1067,6 +1067,7 @@
 	</skill>
 	<skill id="15197" toLevel="1" name="Guardian Spirit's Wrath">
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1082,6 +1083,7 @@
 	</skill>
 	<skill id="15198" toLevel="1" name="Guardian Spirit's Wrath">
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
@@ -1097,6 +1099,7 @@
 	</skill>
 	<skill id="15199" toLevel="1" name="Guardian Spirit's Wrath">
 		<!-- Attacks nearby enemies with the wrath of the guardian spirit. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>

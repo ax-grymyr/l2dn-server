@@ -23,7 +23,7 @@
 	<item id="5247" price="22000" count="1" restock_delay="60" /> <!-- Hair Style Change Potion F -->
 	<item id="5248" price="22000" count="1" restock_delay="60" /> <!-- Hair Style Change Potion G -->
 	<item id="5234" price="11000" count="1" restock_delay="60" /> <!-- Mysterious Potion -->
-	<item id="5126" price="360000" count="2" restock_delay="60" /> <!-- Dual Weapon Crafting Stamp -->
+	<item id="5126" price="10000" count="2" restock_delay="60" /> <!-- Dual Weapon Crafting Stamp -->
 	<item id="49684" price="200000" count="5" restock_delay="60" /> <!-- Talisman Crystal -->
 	<item id="5593" price="55000" count="10" restock_delay="60" /> <!-- SP Scroll (Low-grade) -->
 	<item id="5594" price="330000" count="10" restock_delay="60" /> <!-- SP Scroll (Mid-grade) -->

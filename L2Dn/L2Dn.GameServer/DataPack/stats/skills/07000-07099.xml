@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="7000" toLevel="1" name="NPC Default">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -10,6 +11,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7001" toLevel="1" name="Dispel Buff">
+		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>900</effectRange>
@@ -28,6 +30,7 @@
 		</effects>
 	</skill>
 	<skill id="7002" toLevel="1" name="Dispel Debuff">
+		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>900</effectRange>
@@ -46,6 +49,7 @@
 		</effects>
 	</skill>
 	<skill id="7003" toLevel="1" name="Dispel All">
+		<icon>icon.skill0000</icon>
 		<castRange>400</castRange>
 		<effectPoint>100</effectPoint>
 		<effectRange>900</effectRange>
@@ -70,6 +74,7 @@
 	</skill>
 	<skill id="7004" toLevel="2" name="Dispel Petrification">
 		<!-- Cancels Petrification debuff. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>566</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicLevel>60</magicLevel>
@@ -85,7 +90,8 @@
 		</effects>
 	</skill>
 	<skill id="7005" toLevel="4" name="Greater Chant of Vampire">
-		<!-- Temporarily for party members increases the ability to restore some HP from the damage inflicted on the enemy temporarily with a certain probability. -->
+		<!-- Temporarily increases the amount of party members' HP restored while absorbing part of the inflicted damage as HP. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
@@ -118,6 +124,7 @@
 	</skill>
 	<skill id="7006" toLevel="13" name="The Love of Pa'agrio">
 		<!-- Momentarily increases target's allies HP recovery bonus. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>6</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>LIFE_FORCE_OTHERS</abnormalType>
@@ -141,12 +148,13 @@
 		</conditions>
 	</skill>
 	<skill id="7007" toLevel="4" name="Greater Seal of Flame">
-		<!-- Sets the target's allies on fire. Momentarily and continuously decreases the enemies' HP. -->
+		<!-- Sets the target's allies on fire. Сontinuously decreases the enemies' HP. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>15</abnormalTime>
 		<abnormalType>DOT_ATTR</abnormalType>
 		<activateRate>35</activateRate>
-		<basicProperty>MAGIC</basicProperty> <!-- Guessed -->
+		<basicProperty>MAGIC</basicProperty>
 		<castRange>400</castRange>
 		<effectPoint>-409</effectPoint>
 		<effectRange>900</effectRange>
@@ -188,81 +196,94 @@
 		<stayAfterDeath>true</stayAfterDeath>
 	</skill>
 	<skill id="7009" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7010" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7011" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7012" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7013" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
-	<skill id="7014" toLevel="1" name="Test - P. Critical Damage Up">
+	<skill id="7014" toLevel="1" name="Test - P. Critical Damage Boost">
 		<!-- Received P. Critical Damage +10%. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7015" toLevel="1" name="Test - P. Critical Damage Down">
+	<skill id="7015" toLevel="1" name="Test - P. Critical Damage Weakness">
 		<!-- Received P. Critical Damage -50%. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7016" toLevel="1" name="Test - P. Critical Damage Up">
+	<skill id="7016" toLevel="1" name="Test - P. Critical Damage Boost">
 		<!-- Received P. Critical Damage +100. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7017" toLevel="1" name="Test - P. Critical Damage Down">
+	<skill id="7017" toLevel="1" name="Test - P. Critical Damage Weakness">
 		<!-- Received P. Critical Damage -200. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7018" toLevel="1" name="Test - P. Critical Damage Up">
+	<skill id="7018" toLevel="1" name="Test - P. Critical Rate Boost">
 		<!-- Chance of receiving P. Critical Attack +10%. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7019" toLevel="1" name="Test - P. Critical Down">
+	<skill id="7019" toLevel="1" name="Test - P. Critical Rate Weakness">
 		<!-- Chance of receiving P. Critical Attack -50%. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7020" toLevel="1" name="Test - P. Critical Damage Up">
+	<skill id="7020" toLevel="1" name="Test - P. Critical Rate Boost">
 		<!-- Chance of receiving P. Critical Attack +100. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<targetType>SELF</targetType>
 	</skill>
-	<skill id="7021" toLevel="1" name="Test - P. Critical Down">
+	<skill id="7021" toLevel="1" name="Test - P. Critical Rate Weakness">
 		<!-- Chance of receiving P. Critical Attack -200. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>85</magicLevel>
 		<operateType>T</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -270,6 +291,7 @@
 	</skill>
 	<skill id="7022" toLevel="1" name="Test - Find Hidden Door">
 		<!-- Look for hidden door. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>6-12</affectLimit>
 		<hitTime>1000</hitTime>
 		<magicLevel>85</magicLevel>
@@ -283,31 +305,37 @@
 		<affectObject>HIDDEN_PLACE</affectObject>
 	</skill>
 	<skill id="7023" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7024" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7025" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7026" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7027" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7028" toLevel="1" name="Stationary NPCs">
+		<icon>icon.skill0000</icon>
 		<magicLevel>99</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -331,7 +359,7 @@
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>0.0001</power>
-				<ticks>5</ticks>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="PAtk">
 				<amount>
@@ -428,6 +456,7 @@
 		</effects>
 	</skill>
 	<skill id="7030" toLevel="1" name="Summon King Bugbear">
+		<icon>icon.skill0000</icon>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<itemConsumeCount>8</itemConsumeCount>
@@ -447,6 +476,7 @@
 		</effects>
 	</skill>
 	<skill id="7031" toLevel="1" name="Summon Skeleton Royal Guard">
+		<icon>icon.skill0000</icon>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<itemConsumeCount>8</itemConsumeCount>
@@ -467,6 +497,7 @@
 		</effects> -->
 	</skill>
 	<skill id="7032" toLevel="1" name="Summon Hunter Gargoyle">
+		<icon>icon.skill0000</icon>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<itemConsumeCount>8</itemConsumeCount>
@@ -486,47 +517,55 @@
 		</effects>
 	</skill>
 	<skill id="7033" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7034" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7035" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7036" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7037" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7038" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7039" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7040" toLevel="1" name="not_used">
+		<icon>icon.skill0000</icon>
 		<magicLevel>1</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7041" toLevel="1" name="Master's Blessing - Focus">
-		<!-- The GM is always by your side. P. Critical Attack Rate +30% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Critical Attack Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -552,7 +591,7 @@
 		</effects>
 	</skill>
 	<skill id="7042" toLevel="1" name="Master's Blessing - Death Whisper">
-		<!-- The GM is always by your side. P. Critical Damage +35% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -578,7 +617,7 @@
 		</effects>
 	</skill>
 	<skill id="7043" toLevel="1" name="Master's Blessing - Haste">
-		<!-- The GM is always by your side. Atk. Spd. +33% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Atk. Spd. +33%. -->
 		<icon>icon.skill1086</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -604,7 +643,7 @@
 		</effects>
 	</skill>
 	<skill id="7044" toLevel="1" name="Master's Blessing - Guidance">
-		<!-- The GM is always by your side. P. Accuracy +4 for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -630,7 +669,7 @@
 		</effects>
 	</skill>
 	<skill id="7045" toLevel="1" name="Master's Blessing - Blessed Body">
-		<!-- The GM is always by your side. Max HP +35% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Max HP +35%. -->
 		<icon>icon.skill1045</icon>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -656,7 +695,7 @@
 		</effects>
 	</skill>
 	<skill id="7046" toLevel="1" name="Master's Blessing - Blessed Soul">
-		<!-- The GM is always by your side. Max MP +35% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Max. MP +35%. -->
 		<icon>icon.skill1048</icon>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -682,7 +721,7 @@
 		</effects>
 	</skill>
 	<skill id="7047" toLevel="1" name="Master's Blessing - Agility">
-		<!-- The GM is always by your side. P. Evasion +4 for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Evasion +4. -->
 		<icon>icon.skill1087</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -708,7 +747,7 @@
 		</effects>
 	</skill>
 	<skill id="7048" toLevel="1" name="Master's Blessing - Acumen">
-		<!-- The GM is always by your side. Casting Spd. +30% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Casting Spd. +30%. -->
 		<icon>icon.skill1085</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -734,7 +773,7 @@
 		</effects>
 	</skill>
 	<skill id="7049" toLevel="1" name="Master's Blessing - Decrease Weight">
-		<!-- The GM is always by your side.Weight penalty interval +9000 for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Weight Limit +9000. -->
 		<icon>icon.skill1257</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -759,7 +798,7 @@
 		</effects>
 	</skill>
 	<skill id="7050" toLevel="1" name="Master's Blessing - Might">
-		<!-- The GM is always by your side. P. Atk. +15% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Atk. +15%. -->
 		<icon>icon.skill1068</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -785,7 +824,7 @@
 		</effects>
 	</skill>
 	<skill id="7051" toLevel="1" name="Master's Blessing - Shield">
-		<!-- The GM is always by your side. P. Def. +15% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -811,7 +850,7 @@
 		</effects>
 	</skill>
 	<skill id="7052" toLevel="1" name="Master's Blessing - Magic Barrier">
-		<!-- The GM is always by your side. M. Def. +30% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., M. Def. +30%. -->
 		<icon>icon.skill1036</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -837,7 +876,7 @@
 		</effects>
 	</skill>
 	<skill id="7053" toLevel="1" name="Master's Blessing - Vampiric Rage">
-		<!-- The GM is always by your side. For 1 h., with a certain probability recovers as HP 9% of the P. melee damage inflicted. -->
+		<!-- The GM is always by your side. For 1 h., with a certain probability recovers as HP 9% of the melee damage inflicted. -->
 		<icon>icon.skill1268</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -863,7 +902,7 @@
 		</effects>
 	</skill>
 	<skill id="7054" toLevel="1" name="Master's Blessing - Empower">
-		<!-- The GM is always by your side. M. Atk. +75% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., M. Atk. +75%. -->
 		<icon>icon.skill1059</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -889,7 +928,7 @@
 		</effects>
 	</skill>
 	<skill id="7055" toLevel="1" name="Master's Blessing - Wind Walk">
-		<!-- The GM is always by your side. Speed +33 for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -969,7 +1008,7 @@
 		</effects>
 	</skill>
 	<skill id="7057" toLevel="1" name="Master's Blessing - Greater Might">
-		<!-- The GM is always by your side. P. Atk. +10% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Atk. +10%. -->
 		<icon>icon.skill1388</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -995,7 +1034,7 @@
 		</effects>
 	</skill>
 	<skill id="7058" toLevel="1" name="Master's Blessing - Greater Shield">
-		<!-- The GM is always by your side. P. Def. +15% for 1 h. -->
+		<!-- The GM is always by your side. For 1 h., P. Def. +15%. -->
 		<icon>icon.skill1389</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1047,7 +1086,7 @@
 		</effects>
 	</skill>
 	<skill id="7060" toLevel="1" name="Master's Blessing - Clarity">
-		<!-- The GM is always by your side. For 1 h., physical skill MP consumption -20%, magic skill's MP consumption -10%, and song/ dance skill's MP consumption -20%. -->
+		<!-- The GM is always by your side. For 1 h., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, and song/ dance MP consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1236,7 +1275,7 @@
 		</effects>
 	</skill>
 	<skill id="7063" toLevel="1" name="Master's Blessing - Prophecy of Wind">
-		<!-- The GM is always by your side. For 1 h., P. Evasion +4, P. Accuracy +4, P. Critical Rate +15%, P. Critical Damage +20%, Speed +15%, Debuff Resistance +10%, damage to Raid Bosses +15%. -->
+		<!-- The GM is always by your side. For 1 h., for party members P./ M. Accuracy +3, P./ M. Evasion +3, P./ M. Critical Rate +10%, P./ M. Critical Damage +15%, Speed +10%, Debuff Resistance +10%, damage to Raid Bosses +15%. -->
 		<icon>icon.skill1357</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1378,6 +1417,7 @@
 	</skill>
 	<skill id="7065" toLevel="1" name="Test - Charge">
 		<!-- Charges into the enemy. -->
+		<icon>icon.skill0000</icon>
 		<coolTime>200</coolTime>
 		<hitTime>800</hitTime>
 		<magicLevel>75</magicLevel>
@@ -1397,6 +1437,7 @@
 	</skill>
 	<skill id="7066" toLevel="1" name="Test Stun Charge">
 		<!-- Charges into enemy and Stuns. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1430,6 +1471,7 @@
 	</skill>
 	<skill id="7067" toLevel="1" name="Test Range Charge">
 		<!-- Charges into enemy and causes bleeding -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
@@ -1459,6 +1501,7 @@
 	</skill>
 	<skill id="7068" toLevel="1" name="Test Steal Abnormal State">
 		<!-- Steals enemy's abnormal state. -->
+		<icon>icon.skill0000</icon>
 		<coolTime>200</coolTime>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1479,6 +1522,7 @@
 	</skill>
 	<skill id="7069" toLevel="1" name="Test Abnormal State DD">
 		<!-- Inflicts damage according to the enemy's number of abnormal states. -->
+		<icon>icon.skill0000</icon>
 		<coolTime>200</coolTime>
 		<hitTime>2000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1499,12 +1543,14 @@
 	</skill>
 	<skill id="7070" toLevel="1" name="Test - Soul Eating Passive">
 		<!-- Absorbs soul. -->
+		<icon>icon.skill0000</icon>
 		<magicLevel>75</magicLevel>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 	</skill>
 	<skill id="7071" toLevel="1" name="Test - Soul Transfer">
 		<!-- Transfers soul to party member. -->
+		<icon>icon.skill0000</icon>
 		<hitTime>900</hitTime>
 		<magicLevel>75</magicLevel>
 		<operateType>A1</operateType>
@@ -1522,6 +1568,7 @@
 	</skill>
 	<skill id="7075" toLevel="1" name="Test - Distance DD">
 		<!-- Magic damage changes by distance. -->
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1</effectPoint>
 		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1539,6 +1586,7 @@
 	</skill>
 	<skill id="7076" toLevel="1" name="Test - Delay Debuff">
 		<!-- For 20 sec. inflicts Bleed. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>8</abnormalLevel>
 		<abnormalTime>20</abnormalTime>
 		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
@@ -1564,6 +1612,7 @@
 	</skill>
 	<skill id="7077" toLevel="1" name="Test - Delay Debuff - Call">
 		<!-- Character is tired. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
@@ -1580,6 +1629,7 @@
 	</skill>
 	<skill id="7079" toLevel="1" name="Test - Party Damage Absorb">
 		<!-- Party member's damage transfers to potector. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1598,6 +1648,7 @@
 	</skill>
 	<skill id="7080" toLevel="1" name="Test - General Attack Prohibited">
 		<!-- Cannot perform general attack. -->
+		<icon>icon.skill0000</icon>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>40</abnormalTime>
 		<abnormalType>PUBLIC_SLOT</abnormalType>
@@ -1616,6 +1667,7 @@
 	</skill>
 	<skill id="7081" toLevel="1" name="Effect Test - Land Shot">
 		<!-- Shoots toward ground. -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<coolTime>800</coolTime>
 		<effectPoint>-1</effectPoint>
@@ -1634,6 +1686,7 @@
 	</skill>
 	<skill id="7082" toLevel="1" name="Effect Test - Chain Lightning">
 		<!-- Chain Lightning -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>5-12</affectLimit>
 		<effectPoint>-1</effectPoint>
 		<hitTime>5000</hitTime>
@@ -1654,6 +1707,7 @@
 	</skill>
 	<skill id="7083" toLevel="1" name="Test - Trap Skill">
 		<!-- Trap Range Skill -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>6-12</affectLimit>
 		<effectPoint>-1</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1669,6 +1723,7 @@
 	</skill>
 	<skill id="7084" toLevel="1" name="Test - Trap Skill">
 		<!-- Trap Range Skill -->
+		<icon>icon.skill0000</icon>
 		<affectLimit>6-12</affectLimit>
 		<effectPoint>-1</effectPoint>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1685,6 +1740,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7085" toLevel="1" name="Self-Destruct Explosion">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1700,6 +1756,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 	</skill>
 	<skill id="7086" toLevel="1" name="Last Stand_test">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-100</effectPoint>
 		<magicLevel>85</magicLevel>
 		<operateType>A1</operateType>
@@ -1709,6 +1766,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="7087" toLevel="1" name="Chain Magic - Dark Explosion_test">
+		<icon>icon.skill0000</icon>
 		<effectPoint>-1063</effectPoint>
 		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1800,7 +1858,7 @@
 		</effects>
 	</skill>
 	<skill id="7090" toLevel="1" name="Master's Blessing - Improve Condition">
-		<!-- The GM is always by your side. Combine maximum HP increase and maximum MP increase to have more advanced mental and physical power. For 1 h., Max HP +35% and Max MP +35%. -->
+		<!-- The GM is always by your side. Combine maximum HP increase and maximum MP increase to have more advanced mental and physical power. For 1 h., Max. HP +35% and Max. MP +35%. -->
 		<icon>icon.skill1501</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1874,7 +1932,7 @@
 		</effects>
 	</skill>
 	<skill id="7092" toLevel="1" name="Master's Blessing - Improve Shield Defense">
-		<!-- The GM is always by your side. Combine Shield Defense rate increase and Shield Defense increase to have more advanced shield ability increase effect. For 1 h., shield defense rate +30% and Shield Defense +50%. -->
+		<!-- The GM is always by your side. Combines Shield Defense Rate increase and Shield Defense increase to have more advanced shield mastery. For 1 h., Shield Defense Rate +30% and Shield Defense +50%. -->
 		<icon>icon.skill1503</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
@@ -1997,7 +2055,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="7095" toLevel="1" name="Master's Blessing - Face Harden">
+	<skill id="7095" toLevel="1" name="Master's Blessing - Encase Armor">
 		<!-- The GM is always by your side. Thickens the surface of heavy armor to get P. Def. +10% for 1 h. -->
 		<icon>icon.skill0828</icon>
 		<abnormalLevel>2</abnormalLevel>
@@ -2026,9 +2084,9 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="7096" toLevel="1" name="Master's Blessing - Blessing of Fire Dragon">
-		<!-- The GM is always by your side. The target's buff/ de-buff doesn't disappear at death but is maintained. But the Noblesse Blessing and the Amulet of Luck disappear. -->
-		<icon>icon.skill1323</icon>
+	<skill id="7096" toLevel="1" name="Master's Blessing - Noblesse Blessing">
+		<!-- The GM is always by your side. For 1 h. Blessing of Fire Dragon: Buff/ debuff effects remain after death, but Blessing of Fire Dragon is consumed. -->
+		<icon>icon.bm_blessing_dragon</icon>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
@@ -2069,7 +2127,7 @@
 		</effects>
 	</skill>
 	<skill id="7098" toLevel="1" name="Clan-exclusive Pet Heal">
-		<!-- Recovers all of your HP. Power 3000 -->
+		<!-- Recovers all of your HP. Power 3000. -->
 		<icon>icon.skill1401</icon>
 		<operateType>A1</operateType>
 		<mpConsume>5</mpConsume>

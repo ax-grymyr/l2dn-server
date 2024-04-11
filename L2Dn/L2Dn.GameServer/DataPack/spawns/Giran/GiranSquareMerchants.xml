@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="GiranSquareMerchants">
+		<group>
+			<npc id="30081" x="80786" y="147635" z="-3464" heading="64669" respawnTime="60sec" /> <!-- Helvetia -->
+			<npc id="30300" x="80787" y="147969" z="-3464" heading="64446" respawnTime="60sec" /> <!-- Pushkin -->
+			<npc id="34275" x="80784" y="148163" z="-3464" heading="63079" respawnTime="60sec" /> <!-- Jeris -->
+			<npc id="34276" x="80779" y="148254" z="-3464" heading="743" respawnTime="60sec" /> <!-- Jeris' Anvil -->
+			<npc id="30936" x="80873" y="147534" z="-3464" heading="11547" respawnTime="60sec" /> <!-- Pona -->
+			<npc id="33977" x="81042" y="147533" z="-3464" heading="8191" respawnTime="60sec" /> <!-- Veruti -->
+			<npc id="30020" x="80799" y="147801" z="-3464" heading="64793" respawnTime="60sec" /> <!-- Baggins -->
+		</group>
+	</spawn>
+</list>

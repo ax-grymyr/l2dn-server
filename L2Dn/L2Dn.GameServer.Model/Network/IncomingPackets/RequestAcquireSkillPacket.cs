@@ -22,13 +22,15 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 {
     private int _id;
     private int _level;
+    private int _subLevel;
     private AcquireSkillType _skillType;
     private int _subType;
 
     public void ReadContent(PacketBitReader reader)
     {
         _id = reader.ReadInt32();
-        _level = reader.ReadInt32();
+        _level = reader.ReadInt16();
+        _subLevel = reader.ReadInt16();
         _skillType = (AcquireSkillType)reader.ReadInt32();
         if (_skillType == AcquireSkillType.SUBPLEDGE)
         {
@@ -42,7 +44,13 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 		
-		if ((_level < 1) || (_level > 1000) || (_id < 1))
+		if (player.isTransformed() || player.isMounted())
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_STATE_YOU_CAN_ENHANCE_SKILLS_WHEN_NOT_IN_BATTLE_AND_CANNOT_USE_THE_FUNCTION_WHILE_TRANSFORMED_IN_BATTLE_ON_A_MOUNT_OR_WHILE_THE_SKILL_IS_ON_COOLDOWN);
+			return ValueTask.CompletedTask;
+		}
+		
+		if (_level < 1 || _level > 1000 || _id < 1)
 		{
 			Util.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
 			PacketLogger.Instance.Warn("Recived Wrong Packet Data in Aquired Skill - id: " + _id + " level: " + _level + " for " + player);
@@ -50,47 +58,41 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		}
 		
 		Npc trainer = player.getLastFolkNPC();
-		if ((_skillType != AcquireSkillType.CLASS) &&
-		    ((trainer == null) || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
+		if (_skillType != AcquireSkillType.CLASS &&
+		    (trainer == null || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
 			return ValueTask.CompletedTask;
 		
 		int skillId = player.getReplacementSkill(_id);
 		Skill existingSkill = player.getKnownSkill(skillId); // Mobius: Keep existing sublevel.
-		int skillLevel = _level;
-		if ((skillLevel > 65536000) && (existingSkill != null) && (existingSkill.getSubLevel() > 1000))
-		{
-			skillLevel -= existingSkill.getSubLevel() * 65536;
-		}
-		
-		Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel, existingSkill == null ? 0 : existingSkill.getSubLevel());
+		Skill skill = SkillData.getInstance().getSkill(skillId, _level, existingSkill == null ? 0 : existingSkill.getSubLevel());
 		if (skill == null)
 		{
 			PacketLogger.Instance.Warn(
-				$"{GetType().Name}: {player} is trying to learn a null skill Id: {_id} level: {skillLevel}!");
+				$"{GetType().Name}: {player} is trying to learn a null skill Id: {_id} level: {_level}!");
 			
 			return ValueTask.CompletedTask;
 		}
 		
 		// Hack check. Doesn't apply to all Skill Types
 		int prevSkillLevel = player.getSkillLevel(skillId);
-		if ((_skillType != AcquireSkillType.TRANSFER) && (_skillType != AcquireSkillType.SUBPLEDGE))
+		if (_skillType != AcquireSkillType.TRANSFER && _skillType != AcquireSkillType.SUBPLEDGE)
 		{
-			if (prevSkillLevel == skillLevel)
+			if (prevSkillLevel == _level)
 				return ValueTask.CompletedTask;
 			
-			if (prevSkillLevel != (skillLevel - 1))
+			if (prevSkillLevel != _level - 1)
 			{
 				// The previous level skill has not been learned.
 				player.sendPacket(SystemMessageId.THE_PREVIOUS_LEVEL_SKILL_HAS_NOT_BEEN_LEARNED);
 				Util.handleIllegalPlayerAction(player,
-					$"{player} is requesting skill Id: {_id} level {skillLevel} without knowing it's previous level!",
+					$"{player} is requesting skill Id: {_id} level {_level} without knowing it's previous level!",
 					IllegalActionPunishmentType.NONE);
 				
 				return ValueTask.CompletedTask;
 			}
 		}
 		
-		SkillLearn s = SkillTreeData.getInstance().getSkillLearn(_skillType, player.getOriginalSkill(_id), skillLevel, player);
+		SkillLearn s = SkillTreeData.getInstance().getSkillLearn(_skillType, player.getOriginalSkill(_id), _level, player);
 		if (s == null)
 			return ValueTask.CompletedTask;
 		
@@ -98,7 +100,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		{
 			case AcquireSkillType.CLASS:
 			{
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 				}
@@ -112,13 +114,13 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_NOT_COMPLETED_THE_NECESSARY_QUEST_FOR_SKILL_ACQUISITION);
 					Util.handleIllegalPlayerAction(player,
-						player + " is requesting skill Id: " + _id + " level " + skillLevel +
+						player + " is requesting skill Id: " + _id + " level " + _level +
 						" without required quests!", IllegalActionPunishmentType.NONE);
 
 					return ValueTask.CompletedTask;
 				}
 				
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 				}
@@ -127,7 +129,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			}
 			case AcquireSkillType.FISHING:
 			{
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 				}
@@ -154,7 +156,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							{
 								count++;
 								playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
-								if ((playerItemCount >= item.getCount()) &&
+								if (playerItemCount >= item.getCount() &&
 								    player.destroyItemByItemId("PledgeLifeCrystal", item.getId(), item.getCount(),
 									    trainer, true))
 								{
@@ -197,7 +199,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				
 				Clan clan = player.getClan();
-				if ((clan.getFortId() == 0) && (clan.getCastleId() == 0))
+				if (clan.getFortId() == 0 && clan.getCastleId() == 0)
 					return ValueTask.CompletedTask;
 				
 				// Hack check. Check if SubPledge can accept the new skill:
@@ -205,7 +207,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				{
 					player.sendPacket(SystemMessageId.THIS_SQUAD_SKILL_HAS_ALREADY_BEEN_LEARNED);
 					Util.handleIllegalPlayerAction(player,
-						player + " is requesting skill Id: " + _id + " level " + skillLevel +
+						player + " is requesting skill Id: " + _id + " level " + _level +
 						" without knowing it's previous level!", IllegalActionPunishmentType.NONE);
 					
 					return ValueTask.CompletedTask;
@@ -227,7 +229,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					{
 						count++;
 						playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
-						if ((playerItemCount >= item.getCount()) && player.destroyItemByItemId("SubSkills", item.getId(), item.getCount(), trainer, true))
+						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SubSkills", item.getId(), item.getCount(), trainer, true))
 						{
 							break;
 						}
@@ -256,7 +258,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			}
 			case AcquireSkillType.TRANSFER:
 			{
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 				}
@@ -277,17 +279,17 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (player.isSubClassActive())
 				{
 					player.sendPacket(SystemMessageId.THIS_SKILL_CANNOT_BE_LEARNED_WHILE_IN_THE_SUBCLASS_STATE_PLEASE_TRY_AGAIN_AFTER_CHANGING_TO_THE_MAIN_CLASS);
-					Util.handleIllegalPlayerAction(player, player + " is requesting skill Id: " + _id + " level " + skillLevel + " while Sub-Class is active!", IllegalActionPunishmentType.NONE);
+					Util.handleIllegalPlayerAction(player, player + " is requesting skill Id: " + _id + " level " + _level + " while Sub-Class is active!", IllegalActionPunishmentType.NONE);
 					return ValueTask.CompletedTask;
 				}
 				
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					PlayerVariables vars = player.getVariables();
 					string list = vars.getString("SubSkillList", "");
-					if ((prevSkillLevel > 0) && list.contains(_id + "-" + prevSkillLevel))
+					if (prevSkillLevel > 0 && list.contains(_id + "-" + prevSkillLevel))
 					{
-						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + skillLevel);
+						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + _level);
 					}
 					else
 					{
@@ -295,7 +297,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 						{
 							list += ";";
 						}
-						list += _id + "-" + skillLevel;
+						list += _id + "-" + _level;
 					}
 					
 					vars.set("SubSkillList", list);
@@ -308,17 +310,17 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (player.isSubClassActive())
 				{
 					player.sendPacket(SystemMessageId.THIS_SKILL_CANNOT_BE_LEARNED_WHILE_IN_THE_SUBCLASS_STATE_PLEASE_TRY_AGAIN_AFTER_CHANGING_TO_THE_MAIN_CLASS);
-					Util.handleIllegalPlayerAction(player, player + " is requesting skill Id: " + _id + " level " + skillLevel + " while Sub-Class is active!", IllegalActionPunishmentType.NONE);
+					Util.handleIllegalPlayerAction(player, player + " is requesting skill Id: " + _id + " level " + _level + " while Sub-Class is active!", IllegalActionPunishmentType.NONE);
 					return ValueTask.CompletedTask;
 				}
 				
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					PlayerVariables vars = player.getVariables();
 					string list = vars.getString("DualSkillList", "");
-					if ((prevSkillLevel > 0) && list.contains(_id + "-" + prevSkillLevel))
+					if (prevSkillLevel > 0 && list.contains(_id + "-" + prevSkillLevel))
 					{
-						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + skillLevel);
+						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + _level);
 					}
 					else
 					{
@@ -326,7 +328,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 						{
 							list += ";";
 						}
-						list += _id + "-" + skillLevel;
+						list += _id + "-" + _level;
 					}
 					vars.set("DualSkillList", list);
 					giveSkill(player, trainer, skill, false);
@@ -335,7 +337,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			}
 			case AcquireSkillType.COLLECT:
 			{
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 				}
@@ -346,7 +348,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (player.getRace() != Race.ERTHEIA)
 					return ValueTask.CompletedTask;
 				
-				if (checkPlayerSkill(player, trainer, s, skillLevel))
+				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					giveSkill(player, trainer, skill);
 					player.sendPacket(new AcquireSkillDonePacket());
@@ -451,7 +453,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 */
 	private bool checkPlayerSkill(Player player, Npc trainer, SkillLearn skillLearn, int skillLevel)
 	{
-		if ((skillLearn != null) && (skillLearn.getSkillLevel() == skillLevel))
+		if (skillLearn != null && skillLearn.getSkillLevel() == skillLevel)
 		{
 			// Hack check.
 			if (skillLearn.getGetLevel() > player.getLevel())
@@ -464,7 +466,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			if (skillLearn.getDualClassLevel() > 0)
 			{
 				SubClassHolder playerDualClass = player.getDualClass();
-				if ((playerDualClass == null) || (playerDualClass.getLevel() < skillLearn.getDualClassLevel()))
+				if (playerDualClass == null || playerDualClass.getLevel() < skillLearn.getDualClassLevel())
 				{
 					return false;
 				}
@@ -472,14 +474,14 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			
 			// First it checks that the skill require SP and the player has enough SP to learn it.
 			long levelUpSp = skillLearn.getLevelUpSp();
-			if ((levelUpSp > 0) && (levelUpSp > player.getSp()))
+			if (levelUpSp > 0 && levelUpSp > player.getSp())
 			{
 				player.sendPacket(new ExAcquireSkillResultPacket(skillLearn.getSkillId(), skillLearn.getSkillLevel(), false, SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_LEARN_THIS_SKILL));
 				showSkillList(trainer, player);
 				return false;
 			}
 			
-			if (!Config.DIVINE_SP_BOOK_NEEDED && (_id == (int)CommonSkill.DIVINE_INSPIRATION))
+			if (!Config.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
 			{
 				return true;
 			}
@@ -547,7 +549,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					{
 						count++;
 						playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
-						if ((playerItemCount >= item.getCount()) && player.destroyItemByItemId("SkillLearn", item.getId(), item.getCount(), trainer, true))
+						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SkillLearn", item.getId(), item.getCount(), trainer, true))
 						{
 							break;
 						}
@@ -614,7 +616,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		player.sendSkillList(skill.getId());
 		
 		// If skill is expand type then sends packet:
-		if ((_id >= 1368) && (_id <= 1372))
+		if (_id >= 1368 && _id <= 1372)
 		{
 			player.sendStorageMaxCount();
 		}
@@ -661,6 +663,6 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			return true;
 		}
 		QuestState qs = player.getQuestState("Q00136_MoreThanMeetsTheEye");
-		return (qs != null) && qs.isCompleted();
+		return qs != null && qs.isCompleted();
 	}
 }

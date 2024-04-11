@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="50912" toLevel="6" name="Talisman Bracelet">
+		<!-- Activates 1 talisman slot. -->
 		<icon>
 			<value level="1">icon.dimension_bracelet_i00</value>
 			<value level="2">icon.dimension_bracelet_i01</value>
@@ -65,7 +66,7 @@
 		</effects>
 	</skill>
 	<skill id="50913" toLevel="11" name="Talisman of Eva">
-		<!-- Talisman with sealed energy of Eva. M. Def. +$s1, Max MP +$s2. -->
+		<!-- Talisman with sealed energy of Eva. M. Def. +20, Max MP +50. -->
 		<icon>icon.giant_item_equip</icon>
 		<operateType>P</operateType>
 		<effects>
@@ -151,7 +152,7 @@
 		</effects>
 	</skill>
 	<skill id="50914" toLevel="10" name="Amber">
-		<!-- When used interrupts the target's skill casting. Inflicts fixed PvP damage, ?? is ignored. Power $s1. -->
+		<!-- When used interrupts the target's skill casting. Inflicts fixed PvP damage, СР is ignored. Power 475. -->
 		<icon>icon.etc_bm_jewel_amber_i00</icon>
 		<operateType>A1</operateType>
 		<castRange>600</castRange>

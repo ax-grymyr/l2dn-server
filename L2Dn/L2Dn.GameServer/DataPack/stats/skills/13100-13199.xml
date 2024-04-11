@@ -28,34 +28,28 @@
 				<mode>PER</mode>
 			</effect>
 			<effect name="DefenceTrait">
-				<BLUNT>5</BLUNT>
+				<POLE>5</POLE>
 				<SWORD>5</SWORD>
 				<DUAL>5</DUAL>
-				<BOW>5</BOW>
-				<POLE>5</POLE>
-				<DAGGER>5</DAGGER>
 				<DUALFIST>5</DUALFIST>
-				<DUALDAGGER>5</DUALDAGGER>
-			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
-				<mode>DIFF</mode>
+				<BLUNT>5</BLUNT>
+				<DAGGER>5</DAGGER>
+				<RAPIER>5</RAPIER>
+				<ANCIENTSWORD>5</ANCIENTSWORD>
+				<FIST>5</FIST>
+				<BOW>5</BOW>
 			</effect>
 			<effect name="CriticalRate">
 				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="PvpMagicalSkillDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="PvpPhysicalAttackDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalSkillDefenceBonus">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="DamageByAttack">
+				<amount>-10</amount>
+				<type>PK</type>
 			</effect>
 			<effect name="DamageShield">
 				<amount>4</amount>

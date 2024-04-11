@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="40000" toLevel="1" name="Melodys Might">
+	<skill id="40000" toLevel="1" name="Tune of Might">
 		<!-- For 20 min., P. Atk. +15%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -8,7 +8,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40001" toLevel="1" name="Melodys Shield">
+	<skill id="40001" toLevel="1" name="Tune of Shield">
 		<!-- For 20 min. P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
@@ -16,7 +16,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40002" toLevel="1" name="Melodys Focus">
+	<skill id="40002" toLevel="1" name="Tune of Focus">
 		<!-- For 20 min., P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
@@ -24,7 +24,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40003" toLevel="1" name="Melodys Haste">
+	<skill id="40003" toLevel="1" name="Tune of Haste">
 		<!-- For 20 min., Atk. Spd. +33%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -32,15 +32,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40004" toLevel="1" name="Melodys Acumen">
-		<!-- Casting Spd. +30% for 20 min. -->
+	<skill id="40004" toLevel="1" name="Tune of Acumen">
+		<!-- For 20 min., increases Casting Spd. by 30%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40005" toLevel="1" name="Melodys Empower">
+	<skill id="40005" toLevel="1" name="Tune of Empower">
 		<!-- For 20 min., M. Atk. +75%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
@@ -48,7 +48,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40006" toLevel="1" name="Melodys Wind Walk">
+	<skill id="40006" toLevel="1" name="Tune of Wind Walk">
 		<!-- For 20 min., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
@@ -56,7 +56,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40007" toLevel="1" name="Melodys Death Whisper">
+	<skill id="40007" toLevel="1" name="Tune of Death Whisper">
 		<!-- For 20 min., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
@@ -64,15 +64,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40008" toLevel="1" name="Melodys Vampiric Rage">
-		<!-- For 20 min. has a chance to absorb 9% of the damage inflicted on the target as HP. -->
+	<skill id="40008" toLevel="1" name="Tune of Vampiric Rage">
+		<!-- For 20 min., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40009" toLevel="1" name="Melodys Wild Magic">
+	<skill id="40009" toLevel="1" name="Tune of Wild Magic">
 		<!-- For 20 min., M. Critical Rate +20. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
@@ -80,7 +80,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40010" toLevel="1" name="Melodys Guidance">
+	<skill id="40010" toLevel="1" name="Tune of Guidance">
 		<!-- For 20 min., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
@@ -88,7 +88,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40011" toLevel="1" name="Melodys Clarity">
+	<skill id="40011" toLevel="1" name="Tune of Clarity">
 		<!-- For 20 min., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, song/ dance MP Consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
@@ -104,7 +104,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40013" toLevel="1" name="Melodys Concentration">
+	<skill id="40013" toLevel="1" name="Tune of Concentration">
 		<!-- For 20 min., Casting Interruption Rate -53%. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
@@ -112,7 +112,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40014" toLevel="1" name="Melodys Might">
+	<skill id="40014" toLevel="1" name="Tune of Might">
 		<!-- For 1 h., P. Atk. +15%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -120,7 +120,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40015" toLevel="1" name="Melodys Shield">
+	<skill id="40015" toLevel="1" name="Tune of Shield">
 		<!-- For 1 h. P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
@@ -128,7 +128,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40016" toLevel="1" name="Melodys Focus">
+	<skill id="40016" toLevel="1" name="Tune of Focus">
 		<!-- For 1 h., P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
@@ -136,7 +136,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40017" toLevel="1" name="Melodys Haste">
+	<skill id="40017" toLevel="1" name="Tune of Haste">
 		<!-- For 1 h., Atk. Spd. +33%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -144,15 +144,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40018" toLevel="1" name="Melodys Acumen">
-		<!-- Casting Spd. +30% for 1 h. -->
+	<skill id="40018" toLevel="1" name="Tune of Acumen">
+		<!-- For 1 h., increases Casting Spd. by 30%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40019" toLevel="1" name="Melodys Empower">
+	<skill id="40019" toLevel="1" name="Tune of Empower">
 		<!-- For 1 h., M. Atk. +75%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
@@ -160,7 +160,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40020" toLevel="1" name="Melodys Wind Walk">
+	<skill id="40020" toLevel="1" name="Tune of Wind Walk">
 		<!-- For 1 h., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
@@ -168,7 +168,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40021" toLevel="1" name="Melodys Death Whisper">
+	<skill id="40021" toLevel="1" name="Tune of Death Whisper">
 		<!-- For 1 h., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
@@ -176,15 +176,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40022" toLevel="1" name="Melodys Vampiric Rage">
-		<!-- For 1 h. has a chance to absorb 9% of the damage inflicted on the target as HP. -->
+	<skill id="40022" toLevel="1" name="Tune of Vampiric Rage">
+		<!-- For 1 h., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40023" toLevel="1" name="Melodys Wild Magic">
+	<skill id="40023" toLevel="1" name="Tune of Wild Magic">
 		<!-- For 1 h., M. Critical Rate +20. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
@@ -192,7 +192,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40024" toLevel="1" name="Melodys Guidance">
+	<skill id="40024" toLevel="1" name="Tune of Guidance">
 		<!-- For 1 h., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
@@ -200,7 +200,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40025" toLevel="1" name="Melodys Clarity">
+	<skill id="40025" toLevel="1" name="Tune of Clarity">
 		<!-- For 1 h., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, song/ dance MP Consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
@@ -216,7 +216,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40027" toLevel="1" name="Melodys Concentration">
+	<skill id="40027" toLevel="1" name="Tune of Concentration">
 		<!-- For 1 h., Casting Interruption Rate -53%. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
@@ -224,7 +224,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40028" toLevel="1" name="Melodys Might">
+	<skill id="40028" toLevel="1" name="Tune of Might">
 		<!-- For 4 h., P. Atk. +15%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -232,7 +232,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40029" toLevel="1" name="Melodys Shield">
+	<skill id="40029" toLevel="1" name="Tune of Shield">
 		<!-- For 4 h. P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
@@ -240,7 +240,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40030" toLevel="1" name="Melodys Focus">
+	<skill id="40030" toLevel="1" name="Tune of Focus">
 		<!-- For 4 h., P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
@@ -248,7 +248,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40031" toLevel="1" name="Melodys Haste">
+	<skill id="40031" toLevel="1" name="Tune of Haste">
 		<!-- For 4 h., Atk. Spd. +33%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -256,15 +256,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40032" toLevel="1" name="Melodys Acumen">
-		<!-- Casting Spd. +30% for 4 h. -->
+	<skill id="40032" toLevel="1" name="Tune of Acumen">
+		<!-- For 4 h., increases Casting Spd. by 30%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40033" toLevel="1" name="Melodys Empower">
+	<skill id="40033" toLevel="1" name="Tune of Empower">
 		<!-- For 4 h., M. Atk. +75%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
@@ -272,7 +272,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40034" toLevel="1" name="Melodys Wind Walk">
+	<skill id="40034" toLevel="1" name="Tune of Wind Walk">
 		<!-- For 4 h., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
@@ -280,7 +280,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40035" toLevel="1" name="Melodys Death Whisper">
+	<skill id="40035" toLevel="1" name="Tune of Death Whisper">
 		<!-- For 4 h., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
@@ -288,15 +288,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40036" toLevel="1" name="Melodys Vampiric Rage">
-		<!-- For 4 h. has a chance to absorb 9% of the damage inflicted on the target as HP. -->
+	<skill id="40036" toLevel="1" name="Tune of Vampiric Rage">
+		<!-- For 4 h., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40037" toLevel="1" name="Melodys Wild Magic">
+	<skill id="40037" toLevel="1" name="Tune of Wild Magic">
 		<!-- For 4 h., M. Critical Rate +20. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
@@ -304,7 +304,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40038" toLevel="1" name="Melodys Guidance">
+	<skill id="40038" toLevel="1" name="Tune of Guidance">
 		<!-- For 4 h., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
@@ -312,7 +312,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40039" toLevel="1" name="Melodys Clarity">
+	<skill id="40039" toLevel="1" name="Tune of Clarity">
 		<!-- For 4 h., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, song/ dance MP Consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
@@ -328,7 +328,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40041" toLevel="1" name="Melodys Concentration">
+	<skill id="40041" toLevel="1" name="Tune of Concentration">
 		<!-- For 4 h., Casting Interruption Rate -53%. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
@@ -336,7 +336,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40042" toLevel="1" name="Melodys Might">
+	<skill id="40042" toLevel="1" name="Tune of Might">
 		<!-- For 8 h., P. Atk. +15%. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
@@ -344,7 +344,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40043" toLevel="1" name="Melodys Shield">
+	<skill id="40043" toLevel="1" name="Tune of Shield">
 		<!-- For 8 h. P. Def. +15%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
@@ -352,7 +352,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40044" toLevel="1" name="Melodys Focus">
+	<skill id="40044" toLevel="1" name="Tune of Focus">
 		<!-- For 8 h., P. Critical Rate +30%. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
@@ -360,7 +360,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40045" toLevel="1" name="Melodys Haste">
+	<skill id="40045" toLevel="1" name="Tune of Haste">
 		<!-- For 8 h., Atk. Spd. +33%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -368,15 +368,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40046" toLevel="1" name="Melodys Acumen">
-		<!-- Casting Spd. +30% for 8 h. -->
+	<skill id="40046" toLevel="1" name="Tune of Acumen">
+		<!-- For 8 h., increases Casting Spd. by 30%. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40047" toLevel="1" name="Melodys Empower">
+	<skill id="40047" toLevel="1" name="Tune of Empower">
 		<!-- For 8 h., M. Atk. +75%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
@@ -384,7 +384,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40048" toLevel="1" name="Melodys Wind Walk">
+	<skill id="40048" toLevel="1" name="Tune of Wind Walk">
 		<!-- For 8 h., Speed +33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
@@ -392,7 +392,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40049" toLevel="1" name="Melodys Death Whisper">
+	<skill id="40049" toLevel="1" name="Tune of Death Whisper">
 		<!-- For 8 h., P. Critical Damage +35%. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
@@ -400,15 +400,15 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40050" toLevel="1" name="Melodys Vampiric Rage">
-		<!-- For 8 h. has a chance to absorb 9% of the damage inflicted on the target as HP. -->
+	<skill id="40050" toLevel="1" name="Tune of Vampiric Rage">
+		<!-- For 8 h., with a certain chance, absorbs 9% of the inflicted damage as HP. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40051" toLevel="1" name="Melodys Wild Magic">
+	<skill id="40051" toLevel="1" name="Tune of Wild Magic">
 		<!-- For 8 h., M. Critical Rate +20. -->
 		<icon>icon.skill1303</icon>
 		<operateType>A2</operateType>
@@ -416,7 +416,7 @@
 		<hitTime>2500</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40052" toLevel="1" name="Melodys Guidance">
+	<skill id="40052" toLevel="1" name="Tune of Guidance">
 		<!-- For 8 h., P. Accuracy +4. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
@@ -424,7 +424,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40053" toLevel="1" name="Melodys Clarity">
+	<skill id="40053" toLevel="1" name="Tune of Clarity">
 		<!-- For 8 h., P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, song/ dance MP Consumption -20%. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
@@ -440,7 +440,7 @@
 		<hitTime>4000</hitTime>
 		<reuseDelay>10000</reuseDelay>
 	</skill>
-	<skill id="40055" toLevel="1" name="Melodys Concentration">
+	<skill id="40055" toLevel="1" name="Tune of Concentration">
 		<!-- For 8 h., Casting Interruption Rate -53%. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
@@ -459,14 +459,14 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="40057" toLevel="1" name="Magic Fire (Event)">
-		<!-- For 1 h., magic lantern's recovery rate +100%. The effect remains after death. -->
+		<!-- Magic Lantern refill speed +100%. -->
 		<icon>icon.bm_soul_of_shilen</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>
 		<reuseDelay>60000</reuseDelay>
 	</skill>
 	<skill id="40058" toLevel="1" name="Giran Seal">
-		<!-- For 20 min., Acquired XP/ SP +20%. Cooldown: 1 min. The effect remains after death. Warning: Does not stack with Einhasad's Protection. -->
+		<!-- For 20 min., Acquired XP/ SP +20%. Cooldown: 1 min. The effect remains after death. <Note>. Does not stack with Einhasad's Protection. -->
 		<icon>icon.etc_royal_seal_of_lord_i04</icon>
 		<operateType>A1</operateType>
 		<isMagic>4</isMagic>

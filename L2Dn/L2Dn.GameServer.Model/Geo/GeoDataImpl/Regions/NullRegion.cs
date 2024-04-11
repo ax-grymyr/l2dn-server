@@ -12,6 +12,14 @@ public class NullRegion: IRegion
 		return true;
 	}
 	
+	public void setNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+	}
+	
+	public void unsetNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
+	{
+	}
+	
 	public int getNearestZ(int geoX, int geoY, int worldZ)
 	{
 		return worldZ;
@@ -28,6 +36,11 @@ public class NullRegion: IRegion
 	}
 	
 	public bool hasGeo()
+	{
+		return false;
+	}
+
+	public bool saveToFile(string fileName)
 	{
 		return false;
 	}

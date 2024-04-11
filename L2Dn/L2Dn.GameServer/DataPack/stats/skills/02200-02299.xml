@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="2209" toLevel="1" name="Blessed Scroll: Enchant Armor (A-grade)">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -10,6 +11,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2210" toLevel="1" name="Blessed Scroll: Enchant Armor (B-grade)">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -19,6 +21,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2211" toLevel="1" name="Blessed Scroll: Enchant Armor (C-grade)">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -28,6 +31,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2212" toLevel="1" name="Blessed Scroll: Enchant Armor (D-grade)">
+		<icon>icon.skill0000</icon>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicLevel>1</magicLevel>
 		<operateType>A1</operateType>
@@ -37,6 +41,7 @@
 		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="2213" toLevel="15" name="Scroll of Escape: Talking Island Village">
+		<icon>icon.skill0000</icon>
 		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
@@ -86,7 +91,7 @@
 					<value level="12">147087</value>
 					<value level="13">82916</value>
 					<value level="14">85289</value>
-					<value level="15">85289</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">117052</value>
 				</x>
 				<y>
 					<value level="1">244566</value>
@@ -103,7 +108,7 @@
 					<value level="12">25751</value>
 					<value level="13">53210</value>
 					<value level="14">16225</value>
-					<value level="15">16225</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">76884</value>
 				</y>
 				<z>
 					<value level="1">-3728</value>
@@ -120,7 +125,7 @@
 					<value level="12">-2018</value>
 					<value level="13">-1488</value>
 					<value level="14">-3672</value>
-					<value level="15">-3672</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="15">-2688</value>
 				</z>
 			</effect>
 		</effects>

@@ -24,6 +24,7 @@
 	</skill>
 	<skill id="16997" toLevel="1" name="Magical Firewood Jump">
 		<!-- Enables the character to jump over a Bundle of Magical Firewood. -->
+		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<effectPoint>2</effectPoint>
 	</skill>
