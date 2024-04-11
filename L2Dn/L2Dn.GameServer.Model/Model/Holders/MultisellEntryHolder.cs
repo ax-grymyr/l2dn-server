@@ -14,8 +14,8 @@ public class MultisellEntryHolder
 
 	public MultisellEntryHolder(List<ItemChanceHolder> ingredients, List<ItemChanceHolder> products)
 	{
-		_ingredients = ingredients.ToList();
-		_products = products.ToList();
+		_ingredients = ingredients;
+		_products = products;
 
 		foreach (ItemChanceHolder product in products)
 		{

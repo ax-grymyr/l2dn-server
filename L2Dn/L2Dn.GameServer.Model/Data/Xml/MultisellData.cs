@@ -89,8 +89,8 @@ public class MultisellData: DataReaderBase
 				long lastIngredientCount = 0;
 				entryCounter++;
 
-				List<ItemChanceHolder> ingredients = new(1);
-				List<ItemChanceHolder> products = new(1);
+				List<ItemChanceHolder> ingredients = new();
+				List<ItemChanceHolder> products = new();
 				MultisellEntryHolder entry = new MultisellEntryHolder(ingredients, products);
 				
 				el.Elements("ingredient").ForEach(e =>
