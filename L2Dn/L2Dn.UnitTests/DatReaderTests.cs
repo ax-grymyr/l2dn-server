@@ -144,9 +144,11 @@ public class DatReaderTests
 
         const string dstPath = @"D:\L2\DatFiles\";
         
-        const string euPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
-        const string ruPath = @"D:\L2\CLRU-P447-D20240313-P-230809-240318-1\system\";
-        const string naPath = @"D:\L2\L2NA-P447-D20240320-G458-230809.72\system\";
+        const string clientsPath = @"D:\L2\";
+
+        const string euPath = clientsPath + @"L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
+        const string ruPath = clientsPath + @"CLRU-P447-D20240313-P-230809-240318-1\system\";
+        const string naPath = clientsPath + @"L2NA-P447-D20240320-G458-230809.72\system\";
 
         // EU
         ConvertDatFiles(euPath, dstPath, "eu", "eu");
@@ -204,6 +206,7 @@ public class DatReaderTests
             
             new DatConversion<EtcItemGrpV9>("EtcItemgrp_Classic", "EtcItemGrp_Classic-{0}"),
             new DatConversion<ItemNameV18>("ItemName_Classic-{0}", "ItemName_Classic-{0}"),
+            new DatConversion<ItemStatDataV4>("ItemStatData_Classic", "ItemStatData_Classic-{0}"),
             new DatConversion<LCoinShopProductV6>("LCoinShopProduct_Classic-{0}", "LCoinShopProduct_Classic-{0}"),
             new DatConversion<NpcName>("NpcName_Classic-{0}", "NpcName_Classic-{0}"),
             new DatConversion<NpcString>("NpcString_Classic-{0}", "NpcString_Classic-{0}"),
