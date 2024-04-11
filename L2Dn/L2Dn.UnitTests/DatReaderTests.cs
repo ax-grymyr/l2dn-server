@@ -138,6 +138,22 @@ public class DatReaderTests
     }
     
     [Fact]
+    public void CheckModifiedFiles()
+    {
+        EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
+
+        const string dstPath = @"D:\L2\DatFiles\";
+        const string euPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
+
+        ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat-modified-encrypted");
+        Serialize(dstPath + "ItemName_Classic-eu.modified.NoNames.json", euItemName);
+        L2NameData euNameData = DatReader.ReadNameData(euPath + "L2GameDataName.dat.modified-encrypted");
+        Serialize(dstPath + "L2GameDataName.dat.modified.json", euNameData);
+        euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat-modified-encrypted");
+        Serialize(dstPath + "ItemName_Classic-eu.modified.json", euItemName);
+    }
+    
+    [Fact]
     public void ConvertDataFiles()
     {
         EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
@@ -158,22 +174,6 @@ public class DatReaderTests
         
         // NA
         ConvertDatFiles(naPath, dstPath, "e", "na");
-    }
-    
-    [Fact]
-    public void CheckModifiedFiles()
-    {
-        EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
-
-        const string dstPath = @"D:\L2\DatFiles\";
-        const string euPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
-
-        ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat-modified-encrypted");
-        Serialize(dstPath + "ItemName_Classic-eu.modified.NoNames.json", euItemName);
-        L2NameData euNameData = DatReader.ReadNameData(euPath + "L2GameDataName.dat.modified-encrypted");
-        Serialize(dstPath + "L2GameDataName.dat.modified.json", euNameData);
-        euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat-modified-encrypted");
-        Serialize(dstPath + "ItemName_Classic-eu.modified.json", euItemName);
     }
 
     private static void ConvertDatFiles(string srcPath, string dstPath, string langSuffix, string langDstSuffix)
@@ -205,12 +205,15 @@ public class DatReaderTests
             new DatConversion<Costume>("Costume_Classic", "Costume_Classic-{0}"),
             
             new DatConversion<EtcItemGrpV9>("EtcItemgrp_Classic", "EtcItemGrp_Classic-{0}"),
+            new DatConversion<ItemBaseInfoV5>("item_baseinfo_Classic", "Item_BaseInfo_Classic-{0}"),
             new DatConversion<ItemNameV18>("ItemName_Classic-{0}", "ItemName_Classic-{0}"),
             new DatConversion<ItemStatDataV4>("ItemStatData_Classic", "ItemStatData_Classic-{0}"),
             new DatConversion<LCoinShopProductV6>("LCoinShopProduct_Classic-{0}", "LCoinShopProduct_Classic-{0}"),
             new DatConversion<NpcName>("NpcName_Classic-{0}", "NpcName_Classic-{0}"),
             new DatConversion<NpcString>("NpcString_Classic-{0}", "NpcString_Classic-{0}"),
             new DatConversion<NpcTeleporter>("NPCTeleporter_Classic", "NpcTeleporter_Classic-{0}"),
+            new DatConversion<ProductNameV4>("ProductName_Classic-{0}", "ProductName_Classic-{0}"),
+            new DatConversion<RecipeV3>("Recipe_Classic", "Recipe_Classic-{0}"),
             new DatConversion<QuestNameV8>("QuestName_Classic-{0}", "QuestName_Classic-{0}"),
             new DatConversion<ServerNameV5>("ServerName-{0}", "ServerName-{0}"),
             new DatConversion<SetItemGrp>("SetItemGrp_Classic-{0}", "SetItemGrp_Classic-{0}"),
