@@ -24,6 +24,6 @@ public class DbBuyListItem
     public int BuyListId { get; set; }
     public int ItemId { get; set; }
     public long Price { get; set; }
-    public int? Count { get; set; }
-    public int? RestockDelay { get; set; }
+    public long? Count { get; set; }
+    public TimeSpan? RestockDelay { get; set; }
 }

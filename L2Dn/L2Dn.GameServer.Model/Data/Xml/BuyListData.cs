@@ -1,12 +1,11 @@
 using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
-using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -31,10 +30,10 @@ public class BuyListData: DataReaderBase
 	{
 		_buyLists.clear();
 
-		LoadXmlDocuments(DataFileLocation.Data, "buylists").ForEach(t => loadFile(t.FilePath, t.Document));
+		LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists").ForEach(t => loadFile(t.FilePath, t.Document));
 		if (Config.CUSTOM_BUYLIST_LOAD)
 		{
-			LoadXmlDocuments(DataFileLocation.Data, "buylists/custom").ForEach(t => loadFile(t.FilePath, t.Document));
+			LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists/custom").ForEach(t => loadFile(t.FilePath, t.Document));
 		}
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _buyLists.size() + " buyLists.");
@@ -76,49 +75,50 @@ public class BuyListData: DataReaderBase
 		}
 	}
 
-	private void loadFile(string filePath, XDocument document)
+	private void loadFile(string filePath, XmlBuyList document)
 	{
 		//int defaultBaseTax = parseInteger(list.getAttributes(), "baseTax", 0);
 		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath));
 
-		List<int> allowedNpc = new();
-		List<Product> products = new();
-		
-		document.Elements("list").Elements("npcs").Elements("npc").Select(n => (int)n)
-			.ForEach(x => allowedNpc.Add(x));
-
-		document.Elements("list").Elements("item").ForEach(node =>
+		List<int> allowedNpc = document.Npcs;
+		List<Product> products = document.Items.Select(buyListItem =>
 		{
-			int itemId = node.GetAttributeValueAsInt32("id");
+			int itemId = buyListItem.Id;
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-			if (item != null)
-			{
-				long price = node.Attribute("price").GetInt64(-1);
-				TimeSpan restockDelay = TimeSpan.FromMinutes(node.Attribute("restock_delay").GetInt64(-1));
-				long count = node.Attribute("count").GetInt64(-1);
-				int baseTax = node.Attribute("baseTax").GetInt32(0);
-				int sellPrice = item.getReferencePrice() / 2;
-				if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price > -1 && sellPrice > price)
-				{
-					LOGGER.Warn(
-						$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");
-
-					price = sellPrice;
-				}
-
-				if (products.Any(x => x.getItemId() == itemId))
-					LOGGER.Warn($"Buylist={buyListId} contains duplicated ItemId={itemId}.");
-				else
-					products.Add(new Product(buyListId, item, price, restockDelay, count, baseTax));
-			}
-			else
+			if (item == null)
 			{
 				LOGGER.Warn("Item not found. BuyList:" + buyListId + " ItemID:" + itemId + " File:" + filePath);
+				return null;
 			}
 
-			ProductList buyList = new ProductList(buyListId, products.ToImmutableArray(), allowedNpc.ToImmutableSortedSet());
-			_buyLists.put(buyListId, buyList);
-		});
+			long price = buyListItem.Price;
+			TimeSpan restockDelay =
+				TimeSpan.FromMinutes(buyListItem.RestockDelaySpecified ? buyListItem.RestockDelay : -1);
+
+			long count = buyListItem.CountSpecified ? buyListItem.Count : -1;
+			int baseTax = buyListItem.BaseTaxSpecified ? buyListItem.BaseTax : 0;
+			int sellPrice = item.getReferencePrice() / 2;
+			if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price > -1 && sellPrice > price)
+			{
+				LOGGER.Warn(
+					$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");
+
+				price = sellPrice;
+			}
+
+			return new Product(buyListId, item, price, restockDelay, count, baseTax);
+		}).Where(x => x != null).ToList();
+
+		List<int> duplicateItemIds =
+			products.GroupBy(x => x.getItemId()).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
+
+		if (duplicateItemIds.Count > 0)
+		{
+			LOGGER.Warn($"Buylist={buyListId} contains duplicated item ids {string.Join(", ", duplicateItemIds)}.");
+		}
+		
+		ProductList buyList = new(buyListId, products.ToImmutableArray(), allowedNpc.ToImmutableSortedSet());
+		_buyLists.put(buyListId, buyList);
 	}
 	
 	public ProductList getBuyList(int listId)

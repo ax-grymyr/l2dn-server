@@ -1,4 +1,5 @@
 ﻿using System.Xml.Linq;
+using System.Xml.Serialization;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
@@ -10,6 +11,9 @@ public abstract class DataReaderBase
 {
     protected static XDocument LoadXmlDocument(DataFileLocation location, string relativeFilePath) =>
         LoadXmlDocument(GetFullPath(location, relativeFilePath));
+
+    protected static T LoadXmlDocument<T>(DataFileLocation location, string relativeFilePath)
+        where T: class => LoadXmlDocument<T>(GetFullPath(location, relativeFilePath));
 
     protected static IEnumerable<(string FilePath, XDocument Document)> LoadXmlDocuments(DataFileLocation location,
         string relativeDirPath, bool includeSubDirectories = false)
@@ -28,11 +32,39 @@ public abstract class DataReaderBase
         }
     }
 
+    protected static IEnumerable<(string FilePath, T Document)> LoadXmlDocuments<T>(DataFileLocation location,
+        string relativeDirPath, bool includeSubDirectories = false)
+        where T: class
+    {
+        string directoryPath = GetFullPath(location, relativeDirPath);
+        if (!Directory.Exists(directoryPath))
+            yield break;
+            
+        IEnumerable<string> files = Directory.EnumerateFiles(GetFullPath(location, relativeDirPath), "*.xml",
+            includeSubDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+
+        foreach (var filePath in files)
+        {
+            T document = LoadXmlDocument<T>(filePath);
+            yield return (filePath, document);
+        }
+    }
+
     protected static XDocument LoadXmlDocument(string filePath)
     {
-        using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         XDocument document = XDocument.Load(stream);
         return document;
+    }
+
+    protected static T LoadXmlDocument<T>(string filePath)
+        where T: class
+    {
+        XmlSerializer serializer = new(typeof(T));
+        using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        return (T?)serializer.Deserialize(stream) ??
+               throw new InvalidOperationException(
+                   $"Could not deserialize XML file '{filePath}' to object of type '{typeof(T).FullName}'");
     }
 
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
