@@ -1,10 +1,8 @@
-using System.Collections.Immutable;
+using System.Collections.Frozen;
 using System.Runtime.CompilerServices;
-using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Model.DataPack;
 using NLog;
 
@@ -16,11 +14,10 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class BuyListData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(BuyListData));
-	
-	private readonly Map<int, ProductList> _buyLists = new();
-	
-	protected BuyListData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(BuyListData));
+	private FrozenDictionary<int, ProductList> _buyLists = FrozenDictionary<int, ProductList>.Empty;
+
+	private BuyListData()
 	{
 		load();
 	}
@@ -28,15 +25,7 @@ public class BuyListData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		_buyLists.clear();
-
-		LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists").ForEach(t => loadFile(t.FilePath, t.Document));
-		if (Config.CUSTOM_BUYLIST_LOAD)
-		{
-			LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists/custom").ForEach(t => loadFile(t.FilePath, t.Document));
-		}
-
-		LOGGER.Info(GetType().Name + ": Loaded " + _buyLists.size() + " buyLists.");
+		_buyLists = LoadBuyLists();
 		
 		try 
 		{
@@ -48,17 +37,17 @@ public class BuyListData: DataReaderBase
 				int itemId = dbBuyList.ItemId;
 				long count = dbBuyList.Count;
 				DateTime nextRestockTime = dbBuyList.NextRestockTime;
-				ProductList buyList = getBuyList(buyListId);
+				ProductList? buyList = getBuyList(buyListId);
 				if (buyList == null)
 				{
-					LOGGER.Warn("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
+					_logger.Warn("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
 					continue;
 				}
 				
-				Product product = buyList.getProductByItemId(itemId);
+				Product? product = buyList.getProductByItemId(itemId);
 				if (product == null)
 				{
-					LOGGER.Warn("ItemId found in database but not loaded from xml! BuyListId: " + buyListId + " ItemId: " + itemId);
+					_logger.Warn("ItemId found in database but not loaded from xml! BuyListId: " + buyListId + " ItemId: " + itemId);
 					continue;
 				}
 				
@@ -71,11 +60,28 @@ public class BuyListData: DataReaderBase
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Failed to load buyList data from database.", e);
+			_logger.Warn("Failed to load buyList data from database.", e);
 		}
 	}
 
-	private void loadFile(string filePath, XmlBuyList document)
+	private static FrozenDictionary<int, ProductList> LoadBuyLists()
+	{
+		IEnumerable<ProductList> buyLists = LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists")
+			.Select(t => LoadBuyList(t.FilePath, t.Document));
+		
+		if (Config.CUSTOM_BUYLIST_LOAD)
+		{
+			buyLists = buyLists.Concat(LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists/custom")
+				.Select(t => LoadBuyList(t.FilePath, t.Document)));
+		}
+
+		FrozenDictionary<int, ProductList> result = buyLists.ToFrozenDictionary(x => x.getListId());
+		
+		_logger.Info(nameof(BuyListData) + ": Loaded " + result.Count + " buyLists.");
+		return result;
+	}
+	
+	private static ProductList LoadBuyList(string filePath, XmlBuyList document)
 	{
 		//int defaultBaseTax = parseInteger(list.getAttributes(), "baseTax", 0);
 		int buyListId = int.Parse(Path.GetFileNameWithoutExtension(filePath));
@@ -87,7 +93,7 @@ public class BuyListData: DataReaderBase
 			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
-				LOGGER.Warn("Item not found. BuyList:" + buyListId + " ItemID:" + itemId + " File:" + filePath);
+				_logger.Warn("Item not found. BuyList:" + buyListId + " ItemID:" + itemId + " File:" + filePath);
 				return null;
 			}
 
@@ -101,7 +107,7 @@ public class BuyListData: DataReaderBase
 			int sellPrice = item.getReferencePrice() / 2;
 			if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price >= 0 && sellPrice > price)
 			{
-				LOGGER.Warn(
+				_logger.Warn(
 					$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");
 
 				price = sellPrice;
@@ -115,18 +121,15 @@ public class BuyListData: DataReaderBase
 
 		if (duplicateItemIds.Count > 0)
 		{
-			LOGGER.Warn($"Buylist={buyListId} contains duplicated item ids {string.Join(", ", duplicateItemIds)}.");
+			_logger.Warn($"Buylist={buyListId} contains duplicated item ids {string.Join(", ", duplicateItemIds)}.");
 		}
 		
-		ProductList buyList = new(buyListId, products.ToImmutableArray(), allowedNpc.ToImmutableSortedSet());
-		_buyLists.put(buyListId, buyList);
+		ProductList buyList = new(buyListId, products, allowedNpc);
+		return buyList;
 	}
 	
-	public ProductList getBuyList(int listId)
-	{
-		return _buyLists.get(listId);
-	}
-	
+	public ProductList? getBuyList(int listId) => _buyLists.GetValueOrDefault(listId);
+
 	public static BuyListData getInstance()
 	{
 		return SingletonHolder.INSTANCE;

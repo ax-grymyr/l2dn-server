@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using System.Xml.Serialization;
 using BuildDataPackDb.Db;
 using L2Dn.Model.DataPack;
+using L2Dn.Utilities;
 using NLog;
 
 namespace BuildDataPackDb.Services.Loaders;
@@ -23,22 +23,14 @@ public class BuyListService
         string buyListPath = Path.Combine(_dataPackPath, "buylists");
         _logger.Info($"Loading buy lists from '{buyListPath}'...");
 
-        XmlSerializer serializer = new(typeof(XmlBuyList));
         using DataPackDbContext ctx = _databaseService.CreateContext();
 
         IEnumerable<string> files = Directory.EnumerateFiles(buyListPath, "*.xml", SearchOption.AllDirectories);
         foreach (string file in files)
         {
-            using FileStream reader = new(file, FileMode.Open, FileAccess.Read, FileShare.None);
-            XmlBuyList? list = (XmlBuyList?)serializer.Deserialize(reader);
-            if (list == null)
-            {
-                _logger.Warn($"Cannot load buy list '{file}'");
-                continue;
-            }
-            
+            XmlBuyList list = XmlUtil.Deserialize<XmlBuyList>(file);
             int listId = int.Parse(Path.GetFileNameWithoutExtension(file), CultureInfo.InvariantCulture);
-            ctx.BuyLists.Add(new DbBuyList() { BuyListId = listId });
+            ctx.BuyLists.Add(new DbBuyList() { BuyListId = listId, Name = $"Buy list {listId}" });
             ctx.BuyListNpcs.AddRange(list.Npcs.Select(x => new DbBuyListNpc()
             {
                 BuyListId = listId,

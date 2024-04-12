@@ -1,10 +1,34 @@
 ﻿using System.Globalization;
 using System.Xml.Linq;
+using System.Xml.Serialization;
+using NLog;
 
 namespace L2Dn.Utilities;
 
 public static class XmlUtil
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(XmlUtil));
+    
+    public static T Deserialize<T>(string filePath)
+        where T: class
+    {
+        XmlSerializer serializer = new(typeof(T));
+
+        serializer.UnknownElement += (_, args)
+            => _logger.Warn($"Unknown element '{args.Element.Name}' in XML file '{filePath}'.");
+        
+        serializer.UnknownAttribute += (_, args) =>
+        {
+            if (args.Attr.Name != "xsi:noNamespaceSchemaLocation")
+                _logger.Warn($"Unknown attribute '{args.Attr.Name}' in XML file '{filePath}'.");
+        };
+        
+        using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        return (T?)serializer.Deserialize(stream) ??
+               throw new InvalidOperationException(
+                   $"Could not deserialize XML file '{filePath}' to object of type '{typeof(T).FullName}'");
+    }
+    
     public static byte GetByte(this XAttribute? attribute) => GetValue<byte>(attribute);
     public static byte GetByte(this XAttribute? attribute, byte defaultValue) => GetValue(attribute, defaultValue);
     public static int GetInt32(this XAttribute? attribute) => GetValue<int>(attribute);

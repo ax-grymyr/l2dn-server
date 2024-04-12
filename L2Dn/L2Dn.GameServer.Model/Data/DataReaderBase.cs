@@ -4,16 +4,19 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Data;
 
 public abstract class DataReaderBase
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(DataReaderBase)); 
+    
     protected static XDocument LoadXmlDocument(DataFileLocation location, string relativeFilePath) =>
         LoadXmlDocument(GetFullPath(location, relativeFilePath));
 
     protected static T LoadXmlDocument<T>(DataFileLocation location, string relativeFilePath)
-        where T: class => LoadXmlDocument<T>(GetFullPath(location, relativeFilePath));
+        where T: class => XmlUtil.Deserialize<T>(GetFullPath(location, relativeFilePath));
 
     protected static IEnumerable<(string FilePath, XDocument Document)> LoadXmlDocuments(DataFileLocation location,
         string relativeDirPath, bool includeSubDirectories = false)
@@ -45,7 +48,7 @@ public abstract class DataReaderBase
 
         foreach (var filePath in files)
         {
-            T document = LoadXmlDocument<T>(filePath);
+            T document = XmlUtil.Deserialize<T>(filePath);
             yield return (filePath, document);
         }
     }
@@ -58,14 +61,7 @@ public abstract class DataReaderBase
     }
 
     protected static T LoadXmlDocument<T>(string filePath)
-        where T: class
-    {
-        XmlSerializer serializer = new(typeof(T));
-        using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-        return (T?)serializer.Deserialize(stream) ??
-               throw new InvalidOperationException(
-                   $"Could not deserialize XML file '{filePath}' to object of type '{typeof(T).FullName}'");
-    }
+        where T: class => XmlUtil.Deserialize<T>(filePath);
 
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
         Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "config", relativePath);

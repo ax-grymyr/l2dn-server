@@ -1272,7 +1272,7 @@ public class ItemData: DataReaderBase
 	 * @param id : int designating the item
 	 * @return Item
 	 */
-	public ItemTemplate getTemplate(int id)
+	public ItemTemplate? getTemplate(int id)
 	{
 		if ((id >= _allTemplates.Length) || (id < 0))
 		{

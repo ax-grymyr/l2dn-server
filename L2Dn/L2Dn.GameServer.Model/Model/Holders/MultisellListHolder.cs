@@ -1,5 +1,6 @@
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Interfaces;
-using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -16,11 +17,12 @@ public class MultisellListHolder: IIdentifiable
 	private readonly double _ingredientMultiplier;
 	private readonly double _productMultiplier;
 
-	protected List<MultisellEntryHolder> _entries;
-	protected readonly Set<int> _npcsAllowed;
+	protected ImmutableArray<MultisellEntryHolder> _entries;
+	private readonly FrozenSet<int> _npcsAllowed;
 
 	public MultisellListHolder(int listId, bool isChanceMultisell, bool applyTaxes, bool maintainEnchantment,
-		double ingredientMultiplier, double productMultiplier, List<MultisellEntryHolder> entries, Set<int> npcsAllowed)
+		double ingredientMultiplier, double productMultiplier, ImmutableArray<MultisellEntryHolder> entries, 
+		FrozenSet<int> npcsAllowed)
 	{
 		_listId = listId;
 		_isChanceMultisell = isChanceMultisell;
@@ -32,24 +34,12 @@ public class MultisellListHolder: IIdentifiable
 		_npcsAllowed = npcsAllowed;
 	}
 
-	public MultisellListHolder(StatSet set)
-	{
-		_listId = set.getInt("listId");
-		_isChanceMultisell = set.getBoolean("isChanceMultisell", false);
-		_applyTaxes = set.getBoolean("applyTaxes", false);
-		_maintainEnchantment = set.getBoolean("maintainEnchantment", false);
-		_ingredientMultiplier = set.getDouble("ingredientMultiplier", 1.0);
-		_productMultiplier = set.getDouble("productMultiplier", 1.0);
-		_entries = set.getList<MultisellEntryHolder>("entries", new());
-		_npcsAllowed = set.getObject<Set<int>>("allowNpc");
-	}
-
-	public List<MultisellEntryHolder> getEntries()
+	public ImmutableArray<MultisellEntryHolder> getEntries()
 	{
 		return _entries;
 	}
 
-	public Set<int> getNpcsAllowed()
+	public FrozenSet<int> getNpcsAllowed()
 	{
 		return _npcsAllowed;
 	}

@@ -26,7 +26,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 
     public void WriteContent(PacketBitWriter writer)
     {
-	    int size = _list.getEntries().size() - _index;
+	    int size = _list.getEntries().Length - _index;
 	    bool finished = true;
 	    if (size > MultisellData.PAGE_SIZE)
 	    {
@@ -50,7 +50,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 		for (int index = _index, end = _index + size; index < end; index++)
 		{
 			ItemInfo itemEnchantment = _list.getItemEnchantment(index);
-			MultisellEntryHolder entry = _list.getEntries().get(index);
+			MultisellEntryHolder entry = _list.getEntries()[index];
 			if ((itemEnchantment == null) && _list.isMaintainEnchantment())
 			{
 				foreach (ItemChanceHolder holder in entry.getIngredients())
@@ -98,6 +98,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				writer.WriteInt16((short)(product.getEnchantmentLevel() > 0
 					? product.getEnchantmentLevel()
 					: displayItemEnchantment?.getEnchantLevel() ?? 0)); // enchant level
+
 				writer.WriteInt32((int)(product.getChance() * 1000000)); // chance
 				writer.WriteItemAugment(displayItemEnchantment);
 				writer.WriteItemElemental(displayItemEnchantment);

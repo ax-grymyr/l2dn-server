@@ -15,6 +15,12 @@ public class DataPackDbContext(DbContextOptions options): DbContext(options)
     public DbSet<DbBuyListNpc> BuyListNpcs => Set<DbBuyListNpc>();
     public DbSet<DbBuyListItem> BuyListItems => Set<DbBuyListItem>();
 
+    public DbSet<DbMultiSellList> MultiSellLists => Set<DbMultiSellList>();
+    public DbSet<DbMultiSellListNpc> MultiSellListNpcs => Set<DbMultiSellListNpc>();
+    public DbSet<DbMultiSellListEntry> MultiSellListEntries => Set<DbMultiSellListEntry>();
+    public DbSet<DbMultiSellListIngredient> MultiSellListIngredients => Set<DbMultiSellListIngredient>();
+    public DbSet<DbMultiSellListProduct> MultiSellListProducts => Set<DbMultiSellListProduct>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<DbIcon>(entityBuilder =>
@@ -47,6 +53,26 @@ public class DataPackDbContext(DbContextOptions options): DbContext(options)
         modelBuilder.Entity<DbBuyListItem>(entityBuilder =>
         {
             entityBuilder.HasOne<DbBuyList>().WithMany().HasForeignKey(x => x.BuyListId);
+        });
+ 
+        modelBuilder.Entity<DbMultiSellListNpc>(entityBuilder =>
+        {
+            entityBuilder.HasOne<DbMultiSellList>().WithMany().HasForeignKey(x => x.MultiSellListId);
+        });
+ 
+        modelBuilder.Entity<DbMultiSellListEntry>(entityBuilder =>
+        {
+            entityBuilder.HasOne<DbMultiSellList>().WithMany().HasForeignKey(x => x.MultiSellListId);
+        });
+ 
+        modelBuilder.Entity<DbMultiSellListIngredient>(entityBuilder =>
+        {
+            entityBuilder.HasOne<DbMultiSellListEntry>().WithMany().HasForeignKey(x => x.MultiSellListEntryId);
+        });
+ 
+        modelBuilder.Entity<DbMultiSellListProduct>(entityBuilder =>
+        {
+            entityBuilder.HasOne<DbMultiSellListEntry>().WithMany().HasForeignKey(x => x.MultiSellListEntryId);
         });
     }
 }

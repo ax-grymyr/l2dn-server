@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -127,11 +128,11 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		List<MultisellEntryHolder> entries = list.getEntries();
-		if (entries == null)
+		ImmutableArray<MultisellEntryHolder> entries = list.getEntries();
+		if (entries.IsDefaultOrEmpty)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested null multisell entry. Multisell: " + _listId + " entry: " +
+			                           " requested empty multisell entry. Multisell: " + _listId + " entry: " +
 			                           _entryId);
 			
 			return ValueTask.CompletedTask;
@@ -146,7 +147,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (_entryId - 1 >= entries.size())
+		if (_entryId - 1 >= entries.Length)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
 			                           " requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
@@ -156,7 +157,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		}
 
 		// Entry Id begins from 1. We currently use entry IDs as index pointer.
-		MultisellEntryHolder entry = entries.get(_entryId - 1);
+		MultisellEntryHolder entry = entries[_entryId - 1];
 		if (entry == null)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +

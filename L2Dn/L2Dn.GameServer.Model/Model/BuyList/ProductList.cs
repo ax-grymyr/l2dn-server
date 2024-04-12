@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Frozen;
+using System.Collections.Immutable;
 
 namespace L2Dn.GameServer.Model.BuyList;
 
@@ -6,15 +7,15 @@ public class ProductList
 {
     private readonly int _listId;
     private readonly ImmutableArray<Product> _products;
-    private readonly ImmutableDictionary<int, Product> _productsByIds;
-    private readonly ImmutableSortedSet<int> _allowedNpcs;
+    private readonly FrozenDictionary<int, Product> _productsByIds;
+    private readonly FrozenSet<int> _allowedNpcs;
 	
-    public ProductList(int listId, ImmutableArray<Product> products, ImmutableSortedSet<int> allowedNpcs)
+    public ProductList(int listId, IReadOnlyList<Product> products, IReadOnlyList<int> allowedNpcs)
     {
         _listId = listId;
-        _products = products;
-        _productsByIds = products.ToImmutableDictionary(x => x.getItemId());
-        _allowedNpcs = allowedNpcs;
+        _products = products.ToImmutableArray();
+        _productsByIds = products.ToFrozenDictionary(x => x.getItemId());
+        _allowedNpcs = allowedNpcs.ToFrozenSet();
     }
 	
     public int getListId()
@@ -37,7 +38,7 @@ public class ProductList
         return _allowedNpcs.Contains(npcId);
     }
 	
-    public ImmutableSortedSet<int> getNpcsAllowed()
+    public FrozenSet<int> getNpcsAllowed()
     {
         return _allowedNpcs;
     }

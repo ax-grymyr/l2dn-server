@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -31,7 +32,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 		// Display items from inventory that are available for exchange.
 		if (inventoryOnly)
 		{
-			_entries = new();
+			_entries = ImmutableArray<MultisellEntryHolder>.Empty;
 			_itemInfos = new();
 
 			// Only do the match up on equippable items that are not currently equipped. For each appropriate item, produce a set of entries for the multisell list.
@@ -46,7 +47,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 						{
 							if (holder.getId() == item.getId())
 							{
-								_entries.Add(entry);
+								_entries = _entries.Add(entry);
 								_itemInfos.Add(new ItemInfo(item));
 							}
 						}

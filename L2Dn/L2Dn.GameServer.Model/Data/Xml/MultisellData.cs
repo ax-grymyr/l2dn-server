@@ -1,62 +1,52 @@
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Globalization;
-using System.Xml.Linq;
-using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
 public class MultisellData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MultisellData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(MultisellData));
 	
 	public const int PAGE_SIZE = 40;
+
+	private FrozenDictionary<int, MultisellListHolder> _multiSellLists =
+		FrozenDictionary<int, MultisellListHolder>.Empty;
 	
-	private readonly Map<int, MultisellListHolder> _multisells = new();
-	
-	protected MultisellData()
+	private MultisellData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		_multisells.clear();
-		
-		LoadXmlDocuments(DataFileLocation.Data, "multisell").ForEach(t =>
-		{
-			t.Document.Elements("list").ForEach(x => loadFile(t.FilePath, x));
-		});
-
-		LoadXmlDocuments(DataFileLocation.Data, "multisell/items").ForEach(t =>
-		{
-			t.Document.Elements("list").ForEach(x => loadFile(t.FilePath, x));
-		});
+		IEnumerable<(string FilePath, XmlMultiSellList Document)> files =
+			LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell")
+				.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/items"));
 
 		if (Config.CUSTOM_MULTISELL_LOAD)
-		{
-			LoadXmlDocuments(DataFileLocation.Data, "multisell/custom").ForEach(t =>
-			{
-				t.Document.Elements("list").ForEach(x => loadFile(t.FilePath, x));
-			});
-		}
+			files = files.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/custom"));
+
+		_multiSellLists = files.Select(x => loadFile(x.FilePath, x.Document)).Where(l => l != null)
+			.ToFrozenDictionary(x => x.getId());
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _multisells.size() + " multisell lists.");
+		_logger.Info(GetType().Name + ": Loaded " + _multiSellLists.Count + " multisell lists.");
 	}
 
-	private void loadFile(string filePath, XElement element)
+	private MultisellListHolder? loadFile(string filePath, XmlMultiSellList multiSellList)
 	{
 		string fileName = Path.GetFileNameWithoutExtension(filePath);
 		if (!int.TryParse(fileName, CultureInfo.InvariantCulture, out int listId))
-			return;
+			return null;
 
 		EnchantItemGroup magicWeaponGroup = EnchantItemGroupsData.getInstance().getItemGroup("MAGE_WEAPON_GROUP");
 		int magicWeaponGroupMax = magicWeaponGroup != null ? magicWeaponGroup.getMaximumEnchant() : -2;
@@ -69,20 +59,11 @@ public class MultisellData: DataReaderBase
 
 		try
 		{
-			bool isChanceMultisell = element.Attribute("isChanceMultisell").GetBoolean(false);
-			bool applyTaxes = element.Attribute("applyTaxes").GetBoolean(false);
-			bool maintainEnchantment = element.Attribute("maintainEnchantment").GetBoolean(false);
-			double ingredientMultiplier = element.Attribute("ingredientMultiplier").GetDouble(1.0);
-			double productMultiplier = element.Attribute("productMultiplier").GetDouble(1.0);
-			
-			IEnumerable<int> npcIds = element.Elements("npcs").Elements("npc").Select(e => (int)e);
-			Set<int> npcs = new();
-			element.Elements("npcs").Elements("npc").Select(e => (int)e).ForEach(n => npcs.add(n));
-
+			List<int> npcs = multiSellList.Npcs;
 			List<MultisellEntryHolder> entries = new();
 			int entryCounter = 0;
 
-			element.Elements("item").ForEach(el =>
+			foreach (XmlMultiSellListItem itemEntry in multiSellList.Items)
 			{
 				long totalPrice = 0;
 				int lastIngredientId = 0;
@@ -91,122 +72,123 @@ public class MultisellData: DataReaderBase
 
 				List<ItemChanceHolder> ingredients = new();
 				List<ItemChanceHolder> products = new();
-				MultisellEntryHolder entry = new MultisellEntryHolder(ingredients, products);
+
+				foreach (XmlMultiSellListIngredient ingredientEntry in itemEntry.Ingredients)
+				{
+					ItemChanceHolder ingredient = new(ingredientEntry.ItemId, 0, ingredientEntry.Count,
+						ingredientEntry.EnchantLevel, ingredientEntry.MaintainIngredient);
+
+					if (!ItemExists(ingredient))
+					{
+						_logger.Warn("Invalid ingredient id or count for itemId: " + ingredient.getId() +
+						             ", count: " + ingredient.getCount() + " in list: " + listId);
+
+						continue;
+					}
+
+					ingredients.add(ingredient);
+					lastIngredientId = ingredientEntry.ItemId;
+					lastIngredientCount = ingredientEntry.Count;
+				}
+
+				double totalChance = 0;
+				foreach (XmlMultiSellListProduct productEntry in itemEntry.Products)
+				{
+					byte enchantmentLevel = productEntry.EnchantLevel;
+					ItemTemplate? item = ItemData.getInstance().getTemplate(productEntry.ItemId);
+					if (productEntry.EnchantLevel > 0 && item != null)
+					{
+						if (item.isWeapon())
+						{
+							enchantmentLevel = (byte)Math.Min(enchantmentLevel,
+								item.isMagicWeapon()
+									?
+									magicWeaponGroupMax > -2 ? magicWeaponGroupMax : enchantmentLevel
+									: weaponGroupMax > -2
+										? weaponGroupMax
+										: enchantmentLevel);
+						}
+						else if (item.isArmor())
+						{
+							enchantmentLevel = (byte)Math.Min(enchantmentLevel,
+								item.getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR
+									?
+									fullArmorGroupMax > -2 ? fullArmorGroupMax : enchantmentLevel
+									: armorGroupMax > -2
+										? armorGroupMax
+										: enchantmentLevel);
+						}
+					}
+					
+					// Check chance only of items that have set chance.
+					// Items without chance are used for displaying purposes.
+					if (productEntry is { ChanceSpecified: true, Chance: < 0 or > 100 })
+					{
+						_logger.Warn("Invalid chance for itemId: " + productEntry.ItemId + ", count: " +
+						             productEntry.Count + ", chance: " + productEntry.Chance + " in list: " + listId);
+						
+						return null;
+					}
+					
+					if (productEntry.ChanceSpecified)
+						totalChance += productEntry.Chance;
+
+					ItemChanceHolder product = new(productEntry.ItemId, productEntry.Chance, productEntry.Count,
+						enchantmentLevel);
+					
+					if (!ItemExists(product))
+					{
+						_logger.Warn("Invalid product id or count for itemId: " + product.getId() + ", count: " +
+						             product.getCount() + " in list: " + listId);
+						
+						continue;
+					}
+
+					products.add(product);
+
+					if (item != null)
+					{
+						double? chance = product.getChance();
+						if (chance != null)
+							totalPrice += (long)(item.getReferencePrice() / 2.0 * product.getCount() *
+							                     (chance.Value / 100.0));
+						else
+							totalPrice += item.getReferencePrice() / 2 * product.getCount();
+					}
+				}
 				
-				el.Elements("ingredient").ForEach(e =>
-				{
-					int id = e.GetAttributeValueAsInt32("id");
-					long count = e.GetAttributeValueAsInt64("count");
-					byte enchantmentLevel = e.Attribute("enchantmentLevel").GetByte(0);
-					Boolean maintainIngredient = e.Attribute("maintainIngredient").GetBoolean(false);
-					ItemChanceHolder ingredient = new ItemChanceHolder(id, 0, count, enchantmentLevel, maintainIngredient);
-					if (itemExists(ingredient))
-					{
-						ingredients.add(ingredient);
-
-						lastIngredientId = id;
-						lastIngredientCount = count;
-					}
-					else
-					{
-						LOGGER.Warn("Invalid ingredient id or count for itemId: " + ingredient.getId() +
-						            ", count: " + ingredient.getCount() + " in list: " + listId);
-					}
-				});
-
-				el.Elements("production").ForEach(e =>
-				{
-					int id = e.GetAttributeValueAsInt32("id");
-					long count = e.GetAttributeValueAsInt64("count");
-					double chance = e.Attribute("chance").GetDouble(double.NaN);
-					byte enchantmentLevel = e.Attribute("enchantmentLevel").GetByte(0);
-					if (enchantmentLevel > 0)
-					{
-						ItemTemplate item = ItemData.getInstance().getTemplate(id);
-						if (item != null)
-						{
-							if (item.isWeapon())
-							{
-								enchantmentLevel = (byte)Math.Min(enchantmentLevel,
-									item.isMagicWeapon()
-										? magicWeaponGroupMax > -2 ? magicWeaponGroupMax : enchantmentLevel
-										: weaponGroupMax > -2
-											? weaponGroupMax
-											: enchantmentLevel);
-							}
-							else if (item.isArmor())
-							{
-								enchantmentLevel = (byte)Math.Min(enchantmentLevel,
-									item.getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR
-										? fullArmorGroupMax > -2 ? fullArmorGroupMax : enchantmentLevel
-										: armorGroupMax > -2
-											? armorGroupMax
-											: enchantmentLevel);
-							}
-						}
-					}
-
-					ItemChanceHolder product = new ItemChanceHolder(id, chance, count, enchantmentLevel);
-					if (itemExists(product))
-					{
-						// Check chance only of items that have set chance. Items without chance (NaN) are used for displaying purposes.
-						if ((!Double.IsNaN(chance) && (chance < 0)) || (chance > 100))
-						{
-							LOGGER.Warn("Invalid chance for itemId: " + product.getId() + ", count: " +
-							            product.getCount() + ", chance: " + chance + " in list: " + listId);
-							return;
-						}
-
-						products.add(product);
-
-						ItemTemplate item = ItemData.getInstance().getTemplate(id);
-						if (item != null)
-						{
-							if (chance > 0)
-								totalPrice = (long)(totalPrice + ((item.getReferencePrice() / 2.0) * count) * (chance / 100));
-							else
-								totalPrice += ((item.getReferencePrice() / 2) * count);
-						}
-					}
-					else
-					{
-						LOGGER.Warn("Invalid product id or count for itemId: " + product.getId() + ", count: " +
-						            product.getCount() + " in list: " + listId);
-					}
-				});
-
-				double totalChance = products.Where(i => !Double.IsNaN(i.getChance())).Select(i => i.getChance()).Sum();
 				if (totalChance > 100)
 				{
-					LOGGER.Warn("Products' total chance of " + totalChance + "% exceeds 100% for list: " + listId +
-					            " at entry " + entries.size() + 1 + ".");
+					_logger.Warn("Products' total chance of " + totalChance + "% exceeds 100% for list: " + listId +
+					             " at entry " + entries.size() + 1 + ".");
 				}
 
 				// Check if buy price is lower than sell price.
 				// Only applies when there is only one ingredient and it is adena.
-				if (Config.CORRECT_PRICES && (ingredients.size() == 1) && (lastIngredientId == 57) &&
-				    (lastIngredientCount < totalPrice))
+				if (Config.CORRECT_PRICES && ingredients.size() == 1 && lastIngredientId == 57 &&
+				    lastIngredientCount < totalPrice)
 				{
-					LOGGER.Warn("Buy price " + lastIngredientCount + " is less than sell price " + totalPrice +
-					            " at entry " + entryCounter + " of multisell " + listId + ".");
+					_logger.Warn("Buy price " + lastIngredientCount + " is less than sell price " + totalPrice +
+					             " at entry " + entryCounter + " of multisell " + listId + ".");
 					// Adjust price.
-					ItemChanceHolder ingredient = new ItemChanceHolder(57, 0, totalPrice, (byte)0,
+					ItemChanceHolder ingredient = new ItemChanceHolder(57, 0, totalPrice, 0,
 						ingredients.get(0).isMaintainIngredient());
 					ingredients.Clear();
 					ingredients.add(ingredient);
 				}
 
+				MultisellEntryHolder entry = new MultisellEntryHolder(ingredients, products);
 				entries.add(entry);
-			});
+			}
 
-
-			_multisells.put(listId,
-				new MultisellListHolder(listId, isChanceMultisell, applyTaxes, maintainEnchantment,
-					ingredientMultiplier, productMultiplier, entries, npcs));
+			return new MultisellListHolder(listId, multiSellList.IsChanceMultiSell, multiSellList.ApplyTaxes,
+				multiSellList.MaintainEnchantment, multiSellList.IngredientMultiplier, multiSellList.ProductMultiplier,
+				entries.ToImmutableArray(), npcs.ToFrozenSet());
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error(GetType().Name + ": Error in file " + filePath, e);
+			_logger.Error(GetType().Name + ": Error in file " + filePath + ", " + e);
+			return null;
 		}
 	}
 
@@ -241,17 +223,17 @@ public class MultisellData: DataReaderBase
 	 * @param type
 	 */
 	public void separateAndSend(int listId, Player player, Npc npc, bool inventoryOnly,
-		double ingredientMultiplierValue, double productMultiplierValue, int type)
+		double? ingredientMultiplierValue, double? productMultiplierValue, int type)
 	{
-		MultisellListHolder template = _multisells.get(listId);
+		MultisellListHolder? template = _multiSellLists.GetValueOrDefault(listId);
 		if (template == null)
 		{
-			LOGGER.Warn("Can't find list id: " + listId + " requested by player: " + player.getName() + ", npcId: " +
+			_logger.Warn("Can't find list id: " + listId + " requested by player: " + player.getName() + ", npcId: " +
 			            (npc != null ? npc.getId() : 0));
 			return;
 		}
 
-		if (!template.isNpcAllowed(-1) && ((npc == null) || !template.isNpcAllowed(npc.getId())))
+		if (!template.isNpcAllowed(-1) && (npc == null || !template.isNpcAllowed(npc.getId())))
 		{
 			if (player.isGM())
 			{
@@ -260,38 +242,35 @@ public class MultisellData: DataReaderBase
 			}
 			else
 			{
-				LOGGER.Warn(GetType().Name + ": " + player + " attempted to open multisell " + listId + " from npc " +
+				_logger.Warn(GetType().Name + ": " + player + " attempted to open multisell " + listId + " from npc " +
 				            npc + " which is not allowed!");
 				return;
 			}
 		}
 
 		// Check if ingredient/product multipliers are set, if not, set them to the template value.
-		double ingredientMultiplier = (Double.IsNaN(ingredientMultiplierValue)
-			? template.getIngredientMultiplier()
-			: ingredientMultiplierValue);
-		double productMultiplier = (Double.IsNaN(productMultiplierValue)
-			? template.getProductMultiplier()
-			: productMultiplierValue);
-		PreparedMultisellListHolder list = new PreparedMultisellListHolder(template, inventoryOnly,
-			player.getInventory(), npc, ingredientMultiplier, productMultiplier);
+		double ingredientMultiplier = ingredientMultiplierValue ?? template.getIngredientMultiplier();
+		double productMultiplier = productMultiplierValue ?? template.getProductMultiplier();
+		PreparedMultisellListHolder list = new(template, inventoryOnly, player.getInventory(), npc,
+			ingredientMultiplier, productMultiplier);
+		
 		int index = 0;
 		do
 		{
 			// send list at least once even if size = 0
 			player.sendPacket(new MultiSellListPacket(player, list, index, type));
 			index += PAGE_SIZE;
-		} while (index < list.getEntries().size());
+		} while (index < list.getEntries().Length);
 
 		player.setMultiSell(list);
 	}
 
 	public void separateAndSend(int listId, Player player, Npc npc, bool inventoryOnly)
 	{
-		separateAndSend(listId, player, npc, inventoryOnly, Double.NaN, Double.NaN, 0);
+		separateAndSend(listId, player, npc, inventoryOnly, null, null, 0);
 	}
 	
-	private bool itemExists(ItemHolder holder)
+	private static bool ItemExists(ItemHolder holder)
 	{
 		SpecialItemType specialItem = (SpecialItemType)holder.getId();
 		if (Enum.IsDefined(specialItem))
@@ -299,13 +278,13 @@ public class MultisellData: DataReaderBase
 			return true;
 		}
 		
-		ItemTemplate template = ItemData.getInstance().getTemplate(holder.getId());
-		return (template != null) && (template.isStackable() ? (holder.getCount() >= 1) : (holder.getCount() == 1));
+		ItemTemplate? template = ItemData.getInstance().getTemplate(holder.getId());
+		return template != null && (template.isStackable() ? holder.getCount() >= 1 : holder.getCount() == 1);
 	}
 	
-	public MultisellListHolder getMultisell(int id)
+	public MultisellListHolder? getMultisell(int id)
 	{
-		return _multisells.getOrDefault(id, null);
+		return _multiSellLists.GetValueOrDefault(id);
 	}
 	
 	public static MultisellData getInstance()

@@ -37,18 +37,18 @@ public struct ExBuySellListPacket: IOutgoingPacket
 	private readonly int _type;
 
 	// buy type - BUY
-	private long _money;
-	private double _castleTaxRate;
-	private ImmutableArray<Product> _list;
-	private int _listId;
+	private readonly long _money;
+	private readonly double _castleTaxRate;
+	private readonly ImmutableArray<Product> _list;
+	private readonly int _listId;
 
 	// buy type - SELL
 	private readonly List<Item> _sellList;
 	private readonly List<Item> _refundList;
-	private bool _done;
+	private readonly bool _done;
 
 	// buy type = unk
-	private int _unkType;
+	private readonly int _unkType;
 
 	// buy type - send tax
 	private bool _applyTax;
@@ -58,7 +58,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		_type = BUY_SELL_LIST_BUY;
 		_listId = list.getListId();
 		_list = list.getProducts();
-		_money = player.isGM() && player.getAdena() == 0 && list.getNpcsAllowed().IsEmpty
+		_money = player.isGM() && player.getAdena() == 0 && list.getNpcsAllowed().Count == 0
 			? 1000000000
 			: player.getAdena();
 		_inventorySlots = player.getInventory().getNonQuestSize();
