@@ -155,9 +155,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		// Entry Id begins from 1. We currently use entry IDs as index pointer.
-		MultisellEntryHolder entry = entries.get(_entryId - 1);
-		if (entry == null)
+		if (_entryId < 0 || _entryId >= entries.Count)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
 			                           " requested inexistant prepared multisell entry. Multisell: " + _listId +
@@ -167,6 +165,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
+		MultisellEntryHolder entry = entries[_entryId];
 		if (!entry.isStackable() && _amount > 1)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
@@ -177,8 +176,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		// Entry Id begins from 1. We currently use entry IDs as index pointer.
-		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId - 1);
+		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId);
 
 		// Validate the requested item with its full stats.
 		//@formatter:off
