@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Xml.Serialization;
 using BuildDataPackDb.Db;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace BuildDataPackDb.Services.Loaders;
@@ -38,7 +39,7 @@ public class BuyListService
             
             int listId = int.Parse(Path.GetFileNameWithoutExtension(file), CultureInfo.InvariantCulture);
             ctx.BuyLists.Add(new DbBuyList() { BuyListId = listId });
-            ctx.BuyListNpcs.AddRange(list.NpcIds.Select(x => new DbBuyListNpc()
+            ctx.BuyListNpcs.AddRange(list.Npcs.Select(x => new DbBuyListNpc()
             {
                 BuyListId = listId,
                 NpcId = x
@@ -50,42 +51,10 @@ public class BuyListService
                 ItemId = x.Id,
                 Price = x.Price,
                 Count = x.CountSpecified ? x.Count : null,
-                RestockDelay = x.RestockDelaySpecified ? x.RestockDelay : null,
+                RestockDelay = x.RestockDelaySpecified ? TimeSpan.FromMinutes(x.RestockDelay) : null,
             }));
         }
 
         ctx.SaveChanges();
     }
-}
-
-[XmlRoot("list")]
-public class XmlBuyList
-{
-    [XmlArray(ElementName = "npcs")]
-    [XmlArrayItem(ElementName = "npc")]
-    public List<int> NpcIds { get; set; } = [];
-
-    [XmlElement("item")]
-    public List<XmlBuyListItem> Items { get; set; } = [];
-}
-
-public class XmlBuyListItem
-{
-    [XmlAttribute(AttributeName = "id")]
-    public int Id { get; set; }
-
-    [XmlAttribute(AttributeName = "price")]
-    public long Price { get; set; }
-
-    [XmlAttribute(AttributeName = "count")]
-    public int Count { get; set; }
-    
-    [XmlIgnore]
-    public bool CountSpecified { get; set; }
-
-    [XmlAttribute(AttributeName = "restock_delay")]
-    public int RestockDelay { get; set; }
-    
-    [XmlIgnore]
-    public bool RestockDelaySpecified { get; set; }
 }

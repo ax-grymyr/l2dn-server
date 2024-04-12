@@ -14,23 +14,21 @@ public class Product
 	private readonly int _buyListId;
 	private readonly ItemTemplate _item;
 	private readonly long _price;
-	private readonly TimeSpan _restockDelay;
-	private readonly long _maxCount;
+	private readonly ProductRestock? _restock;
 	private readonly double _baseTax;
 	private long _count;
 	
-	public Product(int buyListId, ItemTemplate item, long price, TimeSpan restockDelay, long maxCount, int baseTax)
+	public Product(int buyListId, ItemTemplate item, long price, ProductRestock? restock, int baseTax)
 	{
 		Objects.requireNonNull(item);
 		_buyListId = buyListId;
 		_item = item;
-		_price = (price < 0) ? item.getReferencePrice() : price;
-		_restockDelay = restockDelay;
-		_maxCount = maxCount;
+		_price = price < 0 ? item.getReferencePrice() : price;
+		_restock = restock;
 		_baseTax = baseTax / 100.0;
-		if (hasLimitedStock())
+		if (_restock != null)
 		{
-			_count = maxCount;
+			_count = _restock.Count;
 		}
 	}
 	
@@ -60,14 +58,9 @@ public class Product
 		return _baseTax;
 	}
 	
-	public TimeSpan getRestockDelay()
+	public ProductRestock? getRestock()
 	{
-		return _restockDelay;
-	}
-	
-	public long getMaxCount()
-	{
-		return _maxCount;
+		return _restock;
 	}
 	
 	public long getCount()
@@ -83,12 +76,10 @@ public class Product
 	
 	public bool decreaseCount(long value)
 	{
-		if (_count == null)
-		{
+		if (_restock == null)
 			return false;
-		}
 		
-		BuyListTaskManager.getInstance().add(this, DateTime.UtcNow + _restockDelay);
+		BuyListTaskManager.getInstance().add(this, DateTime.UtcNow + _restock.Delay);
 		
 		bool result = Interlocked.Add(ref _count, -value) >= 0;
 		save();
@@ -97,7 +88,7 @@ public class Product
 	
 	public bool hasLimitedStock()
 	{
-		return _maxCount > -1;
+		return _restock != null;
 	}
 	
 	public void restartRestockTask(DateTime nextRestockTime)
@@ -112,13 +103,15 @@ public class Product
 			restock();
 		}
 	}
-	
+
 	public void restock()
 	{
-		setCount(_maxCount);
+		if (_restock != null)
+			setCount(_restock.Count);
+
 		save();
 	}
-	
+
 	private void save()
 	{
 		try 

@@ -5,7 +5,7 @@
 		<set name="icon" val="icon.etc_letter_blue_i00" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
-		<set name="price" val="360000" />
+		<set name="price" val="10000" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
