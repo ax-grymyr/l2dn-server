@@ -147,7 +147,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (_entryId - 1 >= entries.Length)
+		if (_entryId < 0 || _entryId >= entries.Length)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
 			                           " requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
@@ -156,8 +156,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		// Entry Id begins from 1. We currently use entry IDs as index pointer.
-		MultisellEntryHolder entry = entries[_entryId - 1];
+		MultisellEntryHolder entry = entries[_entryId];
 		if (entry == null)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
@@ -178,8 +177,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		// Entry Id begins from 1. We currently use entry IDs as index pointer.
-		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId - 1);
+		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId);
 
 		// Validate the requested item with its full stats.
 		//@formatter:off
