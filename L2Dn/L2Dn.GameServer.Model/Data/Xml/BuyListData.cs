@@ -62,7 +62,7 @@ public class BuyListData: DataReaderBase
 					continue;
 				}
 				
-				if (count < product.getMaxCount())
+				if (count < product.getRestock()?.Count)
 				{
 					product.setCount(count);
 					product.restartRestockTask(nextRestockTime);
@@ -92,13 +92,14 @@ public class BuyListData: DataReaderBase
 			}
 
 			long price = buyListItem.Price;
-			TimeSpan restockDelay =
-				TimeSpan.FromMinutes(buyListItem.RestockDelaySpecified ? buyListItem.RestockDelay : -1);
 
-			long count = buyListItem.CountSpecified ? buyListItem.Count : -1;
+			ProductRestock? restock = null;
+			if (buyListItem.CountSpecified && buyListItem.RestockDelaySpecified)
+				restock = new ProductRestock(buyListItem.Count, TimeSpan.FromMinutes(buyListItem.RestockDelay));
+
 			int baseTax = buyListItem.BaseTaxSpecified ? buyListItem.BaseTax : 0;
 			int sellPrice = item.getReferencePrice() / 2;
-			if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price > -1 && sellPrice > price)
+			if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price >= 0 && sellPrice > price)
 			{
 				LOGGER.Warn(
 					$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");
@@ -106,7 +107,7 @@ public class BuyListData: DataReaderBase
 				price = sellPrice;
 			}
 
-			return new Product(buyListId, item, price, restockDelay, count, baseTax);
+			return new Product(buyListId, item, price, restock, baseTax);
 		}).Where(x => x != null).ToList();
 
 		List<int> duplicateItemIds =
