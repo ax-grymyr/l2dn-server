@@ -40,6 +40,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{D0D1C649
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildDataPackDb", "Tools\BuildDataPackDb\BuildDataPackDb.csproj", "{E5F30E23-AABE-4765-99F3-035FC63944B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4C41288F-D39F-4491-894F-DE5C84553384}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\GenerateHashJson.ps1 = Scripts\GenerateHashJson.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

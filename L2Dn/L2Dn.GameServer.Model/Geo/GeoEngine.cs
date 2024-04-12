@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Geo.GeoDataImpl;
 using L2Dn.GameServer.Geo.GeoDataImpl.Regions;
@@ -5,6 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Updating;
 using NLog;
 
 namespace L2Dn.GameServer.Geo;
@@ -26,37 +28,56 @@ public class GeoEngine
 	
 	protected GeoEngine()
 	{
+		bool updated = false;
+		GeoDataConfig geoDataConfig = ServerConfig.Instance.DataPack.GeoData;
+		if (geoDataConfig.Update)
+		{
+			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+			updated = true;
+		}
+		
+		int loadedRegions = LoadGeoData();
+		if (loadedRegions == 0 && geoDataConfig.Download && !updated)
+		{
+			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+			loadedRegions = LoadGeoData();
+		}
+		
+		LOGGER.Info(GetType().Name + ": Loaded " + loadedRegions + " regions.");
+	}
+	
+	private int LoadGeoData()
+	{
 		int loadedRegions = 0;
 		try
 		{
 			for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
+			for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
 			{
-				for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
+				string geoFilePath = Path.Combine(Config.GEODATA_PATH, $"{regionX}_{regionY}.l2j");
+				if (!File.Exists(geoFilePath))
+					geoFilePath += ".gz";
+
+				if (!File.Exists(geoFilePath))
+					continue;
+					
+				try
 				{
-					string geoFilePath = Path.Combine(Config.GEODATA_PATH, $"{regionX}_{regionY}.l2j");
-					if (File.Exists(geoFilePath))
-					{
-						try
-						{
-							// LOGGER.info(GetType().Name + ": Loading " + geoFilePath.getFileName() + "...");
-							_geodata.loadRegion(geoFilePath, regionX, regionY);
-							loadedRegions++;
-						}
-						catch (Exception e)
-						{
-							LOGGER.Warn(GetType().Name + ": Failed to load " + geoFilePath + "!", e);
-						}
-					}
+					_geodata.loadRegion(geoFilePath, regionX, regionY);
+					loadedRegions++;
+				}
+				catch (Exception e)
+				{
+					LOGGER.Warn(GetType().Name + ": Failed to load " + geoFilePath + "! " + e);
 				}
 			}
-			LOGGER.Info(GetType().Name + ": Loaded " + loadedRegions + " regions.");
-			
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error(GetType().Name + ": Failed to load geodata!", e);
+			LOGGER.Error(GetType().Name + ": Failed to load geodata! " + e);
 		}
-		
+
+		return loadedRegions;
 	}
 	
 	public bool hasGeoPos(int geoX, int geoY)
@@ -589,3 +610,4 @@ public class GeoEngine
 		public readonly static GeoEngine _instance = new GeoEngine();
 	}
 }
+

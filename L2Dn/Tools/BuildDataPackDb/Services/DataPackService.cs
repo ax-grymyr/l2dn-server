@@ -17,5 +17,8 @@ public class DataPackService
     {
         BuyListService buyListService = new(_dataPackPath, _databaseService);
         buyListService.Load();
+
+        MultiSellListService multiSellListService = new(_dataPackPath, _databaseService);
+        multiSellListService.Load();
     }
 }

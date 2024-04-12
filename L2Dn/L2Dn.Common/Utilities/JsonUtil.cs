@@ -15,6 +15,16 @@ public static class JsonUtil
         Converters = { new JsonStringEnumConverter(), new JsonIpAddressConverter(), new JsonLogLevelConverter() }
     };
 
+    public static T DeserializeStream<T>(Stream stream)
+        where T: class
+    {
+        T? result = JsonSerializer.Deserialize<T>(stream, _jsonSerializerOptions);
+        if (result is null)
+            throw new InvalidOperationException($"Failed to deserialize json");
+
+        return result;
+    }
+
     public static T DeserializeFile<T>(string filePath)
         where T: class
     {

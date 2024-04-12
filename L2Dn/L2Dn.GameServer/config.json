@@ -33,6 +33,14 @@
     "LogLevel": "Warn"
   },
 
+  "DataPack": {
+    "GeoData": {
+      "Download": true,
+      "Update": true,
+      "FileListUrl": "https://l2dn.pages.dev/latest/geodata.json"
+    }
+  },
+  
   "Logging": {
     "File": {
       "Enabled": true,

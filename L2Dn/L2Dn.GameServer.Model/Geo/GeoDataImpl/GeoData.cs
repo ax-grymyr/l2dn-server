@@ -1,3 +1,4 @@
+using System.IO.Compression;
 using L2Dn.GameServer.Geo.GeoDataImpl.Regions;
 
 namespace L2Dn.GameServer.Geo.GeoDataImpl;
@@ -63,27 +64,41 @@ public class GeoData
 	{
 		// checkGeoX(geoX);
 		// checkGeoY(geoY);
-		return _regions[(((geoX / IRegion.REGION_CELLS_X) * GEO_REGIONS_Y) + (geoY / IRegion.REGION_CELLS_Y))];
+		return _regions[geoX / IRegion.REGION_CELLS_X * GEO_REGIONS_Y + geoY / IRegion.REGION_CELLS_Y];
 	}
 	
 	public void setRegion(int regionX, int regionY, Region region)
 	{
-		int regionOffset = (regionX * GEO_REGIONS_Y) + regionY;
+		int regionOffset = regionX * GEO_REGIONS_Y + regionY;
 		_regions[regionOffset] = region;
 	}
 	
 	public void loadRegion(string filePath, int regionX, int regionY)
 	{
-		int regionOffset = (regionX * GEO_REGIONS_Y) + regionY;
+		int regionOffset = regionX * GEO_REGIONS_Y + regionY;
+		
+		Stream stream;
+		if (filePath.EndsWith(".gz"))
+		{
+			using FileStream fileStream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+			using GZipStream gZipStream = new(fileStream, CompressionMode.Decompress);
+			stream = new MemoryStream();
+			gZipStream.CopyTo(stream);
+			stream.Position = 0;
+		}
+		else 
+			stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 
-		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-		GeoReader reader = new GeoReader(stream);
-		_regions[regionOffset] = new Region(reader);
+		using (stream)
+		{
+			GeoReader reader = new(stream);
+			_regions[regionOffset] = new Region(reader);
+		}
 	}
 	
 	public void unloadRegion(int regionX, int regionY)
 	{
-		_regions[((regionX * GEO_REGIONS_Y) + regionY)] = NullRegion.INSTANCE;
+		_regions[regionX * GEO_REGIONS_Y + regionY] = NullRegion.INSTANCE;
 	}
 	
 	public bool hasGeoPos(int geoX, int geoY)
@@ -142,12 +157,12 @@ public class GeoData
 	public static int getWorldX(int geoX)
 	{
 		//checkGeoX(geoX);
-		return (geoX * 16) + WORLD_MIN_X + 8;
+		return geoX * 16 + WORLD_MIN_X + 8;
 	}
 	
 	public static int getWorldY(int geoY)
 	{
 		//checkGeoY(geoY);
-		return (geoY * 16) + WORLD_MIN_Y + 8;
+		return geoY * 16 + WORLD_MIN_Y + 8;
 	}
 }

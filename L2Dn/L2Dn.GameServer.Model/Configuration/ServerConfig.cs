@@ -11,6 +11,8 @@ public class ServerConfig: ConfigBase, ISingleton<ServerConfig>
     public AuthServerConnectionConfig AuthServerConnection { get; set; } = new();
     public GameServerParamsConfig GameServerParams { get; set; } = new();
 
+    public DataPackConfig DataPack { get; set; } = new();
+
     public static void Load()
     {
         _instance = ConfigurationUtil.LoadConfig<ServerConfig>();
