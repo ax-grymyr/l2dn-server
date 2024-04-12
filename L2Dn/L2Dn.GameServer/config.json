@@ -35,8 +35,8 @@
 
   "DataPack": {
     "GeoData": {
-      "Download": true,
-      "Update": true,
+      "Download": false,
+      "Update": false,
       "FileListUrl": "https://l2dn.pages.dev/latest/geodata.json"
     }
   },
