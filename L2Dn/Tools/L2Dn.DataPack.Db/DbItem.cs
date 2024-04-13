@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuildDataPackDb.Db;
+namespace L2Dn.DataPack.Db;
 
 public class DbItem
 {
@@ -65,6 +65,7 @@ public class DbItemCreateList
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ListId { get; set; }
 
+    [Reference(typeof(DbItem))]
     public int BoxItemId { get; set; }
     public int Index { get; set; }
     public ItemCreateListType Type { get; set; }
@@ -73,9 +74,14 @@ public class DbItemCreateList
 [PrimaryKey(nameof(ListId), nameof(Index))]
 public class DbItemCreateListItem
 {
+	[Reference(typeof(DbItemCreateList))]
     public int ListId { get; set; }
+
     public int Index { get; set; } 
+
+    [Reference(typeof(DbItem))]
     public int ItemId { get; set; }
+    
     public long Count { get; set; }
     public int EnchantValue { get; set; }
 }
@@ -83,7 +89,8 @@ public class DbItemCreateListItem
 [PrimaryKey(nameof(ItemId), nameof(QuestId))]
 public class DbItemRelatedQuest
 {
-    public int ItemId { get; set; }
+	[Reference(typeof(DbItem))]
+	public int ItemId { get; set; }
     public int QuestId { get; set; }
 }
 

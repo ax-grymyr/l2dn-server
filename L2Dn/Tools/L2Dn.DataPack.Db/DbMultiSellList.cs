@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuildDataPackDb.Db;
+namespace L2Dn.DataPack.Db;
 
 public class DbMultiSellList
 {
@@ -24,7 +24,9 @@ public class DbMultiSellList
 [PrimaryKey(nameof(MultiSellListId), nameof(NpcId))]
 public class DbMultiSellListNpc
 {
+    [Reference(typeof(DbMultiSellList))]
     public int MultiSellListId { get; set; }
+    
     public int NpcId { get; set; }
 }
 
@@ -35,6 +37,7 @@ public class DbMultiSellListEntry
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int MultiSellListEntryId { get; set; }
 
+    [Reference(typeof(DbMultiSellList))]
     public int MultiSellListId { get; set; }
     public int Order { get; set; }
     public bool Enabled { get; set; } = true;
@@ -43,6 +46,7 @@ public class DbMultiSellListEntry
 [PrimaryKey(nameof(MultiSellListEntryId), nameof(Order))]
 public class DbMultiSellListIngredient
 {
+    [Reference(typeof(DbMultiSellListEntry))]
     public int MultiSellListEntryId { get; set; }
     public int Order { get; set; }
     public int ItemId { get; set; }
@@ -54,7 +58,9 @@ public class DbMultiSellListIngredient
 [PrimaryKey(nameof(MultiSellListEntryId), nameof(Order))]
 public class DbMultiSellListProduct
 {
+    [Reference(typeof(DbMultiSellListEntry))]
     public int MultiSellListEntryId { get; set; }
+
     public int Order { get; set; }
     public int ItemId { get; set; }
     public long Count { get; set; } = 1;

@@ -1,0 +1,36 @@
+﻿@page "/icons"
+@using L2Dn.DataPack.Db
+@using Microsoft.EntityFrameworkCore
+@attribute [StreamRendering]
+@inject DataPackDbContext Ctx
+
+<PageTitle>Icons - L2Dn DataPack Editor</PageTitle>
+
+<h1>Icons</h1>
+
+<p>Icon list.</p>
+
+@if (_icons == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    foreach (DbIcon icon in _icons)
+    {
+        <div style="float: left; padding: 10px">
+            <img  alt="@icon.Name" width="@icon.Width" height="@icon.Height" src="data:image/bmp;base64, @(Convert.ToBase64String(icon.Bitmap))"/>
+        </div>
+    }
+}
+
+@code {
+    private DbIcon[]? _icons;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _icons = await Ctx.Icons.Take(500).ToArrayAsync();
+    }
+}

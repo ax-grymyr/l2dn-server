@@ -1,0 +1,80 @@
+﻿@page "/buylists/{Id:int}"
+@using L2Dn.DataPack.Db
+@using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
+@inject DataPackDbContext Ctx
+
+<PageTitle>Buy Lists - L2Dn DataPack Editor</PageTitle>
+
+<h1>Merchant Product List: @(_buyList?.Name)</h1>
+
+@if (_items == null)
+{
+<p>
+    <em>Loading...</em>
+</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <th>Item</th>
+        <th>Icon</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th>Restock Delay</th>
+        <th>Enabled</th>
+        </thead>
+        <tbody>
+        @foreach (Record record in _items)
+        {
+            <tr>
+                <td>@record.Item.Name (@record.BuyListItem.ItemId)</td>
+                <td>
+                    @if (record.Icon != null)
+                    {
+                        <img alt="@record.Icon.Name" width="@record.Icon.Width" height="@record.Icon.Height" src="data:image/bmp;base64, @(Convert.ToBase64String(record.Icon.Bitmap))"/>
+                    }
+                </td>
+                <td>@record.BuyListItem.Price</td>
+                <td>@record.BuyListItem.Count</td>
+                <td>@record.BuyListItem.RestockDelay</td>
+                <td>@record.BuyListItem.Enabled</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    
+    private DbBuyList? _buyList;
+    private Record[]? _items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _buyList = await Ctx.BuyLists.FindAsync(Id);
+        _items = await (
+            from buyListItem in Ctx.BuyListItems
+            where buyListItem.BuyListId == Id
+            from item in Ctx.Items
+            where buyListItem.ItemId == item.ItemId
+            from icon in Ctx.Icons.Where(x => item.Icon1Id == x.IconId).DefaultIfEmpty()
+                select new Record()
+                {
+                    BuyListItem = buyListItem,
+                    Item = item,
+                    Icon = icon
+                }
+        ).ToArrayAsync();
+    }
+
+    private class Record
+    {
+        public DbBuyListItem BuyListItem { get; set; }
+        public DbItem Item { get; set; }
+        public DbIcon? Icon { get; set; }
+    }
+}

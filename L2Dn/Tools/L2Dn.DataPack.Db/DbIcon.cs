@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BuildDataPackDb.Db;
+namespace L2Dn.DataPack.Db;
 
 public class DbIcon
 {

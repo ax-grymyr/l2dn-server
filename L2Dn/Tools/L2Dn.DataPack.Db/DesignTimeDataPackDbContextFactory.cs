@@ -1,10 +1,11 @@
-﻿using BuildDataPackDb.Db;
+﻿using System.Data.Common;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using NLog;
 
-namespace BuildDataPackDb;
+namespace L2Dn.DataPack.Db;
 
 public sealed class DesignTimeDataPackDbContextFactory: IDesignTimeDbContextFactory<DataPackDbContext>
 {
@@ -13,15 +14,17 @@ public sealed class DesignTimeDataPackDbContextFactory: IDesignTimeDbContextFact
     public static DataPackDbContext CreateDbContext(string databasePath)
     {
         DataPackDbContext ctx = new(GetOptions(databasePath));
-        SqliteConnection connection = (SqliteConnection)ctx.Database.GetDbConnection();
-        
-        connection.CreateCollation(DataPackDbContext.CaseInsensitiveCollation,
-            (a, b) => StringComparer.InvariantCultureIgnoreCase.Compare(a, b));
-
         return ctx;
     }
 
     public static DbContextOptions<DataPackDbContext> GetOptions(string databasePath)
+    {
+        DbContextOptionsBuilder<DataPackDbContext> optionsBuilder = new();
+        ConfigureOptions(optionsBuilder, databasePath);
+        return optionsBuilder.Options;
+    }
+
+    public static void ConfigureOptions(DbContextOptionsBuilder optionsBuilder, string databasePath = "datapack.sqlite")
     {
         SqliteConnectionStringBuilder sb = new()
         { 
@@ -29,7 +32,6 @@ public sealed class DesignTimeDataPackDbContextFactory: IDesignTimeDbContextFact
             ForeignKeys = true,
         };
             
-        DbContextOptionsBuilder<DataPackDbContext> optionsBuilder = new();
         optionsBuilder.UseSqlite(sb.ToString());
 
         Microsoft.Extensions.Logging.LogLevel logLevel = (Microsoft.Extensions.Logging.LogLevel)LogLevel.Warn.Ordinal;
@@ -38,9 +40,22 @@ public sealed class DesignTimeDataPackDbContextFactory: IDesignTimeDbContextFact
                 data => { logger.Log(LogLevel.FromOrdinal((int)data.LogLevel), data.ToString()); })
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging();
+
+        optionsBuilder.AddInterceptors(new CreateCollationsInterceptor());
         
         optionsBuilder.EnableThreadSafetyChecks(false);
+    }
+    
+    private sealed class CreateCollationsInterceptor: IDbConnectionInterceptor
+    {
+        public DbConnection ConnectionCreated(ConnectionCreatedEventData eventData, DbConnection result)
+        {
+            SqliteConnection connection = (SqliteConnection)result;
         
-        return optionsBuilder.Options;
+            connection.CreateCollation(DataPackDbContext.CaseInsensitiveCollation,
+                (a, b) => StringComparer.InvariantCultureIgnoreCase.Compare(a, b));
+
+            return result;
+        }
     }
 }

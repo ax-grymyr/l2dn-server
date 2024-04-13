@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuildDataPackDb.Db;
+namespace L2Dn.DataPack.Db;
 
 public class DbBuyList
 {
@@ -19,15 +19,21 @@ public class DbBuyList
 [PrimaryKey(nameof(BuyListId), nameof(NpcId))]
 public class DbBuyListNpc
 {
+    [Reference(typeof(DbBuyList))]
     public int BuyListId { get; set; }
+
     public int NpcId { get; set; }
 }
 
 [PrimaryKey(nameof(BuyListId), nameof(ItemId))]
 public class DbBuyListItem
 {
+    [Reference(typeof(DbBuyList))]
     public int BuyListId { get; set; }
+
+    [Reference(typeof(DbItem))]
     public int ItemId { get; set; }
+    
     public long Price { get; set; }
     public long? Count { get; set; }
     public TimeSpan? RestockDelay { get; set; }

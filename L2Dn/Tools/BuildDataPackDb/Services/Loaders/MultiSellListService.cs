@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using BuildDataPackDb.Db;
+using L2Dn.DataPack.Db;
 using L2Dn.Model.DataPack;
 using L2Dn.Utilities;
 using NLog;
@@ -21,7 +21,7 @@ public class MultiSellListService
     public void Load()
     {
         string multiSellListPath = Path.Combine(_dataPackPath, "multisell");
-        _logger.Info($"Loading buy lists from '{multiSellListPath}'...");
+        _logger.Info($"Loading multisell lists from '{multiSellListPath}'...");
 
         using DataPackDbContext ctx = _databaseService.CreateContext();
 
@@ -50,7 +50,6 @@ public class MultiSellListService
             List<DbMultiSellListEntry> entries = new List<DbMultiSellListEntry>();
             for (int index = 0; index < list.Items.Count; index++)
             {
-                XmlMultiSellListItem entry = list.Items[index];
                 DbMultiSellListEntry dbEntry = new DbMultiSellListEntry()
                 {
                     MultiSellListId = listId,

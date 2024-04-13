@@ -1,9 +1,10 @@
-﻿using BuildDataPackDb.Db;
+﻿using L2Dn.DataPack.Db;
 using L2Dn.IO;
 using L2Dn.Packages.DatDefinitions;
 using L2Dn.Packages.DatDefinitions.Definitions;
 using L2Dn.Packages.DatDefinitions.Definitions.Enums;
 using NLog;
+using ItemDefaultAction = L2Dn.DataPack.Db.ItemDefaultAction;
 
 namespace BuildDataPackDb.Services;
 
@@ -63,7 +64,7 @@ public class ClientDataService
             Popup = x.Popup,
             EnchantBless = (int)x.EnchantBless,
 
-            DefaultAction = (Db.ItemDefaultAction)x.DefaultAction,
+            DefaultAction = (ItemDefaultAction)x.DefaultAction,
 
             UseOrder = (int)x.UseOrder,
             SortOrder = x.SortOrder,

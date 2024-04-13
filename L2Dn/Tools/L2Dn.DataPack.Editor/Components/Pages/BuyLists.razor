@@ -1,0 +1,47 @@
+﻿@page "/buylists"
+@using L2Dn.DataPack.Db
+@using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
+@inject DataPackDbContext Ctx
+
+<PageTitle>Buy Lists - L2Dn DataPack Editor</PageTitle>
+
+<h1>Merchant Product Lists</h1>
+
+@if (_buyLists == null)
+{
+<p>
+    <em>Loading...</em>
+</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <th>List Id</th>
+        <th>List Name</th>
+        <th>Enabled</th>
+        <th>Products</th>
+        </thead>
+        <tbody>
+        @foreach (DbBuyList buyList in _buyLists)
+        {
+            <tr>
+                <td>@buyList.BuyListId</td>
+                <td><a href="/buylists/@buyList.BuyListId">@buyList.Name</a></td>
+                <td>@buyList.Enabled</td>
+                <td>Products</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private DbBuyList[]? _buyLists;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _buyLists = await Ctx.BuyLists.ToArrayAsync();
+    }
+}

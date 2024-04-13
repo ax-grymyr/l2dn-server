@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4C41
 		Scripts\GenerateHashJson.ps1 = Scripts\GenerateHashJson.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.DataPack.Editor", "Tools\L2Dn.DataPack.Editor\L2Dn.DataPack.Editor.csproj", "{952801F8-615D-4E52-A518-F54D53DD89DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.DataPack.Db", "Tools\L2Dn.DataPack.Db\L2Dn.DataPack.Db.csproj", "{A588F5B3-3579-411B-BC79-DD8BD8485C49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,8 +114,18 @@ Global
 		{E5F30E23-AABE-4765-99F3-035FC63944B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5F30E23-AABE-4765-99F3-035FC63944B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5F30E23-AABE-4765-99F3-035FC63944B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952801F8-615D-4E52-A518-F54D53DD89DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952801F8-615D-4E52-A518-F54D53DD89DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952801F8-615D-4E52-A518-F54D53DD89DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952801F8-615D-4E52-A518-F54D53DD89DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A588F5B3-3579-411B-BC79-DD8BD8485C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A588F5B3-3579-411B-BC79-DD8BD8485C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A588F5B3-3579-411B-BC79-DD8BD8485C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A588F5B3-3579-411B-BC79-DD8BD8485C49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5F30E23-AABE-4765-99F3-035FC63944B3} = {D0D1C649-0380-4215-BB98-E9CB894967FE}
+		{952801F8-615D-4E52-A518-F54D53DD89DE} = {D0D1C649-0380-4215-BB98-E9CB894967FE}
+		{A588F5B3-3579-411B-BC79-DD8BD8485C49} = {D0D1C649-0380-4215-BB98-E9CB894967FE}
 	EndGlobalSection
 EndGlobal

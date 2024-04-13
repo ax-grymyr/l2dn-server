@@ -1,4 +1,4 @@
-﻿using BuildDataPackDb.Db;
+﻿using L2Dn.DataPack.Db;
 using L2Dn.Packages.Textures;
 using L2Dn.Packages.Unreal;
 using NLog;
@@ -58,7 +58,7 @@ public class IconService
 
         if (isIconPackage)
         {
-            _logger.Trace($"No icon '{iconName}', type={iconType} found for item {itemId}, searching another types");
+            //_logger.Trace($"No icon '{iconName}', type={iconType} found for item {itemId}, searching another types");
             if (SearchIcon(iconName, icons, itemId, out iconId))
                 return iconId;
         }

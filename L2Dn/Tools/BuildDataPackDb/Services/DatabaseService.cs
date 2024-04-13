@@ -1,4 +1,4 @@
-﻿using BuildDataPackDb.Db;
+﻿using L2Dn.DataPack.Db;
 
 namespace BuildDataPackDb.Services;
 
