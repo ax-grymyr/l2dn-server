@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
-	<item id="9589" price="0" /> <!-- Iron Bracelet -->
-	<item id="9590" price="0" /> <!-- Bronze Bracelet -->
-	<item id="9591" price="0" /> <!-- Steel Bracelet -->
+	<item id="91934" price="0" /> <!-- Adventurer's Bracelet -->
+	<item id="29978" price="0" /> <!-- Bracelet of Duty Lv. 1 -->
+	<item id="29979" price="0" /> <!-- Bracelet of Duty Lv. 2 -->
+	<item id="29980" price="0" /> <!-- Bracelet of Duty Lv. 3 -->
+	<item id="29981" price="0" /> <!-- Bracelet of Duty Lv. 4 -->
+	<item id="29982" price="0" /> <!-- Bracelet of Duty Lv. 5 -->
+	<item id="70922" price="0" /> <!-- Bracelet of Duty Lv. 6 -->
+	<item id="91060" price="0" /> <!-- Bracelet of Authority -->
+	<item id="49703" price="0" /> <!-- Bracelet of Border -->
+	<item id="9589" price="0" /> <!-- Talisman Bracelet Lv. 1 -->
+	<item id="9590" price="0" /> <!-- Talisman Bracelet Lv. 2 -->
+	<item id="9591" price="0" /> <!-- Talisman Bracelet Lv. 3 -->
+	<item id="49703" price="0" /> <!-- Talisman Bracelet Lv. 4 -->
+	<item id="92031" price="0" /> <!-- Talisman Bracelet Lv. 5 -->
+	<item id="92032" price="0" /> <!-- Talisman Bracelet Lv. 6 -->
+	<item id="96963" price="0" /> <!-- Talisman Bracelet Lv. 7 -->
+	<item id="96964" price="0" /> <!-- Talisman Bracelet Lv. 8 -->
+	<item id="97514" price="0" /> <!-- Talisman Bracelet Lv. 9 -->
+	<item id="97515" price="0" /> <!-- Talisman Bracelet Lv. 10 -->
 </list>
