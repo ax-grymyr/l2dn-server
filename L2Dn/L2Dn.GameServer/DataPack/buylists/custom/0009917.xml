@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
 	<item id="90993" price="0" /> <!-- Damaged Antharas' Earring -->
-	<item id="90992" price="0" /> <!-- Antharas' Earring -->
+	<item id="90992" price="0" /> <!-- Antharas' Earring Lv 1 -->
+	<item id="91138" price="0" /> <!-- Antharas' Earring Lv 2 -->
+	<item id="91139" price="0" /> <!-- Antharas' Earring Lv 3 -->
+	<item id="91383" price="0" /> <!-- Antharas' Earring Lv 4 -->
+	<item id="99227" price="0" /> <!-- Antharas' Earring Lv 5 -->
 	<item id="91006" price="0" /> <!-- Damaged Zaken's Earring -->
 	<item id="90763" price="0" /> <!-- Zaken's Earring Lv 1 -->
 	<item id="90764" price="0" /> <!-- Zaken's Earring Lv 2 -->
@@ -11,7 +15,7 @@
 	<item id="6661" price="0" /> <!-- Orfen's Earring Lv 1 -->
 	<item id="49575" price="0" /> <!-- Orfen's Earring Lv 2 -->
 	<item id="49578" price="0" /> <!-- Orfen's Earring Lv 3 -->
-	<item id="91801" price="0" /> <!-- Orfen's Earring Lv 4 -->
+	<item id="91379" price="0" /> <!-- Orfen's Earring Lv 4 -->
 	<item id="99223" price="0" /> <!-- Orfen's Earring Lv 5 -->
 	<item id="90987" price="0" /> <!-- Savior's Earring -->
 	<item id="90988" price="0" /> <!-- Shining Savior's Earring -->
