@@ -12,7 +12,7 @@
 			<skill id="3562" level="5" /> <!-- Queen Ant's Ring -->
 		</skills>
 		<stats>
-			<stat type="mDef">62</stat> <!-- TODO -->
+			<stat type="mDef">85</stat>
 			<stat type="maxMp">50</stat>
 		</stats>
 	</item>
@@ -28,7 +28,7 @@
 			<skill id="3560" level="5" /> <!-- Orfen's Earring -->
 		</skills>
 		<stats>
-			<stat type="mDef">83</stat> <!-- TODO -->
+			<stat type="mDef">113</stat>
 			<stat type="maxMp">80</stat>
 		</stats>
 	</item>
@@ -44,7 +44,7 @@
 			<skill id="3563" level="5" /> <!-- Ring of Core -->
 		</skills>
 		<stats>
-			<stat type="mDef">62</stat> <!-- TODO -->
+			<stat type="mDef">85</stat>
 			<stat type="maxMp">60</stat>
 		</stats>
 	</item>
@@ -60,7 +60,7 @@
 			<skill id="50443" level="5" /> <!-- Baium's Ring -->
 		</skills>
 		<stats>
-			<stat type="mDef">70</stat> <!-- TODO -->
+			<stat type="mDef">98</stat>
 			<stat type="maxMp">80</stat>
 		</stats>
 	</item>
@@ -76,7 +76,7 @@
 			<skill id="50442" level="5" /> <!-- Zaken Earring -->
 		</skills>
 		<stats>
-			<stat type="mDef">96</stat> <!-- TODO -->
+			<stat type="mDef">133</stat>
 			<stat type="maxMp">100</stat>
 		</stats>
 	</item>
@@ -92,7 +92,7 @@
 			<skill id="50441" level="5" /> <!-- Antharas' Earring -->
 		</skills>
 		<stats>
-			<stat type="mDef">96</stat> <!-- TODO -->
+			<stat type="mDef">147</stat>
 			<stat type="maxMp">120</stat>
 		</stats>
 	</item>
@@ -108,7 +108,7 @@
 			<skill id="54041" level="5" /> <!-- Frintezza's Necklace -->
 		</skills>
 		<stats>
-			<stat type="mDef">125</stat> <!-- TODO -->
+			<stat type="mDef">138</stat>
 			<stat type="maxMp">100</stat>
 		</stats>
 	</item>
