@@ -3,45 +3,75 @@
 @using Microsoft.EntityFrameworkCore
 @rendermode InteractiveServer
 @inject DataPackDbContext Ctx
+@inject TooltipService TooltipService
 
 <PageTitle>Buy Lists - L2Dn DataPack Editor</PageTitle>
 
 <h1>Merchant Product Lists</h1>
 
-@if (_buyLists == null)
-{
-<p>
-    <em>Loading...</em>
-</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-        <th>List Id</th>
-        <th>List Name</th>
-        <th>Enabled</th>
-        <th>Products</th>
-        </thead>
-        <tbody>
-        @foreach (DbBuyList buyList in _buyLists)
-        {
-            <tr>
-                <td>@buyList.BuyListId</td>
-                <td><a href="/buylists/@buyList.BuyListId">@buyList.Name</a></td>
-                <td>@buyList.Enabled</td>
-                <td>Products</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
+<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+    <RadzenButton Click=@AddNew Text="Add New" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
+    <RadzenButton Click=@Refresh Text="Refresh" Icon="refresh" ButtonStyle="ButtonStyle.Light" Size="ButtonSize.Small" />
+    @* <RadzenButton Click=@(args => OnClick("Secondary button with text and icon")) Text="Add New" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Light button with text and icon")) Text="Refresh" Icon="refresh" ButtonStyle="ButtonStyle.Light" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Dark button with text and icon")) Text="Refresh" Icon="refresh" ButtonStyle="ButtonStyle.Dark" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Info button with text and icon")) Text="Privacy tip" Icon="privacy_tip" ButtonStyle="ButtonStyle.Info" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Success button with text and icon")) Text="Publish" Icon="check_circle" ButtonStyle="ButtonStyle.Success" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Warning button with text and icon")) Text="Warning" Icon="warning_amber" ButtonStyle="ButtonStyle.Warning" /> *@
+    @* <RadzenButton Click=@(args => OnClick("Danger button with text and icon")) Text="Report" Icon="report" ButtonStyle="ButtonStyle.Danger" /> *@
+</RadzenStack>
+
+<RadzenDataGrid @ref="_grid" TItem="DbBuyList" Data="@_buyLists"
+                AllowPaging="true" PageSize="10" PagerPosition="PagerPosition.Top" 
+                AllowFiltering="true" AllowSorting="true">
+    <Columns>
+        <RadzenDataGridColumn TItem="DbBuyList" Property="BuyListId" Title="ID"
+                              Resizable="true" Reorderable="false" Frozen="true" Width="150px"/>
+
+        <RadzenDataGridColumn TItem="DbBuyList" Property="Enabled" Title="Enabled" Width="150px"/>
+
+        <RadzenDataGridColumn TItem="DbBuyList" Property="Name" Title="Name">
+            <Template Context="buyList">
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Gap="1rem" Wrap="FlexWrap.Wrap">
+                    <RadzenText Text="@buyList.Name" />
+                    <RadzenButton Icon="edit" Size="ButtonSize.Small" Click="@(_ => EditRow(buyList))"
+                                  alt="Edit" tooltip="Edit"
+                                  MouseEnter="@(args => ShowEditTooltip(args))"
+                                  @onclick:stopPropagation="true" />
+                </RadzenStack>
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
 
 @code {
-    private DbBuyList[]? _buyLists;
+    [Inject]
+    protected NavigationManager NavigationManager { get; set; }
+    
+    private IQueryable<DbBuyList>? _buyLists;
+
+    private RadzenDataGrid<DbBuyList> _grid = new();
 
     protected override async Task OnInitializedAsync()
     {
-        _buyLists = await Ctx.BuyLists.ToArrayAsync();
+        _buyLists = Ctx.BuyLists.AsQueryable();
     }
+
+    private void AddNew()
+    {
+        
+    }
+
+    private void Refresh()
+    {
+        _grid.Reload();
+    }
+
+    private void EditRow(DbBuyList buyList)
+    {
+        NavigationManager.NavigateTo($"/buylists/{buyList.BuyListId}");
+    }
+    
+    private void ShowEditTooltip(ElementReference elementReference, TooltipOptions? options = null) => 
+        TooltipService.Open(elementReference, "Edit", options);
 }

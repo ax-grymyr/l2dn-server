@@ -1,6 +1,7 @@
 using System.Reflection;
 using L2Dn.DataPack.Db;
 using L2Dn.DataPack.Editor.Components;
+using Radzen;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContextFactory<DataPackDbContext>(optionsBuilder
         Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "datapack.sqlite")));
 
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+builder.Services.AddRadzenComponents();
 
 WebApplication app = builder.Build();
 

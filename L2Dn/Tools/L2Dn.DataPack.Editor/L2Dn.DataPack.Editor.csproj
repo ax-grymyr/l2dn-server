@@ -10,4 +10,8 @@
       <ProjectReference Include="..\L2Dn.DataPack.Db\L2Dn.DataPack.Db.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Radzen.Blazor" Version="4.29.6" />
+    </ItemGroup>
+
 </Project>
