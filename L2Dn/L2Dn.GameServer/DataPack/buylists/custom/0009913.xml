@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+    <item id="70811" price="0" /> <!-- Red Cat's Eye Lv. 1 -->
+    <item id="70812" price="0" /> <!-- Red Cat's Eye Lv. 2 -->
+    <item id="70813" price="0" /> <!-- Red Cat's Eye Lv. 3 -->
+    <item id="70814" price="0" /> <!-- Red Cat's Eye Lv. 4 -->
+    <item id="70815" price="0" /> <!-- Red Cat's Eye Lv. 5 -->
+    <item id="71398" price="0" /> <!-- Greater Red Cat's Eye Lv. 1 -->
+    <item id="71399" price="0" /> <!-- Greater Red Cat's Eye Lv. 2 -->
+    <item id="71400" price="0" /> <!-- Greater Red Cat's Eye Lv. 3 -->
+    <item id="71401" price="0" /> <!-- Greater Red Cat's Eye Lv. 4 -->
+    <item id="71402" price="0" /> <!-- Greater Red Cat's Eye Lv. 5 -->
+
+    <item id="70816" price="0" /> <!-- Blue Cat's Eye Lv. 1 -->
+    <item id="70817" price="0" /> <!-- Blue Cat's Eye Lv. 2 -->
+    <item id="70818" price="0" /> <!-- Blue Cat's Eye Lv. 3 -->
+    <item id="70819" price="0" /> <!-- Blue Cat's Eye Lv. 4 -->
+    <item id="70820" price="0" /> <!-- Blue Cat's Eye Lv. 5 -->
+    <item id="71403" price="0" /> <!-- Greater Blue Cat's Eye Lv. 1 -->
+    <item id="71404" price="0" /> <!-- Greater Blue Cat's Eye Lv. 2 -->
+    <item id="71405" price="0" /> <!-- Greater Blue Cat's Eye Lv. 3 -->
+    <item id="71406" price="0" /> <!-- Greater Blue Cat's Eye Lv. 4 -->
+    <item id="71407" price="0" /> <!-- Greater Blue Cat's Eye Lv. 5 -->
+    
     <item id="90313" price="0" /> <!-- Topaz Lv. 1 -->
     <item id="90314" price="0" /> <!-- Topaz Lv. 2 -->
     <item id="90315" price="0" /> <!-- Topaz Lv. 3 -->
