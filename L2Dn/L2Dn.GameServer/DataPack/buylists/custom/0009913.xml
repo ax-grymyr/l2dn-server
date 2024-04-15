@@ -175,4 +175,15 @@
     <item id="99216" price="0" /> <!-- Top-grade Emerald Lv. 3 -->
     <item id="99217" price="0" /> <!-- Top-grade Emerald Lv. 4 -->
     <item id="99218" price="0" /> <!-- Top-grade Emerald Lv. 5 -->
+
+    <item id="92096" price="0" /> <!-- Moonstone Lv 1 -->
+    <item id="92097" price="0" /> <!-- Moonstone Lv 2 -->
+    <item id="92098" price="0" /> <!-- Moonstone Lv 3 -->
+    <item id="92099" price="0" /> <!-- Moonstone Lv 4 -->
+    <item id="92100" price="0" /> <!-- Moonstone Lv 5 -->
+    <item id="92101" price="0" /> <!-- Moonstone Lv 6 -->
+    <item id="92102" price="0" /> <!-- Moonstone Lv 7 -->
+    <item id="92103" price="0" /> <!-- Moonstone Lv 8 -->
+    <item id="92104" price="0" /> <!-- Moonstone Lv 9 -->
+    <item id="92105" price="0" /> <!-- Moonstone Lv 10 -->
 </list>
