@@ -1,5 +1,226 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99200" name="Top-grade Vital Stone Lv. 2" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +19%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="12" /> <!-- Top-grade Vital Stone -->
+		</skills>
+	</item>
+	<item id="99201" name="Top-grade Vital Stone Lv. 3" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +21%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="13" /> <!-- Top-grade Vital Stone -->
+		</skills>
+	</item>
+	<item id="99202" name="Top-grade Vital Stone Lv. 4" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +23%, Sayha's Grace Consumption -32%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="14" /> <!-- Top-grade Vital Stone -->
+		</skills>
+	</item>
+	<item id="99203" name="Top-grade Vital Stone Lv. 5" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +30%, acquired XP while hunting in the attribute zones +50%, Sayha's Grace Consumption -35%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="15" /> <!-- Top-grade Vital Stone -->
+		</skills>
+	</item>
+	<item id="99204" name="Top-grade Aquamarine Lv. 1" type="Armor">
+		<!-- Max MP +2%, with a certain chance MP +60 when using skills. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99205" name="Top-grade Aquamarine Lv. 2" type="Armor">
+		<!-- When equipped, Max MP +5%, with a certain chance MP +80 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99206" name="Top-grade Aquamarine Lv. 3" type="Armor">
+		<!-- When equipped, Max MP +8%, with a certain chance MP +100 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99207" name="Top-grade Aquamarine Lv. 4" type="Armor">
+		<!-- When equipped, Max MP +12%, with a certain chance MP +130 when using skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99208" name="Top-grade Aquamarine Lv. 5" type="Armor">
+		<!-- Max MP +20%, with a certain chance MP +200 when using skills. Recovers 10% MP when using basic skills. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_castmpup_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99209" name="Top-grade Cat's Eye Lv. 1" type="Armor">
+		<!-- P. Critical Damage/ M. Skill Critical Damage +16%, P./ M. Skill Power +1%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99210" name="Top-grade Cat's Eye Lv. 2" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +17%, P./ M. Skill Power +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure, the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99211" name="Top-grade Cat's Eye Lv. 3" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +18%, P./ M. Skill Power +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99212" name="Top-grade Cat's Eye Lv. 4" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +19%, P./ M. Skill Power +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99213" name="Top-grade Cat's Eye Lv. 5" type="Armor">
+		<!-- When equipped, P. Critical Damage/ M. Skill Critical Damage +20%, P./ M. Skill Power +7%, Buff Cancel Resistance +40%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_red_catseye_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99214" name="Top-grade Emerald Lv. 1" type="Armor">
+		<!-- CON +2, MEN/ DEX/ WIT/ STR/ INT +1, Damage Reflection Resistance +2%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99215" name="Top-grade Emerald Lv. 2" type="Armor">
+		<!-- When equipped, CON/ MEN +2, DEX/ WIT/ STR/ INT +1, Damage Reflection Resistance +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99216" name="Top-grade Emerald Lv. 3" type="Armor">
+		<!-- When equipped, CON/ MEN/ DEX +2, WIT/ STR/ INT +1, Damage Reflection Resistance +6%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99217" name="Top-grade Emerald Lv. 4" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT +2, STR/ INT +1, Damage Reflection Resistance +10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99218" name="Top-grade Emerald Lv. 5" type="Armor">
+		<!-- CON/ MEN/ DEX/ WIT/ STR/ INT +2, Damage Reflection Resistance +20%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_allstat_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
 	<item id="99222" name="Queen Ant's Ring Lv. 5" type="Armor">
 		<!-- <Options>\nP. Atk. +15%\nM. Atk. +20%\nP. Accuracy +5\nM. Accuracy +5\nMax MP +50\nAll Critical Damage +15%\nAll Soulshot/Spiritshot Damage +10%\nPoison Attack and Resistance +35%\n\nThe effect does not stack if two identical rings are equipped. Cannot be enchanted. -->
 		<set name="icon" val="icon.accessory_ring_of_queen_ant_i05" />

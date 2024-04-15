@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99164" name="Top-grade Topaz Lv. 1" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 2500 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99165" name="Top-grade Topaz Lv. 2" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 2800 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99166" name="Top-grade Topaz Lv. 3" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 3400 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99167" name="Top-grade Topaz Lv. 4" type="Armor">
+		<!-- When used, disrupts the target's skill casting. Inflicts 4300 PvP damage. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99168" name="Top-grade Topaz Lv. 5" type="Armor">
+		<!-- Disrupts the target's skill casting. Inflicts 6000 PvP damage. Activates a special ability that removes up to 3 debuffs. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_absdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="99169" name="Top-grade Garnet Lv. 1" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +22%. Grants immunity to debuffs for 16 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="11" /> <!-- Top-grade Garnet -->
+		</skills>
+	</item>
+	<item id="99170" name="Top-grade Garnet Lv. 2" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +24%. Grants immunity to debuffs for 17 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="12" /> <!-- Top-grade Garnet -->
+		</skills>
+	</item>
+	<item id="99171" name="Top-grade Garnet Lv. 3" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +26%. Grants immunity to debuffs for 18 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="13" /> <!-- Top-grade Garnet -->
+		</skills>
+	</item>
+	<item id="99172" name="Top-grade Garnet Lv. 4" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +30%. Grants immunity to debuffs for 20 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="14" /> <!-- Top-grade Garnet -->
+		</skills>
+	</item>
+	<item id="99173" name="Top-grade Garnet Lv. 5" type="Armor">
+		<!-- Pull/ Silence/ Paralysis/ Fear/ Stun Resistance +40%, Sleep/ Poison Resistance +10%. Grants immunity to debuffs for 25 sec. when casting skills. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_garnet_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55485" level="15" /> <!-- Top-grade Garnet -->
+		</skills>
+	</item>
+	<item id="99174" name="Top-grade Jade Lv. 1" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +15%, Speed +1%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="11" /> <!-- Top-grade Jade -->
+		</skills>
+	</item>
+	<item id="99175" name="Top-grade Jade Lv. 2" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +16%, Speed +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="12" /> <!-- Top-grade Jade -->
+		</skills>
+	</item>
+	<item id="99176" name="Top-grade Jade Lv. 3" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +17%, Speed +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="13" /> <!-- Top-grade Jade -->
+		</skills>
+	</item>
+	<item id="99177" name="Top-grade Jade Lv. 4" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +18%, Speed +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="14" /> <!-- Top-grade Jade -->
+		</skills>
+	</item>
+	<item id="99178" name="Top-grade Jade Lv. 5" type="Armor">
+		<!-- Atk. Spd./ Casting Spd. +20%, Speed +7%, Melee Weapon Resistance +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. -->
+		<set name="icon" val="icon.bm_jewel_speedup_lv1_high" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55474" level="15" /> <!-- Top-grade Jade -->
+		</skills>
+	</item>
+	<item id="99179" name="Top-grade Ruby Lv. 1" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +17%, P. Atk. +1%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="11" /> <!-- Top-grade Ruby -->
+		</skills>
+	</item>
+	<item id="99180" name="Top-grade Ruby Lv. 2" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +18%, P. Atk. +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="12" /> <!-- Top-grade Ruby -->
+		</skills>
+	</item>
+	<item id="99181" name="Top-grade Ruby Lv. 3" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +19%, P. Atk. +3%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="13" /> <!-- Top-grade Ruby -->
+		</skills>
+	</item>
+	<item id="99182" name="Top-grade Ruby Lv. 4" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +20%, P. Atk. +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="14" /> <!-- Top-grade Ruby -->
+		</skills>
+	</item>
+	<item id="99183" name="Top-grade Ruby Lv. 5" type="Armor">
+		<!-- When equipped, Soulshot/ Blessed Soulshot/ Beast Soulshot damage +20%, P. Atk. +7%, P. Critical Rate +5%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_ssdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55477" level="15" /> <!-- Top-grade Ruby -->
+		</skills>
+	</item>
+	<item id="99184" name="Top-grade Sapphire Lv. 1" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot Damage +17%, M. Atk. +2%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="11" /> <!-- Top-grade Sapphire -->
+		</skills>
+	</item>
+	<item id="99185" name="Top-grade Sapphire Lv. 2" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +18%, M. Atk. +4%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="12" /> <!-- Top-grade Sapphire -->
+		</skills>
+	</item>
+	<item id="99186" name="Top-grade Sapphire Lv. 3" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +19%, M. Atk. +6%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="13" /> <!-- Top-grade Sapphire -->
+		</skills>
+	</item>
+	<item id="99187" name="Top-grade Sapphire Lv. 4" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot damage +20%, M. Atk. +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="14" /> <!-- Top-grade Sapphire -->
+		</skills>
+	</item>
+	<item id="99188" name="Top-grade Sapphire Lv. 5" type="Armor">
+		<!-- When equipped, Spiritshot/ Blessed Spiritshot/ Beast Spiritshot Damage +20%, M. Atk. +14%, M. Critical Rate +10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_spsdmg_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55481" level="15" /> <!-- Top-grade Sapphire -->
+		</skills>
+	</item>
+	<item id="99189" name="Top-grade Diamond Lv. 1" type="Armor">
+		<!-- When equipped, P. Def. +150, received P. Critical Damage -11%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="11" /> <!-- Top-grade Diamond -->
+		</skills>
+	</item>
+	<item id="99190" name="Top-grade Diamond Lv. 2" type="Armor">
+		<!-- When equipped, P. Def. +180, received P. Critical Damage -12%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="12" /> <!-- Top-grade Diamond -->
+		</skills>
+	</item>
+	<item id="99191" name="Top-grade Diamond Lv. 3" type="Armor">
+		<!-- When equipped, P. Def. +220, received P. Critical Damage -14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="13" /> <!-- Top-grade Diamond -->
+		</skills>
+	</item>
+	<item id="99192" name="Top-grade Diamond Lv. 4" type="Armor">
+		<!-- When equipped, P. Def. +280, received P. Critical Damage -16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="14" /> <!-- Top-grade Diamond -->
+		</skills>
+	</item>
+	<item id="99193" name="Top-grade Diamond Lv. 5" type="Armor">
+		<!-- When equipped, P. Def. +400, received P. Critical Damage -20%, received P. Critical Rate -10%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_phydef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55475" level="15" /> <!-- Top-grade Diamond -->
+		</skills>
+	</item>
+	<item id="99194" name="Top-grade Pearl Lv. 1" type="Armor">
+		<!-- When equipped, M. Def. +85, received M. Skill Critical Damage -11%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="11" /> <!-- Top-grade Pearl -->
+		</skills>
+	</item>
+	<item id="99195" name="Top-grade Pearl Lv. 2" type="Armor">
+		<!-- When equipped, M. Def. +100, received M. Skill Critical Damage -12%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="12" /> <!-- Top-grade Pearl -->
+		</skills>
+	</item>
+	<item id="99196" name="Top-grade Pearl Lv. 3" type="Armor">
+		<!-- When equipped, M. Def. +125, received M. Skill Critical Damage -14%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be compounded with Jewel Energy. In case of failure, its enchant value drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="13" /> <!-- Top-grade Pearl -->
+		</skills>
+	</item>
+	<item id="99197" name="Top-grade Pearl Lv. 4" type="Armor">
+		<!-- When equipped, M. Def. +160, received M. Skill Critical Damage -16%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. In case of failure the jewel level drops to 1. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="14" /> <!-- Top-grade Pearl -->
+		</skills>
+	</item>
+	<item id="99198" name="Top-grade Pearl Lv. 5" type="Armor">
+		<!-- M. Def. +250, Received M. Skill Critical Damage -20%, Received M. Skill Critical Rate -10%. The effect doesn't stack if two identical jewels are equipped, the higher-level jewel takes precedence. Can be upgraded with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_magdef_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55476" level="15" /> <!-- Top-grade Pearl -->
+		</skills>
+	</item>
+	<item id="99199" name="Top-grade Vital Stone Lv. 1" type="Armor">
+		<!-- When equipped, while Sayha's Grace is active, acquired XP/ SP while hunting +17%, Sayha's Grace Consumption -30%. Effects of two identical jewels do not stack, the higher-level jewel takes precedence. Can be upgraded through compounding with Jewel Energy. -->
+		<set name="icon" val="icon.bm_jewel_vital_high_lv1_lavianrose" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55472" level="11" /> <!-- Top-grade Vital Stone -->
+		</skills>
+	</item>
+</list>

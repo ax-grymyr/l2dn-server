@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/buylist.xsd">
+    <item id="90313" price="0" /> <!-- Topaz Lv. 1 -->
+    <item id="90314" price="0" /> <!-- Topaz Lv. 2 -->
+    <item id="90315" price="0" /> <!-- Topaz Lv. 3 -->
+    <item id="90316" price="0" /> <!-- Topaz Lv. 4 -->
+    <item id="90317" price="0" /> <!-- Topaz Lv. 5 -->
+    <item id="91305" price="0" /> <!-- Greater Topaz Lv. 1 -->
+    <item id="91306" price="0" /> <!-- Greater Topaz Lv. 2 -->
+    <item id="91307" price="0" /> <!-- Greater Topaz Lv. 3 -->
+    <item id="91308" price="0" /> <!-- Greater Topaz Lv. 4 -->
+    <item id="91309" price="0" /> <!-- Greater Topaz Lv. 5 -->
+    <item id="99164" price="0" /> <!-- Top-grade Topaz Lv. 1 -->
+    <item id="99165" price="0" /> <!-- Top-grade Topaz Lv. 2 -->
+    <item id="99166" price="0" /> <!-- Top-grade Topaz Lv. 3 -->
+    <item id="99167" price="0" /> <!-- Top-grade Topaz Lv. 4 -->
+    <item id="99168" price="0" /> <!-- Top-grade Topaz Lv. 5 -->
+
+    <item id="90318" price="0" /> <!-- Garnet Lv. 1 -->
+    <item id="90319" price="0" /> <!-- Garnet Lv. 2 -->
+    <item id="90320" price="0" /> <!-- Garnet Lv. 3 -->
+    <item id="90321" price="0" /> <!-- Garnet Lv. 4 -->
+    <item id="90322" price="0" /> <!-- Garnet Lv. 5 -->
+    <item id="91310" price="0" /> <!-- Greater Garnet Lv. 1 -->
+    <item id="91311" price="0" /> <!-- Greater Garnet Lv. 2 -->
+    <item id="91312" price="0" /> <!-- Greater Garnet Lv. 3 -->
+    <item id="91313" price="0" /> <!-- Greater Garnet Lv. 4 -->
+    <item id="91314" price="0" /> <!-- Greater Garnet Lv. 5 -->
+    <item id="99169" price="0" /> <!-- Top-grade Garnet Lv. 1 -->
+    <item id="99170" price="0" /> <!-- Top-grade Garnet Lv. 2 -->
+    <item id="99171" price="0" /> <!-- Top-grade Garnet Lv. 3 -->
+    <item id="99172" price="0" /> <!-- Top-grade Garnet Lv. 4 -->
+    <item id="99173" price="0" /> <!-- Top-grade Garnet Lv. 5 -->
+
+    <item id="90323" price="0" /> <!-- Jade Lv. 1 -->
+    <item id="90324" price="0" /> <!-- Jade Lv. 2 -->
+    <item id="90325" price="0" /> <!-- Jade Lv. 3 -->
+    <item id="90326" price="0" /> <!-- Jade Lv. 4 -->
+    <item id="90327" price="0" /> <!-- Jade Lv. 5 -->
+    <item id="91315" price="0" /> <!-- Greater Jade Lv. 1 -->
+    <item id="91316" price="0" /> <!-- Greater Jade Lv. 2 -->
+    <item id="91317" price="0" /> <!-- Greater Jade Lv. 3 -->
+    <item id="91318" price="0" /> <!-- Greater Jade Lv. 4 -->
+    <item id="91319" price="0" /> <!-- Greater Jade Lv. 5 -->
+    <item id="99174" price="0" /> <!-- Top-grade Jade Lv. 1 -->
+    <item id="99175" price="0" /> <!-- Top-grade Jade Lv. 2 -->
+    <item id="99176" price="0" /> <!-- Top-grade Jade Lv. 3 -->
+    <item id="99177" price="0" /> <!-- Top-grade Jade Lv. 4 -->
+    <item id="99178" price="0" /> <!-- Top-grade Jade Lv. 5 -->
+
+    <item id="90328" price="0" /> <!-- Ruby Lv. 1 -->
+    <item id="90329" price="0" /> <!-- Ruby Lv. 2 -->
+    <item id="90330" price="0" /> <!-- Ruby Lv. 3 -->
+    <item id="90331" price="0" /> <!-- Ruby Lv. 4 -->
+    <item id="90332" price="0" /> <!-- Ruby Lv. 5 -->
+    <item id="91320" price="0" /> <!-- Greater Ruby Lv. 1 -->
+    <item id="91321" price="0" /> <!-- Greater Ruby Lv. 2 -->
+    <item id="91322" price="0" /> <!-- Greater Ruby Lv. 3 -->
+    <item id="91323" price="0" /> <!-- Greater Ruby Lv. 4 -->
+    <item id="91324" price="0" /> <!-- Greater Ruby Lv. 5 -->
+    <item id="99179" price="0" /> <!-- Top-grade Ruby Lv. 1 -->
+    <item id="99180" price="0" /> <!-- Top-grade Ruby Lv. 2 -->
+    <item id="99181" price="0" /> <!-- Top-grade Ruby Lv. 3 -->
+    <item id="99182" price="0" /> <!-- Top-grade Ruby Lv. 4 -->
+    <item id="99183" price="0" /> <!-- Top-grade Ruby Lv. 5 -->
+
+    <item id="90333" price="0" /> <!-- Sapphire Lv. 1 -->
+    <item id="90334" price="0" /> <!-- Sapphire Lv. 2 -->
+    <item id="90335" price="0" /> <!-- Sapphire Lv. 3 -->
+    <item id="90336" price="0" /> <!-- Sapphire Lv. 4 -->
+    <item id="90337" price="0" /> <!-- Sapphire Lv. 5 -->
+    <item id="91325" price="0" /> <!-- Greater Sapphire Lv. 1 -->
+    <item id="91326" price="0" /> <!-- Greater Sapphire Lv. 2 -->
+    <item id="91327" price="0" /> <!-- Greater Sapphire Lv. 3 -->
+    <item id="91328" price="0" /> <!-- Greater Sapphire Lv. 4 -->
+    <item id="91329" price="0" /> <!-- Greater Sapphire Lv. 5 -->
+    <item id="99184" price="0" /> <!-- Top-grade Sapphire Lv. 1 -->
+    <item id="99185" price="0" /> <!-- Top-grade Sapphire Lv. 2 -->
+    <item id="99186" price="0" /> <!-- Top-grade Sapphire Lv. 3 -->
+    <item id="99187" price="0" /> <!-- Top-grade Sapphire Lv. 4 -->
+    <item id="99188" price="0" /> <!-- Top-grade Sapphire Lv. 5 -->
+
+    <item id="90338" price="0" /> <!-- Diamond Lv. 1 -->
+    <item id="90339" price="0" /> <!-- Diamond Lv. 2 -->
+    <item id="90340" price="0" /> <!-- Diamond Lv. 3 -->
+    <item id="90341" price="0" /> <!-- Diamond Lv. 4 -->
+    <item id="90342" price="0" /> <!-- Diamond Lv. 5 -->
+    <item id="91330" price="0" /> <!-- Greater Diamond Lv. 1 -->
+    <item id="91331" price="0" /> <!-- Greater Diamond Lv. 2 -->
+    <item id="91332" price="0" /> <!-- Greater Diamond Lv. 3 -->
+    <item id="91333" price="0" /> <!-- Greater Diamond Lv. 4 -->
+    <item id="91334" price="0" /> <!-- Greater Diamond Lv. 5 -->
+    <item id="99189" price="0" /> <!-- Top-grade Diamond Lv. 1 -->
+    <item id="99190" price="0" /> <!-- Top-grade Diamond Lv. 2 -->
+    <item id="99191" price="0" /> <!-- Top-grade Diamond Lv. 3 -->
+    <item id="99192" price="0" /> <!-- Top-grade Diamond Lv. 4 -->
+    <item id="99193" price="0" /> <!-- Top-grade Diamond Lv. 5 -->
+
+    <item id="90343" price="0" /> <!-- Pearl Lv. 1 -->
+    <item id="90344" price="0" /> <!-- Pearl Lv. 2 -->
+    <item id="90345" price="0" /> <!-- Pearl Lv. 3 -->
+    <item id="90346" price="0" /> <!-- Pearl Lv. 4 -->
+    <item id="90347" price="0" /> <!-- Pearl Lv. 5 -->
+    <item id="91335" price="0" /> <!-- Greater Pearl Lv. 1 -->
+    <item id="91336" price="0" /> <!-- Greater Pearl Lv. 2 -->
+    <item id="91337" price="0" /> <!-- Greater Pearl Lv. 3 -->
+    <item id="91338" price="0" /> <!-- Greater Pearl Lv. 4 -->
+    <item id="91339" price="0" /> <!-- Greater Pearl Lv. 5 -->
+    <item id="99194" price="0" /> <!-- Top-grade Pearl Lv. 1 -->
+    <item id="99195" price="0" /> <!-- Top-grade Pearl Lv. 2 -->
+    <item id="99196" price="0" /> <!-- Top-grade Pearl Lv. 3 -->
+    <item id="99197" price="0" /> <!-- Top-grade Pearl Lv. 4 -->
+    <item id="99198" price="0" /> <!-- Top-grade Pearl Lv. 5 -->
+
+    <item id="90353" price="0" /> <!-- Vital Stone Lv. 1 -->
+    <item id="90354" price="0" /> <!-- Vital Stone Lv. 2 -->
+    <item id="90355" price="0" /> <!-- Vital Stone Lv. 3 -->
+    <item id="90356" price="0" /> <!-- Vital Stone Lv. 4 -->
+    <item id="90357" price="0" /> <!-- Vital Stone Lv. 5 -->
+    <item id="91340" price="0" /> <!-- Greater Vital Stone Lv. 1 -->
+    <item id="91341" price="0" /> <!-- Greater Vital Stone Lv. 2 -->
+    <item id="91342" price="0" /> <!-- Greater Vital Stone Lv. 3 -->
+    <item id="91343" price="0" /> <!-- Greater Vital Stone Lv. 4 -->
+    <item id="91344" price="0" /> <!-- Greater Vital Stone Lv. 5 -->
+    <item id="99199" price="0" /> <!-- Top-grade Vital Stone Lv. 1 -->
+    <item id="99200" price="0" /> <!-- Top-grade Vital Stone Lv. 2 -->
+    <item id="99201" price="0" /> <!-- Top-grade Vital Stone Lv. 3 -->
+    <item id="99202" price="0" /> <!-- Top-grade Vital Stone Lv. 4 -->
+    <item id="99203" price="0" /> <!-- Top-grade Vital Stone Lv. 5 -->
+
+    <item id="90924" price="0" /> <!-- Aquamarine Lv. 1 -->
+    <item id="90925" price="0" /> <!-- Aquamarine Lv. 2 -->
+    <item id="90926" price="0" /> <!-- Aquamarine Lv. 3 -->
+    <item id="90927" price="0" /> <!-- Aquamarine Lv. 4 -->
+    <item id="90928" price="0" /> <!-- Aquamarine Lv. 5 -->
+    <item id="91345" price="0" /> <!-- Greater Aquamarine Lv. 1 -->
+    <item id="91346" price="0" /> <!-- Greater Aquamarine Lv. 2 -->
+    <item id="91347" price="0" /> <!-- Greater Aquamarine Lv. 3 -->
+    <item id="91348" price="0" /> <!-- Greater Aquamarine Lv. 4 -->
+    <item id="91349" price="0" /> <!-- Greater Aquamarine Lv. 5 -->
+    <item id="99204" price="0" /> <!-- Top-grade Aquamarine Lv. 1 -->
+    <item id="99205" price="0" /> <!-- Top-grade Aquamarine Lv. 2 -->
+    <item id="99206" price="0" /> <!-- Top-grade Aquamarine Lv. 3 -->
+    <item id="99207" price="0" /> <!-- Top-grade Aquamarine Lv. 4 -->
+    <item id="99208" price="0" /> <!-- Top-grade Aquamarine Lv. 5 -->
+
+    <item id="90929" price="0" /> <!-- Cat's Eye Lv. 1 -->
+    <item id="90930" price="0" /> <!-- Cat's Eye Lv. 2 -->
+    <item id="90931" price="0" /> <!-- Cat's Eye Lv. 3 -->
+    <item id="90932" price="0" /> <!-- Cat's Eye Lv. 4 -->
+    <item id="90933" price="0" /> <!-- Cat's Eye Lv. 5 -->
+    <item id="91350" price="0" /> <!-- Greater Cat's Eye Lv. 1 -->
+    <item id="91351" price="0" /> <!-- Greater Cat's Eye Lv. 2 -->
+    <item id="91352" price="0" /> <!-- Greater Cat's Eye Lv. 3 -->
+    <item id="91353" price="0" /> <!-- Greater Cat's Eye Lv. 4 -->
+    <item id="91354" price="0" /> <!-- Greater Cat's Eye Lv. 5 -->
+    <item id="99209" price="0" /> <!-- Top-grade Cat's Eye Lv. 1 -->
+    <item id="99210" price="0" /> <!-- Top-grade Cat's Eye Lv. 2 -->
+    <item id="99211" price="0" /> <!-- Top-grade Cat's Eye Lv. 3 -->
+    <item id="99212" price="0" /> <!-- Top-grade Cat's Eye Lv. 4 -->
+    <item id="99213" price="0" /> <!-- Top-grade Cat's Eye Lv. 5 -->
+
+    <item id="91357" price="0" /> <!-- Emerald Lv. 1 -->
+    <item id="91358" price="0" /> <!-- Emerald Lv. 2 -->
+    <item id="91359" price="0" /> <!-- Emerald Lv. 3 -->
+    <item id="91360" price="0" /> <!-- Emerald Lv. 4 -->
+    <item id="91361" price="0" /> <!-- Emerald Lv. 5 -->
+    <item id="91362" price="0" /> <!-- Greater Emerald Lv. 1 -->
+    <item id="91363" price="0" /> <!-- Greater Emerald Lv. 2 -->
+    <item id="91364" price="0" /> <!-- Greater Emerald Lv. 3 -->
+    <item id="91365" price="0" /> <!-- Greater Emerald Lv. 4 -->
+    <item id="91366" price="0" /> <!-- Greater Emerald Lv. 5 -->
+    <item id="99214" price="0" /> <!-- Top-grade Emerald Lv. 1 -->
+    <item id="99215" price="0" /> <!-- Top-grade Emerald Lv. 2 -->
+    <item id="99216" price="0" /> <!-- Top-grade Emerald Lv. 3 -->
+    <item id="99217" price="0" /> <!-- Top-grade Emerald Lv. 4 -->
+    <item id="99218" price="0" /> <!-- Top-grade Emerald Lv. 5 -->
+</list>
