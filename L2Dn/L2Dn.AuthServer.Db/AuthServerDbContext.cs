@@ -7,4 +7,5 @@ public class AuthServerDbContext(DbContextOptions options)
 {
     public DbSet<Account> Accounts => Set<Account>();
     public DbSet<GameServer> GameServers => Set<GameServer>();
+    public DbSet<AccountCharacterData> AccountCharacterData => Set<AccountCharacterData>();
 }

@@ -26,7 +26,7 @@ internal struct RequestServerListPacket: IIncomingPacket<AuthSession>
             return ValueTask.CompletedTask;
         }
 
-        ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, accountInfo.LastServerId);
+        ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, accountInfo);
         connection.Send(ref serverListPacket);
         return ValueTask.CompletedTask;
     }

@@ -42,15 +42,15 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
         //Logger.Info($"S({session.Id})  RequestAuthLogin, user: {username}, password: {password}");
 
         IPAddress? address = connection.GetRemoteAddress();
-        AccountInfo? account = await AccountManager.Instance.LoginAsync(username, password, address?.ToString());
-        if (account is null)
+        AccountInfo? accountInfo = await AccountManager.Instance.LoginAsync(username, password, address?.ToString());
+        if (accountInfo is null)
         {
             LoginFailPacket loginFailPacket = new(LoginFailReason.InvalidLoginOrPassword);
             connection.Send(ref loginFailPacket, SendPacketOptions.CloseAfterSending);
             return;
         }
 
-        session.AccountInfo = account;
+        session.AccountInfo = accountInfo;
         session.State = AuthSessionState.GameServerLogin;
 
         if (Config.Instance.Settings.ShowLicense)
@@ -60,7 +60,7 @@ internal struct RequestAuthLoginPacket: IIncomingPacket<AuthSession>
         }
         else
         {
-            ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, account.LastServerId);
+            ServerListPacket serverListPacket = new(GameServerManager.Instance.Servers, accountInfo);
             connection.Send(ref serverListPacket);
         }
     }

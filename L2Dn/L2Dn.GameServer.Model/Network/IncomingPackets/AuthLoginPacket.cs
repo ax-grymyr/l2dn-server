@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
+using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -51,6 +52,10 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
 
                 // Load characters
                 session.Characters = new(session.AccountId);
+
+                // Update character count on AuthServer
+                AccountStatusPacket accountStatusPacket = new(session.AccountId, (byte)session.Characters.Count);
+                AuthServerSession.Send(ref accountStatusPacket);
                 
                 // Disconnect offline traders
                 if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
@@ -71,6 +76,7 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
 
         AuthLoginFailedPacket authLoginFailedPacket = new(0, AuthFailedReason.AccessFailedTryLater);
         connection.Send(ref authLoginFailedPacket, SendPacketOptions.CloseAfterSending);
+
         return ValueTask.CompletedTask;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Collections.Immutable;
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
 using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
@@ -14,10 +15,12 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
 
     // Array with one fake server in case no game servers registered yet.
     // Client needs at least one game server to display that it is offline. 
-    private static readonly GameServerInfo[] _emptyList = [new GameServerInfo() { ServerId = 1 }];
+    private static readonly ImmutableArray<GameServerInfo> _emptyList = [new GameServerInfo { ServerId = 1 }];
     
     private readonly ConcurrentDictionary<int, GameServerInfo> _servers = new();
-    private GameServerInfo[] _serverList = _emptyList; // server list for packets
+    
+    // server list for packets
+    private ImmutableArray<GameServerInfo> _serverList = _emptyList; 
 
     private GameServerManager()
     {
@@ -25,7 +28,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
 
     public static GameServerManager Instance { get; } = new();
 
-    public ReadOnlyMemory<GameServerInfo> Servers => _serverList;
+    public ImmutableArray<GameServerInfo> Servers => _serverList;
     public GameServerInfo? GetServerInfo(byte serverId) => _servers.GetValueOrDefault(serverId);
 
     public RegistrationResult RegisterServer(GameServerInfo serverInfo)
@@ -125,7 +128,7 @@ internal sealed class GameServerManager: ISingleton<GameServerManager>
 
     private void UpdateServerList()
     {
-        _serverList = _servers.Count == 0 ? _emptyList : _servers.Values.OrderBy(x => x.ServerId).ToArray();
+        _serverList = _servers.Count == 0 ? _emptyList : _servers.Values.OrderBy(x => x.ServerId).ToImmutableArray();
     }
 
     private static int ConvertAddress(string address, byte serverId)

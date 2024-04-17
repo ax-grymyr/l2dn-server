@@ -3,6 +3,7 @@ using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.Network;
+using L2Dn.Packets;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.NetworkAuthServer;
@@ -19,13 +20,20 @@ public sealed class AuthServerSession: Session
 
     protected override long GetState() => AuthServerSessionState.Default.ToInt64();
     
-    public void setServerStatus(bool online)
+    public static void setServerStatus(bool online)
     {
-        Connection? connection = Connection;
+        Connection? connection = Instance.Connection;
         if (connection != null)
         {
             int playerCount = World.getInstance().getPlayers().Count;
-            connection.Send(new UpdateStatusPacket(online, (ushort)playerCount));
+            UpdateStatusPacket updateStatusPacket = new(online, (ushort)playerCount);
+            connection.Send(ref updateStatusPacket);
         }
+    }
+
+    public static void Send<TPacket>(ref TPacket packet)
+        where TPacket: struct, IOutgoingPacket
+    {
+        Instance.Connection?.Send(ref packet);
     }
 }

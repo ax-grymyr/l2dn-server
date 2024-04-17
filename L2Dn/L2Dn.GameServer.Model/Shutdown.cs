@@ -119,7 +119,7 @@ public class Shutdown
 			}
 			case ABORT:
 			{
-				AuthServerSession.Instance.setServerStatus(true);
+				AuthServerSession.setServerStatus(true);
 				break;
 			}
 		}
@@ -245,7 +245,7 @@ public class Shutdown
 				// Rehabilitate previous server status if shutdown is aborted.
 				if (_shutdownMode == ABORT)
 				{
-					AuthServerSession.Instance.setServerStatus(true);
+					AuthServerSession.setServerStatus(true);
 					//
 					// if (AuthServerSession.Instance.getServerStatus() == ServerStatus.STATUS_DOWN)
 					// {
@@ -281,7 +281,7 @@ public class Shutdown
 				// Prevent players from logging in.
 				if (_secondsShut <= 60)
 				{
-					AuthServerSession.Instance.setServerStatus(false);
+					AuthServerSession.setServerStatus(false);
 				}
 				
 				_secondsShut--;

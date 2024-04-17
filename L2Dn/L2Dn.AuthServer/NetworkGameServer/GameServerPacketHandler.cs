@@ -17,6 +17,7 @@ internal sealed class GameServerPacketHandler: PacketHandler<GameServerSession>
         RegisterPacket<RegisterGameServerPacket>(IncomingPacketCodes.RegisterGameServer);
         RegisterPacket<PingRequestPacket>(IncomingPacketCodes.PingRequest);
         RegisterPacket<UpdateStatusPacket>(IncomingPacketCodes.UpdateStatus);
+        RegisterPacket<AccountStatusPacket>(IncomingPacketCodes.AccountStatus);
     }
 
     protected override void OnDisconnected(Connection connection, GameServerSession session)

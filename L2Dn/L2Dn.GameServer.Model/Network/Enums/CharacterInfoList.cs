@@ -158,6 +158,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    if (Config.DELETE_DAYS == 0)
 	    {
 		    DeleteCharacter(objectId);
+		    _characters.RemoveAt(index);
 		    return CharacterDeleteFailReason.None;
 	    }
 

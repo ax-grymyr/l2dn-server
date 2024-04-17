@@ -12,6 +12,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(AccountManager));
     private readonly ConcurrentDictionary<string, AccountInfo> _accounts = new();
+    private readonly ConcurrentDictionary<int, AccountInfo> _accountById = new();
     
     private AccountManager()
     {
@@ -21,7 +22,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
 
     public async Task<AccountInfo?> LoginAsync(string login, string password, string? clientAddress)
     {
-        await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
+        await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync().ConfigureAwait(false);
 
         if (_accounts.TryGetValue(login, out AccountInfo? accountInfo))
         {
@@ -29,26 +30,36 @@ public sealed class AccountManager: ISingleton<AccountManager>
                 return null;
 
             // update last login time
-            await UpdateLastLoginAsync(ctx, accountInfo.AccountId, clientAddress);
+            await UpdateLastLoginAsync(ctx, accountInfo.AccountId, clientAddress).ConfigureAwait(false);
             return accountInfo;
         }
 
         byte[] passwordHash = SHA256.HashData(Encoding.UTF8.GetBytes(password));
-        Account? account = await ctx.Accounts.SingleOrDefaultAsync(a => a.Login == login);
+        Account? account = await ctx.Accounts.SingleOrDefaultAsync(a => a.Login == login).ConfigureAwait(false);
         if (account is not null)
         {
             if (!account.PasswordHash.AsSpan().SequenceEqual(passwordHash))
                 return null; // Password doesn't match
 
+            int accountId = account.Id;
             accountInfo = new AccountInfo
             {
-                AccountId = account.Id,
+                AccountId = accountId,
                 Password = password,
-                Login = login
+                Login = login,
             };
 
-            _accounts.TryAdd(login, accountInfo);
-            await UpdateLastLoginAsync(ctx, accountInfo.AccountId, clientAddress);
+            var accountChars = await ctx.AccountCharacterData
+                .Where(a => a.AccountId == accountId)
+                .Select(a => new { a.ServerId, a.CharacterCount })
+                .ToListAsync().ConfigureAwait(false);
+
+            foreach (var tuple in accountChars)
+                accountInfo.CharacterCount[tuple.ServerId] = tuple.CharacterCount;
+
+            accountInfo = _accounts.GetOrAdd(login, accountInfo);
+            _accountById.TryAdd(accountId, accountInfo);
+            await UpdateLastLoginAsync(ctx, accountInfo.AccountId, clientAddress).ConfigureAwait(false);
             return accountInfo; // Login ok
         }
 
@@ -69,7 +80,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
 
         try
         {
-            await ctx.SaveChangesAsync();
+            await ctx.SaveChangesAsync().ConfigureAwait(false);
         }
         catch (Exception exception)
         {
@@ -85,6 +96,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
         };
 
         _accounts.TryAdd(login, accountInfo);
+        _accountById.TryAdd(account.Id, accountInfo);
         return accountInfo;
     }
 
@@ -93,13 +105,43 @@ public sealed class AccountManager: ISingleton<AccountManager>
         await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
         await ctx.Accounts.Where(a => a.Id == accountId)
             .ExecuteUpdateAsync(b =>
-                b.SetProperty(a => a.LastSelectedServerId, serverId));
+                b.SetProperty(a => a.LastSelectedServerId, serverId)).ConfigureAwait(false);
     }
 
     private async Task UpdateLastLoginAsync(AuthServerDbContext ctx, int accountId, string? ipAddress)
     {
         await ctx.Accounts.Where(a => a.Id == accountId)
             .ExecuteUpdateAsync(b =>
-                b.SetProperty(a => a.LastLogin, DateTime.UtcNow).SetProperty(a => a.LastIpAddress, ipAddress));
+                b.SetProperty(a => a.LastLogin, DateTime.UtcNow).SetProperty(a => a.LastIpAddress, ipAddress))
+            .ConfigureAwait(false);
+    }
+
+    public async Task UpdateCharacterCountAsync(int accountId, byte serverId, byte characterCount)
+    {
+        // Update AccountInfo in memory
+        if (_accountById.TryGetValue(accountId, out AccountInfo? accountInfo))
+            accountInfo.CharacterCount[serverId] = characterCount;
+
+        await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
+        AccountCharacterData? record = await ctx.AccountCharacterData.SingleOrDefaultAsync(r
+            => r.AccountId == accountId && r.ServerId == serverId).ConfigureAwait(false);
+
+        if (record is null)
+        {
+            if (characterCount == 0)
+                return;
+            
+            record = new AccountCharacterData
+            {
+                AccountId = accountId,
+                ServerId = serverId,
+            };
+        }
+
+        if (record.CharacterCount != characterCount)
+        {
+            record.CharacterCount = characterCount;
+            await ctx.SaveChangesAsync().ConfigureAwait(false);
+        }
     }
 }

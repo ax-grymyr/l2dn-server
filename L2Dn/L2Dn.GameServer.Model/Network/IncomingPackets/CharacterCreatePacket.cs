@@ -13,6 +13,8 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.NetworkAuthServer;
+using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Network;
@@ -164,6 +166,10 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		session.Characters.AddNewChar(newChar);
 		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
 		connection.Send(ref characterListPacket);
+
+		// Update character count on AuthServer
+		AccountStatusPacket accountStatusPacket = new(session.AccountId, (byte)session.Characters.Count);
+		AuthServerSession.Send(ref accountStatusPacket);
 		
 		return ValueTask.CompletedTask;
 	}
