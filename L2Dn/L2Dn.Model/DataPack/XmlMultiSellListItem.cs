@@ -4,9 +4,9 @@ namespace L2Dn.Model.DataPack;
 
 public class XmlMultiSellListItem
 {
-    [XmlElement(ElementName = "ingredient")]
+    [XmlElement("ingredient")]
     public List<XmlMultiSellListIngredient> Ingredients { get; set; } = [];
     
-    [XmlElement(ElementName = "production", Type = typeof(XmlMultiSellListProduct))]
+    [XmlElement("production", Type = typeof(XmlMultiSellListProduct))]
     public List<XmlMultiSellListProduct> Products { get; set; } = [];
 }

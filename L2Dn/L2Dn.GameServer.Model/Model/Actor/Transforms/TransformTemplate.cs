@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Holders;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
@@ -6,7 +7,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Transforms;
 
-public class TransformTemplate
+public sealed class TransformTemplate
 {
 	private readonly float? _collisionRadius;
 	private readonly float? _collisionHeight;
@@ -16,7 +17,7 @@ public class TransformTemplate
 	private List<AdditionalItemHolder> _additionalItems;
 	private Map<int, int> _baseDefense;
 	private Map<Stat, double> _baseStats;
-	private int[] _actions;
+	private ImmutableArray<int> _actions = ImmutableArray<int>.Empty;
 	private readonly Map<int, TransformLevelData> _data = new();
 	
 	public TransformTemplate(StatSet set)
@@ -253,19 +254,19 @@ public class TransformTemplate
 		return _additionalItems != null ? _additionalItems : new();
 	}
 	
-	public void setBasicActionList(int[] actions)
+	public void setBasicActionList(ImmutableArray<int> actions)
 	{
 		_actions = actions;
 	}
 	
-	public int[] getBasicActionList()
+	public ImmutableArray<int> getBasicActionList()
 	{
 		return _actions;
 	}
 	
 	public bool hasBasicActionList()
 	{
-		return _actions != null;
+		return !_actions.IsDefaultOrEmpty;
 	}
 	
 	public void addLevelData(TransformLevelData data)

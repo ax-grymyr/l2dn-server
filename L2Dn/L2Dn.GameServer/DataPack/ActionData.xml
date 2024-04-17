@@ -22,7 +22,7 @@
 	<action id="26" handler="SocialAction" option="7" /> <!-- Bow -->
 	<action id="27" handler="None" /> <!-- Special skill -->
 	<action id="28" handler="PrivateStore" option="3" /> <!-- Private Store - Buy -->
-	<action id="32" handler="ServitorSkillUse" option="4230" /> <!-- Switch Mode -->
+	<action id="32" handler="ServitorSkillUse" option="0" /> <!-- Switch Mode TODO: find skill id or change handler -->
 	<action id="34" handler="SocialAction" option="12" /> <!-- Dance -->
 	<action id="36" handler="ServitorSkillUse" option="4259" /> <!-- Toxic Smoke -->
 	<action id="37" handler="PrivateStore" option="5" /> <!-- Dwarven Workshop -->

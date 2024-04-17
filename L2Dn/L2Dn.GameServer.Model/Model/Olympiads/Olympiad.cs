@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using L2Dn.Configuration;
@@ -32,7 +33,7 @@ public class Olympiad
 	public const String OLYMPIAD_HTML_PATH = "html/olympiad/";
 	public const String UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
 	
-	private static readonly Set<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);
+	private static readonly FrozenSet<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);
 	
 	private static readonly int COMP_START_HOUR = Config.ALT_OLY_START_TIME; // 6PM
 	private static readonly int COMP_START_MIN = Config.ALT_OLY_MIN; // 00 mins

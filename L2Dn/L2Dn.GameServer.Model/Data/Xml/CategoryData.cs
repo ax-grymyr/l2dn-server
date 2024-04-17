@@ -1,9 +1,7 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -14,37 +12,36 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class CategoryData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CategoryData));
-	
-	private readonly Map<CategoryType, Set<int>> _categories = new();
-	
-	protected CategoryData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(CategoryData));
+
+	private FrozenDictionary<CategoryType, FrozenSet<int>> _categories =
+		FrozenDictionary<CategoryType, FrozenSet<int>>.Empty;
+
+	private CategoryData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		_categories.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CategoryData.xml");
-		document.Elements("list").Elements("category").ForEach(loadElement);
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _categories.size() + " categories.");
+		XmlCategoryData document = LoadXmlDocument<XmlCategoryData>(DataFileLocation.Data, "CategoryData.xml");
+		_categories =
+			(from category in document.Categories
+				let categoryType = ParseCategoryType(category.Name)
+				where categoryType != null
+				select (CategoryType: categoryType.Value, Set: category.Ids.ToFrozenSet()))
+			.ToFrozenDictionary(x => x.CategoryType, x => x.Set);
+
+		_logger.Info(GetType().Name + ": Loaded " + _categories.Count + " categories.");
 	}
 
-	private void loadElement(XElement element)
+	private static CategoryType? ParseCategoryType(string categoryTypeName)
 	{
-		CategoryType categoryType = element.Attribute("name").GetEnum<CategoryType>();
-		if (categoryType == null)
-		{
-			LOGGER.Warn(GetType().Name + ": Can't find category by name: " + element.Attribute("name")?.Value);
-			return;
-		}
+		if (Enum.TryParse(categoryTypeName, true, out CategoryType categoryType))
+			return categoryType;
 
-		Set<int> ids = new();
-		element.Elements("id").Select(x => (int)x).ForEach(x => ids.add(x));
-		_categories.put(categoryType, ids);
+		_logger.Warn(typeof(CategoryData) + ": Can't find category by name: " + categoryTypeName);
+		return null;
 	}
 
 	/**
@@ -55,12 +52,13 @@ public class CategoryData: DataReaderBase
 	 */
 	public bool isInCategory(CategoryType type, int id)
 	{
-		Set<int> category = getCategoryByType(type);
+		FrozenSet<int>? category = getCategoryByType(type);
 		if (category == null)
 		{
-			LOGGER.Warn(GetType().Name + ": Can't find category type: " + type);
+			_logger.Warn(GetType().Name + ": Can't find category type: " + type);
 			return false;
 		}
+
 		return category.Contains(id);
 	}
 
@@ -77,9 +75,9 @@ public class CategoryData: DataReaderBase
 	 * @param type The category type
 	 * @return A {@code Set} containing all the IDs in category if category is found, {@code null} if category was not found
 	 */
-	public Set<int> getCategoryByType(CategoryType type)
+	public FrozenSet<int>? getCategoryByType(CategoryType type)
 	{
-		return _categories.get(type);
+		return _categories.GetValueOrDefault(type);
 	}
 	
 	public static CategoryData getInstance()

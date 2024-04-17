@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
@@ -423,8 +424,8 @@ public class AutoUseTaskManager
 						if (player.isTransformed())
 						{
 							TransformTemplate transformTemplate = player.getTransformation()?.getTemplate(player);
-							int[] allowedActions = transformTemplate.getBasicActionList();
-							if ((allowedActions == null) || (Array.BinarySearch(allowedActions, actionId) < 0))
+							ImmutableArray<int> allowedActions = transformTemplate.getBasicActionList();
+							if ((allowedActions.IsDefaultOrEmpty) || (allowedActions.BinarySearch(actionId) < 0))
 							{
 								continue;
 							}

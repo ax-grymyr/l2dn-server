@@ -1,49 +1,48 @@
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
  * @author Mobius
  */
-public class AgathionSkillHolder
+public sealed class AgathionSkillHolder
 {
-	private readonly Map<int, List<Skill>> _mainSkill;
-	private readonly Map<int, List<Skill>> _subSkill;
+	private readonly FrozenDictionary<int, ImmutableArray<Skill>> _mainSkill;
+	private readonly FrozenDictionary<int, ImmutableArray<Skill>> _subSkill;
 
-	public AgathionSkillHolder(Map<int, List<Skill>> mainSkill, Map<int, List<Skill>> subSkill)
+	public AgathionSkillHolder(int agathionItemId, FrozenDictionary<int, ImmutableArray<Skill>> mainSkill,
+		FrozenDictionary<int, ImmutableArray<Skill>> subSkill)
 	{
+		ItemId = agathionItemId;
 		_mainSkill = mainSkill;
 		_subSkill = subSkill;
 	}
 
-	public Map<int, List<Skill>> getMainSkills()
+	public int ItemId { get; }
+
+	public FrozenDictionary<int, ImmutableArray<Skill>> getMainSkills()
 	{
 		return _mainSkill;
 	}
 
-	public Map<int, List<Skill>> getSubSkills()
+	public FrozenDictionary<int, ImmutableArray<Skill>> getSubSkills()
 	{
 		return _subSkill;
 	}
 
-	public List<Skill> getMainSkills(int enchantLevel)
+	public ImmutableArray<Skill> getMainSkills(int enchantLevel)
 	{
-		if (!_mainSkill.containsKey(enchantLevel))
-		{
-			return new();
-		}
-
-		return _mainSkill.get(enchantLevel);
+		return _mainSkill.TryGetValue(enchantLevel, out ImmutableArray<Skill> skills)
+			? skills
+			: ImmutableArray<Skill>.Empty;
 	}
 
-	public List<Skill> getSubSkills(int enchantLevel)
+	public ImmutableArray<Skill> getSubSkills(int enchantLevel)
 	{
-		if (!_subSkill.containsKey(enchantLevel))
-		{
-			return new();
-		}
-
-		return _subSkill.get(enchantLevel);
+		return _subSkill.TryGetValue(enchantLevel, out ImmutableArray<Skill> skills)
+			? skills
+			: ImmutableArray<Skill>.Empty;
 	}
 }

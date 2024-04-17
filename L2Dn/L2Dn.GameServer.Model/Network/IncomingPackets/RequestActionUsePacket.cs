@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -58,8 +59,8 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 		if (player.isTransformed())
 		{
 			TransformTemplate transformTemplate = player.getTransformation().getTemplate(player);
-			int[] allowedActions = transformTemplate.getBasicActionList();
-			if (allowedActions == null || Array.BinarySearch(allowedActions, _actionId) < 0)
+			ImmutableArray<int> allowedActions = transformTemplate.getBasicActionList();
+			if (allowedActions.IsDefaultOrEmpty || allowedActions.BinarySearch(_actionId) < 0)
 			{
 				connection.Send(ActionFailedPacket.STATIC_PACKET);
 				PacketLogger.Instance.Warn(player + " used action which he does not have! Id = " + _actionId +

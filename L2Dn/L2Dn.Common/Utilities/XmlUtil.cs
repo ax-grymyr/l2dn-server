@@ -16,12 +16,9 @@ public static class XmlUtil
 
         serializer.UnknownElement += (_, args)
             => _logger.Warn($"Unknown element '{args.Element.Name}' in XML file '{filePath}'.");
-        
+
         serializer.UnknownAttribute += (_, args) =>
-        {
-            if (args.Attr.Name != "xsi:noNamespaceSchemaLocation")
-                _logger.Warn($"Unknown attribute '{args.Attr.Name}' in XML file '{filePath}'.");
-        };
+            _logger.Warn($"Unknown attribute '{args.Attr.Name}' in XML file '{filePath}'.");
         
         using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         return (T?)serializer.Deserialize(stream) ??

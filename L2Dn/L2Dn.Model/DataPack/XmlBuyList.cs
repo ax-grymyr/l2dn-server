@@ -2,13 +2,19 @@
 
 namespace L2Dn.Model.DataPack;
 
-[XmlRoot(ElementName="list")]
-public class XmlBuyList: XmlBaseTaxHolder
+[XmlRoot("list")]
+public class XmlBuyList: XmlBase
 {
-    [XmlArray(ElementName = "npcs")]
-    [XmlArrayItem(ElementName = "npc")] 
+    [XmlAttribute("baseTax")]
+    public int BaseTax { get; set; }
+    
+    [XmlIgnore]
+    public bool BaseTaxSpecified { get; set; }
+
+    [XmlArray("npcs")]
+    [XmlArrayItem("npc")] 
     public List<int> Npcs { get; set; } = [];
 
-    [XmlElement(ElementName = "item")]
+    [XmlElement("item")]
     public List<XmlBuyListItem> Items { get; set; } = [];
 }

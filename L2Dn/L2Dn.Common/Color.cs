@@ -17,4 +17,6 @@ public readonly record struct Color(int Value): IParsable<Color>
         result = new Color(value);
         return r;
     }
+
+    public static bool TryParse(string? s, out Color result) => TryParse(s, CultureInfo.InvariantCulture, out result);
 }

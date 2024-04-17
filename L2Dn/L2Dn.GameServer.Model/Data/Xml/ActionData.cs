@@ -1,8 +1,7 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -12,50 +11,43 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class ActionData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ActionData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ActionData));
 	
-	private readonly Map<int, ActionDataHolder> _actionData = new();
-	private readonly Map<int, int> _actionSkillsData = new(); // skillId, actionId
+	private FrozenDictionary<int, ActionDataHolder> _actionData = FrozenDictionary<int, ActionDataHolder>.Empty;
+	private FrozenDictionary<int, int> _actionSkillsData = FrozenDictionary<int, int>.Empty; // skillId, actionId
 	
-	protected ActionData()
+	private ActionData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		_actionData.clear();
-		_actionSkillsData.clear();
+		XmlActionData document = LoadXmlDocument<XmlActionData>(DataFileLocation.Data, "ActionData.xml");
 
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ActionData.xml");
-		document.Elements("list").Elements("action").ForEach(node =>
+		_actionData = document.Actions
+			.Select(action => new ActionDataHolder(action.Id, action.Handler, action.Option))
+			.ToFrozenDictionary(action => action.getId());
+
+		Dictionary<int, int> actionSkillsData = new Dictionary<int, int>();
+		foreach (XmlAction action in document.Actions)
 		{
-			int id = node.GetAttributeValueAsInt32("id");
-			string handler = node.Attribute("handler").GetString("None");
-			int optionId = node.Attribute("optionId").GetInt32(0);
-			
-			ActionDataHolder holder = new ActionDataHolder(id, handler, optionId);
-			_actionData.put(holder.getId(), holder);
-		});
-		
-		foreach (ActionDataHolder holder in _actionData.values())
-		{
-			if (holder.getHandler().equals("PetSkillUse") || holder.getHandler().equals("ServitorSkillUse"))
-			{
-				_actionSkillsData.put(holder.getOptionId(), holder.getId());
-			}
+			if (action.Handler is "PetSkillUse" or "ServitorSkillUse" && action.Option > 0)
+				actionSkillsData[action.Option] = action.Id;
 		}
+
+		_actionSkillsData = actionSkillsData.ToFrozenDictionary();
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _actionData.size() + " player actions.");
+		_logger.Info(GetType().Name + ": Loaded " + _actionData.Count + " player actions.");
 	}
 	
 	/**
 	 * @param id
 	 * @return the ActionDataHolder for specified id
 	 */
-	public ActionDataHolder getActionData(int id)
+	public ActionDataHolder? getActionData(int id)
 	{
-		return _actionData.get(id);
+		return _actionData.GetValueOrDefault(id);
 	}
 	
 	/**
@@ -64,12 +56,12 @@ public class ActionData: DataReaderBase
 	 */
 	public int getSkillActionId(int skillId)
 	{
-		return _actionSkillsData.getOrDefault(skillId, -1);
+		return _actionSkillsData.GetValueOrDefault(skillId, -1);
 	}
 	
-	public int[] getActionIdList()
+	public ImmutableArray<int> getActionIdList()
 	{
-		return _actionData.Keys.ToArray();
+		return _actionData.Keys;
 	}
 	
 	/**
@@ -83,6 +75,6 @@ public class ActionData: DataReaderBase
 	
 	private static class SingletonHolder
 	{
-		public static readonly ActionData INSTANCE = new ActionData();
+		public static readonly ActionData INSTANCE = new();
 	}
 }

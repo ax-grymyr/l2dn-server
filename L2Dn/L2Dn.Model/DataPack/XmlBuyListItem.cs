@@ -2,23 +2,29 @@
 
 namespace L2Dn.Model.DataPack;
 
-public class XmlBuyListItem: XmlBaseTaxHolder
+public class XmlBuyListItem
 {
-    [XmlAttribute(AttributeName = "id")]
+    [XmlAttribute("id")]
     public int Id { get; set; }
 
-    [XmlAttribute(AttributeName = "price")]
+    [XmlAttribute("price")]
     public long Price { get; set; }
 
-    [XmlAttribute(AttributeName = "count")]
+    [XmlAttribute("count")]
     public long Count { get; set; }
 
     [XmlIgnore]
     public bool CountSpecified { get; set; }
 
-    [XmlAttribute(AttributeName = "restock_delay")]
+    [XmlAttribute("restock_delay")]
     public int RestockDelay { get; set; }
 
     [XmlIgnore]
     public bool RestockDelaySpecified { get; set; }
+
+    [XmlAttribute("baseTax")]
+    public int BaseTax { get; set; }
+    
+    [XmlIgnore]
+    public bool BaseTaxSpecified { get; set; }
 }

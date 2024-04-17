@@ -4,12 +4,12 @@ namespace L2Dn.Model.DataPack;
 
 public class XmlMultiSellListItemEntry
 {
-    [XmlAttribute(AttributeName="id")] 
+    [XmlAttribute("id")] 
     public int ItemId { get; set; } 
 
-    [XmlAttribute(AttributeName="count")] 
+    [XmlAttribute("count")] 
     public long Count { get; set; }
     
-    [XmlAttribute(AttributeName="enchantmentLevel")] 
+    [XmlAttribute("enchantmentLevel")] 
     public byte EnchantLevel { get; set; }
 }

@@ -1,9 +1,8 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -13,97 +12,81 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class AgathionData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AgathionData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(AgathionData));
+
+	private static FrozenDictionary<int, AgathionSkillHolder> _agathionSkills =
+		FrozenDictionary<int, AgathionSkillHolder>.Empty;
 	
-	private static readonly Map<int, AgathionSkillHolder> AGATHION_SKILLS = new();
-	
-	protected AgathionData()
+	private AgathionData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		AGATHION_SKILLS.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "AgathionData.xml");
-		document.Elements("list").Elements("agathion").ForEach(loadElement);
-		LOGGER.Info(GetType().Name + ": Loaded " + AGATHION_SKILLS.size() + " agathion data.");
+		XmlAgathionData document = LoadXmlDocument<XmlAgathionData>(DataFileLocation.Data, "AgathionData.xml");
+		_agathionSkills = document.Agathions
+			.GroupBy(agathion => agathion.Id)
+			.Where(group =>
+			{
+				int id = group.Key;
+				if (ItemData.getInstance().getTemplate(id) != null)
+					return true;
+
+				_logger.Info(GetType().Name + ": Could not find agathion with id " + id + ".");
+				return false;
+			})
+			.Select(CreateHolder)
+			.ToFrozenDictionary(holder => holder.ItemId);
+
+		_logger.Info(GetType().Name + ": Loaded " + _agathionSkills.Count + " agathion data.");
 	}
 
-	private void loadElement(XElement element)
+	private static AgathionSkillHolder CreateHolder(IGrouping<int, XmlAgathion> group)
 	{
-		int id = element.GetAttributeValueAsInt32("id");
-		if (ItemData.getInstance().getTemplate(id) == null)
+		FrozenDictionary<int, ImmutableArray<Skill>> mainSkills = group
+			.GroupBy(agathion => agathion.Enchant)
+			.Select(g => (Enchant: g.Key,
+				Skills: g.SelectMany(agathion => ParseSkillList(agathion.MainSkill)).ToImmutableArray()))
+			.ToFrozenDictionary(tuple => tuple.Enchant, tuple => tuple.Skills);
+
+		FrozenDictionary<int, ImmutableArray<Skill>> subSkills = group
+			.GroupBy(agathion => agathion.Enchant)
+			.Select(g => (Enchant: g.Key,
+				Skills: g.SelectMany(agathion => ParseSkillList(agathion.SubSkill)).ToImmutableArray()))
+			.ToFrozenDictionary(tuple => tuple.Enchant, tuple => tuple.Skills);
+
+		return new AgathionSkillHolder(group.Key, mainSkills, subSkills);
+	}
+
+	private static List<Skill> ParseSkillList(string list)
+	{
+		List<Skill> skills = [];
+		if (string.IsNullOrEmpty(list))
+			return skills;
+
+		foreach (string ids in list.Split(";"))
 		{
-			LOGGER.Info(GetType().Name + ": Could not find agathion with id " + id + ".");
-			return;
-		}
-
-		int enchant = element.Attribute("enchant").GetInt32(0);
-
-		Map<int, List<Skill>> mainSkills =
-			AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getMainSkills() : new();
-		
-		List<Skill> mainSkillList = new();
-		String main = element.Attribute("mainSkill").GetString(string.Empty);
-		foreach (String ids in main.Split(";"))
-		{
-			if (ids.isEmpty())
-			{
-				continue;
-			}
-
-			String[] split = ids.Split(",");
+			string[] split = ids.Split(",");
 			int skillId = int.Parse(split[0]);
 			int level = int.Parse(split[1]);
 
 			Skill skill = SkillData.getInstance().getSkill(skillId, level);
 			if (skill == null)
 			{
-				LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
-				return;
-			}
-
-			mainSkillList.add(skill);
-		}
-
-		mainSkills.put(enchant, mainSkillList);
-
-		Map<int, List<Skill>> subSkills =
-			AGATHION_SKILLS.containsKey(id) ? AGATHION_SKILLS.get(id).getSubSkills() : new();
-		
-		List<Skill> subSkillList = new();
-		String sub = element.Attribute("subSkill").GetString(string.Empty);
-		foreach (String ids in sub.Split(";"))
-		{
-			if (ids.isEmpty())
-			{
+				_logger.Warn(nameof(AgathionData) + ": Could not find agathion skill id " + skillId + ".");
 				continue;
 			}
 
-			String[] split = ids.Split(",");
-			int skillId = int.Parse(split[0]);
-			int level = int.Parse(split[1]);
-
-			Skill skill = SkillData.getInstance().getSkill(skillId, level);
-			if (skill == null)
-			{
-				LOGGER.Info(GetType().Name + ": Could not find agathion skill id " + skillId + ".");
-				return;
-			}
-
-			subSkillList.add(skill);
+			skills.Add(skill);
 		}
 
-		subSkills.put(enchant, subSkillList);
-
-		AGATHION_SKILLS.put(id, new AgathionSkillHolder(mainSkills, subSkills));
+		return skills;
 	}
-
-	public AgathionSkillHolder getSkills(int agathionId)
+	
+	public AgathionSkillHolder? getSkills(int agathionId)
 	{
-		return AGATHION_SKILLS.get(agathionId);
+		return _agathionSkills.GetValueOrDefault(agathionId);
 	}
 	
 	public static AgathionData getInstance()
@@ -113,6 +96,6 @@ public class AgathionData: DataReaderBase
 	
 	private static class SingletonHolder
 	{
-		public static readonly AgathionData INSTANCE = new AgathionData();
+		public static readonly AgathionData INSTANCE = new();
 	}
 }

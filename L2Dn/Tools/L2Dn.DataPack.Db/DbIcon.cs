@@ -10,6 +10,7 @@ public class DbIcon
     public int IconId { get; set; }
 
     [MaxLength(400)]
+    [Collation(DataPackDbContext.CaseInsensitiveCollation)]
     public string Name { get; set; } = string.Empty;
  
     public IconType Type { get; set; }

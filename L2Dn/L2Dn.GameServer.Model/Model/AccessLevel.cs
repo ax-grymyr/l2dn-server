@@ -1,56 +1,59 @@
-﻿using System.Globalization;
-using System.Xml.Linq;
-using L2Dn.GameServer.Data.Xml;
-using L2Dn.Utilities;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.Model.DataPack;
 
 namespace L2Dn.GameServer.Model;
 
 public class AccessLevel
 {
 	/** The access level. */
-	private int _accessLevel = 0;
+	private readonly int _accessLevel;
 	/** The access level name. */
-	private String _name = null;
+	private readonly string _name;
 	/** Child access levels. */
-	AccessLevel _childsAccessLevel = null;
+	private AccessLevel? _childAccessLevel;
 	/** Child access levels. */
-	private int _child = 0;
+	private readonly int _child;
 	/** The name color for the access level. */
-	private Color _nameColor;
+	private readonly Color _nameColor;
 	/** The title color for the access level. */
-	private Color _titleColor;
+	private readonly Color _titleColor;
 	/** Flag to determine if the access level has GM access. */
-	private bool _isGm = false;
+	private readonly bool _isGm;
 	/** Flag for peace zone attack */
-	private bool _allowPeaceAttack = false;
+	private readonly bool _allowPeaceAttack;
 	/** Flag for fixed res */
-	private bool _allowFixedRes = false;
+	private readonly bool _allowFixedRes;
 	/** Flag for transactions */
-	private bool _allowTransaction = false;
+	private readonly bool _allowTransaction;
 	/** Flag for AltG commands */
-	private bool _allowAltG = false;
+	private readonly bool _allowAltG;
 	/** Flag to give damage */
-	private bool _giveDamage = false;
+	private readonly bool _giveDamage;
 	/** Flag to take aggro */
-	private bool _takeAggro = false;
+	private readonly bool _takeAggro;
 	/** Flag to gain exp in party */
-	private bool _gainExp = false;
+	private readonly bool _gainExp;
 	
-	public AccessLevel(XElement element)
+	public AccessLevel(XmlAccessLevel level)
 	{
-		_accessLevel = element.GetAttributeValueAsInt32("level");
-		_name = element.GetAttributeValueAsString("name");
-		_nameColor = element.Attribute("nameColor").GetColor(Colors.White);
-		_titleColor = element.Attribute("titleColor").GetColor(Colors.White);
-		_child = element.Attribute("childAccess").GetInt32(0);
-		_isGm = element.Attribute("isGM").GetBoolean(false);
-		_allowPeaceAttack = element.Attribute("allowPeaceAttack").GetBoolean(false);
-		_allowFixedRes = element.Attribute("allowFixedRes").GetBoolean(false);
-		_allowTransaction = element.Attribute("allowTransaction").GetBoolean(true);
-		_allowAltG = element.Attribute("allowAltg").GetBoolean(false);
-		_giveDamage = element.Attribute("giveDamage").GetBoolean(true);
-		_takeAggro = element.Attribute("takeAggro").GetBoolean(true);
-		_gainExp = element.Attribute("gainExp").GetBoolean(true);
+		_accessLevel = level.Level;
+		_name = level.Name;
+		
+		if (!Color.TryParse(level.NameColor, out _nameColor))
+			_nameColor = Colors.White;
+		
+		if (!Color.TryParse(level.TitleColor, out _titleColor))
+			_titleColor = Colors.White;
+		
+		_child = level.ChildAccess;
+		_isGm = level.IsGm;
+		_allowPeaceAttack = level.AllowPeaceAttack;
+		_allowFixedRes = level.AllowFixedRes;
+		_allowTransaction = level.AllowTransaction;
+		_allowAltG = level.AllowAltG;
+		_giveDamage = level.GiveDamage;
+		_takeAggro = level.TakeAggro;
+		_gainExp = level.GainExp;
 	}
 	
 	public AccessLevel()
@@ -83,7 +86,7 @@ public class AccessLevel
 	 * Returns the access level name
 	 * @return String: access level name
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -177,7 +180,7 @@ public class AccessLevel
 	{
 		return _gainExp;
 	}
-	
+
 	/**
 	 * Returns if the access level contains allowedAccess as child
 	 * @param accessLevel as AccessLevel
@@ -185,15 +188,17 @@ public class AccessLevel
 	 */
 	public bool hasChildAccess(AccessLevel accessLevel)
 	{
-		if (_childsAccessLevel == null)
+		if (_childAccessLevel == null)
 		{
 			if (_child <= 0)
 			{
 				return false;
 			}
-			
-			_childsAccessLevel = AdminData.getInstance().getAccessLevel(_child);
+
+			_childAccessLevel = AdminData.getInstance().getAccessLevel(_child);
 		}
-		return (_childsAccessLevel != null) && ((_childsAccessLevel.getLevel() == accessLevel.getLevel()) || _childsAccessLevel.hasChildAccess(accessLevel));
+
+		return _childAccessLevel != null && (_childAccessLevel.getLevel() == accessLevel.getLevel() ||
+		                                     _childAccessLevel.hasChildAccess(accessLevel));
 	}
 }

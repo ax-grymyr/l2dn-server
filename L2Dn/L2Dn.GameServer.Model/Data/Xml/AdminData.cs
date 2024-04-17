@@ -1,11 +1,10 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
 using L2Dn.Packets;
 using NLog;
 
@@ -17,47 +16,36 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class AdminData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminData));
 	
-	private readonly Map<int, AccessLevel> _accessLevels = new();
-	private readonly Map<String, AdminCommandAccessRight> _adminCommandAccessRights = new();
-	private readonly Map<Player, Boolean> _gmList = new();
-	private int _highestLevel = 0;
+	private FrozenDictionary<int, AccessLevel> _accessLevels = FrozenDictionary<int, AccessLevel>.Empty;
+
+	private FrozenDictionary<string, AdminCommandAccessRight> _adminCommandAccessRights =
+		FrozenDictionary<string, AdminCommandAccessRight>.Empty;
 	
-	protected AdminData()
+	private readonly Map<Player, bool> _gmList = new();
+	private int _highestLevel;
+	
+	private AdminData()
 	{
 		load();
 	}
 
-	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
-		// TODO: load data into temp collection and then replace collections at once
-		_accessLevels.clear();
-		_adminCommandAccessRights.clear();
+		XmlAccessLevels document = LoadXmlDocument<XmlAccessLevels>(DataFileLocation.Config, "AccessLevels.xml");
+		_accessLevels = document.AccessLevels.Select(level => new AccessLevel(level))
+			.ToFrozenDictionary(level => level.getLevel());
 
-		XDocument document = LoadXmlDocument(DataFileLocation.Config, "AccessLevels.xml");
-		document.Elements("list").Elements("access").ForEach(node =>
-		{
-			AccessLevel level = new AccessLevel(node);
-			if (level.getLevel() > _highestLevel)
-			{
-				_highestLevel = level.getLevel();
-			}
+		_highestLevel = _accessLevels.Count == 0 ? 0 : _accessLevels.Keys.Max();
 
-			_accessLevels.put(level.getLevel(), level);
-		});
+		_logger.Info(GetType().Name + ": Loaded " + _accessLevels.Count + " access levels.");
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _accessLevels.size() + " access levels.");
+		XmlAdminCommands document2 = LoadXmlDocument<XmlAdminCommands>(DataFileLocation.Config, "AdminCommands.xml");
+		_adminCommandAccessRights = document2.Commands.Select(command => new AdminCommandAccessRight(command))
+			.ToFrozenDictionary(command => command.getAdminCommand());
 
-		document = LoadXmlDocument(DataFileLocation.Config, "AdminCommands.xml");
-		document.Elements("list").Elements("admin").ForEach(node =>
-		{
-			AdminCommandAccessRight command = new AdminCommandAccessRight(node);
-			_adminCommandAccessRights.put(command.getAdminCommand(), command);
-		});
-
-		LOGGER.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.size() + " access commands.");
+		_logger.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.Count + " access commands.");
 	}
 
 	/**
@@ -65,13 +53,14 @@ public class AdminData: DataReaderBase
 	 * @param accessLevelNum as int
 	 * @return the access level instance by char access level
 	 */
-	public AccessLevel getAccessLevel(int accessLevelNum)
+	public AccessLevel? getAccessLevel(int accessLevelNum)
 	{
 		if (accessLevelNum < 0)
 		{
-			return _accessLevels.get(-1);
+			return _accessLevels.GetValueOrDefault(-1);
 		}
-		return _accessLevels.get(accessLevelNum);
+		
+		return _accessLevels.GetValueOrDefault(accessLevelNum);
 	}
 	
 	/**
@@ -80,7 +69,7 @@ public class AdminData: DataReaderBase
 	 */
 	public AccessLevel getMasterAccessLevel()
 	{
-		return _accessLevels.get(_highestLevel);
+		return _accessLevels.GetValueOrDefault(_highestLevel);
 	}
 	
 	/**
@@ -90,7 +79,7 @@ public class AdminData: DataReaderBase
 	 */
 	public bool hasAccessLevel(int id)
 	{
-		return _accessLevels.containsKey(id);
+		return _accessLevels.ContainsKey(id);
 	}
 	
 	/**
@@ -99,24 +88,27 @@ public class AdminData: DataReaderBase
 	 * @param accessLevel the access level
 	 * @return {@code true}, if successful, {@code false} otherwise
 	 */
-	public bool hasAccess(String adminCommand, AccessLevel accessLevel)
+	public bool hasAccess(string adminCommand, AccessLevel accessLevel)
 	{
-		AdminCommandAccessRight acar = _adminCommandAccessRights.get(adminCommand);
+		AdminCommandAccessRight? acar = _adminCommandAccessRights.GetValueOrDefault(adminCommand);
 		if (acar == null)
 		{
 			// Trying to avoid the spam for next time when the GM would try to use the same command
-			if ((accessLevel.getLevel() > 0) && (accessLevel.getLevel() == _highestLevel))
+			if (accessLevel.getLevel() > 0 && accessLevel.getLevel() == _highestLevel)
 			{
 				acar = new AdminCommandAccessRight(adminCommand, true, accessLevel.getLevel());
-				_adminCommandAccessRights.put(adminCommand, acar);
-				LOGGER.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " auto setting accesslevel: " + accessLevel.getLevel() + " !");
+				Dictionary<string, AdminCommandAccessRight> dict = _adminCommandAccessRights.ToDictionary();
+				dict[adminCommand] = acar;
+				_adminCommandAccessRights = dict.ToFrozenDictionary();
+				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " auto setting accesslevel: " + accessLevel.getLevel() + " !");
 			}
 			else
 			{
-				LOGGER.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " !");
+				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " !");
 				return false;
 			}
 		}
+
 		return acar.hasAccess(accessLevel);
 	}
 	
@@ -125,14 +117,15 @@ public class AdminData: DataReaderBase
 	 * @param command the command
 	 * @return {@code true}, if the command require confirmation, {@code false} otherwise
 	 */
-	public bool requireConfirm(String command)
+	public bool requireConfirm(string command)
 	{
-		AdminCommandAccessRight acar = _adminCommandAccessRights.get(command);
+		AdminCommandAccessRight? acar = _adminCommandAccessRights.GetValueOrDefault(command);
 		if (acar == null)
 		{
-			LOGGER.Info(GetType().Name + ": No rights defined for admin command " + command + ".");
+			_logger.Info(GetType().Name + ": No rights defined for admin command " + command + ".");
 			return false;
 		}
+		
 		return acar.getRequireConfirm();
 	}
 	
@@ -159,9 +152,9 @@ public class AdminData: DataReaderBase
 	 * @param includeHidden the include hidden
 	 * @return the all GM names
 	 */
-	public List<String> getAllGmNames(bool includeHidden)
+	public List<string> getAllGmNames(bool includeHidden)
 	{
-		List<String> tmpGmList = new();
+		List<string> tmpGmList = new();
 		foreach (var entry in _gmList)
 		{
 			if (!entry.Value)
@@ -222,9 +215,9 @@ public class AdminData: DataReaderBase
 		{
 			player.sendPacket(SystemMessageId.GM_LIST);
 			
-			foreach (String name in getAllGmNames(player.isGM()))
+			foreach (string name in getAllGmNames(player.isGM()))
 			{
-				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.GM_C1);
+				SystemMessagePacket sm = new(SystemMessageId.GM_C1);
 				sm.Params.addString(name);
 				player.sendPacket(sm);
 			}
@@ -253,7 +246,7 @@ public class AdminData: DataReaderBase
 	 * @param message the message
 	 * @return the message that was broadcasted
 	 */
-	public String broadcastMessageToGMs(String message)
+	public string broadcastMessageToGMs(string message)
 	{
 		foreach (Player gm in getAllGms(true))
 		{

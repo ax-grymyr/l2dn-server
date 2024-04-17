@@ -2,28 +2,28 @@
 
 namespace L2Dn.Model.DataPack;
 
-[XmlRoot(ElementName="list")]
-public class XmlMultiSellList
+[XmlRoot("list")]
+public class XmlMultiSellList: XmlBase
 {
-    [XmlAttribute(AttributeName = "applyTaxes")]
+    [XmlAttribute("applyTaxes")]
     public bool ApplyTaxes { get; set; }
     
-    [XmlAttribute(AttributeName = "isChanceMultisell")]
+    [XmlAttribute("isChanceMultisell")]
     public bool IsChanceMultiSell { get; set; }
     
-    [XmlAttribute(AttributeName = "maintainEnchantment")]
+    [XmlAttribute("maintainEnchantment")]
     public bool MaintainEnchantment { get; set; }
 
-    [XmlAttribute(AttributeName = "ingredientMultiplier")]
+    [XmlAttribute("ingredientMultiplier")]
     public double IngredientMultiplier { get; set; } = 1.0;
 
-    [XmlAttribute(AttributeName = "productMultiplier")]
+    [XmlAttribute("productMultiplier")]
     public double ProductMultiplier { get; set; } = 1.0;
 
-    [XmlArray(ElementName = "npcs")]
-    [XmlArrayItem(ElementName = "npc")] 
+    [XmlArray("npcs")]
+    [XmlArrayItem("npc")] 
     public List<int> Npcs { get; set; } = [];
 
-    [XmlElement(ElementName = "item")]
+    [XmlElement("item")]
     public List<XmlMultiSellListItem> Items { get; set; } = [];
 }

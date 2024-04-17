@@ -1,20 +1,19 @@
-﻿using System.Xml.Linq;
-using L2Dn.GameServer.Data.Xml;
-using L2Dn.Utilities;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.Model.DataPack;
 
 namespace L2Dn.GameServer.Model;
 
 public class AdminCommandAccessRight
 {
-    private readonly String _adminCommand;
+    private readonly string _adminCommand;
     private readonly int _accessLevel;
     private readonly bool _requireConfirm;
 
-    public AdminCommandAccessRight(XElement element)
+    public AdminCommandAccessRight(XmlAdminCommand command)
     {
-        _adminCommand = element.GetAttributeValueAsString("command");
-        _requireConfirm = element.Attribute("confirmDlg").GetBoolean(false);
-        _accessLevel = element.Attribute("accessLevel").GetInt32(7);
+        _adminCommand = command.Command;
+        _requireConfirm = command.ConfirmDialog;
+        _accessLevel = command.AccessLevel;
     }
 
     public AdminCommandAccessRight(string command, bool confirm, int level)
@@ -27,7 +26,7 @@ public class AdminCommandAccessRight
     /**
      * @return the admin command the access right belongs to
      */
-    public String getAdminCommand()
+    public string getAdminCommand()
     {
         return _adminCommand;
     }
@@ -39,8 +38,8 @@ public class AdminCommandAccessRight
     public bool hasAccess(AccessLevel characterAccessLevel)
     {
         AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(_accessLevel);
-        return (accessLevel != null) && ((accessLevel.getLevel() == characterAccessLevel.getLevel()) ||
-                                         characterAccessLevel.hasChildAccess(accessLevel));
+        return accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
+                                       characterAccessLevel.hasChildAccess(accessLevel));
     }
 
     /**

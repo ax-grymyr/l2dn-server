@@ -4,7 +4,7 @@ namespace L2Dn.Model.DataPack;
 
 public class XmlMultiSellListProduct: XmlMultiSellListItemEntry
 {
-    [XmlAttribute(AttributeName="chance")] 
+    [XmlAttribute("chance")] 
     public double Chance { get; set; } = 100.0;
     
     [XmlIgnore]

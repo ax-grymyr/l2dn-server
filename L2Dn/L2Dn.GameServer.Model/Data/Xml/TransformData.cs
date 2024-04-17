@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using L2Dn.Extensions;
@@ -106,7 +107,7 @@ public class TransformData: DataReaderBase
 
 					set.set("actions", z.Value);
 					int[] actions = set.getIntArray("actions", " ");
-					templateData.setBasicActionList(actions);
+					templateData.setBasicActionList(actions.ToImmutableArray());
 					break;
 				}
 				case "additionalSkills":
