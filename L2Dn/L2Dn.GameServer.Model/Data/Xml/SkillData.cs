@@ -335,9 +335,9 @@ public class SkillData: DataReaderBase
 			var (level, subLevels) = kvp;
 			StatSet statSet = skillInfo.getOrDefault(level, new()).get(subLevel) ?? new StatSet();
 			skillInfo.getOrDefault(level, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-				.forEach(x => statSet.getSet().putIfAbsent(x.Key, x.Value));
+				.forEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			skillInfo.getOrDefault(-1, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-				.forEach(x => statSet.getSet().putIfAbsent(x.Key, x.Value));
+				.forEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			statSet.set(".level", level);
 			statSet.set(".subLevel", subLevel);
 			Skill skill = new Skill(statSet);
@@ -438,10 +438,10 @@ public class SkillData: DataReaderBase
 
 				namedParamInfo.getInfo().getOrDefault(level, new())
 					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-					.forEach(x => @params.getSet().putIfAbsent(x.Key, x.Value));
+					.forEach(x => @params.getSet().TryAdd(x.Key, x.Value));
 				namedParamInfo.getInfo().getOrDefault(-1, new())
 					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-					.forEach(x => @params.getSet().putIfAbsent(x.Key, x.Value));
+					.forEach(x => @params.getSet().TryAdd(x.Key, x.Value));
 				@params.set(".name", namedParamInfo.getName());
 				consumer(scope, @params);
 			}

@@ -139,13 +139,13 @@ public class CreatureFollowTaskManager
 	
 	public void addNormalFollow(Creature creature, int range)
 	{
-		NORMAL_FOLLOW_CREATURES.putIfAbsent(creature, range);
+		NORMAL_FOLLOW_CREATURES.TryAdd(creature, range);
 		follow(creature, range);
 	}
 	
 	public void addAttackFollow(Creature creature, int range)
 	{
-		ATTACK_FOLLOW_CREATURES.putIfAbsent(creature, range);
+		ATTACK_FOLLOW_CREATURES.TryAdd(creature, range);
 		follow(creature, range);
 	}
 	

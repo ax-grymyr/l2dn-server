@@ -298,7 +298,7 @@ public abstract class Inventory: ItemContainer
 						Skill skill = holder.getSkill();
 						if (skill != null)
 						{
-							removedSkills.putIfAbsent(skill.getId(), skill);
+							removedSkills.TryAdd(skill.getId(), skill);
 							update = true;
 						}
 					}
@@ -314,7 +314,7 @@ public abstract class Inventory: ItemContainer
 							Skill skill = holder.getSkill();
 							if (skill != null)
 							{
-								removedSkills.putIfAbsent(skill.getId(), skill);
+								removedSkills.TryAdd(skill.getId(), skill);
 								update = true;
 							}
 						}
@@ -329,7 +329,7 @@ public abstract class Inventory: ItemContainer
 						Skill skill = holder.getSkill();
 						if (skill != null)
 						{
-							removedSkills.putIfAbsent(skill.getId(), skill);
+							removedSkills.TryAdd(skill.getId(), skill);
 							update = true;
 						}
 					}
@@ -425,7 +425,7 @@ public abstract class Inventory: ItemContainer
 						// Check passive skill conditions.
 						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
 						{
-							removedSkills.putIfAbsent(skill.getId(), skill);
+							removedSkills.TryAdd(skill.getId(), skill);
 							update = true;
 						}
 					}
@@ -444,7 +444,7 @@ public abstract class Inventory: ItemContainer
 						// Check passive skill conditions.
 						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
 						{
-							removedSkills.putIfAbsent(skill.getId(), skill);
+							removedSkills.TryAdd(skill.getId(), skill);
 							update = true;
 						}
 					}

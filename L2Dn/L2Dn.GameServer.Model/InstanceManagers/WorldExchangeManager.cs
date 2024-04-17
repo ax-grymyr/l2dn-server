@@ -958,7 +958,7 @@ public class WorldExchangeManager: DataReaderBase
 		
 		foreach (int itemId in itemIds)
 		{
-			_itemCategories.putIfAbsent(itemId, (WorldExchangeItemSubType)category);
+			_itemCategories.TryAdd(itemId, (WorldExchangeItemSubType)category);
 		}
 	}
 	

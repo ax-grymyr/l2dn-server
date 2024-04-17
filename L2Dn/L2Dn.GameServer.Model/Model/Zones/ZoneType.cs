@@ -408,7 +408,7 @@ public abstract class ZoneType: IEventContainerProvider
 				return;
 			}
 			
-			if (_characterList.putIfAbsent(creature.getObjectId(), creature) == null)
+			if (_characterList.TryAdd(creature.getObjectId(), creature))
 			{
 				// Notify to scripts.
 				if (_eventContainer.HasSubscribers<OnZoneEnter>())

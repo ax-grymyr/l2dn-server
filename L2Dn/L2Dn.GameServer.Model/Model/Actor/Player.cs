@@ -14042,7 +14042,7 @@ public class Player: Playable
 	 */
 	public bool addRequest(AbstractRequest request)
 	{
-		return canRequest(request) && (_requests.putIfAbsent(request.GetType(), request) == null);
+		return canRequest(request) && _requests.TryAdd(request.GetType(), request);
 	}
 	
 	public bool canRequest(AbstractRequest request)

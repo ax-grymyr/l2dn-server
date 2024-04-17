@@ -48,7 +48,7 @@ public class RandomAnimationTaskManager: Runnable
 	{
 		if (npc.hasRandomAnimation())
 		{
-			PENDING_ANIMATIONS.putIfAbsent(npc,
+			PENDING_ANIMATIONS.TryAdd(npc,
 				DateTime.UtcNow.AddMilliseconds(
 					Rnd.get(npc.isAttackable() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION,
 						npc.isAttackable() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION) * 1000));

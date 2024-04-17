@@ -93,11 +93,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return defaultValue;
     }
 
-    public bool putIfAbsent(TKey key, TValue value)
-    {
-        return TryAdd(key, value);
-    }
-
     public TResult computeIfPresent<TResult>(TKey key, Func<TKey, TValue, TResult> func)
     {
         if (TryGetValue(key, out var value))

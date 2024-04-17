@@ -102,7 +102,7 @@ internal class AntiFeedManager
 	 */
 	public void registerEvent(int eventId)
 	{
-		_eventIPs.putIfAbsent(eventId, new());
+		_eventIPs.TryAdd(eventId, new());
 	}
 	
 	/**
