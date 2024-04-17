@@ -12,9 +12,6 @@ public class AccountCharacterData
     public Account Account { get; set; } = null!;
     
     public byte ServerId { get; set; }
-
-    [ForeignKey(nameof(ServerId))]
-    public GameServer Server { get; set; } = null!;
     
     public byte CharacterCount { get; set; }
 }

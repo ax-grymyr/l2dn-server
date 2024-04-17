@@ -78,8 +78,6 @@ namespace L2Dn.AuthServer.Db.Migrations
 
                     b.HasKey("AccountId", "ServerId");
 
-                    b.HasIndex("ServerId");
-
                     b.ToTable("AccountCharacterData");
                 });
 
@@ -128,15 +126,7 @@ namespace L2Dn.AuthServer.Db.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("L2Dn.AuthServer.Db.GameServer", "Server")
-                        .WithMany()
-                        .HasForeignKey("ServerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Account");
-
-                    b.Navigation("Server");
                 });
 #pragma warning restore 612, 618
         }

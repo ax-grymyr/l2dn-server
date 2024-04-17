@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace L2Dn.AuthServer.Db.Migrations
 {
     [DbContext(typeof(AuthServerDbContext))]
-    [Migration("20240417130839_CharacterData")]
+    [Migration("20240417205213_CharacterData")]
     partial class CharacterData
     {
         /// <inheritdoc />
@@ -81,8 +81,6 @@ namespace L2Dn.AuthServer.Db.Migrations
 
                     b.HasKey("AccountId", "ServerId");
 
-                    b.HasIndex("ServerId");
-
                     b.ToTable("AccountCharacterData");
                 });
 
@@ -131,15 +129,7 @@ namespace L2Dn.AuthServer.Db.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("L2Dn.AuthServer.Db.GameServer", "Server")
-                        .WithMany()
-                        .HasForeignKey("ServerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Account");
-
-                    b.Navigation("Server");
                 });
 #pragma warning restore 612, 618
         }
