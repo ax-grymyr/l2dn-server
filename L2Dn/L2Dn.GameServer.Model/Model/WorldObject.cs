@@ -69,7 +69,17 @@ public abstract class WorldObject: IIdentifiable, INamable, ISpawnable, IUniqueI
 	 */
 	public bool isInstanceTypes(params InstanceType[] instanceTypes)
 	{
-		return instanceTypes.Contains(_instanceType);
+		return instanceTypes.Any(t => _instanceType.IsType(t));
+	}
+	
+	/**
+	 * Verifies if object is of any given instance types.
+	 * @param instanceTypes the instance types to verify
+	 * @return {@code true} if object is of any given instance types, {@code false} otherwise
+	 */
+	public bool isInstanceTypes(InstanceType instanceType)
+	{
+		return _instanceType.IsType(instanceType);
 	}
 	
 	public void onAction(Player player)
