@@ -1,6 +1,6 @@
-using System.Reflection;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
-using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Model;
@@ -11,7 +11,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -22,37 +22,74 @@ namespace L2Dn.GameServer.InstanceManagers;
  */
 public class ZoneManager: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneManager));
+	private const int ShiftBy = 15;
+	private const int OffsetX = -World.WORLD_X_MIN >> ShiftBy;
+	private const int OffsetY = -World.WORLD_Y_MIN >> ShiftBy;
+	private const int RegionCountX = (World.WORLD_X_MAX >> ShiftBy) + OffsetX + 1;
+	private const int RegionCountY = (World.WORLD_Y_MAX >> ShiftBy) + OffsetY + 1;
+
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ZoneManager));
+
+	private static readonly FrozenDictionary<string, ZoneTypeInfo> _zoneTypes =
+		new ZoneTypeInfo[]
+		{
+			new ZoneTypeInfo<ArenaZone>(id => new ArenaZone(id)),
+			new ZoneTypeInfo<CastleZone>(id => new CastleZone(id)),
+			new ZoneTypeInfo<ClanHallZone>(id => new ClanHallZone(id)),
+			new ZoneTypeInfo<ConditionZone>(id => new ConditionZone(id)),
+			new ZoneTypeInfo<DamageZone>(id => new DamageZone(id)),
+			new ZoneTypeInfo<DerbyTrackZone>(id => new DerbyTrackZone(id)),
+			new ZoneTypeInfo<EffectZone>(id => new EffectZone(id)),
+			new ZoneTypeInfo<FishingZone>(id => new FishingZone(id)),
+			new ZoneTypeInfo<FortZone>(id => new FortZone(id)),
+			new ZoneTypeInfo<HqZone>(id => new HqZone(id)),
+			new ZoneTypeInfo<JailZone>(id => new JailZone(id)),
+			new ZoneTypeInfo<LandingZone>(id => new LandingZone(id)),
+			new ZoneTypeInfo<MotherTreeZone>(id => new MotherTreeZone(id)),
+			new ZoneTypeInfo<NoLandingZone>(id => new NoLandingZone(id)),
+			new ZoneTypeInfo<NoPvPZone>(id => new NoPvPZone(id)),
+			new ZoneTypeInfo<NoRestartZone>(id => new NoRestartZone(id)),
+			new ZoneTypeInfo<NoStoreZone>(id => new NoStoreZone(id)),
+			new ZoneTypeInfo<NoSummonFriendZone>(id => new NoSummonFriendZone(id)),
+			new ZoneTypeInfo<OlympiadStadiumZone>(id => new OlympiadStadiumZone(id)),
+			new ZoneTypeInfo<PeaceZone>(id => new PeaceZone(id)),
+			new ZoneTypeInfo<ResidenceHallTeleportZone>(id => new ResidenceHallTeleportZone(id)),
+			new ZoneTypeInfo<ResidenceTeleportZone>(id => new ResidenceTeleportZone(id)),
+			new ZoneTypeInfo<RespawnZone>(id => new RespawnZone(id)),
+			new ZoneTypeInfo<SayuneZone>(id => new SayuneZone(id)),
+			new ZoneTypeInfo<ScriptZone>(id => new ScriptZone(id)),
+			new ZoneTypeInfo<SiegableHallZone>(id => new SiegableHallZone(id)),
+			new ZoneTypeInfo<SiegeZone>(id => new SiegeZone(id)),
+			new ZoneTypeInfo<SwampZone>(id => new SwampZone(id)),
+			new ZoneTypeInfo<TaxZone>(id => new TaxZone(id)),
+			new ZoneTypeInfo<TeleportZone>(id => new TeleportZone(id)),
+			new ZoneTypeInfo<TimedHuntingZone>(id => new TimedHuntingZone(id)),
+			new ZoneTypeInfo<UndyingZone>(id => new UndyingZone(id)),
+			new ZoneTypeInfo<WaterZone>(id => new WaterZone(id)),
+		}.ToFrozenDictionary(info => info.ZoneTypeName, StringComparer.OrdinalIgnoreCase);
 	
-	private static readonly Map<string, AbstractZoneSettings> SETTINGS = new();
+	private static readonly Map<string, AbstractZoneSettings> _settings = new();
 	
-	private const int SHIFT_BY = 15;
-	private static readonly int OFFSET_X = Math.Abs(World.WORLD_X_MIN >> SHIFT_BY);
-	private static readonly int OFFSET_Y = Math.Abs(World.WORLD_Y_MIN >> SHIFT_BY);
-	
-	private readonly Map<Type, Map<int, ZoneType>> _classZones = new();
+	private FrozenDictionary<Type, Map<int, ZoneType>> _classZones = FrozenDictionary<Type, Map<int, ZoneType>>.Empty;
 	private readonly Map<string, SpawnTerritory> _spawnTerritories = new();
 	private readonly AtomicInteger _lastDynamicId = new(300000);
-	private List<Item> _debugItems;
+	private List<Item> _debugItems = [];
 	
 	private readonly ZoneRegion[][] _zoneRegions;
 	
-	/**
-	 * Instantiates a new zone manager.
-	 */
-	protected ZoneManager()
+	private ZoneManager()
 	{
-		_zoneRegions = new ZoneRegion[(World.WORLD_X_MAX >> SHIFT_BY) + OFFSET_X + 1][];
+		_zoneRegions = new ZoneRegion[RegionCountX][];
 		for (int x = 0; x < _zoneRegions.Length; x++)
 		{
-			_zoneRegions[x] = new ZoneRegion[(World.WORLD_Y_MAX >> SHIFT_BY) + OFFSET_Y + 1];
+			_zoneRegions[x] = new ZoneRegion[RegionCountY];
 			for (int y = 0; y < _zoneRegions[x].Length; y++)
 			{
 				_zoneRegions[x][y] = new ZoneRegion(x, y);
 			}
 		}
-		
-		LOGGER.Info(GetType().Name +" " + _zoneRegions.Length + " by " + _zoneRegions[0].Length + " Zone Region Grid set up.");
+
+		_logger.Info(GetType().Name + " " + RegionCountX + " by " + RegionCountY + " Zone Region Grid set up.");
 		load();
 	}
 	
@@ -72,11 +109,11 @@ public class ZoneManager: DataReaderBase
 		{
 			if (obj.isCreature())
 			{
-				((Creature) obj).revalidateZone(true);
+				((Creature)obj).revalidateZone(true);
 			}
 		}
 		
-		SETTINGS.clear();
+		_settings.Clear();
 	}
 	
 	public void unload()
@@ -85,13 +122,13 @@ public class ZoneManager: DataReaderBase
 		int count = 0;
 		
 		// Backup old zone settings
-		foreach (var map in _classZones.values())
+		foreach (Map<int, ZoneType> map in _classZones.Values)
 		{
 			foreach (ZoneType zone in map.values())
 			{
 				if (zone.getSettings() != null)
 				{
-					SETTINGS.put(zone.getName(), zone.getSettings());
+					_settings.put(zone.getName(), zone.getSettings());
 				}
 			}
 		}
@@ -105,63 +142,49 @@ public class ZoneManager: DataReaderBase
 				count++;
 			}
 		}
-		LOGGER.Info(GetType().Name +": Removed zones in " + count + " regions.");
+		_logger.Info(GetType().Name +": Removed zones in " + count + " regions.");
 	}
 	
-	private void parseElement(string filePath, XElement element)
+	private void parseElement(string filePath, XmlZone zone)
 	{
-		string zoneType = element.GetAttributeValueAsString("type");
-		int zoneId = element.Attribute("id").GetInt32(-1);
-		if (zoneId == -1)
-			zoneId = zoneType.equalsIgnoreCase("NpcSpawnTerritory") ? 0 : _lastDynamicId.incrementAndGet();
-
-		string? zoneName = element.Attribute("name")?.GetString(); 
+		bool isNpcSpawnTerritory = string.Equals(zone.Type, "NpcSpawnTerritory", StringComparison.OrdinalIgnoreCase);
+		int zoneId = zone.IdSpecified ? zone.Id : isNpcSpawnTerritory ? 0 : _lastDynamicId.incrementAndGet();
+		string zoneName = zone.Name; 
 		
 		// Check zone name for NpcSpawnTerritory. Must exist and to be unique
-		if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
+		if (isNpcSpawnTerritory)
 		{
-			if (zoneName == null)
+			if (string.IsNullOrEmpty(zoneName))
 			{
-				LOGGER.Error("ZoneData: Missing name for NpcSpawnTerritory in file: " + filePath + ", skipping zone");
+				_logger.Error($"ZoneData: Missing name for NpcSpawnTerritory in file: {filePath}, skipping zone");
 				return;
 			}
 			
-			if (_spawnTerritories.containsKey(zoneName))
+			if (_spawnTerritories.ContainsKey(zoneName))
 			{
-				LOGGER.Error("ZoneData: Name " + zoneName + " already used for another zone, check file: " + filePath + ". Skipping zone");
+				_logger.Error($"ZoneData: Name {zoneName} already used for another zone, check file: {filePath}. Skipping zone");
 				return;
 			}
 		}
 
-		Point2D[] coords;
-		
-		int minZ = element.GetAttributeValueAsInt32("minZ");
-		int maxZ = element.GetAttributeValueAsInt32("maxZ");
-		string zoneShape = element.GetAttributeValueAsString("shape");
+		int minZ = zone.MinZ;
+		int maxZ = zone.MaxZ;
+		string zoneShape = zone.Shape;
 						
 		// Get the zone shape from xml
-		ZoneForm zoneForm = null;
+		ZoneForm zoneForm;
 		try
 		{
-			List<Point2D> rs = new();
-			element.Elements("node").ForEach(el =>
-			{
-				
-				int x = el.GetAttributeValueAsInt32("X");
-				int y = el.GetAttributeValueAsInt32("Y");
-				rs.Add(new Point2D(x, y));
-			});
-
-			coords = rs.ToArray();
+			Point2D[] coords = zone.Nodes.Select(node => new Point2D(node.X, node.Y)).ToArray();
 			if (coords.Length == 0)
 			{
-				LOGGER.Error(GetType().Name + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + filePath);
+				_logger.Error(GetType().Name + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + filePath);
 				return;
 			}
 			
 			// Create this zone. Parsing for cuboids is a bit different than for other polygons cuboids need exactly 2 points to be defined.
 			// Other polygons need at least 3 (one per vertex)
-			if (zoneShape.equalsIgnoreCase("Cuboid"))
+			if (string.Equals(zoneShape, "Cuboid", StringComparison.OrdinalIgnoreCase))
 			{
 				if (coords.Length == 2)
 				{
@@ -169,11 +192,11 @@ public class ZoneManager: DataReaderBase
 				}
 				else
 				{
-					LOGGER.Error(GetType().Name + ": ZoneData: Missing cuboid vertex data for zone: " + zoneId + " in file: " + filePath);
+					_logger.Error(GetType().Name + ": ZoneData: Missing cuboid vertex data for zone: " + zoneId + " in file: " + filePath);
 					return;
 				}
 			}
-			else if (zoneShape.equalsIgnoreCase("NPoly"))
+			else if (string.Equals(zoneShape, "NPoly", StringComparison.OrdinalIgnoreCase))
 			{
 				// nPoly needs to have at least 3 vertices
 				if (coords.Length > 2)
@@ -189,102 +212,83 @@ public class ZoneManager: DataReaderBase
 				}
 				else
 				{
-					LOGGER.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
+					_logger.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
 					return;
 				}
 			}
-			else if (zoneShape.equalsIgnoreCase("Cylinder"))
+			else if (string.Equals(zoneShape, "Cylinder", StringComparison.OrdinalIgnoreCase))
 			{
 				// A Cylinder zone requires a center point
 				// at x,y and a radius
-				int zoneRad = element.GetAttributeValueAsInt32("rad");
-				if ((coords.Length == 1) && (zoneRad > 0))
+				int zoneRad = zone.Radius;
+				if (coords.Length == 1 && zoneRad > 0)
 				{
 					zoneForm = new ZoneCylinder(coords[0].getX(), coords[0].getY(), minZ, maxZ, zoneRad);
 				}
 				else
 				{
-					LOGGER.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
+					_logger.Error(GetType().Name + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + filePath);
 					return;
 				}
 			}
 			else
 			{
-				LOGGER.Error(GetType().Name + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + filePath);
+				_logger.Error(GetType().Name + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + filePath);
 				return;
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error(GetType().Name + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e);
+			_logger.Error(GetType().Name + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e);
 			return;
 		}
 		
 		// No further parameters needed, if NpcSpawnTerritory is loading
-		if (zoneType.equalsIgnoreCase("NpcSpawnTerritory"))
+		if (isNpcSpawnTerritory)
 		{
-			_spawnTerritories.put(zoneName, new SpawnTerritory(zoneName, zoneForm));
+			_spawnTerritories[zoneName] = new SpawnTerritory(zoneName, zoneForm);
 			return;
 		}
 		
 		// Create the zone
-		ZoneType temp;
-		try
+		if (!_zoneTypes.TryGetValue(zone.Type, out ZoneTypeInfo? zoneTypeInfo))
 		{
-			// TODO: create factory
-			string ns = typeof(ArenaZone).Namespace; 
-			string typeName = ns + "." + zoneType;
-			Type zoneClass = Assembly.GetExecutingAssembly().GetType(typeName);
-			temp = (ZoneType)Activator.CreateInstance(zoneClass, zoneId);
-			temp.setZone(zoneForm);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error(GetType().Name + ": ZoneData: No such zone type: " + zoneType + " in file: " + filePath);
+			_logger.Error(GetType().Name + ": ZoneData: No such zone type: " + zone.Type + " in file: " + filePath);
 			return;
-		}
+		}			
+			
+		ZoneType zoneType = zoneTypeInfo.Factory(zoneId);
+		zoneType.setZone(zoneForm);
 		
 		// Check for additional parameters
-		element.Elements("stat").ForEach(el =>
-		{
-			string name = el.GetAttributeValueAsString("name");
-			string val = el.GetAttributeValueAsString("val");
-			temp.setParameter(name, val);
-		});
+		zone.Stats.ForEach(stat => zoneType.setParameter(stat.Name, stat.Value));
 
-		if (temp is ZoneRespawn zoneRespawn)
+		if (zoneType is ZoneRespawn zoneRespawn)
 		{
-			element.Elements("spawn").ForEach(el =>
-			{
-				int spawnX = el.GetAttributeValueAsInt32("X");
-				int spawnY = el.GetAttributeValueAsInt32("Y");
-				int spawnZ = el.GetAttributeValueAsInt32("Z");
-				string? val = el.Attribute("type")?.GetString();
-				zoneRespawn.parseLoc(spawnX, spawnY, spawnZ, val);
-			});
+			zone.Spawns.ForEach(spawn => zoneRespawn.parseLoc(spawn.X, spawn.Y, spawn.Z, spawn.Type));
 		}
 
-		if (temp is RespawnZone respawnZone)
+		if (zoneType is RespawnZone respawnZone)
 		{
-			element.Elements("race").ForEach(el =>
-			{
-				string race = el.GetAttributeValueAsString("name");
-				string point = el.GetAttributeValueAsString("point");
-				respawnZone.addRaceRespawnPoint(race, point);
-			});
+			zone.Races.ForEach(el => respawnZone.addRaceRespawnPoint(el.Name, el.Point));
 		}
 
-		if (checkId(zoneId))
+		if (zoneName != null && !zoneName.isEmpty())
 		{
-			LOGGER.Warn(GetType().Name + ": Caution: Zone (" + zoneId + ") from file: " + filePath + " overrides previous definition.");
+			zoneType.setName(zoneName);
 		}
-		
-		if ((zoneName != null) && !zoneName.isEmpty())
+
+		if (!_classZones.TryGetValue(zoneTypeInfo.ZoneType, out Map<int, ZoneType>? zoneMap))
 		{
-			temp.setName(zoneName);
+			_logger.Warn(GetType().Name + ": Caution: Unknown zone type (" + zoneType.GetType() + ") from file: " + filePath + ".");
+			return;
 		}
-		
-		addZone(zoneId, temp);
+
+		if (!zoneMap.TryAdd(zoneId, zoneType))
+		{
+			_logger.Warn(GetType().Name + ": Caution: Zone (" + zoneId + ") from file: " + filePath + " has duplicated definition.");
+			return;
+		}
 		
 		// Register the zone into any world region it
 		// intersects with...
@@ -293,13 +297,13 @@ public class ZoneManager: DataReaderBase
 		{
 			for (int y = 0; y < _zoneRegions[x].Length; y++)
 			{
-				int ax = (x - OFFSET_X) << SHIFT_BY;
-				int bx = ((x + 1) - OFFSET_X) << SHIFT_BY;
-				int ay = (y - OFFSET_Y) << SHIFT_BY;
-				int by = ((y + 1) - OFFSET_Y) << SHIFT_BY;
-				if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
+				int ax = (x - OffsetX) << ShiftBy;
+				int bx = (x + 1 - OffsetX) << ShiftBy;
+				int ay = (y - OffsetY) << ShiftBy;
+				int by = (y + 1 - OffsetY) << ShiftBy;
+				if (zoneType.getZone().intersectsRectangle(ax, bx, ay, by))
 				{
-					_zoneRegions[x][y].getZones().put(temp.getId(), temp);
+					_zoneRegions[x][y].getZones().put(zoneType.getId(), zoneType);
 				}
 			}
 		}
@@ -307,52 +311,17 @@ public class ZoneManager: DataReaderBase
 	
 	public void load()
 	{
-		_classZones.clear();
-		_classZones.put(typeof(ArenaZone), new());
-		_classZones.put(typeof(CastleZone), new());
-		_classZones.put(typeof(ClanHallZone), new());
-		_classZones.put(typeof(ConditionZone), new());
-		_classZones.put(typeof(DamageZone), new());
-		_classZones.put(typeof(DerbyTrackZone), new());
-		_classZones.put(typeof(EffectZone), new());
-		_classZones.put(typeof(FishingZone), new());
-		_classZones.put(typeof(FortZone), new());
-		_classZones.put(typeof(HqZone), new());
-		_classZones.put(typeof(JailZone), new());
-		_classZones.put(typeof(LandingZone), new());
-		_classZones.put(typeof(MotherTreeZone), new());
-		_classZones.put(typeof(NoLandingZone), new());
-		_classZones.put(typeof(NoRestartZone), new());
-		_classZones.put(typeof(NoStoreZone), new());
-		_classZones.put(typeof(NoSummonFriendZone), new());
-		_classZones.put(typeof(OlympiadStadiumZone), new());
-		_classZones.put(typeof(PeaceZone), new());
-		_classZones.put(typeof(ResidenceHallTeleportZone), new());
-		_classZones.put(typeof(ResidenceTeleportZone), new());
-		_classZones.put(typeof(ResidenceZone), new());
-		_classZones.put(typeof(RespawnZone), new());
-		_classZones.put(typeof(SayuneZone), new());
-		_classZones.put(typeof(ScriptZone), new());
-		_classZones.put(typeof(SiegableHallZone), new());
-		_classZones.put(typeof(SiegeZone), new());
-		_classZones.put(typeof(SwampZone), new());
-		_classZones.put(typeof(TaxZone), new());
-		_classZones.put(typeof(TeleportZone), new());
-		_classZones.put(typeof(TimedHuntingZone), new());
-		_classZones.put(typeof(UndyingZone), new());
-		_classZones.put(typeof(WaterZone), new());
+		_classZones = _zoneTypes.Values.ToFrozenDictionary(info => info.ZoneType, _ => new Map<int, ZoneType>());
 		
 		_spawnTerritories.clear();
+
+		LoadXmlDocuments<XmlZones>(DataFileLocation.Data, "zones")
+			.Where(tuple => tuple.Document.Enabled)
+			.ForEach(t => t.Document.Zones.ForEach(zone => parseElement(t.FilePath, zone)));
 		
-		LoadXmlDocuments(DataFileLocation.Data, "zones").ForEach(t =>
-		{
-			t.Document.Elements("list").Where(e => e.GetAttributeValueAsBoolean("enabled")).Elements("zone")
-				.ForEach(e => parseElement(t.FilePath, e));
-		});
-		
-		LOGGER.Info(GetType().Name +": Loaded " + _classZones.size() + " zone classes and " + getSize() + " zones.");
-		int maxId = _classZones.values().SelectMany(map => map.Keys).Where(value => value < 300000).Max();
-		LOGGER.Info(GetType().Name +": Last static id " + maxId + ".");
+		_logger.Info(GetType().Name +": Loaded " + _classZones.Count + " zone classes and " + getSize() + " zones.");
+		int maxId = _classZones.Values.SelectMany(map => map.Keys).Where(value => value < 300000).Max();
+		_logger.Info(GetType().Name +": Last static id " + maxId + ".");
 	}
 	
 	/**
@@ -361,46 +330,7 @@ public class ZoneManager: DataReaderBase
 	 */
 	public int getSize()
 	{
-		int i = 0;
-		foreach (var map in _classZones.values())
-		{
-			i += map.size();
-		}
-		return i;
-	}
-	
-	/**
-	 * Check id.
-	 * @param id the id
-	 * @return true, if successful
-	 */
-	private bool checkId(int id)
-	{
-		foreach (var map in _classZones.values())
-		{
-			if (map.containsKey(id))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	/**
-	 * Add new zone.
-	 * @param <T> the generic type
-	 * @param id the id
-	 * @param zone the zone
-	 */
-	private void addZone(int id, ZoneType zone)
-	{
-		var map = _classZones.get(zone.GetType());
-		if (map == null)
-		{
-			_classZones.put(zone.GetType(), map = new());
-		}
-		
-		map.put(id, zone);
+		return _classZones.Sum(pair => pair.Value.Count);
 	}
 	
 	/**
@@ -409,10 +339,13 @@ public class ZoneManager: DataReaderBase
 	 * @param zoneType Zone class
 	 * @return Collection of zones
 	 */
-	public ICollection<T> getAllZones<T>()
+	public ImmutableArray<T> getAllZones<T>()
 		where T: ZoneType
 	{
-		return _classZones.get(typeof(T)).values().Cast<T>().ToList();
+		if (!_classZones.TryGetValue(typeof(T), out Map<int, ZoneType>? map))
+			return ImmutableArray<T>.Empty;
+			
+		return map.Values.Cast<T>().ToImmutableArray();
 	}
 	
 	/**
@@ -421,15 +354,14 @@ public class ZoneManager: DataReaderBase
 	 * @return the zone by id
 	 * @see #getZoneById(int, Class)
 	 */
-	public ZoneType getZoneById(int id)
+	public ZoneType? getZoneById(int id)
 	{
-		foreach (var map in _classZones.values())
+		foreach (Map<int, ZoneType> map in _classZones.Values)
 		{
-			if (map.containsKey(id))
-			{
-				return map.get(id);
-			}
+			if (map.TryGetValue(id, out ZoneType? zone))
+				return zone;
 		}
+
 		return null;
 	}
 	
@@ -438,19 +370,10 @@ public class ZoneManager: DataReaderBase
 	 * @param name the zone name
 	 * @return the zone by name
 	 */
-	public ZoneType getZoneByName(String name)
+	public ZoneType? getZoneByName(string name)
 	{
-		foreach (var map in _classZones.values())
-		{
-			foreach (ZoneType zone in map.values())
-			{
-				if ((zone.getName() != null) && zone.getName().equals(name))
-				{
-					return zone;
-				}
-			}
-		}
-		return null;
+		return _classZones.SelectMany(pair => pair.Value.Values)
+			.FirstOrDefault(zone => string.Equals(zone.getName(), name));
 	}
 	
 	/**
@@ -460,10 +383,10 @@ public class ZoneManager: DataReaderBase
 	 * @param zoneType the zone type
 	 * @return zone
 	 */
-	public T getZoneById<T>(int id)
+	public T? getZoneById<T>(int id)
 		where T: ZoneType
 	{
-		return (T) _classZones.get(typeof(T)).get(id);
+		return (T?)_classZones.GetValueOrDefault(typeof(T))?.GetValueOrDefault(id);
 	}
 	
 	/**
@@ -473,20 +396,13 @@ public class ZoneManager: DataReaderBase
 	 * @param zoneType the zone type
 	 * @return
 	 */
-	public T getZoneByName<T>(String name)
+	public T? getZoneByName<T>(string name)
 		where T: ZoneType
 	{
-		if (_classZones.containsKey(typeof(T)))
-		{
-			foreach (ZoneType zone in _classZones.get(typeof(T)).values())
-			{
-				if ((zone.getName() != null) && zone.getName().equals(name))
-				{
-					return (T) zone;
-				}
-			}
-		}
-		return null;
+		if (!_classZones.TryGetValue(typeof(T), out Map<int, ZoneType>? map))
+			return null;
+		
+		return map.Values.OfType<T>().FirstOrDefault(zone => string.Equals(zone.getName(), name));
 	}
 	
 	/**
@@ -510,9 +426,8 @@ public class ZoneManager: DataReaderBase
 		where T: ZoneType
 	{
 		if (locational == null)
-		{
 			return null;
-		}
+		
 		return getZone<T>(locational.getX(), locational.getY(), locational.getZ());
 	}
 	
@@ -582,7 +497,7 @@ public class ZoneManager: DataReaderBase
 	 * @param name name of territory to search
 	 * @return link to zone form
 	 */
-	public SpawnTerritory getSpawnTerritory(String name)
+	public SpawnTerritory getSpawnTerritory(string name)
 	{
 		return _spawnTerritories.get(name);
 	}
@@ -619,7 +534,7 @@ public class ZoneManager: DataReaderBase
 		
 		foreach (ZoneType temp in getInstance().getZones(creature.getX(), creature.getY(), creature.getZ()))
 		{
-			if ((temp is OlympiadStadiumZone) && temp.isCharacterInZone(creature))
+			if (temp is OlympiadStadiumZone && temp.isCharacterInZone(creature))
 			{
 				return (OlympiadStadiumZone) temp;
 			}
@@ -663,7 +578,7 @@ public class ZoneManager: DataReaderBase
 	{
 		try
 		{
-			return _zoneRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y];
+			return _zoneRegions[(x >> ShiftBy) + OffsetX][(y >> ShiftBy) + OffsetY];
 		}
 		catch (IndexOutOfRangeException e)
 		{
@@ -682,12 +597,12 @@ public class ZoneManager: DataReaderBase
 	 * @param name the name
 	 * @return the settings
 	 */
-	public static AbstractZoneSettings getSettings(String name)
+	public static AbstractZoneSettings getSettings(string name)
 	{
 		if (name == null)
 			return null;
 		
-		return SETTINGS.get(name);
+		return _settings.get(name);
 	}
 	
 	/**
@@ -701,6 +616,19 @@ public class ZoneManager: DataReaderBase
 	
 	private static class SingletonHolder
 	{
-		public static readonly ZoneManager INSTANCE = new ZoneManager();
+		public static readonly ZoneManager INSTANCE = new();
+	}
+
+	private abstract class ZoneTypeInfo(Type type)
+	{
+		public Type ZoneType => type;
+		public string ZoneTypeName => ZoneType.Name;
+		public abstract Func<int, ZoneType> Factory { get; }
+	}
+
+	private sealed class ZoneTypeInfo<T>(Func<int, T> factory): ZoneTypeInfo(typeof(T))
+		where T: ZoneType
+	{
+		public override Func<int, ZoneType> Factory => factory;
 	}
 }

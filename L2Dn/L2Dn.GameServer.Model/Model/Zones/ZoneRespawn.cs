@@ -17,9 +17,9 @@ public abstract class ZoneRespawn: ZoneType
 	{
 	}
 
-	public virtual void parseLoc(int x, int y, int z, String type)
+	public virtual void parseLoc(int x, int y, int z, string type)
 	{
-		if ((type == null) || type.isEmpty())
+		if (string.IsNullOrEmpty(type))
 		{
 			addSpawn(x, y, z);
 		}
