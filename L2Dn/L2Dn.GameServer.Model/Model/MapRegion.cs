@@ -5,20 +5,20 @@ namespace L2Dn.GameServer.Model;
 
 public class MapRegion
 {
-	private readonly String _name;
-	private readonly String _town;
+	private readonly string _name;
+	private readonly string _town;
 	private readonly int _locId;
 	private readonly int _bbs;
-	private List<int[]> _maps = null;
+	private List<int[]> _maps;
 	
-	private List<Location> _spawnLocs = null;
-	private List<Location> _otherSpawnLocs = null;
-	private List<Location> _chaoticSpawnLocs = null;
-	private List<Location> _banishSpawnLocs = null;
+	private List<Location> _spawnLocs;
+	private List<Location> _otherSpawnLocs;
+	private List<Location> _chaoticSpawnLocs;
+	private List<Location> _banishSpawnLocs;
 	
 	private readonly Map<Race, string> _bannedRace = new();
 	
-	public MapRegion(String name, String town, int locId, int bbs)
+	public MapRegion(string name, string town, int locId, int bbs)
 	{
 		_name = name;
 		_town = town;
@@ -26,12 +26,12 @@ public class MapRegion
 		_bbs = bbs;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
 	
-	public String getTown()
+	public string getTown()
 	{
 		return _town;
 	}
@@ -176,9 +176,9 @@ public class MapRegion
 		return getSpawnLoc();
 	}
 	
-	public void addBannedRace(string race, string point)
+	public void addBannedRace(Race race, string point)
 	{
-		_bannedRace.put(Enum.Parse<Race>(race), point);
+		_bannedRace.put(race, point);
 	}
 	
 	public Map<Race, string> getBannedRace()
