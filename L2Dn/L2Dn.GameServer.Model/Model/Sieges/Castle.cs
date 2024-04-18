@@ -218,7 +218,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 	}
 	
-	public Castle(int castleId): base(castleId)
+	public Castle(int castleId, string castleName): base(castleId, castleName)
 	{
 		_eventContainer = new($"Castle template {castleId}", GlobalEvents.Global);
 		
@@ -633,7 +633,6 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			var record = ctx.Castles.SingleOrDefault(r => r.Id == castleId);
 			if (record != null)
 			{
-				setName(record.Name);
 				_siegeDate = record.SiegeTime;
 				_siegeTimeRegistrationEndDate = record.RegistrationEndTime;
 				_isTimeRegistrationOver = record.RegistrationTimeOver;

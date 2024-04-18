@@ -296,7 +296,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			if ((ch != null) && (ch.getCostFailDay() > 0) && (ch.getResidenceId() < 186))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
-				sm.Params.addInt(ch.getLease());
+				sm.Params.addLong(ch.getLease());
 				connection.Send(sm);
 			}
 		}

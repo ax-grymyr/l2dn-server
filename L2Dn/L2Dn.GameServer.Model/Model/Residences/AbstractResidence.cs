@@ -2,10 +2,10 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -21,14 +21,15 @@ public abstract class AbstractResidence: INamable
 	protected ClanHallGrade _grade = ClanHallGrade.GRADE_NONE;
 	
 	private readonly int _residenceId;
-	private String _name;
-	private ResidenceZone _zone = null;
+	private readonly string _name;
+	private ResidenceZone _zone;
 	private readonly Map<int, ResidenceFunction> _functions = new();
 	private List<SkillLearn> _residentialSkills = new();
 	
-	public AbstractResidence(int residenceId)
+	public AbstractResidence(int residenceId, string name)
 	{
 		_residenceId = residenceId;
+		_name = name;
 		initResidentialSkills();
 	}
 	
@@ -57,15 +58,9 @@ public abstract class AbstractResidence: INamable
 		return _residenceId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
-	}
-	
-	// TODO: Remove it later when both castles and forts are loaded from same table.
-	public void setName(String name)
-	{
-		_name = name;
 	}
 	
 	public virtual ResidenceZone getResidenceZone()
@@ -326,12 +321,12 @@ public abstract class AbstractResidence: INamable
 		return _functions.values();
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		return (obj is AbstractResidence) && (((AbstractResidence) obj).getResidenceId() == getResidenceId());
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return _name + " (" + _residenceId + ")";
 	}

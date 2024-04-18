@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Holders;
@@ -9,6 +8,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -26,22 +26,23 @@ public class ClanHall: AbstractResidence
 	
 	// Static parameters
 	private readonly ClanHallType _type;
-	private readonly int _minBid;
-	private readonly int _lease;
-	private readonly int _deposit;
+	private readonly long _minBid;
+	private readonly long _lease;
+	private readonly long _deposit;
 	private readonly Set<int> _npcs = new();
 	private readonly Set<Door> _doors = new();
 	private readonly Set<ClanHallTeleportHolder> _teleports = new();
 	private readonly Location _ownerLocation;
 	private readonly Location _banishLocation;
-	// Dynamic parameters
-	Clan _owner = null;
-	DateTime _paidUntil;
-	protected ScheduledFuture _checkPaymentTask = null;
 
-	public ClanHall(int id, ClanHallGrade grade, ClanHallType type, int minBid, int lease, int deposit,
+	// Dynamic parameters
+	private Clan? _owner;
+	private DateTime _paidUntil;
+	protected ScheduledFuture? _checkPaymentTask;
+
+	public ClanHall(int id, string name, ClanHallGrade grade, ClanHallType type, long minBid, long lease, long deposit,
 		Location ownerLocation, Location banishLocation)
-		: base(id)
+		: base(id, name)
 	{
 		_grade = grade;
 		_type = type;
@@ -52,39 +53,7 @@ public class ClanHall: AbstractResidence
 		_banishLocation = banishLocation;
 		
 		load();
-		// Init Clan Hall zone and Functions
-		initResidenceZone();
-		initFunctions();
-	}
-
-	public ClanHall(StatSet @params): base(@params.getInt("id"))
-	{
-		// Set static parameters
-		setName(@params.getString("name"));
-		_grade = @params.getEnum<ClanHallGrade>("grade");
-		_type = @params.getEnum<ClanHallType>("type");
-		_minBid = @params.getInt("minBid");
-		_lease = @params.getInt("lease");
-		_deposit = @params.getInt("deposit");
-		List<int> npcs = @params.getList<int>("npcList");
-		if (npcs != null)
-		{
-			_npcs.addAll(npcs);
-		}
-		List<Door> doors = @params.getList<Door>("doorList");
-		if (doors != null)
-		{
-			_doors.addAll(doors);
-		}
-		List<ClanHallTeleportHolder> teleports = @params.getList<ClanHallTeleportHolder>("teleportList");
-		if (teleports != null)
-		{
-			_teleports.addAll(teleports);
-		}
-		_ownerLocation = @params.getLocation("owner_loc");
-		_banishLocation = @params.getLocation("banish_loc");
-		// Set dynamic parameters (from DB)
-		load();
+		
 		// Init Clan Hall zone and Functions
 		initResidenceZone();
 		initFunctions();
@@ -320,17 +289,17 @@ public class ClanHall: AbstractResidence
 		return result;
 	}
 	
-	public int getMinBid()
+	public long getMinBid()
 	{
 		return _minBid;
 	}
 	
-	public int getLease()
+	public long getLease()
 	{
 		return _lease;
 	}
 	
-	public int getDeposit()
+	public long getDeposit()
 	{
 		return _deposit;
 	}
@@ -359,7 +328,7 @@ public class ClanHall: AbstractResidence
 					{
 						_clanHall._checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(_clanHall), TimeSpan.FromDays(1));
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
-						sm.Params.addInt(_clanHall._lease);
+						sm.Params.addLong(_clanHall._lease);
 						_clanHall._owner.broadcastToOnlineMembers(sm);
 					}
 				}

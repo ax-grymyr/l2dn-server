@@ -213,7 +213,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 	}
 	
-	public Fort(int fortId): base(fortId)
+	public Fort(int fortId, string fortName): base(fortId, fortName)
 	{
 		_eventContainer = new($"Fort template {fortId}", GlobalEvents.Global);
 		load();
@@ -223,6 +223,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			setVisibleFlag(true);
 			loadFunctions();
 		}
+		
 		initResidenceZone();
 		// initFunctions();
 		initNpcs(); // load and spawn npcs (Always spawned)
@@ -582,8 +583,6 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			var record = ctx.Forts.SingleOrDefault(r => r.Id == fortId);
 			if (record is not null)
 			{
-				setName(record.Name);
-					
 				_siegeDate = record.SiegeDate;
 				_lastOwnedTime = record.LastOwnedTime;
 				ownerId = record.OwnerId;

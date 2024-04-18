@@ -110,11 +110,11 @@ public class FortManager
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (int fortId in ctx.Forts.Select(f => f.Id).OrderBy(f => f))
+			foreach (var fort in ctx.Forts.Select(f => new { f.Id, f.Name }).OrderBy(f => f.Id))
 			{
-				_forts.put(fortId, new Fort(fortId));
+				_forts.put(fort.Id, new Fort(fort.Id, fort.Name));
 			}
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + _forts.values().Count + " fortress.");
 			foreach (Fort fort in _forts.values())
 			{
@@ -142,6 +142,6 @@ public class FortManager
 	
 	private static class SingletonHolder
 	{
-		public static readonly FortManager INSTANCE = new FortManager();
+		public static readonly FortManager INSTANCE = new();
 	}
 }

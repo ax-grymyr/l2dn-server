@@ -58,7 +58,6 @@
 									<xs:enumeration value="GRADE_NONE" />
 									<xs:enumeration value="GRADE_D" />
 									<xs:enumeration value="GRADE_C" />
-									<xs:enumeration value="GRADE_C" />
 									<xs:enumeration value="GRADE_B" />
 									<xs:enumeration value="GRADE_A" />
 									<xs:enumeration value="GRADE_S" />

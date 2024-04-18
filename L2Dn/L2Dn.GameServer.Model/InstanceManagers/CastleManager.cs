@@ -20,7 +20,7 @@ public class CastleManager
 	private readonly Map<int, DateTime> _castleSiegeDate = new();
 	
 	private static readonly int[] _castleCirclets =
-	{
+	[
 		0,
 		6838,
 		6835,
@@ -31,7 +31,7 @@ public class CastleManager
 		6836,
 		8182,
 		8183
-	};
+	];
 	
 	public Castle findNearestCastle(WorldObject obj)
 	{
@@ -43,11 +43,10 @@ public class CastleManager
 		Castle nearestCastle = getCastle(obj);
 		if (nearestCastle == null)
 		{
-			double distance;
 			long maxDistance = maxDistanceValue;
 			foreach (Castle castle in _castles.values())
 			{
-				distance = castle.getDistance(obj);
+				double distance = castle.getDistance(obj);
 				if (maxDistance > distance)
 				{
 					maxDistance = (long) distance;
@@ -195,8 +194,8 @@ public class CastleManager
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
-				_castles.put(castle.Id, new Castle(castle.Id));
+			foreach (var castle in ctx.Castles.Select(c => new { c.Id, c.Name }).OrderBy(c => c.Id))
+				_castles.put(castle.Id, new Castle(castle.Id, castle.Name));
 
 			if (_castles.Count == 0)
 			{
@@ -229,8 +228,8 @@ public class CastleManager
 
 				ctx.SaveChanges();
 
-				foreach (DbCastle castle in ctx.Castles.OrderBy(c => c.Id))
-					_castles.put(castle.Id, new Castle(castle.Id));
+				foreach (var castle in ctx.Castles.Select(c => new { c.Id, c.Name }).OrderBy(c => c.Id))
+					_castles.put(castle.Id, new Castle(castle.Id, castle.Name));
 			}
 			
 			LOGGER.Info(GetType().Name +": Loaded " + _castles.values().Count + " castles.");
@@ -274,6 +273,6 @@ public class CastleManager
 	
 	private static class SingletonHolder
 	{
-		public static readonly CastleManager INSTANCE = new CastleManager();
+		public static readonly CastleManager INSTANCE = new();
 	}
 }

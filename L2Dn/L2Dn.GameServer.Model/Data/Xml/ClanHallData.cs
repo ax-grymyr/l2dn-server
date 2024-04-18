@@ -1,6 +1,6 @@
-using System.Xml.Linq;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
@@ -8,7 +8,8 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -18,90 +19,101 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class ClanHallData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanHallData));
-	private static readonly Map<int, ClanHall> _clanHalls = new();
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanHallData));
+	private static FrozenDictionary<int, ClanHall> _clanHalls = FrozenDictionary<int, ClanHall>.Empty;
 	
-	protected ClanHallData()
+	private ClanHallData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		LoadXmlDocuments(DataFileLocation.Data, "residences/clanHalls", true).ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("clanHall").ForEach(x => loadElement(t.FilePath, x));
-		});
-        
-		LOGGER.Info(GetType().Name + ": Succesfully loaded " + _clanHalls.size() + " clan halls.");
-	}
-	
-	private void loadElement(string filePath, XElement element)
-	{
-		int id = element.GetAttributeValueAsInt32("id");
-		string name = element.Attribute("name").GetString("None");
-		ClanHallGrade grade = element.Attribute("grade").GetEnum(ClanHallGrade.GRADE_NONE);
-		ClanHallType type = element.Attribute("type").GetEnum(ClanHallType.OTHER);
-
-		XElement auctionEl = element.Elements("auction").Single();
-		int minBid = auctionEl.GetAttributeValueAsInt32("minBid");
-		int lease = auctionEl.GetAttributeValueAsInt32("lease");
-		int deposit = auctionEl.GetAttributeValueAsInt32("deposit");
-
-		XElement rpEl = element.Elements("ownerRestartPoint").Single();
-		Location ownerRestartPoint = new Location(rpEl.GetAttributeValueAsInt32("x"), rpEl.GetAttributeValueAsInt32("y"),
-			rpEl.GetAttributeValueAsInt32("z"));
-		
-		XElement bpEl = element.Elements("banishPoint").Single();
-		Location banishPoint = new Location(bpEl.GetAttributeValueAsInt32("x"), bpEl.GetAttributeValueAsInt32("y"),
-			bpEl.GetAttributeValueAsInt32("z"));
-
-		ClanHall clanHall = new ClanHall(id, grade, type, minBid, lease, deposit, ownerRestartPoint, banishPoint);
-		clanHall.setName(name);
-		
-		element.Elements("npcs").Elements("npc").ForEach(el =>
-		{
-			int npcId = el.GetAttributeValueAsInt32("id");
-			clanHall.getNpcs().add(npcId);
-		});
-		
-		element.Elements("doorlist").Elements("door").ForEach(el =>
-		{
-			int doorId = el.GetAttributeValueAsInt32("id");
-			Door door = DoorData.getInstance().getDoor(doorId);
-			if (door != null)
+		Dictionary<int, ClanHall> clanHalls = new Dictionary<int, ClanHall>();
+		LoadXmlDocuments<XmlClanHallList>(DataFileLocation.Data, "residences/clanHalls", true)
+			.Select(t => t.Document.ClanHall)
+			.Where(c => c is not null)
+			.Select(c => LoadClanHall(c!))
+			.Where(c => c is not null)
+			.ForEach(clanHall =>
 			{
-				clanHall.getDoors().add(door);
-			}
-		});
-		
-		element.Elements("teleportList").Elements("teleport").ForEach(el =>
-		{
-			NpcStringId npcStringId = (NpcStringId)el.GetAttributeValueAsInt32("npcStringId");
-			int x = el.GetAttributeValueAsInt32("x");
-			int y = el.GetAttributeValueAsInt32("y");
-			int z = el.GetAttributeValueAsInt32("z");
-			int minFunctionLevel = el.GetAttributeValueAsInt32("minFunctionLevel");
-			int cost = el.GetAttributeValueAsInt32("cost");
-			clanHall.getTeleportList().add(new ClanHallTeleportHolder(npcStringId, x, y, z, minFunctionLevel, cost));
-		});
+				if (!clanHalls.TryAdd(clanHall!.getResidenceId(), clanHall))
+					_logger.Error(nameof(ClanHallData) + $": Duplicated clan hall id={clanHall.getResidenceId()}");
+			});
 
-		_clanHalls.put(id, clanHall);
+		_clanHalls = clanHalls.ToFrozenDictionary();
+		
+		_logger.Info(GetType().Name + ": Succesfully loaded " + clanHalls.Count + " clan halls.");
 	}
 	
-	public ClanHall getClanHallById(int clanHallId)
+	private static ClanHall? LoadClanHall(XmlClanHall xmlClanHall)
 	{
-		return _clanHalls.get(clanHallId);
+		string name = string.IsNullOrEmpty(xmlClanHall.Name) ? "None" : xmlClanHall.Name;
+		ClanHallGrade grade = xmlClanHall.GradeSpecified ? xmlClanHall.Grade : ClanHallGrade.GRADE_NONE;
+		ClanHallType type = xmlClanHall.TypeSpecified ? xmlClanHall.Type : ClanHallType.OTHER;
+
+		XmlClanHallAuction? auction = xmlClanHall.Auction;
+		XmlClanHallOwnerRestartPoint? ownerRestartPoint = xmlClanHall.OwnerRestartPoint;
+		XmlClanHallBanishPoint? banishPoint = xmlClanHall.BanishPoint;
+
+		if (auction is null)
+		{
+			_logger.Error(nameof(ClanHallData) + $": auction is null for clan hall id={xmlClanHall.Id}");
+			return null;
+		}
+
+		if (ownerRestartPoint is null)
+		{
+			_logger.Error(nameof(ClanHallData) + $": ownerRestartPoint is null for clan hall id={xmlClanHall.Id}");
+			return null;
+		}
+
+		if (banishPoint is null)
+		{
+			_logger.Error(nameof(ClanHallData) + $": banishPoint is null for clan hall id={xmlClanHall.Id}");
+			return null;
+		}
+		
+		Location ownerRestartPointLoc = new(ownerRestartPoint.X, ownerRestartPoint.Y, ownerRestartPoint.Z);
+		Location banishPointLoc = new(banishPoint.X, banishPoint.Y, banishPoint.Z);
+
+		ClanHall clanHall = new(xmlClanHall.Id, name, grade, type, auction.MinBid, auction.Lease, auction.Deposit,
+			ownerRestartPointLoc, banishPointLoc);
+
+		foreach (XmlClanHallNpc clanHallNpc in xmlClanHall.NpcList)
+			clanHall.getNpcs().add(clanHallNpc.Id);
+
+		foreach (XmlClanHallDoor clanHallDoor in xmlClanHall.DoorList)
+		{
+			Door door = DoorData.getInstance().getDoor(clanHallDoor.Id);
+			if (door is null)
+				_logger.Warn(nameof(ClanHallData) + $": Door id={clanHallDoor.Id} not exists");
+			else
+				clanHall.getDoors().add(door);
+		}
+
+		foreach (XmlClanHallTeleport teleport in xmlClanHall.TeleportList)
+		{
+			clanHall.getTeleportList().add(new ClanHallTeleportHolder((NpcStringId)teleport.NpcStringId, teleport.X,
+				teleport.Y, teleport.Z, teleport.MinFunctionLevel, teleport.Cost));
+		}
+
+		return clanHall;
 	}
 	
-	public ICollection<ClanHall> getClanHalls()
+	public ClanHall? getClanHallById(int clanHallId)
 	{
-		return _clanHalls.values();
+		return _clanHalls.GetValueOrDefault(clanHallId);
 	}
 	
-	public ClanHall getClanHallByNpcId(int npcId)
+	public ImmutableArray<ClanHall> getClanHalls()
 	{
-		foreach (ClanHall ch in _clanHalls.values())
+		return _clanHalls.Values;
+	}
+	
+	public ClanHall? getClanHallByNpcId(int npcId)
+	{
+		foreach (ClanHall ch in _clanHalls.Values)
 		{
 			if (ch.getNpcs().Contains(npcId))
 			{
@@ -111,37 +123,39 @@ public class ClanHallData: DataReaderBase
 		return null;
 	}
 	
-	public ClanHall getClanHallByClan(Clan clan)
+	public ClanHall? getClanHallByClan(Clan clan)
 	{
-		foreach (ClanHall ch in _clanHalls.values())
+		foreach (ClanHall ch in _clanHalls.Values)
 		{
 			if (ch.getOwner() == clan)
 			{
 				return ch;
 			}
 		}
+		
 		return null;
 	}
 	
-	public ClanHall getClanHallByDoorId(int doorId)
+	public ClanHall? getClanHallByDoorId(int doorId)
 	{
 		Door door = DoorData.getInstance().getDoor(doorId);
-		foreach (ClanHall ch in _clanHalls.values())
+		foreach (ClanHall ch in _clanHalls.Values)
 		{
 			if (ch.getDoors().Contains(door))
 			{
 				return ch;
 			}
 		}
+		
 		return null;
 	}
 
 	public List<ClanHall> getFreeAuctionableHall()
 	{
 		List<ClanHall> freeAuctionableHalls = new();
-		foreach (ClanHall ch in _clanHalls.values())
+		foreach (ClanHall ch in _clanHalls.Values)
 		{
-			if ((ch.getType() == ClanHallType.AUCTIONABLE) && (ch.getOwner() == null))
+			if (ch.getType() == ClanHallType.AUCTIONABLE && ch.getOwner() == null)
 			{
 				freeAuctionableHalls.add(ch);
 			}
