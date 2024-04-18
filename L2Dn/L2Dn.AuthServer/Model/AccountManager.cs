@@ -126,22 +126,22 @@ public sealed class AccountManager: ISingleton<AccountManager>
         AccountCharacterData? record = await ctx.AccountCharacterData.SingleOrDefaultAsync(r
             => r.AccountId == accountId && r.ServerId == serverId).ConfigureAwait(false);
 
+        int recordCharacterCount = record?.CharacterCount ?? 0;
+        if (recordCharacterCount == characterCount)
+            return;
+        
         if (record is null)
         {
-            if (characterCount == 0)
-                return;
-            
             record = new AccountCharacterData
             {
                 AccountId = accountId,
                 ServerId = serverId,
             };
+
+            ctx.AccountCharacterData.Add(record);
         }
 
-        if (record.CharacterCount != characterCount)
-        {
-            record.CharacterCount = characterCount;
-            await ctx.SaveChangesAsync().ConfigureAwait(false);
-        }
+        record.CharacterCount = characterCount;
+        await ctx.SaveChangesAsync().ConfigureAwait(false);
     }
 }
