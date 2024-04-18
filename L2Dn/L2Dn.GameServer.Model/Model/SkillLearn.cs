@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model;
@@ -16,7 +17,7 @@ public class SkillLearn
 	private readonly int _getDualClassLevel;
 	private readonly bool _autoGet;
 	private readonly long _levelUpSp;
-	private readonly List<List<ItemHolder>> _requiredItems = new();
+	private readonly List<List<ItemHolder>> _requiredItems = new(); // TODO: does this really need to be list of lists?
 	private readonly Set<Race> _races = new();
 	private readonly Set<SkillHolder> _preReqSkills = new();
 	private SocialClass _socialClass;
@@ -34,22 +35,22 @@ public class SkillLearn
 	 * Constructor for SkillLearn.
 	 * @param set the set with the SkillLearn data.
 	 */
-	public SkillLearn(StatSet set)
+	public SkillLearn(XmlSkillTreeSkill xmlSkill)
 	{
-		_skillName = set.getString("skillName");
-		_skillId = set.getInt("skillId");
-		_skillLevel = set.getInt("skillLevel");
-		_getLevel = set.getInt("getLevel");
-		_getDualClassLevel = set.getInt("getDualClassLevel", 0);
-		_autoGet = set.getBoolean("autoGet", false);
-		_levelUpSp = set.getLong("levelUpSp", 0);
-		_residenceSkill = set.getBoolean("residenceSkill", false);
-		_learnedByNpc = set.getBoolean("learnedByNpc", false);
-		_learnedByFS = set.getBoolean("learnedByFS", false);
-		_treeId = set.getInt("treeId", 0);
-		_row = set.getInt("row", 0);
-		_column = set.getInt("row", 0);
-		_pointsRequired = set.getInt("pointsRequired", 0);
+		_skillName = xmlSkill.SkillName;
+		_skillId = xmlSkill.SkillId;
+		_skillLevel = xmlSkill.SkillLevel;
+		_getLevel = xmlSkill.GetLevel;
+		_getDualClassLevel = xmlSkill.GetDualClassLevel;
+		_autoGet = xmlSkill.AutoGet;
+		_levelUpSp = xmlSkill.LevelUpSp;
+		_residenceSkill = xmlSkill.ResidenceSkill;
+		_learnedByNpc = xmlSkill.LearnedByNpc;
+		_learnedByFS = xmlSkill.LearnedByFs;
+		_treeId = xmlSkill.TreeId;
+		_row = xmlSkill.Row;
+		_column = xmlSkill.Column;
+		_pointsRequired = xmlSkill.PointsRequired;
 	}
 	
 	/**

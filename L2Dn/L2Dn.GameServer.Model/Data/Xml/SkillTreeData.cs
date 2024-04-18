@@ -1,6 +1,4 @@
-using System.Xml.Linq;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -10,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
+using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
@@ -40,7 +39,7 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class SkillTreeData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillTreeData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(SkillTreeData));
 	
 	// ClassId, Map of Skill Hash Code, SkillLearn
 	private static readonly Map<CharacterClass, Map<long, SkillLearn>> _classSkillTrees = new();
@@ -80,7 +79,7 @@ public class SkillTreeData: DataReaderBase
 	/**
 	 * Instantiates a new skill trees data.
 	 */
-	protected SkillTreeData()
+	private SkillTreeData()
 	{
 		load();
 	}
@@ -109,10 +108,9 @@ public class SkillTreeData: DataReaderBase
 		_awakeningSaveSkillTree.clear();
 		
 		// Load files.
-		LoadXmlDocuments(DataFileLocation.Data, "skillTrees", true).ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("skillTree").ForEach(x => loadElement(t.FilePath, x));
-		});
+		LoadXmlDocuments<XmlSkillTreeList>(DataFileLocation.Data, "skillTrees", true)
+			.SelectMany(t => t.Document.SkillTrees)
+			.ForEach(LoadSkillTree);
 		
 		// Generate check arrays.
 		generateCheckArrays();
@@ -126,177 +124,152 @@ public class SkillTreeData: DataReaderBase
 	/**
 	 * Parse a skill tree file and store it into the correct skill tree.
 	 */
-	private void loadElement(string filePath, XElement element)
+	private void LoadSkillTree(XmlSkillTree xmlSkillTree)
 	{
 		Map<long, SkillLearn> classSkillTree = new();
 		Map<long, SkillLearn> transferSkillTree = new();
 		Map<long, SkillLearn> raceSkillTree = new();
 		Map<long, SkillLearn> revelationSkillTree = new();
 
-		string type = element.GetAttributeValueAsString("type");
-		CharacterClass? classId = (CharacterClass?)element.Attribute("classId")?.GetInt32();
-		CharacterClass? parentClassId = (CharacterClass?)element.Attribute("parentClassId")?.GetInt32();
-		SubclassType? subType = element.Attribute("subType")?.GetEnum<SubclassType>();
-		Race? race = element.Attribute("race")?.GetEnum<Race>();
+		XmlSkillTreeType type = xmlSkillTree.Type;
+		CharacterClass? classId = xmlSkillTree.ClassIdSpecified ? (CharacterClass)xmlSkillTree.ClassId : null;
+		CharacterClass? parentClassId =
+			xmlSkillTree.ParentClassIdSpecified ? (CharacterClass)xmlSkillTree.ParentClassId : null;
+		
+		SubclassType? subType = xmlSkillTree.SubTypeSpecified ? xmlSkillTree.SubType : null;
+		Race? race = xmlSkillTree.RaceSpecified ? xmlSkillTree.Race : null;
 
-		if (classId != null && parentClassId != null && !_parentClassMap.containsKey(classId.Value))
+		if (classId != null && parentClassId != null && !_parentClassMap.ContainsKey(classId.Value))
 		{
 			_parentClassMap.put(classId.Value, parentClassId.Value);
 		}
 
-		foreach (XElement c in element.Elements("skill"))
+		foreach (XmlSkillTreeSkill xmlSkill in xmlSkillTree.Skills)
 		{
-			StatSet learnSkillSet = new StatSet(c);
-			SkillLearn skillLearn = new SkillLearn(learnSkillSet);
+			SkillLearn skillLearn = new(xmlSkill);
 
 			// test if skill exists
 			SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
-			foreach (XElement b in c.Elements())
+
+			foreach (XmlSkillTreeSkillItem xmlSkillItem in xmlSkill.Items)
 			{
-				switch (b.Name.LocalName)
-				{
-					case "item":
-					{
-						List<ItemHolder> itemList = new();
-						int count = b.GetAttributeValueAsInt32("count");
-						foreach (string id in b.GetAttributeValueAsString("id").Split(","))
-							itemList.add(new ItemHolder(int.Parse(id), count));
-
-						skillLearn.addRequiredItem(itemList);
-						break;
-					}
-					case "preRequisiteSkill":
-					{
-						skillLearn.addPreReqSkill(new SkillHolder(b.GetAttributeValueAsInt32("id"),
-							b.GetAttributeValueAsInt32("lvl")));
-						break;
-					}
-					case "race":
-					{
-						skillLearn.addRace(Enum.Parse<Race>(b.Value));
-						break;
-					}
-					case "residenceId":
-					{
-						skillLearn.addResidenceId((int)b);
-						break;
-					}
-					case "socialClass":
-					{
-						skillLearn.setSocialClass(Enum.Parse<SocialClass>(b.Value));
-						break;
-					}
-					case "removeSkill":
-					{
-						int removeSkillId = b.GetAttributeValueAsInt32("id");
-						skillLearn.addRemoveSkills(removeSkillId);
-						if (!b.Attribute("onlyReplaceByLearn").GetBoolean(false))
-						{
-							_removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removeSkillId);
-						}
-
-						break;
-					}
-				}
+				List<ItemHolder> itemList = [new ItemHolder(xmlSkillItem.Id, xmlSkillItem.Count)];
+				skillLearn.addRequiredItem(itemList);
 			}
 
+			foreach (XmlSkillTreeSkillPreRequisiteSkill xmlPreRequisiteSkill in xmlSkill.PreRequisiteSkills)
+				skillLearn.addPreReqSkill(new SkillHolder(xmlPreRequisiteSkill.Id, xmlPreRequisiteSkill.Level));
+
+			foreach (Race skillRace in xmlSkill.Races)
+				skillLearn.addRace(skillRace);
+
+			foreach (int residenceId in xmlSkill.ResidenceIds)
+				skillLearn.addResidenceId(residenceId);
+
+			if (xmlSkill.SocialClassSpecified)
+				skillLearn.setSocialClass(xmlSkill.SocialClass);
+
+			foreach (XmlSkillTreeSkillRemovingSkill xmlRemovingSkill in xmlSkill.RemovingSkills)
+			{
+				int removingSkillId = xmlRemovingSkill.Id;
+				skillLearn.addRemoveSkills(removingSkillId);
+				if (!xmlRemovingSkill.OnlyReplaceByLearn)
+					_removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removingSkillId);
+			}
+			
 			long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
 			switch (type)
 			{
-				case "classSkillTree":
+				case XmlSkillTreeType.classSkillTree:
 				{
 					if (classId is not null)
-					{
 						classSkillTree.put(skillHashCode, skillLearn);
-					}
 					else
-					{
 						_commonSkillTree.put(skillHashCode, skillLearn);
-					}
 
 					break;
 				}
-				case "transferSkillTree":
+				case XmlSkillTreeType.transferSkillTree:
 				{
 					transferSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "collectSkillTree":
+				case XmlSkillTreeType.collectSkillTree:
 				{
 					_collectSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "raceSkillTree":
+				case XmlSkillTreeType.raceSkillTree:
 				{
 					raceSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "revelationSkillTree":
+				case XmlSkillTreeType.revelationSkillTree:
 				{
 					revelationSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "fishingSkillTree":
+				case XmlSkillTreeType.fishingSkillTree:
 				{
 					_fishingSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "pledgeSkillTree":
+				case XmlSkillTreeType.pledgeSkillTree:
 				{
 					_pledgeSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "subClassSkillTree":
+				case XmlSkillTreeType.subClassSkillTree:
 				{
 					_subClassSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "subPledgeSkillTree":
+				case XmlSkillTreeType.subPledgeSkillTree:
 				{
 					_subPledgeSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "transformSkillTree":
+				case XmlSkillTreeType.transformSkillTree:
 				{
 					_transformSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "nobleSkillTree":
+				case XmlSkillTreeType.nobleSkillTree:
 				{
 					_nobleSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "abilitySkillTree":
+				case XmlSkillTreeType.abilitySkillTree:
 				{
 					_abilitySkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "alchemySkillTree":
+				case XmlSkillTreeType.alchemySkillTree:
 				{
 					_alchemySkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "heroSkillTree":
+				case XmlSkillTreeType.heroSkillTree:
 				{
 					_heroSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "gameMasterSkillTree":
+				case XmlSkillTreeType.gameMasterSkillTree:
 				{
 					_gameMasterSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "gameMasterAuraSkillTree":
+				case XmlSkillTreeType.gameMasterAuraSkillTree:
 				{
 					_gameMasterAuraSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "dualClassSkillTree":
+				case XmlSkillTreeType.dualClassSkillTree:
 				{
 					_dualClassSkillTree.put(skillHashCode, skillLearn);
 					break;
 				}
-				case "awakeningSaveSkillTree":
+				case XmlSkillTreeType.awakeningSaveSkillTree:
 				{
 					_awakeningSaveSkillTree.computeIfAbsent(classId.Value, k => new())
 						.add(skillLearn.getSkillId());
@@ -304,51 +277,39 @@ public class SkillTreeData: DataReaderBase
 				}
 				default:
 				{
-					LOGGER.Warn(GetType().Name + ": Unknown Skill Tree type: " + type + "!");
+					_logger.Warn(GetType().Name + ": Unknown Skill Tree type: " + type + "!");
 					break;
 				}
 			}
 		}
 
-		if (type.equals("transferSkillTree"))
+		if (type == XmlSkillTreeType.transferSkillTree)
 		{
 			_transferSkillTrees.put(classId.Value, transferSkillTree);
 		}
-		else if (type.equals("classSkillTree") && classId is not null)
+		else if (type == XmlSkillTreeType.classSkillTree && classId is not null)
 		{
 			Map<long, SkillLearn> classSkillTrees = _classSkillTrees.get(classId.Value);
 			if (classSkillTrees == null)
-			{
 				_classSkillTrees.put(classId.Value, classSkillTree);
-			}
 			else
-			{
 				classSkillTrees.putAll(classSkillTree);
-			}
 		}
-		else if (type.equals("raceSkillTree") && race != null)
+		else if (type == XmlSkillTreeType.raceSkillTree && race != null)
 		{
 			Map<long, SkillLearn> raceSkillTrees = _raceSkillTree.get(race.Value);
 			if (raceSkillTrees == null)
-			{
 				_raceSkillTree.put(race.Value, raceSkillTree);
-			}
 			else
-			{
 				raceSkillTrees.putAll(raceSkillTree);
-			}
 		}
-		else if (type.equals("revelationSkillTree") && subType != null)
+		else if (type == XmlSkillTreeType.revelationSkillTree && subType != null)
 		{
 			Map<long, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(subType.Value);
 			if (revelationSkillTrees == null)
-			{
 				_revelationSkillTree.put(subType.Value, revelationSkillTree);
-			}
 			else
-			{
 				revelationSkillTrees.putAll(revelationSkillTree);
-			}
 		}
 	}
 
@@ -609,7 +570,7 @@ public class SkillTreeData: DataReaderBase
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined.
-			LOGGER.Warn(GetType().Name + ": Skilltree for class " + classId + " is not defined!");
+			_logger.Warn(GetType().Name + ": Skilltree for class " + classId + " is not defined!");
 			return result;
 		}
 		
@@ -634,7 +595,7 @@ public class SkillTreeData: DataReaderBase
 			{
 				if (skill.getSkillLevel() > SkillData.getInstance().getMaxLevel(skill.getSkillId()))
 				{
-					LOGGER.Error(GetType().Name + ": SkillTreesData found learnable skill " + skill.getSkillId() + " with level higher than max skill level!");
+					_logger.Error(GetType().Name + ": SkillTreesData found learnable skill " + skill.getSkillId() + " with level higher than max skill level!");
 					continue;
 				}
 				
@@ -810,7 +771,7 @@ public class SkillTreeData: DataReaderBase
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined, so we return an empty list.
-			LOGGER.Warn(GetType().Name + ": Skill Tree for this class Id(" + player.getClassId() + ") is not defined!");
+			_logger.Warn(GetType().Name + ": Skill Tree for this class Id(" + player.getClassId() + ") is not defined!");
 			return result;
 		}
 		
@@ -1462,7 +1423,7 @@ public class SkillTreeData: DataReaderBase
 		int minLevel = 0;
 		if (skillTree.isEmpty())
 		{
-			LOGGER.Warn(GetType().Name + ": SkillTree is not defined for getMinLevelForNewSkill!");
+			_logger.Warn(GetType().Name + ": SkillTree is not defined for getMinLevelForNewSkill!");
 		}
 		else
 		{
@@ -1908,29 +1869,29 @@ public class SkillTreeData: DataReaderBase
 		}
 		
 		String className = GetType().Name;
-		LOGGER.Info(className + ": Loaded " + classSkillTreeCount + " Class skills for " + _classSkillTrees.size() + " class skill trees.");
-		LOGGER.Info(className + ": Loaded " + _subClassSkillTree.size() + " sub-class skills.");
-		LOGGER.Info(className + ": Loaded " + _dualClassSkillTree.size() + " dual-class skills.");
-		LOGGER.Info(className + ": Loaded " + transferSkillTreeCount + " transfer skills for " + _transferSkillTrees.size() + " transfer skill trees.");
-		LOGGER.Info(className + ": Loaded " + raceSkillTreeCount + " race skills for " + _raceSkillTree.size() + " race skill trees.");
-		LOGGER.Info(className + ": Loaded " + _fishingSkillTree.size() + " fishing skills, " + dwarvenOnlyFishingSkillCount + " Dwarven only fishing skills.");
-		LOGGER.Info(className + ": Loaded " + _collectSkillTree.size() + " collect skills.");
-		LOGGER.Info(className + ": Loaded " + _pledgeSkillTree.size() + " clan skills, " + (_pledgeSkillTree.size() - resSkillCount) + " for clan and " + resSkillCount + " residential.");
-		LOGGER.Info(className + ": Loaded " + _subPledgeSkillTree.size() + " sub-pledge skills.");
-		LOGGER.Info(className + ": Loaded " + _transformSkillTree.size() + " transform skills.");
-		LOGGER.Info(className + ": Loaded " + _nobleSkillTree.size() + " noble skills.");
-		LOGGER.Info(className + ": Loaded " + _heroSkillTree.size() + " hero skills.");
-		LOGGER.Info(className + ": Loaded " + _gameMasterSkillTree.size() + " game master skills.");
-		LOGGER.Info(className + ": Loaded " + _gameMasterAuraSkillTree.size() + " game master aura skills.");
-		LOGGER.Info(className + ": Loaded " + _abilitySkillTree.size() + " ability skills.");
-		LOGGER.Info(className + ": Loaded " + _alchemySkillTree.size() + " alchemy skills.");
-		LOGGER.Info(className + ": Loaded " + _awakeningSaveSkillTree.size() + " class awaken save skills.");
-		LOGGER.Info(className + ": Loaded " + revelationSkillTreeCount + " Revelation skills.");
+		_logger.Info(className + ": Loaded " + classSkillTreeCount + " Class skills for " + _classSkillTrees.size() + " class skill trees.");
+		_logger.Info(className + ": Loaded " + _subClassSkillTree.size() + " sub-class skills.");
+		_logger.Info(className + ": Loaded " + _dualClassSkillTree.size() + " dual-class skills.");
+		_logger.Info(className + ": Loaded " + transferSkillTreeCount + " transfer skills for " + _transferSkillTrees.size() + " transfer skill trees.");
+		_logger.Info(className + ": Loaded " + raceSkillTreeCount + " race skills for " + _raceSkillTree.size() + " race skill trees.");
+		_logger.Info(className + ": Loaded " + _fishingSkillTree.size() + " fishing skills, " + dwarvenOnlyFishingSkillCount + " Dwarven only fishing skills.");
+		_logger.Info(className + ": Loaded " + _collectSkillTree.size() + " collect skills.");
+		_logger.Info(className + ": Loaded " + _pledgeSkillTree.size() + " clan skills, " + (_pledgeSkillTree.size() - resSkillCount) + " for clan and " + resSkillCount + " residential.");
+		_logger.Info(className + ": Loaded " + _subPledgeSkillTree.size() + " sub-pledge skills.");
+		_logger.Info(className + ": Loaded " + _transformSkillTree.size() + " transform skills.");
+		_logger.Info(className + ": Loaded " + _nobleSkillTree.size() + " noble skills.");
+		_logger.Info(className + ": Loaded " + _heroSkillTree.size() + " hero skills.");
+		_logger.Info(className + ": Loaded " + _gameMasterSkillTree.size() + " game master skills.");
+		_logger.Info(className + ": Loaded " + _gameMasterAuraSkillTree.size() + " game master aura skills.");
+		_logger.Info(className + ": Loaded " + _abilitySkillTree.size() + " ability skills.");
+		_logger.Info(className + ": Loaded " + _alchemySkillTree.size() + " alchemy skills.");
+		_logger.Info(className + ": Loaded " + _awakeningSaveSkillTree.size() + " class awaken save skills.");
+		_logger.Info(className + ": Loaded " + revelationSkillTreeCount + " Revelation skills.");
 		
 		int commonSkills = _commonSkillTree.size();
 		if (commonSkills > 0)
 		{
-			LOGGER.Info(className + ": Loaded " + commonSkills + " common skills.");
+			_logger.Info(className + ": Loaded " + commonSkills + " common skills.");
 		}
 	}
 	

@@ -8,7 +8,6 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Clans;
-using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Sieges;
@@ -20,6 +19,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeBonus;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeV3;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -31,10 +31,6 @@ namespace L2Dn.GameServer.Model.Clans;
 public class Clan: IIdentifiable, INamable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Clan));
-	
-	// SQL queries
-	private const string INSERT_CLAN_DATA = "INSERT INTO clan_data (clan_id,clan_name,clan_level,hasCastle,blood_alliance_count,blood_oath_count,ally_id,ally_name,leader_id,crest_id,crest_large_id,ally_crest_id,new_leader_id,exp) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private const string SELECT_CLAN_DATA = "SELECT * FROM clan_data where clan_id=?";
 	
 	// Ally Penalty Types
 	/** Clan leaved ally */
@@ -94,12 +90,12 @@ public class Clan: IIdentifiable, INamable
 	private readonly Map<int, SubPledge> _subPledges = new();
 	private readonly Map<int, Skill> _subPledgeSkills = new();
 	
-	private int _reputationScore = 0;
-	private int _rank = 0;
-	private int _exp = 0;
+	private int _reputationScore;
+	private int _rank;
+	private int _exp;
 	
 	private string _notice;
-	private bool _noticeEnabled = false;
+	private bool _noticeEnabled;
 	private const int MAX_NOTICE_LENGTH = 8192;
 	private int? _newLeaderId;
 	

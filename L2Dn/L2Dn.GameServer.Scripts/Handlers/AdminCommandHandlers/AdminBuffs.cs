@@ -232,7 +232,7 @@ public class AdminBuffs: IAdminCommandHandler
 				bool toAuraSkills = activeChar.getKnownSkill(7041) != null;
 				switchSkills(activeChar, toAuraSkills);
 				activeChar.sendSkillList();
-				BuilderUtil.sendSysMessage(activeChar, "You have succefully changed to target " + (toAuraSkills ? "aura" : "one") + " special skills.");
+				BuilderUtil.sendSysMessage(activeChar, "You have successfully changed to target " + (toAuraSkills ? "aura" : "one") + " special skills.");
 				return true;
 			}
 			BuilderUtil.sendSysMessage(activeChar, "There is nothing to switch.");
