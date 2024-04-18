@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data/xsd/AdminCommands.xsd">
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../DataPack/xsd/AdminCommands.xsd">
 	<!-- ADMIN COND EXCEPTIONS -->
 	<admin command="admin_exceptions" accessLevel="100" />
 	<admin command="admin_set_exception" accessLevel="100" confirmDlg="true" />
