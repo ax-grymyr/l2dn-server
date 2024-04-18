@@ -15,8 +15,9 @@ public static class XmlUtil
         where T: class
     {
         // Read schema path.
+        using FileStream fileStream = File.OpenRead(filePath);
         XmlDocument document = new();
-        document.Load(filePath);
+        document.Load(fileStream);
 
         XmlReaderSettings config = new();
         
@@ -34,12 +35,14 @@ public static class XmlUtil
                 ? schemaLocation
                 : Path.GetFullPath(Path.Combine(directory, schemaLocation));
 
-            using XmlReader schemaReader = XmlReader.Create(schemaPath);
+            using FileStream schemaFileStream = File.OpenRead(schemaPath);
+            using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
             config.Schemas.Add(null, schemaReader);
         }
 
         // Get the XmlReader object with the configured settings.
-        using XmlReader reader = XmlReader.Create(filePath, config);
+        fileStream.Position = 0;
+        using XmlReader reader = XmlReader.Create(fileStream, config);
         
         XmlSerializer serializer = new(typeof(T));
 
