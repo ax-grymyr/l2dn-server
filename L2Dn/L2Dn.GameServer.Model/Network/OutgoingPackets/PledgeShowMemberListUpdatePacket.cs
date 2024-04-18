@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 

@@ -270,7 +270,7 @@ public class ZoneManager: DataReaderBase
 
 		if (zoneType is RespawnZone respawnZone)
 		{
-			zone.Races.ForEach(el => respawnZone.addRaceRespawnPoint(el.Name, el.Point));
+			zone.Races.ForEach(el => respawnZone.addRaceRespawnPoint(el.Race, el.Point));
 		}
 
 		if (zoneName != null && !zoneName.isEmpty())

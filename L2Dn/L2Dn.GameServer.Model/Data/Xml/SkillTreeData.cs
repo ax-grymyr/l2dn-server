@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;

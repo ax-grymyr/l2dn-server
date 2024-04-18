@@ -1,4 +1,5 @@
 ﻿using System.Xml.Serialization;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.Model.DataPack;
 
@@ -11,7 +12,7 @@ public class XmlTeleport
     public bool NameSpecified { get; set; }
     
     [XmlAttribute("type")]
-    public string Type { get; set; } = string.Empty;
+    public TeleportType Type { get; set; }
 
     [XmlElement("location")]
     public List<XmlTeleportLocation> Locations { get; set; } = [];

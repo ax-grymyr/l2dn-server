@@ -19,6 +19,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Ensoul;
 using L2Dn.GameServer.Network.OutgoingPackets.Variations;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;

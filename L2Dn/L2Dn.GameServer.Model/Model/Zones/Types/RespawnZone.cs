@@ -1,6 +1,6 @@
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class RespawnZone : ZoneRespawn
 {
-	private readonly Map<Race, String> _raceRespawnPoint = new();
+	private readonly Map<Race, string> _raceRespawnPoint = new();
 	
 	public RespawnZone(int id):base(id)
 	{
@@ -24,17 +24,17 @@ public class RespawnZone : ZoneRespawn
 	{
 	}
 	
-	public void addRaceRespawnPoint(String race, String point)
+	public void addRaceRespawnPoint(Race race, string point)
 	{
-		_raceRespawnPoint.put(Enum.Parse<Race>(race), point);
+		_raceRespawnPoint.put(race, point);
 	}
 	
-	public Map<Race, String> getAllRespawnPoints()
+	public Map<Race, string> getAllRespawnPoints()
 	{
 		return _raceRespawnPoint;
 	}
 	
-	public String getRespawnPoint(Player player)
+	public string getRespawnPoint(Player player)
 	{
 		return _raceRespawnPoint.get(player.getRace());
 	}

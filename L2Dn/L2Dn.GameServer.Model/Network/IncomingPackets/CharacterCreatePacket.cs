@@ -17,6 +17,7 @@ using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 

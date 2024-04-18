@@ -1,7 +1,7 @@
 using System.Collections.Frozen;
-using L2Dn.GameServer.Enums;
 using L2Dn.Model;
 using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -27,21 +27,10 @@ public class CategoryData: DataReaderBase
 		XmlCategoryData document = LoadXmlDocument<XmlCategoryData>(DataFileLocation.Data, "CategoryData.xml");
 		_categories =
 			(from category in document.Categories
-				let categoryType = ParseCategoryType(category.Name)
-				where categoryType != null
-				select (CategoryType: categoryType.Value, Set: category.Ids.ToFrozenSet()))
+				select (CategoryType: category.Type, Set: category.Ids.ToFrozenSet()))
 			.ToFrozenDictionary(x => x.CategoryType, x => x.Set);
 
 		_logger.Info(GetType().Name + ": Loaded " + _categories.Count + " categories.");
-	}
-
-	private static CategoryType? ParseCategoryType(string categoryTypeName)
-	{
-		if (Enum.TryParse(categoryTypeName, true, out CategoryType categoryType))
-			return categoryType;
-
-		_logger.Warn(typeof(CategoryData) + ": Can't find category by name: " + categoryTypeName);
-		return null;
 	}
 
 	/**

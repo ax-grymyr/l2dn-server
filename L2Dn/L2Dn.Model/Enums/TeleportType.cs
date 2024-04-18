@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿namespace L2Dn.Model.Enums;
 
 public enum TeleportType
 {

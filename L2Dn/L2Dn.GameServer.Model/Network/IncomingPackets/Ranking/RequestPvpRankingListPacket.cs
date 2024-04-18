@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets.Ranking;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 

@@ -3,7 +3,7 @@
 namespace L2Dn.Model.DataPack;
 
 [XmlRoot("list")]
-public class XmlCastleList
+public class XmlCastleList: XmlBase
 {
     [XmlElement("castle")]
     public List<XmlCastle> Castles { get; set; } = [];

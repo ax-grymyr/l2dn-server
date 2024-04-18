@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Annotations;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.OutgoingPackets.ClassChange;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.AI.Players;
 

@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -58,7 +59,7 @@ public class MapRegionManager: DataReaderBase
 					region.addMap(map.X, map.Y);
 
 				foreach (XmlMapRegionBanned banned in xmlRegion.Banned)
-					region.addBannedRace(Enum.Parse<Race>(banned.Race), banned.Point);
+					region.addBannedRace(banned.Race, banned.Point);
 
 				return region;
 			})

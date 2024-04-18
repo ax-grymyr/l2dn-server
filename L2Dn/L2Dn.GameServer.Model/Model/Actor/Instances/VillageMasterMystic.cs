@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 

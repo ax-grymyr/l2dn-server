@@ -1,4 +1,5 @@
 ﻿using L2Dn.Model;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Enums;
 

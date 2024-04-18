@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Quests;
 

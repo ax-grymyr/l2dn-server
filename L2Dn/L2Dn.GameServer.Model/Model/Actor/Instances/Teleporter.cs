@@ -12,6 +12,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;

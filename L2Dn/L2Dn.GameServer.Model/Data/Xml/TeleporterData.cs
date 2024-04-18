@@ -4,6 +4,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 using TeleportLocation = L2Dn.GameServer.Model.Teleporters.TeleportLocation;
 
@@ -38,9 +39,8 @@ public class TeleporterData: DataReaderBase
 
 				List<TeleportHolder> teleports = npc.Teleports.Select(teleport =>
 				{
-					TeleportType type = Enum.Parse<TeleportType>(teleport.Type);
-					string name = teleport.NameSpecified ? teleport.Name : teleport.Type.ToString();
-
+					TeleportType type = teleport.Type;
+					string name = teleport.NameSpecified ? teleport.Name : type.ToString();
 					ImmutableArray<TeleportLocation> locations = teleport.Locations.Select((location, index)
 						=> new TeleportLocation(index, location)).ToImmutableArray();
 
