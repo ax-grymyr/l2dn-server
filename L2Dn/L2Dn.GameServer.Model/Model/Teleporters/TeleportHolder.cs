@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Immutable;
+using System.Text;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Teleporters;
@@ -19,26 +21,27 @@ public class TeleportHolder
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TeleportHolder));
 
-	private readonly String _name;
+	private readonly string _name;
 	private readonly TeleportType _type;
-	private readonly List<TeleportLocation> _teleportData = new();
+	private readonly ImmutableArray<TeleportLocation> _locations;
 
 	/**
 	 * Constructor
 	 * @param name name of teleport list
 	 * @param type type of teleport list
 	 */
-	public TeleportHolder(String name, TeleportType type)
+	public TeleportHolder(string name, TeleportType type, ImmutableArray<TeleportLocation> locations)
 	{
 		_name = name;
 		_type = type;
+		_locations = locations;
 	}
 
 	/**
 	 * Gets list identification (name).
 	 * @return list name
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -62,31 +65,22 @@ public class TeleportHolder
 	}
 
 	/**
-	 * Create new teleport location in this holder.
-	 * @param locData information about teleport location
-	 */
-	public void registerLocation(StatSet locData)
-	{
-		_teleportData.Add(new TeleportLocation(_teleportData.Count, locData));
-	}
-
-	/**
 	 * Gets teleport location with specific index.
 	 * @param locationId index of location (begins with {@code 0})
 	 * @return instance of {@link TeleportLocation} if found otherwise {@code null}
 	 */
 	public TeleportLocation getLocation(int locationId)
 	{
-		return _teleportData.get(locationId);
+		return _locations[locationId];
 	}
 
 	/**
 	 * Gets all teleport locations registered in current holder.
 	 * @return collection of {@link TeleportLocation}
 	 */
-	public List<TeleportLocation> getLocations()
+	public ImmutableArray<TeleportLocation> getLocations()
 	{
-		return _teleportData;
+		return _locations;
 	}
 
 	/**
@@ -105,7 +99,7 @@ public class TeleportHolder
 	 * @param npc teleporter
 	 * @param bypass bypass used while building message
 	 */
-	public void showTeleportList(Player player, Npc npc, String bypass)
+	public void showTeleportList(Player player, Npc npc, string bypass)
 	{
 		if (isNoblesse() && !player.isNoble())
 		{
@@ -119,10 +113,10 @@ public class TeleportHolder
 		// Build html
 		StringBuilder sb = new StringBuilder();
 		StringBuilder sbF = new StringBuilder();
-		foreach (TeleportLocation loc in _teleportData)
+		foreach (TeleportLocation loc in _locations)
 		{
-			String finalName = loc.getName();
-			String confirmDesc = loc.getName();
+			string finalName = loc.getName();
+			string confirmDesc = loc.getName();
 			if (loc.getNpcStringId() != null)
 			{
 				NpcStringId stringId = loc.getNpcStringId().Value;
@@ -299,7 +293,7 @@ public class TeleportHolder
 	 * @param fstring prefer using client strings
 	 * @return item name
 	 */
-	private String getItemName(int itemId, bool fstring)
+	private string getItemName(int itemId, bool fstring)
 	{
 		if (fstring)
 		{

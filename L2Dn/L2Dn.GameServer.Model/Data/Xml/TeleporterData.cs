@@ -1,11 +1,11 @@
-using System.Xml.Linq;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Teleporters;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
+using TeleportLocation = L2Dn.GameServer.Model.Teleporters.TeleportLocation;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -14,71 +14,57 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class TeleporterData: DataReaderBase
 {
-	// Logger instance
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TeleporterData));
-	// Teleporter data
-	private readonly Map<int, Map<String, TeleportHolder>> _teleporters = new();
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(TeleporterData));
+
+	private readonly record struct TeleportKey(int NpcId, string ListName);
+
+	private FrozenDictionary<TeleportKey, TeleportHolder> _teleportData =
+		FrozenDictionary<TeleportKey, TeleportHolder>.Empty;
 	
-	protected TeleporterData()
+	private TeleporterData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		_teleporters.clear();
-		
-		LoadXmlDocuments(DataFileLocation.Data, "teleporters", true).ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
-		});
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _teleporters.size() + " npc teleporters.");
-	}
-
-	private void loadElement(string filePath, XElement element)
-	{
-		Map<String, TeleportHolder> teleList = new();
-
-		// Parse npc node child
-		int npcId = element.GetAttributeValueAsInt32("id");
-
-		element.Elements("npcs").Elements("npc").Select(e => e.GetAttributeValueAsInt32("id"))
-			.ForEach(npcId => registerTeleportList(npcId, teleList));
-
-		element.Elements("teleport").ForEach(el =>
-		{
-			TeleportType type = el.Attribute("type").GetEnum<TeleportType>();
-			string name = el.Attribute("name").GetString(type.ToString());
-
-			// Parse locations
-			TeleportHolder holder = new TeleportHolder(name, type);
-
-			el.Elements("location").ForEach(e => { holder.registerLocation(new StatSet(e)); });
-
-			// Register holder
-			if (!teleList.TryAdd(name, holder))
+		Dictionary<TeleportKey, TeleportHolder> teleportData = new Dictionary<TeleportKey, TeleportHolder>();
+		LoadXmlDocuments<XmlTeleportData>(DataFileLocation.Data, "teleporters", true)
+			.SelectMany(data => data.Document.Npcs)
+			.SelectMany(npc =>
 			{
-				LOGGER.Error("Duplicate teleport list (" + name + ") has been found for NPC: " + npcId);
-			}
-		});
+				List<int> npcs = [npc.Id];
+				npcs.AddRange(npc.Npcs.Select(n => n.Id));
 
-		registerTeleportList(npcId, teleList);
-	}
+				List<TeleportHolder> teleports = npc.Teleports.Select(teleport =>
+				{
+					TeleportType type = Enum.Parse<TeleportType>(teleport.Type);
+					string name = teleport.NameSpecified ? teleport.Name : teleport.Type.ToString();
 
-	public int getTeleporterCount()
-	{
-		return _teleporters.size();
-	}
-	
-	/**
-	 * Register teleport data to global teleport list holder. Also show warning when any duplicate occurs.
-	 * @param npcId template id of teleporter
-	 * @param teleList teleport data to register
-	 */
-	private void registerTeleportList(int npcId, Map<String, TeleportHolder> teleList)
-	{
-		_teleporters.put(npcId, teleList);
+					ImmutableArray<TeleportLocation> locations = teleport.Locations.Select((location, index)
+						=> new TeleportLocation(index, location)).ToImmutableArray();
+
+					TeleportHolder holder = new(name, type, locations);
+					return holder;
+				}).ToList();
+
+				return npcs.SelectMany(n => teleports.Select(t => (Key: new TeleportKey(n, t.getName()), Value: t)));
+			})
+			.ForEach(t =>
+			{
+				if (!teleportData.TryAdd(t.Key, t.Value))
+				{
+					_logger.Error(nameof(TeleporterData) + ": Duplicate teleport list (" + t.Key.ListName +
+					              ") has been found for NPC: " +
+					              t.Key.NpcId);
+				}
+			});
+
+		int teleportersCount = teleportData.Select(t => t.Key.NpcId).Distinct().Count();
+
+		_teleportData = teleportData.ToFrozenDictionary();
+		
+		_logger.Info(GetType().Name + ": Loaded " + teleportersCount + " npc teleporters.");
 	}
 	
 	/**
@@ -87,9 +73,9 @@ public class TeleporterData: DataReaderBase
 	 * @param listName name of teleport list
 	 * @return {@link TeleportHolder} if found otherwise {@code null}
 	 */
-	public TeleportHolder getHolder(int npcId, String listName)
+	public TeleportHolder? getHolder(int npcId, string listName)
 	{
-		return _teleporters.getOrDefault(npcId, new()).get(listName);
+		return _teleportData.GetValueOrDefault(new TeleportKey(npcId, listName));
 	}
 	
 	/**

@@ -1,46 +1,32 @@
-﻿using L2Dn.GameServer.Model.ItemContainers;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
 
 namespace L2Dn.GameServer.Model.Teleporters;
 
 public class TeleportLocation: Location
 {
     private readonly int _id;
-    private readonly String _name;
+    private readonly string _name;
     private readonly NpcStringId? _npcStringId;
     private readonly int _questZoneId;
     private readonly int _feeId;
     private readonly long _feeCount;
-    private readonly List<int> _castleId;
-
-    public TeleportLocation(int id, StatSet set): base(set)
+    private readonly ImmutableArray<int> _castleId = [];
+    
+    public TeleportLocation(int id, XmlTeleportLocation location)
+        : base(location.X, location.Y, location.Z)
     {
         _id = id;
-        _name = set.getString("name", null);
-        int npcStringId = set.getInt("npcStringId", -1); 
-        _npcStringId = npcStringId == -1 ? null : (NpcStringId)npcStringId;
-        _questZoneId = set.getInt("questZoneId", 0);
-        _feeId = set.getInt("feeId", Inventory.ADENA_ID);
-        _feeCount = set.getLong("feeCount", 0);
+        _name = location.NameSpecified ? location.Name : string.Empty;
+        _npcStringId = location.NpcStringIdSpecified ? (NpcStringId)location.NpcStringId : null;
+        _questZoneId = location.QuestZoneIdSpecified ? location.QuestZoneId : 0;
+        _feeId =  location.FeeItemIdSpecified ? location.FeeItemId : Inventory.ADENA_ID;
+        _feeCount = location.FeeCountSpecified ? location.FeeCount : 0;
 
-        String castleIds = set.getString("castleId", "");
-        if (castleIds.isEmpty())
-        {
-            _castleId = new();
-        }
-        else if (!castleIds.Contains(";"))
-        {
-            _castleId = [int.Parse(castleIds)];
-        }
-        else
-        {
-            _castleId = new();
-            foreach (String castleId in castleIds.Split(";"))
-            {
-                _castleId.add(int.Parse(castleId));
-            }
-        }
+        if (location.CastleIdSpecified && !string.IsNullOrEmpty(location.CastleId))
+            _castleId = location.CastleId.Split(';').Select(int.Parse).ToImmutableArray();
     }
 
     public int getId()
@@ -48,7 +34,7 @@ public class TeleportLocation: Location
         return _id;
     }
 
-    public String getName()
+    public string getName()
     {
         return _name;
     }
@@ -73,7 +59,7 @@ public class TeleportLocation: Location
         return _feeCount;
     }
 
-    public List<int> getCastleId()
+    public ImmutableArray<int> getCastleId()
     {
         return _castleId;
     }
