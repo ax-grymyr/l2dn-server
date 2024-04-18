@@ -6,5 +6,5 @@ namespace L2Dn.Model.DataPack;
 public class XmlClanHallList: XmlBase
 {
     [XmlElement("clanHall")]
-    public XmlClanHall? ClanHall { get; set; }
+    public List<XmlClanHall> ClanHalls { get; set; } = [];
 }

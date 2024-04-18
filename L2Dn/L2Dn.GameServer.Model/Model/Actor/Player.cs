@@ -64,6 +64,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;

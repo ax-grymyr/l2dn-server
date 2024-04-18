@@ -1,10 +1,10 @@
-using System.Xml.Linq;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
+using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -13,8 +13,13 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class CastleData: DataReaderBase
 {
-	private readonly Map<int, List<CastleSpawnHolder>> _spawns = new();
-	private static readonly Map<int, List<SiegeGuardHolder>> _siegeGuards = new();
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(CastleData));
+    
+	private FrozenDictionary<int, ImmutableArray<CastleSpawnHolder>> _spawns =
+		FrozenDictionary<int, ImmutableArray<CastleSpawnHolder>>.Empty;
+
+	private FrozenDictionary<int, ImmutableArray<SiegeGuardHolder>> _siegeGuards =
+		FrozenDictionary<int, ImmutableArray<SiegeGuardHolder>>.Empty;
 	
 	protected CastleData()
 	{
@@ -23,77 +28,47 @@ public class CastleData: DataReaderBase
 	
 	public void load()
 	{
-		_spawns.clear();
-		_siegeGuards.clear();
+		Dictionary<int, List<CastleSpawnHolder>> spawns = new();
+		Dictionary<int, List<SiegeGuardHolder>> siegeGuards = new();
+
+		LoadXmlDocuments<XmlCastleList>(DataFileLocation.Data, "residences/castles", true)
+			.SelectMany(t => t.Document.Castles)
+			.ForEach(castle =>
+			{
+				List<CastleSpawnHolder> spawnList = castle.Spawns
+					.Select(s => new CastleSpawnHolder(s.Id, s.CastleSide, s.X, s.Y, s.Z, s.Heading))
+					.ToList();
+
+				if (!spawns.TryAdd(castle.Id, spawnList))
+					_logger.Warn(nameof(CastleData) + $": Duplicated castle definition id={castle.Id}");
+
+				List<SiegeGuardHolder> guardList = castle.SiegeGuards
+					.Select(g => new SiegeGuardHolder(castle.Id, g.ItemId, g.Type, g.Stationary, g.NpcId,
+						g.NpcMaxAmount))
+					.ToList();
+
+				if (!siegeGuards.TryAdd(castle.Id, guardList))
+					_logger.Warn(nameof(CastleData) + $": Duplicated castle definition id={castle.Id}");
+			});
+
+		_spawns = spawns.ToFrozenDictionary(t => t.Key, t => t.Value.ToImmutableArray());
+		_siegeGuards = siegeGuards.ToFrozenDictionary(t => t.Key, t => t.Value.ToImmutableArray());
+	}
+
+	public ImmutableArray<CastleSpawnHolder> getSpawnsForSide(int castleId, CastleSide side)
+	{
+		if (_spawns.TryGetValue(castleId, out ImmutableArray<CastleSpawnHolder> spawns))
+			return spawns.Where(spawn => spawn.getSide() == side).ToImmutableArray();
 		
-		LoadXmlDocuments(DataFileLocation.Data, "residences/castles", true).ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("castle").ForEach(x => loadElement(t.FilePath, x));
-		});
-	}
-
-	private void loadElement(string filePath, XElement element)
-	{
-		int castleId = element.GetAttributeValueAsInt32("id");
-
-		element.Elements("spawns").ForEach(el =>
-		{
-			List<CastleSpawnHolder> spawns = new();
-
-			el.Elements("npc").ForEach(e =>
-			{
-				int npcId = e.GetAttributeValueAsInt32("id");
-				CastleSide side = e.Attribute("castleSide").GetEnum(CastleSide.NEUTRAL);
-				int x = e.GetAttributeValueAsInt32("x");
-				int y = e.GetAttributeValueAsInt32("y");
-				int z = e.GetAttributeValueAsInt32("z");
-				int heading = e.GetAttributeValueAsInt32("heading");
-				spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
-			});
-
-			_spawns.put(castleId, spawns);
-		});
-
-		element.Elements("siegeGuards").ForEach(el =>
-		{
-			List<SiegeGuardHolder> guards = new();
-
-			el.Elements("guard").ForEach(e =>
-			{
-				int itemId = e.GetAttributeValueAsInt32("itemId");
-				SiegeGuardType type = e.Attribute("type").GetEnum<SiegeGuardType>();
-				bool stationary = e.Attribute("stationary").GetBoolean(false);
-				int npcId = e.GetAttributeValueAsInt32("npcId");
-				int npcMaxAmount = e.GetAttributeValueAsInt32("npcMaxAmount");
-				guards.add(new SiegeGuardHolder(castleId, itemId, type, stationary, npcId, npcMaxAmount));
-			});
-
-			_siegeGuards.put(castleId, guards);
-		});
-	}
-
-	public List<CastleSpawnHolder> getSpawnsForSide(int castleId, CastleSide side)
-	{
-		List<CastleSpawnHolder> result = new();
-		if (_spawns.containsKey(castleId))
-		{
-			foreach (CastleSpawnHolder spawn in _spawns.get(castleId))
-			{
-				if (spawn.getSide() == side)
-				{
-					result.add(spawn);
-				}
-			}
-		}
-		return result;
+		return ImmutableArray<CastleSpawnHolder>.Empty;
 	}
 	
-	public List<SiegeGuardHolder> getSiegeGuardsForCastle(int castleId)
+	public ImmutableArray<SiegeGuardHolder> getSiegeGuardsForCastle(int castleId)
 	{
-		return _siegeGuards.getOrDefault(castleId, new());
+		return _siegeGuards.GetValueOrDefault(castleId, ImmutableArray<SiegeGuardHolder>.Empty);
 	}
 	
-	public Map<int, List<SiegeGuardHolder>> getSiegeGuards()
+	public FrozenDictionary<int, ImmutableArray<SiegeGuardHolder>> getSiegeGuards()
 	{
 		return _siegeGuards;
 	}

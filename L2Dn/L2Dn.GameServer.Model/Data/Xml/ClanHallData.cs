@@ -31,9 +31,8 @@ public class ClanHallData: DataReaderBase
 	{
 		Dictionary<int, ClanHall> clanHalls = new Dictionary<int, ClanHall>();
 		LoadXmlDocuments<XmlClanHallList>(DataFileLocation.Data, "residences/clanHalls", true)
-			.Select(t => t.Document.ClanHall)
-			.Where(c => c is not null)
-			.Select(c => LoadClanHall(c!))
+			.SelectMany(t => t.Document.ClanHalls)
+			.Select(LoadClanHall)
 			.Where(c => c is not null)
 			.ForEach(clanHall =>
 			{

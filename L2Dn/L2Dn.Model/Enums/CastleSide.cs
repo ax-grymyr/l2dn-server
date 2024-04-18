@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Db;
+﻿namespace L2Dn.Model.Enums;
 
 public enum CastleSide
 {
