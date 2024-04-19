@@ -2,14 +2,11 @@
 
 namespace L2Dn.Model.DataPack;
 
-public class XmlClanHallBanishPoint 
+public class XmlNode2D
 {
     [XmlAttribute("x")]
     public int X { get; set; }
-    
+
     [XmlAttribute("y")]
     public int Y { get; set; }
-    
-    [XmlAttribute("z")]
-    public int Z { get; set; }
 }

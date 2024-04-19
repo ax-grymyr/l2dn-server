@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.InstanceZones;
@@ -37,18 +38,22 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	private float _spPartyRate = Config.RATE_INSTANCE_PARTY_SP;
 	private StatSet _parameters = StatSet.EMPTY_STATSET;
 	private readonly Map<int, DoorTemplate> _doors = new();
+	private readonly Map<int, bool> _doorStates = new();
 	private readonly List<SpawnTemplate> _spawns = new();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
 	private List<Location> _enterLocations;
 	private InstanceTeleportType _exitLocationType = InstanceTeleportType.NONE;
 	private List<Location> _exitLocations;
+	
 	// Reenter data
 	private InstanceReenterType _reenterType = InstanceReenterType.NONE;
 	private List<InstanceReenterTimeHolder> _reenterData = new();
+	
 	// Buff remove data
 	private InstanceRemoveBuffType _removeBuffType = InstanceRemoveBuffType.NONE;
 	private List<int> _removeBuffExceptions = new();
+
 	// Conditions
 	private List<Condition> _conditions = new();
 	private GroupType _groupMask = GroupType.Player;
@@ -56,12 +61,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	/**
 	 * @param set
 	 */
-	public InstanceTemplate(StatSet set)
+	public InstanceTemplate(int id, string name, int maxWorldCount)
 	{
-		_templateId = set.getInt("id", 0);
-		_name = set.getString("name", null);
-		_maxWorldCount = set.getInt("maxWorlds", -1);
-		
+		_templateId = id;
+		_name = name;
+		_maxWorldCount = maxWorldCount;
 		_eventContainer = new($"Instance template {_templateId}", GlobalEvents.Global);
 	}
 
@@ -77,10 +81,8 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 */
 	public void setName(string name)
 	{
-		if ((name != null) && !string.IsNullOrEmpty(name))
-		{
+		if (!string.IsNullOrEmpty(name))
 			_name = name;
-		}
 	}
 	
 	/**
@@ -158,6 +160,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	public void addDoor(int templateId, DoorTemplate template)
 	{
 		_doors.put(templateId, template);
+	}
+	
+	public void addDoorState(int templateId, bool isDefaultOpen)
+	{
+		_doorStates.put(templateId, isDefaultOpen);
 	}
 	
 	/**
@@ -258,13 +265,13 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			}
 			// Party
 			int partySize = Config.ALT_PARTY_MAX_MEMBERS;
-			if (((max > 1) && (max <= partySize)) || ((min <= partySize) && (max > partySize)))
+			if ((max > 1 && max <= partySize) || (min <= partySize && max > partySize))
 			{
 				_groupMask |= GroupType.PARTY;
 			}
 		}
 		// Command channel
-		if (onlyCC || (max > 7))
+		if (onlyCC || max > 7)
 		{
 			_groupMask |= GroupType.COMMAND_CHANNEL;
 		}
@@ -350,7 +357,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 				if (vars.Contains(PlayerVariables.INSTANCE_ORIGIN))
 				{
 					int[] loc = vars.getIntArray(PlayerVariables.INSTANCE_ORIGIN, ";");
-					if ((loc != null) && (loc.Length == 3))
+					if (loc != null && loc.Length == 3)
 					{
 						location = new Location(loc[0], loc[1], loc[2]);
 					}
@@ -426,6 +433,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	public Map<int, DoorTemplate> getDoors()
 	{
 		return _doors;
+	}
+	
+	public Map<int, bool> getDoorStates()
+	{
+		return _doorStates;
 	}
 	
 	/**
@@ -506,7 +518,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	private bool hasRemoveBuffException(Skill skill)
 	{
 		bool containsSkill = _removeBuffExceptions.Contains(skill.getId());
-		return (_removeBuffType == InstanceRemoveBuffType.BLACKLIST) ? containsSkill : !containsSkill;
+		return _removeBuffType == InstanceRemoveBuffType.BLACKLIST ? containsSkill : !containsSkill;
 	}
 	
 	/**
@@ -558,7 +570,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 					calendar = calendar.AddDays(1);
 			}
 			
-			if ((time is null) || (calendar < time))
+			if (time is null || calendar < time)
 			{
 				time = calendar;
 			}
@@ -617,7 +629,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 		// player < party < command channel
 		foreach (GroupType t in EnumUtil.GetValues<GroupType>())
 		{
-			if ((t != playerGroup) && groupMaskContains(t))
+			if (t != playerGroup && groupMaskContains(t))
 			{
 				return t;
 			}

@@ -14,6 +14,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -345,10 +346,17 @@ public class Instance : IIdentifiable, INamable
 	 */
 	private void spawnDoors()
 	{
-		foreach (DoorTemplate template in _template.getDoors().values())
+		ICollection<DoorTemplate> doorTemplates = _template.getDoors().Values;
+		Map<int, bool> doorStates = _template.getDoorStates();
+		foreach (DoorTemplate template in doorTemplates)
 		{
+			bool? isOpenedByDefault = null;
+			if (doorStates.TryGetValue(template.getId(), out bool isOpened))
+				isOpenedByDefault = isOpened;
+			
 			// Create new door instance
-			_doors.put(template.getId(), DoorData.getInstance().spawnDoor(template, this));
+			Door door = DoorData.getInstance().spawnDoor(template, this, isOpenedByDefault);
+			_doors.put(template.getId(), door);
 		}
 	}
 	

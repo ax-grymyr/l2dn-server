@@ -2,7 +2,7 @@
 
 namespace L2Dn.Model.DataPack;
 
-public class XmlTeleportLocation
+public class XmlTeleportLocation: XmlLocation
 {
     [XmlAttribute("name")]
     public string Name { get; set; } = string.Empty;
@@ -21,15 +21,6 @@ public class XmlTeleportLocation
     
     [XmlIgnore]
     public bool QuestZoneIdSpecified { get; set; }
-    
-    [XmlAttribute("x")]
-    public int X { get; set; }
-    
-    [XmlAttribute("y")]
-    public int Y { get; set; }
-    
-    [XmlAttribute("z")]
-    public int Z { get; set; }
     
     [XmlAttribute("feeId")]
     public int FeeItemId { get; set; }

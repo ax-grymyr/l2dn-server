@@ -52,8 +52,8 @@ public class ClanHallData: DataReaderBase
 		ClanHallType type = xmlClanHall.TypeSpecified ? xmlClanHall.Type : ClanHallType.OTHER;
 
 		XmlClanHallAuction? auction = xmlClanHall.Auction;
-		XmlClanHallOwnerRestartPoint? ownerRestartPoint = xmlClanHall.OwnerRestartPoint;
-		XmlClanHallBanishPoint? banishPoint = xmlClanHall.BanishPoint;
+		XmlLocation? ownerRestartPoint = xmlClanHall.OwnerRestartPoint;
+		XmlLocation? banishPoint = xmlClanHall.BanishPoint;
 
 		if (auction is null)
 		{

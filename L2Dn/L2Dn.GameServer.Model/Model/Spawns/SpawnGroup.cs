@@ -7,24 +7,20 @@ namespace L2Dn.GameServer.Model.Spawns;
 
 public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 {
-	private readonly String _name;
+	private readonly string _name;
 	private readonly bool _spawnByDefault;
-	private List<SpawnTerritory> _territories;
-	private List<BannedSpawnTerritory> _bannedTerritories;
-	private readonly List<NpcSpawnTemplate> _spawns = new();
-	private StatSet _parameters;
+	private readonly List<SpawnTerritory> _territories = [];
+	private readonly List<BannedSpawnTerritory> _bannedTerritories = [];
+	private readonly List<NpcSpawnTemplate> _spawns = [];
+	private readonly StatSet _parameters = new();
 
-	public SpawnGroup(StatSet set): this(set.getString("name", null), set.getBoolean("spawnByDefault", true))
-	{
-	}
-
-	private SpawnGroup(String name, bool spawnByDefault)
+	public SpawnGroup(string name, bool spawnByDefault)
 	{
 		_name = name;
 		_spawnByDefault = spawnByDefault;
 	}
 
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -46,32 +42,22 @@ public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 
 	public void addTerritory(SpawnTerritory territory)
 	{
-		if (_territories == null)
-		{
-			_territories = new();
-		}
-
 		_territories.Add(territory);
 	}
 
 	public List<SpawnTerritory> getTerritories()
 	{
-		return _territories != null ? _territories : new();
+		return _territories;
 	}
 
 	public void addBannedTerritory(BannedSpawnTerritory territory)
 	{
-		if (_bannedTerritories == null)
-		{
-			_bannedTerritories = new();
-		}
-
 		_bannedTerritories.Add(territory);
 	}
 
 	public List<BannedSpawnTerritory> getBannedTerritories()
 	{
-		return _bannedTerritories != null ? _bannedTerritories : new();
+		return _bannedTerritories;
 	}
 
 	public StatSet getParameters()
@@ -81,7 +67,7 @@ public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 
 	public void setParameters(StatSet parameters)
 	{
-		_parameters = parameters;
+		_parameters.merge(parameters);
 	}
 
 	public List<NpcSpawnTemplate> getSpawnsById(int id)

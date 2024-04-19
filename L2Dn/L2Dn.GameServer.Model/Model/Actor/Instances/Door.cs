@@ -22,18 +22,18 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Door : Creature
 {
-	private bool _open = false;
-	private bool _isAttackableDoor = false;
-	private bool _isInverted = false;
+	private bool _open;
+	private bool _isAttackableDoor;
+	private bool _isInverted;
 	private int _meshindex = 1;
 	private ScheduledFuture _autoCloseTask;
 	
-	public Door(DoorTemplate template): base(template)
+	public Door(DoorTemplate template, bool? isOpened = null): base(template)
 	{
 		setInstanceType(InstanceType.Door);
 		setInvul(false);
 		setLethalable(false);
-		_open = template.isOpenByDefault();
+		_open = isOpened ?? template.isOpenByDefault();
 		_isAttackableDoor = template.isAttackable();
 		_isInverted = template.isInverted();
 		base.setTargetable(template.isTargetable());
@@ -434,7 +434,7 @@ public class Door : Creature
 	 */
 	private void notifyChildEvent(bool open)
 	{
-		byte openThis = open ? getTemplate().getMasterDoorOpen() : getTemplate().getMasterDoorClose();
+		int openThis = open ? getTemplate().getMasterDoorOpen() : getTemplate().getMasterDoorClose();
 		if (openThis == 1)
 		{
 			openMe();

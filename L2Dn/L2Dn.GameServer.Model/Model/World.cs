@@ -736,7 +736,7 @@ public sealed class World
 		}
 	}
 	
-	public WorldRegion getRegion(int x, int y)
+	public WorldRegion? getRegion(int x, int y)
 	{
 		try
 		{

@@ -6,17 +6,17 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class InstanceReenterTimeHolder
 {
-	private DayOfWeek? _day;
-	private int? _hour;
-	private int? _minute;
-	private TimeSpan? _time;
+	private readonly DayOfWeek? _day;
+	private readonly int? _hour;
+	private readonly int? _minute;
+	private readonly TimeSpan? _time;
 
 	public InstanceReenterTimeHolder(TimeSpan time)
 	{
 		_time = time;
 	}
 
-	public InstanceReenterTimeHolder(DayOfWeek day, int hour, int minute)
+	public InstanceReenterTimeHolder(DayOfWeek? day, int hour, int minute)
 	{
 		_day = day;
 		_hour = hour;

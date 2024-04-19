@@ -9,30 +9,32 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Spawns;
 
 public class NpcSpawnTemplate: IParameterized<StatSet>
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcSpawnTemplate));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(NpcSpawnTemplate));
 	
 	private readonly int _id;
 	private readonly int _count;
 	private readonly TimeSpan? _respawnTime;
 	private readonly TimeSpan _respawnTimeRandom;
-	private readonly SchedulingPattern _respawnPattern;
+	private readonly SchedulingPattern? _respawnPattern;
 	private readonly int _chaseRange;
-	private List<ChanceLocation> _locations;
-	private SpawnTerritory _zone;
-	private StatSet _parameters;
+	private readonly List<ChanceLocation> _locations = [];
+	private readonly SpawnTerritory _zone;
+	private readonly StatSet _parameters = new();
 	private readonly bool _spawnAnimation;
-	private readonly bool _saveInDB;
-	private readonly String _dbName;
-	private List<MinionHolder> _minions;
+	private readonly bool _saveInDb;
+	private readonly string _dbName;
+	private readonly List<MinionHolder> _minions = [];
 	private readonly SpawnTemplate _spawnTemplate;
 	private readonly SpawnGroup _group;
-	private readonly Set<Npc> _spawnedNpcs = new();
+	private readonly Set<Npc> _spawnedNpcs = [];
 	
 	private NpcSpawnTemplate(NpcSpawnTemplate template)
 	{
@@ -45,7 +47,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		_respawnPattern = template._respawnPattern;
 		_chaseRange = template._chaseRange;
 		_spawnAnimation = template._spawnAnimation;
-		_saveInDB = template._saveInDB;
+		_saveInDb = template._saveInDb;
 		_dbName = template._dbName;
 		_locations = template._locations;
 		_zone = template._zone;
@@ -53,50 +55,50 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		_minions = template._minions;
 	}
 	
-	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, StatSet set)
+	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, XmlSpawnNpc npc)
 	{
 		_spawnTemplate = spawnTemplate;
 		_group = group;
-		_id = set.getInt("id");
-		_count = set.getInt("count", 1);
-		_respawnTime = set.Contains("respawnTime") ? set.getDuration("respawnTime", TimeSpan.Zero) : null;
-		_respawnTimeRandom = set.getDuration("respawnRandom", TimeSpan.Zero);
-		String pattern = set.getString("respawnPattern", null);
-		_respawnPattern = (pattern == null) || pattern.isEmpty() ? null : new SchedulingPattern(pattern);
-		_chaseRange = set.getInt("chaseRange", 0);
-		_spawnAnimation = set.getBoolean("spawnAnimation", false);
-		_saveInDB = set.getBoolean("dbSave", false);
-		_dbName = set.getString("dbName", null);
+		_id = npc.Id;
+		_count = npc.Count;
+		_respawnTime = string.IsNullOrEmpty(npc.RespawnTime)
+			? TimeSpan.Zero
+			: TimeUtil.ParseDuration(npc.RespawnTime);
+		
+		_respawnTimeRandom = string.IsNullOrEmpty(npc.RespawnRandom)
+			? TimeSpan.Zero
+			: TimeUtil.ParseDuration(npc.RespawnRandom);
+		
+		_respawnPattern = string.IsNullOrEmpty(npc.RespawnPattern) ? null : new SchedulingPattern(npc.RespawnPattern);
+		_chaseRange = npc.ChaseRange;
+		_spawnAnimation = npc.SpawnAnimation;
+		_saveInDb = npc.DbSave;
+		_dbName = npc.DbName;
 		_parameters = mergeParameters(spawnTemplate, group);
 		
-		int x = set.getInt("x", int.MaxValue);
-		int y = set.getInt("y", int.MaxValue);
-		int z = set.getInt("z", int.MaxValue);
-		bool xDefined = x != int.MaxValue;
-		bool yDefined = y != int.MaxValue;
-		bool zDefined = z != int.MaxValue;
-		if (xDefined && yDefined && zDefined)
+		int x = npc.X;
+		int y = npc.Y;
+		int z = npc.Z;
+		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
 			_locations = new();
-			_locations.add(new ChanceLocation(x, y, z, set.getInt("heading", 0), 100));
+			_locations.add(new ChanceLocation(x, y, z, npc.Heading, 100));
 		}
 		else
 		{
-			if (xDefined || yDefined || zDefined)
+			if (npc.XSpecified || npc.YSpecified || npc.ZSpecified)
 			{
-				throw new InvalidOperationException(String.Format(
-					"Spawn with partially declared and x: {0} y: {1} z: {2}!", processParam(x), processParam(y),
-					processParam(z)));
+				throw new InvalidOperationException(
+					$"Spawn with partially declared and x: {processParam(x)} y: {processParam(y)} z: {processParam(z)}!");
 			}
 			
-			String zoneName = set.getString("zone", null);
-			if (zoneName != null)
+			string zoneName = npc.Zone;
+			if (!string.IsNullOrEmpty(zoneName))
 			{
 				SpawnTerritory zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
 				if (zone == null)
-				{
 					throw new InvalidOperationException("Spawn with non existing zone requested " + zoneName);
-				}
+
 				_zone = zone;
 			}
 		}
@@ -106,7 +108,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	private StatSet mergeParameters(SpawnTemplate spawnTemplate, SpawnGroup group)
 	{
-		if ((_parameters == null) && (spawnTemplate.getParameters() == null) && (group.getParameters() == null))
+		if (_parameters == null && spawnTemplate.getParameters() == null && group.getParameters() == null)
 		{
 			return null;
 		}
@@ -129,10 +131,6 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public void addSpawnLocation(ChanceLocation loc)
 	{
-		if (_locations == null)
-		{
-			_locations = new();
-		}
 		_locations.add(loc);
 	}
 	
@@ -146,7 +144,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _group;
 	}
 	
-	private String processParam(int value)
+	private string processParam(int value)
 	{
 		return value != int.MaxValue ? value.ToString() : "undefined";
 	}
@@ -198,14 +196,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public void setParameters(StatSet parameters)
 	{
-		if (_parameters == null)
-		{
-			_parameters = parameters;
-		}
-		else
-		{
-			_parameters.merge(parameters);
-		}
+		_parameters.merge(parameters);
 	}
 	
 	public bool hasSpawnAnimation()
@@ -215,25 +206,21 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public bool hasDBSave()
 	{
-		return _saveInDB;
+		return _saveInDb;
 	}
 	
-	public String getDBName()
+	public string getDBName()
 	{
 		return _dbName;
 	}
 	
 	public List<MinionHolder> getMinions()
 	{
-		return _minions != null ? _minions : new();
+		return _minions;
 	}
 	
 	public void addMinion(MinionHolder minion)
 	{
-		if (_minions == null)
-		{
-			_minions = new();
-		}
 		_minions.add(minion);
 	}
 	
@@ -246,7 +233,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	{
 		if (_locations != null)
 		{
-			double locRandom = (100 * Rnd.nextDouble());
+			double locRandom = 100 * Rnd.nextDouble();
 			double cumulativeChance = 0;
 			foreach (ChanceLocation loc in _locations)
 			{
@@ -255,7 +242,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 					return loc;
 				}
 			}
-			LOGGER.Warn("Couldn't match location by chance turning first...");
+			_logger.Warn("Couldn't match location by chance turning first...");
 			return null;
 		}
 		else if (_zone != null)
@@ -335,13 +322,13 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_id);
 			if (npcTemplate == null)
 			{
-				LOGGER.Warn("Attempting to spawn unexisting npc id: " + _id + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
+				_logger.Warn("Attempting to spawn unexisting npc id: " + _id + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
 				return;
 			}
 			
 			if (npcTemplate.isType("Defender"))
 			{
-				LOGGER.Warn("Attempting to spawn npc id: " + _id + " type: " + npcTemplate.getType() + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
+				_logger.Warn("Attempting to spawn npc id: " + _id + " type: " + npcTemplate.getType() + " file: " + _spawnTemplate.getFile() + " spawn: " + _spawnTemplate.getName() + " group: " + _group.getName());
 				return;
 			}
 			
@@ -352,7 +339,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Couldn't spawn npc " + _id + e);
+			_logger.Warn("Couldn't spawn npc " + _id + e);
 		}
 	}
 	
@@ -369,7 +356,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		Location loc = getSpawnLocation();
 		if (loc == null)
 		{
-			LOGGER.Warn("Couldn't initialize new spawn, no location found!");
+			_logger.Warn("Couldn't initialize new spawn, no location found!");
 			return;
 		}
 		
@@ -394,7 +381,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			respawnPattern = _respawnPattern;
 		}
 		
-		if ((respawn > TimeSpan.Zero) || (respawnPattern != null))
+		if (respawn > TimeSpan.Zero || respawnPattern != null)
 		{
 			spawn.setRespawnDelay(respawn, respawnRandom);
 			spawn.setRespawnPattern(respawnPattern);
@@ -407,12 +394,12 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		
 		spawn.setSpawnTemplate(this);
 		
-		if (_saveInDB)
+		if (_saveInDb)
 		{
 			if (!DBSpawnManager.getInstance().isDefined(_id))
 			{
 				Npc spawnedNpc = DBSpawnManager.getInstance().addNewSpawn(spawn, true);
-				if ((spawnedNpc != null) && spawnedNpc.isMonster() && (_minions != null))
+				if (spawnedNpc != null && spawnedNpc.isMonster() && _minions != null)
 				{
 					((Monster) spawnedNpc).getMinionList().spawnMinions(_minions);
 				}
@@ -423,7 +410,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		else
 		{
 			Npc npc = spawn.doSpawn(_spawnAnimation);
-			if (npc.isMonster() && (_minions != null))
+			if (npc.isMonster() && _minions != null)
 			{
 				((Monster) npc).getMinionList().spawnMinions(_minions);
 			}

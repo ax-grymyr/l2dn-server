@@ -15,15 +15,6 @@ public class MinionHolder: IIdentifiable
 	private readonly TimeSpan _respawnTime;
 	private readonly int _weightPoint;
 	
-	public MinionHolder(StatSet set)
-	{
-		_id = set.getInt("id");
-		_count = set.getInt("count", 1);
-		_max = set.getInt("max", 0);
-		_respawnTime = set.getDuration("respawnTime", TimeSpan.Zero);
-		_weightPoint = set.getInt("weightPoint", 0);
-	}
-	
 	/**
 	 * Constructs a minion holder.
 	 * @param id the id

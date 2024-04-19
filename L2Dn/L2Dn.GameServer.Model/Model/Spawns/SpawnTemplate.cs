@@ -9,21 +9,16 @@ namespace L2Dn.GameServer.Model.Spawns;
 
 public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 {
-	private readonly String _name;
-	private readonly String _ai;
+	private readonly string _name;
+	private readonly string _ai;
 	private readonly bool _spawnByDefault;
 	private readonly string _filePath;
 	private List<SpawnTerritory> _territories;
 	private List<BannedSpawnTerritory> _bannedTerritories;
-	private readonly List<SpawnGroup> _groups = new();
+	private readonly List<SpawnGroup> _groups = [];
 	private StatSet _parameters;
 
-	public SpawnTemplate(StatSet set, string filePath)
-		: this(set.getString("name", null), set.getString("ai", null), set.getBoolean("spawnByDefault", true), filePath)
-	{
-	}
-
-	private SpawnTemplate(String name, String ai, bool spawnByDefault, string filePath)
+	public SpawnTemplate(string name, string ai, bool spawnByDefault, string filePath)
 	{
 		_name = name;
 		_ai = ai;
@@ -31,12 +26,12 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 		_filePath = filePath;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
 	
-	public String getAI()
+	public string getAI()
 	{
 		return _ai;
 	}
@@ -89,12 +84,12 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 		return _groups;
 	}
 	
-	public List<SpawnGroup> getGroupsByName(String name)
+	public List<SpawnGroup> getGroupsByName(string name)
 	{
 		List<SpawnGroup> result = new();
 		foreach (SpawnGroup group in _groups)
 		{
-			if ((group.getName() != null) && group.getName().equalsIgnoreCase(name))
+			if (group.getName() != null && group.getName().equalsIgnoreCase(name))
 			{
 				result.add(group);
 			}

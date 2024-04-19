@@ -21,10 +21,10 @@ public class XmlClanHall
     public List<XmlClanHallTeleport> TeleportList { get; set; } = [];
     
     [XmlElement("ownerRestartPoint")]
-    public XmlClanHallOwnerRestartPoint? OwnerRestartPoint { get; set; }
+    public XmlLocation? OwnerRestartPoint { get; set; }
 
     [XmlElement("banishPoint")]
-    public XmlClanHallBanishPoint? BanishPoint { get; set; }
+    public XmlLocation? BanishPoint { get; set; }
 
     [XmlAttribute("id")]
     public int Id { get; set; }
