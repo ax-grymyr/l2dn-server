@@ -25,14 +25,14 @@ public class SkillData: DataReaderBase
 
 	private class NamedParamInfo
 	{
-		private readonly String _name;
+		private readonly string _name;
 		private readonly int? _fromLevel;
 		private readonly int? _toLevel;
 		private readonly int? _fromSubLevel;
 		private readonly int? _toSubLevel;
 		private readonly Map<int, Map<int, StatSet>> _info;
 
-		public NamedParamInfo(String name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
+		public NamedParamInfo(string name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
 			Map<int, Map<int, StatSet>> info)
 		{
 			_name = name;
@@ -43,7 +43,7 @@ public class SkillData: DataReaderBase
 			_info = info;
 		}
 
-		public String getName()
+		public string getName()
 		{
 			return _name;
 		}
@@ -210,7 +210,7 @@ public class SkillData: DataReaderBase
 		StatSet generalSkillInfo = skillInfo.computeIfAbsent(-1, k => new()).computeIfAbsent(-1, k => new StatSet());
 		parseAttributes(element, "", generalSkillInfo);
 
-		Map<String, Map<int, Map<int, Object>>> variableValues = new();
+		Map<string, Map<int, Map<int, object>>> variableValues = new();
 		Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new();
 		Map<SkillConditionScope, List<NamedParamInfo>> conditionParamInfo = new();
 
@@ -343,7 +343,7 @@ public class SkillData: DataReaderBase
 			Skill skill = new Skill(statSet);
 			forEachNamedParamInfoParam(effectParamInfo, level, subLevel, ((effectScope, @params) =>
 			{
-				String effectName = @params.getString(".name");
+				string effectName = @params.getString(".name");
 				@params.remove(".name");
 				try
 				{
@@ -371,7 +371,7 @@ public class SkillData: DataReaderBase
 
 			forEachNamedParamInfoParam(conditionParamInfo, level, subLevel, ((skillConditionScope, @params) =>
 			{
-				String conditionName = @params.getString(".name");
+				string conditionName = @params.getString(".name");
 				@params.remove(".name");
 				try
 				{
@@ -448,9 +448,9 @@ public class SkillData: DataReaderBase
 		}));
 	}
 
-	private NamedParamInfo parseNamedParamInfo(XElement element, Map<String, Map<int, Map<int, Object>>> variableValues)
+	private NamedParamInfo parseNamedParamInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues)
 	{
-		String name = element.GetAttributeValueAsString("name");
+		string name = element.GetAttributeValueAsString("name");
 		int? level = element.GetAttributeValueAsInt32OrNull("level");
 		int? fromLevel = element.GetAttributeValueAsInt32OrNull("fromLevel") ?? level;
 		int? toLevel = element.GetAttributeValueAsInt32OrNull("toLevel") ?? level;
@@ -464,17 +464,17 @@ public class SkillData: DataReaderBase
 		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
 	}
 
-	private void parseInfo(XElement element, Map<String, Map<int, Map<int, Object>>> variableValues,
+	private void parseInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues,
 		Map<int, Map<int, StatSet>> info)
 	{
-		Map<int, Map<int, Object>> values = parseValues(element);
-		Object generalValue = values.getOrDefault(-1, new()).get(-1);
+		Map<int, Map<int, object>> values = parseValues(element);
+		object generalValue = values.getOrDefault(-1, new()).get(-1);
 		if (generalValue != null)
 		{
 			string stringGeneralValue = generalValue?.ToString() ?? string.Empty;
 			if (stringGeneralValue.startsWith("@"))
 			{
-				Map<int, Map<int, Object>> variableValue = variableValues.get(stringGeneralValue);
+				Map<int, Map<int, object>> variableValue = variableValues.get(stringGeneralValue);
 				if (variableValue != null)
 				{
 					values = variableValue;
@@ -498,10 +498,10 @@ public class SkillData: DataReaderBase
 		});
 	}
 
-	private Map<int, Map<int, Object>> parseValues(XElement element)
+	private Map<int, Map<int, object>> parseValues(XElement element)
 	{
-		Map<int, Map<int, Object>> values = new();
-		Object parsedValue = parseValue(element, true, false, new());
+		Map<int, Map<int, object>> values = new();
+		object parsedValue = parseValue(element, true, false, new());
 		if (parsedValue != null)
 		{
 			values.computeIfAbsent(-1, k => new()).put(-1, parsedValue);
@@ -532,12 +532,12 @@ public class SkillData: DataReaderBase
 						{
 							for (int j = fromSubLevel; j <= toSubLevel; j++)
 							{
-								Map<int, Object> subValues = values.computeIfAbsent(i, k => new());
-								Map<String, Double> variables = new();
+								Map<int, object> subValues = values.computeIfAbsent(i, k => new());
+								Map<string, double> variables = new();
 								variables.put("index", (i - fromLevel) + 1d);
 								variables.put("subIndex", (j - fromSubLevel) + 1d);
-								Object @base = values.getOrDefault(i, new()).get(-1);
-								String baseText = @base?.ToString() ?? string.Empty;
+								object @base = values.getOrDefault(i, new()).get(-1);
+								string baseText = @base?.ToString() ?? string.Empty;
 								if ((@base != null) && !(@base is StatSet) && (!baseText.equalsIgnoreCase("true") &&
 								                                               !baseText.equalsIgnoreCase("false")))
 								{
@@ -559,10 +559,10 @@ public class SkillData: DataReaderBase
 		return values;
 	}
 
-	public Object parseValue(XElement element, bool blockValue, bool parseAttributes, Map<String, Double> variables)
+	public object parseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
 	{
 		StatSet statSet = null;
-		List<Object> list = null;
+		List<object> list = null;
 		object? text = null;
 		if (parseAttributes && (!element.Name.LocalName.equals("value") || !blockValue) && (element.Attributes().Any()))
 		{
@@ -581,7 +581,7 @@ public class SkillData: DataReaderBase
 		
 		foreach (XElement n in element.Elements())
 		{
-			String nodeName = n.Name.LocalName;
+			string nodeName = n.Name.LocalName;
 			switch (nodeName)
 			{
 				case "item":
@@ -591,7 +591,7 @@ public class SkillData: DataReaderBase
 						list = new();
 					}
 
-					Object value = parseValue(n, false, true, variables);
+					object value = parseValue(n, false, true, variables);
 					if (value != null)
 					{
 						list.add(value);
@@ -611,7 +611,7 @@ public class SkillData: DataReaderBase
 				}
 				default:
 				{
-					Object value = parseValue(n, false, true, variables);
+					object value = parseValue(n, false, true, variables);
 					if (value != null)
 					{
 						if (statSet == null)

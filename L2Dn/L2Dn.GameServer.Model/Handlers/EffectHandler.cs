@@ -9,26 +9,26 @@ namespace L2Dn.GameServer.Handlers;
  */
 public class EffectHandler
 {
-	private readonly Map<String, Func<StatSet, AbstractEffect>> _effectHandlerFactories = new();
+	private readonly Map<string, Func<StatSet, AbstractEffect>> _effectHandlerFactories = new();
 
 	private EffectHandler()
 	{
 		//_logger.Info(GetType().Name + ": Loaded " + size() + " effect handlers.");
 	}
 	
-	public void registerHandler(String name, Func<StatSet, AbstractEffect> handlerFactory)
+	public void registerHandler(string name, Func<StatSet, AbstractEffect> handlerFactory)
 	{
 		_effectHandlerFactories.put(name, handlerFactory);
 	}
 	
-	public Func<StatSet, AbstractEffect> getHandlerFactory(String name)
+	public Func<StatSet, AbstractEffect>? getHandlerFactory(string name)
 	{
-		return _effectHandlerFactories.get(name);
+		return _effectHandlerFactories.GetValueOrDefault(name);
 	}
 	
 	public int size()
 	{
-		return _effectHandlerFactories.size();
+		return _effectHandlerFactories.Count;
 	}
 	
 	private static class SingletonHolder

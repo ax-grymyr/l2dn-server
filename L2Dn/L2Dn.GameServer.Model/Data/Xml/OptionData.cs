@@ -1,12 +1,12 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
-using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -16,12 +16,11 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class OptionData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(OptionData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(OptionData));
 	
-	private static Options[] _options;
-	private static Map<int, Options> _optionMap = new();
+	private static ImmutableArray<Options> _options = ImmutableArray<Options>.Empty;
 	
-	protected OptionData()
+	private OptionData()
 	{
 		load();
 	}
@@ -29,122 +28,105 @@ public class OptionData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		LoadXmlDocuments(DataFileLocation.Data, "stats/augmentation/options").ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("option").ForEach(x => loadElement(t.FilePath, x));
-		});
+		Dictionary<int, Options> optionMap = new();
+		LoadXmlDocuments<XmlOptionData>(DataFileLocation.Data, "stats/augmentation/options")
+			.SelectMany(t => t.Document.Options)
+			.ForEach(option => LoadOption(option, optionMap));
 
-		if (_optionMap.Count == 0)
-			_options = Array.Empty<Options>();
+		if (optionMap.Count == 0)
+			_options = ImmutableArray<Options>.Empty;
 		else
 		{
-			int maxKey = _optionMap.Keys.Max();
-			_options = new Options[maxKey + 1];
-			foreach (var option in _optionMap)
-				_options[option.Key] = option.Value;
+			int maxKey = optionMap.Keys.Max();
+			Options[] options = new Options[maxKey + 1];
+			foreach (var option in optionMap)
+				options[option.Key] = option.Value;
+
+			_options = options.ToImmutableArray();
 		}
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _optionMap.size() + " options.");
-		_optionMap.clear();
+		_logger.Info(GetType().Name + ": Loaded " + optionMap.Count + " options.");
 	}
 
-	private void loadElement(string filePath, XElement element)
+	private void LoadOption(XmlOption xmlOption, Dictionary<int, Options> optionMap)
 	{
-		int id = element.GetAttributeValueAsInt32("id");
+		int id = xmlOption.Id;
 		Options option = new Options(id);
 
-		element.Elements("effects").Elements("effect").ForEach(el =>
+		foreach (XmlOptionEffect xmlOptionEffect in xmlOption.Effects)
 		{
-			string name = el.GetAttributeValueAsString("name");
+			string name = xmlOptionEffect.Name;
 			StatSet parameters = new StatSet();
-			el.Elements().ForEach(e =>
-			{
-				object val = SkillData.getInstance().parseValue(e, true, false, new());
-				parameters.set(e.Name.LocalName, val);
-			});
-			
-			option.addEffect(EffectHandler.getInstance().getHandlerFactory(name)(parameters));
-		});
+			parameters.set("amount", xmlOptionEffect.Amount);
+			parameters.set("attribute", xmlOptionEffect.Attribute);
+			parameters.set("magicType", xmlOptionEffect.MagicType);
+			parameters.set("mode", xmlOptionEffect.Mode);
+			parameters.set("stat", xmlOptionEffect.Stat);
 
-		element.Elements("active_skill").ForEach(el =>
+			Func<StatSet, AbstractEffect>? handlerFactory = EffectHandler.getInstance().getHandlerFactory(name);
+			if (handlerFactory is null)
+				_logger.Error($"{GetType().Name}: Could not find effect handler '{name}' used by option {id}.");
+			else
+				option.addEffect(handlerFactory(parameters));
+		}
+
+		foreach (XmlOptionSkill activeSkill in xmlOption.ActiveSkills)
 		{
-			int skillId = el.GetAttributeValueAsInt32("id");
-			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.getInstance().getSkill(activeSkill.Id, activeSkill.Level);
 			if (skill != null)
 				option.addActiveSkill(skill);
 			else
-				LOGGER.Error(GetType().Name + ": Could not find skill " + skillId + "(" + skillLevel +
-				             ") used by option " + id + ".");
-		});
+				_logger.Error(GetType().Name + ": Could not find skill " + activeSkill.Id + "(" + activeSkill.Level +
+				              ") used by option " + id + ".");
+		}
 
-		element.Elements("passive_skill").ForEach(el =>
+		foreach (XmlOptionSkill passiveSkill in xmlOption.PassiveSkills)
 		{
-			int skillId = el.GetAttributeValueAsInt32("id");
-			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.getInstance().getSkill(passiveSkill.Id, passiveSkill.Level);
 			if (skill != null)
 				option.addPassiveSkill(skill);
 			else
-				LOGGER.Error(GetType().Name + ": Could not find skill " + skillId + "(" + skillLevel +
-				             ") used by option " + id + ".");
-		});
+				_logger.Error(GetType().Name + ": Could not find skill " + passiveSkill.Id + "(" + passiveSkill.Level +
+				              ") used by option " + id + ".");
+		}
 
-		element.Elements("attack_skill").ForEach(el =>
+		foreach (XmlOptionChanceSkill attackSkill in xmlOption.AttackSkills)
 		{
-			int skillId = el.GetAttributeValueAsInt32("id");
-			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.getInstance().getSkill(attackSkill.Id, attackSkill.Level);
 			if (skill != null)
-			{
-				double chance = el.GetAttributeValueAsDouble("chance");
-				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.ATTACK));
-			}
+				option.addActivationSkill(new OptionSkillHolder(skill, attackSkill.Chance, OptionSkillType.ATTACK));
 			else
-				LOGGER.Error(GetType().Name + ": Could not find skill " + skillId + "(" + skillLevel +
-				             ") used by option " + id + ".");
-		});
+				_logger.Error(GetType().Name + ": Could not find skill " + attackSkill.Id + "(" + attackSkill.Level +
+				              ") used by option " + id + ".");
+		}
 
-		element.Elements("magic_skill").ForEach(el =>
+		foreach (XmlOptionChanceSkill magicSkill in xmlOption.MagicSkills)
 		{
-			int skillId = el.GetAttributeValueAsInt32("id");
-			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.getInstance().getSkill(magicSkill.Id, magicSkill.Level);
 			if (skill != null)
-			{
-				double chance = el.GetAttributeValueAsDouble("chance");
-				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.MAGIC));
-			}
+				option.addActivationSkill(new OptionSkillHolder(skill, magicSkill.Chance, OptionSkillType.MAGIC));
 			else
-				LOGGER.Error(GetType().Name + ": Could not find skill " + skillId + "(" + skillLevel +
-				             ") used by option " + id + ".");
-		});
+				_logger.Error(GetType().Name + ": Could not find skill " + magicSkill.Id + "(" + magicSkill.Level +
+				              ") used by option " + id + ".");
+		}
 
-		element.Elements("critical_skill").ForEach(el =>
+		foreach (XmlOptionChanceSkill criticalSkill in xmlOption.CriticalSkills)
 		{
-			int skillId = el.GetAttributeValueAsInt32("id");
-			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill skill = SkillData.getInstance().getSkill(criticalSkill.Id, criticalSkill.Level);
 			if (skill != null)
-			{
-				double chance = el.GetAttributeValueAsDouble("chance");
-				option.addActivationSkill(new OptionSkillHolder(skill, chance, OptionSkillType.CRITICAL));
-			}
+				option.addActivationSkill(new OptionSkillHolder(skill, criticalSkill.Chance, OptionSkillType.CRITICAL));
 			else
-				LOGGER.Error(GetType().Name + ": Could not find skill " + skillId + "(" + skillLevel +
-				             ") used by option " + id + ".");
-		});
+				_logger.Error(GetType().Name + ": Could not find skill " + criticalSkill.Id + "(" +
+				              criticalSkill.Level + ") used by option " + id + ".");
+		}
 
-		_optionMap.put(option.getId(), option);
+		if (!optionMap.TryAdd(id, option))
+			_logger.Error(GetType().Name + ": Duplicated option " + id + ".");
 	}
 
-	public Options getOptions(int id)
+	public Options? getOptions(int id)
 	{
-		if ((id > -1) && (_options.Length > id))
-		{
-			return _options[id];
-		}
-		return null;
+		return id >= 0 && id < _options.Length ? _options[id] : null;
 	}
 	
 	/**
