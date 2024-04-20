@@ -87,7 +87,7 @@ public class RecipeData: DataReaderBase
 			rareProduction = new RecipeRareHolder(prodId, prodCount, rarity);
 		}
 
-		RecipeList recipeList = new RecipeList(id, recipeId, recipeId, name, successRate,
+		RecipeList recipeList = new RecipeList(id, craftLevel, recipeId, name, successRate,
 			isDwarvenRecipe, production, rareProduction);
 
 		foreach (RecipeHolder recipePart in recipePartList)
