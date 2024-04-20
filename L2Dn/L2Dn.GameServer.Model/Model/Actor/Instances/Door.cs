@@ -368,9 +368,10 @@ public class Door : Creature
 	
 	public void openMe()
 	{
-		if (getGroupName() != null)
+		string groupName = getGroupName();
+		if (!string.IsNullOrEmpty(groupName))
 		{
-			manageGroupOpen(true, getGroupName());
+			manageGroupOpen(true, groupName);
 			return;
 		}
 		
@@ -391,9 +392,11 @@ public class Door : Creature
 			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
-		if (getGroupName() != null)
+
+		string groupName = getGroupName();
+		if (!string.IsNullOrEmpty(groupName))
 		{
-			manageGroupOpen(false, getGroupName());
+			manageGroupOpen(false, groupName);
 			return;
 		}
 		
