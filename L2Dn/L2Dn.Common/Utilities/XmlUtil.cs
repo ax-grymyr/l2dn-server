@@ -35,9 +35,21 @@ public static class XmlUtil
                 ? schemaLocation
                 : Path.GetFullPath(Path.Combine(directory, schemaLocation));
 
-            using FileStream schemaFileStream = File.OpenRead(schemaPath);
-            using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
-            config.Schemas.Add(null, schemaReader);
+            string? schemaDirectory = Path.GetDirectoryName(schemaPath);
+            string sharedSchemaPath = string.IsNullOrEmpty(schemaDirectory)
+                ? "shared.xsd"
+                : Path.Combine(schemaDirectory, "shared.xsd");
+
+            {
+                using FileStream schemaFileStream = File.OpenRead(schemaPath);
+                using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
+                config.Schemas.Add(null, schemaReader);
+            }
+            {
+                using FileStream schemaFileStream = File.OpenRead(sharedSchemaPath);
+                using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
+                config.Schemas.Add(null, schemaReader);
+            }
         }
 
         // Get the XmlReader object with the configured settings.
