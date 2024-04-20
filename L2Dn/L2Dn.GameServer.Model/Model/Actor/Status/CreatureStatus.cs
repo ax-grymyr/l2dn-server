@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

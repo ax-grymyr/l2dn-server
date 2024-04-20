@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Stats.Functions;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Items;

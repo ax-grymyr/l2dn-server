@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 

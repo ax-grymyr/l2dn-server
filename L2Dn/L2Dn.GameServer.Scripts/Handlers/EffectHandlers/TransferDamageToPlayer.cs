@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 

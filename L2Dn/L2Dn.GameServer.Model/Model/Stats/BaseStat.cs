@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Xml.Linq;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Stats;
@@ -8,16 +9,6 @@ namespace L2Dn.GameServer.Model.Stats;
 /**
  * @author DS
  */
-public enum BaseStat
-{
-	STR = Stat.STAT_STR,
-	CON = Stat.STAT_CON,
-	DEX = Stat.STAT_DEX,
-	INT = Stat.STAT_INT,
-	WIT = Stat.STAT_WIT,
-	MEN = Stat.STAT_MEN
-}
-
 public static class BaseStatUtil
 {
 	public const int MAX_STAT_VALUE = 201;

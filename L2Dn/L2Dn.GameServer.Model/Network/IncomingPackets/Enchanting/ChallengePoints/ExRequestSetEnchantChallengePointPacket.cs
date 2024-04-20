@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 

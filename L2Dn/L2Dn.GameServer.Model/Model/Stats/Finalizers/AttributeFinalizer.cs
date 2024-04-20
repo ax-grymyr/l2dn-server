@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 

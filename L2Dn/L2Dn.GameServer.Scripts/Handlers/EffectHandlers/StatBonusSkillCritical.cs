@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 

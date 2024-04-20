@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
