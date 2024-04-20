@@ -255,7 +255,7 @@ public class InstanceManager: DataReaderBase
 				else
 				{
 					DayOfWeek? day = xmlInstanceReenterReset.DayOfWeekSpecified
-						? xmlInstanceReenterReset.DayOfWeek
+						? (DayOfWeek)xmlInstanceReenterReset.DayOfWeek
 						: null;
 					
 					int hour = xmlInstanceReenterReset.Hour;
