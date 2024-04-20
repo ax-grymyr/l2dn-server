@@ -26,8 +26,8 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	private readonly SchedulingPattern? _respawnPattern;
 	private readonly int _chaseRange;
 	private readonly List<ChanceLocation> _locations = [];
-	private readonly SpawnTerritory _zone;
-	private readonly StatSet _parameters = new();
+	private readonly SpawnTerritory? _zone;
+	private readonly StatSet _parameters;
 	private readonly bool _spawnAnimation;
 	private readonly bool _saveInDb;
 	private readonly string _dbName;
@@ -81,7 +81,6 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		int z = npc.Z;
 		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
-			_locations = new();
 			_locations.add(new ChanceLocation(x, y, z, npc.Heading, 100));
 		}
 		else
@@ -229,9 +228,9 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _spawnedNpcs;
 	}
 	
-	public Location getSpawnLocation()
+	public Location? getSpawnLocation()
 	{
-		if (_locations != null)
+		if (_locations.Count != 0)
 		{
 			double locRandom = 100 * Rnd.nextDouble();
 			double cumulativeChance = 0;
@@ -245,13 +244,15 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			_logger.Warn("Couldn't match location by chance turning first...");
 			return null;
 		}
-		else if (_zone != null)
+		
+		if (_zone != null)
 		{
 			Location loc = _zone.getRandomPoint();
 			loc.setHeading(-1);
 			return loc;
 		}
-		else if (!_group.getTerritories().isEmpty())
+		
+		if (!_group.getTerritories().isEmpty())
 		{
 			SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().size()));
 			for (int i = 0; i < 100; i++)
@@ -353,7 +354,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	private void spawnNpc(NpcTemplate npcTemplate, Instance instance)
 	{
 		Spawn spawn = new Spawn(npcTemplate);
-		Location loc = getSpawnLocation();
+		Location? loc = getSpawnLocation();
 		if (loc == null)
 		{
 			_logger.Warn("Couldn't initialize new spawn, no location found!");
