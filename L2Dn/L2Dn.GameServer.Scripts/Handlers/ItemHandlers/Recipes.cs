@@ -97,6 +97,12 @@ public class Recipes: IItemHandler
 		sm = new SystemMessagePacket(SystemMessageId.S1_ADDED);
 		sm.Params.addItemName(item);
 		player.sendPacket(sm);
+
+		// Open recipe book.
+		ICollection<RecipeList> recipes = rp.isDwarvenRecipe() ? player.getDwarvenRecipeBook() : player.getCommonRecipeBook();
+		RecipeBookItemListPacket response = new RecipeBookItemListPacket(recipes, rp.isDwarvenRecipe(), player.getMaxMp());
+		player.sendPacket(response);
+		
 		return true;
 	}
 }
