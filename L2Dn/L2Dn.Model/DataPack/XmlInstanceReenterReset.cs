@@ -5,7 +5,7 @@ namespace L2Dn.Model.DataPack;
 public class XmlInstanceReenterReset
 {
     [XmlAttribute("day")]
-    public DayOfWeek DayOfWeek { get; set; }
+    public XmlInstanceReenterDayOfWeek DayOfWeek { get; set; }
 
     [XmlIgnore]
     public bool DayOfWeekSpecified { get; set; }
