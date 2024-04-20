@@ -8,7 +8,7 @@
 							<xs:element name="variation" maxOccurs="unbounded" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="optionGroup" maxOccurs="unbounded" minOccurs="0">
+										<xs:element name="optionGroup" maxOccurs="2" minOccurs="1">
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="optionCategory" maxOccurs="unbounded" minOccurs="0">
@@ -27,17 +27,28 @@
 																		<xs:attribute type="xs:double" name="chance" use="optional"/>
 																	</xs:complexType>
 																</xs:element>
+																<xs:element name="item">
+																	<xs:complexType>
+																		<xs:attribute type="xs:int" name="id" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="items">
+																	<xs:complexType>
+																		<xs:attribute type="xs:int" name="from" use="optional"/>
+																		<xs:attribute type="xs:int" name="to" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
 															</xs:choice>
 															<xs:attribute type="xs:float" name="chance" use="optional"/>
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute type="xs:string" name="weaponType" use="optional"/>
 												<xs:attribute type="xs:byte" name="order" use="optional"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 									<xs:attribute type="xs:int" name="mineralId" use="optional"/>
+									<xs:attribute type="xs:int" name="itemGroup" use="optional"/>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -82,6 +93,7 @@
 									<xs:attribute type="xs:int" name="itemGroup" use="optional"/>
 									<xs:attribute type="xs:int" name="itemId" use="optional"/>
 									<xs:attribute type="xs:long" name="itemCount" use="optional"/>
+									<xs:attribute type="xs:long" name="adenaFee" use="optional"/>
 									<xs:attribute type="xs:long" name="cancelFee" use="optional"/>
 								</xs:complexType>
 							</xs:element>

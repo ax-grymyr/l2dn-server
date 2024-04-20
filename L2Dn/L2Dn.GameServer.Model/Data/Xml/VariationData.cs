@@ -1,11 +1,9 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -15,13 +13,13 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class VariationData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VariationData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(VariationData));
 	
 	private readonly Map<int, Set<int>> _itemGroups = new();
 	private readonly Map<int, List<Variation>> _variations = new();
 	private readonly Map<int, Map<int, VariationFee>> _fees = new();
 	
-	protected VariationData()
+	private VariationData()
 	{
 		load();
 	}
@@ -32,88 +30,109 @@ public class VariationData: DataReaderBase
 		_variations.clear();
 		_fees.clear();
 
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/augmentation/Variations.xml");
-		document.Elements("list").Elements("variations").Elements("variation").ForEach(parseVariationElement);
-		document.Elements("list").Elements("itemGroups").Elements("itemGroup").ForEach(parseItemGroupElement);
-		document.Elements("list").Elements("fees").Elements("fee").ForEach(parseFeeElement);
+		XmlVariationData variationData = LoadXmlDocument<XmlVariationData>(DataFileLocation.Data,
+			"stats/augmentation/Variations.xml");
+
+		foreach (XmlVariation variation in variationData.Variations)
+			parseVariationElement(variation);
+
+		foreach (XmlVariationItemGroup itemGroup in variationData.ItemGroups)
+			parseItemGroupElement(itemGroup);
+
+		foreach (XmlVariationFee fee in variationData.Fees)
+			parseFeeElement(fee);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _itemGroups.size() + " item groups.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _variations.size() + " variations.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _fees.size() + " fees.");
+		_logger.Info(GetType().Name + ": Loaded " + _itemGroups.Count + " item groups.");
+		_logger.Info(GetType().Name + ": Loaded " + _variations.Count + " variations.");
+		_logger.Info(GetType().Name + ": Loaded " + _fees.Count + " fees.");
 	}
 
-	private void parseVariationElement(XElement element)
+	private void parseVariationElement(XmlVariation xmlVariation)
 	{
-		int mineralId = element.GetAttributeValueAsInt32("mineralId");
-		int itemGroup = element.Attribute("itemGroup").GetInt32(-1);
+		int mineralId = xmlVariation.MineralId;
+		int itemGroup = xmlVariation.ItemGroupSpecified ? xmlVariation.ItemGroup : -1;
 		if (ItemData.getInstance().getTemplate(mineralId) == null)
 		{
-			LOGGER.Error(GetType().Name + ": Mineral with item id " + mineralId + " was not found.");
+			_logger.Error(GetType().Name + ": Mineral with item id " + mineralId + " was not found.");
+			return;
 		}
 
 		Variation variation = new Variation(mineralId, itemGroup);
 
-		element.Elements("optionGroup").ForEach(el =>
+		foreach (XmlVariationOptionGroup xmlVariationOptionGroup in xmlVariation.OptionGroups)
 		{
-			int order = el.GetAttributeValueAsInt32("order");
+			int order = xmlVariationOptionGroup.Order;
 			List<OptionDataCategory> sets = new();
-			el.Elements("optionCategory").ForEach(e =>
+			foreach (XmlVariationOptionGroupCategory xmlOptionGroupCategory in xmlVariationOptionGroup.OptionCategories)
 			{
-				double chance = e.GetAttributeValueAsDouble("chance");
-				Map<Options, Double> options = new();
-				e.Elements("option").ForEach(optEl =>
-				{
-					double optionChance = optEl.GetAttributeValueAsDouble("chance");
-					int optionId = optEl.GetAttributeValueAsInt32("id");
-					Options opt = OptionData.getInstance().getOptions(optionId);
-					if (opt == null)
-					{
-						LOGGER.Error(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
-						return;
-					}
-
-					options.put(opt, optionChance);
-				});
-
-				e.Elements("optionRange").ForEach(optEl =>
-				{
-					double optionChance = optEl.GetAttributeValueAsDouble("chance");
-					int fromId = optEl.GetAttributeValueAsInt32("from");
-					int toId = optEl.GetAttributeValueAsInt32("to");
-					for (int id = fromId; id <= toId; id++)
-					{
-						Options op = OptionData.getInstance().getOptions(id);
-						if (op == null)
-						{
-							LOGGER.Error(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
-							return;
-						}
-
-						options.put(op, optionChance);
-					}
-				});
+				double chance = xmlOptionGroupCategory.Chance;
+				Map<Options, double> options = new();
 
 				// Support for specific item ids.
 				Set<int> itemIds = new();
-				e.Elements("item").ForEach(itemEl =>
-				{
-					int itemId = itemEl.GetAttributeValueAsInt32("id");
-					itemIds.add(itemId);
-				});
 
-				e.Elements("items").ForEach(itemEl =>
+				foreach (object xmlItem in xmlOptionGroupCategory.Items)
 				{
-					int fromId = itemEl.GetAttributeValueAsInt32("from");
-					int toId = itemEl.GetAttributeValueAsInt32("to");
-					for (int id = fromId; id <= toId; id++)
-						itemIds.add(id);
-				});
+					switch (xmlItem)
+					{
+						case XmlVariationOptionGroupCategoryOption option:
+						{
+							double optionChance = option.Chance;
+							int optionId = option.Id;
+							Options opt = OptionData.getInstance().getOptions(optionId);
+							if (opt == null)
+							{
+								_logger.Error(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
+								return;
+							}
+
+							options.put(opt, optionChance);
+							break;
+						}				
+						
+						case XmlVariationOptionGroupCategoryOptionRange optionRange:
+						{
+							double optionChance = optionRange.Chance;
+							int fromId = optionRange.From;
+							int toId = optionRange.To;
+							for (int id = fromId; id <= toId; id++)
+							{
+								Options op = OptionData.getInstance().getOptions(id);
+								if (op == null)
+								{
+									_logger.Error(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
+									return;
+								}
+
+								options.put(op, optionChance);
+							}
+
+							break;
+						}
+
+						case XmlId item:
+						{
+							itemIds.add(item.Id);
+							break;
+						}							
+
+						case XmlIdRange itemRange:
+						{
+							int fromId = itemRange.From;
+							int toId = itemRange.To;
+							for (int id = fromId; id <= toId; id++)
+								itemIds.add(id);
+
+							break;
+						}							
+					}
+				}
 
 				sets.add(new OptionDataCategory(options, itemIds, chance));
-			});
+			}
 
 			variation.setEffectGroup(order, new OptionDataGroup(sets));
-		});
+		}
 
 		List<Variation> list = _variations.get(mineralId);
 		if (list == null)
@@ -127,65 +146,72 @@ public class VariationData: DataReaderBase
 		((EtcItem)ItemData.getInstance().getTemplate(mineralId)).setMineral();
 	}
 
-	private void parseItemGroupElement(XElement element)
+	private void parseItemGroupElement(XmlVariationItemGroup xmlVariationItemGroup)
 	{
-		int id = element.GetAttributeValueAsInt32("id");
+		int id = xmlVariationItemGroup.Id;
 		Set<int> items = new();
-		element.Elements("item").ForEach(el =>
+		foreach (XmlId item in xmlVariationItemGroup.Items)
 		{
-			int itemId = el.GetAttributeValueAsInt32("id");
+			int itemId = item.Id;
 			if (ItemData.getInstance().getTemplate(itemId) == null)
-				LOGGER.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
+				_logger.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
 			
 			items.add(itemId);
-		});
-				
-		if (_itemGroups.containsKey(id))
-		{
-			_itemGroups.get(id).addAll(items);
 		}
+
+		if (_itemGroups.TryGetValue(id, out Set<int>? group))
+			group.addAll(items);
 		else
-		{
-			_itemGroups.put(id, items);
-		}
+			_itemGroups[id] = items;
 	}
 
-	private void parseFeeElement(XElement element)
+	private void parseFeeElement(XmlVariationFee xmlVariationFee)
 	{
-		int itemGroupId = element.GetAttributeValueAsInt32("itemGroup");
-		Set<int> itemGroup = _itemGroups.get(itemGroupId);
-		int itemId = element.Attribute("itemId").GetInt32(0);
-		long itemCount = element.Attribute("itemCount").GetInt64(0);
-		long adenaFee = element.Attribute("adenaFee").GetInt64(0);
-		long cancelFee = element.Attribute("cancelFee").GetInt64(0);
-		if (itemId != 0 && (ItemData.getInstance().getTemplate(itemId) == null))
+		int itemGroupId = xmlVariationFee.ItemGroup;
+		int itemId = xmlVariationFee.ItemId;
+		long itemCount = xmlVariationFee.ItemCount;
+		long adenaFee = xmlVariationFee.AdenaFee;
+		long cancelFee = xmlVariationFee.CancelFee;
+		if (itemId != 0 && ItemData.getInstance().getTemplate(itemId) == null)
 		{
-			LOGGER.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
+			_logger.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
 		}
 				
 		VariationFee fee = new VariationFee(itemId, itemCount, adenaFee, cancelFee);
+		
 		Map<int, VariationFee> feeByMinerals = new();
-		element.Elements("mineral").ForEach(el =>
+		foreach (object mineral in xmlVariationFee.Minerals)
 		{
-			int mId = el.GetAttributeValueAsInt32("id");
-			feeByMinerals.put(mId, fee);
-		});
+			switch (mineral)
+			{
+				case XmlId mineralId:
+				{
+					feeByMinerals.put(mineralId.Id, fee);
+					break;
+				}
 
-		element.Elements("mineralRange").ForEach(el =>
+				case XmlIdRange mineralIdRange:
+				{
+					int fromId = mineralIdRange.From;
+					int toId = mineralIdRange.To;
+					for (int id = fromId; id <= toId; id++)
+						feeByMinerals.put(id, fee);
+
+					break;
+				}
+			}
+		}
+
+		Set<int>? itemGroup = _itemGroups.GetValueOrDefault(itemGroupId);
+		if (itemGroup is null)
 		{
-			int fromId = el.GetAttributeValueAsInt32("from");
-			int toId = el.GetAttributeValueAsInt32("to");
-			for (int id = fromId; id <= toId; id++)
-				feeByMinerals.put(id, fee);
-		});
-
+			_logger.Error(GetType().Name + ": Item group with id " + itemGroupId + " was not found.");
+			return;
+		}
+		
 		foreach (int item in itemGroup)
 		{
-			Map<int, VariationFee> fees = _fees.get(item);
-			if (fees == null)
-			{
-				fees = new();
-			}
+			Map<int, VariationFee> fees = _fees.GetValueOrDefault(item) ?? new Map<int, VariationFee>();
 			fees.putAll(feeByMinerals);
 			_fees.put(item, fees);
 		}
@@ -219,48 +245,41 @@ public class VariationData: DataReaderBase
 		return new VariationInstance(variation.getMineralId(), option1, option2);
 	}
 	
-	public Variation getVariation(int mineralId, Item item)
+	public Variation? getVariation(int mineralId, Item item)
 	{
-		List<Variation> variations = _variations.get(mineralId);
-		if ((variations == null) || variations.isEmpty())
-		{
+		List<Variation>? variations = _variations.GetValueOrDefault(mineralId);
+		if (variations == null || variations.Count == 0)
 			return null;
-		}
 		
 		foreach (Variation variation in variations)
 		{
-			Set<int> group = _itemGroups.get(variation.getItemGroup());
-			if ((group != null) && group.Contains(item.getId()))
-			{
+			Set<int>? group = _itemGroups.GetValueOrDefault(variation.getItemGroup());
+			if (group != null && group.Contains(item.getId()))
 				return variation;
-			}
 		}
 		
-		return variations.get(0);
+		return variations[0];
 	}
 	
 	public bool hasVariation(int mineralId)
 	{
-		List<Variation> variations = _variations.get(mineralId);
-		return (variations != null) && !variations.isEmpty();
+		return _variations.GetValueOrDefault(mineralId)?.Count != 0;
 	}
 	
-	public VariationFee getFee(int itemId, int mineralId)
+	public VariationFee? getFee(int itemId, int mineralId)
 	{
-		return _fees.getOrDefault(itemId, new()).get(mineralId);
+		return _fees.GetValueOrDefault(itemId)?.GetValueOrDefault(mineralId);
 	}
 	
 	public long getCancelFee(int itemId, int mineralId)
 	{
-		Map<int, VariationFee> fees = _fees.get(itemId);
-		if (fees == null)
+		if (!_fees.TryGetValue(itemId, out Map<int, VariationFee>? fees))
 			return -1;
 		
-		VariationFee fee = fees.get(mineralId);
-		if (fee == null)
+		if (!fees.TryGetValue(mineralId, out VariationFee? fee))
 		{
 			// FIXME This will happen when the data is pre-rework or when augments were manually given, but still that's a cheap solution
-			LOGGER.Warn(GetType().Name + ": Cancellation fee not found for item [" + itemId + "] and mineral [" + mineralId + "]");
+			_logger.Warn(GetType().Name + ": Cancellation fee not found for item [" + itemId + "] and mineral [" + mineralId + "]");
 			fee = fees.values().FirstOrDefault();
 			if (fee == null)
 				return -1;
@@ -271,8 +290,7 @@ public class VariationData: DataReaderBase
 	
 	public bool hasFeeData(int itemId)
 	{
-		Map<int, VariationFee> itemFees = _fees.get(itemId);
-		return (itemFees != null) && !itemFees.isEmpty();
+		return _fees.GetValueOrDefault(itemId)?.Count != 0;
 	}
 	
 	public static VariationData getInstance()

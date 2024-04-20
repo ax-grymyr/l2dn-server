@@ -18,9 +18,7 @@ public class ArmorSetData: DataReaderBase
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ArmorSetData));
 	
 	private ArmorSet[] _armorSets;
-	private readonly Map<int, ArmorSet> _armorSetMap = new();
 	private List<ArmorSet>[] _itemSets;
-	private readonly Map<int, List<ArmorSet>> _armorSetItems = new();
 	
 	private ArmorSetData()
 	{
@@ -29,30 +27,27 @@ public class ArmorSetData: DataReaderBase
 	
 	public void load()
 	{
+		Dictionary<int, ArmorSet> armorSetMap = new();
+		Dictionary<int, List<ArmorSet>> armorSetItems = new();
 		LoadXmlDocuments<XmlArmorSetList>(DataFileLocation.Data, "stats/armorsets", true)
 			.SelectMany(t => t.Document.Sets.Select(s => (t.FilePath, Set: s)))
-			.ForEach(t => LoadArmorSet(t.FilePath, t.Set));
+			.ForEach(t => LoadArmorSet(t.FilePath, t.Set, armorSetMap, armorSetItems));
 
-		int count = _armorSetMap.Keys.Max() + 1;
+		int count = armorSetMap.Keys.Max() + 1;
 		_armorSets = new ArmorSet[count];
-		foreach (var armorSet in _armorSetMap)
-		{
+		foreach (var armorSet in armorSetMap)
 			_armorSets[armorSet.Key] = armorSet.Value;
-		}
 		
-		count = _armorSetItems.Keys.Max() + 1;
+		count = armorSetItems.Keys.Max() + 1;
 		_itemSets = new List<ArmorSet>[count];
-		foreach (var armorSet in _armorSetItems)
-		{
+		foreach (var armorSet in armorSetItems)
 			_itemSets[armorSet.Key] = armorSet.Value;
-		}
 		
-		_logger.Info(GetType().Name + ": Loaded " + _armorSetMap.size() + " armor sets.");
-		_armorSetMap.clear();
-		_armorSetItems.clear();
+		_logger.Info(GetType().Name + ": Loaded " + armorSetMap.Count + " armor sets.");
 	}
 
-	private void LoadArmorSet(string filePath, XmlArmorSet xmlArmorSet)
+	private void LoadArmorSet(string filePath, XmlArmorSet xmlArmorSet, Dictionary<int, ArmorSet> armorSetMap,
+		Dictionary<int, List<ArmorSet>> armorSetItems)
 	{
 		int id = xmlArmorSet.Id;
 		int minimumPieces = xmlArmorSet.MinimumPieces;
@@ -65,7 +60,7 @@ public class ArmorSetData: DataReaderBase
 		foreach (XmlArmorSetItem xmlArmorSetItem in xmlArmorSet.RequiredItems)
 		{
 			int itemId = xmlArmorSetItem.Id;
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
 				_logger.Warn("Attempting to register non existing required item: " + itemId + " to a set: " +
@@ -99,11 +94,19 @@ public class ArmorSetData: DataReaderBase
 			stats[xmlArmorSetStat.Stat] = xmlArmorSetStat.Value;
 
 		ArmorSet set = new ArmorSet(id, minimumPieces, isVisual, requiredItems, optionalItems, skills, stats);
-		if (!_armorSetMap.TryAdd(id, set))
+		if (!armorSetMap.TryAdd(id, set))
 			_logger.Warn("Duplicate set entry with id: " + id + " in file: " + filePath);
 
-		set.getRequiredItems().Concat(set.getOptionalItems()).ForEach(itemHolder =>
-			_armorSetItems.computeIfAbsent(itemHolder, key => new()).add(set));
+		foreach (int itemId in set.getRequiredItems().Concat(set.getOptionalItems()))
+		{
+			if (!armorSetItems.TryGetValue(itemId, out List<ArmorSet>? itemList))
+			{
+				itemList = new List<ArmorSet>();
+				armorSetItems[itemId] = itemList;
+			}
+			
+			itemList.Add(set);
+		}
 	}
 
 	/**
