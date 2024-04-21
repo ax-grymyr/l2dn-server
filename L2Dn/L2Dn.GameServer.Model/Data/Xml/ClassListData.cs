@@ -1,56 +1,48 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * Loads the the list of classes and it's info.
- * @author Zoey76
- */
-public class ClassListData: DataReaderBase
+/// <summary>
+/// Loads the list of classes and it's info.
+/// </summary>
+public sealed class ClassListData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClassListData));
-	
-	private readonly Map<CharacterClass, ClassInfoHolder> _classData = new();
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClassListData));
+
+	private static FrozenDictionary<CharacterClass, ClassInfoHolder> _classData =
+		FrozenDictionary<CharacterClass, ClassInfoHolder>.Empty;
 	
 	/**
 	 * Instantiates a new class list data.
 	 */
-	protected ClassListData()
+	private ClassListData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		_classData.clear();
-
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/chars/classList.xml");
-		document.Elements("list").Elements("class").ForEach(loadElement);
+		_classData = LoadXmlDocument<XmlCharacterClassList>(DataFileLocation.Data, "stats/chars/classList.xml")
+			.Classes.Select(c =>
+			{
+				CharacterClass classId = (CharacterClass)c.ClassId;
+				string className = c.Name;
+				CharacterClass? parentClassId = c.ParentClassIdSpecified ? (CharacterClass)c.ParentClassId : null;
+				return (Key: classId, Value: new ClassInfoHolder(classId, className, parentClassId));
+			}).ToFrozenDictionary(t => t.Key, t => t.Value);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _classData.size() + " class data.");
-	}
-	
-	private void loadElement(XElement element)
-	{
-		CharacterClass classId = (CharacterClass)element.GetAttributeValueAsInt32("classId");
-		string className = element.GetAttributeValueAsString("classId");
-
-		int parentId = element.Attribute("parentClassId").GetInt32(-1);
-		CharacterClass? parentClassId = parentId < 0 ? null : (CharacterClass)parentId;
-		_classData.put(classId, new ClassInfoHolder(classId, className, parentClassId));
+		_logger.Info(GetType().Name + ": Loaded " + _classData.Count + " class data.");
 	}
 	
 	/**
 	 * Gets the class list.
 	 * @return the complete class list.
 	 */
-	public Map<CharacterClass, ClassInfoHolder> getClassList()
+	public FrozenDictionary<CharacterClass, ClassInfoHolder> getClassList()
 	{
 		return _classData;
 	}

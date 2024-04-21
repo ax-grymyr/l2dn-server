@@ -1,9 +1,6 @@
-using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -13,34 +10,23 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class KarmaData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(KarmaData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(KarmaData));
+	private static ImmutableArray<double> _karmaTable = ImmutableArray<double>.Empty;
 	
-	private readonly Map<int, Double> _karmaTable = new();
-	
-	public KarmaData()
+	private KarmaData()
 	{
 		load();
 	}
 	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		_karmaTable.clear();
+		Dictionary<int, double> values =
+			LoadXmlDocument<XmlPcKarmaIncreaseData>(DataFileLocation.Data, "stats/chars/pcKarmaIncrease.xml")
+				.Levels.ToDictionary(el => el.Level, el => el.Value);
+
+		_karmaTable = values.ToValueArray().ToImmutableArray();
 		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/chars/pcKarmaIncrease.xml");
-		document.Elements("pcKarmaIncrease").Elements("increase").ForEach(parseElement);
-
-		LOGGER.Info(GetType().Name + ": Loaded " + _karmaTable.size() + " karma modifiers.");
-	}
-
-	private void parseElement(XElement element)
-	{
-		int level = element.GetAttributeValueAsInt32("lvl");
-		if (level >= Config.PLAYER_MAXIMUM_LEVEL)
-			return;
-
-		double val = element.GetAttributeValueAsDouble("val");
-		_karmaTable.put(level, val);
+		_logger.Info(GetType().Name + ": Loaded " + values.Count + " karma modifiers.");
 	}
 
 	/**
@@ -49,7 +35,7 @@ public class KarmaData: DataReaderBase
 	 */
 	public double getMultiplier(int level)
 	{
-		return _karmaTable.get(level);
+		return _karmaTable[level];
 	}
 	
 	/**

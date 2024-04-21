@@ -1,6 +1,6 @@
-using System.Xml.Linq;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -11,43 +11,32 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class PlayerXpPercentLostData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayerXpPercentLostData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(PlayerXpPercentLostData));
+	private static ImmutableArray<double> _playerXpPercentLost = ImmutableArray<double>.Empty;
 	
-	private readonly int _maxlevel;
-	private readonly double[] _playerXpPercentLost;
-	
-	protected PlayerXpPercentLostData()
+	private PlayerXpPercentLostData()
 	{
-		_maxlevel = ExperienceData.getInstance().getMaxLevel();
-		_playerXpPercentLost = new double[_maxlevel + 1];
-		Array.Fill(_playerXpPercentLost, 1.0);
-		
 		load();
 	}
 	
 	private void load()
 	{
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/chars/playerXpPercentLost.xml");
-		document.Elements("list").Elements("xpLost").ForEach(parseElement);
-	}
-
-	private void parseElement(XElement element)
-	{
-		int level = element.GetAttributeValueAsInt32("level");
-		if (level > _maxlevel)
-			return;
-
-		double val = element.GetAttributeValueAsDouble("val");
-		_playerXpPercentLost[level] = val;
+		_playerXpPercentLost =
+			LoadXmlDocument<XmlPlayerXpPercentLostData>(DataFileLocation.Data, "stats/chars/playerXpPercentLost.xml")
+				.Levels
+				.ToDictionary(x => x.Level, x => x.Value)
+				.ToValueArray()
+				.ToImmutableArray();
 	}
 
 	public double getXpPercent(int level)
 	{
-		if (level > _maxlevel)
+		if (level > _playerXpPercentLost.Length)
 		{
-			LOGGER.Warn("Require to high level inside PlayerXpPercentLostData (" + level + ")");
-			return _playerXpPercentLost[_maxlevel];
+			_logger.Warn("Require to high level inside PlayerXpPercentLostData (" + level + ")");
+			return 1.0;
 		}
+		
 		return _playerXpPercentLost[level];
 	}
 	

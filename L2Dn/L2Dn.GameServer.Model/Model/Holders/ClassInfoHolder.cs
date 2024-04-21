@@ -1,5 +1,3 @@
-using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.Model;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -8,10 +6,10 @@ namespace L2Dn.GameServer.Model.Holders;
  * This class will hold the information of the player classes.
  * @author Zoey76
  */
-public class ClassInfoHolder
+public sealed class ClassInfoHolder
 {
 	private readonly CharacterClass _classId;
-	private readonly String _className;
+	private readonly string _className;
 	private readonly CharacterClass? _parentClassId;
 
 	/**
@@ -20,7 +18,7 @@ public class ClassInfoHolder
 	 * @param className the in game class name.
 	 * @param parentClassId the parent class for the given {@code classId}.
 	 */
-	public ClassInfoHolder(CharacterClass classId, String className, CharacterClass? parentClassId)
+	public ClassInfoHolder(CharacterClass classId, string className, CharacterClass? parentClassId)
 	{
 		_classId = classId;
 		_className = className;
@@ -38,7 +36,7 @@ public class ClassInfoHolder
 	/**
 	 * @return the hardcoded in-game class name.
 	 */
-	public String getClassName()
+	public string getClassName()
 	{
 		return _className;
 	}
@@ -84,7 +82,7 @@ public class ClassInfoHolder
 	/**
 	 * @return the class client Id formatted to be displayed on a HTML.
 	 */
-	public String getClientCode()
+	public string getClientCode()
 	{
 		// TODO: Verify client ids above.
 		// return "&$" + getClassClientId() + ";";

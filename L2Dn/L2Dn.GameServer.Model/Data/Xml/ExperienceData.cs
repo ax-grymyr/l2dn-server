@@ -1,24 +1,21 @@
-using System.Xml.Linq;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * This class holds the Experience points for each level for players and pets.
- * @author mrTJO
- */
+/// <summary>
+/// This class holds the Experience points for each level for players and pets.
+/// </summary>
 public class ExperienceData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ExperienceData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ExperienceData));
+	private static ImmutableArray<long> _expTable = ImmutableArray<long>.Empty;
+	private static ImmutableArray<double> _trainingRateTable = ImmutableArray<double>.Empty;
 	
-	private readonly Map<int, long> _expTable = new();
-	private readonly Map<int, Double> _traningRateTable = new();
-	
-	private int MAX_LEVEL;
-	private int MAX_PET_LEVEL;
+	private static int _maxLevel;
+	private static int _maxPetLevel;
 	
 	/**
 	 * Instantiates a new experience table.
@@ -30,43 +27,25 @@ public class ExperienceData: DataReaderBase
 	
 	public void load()
 	{
-		_expTable.clear();
-		_traningRateTable.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/experience.xml");
-		document.Elements("table").ForEach(el =>
-		{
-			MAX_LEVEL = el.GetAttributeValueAsInt32("maxLevel") + 1;
-			MAX_PET_LEVEL = el.GetAttributeValueAsInt32("maxPetLevel") + 1;
-			if (MAX_LEVEL > Config.PLAYER_MAXIMUM_LEVEL)
-			{
-				MAX_LEVEL = Config.PLAYER_MAXIMUM_LEVEL;
-			}
-			if (MAX_PET_LEVEL > (MAX_LEVEL + 1))
-			{
-				MAX_PET_LEVEL = MAX_LEVEL + 1; // Pet level should not exceed owner level.
-			}
-			
-			el.Elements("experience").ForEach(parseElement);
-		});
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _expTable.size() + " levels.");
-		LOGGER.Info(GetType().Name + ": Max Player Level is " + (MAX_LEVEL - 1) + ".");
-		LOGGER.Info(GetType().Name + ": Max Pet Level is " + (MAX_PET_LEVEL - 1) + ".");
-	}
-	
-	private void parseElement(XElement element)
-	{
-		int maxLevel = element.GetAttributeValueAsInt32("level");
-		if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
-		{
-			return;
-		}
+		XmlExperienceData document = LoadXmlDocument<XmlExperienceData>(DataFileLocation.Data, "stats/experience.xml");
 
-		long toLevel = element.GetAttributeValueAsInt64("tolevel");
-		double trainingRate = element.GetAttributeValueAsDouble("trainingRate");
-		_expTable.put(maxLevel, toLevel);
-		_traningRateTable.put(maxLevel, trainingRate);
+		int maxLevel = document.MaxLevel;
+		int maxPetLevel = document.MaxPetLevel;
+		if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
+			maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+
+		if (maxPetLevel > maxLevel + 1)
+			maxPetLevel = maxLevel + 1; // Pet level should not exceed owner level.
+
+		_maxLevel = maxLevel;
+		_maxPetLevel = maxPetLevel;
+		_expTable = document.Levels.ToDictionary(x => x.Level, x => x.ToLevel).ToValueArray().ToImmutableArray();
+		_trainingRateTable = document.Levels.ToDictionary(x => x.Level, x => x.TrainingRate).ToValueArray()
+			.ToImmutableArray();
+		
+		_logger.Info($"{GetType().Name}: Loaded {_expTable.Length} levels.");
+		_logger.Info($"{GetType().Name}: Max Player Level is {maxLevel - 1}.");
+		_logger.Info($"{GetType().Name}: Max Pet Level is {maxPetLevel - 1}.");
 	}
 	
 	/**
@@ -77,19 +56,17 @@ public class ExperienceData: DataReaderBase
 	public long getExpForLevel(int level)
 	{
 		if (level > Config.PLAYER_MAXIMUM_LEVEL)
-		{
-			return _expTable.get(Config.PLAYER_MAXIMUM_LEVEL);
-		}
-		return _expTable.get(level);
+			return _expTable[Config.PLAYER_MAXIMUM_LEVEL];
+		
+		return _expTable[level];
 	}
 	
 	public double getTrainingRate(int level)
 	{
 		if (level > Config.PLAYER_MAXIMUM_LEVEL)
-		{
-			return _traningRateTable.get(Config.PLAYER_MAXIMUM_LEVEL);
-		}
-		return _traningRateTable.get(level);
+			return _trainingRateTable[Config.PLAYER_MAXIMUM_LEVEL];
+
+		return _trainingRateTable[level];
 	}
 	
 	/**
@@ -98,7 +75,7 @@ public class ExperienceData: DataReaderBase
 	 */
 	public int getMaxLevel()
 	{
-		return MAX_LEVEL;
+		return _maxLevel;
 	}
 	
 	/**
@@ -107,7 +84,7 @@ public class ExperienceData: DataReaderBase
 	 */
 	public int getMaxPetLevel()
 	{
-		return MAX_PET_LEVEL;
+		return _maxPetLevel;
 	}
 	
 	/**
