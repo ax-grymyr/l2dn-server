@@ -8,6 +8,7 @@ using L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 using L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 using L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 using L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
+using L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 using L2Dn.GameServer.Scripts.Handlers.ConditionHandlers;
 using L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 using L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -898,6 +899,18 @@ public static class Scripts
 		adminCommandHandler.registerHandler(new AdminTransform());
 		adminCommandHandler.registerHandler(new AdminVitality());
 		adminCommandHandler.registerHandler(new AdminZone());
+        
+        // Community board
+        CommunityBoardHandler communityBoardHandler = CommunityBoardHandler.getInstance();
+        communityBoardHandler.registerHandler(new ClanBoard());
+        communityBoardHandler.registerHandler(new FavoriteBoard());
+        communityBoardHandler.registerHandler(new FriendsBoard());
+        communityBoardHandler.registerHandler(new HomeBoard());
+        communityBoardHandler.registerHandler(new HomepageBoard());
+        communityBoardHandler.registerHandler(new MailBoard());
+        communityBoardHandler.registerHandler(new MemoBoard());
+        communityBoardHandler.registerHandler(new RegionBoard());
+        communityBoardHandler.registerHandler(new DropSearchBoard());
     }
 
     public static void RegisterQuests()

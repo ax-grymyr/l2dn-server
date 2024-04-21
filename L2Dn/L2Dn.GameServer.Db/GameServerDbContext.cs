@@ -139,4 +139,6 @@ public class GameServerDbContext(DbContextOptions options)
     public DbSet<DbMerchantLease> MerchantLeases => Set<DbMerchantLease>();
 
     public DbSet<DbPetitionFeedback> PetitionFeedbacks => Set<DbPetitionFeedback>();
+
+    public DbSet<DbBbsFavorite> BbsFavorites => Set<DbBbsFavorite>();
 }

@@ -3,7 +3,7 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-internal readonly struct ShowBoardPacket(bool showBoard, string content): IOutgoingPacket
+public readonly struct ShowBoardPacket(bool showBoard, string content): IOutgoingPacket
 {
     public ShowBoardPacket(string content, string id): this(id + '\b' + content)
     {

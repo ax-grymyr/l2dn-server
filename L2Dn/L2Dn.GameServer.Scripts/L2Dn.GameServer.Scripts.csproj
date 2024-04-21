@@ -10,4 +10,8 @@
       <ProjectReference Include="..\L2Dn.GameServer.Model\L2Dn.GameServer.Model.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Handlers\CommunityBoard\" />
+    </ItemGroup>
+
 </Project>

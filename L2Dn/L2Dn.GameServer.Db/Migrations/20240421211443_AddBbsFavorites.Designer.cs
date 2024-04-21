@@ -3,6 +3,7 @@ using System;
 using L2Dn.GameServer.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace L2Dn.GameServer.Db.Migrations
 {
     [DbContext(typeof(GameServerDbContext))]
-    partial class GameServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240421211443_AddBbsFavorites")]
+    partial class AddBbsFavorites
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
