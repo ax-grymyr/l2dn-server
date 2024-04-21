@@ -563,10 +563,13 @@ public class StatSet : IParserAdvUtils
 		{
 			throw new InvalidCastException("Float value required, but not specified");
 		}
-		if (val is float)
-		{
-			return ((float) val);
-		}
+		
+		if (val is float f)
+			return f;
+		
+		if (val is double d)
+			return (float)d;
+		
 		try
 		{
 			return float.Parse((string) val, CultureInfo.InvariantCulture);
@@ -581,11 +584,13 @@ public class StatSet : IParserAdvUtils
 	{
 		object val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
+
 		if (val is float f)
 			return f;
+
+		if (val is double d)
+			return (float)d;
 
 		if (val is IConvertible convertible)
 			return convertible.ToSingle(CultureInfo.InvariantCulture);
