@@ -1,105 +1,85 @@
-using System.Xml.Linq;
+using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.Cubics.Conditions;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author UnAfraid
- */
-public class CubicData: DataReaderBase
+public sealed class CubicData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CubicData));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(CubicData));
+
+	// key is Cubic id and level pair
+	private static FrozenDictionary<(int, int), CubicTemplate> _cubics =
+		FrozenDictionary<(int, int), CubicTemplate>.Empty;
 	
-	private readonly Map<int, Map<int, CubicTemplate>> _cubics = new();
-	
-	protected CubicData()
+	private CubicData()
 	{
 		load();
 	}
 	
 	public void load()
 	{
-		_cubics.clear();
+		Dictionary<(int, int), CubicTemplate> cubics = new();
+		LoadXmlDocuments<XmlCubicData>(DataFileLocation.Data, "stats/cubics", true)
+			.SelectMany(t => t.Document.Cubics)
+			.ForEach(c => ParseCubic(c, cubics));
+
+		_cubics = cubics.ToFrozenDictionary();
+
+		int count = cubics.Select(p => p.Key.Item1).Distinct().Count();
 		
-		LoadXmlDocuments(DataFileLocation.Data, "stats/cubics", true).ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("cubic").ForEach(x => loadElement(t.FilePath, x));
-		});
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _cubics.size() + " cubics.");
-	}
-	
-	private void loadElement(string filePath, XElement element)
-	{
-		StatSet set = new StatSet(element);
-		parseTemplate(element, new CubicTemplate(set));
+		_logger.Info(GetType().Name + ": Loaded " + count + " cubics.");
 	}
 	
 	/**
 	 * @param cubicNode
 	 * @param template
 	 */
-	private void parseTemplate(XElement cubicNode, CubicTemplate template)
+	private static void ParseCubic(XmlCubic xmlCubic, Dictionary<(int, int), CubicTemplate> cubics)
 	{
-		cubicNode.Elements("conditions").ForEach(e => parseConditions(e, template, template));
-		cubicNode.Elements("skills").ForEach(e => parseSkills(e, template));
-		_cubics.computeIfAbsent(template.getId(), key => new()).put(template.getLevel(), template);
-	}
-	
-	/**
-	 * @param cubicNode
-	 * @param template
-	 * @param holder
-	 */
-	private void parseConditions(XElement element, CubicTemplate template, ICubicConditionHolder holder)
-	{
-		element.Elements().ForEach(el =>
+		CubicTemplate template = new(xmlCubic);
+
+		XmlCubicBaseConditions? conditions = xmlCubic.Conditions;
+		if (conditions != null)
 		{
-			switch (el.Name.LocalName)
+			XmlCubicConditionHp? hpCondition = conditions.Hp;
+			if (hpCondition != null)
+				template.addCondition(new HpCondition(hpCondition.Type, hpCondition.Percent));
+
+			XmlCubicConditionRange? rangeCondition = conditions.Range;
+			if (rangeCondition != null)
+				template.addCondition(new RangeCondition(rangeCondition.Value));
+		}
+
+		foreach (XmlCubicSkill xmlCubicSkill in xmlCubic.Skills)
+		{
+			CubicSkill skill = new(xmlCubicSkill);
+			XmlCubicSkillConditions? skillConditions = xmlCubicSkill.Conditions;
+			if (skillConditions != null)
 			{
-				case "hp":
-					HpCondition.HpConditionType type = el.Attribute("type").GetEnum<HpCondition.HpConditionType>();
-					int hpPer = el.GetAttributeValueAsInt32("percent");
-					holder.addCondition(new HpCondition(type, hpPer));
-					break;
-				case "range":
-					int range = el.GetAttributeValueAsInt32("value");
-					holder.addCondition(new RangeCondition(range));
-					break;
-				case "healthPercent":
-					int min = el.GetAttributeValueAsInt32("min");
-					int max = el.GetAttributeValueAsInt32("max");
-					holder.addCondition(new HealthCondition(min, max));
-					break;
-				default:
-					LOGGER.Error("Attempting to use not implemented condition: " + el.Name.LocalName +
-					             " for cubic id: " + template.getId() + " level: " + template.getLevel());
-					
-					break;
+				XmlCubicConditionHp? hpCondition = skillConditions.Hp;
+				if (hpCondition != null)
+					skill.addCondition(new HpCondition(hpCondition.Type, hpCondition.Percent));
+
+				XmlCubicConditionRange? rangeCondition = skillConditions.Range;
+				if (rangeCondition != null)
+					skill.addCondition(new RangeCondition(rangeCondition.Value));
+
+				XmlCubicConditionHealthPercent? healthCondition = skillConditions.HealthPercent;
+				if (healthCondition != null)
+					skill.addCondition(new HealthCondition(healthCondition.Min, healthCondition.Max));
 			}
-		});
-	}
-	
-	/**
-	 * @param cubicNode
-	 * @param template
-	 */
-	private void parseSkills(XElement element, CubicTemplate template)
-	{
-		element.Elements("skill").ForEach(el =>
-		{
-			StatSet set = new StatSet(el);
-			CubicSkill skill = new CubicSkill(set);
-			el.Elements("conditions").ForEach(e => parseConditions(e, template, skill));
+			
 			template.getCubicSkills().add(skill);
-		});
+		}
+
+		if (!cubics.TryAdd((template.getId(), template.getLevel()), template))
+			_logger.Info($"{nameof(CubicData)}: Duplicated cubic data id={template.getId()}, level={template.getLevel()}.");
 	}
 	
 	/**
@@ -107,9 +87,9 @@ public class CubicData: DataReaderBase
 	 * @param level
 	 * @return the CubicTemplate for specified id and level
 	 */
-	public CubicTemplate getCubicTemplate(int id, int level)
+	public CubicTemplate? getCubicTemplate(int id, int level)
 	{
-		return _cubics.getOrDefault(id, new()).get(level);
+		return _cubics.GetValueOrDefault((id, level));
 	}
 	
 	/**

@@ -2,10 +2,12 @@
 using L2Dn.GameServer.Model.Cubics.Conditions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Cubics;
 
-public class CubicSkill: SkillHolder, ICubicConditionHolder
+public class CubicSkill: SkillHolder
 {
     private readonly int _triggerRate;
     private readonly int _successRate;
@@ -14,13 +16,13 @@ public class CubicSkill: SkillHolder, ICubicConditionHolder
     private readonly List<ICubicCondition> _conditions = new();
     private readonly bool _targetDebuff;
 
-    public CubicSkill(StatSet set): base(set.getInt("id"), set.getInt("level"))
+    public CubicSkill(XmlCubicSkill xmlCubicSkill): base(xmlCubicSkill.Id, xmlCubicSkill.Level)
     {
-        _triggerRate = set.getInt("triggerRate", 100);
-        _successRate = set.getInt("successRate", 100);
-        _canUseOnStaticObjects = set.getBoolean("canUseOnStaticObjects", false);
-        _targetType = set.getEnum<CubicTargetType>("target", CubicTargetType.TARGET);
-        _targetDebuff = set.getBoolean("targetDebuff", false);
+        _triggerRate = xmlCubicSkill.TriggerRateSpecified ? xmlCubicSkill.TriggerRate : 100;
+        _successRate = xmlCubicSkill.SuccessRateSpecified ? xmlCubicSkill.SuccessRate : 100;
+        _canUseOnStaticObjects = xmlCubicSkill.CanUseOnStaticObjects;
+        _targetType = xmlCubicSkill.TargetSpecified ? xmlCubicSkill.Target : CubicTargetType.TARGET;
+        _targetDebuff = xmlCubicSkill.TargetDebuff;
     }
 
     public int getTriggerRate()

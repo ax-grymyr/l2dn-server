@@ -1,14 +1,15 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Cubics.Conditions;
 
 public class HpCondition: ICubicCondition
 {
-    private readonly HpConditionType _type;
+    private readonly CubicHpConditionType _type;
     private readonly int _hpPer;
 
-    public HpCondition(HpConditionType type, int hpPer)
+    public HpCondition(CubicHpConditionType type, int hpPer)
     {
         _type = type;
         _hpPer = hpPer;
@@ -21,11 +22,11 @@ public class HpCondition: ICubicCondition
             double hpPer = (target.isDoor() ? (Door)target : (Creature)target).getCurrentHpPercent();
             switch (_type)
             {
-                case HpConditionType.GREATER:
+                case CubicHpConditionType.GREATER:
                 {
                     return hpPer > _hpPer;
                 }
-                case HpConditionType.LESSER:
+                case CubicHpConditionType.LESSER:
                 {
                     return hpPer < _hpPer;
                 }
@@ -35,14 +36,8 @@ public class HpCondition: ICubicCondition
         return false;
     }
 
-    public override String ToString()
+    public override string ToString()
     {
         return GetType().Name + " chance: " + _hpPer;
-    }
-
-    public enum HpConditionType
-    {
-        GREATER,
-        LESSER
     }
 }

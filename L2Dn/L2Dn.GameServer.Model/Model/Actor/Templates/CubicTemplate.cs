@@ -1,9 +1,11 @@
 ﻿using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.Cubics.Conditions;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;
 
-public class CubicTemplate: CreatureTemplate, ICubicConditionHolder
+public class CubicTemplate: CreatureTemplate
 {
 	private readonly int _id;
 	private readonly int _level;
@@ -17,17 +19,17 @@ public class CubicTemplate: CreatureTemplate, ICubicConditionHolder
 	private readonly List<ICubicCondition> _conditions = new();
 	private readonly List<CubicSkill> _skills = new();
 	
-	public CubicTemplate(StatSet set): base(set)
+	public CubicTemplate(XmlCubic xmlCubic): base(StatSet.EMPTY_STATSET)
 	{
-		_id = set.getInt("id");
-		_level = set.getInt("level");
-		_slot = set.getInt("slot");
-		_duration = set.getInt("duration");
-		_delay = set.getInt("delay");
-		_maxCount = set.getInt("maxCount");
-		_useUp = set.getInt("useUp");
-		_power = set.getDouble("power") / 10;
-		_targetType = set.getEnum("targetType", CubicTargetType.TARGET);
+		_id = xmlCubic.Id;
+		_level = xmlCubic.Level;
+		_slot = xmlCubic.Slot;
+		_duration = xmlCubic.Duration;
+		_delay = xmlCubic.Delay;
+		_maxCount = xmlCubic.MaxCount;
+		_useUp = xmlCubic.UseUp;
+		_power = xmlCubic.Power / 10;
+		_targetType = xmlCubic.TargetType;
 	}
 	
 	public int getId()

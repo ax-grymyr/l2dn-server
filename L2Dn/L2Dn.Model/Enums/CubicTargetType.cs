@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Model.Cubics;
+﻿namespace L2Dn.Model.Enums;
 
 public enum CubicTargetType
 {
