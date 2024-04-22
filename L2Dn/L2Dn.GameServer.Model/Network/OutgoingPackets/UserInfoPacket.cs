@@ -116,8 +116,13 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt16((short)(23 + (_player.getAppearance().getVisibleName().Length * 2)));
 			writer.WriteSizedString(_player.getName());
-			writer.WriteByte(_player.isGM());
-			writer.WriteByte((byte)_player.getRace());
+            
+            // TODO This is player GM flag, but Client does not display all system messages for non-GM players for some reason.
+            // As for temporary solution, all characters are set as GMs for the client.
+            // It needs to be figured out which client settings must be changed to display all system messages for non-GM players.
+            writer.WriteByte(true); //_player.isGM());  
+			
+            writer.WriteByte((byte)_player.getRace());
 			writer.WriteByte((byte)_player.getAppearance().getSex()); // sex
 			writer.WriteInt32((int)_player.getBaseTemplate().getClassId().GetRootClass());
 			writer.WriteInt32((int)_player.getClassId());
