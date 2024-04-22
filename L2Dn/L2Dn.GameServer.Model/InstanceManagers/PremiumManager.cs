@@ -31,7 +31,7 @@ public class PremiumManager
 	// expireTasks
 	private readonly Map<int, ScheduledFuture> _expiretasks = new();
 	
-	protected PremiumManager()
+	private PremiumManager()
 	{
 		void PlayerLoginEvent(OnPlayerLogin @event)
 		{
@@ -39,14 +39,15 @@ public class PremiumManager
 			int accountId = player.getAccountId();
 			loadPremiumData(accountId);
 			DateTime now = DateTime.UtcNow;
-			DateTime premiumExpiration = getPremiumExpiration(accountId);
-			player.setPremiumStatus(premiumExpiration > now);
-			if (player.hasPremiumStatus())
+			DateTime? premiumExpiration = getPremiumExpiration(accountId);
+			if (premiumExpiration > now)
 			{
-				startExpireTask(player, premiumExpiration - now);
+                player.setPremiumStatus(true);
+				startExpireTask(player, premiumExpiration.Value - now);
 			}
 			else
 			{
+                player.setPremiumStatus(false);
 				removePremiumStatus(accountId, false);
 			}
 		}
@@ -98,20 +99,20 @@ public class PremiumManager
 		}
 	}
 	
-	public DateTime getPremiumExpiration(int accountId)
-	{
-		return _premiumData.getOrDefault(accountId, DateTime.MinValue);
-	}
+	public DateTime? getPremiumExpiration(int accountId)
+    {
+        return _premiumData.TryGetValue(accountId, out DateTime time) ? time : null;
+    }
 	
 	public void addPremiumTime(int accountId, TimeSpan value)
 	{
 		// new premium task at least from now
-		DateTime oldPremiumExpiration = getPremiumExpiration(accountId);
+		DateTime? oldPremiumExpiration = getPremiumExpiration(accountId);
 		DateTime now = DateTime.UtcNow;
-		if (oldPremiumExpiration < now)
+		if (oldPremiumExpiration < now || oldPremiumExpiration is null)
 			oldPremiumExpiration = now;
 		
-		DateTime newPremiumExpiration = oldPremiumExpiration + value;
+		DateTime newPremiumExpiration = oldPremiumExpiration.Value + value;
 		
 		// UPDATE DATABASE
 		try 

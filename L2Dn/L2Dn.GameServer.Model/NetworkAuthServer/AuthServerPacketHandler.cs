@@ -14,6 +14,7 @@ public sealed class AuthServerPacketHandler: PacketHandler<AuthServerSession>
         RegisterPacket<RegistrationResultPacket>(IncomingPacketCodes.RegistrationResult);
         RegisterPacket<LoginRequestPacket>(IncomingPacketCodes.LoginRequest);
         RegisterPacket<PingResponsePacket>(IncomingPacketCodes.PingResponse);
+        RegisterPacket<ChangePasswordResponsePacket>(IncomingPacketCodes.ChangePasswordResponse);
     }
 
     protected override void OnConnected(Connection connection, AuthServerSession session)

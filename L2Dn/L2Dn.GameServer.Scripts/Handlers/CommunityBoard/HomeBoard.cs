@@ -261,7 +261,7 @@ public class HomeBoard: IParseBoardHandler
 			{
 				player.destroyItemByItemId("CB_Premium", Config.COMMUNITY_PREMIUM_COIN_ID, Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays, player, true);
 				PremiumManager.getInstance().addPremiumTime(player.getAccountId(), TimeSpan.FromDays(premiumDays));
-				player.sendMessage("Your account will now have premium status until " + PremiumManager.getInstance().getPremiumExpiration(player.getAccountId()).ToString("dd.MM.yyyy HH:mm") + ".");
+				player.sendMessage("Your account will now have premium status until " + PremiumManager.getInstance().getPremiumExpiration(player.getAccountId())?.ToString("dd.MM.yyyy HH:mm") + ".");
 				if (Config.PC_CAFE_RETAIL_LIKE)
 				{
 					PcCafePointsManager.getInstance().run(player);

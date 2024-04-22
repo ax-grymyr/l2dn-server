@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using L2Dn.AuthServer.Configuration;
 using L2Dn.AuthServer.Db;
+using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -34,7 +35,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
             return accountInfo;
         }
 
-        byte[] passwordHash = SHA256.HashData(Encoding.UTF8.GetBytes(password));
+        byte[] passwordHash = GetPasswordHash(password);
         Account? account = await ctx.Accounts.SingleOrDefaultAsync(a => a.Login == login).ConfigureAwait(false);
         if (account is not null)
         {
@@ -144,4 +145,27 @@ public sealed class AccountManager: ISingleton<AccountManager>
         record.CharacterCount = characterCount;
         await ctx.SaveChangesAsync().ConfigureAwait(false);
     }
+
+    public async Task<ChangePasswordResult> ChangePasswordAsync(int accountId, string currentPassword,
+        string newPassword)
+    {
+        try
+        {
+            await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync().ConfigureAwait(false);
+            byte[] currentPasswordHash = GetPasswordHash(currentPassword);
+            byte[] newPasswordHash = GetPasswordHash(newPassword);
+
+            int updatedCount = await ctx.Accounts.Where(r => r.Id == accountId && r.PasswordHash == currentPasswordHash)
+                .ExecuteUpdateAsync(s => s.SetProperty(r => r.PasswordHash, newPasswordHash));
+
+            return updatedCount == 1 ? ChangePasswordResult.Ok : ChangePasswordResult.InvalidPassword;
+        }
+        catch (Exception exception)
+        {
+            _logger.Error("Error updating password: " + exception);
+            return ChangePasswordResult.UnknownError;
+        }
+    }
+
+    private static byte[] GetPasswordHash(string password) => SHA256.HashData(Encoding.UTF8.GetBytes(password));
 }
