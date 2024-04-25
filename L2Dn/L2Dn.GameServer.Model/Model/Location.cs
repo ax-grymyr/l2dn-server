@@ -8,20 +8,12 @@ namespace L2Dn.GameServer.Model;
  */
 public class Location : IPositionable
 {
-	protected volatile int _x;
-	protected volatile int _y;
-	protected volatile int _z;
-	protected volatile int _heading;
+	private int _x;
+	private int _y;
+	private int _z;
+	private int _heading;
 	
-	public Location(int x, int y, int z)
-	{
-		_x = x;
-		_y = y;
-		_z = z;
-		_heading = 0;
-	}
-	
-	public Location(int x, int y, int z, int heading)
+	public Location(int x, int y, int z, int heading = 0)
 	{
 		_x = x;
 		_y = y;
@@ -112,19 +104,7 @@ public class Location : IPositionable
 		_z = loc.getZ();
 		_heading = loc.getHeading();
 	}
-	
-	public void clean()
-	{
-		_x = 0;
-		_y = 0;
-		_z = 0;
-	}
-	
-	public Location clone()
-	{
-		return new Location(_x, _y, _z);
-	}
-	
+
 	public override int GetHashCode()
 	{
 		return HashCode.Combine(_x, _y, _z);
