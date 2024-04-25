@@ -1,7 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model;
@@ -31,7 +30,7 @@ public class GroupSpawn: Spawn
             int newlocx = 0;
             int newlocy = 0;
             int newlocz = 0;
-            if ((getX() == 0) && (getY() == 0))
+            if ((Location.getX() == 0) && (Location.getY() == 0))
             {
                 if (getLocationId() == 0)
                 {
@@ -41,13 +40,13 @@ public class GroupSpawn: Spawn
                 return null;
             }
 
-            newlocx = getX();
-            newlocy = getY();
-            newlocz = getZ();
+            newlocx = Location.getX();
+            newlocy = Location.getY();
+            newlocz = Location.getZ();
 
             Npc mob = new ControllableMob(_template);
             mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
-            mob.setHeading(getHeading() == -1 ? Rnd.get(61794) : getHeading());
+            mob.setHeading(Location.getHeading() == -1 ? Rnd.get(61794) : Location.getHeading());
             mob.setSpawn(this);
             mob.spawnMe(newlocx, newlocy, newlocz);
             return mob;

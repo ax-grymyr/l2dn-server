@@ -1478,7 +1478,7 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getControlTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.setLocation(ts.getLocation());
+				spawn.Location.setLocation(ts.getLocation());
 				_controlTowers.add((ControlTower) spawn.doSpawn(false));
 			}
 		}
@@ -1499,7 +1499,7 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getFlameTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.setLocation(ts.getLocation());
+				spawn.Location.setLocation(ts.getLocation());
 				FlameTower tower = (FlameTower) spawn.doSpawn(false);
 				tower.setUpgradeLevel(ts.getUpgradeLevel());
 				tower.setZoneList(ts.getZoneList());
@@ -1543,7 +1543,7 @@ public class Siege: Siegable
 						continue;
 					}
 					
-					distance = ct.calculateDistanceSq3D(spawn);
+					distance = ct.calculateDistanceSq3D(spawn.Location);
 					if (distance < distanceClosest)
 					{
 						closestCt = ct;

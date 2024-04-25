@@ -1187,8 +1187,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			{
 				Spawn spawnDat = new Spawn(record.NpcId);
 				spawnDat.setAmount(1);
-				spawnDat.setXYZ(record.X, record.Y, record.Z);
-				spawnDat.setHeading(record.Heading);
+				spawnDat.Location.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.Location.setHeading(record.Heading);
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				SpawnTable.getInstance().addNewSpawn(spawnDat, false);
 				spawnDat.doSpawn(false);
@@ -1213,8 +1213,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			{
 				Spawn spawnDat = new Spawn(record.NpcId);
 				spawnDat.setAmount(1);
-				spawnDat.setXYZ(record.X, record.Y, record.Z);
-				spawnDat.setHeading(record.Heading);
+				spawnDat.Location.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.Location.setHeading(record.Heading);
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				_siegeNpcs.add(spawnDat);
 			}
@@ -1237,8 +1237,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			{
 				Spawn spawnDat = new Spawn(record.NpcId);
 				spawnDat.setAmount(1);
-				spawnDat.setXYZ(record.X, record.Y, record.Z);
-				spawnDat.setHeading(record.Heading);
+				spawnDat.Location.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.Location.setHeading(record.Heading);
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				_npcCommanders.add(spawnDat);
 			}
@@ -1264,8 +1264,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			{
 				Spawn spawnDat = new Spawn(record.NpcId);
 				spawnDat.setAmount(1);
-				spawnDat.setXYZ(record.X, record.Y, record.Z);
-				spawnDat.setHeading(record.Heading);
+				spawnDat.Location.setXYZ(record.X, record.Y, record.Z);
+				spawnDat.Location.setHeading(record.Heading);
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 
 				_specialEnvoys.add(spawnDat);

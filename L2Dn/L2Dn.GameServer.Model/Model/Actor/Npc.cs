@@ -1397,7 +1397,7 @@ public class Npc: Creature
 	 */
 	public bool staysInSpawnLoc()
 	{
-		return ((_spawn != null) && (_spawn.getX() == getX()) && (_spawn.getY() == getY()));
+		return ((_spawn != null) && (_spawn.Location.getX() == getX()) && (_spawn.Location.getY() == getY()));
 	}
 	
 	/**

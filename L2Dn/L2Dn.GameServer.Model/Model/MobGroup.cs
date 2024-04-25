@@ -128,7 +128,7 @@ public class MobGroup
 				int signY = Rnd.nextBoolean() ? -1 : 1;
 				int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
 				int randY = Rnd.get(MobGroupTable.RANDOM_RANGE);
-				spawn.setXYZ(x + (signX * randX), y + (signY * randY), z);
+				spawn.Location.setXYZ(x + (signX * randX), y + (signY * randY), z);
 				spawn.stopRespawn();
 				
 				SpawnTable.getInstance().addNewSpawn(spawn, false);

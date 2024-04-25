@@ -1694,8 +1694,8 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			
 			Spawn spawn = new Spawn(npcId);
 			spawn.setInstanceId(instance);
-			spawn.setHeading(heading);
-			spawn.setXYZ(x, y, zValue);
+			spawn.Location.setHeading(heading);
+			spawn.Location.setXYZ(x, y, zValue);
 			spawn.stopRespawn();
 			
 			Npc npc = spawn.doSpawn(isSummonSpawn);
@@ -1712,7 +1712,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			// Retain monster original position if ENABLE_RANDOM_MONSTER_SPAWNS is enabled.
 			if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && !randomOffset && npc.isMonster())
 			{
-				spawn.setXYZ(x, y, zValue);
+				spawn.Location.setXYZ(x, y, zValue);
 				npc.setXYZ(x, y, zValue);
 				if (heading > -1)
 				{

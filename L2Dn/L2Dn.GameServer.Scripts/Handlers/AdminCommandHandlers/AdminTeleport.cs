@@ -520,9 +520,9 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				spawn = new Spawn(template1);
-				spawn.setXYZ(activeChar);
+				spawn.Location.setXYZ(activeChar);
 				spawn.setAmount(1);
-				spawn.setHeading(activeChar.getHeading());
+				spawn.Location.setHeading(activeChar.getHeading());
 				spawn.setRespawnDelay(respawnTime);
 				if (activeChar.isInInstance())
 				{
@@ -558,9 +558,9 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				Spawn spawnDat = new Spawn(target.getId());
-				spawnDat.setXYZ(activeChar);
+				spawnDat.Location.setXYZ(activeChar);
 				spawnDat.setAmount(1);
-				spawnDat.setHeading(activeChar.getHeading());
+				spawnDat.Location.setHeading(activeChar.getHeading());
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));
 				spawnDat.setRespawnMaxDelay(TimeSpan.FromSeconds(129600));
 				

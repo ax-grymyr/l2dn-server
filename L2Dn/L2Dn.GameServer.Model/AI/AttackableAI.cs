@@ -174,7 +174,7 @@ public class AttackableAI: CreatureAI
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
-				else if ((npc.getSpawn() != null) && !npc.isInsideRadius3D(npc.getSpawn(), Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
+				else if ((npc.getSpawn() != null) && !npc.isInsideRadius3D(npc.getSpawn().Location, Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
@@ -440,7 +440,7 @@ public class AttackableAI: CreatureAI
 		}
 		
 		// Order this attackable to return to its spawn because there's no target to attack
-		if (!npc.isWalker() && (npc.getSpawn() != null) && (npc.calculateDistance2D(npc.getSpawn()) > Config.MAX_DRIFT_RANGE) && ((getTarget() == null) || getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES && getTarget().getActingPlayer().isAlikeDead())))
+		if (!npc.isWalker() && (npc.getSpawn() != null) && (npc.calculateDistance2D(npc.getSpawn().Location) > Config.MAX_DRIFT_RANGE) && ((getTarget() == null) || getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES && getTarget().getActingPlayer().isAlikeDead())))
 		{
 			npc.setWalking();
 			npc.returnHome();
@@ -529,9 +529,9 @@ public class AttackableAI: CreatureAI
 				}
 			}
 			
-			int x1 = npc.getSpawn().getX();
-			int y1 = npc.getSpawn().getY();
-			int z1 = npc.getSpawn().getZ();
+			int x1 = npc.getSpawn().Location.getX();
+			int y1 = npc.getSpawn().Location.getY();
+			int z1 = npc.getSpawn().Location.getZ();
 			if (npc.isInsideRadius2D(x1, y1, 0, Config.MAX_DRIFT_RANGE))
 			{
 				int deltaX = Rnd.get(Config.MAX_DRIFT_RANGE * 2); // x
@@ -544,7 +544,7 @@ public class AttackableAI: CreatureAI
 			
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
 			Location moveLoc = _actor.isFlying() ? new Location(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
-			if (Util.calculateDistance(npc.getSpawn(), moveLoc, false, false) <= Config.MAX_DRIFT_RANGE)
+			if (Util.calculateDistance(npc.getSpawn().Location, moveLoc, false, false) <= Config.MAX_DRIFT_RANGE)
 			{
 				moveTo(moveLoc.getX(), moveLoc.getY(), moveLoc.getZ());
 			}
@@ -572,7 +572,7 @@ public class AttackableAI: CreatureAI
 		if (Config.AGGRO_DISTANCE_CHECK_ENABLED && npc.isMonster() && !npc.isWalker() && !(npc is GrandBoss))
 		{
 			Spawn spawn = npc.getSpawn();
-			if ((spawn != null) && (npc.calculateDistance2D(spawn.getLocation()) > (spawn.getChaseRange() > 0 ? Math.Max(Config.MAX_DRIFT_RANGE, spawn.getChaseRange()) : npc.isRaid() ? Config.AGGRO_DISTANCE_CHECK_RAID_RANGE : Config.AGGRO_DISTANCE_CHECK_RANGE)))
+			if ((spawn != null) && (npc.calculateDistance2D(spawn.Location) > (spawn.getChaseRange() > 0 ? Math.Max(Config.MAX_DRIFT_RANGE, spawn.getChaseRange()) : npc.isRaid() ? Config.AGGRO_DISTANCE_CHECK_RAID_RANGE : Config.AGGRO_DISTANCE_CHECK_RANGE)))
 			{
 				if ((Config.AGGRO_DISTANCE_CHECK_RAIDS || !npc.isRaid()) && (Config.AGGRO_DISTANCE_CHECK_INSTANCES || !npc.isInInstance()))
 				{
@@ -586,11 +586,11 @@ public class AttackableAI: CreatureAI
 					npc.getAttackByList().clear();
 					if (npc.hasAI())
 					{
-						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.getLocation());
+						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location);
 					}
 					else
 					{
-						npc.teleToLocation(spawn.getLocation(), true);
+						npc.teleToLocation(spawn.Location, true);
 					}
 					
 					// Minions should return as well.
@@ -608,11 +608,11 @@ public class AttackableAI: CreatureAI
 							minion.getAttackByList().clear();
 							if (minion.hasAI())
 							{
-								minion.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.getLocation());
+								minion.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location);
 							}
 							else
 							{
-								minion.teleToLocation(spawn.getLocation(), true);
+								minion.teleToLocation(spawn.Location, true);
 							}
 						}
 					}
@@ -654,7 +654,7 @@ public class AttackableAI: CreatureAI
 			// Monster teleport to spawn
 			if (npc.isMonster() && (npc.getSpawn() != null) && !npc.isInInstance() && (npc.isInCombat() || World.getInstance().getVisibleObjects<Player>(npc).isEmpty()))
 			{
-				npc.teleToLocation(npc.getSpawn(), false);
+				npc.teleToLocation(npc.getSpawn().Location, false);
 			}
 			return;
 		}

@@ -783,7 +783,8 @@ public sealed class World
 				Spawn spawn = npc.getSpawn();
 				if (spawn != null)
 				{
-					LOGGER.Warn("Spawn location X:" + spawn.getX() + " Y:" + spawn.getY() + " Z:" + spawn.getZ() + " Heading:" + spawn.getHeading());
+					LOGGER.Warn("Spawn location X:" + spawn.Location.getX() + " Y:" + spawn.Location.getY() + " Z:" +
+						spawn.Location.getZ() + " Heading:" + spawn.Location.getHeading());
 				}
 			}
 			else if (@object.isCreature())

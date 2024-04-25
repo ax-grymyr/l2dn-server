@@ -106,7 +106,12 @@ public class NpcActionShift: IActionShiftHandler
 					}
 					htmlContent.Replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
-				htmlContent.Replace("%spawn%", (template != null ? template.getSpawnLocation().getX() : npc.getSpawn().getX()) + " " + (template != null ? template.getSpawnLocation().getY() : npc.getSpawn().getY()) + " " + (template != null ? template.getSpawnLocation().getZ() : npc.getSpawn().getZ()));
+
+				htmlContent.Replace("%spawn%",
+					(template != null ? template.getSpawnLocation().getX() : npc.getSpawn().Location.getX()) + " " +
+					(template != null ? template.getSpawnLocation().getY() : npc.getSpawn().Location.getY()) + " " +
+					(template != null ? template.getSpawnLocation().getZ() : npc.getSpawn().Location.getZ()));
+
 				if (npc.getSpawn().getRespawnMinDelay() == TimeSpan.Zero)
 				{
 					htmlContent.Replace("%resp%", "None");
