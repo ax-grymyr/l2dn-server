@@ -63,6 +63,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
@@ -12495,14 +12496,14 @@ public class Player: Playable
 		TeleportBookmark bookmark = _tpbookmarks.get(id);
 		if (bookmark != null)
 		{
-			if (isInTimedHuntingZone(bookmark.getX(), bookmark.getY()))
+			if (isInTimedHuntingZone(bookmark.Location.X, bookmark.Location.Y))
 			{
 				sendMessage("You cannot teleport at this location.");
 				return;
 			}
 			
 			destroyItem("Consume", _inventory.getItemByItemId(13016).getObjectId(), 1, null, false);
-			setTeleportLocation(bookmark);
+			setTeleportLocation(new Location(bookmark.Location.X, bookmark.Location.Y, bookmark.Location.Z));
 			doCast(CommonSkill.MY_TELEPORT.getSkill());
 		}
 		sendPacket(new ExGetBookMarkInfoPacket(this));
@@ -12620,7 +12621,8 @@ public class Player: Playable
 				break;
 			}
 		}
-		_tpbookmarks.put(id, new TeleportBookmark(id, x, y, z, icon, tag, name));
+
+		_tpbookmarks.put(id, new TeleportBookmark(id, new Location3D(x, y, z), icon, tag, name));
 		
 		try 
 		{
@@ -12656,7 +12658,7 @@ public class Player: Playable
             var query = ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
-				_tpbookmarks.put(record.Id, new TeleportBookmark(record.Id, record.X, record.Y, record.Z, record.Icon, record.Tag, record.Name));
+				_tpbookmarks.put(record.Id, new TeleportBookmark(record.Id, new Location3D(record.X, record.Y, record.Z), record.Icon, record.Tag, record.Name));
             }
 		}
 		catch (Exception e)

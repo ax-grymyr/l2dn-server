@@ -1,26 +1,32 @@
-﻿namespace L2Dn.GameServer.Model;
+﻿using L2Dn.Geometry;
 
-public class TeleportBookmark: Location
+namespace L2Dn.GameServer.Model;
+
+public class TeleportBookmark
 {
     private readonly int _id;
+    private readonly Location3D _location;
     private int _icon;
-    private String _name;
-    private String _tag;
+    private string _name;
+    private string _tag;
 
-    public TeleportBookmark(int id, int x, int y, int z, int icon, String tag, String name): base(x, y, z)
+    public TeleportBookmark(int id, Location3D location, int icon, string tag, string name)
     {
         _id = id;
+        _location = location;
         _icon = icon;
         _name = name;
         _tag = tag;
     }
 
-    public String getName()
+    public Location3D Location => _location;
+
+    public string getName()
     {
         return _name;
     }
 
-    public void setName(String name)
+    public void setName(string name)
     {
         _name = name;
     }
@@ -40,12 +46,12 @@ public class TeleportBookmark: Location
         _icon = icon;
     }
 
-    public String getTag()
+    public string getTag()
     {
         return _tag;
     }
 
-    public void setTag(String tag)
+    public void setTag(string tag)
     {
         _tag = tag;
     }
