@@ -12,6 +12,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Enchanting.MultiEnchanting;

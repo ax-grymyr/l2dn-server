@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Utilities;
+﻿namespace L2Dn.Utilities;
 
 public static class Rnd
 {

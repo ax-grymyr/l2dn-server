@@ -19,6 +19,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Fishing;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

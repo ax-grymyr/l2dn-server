@@ -5,6 +5,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Subjugations;
 
