@@ -181,8 +181,8 @@ public class AutoPlayTaskManager
 									{
 										bool ranged = weapon.getItemType().isRanged();
 										double angle = Util.calculateHeadingFrom(player, creature);
-										double radian = MathUtil.toRadians(angle);
-										double course = MathUtil.toRadians(180);
+										double radian = double.DegreesToRadians(angle);
+										double course = double.DegreesToRadians(180);
 										double distance = (ranged ? player.getCollisionRadius() : player.getCollisionRadius() + creature.getCollisionRadius()) * 2;
 										int x1 = (int) (Math.Cos(Math.PI + radian + course) * distance);
 										int y1 = (int) (Math.Sin(Math.PI + radian + course) * distance);

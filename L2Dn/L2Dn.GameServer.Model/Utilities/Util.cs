@@ -53,7 +53,7 @@ public class Util
 	 */
 	public static double calculateAngleFrom(int fromX, int fromY, int toX, int toY)
 	{
-		double angleTarget = MathUtil.toDegrees(Math.Atan2(toY - fromY, toX - fromX));
+		double angleTarget = double.RadiansToDegrees(Math.Atan2(toY - fromY, toX - fromX));
 		if (angleTarget < 0)
 		{
 			angleTarget += 360;
@@ -72,7 +72,7 @@ public class Util
 	{
 		int randomX = Rnd.get(minRange, maxRange);
 		int randomY = Rnd.get(minRange, maxRange);
-		double rndAngle = MathUtil.toRadians(Rnd.get(360));
+		double rndAngle = double.DegreesToRadians(Rnd.get(360));
 		int newX = (int) (loc.getX() + (randomX * Math.Cos(rndAngle)));
 		int newY = (int) (loc.getY() + (randomY * Math.Sin(rndAngle)));
 		return new Location(newX, newY, loc.getZ());
@@ -91,7 +91,7 @@ public class Util
 	
 	public static int calculateHeadingFrom(int fromX, int fromY, int toX, int toY)
 	{
-		double angleTarget = MathUtil.toDegrees(Math.Atan2(toY - fromY, toX - fromX));
+		double angleTarget = double.RadiansToDegrees(Math.Atan2(toY - fromY, toX - fromX));
 		if (angleTarget < 0)
 		{
 			angleTarget += 360;
@@ -101,7 +101,7 @@ public class Util
 	
 	public static int calculateHeadingFrom(double dx, double dy)
 	{
-		double angleTarget = MathUtil.toDegrees(Math.Atan2(dy, dx));
+		double angleTarget = double.RadiansToDegrees(Math.Atan2(dy, dx));
 		if (angleTarget < 0)
 		{
 			angleTarget += 360;

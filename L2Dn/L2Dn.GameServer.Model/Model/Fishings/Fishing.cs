@@ -361,7 +361,7 @@ public class Fishing
 		int distMax = FishingData.getInstance().getBaitDistanceMax();
 		int distance = Rnd.get(distMin, distMax);
 		double angle = Util.convertHeadingToDegree(_player.getHeading());
-		double radian = MathUtil.toRadians(angle);
+		double radian = double.DegreesToRadians(angle);
 		double sin = Math.Sin(radian);
 		double cos = Math.Cos(radian);
 		int baitX = (int) (_player.getX() + (cos * distance));

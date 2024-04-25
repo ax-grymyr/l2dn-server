@@ -43,8 +43,8 @@ public class OpBlinkSkillCondition: ISkillCondition
 	public bool canUse(Creature caster, Skill skill, WorldObject target)
 	{
 		double angle = Util.convertHeadingToDegree(caster.getHeading());
-		double radian = MathUtil.toRadians(angle);
-		double course = MathUtil.toRadians(_angle);
+		double radian = double.DegreesToRadians(angle);
+		double course = double.DegreesToRadians(_angle);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * _range);
 		int y1 = (int) (Math.Sin(Math.PI + radian + course) * _range);
 		int x = caster.getX() + x1;

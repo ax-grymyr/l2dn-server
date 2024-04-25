@@ -68,7 +68,7 @@ public class Fear: AbstractEffect
 	
 	private void fearAction(Creature effector, Creature effected)
 	{
-		double radians = MathUtil.toRadians((effector != null) ? Util.calculateAngleFrom(effector, effected) : Util.convertHeadingToDegree(effected.getHeading()));
+		double radians = double.DegreesToRadians((effector != null) ? Util.calculateAngleFrom(effector, effected) : Util.convertHeadingToDegree(effected.getHeading()));
 		
 		int posX = (int) (effected.getX() + (FEAR_RANGE * Math.Cos(radians)));
 		int posY = (int) (effected.getY() + (FEAR_RANGE * Math.Sin(radians)));

@@ -3202,8 +3202,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable, IEventCo
 			if (_cursorKeyMovement)
 			{
 				double angle = Util.convertHeadingToDegree(getHeading());
-				double radian = MathUtil.toRadians(angle);
-				double course = MathUtil.toRadians(180);
+				double radian = double.DegreesToRadians(angle);
+				double course = double.DegreesToRadians(180);
 				double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
 				int x1 = (int) (Math.Cos(Math.PI + radian + course) * frontDistance);
 				int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
@@ -3223,8 +3223,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable, IEventCo
 				if (distance > 3000)
 				{
 					double angle = Util.convertHeadingToDegree(getHeading());
-					double radian = MathUtil.toRadians(angle);
-					double course = MathUtil.toRadians(180);
+					double radian = double.DegreesToRadians(angle);
+					double course = double.DegreesToRadians(180);
 					double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
 					int x1 = (int) (Math.Cos(Math.PI + radian + course) * frontDistance);
 					int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
@@ -3250,8 +3250,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable, IEventCo
 					if (hasAI() && getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 					{
 						double angle = Util.convertHeadingToDegree(getHeading());
-						double radian = MathUtil.toRadians(angle);
-						double course = MathUtil.toRadians(180);
+						double radian = double.DegreesToRadians(angle);
+						double course = double.DegreesToRadians(180);
 						double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
 						int x1 = (int) (Math.Cos(Math.PI + radian + course) * frontDistance);
 						int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
@@ -3275,8 +3275,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IDeletable, IEventCo
 							if (hasDoors || hasFences)
 							{
 								double angle = Util.convertHeadingToDegree(getHeading());
-								double radian = MathUtil.toRadians(angle);
-								double course = MathUtil.toRadians(180);
+								double radian = double.DegreesToRadians(angle);
+								double course = double.DegreesToRadians(180);
 								double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
 								int x1 = (int) (Math.Cos(Math.PI + radian + course) * frontDistance);
 								int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);

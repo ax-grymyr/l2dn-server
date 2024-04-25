@@ -1212,8 +1212,8 @@ public class SkillCaster: Runnable
 			{
 				if (creature == target)
 				{
-					double course = MathUtil.toRadians(180);
-					double radian = MathUtil.toRadians(Util.convertHeadingToDegree(creature.getHeading()));
+					double course = double.DegreesToRadians(180);
+					double radian = double.DegreesToRadians(Util.convertHeadingToDegree(creature.getHeading()));
 					x = target.getX() + (int) (Math.Cos(Math.PI + radian + course) * _skill.getCastRange());
 					y = target.getY() + (int) (Math.Sin(Math.PI + radian + course) * _skill.getCastRange());
 					z = target.getZ();
@@ -1229,7 +1229,7 @@ public class SkillCaster: Runnable
 			case SkillOperateType.DA3:
 			{
 				flyType = FlyType.WARP_BACK;
-				double radian = MathUtil.toRadians(Util.convertHeadingToDegree(creature.getHeading()));
+				double radian = double.DegreesToRadians(Util.convertHeadingToDegree(creature.getHeading()));
 				x = creature.getX() + (int) (Math.Cos(Math.PI + radian) * _skill.getCastRange());
 				y = creature.getY() + (int) (Math.Sin(Math.PI + radian) * _skill.getCastRange());
 				z = creature.getZ();
@@ -1238,8 +1238,8 @@ public class SkillCaster: Runnable
 			case SkillOperateType.DA4:
 			case SkillOperateType.DA5:
 			{
-				double course = _skill.getOperateType() == SkillOperateType.DA4 ? MathUtil.toRadians(270) : MathUtil.toRadians(90);
-				double radian = MathUtil.toRadians(Util.convertHeadingToDegree(target.getHeading()));
+				double course = _skill.getOperateType() == SkillOperateType.DA4 ? double.DegreesToRadians(270) : double.DegreesToRadians(90);
+				double radian = double.DegreesToRadians(Util.convertHeadingToDegree(target.getHeading()));
 				double nRadius = creature.getCollisionRadius();
 				if (target.isCreature())
 				{

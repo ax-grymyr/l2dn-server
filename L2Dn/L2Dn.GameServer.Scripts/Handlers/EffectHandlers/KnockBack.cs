@@ -98,7 +98,7 @@ public class KnockBack: AbstractEffect
 				return;
 			}
 			
-			double radians = MathUtil.toRadians(Util.calculateAngleFrom(effector, effected));
+			double radians = double.DegreesToRadians(Util.calculateAngleFrom(effector, effected));
 			int x = (int) (effected.getX() + (_distance * Math.Cos(radians)));
 			int y = (int) (effected.getY() + (_distance * Math.Sin(radians)));
 			int z = effected.getZ();

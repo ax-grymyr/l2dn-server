@@ -26,7 +26,7 @@ public class Square: IAffectScopeHandler
 		
 		int rectX = creature.getX();
 		int rectY = creature.getY() - (squareWidth / 2);
-		double heading = MathUtil.toRadians(squareStartAngle + Util.convertHeadingToDegree(creature.getHeading()));
+		double heading = double.DegreesToRadians(squareStartAngle + Util.convertHeadingToDegree(creature.getHeading()));
 		double cos = Math.Cos(-heading);
 		double sin = Math.Sin(-heading);
 		

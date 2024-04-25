@@ -322,7 +322,7 @@ public class SummonAI : PlayableAI, Runnable
 			{
 				int ownerX = ((Summon) _actor).getOwner().getX();
 				int ownerY = ((Summon) _actor).getOwner().getY();
-				double angle = MathUtil.toRadians(Rnd.get(-90, 90)) + Math.Atan2(ownerY - _actor.getY(), ownerX - _actor.getX());
+				double angle = double.DegreesToRadians(Rnd.get(-90, 90)) + Math.Atan2(ownerY - _actor.getY(), ownerX - _actor.getX());
 				int targetX = ownerX + (int) (AVOID_RADIUS * Math.Cos(angle));
 				int targetY = ownerY + (int) (AVOID_RADIUS * Math.Sin(angle));
 				if (GeoEngine.getInstance().canMoveToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY, _actor.getZ(), _actor.getInstanceWorld()))

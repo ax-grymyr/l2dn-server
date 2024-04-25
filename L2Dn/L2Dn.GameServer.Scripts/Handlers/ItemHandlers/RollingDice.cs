@@ -38,8 +38,8 @@ public class RollingDice: IItemHandler
 		
 		// Mobius: Retail dice position land calculation.
 		double angle = Util.convertHeadingToDegree(player.getHeading());
-		double radian = MathUtil.toRadians(angle);
-		double course = MathUtil.toRadians(180);
+		double radian = double.DegreesToRadians(angle);
+		double course = double.DegreesToRadians(180);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * 40);
 		int y1 = (int) (Math.Sin(Math.PI + radian + course) * 40);
 		int x = player.getX() + x1;
