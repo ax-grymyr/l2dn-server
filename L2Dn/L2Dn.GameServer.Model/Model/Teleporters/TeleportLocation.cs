@@ -1,12 +1,14 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 
 namespace L2Dn.GameServer.Model.Teleporters;
 
-public class TeleportLocation: Location
+public class TeleportLocation
 {
+    private readonly Location3D _location;
     private readonly int _id;
     private readonly string _name;
     private readonly NpcStringId? _npcStringId;
@@ -16,9 +18,9 @@ public class TeleportLocation: Location
     private readonly ImmutableArray<int> _castleId = [];
     
     public TeleportLocation(int id, XmlTeleportLocation location)
-        : base(location.X, location.Y, location.Z)
     {
         _id = id;
+        _location = new Location3D(location.X, location.Y, location.Z);
         _name = location.NameSpecified ? location.Name : string.Empty;
         _npcStringId = location.NpcStringIdSpecified ? (NpcStringId)location.NpcStringId : null;
         _questZoneId = location.QuestZoneIdSpecified ? location.QuestZoneId : 0;
@@ -28,6 +30,8 @@ public class TeleportLocation: Location
         if (location.CastleIdSpecified && !string.IsNullOrEmpty(location.CastleId))
             _castleId = location.CastleId.Split(';').Select(int.Parse).ToImmutableArray();
     }
+
+    public Location3D Location => _location;
 
     public int getId()
     {
