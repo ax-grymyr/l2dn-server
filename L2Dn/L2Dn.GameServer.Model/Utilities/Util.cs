@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Text;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -8,8 +7,6 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Utilities;
-using NLog;
-using Org.BouncyCastle.Utilities;
 
 namespace L2Dn.GameServer.Utilities;
 
@@ -18,8 +15,6 @@ namespace L2Dn.GameServer.Utilities;
  */
 public class Util
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Util));
-	
 	private static readonly NumberFormatInfo _adenaFormat;
 
 	static Util()
@@ -28,12 +23,12 @@ public class Util
 		_adenaFormat.CurrencyGroupSeparator = ",";
 		_adenaFormat.CurrencyGroupSizes = [3];
 	}
-	
-	public static void handleIllegalPlayerAction(Player actor, String message, IllegalActionPunishmentType punishment)
+
+	public static void handleIllegalPlayerAction(Player actor, string message, IllegalActionPunishmentType punishment)
 	{
 		ThreadPool.schedule(new IllegalPlayerActionTask(actor, message, punishment), 5000);
 	}
-	
+
 	/**
 	 * @param from
 	 * @param to
@@ -43,7 +38,7 @@ public class Util
 	{
 		return calculateAngleFrom(from.getX(), from.getY(), to.getX(), to.getY());
 	}
-	
+
 	/**
 	 * @param fromX
 	 * @param fromY
@@ -58,37 +53,21 @@ public class Util
 		{
 			angleTarget += 360;
 		}
+
 		return angleTarget;
 	}
-	
-	/**
-	 * Gets a random position around the specified location.
-	 * @param loc the center location
-	 * @param minRange the minimum range from the center to pick a point.
-	 * @param maxRange the maximum range from the center to pick a point.
-	 * @return a random location between minRange and maxRange of the center location.
-	 */
-	public static Location getRandomPosition(ILocational loc, int minRange, int maxRange)
-	{
-		int randomX = Rnd.get(minRange, maxRange);
-		int randomY = Rnd.get(minRange, maxRange);
-		double rndAngle = double.DegreesToRadians(Rnd.get(360));
-		int newX = (int) (loc.getX() + (randomX * Math.Cos(rndAngle)));
-		int newY = (int) (loc.getY() + (randomY * Math.Sin(rndAngle)));
-		return new Location(newX, newY, loc.getZ());
-	}
-	
+
 	public static double convertHeadingToDegree(int clientHeading)
 	{
 		double degree = clientHeading / 182.044444444;
 		return degree;
 	}
-	
+
 	public static int calculateHeadingFrom(ILocational from, ILocational to)
 	{
 		return calculateHeadingFrom(from.getX(), from.getY(), to.getX(), to.getY());
 	}
-	
+
 	public static int calculateHeadingFrom(int fromX, int fromY, int toX, int toY)
 	{
 		double angleTarget = double.RadiansToDegrees(Math.Atan2(toY - fromY, toX - fromX));
@@ -96,9 +75,10 @@ public class Util
 		{
 			angleTarget += 360;
 		}
-		return (int) (angleTarget * 182.044444444);
+
+		return (int)(angleTarget * 182.044444444);
 	}
-	
+
 	public static int calculateHeadingFrom(double dx, double dy)
 	{
 		double angleTarget = double.RadiansToDegrees(Math.Atan2(dy, dx));
@@ -106,9 +86,10 @@ public class Util
 		{
 			angleTarget += 360;
 		}
-		return (int) (angleTarget * 182.044444444);
+
+		return (int)(angleTarget * 182.044444444);
 	}
-	
+
 	/**
 	 * Calculates distance between one set of x, y, z and another set of x, y, z.
 	 * @param x1 - X coordinate of first point.
@@ -121,12 +102,13 @@ public class Util
 	 * @param squared - If set to true, distance returned will be squared.
 	 * @return {@code double} - Distance between object and given x, y , z.
 	 */
-	public static double calculateDistance(double x1, double y1, double z1, double x2, double y2, double z2, bool includeZAxis, bool squared)
+	public static double calculateDistance(double x1, double y1, double z1, double x2, double y2, double z2,
+		bool includeZAxis, bool squared)
 	{
 		double distance = Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2) + (includeZAxis ? Math.Pow(z1 - z2, 2) : 0);
-		return (squared) ? distance : Math.Sqrt(distance);
+		return squared ? distance : Math.Sqrt(distance);
 	}
-	
+
 	/**
 	 * Calculates distance between 2 locations.
 	 * @param loc1 - First location.
@@ -137,9 +119,10 @@ public class Util
 	 */
 	public static double calculateDistance(ILocational loc1, ILocational loc2, bool includeZAxis, bool squared)
 	{
-		return calculateDistance(loc1.getX(), loc1.getY(), loc1.getZ(), loc2.getX(), loc2.getY(), loc2.getZ(), includeZAxis, squared);
+		return calculateDistance(loc1.getX(), loc1.getY(), loc1.getZ(), loc2.getX(), loc2.getY(), loc2.getZ(),
+			includeZAxis, squared);
 	}
-	
+
 	/**
 	 * @param range
 	 * @param obj1
@@ -149,28 +132,30 @@ public class Util
 	 */
 	public static bool checkIfInRange(int range, WorldObject obj1, WorldObject obj2, bool includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null) || (obj1.getInstanceWorld() != obj2.getInstanceWorld()))
+		if (obj1 == null || obj2 == null || obj1.getInstanceWorld() != obj2.getInstanceWorld())
 		{
 			return false;
 		}
+
 		if (range == -1)
 		{
 			return true; // not limited
 		}
-		
+
 		int radius = 0;
 		if (obj1.isCreature())
 		{
-			radius += ((Creature) obj1).getTemplate().getCollisionRadius();
+			radius += ((Creature)obj1).getTemplate().getCollisionRadius();
 		}
+
 		if (obj2.isCreature())
 		{
-			radius += ((Creature) obj2).getTemplate().getCollisionRadius();
+			radius += ((Creature)obj2).getTemplate().getCollisionRadius();
 		}
-		
-		return calculateDistance(obj1, obj2, includeZAxis, false) <= (range + radius);
+
+		return calculateDistance(obj1, obj2, includeZAxis, false) <= range + radius;
 	}
-	
+
 	/**
 	 * Checks if object is within short (Sqrt(int.max_value)) radius, not using collisionRadius. Faster calculation than checkIfInRange if distance is short and collisionRadius isn't needed. Not for long distance checks (potential teleports, far away castles etc).
 	 * @param range
@@ -181,27 +166,30 @@ public class Util
 	 */
 	public static bool checkIfInShortRange(int range, WorldObject obj1, WorldObject obj2, bool includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null))
+		if (obj1 == null || obj2 == null)
 		{
 			return false;
 		}
+
 		if (range == -1)
 		{
 			return true; // not limited
 		}
+
 		return calculateDistance(obj1, obj2, includeZAxis, false) <= range;
 	}
-	
+
 	/**
 	 * @param text - the text to check
 	 * @return {@code true} if {@code text} contains only numbers, {@code false} otherwise
 	 */
-	public static bool isDigit(String text)
+	public static bool isDigit(string? text)
 	{
-		if ((text == null) || text.isEmpty())
+		if (text == null || text.isEmpty())
 		{
 			return false;
 		}
+
 		foreach (char c in text)
 		{
 			if (!char.IsDigit(c))
@@ -209,78 +197,21 @@ public class Util
 				return false;
 			}
 		}
+
 		return true;
 	}
-	
-	/**
-	 * @param text - the text to check
-	 * @return {@code true} if {@code text} is integer, {@code false} otherwise
-	 */
-	public static bool isInteger(String text)
-	{
-		if ((text == null) || text.isEmpty())
-		{
-			return false;
-		}
 
-		return int.TryParse(text, CultureInfo.InvariantCulture, out _);
-	}
-	
-	/**
-	 * @param text - the text to check
-	 * @return {@code true} if {@code text} is float, {@code false} otherwise
-	 */
-	public static bool isFloat(String text)
-	{
-		if ((text == null) || text.isEmpty())
-		{
-			return false;
-		}
-		
-		return float.TryParse(text, CultureInfo.InvariantCulture, out _);
-	}
-	
-	/**
-	 * @param text - the text to check
-	 * @return {@code true} if {@code text} is double, {@code false} otherwise
-	 */
-	public static bool isDouble(String text)
-	{
-		if ((text == null) || text.isEmpty())
-		{
-			return false;
-		}
-
-		return double.TryParse(text, CultureInfo.InvariantCulture, out _);
-	}
-	
-	/**
-	 * @param <T>
-	 * @param name - the text to check
-	 * @param enumType
-	 * @return {@code true} if {@code text} is enum, {@code false} otherwise
-	 */
-	public static bool isEnum<T>(String name)
-		where T: struct, Enum
-	{
-		if ((name == null) || name.isEmpty())
-		{
-			return false;
-		}
-
-		return Enum.TryParse<T>(name, true, out _);
-	}
-	
 	/**
 	 * @param text - the text to check
 	 * @return {@code true} if {@code text} contains only letters and/or numbers, {@code false} otherwise
 	 */
-	public static bool isAlphaNumeric(String text)
+	public static bool isAlphaNumeric(string? text)
 	{
-		if ((text == null) || text.isEmpty())
+		if (text == null || text.isEmpty())
 		{
 			return false;
 		}
+
 		foreach (char c in text)
 		{
 			if (!char.IsLetterOrDigit(c))
@@ -288,46 +219,36 @@ public class Util
 				return false;
 			}
 		}
+
 		return true;
 	}
-	
+
 	/**
 	 * Format the specified digit using the digit grouping symbol "," (comma).<br>
 	 * For example, 123456789 becomes 123,456,789.
 	 * @param amount - the amount of adena
 	 * @return the formatted adena amount
 	 */
-	public static String formatAdena(long amount)
+	public static string formatAdena(long amount)
 	{
 		return amount.ToString(_adenaFormat);
 	}
-	
+
 	/**
 	 * @param value
 	 * @param format
 	 * @return formatted double value by specified format.
 	 */
-	public static String formatDouble(double value, String format)
+	public static string formatDouble(double value, string format)
 	{
 		return value.ToString();
 	}
-	
-	/**
-	 * Format the given date on the given format
-	 * @param date : the date to format.
-	 * @param format : the format to correct by.
-	 * @return a string representation of the formatted date.
-	 */
-	// public static String formatDate(DateOnly date, String format)
-	// {
-	// 	return date.ToString(format);
-	// }
-	
-	public static String getDateString(DateOnly date)
+
+	public static string getDateString(DateOnly date)
 	{
 		return date.ToString("yyyy-MM-dd");
 	}
-	
+
 	/**
 	 * Helper method to send a community board html to the specified player.<br>
 	 * HtmlActionCache will be build with npc origin 0 which means the<br>
@@ -335,11 +256,11 @@ public class Util
 	 * @param player the player
 	 * @param html the html content
 	 */
-	public static void sendCBHtml(Player player, String html)
+	public static void sendCBHtml(Player player, string html)
 	{
 		sendCBHtml(player, html, 0);
 	}
-	
+
 	/**
 	 * Helper method to send a community board html to the specified player.<br>
 	 * When {@code npcObjId} is greater -1 the HtmlActionCache will be build<br>
@@ -349,11 +270,11 @@ public class Util
 	 * @param html the html content
 	 * @param npcObjId bypass origin to use
 	 */
-	public static void sendCBHtml(Player player, String html, int npcObjId)
+	public static void sendCBHtml(Player player, string html, int npcObjId)
 	{
 		sendCBHtml(player, html, null, npcObjId);
 	}
-	
+
 	/**
 	 * Helper method to send a community board html to the specified player.<br>
 	 * HtmlActionCache will be build with npc origin 0 which means the<br>
@@ -363,11 +284,11 @@ public class Util
 	 * @param html the html content
 	 * @param fillMultiEdit text to fill the multiedit field with(may be null)
 	 */
-	public static void sendCBHtml(Player player, String html, String fillMultiEdit)
+	public static void sendCBHtml(Player player, string html, string fillMultiEdit)
 	{
 		sendCBHtml(player, html, fillMultiEdit, 0);
 	}
-	
+
 	/**
 	 * Helper method to send a community board html to the specified player.<br>
 	 * It fills a multiedit field in the send html if {@code fillMultiEdit}<br>
@@ -379,22 +300,22 @@ public class Util
 	 * @param fillMultiEdit text to fill the multiedit field with(may be null)
 	 * @param npcObjId bypass origin to use
 	 */
-	public static void sendCBHtml(Player player, String html, String fillMultiEdit, int npcObjId)
+	public static void sendCBHtml(Player player, string html, string fillMultiEdit, int npcObjId)
 	{
 		GameSession? session = player?.getClient();
-		if ((session == null) || (html == null))
+		if (session == null || html == null)
 		{
 			return;
 		}
-		
+
 		session.HtmlActionValidator.ClearActions(HtmlActionScope.COMM_BOARD_HTML);
-		
+
 		if (npcObjId > -1)
 		{
 			session.HtmlActionValidator.BuildActions(HtmlActionScope.COMM_BOARD_HTML, html,
 				npcObjId == 0 ? null : npcObjId);
 		}
-		
+
 		if (fillMultiEdit != null)
 		{
 			player.sendPacket(new ShowBoardPacket(html, "1001"));
@@ -406,13 +327,13 @@ public class Util
 			player.sendPacket(new ShowBoardPacket(null, "102"));
 			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
-		else if (html.Length < (16250 * 2))
+		else if (html.Length < 16250 * 2)
 		{
 			player.sendPacket(new ShowBoardPacket(html.Substring(0, 16250), "101"));
 			player.sendPacket(new ShowBoardPacket(html.Substring(16250), "102"));
 			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
-		else if (html.Length < (16250 * 3))
+		else if (html.Length < 16250 * 3)
 		{
 			player.sendPacket(new ShowBoardPacket(html.Substring(0, 16250), "101"));
 			player.sendPacket(new ShowBoardPacket(html.Substring(16250, 16250), "102"));
@@ -420,18 +341,19 @@ public class Util
 		}
 		else
 		{
-			player.sendPacket(new ShowBoardPacket("<html><body><br><center>Error: HTML was too long!</center></body></html>", "101"));
+			player.sendPacket(
+				new ShowBoardPacket("<html><body><br><center>Error: HTML was too long!</center></body></html>", "101"));
 			player.sendPacket(new ShowBoardPacket(null, "102"));
 			player.sendPacket(new ShowBoardPacket(null, "103"));
 		}
 	}
-	
+
 	/**
 	 * Fills the community board's multiedit window with text. Must send after sendCBHtml
 	 * @param player
 	 * @param text
 	 */
-	public static void fillMultiEditContent(Player player, String text)
+	public static void fillMultiEditContent(Player player, string text)
 	{
 		player.sendPacket(new ShowBoardPacket([
 			"0", "0", "0", "0", "0", "0", player.getName(),
@@ -439,18 +361,13 @@ public class Util
 			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0"
 		]));
 	}
-	
+
 	public static bool isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)
 	{
 		WorldObject target = World.getInstance().findObject(targetObjId);
-		return (target != null) && (obj.calculateDistance3D(target) <= radius);
+		return target != null && obj.calculateDistance3D(target) <= radius;
 	}
-	
-	public static String readAllLines(string filePath, Encoding encoding)
-	{
-		return File.ReadAllText(filePath, encoding);
-	}
-	
+
 	/**
 	 * Re-Maps a value from one range to another.
 	 * @param input
@@ -462,9 +379,10 @@ public class Util
 	 */
 	public static int map(int input, int inputMin, int inputMax, int outputMin, int outputMax)
 	{
-		return (((constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin)) / (inputMax - inputMin)) + outputMin;
+		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+			outputMin;
 	}
-	
+
 	/**
 	 * Re-Maps a value from one range to another.
 	 * @param input
@@ -476,9 +394,10 @@ public class Util
 	 */
 	public static long map(long input, long inputMin, long inputMax, long outputMin, long outputMax)
 	{
-		return (((constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin)) / (inputMax - inputMin)) + outputMin;
+		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+			outputMin;
 	}
-	
+
 	/**
 	 * Re-Maps a value from one range to another.
 	 * @param input
@@ -490,9 +409,10 @@ public class Util
 	 */
 	public static double map(double input, double inputMin, double inputMax, double outputMin, double outputMax)
 	{
-		return (((constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin)) / (inputMax - inputMin)) + outputMin;
+		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+			outputMin;
 	}
-	
+
 	/**
 	 * Constrains a number to be within a range.
 	 * @param input the number to constrain, all data types
@@ -502,9 +422,9 @@ public class Util
 	 */
 	public static int constrain(int input, int min, int max)
 	{
-		return (input < min) ? min : (input > max) ? max : input;
+		return input < min ? min : input > max ? max : input;
 	}
-	
+
 	/**
 	 * Constrains a number to be within a range.
 	 * @param input the number to constrain, all data types
@@ -514,9 +434,9 @@ public class Util
 	 */
 	public static long constrain(long input, long min, long max)
 	{
-		return (input < min) ? min : (input > max) ? max : input;
+		return input < min ? min : input > max ? max : input;
 	}
-	
+
 	/**
 	 * Constrains a number to be within a range.
 	 * @param input the number to constrain, all data types
@@ -526,28 +446,6 @@ public class Util
 	 */
 	public static double constrain(double input, double min, double max)
 	{
-		return (input < min) ? min : (input > max) ? max : input;
+		return input < min ? min : input > max ? max : input;
 	}
-	
-	/**
-	 * This will sort a Map according to the values. Default sort direction is ascending.
-	 * @param <K> keyType
-	 * @param <V> valueType
-	 * @param map Map to be sorted.
-	 * @param descending If you want to sort descending.
-	 * @return A new Map sorted by the values.
-	 */
-	// public static <K, V extends Comparable<? super V>> Map<,> K, V> sortByValue(Map<K, V> map, bool descending)
-	// {
-	// 	if (descending)
-	// 	{
-	// 		return map.entrySet().stream().sorted(Entry.comparingByValue(Collections.reverseOrder())).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-	// 	}
-	// 	return map.entrySet().stream().sorted(Entry.comparingByValue()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-	// }
-	//
-	// public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map)
-	// {
-	// 	return map.entrySet().stream().sorted(Entry.comparingByValue()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-	// }
 }
