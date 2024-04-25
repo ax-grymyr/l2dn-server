@@ -155,9 +155,9 @@ public class BoatManager
 	private PacketSendUtil broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2)
 	{
 		IEnumerable<Player> players = World.getInstance().getPlayers().Where(player =>
-			(MathUtil.hypot(player.getX() - point1.getX(), player.getY() - point1.getY()) <
+			(MathUtil.hypot(player.getX() - point1.Location.getX(), player.getY() - point1.Location.getY()) <
 			 Config.BOAT_BROADCAST_RADIUS) || //
-			(MathUtil.hypot(player.getX() - point2.getX(), player.getY() - point2.getY()) <
+			(MathUtil.hypot(player.getX() - point2.Location.getX(), player.getY() - point2.Location.getY()) <
 			 Config.BOAT_BROADCAST_RADIUS));
 
 		return new PacketSendUtil(players);

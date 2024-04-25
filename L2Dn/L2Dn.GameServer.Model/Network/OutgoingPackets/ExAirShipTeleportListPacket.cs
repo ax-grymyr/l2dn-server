@@ -29,9 +29,9 @@ public readonly struct ExAirShipTeleportListPacket: IOutgoingPacket
                 writer.WriteInt32(_fuelConsumption[i]);
                 VehiclePathPoint[] path = _teleports[i];
                 VehiclePathPoint dst = path[path.Length - 1];
-                writer.WriteInt32(dst.getX());
-                writer.WriteInt32(dst.getY());
-                writer.WriteInt32(dst.getZ());
+                writer.WriteInt32(dst.Location.getX());
+                writer.WriteInt32(dst.Location.getY());
+                writer.WriteInt32(dst.Location.getZ());
             }
         }
         else

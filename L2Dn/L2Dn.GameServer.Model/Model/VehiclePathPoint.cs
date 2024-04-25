@@ -1,25 +1,31 @@
 ﻿namespace L2Dn.GameServer.Model;
 
-public class VehiclePathPoint: Location
+public class VehiclePathPoint
 {
+    private readonly Location _location;
     private readonly int _moveSpeed;
     private readonly int _rotationSpeed;
 
-    public VehiclePathPoint(Location loc): base(loc.getX(), loc.getY(), loc.getZ())
+    public VehiclePathPoint(Location loc)
     {
+        _location = loc;
     }
 
-    public VehiclePathPoint(int x, int y, int z): base(x, y, z)
+    public VehiclePathPoint(int x, int y, int z)
     {
+        _location = new Location(x, y, z);
         _moveSpeed = 350;
         _rotationSpeed = 4000;
     }
 
-    public VehiclePathPoint(int x, int y, int z, int moveSpeed, int rotationSpeed): base(x, y, z)
+    public VehiclePathPoint(int x, int y, int z, int moveSpeed, int rotationSpeed)
     {
+        _location = new Location(x, y, z);
         _moveSpeed = moveSpeed;
         _rotationSpeed = rotationSpeed;
     }
+
+    public Location Location => _location;
 
     public int getMoveSpeed()
     {

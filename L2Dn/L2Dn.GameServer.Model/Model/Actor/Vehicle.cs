@@ -79,7 +79,7 @@ public abstract class Vehicle : Creature
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
 			
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(point.getX(), point.getY(), point.getZ(), 0));
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location);
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -98,8 +98,8 @@ public abstract class Vehicle : Creature
 				{
 					if (point.getMoveSpeed() == 0)
 					{
-						point.setHeading(point.getRotationSpeed());
-						teleToLocation(point, false);
+						point.Location.setHeading(point.getRotationSpeed());
+						teleToLocation(point.Location, false);
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
@@ -121,15 +121,15 @@ public abstract class Vehicle : Creature
 						MoveData m = new MoveData();
 						m.disregardingGeodata = false;
 						m.onGeodataPathIndex = -1;
-						m.xDestination = point.getX();
-						m.yDestination = point.getY();
-						m.zDestination = point.getZ();
+						m.xDestination = point.Location.getX();
+						m.yDestination = point.Location.getY();
+						m.zDestination = point.Location.getZ();
 						m.heading = 0;
 						
-						double distance = MathUtil.hypot(point.getX() - getX(), point.getY() - getY());
+						double distance = MathUtil.hypot(point.Location.getX() - getX(), point.Location.getY() - getY());
 						if (distance > 1)
 						{
-							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.getX(), point.getY()));
+							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.Location.getX(), point.Location.getY()));
 						}
 						
 						m.moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();
