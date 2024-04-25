@@ -1486,7 +1486,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos)
+	public static Npc addSpawn(int npcId, ILocational pos)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, TimeSpan.Zero, false, 0);
 	}
@@ -1500,7 +1500,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @return the {@link Npc} object of the newly spawned NPC, {@code null} if the NPC doesn't exist
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc addSpawn(Npc summoner, int npcId, ILocational pos, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(summoner, npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, false, 0);
 	}
@@ -1514,7 +1514,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, ILocational pos, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, TimeSpan.Zero, isSummonSpawn, 0);
 	}
@@ -1529,7 +1529,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc addSpawn(int npcId, ILocational pos, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, false, 0);
 	}
@@ -1545,7 +1545,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, ILocational pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1564,7 +1564,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, IPositionable pos, bool randomOffset, int instanceId)
+	public static Npc addSpawn(Npc summoner, int npcId, ILocational pos, bool randomOffset, int instanceId)
 	{
 		return addSpawn(summoner, npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, TimeSpan.Zero, false, instanceId);
 	}
@@ -1584,7 +1584,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, IPositionable pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, ILocational pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}

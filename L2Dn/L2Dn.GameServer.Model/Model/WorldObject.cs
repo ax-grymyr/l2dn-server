@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Model;
 /**
  * Base class for all interactive objects.
  */
-public abstract class WorldObject: IIdentifiable, INamable, ISpawnable, IUniqueId, IDecayable, IPositionable
+public abstract class WorldObject: IIdentifiable, INamable, ISpawnable, IUniqueId, IDecayable, ILocational
 {
 	/** Name */
 	private string _name;
