@@ -1,13 +1,17 @@
 ﻿namespace L2Dn.GameServer.Model;
 
-public class ChanceLocation: Location
+public class ChanceLocation
 {
+    private readonly Location _location;
     private readonly double _chance;
 
-    public ChanceLocation(int x, int y, int z, int heading, double chance): base(x, y, z, heading)
+    public ChanceLocation(Location location, double chance)
     {
+        _location = location;
         _chance = chance;
     }
+
+    public Location Location => _location;
 
     public double getChance()
     {

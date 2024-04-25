@@ -81,7 +81,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		int z = npc.Z;
 		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
-			_locations.add(new ChanceLocation(x, y, z, npc.Heading, 100));
+			_locations.add(new ChanceLocation(new Location(x, y, z, npc.Heading), 100));
 		}
 		else
 		{
@@ -238,7 +238,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			{
 				if (locRandom <= (cumulativeChance += loc.getChance()))
 				{
-					return loc;
+					return loc.Location;
 				}
 			}
 			_logger.Warn("Couldn't match location by chance turning first...");

@@ -312,7 +312,8 @@ public class SpawnData: DataReaderBase
 	{
 		foreach (XmlSpawnNpcLocation location in locations)
 		{
-			npcTemplate.addSpawnLocation(new ChanceLocation(location.X, location.Y, location.Z, location.Heading,
+			npcTemplate.addSpawnLocation(new ChanceLocation(
+				new Location(location.X, location.Y, location.Z, location.Heading),
 				location.Chance));
 		}
 	}
