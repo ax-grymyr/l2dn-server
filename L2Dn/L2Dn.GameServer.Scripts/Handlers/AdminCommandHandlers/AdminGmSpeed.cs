@@ -44,12 +44,12 @@ public class AdminGmSpeed: IAdminCommandHandler
 				return true;
 			}
 			
-			if (!Util.isDouble(token))
+			if (!double.TryParse(token, CultureInfo.InvariantCulture, out double runSpeedBoost))
 			{
 				BuilderUtil.sendSysMessage(player, "//gmspeed [0...10]");
 				return false;
 			}
-			double runSpeedBoost = double.Parse(token, CultureInfo.InvariantCulture);
+
 			if ((runSpeedBoost < 0) || (runSpeedBoost > 10))
 			{
 				// Custom limit according to SDW's request - real retail limit is unknown.
