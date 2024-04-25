@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using NLog;
 
@@ -175,7 +176,7 @@ public class ZoneManager: DataReaderBase
 		ZoneForm zoneForm;
 		try
 		{
-			Point2D[] coords = zone.Nodes.Select(node => new Point2D(node.X, node.Y)).ToArray();
+			Location2D[] coords = zone.Nodes.Select(node => new Location2D(node.X, node.Y)).ToArray();
 			if (coords.Length == 0)
 			{
 				_logger.Error(GetType().Name + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + filePath);
@@ -188,7 +189,7 @@ public class ZoneManager: DataReaderBase
 			{
 				if (coords.Length == 2)
 				{
-					zoneForm = new ZoneCuboid(coords[0].getX(), coords[1].getX(), coords[0].getY(), coords[1].getY(), minZ, maxZ);
+					zoneForm = new ZoneCuboid(coords[0].X, coords[1].X, coords[0].Y, coords[1].Y, minZ, maxZ);
 				}
 				else
 				{
@@ -205,8 +206,8 @@ public class ZoneManager: DataReaderBase
 					int[] aY = new int[coords.Length];
 					for (int i = 0; i < coords.Length; i++)
 					{
-						aX[i] = coords[i].getX();
-						aY[i] = coords[i].getY();
+						aX[i] = coords[i].X;
+						aY[i] = coords[i].Y;
 					}
 					zoneForm = new ZoneNPoly(aX, aY, minZ, maxZ);
 				}
@@ -223,7 +224,7 @@ public class ZoneManager: DataReaderBase
 				int zoneRad = zone.Radius;
 				if (coords.Length == 1 && zoneRad > 0)
 				{
-					zoneForm = new ZoneCylinder(coords[0].getX(), coords[0].getY(), minZ, maxZ, zoneRad);
+					zoneForm = new ZoneCylinder(coords[0].X, coords[0].Y, minZ, maxZ, zoneRad);
 				}
 				else
 				{
