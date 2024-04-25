@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -48,7 +49,8 @@ public class SayuneData: DataReaderBase
 				int x = el.GetAttributeValueAsInt32("x");
 				int y = el.GetAttributeValueAsInt32("y");
 				int z = el.GetAttributeValueAsInt32("z");
-				parseEntries(lastEntry.addInnerEntry(new SayuneEntry(el.Name.LocalName == "selector", id, x, y, z)), el);
+				Location3D location = new(x, y, z);
+				parseEntries(lastEntry.addInnerEntry(new SayuneEntry(el.Name.LocalName == "selector", id, location)), el);
 			}
 		});
 	}

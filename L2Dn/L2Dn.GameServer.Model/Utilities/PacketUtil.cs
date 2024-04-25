@@ -2,12 +2,28 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Utilities;
 
 public static class PacketUtil
 {
+	public static Location3D ReadLocation3D(this ref PacketBitReader reader)
+	{
+		int x = reader.ReadInt32();
+		int y = reader.ReadInt32();
+		int z = reader.ReadInt32();
+		return new Location3D(x, y, z);
+	}
+
+	public static void WriteLocation3D(this PacketBitWriter writer, Location3D location)
+	{
+		writer.WriteInt32(location.X);
+		writer.WriteInt32(location.Y);
+		writer.WriteInt32(location.Z);
+	}
+
 	public static void WriteSystemMessageParam(this PacketBitWriter writer, SystemMessageParam param)
 	{
 		switch (param.Type)

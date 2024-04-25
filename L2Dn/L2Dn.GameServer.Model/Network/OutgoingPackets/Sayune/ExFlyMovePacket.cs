@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Sayune;
@@ -29,13 +30,11 @@ public readonly struct ExFlyMovePacket: IOutgoingPacket
         writer.WriteInt32(0); // ??
         writer.WriteInt32(_mapId);
         writer.WriteInt32(_locations.Count);
-        foreach (SayuneEntry loc in _locations)
+        foreach (SayuneEntry sayuneEntry in _locations)
         {
-            writer.WriteInt32(loc.getId());
+            writer.WriteInt32(sayuneEntry.getId());
             writer.WriteInt32(0); // ??
-            writer.WriteInt32(loc.getX());
-            writer.WriteInt32(loc.getY());
-            writer.WriteInt32(loc.getZ());
+            writer.WriteLocation3D(sayuneEntry.Location);
         }
     }
 }

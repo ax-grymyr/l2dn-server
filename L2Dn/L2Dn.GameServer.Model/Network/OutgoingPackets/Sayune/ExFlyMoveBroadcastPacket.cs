@@ -1,6 +1,8 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Sayune;
@@ -9,16 +11,16 @@ public readonly struct ExFlyMoveBroadcastPacket: IOutgoingPacket
 {
     private readonly int _objectId;
     private readonly int _mapId;
-    private readonly ILocational _currentLoc;
-    private readonly ILocational _targetLoc;
+    private readonly Location3D _currentLoc;
+    private readonly Location3D _targetLoc;
     private readonly SayuneType _type;
 	
-    public ExFlyMoveBroadcastPacket(Player player, SayuneType type, int mapId, ILocational targetLoc)
+    public ExFlyMoveBroadcastPacket(Player player, SayuneType type, int mapId, Location3D targetLoc)
     {
         _objectId = player.getObjectId();
         _type = type;
         _mapId = mapId;
-        _currentLoc = player;
+        _currentLoc = player.getLocation().ToLocation3D();
         _targetLoc = targetLoc;
     }
 	
@@ -29,12 +31,8 @@ public readonly struct ExFlyMoveBroadcastPacket: IOutgoingPacket
         writer.WriteInt32(_objectId);
         writer.WriteInt32((int)_type);
         writer.WriteInt32(_mapId);
-        writer.WriteInt32(_targetLoc.getX());
-        writer.WriteInt32(_targetLoc.getY());
-        writer.WriteInt32(_targetLoc.getZ());
+        writer.WriteLocation3D(_targetLoc);
         writer.WriteInt32(0); // ?
-        writer.WriteInt32(_currentLoc.getX());
-        writer.WriteInt32(_currentLoc.getY());
-        writer.WriteInt32(_currentLoc.getZ());
+        writer.WriteLocation3D(_currentLoc);
     }
 }

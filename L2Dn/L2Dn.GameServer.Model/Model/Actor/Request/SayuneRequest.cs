@@ -56,7 +56,7 @@ public class SayuneRequest : AbstractRequest
 	public void move(Player player, int pos)
 	{
 		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
-		if ((map == null) || map.getInnerEntries().isEmpty())
+		if (map == null || map.getInnerEntries().isEmpty())
 		{
 			player.sendMessage("MapId: " + _mapId + " was not found in the map!");
 			return;
@@ -84,7 +84,7 @@ public class SayuneRequest : AbstractRequest
 			}
 		}
 		
-		SayuneType type = (pos == 0) && nextEntry.isSelector() ? SayuneType.START_LOC : nextEntry.isSelector() ? SayuneType.MULTI_WAY_LOC : SayuneType.ONE_WAY_LOC;
+		SayuneType type = pos == 0 && nextEntry.isSelector() ? SayuneType.START_LOC : nextEntry.isSelector() ? SayuneType.MULTI_WAY_LOC : SayuneType.ONE_WAY_LOC;
 		List<SayuneEntry> locations = nextEntry.isSelector() ? nextEntry.getInnerEntries() : [nextEntry];
 		if (nextEntry.isSelector())
 		{
@@ -99,20 +99,20 @@ public class SayuneRequest : AbstractRequest
 		player.sendPacket(new ExFlyMovePacket(player, type, _mapId, locations));
 		
 		SayuneEntry activeEntry = locations.get(0);
-		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcastPacket(player, type, map.getId(), activeEntry), 1000);
-		player.setXYZ(activeEntry);
+		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcastPacket(player, type, map.getId(), activeEntry.Location), 1000);
+		player.setXYZ(activeEntry.Location.X, activeEntry.Location.Y, activeEntry.Location.Z);
 	}
 	
 	public void onLogout()
 	{
 		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
-		if ((map != null) && !map.getInnerEntries().isEmpty())
+		if (map != null && !map.getInnerEntries().isEmpty())
 		{
 			SayuneEntry nextEntry = findEntry(0);
-			if (_isSelecting || ((nextEntry != null) && nextEntry.isSelector()))
+			if (_isSelecting || (nextEntry != null && nextEntry.isSelector()))
 			{
 				// If player is on selector or next entry is selector go back to first entry
-				getActiveChar().setXYZ(map);
+				getActiveChar().setXYZ(map.Location.X, map.Location.Y, map.Location.Z);
 			}
 			else
 			{
@@ -120,11 +120,11 @@ public class SayuneRequest : AbstractRequest
 				SayuneEntry lastEntry = map.getInnerEntries().get(map.getInnerEntries().size() - 1);
 				if (lastEntry != null)
 				{
-					getActiveChar().setXYZ(lastEntry);
+					getActiveChar().setXYZ(lastEntry.Location.X, lastEntry.Location.Y, lastEntry.Location.Z);
 				}
 				else
 				{
-					getActiveChar().setXYZ(map);
+					getActiveChar().setXYZ(map.Location.X, map.Location.Y, map.Location.Z);
 				}
 			}
 		}

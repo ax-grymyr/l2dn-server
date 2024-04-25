@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
@@ -142,5 +143,10 @@ public class Location : IPositionable
 	public override string ToString()
 	{
 		return "[" + GetType().Name + "] X: " + _x + " Y: " + _y + " Z: " + _z + " Heading: " + _heading;
+	}
+
+	public Location3D ToLocation3D()
+	{
+		return new Location3D(_x, _y, _z);
 	}
 }

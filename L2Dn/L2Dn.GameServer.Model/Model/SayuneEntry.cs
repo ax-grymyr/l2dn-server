@@ -1,28 +1,24 @@
-﻿using L2Dn.GameServer.Model.Interfaces;
+﻿using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
-public class SayuneEntry: ILocational
+public class SayuneEntry
 {
-    private bool _isSelector = false;
+    private readonly List<SayuneEntry> _innerEntries = [];
+    private readonly Location3D _location;
     private readonly int _id;
-    private int _x;
-    private int _y;
-    private int _z;
-    private List<SayuneEntry> _innerEntries = new();
+    private readonly bool _isSelector;
 
     public SayuneEntry(int id)
     {
         _id = id;
     }
 
-    public SayuneEntry(bool isSelector, int id, int x, int y, int z)
+    public SayuneEntry(bool isSelector, int id, Location3D location)
     {
         _isSelector = isSelector;
         _id = id;
-        _x = x;
-        _y = y;
-        _z = z;
+        _location = location;
     }
 
     public int getId()
@@ -30,30 +26,7 @@ public class SayuneEntry: ILocational
         return _id;
     }
 
-    public int getX()
-    {
-        return _x;
-    }
-
-    public int getY()
-    {
-        return _y;
-    }
-
-    public int getZ()
-    {
-        return _z;
-    }
-
-    public int getHeading()
-    {
-        return 0;
-    }
-
-    public Location getLocation()
-    {
-        return new Location(_x, _y, _z);
-    }
+    public Location3D Location => _location;
 
     public bool isSelector()
     {
