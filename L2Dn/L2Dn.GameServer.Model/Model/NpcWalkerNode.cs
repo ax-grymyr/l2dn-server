@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
@@ -6,21 +7,24 @@ namespace L2Dn.GameServer.Model;
  * @author Rayan RPG, JIV
  * @since 927
  */
-public class NpcWalkerNode: Location
+public class NpcWalkerNode
 {
-    private readonly String _chatString;
+    private readonly Location3D _location;
+    private readonly string _chatString;
     private readonly NpcStringId _npcString;
     private readonly int _delay;
     private readonly bool _runToLocation;
 
-    public NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, bool runToLocation, NpcStringId npcString,
-        String chatText): base(moveX, moveY, moveZ)
+    public NpcWalkerNode(Location3D moveLocation, int delay, bool runToLocation, NpcStringId npcString, string chatText)
     {
+        _location = moveLocation;
         _delay = delay;
         _runToLocation = runToLocation;
         _npcString = npcString;
         _chatString = (chatText == null) ? "" : chatText;
     }
+
+    public Location3D Location => _location;
 
     public int getDelay()
     {
@@ -37,7 +41,7 @@ public class NpcWalkerNode: Location
         return _npcString;
     }
 
-    public String getChatText()
+    public string getChatText()
     {
         if (_npcString != null)
         {

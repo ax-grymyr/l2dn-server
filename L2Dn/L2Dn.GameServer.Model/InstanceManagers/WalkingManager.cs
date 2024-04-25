@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -117,7 +118,7 @@ public class WalkingManager: DataReaderBase
 					continue;
 				}
 
-				list.add(new NpcWalkerNode(x, y, z, delay, run, npcString ?? 0, chatString));
+				list.add(new NpcWalkerNode(new Location3D(x, y, z), delay, run, npcString ?? 0, chatString));
 			}
 			else if (r.Name.LocalName.equals("target"))
 			{
@@ -223,16 +224,22 @@ public class WalkingManager: DataReaderBase
 					NpcWalkerNode node = walk.getCurrentNode();
 					
 					// adjust next waypoint, if NPC spawns at first waypoint
-					if ((npc.getX() == node.getX()) && (npc.getY() == node.getY()))
+					if ((npc.getX() == node.Location.X) && (npc.getY() == node.Location.Y))
 					{
 						walk.calculateNextNode(npc);
 						node = walk.getCurrentNode();
 					}
 					
-					if (!npc.isInsideRadius3D(node, 3000))
+					if (!npc.getLocation().IsInsideRadius3D(node.Location, 3000))
 					{
-						LOGGER.Warn(GetType().Name + ": " + "Route '" + routeName + "': NPC (id=" + npc.getId() + ", x=" + npc.getX() + ", y=" + npc.getY() + ", z=" + npc.getZ() + ") is too far from starting point (node x=" + node.getX() + ", y=" + node.getY() + ", z=" + node.getZ() + ", range=" + npc.calculateDistance3D(node) + "). Teleporting to proper location.");
-						npc.teleToLocation(node);
+						LOGGER.Warn(GetType().Name + ": " + "Route '" + routeName + "': NPC (id=" + npc.getId() +
+							", x=" + npc.getX() + ", y=" + npc.getY() + ", z=" + npc.getZ() +
+							") is too far from starting point (node x=" + node.Location.X + ", y=" + node.Location.Y +
+							", z=" + node.Location.Z + ", range=" + npc.getLocation().Distance3D(node.Location) +
+							"). Teleporting to proper location.");
+
+						Location teleLoc = new Location(node.Location.X, node.Location.Y, node.Location.Z, npc.getHeading());
+						npc.teleToLocation(teleLoc);
 					}
 					
 					if (node.runToLocation())
@@ -388,7 +395,7 @@ public class WalkingManager: DataReaderBase
 		
 		List<NpcWalkerNode> nodelist = walk.getRoute().getNodeList();
 		NpcWalkerNode node = nodelist.get(Math.Min(walk.getCurrentNodeId(), nodelist.size() - 1));
-		if (!npc.isInsideRadius2D(node, 10))
+		if (!npc.getLocation().IsInsideRadius2D(node.Location, 10))
 		{
 			return;
 		}

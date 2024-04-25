@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model;
 /**
  * A datatype used to retain a 3D (x/y/z/heading) point. It got the capability to be set and cleaned.
  */
-public class Location : IPositionable
+public class Location : IPositionable, ILocation3D
 {
 	private int _x;
 	private int _y;
@@ -129,4 +129,8 @@ public class Location : IPositionable
 	{
 		return new Location3D(_x, _y, _z);
 	}
+
+	public int X => _x;
+	public int Y => _y;
+	public int Z => _z;
 }
