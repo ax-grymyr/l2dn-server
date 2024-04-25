@@ -6,18 +6,22 @@ namespace L2Dn.GameServer.Model;
  * Fort Siege Spawn.
  * @author xban1x
  */
-public class FortSiegeSpawn: Location, IIdentifiable
+public class FortSiegeSpawn: IIdentifiable
 {
+    private readonly Location _location;
     private readonly int _npcId;
     private readonly int _fortId;
     private readonly int _id;
 
-    public FortSiegeSpawn(int fortId, int x, int y, int z, int heading, int npcId, int id): base(x, y, z, heading)
+    public FortSiegeSpawn(int fortId, Location location, int npcId, int id)
     {
+        _location = location;
         _fortId = fortId;
         _npcId = npcId;
         _id = id;
     }
+
+    public Location Location => _location;
 
     public int getFortId()
     {

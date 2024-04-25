@@ -1487,8 +1487,8 @@ public class FortSiege: Siegable
 			{
 				Spawn spawnDat = new Spawn(_sp.getId());
 				spawnDat.setAmount(1);
-				spawnDat.setXYZ(_sp.getLocation());
-				spawnDat.setHeading(_sp.getLocation().getHeading());
+				spawnDat.setXYZ(_sp.Location);
+				spawnDat.setHeading(_sp.Location.getHeading());
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				spawnDat.doSpawn(false);
 				spawnDat.stopRespawn();
