@@ -20,5 +20,11 @@ public class DbFactory: PooledDbContextFactory<AuthServerDbContext>
     public static void Initialize(DatabaseConfig config)
     {
         _instance = new DbFactory(DesignTimeAuthServerDbContextFactory.GetOptions(config), config.PoolSize);
-    } 
+    }
+
+    public static void UpdateDatabase(DatabaseConfig config)
+    {
+        using AuthServerDbContext ctx = new(DesignTimeAuthServerDbContextFactory.GetOptions(config));
+        ctx.Database.Migrate();
+    }
 }

@@ -21,4 +21,10 @@ public class DbFactory: PooledDbContextFactory<GameServerDbContext>
     {
         _instance = new DbFactory(DesignTimeGameServerDbContextFactory.GetOptions(config), config.PoolSize);
     } 
+
+    public static void UpdateDatabase(DatabaseConfig config)
+    {
+        using GameServerDbContext ctx = new(DesignTimeGameServerDbContextFactory.GetOptions(config));
+        ctx.Database.Migrate();
+    }
 }
