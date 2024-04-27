@@ -50,6 +50,25 @@ namespace L2Dn.AuthServer.Db.Migrations
                     table.PrimaryKey("PK_GameServers", x => x.ServerId);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AccountCharacterData",
+                columns: table => new
+                {
+                    AccountId = table.Column<int>(type: "integer", nullable: false),
+                    ServerId = table.Column<byte>(type: "smallint", nullable: false),
+                    CharacterCount = table.Column<byte>(type: "smallint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AccountCharacterData", x => new { x.AccountId, x.ServerId });
+                    table.ForeignKey(
+                        name: "FK_AccountCharacterData_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "Accounts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Accounts_Login",
                 table: "Accounts",
@@ -61,10 +80,13 @@ namespace L2Dn.AuthServer.Db.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Accounts");
+                name: "AccountCharacterData");
 
             migrationBuilder.DropTable(
                 name: "GameServers");
+
+            migrationBuilder.DropTable(
+                name: "Accounts");
         }
     }
 }

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace L2Dn.AuthServer.Db.Migrations
 {
     [DbContext(typeof(AuthServerDbContext))]
-    [Migration("20240306204754_Initial")]
+    [Migration("20240427110450_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace L2Dn.AuthServer.Db.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -68,6 +68,22 @@ namespace L2Dn.AuthServer.Db.Migrations
                     b.ToTable("Accounts");
                 });
 
+            modelBuilder.Entity("L2Dn.AuthServer.Db.AccountCharacterData", b =>
+                {
+                    b.Property<int>("AccountId")
+                        .HasColumnType("integer");
+
+                    b.Property<byte>("ServerId")
+                        .HasColumnType("smallint");
+
+                    b.Property<byte>("CharacterCount")
+                        .HasColumnType("smallint");
+
+                    b.HasKey("AccountId", "ServerId");
+
+                    b.ToTable("AccountCharacterData");
+                });
+
             modelBuilder.Entity("L2Dn.AuthServer.Db.GameServer", b =>
                 {
                     b.Property<byte>("ServerId")
@@ -103,6 +119,17 @@ namespace L2Dn.AuthServer.Db.Migrations
                     b.HasKey("ServerId");
 
                     b.ToTable("GameServers");
+                });
+
+            modelBuilder.Entity("L2Dn.AuthServer.Db.AccountCharacterData", b =>
+                {
+                    b.HasOne("L2Dn.AuthServer.Db.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
                 });
 #pragma warning restore 612, 618
         }

@@ -72,7 +72,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     AccountId = table.Column<int>(type: "integer", nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -133,6 +133,22 @@ namespace L2Dn.GameServer.Db.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Announcements", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BbsFavorites",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    PlayerId = table.Column<int>(type: "integer", nullable: false),
+                    Title = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    ByPass = table.Column<string>(type: "character varying(127)", maxLength: 127, nullable: false),
+                    Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BbsFavorites", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -725,7 +741,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     CharacterId = table.Column<int>(type: "integer", nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -766,7 +782,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     ClanId = table.Column<int>(type: "integer", nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1042,7 +1058,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 columns: table => new
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1245,7 +1261,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     ItemId = table.Column<int>(type: "integer", nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1335,7 +1351,7 @@ namespace L2Dn.GameServer.Db.Migrations
                 {
                     Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     NpcId = table.Column<int>(type: "integer", nullable: false),
-                    Value = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    Value = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1440,6 +1456,23 @@ namespace L2Dn.GameServer.Db.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PetEvolves", x => new { x.ItemObjectId, x.Index, x.Level });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PetitionFeedbacks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    CharacterName = table.Column<string>(type: "character varying(35)", maxLength: 35, nullable: false),
+                    GmName = table.Column<string>(type: "character varying(35)", maxLength: 35, nullable: false),
+                    Rate = table.Column<byte>(type: "smallint", nullable: false),
+                    Message = table.Column<string>(type: "character varying(4096)", maxLength: 4096, nullable: true),
+                    Time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PetitionFeedbacks", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -2275,6 +2308,9 @@ namespace L2Dn.GameServer.Db.Migrations
                 name: "Announcements");
 
             migrationBuilder.DropTable(
+                name: "BbsFavorites");
+
+            migrationBuilder.DropTable(
                 name: "BotReports");
 
             migrationBuilder.DropTable(
@@ -2534,6 +2570,9 @@ namespace L2Dn.GameServer.Db.Migrations
 
             migrationBuilder.DropTable(
                 name: "PetEvolves");
+
+            migrationBuilder.DropTable(
+                name: "PetitionFeedbacks");
 
             migrationBuilder.DropTable(
                 name: "Pets");

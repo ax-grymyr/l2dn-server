@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace L2Dn.GameServer.Db.Migrations
 {
     [DbContext(typeof(GameServerDbContext))]
-    [Migration("20240421211443_AddBbsFavorites")]
-    partial class AddBbsFavorites
+    [Migration("20240427110418_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
