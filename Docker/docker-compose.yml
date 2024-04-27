@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+    postgres:
+        image: postgres:alpine
+        container_name: db
+        restart: unless-stopped
+#        ports:
+#            - 5432:5432
+        volumes:
+            - ./create_database.sql:/docker-entrypoint-initdb.d/create_database.sql:ro
+#            - ./:/var/lib/postgresql/data
+        environment:
+            - PGDATA=/var/lib/postgresql/data/.postgresdata
+            - POSTGRES_PASSWORD=postgres_password
+
+    l2dn-authserver:
+        build:
+            context: ../
+            dockerfile: Docker/Dockerfile.AuthServer
+        image: l2dn-authserver
+        container_name: l2dn-authserver
+        depends_on:
+            - postgres
+        restart: unless-stopped
+        ports:
+            - 2106:2106 # AuthServer port for the client
+
+    l2dn-gameserver:
+        build:
+            context: ../
+            dockerfile: Docker/Dockerfile.GameServer
+        image: l2dn-gameserver
+        container_name: l2dn-gameserver
+        depends_on:
+            - postgres
+            - l2dn-authserver
+        restart: unless-stopped
+        ports:
+            - 7777:7777 # GameServer port for the client

@@ -1,0 +1,16 @@
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build-env
+
+# Copy sources to the build container
+WORKDIR /App
+COPY L2Dn /App/L2Dn
+
+# Build the GameServer
+RUN dotnet publish /App/L2Dn/L2Dn.GameServer/L2Dn.GameServer.csproj -c Release --use-current-runtime --no-self-contained --output /App/GameServer
+
+FROM mcr.microsoft.com/dotnet/runtime:8.0-alpine AS GameServer
+# Copy binaries to the GameServer container
+WORKDIR /App
+COPY --from=build-env /App/GameServer /App
+# Replace connection address to auth server
+RUN sed 's/localhost/l2dn-authserver/' -i /App/config.json
+CMD ["/App/L2Dn.GameServer", "-UpdateDatabase"]
