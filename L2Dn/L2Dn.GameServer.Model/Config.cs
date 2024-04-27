@@ -26,75 +26,75 @@ public class Config
 	// --------------------------------------------------
 	// Config File Definitions
 	// --------------------------------------------------
-	public const string OLYMPIAD_CONFIG_FILE = "./config/Olympiad.ini";
+	public const string OLYMPIAD_CONFIG_FILE = "./Config/Olympiad.ini";
 
-	public const string FORTSIEGE_CONFIG_FILE = "./config/FortSiege.ini";
-	public const string SIEGE_CONFIG_FILE = "./config/Siege.ini";
+	public const string FORTSIEGE_CONFIG_FILE = "./Config/FortSiege.ini";
+	public const string SIEGE_CONFIG_FILE = "./Config/Siege.ini";
 
-	private const string ATTENDANCE_CONFIG_FILE = "./config/AttendanceRewards.ini";
-	private const string ATTRIBUTE_SYSTEM_FILE = "./config/AttributeSystem.ini";
-	private const string CHARACTER_CONFIG_FILE = "./config/Character.ini";
-	private const string FEATURE_CONFIG_FILE = "./config/Feature.ini";
-	private const string FLOOD_PROTECTOR_CONFIG_FILE = "./config/FloodProtector.ini";
-	private const string GAME_ASSISTANT_CONFIG_FILE = "./config/GameAssistant.ini";
-	private const string GENERAL_CONFIG_FILE = "./config/General.ini";
-	private const string GEOENGINE_CONFIG_FILE = "./config/GeoEngine.ini";
-	private const string GRACIASEEDS_CONFIG_FILE = "./config/GraciaSeeds.ini";
-	private const string GRANDBOSS_CONFIG_FILE = "./config/GrandBoss.ini";
-	private const string HUNT_PASS_CONFIG_FILE = "./config/HuntPass.ini";
-	private const string ACHIEVEMENT_BOX_CONFIG_FILE = "./config/AchievementBox.ini";
-	private const string MAGIC_LAMP_FILE = "./config/MagicLamp.ini";
-	private const string NPC_CONFIG_FILE = "./config/NPC.ini";
-	private const string ORC_FORTRESS_CONFIG_FILE = "./config/OrcFortress.ini";
-	private const string PVP_CONFIG_FILE = "./config/PVP.ini";
-	private const string RANDOM_CRAFT_FILE = "./config/RandomCraft.ini";
-	private const string RATES_CONFIG_FILE = "./config/Rates.ini";
-	private const string SERVER_CONFIG_FILE = "./config/Server.ini";
-	private const string TRAINING_CAMP_CONFIG_FILE = "./config/TrainingCamp.ini";
-	private const string WORLD_EXCHANGE_FILE = "./config/WorldExchange.ini";
+	private const string ATTENDANCE_CONFIG_FILE = "./Config/AttendanceRewards.ini";
+	private const string ATTRIBUTE_SYSTEM_FILE = "./Config/AttributeSystem.ini";
+	private const string CHARACTER_CONFIG_FILE = "./Config/Character.ini";
+	private const string FEATURE_CONFIG_FILE = "./Config/Feature.ini";
+	private const string FLOOD_PROTECTOR_CONFIG_FILE = "./Config/FloodProtector.ini";
+	private const string GAME_ASSISTANT_CONFIG_FILE = "./Config/GameAssistant.ini";
+	private const string GENERAL_CONFIG_FILE = "./Config/General.ini";
+	private const string GEOENGINE_CONFIG_FILE = "./Config/GeoEngine.ini";
+	private const string GRACIASEEDS_CONFIG_FILE = "./Config/GraciaSeeds.ini";
+	private const string GRANDBOSS_CONFIG_FILE = "./Config/GrandBoss.ini";
+	private const string HUNT_PASS_CONFIG_FILE = "./Config/HuntPass.ini";
+	private const string ACHIEVEMENT_BOX_CONFIG_FILE = "./Config/AchievementBox.ini";
+	private const string MAGIC_LAMP_FILE = "./Config/MagicLamp.ini";
+	private const string NPC_CONFIG_FILE = "./Config/NPC.ini";
+	private const string ORC_FORTRESS_CONFIG_FILE = "./Config/OrcFortress.ini";
+	private const string PVP_CONFIG_FILE = "./Config/PVP.ini";
+	private const string RANDOM_CRAFT_FILE = "./Config/RandomCraft.ini";
+	private const string RATES_CONFIG_FILE = "./Config/Rates.ini";
+	private const string SERVER_CONFIG_FILE = "./Config/Server.ini";
+	private const string TRAINING_CAMP_CONFIG_FILE = "./Config/TrainingCamp.ini";
+	private const string WORLD_EXCHANGE_FILE = "./Config/WorldExchange.ini";
 
-	private const string CHAT_FILTER_FILE = "./config/chatfilter.txt";
+	private const string CHAT_FILTER_FILE = "./Config/chatfilter.txt";
 
 	// --------------------------------------------------
 	// Custom Config File Definitions
 	// --------------------------------------------------
-	private const string CUSTOM_ALLOWED_PLAYER_RACES_CONFIG_FILE = "./config/Custom/AllowedPlayerRaces.ini";
-	private const string CUSTOM_AUTO_POTIONS_CONFIG_FILE = "./config/Custom/AutoPotions.ini";
-	private const string CUSTOM_BANKING_CONFIG_FILE = "./config/Custom/Banking.ini";
-	private const string CUSTOM_BOSS_ANNOUNCEMENTS_CONFIG_FILE = "./config/Custom/BossAnnouncements.ini";
-	private const string CUSTOM_CHAMPION_MONSTERS_CONFIG_FILE = "./config/Custom/ChampionMonsters.ini";
-	private const string CUSTOM_CHAT_MODERATION_CONFIG_FILE = "./config/Custom/ChatModeration.ini";
-	private const string CUSTOM_CLASS_BALANCE_CONFIG_FILE = "./config/Custom/ClassBalance.ini";
-	private const string CUSTOM_COMMUNITY_BOARD_CONFIG_FILE = "./config/Custom/CommunityBoard.ini";
-	private const string CUSTOM_CUSTOM_DEPOSITABLE_ITEMS_CONFIG_FILE = "./config/Custom/CustomDepositableItems.ini";
-	private const string CUSTOM_CUSTOM_MAIL_MANAGER_CONFIG_FILE = "./config/Custom/CustomMailManager.ini";
-	private const string CUSTOM_DELEVEL_MANAGER_CONFIG_FILE = "./config/Custom/DelevelManager.ini";
-	private const string CUSTOM_DUALBOX_CHECK_CONFIG_FILE = "./config/Custom/DualboxCheck.ini";
-	private const string CUSTOM_FACTION_SYSTEM_CONFIG_FILE = "./config/Custom/FactionSystem.ini";
-	private const string CUSTOM_FAKE_PLAYERS_CONFIG_FILE = "./config/Custom/FakePlayers.ini";
-	private const string CUSTOM_FIND_PVP_CONFIG_FILE = "./config/Custom/FindPvP.ini";
-	private const string CUSTOM_MERCHANT_ZERO_SELL_PRICE_CONFIG_FILE = "./config/Custom/MerchantZeroSellPrice.ini";
-	private const string CUSTOM_MULTILANGUAL_SUPPORT_CONFIG_FILE = "./config/Custom/MultilingualSupport.ini";
-	private const string CUSTOM_NOBLESS_MASTER_CONFIG_FILE = "./config/Custom/NoblessMaster.ini";
-	private const string CUSTOM_NPC_STAT_MULTIPLIERS_CONFIG_FILE = "./config/Custom/NpcStatMultipliers.ini";
-	private const string CUSTOM_OFFLINE_PLAY_CONFIG_FILE = "./config/Custom/OfflinePlay.ini";
-	private const string CUSTOM_OFFLINE_TRADE_CONFIG_FILE = "./config/Custom/OfflineTrade.ini";
-	private const string CUSTOM_ONLINE_INFO_CONFIG_FILE = "./config/Custom/OnlineInfo.ini";
-	private const string CUSTOM_PASSWORD_CHANGE_CONFIG_FILE = "./config/Custom/PasswordChange.ini";
-	private const string CUSTOM_VIP_CONFIG_FILE = "./config/Custom/VipSystem.ini";
-	private const string CUSTOM_PREMIUM_SYSTEM_CONFIG_FILE = "./config/Custom/PremiumSystem.ini";
-	private const string CUSTOM_PRIVATE_STORE_RANGE_CONFIG_FILE = "./config/Custom/PrivateStoreRange.ini";
-	private const string CUSTOM_PVP_ANNOUNCE_CONFIG_FILE = "./config/Custom/PvpAnnounce.ini";
-	private const string CUSTOM_PVP_REWARD_ITEM_CONFIG_FILE = "./config/Custom/PvpRewardItem.ini";
-	private const string CUSTOM_PVP_TITLE_CONFIG_FILE = "./config/Custom/PvpTitleColor.ini";
-	private const string CUSTOM_RANDOM_SPAWNS_CONFIG_FILE = "./config/Custom/RandomSpawns.ini";
-	private const string CUSTOM_SAYUNE_FOR_ALL_CONFIG_FILE = "./config/Custom/SayuneForAll.ini";
-	private const string CUSTOM_SCREEN_WELCOME_MESSAGE_CONFIG_FILE = "./config/Custom/ScreenWelcomeMessage.ini";
-	private const string CUSTOM_SELL_BUFFS_CONFIG_FILE = "./config/Custom/SellBuffs.ini";
-	private const string CUSTOM_SERVER_TIME_CONFIG_FILE = "./config/Custom/ServerTime.ini";
-	private const string CUSTOM_SCHEME_BUFFER_CONFIG_FILE = "./config/Custom/SchemeBuffer.ini";
-	private const string CUSTOM_STARTING_LOCATION_CONFIG_FILE = "./config/Custom/StartingLocation.ini";
-	private const string CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE = "./config/Custom/WalkerBotProtection.ini";
+	private const string CUSTOM_ALLOWED_PLAYER_RACES_CONFIG_FILE = "./Config/Custom/AllowedPlayerRaces.ini";
+	private const string CUSTOM_AUTO_POTIONS_CONFIG_FILE = "./Config/Custom/AutoPotions.ini";
+	private const string CUSTOM_BANKING_CONFIG_FILE = "./Config/Custom/Banking.ini";
+	private const string CUSTOM_BOSS_ANNOUNCEMENTS_CONFIG_FILE = "./Config/Custom/BossAnnouncements.ini";
+	private const string CUSTOM_CHAMPION_MONSTERS_CONFIG_FILE = "./Config/Custom/ChampionMonsters.ini";
+	private const string CUSTOM_CHAT_MODERATION_CONFIG_FILE = "./Config/Custom/ChatModeration.ini";
+	private const string CUSTOM_CLASS_BALANCE_CONFIG_FILE = "./Config/Custom/ClassBalance.ini";
+	private const string CUSTOM_COMMUNITY_BOARD_CONFIG_FILE = "./Config/Custom/CommunityBoard.ini";
+	private const string CUSTOM_CUSTOM_DEPOSITABLE_ITEMS_CONFIG_FILE = "./Config/Custom/CustomDepositableItems.ini";
+	private const string CUSTOM_CUSTOM_MAIL_MANAGER_CONFIG_FILE = "./Config/Custom/CustomMailManager.ini";
+	private const string CUSTOM_DELEVEL_MANAGER_CONFIG_FILE = "./Config/Custom/DelevelManager.ini";
+	private const string CUSTOM_DUALBOX_CHECK_CONFIG_FILE = "./Config/Custom/DualboxCheck.ini";
+	private const string CUSTOM_FACTION_SYSTEM_CONFIG_FILE = "./Config/Custom/FactionSystem.ini";
+	private const string CUSTOM_FAKE_PLAYERS_CONFIG_FILE = "./Config/Custom/FakePlayers.ini";
+	private const string CUSTOM_FIND_PVP_CONFIG_FILE = "./Config/Custom/FindPvP.ini";
+	private const string CUSTOM_MERCHANT_ZERO_SELL_PRICE_CONFIG_FILE = "./Config/Custom/MerchantZeroSellPrice.ini";
+	private const string CUSTOM_MULTILANGUAL_SUPPORT_CONFIG_FILE = "./Config/Custom/MultilingualSupport.ini";
+	private const string CUSTOM_NOBLESS_MASTER_CONFIG_FILE = "./Config/Custom/NoblessMaster.ini";
+	private const string CUSTOM_NPC_STAT_MULTIPLIERS_CONFIG_FILE = "./Config/Custom/NpcStatMultipliers.ini";
+	private const string CUSTOM_OFFLINE_PLAY_CONFIG_FILE = "./Config/Custom/OfflinePlay.ini";
+	private const string CUSTOM_OFFLINE_TRADE_CONFIG_FILE = "./Config/Custom/OfflineTrade.ini";
+	private const string CUSTOM_ONLINE_INFO_CONFIG_FILE = "./Config/Custom/OnlineInfo.ini";
+	private const string CUSTOM_PASSWORD_CHANGE_CONFIG_FILE = "./Config/Custom/PasswordChange.ini";
+	private const string CUSTOM_VIP_CONFIG_FILE = "./Config/Custom/VipSystem.ini";
+	private const string CUSTOM_PREMIUM_SYSTEM_CONFIG_FILE = "./Config/Custom/PremiumSystem.ini";
+	private const string CUSTOM_PRIVATE_STORE_RANGE_CONFIG_FILE = "./Config/Custom/PrivateStoreRange.ini";
+	private const string CUSTOM_PVP_ANNOUNCE_CONFIG_FILE = "./Config/Custom/PvpAnnounce.ini";
+	private const string CUSTOM_PVP_REWARD_ITEM_CONFIG_FILE = "./Config/Custom/PvpRewardItem.ini";
+	private const string CUSTOM_PVP_TITLE_CONFIG_FILE = "./Config/Custom/PvpTitleColor.ini";
+	private const string CUSTOM_RANDOM_SPAWNS_CONFIG_FILE = "./Config/Custom/RandomSpawns.ini";
+	private const string CUSTOM_SAYUNE_FOR_ALL_CONFIG_FILE = "./Config/Custom/SayuneForAll.ini";
+	private const string CUSTOM_SCREEN_WELCOME_MESSAGE_CONFIG_FILE = "./Config/Custom/ScreenWelcomeMessage.ini";
+	private const string CUSTOM_SELL_BUFFS_CONFIG_FILE = "./Config/Custom/SellBuffs.ini";
+	private const string CUSTOM_SERVER_TIME_CONFIG_FILE = "./Config/Custom/ServerTime.ini";
+	private const string CUSTOM_SCHEME_BUFFER_CONFIG_FILE = "./Config/Custom/SchemeBuffer.ini";
+	private const string CUSTOM_STARTING_LOCATION_CONFIG_FILE = "./Config/Custom/StartingLocation.ini";
+	private const string CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE = "./Config/Custom/WalkerBotProtection.ini";
 
 	// --------------------------------------------------
 	// Variable Definitions

@@ -47,7 +47,7 @@ public class BotReportTable
 			try
 			{
 				// TODO: separate XML and SQL
-				using FileStream stream = new FileStream("./config/BotReportPunishments.xml", FileMode.Open,
+				using FileStream stream = new FileStream("./Config/BotReportPunishments.xml", FileMode.Open,
 					FileAccess.Read, FileShare.Read);
 
 				XDocument document = XDocument.Load(stream);
@@ -65,13 +65,13 @@ public class BotReportTable
 					}
 					catch (Exception e)
 					{
-						LOGGER.Warn("Problem with ./config/BotReportPunishments.xml: " + e);
+						LOGGER.Warn("Problem with ./Config/BotReportPunishments.xml: " + e);
 					}
 				}
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn(GetType().Name + ": Could not load punishments from /config/BotReportPunishments.xml", e);
+				LOGGER.Warn(GetType().Name + ": Could not load punishments from ./Config/BotReportPunishments.xml", e);
 			}
 			
 			loadReportedCharData();

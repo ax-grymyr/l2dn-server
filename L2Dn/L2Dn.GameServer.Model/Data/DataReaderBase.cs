@@ -1,17 +1,13 @@
 ﻿using System.Xml.Linq;
-using System.Xml.Serialization;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
-using NLog;
 
 namespace L2Dn.GameServer.Data;
 
 public abstract class DataReaderBase
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(DataReaderBase)); 
-    
     protected static XDocument LoadXmlDocument(DataFileLocation location, string relativeFilePath) =>
         LoadXmlDocument(GetFullPath(location, relativeFilePath));
 
@@ -64,7 +60,7 @@ public abstract class DataReaderBase
         where T: class => XmlUtil.Deserialize<T>(filePath);
 
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
-        Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "config", relativePath);
+        Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "Config", relativePath);
 
     protected static Location parseLocation(XElement element)
     {
