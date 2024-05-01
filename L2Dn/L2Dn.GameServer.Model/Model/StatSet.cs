@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Model;
  * They are stored as object but can be retrieved in any type wanted. As long as cast is available.<br>
  * @author mkizub
  */
-public class StatSet : IParserAdvUtils
+public class StatSet
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(StatSet));
 	

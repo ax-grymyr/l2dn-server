@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones.Types;

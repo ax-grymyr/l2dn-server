@@ -60,7 +60,7 @@ namespace L2Dn.GameServer.Model.Actor;
  * This link is stored in {@link #_template}
  * @version $Revision: 1.53.2.45.2.34 $ $Date: 2005/04/11 10:06:08 $
  */
-public abstract class Creature: WorldObject, ISkillsHolder, IDeletable, IEventContainerProvider
+public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvider
 {
 	public static readonly Logger LOGGER = LogManager.GetLogger(nameof(Creature));
 	
