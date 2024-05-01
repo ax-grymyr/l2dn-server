@@ -850,7 +850,7 @@ public class CreatureAI: AbstractAI
 		// do nothing
 	}
 	
-	protected bool maybeMoveToPosition(ILocational worldPosition, int offset)
+	protected bool maybeMoveToPosition(Location worldPosition, int offset)
 	{
 		if (worldPosition == null)
 		{

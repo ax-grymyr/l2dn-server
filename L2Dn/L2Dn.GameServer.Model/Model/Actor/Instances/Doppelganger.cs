@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -25,7 +26,7 @@ public class Doppelganger : Attackable
 		setCloneObjId(owner.getObjectId());
 		setClanId(owner.getClanId());
 		setInstance(owner.getInstanceWorld()); // set instance to same as owner
-		setXYZInvisible(owner.getX() + Rnd.get(-100, 100), owner.getY() + Rnd.get(-100, 100), owner.getZ());
+		setXYZInvisible(new Location3D(owner.getX() + Rnd.get(-100, 100), owner.getY() + Rnd.get(-100, 100), owner.getZ()));
 		((DoppelgangerAI) getAI()).setStartFollowController(true);
 		followSummoner(true);
 	}

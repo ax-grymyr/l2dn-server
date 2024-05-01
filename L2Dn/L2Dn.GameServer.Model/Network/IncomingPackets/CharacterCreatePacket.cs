@@ -188,16 +188,16 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		if (Config.CUSTOM_STARTING_LOC)
 		{
 			Location createLoc = new Location(Config.CUSTOM_STARTING_LOC_X, Config.CUSTOM_STARTING_LOC_Y, Config.CUSTOM_STARTING_LOC_Z);
-			newChar.setXYZInvisible(createLoc.getX(), createLoc.getY(), createLoc.getZ());
+			newChar.setXYZInvisible(createLoc.ToLocation3D());
 		}
 		else if (Config.FACTION_SYSTEM_ENABLED)
 		{
-			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.getX(), Config.FACTION_STARTING_LOCATION.getY(), Config.FACTION_STARTING_LOCATION.getZ());
+			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.ToLocation3D());
 		}
 		else
 		{
 			Location createLoc = template.getCreationPoint();
-			newChar.setXYZInvisible(createLoc.getX(), createLoc.getY(), createLoc.getZ());
+			newChar.setXYZInvisible(createLoc.ToLocation3D());
 		}
 		
 		newChar.setTitle("");

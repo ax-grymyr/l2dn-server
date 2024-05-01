@@ -6615,7 +6615,7 @@ public class Player: Playable
 				int x = character.X;
 				int y = character.Y;
 				int z = character.Z;
-				player.setXYZInvisible(x, y, z);
+				player.setXYZInvisible(new Location3D(x, y, z));
 				player.setLastServerPosition(x, y, z);
 
 				// Set Teleport Bookmark Slot
@@ -11272,7 +11272,7 @@ public class Player: Playable
 			// before entering in observer mode
 			if (_observerMode)
 			{
-				setLocationInvisible(_lastLoc);
+				setLocationInvisible(_lastLoc.ToLocation3D());
 			}
 			
 			if (_vehicle != null)

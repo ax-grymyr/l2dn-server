@@ -66,7 +66,7 @@ public abstract class Summon: Playable
 		Location location = GeoEngine.getInstance().getValidLocation(x, y, z, x + Rnd.get(-100, 100),
 			y + Rnd.get(-100, 100), z, getInstanceWorld());
 		
-		setXYZInvisible(location.getX(), location.getY(), location.getZ());
+		setXYZInvisible(location.ToLocation3D());
 	}
 
 	public override void onSpawn()

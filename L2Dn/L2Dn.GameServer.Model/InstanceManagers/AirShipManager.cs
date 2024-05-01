@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -70,7 +71,7 @@ public class AirShipManager
 	{
 		AirShip airShip = new AirShip(_airShipTemplate);
 		airShip.setHeading(heading);
-		airShip.setXYZInvisible(x, y, z);
+		airShip.setXYZInvisible(new Location3D(x, y, z));
 		airShip.spawnMe();
 		airShip.getStat().setMoveSpeed(280);
 		airShip.getStat().setRotationSpeed(2000);
@@ -103,7 +104,7 @@ public class AirShipManager
 		}
 		
 		airShip.setHeading(heading);
-		airShip.setXYZInvisible(x, y, z);
+		airShip.setXYZInvisible(new Location3D(x, y, z));
 		airShip.spawnMe();
 		return airShip;
 	}

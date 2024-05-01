@@ -38,12 +38,12 @@ public class TeleportToNpc: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		ILocational teleLocation = null;
+		Location teleLocation = null;
 		foreach (Npc npc in effector.getSummonedNpcs())
 		{
 			if (npc.getId() == _npcId)
 			{
-				teleLocation = npc;
+				teleLocation = npc.getLocation();
 			}
 		}
 		
@@ -64,12 +64,12 @@ public class TeleportToNpc: AbstractEffect
 		}
 	}
 	
-	private void teleport(Creature effected, ILocational location)
+	private void teleport(Creature effected, Location location)
 	{
 		if (effected.isInsideRadius2D(location, 900))
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(location.getX(), location.getY(), location.getZ()), FlyType.DUMMY));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, location.ToLocation3D(), FlyType.DUMMY));
 			effected.abortAttack();
 			effected.abortCast();
 			effected.setXYZ(location);

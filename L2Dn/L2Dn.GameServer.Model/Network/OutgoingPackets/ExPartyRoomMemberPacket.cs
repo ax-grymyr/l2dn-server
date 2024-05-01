@@ -30,7 +30,7 @@ public readonly struct ExPartyRoomMemberPacket: IOutgoingPacket
             writer.WriteString(member.getName());
             writer.WriteInt32((int)member.getActiveClass());
             writer.WriteInt32(member.getLevel());
-            writer.WriteInt32(MapRegionManager.getInstance().getBBs(member.getLocation()));
+            writer.WriteInt32(MapRegionManager.getInstance().getBBs(member.getLocation().ToLocation2D()));
             writer.WriteInt32((int)_room.getMemberType(member));
             Map<int, DateTime> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(member);
             writer.WriteInt32(instanceTimes.size());

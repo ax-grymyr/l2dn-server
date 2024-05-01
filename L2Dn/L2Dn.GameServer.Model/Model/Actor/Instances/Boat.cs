@@ -48,7 +48,7 @@ public class Boat: Vehicle
         }
         else
         {
-            player.setXYZInvisible(loc.getX(), loc.getY(), loc.getZ()); // disconnects handling
+            player.setXYZInvisible(loc.ToLocation3D()); // disconnects handling
         }
     }
 

@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 using NLog;
@@ -391,9 +392,9 @@ public class MapRegionManager: DataReaderBase
 		return _regions.GetValueOrDefault(regionName);
 	}
 	
-	public int getBBs(ILocational loc)
+	public int getBBs(Location2D location)
 	{
-		return getMapRegion(loc.getX(), loc.getY())?.getBbs() ??
+		return getMapRegion(location.X, location.Y)?.getBbs() ??
 		       _regions.GetValueOrDefault(DefaultRespawn)?.getBbs() ?? 0;
 	}
 	

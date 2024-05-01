@@ -107,7 +107,7 @@ public class ShuttleData: DataReaderBase
 			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()));
 			shuttle.setData(data);
 			shuttle.setHeading(data.getLocation().getHeading());
-			shuttle.setLocationInvisible(data.getLocation());
+			shuttle.setLocationInvisible(data.getLocation().ToLocation3D());
 			shuttle.spawnMe();
 			shuttle.getStat().setMoveSpeed(300);
 			shuttle.getStat().setRotationSpeed(0);

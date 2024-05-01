@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Shuttles;
 using L2Dn.GameServer.Network.OutgoingPackets.Shuttle;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -76,7 +77,7 @@ public class Shuttle: Vehicle
 		}
 		else
 		{
-			player.setXYZInvisible(x, y, z);
+			player.setXYZInvisible(new Location3D(x, y, z));
 		}
 	}
 

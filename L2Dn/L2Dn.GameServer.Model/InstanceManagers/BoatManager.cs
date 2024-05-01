@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -81,7 +82,7 @@ public class BoatManager
 		Boat boat = new Boat(template);
 		_boats.put(boat.getObjectId(), boat);
 		boat.setHeading(heading);
-		boat.setXYZInvisible(x, y, z);
+		boat.setXYZInvisible(new Location3D(x, y, z));
 		boat.spawnMe();
 		return boat;
 	}

@@ -328,12 +328,12 @@ public class Instance : IIdentifiable, INamable
 	 * @param radius radius around target
 	 * @return players within radius
 	 */
-	public List<Player> getPlayersInsideRadius(ILocational @object, int radius)
+	public List<Player> getPlayersInsideRadius(Location location, int radius)
 	{
 		List<Player> result = new();
 		foreach (Player player in _players)
 		{
-			if (player.isInsideRadius3D(@object, radius))
+			if (player.isInsideRadius3D(location, radius))
 			{
 				result.Add(player);
 			}
@@ -1121,7 +1121,7 @@ public class Instance : IIdentifiable, INamable
 			Location loc = getExitLocation(player);
 			if (loc != null)
 			{
-				player.setLocationInvisible(loc);
+				player.setLocationInvisible(loc.ToLocation3D());
 				// If player has death pet, put him out of instance world
 				Summon pet = player.getPet();
 				if (pet != null)

@@ -492,29 +492,29 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	{
 	}
 
-	public void setXYZInvisible(int x, int y, int z)
+	public void setXYZInvisible(Location3D location)
 	{
-		int correctX = x switch
+		int correctX = location.X switch
 		{
 			> World.WORLD_X_MAX => World.WORLD_X_MAX - 5000,
 			< World.WORLD_X_MIN => World.WORLD_X_MIN + 5000,
-			_ => x,
+			_ => location.X,
 		};
 
-		int correctY = y switch
+		int correctY = location.Y switch
 		{
 			> World.WORLD_Y_MAX => World.WORLD_Y_MAX - 5000,
 			< World.WORLD_Y_MIN => World.WORLD_Y_MIN + 5000,
-			_ => y,
+			_ => location.Y,
 		};
 
-		setXYZ(correctX, correctY, z);
+		setXYZ(correctX, correctY, location.Z);
 		setSpawned(false);
 	}
 
-	public void setLocationInvisible(ILocational loc)
+	public void setLocationInvisible(Location3D location)
 	{
-		setXYZInvisible(loc.getX(), loc.getY(), loc.getZ());
+		setXYZInvisible(location);
 	}
 
 	public WorldRegion? getWorldRegion()

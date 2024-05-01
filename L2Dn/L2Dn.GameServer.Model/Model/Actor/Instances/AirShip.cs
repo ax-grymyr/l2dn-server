@@ -118,7 +118,7 @@ public class AirShip : Vehicle
 		}
 		else
 		{
-			player.setXYZInvisible(loc.getX(), loc.getY(), loc.getZ());
+			player.setXYZInvisible(loc.ToLocation3D());
 		}
 	}
 	

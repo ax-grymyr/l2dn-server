@@ -31,7 +31,7 @@ public class Decoy : Creature
 		setInstanceType(InstanceType.Decoy);
 		
 		_owner = owner;
-		setXYZInvisible(owner.getX(), owner.getY(), owner.getZ());
+		setXYZInvisible(owner.getLocation().ToLocation3D());
 		setInvul(false);
 		
 		_decoyLifeTask = ThreadPool.schedule(unSummon, totalLifeTime);
