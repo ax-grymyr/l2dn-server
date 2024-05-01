@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -79,7 +80,7 @@ public class CallPc: AbstractEffect
 				effected.abortCast();
 				effected.abortAttack();
 				effected.stopMove(null);
-				effected.sendPacket(new FlyToLocationPacket(effected, effector, FlyType.DUMMY, 0, 0, 0));
+				effected.sendPacket(new FlyToLocationPacket(effected, new Location3D(effector.getX(), effector.getY(), effector.getZ()), FlyType.DUMMY));
 				effected.setLocation(effector.getLocation());
 			}
 			else

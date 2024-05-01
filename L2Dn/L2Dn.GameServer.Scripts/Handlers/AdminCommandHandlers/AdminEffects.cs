@@ -13,6 +13,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -161,7 +162,7 @@ public class AdminEffects: IAdminCommandHandler
 				int intensity = int.Parse(val1);
 				String val2 = st.nextToken();
 				int duration = int.Parse(val2);
-				activeChar.broadcastPacket(new EarthquakePacket(activeChar.getX(), activeChar.getY(), activeChar.getZ(), intensity, duration));
+				activeChar.broadcastPacket(new EarthquakePacket(new Location3D(activeChar.getX(), activeChar.getY(), activeChar.getZ()), intensity, duration));
 			}
 			catch (Exception e)
 			{

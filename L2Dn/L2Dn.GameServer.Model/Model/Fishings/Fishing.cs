@@ -18,6 +18,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Fishing;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
@@ -227,9 +228,10 @@ public class Fishing
 			_player.getFishing().reelInWithReward();
 			_startFishingTask = ThreadPool.schedule(() => _player.getFishing().castLine(), fishingWaitTime);
 		}, fishingTime);
+
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStartPacket(_player, -1, _baitLocation));
-		_player.sendPacket(new ExUserInfoFishingPacket(_player, true, _baitLocation));
+		_player.sendPacket(new ExUserInfoFishingPacket(_player.getObjectId(), true, new Location3D(_baitLocation.getX(), _baitLocation.getY(), _baitLocation.getZ())));
 		_player.sendPacket(new PlaySoundPacket(1, "sf_p_01", 0, 0, 0, 0, 0));
 		_player.sendPacket(SystemMessageId.YOU_CAST_YOUR_LINE_AND_START_TO_FISH);
 	}
@@ -317,7 +319,7 @@ public class Fishing
 		finally
 		{
 			_player.broadcastPacket(new ExFishingEndPacket(_player, reason));
-			_player.sendPacket(new ExUserInfoFishingPacket(_player, false));
+			_player.sendPacket(new ExUserInfoFishingPacket(_player.getObjectId(), false));
 		}
 	}
 	

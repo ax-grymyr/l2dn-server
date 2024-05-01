@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -105,7 +106,7 @@ public class KnockBack: AbstractEffect
 			Location loc = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceWorld());
 			
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			effected.broadcastPacket(new FlyToLocationPacket(effected, loc, _type, _speed, _delay, _animationSpeed));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(loc.X, loc.Y, loc.Z), _type, _speed, _delay, _animationSpeed));
 			if (_knockDown)
 			{
 				effected.setHeading(Util.calculateHeadingFrom(effected, effector));

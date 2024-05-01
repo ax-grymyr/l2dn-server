@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -10,43 +10,31 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class NpcRoutesHolder
 {
-	private readonly Map<String, String> _correspondences;
-	
-	public NpcRoutesHolder()
-	{
-		_correspondences = new();
-	}
-	
+	private readonly Map<Location3D, string> _correspondences = new();
+
 	/**
 	 * Add correspondence between specific route and specific spawn point
 	 * @param routeName name of route
 	 * @param loc Location of spawn point
 	 */
-	public void addRoute(String routeName, Location loc)
+	public void addRoute(string routeName, Location3D loc)
 	{
-		_correspondences.put(getUniqueKey(loc), routeName);
+		_correspondences[loc] = routeName;
 	}
-	
+
 	/**
 	 * @param npc
 	 * @return route name for given NPC.
 	 */
-	public String getRouteName(Npc npc)
+	public string getRouteName(Npc npc)
 	{
 		if (npc.getSpawn() != null)
 		{
-			String key = getUniqueKey(npc.getSpawn().Location);
-			return _correspondences.containsKey(key) ? _correspondences.get(key) : "";
+			Location location = npc.getSpawn().Location;
+			Location3D location3D = new(location.X, location.Y, location.Z);
+			return _correspondences.GetValueOrDefault(location3D) ?? string.Empty;
 		}
-		return "";
-	}
-	
-	/**
-	 * @param loc
-	 * @return unique text string for given Location.
-	 */
-	private String getUniqueKey(ILocational loc)
-	{
-		return (loc.getX() + "-" + loc.getY() + "-" + loc.getZ());
+
+		return string.Empty;
 	}
 }

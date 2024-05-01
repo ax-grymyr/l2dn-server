@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -189,8 +190,8 @@ public class CursedWeapon : INamable
 			_item.setDropTime(null); // Prevent item from being removed by ItemsAutoDestroy
 			
 			// RedSky and Earthquake
-			ExRedSkyPacket rs = new ExRedSkyPacket(10);
-			EarthquakePacket eq = new EarthquakePacket(player.getX(), player.getY(), player.getZ(), 14, 3);
+			ExRedSkyPacket rs = new(10);
+			EarthquakePacket eq = new(new Location3D(player.getX(), player.getY(), player.getZ()), 14, 3);
 			Broadcast.toAllOnlinePlayers(rs);
 			Broadcast.toAllOnlinePlayers(eq);
 		}

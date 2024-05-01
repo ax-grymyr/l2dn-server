@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -68,7 +69,7 @@ public class TeleportToNpc: AbstractEffect
 		if (effected.isInsideRadius2D(location, 900))
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			effected.broadcastPacket(new FlyToLocationPacket(effected, location, FlyType.DUMMY));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(location.getX(), location.getY(), location.getZ()), FlyType.DUMMY));
 			effected.abortAttack();
 			effected.abortCast();
 			effected.setXYZ(location);

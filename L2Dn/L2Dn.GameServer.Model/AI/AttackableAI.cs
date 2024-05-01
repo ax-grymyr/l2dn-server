@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -316,7 +317,7 @@ public class AttackableAI: CreatureAI
 					{
 						if (npc.calculateDistance2D(droppedItem) > 50)
 						{
-							moveTo(droppedItem);
+							moveTo(new Location3D(droppedItem.getX(), droppedItem.getY(), droppedItem.getZ()));
 						}
 						else
 						{
@@ -662,7 +663,7 @@ public class AttackableAI: CreatureAI
 		// Actor should be able to see target.
 		if (!GeoEngine.getInstance().canSeeTarget(_actor, target))
 		{
-			moveTo(target);
+			moveTo(new Location3D(target.getX(), target.getY(), target.getZ()));
 			return;
 		}
 
@@ -790,8 +791,11 @@ public class AttackableAI: CreatureAI
 					{
 						int newZ = npc.getZ() + 30;
 						
-						// Mobius: Verify destination. Prevents wall collision issues and fixes monsters not avoiding obstacles.
-						moveTo(GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), newX, newY, newZ, npc.getInstanceWorld()));
+						// Verify destination. Prevents wall collision issues and fixes monsters not avoiding obstacles.
+						Location loc = GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(),
+							newX, newY, newZ, npc.getInstanceWorld());
+
+						moveTo(new Location3D(loc.X, loc.Y, loc.Z));
 					}
 					return;
 				}

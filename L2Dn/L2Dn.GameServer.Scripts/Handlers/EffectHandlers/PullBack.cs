@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -55,7 +56,7 @@ public class PullBack: AbstractEffect
 		// In retail, you get debuff, but you are not even moved if there is obstacle. You are still disabled from using skills and moving though.
 		if (GeoEngine.getInstance().canMoveToTarget(effected.getX(), effected.getY(), effected.getZ(), effector.getX(), effector.getY(), effector.getZ(), effected.getInstanceWorld()))
 		{
-			effected.broadcastPacket(new FlyToLocationPacket(effected, effector, _type, _speed, _delay, _animationSpeed));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(effector.getX(), effector.getY(), effector.getZ()), _type, _speed, _delay, _animationSpeed));
 			effected.setXYZ(effector.getX(), effector.getY(), GeoEngine.getInstance().getHeight(effector.getX(), effector.getY(), effector.getZ()) + 10);
 			effected.broadcastPacket(new ValidateLocationPacket(effected), false);
 			effected.revalidateZone(true);

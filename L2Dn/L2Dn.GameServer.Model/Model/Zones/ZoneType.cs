@@ -4,10 +4,10 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Zones;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
@@ -373,9 +373,9 @@ public abstract class ZoneType: IEventContainerProvider
 	 * @param loc
 	 * @return
 	 */
-	public bool isInsideZone(ILocational loc)
+	public bool isInsideZone(Location3D location)
 	{
-		return isInsideZone(loc.getX(), loc.getY(), loc.getZ());
+		return isInsideZone(location.X, location.Y, location.Z);
 	}
 	
 	/**

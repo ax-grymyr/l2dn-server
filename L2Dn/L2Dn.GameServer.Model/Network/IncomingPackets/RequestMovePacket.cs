@@ -106,7 +106,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 			{
 				player.setXYZ(_target.X, _target.Y, _target.Z);
 				Broadcast.toSelfAndKnownPlayers(player, new MagicSkillUsePacket(player, 30012, 10, TimeSpan.FromMilliseconds(500), TimeSpan.Zero));
-				Broadcast.toSelfAndKnownPlayers(player, new FlyToLocationPacket(player, _target.X, _target.Y, _target.Z, FlyType.CHARGE));
+				Broadcast.toSelfAndKnownPlayers(player, new FlyToLocationPacket(player, new Location3D(_target.X, _target.Y, _target.Z), FlyType.CHARGE));
 				Broadcast.toSelfAndKnownPlayers(player, new MagicSkillLaunchedPacket(player, 30012, 10));
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				break;

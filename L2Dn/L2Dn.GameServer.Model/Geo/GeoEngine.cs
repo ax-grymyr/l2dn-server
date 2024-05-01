@@ -191,7 +191,7 @@ public class GeoEngine
 	 * Gets the spawn height.
 	 * @param x the x coordinate
 	 * @param y the y coordinate
-	 * @param z the the z coordinate
+	 * @param z the z coordinate
 	 * @return the spawn height
 	 */
 	public int getSpawnHeight(int x, int y, int z)
@@ -465,7 +465,8 @@ public class GeoEngine
 			return new Location(x, y, getHeight(x, y, nearestFromZ));
 		}
 		
-		LinePointIterator pointIter = new LinePointIterator(geoX, geoY, tGeoX, tGeoY);
+		LinePointIterator pointIter = new(geoX, geoY, tGeoX, tGeoY);
+
 		// first point is guaranteed to be available
 		pointIter.next();
 		int prevX = pointIter.x();
@@ -521,7 +522,8 @@ public class GeoEngine
 			return false;
 		}
 		
-		LinePointIterator pointIter = new LinePointIterator(geoX, geoY, tGeoX, tGeoY);
+		LinePointIterator pointIter = new(geoX, geoY, tGeoX, tGeoY);
+
 		// First point is guaranteed to be available.
 		pointIter.next();
 		int prevX = pointIter.x();

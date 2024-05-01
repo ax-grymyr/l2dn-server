@@ -19,6 +19,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
@@ -1255,7 +1256,7 @@ public class SkillCaster: Runnable
 		Location destination = creature.isFlying() ? new Location(x, y, z) : GeoEngine.getInstance().getValidLocation(creature.getX(), creature.getY(), creature.getZ(), x, y, z, creature.getInstanceWorld());
 		
 		creature.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		creature.broadcastPacket(new FlyToLocationPacket(creature, destination, flyType, 0, 0, 333));
+		creature.broadcastPacket(new FlyToLocationPacket(creature, new Location3D(destination.X, destination.Y, destination.Z), flyType, 0, 0, 333));
 		creature.setXYZ(destination);
 		creature.revalidateZone(true);
 	}

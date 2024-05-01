@@ -34,7 +34,7 @@ public class RankingPowerManager
 	
 	public void activatePower(Player player)
 	{
-		ILocational location = player.getLocation();
+		Location location = player.getLocation();
 		List<int> array = new();
 		array.Add(location.getX());
 		array.Add(location.getY());
@@ -43,7 +43,7 @@ public class RankingPowerManager
 		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.UtcNow + COOLDOWN);
 		createClone(player);
 		cloneTask();
-		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
+		SystemMessagePacket msg = new(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
 		msg.Params.addString(player.getName());
 		msg.Params.addZoneName(location.getX(), location.getY(), location.getZ());
 		Broadcast.toAllOnlinePlayers(msg);

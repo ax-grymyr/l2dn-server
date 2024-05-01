@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -36,17 +37,17 @@ public class BlinkSwap: AbstractEffect
 	{
 		Location effectedLoc = new Location(effected);
 		Location effectorLoc = new Location(effector);
-		
+
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effector.broadcastPacket(new FlyToLocationPacket(effector, effectedLoc, FlyType.DUMMY));
+		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(effectedLoc.X, effectedLoc.Y, effectedLoc.Z), FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
 		effector.setXYZ(effectedLoc);
 		effector.broadcastPacket(new ValidateLocationPacket(effector));
 		effector.revalidateZone(true);
-		
+
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocationPacket(effected, effectorLoc, FlyType.DUMMY));
+		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(effectorLoc.X, effectorLoc.Y, effectorLoc.Z), FlyType.DUMMY));
 		effected.abortAttack();
 		effected.abortCast();
 		effected.setXYZ(effectorLoc);

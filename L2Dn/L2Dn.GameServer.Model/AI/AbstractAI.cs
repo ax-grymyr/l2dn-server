@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
 
@@ -471,9 +472,9 @@ public abstract class AbstractAI : Ctrl
 		}
 	}
 	
-	public void moveTo(ILocational loc)
+	public void moveTo(Location3D loc)
 	{
-		moveTo(loc.getX(), loc.getY(), loc.getZ());
+		moveTo(loc.X, loc.Y, loc.Z);
 	}
 	
 	/**

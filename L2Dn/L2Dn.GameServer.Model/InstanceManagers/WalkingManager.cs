@@ -130,17 +130,12 @@ public class WalkingManager: DataReaderBase
 					int z = r.GetAttributeValueAsInt32("spawnZ");
 					if (NpcData.getInstance().getTemplate(npcId) != null)
 					{
-						NpcRoutesHolder holder = _routesToAttach.containsKey(npcId)
-							? _routesToAttach.get(npcId)
-							: new NpcRoutesHolder();
-						
-						holder.addRoute(routeName, new Location(x, y, z));
-						_routesToAttach.put(npcId, holder);
+						NpcRoutesHolder holder = _routesToAttach.GetValueOrDefault(npcId) ?? new NpcRoutesHolder();
+						holder.addRoute(routeName, new Location3D(x, y, z));
+						_routesToAttach[npcId] = holder;
 
 						if (!_targetedNpcIds.Contains(npcId))
-						{
-							_targetedNpcIds.add(npcId);
-						}
+							_targetedNpcIds.Add(npcId);
 					}
 					else
 					{

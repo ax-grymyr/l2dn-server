@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -70,7 +71,7 @@ public class Blink: AbstractEffect
 		Location destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceWorld());
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));
+		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(destination.X, destination.Y, destination.Z), _flyType, _flySpeed, _flyDelay, _animationSpeed));
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);

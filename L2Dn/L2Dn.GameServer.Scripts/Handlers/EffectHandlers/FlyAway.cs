@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -36,10 +37,11 @@ public class FlyAway: AbstractEffect
 		int x = (int) (effector.getX() - (nRadius * (dx / distance)));
 		int y = (int) (effector.getY() - (nRadius * (dy / distance)));
 		int z = effector.getZ();
+
+		Location destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(),
+			effected.getZ(), x, y, z, effected.getInstanceWorld());
 		
-		Location destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceWorld());
-		
-		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, FlyType.THROW_UP));
+		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(destination.X, destination.Y, destination.Z), FlyType.THROW_UP));
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);

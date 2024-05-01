@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -505,11 +506,9 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				Location firstLoc = list.get(0);
 				int minZ = holder.getMinZ() != 0 ? holder.getMinZ() : firstLoc.getZ() - 100;
 				int maxZ = holder.getMaxZ() != 0 ? holder.getMaxZ() : firstLoc.getZ() + 100;
-				
-				ExShowTerritoryPacket exst = new ExShowTerritoryPacket(minZ, maxZ);
-				foreach (Location location in list)
-					exst.addVertice(location);
 
+				List<Location2D> vertices = list.Select(x => new Location2D(x.X, x.Y)).ToList();
+				ExShowTerritoryPacket exst = new(minZ, maxZ, vertices);
 				player.sendPacket(exst);
 				BuilderUtil.sendSysMessage(player, "In order to remove the debug you must restart your game client!");
 			}

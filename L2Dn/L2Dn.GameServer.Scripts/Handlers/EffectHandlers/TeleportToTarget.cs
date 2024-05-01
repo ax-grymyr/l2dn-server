@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -56,7 +57,7 @@ public class TeleportToTarget: AbstractEffect
 		Location loc = GeoEngine.getInstance().getValidLocation(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceWorld());
 		
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effector.broadcastPacket(new FlyToLocationPacket(effector, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
+		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(loc.getX(), loc.getY(), loc.getZ()), FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
 		effector.setXYZ(loc);
