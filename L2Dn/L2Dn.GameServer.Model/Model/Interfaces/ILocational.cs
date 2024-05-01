@@ -60,7 +60,7 @@ public interface ILocational
       return false;
      }
 		
-     return Position.FRONT == PositionUtil.getPosition(this, target);
+     return Position.Front == PositionUtil.getPosition(this, target);
     }
 	
     /**
@@ -74,7 +74,7 @@ public interface ILocational
       return false;
      }
 		
-     return Position.SIDE == PositionUtil.getPosition(this, target);
+     return Position.Side == PositionUtil.getPosition(this, target);
     }
 	
     /**
@@ -88,7 +88,7 @@ public interface ILocational
          return false;
       }
 		
-     return Position.BACK == PositionUtil.getPosition(this, target);
+     return Position.Back == PositionUtil.getPosition(this, target);
     }
 }
 

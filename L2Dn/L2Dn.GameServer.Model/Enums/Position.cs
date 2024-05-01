@@ -1,13 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Enums;
-
-public enum Position
-{
-    FRONT,
-    SIDE,
-    BACK
-}
 
 public static class PositionUtil
 {
@@ -28,14 +22,14 @@ public static class PositionUtil
         int heading = Math.Abs(to.getHeading() - from.calculateHeadingTo(to));
         if (((heading >= 0x2000) && (heading <= 0x6000)) || ((uint)(heading - 0xA000) <= 0x4000))
         {
-            return Position.SIDE;
+            return Position.Side;
         }
         
         if ((uint)(heading - 0x2000) <= 0xC000)
         {
-            return Position.FRONT;
+            return Position.Front;
         }
 
-        return Position.BACK;
+        return Position.Back;
     }
 }

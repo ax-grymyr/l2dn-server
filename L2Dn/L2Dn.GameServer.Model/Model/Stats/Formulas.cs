@@ -82,7 +82,7 @@ public class Formulas
 		double cdMult = criticalMod * ((criticalPositionMod - 1) / 2 + 1) * ((criticalVulnMod - 1) / 2 + 1);
 		double cdPatk = (criticalAddMod + criticalAddVuln) * criticalSkillMod;
 		Position position = PositionUtil.getPosition(attacker, target);
-		double isPosition = position == Position.BACK ? 0.2 : position == Position.SIDE ? 0.05 : 0;
+		double isPosition = position == Position.Back ? 0.2 : position == Position.Side ? 0.05 : 0;
 
 		// Mobius: Manage level difference.
 		// if (attacker.getLevel() < target.getLevel())
@@ -306,17 +306,17 @@ public class Formulas
 		// Position position = activeChar.getStat().has(Stats.ATTACK_BEHIND) ? Position.BACK : Position.getPosition(activeChar, target);
 		switch (PositionUtil.getPosition(creature, target))
 		{
-			case Position.SIDE: // 10% Critical Chance bonus when attacking from side.
+			case Position.Side: // 10% Critical Chance bonus when attacking from side.
 			{
-				return 1.1 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.SIDE);
+				return 1.1 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.Side);
 			}
-			case Position.BACK: // 30% Critical Chance bonus when attacking from back.
+			case Position.Back: // 30% Critical Chance bonus when attacking from back.
 			{
-				return 1.3 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.BACK);
+				return 1.3 * creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.Back);
 			}
 			default: // No Critical Chance bonus when attacking from front.
 			{
-				return creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.FRONT);
+				return creature.getStat().getPositionTypeValue(Stat.CRITICAL_RATE, Position.Front);
 			}
 		}
 	}

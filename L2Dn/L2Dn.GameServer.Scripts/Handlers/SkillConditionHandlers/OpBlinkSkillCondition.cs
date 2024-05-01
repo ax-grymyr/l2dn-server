@@ -21,12 +21,12 @@ public class OpBlinkSkillCondition: ISkillCondition
 		Position position = @params.getEnum<Position>("direction");
 		switch (position)
 		{
-			case Position.BACK:
+			case Position.Back:
 			{
 				_angle = 0;
 				break;
 			}
-			case Position.FRONT:
+			case Position.Front:
 			{
 				_angle = 180;
 				break;
