@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -30,7 +31,7 @@ public class Backstab: AbstractEffect
 	
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return !((ILocational)effector).isInFrontOf(effected) &&
+		return !effector.getLocation().IsInFrontOf(effected.getLocation()) &&
 		       !Formulas.calcSkillEvasion(effector, effected, skill) &&
 		       Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
 	}

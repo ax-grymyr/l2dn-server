@@ -64,7 +64,7 @@ public class Formulas
 		
 		// Critical
 		double criticalMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1);
-		double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, PositionUtil.getPosition(attacker, target));
+		double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, attacker.getLocation().PositionTo(target.getLocation()));
 		double criticalVulnMod = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE, 1);
 		double criticalAddMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE_ADD, 0);
 		double criticalAddVuln = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
@@ -81,7 +81,7 @@ public class Formulas
 		double ssmod = ss ? 2 * attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1) : 1; // 2.04 for dual weapon?
 		double cdMult = criticalMod * ((criticalPositionMod - 1) / 2 + 1) * ((criticalVulnMod - 1) / 2 + 1);
 		double cdPatk = (criticalAddMod + criticalAddVuln) * criticalSkillMod;
-		Position position = PositionUtil.getPosition(attacker, target);
+		Position position = attacker.getLocation().PositionTo(target.getLocation());
 		double isPosition = position == Position.Back ? 0.2 : position == Position.Side ? 0.05 : 0;
 
 		// Mobius: Manage level difference.
@@ -304,7 +304,7 @@ public class Formulas
 	public static double calcCriticalPositionBonus(Creature creature, Creature target)
 	{
 		// Position position = activeChar.getStat().has(Stats.ATTACK_BEHIND) ? Position.BACK : Position.getPosition(activeChar, target);
-		switch (PositionUtil.getPosition(creature, target))
+		switch (creature.getLocation().PositionTo(target.getLocation()))
 		{
 			case Position.Side: // 10% Critical Chance bonus when attacking from side.
 			{
@@ -367,7 +367,7 @@ public class Formulas
 		else
 		{
 			// Autoattack critical damage.
-			criticalDamage = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, PositionUtil.getPosition(attacker, target));
+			criticalDamage = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, attacker.getLocation().PositionTo(target.getLocation()));
 			defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE, 1);
 			if (attacker.isPlayable())
 			{
@@ -1434,7 +1434,7 @@ public class Formulas
 		double critMod = crit ? isRanged ? 0.5 : 1 : 0;
 		double ssBonus = ss ? (ssBlessed ? 2.15 : 2) * shotsBonus : 1;
 		double randomDamage = attacker.getRandomDamageMultiplier();
-		double proxBonus = (((ILocational)attacker).isInFrontOf(target) ? 0 : ((ILocational)attacker).isBehind(target) ? 0.2 : 0.05) * attacker.getPAtk();
+		double proxBonus = (attacker.getLocation().IsInFrontOf(target.getLocation()) ? 0 : attacker.getLocation().IsBehindOf(target.getLocation()) ? 0.2 : 0.05) * attacker.getPAtk();
 		double attack = attacker.getPAtk() * randomDamage + proxBonus;
 
 		// ....................______________Critical Section___________________...._______Non-Critical Section______

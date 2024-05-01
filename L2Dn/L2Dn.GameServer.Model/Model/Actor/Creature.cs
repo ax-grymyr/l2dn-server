@@ -4828,7 +4828,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (!reflect && !isDOT)
 		{
 			// RearDamage effect bonus.
-			if (((ILocational)this).isBehind(target))
+			if (getLocation().IsBehindOf(target.getLocation()))
 			{
 				damage *= _stat.getMul(Stat.REAR_DAMAGE_RATE, 1);
 			}

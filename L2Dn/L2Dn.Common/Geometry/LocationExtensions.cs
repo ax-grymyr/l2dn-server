@@ -97,4 +97,39 @@ public static class LocationExtensions
         Location2D randomLocation = RandomPosition2D(location, minRange, maxRange);
         return new Location3D(randomLocation.X, randomLocation.Y, location.Z);
     }
+
+    /// <summary>
+    /// Position calculation based on the retail-like formulas.
+    /// </summary>
+    /// <param name="attackerLocation"></param>
+    /// <param name="targetLocation"></param>
+    /// <typeparam name="TFrom"></typeparam>
+    /// <typeparam name="TTo"></typeparam>
+    /// <returns></returns>
+    public static Position PositionTo<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
+        where TFrom: ILocation3D
+        where TTo: ILocationHeading
+    {
+        // heading: (unsigned short) abs(heading - (unsigned short)(int)floor(atan2(toY - fromY, toX - fromX) * 65535.0 / 6.283185307179586))
+        // side: if (heading >= 0x2000 && heading <= 0x6000 || (unsigned int)(heading - 0xA000) <= 0x4000)
+        // front: else if ((unsigned int)(heading - 0x2000) <= 0xC000)
+        // back: otherwise.
+        int heading = Math.Abs(targetLocation.Heading - attackerLocation.HeadingTo(targetLocation));
+        if (heading is >= 0x2000 and <= 0x6000 || (uint)(heading - 0xA000) <= 0x4000)
+            return Position.Side;
+
+        return (uint)(heading - 0x2000) <= 0xC000 ? Position.Front : Position.Back;
+    }
+
+    public static bool IsInFrontOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
+        where TFrom: ILocation3D
+        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Front;
+
+    public static bool IsOnSideOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
+        where TFrom: ILocation3D
+        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Side;
+
+    public static bool IsBehindOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
+        where TFrom: ILocation3D
+        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Back;
 }

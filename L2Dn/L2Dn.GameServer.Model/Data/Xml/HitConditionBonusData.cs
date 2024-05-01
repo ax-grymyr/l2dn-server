@@ -78,7 +78,7 @@ public class HitConditionBonusData: DataReaderBase
 		}
 		
 		// Get side bonus
-		switch (PositionUtil.getPosition(attacker, target))
+		switch (attacker.getLocation().PositionTo(target.getLocation()))
 		{
 			case Position.Side:
 			{

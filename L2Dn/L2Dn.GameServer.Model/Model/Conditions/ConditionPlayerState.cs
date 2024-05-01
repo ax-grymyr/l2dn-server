@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -61,11 +62,11 @@ public class ConditionPlayerState : Condition
 			}
 			case PlayerState.BEHIND:
 			{
-				return (((ILocational)effector).isBehind(effected) == _required);
+				return effector.getLocation().IsBehindOf(effected.getLocation()) == _required;
 			}
 			case PlayerState.FRONT:
 			{
-				return (((ILocational)effector).isInFrontOf(effected) == _required);
+				return effector.getLocation().IsInFrontOf(effected.getLocation()) == _required;
 			}
 			case PlayerState.CHAOTIC:
 			{
