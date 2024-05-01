@@ -533,7 +533,7 @@ public class AttackableAI: CreatureAI
 			int x1 = npc.getSpawn().Location.getX();
 			int y1 = npc.getSpawn().Location.getY();
 			int z1 = npc.getSpawn().Location.getZ();
-			if (npc.isInsideRadius2D(x1, y1, 0, Config.MAX_DRIFT_RANGE))
+			if (npc.isInsideRadius2D(x1, y1, Config.MAX_DRIFT_RANGE))
 			{
 				int deltaX = Rnd.get(Config.MAX_DRIFT_RANGE * 2); // x
 				int deltaY = Rnd.get(deltaX, Config.MAX_DRIFT_RANGE * 2); // distance
@@ -787,7 +787,7 @@ public class AttackableAI: CreatureAI
 						newY = target.getY() - newY;
 					}
 					
-					if (!npc.isInsideRadius2D(newX, newY, 0, collision))
+					if (!npc.isInsideRadius2D(newX, newY, collision))
 					{
 						int newZ = npc.getZ() + 30;
 						

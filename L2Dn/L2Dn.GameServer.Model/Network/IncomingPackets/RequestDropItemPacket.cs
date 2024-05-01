@@ -141,7 +141,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (!player.isInsideRadius2D(_x, _y, 0, 150) || Math.Abs(_z - player.getZ()) > 50)
+	    if (!player.isInsideRadius2D(_x, _y, 150) || Math.Abs(_z - player.getZ()) > 50)
 	    {
 		    connection.Send(SystemMessageId.YOU_CANNOT_DISCARD_SOMETHING_THAT_FAR_AWAY_FROM_YOU);
 		    return ValueTask.CompletedTask;

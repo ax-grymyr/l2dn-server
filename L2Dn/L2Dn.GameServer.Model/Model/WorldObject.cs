@@ -743,7 +743,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param z the Z coordinate
 	 * @return distance between object and given x, y, z.
 	 */
-	public double calculateDistanceSq2D(int x, int y, int z)
+	public double calculateDistanceSq2D(int x, int y)
 	{
 		return Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2);
 	}
@@ -755,7 +755,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 */
 	public double calculateDistanceSq2D(ILocational loc)
 	{
-		return calculateDistanceSq2D(loc.getX(), loc.getY(), loc.getZ());
+		return calculateDistanceSq2D(loc.getX(), loc.getY());
 	}
 
 	/**
