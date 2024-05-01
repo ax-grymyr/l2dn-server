@@ -42,7 +42,7 @@ public class RegenHPFinalizer: StatFunction
 			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) &&
 			    (player.getClan().getHideoutId() > 0))
 			{
-				ClanHallZone zone = ZoneManager.getInstance().getZone<ClanHallZone>(player);
+				ClanHallZone? zone = ZoneManager.getInstance().getZone<ClanHallZone>(player.getLocation().ToLocation3D());
 				int posChIndex = zone == null ? -1 : zone.getResidenceId();
 				int clanHallIndex = player.getClan().getHideoutId();
 				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
@@ -63,7 +63,7 @@ public class RegenHPFinalizer: StatFunction
 			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) &&
 			    (player.getClan().getCastleId() > 0))
 			{
-				CastleZone zone = ZoneManager.getInstance().getZone<CastleZone>(player);
+				CastleZone? zone = ZoneManager.getInstance().getZone<CastleZone>(player.getLocation().ToLocation3D());
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
 				int? castleIndex = player.getClan().getCastleId();
 				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
@@ -82,7 +82,7 @@ public class RegenHPFinalizer: StatFunction
 
 			if (player.isInsideZone(ZoneId.FORT) && (player.getClan() != null) && (player.getClan().getFortId() > 0))
 			{
-				FortZone zone = ZoneManager.getInstance().getZone<FortZone>(player);
+				FortZone? zone = ZoneManager.getInstance().getZone<FortZone>(player.getLocation().ToLocation3D());
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
 				int? fortIndex = player.getClan().getFortId();
 				if ((fortIndex > 0) && (fortIndex == posFortIndex))
@@ -102,7 +102,7 @@ public class RegenHPFinalizer: StatFunction
 			// Mother Tree effect is calculated at last
 			if (player.isInsideZone(ZoneId.MOTHER_TREE))
 			{
-				MotherTreeZone zone = ZoneManager.getInstance().getZone<MotherTreeZone>(player);
+				MotherTreeZone? zone = ZoneManager.getInstance().getZone<MotherTreeZone>(player.getLocation().ToLocation3D());
 				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
 				baseValue += hpBonus;
 			}

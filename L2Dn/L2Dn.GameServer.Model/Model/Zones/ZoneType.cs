@@ -30,8 +30,8 @@ public abstract class ZoneType: IEventContainerProvider
 	private readonly EventContainer _eventContainer;
 	
 	/** Parameters to affect specific characters */
-	private bool _checkAffected = false;
-	private String _name = null;
+	private bool _checkAffected;
+	private string _name;
 	private int _minLevel;
 	private int _maxLevel;
 	private Race[] _race;
@@ -72,7 +72,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 * @param name
 	 * @param value
 	 */
-	public virtual void setParameter(String name, String value)
+	public virtual void setParameter(string name, string value)
 	{
 		_checkAffected = true;
 		
@@ -307,7 +307,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 * Set the zone name.
 	 * @param name
 	 */
-	public void setName(String name)
+	public void setName(string name)
 	{
 		_name = name;
 	}
@@ -316,7 +316,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 * Returns zone name
 	 * @return
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -363,9 +363,9 @@ public abstract class ZoneType: IEventContainerProvider
 	 * @param y
 	 * @return
 	 */
-	public bool isInsideZone(int x, int y)
+	public bool isInsideZone(Location2D location)
 	{
-		return isInsideZone(x, y, _zone.getHighZ());
+		return isInsideZone(new Location3D(location.X, location.Y, _zone.getHighZ()));
 	}
 	
 	/**
@@ -559,7 +559,7 @@ public abstract class ZoneType: IEventContainerProvider
 		return _instanceTemplateId;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return GetType().Name + "[" + _id + "]";
 	}

@@ -41,8 +41,8 @@ public class Ground: ITargetTypeHandler
 					}
 					return null;
 				}
-				
-				ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(creature);
+
+				ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.getLocation().ToLocation2D());
 				if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()))
 				{
 					if (sendMessage)
@@ -51,7 +51,7 @@ public class Ground: ITargetTypeHandler
 					}
 					return null;
 				}
-				
+
 				return creature; // Return yourself to know that your ground location is legit.
 			}
 		}

@@ -482,7 +482,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			decayMe();
-			ZoneRegion region = ZoneManager.getInstance().getRegion(this);
+			ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 			if (region != null)
 			{
 				region.removeFromZones(this);
@@ -1812,7 +1812,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		}
 		
-		ZoneManager.getInstance().getRegion(this).onDeath(this);
+		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.onDeath(this);
 		
 		getAttackByList().clear();
 		
@@ -1925,7 +1925,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			
 			// Start broadcast status
 			broadcastPacket(new RevivePacket(this));
-			ZoneManager.getInstance().getRegion(this).onRevive(this);
+			ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.onRevive(this);
 		}
 		else
 		{
@@ -3374,7 +3374,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		_lastZoneValidateLocation.setXYZ(this);
 		
-		ZoneRegion region = ZoneManager.getInstance().getRegion(this);
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 		if (region != null)
 		{
 			region.revalidateZones(this);
@@ -5660,8 +5660,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 		
-		ZoneRegion oldZoneRegion = ZoneManager.getInstance().getRegion(this);
-		ZoneRegion newZoneRegion = ZoneManager.getInstance().getRegion(newX, newY);
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+		ZoneRegion? newZoneRegion = ZoneManager.getInstance().getRegion(new Location2D(newX, newY));
 		
 		// Mobius: Prevent moving to nonexistent regions.
 		if (newZoneRegion == null)
@@ -5671,7 +5671,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		
 		if (oldZoneRegion != newZoneRegion)
 		{
-			oldZoneRegion.removeFromZones(this);
+			oldZoneRegion?.removeFromZones(this);
 			newZoneRegion.revalidateZones(this);
 		}
 		

@@ -130,6 +130,11 @@ public sealed class Location : ILocational, ILocationHeading
 		return new Location3D(_x, _y, _z);
 	}
 
+	public Location2D ToLocation2D()
+	{
+		return new Location2D(_x, _y);
+	}
+
 	public int X => _x;
 	public int Y => _y;
 	public int Z => _z;

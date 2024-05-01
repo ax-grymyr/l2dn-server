@@ -1563,7 +1563,7 @@ public class Player: Playable
 		}
 		_lastZoneValidateLocation.setXYZ(this);
 		
-		ZoneManager.getInstance().getRegion(this).revalidateZones(this);
+		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.revalidateZones(this);
 		
 		if (Config.ALLOW_WATER)
 		{
@@ -6035,7 +6035,7 @@ public class Player: Playable
 	
 	public bool dismount()
 	{
-		if (ZoneManager.getInstance().getZone<WaterZone>(getX(), getY(), getZ() - 300) == null)
+		if (ZoneManager.getInstance().getZone<WaterZone>(new Location3D(getX(), getY(), getZ() - 300)) == null)
 		{
 			if (!isInWater() && (getZ() > 10000))
 			{
@@ -10329,7 +10329,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(this))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().ToLocation3D()))
 			{
 				zone.onPlayerLoginInside(this);
 			}
@@ -10989,7 +10989,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(this))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().ToLocation3D()))
 			{
 				zone.onPlayerLogoutInside(this);
 			}
@@ -11163,7 +11163,7 @@ public class Player: Playable
 		getEffectList().stopAllToggles();
 		
 		// Remove from world regions zones.
-		ZoneRegion region = ZoneManager.getInstance().getRegion(this);
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 		if (region != null)
 		{
 			region.removeFromZones(this);

@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -370,7 +371,7 @@ public class Spawn : IIdentifiable, INamable
 		}
 		
 		// Check if npc is in water.
-		WaterZone water = ZoneManager.getInstance().getZone<WaterZone>(newlocx, newlocy, newlocz);
+		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(new Location3D(newlocx, newlocy, newlocz));
 		
 		// If random spawn system is enabled.
 		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && (_location.getHeading() != -1) && npc.isMonster() && !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && (getInstanceId() == 0) && !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && (water == null) && !Config.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))

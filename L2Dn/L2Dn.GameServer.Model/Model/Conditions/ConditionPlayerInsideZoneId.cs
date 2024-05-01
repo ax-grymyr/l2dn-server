@@ -26,7 +26,7 @@ public class ConditionPlayerInsideZoneId : Condition
 			return false;
 		}
 		
-		foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector))
+		foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector.getLocation().ToLocation3D()))
 		{
 			if (_zones.Contains(zone.getId()))
 			{

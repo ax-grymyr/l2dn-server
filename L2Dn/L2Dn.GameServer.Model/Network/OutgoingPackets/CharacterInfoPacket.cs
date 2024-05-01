@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
@@ -205,19 +206,9 @@ public struct CharacterInfoPacket: IOutgoingPacket
 			: 0)); // 152 - Value for enabled changed to 2?
 
 		writer.WriteByte(_player.isFishing()); // Confirmed
-		ILocational baitLocation = _player.getFishing().getBaitLocation();
-		if (baitLocation != null)
-		{
-			writer.WriteInt32(baitLocation.getX()); // Confirmed
-			writer.WriteInt32(baitLocation.getY()); // Confirmed
-			writer.WriteInt32(baitLocation.getZ()); // Confirmed
-		}
-		else
-		{
-			writer.WriteInt32(0);
-			writer.WriteInt32(0);
-			writer.WriteInt32(0);
-		}
+
+		Location3D baitLocation = _player.getFishing().getBaitLocation() ?? default;
+		writer.WriteLocation3D(baitLocation);
 
 		writer.WriteInt32(_player.getAppearance().getNameColor().Value); // Confirmed
 		writer.WriteInt32(_heading); // Confirmed

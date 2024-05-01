@@ -25,6 +25,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -438,17 +439,17 @@ public abstract class Summon: Playable
 				}
 			}
 			
-			ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
+			ZoneRegion? oldRegion = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 			decayMe();
-			oldRegion.removeFromZones(this);
+			oldRegion?.removeFromZones(this);
 			
 			setTarget(null);
 			if (owner != null)
 			{
 				foreach (int itemId in owner.getAutoSoulShot())
 				{
-					String handler = ((EtcItem) ItemData.getInstance().getTemplate(itemId)).getHandlerName();
-					if ((handler != null) && handler.Contains("Beast"))
+					string? handler = ((EtcItem?)ItemData.getInstance().getTemplate(itemId))?.getHandlerName();
+					if (handler != null && handler.Contains("Beast"))
 					{
 						owner.disableAutoShot(itemId);
 					}

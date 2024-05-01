@@ -313,7 +313,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone zone = ZoneManager.getInstance().getZone<RespawnZone>(player);
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().ToLocation3D());
 			if (zone != null)
 			{
 				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
@@ -340,7 +340,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone zone = ZoneManager.getInstance().getZone<RespawnZone>(creature);
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.getLocation().ToLocation3D());
 			if (zone != null)
 			{
 				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();

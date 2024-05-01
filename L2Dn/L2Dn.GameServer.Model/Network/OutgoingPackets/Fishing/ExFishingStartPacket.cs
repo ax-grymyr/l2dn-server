@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Fishing;
@@ -8,14 +9,14 @@ public readonly struct ExFishingStartPacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly int _fishType;
-    private readonly ILocational _baitLocation;
+    private readonly Location3D _baitLocation;
 	
     /**
      * @param player
      * @param fishType
      * @param baitLocation
      */
-    public ExFishingStartPacket(Player player, int fishType, ILocational baitLocation)
+    public ExFishingStartPacket(Player player, int fishType, Location3D baitLocation)
     {
         _player = player;
         _fishType = fishType;
@@ -28,9 +29,7 @@ public readonly struct ExFishingStartPacket: IOutgoingPacket
         
         writer.WriteInt32(_player.getObjectId());
         writer.WriteByte((byte)_fishType);
-        writer.WriteInt32(_baitLocation.getX());
-        writer.WriteInt32(_baitLocation.getY());
-        writer.WriteInt32(_baitLocation.getZ());
+        writer.WriteLocation3D(_baitLocation);
         writer.WriteByte(1); // 0 = newbie, 1 = normal, 2 = night
     }
 }

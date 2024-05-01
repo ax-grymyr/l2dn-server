@@ -41,8 +41,8 @@ public struct RequestFlyMoveStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        SayuneZone zone = ZoneManager.getInstance().getZone<SayuneZone>(player);
-        if (zone.getMapId() == -1)
+        SayuneZone? zone = ZoneManager.getInstance().getZone<SayuneZone>(player.getLocation().ToLocation3D());
+        if (zone == null || zone.getMapId() == -1)
         {
             player.sendMessage("That zone is not supported yet!");
             PacketLogger.Instance.Warn(GetType().Name + ": " + player + " Requested sayune on zone with no map id set");
@@ -57,7 +57,7 @@ public struct RequestFlyMoveStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        SayuneRequest request = new SayuneRequest(player, map.getId());
+        SayuneRequest request = new(player, map.getId());
         if (player.addRequest(request))
         {
             request.move(player, 0);

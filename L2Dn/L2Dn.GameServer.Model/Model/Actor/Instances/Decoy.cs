@@ -126,7 +126,7 @@ public class Decoy : Creature
 		
 		if (isSpawned() && !isDead())
 		{
-			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
+			ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.removeFromZones(this);
 			decayMe();
 		}
 		

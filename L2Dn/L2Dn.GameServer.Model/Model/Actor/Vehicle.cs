@@ -403,7 +403,7 @@ public abstract class Vehicle : Creature
 			LOGGER.Error("Failed oustPlayers(): " + e);
 		}
 		
-		ZoneRegion oldZoneRegion = ZoneManager.getInstance().getRegion(this);
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 		
 		try
 		{
@@ -414,7 +414,7 @@ public abstract class Vehicle : Creature
 			LOGGER.Error("Failed decayMe(): " + e);
 		}
 		
-		oldZoneRegion.removeFromZones(this);
+		oldZoneRegion?.removeFromZones(this);
 		
 		return base.deleteMe();
 	}
