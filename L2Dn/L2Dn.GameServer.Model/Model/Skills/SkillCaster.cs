@@ -251,7 +251,7 @@ public class SkillCaster: Runnable
 		if (target != caster)
 		{
 			// Face the target
-			caster.setHeading(Util.calculateHeadingFrom(caster, target));
+			caster.setHeading(new Location2D(caster.getX(), caster.getY()).HeadingTo(new Location2D(target.getX(), target.getY())));
 			caster.broadcastPacket(new ExRotationPacket(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
 			
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
@@ -1214,7 +1214,7 @@ public class SkillCaster: Runnable
 				if (creature == target)
 				{
 					double course = double.DegreesToRadians(180);
-					double radian = double.DegreesToRadians(Util.convertHeadingToDegree(creature.getHeading()));
+					double radian = double.DegreesToRadians(HeadingUtil.ConvertHeadingToDegrees(creature.getHeading()));
 					x = target.getX() + (int) (Math.Cos(Math.PI + radian + course) * _skill.getCastRange());
 					y = target.getY() + (int) (Math.Sin(Math.PI + radian + course) * _skill.getCastRange());
 					z = target.getZ();
@@ -1230,7 +1230,7 @@ public class SkillCaster: Runnable
 			case SkillOperateType.DA3:
 			{
 				flyType = FlyType.WARP_BACK;
-				double radian = double.DegreesToRadians(Util.convertHeadingToDegree(creature.getHeading()));
+				double radian = double.DegreesToRadians(HeadingUtil.ConvertHeadingToDegrees(creature.getHeading()));
 				x = creature.getX() + (int) (Math.Cos(Math.PI + radian) * _skill.getCastRange());
 				y = creature.getY() + (int) (Math.Sin(Math.PI + radian) * _skill.getCastRange());
 				z = creature.getZ();
@@ -1240,7 +1240,7 @@ public class SkillCaster: Runnable
 			case SkillOperateType.DA5:
 			{
 				double course = _skill.getOperateType() == SkillOperateType.DA4 ? double.DegreesToRadians(270) : double.DegreesToRadians(90);
-				double radian = double.DegreesToRadians(Util.convertHeadingToDegree(target.getHeading()));
+				double radian = double.DegreesToRadians(HeadingUtil.ConvertHeadingToDegrees(target.getHeading()));
 				double nRadius = creature.getCollisionRadius();
 				if (target.isCreature())
 				{

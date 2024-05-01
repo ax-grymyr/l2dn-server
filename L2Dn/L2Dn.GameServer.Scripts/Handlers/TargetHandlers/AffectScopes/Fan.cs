@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 
@@ -18,11 +19,11 @@ public class Fan: IAffectScopeHandler
 		where T: WorldObject
 	{
 		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		double headingAngle = Util.convertHeadingToDegree(creature.getHeading());
+		double headingAngle = HeadingUtil.ConvertHeadingToDegrees(creature.getHeading());
 		int fanStartAngle = skill.getFanRange()[1];
 		int fanRadius = skill.getFanRange()[2];
 		int fanAngle = skill.getFanRange()[3];
-		double fanHalfAngle = fanAngle / 2; // Half left and half right.
+		double fanHalfAngle = fanAngle / 2.0; // Half left and half right.
 		int affectLimit = skill.getAffectLimit();
 		// Target checks.
 		TargetType targetType = skill.getTargetType();
@@ -37,7 +38,9 @@ public class Fan: IAffectScopeHandler
 			{
 				return false;
 			}
-			if (Math.Abs(Util.calculateAngleFrom(creature, c) - (headingAngle + fanStartAngle)) > fanHalfAngle)
+
+			double angle = new Location2D(creature.getX(), creature.getY()).AngleDegreesTo(new Location2D(c.getX(), c.getY()));
+			if (Math.Abs(angle - (headingAngle + fanStartAngle)) > fanHalfAngle)
 			{
 				return false;
 			}

@@ -11,6 +11,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -129,7 +130,7 @@ public abstract class Vehicle : Creature
 						double distance = MathUtil.hypot(point.Location.getX() - getX(), point.Location.getY() - getY());
 						if (distance > 1)
 						{
-							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.Location.getX(), point.Location.getY()));
+							setHeading(new Location2D(getX(), getY()).HeadingTo(point.Location));
 						}
 						
 						m.moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();

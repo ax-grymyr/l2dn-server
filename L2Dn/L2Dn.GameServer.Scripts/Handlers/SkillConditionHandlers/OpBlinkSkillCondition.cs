@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -42,7 +43,7 @@ public class OpBlinkSkillCondition: ISkillCondition
 	
 	public bool canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		double angle = Util.convertHeadingToDegree(caster.getHeading());
+		double angle = HeadingUtil.ConvertHeadingToDegrees(caster.getHeading());
 		double radian = double.DegreesToRadians(angle);
 		double course = double.DegreesToRadians(_angle);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * _range);

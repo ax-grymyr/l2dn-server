@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Interfaces;
 
@@ -44,9 +45,9 @@ public interface ILocational
       * @return the heading to the target specified
       */
      public int calculateHeadingTo(ILocational to)
-    {
-     return Util.calculateHeadingFrom(getX(), getY(), to.getX(), to.getY());
-    }
+     {
+      return new Location2D(getX(), getY()).HeadingTo(new Location2D(to.getX(), to.getY()));
+     }
 	
     /**
      * @param target

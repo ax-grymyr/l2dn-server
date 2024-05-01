@@ -33,6 +33,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using L2Dn.Utilities;
@@ -1131,7 +1132,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 			// Make sure that char is facing selected target
 			// also works: setHeading(Util.convertDegreeToClientHeading(Util.calculateAngleFrom(this, target)));
-			setHeading(Util.calculateHeadingFrom(this, target));
+			setHeading(new Location2D(getX(), getY()).HeadingTo(new Location2D(target.getX(), target.getY())));
 
 			// Always try to charge soulshots.
 			if (!isChargedShot(ShotType.SOULSHOTS) && !isChargedShot(ShotType.BLESSED_SOULSHOTS))
@@ -1284,7 +1285,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		int attackCountMax = (int) _stat.getValue(Stat.ATTACK_COUNT_MAX, 1);
 		if (attackCountMax > 1 && _stat.getValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 0) <= 0)
 		{
-			double headingAngle = Util.convertHeadingToDegree(getHeading());
+			double headingAngle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
 			int maxRadius = _stat.getPhysicalAttackRadius();
 			int physicalAttackAngle = _stat.getPhysicalAttackAngle();
 			foreach (Creature obj in World.getInstance().getVisibleObjectsInRange<Creature>(this, maxRadius))
@@ -3201,7 +3202,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// In case of cursor movement, avoid moving through obstacles.
 			if (_cursorKeyMovement)
 			{
-				double angle = Util.convertHeadingToDegree(getHeading());
+				double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
 				double radian = double.DegreesToRadians(angle);
 				double course = double.DegreesToRadians(180);
 				double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
@@ -3222,7 +3223,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				double distance = MathUtil.hypot(dx, dy);
 				if (distance > 3000)
 				{
-					double angle = Util.convertHeadingToDegree(getHeading());
+					double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
 					double radian = double.DegreesToRadians(angle);
 					double course = double.DegreesToRadians(180);
 					double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
@@ -3249,7 +3250,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					// Support for player attack with direct movement. Tested at retail on May 11th 2023.
 					if (hasAI() && getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 					{
-						double angle = Util.convertHeadingToDegree(getHeading());
+						double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
 						double radian = double.DegreesToRadians(angle);
 						double course = double.DegreesToRadians(180);
 						double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
@@ -3274,7 +3275,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							bool hasFences = !region.getFences().isEmpty();
 							if (hasDoors || hasFences)
 							{
-								double angle = Util.convertHeadingToDegree(getHeading());
+								double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
 								double radian = double.DegreesToRadians(angle);
 								double course = double.DegreesToRadians(180);
 								double frontDistance = 10 * (1.0 * _stat.getMoveSpeed() / 100);
@@ -3796,7 +3797,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Does not broke heading on vertical movements
 		if (!verticalMovementOnly)
 		{
-			setHeading(Util.calculateHeadingFrom(cos, sin));
+			setHeading(HeadingUtil.CalculateHeading(cos, sin));
 		}
 		
 		move.moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();
@@ -3871,7 +3872,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		double distance = MathUtil.hypot(m.xDestination - curX, m.yDestination - curY);
 		if (distance != 0)
 		{
-			setHeading(Util.calculateHeadingFrom(curX, curY, m.xDestination, m.yDestination));
+			setHeading(new Location2D(curX, curY).HeadingTo(new Location2D(m.xDestination, m.yDestination)));
 		}
 		
 		// Calculate the number of ticks between the current position and the destination.

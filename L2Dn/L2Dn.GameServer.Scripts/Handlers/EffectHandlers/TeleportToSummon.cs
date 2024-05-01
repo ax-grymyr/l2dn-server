@@ -51,7 +51,7 @@ public class TeleportToSummon: AbstractEffect
 		
 		int px = summon.getX();
 		int py = summon.getY();
-		double ph = Util.convertHeadingToDegree(summon.getHeading());
+		double ph = HeadingUtil.ConvertHeadingToDegrees(summon.getHeading());
 		
 		ph += 180;
 		if (ph > 360)

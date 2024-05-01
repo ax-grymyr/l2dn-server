@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets.AutoPlay;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -180,7 +181,7 @@ public class AutoPlayTaskManager
 									if (idleCount > 10)
 									{
 										bool ranged = weapon.getItemType().isRanged();
-										double angle = Util.calculateHeadingFrom(player, creature);
+										double angle = new Location2D(player.getX(), player.getY()).HeadingTo(new Location2D(creature.getX(), creature.getY()));
 										double radian = double.DegreesToRadians(angle);
 										double course = double.DegreesToRadians(180);
 										double distance = (ranged ? player.getCollisionRadius() : player.getCollisionRadius() + creature.getCollisionRadius()) * 2;

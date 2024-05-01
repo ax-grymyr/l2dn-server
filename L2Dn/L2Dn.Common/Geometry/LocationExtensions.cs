@@ -60,11 +60,24 @@ public static class LocationExtensions
         where TFrom: ILocation2D
         where TTo: ILocation2D
     {
-        double angleTarget = double.RadiansToDegrees(Math.Atan2((double)to.Y - from.Y, (double)to.X - from.X));
-        if (angleTarget < 0)
-            angleTarget += 360;
+        return (int)(AngleDegreesTo(from, to) * 182.044444444);
+    }
 
-        return (int)(angleTarget * 182.044444444);
+    public static double AngleRadiansTo<TFrom, TTo>(this TFrom from, TTo to)
+        where TFrom: ILocation2D
+        where TTo: ILocation2D
+    {
+        const double twoPi = double.Pi * 2.0;
+        double angle = double.Atan2(to.Y - from.Y, to.X - from.X);
+        return angle < 0 ? angle + twoPi : angle;
+    }
+
+    public static double AngleDegreesTo<TFrom, TTo>(this TFrom from, TTo to)
+        where TFrom: ILocation2D
+        where TTo: ILocation2D
+    {
+        double angle = double.RadiansToDegrees(double.Atan2(to.Y - from.Y, to.X - from.X));
+        return angle < 0 ? angle + 360.0 : angle;
     }
 
     public static Location2D RandomPosition2D<TOrigin>(this TOrigin location, int minRange, int maxRange)

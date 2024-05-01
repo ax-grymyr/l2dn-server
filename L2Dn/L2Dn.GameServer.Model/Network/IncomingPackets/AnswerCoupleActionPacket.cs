@@ -2,7 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -48,10 +48,10 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
             
-            int heading = Util.calculateHeadingFrom(player, target);
+            int heading = new Location2D(player.getX(), player.getY()).HeadingTo(new Location2D(target.getX(), target.getY()));
             player.broadcastPacket(new ExRotationPacket(player.getObjectId(), heading));
             player.setHeading(heading);
-            heading = Util.calculateHeadingFrom(target, player);
+            heading = new Location2D(target.getX(), target.getY()).HeadingTo(new Location2D(player.getX(), player.getY()));
             target.setHeading(heading);
             target.broadcastPacket(new ExRotationPacket(target.getObjectId(), heading));
             player.broadcastPacket(new SocialActionPacket(player.getObjectId(), _actionId));

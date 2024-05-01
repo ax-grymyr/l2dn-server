@@ -6,7 +6,6 @@ using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Utilities;
 
@@ -27,67 +26,6 @@ public class Util
 	public static void handleIllegalPlayerAction(Player actor, string message, IllegalActionPunishmentType punishment)
 	{
 		ThreadPool.schedule(new IllegalPlayerActionTask(actor, message, punishment), 5000);
-	}
-
-	/**
-	 * @param from
-	 * @param to
-	 * @return degree value of object 2 to the horizontal line with object 1 being the origin.
-	 */
-	public static double calculateAngleFrom(ILocational from, ILocational to)
-	{
-		return calculateAngleFrom(from.getX(), from.getY(), to.getX(), to.getY());
-	}
-
-	/**
-	 * @param fromX
-	 * @param fromY
-	 * @param toX
-	 * @param toY
-	 * @return degree value of object 2 to the horizontal line with object 1 being the origin
-	 */
-	public static double calculateAngleFrom(int fromX, int fromY, int toX, int toY)
-	{
-		double angleTarget = double.RadiansToDegrees(Math.Atan2(toY - fromY, toX - fromX));
-		if (angleTarget < 0)
-		{
-			angleTarget += 360;
-		}
-
-		return angleTarget;
-	}
-
-	public static double convertHeadingToDegree(int clientHeading)
-	{
-		double degree = clientHeading / 182.044444444;
-		return degree;
-	}
-
-	public static int calculateHeadingFrom(ILocational from, ILocational to)
-	{
-		return calculateHeadingFrom(from.getX(), from.getY(), to.getX(), to.getY());
-	}
-
-	public static int calculateHeadingFrom(int fromX, int fromY, int toX, int toY)
-	{
-		double angleTarget = double.RadiansToDegrees(Math.Atan2(toY - fromY, toX - fromX));
-		if (angleTarget < 0)
-		{
-			angleTarget += 360;
-		}
-
-		return (int)(angleTarget * 182.044444444);
-	}
-
-	public static int calculateHeadingFrom(double dx, double dy)
-	{
-		double angleTarget = double.RadiansToDegrees(Math.Atan2(dy, dx));
-		if (angleTarget < 0)
-		{
-			angleTarget += 360;
-		}
-
-		return (int)(angleTarget * 182.044444444);
 	}
 
 	/**
@@ -185,10 +123,8 @@ public class Util
 	 */
 	public static bool isDigit(string? text)
 	{
-		if (text == null || text.isEmpty())
-		{
+		if (string.IsNullOrEmpty(text))
 			return false;
-		}
 
 		foreach (char c in text)
 		{
@@ -207,10 +143,8 @@ public class Util
 	 */
 	public static bool isAlphaNumeric(string? text)
 	{
-		if (text == null || text.isEmpty())
-		{
+		if (string.IsNullOrEmpty(text))
 			return false;
-		}
 
 		foreach (char c in text)
 		{
@@ -232,21 +166,6 @@ public class Util
 	public static string formatAdena(long amount)
 	{
 		return amount.ToString(_adenaFormat);
-	}
-
-	/**
-	 * @param value
-	 * @param format
-	 * @return formatted double value by specified format.
-	 */
-	public static string formatDouble(double value, string format)
-	{
-		return value.ToString();
-	}
-
-	public static string getDateString(DateOnly date)
-	{
-		return date.ToString("yyyy-MM-dd");
 	}
 
 	/**
@@ -379,7 +298,7 @@ public class Util
 	 */
 	public static int map(int input, int inputMin, int inputMax, int outputMin, int outputMax)
 	{
-		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+		return (int.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
 			outputMin;
 	}
 
@@ -394,7 +313,7 @@ public class Util
 	 */
 	public static long map(long input, long inputMin, long inputMax, long outputMin, long outputMax)
 	{
-		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+		return (long.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
 			outputMin;
 	}
 
@@ -409,43 +328,7 @@ public class Util
 	 */
 	public static double map(double input, double inputMin, double inputMax, double outputMin, double outputMax)
 	{
-		return (constrain(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
+		return (double.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
 			outputMin;
-	}
-
-	/**
-	 * Constrains a number to be within a range.
-	 * @param input the number to constrain, all data types
-	 * @param min the lower end of the range, all data types
-	 * @param max the upper end of the range, all data types
-	 * @return input: if input is between min and max, min: if input is less than min, max: if input is greater than max
-	 */
-	public static int constrain(int input, int min, int max)
-	{
-		return input < min ? min : input > max ? max : input;
-	}
-
-	/**
-	 * Constrains a number to be within a range.
-	 * @param input the number to constrain, all data types
-	 * @param min the lower end of the range, all data types
-	 * @param max the upper end of the range, all data types
-	 * @return input: if input is between min and max, min: if input is less than min, max: if input is greater than max
-	 */
-	public static long constrain(long input, long min, long max)
-	{
-		return input < min ? min : input > max ? max : input;
-	}
-
-	/**
-	 * Constrains a number to be within a range.
-	 * @param input the number to constrain, all data types
-	 * @param min the lower end of the range, all data types
-	 * @param max the upper end of the range, all data types
-	 * @return input: if input is between min and max, min: if input is less than min, max: if input is greater than max
-	 */
-	public static double constrain(double input, double min, double max)
-	{
-		return input < min ? min : input > max ? max : input;
 	}
 }

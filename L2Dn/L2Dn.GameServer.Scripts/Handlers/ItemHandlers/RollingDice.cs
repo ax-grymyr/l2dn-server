@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
@@ -37,7 +38,7 @@ public class RollingDice: IItemHandler
 		}
 		
 		// Mobius: Retail dice position land calculation.
-		double angle = Util.convertHeadingToDegree(player.getHeading());
+		double angle = HeadingUtil.ConvertHeadingToDegrees(player.getHeading());
 		double radian = double.DegreesToRadians(angle);
 		double course = double.DegreesToRadians(180);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * 40);

@@ -58,7 +58,7 @@ public class Blink: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		double angle = Util.convertHeadingToDegree(effected.getHeading());
+		double angle = HeadingUtil.ConvertHeadingToDegrees(effected.getHeading());
 		double radian = double.DegreesToRadians(angle);
 		double course = double.DegreesToRadians(_flyCourse);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * _flyRadius);

@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 
@@ -26,7 +27,7 @@ public class Square: IAffectScopeHandler
 		
 		int rectX = creature.getX();
 		int rectY = creature.getY() - (squareWidth / 2);
-		double heading = double.DegreesToRadians(squareStartAngle + Util.convertHeadingToDegree(creature.getHeading()));
+		double heading = double.DegreesToRadians(squareStartAngle + HeadingUtil.ConvertHeadingToDegrees(creature.getHeading()));
 		double cos = Math.Cos(-heading);
 		double sin = Math.Sin(-heading);
 		

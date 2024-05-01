@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Model;
@@ -788,7 +789,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 */
 	public double calculateDirectionTo(ILocational target)
 	{
-		return Util.calculateAngleFrom(this, target);
+		return new Location2D(getX(), getY()).AngleDegreesTo(new Location2D(target.getX(), target.getY()));
 	}
 
 	/**

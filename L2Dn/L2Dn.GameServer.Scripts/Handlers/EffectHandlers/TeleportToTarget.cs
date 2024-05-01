@@ -29,7 +29,7 @@ public class TeleportToTarget: AbstractEffect
 	
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && GeoEngine.getInstance().canSeeTarget(effected, effector);
+		return effected != null && GeoEngine.getInstance().canSeeTarget(effected, effector);
 	}
 	
 	public override bool isInstant()
@@ -41,7 +41,7 @@ public class TeleportToTarget: AbstractEffect
 	{
 		int px = effected.getX();
 		int py = effected.getY();
-		double ph = Util.convertHeadingToDegree(effected.getHeading());
+		double ph = HeadingUtil.ConvertHeadingToDegrees(effected.getHeading());
 		
 		ph += 180;
 		if (ph > 360)
@@ -49,9 +49,9 @@ public class TeleportToTarget: AbstractEffect
 			ph -= 360;
 		}
 		
-		ph = (Math.PI * ph) / 180;
-		int x = (int) (px + (25 * Math.Cos(ph)));
-		int y = (int) (py + (25 * Math.Sin(ph)));
+		ph = Math.PI * ph / 180;
+		int x = (int) (px + 25 * Math.Cos(ph));
+		int y = (int) (py + 25 * Math.Sin(ph));
 		int z = effected.getZ();
 		
 		Location loc = GeoEngine.getInstance().getValidLocation(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceWorld());
