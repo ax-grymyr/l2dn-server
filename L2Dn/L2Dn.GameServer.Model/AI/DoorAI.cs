@@ -118,7 +118,7 @@ public class DoorAI : CreatureAI
 		{
 			World.getInstance().forEachVisibleObject<Defender>(_door, guard =>
 			{
-				if (_self._actor.isInsideRadius3D(guard.getLocation().Location3D, guard.getTemplate().getClanHelpRange()))
+				if (_self._actor.IsInsideRadius3D(guard, guard.getTemplate().getClanHelpRange()))
 				{
 					guard.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, _attacker, 15);
 				}

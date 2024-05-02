@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Html.Styles;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -161,7 +162,7 @@ public class AdminScan: IAdminCommandHandler
 			sb.Append("<tr>");
 			sb.Append("<td width=\"45\">").Append(character.getId()).Append("</td>");
 			sb.Append("<td><a action=\"bypass -h admin_move_to ").Append(character.getX()).Append(SPACE).Append(character.getY()).Append(SPACE).Append(character.getZ()).Append("\">").Append(npcName.isEmpty() ? "No name NPC" : npcName).Append("</a></td>");
-			sb.Append("<td width=\"60\">").Append(Util.formatAdena((long)Math.Round(activeChar.calculateDistance2D(character.getLocation().Location2D)))).Append("</td>");
+			sb.Append("<td width=\"60\">").Append(Util.formatAdena((long)Math.Round(activeChar.Distance2D(character)))).Append("</td>");
 			sb.Append("<td width=\"54\"><a action=\"").Append(builder.toStringBuilder()).Append("\"><font color=\"LEVEL\">Delete</font></a></td>");
 			sb.Append("</tr>");
 		}).build();

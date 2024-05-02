@@ -4,6 +4,8 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -11,18 +13,12 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 {
-    private int _x;
-    private int _y;
-    private int _z;
-    private int _heading;
+    private Location _location;
     private int _vehicleId;
 
     public void ReadContent(PacketBitReader reader)
     {
-        _x = reader.ReadInt32();
-        _y = reader.ReadInt32();
-        _z = reader.ReadInt32();
-        _heading = reader.ReadInt32();
+        _location = reader.ReadLocation();
         _vehicleId = reader.ReadInt32(); // vehicle id
     }
 
@@ -35,28 +31,28 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		int realX = player.getX();
 		int realY = player.getY();
 		int realZ = player.getZ();
-		if (_x == 0 && _y == 0 && realX != 0)
+		if (_location.X == 0 && _location.Y == 0 && realX != 0)
 			return ValueTask.CompletedTask;
 		
 		if (player.isInVehicle())
 			return ValueTask.CompletedTask;
 		
-		if (player.isFalling(_z))
+		if (player.isFalling(_location.Z))
 			return ValueTask.CompletedTask; // Disable validations during fall to avoid "jumping".
 		
 		// Don't allow flying transformations outside gracia area!
-		if (player.isFlyingMounted() && _x > World.GRACIA_MAX_X)
+		if (player.isFlyingMounted() && _location.X > World.GRACIA_MAX_X)
 		{
 			player.untransform();
 		}
 		
-		int dx = _x - realX;
-		int dy = _y - realY;
-		int dz = _z - realZ;
-		double diffSq = ((dx * dx) + (dy * dy));
+		int dx = _location.X - realX;
+		int dy = _location.Y - realY;
+		int dz = _location.Z - realZ;
+		double diffSq = (double)dx * dx + (double)dy * dy;
 		if (player.isFlying() || player.isInsideZone(ZoneId.WATER))
 		{
-			player.setXYZ(realX, realY, _z);
+			player.setXYZ(realX, realY, _location.Z);
 			if (diffSq > 90000)
 			{
 				connection.Send(new ValidateLocationPacket(player));
@@ -66,10 +62,10 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		{
 			if (diffSq > 250000 || Math.Abs(dz) > 200)
 			{
-				if ((Math.Abs(dz) > 200) && (Math.Abs(dz) < 1500) && (Math.Abs(_z - player.getClientZ()) < 800))
+				if (Math.Abs(dz) > 200 && Math.Abs(dz) < 1500 && Math.Abs(_location.Z - player.getClientZ()) < 800)
 				{
-					player.setXYZ(realX, realY, _z);
-					realZ = _z;
+					player.setXYZ(realX, realY, _location.Z);
+					realZ = _location.Z;
 				}
 				else
 				{
@@ -79,7 +75,7 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		}
 		
 		// Check out of sync.
-		if (player.calculateDistance3D(_x, _y, _z) > player.getStat().getMoveSpeed())
+		if (player.Distance3D(_location) > player.getStat().getMoveSpeed())
 		{
 			if (player.isBlinkActive())
 			{
@@ -87,17 +83,21 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 			}
 			else
 			{
-				player.setXYZ(_x, _y, player.getZ() > _z ? GeoEngine.getInstance().getHeight(_x, _y, player.getZ()) : _z);
+				player.setXYZ(_location.X, _location.Y,
+					player.getZ() > _location.Z
+						? GeoEngine.getInstance().getHeight(_location.X, _location.Y, player.getZ())
+						: _location.Z);
 			}
 		}
 		
-		player.setClientX(_x);
-		player.setClientY(_y);
-		player.setClientZ(_z);
-		player.setClientHeading(_heading); // No real need to validate heading.
+		player.setClientX(_location.X);
+		player.setClientY(_location.Y);
+		player.setClientZ(_location.Z);
+		player.setClientHeading(_location.Heading); // No real need to validate heading.
 		
 		// Mobius: Check for possible door logout and move over exploit. Also checked at MoveBackwardToLocation.
-		if (!DoorData.getInstance().checkIfDoorsBetween(realX, realY, realZ, _x, _y, _z, player.getInstanceWorld(), false))
+		if (!DoorData.getInstance().checkIfDoorsBetween(realX, realY, realZ, _location.X, _location.Y, _location.Z,
+			    player.getInstanceWorld(), false))
 		{
 			player.setLastServerPosition(realX, realY, realZ);
 		}

@@ -2,6 +2,7 @@ using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -20,7 +21,7 @@ public class OpCheckCastRangeSkillCondition: ISkillCondition
 	public bool canUse(Creature caster, Skill skill, WorldObject target)
 	{
 		return (target != null) //
-			&& (caster.calculateDistance3D(target.getLocation().Location3D) >= _distance) //
+			&& (caster.Distance3D(target) >= _distance) //
 			&& GeoEngine.getInstance().canSeeTarget(caster, target);
 	}
 }

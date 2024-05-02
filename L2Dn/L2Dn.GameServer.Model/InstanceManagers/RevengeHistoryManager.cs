@@ -319,7 +319,7 @@ public class RevengeHistoryManager
 				{
 					HIDE_SKILL.getSkill().applyEffects(summon, summon);
 				}
-				player.teleToLocation(killer.getLocation());
+				player.teleToLocation(killer.Location);
 			}
 		}
 	}
@@ -371,7 +371,7 @@ public class RevengeHistoryManager
 			{
 				HIDE_SKILL.getSkill().applyEffects(summon, summon);
 			}
-			player.teleToLocation(killer.getLocation());
+			player.teleToLocation(killer.Location);
 		}
 	}
 	

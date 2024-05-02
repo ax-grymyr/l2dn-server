@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Cubics.Conditions;
 
@@ -13,6 +14,6 @@ public class RangeCondition: ICubicCondition
 
     public bool test(Cubic cubic, Creature owner, WorldObject target)
     {
-        return owner.calculateDistance2D(target.getLocation().Location2D) <= _range;
+        return owner.Distance2D(target) <= _range;
     }
 }

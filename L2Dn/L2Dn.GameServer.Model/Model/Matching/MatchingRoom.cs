@@ -140,7 +140,7 @@ public abstract class MatchingRoom: IIdentifiable
 
 	public int getLocation()
 	{
-		return MapRegionManager.getInstance().getBBs(_leader.getLocation().Location2D);
+		return MapRegionManager.getInstance().getBBs(_leader.Location.Location2D);
 	}
 
 	public int getMembersCount()

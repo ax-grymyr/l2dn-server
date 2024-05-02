@@ -20,7 +20,7 @@ public readonly struct RidePacket: IOutgoingPacket
         _mounted = player.isMounted();
         _rideType = player.getMountType();
         _rideNpcId = player.getMountNpcId() + 1000000;
-        _location = player.getLocation().Location3D;
+        _location = player.Location.Location3D;
     }
 
     public void WriteContent(PacketBitWriter writer)

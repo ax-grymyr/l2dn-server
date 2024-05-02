@@ -35,7 +35,7 @@ public class RankingPowerManager
 	
 	public void activatePower(Player player)
 	{
-		Location3D location = player.getLocation().Location3D;
+		Location3D location = player.Location.Location3D;
 		List<int> array = new();
 		array.Add(location.X);
 		array.Add(location.Y);
@@ -52,7 +52,7 @@ public class RankingPowerManager
 	
 	private void createClone(Player player)
 	{
-		Location location = player.getLocation();
+		Location location = player.Location;
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);

@@ -8,10 +8,19 @@ public static class LocationExtensions
         where TFrom: ILocation2D
         where TTo: ILocation2D
     {
-        double dx = (double)from.X - to.X;
-        double dy = (double)from.Y - to.Y;
-        return double.Sqrt(dx * dx + dy * dy);
+        int dx = from.X - to.X;
+        int dy = from.Y - to.Y;
+        return double.Sqrt((double)dx * dx + (double)dy * dy);
     }
+
+    public static double Distance2D<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation2D => from.Location.Location2D.Distance2D(to);
+
+    public static double Distance2D<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation2D => from.Distance2D(to.Location.Location2D);
+
+    public static double Distance2D(this IHasLocation from, IHasLocation to)
+        => from.Location.Location2D.Distance2D(to.Location.Location2D);
 
     public static double Distance3D<TFrom, TTo>(this TFrom from, TTo to)
         where TFrom: ILocation3D
@@ -23,6 +32,15 @@ public static class LocationExtensions
         return double.Sqrt(dx * dx + dy * dy + dz * dz);
     }
 
+    public static double Distance3D<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation3D => from.Location.Location3D.Distance3D(to);
+
+    public static double Distance3D<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation3D => from.Distance3D(to.Location.Location3D);
+
+    public static double Distance3D(this IHasLocation from, IHasLocation to)
+        => from.Location.Location3D.Distance3D(to.Location.Location3D);
+
     public static double DistanceSquare2D<TFrom, TTo>(this TFrom from, TTo to)
         where TFrom: ILocation2D
         where TTo: ILocation2D
@@ -31,6 +49,15 @@ public static class LocationExtensions
         double dy = (double)from.Y - to.Y;
         return dx * dx + dy * dy;
     }
+
+    public static double DistanceSquare2D<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation2D => from.Location.Location2D.DistanceSquare2D(to);
+
+    public static double DistanceSquare2D<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation2D => from.DistanceSquare2D(to.Location.Location2D);
+
+    public static double DistanceSquare2D(this IHasLocation from, IHasLocation to)
+        => from.Location.Location2D.DistanceSquare2D(to.Location.Location2D);
 
     public static double DistanceSquare3D<TFrom, TTo>(this TFrom from, TTo to)
         where TFrom: ILocation3D
@@ -42,26 +69,62 @@ public static class LocationExtensions
         return dx * dx + dy * dy + dz * dz;
     }
 
+    public static double DistanceSquare3D<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation3D => from.Location.Location3D.DistanceSquare3D(to);
+
+    public static double DistanceSquare3D<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation3D => from.DistanceSquare3D(to.Location.Location3D);
+
+    public static double DistanceSquare3D(this IHasLocation from, IHasLocation to)
+        => from.Location.Location3D.DistanceSquare3D(to.Location.Location3D);
+
     public static bool IsInsideRadius2D<TFrom, TTo>(this TFrom from, TTo to, int radius)
         where TFrom: ILocation2D
         where TTo: ILocation2D
-    {
-        return Distance2D(from, to) <= radius;
-    }
+        => Distance2D(from, to) <= radius;
+
+    public static bool IsInsideRadius2D<TTo>(this IHasLocation from, TTo to, int radius)
+        where TTo: ILocation2D
+        => Distance2D(from, to) <= radius;
+
+    public static bool IsInsideRadius2D<TFrom>(this TFrom from, IHasLocation to, int radius)
+        where TFrom: ILocation2D
+        => Distance2D(from, to) <= radius;
+
+    public static bool IsInsideRadius2D(this IHasLocation from, IHasLocation to, int radius)
+        => Distance2D(from, to) <= radius;
 
     public static bool IsInsideRadius3D<TFrom, TTo>(this TFrom from, TTo to, int radius)
         where TFrom: ILocation3D
         where TTo: ILocation3D
-    {
-        return Distance3D(from, to) <= radius;
-    }
+        => Distance3D(from, to) <= radius;
+
+    public static bool IsInsideRadius3D<TTo>(this IHasLocation from, TTo to, int radius)
+        where TTo: ILocation3D
+        => Distance3D(from, to) <= radius;
+
+    public static bool IsInsideRadius3D<TFrom>(this TFrom from, IHasLocation to, int radius)
+        where TFrom: ILocation3D
+        => Distance3D(from, to) <= radius;
+
+    public static bool IsInsideRadius3D(this IHasLocation from, IHasLocation to, int radius)
+        => Distance3D(from, to) <= radius;
 
     public static int HeadingTo<TFrom, TTo>(this TFrom from, TTo to)
         where TFrom: ILocation2D
         where TTo: ILocation2D
-    {
-        return (int)(AngleDegreesTo(from, to) * 182.044444444);
-    }
+        => (int)(AngleDegreesTo(from, to) * 182.044444444);
+
+    public static int HeadingTo<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation2D
+        => from.Location.Location2D.HeadingTo(to);
+
+    public static int HeadingTo<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation2D
+        => from.HeadingTo(to.Location.Location2D);
+
+    public static int HeadingTo(this IHasLocation from, IHasLocation to)
+        => from.Location.Location2D.HeadingTo(to.Location.Location2D);
 
     public static double AngleRadiansTo<TFrom, TTo>(this TFrom from, TTo to)
         where TFrom: ILocation2D
@@ -121,15 +184,53 @@ public static class LocationExtensions
         return (uint)(heading - 0x2000) <= 0xC000 ? Position.Front : Position.Back;
     }
 
+    public static Position PositionTo<TTo>(this IHasLocation attackerLocation, TTo targetLocation)
+        where TTo: ILocation => attackerLocation.Location.Location3D.PositionTo(targetLocation);
+
+    public static Position PositionTo<TFrom>(this TFrom attackerLocation, IHasLocation targetLocation)
+        where TFrom: ILocation3D => attackerLocation.PositionTo(targetLocation.Location);
+
+    public static Position PositionTo(this IHasLocation attackerLocation, IHasLocation targetLocation)
+        => attackerLocation.Location.Location3D.PositionTo(targetLocation.Location);
+
     public static bool IsInFrontOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
         where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Front;
+
+    public static bool IsInFrontOf<TTo>(this IHasLocation attackerLocation, TTo targetLocation)
+        where TTo: ILocation => attackerLocation.Location.Location3D.IsInFrontOf(targetLocation);
+
+    public static bool IsInFrontOf<TFrom>(this TFrom attackerLocation, IHasLocation targetLocation)
+        where TFrom: ILocation3D => attackerLocation.IsInFrontOf(targetLocation.Location);
+
+    public static bool IsInFrontOf(this IHasLocation attackerLocation, IHasLocation targetLocation)
+        => attackerLocation.Location.Location3D.IsInFrontOf(targetLocation.Location);
 
     public static bool IsOnSideOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
         where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Side;
 
+    public static bool IsOnSideOf<TTo>(this IHasLocation attackerLocation, TTo targetLocation)
+        where TTo: ILocation => attackerLocation.Location.Location3D.IsOnSideOf(targetLocation);
+
+    public static bool IsOnSideOf<TFrom>(this TFrom attackerLocation, IHasLocation targetLocation)
+        where TFrom: ILocation3D
+        => attackerLocation.IsOnSideOf(targetLocation.Location);
+
+    public static bool IsOnSideOf(this IHasLocation attackerLocation, IHasLocation targetLocation)
+        => attackerLocation.Location.Location3D.IsOnSideOf(targetLocation.Location);
+
     public static bool IsBehindOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
         where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Back;
+
+    public static bool IsBehindOf<TTo>(this IHasLocation attackerLocation, TTo targetLocation)
+        where TTo: ILocation => attackerLocation.Location.Location3D.IsBehindOf(targetLocation);
+
+    public static bool IsBehindOf<TFrom>(this TFrom attackerLocation, IHasLocation targetLocation)
+        where TFrom: ILocation3D
+        => attackerLocation.IsBehindOf(targetLocation.Location);
+
+    public static bool IsBehindOf(this IHasLocation attackerLocation, IHasLocation targetLocation)
+        => attackerLocation.Location.Location3D.IsBehindOf(targetLocation.Location);
 }

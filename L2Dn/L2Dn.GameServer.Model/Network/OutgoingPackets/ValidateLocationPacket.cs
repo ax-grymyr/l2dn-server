@@ -13,7 +13,7 @@ public readonly struct ValidateLocationPacket: IOutgoingPacket
     public ValidateLocationPacket(WorldObject obj)
     {
         _objectId = obj.getObjectId();
-        _location = obj.getLocation();
+        _location = obj.Location;
     }
 	
     public void WriteContent(PacketBitWriter writer)
@@ -21,7 +21,7 @@ public readonly struct ValidateLocationPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.VALIDATE_LOCATION);
 
         writer.WriteInt32(_objectId);
-        writer.WriteLocationWithHeading(_location);
+        writer.WriteLocation(_location);
         writer.WriteByte(0xff); // TODO: Find me!
     }
 }

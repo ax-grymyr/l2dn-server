@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Model;
 /**
  * Base class for all interactive objects.
  */
-public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatable<WorldObject>
+public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocation, IEquatable<WorldObject>
 {
 	/** Name */
 	private string _name = string.Empty;
@@ -600,10 +600,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 * Gets the location object.
 	 * @return the location object
 	 */
-	public virtual Location getLocation()
-	{
-		return _location;
-	}
+	public virtual Location Location => _location;
 
 	/**
 	 * Sets the x, y, z coordinate.

@@ -13,7 +13,7 @@ internal readonly struct ExTeleportToLocationActivatePacket: IOutgoingPacket
     public ExTeleportToLocationActivatePacket(Creature creature)
     {
         _objectId = creature.getObjectId();
-        _loc = creature.getLocation();
+        _loc = creature.Location;
     }
 
     public void WriteContent(PacketBitWriter writer)

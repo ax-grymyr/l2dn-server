@@ -14,7 +14,7 @@ public struct CannotMoveAnymorePacket: IIncomingPacket<GameSession>
 
     public void ReadContent(PacketBitReader reader)
     {
-        _location = reader.ReadLocationWithHeading();
+        _location = reader.ReadLocation();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)

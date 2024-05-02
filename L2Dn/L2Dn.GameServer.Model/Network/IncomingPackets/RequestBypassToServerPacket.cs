@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -121,7 +122,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				if (Util.isDigit(id))
 				{
 					WorldObject obj = World.getInstance().findObject(int.Parse(id));
-					if (obj != null && obj.isNpc() && endOfId > 0 && player.isInsideRadius2D(obj.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+					if (obj != null && obj.isNpc() && endOfId > 0 && player.IsInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
 					{
 						((Npc)obj).onBypassFeedback(player, _command.Substring(endOfId + 1));
 					}
@@ -286,7 +287,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		{
 			Npc temp = (Npc) obj;
 			temp.setTarget(player);
-			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getLocation().Location3D);
+			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.Location.Location3D);
 		}
 	}
 }

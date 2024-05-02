@@ -40,7 +40,7 @@ public struct RequestGetOnVehiclePacket: IIncomingPacket<GameSession>
         else
         {
             boat = BoatManager.getInstance().getBoat(_boatId);
-            if ((boat == null) || boat.isMoving() || !player.isInsideRadius3D(boat.getLocation().Location3D, 1000))
+            if ((boat == null) || boat.isMoving() || !player.IsInsideRadius3D(boat, 1000))
             {
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
                 return ValueTask.CompletedTask;

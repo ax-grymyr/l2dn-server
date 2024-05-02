@@ -30,7 +30,7 @@ public abstract class Vehicle : Creature
 	
 	public Vehicle(CreatureTemplate template): base(template)
 	{
-		_monitorLocation = getLocation().Location3D;
+		_monitorLocation = base.Location.Location3D;
 		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
@@ -140,7 +140,7 @@ public abstract class Vehicle : Creature
 						{
 							_monitorTask = ThreadPool.scheduleAtFixedRate(() =>
 							{
-								if (!isInDock() && (this.calculateDistance3D(_monitorLocation) == 0))
+								if (!isInDock() && (this.Distance3D(_monitorLocation) == 0))
 								{
 									if (_currentPath != null)
 									{
@@ -157,7 +157,7 @@ public abstract class Vehicle : Creature
 								}
 								else
 								{
-									_monitorLocation = getLocation().Location3D;
+									_monitorLocation = Location.Location3D;
 								}
 							}, 1000, 1000);
 						}
@@ -403,7 +403,7 @@ public abstract class Vehicle : Creature
 			LOGGER.Error("Failed oustPlayers(): " + e);
 		}
 		
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
 		
 		try
 		{

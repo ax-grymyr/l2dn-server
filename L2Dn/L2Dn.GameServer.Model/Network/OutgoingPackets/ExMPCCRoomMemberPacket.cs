@@ -29,7 +29,7 @@ public readonly struct ExMPCCRoomMemberPacket: IOutgoingPacket
             writer.WriteString(member.getName());
             writer.WriteInt32(member.getLevel());
             writer.WriteInt32((int)member.getClassId());
-            writer.WriteInt32(MapRegionManager.getInstance().getBBs(member.getLocation().Location2D));
+            writer.WriteInt32(MapRegionManager.getInstance().getBBs(member.Location.Location2D));
             writer.WriteInt32((int)_room.getMemberType(member));
         }
     }

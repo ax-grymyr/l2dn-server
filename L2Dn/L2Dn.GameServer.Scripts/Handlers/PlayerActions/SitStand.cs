@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
@@ -50,8 +51,9 @@ public class SitStand: IPlayerActionHandler
 		{
 			return false;
 		}
-		
-		if (!player.isSitting() && (target is StaticObject) && (((StaticObject) target).getType() == 1) && player.isInsideRadius2D(target.getLocation().Location2D, StaticObject.INTERACTION_DISTANCE))
+
+		if (!player.isSitting() && (target is StaticObject) && (((StaticObject)target).getType() == 1) &&
+		    player.IsInsideRadius2D(target, StaticObject.INTERACTION_DISTANCE))
 		{
 			ChairSitPacket cs = new ChairSitPacket(player, target.getId());
 			player.sendPacket(cs);
@@ -59,7 +61,7 @@ public class SitStand: IPlayerActionHandler
 			player.broadcastPacket(cs);
 			return true;
 		}
-		
+
 		if (player.isFakeDeath())
 		{
 			player.stopEffects(EffectFlag.FAKE_DEATH);

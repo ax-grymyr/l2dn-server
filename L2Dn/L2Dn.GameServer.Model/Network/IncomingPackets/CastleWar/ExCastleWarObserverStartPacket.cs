@@ -45,7 +45,7 @@ public struct ExCastleWarObserverStartPacket: IIncomingPacket<GameSession>
         if (random == null)
             return ValueTask.CompletedTask;
 		
-        player.enterObserverMode(random.getLocation());
+        player.enterObserverMode(random.Location);
         
         return ValueTask.CompletedTask;
     }

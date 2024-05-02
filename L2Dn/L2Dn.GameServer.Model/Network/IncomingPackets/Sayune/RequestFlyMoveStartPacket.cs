@@ -41,7 +41,7 @@ public struct RequestFlyMoveStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        SayuneZone? zone = ZoneManager.getInstance().getZone<SayuneZone>(player.getLocation().Location3D);
+        SayuneZone? zone = ZoneManager.getInstance().getZone<SayuneZone>(player.Location.Location3D);
         if (zone == null || zone.getMapId() == -1)
         {
             player.sendMessage("That zone is not supported yet!");

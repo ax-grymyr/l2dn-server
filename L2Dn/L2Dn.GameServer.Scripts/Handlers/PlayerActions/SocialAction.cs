@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
@@ -130,7 +131,7 @@ public class SocialAction: IPlayerActionHandler
 			return;
 		}
 		
-		int distance = (int) player.calculateDistance2D(target.getLocation().Location2D);
+		int distance = (int) player.Distance2D(target);
 		if ((distance > 125) || (distance < 15) || (player.getObjectId() == target.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);

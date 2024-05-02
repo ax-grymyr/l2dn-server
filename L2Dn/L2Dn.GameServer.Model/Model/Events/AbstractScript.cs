@@ -1487,9 +1487,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location3D location, int heading)
+	public static Npc addSpawn(int npcId, Location location)
 	{
-		return addSpawn(npcId, location.X, location.Y, location.Z, heading, false, TimeSpan.Zero, false, 0);
+		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, false, 0);
 	}
 	
 	/**
@@ -1515,9 +1515,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location3D location, int heading, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, Location location, bool isSummonSpawn)
 	{
-		return addSpawn(npcId, location.X, location.Y, location.Z, heading, false, TimeSpan.Zero, isSummonSpawn, 0);
+		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, isSummonSpawn, 0);
 	}
 	
 	/**
@@ -1530,9 +1530,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay)
 	{
-		return addSpawn(npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, false, 0);
+		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, false, 0);
 	}
 	
 	/**
@@ -1546,9 +1546,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
+	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
-		return addSpawn(npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
+		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
 	
 	/**
@@ -1565,9 +1565,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, Location3D location, int heading, bool randomOffset, int instanceId)
+	public static Npc addSpawn(Npc summoner, int npcId, Location location, bool randomOffset, int instanceId)
 	{
-		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, heading, randomOffset, TimeSpan.Zero, false, instanceId);
+		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, TimeSpan.Zero, false, instanceId);
 	}
 	
 	/**
@@ -1585,9 +1585,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
-		return addSpawn(npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
+		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
 	
 	/**

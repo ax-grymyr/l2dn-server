@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Events.Impl.Summons;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 
@@ -50,11 +51,11 @@ public class SummonAction: IActionHandler
 			{
 				// This Action Failed packet avoids player getting stuck when clicking three or more times
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				if (((Summon) target).isInsideRadius2D(player.getLocation().Location2D, 150))
+				if (((Summon) target).IsInsideRadius2D(player, 150))
 				{
 					player.updateNotMoveUntil();
 				}
-				else if (GeoEngine.getInstance().canMoveToTarget(player.getLocation().Location3D, target.getLocation().Location3D))
+				else if (GeoEngine.getInstance().canMoveToTarget(player.Location.Location3D, target.Location.Location3D))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 				}

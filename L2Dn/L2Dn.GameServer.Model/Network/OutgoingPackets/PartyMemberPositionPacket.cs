@@ -12,7 +12,7 @@ public readonly struct PartyMemberPositionPacket: IOutgoingPacket
 
     public PartyMemberPositionPacket(Party party)
     {
-        _locations = party.getMembers().Select(x => (x.getObjectId(), x.getLocation().Location3D))
+        _locations = party.getMembers().Select(x => (x.getObjectId(), x.Location.Location3D))
             .ToImmutableArray();
     }
 

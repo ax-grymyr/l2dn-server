@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
@@ -33,7 +34,7 @@ public class StaticObjectAction: IActionHandler
 		else if (interact)
 		{
 			// Calculate the distance between the Player and the Npc
-			if (!player.isInsideRadius2D(staticObject.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+			if (!player.IsInsideRadius2D(staticObject, Npc.INTERACTION_DISTANCE))
 			{
 				// Notify the Player AI with AI_INTENTION_INTERACT
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, staticObject);

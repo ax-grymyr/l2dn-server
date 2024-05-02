@@ -2,6 +2,7 @@ using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -102,9 +103,9 @@ public class CreatureFollowTaskManager
 					}
 					
 					int followRange = range == -1 ? Rnd.get(50, 100) : range;
-					if (!creature.isInsideRadius3D(followTarget.getLocation().Location3D, followRange))
+					if (!creature.IsInsideRadius3D(followTarget, followRange))
 					{
-						if (!creature.isInsideRadius3D(followTarget.getLocation().Location3D, 3000))
+						if (!creature.IsInsideRadius3D(followTarget, 3000))
 						{
 							// If the target is too far (maybe also teleported).
 							if (creature.isSummon())

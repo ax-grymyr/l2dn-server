@@ -31,7 +31,7 @@ public class Decoy : Creature
 		setInstanceType(InstanceType.Decoy);
 		
 		_owner = owner;
-		setXYZInvisible(owner.getLocation().Location3D);
+		setXYZInvisible(owner.Location.Location3D);
 		setInvul(false);
 		
 		_decoyLifeTask = ThreadPool.schedule(unSummon, totalLifeTime);
@@ -126,7 +126,7 @@ public class Decoy : Creature
 		
 		if (isSpawned() && !isDead())
 		{
-			ZoneManager.getInstance().getRegion(getLocation().Location2D)?.removeFromZones(this);
+			ZoneManager.getInstance().getRegion(Location.Location2D)?.removeFromZones(this);
 			decayMe();
 		}
 		

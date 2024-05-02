@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 
@@ -37,7 +38,7 @@ public class RingRange: IAffectScopeHandler
 			}
 			
 			// Targets before the start range are unaffected.
-			if (c.isInsideRadius2D(target.getLocation().Location2D, startRange))
+			if (c.IsInsideRadius2D(target, startRange))
 			{
 				return false;
 			}

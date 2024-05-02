@@ -11,7 +11,7 @@ public class SummonRequestHolder
 	public SummonRequestHolder(Player summoner)
 	{
 		_summoner = summoner;
-		_location = summoner.getLocation();
+		_location = summoner.Location;
 	}
 
 	public Player getSummoner()

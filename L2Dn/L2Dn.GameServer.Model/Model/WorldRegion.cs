@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
@@ -63,7 +64,7 @@ public class WorldRegion
 					
 					// Teleport to spawn when too far away.
 					Spawn spawn = mob.getSpawn();
-					if ((spawn != null) && (mob.calculateDistance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE))
+					if ((spawn != null) && (mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE))
 					{
 						mob.teleToLocation(spawn.Location);
 					}

@@ -17,7 +17,7 @@ public static class PacketUtil
 		return new Location3D(x, y, z);
 	}
 
-	public static Location ReadLocationWithHeading(this ref PacketBitReader reader)
+	public static Location ReadLocation(this ref PacketBitReader reader)
 	{
 		int x = reader.ReadInt32();
 		int y = reader.ReadInt32();
@@ -33,7 +33,7 @@ public static class PacketUtil
 		writer.WriteInt32(location.Z);
 	}
 
-	public static void WriteLocationWithHeading(this PacketBitWriter writer, Location location)
+	public static void WriteLocation(this PacketBitWriter writer, Location location)
 	{
 		writer.WriteInt32(location.X);
 		writer.WriteInt32(location.Y);

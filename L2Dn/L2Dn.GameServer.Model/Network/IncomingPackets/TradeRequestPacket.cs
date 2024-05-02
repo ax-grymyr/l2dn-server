@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -180,7 +181,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (player.calculateDistance3D(partner.getLocation().Location3D) > 150)
+		if (player.Distance3D(partner) > 150)
 		{
 			player.sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
 			return ValueTask.CompletedTask;

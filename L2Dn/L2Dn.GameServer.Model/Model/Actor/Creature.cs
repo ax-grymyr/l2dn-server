@@ -482,7 +482,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			decayMe();
-			ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+			ZoneRegion? region = ZoneManager.getInstance().getRegion(Location.Location2D);
 			if (region != null)
 			{
 				region.removeFromZones(this);
@@ -1111,7 +1111,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Mobius: Do not move when attack is launched.
 			if (isMoving())
 			{
-				stopMove(getLocation());
+				stopMove(Location);
 			}
 
 			WeaponType attackType = getAttackType();
@@ -1305,7 +1305,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 				
 				// Check if target is within attack angle.
-				if (Math.Abs(this.calculateDirectionTo(obj.getLocation().Location2D) - headingAngle) > physicalAttackAngle)
+				if (Math.Abs(this.calculateDirectionTo(obj.Location.Location2D) - headingAngle) > physicalAttackAngle)
 				{
 					continue;
 				}
@@ -1808,7 +1808,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		}
 		
-		ZoneManager.getInstance().getRegion(getLocation().Location2D)?.onDeath(this);
+		ZoneManager.getInstance().getRegion(Location.Location2D)?.onDeath(this);
 		
 		getAttackByList().clear();
 		
@@ -1921,7 +1921,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			
 			// Start broadcast status
 			broadcastPacket(new RevivePacket(this));
-			ZoneManager.getInstance().getRegion(getLocation().Location2D)?.onRevive(this);
+			ZoneManager.getInstance().getRegion(Location.Location2D)?.onRevive(this);
 		}
 		else
 		{
@@ -3364,14 +3364,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
-		if (!force && this.calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
+		if (!force && this.Distance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
 		{
 			return;
 		}
 
-		_lastZoneValidateLocation = getLocation().Location3D;
+		_lastZoneValidateLocation = Location.Location3D;
 
-		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(Location.Location2D);
 		if (region != null)
 		{
 			region.revalidateZones(this);
@@ -3938,7 +3938,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isInsideRadius2D(int x, int y, int radius)
 	{
-		return this.calculateDistanceSq2D(x, y) < radius * radius;
+		return this.DistanceSquare2D(x, y) < radius * radius;
 	}
 	
 	/**
@@ -3962,7 +3962,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isInsideRadius3D(int x, int y, int z, int radius)
 	{
-		return this.calculateDistanceSq3D(x, y, z) < radius * radius;
+		return this.DistanceSquare3D(x, y, z) < radius * radius;
 	}
 	
 	/**
@@ -4827,7 +4827,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (!reflect && !isDOT)
 		{
 			// RearDamage effect bonus.
-			if (getLocation().IsBehindOf(target.getLocation()))
+			if (this.IsBehindOf(target))
 			{
 				damage *= _stat.getMul(Stat.REAR_DAMAGE_RATE, 1);
 			}
@@ -5659,7 +5659,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 		
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
 		ZoneRegion? newZoneRegion = ZoneManager.getInstance().getRegion(new Location2D(newX, newY));
 		
 		// Mobius: Prevent moving to nonexistent regions.

@@ -238,7 +238,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation();
+								return flags.First().Location;
 							}
 						}
 					}
@@ -251,7 +251,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation();
+								return flags.First().Location;
 							}
 						}
 					}
@@ -315,7 +315,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().Location3D);
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.Location.Location3D);
 			if (zone != null)
 			{
 				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
@@ -342,7 +342,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.getLocation().Location3D);
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.Location.Location3D);
 			if (zone != null)
 			{
 				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();

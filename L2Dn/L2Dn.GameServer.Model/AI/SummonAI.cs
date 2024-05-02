@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -284,7 +285,7 @@ public class SummonAI : PlayableAI, Runnable
 		
 		Creature owner = getActor().getOwner();
 		// trying to avoid if summon near owner
-		if ((owner != null) && (owner != attacker) && owner.isInsideRadius3D(_actor.getLocation().Location3D, 2 * AVOID_RADIUS))
+		if ((owner != null) && (owner != attacker) && owner.IsInsideRadius3D(_actor, 2 * AVOID_RADIUS))
 		{
 			_startAvoid = true;
 		}
@@ -302,7 +303,7 @@ public class SummonAI : PlayableAI, Runnable
 		Player owner = summon.getOwner();
 		if (owner != null)
 		{
-			if (summon.calculateDistance3D(owner.getLocation().Location3D) > 3000)
+			if (summon.Distance3D(owner) > 3000)
 			{
 				summon.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 			}

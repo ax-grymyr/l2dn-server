@@ -1544,7 +1544,7 @@ public class Siege: Siegable
 						continue;
 					}
 					
-					distance = ct.calculateDistanceSq3D(spawn.Location.Location3D);
+					distance = ct.DistanceSquare3D(spawn.Location.Location3D);
 					if (distance < distanceClosest)
 					{
 						closestCt = ct;

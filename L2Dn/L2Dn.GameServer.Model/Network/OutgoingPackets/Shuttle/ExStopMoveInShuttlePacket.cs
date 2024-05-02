@@ -23,6 +23,6 @@ public readonly struct ExStopMoveInShuttlePacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_STOP_MOVE_IN_SHUTTLE);
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_boatId);
-        writer.WriteLocationWithHeading(_location);
+        writer.WriteLocation(_location);
     }
 }

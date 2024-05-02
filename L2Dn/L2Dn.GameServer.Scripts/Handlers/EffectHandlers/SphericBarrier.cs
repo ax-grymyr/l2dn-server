@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -29,7 +30,7 @@ public class SphericBarrier: AbstractStatAddEffect
 	
 	private void onDamageReceivedEvent(OnCreatureDamageReceived ev)
 	{
-		if (ev.getAttacker().calculateDistance3D(ev.getTarget().getLocation().Location3D) > _amount)
+		if (ev.getAttacker().Distance3D(ev.getTarget()) > _amount)
 		{
 			ev.OverrideDamage = true;
 			ev.OverridenDamage = 0;

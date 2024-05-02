@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -102,7 +103,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			    || !list.isNpcAllowed(npc.getId()) //
 			    || !list.checkNpcObjectId(npc.getObjectId()) //
 			    || player.getInstanceId() != npc.getInstanceId() //
-			    || !player.isInsideRadius3D(npc.getLocation().Location3D, Npc.INTERACTION_DISTANCE))
+			    || !player.IsInsideRadius3D(npc, Npc.INTERACTION_DISTANCE))
 			{
 				if (player.isGM())
 				{

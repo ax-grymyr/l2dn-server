@@ -27,6 +27,6 @@ public readonly struct ExMoveToLocationInAirShipPacket: IOutgoingPacket
 
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_airShipId);
-        writer.WriteLocationWithHeading(_destination);
+        writer.WriteLocation(_destination);
     }
 }

@@ -692,7 +692,7 @@ public class PlayerInventory: Inventory
 			EventContainer itemEvents = droppedItem.getTemplate().Events;
 			if (itemEvents.HasSubscribers<OnPlayerItemDrop>())
 			{
-				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, droppedItem, droppedItem.getLocation().Location3D));
+				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, droppedItem, droppedItem.Location.Location3D));
 			}
 		}
 		
@@ -728,7 +728,7 @@ public class PlayerInventory: Inventory
 			EventContainer itemEvents = item.getTemplate().Events;
 			if (itemEvents.HasSubscribers<OnPlayerItemDrop>())
 			{
-				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, item, item.getLocation().Location3D));
+				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, item, item.Location.Location3D));
 			}
 		}
 		

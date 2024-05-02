@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
@@ -26,7 +27,7 @@ public class ServitorAttack: IPlayerActionHandler
 			return;
 		}
 		
-		bool targetOutOfRange = player.calculateDistance3D(target.getLocation().Location3D) > 3000;
+		bool targetOutOfRange = player.Distance3D(target) > 3000;
 		foreach (Summon summon in player.getServitors().values())
 		{
 			if (targetOutOfRange)

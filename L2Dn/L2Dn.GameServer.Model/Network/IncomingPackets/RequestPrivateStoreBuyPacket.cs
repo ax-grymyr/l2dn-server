@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -69,7 +70,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		
 		Player storePlayer = (Player)obj;
-		if (!player.isInsideRadius3D(storePlayer.getLocation().Location3D, Npc.INTERACTION_DISTANCE))
+		if (!player.IsInsideRadius3D(storePlayer, Npc.INTERACTION_DISTANCE))
 			return ValueTask.CompletedTask;
 		
 		if (player.getInstanceWorld() != storePlayer.getInstanceWorld())

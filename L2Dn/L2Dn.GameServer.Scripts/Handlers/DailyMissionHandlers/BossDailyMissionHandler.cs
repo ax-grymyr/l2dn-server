@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Attackables;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -62,7 +63,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 				List<Player> members = channel != null ? channel.getMembers() : party.getMembers();
 				foreach (Player member in members)
 				{
-					if (member.calculateDistance3D(monster.getLocation().Location3D) <= Config.ALT_PARTY_RANGE)
+					if (member.Distance3D(monster) <= Config.ALT_PARTY_RANGE)
 					{
 						processPlayerProgress(member);
 					}

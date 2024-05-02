@@ -59,10 +59,7 @@ public class Util
 			radius += ((Creature)obj2).getTemplate().getCollisionRadius();
 		}
 
-		double distance = includeZAxis
-			? obj1.getLocation().Distance3D(obj2.getLocation())
-			: obj1.getLocation().Distance2D(obj2.getLocation());
-
+		double distance = includeZAxis ? obj1.Distance3D(obj2) : obj1.Distance2D(obj2);
 		return distance <= range + radius;
 	}
 
@@ -86,10 +83,7 @@ public class Util
 			return true; // not limited
 		}
 
-		double distance = includeZAxis
-			? obj1.getLocation().Distance3D(obj2.getLocation())
-			: obj1.getLocation().Distance2D(obj2.getLocation());
-
+		double distance = includeZAxis ? obj1.Distance3D(obj2) : obj1.Distance2D(obj2);
 		return distance <= range;
 	}
 
@@ -259,8 +253,8 @@ public class Util
 
 	public static bool isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)
 	{
-		WorldObject target = World.getInstance().findObject(targetObjId);
-		return target != null && obj.calculateDistance3D(target.getLocation().Location3D) <= radius;
+		WorldObject? target = World.getInstance().findObject(targetObjId);
+		return target != null && obj.Distance3D(target) <= radius;
 	}
 
 	/**

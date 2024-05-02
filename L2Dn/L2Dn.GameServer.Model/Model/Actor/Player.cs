@@ -1251,14 +1251,14 @@ public class Player: Playable
 		}
 		
 		Npc target = _lastFolkNpc;
-		if ((target != null) && isInsideRadius2D(target.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+		if ((target != null) && this.IsInsideRadius2D(target, Npc.INTERACTION_DISTANCE))
 		{
 			quest.notifyEvent(ev, target, this);
 		}
 		else if (_questNpcObject > 0)
 		{
 			WorldObject obj = World.getInstance().findObject(getLastQuestNpcObject());
-			if ((obj != null) && obj.isNpc() && isInsideRadius2D(obj.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+			if ((obj != null) && obj.isNpc() && this.IsInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
 			{
 				Npc npc = (Npc) obj;
 				quest.notifyEvent(ev, npc, this);
@@ -1557,14 +1557,14 @@ public class Player: Playable
 		}
 		
 		// This function is called too often from movement code.
-		if (!force && (this.calculateDistance3D(_lastZoneValidateLocation) < 100))
+		if (!force && (this.Distance3D(_lastZoneValidateLocation) < 100))
 		{
 			return;
 		}
 
-		_lastZoneValidateLocation = getLocation().Location3D;
+		_lastZoneValidateLocation = Location.Location3D;
 
-		ZoneManager.getInstance().getRegion(getLocation().Location2D)?.revalidateZones(this);
+		ZoneManager.getInstance().getRegion(Location.Location2D)?.revalidateZones(this);
 		
 		if (Config.ALLOW_WATER)
 		{
@@ -4049,7 +4049,7 @@ public class Player: Playable
 		
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
 		{
-			if (!isVisibleFor(player) || (this.calculateDistance3D(player.getLocation().Location3D) >= radiusInKnownlist))
+			if (!isVisibleFor(player) || (this.Distance3D(player) >= radiusInKnownlist))
 			{
 				return;
 			}
@@ -9262,7 +9262,7 @@ public class Player: Playable
 		setInstance(null);
 		teleToLocation(new Location(_lastLoc.Value, 0), false);
 		unsetLastLocation();
-		sendPacket(new ObservationReturnPacket(getLocation().Location3D));
+		sendPacket(new ObservationReturnPacket(Location.Location3D));
 		setBlockActions(false);
 		if (!isGM())
 		{
@@ -10330,7 +10330,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().Location3D))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(Location.Location3D))
 			{
 				zone.onPlayerLoginInside(this);
 			}
@@ -10403,13 +10403,13 @@ public class Player: Playable
 			Pet pet = getPet();
 			if (pet != null)
 			{
-				pet.teleToLocation(getLocation(), true);
+				pet.teleToLocation(Location, true);
 			}
 			foreach (Summon summon in getServitors().values())
 			{
 				if (!summon.isInsideZone(ZoneId.SIEGE))
 				{
-					summon.teleToLocation(getLocation(), true);
+					summon.teleToLocation(Location, true);
 				}
 			}
 		}
@@ -10658,7 +10658,7 @@ public class Player: Playable
 		if (_pet != null)
 		{
 			_pet.setFollowStatus(false);
-			_pet.teleToLocation(getLocation(), false);
+			_pet.teleToLocation(Location, false);
 			((SummonAI) _pet.getAI()).setStartFollowController(true);
 			_pet.setFollowStatus(true);
 			_pet.setInstance(getInstanceWorld());
@@ -10669,7 +10669,7 @@ public class Player: Playable
 		getServitors().values().forEach(s =>
 		{
 			s.setFollowStatus(false);
-			s.teleToLocation(getLocation(), false);
+			s.teleToLocation(Location, false);
 			((SummonAI) s.getAI()).setStartFollowController(true);
 			s.setFollowStatus(true);
 			s.setInstance(getInstanceWorld());
@@ -10991,7 +10991,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().Location3D))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(Location.Location3D))
 			{
 				zone.onPlayerLogoutInside(this);
 			}
@@ -11165,7 +11165,7 @@ public class Player: Playable
 		getEffectList().stopAllToggles();
 		
 		// Remove from world regions zones.
-		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(Location.Location2D);
 		if (region != null)
 		{
 			region.removeFromZones(this);
@@ -12678,13 +12678,13 @@ public class Player: Playable
 	{
 		if (isInBoat())
 		{
-			setXYZ(getBoat().getLocation().Location3D);
+			setXYZ(getBoat().Location.Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new GetOnVehiclePacket(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
 		}
 		else if (isInAirShip())
 		{
-			setXYZ(getAirShip().getLocation().Location3D);
+			setXYZ(getAirShip().Location.Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new ExGetOnAirShipPacket(this, getAirShip()));
 		}

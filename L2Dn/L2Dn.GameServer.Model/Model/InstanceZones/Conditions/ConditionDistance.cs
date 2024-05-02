@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -17,6 +18,6 @@ public class ConditionDistance: Condition
 	protected override bool test(Player player, Npc npc)
 	{
 		int distance = getParameters().getInt("distance", 1000);
-		return player.isInsideRadius3D(npc.getLocation().Location3D, distance);
+		return player.IsInsideRadius3D(npc, distance);
 	}
 }

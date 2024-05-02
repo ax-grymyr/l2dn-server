@@ -251,13 +251,13 @@ public class SkillCaster: Runnable
 		if (target != caster)
 		{
 			// Face the target
-			caster.setHeading(new Location2D(caster.getX(), caster.getY()).HeadingTo(new Location2D(target.getX(), target.getY())));
+			caster.setHeading(caster.HeadingTo(target));
 			caster.broadcastPacket(new ExRotationPacket(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
 			
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
 			if (caster.isPlayer() && !caster.isCastingNow() && target.isCreature())
 			{
-				caster.sendPacket(new MoveToPawnPacket(caster, target, (int) caster.calculateDistance2D(target.getLocation().Location2D)));
+				caster.sendPacket(new MoveToPawnPacket(caster, target, (int)caster.Distance2D(target)));
 				caster.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 		}

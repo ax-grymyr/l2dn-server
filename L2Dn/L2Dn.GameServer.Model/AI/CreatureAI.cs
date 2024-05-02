@@ -933,13 +933,13 @@ public class CreatureAI: AbstractAI
 			offsetWithCollision += ((Creature) target).getTemplate().getCollisionRadius();
 		}
 		
-		if (!_actor.isInsideRadius2D(target.getLocation().Location2D, offsetWithCollision))
+		if (!_actor.IsInsideRadius2D(target, offsetWithCollision))
 		{
 			// Caller should be Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
 			if (isFollowing())
 			{
 				// allow larger hit range when the target is moving (check is run only once per second)
-				if (!_actor.isInsideRadius2D(target.getLocation().Location2D, offsetWithCollision + 100))
+				if (!_actor.IsInsideRadius2D(target, offsetWithCollision + 100))
 				{
 					return true;
 				}
@@ -1053,7 +1053,7 @@ public class CreatureAI: AbstractAI
 	protected bool checkTargetLost(WorldObject target)
 	{
 		if (target == null || (_actor != null && _skill != null && _skill.isBad() && _skill.getAffectRange() > 0 && (_actor.isPlayer() && _actor.isMoving() ? 
-			    !GeoEngine.getInstance().canMoveToTarget(_actor.getLocation().Location3D, target.getLocation().Location3D) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
+			    !GeoEngine.getInstance().canMoveToTarget(_actor.Location.Location3D, target.Location.Location3D) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			return true;

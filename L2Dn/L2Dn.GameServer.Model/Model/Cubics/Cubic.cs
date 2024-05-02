@@ -332,12 +332,9 @@ public class Cubic: Creature
 	{
 		return _owner.getInstanceWorld();
 	}
-	
-	public override Location getLocation()
-	{
-		return _owner.getLocation();
-	}
-	
+
+	public override Location Location => _owner.Location;
+
 	public override double getRandomDamageMultiplier()
 	{
 		int random = (int) _owner.getStat().getValue(Stat.RANDOM_DAMAGE);

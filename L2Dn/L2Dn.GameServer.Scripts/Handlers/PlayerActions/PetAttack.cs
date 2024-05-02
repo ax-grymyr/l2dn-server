@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 
@@ -40,7 +41,7 @@ public class PetAttack: IPlayerActionHandler
 			return;
 		}
 		
-		if (player.calculateDistance3D(target.getLocation().Location3D) > 3000)
+		if (player.Distance3D(target) > 3000)
 		{
 			pet.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 		}

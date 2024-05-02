@@ -25,6 +25,6 @@ public readonly struct ExStopMoveInAirShipPacket: IOutgoingPacket
 
         writer.WriteInt32(_player.getObjectId());
         writer.WriteInt32(_shipObjId);
-        writer.WriteLocationWithHeading(_location);
+        writer.WriteLocation(_location);
     }
 }

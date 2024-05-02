@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -45,7 +46,7 @@ public class TriggerSkillByDualRange: AbstractEffect
 			return;
 		}
 		
-		SkillHolder skillHolder = effector.calculateDistance3D(effected.getLocation().Location3D) < _distance ? _closeSkill : _rangeSkill;
+		SkillHolder skillHolder = effector.Distance3D(effected) < _distance ? _closeSkill : _rangeSkill;
 		Skill triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.getLevel()) : skillHolder.getSkill();
 		if (triggerSkill == null)
 		{

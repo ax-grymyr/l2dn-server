@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -61,7 +62,7 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 			
-            if (player.calculateDistance3D(trade.getPartner().getLocation().Location3D) > 150)
+            if (player.Distance3D(trade.getPartner()) > 150)
             {
                 player.cancelActiveTrade();
                 return ValueTask.CompletedTask;

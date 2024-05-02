@@ -94,7 +94,7 @@ public class SpeedFinalizer: StatFunction
 
 		if (creature.isPlayable() && creature.isInsideZone(ZoneId.SWAMP))
 		{
-			SwampZone? zone = ZoneManager.getInstance().getZone<SwampZone>(creature.getLocation().Location3D);
+			SwampZone? zone = ZoneManager.getInstance().getZone<SwampZone>(creature.Location.Location3D);
 			if (zone != null)
 			{
 				baseValue *= zone.getMoveBonus();

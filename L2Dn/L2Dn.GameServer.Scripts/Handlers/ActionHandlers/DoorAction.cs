@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 
@@ -36,7 +37,7 @@ public class DoorAction: IActionHandler
 			}
 			else if ((player.getClan() != null) && (clanHall != null) && (player.getClanId() == clanHall.getOwnerId()))
 			{
-				if (!door.isInsideRadius2D(player.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+				if (!door.IsInsideRadius2D(player, Npc.INTERACTION_DISTANCE))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
@@ -55,7 +56,7 @@ public class DoorAction: IActionHandler
 			}
 			else if ((player.getClan() != null) && (((Door) target).getFort() != null) && (player.getClan() == ((Door) target).getFort().getOwnerClan()) && ((Door) target).isOpenableBySkill() && !((Door) target).getFort().getSiege().isInProgress())
 			{
-				if (!((Creature) target).isInsideRadius2D(player.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
+				if (!target.IsInsideRadius2D(player, Npc.INTERACTION_DISTANCE))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}

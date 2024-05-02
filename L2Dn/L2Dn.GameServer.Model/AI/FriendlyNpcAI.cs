@@ -88,7 +88,7 @@ public class FriendlyNpcAI : AttackableAI
 		{
 			foreach (Attackable nearby in World.getInstance().getVisibleObjects<Attackable>(npc))
 			{
-				if (npc.isInsideRadius2D(nearby.getLocation().Location2D, collision) && (nearby != originalAttackTarget))
+				if (npc.IsInsideRadius2D(nearby, collision) && (nearby != originalAttackTarget))
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
@@ -125,7 +125,7 @@ public class FriendlyNpcAI : AttackableAI
 		// Calculate Archer movement.
 		if ((!npc.isMovementDisabled()) && (npc.getAiType() == AIType.ARCHER) && (Rnd.get(100) < 15))
 		{
-			double distance2 = npc.calculateDistanceSq2D(originalAttackTarget.getLocation().Location2D);
+			double distance2 = npc.DistanceSquare2D(originalAttackTarget);
 			if (Math.Sqrt(distance2) <= (60 + combinedCollision))
 			{
 				int posX = npc.getX();
@@ -157,7 +157,7 @@ public class FriendlyNpcAI : AttackableAI
 			}
 		}
 		
-		double dist = npc.calculateDistance2D(originalAttackTarget.getLocation().Location2D);
+		double dist = npc.Distance2D(originalAttackTarget);
 		int dist2 = (int) dist - collision;
 		int range = npc.getPhysicalAttackRange() + combinedCollision;
 		if (originalAttackTarget.isMoving())

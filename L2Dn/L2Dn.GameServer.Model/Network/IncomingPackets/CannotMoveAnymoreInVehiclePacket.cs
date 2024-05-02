@@ -16,7 +16,7 @@ public struct CannotMoveAnymoreInVehiclePacket: IIncomingPacket<GameSession>
     public void ReadContent(PacketBitReader reader)
     {
         _boatId = reader.ReadInt32();
-        _location = reader.ReadLocationWithHeading();
+        _location = reader.ReadLocation();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)

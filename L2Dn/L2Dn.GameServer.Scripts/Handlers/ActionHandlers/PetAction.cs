@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Events.Impl.Summons;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 
@@ -42,7 +43,7 @@ public class PetAction: IActionHandler
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				player.onActionRequest();
 			}
-			else if (!pet.isInsideRadius2D(player.getLocation().Location2D, 150))
+			else if (!pet.IsInsideRadius2D(player, 150))
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				player.onActionRequest();

@@ -114,7 +114,7 @@ public class SiegeGuardManager
 	{
 		foreach (Item ticket in _droppedTickets)
 		{
-			if (ticket.calculateDistance3D(player.getLocation().Location3D) < 25)
+			if (ticket.Distance3D(player) < 25)
 			{
 				return true;
 			}
@@ -185,7 +185,7 @@ public class SiegeGuardManager
 				LOGGER.Warn("Error adding siege guard for castle " + castle.getName() + ": " + e);
 			}
 			
-			spawnMercenary(player.getLocation().Location3D, player.getHeading(), holder);
+			spawnMercenary(player.Location, holder);
 			Item dropticket = new Item(itemId);
 			dropticket.setItemLocation(ItemLocation.VOID);
 			dropticket.dropMe(null, player.getX(), player.getY(), player.getZ());
@@ -199,7 +199,7 @@ public class SiegeGuardManager
 	 * @param pos the object containing the spawn location coordinates
 	 * @param holder SiegeGuardHolder holder
 	 */
-	private void spawnMercenary(Location3D location, int heading, SiegeGuardHolder holder)
+	private void spawnMercenary(Location location, SiegeGuardHolder holder)
 	{
 		NpcTemplate template = NpcData.getInstance().getTemplate(holder.getNpcId());
 		if (template != null)
@@ -207,7 +207,7 @@ public class SiegeGuardManager
 			Defender npc = new Defender(template);
 			npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
 			npc.setDecayed(false);
-			npc.setHeading(heading);
+			npc.setHeading(location.Heading);
 			npc.spawnMe(location.X, location.Y, location.Z + 20);
 			npc.scheduleDespawn(TimeSpan.FromSeconds(3));
 			npc.setImmobilized(holder.isStationary());
@@ -248,7 +248,7 @@ public class SiegeGuardManager
 			return;
 		}
 		
-		removeSiegeGuard(holder.getNpcId(), item.getLocation().Location3D);
+		removeSiegeGuard(holder.getNpcId(), item.Location.Location3D);
 		_droppedTickets.remove(item);
 	}
 	

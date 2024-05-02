@@ -81,12 +81,12 @@ public class CallPc: AbstractEffect
 				effected.abortAttack();
 				effected.stopMove(null);
 				effected.sendPacket(new FlyToLocationPacket(effected, new Location3D(effector.getX(), effector.getY(), effector.getZ()), FlyType.DUMMY));
-				effected.setLocation(effector.getLocation());
+				effected.setLocation(effector.Location);
 			}
 			else
 			{
 				WorldObject previousTarget = target.getTarget();
-				target.teleToLocation(effector.getLocation());
+				target.teleToLocation(effector.Location);
 				target.setTarget(previousTarget);
 			}
 		}

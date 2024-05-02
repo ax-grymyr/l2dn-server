@@ -20,7 +20,7 @@ public readonly struct ExShuttleInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHUTTLE_INFO);
         writer.WriteInt32(_shuttle.getObjectId());
-        writer.WriteLocationWithHeading(_shuttle.getLocation());
+        writer.WriteLocation(_shuttle.Location);
         writer.WriteInt32(_shuttle.getId());
         writer.WriteInt32(_stops.Count);
         foreach (ShuttleStop stop in _stops)

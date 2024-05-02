@@ -31,7 +31,7 @@ public class Backstab: AbstractEffect
 	
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return !effector.getLocation().IsInFrontOf(effected.getLocation()) &&
+		return !effector.IsInFrontOf(effected) &&
 		       !Formulas.calcSkillEvasion(effector, effected, skill) &&
 		       Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
 	}

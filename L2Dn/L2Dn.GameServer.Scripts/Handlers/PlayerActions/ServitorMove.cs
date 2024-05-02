@@ -33,7 +33,7 @@ public class ServitorMove: IPlayerActionHandler
 					}
 					
 					summon.setFollowStatus(false);
-					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getTarget().getLocation().Location3D);
+					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getTarget().Location.Location3D);
 				}
 			}
 		}

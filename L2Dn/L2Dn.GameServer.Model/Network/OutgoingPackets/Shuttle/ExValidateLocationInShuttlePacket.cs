@@ -23,6 +23,6 @@ public readonly struct ExValidateLocationInShuttlePacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_VALIDATE_LOCATION_IN_SHUTTLE);
         writer.WriteInt32(_player.getObjectId());
         writer.WriteInt32(_shipId);
-        writer.WriteLocationWithHeading(_location);
+        writer.WriteLocation(_location);
     }
 }

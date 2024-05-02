@@ -439,7 +439,7 @@ public abstract class Summon: Playable
 				}
 			}
 			
-			ZoneRegion? oldRegion = ZoneManager.getInstance().getRegion(getLocation().Location2D);
+			ZoneRegion? oldRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
 			decayMe();
 			oldRegion?.removeFromZones(this);
 			
@@ -871,7 +871,7 @@ public abstract class Summon: Playable
 	public override void onTeleported()
 	{
 		base.onTeleported();
-		sendPacket(new TeleportToLocationPacket(getObjectId(), getLocation()));
+		sendPacket(new TeleportToLocationPacket(getObjectId(), Location));
 	}
 	
 	public override bool isUndead()

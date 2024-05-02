@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Commission;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -493,7 +494,7 @@ public class ItemCommissionManager
 		Npc npc = player.getLastFolkNPC();
 		if (npc is CommissionManager)
 		{
-			return npc.calculateDistance3D(player.getLocation().Location3D) <= INTERACTION_DISTANCE;
+			return npc.Distance3D(player) <= INTERACTION_DISTANCE;
 		}
 		return false;
 	}

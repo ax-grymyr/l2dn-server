@@ -18,6 +18,7 @@ using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
@@ -491,7 +492,7 @@ public class AutoUseTaskManager
 			}
 			
 			Playable playableTarget = (target == null) || !target.isPlayable() || (skill.getTargetType() == TargetType.SELF) ? player : (Playable) target;
-			if ((player != playableTarget) && (player.calculateDistance3D(playableTarget.getLocation().Location3D) > skill.getCastRange()))
+			if ((player != playableTarget) && (player.Distance3D(playableTarget) > skill.getCastRange()))
 			{
 				return false;
 			}

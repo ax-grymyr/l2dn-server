@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -63,7 +64,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    WorldObject target = player.getTarget();
 	    if (!player.isGM() && (target == null // No target (i.e. GM Shop)
 	                           || !(target is Merchant) // Target not a merchant
-	                           || !player.isInsideRadius2D(target.getLocation().Location2D, Npc.INTERACTION_DISTANCE) // Distance is too far
+	                           || !player.IsInsideRadius2D(target, Npc.INTERACTION_DISTANCE) // Distance is too far
 	        ))
 	    {
 		    return ValueTask.CompletedTask;

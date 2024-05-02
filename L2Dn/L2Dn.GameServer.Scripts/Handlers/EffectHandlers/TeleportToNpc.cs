@@ -43,7 +43,7 @@ public class TeleportToNpc: AbstractEffect
 		{
 			if (npc.getId() == _npcId)
 			{
-				teleLocation = npc.getLocation();
+				teleLocation = npc.Location;
 			}
 		}
 		

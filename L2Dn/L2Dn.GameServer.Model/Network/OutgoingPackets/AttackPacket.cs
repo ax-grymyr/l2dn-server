@@ -23,8 +23,8 @@ public readonly struct AttackPacket: IOutgoingPacket
 	{
 		_hits = new List<Hit>();
 		_attackerObjId = attacker.getObjectId();
-		_attackerLoc = attacker.getLocation().Location3D;
-		_targetLoc = target.getLocation().Location3D;
+		_attackerLoc = attacker.Location.Location3D;
+		_targetLoc = target.Location.Location3D;
 		Player player = attacker.getActingPlayer();
 		if (player == null)
 		{

@@ -16,7 +16,7 @@ public struct RequestStopMovePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        player.stopMove(player.getLocation());
+        player.stopMove(player.Location);
         
         return ValueTask.CompletedTask;
     }

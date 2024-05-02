@@ -62,11 +62,11 @@ public class ConditionPlayerState : Condition
 			}
 			case PlayerState.BEHIND:
 			{
-				return effector.getLocation().IsBehindOf(effected.getLocation()) == _required;
+				return effector.IsBehindOf(effected) == _required;
 			}
 			case PlayerState.FRONT:
 			{
-				return effector.getLocation().IsInFrontOf(effected.getLocation()) == _required;
+				return effector.IsInFrontOf(effected) == _required;
 			}
 			case PlayerState.CHAOTIC:
 			{

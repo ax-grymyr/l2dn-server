@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -99,7 +100,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 		}
 
 		// Players may not be too far apart
-		if (!player.isInsideRadius2D(targetChar.getLocation().Location2D, 250))
+		if (!player.IsInsideRadius2D(targetChar, 250))
 		{
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_IS_TOO_FAR_AWAY_TO_RECEIVE_A_DUEL_CHALLENGE);
 			msg.Params.addString(targetChar.getName());
