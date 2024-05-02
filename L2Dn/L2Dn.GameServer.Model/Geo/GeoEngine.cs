@@ -236,9 +236,9 @@ public class GeoEngine
 	 * @param worldPosition the world position
 	 * @return {@code true} if the character can see the target at the given world position, {@code false} otherwise
 	 */
-	public bool canSeeTarget(WorldObject cha, ILocational worldPosition)
+	public bool canSeeTarget(WorldObject cha, Location3D targetLocation)
 	{
-		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), cha.getInstanceWorld());
+		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), targetLocation.X, targetLocation.Y, targetLocation.Z, cha.getInstanceWorld());
 	}
 	
 	/**
@@ -576,9 +576,9 @@ public class GeoEngine
 	 * @param toZ the Z coordinate to end checking at
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public bool canMoveToTarget(ILocational from, int toX, int toY, int toZ)
+	public bool canMoveToTarget(Location3D from, int toX, int toY, int toZ)
 	{
-		return canMoveToTarget(from.getX(), from.getY(), from.getZ(), toX, toY, toZ, null);
+		return canMoveToTarget(from.X, from.Y, from.Z, toX, toY, toZ, null);
 	}
 	
 	/**
@@ -587,9 +587,9 @@ public class GeoEngine
 	 * @param to the {@code ILocational} to end checking at
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public bool canMoveToTarget(ILocational from, ILocational to)
+	public bool canMoveToTarget(Location3D from, Location3D to)
 	{
-		return canMoveToTarget(from, to.getX(), to.getY(), to.getZ());
+		return canMoveToTarget(from, to.X, to.Y, to.Z);
 	}
 	
 	/**

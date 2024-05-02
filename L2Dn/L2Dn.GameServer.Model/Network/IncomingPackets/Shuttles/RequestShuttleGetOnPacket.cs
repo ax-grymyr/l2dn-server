@@ -31,7 +31,7 @@ public struct RequestShuttleGetOnPacket: IIncomingPacket<GameSession>
         // TODO: better way?
         foreach (Shuttle shuttle in World.getInstance().getVisibleObjects<Shuttle>(player))
         {
-            if (shuttle.calculateDistance3D(player) < 1000)
+            if (shuttle.calculateDistance3D(player.getLocation().ToLocation3D()) < 1000)
             {
                 shuttle.addPassenger(player);
                 player.getInVehiclePosition().setXYZ(new Location3D(_x, _y, _z));
@@ -39,7 +39,7 @@ public struct RequestShuttleGetOnPacket: IIncomingPacket<GameSession>
             }
 
             PacketLogger.Instance.Info(GetType().Name + ": range between char and shuttle: " +
-                                       shuttle.calculateDistance3D(player));
+                                       shuttle.calculateDistance3D(player.getLocation().ToLocation3D()));
         }
         
         return ValueTask.CompletedTask;

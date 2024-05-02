@@ -699,7 +699,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param z the Z coordinate
 	 * @return distance between object and given x, y, z.
 	 */
-	public double calculateDistance2D(int x, int y, int z)
+	public double calculateDistance2D(int x, int y)
 	{
 		return Math.Sqrt(Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2));
 	}
@@ -709,9 +709,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param loc the location object
 	 * @return distance between object and given location.
 	 */
-	public double calculateDistance2D(ILocational loc)
+	public double calculateDistance2D(Location2D location)
 	{
-		return calculateDistance2D(loc.getX(), loc.getY(), loc.getZ());
+		return calculateDistance2D(location.X, location.Y);
 	}
 
 	/**
@@ -731,9 +731,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param loc the location object
 	 * @return distance between object and given location.
 	 */
-	public double calculateDistance3D(ILocational loc)
+	public double calculateDistance3D(Location3D location)
 	{
-		return calculateDistance3D(loc.getX(), loc.getY(), loc.getZ());
+		return calculateDistance3D(location.X, location.Y, location.Z);
 	}
 
 	/**
@@ -753,9 +753,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param loc the location object
 	 * @return distance between object and given location.
 	 */
-	public double calculateDistanceSq2D(ILocational loc)
+	public double calculateDistanceSq2D(Location2D location)
 	{
-		return calculateDistanceSq2D(loc.getX(), loc.getY());
+		return calculateDistanceSq2D(location.X, location.Y);
 	}
 
 	/**
@@ -775,9 +775,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param loc the location object
 	 * @return distance between object and given location.
 	 */
-	public double calculateDistanceSq3D(ILocational loc)
+	public double calculateDistanceSq3D(Location3D location)
 	{
-		return calculateDistanceSq3D(loc.getX(), loc.getY(), loc.getZ());
+		return calculateDistanceSq3D(location.X, location.Y, location.Z);
 	}
 
 	/**
@@ -787,9 +787,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * @param target the object to which to calculate the angle
 	 * @return the angle this object has to turn to have the given object in front of it
 	 */
-	public double calculateDirectionTo(ILocational target)
+	public double calculateDirectionTo(Location2D targetLocation)
 	{
-		return new Location2D(getX(), getY()).AngleDegreesTo(new Location2D(target.getX(), target.getY()));
+		return new Location2D(getX(), getY()).AngleDegreesTo(targetLocation);
 	}
 
 	/**

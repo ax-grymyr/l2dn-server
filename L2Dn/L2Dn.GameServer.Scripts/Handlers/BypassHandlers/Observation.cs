@@ -110,7 +110,7 @@ public class Observation: IBypassHandler
 		{
 			case "observesiege":
 			{
-				if (SiegeManager.getInstance().getSiege(loc) != null)
+				if (SiegeManager.getInstance().getSiege(loc.ToLocation3D()) != null)
 				{
 					doObserve(player, (Npc) target, loc, cost);
 				}

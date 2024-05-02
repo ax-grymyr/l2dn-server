@@ -63,7 +63,7 @@ public class WorldRegion
 					
 					// Teleport to spawn when too far away.
 					Spawn spawn = mob.getSpawn();
-					if ((spawn != null) && (mob.calculateDistance2D(spawn.Location) > Config.MAX_DRIFT_RANGE))
+					if ((spawn != null) && (mob.calculateDistance2D(spawn.Location.ToLocation2D()) > Config.MAX_DRIFT_RANGE))
 					{
 						mob.teleToLocation(spawn.Location);
 					}

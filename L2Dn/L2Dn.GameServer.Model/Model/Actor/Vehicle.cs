@@ -143,7 +143,7 @@ public abstract class Vehicle : Creature
 						{
 							_monitorTask = ThreadPool.scheduleAtFixedRate(() =>
 							{
-								if (!isInDock() && (calculateDistance3D(_monitorLocation) == 0))
+								if (!isInDock() && (calculateDistance3D(_monitorLocation.ToLocation3D()) == 0))
 								{
 									if (_currentPath != null)
 									{

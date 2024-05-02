@@ -45,7 +45,7 @@ public class TriggerSkillByDualRange: AbstractEffect
 			return;
 		}
 		
-		SkillHolder skillHolder = effector.calculateDistance3D(effected) < _distance ? _closeSkill : _rangeSkill;
+		SkillHolder skillHolder = effector.calculateDistance3D(effected.getLocation().ToLocation3D()) < _distance ? _closeSkill : _rangeSkill;
 		Skill triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.getLevel()) : skillHolder.getSkill();
 		if (triggerSkill == null)
 		{

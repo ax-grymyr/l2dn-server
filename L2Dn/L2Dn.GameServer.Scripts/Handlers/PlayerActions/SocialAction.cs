@@ -130,7 +130,7 @@ public class SocialAction: IPlayerActionHandler
 			return;
 		}
 		
-		int distance = (int) player.calculateDistance2D(target);
+		int distance = (int) player.calculateDistance2D(target.getLocation().ToLocation2D());
 		if ((distance > 125) || (distance < 15) || (player.getObjectId() == target.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);

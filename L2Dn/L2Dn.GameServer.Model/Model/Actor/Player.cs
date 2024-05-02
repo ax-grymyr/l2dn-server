@@ -1557,7 +1557,7 @@ public class Player: Playable
 		}
 		
 		// This function is called too often from movement code.
-		if (!force && (calculateDistance3D(_lastZoneValidateLocation) < 100))
+		if (!force && (calculateDistance3D(_lastZoneValidateLocation.ToLocation3D()) < 100))
 		{
 			return;
 		}
@@ -4048,7 +4048,7 @@ public class Player: Playable
 		
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
 		{
-			if (!isVisibleFor(player) || (calculateDistance3D(player) >= radiusInKnownlist))
+			if (!isVisibleFor(player) || (calculateDistance3D(player.getLocation().ToLocation3D()) >= radiusInKnownlist))
 			{
 				return;
 			}

@@ -13,6 +13,6 @@ public class RangeCondition: ICubicCondition
 
     public bool test(Cubic cubic, Creature owner, WorldObject target)
     {
-        return owner.calculateDistance2D(target) <= _range;
+        return owner.calculateDistance2D(target.getLocation().ToLocation2D()) <= _range;
     }
 }

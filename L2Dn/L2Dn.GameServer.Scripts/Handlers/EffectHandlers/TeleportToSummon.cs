@@ -44,7 +44,7 @@ public class TeleportToSummon: AbstractEffect
 	{
 		L2Dn.GameServer.Model.Actor.Summon summon = effected.getActingPlayer().getFirstServitor();
 		
-		if ((_maxDistance > 0) && (effector.calculateDistance2D(summon) >= _maxDistance))
+		if ((_maxDistance > 0) && (effector.calculateDistance2D(summon.getLocation().ToLocation2D()) >= _maxDistance))
 		{
 			return;
 		}

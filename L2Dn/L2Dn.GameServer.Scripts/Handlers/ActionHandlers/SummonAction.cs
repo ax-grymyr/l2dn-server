@@ -54,7 +54,7 @@ public class SummonAction: IActionHandler
 				{
 					player.updateNotMoveUntil();
 				}
-				else if (GeoEngine.getInstance().canMoveToTarget(player, target))
+				else if (GeoEngine.getInstance().canMoveToTarget(player.getLocation().ToLocation3D(), target.getLocation().ToLocation3D()))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 				}

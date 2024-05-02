@@ -302,7 +302,7 @@ public class SummonAI : PlayableAI, Runnable
 		Player owner = summon.getOwner();
 		if (owner != null)
 		{
-			if (summon.calculateDistance3D(owner) > 3000)
+			if (summon.calculateDistance3D(owner.getLocation().ToLocation3D()) > 3000)
 			{
 				summon.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 			}

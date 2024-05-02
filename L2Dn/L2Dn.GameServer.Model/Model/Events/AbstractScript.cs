@@ -1585,9 +1585,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, ILocational pos, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
-		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, instanceId);
+		return addSpawn(npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
 	
 	/**

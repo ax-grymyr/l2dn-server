@@ -40,7 +40,7 @@ public class PetAttack: IPlayerActionHandler
 			return;
 		}
 		
-		if (player.calculateDistance3D(target) > 3000)
+		if (player.calculateDistance3D(target.getLocation().ToLocation3D()) > 3000)
 		{
 			pet.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 		}

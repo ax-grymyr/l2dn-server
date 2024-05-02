@@ -72,8 +72,8 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%mpRewardTicks%", npc.getTemplate().getMpRewardTicks().ToString());
 			htmlContent.Replace("%mpRewardType%", npc.getTemplate().getMpRewardType().ToString());
 			htmlContent.Replace("%mpRewardAffectType%", npc.getTemplate().getMpRewardAffectType().ToString());
-			htmlContent.Replace("%loc2d%", ((int) player.calculateDistance2D(npc)).ToString());
-			htmlContent.Replace("%loc3d%", ((int) player.calculateDistance3D(npc)).ToString());
+			htmlContent.Replace("%loc2d%", ((int) player.calculateDistance2D(npc.getLocation().ToLocation2D())).ToString());
+			htmlContent.Replace("%loc3d%", ((int) player.calculateDistance3D(npc.getLocation().ToLocation3D())).ToString());
 			
 			AttributeType attackAttribute = npc.getAttackElement();
 			htmlContent.Replace("%ele_atk%", attackAttribute.ToString());

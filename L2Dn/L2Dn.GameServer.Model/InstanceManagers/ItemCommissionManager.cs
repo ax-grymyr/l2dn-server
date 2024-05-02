@@ -493,7 +493,7 @@ public class ItemCommissionManager
 		Npc npc = player.getLastFolkNPC();
 		if (npc is CommissionManager)
 		{
-			return npc.calculateDistance3D(player) <= INTERACTION_DISTANCE;
+			return npc.calculateDistance3D(player.getLocation().ToLocation3D()) <= INTERACTION_DISTANCE;
 		}
 		return false;
 	}

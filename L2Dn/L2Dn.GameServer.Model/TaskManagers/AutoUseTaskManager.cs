@@ -491,7 +491,7 @@ public class AutoUseTaskManager
 			}
 			
 			Playable playableTarget = (target == null) || !target.isPlayable() || (skill.getTargetType() == TargetType.SELF) ? player : (Playable) target;
-			if ((player != playableTarget) && (player.calculateDistance3D(playableTarget) > skill.getCastRange()))
+			if ((player != playableTarget) && (player.calculateDistance3D(playableTarget.getLocation().ToLocation3D()) > skill.getCastRange()))
 			{
 				return false;
 			}

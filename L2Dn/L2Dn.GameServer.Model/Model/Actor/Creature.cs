@@ -1309,7 +1309,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 				
 				// Check if target is within attack angle.
-				if (Math.Abs(calculateDirectionTo(obj) - headingAngle) > physicalAttackAngle)
+				if (Math.Abs(calculateDirectionTo(obj.getLocation().ToLocation2D()) - headingAngle) > physicalAttackAngle)
 				{
 					continue;
 				}
@@ -3368,7 +3368,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
-		if (!force && calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
+		if (!force && calculateDistance3D(_lastZoneValidateLocation.ToLocation3D()) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
 		{
 			return;
 		}

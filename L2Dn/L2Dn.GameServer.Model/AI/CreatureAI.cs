@@ -1058,7 +1058,7 @@ public class CreatureAI: AbstractAI
 	protected bool checkTargetLost(WorldObject target)
 	{
 		if (target == null || (_actor != null && _skill != null && _skill.isBad() && _skill.getAffectRange() > 0 && (_actor.isPlayer() && _actor.isMoving() ? 
-			    !GeoEngine.getInstance().canMoveToTarget(_actor, target) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
+			    !GeoEngine.getInstance().canMoveToTarget(_actor.getLocation().ToLocation3D(), target.getLocation().ToLocation3D()) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			return true;

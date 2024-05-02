@@ -257,7 +257,7 @@ public class SkillCaster: Runnable
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
 			if (caster.isPlayer() && !caster.isCastingNow() && target.isCreature())
 			{
-				caster.sendPacket(new MoveToPawnPacket(caster, target, (int) caster.calculateDistance2D(target)));
+				caster.sendPacket(new MoveToPawnPacket(caster, target, (int) caster.calculateDistance2D(target.getLocation().ToLocation2D())));
 				caster.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 		}

@@ -33,7 +33,7 @@ public class Ground: ITargetTypeHandler
 					return null;
 				}
 				
-				if (!GeoEngine.getInstance().canSeeTarget(creature, worldPosition))
+				if (!GeoEngine.getInstance().canSeeTarget(creature, worldPosition.ToLocation3D()))
 				{
 					if (sendMessage)
 					{

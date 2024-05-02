@@ -296,7 +296,7 @@ public class AttackableAI: CreatureAI
 							|| (Config.FAKE_PLAYER_AGGRO_PLAYERS && t.isPlayer()))
 						{
 							long hating = npc.getHating(t);
-							double distance = npc.calculateDistance2D(t);
+							double distance = npc.calculateDistance2D(t.getLocation().ToLocation2D());
 							if ((hating == 0) && (closestDistance > distance))
 							{
 								nearestTarget = t;
@@ -315,7 +315,7 @@ public class AttackableAI: CreatureAI
 					Item droppedItem = npc.getFakePlayerDrops().get(itemIndex);
 					if ((droppedItem != null) && droppedItem.isSpawned())
 					{
-						if (npc.calculateDistance2D(droppedItem) > 50)
+						if (npc.calculateDistance2D(droppedItem.getLocation().ToLocation2D()) > 50)
 						{
 							moveTo(new Location3D(droppedItem.getX(), droppedItem.getY(), droppedItem.getZ()));
 						}
@@ -441,7 +441,7 @@ public class AttackableAI: CreatureAI
 		}
 		
 		// Order this attackable to return to its spawn because there's no target to attack
-		if (!npc.isWalker() && (npc.getSpawn() != null) && (npc.calculateDistance2D(npc.getSpawn().Location) > Config.MAX_DRIFT_RANGE) && ((getTarget() == null) || getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES && getTarget().getActingPlayer().isAlikeDead())))
+		if (!npc.isWalker() && (npc.getSpawn() != null) && (npc.calculateDistance2D(npc.getSpawn().Location.ToLocation2D()) > Config.MAX_DRIFT_RANGE) && ((getTarget() == null) || getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES && getTarget().getActingPlayer().isAlikeDead())))
 		{
 			npc.setWalking();
 			npc.returnHome();
@@ -478,7 +478,7 @@ public class AttackableAI: CreatureAI
 				npc.setWalking();
 			}
 			
-			if (npc.calculateDistanceSq2D(leader) > (offset * offset))
+			if (npc.calculateDistanceSq2D(leader.getLocation().ToLocation2D()) > (offset * offset))
 			{
 				int x1 = Rnd.get(minRadius * 2, offset * 2); // x
 				int y1 = Rnd.get(x1, offset * 2); // distance
@@ -573,7 +573,7 @@ public class AttackableAI: CreatureAI
 		if (Config.AGGRO_DISTANCE_CHECK_ENABLED && npc.isMonster() && !npc.isWalker() && !(npc is GrandBoss))
 		{
 			Spawn spawn = npc.getSpawn();
-			if ((spawn != null) && (npc.calculateDistance2D(spawn.Location) > (spawn.getChaseRange() > 0 ? Math.Max(Config.MAX_DRIFT_RANGE, spawn.getChaseRange()) : npc.isRaid() ? Config.AGGRO_DISTANCE_CHECK_RAID_RANGE : Config.AGGRO_DISTANCE_CHECK_RANGE)))
+			if ((spawn != null) && (npc.calculateDistance2D(spawn.Location.ToLocation2D()) > (spawn.getChaseRange() > 0 ? Math.Max(Config.MAX_DRIFT_RANGE, spawn.getChaseRange()) : npc.isRaid() ? Config.AGGRO_DISTANCE_CHECK_RAID_RANGE : Config.AGGRO_DISTANCE_CHECK_RANGE)))
 			{
 				if ((Config.AGGRO_DISTANCE_CHECK_RAIDS || !npc.isRaid()) && (Config.AGGRO_DISTANCE_CHECK_INSTANCES || !npc.isInInstance()))
 				{
@@ -805,7 +805,7 @@ public class AttackableAI: CreatureAI
 		// Calculate Archer movement.
 		if ((!npc.isMovementDisabled()) && (npc.getAiType() == AIType.ARCHER) && (Rnd.get(100) < 15))
 		{
-			double distance2 = npc.calculateDistanceSq2D(target);
+			double distance2 = npc.calculateDistanceSq2D(target.getLocation().ToLocation2D());
 			if (Math.Sqrt(distance2) <= (60 + combinedCollision))
 			{
 				int posX = npc.getX();
@@ -946,7 +946,7 @@ public class AttackableAI: CreatureAI
 			}
 			
 			// Try cast short range skill.
-			if (!npc.getShortRangeSkills().isEmpty() && (npc.calculateDistance2D(target) <= 150))
+			if (!npc.getShortRangeSkills().isEmpty() && (npc.calculateDistance2D(target.getLocation().ToLocation2D()) <= 150))
 			{
 				Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().size()));
 				if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
@@ -988,7 +988,7 @@ public class AttackableAI: CreatureAI
 		{
 			range = 850 + combinedCollision; // Base bow range for NPCs.
 		}
-		if (npc.calculateDistance2D(target) > range)
+		if (npc.calculateDistance2D(target.getLocation().ToLocation2D()) > range)
 		{
 			if (checkTarget(target))
 			{

@@ -44,7 +44,7 @@ public class Target: ITargetTypeHandler
 		}
 		
 		// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
-		if (dontMove && (creature.calculateDistance2D(target) > skill.getCastRange()))
+		if (dontMove && (creature.calculateDistance2D(target.getLocation().ToLocation2D()) > skill.getCastRange()))
 		{
 			if (sendMessage)
 			{

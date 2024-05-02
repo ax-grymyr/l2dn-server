@@ -97,7 +97,7 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
 				List<Player> members = channel != null ? channel.getMembers() : party.getMembers();
 				foreach (Player member in members)
 				{
-					if ((member.getLevel() >= (monsterLevel - 5)) && (member.calculateDistance3D(monster) <= Config.ALT_PARTY_RANGE))
+					if ((member.getLevel() >= (monsterLevel - 5)) && (member.calculateDistance3D(monster.getLocation().ToLocation3D()) <= Config.ALT_PARTY_RANGE))
 					{
 						processPlayerProgress(member);
 					}

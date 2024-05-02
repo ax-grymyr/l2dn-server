@@ -59,7 +59,7 @@ public class Range: IAffectScopeHandler
 				Location worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
-					World.getInstance().forEachVisibleObjectInRange<Creature>(creature, (int) (affectRange + creature.calculateDistance2D(worldPosition)), c =>
+					World.getInstance().forEachVisibleObjectInRange<Creature>(creature, (int) (affectRange + creature.calculateDistance2D(worldPosition.ToLocation2D())), c =>
 					{
 						if (!c.isInsideRadius3D(worldPosition.ToLocation3D(), affectRange))
 						{

@@ -272,7 +272,7 @@ public class Formulas
 		// TODO: Find retail-like calculation for criticalRateMod.
 		double criticalRateMod = (target.getStat().getValue(Stat.DEFENCE_CRITICAL_RATE, rate) + target.getStat().getValue(Stat.DEFENCE_CRITICAL_RATE_ADD, 0)) / 10;
 		double criticalLocBonus = calcCriticalPositionBonus(creature, target);
-		double criticalHeightBonus = calcCriticalHeightBonus(creature, target);
+		double criticalHeightBonus = calcCriticalHeightBonus(creature.getZ(), target.getZ());
 		rate = criticalLocBonus * criticalRateMod * criticalHeightBonus;
 
 		// Autoattack critical depends on level difference at high levels as well.
@@ -321,9 +321,9 @@ public class Formulas
 		}
 	}
 
-	public static double calcCriticalHeightBonus(ILocational from, ILocational target)
+	public static double calcCriticalHeightBonus(int fromZ, int targetZ)
 	{
-		return (CommonUtil.constrain(from.getZ() - target.getZ(), -25, 25) * 4 / 5 + 10) / 100 + 1;
+		return (int.Clamp(fromZ - targetZ, -25, 25) * 4 / 5 + 10) / 100 + 1;
 	}
 
 	/**
@@ -613,7 +613,7 @@ public class Formulas
 		}
 
 		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
-		if (degreeside < 360 && Math.Abs(target.calculateDirectionTo(attacker) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
+		if (degreeside < 360 && Math.Abs(target.calculateDirectionTo(attacker.getLocation().ToLocation2D()) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
 		{
 			return 0;
 		}
@@ -728,7 +728,7 @@ public class Formulas
 				double sphericBarrierRange = target.getStat().getValue(Stat.SPHERIC_BARRIER_RANGE, 0);
 				if (sphericBarrierRange > 0)
 				{
-					resisted = attacker.calculateDistance3D(target) > sphericBarrierRange;
+					resisted = attacker.calculateDistance3D(target.getLocation().ToLocation3D()) > sphericBarrierRange;
 				}
 			}
 
@@ -1087,7 +1087,7 @@ public class Formulas
 			: creature.getTemplate().getBaseCritRate();
 
 		// double dexBonus = BaseStats.DEX.calcBonus(activeChar); Not used in GOD
-		double critHeightBonus = calcCriticalHeightBonus(creature, target);
+		double critHeightBonus = calcCriticalHeightBonus(creature.getZ(), target.getZ());
 		double criticalPosition = calcCriticalPositionBonus(creature, target); // 30% chance from back, 10% chance from side. Include buffs that give positional crit rate.
 		double chanceBoostMod = (100 + chanceBoost) / 100;
 		double blowRateMod = creature.getStat().getValue(Stat.BLOW_RATE, 1);

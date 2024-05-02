@@ -61,7 +61,7 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 			
-            if (player.calculateDistance3D(trade.getPartner()) > 150)
+            if (player.calculateDistance3D(trade.getPartner().getLocation().ToLocation3D()) > 150)
             {
                 player.cancelActiveTrade();
                 return ValueTask.CompletedTask;

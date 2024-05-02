@@ -708,7 +708,7 @@ public sealed class World
 					continue;
 				}
 				
-				if (wo.calculateDistance3D(obj) <= range)
+				if (wo.calculateDistance3D(obj.getLocation().ToLocation3D()) <= range)
 				{
 					c((T)wo);
 				}

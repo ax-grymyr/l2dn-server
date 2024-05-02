@@ -81,7 +81,7 @@ public class PlayerAction: IActionHandler
 				{
 					// This Action Failed packet avoids player getting stuck when clicking three or more times
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-					if (GeoEngine.getInstance().canMoveToTarget(player, target))
+					if (GeoEngine.getInstance().canMoveToTarget(player.getLocation().ToLocation3D(), target.getLocation().ToLocation3D()))
 					{
 						player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					}

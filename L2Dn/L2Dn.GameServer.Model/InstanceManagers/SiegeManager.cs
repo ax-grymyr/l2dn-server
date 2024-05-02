@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets.CastleWar;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
@@ -204,9 +205,9 @@ public class SiegeManager
 		return _flagMaxCount;
 	}
 
-	public Siege getSiege(ILocational loc)
+	public Siege getSiege(Location3D loc)
 	{
-		return getSiege(loc.getX(), loc.getY(), loc.getZ());
+		return getSiege(loc.X, loc.Y, loc.Z);
 	}
 
 	public Siege getSiege(WorldObject activeObject)
