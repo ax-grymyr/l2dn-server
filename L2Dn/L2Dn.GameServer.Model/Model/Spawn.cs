@@ -355,7 +355,7 @@ public class Spawn : IIdentifiable, INamable
 			newlocx = loc.getX();
 			newlocy = loc.getY();
 			newlocz = loc.getZ();
-			_location.setLocation(loc);
+			_location.setLocation(loc.ToLocation3D(), loc.Heading);
 		}
 		else if ((_location.getX() == 0) && (_location.getY() == 0))
 		{

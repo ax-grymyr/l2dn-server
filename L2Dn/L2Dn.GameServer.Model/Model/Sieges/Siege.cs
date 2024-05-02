@@ -1478,7 +1478,7 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getControlTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.Location.setLocation(ts.getLocation());
+				spawn.Location.setLocation(ts.getLocation().ToLocation3D(), ts.getLocation().Heading);
 				_controlTowers.add((ControlTower) spawn.doSpawn(false));
 			}
 		}
@@ -1499,7 +1499,7 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getFlameTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.Location.setLocation(ts.getLocation());
+				spawn.Location.setLocation(ts.getLocation().ToLocation3D(), ts.getLocation().Heading);
 				FlameTower tower = (FlameTower) spawn.doSpawn(false);
 				tower.setUpgradeLevel(ts.getUpgradeLevel());
 				tower.setZoneList(ts.getZoneList());

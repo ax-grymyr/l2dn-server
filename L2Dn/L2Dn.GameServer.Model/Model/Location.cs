@@ -77,28 +77,27 @@ public sealed class Location: ILocational, ILocationHeading
 		_heading = heading;
 	}
 
-	public void setLocation(Location loc)
+	public void setLocation(Location3D loc, int heading)
 	{
-		_x = loc.getX();
-		_y = loc.getY();
-		_z = loc.getZ();
-		_heading = loc.getHeading();
+		setXYZ(loc);
+		_heading = heading;
 	}
 
 	public override int GetHashCode()
 	{
 		return HashCode.Combine(_x, _y, _z);
 	}
-	
+
 	public override bool Equals(object? obj)
 	{
 		if (obj is Location loc)
 		{
 			return (getX() == loc.getX()) && (getY() == loc.getY()) && (getZ() == loc.getZ()) && (getHeading() == loc.getHeading());
 		}
+
 		return false;
 	}
-	
+
 	public override string ToString()
 	{
 		return "[" + GetType().Name + "] X: " + _x + " Y: " + _y + " Z: " + _z + " Heading: " + _heading;
