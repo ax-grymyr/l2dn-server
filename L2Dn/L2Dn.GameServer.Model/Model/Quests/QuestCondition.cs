@@ -23,7 +23,7 @@ public class QuestCondition
 		_condition = cond;
 		_html = null;
 		_perNpcDialog = new();
-		pairs.forEach(pair => _perNpcDialog.put(pair.getKey(), pair.getValue()));
+		pairs.forEach(pair => _perNpcDialog.put(pair.Key, pair.Value));
 	}
 	
 	public bool test(Player player)
