@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -33,7 +34,7 @@ public struct RequestShuttleGetOnPacket: IIncomingPacket<GameSession>
             if (shuttle.calculateDistance3D(player) < 1000)
             {
                 shuttle.addPassenger(player);
-                player.getInVehiclePosition().setXYZ(_x, _y, _z);
+                player.getInVehiclePosition().setXYZ(new Location3D(_x, _y, _z));
                 break;
             }
 

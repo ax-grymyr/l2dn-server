@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -68,7 +69,7 @@ public class DBSpawnManager
 				if (template != null)
 				{
 					Spawn spawn = new Spawn(template);
-					spawn.Location.setXYZ(record.X, record.Y, record.Z);
+					spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
 					spawn.setAmount(1);
 					spawn.Location.setHeading(record.Heading);
 					

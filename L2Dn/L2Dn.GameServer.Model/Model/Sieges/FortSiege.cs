@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
@@ -1487,7 +1488,7 @@ public class FortSiege: Siegable
 			{
 				Spawn spawnDat = new Spawn(_sp.getId());
 				spawnDat.setAmount(1);
-				spawnDat.Location.setXYZ(_sp.Location);
+				spawnDat.Location.setXYZ(_sp.Location.ToLocation3D());
 				spawnDat.Location.setHeading(_sp.Location.getHeading());
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				spawnDat.doSpawn(false);
@@ -1551,7 +1552,7 @@ public class FortSiege: Siegable
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location.setXYZ(record.X, record.Y, record.Z);
+				spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
 				spawn.Location.setHeading(record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);

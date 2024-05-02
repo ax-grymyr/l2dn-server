@@ -383,7 +383,7 @@ public class Spawn : IIdentifiable, INamable
 			{
 				newlocx = randX;
 				newlocy = randY;
-				_location.setXYZ(newlocx, newlocy, newlocz);
+				_location.setXYZ(new Location3D(newlocx, newlocy, newlocz));
 				_location.setHeading(-1);
 			}
 		}

@@ -1561,7 +1561,7 @@ public class Player: Playable
 		{
 			return;
 		}
-		_lastZoneValidateLocation.setXYZ(this);
+		_lastZoneValidateLocation.setXYZ(this.getLocation().ToLocation3D());
 		
 		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.revalidateZones(this);
 		
@@ -10741,7 +10741,7 @@ public class Player: Playable
 	
 	public void setLastServerPosition(int x, int y, int z)
 	{
-		_lastServerPosition.setXYZ(x, y, z);
+		_lastServerPosition.setXYZ(new Location3D(x, y, z));
 	}
 	
 	public Location getLastServerPosition()

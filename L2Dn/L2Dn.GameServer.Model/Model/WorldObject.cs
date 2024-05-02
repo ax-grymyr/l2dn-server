@@ -613,7 +613,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 */
 	public virtual void setXYZ(int newX, int newY, int newZ)
 	{
-		_location.setXYZ(newX, newY, newZ);
+		_location.setXYZ(new Location3D(newX, newY, newZ));
 
 		if (_isSpawned)
 		{
@@ -688,7 +688,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 */
 	public virtual void setLocation(Location loc)
 	{
-		_location.setXYZ(loc.getX(), loc.getY(), loc.getZ());
+		_location.setXYZ(loc.ToLocation3D());
 		_location.setHeading(loc.getHeading());
 	}
 

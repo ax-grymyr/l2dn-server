@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model;
 /**
  * A datatype used to retain a 3D (x/y/z/heading) point. It got the capability to be set and cleaned.
  */
-public sealed class Location : ILocational, ILocationHeading
+public sealed class Location: ILocational, ILocationHeading
 {
 	private int _x;
 	private int _y;
@@ -51,29 +51,18 @@ public sealed class Location : ILocational, ILocationHeading
 	{
 		return _z;
 	}
-	
-	/**
-	 * Set the x, y, z coordinates.
-	 * @param x the x coordinate
-	 * @param y the y coordinate
-	 * @param z the z coordinate
-	 */
-	public void setXYZ(int x, int y, int z)
-	{
-		_x = x;
-		_y = y;
-		_z = z;
-	}
-	
+
 	/**
 	 * Set the x, y, z coordinates.
 	 * @param loc The location.
 	 */
-	public void setXYZ(ILocational loc)
+	public void setXYZ(Location3D loc)
 	{
-		setXYZ(loc.getX(), loc.getY(), loc.getZ());
+		_x = loc.X;
+		_y = loc.Y;
+		_z = loc.Z;
 	}
-	
+
 	/**
 	 * Get the heading.
 	 * @return the heading
@@ -91,12 +80,7 @@ public sealed class Location : ILocational, ILocationHeading
 	{
 		_heading = heading;
 	}
-	
-	public Location getLocation()
-	{
-		return this;
-	}
-	
+
 	public void setLocation(Location loc)
 	{
 		_x = loc.getX();
@@ -110,11 +94,10 @@ public sealed class Location : ILocational, ILocationHeading
 		return HashCode.Combine(_x, _y, _z);
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
-		if (obj is Location)
+		if (obj is Location loc)
 		{
-			Location loc = (Location) obj;
 			return (getX() == loc.getX()) && (getY() == loc.getY()) && (getZ() == loc.getZ()) && (getHeading() == loc.getHeading());
 		}
 		return false;

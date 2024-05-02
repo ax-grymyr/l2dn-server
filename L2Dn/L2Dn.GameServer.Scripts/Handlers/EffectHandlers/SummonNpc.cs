@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -159,7 +160,7 @@ public class SummonNpc: AbstractEffect
 					return;
 				}
 
-				spawn.Location.setXYZ(x, y, z);
+				spawn.Location.setXYZ(new Location3D(x, y, z));
 				spawn.Location.setHeading(player.getHeading());
 				spawn.stopRespawn();
 

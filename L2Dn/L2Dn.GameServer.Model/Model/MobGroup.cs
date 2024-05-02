@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -128,9 +129,9 @@ public class MobGroup
 				int signY = Rnd.nextBoolean() ? -1 : 1;
 				int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
 				int randY = Rnd.get(MobGroupTable.RANDOM_RANGE);
-				spawn.Location.setXYZ(x + (signX * randX), y + (signY * randY), z);
+				spawn.Location.setXYZ(new Location3D(x + signX * randX, y + signY * randY, z));
 				spawn.stopRespawn();
-				
+
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
 				getMobs().add((ControllableMob) spawn.doGroupSpawn());
 			}
@@ -299,7 +300,7 @@ public class MobGroup
 			int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
 			int randY = Rnd.get(MobGroupTable.RANDOM_RANGE);
 			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
-			ai.move(creature.getX() + (signX * randX), creature.getY() + (signY * randY), creature.getZ());
+			ai.move(creature.getX() + signX * randX, creature.getY() + signY * randY, creature.getZ());
 		}
 	}
 	

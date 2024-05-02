@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -573,7 +574,7 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location.setXYZ(target);
+			spawn.Location.setXYZ(target.getLocation().ToLocation3D());
 			spawn.setAmount(mobCount);
 			spawn.Location.setHeading(activeChar.getHeading());
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(respawnTime));
@@ -620,7 +621,7 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location.setXYZ(x, y, z);
+			spawn.Location.setXYZ(new Location3D(x, y, z));
 			spawn.setAmount(1);
 			spawn.Location.setHeading(h);
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(60));

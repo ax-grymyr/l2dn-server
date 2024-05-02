@@ -464,7 +464,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			Location changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
-				changeLog.setXYZ(newLocation);
+				changeLog.setXYZ(newLocation.ToLocation3D());
 				holder.setChangingLoc(null);
 				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(changeLog) + 1) + " has been updated!");
 				disablePicking(player);

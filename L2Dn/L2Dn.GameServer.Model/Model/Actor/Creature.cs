@@ -3372,7 +3372,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			return;
 		}
-		_lastZoneValidateLocation.setXYZ(this);
+		_lastZoneValidateLocation.setXYZ(this.getLocation().ToLocation3D());
 		
 		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 		if (region != null)

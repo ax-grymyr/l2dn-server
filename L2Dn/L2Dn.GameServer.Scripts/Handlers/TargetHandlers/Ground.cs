@@ -28,7 +28,7 @@ public class Ground: ITargetTypeHandler
 			Location worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
 			if (worldPosition != null)
 			{
-				if (dontMove && !creature.isInsideRadius2D(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
+				if (dontMove && !creature.isInsideRadius2D(worldPosition.getX(), worldPosition.getY(), skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
 				{
 					return null;
 				}

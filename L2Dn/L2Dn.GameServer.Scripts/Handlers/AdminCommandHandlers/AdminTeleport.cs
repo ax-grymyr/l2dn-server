@@ -520,7 +520,7 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				spawn = new Spawn(template1);
-				spawn.Location.setXYZ(activeChar);
+				spawn.Location.setXYZ(activeChar.getLocation().ToLocation3D());
 				spawn.setAmount(1);
 				spawn.Location.setHeading(activeChar.getHeading());
 				spawn.setRespawnDelay(respawnTime);
@@ -558,7 +558,7 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				Spawn spawnDat = new Spawn(target.getId());
-				spawnDat.Location.setXYZ(activeChar);
+				spawnDat.Location.setXYZ(activeChar.getLocation().ToLocation3D());
 				spawnDat.setAmount(1);
 				spawnDat.Location.setHeading(activeChar.getHeading());
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));

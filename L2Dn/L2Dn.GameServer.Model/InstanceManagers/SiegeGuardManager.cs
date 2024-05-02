@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -268,7 +269,7 @@ public class SiegeGuardManager
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location.setXYZ(record.X, record.Y, record.Z);
+				spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
 				spawn.Location.setHeading(record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);

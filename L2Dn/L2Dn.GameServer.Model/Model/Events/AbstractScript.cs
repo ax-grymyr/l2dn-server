@@ -38,6 +38,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
@@ -1695,7 +1696,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			Spawn spawn = new Spawn(npcId);
 			spawn.setInstanceId(instance);
 			spawn.Location.setHeading(heading);
-			spawn.Location.setXYZ(x, y, zValue);
+			spawn.Location.setXYZ(new Location3D(x, y, zValue));
 			spawn.stopRespawn();
 			
 			Npc npc = spawn.doSpawn(isSummonSpawn);
@@ -1712,7 +1713,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			// Retain monster original position if ENABLE_RANDOM_MONSTER_SPAWNS is enabled.
 			if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && !randomOffset && npc.isMonster())
 			{
-				spawn.Location.setXYZ(x, y, zValue);
+				spawn.Location.setXYZ(new Location3D(x, y, zValue));
 				npc.setXYZ(x, y, zValue);
 				if (heading > -1)
 				{

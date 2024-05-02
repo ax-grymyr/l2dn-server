@@ -159,7 +159,7 @@ public abstract class Vehicle : Creature
 								}
 								else
 								{
-									_monitorLocation.setXYZ(this);
+									_monitorLocation.setXYZ(this.getLocation().ToLocation3D());
 								}
 							}, 1000, 1000);
 						}
