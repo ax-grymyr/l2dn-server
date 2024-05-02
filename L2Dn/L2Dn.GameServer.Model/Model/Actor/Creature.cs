@@ -3659,12 +3659,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						&& !(curZ - z > 300 && distance < 300))) // Prohibit correcting destination if character wants to fall.
 				{
 					// location different if destination wasn't reached (or just z coord is different)
-					Location destiny = GeoEngine.getInstance().getValidLocation(curX, curY, curZ, x, y, z, getInstanceWorld());
-					x = destiny.getX();
-					y = destiny.getY();
+					Location3D destiny = GeoEngine.getInstance().getValidLocation(curX, curY, curZ, x, y, z, getInstanceWorld());
+					x = destiny.X;
+					y = destiny.Y;
 					if (!isPlayer())
 					{
-						z = destiny.getZ();
+						z = destiny.Z;
 					}
 
 					dx = x - curX;

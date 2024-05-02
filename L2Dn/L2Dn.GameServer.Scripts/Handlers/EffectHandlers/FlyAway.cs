@@ -38,11 +38,11 @@ public class FlyAway: AbstractEffect
 		int y = (int) (effector.getY() - (nRadius * (dy / distance)));
 		int z = effector.getZ();
 
-		Location destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(),
+		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(),
 			effected.getZ(), x, y, z, effected.getInstanceWorld());
 		
-		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(destination.X, destination.Y, destination.Z), FlyType.THROW_UP));
-		effected.setXYZ(destination.ToLocation3D());
+		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, FlyType.THROW_UP));
+		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);
 	}

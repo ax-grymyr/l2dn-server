@@ -544,10 +544,10 @@ public class AttackableAI: CreatureAI
 			}
 			
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-			Location moveLoc = _actor.isFlying() ? new Location(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
+			Location3D moveLoc = _actor.isFlying() ? new Location3D(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
 			if (npc.getSpawn().Location.Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
 			{
-				moveTo(moveLoc.getX(), moveLoc.getY(), moveLoc.getZ());
+				moveTo(moveLoc.X, moveLoc.Y, moveLoc.Z);
 			}
 		}
 	}
@@ -792,10 +792,10 @@ public class AttackableAI: CreatureAI
 						int newZ = npc.getZ() + 30;
 						
 						// Verify destination. Prevents wall collision issues and fixes monsters not avoiding obstacles.
-						Location loc = GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(),
+						Location3D loc = GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(),
 							newX, newY, newZ, npc.getInstanceWorld());
 
-						moveTo(new Location3D(loc.X, loc.Y, loc.Z));
+						moveTo(loc);
 					}
 					return;
 				}

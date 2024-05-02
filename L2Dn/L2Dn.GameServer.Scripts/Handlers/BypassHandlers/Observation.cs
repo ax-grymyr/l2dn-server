@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
@@ -103,14 +104,14 @@ public class Observation: IBypassHandler
 			return false;
 		}
 		int[] locCost = LOCATIONS[param];
-		Location loc = new Location(locCost[0], locCost[1], locCost[2]);
+		LocationHeading loc = new LocationHeading(locCost[0], locCost[1], locCost[2], 0);
 		long cost = locCost[3];
 		
 		switch (_command)
 		{
 			case "observesiege":
 			{
-				if (SiegeManager.getInstance().getSiege(loc.ToLocation3D()) != null)
+				if (SiegeManager.getInstance().getSiege(loc.Location) != null)
 				{
 					doObserve(player, (Npc) target, loc, cost);
 				}
@@ -134,7 +135,7 @@ public class Observation: IBypassHandler
 		return false;
 	}
 	
-	private void doObserve(Player player, Npc npc, Location pos, long cost)
+	private void doObserve(Player player, Npc npc, LocationHeading pos, long cost)
 	{
 		if (player.reduceAdena("Broadcast", cost, npc, true))
 		{

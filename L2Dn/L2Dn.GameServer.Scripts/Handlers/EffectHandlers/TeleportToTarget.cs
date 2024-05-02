@@ -53,14 +53,15 @@ public class TeleportToTarget: AbstractEffect
 		int x = (int) (px + 25 * Math.Cos(ph));
 		int y = (int) (py + 25 * Math.Sin(ph));
 		int z = effected.getZ();
-		
-		Location loc = GeoEngine.getInstance().getValidLocation(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceWorld());
+
+		Location3D loc = GeoEngine.getInstance().getValidLocation(effector.getX(), effector.getY(), effector.getZ(), x,
+			y, z, effector.getInstanceWorld());
 		
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(loc.getX(), loc.getY(), loc.getZ()), FlyType.DUMMY));
+		effector.broadcastPacket(new FlyToLocationPacket(effector, loc, FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
-		effector.setXYZ(loc.ToLocation3D());
+		effector.setXYZ(loc);
 		effector.broadcastPacket(new ValidateLocationPacket(effector));
 		effected.revalidateZone(true);
 	}

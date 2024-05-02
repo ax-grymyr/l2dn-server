@@ -1,8 +1,10 @@
+using System.Collections.Immutable;
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -38,13 +40,13 @@ public class TeleportListData: DataReaderBase
 		int tpId = element.GetAttributeValueAsInt32("id");
 		int tpPrice = element.GetAttributeValueAsInt32("price");
 		bool special = element.Attribute("special").GetBoolean(false);
-		List<Location> locations = new();
+		List<Location3D> locations = [];
 		element.Elements("location").ForEach(el =>
 		{
 			int x = el.GetAttributeValueAsInt32("x");
 			int y = el.GetAttributeValueAsInt32("y");
 			int z = el.GetAttributeValueAsInt32("z");
-			locations.add(new Location(x, y, z));
+			locations.Add(new Location3D(x, y, z));
 		});
 
 		if (locations.isEmpty())
@@ -52,10 +54,10 @@ public class TeleportListData: DataReaderBase
 			int x = element.GetAttributeValueAsInt32("x");
 			int y = element.GetAttributeValueAsInt32("y");
 			int z = element.GetAttributeValueAsInt32("z");
-			locations.add(new Location(x, y, z));
+			locations.Add(new Location3D(x, y, z));
 		}
 
-		_teleports.put(tpId, new TeleportListHolder(tpId, locations, tpPrice, special));
+		_teleports.put(tpId, new TeleportListHolder(tpId, locations.ToImmutableArray(), tpPrice, special));
 	}
 
 	public TeleportListHolder getTeleport(int teleportId)

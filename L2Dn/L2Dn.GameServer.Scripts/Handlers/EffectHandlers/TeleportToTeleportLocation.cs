@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -29,10 +30,10 @@ public class TeleportToTeleportLocation: AbstractEffect
 			return;
 		}
 		
-		Location location = player.getTeleportLocation();
+		LocationHeading? location = player.getTeleportLocation();
 		if (location != null)
 		{
-			player.teleToLocation(location.ToLocationHeading());
+			player.teleToLocation(location.Value);
 			player.setTeleportLocation(null);
 		}
 	}

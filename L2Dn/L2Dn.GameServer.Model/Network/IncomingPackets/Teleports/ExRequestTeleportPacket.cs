@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -73,10 +74,10 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		Location location = teleport.getLocation();
+		Location3D location = teleport.getLocation();
 		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
-			Castle castle = CastleManager.getInstance().getCastle(location.getX(), location.getY(), location.getZ());
+			Castle castle = CastleManager.getInstance().getCastle(location.X, location.Y, location.Z);
 			if ((castle != null) && castle.getSiege().isInProgress())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE);
@@ -119,7 +120,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		player.abortCast();
 		player.stopMove(null);
 		
-		player.setTeleportLocation(location);
+		player.setTeleportLocation(new LocationHeading(location, 0));
 		player.doCast(CommonSkill.TELEPORT.getSkill());
 
 		return ValueTask.CompletedTask;

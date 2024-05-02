@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -38,7 +39,7 @@ public class RaidTeleportListData: DataReaderBase
 		int y = element.GetAttributeValueAsInt32("y");
 		int z = element.GetAttributeValueAsInt32("z");
 		int tpPrice = element.GetAttributeValueAsInt32("price");
-		_teleports.put(tpId, new TeleportListHolder(tpId, x, y, z, tpPrice, false));
+		_teleports.put(tpId, new TeleportListHolder(tpId, new Location3D(x, y, z), tpPrice, false));
 	}
 
 	public TeleportListHolder getTeleport(int teleportId)

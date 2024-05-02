@@ -1252,12 +1252,15 @@ public class SkillCaster: Runnable
 				break;
 			}
 		}
-		
-		Location destination = creature.isFlying() ? new Location(x, y, z) : GeoEngine.getInstance().getValidLocation(creature.getX(), creature.getY(), creature.getZ(), x, y, z, creature.getInstanceWorld());
+
+		Location3D destination = creature.isFlying()
+			? new Location3D(x, y, z)
+			: GeoEngine.getInstance().getValidLocation(creature.getX(), creature.getY(), creature.getZ(), x, y, z,
+				creature.getInstanceWorld());
 		
 		creature.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		creature.broadcastPacket(new FlyToLocationPacket(creature, new Location3D(destination.X, destination.Y, destination.Z), flyType, 0, 0, 333));
-		creature.setXYZ(destination.ToLocation3D());
+		creature.broadcastPacket(new FlyToLocationPacket(creature, destination, flyType, 0, 0, 333));
+		creature.setXYZ(destination);
 		creature.revalidateZone(true);
 	}
 }

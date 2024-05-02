@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Geo.PathFindings.GeoNodes;
@@ -49,15 +50,15 @@ public class GeoPathFinding: PathFinding
 		}
 		
 		// TODO: Find closest path node we CAN access. Now only checks if we can not reach the closest.
-		Location temp = GeoEngine.getInstance().getValidLocation(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instance);
-		if ((temp.getX() != start.getLoc().getX()) || (temp.getY() != start.getLoc().getY()))
+		Location3D temp = GeoEngine.getInstance().getValidLocation(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instance);
+		if ((temp.X != start.getLoc().getX()) || (temp.Y != start.getLoc().getY()))
 		{
 			return null; // Cannot reach closest...
 		}
 		
 		// TODO: Find closest path node around target, now only checks if location can be reached.
 		temp = GeoEngine.getInstance().getValidLocation(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instance);
-		if ((temp.getX() != end.getLoc().getX()) || (temp.getY() != end.getLoc().getY()))
+		if ((temp.X != end.getLoc().getX()) || (temp.Y != end.getLoc().getY()))
 		{
 			return null; // Cannot reach closest...
 		}

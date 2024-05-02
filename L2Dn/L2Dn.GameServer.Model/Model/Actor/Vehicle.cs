@@ -3,7 +3,6 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Zones;
@@ -27,12 +26,11 @@ public abstract class Vehicle : Creature
 	protected VehiclePathPoint[] _currentPath;
 	protected int _runState;
 	private ScheduledFuture _monitorTask;
-	private readonly Location _monitorLocation;
+	private Location3D _monitorLocation;
 	
 	public Vehicle(CreatureTemplate template): base(template)
 	{
-		Location location = getLocation();
-		_monitorLocation = new Location(location.X, location.Y, location.Z, location.Heading);
+		_monitorLocation = getLocation().ToLocation3D();
 		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
@@ -143,7 +141,7 @@ public abstract class Vehicle : Creature
 						{
 							_monitorTask = ThreadPool.scheduleAtFixedRate(() =>
 							{
-								if (!isInDock() && (calculateDistance3D(_monitorLocation.ToLocation3D()) == 0))
+								if (!isInDock() && (calculateDistance3D(_monitorLocation) == 0))
 								{
 									if (_currentPath != null)
 									{
@@ -160,7 +158,7 @@ public abstract class Vehicle : Creature
 								}
 								else
 								{
-									_monitorLocation.setXYZ(this.getLocation().ToLocation3D());
+									_monitorLocation = getLocation().ToLocation3D();
 								}
 							}, 1000, 1000);
 						}

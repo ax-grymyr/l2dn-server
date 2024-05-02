@@ -235,7 +235,7 @@ public class Player: Playable
 	private Location _lastLoc;
 	private bool _observerMode;
 	
-	private Location _teleportLocation;
+	private LocationHeading? _teleportLocation;
 	
 	/** Stored from last ValidatePosition **/
 	private readonly Location _lastServerPosition = new Location(0, 0, 0);
@@ -10730,12 +10730,12 @@ public class Player: Playable
 		}
 	}
 	
-	public void setTeleportLocation(Location location)
+	public void setTeleportLocation(LocationHeading? location)
 	{
 		_teleportLocation = location;
 	}
 	
-	public Location getTeleportLocation()
+	public LocationHeading? getTeleportLocation()
 	{
 		return _teleportLocation;
 	}
@@ -12504,7 +12504,7 @@ public class Player: Playable
 			}
 			
 			destroyItem("Consume", _inventory.getItemByItemId(13016).getObjectId(), 1, null, false);
-			setTeleportLocation(new Location(bookmark.Location.X, bookmark.Location.Y, bookmark.Location.Z));
+			setTeleportLocation(new LocationHeading(bookmark.Location, 0));
 			doCast(CommonSkill.MY_TELEPORT.getSkill());
 		}
 		sendPacket(new ExGetBookMarkInfoPacket(this));

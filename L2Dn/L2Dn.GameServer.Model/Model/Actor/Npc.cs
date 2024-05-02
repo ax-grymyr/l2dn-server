@@ -32,6 +32,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
@@ -1454,16 +1455,16 @@ public class Npc: Creature
 	 * @param radiusMax maximal range from NPC (not further than)
 	 * @return Location in given range from this NPC
 	 */
-	public Location getPointInRange(int radiusMin, int radiusMax)
+	public Location3D getPointInRange(int radiusMin, int radiusMax)
 	{
 		if ((radiusMax == 0) || (radiusMax < radiusMin))
 		{
-			return new Location(getX(), getY(), getZ());
+			return new Location3D(getX(), getY(), getZ());
 		}
 		
 		int radius = Rnd.get(radiusMin, radiusMax);
 		double angle = Rnd.nextDouble() * 2 * Math.PI;
-		return new Location((int) (getX() + (radius * Math.Cos(angle))), (int) (getY() + (radius * Math.Sin(angle))), getZ());
+		return new Location3D((int) (getX() + (radius * Math.Cos(angle))), (int) (getY() + (radius * Math.Sin(angle))), getZ());
 	}
 	
 	/**

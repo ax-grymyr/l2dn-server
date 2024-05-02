@@ -25,6 +25,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -1565,10 +1566,10 @@ public class Item: WorldObject
 		if (dropper != null)
 		{
 			Instance instance = dropper.getInstanceWorld();
-			Location dropDest = GeoEngine.getInstance().getValidLocation(dropper.getX(), dropper.getY(), dropper.getZ(), x, y, z, instance);
-			x = dropDest.getX();
-			y = dropDest.getY();
-			z = dropDest.getZ();
+			Location3D dropDest = GeoEngine.getInstance().getValidLocation(dropper.getX(), dropper.getY(), dropper.getZ(), x, y, z, instance);
+			x = dropDest.X;
+			y = dropDest.Y;
+			z = dropDest.Z;
 			setInstance(instance); // Inherit instancezone when dropped in visible world
 		}
 		else

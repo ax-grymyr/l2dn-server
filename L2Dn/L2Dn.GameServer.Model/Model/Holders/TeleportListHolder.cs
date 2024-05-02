@@ -1,4 +1,5 @@
-using L2Dn.GameServer.Utilities;
+using System.Collections.Immutable;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -9,20 +10,19 @@ namespace L2Dn.GameServer.Model.Holders;
 public class TeleportListHolder
 {
 	private readonly int _locId;
-	private readonly List<Location> _locations;
+	private readonly ImmutableArray<Location3D> _locations;
 	private readonly int _price;
 	private readonly bool _special;
 
-	public TeleportListHolder(int locId, int x, int y, int z, int price, bool special)
+	public TeleportListHolder(int locId, Location3D location, int price, bool special)
 	{
 		_locId = locId;
-		_locations = new(1);
-		_locations.Add(new Location(x, y, z));
+		_locations = [location];
 		_price = price;
 		_special = special;
 	}
 
-	public TeleportListHolder(int locId, List<Location> locations, int price, bool special)
+	public TeleportListHolder(int locId, ImmutableArray<Location3D> locations, int price, bool special)
 	{
 		_locId = locId;
 		_locations = locations;
@@ -35,7 +35,7 @@ public class TeleportListHolder
 		return _locId;
 	}
 
-	public List<Location> getLocations()
+	public ImmutableArray<Location3D> getLocations()
 	{
 		return _locations;
 	}
@@ -50,8 +50,8 @@ public class TeleportListHolder
 		return _special;
 	}
 
-	public Location getLocation()
+	public Location3D getLocation()
 	{
-		return _locations[Rnd.get(_locations.Count)];
+		return _locations[Rnd.get(_locations.Length)];
 	}
 }

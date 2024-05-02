@@ -214,9 +214,9 @@ public class GeoEngine
 	 * @param location the location
 	 * @return the spawn height
 	 */
-	public int getSpawnHeight(Location location)
+	public int getSpawnHeight(Location3D location)
 	{
-		return getSpawnHeight(location.getX(), location.getY(), location.getZ());
+		return getSpawnHeight(location.X, location.Y, location.Z);
 	}
 	
 	/**
@@ -429,7 +429,7 @@ public class GeoEngine
 	 * @param destination the destination
 	 * @return the destination if there is a path or the closes location
 	 */
-	public Location getValidLocation(Location3D origin, Location3D destination)
+	public Location3D getValidLocation(Location3D origin, Location3D destination)
 	{
 		return getValidLocation(origin.X, origin.Y, origin.Z, destination.X, destination.Y, destination.Z, null);
 	}
@@ -445,7 +445,7 @@ public class GeoEngine
 	 * @param instance the instance
 	 * @return the last Location (x,y,z) where player can walk - just before wall
 	 */
-	public Location getValidLocation(int x, int y, int z, int tx, int ty, int tz, Instance instance)
+	public Location3D getValidLocation(int x, int y, int z, int tx, int ty, int tz, Instance instance)
 	{
 		int geoX = getGeoX(x);
 		int geoY = getGeoY(y);
@@ -457,13 +457,13 @@ public class GeoEngine
 		// Door checks.
 		if (DoorData.getInstance().checkIfDoorsBetween(x, y, nearestFromZ, tx, ty, nearestToZ, instance, false))
 		{
-			return new Location(x, y, getHeight(x, y, nearestFromZ));
+			return new Location3D(x, y, getHeight(x, y, nearestFromZ));
 		}
 		
 		// Fence checks.
 		if (FenceData.getInstance().checkIfFenceBetween(x, y, nearestFromZ, tx, ty, nearestToZ, instance))
 		{
-			return new Location(x, y, getHeight(x, y, nearestFromZ));
+			return new Location3D(x, y, getHeight(x, y, nearestFromZ));
 		}
 		
 		LinePointIterator pointIter = new(geoX, geoY, tGeoX, tGeoY);
@@ -482,13 +482,13 @@ public class GeoEngine
 			if (hasGeoPos(prevX, prevY) && !checkNearestNsweAntiCornerCut(prevX, prevY, prevZ, GeoUtils.computeNswe(prevX, prevY, curX, curY)))
 			{
 				// Can't move, return previous location.
-				return new Location(getWorldX(prevX), getWorldY(prevY), prevZ);
+				return new Location3D(getWorldX(prevX), getWorldY(prevY), prevZ);
 			}
 			prevX = curX;
 			prevY = curY;
 			prevZ = curZ;
 		}
-		return hasGeoPos(prevX, prevY) && (prevZ != nearestToZ) ? new Location(x, y, nearestFromZ) : new Location(tx, ty, nearestToZ);
+		return hasGeoPos(prevX, prevY) && (prevZ != nearestToZ) ? new Location3D(x, y, nearestFromZ) : new Location3D(tx, ty, nearestToZ);
 	}
 	
 	/**
