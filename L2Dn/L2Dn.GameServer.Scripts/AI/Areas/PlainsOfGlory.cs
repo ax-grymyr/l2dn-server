@@ -32,7 +32,7 @@ public sealed class PlainsOfGlory: AbstractScript
         bool isSummon = onAttackableKill.isSummon();
         if (getRandom(100) < 10)
         {
-            Npc spawnBanshee = addSpawn(GUARD_OF_HONOR, npc, false, TimeSpan.FromMilliseconds(300000));
+            Npc spawnBanshee = addSpawn(GUARD_OF_HONOR, npc.getLocation().ToLocation3D(), npc.getLocation().Heading, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon ? killer.getServitors().Values.FirstOrDefault() ?? killer.getPet() : killer;
             addAttackPlayerDesire(spawnBanshee, attacker);
             npc.deleteMe();

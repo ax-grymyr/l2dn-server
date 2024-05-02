@@ -35,7 +35,7 @@ public class Cemetery: AbstractScript
         bool isSummon = onAttackableKill.isSummon();
         if (getRandom(100) < 10)
         {
-            Npc spawnBanshee = addSpawn(GRAVE_WARDEN, npc, false, TimeSpan.FromMilliseconds(300000));
+            Npc spawnBanshee = addSpawn(GRAVE_WARDEN, npc.getLocation().ToLocation3D(), npc.getLocation().Heading, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon
                 ? killer.getServitors().Values.FirstOrDefault() ?? killer.getPet()
                 : killer;

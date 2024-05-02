@@ -62,7 +62,7 @@ public class RankingPowerManager
 		_decoyInstance.setHeading(location.getHeading());
 		_decoyInstance.broadcastStatusUpdate();
 		
-		AbstractScript.addSpawn(null, LEADER_STATUE, location, false, COOLDOWN);
+		AbstractScript.addSpawn(null, LEADER_STATUE, location.ToLocation3D(), location.Heading, false, COOLDOWN);
 	}
 	
 	private void cloneTask()
