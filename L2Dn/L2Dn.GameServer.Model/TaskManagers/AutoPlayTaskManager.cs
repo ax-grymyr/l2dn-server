@@ -187,16 +187,16 @@ public class AutoPlayTaskManager
 										double distance = (ranged ? player.getCollisionRadius() : player.getCollisionRadius() + creature.getCollisionRadius()) * 2;
 										int x1 = (int) (Math.Cos(Math.PI + radian + course) * distance);
 										int y1 = (int) (Math.Sin(Math.PI + radian + course) * distance);
-										Location location;
+										Location3D location;
 										if (ranged)
 										{
-											location = new Location(player.getX() + x1, player.getY() + y1, player.getZ());
+											location = new Location3D(player.getX() + x1, player.getY() + y1, player.getZ());
 										}
 										else
 										{
-											location = new Location(creature.getX() + x1, creature.getY() + y1, player.getZ());
+											location = new Location3D(creature.getX() + x1, creature.getY() + y1, player.getZ());
 										}
-										player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, location.ToLocation3D());
+										player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, location);
 										IDLE_COUNT.remove(player);
 									}
 									else

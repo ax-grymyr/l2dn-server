@@ -13,6 +13,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionShiftHandlers;
 
@@ -107,10 +108,8 @@ public class NpcActionShift: IActionShiftHandler
 					htmlContent.Replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
 
-				htmlContent.Replace("%spawn%",
-					(template != null ? template.getSpawnLocation().getX() : npc.getSpawn().Location.getX()) + " " +
-					(template != null ? template.getSpawnLocation().getY() : npc.getSpawn().Location.getY()) + " " +
-					(template != null ? template.getSpawnLocation().getZ() : npc.getSpawn().Location.getZ()));
+				LocationHeading spawnLocation = template?.getSpawnLocation() ?? npc.getSpawn().Location.ToLocationHeading();
+				htmlContent.Replace("%spawn%", spawnLocation.X + " " + spawnLocation.Y + " " + spawnLocation.Z);
 
 				if (npc.getSpawn().getRespawnMinDelay() == TimeSpan.Zero)
 				{

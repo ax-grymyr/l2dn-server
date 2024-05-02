@@ -1,3 +1,6 @@
+using System.Collections.Immutable;
+using L2Dn.Geometry;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -23,18 +26,14 @@ public class TimedHuntingZoneHolder
 	private readonly bool _weekly;
 	private readonly bool _useWorldPrefix;
 	private readonly bool _zonePremiumUserOnly;
-	private readonly Location _enterLocation;
-	private readonly Location _subEnterLocation1;
-	private readonly Location _subEnterLocation2;
-	private readonly Location _subEnterLocation3;
-	private readonly Location _exitLocation;
-	private readonly List<MapHolder> _maps = new();
+	private readonly ImmutableArray<Location3D> _enterLocations;
+	private readonly Location3D? _exitLocation;
+	private readonly ImmutableArray<MapHolder> _maps;
 
 	public TimedHuntingZoneHolder(int id, String name, int initialTime, int maximumAddedTime, TimeSpan resetDelay,
 		int entryItemId, int entryFee, int minLevel, int maxLevel, int remainRefillTime, int refillTimeMax,
 		bool pvpZone, bool noPvpZone, int instanceId, bool soloInstance, bool weekly, bool useWorldPrefix,
-		bool zonePremiumUserOnly, Location enterLocation, Location subEnterLocation1, Location subEnterLocation2,
-		Location subEnterLocation3, Location exitLocation)
+		bool zonePremiumUserOnly, ImmutableArray<Location3D> enterLocations, Location3D? exitLocation)
 	{
 		_id = id;
 		_name = name;
@@ -54,36 +53,19 @@ public class TimedHuntingZoneHolder
 		_weekly = weekly;
 		_useWorldPrefix = useWorldPrefix;
 		_zonePremiumUserOnly = zonePremiumUserOnly;
-		_enterLocation = enterLocation;
-		_subEnterLocation1 = subEnterLocation1;
-		_subEnterLocation2 = subEnterLocation2;
-		_subEnterLocation3 = subEnterLocation3;
+		_enterLocations = enterLocations;
 		_exitLocation = exitLocation;
-		_maps.Add(new MapHolder(getMapX(_enterLocation), getMapY(_enterLocation)));
-		if (_subEnterLocation1 != null)
-		{
-			_maps.Add(new MapHolder(getMapX(_subEnterLocation1), getMapY(_subEnterLocation1)));
-		}
-
-		if (_subEnterLocation2 != null)
-		{
-			_maps.Add(new MapHolder(getMapX(_subEnterLocation2), getMapY(_subEnterLocation2)));
-		}
-
-		if (_subEnterLocation3 != null)
-		{
-			_maps.Add(new MapHolder(getMapX(_subEnterLocation3), getMapY(_subEnterLocation3)));
-		}
+		_maps = enterLocations.Select(loc => new MapHolder(getMapX(loc.X), getMapY(loc.Y))).ToImmutableArray();
 	}
 
-	private int getMapY(Location location)
+	private static int getMapY(int y)
 	{
-		return ((location.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+		return ((y - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
 	}
 
-	private int getMapX(Location location)
+	private static int getMapX(int x)
 	{
-		return ((location.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
+		return ((x - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 	}
 
 	public int getZoneId()
@@ -176,17 +158,17 @@ public class TimedHuntingZoneHolder
 		return _zonePremiumUserOnly;
 	}
 
-	public Location getEnterLocation()
+	public Location3D getEnterLocation()
 	{
-		return _enterLocation;
+		return _enterLocations[0];
 	}
 
-	public List<MapHolder> getMaps()
+	public ImmutableArray<MapHolder> getMaps()
 	{
 		return _maps;
 	}
 
-	public Location getExitLocation()
+	public Location3D? getExitLocation()
 	{
 		return _exitLocation;
 	}

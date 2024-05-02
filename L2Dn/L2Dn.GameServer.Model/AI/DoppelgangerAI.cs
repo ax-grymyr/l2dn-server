@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.AI;
@@ -226,8 +227,8 @@ public class DoppelgangerAI : CreatureAI
 			
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
 			// _actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
-			Location loc = new Location(pawn.getX() + Rnd.get(-offset, offset), pawn.getY() + Rnd.get(-offset, offset), pawn.getZ());
-			_actor.moveToLocation(loc.getX(), loc.getY(), loc.getZ(), 0);
+			Location3D loc = new(pawn.getX() + Rnd.get(-offset, offset), pawn.getY() + Rnd.get(-offset, offset), pawn.getZ());
+			_actor.moveToLocation(loc.X, loc.Y, loc.Z, 0);
 			if (!_actor.isMoving())
 			{
 				clientActionFailed();

@@ -30,9 +30,8 @@ public class NpcRoutesHolder
 	{
 		if (npc.getSpawn() != null)
 		{
-			Location location = npc.getSpawn().Location;
-			Location3D location3D = new(location.X, location.Y, location.Z);
-			return _correspondences.GetValueOrDefault(location3D) ?? string.Empty;
+			Location3D location = npc.getSpawn().Location.ToLocation3D();
+			return _correspondences.GetValueOrDefault(location) ?? string.Empty;
 		}
 
 		return string.Empty;

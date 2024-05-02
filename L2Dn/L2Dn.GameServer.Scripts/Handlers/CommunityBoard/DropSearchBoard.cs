@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -298,7 +299,9 @@ public class DropSearchBoard: IParseBoardHandler
 				else
 				{
 					NpcSpawnTemplate spawn = spawnList.get(Rnd.get(spawnList.size()));
-					player.getRadar().addMarker(spawn.getSpawnLocation().getX(), spawn.getSpawnLocation().getY(), spawn.getSpawnLocation().getZ());
+					LocationHeading? spawnLocation = spawn.getSpawnLocation();
+					if (spawnLocation != null)
+						player.getRadar().addMarker(spawnLocation.Value.X, spawnLocation.Value.Y, spawnLocation.Value.Z);
 				}
 				break;
 			}

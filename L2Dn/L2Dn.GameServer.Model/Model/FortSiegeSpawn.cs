@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
@@ -8,12 +9,12 @@ namespace L2Dn.GameServer.Model;
  */
 public class FortSiegeSpawn: IIdentifiable
 {
-    private readonly Location _location;
+    private readonly LocationHeading _location;
     private readonly int _npcId;
     private readonly int _fortId;
     private readonly int _id;
 
-    public FortSiegeSpawn(int fortId, Location location, int npcId, int id)
+    public FortSiegeSpawn(int fortId, LocationHeading location, int npcId, int id)
     {
         _location = location;
         _fortId = fortId;
@@ -21,7 +22,7 @@ public class FortSiegeSpawn: IIdentifiable
         _id = id;
     }
 
-    public Location Location => _location;
+    public LocationHeading Location => _location;
 
     public int getFortId()
     {

@@ -229,7 +229,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _spawnedNpcs;
 	}
 	
-	public Location? getSpawnLocation()
+	public LocationHeading? getSpawnLocation()
 	{
 		if (_locations.Count != 0)
 		{
@@ -238,9 +238,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			foreach (ChanceLocation loc in _locations)
 			{
 				if (locRandom <= (cumulativeChance += loc.getChance()))
-				{
-					return new Location(loc.Location.X, loc.Location.Y, loc.Location.Z, loc.Location.Heading);
-				}
+					return loc.Location;
 			}
 
 			_logger.Warn("Couldn't match location by chance turning first...");
@@ -250,7 +248,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		if (_zone != null)
 		{
 			Location3D loc = _zone.getRandomPoint();
-			return new Location(loc.X, loc.Y, loc.Z, -1);
+			return new LocationHeading(loc, -1);
 		}
 
 		if (!_group.getTerritories().isEmpty())
@@ -261,7 +259,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 				Location3D loc = territory.getRandomPoint();
 				if (_group.getBannedTerritories().isEmpty())
 				{
-					return new Location(loc.X, loc.Y, loc.Z, -1);
+					return new LocationHeading(loc, -1);
 				}
 
 				bool insideBannedTerritory = false;
@@ -276,7 +274,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 				if (!insideBannedTerritory)
 				{
-					return new Location(loc.X, loc.Y, loc.Z, -1);
+					return new LocationHeading(loc, -1);
 				}
 			}
 		}
@@ -288,7 +286,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 				Location3D loc = territory.getRandomPoint();
 				if (_spawnTemplate.getBannedTerritories().isEmpty())
 				{
-					return new Location(loc.X, loc.Y, loc.Z, -1);
+					return new LocationHeading(loc, -1);
 				}
 
 				bool insideBannedTerritory = false;
@@ -303,10 +301,11 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 				if (!insideBannedTerritory)
 				{
-					return new Location(loc.X, loc.Y, loc.Z, -1);
+					return new LocationHeading(loc, -1);
 				}
 			}
 		}
+
 		return null;
 	}
 	
@@ -353,7 +352,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	private void spawnNpc(NpcTemplate npcTemplate, Instance instance)
 	{
 		Spawn spawn = new Spawn(npcTemplate);
-		Location? loc = getSpawnLocation();
+		LocationHeading? loc = getSpawnLocation();
 		if (loc == null)
 		{
 			_logger.Warn("Couldn't initialize new spawn, no location found!");
@@ -362,8 +361,8 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		
 		spawn.setInstanceId(instance != null ? instance.getId() : 0);
 		spawn.setAmount(1);
-		spawn.Location.setXYZ(loc.ToLocation3D());
-		spawn.Location.setHeading(loc.getHeading());
+		spawn.Location.setXYZ(loc.Value.Location);
+		spawn.Location.setHeading(loc.Value.Heading);
 		TimeSpan respawn = TimeSpan.Zero;
 		TimeSpan respawnRandom = TimeSpan.Zero;
 		SchedulingPattern respawnPattern = null;

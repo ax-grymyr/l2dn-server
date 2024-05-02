@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +33,8 @@ public class ClanHall: AbstractResidence
 	private readonly Set<int> _npcs = new();
 	private readonly Set<Door> _doors = new();
 	private readonly Set<ClanHallTeleportHolder> _teleports = new();
-	private readonly Location _ownerLocation;
-	private readonly Location _banishLocation;
+	private readonly Location3D _ownerLocation;
+	private readonly Location3D _banishLocation;
 
 	// Dynamic parameters
 	private Clan? _owner;
@@ -41,7 +42,7 @@ public class ClanHall: AbstractResidence
 	protected ScheduledFuture? _checkPaymentTask;
 
 	public ClanHall(int id, string name, ClanHallGrade grade, ClanHallType type, long minBid, long lease, long deposit,
-		Location ownerLocation, Location banishLocation)
+		Location3D ownerLocation, Location3D banishLocation)
 		: base(id, name)
 	{
 		_grade = grade;
@@ -261,12 +262,12 @@ public class ClanHall: AbstractResidence
 		return (_checkPaymentTask != null) ? DateTime.UtcNow + _checkPaymentTask.getDelay() : DateTime.MinValue;
 	}
 	
-	public Location getOwnerLocation()
+	public Location3D getOwnerLocation()
 	{
 		return _ownerLocation;
 	}
 	
-	public Location getBanishLocation()
+	public Location3D getBanishLocation()
 	{
 		return _banishLocation;
 	}

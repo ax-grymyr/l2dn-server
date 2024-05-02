@@ -351,11 +351,19 @@ public class Spawn : IIdentifiable, INamable
 		// If Locx and Locy are not defined, the Npc must be spawned in an area defined by location or spawn territory.
 		if (_spawnTemplate != null)
 		{
-			Location loc = _spawnTemplate.getSpawnLocation();
-			newlocx = loc.getX();
-			newlocy = loc.getY();
-			newlocz = loc.getZ();
-			_location.setLocation(loc.ToLocation3D(), loc.Heading);
+			LocationHeading? loc = _spawnTemplate.getSpawnLocation();
+			if (loc != null)
+			{
+				newlocx = loc.Value.X;
+				newlocy = loc.Value.Y;
+				newlocz = loc.Value.Z;
+				_location.setLocation(loc.Value.Location, loc.Value.Heading);
+			}
+			else
+			{
+				LOGGER.Warn("NPC " + npc + " doesn't have spawn location!");
+				return null;
+			}
 		}
 		else if ((_location.getX() == 0) && (_location.getY() == 0))
 		{

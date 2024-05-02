@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 
@@ -8,9 +9,9 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 public class TeleportTask: Runnable
 {
 	private readonly Player _player;
-	private readonly Location _loc;
+	private readonly LocationHeading _loc;
 	
-	public TeleportTask(Player player, Location loc)
+	public TeleportTask(Player player, LocationHeading loc)
 	{
 		_player = player;
 		_loc = loc;
@@ -20,7 +21,7 @@ public class TeleportTask: Runnable
 	{
 		if ((_player != null) && _player.isOnline())
 		{
-			_player.teleToLocation(_loc.ToLocationHeading(), true);
+			_player.teleToLocation(_loc, true);
 		}
 	}
 }

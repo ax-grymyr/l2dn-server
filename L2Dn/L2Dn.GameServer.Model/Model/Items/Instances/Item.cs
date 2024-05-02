@@ -1602,7 +1602,7 @@ public class Item: WorldObject
 			EventContainer events = getTemplate().Events;
 			if (events.HasSubscribers<OnPlayerItemDrop>())
 			{
-				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, new Location(x, y, z)));
+				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, new Location3D(x, y, z)));
 			}
 		}
 	}

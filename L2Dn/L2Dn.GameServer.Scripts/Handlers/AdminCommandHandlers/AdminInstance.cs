@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -118,13 +119,13 @@ public class AdminInstance: IAdminCommandHandler
 					}
 					
 					Instance instance = InstanceManager.getInstance().createInstance(template, activeChar);
-					Location loc = instance.getEnterLocation();
+					LocationHeading? loc = instance.getEnterLocation();
 					if (loc != null)
 					{
 						foreach (Player players in members)
 						{
 							instance.addAllowed(players);
-							players.teleToLocation(loc.ToLocationHeading(), instance);
+							players.teleToLocation(loc.Value, instance);
 						}
 					}
 					sendTemplateDetails(activeChar, instance.getTemplateId());
@@ -141,14 +142,14 @@ public class AdminInstance: IAdminCommandHandler
 				Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
 				if (instance != null)
 				{
-					Location loc = instance.getEnterLocation();
+					LocationHeading? loc = instance.getEnterLocation();
 					if (loc != null)
 					{
 						if (!instance.isAllowed(activeChar))
 						{
 							instance.addAllowed(activeChar);
 						}
-						activeChar.teleToLocation(loc.ToLocationHeading(), false);
+						activeChar.teleToLocation(loc.Value, false);
 						activeChar.setInstance(instance);
 						sendTemplateDetails(activeChar, instance.getTemplateId());
 					}

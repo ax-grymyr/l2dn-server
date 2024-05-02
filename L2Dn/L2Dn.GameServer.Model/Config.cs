@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using NLog;
 
@@ -1339,10 +1340,10 @@ public class Config
 	public static int DELEVEL_MANAGER_ITEMCOUNT;
 	public static int DELEVEL_MANAGER_MINIMUM_DELEVEL;
 	public static bool FACTION_SYSTEM_ENABLED;
-	public static Location FACTION_STARTING_LOCATION;
-	public static Location FACTION_MANAGER_LOCATION;
-	public static Location FACTION_GOOD_BASE_LOCATION;
-	public static Location FACTION_EVIL_BASE_LOCATION;
+	public static LocationHeading FACTION_STARTING_LOCATION;
+	public static LocationHeading FACTION_MANAGER_LOCATION;
+	public static LocationHeading FACTION_GOOD_BASE_LOCATION;
+	public static LocationHeading FACTION_EVIL_BASE_LOCATION;
 	public static string FACTION_GOOD_TEAM_NAME;
 	public static string FACTION_EVIL_TEAM_NAME;
 	public static Color FACTION_GOOD_NAME_COLOR;
@@ -3057,12 +3058,12 @@ public class Config
 		return builder.ToImmutable();
 	}
 
-	private static Location GetLocation(ConfigurationParser parser, string key, int dx, int dy, int dz,
+	private static LocationHeading GetLocation(ConfigurationParser parser, string key, int dx, int dy, int dz,
 		int dheading = 0)
 	{
 		string value = parser.getString(key);
 		if (string.IsNullOrEmpty(value))
-			return new Location(dx, dy, dz, dheading);
+			return new LocationHeading(dx, dy, dz, dheading);
 
 		string[] k = value.Split(',');
 		if ((k.Length == 3 || k.Length == 4) && int.TryParse(k[0], CultureInfo.InvariantCulture, out int x) &&
@@ -3073,18 +3074,18 @@ public class Config
 			{
 				if (int.TryParse(k[3], CultureInfo.InvariantCulture, out int heading))
 				{
-					return new Location(x, y, z, heading);
+					return new LocationHeading(x, y, z, heading);
 				}
 			}
 			else
 			{
-				return new Location(x, y, z, dheading);
+				return new LocationHeading(x, y, z, dheading);
 			}
 		}
 
 		LOGGER.Error($"Invalid location format '{value}' in entry '{key}' in configuration file '{parser.FilePath}'");
 
-		return new Location(dx, dy, dz, dheading);
+		return new LocationHeading(dx, dy, dz, dheading);
 	}
 
 	private static ImmutableDictionary<string, Location> GetLocations(ConfigurationParser parser, string key)

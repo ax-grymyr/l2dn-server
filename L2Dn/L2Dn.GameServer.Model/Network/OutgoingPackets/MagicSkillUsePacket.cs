@@ -1,6 +1,8 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -19,15 +21,17 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 	private readonly int _actionId; // If skill is called from RequestActionUse, use that ID.
 	private readonly SkillCastingType _castingType; // Defines which client bar is going to use.
 	private readonly Creature _creature;
-	private readonly WorldObject _target;
+	private readonly int _targetObjectId;
+	private readonly Location3D _targetLocation;
 	private readonly bool _isGroundTargetSkill;
-	private readonly Location _groundLocation;
+	private readonly Location3D? _groundLocation;
 
 	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
 		TimeSpan reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType, bool isGroundTargetSkill)
 	{
 		_creature = creature;
-		_target = target;
+		_targetObjectId = target.getObjectId();
+		_targetLocation = target.getLocation().ToLocation3D();
 		_skillId = skillId;
 		_skillLevel = skillLevel;
 		_hitTime = hitTime;
@@ -36,7 +40,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		_actionId = actionId;
 		_castingType = castingType;
 		_isGroundTargetSkill = isGroundTargetSkill;
-		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition() : null;
+		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition().ToLocation3D() : null;
 	}
 
 	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
@@ -60,10 +64,9 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.MAGIC_SKILL_USE);
 
-		writer.WriteInt32(
-			(int)_castingType); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
+		writer.WriteInt32((int)_castingType); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
 		writer.WriteInt32(_creature.getObjectId());
-		writer.WriteInt32(_target.getObjectId());
+		writer.WriteInt32(_targetObjectId);
 		writer.WriteInt32(_skillId);
 		writer.WriteInt32(_skillLevel);
 		writer.WriteInt32((int)_hitTime.TotalMilliseconds);
@@ -80,14 +83,10 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		else
 		{
 			writer.WriteInt16(1);
-			writer.WriteInt32(_groundLocation.getX());
-			writer.WriteInt32(_groundLocation.getY());
-			writer.WriteInt32(_groundLocation.getZ());
+			writer.WriteLocation3D(_groundLocation.Value);
 		}
 
-		writer.WriteInt32(_target.getX());
-		writer.WriteInt32(_target.getY());
-		writer.WriteInt32(_target.getZ());
+		writer.WriteLocation3D(_targetLocation);
 		writer.WriteInt32(_actionId >= 0); // 1 when ID from RequestActionUse is used
 		writer.WriteInt32(_actionId >= 0
 			? _actionId

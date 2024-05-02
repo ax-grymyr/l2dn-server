@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -43,7 +44,7 @@ public class Escape: AbstractEffect
 		{
 			if (effected.isInInstance() && effected.getActingPlayer().isInTimedHuntingZone())
 			{
-				effected.teleToLocation(effected.getActingPlayer().getTimedHuntingZone().getEnterLocation().ToLocationHeading(), effected.getInstanceId());
+				effected.teleToLocation(new LocationHeading(effected.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0), effected.getInstanceId());
 			}
 			else
 			{

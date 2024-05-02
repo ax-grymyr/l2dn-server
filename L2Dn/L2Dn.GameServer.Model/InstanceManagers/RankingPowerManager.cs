@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -34,18 +35,18 @@ public class RankingPowerManager
 	
 	public void activatePower(Player player)
 	{
-		Location location = player.getLocation();
+		Location3D location = player.getLocation().ToLocation3D();
 		List<int> array = new();
-		array.Add(location.getX());
-		array.Add(location.getY());
-		array.Add(location.getZ());
+		array.Add(location.X);
+		array.Add(location.Y);
+		array.Add(location.Z);
 		GlobalVariablesManager.getInstance().setIntegerList(GlobalVariablesManager.RANKING_POWER_LOCATION, array);
 		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.UtcNow + COOLDOWN);
 		createClone(player);
 		cloneTask();
 		SystemMessagePacket msg = new(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
 		msg.Params.addString(player.getName());
-		msg.Params.addZoneName(location.getX(), location.getY(), location.getZ());
+		msg.Params.addZoneName(location.X, location.Y, location.Z);
 		Broadcast.toAllOnlinePlayers(msg);
 	}
 	
@@ -112,6 +113,6 @@ public class RankingPowerManager
 	
 	private static class SingletonHolder
 	{
-		public static readonly RankingPowerManager INSTANCE = new RankingPowerManager();
+		public static readonly RankingPowerManager INSTANCE = new();
 	}
 }

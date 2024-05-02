@@ -331,7 +331,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 		}
 		
-		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc().ToLocationHeading(), true, null);
+		player.teleToLocation(new LocationHeading(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), 0), true, null);
 	}
 	
 	private void teleportTo(Player activeChar, String coords)

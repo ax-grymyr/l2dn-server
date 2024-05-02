@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -34,10 +35,10 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
         if (huntingZone == null)
             return ValueTask.CompletedTask;
 		
-        Location exitLocation = huntingZone.getExitLocation();
+        Location3D? exitLocation = huntingZone.getExitLocation();
         if (exitLocation != null)
         {
-            player.teleToLocation(exitLocation.ToLocationHeading(), null);
+            player.teleToLocation(new LocationHeading(exitLocation.Value, 0), null);
         }
         else
         {

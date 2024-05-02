@@ -168,7 +168,7 @@ public class MapRegionManager: DataReaderBase
 					ClanHall? clanhall = ClanHallData.getInstance().getClanHallByClan(player.getClan());
 					if (clanhall != null && !player.isFlyingMounted())
 					{
-						return clanhall.getOwnerLocation().ToLocationHeading();
+						return new LocationHeading(clanhall.getOwnerLocation(), 0);
 					}
 				}
 				
@@ -262,17 +262,17 @@ public class MapRegionManager: DataReaderBase
 			TimedHuntingZoneHolder timedHuntingZone = player.getTimedHuntingZone();
 			if (timedHuntingZone != null)
 			{
-				Location exitLocation = timedHuntingZone.getExitLocation();
+				Location3D? exitLocation = timedHuntingZone.getExitLocation();
 				if (exitLocation != null)
 				{
-					return exitLocation.ToLocationHeading();
+					return new LocationHeading(exitLocation.Value, 0);
 				}
 			}
 			
 			// Karma player land out of city
 			if (player.getReputation() < 0)
 			{
-				return getNearestKarmaRespawn(player).ToLocationHeading();
+				return new LocationHeading(getNearestKarmaRespawn(player), 0);
 			}
 			
 			// Checking if needed to be respawned in "far" town from the castle;
@@ -299,19 +299,19 @@ public class MapRegionManager: DataReaderBase
 		{
 			if (creature.getActingPlayer().isGood())
 			{
-				return Config.FACTION_GOOD_BASE_LOCATION.ToLocationHeading();
+				return Config.FACTION_GOOD_BASE_LOCATION;
 			}
 			if (creature.getActingPlayer().isEvil())
 			{
-				return Config.FACTION_EVIL_BASE_LOCATION.ToLocationHeading();
+				return Config.FACTION_EVIL_BASE_LOCATION;
 			}
 		}
 		
 		// Get the nearest town
-		return getNearestTownRespawn(creature).ToLocationHeading();
+		return new LocationHeading(getNearestTownRespawn(creature), 0);
 	}
 	
-	public Location getNearestKarmaRespawn(Player player)
+	public Location3D getNearestKarmaRespawn(Player player)
 	{
 		try
 		{
@@ -338,7 +338,7 @@ public class MapRegionManager: DataReaderBase
 		}
 	}
 	
-	public Location getNearestTownRespawn(Creature creature)
+	public Location3D getNearestTownRespawn(Creature creature)
 	{
 		try
 		{

@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -27,10 +28,10 @@ public class AdminClanHall: IAdminCommandHandler
 		"admin_clanhall",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		if (actualCommand.equalsIgnoreCase("admin_clanhall"))
 		{
 			processBypass(activeChar, new BypassParser(command));
@@ -38,7 +39,7 @@ public class AdminClanHall: IAdminCommandHandler
 		return true;
 	}
 	
-	private void doAction(Player player, int clanHallId, String action, String actionVal)
+	private void doAction(Player player, int clanHallId, string action, string actionVal)
 	{
 		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
 		if (clanHall != null)
@@ -57,26 +58,19 @@ public class AdminClanHall: IAdminCommandHandler
 				{
 					if (actionVal != null)
 					{
-						Location loc;
 						switch (actionVal)
 						{
 							case "inside":
 							{
-								loc = clanHall.getOwnerLocation();
+								player.teleToLocation(new LocationHeading(clanHall.getOwnerLocation(), 0));
 								break;
 							}
 							case "outside":
 							{
-								loc = clanHall.getBanishLocation();
-								break;
-							}
-							default:
-							{
-								loc = player.getLocation();
+								player.teleToLocation(new LocationHeading(clanHall.getBanishLocation(), 0));
 								break;
 							}
 						}
-						player.teleToLocation(loc.ToLocationHeading());
 					}
 					break;
 				}
@@ -188,7 +182,7 @@ public class AdminClanHall: IAdminCommandHandler
 			StringBuilder sb = new StringBuilder();
 			htmlContent.Replace("%clanHallId%", clanHall.getResidenceId().ToString());
 			htmlContent.Replace("%clanHallOwner%", (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>"));
-			String grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
+			string grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
 			htmlContent.Replace("%clanHallGrade%", grade);
 			htmlContent.Replace("%clanHallSize%", clanHall.getGrade().ToString());
 			if (!clanHall.getFunctions().isEmpty())
@@ -234,8 +228,8 @@ public class AdminClanHall: IAdminCommandHandler
 	{
 		int page = parser.getInt("page", 0);
 		int clanHallId = parser.getInt("id", 0);
-		String action = parser.getString("action", null);
-		String actionVal = parser.getString("actionVal", null);
+		string action = parser.getString("action", null);
+		string actionVal = parser.getString("actionVal", null);
 		if ((clanHallId > 0) && (action != null))
 		{
 			doAction(player, clanHallId, action, actionVal);
@@ -250,7 +244,7 @@ public class AdminClanHall: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

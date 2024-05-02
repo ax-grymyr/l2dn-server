@@ -48,6 +48,6 @@ public class ClanHallZone(int id): ResidenceZone(id)
 			throw new InvalidOperationException("No clan hall in clan hall zone");
 		}
 
-		return clanHall.getBanishLocation().ToLocation3D();
+		return clanHall.getBanishLocation();
 	}
 }

@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -195,7 +196,7 @@ public class MinionList
 					newY = (_master.getY() - newY) + minRadius;
 				}
 				
-				minion.teleToLocation(new Location(newX, newY, _master.getZ()).ToLocationHeading());
+				minion.teleToLocation(new LocationHeading(newX, newY, _master.getZ(), 0));
 			}
 		}
 	}

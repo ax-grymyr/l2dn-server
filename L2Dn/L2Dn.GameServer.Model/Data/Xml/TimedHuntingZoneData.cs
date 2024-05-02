@@ -1,8 +1,10 @@
+using System.Collections.Immutable;
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -60,44 +62,42 @@ public class TimedHuntingZoneData: DataReaderBase
 		bool weekly = false;
 		bool useWorldPrefix = false;
 		bool zonePremiumUserOnly = false;
-		Location enterLocation = null;
-		Location subEnterLocation1 = null;
-		Location subEnterLocation2 = null;
-		Location subEnterLocation3 = null;
-		Location exitLocation = null;
+
+		ImmutableArray<Location3D> enterLocations = [];
+		Location3D? exitLocation = null;
 
 		element.Elements("enterLocation").ForEach(el =>
 		{
 			String[] coordinates = ((string)el).Split(",");
-			enterLocation = new Location(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
-				int.Parse(coordinates[2]));
+			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
+				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation1").ForEach(el =>
 		{
 			String[] coordinates = ((string)el).Split(",");
-			subEnterLocation1 = new Location(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
-				int.Parse(coordinates[2]));
+			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
+				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation2").ForEach(el =>
 		{
 			String[] coordinates = ((string)el).Split(",");
-			subEnterLocation2 = new Location(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
-				int.Parse(coordinates[2]));
+			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
+				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation3").ForEach(el =>
 		{
 			String[] coordinates = ((string)el).Split(",");
-			subEnterLocation3 = new Location(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
-				int.Parse(coordinates[2]));
+			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
+				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("exitLocation").ForEach(el =>
 		{
 			String[] coordinates = ((string)el).Split(",");
-			exitLocation = new Location(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
+			exitLocation = new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2]));
 		});
 
@@ -118,11 +118,15 @@ public class TimedHuntingZoneData: DataReaderBase
 		element.Elements("useWorldPrefix").ForEach(el => useWorldPrefix = (bool)el);
 		element.Elements("zonePremiumUserOnly").ForEach(el => zonePremiumUserOnly = (bool)el);
 
+		if (enterLocations.Length == 0)
+		{
+			LOGGER.Error($"{GetType().Name}: No enter location for time hunting zone {id} {name}");
+		}
+
 		_timedHuntingZoneData.put(id,
 			new TimedHuntingZoneHolder(id, name, initialTime, maxAddedTime, TimeSpan.FromMilliseconds(resetDelay), entryItemId, entryFee, minLevel,
 				maxLevel, remainRefillTime, refillTimeMax, pvpZone, noPvpZone, instanceId, soloInstance, weekly,
-				useWorldPrefix, zonePremiumUserOnly, enterLocation, subEnterLocation1, subEnterLocation2,
-				subEnterLocation3, exitLocation));
+				useWorldPrefix, zonePremiumUserOnly, enterLocations, exitLocation));
 	}
 
 	public TimedHuntingZoneHolder getHuntingZone(int zoneId)

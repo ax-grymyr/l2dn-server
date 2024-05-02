@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -27,10 +28,10 @@ public struct RequestCursedWeaponLocationPacket: IIncomingPacket<GameSession>
                 continue;
             }
 			
-            Location pos = cw.getWorldPosition();
+            Location3D? pos = cw.getWorldPosition();
             if (pos != null)
             {
-                list.Add(new ExCursedWeaponLocationPacket.CursedWeaponInfo(pos.ToLocation3D(), cw.getItemId(), cw.isActivated() ? 1 : 0));
+                list.Add(new ExCursedWeaponLocationPacket.CursedWeaponInfo(pos.Value, cw.getItemId(), cw.isActivated() ? 1 : 0));
             }
         }
 		

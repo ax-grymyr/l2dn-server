@@ -35,22 +35,22 @@ public class BlinkSwap: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Location effectedLoc = new Location(effected.getX(), effected.getY(), effected.getZ(), effected.getHeading());
-		Location effectorLoc = new Location(effector.getX(), effector.getY(), effector.getZ(), effector.getHeading());
+		Location3D effectedLoc = effected.getLocation().ToLocation3D();
+		Location3D effectorLoc = effector.getLocation().ToLocation3D();
 
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effector.broadcastPacket(new FlyToLocationPacket(effector, effectedLoc.ToLocation3D(), FlyType.DUMMY));
+		effector.broadcastPacket(new FlyToLocationPacket(effector, effectedLoc, FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
-		effector.setXYZ(effectedLoc.ToLocation3D());
+		effector.setXYZ(effectedLoc);
 		effector.broadcastPacket(new ValidateLocationPacket(effector));
 		effector.revalidateZone(true);
 
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocationPacket(effected, effectorLoc.ToLocation3D(), FlyType.DUMMY));
+		effected.broadcastPacket(new FlyToLocationPacket(effected, effectorLoc, FlyType.DUMMY));
 		effected.abortAttack();
 		effected.abortCast();
-		effected.setXYZ(effectorLoc.ToLocation3D());
+		effected.setXYZ(effectorLoc);
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);
 	}

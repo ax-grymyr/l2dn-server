@@ -275,11 +275,14 @@ public class InstanceManager: DataReaderBase
 			{
 				object? value = xmlParameter switch
 				{
-					XmlParameterString xmlParameterString=>xmlParameterString.Value,
-					XmlParameterSkill xmlParameterSkill => new SkillHolder(xmlParameterSkill.Id, xmlParameterSkill.Level),
-					XmlParameterLocation xmlParameterLocation =>new Location(xmlParameterLocation.X,
+					XmlParameterString xmlParameterString => xmlParameterString.Value,
+					XmlParameterSkill xmlParameterSkill => new SkillHolder(xmlParameterSkill.Id,
+						xmlParameterSkill.Level),
+
+					XmlParameterLocation xmlParameterLocation => new LocationHeading(xmlParameterLocation.X,
 						xmlParameterLocation.Y, xmlParameterLocation.Z, xmlParameterLocation.Heading),
-					_ => null 
+
+					_ => null
 				};
 
 				if (value == null)

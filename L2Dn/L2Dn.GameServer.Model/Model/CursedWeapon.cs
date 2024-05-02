@@ -628,21 +628,21 @@ public class CursedWeapon : INamable
 		}
 	}
 	
-	public Location getWorldPosition()
+	public Location3D? getWorldPosition()
 	{
 		if (_isActivated && (_player != null))
 		{
-			return _player.getLocation();
+			return _player.getLocation().ToLocation3D();
 		}
-		
+
 		if (_isDropped && (_item != null))
 		{
-			return _item.getLocation();
+			return _item.getLocation().ToLocation3D();
 		}
-		
+
 		return null;
 	}
-	
+
 	public long getDuration()
 	{
 		return _duration;

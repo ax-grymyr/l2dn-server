@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -11,8 +12,8 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class JailZone : ZoneType
 {
-	private static readonly Location JAIL_IN_LOC = new Location(-114356, -249645, -2984);
-	private static readonly Location JAIL_OUT_LOC = new Location(17836, 170178, -3507);
+	private static readonly LocationHeading JAIL_IN_LOC = new(-114356, -249645, -2984, 0);
+	private static readonly LocationHeading JAIL_OUT_LOC = new(17836, 170178, -3507, 0);
 	
 	public JailZone(int id):base(id)
 	{
@@ -63,12 +64,12 @@ public class JailZone : ZoneType
 		}
 	}
 	
-	public static Location getLocationIn()
+	public static LocationHeading getLocationIn()
 	{
 		return JAIL_IN_LOC;
 	}
 	
-	public static Location getLocationOut()
+	public static LocationHeading getLocationOut()
 	{
 		return JAIL_OUT_LOC;
 	}

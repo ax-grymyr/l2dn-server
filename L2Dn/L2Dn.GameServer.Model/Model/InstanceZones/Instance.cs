@@ -330,16 +330,15 @@ public class Instance : IIdentifiable, INamable
 	 * @param radius radius around target
 	 * @return players within radius
 	 */
-	public List<Player> getPlayersInsideRadius(Location location, int radius)
+	public List<Player> getPlayersInsideRadius(Location3D location, int radius)
 	{
 		List<Player> result = new();
 		foreach (Player player in _players)
 		{
-			if (player.isInsideRadius3D(location.ToLocation3D(), radius))
-			{
+			if (player.isInsideRadius3D(location, radius))
 				result.Add(player);
-			}
 		}
+
 		return result;
 	}
 	

@@ -4,23 +4,24 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
 public class CombatFlag
 {
-	private Player _player = null;
-	private int _playerId = 0;
-	private Item _item = null;
-	private Item _itemInstance;
-	private readonly Location _location;
+	private Player? _player;
+	private int _playerId;
+	private Item? _item;
+	private Item? _itemInstance;
+	private readonly LocationHeading _location;
 	private readonly int _itemId;
-	private readonly  int _fortId;
+	private readonly int _fortId;
 	
 	public CombatFlag(int fortId, int x, int y, int z, int heading, int itemId)
 	{
 		_fortId = fortId;
-		_location = new Location(x, y, z, heading);
+		_location = new LocationHeading(x, y, z, heading);
 		_itemId = itemId;
 	}
 	
@@ -29,7 +30,7 @@ public class CombatFlag
 	{
 		// Init the dropped ItemInstance and add it in the world as a visible object at the position where mob was last
 		_itemInstance = ItemData.getInstance().createItem("Combat", _itemId, 1, null, null);
-		_itemInstance.dropMe(null, _location.getX(), _location.getY(), _location.getZ());
+		_itemInstance.dropMe(null, _location.X, _location.Y, _location.Z);
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]

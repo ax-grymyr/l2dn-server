@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
@@ -246,7 +247,7 @@ public class FortSiegeManager
 					int z = int.Parse(st.nextToken());
 					int heading = int.Parse(st.nextToken());
 					int npcId = int.Parse(st.nextToken());
-					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), new Location(x, y, z, heading), npcId, i));
+					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), new LocationHeading(x, y, z, heading), npcId, i));
 				}
 				catch (Exception e)
 				{

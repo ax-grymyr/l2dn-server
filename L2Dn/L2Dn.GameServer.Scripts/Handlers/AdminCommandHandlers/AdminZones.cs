@@ -29,10 +29,10 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 
 	private readonly Map<int, ZoneNodeHolder> _zones = new();
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_zones":
@@ -42,14 +42,14 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 					buildZonesEditorWindow(activeChar);
 					return false;
 				}
-				String subCmd = st.nextToken();
+				string subCmd = st.nextToken();
 				switch (subCmd)
 				{
 					case "load":
 					{
 						if (st.hasMoreTokens())
 						{
-							String name = "";
+							string name = "";
 							while (st.hasMoreTokens())
 							{
 								name += st.nextToken() + " ";
@@ -65,7 +65,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 					}
 					case "setname":
 					{
-						String name = "";
+						string name = "";
 						while (st.hasMoreTokens())
 						{
 							name += st.nextToken() + " ";
@@ -136,7 +136,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Missing node index!");
 							break;
 						}
-						String indexToken = st.nextToken();
+						string indexToken = st.nextToken();
 						if (!Util.isDigit(indexToken))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Node index should be int!");
@@ -153,7 +153,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Missing node index!");
 							break;
 						}
-						String indexToken = st.nextToken();
+						string indexToken = st.nextToken();
 						if (!Util.isDigit(indexToken))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Node index should be int!");
@@ -231,7 +231,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 * @param activeChar
 	 * @param zoneName
 	 */
-	private void loadZone(Player activeChar, String zoneName)
+	private void loadZone(Player activeChar, string zoneName)
 	{
 		BuilderUtil.sendSysMessage(activeChar, "Searching for zone: " + zoneName);
 		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.getLocation().ToLocation3D());
@@ -258,7 +258,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			{
 				int x = zone.getX()[i];
 				int y = zone.getY()[i];
-				holder.addNode(new Location(x, y, GeoEngine.getInstance().getHeight(x, y, Rnd.get(zone.getLowZ(), zone.getHighZ()))));
+				holder.addNode(new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, Rnd.get(zone.getLowZ(), zone.getHighZ()))));
 			}
 			showPoints(activeChar);
 		}
@@ -268,7 +268,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 * @param activeChar
 	 * @param name
 	 */
-	private void setName(Player activeChar, String name)
+	private void setName(Player activeChar, string name)
 	{
 		if (name.contains("<") || name.contains(">") || name.contains("&") || name.contains("\\") || name.contains("\"") || name.contains("$"))
 		{
@@ -326,22 +326,22 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			ExServerPrimitivePacket exsp = new ExServerPrimitivePacket("DebugPoint_" + activeChar.getObjectId(),
 				activeChar.getX(), activeChar.getY(), activeChar.getZ());
 
-			Location prevLoc;
-			Location nextLoc;
+			Location3D prevLoc;
+			Location3D nextLoc;
 			
-			List<Location> list = holder.getNodes();
+			List<Location3D> list = holder.getNodes();
 			for (int i = 1; i < list.size(); i++)
 			{
 				prevLoc = list.get(i - 1);
 				nextLoc = list.get(i);
 				if (holder.getMinZ() != 0)
 				{
-					exsp.addLine("Min Point " + i + " > " + (i + 1), Colors.CYAN, true, prevLoc.getX(), prevLoc.getY(), holder.getMinZ(), nextLoc.getX(), nextLoc.getY(), holder.getMinZ());
+					exsp.addLine("Min Point " + i + " > " + (i + 1), Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());
 				}
-				exsp.addLine("Point " + i + " > " + (i + 1), Colors.White, true, prevLoc.getX(), prevLoc.getY(), prevLoc.getZ(), nextLoc.getX(), nextLoc.getY(), nextLoc.getZ());
+				exsp.addLine("Point " + i + " > " + (i + 1), Colors.White, true, prevLoc.X, prevLoc.Y, prevLoc.Z, nextLoc.X, nextLoc.Y, nextLoc.Z);
 				if (holder.getMaxZ() != 0)
 				{
-					exsp.addLine("Max Point " + i + " > " + (i + 1), Colors.RED, true, prevLoc.getX(), prevLoc.getY(), holder.getMaxZ(), nextLoc.getX(), nextLoc.getY(), holder.getMaxZ());
+					exsp.addLine("Max Point " + i + " > " + (i + 1), Colors.RED, true, prevLoc.X, prevLoc.Y, holder.getMaxZ(), nextLoc.X, nextLoc.Y, holder.getMaxZ());
 				}
 			}
 			
@@ -349,13 +349,13 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			nextLoc = list.get(0);
 			if (holder.getMinZ() != 0)
 			{
-				exsp.addLine("Min Point " + list.size() + " > 1", Colors.CYAN, true, prevLoc.getX(), prevLoc.getY(), holder.getMinZ(), nextLoc.getX(), nextLoc.getY(), holder.getMinZ());
+				exsp.addLine("Min Point " + list.size() + " > 1", Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());
 			}
 			
-			exsp.addLine("Point " + list.size() + " > 1", Colors.White, true, prevLoc.getX(), prevLoc.getY(), prevLoc.getZ(), nextLoc.getX(), nextLoc.getY(), nextLoc.getZ());
+			exsp.addLine("Point " + list.size() + " > 1", Colors.White, true, prevLoc.X, prevLoc.Y, prevLoc.Z, nextLoc.X, nextLoc.Y, nextLoc.Z);
 			if (holder.getMaxZ() != 0)
 			{
-				exsp.addLine("Max Point " + list.size() + " > 1", Colors.RED, true, prevLoc.getX(), prevLoc.getY(), holder.getMaxZ(), nextLoc.getX(), nextLoc.getY(), holder.getMaxZ());
+				exsp.addLine("Max Point " + list.size() + " > 1", Colors.RED, true, prevLoc.X, prevLoc.Y, holder.getMaxZ(), nextLoc.X, nextLoc.Y, holder.getMaxZ());
 			}
 			
 			activeChar.sendPacket(exsp);
@@ -371,7 +371,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 		if (holder != null)
 		{
-			Location loc = holder.getNodes().get(index);
+			Location3D loc = holder.getNodes()[index];
 			if (loc != null)
 			{
 				enablePicking(activeChar);
@@ -389,7 +389,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 		if (holder != null)
 		{
-			Location loc = holder.getNodes().get(index);
+			Location3D loc = holder.getNodes()[index];
 			if (loc != null)
 			{
 				holder.getNodes().Remove(loc);
@@ -417,14 +417,14 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				return;
 			}
 			
-			Location firstNode = holder.getNodes().get(0);
+			Location3D firstNode = holder.getNodes()[0];
 			StringBuilder sj = new StringBuilder();
 			sj.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 			sj.AppendLine("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../data/xsd/zones.xsd\">");
-			sj.AppendLine("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (holder.getMinZ() != 0 ? holder.getMinZ() : firstNode.getZ() - 100) + "\" maxZ=\"" + (holder.getMaxZ() != 0 ? holder.getMaxZ() : firstNode.getZ() + 100) + "\">");
-			foreach (Location loc in holder.getNodes())
+			sj.AppendLine("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (holder.getMinZ() != 0 ? holder.getMinZ() : firstNode.Z - 100) + "\" maxZ=\"" + (holder.getMaxZ() != 0 ? holder.getMaxZ() : firstNode.Z + 100) + "\">");
+			foreach (Location3D loc in holder.getNodes())
 			{
-				sj.AppendLine("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />");
+				sj.AppendLine("\t\t<node X=\"" + loc.X + "\" Y=\"" + loc.Y + "\" />");
 			}
 			
 			sj.AppendLine("\t</zone>");
@@ -461,22 +461,22 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		{
 			Location newLocation = ev.getLocation();
 			ZoneNodeHolder holder = _zones.computeIfAbsent(player.getObjectId(), key => new ZoneNodeHolder(player));
-			Location changeLog = holder.getChangingLoc();
+			Location3D? changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
-				changeLog.setXYZ(newLocation.ToLocation3D());
+				changeLog = newLocation.ToLocation3D();
 				holder.setChangingLoc(null);
-				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(changeLog) + 1) + " has been updated!");
+				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(changeLog.Value) + 1) + " has been updated!");
 				disablePicking(player);
 			}
 			else
 			{
-				holder.addNode(newLocation);
-				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(changeLog) + 1) + " has been added!");
+				holder.addNode(newLocation.ToLocation3D());
+				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(newLocation.ToLocation3D()) + 1) + " has been added!");
 			}
 			
 			// Auto visualization when nodes >= 3
-			if (holder.getNodes().size() >= 3)
+			if (holder.getNodes().Count >= 3)
 			{
 				showPoints(player);
 			}
@@ -496,18 +496,18 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			ZoneNodeHolder holder = _zones.get(player.getObjectId());
 			if (holder != null)
 			{
-				List<Location> list = holder.getNodes();
-				if (list.size() < 3)
+				List<Location3D> list = holder.getNodes();
+				if (list.Count < 3)
 				{
 					BuilderUtil.sendSysMessage(player, "You must have at least 3 nodes to use this option!");
 					return;
 				}
 				
-				Location firstLoc = list.get(0);
-				int minZ = holder.getMinZ() != 0 ? holder.getMinZ() : firstLoc.getZ() - 100;
-				int maxZ = holder.getMaxZ() != 0 ? holder.getMaxZ() : firstLoc.getZ() + 100;
+				Location3D firstLoc = list[0];
+				int minZ = holder.getMinZ() != 0 ? holder.getMinZ() : firstLoc.Z - 100;
+				int maxZ = holder.getMaxZ() != 0 ? holder.getMaxZ() : firstLoc.Z + 100;
 
-				List<Location2D> vertices = list.Select(x => new Location2D(x.X, x.Y)).ToList();
+				List<Location2D> vertices = list.Select(x => x.ToLocation2D()).ToList();
 				ExShowTerritoryPacket exst = new(minZ, maxZ, vertices);
 				player.sendPacket(exst);
 				BuilderUtil.sendSysMessage(player, "In order to remove the debug you must restart your game client!");
@@ -515,7 +515,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return COMMANDS;
 	}
@@ -532,13 +532,13 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				sb.Append("<tr>");
 				sb.Append("<td fixwidth=5></td>");
 				sb.Append("<td fixwidth=20>" + position.getAndIncrement() + "</td>");
-				sb.Append("<td fixwidth=60>" + loc.getX() + "</td>");
-				sb.Append("<td fixwidth=60>" + loc.getY() + "</td>");
-				sb.Append("<td fixwidth=60>" + loc.getZ() + "</td>");
+				sb.Append("<td fixwidth=60>" + loc.X + "</td>");
+				sb.Append("<td fixwidth=60>" + loc.Y + "</td>");
+				sb.Append("<td fixwidth=60>" + loc.Z + "</td>");
 				sb.Append("<td fixwidth=30><a action=\"bypass -h admin_zones change " + holder.indexOf(loc) +
 				          "\">[E]</a></td>");
-				sb.Append("<td fixwidth=30><a action=\"bypass -h admin_move_to " + loc.getX() + " " + loc.getY() + " " +
-				          loc.getZ() + "\">[T]</a></td>");
+				sb.Append("<td fixwidth=30><a action=\"bypass -h admin_move_to " + loc.X + " " + loc.Y + " " +
+				          loc.Z + "\">[T]</a></td>");
 				sb.Append("<td fixwidth=30><a action=\"bypass -h admin_zones delete " + holder.indexOf(loc) +
 				          "\">[D]</a></td>");
 				sb.Append("<td fixwidth=5></td>");
@@ -557,9 +557,9 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 
 	private class ZoneNodeHolder
 	{
-		private readonly List<Location> _nodes = new();
+		private readonly List<Location3D> _nodes = [];
 		private string _name = string.Empty;
-		private Location _changingLoc;
+		private Location3D? _changingLoc;
 		private int _minZ;
 		private int _maxZ;
 		
@@ -569,37 +569,37 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			_maxZ = player.getZ() + 200;
 		}
 		
-		public void setName(String name)
+		public void setName(string name)
 		{
 			_name = name;
 		}
 		
-		public String getName()
+		public string getName()
 		{
 			return _name;
 		}
 		
-		public void setChangingLoc(Location loc)
+		public void setChangingLoc(Location3D? loc)
 		{
 			_changingLoc = loc;
 		}
 		
-		public Location getChangingLoc()
+		public Location3D? getChangingLoc()
 		{
 			return _changingLoc;
 		}
 		
-		public void addNode(Location loc)
+		public void addNode(Location3D loc)
 		{
-			_nodes.add(loc);
+			_nodes.Add(loc);
 		}
 		
-		public List<Location> getNodes()
+		public List<Location3D> getNodes()
 		{
 			return _nodes;
 		}
 		
-		public int indexOf(Location loc)
+		public int indexOf(Location3D loc)
 		{
 			return _nodes.IndexOf(loc);
 		}

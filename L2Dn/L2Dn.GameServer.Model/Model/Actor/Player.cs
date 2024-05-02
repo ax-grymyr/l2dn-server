@@ -9208,7 +9208,7 @@ public class Player: Playable
 		_lastLoc = null;
 	}
 	
-	public void enterOlympiadObserverMode(Location loc, int id)
+	public void enterOlympiadObserverMode(LocationHeading loc, int id)
 	{
 		if (_pet != null)
 		{
@@ -9250,7 +9250,7 @@ public class Player: Playable
 		setInvul(true);
 		setInvisible(true);
 		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
-		teleToLocation(loc.ToLocationHeading(), false);
+		teleToLocation(loc, false);
 		sendPacket(new ExOlympiadModePacket(3));
 		broadcastUserInfo();
 	}
@@ -9261,7 +9261,7 @@ public class Player: Playable
 		setInstance(null);
 		teleToLocation(new LocationHeading(_lastLoc.Value, 0), false);
 		unsetLastLocation();
-		sendPacket(new ObservationReturnPacket(getLocation()));
+		sendPacket(new ObservationReturnPacket(getLocation().ToLocation3D()));
 		setBlockActions(false);
 		if (!isGM())
 		{
