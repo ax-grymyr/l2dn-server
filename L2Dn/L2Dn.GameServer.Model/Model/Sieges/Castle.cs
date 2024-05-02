@@ -1195,8 +1195,8 @@ public class Castle: AbstractResidence, IEventContainerProvider
 					LOGGER.Warn(nameof(Castle) + ": " + e);
 					return;
 				}
-				spawn.Location.setXYZ(holder.Location.ToLocation3D());
-				spawn.Location.setHeading(holder.Location.getHeading());
+				spawn.Location.setXYZ(holder.Location.Location);
+				spawn.Location.setHeading(holder.Location.Heading);
 				Npc npc = spawn.doSpawn(false);
 				spawn.stopRespawn();
 				npc.broadcastInfo();

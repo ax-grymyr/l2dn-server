@@ -1,47 +1,40 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
 /**
  * @author BiggBoss
  */
-public class SiegableHallZone : ClanHallZone
+public sealed class SiegableHallZone(int id): ClanHallZone(id)
 {
-	private List<Location> _challengerLocations;
-	
-	public SiegableHallZone(int id): base(id)
+	private ImmutableArray<Location3D> _challengerLocations = ImmutableArray<Location3D>.Empty;
+
+	public override void parseLoc(Location3D location, string type)
 	{
-	}
-	
-	public override void parseLoc(int x, int y, int z, String type)
-	{
-		if ((type != null) && type.equals("challenger"))
+		if (string.Equals(type, "challenger"))
 		{
-			if (_challengerLocations == null)
-			{
-				_challengerLocations = new();
-			}
-			_challengerLocations.add(new Location(x, y, z));
+			_challengerLocations = _challengerLocations.Add(location);
 		}
 		else
 		{
-			base.parseLoc(x, y, z, type);
+			base.parseLoc(location, type);
 		}
 	}
-	
-	public List<Location> getChallengerSpawns()
+
+	public ImmutableArray<Location3D> getChallengerSpawns()
 	{
 		return _challengerLocations;
 	}
-	
+
 	public void banishNonSiegeParticipants()
 	{
 		foreach (Player player in getPlayersInside())
 		{
-			if ((player != null) && player.isInHideoutSiege())
+			if (player != null && player.isInHideoutSiege())
 			{
-				player.teleToLocation(getBanishSpawnLoc().ToLocationHeading(), true);
+				player.teleToLocation(new LocationHeading(getBanishSpawnLoc(), 0), true);
 			}
 		}
 	}

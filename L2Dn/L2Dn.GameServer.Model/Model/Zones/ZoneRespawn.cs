@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using System.Collections.Immutable;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones;
@@ -7,22 +8,18 @@ namespace L2Dn.GameServer.Model.Zones;
  * Abstract zone with spawn locations
  * @author DS, Nyaran (rework 10/07/2011)
  */
-public abstract class ZoneRespawn: ZoneType
+public abstract class ZoneRespawn(int id): ZoneType(id)
 {
-	private List<Location> _spawnLocs = null;
-	private List<Location> _otherSpawnLocs = null;
-	private List<Location> _chaoticSpawnLocs = null;
-	private List<Location> _banishSpawnLocs = null;
+	private ImmutableArray<Location3D> _spawnLocs = ImmutableArray<Location3D>.Empty;
+	private ImmutableArray<Location3D> _otherSpawnLocs = ImmutableArray<Location3D>.Empty;
+	private ImmutableArray<Location3D> _chaoticSpawnLocs = ImmutableArray<Location3D>.Empty;
+	private ImmutableArray<Location3D> _banishSpawnLocs = ImmutableArray<Location3D>.Empty;
 
-	protected ZoneRespawn(int id): base(id)
-	{
-	}
-
-	public virtual void parseLoc(int x, int y, int z, string type)
+	public virtual void parseLoc(Location3D location, string type)
 	{
 		if (string.IsNullOrEmpty(type))
 		{
-			addSpawn(x, y, z);
+			addSpawn(location);
 		}
 		else
 		{
@@ -30,17 +27,17 @@ public abstract class ZoneRespawn: ZoneType
 			{
 				case "other":
 				{
-					addOtherSpawn(x, y, z);
+					addOtherSpawn(location);
 					break;
 				}
 				case "chaotic":
 				{
-					addChaoticSpawn(x, y, z);
+					addChaoticSpawn(location);
 					break;
 				}
 				case "banish":
 				{
-					addBanishSpawn(x, y, z);
+					addBanishSpawn(location);
 					break;
 				}
 				default:
@@ -52,101 +49,67 @@ public abstract class ZoneRespawn: ZoneType
 		}
 	}
 
-	public void addSpawn(int x, int y, int z)
+	public void addSpawn(Location3D location)
 	{
-		if (_spawnLocs == null)
-		{
-			_spawnLocs = new();
-		}
-
-		_spawnLocs.add(new Location(x, y, z));
+		_spawnLocs = _spawnLocs.Add(location);
 	}
 
-	public void addOtherSpawn(int x, int y, int z)
+	public void addOtherSpawn(Location3D location)
 	{
-		if (_otherSpawnLocs == null)
-		{
-			_otherSpawnLocs = new();
-		}
-
-		_otherSpawnLocs.add(new Location(x, y, z));
+		_otherSpawnLocs = _otherSpawnLocs.Add(location);
 	}
 
-	public void addChaoticSpawn(int x, int y, int z)
+	public void addChaoticSpawn(Location3D location)
 	{
-		if (_chaoticSpawnLocs == null)
-		{
-			_chaoticSpawnLocs = new();
-		}
-
-		_chaoticSpawnLocs.add(new Location(x, y, z));
+		_chaoticSpawnLocs = _chaoticSpawnLocs.Add(location);
 	}
 
-	public void addBanishSpawn(int x, int y, int z)
+	public void addBanishSpawn(Location3D location)
 	{
-		if (_banishSpawnLocs == null)
-		{
-			_banishSpawnLocs = new();
-		}
-
-		_banishSpawnLocs.add(new Location(x, y, z));
+		_banishSpawnLocs = _banishSpawnLocs.Add(location);
 	}
 
-	public List<Location> getSpawns()
+	public ImmutableArray<Location3D> getSpawns()
 	{
 		return _spawnLocs;
 	}
 
-	public Location getSpawnLoc()
+	public Location3D getSpawnLoc()
 	{
-		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
-		{
-			return _spawnLocs.get(Rnd.get(_spawnLocs.size()));
-		}
-
-		return _spawnLocs.get(0);
+		return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED ? _spawnLocs[Rnd.get(_spawnLocs.Length)] : _spawnLocs[0];
 	}
 
-	public Location getOtherSpawnLoc()
+	public Location3D getOtherSpawnLoc()
 	{
-		if (_otherSpawnLocs != null)
+		if (_otherSpawnLocs.Length != 0)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
-			{
-				return _otherSpawnLocs.get(Rnd.get(_otherSpawnLocs.size()));
-			}
-
-			return _otherSpawnLocs.get(0);
+			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+				? _otherSpawnLocs[Rnd.get(_otherSpawnLocs.Length)]
+				: _otherSpawnLocs[0];
 		}
 
 		return getSpawnLoc();
 	}
 
-	public Location getChaoticSpawnLoc()
+	public Location3D getChaoticSpawnLoc()
 	{
-		if (_chaoticSpawnLocs != null)
+		if (_chaoticSpawnLocs.Length != 0)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
-			{
-				return _chaoticSpawnLocs.get(Rnd.get(_chaoticSpawnLocs.size()));
-			}
-
-			return _chaoticSpawnLocs.get(0);
+			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+				? _chaoticSpawnLocs[Rnd.get(_chaoticSpawnLocs.Length)]
+				: _chaoticSpawnLocs[0];
 		}
 
 		return getSpawnLoc();
 	}
 
-	public virtual Location getBanishSpawnLoc()
+	public virtual Location3D getBanishSpawnLoc()
 	{
-		if (_banishSpawnLocs != null)
+		if (_banishSpawnLocs.Length != 0)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
-			{
-				return _banishSpawnLocs.get(Rnd.get(_banishSpawnLocs.size()));
-			}
-
-			return _banishSpawnLocs.get(0);
+			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+				? _banishSpawnLocs[Rnd.get(_banishSpawnLocs.Length)]
+				: _banishSpawnLocs[0];
 		}
 
 		return getSpawnLoc();

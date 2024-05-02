@@ -53,7 +53,7 @@ public class ControllableAirShip : AirShip
 		{
 			return false;
 		}
-		return (player.getClanId() == _ownerId) || (player.getObjectId() == _ownerId);
+		return player.getClanId() == _ownerId || player.getObjectId() == _ownerId;
 	}
 	
 	public override int getOwnerId()
@@ -63,7 +63,7 @@ public class ControllableAirShip : AirShip
 	
 	public override bool isCaptain(Player player)
 	{
-		return (_captain != null) && (player == _captain);
+		return _captain != null && player == _captain;
 	}
 	
 	public override int getCaptainId()
@@ -89,67 +89,78 @@ public class ControllableAirShip : AirShip
 		}
 		else
 		{
-			if ((_captain == null) && (player.getAirShip() == this))
+			if (_captain == null && player.getAirShip() == this)
 			{
-				int x = player.getInVehiclePosition().getX() - 0x16e;
-				int y = player.getInVehiclePosition().getY();
-				int z = player.getInVehiclePosition().getZ() - 0x6b;
-				if (((x * x) + (y * y) + (z * z)) > 2500)
+				int x = player.getInVehiclePosition().X - 0x16e;
+				int y = player.getInVehiclePosition().Y;
+				int z = player.getInVehiclePosition().Z - 0x6b;
+				if (x * x + y * y + z * z > 2500)
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_BECAUSE_YOU_ARE_TOO_FAR);
 					return false;
 				}
+
 				// TODO: Missing message ID: 2739 Message: You cannot control the helm because you do not meet the requirements.
-				else if (player.isInCombat())
+				if (player.isInCombat())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_IN_A_BATTLE);
 					return false;
 				}
-				else if (player.isSitting())
+
+				if (player.isSitting())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_IN_A_SITTING_POSITION);
 					return false;
 				}
-				else if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
+
+				if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_YOU_ARE_PETRIFIED);
 					return false;
 				}
-				else if (player.isCursedWeaponEquipped())
+
+				if (player.isCursedWeaponEquipped())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHEN_A_CURSED_WEAPON_IS_EQUIPPED);
 					return false;
 				}
-				else if (player.isFishing())
+
+				if (player.isFishing())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_FISHING);
 					return false;
 				}
-				else if (player.isDead() || player.isFakeDeath())
+
+				if (player.isDead() || player.isFakeDeath())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHEN_YOU_ARE_DEAD);
 					return false;
 				}
-				else if (player.isCastingNow())
+
+				if (player.isCastingNow())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_USING_A_SKILL);
 					return false;
 				}
-				else if (player.isTransformed())
+
+				if (player.isTransformed())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_TRANSFORMED);
 					return false;
 				}
-				else if (player.isCombatFlagEquipped())
+
+				if (player.isCombatFlagEquipped())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_HOLDING_A_FLAG);
 					return false;
 				}
-				else if (player.isInDuel())
+
+				if (player.isInDuel())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_IN_A_DUEL);
 					return false;
 				}
+
 				_captain = player;
 				player.broadcastUserInfo();
 			}
@@ -183,7 +194,7 @@ public class ControllableAirShip : AirShip
 			_fuel = f;
 		}
 		
-		if ((_fuel == 0) && (old > 0))
+		if (_fuel == 0 && old > 0)
 		{
 			broadcastToPassengers(new SystemMessagePacket(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_HAS_RUN_OUT_THE_AIRSHIP_S_SPEED_HAS_DECREASED_GREATLY));
 		}

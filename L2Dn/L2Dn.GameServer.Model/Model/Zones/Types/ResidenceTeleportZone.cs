@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -43,7 +44,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 		{
 			if ((player != null) && player.isOnline())
 			{
-				player.teleToLocation(getSpawnLoc().ToLocationHeading(), 200);
+				player.teleToLocation(new LocationHeading(getSpawnLoc(), 0), 200);
 			}
 		}
 	}

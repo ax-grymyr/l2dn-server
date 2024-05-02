@@ -5,6 +5,8 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -13,22 +15,14 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestMoveToLocationInVehiclePacket: IIncomingPacket<GameSession>
 {
     private int _boatId;
-    private int _targetX;
-    private int _targetY;
-    private int _targetZ;
-    private int _originX;
-    private int _originY;
-    private int _originZ;
+    private Location3D _targetLocation;
+    private Location3D _originLocation;
 
     public void ReadContent(PacketBitReader reader)
     {
         _boatId = reader.ReadInt32(); // objectId of boat
-        _targetX = reader.ReadInt32();
-        _targetY = reader.ReadInt32();
-        _targetZ = reader.ReadInt32();
-        _originX = reader.ReadInt32();
-        _originY = reader.ReadInt32();
-        _originZ = reader.ReadInt32();
+        _targetLocation = reader.ReadLocation3D();
+        _originLocation = reader.ReadLocation3D();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
@@ -44,7 +38,7 @@ public struct RequestMoveToLocationInVehiclePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
+        if (_targetLocation == _originLocation)
         {
             player.sendPacket(new StopMoveInVehiclePacket(player, _boatId));
             return ValueTask.CompletedTask;
@@ -91,11 +85,9 @@ public struct RequestMoveToLocationInVehiclePacket: IIncomingPacket<GameSession>
             boat = BoatManager.getInstance().getBoat(_boatId);
             player.setVehicle(boat);
         }
-		
-        Location pos = new Location(_targetX, _targetY, _targetZ);
-        Location originPos = new Location(_originX, _originY, _originZ);
-        player.setInVehiclePosition(pos);
-        player.broadcastPacket(new MoveToLocationInVehiclePacket(player, pos, originPos));
+
+        player.setInVehiclePosition(_targetLocation);
+        player.broadcastPacket(new MoveToLocationInVehiclePacket(player, _targetLocation, _originLocation));
         return ValueTask.CompletedTask;
     }
 }

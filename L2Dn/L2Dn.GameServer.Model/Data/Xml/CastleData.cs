@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 using NLog;
@@ -37,7 +38,7 @@ public class CastleData: DataReaderBase
 			.ForEach(castle =>
 			{
 				List<CastleSpawnHolder> spawnList = castle.Spawns
-					.Select(s => new CastleSpawnHolder(s.Id, s.CastleSide, new Location(s.X, s.Y, s.Z, s.Heading)))
+					.Select(s => new CastleSpawnHolder(s.Id, s.CastleSide, new LocationHeading(s.X, s.Y, s.Z, s.Heading)))
 					.ToList();
 
 				if (!spawns.TryAdd(castle.Id, spawnList))

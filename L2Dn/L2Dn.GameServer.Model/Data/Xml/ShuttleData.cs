@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Shuttles;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -52,7 +53,7 @@ public class ShuttleData: DataReaderBase
 		int y = element.Attribute("y").GetInt32(0);
 		int z = element.Attribute("z").GetInt32(0);
 		int heading = element.Attribute("heading").GetInt32(0);
-		ShuttleDataHolder data = new ShuttleDataHolder(id, new Location(x, y, z, heading));
+		ShuttleDataHolder data = new ShuttleDataHolder(id, new LocationHeading(x, y, z, heading));
 
 		//string name = element.GetAttributeValueAsString("name");
 
@@ -71,7 +72,7 @@ public class ShuttleData: DataReaderBase
 				int stopX = e.GetAttributeValueAsInt32("x");
 				int stopY = e.GetAttributeValueAsInt32("y");
 				int stopZ = e.GetAttributeValueAsInt32("z");
-				stop.addDimension(new Location(stopX, stopY, stopZ));
+				stop.addDimension(new Location3D(stopX, stopY, stopZ));
 			});
 
 			data.addStop(stop);
@@ -106,8 +107,8 @@ public class ShuttleData: DataReaderBase
 		{
 			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()));
 			shuttle.setData(data);
-			shuttle.setHeading(data.getLocation().getHeading());
-			shuttle.setLocationInvisible(data.getLocation().ToLocation3D());
+			shuttle.setHeading(data.Location.Heading);
+			shuttle.setLocationInvisible(data.Location.Location);
 			shuttle.spawnMe();
 			shuttle.getStat().setMoveSpeed(300);
 			shuttle.getStat().setRotationSpeed(0);

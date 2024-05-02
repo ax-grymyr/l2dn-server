@@ -239,7 +239,6 @@ public abstract class Vehicle : Creature
 	public virtual void oustPlayer(Player player)
 	{
 		player.setVehicle(null);
-		player.setInVehiclePosition(null);
 		removePassenger(player);
 	}
 	

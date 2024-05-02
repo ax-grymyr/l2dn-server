@@ -1,14 +1,16 @@
-﻿namespace L2Dn.GameServer.Model.Shuttles;
+﻿using L2Dn.Geometry;
+
+namespace L2Dn.GameServer.Model.Shuttles;
 
 public class ShuttleDataHolder
 {
     private readonly int _id;
-    private readonly Location _loc;
+    private readonly LocationHeading _loc;
     private readonly List<int> _doors = new(2);
     private readonly List<ShuttleStop> _stops = new(2);
     private readonly List<VehiclePathPoint[]> _routes = new(2);
 
-    public ShuttleDataHolder(int id, Location loc)
+    public ShuttleDataHolder(int id, LocationHeading loc)
     {
         _id = id;
         _loc = loc;
@@ -19,10 +21,7 @@ public class ShuttleDataHolder
         return _id;
     }
 
-    public Location getLocation()
-    {
-        return _loc;
-    }
+    public LocationHeading Location => _loc;
 
     public void addDoor(int id)
     {

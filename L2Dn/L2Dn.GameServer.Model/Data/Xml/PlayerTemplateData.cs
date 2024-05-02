@@ -1,7 +1,9 @@
 using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.DataPack;
 using NLog;
@@ -109,7 +111,8 @@ public class PlayerTemplateData: DataReaderBase
 		set.set("collisionFemaleradius", xmlStaticData.CollisionFemale.Radius);
 		set.set("collisionFemaleheight", xmlStaticData.CollisionFemale.Height);
 
-		List<Location> creationPoints = xmlStaticData.CreationPoints.Select(p => new Location(p.X, p.Y, p.Z)).ToList();
+		ImmutableArray<Location3D> creationPoints =
+			xmlStaticData.CreationPoints.Select(p => new Location3D(p.X, p.Y, p.Z)).ToImmutableArray();
 
 		// Calculate total PDef and MDef from parts.
 		int basePDef = xmlStaticData.BasePDef.Chest + xmlStaticData.BasePDef.Legs + xmlStaticData.BasePDef.Head +

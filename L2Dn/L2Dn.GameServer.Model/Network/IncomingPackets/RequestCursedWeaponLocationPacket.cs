@@ -30,7 +30,7 @@ public struct RequestCursedWeaponLocationPacket: IIncomingPacket<GameSession>
             Location pos = cw.getWorldPosition();
             if (pos != null)
             {
-                list.Add(new ExCursedWeaponLocationPacket.CursedWeaponInfo(pos, cw.getItemId(), cw.isActivated() ? 1 : 0));
+                list.Add(new ExCursedWeaponLocationPacket.CursedWeaponInfo(pos.ToLocation3D(), cw.getItemId(), cw.isActivated() ? 1 : 0));
             }
         }
 		

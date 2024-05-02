@@ -10,16 +10,12 @@ namespace L2Dn.GameServer.Network.IncomingPackets.Shuttles;
 
 public struct RequestShuttleGetOnPacket: IIncomingPacket<GameSession>
 {
-    private int _x;
-    private int _y;
-    private int _z;
+    private Location3D _location;
 
     public void ReadContent(PacketBitReader reader)
     {
         reader.ReadInt32(); // charId
-        _x = reader.ReadInt32();
-        _y = reader.ReadInt32();
-        _z = reader.ReadInt32();
+        _location = reader.ReadLocation3D();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
@@ -34,7 +30,7 @@ public struct RequestShuttleGetOnPacket: IIncomingPacket<GameSession>
             if (shuttle.calculateDistance3D(player.getLocation().ToLocation3D()) < 1000)
             {
                 shuttle.addPassenger(player);
-                player.getInVehiclePosition().setXYZ(new Location3D(_x, _y, _z));
+                player.setInVehiclePosition(_location);
                 break;
             }
 

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -7,18 +8,18 @@ public readonly struct GetOnVehiclePacket: IOutgoingPacket
 {
     private readonly int _objectId;
     private readonly int _boatObjId;
-    private readonly Location _pos;
+    private readonly Location3D _location;
 	
     /**
      * @param charObjId
      * @param boatObjId
      * @param pos
      */
-    public GetOnVehiclePacket(int charObjId, int boatObjId, Location pos)
+    public GetOnVehiclePacket(int charObjId, int boatObjId, Location3D location)
     {
         _objectId = charObjId;
         _boatObjId = boatObjId;
-        _pos = pos;
+        _location = location;
     }
 	
     public void WriteContent(PacketBitWriter writer)
@@ -27,8 +28,6 @@ public readonly struct GetOnVehiclePacket: IOutgoingPacket
         
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_boatObjId);
-        writer.WriteInt32(_pos.getX());
-        writer.WriteInt32(_pos.getY());
-        writer.WriteInt32(_pos.getZ());
+        writer.WriteLocation3D(_location);
     }
 }

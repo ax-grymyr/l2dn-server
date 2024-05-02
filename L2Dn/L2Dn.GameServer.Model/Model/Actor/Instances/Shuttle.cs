@@ -59,7 +59,7 @@ public class Shuttle: Vehicle
 		}
 
 		player.setVehicle(this);
-		player.setInVehiclePosition(new Location(0, 0, 0));
+		player.setInVehiclePosition(default);
 		player.broadcastPacket(new ExShuttleGetOnPacket(player, this));
 		player.setXYZ(getX(), getY(), getZ());
 		player.revalidateZone(true);

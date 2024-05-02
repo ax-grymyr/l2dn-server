@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Utilities;
 using NLog;
@@ -81,7 +82,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		int z = npc.Z;
 		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
-			_locations.add(new ChanceLocation(new Location(x, y, z, npc.Heading), 100));
+			_locations.add(new ChanceLocation(new LocationHeading(x, y, z, npc.Heading), 100));
 		}
 		else
 		{
@@ -238,45 +239,44 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			{
 				if (locRandom <= (cumulativeChance += loc.getChance()))
 				{
-					return loc.Location;
+					return new Location(loc.Location.X, loc.Location.Y, loc.Location.Z, loc.Location.Heading);
 				}
 			}
+
 			_logger.Warn("Couldn't match location by chance turning first...");
 			return null;
 		}
-		
+
 		if (_zone != null)
 		{
-			Location loc = _zone.getRandomPoint();
-			loc.setHeading(-1);
-			return loc;
+			Location3D loc = _zone.getRandomPoint();
+			return new Location(loc.X, loc.Y, loc.Z, -1);
 		}
-		
+
 		if (!_group.getTerritories().isEmpty())
 		{
 			SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().size()));
 			for (int i = 0; i < 100; i++)
 			{
-				Location loc = territory.getRandomPoint();
+				Location3D loc = territory.getRandomPoint();
 				if (_group.getBannedTerritories().isEmpty())
 				{
-					loc.setHeading(-1);
-					return loc;
+					return new Location(loc.X, loc.Y, loc.Z, -1);
 				}
-				
+
 				bool insideBannedTerritory = false;
 				foreach (BannedSpawnTerritory bannedTerritory in _group.getBannedTerritories())
 				{
-					if (bannedTerritory.isInsideZone(loc.getX(), loc.getY(), loc.getZ()))
+					if (bannedTerritory.isInsideZone(loc.X, loc.Y, loc.Z))
 					{
 						insideBannedTerritory = true;
 						break;
 					}
 				}
+
 				if (!insideBannedTerritory)
 				{
-					loc.setHeading(-1);
-					return loc;
+					return new Location(loc.X, loc.Y, loc.Z, -1);
 				}
 			}
 		}
@@ -285,26 +285,25 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			SpawnTerritory territory = _spawnTemplate.getTerritories().get(Rnd.get(_spawnTemplate.getTerritories().size()));
 			for (int i = 0; i < 100; i++)
 			{
-				Location loc = territory.getRandomPoint();
+				Location3D loc = territory.getRandomPoint();
 				if (_spawnTemplate.getBannedTerritories().isEmpty())
 				{
-					loc.setHeading(-1);
-					return loc;
+					return new Location(loc.X, loc.Y, loc.Z, -1);
 				}
-				
+
 				bool insideBannedTerritory = false;
 				foreach (BannedSpawnTerritory bannedTerritory in _spawnTemplate.getBannedTerritories())
 				{
-					if (bannedTerritory.isInsideZone(loc.getX(), loc.getY(), loc.getZ()))
+					if (bannedTerritory.isInsideZone(loc.X, loc.Y, loc.Z))
 					{
 						insideBannedTerritory = true;
 						break;
 					}
 				}
+
 				if (!insideBannedTerritory)
 				{
-					loc.setHeading(-1);
-					return loc;
+					return new Location(loc.X, loc.Y, loc.Z, -1);
 				}
 			}
 		}

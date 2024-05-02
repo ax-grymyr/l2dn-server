@@ -48,7 +48,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 		}
 
 		// Check for possible door logout and move over exploit. Also checked at ValidatePosition.
-		if (DoorData.getInstance().checkIfDoorsBetween(player.getLastServerPosition(), player.getLocation(), player.getInstanceWorld()))
+		if (DoorData.getInstance().checkIfDoorsBetween(player.getLastServerPosition().ToLocation3D(), player.getLocation().ToLocation3D(), player.getInstanceWorld()))
 		{
 			player.stopMove(player.getLastServerPosition());
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);

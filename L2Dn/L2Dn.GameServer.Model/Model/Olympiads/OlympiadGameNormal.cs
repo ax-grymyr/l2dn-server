@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.Events;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Olympiads;
@@ -103,13 +105,13 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 	}
 
-	public sealed override bool portPlayersToArena(List<Location> spawns, Instance instance)
+	public sealed override bool portPlayersToArena(ImmutableArray<Location3D> spawns, Instance instance)
 	{
 		bool result = true;
 		try
 		{
-			result &= portPlayerToArena(_playerOne, spawns.get(0), _stadiumId, instance);
-			result &= portPlayerToArena(_playerTwo, spawns.get(spawns.size() / 2), _stadiumId, instance);
+			result &= portPlayerToArena(_playerOne, new LocationHeading(spawns[0], 0), _stadiumId, instance);
+			result &= portPlayerToArena(_playerTwo, new LocationHeading(spawns[spawns.Length / 2], 0), _stadiumId, instance);
 		}
 		catch (Exception e)
 		{

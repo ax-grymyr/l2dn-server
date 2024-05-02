@@ -206,7 +206,7 @@ public class Player: Playable
 	
 	/** Boat and AirShip */
 	private Vehicle _vehicle;
-	private Location _inVehiclePosition;
+	private Location3D _inVehiclePosition;
 	
 	private MountType _mountType = MountType.NONE;
 	private int _mountNpcId;
@@ -9185,7 +9185,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void enterObserverMode(Location loc)
+	public void enterObserverMode(LocationHeading loc)
 	{
 		setLastLocation();
 		
@@ -9193,8 +9193,8 @@ public class Player: Playable
 		getEffectList().stopEffects(AbnormalType.HIDE);
 		
 		setObserving(true);
-		sendPacket(new ObservationModePacket(loc));
-		teleToLocation(loc.ToLocationHeading(), false);
+		sendPacket(new ObservationModePacket(loc.Location));
+		teleToLocation(loc, false);
 		broadcastUserInfo();
 	}
 	
@@ -10952,12 +10952,12 @@ public class Player: Playable
 	/**
 	 * @return
 	 */
-	public Location getInVehiclePosition()
+	public Location3D getInVehiclePosition()
 	{
 		return _inVehiclePosition;
 	}
 	
-	public void setInVehiclePosition(Location pt)
+	public void setInVehiclePosition(Location3D pt)
 	{
 		_inVehiclePosition = pt;
 	}

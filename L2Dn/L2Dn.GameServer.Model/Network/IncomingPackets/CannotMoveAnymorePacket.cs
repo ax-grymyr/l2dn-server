@@ -1,6 +1,8 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -8,17 +10,11 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct CannotMoveAnymorePacket: IIncomingPacket<GameSession>
 {
-    private int _x;
-    private int _y;
-    private int _z;
-    private int _heading;
+    private LocationHeading _location;
 
     public void ReadContent(PacketBitReader reader)
     {
-        _x = reader.ReadInt32();
-        _y = reader.ReadInt32();
-        _z = reader.ReadInt32();
-        _heading = reader.ReadInt32();
+        _location = reader.ReadLocationWithHeading();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
@@ -29,7 +25,7 @@ public struct CannotMoveAnymorePacket: IIncomingPacket<GameSession>
 		
         if (player.getAI() != null)
         {
-            player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new Location(_x, _y, _z, _heading));
+            player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new Location(_location.X, _location.Y, _location.Z, _location.Heading));
         }
 
         return ValueTask.CompletedTask;

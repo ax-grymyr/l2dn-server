@@ -1,10 +1,12 @@
-﻿namespace L2Dn.GameServer.Model.Shuttles;
+﻿using L2Dn.Geometry;
+
+namespace L2Dn.GameServer.Model.Shuttles;
 
 public class ShuttleStop
 {
     private readonly int _id;
     private bool _isOpen = true;
-    private readonly List<Location> _dimensions = new(3);
+    private readonly List<Location3D> _dimensions = new();
     private DateTime _lastDoorStatusChanges = DateTime.UtcNow;
 
     public ShuttleStop(int id)
@@ -22,12 +24,12 @@ public class ShuttleStop
         return _isOpen;
     }
 
-    public void addDimension(Location loc)
+    public void addDimension(Location3D loc)
     {
         _dimensions.Add(loc);
     }
 
-    public List<Location> getDimensions()
+    public List<Location3D> getDimensions()
     {
         return _dimensions;
     }

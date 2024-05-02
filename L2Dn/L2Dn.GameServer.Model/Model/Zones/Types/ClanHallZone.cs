@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -9,13 +10,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A clan hall zone
  * @author durgus
  */
-public class ClanHallZone : ResidenceZone
+public class ClanHallZone(int id): ResidenceZone(id)
 {
-	public ClanHallZone(int id): base(id)
-	{
-	}
-	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		if (name.equals("clanHallId"))
 		{
@@ -26,7 +23,7 @@ public class ClanHallZone : ResidenceZone
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (creature.isPlayer())
@@ -34,7 +31,7 @@ public class ClanHallZone : ResidenceZone
 			creature.setInsideZone(ZoneId.CLAN_HALL, true);
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		if (creature.isPlayer())
@@ -42,14 +39,15 @@ public class ClanHallZone : ResidenceZone
 			creature.setInsideZone(ZoneId.CLAN_HALL, false);
 		}
 	}
-	
-	public override Location getBanishSpawnLoc()
+
+	public override Location3D getBanishSpawnLoc()
 	{
-		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
-		if (clanHall == null)
+		ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(getResidenceId());
+		if (clanHall is null)
 		{
-			return null;
+			throw new InvalidOperationException("No clan hall in clan hall zone");
 		}
-		return clanHall.getBanishLocation();
+
+		return clanHall.getBanishLocation().ToLocation3D();
 	}
 }

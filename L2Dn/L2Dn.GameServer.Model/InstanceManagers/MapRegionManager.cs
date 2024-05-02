@@ -191,10 +191,10 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return castle.getResidenceZone().getChaoticSpawnLoc().ToLocationHeading();
+							return new LocationHeading(castle.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
 						}
 
-						return castle.getResidenceZone().getSpawnLoc().ToLocationHeading();
+						return new LocationHeading(castle.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
 				
@@ -218,9 +218,9 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return fort.getResidenceZone().getChaoticSpawnLoc().ToLocationHeading();
+							return new LocationHeading(fort.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
 						}
-						return fort.getResidenceZone().getSpawnLoc().ToLocationHeading();
+						return new LocationHeading(fort.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
 				
@@ -280,7 +280,7 @@ public class MapRegionManager: DataReaderBase
 			castle = CastleManager.getInstance().getCastle(player);
 			if (castle != null && castle.getSiege().isInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))
 			{
-				return castle.getResidenceZone().getOtherSpawnLoc().ToLocationHeading();
+				return new LocationHeading(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
 			}
 			
 			// Checking if in an instance

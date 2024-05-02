@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Forms;
@@ -83,27 +84,27 @@ public class ZoneNPoly: ZoneForm
 			}
 		}
 	}
-	
-	public override Location getRandomPoint()
+
+	public override Location3D getRandomPoint()
 	{
 		int minX = _p.getBounds().x;
 		int maxX = _p.getBounds().x + _p.getBounds().width;
 		int minY = _p.getBounds().y;
 		int maxY = _p.getBounds().y + _p.getBounds().height;
-		
+
 		int x = Rnd.get(minX, maxX);
 		int y = Rnd.get(minY, maxY);
-		
+
 		int antiBlocker = 0;
 		while (!_p.contains(x, y) && (antiBlocker++ < 1000))
 		{
 			x = Rnd.get(minX, maxX);
 			y = Rnd.get(minY, maxY);
 		}
-		
-		return new Location(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
+
+		return new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
 	}
-	
+
 	public int[] getX()
 	{
 		return _p.xpoints;

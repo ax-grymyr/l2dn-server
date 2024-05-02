@@ -266,7 +266,7 @@ public class ZoneManager: DataReaderBase
 
 		if (zoneType is ZoneRespawn zoneRespawn)
 		{
-			zone.Spawns.ForEach(spawn => zoneRespawn.parseLoc(spawn.X, spawn.Y, spawn.Z, spawn.Type));
+			zone.Spawns.ForEach(spawn => zoneRespawn.parseLoc(new Location3D(spawn.X, spawn.Y, spawn.Z), spawn.Type));
 		}
 
 		if (zoneType is RespawnZone respawnZone)

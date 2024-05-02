@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Utilities;
 using NLog;
@@ -313,7 +314,7 @@ public class SpawnData: DataReaderBase
 		foreach (XmlSpawnNpcLocation location in locations)
 		{
 			npcTemplate.addSpawnLocation(new ChanceLocation(
-				new Location(location.X, location.Y, location.Z, location.Heading),
+				new LocationHeading(location.X, location.Y, location.Z, location.Heading),
 				location.Chance));
 		}
 	}

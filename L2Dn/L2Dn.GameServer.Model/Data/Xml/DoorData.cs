@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using NLog;
 
@@ -106,9 +107,9 @@ public class DoorData: DataReaderBase
 		return _doors.values();
 	}
 	
-	public bool checkIfDoorsBetween(Location start, Location end, Instance? instance = null)
+	public bool checkIfDoorsBetween(Location3D start, Location3D end, Instance? instance = null)
 	{
-		return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(), instance);
+		return checkIfDoorsBetween(start.X, start.Y, start.Z, end.X, end.Y, end.Z, instance);
 	}
 	
 	public bool checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, Instance? instance = null,

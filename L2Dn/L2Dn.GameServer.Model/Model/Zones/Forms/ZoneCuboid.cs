@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Forms;
@@ -100,12 +101,12 @@ public class ZoneCuboid: ZoneForm
 			dropDebugItem(Inventory.ADENA_ID, 1, _x2, y, z);
 		}
 	}
-	
-	public override Location getRandomPoint()
+
+	public override Location3D getRandomPoint()
 	{
 		int x = Rnd.get(_r.x, _r.x + _r.width);
 		int y = Rnd.get(_r.y, _r.y + _r.height);
-		
-		return new Location(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
+
+		return new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
 	}
 }

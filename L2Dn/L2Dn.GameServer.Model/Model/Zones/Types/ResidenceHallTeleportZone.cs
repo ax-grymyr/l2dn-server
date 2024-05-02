@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -59,18 +60,13 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
         
 		public void run()
 		{
-			int index = _zone.getSpawns().size() > 1 ? Rnd.get(_zone.getSpawns().size()) : 0;
-			Location loc = _zone.getSpawns().get(index);
-			if (loc == null)
-			{
-				throw new InvalidOperationException();
-			}
-			
+			int index = _zone.getSpawns().Length > 1 ? Rnd.get(_zone.getSpawns().Length) : 0;
+			Location3D loc = _zone.getSpawns()[index];
 			foreach (Player pc in _zone.getPlayersInside())
 			{
 				if (pc != null)
 				{
-					pc.teleToLocation(loc.ToLocationHeading(), false);
+					pc.teleToLocation(new LocationHeading(loc, 0), false);
 				}
 			}
 		}

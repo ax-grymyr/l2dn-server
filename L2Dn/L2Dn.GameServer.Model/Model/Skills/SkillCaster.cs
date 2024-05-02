@@ -295,7 +295,7 @@ public class SkillCaster: Runnable
 				Location worldPosition = player.getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
-					Location location = new Location(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), worldPosition.getHeading());
+					Location3D location = worldPosition.ToLocation3D();
 					ThreadPool.schedule(() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.getObjectId(), _skill.getDisplayId(), location)), 100);
 				}
 			}

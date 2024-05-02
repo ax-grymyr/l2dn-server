@@ -1,9 +1,11 @@
-﻿using L2Dn.Events;
+﻿using System.Collections.Immutable;
+using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Utilities;
 
@@ -12,24 +14,24 @@ namespace L2Dn.GameServer.Model.Actor.Templates;
 public class PlayerTemplate: CreatureTemplate
 {
 	private readonly CharacterClass _classId;
-	
+
 	private readonly float[] _baseHp;
 	private readonly float[] _baseMp;
 	private readonly float[] _baseCp;
-	
+
 	private readonly double[] _baseHpReg;
 	private readonly double[] _baseMpReg;
 	private readonly double[] _baseCpReg;
-	
+
 	private readonly float _fCollisionHeightFemale;
 	private readonly float _fCollisionRadiusFemale;
-	
+
 	private readonly int _baseSafeFallHeight;
-	
-	private readonly List<Location> _creationPoints;
+
+	private readonly ImmutableArray<Location3D> _creationPoints;
 	private readonly Map<int, int> _baseSlotDef;
-	
-	public PlayerTemplate(StatSet set, List<Location> creationPoints): base(set)
+
+	public PlayerTemplate(StatSet set, ImmutableArray<Location3D> creationPoints): base(set)
 	{
 		_classId = set.getEnum<CharacterClass>("classId");
 		setRace(_classId.GetRace());
@@ -53,13 +55,13 @@ public class PlayerTemplate: CreatureTemplate
 		_baseSlotDef.put(Inventory.PAPERDOLL_LFINGER, set.getInt("baseMDefrfinger", 0));
 		_baseSlotDef.put(Inventory.PAPERDOLL_NECK, set.getInt("baseMDefneck", 0));
 		_baseSlotDef.put(Inventory.PAPERDOLL_HAIR, set.getInt("basePDefhair", 0));
-		
+
 		_fCollisionRadiusFemale = set.getFloat("collisionFemaleradius");
 		_fCollisionHeightFemale = set.getFloat("collisionFemaleheight");
 		_baseSafeFallHeight = set.getInt("baseSafeFall", 333);
 		_creationPoints = creationPoints;
 	}
-	
+
 	/**
 	 * @return the template class Id.
 	 */
@@ -67,38 +69,38 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _classId;
 	}
-	
+
 	/**
 	 * @return random Location of created character spawn.
 	 */
-	public Location getCreationPoint()
+	public Location3D getCreationPoint()
 	{
-		return _creationPoints[Rnd.get(_creationPoints.Count)];
+		return _creationPoints[Rnd.get(_creationPoints.Length)];
 	}
-	
+
 	/**
 	 * Sets the value of level upgain parameter.
 	 * @param paramName name of parameter
 	 * @param level corresponding character level
 	 * @param value value of parameter
 	 */
-	public void setUpgainValue(String paramName, int level, double value)
+	public void setUpgainValue(string paramName, int level, double value)
 	{
 		switch (paramName)
 		{
 			case "hp":
 			{
-				_baseHp[level] = (float) value;
+				_baseHp[level] = (float)value;
 				break;
 			}
 			case "mp":
 			{
-				_baseMp[level] = (float) value;
+				_baseMp[level] = (float)value;
 				break;
 			}
 			case "cp":
 			{
-				_baseCp[level] = (float) value;
+				_baseCp[level] = (float)value;
 				break;
 			}
 			case "hpRegen":
@@ -118,7 +120,7 @@ public class PlayerTemplate: CreatureTemplate
 			}
 		}
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the baseHpMax for given character level
@@ -127,7 +129,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseHp[level];
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the baseMpMax for given character level
@@ -136,7 +138,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseMp[level];
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the baseCpMax for given character level
@@ -145,7 +147,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseCp[level];
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the base HP Regeneration for given character level
@@ -154,7 +156,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseHpReg[level];
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the base MP Regeneration for given character level
@@ -163,7 +165,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseMpReg[level];
 	}
-	
+
 	/**
 	 * @param level character level to return value
 	 * @return the base HP Regeneration for given character level
@@ -172,7 +174,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseCpReg[level];
 	}
-	
+
 	/**
 	 * @param slotId id of inventory slot to return value
 	 * @return defense value of character for EMPTY given slot
@@ -181,7 +183,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _baseSlotDef.containsKey(slotId) ? _baseSlotDef.get(slotId) : 0;
 	}
-	
+
 	/**
 	 * @return the template collision height for female characters.
 	 */
@@ -189,7 +191,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _fCollisionHeightFemale;
 	}
-	
+
 	/**
 	 * @return the template collision radius for female characters.
 	 */
@@ -197,7 +199,7 @@ public class PlayerTemplate: CreatureTemplate
 	{
 		return _fCollisionRadiusFemale;
 	}
-	
+
 	/**
 	 * @return the safe fall height.
 	 */

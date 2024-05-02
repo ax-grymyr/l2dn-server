@@ -99,7 +99,7 @@ public class AirShip : Vehicle
 		}
 		
 		player.setVehicle(this);
-		player.setInVehiclePosition(new Location(0, 0, 0));
+		player.setInVehiclePosition(default);
 		player.broadcastPacket(new ExGetOnAirShipPacket(player, this));
 		player.setXYZ(getX(), getY(), getZ());
 		player.revalidateZone(true);

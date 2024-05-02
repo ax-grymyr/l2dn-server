@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.AI;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -10,6 +11,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
@@ -587,19 +589,19 @@ public class Duel
 			throw new InvalidOperationException("Unable to find a party duel arena!");
 		}
 		
-		List<Location> spawns = zone.getSpawns();
+		ImmutableArray<Location3D> spawns = zone.getSpawns();
 		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId), null);
 		
-		Location spawn1 = spawns.get(Rnd.get(spawns.size() / 2));
+		Location3D spawn1 = spawns[Rnd.get(spawns.Length / 2)];
 		foreach (Player temp in _playerA.getParty().getMembers())
 		{
-			temp.teleToLocation(spawn1.getX(), spawn1.getY(), spawn1.getZ(), 0, 0, _duelInstance);
+			temp.teleToLocation(new LocationHeading(spawn1, 0), 0, _duelInstance);
 		}
 		
-		Location spawn2 = spawns.get(Rnd.get(spawns.size() / 2, spawns.size()));
+		Location3D spawn2 = spawns[Rnd.get(spawns.Length / 2, spawns.Length)];
 		foreach (Player temp in _playerB.getParty().getMembers())
 		{
-			temp.teleToLocation(spawn2.getX(), spawn2.getY(), spawn2.getZ(), 0, 0, _duelInstance);
+			temp.teleToLocation(new LocationHeading(spawn2, 0), 0, _duelInstance);
 		}
 	}
 	

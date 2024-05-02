@@ -1,3 +1,5 @@
+using L2Dn.Geometry;
+
 namespace L2Dn.GameServer.Model.Zones.Types;
 
 /**
@@ -20,7 +22,7 @@ public class SpawnTerritory
 		return _name;
 	}
 	
-	public Location getRandomPoint()
+	public Location3D getRandomPoint()
 	{
 		return _territory.getRandomPoint();
 	}

@@ -56,10 +56,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	private readonly Player _player;
 	private readonly Clan _clan;
 	private int _objId;
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _heading;
+	private LocationHeading _location;
 	private readonly int _mAtkSpd;
 	private readonly int _pAtkSpd;
 	private readonly int _runSpd;
@@ -80,21 +77,16 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		_player = player;
 		_objId = player.getObjectId();
 		_clan = player.getClan();
-		if ((_player.getVehicle() != null) && (_player.getInVehiclePosition() != null))
+		if (_player.getVehicle() != null && _player.getInVehiclePosition() != null)
 		{
-			_x = _player.getInVehiclePosition().getX();
-			_y = _player.getInVehiclePosition().getY();
-			_z = _player.getInVehiclePosition().getZ();
+			_location = new LocationHeading(_player.getInVehiclePosition(), _player.getHeading());
 			_vehicleId = _player.getVehicle().getObjectId();
 		}
 		else
 		{
-			_x = _player.getX();
-			_y = _player.getY();
-			_z = _player.getZ();
+			_location = _player.getLocation().ToLocationHeading();
 		}
 
-		_heading = _player.getHeading();
 		_mAtkSpd = _player.getMAtkSpd();
 		_pAtkSpd = _player.getPAtkSpd();
 		_attackSpeedMultiplier = (float)_player.getAttackSpeedMultiplier();
@@ -114,19 +106,14 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		: this(decoy.getActingPlayer(), gmSeeInvis)
 	{
 		_objId = decoy.getObjectId();
-		_x = decoy.getX();
-		_y = decoy.getY();
-		_z = decoy.getZ();
-		_heading = decoy.getHeading();
+		_location = decoy.getLocation().ToLocationHeading();
 	}
 
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHAR_INFO);
 		writer.WriteByte(0); // Grand Crusade
-		writer.WriteInt32(_x); // Confirmed
-		writer.WriteInt32(_y); // Confirmed
-		writer.WriteInt32(_z); // Confirmed
+		writer.WriteLocation3D(_location.Location); // Confirmed
 		writer.WriteInt32(_vehicleId); // Confirmed
 		writer.WriteInt32(_objId); // Confirmed
 		writer.WriteString(_player.getAppearance().getVisibleName()); // Confirmed
@@ -211,7 +198,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteLocation3D(baitLocation);
 
 		writer.WriteInt32(_player.getAppearance().getNameColor().Value); // Confirmed
-		writer.WriteInt32(_heading); // Confirmed
+		writer.WriteInt32(_location.Heading); // Confirmed
 		writer.WriteByte((byte)_player.getPledgeClass());
 		writer.WriteInt16((short)_player.getPledgeType());
 		writer.WriteInt32(_player.getAppearance().getTitleColor().Value); // Confirmed
@@ -231,7 +218,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte(0); // cBRLectureMark
 
 		Set<AbnormalVisualEffect> abnormalVisualEffects = _player.getEffectList().getCurrentAbnormalVisualEffects();
-		Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null)
+		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != null && Config.RED_TEAM_ABNORMAL_EFFECT != null
 			? _player.getTeam()
 			: Team.NONE;
 		writer.WriteInt32(abnormalVisualEffects.size() + (_gmSeeInvis ? 1 : 0) +
@@ -253,7 +240,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 				writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
 		}
-		else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
 		{
 			writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
 		}
@@ -264,7 +251,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(0); // nCursedWeaponClassId
 
 		// AFK animation.
-		if ((_player.getClan() != null) && (CastleManager.getInstance().getCastleByOwner(_player.getClan()) != null))
+		if (_player.getClan() != null && CastleManager.getInstance().getCastleByOwner(_player.getClan()) != null)
 		{
 			writer.WriteInt32(_player.isClanLeader() ? 100 : 101);
 		}

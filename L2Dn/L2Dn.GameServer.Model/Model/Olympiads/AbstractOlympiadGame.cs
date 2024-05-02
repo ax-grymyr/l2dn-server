@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 using NLog;
 
@@ -24,15 +26,15 @@ public abstract class AbstractOlympiadGame
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractOlympiadGame));
 	protected static readonly Logger LOGGER_OLYMPIAD = LogManager.GetLogger("olympiad");
 	
-	protected const String POINTS = "olympiad_points";
-	protected const String COMP_DONE = "competitions_done";
-	protected const String COMP_WON = "competitions_won";
-	protected const String COMP_LOST = "competitions_lost";
-	protected const String COMP_DRAWN = "competitions_drawn";
-	protected const String COMP_DONE_WEEK = "competitions_done_week";
-	protected const String COMP_DONE_WEEK_CLASSED = "competitions_done_week_classed";
-	protected const String COMP_DONE_WEEK_NON_CLASSED = "competitions_done_week_non_classed";
-	protected const String COMP_DONE_WEEK_TEAM = "competitions_done_week_team";
+	protected const string POINTS = "olympiad_points";
+	protected const string COMP_DONE = "competitions_done";
+	protected const string COMP_WON = "competitions_won";
+	protected const string COMP_LOST = "competitions_lost";
+	protected const string COMP_DRAWN = "competitions_drawn";
+	protected const string COMP_DONE_WEEK = "competitions_done_week";
+	protected const string COMP_DONE_WEEK_CLASSED = "competitions_done_week_classed";
+	protected const string COMP_DONE_WEEK_NON_CLASSED = "competitions_done_week_non_classed";
+	protected const string COMP_DONE_WEEK_TEAM = "competitions_done_week_team";
 	
 	protected DateTime _startTime;
 	protected bool _aborted = false;
@@ -134,7 +136,7 @@ public abstract class AbstractOlympiadGame
 		return null;
 	}
 	
-	protected static bool portPlayerToArena(Participant par, Location loc, int id, Instance instance)
+	protected static bool portPlayerToArena(Participant par, LocationHeading loc, int id, Instance instance)
 	{
 		Player player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
@@ -155,7 +157,7 @@ public abstract class AbstractOlympiadGame
 			player.setInOlympiadMode(true);
 			player.setOlympiadStart(false);
 			player.setOlympiadSide(par.getSide());
-			player.teleToLocation(loc.ToLocationHeading(), instance);
+			player.teleToLocation(loc, instance);
 			player.sendPacket(new ExOlympiadModePacket(2));
 		}
 		catch (Exception e)
@@ -436,7 +438,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract CompetitionType getType();
 	
-	public abstract String[] getPlayerNames();
+	public abstract string[] getPlayerNames();
 	
 	public abstract bool containsParticipant(int playerId);
 	
@@ -453,7 +455,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void removals();
 	
-	public abstract bool portPlayersToArena(List<Location> spawns, Instance instance);
+	public abstract bool portPlayersToArena(ImmutableArray<Location3D> spawns, Instance instance);
 	
 	public abstract void cleanEffects();
 	

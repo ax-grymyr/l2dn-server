@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
@@ -156,17 +158,17 @@ public class OlympiadStadium
 			{
 				return;
 			}
-			
-			List<Location> spectatorSpawns = getZone().getSpectatorSpawns();
-			if (spectatorSpawns.isEmpty())
+
+			ImmutableArray<Location3D> spectatorSpawns = getZone().getSpectatorSpawns();
+			if (spectatorSpawns.Length == 0)
 			{
 				LOGGER.Warn(GetType().Name + ": Zone: " + getZone() + " doesn't have specatator spawns defined!");
 				return;
 			}
-			
-			Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
-			player.enterOlympiadObserverMode(loc, _stadiumId);
-			
+
+			Location3D loc = spectatorSpawns[Rnd.get(spectatorSpawns.Length)];
+			player.enterOlympiadObserverMode(new Location(loc.X, loc.Y, loc.Z), _stadiumId);
+
 			_task.getGame().sendOlympiadInfo(player);
 		}
 	}

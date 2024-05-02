@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones;
 
@@ -39,5 +40,5 @@ public abstract class ZoneForm
         ZoneManager.getInstance().getDebugItems().add(item);
     }
 	
-    public abstract Location getRandomPoint();
+    public abstract Location3D getRandomPoint();
 }

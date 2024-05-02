@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Db;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -8,18 +8,18 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class CastleSpawnHolder
 {
-	private readonly Location _location;
+	private readonly LocationHeading _location;
 	private readonly int _npcId;
 	private readonly CastleSide _side;
 
-	public CastleSpawnHolder(int npcId, CastleSide side, Location location)
+	public CastleSpawnHolder(int npcId, CastleSide side, LocationHeading location)
 	{
 		_location = location;
 		_npcId = npcId;
 		_side = side;
 	}
 
-	public Location Location => _location;
+	public LocationHeading Location => _location;
 
 	public int getNpcId()
 	{

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -16,9 +18,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class OlympiadStadiumZone: ZoneRespawn
 {
-	private readonly List<Door> _doors = new(2);
-	private readonly List<Spawn> _buffers = new(2);
-	private readonly List<Location> _spectatorLocations = new(1);
+	private readonly List<Door> _doors = [];
+	private readonly List<Spawn> _buffers = [];
+	private ImmutableArray<Location3D> _spectatorLocations = ImmutableArray<Location3D>.Empty;
 
 	public OlympiadStadiumZone(int id): base(id)
 	{
@@ -33,7 +35,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 
 	public class Settings: AbstractZoneSettings
 	{
-		private OlympiadGameTask _task = null;
+		private OlympiadGameTask _task;
 
 		public Settings()
 		{
@@ -60,15 +62,15 @@ public class OlympiadStadiumZone: ZoneRespawn
 		return (Settings)base.getSettings();
 	}
 
-	public override void parseLoc(int x, int y, int z, String type)
+	public override void parseLoc(Location3D location, string type)
 	{
-		if ((type != null) && type.equals("spectatorSpawn"))
+		if (string.Equals(type, "spectatorSpawn"))
 		{
-			_spectatorLocations.add(new Location(x, y, z));
+			_spectatorLocations = _spectatorLocations.Add(location);
 		}
 		else
 		{
-			base.parseLoc(x, y, z, type);
+			base.parseLoc(location, type);
 		}
 	}
 
@@ -156,7 +158,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 		return _buffers;
 	}
 
-	public List<Location> getSpectatorSpawns()
+	public ImmutableArray<Location3D> getSpectatorSpawns()
 	{
 		return _spectatorLocations;
 	}
