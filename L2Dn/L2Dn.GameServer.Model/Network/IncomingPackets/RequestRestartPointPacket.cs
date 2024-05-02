@@ -221,7 +221,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				else
 				{
 					instance = player.getInstanceWorld();
-					loc = new Location(player);
+					loc = new Location(player.getX(), player.getY(), player.getZ(), player.getHeading());
 				}
 				break;
 			}

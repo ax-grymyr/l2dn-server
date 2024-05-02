@@ -35,8 +35,8 @@ public class BlinkSwap: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Location effectedLoc = new Location(effected);
-		Location effectorLoc = new Location(effector);
+		Location effectedLoc = new Location(effected.getX(), effected.getY(), effected.getZ(), effected.getHeading());
+		Location effectorLoc = new Location(effector.getX(), effector.getY(), effector.getZ(), effector.getHeading());
 
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(effectedLoc.X, effectedLoc.Y, effectedLoc.Z), FlyType.DUMMY));

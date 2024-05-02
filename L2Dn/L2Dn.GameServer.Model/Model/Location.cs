@@ -20,10 +20,6 @@ public sealed class Location: ILocational, ILocationHeading
 		_z = z;
 		_heading = heading;
 	}
-	
-	public Location(WorldObject obj): this(obj.getX(), obj.getY(), obj.getZ(), obj.getHeading())
-	{
-	}
 
 	/**
 	 * Get the x coordinate.

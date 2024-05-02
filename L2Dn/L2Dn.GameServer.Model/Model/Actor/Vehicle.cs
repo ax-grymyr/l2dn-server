@@ -31,7 +31,8 @@ public abstract class Vehicle : Creature
 	
 	public Vehicle(CreatureTemplate template): base(template)
 	{
-		_monitorLocation = new Location(this);
+		Location location = getLocation();
+		_monitorLocation = new Location(location.X, location.Y, location.Z, location.Heading);
 		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
