@@ -234,7 +234,7 @@ public class AdminMenu: IAdminCommandHandler
 		if (player != null)
 		{
 			player.sendMessage(message);
-			player.teleToLocation(loc, true);
+			player.teleToLocation(loc.ToLocationHeading(), true);
 		}
 		showMainPage(activeChar);
 	}
@@ -254,7 +254,7 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.teleToLocation(player.getLocation(), true, player.getInstanceWorld());
+			activeChar.teleToLocation(player.getLocation().ToLocationHeading(), true, player.getInstanceWorld());
 			BuilderUtil.sendSysMessage(activeChar, "You're teleporting yourself to character " + player.getName());
 		}
 		showMainPage(activeChar);

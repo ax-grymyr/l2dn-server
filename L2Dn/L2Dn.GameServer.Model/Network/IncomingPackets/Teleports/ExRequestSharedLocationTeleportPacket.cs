@@ -58,7 +58,7 @@ public struct ExRequestSharedLocationTeleportPacket: IIncomingPacket<GameSession
             teleport.decrementCount();
             player.abortCast();
             player.stopMove(null);
-            player.teleToLocation(teleport.getLocation());
+            player.teleToLocation(teleport.getLocation().ToLocationHeading());
         }
 
         return ValueTask.CompletedTask;

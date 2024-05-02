@@ -135,7 +135,7 @@ public class AdminFence: IAdminCommandHandler
 					WorldObject obj = World.getInstance().findObject(objId);
 					if (obj != null)
 					{
-						activeChar.teleToLocation(obj);
+						activeChar.teleToLocation(obj.getLocation().ToLocationHeading());
 					}
 				}
 				catch (Exception e)

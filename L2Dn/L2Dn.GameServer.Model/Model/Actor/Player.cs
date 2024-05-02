@@ -9194,7 +9194,7 @@ public class Player: Playable
 		
 		setObserving(true);
 		sendPacket(new ObservationModePacket(loc));
-		teleToLocation(loc, false);
+		teleToLocation(loc.ToLocationHeading(), false);
 		broadcastUserInfo();
 	}
 	
@@ -9250,7 +9250,7 @@ public class Player: Playable
 		setInvul(true);
 		setInvisible(true);
 		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
-		teleToLocation(loc, false);
+		teleToLocation(loc.ToLocationHeading(), false);
 		sendPacket(new ExOlympiadModePacket(3));
 		broadcastUserInfo();
 	}
@@ -9259,7 +9259,7 @@ public class Player: Playable
 	{
 		setTarget(null);
 		setInstance(null);
-		teleToLocation(_lastLoc, false);
+		teleToLocation(_lastLoc.ToLocationHeading(), false);
 		unsetLastLocation();
 		sendPacket(new ObservationReturnPacket(getLocation()));
 		setBlockActions(false);
@@ -9289,7 +9289,7 @@ public class Player: Playable
 		setTarget(null);
 		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
-		teleToLocation(_lastLoc, true);
+		teleToLocation(_lastLoc.ToLocationHeading(), true);
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -10402,13 +10402,13 @@ public class Player: Playable
 			Pet pet = getPet();
 			if (pet != null)
 			{
-				pet.teleToLocation(this, true);
+				pet.teleToLocation(this.getLocation().ToLocationHeading(), true);
 			}
 			foreach (Summon summon in getServitors().values())
 			{
 				if (!summon.isInsideZone(ZoneId.SIEGE))
 				{
-					summon.teleToLocation(this, true);
+					summon.teleToLocation(this.getLocation().ToLocationHeading(), true);
 				}
 			}
 		}
@@ -10599,21 +10599,22 @@ public class Player: Playable
 			}
 		}
 	}
-	
-	public override void teleToLocation(ILocational loc, bool allowRandomOffset)
+
+	public override void teleToLocation(LocationHeading loc, bool allowRandomOffset)
 	{
 		if ((_vehicle != null) && !_vehicle.isTeleporting())
 		{
 			setVehicle(null);
 		}
-		
-		if (isFlyingMounted() && (loc.getZ() < -1005))
+
+		if (isFlyingMounted() && loc.Z < -1005)
 		{
-			base.teleToLocation(loc.getX(), loc.getY(), -1005, loc.getHeading());
+			base.teleToLocation(loc.X, loc.Y, -1005, loc.Heading);
 		}
+
 		base.teleToLocation(loc, allowRandomOffset);
 	}
-	
+
 	public override void onTeleported()
 	{
 		// Stop auto peel.
@@ -10656,7 +10657,7 @@ public class Player: Playable
 		if (_pet != null)
 		{
 			_pet.setFollowStatus(false);
-			_pet.teleToLocation(getLocation(), false);
+			_pet.teleToLocation(getLocation().ToLocationHeading(), false);
 			((SummonAI) _pet.getAI()).setStartFollowController(true);
 			_pet.setFollowStatus(true);
 			_pet.setInstance(getInstanceWorld());
@@ -10667,7 +10668,7 @@ public class Player: Playable
 		getServitors().values().forEach(s =>
 		{
 			s.setFollowStatus(false);
-			s.teleToLocation(getLocation(), false);
+			s.teleToLocation(getLocation().ToLocationHeading(), false);
 			((SummonAI) s.getAI()).setStartFollowController(true);
 			s.setFollowStatus(true);
 			s.setInstance(getInstanceWorld());

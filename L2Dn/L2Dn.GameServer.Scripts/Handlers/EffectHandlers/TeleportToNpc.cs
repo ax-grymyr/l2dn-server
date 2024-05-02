@@ -78,7 +78,7 @@ public class TeleportToNpc: AbstractEffect
 		}
 		else
 		{
-			effected.teleToLocation(location);
+			effected.teleToLocation(location.ToLocationHeading());
 		}
 	}
 }

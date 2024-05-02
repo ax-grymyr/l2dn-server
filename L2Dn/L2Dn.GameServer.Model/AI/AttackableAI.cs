@@ -545,7 +545,7 @@ public class AttackableAI: CreatureAI
 			
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
 			Location moveLoc = _actor.isFlying() ? new Location(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
-			if (Util.calculateDistance(npc.getSpawn().Location, moveLoc, false, false) <= Config.MAX_DRIFT_RANGE)
+			if (npc.getSpawn().Location.Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
 			{
 				moveTo(moveLoc.getX(), moveLoc.getY(), moveLoc.getZ());
 			}
@@ -591,7 +591,7 @@ public class AttackableAI: CreatureAI
 					}
 					else
 					{
-						npc.teleToLocation(spawn.Location, true);
+						npc.teleToLocation(spawn.Location.ToLocationHeading(), true);
 					}
 					
 					// Minions should return as well.
@@ -613,7 +613,7 @@ public class AttackableAI: CreatureAI
 							}
 							else
 							{
-								minion.teleToLocation(spawn.Location, true);
+								minion.teleToLocation(spawn.Location.ToLocationHeading(), true);
 							}
 						}
 					}
@@ -655,7 +655,7 @@ public class AttackableAI: CreatureAI
 			// Monster teleport to spawn
 			if (npc.isMonster() && (npc.getSpawn() != null) && !npc.isInInstance() && (npc.isInCombat() || World.getInstance().getVisibleObjects<Player>(npc).isEmpty()))
 			{
-				npc.teleToLocation(npc.getSpawn().Location, false);
+				npc.teleToLocation(npc.getSpawn().Location.ToLocationHeading(), false);
 			}
 			return;
 		}

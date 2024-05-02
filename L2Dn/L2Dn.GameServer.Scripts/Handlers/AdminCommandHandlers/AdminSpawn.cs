@@ -489,11 +489,11 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					if (showposition && (npc != null))
 					{
-						activeChar.teleToLocation(npc.getLocation(), true);
+						activeChar.teleToLocation(npc.getLocation().ToLocationHeading(), true);
 					}
 					else
 					{
-						activeChar.teleToLocation(spawn.Location, true);
+						activeChar.teleToLocation(spawn.Location.ToLocationHeading(), true);
 					}
 				}
 			}

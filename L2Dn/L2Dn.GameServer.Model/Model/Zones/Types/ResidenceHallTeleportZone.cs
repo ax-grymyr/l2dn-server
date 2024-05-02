@@ -70,7 +70,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 			{
 				if (pc != null)
 				{
-					pc.teleToLocation(loc, false);
+					pc.teleToLocation(loc.ToLocationHeading(), false);
 				}
 			}
 		}

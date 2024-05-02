@@ -123,7 +123,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 								|| (((obj is Merchant) && !(obj is Fisherman)) && (HtmCache.getInstance().getHtm(null, "html/merchant/" + npc.getId() + ".htm") == null)) //
 								|| ((obj is Guard) && (HtmCache.getInstance().getHtm(null, "html/guard/" + npc.getId() + ".htm") == null)))
 							{
-								activeChar.teleToLocation(npc);
+								activeChar.teleToLocation(npc.getLocation().ToLocationHeading());
 								BuilderUtil.sendSysMessage(activeChar, "NPC " + npc.getId() + " does not have a default html.");
 								break;
 							}

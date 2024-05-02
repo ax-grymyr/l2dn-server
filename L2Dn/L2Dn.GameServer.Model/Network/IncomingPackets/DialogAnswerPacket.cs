@@ -128,7 +128,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 		    SummonRequestHolder holder = player.removeScript<SummonRequestHolder>();
 		    if (_answer == 1 && holder != null && holder.getSummoner().getObjectId() == _requesterId)
 		    {
-			    player.teleToLocation(holder.getLocation(), true);
+			    player.teleToLocation(holder.getLocation().ToLocationHeading(), true);
 		    }
 	    }
 	    else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE)

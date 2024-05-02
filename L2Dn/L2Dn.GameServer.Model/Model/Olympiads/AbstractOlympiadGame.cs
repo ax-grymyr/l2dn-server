@@ -155,7 +155,7 @@ public abstract class AbstractOlympiadGame
 			player.setInOlympiadMode(true);
 			player.setOlympiadStart(false);
 			player.setOlympiadSide(par.getSide());
-			player.teleToLocation(loc, instance);
+			player.teleToLocation(loc.ToLocationHeading(), instance);
 			player.sendPacket(new ExOlympiadModePacket(2));
 		}
 		catch (Exception e)
@@ -395,7 +395,7 @@ public abstract class AbstractOlympiadGame
 		if (loc != null)
 		{
 			player.setIsPendingRevive(false);
-			player.teleToLocation(loc, null);
+			player.teleToLocation(loc.ToLocationHeading(), null);
 			player.unsetLastLocation();
 		}
 	}

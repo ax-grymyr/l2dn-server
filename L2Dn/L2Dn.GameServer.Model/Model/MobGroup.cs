@@ -162,7 +162,7 @@ public class MobGroup
 			{
 				int x = player.getX() + Rnd.get(50);
 				int y = player.getY() + Rnd.get(50);
-				mobInst.teleToLocation(new Location(x, y, player.getZ()), true);
+				mobInst.teleToLocation(new Location(x, y, player.getZ()).ToLocationHeading(), true);
 				((ControllableMobAI) mobInst.getAI()).follow(player);
 			}
 		}

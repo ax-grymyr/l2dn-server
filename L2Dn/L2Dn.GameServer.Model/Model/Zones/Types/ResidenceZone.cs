@@ -21,7 +21,7 @@ public abstract class ResidenceZone : ZoneRespawn
 			{
 				continue;
 			}
-			temp.teleToLocation(getBanishSpawnLoc(), true);
+			temp.teleToLocation(getBanishSpawnLoc().ToLocationHeading(), true);
 		}
 	}
 	

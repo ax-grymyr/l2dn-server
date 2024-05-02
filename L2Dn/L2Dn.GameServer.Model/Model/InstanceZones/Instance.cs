@@ -858,7 +858,7 @@ public class Instance : IIdentifiable, INamable
 			Location loc = _template.getExitLocation(player);
 			if (loc != null)
 			{
-				player.teleToLocation(loc, null);
+				player.teleToLocation(loc.ToLocationHeading(), null);
 			}
 			else
 			{
@@ -1126,7 +1126,7 @@ public class Instance : IIdentifiable, INamable
 				Summon pet = player.getPet();
 				if (pet != null)
 				{
-					pet.teleToLocation(loc, true);
+					pet.teleToLocation(loc.ToLocationHeading(), true);
 				}
 			}
 		}

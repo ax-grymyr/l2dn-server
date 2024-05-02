@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -48,7 +49,7 @@ public class TeleportZone : ZoneType
 	{
 		if (isEnabled())
 		{
-			creature.teleToLocation(new Location(_x, _y, _z));
+			creature.teleToLocation(new LocationHeading(_x, _y, _z, 0));
 		}
 	}
 	

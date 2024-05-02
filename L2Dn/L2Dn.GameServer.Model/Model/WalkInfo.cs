@@ -103,7 +103,7 @@ public class WalkInfo
 						}
 						case WalkingManager.REPEAT_TELE_FIRST:
 						{
-							npc.teleToLocation(npc.getSpawn().Location);
+							npc.teleToLocation(npc.getSpawn().Location.ToLocationHeading());
 							_currentNode = 0;
 							break;
 						}

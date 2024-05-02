@@ -154,7 +154,7 @@ public class MapRegionManager: DataReaderBase
 	 * @param teleportWhere
 	 * @return
 	 */
-	public Location getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
+	public LocationHeading getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
 	{
 		if (creature.isPlayer())
 		{
@@ -168,7 +168,7 @@ public class MapRegionManager: DataReaderBase
 					ClanHall? clanhall = ClanHallData.getInstance().getClanHallByClan(player.getClan());
 					if (clanhall != null && !player.isFlyingMounted())
 					{
-						return clanhall.getOwnerLocation();
+						return clanhall.getOwnerLocation().ToLocationHeading();
 					}
 				}
 				
@@ -191,9 +191,10 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return castle.getResidenceZone().getChaoticSpawnLoc();
+							return castle.getResidenceZone().getChaoticSpawnLoc().ToLocationHeading();
 						}
-						return castle.getResidenceZone().getSpawnLoc();
+
+						return castle.getResidenceZone().getSpawnLoc().ToLocationHeading();
 					}
 				}
 				
@@ -217,9 +218,9 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return fort.getResidenceZone().getChaoticSpawnLoc();
+							return fort.getResidenceZone().getChaoticSpawnLoc().ToLocationHeading();
 						}
-						return fort.getResidenceZone().getSpawnLoc();
+						return fort.getResidenceZone().getSpawnLoc().ToLocationHeading();
 					}
 				}
 				
@@ -237,7 +238,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation();
+								return flags.First().getLocation().ToLocationHeading();
 							}
 						}
 					}
@@ -250,7 +251,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation();
+								return flags.First().getLocation().ToLocationHeading();
 							}
 						}
 					}
@@ -264,14 +265,14 @@ public class MapRegionManager: DataReaderBase
 				Location exitLocation = timedHuntingZone.getExitLocation();
 				if (exitLocation != null)
 				{
-					return exitLocation;
+					return exitLocation.ToLocationHeading();
 				}
 			}
 			
 			// Karma player land out of city
 			if (player.getReputation() < 0)
 			{
-				return getNearestKarmaRespawn(player);
+				return getNearestKarmaRespawn(player).ToLocationHeading();
 			}
 			
 			// Checking if needed to be respawned in "far" town from the castle;
@@ -279,7 +280,7 @@ public class MapRegionManager: DataReaderBase
 			castle = CastleManager.getInstance().getCastle(player);
 			if (castle != null && castle.getSiege().isInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))
 			{
-				return castle.getResidenceZone().getOtherSpawnLoc();
+				return castle.getResidenceZone().getOtherSpawnLoc().ToLocationHeading();
 			}
 			
 			// Checking if in an instance
@@ -289,7 +290,7 @@ public class MapRegionManager: DataReaderBase
 				Location loc = inst.getExitLocation(player);
 				if (loc != null)
 				{
-					return loc;
+					return loc.ToLocationHeading();
 				}
 			}
 		}
@@ -298,16 +299,16 @@ public class MapRegionManager: DataReaderBase
 		{
 			if (creature.getActingPlayer().isGood())
 			{
-				return Config.FACTION_GOOD_BASE_LOCATION;
+				return Config.FACTION_GOOD_BASE_LOCATION.ToLocationHeading();
 			}
 			if (creature.getActingPlayer().isEvil())
 			{
-				return Config.FACTION_EVIL_BASE_LOCATION;
+				return Config.FACTION_EVIL_BASE_LOCATION.ToLocationHeading();
 			}
 		}
 		
 		// Get the nearest town
-		return getNearestTownRespawn(creature);
+		return getNearestTownRespawn(creature).ToLocationHeading();
 	}
 	
 	public Location getNearestKarmaRespawn(Player player)

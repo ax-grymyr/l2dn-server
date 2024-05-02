@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -33,8 +34,8 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
             OlympiadManager.getInstance().unRegisterNoble(player);
         }
 		
-        // Set restore location for next enter world.
-        Location location = null;
+        // Set restore location for next enter world // TODO: also save heading
+        Location3D? location = null;
         Instance world = player.getInstanceWorld();
         if (world != null)
         {
@@ -44,10 +45,10 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
             }
             else
             {
-                location = world.getExitLocation(player);
+                location = world.getExitLocation(player).ToLocation3D();
                 if (location == null)
                 {
-                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;
                 }
             }
 
@@ -55,21 +56,16 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
         }
         else if (player.isInTimedHuntingZone())
         {
-            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;
         }
-        if (location != null)
-        {
-            player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.getX() + ";" + location.getY() + ";" + location.getZ());
-        }
-
 
         if (location != null)
         {
-            player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.getX() + ";" + location.getY() + ";" + location.getZ());
+            player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.Value.X + ";" + location.Value.Y + ";" + location.Value.Z);
         }
-		
+
         //LOGGER_ACCOUNTING.info("Logged out, " + client);
-		
+
         if (!OfflineTradeUtil.enteredOfflineMode(player))
         {
             Disconnection.of(session, player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);

@@ -41,7 +41,7 @@ public class SiegableHallZone : ClanHallZone
 		{
 			if ((player != null) && player.isInHideoutSiege())
 			{
-				player.teleToLocation(getBanishSpawnLoc(), true);
+				player.teleToLocation(getBanishSpawnLoc().ToLocationHeading(), true);
 			}
 		}
 	}

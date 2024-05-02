@@ -90,7 +90,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 			case AdminTeleportType.DEMONIC:
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				player.teleToLocation(new Location(_target.X, _target.Y, _target.Z));
+				player.teleToLocation(new LocationHeading(_target.X, _target.Y, _target.Z, player.getHeading()));
 				player.setTeleMode(AdminTeleportType.NORMAL);
 				break;
 			}

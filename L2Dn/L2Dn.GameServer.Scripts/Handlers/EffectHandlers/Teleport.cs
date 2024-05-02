@@ -33,7 +33,7 @@ public class Teleport: AbstractEffect
 	{
 		if ((_loc.getX() != 0) && (_loc.getY() != 0) && (_loc.getZ() != 0))
 		{
-			effected.teleToLocation(_loc, true, null);
+			effected.teleToLocation(_loc.ToLocationHeading(), true, null);
 		}
 	}
 }

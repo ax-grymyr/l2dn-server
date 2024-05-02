@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 
@@ -170,7 +171,7 @@ public sealed class Q00206Tutorial: Quest
                 
                 // There is no html window.
                 player.sendPacket(new TutorialShowQuestionMarkPacket(QUESTION_MARK_ID_3, 0));
-                player.teleToLocation(new Location(115575, -178014, -904, 9808));
+                player.teleToLocation(new LocationHeading(115575, -178014, -904, 9808));
             }
         }
         else if (ev == "close_tutorial")

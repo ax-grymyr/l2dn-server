@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Utilities;
 
@@ -26,39 +27,6 @@ public class Util
 	public static void handleIllegalPlayerAction(Player actor, string message, IllegalActionPunishmentType punishment)
 	{
 		ThreadPool.schedule(new IllegalPlayerActionTask(actor, message, punishment), 5000);
-	}
-
-	/**
-	 * Calculates distance between one set of x, y, z and another set of x, y, z.
-	 * @param x1 - X coordinate of first point.
-	 * @param y1 - Y coordinate of first point.
-	 * @param z1 - Z coordinate of first point.
-	 * @param x2 - X coordinate of second point.
-	 * @param y2 - Y coordinate of second point.
-	 * @param z2 - Z coordinate of second point.
-	 * @param includeZAxis - If set to true, Z coordinates will be included.
-	 * @param squared - If set to true, distance returned will be squared.
-	 * @return {@code double} - Distance between object and given x, y , z.
-	 */
-	public static double calculateDistance(double x1, double y1, double z1, double x2, double y2, double z2,
-		bool includeZAxis, bool squared)
-	{
-		double distance = Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2) + (includeZAxis ? Math.Pow(z1 - z2, 2) : 0);
-		return squared ? distance : Math.Sqrt(distance);
-	}
-
-	/**
-	 * Calculates distance between 2 locations.
-	 * @param loc1 - First location.
-	 * @param loc2 - Second location.
-	 * @param includeZAxis - If set to true, Z coordinates will be included.
-	 * @param squared - If set to true, distance returned will be squared.
-	 * @return {@code double} - Distance between object and given location.
-	 */
-	public static double calculateDistance(ILocational loc1, ILocational loc2, bool includeZAxis, bool squared)
-	{
-		return calculateDistance(loc1.getX(), loc1.getY(), loc1.getZ(), loc2.getX(), loc2.getY(), loc2.getZ(),
-			includeZAxis, squared);
 	}
 
 	/**
@@ -91,7 +59,11 @@ public class Util
 			radius += ((Creature)obj2).getTemplate().getCollisionRadius();
 		}
 
-		return calculateDistance(obj1, obj2, includeZAxis, false) <= range + radius;
+		double distance = includeZAxis
+			? obj1.getLocation().Distance3D(obj2.getLocation())
+			: obj1.getLocation().Distance2D(obj2.getLocation());
+
+		return distance <= range + radius;
 	}
 
 	/**
@@ -114,7 +86,11 @@ public class Util
 			return true; // not limited
 		}
 
-		return calculateDistance(obj1, obj2, includeZAxis, false) <= range;
+		double distance = includeZAxis
+			? obj1.getLocation().Distance3D(obj2.getLocation())
+			: obj1.getLocation().Distance2D(obj2.getLocation());
+
+		return distance <= range;
 	}
 
 	/**

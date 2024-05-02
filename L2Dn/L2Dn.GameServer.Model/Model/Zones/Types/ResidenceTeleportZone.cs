@@ -43,7 +43,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 		{
 			if ((player != null) && player.isOnline())
 			{
-				player.teleToLocation(getSpawnLoc(), 200);
+				player.teleToLocation(getSpawnLoc().ToLocationHeading(), 200);
 			}
 		}
 	}

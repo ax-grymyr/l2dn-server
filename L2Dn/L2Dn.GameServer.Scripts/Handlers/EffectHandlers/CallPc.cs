@@ -86,7 +86,7 @@ public class CallPc: AbstractEffect
 			else
 			{
 				WorldObject previousTarget = target.getTarget();
-				target.teleToLocation(effector);
+				target.teleToLocation(effector.getLocation().ToLocationHeading());
 				target.setTarget(previousTarget);
 			}
 		}

@@ -23,6 +23,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
@@ -3139,13 +3140,8 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 	}
 	
-	public void teleportToQuestLocation(Player player, ILocational loc)
+	public void teleportToQuestLocation(Player player, LocationHeading loc)
 	{
-		if (loc == null)
-		{
-			return;
-		}
-		
 		if (player.isDead())
 		{
 			player.sendPacket(SystemMessageId.DEAD_CHARACTERS_CANNOT_USE_TELEPORTS);

@@ -393,7 +393,7 @@ public class Spawn : IIdentifiable, INamable
 		{
 			// Do not correct Z distances greater than 300.
 			int geoZ = GeoEngine.getInstance().getHeight(newlocx, newlocy, newlocz);
-			if (Util.calculateDistance(newlocx, newlocy, newlocz, newlocx, newlocy, geoZ, true, true) < 300)
+			if (Math.Abs(newlocz - geoZ) < 300)
 			{
 				newlocz = geoZ;
 			}

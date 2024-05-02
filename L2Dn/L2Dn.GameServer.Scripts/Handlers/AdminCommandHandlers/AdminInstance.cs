@@ -124,7 +124,7 @@ public class AdminInstance: IAdminCommandHandler
 						foreach (Player players in members)
 						{
 							instance.addAllowed(players);
-							players.teleToLocation(loc, instance);
+							players.teleToLocation(loc.ToLocationHeading(), instance);
 						}
 					}
 					sendTemplateDetails(activeChar, instance.getTemplateId());
@@ -148,7 +148,7 @@ public class AdminInstance: IAdminCommandHandler
 						{
 							instance.addAllowed(activeChar);
 						}
-						activeChar.teleToLocation(loc, false);
+						activeChar.teleToLocation(loc.ToLocationHeading(), false);
 						activeChar.setInstance(instance);
 						sendTemplateDetails(activeChar, instance.getTemplateId());
 					}

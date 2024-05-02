@@ -615,12 +615,12 @@ public class CursedWeapon : INamable
 		if (_isActivated && (_player != null))
 		{
 			// Go to player holding the weapon
-			player.teleToLocation(_player.getLocation(), true);
+			player.teleToLocation(_player.getLocation().ToLocationHeading(), true);
 		}
 		else if (_isDropped && (_item != null))
 		{
 			// Go to item on the ground
-			player.teleToLocation(_item.getLocation(), true);
+			player.teleToLocation(_item.getLocation().ToLocationHeading(), true);
 		}
 		else
 		{

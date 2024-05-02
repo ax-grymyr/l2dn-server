@@ -884,34 +884,34 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		teleToLocation(x, y, z, heading, instance);
 	}
 	
-	public void teleToLocation(ILocational loc)
+	public void teleToLocation(LocationHeading loc)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading());
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading);
 	}
 	
-	public void teleToLocation(ILocational loc, Instance instance)
+	public void teleToLocation(LocationHeading loc, Instance instance)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), instance);
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, instance);
 	}
 	
-	public void teleToLocation(ILocational loc, int randomOffset)
+	public void teleToLocation(LocationHeading loc, int randomOffset)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset);
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset);
 	}
 	
-	public void teleToLocation(ILocational loc, int randomOffset, Instance instance)
+	public void teleToLocation(LocationHeading loc, int randomOffset, Instance instance)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset, instance);
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
 	}
 	
-	public virtual void teleToLocation(ILocational loc, bool randomOffset)
+	public virtual void teleToLocation(LocationHeading loc, bool randomOffset)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0);
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
 	
-	public void teleToLocation(ILocational loc, bool randomOffset, Instance instance)
+	public void teleToLocation(LocationHeading loc, bool randomOffset, Instance instance)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset, instance);
+		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
 	}
 	
 	public void teleToLocation(TeleportWhereType teleportWhere)

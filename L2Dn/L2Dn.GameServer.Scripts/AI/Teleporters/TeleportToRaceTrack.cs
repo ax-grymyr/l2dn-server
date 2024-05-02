@@ -44,12 +44,12 @@ public sealed class TeleportToRaceTrack: AbstractScript
 			if (!_teleporterLocations.TryGetValue(returnId, out Location? location))
 				location = _teleporterLocations[30059];
 
-			player.teleToLocation(location);
+			player.teleToLocation(location.ToLocationHeading());
 			player.getVariables().remove(MonsterReturn);
 		}
 		else
 		{
-			player.teleToLocation(_raceTrackTeleport);
+			player.teleToLocation(_raceTrackTeleport.ToLocationHeading());
 			player.getVariables().set(MonsterReturn, npc.getId());
 		}
 

@@ -76,7 +76,7 @@ public class AdminClanHall: IAdminCommandHandler
 								break;
 							}
 						}
-						player.teleToLocation(loc);
+						player.teleToLocation(loc.ToLocationHeading());
 					}
 					break;
 				}

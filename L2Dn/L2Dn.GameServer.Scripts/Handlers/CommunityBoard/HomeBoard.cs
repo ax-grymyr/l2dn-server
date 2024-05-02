@@ -143,7 +143,7 @@ public class HomeBoard: IParseBoardHandler
 				player.sendPacket(new ShowBoardPacket(false, string.Empty));
 				player.destroyItemByItemId("CB_Teleport", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_TELEPORT_PRICE, player, true);
 				player.setInstanceById(0);
-				player.teleToLocation(value, 0);
+				player.teleToLocation(value.ToLocationHeading(), 0);
 				ThreadPool.schedule(player.enableAllSkills, 3000);
 			}
 		}

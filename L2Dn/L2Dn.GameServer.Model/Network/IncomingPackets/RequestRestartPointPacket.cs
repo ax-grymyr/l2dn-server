@@ -16,6 +16,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -83,7 +84,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 	
 	private static void portPlayer(Player player, int requestedPointType, int resItemID)
 	{
-		Location loc = null;
+		LocationHeading? loc = null;
 		Instance instance = null;
 		
 		// force jail
@@ -221,7 +222,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				else
 				{
 					instance = player.getInstanceWorld();
-					loc = new Location(player.getX(), player.getY(), player.getZ(), player.getHeading());
+					loc = player.getLocation().ToLocationHeading();
 				}
 				break;
 			}
@@ -248,7 +249,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
-						player.teleToLocation(loc, true, instance);
+						player.teleToLocation(loc.Value, true, instance);
 						break;
 					}
 					
@@ -303,7 +304,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						player.destroyItem("item revive", item, fee, player, true);
 						player.doRevive(rbph.getResurrectPercent());
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
-						player.teleToLocation(loc, true, instance);
+						player.teleToLocation(loc.Value, true, instance);
 						break;
 					}
 				}
@@ -318,7 +319,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					return;
 				}
 				
-				loc = new Location(-114356, -249645, -2984);
+				loc = new LocationHeading(-114356, -249645, -2984, 0);
 				break;
 			}
 			default:
@@ -326,7 +327,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				if (player.isInTimedHuntingZone())
 				{
 					instance = player.getInstanceWorld();
-					loc = player.getActingPlayer().getTimedHuntingZone().getEnterLocation();
+					loc = player.getActingPlayer().getTimedHuntingZone().getEnterLocation().ToLocationHeading();
 				}
 				else
 				{
@@ -340,7 +341,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 		if (loc != null)
 		{
 			player.setIsPendingRevive(true);
-			player.teleToLocation(loc, true, instance);
+			player.teleToLocation(loc.Value, true, instance);
 		}
 	}
 

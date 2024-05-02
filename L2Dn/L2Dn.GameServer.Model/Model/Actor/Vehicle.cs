@@ -101,7 +101,7 @@ public abstract class Vehicle : Creature
 					if (point.getMoveSpeed() == 0)
 					{
 						point.Location.setHeading(point.getRotationSpeed());
-						teleToLocation(point.Location, false);
+						teleToLocation(point.Location.ToLocationHeading(), false);
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
@@ -216,7 +216,11 @@ public abstract class Vehicle : Creature
 	
 	public Location getOustLoc()
 	{
-		return _oustLoc != null ? _oustLoc : MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
+		if (_oustLoc != null)
+			return _oustLoc;
+
+		LocationHeading loc = MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
+		return new Location(loc.X, loc.Y, loc.Z, loc.Heading);
 	}
 	
 	public virtual void oustPlayers()
@@ -310,7 +314,7 @@ public abstract class Vehicle : Creature
 					if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);
-						player.teleToLocation(new Location(oustX, oustY, oustZ), true);
+						player.teleToLocation(new LocationHeading(oustX, oustY, oustZ, 0), true);
 						return;
 					}
 					
@@ -336,7 +340,7 @@ public abstract class Vehicle : Creature
 		return result;
 	}
 	
-	public override void teleToLocation(ILocational loc, bool allowRandomOffset)
+	public override void teleToLocation(LocationHeading loc, bool allowRandomOffset)
 	{
 		if (isMoving())
 		{
@@ -356,12 +360,12 @@ public abstract class Vehicle : Creature
 		}
 		
 		decayMe();
-		setXYZ(new Location3D(loc.getX(), loc.getY(), loc.getZ()));
+		setXYZ(loc.Location);
 		
 		// temporary fix for heading on teleports
-		if (loc.getHeading() != 0)
+		if (loc.Heading != 0)
 		{
-			setHeading(loc.getHeading());
+			setHeading(loc.Heading);
 		}
 		
 		onTeleported();

@@ -195,7 +195,7 @@ public class MinionList
 					newY = (_master.getY() - newY) + minRadius;
 				}
 				
-				minion.teleToLocation(new Location(newX, newY, _master.getZ()));
+				minion.teleToLocation(new Location(newX, newY, _master.getZ()).ToLocationHeading());
 			}
 		}
 	}

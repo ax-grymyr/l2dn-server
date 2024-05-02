@@ -20,7 +20,7 @@ public class TeleportTask: Runnable
 	{
 		if ((_player != null) && _player.isOnline())
 		{
-			_player.teleToLocation(_loc, true);
+			_player.teleToLocation(_loc.ToLocationHeading(), true);
 		}
 	}
 }

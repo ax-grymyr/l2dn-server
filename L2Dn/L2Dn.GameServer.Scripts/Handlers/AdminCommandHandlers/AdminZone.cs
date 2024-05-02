@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -48,15 +49,15 @@ public class AdminZone: IAdminCommandHandler
 			// Prevent exit instance variable deletion.
 			if (!activeChar.isInInstance())
 			{
-				Location loc;
+				LocationHeading loc;
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CASTLE);
-				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Castle): x:" + loc.getX() + " y:" + loc.getY() + " z:" + loc.getZ());
+				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Castle): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
-				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (ClanHall): x:" + loc.getX() + " y:" + loc.getY() + " z:" + loc.getZ());
+				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (ClanHall): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.SIEGEFLAG);
-				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (SiegeFlag): x:" + loc.getX() + " y:" + loc.getY() + " z:" + loc.getZ());
+				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (SiegeFlag): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.TOWN);
-				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Town): x:" + loc.getX() + " y:" + loc.getY() + " z:" + loc.getZ());
+				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Town): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_zone_visual"))

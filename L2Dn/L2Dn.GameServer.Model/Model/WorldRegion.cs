@@ -65,7 +65,7 @@ public class WorldRegion
 					Spawn spawn = mob.getSpawn();
 					if ((spawn != null) && (mob.calculateDistance2D(spawn.Location.ToLocation2D()) > Config.MAX_DRIFT_RANGE))
 					{
-						mob.teleToLocation(spawn.Location);
+						mob.teleToLocation(spawn.Location.ToLocationHeading());
 					}
 					
 					// Stop the AI tasks.

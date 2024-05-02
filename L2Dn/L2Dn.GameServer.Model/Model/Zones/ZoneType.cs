@@ -632,7 +632,7 @@ public abstract class ZoneType: IEventContainerProvider
 				Player player = creature.getActingPlayer();
 				if (player.isOnline())
 				{
-					player.teleToLocation(loc);
+					player.teleToLocation(loc.ToLocationHeading());
 				}
 			}
 		}
