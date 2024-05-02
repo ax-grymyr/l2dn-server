@@ -67,7 +67,7 @@ public class FortCommander : Defender
 	 */
 	public override void returnHome()
 	{
-		if (!isInsideRadius2D(getSpawn().Location, 200))
+		if (!isInsideRadius2D(getSpawn().Location.ToLocation2D(), 200))
 		{
 			clearAggroList();
 			

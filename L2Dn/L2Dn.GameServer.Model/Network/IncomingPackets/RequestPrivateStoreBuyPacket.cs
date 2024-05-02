@@ -69,7 +69,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		
 		Player storePlayer = (Player)obj;
-		if (!player.isInsideRadius3D(storePlayer, Npc.INTERACTION_DISTANCE))
+		if (!player.isInsideRadius3D(storePlayer.getLocation().ToLocation3D(), Npc.INTERACTION_DISTANCE))
 			return ValueTask.CompletedTask;
 		
 		if (player.getInstanceWorld() != storePlayer.getInstanceWorld())

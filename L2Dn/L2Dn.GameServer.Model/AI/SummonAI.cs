@@ -284,7 +284,7 @@ public class SummonAI : PlayableAI, Runnable
 		
 		Creature owner = getActor().getOwner();
 		// trying to avoid if summon near owner
-		if ((owner != null) && (owner != attacker) && owner.isInsideRadius3D(_actor, 2 * AVOID_RADIUS))
+		if ((owner != null) && (owner != attacker) && owner.isInsideRadius3D(_actor.getLocation().ToLocation3D(), 2 * AVOID_RADIUS))
 		{
 			_startAvoid = true;
 		}

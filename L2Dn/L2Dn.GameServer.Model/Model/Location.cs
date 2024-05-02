@@ -92,7 +92,7 @@ public sealed class Location: ILocational, ILocationHeading
 	{
 		if (obj is Location loc)
 		{
-			return (getX() == loc.getX()) && (getY() == loc.getY()) && (getZ() == loc.getZ()) && (getHeading() == loc.getHeading());
+			return getX() == loc.X && getY() == loc.getY() && getZ() == loc.getZ() && getHeading() == loc.getHeading();
 		}
 
 		return false;

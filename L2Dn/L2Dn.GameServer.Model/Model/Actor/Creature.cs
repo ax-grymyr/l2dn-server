@@ -3924,9 +3924,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param radius the radius around the target
 	 * @return true if the Creature is inside the radius.
 	 */
-	public bool isInsideRadius2D(ILocational loc, int radius)
+	public bool isInsideRadius2D(Location2D loc, int radius)
 	{
-		return isInsideRadius2D(loc.getX(), loc.getY(), radius);
+		return isInsideRadius2D(loc.X, loc.Y, radius);
 	}
 	
 	/**
@@ -3948,9 +3948,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param radius the radius around the target
 	 * @return true if the Creature is inside the radius.
 	 */
-	public bool isInsideRadius3D(ILocational loc, int radius)
+	public bool isInsideRadius3D(Location3D loc, int radius)
 	{
-		return isInsideRadius3D(loc.getX(), loc.getY(), loc.getZ(), radius);
+		return isInsideRadius3D(loc.X, loc.Y, loc.Z, radius);
 	}
 	
 	/**

@@ -87,7 +87,7 @@ public class FriendlyNpcAI : AttackableAI
 		{
 			foreach (Attackable nearby in World.getInstance().getVisibleObjects<Attackable>(npc))
 			{
-				if (npc.isInsideRadius2D(nearby, collision) && (nearby != originalAttackTarget))
+				if (npc.isInsideRadius2D(nearby.getLocation().ToLocation2D(), collision) && (nearby != originalAttackTarget))
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())

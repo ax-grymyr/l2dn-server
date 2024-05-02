@@ -72,7 +72,7 @@ public class Defender : Attackable
 		{
 			return;
 		}
-		if (!isInsideRadius2D(getSpawn().Location, 40))
+		if (!isInsideRadius2D(getSpawn().Location.ToLocation2D(), 40))
 		{
 			clearAggroList();
 			

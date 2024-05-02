@@ -253,7 +253,7 @@ public class ControllableMobAI : AttackableAI
 						return;
 					}
 					
-					if (_actor.isInsideRadius3D(npc, npc.getTemplate().getClanHelpRange()))
+					if (_actor.isInsideRadius3D(npc.getLocation().ToLocation3D(), npc.getTemplate().getClanHelpRange()))
 					{
 						npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
 					}
@@ -355,7 +355,7 @@ public class ControllableMobAI : AttackableAI
 		}
 		
 		Attackable me = (Attackable) _actor;
-		if (target.isAlikeDead() || !me.isInsideRadius2D(target, me.getAggroRange()) || (Math.Abs(_actor.getZ() - target.getZ()) > 100))
+		if (target.isAlikeDead() || !me.isInsideRadius2D(target.getLocation().ToLocation2D(), me.getAggroRange()) || (Math.Abs(_actor.getZ() - target.getZ()) > 100))
 		{
 			return false;
 		}

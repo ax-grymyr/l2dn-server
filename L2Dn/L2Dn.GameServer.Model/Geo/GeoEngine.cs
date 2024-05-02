@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Updating;
 using NLog;
 
@@ -428,9 +429,9 @@ public class GeoEngine
 	 * @param destination the destination
 	 * @return the destination if there is a path or the closes location
 	 */
-	public Location getValidLocation(ILocational origin, ILocational destination)
+	public Location getValidLocation(Location3D origin, Location3D destination)
 	{
-		return getValidLocation(origin.getX(), origin.getY(), origin.getZ(), destination.getX(), destination.getY(), destination.getZ(), null);
+		return getValidLocation(origin.X, origin.Y, origin.Z, destination.X, destination.Y, destination.Z, null);
 	}
 	
 	/**

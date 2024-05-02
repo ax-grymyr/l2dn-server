@@ -51,7 +51,7 @@ public class SitStand: IPlayerActionHandler
 			return false;
 		}
 		
-		if (!player.isSitting() && (target is StaticObject) && (((StaticObject) target).getType() == 1) && player.isInsideRadius2D(target, StaticObject.INTERACTION_DISTANCE))
+		if (!player.isSitting() && (target is StaticObject) && (((StaticObject) target).getType() == 1) && player.isInsideRadius2D(target.getLocation().ToLocation2D(), StaticObject.INTERACTION_DISTANCE))
 		{
 			ChairSitPacket cs = new ChairSitPacket(player, target.getId());
 			player.sendPacket(cs);

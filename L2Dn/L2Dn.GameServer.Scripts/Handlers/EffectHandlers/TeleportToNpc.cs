@@ -66,7 +66,7 @@ public class TeleportToNpc: AbstractEffect
 	
 	private void teleport(Creature effected, Location location)
 	{
-		if (effected.isInsideRadius2D(location, 900))
+		if (effected.isInsideRadius2D(location.ToLocation2D(), 900))
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			effected.broadcastPacket(new FlyToLocationPacket(effected, location.ToLocation3D(), FlyType.DUMMY));

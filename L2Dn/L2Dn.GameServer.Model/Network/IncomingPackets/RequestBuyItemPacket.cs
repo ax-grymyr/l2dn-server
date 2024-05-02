@@ -76,7 +76,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 		Merchant merchant = null;
 		if (!player.isGM() && _listId != CUSTOM_CB_SELL_LIST)
 		{
-			if (!(target is Merchant) || !player.isInsideRadius3D(target, Npc.INTERACTION_DISTANCE) ||
+			if (!(target is Merchant) || !player.isInsideRadius3D(target.getLocation().ToLocation3D(), Npc.INTERACTION_DISTANCE) ||
 			    player.getInstanceWorld() != target.getInstanceWorld())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);

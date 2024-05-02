@@ -1251,14 +1251,14 @@ public class Player: Playable
 		}
 		
 		Npc target = _lastFolkNpc;
-		if ((target != null) && isInsideRadius2D(target, Npc.INTERACTION_DISTANCE))
+		if ((target != null) && isInsideRadius2D(target.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
 		{
 			quest.notifyEvent(ev, target, this);
 		}
 		else if (_questNpcObject > 0)
 		{
 			WorldObject obj = World.getInstance().findObject(getLastQuestNpcObject());
-			if ((obj != null) && obj.isNpc() && isInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
+			if ((obj != null) && obj.isNpc() && isInsideRadius2D(obj.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
 			{
 				Npc npc = (Npc) obj;
 				quest.notifyEvent(ev, npc, this);

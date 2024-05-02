@@ -50,7 +50,7 @@ public class SummonAction: IActionHandler
 			{
 				// This Action Failed packet avoids player getting stuck when clicking three or more times
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				if (((Summon) target).isInsideRadius2D(player, 150))
+				if (((Summon) target).isInsideRadius2D(player.getLocation().ToLocation2D(), 150))
 				{
 					player.updateNotMoveUntil();
 				}

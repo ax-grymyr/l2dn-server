@@ -863,7 +863,7 @@ public class CreatureAI: AbstractAI
 			return false; // skill radius -1
 		}
 		
-		if (!_actor.isInsideRadius2D(worldPosition, offset + _actor.getTemplate().getCollisionRadius()))
+		if (!_actor.isInsideRadius2D(worldPosition.ToLocation2D(), offset + _actor.getTemplate().getCollisionRadius()))
 		{
 			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 			{
@@ -938,13 +938,13 @@ public class CreatureAI: AbstractAI
 			offsetWithCollision += ((Creature) target).getTemplate().getCollisionRadius();
 		}
 		
-		if (!_actor.isInsideRadius2D(target, offsetWithCollision))
+		if (!_actor.isInsideRadius2D(target.getLocation().ToLocation2D(), offsetWithCollision))
 		{
 			// Caller should be Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
 			if (isFollowing())
 			{
 				// allow larger hit range when the target is moving (check is run only once per second)
-				if (!_actor.isInsideRadius2D(target, offsetWithCollision + 100))
+				if (!_actor.isInsideRadius2D(target.getLocation().ToLocation2D(), offsetWithCollision + 100))
 				{
 					return true;
 				}

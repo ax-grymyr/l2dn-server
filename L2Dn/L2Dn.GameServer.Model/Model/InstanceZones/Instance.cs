@@ -333,7 +333,7 @@ public class Instance : IIdentifiable, INamable
 		List<Player> result = new();
 		foreach (Player player in _players)
 		{
-			if (player.isInsideRadius3D(location, radius))
+			if (player.isInsideRadius3D(location.ToLocation3D(), radius))
 			{
 				result.Add(player);
 			}

@@ -415,7 +415,7 @@ public class Npc: Creature
 		{
 			return false;
 		}
-		else if (!isInsideRadius3D(player, INTERACTION_DISTANCE))
+		else if (!isInsideRadius3D(player.getLocation().ToLocation3D(), INTERACTION_DISTANCE))
 		{
 			return false;
 		}

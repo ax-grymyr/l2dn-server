@@ -304,7 +304,7 @@ public class TamedBeast: FeedableBeast
 			return;
 		}
 		// if the owner is too far away, stop anything else and immediately run towards the owner.
-		if (!_owner.isInsideRadius3D(this, MAX_DISTANCE_FROM_OWNER))
+		if (!_owner.isInsideRadius3D(this.getLocation().ToLocation3D(), MAX_DISTANCE_FROM_OWNER))
 		{
 			getAI().startFollow(_owner);
 			return;
@@ -472,7 +472,7 @@ public class TamedBeast: FeedableBeast
 				return;
 			}
 			// if the owner is too far away, stop anything else and immediately run towards the owner.
-			if (!_tamedBeast.isInsideRadius3D(owner, MAX_DISTANCE_FROM_OWNER))
+			if (!_tamedBeast.isInsideRadius3D(owner.getLocation().ToLocation3D(), MAX_DISTANCE_FROM_OWNER))
 			{
 				_tamedBeast.getAI().startFollow(owner);
 				return;

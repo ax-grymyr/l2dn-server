@@ -175,7 +175,7 @@ public class AttackableAI: CreatureAI
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
-				else if ((npc.getSpawn() != null) && !npc.isInsideRadius3D(npc.getSpawn().Location, Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
+				else if ((npc.getSpawn() != null) && !npc.isInsideRadius3D(npc.getSpawn().Location.ToLocation3D(), Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
@@ -766,7 +766,7 @@ public class AttackableAI: CreatureAI
 		{
 			foreach (Attackable nearby in World.getInstance().getVisibleObjects<Attackable>(npc))
 			{
-				if (npc.isInsideRadius2D(nearby, collision) && (nearby != target))
+				if (npc.isInsideRadius2D(nearby.getLocation().ToLocation2D(), collision) && (nearby != target))
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
@@ -1087,7 +1087,7 @@ public class AttackableAI: CreatureAI
 			
 			if (npc.isMovementDisabled())
 			{
-				if (!npc.isInsideRadius2D(target, npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((Creature) target).getTemplate().getCollisionRadius()))
+				if (!npc.isInsideRadius2D(target.getLocation().ToLocation2D(), npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((Creature) target).getTemplate().getCollisionRadius()))
 				{
 					return false;
 				}

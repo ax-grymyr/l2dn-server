@@ -37,7 +37,7 @@ public class RingRange: IAffectScopeHandler
 			}
 			
 			// Targets before the start range are unaffected.
-			if (c.isInsideRadius2D(target, startRange))
+			if (c.isInsideRadius2D(target.getLocation().ToLocation2D(), startRange))
 			{
 				return false;
 			}

@@ -36,7 +36,7 @@ public class DoorAction: IActionHandler
 			}
 			else if ((player.getClan() != null) && (clanHall != null) && (player.getClanId() == clanHall.getOwnerId()))
 			{
-				if (!door.isInsideRadius2D(player, Npc.INTERACTION_DISTANCE))
+				if (!door.isInsideRadius2D(player.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
@@ -55,7 +55,7 @@ public class DoorAction: IActionHandler
 			}
 			else if ((player.getClan() != null) && (((Door) target).getFort() != null) && (player.getClan() == ((Door) target).getFort().getOwnerClan()) && ((Door) target).isOpenableBySkill() && !((Door) target).getFort().getSiege().isInProgress())
 			{
-				if (!((Creature) target).isInsideRadius2D(player, Npc.INTERACTION_DISTANCE))
+				if (!((Creature) target).isInsideRadius2D(player.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
