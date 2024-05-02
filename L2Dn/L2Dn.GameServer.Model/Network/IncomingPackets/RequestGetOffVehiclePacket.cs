@@ -26,7 +26,7 @@ public struct RequestGetOffVehiclePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         if (!player.isInBoat() || player.getBoat().getObjectId() != _boatId || player.getBoat().isMoving() ||
-            !player.isInsideRadius3D(_location, 1000))
+            !player.IsInsideRadius3D(_location, 1000))
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

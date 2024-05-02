@@ -858,7 +858,7 @@ public class CreatureAI: AbstractAI
 			return false; // skill radius -1
 		}
 		
-		if (!_actor.isInsideRadius2D(worldPosition.Location2D, offset + _actor.getTemplate().getCollisionRadius()))
+		if (!_actor.IsInsideRadius2D(worldPosition.Location2D, offset + _actor.getTemplate().getCollisionRadius()))
 		{
 			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 			{

@@ -613,7 +613,7 @@ public class Formulas
 		}
 
 		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
-		if (degreeside < 360 && Math.Abs(target.calculateDirectionTo(attacker.Location.Location2D) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
+		if (degreeside < 360 && Math.Abs(target.AngleDegreesTo(attacker) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
 		{
 			return 0;
 		}

@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -19,17 +20,13 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 {
     private int _objectId;
     private long _count;
-    private int _x;
-    private int _y;
-    private int _z;
+    private Location3D _location;
 
     public void ReadContent(PacketBitReader reader)
     {
         _objectId = reader.ReadInt32();
         _count = reader.ReadInt64();
-        _x = reader.ReadInt32();
-        _y = reader.ReadInt32();
-        _z = reader.ReadInt32();
+        _location = reader.ReadLocation3D();
     }
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
@@ -141,7 +138,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (!player.isInsideRadius2D(_x, _y, 150) || Math.Abs(_z - player.getZ()) > 50)
+	    if (!player.IsInsideRadius2D(_location.Location2D, 150) || Math.Abs(_location.Z - player.getZ()) > 50)
 	    {
 		    connection.Send(SystemMessageId.YOU_CANNOT_DISCARD_SOMETHING_THAT_FAR_AWAY_FROM_YOU);
 		    return ValueTask.CompletedTask;
@@ -181,7 +178,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    player.sendItemList();
 	    }
 
-	    Item dropedItem = player.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false, false);
+	    Item dropedItem = player.dropItem("Drop", _objectId, _count, _location, null, false, false);
 
 	    // player.broadcastUserInfo();
 	    if (player.isGM())
@@ -192,7 +189,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 
 	    if (dropedItem != null && dropedItem.getId() == Inventory.ADENA_ID && dropedItem.getCount() >= 1000000)
 	    {
-		    string msg = $"Character ({player.getName()}) has dropped ({dropedItem.getCount()})adena at ({_x},{_y},{_z})";
+		    string msg = $"Character ({player.getName()}) has dropped ({dropedItem.getCount()})adena at {_location}";
 		    PacketLogger.Instance.Warn(msg);
 		    AdminData.getInstance().broadcastMessageToGMs(msg);
 	    }

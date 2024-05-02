@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -67,7 +68,7 @@ public class FortCommander : Defender
 	 */
 	public override void returnHome()
 	{
-		if (!isInsideRadius2D(getSpawn().Location.Location2D, 200))
+		if (!this.IsInsideRadius2D(getSpawn(), 200))
 		{
 			clearAggroList();
 			

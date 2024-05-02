@@ -3605,7 +3605,7 @@ public class Player: Playable
 	 * @param protectItem
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item dropItem(string process, int objectId, long count, int x, int y, int z, WorldObject reference, bool sendMessage, bool protectItem)
+	public Item dropItem(string process, int objectId, long count, Location3D location, WorldObject reference, bool sendMessage, bool protectItem)
 	{
 		Item invitem = _inventory.getItemByObjectId(objectId);
 		Item item = _inventory.dropItem(process, objectId, count, this, reference);
@@ -3618,7 +3618,7 @@ public class Player: Playable
 			return null;
 		}
 		
-		item.dropMe(this, x, y, z);
+		item.dropMe(this, location.X, location.Y, location.Z);
 		if ((Config.AUTODESTROY_ITEM_AFTER > 0) && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && ((item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(item);

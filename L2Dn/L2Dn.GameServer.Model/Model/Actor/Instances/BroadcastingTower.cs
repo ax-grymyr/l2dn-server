@@ -1,9 +1,8 @@
-﻿using L2Dn.GameServer.Data;
-using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Html;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -16,9 +15,11 @@ public class BroadcastingTower: Npc
 
     public override void showChatWindow(Player player, int value)
     {
-        String filename = null;
-        if (isInsideRadius2D(-79884, 86529, 50) || isInsideRadius2D(-78858, 111358, 50) ||
-            isInsideRadius2D(-76973, 87136, 50) || isInsideRadius2D(-75850, 111968, 50))
+        string filename;
+        if (this.IsInsideRadius2D(new Location2D(-79884, 86529), 50) ||
+            this.IsInsideRadius2D(new Location2D(-78858, 111358), 50) ||
+            this.IsInsideRadius2D(new Location2D(-76973, 87136), 50) ||
+            this.IsInsideRadius2D(new Location2D(-75850, 111968), 50))
         {
             if (value == 0)
             {

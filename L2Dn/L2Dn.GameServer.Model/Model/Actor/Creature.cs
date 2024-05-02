@@ -1305,7 +1305,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 				
 				// Check if target is within attack angle.
-				if (Math.Abs(this.calculateDirectionTo(obj.Location.Location2D) - headingAngle) > physicalAttackAngle)
+				if (Math.Abs(this.AngleDegreesTo(obj) - headingAngle) > physicalAttackAngle)
 				{
 					continue;
 				}
@@ -3916,55 +3916,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		
 		return result;
 	}
-	
-	/**
-	 * Check if this object is inside the given 2D radius around the given point.
-	 * @param loc Location of the target
-	 * @param radius the radius around the target
-	 * @return true if the Creature is inside the radius.
-	 */
-	public bool isInsideRadius2D(Location2D loc, int radius)
-	{
-		return isInsideRadius2D(loc.X, loc.Y, radius);
-	}
-	
-	/**
-	 * Check if this object is inside the given 2D radius around the given point.
-	 * @param x X position of the target
-	 * @param y Y position of the target
-	 * @param z Z position of the target
-	 * @param radius the radius around the target
-	 * @return true if the Creature is inside the radius.
-	 */
-	public bool isInsideRadius2D(int x, int y, int radius)
-	{
-		return this.DistanceSquare2D(x, y) < radius * radius;
-	}
-	
-	/**
-	 * Check if this object is inside the given 3D radius around the given point.
-	 * @param loc Location of the target
-	 * @param radius the radius around the target
-	 * @return true if the Creature is inside the radius.
-	 */
-	public bool isInsideRadius3D(Location3D loc, int radius)
-	{
-		return isInsideRadius3D(loc.X, loc.Y, loc.Z, radius);
-	}
-	
-	/**
-	 * Check if this object is inside the given 3D radius around the given point.
-	 * @param x X position of the target
-	 * @param y Y position of the target
-	 * @param z Z position of the target
-	 * @param radius the radius around the target
-	 * @return true if the Creature is inside the radius.
-	 */
-	public bool isInsideRadius3D(int x, int y, int z, int radius)
-	{
-		return this.DistanceSquare3D(x, y, z) < radius * radius;
-	}
-	
+
 	/**
 	 * <b><u>Overridden in</u>:</b>
 	 * <li>Player</li>

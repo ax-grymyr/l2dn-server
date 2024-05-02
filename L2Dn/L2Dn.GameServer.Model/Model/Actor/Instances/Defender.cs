@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -72,7 +73,7 @@ public class Defender : Attackable
 		{
 			return;
 		}
-		if (!isInsideRadius2D(getSpawn().Location.Location2D, 40))
+		if (!this.IsInsideRadius2D(getSpawn(), 40))
 		{
 			clearAggroList();
 			

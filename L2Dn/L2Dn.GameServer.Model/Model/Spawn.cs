@@ -23,7 +23,7 @@ namespace L2Dn.GameServer.Model;
  * The heading of the Npc can be a random heading if not defined (value= -1) or an exact heading (ex : merchant...).
  * @author Nightmare
  */
-public class Spawn : IIdentifiable, INamable
+public class Spawn : IIdentifiable, INamable, IHasLocation
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Spawn));
 

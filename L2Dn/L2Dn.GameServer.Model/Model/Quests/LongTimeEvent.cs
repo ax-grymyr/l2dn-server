@@ -89,7 +89,7 @@ public class LongTimeEvent: Quest
 		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
 		foreach (NpcSpawn npcSpawn in _spawnList)
 		{
-			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.Location3D, npcSpawn.loc.Heading, false, millisToEventEnd, false);
+			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc, false, millisToEventEnd, false);
 			TimeSpan respawnDelay = npcSpawn.respawnTime;
 			if (respawnDelay > TimeSpan.Zero)
 			{

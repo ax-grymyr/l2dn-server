@@ -175,7 +175,7 @@ public class AttackableAI: CreatureAI
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
-				else if ((npc.getSpawn() != null) && !npc.isInsideRadius3D(npc.getSpawn().Location.Location3D, Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
+				else if ((npc.getSpawn() != null) && !npc.IsInsideRadius3D(npc.getSpawn(), Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
@@ -533,7 +533,7 @@ public class AttackableAI: CreatureAI
 			int x1 = npc.getSpawn().Location.X;
 			int y1 = npc.getSpawn().Location.Y;
 			int z1 = npc.getSpawn().Location.Z;
-			if (npc.isInsideRadius2D(x1, y1, Config.MAX_DRIFT_RANGE))
+			if (npc.IsInsideRadius2D(npc.getSpawn(), Config.MAX_DRIFT_RANGE))
 			{
 				int deltaX = Rnd.get(Config.MAX_DRIFT_RANGE * 2); // x
 				int deltaY = Rnd.get(deltaX, Config.MAX_DRIFT_RANGE * 2); // distance
@@ -545,7 +545,7 @@ public class AttackableAI: CreatureAI
 			
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
 			Location3D moveLoc = _actor.isFlying() ? new Location3D(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
-			if (npc.getSpawn().Location.Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
+			if (npc.getSpawn().Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
 			{
 				moveTo(moveLoc.X, moveLoc.Y, moveLoc.Z);
 			}
@@ -787,7 +787,7 @@ public class AttackableAI: CreatureAI
 						newY = target.getY() - newY;
 					}
 					
-					if (!npc.isInsideRadius2D(newX, newY, collision))
+					if (!npc.IsInsideRadius2D(new Location2D(newX, newY), collision))
 					{
 						int newZ = npc.getZ() + 30;
 						

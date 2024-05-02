@@ -262,7 +262,7 @@ public class TamedBeast: FeedableBeast
 	
 	public bool isTooFarFromHome()
 	{
-		return !isInsideRadius3D(_homeLocation, MAX_DISTANCE_FROM_HOME);
+		return !this.IsInsideRadius3D(_homeLocation, MAX_DISTANCE_FROM_HOME);
 	}
 	
 	public override bool deleteMe()

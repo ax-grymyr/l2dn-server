@@ -143,6 +143,16 @@ public static class LocationExtensions
         return angle < 0 ? angle + 360.0 : angle;
     }
 
+    public static double AngleDegreesTo<TTo>(this IHasLocation from, TTo to)
+        where TTo: ILocation2D => from.Location.Location2D.AngleDegreesTo(to);
+
+    public static double AngleDegreesTo<TFrom>(this TFrom from, IHasLocation to)
+        where TFrom: ILocation2D
+        => from.AngleDegreesTo(to.Location.Location2D);
+
+    public static double AngleDegreesTo(this IHasLocation from, IHasLocation to)
+        => from.Location.Location2D.AngleDegreesTo(to.Location.Location2D);
+
     public static Location2D RandomPosition2D<TOrigin>(this TOrigin location, int minRange, int maxRange)
         where TOrigin: ILocation2D
     {
