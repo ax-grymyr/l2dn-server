@@ -33,7 +33,7 @@ public class PetMove: IPlayerActionHandler
 		else if ((player.getTarget() != null) && (pet != player.getTarget()) && !pet.isMovementDisabled())
 		{
 			pet.setFollowStatus(false);
-			pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getTarget().getLocation().ToLocation3D());
+			pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getTarget().getLocation().Location3D);
 		}
 	}
 	

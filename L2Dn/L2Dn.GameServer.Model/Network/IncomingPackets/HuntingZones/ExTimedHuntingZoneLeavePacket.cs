@@ -38,7 +38,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
         Location3D? exitLocation = huntingZone.getExitLocation();
         if (exitLocation != null)
         {
-            player.teleToLocation(new LocationHeading(exitLocation.Value, 0), null);
+            player.teleToLocation(new Location(exitLocation.Value, 0), null);
         }
         else
         {

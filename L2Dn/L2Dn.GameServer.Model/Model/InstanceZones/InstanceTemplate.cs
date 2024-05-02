@@ -44,7 +44,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	private readonly List<SpawnTemplate> _spawns = new();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
-	private ImmutableArray<LocationHeading> _enterLocations = ImmutableArray<LocationHeading>.Empty;
+	private ImmutableArray<Location> _enterLocations = ImmutableArray<Location>.Empty;
 	private InstanceTeleportType _exitLocationType = InstanceTeleportType.NONE;
 	private ImmutableArray<Location3D> _exitLocations = ImmutableArray<Location3D>.Empty;
 	
@@ -184,7 +184,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * @param type type of teleport ({@link InstanceTeleportType#FIXED} or {@link InstanceTeleportType#RANDOM} are supported)
 	 * @param locations list of locations used for determining enter location
 	 */
-	public void setEnterLocation(InstanceTeleportType type, ImmutableArray<LocationHeading> locations)
+	public void setEnterLocation(InstanceTeleportType type, ImmutableArray<Location> locations)
 	{
 		_enterLocationType = type;
 		_enterLocations = locations;
@@ -296,7 +296,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * Get all enter locations defined in XML template.
 	 * @return list of enter locations
 	 */
-	public ImmutableArray<LocationHeading> getEnterLocations()
+	public ImmutableArray<Location> getEnterLocations()
 	{
 		return _enterLocations;
 	}
@@ -305,9 +305,9 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * Get enter location to instance world.
 	 * @return enter location if instance has any, otherwise {@code null}
 	 */
-	public LocationHeading? getEnterLocation()
+	public Location? getEnterLocation()
 	{
-		LocationHeading? loc = null;
+		Location? loc = null;
 		if (_enterLocations.Length != 0)
 		{
 			switch (_enterLocationType)

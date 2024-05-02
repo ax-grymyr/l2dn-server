@@ -10,13 +10,13 @@ public readonly struct ExStopMoveInAirShipPacket: IOutgoingPacket
     private readonly Player _player;
     private readonly int _shipObjId;
     private readonly int _h;
-    private readonly LocationHeading _location;
+    private readonly Location _location;
 
     public ExStopMoveInAirShipPacket(Player player, int shipObjId)
     {
         _player = player;
         _shipObjId = shipObjId;
-        _location = new LocationHeading(player.getInVehiclePosition(), player.getHeading());
+        _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
     public void WriteContent(PacketBitWriter writer)

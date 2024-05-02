@@ -14,14 +14,14 @@ public class CombatFlag
 	private int _playerId;
 	private Item? _item;
 	private Item? _itemInstance;
-	private readonly LocationHeading _location;
+	private readonly Location _location;
 	private readonly int _itemId;
 	private readonly int _fortId;
 	
 	public CombatFlag(int fortId, int x, int y, int z, int heading, int itemId)
 	{
 		_fortId = fortId;
-		_location = new LocationHeading(x, y, z, heading);
+		_location = new Location(x, y, z, heading);
 		_itemId = itemId;
 	}
 	

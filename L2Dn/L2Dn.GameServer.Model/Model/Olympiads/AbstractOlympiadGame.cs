@@ -136,7 +136,7 @@ public abstract class AbstractOlympiadGame
 		return null;
 	}
 	
-	protected static bool portPlayerToArena(Participant par, LocationHeading loc, int id, Instance instance)
+	protected static bool portPlayerToArena(Participant par, Location loc, int id, Instance instance)
 	{
 		Player player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
@@ -397,7 +397,7 @@ public abstract class AbstractOlympiadGame
 		if (loc != null)
 		{
 			player.setIsPendingRevive(false);
-			player.teleToLocation(new LocationHeading(loc.Value, 0));
+			player.teleToLocation(new Location(loc.Value, 0));
 			player.unsetLastLocation();
 		}
 	}

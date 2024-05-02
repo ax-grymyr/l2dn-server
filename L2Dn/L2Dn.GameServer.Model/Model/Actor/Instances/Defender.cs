@@ -72,13 +72,13 @@ public class Defender : Attackable
 		{
 			return;
 		}
-		if (!isInsideRadius2D(getSpawn().Location.Location.ToLocation2D(), 40))
+		if (!isInsideRadius2D(getSpawn().Location.Location2D, 40))
 		{
 			clearAggroList();
 			
 			if (hasAI())
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 			}
 		}
 	}

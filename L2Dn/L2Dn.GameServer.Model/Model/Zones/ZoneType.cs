@@ -618,7 +618,7 @@ public abstract class ZoneType: IEventContainerProvider
 	/**
 	 * @param loc
 	 */
-	public void movePlayersTo(LocationHeading loc)
+	public void movePlayersTo(Location loc)
 	{
 		if (_characterList.isEmpty())
 		{

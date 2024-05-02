@@ -595,13 +595,13 @@ public class Duel
 		Location3D spawn1 = spawns[Rnd.get(spawns.Length / 2)];
 		foreach (Player temp in _playerA.getParty().getMembers())
 		{
-			temp.teleToLocation(new LocationHeading(spawn1, 0), 0, _duelInstance);
+			temp.teleToLocation(new Location(spawn1, 0), 0, _duelInstance);
 		}
 		
 		Location3D spawn2 = spawns[Rnd.get(spawns.Length / 2, spawns.Length)];
 		foreach (Player temp in _playerB.getParty().getMembers())
 		{
-			temp.teleToLocation(new LocationHeading(spawn2, 0), 0, _duelInstance);
+			temp.teleToLocation(new Location(spawn2, 0), 0, _duelInstance);
 		}
 	}
 	
@@ -873,7 +873,7 @@ public class Duel
 			}
 			
 			// Are the players too far apart?
-			if (!_playerA.isInsideRadius2D(_playerB.getLocation().ToLocation2D(), 1600))
+			if (!_playerA.isInsideRadius2D(_playerB.getLocation().Location2D, 1600))
 			{
 				return DuelResult.CANCELED;
 			}

@@ -50,11 +50,11 @@ public class SummonAction: IActionHandler
 			{
 				// This Action Failed packet avoids player getting stuck when clicking three or more times
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				if (((Summon) target).isInsideRadius2D(player.getLocation().ToLocation2D(), 150))
+				if (((Summon) target).isInsideRadius2D(player.getLocation().Location2D, 150))
 				{
 					player.updateNotMoveUntil();
 				}
-				else if (GeoEngine.getInstance().canMoveToTarget(player.getLocation().ToLocation3D(), target.getLocation().ToLocation3D()))
+				else if (GeoEngine.getInstance().canMoveToTarget(player.getLocation().Location3D, target.getLocation().Location3D))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 				}

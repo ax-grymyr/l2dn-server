@@ -20,7 +20,7 @@ public class OpCheckCastRangeSkillCondition: ISkillCondition
 	public bool canUse(Creature caster, Skill skill, WorldObject target)
 	{
 		return (target != null) //
-			&& (caster.calculateDistance3D(target.getLocation().ToLocation3D()) >= _distance) //
+			&& (caster.calculateDistance3D(target.getLocation().Location3D) >= _distance) //
 			&& GeoEngine.getInstance().canSeeTarget(caster, target);
 	}
 }

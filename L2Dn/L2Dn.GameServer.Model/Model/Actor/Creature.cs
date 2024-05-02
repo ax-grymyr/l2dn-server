@@ -482,7 +482,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			decayMe();
-			ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+			ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
 			if (region != null)
 			{
 				region.removeFromZones(this);
@@ -760,7 +760,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 
-		LocationHeading location = new(xValue, yValue,
+		Location location = new(xValue, yValue,
 			_isFlying ? zValue : GeoEngine.getInstance().getHeight(xValue, yValue, zValue), headingValue);
 
 		Instance instance = instanceValue;
@@ -807,7 +807,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		decayMe();
 		
 		// Adjust position a bit.
-		location = location with { Location = location.Location with { Z = location.Location.Z + 5 } };
+		location = location with { Location3D = location.Location3D with { Z = location.Location3D.Z + 5 } };
 		
 		// Send teleport packet where needed.
 		broadcastPacket(new TeleportToLocationPacket(getObjectId(), location));
@@ -819,7 +819,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		
 		// Set the x,y,z position of the WorldObject and if necessary modify its _worldRegion.
-		setXYZ(location.Location);
+		setXYZ(location.Location3D);
 		// Also adjust heading.
 		if (location.Heading != 0)
 		{
@@ -880,32 +880,32 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		teleToLocation(x, y, z, heading, instance);
 	}
 	
-	public void teleToLocation(LocationHeading loc)
+	public void teleToLocation(Location loc)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading);
 	}
 	
-	public void teleToLocation(LocationHeading loc, Instance instance)
+	public void teleToLocation(Location loc, Instance instance)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, instance);
 	}
 	
-	public void teleToLocation(LocationHeading loc, int randomOffset)
+	public void teleToLocation(Location loc, int randomOffset)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset);
 	}
 	
-	public void teleToLocation(LocationHeading loc, int randomOffset, Instance instance)
+	public void teleToLocation(Location loc, int randomOffset, Instance instance)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
 	}
 	
-	public virtual void teleToLocation(LocationHeading loc, bool randomOffset)
+	public virtual void teleToLocation(Location loc, bool randomOffset)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
 	
-	public void teleToLocation(LocationHeading loc, bool randomOffset, Instance instance)
+	public void teleToLocation(Location loc, bool randomOffset, Instance instance)
 	{
 		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
 	}
@@ -1305,7 +1305,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 				
 				// Check if target is within attack angle.
-				if (Math.Abs(calculateDirectionTo(obj.getLocation().ToLocation2D()) - headingAngle) > physicalAttackAngle)
+				if (Math.Abs(this.calculateDirectionTo(obj.getLocation().Location2D) - headingAngle) > physicalAttackAngle)
 				{
 					continue;
 				}
@@ -1808,7 +1808,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		}
 		
-		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.onDeath(this);
+		ZoneManager.getInstance().getRegion(getLocation().Location2D)?.onDeath(this);
 		
 		getAttackByList().clear();
 		
@@ -1921,7 +1921,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			
 			// Start broadcast status
 			broadcastPacket(new RevivePacket(this));
-			ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.onRevive(this);
+			ZoneManager.getInstance().getRegion(getLocation().Location2D)?.onRevive(this);
 		}
 		else
 		{
@@ -3209,7 +3209,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
 				{
 					_move.onGeodataPathIndex = -1;
-					stopMove(new LocationHeading(getActingPlayer().getLastServerPosition(), 0));
+					stopMove(new Location(getActingPlayer().getLastServerPosition(), 0));
 					return false;
 				}
 			}
@@ -3364,14 +3364,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
-		if (!force && calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
+		if (!force && this.calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
 		{
 			return;
 		}
 
-		_lastZoneValidateLocation = getLocation().ToLocation3D();
+		_lastZoneValidateLocation = getLocation().Location3D;
 
-		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
 		if (region != null)
 		{
 			region.revalidateZones(this);
@@ -3395,7 +3395,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * <font color=#FF0000><b><u>Caution</u>: This method DOESN'T send Server=>Client packet StopMove/StopRotation</b></font>
 	 * @param loc
 	 */
-	public virtual void stopMove(LocationHeading? location) // TODO: overload without argument
+	public virtual void stopMove(Location? location) // TODO: overload without argument
 	{
 		// Delete movement data of the Creature
 		_move = null;
@@ -3404,7 +3404,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// All data are contained in a Location object
 		if (location != null)
 		{
-			LocationHeading loc = location.Value;
+			Location loc = location.Value;
 			setXYZ(loc.X, loc.Y, loc.Z);
 			setHeading(loc.Heading);
 			revalidateZone(true);
@@ -3938,7 +3938,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isInsideRadius2D(int x, int y, int radius)
 	{
-		return calculateDistanceSq2D(x, y) < radius * radius;
+		return this.calculateDistanceSq2D(x, y) < radius * radius;
 	}
 	
 	/**
@@ -3962,7 +3962,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isInsideRadius3D(int x, int y, int z, int radius)
 	{
-		return calculateDistanceSq3D(x, y, z) < radius * radius;
+		return this.calculateDistanceSq3D(x, y, z) < radius * radius;
 	}
 	
 	/**
@@ -5659,7 +5659,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 		
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().Location2D);
 		ZoneRegion? newZoneRegion = ZoneManager.getInstance().getRegion(new Location2D(newX, newY));
 		
 		// Mobius: Prevent moving to nonexistent regions.

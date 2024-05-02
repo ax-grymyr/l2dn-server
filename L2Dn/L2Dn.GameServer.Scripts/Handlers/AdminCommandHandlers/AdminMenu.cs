@@ -48,7 +48,7 @@ public class AdminMenu: IAdminCommandHandler
 				Player player = World.getInstance().getPlayer(playerName);
 				if (player != null)
 				{
-					teleportCharacter(player, new LocationHeading(int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), 0), activeChar, "Admin is teleporting you.");
+					teleportCharacter(player, new Location(int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), 0), activeChar, "Admin is teleporting you.");
 				}
 			}
 			showMainPage(activeChar);
@@ -230,7 +230,7 @@ public class AdminMenu: IAdminCommandHandler
 		AdminHtml.showAdminHtml(activeChar, filename);
 	}
 	
-	private void teleportCharacter(Player player, LocationHeading loc, Player activeChar, String message)
+	private void teleportCharacter(Player player, Location loc, Player activeChar, String message)
 	{
 		if (player != null)
 		{

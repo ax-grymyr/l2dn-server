@@ -157,7 +157,7 @@ public class StaticObject: Creature
 	{
 	}
 	
-	public override void stopMove(LocationHeading? loc)
+	public override void stopMove(Location? loc)
 	{
 	}
 	

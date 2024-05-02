@@ -66,7 +66,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 			{
 				if (pc != null)
 				{
-					pc.teleToLocation(new LocationHeading(loc, 0), false);
+					pc.teleToLocation(new Location(loc, 0), false);
 				}
 			}
 		}

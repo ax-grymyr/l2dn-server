@@ -159,7 +159,7 @@ public class ControllableMobAI : AttackableAI
 		ControllableMobAI ctrlAi = (ControllableMobAI) theTarget.getAI();
 		ctrlAi.forceAttack(_actor);
 		
-		double dist2 = _actor.calculateDistanceSq2D(target.getLocation().ToLocation2D());
+		double dist2 = _actor.calculateDistanceSq2D(target.getLocation().Location2D);
 		int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 		int maxRange = range;
 		if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
@@ -197,7 +197,7 @@ public class ControllableMobAI : AttackableAI
 		}
 		
 		setTarget(getForcedTarget());
-		double dist2 = _actor.calculateDistanceSq2D(getForcedTarget().getLocation().ToLocation2D());
+		double dist2 = _actor.calculateDistanceSq2D(getForcedTarget().getLocation().Location2D);
 		int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + getForcedTarget().getTemplate().getCollisionRadius();
 		int maxRange = range;
 		if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
@@ -253,7 +253,7 @@ public class ControllableMobAI : AttackableAI
 						return;
 					}
 					
-					if (_actor.isInsideRadius3D(npc.getLocation().ToLocation3D(), npc.getTemplate().getClanHelpRange()))
+					if (_actor.isInsideRadius3D(npc.getLocation().Location3D, npc.getTemplate().getClanHelpRange()))
 					{
 						npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
 					}
@@ -261,7 +261,7 @@ public class ControllableMobAI : AttackableAI
 			}
 			
 			setTarget(target);
-			double dist2 = _actor.calculateDistanceSq2D(target.getLocation().ToLocation2D());
+			double dist2 = _actor.calculateDistanceSq2D(target.getLocation().Location2D);
 			int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 			int maxRange = range;
 			if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
@@ -355,7 +355,7 @@ public class ControllableMobAI : AttackableAI
 		}
 		
 		Attackable me = (Attackable) _actor;
-		if (target.isAlikeDead() || !me.isInsideRadius2D(target.getLocation().ToLocation2D(), me.getAggroRange()) || (Math.Abs(_actor.getZ() - target.getZ()) > 100))
+		if (target.isAlikeDead() || !me.isInsideRadius2D(target.getLocation().Location2D, me.getAggroRange()) || (Math.Abs(_actor.getZ() - target.getZ()) > 100))
 		{
 			return false;
 		}

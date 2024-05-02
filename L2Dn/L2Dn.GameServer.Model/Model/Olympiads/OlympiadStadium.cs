@@ -167,7 +167,7 @@ public class OlympiadStadium
 			}
 
 			Location3D loc = spectatorSpawns[Rnd.get(spectatorSpawns.Length)];
-			player.enterOlympiadObserverMode(new LocationHeading(loc.X, loc.Y, loc.Z, 0), _stadiumId);
+			player.enterOlympiadObserverMode(new Location(loc.X, loc.Y, loc.Z, 0), _stadiumId);
 
 			_task.getGame().sendOlympiadInfo(player);
 		}

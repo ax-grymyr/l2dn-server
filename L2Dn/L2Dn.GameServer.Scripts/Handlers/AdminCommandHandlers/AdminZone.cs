@@ -49,7 +49,7 @@ public class AdminZone: IAdminCommandHandler
 			// Prevent exit instance variable deletion.
 			if (!activeChar.isInInstance())
 			{
-				LocationHeading loc;
+				Location loc;
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CASTLE);
 				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Castle): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
@@ -65,7 +65,7 @@ public class AdminZone: IAdminCommandHandler
 			String next = st.nextToken();
 			if (next.equalsIgnoreCase("all"))
 			{
-				foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.getLocation().ToLocation3D()))
+				foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.getLocation().Location3D))
 				{
 					zone.visualizeZone(activeChar.getZ());
 				}
@@ -111,7 +111,7 @@ public class AdminZone: IAdminCommandHandler
 		htmlContent.Replace("%TAX%", (activeChar.isInsideZone(ZoneId.TAX) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		
 		StringBuilder zones = new StringBuilder(100);
-		foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.getLocation().ToLocation3D()))
+		foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.getLocation().Location3D))
 		{
 			if (zone.getName() != null)
 			{

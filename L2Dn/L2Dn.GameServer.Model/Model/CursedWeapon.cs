@@ -632,12 +632,12 @@ public class CursedWeapon : INamable
 	{
 		if (_isActivated && (_player != null))
 		{
-			return _player.getLocation().ToLocation3D();
+			return _player.getLocation().Location3D;
 		}
 
 		if (_isDropped && (_item != null))
 		{
-			return _item.getLocation().ToLocation3D();
+			return _item.getLocation().Location3D;
 		}
 
 		return null;

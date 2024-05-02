@@ -160,7 +160,7 @@ public class SummonNpc: AbstractEffect
 					return;
 				}
 
-				spawn.Location = new LocationHeading(x, y, z, player.getHeading());
+				spawn.Location = new Location(x, y, z, player.getHeading());
 				spawn.stopRespawn();
 
 				Npc npc = spawn.doSpawn(_isSummonSpawn);

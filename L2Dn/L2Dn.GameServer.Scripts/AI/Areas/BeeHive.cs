@@ -103,11 +103,11 @@ public class BeeHive: AbstractScript
 				Npc spawn;
 				if (killer.hasPet())
 				{
-					spawn = addSpawn(isLow ? PET_70_MONSTER : PET_80_MONSTER, npc.getLocation().ToLocation3D(), npc.getLocation().Heading, false, DESPAWN_TIME);
+					spawn = addSpawn(isLow ? PET_70_MONSTER : PET_80_MONSTER, npc.getLocation().Location3D, npc.getLocation().Heading, false, DESPAWN_TIME);
 				}
 				else
 				{
-					spawn = addSpawn(isLow ? PLAYER_70_MONSTER : PLAYER_80_MONSTER, npc.getLocation().ToLocation3D(), npc.getLocation().Heading, false, DESPAWN_TIME);
+					spawn = addSpawn(isLow ? PLAYER_70_MONSTER : PLAYER_80_MONSTER, npc.getLocation().Location3D, npc.getLocation().Heading, false, DESPAWN_TIME);
 				}
 				spawn.setScriptValue(killer.getObjectId());
 				spawn.setShowSummonAnimation(true);

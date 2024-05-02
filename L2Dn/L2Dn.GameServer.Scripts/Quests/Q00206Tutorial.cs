@@ -171,7 +171,7 @@ public sealed class Q00206Tutorial: Quest
                 
                 // There is no html window.
                 player.sendPacket(new TutorialShowQuestionMarkPacket(QUESTION_MARK_ID_3, 0));
-                player.teleToLocation(new LocationHeading(115575, -178014, -904, 9808));
+                player.teleToLocation(new Location(115575, -178014, -904, 9808));
             }
         }
         else if (ev == "close_tutorial")

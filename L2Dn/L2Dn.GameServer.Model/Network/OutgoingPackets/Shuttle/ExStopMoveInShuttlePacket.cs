@@ -9,13 +9,13 @@ public readonly struct ExStopMoveInShuttlePacket: IOutgoingPacket
 {
     private readonly int _objectId;
     private readonly int _boatId;
-    private readonly LocationHeading _location;
+    private readonly Location _location;
 
     public ExStopMoveInShuttlePacket(Player player, int boatId)
     {
         _objectId = player.getObjectId();
         _boatId = boatId;
-        _location = new LocationHeading(player.getInVehiclePosition(), player.getHeading());
+        _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
     public void WriteContent(PacketBitWriter writer)

@@ -37,7 +37,7 @@ public class FieldOfMassacre: AbstractScript
             Player killer = onAttackableKill.getAttacker();
             bool isSummon = onAttackableKill.isSummon();
 
-            Npc spawnBanshee = addSpawn(GUARD_BUTCHER, npc.getLocation().ToLocation3D(), npc.getLocation().Heading, false, TimeSpan.FromMilliseconds(300000));
+            Npc spawnBanshee = addSpawn(GUARD_BUTCHER, npc.getLocation().Location3D, npc.getLocation().Heading, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon ? killer.getServitors().Values.FirstOrDefault() ?? killer.getPet() : killer;
             addAttackPlayerDesire(spawnBanshee, attacker);
             npc.deleteMe();

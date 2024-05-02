@@ -260,7 +260,7 @@ public class Util
 	public static bool isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)
 	{
 		WorldObject target = World.getInstance().findObject(targetObjId);
-		return target != null && obj.calculateDistance3D(target.getLocation().ToLocation3D()) <= radius;
+		return target != null && obj.calculateDistance3D(target.getLocation().Location3D) <= radius;
 	}
 
 	/**

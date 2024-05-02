@@ -114,7 +114,7 @@ public class SiegeGuardManager
 	{
 		foreach (Item ticket in _droppedTickets)
 		{
-			if (ticket.calculateDistance3D(player.getLocation().ToLocation3D()) < 25)
+			if (ticket.calculateDistance3D(player.getLocation().Location3D) < 25)
 			{
 				return true;
 			}
@@ -185,7 +185,7 @@ public class SiegeGuardManager
 				LOGGER.Warn("Error adding siege guard for castle " + castle.getName() + ": " + e);
 			}
 			
-			spawnMercenary(player.getLocation().ToLocation3D(), player.getHeading(), holder);
+			spawnMercenary(player.getLocation().Location3D, player.getHeading(), holder);
 			Item dropticket = new Item(itemId);
 			dropticket.setItemLocation(ItemLocation.VOID);
 			dropticket.dropMe(null, player.getX(), player.getY(), player.getZ());
@@ -248,7 +248,7 @@ public class SiegeGuardManager
 			return;
 		}
 		
-		removeSiegeGuard(holder.getNpcId(), item.getLocation().ToLocation3D());
+		removeSiegeGuard(holder.getNpcId(), item.getLocation().Location3D);
 		_droppedTickets.remove(item);
 	}
 	
@@ -269,7 +269,7 @@ public class SiegeGuardManager
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
+				spawn.Location = new Location(record.X, record.Y, record.Z, record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);
 

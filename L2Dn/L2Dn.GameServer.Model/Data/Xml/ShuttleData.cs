@@ -53,7 +53,7 @@ public class ShuttleData: DataReaderBase
 		int y = element.Attribute("y").GetInt32(0);
 		int z = element.Attribute("z").GetInt32(0);
 		int heading = element.Attribute("heading").GetInt32(0);
-		ShuttleDataHolder data = new ShuttleDataHolder(id, new LocationHeading(x, y, z, heading));
+		ShuttleDataHolder data = new ShuttleDataHolder(id, new Location(x, y, z, heading));
 
 		//string name = element.GetAttributeValueAsString("name");
 
@@ -80,19 +80,19 @@ public class ShuttleData: DataReaderBase
 
 		element.Elements("routes").Elements("route").ForEach(el =>
 		{
-			List<LocationHeading> locs = new();
+			List<Location> locs = new();
 			el.Elements("loc").ForEach(e =>
 			{
 				int locX = e.GetAttributeValueAsInt32("x");
 				int locY = e.GetAttributeValueAsInt32("y");
 				int locZ = e.GetAttributeValueAsInt32("z");
 				int locHeading = e.GetAttributeValueAsInt32("heading");
-				locs.Add(new LocationHeading(locX, locY, locZ, locHeading));
+				locs.Add(new Location(locX, locY, locZ, locHeading));
 			});
 
 			VehiclePathPoint[] route = new VehiclePathPoint[locs.size()];
 			int i = 0;
-			foreach (LocationHeading loc in locs)
+			foreach (Location loc in locs)
 				route[i++] = new VehiclePathPoint(loc);
 
 			data.addRoute(route);
@@ -108,7 +108,7 @@ public class ShuttleData: DataReaderBase
 			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()));
 			shuttle.setData(data);
 			shuttle.setHeading(data.Location.Heading);
-			shuttle.setLocationInvisible(data.Location.Location);
+			shuttle.setLocationInvisible(data.Location.Location3D);
 			shuttle.spawnMe();
 			shuttle.getStat().setMoveSpeed(300);
 			shuttle.getStat().setRotationSpeed(0);

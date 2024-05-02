@@ -193,7 +193,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		}
 		else if (Config.FACTION_SYSTEM_ENABLED)
 		{
-			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.Location);
+			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.Location3D);
 		}
 		else
 		{

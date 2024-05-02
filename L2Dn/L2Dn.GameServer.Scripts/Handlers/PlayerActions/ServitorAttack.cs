@@ -26,7 +26,7 @@ public class ServitorAttack: IPlayerActionHandler
 			return;
 		}
 		
-		bool targetOutOfRange = player.calculateDistance3D(target.getLocation().ToLocation3D()) > 3000;
+		bool targetOutOfRange = player.calculateDistance3D(target.getLocation().Location3D) > 3000;
 		foreach (Summon summon in player.getServitors().values())
 		{
 			if (targetOutOfRange)

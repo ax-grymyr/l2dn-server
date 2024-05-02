@@ -86,11 +86,11 @@ public class AutoPlayTaskManager
 								if (monster.checkSpoilOwner(player, false))
 								{
 									// Move to target.
-									if (player.calculateDistance2D(target.getLocation().ToLocation2D()) > 40)
+									if (player.calculateDistance2D(target.getLocation().Location2D) > 40)
 									{
 										if (!player.isMoving())
 										{
-											player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation().ToLocation3D());
+											player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation().Location3D);
 										}
 										continue; // play
 									}
@@ -229,11 +229,11 @@ public class AutoPlayTaskManager
 						}
 						
 						// Move to item.
-						if (player.calculateDistance2D(droppedItem.getLocation().ToLocation2D()) > 70)
+						if (player.calculateDistance2D(droppedItem.getLocation().Location2D) > 70)
 						{
 							if (!player.isMoving())
 							{
-								player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, droppedItem.getLocation().ToLocation3D());
+								player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, droppedItem.getLocation().Location3D);
 							}
 
 							gotoPlay = true;
@@ -260,7 +260,7 @@ public class AutoPlayTaskManager
 				Player leader = party == null ? null : party.getLeader();
 				if (Config.ENABLE_AUTO_ASSIST && (party != null) && (leader != null) && (leader != player) && !leader.isDead())
 				{
-					if (leader.calculateDistance3D(player.getLocation().ToLocation3D()) < (Config.ALT_PARTY_RANGE * 2 /* 2? */))
+					if (leader.calculateDistance3D(player.getLocation().Location3D) < (Config.ALT_PARTY_RANGE * 2 /* 2? */))
 					{
 						WorldObject leaderTarget = leader.getTarget();
 						if ((leaderTarget != null) && (leaderTarget.isAttackable() || (leaderTarget.isPlayable() && !party.containsPlayer(leaderTarget.getActingPlayer()))))
@@ -299,7 +299,7 @@ public class AutoPlayTaskManager
 						// Check if creature is reachable.
 						if ((Math.Abs(player.getZ() - nearby.getZ()) < 180) && GeoEngine.getInstance().canSeeTarget(player, nearby) && GeoEngine.getInstance().canMoveToTarget(player.getX(), player.getY(), player.getZ(), nearby.getX(), nearby.getY(), nearby.getZ(), player.getInstanceWorld()))
 						{
-							double creatureDistance = player.calculateDistance2D(nearby.getLocation().ToLocation2D());
+							double creatureDistance = player.calculateDistance2D(nearby.getLocation().Location2D);
 							if (creatureDistance < closestDistance)
 							{
 								creature = nearby;

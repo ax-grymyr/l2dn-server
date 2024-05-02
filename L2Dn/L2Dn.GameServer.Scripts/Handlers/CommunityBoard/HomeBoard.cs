@@ -138,7 +138,7 @@ public class HomeBoard: IParseBoardHandler
 			{
 				player.sendMessage("Not enough currency!");
 			}
-			else if (Config.COMMUNITY_AVAILABLE_TELEPORTS.TryGetValue(teleBuypass, out LocationHeading value))
+			else if (Config.COMMUNITY_AVAILABLE_TELEPORTS.TryGetValue(teleBuypass, out Location value))
 			{
 				player.disableAllSkills();
 				player.sendPacket(new ShowBoardPacket(false, string.Empty));

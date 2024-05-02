@@ -187,7 +187,7 @@ public class AdminTeleport: IAdminCommandHandler
 				Player player = World.getInstance().getPlayer(targetName);
 				if (player != null)
 				{
-					teleportCharacter(player, activeChar.getLocation().ToLocation3D(), activeChar);
+					teleportCharacter(player, activeChar.getLocation().Location3D, activeChar);
 				}
 				else
 				{
@@ -241,7 +241,7 @@ public class AdminTeleport: IAdminCommandHandler
 				{
 					z -= intVal;
 				}
-				activeChar.teleToLocation(new LocationHeading(x, y, z, 0));
+				activeChar.teleToLocation(new Location(x, y, z, 0));
 				showTeleportWindow(activeChar);
 			}
 			catch (Exception e)
@@ -331,7 +331,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 		}
 		
-		player.teleToLocation(new LocationHeading(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), 0), true, null);
+		player.teleToLocation(new Location(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), 0), true, null);
 	}
 	
 	private void teleportTo(Player activeChar, String coords)
@@ -438,7 +438,7 @@ public class AdminTeleport: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "You have recalled " + player.getName());
 				player.sendMessage("Admin is teleporting you.");
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				player.teleToLocation(new LocationHeading(loc, 0), true, activeChar.getInstanceWorld());
+				player.teleToLocation(new Location(loc, 0), true, activeChar.getInstanceWorld());
 			}
 		}
 	}

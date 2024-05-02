@@ -118,7 +118,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 		player.abortCast();
 		player.stopMove(null);
 		
-		player.setTeleportLocation(new LocationHeading(location, 0));
+		player.setTeleportLocation(new Location(location, 0));
 		player.doCast(CommonSkill.TELEPORT.getSkill());
 		player.sendPacket(new ExRaidTeleportInfoPacket(player));
 

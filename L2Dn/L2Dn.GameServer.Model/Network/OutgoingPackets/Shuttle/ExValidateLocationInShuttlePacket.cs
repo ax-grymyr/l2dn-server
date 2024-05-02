@@ -9,13 +9,13 @@ public readonly struct ExValidateLocationInShuttlePacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly int _shipId;
-    private readonly LocationHeading _location;
+    private readonly Location _location;
 
     public ExValidateLocationInShuttlePacket(Player player)
     {
         _player = player;
         _shipId = _player.getShuttle().getObjectId();
-        _location = new LocationHeading(player.getInVehiclePosition(), player.getHeading());
+        _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
     public void WriteContent(PacketBitWriter writer)

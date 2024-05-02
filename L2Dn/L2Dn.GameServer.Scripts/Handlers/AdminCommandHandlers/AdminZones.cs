@@ -210,7 +210,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void buildZonesEditorWindow(Player activeChar)
 	{
 		StringBuilder sb = new StringBuilder();
-		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.getLocation().ToLocation3D());
+		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.getLocation().Location3D);
 		foreach (ZoneType zone in zones)
 		{
 			if (zone.getZone() is ZoneNPoly)
@@ -234,7 +234,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void loadZone(Player activeChar, string zoneName)
 	{
 		BuilderUtil.sendSysMessage(activeChar, "Searching for zone: " + zoneName);
-		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.getLocation().ToLocation3D());
+		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.getLocation().Location3D);
 		ZoneType zoneType = null;
 		foreach (ZoneType zone in zones)
 		{
@@ -507,7 +507,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				int minZ = holder.getMinZ() != 0 ? holder.getMinZ() : firstLoc.Z - 100;
 				int maxZ = holder.getMaxZ() != 0 ? holder.getMaxZ() : firstLoc.Z + 100;
 
-				List<Location2D> vertices = list.Select(x => x.ToLocation2D()).ToList();
+				List<Location2D> vertices = list.Select(x => x.Location2D).ToList();
 				ExShowTerritoryPacket exst = new(minZ, maxZ, vertices);
 				player.sendPacket(exst);
 				BuilderUtil.sendSysMessage(player, "In order to remove the debug you must restart your game client!");

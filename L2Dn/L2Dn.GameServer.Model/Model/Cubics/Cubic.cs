@@ -333,7 +333,7 @@ public class Cubic: Creature
 		return _owner.getInstanceWorld();
 	}
 	
-	public override LocationHeading getLocation()
+	public override Location getLocation()
 	{
 		return _owner.getLocation();
 	}

@@ -238,7 +238,7 @@ public class TeleportHolder
 		}
 		else if (!player.isAlikeDead())
 		{
-			player.teleToLocation(new LocationHeading(loc.Location, 0));
+			player.teleToLocation(new Location(loc.Location, 0));
 		}
 	}
 

@@ -30,7 +30,7 @@ public class TeleportToTeleportLocation: AbstractEffect
 			return;
 		}
 		
-		LocationHeading? location = player.getTeleportLocation();
+		Location? location = player.getTeleportLocation();
 		if (location != null)
 		{
 			player.teleToLocation(location.Value);

@@ -34,7 +34,7 @@ public class SharedTeleportManager
 	{
 		int nextId = ++_lastSharedTeleportId;
 		_sharedTeleports.put(nextId, new SharedTeleportHolder(nextId, creature.getName(), TELEPORT_COUNT,
-			creature.getLocation().ToLocation3D()));
+			creature.getLocation().Location3D));
 
 		return nextId;
 	}

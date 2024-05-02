@@ -108,7 +108,7 @@ public static class LocationExtensions
     /// <returns></returns>
     public static Position PositionTo<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
-        where TTo: ILocationHeading
+        where TTo: ILocation
     {
         // heading: (unsigned short) abs(heading - (unsigned short)(int)floor(atan2(toY - fromY, toX - fromX) * 65535.0 / 6.283185307179586))
         // side: if (heading >= 0x2000 && heading <= 0x6000 || (unsigned int)(heading - 0xA000) <= 0x4000)
@@ -123,13 +123,13 @@ public static class LocationExtensions
 
     public static bool IsInFrontOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
-        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Front;
+        where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Front;
 
     public static bool IsOnSideOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
-        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Side;
+        where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Side;
 
     public static bool IsBehindOf<TFrom, TTo>(this TFrom attackerLocation, TTo targetLocation)
         where TFrom: ILocation3D
-        where TTo: ILocationHeading => attackerLocation.PositionTo(targetLocation) == Position.Back;
+        where TTo: ILocation => attackerLocation.PositionTo(targetLocation) == Position.Back;
 }

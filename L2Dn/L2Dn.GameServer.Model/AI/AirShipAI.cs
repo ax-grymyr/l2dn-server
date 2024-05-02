@@ -22,7 +22,7 @@ public class AirShipAI: VehicleAI
         }
     }
 
-    public override void clientStopMoving(LocationHeading? loc)
+    public override void clientStopMoving(Location? loc)
     {
         if (_actor.isMoving())
         {

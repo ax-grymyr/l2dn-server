@@ -699,7 +699,7 @@ public class CreatureAI: AbstractAI
 	 * <li>Launch actions corresponding to the Event Think</li>
 	 * </ul>
 	 */
-	protected override void onEvtArrivedBlocked(LocationHeading location)
+	protected override void onEvtArrivedBlocked(Location location)
 	{
 		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
 		if ((getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO) || (getIntention() == CtrlIntention.AI_INTENTION_CAST))
@@ -858,7 +858,7 @@ public class CreatureAI: AbstractAI
 			return false; // skill radius -1
 		}
 		
-		if (!_actor.isInsideRadius2D(worldPosition.ToLocation2D(), offset + _actor.getTemplate().getCollisionRadius()))
+		if (!_actor.isInsideRadius2D(worldPosition.Location2D, offset + _actor.getTemplate().getCollisionRadius()))
 		{
 			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 			{
@@ -933,13 +933,13 @@ public class CreatureAI: AbstractAI
 			offsetWithCollision += ((Creature) target).getTemplate().getCollisionRadius();
 		}
 		
-		if (!_actor.isInsideRadius2D(target.getLocation().ToLocation2D(), offsetWithCollision))
+		if (!_actor.isInsideRadius2D(target.getLocation().Location2D, offsetWithCollision))
 		{
 			// Caller should be Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
 			if (isFollowing())
 			{
 				// allow larger hit range when the target is moving (check is run only once per second)
-				if (!_actor.isInsideRadius2D(target.getLocation().ToLocation2D(), offsetWithCollision + 100))
+				if (!_actor.isInsideRadius2D(target.getLocation().Location2D, offsetWithCollision + 100))
 				{
 					return true;
 				}
@@ -1053,7 +1053,7 @@ public class CreatureAI: AbstractAI
 	protected bool checkTargetLost(WorldObject target)
 	{
 		if (target == null || (_actor != null && _skill != null && _skill.isBad() && _skill.getAffectRange() > 0 && (_actor.isPlayer() && _actor.isMoving() ? 
-			    !GeoEngine.getInstance().canMoveToTarget(_actor.getLocation().ToLocation3D(), target.getLocation().ToLocation3D()) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
+			    !GeoEngine.getInstance().canMoveToTarget(_actor.getLocation().Location3D, target.getLocation().Location3D) : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			return true;

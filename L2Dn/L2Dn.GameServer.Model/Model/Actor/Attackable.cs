@@ -403,7 +403,7 @@ public class Attackable: Npc
 					{
 						foreach (Player p in command.getMembers())
 						{
-							if (p.calculateDistance3D(this.getLocation().ToLocation3D()) < Config.ALT_PARTY_RANGE)
+							if (p.calculateDistance3D(this.getLocation().Location3D) < Config.ALT_PARTY_RANGE)
 							{
 								members.Add(p);
 							}
@@ -413,7 +413,7 @@ public class Attackable: Npc
 					{
 						foreach (Player p in player.getParty().getMembers())
 						{
-							if (p.calculateDistance3D(this.getLocation().ToLocation3D()) < Config.ALT_PARTY_RANGE)
+							if (p.calculateDistance3D(this.getLocation().Location3D) < Config.ALT_PARTY_RANGE)
 							{
 								members.Add(p);
 							}
@@ -1698,7 +1698,7 @@ public class Attackable: Npc
 		
 		if (hasAI() && (getSpawn() != null))
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 		}
 	}
 	

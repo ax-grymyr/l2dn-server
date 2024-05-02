@@ -99,7 +99,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 		}
 
 		// Players may not be too far apart
-		if (!player.isInsideRadius2D(targetChar.getLocation().ToLocation2D(), 250))
+		if (!player.isInsideRadius2D(targetChar.getLocation().Location2D, 250))
 		{
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_IS_TOO_FAR_AWAY_TO_RECEIVE_A_DUEL_CHALLENGE);
 			msg.Params.addString(targetChar.getName());

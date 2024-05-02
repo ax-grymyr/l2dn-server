@@ -46,10 +46,10 @@ public class LongTimeEvent: Quest
 	protected class NpcSpawn
 	{
 		public readonly int npcId;
-		public readonly LocationHeading loc;
+		public readonly Location loc;
 		public readonly TimeSpan respawnTime;
 
-		public NpcSpawn(int spawnNpcId, LocationHeading spawnLoc, TimeSpan spawnRespawnTime)
+		public NpcSpawn(int spawnNpcId, Location spawnLoc, TimeSpan spawnRespawnTime)
 		{
 			npcId = spawnNpcId;
 			loc = spawnLoc;
@@ -89,7 +89,7 @@ public class LongTimeEvent: Quest
 		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
 		foreach (NpcSpawn npcSpawn in _spawnList)
 		{
-			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.Location, npcSpawn.loc.Heading, false, millisToEventEnd, false);
+			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.Location3D, npcSpawn.loc.Heading, false, millisToEventEnd, false);
 			TimeSpan respawnDelay = npcSpawn.respawnTime;
 			if (respawnDelay > TimeSpan.Zero)
 			{
@@ -231,7 +231,7 @@ public class LongTimeEvent: Quest
 								}
 
 								_spawnList.add(
-									new NpcSpawn(npcId, new LocationHeading(xPos, yPos, zPos, heading), respawnTime));
+									new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading), respawnTime));
 							}
 							catch (FormatException nfe)
 							{

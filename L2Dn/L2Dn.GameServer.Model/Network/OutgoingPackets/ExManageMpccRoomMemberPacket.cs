@@ -28,7 +28,7 @@ public readonly struct ExManageMpccRoomMemberPacket: IOutgoingPacket
         writer.WriteString(_player.getName());
         writer.WriteInt32((int)_player.getClassId());
         writer.WriteInt32(_player.getLevel());
-        writer.WriteInt32(MapRegionManager.getInstance().getBBs(_player.getLocation().ToLocation2D()));
+        writer.WriteInt32(MapRegionManager.getInstance().getBBs(_player.getLocation().Location2D));
         writer.WriteInt32((int)_memberType);
     }
 }

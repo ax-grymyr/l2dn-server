@@ -110,8 +110,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		bool result = true;
 		try
 		{
-			result &= portPlayerToArena(_playerOne, new LocationHeading(spawns[0], 0), _stadiumId, instance);
-			result &= portPlayerToArena(_playerTwo, new LocationHeading(spawns[spawns.Length / 2], 0), _stadiumId, instance);
+			result &= portPlayerToArena(_playerOne, new Location(spawns[0], 0), _stadiumId, instance);
+			result &= portPlayerToArena(_playerTwo, new Location(spawns[spawns.Length / 2], 0), _stadiumId, instance);
 		}
 		catch (Exception e)
 		{

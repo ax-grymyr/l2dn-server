@@ -34,7 +34,7 @@ public sealed class SiegableHallZone(int id): ClanHallZone(id)
 		{
 			if (player != null && player.isInHideoutSiege())
 			{
-				player.teleToLocation(new LocationHeading(getBanishSpawnLoc(), 0), true);
+				player.teleToLocation(new Location(getBanishSpawnLoc(), 0), true);
 			}
 		}
 	}

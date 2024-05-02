@@ -63,7 +63,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    WorldObject target = player.getTarget();
 	    if (!player.isGM() && (target == null // No target (i.e. GM Shop)
 	                           || !(target is Merchant) // Target not a merchant
-	                           || !player.isInsideRadius2D(target.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE) // Distance is too far
+	                           || !player.isInsideRadius2D(target.getLocation().Location2D, Npc.INTERACTION_DISTANCE) // Distance is too far
 	        ))
 	    {
 		    return ValueTask.CompletedTask;

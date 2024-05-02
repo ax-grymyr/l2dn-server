@@ -62,12 +62,12 @@ public class AdminClanHall: IAdminCommandHandler
 						{
 							case "inside":
 							{
-								player.teleToLocation(new LocationHeading(clanHall.getOwnerLocation(), 0));
+								player.teleToLocation(new Location(clanHall.getOwnerLocation(), 0));
 								break;
 							}
 							case "outside":
 							{
-								player.teleToLocation(new LocationHeading(clanHall.getBanishLocation(), 0));
+								player.teleToLocation(new Location(clanHall.getBanishLocation(), 0));
 								break;
 							}
 						}

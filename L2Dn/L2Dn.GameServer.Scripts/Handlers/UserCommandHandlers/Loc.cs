@@ -22,7 +22,7 @@ public class Loc: IUserCommandHandler
 	public bool useUserCommand(int id, Player player)
 	{
 		SystemMessageId systemMessageId;
-		RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().ToLocation3D());
+		RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().Location3D);
 		if (zone != null)
 		{
 			systemMessageId = (SystemMessageId)MapRegionManager.getInstance()

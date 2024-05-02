@@ -2373,7 +2373,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			temp = partyMember.getQuestState(Name);
-			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember.isInsideRadius3D(target.getLocation().ToLocation3D(), Config.ALT_PARTY_RANGE))
+			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember.isInsideRadius3D(target.getLocation().Location3D, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
 			}
@@ -2436,7 +2436,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			temp = partyMember.getQuestState(Name);
-			if (temp != null && temp.getState() == state && partyMember.isInsideRadius3D(target.getLocation().ToLocation3D(), Config.ALT_PARTY_RANGE))
+			if (temp != null && temp.getState() == state && partyMember.isInsideRadius3D(target.getLocation().Location3D, Config.ALT_PARTY_RANGE))
 			{
 				candidates.add(partyMember);
 			}
@@ -3140,7 +3140,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 	}
 	
-	public void teleportToQuestLocation(Player player, LocationHeading loc)
+	public void teleportToQuestLocation(Player player, Location loc)
 	{
 		if (player.isDead())
 		{

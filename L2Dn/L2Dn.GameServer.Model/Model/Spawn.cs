@@ -27,7 +27,7 @@ public class Spawn : IIdentifiable, INamable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Spawn));
 
-	private LocationHeading _location;
+	private Location _location;
 
 	/** String identifier of this spawn */
 	private string _name;
@@ -80,7 +80,7 @@ public class Spawn : IIdentifiable, INamable
 	public Spawn(NpcTemplate template)
 	{
 		_template = template ?? throw new ArgumentException("NpcTemplate not defined for NPC");
-		_location = new LocationHeading(0, 0, -10000, 0);
+		_location = new Location(0, 0, -10000, 0);
 	}
 
 	/**
@@ -96,10 +96,10 @@ public class Spawn : IIdentifiable, INamable
 		if (_template is null)
 			throw new ArgumentException("NpcTemplate not found for NPC ID: " + npcId);
 
-		_location = new LocationHeading(0, 0, -10000, 0);
+		_location = new Location(0, 0, -10000, 0);
 	}
 
-	public LocationHeading Location
+	public Location Location
 	{
 		get => _location;
 		set => _location = value;
@@ -352,7 +352,7 @@ public class Spawn : IIdentifiable, INamable
 		// If Locx and Locy are not defined, the Npc must be spawned in an area defined by location or spawn territory.
 		if (_spawnTemplate != null)
 		{
-			LocationHeading? loc = _spawnTemplate.getSpawnLocation();
+			Location? loc = _spawnTemplate.getSpawnLocation();
 			if (loc != null)
 			{
 				newlocx = loc.Value.X;
@@ -397,7 +397,7 @@ public class Spawn : IIdentifiable, INamable
 			{
 				newlocx = randX;
 				newlocy = randY;
-				_location = new LocationHeading(newlocx, newlocy, newlocz, -1);
+				_location = new Location(newlocx, newlocy, newlocz, -1);
 			}
 		}
 

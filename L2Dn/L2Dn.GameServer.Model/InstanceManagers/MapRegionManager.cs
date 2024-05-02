@@ -154,7 +154,7 @@ public class MapRegionManager: DataReaderBase
 	 * @param teleportWhere
 	 * @return
 	 */
-	public LocationHeading getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
+	public Location getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
 	{
 		if (creature.isPlayer())
 		{
@@ -168,7 +168,7 @@ public class MapRegionManager: DataReaderBase
 					ClanHall? clanhall = ClanHallData.getInstance().getClanHallByClan(player.getClan());
 					if (clanhall != null && !player.isFlyingMounted())
 					{
-						return new LocationHeading(clanhall.getOwnerLocation(), 0);
+						return new Location(clanhall.getOwnerLocation(), 0);
 					}
 				}
 				
@@ -191,10 +191,10 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return new LocationHeading(castle.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
+							return new Location(castle.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
 						}
 
-						return new LocationHeading(castle.getResidenceZone().getSpawnLoc(), player.getHeading());
+						return new Location(castle.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
 				
@@ -218,9 +218,9 @@ public class MapRegionManager: DataReaderBase
 					{
 						if (player.getReputation() < 0)
 						{
-							return new LocationHeading(fort.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
+							return new Location(fort.getResidenceZone().getChaoticSpawnLoc(), player.getHeading());
 						}
-						return new LocationHeading(fort.getResidenceZone().getSpawnLoc(), player.getHeading());
+						return new Location(fort.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
 				
@@ -265,14 +265,14 @@ public class MapRegionManager: DataReaderBase
 				Location3D? exitLocation = timedHuntingZone.getExitLocation();
 				if (exitLocation != null)
 				{
-					return new LocationHeading(exitLocation.Value, 0);
+					return new Location(exitLocation.Value, 0);
 				}
 			}
 			
 			// Karma player land out of city
 			if (player.getReputation() < 0)
 			{
-				return new LocationHeading(getNearestKarmaRespawn(player), 0);
+				return new Location(getNearestKarmaRespawn(player), 0);
 			}
 			
 			// Checking if needed to be respawned in "far" town from the castle;
@@ -280,7 +280,7 @@ public class MapRegionManager: DataReaderBase
 			castle = CastleManager.getInstance().getCastle(player);
 			if (castle != null && castle.getSiege().isInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))
 			{
-				return new LocationHeading(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
+				return new Location(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
 			}
 			
 			// Checking if in an instance
@@ -290,7 +290,7 @@ public class MapRegionManager: DataReaderBase
 				Location3D? loc = inst.getExitLocation(player);
 				if (loc != null)
 				{
-					return new LocationHeading(loc.Value, 0);
+					return new Location(loc.Value, 0);
 				}
 			}
 		}
@@ -308,14 +308,14 @@ public class MapRegionManager: DataReaderBase
 		}
 		
 		// Get the nearest town
-		return new LocationHeading(getNearestTownRespawn(creature), 0);
+		return new Location(getNearestTownRespawn(creature), 0);
 	}
 	
 	public Location3D getNearestKarmaRespawn(Player player)
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().ToLocation3D());
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.getLocation().Location3D);
 			if (zone != null)
 			{
 				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
@@ -342,7 +342,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.getLocation().ToLocation3D());
+			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.getLocation().Location3D);
 			if (zone != null)
 			{
 				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();

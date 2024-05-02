@@ -277,7 +277,7 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ARRIVED_BLOCKED:
 			{
-				onEvtArrivedBlocked((LocationHeading)arg0);
+				onEvtArrivedBlocked((Location)arg0);
 				break;
 			}
 			case CtrlEvent.EVT_FORGET_OBJECT:
@@ -356,7 +356,7 @@ public abstract class AbstractAI : Ctrl
 	
 	protected abstract void onEvtArrivedRevalidate();
 	
-	protected abstract void onEvtArrivedBlocked(LocationHeading location);
+	protected abstract void onEvtArrivedBlocked(Location location);
 	
 	protected abstract void onEvtForgetObject(WorldObject @object);
 	
@@ -502,7 +502,7 @@ public abstract class AbstractAI : Ctrl
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
 	 * @param loc
 	 */
-	public virtual void clientStopMoving(LocationHeading? loc) // TODO: overload without argument
+	public virtual void clientStopMoving(Location? loc) // TODO: overload without argument
 	{
 		// Stop movement of the Creature
 		if (_actor.isMoving())

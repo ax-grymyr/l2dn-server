@@ -104,14 +104,14 @@ public class Observation: IBypassHandler
 			return false;
 		}
 		int[] locCost = LOCATIONS[param];
-		LocationHeading loc = new LocationHeading(locCost[0], locCost[1], locCost[2], 0);
+		Location loc = new Location(locCost[0], locCost[1], locCost[2], 0);
 		long cost = locCost[3];
 		
 		switch (_command)
 		{
 			case "observesiege":
 			{
-				if (SiegeManager.getInstance().getSiege(loc.Location) != null)
+				if (SiegeManager.getInstance().getSiege(loc.Location3D) != null)
 				{
 					doObserve(player, (Npc) target, loc, cost);
 				}
@@ -135,7 +135,7 @@ public class Observation: IBypassHandler
 		return false;
 	}
 	
-	private void doObserve(Player player, Npc npc, LocationHeading pos, long cost)
+	private void doObserve(Player player, Npc npc, Location pos, long cost)
 	{
 		if (player.reduceAdena("Broadcast", cost, npc, true))
 		{

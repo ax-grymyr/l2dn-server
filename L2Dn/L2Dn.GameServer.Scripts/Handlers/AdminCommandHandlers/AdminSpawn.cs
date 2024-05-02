@@ -620,7 +620,7 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location = new LocationHeading(x, y, z, h);
+			spawn.Location = new Location(x, y, z, h);
 			spawn.setAmount(1);
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(60));
 			if (activeChar.isInInstance())

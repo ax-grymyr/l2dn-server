@@ -19,7 +19,7 @@ public abstract class ResidenceZone(int id): ZoneRespawn(id)
 				continue;
 			}
 
-			temp.teleToLocation(new LocationHeading(getBanishSpawnLoc(), 0), true);
+			temp.teleToLocation(new Location(getBanishSpawnLoc(), 0), true);
 		}
 	}
 

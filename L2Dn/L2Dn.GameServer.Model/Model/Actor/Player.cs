@@ -235,7 +235,7 @@ public class Player: Playable
 	private Location3D? _lastLoc;
 	private bool _observerMode;
 	
-	private LocationHeading? _teleportLocation;
+	private Location? _teleportLocation;
 	
 	/** Stored from last ValidatePosition **/
 	private Location3D _lastServerPosition;
@@ -1251,14 +1251,14 @@ public class Player: Playable
 		}
 		
 		Npc target = _lastFolkNpc;
-		if ((target != null) && isInsideRadius2D(target.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
+		if ((target != null) && isInsideRadius2D(target.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
 		{
 			quest.notifyEvent(ev, target, this);
 		}
 		else if (_questNpcObject > 0)
 		{
 			WorldObject obj = World.getInstance().findObject(getLastQuestNpcObject());
-			if ((obj != null) && obj.isNpc() && isInsideRadius2D(obj.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
+			if ((obj != null) && obj.isNpc() && isInsideRadius2D(obj.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
 			{
 				Npc npc = (Npc) obj;
 				quest.notifyEvent(ev, npc, this);
@@ -1557,14 +1557,14 @@ public class Player: Playable
 		}
 		
 		// This function is called too often from movement code.
-		if (!force && (calculateDistance3D(_lastZoneValidateLocation) < 100))
+		if (!force && (this.calculateDistance3D(_lastZoneValidateLocation) < 100))
 		{
 			return;
 		}
 
-		_lastZoneValidateLocation = getLocation().ToLocation3D();
+		_lastZoneValidateLocation = getLocation().Location3D;
 
-		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.revalidateZones(this);
+		ZoneManager.getInstance().getRegion(getLocation().Location2D)?.revalidateZones(this);
 		
 		if (Config.ALLOW_WATER)
 		{
@@ -4049,7 +4049,7 @@ public class Player: Playable
 		
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
 		{
-			if (!isVisibleFor(player) || (calculateDistance3D(player.getLocation().ToLocation3D()) >= radiusInKnownlist))
+			if (!isVisibleFor(player) || (this.calculateDistance3D(player.getLocation().Location3D) >= radiusInKnownlist))
 			{
 				return;
 			}
@@ -9186,7 +9186,7 @@ public class Player: Playable
 		}
 	}
 	
-	public void enterObserverMode(LocationHeading loc)
+	public void enterObserverMode(Location loc)
 	{
 		setLastLocation();
 		
@@ -9194,7 +9194,7 @@ public class Player: Playable
 		getEffectList().stopEffects(AbnormalType.HIDE);
 		
 		setObserving(true);
-		sendPacket(new ObservationModePacket(loc.Location));
+		sendPacket(new ObservationModePacket(loc.Location3D));
 		teleToLocation(loc, false);
 		broadcastUserInfo();
 	}
@@ -9209,7 +9209,7 @@ public class Player: Playable
 		_lastLoc = null;
 	}
 	
-	public void enterOlympiadObserverMode(LocationHeading loc, int id)
+	public void enterOlympiadObserverMode(Location loc, int id)
 	{
 		if (_pet != null)
 		{
@@ -9260,9 +9260,9 @@ public class Player: Playable
 	{
 		setTarget(null);
 		setInstance(null);
-		teleToLocation(new LocationHeading(_lastLoc.Value, 0), false);
+		teleToLocation(new Location(_lastLoc.Value, 0), false);
 		unsetLastLocation();
-		sendPacket(new ObservationReturnPacket(getLocation().ToLocation3D()));
+		sendPacket(new ObservationReturnPacket(getLocation().Location3D));
 		setBlockActions(false);
 		if (!isGM())
 		{
@@ -9290,7 +9290,7 @@ public class Player: Playable
 		setTarget(null);
 		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
-		teleToLocation(new LocationHeading(_lastLoc.Value, 0), true);
+		teleToLocation(new Location(_lastLoc.Value, 0), true);
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -10330,7 +10330,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().ToLocation3D()))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().Location3D))
 			{
 				zone.onPlayerLoginInside(this);
 			}
@@ -10601,7 +10601,7 @@ public class Player: Playable
 		}
 	}
 
-	public override void teleToLocation(LocationHeading loc, bool allowRandomOffset)
+	public override void teleToLocation(Location loc, bool allowRandomOffset)
 	{
 		if ((_vehicle != null) && !_vehicle.isTeleporting())
 		{
@@ -10731,12 +10731,12 @@ public class Player: Playable
 		}
 	}
 	
-	public void setTeleportLocation(LocationHeading? location)
+	public void setTeleportLocation(Location? location)
 	{
 		_teleportLocation = location;
 	}
 	
-	public LocationHeading? getTeleportLocation()
+	public Location? getTeleportLocation()
 	{
 		return _teleportLocation;
 	}
@@ -10991,7 +10991,7 @@ public class Player: Playable
 		
 		try
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().ToLocation3D()))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().Location3D))
 			{
 				zone.onPlayerLogoutInside(this);
 			}
@@ -11165,7 +11165,7 @@ public class Player: Playable
 		getEffectList().stopAllToggles();
 		
 		// Remove from world regions zones.
-		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().Location2D);
 		if (region != null)
 		{
 			region.removeFromZones(this);
@@ -12505,7 +12505,7 @@ public class Player: Playable
 			}
 			
 			destroyItem("Consume", _inventory.getItemByItemId(13016).getObjectId(), 1, null, false);
-			setTeleportLocation(new LocationHeading(bookmark.Location, 0));
+			setTeleportLocation(new Location(bookmark.Location, 0));
 			doCast(CommonSkill.MY_TELEPORT.getSkill());
 		}
 		sendPacket(new ExGetBookMarkInfoPacket(this));
@@ -12678,13 +12678,13 @@ public class Player: Playable
 	{
 		if (isInBoat())
 		{
-			setXYZ(getBoat().getLocation().ToLocation3D());
+			setXYZ(getBoat().getLocation().Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new GetOnVehiclePacket(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
 		}
 		else if (isInAirShip())
 		{
-			setXYZ(getAirShip().getLocation().ToLocation3D());
+			setXYZ(getAirShip().getLocation().Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new ExGetOnAirShipPacket(this, getAirShip()));
 		}

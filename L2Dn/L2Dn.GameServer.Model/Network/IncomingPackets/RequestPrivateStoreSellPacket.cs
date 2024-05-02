@@ -84,7 +84,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
         // }
 		
         Player storePlayer = World.getInstance().getPlayer(_storePlayerId);
-        if ((storePlayer == null) || !player.isInsideRadius3D(storePlayer.getLocation().ToLocation3D(), Npc.INTERACTION_DISTANCE))
+        if ((storePlayer == null) || !player.isInsideRadius3D(storePlayer.getLocation().Location3D, Npc.INTERACTION_DISTANCE))
             return ValueTask.CompletedTask;
 		
         if (player.getInstanceWorld() != storePlayer.getInstanceWorld())

@@ -102,9 +102,9 @@ public class CreatureFollowTaskManager
 					}
 					
 					int followRange = range == -1 ? Rnd.get(50, 100) : range;
-					if (!creature.isInsideRadius3D(followTarget.getLocation().ToLocation3D(), followRange))
+					if (!creature.isInsideRadius3D(followTarget.getLocation().Location3D, followRange))
 					{
-						if (!creature.isInsideRadius3D(followTarget.getLocation().ToLocation3D(), 3000))
+						if (!creature.isInsideRadius3D(followTarget.getLocation().Location3D, 3000))
 						{
 							// If the target is too far (maybe also teleported).
 							if (creature.isSummon())

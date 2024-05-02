@@ -67,13 +67,13 @@ public class FortCommander : Defender
 	 */
 	public override void returnHome()
 	{
-		if (!isInsideRadius2D(getSpawn().Location.Location.ToLocation2D(), 200))
+		if (!isInsideRadius2D(getSpawn().Location.Location2D, 200))
 		{
 			clearAggroList();
 			
 			if (hasAI())
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 			}
 		}
 	}

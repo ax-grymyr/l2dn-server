@@ -49,7 +49,7 @@ public class TeleportZone : ZoneType
 	{
 		if (isEnabled())
 		{
-			creature.teleToLocation(new LocationHeading(_x, _y, _z, 0));
+			creature.teleToLocation(new Location(_x, _y, _z, 0));
 		}
 	}
 	

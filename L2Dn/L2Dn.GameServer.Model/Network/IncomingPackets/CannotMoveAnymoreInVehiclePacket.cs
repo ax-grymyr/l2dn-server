@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct CannotMoveAnymoreInVehiclePacket: IIncomingPacket<GameSession>
 {
     private int _boatId;
-    private LocationHeading _location;
+    private Location _location;
 
     public void ReadContent(PacketBitReader reader)
     {
@@ -27,7 +27,7 @@ public struct CannotMoveAnymoreInVehiclePacket: IIncomingPacket<GameSession>
 
         if (player.isInBoat() && (player.getBoat().getObjectId() == _boatId))
         {
-            player.setInVehiclePosition(_location.Location);
+            player.setInVehiclePosition(_location.Location3D);
             player.setHeading(_location.Heading);
             player.broadcastPacket(new StopMoveInVehiclePacket(player, _boatId));
         }

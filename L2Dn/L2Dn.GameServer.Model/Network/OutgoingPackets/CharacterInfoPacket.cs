@@ -56,7 +56,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	private readonly Player _player;
 	private readonly Clan _clan;
 	private int _objId;
-	private LocationHeading _location;
+	private Location _location;
 	private readonly int _mAtkSpd;
 	private readonly int _pAtkSpd;
 	private readonly int _runSpd;
@@ -79,7 +79,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		_clan = player.getClan();
 		if (_player.getVehicle() != null && _player.getInVehiclePosition() != null)
 		{
-			_location = new LocationHeading(_player.getInVehiclePosition(), _player.getHeading());
+			_location = new Location(_player.getInVehiclePosition(), _player.getHeading());
 			_vehicleId = _player.getVehicle().getObjectId();
 		}
 		else
@@ -113,7 +113,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHAR_INFO);
 		writer.WriteByte(0); // Grand Crusade
-		writer.WriteLocation3D(_location.Location); // Confirmed
+		writer.WriteLocation3D(_location.Location3D); // Confirmed
 		writer.WriteInt32(_vehicleId); // Confirmed
 		writer.WriteInt32(_objId); // Confirmed
 		writer.WriteString(_player.getAppearance().getVisibleName()); // Confirmed

@@ -1551,7 +1551,7 @@ public class FortSiege: Siegable
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
+				spawn.Location = new Location(record.X, record.Y, record.Z, record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);
 				

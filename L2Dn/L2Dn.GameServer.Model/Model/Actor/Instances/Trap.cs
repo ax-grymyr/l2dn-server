@@ -319,7 +319,7 @@ public class Trap: Npc
 		_owner = null;
 		if (isSpawned() && !isDead())
 		{
-			ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.removeFromZones(this);
+			ZoneManager.getInstance().getRegion(getLocation().Location2D)?.removeFromZones(this);
 			deleteMe();
 		}
 	}

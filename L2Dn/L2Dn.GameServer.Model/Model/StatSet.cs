@@ -796,10 +796,10 @@ public class StatSet
 		return (SkillHolder) obj;
 	}
 	
-	public LocationHeading? getLocation(string key)
+	public Location? getLocation(string key)
 	{
 		object obj = _set.get(key);
-		if (obj is LocationHeading location)
+		if (obj is Location location)
 			return location;
 		return null;
 	}

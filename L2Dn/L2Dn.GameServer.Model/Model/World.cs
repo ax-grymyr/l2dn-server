@@ -709,7 +709,7 @@ public sealed class World
 					continue;
 				}
 				
-				if (wo.calculateDistance3D(obj.getLocation().ToLocation3D()) <= range)
+				if (wo.calculateDistance3D(obj.getLocation().Location3D) <= range)
 				{
 					c((T)wo);
 				}
@@ -767,7 +767,7 @@ public sealed class World
 		if (@object.isPlayer())
 		{
 			Player player = (Player)@object;
-			player.stopMove(new LocationHeading(player.getLastServerPosition(), 0));
+			player.stopMove(new Location(player.getLastServerPosition(), 0));
 		}
 		else if (@object.isSummon())
 		{

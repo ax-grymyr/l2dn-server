@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Holders;
 public class SummonRequestHolder
 {
 	private readonly Player _summoner;
-	private readonly LocationHeading _location;
+	private readonly Location _location;
 
 	public SummonRequestHolder(Player summoner)
 	{
@@ -19,5 +19,5 @@ public class SummonRequestHolder
 		return _summoner;
 	}
 
-	public LocationHeading Location => _location;
+	public Location Location => _location;
 }

@@ -67,7 +67,7 @@ public struct ExBalrogWarTeleportPacket: IIncomingPacket<GameSession>
         player.stopMove(null);
 
         // Teleport to Balok location.
-        player.setTeleportLocation(new LocationHeading(BALOK_LOCATION, 0));
+        player.setTeleportLocation(new Location(BALOK_LOCATION, 0));
         player.doCast(CommonSkill.TELEPORT.getSkill());
 
         return ValueTask.CompletedTask;

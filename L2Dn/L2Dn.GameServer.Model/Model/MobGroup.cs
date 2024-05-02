@@ -129,7 +129,7 @@ public class MobGroup
 				int signY = Rnd.nextBoolean() ? -1 : 1;
 				int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
 				int randY = Rnd.get(MobGroupTable.RANDOM_RANGE);
-				spawn.Location = new LocationHeading(x + signX * randX, y + signY * randY, z, 0);
+				spawn.Location = new Location(x + signX * randX, y + signY * randY, z, 0);
 				spawn.stopRespawn();
 
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
@@ -162,7 +162,7 @@ public class MobGroup
 			{
 				int x = player.getX() + Rnd.get(50);
 				int y = player.getY() + Rnd.get(50);
-				mobInst.teleToLocation(new LocationHeading(x, y, player.getZ(), 0), true);
+				mobInst.teleToLocation(new Location(x, y, player.getZ(), 0), true);
 				((ControllableMobAI) mobInst.getAI()).follow(player);
 			}
 		}

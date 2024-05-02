@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ValidateLocationPacket: IOutgoingPacket
 {
     private readonly int _objectId;
-    private readonly LocationHeading _location;
+    private readonly Location _location;
 	
     public ValidateLocationPacket(WorldObject obj)
     {

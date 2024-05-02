@@ -12,8 +12,8 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class JailZone : ZoneType
 {
-	private static readonly LocationHeading JAIL_IN_LOC = new(-114356, -249645, -2984, 0);
-	private static readonly LocationHeading JAIL_OUT_LOC = new(17836, 170178, -3507, 0);
+	private static readonly Location JAIL_IN_LOC = new(-114356, -249645, -2984, 0);
+	private static readonly Location JAIL_OUT_LOC = new(17836, 170178, -3507, 0);
 	
 	public JailZone(int id):base(id)
 	{
@@ -64,12 +64,12 @@ public class JailZone : ZoneType
 		}
 	}
 	
-	public static LocationHeading getLocationIn()
+	public static Location getLocationIn()
 	{
 		return JAIL_IN_LOC;
 	}
 	
-	public static LocationHeading getLocationOut()
+	public static Location getLocationOut()
 	{
 		return JAIL_OUT_LOC;
 	}

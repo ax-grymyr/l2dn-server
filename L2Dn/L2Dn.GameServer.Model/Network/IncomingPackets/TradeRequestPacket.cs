@@ -180,7 +180,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (player.calculateDistance3D(partner.getLocation().ToLocation3D()) > 150)
+		if (player.calculateDistance3D(partner.getLocation().Location3D) > 150)
 		{
 			player.sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
 			return ValueTask.CompletedTask;

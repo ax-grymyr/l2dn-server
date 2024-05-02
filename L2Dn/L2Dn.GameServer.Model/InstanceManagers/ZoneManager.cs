@@ -414,7 +414,7 @@ public class ZoneManager: DataReaderBase
 	public List<ZoneType> getZones(Location3D location)
 	{
 		List<ZoneType> temp = new();
-		ZoneRegion? region = getRegion(location.ToLocation2D());
+		ZoneRegion? region = getRegion(location.Location2D);
 		if (region != null)
 		{
 			foreach (ZoneType zone in region.getZones().Values)
@@ -461,7 +461,7 @@ public class ZoneManager: DataReaderBase
 	public T? getZone<T>(Location3D location)
 		where T: ZoneType
 	{
-		ZoneRegion? region = getRegion(location.ToLocation2D());
+		ZoneRegion? region = getRegion(location.Location2D);
 		if (region != null)
 		{
 			foreach (ZoneType zone in region.getZones().Values)

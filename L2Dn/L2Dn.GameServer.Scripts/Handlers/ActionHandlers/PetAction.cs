@@ -42,7 +42,7 @@ public class PetAction: IActionHandler
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				player.onActionRequest();
 			}
-			else if (!pet.isInsideRadius2D(player.getLocation().ToLocation2D(), 150))
+			else if (!pet.isInsideRadius2D(player.getLocation().Location2D, 150))
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				player.onActionRequest();

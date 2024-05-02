@@ -167,8 +167,8 @@ public class InstanceManager: DataReaderBase
 			XmlInstanceExitLocations? xmlInstanceExitLocations = xmlInstanceLocations.ExitLocations;
 			if (xmlInstanceEnterLocations != null)
 			{
-				ImmutableArray<LocationHeading> locations = xmlInstanceEnterLocations.Locations
-					.Select(loc => new LocationHeading(loc.X, loc.Y, loc.Z, loc.Heading))
+				ImmutableArray<Location> locations = xmlInstanceEnterLocations.Locations
+					.Select(loc => new Location(loc.X, loc.Y, loc.Z, loc.Heading))
 					.ToImmutableArray();
 				
 				template.setEnterLocation(xmlInstanceEnterLocations.Type, locations);
@@ -279,7 +279,7 @@ public class InstanceManager: DataReaderBase
 					XmlParameterSkill xmlParameterSkill => new SkillHolder(xmlParameterSkill.Id,
 						xmlParameterSkill.Level),
 
-					XmlParameterLocation xmlParameterLocation => new LocationHeading(xmlParameterLocation.X,
+					XmlParameterLocation xmlParameterLocation => new Location(xmlParameterLocation.X,
 						xmlParameterLocation.Y, xmlParameterLocation.Z, xmlParameterLocation.Heading),
 
 					_ => null

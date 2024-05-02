@@ -150,7 +150,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 			if (instanceId == 0)
 			{
-				player.teleToLocation(new LocationHeading(holder.getEnterLocation(), 0));
+				player.teleToLocation(new Location(holder.getEnterLocation(), 0));
 
 				// Send time icon.
 				connection.Send(new TimedHuntingZoneEnterPacket(player, _zoneId));

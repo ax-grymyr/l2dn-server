@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets.Shuttles;
 public struct CannotMoveAnymoreInShuttlePacket: IIncomingPacket<GameSession>
 {
     private int _boatId;
-    private LocationHeading _location;
+    private Location _location;
 
     public void ReadContent(PacketBitReader reader)
     {
@@ -26,7 +26,7 @@ public struct CannotMoveAnymoreInShuttlePacket: IIncomingPacket<GameSession>
 
         if (player.isInShuttle() && (player.getShuttle().getObjectId() == _boatId))
         {
-            player.setInVehiclePosition(_location.Location);
+            player.setInVehiclePosition(_location.Location3D);
             player.setHeading(_location.Heading);
             player.broadcastPacket(new ExStopMoveInShuttlePacket(player, _boatId));
         }

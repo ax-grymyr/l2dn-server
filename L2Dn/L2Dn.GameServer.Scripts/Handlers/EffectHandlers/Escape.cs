@@ -44,7 +44,7 @@ public class Escape: AbstractEffect
 		{
 			if (effected.isInInstance() && effected.getActingPlayer().isInTimedHuntingZone())
 			{
-				effected.teleToLocation(new LocationHeading(effected.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0), effected.getInstanceId());
+				effected.teleToLocation(new Location(effected.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0), effected.getInstanceId());
 			}
 			else
 			{

@@ -9,7 +9,7 @@ public readonly struct ExMoveToLocationInAirShipPacket: IOutgoingPacket
 {
     private readonly int _objectId;
     private readonly int _airShipId;
-    private readonly LocationHeading _destination;
+    private readonly Location _destination;
 
     /**
      * @param player
@@ -18,7 +18,7 @@ public readonly struct ExMoveToLocationInAirShipPacket: IOutgoingPacket
     {
         _objectId = player.getObjectId();
         _airShipId = player.getAirShip().getObjectId();
-        _destination = new LocationHeading(player.getInVehiclePosition(), player.getHeading());
+        _destination = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
     public void WriteContent(PacketBitWriter writer)

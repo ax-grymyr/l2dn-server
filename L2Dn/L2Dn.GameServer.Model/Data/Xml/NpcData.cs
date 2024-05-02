@@ -790,7 +790,7 @@ public class NpcData: DataReaderBase
 			int y = el.GetAttributeValueAsInt32("y");
 			int z = el.GetAttributeValueAsInt32("z");
 			int heading = el.Attribute("heading").GetInt32(0);
-			parameters.put(name, new LocationHeading(x, y, z, heading));
+			parameters.put(name, new Location(x, y, z, heading));
 		});
 		
 		element.Elements("minions").ForEach(el =>

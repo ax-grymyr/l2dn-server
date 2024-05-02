@@ -119,7 +119,7 @@ public class AdminInstance: IAdminCommandHandler
 					}
 					
 					Instance instance = InstanceManager.getInstance().createInstance(template, activeChar);
-					LocationHeading? loc = instance.getEnterLocation();
+					Location? loc = instance.getEnterLocation();
 					if (loc != null)
 					{
 						foreach (Player players in members)
@@ -142,7 +142,7 @@ public class AdminInstance: IAdminCommandHandler
 				Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
 				if (instance != null)
 				{
-					LocationHeading? loc = instance.getEnterLocation();
+					Location? loc = instance.getEnterLocation();
 					if (loc != null)
 					{
 						if (!instance.isAllowed(activeChar))

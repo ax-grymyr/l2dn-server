@@ -38,7 +38,7 @@ public class CastleData: DataReaderBase
 			.ForEach(castle =>
 			{
 				List<CastleSpawnHolder> spawnList = castle.Spawns
-					.Select(s => new CastleSpawnHolder(s.Id, s.CastleSide, new LocationHeading(s.X, s.Y, s.Z, s.Heading)))
+					.Select(s => new CastleSpawnHolder(s.Id, s.CastleSide, new Location(s.X, s.Y, s.Z, s.Heading)))
 					.ToList();
 
 				if (!spawns.TryAdd(castle.Id, spawnList))

@@ -247,7 +247,7 @@ public class FortSiegeManager
 					int z = int.Parse(st.nextToken());
 					int heading = int.Parse(st.nextToken());
 					int npcId = int.Parse(st.nextToken());
-					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), new LocationHeading(x, y, z, heading), npcId, i));
+					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), new Location(x, y, z, heading), npcId, i));
 				}
 				catch (Exception e)
 				{

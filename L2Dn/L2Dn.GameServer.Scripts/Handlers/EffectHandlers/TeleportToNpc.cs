@@ -38,7 +38,7 @@ public class TeleportToNpc: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		LocationHeading? teleLocation = null;
+		Location? teleLocation = null;
 		foreach (Npc npc in effector.getSummonedNpcs())
 		{
 			if (npc.getId() == _npcId)
@@ -64,15 +64,15 @@ public class TeleportToNpc: AbstractEffect
 		}
 	}
 	
-	private void teleport(Creature effected, LocationHeading location)
+	private void teleport(Creature effected, Location location)
 	{
-		if (effected.isInsideRadius2D(location.Location.ToLocation2D(), 900))
+		if (effected.isInsideRadius2D(location.Location2D, 900))
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			effected.broadcastPacket(new FlyToLocationPacket(effected, location.Location, FlyType.DUMMY));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, location.Location3D, FlyType.DUMMY));
 			effected.abortAttack();
 			effected.abortCast();
-			effected.setXYZ(location.Location);
+			effected.setXYZ(location.Location3D);
 			effected.broadcastPacket(new ValidateLocationPacket(effected));
 			effected.revalidateZone(true);
 		}

@@ -59,7 +59,7 @@ public class PointBlank: IAffectScopeHandler
 				if (worldPosition != null)
 				{
 					World.getInstance().forEachVisibleObjectInRange<Creature>(creature,
-						(int)(affectRange + creature.calculateDistance2D(worldPosition.Value.ToLocation2D())), c =>
+						(int)(affectRange + creature.calculateDistance2D(worldPosition.Value.Location2D)), c =>
 						{
 							if (!c.isInsideRadius3D(worldPosition.Value, affectRange))
 							{

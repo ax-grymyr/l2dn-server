@@ -31,7 +31,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 	{
 		_creature = creature;
 		_targetObjectId = target.getObjectId();
-		_targetLocation = target.getLocation().ToLocation3D();
+		_targetLocation = target.getLocation().Location3D;
 		_skillId = skillId;
 		_skillLevel = skillLevel;
 		_hitTime = hitTime;

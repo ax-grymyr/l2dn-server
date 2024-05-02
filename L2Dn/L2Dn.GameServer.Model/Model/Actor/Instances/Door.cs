@@ -55,7 +55,7 @@ public class Door : Creature
 	{
 	}
 	
-	public override void stopMove(LocationHeading? loc)
+	public override void stopMove(Location? loc)
 	{
 	}
 	

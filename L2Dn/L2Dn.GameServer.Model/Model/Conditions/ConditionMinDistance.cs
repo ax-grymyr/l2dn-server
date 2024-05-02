@@ -20,7 +20,7 @@ public class ConditionMinDistance: Condition
 	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
 	{
 		return (effected != null) //
-			&& (effector.calculateDistance3D(effected.getLocation().ToLocation3D()) >= _distance) //
+			&& (effector.calculateDistance3D(effected.getLocation().Location3D) >= _distance) //
 			&& GeoEngine.getInstance().canSeeTarget(effector, effected);
 	}
 }

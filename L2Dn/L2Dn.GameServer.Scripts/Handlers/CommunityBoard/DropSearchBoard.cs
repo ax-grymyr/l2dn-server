@@ -299,7 +299,7 @@ public class DropSearchBoard: IParseBoardHandler
 				else
 				{
 					NpcSpawnTemplate spawn = spawnList.get(Rnd.get(spawnList.size()));
-					LocationHeading? spawnLocation = spawn.getSpawnLocation();
+					Location? spawnLocation = spawn.getSpawnLocation();
 					if (spawnLocation != null)
 						player.getRadar().addMarker(spawnLocation.Value.X, spawnLocation.Value.Y, spawnLocation.Value.Z);
 				}

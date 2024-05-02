@@ -42,18 +42,18 @@ public class Boat: Vehicle
     {
         base.oustPlayer(player);
 
-        LocationHeading loc = getOustLoc();
+        Location loc = getOustLoc();
         if (player.isOnline())
         {
             player.teleToLocation(loc);
         }
         else
         {
-            player.setXYZInvisible(loc.Location); // disconnects handling
+            player.setXYZInvisible(loc.Location3D); // disconnects handling
         }
     }
 
-    public override void stopMove(LocationHeading? loc)
+    public override void stopMove(Location? loc)
     {
         base.stopMove(loc);
 

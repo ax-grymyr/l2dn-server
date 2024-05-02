@@ -30,7 +30,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	private WorldRegion? _worldRegion;
 
 	/** Location */
-	private LocationHeading _location = new(0, 0, -10000, 0);
+	private Location _location = new(0, 0, -10000, 0);
 
 	/** Instance */
 	private Instance? _instance;
@@ -600,7 +600,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 * Gets the location object.
 	 * @return the location object
 	 */
-	public virtual LocationHeading getLocation()
+	public virtual Location getLocation()
 	{
 		return _location;
 	}
@@ -613,7 +613,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual void setXYZ(int newX, int newY, int newZ)
 	{
-		_location = _location with { Location = new Location3D(newX, newY, newZ) };
+		_location = _location with { Location3D = new Location3D(newX, newY, newZ) };
 
 		if (_isSpawned)
 		{
@@ -686,109 +686,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 * Sets location of object.
 	 * @param loc the location object
 	 */
-	public virtual void setLocation(LocationHeading loc)
+	public virtual void setLocation(Location loc)
 	{
 		_location = loc;
-	}
-
-	/**
-	 * Calculates 2D distance between this WorldObject and given x, y, z.
-	 * @param x the X coordinate
-	 * @param y the Y coordinate
-	 * @param z the Z coordinate
-	 * @return distance between object and given x, y, z.
-	 */
-	public double calculateDistance2D(int x, int y)
-	{
-		return Math.Sqrt(Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2));
-	}
-
-	/**
-	 * Calculates the 2D distance between this WorldObject and given location.
-	 * @param loc the location object
-	 * @return distance between object and given location.
-	 */
-	public double calculateDistance2D(Location2D location)
-	{
-		return calculateDistance2D(location.X, location.Y);
-	}
-
-	/**
-	 * Calculates the 3D distance between this WorldObject and given x, y, z.
-	 * @param x the X coordinate
-	 * @param y the Y coordinate
-	 * @param z the Z coordinate
-	 * @return distance between object and given x, y, z.
-	 */
-	public double calculateDistance3D(int x, int y, int z)
-	{
-		return Math.Sqrt(Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2) + Math.Pow(z - getZ(), 2));
-	}
-
-	/**
-	 * Calculates 3D distance between this WorldObject and given location.
-	 * @param loc the location object
-	 * @return distance between object and given location.
-	 */
-	public double calculateDistance3D(Location3D location)
-	{
-		return calculateDistance3D(location.X, location.Y, location.Z);
-	}
-
-	/**
-	 * Calculates the non squared 2D distance between this WorldObject and given x, y, z.
-	 * @param x the X coordinate
-	 * @param y the Y coordinate
-	 * @param z the Z coordinate
-	 * @return distance between object and given x, y, z.
-	 */
-	public double calculateDistanceSq2D(int x, int y)
-	{
-		return Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2);
-	}
-
-	/**
-	 * Calculates the non squared 2D distance between this WorldObject and given location.
-	 * @param loc the location object
-	 * @return distance between object and given location.
-	 */
-	public double calculateDistanceSq2D(Location2D location)
-	{
-		return calculateDistanceSq2D(location.X, location.Y);
-	}
-
-	/**
-	 * Calculates the non squared 3D distance between this WorldObject and given x, y, z.
-	 * @param x the X coordinate
-	 * @param y the Y coordinate
-	 * @param z the Z coordinate
-	 * @return distance between object and given x, y, z.
-	 */
-	public double calculateDistanceSq3D(int x, int y, int z)
-	{
-		return Math.Pow(x - getX(), 2) + Math.Pow(y - getY(), 2) + Math.Pow(z - getZ(), 2);
-	}
-
-	/**
-	 * Calculates the non squared 3D distance between this WorldObject and given location.
-	 * @param loc the location object
-	 * @return distance between object and given location.
-	 */
-	public double calculateDistanceSq3D(Location3D location)
-	{
-		return calculateDistanceSq3D(location.X, location.Y, location.Z);
-	}
-
-	/**
-	 * Calculates the angle in degrees from this object to the given object.<br>
-	 * The return value can be described as how much this object has to turn<br>
-	 * to have the given object directly in front of it.
-	 * @param target the object to which to calculate the angle
-	 * @return the angle this object has to turn to have the given object in front of it
-	 */
-	public double calculateDirectionTo(Location2D targetLocation)
-	{
-		return new Location2D(getX(), getY()).AngleDegreesTo(targetLocation);
 	}
 
 	/**

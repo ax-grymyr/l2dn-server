@@ -20,7 +20,7 @@ public abstract class Vehicle : Creature
 {
 	protected int _dockId;
 	protected readonly Set<Player> _passengers = new();
-	protected LocationHeading? _oustLoc;
+	protected Location? _oustLoc;
 	private Runnable _engine;
 	
 	protected VehiclePathPoint[] _currentPath;
@@ -30,7 +30,7 @@ public abstract class Vehicle : Creature
 	
 	public Vehicle(CreatureTemplate template): base(template)
 	{
-		_monitorLocation = getLocation().ToLocation3D();
+		_monitorLocation = getLocation().Location3D;
 		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
@@ -79,7 +79,7 @@ public abstract class Vehicle : Creature
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
 			
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.Location);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.Location3D);
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -98,7 +98,7 @@ public abstract class Vehicle : Creature
 				{
 					if (point.getMoveSpeed() == 0)
 					{
-						teleToLocation(new LocationHeading(point.Location.Location, point.getRotationSpeed()), false);
+						teleToLocation(new Location(point.Location.Location3D, point.getRotationSpeed()), false);
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
@@ -140,7 +140,7 @@ public abstract class Vehicle : Creature
 						{
 							_monitorTask = ThreadPool.scheduleAtFixedRate(() =>
 							{
-								if (!isInDock() && (calculateDistance3D(_monitorLocation) == 0))
+								if (!isInDock() && (this.calculateDistance3D(_monitorLocation) == 0))
 								{
 									if (_currentPath != null)
 									{
@@ -157,7 +157,7 @@ public abstract class Vehicle : Creature
 								}
 								else
 								{
-									_monitorLocation = getLocation().ToLocation3D();
+									_monitorLocation = getLocation().Location3D;
 								}
 							}, 1000, 1000);
 						}
@@ -206,12 +206,12 @@ public abstract class Vehicle : Creature
 		_dockId = d;
 	}
 	
-	public void setOustLoc(LocationHeading loc)
+	public void setOustLoc(Location loc)
 	{
 		_oustLoc = loc;
 	}
 	
-	public LocationHeading getOustLoc()
+	public Location getOustLoc()
 	{
 		if (_oustLoc != null)
 			return _oustLoc.Value;
@@ -309,7 +309,7 @@ public abstract class Vehicle : Creature
 					if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);
-						player.teleToLocation(new LocationHeading(oustX, oustY, oustZ, 0), true);
+						player.teleToLocation(new Location(oustX, oustY, oustZ, 0), true);
 						return;
 					}
 					
@@ -335,7 +335,7 @@ public abstract class Vehicle : Creature
 		return result;
 	}
 	
-	public override void teleToLocation(LocationHeading loc, bool allowRandomOffset)
+	public override void teleToLocation(Location loc, bool allowRandomOffset)
 	{
 		if (isMoving())
 		{
@@ -355,7 +355,7 @@ public abstract class Vehicle : Creature
 		}
 		
 		decayMe();
-		setXYZ(loc.Location);
+		setXYZ(loc.Location3D);
 		
 		// temporary fix for heading on teleports
 		if (loc.Heading != 0)
@@ -367,12 +367,12 @@ public abstract class Vehicle : Creature
 		revalidateZone(true);
 	}
 	
-	public override void stopMove(LocationHeading? loc)
+	public override void stopMove(Location? loc)
 	{
 		_move = null;
 		if (loc != null)
 		{
-			setXYZ(loc.Value.Location);
+			setXYZ(loc.Value.Location3D);
 			setHeading(loc.Value.Heading);
 			revalidateZone(true);
 		}
@@ -403,7 +403,7 @@ public abstract class Vehicle : Creature
 			LOGGER.Error("Failed oustPlayers(): " + e);
 		}
 		
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
+		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(getLocation().Location2D);
 		
 		try
 		{

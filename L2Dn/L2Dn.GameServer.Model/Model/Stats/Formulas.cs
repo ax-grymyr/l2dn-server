@@ -613,7 +613,7 @@ public class Formulas
 		}
 
 		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
-		if (degreeside < 360 && Math.Abs(target.calculateDirectionTo(attacker.getLocation().ToLocation2D()) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
+		if (degreeside < 360 && Math.Abs(target.calculateDirectionTo(attacker.getLocation().Location2D) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
 		{
 			return 0;
 		}
@@ -728,7 +728,7 @@ public class Formulas
 				double sphericBarrierRange = target.getStat().getValue(Stat.SPHERIC_BARRIER_RANGE, 0);
 				if (sphericBarrierRange > 0)
 				{
-					resisted = attacker.calculateDistance3D(target.getLocation().ToLocation3D()) > sphericBarrierRange;
+					resisted = attacker.calculateDistance3D(target.getLocation().Location3D) > sphericBarrierRange;
 				}
 			}
 

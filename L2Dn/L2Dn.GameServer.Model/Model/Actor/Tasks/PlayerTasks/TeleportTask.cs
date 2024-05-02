@@ -9,9 +9,9 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 public class TeleportTask: Runnable
 {
 	private readonly Player _player;
-	private readonly LocationHeading _loc;
+	private readonly Location _loc;
 	
-	public TeleportTask(Player player, LocationHeading loc)
+	public TeleportTask(Player player, Location loc)
 	{
 		_player = player;
 		_loc = loc;

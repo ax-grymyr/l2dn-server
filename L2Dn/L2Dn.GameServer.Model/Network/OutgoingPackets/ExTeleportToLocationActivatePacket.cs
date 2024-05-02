@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 internal readonly struct ExTeleportToLocationActivatePacket: IOutgoingPacket
 {
     private readonly int _objectId;
-    private readonly LocationHeading _loc;
+    private readonly Location _loc;
 
     public ExTeleportToLocationActivatePacket(Creature creature)
     {
@@ -21,7 +21,7 @@ internal readonly struct ExTeleportToLocationActivatePacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_TELEPORT_TO_LOCATION_ACTIVATE);
         
         writer.WriteInt32(_objectId);
-        writer.WriteLocation3D(_loc.Location);
+        writer.WriteLocation3D(_loc.Location3D);
         writer.WriteInt32(0); // Unknown (this isn't instanceId)
         writer.WriteInt32(_loc.Heading);
         writer.WriteInt32(0); // Unknown

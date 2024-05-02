@@ -859,7 +859,7 @@ public class Instance : IIdentifiable, INamable
 			Location3D? loc = _template.getExitLocation(player);
 			if (loc != null)
 			{
-				player.teleToLocation(new LocationHeading(loc.Value, 0), null);
+				player.teleToLocation(new Location(loc.Value, 0), null);
 			}
 			else
 			{
@@ -1127,7 +1127,7 @@ public class Instance : IIdentifiable, INamable
 				Summon pet = player.getPet();
 				if (pet != null)
 				{
-					pet.teleToLocation(new LocationHeading(loc.Value, 0), true);
+					pet.teleToLocation(new Location(loc.Value, 0), true);
 				}
 			}
 		}
@@ -1185,7 +1185,7 @@ public class Instance : IIdentifiable, INamable
 	 * Get enter location for instance world.
 	 * @return {@link Location} object if instance has enter location defined, otherwise {@code null}
 	 */
-	public LocationHeading? getEnterLocation()
+	public Location? getEnterLocation()
 	{
 		return _template.getEnterLocation();
 	}
@@ -1194,7 +1194,7 @@ public class Instance : IIdentifiable, INamable
 	 * Get all enter locations defined in XML template.
 	 * @return list of enter locations
 	 */
-	public ImmutableArray<LocationHeading> getEnterLocations()
+	public ImmutableArray<Location> getEnterLocations()
 	{
 		return _template.getEnterLocations();
 	}

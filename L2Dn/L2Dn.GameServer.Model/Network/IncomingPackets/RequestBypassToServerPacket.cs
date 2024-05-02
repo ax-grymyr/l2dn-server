@@ -121,7 +121,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				if (Util.isDigit(id))
 				{
 					WorldObject obj = World.getInstance().findObject(int.Parse(id));
-					if (obj != null && obj.isNpc() && endOfId > 0 && player.isInsideRadius2D(obj.getLocation().ToLocation2D(), Npc.INTERACTION_DISTANCE))
+					if (obj != null && obj.isNpc() && endOfId > 0 && player.isInsideRadius2D(obj.getLocation().Location2D, Npc.INTERACTION_DISTANCE))
 					{
 						((Npc)obj).onBypassFeedback(player, _command.Substring(endOfId + 1));
 					}
@@ -286,7 +286,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		{
 			Npc temp = (Npc) obj;
 			temp.setTarget(player);
-			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getLocation().ToLocation3D());
+			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getLocation().Location3D);
 		}
 	}
 }

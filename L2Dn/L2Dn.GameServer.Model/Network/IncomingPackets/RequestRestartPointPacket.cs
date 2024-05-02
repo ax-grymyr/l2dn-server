@@ -84,7 +84,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 	
 	private static void portPlayer(Player player, int requestedPointType, int resItemID)
 	{
-		LocationHeading? loc = null;
+		Location? loc = null;
 		Instance instance = null;
 		
 		// force jail
@@ -319,7 +319,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					return;
 				}
 				
-				loc = new LocationHeading(-114356, -249645, -2984, 0);
+				loc = new Location(-114356, -249645, -2984, 0);
 				break;
 			}
 			default:
@@ -327,7 +327,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				if (player.isInTimedHuntingZone())
 				{
 					instance = player.getInstanceWorld();
-					loc = new LocationHeading(player.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0);
+					loc = new Location(player.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0);
 				}
 				else
 				{

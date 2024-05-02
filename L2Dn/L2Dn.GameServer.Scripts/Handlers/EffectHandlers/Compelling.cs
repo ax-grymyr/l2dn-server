@@ -55,6 +55,6 @@ public class Compelling: AbstractEffect
 	private void compellingAction(Creature effector, Creature effected)
 	{
 		effected.setRunning();
-		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, effector.getLocation().ToLocation3D());
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, effector.getLocation().Location3D);
 	}
 }

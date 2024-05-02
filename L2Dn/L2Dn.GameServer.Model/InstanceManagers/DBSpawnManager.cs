@@ -69,7 +69,7 @@ public class DBSpawnManager
 				if (template != null)
 				{
 					Spawn spawn = new Spawn(template);
-					spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
+					spawn.Location = new Location(record.X, record.Y, record.Z, record.Heading);
 					spawn.setAmount(1);
 
 					List<NpcSpawnTemplate> spawns = SpawnData.getInstance().getNpcSpawns(npc => (npc.getId() == template.getId()) && npc.hasDBSave());

@@ -31,7 +31,7 @@ public struct NotifyTrainingRoomEndPacket: IIncomingPacket<GameSession>
             player.setInvul(false);
             player.setInvisible(false);
             player.setImmobilized(false);
-            player.teleToLocation(new LocationHeading(player.getLastLocation().Value, 0));
+            player.teleToLocation(new Location(player.getLastLocation().Value, 0));
             player.sendPacket(ExTrainingZoneLeavingPacket.STATIC_PACKET);
             holder.setEndTime(DateTime.UtcNow);
             player.setTraingCampInfo(holder);

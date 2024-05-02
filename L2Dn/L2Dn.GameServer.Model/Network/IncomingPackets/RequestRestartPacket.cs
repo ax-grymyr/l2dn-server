@@ -59,7 +59,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
                 location = world.getExitLocation(player);
                 if (location == null)
                 {
-                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;
+                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
                 }
             }
             
@@ -67,7 +67,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         }
         else if (player.isInTimedHuntingZone())
         {
-            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;
+            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
         }
 
         if (location != null)

@@ -63,13 +63,13 @@ public abstract class DataReaderBase
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
         Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "Config", relativePath);
 
-    protected static LocationHeading parseLocation(XElement element)
+    protected static Location parseLocation(XElement element)
     {
         int x = element.GetAttributeValueAsInt32("x");
         int y = element.GetAttributeValueAsInt32("y");
         int z = element.GetAttributeValueAsInt32("z");
         int heading = element.Attribute("heading").GetInt32(0);
-        return new LocationHeading(x, y, z, heading);
+        return new Location(x, y, z, heading);
     }
 
     protected static Map<string, object> parseParameters(XElement element)

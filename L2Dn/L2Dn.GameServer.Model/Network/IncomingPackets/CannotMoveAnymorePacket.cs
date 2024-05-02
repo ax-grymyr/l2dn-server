@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct CannotMoveAnymorePacket: IIncomingPacket<GameSession>
 {
-    private LocationHeading _location;
+    private Location _location;
 
     public void ReadContent(PacketBitReader reader)
     {

@@ -29,7 +29,7 @@ public class Ground: ITargetTypeHandler
 			Location3D? worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
 			if (worldPosition != null)
 			{
-				if (dontMove && !creature.isInsideRadius2D(worldPosition.Value.ToLocation2D(), skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
+				if (dontMove && !creature.isInsideRadius2D(worldPosition.Value.Location2D, skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
 				{
 					return null;
 				}
@@ -43,7 +43,7 @@ public class Ground: ITargetTypeHandler
 					return null;
 				}
 
-				ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.getLocation().ToLocation2D());
+				ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.getLocation().Location2D);
 				if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))
 				{
 					if (sendMessage)

@@ -84,7 +84,7 @@ public class FakePlayerChatManager: DataReaderBase
 				Npc npc = spawn.getLastSpawn();
 				if (npc != null)
 				{
-					if (npc.calculateDistance2D(player.getLocation().ToLocation2D()) < 3000)
+					if (npc.calculateDistance2D(player.getLocation().Location2D) < 3000)
 					{
 						if (GeoEngine.getInstance().canSeeTarget(npc, player) && !player.isInvisible())
 						{

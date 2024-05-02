@@ -82,7 +82,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		int z = npc.Z;
 		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
-			_locations.add(new ChanceLocation(new LocationHeading(x, y, z, npc.Heading), 100));
+			_locations.add(new ChanceLocation(new Location(x, y, z, npc.Heading), 100));
 		}
 		else
 		{
@@ -229,7 +229,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _spawnedNpcs;
 	}
 	
-	public LocationHeading? getSpawnLocation()
+	public Location? getSpawnLocation()
 	{
 		if (_locations.Count != 0)
 		{
@@ -248,7 +248,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		if (_zone != null)
 		{
 			Location3D loc = _zone.getRandomPoint();
-			return new LocationHeading(loc, -1);
+			return new Location(loc, -1);
 		}
 
 		if (!_group.getTerritories().isEmpty())
@@ -259,7 +259,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 				Location3D loc = territory.getRandomPoint();
 				if (_group.getBannedTerritories().isEmpty())
 				{
-					return new LocationHeading(loc, -1);
+					return new Location(loc, -1);
 				}
 
 				bool insideBannedTerritory = false;
@@ -274,7 +274,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 				if (!insideBannedTerritory)
 				{
-					return new LocationHeading(loc, -1);
+					return new Location(loc, -1);
 				}
 			}
 		}
@@ -286,7 +286,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 				Location3D loc = territory.getRandomPoint();
 				if (_spawnTemplate.getBannedTerritories().isEmpty())
 				{
-					return new LocationHeading(loc, -1);
+					return new Location(loc, -1);
 				}
 
 				bool insideBannedTerritory = false;
@@ -301,7 +301,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 				if (!insideBannedTerritory)
 				{
-					return new LocationHeading(loc, -1);
+					return new Location(loc, -1);
 				}
 			}
 		}
@@ -352,7 +352,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	private void spawnNpc(NpcTemplate npcTemplate, Instance instance)
 	{
 		Spawn spawn = new Spawn(npcTemplate);
-		LocationHeading? loc = getSpawnLocation();
+		Location? loc = getSpawnLocation();
 		if (loc == null)
 		{
 			_logger.Warn("Couldn't initialize new spawn, no location found!");

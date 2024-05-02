@@ -416,7 +416,7 @@ public class Npc: Creature
 		{
 			return false;
 		}
-		else if (!isInsideRadius3D(player.getLocation().ToLocation3D(), INTERACTION_DISTANCE))
+		else if (!isInsideRadius3D(player.getLocation().Location3D, INTERACTION_DISTANCE))
 		{
 			return false;
 		}
@@ -485,7 +485,7 @@ public class Npc: Creature
 	{
 		if (getId() == 33360) // Provisional Hall Manager
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().ToLocation3D()))
+			foreach (ZoneType zone in ZoneManager.getInstance().getZones(getLocation().Location3D))
 			{
 				if (zone is ClanHallZone)
 				{
@@ -1131,7 +1131,7 @@ public class Npc: Creature
 			getSkillChannelized().abortChannelization();
 		}
 		
-		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.removeFromZones(this);
+		ZoneManager.getInstance().getRegion(getLocation().Location2D)?.removeFromZones(this);
 		
 		return base.deleteMe();
 	}

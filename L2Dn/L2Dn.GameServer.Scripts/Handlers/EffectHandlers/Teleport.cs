@@ -34,7 +34,7 @@ public class Teleport: AbstractEffect
 	{
 		if (_location != default)
 		{
-			effected.teleToLocation(new LocationHeading(_location, 0), true, null);
+			effected.teleToLocation(new Location(_location, 0), true, null);
 		}
 	}
 }
