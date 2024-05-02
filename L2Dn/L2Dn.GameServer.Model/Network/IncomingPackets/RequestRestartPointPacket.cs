@@ -222,7 +222,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				else
 				{
 					instance = player.getInstanceWorld();
-					loc = player.getLocation().ToLocationHeading();
+					loc = player.getLocation();
 				}
 				break;
 			}

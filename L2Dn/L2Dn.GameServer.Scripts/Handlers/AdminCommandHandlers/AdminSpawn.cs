@@ -489,7 +489,7 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					if (showposition && (npc != null))
 					{
-						activeChar.teleToLocation(npc.getLocation().ToLocationHeading(), true);
+						activeChar.teleToLocation(npc.getLocation(), true);
 					}
 					else
 					{
@@ -574,7 +574,7 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location = target.getLocation().ToLocationHeading();
+			spawn.Location = target.getLocation();
 			spawn.setAmount(mobCount);
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(respawnTime));
 			

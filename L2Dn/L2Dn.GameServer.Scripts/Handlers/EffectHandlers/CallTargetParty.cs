@@ -36,7 +36,7 @@ public class CallTargetParty: AbstractEffect
 			{
 				if ((member != player) && CallPc.checkSummonTargetStatus(member, effector.getActingPlayer()))
 				{
-					member.teleToLocation(player.getLocation().ToLocationHeading(), true);
+					member.teleToLocation(player.getLocation(), true);
 				}
 			}
 		}

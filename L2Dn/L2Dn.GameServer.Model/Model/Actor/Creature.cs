@@ -1111,7 +1111,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Mobius: Do not move when attack is launched.
 			if (isMoving())
 			{
-				stopMove(getLocation().ToLocationHeading());
+				stopMove(getLocation());
 			}
 
 			WeaponType attackType = getAttackType();

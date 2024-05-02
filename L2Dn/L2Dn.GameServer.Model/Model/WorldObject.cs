@@ -30,7 +30,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	private WorldRegion? _worldRegion;
 
 	/** Location */
-	private Location _location = new(0, 0, -10000);
+	private LocationHeading _location = new(0, 0, -10000, 0);
 
 	/** Instance */
 	private Instance? _instance;
@@ -538,7 +538,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual int getX()
 	{
-		return _location.getX();
+		return _location.X;
 	}
 
 	/**
@@ -547,7 +547,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual int getY()
 	{
-		return _location.getY();
+		return _location.Y;
 	}
 
 	/**
@@ -556,7 +556,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual int getZ()
 	{
-		return _location.getZ();
+		return _location.Z;
 	}
 
 	/**
@@ -565,7 +565,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual int getHeading()
 	{
-		return _location.getHeading();
+		return _location.Heading;
 	}
 
 	/**
@@ -600,7 +600,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 * Gets the location object.
 	 * @return the location object
 	 */
-	public virtual Location getLocation()
+	public virtual LocationHeading getLocation()
 	{
 		return _location;
 	}
@@ -613,7 +613,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual void setXYZ(int newX, int newY, int newZ)
 	{
-		_location.setXYZ(new Location3D(newX, newY, newZ));
+		_location = _location with { Location = new Location3D(newX, newY, newZ) };
 
 		if (_isSpawned)
 		{
@@ -643,7 +643,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 */
 	public virtual void setHeading(int newHeading)
 	{
-		_location.setHeading(newHeading);
+		_location = _location with { Heading = newHeading };
 	}
 
 	/**
@@ -686,10 +686,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IEquatabl
 	 * Sets location of object.
 	 * @param loc the location object
 	 */
-	public virtual void setLocation(Location loc)
+	public virtual void setLocation(LocationHeading loc)
 	{
-		_location.setXYZ(loc.ToLocation3D());
-		_location.setHeading(loc.getHeading());
+		_location = loc;
 	}
 
 	/**

@@ -459,7 +459,7 @@ public class AdminTeleport: IAdminCommandHandler
 		else
 		{
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(player.getLocation().ToLocationHeading(), true, player.getInstanceWorld());
+			activeChar.teleToLocation(player.getLocation(), true, player.getInstanceWorld());
 			BuilderUtil.sendSysMessage(activeChar, "You have teleported to character " + player.getName() + ".");
 		}
 	}
@@ -521,7 +521,7 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				spawn = new Spawn(template1);
-				spawn.Location = activeChar.getLocation().ToLocationHeading();
+				spawn.Location = activeChar.getLocation();
 				spawn.setAmount(1);
 				spawn.setRespawnDelay(respawnTime);
 				if (activeChar.isInInstance())
@@ -558,7 +558,7 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				Spawn spawnDat = new Spawn(target.getId());
-				spawnDat.Location = activeChar.getLocation().ToLocationHeading();
+				spawnDat.Location = activeChar.getLocation();
 				spawnDat.setAmount(1);
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));
 				spawnDat.setRespawnMaxDelay(TimeSpan.FromSeconds(129600));

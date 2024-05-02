@@ -238,7 +238,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation().ToLocationHeading();
+								return flags.First().getLocation();
 							}
 						}
 					}
@@ -251,7 +251,7 @@ public class MapRegionManager: DataReaderBase
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
-								return flags.First().getLocation().ToLocationHeading();
+								return flags.First().getLocation();
 							}
 						}
 					}

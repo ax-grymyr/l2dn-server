@@ -10403,13 +10403,13 @@ public class Player: Playable
 			Pet pet = getPet();
 			if (pet != null)
 			{
-				pet.teleToLocation(this.getLocation().ToLocationHeading(), true);
+				pet.teleToLocation(getLocation(), true);
 			}
 			foreach (Summon summon in getServitors().values())
 			{
 				if (!summon.isInsideZone(ZoneId.SIEGE))
 				{
-					summon.teleToLocation(this.getLocation().ToLocationHeading(), true);
+					summon.teleToLocation(getLocation(), true);
 				}
 			}
 		}
@@ -10658,7 +10658,7 @@ public class Player: Playable
 		if (_pet != null)
 		{
 			_pet.setFollowStatus(false);
-			_pet.teleToLocation(getLocation().ToLocationHeading(), false);
+			_pet.teleToLocation(getLocation(), false);
 			((SummonAI) _pet.getAI()).setStartFollowController(true);
 			_pet.setFollowStatus(true);
 			_pet.setInstance(getInstanceWorld());
@@ -10669,7 +10669,7 @@ public class Player: Playable
 		getServitors().values().forEach(s =>
 		{
 			s.setFollowStatus(false);
-			s.teleToLocation(getLocation().ToLocationHeading(), false);
+			s.teleToLocation(getLocation(), false);
 			((SummonAI) s.getAI()).setStartFollowController(true);
 			s.setFollowStatus(true);
 			s.setInstance(getInstanceWorld());

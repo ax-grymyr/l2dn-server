@@ -84,7 +84,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		}
 		else
 		{
-			_location = _player.getLocation().ToLocationHeading();
+			_location = _player.getLocation();
 		}
 
 		_mAtkSpd = _player.getMAtkSpd();
@@ -106,7 +106,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		: this(decoy.getActingPlayer(), gmSeeInvis)
 	{
 		_objId = decoy.getObjectId();
-		_location = decoy.getLocation().ToLocationHeading();
+		_location = decoy.getLocation();
 	}
 
 	public void WriteContent(PacketBitWriter writer)

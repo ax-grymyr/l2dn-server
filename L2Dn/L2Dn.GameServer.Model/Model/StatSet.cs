@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -795,14 +796,12 @@ public class StatSet
 		return (SkillHolder) obj;
 	}
 	
-	public Location getLocation(string key)
+	public LocationHeading? getLocation(string key)
 	{
 		object obj = _set.get(key);
-		if (!(obj is Location))
-		{
-			return null;
-		}
-		return (Location) obj;
+		if (obj is LocationHeading location)
+			return location;
+		return null;
 	}
 	
 	public List<MinionHolder> getMinionList(string key)

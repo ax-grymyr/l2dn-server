@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -332,7 +333,7 @@ public class Cubic: Creature
 		return _owner.getInstanceWorld();
 	}
 	
-	public override Location getLocation()
+	public override LocationHeading getLocation()
 	{
 		return _owner.getLocation();
 	}

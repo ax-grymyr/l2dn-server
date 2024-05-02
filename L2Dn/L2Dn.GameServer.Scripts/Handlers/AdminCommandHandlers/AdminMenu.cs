@@ -59,7 +59,7 @@ public class AdminMenu: IAdminCommandHandler
 			{
 				String targetName = command.Substring(23);
 				Player player = World.getInstance().getPlayer(targetName);
-				teleportCharacter(player, activeChar.getLocation().ToLocationHeading(), activeChar, "Admin is teleporting you.");
+				teleportCharacter(player, activeChar.getLocation(), activeChar, "Admin is teleporting you.");
 			}
 			catch (IndexOutOfRangeException e)
 			{
@@ -80,12 +80,12 @@ public class AdminMenu: IAdminCommandHandler
 				if (!player.isInParty())
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not in party.");
-					teleportCharacter(player, activeChar.getLocation().ToLocationHeading(), activeChar, "Admin is teleporting you.");
+					teleportCharacter(player, activeChar.getLocation(), activeChar, "Admin is teleporting you.");
 					return true;
 				}
 				foreach (Player pm in player.getParty().getMembers())
 				{
-					teleportCharacter(pm, activeChar.getLocation().ToLocationHeading(), activeChar, "Your party is being teleported by an Admin.");
+					teleportCharacter(pm, activeChar.getLocation(), activeChar, "Your party is being teleported by an Admin.");
 				}
 			}
 			catch (Exception e)
@@ -108,13 +108,13 @@ public class AdminMenu: IAdminCommandHandler
 				if (clan == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not in a clan.");
-					teleportCharacter(player, activeChar.getLocation().ToLocationHeading(), activeChar, "Admin is teleporting you.");
+					teleportCharacter(player, activeChar.getLocation(), activeChar, "Admin is teleporting you.");
 					return true;
 				}
 				
 				foreach(Player member in clan.getOnlineMembers(0))
 				{
-					teleportCharacter(member, activeChar.getLocation().ToLocationHeading(), activeChar, "Your clan is being teleported by an Admin.");
+					teleportCharacter(member, activeChar.getLocation(), activeChar, "Your clan is being teleported by an Admin.");
 				}
 			}
 			catch (Exception e)
@@ -256,7 +256,7 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.teleToLocation(player.getLocation().ToLocationHeading(), true, player.getInstanceWorld());
+			activeChar.teleToLocation(player.getLocation(), true, player.getInstanceWorld());
 			BuilderUtil.sendSysMessage(activeChar, "You're teleporting yourself to character " + player.getName());
 		}
 		showMainPage(activeChar);
