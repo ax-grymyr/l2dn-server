@@ -765,7 +765,7 @@ public sealed class World
 	{
 		if (@object.isPlayer())
 		{
-			((Creature) @object).stopMove(((Player) @object).getLastServerPosition());
+			((Creature) @object).stopMove(((Player) @object).getLastServerPosition().ToLocationHeading());
 		}
 		else if (@object.isSummon())
 		{

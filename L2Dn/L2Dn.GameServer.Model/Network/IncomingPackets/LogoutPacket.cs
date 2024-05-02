@@ -45,11 +45,8 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
             }
             else
             {
-                location = world.getExitLocation(player).ToLocation3D();
-                if (location == null)
-                {
-                    location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;
-                }
+                location = world.getExitLocation(player) ?? MapRegionManager.getInstance()
+                    .getTeleToLocation(player, TeleportWhereType.TOWN).Location;
             }
 
             player.setInstance(null);

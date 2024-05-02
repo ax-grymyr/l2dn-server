@@ -287,10 +287,10 @@ public class MapRegionManager: DataReaderBase
 			Instance inst = player.getInstanceWorld();
 			if (inst != null)
 			{
-				Location loc = inst.getExitLocation(player);
+				Location3D? loc = inst.getExitLocation(player);
 				if (loc != null)
 				{
-					return loc.ToLocationHeading();
+					return new LocationHeading(loc.Value, 0);
 				}
 			}
 		}

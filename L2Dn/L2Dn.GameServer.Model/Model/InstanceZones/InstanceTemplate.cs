@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.Events;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -42,9 +44,9 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	private readonly List<SpawnTemplate> _spawns = new();
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
-	private List<Location> _enterLocations;
+	private ImmutableArray<LocationHeading> _enterLocations = ImmutableArray<LocationHeading>.Empty;
 	private InstanceTeleportType _exitLocationType = InstanceTeleportType.NONE;
-	private List<Location> _exitLocations;
+	private ImmutableArray<Location3D> _exitLocations = ImmutableArray<Location3D>.Empty;
 	
 	// Reenter data
 	private InstanceReenterType _reenterType = InstanceReenterType.NONE;
@@ -182,7 +184,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * @param type type of teleport ({@link InstanceTeleportType#FIXED} or {@link InstanceTeleportType#RANDOM} are supported)
 	 * @param locations list of locations used for determining enter location
 	 */
-	public void setEnterLocation(InstanceTeleportType type, List<Location> locations)
+	public void setEnterLocation(InstanceTeleportType type, ImmutableArray<LocationHeading> locations)
 	{
 		_enterLocationType = type;
 		_enterLocations = locations;
@@ -193,7 +195,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * @param type type of teleport (see {@link InstanceTeleportType} for all possible types)
 	 * @param locations list of locations used for determining exit location
 	 */
-	public void setExitLocation(InstanceTeleportType type, List<Location> locations)
+	public void setExitLocation(InstanceTeleportType type, ImmutableArray<Location3D> locations)
 	{
 		_exitLocationType = type;
 		_exitLocations = locations;
@@ -294,7 +296,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * Get all enter locations defined in XML template.
 	 * @return list of enter locations
 	 */
-	public List<Location> getEnterLocations()
+	public ImmutableArray<LocationHeading> getEnterLocations()
 	{
 		return _enterLocations;
 	}
@@ -303,22 +305,26 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * Get enter location to instance world.
 	 * @return enter location if instance has any, otherwise {@code null}
 	 */
-	public Location getEnterLocation()
+	public LocationHeading? getEnterLocation()
 	{
-		Location loc = null;
-		switch (_enterLocationType)
+		LocationHeading? loc = null;
+		if (_enterLocations.Length != 0)
 		{
-			case InstanceTeleportType.RANDOM:
+			switch (_enterLocationType)
 			{
-				loc = _enterLocations[Rnd.get(_enterLocations.Count)];
-				break;
-			}
-			case InstanceTeleportType.FIXED:
-			{
-				loc = _enterLocations[0];
-				break;
+				case InstanceTeleportType.RANDOM:
+				{
+					loc = _enterLocations[Rnd.get(_enterLocations.Length)];
+					break;
+				}
+				case InstanceTeleportType.FIXED:
+				{
+					loc = _enterLocations[0];
+					break;
+				}
 			}
 		}
+
 		return loc;
 	}
 	
@@ -336,19 +342,23 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 * @param player player who wants to leave instance
 	 * @return exit location if instance has any, otherwise {@code null}
 	 */
-	public Location getExitLocation(Player player)
+	public Location3D? getExitLocation(Player player)
 	{
-		Location location = null;
+		Location3D? location = null;
 		switch (_exitLocationType)
 		{
 			case InstanceTeleportType.RANDOM:
 			{
-				location = _exitLocations[Rnd.get(_exitLocations.Count)];
+				if (_exitLocations.Length != 0)
+					location = _exitLocations[Rnd.get(_exitLocations.Length)];
+
 				break;
 			}
 			case InstanceTeleportType.FIXED:
 			{
-				location = _exitLocations[0];
+				if (_exitLocations.Length != 0)
+					location = _exitLocations[0];
+
 				break;
 			}
 			case InstanceTeleportType.ORIGIN:
@@ -359,7 +369,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 					int[] loc = vars.getIntArray(PlayerVariables.INSTANCE_ORIGIN, ";");
 					if (loc != null && loc.Length == 3)
 					{
-						location = new Location(loc[0], loc[1], loc[2]);
+						location = new Location3D(loc[0], loc[1], loc[2]);
 					}
 					vars.remove(PlayerVariables.INSTANCE_ORIGIN);
 				}
@@ -369,11 +379,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			{
 				if (player.getReputation() < 0)
 				{
-					location = MapRegionManager.getInstance().getNearestKarmaRespawn(player);
+					location = MapRegionManager.getInstance().getNearestKarmaRespawn(player).ToLocation3D();
 				}
 				else
 				{
-					location = MapRegionManager.getInstance().getNearestTownRespawn(player);
+					location = MapRegionManager.getInstance().getNearestTownRespawn(player).ToLocation3D();
 				}
 				break;
 			}

@@ -277,7 +277,7 @@ public class PlayerAI : PlayableAI
 		WorldObject target = getCastTarget();
 		if ((_skill.getTargetType() == TargetType.GROUND) && _actor.isPlayer())
 		{
-			if (maybeMoveToPosition(((Player) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
+			if (maybeMoveToPosition(((Player) _actor).getCurrentSkillWorldPosition().ToLocation3D(), _actor.getMagicalAttackRange(_skill)))
 			{
 				return;
 			}

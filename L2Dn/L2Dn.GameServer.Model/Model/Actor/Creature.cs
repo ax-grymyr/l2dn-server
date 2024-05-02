@@ -759,16 +759,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			return;
 		}
-		
-		int x = xValue;
-		int y = yValue;
-		int z = _isFlying ? zValue : GeoEngine.getInstance().getHeight(x, y, zValue);
-		int heading = headingValue;
+
+		LocationHeading location = new(xValue, yValue,
+			_isFlying ? zValue : GeoEngine.getInstance().getHeight(xValue, yValue, zValue), headingValue);
+
 		Instance instance = instanceValue;
 
 		if (_eventContainer.HasSubscribers<OnCreatureTeleport>())
 		{
-			OnCreatureTeleport onCreatureTeleport = new(this, x, y, z, heading, instance);
+			OnCreatureTeleport onCreatureTeleport = new(this, location, instance);
 			if (_eventContainer.Notify(onCreatureTeleport))
 			{
 				if (onCreatureTeleport.Terminate)
@@ -776,14 +775,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					return;
 				}
 
-				if (onCreatureTeleport.OverrideLocation)
-				{
-					x = onCreatureTeleport.OverridenLocation.getX();
-					y = onCreatureTeleport.OverridenLocation.getY();
-					z = onCreatureTeleport.OverridenLocation.getZ();
-					heading = onCreatureTeleport.OverridenLocation.getHeading();
+				if (onCreatureTeleport.OverridenLocation != null)
+					location = onCreatureTeleport.OverridenLocation.Value;
+
+				if (onCreatureTeleport.OverridenInstance != null)
 					instance = onCreatureTeleport.OverridenInstance;
-				}
 			}
 		}
 
@@ -811,10 +807,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		decayMe();
 		
 		// Adjust position a bit.
-		z += 5;
+		location = location with { Location = location.Location with { Z = location.Location.Z + 5 } };
 		
 		// Send teleport packet where needed.
-		broadcastPacket(new TeleportToLocationPacket(this, x, y, z, heading));
+		broadcastPacket(new TeleportToLocationPacket(getObjectId(), location));
 		
 		// Change instance world.
 		if (getInstanceWorld() != instance)
@@ -823,11 +819,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		
 		// Set the x,y,z position of the WorldObject and if necessary modify its _worldRegion.
-		setXYZ(x, y, z);
+		setXYZ(location.Location);
 		// Also adjust heading.
-		if (heading != 0)
+		if (location.Heading != 0)
 		{
-			setHeading(heading);
+			setHeading(location.Heading);
 		}
 		
 		// Send teleport finished packet to player.
@@ -1115,7 +1111,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Mobius: Do not move when attack is launched.
 			if (isMoving())
 			{
-				stopMove(getLocation());
+				stopMove(getLocation().ToLocationHeading());
 			}
 
 			WeaponType attackType = getAttackType();
@@ -3213,7 +3209,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
 				{
 					_move.onGeodataPathIndex = -1;
-					stopMove(getActingPlayer().getLastServerPosition());
+					stopMove(getActingPlayer().getLastServerPosition().ToLocationHeading());
 					return false;
 				}
 			}
@@ -3398,19 +3394,21 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * <font color=#FF0000><b><u>Caution</u>: This method DOESN'T send Server=>Client packet StopMove/StopRotation</b></font>
 	 * @param loc
 	 */
-	public virtual void stopMove(Location loc)
+	public virtual void stopMove(LocationHeading? location) // TODO: overload without argument
 	{
 		// Delete movement data of the Creature
 		_move = null;
 		_cursorKeyMovement = false;
 		
 		// All data are contained in a Location object
-		if (loc != null)
+		if (location != null)
 		{
-			setXYZ(loc.getX(), loc.getY(), loc.getZ());
-			setHeading(loc.getHeading());
+			LocationHeading loc = location.Value;
+			setXYZ(loc.X, loc.Y, loc.Z);
+			setHeading(loc.Heading);
 			revalidateZone(true);
 		}
+
 		broadcastPacket(new StopMovePacket(this));
 	}
 	

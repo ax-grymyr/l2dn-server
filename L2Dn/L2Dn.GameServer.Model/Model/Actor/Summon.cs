@@ -871,7 +871,7 @@ public abstract class Summon: Playable
 	public override void onTeleported()
 	{
 		base.onTeleported();
-		sendPacket(new TeleportToLocationPacket(this, getX(), getY(), getZ(), getHeading()));
+		sendPacket(new TeleportToLocationPacket(getObjectId(), getLocation().ToLocationHeading()));
 	}
 	
 	public override bool isUndead()

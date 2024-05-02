@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.OutgoingPackets.Training;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -30,7 +31,7 @@ public struct NotifyTrainingRoomEndPacket: IIncomingPacket<GameSession>
             player.setInvul(false);
             player.setInvisible(false);
             player.setImmobilized(false);
-            player.teleToLocation(player.getLastLocation().ToLocationHeading());
+            player.teleToLocation(new LocationHeading(player.getLastLocation().Value, 0));
             player.sendPacket(ExTrainingZoneLeavingPacket.STATIC_PACKET);
             holder.setEndTime(DateTime.UtcNow);
             player.setTraingCampInfo(holder);

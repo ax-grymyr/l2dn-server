@@ -369,13 +369,13 @@ public abstract class Vehicle : Creature
 		revalidateZone(true);
 	}
 	
-	public override void stopMove(Location loc)
+	public override void stopMove(LocationHeading? loc)
 	{
 		_move = null;
 		if (loc != null)
 		{
-			setXYZ(loc.ToLocation3D());
-			setHeading(loc.getHeading());
+			setXYZ(loc.Value.Location);
+			setHeading(loc.Value.Heading);
 			revalidateZone(true);
 		}
 	}

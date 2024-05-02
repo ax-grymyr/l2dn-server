@@ -232,7 +232,7 @@ public class Player: Playable
 	private bool _waitTypeSitting;
 	
 	/** Location before entering Observer Mode */
-	private Location _lastLoc;
+	private Location3D? _lastLoc;
 	private bool _observerMode;
 	
 	private LocationHeading? _teleportLocation;
@@ -7088,9 +7088,9 @@ public class Player: Playable
             character.HairColor = _appearance.getHairColor();
 			character.Sex = _appearance.getSex();
             character.Heading = getHeading();
-            character.X = _lastLoc != null ? _lastLoc.getX() : getX();
-            character.Y = _lastLoc != null ? _lastLoc.getY() : getY();
-            character.Z = _lastLoc != null ? _lastLoc.getZ() : getZ();
+            character.X = _lastLoc != null ? _lastLoc.Value.X : getX();
+            character.Y = _lastLoc != null ? _lastLoc.Value.Y : getY();
+            character.Z = _lastLoc != null ? _lastLoc.Value.Z : getZ();
             character.Exp = exp;
             character.ExpBeforeDeath = _expBeforeDeath;
             character.Sp = sp;
@@ -9200,7 +9200,7 @@ public class Player: Playable
 	
 	public void setLastLocation()
 	{
-		_lastLoc = new Location(getX(), getY(), getZ());
+		_lastLoc = new Location3D(getX(), getY(), getZ());
 	}
 	
 	public void unsetLastLocation()
@@ -9259,7 +9259,7 @@ public class Player: Playable
 	{
 		setTarget(null);
 		setInstance(null);
-		teleToLocation(_lastLoc.ToLocationHeading(), false);
+		teleToLocation(new LocationHeading(_lastLoc.Value, 0), false);
 		unsetLastLocation();
 		sendPacket(new ObservationReturnPacket(getLocation()));
 		setBlockActions(false);
@@ -9289,7 +9289,7 @@ public class Player: Playable
 		setTarget(null);
 		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
-		teleToLocation(_lastLoc.ToLocationHeading(), true);
+		teleToLocation(new LocationHeading(_lastLoc.Value, 0), true);
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -9323,7 +9323,7 @@ public class Player: Playable
 		return _olympiadGameId;
 	}
 	
-	public Location getLastLocation()
+	public Location3D? getLastLocation()
 	{
 		return _lastLoc;
 	}
@@ -11273,7 +11273,7 @@ public class Player: Playable
 			// before entering in observer mode
 			if (_observerMode)
 			{
-				setLocationInvisible(_lastLoc.ToLocation3D());
+				setLocationInvisible(_lastLoc.Value);
 			}
 			
 			if (_vehicle != null)

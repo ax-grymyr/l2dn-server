@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -52,7 +53,7 @@ public class Boat: Vehicle
         }
     }
 
-    public override void stopMove(Location loc)
+    public override void stopMove(LocationHeading? loc)
     {
         base.stopMove(loc);
 

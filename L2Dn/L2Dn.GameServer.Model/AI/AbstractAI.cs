@@ -502,7 +502,7 @@ public abstract class AbstractAI : Ctrl
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
 	 * @param loc
 	 */
-	public virtual void clientStopMoving(Location loc)
+	public virtual void clientStopMoving(LocationHeading? loc) // TODO: overload without argument
 	{
 		// Stop movement of the Creature
 		if (_actor.isMoving())

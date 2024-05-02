@@ -393,11 +393,11 @@ public abstract class AbstractOlympiadGame
 		{
 			return;
 		}
-		Location loc = player.getLastLocation();
+		Location3D? loc = player.getLastLocation();
 		if (loc != null)
 		{
 			player.setIsPendingRevive(false);
-			player.teleToLocation(loc.ToLocationHeading(), null);
+			player.teleToLocation(new LocationHeading(loc.Value, 0));
 			player.unsetLastLocation();
 		}
 	}

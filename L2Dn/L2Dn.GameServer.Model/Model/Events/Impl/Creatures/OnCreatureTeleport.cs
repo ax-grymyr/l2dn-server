@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Base;
 using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 
@@ -10,19 +11,13 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 public class OnCreatureTeleport: LocationEventBase
 {
 	private readonly Creature _creature;
-	private readonly int _destX;
-	private readonly int _destY;
-	private readonly int _destZ;
-	private readonly int _destHeading;
+	private readonly LocationHeading _location;
 	private readonly Instance _destInstance;
 	
-	public OnCreatureTeleport(Creature creature, int destX, int destY, int destZ, int destHeading, Instance destInstance)
+	public OnCreatureTeleport(Creature creature, LocationHeading location, Instance destInstance)
 	{
 		_creature = creature;
-		_destX = destX;
-		_destY = destY;
-		_destZ = destZ;
-		_destHeading = destHeading;
+		_location = location;
 		_destInstance = destInstance;
 	}
 	
@@ -30,27 +25,9 @@ public class OnCreatureTeleport: LocationEventBase
 	{
 		return _creature;
 	}
-	
-	public int getDestX()
-	{
-		return _destX;
-	}
-	
-	public int getDestY()
-	{
-		return _destY;
-	}
-	
-	public int getDestZ()
-	{
-		return _destZ;
-	}
-	
-	public int getDestHeading()
-	{
-		return _destHeading;
-	}
-	
+
+	public LocationHeading Location => _location;
+
 	public Instance getDestInstance()
 	{
 		return _destInstance;

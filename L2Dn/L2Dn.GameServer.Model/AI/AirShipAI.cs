@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
 
@@ -21,7 +22,7 @@ public class AirShipAI: VehicleAI
         }
     }
 
-    public override void clientStopMoving(Location loc)
+    public override void clientStopMoving(LocationHeading? loc)
     {
         if (_actor.isMoving())
         {

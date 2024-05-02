@@ -708,7 +708,7 @@ public class CreatureAI: AbstractAI
 		}
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-		clientStopMoving(location);
+		clientStopMoving(location.ToLocationHeading());
 		
 		// Launch actions corresponding to the Event Think
 		onEvtThink();
@@ -851,14 +851,8 @@ public class CreatureAI: AbstractAI
 		// do nothing
 	}
 	
-	protected bool maybeMoveToPosition(Location worldPosition, int offset)
+	protected bool maybeMoveToPosition(Location3D worldPosition, int offset)
 	{
-		if (worldPosition == null)
-		{
-			// LOGGER.warning("maybeMoveToPosition: worldPosition == NULL!");
-			return false;
-		}
-		
 		if (offset < 0)
 		{
 			return false; // skill radius -1
@@ -881,8 +875,8 @@ public class CreatureAI: AbstractAI
 			int x = _actor.getX();
 			int y = _actor.getY();
 			
-			double dx = worldPosition.getX() - x;
-			double dy = worldPosition.getY() - y;
+			double dx = worldPosition.X - x;
+			double dy = worldPosition.Y - y;
 			double dist = MathUtil.hypot(dx, dy);
 			
 			double sin = dy / dist;
@@ -890,7 +884,7 @@ public class CreatureAI: AbstractAI
 			dist -= offset - 5;
 			x += (int) (dist * cos);
 			y += (int) (dist * sin);
-			moveTo(x, y, worldPosition.getZ());
+			moveTo(x, y, worldPosition.Z);
 			return true;
 		}
 		

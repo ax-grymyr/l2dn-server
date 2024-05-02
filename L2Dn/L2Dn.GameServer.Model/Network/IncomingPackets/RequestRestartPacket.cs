@@ -56,7 +56,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
             }
             else
             {
-                location = world.getExitLocation(player).ToLocation3D();
+                location = world.getExitLocation(player);
                 if (location == null)
                 {
                     location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location;

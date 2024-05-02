@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
@@ -12,6 +13,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.InstanceZones.Conditions;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -165,9 +167,9 @@ public class InstanceManager: DataReaderBase
 			XmlInstanceExitLocations? xmlInstanceExitLocations = xmlInstanceLocations.ExitLocations;
 			if (xmlInstanceEnterLocations != null)
 			{
-				List<Location> locations = xmlInstanceEnterLocations.Locations
-					.Select(loc => new Location(loc.X, loc.Y, loc.Z, loc.Heading))
-					.ToList();
+				ImmutableArray<LocationHeading> locations = xmlInstanceEnterLocations.Locations
+					.Select(loc => new LocationHeading(loc.X, loc.Y, loc.Z, loc.Heading))
+					.ToImmutableArray();
 				
 				template.setEnterLocation(xmlInstanceEnterLocations.Type, locations);
 			}
@@ -179,14 +181,13 @@ public class InstanceManager: DataReaderBase
 				{
 					case InstanceTeleportType.ORIGIN:
 					case InstanceTeleportType.TOWN:
-						template.setExitLocation(type, []);
 						break;
 					
 					default:
 					{
-						List<Location> locations = xmlInstanceExitLocations.Locations
-							.Select(loc => new Location(loc.X, loc.Y, loc.Z))
-							.ToList();
+						ImmutableArray<Location3D> locations = xmlInstanceExitLocations.Locations
+							.Select(loc => new Location3D(loc.X, loc.Y, loc.Z))
+							.ToImmutableArray();
 
 						if (locations.isEmpty())
 						{

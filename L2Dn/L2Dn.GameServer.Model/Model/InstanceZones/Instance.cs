@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
@@ -14,6 +15,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -855,10 +857,10 @@ public class Instance : IIdentifiable, INamable
 		Instance world = player.getInstanceWorld();
 		if ((world != null) && world == this)
 		{
-			Location loc = _template.getExitLocation(player);
+			Location3D? loc = _template.getExitLocation(player);
 			if (loc != null)
 			{
-				player.teleToLocation(loc.ToLocationHeading(), null);
+				player.teleToLocation(new LocationHeading(loc.Value, 0), null);
 			}
 			else
 			{
@@ -1118,15 +1120,15 @@ public class Instance : IIdentifiable, INamable
 		}
 		else
 		{
-			Location loc = getExitLocation(player);
+			Location3D? loc = getExitLocation(player);
 			if (loc != null)
 			{
-				player.setLocationInvisible(loc.ToLocation3D());
+				player.setLocationInvisible(loc.Value);
 				// If player has death pet, put him out of instance world
 				Summon pet = player.getPet();
 				if (pet != null)
 				{
-					pet.teleToLocation(loc.ToLocationHeading(), true);
+					pet.teleToLocation(new LocationHeading(loc.Value, 0), true);
 				}
 			}
 		}
@@ -1184,7 +1186,7 @@ public class Instance : IIdentifiable, INamable
 	 * Get enter location for instance world.
 	 * @return {@link Location} object if instance has enter location defined, otherwise {@code null}
 	 */
-	public Location getEnterLocation()
+	public LocationHeading? getEnterLocation()
 	{
 		return _template.getEnterLocation();
 	}
@@ -1193,7 +1195,7 @@ public class Instance : IIdentifiable, INamable
 	 * Get all enter locations defined in XML template.
 	 * @return list of enter locations
 	 */
-	public List<Location> getEnterLocations()
+	public ImmutableArray<LocationHeading> getEnterLocations()
 	{
 		return _template.getEnterLocations();
 	}
@@ -1203,7 +1205,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param player instance of player who wants to leave instance world
 	 * @return {@link Location} object if instance has exit location defined, otherwise {@code null}
 	 */
-	public Location getExitLocation(Player player)
+	public Location3D? getExitLocation(Player player)
 	{
 		return _template.getExitLocation(player);
 	}
