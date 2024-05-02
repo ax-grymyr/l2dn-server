@@ -632,9 +632,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, ILocation
 	 * Sets the x, y, z coordinate.
 	 * @param loc the location object
 	 */
-	public virtual void setXYZ(ILocational loc)
+	public virtual void setXYZ(Location3D location)
 	{
-		setXYZ(loc.getX(), loc.getY(), loc.getZ());
+		setXYZ(location.X, location.Y, location.Z);
 	}
 
 	/**

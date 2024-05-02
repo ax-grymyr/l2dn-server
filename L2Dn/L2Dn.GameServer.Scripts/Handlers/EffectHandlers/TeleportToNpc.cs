@@ -72,7 +72,7 @@ public class TeleportToNpc: AbstractEffect
 			effected.broadcastPacket(new FlyToLocationPacket(effected, location.ToLocation3D(), FlyType.DUMMY));
 			effected.abortAttack();
 			effected.abortCast();
-			effected.setXYZ(location);
+			effected.setXYZ(location.ToLocation3D());
 			effected.broadcastPacket(new ValidateLocationPacket(effected));
 			effected.revalidateZone(true);
 		}

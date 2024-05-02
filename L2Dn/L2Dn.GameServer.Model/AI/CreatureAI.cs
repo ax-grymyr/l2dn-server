@@ -14,6 +14,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.AI;
@@ -35,10 +36,10 @@ public class CreatureAI: AbstractAI
 	public class IntentionCommand
 	{
 		protected readonly CtrlIntention _crtlIntention;
-		protected readonly object _arg0;
-		protected readonly object _arg1;
+		protected readonly object? _arg0;
+		protected readonly object? _arg1;
 		
-		public IntentionCommand(CtrlIntention pIntention, object pArg0, object pArg1)
+		public IntentionCommand(CtrlIntention pIntention, object? pArg0, object? pArg1)
 		{
 			_crtlIntention = pIntention;
 			_arg0 = pArg0;
@@ -330,7 +331,7 @@ public class CreatureAI: AbstractAI
 	 * <li>Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)</li>
 	 * </ul>
 	 */
-	protected override void onIntentionMoveTo(ILocational loc)
+	protected override void onIntentionMoveTo(Location3D destination)
 	{
 		if (getIntention() == CtrlIntention.AI_INTENTION_REST)
 		{
@@ -347,7 +348,7 @@ public class CreatureAI: AbstractAI
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
-		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc);
+		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 		
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
@@ -356,7 +357,7 @@ public class CreatureAI: AbstractAI
 		_actor.abortAttack();
 		
 		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-		moveTo(loc.getX(), loc.getY(), loc.getZ());
+		moveTo(destination.X, destination.Y, destination.Z);
 	}
 	
 	/**

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -52,7 +53,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
                     return ValueTask.CompletedTask;
 
                 if (_param1 < World.GRACIA_MAX_X)
-                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_param1, _param2, z));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(_param1, _param2, z));
                 
                 break;
             }
@@ -72,7 +73,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
                 if (z < World.GRACIA_MAX_Z)
                 {
                     z = Math.Min(z + STEP, World.GRACIA_MAX_Z);
-                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(ship.getX(), ship.getY(), z));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(ship.getX(), ship.getY(), z));
                 }
 
                 break;
@@ -85,7 +86,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
                 if (z > World.GRACIA_MIN_Z)
                 {
                     z = Math.Max(z - STEP, World.GRACIA_MIN_Z);
-                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(ship.getX(), ship.getY(), z));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(ship.getX(), ship.getY(), z));
                 }
 
                 break;

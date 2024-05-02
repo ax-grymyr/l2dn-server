@@ -1257,7 +1257,7 @@ public class SkillCaster: Runnable
 		
 		creature.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		creature.broadcastPacket(new FlyToLocationPacket(creature, new Location3D(destination.X, destination.Y, destination.Z), flyType, 0, 0, 333));
-		creature.setXYZ(destination);
+		creature.setXYZ(destination.ToLocation3D());
 		creature.revalidateZone(true);
 	}
 }

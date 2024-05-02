@@ -42,7 +42,7 @@ public class FlyAway: AbstractEffect
 			effected.getZ(), x, y, z, effected.getInstanceWorld());
 		
 		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(destination.X, destination.Y, destination.Z), FlyType.THROW_UP));
-		effected.setXYZ(destination);
+		effected.setXYZ(destination.ToLocation3D());
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);
 	}

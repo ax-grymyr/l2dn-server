@@ -39,18 +39,18 @@ public class BlinkSwap: AbstractEffect
 		Location effectorLoc = new Location(effector.getX(), effector.getY(), effector.getZ(), effector.getHeading());
 
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(effectedLoc.X, effectedLoc.Y, effectedLoc.Z), FlyType.DUMMY));
+		effector.broadcastPacket(new FlyToLocationPacket(effector, effectedLoc.ToLocation3D(), FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
-		effector.setXYZ(effectedLoc);
+		effector.setXYZ(effectedLoc.ToLocation3D());
 		effector.broadcastPacket(new ValidateLocationPacket(effector));
 		effector.revalidateZone(true);
 
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(effectorLoc.X, effectorLoc.Y, effectorLoc.Z), FlyType.DUMMY));
+		effected.broadcastPacket(new FlyToLocationPacket(effected, effectorLoc.ToLocation3D(), FlyType.DUMMY));
 		effected.abortAttack();
 		effected.abortCast();
-		effected.setXYZ(effectorLoc);
+		effected.setXYZ(effectorLoc.ToLocation3D());
 		effected.broadcastPacket(new ValidateLocationPacket(effected));
 		effected.revalidateZone(true);
 	}

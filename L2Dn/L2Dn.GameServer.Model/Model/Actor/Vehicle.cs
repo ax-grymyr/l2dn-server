@@ -81,7 +81,7 @@ public abstract class Vehicle : Creature
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
 			
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.ToLocation3D());
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -356,7 +356,7 @@ public abstract class Vehicle : Creature
 		}
 		
 		decayMe();
-		setXYZ(loc);
+		setXYZ(new Location3D(loc.getX(), loc.getY(), loc.getZ()));
 		
 		// temporary fix for heading on teleports
 		if (loc.getHeading() != 0)
@@ -373,7 +373,7 @@ public abstract class Vehicle : Creature
 		_move = null;
 		if (loc != null)
 		{
-			setXYZ(loc);
+			setXYZ(loc.ToLocation3D());
 			setHeading(loc.getHeading());
 			revalidateZone(true);
 		}

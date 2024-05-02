@@ -117,7 +117,7 @@ public class KnockBack: AbstractEffect
 				effected.setHeading(new Location2D(effected.getX(), effected.getY()).HeadingTo(new Location2D(effector.getX(), effector.getY())));
 			}
 
-			effected.setXYZ(loc);
+			effected.setXYZ(loc.ToLocation3D());
 			effected.broadcastPacket(new ValidateLocationPacket(effected));
 			effected.revalidateZone(true);
 		}

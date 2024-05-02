@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
 
@@ -20,7 +21,7 @@ public class PlayerAI : PlayableAI
 	{
 	}
 	
-	private void saveNextIntention(CtrlIntention intention, object arg0, object arg1)
+	private void saveNextIntention(CtrlIntention intention, object? arg0, object? arg1)
 	{
 		_nextIntention = new IntentionCommand(intention, arg0, arg1);
 	}
@@ -36,7 +37,7 @@ public class PlayerAI : PlayableAI
 	 * @param args The first parameter of the Intention
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	protected override void changeIntention(CtrlIntention intention, params object[] args)
+	protected override void changeIntention(CtrlIntention intention, params object?[] args)
 	{
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill
@@ -47,10 +48,10 @@ public class PlayerAI : PlayableAI
 			return;
 		}
 		
-		object localArg0 = args.Length > 0 ? args[0] : null;
-		object localArg1 = args.Length > 1 ? args[1] : null;
-		object globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
-		object globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
+		object? localArg0 = args.Length > 0 ? args[0] : null;
+		object? localArg1 = args.Length > 1 ? args[1] : null;
+		object? globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
+		object? globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
 		
 		// do nothing if next intention is same as current one.
 		if ((intention == _intention) && (globalArg0 == localArg0) && (globalArg1 == localArg1))
@@ -189,7 +190,7 @@ public class PlayerAI : PlayableAI
 	 * <li>Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)</li>
 	 * </ul>
 	 */
-	protected override void onIntentionMoveTo(ILocational loc)
+	protected override void onIntentionMoveTo(Location3D destination)
 	{
 		if (getIntention() == CtrlIntention.AI_INTENTION_REST)
 		{
@@ -201,12 +202,12 @@ public class PlayerAI : PlayableAI
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
 		{
 			clientActionFailed();
-			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
+			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination, null);
 			return;
 		}
 		
 		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
-		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc);
+		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 		
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
@@ -215,7 +216,7 @@ public class PlayerAI : PlayableAI
 		_actor.abortAttack();
 		
 		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-		moveTo(loc.getX(), loc.getY(), loc.getZ());
+		moveTo(destination.X, destination.Y, destination.Z);
 	}
 	
 	protected override void clientNotifyDead()

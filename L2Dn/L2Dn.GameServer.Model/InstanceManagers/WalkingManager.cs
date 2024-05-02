@@ -245,7 +245,7 @@ public class WalkingManager: DataReaderBase
 					{
 						npc.setWalking();
 					}
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node.Location);
 					
 					ScheduledFuture task = _repeatMoveTasks.get(npc);
 					if ((task == null) || task.isCancelled() || task.isDone())
@@ -293,7 +293,7 @@ public class WalkingManager: DataReaderBase
 					{
 						npc.setWalking();
 					}
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node);
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node.Location);
 					walk.setBlocked(false);
 					walk.setStoppedByAttack(false);
 				}

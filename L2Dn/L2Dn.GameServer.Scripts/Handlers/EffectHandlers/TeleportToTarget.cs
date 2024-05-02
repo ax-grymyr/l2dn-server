@@ -60,7 +60,7 @@ public class TeleportToTarget: AbstractEffect
 		effector.broadcastPacket(new FlyToLocationPacket(effector, new Location3D(loc.getX(), loc.getY(), loc.getZ()), FlyType.DUMMY));
 		effector.abortAttack();
 		effector.abortCast();
-		effector.setXYZ(loc);
+		effector.setXYZ(loc.ToLocation3D());
 		effector.broadcastPacket(new ValidateLocationPacket(effector));
 		effected.revalidateZone(true);
 	}

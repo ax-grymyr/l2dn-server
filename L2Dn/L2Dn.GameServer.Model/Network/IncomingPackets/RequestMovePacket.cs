@@ -122,7 +122,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 				
-				player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_target.X, _target.Y, _target.Z));
+				player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, _target);
 				break;
 			}
 		}

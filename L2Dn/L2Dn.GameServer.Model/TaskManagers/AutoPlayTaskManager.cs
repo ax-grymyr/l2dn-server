@@ -90,7 +90,7 @@ public class AutoPlayTaskManager
 									{
 										if (!player.isMoving())
 										{
-											player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target);
+											player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation().ToLocation3D());
 										}
 										continue; // play
 									}
@@ -196,7 +196,7 @@ public class AutoPlayTaskManager
 										{
 											location = new Location(creature.getX() + x1, creature.getY() + y1, player.getZ());
 										}
-										player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, location);
+										player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, location.ToLocation3D());
 										IDLE_COUNT.remove(player);
 									}
 									else
@@ -233,7 +233,7 @@ public class AutoPlayTaskManager
 						{
 							if (!player.isMoving())
 							{
-								player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, droppedItem);
+								player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, droppedItem.getLocation().ToLocation3D());
 							}
 
 							gotoPlay = true;

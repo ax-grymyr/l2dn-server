@@ -2839,9 +2839,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param loc the location
 	 * @param desire the desire
 	 */
-	protected void addMoveToDesire(Npc npc, Location loc, int desire)
+	protected void addMoveToDesire(Npc npc, Location3D destination, int desire)
 	{
-		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc);
+		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 	}
 	
 	/**

@@ -587,7 +587,7 @@ public class AttackableAI: CreatureAI
 					npc.getAttackByList().clear();
 					if (npc.hasAI())
 					{
-						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location);
+						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location.ToLocation3D());
 					}
 					else
 					{
@@ -609,7 +609,7 @@ public class AttackableAI: CreatureAI
 							minion.getAttackByList().clear();
 							if (minion.hasAI())
 							{
-								minion.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location);
+								minion.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location.ToLocation3D());
 							}
 							else
 							{
@@ -831,7 +831,7 @@ public class AttackableAI: CreatureAI
 				
 				if (GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), posX, posY, posZ, npc.getInstanceWorld()))
 				{
-					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(posX, posY, posZ, 0));
+					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(posX, posY, posZ));
 				}
 				return;
 			}

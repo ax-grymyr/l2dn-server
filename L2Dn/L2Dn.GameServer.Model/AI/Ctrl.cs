@@ -31,44 +31,38 @@ public interface Ctrl
 	 * @return the actor
 	 */
 	Creature getActor();
-	
+
 	/**
 	 * Gets the intention.
 	 * @return the intention
 	 */
 	CtrlIntention getIntention();
-	
-	/**
-	 * Set general state/intention for AI, with optional data.
-	 * @param intention the new intention
-	 */
-	void setIntention(CtrlIntention intention);
-	
+
 	/**
 	 * Sets the intention.
 	 * @param intention the intention
 	 * @param args
 	 */
-	void setIntention(CtrlIntention intention, params object[] args);
-	
+	void setIntention(CtrlIntention intention, params object?[] args);
+
 	/**
 	 * Event, that notifies about previous step result, or user command, that does not change current general intention.
 	 * @param evt the event
 	 */
 	void notifyEvent(CtrlEvent evt);
-	
+
 	/**
 	 * Notify an event.
 	 * @param evt the event
 	 * @param arg0 the arg0
 	 */
-	void notifyEvent(CtrlEvent evt, Object arg0);
-	
+	void notifyEvent(CtrlEvent evt, object arg0);
+
 	/**
 	 * Notify an event.
 	 * @param evt the event
 	 * @param arg0 the arg0
 	 * @param arg1 the arg1
 	 */
-	void notifyEvent(CtrlEvent evt, Object arg0, Object arg1);
+	void notifyEvent(CtrlEvent evt, object arg0, object arg1);
 }

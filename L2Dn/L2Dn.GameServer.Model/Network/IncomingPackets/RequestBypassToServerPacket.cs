@@ -286,7 +286,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		{
 			Npc temp = (Npc) obj;
 			temp.setTarget(player);
-			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getLocation());
+			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getLocation().ToLocation3D());
 		}
 	}
 }

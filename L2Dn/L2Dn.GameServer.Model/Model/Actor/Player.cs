@@ -12676,13 +12676,13 @@ public class Player: Playable
 	{
 		if (isInBoat())
 		{
-			setXYZ(getBoat().getLocation());
+			setXYZ(getBoat().getLocation().ToLocation3D());
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new GetOnVehiclePacket(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
 		}
 		else if (isInAirShip())
 		{
-			setXYZ(getAirShip().getLocation());
+			setXYZ(getAirShip().getLocation().ToLocation3D());
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
 			player.sendPacket(new ExGetOnAirShipPacket(this, getAirShip()));
 		}

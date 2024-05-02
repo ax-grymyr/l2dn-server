@@ -6,7 +6,7 @@
 public enum CtrlEvent
 {
     /**
-	 * Something has changed, usually a previous step has being completed or maybe was completed, the AI must thing on next action.
+	 * Something has changed, usually a previous step has being completed or maybe was completed, the AI must think on next action.
 	 */
     EVT_THINK,
     /**

@@ -15,6 +15,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -106,7 +107,7 @@ public class AdminTeleport: IAdminCommandHandler
 				int x = int.Parse(st.nextToken());
 				int y = int.Parse(st.nextToken());
 				int z = int.Parse(st.nextToken());
-				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(x, y, z, 0));
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(x, y, z));
 			}
 			catch (Exception e)
 			{

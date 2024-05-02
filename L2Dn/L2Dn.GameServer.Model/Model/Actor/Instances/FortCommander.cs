@@ -73,7 +73,7 @@ public class FortCommander : Defender
 			
 			if (hasAI())
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.ToLocation3D());
 			}
 		}
 	}

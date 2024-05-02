@@ -3,6 +3,7 @@ using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.AI;
@@ -150,7 +151,7 @@ public class FriendlyNpcAI : AttackableAI
 				
 				if (GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), posX, posY, posZ, npc.getInstanceWorld()))
 				{
-					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(posX, posY, posZ, 0));
+					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(posX, posY, posZ));
 				}
 				return;
 			}
