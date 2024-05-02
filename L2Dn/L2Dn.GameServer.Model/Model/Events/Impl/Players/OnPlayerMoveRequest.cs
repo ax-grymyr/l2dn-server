@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Base;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Players;
 
@@ -9,9 +10,9 @@ namespace L2Dn.GameServer.Model.Events.Impl.Players;
 public class OnPlayerMoveRequest: TerminateEventBase
 {
 	private readonly Player _player;
-	private readonly Location _location;
+	private readonly Location3D _location;
 	
-	public OnPlayerMoveRequest(Player player, Location loc)
+	public OnPlayerMoveRequest(Player player, Location3D loc)
 	{
 		_player = player;
 		_location = loc;
@@ -22,7 +23,7 @@ public class OnPlayerMoveRequest: TerminateEventBase
 		return _player;
 	}
 	
-	public Location getLocation()
+	public Location3D getLocation()
 	{
 		return _location;
 	}

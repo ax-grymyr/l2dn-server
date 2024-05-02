@@ -30,28 +30,23 @@ public class Party : AbstractPlayerGroup
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Party));
 	
-	private static readonly double[] BONUS_EXP_SP =
-	{
-		1.0, 1.6, 1.65, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2
-	};
-	
+	private static readonly double[] BONUS_EXP_SP = [1.0, 1.6, 1.65, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2];
 	private static readonly TimeSpan PARTY_POSITION_BROADCAST_INTERVAL = TimeSpan.FromSeconds(12);
 	private static readonly TimeSpan PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = TimeSpan.FromSeconds(15);
 	
-	private readonly List<Player> _members = new(); // TODO: CopyOnWriteArrayList
-	private bool _pendingInvitation = false;
+	private readonly List<Player> _members = []; // TODO: CopyOnWriteArrayList
+	private bool _pendingInvitation;
 	private long _pendingInviteTimeout;
-	private int _partyLvl = 0;
+	private int _partyLvl;
 	private PartyDistributionType _distributionType = PartyDistributionType.FINDERS_KEEPERS;
 	private PartyDistributionType? _changeRequestDistributionType;
-	private ScheduledFuture _changeDistributionTypeRequestTask = null;
-	private Set<int> _changeDistributionTypeAnswers = null;
-	private int _itemLastLoot = 0;
-	private CommandChannel _commandChannel = null;
-	private ScheduledFuture _positionBroadcastTask = null;
-	protected PartyMemberPositionPacket? _positionPacket;
-	private bool _disbanding = false;
-	private Map<int, Creature> _tacticalSigns = null;
+	private ScheduledFuture _changeDistributionTypeRequestTask;
+	private Set<int> _changeDistributionTypeAnswers;
+	private int _itemLastLoot;
+	private CommandChannel _commandChannel;
+	private ScheduledFuture _positionBroadcastTask;
+	private bool _disbanding;
+	private Map<int, Creature> _tacticalSigns;
 	private static readonly int[] TACTICAL_SYS_STRINGS =
 	{
 		0,
@@ -327,28 +322,22 @@ public class Party : AbstractPlayerGroup
 				member.sendPacket(su);
 			}
 		}
-		
+
 		// open the CCInformationwindow
 		if (isInCommandChannel())
 		{
 			player.sendPacket(ExOpenMPCCPacket.STATIC_PACKET);
 		}
-		
+
 		if (_positionBroadcastTask == null)
 		{
 			_positionBroadcastTask = ThreadPool.scheduleAtFixedRate(() =>
 			{
-				if (_positionPacket == null)
-				{
-					_positionPacket = new PartyMemberPositionPacket(this);
-				}
-				else
-				{
-					_positionPacket.Value.reuse(this);
-				}
-				broadcastPacket(_positionPacket.Value);
+				PartyMemberPositionPacket positionPacket = new(this);
+				broadcastPacket(positionPacket);
 			}, PARTY_POSITION_BROADCAST_INTERVAL / 2, PARTY_POSITION_BROADCAST_INTERVAL);
 		}
+
 		applyTacticalSigns(player, false);
 		World.getInstance().incrementPartyMember();
 	}

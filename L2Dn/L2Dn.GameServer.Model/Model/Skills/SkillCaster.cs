@@ -292,11 +292,12 @@ public class SkillCaster: Runnable
 			if (caster.isPlayer() && (_skill.getTargetType() == TargetType.GROUND) && (_skill.getAffectScope() == AffectScope.FAN_PB))
 			{
 				Player player = caster.getActingPlayer();
-				Location worldPosition = player.getCurrentSkillWorldPosition();
+				Location3D? worldPosition = player.getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
-					Location3D location = worldPosition.ToLocation3D();
-					ThreadPool.schedule(() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.getObjectId(), _skill.getDisplayId(), location)), 100);
+					ThreadPool.schedule(
+						() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.getObjectId(),
+							_skill.getDisplayId(), worldPosition.Value)), 100);
 				}
 			}
 		}
@@ -537,11 +538,12 @@ public class SkillCaster: Runnable
 		caster.rechargeShots(_skill.useSoulShot(), _skill.useSpiritShot(), false);
 		
 		// Reset current skill world position.
-		if (caster.isPlayer() && (_skill.getTargetType() == TargetType.GROUND) && ((_skill.getAffectScope() == AffectScope.FAN_PB) || (_skill.getAffectScope() == AffectScope.FAN)))
+		if (caster.isPlayer() && (_skill.getTargetType() == TargetType.GROUND) &&
+		    ((_skill.getAffectScope() == AffectScope.FAN_PB) || (_skill.getAffectScope() == AffectScope.FAN)))
 		{
 			caster.getActingPlayer().setCurrentSkillWorldPosition(null);
 		}
-		
+
 		return true;
 	}
 	

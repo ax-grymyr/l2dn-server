@@ -277,12 +277,12 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ARRIVED_BLOCKED:
 			{
-				onEvtArrivedBlocked((Location) arg0);
+				onEvtArrivedBlocked((LocationHeading)arg0);
 				break;
 			}
 			case CtrlEvent.EVT_FORGET_OBJECT:
 			{
-				WorldObject worldObject = (WorldObject) arg0;
+				WorldObject worldObject = (WorldObject)arg0;
 				_actor.removeSeenCreature(worldObject);
 				onEvtForgetObject(worldObject);
 				break;
@@ -356,7 +356,7 @@ public abstract class AbstractAI : Ctrl
 	
 	protected abstract void onEvtArrivedRevalidate();
 	
-	protected abstract void onEvtArrivedBlocked(Location location);
+	protected abstract void onEvtArrivedBlocked(LocationHeading location);
 	
 	protected abstract void onEvtForgetObject(WorldObject @object);
 	

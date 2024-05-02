@@ -80,12 +80,12 @@ public class SummonNpc: AbstractEffect
 		
 		if (skill.getTargetType() == TargetType.GROUND)
 		{
-			Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
+			Location3D? wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
 			if (wordPosition != null)
 			{
-				x = wordPosition.getX();
-				y = wordPosition.getY();
-				z = wordPosition.getZ();
+				x = wordPosition.Value.X;
+				y = wordPosition.Value.Y;
+				z = wordPosition.Value.Z;
 			}
 		}
 		else
@@ -160,8 +160,7 @@ public class SummonNpc: AbstractEffect
 					return;
 				}
 
-				spawn.Location.setXYZ(new Location3D(x, y, z));
-				spawn.Location.setHeading(player.getHeading());
+				spawn.Location = new LocationHeading(x, y, z, player.getHeading());
 				spawn.stopRespawn();
 
 				Npc npc = spawn.doSpawn(_isSummonSpawn);

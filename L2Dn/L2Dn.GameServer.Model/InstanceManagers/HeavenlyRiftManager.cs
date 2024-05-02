@@ -89,8 +89,7 @@ public class HeavenlyRiftManager
 		try
 		{
 			Spawn spawn = new Spawn(npcId);
-			Location3D location = new(x, y, z);
-			spawn.Location.setLocation(location, 0);
+			spawn.Location = new LocationHeading(x, y, z, 0);
 			Npc npc = spawn.doSpawn();
 			npc.scheduleDespawn(despawnTime);
 		}

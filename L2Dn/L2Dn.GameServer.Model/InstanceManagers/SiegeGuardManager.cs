@@ -269,8 +269,7 @@ public class SiegeGuardManager
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
-				spawn.Location.setHeading(record.Heading);
+				spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);
 

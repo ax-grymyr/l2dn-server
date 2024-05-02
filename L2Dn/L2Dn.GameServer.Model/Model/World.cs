@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -765,7 +766,8 @@ public sealed class World
 	{
 		if (@object.isPlayer())
 		{
-			((Creature) @object).stopMove(((Player) @object).getLastServerPosition().ToLocationHeading());
+			Player player = (Player)@object;
+			player.stopMove(new LocationHeading(player.getLastServerPosition(), 0));
 		}
 		else if (@object.isSummon())
 		{
@@ -783,8 +785,7 @@ public sealed class World
 				Spawn spawn = npc.getSpawn();
 				if (spawn != null)
 				{
-					LOGGER.Warn("Spawn location X:" + spawn.Location.getX() + " Y:" + spawn.Location.getY() + " Z:" +
-						spawn.Location.getZ() + " Heading:" + spawn.Location.getHeading());
+					LOGGER.Warn("Spawn location: " + spawn.Location);
 				}
 			}
 			else if (@object.isCreature())

@@ -1484,12 +1484,11 @@ public class FortSiege: Siegable
 		try
 		{
 			_commanders.clear();
-			foreach (FortSiegeSpawn _sp in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
+			foreach (FortSiegeSpawn sp in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
-				Spawn spawnDat = new Spawn(_sp.getId());
+				Spawn spawnDat = new Spawn(sp.getId());
 				spawnDat.setAmount(1);
-				spawnDat.Location.setXYZ(_sp.Location.Location);
-				spawnDat.Location.setHeading(_sp.Location.Heading);
+				spawnDat.Location = sp.Location;
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
 				spawnDat.doSpawn(false);
 				spawnDat.stopRespawn();
@@ -1552,8 +1551,7 @@ public class FortSiege: Siegable
 			{
 				Spawn spawn = new Spawn(record.NpcId);
 				spawn.setAmount(1);
-				spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
-				spawn.Location.setHeading(record.Heading);
+				spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);
 				

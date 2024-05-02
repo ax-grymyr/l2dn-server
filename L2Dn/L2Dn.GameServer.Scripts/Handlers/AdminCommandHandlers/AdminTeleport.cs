@@ -187,7 +187,7 @@ public class AdminTeleport: IAdminCommandHandler
 				Player player = World.getInstance().getPlayer(targetName);
 				if (player != null)
 				{
-					teleportCharacter(player, activeChar.getLocation(), activeChar);
+					teleportCharacter(player, activeChar.getLocation().ToLocation3D(), activeChar);
 				}
 				else
 				{
@@ -411,7 +411,7 @@ public class AdminTeleport: IAdminCommandHandler
 				int y = int.Parse(y1);
 				String z1 = st.nextToken();
 				int z = int.Parse(z1);
-				teleportCharacter(player, new Location(x, y, z), null);
+				teleportCharacter(player, new Location3D(x, y, z), null);
 			}
 			catch (Exception nsee)
 			{
@@ -424,7 +424,7 @@ public class AdminTeleport: IAdminCommandHandler
 	 * @param loc
 	 * @param activeChar
 	 */
-	private void teleportCharacter(Player player, Location loc, Player activeChar)
+	private void teleportCharacter(Player player, Location3D loc, Player activeChar)
 	{
 		if (player != null)
 		{
@@ -438,7 +438,7 @@ public class AdminTeleport: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "You have recalled " + player.getName());
 				player.sendMessage("Admin is teleporting you.");
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				player.teleToLocation(loc.ToLocationHeading(), true, activeChar.getInstanceWorld());
+				player.teleToLocation(new LocationHeading(loc, 0), true, activeChar.getInstanceWorld());
 			}
 		}
 	}
@@ -521,9 +521,8 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				spawn = new Spawn(template1);
-				spawn.Location.setXYZ(activeChar.getLocation().ToLocation3D());
+				spawn.Location = activeChar.getLocation().ToLocationHeading();
 				spawn.setAmount(1);
-				spawn.Location.setHeading(activeChar.getHeading());
 				spawn.setRespawnDelay(respawnTime);
 				if (activeChar.isInInstance())
 				{
@@ -559,9 +558,8 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				Spawn spawnDat = new Spawn(target.getId());
-				spawnDat.Location.setXYZ(activeChar.getLocation().ToLocation3D());
+				spawnDat.Location = activeChar.getLocation().ToLocationHeading();
 				spawnDat.setAmount(1);
-				spawnDat.Location.setHeading(activeChar.getHeading());
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));
 				spawnDat.setRespawnMaxDelay(TimeSpan.FromSeconds(129600));
 				

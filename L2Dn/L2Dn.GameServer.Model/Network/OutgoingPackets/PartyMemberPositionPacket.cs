@@ -1,45 +1,30 @@
-﻿using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Actor;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct PartyMemberPositionPacket: IOutgoingPacket
 {
-    private readonly Map<int, Location> locations;
-	
+    private readonly ImmutableArray<(int, Location3D)> _locations;
+
     public PartyMemberPositionPacket(Party party)
     {
-        locations = new Map<int, Location>();
-        reuse(party);
+        _locations = party.getMembers().Select(x => (x.getObjectId(), x.getLocation().ToLocation3D()))
+            .ToImmutableArray();
     }
-	
-    public void reuse(Party party)
-    {
-        locations.clear();
-        foreach (Player member in party.getMembers())
-        {
-            if (member == null)
-            {
-                continue;
-            }
-            locations.put(member.getObjectId(), member.getLocation());
-        }
-    }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.PARTY_MEMBER_POSITION);
-        
-        writer.WriteInt32(locations.size());
-        foreach (var entry in locations)
+
+        writer.WriteInt32(_locations.Length);
+        foreach ((int objectId, Location3D location) in _locations)
         {
-            Location loc = entry.Value;
-            writer.WriteInt32(entry.Key);
-            writer.WriteInt32(loc.getX());
-            writer.WriteInt32(loc.getY());
-            writer.WriteInt32(loc.getZ());
+            writer.WriteInt32(objectId);
+            writer.WriteLocation3D(location);
         }
     }
 }

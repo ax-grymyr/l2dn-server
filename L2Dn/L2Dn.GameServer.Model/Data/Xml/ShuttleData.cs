@@ -80,21 +80,21 @@ public class ShuttleData: DataReaderBase
 
 		element.Elements("routes").Elements("route").ForEach(el =>
 		{
-			List<Location> locs = new();
+			List<LocationHeading> locs = new();
 			el.Elements("loc").ForEach(e =>
 			{
 				int locX = e.GetAttributeValueAsInt32("x");
 				int locY = e.GetAttributeValueAsInt32("y");
 				int locZ = e.GetAttributeValueAsInt32("z");
 				int locHeading = e.GetAttributeValueAsInt32("heading");
-				locs.add(new Location(locX, locY, locZ, locHeading));
+				locs.Add(new LocationHeading(locX, locY, locZ, locHeading));
 			});
-										
+
 			VehiclePathPoint[] route = new VehiclePathPoint[locs.size()];
 			int i = 0;
-			foreach (Location loc in locs)
+			foreach (LocationHeading loc in locs)
 				route[i++] = new VehiclePathPoint(loc);
-			
+
 			data.addRoute(route);
 		});
 

@@ -42,14 +42,14 @@ public class Boat: Vehicle
     {
         base.oustPlayer(player);
 
-        Location loc = getOustLoc();
+        LocationHeading loc = getOustLoc();
         if (player.isOnline())
         {
-            player.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
+            player.teleToLocation(loc);
         }
         else
         {
-            player.setXYZInvisible(loc.ToLocation3D()); // disconnects handling
+            player.setXYZInvisible(loc.Location); // disconnects handling
         }
     }
 

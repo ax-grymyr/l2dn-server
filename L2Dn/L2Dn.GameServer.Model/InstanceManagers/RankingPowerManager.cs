@@ -52,18 +52,18 @@ public class RankingPowerManager
 	
 	private void createClone(Player player)
 	{
-		Location location = player.getLocation();
+		LocationHeading location = player.getLocation().ToLocationHeading();
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);
 		_decoyInstance.setTargetable(false);
 		_decoyInstance.setImmobilized(true);
 		_decoyInstance.setInvul(true);
-		_decoyInstance.spawnMe(location.getX(), location.getY(), location.getZ());
-		_decoyInstance.setHeading(location.getHeading());
+		_decoyInstance.spawnMe(location.X, location.Y, location.Z);
+		_decoyInstance.setHeading(location.Heading);
 		_decoyInstance.broadcastStatusUpdate();
 		
-		AbstractScript.addSpawn(null, LEADER_STATUE, location.ToLocation3D(), location.Heading, false, COOLDOWN);
+		AbstractScript.addSpawn(null, LEADER_STATUE, location.Location, location.Heading, false, COOLDOWN);
 	}
 	
 	private void cloneTask()

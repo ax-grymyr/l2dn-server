@@ -493,7 +493,7 @@ public class AdminSpawn: IAdminCommandHandler
 					}
 					else
 					{
-						activeChar.teleToLocation(spawn.Location.ToLocationHeading(), true);
+						activeChar.teleToLocation(spawn.Location, true);
 					}
 				}
 			}
@@ -504,7 +504,7 @@ public class AdminSpawn: IAdminCommandHandler
 			else
 			{
 				activeChar.sendMessage(index + " - " + spawn.getTemplate().getName() + " (" + spawn + "): " +
-					spawn.Location.getX() + " " + spawn.Location.getY() + " " + spawn.Location.getZ());
+					spawn.Location.X + " " + spawn.Location.Y + " " + spawn.Location.Z);
 			}
 		}
 		
@@ -517,10 +517,10 @@ public class AdminSpawn: IAdminCommandHandler
 	private void printSpawn(Npc target, int type)
 	{
 		int i = target.getId();
-		int x = target.getSpawn().Location.getX();
-		int y = target.getSpawn().Location.getY();
-		int z = target.getSpawn().Location.getZ();
-		int h = target.getSpawn().Location.getHeading();
+		int x = target.getSpawn().Location.X;
+		int y = target.getSpawn().Location.Y;
+		int z = target.getSpawn().Location.Z;
+		int h = target.getSpawn().Location.Heading;
 		switch (type)
 		{
 			default:
@@ -574,9 +574,8 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location.setXYZ(target.getLocation().ToLocation3D());
+			spawn.Location = target.getLocation().ToLocationHeading();
 			spawn.setAmount(mobCount);
-			spawn.Location.setHeading(activeChar.getHeading());
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(respawnTime));
 			
 			bool permanent = permanentValue;
@@ -621,9 +620,8 @@ public class AdminSpawn: IAdminCommandHandler
 		try
 		{
 			Spawn spawn = new Spawn(template1);
-			spawn.Location.setXYZ(new Location3D(x, y, z));
+			spawn.Location = new LocationHeading(x, y, z, h);
 			spawn.setAmount(1);
-			spawn.Location.setHeading(h);
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(60));
 			if (activeChar.isInInstance())
 			{

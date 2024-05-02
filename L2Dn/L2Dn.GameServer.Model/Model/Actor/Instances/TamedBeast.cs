@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -26,14 +27,12 @@ public class TamedBeast: FeedableBeast
 	private const int DURATION_INCREASE_INTERVAL = 20000; // 20 secs (gained upon feeding)
 	private const int BUFF_INTERVAL = 5000; // 5 seconds
 	private int _remainingTime = MAX_DURATION;
-	private int _homeX;
-	private int _homeY;
-	private int _homeZ;
+	private Location3D _homeLocation;
 	protected Player _owner;
-	private ScheduledFuture _buffTask = null;
-	private ScheduledFuture _durationCheckTask = null;
+	private ScheduledFuture _buffTask;
+	private ScheduledFuture _durationCheckTask;
 	protected bool _isFreyaBeast;
-	private Set<Skill> _beastSkills = null;
+	private Set<Skill> _beastSkills;
 	
 	public TamedBeast(int npcTemplateId): base(NpcData.getInstance().getTemplate(npcTemplateId))
 	{
@@ -79,16 +78,14 @@ public class TamedBeast: FeedableBeast
 		}
 	}
 	
-	public Location getHome()
+	public Location3D getHome()
 	{
-		return new Location(_homeX, _homeY, _homeZ);
+		return _homeLocation;
 	}
 	
 	public void setHome(int x, int y, int z)
 	{
-		_homeX = x;
-		_homeY = y;
-		_homeZ = z;
+		_homeLocation = new Location3D(x, y, z);
 	}
 	
 	public void setHome(Creature c)
@@ -265,7 +262,7 @@ public class TamedBeast: FeedableBeast
 	
 	public bool isTooFarFromHome()
 	{
-		return !isInsideRadius3D(_homeX, _homeY, _homeZ, MAX_DISTANCE_FROM_HOME);
+		return !isInsideRadius3D(_homeLocation, MAX_DISTANCE_FROM_HOME);
 	}
 	
 	public override bool deleteMe()

@@ -69,10 +69,9 @@ public class DBSpawnManager
 				if (template != null)
 				{
 					Spawn spawn = new Spawn(template);
-					spawn.Location.setXYZ(new Location3D(record.X, record.Y, record.Z));
+					spawn.Location = new LocationHeading(record.X, record.Y, record.Z, record.Heading);
 					spawn.setAmount(1);
-					spawn.Location.setHeading(record.Heading);
-					
+
 					List<NpcSpawnTemplate> spawns = SpawnData.getInstance().getNpcSpawns(npc => (npc.getId() == template.getId()) && npc.hasDBSave());
 					if (spawns.isEmpty())
 					{
@@ -276,10 +275,10 @@ public class DBSpawnManager
 				ctx.NpcRespawns.Add(new NpcRespawn()
 				{
 					Id = spawn.getId(),
-					X = spawn.Location.getX(),
-					Y = spawn.Location.getY(),
-					Z = spawn.Location.getZ(),
-					Heading = spawn.Location.getHeading(),
+					X = spawn.Location.X,
+					Y = spawn.Location.Y,
+					Z = spawn.Location.Z,
+					Heading = spawn.Location.Heading,
 					RespawnTime = respawnTime,
 					CurrentHp = currentHP,
 					CurrentMp = currentMP,
@@ -336,10 +335,10 @@ public class DBSpawnManager
 				ctx.NpcRespawns.Add(new NpcRespawn()
 				{
 					Id = spawn.getId(),
-					X = spawn.Location.getX(),
-					Y = spawn.Location.getY(),
-					Z = spawn.Location.getZ(),
-					Heading = spawn.Location.getHeading(),
+					X = spawn.Location.X,
+					Y = spawn.Location.Y,
+					Z = spawn.Location.Z,
+					Heading = spawn.Location.Heading,
 					CurrentHp = npc.getMaxHp(),
 					CurrentMp = npc.getMaxMp(),
 				});

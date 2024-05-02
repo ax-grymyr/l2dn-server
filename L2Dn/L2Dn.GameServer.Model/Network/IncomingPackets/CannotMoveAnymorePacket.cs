@@ -25,7 +25,7 @@ public struct CannotMoveAnymorePacket: IIncomingPacket<GameSession>
 		
         if (player.getAI() != null)
         {
-            player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new Location(_location.X, _location.Y, _location.Z, _location.Heading));
+            player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, _location);
         }
 
         return ValueTask.CompletedTask;

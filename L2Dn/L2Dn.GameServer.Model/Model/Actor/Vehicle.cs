@@ -20,7 +20,7 @@ public abstract class Vehicle : Creature
 {
 	protected int _dockId;
 	protected readonly Set<Player> _passengers = new();
-	protected Location _oustLoc;
+	protected LocationHeading? _oustLoc;
 	private Runnable _engine;
 	
 	protected VehiclePathPoint[] _currentPath;
@@ -79,7 +79,7 @@ public abstract class Vehicle : Creature
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
 			
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.ToLocation3D());
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.Location);
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -98,8 +98,7 @@ public abstract class Vehicle : Creature
 				{
 					if (point.getMoveSpeed() == 0)
 					{
-						point.Location.setHeading(point.getRotationSpeed());
-						teleToLocation(point.Location.ToLocationHeading(), false);
+						teleToLocation(new LocationHeading(point.Location.Location, point.getRotationSpeed()), false);
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
@@ -121,12 +120,12 @@ public abstract class Vehicle : Creature
 						MoveData m = new MoveData();
 						m.disregardingGeodata = false;
 						m.onGeodataPathIndex = -1;
-						m.xDestination = point.Location.getX();
-						m.yDestination = point.Location.getY();
-						m.zDestination = point.Location.getZ();
+						m.xDestination = point.Location.X;
+						m.yDestination = point.Location.Y;
+						m.zDestination = point.Location.Z;
 						m.heading = 0;
 						
-						double distance = MathUtil.hypot(point.Location.getX() - getX(), point.Location.getY() - getY());
+						double distance = MathUtil.hypot(point.Location.X - getX(), point.Location.Y - getY());
 						if (distance > 1)
 						{
 							setHeading(new Location2D(getX(), getY()).HeadingTo(point.Location));
@@ -207,18 +206,17 @@ public abstract class Vehicle : Creature
 		_dockId = d;
 	}
 	
-	public void setOustLoc(Location loc)
+	public void setOustLoc(LocationHeading loc)
 	{
 		_oustLoc = loc;
 	}
 	
-	public Location getOustLoc()
+	public LocationHeading getOustLoc()
 	{
 		if (_oustLoc != null)
-			return _oustLoc;
+			return _oustLoc.Value;
 
-		LocationHeading loc = MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
-		return new Location(loc.X, loc.Y, loc.Z, loc.Heading);
+		return MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
 	}
 	
 	public virtual void oustPlayers()

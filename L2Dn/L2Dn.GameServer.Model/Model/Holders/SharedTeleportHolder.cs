@@ -1,3 +1,5 @@
+using L2Dn.Geometry;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -6,16 +8,16 @@ namespace L2Dn.GameServer.Model.Holders;
 public class SharedTeleportHolder
 {
 	private readonly int _id;
-	private readonly String _name;
+	private readonly string _name;
 	private int _count;
-	private readonly Location _location;
+	private readonly Location3D _location;
 
-	public SharedTeleportHolder(int id, String name, int count, int x, int y, int z)
+	public SharedTeleportHolder(int id, string name, int count, Location3D location)
 	{
 		_id = id;
 		_name = name;
 		_count = count;
-		_location = new Location(x, y, z);
+		_location = location;
 	}
 
 	public int getId()
@@ -23,7 +25,7 @@ public class SharedTeleportHolder
 		return _id;
 	}
 
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -38,7 +40,7 @@ public class SharedTeleportHolder
 		_count -= 1;
 	}
 
-	public Location getLocation()
+	public Location3D getLocation()
 	{
 		return _location;
 	}

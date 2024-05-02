@@ -40,7 +40,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		_actionId = actionId;
 		_castingType = castingType;
 		_isGroundTargetSkill = isGroundTargetSkill;
-		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition().ToLocation3D() : null;
+		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition() : null;
 	}
 
 	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,

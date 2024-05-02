@@ -459,20 +459,20 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		Player player = ev.getPlayer();
 		if (player.hasAction(PlayerAction.ADMIN_POINT_PICKING))
 		{
-			Location newLocation = ev.getLocation();
+			Location3D newLocation = ev.getLocation();
 			ZoneNodeHolder holder = _zones.computeIfAbsent(player.getObjectId(), key => new ZoneNodeHolder(player));
 			Location3D? changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
-				changeLog = newLocation.ToLocation3D();
+				changeLog = newLocation;
 				holder.setChangingLoc(null);
 				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(changeLog.Value) + 1) + " has been updated!");
 				disablePicking(player);
 			}
 			else
 			{
-				holder.addNode(newLocation.ToLocation3D());
-				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(newLocation.ToLocation3D()) + 1) + " has been added!");
+				holder.addNode(newLocation);
+				BuilderUtil.sendSysMessage(player, "Location " + (holder.indexOf(newLocation) + 1) + " has been added!");
 			}
 			
 			// Auto visualization when nodes >= 3

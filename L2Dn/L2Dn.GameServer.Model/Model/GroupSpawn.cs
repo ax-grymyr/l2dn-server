@@ -30,7 +30,7 @@ public class GroupSpawn: Spawn
             int newlocx = 0;
             int newlocy = 0;
             int newlocz = 0;
-            if ((Location.getX() == 0) && (Location.getY() == 0))
+            if ((Location.X == 0) && (Location.Y == 0))
             {
                 if (getLocationId() == 0)
                 {
@@ -40,13 +40,13 @@ public class GroupSpawn: Spawn
                 return null;
             }
 
-            newlocx = Location.getX();
-            newlocy = Location.getY();
-            newlocz = Location.getZ();
+            newlocx = Location.X;
+            newlocy = Location.Y;
+            newlocz = Location.Z;
 
             Npc mob = new ControllableMob(_template);
             mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
-            mob.setHeading(Location.getHeading() == -1 ? Rnd.get(61794) : Location.getHeading());
+            mob.setHeading(Location.Heading == -1 ? Rnd.get(61794) : Location.Heading);
             mob.setSpawn(this);
             mob.spawnMe(newlocx, newlocy, newlocz);
             return mob;

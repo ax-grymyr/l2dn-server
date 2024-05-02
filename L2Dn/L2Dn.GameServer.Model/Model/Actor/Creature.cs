@@ -105,7 +105,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	private bool _allSkillsDisabled;
 	
 	private readonly byte[] _zones = new byte[(int)EnumUtil.GetMaxValue<ZoneId>() + 1];
-	protected readonly Location _lastZoneValidateLocation;
+	protected Location3D _lastZoneValidateLocation;
 	
 	private readonly object _attackLock = new();
 	
@@ -216,7 +216,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		_effectList = new EffectList(this);
 		_isRunning = isPlayer();
-		_lastZoneValidateLocation = new Location(base.getX(), base.getY(), base.getZ());
+		_lastZoneValidateLocation = new Location3D(base.getX(), base.getY(), base.getZ());
 		
 		setInstanceType(InstanceType.Creature);
 		// Set its template to the new Creature
@@ -3209,7 +3209,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
 				{
 					_move.onGeodataPathIndex = -1;
-					stopMove(getActingPlayer().getLastServerPosition().ToLocationHeading());
+					stopMove(new LocationHeading(getActingPlayer().getLastServerPosition(), 0));
 					return false;
 				}
 			}
@@ -3364,12 +3364,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
-		if (!force && calculateDistance3D(_lastZoneValidateLocation.ToLocation3D()) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
+		if (!force && calculateDistance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
 		{
 			return;
 		}
-		_lastZoneValidateLocation.setXYZ(this.getLocation().ToLocation3D());
-		
+
+		_lastZoneValidateLocation = getLocation().ToLocation3D();
+
 		ZoneRegion? region = ZoneManager.getInstance().getRegion(getLocation().ToLocation2D());
 		if (region != null)
 		{

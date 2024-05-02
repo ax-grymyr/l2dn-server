@@ -45,8 +45,8 @@ public struct RequestExMagicSkillUseGroundPacket: IIncomingPacket<GameSession>
         // Check the validity of the skill
         if (skill != null)
         {
-            player.setCurrentSkillWorldPosition(new Location(_location.X, _location.Y, _location.Z));
-			
+            player.setCurrentSkillWorldPosition(_location);
+
             // normally MagicSkillUsePacket turns char client side but for these skills, it doesn't (even with correct target)
             player.setHeading(new Location2D(player.getX(), player.getY()).HeadingTo(_location));
             Broadcast.toKnownPlayers(player, new ValidateLocationPacket(player));

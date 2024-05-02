@@ -238,7 +238,7 @@ public class Player: Playable
 	private LocationHeading? _teleportLocation;
 	
 	/** Stored from last ValidatePosition **/
-	private readonly Location _lastServerPosition = new Location(0, 0, 0);
+	private Location3D _lastServerPosition;
 	
 	private readonly AtomicBoolean _blinkActive = new AtomicBoolean();
 	
@@ -380,7 +380,7 @@ public class Player: Playable
 	private readonly int _maxAssassinationPoints = 100000;
 	
 	// WorldPosition used by TARGET_SIGNET_GROUND
-	private Location _currentSkillWorldPosition;
+	private Location3D? _currentSkillWorldPosition;
 	
 	private AccessLevel _accessLevel;
 	
@@ -1557,12 +1557,13 @@ public class Player: Playable
 		}
 		
 		// This function is called too often from movement code.
-		if (!force && (calculateDistance3D(_lastZoneValidateLocation.ToLocation3D()) < 100))
+		if (!force && (calculateDistance3D(_lastZoneValidateLocation) < 100))
 		{
 			return;
 		}
-		_lastZoneValidateLocation.setXYZ(this.getLocation().ToLocation3D());
-		
+
+		_lastZoneValidateLocation = getLocation().ToLocation3D();
+
 		ZoneManager.getInstance().getRegion(getLocation().ToLocation2D())?.revalidateZones(this);
 		
 		if (Config.ALLOW_WATER)
@@ -3763,12 +3764,12 @@ public class Player: Playable
 		_client = client;
 	}
 	
-	public Location getCurrentSkillWorldPosition()
+	public Location3D? getCurrentSkillWorldPosition()
 	{
 		return _currentSkillWorldPosition;
 	}
 	
-	public void setCurrentSkillWorldPosition(Location worldPosition)
+	public void setCurrentSkillWorldPosition(Location3D? worldPosition)
 	{
 		_currentSkillWorldPosition = worldPosition;
 	}
@@ -8616,7 +8617,7 @@ public class Player: Playable
 		// ************************************* Check Target *******************************************
 		// Create and set a WorldObject containing the target of the skill
 		WorldObject target = usedSkill.getTarget(this, forceUse, dontMove, true);
-		Location worldPosition = _currentSkillWorldPosition;
+		Location3D? worldPosition = _currentSkillWorldPosition;
 		if ((usedSkill.getTargetType() == TargetType.GROUND) && (worldPosition == null))
 		{
 			if (usedSkill.getAffectScope() == AffectScope.FAN_PB)
@@ -10742,10 +10743,10 @@ public class Player: Playable
 	
 	public void setLastServerPosition(int x, int y, int z)
 	{
-		_lastServerPosition.setXYZ(new Location3D(x, y, z));
+		_lastServerPosition = new Location3D(x, y, z);
 	}
 	
-	public Location getLastServerPosition()
+	public Location3D getLastServerPosition()
 	{
 		return _lastServerPosition;
 	}

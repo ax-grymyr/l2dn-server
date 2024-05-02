@@ -85,7 +85,7 @@ public class DoorAI : CreatureAI
 	{
 	}
 	
-	protected override void onEvtArrivedBlocked(Location location)
+	protected override void onEvtArrivedBlocked(LocationHeading location)
 	{
 	}
 	

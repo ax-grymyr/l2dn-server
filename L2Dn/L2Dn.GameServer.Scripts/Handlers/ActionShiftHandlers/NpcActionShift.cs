@@ -108,7 +108,7 @@ public class NpcActionShift: IActionShiftHandler
 					htmlContent.Replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
 
-				LocationHeading spawnLocation = template?.getSpawnLocation() ?? npc.getSpawn().Location.ToLocationHeading();
+				LocationHeading spawnLocation = template?.getSpawnLocation() ?? npc.getSpawn().Location;
 				htmlContent.Replace("%spawn%", spawnLocation.X + " " + spawnLocation.Y + " " + spawnLocation.Z);
 
 				if (npc.getSpawn().getRespawnMinDelay() == TimeSpan.Zero)

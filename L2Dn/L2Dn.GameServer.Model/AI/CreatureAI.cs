@@ -699,7 +699,7 @@ public class CreatureAI: AbstractAI
 	 * <li>Launch actions corresponding to the Event Think</li>
 	 * </ul>
 	 */
-	protected override void onEvtArrivedBlocked(Location location)
+	protected override void onEvtArrivedBlocked(LocationHeading location)
 	{
 		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
 		if ((getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO) || (getIntention() == CtrlIntention.AI_INTENTION_CAST))
@@ -708,7 +708,7 @@ public class CreatureAI: AbstractAI
 		}
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-		clientStopMoving(location.ToLocationHeading());
+		clientStopMoving(location);
 		
 		// Launch actions corresponding to the Event Think
 		onEvtThink();

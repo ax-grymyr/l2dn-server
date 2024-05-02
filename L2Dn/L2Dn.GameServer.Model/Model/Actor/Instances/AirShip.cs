@@ -111,15 +111,15 @@ public class AirShip : Vehicle
 	public override void oustPlayer(Player player)
 	{
 		base.oustPlayer(player);
-		Location loc = getOustLoc();
+		LocationHeading loc = getOustLoc();
 		if (player.isOnline())
 		{
-			player.broadcastPacket(new ExGetOffAirShipPacket(player, this, loc.getX(), loc.getY(), loc.getZ()));
-			player.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
+			player.broadcastPacket(new ExGetOffAirShipPacket(player, this, loc.Location));
+			player.teleToLocation(loc);
 		}
 		else
 		{
-			player.setXYZInvisible(loc.ToLocation3D());
+			player.setXYZInvisible(loc.Location);
 		}
 	}
 	

@@ -119,7 +119,7 @@ public class SiegeManager
 					int z = int.Parse(st.nextToken());
 					int npcId = int.Parse(st.nextToken());
 
-					controlTowers.add(new TowerSpawn(npcId, new Location(x, y, z)));
+					controlTowers.add(new TowerSpawn(npcId, new Location3D(x, y, z)));
 				}
 				catch (Exception e)
 				{
@@ -151,7 +151,7 @@ public class SiegeManager
 						zoneList.add(int.Parse(st.nextToken()));
 					}
 
-					flameTowers.add(new TowerSpawn(npcId, new Location(x, y, z), zoneList));
+					flameTowers.add(new TowerSpawn(npcId, new Location3D(x, y, z), zoneList));
 				}
 				catch (Exception e)
 				{

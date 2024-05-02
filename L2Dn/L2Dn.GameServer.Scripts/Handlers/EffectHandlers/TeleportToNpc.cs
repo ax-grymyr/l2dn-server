@@ -38,12 +38,12 @@ public class TeleportToNpc: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Location teleLocation = null;
+		LocationHeading? teleLocation = null;
 		foreach (Npc npc in effector.getSummonedNpcs())
 		{
 			if (npc.getId() == _npcId)
 			{
-				teleLocation = npc.getLocation();
+				teleLocation = npc.getLocation().ToLocationHeading();
 			}
 		}
 		
@@ -54,31 +54,31 @@ public class TeleportToNpc: AbstractEffect
 			{
 				foreach (Player member in party.getMembers())
 				{
-					teleport(member, teleLocation);
+					teleport(member, teleLocation.Value);
 				}
 			}
 			else
 			{
-				teleport(effected, teleLocation);
+				teleport(effected, teleLocation.Value);
 			}
 		}
 	}
 	
-	private void teleport(Creature effected, Location location)
+	private void teleport(Creature effected, LocationHeading location)
 	{
-		if (effected.isInsideRadius2D(location.ToLocation2D(), 900))
+		if (effected.isInsideRadius2D(location.Location.ToLocation2D(), 900))
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			effected.broadcastPacket(new FlyToLocationPacket(effected, location.ToLocation3D(), FlyType.DUMMY));
+			effected.broadcastPacket(new FlyToLocationPacket(effected, location.Location, FlyType.DUMMY));
 			effected.abortAttack();
 			effected.abortCast();
-			effected.setXYZ(location.ToLocation3D());
+			effected.setXYZ(location.Location);
 			effected.broadcastPacket(new ValidateLocationPacket(effected));
 			effected.revalidateZone(true);
 		}
 		else
 		{
-			effected.teleToLocation(location.ToLocationHeading());
+			effected.teleToLocation(location);
 		}
 	}
 }

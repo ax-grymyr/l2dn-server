@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -1478,7 +1479,7 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getControlTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.Location.setLocation(ts.getLocation().ToLocation3D(), ts.getLocation().Heading);
+				spawn.Location = new LocationHeading(ts.getLocation(), 0);
 				_controlTowers.add((ControlTower) spawn.doSpawn(false));
 			}
 		}
@@ -1499,8 +1500,8 @@ public class Siege: Siegable
 			foreach (TowerSpawn ts in SiegeManager.getInstance().getFlameTowers(getCastle().getResidenceId()))
 			{
 				Spawn spawn = new Spawn(ts.getId());
-				spawn.Location.setLocation(ts.getLocation().ToLocation3D(), ts.getLocation().Heading);
-				FlameTower tower = (FlameTower) spawn.doSpawn(false);
+				spawn.Location = new LocationHeading(ts.getLocation(), 0);
+				FlameTower tower = (FlameTower)spawn.doSpawn(false);
 				tower.setUpgradeLevel(ts.getUpgradeLevel());
 				tower.setZoneList(ts.getZoneList());
 				_flameTowers.add(tower);
@@ -1543,7 +1544,7 @@ public class Siege: Siegable
 						continue;
 					}
 					
-					distance = ct.calculateDistanceSq3D(spawn.Location.ToLocation3D());
+					distance = ct.calculateDistanceSq3D(spawn.Location.Location);
 					if (distance < distanceClosest)
 					{
 						closestCt = ct;

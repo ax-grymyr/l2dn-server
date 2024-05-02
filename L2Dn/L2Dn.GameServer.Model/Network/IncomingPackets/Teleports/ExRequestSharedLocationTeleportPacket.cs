@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -58,7 +59,7 @@ public struct ExRequestSharedLocationTeleportPacket: IIncomingPacket<GameSession
             teleport.decrementCount();
             player.abortCast();
             player.stopMove(null);
-            player.teleToLocation(teleport.getLocation().ToLocationHeading());
+            player.teleToLocation(new LocationHeading(teleport.getLocation(), 0));
         }
 
         return ValueTask.CompletedTask;

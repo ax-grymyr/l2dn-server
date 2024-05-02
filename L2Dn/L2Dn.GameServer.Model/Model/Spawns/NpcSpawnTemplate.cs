@@ -361,8 +361,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		
 		spawn.setInstanceId(instance != null ? instance.getId() : 0);
 		spawn.setAmount(1);
-		spawn.Location.setXYZ(loc.Value.Location);
-		spawn.Location.setHeading(loc.Value.Heading);
+		spawn.Location = loc.Value;
 		TimeSpan respawn = TimeSpan.Zero;
 		TimeSpan respawnRandom = TimeSpan.Zero;
 		SchedulingPattern respawnPattern = null;

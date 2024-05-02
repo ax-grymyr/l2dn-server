@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -12,13 +13,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class Teleport: AbstractEffect
 {
-	private readonly Location _loc;
-	
+	private readonly Location3D _location;
+
 	public Teleport(StatSet @params)
 	{
-		_loc = new Location(@params.getInt("x", 0), @params.getInt("y", 0), @params.getInt("z", 0));
+		_location = new Location3D(@params.getInt("x", 0), @params.getInt("y", 0), @params.getInt("z", 0));
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.TELEPORT;
@@ -31,9 +32,9 @@ public class Teleport: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((_loc.getX() != 0) && (_loc.getY() != 0) && (_loc.getZ() != 0))
+		if (_location != default)
 		{
-			effected.teleToLocation(_loc.ToLocationHeading(), true, null);
+			effected.teleToLocation(new LocationHeading(_location, 0), true, null);
 		}
 	}
 }

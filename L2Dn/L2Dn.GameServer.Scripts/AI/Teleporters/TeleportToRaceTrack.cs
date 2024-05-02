@@ -12,7 +12,7 @@ public sealed class TeleportToRaceTrack: AbstractScript
 	private const int RaceManager = 30995;
 	
 	// Locations
-	private static readonly Location _raceTrackTeleport = new Location(12661, 181687, -3540);
+	private static readonly Location3D _raceTrackTeleport = new(12661, 181687, -3540);
 
 	private static readonly ImmutableDictionary<int, Location3D> _teleporterLocations = new[]
 	{
@@ -50,7 +50,7 @@ public sealed class TeleportToRaceTrack: AbstractScript
 		}
 		else
 		{
-			player.teleToLocation(_raceTrackTeleport.ToLocationHeading());
+			player.teleToLocation(new LocationHeading(_raceTrackTeleport, 0));
 			player.getVariables().set(MonsterReturn, npc.getId());
 		}
 

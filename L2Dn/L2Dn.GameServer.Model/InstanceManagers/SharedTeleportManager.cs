@@ -33,7 +33,9 @@ public class SharedTeleportManager
 	public int nextId(Creature creature)
 	{
 		int nextId = ++_lastSharedTeleportId;
-		_sharedTeleports.put(nextId, new SharedTeleportHolder(nextId, creature.getName(), TELEPORT_COUNT, creature.getX(), creature.getY(), creature.getZ()));
+		_sharedTeleports.put(nextId, new SharedTeleportHolder(nextId, creature.getName(), TELEPORT_COUNT,
+			creature.getLocation().ToLocation3D()));
+
 		return nextId;
 	}
 	
@@ -48,6 +50,6 @@ public class SharedTeleportManager
 	
 	private static class SingletonHolder
 	{
-		public static readonly SharedTeleportManager INSTANCE = new SharedTeleportManager();
+		public static readonly SharedTeleportManager INSTANCE = new();
 	}
 }

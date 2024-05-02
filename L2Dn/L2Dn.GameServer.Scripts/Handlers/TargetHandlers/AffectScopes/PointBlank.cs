@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 
@@ -54,20 +55,22 @@ public class PointBlank: IAffectScopeHandler
 		{
 			if (creature.isPlayable())
 			{
-				Location worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
+				Location3D? worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
-					World.getInstance().forEachVisibleObjectInRange<Creature>(creature, (int) (affectRange + creature.calculateDistance2D(worldPosition.ToLocation2D())), c =>
-					{
-						if (!c.isInsideRadius3D(worldPosition.ToLocation3D(), affectRange))
+					World.getInstance().forEachVisibleObjectInRange<Creature>(creature,
+						(int)(affectRange + creature.calculateDistance2D(worldPosition.Value.ToLocation2D())), c =>
 						{
-							return;
-						}
-						if (filter(c))
-						{
-							action((T)(WorldObject)c);
-						}
-					});
+							if (!c.isInsideRadius3D(worldPosition.Value, affectRange))
+							{
+								return;
+							}
+
+							if (filter(c))
+							{
+								action((T)(WorldObject)c);
+							}
+						});
 				}
 			}
 		}

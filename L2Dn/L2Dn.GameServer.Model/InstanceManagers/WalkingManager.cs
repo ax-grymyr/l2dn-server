@@ -233,8 +233,8 @@ public class WalkingManager: DataReaderBase
 							", z=" + node.Location.Z + ", range=" + npc.getLocation().Distance3D(node.Location) +
 							"). Teleporting to proper location.");
 
-						Location teleLoc = new Location(node.Location.X, node.Location.Y, node.Location.Z, npc.getHeading());
-						npc.teleToLocation(teleLoc.ToLocationHeading());
+						LocationHeading teleLoc = new(node.Location.X, node.Location.Y, node.Location.Z, npc.getHeading());
+						npc.teleToLocation(teleLoc);
 					}
 					
 					if (node.runToLocation())

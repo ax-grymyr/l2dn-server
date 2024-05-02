@@ -618,7 +618,7 @@ public abstract class ZoneType: IEventContainerProvider
 	/**
 	 * @param loc
 	 */
-	public void movePlayersTo(Location loc)
+	public void movePlayersTo(LocationHeading loc)
 	{
 		if (_characterList.isEmpty())
 		{
@@ -632,7 +632,7 @@ public abstract class ZoneType: IEventContainerProvider
 				Player player = creature.getActingPlayer();
 				if (player.isOnline())
 				{
-					player.teleToLocation(loc.ToLocationHeading());
+					player.teleToLocation(loc);
 				}
 			}
 		}

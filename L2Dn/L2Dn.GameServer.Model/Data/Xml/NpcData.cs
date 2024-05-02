@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -789,7 +790,7 @@ public class NpcData: DataReaderBase
 			int y = el.GetAttributeValueAsInt32("y");
 			int z = el.GetAttributeValueAsInt32("z");
 			int heading = el.Attribute("heading").GetInt32(0);
-			parameters.put(name, new Location(x, y, z, heading));
+			parameters.put(name, new LocationHeading(x, y, z, heading));
 		});
 		
 		element.Elements("minions").ForEach(el =>

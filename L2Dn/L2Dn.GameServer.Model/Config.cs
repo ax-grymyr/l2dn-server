@@ -1327,8 +1327,8 @@ public class Config
 	public static int COMMUNITY_PREMIUM_PRICE_PER_DAY;
 	public static ImmutableSortedSet<int> COMMUNITY_AVAILABLE_BUFFS = ImmutableSortedSet<int>.Empty;
 
-	public static ImmutableDictionary<string, Location> COMMUNITY_AVAILABLE_TELEPORTS =
-		ImmutableDictionary<string, Location>.Empty;
+	public static ImmutableDictionary<string, LocationHeading> COMMUNITY_AVAILABLE_TELEPORTS =
+		ImmutableDictionary<string, LocationHeading>.Empty;
 
 	public static bool CUSTOM_DEPOSITABLE_ENABLED;
 	public static bool CUSTOM_DEPOSITABLE_QUEST_ITEMS;
@@ -3088,12 +3088,14 @@ public class Config
 		return new LocationHeading(dx, dy, dz, dheading);
 	}
 
-	private static ImmutableDictionary<string, Location> GetLocations(ConfigurationParser parser, string key)
+	private static ImmutableDictionary<string, LocationHeading> GetLocations(ConfigurationParser parser, string key)
 	{
 		// Format:
 		// TeleportName1,X1,Y1,Z1;TeleportName2,X2,Y2,Z2...
 
-		var builder = ImmutableDictionary<string, Location>.Empty.ToBuilder();
+		ImmutableDictionary<string, LocationHeading>.Builder builder =
+			ImmutableDictionary<string, LocationHeading>.Empty.ToBuilder();
+
 		parser.GetList(key, ';', s =>
 		{
 			string[] item = s.Split(',');
@@ -3103,7 +3105,7 @@ public class Config
 			bool ok = int.TryParse(item[1], CultureInfo.InvariantCulture, out x) &&
 			          int.TryParse(item[2], CultureInfo.InvariantCulture, out y) &&
 			          int.TryParse(item[3], CultureInfo.InvariantCulture, out z);
-			return ((Name: item[0], Location: new Location(x, y, z)), ok);
+			return ((Name: item[0], Location: new LocationHeading(x, y, z, 0)), ok);
 		}, true).ForEach(tuple =>
 		{
 			try

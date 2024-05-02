@@ -48,9 +48,9 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 		}
 
 		// Check for possible door logout and move over exploit. Also checked at ValidatePosition.
-		if (DoorData.getInstance().checkIfDoorsBetween(player.getLastServerPosition().ToLocation3D(), player.getLocation().ToLocation3D(), player.getInstanceWorld()))
+		if (DoorData.getInstance().checkIfDoorsBetween(player.getLastServerPosition(), player.getLocation().ToLocation3D(), player.getInstanceWorld()))
 		{
-			player.stopMove(player.getLastServerPosition().ToLocationHeading());
+			player.stopMove(new LocationHeading(player.getLastServerPosition(), 0));
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
@@ -60,7 +60,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 			player.setCursorKeyMovement(false);
 			if (player.Events.HasSubscribers<OnPlayerMoveRequest>())
 			{
-				OnPlayerMoveRequest onPlayerMoveRequest = new(player, new Location(_target.X, _target.Y, _target.Z));
+				OnPlayerMoveRequest onPlayerMoveRequest = new(player, _target);
 				if (player.Events.Notify(onPlayerMoveRequest) && onPlayerMoveRequest.Terminate)
 				{
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);

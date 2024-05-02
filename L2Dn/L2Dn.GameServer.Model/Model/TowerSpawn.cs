@@ -1,21 +1,22 @@
 ﻿using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model;
 
 public class TowerSpawn: IIdentifiable
 {
     private readonly int _npcId;
-    private readonly Location _location;
-    private List<int> _zoneList = null;
-    private int _upgradeLevel = 0;
+    private readonly Location3D _location;
+    private List<int> _zoneList;
+    private int _upgradeLevel;
 
-    public TowerSpawn(int npcId, Location location)
+    public TowerSpawn(int npcId, Location3D location)
     {
         _location = location;
         _npcId = npcId;
     }
 
-    public TowerSpawn(int npcId, Location location, List<int> zoneList)
+    public TowerSpawn(int npcId, Location3D location, List<int> zoneList)
     {
         _location = location;
         _npcId = npcId;
@@ -31,7 +32,7 @@ public class TowerSpawn: IIdentifiable
         return _npcId;
     }
 
-    public Location getLocation()
+    public Location3D getLocation()
     {
         return _location;
     }
