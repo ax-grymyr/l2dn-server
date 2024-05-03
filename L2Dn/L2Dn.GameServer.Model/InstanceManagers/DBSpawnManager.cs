@@ -256,30 +256,7 @@ public sealed class DbSpawnManager
 		npcState.Spawn = spawn;
 
 		if (storeInDb)
-		{
-			try
-			{
-				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.NpcRespawns.Add(new NpcRespawn()
-				{
-					Id = spawn.getId(),
-					X = spawn.Location.X,
-					Y = spawn.Location.Y,
-					Z = spawn.Location.Z,
-					Heading = spawn.Location.Heading,
-					RespawnTime = respawnTime,
-					CurrentHp = currentHp,
-					CurrentMp = currentMp,
-				});
-
-				ctx.SaveChanges();
-			}
-			catch (Exception e)
-			{
-				// problem with storing spawn
-				_logger.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
-			}
-		}
+			UpdateRecord(npcState);
 	}
 
 	public Npc addNewSpawn(Spawn spawn, bool storeInDb)
@@ -306,27 +283,7 @@ public sealed class DbSpawnManager
 		npcState.Npc = npc;
 
 		if (storeInDb)
-		{
-			try
-			{
-				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.NpcRespawns.Add(new NpcRespawn()
-				{
-					Id = spawn.getId(),
-					X = spawn.Location.X,
-					Y = spawn.Location.Y,
-					Z = spawn.Location.Z,
-					Heading = spawn.Location.Heading,
-					CurrentHp = npc.getMaxHp(),
-					CurrentMp = npc.getMaxMp(),
-				});
-			}
-			catch (Exception e)
-			{
-				// problem with storing spawn
-				_logger.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
-			}
-		}
+			UpdateRecord(npcState);
 
 		return npc;
 	}
@@ -363,24 +320,46 @@ public sealed class DbSpawnManager
 
 	private void UpdateRecord(NpcState npcState)
 	{
+		int npcId = npcState.NpcId;
 		Npc? npc = npcState.Npc;
-		if (npc is null)
-			return;
+		Spawn? spawn = npcState.Spawn;
 
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int npcId = npcState.NpcId;
-			DateTime? respawnTime = npcState.RespawnTime;
-			double currentHp = npc.isDead() ? npc.getMaxHp() : npcState.CurrentHp;
-			double currentMp = npc.isDead() ? npc.getMaxMp() : npcState.CurrentMp;
-			ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteUpdate(s =>
-				s.SetProperty(r => r.RespawnTime, respawnTime).SetProperty(r => r.CurrentHp, currentHp)
-					.SetProperty(r => r.CurrentMp, currentMp));
+			NpcRespawn? record = ctx.NpcRespawns.SingleOrDefault(r => r.Id == npcId);
+			if (record is null)
+			{
+				record = new NpcRespawn() { Id = npcId };
+				ctx.NpcRespawns.Add(record);
+			}
+
+			record.RespawnTime = npcState.RespawnTime;
+			if (npc is not null)
+			{
+				(record.CurrentHp, record.CurrentMp) = npc.isDead()
+					? (npc.getMaxHp(), npc.getMaxMp())
+					: (npc.getCurrentHp(), npc.getCurrentMp());
+			}
+			else
+			{
+				record.CurrentHp = npcState.CurrentHp;
+				record.CurrentMp = npcState.CurrentMp;
+			}
+
+			if (spawn is not null)
+			{
+				record.X = spawn.Location.X;
+				record.Y = spawn.Location.Y;
+				record.Z = spawn.Location.Z;
+				record.Heading = spawn.Location.Heading;
+			}
+
+			ctx.SaveChanges();
 		}
 		catch (Exception e)
 		{
-			_logger.Error(GetType().Name + ": Couldnt update NpcRespawns table " + e);
+			_logger.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
 		}
 	}
 
