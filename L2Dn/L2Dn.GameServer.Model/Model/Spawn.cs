@@ -345,20 +345,16 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		// Reset some variables
 		npc.onRespawn();
 
-		int newlocx = 0;
-		int newlocy = 0;
-		int newlocz = -10000;
-		
+		Location3D newLocation = new(0, 0, -10000);
+
 		// If Locx and Locy are not defined, the Npc must be spawned in an area defined by location or spawn territory.
 		if (_spawnTemplate != null)
 		{
 			Location? loc = _spawnTemplate.getSpawnLocation();
 			if (loc != null)
 			{
-				newlocx = loc.Value.X;
-				newlocy = loc.Value.Y;
-				newlocz = loc.Value.Z;
 				_location = loc.Value;
+				newLocation = _location.Location3D;
 			}
 			else
 			{
@@ -374,13 +370,11 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		else
 		{
 			// The Npc is spawned at the exact position (Lox, Locy, Locz)
-			newlocx = _location.X;
-			newlocy = _location.Y;
-			newlocz = _location.Z;
+			newLocation = _location.Location3D;
 		}
 		
 		// Check if npc is in water.
-		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(new Location3D(newlocx, newlocy, newlocz));
+		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(newLocation);
 		
 		// If random spawn system is enabled.
 		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && (_location.Heading != -1) && npc.isMonster() &&
@@ -388,16 +382,14 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		    !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && (water == null) &&
 		    !Config.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
 		{
-			int randX = newlocx + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
-			int randY = newlocy + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
-			if (GeoEngine.getInstance()
-				    .canMoveToTarget(newlocx, newlocy, newlocz, randX, randY, newlocz, npc.getInstanceWorld()) //
-			    && GeoEngine.getInstance()
-				    .canSeeTarget(newlocx, newlocy, newlocz, randX, randY, newlocz, npc.getInstanceWorld()))
+			int randX = newLocation.X + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
+			int randY = newLocation.Y + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
+			Location3D randLocation = new(randX, randY, newLocation.Z);
+			if (GeoEngine.getInstance().canMoveToTarget(newLocation, randLocation, npc.getInstanceWorld())
+			    && GeoEngine.getInstance().canSeeTarget(newLocation, randLocation, npc.getInstanceWorld()))
 			{
-				newlocx = randX;
-				newlocy = randY;
-				_location = new Location(newlocx, newlocy, newlocz, -1);
+				newLocation = randLocation;
+				_location = new Location(newLocation, -1);
 			}
 		}
 
@@ -405,10 +397,10 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		if (npc.isMonster() && !npc.isFlying() && (water == null))
 		{
 			// Do not correct Z distances greater than 300.
-			int geoZ = GeoEngine.getInstance().getHeight(newlocx, newlocy, newlocz);
-			if (Math.Abs(newlocz - geoZ) < 300)
+			int geoZ = GeoEngine.getInstance().getHeight(newLocation);
+			if (Math.Abs(newLocation.Z - geoZ) < 300)
 			{
-				newlocz = geoZ;
+				newLocation = newLocation with { Z = geoZ };
 			}
 		}
 		
@@ -439,7 +431,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		npc.setSpawn(this);
 		
 		// Spawn NPC
-		npc.spawnMe(newlocx, newlocy, newlocz);
+		npc.spawnMe(newLocation);
 		
 		// Make sure info is broadcasted in instances
 		if (npc.getInstanceId() > 0)

@@ -30,7 +30,7 @@ public class CombatFlag
 	{
 		// Init the dropped ItemInstance and add it in the world as a visible object at the position where mob was last
 		_itemInstance = ItemData.getInstance().createItem("Combat", _itemId, 1, null, null);
-		_itemInstance.dropMe(null, _location.X, _location.Y, _location.Z);
+		_itemInstance.dropMe(null, _location.Location3D);
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]

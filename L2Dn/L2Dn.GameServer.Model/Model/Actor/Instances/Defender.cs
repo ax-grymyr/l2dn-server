@@ -88,8 +88,8 @@ public class Defender : Attackable
 	{
 		base.onSpawn();
 		
-		_fort = InstanceManagers.FortManager.getInstance().getFort(getX(), getY(), getZ());
-		_castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
+		_fort = InstanceManagers.FortManager.getInstance().getFort(Location.Location3D);
+		_castle = CastleManager.getInstance().getCastle(Location.Location3D);
 		if ((_fort == null) && (_castle == null))
 		{
 			LOGGER.Warn("Defender spawned outside of Fortress or Castle zone!" + this);

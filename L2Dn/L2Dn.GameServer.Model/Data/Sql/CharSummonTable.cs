@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
@@ -137,7 +138,7 @@ public class CharSummonTable
 		
 		pet.setRunning();
 		item.setEnchantLevel(pet.getLevel());
-		pet.spawnMe(player.getX() + 50, player.getY() + 100, player.getZ());
+		pet.spawnMe(new Location3D(player.getX() + 50, player.getY() + 100, player.getZ()));
 		pet.startFeed();
 	}
 	

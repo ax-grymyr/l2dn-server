@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -39,6 +40,6 @@ public class HeadquarterCreate: AbstractEffect
 		flag.setTitle(player.getClan().getName());
 		flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 		flag.setHeading(player.getHeading());
-		flag.spawnMe(player.getX(), player.getY(), player.getZ() + 50);
+		flag.spawnMe(new Location3D(player.getX(), player.getY(), player.getZ() + 50));
 	}
 }

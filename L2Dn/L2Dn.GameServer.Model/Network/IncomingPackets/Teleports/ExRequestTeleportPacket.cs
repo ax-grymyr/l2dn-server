@@ -77,7 +77,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		Location3D location = teleport.getLocation();
 		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
-			Castle castle = CastleManager.getInstance().getCastle(location.X, location.Y, location.Z);
+			Castle castle = CastleManager.getInstance().getCastle(location);
 			if ((castle != null) && castle.getSiege().isInProgress())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE);

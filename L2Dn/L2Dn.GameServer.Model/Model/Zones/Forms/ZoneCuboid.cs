@@ -107,6 +107,6 @@ public class ZoneCuboid: ZoneForm
 		int x = Rnd.get(_r.x, _r.x + _r.width);
 		int y = Rnd.get(_r.y, _r.y + _r.height);
 
-		return new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
+		return new Location3D(x, y, GeoEngine.getInstance().getHeight(new Location3D(x, y, (_z1 + _z2) / 2)));
 	}
 }

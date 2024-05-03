@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -62,7 +63,9 @@ public class AdminGeodata: IAdminCommandHandler
 				
 				if (GeoEngine.getInstance().hasGeoPos(geoX, geoY))
 				{
-					BuilderUtil.sendSysMessage(activeChar, "WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoEngine.getInstance().getHeight(worldX, worldY, worldZ));
+					BuilderUtil.sendSysMessage(activeChar,
+						"WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX +
+						", GeoY: " + geoY + ", GeoZ: " + GeoEngine.getInstance().getHeight(new Location3D(worldX, worldY, worldZ)));
 				}
 				else
 				{
@@ -80,7 +83,9 @@ public class AdminGeodata: IAdminCommandHandler
 				
 				if (GeoEngine.getInstance().hasGeoPos(geoX, geoY))
 				{
-					BuilderUtil.sendSysMessage(activeChar, "WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoEngine.getInstance().getHeight(worldX, worldY, worldZ));
+					BuilderUtil.sendSysMessage(activeChar,
+						"WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX +
+						", GeoY: " + geoY + ", GeoZ: " + GeoEngine.getInstance().getHeight(new Location3D(worldX, worldY, worldZ)));
 				}
 				else
 				{

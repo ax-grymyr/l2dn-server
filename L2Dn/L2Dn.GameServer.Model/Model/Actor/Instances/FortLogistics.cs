@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -119,7 +120,7 @@ public class FortLogistics : Merchant
 						box.setCurrentHp(box.getMaxHp());
 						box.setCurrentMp(box.getMaxMp());
 						box.setHeading(0);
-						box.spawnMe(getX() - 23, getY() + 41, getZ());
+						box.spawnMe(new Location3D(getX() - 23, getY() + 41, getZ()));
 						getFort().setSupplyLevel(0);
 						getFort().saveFortVariables();
 						

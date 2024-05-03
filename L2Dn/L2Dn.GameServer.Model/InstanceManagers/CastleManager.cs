@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -90,11 +91,11 @@ public class CastleManager
 		return null;
 	}
 	
-	public Castle getCastle(int x, int y, int z)
+	public Castle getCastle(Location3D location)
 	{
 		foreach (Castle temp in _castles.values())
 		{
-			if (temp.checkIfInZone(x, y, z))
+			if (temp.checkIfInZone(location))
 			{
 				return temp;
 			}
@@ -104,7 +105,7 @@ public class CastleManager
 	
 	public Castle getCastle(WorldObject activeObject)
 	{
-		return getCastle(activeObject.getX(), activeObject.getY(), activeObject.getZ());
+		return getCastle(activeObject.Location.Location3D);
 	}
 	
 	public ICollection<Castle> getCastles()

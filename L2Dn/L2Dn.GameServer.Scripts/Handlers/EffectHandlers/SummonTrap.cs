@@ -66,7 +66,7 @@ public class SummonTrap: AbstractEffect
 		trap.setCurrentMp(trap.getMaxMp());
 		trap.setInvul(true);
 		trap.setHeading(player.getHeading());
-		trap.spawnMe(player.getX(), player.getY(), player.getZ());
+		trap.spawnMe(player.Location.Location3D);
 		player.addSummonedNpc(trap); // player.setTrap(trap);
 	}
 }

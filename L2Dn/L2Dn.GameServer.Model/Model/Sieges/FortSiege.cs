@@ -192,7 +192,7 @@ public class FortSiege: Siegable
 			try
 			{
 				SystemMessagePacket sm;
-				if ((_initialDelay != TimeSpan.Zero) && (_fortInst.getResidenceId() == FortManager.ORC_FORTRESS))
+				if (_initialDelay != TimeSpan.Zero && _fortInst.getResidenceId() == FortManager.ORC_FORTRESS)
 				{
 					int nextTask = 0;
 					if (_initialDelay >= TimeSpan.FromMilliseconds(1200000))
@@ -237,11 +237,11 @@ public class FortSiege: Siegable
 					ThreadPool.schedule(new ScheduleStartSiegeTask(_fortSiege, nextTask), _initialDelay - TimeSpan.FromMilliseconds(nextTask * 1000)); // Prepare task for @nextTask minutes left.
 					// LOGGER.info("scheduling " + nextTask + " in " + ((_initialDelayInMilliseconds / 1000) - nextTask) + " sec");
 				}
-				else if ((_time == 3600) && (_fortInst.getResidenceId() != FortManager.ORC_FORTRESS)) // 1hr remains
+				else if (_time == 3600 && _fortInst.getResidenceId() != FortManager.ORC_FORTRESS) // 1hr remains
 				{
 					ThreadPool.schedule(new ScheduleStartSiegeTask(_fortSiege, 600), 3000000); // Prepare task for 10 minutes left.
 				}
-				else if ((_time == 1200) && (_fortInst.getResidenceId() == FortManager.ORC_FORTRESS)) // 20min remains
+				else if (_time == 1200 && _fortInst.getResidenceId() == FortManager.ORC_FORTRESS) // 20min remains
 				{
 					_fortSiege._isInPreparation = true;
 					sm = new SystemMessagePacket(SystemMessageId.THE_FORTRESS_BATTLE_STARTS_IN_S1_MIN);
@@ -478,7 +478,7 @@ public class FortSiege: Siegable
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					Item weap = player.getActiveWeaponInstance();
-					if ((weap != null) && (weap.getId() == FortManager.ORC_FORTRESS_FLAG))
+					if (weap != null && weap.getId() == FortManager.ORC_FORTRESS_FLAG)
 					{
 						FortSiegeManager.getInstance().dropCombatFlag(player, getFort().getResidenceId());
 					}
@@ -553,7 +553,7 @@ public class FortSiege: Siegable
 				_siegeRestore = null;
 			}
 			
-			if ((_fort.getOwnerClan() != null) && (_fort.getFlagPole().getMeshIndex() == 0))
+			if (_fort.getOwnerClan() != null && _fort.getFlagPole().getMeshIndex() == 0)
 			{
 				_fort.setVisibleFlag(true);
 			}
@@ -583,7 +583,7 @@ public class FortSiege: Siegable
 			}
 			_siegeStartTask = null;
 			
-			if (_attackerClans.isEmpty() && (_fort.getResidenceId() != FortManager.ORC_FORTRESS))
+			if (_attackerClans.isEmpty() && _fort.getResidenceId() != FortManager.ORC_FORTRESS)
 			{
 				return;
 			}
@@ -818,7 +818,7 @@ public class FortSiege: Siegable
 	 */
 	public bool checkIfInZone(WorldObject obj)
 	{
-		return checkIfInZone(obj.getX(), obj.getY(), obj.getZ());
+		return checkIfInZone(obj.Location.Location3D);
 	}
 	
 	/**
@@ -827,9 +827,9 @@ public class FortSiege: Siegable
 	 * @param z
 	 * @return true if object is inside the zone
 	 */
-	public bool checkIfInZone(int x, int y, int z)
+	public bool checkIfInZone(Location3D location)
 	{
-		return (_isInProgress && (_fort.checkIfInZone(x, y, z))); // Fort zone during siege
+		return _isInProgress && _fort.checkIfInZone(location); // Fort zone during siege
 	}
 	
 	/**
@@ -838,7 +838,7 @@ public class FortSiege: Siegable
 	 */
 	public bool checkIsAttacker(Clan clan)
 	{
-		return (getAttackerClan(clan) != null);
+		return getAttackerClan(clan) != null;
 	}
 	
 	/**
@@ -847,7 +847,7 @@ public class FortSiege: Siegable
 	 */
 	public bool checkIsDefender(Clan clan)
 	{
-		return (clan != null) && (_fort.getOwnerClan() == clan);
+		return clan != null && _fort.getOwnerClan() == clan;
 	}
 	
 	/** Clear all registered siege clans from database for fort */
@@ -963,7 +963,7 @@ public class FortSiege: Siegable
 	public void killedCommander(FortCommander instance)
 	{
 		int RisidenceId = _fort.getResidenceId();
-		if ((_fort != null) && (!_commanders.isEmpty() && (RisidenceId != 122)))
+		if (_fort != null && !_commanders.isEmpty() && RisidenceId != 122)
 		{
 			Spawn spawn = instance.getSpawn();
 			if (spawn != null)
@@ -1085,7 +1085,7 @@ public class FortSiege: Siegable
 		
 		if (checkConditions)
 		{
-			if (_fort.getSiege().getAttackerClans().isEmpty() && (player.getInventory().getAdena() < 250000))
+			if (_fort.getSiege().getAttackerClans().isEmpty() && player.getInventory().getAdena() < 250000)
 			{
 				return 1; // Player don't have enough adena to register
 			}
@@ -1097,7 +1097,7 @@ public class FortSiege: Siegable
 					return 3; // Players clan is already registered to siege
 				}
 				
-				if ((fort.getOwnerClan() == player.getClan()) && (fort.getSiege().isInProgress() || (fort.getSiege()._siegeStartTask != null)))
+				if (fort.getOwnerClan() == player.getClan() && (fort.getSiege().isInProgress() || fort.getSiege()._siegeStartTask != null))
 				{
 					return 3; // Players clan is already registered to siege
 				}
@@ -1122,7 +1122,7 @@ public class FortSiege: Siegable
 	 */
 	public void removeAttacker(Clan clan)
 	{
-		if ((clan == null) || (clan.getFortId() == getFort().getResidenceId()) || !FortSiegeManager.getInstance().checkIsRegistered(clan, getFort().getResidenceId()))
+		if (clan == null || clan.getFortId() == getFort().getResidenceId() || !FortSiegeManager.getInstance().checkIsRegistered(clan, getFort().getResidenceId()))
 		{
 			return;
 		}
@@ -1180,7 +1180,7 @@ public class FortSiege: Siegable
 			return;
 		}
 		
-		if ((_fort.getResidenceId() == FortManager.ORC_FORTRESS) && Config.ORC_FORTRESS_ENABLE)
+		if (_fort.getResidenceId() == FortManager.ORC_FORTRESS && Config.ORC_FORTRESS_ENABLE)
 		{
 			if (_siegeStartTask != null)
 			{
@@ -1622,7 +1622,7 @@ public class FortSiege: Siegable
 	{
 		foreach (SiegeClan sc in _attackerClans)
 		{
-			if ((sc != null) && (sc.getClanId() == clanId))
+			if (sc != null && sc.getClanId() == clanId)
 			{
 				return sc;
 			}

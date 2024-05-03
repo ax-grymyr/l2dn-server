@@ -154,26 +154,26 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 		return true;
 	}
 
-	public void spawnMe(int x, int y, int z)
+	public void spawnMe(Location3D location)
 	{
 		lock (this)
 		{
-			int spawnX = x switch
+			int spawnX = location.X switch
 			{
 				> World.WORLD_X_MAX => World.WORLD_X_MAX - 5000,
 				< World.WORLD_X_MIN => World.WORLD_X_MIN + 5000,
-				_ => x,
+				_ => location.X,
 			};
 
-			int spawnY = y switch
+			int spawnY = location.Y switch
 			{
 				> World.WORLD_Y_MAX => World.WORLD_Y_MAX - 5000,
 				< World.WORLD_Y_MIN => World.WORLD_Y_MIN + 5000,
-				_ => y,
+				_ => location.Y,
 			};
 
 			// Set the x,y,z position of the WorldObject. If flagged with _isSpawned, setXYZ will automatically update world region, so avoid that.
-			setXYZ(spawnX, spawnY, z);
+			setXYZ(spawnX, spawnY, location.Z);
 		}
 
 		// Spawn and update its _worldregion

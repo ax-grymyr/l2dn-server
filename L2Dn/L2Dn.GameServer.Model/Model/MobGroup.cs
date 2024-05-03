@@ -299,8 +299,8 @@ public class MobGroup
 			int signY = Rnd.nextBoolean() ? -1 : 1;
 			int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
 			int randY = Rnd.get(MobGroupTable.RANDOM_RANGE);
-			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
-			ai.move(creature.getX() + signX * randX, creature.getY() + signY * randY, creature.getZ());
+			ControllableMobAI ai = (ControllableMobAI)mobInst.getAI();
+			ai.moveTo(new Location3D(creature.getX() + signX * randX, creature.getY() + signY * randY, creature.getZ()));
 		}
 	}
 	

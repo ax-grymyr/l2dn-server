@@ -21,44 +21,44 @@ public class GeoPathFinding: PathFinding
 		return PATH_NODE_INDEX.containsKey(regionoffset);
 	}
 	
-	public override List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, bool playable)
+	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)
 	{
-		int gx = (x - World.WORLD_X_MIN) >> 4;
-		int gy = (y - World.WORLD_Y_MIN) >> 4;
-		short gz = (short) z;
-		int gtx = (tx - World.WORLD_X_MIN) >> 4;
-		int gty = (ty - World.WORLD_Y_MIN) >> 4;
-		short gtz = (short) tz;
+		int gx = (location.X - World.WORLD_X_MIN) >> 4;
+		int gy = (location.Y - World.WORLD_Y_MIN) >> 4;
+		short gz = (short)location.Z;
+		int gtx = (targetLocation.X - World.WORLD_X_MIN) >> 4;
+		int gty = (targetLocation.Y - World.WORLD_Y_MIN) >> 4;
+		short gtz = (short)targetLocation.Z;
 		
-		GeoNode start = readNode(gx, gy, gz);
-		GeoNode end = readNode(gtx, gty, gtz);
-		if ((start == null) || (end == null))
+		GeoNode? start = readNode(gx, gy, gz);
+		GeoNode? end = readNode(gtx, gty, gtz);
+		if (start == null || end == null || ReferenceEquals(start, end))
 		{
 			return null;
 		}
-		if (Math.Abs(start.getLoc().getZ() - z) > 55)
+
+		Location3D startLoc = start.getLoc().Location;
+		if (Math.Abs(startLoc.Z - location.Z) > 55)
 		{
 			return null; // Not correct layer.
 		}
-		if (Math.Abs(end.getLoc().getZ() - tz) > 55)
+
+		Location3D endLoc = end.getLoc().Location;
+		if (Math.Abs(endLoc.Z - targetLocation.Z) > 55)
 		{
 			return null; // Not correct layer.
 		}
-		if (start == end)
-		{
-			return null;
-		}
-		
+
 		// TODO: Find closest path node we CAN access. Now only checks if we can not reach the closest.
-		Location3D temp = GeoEngine.getInstance().getValidLocation(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instance);
-		if ((temp.X != start.getLoc().getX()) || (temp.Y != start.getLoc().getY()))
+		Location3D temp = GeoEngine.getInstance().getValidLocation(location, startLoc, instance);
+		if (temp.X != startLoc.X || temp.Y != startLoc.Y)
 		{
 			return null; // Cannot reach closest...
 		}
 		
 		// TODO: Find closest path node around target, now only checks if location can be reached.
-		temp = GeoEngine.getInstance().getValidLocation(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instance);
-		if ((temp.X != end.getLoc().getX()) || (temp.Y != end.getLoc().getY()))
+		temp = GeoEngine.getInstance().getValidLocation(targetLocation, endLoc, instance);
+		if (temp.X != endLoc.X || temp.Y != endLoc.Y)
 		{
 			return null; // Cannot reach closest...
 		}
@@ -117,13 +117,13 @@ public class GeoPathFinding: PathFinding
 			}
 			foreach (GeoNode n in neighbors)
 			{
-				if ((visited.LastIndexOf(n) == -1) && !toVisit.Contains(n))
+				if (visited.LastIndexOf(n) == -1 && !toVisit.Contains(n))
 				{
 					added = false;
 					n.setParent(node);
 					dx = targetX - n.getLoc().getNodeX();
 					dy = targetY - n.getLoc().getNodeY();
-					n.setCost((dx * dx) + (dy * dy));
+					n.setCost(dx * dx + dy * dy);
 					for (int index = 0; index < toVisit.size(); index++)
 					{
 						// Supposed to find it quite early.
@@ -160,7 +160,7 @@ public class GeoPathFinding: PathFinding
 			directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
 			directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
 			
-			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
+			if (directionX != previousDirectionX || directionY != previousDirectionY)
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
@@ -307,11 +307,11 @@ public class GeoPathFinding: PathFinding
 		}
 		short nbx = getNodeBlock(nodeX);
 		short nby = getNodeBlock(nodeY);
-		int idx = PATH_NODE_INDEX.get(regoffset)[((nby << 8) + nbx)];
+		int idx = PATH_NODE_INDEX.get(regoffset)[(nby << 8) + nbx];
 		byte[] pn = PATH_NODES.get(regoffset);
 		// Reading.
 		byte nodes = pn[idx];
-		idx += (layer * 10) + 1; // byte + layer*10byte
+		idx += layer * 10 + 1; // byte + layer*10byte
 		if (nodes < layer)
 		{
 			LOGGER.Warn("SmthWrong!");
@@ -321,7 +321,7 @@ public class GeoPathFinding: PathFinding
 		return new GeoNode(new GeoNodeLoc(nodeX, nodeY, node_z), idx);
 	}
 	
-	private GeoNode readNode(int gx, int gy, short z)
+	private GeoNode? readNode(int gx, int gy, short z)
 	{
 		short nodeX = getNodePos(gx);
 		short nodeY = getNodePos(gy);
@@ -332,7 +332,7 @@ public class GeoPathFinding: PathFinding
 		}
 		short nbx = getNodeBlock(nodeX);
 		short nby = getNodeBlock(nodeY);
-		int idx = PATH_NODE_INDEX.get(regoffset)[((nby << 8) + nbx)];
+		int idx = PATH_NODE_INDEX.get(regoffset)[(nby << 8) + nbx];
 		byte[] pn = PATH_NODES.get(regoffset);
 		// Reading.
 		byte nodes = pn[idx++];
@@ -390,7 +390,7 @@ public class GeoPathFinding: PathFinding
 			{
 				byte layer = nodes[index];
 				indexs[node++] = index;
-				index += (layer * 10) + 1;
+				index += layer * 10 + 1;
 			}
 			PATH_NODE_INDEX.put(regionoffset, indexs);
 			PATH_NODES.put(regionoffset, nodes);

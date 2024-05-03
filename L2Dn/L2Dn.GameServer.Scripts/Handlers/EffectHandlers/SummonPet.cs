@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -92,7 +93,7 @@ public class SummonPet: AbstractEffect
 		}
 		pet.setRunning();
 		collar.setEnchantLevel(pet.getLevel());
-		pet.spawnMe(player.getX() + 50, player.getY() + 100, player.getZ());
+		pet.spawnMe(new Location3D(player.getX() + 50, player.getY() + 100, player.getZ()));
 		pet.startFeed();
 	}
 }

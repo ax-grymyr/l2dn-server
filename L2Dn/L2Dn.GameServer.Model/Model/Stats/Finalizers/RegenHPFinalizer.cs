@@ -139,7 +139,7 @@ public class RegenHPFinalizer: StatFunction
 			return 0;
 		}
 
-		Siege siege = SiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
+		Siege siege = SiegeManager.getInstance().getSiege(player.Location.Location3D);
 		if ((siege == null) || !siege.isInProgress())
 		{
 			return 0;

@@ -36,7 +36,7 @@ public abstract class ZoneForm
     {
         Item item = new Item(IdManager.getInstance().getNextId(), itemId);
         item.setCount(num);
-        item.spawnMe(x, y, z + 5);
+        item.spawnMe(new Location3D(x, y, z + 5));
         ZoneManager.getInstance().getDebugItems().add(item);
     }
 	

@@ -223,7 +223,7 @@ public class AutoPlayTaskManager
 						// Check if item is reachable.
 						if (droppedItem == null //
 							|| !droppedItem.isSpawned() //
-							|| !GeoEngine.getInstance().canMoveToTarget(player.getX(), player.getY(), player.getZ(), droppedItem.getX(), droppedItem.getY(), droppedItem.getZ(), player.getInstanceWorld()))
+							|| !GeoEngine.getInstance().canMoveToTarget(player.Location.Location3D, droppedItem.Location.Location3D, player.getInstanceWorld()))
 						{
 							continue; // pick up
 						}
@@ -297,7 +297,9 @@ public class AutoPlayTaskManager
 						}
 						
 						// Check if creature is reachable.
-						if (Math.Abs(player.getZ() - nearby.getZ()) < 180 && GeoEngine.getInstance().canSeeTarget(player, nearby) && GeoEngine.getInstance().canMoveToTarget(player.getX(), player.getY(), player.getZ(), nearby.getX(), nearby.getY(), nearby.getZ(), player.getInstanceWorld()))
+						if (Math.Abs(player.getZ() - nearby.getZ()) < 180 &&
+						    GeoEngine.getInstance().canSeeTarget(player, nearby) && GeoEngine.getInstance()
+							    .canMoveToTarget(player.Location.Location3D, nearby.Location.Location3D, player.getInstanceWorld()))
 						{
 							double creatureDistance = player.Distance2D(nearby);
 							if (creatureDistance < closestDistance)

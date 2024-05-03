@@ -68,8 +68,8 @@ public class Blink: AbstractEffect
 		int y = effected.getY() + y1;
 		int z = effected.getZ();
 
-		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(),
-			effected.getZ(), x, y, z, effected.getInstanceWorld());
+		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,
+			new Location3D(x, y, z), effected.getInstanceWorld());
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));

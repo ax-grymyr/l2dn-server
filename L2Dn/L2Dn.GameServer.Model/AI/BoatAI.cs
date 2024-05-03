@@ -12,7 +12,7 @@ public class BoatAI: VehicleAI
     {
     }
 
-    protected override void moveTo(int x, int y, int z)
+    public override void moveTo(Location3D location)
     {
         if (!_actor.isMovementDisabled())
         {
@@ -22,7 +22,7 @@ public class BoatAI: VehicleAI
             }
 
             _clientMoving = true;
-            _actor.moveToLocation(x, y, z, 0);
+            _actor.moveToLocation(location, 0);
             _actor.broadcastPacket(new VehicleDeparturePacket(getActor()));
         }
     }

@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Geo.PathFindings.GeoNodes;
 
@@ -17,26 +18,10 @@ public class GeoNodeLoc: AbstractNodeLoc
 		_y = y;
 		_z = z;
 	}
-	
-	public override int getX()
-	{
-		return World.WORLD_X_MIN + (_x * 128) + 48;
-	}
-	
-	public override int getY()
-	{
-		return World.WORLD_Y_MIN + (_y * 128) + 48;
-	}
-	
-	public override int getZ()
-	{
-		return _z;
-	}
-	
-	public override void setZ(short z)
-	{
-	}
-	
+
+	public override Location3D Location => new(World.WORLD_X_MIN + _x * 128 + 48, World.WORLD_Y_MIN + _y * 128 + 48, _z);
+	public override int Z => _z;
+
 	public override int getNodeX()
 	{
 		return _x;
@@ -49,12 +34,7 @@ public class GeoNodeLoc: AbstractNodeLoc
 	
 	public override int GetHashCode()
 	{
-		int prime = 31;
-		int result = 1;
-		result = (prime * result) + _x;
-		result = (prime * result) + _y;
-		result = (prime * result) + _z;
-		return result;
+		return HashCode.Combine(_x, _y, _z);
 	}
 	
 	public override bool Equals(Object? obj)
@@ -72,6 +52,6 @@ public class GeoNodeLoc: AbstractNodeLoc
 			return false;
 		}
 		GeoNodeLoc other = (GeoNodeLoc) obj;
-		return (_x == other._x) && (_y == other._y) && (_z == other._z);
+		return _x == other._x && _y == other._y && _z == other._z;
 	}
 }

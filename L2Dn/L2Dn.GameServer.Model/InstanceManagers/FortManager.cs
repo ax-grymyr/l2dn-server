@@ -2,6 +2,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
@@ -69,7 +70,7 @@ public class FortManager
 		return null;
 	}
 	
-	public Fort getFort(String name)
+	public Fort? getFort(string name)
 	{
 		foreach (Fort f in _forts.values())
 		{
@@ -81,11 +82,11 @@ public class FortManager
 		return null;
 	}
 	
-	public Fort getFort(int x, int y, int z)
+	public Fort? getFort(Location3D location)
 	{
 		foreach (Fort f in _forts.values())
 		{
-			if (f.checkIfInZone(x, y, z))
+			if (f.checkIfInZone(location))
 			{
 				return f;
 			}
@@ -97,7 +98,7 @@ public class FortManager
 	{
 		// TODO: Make this more abstract?
 		// return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
-		return getFortById(FortManager.ORC_FORTRESS);
+		return getFortById(ORC_FORTRESS);
 	}
 	
 	public ICollection<Fort> getForts()

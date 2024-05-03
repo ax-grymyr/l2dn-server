@@ -315,14 +315,14 @@ public class FortSiegeManager
 	
 	public FortSiege getSiege(WorldObject activeObject)
 	{
-		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
+		return getSiege(activeObject.Location.Location3D);
 	}
 	
-	public FortSiege getSiege(int x, int y, int z)
+	public FortSiege getSiege(Location3D location)
 	{
 		foreach (Fort fort in FortManager.getInstance().getForts())
 		{
-			if (fort.getSiege().checkIfInZone(x, y, z))
+			if (fort.getSiege().checkIfInZone(location))
 			{
 				return fort.getSiege();
 			}

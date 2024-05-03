@@ -80,7 +80,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 		evolved.setRunning();
 		evolved.storeEvolvedPets((int)evolveLevel, evolved.getPetData().getIndex(), controlItem.getObjectId());
 		controlItem.setEnchantLevel(evolved.getLevel());
-		evolved.spawnMe(pet.getX(), pet.getY(), pet.getZ());
+		evolved.spawnMe(pet.Location.Location3D);
 		evolved.startFeed();
 	}
 }

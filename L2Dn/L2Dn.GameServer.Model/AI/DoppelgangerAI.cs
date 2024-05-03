@@ -228,7 +228,7 @@ public class DoppelgangerAI : CreatureAI
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
 			// _actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 			Location3D loc = new(pawn.getX() + Rnd.get(-offset, offset), pawn.getY() + Rnd.get(-offset, offset), pawn.getZ());
-			_actor.moveToLocation(loc.X, loc.Y, loc.Z, 0);
+			_actor.moveToLocation(loc, 0);
 			if (!_actor.isMoving())
 			{
 				clientActionFailed();

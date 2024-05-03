@@ -65,7 +65,7 @@ public class CastleVCmd: IVoicedCommandHandler
 					return false;
 				}
 				
-				if (castle.checkIfInZone(door.getX(), door.getY(), door.getZ()))
+				if (castle.checkIfInZone(door.Location.Location3D))
 				{
 					activeChar.sendPacket(SystemMessageId.THE_GATE_IS_BEING_OPENED);
 					door.openMe();
@@ -112,7 +112,7 @@ public class CastleVCmd: IVoicedCommandHandler
 					return false;
 				}
 				
-				if (castle2.checkIfInZone(door2.getX(), door2.getY(), door2.getZ()))
+				if (castle2.checkIfInZone(door2.Location.Location3D))
 				{
 					activeChar.sendMessage("The gate is being closed.");
 					door2.closeMe();

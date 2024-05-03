@@ -3,6 +3,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using NLog;
 
 namespace L2Dn.GameServer.Geo.PathFindings.CellNodes;
@@ -15,14 +16,14 @@ public class CellPathFinding: PathFinding
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CellPathFinding));
 	
 	private BufferInfo[] _allBuffers;
-	private int _findSuccess = 0;
-	private int _findFails = 0;
-	private int _postFilterUses = 0;
-	private int _postFilterPlayableUses = 0;
-	private int _postFilterPasses = 0;
+	private int _findSuccess;
+	private int _findFails;
+	private int _postFilterUses;
+	private int _postFilterPlayableUses;
+	private int _postFilterPasses;
 	private TimeSpan _postFilterElapsed;
 	
-	private List<Item> _debugItems = null;
+	private List<Item> _debugItems;
 	
 	protected CellPathFinding()
 	{
@@ -57,22 +58,22 @@ public class CellPathFinding: PathFinding
 		return false;
 	}
 	
-	public override List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, bool playable)
+	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)
 	{
-		int gx = GeoEngine.getGeoX(x);
-		int gy = GeoEngine.getGeoY(y);
-		if (!GeoEngine.getInstance().hasGeo(x, y))
+		int gx = GeoEngine.getGeoX(location.X);
+		int gy = GeoEngine.getGeoY(location.Y);
+		if (!GeoEngine.getInstance().hasGeo(location.X, location.Y))
 		{
 			return null;
 		}
-		int gz = GeoEngine.getInstance().getHeight(x, y, z);
-		int gtx = GeoEngine.getGeoX(tx);
-		int gty = GeoEngine.getGeoY(ty);
-		if (!GeoEngine.getInstance().hasGeo(tx, ty))
+		int gz = GeoEngine.getInstance().getHeight(location);
+		int gtx = GeoEngine.getGeoX(targetLocation.X);
+		int gty = GeoEngine.getGeoY(targetLocation.Y);
+		if (!GeoEngine.getInstance().hasGeo(targetLocation.X, targetLocation.Y))
 		{
 			return null;
 		}
-		int gtz = GeoEngine.getInstance().getHeight(tx, ty, tz);
+		int gtz = GeoEngine.getInstance().getHeight(targetLocation);
 		CellNodeBuffer buffer = alloc(64 + (2 * Math.Max(Math.Abs(gx - gtx), Math.Abs(gy - gty))), playable);
 		if (buffer == null)
 		{
@@ -149,11 +150,7 @@ public class CellPathFinding: PathFinding
 		{
 			_postFilterPlayableUses++;
 		}
-		
-		int middlePoint;
-		int currentX;
-		int currentY;
-		int currentZ;
+
 		int pass = 0;
 		bool remove;
 		do
@@ -162,11 +159,9 @@ public class CellPathFinding: PathFinding
 			_postFilterPasses++;
 			
 			remove = false;
-			middlePoint = 0;
-			currentX = x;
-			currentY = y;
-			currentZ = z;
-			
+			int middlePoint = 0;
+			Location3D currentLoc = location;
+
 			while (middlePoint < path.Count)
 			{
 				AbstractNodeLoc locMiddle = path[middlePoint];
@@ -177,7 +172,7 @@ public class CellPathFinding: PathFinding
 				}
 				
 				AbstractNodeLoc locEnd = path[middlePoint];
-				if (GeoEngine.getInstance().canMoveToTarget(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd.getZ(), instance))
+				if (GeoEngine.getInstance().canMoveToTarget(currentLoc, locEnd.Location, instance))
 				{
 					path.RemoveAt(middlePoint);
 					remove = true;
@@ -188,12 +183,11 @@ public class CellPathFinding: PathFinding
 				}
 				else
 				{
-					currentX = locMiddle.getX();
-					currentY = locMiddle.getY();
-					currentZ = locMiddle.getZ();
+					currentLoc = locMiddle.Location;
 				}
 			}
 		}
+
 		// Only one postfilter pass for AI.
 		while (playable && remove && (path.size() > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
 		
@@ -311,7 +305,7 @@ public class CellPathFinding: PathFinding
 	{
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
 		item.setCount(num);
-		item.spawnMe(loc.getX(), loc.getY(), loc.getZ());
+		item.spawnMe(loc.Location);
 		_debugItems.add(item);
 	}
 	
@@ -320,10 +314,10 @@ public class CellPathFinding: PathFinding
 		public int mapSize;
 		public int count;
 		public List<CellNodeBuffer> bufs;
-		public int uses = 0;
-		public int playableUses = 0;
-		public int overflows = 0;
-		public int playableOverflows = 0;
+		public int uses;
+		public int playableUses;
+		public int overflows;
+		public int playableOverflows;
 		public TimeSpan elapsed;
 		
 		public BufferInfo(int size, int cnt)

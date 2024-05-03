@@ -357,7 +357,7 @@ public class CreatureAI: AbstractAI
 		_actor.abortAttack();
 		
 		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-		moveTo(destination.X, destination.Y, destination.Z);
+		moveTo(destination);
 	}
 	
 	/**
@@ -884,7 +884,7 @@ public class CreatureAI: AbstractAI
 			dist -= offset - 5;
 			x += (int) (dist * cos);
 			y += (int) (dist * sin);
-			moveTo(x, y, worldPosition.Z);
+			moveTo(new Location3D(x, y, worldPosition.Z));
 			return true;
 		}
 		

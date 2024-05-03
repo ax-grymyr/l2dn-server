@@ -1,9 +1,7 @@
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
@@ -51,6 +49,7 @@ public class OpBlinkSkillCondition: ISkillCondition
 		int x = caster.getX() + x1;
 		int y = caster.getY() + y1;
 		int z = caster.getZ();
-		return GeoEngine.getInstance().canMoveToTarget(caster.getX(), caster.getY(), caster.getZ(), x, y, z, caster.getInstanceWorld());
+		return GeoEngine.getInstance()
+			.canMoveToTarget(caster.Location.Location3D, new Location3D(x, y, z), caster.getInstanceWorld());
 	}
 }

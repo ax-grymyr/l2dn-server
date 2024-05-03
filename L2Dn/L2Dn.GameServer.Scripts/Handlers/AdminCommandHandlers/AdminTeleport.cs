@@ -165,7 +165,7 @@ public class AdminTeleport: IAdminCommandHandler
 				st.nextToken();
 				int x = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
 				int y = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
-				int z = st.hasMoreTokens() ? ((int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture)) : GeoEngine.getInstance().getHeight(x, y, 10000);
+				int z = st.hasMoreTokens() ? ((int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture)) : GeoEngine.getInstance().getHeight(new Location3D(x, y, 10000));
 				activeChar.teleToLocation(x, y, z);
 			}
 			catch (Exception e)

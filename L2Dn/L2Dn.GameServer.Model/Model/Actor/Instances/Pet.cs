@@ -19,6 +19,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -902,7 +903,7 @@ public class Pet: Summon
 				dropit.getDropProtection().protect(getOwner());
 			}
 			LOGGER_PET.Trace("Item id to drop: " + dropit.getId() + " amount: " + dropit.getCount());
-			dropit.dropMe(this, getX(), getY(), getZ() + 100);
+			dropit.dropMe(this, new Location3D(getX(), getY(), getZ() + 100));
 		}
 	}
 	

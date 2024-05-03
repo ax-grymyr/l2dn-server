@@ -544,7 +544,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 		
-		spawnMe(getX(), getY(), getZ());
+		spawnMe(Location.Location3D);
 		setTeleporting(false);
 
 		if (_eventContainer.HasSubscribers<OnCreatureTeleported>())
@@ -761,7 +761,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		Location location = new(xValue, yValue,
-			_isFlying ? zValue : GeoEngine.getInstance().getHeight(xValue, yValue, zValue), headingValue);
+			_isFlying ? zValue : GeoEngine.getInstance().getHeight(new Location3D(xValue, yValue, zValue)), headingValue);
 
 		Instance instance = instanceValue;
 
@@ -3206,7 +3206,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
 				int x = xPrev + x1;
 				int y = yPrev + y1;
-				if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
+				if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 				{
 					_move.onGeodataPathIndex = -1;
 					stopMove(new Location(getActingPlayer().getLastServerPosition(), 0));
@@ -3227,7 +3227,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
 					int x = xPrev + x1;
 					int y = yPrev + y1;
-					if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
+					if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 					{
 						_move.onGeodataPathIndex = -1;
 						if (hasAI())
@@ -3254,7 +3254,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
 						int x = xPrev + x1;
 						int y = yPrev + y1;
-						if (!GeoEngine.getInstance().canMoveToTarget(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld()))
+						if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 						{
 							_suspendedMovement = true;
 							_move.onGeodataPathIndex = -1;
@@ -3279,8 +3279,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 								int y1 = (int) (Math.Sin(Math.PI + radian + course) * frontDistance);
 								int x = xPrev + x1;
 								int y = yPrev + y1;
-								if ((hasDoors && DoorData.getInstance().checkIfDoorsBetween(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld(), false)) //
-									|| (hasFences && FenceData.getInstance().checkIfFenceBetween(xPrev, yPrev, zPrev, x, y, zPrev, getInstanceWorld())))
+								if ((hasDoors && DoorData.getInstance().checkIfDoorsBetween(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld(), false)) //
+									|| (hasFences && FenceData.getInstance().checkIfFenceBetween(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld())))
 								{
 									_move.onGeodataPathIndex = -1;
 									if (hasAI())
@@ -3507,7 +3507,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param zValue The Y position of the destination
 	 * @param offsetValue The size of the interaction area of the Creature targeted
 	 */
-	public virtual void moveToLocation(int xValue, int yValue, int zValue, int offsetValue)
+	public virtual void moveToLocation(Location3D location, int offsetValue)
 	{
 		// Get the Move Speed of the Creature
 		double speed = _stat.getMoveSpeed();
@@ -3516,44 +3516,31 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return;
 		}
-		
-		int x = xValue;
-		int y = yValue;
-		int z = zValue;
+
+		Location3D loc = location;
 		int offset = offsetValue;
-		
+
 		// Get current position of the Creature
-		int curX = getX();
-		int curY = getY();
-		int curZ = getZ();
-		
+		Location3D curLoc = Location.Location3D;
+
 		// Calculate distance (dx,dy) between current position and destination
 		// TODO: improve Z axis move/follow support when dx,dy are small compared to dz
-		double dx = x - curX;
-		double dy = y - curY;
-		double dz = z - curZ;
-		double distance = MathUtil.hypot(dx, dy);
-		
-		bool verticalMovementOnly = _isFlying && distance == 0 && dz != 0;
+		Location3D dLoc = loc - curLoc;
+		double distance = dLoc.Length2D;
+		bool verticalMovementOnly = _isFlying && distance == 0 && dLoc.Z != 0;
 		if (verticalMovementOnly)
-		{
-			distance = Math.Abs(dz);
-		}
-		
+			distance = Math.Abs(dLoc.Z);
+
 		// Make water move short and use no geodata checks for swimming chars distance in a click can easily be over 3000.
 		bool isInWater = isInsideZone(ZoneId.WATER) && !isInsideZone(ZoneId.CASTLE);
 		if (isInWater && distance > 700)
 		{
 			double divider = 700 / distance;
-			x = curX + (int) (divider * dx);
-			y = curY + (int) (divider * dy);
-			z = curZ + (int) (divider * dz);
-			dx = x - curX;
-			dy = y - curY;
-			dz = z - curZ;
-			distance = MathUtil.hypot(dx, dy);
+			loc = curLoc + dLoc.Scale(divider);
+			dLoc = loc - curLoc;
+			distance = dLoc.Length2D;
 		}
-		
+
 		// @formatter:off
 		// Define movement angles needed
 		// ^
@@ -3565,21 +3552,19 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// X ---------=>
 		// (curx,cury)
 		// @formatter:on
-		
+
 		double cos;
 		double sin;
-		
+
 		// Check if a movement offset is defined or no distance to go through
 		if (offset > 0 || distance < 1)
 		{
 			// approximation for moving closer when z coordinates are different
 			// TODO: handle Z axis movement better
-			offset = (int)(offset - Math.Abs(dz));
+			offset -= Math.Abs(dLoc.Z);
 			if (offset < 5)
-			{
 				offset = 5;
-			}
-			
+
 			// If no distance to go through, the movement is canceled
 			if (distance < 1 || distance - offset <= 0)
 			{
@@ -3587,21 +3572,22 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				return;
 			}
-			
+
 			// Calculate movement angles needed
-			sin = dy / distance;
-			cos = dx / distance;
+			sin = dLoc.Y / distance;
+			cos = dLoc.X / distance;
 			distance -= offset - 5; // due to rounding error, we have to move a bit closer to be in range
-			
+
 			// Calculate the new destination with offset included
-			x = curX + (int) (distance * cos);
-			y = curY + (int) (distance * sin);
+			int newX = curLoc.X + (int) (distance * cos);
+			int newY = curLoc.Y + (int) (distance * sin);
+			loc = loc with { Location2D = new Location2D(newX, newY) };
 		}
 		else
 		{
 			// Calculate movement angles needed
-			sin = dy / distance;
-			cos = dx / distance;
+			sin = dLoc.Y / distance;
+			cos = dLoc.X / distance;
 		}
 		
 		// Create and Init a MoveData object
@@ -3620,14 +3606,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 			
 			// Movement checks.
-			if (Config.PATHFINDING > 0 && !(this is FriendlyNpc))
+			if (Config.PATHFINDING > 0 && this is not FriendlyNpc)
 			{
-				int originalX = x;
-				int originalY = y;
-				int originalZ = z;
+				Location3D originalLoc = loc;
 				double originalDistance = distance;
-				int gtx = (originalX - World.WORLD_X_MIN) >> 4;
-				int gty = (originalY - World.WORLD_Y_MIN) >> 4;
+				int gtx = (originalLoc.X - World.WORLD_X_MIN) >> 4;
+				int gty = (originalLoc.Y - World.WORLD_Y_MIN) >> 4;
 				if (isOnGeodataPath())
 				{
 					try
@@ -3645,47 +3629,37 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 				
 				// Support for player attack with direct movement. Tested at retail on May 11th 2023.
-				bool directMove = false;
-				if (isPlayer() && hasAI() && getActingPlayer().getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
-				{
-					directMove = true;
-				}
+				bool directMove = isPlayer() && hasAI() &&
+					getActingPlayer().getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK;
 				
 				if (directMove //
-					|| (!isInVehicle // Not in vehicle.
-						&& !(isPlayer() && distance > 3000) // Should be able to click far away and move.
-						&& !(isMonster() && Math.Abs(dz) > 100) // Monsters can move on ledges.
-						&& !(curZ - z > 300 && distance < 300))) // Prohibit correcting destination if character wants to fall.
+				    || (!isInVehicle // Not in vehicle.
+					    && !(isPlayer() && distance > 3000) // Should be able to click far away and move.
+					    && !(isMonster() && Math.Abs(dLoc.Z) > 100) // Monsters can move on ledges.
+					    && !(curLoc.Z - loc.Z > 300 && distance < 300))) // Prohibit correcting destination if character wants to fall.
 				{
 					// location different if destination wasn't reached (or just z coord is different)
-					Location3D destiny = GeoEngine.getInstance().getValidLocation(curX, curY, curZ, x, y, z, getInstanceWorld());
-					x = destiny.X;
-					y = destiny.Y;
-					if (!isPlayer())
-					{
-						z = destiny.Z;
-					}
-
-					dx = x - curX;
-					dy = y - curY;
-					dz = z - curZ;
-					distance = verticalMovementOnly ? Math.Pow(dz, 2) : MathUtil.hypot(dx, dy);
+					Location3D destiny = GeoEngine.getInstance().getValidLocation(curLoc, loc, getInstanceWorld());
+					loc = isPlayer() ? destiny with { Z = loc.Z } : destiny;
+					dLoc = loc - curLoc;
+					distance = verticalMovementOnly ? Math.Pow(dLoc.Z, 2) : dLoc.Length2D;
 				}
 				
 				// Pathfinding checks.
 				if (!directMove && originalDistance - distance > 30 && !isControlBlocked() && !isInVehicle)
 				{
 					// Path calculation -- overrides previous movement check
-					move.geoPath = PathFinding.getInstance().findPath(curX, curY, curZ, originalX, originalY, originalZ, getInstanceWorld(), isPlayer());
+					move.geoPath = PathFinding.getInstance().findPath(curLoc, originalLoc, getInstanceWorld(), isPlayer());
+
 					bool found = move.geoPath != null && move.geoPath.Count > 1;
 					
 					// If path not found and this is an Attackable, attempt to find closest path to destination.
 					if (!found && isAttackable())
 					{
-						int xMin = Math.Min(curX, originalX);
-						int xMax = Math.Max(curX, originalX);
-						int yMin = Math.Min(curY, originalY);
-						int yMax = Math.Max(curY, originalY);
+						int xMin = Math.Min(curLoc.X, originalLoc.X);
+						int xMax = Math.Max(curLoc.X, originalLoc.X);
+						int yMin = Math.Min(curLoc.Y, originalLoc.Y);
+						int yMax = Math.Max(curLoc.Y, originalLoc.Y);
 						int maxDiff = Math.Min(Math.Max(xMax - xMin, yMax - yMin), 500);
 						xMin -= maxDiff;
 						xMax += maxDiff;
@@ -3694,18 +3668,16 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						int destinationX = 0;
 						int destinationY = 0;
 						double shortDistance = double.MaxValue;
-						double tempDistance;
-						List<AbstractNodeLoc> tempPath;
 						for (int sX = xMin; sX < xMax; sX += 500)
 						{
 							for (int sY = yMin; sY < yMax; sY += 500)
 							{
-								tempDistance = MathUtil.hypot(sX - originalX, sY - originalY);
+								double tempDistance = MathUtil.hypot(sX - originalLoc.X, sY - originalLoc.Y);
 								if (tempDistance < shortDistance)
 								{
-									tempPath = PathFinding.getInstance().findPath(curX, curY, curZ, sX, sY, originalZ, getInstanceWorld(), false);
-									found = tempPath != null && tempPath.Count > 1;
-									if (found)
+									List<AbstractNodeLoc> tempPath = PathFinding.getInstance().findPath(curLoc, new Location3D(sX, sY, originalLoc.Z), getInstanceWorld(), false);
+
+									if (tempPath != null && tempPath.Count > 1)
 									{
 										shortDistance = tempDistance;
 										move.geoPath = tempPath;
@@ -3718,8 +3690,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						found = move.geoPath != null && move.geoPath.Count > 1;
 						if (found)
 						{
-							originalX = destinationX;
-							originalY = destinationY;
+							originalLoc = originalLoc with { Location2D = new(destinationX, destinationY) };
 						}
 					}
 					
@@ -3728,17 +3699,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						move.onGeodataPathIndex = 0; // On first segment.
 						move.geoPathGtx = gtx;
 						move.geoPathGty = gty;
-						move.geoPathAccurateTx = originalX;
-						move.geoPathAccurateTy = originalY;
-						x = move.geoPath.get(move.onGeodataPathIndex).getX();
-						y = move.geoPath.get(move.onGeodataPathIndex).getY();
-						z = move.geoPath.get(move.onGeodataPathIndex).getZ();
-						dx = x - curX;
-						dy = y - curY;
-						dz = z - curZ;
-						distance = verticalMovementOnly ? Math.Pow(dz, 2) : MathUtil.hypot(dx, dy);
-						sin = dy / distance;
-						cos = dx / distance;
+						move.geoPathAccurateTx = originalLoc.X;
+						move.geoPathAccurateTy = originalLoc.Y;
+						AbstractNodeLoc node = move.geoPath[move.onGeodataPathIndex];
+						loc = node.Location;
+						dLoc = loc - curLoc;
+						distance = verticalMovementOnly ? Math.Pow(dLoc.Z, 2) : dLoc.Length2D;
+						sin = dLoc.Y / distance;
+						cos = dLoc.X / distance;
 					}
 					else // No path found.
 					{
@@ -3750,9 +3718,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						
 						move.disregardingGeodata = true;
 						
-						x = originalX;
-						y = originalY;
-						z = originalZ;
+						loc = originalLoc;
 						distance = originalDistance;
 					}
 				}
@@ -3782,14 +3748,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Apply Z distance for flying or swimming for correct timing calculations
 		if ((_isFlying || isInWater) && !verticalMovementOnly)
 		{
-			distance = MathUtil.hypot(distance, dz);
+			distance = MathUtil.hypot(distance, dLoc.Z);
 		}
 		
 		// Calculate the number of ticks between the current position and the destination.
 		int ticksToMove = (int) (GameTimeTaskManager.TICKS_PER_SECOND * distance / speed);
-		move.xDestination = x;
-		move.yDestination = y;
-		move.zDestination = z; // this is what was requested from client
+		move.xDestination = loc.X;
+		move.yDestination = loc.Y;
+		move.zDestination = loc.Z; // this is what was requested from client
 		
 		// Calculate and set the heading of the Creature
 		move.heading = 0; // initial value for coordinate sync
@@ -3854,17 +3820,18 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		m.geoPathGty = md.geoPathGty;
 		m.geoPathAccurateTx = md.geoPathAccurateTx;
 		m.geoPathAccurateTy = md.geoPathAccurateTy;
+		Location3D geoNodeLocation = md.geoPath.get(m.onGeodataPathIndex).Location;
 		if (md.onGeodataPathIndex == md.geoPath.size() - 2)
 		{
 			m.xDestination = md.geoPathAccurateTx;
 			m.yDestination = md.geoPathAccurateTy;
-			m.zDestination = md.geoPath.get(m.onGeodataPathIndex).getZ();
+			m.zDestination = geoNodeLocation.Z;
 		}
 		else
 		{
-			m.xDestination = md.geoPath.get(m.onGeodataPathIndex).getX();
-			m.yDestination = md.geoPath.get(m.onGeodataPathIndex).getY();
-			m.zDestination = md.geoPath.get(m.onGeodataPathIndex).getZ();
+			m.xDestination = geoNodeLocation.X;
+			m.yDestination = geoNodeLocation.Y;
+			m.zDestination = geoNodeLocation.Z;
 		}
 		
 		// Calculate and set the heading of the Creature.

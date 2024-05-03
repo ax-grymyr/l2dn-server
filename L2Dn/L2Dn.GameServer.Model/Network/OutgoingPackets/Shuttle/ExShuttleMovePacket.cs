@@ -1,22 +1,20 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Shuttle;
 
 public readonly struct ExShuttleMovePacket: IOutgoingPacket
 {
     private readonly Model.Actor.Instances.Shuttle _shuttle;
-    private readonly int _x;
-    private readonly int _y;
-    private readonly int _z;
-	
-    public ExShuttleMovePacket(Model.Actor.Instances.Shuttle shuttle, int x, int y, int z)
+    private readonly Location3D _location;
+
+    public ExShuttleMovePacket(Model.Actor.Instances.Shuttle shuttle, Location3D location)
     {
         _shuttle = shuttle;
-        _x = x;
-        _y = y;
-        _z = z;
+        _location = location;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SUTTLE_MOVE);
@@ -24,8 +22,6 @@ public readonly struct ExShuttleMovePacket: IOutgoingPacket
         writer.WriteInt32(_shuttle.getObjectId());
         writer.WriteInt32((int)_shuttle.getStat().getMoveSpeed());
         writer.WriteInt32((int)_shuttle.getStat().getRotationSpeed());
-        writer.WriteInt32(_x);
-        writer.WriteInt32(_y);
-        writer.WriteInt32(_z);
+        writer.WriteLocation3D(_location);
     }
 }

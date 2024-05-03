@@ -379,7 +379,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			player.setSpawnProtection(true);
 		}
 		
-		player.spawnMe(player.getX(), player.getY(), player.getZ());
+		player.spawnMe(player.Location.Location3D);
 		connection.Send(new ExRotationPacket(player.getObjectId(), player.getHeading()));
 		
 		if (player.isCursedWeaponEquipped())

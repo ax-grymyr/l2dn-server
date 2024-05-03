@@ -1742,15 +1742,15 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param instanceId
 	 * @return
 	 */
-	public Trap addTrap(int trapId, int x, int y, int z, int heading, int instanceId)
+	public Trap addTrap(int trapId, Location location, int instanceId)
 	{
 		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(trapId);
 		Trap trap = new Trap(npcTemplate, instanceId, -1);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
 		trap.setInvul(true);
-		trap.setHeading(heading);
-		trap.spawnMe(x, y, z);
+		trap.setHeading(location.Heading);
+		trap.spawnMe(location.Location3D);
 		return trap;
 	}
 	

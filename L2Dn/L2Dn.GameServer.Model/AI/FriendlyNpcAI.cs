@@ -112,11 +112,13 @@ public class FriendlyNpcAI : AttackableAI
 					if (!npc.IsInsideRadius2D(new Location2D(newX, newY), collision))
 					{
 						int newZ = npc.getZ() + 30;
-						if (GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), newX, newY, newZ, npc.getInstanceWorld()))
+						Location3D newLocation = new Location3D(newX, newY, newZ);
+						if (GeoEngine.getInstance().canMoveToTarget(npc.Location.Location3D, newLocation, npc.getInstanceWorld()))
 						{
-							moveTo(newX, newY, newZ);
+							moveTo(newLocation);
 						}
 					}
+
 					return;
 				}
 			}
@@ -148,11 +150,13 @@ public class FriendlyNpcAI : AttackableAI
 				{
 					posY -= 300;
 				}
-				
-				if (GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), posX, posY, posZ, npc.getInstanceWorld()))
+
+				Location3D posLoc = new(posX, posY, posZ);
+				if (GeoEngine.getInstance().canMoveToTarget(npc.Location.Location3D, posLoc, npc.getInstanceWorld()))
 				{
-					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(posX, posY, posZ));
+					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, posLoc);
 				}
+
 				return;
 			}
 		}

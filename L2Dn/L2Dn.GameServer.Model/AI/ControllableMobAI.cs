@@ -38,7 +38,8 @@ public class ControllableMobAI : AttackableAI
 			int signY = Rnd.nextBoolean() ? -1 : 1;
 			int randX = Rnd.get(MobGroupTable.FOLLOW_RANGE);
 			int randY = Rnd.get(MobGroupTable.FOLLOW_RANGE);
-			moveTo(getForcedTarget().getX() + (signX * randX), getForcedTarget().getY() + (signY * randY), getForcedTarget().getZ());
+			moveTo(new Location3D(getForcedTarget().getX() + (signX * randX),
+				getForcedTarget().getY() + (signY * randY), getForcedTarget().getZ()));
 		}
 	}
 
@@ -439,12 +440,7 @@ public class ControllableMobAI : AttackableAI
 		setAlternateAI(AI_IDLE);
 		clientStopMoving(null);
 	}
-	
-	public void move(int x, int y, int z)
-	{
-		moveTo(x, y, z);
-	}
-	
+
 	public void follow(Creature target)
 	{
 		setAlternateAI(AI_FOLLOW);

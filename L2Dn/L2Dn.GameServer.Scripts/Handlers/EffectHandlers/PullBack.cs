@@ -54,10 +54,13 @@ public class PullBack: AbstractEffect
 		}
 		
 		// In retail, you get debuff, but you are not even moved if there is obstacle. You are still disabled from using skills and moving though.
-		if (GeoEngine.getInstance().canMoveToTarget(effected.getX(), effected.getY(), effected.getZ(), effector.getX(), effector.getY(), effector.getZ(), effected.getInstanceWorld()))
+		if (GeoEngine.getInstance().canMoveToTarget(effected.Location.Location3D, effector.Location.Location3D,
+			    effected.getInstanceWorld()))
 		{
-			effected.broadcastPacket(new FlyToLocationPacket(effected, new Location3D(effector.getX(), effector.getY(), effector.getZ()), _type, _speed, _delay, _animationSpeed));
-			effected.setXYZ(effector.getX(), effector.getY(), GeoEngine.getInstance().getHeight(effector.getX(), effector.getY(), effector.getZ()) + 10);
+			effected.broadcastPacket(new FlyToLocationPacket(effected, effector.Location.Location3D, _type, _speed,
+				_delay, _animationSpeed));
+
+			effected.setXYZ(effector.getX(), effector.getY(), GeoEngine.getInstance().getHeight(effector.Location.Location3D) + 10);
 			effected.broadcastPacket(new ValidateLocationPacket(effected), false);
 			effected.revalidateZone(true);
 		}

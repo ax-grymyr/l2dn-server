@@ -17,6 +17,7 @@ using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -378,10 +379,10 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	 * @param z
 	 * @return
 	 */
-	public bool checkIfInZone(int x, int y, int z)
+	public bool checkIfInZone(Location3D location)
 	{
 		SiegeZone zone = getZone();
-		return (zone != null) && zone.isInsideZone(x, y, z);
+		return (zone != null) && zone.isInsideZone(location);
 	}
 	
 	public SiegeZone getZone()

@@ -105,8 +105,8 @@ public class KnockBack: AbstractEffect
 			int x = (int)(effected.getX() + _distance * Math.Cos(angle));
 			int y = (int)(effected.getY() + _distance * Math.Sin(angle));
 			int z = effected.getZ();
-			Location3D loc = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(), effected.getZ(),
-				x, y, z, effected.getInstanceWorld());
+			Location3D loc = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,
+				new Location3D(x, y, z), effected.getInstanceWorld());
 
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			effected.broadcastPacket(new FlyToLocationPacket(effected, loc, _type, _speed, _delay, _animationSpeed));

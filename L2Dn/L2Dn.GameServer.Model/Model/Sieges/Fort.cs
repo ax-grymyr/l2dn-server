@@ -268,10 +268,10 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 * @param z
 	 * @return true if object is inside the zone
 	 */
-	public bool checkIfInZone(int x, int y, int z)
+	public bool checkIfInZone(Location3D location)
 	{
 		SiegeZone zone = getZone();
-		return (zone != null) && zone.isInsideZone(x, y, z);
+		return (zone != null) && zone.isInsideZone(location);
 	}
 	
 	public SiegeZone getZone()

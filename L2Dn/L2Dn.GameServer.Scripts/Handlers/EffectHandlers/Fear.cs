@@ -76,8 +76,9 @@ public class Fear: AbstractEffect
 		int posY = (int)(effected.getY() + FEAR_RANGE * Math.Sin(radians));
 		int posZ = effected.getZ();
 
-		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.getX(), effected.getY(),
-			effected.getZ(), posX, posY, posZ, effected.getInstanceWorld());
+		Location3D destination = GeoEngine.getInstance()
+			.getValidLocation(effected.Location.Location3D, new Location3D(posX, posY, posZ),
+				effected.getInstanceWorld());
 
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 	}

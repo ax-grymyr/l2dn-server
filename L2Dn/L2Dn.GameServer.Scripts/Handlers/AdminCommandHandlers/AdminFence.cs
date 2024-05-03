@@ -52,7 +52,7 @@ public class AdminFence: IAdminCommandHandler
 						return false;
 					}
 					
-					FenceData.getInstance().spawnFence(activeChar.getX(), activeChar.getY(), activeChar.getZ(), width, Length, height, activeChar.getInstanceId(), FenceState.CLOSED);
+					FenceData.getInstance().spawnFence(activeChar.Location.Location3D, width, Length, height, activeChar.getInstanceId(), FenceState.CLOSED);
 					BuilderUtil.sendSysMessage(activeChar, "Fence added succesfully.");
 				}
 				catch (Exception e)

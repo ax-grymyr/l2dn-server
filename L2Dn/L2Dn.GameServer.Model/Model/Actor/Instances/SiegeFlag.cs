@@ -26,10 +26,10 @@ public class SiegeFlag: Npc
 		
 		_clan = player.getClan();
 		_canTalk = true;
-		_siege = SiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
+		_siege = SiegeManager.getInstance().getSiege(player.Location.Location3D);
 		if (_siege == null)
 		{
-			_siege = FortSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
+			_siege = FortSiegeManager.getInstance().getSiege(player.Location.Location3D);
 		}
 		if ((_clan == null) || (_siege == null))
 		{

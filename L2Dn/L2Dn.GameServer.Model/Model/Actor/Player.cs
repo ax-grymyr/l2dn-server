@@ -3544,7 +3544,7 @@ public class Player: Playable
 			return false;
 		}
 		
-		droppedItem.dropMe(this, (getX() + Rnd.get(50)) - 25, (getY() + Rnd.get(50)) - 25, getZ() + 20);
+		droppedItem.dropMe(this, new Location3D((getX() + Rnd.get(50)) - 25, (getY() + Rnd.get(50)) - 25, getZ() + 20));
 		if ((Config.AUTODESTROY_ITEM_AFTER > 0) && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.Contains(droppedItem.getId()) && ((droppedItem.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !droppedItem.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(droppedItem);
@@ -3618,7 +3618,7 @@ public class Player: Playable
 			return null;
 		}
 		
-		item.dropMe(this, location.X, location.Y, location.Z);
+		item.dropMe(this, location);
 		if ((Config.AUTODESTROY_ITEM_AFTER > 0) && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && ((item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(item);
@@ -6044,7 +6044,7 @@ public class Player: Playable
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return false;
 			}
-			if ((GeoEngine.getInstance().getHeight(getX(), getY(), getZ()) + 300) < getZ())
+			if ((GeoEngine.getInstance().getHeight(Location.Location3D) + 300) < getZ())
 			{
 				sendPacket(SystemMessageId.YOU_CANNOT_DISMOUNT_FROM_THIS_ELEVATION);
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -6613,11 +6613,9 @@ public class Player: Playable
 				CursedWeaponsManager.getInstance().checkPlayer(player);
 
 				// Set the x,y,z position of the Player and make it invisible
-				int x = character.X;
-				int y = character.Y;
-				int z = character.Z;
-				player.setXYZInvisible(new Location3D(x, y, z));
-				player.setLastServerPosition(x, y, z);
+				Location3D location = new(character.X, character.Y, character.Z);
+				player.setXYZInvisible(location);
+				player.setLastServerPosition(location);
 
 				// Set Teleport Bookmark Slot
 				player.setBookMarkSlot(character.BookmarkSlot);
@@ -8371,7 +8369,7 @@ public class Player: Playable
 			{
 				if (clan != attackerClan)
 				{
-					Siege siege = SiegeManager.getInstance().getSiege(getX(), getY(), getZ());
+					Siege siege = SiegeManager.getInstance().getSiege(Location.Location3D);
 					if (siege != null)
 					{
 						// Check if a siege is in progress and if attacker and the Player aren't in the Defender clan.
@@ -10634,7 +10632,7 @@ public class Player: Playable
 		}
 		else // Update last player position upon teleport.
 		{
-			setLastServerPosition(getX(), getY(), getZ());
+			setLastServerPosition(Location.Location3D);
 		}
 		
 		// Force a revalidation.
@@ -10741,9 +10739,9 @@ public class Player: Playable
 		return _teleportLocation;
 	}
 	
-	public void setLastServerPosition(int x, int y, int z)
+	public void setLastServerPosition(Location3D location)
 	{
-		_lastServerPosition = new Location3D(x, y, z);
+		_lastServerPosition = location;
 	}
 	
 	public Location3D getLastServerPosition()

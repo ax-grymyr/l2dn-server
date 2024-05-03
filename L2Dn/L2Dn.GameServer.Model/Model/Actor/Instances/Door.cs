@@ -51,7 +51,7 @@ public class Door : Creature
 		return new DoorAI(this);
 	}
 	
-	public override void moveToLocation(int x, int y, int z, int offset)
+	public override void moveToLocation(Location3D location, int offset)
 	{
 	}
 	

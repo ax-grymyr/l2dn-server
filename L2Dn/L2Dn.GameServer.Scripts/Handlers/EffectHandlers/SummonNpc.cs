@@ -123,7 +123,7 @@ public class SummonNpc: AbstractEffect
 				decoy.setHeading(player.getHeading());
 				decoy.setInstance(player.getInstanceWorld());
 				decoy.setSummoner(player);
-				decoy.spawnMe(x, y, z);
+				decoy.spawnMe(new Location3D(x, y, z));
 				break;
 			}
 			case "EffectPoint":
@@ -134,7 +134,7 @@ public class SummonNpc: AbstractEffect
 				effectPoint.setInvul(true);
 				effectPoint.setSummoner(player);
 				effectPoint.setTitle(player.getName());
-				effectPoint.spawnMe(x, y, z);
+				effectPoint.spawnMe(new Location3D(x, y, z));
 				// First consider NPC template despawn_time parameter.
 				long despawnTime = (long) (effectPoint.getParameters().getFloat("despawn_time", 0) * 1000);
 				if (despawnTime > 0)

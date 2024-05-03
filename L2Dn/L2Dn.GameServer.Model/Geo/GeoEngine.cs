@@ -4,7 +4,6 @@ using L2Dn.GameServer.Geo.GeoDataImpl;
 using L2Dn.GameServer.Geo.GeoDataImpl.Regions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Updating;
@@ -100,19 +99,19 @@ public class GeoEngine
 			can = checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_EAST) && checkNearestNswe(geoX + 1, geoY, worldZ, Cell.NSWE_NORTH);
 		}
 		
-		if (can && ((nswe & Cell.NSWE_NORTH_WEST) == Cell.NSWE_NORTH_WEST))
+		if (can && (nswe & Cell.NSWE_NORTH_WEST) == Cell.NSWE_NORTH_WEST)
 		{
 			// can = canEnterNeighbors(prevX, prevY - 1, prevGeoZ, Direction.WEST) && canEnterNeighbors(prevX - 1, prevY, prevGeoZ, Direction.NORTH);
 			can = checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_WEST) && checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_NORTH);
 		}
 		
-		if (can && ((nswe & Cell.NSWE_SOUTH_EAST) == Cell.NSWE_SOUTH_EAST))
+		if (can && (nswe & Cell.NSWE_SOUTH_EAST) == Cell.NSWE_SOUTH_EAST)
 		{
 			// can = canEnterNeighbors(prevX, prevY + 1, prevGeoZ, Direction.EAST) && canEnterNeighbors(prevX + 1, prevY, prevGeoZ, Direction.SOUTH);
 			can = checkNearestNswe(geoX, geoY + 1, worldZ, Cell.NSWE_EAST) && checkNearestNswe(geoX + 1, geoY, worldZ, Cell.NSWE_SOUTH);
 		}
 		
-		if (can && ((nswe & Cell.NSWE_SOUTH_WEST) == Cell.NSWE_SOUTH_WEST))
+		if (can && (nswe & Cell.NSWE_SOUTH_WEST) == Cell.NSWE_SOUTH_WEST)
 		{
 			// can = canEnterNeighbors(prevX, prevY + 1, prevGeoZ, Direction.WEST) && canEnterNeighbors(prevX - 1, prevY, prevGeoZ, Direction.SOUTH);
 			can = checkNearestNswe(geoX, geoY + 1, worldZ, Cell.NSWE_WEST) && checkNearestNswe(geoX - 1, geoY, worldZ, Cell.NSWE_SOUTH);
@@ -183,32 +182,11 @@ public class GeoEngine
 	 * @param z the z coordinate
 	 * @return the height
 	 */
-	public int getHeight(int x, int y, int z)
+	public int getHeight(Location3D location)
 	{
-		return getNearestZ(getGeoX(x), getGeoY(y), z);
+		return getNearestZ(getGeoX(location.X), getGeoY(location.Y), location.Z);
 	}
-	
-	/**
-	 * Gets the spawn height.
-	 * @param x the x coordinate
-	 * @param y the y coordinate
-	 * @param z the z coordinate
-	 * @return the spawn height
-	 */
-	public int getSpawnHeight(int x, int y, int z)
-	{
-		int geoX = getGeoX(x);
-		int geoY = getGeoY(y);
-		
-		if (!hasGeoPos(geoX, geoY))
-		{
-			return z;
-		}
-		
-		int nextLowerZ = getNextLowerZ(geoX, geoY, z + 20);
-		return Math.Abs(nextLowerZ - z) <= SPAWN_Z_DELTA_LIMIT ? nextLowerZ : z;
-	}
-	
+
 	/**
 	 * Gets the spawn height.
 	 * @param location the location
@@ -216,7 +194,14 @@ public class GeoEngine
 	 */
 	public int getSpawnHeight(Location3D location)
 	{
-		return getSpawnHeight(location.X, location.Y, location.Z);
+		int geoX = getGeoX(location.X);
+		int geoY = getGeoY(location.Y);
+
+		if (!hasGeoPos(geoX, geoY))
+			return location.Z;
+
+		int nextLowerZ = getNextLowerZ(geoX, geoY, location.Z + 20);
+		return Math.Abs(nextLowerZ - location.Z) <= SPAWN_Z_DELTA_LIMIT ? nextLowerZ : location.Z;
 	}
 	
 	/**
@@ -227,7 +212,8 @@ public class GeoEngine
 	 */
 	public bool canSeeTarget(WorldObject cha, WorldObject target)
 	{
-		return (target != null) && (target.isDoor() || canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceWorld(), target.getX(), target.getY(), target.getZ(), target.getInstanceWorld()));
+		return target != null && (target.isDoor() || canSeeTarget(cha.Location.Location3D, cha.getInstanceWorld(),
+			target.Location.Location3D, target.getInstanceWorld()));
 	}
 	
 	/**
@@ -238,7 +224,7 @@ public class GeoEngine
 	 */
 	public bool canSeeTarget(WorldObject cha, Location3D targetLocation)
 	{
-		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), targetLocation.X, targetLocation.Y, targetLocation.Z, cha.getInstanceWorld());
+		return canSeeTarget(cha.Location.Location3D, targetLocation, cha.getInstanceWorld());
 	}
 	
 	/**
@@ -253,9 +239,9 @@ public class GeoEngine
 	 * @param tInstance the target's instance
 	 * @return
 	 */
-	public bool canSeeTarget(int x, int y, int z, Instance instance, int tx, int ty, int tz, Instance tInstance)
+	public bool canSeeTarget(Location3D location, Instance instance, Location3D targetLocation, Instance tInstance)
 	{
-		return (instance == tInstance) && canSeeTarget(x, y, z, tx, ty, tz, instance);
+		return instance == tInstance && canSeeTarget(location, targetLocation, instance);
 	}
 	
 	/**
@@ -269,32 +255,33 @@ public class GeoEngine
 	 * @param instance
 	 * @return {@code true} if there is line of sight between the given coordinate sets, {@code false} otherwise
 	 */
-	public bool canSeeTarget(int x, int y, int z, int tx, int ty, int tz, Instance instance)
+	public bool canSeeTarget(Location3D location, Location3D targetLocation, Instance? instance)
 	{
 		// Door checks.
-		if (DoorData.getInstance().checkIfDoorsBetween(x, y, z, tx, ty, tz, instance, true))
+		if (DoorData.getInstance().checkIfDoorsBetween(location, targetLocation, instance, true))
 		{
 			return false;
 		}
-		
+
 		// Fence checks.
-		if (FenceData.getInstance().checkIfFenceBetween(x, y, z, tx, ty, tz, instance))
+		if (FenceData.getInstance().checkIfFenceBetween(location, targetLocation, instance))
 		{
 			return false;
 		}
-		
-		return canSeeTarget(x, y, z, tx, ty, tz);
+
+		return canSeeTarget(location, targetLocation);
 	}
-	
+
 	private int getLosGeoZ(int prevX, int prevY, int prevGeoZ, int curX, int curY, int nswe)
 	{
-		if ((((nswe & Cell.NSWE_NORTH) != 0) && ((nswe & Cell.NSWE_SOUTH) != 0)) || (((nswe & Cell.NSWE_WEST) != 0) && ((nswe & Cell.NSWE_EAST) != 0)))
+		if (((nswe & Cell.NSWE_NORTH) != 0 && (nswe & Cell.NSWE_SOUTH) != 0) || ((nswe & Cell.NSWE_WEST) != 0 && (nswe & Cell.NSWE_EAST) != 0))
 		{
 			throw new InvalidOperationException("Multiple directions!");
 		}
+
 		return checkNearestNsweAntiCornerCut(prevX, prevY, prevGeoZ, nswe) ? getNearestZ(curX, curY, prevGeoZ) : getNextHigherZ(curX, curY, prevGeoZ);
 	}
-	
+
 	/**
 	 * Can see target. Does not check doors between.
 	 * @param x the x coordinate
@@ -305,26 +292,26 @@ public class GeoEngine
 	 * @param tz the target's z coordinate
 	 * @return {@code true} if there is line of sight between the given coordinate sets, {@code false} otherwise
 	 */
-	public bool canSeeTarget(int x, int y, int z, int tx, int ty, int tz)
+	public bool canSeeTarget(Location3D location, Location3D targetLocation)
 	{
-		int geoX = getGeoX(x);
-		int geoY = getGeoY(y);
-		int tGeoX = getGeoX(tx);
-		int tGeoY = getGeoY(ty);
+		int geoX = getGeoX(location.X);
+		int geoY = getGeoY(location.Y);
+		int tGeoX = getGeoX(targetLocation.X);
+		int tGeoY = getGeoY(targetLocation.Y);
 		
-		int nearestFromZ = getNearestZ(geoX, geoY, z);
-		int nearestToZ = getNearestZ(tGeoX, tGeoY, tz);
+		int nearestFromZ = getNearestZ(geoX, geoY, location.Z);
+		int nearestToZ = getNearestZ(tGeoX, tGeoY, targetLocation.Z);
 		
 		// Fastpath.
-		if ((geoX == tGeoX) && (geoY == tGeoY))
+		if (geoX == tGeoX && geoY == tGeoY)
 		{
-			return !hasGeoPos(tGeoX, tGeoY) || (nearestFromZ == nearestToZ);
+			return !hasGeoPos(tGeoX, tGeoY) || nearestFromZ == nearestToZ;
 		}
 		
-		int fromX = tx;
-		int fromY = ty;
-		int toX = tx;
-		int toY = ty;
+		int fromX = targetLocation.X;
+		int fromY = targetLocation.Y;
+		int toX = targetLocation.X;
+		int toY = targetLocation.Y;
 		if (nearestToZ > nearestFromZ)
 		{
 			int tmp = toX;
@@ -361,7 +348,7 @@ public class GeoEngine
 			int curX = pointIter.x();
 			int curY = pointIter.y();
 			
-			if ((curX == prevX) && (curY == prevY))
+			if (curX == prevX && curY == prevY)
 			{
 				continue;
 			}
@@ -382,25 +369,25 @@ public class GeoEngine
 					{
 						int northGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX, prevY - 1, Cell.NSWE_EAST);
 						int eastGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX + 1, prevY, Cell.NSWE_NORTH);
-						canSeeThrough = (northGeoZ <= maxHeight) && (eastGeoZ <= maxHeight) && (northGeoZ <= getNearestZ(prevX, prevY - 1, beeCurZ)) && (eastGeoZ <= getNearestZ(prevX + 1, prevY, beeCurZ));
+						canSeeThrough = northGeoZ <= maxHeight && eastGeoZ <= maxHeight && northGeoZ <= getNearestZ(prevX, prevY - 1, beeCurZ) && eastGeoZ <= getNearestZ(prevX + 1, prevY, beeCurZ);
 					}
 					else if ((nswe & Cell.NSWE_NORTH_WEST) == Cell.NSWE_NORTH_WEST)
 					{
 						int northGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX, prevY - 1, Cell.NSWE_WEST);
 						int westGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX - 1, prevY, Cell.NSWE_NORTH);
-						canSeeThrough = (northGeoZ <= maxHeight) && (westGeoZ <= maxHeight) && (northGeoZ <= getNearestZ(prevX, prevY - 1, beeCurZ)) && (westGeoZ <= getNearestZ(prevX - 1, prevY, beeCurZ));
+						canSeeThrough = northGeoZ <= maxHeight && westGeoZ <= maxHeight && northGeoZ <= getNearestZ(prevX, prevY - 1, beeCurZ) && westGeoZ <= getNearestZ(prevX - 1, prevY, beeCurZ);
 					}
 					else if ((nswe & Cell.NSWE_SOUTH_EAST) == Cell.NSWE_SOUTH_EAST)
 					{
 						int southGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX, prevY + 1, Cell.NSWE_EAST);
 						int eastGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX + 1, prevY, Cell.NSWE_SOUTH);
-						canSeeThrough = (southGeoZ <= maxHeight) && (eastGeoZ <= maxHeight) && (southGeoZ <= getNearestZ(prevX, prevY + 1, beeCurZ)) && (eastGeoZ <= getNearestZ(prevX + 1, prevY, beeCurZ));
+						canSeeThrough = southGeoZ <= maxHeight && eastGeoZ <= maxHeight && southGeoZ <= getNearestZ(prevX, prevY + 1, beeCurZ) && eastGeoZ <= getNearestZ(prevX + 1, prevY, beeCurZ);
 					}
 					else if ((nswe & Cell.NSWE_SOUTH_WEST) == Cell.NSWE_SOUTH_WEST)
 					{
 						int southGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX, prevY + 1, Cell.NSWE_WEST);
 						int westGeoZ = getLosGeoZ(prevX, prevY, prevGeoZ, prevX - 1, prevY, Cell.NSWE_SOUTH);
-						canSeeThrough = (southGeoZ <= maxHeight) && (westGeoZ <= maxHeight) && (southGeoZ <= getNearestZ(prevX, prevY + 1, beeCurZ)) && (westGeoZ <= getNearestZ(prevX - 1, prevY, beeCurZ));
+						canSeeThrough = southGeoZ <= maxHeight && westGeoZ <= maxHeight && southGeoZ <= getNearestZ(prevX, prevY + 1, beeCurZ) && westGeoZ <= getNearestZ(prevX - 1, prevY, beeCurZ);
 					}
 					else
 					{
@@ -422,18 +409,7 @@ public class GeoEngine
 		
 		return true;
 	}
-	
-	/**
-	 * Verifies if the is a path between origin's location and destination, if not returns the closest location.
-	 * @param origin the origin
-	 * @param destination the destination
-	 * @return the destination if there is a path or the closes location
-	 */
-	public Location3D getValidLocation(Location3D origin, Location3D destination)
-	{
-		return getValidLocation(origin.X, origin.Y, origin.Z, destination.X, destination.Y, destination.Z, null);
-	}
-	
+
 	/**
 	 * Move check.
 	 * @param x the x coordinate
@@ -445,27 +421,30 @@ public class GeoEngine
 	 * @param instance the instance
 	 * @return the last Location (x,y,z) where player can walk - just before wall
 	 */
-	public Location3D getValidLocation(int x, int y, int z, int tx, int ty, int tz, Instance instance)
+	public Location3D getValidLocation(Location3D location, Location3D targetLocation, Instance? instance = null)
 	{
-		int geoX = getGeoX(x);
-		int geoY = getGeoY(y);
-		int nearestFromZ = getNearestZ(geoX, geoY, z);
-		int tGeoX = getGeoX(tx);
-		int tGeoY = getGeoY(ty);
-		int nearestToZ = getNearestZ(tGeoX, tGeoY, tz);
-		
+		int geoX = getGeoX(location.X);
+		int geoY = getGeoY(location.Y);
+		int nearestFromZ = getNearestZ(geoX, geoY, location.Z);
+		int tGeoX = getGeoX(targetLocation.X);
+		int tGeoY = getGeoY(targetLocation.Y);
+		int nearestToZ = getNearestZ(tGeoX, tGeoY, targetLocation.Z);
+
+		Location3D locationNearestFromZ = location with { Z = nearestFromZ };
+		Location3D targetLocationNearestToZ = targetLocation with { Z = nearestToZ };
+
 		// Door checks.
-		if (DoorData.getInstance().checkIfDoorsBetween(x, y, nearestFromZ, tx, ty, nearestToZ, instance, false))
+		if (DoorData.getInstance().checkIfDoorsBetween(locationNearestFromZ, targetLocationNearestToZ, instance, false))
 		{
-			return new Location3D(x, y, getHeight(x, y, nearestFromZ));
+			return location with { Z = getHeight(locationNearestFromZ) };
 		}
-		
+
 		// Fence checks.
-		if (FenceData.getInstance().checkIfFenceBetween(x, y, nearestFromZ, tx, ty, nearestToZ, instance))
+		if (FenceData.getInstance().checkIfFenceBetween(locationNearestFromZ, targetLocationNearestToZ, instance))
 		{
-			return new Location3D(x, y, getHeight(x, y, nearestFromZ));
+			return location with { Z = getHeight(locationNearestFromZ) };
 		}
-		
+
 		LinePointIterator pointIter = new(geoX, geoY, tGeoX, tGeoY);
 
 		// first point is guaranteed to be available
@@ -473,24 +452,27 @@ public class GeoEngine
 		int prevX = pointIter.x();
 		int prevY = pointIter.y();
 		int prevZ = nearestFromZ;
-		
+
 		while (pointIter.next())
 		{
 			int curX = pointIter.x();
 			int curY = pointIter.y();
 			int curZ = getNearestZ(curX, curY, prevZ);
-			if (hasGeoPos(prevX, prevY) && !checkNearestNsweAntiCornerCut(prevX, prevY, prevZ, GeoUtils.computeNswe(prevX, prevY, curX, curY)))
+			if (hasGeoPos(prevX, prevY) &&
+			    !checkNearestNsweAntiCornerCut(prevX, prevY, prevZ, GeoUtils.computeNswe(prevX, prevY, curX, curY)))
 			{
 				// Can't move, return previous location.
 				return new Location3D(getWorldX(prevX), getWorldY(prevY), prevZ);
 			}
+
 			prevX = curX;
 			prevY = curY;
 			prevZ = curZ;
 		}
-		return hasGeoPos(prevX, prevY) && (prevZ != nearestToZ) ? new Location3D(x, y, nearestFromZ) : new Location3D(tx, ty, nearestToZ);
+
+		return hasGeoPos(prevX, prevY) && prevZ != nearestToZ ? locationNearestFromZ : targetLocationNearestToZ;
 	}
-	
+
 	/**
 	 * Checks if its possible to move from one location to another.
 	 * @param fromX the X coordinate to start checking from
@@ -502,27 +484,30 @@ public class GeoEngine
 	 * @param instance the instance
 	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
 	 */
-	public bool canMoveToTarget(int fromX, int fromY, int fromZ, int toX, int toY, int toZ, Instance instance)
+	public bool canMoveToTarget(Location3D location, Location3D targetLocation, Instance? instance = null)
 	{
-		int geoX = getGeoX(fromX);
-		int geoY = getGeoY(fromY);
-		int nearestFromZ = getNearestZ(geoX, geoY, fromZ);
-		int tGeoX = getGeoX(toX);
-		int tGeoY = getGeoY(toY);
-		int nearestToZ = getNearestZ(tGeoX, tGeoY, toZ);
-		
+		int geoX = getGeoX(location.X);
+		int geoY = getGeoY(location.Y);
+		int nearestFromZ = getNearestZ(geoX, geoY, location.Z);
+		int tGeoX = getGeoX(targetLocation.X);
+		int tGeoY = getGeoY(targetLocation.Y);
+		int nearestToZ = getNearestZ(tGeoX, tGeoY, targetLocation.Z);
+
+		Location3D locationNearestFromZ = location with { Z = nearestFromZ };
+		Location3D targetLocationNearestToZ = targetLocation with { Z = nearestToZ };
+
 		// Door checks.
-		if (DoorData.getInstance().checkIfDoorsBetween(fromX, fromY, nearestFromZ, toX, toY, nearestToZ, instance, false))
+		if (DoorData.getInstance().checkIfDoorsBetween(locationNearestFromZ, targetLocationNearestToZ, instance, false))
 		{
 			return false;
 		}
-		
+
 		// Fence checks.
-		if (FenceData.getInstance().checkIfFenceBetween(fromX, fromY, nearestFromZ, toX, toY, nearestToZ, instance))
+		if (FenceData.getInstance().checkIfFenceBetween(locationNearestFromZ, targetLocationNearestToZ, instance))
 		{
 			return false;
 		}
-		
+
 		LinePointIterator pointIter = new(geoX, geoY, tGeoX, tGeoY);
 
 		// First point is guaranteed to be available.
@@ -530,23 +515,26 @@ public class GeoEngine
 		int prevX = pointIter.x();
 		int prevY = pointIter.y();
 		int prevZ = nearestFromZ;
-		
+
 		while (pointIter.next())
 		{
 			int curX = pointIter.x();
 			int curY = pointIter.y();
 			int curZ = getNearestZ(curX, curY, prevZ);
-			if (hasGeoPos(prevX, prevY) && !checkNearestNsweAntiCornerCut(prevX, prevY, prevZ, GeoUtils.computeNswe(prevX, prevY, curX, curY)))
+			if (hasGeoPos(prevX, prevY) &&
+			    !checkNearestNsweAntiCornerCut(prevX, prevY, prevZ, GeoUtils.computeNswe(prevX, prevY, curX, curY)))
 			{
 				return false;
 			}
+
 			prevX = curX;
 			prevY = curY;
 			prevZ = curZ;
 		}
-		return !hasGeoPos(prevX, prevY) || (prevZ == nearestToZ);
+
+		return !hasGeoPos(prevX, prevY) || prevZ == nearestToZ;
 	}
-	
+
 	public int traceTerrainZ(int x, int y, int z1, int tx, int ty)
 	{
 		int geoX = getGeoX(x);
@@ -567,31 +555,7 @@ public class GeoEngine
 		
 		return prevZ;
 	}
-	
-	/**
-	 * Checks if its possible to move from one location to another.
-	 * @param from the {@code ILocational} to start checking from
-	 * @param toX the X coordinate to end checking at
-	 * @param toY the Y coordinate to end checking at
-	 * @param toZ the Z coordinate to end checking at
-	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
-	 */
-	public bool canMoveToTarget(Location3D from, int toX, int toY, int toZ)
-	{
-		return canMoveToTarget(from.X, from.Y, from.Z, toX, toY, toZ, null);
-	}
-	
-	/**
-	 * Checks if its possible to move from one location to another.
-	 * @param from the {@code ILocational} to start checking from
-	 * @param to the {@code ILocational} to end checking at
-	 * @return {@code true} if the character at start coordinates can move to end coordinates, {@code false} otherwise
-	 */
-	public bool canMoveToTarget(Location3D from, Location3D to)
-	{
-		return canMoveToTarget(from, to.X, to.Y, to.Z);
-	}
-	
+
 	/**
 	 * Checks the specified position for available geodata.
 	 * @param x the X coordinate

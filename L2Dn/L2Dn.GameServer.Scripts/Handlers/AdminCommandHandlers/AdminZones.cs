@@ -258,7 +258,8 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			{
 				int x = zone.getX()[i];
 				int y = zone.getY()[i];
-				holder.addNode(new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, Rnd.get(zone.getLowZ(), zone.getHighZ()))));
+				holder.addNode(new Location3D(x, y,
+					GeoEngine.getInstance().getHeight(new Location3D(x, y, Rnd.get(zone.getLowZ(), zone.getHighZ())))));
 			}
 			showPoints(activeChar);
 		}

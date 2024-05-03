@@ -76,7 +76,7 @@ public class DoorData: DataReaderBase
 		}
 		
 		// Spawn the door on the world
-		door.spawnMe(template.getX(), template.getY(), template.getZ());
+		door.spawnMe(template.Location);
 		
 		// Register door's group
 		if (template.getGroupName() != null)
@@ -107,15 +107,10 @@ public class DoorData: DataReaderBase
 		return _doors.values();
 	}
 	
-	public bool checkIfDoorsBetween(Location3D start, Location3D end, Instance? instance = null)
-	{
-		return checkIfDoorsBetween(start.X, start.Y, start.Z, end.X, end.Y, end.Z, instance);
-	}
-	
-	public bool checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, Instance? instance = null,
+	public bool checkIfDoorsBetween(Location3D location, Location3D targetLocation, Instance? instance = null,
 		bool doubleFaceCheck = false)
 	{
-		ICollection<Door>? doors = instance?.getDoors() ?? World.getInstance().getRegion(x, y)?.getDoors();
+		ICollection<Door>? doors = instance?.getDoors() ?? World.getInstance().getRegion(location.X, location.Y)?.getDoors();
 		if (doors == null || doors.Count == 0)
 			return false;
 
@@ -133,24 +128,23 @@ public class DoorData: DataReaderBase
 			{
 				int j = i + 1 < 4 ? i + 1 : 0;
 				// lower part of the multiplier fraction, if it is 0 we avoid an error and also know that the lines are parallel
-				int denominator = (ty - y) * (doorInst.getX(i) - doorInst.getX(j)) -
-				                  (tx - x) * (doorInst.getY(i) - doorInst.getY(j));
+				int denominator = (targetLocation.Y - location.Y) * (doorInst.getX(i) - doorInst.getX(j)) -
+				                  (targetLocation.X - location.X) * (doorInst.getY(i) - doorInst.getY(j));
 				if (denominator == 0)
 				{
 					continue;
 				}
 
 				// multipliers to the equations of the lines. If they are lower than 0 or bigger than 1, we know that segments don't intersect
-				float multiplier1 = (float)((doorInst.getX(j) - doorInst.getX(i)) * (y - doorInst.getY(i)) -
-				                            (doorInst.getY(j) - doorInst.getY(i)) * (x - doorInst.getX(i))) /
-				                    denominator;
-				
-				float multiplier2 = (float)((tx - x) * (y - doorInst.getY(i)) - (ty - y) * (x - doorInst.getX(i))) /
-				                    denominator;
+				float multiplier1 = (float)((doorInst.getX(j) - doorInst.getX(i)) * (location.Y - doorInst.getY(i)) -
+					(doorInst.getY(j) - doorInst.getY(i)) * (location.X - doorInst.getX(i))) / denominator;
+
+				float multiplier2 = (float)((targetLocation.X - location.X) * (location.Y - doorInst.getY(i)) -
+					(targetLocation.Y - location.Y) * (location.X - doorInst.getX(i))) / denominator;
 				
 				if (multiplier1 >= 0 && multiplier1 <= 1 && multiplier2 >= 0 && multiplier2 <= 1)
 				{
-					int intersectZ = (int)Math.Round(z + multiplier1 * (tz - z));
+					int intersectZ = (int)Math.Round(location.Z + multiplier1 * (targetLocation.Z - location.Z));
 					
 					// now checking if the resulting point is between door's min and max z
 					if (intersectZ > doorInst.getZMin() && intersectZ < doorInst.getZMax())

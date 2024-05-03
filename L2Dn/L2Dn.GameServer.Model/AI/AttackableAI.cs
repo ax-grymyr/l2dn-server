@@ -501,7 +501,7 @@ public class AttackableAI: CreatureAI
 				}
 				
 				// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-				moveTo(x1, y1, leader.getZ());
+				moveTo(new Location3D(x1, y1, leader.getZ()));
 			}
 			else if (Rnd.get(RANDOM_WALK_RATE) == 0)
 			{
@@ -544,10 +544,14 @@ public class AttackableAI: CreatureAI
 			}
 			
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-			Location3D moveLoc = _actor.isFlying() ? new Location3D(x1, y1, z1) : GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceWorld());
+			Location3D loc = new(x1, y1, z1);
+			Location3D moveLoc = _actor.isFlying()
+				? loc
+				: GeoEngine.getInstance().getValidLocation(npc.Location.Location3D, loc, npc.getInstanceWorld());
+
 			if (npc.getSpawn().Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
 			{
-				moveTo(moveLoc.X, moveLoc.Y, moveLoc.Z);
+				moveTo(moveLoc);
 			}
 		}
 	}
@@ -792,8 +796,8 @@ public class AttackableAI: CreatureAI
 						int newZ = npc.getZ() + 30;
 						
 						// Verify destination. Prevents wall collision issues and fixes monsters not avoiding obstacles.
-						Location3D loc = GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(),
-							newX, newY, newZ, npc.getInstanceWorld());
+						Location3D loc = GeoEngine.getInstance().getValidLocation(npc.Location.Location3D,
+							new Location3D(newX, newY, newZ), npc.getInstanceWorld());
 
 						moveTo(loc);
 					}
@@ -828,11 +832,13 @@ public class AttackableAI: CreatureAI
 				{
 					posY -= 300;
 				}
-				
-				if (GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), posX, posY, posZ, npc.getInstanceWorld()))
+
+				Location3D newLocation = new(posX, posY, posZ);
+				if (GeoEngine.getInstance().canMoveToTarget(npc.Location.Location3D, newLocation, npc.getInstanceWorld()))
 				{
-					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(posX, posY, posZ));
+					setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, newLocation);
 				}
+
 				return;
 			}
 		}

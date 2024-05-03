@@ -24,7 +24,9 @@ public class AdminPathNode: IAdminCommandHandler
 			
 			if (activeChar.getTarget() != null)
 			{
-				List<AbstractNodeLoc> path = PathFinding.getInstance().findPath(activeChar.getX(), activeChar.getY(), (short) activeChar.getZ(), activeChar.getTarget().getX(), activeChar.getTarget().getY(), (short) activeChar.getTarget().getZ(), activeChar.getInstanceWorld(), true);
+				List<AbstractNodeLoc>? path = PathFinding.getInstance().findPath(activeChar.Location.Location3D,
+					activeChar.getTarget().Location.Location3D, activeChar.getInstanceWorld(), true);
+
 				if (path == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "No Route!");
@@ -32,7 +34,7 @@ public class AdminPathNode: IAdminCommandHandler
 				}
 				foreach (AbstractNodeLoc a in path)
 				{
-					BuilderUtil.sendSysMessage(activeChar, "x:" + a.getX() + " y:" + a.getY() + " z:" + a.getZ());
+					BuilderUtil.sendSysMessage(activeChar, a.Location.ToString());
 				}
 			}
 			else

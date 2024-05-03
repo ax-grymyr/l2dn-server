@@ -59,7 +59,7 @@ public class RankingPowerManager
 		_decoyInstance.setTargetable(false);
 		_decoyInstance.setImmobilized(true);
 		_decoyInstance.setInvul(true);
-		_decoyInstance.spawnMe(location.X, location.Y, location.Z);
+		_decoyInstance.spawnMe(location.Location3D);
 		_decoyInstance.setHeading(location.Heading);
 		_decoyInstance.broadcastStatusUpdate();
 		

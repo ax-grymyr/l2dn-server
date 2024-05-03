@@ -55,7 +55,7 @@ public class Target: ITargetTypeHandler
 			return null;
 		}
 		
-		if (skill.isFlyType() && !GeoEngine.getInstance().canMoveToTarget(creature.getX(), creature.getY(), creature.getZ(), target.getX(), target.getY(), target.getZ(), creature.getInstanceWorld()))
+		if (skill.isFlyType() && !GeoEngine.getInstance().canMoveToTarget(creature.Location.Location3D, target.Location.Location3D, creature.getInstanceWorld()))
 		{
 			if (sendMessage)
 			{

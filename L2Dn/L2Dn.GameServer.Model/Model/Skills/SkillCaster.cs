@@ -1255,11 +1255,11 @@ public class SkillCaster: Runnable
 			}
 		}
 
+		Location3D loc = new(x, y, z);
 		Location3D destination = creature.isFlying()
-			? new Location3D(x, y, z)
-			: GeoEngine.getInstance().getValidLocation(creature.getX(), creature.getY(), creature.getZ(), x, y, z,
-				creature.getInstanceWorld());
-		
+			? loc
+			: GeoEngine.getInstance().getValidLocation(creature.Location.Location3D, loc, creature.getInstanceWorld());
+
 		creature.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		creature.broadcastPacket(new FlyToLocationPacket(creature, destination, flyType, 0, 0, 333));
 		creature.setXYZ(destination);

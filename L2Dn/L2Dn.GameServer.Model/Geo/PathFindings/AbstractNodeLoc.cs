@@ -1,3 +1,5 @@
+using L2Dn.Geometry;
+
 namespace L2Dn.GameServer.Geo.PathFindings;
 
 /**
@@ -5,15 +7,10 @@ namespace L2Dn.GameServer.Geo.PathFindings;
  */
 public abstract class AbstractNodeLoc
 {
-	public abstract int getX();
-	
-	public abstract int getY();
-	
-	public abstract int getZ();
-	
-	public abstract void setZ(short z);
-	
+	public abstract Location3D Location { get; }
+	public abstract int Z { get; }
+
 	public abstract int getNodeX();
-	
+
 	public abstract int getNodeY();
 }

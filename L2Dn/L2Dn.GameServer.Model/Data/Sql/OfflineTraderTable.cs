@@ -185,7 +185,7 @@ public class OfflineTraderTable
 						player.setSellingBuffs(true);
 					}
 
-					player.spawnMe(player.getX(), player.getY(), player.getZ());
+					player.spawnMe(player.Location.Location3D);
 					var items = ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == trade.CharacterId);
 					{
 						switch (type)

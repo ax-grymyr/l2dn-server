@@ -26,10 +26,10 @@ public static class LocationExtensions
         where TFrom: ILocation3D
         where TTo: ILocation3D
     {
-        double dx = (double)from.X - to.X;
-        double dy = (double)from.Y - to.Y;
-        double dz = (double)from.Z - to.Z;
-        return double.Sqrt(dx * dx + dy * dy + dz * dz);
+        int dx = from.X - to.X;
+        int dy = from.Y - to.Y;
+        int dz = from.Z - to.Z;
+        return double.Sqrt((double)dx * dx + (double)dy * dy + (double)dz * dz);
     }
 
     public static double Distance3D<TTo>(this IHasLocation from, TTo to)
@@ -45,9 +45,9 @@ public static class LocationExtensions
         where TFrom: ILocation2D
         where TTo: ILocation2D
     {
-        double dx = (double)from.X - to.X;
-        double dy = (double)from.Y - to.Y;
-        return dx * dx + dy * dy;
+        int dx = from.X - to.X;
+        int dy = from.Y - to.Y;
+        return (double)dx * dx + (double)dy * dy;
     }
 
     public static double DistanceSquare2D<TTo>(this IHasLocation from, TTo to)
@@ -63,10 +63,10 @@ public static class LocationExtensions
         where TFrom: ILocation3D
         where TTo: ILocation3D
     {
-        double dx = (double)from.X - to.X;
-        double dy = (double)from.Y - to.Y;
-        double dz = (double)from.Z - to.Z;
-        return dx * dx + dy * dy + dz * dz;
+        int dx = from.X - to.X;
+        int dy = from.Y - to.Y;
+        int dz = from.Z - to.Z;
+        return (double)dx * dx + (double)dy * dy + (double)dz * dz;
     }
 
     public static double DistanceSquare3D<TTo>(this IHasLocation from, TTo to)

@@ -205,21 +205,16 @@ public class SiegeManager
 		return _flagMaxCount;
 	}
 
-	public Siege getSiege(Location3D loc)
-	{
-		return getSiege(loc.X, loc.Y, loc.Z);
-	}
-
 	public Siege getSiege(WorldObject activeObject)
 	{
-		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
+		return getSiege(activeObject.Location.Location3D);
 	}
 
-	public Siege getSiege(int x, int y, int z)
+	public Siege getSiege(Location3D location)
 	{
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
-			if (castle.getSiege().checkIfInZone(x, y, z))
+			if (castle.getSiege().checkIfInZone(location))
 			{
 				return castle.getSiege();
 			}

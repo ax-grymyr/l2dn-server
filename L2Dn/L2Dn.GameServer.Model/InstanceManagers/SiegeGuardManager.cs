@@ -40,13 +40,11 @@ public class SiegeGuardManager
 			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r => r.IsHired))
 			{
 				int npcId = record.NpcId;
-				int x = record.X;
-				int y = record.Y;
-				int z = record.Z;
-				Castle castle = CastleManager.getInstance().getCastle(x, y, z);
+				Location3D location = new(record.X, record.Y, record.Z);
+				Castle castle = CastleManager.getInstance().getCastle(location);
 				if (castle == null)
 				{
-					LOGGER.Error($"Siege guard ticket cannot be placed! Castle is null at X: {x}, Y: {y}, Z: {z}");
+					LOGGER.Error($"Siege guard ticket cannot be placed! Castle is null at {location}");
 					continue;
 				}
 
@@ -55,7 +53,7 @@ public class SiegeGuardManager
 				{
 					Item dropticket = new Item(holder.getItemId());
 					dropticket.setItemLocation(ItemLocation.VOID);
-					dropticket.dropMe(null, x, y, z);
+					dropticket.dropMe(null, location);
 					World.getInstance().addObject(dropticket);
 					_droppedTickets.add(dropticket);
 				}
@@ -188,7 +186,7 @@ public class SiegeGuardManager
 			spawnMercenary(player.Location, holder);
 			Item dropticket = new Item(itemId);
 			dropticket.setItemLocation(ItemLocation.VOID);
-			dropticket.dropMe(null, player.getX(), player.getY(), player.getZ());
+			dropticket.dropMe(null, player.Location.Location3D);
 			World.getInstance().addObject(dropticket);
 			_droppedTickets.add(dropticket);
 		}
@@ -208,7 +206,7 @@ public class SiegeGuardManager
 			npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
 			npc.setDecayed(false);
 			npc.setHeading(location.Heading);
-			npc.spawnMe(location.X, location.Y, location.Z + 20);
+			npc.spawnMe(location.Location3D with { Z = location.Z + 20 });
 			npc.scheduleDespawn(TimeSpan.FromSeconds(3));
 			npc.setImmobilized(holder.isStationary());
 		}

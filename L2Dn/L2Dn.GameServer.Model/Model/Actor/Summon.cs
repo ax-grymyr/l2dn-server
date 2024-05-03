@@ -60,12 +60,13 @@ public abstract class Summon: Playable
 		getAI();
 
 		// Make sure summon does not spawn in a wall.
-		int x = owner.getX();
-		int y = owner.getY();
-		int z = owner.getZ();
-		Location3D location = GeoEngine.getInstance().getValidLocation(x, y, z, x + Rnd.get(-100, 100),
-			y + Rnd.get(-100, 100), z, getInstanceWorld());
-		
+		Location3D ownerLocation = owner.Location.Location3D;
+		Location3D randomLocation = new(ownerLocation.X + Rnd.get(-100, 100), ownerLocation.Y + Rnd.get(-100, 100),
+			ownerLocation.Z);
+
+		Location3D location =
+			GeoEngine.getInstance().getValidLocation(ownerLocation, randomLocation, getInstanceWorld());
+
 		setXYZInvisible(location);
 	}
 

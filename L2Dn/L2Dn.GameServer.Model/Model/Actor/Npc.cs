@@ -1508,7 +1508,7 @@ public class Npc: Creature
 			int newY = (getY() + Rnd.get((RANDOM_ITEM_DROP_LIMIT * 2) + 1)) - RANDOM_ITEM_DROP_LIMIT;
 			int newZ = getZ() + 20;
 			
-			item.dropMe(this, newX, newY, newZ);
+			item.dropMe(this, new Location3D(newX, newY, newZ));
 			
 			// Add drop to auto destroy item task.
 			if (!Config.LIST_PROTECTED_ITEMS.Contains(itemId) && (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))

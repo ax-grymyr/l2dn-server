@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
@@ -41,9 +42,7 @@ public class Evolve
 		Item item = null;
 		long petexp = currentPet.getStat().getExp();
 		String oldname = currentPet.getName();
-		int oldX = currentPet.getX();
-		int oldY = currentPet.getY();
-		int oldZ = currentPet.getZ();
+		Location3D oldLocation = currentPet.Location.Location3D;
 		PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
 		if (oldData == null)
 		{
@@ -102,7 +101,7 @@ public class Evolve
 		
 		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, TimeSpan.FromMilliseconds(1000), TimeSpan.FromMilliseconds(600000)));
 		player.sendPacket(SystemMessageId.SUMMONING_YOUR_PET);
-		petSummon.spawnMe(oldX, oldY, oldZ);
+		petSummon.spawnMe(oldLocation);
 		petSummon.startFeed();
 		item.setEnchantLevel(petSummon.getLevel());
 		
@@ -187,7 +186,7 @@ public class Evolve
 		
 		player.sendPacket(new MagicSkillUsePacket(npc, 2046, 1, TimeSpan.FromMilliseconds(1000), TimeSpan.FromMilliseconds(600000)));
 		player.sendPacket(SystemMessageId.SUMMONING_YOUR_PET);
-		petSummon.spawnMe(player.getX(), player.getY(), player.getZ());
+		petSummon.spawnMe(player.Location.Location3D);
 		petSummon.startFeed();
 		addedItem.setEnchantLevel(petSummon.getLevel());
 		

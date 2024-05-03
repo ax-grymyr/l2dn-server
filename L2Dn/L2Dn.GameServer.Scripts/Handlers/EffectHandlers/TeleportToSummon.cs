@@ -64,8 +64,8 @@ public class TeleportToSummon: AbstractEffect
 		int y = (int) (py + (25 * Math.Sin(ph)));
 		int z = summon.getZ();
 
-		Location3D loc = GeoEngine.getInstance().getValidLocation(effector.getX(), effector.getY(), effector.getZ(), x,
-			y, z, effector.getInstanceWorld());
+		Location3D loc = GeoEngine.getInstance().getValidLocation(effector.Location.Location3D, new Location3D(x, y, z),
+			effector.getInstanceWorld());
 		
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effector.broadcastPacket(new FlyToLocationPacket(effector, loc, FlyType.DUMMY));

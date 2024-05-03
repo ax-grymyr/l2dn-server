@@ -102,7 +102,7 @@ public class ZoneNPoly: ZoneForm
 			y = Rnd.get(minY, maxY);
 		}
 
-		return new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
+		return new Location3D(x, y, GeoEngine.getInstance().getHeight(new Location3D(x, y, (_z1 + _z2) / 2)));
 	}
 
 	public int[] getX()

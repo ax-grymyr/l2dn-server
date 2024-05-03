@@ -66,7 +66,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 		}
 		
-		Castle castle = CastleManager.getInstance().getCastle(player.getX(), player.getY(), player.getZ());
+		Castle castle = CastleManager.getInstance().getCastle(player.Location.Location3D);
 		if ((castle != null) && castle.getSiege().isInProgress() && (player.getClan() != null) && castle.getSiege().checkIsAttacker(player.getClan()))
 		{
 			// Schedule respawn delay for attacker

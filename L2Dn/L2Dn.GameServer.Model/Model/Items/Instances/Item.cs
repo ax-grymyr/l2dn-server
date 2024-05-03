@@ -1557,19 +1557,13 @@ public class Item: WorldObject
 	 * @param locY
 	 * @param locZ
 	 */
-	public void dropMe(Creature dropper, int locX, int locY, int locZ)
+	public void dropMe(Creature dropper, Location3D location)
 	{
-		int x = locX;
-		int y = locY;
-		int z = locZ;
-		
+		Location3D loc = location;
 		if (dropper != null)
 		{
-			Instance instance = dropper.getInstanceWorld();
-			Location3D dropDest = GeoEngine.getInstance().getValidLocation(dropper.getX(), dropper.getY(), dropper.getZ(), x, y, z, instance);
-			x = dropDest.X;
-			y = dropDest.Y;
-			z = dropDest.Z;
+			Instance? instance = dropper.getInstanceWorld();
+			loc = GeoEngine.getInstance().getValidLocation(dropper.Location.Location3D, loc, instance);
 			setInstance(instance); // Inherit instancezone when dropped in visible world
 		}
 		else
@@ -1579,7 +1573,7 @@ public class Item: WorldObject
 		
 		// Set the x,y,z position of the Item dropped and update its world region
 		setSpawned(true);
-		setXYZ(x, y, z);
+		setXYZ(loc);
 		
 		setDropTime(DateTime.UtcNow);
 		setDropperObjectId(dropper != null ? dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
@@ -1602,7 +1596,7 @@ public class Item: WorldObject
 			EventContainer events = getTemplate().Events;
 			if (events.HasSubscribers<OnPlayerItemDrop>())
 			{
-				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, new Location3D(x, y, z)));
+				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, loc));
 			}
 		}
 	}

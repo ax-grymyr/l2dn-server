@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets.Shuttle;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
 
@@ -9,13 +10,13 @@ public class ShuttleAI: VehicleAI
 	{
 	}
 
-	protected override void moveTo(int x, int y, int z)
+	public override void moveTo(Location3D location)
 	{
 		if (!_actor.isMovementDisabled())
 		{
 			_clientMoving = true;
-			_actor.moveToLocation(x, y, z, 0);
-			_actor.broadcastPacket(new ExShuttleMovePacket(getActor(), x, y, z));
+			_actor.moveToLocation(location, 0);
+			_actor.broadcastPacket(new ExShuttleMovePacket(getActor(), location));
 		}
 	}
 

@@ -39,35 +39,24 @@ public class TamedBeast: FeedableBeast
 		setInstanceType(InstanceType.TamedBeast);
 		setHome(this);
 	}
-	
-	public TamedBeast(int npcTemplateId, Player owner, int foodSkillId, int x, int y, int z): base(NpcData.getInstance().getTemplate(npcTemplateId))
-	{
-		_isFreyaBeast = false;
-		setInstanceType(InstanceType.TamedBeast);
-		setCurrentHp(getMaxHp());
-		setCurrentMp(getMaxMp());
-		setOwner(owner);
-		setFoodType(foodSkillId);
-		setHome(x, y, z);
-		spawnMe(x, y, z);
-	}
-	
-	public TamedBeast(int npcTemplateId, Player owner, int food, int x, int y, int z, bool isFreyaBeast): base(NpcData.getInstance().getTemplate(npcTemplateId))
+
+	public TamedBeast(int npcTemplateId, Player owner, int foodSkillId, Location3D location,
+		bool isFreyaBeast = false): base(NpcData.getInstance().getTemplate(npcTemplateId))
 	{
 		_isFreyaBeast = isFreyaBeast;
 		setInstanceType(InstanceType.TamedBeast);
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
-		setFoodType(food);
-		setHome(x, y, z);
-		spawnMe(x, y, z);
+		setFoodType(foodSkillId);
+		setHome(location);
+		spawnMe(location);
 		setOwner(owner);
 		if (isFreyaBeast)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
 		}
 	}
-	
+
 	public void onReceiveFood()
 	{
 		// Eating food extends the duration by 20secs, to a max of 20minutes
@@ -83,14 +72,14 @@ public class TamedBeast: FeedableBeast
 		return _homeLocation;
 	}
 	
-	public void setHome(int x, int y, int z)
+	public void setHome(Location3D location)
 	{
-		_homeLocation = new Location3D(x, y, z);
+		_homeLocation = location;
 	}
 	
 	public void setHome(Creature c)
 	{
-		setHome(c.getX(), c.getY(), c.getZ());
+		setHome(c.Location.Location3D);
 	}
 	
 	public int getRemainingTime()

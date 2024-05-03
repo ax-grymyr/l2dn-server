@@ -127,6 +127,6 @@ public class ZoneCylinder: ZoneForm
 			y = Rnd.get(y2, y3);
 		}
 
-		return new Location3D(x, y, GeoEngine.getInstance().getHeight(x, y, (_z1 + _z2) / 2));
+		return new Location3D(x, y, GeoEngine.getInstance().getHeight(new Location3D(x, y, (_z1 + _z2) / 2)));
 	}
 }

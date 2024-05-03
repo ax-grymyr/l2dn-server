@@ -2,6 +2,7 @@ using L2Dn.GameServer.Geo.PathFindings.CellNodes;
 using L2Dn.GameServer.Geo.PathFindings.GeoNodes;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Geo.PathFindings;
 
@@ -17,7 +18,7 @@ public abstract class PathFinding
 	
 	public abstract bool pathNodesExist(short regionoffset);
 	
-	public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, Instance instance, bool playable);
+	public abstract List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable);
 	
 	/**
 	 * Convert geodata position to pathnode position

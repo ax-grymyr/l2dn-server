@@ -76,7 +76,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 			}
 
 			player.setCursorKeyMovement(true);
-			player.setLastServerPosition(player.getX(), player.getY(), player.getZ());
+			player.setLastServerPosition(player.Location.Location3D);
 		}
 
 		// Correcting targetZ from floor level to head level.

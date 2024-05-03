@@ -427,7 +427,7 @@ public abstract class AbstractAI : Ctrl
 			}
 			
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
-			_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
+			_actor.moveToLocation(pawn.Location.Location3D, offset);
 			
 			// May result to make monsters stop moving.
 			// if (!_actor.isMoving())
@@ -463,12 +463,7 @@ public abstract class AbstractAI : Ctrl
 			clientActionFailed();
 		}
 	}
-	
-	public void moveTo(Location3D loc)
-	{
-		moveTo(loc.X, loc.Y, loc.Z);
-	}
-	
+
 	/**
 	 * Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -476,7 +471,7 @@ public abstract class AbstractAI : Ctrl
 	 * @param y
 	 * @param z
 	 */
-	protected virtual void moveTo(int x, int y, int z)
+	public virtual void moveTo(Location3D location)
 	{
 		// Check if actor can move
 		if (!_actor.isMovementDisabled())
@@ -486,7 +481,7 @@ public abstract class AbstractAI : Ctrl
 			_clientMovingToPawnOffset = 0;
 			
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
-			_actor.moveToLocation(x, y, z, 0);
+			_actor.moveToLocation(location, 0);
 			
 			// Send a Server->Client packet MoveToLocation to the actor and all Player in its _knownPlayers
 			_actor.broadcastMoveToLocation();

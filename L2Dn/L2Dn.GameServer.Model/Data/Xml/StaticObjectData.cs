@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
 
@@ -53,7 +54,7 @@ public class StaticObjectData: DataReaderBase
 		obj.setType(type);
 		obj.setName(name);
 		obj.setMap(texture, mapX, mapY);
-		obj.spawnMe(x, y, z);
+		obj.spawnMe(new Location3D(x, y, z));
 		_staticObjects.put(obj.getObjectId(), obj);
 	}
 	

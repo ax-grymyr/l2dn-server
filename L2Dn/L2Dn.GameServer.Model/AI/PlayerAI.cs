@@ -216,7 +216,7 @@ public class PlayerAI : PlayableAI
 		_actor.abortAttack();
 		
 		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
-		moveTo(destination.X, destination.Y, destination.Z);
+		moveTo(destination);
 	}
 	
 	protected override void clientNotifyDead()

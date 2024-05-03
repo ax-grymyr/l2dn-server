@@ -28,10 +28,8 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		if (player == null || player.isTeleporting() || player.inObserverMode() || player.isCastingNow())
 			return ValueTask.CompletedTask;
 		
-		int realX = player.getX();
-		int realY = player.getY();
-		int realZ = player.getZ();
-		if (_location.X == 0 && _location.Y == 0 && realX != 0)
+		Location3D realLocation = player.Location.Location3D;
+		if (_location.X == 0 && _location.Y == 0 && realLocation.X != 0)
 			return ValueTask.CompletedTask;
 		
 		if (player.isInVehicle())
@@ -46,13 +44,11 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 			player.untransform();
 		}
 		
-		int dx = _location.X - realX;
-		int dy = _location.Y - realY;
-		int dz = _location.Z - realZ;
-		double diffSq = (double)dx * dx + (double)dy * dy;
+		Location3D dLoc = _location.Location3D - realLocation;
+		double diffSq = dLoc.SquaredLength2D;
 		if (player.isFlying() || player.isInsideZone(ZoneId.WATER))
 		{
-			player.setXYZ(realX, realY, _location.Z);
+			player.setXYZ(realLocation.X, realLocation.Y, _location.Z);
 			if (diffSq > 90000)
 			{
 				connection.Send(new ValidateLocationPacket(player));
@@ -60,12 +56,12 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		}
 		else if (diffSq < 360000) // If too large, messes observation.
 		{
-			if (diffSq > 250000 || Math.Abs(dz) > 200)
+			if (diffSq > 250000 || Math.Abs(dLoc.Z) > 200)
 			{
-				if (Math.Abs(dz) > 200 && Math.Abs(dz) < 1500 && Math.Abs(_location.Z - player.getClientZ()) < 800)
+				if (Math.Abs(dLoc.Z) > 200 && Math.Abs(dLoc.Z) < 1500 && Math.Abs(_location.Z - player.getClientZ()) < 800)
 				{
-					player.setXYZ(realX, realY, _location.Z);
-					realZ = _location.Z;
+					player.setXYZ(realLocation.X, realLocation.Y, _location.Z);
+					realLocation = realLocation with { Z = _location.Z };
 				}
 				else
 				{
@@ -85,7 +81,7 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 			{
 				player.setXYZ(_location.X, _location.Y,
 					player.getZ() > _location.Z
-						? GeoEngine.getInstance().getHeight(_location.X, _location.Y, player.getZ())
+						? GeoEngine.getInstance().getHeight(_location.Location3D with { Z = player.getZ() })
 						: _location.Z);
 			}
 		}
@@ -96,10 +92,10 @@ public struct ValidatePositionPacket: IIncomingPacket<GameSession>
 		player.setClientHeading(_location.Heading); // No real need to validate heading.
 		
 		// Mobius: Check for possible door logout and move over exploit. Also checked at MoveBackwardToLocation.
-		if (!DoorData.getInstance().checkIfDoorsBetween(realX, realY, realZ, _location.X, _location.Y, _location.Z,
+		if (!DoorData.getInstance().checkIfDoorsBetween(realLocation, _location.Location3D,
 			    player.getInstanceWorld(), false))
 		{
-			player.setLastServerPosition(realX, realY, realZ);
+			player.setLastServerPosition(realLocation);
 		}
 
 		return ValueTask.CompletedTask;

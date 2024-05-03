@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.Geometry;
 using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
 
@@ -15,9 +16,7 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 	private readonly int[] _nodeY;
 	private readonly int _nodeZ;
 	private readonly int _height;
-	private readonly int _posX;
-	private readonly int _posY;
-	private readonly int _posZ;
+	private readonly Location3D _pos;
 	private readonly int _emmiter;
 	private readonly int _childDoorId;
 	private readonly string _name;
@@ -69,9 +68,7 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 		if (location != null)
 		{
 			_height = location.HeightSpecified ? location.Height : 150;
-			_posX = location.X;
-			_posY = location.Y;
-			_posZ = Math.Min(location.Z, _nodeZ);
+			_pos = new Location3D(location.X, location.Y, Math.Min(location.Z, _nodeZ));
 		}
 
 		// optional
@@ -189,9 +186,7 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 			_nodeY[i] = set.getInt("nodeY_" + i);
 		}
 
-		_posX = set.getInt("x");
-		_posY = set.getInt("y");
-		_posZ = Math.Min(set.getInt("z"), _nodeZ);
+		_pos = new Location3D(set.getInt("x"), set.getInt("y"), Math.Min(set.getInt("z"), _nodeZ));
 
 		// optional
 		_emmiter = set.getInt("emmiterId", 0);
@@ -255,20 +250,7 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 		return _height;
 	}
 
-	public int getX()
-	{
-		return _posX;
-	}
-
-	public int getY()
-	{
-		return _posY;
-	}
-
-	public int getZ()
-	{
-		return _posZ;
-	}
+	public Location3D Location => _pos;
 
 	public int getEmmiter()
 	{

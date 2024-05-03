@@ -1,5 +1,4 @@
-﻿using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Geometry;
@@ -12,12 +11,12 @@ public class AirShipAI: VehicleAI
     {
     }
 
-    protected override void moveTo(int x, int y, int z)
+    public override void moveTo(Location3D location)
     {
         if (!_actor.isMovementDisabled())
         {
             _clientMoving = true;
-            _actor.moveToLocation(x, y, z, 0);
+            _actor.moveToLocation(location, 0);
             _actor.broadcastPacket(new ExMoveToLocationAirShipPacket(getActor()));
         }
     }

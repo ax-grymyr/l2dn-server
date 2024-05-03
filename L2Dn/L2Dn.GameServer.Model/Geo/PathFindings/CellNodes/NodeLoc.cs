@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Geo.GeoDataImpl;
+using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Geo.PathFindings.CellNodes;
 
@@ -60,26 +61,10 @@ public class NodeLoc: AbstractNodeLoc
 	{
 		return canGoNorth() && canGoEast() && canGoSouth() && canGoWest();
 	}
-	
-	public override int getX()
-	{
-		return GeoEngine.getWorldX(_x);
-	}
-	
-	public override int getY()
-	{
-		return GeoEngine.getWorldY(_y);
-	}
-	
-	public override int getZ()
-	{
-		return _geoHeight;
-	}
-	
-	public override void setZ(short z)
-	{
-	}
-	
+
+	public override Location3D Location => new(GeoEngine.getWorldX(_x), GeoEngine.getWorldY(_y), _geoHeight);
+	public override int Z => _geoHeight;
+
 	public override int getNodeX()
 	{
 		return _x;
