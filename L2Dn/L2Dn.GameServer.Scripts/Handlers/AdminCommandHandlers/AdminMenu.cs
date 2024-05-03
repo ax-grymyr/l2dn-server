@@ -256,7 +256,7 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		else
 		{
-			activeChar.teleToLocation(player.Location, true, player.getInstanceWorld());
+			activeChar.teleToLocation(player.Location, player.getInstanceWorld(), true);
 			BuilderUtil.sendSysMessage(activeChar, "You're teleporting yourself to character " + player.getName());
 		}
 		showMainPage(activeChar);

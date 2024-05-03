@@ -113,7 +113,7 @@ public class HeavenlyRiftManager
 			{
 				if (creature.isPlayer())
 				{
-					creature.teleToLocation(114264, 13352, -5104);
+					creature.teleToLocation(new Location3D(114264, 13352, -5104));
 				}
 				else if (creature.isNpc() && (creature.getId() != 30401))
 				{

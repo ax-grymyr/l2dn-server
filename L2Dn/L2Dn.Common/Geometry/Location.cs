@@ -1,16 +1,13 @@
 ﻿namespace L2Dn.Geometry;
 
-public readonly record struct Location(Location3D Location3D, int Heading): ILocation
+public readonly record struct Location(int X, int Y, int Z, int Heading): ILocation
 {
-    public Location(int x, int y, int z, int heading): this(new Location3D(x, y, z), heading)
+    public Location(Location3D location, int heading): this(location.X, location.Y, location.Z, heading)
     {
     }
 
-    public int X => Location3D.X;
-    public int Y => Location3D.Y;
-    public int Z => Location3D.Z;
-
-    public Location2D Location2D => Location3D.Location2D;
+    public Location2D Location2D => new(X, Y);
+    public Location3D Location3D => new(X, Y, Z);
 
     public override string ToString() => $"({X}, {Y}, {Z}, Heading={Heading})";
 }

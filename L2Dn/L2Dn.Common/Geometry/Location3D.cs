@@ -1,17 +1,15 @@
 ﻿namespace L2Dn.Geometry;
 
-public readonly record struct Location3D(Location2D Location2D, int Z): ILocation3D
+public readonly record struct Location3D(int X, int Y, int Z): ILocation3D
 {
-    public Location3D(int x, int y, int z): this(new Location2D(x, y), z)
+    public Location3D(Location2D location2D, int z): this(location2D.X, location2D.Y, z)
     {
     }
 
-    public int X => Location2D.X;
-    public int Y => Location2D.Y;
+    public Location2D Location2D => new(X, Y);
 
     public double Length2D => double.Sqrt((double)X * X + (double)Y * Y);
     public double Length3D => double.Sqrt((double)X * X + (double)Y * Y + (double)Z * Z);
-
     public double SquaredLength2D => (double)X * X + (double)Y * Y;
     public double SquaredLength3D => (double)X * X + (double)Y * Y + (double)Z * Z;
 

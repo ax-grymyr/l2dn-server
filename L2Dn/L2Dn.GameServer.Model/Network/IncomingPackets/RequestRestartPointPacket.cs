@@ -249,7 +249,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
-						player.teleToLocation(loc.Value, true, instance);
+						player.teleToLocation(loc.Value, instance, true);
 						break;
 					}
 					
@@ -304,7 +304,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						player.destroyItem("item revive", item, fee, player, true);
 						player.doRevive(rbph.getResurrectPercent());
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
-						player.teleToLocation(loc.Value, true, instance);
+						player.teleToLocation(loc.Value, instance, true);
 						break;
 					}
 				}
@@ -341,7 +341,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 		if (loc != null)
 		{
 			player.setIsPendingRevive(true);
-			player.teleToLocation(loc.Value, true, instance);
+			player.teleToLocation(loc.Value, instance, true);
 		}
 	}
 

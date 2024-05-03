@@ -468,14 +468,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				getActingPlayer().stopTimedHuntingZoneTask();
 				abortCast();
 				stopMove(null);
-				teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN));
+				this.teleToLocation(TeleportWhereType.TOWN);
 				setInstance(null);
 			}
 			else if (Config.DISCONNECT_AFTER_DEATH)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
 					.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME);
-				
+
 				Disconnection.of(getActingPlayer()).deleteMe().defaultSequence(ref sm);
 			}
 		}
@@ -752,7 +752,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param headingValue
 	 * @param instanceValue
 	 */
-	public void teleToLocation(int xValue, int yValue, int zValue, int headingValue, Instance instanceValue)
+	public virtual void teleToLocation(Location location, Instance? instance)
 	{
 		// Prevent teleporting for players that disconnected unexpectedly.
 		if (isPlayer() && !getActingPlayer().isOnline())
@@ -760,10 +760,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 
-		Location location = new(xValue, yValue,
-			_isFlying ? zValue : GeoEngine.getInstance().getHeight(new Location3D(xValue, yValue, zValue)), headingValue);
-
-		Instance instance = instanceValue;
+		if (!_isFlying)
+			location = location with { Z = GeoEngine.getInstance().getHeight(location.Location3D) };
 
 		if (_eventContainer.HasSubscribers<OnCreatureTeleport>())
 		{
@@ -788,7 +786,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			doRevive();
 		}
-		
+
 		// Abort any client actions, casting and remove target.
 		sendPacket(new ActionFailedPacket(SkillCastingType.NORMAL));
 		sendPacket(new ActionFailedPacket(SkillCastingType.NORMAL_SECOND));
@@ -798,26 +796,26 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		abortCast();
 		setTarget(null);
-		
+
 		setTeleporting(true);
-		
+
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-		
+
 		// Remove the object from its old location.
 		decayMe();
-		
+
 		// Adjust position a bit.
-		location = location with { Location3D = location.Location3D with { Z = location.Location3D.Z + 5 } };
-		
+		location = location with { Z = location.Z + 5 };
+
 		// Send teleport packet where needed.
 		broadcastPacket(new TeleportToLocationPacket(getObjectId(), location));
-		
+
 		// Change instance world.
 		if (getInstanceWorld() != instance)
 		{
 			setInstance(instance);
 		}
-		
+
 		// Set the x,y,z position of the WorldObject and if necessary modify its _worldRegion.
 		setXYZ(location.Location3D);
 		// Also adjust heading.
@@ -834,90 +832,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			onTeleported();
 		}
-		
+
 		revalidateZone(true);
-	}
-	
-	public void teleToLocation(int x, int y, int z)
-	{
-		teleToLocation(x, y, z, 0, getInstanceWorld());
-	}
-	
-	public void teleToLocation(int x, int y, int z, Instance instance)
-	{
-		teleToLocation(x, y, z, 0, instance);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading)
-	{
-		teleToLocation(x, y, z, heading, getInstanceWorld());
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, bool randomOffset)
-	{
-		teleToLocation(x, y, z, heading, randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0, getInstanceWorld());
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, bool randomOffset, Instance instance)
-	{
-		teleToLocation(x, y, z, heading, randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0, instance);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, int randomOffset)
-	{
-		teleToLocation(x, y, z, heading, randomOffset, getInstanceWorld());
-	}
-	
-	public void teleToLocation(int xValue, int yValue, int z, int heading, int randomOffset, Instance instance)
-	{
-		int x = xValue;
-		int y = yValue;
-		if (Config.OFFSET_ON_TELEPORT_ENABLED && randomOffset > 0)
-		{
-			x += Rnd.get(-randomOffset, randomOffset);
-			y += Rnd.get(-randomOffset, randomOffset);
-		}
-		teleToLocation(x, y, z, heading, instance);
-	}
-	
-	public void teleToLocation(Location loc)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading);
-	}
-	
-	public void teleToLocation(Location loc, Instance instance)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, instance);
-	}
-	
-	public void teleToLocation(Location loc, int randomOffset)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset);
-	}
-	
-	public void teleToLocation(Location loc, int randomOffset, Instance instance)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
-	}
-	
-	public virtual void teleToLocation(Location loc, bool randomOffset)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset ? Config.MAX_OFFSET_ON_TELEPORT : 0);
-	}
-	
-	public void teleToLocation(Location loc, bool randomOffset, Instance instance)
-	{
-		teleToLocation(loc.X, loc.Y, loc.Z, loc.Heading, randomOffset, instance);
-	}
-	
-	public void teleToLocation(TeleportWhereType teleportWhere)
-	{
-		teleToLocation(teleportWhere, getInstanceWorld());
-	}
-	
-	public void teleToLocation(TeleportWhereType teleportWhere, Instance instance)
-	{
-		teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, teleportWhere), true, instance);
 	}
 
 	/**
@@ -3581,7 +3497,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Calculate the new destination with offset included
 			int newX = curLoc.X + (int) (distance * cos);
 			int newY = curLoc.Y + (int) (distance * sin);
-			loc = loc with { Location2D = new Location2D(newX, newY) };
+			loc = loc with { X = newX, Y = newY };
 		}
 		else
 		{
@@ -3690,7 +3606,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						found = move.geoPath != null && move.geoPath.Count > 1;
 						if (found)
 						{
-							originalLoc = originalLoc with { Location2D = new(destinationX, destinationY) };
+							originalLoc = originalLoc with { X = destinationX, Y = destinationY };
 						}
 					}
 					

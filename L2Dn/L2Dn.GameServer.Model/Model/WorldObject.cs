@@ -610,7 +610,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	 */
 	public virtual void setXYZ(int newX, int newY, int newZ)
 	{
-		_location = _location with { Location3D = new Location3D(newX, newY, newZ) };
+		_location = new Location(newX, newY, newZ, _location.Heading);
 
 		if (_isSpawned)
 		{

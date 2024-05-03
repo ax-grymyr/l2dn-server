@@ -9193,7 +9193,7 @@ public class Player: Playable
 		
 		setObserving(true);
 		sendPacket(new ObservationModePacket(loc.Location3D));
-		teleToLocation(loc, false);
+		this.teleToLocation(loc, false);
 		broadcastUserInfo();
 	}
 	
@@ -9249,7 +9249,7 @@ public class Player: Playable
 		setInvul(true);
 		setInvisible(true);
 		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
-		teleToLocation(loc, false);
+		this.teleToLocation(loc, false);
 		sendPacket(new ExOlympiadModePacket(3));
 		broadcastUserInfo();
 	}
@@ -9258,7 +9258,7 @@ public class Player: Playable
 	{
 		setTarget(null);
 		setInstance(null);
-		teleToLocation(new Location(_lastLoc.Value, 0), false);
+		this.teleToLocation(_lastLoc.Value);
 		unsetLastLocation();
 		sendPacket(new ObservationReturnPacket(Location.Location3D));
 		setBlockActions(false);
@@ -9288,7 +9288,7 @@ public class Player: Playable
 		setTarget(null);
 		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
-		teleToLocation(new Location(_lastLoc.Value, 0), true);
+		this.teleToLocation(_lastLoc.Value, true);
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -10214,7 +10214,7 @@ public class Player: Playable
 			// if the rent of a wyvern expires while over a flying zone, tp to down before unmounting
 			if (checkLandingState() && (_mountType == MountType.WYVERN))
 			{
-				teleToLocation(TeleportWhereType.TOWN);
+				this.teleToLocation(TeleportWhereType.TOWN);
 			}
 			
 			if (dismount()) // this should always be true now, since we teleported already
@@ -10599,19 +10599,17 @@ public class Player: Playable
 		}
 	}
 
-	public override void teleToLocation(Location loc, bool allowRandomOffset)
+	public override void teleToLocation(Location location, Instance? instance)
 	{
 		if ((_vehicle != null) && !_vehicle.isTeleporting())
 		{
 			setVehicle(null);
 		}
 
-		if (isFlyingMounted() && loc.Z < -1005)
-		{
-			base.teleToLocation(loc.X, loc.Y, -1005, loc.Heading);
-		}
+		if (isFlyingMounted() && location.Z < -1005)
+			base.teleToLocation(location with { Z = -1005 }, instance);
 
-		base.teleToLocation(loc, allowRandomOffset);
+		base.teleToLocation(location, instance);
 	}
 
 	public override void onTeleported()
@@ -11078,7 +11076,7 @@ public class Player: Playable
 		// Exit timed hunting zone.
 		if (isInTimedHuntingZone())
 		{
-			teleToLocation(TeleportWhereType.TOWN);
+			this.teleToLocation(TeleportWhereType.TOWN);
 			storeCharBase();
 		}
 		
@@ -15175,7 +15173,7 @@ public class Player: Playable
 					_timedHuntingZoneTask = null;
 					abortCast();
 					stopMove(null);
-					teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN));
+					this.teleToLocation(TeleportWhereType.TOWN);
 					sendPacket(SystemMessageId.THE_HUNTING_ZONE_S_USE_TIME_HAS_EXPIRED_SO_YOU_WERE_MOVED_OUTSIDE);
 					setInstance(null);
 				}

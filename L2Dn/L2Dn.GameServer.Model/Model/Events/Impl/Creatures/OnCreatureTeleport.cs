@@ -12,9 +12,9 @@ public class OnCreatureTeleport: LocationEventBase
 {
 	private readonly Creature _creature;
 	private readonly Location _location;
-	private readonly Instance _destInstance;
+	private readonly Instance? _destInstance;
 	
-	public OnCreatureTeleport(Creature creature, Location location, Instance destInstance)
+	public OnCreatureTeleport(Creature creature, Location location, Instance? destInstance)
 	{
 		_creature = creature;
 		_location = location;

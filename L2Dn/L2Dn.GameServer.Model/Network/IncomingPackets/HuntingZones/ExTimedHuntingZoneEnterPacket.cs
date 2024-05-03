@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -8,7 +9,6 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
-using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -150,7 +150,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 			if (instanceId == 0)
 			{
-				player.teleToLocation(new Location(holder.getEnterLocation(), 0));
+				player.teleToLocation(holder.getEnterLocation());
 
 				// Send time icon.
 				connection.Send(new TimedHuntingZoneEnterPacket(player, _zoneId));

@@ -166,7 +166,7 @@ public class AdminTeleport: IAdminCommandHandler
 				int x = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
 				int y = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
 				int z = st.hasMoreTokens() ? ((int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture)) : GeoEngine.getInstance().getHeight(new Location3D(x, y, 10000));
-				activeChar.teleToLocation(x, y, z);
+				activeChar.teleToLocation(new Location3D(x, y, z));
 			}
 			catch (Exception e)
 			{
@@ -331,7 +331,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 		}
 		
-		player.teleToLocation(new Location(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), 0), true, null);
+		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), true);
 	}
 	
 	private void teleportTo(Player activeChar, String coords)
@@ -343,7 +343,7 @@ public class AdminTeleport: IAdminCommandHandler
 			int y = int.Parse(st.nextToken());
 			int z = int.Parse(st.nextToken());
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(x, y, z, null);
+			activeChar.teleToLocation(new Location(x, y, z, 0), null);
 			BuilderUtil.sendSysMessage(activeChar, "You have been teleported to " + coords);
 		}
 		catch (Exception nsee)
@@ -438,7 +438,7 @@ public class AdminTeleport: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "You have recalled " + player.getName());
 				player.sendMessage("Admin is teleporting you.");
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				player.teleToLocation(new Location(loc, 0), true, activeChar.getInstanceWorld());
+				player.teleToLocation(loc, activeChar.getInstanceWorld(), true);
 			}
 		}
 	}
@@ -459,7 +459,7 @@ public class AdminTeleport: IAdminCommandHandler
 		else
 		{
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(player.Location, true, player.getInstanceWorld());
+			activeChar.teleToLocation(player.Location, player.getInstanceWorld(), true);
 			BuilderUtil.sendSysMessage(activeChar, "You have teleported to character " + player.getName() + ".");
 		}
 	}

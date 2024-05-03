@@ -154,7 +154,7 @@ public class Duel
 		{
 			if (_paDuel)
 			{
-				_player.teleToLocation(_x, _y, _z);
+				_player.teleToLocation(new Location3D(_x, _y, _z));
 			}
 		}
 		
@@ -595,13 +595,13 @@ public class Duel
 		Location3D spawn1 = spawns[Rnd.get(spawns.Length / 2)];
 		foreach (Player temp in _playerA.getParty().getMembers())
 		{
-			temp.teleToLocation(new Location(spawn1, 0), 0, _duelInstance);
+			temp.teleToLocation(new Location(spawn1, 0), _duelInstance);
 		}
 		
 		Location3D spawn2 = spawns[Rnd.get(spawns.Length / 2, spawns.Length)];
 		foreach (Player temp in _playerB.getParty().getMembers())
 		{
-			temp.teleToLocation(new Location(spawn2, 0), 0, _duelInstance);
+			temp.teleToLocation(new Location(spawn2, 0), _duelInstance);
 		}
 	}
 	

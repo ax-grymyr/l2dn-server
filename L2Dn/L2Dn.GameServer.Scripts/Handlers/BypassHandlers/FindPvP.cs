@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Geometry;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
@@ -110,8 +111,10 @@ public class FindPvP: IBypassHandler
 					return true;
 				}
 			}
-			
-			player.teleToLocation((mostPvP.getX() + Rnd.get(300)) - 150, (mostPvP.getY() + Rnd.get(300)) - 150, mostPvP.getZ());
+
+			player.teleToLocation(new Location3D((mostPvP.getX() + Rnd.get(300)) - 150,
+				(mostPvP.getY() + Rnd.get(300)) - 150, mostPvP.getZ()));
+
 			player.setSpawnProtection(true);
 			if (!player.isGM())
 			{

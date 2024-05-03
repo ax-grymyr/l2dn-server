@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Zones;
@@ -98,7 +99,7 @@ public abstract class Vehicle : Creature
 				{
 					if (point.getMoveSpeed() == 0)
 					{
-						teleToLocation(new Location(point.Location, point.getRotationSpeed()), false);
+						this.teleToLocation(new Location(point.Location, point.getRotationSpeed()));
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
@@ -335,7 +336,7 @@ public abstract class Vehicle : Creature
 		return result;
 	}
 	
-	public override void teleToLocation(Location loc, bool allowRandomOffset)
+	public override void teleToLocation(Location location, Instance? instance)
 	{
 		if (isMoving())
 		{
@@ -350,17 +351,17 @@ public abstract class Vehicle : Creature
 		{
 			if (player != null)
 			{
-				player.teleToLocation(loc, false);
+				player.teleToLocation(location, instance);
 			}
 		}
 		
 		decayMe();
-		setXYZ(loc.Location3D);
+		setXYZ(location.Location3D);
 		
 		// temporary fix for heading on teleports
-		if (loc.Heading != 0)
+		if (location.Heading != 0)
 		{
-			setHeading(loc.Heading);
+			setHeading(location.Heading);
 		}
 		
 		onTeleported();
