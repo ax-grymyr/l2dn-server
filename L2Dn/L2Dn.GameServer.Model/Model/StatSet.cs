@@ -735,7 +735,7 @@ public class StatSet
 		
 		try
 		{
-			return Enum.Parse<T>((string)val);
+			return Enum.Parse<T>((string)val, true);
 		}
 		catch (Exception e)
 		{
