@@ -192,15 +192,15 @@ public class AdminSpawn: IAdminCommandHandler
 			// Unload all zones.
 			ZoneManager.getInstance().unload();
 			// Delete all spawns.
-			foreach (Npc npc in DBSpawnManager.getInstance().getNpcs().values())
+			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
 			{
 				if (npc != null)
 				{
-					DBSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
+					DbSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
 					npc.deleteMe();
 				}
 			}
-			DBSpawnManager.getInstance().cleanUp();
+			DbSpawnManager.getInstance().cleanUp();
 			foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 			{
 				if ((obj != null) && obj.isNpc())
@@ -227,15 +227,15 @@ public class AdminSpawn: IAdminCommandHandler
 			// Unload all zones.
 			ZoneManager.getInstance().unload();
 			// Delete all spawns.
-			foreach (Npc npc in DBSpawnManager.getInstance().getNpcs().values())
+			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
 			{
 				if (npc != null)
 				{
-					DBSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
+					DbSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
 					npc.deleteMe();
 				}
 			}
-			DBSpawnManager.getInstance().cleanUp();
+			DbSpawnManager.getInstance().cleanUp();
 			foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 			{
 				if ((obj != null) && obj.isNpc())
@@ -252,7 +252,7 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 			// Reload.
 			SpawnData.getInstance().init();
-			DBSpawnManager.getInstance().load();
+			DbSpawnManager.getInstance().load();
 			ZoneManager.getInstance().reload();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC respawn completed!");

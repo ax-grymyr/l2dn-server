@@ -55,7 +55,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (template.isType("RaidBoss") && (DBSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE))
+		if (template.isType("RaidBoss") && (DbSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;

@@ -415,7 +415,7 @@ public class Shutdown
 		TimeCounter tc = new TimeCounter();
 		
 		// Save all raidboss and GrandBoss status ^_^
-		DBSpawnManager.getInstance().cleanUp();
+		DbSpawnManager.getInstance().cleanUp();
 		LOGGER.Info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		GrandBossManager.getInstance().cleanUp();
 		LOGGER.Info("GrandBossManager: All Grand Boss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");

@@ -178,7 +178,7 @@ public static class StaticData
         GraciaSeedsManager.getInstance();
         
         SpawnData.getInstance().init();
-        DBSpawnManager.getInstance();
+        DbSpawnManager.getInstance();
 
         SiegeManager.getInstance().getSieges();
         CastleManager.getInstance().activateInstances();

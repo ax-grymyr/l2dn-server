@@ -958,7 +958,7 @@ public class Npc: Creature
 			}
 		}
 		
-		DBSpawnManager.getInstance().updateStatus(this, true);
+		DbSpawnManager.getInstance().updateStatus(this, true);
 		return true;
 	}
 	
@@ -1081,7 +1081,7 @@ public class Npc: Creature
 		base.onDecay();
 		
 		// Decrease its spawn counter
-		if ((_spawn != null) && !DBSpawnManager.getInstance().isDefined(getId()))
+		if ((_spawn != null) && !DbSpawnManager.getInstance().isDefined(getId()))
 		{
 			_spawn.decreaseCount(this);
 		}

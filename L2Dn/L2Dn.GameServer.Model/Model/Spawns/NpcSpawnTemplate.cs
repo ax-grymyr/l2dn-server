@@ -393,9 +393,9 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		
 		if (_saveInDb)
 		{
-			if (!DBSpawnManager.getInstance().isDefined(_id))
+			if (!DbSpawnManager.getInstance().isDefined(_id))
 			{
-				Npc spawnedNpc = DBSpawnManager.getInstance().addNewSpawn(spawn, true);
+				Npc spawnedNpc = DbSpawnManager.getInstance().addNewSpawn(spawn, true);
 				if (spawnedNpc != null && spawnedNpc.isMonster() && _minions != null)
 				{
 					((Monster) spawnedNpc).getMinionList().spawnMinions(_minions);

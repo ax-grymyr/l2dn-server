@@ -554,7 +554,7 @@ public class AdminTeleport: IAdminCommandHandler
 				LOGGER.Warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
 				return;
 			}
-			DBSpawnManager.getInstance().deleteSpawn(spawn, true);
+			DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 			try
 			{
 				Spawn spawnDat = new Spawn(target.getId());
@@ -563,7 +563,7 @@ public class AdminTeleport: IAdminCommandHandler
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));
 				spawnDat.setRespawnMaxDelay(TimeSpan.FromSeconds(129600));
 				
-				DBSpawnManager.getInstance().addNewSpawn(spawnDat, null, curHP, curMP, true);
+				DbSpawnManager.getInstance().addNewSpawn(spawnDat, null, curHP, curMP, true);
 			}
 			catch (Exception e)
 			{

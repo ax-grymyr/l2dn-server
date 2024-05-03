@@ -19,23 +19,19 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Database spawn manager.
  * @author godson, UnAfraid
  */
-public class DBSpawnManager
+public sealed class DbSpawnManager
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(DBSpawnManager));
-	
-	protected readonly Map<int, Npc> _npcs = new();
-	protected readonly Map<int, Spawn> _spawns = new();
-	protected readonly Map<int, StatSet> _storedInfo = new(); // TODO replace StatSet to dto object
-	protected readonly Map<int, ScheduledFuture> _schedules = new();
-	
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(DbSpawnManager));
+	private readonly Map<int, NpcState> _npcStates = new();
+
 	/**
 	 * Instantiates a new raid npc spawn manager.
 	 */
-	protected DBSpawnManager()
+	private DbSpawnManager()
 	{
 		load();
 	}
-	
+
 	/**
 	 * Load.
 	 */
@@ -45,119 +41,123 @@ public class DBSpawnManager
 		{
 			return;
 		}
-		
-		if (!_spawns.isEmpty())
+
+		foreach (NpcState state in _npcStates.Values)
 		{
-			foreach (Spawn spawn in _spawns.values())
-			{
-				deleteSpawn(spawn, false);
-			}
+			if (state.Spawn != null)
+				deleteSpawn(state.Spawn, false);
 		}
-		
-		_npcs.clear();
-		_spawns.clear();
-		_storedInfo.clear();
-		_schedules.clear();
-		
-		try 
+
+		_npcStates.Clear();
+
+		try
 		{
+			List<int> spawnsToRemove = [];
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (NpcRespawn record in ctx.NpcRespawns)
 			{
-				int id = record.Id;
-				NpcTemplate template = getValidTemplate(id);
-				if (template != null)
+				int npcId = record.Id;
+				NpcTemplate? template = NpcData.getInstance().getTemplate(npcId);
+				if (template is null)
 				{
-					Spawn spawn = new Spawn(template);
-					spawn.Location = new Location(record.X, record.Y, record.Z, record.Heading);
-					spawn.setAmount(1);
+					_logger.Error(GetType().Name + ": Database spawn for non-existent npc " + npcId);
+					spawnsToRemove.Add(npcId);
+					continue;
+				}
 
-					List<NpcSpawnTemplate> spawns = SpawnData.getInstance().getNpcSpawns(npc => (npc.getId() == template.getId()) && npc.hasDBSave());
-					if (spawns.isEmpty())
-					{
-						LOGGER.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.getId() +
-						            " - " + template.getName());
-						
-						deleteSpawn(spawn, true);
-						continue;
-					}
+				Spawn spawn = new(template);
+				spawn.Location = new Location(record.X, record.Y, record.Z, record.Heading);
+				spawn.setAmount(1);
 
-					if (spawns.size() > 1)
-					{
-						LOGGER.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() +
-						            " - " + template.getName() + " " + spawns);
-						
-						continue;
-					}
+				List<NpcSpawnTemplate> spawns = SpawnData.getInstance()
+					.getNpcSpawns(npc => npc.getId() == template.getId() && npc.hasDBSave());
 
-					NpcSpawnTemplate spawnTemplate = spawns.get(0);
-					spawn.setSpawnTemplate(spawnTemplate);
-					
-					TimeSpan? respawn = spawnTemplate.getRespawnTime();
-					TimeSpan respawnRandom = spawnTemplate.getRespawnTimeRandom();
-					SchedulingPattern respawnPattern = spawnTemplate.getRespawnPattern();
-					
-					if ((respawn != null) || (respawnPattern != null))
-					{
-						spawn.setRespawnDelay(respawn, respawnRandom);
-						spawn.setRespawnPattern(respawnPattern);
-						spawn.startRespawn();
-					}
-					else
-					{
-						spawn.stopRespawn();
-						LOGGER.Warn(GetType().Name + ": Found database spawns without respawn for npc: " +
-						            template.getId() + " - " + template.getName() + " " + spawnTemplate);
-						
-						continue;
-					}
+				if (spawns.Count == 0)
+				{
+					_logger.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.getId() +
+						" - " + template.getName());
 
-					addNewSpawn(spawn, record.RespawnTime, record.CurrentHp, record.CurrentMp, false);
+					deleteSpawn(spawn, true);
+					continue;
+				}
+
+				if (spawns.Count > 1)
+				{
+					_logger.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() +
+						" - " + template.getName() + " " + spawns);
+
+					continue;
+				}
+
+				NpcSpawnTemplate spawnTemplate = spawns[0];
+				spawn.setSpawnTemplate(spawnTemplate);
+
+				TimeSpan? respawn = spawnTemplate.getRespawnTime();
+				TimeSpan respawnRandom = spawnTemplate.getRespawnTimeRandom();
+				SchedulingPattern respawnPattern = spawnTemplate.getRespawnPattern();
+
+				if (respawn != null || respawnPattern != null)
+				{
+					spawn.setRespawnDelay(respawn, respawnRandom);
+					spawn.setRespawnPattern(respawnPattern);
+					spawn.startRespawn();
 				}
 				else
 				{
-					LOGGER.Error(GetType().Name + ": Could not load npc #" + id + " from DB");
-					
-					// Remove non existent NPC respawn.
-					try
-					{
-						ctx.NpcRespawns.Where(r => r.Id == id).ExecuteDelete();
-					}
-					catch (Exception e)
-					{
-						LOGGER.Error(GetType().Name + ": Could not remove npc #" + id + " from DB: " + e);
-					}
+					spawn.stopRespawn();
+					_logger.Warn(GetType().Name + ": Found database spawns without respawn for npc: " +
+						template.getId() + " - " + template.getName() + " " + spawnTemplate);
+
+					continue;
+				}
+
+				addNewSpawn(spawn, record.RespawnTime, record.CurrentHp, record.CurrentMp, false);
+			}
+
+			_logger.Info(GetType().Name + ": Loaded " + _npcStates.Count + " instances.");
+
+			_logger.Info(GetType().Name + ": Scheduled " + _npcStates.Count(s => s.Value.Future is not null) +
+				" instances.");
+
+			if (spawnsToRemove.Count != 0)
+			{
+				try
+				{
+					// Remove non-existent NPC respawns.
+					ctx.NpcRespawns.Where(r => spawnsToRemove.Contains(r.Id)).ExecuteDelete();
+				}
+				catch (Exception e)
+				{
+					_logger.Error(GetType().Name + ": Could not remove npcs " + string.Join(", ", spawnsToRemove) +
+						" from DB: " + e);
 				}
 			}
-			
-			LOGGER.Info(GetType().Name +": Loaded " + _npcs.size() + " instances.");
-			LOGGER.Info(GetType().Name +": Scheduled " + _schedules.size() + " instances.");
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error(GetType().Name + ": Couldnt load npc_respawns table" + e);
+			_logger.Error(GetType().Name + ": Couldnt load npc_respawns table" + e);
 		}
 	}
-	
+
 	private void scheduleSpawn(int npcId)
 	{
-		Npc npc = _spawns.get(npcId).doSpawn();
+		NpcState state = _npcStates[npcId];
+		Npc? npc = state.Spawn?.doSpawn();
 		if (npc != null)
 		{
 			npc.setDBStatus(RaidBossStatus.ALIVE);
-			
-			StatSet info = new StatSet();
-			info.set("currentHP", npc.getCurrentHp());
-			info.set("currentMP", npc.getCurrentMp());
-			info.set("respawnTime", 0);
-			_storedInfo.put(npcId, info);
-			_npcs.put(npcId, npc);
-			LOGGER.Info(GetType().Name +": Spawning NPC " + npc.getName());
+
+			state.CurrentHp = npc.getCurrentHp();
+			state.CurrentMp = npc.getCurrentMp();
+			state.RespawnTime = null;
+			state.Npc = npc;
+			_logger.Info(GetType().Name + ": Spawning NPC " + npc.getName());
+			UpdateRecord(state);
 		}
-		
-		_schedules.remove(npcId);
+
+		state.Future = null;
 	}
-	
+
 	/**
 	 * Update status.
 	 * @param npc the npc
@@ -165,17 +165,14 @@ public class DBSpawnManager
 	 */
 	public void updateStatus(Npc npc, bool isNpcDead)
 	{
-		StatSet info = _storedInfo.get(npc.getId());
-		if (info == null)
-		{
+		if (!_npcStates.TryGetValue(npc.getId(), out NpcState? npcState))
 			return;
-		}
-		
+
 		if (isNpcDead)
 		{
 			npc.setDBStatus(RaidBossStatus.DEAD);
-			
-			SchedulingPattern respawnPattern = npc.getSpawn().getRespawnPattern();
+
+			SchedulingPattern? respawnPattern = npc.getSpawn().getRespawnPattern();
 			TimeSpan respawnMinDelay;
 			TimeSpan respawnMaxDelay;
 			TimeSpan respawnDelay;
@@ -194,31 +191,32 @@ public class DBSpawnManager
 				respawnDelay = Rnd.get(respawnMinDelay, respawnMaxDelay);
 				respawnTime = DateTime.UtcNow + respawnDelay;
 			}
-			
-			info.set("currentHP", npc.getMaxHp());
-			info.set("currentMP", npc.getMaxMp());
-			info.set("respawnTime", respawnTime);
-			if ((!_schedules.containsKey(npc.getId()) &&
-			     ((respawnMinDelay > TimeSpan.Zero) || (respawnMaxDelay > TimeSpan.Zero))) || (respawnPattern != null))
+
+			npcState.CurrentHp = npc.getMaxHp();
+			npcState.CurrentMp = npc.getMaxMp();
+			npcState.RespawnTime = respawnTime;
+
+			if ((npcState.Future is null && (respawnMinDelay > TimeSpan.Zero || respawnMaxDelay > TimeSpan.Zero)) ||
+			    respawnPattern != null)
 			{
-				LOGGER.Info(GetType().Name + ": Updated " + npc.getName() + " respawn time to " +
-				            respawnTime.ToString("dd.MM.yyyy HH:mm"));
-				
-				_schedules.put(npc.getId(), ThreadPool.schedule(() => scheduleSpawn(npc.getId()), respawnDelay));
-				updateDb();
+				_logger.Info(GetType().Name + ": Updated " + npc.getName() + " respawn time to " +
+					respawnTime.ToString("dd.MM.yyyy HH:mm"));
+
+				npcState.Future = ThreadPool.schedule(() => scheduleSpawn(npc.getId()), respawnDelay);
 			}
 		}
 		else
 		{
 			npc.setDBStatus(RaidBossStatus.ALIVE);
-			
-			info.set("currentHP", npc.getCurrentHp());
-			info.set("currentMP", npc.getCurrentMp());
-			info.set("respawnTime", 0);
+
+			npcState.CurrentHp = npc.getCurrentHp();
+			npcState.CurrentMp = npc.getCurrentMp();
+			npcState.RespawnTime = null;
 		}
-		_storedInfo.put(npc.getId(), info);
+
+		UpdateRecord(npcState);
 	}
-	
+
 	/**
 	 * Adds the new spawn.
 	 * @param spawn the spawn dat
@@ -227,49 +225,39 @@ public class DBSpawnManager
 	 * @param currentMP the current mp
 	 * @param storeInDb the store in db
 	 */
-	public void addNewSpawn(Spawn spawn, DateTime? respawnTime, double currentHP, double currentMP, bool storeInDb)
+	public void addNewSpawn(Spawn spawn, DateTime? respawnTime, double currentHp, double currentMp, bool storeInDb)
 	{
-		if (spawn == null)
-		{
+		NpcState npcState = _npcStates.GetOrAdd(spawn.getId(), id => new NpcState() { NpcId = id });
+		if (npcState.Spawn is not null)
 			return;
-		}
-		if (_spawns.containsKey(spawn.getId()))
-		{
-			return;
-		}
-		
+
 		int npcId = spawn.getId();
-		DateTime time = DateTime.UtcNow;
 		SpawnTable.getInstance().addNewSpawn(spawn, false);
-		if ((respawnTime is null) || (time > respawnTime))
+		if (respawnTime is null || respawnTime < DateTime.UtcNow)
 		{
-			Npc npc = spawn.doSpawn();
+			Npc? npc = spawn.doSpawn();
 			if (npc != null)
 			{
-				npc.setCurrentHp(currentHP);
-				npc.setCurrentMp(currentMP);
+				npc.setCurrentHp(currentHp);
+				npc.setCurrentMp(currentMp);
 				npc.setDBStatus(RaidBossStatus.ALIVE);
-				
-				_npcs.put(npcId, npc);
-				
-				StatSet info = new StatSet();
-				info.set("currentHP", currentHP);
-				info.set("currentMP", currentMP);
-				info.set("respawnTime", 0);
-				_storedInfo.put(npcId, info);
+
+				npcState.CurrentHp = currentHp;
+				npcState.CurrentMp = currentMp;
+				npcState.RespawnTime = null;
 			}
 		}
 		else
 		{
 			TimeSpan spawnTime = respawnTime.Value - DateTime.UtcNow;
-			_schedules.put(npcId, ThreadPool.schedule(() => scheduleSpawn(npcId), spawnTime));
+			npcState.Future = ThreadPool.schedule(() => scheduleSpawn(npcId), spawnTime);
 		}
-		
-		_spawns.put(npcId, spawn);
-		
+
+		npcState.Spawn = spawn;
+
 		if (storeInDb)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Add(new NpcRespawn()
@@ -280,8 +268,8 @@ public class DBSpawnManager
 					Z = spawn.Location.Z,
 					Heading = spawn.Location.Heading,
 					RespawnTime = respawnTime,
-					CurrentHp = currentHP,
-					CurrentMp = currentMP,
+					CurrentHp = currentHp,
+					CurrentMp = currentMp,
 				});
 
 				ctx.SaveChanges();
@@ -289,47 +277,37 @@ public class DBSpawnManager
 			catch (Exception e)
 			{
 				// problem with storing spawn
-				LOGGER.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
+				_logger.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
 			}
 		}
 	}
-	
+
 	public Npc addNewSpawn(Spawn spawn, bool storeInDb)
 	{
-		if (spawn == null)
-		{
-			return null;
-		}
-		
 		int npcId = spawn.getId();
-		Spawn existingSpawn = _spawns.get(npcId);
-		if (existingSpawn != null)
-		{
-			return existingSpawn.getLastSpawn();
-		}
-		
+		if (_npcStates.TryGetValue(npcId, out NpcState? npcState) && npcState.Spawn != null)
+			return npcState.Spawn.getLastSpawn();
+
 		SpawnTable.getInstance().addNewSpawn(spawn, false);
-		
-		Npc npc = spawn.doSpawn();
+
+		Npc? npc = spawn.doSpawn();
 		if (npc == null)
-		{
-			throw new ArgumentException("Spawn npc is null");
-		}
-		
+			throw new InvalidOperationException("Spawn npc is null");
+
 		npc.setDBStatus(RaidBossStatus.ALIVE);
-		
-		StatSet info = new StatSet();
-		info.set("currentHP", npc.getMaxHp());
-		info.set("currentMP", npc.getMaxMp());
-		info.set("respawnTime", 0);
-		_npcs.put(npcId, npc);
-		_storedInfo.put(npcId, info);
-		
-		_spawns.put(npcId, spawn);
-		
+
+		if (npcState is null)
+			npcState = _npcStates.GetOrAdd(npcId, new NpcState() { NpcId = npcId });
+
+		npcState.CurrentHp = npc.getMaxHp();
+		npcState.CurrentMp = npc.getMaxMp();
+		npcState.RespawnTime = null;
+		npcState.Spawn = spawn;
+		npcState.Npc = npc;
+
 		if (storeInDb)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Add(new NpcRespawn()
@@ -346,13 +324,13 @@ public class DBSpawnManager
 			catch (Exception e)
 			{
 				// problem with storing spawn
-				LOGGER.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
+				_logger.Warn(GetType().Name + ": Could not store npc #" + npcId + " in the DB: " + e);
 			}
 		}
-		
+
 		return npc;
 	}
-	
+
 	/**
 	 * Delete spawn.
 	 * @param spawn the spawn dat
@@ -360,25 +338,15 @@ public class DBSpawnManager
 	 */
 	public void deleteSpawn(Spawn spawn, bool updateDb)
 	{
-		if (spawn == null)
-		{
-			return;
-		}
-		
 		int npcId = spawn.getId();
-		_spawns.remove(npcId);
-		_npcs.remove(npcId);
-		_storedInfo.remove(npcId);
-		
-		ScheduledFuture task = _schedules.remove(npcId);
-		if (task != null)
-		{
-			task.cancel(true);
-		}
-		
+		if (!_npcStates.Remove(npcId, out NpcState? npcState))
+			return;
+
+		npcState.Future?.cancel(true);
+
 		if (updateDb)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteDelete();
@@ -386,112 +354,80 @@ public class DBSpawnManager
 			catch (Exception e)
 			{
 				// problem with deleting spawn
-				LOGGER.Warn(GetType().Name + ": Could not remove npc #" + npcId + " from DB: " + e);
+				_logger.Warn(GetType().Name + ": Could not remove npc #" + npcId + " from DB: " + e);
 			}
 		}
-		
+
 		SpawnTable.getInstance().deleteSpawn(spawn, false);
 	}
-	
+
+	private void UpdateRecord(NpcState npcState)
+	{
+		Npc? npc = npcState.Npc;
+		if (npc is null)
+			return;
+
+		try
+		{
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+			int npcId = npcState.NpcId;
+			DateTime? respawnTime = npcState.RespawnTime;
+			double currentHp = npc.isDead() ? npc.getMaxHp() : npcState.CurrentHp;
+			double currentMp = npc.isDead() ? npc.getMaxMp() : npcState.CurrentMp;
+			ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteUpdate(s =>
+				s.SetProperty(r => r.RespawnTime, respawnTime).SetProperty(r => r.CurrentHp, currentHp)
+					.SetProperty(r => r.CurrentMp, currentMp));
+		}
+		catch (Exception e)
+		{
+			_logger.Error(GetType().Name + ": Couldnt update NpcRespawns table " + e);
+		}
+	}
+
 	/**
 	 * Update database.
 	 */
 	private void updateDb()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (var entry in _storedInfo)
+			foreach (var entry in _npcStates)
 			{
 				int npcId = entry.Key;
-				if (npcId == null)
-				{
+				NpcState npcState = entry.Value;
+				Npc? npc = npcState.Npc;
+				if (npc is null)
 					continue;
-				}
-				
-				Npc npc = _npcs.get(npcId);
-				if (npc == null)
-				{
-					continue;
-				}
-				
+
 				if (npc.getDBStatus() == RaidBossStatus.ALIVE)
 				{
-					updateStatus(npc, false);
+					npcState.CurrentHp = npc.getCurrentHp();
+					npcState.CurrentMp = npc.getCurrentMp();
+					npcState.RespawnTime = null;
 				}
-				
-				StatSet info = entry.Value;
-				if (info == null)
-				{
-					continue;
-				}
-				
+
 				try
 				{
-					DateTime? respawnTime = info.getDateTime("respawnTime");
-					double currentHp = npc.isDead() ? npc.getMaxHp() : info.getDouble("currentHP");
-					double currentMp = npc.isDead() ? npc.getMaxMp() : info.getDouble("currentMP");
+					DateTime? respawnTime = npcState.RespawnTime;
+					double currentHp = npc.isDead() ? npc.getMaxHp() : npcState.CurrentHp;
+					double currentMp = npc.isDead() ? npc.getMaxMp() : npcState.CurrentMp;
 					ctx.NpcRespawns.Where(r => r.Id == npcId).ExecuteUpdate(s =>
 						s.SetProperty(r => r.RespawnTime, respawnTime).SetProperty(r => r.CurrentHp, currentHp)
 							.SetProperty(r => r.CurrentMp, currentMp));
 				}
 				catch (Exception e)
 				{
-					LOGGER.Error(GetType().Name + ": Couldnt update npc_respawns table " + e);
+					_logger.Error(GetType().Name + ": Couldnt update NpcRespawns table " + e);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn(GetType().Name + ": SQL error while updating database spawn to database: " + e);
+			_logger.Warn(GetType().Name + ": SQL error while updating database spawn to database: " + e);
 		}
 	}
-	
-	/**
-	 * Gets the all npc status.
-	 * @return the all npc status
-	 */
-	public String[] getAllNpcsStatus()
-	{
-		String[] msg = new String[(_npcs == null) ? 0 : _npcs.size()];
-		if (_npcs == null)
-		{
-			msg[0] = "None";
-			return msg;
-		}
-		
-		int index = 0;
-		foreach (Npc npc in _npcs.values())
-		{
-			msg[index++] = npc.getName() + ": " + npc.getDBStatus();
-		}
-		
-		return msg;
-	}
-	
-	/**
-	 * Gets the npc status.
-	 * @param npcId the npc id
-	 * @return the raid npc status
-	 */
-	public String getNpcsStatus(int npcId)
-	{
-		String msg = "NPC Status..." + Environment.NewLine;
-		if (_npcs == null)
-		{
-			msg += "None";
-			return msg;
-		}
-		
-		if (_npcs.containsKey(npcId))
-		{
-			Npc npc = _npcs.get(npcId);
-			msg += npc.getName() + ": " + npc.getDBStatus();
-		}
-		
-		return msg;
-	}
-	
+
 	/**
 	 * Gets the raid npc status.
 	 * @param npcId the npc id
@@ -499,46 +435,18 @@ public class DBSpawnManager
 	 */
 	public RaidBossStatus getStatus(int npcId)
 	{
-		if (_npcs.containsKey(npcId))
-		{
-			return _npcs.get(npcId).getDBStatus();
-		}
-		else if (_schedules.containsKey(npcId))
-		{
-			return RaidBossStatus.DEAD;
-		}
-		else
-		{
+		if (!_npcStates.TryGetValue(npcId, out NpcState? npcState))
 			return RaidBossStatus.UNDEFINED;
-		}
+
+		if (npcState.Npc is not null)
+			return npcState.Npc.getDBStatus();
+
+		if (npcState.Future is not null)
+			return RaidBossStatus.DEAD;
+
+		return RaidBossStatus.UNDEFINED;
 	}
-	
-	/**
-	 * Gets the valid template.
-	 * @param npcId the npc id
-	 * @return the valid template
-	 */
-	public NpcTemplate getValidTemplate(int npcId)
-	{
-		return NpcData.getInstance().getTemplate(npcId);
-	}
-	
-	/**
-	 * Notify spawn night npc.
-	 * @param npc the npc
-	 */
-	public void notifySpawnNightNpc(Npc npc)
-	{
-		StatSet info = new StatSet();
-		info.set("currentHP", npc.getCurrentHp());
-		info.set("currentMP", npc.getCurrentMp());
-		info.set("respawnTime", 0);
-		npc.setDBStatus(RaidBossStatus.ALIVE);
-		
-		_storedInfo.put(npc.getId(), info);
-		_npcs.put(npc.getId(), npc);
-	}
-	
+
 	/**
 	 * Checks if the npc is defined.
 	 * @param npcId the npc id
@@ -546,77 +454,64 @@ public class DBSpawnManager
 	 */
 	public bool isDefined(int npcId)
 	{
-		return _spawns.containsKey(npcId);
+		return _npcStates.ContainsKey(npcId);
 	}
-	
+
 	/**
 	 * Gets a specific NPC by id.
 	 * @param id The id of the NPC.
 	 * @return the Npc
 	 */
-	public Npc getNpc(int id)
+	public Npc? getNpc(int id)
 	{
-		return _npcs.get(id);
+		return _npcStates.GetValueOrDefault(id)?.Npc;
 	}
-	
+
 	/**
 	 * Gets the npcs.
 	 * @return the npcs
 	 */
-	public Map<int, Npc> getNpcs()
+	public IEnumerable<Npc> getNpcs()
 	{
-		return _npcs;
+		return _npcStates.Select(p => p.Value.Npc).Where(x => x is not null)!;
 	}
-	
-	/**
-	 * Gets the spawns.
-	 * @return the spawns
-	 */
-	public Map<int, Spawn> getSpawns()
-	{
-		return _spawns;
-	}
-	
-	/**
-	 * Gets the stored info.
-	 * @return the stored info
-	 */
-	public Map<int, StatSet> getStoredInfo()
-	{
-		return _storedInfo;
-	}
-	
+
 	/**
 	 * Saves and clears the raid npces status, including all schedules.
 	 */
 	public void cleanUp()
 	{
 		updateDb();
-		
-		_npcs.clear();
-		
-		foreach (ScheduledFuture schedule in _schedules.values())
-		{
-			schedule.cancel(true);
-		}
-		
-		_schedules.clear();
-		
-		_storedInfo.clear();
-		_spawns.clear();
+
+		foreach (NpcState npcState in _npcStates.Values)
+			npcState.Future?.cancel(true);
+
+		_npcStates.Clear();
 	}
-	
+
 	/**
 	 * Gets the single instance of DBSpawnManager.
 	 * @return single instance of DBSpawnManager
 	 */
-	public static DBSpawnManager getInstance()
+	public static DbSpawnManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly DBSpawnManager INSTANCE = new DBSpawnManager();
+		public static readonly DbSpawnManager INSTANCE = new();
+	}
+
+	private sealed class NpcState
+	{
+		public int NpcId;
+		public DateTime? RespawnTime;
+		public double CurrentHp;
+		public double CurrentMp;
+
+		public Npc? Npc;
+		public Spawn? Spawn;
+		public ScheduledFuture? Future;
 	}
 }

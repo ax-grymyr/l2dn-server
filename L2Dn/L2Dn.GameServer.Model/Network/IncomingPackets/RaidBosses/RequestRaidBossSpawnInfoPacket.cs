@@ -38,10 +38,10 @@ public struct RequestRaidBossSpawnInfoPacket: IIncomingPacket<GameSession>
             GrandBoss boss = GrandBossManager.getInstance().getBoss(bossId);
             if (boss == null)
             {
-                RaidBossStatus status = DBSpawnManager.getInstance().getStatus(bossId);
+                RaidBossStatus status = DbSpawnManager.getInstance().getStatus(bossId);
                 if (status != RaidBossStatus.UNDEFINED)
                 {
-                    Npc npc = DBSpawnManager.getInstance().getNpc(bossId);
+                    Npc? npc = DbSpawnManager.getInstance().getNpc(bossId);
                     if ((npc != null) && npc.isInCombat())
                     {
                         statuses.put(bossId, RaidBossStatus.COMBAT);

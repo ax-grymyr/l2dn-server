@@ -48,7 +48,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	/** Maximum respawn delay */
 	private TimeSpan _respawnMaxDelay;
 	/** Respawn Pattern **/
-	private SchedulingPattern _respawnPattern;
+	private SchedulingPattern? _respawnPattern;
 	/** If True an Npc is respawned each time that another is killed */
 	private bool _doRespawn = true;
 	private readonly List<Npc> _spawnedNpcs = new();
@@ -166,7 +166,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	/**
 	 * @return respawn pattern
 	 */
-	public SchedulingPattern getRespawnPattern()
+	public SchedulingPattern? getRespawnPattern()
 	{
 		return _respawnPattern;
 	}
@@ -279,7 +279,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		_doRespawn = true;
 	}
 	
-	public Npc doSpawn()
+	public Npc? doSpawn()
 	{
 		return _doRespawn ? doSpawn(false) : null;
 	}
@@ -308,7 +308,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	 * @param isSummonSpawn
 	 * @return
 	 */
-	public Npc doSpawn(bool isSummonSpawn)
+	public Npc? doSpawn(bool isSummonSpawn)
 	{
 		try
 		{
