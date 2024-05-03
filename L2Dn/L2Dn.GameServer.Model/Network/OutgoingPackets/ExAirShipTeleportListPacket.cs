@@ -31,7 +31,7 @@ public readonly struct ExAirShipTeleportListPacket: IOutgoingPacket
                 writer.WriteInt32(_fuelConsumption[i]);
                 VehiclePathPoint[] path = _teleports[i];
                 VehiclePathPoint dst = path[^1];
-                writer.WriteLocation3D(dst.Location.Location3D);
+                writer.WriteLocation3D(dst.Location);
             }
         }
         else

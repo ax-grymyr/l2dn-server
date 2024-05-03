@@ -79,7 +79,7 @@ public abstract class Vehicle : Creature
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
 			
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location.Location3D);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location);
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -98,7 +98,7 @@ public abstract class Vehicle : Creature
 				{
 					if (point.getMoveSpeed() == 0)
 					{
-						teleToLocation(new Location(point.Location.Location3D, point.getRotationSpeed()), false);
+						teleToLocation(new Location(point.Location, point.getRotationSpeed()), false);
 						if (_monitorTask != null)
 						{
 							_monitorTask.cancel(true);
