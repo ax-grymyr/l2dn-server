@@ -8,13 +8,14 @@ public class ClanRewardBonus
     private readonly ClanRewardType _type;
     private readonly int _level;
     private readonly int _requiredAmount;
-    private SkillHolder _skillReward;
+    private readonly SkillHolder _skillReward;
 
-    public ClanRewardBonus(ClanRewardType type, int level, int requiredAmount)
+    public ClanRewardBonus(ClanRewardType type, int level, int requiredAmount, SkillHolder skill)
     {
         _type = type;
         _level = level;
         _requiredAmount = requiredAmount;
+        _skillReward = skill;
     }
 
     public ClanRewardType getType()
@@ -35,10 +36,5 @@ public class ClanRewardBonus
     public SkillHolder getSkillReward()
     {
         return _skillReward;
-    }
-
-    public void setSkillReward(SkillHolder skillReward)
-    {
-        _skillReward = skillReward;
     }
 }

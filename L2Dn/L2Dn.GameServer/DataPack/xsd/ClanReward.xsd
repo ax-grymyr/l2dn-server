@@ -29,10 +29,10 @@
 							<xs:element name="hunting" maxOccurs="unbounded" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="item">
+										<xs:element name="skill">
 											<xs:complexType>
-												<xs:attribute type="xs:integer" name="id" use="required" />
-												<xs:attribute type="xs:long" name="count" use="required" />
+												<xs:attribute type="xs:positiveInteger" name="id" use="required" />
+												<xs:attribute type="xs:short" name="level" use="required" />
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>

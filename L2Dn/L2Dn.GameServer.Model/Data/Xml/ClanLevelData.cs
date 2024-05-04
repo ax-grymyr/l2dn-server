@@ -1,77 +1,55 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author Mobius
- */
-public class ClanLevelData: DataReaderBase
+public sealed class ClanLevelData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanLevelData));
-	
-	private const int EXPECTED_CLAN_LEVEL_DATA = 12; // Level 0 included.
-	
-	private int[] CLAN_EXP;
-	private int MAX_CLAN_LEVEL = 0;
-	private int MAX_CLAN_EXP = 0;
-	
-	protected ClanLevelData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanLevelData));
+	private ImmutableArray<int> _clanExp = [0]; // 0th level
+
+	private ClanLevelData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
 	public void load()
 	{
-		CLAN_EXP = new int[EXPECTED_CLAN_LEVEL_DATA];
-		MAX_CLAN_LEVEL = 0;
-		MAX_CLAN_EXP = 0;
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ClanLevelData.xml");
-		document.Elements("list").Elements("clan").ForEach(element =>
-		{
-			int level = element.GetAttributeValueAsInt32("level");
-			int exp = element.GetAttributeValueAsInt32("exp");
-						
-			if (MAX_CLAN_LEVEL < level)
-			{
-				MAX_CLAN_LEVEL = level;
-			}
-			if (MAX_CLAN_EXP < exp)
-			{
-				MAX_CLAN_EXP = exp;
-			}
-						
-			CLAN_EXP[level] = exp;
-		});
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + (EXPECTED_CLAN_LEVEL_DATA - 1) /* level 0 excluded */ + " clan level data.");
+		ImmutableArray<int> clanExp = [0];
+
+		XmlClanLevelData document = LoadXmlDocument<XmlClanLevelData>(DataFileLocation.Data, "ClanLevelData.xml");
+		if (document.ClanLevels.Count > 0)
+			clanExp = document.ClanLevels.ToDictionary(x => x.Level, x => x.Exp).ToValueArray().ToImmutableArray();
+
+		// TODO Add checks for duplicated levels and that exp must increase with each level.
+
+		_clanExp = clanExp;
+
+		_logger.Info(GetType().Name + ": Loaded " + clanExp.Length + " clan level data.");
 	}
-	
+
 	public int getLevelExp(int clanLevel)
 	{
-		return CLAN_EXP[clanLevel];
+		return _clanExp[clanLevel];
 	}
-	
+
 	public int getMaxLevel()
 	{
-		return MAX_CLAN_LEVEL;
+		return _clanExp.Length - 1;
 	}
-	
+
 	public int getMaxExp()
 	{
-		return MAX_CLAN_EXP;
+		return _clanExp[^1];
 	}
-	
+
 	public static ClanLevelData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ClanLevelData INSTANCE = new();

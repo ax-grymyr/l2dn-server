@@ -1,100 +1,78 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author UnAfraid
- */
-public class ClanRewardData: DataReaderBase
+public sealed class ClanRewardData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanRewardData));
-	private readonly Map<ClanRewardType, List<ClanRewardBonus>> _clanRewards = new();
-	
-	protected ClanRewardData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanRewardData));
+	private ImmutableArray<ClanRewardBonus> _onlineBonuses = [];
+	private ImmutableArray<ClanRewardBonus> _huntingBonuses = [];
+
+	private ClanRewardData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		XDocument document = LoadXmlDocument(DataFileLocation.Config, "ClanReward.xml");
-		document.Elements("list").Elements("membersOnline").ForEach(parseMembersOnline);
-		document.Elements("list").Elements("huntingBonus").ForEach(parseHuntingBonus);
+		XmlClanRewardData document = LoadXmlDocument<XmlClanRewardData>(DataFileLocation.Config, "ClanReward.xml");
 
-		foreach (ClanRewardType type in EnumUtil.GetValues<ClanRewardType>())
+		// Online bonuses.
+		List<ClanRewardBonus> onlineBonuses = [];
+		foreach (XmlClanRewardOnlineBonus onlineBonus in document.OnlineBonuses)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " +
-			            (_clanRewards.containsKey(type) ? _clanRewards.get(type).size() : 0) + " rewards for " +
-			            type.ToString().Replace("_", " ").toLowerCase() + ".");
-		}
-	}
-	
-	private void parseMembersOnline(XElement node)
-	{
-		node.Elements("players").ForEach(el =>
-		{
-			int requiredAmount = el.GetAttributeValueAsInt32("size");
-			int level = el.GetAttributeValueAsInt32("level");
-			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.MEMBERS_ONLINE, level, requiredAmount);
-			el.Elements("skill").ForEach(e =>
+			if (onlineBonus.Skill is null)
 			{
-				int skillId = e.GetAttributeValueAsInt32("id");
-				int skillLevel = e.GetAttributeValueAsInt32("level");
-				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
-			});
-			
-			_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
-		});
-	}
-	
-	private void parseHuntingBonus(XElement node)
-	{
-		node.Elements("hunting").ForEach(el =>
-		{
-			int requiredAmount = el.GetAttributeValueAsInt32("points");
-			int level = el.GetAttributeValueAsInt32("level");
-			ClanRewardBonus bonus = new ClanRewardBonus(ClanRewardType.HUNTING_MONSTERS, level, requiredAmount);
-			el.Elements("skill").ForEach(e =>
-			{
-				int skillId = e.GetAttributeValueAsInt32("id");
-				int skillLevel = e.GetAttributeValueAsInt32("level");
-				bonus.setSkillReward(new SkillHolder(skillId, skillLevel));
-			});
-			
-			_clanRewards.computeIfAbsent(bonus.getType(), key => new()).add(bonus);
-		});
-	}
-	
-	public List<ClanRewardBonus> getClanRewardBonuses(ClanRewardType type)
-	{
-		return _clanRewards.get(type);
-	}
-	
-	public ClanRewardBonus getHighestReward(ClanRewardType type)
-	{
-		ClanRewardBonus selectedBonus = null;
-		foreach (ClanRewardBonus currentBonus in _clanRewards.get(type))
-		{
-			if ((selectedBonus == null) || (selectedBonus.getLevel() < currentBonus.getLevel()))
-			{
-				selectedBonus = currentBonus;
+				_logger.Error($"{GetType().Name}: Skill is not defined for online bonus level {onlineBonus.Level}.");
+				continue;
 			}
+
+			onlineBonuses.Add(new ClanRewardBonus(ClanRewardType.MEMBERS_ONLINE, onlineBonus.Level, onlineBonus.Count,
+				new SkillHolder(onlineBonus.Skill.SkillId, onlineBonus.Skill.SkillLevel)));
 		}
-		return selectedBonus;
+
+		// Hunting bonuses.
+		List<ClanRewardBonus> huntingBonuses = [];
+		foreach (XmlClanRewardHuntingBonus huntingBonus in document.HuntingBonuses)
+		{
+			if (huntingBonus.Skill is null)
+			{
+				_logger.Error($"{GetType().Name}: Skill is not defined for hunting bonus level {huntingBonus.Level}.");
+				continue;
+			}
+
+			huntingBonuses.Add(new ClanRewardBonus(ClanRewardType.HUNTING_MONSTERS, huntingBonus.Level,
+				huntingBonus.Points, new SkillHolder(huntingBonus.Skill.SkillId, huntingBonus.Skill.SkillLevel)));
+		}
+
+		_onlineBonuses = onlineBonuses.OrderBy(x => x.getLevel()).ToImmutableArray();
+		_huntingBonuses = huntingBonuses.OrderBy(x => x.getLevel()).ToImmutableArray();
+
+		_logger.Info(GetType().Name + ": Loaded " + _onlineBonuses.Length + " rewards for members online.");
+		_logger.Info(GetType().Name + ": Loaded " + _huntingBonuses.Length + " rewards for hunting monsters.");
 	}
-	
-	public ICollection<List<ClanRewardBonus>> getClanRewardBonuses()
+
+	public ImmutableArray<ClanRewardBonus> getClanRewardBonuses(ClanRewardType type)
 	{
-		return _clanRewards.values();
+		return type switch
+		{
+			ClanRewardType.MEMBERS_ONLINE => _onlineBonuses,
+			ClanRewardType.HUNTING_MONSTERS => _huntingBonuses,
+			_ => [],
+		};
 	}
-	
+
+	public ClanRewardBonus? getHighestReward(ClanRewardType type)
+	{
+		ImmutableArray<ClanRewardBonus> bonuses = getClanRewardBonuses(type);
+		return bonuses.Length == 0 ? null : bonuses[^1];
+	}
+
 	/**
 	 * Gets the single instance of ClanRewardData.
 	 * @return single instance of ClanRewardData
@@ -103,7 +81,7 @@ public class ClanRewardData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ClanRewardData INSTANCE = new();
