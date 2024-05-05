@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+
 namespace L2Dn.GameServer.Model.Holders;
 
 /**
@@ -9,10 +11,10 @@ public class CollectionDataHolder
 	private readonly int _optionId;
 	private readonly int _category;
 	private readonly int _completeCount;
-	private readonly List<ItemEnchantHolder> _items;
+	private readonly ImmutableArray<ItemEnchantHolder> _items;
 
 	public CollectionDataHolder(int collectionId, int optionId, int category, int completeCount,
-		List<ItemEnchantHolder> items)
+		ImmutableArray<ItemEnchantHolder> items)
 	{
 		_collectionId = collectionId;
 		_optionId = optionId;
@@ -41,7 +43,7 @@ public class CollectionDataHolder
 		return _completeCount;
 	}
 
-	public List<ItemEnchantHolder> getItems()
+	public ImmutableArray<ItemEnchantHolder> getItems()
 	{
 		return _items;
 	}

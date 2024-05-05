@@ -1,97 +1,95 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author Berezkin Nikolay
- */
-public class CollectionData: DataReaderBase
+public sealed class CollectionData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CollectionData));
-	
-	private static readonly Map<int, CollectionDataHolder> _collections = new();
-	private static readonly Map<int, List<CollectionDataHolder>> _collectionsByTabId = new();
-	
-	protected CollectionData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(CollectionData));
+
+	private static FrozenDictionary<int, CollectionDataHolder> _collections =
+		FrozenDictionary<int, CollectionDataHolder>.Empty;
+
+	private static FrozenDictionary<int, ImmutableArray<CollectionDataHolder>> _collectionsByTabId =
+		FrozenDictionary<int, ImmutableArray<CollectionDataHolder>>.Empty;
+
+	private CollectionData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		_collections.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CollectionData.xml");
-		document.Elements("list").Elements("collection").ForEach(loadElement);
-		
-		if (!_collections.isEmpty())
+		XmlCollectionData document = LoadXmlDocument<XmlCollectionData>(DataFileLocation.Data, "CollectionData.xml");
+		Dictionary<int, CollectionDataHolder> collections = [];
+		Dictionary<int, List<CollectionDataHolder>> collectionsByTabId = [];
+		foreach (XmlCollection collection in document.Collections)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _collections.size() + " collections.");
-		}
-		else
-		{
-			LOGGER.Info(GetType().Name + ": System is disabled.");
-		}
-	}
-
-	private void loadElement(XElement element)
-	{
-		int id = element.GetAttributeValueAsInt32("id");
-		int optionId = element.GetAttributeValueAsInt32("optionId");
-		int category = element.GetAttributeValueAsInt32("category");
-		int completeCount = element.GetAttributeValueAsInt32("completeCount");
-		List<ItemEnchantHolder> items = new();
-		
-		element.Elements("item").ForEach(el =>
-		{
-			int itemId = el.GetAttributeValueAsInt32("id");
-			long itemCount = el.Attribute("count").GetInt64(1);
-			int itemEnchantLevel = el.Attribute("enchantLevel").GetInt32(0);
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
-			if (item == null)
+			int id = collection.Id;
+			List<ItemEnchantHolder> items = [];
+			bool invalidCollection = false;
+			foreach (XmlCollectionItem collectionItem in collection.Items)
 			{
-				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + itemId + " collection item: " + id);
-				return;
+				int itemId = collectionItem.Id;
+				ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
+				if (item == null)
+				{
+					_logger.Error($"{GetType().Name}: Item template null for itemId: {itemId} collection item: {id}");
+					invalidCollection = true;
+					break;
+				}
+
+				items.Add(new ItemEnchantHolder(itemId, collectionItem.Count, collectionItem.EnchantLevel));
 			}
 
-			items.add(new ItemEnchantHolder(itemId, itemCount, itemEnchantLevel));
-		});
+			if (invalidCollection)
+				continue;
 
-		CollectionDataHolder template = new CollectionDataHolder(id, optionId, category, completeCount, items);
-		_collections.put(id, template);
-		_collectionsByTabId.computeIfAbsent(template.getCategory(), list => new()).add(template);
-	}
+			CollectionDataHolder template = new(id, collection.OptionId, collection.Category, collection.CompleteCount,
+				items.ToImmutableArray());
 
-	public CollectionDataHolder getCollection(int id)
-	{
-		return _collections.get(id);
-	}
-	
-	public List<CollectionDataHolder> getCollectionsByTabId(int tabId)
-	{
-		if (_collectionsByTabId.containsKey(tabId))
-		{
-			return _collectionsByTabId.get(tabId);
+			if (!collections.TryAdd(id, template))
+			{
+				_logger.Error($"{GetType().Name}: Duplicated collection id: {id}");
+				continue;
+			}
+
+			if (!collectionsByTabId.TryGetValue(collection.Category, out List<CollectionDataHolder>? category))
+				collectionsByTabId.Add(collection.Category, category = []);
+
+			category.Add(template);
 		}
-		return new();
+
+		_collections = collections.ToFrozenDictionary();
+		_collectionsByTabId = collectionsByTabId
+			.Select(p => new KeyValuePair<int, ImmutableArray<CollectionDataHolder>>(p.Key, p.Value.ToImmutableArray()))
+			.ToFrozenDictionary();
+
+		if (!_collections.isEmpty())
+			_logger.Info(GetType().Name + ": Loaded " + _collections.Count + " collections.");
+		else
+			_logger.Info(GetType().Name + ": System is disabled.");
 	}
-	
-	public ICollection<CollectionDataHolder> getCollections()
-	{
-		return _collections.values();
-	}
-	
+
+	public CollectionDataHolder? getCollection(int id) => _collections.GetValueOrDefault(id);
+
+	public ImmutableArray<CollectionDataHolder> getCollectionsByTabId(int tabId)
+		=> _collectionsByTabId.TryGetValue(tabId, out ImmutableArray<CollectionDataHolder> collections)
+			? collections
+			: ImmutableArray<CollectionDataHolder>.Empty;
+
+	public ImmutableArray<CollectionDataHolder> getCollections() => _collections.Values;
+
 	public static CollectionData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CollectionData INSTANCE = new();
