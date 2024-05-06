@@ -52,7 +52,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 		    return ValueTask.CompletedTask;
 	    }
 
-	    int groupId = info.groupId;
+	    int groupId = info.GroupId;
 	    if (_useTicket)
 	    {
 		    int remainingRecharges = player.getChallengeInfo().getChallengePointsRecharges(groupId, _useType);
@@ -98,15 +98,15 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 	    double challengePointsChance = 0;
 	    int pendingGroupId = player.getChallengeInfo().getChallengePointsPendingRecharge()[0];
 	    int pendingOptionIndex = player.getChallengeInfo().getChallengePointsPendingRecharge()[1];
-	    if (pendingGroupId == groupId && (pendingOptionIndex == EnchantChallengePointData.OPTION_PROB_INC1 ||
-	                                      pendingOptionIndex == EnchantChallengePointData.OPTION_PROB_INC2))
+	    if (pendingGroupId == groupId && (pendingOptionIndex == EnchantChallengePointData.OptionProbInc1 ||
+	                                      pendingOptionIndex == EnchantChallengePointData.OptionProbInc2))
 	    {
 		    EnchantChallengePointData.EnchantChallengePointsOptionInfo optionInfo = EnchantChallengePointData
 			    .getInstance().getOptionInfo(pendingGroupId, pendingOptionIndex);
-		    if (optionInfo != null && item.getEnchantLevel() >= optionInfo.minEnchant &&
-		        item.getEnchantLevel() <= optionInfo.maxEnchant)
+		    if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant &&
+		        item.getEnchantLevel() <= optionInfo.MaxEnchant)
 		    {
-			    challengePointsChance = optionInfo.chance;
+			    challengePointsChance = optionInfo.Chance;
 		    }
 	    }
 

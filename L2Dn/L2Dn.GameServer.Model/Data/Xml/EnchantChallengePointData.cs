@@ -1,10 +1,7 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -14,156 +11,139 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class EnchantChallengePointData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantChallengePointData));
-	
-	public const int OPTION_PROB_INC1 = 0;
-	public const int OPTION_PROB_INC2 = 1;
-	public const int OPTION_OVER_UP_PROB = 2;
-	public const int OPTION_NUM_RESET_PROB = 3;
-	public const int OPTION_NUM_DOWN_PROB = 4;
-	public const int OPTION_NUM_PROTECT_PROB = 5;
-	
-	private readonly Map<int, Map<int, EnchantChallengePointsOptionInfo>> _groupOptions = new();
-	private readonly Map<int, int> _fees = new();
-	private readonly Map<int, EnchantChallengePointsItemInfo> _items = new();
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnchantChallengePointData));
+
+	public const int OptionProbInc1 = 0;
+	public const int OptionProbInc2 = 1;
+	public const int OptionOverUpProb = 2;
+	public const int OptionNumResetProb = 3;
+	public const int OptionNumDownProb = 4;
+	public const int OptionNumProtectProb = 5;
+
+	private FrozenDictionary<int, int> _fees = FrozenDictionary<int, int>.Empty;
+
+	private FrozenDictionary<(int GroupId, int OptionIndex), EnchantChallengePointsOptionInfo> _groupOptions =
+		FrozenDictionary<(int GroupId, int OptionIndex), EnchantChallengePointsOptionInfo>.Empty;
+
+	private FrozenDictionary<int, EnchantChallengePointsItemInfo> _items =
+		FrozenDictionary<int, EnchantChallengePointsItemInfo>.Empty;
+
 	private int _maxPoints;
 	private int _maxTicketCharge;
-	
+
 	public EnchantChallengePointData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
-	public void load()
+
+	private void load()
 	{
-		_groupOptions.clear();
-		_fees.clear();
-		_items.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantChallengePoints.xml");
-		document.Elements("list").Elements("maxPoints").ForEach(element => _maxPoints = (int)element);
-		document.Elements("list").Elements("maxTicketCharge").ForEach(element => _maxTicketCharge = (int)element);
-		document.Elements("list").Elements("fees").Elements("option").ForEach(element =>
+		XmlEnchantChallengePointData document =
+			LoadXmlDocument<XmlEnchantChallengePointData>(DataFileLocation.Data, "EnchantChallengePoints.xml");
+
+		Dictionary<int, int> fees = [];
+		foreach (XmlEnchantChallengePointFeeOption xmlFeeOption in document.FeeOptions)
 		{
-			int index = element.GetAttributeValueAsInt32("index");
-			int fee = element.GetAttributeValueAsInt32("fee");
-			_fees.put(index, fee);
-		});
-
-		document.Root?.Elements("groups").Elements("group").ForEach(parseGroup);
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _groupOptions.size() + " groups and " + _fees.size() + " options.");
-	}
-
-	private void parseGroup(XElement groupElement)
-	{
-		int groupId = groupElement.GetAttributeValueAsInt32("id");
-
-		Map<int, EnchantChallengePointsOptionInfo> options = _groupOptions.get(groupId);
-		if (options == null)
-		{
-			options = new();
-			_groupOptions.put(groupId, options);
+			if (!fees.TryAdd(xmlFeeOption.Index, xmlFeeOption.Fee))
+				_logger.Error($"{GetType().Name}: Duplicated fee index={xmlFeeOption.Index}.");
 		}
 
-		groupElement.Elements("option").ForEach(optionElement =>
+		Dictionary<(int GroupId, int OptionIndex), EnchantChallengePointsOptionInfo> options = [];
+		Dictionary<int, EnchantChallengePointsItemInfo> items = [];
+		foreach (XmlEnchantChallengePointGroup xmlGroup in document.Groups)
 		{
-			int index = optionElement.GetAttributeValueAsInt32("index");
-			int chance = optionElement.GetAttributeValueAsInt32("chance");
-			int minEnchant = optionElement.GetAttributeValueAsInt32("minEnchant");
-			int maxEnchant = optionElement.GetAttributeValueAsInt32("maxEnchant");
-			options.put(index, new EnchantChallengePointsOptionInfo(index, chance, minEnchant, maxEnchant));
-		});
+			int groupId = xmlGroup.Id;
 
-		groupElement.Elements("item").ForEach(itemElement =>
-		{
-			string[] itemIdsStr = itemElement.GetAttributeValueAsString("id").Split(";");
-
-			Map<int, int> enchantLevels = new();
-			itemElement.Elements("enchant").ForEach(enchantElement =>
+			foreach (XmlEnchantChallengePointGroupOption xmlGroupOption in xmlGroup.Options)
 			{
-				int enchantLevel = enchantElement.GetAttributeValueAsInt32("level");
-				int points = enchantElement.GetAttributeValueAsInt32("points");
-				enchantLevels.put(enchantLevel, points);
-			});
+				int optionIndex = xmlGroupOption.Index;
+				EnchantChallengePointsOptionInfo option = new(xmlGroupOption.Chance, xmlGroupOption.MinEnchant,
+					xmlGroupOption.MaxEnchant);
 
-			foreach (String itemIdStr in itemIdsStr)
+				if (!options.TryAdd((groupId, optionIndex), option))
+					_logger.Error($"{GetType().Name}: Duplicated group id={groupId}, option index={optionIndex}.");
+			}
+
+			foreach (XmlEnchantChallengePointGroupItem xmlGroupItem in xmlGroup.Items)
 			{
-				int itemId = int.Parse(itemIdStr);
-				if (ItemData.getInstance().getTemplate(itemId) == null)
+				string[] itemIdsStr = xmlGroupItem.IdList.Split(";");
+				FrozenDictionary<int, int> enchantLevels = xmlGroupItem.Enchants
+					.ToFrozenDictionary(x => x.Level, x => x.Points);
+
+				foreach (string itemIdStr in itemIdsStr)
 				{
-					LOGGER.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");
-				}
-				else
-				{
-					_items.put(itemId, new EnchantChallengePointsItemInfo(itemId, groupId, enchantLevels));
+					int itemId = int.Parse(itemIdStr);
+					if (ItemData.getInstance().getTemplate(itemId) == null)
+						_logger.Error(GetType().Name + ": Item with id " + itemId + " does not exist.");
+					else if (!items.TryAdd(itemId, new EnchantChallengePointsItemInfo(groupId, enchantLevels)))
+						_logger.Error(GetType().Name + ": Dupicated item with id " + itemId + ".");
 				}
 			}
-		});
+		}
+
+		_maxPoints = document.MaxPoints;
+		_maxTicketCharge = document.MaxTicketCharge;
+		_fees = fees.ToFrozenDictionary();
+		_groupOptions = options.ToFrozenDictionary();
+		_items = items.ToFrozenDictionary();
+
+		_logger.Info(GetType().Name + ": Loaded " + _groupOptions.Count + " groups and " + _fees.Count + " options.");
 	}
 
 	public int getMaxPoints()
 	{
 		return _maxPoints;
 	}
-	
+
 	public int getMaxTicketCharge()
 	{
 		return _maxTicketCharge;
 	}
-	
-	public EnchantChallengePointsOptionInfo getOptionInfo(int groupId, int optionIndex)
+
+	public EnchantChallengePointsOptionInfo? getOptionInfo(int groupId, int optionIndex)
 	{
-		return _groupOptions.get(groupId).get(optionIndex);
+		return _groupOptions.GetValueOrDefault((groupId, optionIndex));
 	}
-	
-	public EnchantChallengePointsItemInfo getInfoByItemId(int itemId)
+
+	public EnchantChallengePointsItemInfo? getInfoByItemId(int itemId)
 	{
-		return _items.get(itemId);
+		return _items.GetValueOrDefault(itemId);
 	}
-	
+
 	public int getFeeForOptionIndex(int optionIndex)
 	{
-		return _fees.get(optionIndex);
+		return _fees.GetValueOrDefault(optionIndex);
 	}
-	
+
 	public int[] handleFailure(Player player, Item item)
 	{
 		EnchantChallengePointsItemInfo info = getInfoByItemId(item.getId());
 		if (info == null)
-		{
-			return new int[]
-			{
-				-1,
-				-1
-			};
-		}
-		
-		int groupId = info.groupId;
-		int pointsToGive = info.pointsByEnchantLevel.getOrDefault(item.getEnchantLevel(), 0);
+			return [-1, -1];
+
+		int groupId = info.GroupId;
+		int pointsToGive = info.PointsByEnchantLevel.GetValueOrDefault(item.getEnchantLevel());
 		if (pointsToGive > 0)
 		{
 			player.getChallengeInfo().getChallengePoints().AddOrUpdate(groupId,
 				_ => Math.Min(getMaxPoints(), pointsToGive),
 				(_, v) => Math.Min(getMaxPoints(), v + pointsToGive));
-			
+
 			player.getChallengeInfo().setNowGroup(groupId);
 			player.getChallengeInfo().setNowGroup(pointsToGive);
 		}
-		
+
 		return [groupId, pointsToGive];
 	}
 
-	public record EnchantChallengePointsOptionInfo(int index, int chance, int minEnchant, int maxEnchant);
+	public record EnchantChallengePointsOptionInfo(int Chance, int MinEnchant, int MaxEnchant);
+	public record EnchantChallengePointsItemInfo(int GroupId, FrozenDictionary<int, int> PointsByEnchantLevel);
 
-	public record EnchantChallengePointsItemInfo(int itemId, int groupId, Map<int, int> pointsByEnchantLevel);
-	
 	public static EnchantChallengePointData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EnchantChallengePointData INSTANCE = new();

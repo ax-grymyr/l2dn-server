@@ -80,19 +80,19 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 				.getInfoByItemId(item.getId());
 			if (info != null)
 			{
-				int groupId = info.groupId;
+				int groupId = info.GroupId;
 				int pendingGroupId = player.getChallengeInfo().getChallengePointsPendingRecharge()[0];
 				int pendingOptionIndex = player.getChallengeInfo().getChallengePointsPendingRecharge()[1];
 				if (pendingGroupId == groupId &&
-				    (pendingOptionIndex == EnchantChallengePointData.OPTION_PROB_INC1 ||
-				     pendingOptionIndex == EnchantChallengePointData.OPTION_PROB_INC2))
+				    (pendingOptionIndex == EnchantChallengePointData.OptionProbInc1 ||
+				     pendingOptionIndex == EnchantChallengePointData.OptionProbInc2))
 				{
 					EnchantChallengePointData.EnchantChallengePointsOptionInfo optionInfo = EnchantChallengePointData
 						.getInstance().getOptionInfo(pendingGroupId, pendingOptionIndex);
-					if (optionInfo != null && item.getEnchantLevel() >= optionInfo.minEnchant &&
-					    item.getEnchantLevel() <= optionInfo.maxEnchant)
+					if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant &&
+					    item.getEnchantLevel() <= optionInfo.MaxEnchant)
 					{
-						challengePointsChance = optionInfo.chance;
+						challengePointsChance = optionInfo.Chance;
 						player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
 					}
 				}
