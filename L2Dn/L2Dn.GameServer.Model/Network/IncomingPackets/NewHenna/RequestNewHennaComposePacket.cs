@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Henna;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.NewHenna;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 using L2Dn.Utilities;

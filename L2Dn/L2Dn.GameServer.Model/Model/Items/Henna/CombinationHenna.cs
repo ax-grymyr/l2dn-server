@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Henna;

@@ -1,4 +1,4 @@
-namespace L2Dn.GameServer.Model.Items.Combination;
+namespace L2Dn.Model.Enums;
 
 /**
  * @author UnAfraid

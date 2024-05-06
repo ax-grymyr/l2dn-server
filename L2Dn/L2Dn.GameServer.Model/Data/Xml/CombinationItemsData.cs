@@ -1,97 +1,142 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Items.Combination;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author UnAfraid
- */
-public class CombinationItemsData: DataReaderBase
+public sealed class CombinationItemsData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CombinationItemsData));
-	private readonly List<CombinationItem> _items = new();
-	
-	protected CombinationItemsData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(CombinationItemsData));
+	private ImmutableArray<CombinationItem> _items = [];
+
+	private CombinationItemsData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
 	public void load()
 	{
-		_items.Clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "CombinationItems.xml");
-		document.Elements("list").Elements("item").ForEach(loadElement);
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _items.size() + " combinations.");
-	}
+		List<CombinationItem> items = [];
 
-	private void loadElement(XElement element)
-	{
-		CombinationItem item = new CombinationItem(element);
+		XmlCombinationItems document =
+			LoadXmlDocument<XmlCombinationItems>(DataFileLocation.Data, "CombinationItems.xml");
 
-		element.Elements("reward").ForEach(el =>
+		foreach (XmlCombinationItem combinationItem in document.Items)
 		{
-			int id = el.GetAttributeValueAsInt32("id");
-			int count = el.Attribute("count").GetInt32(1);
-			int enchant = el.Attribute("enchant").GetInt32(0);
-			CombinationItemType type = el.Attribute("type").GetEnum<CombinationItemType>();
-			item.addReward(new CombinationItemReward(id, count, type, enchant));
-			if (ItemData.getInstance().getTemplate(id) == null)
+			if (!CheckItem(combinationItem.One) || !CheckItem(combinationItem.Two))
+				continue;
+
+			CombinationItemReward? rewardOnSuccess = null;
+			CombinationItemReward? rewardOnFailure = null;
+
+			foreach (XmlCombinationItemReward combinationItemReward in combinationItem.Rewards)
 			{
-				LOGGER.Error(GetType().Name + ": Could not find item with id " + id);
+				if (!CheckItem(combinationItemReward.Id))
+					continue;
+
+				if (combinationItemReward.Type != CombinationItemType.ON_SUCCESS &&
+				    combinationItemReward.Type != CombinationItemType.ON_FAILURE)
+				{
+					_logger.Error(nameof(CombinationItemsData) + ": Invalid reward type for item combination " +
+						combinationItem.One + " and " + combinationItem.Two);
+
+					continue;
+				}
+
+				CombinationItemReward reward = new(combinationItemReward.Id, combinationItemReward.Count,
+					combinationItemReward.Type == CombinationItemType.ON_SUCCESS, combinationItemReward.Enchant);
+
+				if (reward.OnSuccess)
+				{
+					if (rewardOnSuccess is not null)
+					{
+						_logger.Error(nameof(CombinationItemsData) + ": Duplicated reward on success for item combination " +
+							combinationItem.One + " and " + combinationItem.Two);
+
+						continue;
+					}
+
+					rewardOnSuccess = reward;
+				}
+				else
+				{
+					if (rewardOnFailure is not null)
+					{
+						_logger.Error(nameof(CombinationItemsData) + ": Duplicated reward on failure for item combination " +
+							combinationItem.One + " and " + combinationItem.Two);
+
+						continue;
+					}
+
+					rewardOnFailure = reward;
+				}
 			}
-		});
 
-		_items.add(item);
+			if (rewardOnSuccess is null)
+			{
+				_logger.Error(nameof(CombinationItemsData) + ": Missing reward on success for item combination " +
+					combinationItem.One + " and " + combinationItem.Two);
+
+				continue;
+			}
+
+			if (rewardOnFailure is null)
+			{
+				_logger.Error(nameof(CombinationItemsData) + ": Missing reward on failure for item combination " +
+					combinationItem.One + " and " + combinationItem.Two);
+
+				continue;
+			}
+
+			CombinationItem item = new(combinationItem.One, combinationItem.EnchantOne, combinationItem.Two,
+				combinationItem.EnchantTwo, combinationItem.Commission, combinationItem.Chance,
+				combinationItem.Announce, rewardOnSuccess, rewardOnFailure);
+
+			items.Add(item);
+		}
+
+		_items = items.ToImmutableArray();
+
+		_logger.Info(GetType().Name + ": Loaded " + _items.Length + " combinations.");
 	}
 
-	public int getLoadedElementsCount()
+	private static bool CheckItem(int itemId)
 	{
-		return _items.size();
+		if (ItemData.getInstance().getTemplate(itemId) == null)
+		{
+			_logger.Error(nameof(CombinationItemsData) + ": Could not find item with id " + itemId);
+			return false;
+		}
+
+		return true;
 	}
-	
-	public List<CombinationItem> getItems()
-	{
-		return _items;
-	}
-	
-	public CombinationItem getItemsBySlots(int firstSlot, int enchantOne, int secondSlot, int enchantTwo)
+
+	public CombinationItem? getItemsBySlots(int firstSlot, int enchantOne, int secondSlot, int enchantTwo)
 	{
 		foreach (CombinationItem item in _items)
 		{
-			if ((item.getItemOne() == firstSlot) && (item.getItemTwo() == secondSlot) && (item.getEnchantOne() == enchantOne) && (item.getEnchantTwo() == enchantTwo))
+			if (item.getItemOne() == firstSlot && item.getItemTwo() == secondSlot &&
+			    item.getEnchantOne() == enchantOne && item.getEnchantTwo() == enchantTwo)
 			{
 				return item;
 			}
 		}
+
 		return null;
 	}
-	
-	public List<CombinationItem> getItemsByFirstSlot(int id, int enchantOne)
+
+	public ImmutableArray<CombinationItem> getItemsByFirstSlot(int id, int enchantOne)
 	{
-		List<CombinationItem> result = new();
-		foreach (CombinationItem item in _items)
-		{
-			if ((item.getItemOne() == id) && (item.getEnchantOne() == enchantOne))
-			{
-				result.add(item);
-			}
-		}
-		return result;
+		return _items.Where(item => item.getItemOne() == id && item.getEnchantOne() == enchantOne).ToImmutableArray();
 	}
-	
+
 	public static CombinationItemsData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CombinationItemsData INSTANCE = new();

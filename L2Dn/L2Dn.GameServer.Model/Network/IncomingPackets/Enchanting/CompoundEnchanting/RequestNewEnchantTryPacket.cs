@@ -9,6 +9,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.CompoundEnchant;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 using L2Dn.Utilities;
@@ -92,8 +93,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    // Calculate compound result.
 	    double random = Rnd.nextDouble() * 100;
 	    bool success = random <= combinationItem.getChance();
-	    CombinationItemReward rewardItem =
-		    combinationItem.getReward(success ? CombinationItemType.ON_SUCCESS : CombinationItemType.ON_FAILURE);
+	    CombinationItemReward rewardItem = combinationItem.getReward(success);
 
 	    // Add item (early).
 	    Item item = player.addItem("Compound-Result", rewardItem.getId(), rewardItem.getCount(),

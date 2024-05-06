@@ -4,6 +4,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.GameServer.Model.Items.Henna;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
 

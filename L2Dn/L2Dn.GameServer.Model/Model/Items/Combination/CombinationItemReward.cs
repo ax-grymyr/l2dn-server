@@ -2,20 +2,8 @@ using L2Dn.GameServer.Model.Holders;
 
 namespace L2Dn.GameServer.Model.Items.Combination;
 
-/**
- * @author UnAfraid
- */
-public class CombinationItemReward: ItemEnchantHolder
+public class CombinationItemReward(int id, int count, bool onSuccess, int enchant)
+	: ItemEnchantHolder(id, count, enchant)
 {
-	private readonly CombinationItemType _type;
-
-	public CombinationItemReward(int id, int count, CombinationItemType type, int enchant): base(id, count, enchant)
-	{
-		_type = type;
-	}
-
-	public CombinationItemType getType()
-	{
-		return _type;
-	}
+	public bool OnSuccess => onSuccess;
 }
