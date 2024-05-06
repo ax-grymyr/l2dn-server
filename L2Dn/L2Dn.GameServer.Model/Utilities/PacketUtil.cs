@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Geometry;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Utilities;

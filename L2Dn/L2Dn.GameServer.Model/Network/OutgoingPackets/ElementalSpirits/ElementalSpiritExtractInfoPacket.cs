@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
@@ -35,7 +36,7 @@ public readonly struct ElementalSpiritExtractInfoPacket: IOutgoingPacket
         
         // for each cost count
         writer.WriteInt32(57); // item id
-        writer.WriteInt32(ElementalSpiritData.EXTRACT_FEES[spirit.getStage() - 1]); // item count
+        writer.WriteInt32(ElementalSpiritData.ExtractFees[spirit.getStage() - 1]); // item count
         writer.WriteInt32(spirit.getExtractItem());
         writer.WriteInt32(spirit.getExtractAmount());
     }

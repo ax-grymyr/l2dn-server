@@ -1,7 +1,8 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
@@ -21,7 +22,7 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ELEMENTAL_SPIRIT_EVOLUTION_INFO);
         
-        ElementalSpirit spirit = _player.getElementalSpirit(_type);
+        ElementalSpirit? spirit = _player.getElementalSpirit(_type);
         if (spirit == null)
         {
             writer.WriteByte(0);
@@ -34,8 +35,9 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
         writer.WriteInt32(1); // unk
         writer.WriteInt32(spirit.getStage());
         writer.WriteDouble(100); // chance ??
-        List<ItemHolder> items = spirit.getItemsToEvolve();
-        writer.WriteInt32(items.Count);
+
+        ImmutableArray<ItemHolder> items = spirit.getItemsToEvolve();
+        writer.WriteInt32(items.Length);
         foreach (ItemHolder item in items)
         {
             writer.WriteInt32(item.getId());

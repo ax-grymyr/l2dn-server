@@ -1,42 +1,11 @@
-using L2Dn.GameServer.Enums;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
 
-/**
- * @author Mobius
- */
-public class ElementalItemHolder
+public sealed class ElementalItemHolder(int itemId, AttributeType element, ElementalItemType type, int power)
 {
-	private readonly int _itemId;
-	private readonly AttributeType _element;
-	private readonly ElementalItemType _type;
-	private readonly int _power;
-	
-	public ElementalItemHolder(int itemId, AttributeType element, ElementalItemType type, int power)
-	{
-		_itemId = itemId;
-		_element = element;
-		_type = type;
-		_power = power;
-	}
-	
-	public int getItemId()
-	{
-		return _itemId;
-	}
-	
-	public AttributeType getElement()
-	{
-		return _element;
-	}
-	
-	public ElementalItemType getType()
-	{
-		return _type;
-	}
-	
-	public int getPower()
-	{
-		return _power;
-	}
+	public int getItemId() => itemId;
+	public AttributeType getElement() => element;
+	public ElementalItemType getType() => type;
+	public int getPower() => power;
 }

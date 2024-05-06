@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -79,7 +80,7 @@ public struct ExElementalSpiritExtractPacket: IIncomingPacket<GameSession>
             return false;
         }
 
-        if (!player.reduceAdena("ElementalSpiritExtract", ElementalSpiritData.EXTRACT_FEES[spirit.getStage() - 1],
+        if (!player.reduceAdena("ElementalSpiritExtract", ElementalSpiritData.ExtractFees[spirit.getStage() - 1],
                 player, true))
         {
             player.sendPacket(SystemMessageId.NOT_ENOUGH_MATERIALS_FOR_EXTRACTION);

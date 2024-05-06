@@ -1,14 +1,6 @@
-﻿namespace L2Dn.GameServer.Enums;
+﻿using L2Dn.Model.Enums;
 
-public enum ElementalItemType
-{
-    STONE,
-    STONE_SUPER,
-    CRYSTAL,
-    CRYSTAL_SUPER,
-    JEWEL,
-    ENERGY
-}
+namespace L2Dn.GameServer.Enums;
 
 public static class ElementalItemTypeUtil
 {

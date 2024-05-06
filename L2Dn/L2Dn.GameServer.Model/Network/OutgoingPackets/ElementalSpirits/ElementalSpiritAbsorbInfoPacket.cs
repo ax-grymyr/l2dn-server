@@ -1,7 +1,8 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.Model.Enums;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
@@ -37,8 +38,9 @@ public readonly struct ElementalSpiritAbsorbInfoPacket: IOutgoingPacket
         writer.WriteInt64(spirit.getExperienceToNextLevel()); // MaxExp
         writer.WriteInt32(spirit.getLevel());
         writer.WriteInt32(spirit.getMaxLevel());
-        List<ElementalSpiritAbsorbItemHolder> absorbItems = spirit.getAbsorbItems();
-        writer.WriteInt32(absorbItems.Count); // AbsorbCount
+
+        ImmutableArray<ElementalSpiritAbsorbItemHolder> absorbItems = spirit.getAbsorbItems();
+        writer.WriteInt32(absorbItems.Length); // AbsorbCount
         foreach (ElementalSpiritAbsorbItemHolder absorbItem in absorbItems)
         {
             writer.WriteInt32(absorbItem.getId());

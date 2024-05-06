@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
@@ -7,6 +8,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Model;
@@ -106,11 +108,11 @@ public class ElementalSpirit
 	
 	public int getExtractAmount()
 	{
-		float amount = _data.getExperience() / ElementalSpiritData.FRAGMENT_XP_CONSUME;
+		float amount = _data.getExperience() / ElementalSpiritData.FragmentXpConsume;
 		if (getLevel() > 1)
 		{
 			amount += ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage())
-				.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FRAGMENT_XP_CONSUME;
+				.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FragmentXpConsume;
 		}
 		
 		return (int)amount;
@@ -219,12 +221,12 @@ public class ElementalSpirit
 		return _data.getCritDamagePoints();
 	}
 	
-	public List<ItemHolder> getItemsToEvolve()
+	public ImmutableArray<ItemHolder> getItemsToEvolve()
 	{
 		return _template.getItemsToEvolve();
 	}
 	
-	public List<ElementalSpiritAbsorbItemHolder> getAbsorbItems()
+	public ImmutableArray<ElementalSpiritAbsorbItemHolder> getAbsorbItems()
 	{
 		return _template.getAbsorbItems();
 	}

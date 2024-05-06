@@ -1,9 +1,8 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
-using L2Dn.GameServer.Enums;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -13,86 +12,68 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class ElementalSpiritData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ElementalSpiritData));
-	
-	public static readonly float FRAGMENT_XP_CONSUME = 50000.0f;
-	public const int TALENT_INIT_FEE = 50000;
-	public static int[] EXTRACT_FEES =
-	{
-		100000,
-		200000,
-		300000,
-		600000,
-		1500000
-	};
-	
-	private static readonly Map<ElementalType, Map<byte, ElementalSpiritTemplateHolder>> SPIRIT_DATA = new();
-	
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(ElementalSpiritData));
+
+	public const float FragmentXpConsume = 50000.0f;
+	public const int TalentInitFee = 50000;
+
+	// TODO load from xml or from config
+	public static readonly ImmutableArray<int> ExtractFees = [100000, 200000, 300000, 600000, 1500000];
+
+	private static FrozenDictionary<(ElementalType, byte), ElementalSpiritTemplateHolder> _spiritData =
+		FrozenDictionary<(ElementalType, byte), ElementalSpiritTemplateHolder>.Empty;
+
 	protected ElementalSpiritData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ElementalSpiritData.xml");
-		document.Elements("list").Elements("spirit").ForEach(parseSpirit);
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + SPIRIT_DATA.size() + " elemental spirit templates.");
-	}
-	
-	private void parseSpirit(XElement spiritNode)
-	{
-		ElementalType type = (ElementalType)spiritNode.Attribute("type").GetByte();
-		byte stage = spiritNode.Attribute("stage").GetByte();
-		int npcId = spiritNode.GetAttributeValueAsInt32("npcId");
-		int extractItem = spiritNode.GetAttributeValueAsInt32("extractItem");
-		int maxCharacteristics = spiritNode.GetAttributeValueAsInt32("maxCharacteristics");
-		ElementalSpiritTemplateHolder template = new ElementalSpiritTemplateHolder(type, stage, npcId, extractItem, maxCharacteristics);
-		SPIRIT_DATA.computeIfAbsent(type, x => new()).put(stage, template);
+		XmlElementalSpiritData document =
+			LoadXmlDocument<XmlElementalSpiritData>(DataFileLocation.Data, "ElementalSpiritData.xml");
 
-		spiritNode.Elements("level").ForEach(levelNode =>
+		Dictionary<(ElementalType, byte), ElementalSpiritTemplateHolder> spiritData = [];
+		foreach (XmlElementalSpirit xmlElementalSpirit in document.Spirits)
 		{
-			int level = levelNode.GetAttributeValueAsInt32("id");
-			int attack = levelNode.GetAttributeValueAsInt32("atk");
-			int defense = levelNode.GetAttributeValueAsInt32("def");
-			int criticalRate = levelNode.GetAttributeValueAsInt32("critRate");
-			int criticalDamage = levelNode.GetAttributeValueAsInt32("critDam");
-			long maxExperience = levelNode.GetAttributeValueAsInt64("maxExp");
-			template.addLevelInfo(level, attack, defense, criticalRate, criticalDamage, maxExperience);
-		});
-		
-		spiritNode.Elements("itemToEvolve").ForEach(itemNode =>
-		{
-			int itemId = itemNode.GetAttributeValueAsInt32("id");
-			int count = itemNode.Attribute("count").GetInt32(1);
-			template.addItemToEvolve(itemId, count);
-		});
-		
-		spiritNode.Elements("absorbItem").ForEach(absorbItemNode =>
-		{
-			int itemId = absorbItemNode.GetAttributeValueAsInt32("id");
-			int experience = absorbItemNode.GetAttributeValueAsInt32("experience");
-			template.addAbsorbItem(itemId, experience);
-		});
-	}
-	
-	public ElementalSpiritTemplateHolder getSpirit(ElementalType type, byte stage)
-	{
-		if (SPIRIT_DATA.containsKey(type))
-		{
-			return SPIRIT_DATA.get(type).get(stage);
+			ElementalType type = (ElementalType)xmlElementalSpirit.Type;
+			byte stage = xmlElementalSpirit.Stage;
+
+			ImmutableArray<ElementalSpiritLevel> levels = xmlElementalSpirit.Levels.Select(x
+				=> new ElementalSpiritLevel(x.Level, x.Attack, x.Defense, x.CriticalRate, x.CriticalDamage,
+					x.MaxExperience)).ToImmutableArray();
+
+			ImmutableArray<ItemHolder> itemsToEvolve =
+				xmlElementalSpirit.ItemsToEvolve.Select(x => new ItemHolder(x.Id, x.Count)).ToImmutableArray();
+
+			ImmutableArray<ElementalSpiritAbsorbItemHolder> absorbItems = xmlElementalSpirit.AbsorbItems
+				.Select(x => new ElementalSpiritAbsorbItemHolder(x.Id, x.Experience)).ToImmutableArray();
+
+			ElementalSpiritTemplateHolder template = new(type, stage, xmlElementalSpirit.NpcId,
+				xmlElementalSpirit.ExtractItem, xmlElementalSpirit.MaxCharacteristics, levels, itemsToEvolve,
+				absorbItems);
+
+			if (spiritData.TryAdd((type, stage), template))
+				_logger.Info($"{GetType().Name}: Duplicated data for spirit type {type} and stage {stage}.");
 		}
-		return null;
+
+		_spiritData = spiritData.ToFrozenDictionary();
+
+		_logger.Info(GetType().Name + ": Loaded " + _spiritData.Count + " elemental spirit templates.");
 	}
-	
+
+	public ElementalSpiritTemplateHolder? getSpirit(ElementalType type, byte stage)
+	{
+		return _spiritData.GetValueOrDefault((type, stage));
+	}
+
 	public static ElementalSpiritData getInstance()
 	{
 		return Singleton.INSTANCE;
 	}
-	
+
 	private static class Singleton
 	{
-		public static readonly ElementalSpiritData INSTANCE = new ElementalSpiritData();
+		public static readonly ElementalSpiritData INSTANCE = new();
 	}
 }

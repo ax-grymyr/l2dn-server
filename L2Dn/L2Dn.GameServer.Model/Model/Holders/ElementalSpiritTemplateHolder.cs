@@ -1,5 +1,6 @@
-using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Utilities;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -13,125 +14,35 @@ public class ElementalSpiritTemplateHolder
 	private readonly int _npcId;
 	private readonly int _maxCharacteristics;
 	private readonly int _extractItem;
+	private readonly FrozenDictionary<int, ElementalSpiritLevel> _levels;
+	private readonly ImmutableArray<ItemHolder> _itemsToEvolve;
+	private readonly ImmutableArray<ElementalSpiritAbsorbItemHolder> _absorbItems;
 
-	private readonly Map<int, SpiritLevel> _levels;
-	private List<ItemHolder> _itemsToEvolve;
-	private List<ElementalSpiritAbsorbItemHolder> _absorbItems;
-
-	public ElementalSpiritTemplateHolder(ElementalType type, byte stage, int npcId, int extractItem, int maxCharacteristics)
+	public ElementalSpiritTemplateHolder(ElementalType type, byte stage, int npcId, int extractItem,
+		int maxCharacteristics, ImmutableArray<ElementalSpiritLevel> levels, ImmutableArray<ItemHolder> itemsToEvolve,
+		ImmutableArray<ElementalSpiritAbsorbItemHolder> absorbItems)
 	{
 		_type = type;
 		_stage = stage;
 		_npcId = npcId;
 		_extractItem = extractItem;
 		_maxCharacteristics = maxCharacteristics;
-		_levels = new();
+		_levels = levels.ToFrozenDictionary(l => l.Level);
+		_itemsToEvolve = itemsToEvolve;
+		_absorbItems = absorbItems;
 	}
 
-	public void addLevelInfo(int level, int attack, int defense, int criticalRate, int criticalDamage,
-		long maxExperience)
-	{
-		SpiritLevel spiritLevel = new SpiritLevel();
-		spiritLevel.attack = attack;
-		spiritLevel.defense = defense;
-		spiritLevel.criticalRate = criticalRate;
-		spiritLevel.criticalDamage = criticalDamage;
-		spiritLevel.maxExperience = maxExperience;
-		_levels.put(level, spiritLevel);
-	}
-
-	public void addItemToEvolve(int itemId, int count)
-	{
-		if (_itemsToEvolve == null)
-		{
-			_itemsToEvolve = new();
-		}
-
-		_itemsToEvolve.Add(new ItemHolder(itemId, count));
-	}
-
-	public ElementalType getType()
-	{
-		return _type;
-	}
-
-	public byte getStage()
-	{
-		return _stage;
-	}
-
-	public int getNpcId()
-	{
-		return _npcId;
-	}
-
-	public long getMaxExperienceAtLevel(int level)
-	{
-		SpiritLevel spiritLevel = _levels.get(level);
-		return spiritLevel == null ? 0 : spiritLevel.maxExperience;
-	}
-
-	public int getMaxLevel()
-	{
-		return _levels.size();
-	}
-
-	public int getAttackAtLevel(int level)
-	{
-		return _levels.get(level).attack;
-	}
-
-	public int getDefenseAtLevel(int level)
-	{
-		return _levels.get(level).defense;
-	}
-
-	public int getCriticalRateAtLevel(int level)
-	{
-		return _levels.get(level).criticalRate;
-	}
-
-	public int getCriticalDamageAtLevel(int level)
-	{
-		return _levels.get(level).criticalDamage;
-	}
-
-	public int getMaxCharacteristics()
-	{
-		return _maxCharacteristics;
-	}
-
-	public List<ItemHolder> getItemsToEvolve()
-	{
-		return _itemsToEvolve == null ? new() : _itemsToEvolve;
-	}
-
-	public void addAbsorbItem(int itemId, int experience)
-	{
-		if (_absorbItems == null)
-		{
-			_absorbItems = new();
-		}
-
-		_absorbItems.Add(new ElementalSpiritAbsorbItemHolder(itemId, experience));
-	}
-
-	public List<ElementalSpiritAbsorbItemHolder> getAbsorbItems()
-	{
-		return _absorbItems == null ? new() : _absorbItems;
-	}
-
-	public int getExtractItem()
-	{
-		return _extractItem;
-	}
-
-	private class SpiritLevel
-	{
-		public long maxExperience;
-		public int criticalDamage;
-		public int criticalRate;
-		public int defense;
-		public int attack;
-	}
+	public ElementalType getType() => _type;
+	public byte getStage() => _stage;
+	public int getNpcId() => _npcId;
+	public long getMaxExperienceAtLevel(int level) => _levels.GetValueOrDefault(level)?.MaxExperience ?? 0;
+	public int getMaxLevel() => _levels.Count;
+	public int getAttackAtLevel(int level) => _levels.GetValueOrDefault(level)?.Attack ?? 0;
+	public int getDefenseAtLevel(int level) => _levels.GetValueOrDefault(level)?.Defense ?? 0;
+	public int getCriticalRateAtLevel(int level) => _levels.GetValueOrDefault(level)?.CriticalRate ?? 0;
+	public int getCriticalDamageAtLevel(int level) => _levels.GetValueOrDefault(level)?.CriticalDamage ?? 0;
+	public int getMaxCharacteristics() => _maxCharacteristics;
+	public ImmutableArray<ItemHolder> getItemsToEvolve() => _itemsToEvolve;
+	public ImmutableArray<ElementalSpiritAbsorbItemHolder> getAbsorbItems() => _absorbItems;
+	public int getExtractItem() => _extractItem;
 }

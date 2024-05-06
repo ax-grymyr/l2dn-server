@@ -1,16 +1,6 @@
-﻿using L2Dn.GameServer.Model.Stats;
-using L2Dn.Model.Enums;
+﻿using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Enums;
-
-public enum ElementalType: byte
-{
-    NONE,
-    FIRE,
-    WATER,
-    WIND,
-    EARTH
-}
 
 public static class ElementalTypeUtil
 {

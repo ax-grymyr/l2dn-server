@@ -14816,7 +14816,7 @@ public class Player: Playable
 		return getStat().getElementalSpiritXpBonus();
 	}
 	
-	public ElementalSpirit getElementalSpirit(ElementalType type)
+	public ElementalSpirit? getElementalSpirit(ElementalType type)
 	{
 		if ((_spirits == null) || (type == null) || (type == ElementalType.NONE))
 		{

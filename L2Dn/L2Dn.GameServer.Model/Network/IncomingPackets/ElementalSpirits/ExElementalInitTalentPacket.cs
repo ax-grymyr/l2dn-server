@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -38,7 +39,7 @@ public struct ExElementalInitTalentPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (player.reduceAdena("Talent", ElementalSpiritData.TALENT_INIT_FEE, player, true))
+        if (player.reduceAdena("Talent", ElementalSpiritData.TalentInitFee, player, true))
         {
             spirit.resetCharacteristics();
             connection.Send(SystemMessageId.RESET_THE_SELECTED_SPIRIT_S_CHARACTERISTICS_SUCCESSFULLY);

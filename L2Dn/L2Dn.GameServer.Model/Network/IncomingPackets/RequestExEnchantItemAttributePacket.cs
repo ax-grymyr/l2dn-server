@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -302,10 +303,10 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		
 		if (item.isWeapon())
 		{
-			return ElementalAttributeData.WEAPON_VALUES[elementItem.getType().GetMaxLevel()];
+			return ElementalAttributeData.WeaponValues[elementItem.getType().GetMaxLevel()];
 		}
 		
-		return ElementalAttributeData.ARMOR_VALUES[elementItem.getType().GetMaxLevel()];
+		return ElementalAttributeData.ArmorValues[elementItem.getType().GetMaxLevel()];
 	}
 	
 	public static int getPowerToAdd(int stoneId, int oldValue, Item item)
@@ -320,15 +321,15 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			{
 				if (oldValue == 0)
 				{
-					return ElementalAttributeData.FIRST_WEAPON_BONUS;
+					return ElementalAttributeData.FirstWeaponBonus;
 				}
 			
-				return ElementalAttributeData.NEXT_WEAPON_BONUS;
+				return ElementalAttributeData.NextWeaponBonus;
 			}
 			
 			if (item.isArmor())
 			{
-				return ElementalAttributeData.ARMOR_BONUS;
+				return ElementalAttributeData.ArmorBonus;
 			}
 		}
 		return 0;

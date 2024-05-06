@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Model;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Network.Enums;
 
