@@ -8,35 +8,30 @@ namespace L2Dn.GameServer.Handlers;
  */
 public class DailyMissionHandler
 {
-	private readonly Map<String, Func<DailyMissionDataHolder, AbstractDailyMissionHandler>> _handlerFactories = new();
+	private readonly Map<string, Func<DailyMissionDataHolder, AbstractDailyMissionHandler>> _handlerFactories = new();
 
 	private DailyMissionHandler()
 	{
 		//_logger.Info(GetType().Name + ": Loaded " + size() + " handlers.");
 	}
-	
-	public void registerHandler(String name, Func<DailyMissionDataHolder, AbstractDailyMissionHandler> handlerFactory)
+
+	public void registerHandler(string name, Func<DailyMissionDataHolder, AbstractDailyMissionHandler> handlerFactory)
 	{
 		_handlerFactories.put(name, handlerFactory);
 	}
-	
-	public Func<DailyMissionDataHolder, AbstractDailyMissionHandler> getHandler(String name)
+
+	public Func<DailyMissionDataHolder, AbstractDailyMissionHandler>? getHandler(string name)
 	{
-		return _handlerFactories.get(name);
+		return _handlerFactories.GetValueOrDefault(name);
 	}
-	
-	public int size()
-	{
-		return _handlerFactories.size();
-	}
-	
+
 	public static DailyMissionHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly DailyMissionHandler INSTANCE = new DailyMissionHandler();
+		public static readonly DailyMissionHandler INSTANCE = new();
 	}
 }

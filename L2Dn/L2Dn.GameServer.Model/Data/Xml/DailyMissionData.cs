@@ -1,8 +1,11 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Utilities;
+using L2Dn.GameServer.Model.Holders;
+using L2Dn.Model;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -10,71 +13,91 @@ namespace L2Dn.GameServer.Data.Xml;
 /**
  * @author Sdw, Mobius
  */
-public class DailyMissionData: DataReaderBase
+public sealed class DailyMissionData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(DailyMissionData));
-	
-	private readonly Map<int, List<DailyMissionDataHolder>> _dailyMissionRewards = new();
-	private readonly List<DailyMissionDataHolder> _dailyMissionData = new();
-	private bool _isAvailable;
-	
-	protected DailyMissionData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(DailyMissionData));
+
+	private FrozenDictionary<int, DailyMissionDataHolder> _dailyMissionRewards =
+		FrozenDictionary<int, DailyMissionDataHolder>.Empty;
+
+	private DailyMissionData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		_dailyMissionRewards.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "DailyMission.xml");
-		document.Elements("list").Elements("reward").ForEach(loadElement);
-		
-		_dailyMissionData.Clear();
-		foreach (List<DailyMissionDataHolder> missionList in _dailyMissionRewards.values())
+		Dictionary<int, DailyMissionDataHolder> dailyMissionRewards = [];
+
+		XmlDailyMissionData document = LoadXmlDocument<XmlDailyMissionData>(DataFileLocation.Data, "DailyMission.xml");
+		bool missionSeasonStarted = MissionLevel.getInstance().getCurrentSeason() <= 0; // TODO Must be handled somewhere else
+		foreach (XmlDailyMission xmlDailyMission in document.DailyMissions)
 		{
-			_dailyMissionData.AddRange(missionList);
+			ImmutableArray<CharacterClass> characterClasses =
+				xmlDailyMission.ClassIds.Select(x => (CharacterClass)x).ToImmutableArray();
+
+			// TODO check item ids
+			ImmutableArray<ItemHolder> rewardItems = xmlDailyMission.Rewards
+				.Where(x => missionSeasonStarted || x.Id != AbstractDailyMissionHandler.MISSION_LEVEL_POINTS)
+				.Select(x => new ItemHolder(x.Id, x.Count)).ToImmutableArray();
+
+			Func<DailyMissionDataHolder, AbstractDailyMissionHandler>? handlerFactory = null;
+			StatSet handlerParams = StatSet.EMPTY_STATSET;
+			if (xmlDailyMission.Handler is not null)
+			{
+				handlerFactory = DailyMissionHandler.getInstance().getHandler(xmlDailyMission.Handler.Name);
+				if (handlerFactory is null)
+				{
+					_logger.Error($"{GetType().Name}: Unknown handler '{xmlDailyMission.Handler.Name}' for daily mission id={xmlDailyMission.Id}.");
+					continue;
+				}
+
+				handlerParams = new();
+				foreach (XmlDailyMissionHandlerParam xmlDailyMissionHandlerParam in xmlDailyMission.Handler.Parameters)
+					handlerParams.set(xmlDailyMissionHandlerParam.Name, xmlDailyMissionHandlerParam.Value);
+			}
+
+			DailyMissionDataHolder holder = new(xmlDailyMission.Id, xmlDailyMission.RequiredCompletion,
+				xmlDailyMission.DailyReset, xmlDailyMission.IsOneTime, xmlDailyMission.IsMainClassOnly,
+				xmlDailyMission.IsDualClassOnly, xmlDailyMission.IsDisplayedWhenNotAvailable, xmlDailyMission.Duration,
+				characterClasses, rewardItems, handlerFactory, handlerParams);
+
+			if (!dailyMissionRewards.TryAdd(holder.getId(), holder))
+				_logger.Error($"{GetType().Name}: Duplicated daily mission id={holder.getId()}.");
 		}
-		
-		_isAvailable = !_dailyMissionRewards.isEmpty();
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _dailyMissionRewards.size() + " one day rewards.");
+
+		_dailyMissionRewards = dailyMissionRewards.ToFrozenDictionary();
+
+		_logger.Info(GetType().Name + ": Loaded " + _dailyMissionRewards.Count + " one day rewards.");
 	}
 
-	private void loadElement(XElement element)
+	public ImmutableArray<DailyMissionDataHolder> getDailyMissionData()
 	{
-		DailyMissionDataHolder holder = new DailyMissionDataHolder(element);
-		_dailyMissionRewards.computeIfAbsent(holder.getId(), k => new()).add(holder);
+		return _dailyMissionRewards.Values;
 	}
 
-	public ICollection<DailyMissionDataHolder> getDailyMissionData()
+	public List<DailyMissionDataHolder> getDailyMissionData(Player player)
 	{
-		return _dailyMissionData;
-	}
-	
-	public ICollection<DailyMissionDataHolder> getDailyMissionData(Player player)
-	{
-		List<DailyMissionDataHolder> missionData = new();
-		foreach (DailyMissionDataHolder mission in _dailyMissionData)
+		List<DailyMissionDataHolder> missionData = [];
+		foreach (DailyMissionDataHolder mission in _dailyMissionRewards.Values)
 		{
 			if (mission.isDisplayable(player))
-			{
-				missionData.add(mission);
-			}
+				missionData.Add(mission);
 		}
+
 		return missionData;
 	}
-	
-	public ICollection<DailyMissionDataHolder> getDailyMissionData(int id)
+
+	public DailyMissionDataHolder? getDailyMissionData(int id)
 	{
-		return _dailyMissionRewards.get(id);
+		return _dailyMissionRewards.GetValueOrDefault(id);
 	}
-	
+
 	public bool isAvailable()
 	{
-		return _isAvailable;
+		return _dailyMissionRewards.Count != 0;
 	}
-	
+
 	/**
 	 * Gets the single instance of DailyMissionData.
 	 * @return single instance of DailyMissionData
@@ -83,7 +106,7 @@ public class DailyMissionData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly DailyMissionData INSTANCE = new();

@@ -3,7 +3,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -26,32 +25,29 @@ public struct RequestOneDayRewardReceivePacket: IIncomingPacket<GameSession>
         // {
         //     return;
         // }
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (player.hasRequest<RewardRequest>())
             return ValueTask.CompletedTask;
 
         player.addRequest(new RewardRequest(player));
-		
-        ICollection<DailyMissionDataHolder> rewards = DailyMissionData.getInstance().getDailyMissionData(_id);
-        if ((rewards == null) || rewards.isEmpty())
+
+        DailyMissionDataHolder? holder = DailyMissionData.getInstance().getDailyMissionData(_id);
+        if (holder == null)
         {
             player.removeRequest<RewardRequest>();
             return ValueTask.CompletedTask;
         }
 
-        foreach (DailyMissionDataHolder holder in rewards)
-        {
-            if (holder.isDisplayable(player))
-                holder.requestReward(player);
-        }
+        if (holder.isDisplayable(player))
+            holder.requestReward(player);
 
         player.sendPacket(new ExOneDayReceiveRewardListPacket(player, true));
         player.sendPacket(new ExConnectedTimeAndGettableRewardPacket(player));
-		
+
         ThreadPool.schedule(() => player.removeRequest<RewardRequest>(), 300);
         return ValueTask.CompletedTask;
     }
