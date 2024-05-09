@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -45,7 +46,7 @@ public class WarehouseItem
 		0
 	};
 	
-	private readonly int[] _enchantOptions;
+	private readonly ImmutableArray<int> _enchantOptions;
 	private readonly ICollection<EnsoulOption> _soulCrystalOptions;
 	private readonly ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	
@@ -254,7 +255,7 @@ public class WarehouseItem
 		return _elemDefAttr[i];
 	}
 	
-	public int[] getEnchantOptions()
+	public ImmutableArray<int> getEnchantOptions()
 	{
 		return _enchantOptions;
 	}

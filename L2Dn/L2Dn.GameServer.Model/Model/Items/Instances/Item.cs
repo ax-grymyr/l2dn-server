@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using System.Text;
 using L2Dn.Events;
@@ -17,7 +18,6 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
@@ -97,10 +97,8 @@ public class Item: WorldObject
 	public const int REMOVED = 3;
 	public const int MODIFIED = 2;
 	
-	//@formatter:off
-	public static readonly int[] DEFAULT_ENCHANT_OPTIONS = { 0, 0, 0 };
-	//@formatter:on
-	
+	public static readonly ImmutableArray<int> DEFAULT_ENCHANT_OPTIONS = [];
+
 	private ItemChangeType _lastChange = ItemChangeType.MODIFIED; // 1 added, 2 modified, 3 removed
 	private bool _existsInDb; // if a record exists in DB.
 	private bool _storedInDb; // if DB data is up-to-date.
@@ -2106,14 +2104,9 @@ public class Item: WorldObject
 	 * Returns enchant effect object for this item
 	 * @return enchanteffect
 	 */
-	public int[] getEnchantOptions()
+	public ImmutableArray<int> getEnchantOptions()
 	{
-		EnchantOptions op = EnchantItemOptionsData.getInstance().getOptions(this);
-		if (op != null)
-		{
-			return op.getOptions();
-		}
-		return DEFAULT_ENCHANT_OPTIONS;
+		return EnchantItemOptionsData.getInstance().getOptions(this);
 	}
 	
 	public ICollection<EnsoulOption> getSpecialAbilities()
@@ -2436,14 +2429,15 @@ public class Item: WorldObject
 	public void applyEnchantStats()
 	{
 		Player player = getActingPlayer();
-		if (!isEquipped() || (player == null) || (getEnchantOptions() == DEFAULT_ENCHANT_OPTIONS))
+		ImmutableArray<int> enchantOptions = getEnchantOptions();
+		if (!isEquipped() || (player == null) || (enchantOptions.IsDefaultOrEmpty))
 		{
 			return;
 		}
-		
-		foreach (int id in getEnchantOptions())
+
+		foreach (int id in enchantOptions)
 		{
-			Options.Options options = OptionData.getInstance().getOptions(id);
+			Options.Options? options = OptionData.getInstance().getOptions(id);
 			if (options != null)
 			{
 				options.apply(player);

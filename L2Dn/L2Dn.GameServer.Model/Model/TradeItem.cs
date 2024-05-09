@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -29,7 +30,7 @@ public class TradeItem
 		0,
 		0
 	};
-	private readonly int[] _enchantOptions;
+	private readonly ImmutableArray<int> _enchantOptions;
 	private ICollection<EnsoulOption> _soulCrystalOptions;
 	private ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	private int _visualId;
@@ -80,7 +81,7 @@ public class TradeItem
 		_price = price;
 		_elemAtkType = AttributeType.NONE;
 		_elemAtkPower = 0;
-		_enchantOptions = Item.DEFAULT_ENCHANT_OPTIONS;
+		_enchantOptions = [];
 		_soulCrystalOptions = new List<EnsoulOption>();
 		_soulCrystalSpecialOptions = new List<EnsoulOption>();
 	}
@@ -205,7 +206,7 @@ public class TradeItem
 		return _elemDefAttr[i];
 	}
 	
-	public int[] getEnchantOptions()
+	public ImmutableArray<int> getEnchantOptions()
 	{
 		return _enchantOptions;
 	}

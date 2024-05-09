@@ -1,117 +1,87 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Options;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author UnAfraid, Mobius
- */
-public class EnchantItemOptionsData: DataReaderBase
+public sealed class EnchantItemOptionsData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemOptionsData));
-	
-	private readonly Map<int, Map<int, EnchantOptions>> _data = new();
-	
-	protected EnchantItemOptionsData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnchantItemOptionsData));
+
+	private FrozenDictionary<(int ItemId, int Level), ImmutableArray<int>> _data =
+		FrozenDictionary<(int ItemId, int Level), ImmutableArray<int>>.Empty;
+
+	private EnchantItemOptionsData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)]
+
 	public void load()
 	{
-		_data.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantItemOptions.xml");
-		document.Elements("list").Elements("item").ForEach(parseItem);
+		int itemCount = 0;
+		Dictionary<(int ItemId, int Level), ImmutableArray<int>> data = [];
 
-		int optionCount = _data.values().SelectMany(v => v.values()).Count();
-		LOGGER.Info(GetType().Name + ": Loaded " + _data.size() + " items and " + optionCount + " options.");
-	}
+		XmlEnchantItemOptionData document =
+			LoadXmlDocument<XmlEnchantItemOptionData>(DataFileLocation.Data, "EnchantItemOptions.xml");
 
-	private void parseItem(XElement element)
-	{
-		int itemId = element.GetAttributeValueAsInt32("id");
-		ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
-		if (template == null)
+		foreach (XmlEnchantItemOptionItem xmlEnchantItemOptionItem in document.Items)
 		{
-			LOGGER.Warn(GetType().Name + ": Could not find item template for id " + itemId);
-			return;
+			int itemId = xmlEnchantItemOptionItem.ItemId;
+			ItemTemplate? template = ItemData.getInstance().getTemplate(itemId);
+			if (template == null)
+			{
+				_logger.Error(GetType().Name + ": Could not find item template for id " + itemId);
+				continue;
+			}
+
+			foreach (XmlEnchantItemOption xmlEnchantItemOption in xmlEnchantItemOptionItem.Options)
+			{
+				int level = xmlEnchantItemOption.Level;
+				List<int> enchantOptions =
+					[xmlEnchantItemOption.Option1, xmlEnchantItemOption.Option2, xmlEnchantItemOption.Option3];
+
+				enchantOptions.RemoveAll(op => op <= 0);
+
+				foreach (int option in enchantOptions)
+				{
+					if (OptionData.getInstance().getOptions(option) == null)
+						_logger.Error(GetType().Name + ": Could not find option " + option + " for item " + template);
+				}
+
+				if (!data.TryAdd((itemId, level), enchantOptions.ToImmutableArray()))
+					_logger.Error(GetType().Name + $": Duplicated data for item id {itemId} and level {level}.");
+			}
+
+			itemCount++;
 		}
 
-		element.Elements("options").ForEach(optionsElement =>
-		{
-			int level = optionsElement.GetAttributeValueAsInt32("level");
-			EnchantOptions op = new EnchantOptions(level);
-			for (byte i = 0; i < 3; i++)
-			{
-				XAttribute? optionAttribute = optionsElement.Attribute("option" + (i + 1));
-				if (optionAttribute != null && Util.isDigit(optionAttribute.Value))
-				{
-					int id = (int)optionAttribute;
-					if (OptionData.getInstance().getOptions(id) == null)
-					{
-						LOGGER.Warn(GetType().Name + ": Could not find option " + id + " for item " + template);
-						return;
-					}
+		_data = data.ToFrozenDictionary();
 
-					Map<int, EnchantOptions> data = _data.get(itemId);
-					if (data == null)
-					{
-						data = new();
-						_data.put(itemId, data);
-					}
-
-					if (!data.containsKey(op.getLevel()))
-					{
-						data.put(op.getLevel(), op);
-					}
-
-					op.setOption(i, id);
-				}
-			}
-		});
+		_logger.Info(GetType().Name + ": Loaded " + itemCount + " items and " + _data.Count + " options.");
 	}
 
-	/**
-	 * @param itemId
-	 * @return if specified item id has available enchant effects.
-	 */
-	public bool hasOptions(int itemId)
-	{
-		return _data.containsKey(itemId);
-	}
-	
 	/**
 	 * @param itemId
 	 * @param enchantLevel
 	 * @return enchant effects information.
 	 */
-	public EnchantOptions getOptions(int itemId, int enchantLevel)
+	public ImmutableArray<int> getOptions(int itemId, int enchantLevel)
 	{
-		if (!_data.containsKey(itemId) || !_data.get(itemId).containsKey(enchantLevel))
-		{
-			return null;
-		}
-		return _data.get(itemId).get(enchantLevel);
+		return _data.GetValueOrDefault((itemId, enchantLevel), ImmutableArray<int>.Empty);
 	}
-	
+
 	/**
 	 * @param item
 	 * @return enchant effects information.
 	 */
-	public EnchantOptions getOptions(Item item)
+	public ImmutableArray<int> getOptions(Item item)
 	{
-		return item != null ? getOptions(item.getId(), item.getEnchantLevel()) : null;
+		return item != null ? getOptions(item.getId(), item.getEnchantLevel()) : ImmutableArray<int>.Empty;
 	}
-	
+
 	/**
 	 * Gets the single instance of EnchantOptionsData.
 	 * @return single instance of EnchantOptionsData
@@ -120,7 +90,7 @@ public class EnchantItemOptionsData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EnchantItemOptionsData INSTANCE = new();

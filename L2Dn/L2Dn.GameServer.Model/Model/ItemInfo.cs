@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Ensoul;
@@ -62,7 +63,7 @@ public class ItemInfo
 		0
 	};
 	
-	private int[] _option;
+	private ImmutableArray<int> _option;
 	private ICollection<EnsoulOption> _soulCrystalOptions;
 	private ICollection<EnsoulOption> _soulCrystalSpecialOptions;
 	private int _visualId;
@@ -371,7 +372,7 @@ public class ItemInfo
 		return _attributeDefence[(int)attribute];
 	}
 	
-	public int[] getEnchantOptions()
+	public ImmutableArray<int> getEnchantOptions()
 	{
 		return _option;
 	}
