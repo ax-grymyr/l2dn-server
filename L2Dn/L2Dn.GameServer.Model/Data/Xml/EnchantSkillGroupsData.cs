@@ -1,122 +1,114 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
-using L2Dn.GameServer.Enums;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * This class holds the Enchant Groups information.
- * @author Micr0
- */
-public class EnchantSkillGroupsData: DataReaderBase
+/// <summary>
+/// This class holds the Enchant Groups information.
+/// </summary>
+public sealed class EnchantSkillGroupsData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantSkillGroupsData));
-	
-	private readonly Map<int, EnchantSkillHolder> _enchantSkillHolders = new();
-	private readonly Map<SkillHolder, Set<int>> _enchantSkillTrees = new();
-	
-	public static int MAX_ENCHANT_LEVEL;
-	
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnchantSkillGroupsData));
+
+	private int _maxEnchantLevel;
+
+	private FrozenDictionary<int, EnchantSkillHolder> _enchantSkillHolders =
+		FrozenDictionary<int, EnchantSkillHolder>.Empty;
+
+	// TODO: separate from this class, this is dynamic data
+	private readonly Map<SkillHolder, Set<int>> _enchantSkillTrees = [];
+
+	public int MaxEnchantLevel => _maxEnchantLevel;
+
 	/**
 	 * Instantiates a new enchant groups table.
 	 */
-	protected EnchantSkillGroupsData()
+	private EnchantSkillGroupsData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		_enchantSkillHolders.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantSkillGroups.xml");
-		document.Elements("list").Elements("enchant").ForEach(parseEnchant);
-		
-		MAX_ENCHANT_LEVEL = _enchantSkillHolders.size();
-		LOGGER.Info(GetType().Name + ": Loaded " + _enchantSkillHolders.size() + " enchant routes, max enchant set to " + MAX_ENCHANT_LEVEL + ".");
-	}
+		Dictionary<int, EnchantSkillHolder> enchantSkillHolders = [];
 
-	private void parseEnchant(XElement element)
-	{
-		int level = element.GetAttributeValueAsInt32("level");
-		int enchantFailLevel = element.GetAttributeValueAsInt32("enchantFailLevel");
-		EnchantSkillHolder enchantSkillHolder = new EnchantSkillHolder(level, enchantFailLevel);
+		XmlEnchantSkillGroupData document =
+			LoadXmlDocument<XmlEnchantSkillGroupData>(DataFileLocation.Data, "EnchantSkillGroups.xml");
 
-		element.Elements("sps").Elements("sp").ForEach(spElement =>
+		foreach (XmlEnchantSkillGroupEnchant xmlEnchantSkillGroupEnchant in document.Enchants)
 		{
-			int amount = spElement.GetAttributeValueAsInt32("amount");
-			SkillEnchantType type = spElement.Attribute("type").GetEnum<SkillEnchantType>();
-			enchantSkillHolder.addSp(type, amount);
-		});
+			int level = xmlEnchantSkillGroupEnchant.Level;
+			EnchantSkillHolder enchantSkillHolder = new(level, xmlEnchantSkillGroupEnchant.EnchantFailLevel);
 
-		element.Elements("chances").Elements("chance").ForEach(chanceElement =>
-		{
-			int value = chanceElement.GetAttributeValueAsInt32("value");
-			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
-			enchantSkillHolder.addChance(type, value);
-		});
+			foreach (XmlEnchantSkillGroupEnchantSp xmlSp in xmlEnchantSkillGroupEnchant.Sps)
+				enchantSkillHolder.addSp(xmlSp.Type, xmlSp.Amount);
 
-		element.Elements("items").Elements("item").ForEach(chanceElement =>
-		{
-			int id = chanceElement.GetAttributeValueAsInt32("id");
-			long count = chanceElement.GetAttributeValueAsInt64("count");
-			SkillEnchantType type = chanceElement.Attribute("type").GetEnum<SkillEnchantType>();
-			enchantSkillHolder.addRequiredItem(type, new ItemHolder(id, count));
-		});
-		
-		_enchantSkillHolders.put(level, enchantSkillHolder);
+			foreach (XmlEnchantSkillGroupEnchantChance xmlChance in xmlEnchantSkillGroupEnchant.Chances)
+				enchantSkillHolder.addChance(xmlChance.Type, xmlChance.Value);
+
+			foreach (XmlEnchantSkillGroupEnchantItem xmlItem in xmlEnchantSkillGroupEnchant.Items)
+				enchantSkillHolder.addRequiredItem(xmlItem.Type, new ItemHolder(xmlItem.Id, xmlItem.Count));
+
+			if (!enchantSkillHolders.TryAdd(level, enchantSkillHolder))
+				_logger.Error(GetType().Name + $": Duplicated data for level {level}.");
+		}
+
+		_enchantSkillHolders = enchantSkillHolders.ToFrozenDictionary();
+		_maxEnchantLevel = _enchantSkillHolders.Count;
+
+		_logger.Info(GetType().Name + ": Loaded " + _enchantSkillHolders.Count +
+			" enchant routes, max enchant set to " + _maxEnchantLevel + ".");
 	}
 
 	public void addRouteForSkill(int skillId, int level, int route)
 	{
 		addRouteForSkill(new SkillHolder(skillId, level), route);
 	}
-	
+
 	public void addRouteForSkill(SkillHolder holder, int route)
 	{
 		_enchantSkillTrees.computeIfAbsent(holder, k => new()).add(route);
 	}
-	
+
 	public Set<int> getRouteForSkill(int skillId, int level)
 	{
 		return getRouteForSkill(skillId, level, 0);
 	}
-	
+
 	public Set<int> getRouteForSkill(int skillId, int level, int subLevel)
 	{
 		return getRouteForSkill(new SkillHolder(skillId, level, subLevel));
 	}
-	
+
 	public Set<int> getRouteForSkill(SkillHolder holder)
 	{
-		return _enchantSkillTrees.getOrDefault(holder, new());
+		return _enchantSkillTrees.GetValueOrDefault(holder, new());
 	}
-	
+
 	public bool isEnchantable(Skill skill)
 	{
 		return isEnchantable(new SkillHolder(skill.getId(), skill.getLevel()));
 	}
-	
+
 	public bool isEnchantable(SkillHolder holder)
 	{
-		return _enchantSkillTrees.containsKey(holder);
+		return _enchantSkillTrees.ContainsKey(holder);
 	}
-	
-	public EnchantSkillHolder getEnchantSkillHolder(int level)
+
+	public EnchantSkillHolder? getEnchantSkillHolder(int level)
 	{
-		return _enchantSkillHolders.getOrDefault(level, null);
+		return _enchantSkillHolders.GetValueOrDefault(level);
 	}
-	
+
 	public static EnchantSkillGroupsData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EnchantSkillGroupsData INSTANCE = new();

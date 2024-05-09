@@ -28,7 +28,7 @@ public readonly struct ExEnchantSkillInfoPacket: IOutgoingPacket
         writer.WriteInt32(_skillId);
         writer.WriteInt16((short)_skillLevel);
         writer.WriteInt16((short)_skillSubLevel);
-        writer.WriteInt32((_skillSubLevel % 1000) != EnchantSkillGroupsData.MAX_ENCHANT_LEVEL);
+        writer.WriteInt32((_skillSubLevel % 1000) != EnchantSkillGroupsData.getInstance().MaxEnchantLevel);
         writer.WriteInt32(_skillSubLevel > 1000);
         writer.WriteInt32(_routes.size());
         foreach (int route in _routes)
@@ -37,7 +37,7 @@ public readonly struct ExEnchantSkillInfoPacket: IOutgoingPacket
             int currentRouteId = _skillSubLevel / 1000;
             int subLevel = _currentSubLevel > 0 ? (route + (_currentSubLevel % 1000)) - 1 : route;
             writer.WriteInt16((short)_skillLevel);
-            writer.WriteInt16((short)(currentRouteId != routeId ? subLevel : Math.Min(subLevel + 1, route + (EnchantSkillGroupsData.MAX_ENCHANT_LEVEL - 1))));
+            writer.WriteInt16((short)(currentRouteId != routeId ? subLevel : Math.Min(subLevel + 1, route + (EnchantSkillGroupsData.getInstance().MaxEnchantLevel - 1))));
         }
     }
 }

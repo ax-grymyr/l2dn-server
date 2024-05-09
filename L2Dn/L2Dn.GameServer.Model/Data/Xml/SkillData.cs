@@ -117,7 +117,7 @@ public class SkillData: DataReaderBase
 		return getSkill(skillId, level, 0);
 	}
 
-	public Skill getSkill(int skillId, int level, int subLevel)
+	public Skill? getSkill(int skillId, int level, int subLevel)
 	{
 		Skill result = _skills.get(getSkillHashCode(skillId, level, subLevel));
 		if (result != null)

@@ -3,16 +3,15 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Holders;
 
-/**
- * Simple class for storing skill id/level.
- * @author BiggBoss
- */
-public class SkillHolder
+/// <summary>
+/// Simple class for storing skill id/level.
+/// </summary>
+public class SkillHolder: IEquatable<SkillHolder>
 {
 	private readonly int _skillId;
 	private readonly int _skillLevel;
 	private readonly int _skillSubLevel;
-	private Skill _skill;
+	private Skill? _skill;
 
 	public SkillHolder(int skillId, int skillLevel)
 	{
@@ -38,60 +37,37 @@ public class SkillHolder
 		_skill = skill;
 	}
 
-	public int getSkillId()
-	{
-		return _skillId;
-	}
+	public int getSkillId() => _skillId;
+	public int getSkillLevel() => _skillLevel;
+	public int getSkillSubLevel() => _skillSubLevel;
 
-	public int getSkillLevel()
-	{
-		return _skillLevel;
-	}
+	public Skill? getSkill()
+		=> _skill ??= SkillData.getInstance().getSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel);
 
-	public int getSkillSubLevel()
+	public bool Equals(SkillHolder? other)
 	{
-		return _skillSubLevel;
-	}
-
-	public Skill getSkill()
-	{
-		if (_skill == null)
-		{
-			_skill = SkillData.getInstance().getSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel);
-		}
-
-		return _skill;
-	}
-
-	public override bool Equals(Object? obj)
-	{
-		if (this == obj)
-		{
+		if (ReferenceEquals(this, other))
 			return true;
-		}
 
-		if (!(obj is SkillHolder))
-		{
+		if (ReferenceEquals(other, null))
 			return false;
-		}
 
-		SkillHolder holder = (SkillHolder)obj;
-		return (holder.getSkillId() == _skillId) && (holder.getSkillLevel() == _skillLevel) &&
-		       (holder.getSkillSubLevel() == _skillSubLevel);
+		return other._skillId == _skillId && other._skillLevel == _skillLevel && other._skillSubLevel == _skillSubLevel;
 	}
 
-	public override int GetHashCode()
+	public override bool Equals(object? obj)
 	{
-		int prime = 31;
-		int result = 1;
-		result = (prime * result) + _skillId;
-		result = (prime * result) + _skillLevel;
-		result = (prime * result) + _skillSubLevel;
-		return result;
+		if (ReferenceEquals(this, obj))
+			return true;
+
+		if (ReferenceEquals(obj, null))
+			return false;
+
+		return obj is SkillHolder other && other._skillId == _skillId && other._skillLevel == _skillLevel &&
+			other._skillSubLevel == _skillSubLevel;
 	}
 
-	public override String ToString()
-	{
-		return "[SkillId: " + _skillId + " Level: " + _skillLevel + "]";
-	}
+	public override int GetHashCode() => HashCode.Combine(_skillId, _skillLevel, _skillSubLevel);
+
+	public override string ToString() => $"[SkillId: {_skillId} Level: {_skillLevel}]";
 }
