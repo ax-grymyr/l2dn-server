@@ -60,7 +60,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
 		if (scrollTemplate == null)
 			return ValueTask.CompletedTask;
 		

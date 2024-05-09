@@ -30,16 +30,16 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 			return;
 		}
 		
-		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll());
+		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 		Item enchantItem = request.getEnchantingItem();
 		Item addedItem = new Item(enchantItem.getId());
 		addedItem.setOwnerId(_player.getObjectId());
 		addedItem.setEnchantLevel(request.getEnchantingItem().getEnchantLevel());
-		EnchantSupportItem enchantSupportItem = null;
+		EnchantSupportItem? enchantSupportItem = null;
 		ItemHolder result = null;
 		if (request.getSupportItem() != null)
 		{
-			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem());
+			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId());
 		}
 		if (enchantScroll.isBlessed() || ((request.getSupportItem() != null) && (enchantSupportItem != null) && enchantSupportItem.isBlessed()))
 		{

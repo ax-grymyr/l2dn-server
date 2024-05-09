@@ -85,7 +85,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 	
 	private int getBaseRate(EnchantItemRequest request, int iteration)
 	{
-		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll());
+		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 		return (int) Math.Min(100, enchantScroll.getChance(_player, _isMulti ? _player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)) : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
 	}
 	
@@ -94,7 +94,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 		double supportRate = 0;
 		if (!_isMulti && (request.getSupportItem() != null))
 		{
-			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem()).getBonusRate();
+			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId()).getBonusRate();
 			supportRate = supportRate * 100;
 		}
 		return (int) supportRate;

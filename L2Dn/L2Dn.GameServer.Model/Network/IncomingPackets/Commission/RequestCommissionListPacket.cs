@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.OutgoingPackets.Commission;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 

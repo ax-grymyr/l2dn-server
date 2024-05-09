@@ -47,7 +47,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 			return ValueTask.CompletedTask;
 		}
 		
-		EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
 		if (!item.isEnchantable() || scrollTemplate == null || !scrollTemplate.isValid(item, null) ||
 		    item.getEnchantLevel() >= scrollTemplate.getMaxEnchantLevel())
 		{

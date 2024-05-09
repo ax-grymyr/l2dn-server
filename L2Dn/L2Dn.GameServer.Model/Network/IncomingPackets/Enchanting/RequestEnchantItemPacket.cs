@@ -68,15 +68,15 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		}
 		
 		// Template for scroll.
-		EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
 		if (scrollTemplate == null)
 			return ValueTask.CompletedTask;
 		
-		// Template for support item, if exist.
-		EnchantSupportItem supportTemplate = null;
+		// Template for support item, if exists.
+		EnchantSupportItem? supportTemplate = null;
 		if (support != null)
 		{
-			supportTemplate = EnchantItemData.getInstance().getSupportItem(support);
+			supportTemplate = EnchantItemData.getInstance().getSupportItem(support.getId());
 			if (supportTemplate == null)
 			{
 				player.removeRequest<EnchantItemRequest>();

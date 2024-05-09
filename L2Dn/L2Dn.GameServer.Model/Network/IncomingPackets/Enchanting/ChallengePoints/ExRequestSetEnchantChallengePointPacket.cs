@@ -92,7 +92,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 		    }
 	    }
 
-	    EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll());
+	    EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 	    double chance = scrollTemplate.getChance(player, item);
 
 	    double challengePointsChance = 0;

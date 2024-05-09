@@ -32,7 +32,7 @@ public struct ExRequestStartMultiEnchantScrollPacket: IIncomingPacket<GameSessio
         EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
 		
         Item scroll = player.getInventory().getItemByObjectId(_scrollObjectId);
-        EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
         if (scrollTemplate == null || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() || scrollTemplate.isSafe() || scrollTemplate.isGiant())
         {
             player.sendPacket(new ExResetSelectMultiEnchantScrollPacket(player, _scrollObjectId, 1));

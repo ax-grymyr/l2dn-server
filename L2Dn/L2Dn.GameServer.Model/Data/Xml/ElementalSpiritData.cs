@@ -53,7 +53,7 @@ public class ElementalSpiritData: DataReaderBase
 				xmlElementalSpirit.ExtractItem, xmlElementalSpirit.MaxCharacteristics, levels, itemsToEvolve,
 				absorbItems);
 
-			if (spiritData.TryAdd((type, stage), template))
+			if (!spiritData.TryAdd((type, stage), template))
 				_logger.Info($"{GetType().Name}: Duplicated data for spirit type {type} and stage {stage}.");
 		}
 

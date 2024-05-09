@@ -30,7 +30,7 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
 
-        EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll());
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
         double chance = scrollTemplate.getChance(player, request.getEnchantingItem());
 
         CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();

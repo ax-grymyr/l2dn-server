@@ -1,10 +1,6 @@
-using System.Xml.Linq;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
-using NLog;
+using L2Dn.Model.DataPack;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;
 
@@ -13,33 +9,6 @@ namespace L2Dn.GameServer.Model.Items.Enchant;
  */
 public abstract class AbstractEnchantItem
 {
-	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractEnchantItem));
-
-	private static readonly Set<EtcItemType> ENCHANT_TYPES = new();
-
-	static AbstractEnchantItem()
-	{
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM);
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP);
-		ENCHANT_TYPES.add(EtcItemType.BLESS_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.BLESS_ENCHT_AM_DOWN);
-		ENCHANT_TYPES.add(EtcItemType.BLESS_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.GIANT_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.GIANT_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.GIANT_ENCHT_ATTR_INC_PROP_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.GIANT_ENCHT_ATTR_INC_PROP_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.BLESSED_ENCHT_ATTR_INC_PROP_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.BLESSED_ENCHT_ATTR_INC_PROP_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.BLESSED_GIANT_ENCHT_ATTR_INC_PROP_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.BLESSED_GIANT_ENCHT_ATTR_INC_PROP_ENCHT_WP);
-		ENCHANT_TYPES.add(EtcItemType.CURSED_ENCHT_AM);
-		ENCHANT_TYPES.add(EtcItemType.CURSED_ENCHT_WP);
-	}
-
 	private readonly int _id;
 	private readonly CrystalType _grade;
 	private readonly int _minEnchantLevel;
@@ -50,29 +19,17 @@ public abstract class AbstractEnchantItem
 	private readonly double _bonusRate;
 	private readonly bool _isBlessed;
 
-	public AbstractEnchantItem(XElement element)
+	protected AbstractEnchantItem(XmlEnchantScroll enchantScroll)
 	{
-		_id = element.GetAttributeValueAsInt32("id");
-
-		ItemTemplate itemTemplate = getItem();
-		if (itemTemplate == null)
-		{
-			throw new InvalidOperationException();
-		}
-		
-		if (!itemTemplate.getItemType().IsEtcItem() || !ENCHANT_TYPES.Contains(itemTemplate.getItemType().AsEtcItemType()))
-		{
-			throw new InvalidOperationException();
-		}
-
-		_grade = element.Attribute("targetGrade").GetEnum(CrystalType.NONE);
-		_minEnchantLevel = element.Attribute("minEnchant").GetInt32(0);
-		_maxEnchantLevel = element.Attribute("maxEnchant").GetInt32(127);
-		_safeEnchantLevel = element.Attribute("safeEnchant").GetInt32(0);
-		_randomEnchantMin = element.Attribute("randomEnchantMin").GetInt32(1);
-		_randomEnchantMax = element.Attribute("randomEnchantMax").GetInt32(_randomEnchantMin);
-		_bonusRate = element.Attribute("bonusRate").GetDouble(0);
-		_isBlessed = element.Attribute("isBlessed").GetBoolean(false);
+		_id = enchantScroll.Id;
+		_grade = enchantScroll.TargetGrade;
+		_minEnchantLevel = enchantScroll.MinEnchant;
+		_maxEnchantLevel = enchantScroll.MaxEnchant;
+		_safeEnchantLevel = enchantScroll.SafeEnchant;
+		_randomEnchantMin = enchantScroll.RandomEnchantMin;
+		_randomEnchantMax = Math.Max(enchantScroll.RandomEnchantMax, enchantScroll.RandomEnchantMin);
+		_bonusRate = enchantScroll.BonusRate;
+		_isBlessed = enchantScroll.IsBlessed;
 	}
 
 	/**
@@ -89,14 +46,6 @@ public abstract class AbstractEnchantItem
 	public double getBonusRate()
 	{
 		return _bonusRate;
-	}
-
-	/**
-	 * @return {@link ItemTemplate} current item/scroll
-	 */
-	public ItemTemplate getItem()
-	{
-		return ItemData.getInstance().getTemplate(_id);
 	}
 
 	/**
@@ -168,22 +117,26 @@ public abstract class AbstractEnchantItem
 		{
 			return false;
 		}
-		else if (!itemToEnchant.isEnchantable() || (!(itemToEnchant.getTemplate().getEnchantLimit() == 0) &&
-		                                            (itemToEnchant.getEnchantLevel() ==
-		                                             itemToEnchant.getTemplate().getEnchantLimit())))
+
+		if (!itemToEnchant.isEnchantable() || (!(itemToEnchant.getTemplate().getEnchantLimit() == 0) &&
+			    itemToEnchant.getEnchantLevel() ==
+			    itemToEnchant.getTemplate().getEnchantLimit()))
 		{
 			return false;
 		}
-		else if (!isValidItemType(itemToEnchant.getTemplate().getType2()))
+
+		if (!isValidItemType(itemToEnchant.getTemplate().getType2()))
 		{
 			return false;
 		}
-		else if (((_minEnchantLevel != 0) && (itemToEnchant.getEnchantLevel() < _minEnchantLevel)) ||
-		         ((_maxEnchantLevel != 0) && (itemToEnchant.getEnchantLevel() >= _maxEnchantLevel)))
+
+		if ((_minEnchantLevel != 0 && itemToEnchant.getEnchantLevel() < _minEnchantLevel) ||
+		    (_maxEnchantLevel != 0 && itemToEnchant.getEnchantLevel() >= _maxEnchantLevel))
 		{
 			return false;
 		}
-		else if (_grade != itemToEnchant.getTemplate().getCrystalTypePlus())
+
+		if (_grade != itemToEnchant.getTemplate().getCrystalTypePlus())
 		{
 			return false;
 		}
@@ -201,7 +154,8 @@ public abstract class AbstractEnchantItem
 		{
 			return isWeapon();
 		}
-		else if ((type2 == ItemTemplate.TYPE2_SHIELD_ARMOR) || (type2 == ItemTemplate.TYPE2_ACCESSORY))
+
+		if (type2 == ItemTemplate.TYPE2_SHIELD_ARMOR || type2 == ItemTemplate.TYPE2_ACCESSORY)
 		{
 			return !isWeapon();
 		}

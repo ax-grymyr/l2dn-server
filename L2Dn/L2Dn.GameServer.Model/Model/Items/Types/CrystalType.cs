@@ -1,26 +1,7 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Items.Types;
-
-/**
- * Crystal Type enumerated.
- * @author Adry_85
- */
-public enum CrystalType
-{
-	NONE,
-	D,
-	C,
-	B,
-	A,
-	S,
-	S80,
-	S84,
-	R,
-	R95,
-	R99,
-	EVENT
-}
 
 public struct CrystalTypeInfo(
 	CrystalType level,
