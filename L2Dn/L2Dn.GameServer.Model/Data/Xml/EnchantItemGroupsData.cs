@@ -1,193 +1,186 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Globalization;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author UnAfraid
- */
-public class EnchantItemGroupsData: DataReaderBase
+public sealed class EnchantItemGroupsData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemGroupsData));
-	
-	private readonly Map<String, EnchantItemGroup> _itemGroups = new();
-	private readonly Map<int, EnchantScrollGroup> _scrollGroups = new();
-	private int _maxWeaponEnchant = 0;
-	private int _maxArmorEnchant = 0;
-	private int _maxAccessoryEnchant = 0;
-	
-	protected EnchantItemGroupsData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnchantItemGroupsData));
+
+	private FrozenDictionary<string, EnchantItemGroup> _itemGroups = FrozenDictionary<string, EnchantItemGroup>.Empty;
+	private FrozenDictionary<int, EnchantScrollGroup> _scrollGroups = FrozenDictionary<int, EnchantScrollGroup>.Empty;
+	private int _maxWeaponEnchant;
+	private int _maxArmorEnchant;
+	private int _maxAccessoryEnchant;
+
+	private EnchantItemGroupsData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
 	public void load()
 	{
-		_itemGroups.clear();
-		_scrollGroups.clear();
-		
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EnchantItemGroups.xml");
-		document.Elements("list").Elements("enchantRateGroup").ForEach(parseEnchantRateGroup);
-		document.Elements("list").Elements("enchantScrollGroup").ForEach(parseEnchantScrollGroup);
-		
-		// In case there is no accessories group set.
-		if (_maxAccessoryEnchant == 0)
+		XmlEnchantItemGroupData document =
+			LoadXmlDocument<XmlEnchantItemGroupData>(DataFileLocation.Data, "EnchantItemGroups.xml");
+
+		int maxWeaponEnchant = 0;
+		int maxArmorEnchant = 0;
+		int maxAccessoryEnchant = 0;
+		Dictionary<string, EnchantItemGroup> itemGroups = [];
+		Dictionary<int, EnchantScrollGroup> scrollGroups = [];
+
+		foreach (XmlEnchantRateGroup xmlEnchantRateGroup in document.EnchantRateGroups)
 		{
-			_maxAccessoryEnchant = _maxArmorEnchant;
+			string name = xmlEnchantRateGroup.Name;
+			EnchantItemGroup group = new(name);
+			foreach (XmlEnchantRateGroupCurrent xmlEnchantRateGroupCurrent in xmlEnchantRateGroup.Chances)
+			{
+				string range = xmlEnchantRateGroupCurrent.Enchant;
+				double chance = xmlEnchantRateGroupCurrent.Chance;
+				if (!ParseIntRange(xmlEnchantRateGroupCurrent.Enchant, out int min, out int max))
+				{
+					_logger.Error(GetType().Name + $": Invalid range {range}.");
+					continue;
+				}
+
+				group.addChance(new RangeChanceHolder(min, max, chance));
+
+				// Try to get a generic max value.
+				if (chance > 0)
+				{
+					if (name.Contains("WEAPON", StringComparison.OrdinalIgnoreCase))
+					{
+						if (maxWeaponEnchant < max)
+							maxWeaponEnchant = max;
+					}
+					else if (name.Contains("ACCESSORIES", StringComparison.OrdinalIgnoreCase) ||
+					         name.Contains("RING", StringComparison.OrdinalIgnoreCase) ||
+					         name.Contains("EARRING", StringComparison.OrdinalIgnoreCase) ||
+					         name.Contains("NECK", StringComparison.OrdinalIgnoreCase))
+					{
+						if (maxAccessoryEnchant < max)
+							maxAccessoryEnchant = max;
+					}
+					else if (maxArmorEnchant < max)
+						maxArmorEnchant = max;
+				}
+			}
+
+			if (!itemGroups.TryAdd(name, group))
+				_logger.Error(GetType().Name + $": Duplicated group {name}.");
 		}
-		
+
+		foreach (XmlEnchantScrollGroup xmlEnchantScrollGroup in document.EnchantScrollGroups)
+		{
+			int id = xmlEnchantScrollGroup.Id;
+			EnchantScrollGroup group = new(id);
+			foreach (XmlEnchantScrollGroupRate xmlEnchantScrollGroupRate in xmlEnchantScrollGroup.EnchantRates)
+			{
+				string name = xmlEnchantScrollGroupRate.Group;
+				EnchantRateItem rateGroup = new(name);
+				foreach (XmlEnchantScrollGroupRateItem xmlEnchantScrollGroupRateItem in xmlEnchantScrollGroupRate.Items)
+				{
+					if (!string.IsNullOrEmpty(xmlEnchantScrollGroupRateItem.Slot))
+						rateGroup.addSlot(ItemData.SLOTS[xmlEnchantScrollGroupRateItem.Slot]);
+
+					rateGroup.setMagicWeapon(xmlEnchantScrollGroupRateItem.MagicWeapon);
+
+					if (xmlEnchantScrollGroupRateItem.ItemId != 0)
+						rateGroup.addItemId(xmlEnchantScrollGroupRateItem.ItemId);
+				}
+
+				group.addRateGroup(rateGroup);
+			}
+
+			if (!scrollGroups.TryAdd(id, group))
+				_logger.Error(GetType().Name + $": Duplicated scroll group id {id}.");
+		}
+
+		// In case there is no accessories group set.
+		if (maxAccessoryEnchant == 0)
+			maxAccessoryEnchant = maxArmorEnchant;
+
 		// Max enchant values are set to current max enchant + 1.
-		_maxWeaponEnchant += 1;
-		_maxArmorEnchant += 1;
-		_maxAccessoryEnchant += 1;
-		
-		LOGGER.Info(GetType().Name + ": Loaded " + _itemGroups.size() + " item group templates.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _scrollGroups.size() + " scroll group templates.");
-		
+		maxWeaponEnchant += 1;
+		maxArmorEnchant += 1;
+		maxAccessoryEnchant += 1;
+
+		_itemGroups = itemGroups.ToFrozenDictionary();
+		_scrollGroups = scrollGroups.ToFrozenDictionary();
+		_maxWeaponEnchant = maxWeaponEnchant;
+		_maxArmorEnchant = maxArmorEnchant;
+		_maxAccessoryEnchant = maxAccessoryEnchant;
+
+		_logger.Info(GetType().Name + ": Loaded " + _itemGroups.Count + " item group templates.");
+		_logger.Info(GetType().Name + ": Loaded " + _scrollGroups.Count + " scroll group templates.");
+
 		if (Config.OVER_ENCHANT_PROTECTION)
 		{
-			LOGGER.Info(GetType().Name + ": Max weapon enchant is set to " + _maxWeaponEnchant + ".");
-			LOGGER.Info(GetType().Name + ": Max armor enchant is set to " + _maxArmorEnchant + ".");
-			LOGGER.Info(GetType().Name + ": Max accessory enchant is set to " + _maxAccessoryEnchant + ".");
+			_logger.Info(GetType().Name + ": Max weapon enchant is set to " + _maxWeaponEnchant + ".");
+			_logger.Info(GetType().Name + ": Max armor enchant is set to " + _maxArmorEnchant + ".");
+			_logger.Info(GetType().Name + ": Max accessory enchant is set to " + _maxAccessoryEnchant + ".");
 		}
 	}
 
-	private void parseEnchantRateGroup(XElement element)
+	private static bool ParseIntRange(ReadOnlySpan<char> range, out int min, out int max)
 	{
-		string name = element.GetAttributeValueAsString("name");
-		EnchantItemGroup group = new EnchantItemGroup(name);
-		
-		element.Elements("current").ForEach(currentElement =>
+		min = max = 0;
+		if (int.TryParse(range, CultureInfo.InvariantCulture, out min))
 		{
-			string range = currentElement.GetAttributeValueAsString("enchant");
-			double chance = currentElement.GetAttributeValueAsDouble("chance");
-			int min = -1;
-			int max = 0;
-			if (range.contains("-"))
-			{
-				String[] split = range.Split("-");
-				if ((split.Length == 2) && Util.isDigit(split[0]) && Util.isDigit(split[1]))
-				{
-					min = int.Parse(split[0]);
-					max = int.Parse(split[1]);
-				}
-			}
-			else if (Util.isDigit(range))
-			{
-				min = int.Parse(range);
-				max = min;
-			}
+			max = min;
+			return true;
+		}
 
-			if ((min > -1) && (max > -1))
-			{
-				group.addChance(new RangeChanceHolder(min, max, chance));
-			}
+		int separatorIndex = range.IndexOf('-');
+		if (separatorIndex < 0)
+			return false;
 
-			// Try to get a generic max value.
-			if (chance > 0)
-			{
-				if (name.contains("WEAPON"))
-				{
-					if (_maxWeaponEnchant < max)
-					{
-						_maxWeaponEnchant = max;
-					}
-				}
-				else if (name.contains("ACCESSORIES") || name.contains("RING") || name.contains("EARRING") ||
-				         name.contains("NECK"))
-				{
-					if (_maxAccessoryEnchant < max)
-					{
-						_maxAccessoryEnchant = max;
-					}
-				}
-				else if (_maxArmorEnchant < max)
-				{
-					_maxArmorEnchant = max;
-				}
-			}
-		});
-
-		_itemGroups.put(name, group);
+		return int.TryParse(range[..separatorIndex], CultureInfo.InvariantCulture, out min) &&
+			int.TryParse(range[(separatorIndex + 1)..], CultureInfo.InvariantCulture, out max);
 	}
 
-	private void parseEnchantScrollGroup(XElement element)
+	public EnchantItemGroup? getItemGroup(ItemTemplate item, int scrollGroup)
 	{
-		int id = element.GetAttributeValueAsInt32("id");
-		EnchantScrollGroup group = new EnchantScrollGroup(id);
-		
-		element.Elements("enchantRate").ForEach(enchantElement =>
-		{
-			string name = enchantElement.GetAttributeValueAsString("group");
-			EnchantRateItem rateGroup = new EnchantRateItem(name);
-			
-			enchantElement.Elements("item").ForEach(itemElement =>
-			{
-				if (itemElement.Attribute("slot") != null)
-				{
-					rateGroup.addSlot(ItemData.SLOTS.get(itemElement.GetAttributeValueAsString("slot")));
-				}
-				if (itemElement.Attribute("magicWeapon") != null)
-				{
-					rateGroup.setMagicWeapon(itemElement.GetAttributeValueAsBoolean("magicWeapon"));
-				}
-				if (itemElement.Attribute("itemId") != null)
-				{
-					rateGroup.addItemId(itemElement.GetAttributeValueAsInt32("itemId"));
-				}
-			});
-
-			group.addRateGroup(rateGroup);
-		});
-
-		_scrollGroups.put(id, group);
+		EnchantScrollGroup? group = _scrollGroups.GetValueOrDefault(scrollGroup);
+		EnchantRateItem? rateGroup = group?.getRateGroup(item);
+		return rateGroup != null ? _itemGroups.GetValueOrDefault(rateGroup.getName()) : null;
 	}
 
-	public EnchantItemGroup getItemGroup(ItemTemplate item, int scrollGroup)
+	public EnchantItemGroup? getItemGroup(string name)
 	{
-		EnchantScrollGroup group = _scrollGroups.get(scrollGroup);
-		EnchantRateItem rateGroup = group.getRateGroup(item);
-		return rateGroup != null ? _itemGroups.get(rateGroup.getName()) : null;
+		return _itemGroups.GetValueOrDefault(name);
 	}
-	
-	public EnchantItemGroup getItemGroup(String name)
+
+	public EnchantScrollGroup? getScrollGroup(int id)
 	{
-		return _itemGroups.get(name);
+		return _scrollGroups.GetValueOrDefault(id);
 	}
-	
-	public EnchantScrollGroup getScrollGroup(int id)
-	{
-		return _scrollGroups.get(id);
-	}
-	
+
 	public int getMaxWeaponEnchant()
 	{
 		return _maxWeaponEnchant;
 	}
-	
+
 	public int getMaxArmorEnchant()
 	{
 		return _maxArmorEnchant;
 	}
-	
+
 	public int getMaxAccessoryEnchant()
 	{
 		return _maxAccessoryEnchant;
 	}
-	
+
 	public static EnchantItemGroupsData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EnchantItemGroupsData INSTANCE = new();
