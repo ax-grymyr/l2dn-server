@@ -1,87 +1,110 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
+using System.Collections.Immutable;
+using System.Globalization;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author Mobius
- */
-public class EquipmentUpgradeData: DataReaderBase
+public sealed class EquipmentUpgradeData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EquipmentUpgradeData));
-	private static readonly Map<int, EquipmentUpgradeHolder> _upgrades = new();
-	
-	protected EquipmentUpgradeData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EquipmentUpgradeData));
+
+	private static FrozenDictionary<int, EquipmentUpgradeHolder> _upgrades =
+		FrozenDictionary<int, EquipmentUpgradeHolder>.Empty;
+
+	private EquipmentUpgradeData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
-		_upgrades.clear();
-			
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeData.xml");
-		document.Elements("list").Elements("upgrade").ForEach(parseElement);
-			
-		LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.size() + " upgrade equipment data.");
-	}
+		Dictionary<int, EquipmentUpgradeHolder> upgrades = [];
 
-	private void parseElement(XElement element)
-	{
-		int id = element.GetAttributeValueAsInt32("id");
-		string[] item = element.GetAttributeValueAsString("item").Split(",");
-		int requiredItemId = int.Parse(item[0]);
-		int requiredItemEnchant = int.Parse(item[1]);
-		string materials = element.Attribute("materials").GetString("");
-		List<ItemHolder> materialList = new();
-		bool announce = element.Attribute("announce").GetBoolean(false);
-		if (!materials.isEmpty())
+		XmlEquipmentUpgradeData document =
+			LoadXmlDocument<XmlEquipmentUpgradeData>(DataFileLocation.Data, "EquipmentUpgradeData.xml");
+
+		foreach (XmlEquipmentUpgrade xmlEquipmentUpgrade in document.Upgrades)
 		{
-			foreach (String mat in materials.Split(";"))
+			int id = xmlEquipmentUpgrade.Id;
+			string[] item = xmlEquipmentUpgrade.Item.Split(",");
+			if (item.Length != 2 || !int.TryParse(item[0], CultureInfo.InvariantCulture, out int requiredItemId) ||
+			    !int.TryParse(item[1], CultureInfo.InvariantCulture, out int requiredItemEnchant))
 			{
-				String[] matValues = mat.Split(",");
-				int matItemId = int.Parse(matValues[0]);
-				if (ItemData.getInstance().getTemplate(matItemId) == null)
+				_logger.Error(GetType().Name + ": Invalid required item id " + id + ".");
+				continue;
+			}
+
+			if (ItemData.getInstance().getTemplate(requiredItemId) == null)
+			{
+				_logger.Error(GetType().Name + ": Required item with id " + requiredItemId + " does not exist.");
+				continue;
+			}
+
+			List<ItemHolder> materialList = [];
+			if (!string.IsNullOrEmpty(xmlEquipmentUpgrade.Materials))
+			{
+				foreach (string mat in xmlEquipmentUpgrade.Materials.Split(";"))
 				{
-					LOGGER.Info(GetType().Name + ": Material item with id " + matItemId + " does not exist.");
+					string[] matValues = mat.Split(",");
+					if (matValues.Length != 2 ||
+					    !int.TryParse(matValues[0], CultureInfo.InvariantCulture, out int matItemId)
+					    || !long.TryParse(matValues[1], CultureInfo.InvariantCulture, out long matCount))
+					{
+						_logger.Error(GetType().Name + ": Invalid material list, id " + id + ".");
+						continue;
+					}
+
+					if (ItemData.getInstance().getTemplate(matItemId) == null)
+					{
+						_logger.Error(GetType().Name + ": Material item with id " + matItemId + " does not exist.");
+					}
+					else
+					{
+						materialList.Add(new ItemHolder(matItemId, matCount));
+					}
 				}
-				else
-				{
-					materialList.add(new ItemHolder(matItemId, long.Parse(matValues[1])));
-				}
+			}
+
+			string[] resultItem = xmlEquipmentUpgrade.Result.Split(",");
+			if (resultItem.Length != 2 || !int.TryParse(item[0], CultureInfo.InvariantCulture, out int resultItemId) ||
+			    !int.TryParse(item[1], CultureInfo.InvariantCulture, out int resultItemEnchant))
+			{
+				_logger.Error(GetType().Name + ": Invalid result item id " + id + ".");
+				continue;
+			}
+
+			if (ItemData.getInstance().getTemplate(resultItemId) == null)
+			{
+				_logger.Error(GetType().Name + ": Result item with id " + resultItemId + " does not exist.");
+				continue;
+			}
+
+			if (!upgrades.TryAdd(id, new EquipmentUpgradeHolder(id, requiredItemId, requiredItemEnchant,
+				    materialList.ToImmutableArray(), xmlEquipmentUpgrade.Adena, resultItemId, resultItemEnchant,
+				    xmlEquipmentUpgrade.Announce)))
+			{
+				_logger.Error(GetType().Name + ": Duplicated item id " + id + ".");
 			}
 		}
 
-		long adena = element.Attribute("adena").GetInt64(0);
-		String[] resultItem = element.GetAttributeValueAsString("result").Split(",");
-		int resultItemId = int.Parse(resultItem[0]);
-		int resultItemEnchant = int.Parse(resultItem[1]);
-		if (ItemData.getInstance().getTemplate(requiredItemId) == null)
-		{
-			LOGGER.Info(GetType().Name + ": Required item with id " + requiredItemId + " does not exist.");
-		}
-		else
-		{
-			_upgrades.put(id,
-				new EquipmentUpgradeHolder(id, requiredItemId, requiredItemEnchant, materialList, adena, resultItemId,
-					resultItemEnchant, announce));
-		}
+		_upgrades = upgrades.ToFrozenDictionary();
+
+		_logger.Info(GetType().Name + ": Loaded " + _upgrades.Count + " upgrade equipment data.");
 	}
 
-	public EquipmentUpgradeHolder getUpgrade(int id)
+	public EquipmentUpgradeHolder? getUpgrade(int id)
 	{
-		return _upgrades.get(id);
+		return _upgrades.GetValueOrDefault(id);
 	}
-	
+
 	public static EquipmentUpgradeData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EquipmentUpgradeData INSTANCE = new();

@@ -1,21 +1,20 @@
+using System.Collections.Immutable;
+
 namespace L2Dn.GameServer.Model.Holders;
 
-/**
- * @author Mobius
- */
-public class EquipmentUpgradeHolder
+public sealed class EquipmentUpgradeHolder
 {
 	private readonly int _id;
 	private readonly int _requiredItemId;
 	private readonly int _requiredItemEnchant;
-	private readonly List<ItemHolder> _materials;
+	private readonly ImmutableArray<ItemHolder> _materials;
 	private readonly long _adena;
 	private readonly int _resultItemId;
 	private readonly int _resultItemEnchant;
 	private readonly bool _announce;
 
-	public EquipmentUpgradeHolder(int id, int requiredItemId, int requiredItemEnchant, List<ItemHolder> materials,
-		long adena, int resultItemId, int resultItemEnchant, bool announce)
+	public EquipmentUpgradeHolder(int id, int requiredItemId, int requiredItemEnchant,
+		ImmutableArray<ItemHolder> materials, long adena, int resultItemId, int resultItemEnchant, bool announce)
 	{
 		_id = id;
 		_requiredItemId = requiredItemId;
@@ -42,7 +41,7 @@ public class EquipmentUpgradeHolder
 		return _requiredItemEnchant;
 	}
 
-	public List<ItemHolder> getMaterials()
+	public ImmutableArray<ItemHolder> getMaterials()
 	{
 		return _materials;
 	}
