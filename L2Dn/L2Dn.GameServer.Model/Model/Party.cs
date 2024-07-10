@@ -608,8 +608,8 @@ public class Party : AbstractPlayerGroup
 					// Swap party members
 					Player temp = getLeader();
 					int p1 = _members.IndexOf(player);
-					_members.set(0, player);
-					_members.set(p1, temp);
+					_members[0] = player;
+					_members[p1] = temp;
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
 					msg.Params.addString(getLeader().getName());
 					broadcastPacket(msg);

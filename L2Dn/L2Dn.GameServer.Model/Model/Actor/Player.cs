@@ -2012,7 +2012,7 @@ public class Player: Playable
 		int oldInvLimit = getInventoryLimit();
 		if (isEquiped)
 		{
-			getDualInventorySet().set(item.getLocationSlot(), 0);
+			getDualInventorySet()[item.getLocationSlot()] = 0;
 			
 			SystemMessagePacket sm;
 			if (item.getEnchantLevel() > 0)
@@ -2073,7 +2073,7 @@ public class Player: Playable
 					events.NotifyAsync(new OnPlayerItemEquip(this, item));
 				}
 				
-				getDualInventorySet().set(item.getLocationSlot(), item.getObjectId());
+				getDualInventorySet()[item.getLocationSlot()] = item.getObjectId();
 			}
 			else
 			{

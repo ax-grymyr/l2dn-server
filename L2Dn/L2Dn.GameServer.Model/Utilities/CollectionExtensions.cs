@@ -10,11 +10,6 @@ public static class CollectionExtensions
         return list.Count == 0;
     }
 
-    public static void set<T>(this List<T> list, int index, T value)
-    {
-        list[index] = value;
-    }
-
     public static void add<T>(this List<T> list, int index, T value)
     {
         list.Insert(index, value);

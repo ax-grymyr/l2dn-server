@@ -239,7 +239,7 @@ public class PlayerRandomCraft
 				}
 				else if (!holder.isLocked())
 				{
-					_rewardList.set(i, getNewReward());
+					_rewardList[i] = getNewReward();
 				}
 				else
 				{

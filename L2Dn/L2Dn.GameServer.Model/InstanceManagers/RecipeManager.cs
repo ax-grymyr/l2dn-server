@@ -446,7 +446,7 @@ public class RecipeManager
 				}
 				else
 				{
-					_items.set(0, item);
+					_items[0] = item;
 				}
 				
 				grabItems -= count;
