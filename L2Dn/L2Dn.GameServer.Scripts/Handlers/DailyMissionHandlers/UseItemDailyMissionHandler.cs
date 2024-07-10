@@ -24,7 +24,7 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 		_minLevel = holder.getParams().getInt("minLevel", 0);
 		_maxLevel = holder.getParams().getInt("maxLevel", int.MaxValue);
 		String itemIds = holder.getParams().getString("itemIds", "");
-		if (!itemIds.isEmpty())
+		if (!string.IsNullOrEmpty(itemIds))
 		{
 			foreach (String s in itemIds.Split(","))
 			{

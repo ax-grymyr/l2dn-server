@@ -28,7 +28,7 @@ public class ResurrectionSpecial: AbstractEffect
 		_cpPercent = @params.getInt("cpPercent", 0);
 		
 		String instanceIds = @params.getString("instanceId", null);
-		if ((instanceIds != null) && !instanceIds.isEmpty())
+		if (!string.IsNullOrEmpty(instanceIds))
 		{
 			_instanceId = new();
 			foreach (String id in instanceIds.Split(";"))

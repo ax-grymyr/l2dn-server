@@ -573,7 +573,7 @@ public class SkillData: DataReaderBase
 		if (!element.HasElements && !string.IsNullOrEmpty(element.Value))
 		{
 			string value = element.Value.Trim();
-			if (!value.isEmpty())
+			if (!string.IsNullOrEmpty(value))
 			{
 				text = parseNodeValue(value, variables);
 			}

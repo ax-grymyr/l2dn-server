@@ -118,7 +118,7 @@ public class AdminPunishment: IAdminCommandHandler
 							if (st.hasMoreTokens())
 							{
 								String playerName = st.nextToken();
-								if (playerName.isEmpty() && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
+								if (string.IsNullOrEmpty(playerName) && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
 								{
 									return useAdminCommand("admin_punishment", activeChar);
 								}
@@ -165,7 +165,7 @@ public class AdminPunishment: IAdminCommandHandler
 					{
 						reason += " " + st.nextToken();
 					}
-					if (!reason.isEmpty())
+					if (!string.IsNullOrEmpty(reason))
 					{
 						reason = reason.replaceAll("\\$", "\\\\\\$");
 						reason = reason.replaceAll("\r\n", "<br1>");

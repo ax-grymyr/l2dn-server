@@ -14,11 +14,6 @@ public static class CollectionExtensions
         return null;
     }
 
-    public static bool isEmpty(this string s)
-    {
-        return string.IsNullOrEmpty(s);
-    }
-
     public static bool equals(this string s, string other)
     {
         return string.Equals(s, other, StringComparison.Ordinal);

@@ -295,7 +295,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					}
 					else
 					{
-						if (!list.isEmpty())
+						if (!string.IsNullOrEmpty(list))
 						{
 							list += ";";
 						}
@@ -326,7 +326,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					}
 					else
 					{
-						if (!list.isEmpty())
+						if (!string.IsNullOrEmpty(list))
 						{
 							list += ";";
 						}

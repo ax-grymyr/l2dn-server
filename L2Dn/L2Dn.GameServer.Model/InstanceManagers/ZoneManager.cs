@@ -274,7 +274,7 @@ public class ZoneManager: DataReaderBase
 			zone.Races.ForEach(el => respawnZone.addRaceRespawnPoint(el.Race, el.Point));
 		}
 
-		if (zoneName != null && !zoneName.isEmpty())
+		if (!string.IsNullOrEmpty(zoneName))
 		{
 			zoneType.setName(zoneName);
 		}

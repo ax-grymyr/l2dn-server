@@ -90,7 +90,7 @@ public class EffectZone : ZoneType
 						}
 						catch (Exception nfe)
 						{
-							if (!skill.isEmpty())
+							if (!string.IsNullOrEmpty(skill))
 							{
 								LOGGER.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" +
 								            skillSplit[0] + "\"" + skillSplit[1] + ": " + nfe);

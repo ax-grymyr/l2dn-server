@@ -163,7 +163,7 @@ public class FortManager : Merchant
 			{
 				if (player.hasClanPrivilege(ClanPrivilege.CS_OPEN_DOOR))
 				{
-					if (!val.isEmpty())
+					if (!string.IsNullOrEmpty(val))
 					{
 						 bool open = (int.Parse(val) == 1);
 						while (st.hasMoreTokens())
@@ -926,7 +926,7 @@ public class FortManager : Merchant
 			{
 				setTarget(player);
 				Skill skill;
-				if (val.isEmpty())
+				if (string.IsNullOrEmpty(val))
 				{
 					return;
 				}

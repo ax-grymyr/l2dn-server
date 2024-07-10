@@ -246,7 +246,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public bool showResult(Player player, string res, Npc npc)
 	{
-		if (res == null || res.isEmpty() || player == null)
+		if (string.IsNullOrEmpty(res) || player == null)
 		{
 			return true;
 		}

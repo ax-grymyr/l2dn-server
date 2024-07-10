@@ -67,7 +67,7 @@ public class CharInfoTable
 	
 	public int getIdByName(String name)
 	{
-		if ((name == null) || name.isEmpty())
+		if (string.IsNullOrEmpty(name))
 		{
 			return -1;
 		}

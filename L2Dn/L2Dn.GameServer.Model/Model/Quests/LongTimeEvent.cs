@@ -159,7 +159,7 @@ public class LongTimeEvent: Quest
 								int minCount = d.GetAttributeValueAsInt32("min");
 								int maxCount = d.GetAttributeValueAsInt32("max");
 								string chance = d.GetAttributeValueAsString("chance");
-								double finalChance = !chance.isEmpty() && chance.endsWith("%")
+								double finalChance = !string.IsNullOrEmpty(chance) && chance.endsWith("%")
 									? double.Parse(chance.Substring(0, chance.Length - 1))
 									: 0;
 								int minLevel = d.Attribute("minLevel")?.GetInt32() ?? 1;
@@ -335,7 +335,7 @@ public class LongTimeEvent: Quest
 		}
 		
 		// Event enter announcement.
-		if (!_onEnterMsg.isEmpty())
+		if (!string.IsNullOrEmpty(_onEnterMsg))
 		{
 			// Send message on begin.
 			Broadcast.toAllOnlinePlayers(_onEnterMsg);
@@ -384,7 +384,7 @@ public class LongTimeEvent: Quest
 		destroyItemsOnEnd();
 		
 		// Send message on end.
-		if (!_endMsg.isEmpty())
+		if (!string.IsNullOrEmpty(_endMsg))
 		{
 			Broadcast.toAllOnlinePlayers(_endMsg);
 		}

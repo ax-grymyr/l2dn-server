@@ -23,7 +23,7 @@ public class MagicalAttackByAbnormalSlot: AbstractEffect
 		_power = @params.getDouble("power", 0);
 		
 		String abnormals = @params.getString("abnormalType", null);
-		if ((abnormals != null) && !abnormals.isEmpty())
+		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
 			foreach (String slot in abnormals.Split(";"))

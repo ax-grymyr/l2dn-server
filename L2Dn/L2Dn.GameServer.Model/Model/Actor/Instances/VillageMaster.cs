@@ -128,12 +128,12 @@ public class VillageMaster: Folk
 		
 		if (actualCommand.equalsIgnoreCase("create_clan"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
 			
-			if (!cmdParams2.isEmpty() || !isValidName(cmdParams))
+			if (!string.IsNullOrEmpty(cmdParams2) || !isValidName(cmdParams))
 			{
 				player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 				return;
@@ -143,7 +143,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("create_academy"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -152,7 +152,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("rename_pledge"))
 		{
-			if (cmdParams.isEmpty() || cmdParams2.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams) || string.IsNullOrEmpty(cmdParams2))
 			{
 				return;
 			}
@@ -161,7 +161,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("create_royal"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -170,7 +170,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("create_knight"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -179,7 +179,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("assign_subpl_leader"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -188,7 +188,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("create_ally"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -212,7 +212,7 @@ public class VillageMaster: Folk
 		}
 		else if (actualCommand.equalsIgnoreCase("change_clan_leader"))
 		{
-			if (cmdParams.isEmpty())
+			if (string.IsNullOrEmpty(cmdParams))
 			{
 				return;
 			}
@@ -232,7 +232,7 @@ public class VillageMaster: Folk
 			ClanMember member = clan.getClanMember(cmdParams);
 			if (member == null)
 			{
-				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DOES_NOT_EXIST);
+				SystemMessagePacket sm = new(SystemMessageId.S1_DOES_NOT_EXIST);
 				sm.Params.addString(cmdParams);
 				player.sendPacket(sm);
 				return;

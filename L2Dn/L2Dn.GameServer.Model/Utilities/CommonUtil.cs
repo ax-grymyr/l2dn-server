@@ -482,7 +482,7 @@ public static class CommonUtil
 	 */
 	public static String capitalizeFirst(String str)
 	{
-		if ((str == null) || str.isEmpty())
+		if (string.IsNullOrEmpty(str))
 		{
 			return str;
 		}

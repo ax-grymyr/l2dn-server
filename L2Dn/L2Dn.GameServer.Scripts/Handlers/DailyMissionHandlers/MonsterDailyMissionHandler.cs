@@ -28,7 +28,7 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
 		_minLevel = holder.getParams().getInt("minLevel", 0);
 		_maxLevel = holder.getParams().getInt("maxLevel", int.MaxValue);
 		String ids = holder.getParams().getString("ids", "");
-		if (!ids.isEmpty())
+		if (!string.IsNullOrEmpty(ids))
 		{
 			foreach (String s in ids.Split(","))
 			{

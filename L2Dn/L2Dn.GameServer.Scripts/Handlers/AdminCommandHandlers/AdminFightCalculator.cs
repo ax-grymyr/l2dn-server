@@ -144,7 +144,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		String trimmedParams = pars.Trim();
 		Creature npc1 = null;
 		Creature npc2 = null;
-		if (trimmedParams.isEmpty())
+		if (string.IsNullOrEmpty(trimmedParams))
 		{
 			npc1 = activeChar;
 			npc2 = (Creature) activeChar.getTarget();
@@ -272,7 +272,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 
 		StringBuilder replyMSG = new StringBuilder(1000);
 		replyMSG.Append("<html><title>Selected mobs to fight</title><body><table>");
-		if (trimmedParams.isEmpty())
+		if (string.IsNullOrEmpty(trimmedParams))
 		{
 			replyMSG.Append("<tr><td width=140>Parameter</td><td width=70>me</td><td width=70>target</td></tr>");
 		}
@@ -302,7 +302,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		
 		replyMSG.Append("</tr></table><center><br>");
 		
-		if (trimmedParams.isEmpty())
+		if (string.IsNullOrEmpty(trimmedParams))
 		{
 			replyMSG.Append("<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		}

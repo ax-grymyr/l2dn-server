@@ -401,7 +401,7 @@ public class WalkingManager: DataReaderBase
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, node.getNpcString());
 		}
-		else if (!node.getChatText().isEmpty())
+		else if (!string.IsNullOrEmpty(node.getChatText()))
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, node.getChatText());
 		}
@@ -431,7 +431,7 @@ public class WalkingManager: DataReaderBase
 		if (_routesToAttach.containsKey(npc.getId()))
 		{
 			String routeName = _routesToAttach.get(npc.getId()).getRouteName(npc);
-			if (!routeName.isEmpty())
+			if (!string.IsNullOrEmpty(routeName))
 			{
 				startMoving(npc, routeName);
 			}

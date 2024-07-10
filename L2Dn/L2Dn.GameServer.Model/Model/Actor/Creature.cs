@@ -2353,7 +2353,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			string t2 = "";
 			if (Config.SHOW_NPC_AGGRESSION)
 			{
-				if (!t1.isEmpty())
+				if (!string.IsNullOrEmpty(t1))
 				{
 					t2 += " ";
 				}
@@ -2368,7 +2368,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 			}
 			t1 += t2;
-			if (_title != null && !_title.isEmpty())
+			if (!string.IsNullOrEmpty(_title))
 			{
 				t1 += " " + _title;
 			}

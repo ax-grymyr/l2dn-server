@@ -19,7 +19,7 @@ public class BlockAbnormalSlot: AbstractEffect
 	{
 		foreach (string slot in @params.getString("slot").Split(";"))
 		{
-			if (!slot.isEmpty())
+			if (!string.IsNullOrEmpty(slot))
 			{
 				_blockAbnormalSlots.add(Enum.Parse<AbnormalType>(slot));
 			}

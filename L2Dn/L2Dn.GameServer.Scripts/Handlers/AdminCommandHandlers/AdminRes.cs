@@ -106,7 +106,7 @@ public class AdminRes: IAdminCommandHandler
 		try
 		{
 			int radius = 0;
-			if (!radiusStr.isEmpty())
+			if (!string.IsNullOrEmpty(radiusStr))
 			{
 				radius = int.Parse(radiusStr);
 				World.getInstance().forEachVisibleObjectInRange<Creature>(activeChar, radius, knownChar =>

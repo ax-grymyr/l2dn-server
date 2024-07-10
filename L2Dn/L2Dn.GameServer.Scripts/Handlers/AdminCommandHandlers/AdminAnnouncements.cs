@@ -292,7 +292,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 								content1 += " " + st.nextToken();
 							}
 						}
-						if (content1.isEmpty())
+						if (string.IsNullOrEmpty(content1))
 						{
 							content1 = announce.getContent();
 						}

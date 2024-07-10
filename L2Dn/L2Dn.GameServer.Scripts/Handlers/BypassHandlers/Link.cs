@@ -45,7 +45,7 @@ public class Link: IBypassHandler
 	public bool useBypass(String command, Player player, Creature target)
 	{
 		String htmlPath = command.Substring(4).Trim();
-		if (htmlPath.isEmpty())
+		if (string.IsNullOrEmpty(htmlPath))
 		{
 			_logger.Warn(player + " sent empty link html!");
 			return false;

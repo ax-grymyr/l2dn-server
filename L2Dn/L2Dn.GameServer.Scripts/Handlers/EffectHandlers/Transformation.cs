@@ -21,7 +21,7 @@ public class Transformation: AbstractEffect
 	{
 		String ids = @params.getString("transformationId", null);
 		_id = new();
-		if ((ids != null) && !ids.isEmpty())
+		if (!string.IsNullOrEmpty(ids))
 		{
 			foreach (String id in ids.Split(";"))
 			{

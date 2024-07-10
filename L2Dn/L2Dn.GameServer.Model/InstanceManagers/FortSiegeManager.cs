@@ -234,7 +234,7 @@ public class FortSiegeManager
 			for (int i = 1; i < 5; i++)
 			{
 				string spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Commander" + i);
-				if (spawnParams.isEmpty())
+				if (string.IsNullOrEmpty(spawnParams))
 				{
 					break;
 				}
@@ -261,7 +261,7 @@ public class FortSiegeManager
 			for (int i = 1; i < 4; i++)
 			{
 				String spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Flag" + i);
-				if (spawnParams.isEmpty())
+				if (string.IsNullOrEmpty(spawnParams))
 				{
 					break;
 				}

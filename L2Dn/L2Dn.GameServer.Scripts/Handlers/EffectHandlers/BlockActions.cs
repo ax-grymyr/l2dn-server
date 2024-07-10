@@ -21,7 +21,7 @@ public class BlockActions: AbstractEffect
 	{
 		foreach (String skill in @params.getString("allowedSkills", "").Split(";"))
 		{
-			if (!skill.isEmpty())
+			if (!string.IsNullOrEmpty(skill))
 			{
 				_allowedSkills.add(int.Parse(skill));
 			}

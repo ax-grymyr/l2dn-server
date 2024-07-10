@@ -30,7 +30,7 @@ public class FatalBlow: AbstractEffect
 		_overHit = @params.getBoolean("overHit", false);
 		
 		String abnormals = @params.getString("abnormalType", null);
-		if ((abnormals != null) && !abnormals.isEmpty())
+		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
 			foreach (String slot in abnormals.Split(";"))

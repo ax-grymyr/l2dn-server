@@ -70,7 +70,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 						{
 							name += st.nextToken() + " ";
 						}
-						if (!name.isEmpty())
+						if (!string.IsNullOrEmpty(name))
 						{
 							name = name.Substring(0, name.Length - 1);
 						}
@@ -412,7 +412,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 		if (holder != null && holder.getNodes().Count != 0)
 		{
-			if (holder.getName().isEmpty())
+			if (string.IsNullOrEmpty(holder.getName()))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Set name first!");
 				return;

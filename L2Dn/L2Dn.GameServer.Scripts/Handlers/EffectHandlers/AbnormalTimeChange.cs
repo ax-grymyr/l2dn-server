@@ -20,7 +20,7 @@ public class AbnormalTimeChange: AbstractEffect
 	public AbnormalTimeChange(StatSet @params)
 	{
 		string abnormals = @params.getString("slot", null);
-		if ((abnormals != null) && !abnormals.isEmpty())
+		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
 			foreach (string slot in abnormals.Split(";"))

@@ -18,7 +18,7 @@ public class ResetInstanceEntry: AbstractEffect
 	public ResetInstanceEntry(StatSet @params)
 	{
 		String instanceIds = @params.getString("instanceId", null);
-		if ((instanceIds != null) && !instanceIds.isEmpty())
+		if (!string.IsNullOrEmpty(instanceIds))
 		{
 			_instanceId = new();
 			foreach (String id in instanceIds.Split(";"))

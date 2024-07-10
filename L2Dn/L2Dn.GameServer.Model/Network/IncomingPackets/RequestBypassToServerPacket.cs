@@ -47,7 +47,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 		
-		if (_command.isEmpty())
+		if (string.IsNullOrEmpty(_command))
 		{
 			PacketLogger.Instance.Warn(player + " sent empty bypass!");
 			Disconnection.of(session, player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);

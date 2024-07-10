@@ -118,7 +118,7 @@ public class HtmlActionValidator
 			}
 			
 			string htmlLink = html.Substring(linkStartEnd, linkEnd - linkStartEnd).Trim();
-			if (htmlLink.isEmpty())
+			if (string.IsNullOrEmpty(htmlLink))
 			{
 				_logger.Warn("Html link path is empty!");
 				continue;

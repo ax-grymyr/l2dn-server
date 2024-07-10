@@ -19,7 +19,7 @@ public class DispelBySlot: AbstractEffect
 	public DispelBySlot(StatSet @params)
 	{
 		_dispel = @params.getString("dispel");
-		if ((_dispel != null) && !_dispel.isEmpty())
+		if (!string.IsNullOrEmpty(_dispel))
 		{
 			_dispelAbnormals = new();
 			foreach (String ngtStack in _dispel.Split(";"))

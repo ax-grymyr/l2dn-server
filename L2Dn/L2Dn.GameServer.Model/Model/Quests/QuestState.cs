@@ -434,7 +434,7 @@ public class QuestState
 		}
 		
 		String varStr = _vars.get(variable);
-		if ((varStr == null) || varStr.isEmpty())
+		if (string.IsNullOrEmpty(varStr))
 		{
 			return 0;
 		}

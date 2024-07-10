@@ -31,7 +31,7 @@ public class QuestLink: IBypassHandler
 		{
 		}
 		
-		if (quest.isEmpty())
+		if (string.IsNullOrEmpty(quest))
 		{
 			showQuestWindow(player, (Npc) target);
 		}
@@ -101,11 +101,12 @@ public class QuestLink: IBypassHandler
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
 				String startConditionHtml = quest.getStartConditionHtml(player, npc);
-				if (((startConditionHtml != null) && startConditionHtml.isEmpty()) || !startingQuests.Contains(quest))
+				if (((startConditionHtml != null) && startConditionHtml.Length == 0) || !startingQuests.Contains(quest))
 				{
 					continue;
 				}
-				else if (startingQuests.Contains(quest) && quest.canStartQuest(player))
+
+				if (startingQuests.Contains(quest) && quest.canStartQuest(player))
 				{
 					startCount++;
 					startQuest = quest.Name;

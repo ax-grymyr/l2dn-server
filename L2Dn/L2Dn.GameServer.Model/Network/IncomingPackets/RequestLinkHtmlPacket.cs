@@ -24,7 +24,7 @@ public struct RequestLinkHtmlPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        if (_link.isEmpty())
+        if (string.IsNullOrEmpty(_link))
         {
             PacketLogger.Instance.Warn(player + " sent empty html link!");
             return ValueTask.CompletedTask;

@@ -57,7 +57,7 @@ public class SchemeBufferTable: DataReaderBase
 				foreach (string skill in skills)
 				{
 					// Don't feed the skills list if the list is empty.
-					if (skill.isEmpty())
+					if (string.IsNullOrEmpty(skill))
 					{
 						break;
 					}

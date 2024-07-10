@@ -29,7 +29,7 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        if ((_message == null) || _message.isEmpty() || (_message.Length > 300))
+        if (string.IsNullOrEmpty(_message) || (_message.Length > 300))
             return ValueTask.CompletedTask;
 		
         Player targetPlayer = World.getInstance().getPlayer(_reciever);

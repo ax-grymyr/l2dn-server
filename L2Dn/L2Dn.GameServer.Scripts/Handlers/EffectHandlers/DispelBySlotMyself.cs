@@ -18,7 +18,7 @@ public class DispelBySlotMyself: AbstractEffect
 	public DispelBySlotMyself(StatSet @params)
 	{
 		String dispel = @params.getString("dispel");
-		if ((dispel != null) && !dispel.isEmpty())
+		if (!string.IsNullOrEmpty(dispel))
 		{
 			_dispelAbnormals = new();
 			foreach (String slot in dispel.Split(";"))

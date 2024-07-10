@@ -161,7 +161,7 @@ public class NpcActionShift: IActionShiftHandler
 			}
 			
 			String routeName = WalkingManager.getInstance().getRouteName(npc);
-			if (!routeName.isEmpty())
+			if (!string.IsNullOrEmpty(routeName))
 			{
 				htmlContent.Replace("%route%", "<tr><td><table width=270 border=0><tr><td width=100><font color=LEVEL>Route:</font></td><td align=right width=170>" + routeName + "</td></tr></table></td></tr>");
 			}

@@ -53,7 +53,9 @@ public class MatchingRoomManager
 		List<Player> players = new();
 		foreach (Player player in _waitingList)
 		{
-			if ((player != null) && (player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) && ((classIds == null) || classIds.Contains(player.getClassId())) && ((query == null) || query.isEmpty() || player.getName().ToLower().Contains(query)))
+			if ((player != null) && (player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) &&
+			    ((classIds == null) || classIds.Contains(player.getClassId())) && (string.IsNullOrEmpty(query) ||
+				    player.getName().ToLower().Contains(query)))
 			{
 				players.Add(player);
 			}

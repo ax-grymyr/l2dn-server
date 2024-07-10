@@ -45,7 +45,7 @@ public class TriggerSkillByDamage: AbstractEffect
 		
 		// Specific skills by level.
 		String triggerSkills = @params.getString("triggerSkills", "");
-		if (triggerSkills.isEmpty())
+		if (string.IsNullOrEmpty(triggerSkills))
 		{
 			_triggerSkills = null;
 		}

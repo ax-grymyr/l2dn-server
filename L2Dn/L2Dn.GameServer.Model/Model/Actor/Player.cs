@@ -1246,7 +1246,7 @@ public class Player: Playable
 	public void processQuestEvent(string questName, string ev)
 	{
 		Quest quest = QuestManager.getInstance().getQuest(questName);
-		if ((quest == null) || (ev == null) || ev.isEmpty())
+		if ((quest == null) || string.IsNullOrEmpty(ev))
 		{
 			return;
 		}

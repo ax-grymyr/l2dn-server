@@ -22,7 +22,7 @@ public class OfflinePlay: IVoicedCommandHandler
 	
 	private static readonly Action<OnPlayerLogin> ON_PLAYER_LOGIN = @event =>
 	{
-		if (Config.ENABLE_OFFLINE_PLAY_COMMAND && !Config.OFFLINE_PLAY_LOGIN_MESSAGE.isEmpty())
+		if (Config.ENABLE_OFFLINE_PLAY_COMMAND && !string.IsNullOrEmpty(Config.OFFLINE_PLAY_LOGIN_MESSAGE))
         {
             @event.getPlayer().sendPacket(new CreatureSayPacket(null, ChatType.ANNOUNCEMENT, "OfflinePlay",
                 Config.OFFLINE_PLAY_LOGIN_MESSAGE));

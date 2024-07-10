@@ -23,7 +23,7 @@ public class Synergy: AbstractEffect
 	public Synergy(StatSet @params)
 	{
 		String requiredSlots = @params.getString("requiredSlots", null);
-		if ((requiredSlots != null) && !requiredSlots.isEmpty())
+		if (!string.IsNullOrEmpty(requiredSlots))
 		{
 			_requiredSlots = new();
 			foreach (String slot in requiredSlots.Split(";"))
@@ -37,7 +37,7 @@ public class Synergy: AbstractEffect
 		}
 		
 		String optionalSlots = @params.getString("optionalSlots", null);
-		if ((optionalSlots != null) && !optionalSlots.isEmpty())
+		if (!string.IsNullOrEmpty(optionalSlots))
 		{
 			_optionalSlots = new();
 			foreach (String slot in optionalSlots.Split(";"))
