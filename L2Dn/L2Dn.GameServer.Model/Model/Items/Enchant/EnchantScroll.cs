@@ -102,7 +102,7 @@ public class EnchantScroll: AbstractEnchantItem
 	 */
 	public override bool isValid(Item itemToEnchant, EnchantSupportItem supportItem)
 	{
-		if (!_items.isEmpty() && !_items.ContainsKey(itemToEnchant.getId()))
+		if (_items.Count != 0 && !_items.ContainsKey(itemToEnchant.getId()))
 		{
 			return false;
 		}
@@ -132,7 +132,7 @@ public class EnchantScroll: AbstractEnchantItem
 			}
 		}
 
-		if (_items.isEmpty())
+		if (_items.Count == 0)
 		{
 			if (isActionBlessed() && itemToEnchant.isWeapon() &&
 			    itemToEnchant.getTemplate().getCrystalType() == getGrade())

@@ -25,7 +25,7 @@ public readonly struct ExShowReceivedPostListPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_RECEIVED_POST_LIST);
         
         writer.WriteInt32(DateTime.UtcNow.getEpochSecond());
-        if ((_inbox != null) && !_inbox.isEmpty())
+        if (_inbox != null && _inbox.Count != 0)
         {
             writer.WriteInt32(_inbox.Count);
             foreach (Message msg in _inbox)
@@ -46,7 +46,7 @@ public readonly struct ExShowReceivedPostListPacket: IOutgoingPacket
                 writer.WriteInt32(msg.isLocked());
                 writer.WriteInt32(msg.getExpirationSeconds());
                 writer.WriteInt32(msg.isUnread());
-                writer.WriteInt32(!((msg.getMailType() == MailType.COMMISSION_ITEM_SOLD) || (msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED)));
+                writer.WriteInt32(!(msg.getMailType() == MailType.COMMISSION_ITEM_SOLD || msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED));
                 writer.WriteInt32(msg.hasAttachments());
                 writer.WriteInt32(msg.isReturned());
                 writer.WriteInt32(0); // SysString in some case it seems

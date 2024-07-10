@@ -2622,49 +2622,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return Rnd.nextBoolean();
 	}
-	
-	/**
-	 * Get a random entry.
-	 * @param <T>
-	 * @param array of values.
-	 * @return one value from array.
-	 */
-	public static T getRandomEntry<T>(params T[] array)
-	{
-		if (array.Length == 0)
-		{
-			return default;
-		}
 
-		return array[getRandom(array.Length)];
-	}
-	
-	/**
-	 * Get a random entry.
-	 * @param <T>
-	 * @param list of values.
-	 * @return one value from list.
-	 */
-	public static T getRandomEntry<T>(List<T> list)
-	{
-		if (list.isEmpty())
-		{
-			return default;
-		}
-		
-		return list[getRandom(list.Count)];
-	}
-	
-	/**
-	 * Get a random entry.
-	 * @param array of Integers.
-	 * @return one int from array.
-	 */
-	public static int getRandomEntry(params int[] array)
-	{
-		return array[getRandom(array.Length)];
-	}
-	
 	/**
 	 * Get the ID of the item equipped in the specified inventory slot of the player.
 	 * @param player the player whose inventory to check

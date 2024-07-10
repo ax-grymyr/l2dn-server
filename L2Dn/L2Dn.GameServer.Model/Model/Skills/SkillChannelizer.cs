@@ -136,13 +136,13 @@ public class SkillChannelizer: Runnable
 				{
 					if (o.isCreature())
 					{
-						targetList.Add((Creature)o);
-						((Creature)o).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), _channelizer);
+						targetList.Add(o);
+						o.getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), _channelizer);
 					}
 				});
 			}
 
-			if (targetList.isEmpty())
+			if (targetList.Count == 0)
 			{
 				return;
 			}

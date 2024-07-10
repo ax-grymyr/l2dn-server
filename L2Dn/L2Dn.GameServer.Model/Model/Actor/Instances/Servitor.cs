@@ -37,7 +37,7 @@ public class Servitor : Summon, Runnable
 	public override void onSpawn()
 	{
 		base.onSpawn();
-		if ((_lifeTime != null) && (_summonLifeTask == null))
+		if (_lifeTime != null && _summonLifeTask == null)
 		{
 			_summonLifeTask = ThreadPool.scheduleAtFixedRate(this, 0, 5000);
 		}
@@ -45,7 +45,7 @@ public class Servitor : Summon, Runnable
 	
 	public override int getLevel()
 	{
-		return (getTemplate() != null ? getTemplate().getLevel() : 0);
+		return getTemplate() != null ? getTemplate().getLevel() : 0;
 	}
 	
 	public override int getSummonType()
@@ -186,12 +186,12 @@ public class Servitor : Summon, Runnable
 		if (servitorEffects != null)
 		{
 			ICollection<SummonEffectTable.SummonEffect> effects = servitorEffects.get(_referenceSkill);
-			if ((effects != null) && !effects.isEmpty())
+			if (effects != null && effects.Count != 0)
 			{
 				foreach (SummonEffectTable.SummonEffect effect in effects)
 				{
 					Skill skill = effect.getSkill();
-					if ((skill != null) && (skill.getId() == skillId))
+					if (skill != null && skill.getId() == skillId)
 					{
 						effects.Remove(effect);
 					}
@@ -227,7 +227,7 @@ public class Servitor : Summon, Runnable
 			return;
 		}
 		
-		if ((getOwner() == null) || getOwner().isInOlympiadMode())
+		if (getOwner() == null || getOwner().isInOlympiadMode())
 		{
 			return;
 		}
@@ -473,7 +473,7 @@ public class Servitor : Summon, Runnable
 	{
 		if (getOwner() != null)
 		{
-			return (getOwner().getAttackElementValue(attackAttribute));
+			return getOwner().getAttackElementValue(attackAttribute);
 		}
 		return base.getAttackElementValue(attackAttribute);
 	}
@@ -482,7 +482,7 @@ public class Servitor : Summon, Runnable
 	{
 		if (getOwner() != null)
 		{
-			return (getOwner().getDefenseElementValue(defenseAttribute));
+			return getOwner().getDefenseElementValue(defenseAttribute);
 		}
 		return base.getDefenseElementValue(defenseAttribute);
 	}
@@ -518,7 +518,7 @@ public class Servitor : Summon, Runnable
 			_consumeItemIntervalRemaining -= usedtime;
 			
 			// check if it is time to consume another item
-			if ((_consumeItemIntervalRemaining <= TimeSpan.Zero) && (_itemConsume.getCount() > 0) && (_itemConsume.getId() > 0) && !isDead())
+			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.getCount() > 0 && _itemConsume.getId() > 0 && !isDead())
 			{
 				if (destroyItemByItemId("Consume", _itemConsume.getId(), _itemConsume.getCount(), this, false))
 				{

@@ -14,4 +14,7 @@ public static class DictionaryExtensions
 
         return array;
     }
+
+    public static bool IsEmpty<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dictionary)
+        => dictionary.Count == 0;
 }

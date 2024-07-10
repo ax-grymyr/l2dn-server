@@ -91,7 +91,7 @@ public class ItemAuctionInstance
 			}
 		});
 		
-		if (_items.isEmpty())
+		if (_items.Count == 0)
 		{
 			throw new ArgumentException(nameof(_items), "No items defined");
 		}

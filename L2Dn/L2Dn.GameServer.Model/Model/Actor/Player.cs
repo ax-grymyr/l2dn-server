@@ -5827,7 +5827,7 @@ public class Player: Playable
 		broadcastUserInfo();
 		
 		// This can be 0 if the user pressed the right mousebutton twice very fast.
-		if (!unequipped.isEmpty())
+		if (unequipped.Count != 0)
 		{
 			SystemMessagePacket sm;
 			Item unequippedItem = unequipped[0];
@@ -5864,7 +5864,7 @@ public class Player: Playable
 			broadcastUserInfo();
 			
 			// this can be 0 if the user pressed the right mousebutton twice very fast
-			if (!unequipped.isEmpty())
+			if (unequipped.Count != 0)
 			{
 				SystemMessagePacket sm;
 				Item unequippedItem = unequipped[0];
@@ -7371,9 +7371,9 @@ public class Player: Playable
 		{
 			getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
 		}
-		if (!Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.isEmpty())
+		if (!Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 		{
-			getEffectList().startAbnormalVisualEffect(Config.OFFLINE_PLAY_ABNORMAL_EFFECTS[(Rnd.get(Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.Length))]);
+			getEffectList().startAbnormalVisualEffect(Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.GetRandomElement());
 		}
 		broadcastUserInfo();
 		
@@ -7557,7 +7557,7 @@ public class Player: Playable
 	 */
 	private void storeSkills(List<Skill> newSkills, int newClassIndex)
 	{
-		if (newSkills.isEmpty())
+		if (newSkills.Count == 0)
 		{
 			return;
 		}
@@ -7566,7 +7566,6 @@ public class Player: Playable
 		try
 		{
             int characterId = getObjectId();
-			const string ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (Skill addSkill in newSkills)
 			{
@@ -14726,7 +14725,7 @@ public class Player: Playable
 			LOGGER.Error(e);
 		}
 		
-		if (!restoredSpirits.isEmpty())
+		if (restoredSpirits.Count != 0)
 		{
 			_spirits = new ElementalSpirit[EnumUtil.GetValues<ElementalType>().Length - 1];
 			foreach (ElementalSpiritDataHolder spiritData in restoredSpirits)
@@ -14899,7 +14898,7 @@ public class Player: Playable
 		}
 		
 		List<int> settings = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SETTINGS);
-		if (settings.isEmpty())
+		if (settings.Count == 0)
 		{
 			return;
 		}

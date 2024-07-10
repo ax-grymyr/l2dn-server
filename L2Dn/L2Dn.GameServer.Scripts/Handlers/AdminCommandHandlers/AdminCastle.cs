@@ -115,7 +115,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "startSiege":
 						{
-							if (!castle.getSiege().getAttackerClans().isEmpty())
+							if (castle.getSiege().getAttackerClans().Count != 0)
 							{
 								castle.getSiege().startSiege();
 							}

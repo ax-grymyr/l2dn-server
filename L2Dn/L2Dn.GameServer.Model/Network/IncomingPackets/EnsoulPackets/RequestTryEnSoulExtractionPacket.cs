@@ -62,7 +62,7 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         
         int runeId = EnsoulData.getInstance().getStone(_type, option.getId());
         ICollection<ItemHolder> removalFee = EnsoulData.getInstance().getRemovalFee(item.getTemplate().getCrystalType()); // it was runeId
-        if (removalFee.isEmpty())
+        if (removalFee.Count == 0)
             return ValueTask.CompletedTask;
 		
         // Check if player has required items.

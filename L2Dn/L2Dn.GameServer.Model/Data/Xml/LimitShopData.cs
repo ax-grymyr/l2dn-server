@@ -30,7 +30,7 @@ public class LimitShopData: DataReaderBase
 		document.Elements("list").Where(l => l.Attribute("enabled").GetBoolean(false)).Elements("product")
 			.ForEach(parseElement);
 		
-		if (!_products.isEmpty())
+		if (_products.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _products.Count + " items.");
 		}

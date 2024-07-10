@@ -190,7 +190,7 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		
 		// Check level
-		if ((creature.getLevel() < _minLevel) || (creature.getLevel() > _maxLevel))
+		if (creature.getLevel() < _minLevel || creature.getLevel() > _maxLevel)
 		{
 			if (creature.isPlayer())
 			{
@@ -330,7 +330,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isInsideZone(int x, int y, int z)
 	{
-		return (_zone != null) && _zone.isInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
+		return _zone != null && _zone.isInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
 	}
 	
 	/**
@@ -341,7 +341,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isInsideBlockedZone(int x, int y, int z)
 	{
-		if ((_blockedZones == null) || _blockedZones.isEmpty())
+		if (_blockedZones == null || _blockedZones.Count == 0)
 		{
 			return false;
 		}
@@ -509,7 +509,7 @@ public abstract class ZoneType: IEventContainerProvider
 		List<Player> players = new();
 		foreach (Creature ch in _characterList.values())
 		{
-			if ((ch != null) && ch.isPlayer())
+			if (ch != null && ch.isPlayer())
 			{
 				players.add(ch.getActingPlayer());
 			}
@@ -531,7 +531,7 @@ public abstract class ZoneType: IEventContainerProvider
 		
 		foreach (Creature creature in _characterList.values())
 		{
-			if ((creature != null) && creature.isPlayer())
+			if (creature != null && creature.isPlayer())
 			{
 				creature.sendPacket(packet);
 			}
@@ -608,7 +608,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		foreach (Creature obj in _characterList.values())
 		{
-			if ((obj != null) && obj.isPlayer() && obj.getActingPlayer().isOnline())
+			if (obj != null && obj.isPlayer() && obj.getActingPlayer().isOnline())
 			{
 				obj.getActingPlayer().teleToLocation(TeleportWhereType.TOWN);
 			}
@@ -627,7 +627,7 @@ public abstract class ZoneType: IEventContainerProvider
 		
 		foreach (Creature creature in _characterList.values())
 		{
-			if ((creature != null) && creature.isPlayer())
+			if (creature != null && creature.isPlayer())
 			{
 				Player player = creature.getActingPlayer();
 				if (player.isOnline())

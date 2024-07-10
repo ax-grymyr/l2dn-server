@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Events;
@@ -67,7 +68,7 @@ public class BeeHive: AbstractScript
 		Npc npc = onAttackableAttack.getTarget();
 		if (npc.getId() == PET_70_MONSTER || npc.getId() == PET_80_MONSTER)
 		{
-			pet.doCast(getRandomEntry(SKILLS).getSkill());
+			pet.doCast(SKILLS.GetRandomElement().getSkill());
 		}
 	}
 

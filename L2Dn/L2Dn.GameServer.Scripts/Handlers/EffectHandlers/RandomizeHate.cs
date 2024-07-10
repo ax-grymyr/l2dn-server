@@ -54,8 +54,9 @@ public class RandomizeHate: AbstractEffect
 				targetList.add(cha);
 			}
 		});
+
 		// if there is no target, exit function
-		if (targetList.isEmpty())
+		if (targetList.Count == 0)
 		{
 			return;
 		}

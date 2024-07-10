@@ -96,17 +96,14 @@ public abstract class AbstractStatEffect: AbstractEffect
 	
 	public override void pump(Creature effected, Skill skill)
 	{
-		if (!_conditions.isEmpty())
+		foreach (Condition cond in _conditions)
 		{
-			foreach (Condition cond in _conditions)
+			if (!cond.test(effected, effected, skill))
 			{
-				if (!cond.test(effected, effected, skill))
-				{
-					return;
-				}
+				return;
 			}
 		}
-		
+
 		switch (_mode)
 		{
 			case StatModifierType.DIFF:

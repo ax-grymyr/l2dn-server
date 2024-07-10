@@ -57,7 +57,7 @@ public class CubicSkill: SkillHolder
             return false;
         }
 
-        if (_conditions.isEmpty())
+        if (_conditions.Count == 0)
         {
             return true;
         }

@@ -61,7 +61,7 @@ public class BuyListTaskManager
 			}
 			_workingSaves = true;
 			
-			if (!PENDING_UPDATES.isEmpty())
+			if (PENDING_UPDATES.Count != 0)
 			{
 				Product product;
 				lock (PENDING_UPDATES)

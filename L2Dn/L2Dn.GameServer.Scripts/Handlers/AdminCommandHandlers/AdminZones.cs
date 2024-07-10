@@ -246,7 +246,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			}
 		}
 		
-		if ((zoneType != null) && (zoneType.getZone() is ZoneNPoly))
+		if (zoneType != null && zoneType.getZone() is ZoneNPoly)
 		{
 			ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
 			ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val => new ZoneNodeHolder(activeChar));
@@ -395,7 +395,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			{
 				holder.getNodes().Remove(loc);
 				BuilderUtil.sendSysMessage(activeChar, "Node " + index + " has been removed!");
-				if (holder.getNodes().isEmpty())
+				if (holder.getNodes().Count == 0)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Since node list is empty destroying session!");
 					_zones.remove(activeChar.getObjectId());
@@ -410,7 +410,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void dumpPoints(Player activeChar)
 	{
 		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
-		if ((holder != null) && !holder.getNodes().isEmpty())
+		if (holder != null && holder.getNodes().Count != 0)
 		{
 			if (holder.getName().isEmpty())
 			{
@@ -492,7 +492,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	public void onPlayerDlgAnswer(OnPlayerDlgAnswer ev)
 	{
 		Player player = ev.getPlayer();
-		if (player.removeAction(PlayerAction.ADMIN_SHOW_TERRITORY) && (ev.getAnswer() == 1))
+		if (player.removeAction(PlayerAction.ADMIN_SHOW_TERRITORY) && ev.getAnswer() == 1)
 		{
 			ZoneNodeHolder holder = _zones.get(player.getObjectId());
 			if (holder != null)

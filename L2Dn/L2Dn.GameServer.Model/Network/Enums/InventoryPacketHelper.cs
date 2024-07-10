@@ -56,7 +56,7 @@ public class InventoryPacketHelper
         writer.WriteInt16((short)mask);
         writer.WriteInt32(item.getObjectId()); // ObjectId
         writer.WriteInt32(item.getItem().getDisplayId()); // ItemId
-        writer.WriteByte((byte)(item.getItem().isQuestItem() || (item.getEquipped() == 1) ? 0xFF : item.getLocation())); // T1
+        writer.WriteByte((byte)(item.getItem().isQuestItem() || item.getEquipped() == 1 ? 0xFF : item.getLocation())); // T1
         writer.WriteInt64(item.getCount()); // Quantity
         writer.WriteByte((byte)item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
         writer.WriteByte((byte)item.getCustomType1()); // Filler (always 0)
@@ -103,7 +103,7 @@ public class InventoryPacketHelper
         writer.WriteInt16((short)mask);
         writer.WriteInt32(item.getObjectId()); // ObjectId
         writer.WriteInt32(item.getItem().getDisplayId()); // ItemId
-        writer.WriteByte((byte)(item.getItem().isQuestItem() || (item.getEquipped() == 1) ? 0xFF : item.getLocation())); // T1
+        writer.WriteByte((byte)(item.getItem().isQuestItem() || item.getEquipped() == 1 ? 0xFF : item.getLocation())); // T1
         writer.WriteInt64(count); // Quantity
         writer.WriteByte((byte)item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
         writer.WriteByte((byte)item.getCustomType1()); // Filler (always 0)
@@ -239,10 +239,10 @@ public class InventoryPacketHelper
             mask |= ItemListType.AUGMENT_BONUS;
         }
 
-        if ((item.getAttackElementType() >= 0) || (item.getAttributeDefence(AttributeType.FIRE) > 0) ||
-            (item.getAttributeDefence(AttributeType.WATER) > 0) || (item.getAttributeDefence(AttributeType.WIND) > 0) ||
-            (item.getAttributeDefence(AttributeType.EARTH) > 0) || (item.getAttributeDefence(AttributeType.HOLY) > 0) ||
-            (item.getAttributeDefence(AttributeType.DARK) > 0))
+        if (item.getAttackElementType() >= 0 || item.getAttributeDefence(AttributeType.FIRE) > 0 ||
+            item.getAttributeDefence(AttributeType.WATER) > 0 || item.getAttributeDefence(AttributeType.WIND) > 0 ||
+            item.getAttributeDefence(AttributeType.EARTH) > 0 || item.getAttributeDefence(AttributeType.HOLY) > 0 ||
+            item.getAttributeDefence(AttributeType.DARK) > 0)
         {
             mask |= ItemListType.ELEMENTAL_ATTRIBUTE;
         }
@@ -265,8 +265,8 @@ public class InventoryPacketHelper
             mask |= ItemListType.VISUAL_ID;
         }
 
-        if (((item.getSoulCrystalOptions() != null) && !item.getSoulCrystalOptions().isEmpty()) ||
-            ((item.getSoulCrystalSpecialOptions() != null) && !item.getSoulCrystalSpecialOptions().isEmpty()))
+        if ((item.getSoulCrystalOptions() != null && item.getSoulCrystalOptions().Count != 0) ||
+            (item.getSoulCrystalSpecialOptions() != null && item.getSoulCrystalSpecialOptions().Count != 0))
         {
             mask |= ItemListType.SOUL_CRYSTAL;
         }
@@ -325,9 +325,9 @@ public class InventoryPacketHelper
 		if (mask.HasFlag(ItemListType.SOUL_CRYSTAL))
 		{
 			size += 1;
-			size += (item.getSoulCrystalOptions().Count * 4);
+			size += item.getSoulCrystalOptions().Count * 4;
 			size += 1;
-			size += (item.getSoulCrystalSpecialOptions().Count * 4);
+			size += item.getSoulCrystalSpecialOptions().Count * 4;
 		}
 		// TODO:
 		// if (containsMask(mask, ItemListType.REUSE_DELAY))

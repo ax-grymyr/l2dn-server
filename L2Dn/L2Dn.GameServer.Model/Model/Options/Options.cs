@@ -13,10 +13,10 @@ namespace L2Dn.GameServer.Model.Options;
 public class Options
 {
 	private readonly int _id;
-	private List<AbstractEffect> _effects = null;
-	private List<Skill> _activeSkill = null;
-	private List<Skill> _passiveSkill = null;
-	private List<OptionSkillHolder> _activationSkills = null;
+	private List<AbstractEffect> _effects;
+	private List<Skill> _activeSkill;
+	private List<Skill> _passiveSkill;
+	private List<OptionSkillHolder> _activationSkills;
 
 	/**
 	 * @param id
@@ -169,7 +169,7 @@ public class Options
 				}
 			}
 
-			if (!info.getEffects().isEmpty())
+			if (info.getEffects().Count != 0)
 			{
 				playable.getEffectList().add(info);
 			}

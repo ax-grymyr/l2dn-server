@@ -55,7 +55,7 @@ public class CustomMailManager
 							}
 						}
 						
-						if (!itemHolders.isEmpty())
+						if (itemHolders.Count != 0)
 						{
 							Mail attachments = msg.createAttachments();
 							foreach (ItemEnchantHolder itemHolder in itemHolders)

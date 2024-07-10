@@ -140,7 +140,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (entries.isEmpty())
+		if (entries.IsDefaultOrEmpty)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
 			                           " requested empty multisell entry. Multisell: " + _listId + " entry: " +
@@ -196,9 +196,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		                                || (itemEnchantment.getAugmentation() == null && (_augmentOption1 != 0 || _augmentOption2 != 0))
 		                                || (itemEnchantment.getAugmentation() != null && (itemEnchantment.getAugmentation().getOption1Id() != _augmentOption1 || itemEnchantment.getAugmentation().getOption2Id() != _augmentOption2))
 		                                || (_soulCrystalOptions != null && !itemEnchantment.soulCrystalOptionsMatch(_soulCrystalOptions))
-		                                || (_soulCrystalOptions == null && !itemEnchantment.getSoulCrystalOptions().isEmpty())
+		                                || (_soulCrystalOptions == null && itemEnchantment.getSoulCrystalOptions().Count != 0)
 		                                || (_soulCrystalSpecialOptions != null && !itemEnchantment.soulCrystalSpecialOptionsMatch(_soulCrystalSpecialOptions))
-		                                || (_soulCrystalSpecialOptions == null && !itemEnchantment.getSoulCrystalSpecialOptions().isEmpty())
+		                                || (_soulCrystalSpecialOptions == null && itemEnchantment.getSoulCrystalSpecialOptions().Count != 0)
 			))
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() + " is trying to upgrade equippable item, but the stats doesn't match. Id: " + _listId + " entry: " + _entryId);

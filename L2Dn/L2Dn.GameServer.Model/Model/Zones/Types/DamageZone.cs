@@ -73,13 +73,13 @@ public class DamageZone : ZoneType
 	protected override void onEnter(Creature creature)
 	{
 		ScheduledFuture task = _task;
-		if ((task == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
+		if (task == null && (_damageHPPerSec != 0 || _damageMPPerSec != 0))
 		{
 			Player player = creature.getActingPlayer();
 			Castle castle = getCastle();
 			if (castle != null) // Castle zone
 			{
-				if (!(castle.getSiege().isInProgress() && (player != null) && (player.getSiegeState() != 2))) // Siege and no defender
+				if (!(castle.getSiege().isInProgress() && player != null && player.getSiegeState() != 2)) // Siege and no defender
 				{
 					return;
 				}
@@ -98,7 +98,7 @@ public class DamageZone : ZoneType
 	
 	protected override void onExit(Creature creature)
 	{
-		if (getCharactersInside().isEmpty() && (_task != null))
+		if (getCharactersInside().Count == 0 && _task != null)
 		{
 			_task.cancel(true);
 			_task = null;
@@ -117,7 +117,7 @@ public class DamageZone : ZoneType
 	
 	protected Castle getCastle()
 	{
-		if ((_castleId > 0) && (_castle == null))
+		if (_castleId > 0 && _castle == null)
 		{
 			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		}
@@ -142,7 +142,7 @@ public class DamageZone : ZoneType
 				return;
 			}
 			
-			if (_damageZone.getCharactersInside().isEmpty())
+			if (_damageZone.getCharactersInside().Count == 0)
 			{
 				_damageZone._task.cancel(false);
 				_damageZone._task = null;
@@ -165,19 +165,19 @@ public class DamageZone : ZoneType
 			
 			foreach (Creature character in _damageZone.getCharactersInside())
 			{
-				if ((character != null) && character.isPlayer() && !character.isDead())
+				if (character != null && character.isPlayer() && !character.isDead())
 				{
 					if (siege)
 					{
 						// during siege defenders not affected
 						Player player = character.getActingPlayer();
-						if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
+						if (player != null && player.isInSiege() && player.getSiegeState() == 2)
 						{
 							continue;
 						}
 					}
 					
-					double multiplier = 1 + (character.getStat().getValue(Stat.DAMAGE_ZONE_VULN, 0) / 100);
+					double multiplier = 1 + character.getStat().getValue(Stat.DAMAGE_ZONE_VULN, 0) / 100;
 					if (_damageZone.getHPDamagePerSecond() != 0)
 					{
 						character.reduceCurrentHp(_damageZone.getHPDamagePerSecond() * multiplier, character, null);

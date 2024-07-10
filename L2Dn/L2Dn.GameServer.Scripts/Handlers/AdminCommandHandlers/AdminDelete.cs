@@ -74,7 +74,7 @@ public class AdminDelete: IAdminCommandHandler
 			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
 			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
 			List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
-			if (territories.isEmpty())
+			if (territories.Count == 0)
 			{
 				SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
 				if (spawnTemplate != null)
@@ -82,7 +82,7 @@ public class AdminDelete: IAdminCommandHandler
 					territories = spawnTemplate.getTerritories();
 				}
 			}
-			if (territories.isEmpty())
+			if (territories.Count == 0)
 			{
 				target.deleteMe();
 				spawn.stopRespawn();
@@ -112,7 +112,7 @@ public class AdminDelete: IAdminCommandHandler
 			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
 			List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
 			bool simpleTerritory = false;
-			if (territories.isEmpty())
+			if (territories.Count == 0)
 			{
 				SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
 				if (spawnTemplate != null)
@@ -121,7 +121,7 @@ public class AdminDelete: IAdminCommandHandler
 					simpleTerritory = true;
 				}
 			}
-			if (territories.isEmpty())
+			if (territories.Count == 0)
 			{
 				BuilderUtil.sendSysMessage(player, "Incorrect target.");
 			}

@@ -40,7 +40,7 @@ public class Folk: Npc
 		if (npcId == 32611) // Tolonis (Officer) // TODO: why the npc is handled differently?
 		{
 			List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableCollectSkills(player);
-			if (skills.isEmpty()) // No more skills to learn, come back when you level.
+			if (skills.Count == 0) // No more skills to learn, come back when you level.
 			{
 				int minLevel = SkillTreeData.getInstance().getMinLevelForNewSkill(player, SkillTreeData.getInstance().getCollectSkillTree());
 				if (minLevel > 0)
@@ -64,7 +64,7 @@ public class Folk: Npc
 		
 		// Normal skills, No LearnedByFS, no AutoGet skills.
 		ICollection<SkillLearn> skillsToLearn = SkillTreeData.getInstance().getAvailableSkills(player, classId, false, false);
-		if (skillsToLearn.isEmpty())
+		if (skillsToLearn.Count == 0)
 		{
 			Map<long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(classId);
 			int minLevel = SkillTreeData.getInstance().getMinLevelForNewSkill(player, skillTree);

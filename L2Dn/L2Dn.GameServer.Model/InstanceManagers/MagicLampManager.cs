@@ -27,7 +27,7 @@ public class MagicLampManager
 	
 	public void useMagicLamp(Player player)
 	{
-		if (REWARDS.isEmpty())
+		if (REWARDS.Count == 0)
 		{
 			return;
 		}

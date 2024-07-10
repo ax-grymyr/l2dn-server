@@ -56,7 +56,7 @@ public class SayuneRequest : AbstractRequest
 	public void move(Player player, int pos)
 	{
 		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
-		if (map == null || map.getInnerEntries().isEmpty())
+		if (map == null || map.getInnerEntries().Count == 0)
 		{
 			player.sendMessage("MapId: " + _mapId + " was not found in the map!");
 			return;
@@ -106,7 +106,7 @@ public class SayuneRequest : AbstractRequest
 	public void onLogout()
 	{
 		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
-		if (map != null && !map.getInnerEntries().isEmpty())
+		if (map != null && map.getInnerEntries().Count != 0)
 		{
 			SayuneEntry nextEntry = findEntry(0);
 			if (_isSelecting || (nextEntry != null && nextEntry.isSelector()))

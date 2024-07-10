@@ -586,7 +586,7 @@ public class SkillTreeData: DataReaderBase
 			}
 
 			// Forgotten Scroll requirements checked above.
-			if (!includeRequiredItems && !skill.getRequiredItems().isEmpty() && !skill.isLearnedByFS())
+			if (!includeRequiredItems && skill.getRequiredItems().Count != 0 && !skill.isLearnedByFS())
 			{
 				continue;
 			}
@@ -704,7 +704,7 @@ public class SkillTreeData: DataReaderBase
 		for (int i = 0; i < 1000; i++)
 		{
 			learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, includeRequiredItems, holder);
-			if (learnable.isEmpty())
+			if (learnable.Count == 0)
 			{
 				break;
 			}

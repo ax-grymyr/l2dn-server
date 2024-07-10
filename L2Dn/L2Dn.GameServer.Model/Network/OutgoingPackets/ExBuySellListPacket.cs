@@ -151,7 +151,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 	private void sendSellList(PacketBitWriter writer)
 	{
 		writer.WriteInt32(_inventorySlots);
-		if (!_sellList.isEmpty())
+		if (_sellList.Count != 0)
 		{
 			writer.WriteInt16((short)_sellList.Count);
 			foreach (Item item in _sellList)
@@ -165,7 +165,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 			writer.WriteInt16(0);
 		}
 
-		if (!_refundList.isEmpty())
+		if (_refundList.Count != 0)
 		{
 			writer.WriteInt16((short)_refundList.Count);
 			int i = 0;

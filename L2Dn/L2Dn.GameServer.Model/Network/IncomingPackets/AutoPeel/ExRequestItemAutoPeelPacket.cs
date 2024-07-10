@@ -36,7 +36,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
         {
             item = player.getInventory().getItemByObjectId(_itemObjectId);
             if (item == null || !item.isEtcItem() || item.getEtcItem().getExtractableItems() == null ||
-                item.getEtcItem().getExtractableItems().isEmpty())
+                item.getEtcItem().getExtractableItems().Count == 0)
             {
                 return ValueTask.CompletedTask;
             }
@@ -62,7 +62,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
         request.setRemainingPeelCount(_remainingPeelCount);
 		
         EtcItem etcItem = (EtcItem) item.getTemplate();
-        if (etcItem.getExtractableItems() != null && !etcItem.getExtractableItems().isEmpty())
+        if (etcItem.getExtractableItems() != null && etcItem.getExtractableItems().Count != 0)
         {
             IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
             if (handler != null && !handler.useItem(player, item, false))

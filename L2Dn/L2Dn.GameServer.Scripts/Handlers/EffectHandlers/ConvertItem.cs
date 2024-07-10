@@ -70,7 +70,7 @@ public class ConvertItem: AbstractEffect
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList());
 		player.sendInventoryUpdate(iu);
 		
-		if (unequipped.isEmpty())
+		if (unequipped.Count == 0)
 		{
 			return;
 		}

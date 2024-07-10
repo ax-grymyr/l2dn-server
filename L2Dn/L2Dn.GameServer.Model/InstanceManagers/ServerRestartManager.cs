@@ -27,7 +27,7 @@ public class ServerRestartManager
 				if (restartTime < currentTime)
 					restartTime = restartTime.AddDays(1);
 				
-				if (!Config.SERVER_RESTART_DAYS.isEmpty())
+				if (!Config.SERVER_RESTART_DAYS.IsDefaultOrEmpty)
 				{
 					while (!Config.SERVER_RESTART_DAYS.Contains(restartTime.DayOfWeek))
 						restartTime = restartTime.AddDays(1);

@@ -117,7 +117,7 @@ public abstract class DataReaderBase
                         minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
                     }
 					
-                    if (!minions.isEmpty())
+                    if (minions.Count != 0)
                         parameters.put(name, minions);
                     
                     break;

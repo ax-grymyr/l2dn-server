@@ -9,8 +9,8 @@ public static class ReadOnlyListExtensions
     }
 
     public static T GetRandomElement<T>(this IReadOnlyList<T> collection)
-    {
-        int index = Random.Shared.Next(collection.Count);
-        return collection[index];
-    }
+        => collection[Random.Shared.Next(collection.Count)];
+
+    public static T? GetRandomElementOrDefault<T>(this IReadOnlyList<T> collection)
+        => collection.Count != 0 ? collection[Random.Shared.Next(collection.Count)] : default;
 }

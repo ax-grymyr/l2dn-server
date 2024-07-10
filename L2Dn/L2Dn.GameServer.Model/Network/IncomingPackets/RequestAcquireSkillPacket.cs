@@ -266,7 +266,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				}
 				
 				List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableTransferSkills(player);
-				if (skills.isEmpty())
+				if (skills.Count == 0)
 				{
 					player.sendPacket(SystemMessageId.THERE_ARE_NO_OTHER_SKILLS_TO_LEARN);
 				}
@@ -357,7 +357,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					player.sendPacket(new ExAlchemySkillListPacket(player));
 					
 					List<SkillLearn> alchemySkills = SkillTreeData.getInstance().getAvailableAlchemySkills(player);
-					if (alchemySkills.isEmpty())
+					if (alchemySkills.Count == 0)
 					{
 						player.sendPacket(SystemMessageId.THERE_ARE_NO_OTHER_SKILLS_TO_LEARN);
 					}
@@ -408,7 +408,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	public static void showSubUnitSkillList(Player player)
 	{
 		List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableSubPledgeSkills(player.getClan());
-		if (skills.isEmpty())
+		if (skills.Count == 0)
 		{
 			player.sendPacket(SystemMessageId.THERE_ARE_NO_OTHER_SKILLS_TO_LEARN);
 		}
@@ -421,7 +421,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	public static void showSubSkillList(Player player)
 	{
 		List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableSubClassSkills(player);
-		if (!skills.isEmpty())
+		if (skills.Count != 0)
 		{
 			player.sendPacket(new ExAcquirableSkillListByClassPacket(skills, AcquireSkillType.SUBCLASS));
 		}
@@ -434,7 +434,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	public static void showDualSkillList(Player player)
 	{
 		List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableDualClassSkills(player);
-		if (!skills.isEmpty())
+		if (skills.Count != 0)
 		{
 			player.sendPacket(new ExAcquirableSkillListByClassPacket(skills, AcquireSkillType.DUALCLASS));
 		}
@@ -514,7 +514,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			}
 			
 			// Check for required items.
-			if (!skillLearn.getRequiredItems().isEmpty())
+			if (skillLearn.getRequiredItems().Count != 0)
 			{
 				// Then checks that the player has all the items
 				int count = 0;

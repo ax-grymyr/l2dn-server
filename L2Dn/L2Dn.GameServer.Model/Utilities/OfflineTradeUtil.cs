@@ -139,9 +139,9 @@ public class OfflineTradeUtil
 		player.storeMe();
 		LOGGER_ACCOUNTING.Info("Entering offline mode, " + client);
 		
-		if (!Config.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
+		if (!Config.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 		{
-			player.getEffectList().startAbnormalVisualEffect(Config.OFFLINE_ABNORMAL_EFFECTS[Rnd.get(Config.OFFLINE_ABNORMAL_EFFECTS.Length)]);
+			player.getEffectList().startAbnormalVisualEffect(Config.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
 		}
 		
 		return true;

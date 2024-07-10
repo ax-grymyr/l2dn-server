@@ -70,7 +70,7 @@ public class RestorationRandom: AbstractEffect
 		}
 		
 		Player player = effected.getActingPlayer();
-		if (creationList.isEmpty())
+		if (creationList.Count == 0)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
 			return;

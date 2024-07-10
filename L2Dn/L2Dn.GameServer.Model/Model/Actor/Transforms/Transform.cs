@@ -93,7 +93,7 @@ public class Transform: IIdentifiable
 	{
 		if (creature.isPlayer())
 		{
-			return (creature.getActingPlayer().getAppearance().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate);
+			return creature.getActingPlayer().getAppearance().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
 		}
 		else if (creature.isNpc())
 		{
@@ -173,7 +173,7 @@ public class Transform: IIdentifiable
 	public float getCollisionHeight(Creature creature, float defaultCollisionHeight)
 	{
 		TransformTemplate template = getTemplate(creature);
-		if ((template != null) && (template.getCollisionHeight() != null))
+		if (template != null && template.getCollisionHeight() != null)
 		{
 			return template.getCollisionHeight() ?? defaultCollisionHeight;
 			
@@ -184,7 +184,7 @@ public class Transform: IIdentifiable
 	public float getCollisionRadius(Creature creature, float defaultCollisionRadius)
 	{
 		TransformTemplate template = getTemplate(creature);
-		if ((template != null) && (template.getCollisionRadius() != null))
+		if (template != null && template.getCollisionRadius() != null)
 		{
 			return template.getCollisionRadius() ?? defaultCollisionRadius;
 		}
@@ -256,10 +256,10 @@ public class Transform: IIdentifiable
 				}
 				
 				// Set inventory blocks if needed.
-				if (!template.getAdditionalItems().isEmpty())
+				if (template.getAdditionalItems().Count != 0)
 				{
-					 List<int> allowed = new();
-					 List<int> notAllowed = new();
+					List<int> allowed = new();
+					List<int> notAllowed = new();
 					foreach (AdditionalItemHolder holder in template.getAdditionalItems())
 					{
 						if (holder.isAllowedToUse())
@@ -272,12 +272,12 @@ public class Transform: IIdentifiable
 						}
 					}
 					
-					if (!allowed.isEmpty())
+					if (allowed.Count != 0)
 					{
 						player.getInventory().setInventoryBlock(allowed, InventoryBlockType.WHITELIST);
 					}
 					
-					if (!notAllowed.isEmpty())
+					if (notAllowed.Count != 0)
 					{
 						player.getInventory().setInventoryBlock(notAllowed, InventoryBlockType.BLACKLIST);
 					}
@@ -348,7 +348,7 @@ public class Transform: IIdentifiable
 				player.removeAllTransformSkills();
 				
 				// Remove inventory blocks if needed.
-				if (!template.getAdditionalItems().isEmpty())
+				if (template.getAdditionalItems().Count != 0)
 				{
 					player.getInventory().unblock();
 				}
@@ -386,11 +386,11 @@ public class Transform: IIdentifiable
 	{
 		// Add skills depending on level.
 		TransformTemplate template = getTemplate(player);
-		if ((template != null) && !template.getAdditionalSkills().isEmpty())
+		if (template != null && template.getAdditionalSkills().Count != 0)
 		{
 			foreach (AdditionalSkillHolder holder in template.getAdditionalSkills())
 			{
-				if ((player.getLevel() >= holder.getMinLevel()) && (player.getSkillLevel(holder.getSkillId()) < holder.getSkillLevel()))
+				if (player.getLevel() >= holder.getMinLevel() && player.getSkillLevel(holder.getSkillId()) < holder.getSkillLevel())
 				{
 					player.addTransformSkill(holder.getSkill());
 				}

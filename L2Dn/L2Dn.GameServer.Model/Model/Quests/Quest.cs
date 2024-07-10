@@ -331,7 +331,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if (timers == null || timers.isEmpty())
+		if (timers == null || timers.Count == 0)
 		{
 			return null;
 		}
@@ -359,7 +359,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if (timers == null || timers.isEmpty())
+		if (timers == null || timers.Count == 0)
 		{
 			return;
 		}
@@ -389,7 +389,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		List<QuestTimer> timers = _questTimers.get(name);
-		if (timers == null || timers.isEmpty())
+		if (timers == null || timers.Count == 0)
 		{
 			return;
 		}
@@ -2301,7 +2301,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		Party party = player.getParty();
-		if (party == null || party.getMembers().isEmpty())
+		if (party == null || party.getMembers().Count == 0)
 		{
 			return player;
 		}
@@ -2348,7 +2348,7 @@ public class Quest: AbstractScript, IIdentifiable
 		QuestState temp = null;
 		Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if (party == null || party.getMembers().isEmpty())
+		if (party == null || party.getMembers().Count == 0)
 		{
 			temp = player.getQuestState(Name);
 			if (temp != null && temp.isSet(var) && temp.get(var).equalsIgnoreCase(value))
@@ -2381,7 +2381,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 		// if there was no match, return null...
-		if (candidates.isEmpty())
+		if (candidates.Count == 0)
 		{
 			return null;
 		}
@@ -2409,7 +2409,7 @@ public class Quest: AbstractScript, IIdentifiable
 		QuestState temp = null;
 		Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if (party == null || party.getMembers().isEmpty())
+		if (party == null || party.getMembers().Count == 0)
 		{
 			temp = player.getQuestState(Name);
 			if (temp != null && temp.getState() == state)
@@ -2444,7 +2444,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 		// if there was no match, return null...
-		if (candidates.isEmpty())
+		if (candidates.Count == 0)
 		{
 			return null;
 		}
@@ -2551,7 +2551,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 		
-		if (candidates.isEmpty())
+		if (candidates.Count == 0)
 		{
 			return null;
 		}
@@ -2957,12 +2957,12 @@ public class Quest: AbstractScript, IIdentifiable
 	
 	public void addNewQuestConditions(NewQuestCondition condition, string html)
 	{
-		if (!condition.getAllowedClassIds().isEmpty())
+		if (condition.getAllowedClassIds().Count != 0)
 		{
 			addCondStart(p => condition.getAllowedClassIds().Contains(p.getClassId()), html);
 		}
 		
-		if (!condition.getPreviousQuestIds().isEmpty())
+		if (condition.getPreviousQuestIds().Count != 0)
 		{
 			foreach (int questId in condition.getPreviousQuestIds())
 			{
@@ -3106,7 +3106,7 @@ public class Quest: AbstractScript, IIdentifiable
 		NewQuestReward reward = _questData.getRewards();
 		if (reward.getItems() != null)
 		{
-			if (reward.getItems() != null && !reward.getItems().isEmpty())
+			if (reward.getItems() != null && reward.getItems().Count != 0)
 			{
 				foreach (ItemHolder item in reward.getItems())
 				{

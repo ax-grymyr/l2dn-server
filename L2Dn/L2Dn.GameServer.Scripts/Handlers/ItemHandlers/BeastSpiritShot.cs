@@ -50,7 +50,7 @@ public class BeastSpiritShot: IItemHandler
 			}
 		}
 
-		if (pet == null && aliveServitor.isEmpty())
+		if (pet == null && aliveServitor.Count == 0)
 		{
 			activeOwner.sendPacket(SystemMessageId
 				.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_SERVITOR_SAD_ISN_T_IT);

@@ -70,7 +70,7 @@ public class SellBuffsManager: DataReaderBase
 	
 	public void sendBuffMenu(Player player, Player seller, int index)
 	{
-		if (!seller.isSellingBuffs() || seller.getSellingBuffs().isEmpty())
+		if (!seller.isSellingBuffs() || seller.getSellingBuffs().Count == 0)
 		{
 			return;
 		}
@@ -223,7 +223,7 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("<td fixwidth=\"20\"></td>");
 		sb.Append("</tr>");
 		
-		if (player.getSellingBuffs().isEmpty())
+		if (player.getSellingBuffs().Count == 0)
 		{
 			sb.Append("</table>");
 			sb.Append("<br><br><br>");
@@ -301,7 +301,7 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("<td fixwidth=\"20\"></td>");
 		sb.Append("</tr>");
 		
-		if (skillList.isEmpty())
+		if (skillList.Count == 0)
 		{
 			sb.Append("</table>");
 			sb.Append("<br><br><br>");

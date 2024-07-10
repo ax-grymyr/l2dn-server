@@ -37,7 +37,7 @@ public class Transformation: AbstractEffect
 	
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!_id.isEmpty())
+		if (_id.Count != 0)
 		{
 			effected.transform(_id.GetRandomElement(), true);
 		}

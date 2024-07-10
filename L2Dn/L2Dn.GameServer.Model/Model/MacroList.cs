@@ -80,7 +80,7 @@ public class MacroList: IRestorable
 		
 		lock (_macroses)
 		{
-			if (allMacros.isEmpty())
+			if (allMacros.Count == 0)
 			{
 				_owner.sendPacket(new SendMacroListPacket(0, null, MacroUpdateType.LIST));
 			}

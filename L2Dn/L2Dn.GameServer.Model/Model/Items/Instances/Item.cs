@@ -126,7 +126,7 @@ public class Item: WorldObject
 		setInstanceType(InstanceType.Item);
 		_itemId = itemId;
 		_itemTemplate = ItemData.getInstance().getTemplate(itemId);
-		if ((_itemId == 0) || (_itemTemplate == null))
+		if (_itemId == 0 || _itemTemplate == null)
 			throw new ArgumentException();
 
 		base.setName(_itemTemplate.getName());
@@ -139,7 +139,7 @@ public class Item: WorldObject
 		scheduleLifeTimeTask();
 		scheduleVisualLifeTime();
 	}
-	
+
 	/**
 	 * Constructor of the Item from the objetId and the description of the item given by the Item.
 	 * @param objectId : int designating the ID of the object in the world
@@ -160,7 +160,7 @@ public class Item: WorldObject
 		scheduleLifeTimeTask();
 		scheduleVisualLifeTime();
 	}
-	
+
 	/**
 	 * @param rs
 	 * @throws SQLException
@@ -178,16 +178,16 @@ public class Item: WorldObject
 		_time = item.Time;
 		_existsInDb = true;
 		_storedInDb = true;
-		
+
 		if (isEquipable())
 		{
 			restoreAttributes();
 			restoreSpecialAbilities();
 		}
-		
+
 		_isBlessed = getVariables().getBoolean(ItemVariables.BLESSED, false);
 	}
-	
+
 	/**
 	 * Constructor overload.<br>
 	 * Sets the next free object ID in the ID factory.
@@ -196,7 +196,7 @@ public class Item: WorldObject
 	public Item(int itemId): this(IdManager.getInstance().getNextId(), itemId)
 	{
 	}
-	
+
 	/**
 	 * Remove a Item from the world and send server->client GetItem packets.<br>
 	 * <br>
@@ -212,27 +212,27 @@ public class Item: WorldObject
 	public void pickupMe(Creature creature)
 	{
 		WorldRegion oldregion = getWorldRegion();
-		
+
 		// Create a server->client GetItem packet to pick up the Item
 		creature.broadcastPacket(new GetItemPacket(this, creature.getObjectId()));
-		
+
 		lock (this)
 		{
 			setSpawned(false);
 		}
-		
+
 		// if this item is a mercenary ticket, remove the spawns!
 		Castle castle = CastleManager.getInstance().getCastle(this);
-		if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), getId()) != null))
+		if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), getId()) != null)
 		{
 			SiegeGuardManager.getInstance().removeTicket(this);
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
-		
+
 		// outside of synchronized to avoid deadlocks
 		// Remove the Item from the world
 		World.getInstance().removeVisibleObject(this, oldregion);
-		
+
 		// Notify to scripts
 		EventContainer events = getTemplate().Events;
 		if (creature.isPlayer() && events.HasSubscribers<OnPlayerItemPickup>())
@@ -240,7 +240,7 @@ public class Item: WorldObject
 			events.NotifyAsync(new OnPlayerItemPickup(creature.getActingPlayer(), this));
 		}
 	}
-	
+
 	/**
 	 * Sets the ownerID of the item
 	 * @param process : String Identifier of process triggering this action
@@ -248,11 +248,11 @@ public class Item: WorldObject
 	 * @param creator : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void setOwnerId(String process, int ownerId, Player creator, Object reference)
+	public void setOwnerId(string process, int ownerId, Player creator, object reference)
 	{
 		setOwnerId(ownerId);
-		
-		if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+
+		if ((Config.LOG_ITEMS && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -291,8 +291,8 @@ public class Item: WorldObject
 				LOG_ITEMS.Info(sb.ToString());
 			}
 		}
-		
-		if ((creator != null) && creator.isGM() && Config.GMAUDIT)
+
+		if (creator != null && creator.isGM() && Config.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -301,24 +301,24 @@ public class Item: WorldObject
 			sb.Append(" name: ");
 			sb.Append(getName());
 			sb.Append(")");
-			
-			String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
-			
-			String referenceName = "no-reference";
+
+			string targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
+
+			string referenceName = "no-reference";
 			if (reference is WorldObject)
 			{
-				referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
+				referenceName = ((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name";
 			}
-			else if (reference is String)
+			else if (reference is string)
 			{
-				referenceName = (String) reference;
+				referenceName = (string) reference;
 			}
-			
+
 			// TODO: GM audit not implemented
 			//GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
 		}
 	}
-	
+
 	/**
 	 * Sets the ownerID of the item
 	 * @param ownerId : int designating the ID of the owner
@@ -329,19 +329,19 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		// Remove any inventory skills from the old owner.
 		removeSkillsFromOwner();
-		
+
 		_owner = null;
 		_ownerId = ownerId;
 		_storedInDb = false;
-		
+
 		// Give any inventory skills to the new owner only if the item is in inventory
 		// else the skills will be given when location is set to inventory.
 		giveSkillsToOwner();
 	}
-	
+
 	/**
 	 * Returns the ownerID of the item
 	 * @return int : ownerID of the item
@@ -350,7 +350,7 @@ public class Item: WorldObject
 	{
 		return _ownerId;
 	}
-	
+
 	/**
 	 * Sets the location of the item
 	 * @param loc : ItemLocation (enumeration)
@@ -359,7 +359,7 @@ public class Item: WorldObject
 	{
 		setItemLocation(loc, 0);
 	}
-	
+
 	/**
 	 * Sets the location of the item.<br>
 	 * <u><i>Remark :</i></u> If loc and loc_data different from database, say datas not up-to-date
@@ -368,28 +368,28 @@ public class Item: WorldObject
 	 */
 	public void setItemLocation(ItemLocation loc, int locData)
 	{
-		if ((loc == _loc) && (locData == _locData))
+		if (loc == _loc && locData == _locData)
 		{
 			return;
 		}
-		
+
 		// Remove any inventory skills from the old owner.
 		removeSkillsFromOwner();
-		
+
 		_loc = loc;
 		_locData = locData;
 		_storedInDb = false;
-		
+
 		// Give any inventory skills to the new owner only if the item is in inventory
 		// else the skills will be given when location is set to inventory.
 		giveSkillsToOwner();
 	}
-	
+
 	public ItemLocation getItemLocation()
 	{
 		return _loc;
 	}
-	
+
 	/**
 	 * Sets the quantity of the item.
 	 * @param count the new count to set
@@ -400,11 +400,11 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		_count = count >= -1 ? count : 0;
 		_storedInDb = false;
 	}
-	
+
 	/**
 	 * @return Returns the count.
 	 */
@@ -412,7 +412,7 @@ public class Item: WorldObject
 	{
 		return _count;
 	}
-	
+
 	/**
 	 * Sets the quantity of the item.<br>
 	 * <u><i>Remark :</i></u> If loc and loc_data different from database, say datas not up-to-date
@@ -421,17 +421,17 @@ public class Item: WorldObject
 	 * @param creator : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void changeCount(String process, long count, Player creator, Object reference)
+	public void changeCount(string process, long count, Player creator, object reference)
 	{
 		if (count == 0)
 		{
 			return;
 		}
-		
+
 		long old = _count;
 		long max = _itemId == Inventory.ADENA_ID ? Inventory.MAX_ADENA : long.MaxValue;
-		
-		if ((count > 0) && (_count > (max - count)))
+
+		if (count > 0 && _count > max - count)
 		{
 			setCount(max);
 		}
@@ -439,15 +439,15 @@ public class Item: WorldObject
 		{
 			setCount(_count + count);
 		}
-		
+
 		if (_count < 0)
 		{
 			setCount(0);
 		}
-		
+
 		_storedInDb = false;
-		
-		if ((Config.LOG_ITEMS && (process != null) && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || (_itemTemplate.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+
+		if ((Config.LOG_ITEMS && process != null && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -490,8 +490,8 @@ public class Item: WorldObject
 				LOG_ITEMS.Info(sb.ToString());
 			}
 		}
-		
-		if ((creator != null) && creator.isGM() && Config.GMAUDIT)
+
+		if (creator != null && creator.isGM() && Config.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -504,42 +504,42 @@ public class Item: WorldObject
 			sb.Append(" count: ");
 			sb.Append(count);
 			sb.Append(")");
-			
-			String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
-			
-			String referenceName = "no-reference";
+
+			string targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
+
+			string referenceName = "no-reference";
 			if (reference is WorldObject)
 			{
-				referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
+				referenceName = ((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name";
 			}
-			else if (reference is String)
+			else if (reference is string)
 			{
-				referenceName = (String) reference;
+				referenceName = (string) reference;
 			}
-			
+
 			//GMAudit.auditGMAction(creator.ToString(), sb.ToString(), targetName, StringUtil.concat("Object referencing this action is: ", referenceName));
 		}
 	}
-	
+
 	// No logging (function designed for shots only)
-	public void changeCountWithoutTrace(int count, Player creator, Object reference)
+	public void changeCountWithoutTrace(int count, Player creator, object reference)
 	{
 		changeCount(null, count, creator, reference);
 	}
-	
+
 	/**
 	 * Return true if item can be enchanted
 	 * @return bool
 	 */
 	public bool isEnchantable()
 	{
-		if ((_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.PAPERDOLL))
+		if (_loc == ItemLocation.INVENTORY || _loc == ItemLocation.PAPERDOLL)
 		{
 			return _itemTemplate.isEnchantable();
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Returns if item is equipable
 	 * @return bool
@@ -548,16 +548,16 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getBodyPart() != ItemTemplate.SLOT_NONE;
 	}
-	
+
 	/**
 	 * Returns if item is equipped
 	 * @return bool
 	 */
 	public bool isEquipped()
 	{
-		return (_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP);
+		return _loc == ItemLocation.PAPERDOLL || _loc == ItemLocation.PET_EQUIP;
 	}
-	
+
 	/**
 	 * Returns the slot where the item is stored
 	 * @return int
@@ -566,7 +566,7 @@ public class Item: WorldObject
 	{
 		return _locData;
 	}
-	
+
 	/**
 	 * Returns the characteristics of the item.
 	 * @return ItemTemplate
@@ -575,37 +575,37 @@ public class Item: WorldObject
 	{
 		return _itemTemplate;
 	}
-	
+
 	public int getCustomType1()
 	{
 		return _type1;
 	}
-	
+
 	public int getCustomType2()
 	{
 		return _type2;
 	}
-	
+
 	public void setCustomType1(int newtype)
 	{
 		_type1 = newtype;
 	}
-	
+
 	public void setCustomType2(int newtype)
 	{
 		_type2 = newtype;
 	}
-	
+
 	public void setDropTime(DateTime? time)
 	{
 		_dropTime = time;
 	}
-	
+
 	public DateTime? getDropTime()
 	{
 		return _dropTime;
 	}
-	
+
 	/**
 	 * @return the type of item.
 	 */
@@ -613,7 +613,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getItemType();
 	}
-	
+
 	/**
 	 * Gets the item ID.
 	 * @return the item ID
@@ -622,7 +622,7 @@ public class Item: WorldObject
 	{
 		return _itemId;
 	}
-	
+
 	/**
 	 * @return the display Id of the item.
 	 */
@@ -630,31 +630,31 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getDisplayId();
 	}
-	
+
 	/**
 	 * @return {@code true} if item is an EtcItem, {@code false} otherwise.
 	 */
 	public bool isEtcItem()
 	{
-		return (_itemTemplate is EtcItem);
+		return _itemTemplate is EtcItem;
 	}
-	
+
 	/**
 	 * @return {@code true} if item is a Weapon/Shield, {@code false} otherwise.
 	 */
 	public bool isWeapon()
 	{
-		return (_itemTemplate is Weapon);
+		return _itemTemplate is Weapon;
 	}
-	
+
 	/**
 	 * @return {@code true} if item is an Armor, {@code false} otherwise.
 	 */
 	public bool isArmor()
 	{
-		return (_itemTemplate is Armor);
+		return _itemTemplate is Armor;
 	}
-	
+
 	/**
 	 * @return the characteristics of the EtcItem, {@code false} otherwise.
 	 */
@@ -666,7 +666,7 @@ public class Item: WorldObject
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @return the characteristics of the Weapon.
 	 */
@@ -678,7 +678,7 @@ public class Item: WorldObject
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @return the characteristics of the Armor.
 	 */
@@ -690,7 +690,7 @@ public class Item: WorldObject
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @return the quantity of crystals for crystallization.
 	 */
@@ -698,7 +698,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getCrystalCount(_enchantLevel);
 	}
-	
+
 	/**
 	 * @return the reference price of the item.
 	 */
@@ -706,15 +706,15 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getReferencePrice();
 	}
-	
+
 	/**
 	 * @return the name of the item.
 	 */
-	public String getItemName()
+	public string getItemName()
 	{
 		return _itemTemplate.getName();
 	}
-	
+
 	/**
 	 * @return the reuse delay of this item.
 	 */
@@ -722,7 +722,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getReuseDelay();
 	}
-	
+
 	/**
 	 * @return the shared reuse item group.
 	 */
@@ -730,7 +730,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.getSharedReuseGroup();
 	}
-	
+
 	/**
 	 * @return the last change of the item
 	 */
@@ -738,7 +738,7 @@ public class Item: WorldObject
 	{
 		return _lastChange;
 	}
-	
+
 	/**
 	 * Sets the last change of the item
 	 * @param lastChange : int
@@ -747,7 +747,7 @@ public class Item: WorldObject
 	{
 		_lastChange = lastChange;
 	}
-	
+
 	/**
 	 * Returns if item is stackable
 	 * @return bool
@@ -756,7 +756,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.isStackable();
 	}
-	
+
 	/**
 	 * Returns if item is dropable
 	 * @return bool
@@ -767,9 +767,9 @@ public class Item: WorldObject
 		{
 			return true;
 		}
-		return !isAugmented() && (getVisualId() == 0) && _itemTemplate.isDropable();
+		return !isAugmented() && getVisualId() == 0 && _itemTemplate.isDropable();
 	}
-	
+
 	/**
 	 * Returns if item is destroyable
 	 * @return bool
@@ -782,7 +782,7 @@ public class Item: WorldObject
 		}
 		return _itemTemplate.isDestroyable();
 	}
-	
+
 	/**
 	 * Returns if item is tradeable
 	 * @return bool
@@ -795,7 +795,7 @@ public class Item: WorldObject
 		}
 		return !isAugmented() && _itemTemplate.isTradeable();
 	}
-	
+
 	/**
 	 * Returns if item is sellable
 	 * @return bool
@@ -808,7 +808,7 @@ public class Item: WorldObject
 		}
 		return !isAugmented() && _itemTemplate.isSellable();
 	}
-	
+
 	/**
 	 * @param isPrivateWareHouse
 	 * @return if item can be deposited in warehouse or freight
@@ -827,32 +827,32 @@ public class Item: WorldObject
 		}
 		return true;
 	}
-	
+
 	public bool isPotion()
 	{
 		return _itemTemplate.isPotion();
 	}
-	
+
 	public bool isElixir()
 	{
 		return _itemTemplate.isElixir();
 	}
-	
+
 	public bool isScroll()
 	{
 		return _itemTemplate.isScroll();
 	}
-	
+
 	public bool isHeroItem()
 	{
 		return _itemTemplate.isHeroItem();
 	}
-	
+
 	public bool isCommonItem()
 	{
 		return _itemTemplate.isCommon();
 	}
-	
+
 	/**
 	 * Returns whether this item is pvp or not
 	 * @return bool
@@ -861,7 +861,7 @@ public class Item: WorldObject
 	{
 		return _itemTemplate.isPvpItem();
 	}
-	
+
 	public bool isOlyRestrictedItem()
 	{
 		return _itemTemplate.isOlyRestrictedItem();
@@ -877,17 +877,17 @@ public class Item: WorldObject
 	{
 		Summon pet = player.getPet();
 
-		return ((!isEquipped()) // Not equipped
-		        && (_itemTemplate.getType2() != ItemTemplate.TYPE2_QUEST) // Not Quest Item
-		        && ((_itemTemplate.getType2() != ItemTemplate.TYPE2_MONEY) ||
-		            (_itemTemplate.getType1() != ItemTemplate.TYPE1_SHIELD_ARMOR)) // not money, not shield
-		        && ((pet == null) ||
-		            (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
-		        && !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
-		        && (allowAdena || (_itemId != Inventory.ADENA_ID)) // Not Adena
-		        && (!player.isCastingNow(s => s.getSkill().getItemConsumeId() != _itemId)) && (allowNonTradeable ||
-			        (isTradeable() && (!((_itemTemplate.getItemType() == EtcItemType.PET_COLLAR) &&
-			                             player.havePetInvItems())))));
+		return !isEquipped() // Not equipped
+			&& _itemTemplate.getType2() != ItemTemplate.TYPE2_QUEST // Not Quest Item
+			&& (_itemTemplate.getType2() != ItemTemplate.TYPE2_MONEY ||
+				_itemTemplate.getType1() != ItemTemplate.TYPE1_SHIELD_ARMOR) // not money, not shield
+			&& (pet == null ||
+				getObjectId() != pet.getControlObjectId()) // Not Control item of currently summoned pet
+			&& !player.isProcessingItem(getObjectId()) // Not momentarily used enchant scroll
+			&& (allowAdena || _itemId != Inventory.ADENA_ID) // Not Adena
+			&& !player.isCastingNow(s => s.getSkill().getItemConsumeId() != _itemId) && (allowNonTradeable ||
+				(isTradeable() && !(_itemTemplate.getItemType() == EtcItemType.PET_COLLAR &&
+					player.havePetInvItems())));
 	}
 
 	/**
@@ -898,7 +898,7 @@ public class Item: WorldObject
 	{
 		return _enchantLevel;
 	}
-	
+
 	/**
 	 * @return {@code true} if item is enchanted, {@code false} otherwise
 	 */
@@ -906,7 +906,7 @@ public class Item: WorldObject
 	{
 		return _enchantLevel > 0;
 	}
-	
+
 	/**
 	 * @param level the enchant value to set
 	 */
@@ -917,11 +917,11 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		clearEnchantStats();
-		
+
 		// Agathion skills.
-		if (isEquipped() && (_itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION))
+		if (isEquipped() && _itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION)
 		{
 			AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(getId());
 			if (agathionSkills != null)
@@ -966,14 +966,14 @@ public class Item: WorldObject
 				}
 			}
 		}
-		
+
 		_enchantLevel = newLevel;
 		applyEnchantStats();
 		_storedInDb = false;
-		
+
 		getActingPlayer().getInventory().getPaperdollCache().clearMaxSetEnchant();
 	}
-	
+
 	/**
 	 * Returns whether this item is augmented or not
 	 * @return true if augmented
@@ -982,7 +982,7 @@ public class Item: WorldObject
 	{
 		return _augmentation != null;
 	}
-	
+
 	/**
 	 * Returns the augmentation object for this item
 	 * @return augmentation
@@ -991,7 +991,7 @@ public class Item: WorldObject
 	{
 		return _augmentation;
 	}
-	
+
 	/**
 	 * Sets a new augmentation
 	 * @param augmentation
@@ -1009,23 +1009,23 @@ public class Item: WorldObject
 			}
 			removeAugmentation();
 		}
-		
+
 		_augmentation = augmentation;
 		if (updateDatabase)
 		{
 			updateItemOptions();
 		}
-		
+
 		// Notify to scripts.
-		EventContainer events = getTemplate().Events; 
+		EventContainer events = getTemplate().Events;
 		if (events.HasSubscribers<OnPlayerItemAugment>())
 		{
 			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augmentation, true));
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Remove the augmentation
 	 */
@@ -1035,12 +1035,12 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		// Copy augmentation before removing it.
 		VariationInstance augment = _augmentation;
 		_augmentation = null;
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemId = getObjectId();
@@ -1050,18 +1050,18 @@ public class Item: WorldObject
 		{
 			LOGGER.Error("Item could not remove augmentation for " + this + " from DB: " + e);
 		}
-		
+
 		// Notify to scripts.
-		EventContainer events = getTemplate().Events; 
+		EventContainer events = getTemplate().Events;
 		if (events.HasSubscribers<OnPlayerItemAugment>())
 		{
 			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augment, false));
 		}
 	}
-	
+
 	public void restoreAttributes()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int itemId = getObjectId();
@@ -1071,7 +1071,7 @@ public class Item: WorldObject
 				int mineralId = record.MineralId;
 				int option1 = record.Option1;
 				int option2 = record.Option2;
-				if ((option1 != -1) || (option2 != -1))
+				if (option1 != -1 || option2 != -1)
 				{
 					_augmentation = new VariationInstance(mineralId, option1, option2);
 				}
@@ -1092,7 +1092,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not restore augmentation and elemental data for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	public void updateItemOptions()
 	{
 		try
@@ -1105,7 +1105,7 @@ public class Item: WorldObject
 			LOGGER.Warn("Item could not update atributes for " + this + " from DB:" + e);
 		}
 	}
-	
+
 	private void updateItemOptions(GameServerDbContext ctx)
 	{
 		try
@@ -1138,7 +1138,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not update atributes for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	public void updateItemElementals()
 	{
 		try
@@ -1151,7 +1151,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not update elementals for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	private void updateItemElements(GameServerDbContext ctx)
 	{
 		try
@@ -1163,12 +1163,12 @@ public class Item: WorldObject
 		{
 			LOGGER.Error("Item could not update elementals for " + this + " from DB: " + e);
 		}
-		
+
 		if (_elementals == null)
 		{
 			return;
 		}
-		
+
 		try
 		{
 			foreach (AttributeHolder attribute in _elementals.values())
@@ -1180,7 +1180,7 @@ public class Item: WorldObject
 					Value = attribute.getValue()
 				});
 			}
-			
+
 			ctx.SaveChanges();
 		}
 		catch (Exception e)
@@ -1188,53 +1188,53 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not update elementals for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	public ICollection<AttributeHolder> getAttributes()
 	{
 		return _elementals != null ? _elementals.values() : null;
 	}
-	
+
 	public bool hasAttributes()
 	{
-		return (_elementals != null) && !_elementals.isEmpty();
+		return _elementals != null && !_elementals.isEmpty();
 	}
-	
+
 	public AttributeHolder getAttribute(AttributeType type)
 	{
 		return _elementals != null ? _elementals.get(type) : null;
 	}
-	
+
 	public AttributeHolder getAttackAttribute()
 	{
 		if (isWeapon())
 		{
 			if (_itemTemplate.getAttributes() != null)
 			{
-				if (!_itemTemplate.getAttributes().isEmpty())
+				if (_itemTemplate.getAttributes().Count != 0)
 				{
 					return _itemTemplate.getAttributes().First();
 				}
 			}
-			else if ((_elementals != null) && !_elementals.isEmpty())
+			else if (_elementals != null && _elementals.Count != 0)
 			{
 				return _elementals.values().First();
 			}
 		}
 		return null;
 	}
-	
+
 	public AttributeType getAttackAttributeType()
 	{
 		AttributeHolder holder = getAttackAttribute();
 		return holder != null ? holder.getType() : AttributeType.NONE;
 	}
-	
+
 	public int getAttackAttributePower()
 	{
 		AttributeHolder holder = getAttackAttribute();
 		return holder != null ? holder.getValue() : 0;
 	}
-	
+
 	public int getDefenceAttribute(AttributeType element)
 	{
 		if (isArmor())
@@ -1258,7 +1258,7 @@ public class Item: WorldObject
 		}
 		return 0;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	private void applyAttribute(AttributeHolder holder)
 	{
@@ -1280,7 +1280,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Add elemental attribute to item and save to db
 	 * @param holder
@@ -1294,23 +1294,23 @@ public class Item: WorldObject
 			updateItemElementals();
 		}
 	}
-	
+
 	/**
 	 * Remove elemental from item
 	 * @param type byte element to remove
 	 */
 	public void clearAttribute(AttributeType type)
 	{
-		if ((_elementals == null) || (getAttribute(type) == null))
+		if (_elementals == null || getAttribute(type) == null)
 		{
 			return;
 		}
-		
+
 		lock (_elementals)
 		{
 			_elementals.remove(type);
 		}
-		
+
 		try
 		{
 			int itemId = getObjectId();
@@ -1322,20 +1322,20 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not remove elemental enchant for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	public void clearAllAttributes()
 	{
 		if (_elementals == null)
 		{
 			return;
 		}
-		
+
 		lock (_elementals)
 		{
 			_elementals.clear();
 		}
-		
-		try 
+
+		try
 		{
 			int itemId = getObjectId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -1346,7 +1346,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not remove all elemental enchant for " + this + " from DB: " + e);
 		}
 	}
-	
+
 	/**
 	 * Returns true if this item is a shadow item Shadow items have a limited life-time
 	 * @return
@@ -1355,7 +1355,7 @@ public class Item: WorldObject
 	{
 		return _mana != null;
 	}
-	
+
 	/**
 	 * Returns the remaining mana of this shadow item
 	 * @return lifeTime
@@ -1364,7 +1364,7 @@ public class Item: WorldObject
 	{
 		return _mana;
 	}
-	
+
 	/**
 	 * Decreases the mana of this shadow item, sends a inventory update schedules a new consumption task if non is running optionally one could force a new task
 	 * @param resetConsumingMana if true forces a new consumption task if item is equipped
@@ -1373,7 +1373,7 @@ public class Item: WorldObject
 	{
 		decreaseMana(resetConsumingMana, 1);
 	}
-	
+
 	/**
 	 * Decreases the mana of this shadow item, sends a inventory update schedules a new consumption task if non is running optionally one could force a new task
 	 * @param resetConsumingMana if forces a new consumption task if item is equipped
@@ -1385,8 +1385,8 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
-		if ((_mana - count) >= 0)
+
+		if (_mana - count >= 0)
 		{
 			_mana -= count;
 		}
@@ -1394,7 +1394,7 @@ public class Item: WorldObject
 		{
 			_mana = 0;
 		}
-		
+
 		if (_storedInDb)
 		{
 			_storedInDb = false;
@@ -1403,7 +1403,7 @@ public class Item: WorldObject
 		{
 			_consumingMana = false;
 		}
-		
+
 		Player player = getActingPlayer();
 		if (player != null)
 		{
@@ -1432,13 +1432,13 @@ public class Item: WorldObject
 					break;
 				}
 			}
-			
+
 			if (_mana == 0) // The life time has expired
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_S_REMAINING_MANA_IS_NOW_0_AND_THE_ITEM_HAS_DISAPPEARED);
 				sm.Params.addItemName(_itemTemplate);
 				player.sendPacket(sm);
-				
+
 				// unequip
 				if (isEquipped())
 				{
@@ -1451,12 +1451,12 @@ public class Item: WorldObject
 					player.sendInventoryUpdate(iu);
 					player.broadcastUserInfo();
 				}
-				
+
 				if (_loc != ItemLocation.WAREHOUSE)
 				{
 					// destroy
 					player.getInventory().destroyItem("Item", this, player, null);
-					
+
 					// send update
 					InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.REMOVED));
 					player.sendInventoryUpdate(iu);
@@ -1481,7 +1481,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public void scheduleConsumeManaTask()
 	{
 		if (_consumingMana)
@@ -1491,7 +1491,7 @@ public class Item: WorldObject
 		_consumingMana = true;
 		ItemManaTaskManager.getInstance().add(this);
 	}
-	
+
 	/**
 	 * Returns false cause item can't be attacked
 	 * @return bool false
@@ -1500,7 +1500,7 @@ public class Item: WorldObject
 	{
 		return false;
 	}
-	
+
 	/**
 	 * Updates the database.
 	 */
@@ -1508,7 +1508,7 @@ public class Item: WorldObject
 	{
 		updateDatabase(false);
 	}
-	
+
 	/**
 	 * Updates the database.
 	 * @param force if the update should necessarilly be done.
@@ -1519,7 +1519,7 @@ public class Item: WorldObject
 		{
 			if (_existsInDb)
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((_count == 0) && (_loc != ItemLocation.LEASE)))
+				if (_ownerId == 0 || _loc == ItemLocation.VOID || _loc == ItemLocation.REFUND || (_count == 0 && _loc != ItemLocation.LEASE))
 				{
 					removeFromDb();
 				}
@@ -1530,7 +1530,7 @@ public class Item: WorldObject
 			}
 			else
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((_count == 0) && (_loc != ItemLocation.LEASE)))
+				if (_ownerId == 0 || _loc == ItemLocation.VOID || _loc == ItemLocation.REFUND || (_count == 0 && _loc != ItemLocation.LEASE))
 				{
 					return;
 				}
@@ -1538,7 +1538,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Init a dropped Item and add it in the world as a visible object.<br>
 	 * <br>
@@ -1569,14 +1569,14 @@ public class Item: WorldObject
 		{
 			setInstance(null); // No dropper? Make it a global item...
 		}
-		
+
 		// Set the x,y,z position of the Item dropped and update its world region
 		setSpawned(true);
 		setXYZ(loc);
-		
+
 		setDropTime(DateTime.UtcNow);
 		setDropperObjectId(dropper != null ? dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
-		
+
 		// Add the Item dropped in the world as a visible object
 		WorldRegion region = getWorldRegion();
 		region.addVisibleObject(this);
@@ -1586,11 +1586,11 @@ public class Item: WorldObject
 			ItemsOnGroundManager.getInstance().save(this);
 		}
 		setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
-		
-		if ((dropper != null) && dropper.isPlayer())
+
+		if (dropper != null && dropper.isPlayer())
 		{
 			_owner = null;
-			
+
 			// Notify to scripts
 			EventContainer events = getTemplate().Events;
 			if (events.HasSubscribers<OnPlayerItemDrop>())
@@ -1599,7 +1599,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Update the database with values of the item
 	 */
@@ -1609,7 +1609,7 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		try
 		{
 			int itemId = getObjectId();
@@ -1635,17 +1635,17 @@ public class Item: WorldObject
 
 			_existsInDb = true;
 			_storedInDb = true;
-			
+
 			if (_augmentation != null)
 			{
 				updateItemOptions(ctx);
 			}
-			
+
 			if (_elementals != null)
 			{
 				updateItemElements(ctx);
 			}
-			
+
 			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)
@@ -1653,18 +1653,18 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not update " + this + " in DB: Reason: " + e);
 		}
 	}
-	
+
 	/**
 	 * Insert the item in database
 	 */
 	private void insertIntoDb()
 	{
-		if (_existsInDb || (getObjectId() == 0) || _wear)
+		if (_existsInDb || getObjectId() == 0 || _wear)
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Items.Add(new DbItem()
@@ -1681,22 +1681,22 @@ public class Item: WorldObject
 				ManaLeft = _mana,
 				Time = _time,
 			});
-			
+
 			ctx.SaveChanges();
-			
+
 			_existsInDb = true;
 			_storedInDb = true;
-			
+
 			if (_augmentation != null)
 			{
 				updateItemOptions(ctx);
 			}
-			
+
 			if (_elementals != null)
 			{
 				updateItemElements(ctx);
 			}
-			
+
 			updateSpecialAbilities(ctx);
 		}
 		catch (Exception e)
@@ -1704,7 +1704,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not insert " + this + " into DB: Reason: " + e);
 		}
 	}
-	
+
 	/**
 	 * Delete item from database
 	 */
@@ -1714,7 +1714,7 @@ public class Item: WorldObject
 		{
 			return;
 		}
-		
+
 		try
 		{
 			int itemId = getObjectId();
@@ -1736,7 +1736,7 @@ public class Item: WorldObject
 			_storedInDb = false;
 		}
 	}
-	
+
 	public void resetOwnerTimer()
 	{
 		if (_itemLootShedule != null)
@@ -1745,38 +1745,38 @@ public class Item: WorldObject
 			_itemLootShedule = null;
 		}
 	}
-	
+
 	public void setItemLootShedule(ScheduledFuture sf)
 	{
 		_itemLootShedule = sf;
 	}
-	
+
 	public ScheduledFuture getItemLootShedule()
 	{
 		return _itemLootShedule;
 	}
-	
+
 	public void setProtected(bool isProtected)
 	{
 		_protected = isProtected;
 	}
-	
+
 	public bool isProtected()
 	{
 		return _protected;
 	}
-	
+
 	public bool isAvailable()
 	{
 		if (!_itemTemplate.isConditionAttached())
 		{
 			return true;
 		}
-		if ((_loc == ItemLocation.PET) || (_loc == ItemLocation.PET_EQUIP))
+		if (_loc == ItemLocation.PET || _loc == ItemLocation.PET_EQUIP)
 		{
 			return true;
 		}
-		
+
 		Player player = getActingPlayer();
 		if (player != null)
 		{
@@ -1786,46 +1786,46 @@ public class Item: WorldObject
 				{
 					continue;
 				}
-				
+
 				if (!condition.testImpl(player, player, null, _itemTemplate))
 				{
 					return false;
 				}
 			}
-			
+
 			if (player.hasRequest<AutoPeelRequest>())
 			{
 				EtcItem etcItem = getEtcItem();
-				if ((etcItem != null) && (etcItem.getExtractableItems() != null))
+				if (etcItem != null && etcItem.getExtractableItems() != null)
 				{
 					return false;
 				}
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public void setCountDecrease(bool decrease)
 	{
 		_decrease = decrease;
 	}
-	
+
 	public bool getCountDecrease()
 	{
 		return _decrease;
 	}
-	
+
 	public void setInitCount(int initCount)
 	{
 		_initCount = initCount;
 	}
-	
+
 	public long getInitCount()
 	{
 		return _initCount;
 	}
-	
+
 	public void restoreInitCount()
 	{
 		if (_decrease)
@@ -1833,12 +1833,12 @@ public class Item: WorldObject
 			setCount(_initCount);
 		}
 	}
-	
+
 	public bool isTimeLimitedItem()
 	{
 		return _time != null;
 	}
-	
+
 	/**
 	 * Returns (current system time + time) of this time limited item
 	 * @return Time
@@ -1847,12 +1847,12 @@ public class Item: WorldObject
 	{
 		return _time;
 	}
-	
+
 	public TimeSpan? getRemainingTime()
 	{
 		return _time is null ? null : _time.Value - DateTime.UtcNow;
 	}
-	
+
 	public void endOfLife()
 	{
 		Player player = getActingPlayer();
@@ -1865,16 +1865,16 @@ public class Item: WorldObject
 				{
 					items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 				}
-				
+
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				player.sendInventoryUpdate(iu);
 			}
-			
+
 			if (_loc != ItemLocation.WAREHOUSE)
 			{
 				// destroy
 				player.getInventory().destroyItem("Item", this, player, null);
-				
+
 				// send update
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.REMOVED));
 				player.sendInventoryUpdate(iu);
@@ -1889,7 +1889,7 @@ public class Item: WorldObject
 			player.sendPacket(sm);
 		}
 	}
-	
+
 	public void scheduleLifeTimeTask()
 	{
 		if (!isTimeLimitedItem())
@@ -1905,12 +1905,12 @@ public class Item: WorldObject
 			ItemLifeTimeTaskManager.getInstance().add(this, getTime().Value);
 		}
 	}
-	
+
 	public void setDropperObjectId(int id)
 	{
 		_dropperObjectId = id;
 	}
-	
+
 	public override void sendInfo(Player player)
 	{
 		if (_dropperObjectId != 0)
@@ -1922,99 +1922,99 @@ public class Item: WorldObject
 			player.sendPacket(new SpawnItemPacket(this));
 		}
 	}
-	
+
 	public DropProtection getDropProtection()
 	{
 		return _dropProtection;
 	}
-	
+
 	public bool isPublished()
 	{
 		return _published;
 	}
-	
+
 	public void publish()
 	{
 		_published = true;
 	}
-	
+
 	public override bool decayMe()
 	{
 		if (Config.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
-		
+
 		return base.decayMe();
 	}
-	
+
 	public bool isQuestItem()
 	{
 		return _itemTemplate.isQuestItem();
 	}
-	
+
 	public bool isElementable()
 	{
-		if ((_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.PAPERDOLL))
+		if (_loc == ItemLocation.INVENTORY || _loc == ItemLocation.PAPERDOLL)
 		{
 			return _itemTemplate.isElementable();
 		}
 		return false;
 	}
-	
+
 	public bool isFreightable()
 	{
 		return _itemTemplate.isFreightable();
 	}
-	
+
 	public int useSkillDisTime()
 	{
 		return _itemTemplate.useSkillDisTime();
 	}
-	
+
 	public int getOlyEnchantLevel()
 	{
 		Player player = getActingPlayer();
 		int enchant = _enchantLevel;
-		
+
 		if (player == null)
 		{
 			return enchant;
 		}
-		
+
 		if (player.isInOlympiadMode())
 		{
 			if (_itemTemplate.isWeapon())
 			{
-				if ((Config.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0) && (enchant > Config.ALT_OLY_WEAPON_ENCHANT_LIMIT))
+				if (Config.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_WEAPON_ENCHANT_LIMIT)
 				{
 					enchant = Config.ALT_OLY_WEAPON_ENCHANT_LIMIT;
 				}
 			}
 			else
 			{
-				if ((Config.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0) && (enchant > Config.ALT_OLY_ARMOR_ENCHANT_LIMIT))
+				if (Config.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_ARMOR_ENCHANT_LIMIT)
 				{
 					enchant = Config.ALT_OLY_ARMOR_ENCHANT_LIMIT;
 				}
 			}
 		}
-		
+
 		return enchant;
 	}
-	
+
 	public bool hasPassiveSkills()
 	{
-		return (_itemTemplate.getItemType() == EtcItemType.ENCHT_ATTR_RUNE) && (_loc == ItemLocation.INVENTORY) && (_ownerId > 0) && (_itemTemplate.getSkills(ItemSkillType.NORMAL) != null);
+		return _itemTemplate.getItemType() == EtcItemType.ENCHT_ATTR_RUNE && _loc == ItemLocation.INVENTORY && _ownerId > 0 && _itemTemplate.getSkills(ItemSkillType.NORMAL) != null;
 	}
-	
+
 	public void giveSkillsToOwner()
 	{
 		if (!hasPassiveSkills())
 		{
 			return;
 		}
-		
+
 		Player player = getActingPlayer();
 		if (player != null)
 		{
@@ -2028,14 +2028,14 @@ public class Item: WorldObject
 			});
 		}
 	}
-	
+
 	public void removeSkillsFromOwner()
 	{
 		if (!hasPassiveSkills())
 		{
 			return;
 		}
-		
+
 		Player player = getActingPlayer();
 		if (player != null)
 		{
@@ -2049,36 +2049,36 @@ public class Item: WorldObject
 			});
 		}
 	}
-	
+
 	public override bool isItem()
 	{
 		return true;
 	}
-	
+
 	public override Player getActingPlayer()
 	{
-		if ((_owner == null) && (_ownerId != 0))
+		if (_owner == null && _ownerId != 0)
 		{
 			_owner = World.getInstance().getPlayer(_ownerId);
 		}
 		return _owner;
 	}
-	
+
 	public TimeSpan getEquipReuseDelay()
 	{
 		return _itemTemplate.getEquipReuseDelay();
 	}
-	
+
 	/**
 	 * @param player
 	 * @param command
 	 */
-	public void onBypassFeedback(Player player, String command)
+	public void onBypassFeedback(Player player, string command)
 	{
 		if (command.StartsWith("Quest"))
 		{
-			String questName = command.Substring(6);
-			String @event = null;
+			string questName = command.Substring(6);
+			string @event = null;
 			int idx = questName.IndexOf(' ');
 			if (idx > 0)
 			{
@@ -2099,7 +2099,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Returns enchant effect object for this item
 	 * @return enchanteffect
@@ -2108,7 +2108,7 @@ public class Item: WorldObject
 	{
 		return EnchantItemOptionsData.getInstance().getOptions(this);
 	}
-	
+
 	public ICollection<EnsoulOption> getSpecialAbilities()
 	{
 		List<EnsoulOption> result = new();
@@ -2121,12 +2121,12 @@ public class Item: WorldObject
 		}
 		return result;
 	}
-	
+
 	public EnsoulOption getSpecialAbility(int index)
 	{
 		return _ensoulOptions[index];
 	}
-	
+
 	public ICollection<EnsoulOption> getAdditionalSpecialAbilities()
 	{
 		List<EnsoulOption> result = new();
@@ -2139,23 +2139,23 @@ public class Item: WorldObject
 		}
 		return result;
 	}
-	
+
 	public EnsoulOption getAdditionalSpecialAbility(int index)
 	{
 		return _ensoulSpecialOptions[index];
 	}
-	
+
 	public void addSpecialAbility(EnsoulOption option, int position, int type, bool updateInDB)
 	{
-		if ((type == 1) && ((position < 0) || (position > 1))) // two first slots
+		if (type == 1 && (position < 0 || position > 1)) // two first slots
 		{
 			return;
 		}
-		if ((type == 2) && (position != 0)) // third slot
+		if (type == 2 && position != 0) // third slot
 		{
 			return;
 		}
-		
+
 		if (type == 1) // Adding regular ability
 		{
 			EnsoulOption oldOption = _ensoulOptions[position];
@@ -2180,13 +2180,13 @@ public class Item: WorldObject
 				_ensoulSpecialOptions[position] = option;
 			}
 		}
-		
+
 		if (updateInDB)
 		{
 			updateSpecialAbilities();
 		}
 	}
-	
+
 	public void removeSpecialAbility(int position, int type)
 	{
 		if (type == 1)
@@ -2196,7 +2196,7 @@ public class Item: WorldObject
 			{
 				removeSpecialAbility(option);
 				_ensoulOptions[position] = null;
-				
+
 				// Rearrange.
 				if (position == 0)
 				{
@@ -2220,7 +2220,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public void clearSpecialAbilities()
 	{
 		foreach (EnsoulOption ensoulOption in _ensoulOptions)
@@ -2232,14 +2232,14 @@ public class Item: WorldObject
 			clearSpecialAbility(ensoulSpecialOption);
 		}
 	}
-	
+
 	public void applySpecialAbilities()
 	{
 		if (!isEquipped())
 		{
 			return;
 		}
-		
+
 		foreach (EnsoulOption ensoulOption in _ensoulOptions)
 		{
 			applySpecialAbility(ensoulOption);
@@ -2249,7 +2249,7 @@ public class Item: WorldObject
 			applySpecialAbility(ensoulSpecialOption);
 		}
 	}
-	
+
 	private void removeSpecialAbility(EnsoulOption option)
 	{
 		try
@@ -2258,7 +2258,7 @@ public class Item: WorldObject
 			int optionId = option.getId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId && r.OptionId == optionId).ExecuteDelete();
-			
+
 			Skill skill = option.getSkill();
 			if (skill != null)
 			{
@@ -2274,32 +2274,32 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not remove special ability for " + this + ": " + e);
 		}
 	}
-	
+
 	private void applySpecialAbility(EnsoulOption option)
 	{
 		if (option == null)
 		{
 			return;
 		}
-		
+
 		Skill skill = option.getSkill();
 		if (skill != null)
 		{
 			Player player = getActingPlayer();
-			if ((player != null) && (player.getSkillLevel(skill.getId()) != skill.getLevel()))
+			if (player != null && player.getSkillLevel(skill.getId()) != skill.getLevel())
 			{
 				player.addSkill(skill, false);
 			}
 		}
 	}
-	
+
 	private void clearSpecialAbility(EnsoulOption option)
 	{
 		if (option == null)
 		{
 			return;
 		}
-		
+
 		Skill skill = option.getSkill();
 		if (skill != null)
 		{
@@ -2310,7 +2310,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	private void restoreSpecialAbilities()
 	{
 		try
@@ -2335,7 +2335,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not restore special abilities for " + this + ": " + e);
 		}
 	}
-	
+
 	public void updateSpecialAbilities()
 	{
 		try
@@ -2348,7 +2348,7 @@ public class Item: WorldObject
 			LOGGER.Warn("Item could not update item special abilities: " + e);
 		}
 	}
-	
+
 	private void updateSpecialAbilities(GameServerDbContext ctx)
 	{
 		try
@@ -2381,7 +2381,7 @@ public class Item: WorldObject
 				record.Type = 1;
 				record.Position = (byte)i;
 			}
-			
+
 			for (int i = 0; i < _ensoulSpecialOptions.Length; i++)
 			{
 				if (_ensoulSpecialOptions[i] == null)
@@ -2391,7 +2391,7 @@ public class Item: WorldObject
 
 				DbItemSpecialAbility record =
 					GetOrCreateSpecialAbility(ctx, itemObjectId, _ensoulSpecialOptions[i].getId());
-				
+
 				record.Type = 2;
 				record.Position = (byte)i;
 			}
@@ -2403,7 +2403,7 @@ public class Item: WorldObject
 			LOGGER.Error("Item could not update item special abilities: " + e);
 		}
 	}
-	
+
 	/**
 	 * Clears all the enchant bonuses if item is enchanted and containing bonuses for enchant value.
 	 */
@@ -2415,14 +2415,14 @@ public class Item: WorldObject
 			_enchantOptions.Clear();
 			return;
 		}
-		
+
 		foreach (Options.Options op in _enchantOptions)
 		{
 			op.remove(player);
 		}
 		_enchantOptions.Clear();
 	}
-	
+
 	/**
 	 * Clears and applies all the enchant bonuses if item is enchanted and containing bonuses for enchant value.
 	 */
@@ -2430,7 +2430,7 @@ public class Item: WorldObject
 	{
 		Player player = getActingPlayer();
 		ImmutableArray<int> enchantOptions = getEnchantOptions();
-		if (!isEquipped() || (player == null) || (enchantOptions.IsDefaultOrEmpty))
+		if (!isEquipped() || player == null || enchantOptions.IsDefaultOrEmpty)
 		{
 			return;
 		}
@@ -2449,23 +2449,23 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public override void setHeading(int heading)
 	{
 	}
-	
+
 	public void stopAllTasks()
 	{
 		ItemLifeTimeTaskManager.getInstance().remove(this);
 		ItemAppearanceTaskManager.getInstance().remove(this);
 	}
-	
+
 	public ItemVariables getVariables()
 	{
 		ItemVariables vars = getScript<ItemVariables>();
 		return vars != null ? vars : addScript(new ItemVariables(getObjectId()));
 	}
-	
+
 	public int getVisualId()
 	{
 		int visualId = getVariables().getInt(ItemVariables.VISUAL_ID, 0);
@@ -2494,16 +2494,16 @@ public class Item: WorldObject
 		}
 		return visualId;
 	}
-	
+
 	public void setVisualId(int visualId)
 	{
 		setVisualId(visualId, true);
 	}
-	
+
 	public void setVisualId(int visualId, bool announce)
 	{
 		getVariables().set(ItemVariables.VISUAL_ID, visualId);
-		
+
 		// When removed, cancel existing lifetime task.
 		if (visualId == 0)
 		{
@@ -2511,25 +2511,25 @@ public class Item: WorldObject
 			onVisualLifeTimeEnd(announce);
 		}
 	}
-	
+
 	public int getAppearanceStoneId()
 	{
 		return getVariables().getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 	}
-	
+
 	public DateTime? getVisualLifeTime()
 	{
 		DateTime time = getVariables().getDateTime(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, DateTime.MinValue);
 		return time == DateTime.MinValue ? null : time;
 	}
-	
+
 	public void scheduleVisualLifeTime()
 	{
 		ItemAppearanceTaskManager.getInstance().remove(this);
 		if (getVisualLifeTime() != null)
 		{
 			DateTime endTime = getVisualLifeTime().Value;
-			if ((endTime - DateTime.UtcNow) > TimeSpan.Zero)
+			if (endTime - DateTime.UtcNow > TimeSpan.Zero)
 			{
 				ItemAppearanceTaskManager.getInstance().add(this, endTime);
 			}
@@ -2539,29 +2539,29 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public void onVisualLifeTimeEnd()
 	{
 		onVisualLifeTimeEnd(true);
 	}
-	
+
 	public void onVisualLifeTimeEnd(bool announce)
 	{
 		removeVisualSetSkills();
-		
+
 		ItemVariables vars = getVariables();
 		vars.remove(ItemVariables.VISUAL_ID);
 		vars.remove(ItemVariables.VISUAL_APPEARANCE_STONE_ID);
 		vars.remove(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME);
 		vars.storeMe();
-		
+
 		Player player = getActingPlayer();
 		if (player != null)
 		{
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.MODIFIED));
 			player.broadcastUserInfo(UserInfoType.APPAREANCE);
 			player.sendInventoryUpdate(iu);
-			
+
 			if (announce)
 			{
 				if (isEnchanted())
@@ -2579,16 +2579,16 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public bool isBlessed()
 	{
 		return _isBlessed;
 	}
-	
+
 	public void setBlessed(bool blessed)
 	{
 		_isBlessed = blessed;
-		
+
 		ItemVariables vars = getVariables();
 		if (!blessed)
 		{
@@ -2600,19 +2600,19 @@ public class Item: WorldObject
 		}
 		vars.storeMe();
 	}
-	
+
 	public void removeVisualSetSkills()
 	{
 		if (!isEquipped())
 		{
 			return;
 		}
-		
+
 		int appearanceStoneId = getAppearanceStoneId();
 		if (appearanceStoneId > 0)
 		{
 			AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
-			if ((stone != null) && (stone.getType() == AppearanceType.FIXED))
+			if (stone != null && stone.getType() == AppearanceType.FIXED)
 			{
 				Player player = getActingPlayer();
 				if (player != null)
@@ -2620,7 +2620,7 @@ public class Item: WorldObject
 					bool update = false;
 					foreach (ArmorSet armorSet in ArmorSetData.getInstance().getSets(stone.getVisualId()))
 					{
-						if ((armorSet.getPiecesCount(player, x => x.getVisualId()) - 1 /* not removed yet */) < armorSet.getMinimumPieces())
+						if (armorSet.getPiecesCount(player, x => x.getVisualId()) - 1 /* not removed yet */ < armorSet.getMinimumPieces())
 						{
 							foreach (ArmorsetSkillHolder holder in armorSet.getSkills())
 							{
@@ -2633,7 +2633,7 @@ public class Item: WorldObject
 							}
 						}
 					}
-					
+
 					if (update)
 					{
 						player.sendSkillList();
@@ -2642,19 +2642,19 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	public void applyVisualSetSkills()
 	{
 		if (!isEquipped())
 		{
 			return;
 		}
-		
+
 		int appearanceStoneId = getAppearanceStoneId();
 		if (appearanceStoneId > 0)
 		{
 			AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
-			if ((stone != null) && (stone.getType() == AppearanceType.FIXED))
+			if (stone != null && stone.getType() == AppearanceType.FIXED)
 			{
 				Player player = getActingPlayer();
 				if (player != null)
@@ -2671,16 +2671,16 @@ public class Item: WorldObject
 								{
 									continue;
 								}
-								
+
 								Skill skill = holder.getSkill();
-								if ((skill == null) || (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player)))
+								if (skill == null || (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player)))
 								{
 									continue;
 								}
-								
+
 								player.addSkill(skill, false);
 								update = true;
-								
+
 								if (skill.isActive())
 								{
 									if (!player.hasSkillReuse(skill.getReuseHashCode()))
@@ -2692,9 +2692,9 @@ public class Item: WorldObject
 											player.disableSkill(skill, equipDelay);
 										}
 									}
-									
+
 									// Active, non offensive, skills start with reuse on equip.
-									if (!skill.isBad() && !skill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+									if (!skill.isBad() && !skill.isTransformation() && Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 									{
 										player.addTimeStamp(skill,
 											skill.getReuseDelay() > TimeSpan.Zero
@@ -2726,13 +2726,13 @@ public class Item: WorldObject
 	 * Returns the item in String format
 	 * @return String
 	 */
-	public override String ToString()
+	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 		sb.Append(_itemTemplate);
-		sb.Append("[");
+		sb.Append('[');
 		sb.Append(getObjectId());
-		sb.Append("]");
+		sb.Append(']');
 		return sb.ToString();
 	}
 }

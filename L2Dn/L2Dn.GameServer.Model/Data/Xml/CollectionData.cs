@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Utilities;
@@ -70,7 +71,7 @@ public sealed class CollectionData: DataReaderBase
 			.Select(p => new KeyValuePair<int, ImmutableArray<CollectionDataHolder>>(p.Key, p.Value.ToImmutableArray()))
 			.ToFrozenDictionary();
 
-		if (!_collections.isEmpty())
+		if (!_collections.IsEmpty())
 			_logger.Info(GetType().Name + ": Loaded " + _collections.Count + " collections.");
 		else
 			_logger.Info(GetType().Name + ": System is disabled.");

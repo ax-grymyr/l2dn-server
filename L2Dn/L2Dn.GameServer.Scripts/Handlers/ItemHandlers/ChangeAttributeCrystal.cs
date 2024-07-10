@@ -53,7 +53,7 @@ public class ChangeAttributeCrystal: IItemHandler
 			}
 		}
 		
-		if (itemList.isEmpty())
+		if (itemList.Count == 0)
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_FOR_CHANGING_AN_ATTRIBUTE_DOES_NOT_EXIST);
 			return false;

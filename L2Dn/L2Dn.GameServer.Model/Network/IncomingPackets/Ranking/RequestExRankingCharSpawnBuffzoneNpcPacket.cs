@@ -38,7 +38,7 @@ public struct RequestExRankingCharSpawnBuffzoneNpcPacket: IIncomingPacket<GameSe
         }
 
         if (!player.isInsideZone(ZoneId.PEACE) || player.isInStoreMode() ||
-            !World.getInstance().getVisibleObjectsInRange<Creature>(player, 50).isEmpty())
+            World.getInstance().getVisibleObjectsInRange<Creature>(player, 50).Count != 0)
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_USE_LEADER_POWER_HERE);
             return ValueTask.CompletedTask;

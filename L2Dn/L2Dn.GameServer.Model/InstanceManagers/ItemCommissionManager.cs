@@ -100,7 +100,7 @@ public class ItemCommissionManager
 			}
 		}
 		
-		if (commissionItems.isEmpty())
+		if (commissionItems.Count == 0)
 		{
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.ITEM_DOES_NOT_EXIST));
 			return;
@@ -138,7 +138,7 @@ public class ItemCommissionManager
 			}
 		}
 		
-		if (!commissionItems.isEmpty())
+		if (commissionItems.Count != 0)
 		{
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.PLAYER_AUCTIONS, commissionItems));
 		}

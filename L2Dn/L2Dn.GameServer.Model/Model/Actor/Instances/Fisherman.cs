@@ -44,7 +44,7 @@ public class Fisherman: Merchant
     public static void showFishSkillList(Player player)
     {
         List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableFishingSkills(player);
-        if (skills.isEmpty())
+        if (skills.Count == 0)
         {
             int minlLevel = SkillTreeData.getInstance()
                 .getMinLevelForNewSkill(player, SkillTreeData.getInstance().getFishingSkillTree());

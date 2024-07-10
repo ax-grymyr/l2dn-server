@@ -23,7 +23,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
         writer.WriteInt32(_fortress.getSiege().isInProgress()); // fortress siege status
         writer.WriteInt32(_fortress.getFortSize()); // barracks count
         List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortress.getResidenceId());
-        if ((commanders != null) && !commanders.isEmpty() && _fortress.getSiege().isInProgress())
+        if (commanders != null && commanders.Count != 0 && _fortress.getSiege().isInProgress())
         {
             switch (commanders.Count)
             {

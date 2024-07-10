@@ -116,7 +116,7 @@ public class Party : AbstractPlayerGroup
 				availableMembers.Add(member);
 			}
 		}
-		return !availableMembers.isEmpty() ? availableMembers.GetRandomElement() : null;
+		return availableMembers.GetRandomElementOrDefault();
 	}
 	
 	/**
@@ -750,7 +750,7 @@ public class Party : AbstractPlayerGroup
 			}
 		}
 		
-		if (!toReward.isEmpty())
+		if (toReward.Count != 0)
 		{
 			// Now we can actually distribute the adena reward
 			// (Total adena splitted by the number of party members that are in range and must be rewarded)
@@ -1044,10 +1044,11 @@ public class Party : AbstractPlayerGroup
 	 */
 	public override Player getLeader()
 	{
-		if (_members.isEmpty())
+		if (_members.Count == 0)
 		{
 			return null;
 		}
+
 		return _members[0];
 	}
 	

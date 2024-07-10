@@ -293,7 +293,7 @@ public class DropSearchBoard: IParseBoardHandler
 			{
 				int npcId = int.Parse(@params[1]);
 				List<NpcSpawnTemplate> spawnList = SpawnData.getInstance().getNpcSpawns(npc => npc.getId() == npcId);
-				if (spawnList.isEmpty())
+				if (spawnList.Count == 0)
 				{
 					player.sendMessage("Cannot find any spawn. Maybe dropped by a boss or instance monster.");
 				}
@@ -349,7 +349,7 @@ public class DropSearchBoard: IParseBoardHandler
 			}
 		}
 		
-		if (items.isEmpty())
+		if (items.Count == 0)
 		{
 			return "<tr><td width=100 align=CENTER>No Match</td></tr>";
 		}

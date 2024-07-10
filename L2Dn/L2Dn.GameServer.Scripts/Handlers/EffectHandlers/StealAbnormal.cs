@@ -41,7 +41,7 @@ public class StealAbnormal: AbstractEffect
 		if (effected.isPlayer() && (effector != effected))
 		{
 			List<BuffInfo> toSteal = Formulas.calcCancelStealEffects(effector, effected, skill, _slot, _rate, _max);
-			if (toSteal.isEmpty())
+			if (toSteal.Count == 0)
 			{
 				return;
 			}

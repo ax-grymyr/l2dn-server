@@ -30,7 +30,7 @@ public class TrapTask: Runnable
                 if (_trap.hasLifeTime())
                 {
                     _trap.setRemainingTime(_trap.getRemainingTime() - TICK);
-                    if (_trap.getRemainingTime() < (_trap.getLifeTime() - 15000))
+                    if (_trap.getRemainingTime() < _trap.getLifeTime() - 15000)
                     {
                         _trap.broadcastPacket(new SocialActionPacket(_trap.getObjectId(), 2));
                     }
@@ -43,7 +43,7 @@ public class TrapTask: Runnable
                 }
 
                 Skill skill = _trap.getSkill();
-                if ((skill != null) && !skill.getTargetsAffected(_trap, _trap).isEmpty())
+                if (skill != null && skill.getTargetsAffected(_trap, _trap).Count != 0)
                 {
                     _trap.triggerTrap(_trap);
                 }

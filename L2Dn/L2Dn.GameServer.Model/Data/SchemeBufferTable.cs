@@ -162,7 +162,7 @@ public class SchemeBufferTable: DataReaderBase
 	public bool getSchemeContainsSkill(int playerId, String schemeName, int skillId)
 	{
 		List<int> skills = getScheme(playerId, schemeName);
-		if (skills.isEmpty())
+		if (skills.Count == 0)
 		{
 			return false;
 		}

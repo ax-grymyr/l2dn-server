@@ -66,7 +66,7 @@ public class VitalityPointUp: AbstractEffect
 				}
 			}
 			
-			if (!items.isEmpty())
+			if (items.Count != 0)
 			{
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				effected.getActingPlayer().sendInventoryUpdate(iu);

@@ -17,7 +17,7 @@ public readonly struct ExCursedWeaponLocationPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_CURSED_WEAPON_LOCATION);
 
-        if (!_cursedWeaponInfo.isEmpty())
+        if (_cursedWeaponInfo.Count != 0)
         {
             writer.WriteInt32(_cursedWeaponInfo.Count);
             foreach (CursedWeaponInfo w in _cursedWeaponInfo)

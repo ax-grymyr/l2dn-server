@@ -49,7 +49,7 @@ public class TeleportListData: DataReaderBase
 			locations.Add(new Location3D(x, y, z));
 		});
 
-		if (locations.isEmpty())
+		if (locations.Count == 0)
 		{
 			int x = element.GetAttributeValueAsInt32("x");
 			int y = element.GetAttributeValueAsInt32("y");

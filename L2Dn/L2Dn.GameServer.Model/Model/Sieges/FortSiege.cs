@@ -1086,7 +1086,7 @@ public class FortSiege: Siegable
 		
 		if (checkConditions)
 		{
-			if (_fort.getSiege().getAttackerClans().isEmpty() && player.getInventory().getAdena() < 250000)
+			if (_fort.getSiege().getAttackerClans().Count == 0 && player.getInventory().getAdena() < 250000)
 			{
 				return 1; // Player don't have enough adena to register
 			}

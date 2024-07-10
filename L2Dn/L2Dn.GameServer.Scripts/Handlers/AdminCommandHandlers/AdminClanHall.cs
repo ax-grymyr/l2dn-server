@@ -186,7 +186,7 @@ public class AdminClanHall: IAdminCommandHandler
 			string grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
 			htmlContent.Replace("%clanHallGrade%", grade);
 			htmlContent.Replace("%clanHallSize%", clanHall.getGrade().ToString());
-			if (!clanHall.getFunctions().isEmpty())
+			if (clanHall.getFunctions().Count != 0)
 			{
 				sb.Append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
 				sb.Append("<tr>");

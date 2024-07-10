@@ -323,7 +323,7 @@ public class LongTimeEvent: Quest
 		EventDropManager.getInstance().addDrops(this, _dropList);
 		
 		// Add spawns on server start.
-		if (!_spawnList.isEmpty())
+		if (_spawnList.Count != 0)
 		{
 			GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);
 		}
@@ -398,7 +398,7 @@ public class LongTimeEvent: Quest
 	
 	protected void destroyItemsOnEnd()
 	{
-		if (!_destroyItemsOnEnd.isEmpty())
+		if (_destroyItemsOnEnd.Count != 0)
 		{
 			foreach (int itemId in _destroyItemsOnEnd)
 			{

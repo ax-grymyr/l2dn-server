@@ -252,13 +252,13 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			return new Location(loc, -1);
 		}
 
-		if (!_group.getTerritories().isEmpty())
+		if (_group.getTerritories().Count != 0)
 		{
 			SpawnTerritory territory = _group.getTerritories().GetRandomElement();
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();
-				if (_group.getBannedTerritories().isEmpty())
+				if (_group.getBannedTerritories().Count == 0)
 				{
 					return new Location(loc, -1);
 				}
@@ -279,13 +279,13 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 				}
 			}
 		}
-		else if (!_spawnTemplate.getTerritories().isEmpty())
+		else if (_spawnTemplate.getTerritories().Count != 0)
 		{
 			SpawnTerritory territory = _spawnTemplate.getTerritories().GetRandomElement();
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();
-				if (_spawnTemplate.getBannedTerritories().isEmpty())
+				if (_spawnTemplate.getBannedTerritories().Count == 0)
 				{
 					return new Location(loc, -1);
 				}

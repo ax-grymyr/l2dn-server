@@ -36,7 +36,7 @@ public class SpiritShot: IItemHandler
 		int itemId = item.getId();
 		
 		// Check if SpiritShot can be used
-		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0))
+		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
 		{
 			if (!player.getAutoSoulShot().Contains(itemId))
 			{
@@ -104,7 +104,7 @@ public class SpiritShot: IItemHandler
 		}
 		
 		Summon pet = playable.getPet();
-		if ((pet != null) && pet.isDead())
+		if (pet != null && pet.isDead())
 		{
 			activeOwner.sendPacket(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_SERVITOR_SAD_ISN_T_IT);
 			return false;
@@ -119,18 +119,18 @@ public class SpiritShot: IItemHandler
 			}
 		}
 		
-		if ((pet == null) && aliveServitor.isEmpty())
+		if (pet == null && aliveServitor.Count == 0)
 		{
 			activeOwner.sendPacket(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_SERVITOR_SAD_ISN_T_IT);
 			return false;
 		}
 		
 		int itemId = item.getId();
-		bool isBlessed = ((itemId == 6647) || (itemId == 20334)); // TODO: Unhardcode these!
+		bool isBlessed = itemId == 6647 || itemId == 20334; // TODO: Unhardcode these!
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		ShotType shotType = isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS;
 		short shotConsumption = 0;
-		if ((pet != null) && !pet.isChargedShot(shotType))
+		if (pet != null && !pet.isChargedShot(shotType))
 		{
 			shotConsumption += pet.getSpiritShotsPerHit();
 		}
@@ -170,7 +170,7 @@ public class SpiritShot: IItemHandler
 		}
 		
 		// Pet uses the power of spirit.
-		if ((pet != null) && !pet.isChargedShot(shotType))
+		if (pet != null && !pet.isChargedShot(shotType))
 		{
 			activeOwner.sendMessage(isBlessed ? "Your pet uses blessed spiritshot." : "Your pet uses spiritshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
 			pet.chargeShot(shotType);

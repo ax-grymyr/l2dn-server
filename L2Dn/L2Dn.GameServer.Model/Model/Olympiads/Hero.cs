@@ -413,7 +413,7 @@ public class Hero
 				diaryReply.Replace("%message%", heroMessage);
 				diaryReply.DisableValidation();
 				
-				if (!mainList.isEmpty())
+				if (mainList.Count != 0)
 				{
 					List<StatSet> list = new(mainList);
 					list.Reverse();
@@ -495,7 +495,7 @@ public class Hero
 			{
 				HtmlContent fightReply = HtmlContent.LoadFromText(htmContent, player); 
 				fightReply.Replace("%heroname%", CharInfoTable.getInstance().getNameById(charid));
-				if (!heroFights.isEmpty())
+				if (heroFights.Count != 0)
 				{
 					StatSet heroCount = HERO_COUNTS.get(charid);
 					if (heroCount != null)
@@ -605,7 +605,7 @@ public class Hero
 				}
 			}
 			
-			if (!items.isEmpty())
+			if (items.Count != 0)
 			{
 				InventoryUpdatePacket iu = new InventoryUpdatePacket();
 				player.sendInventoryUpdate(iu);
@@ -615,9 +615,9 @@ public class Hero
 		}
 		
 		deleteItemsInDb();
-		HEROES.clear();
+		HEROES.Clear();
 		
-		if (newHeroes.isEmpty())
+		if (newHeroes.Count == 0)
 		{
 			return;
 		}

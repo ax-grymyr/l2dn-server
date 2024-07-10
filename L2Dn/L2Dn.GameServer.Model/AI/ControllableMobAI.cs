@@ -400,7 +400,7 @@ public class ControllableMobAI : AttackableAI
 			}
 		});
 		
-		return !potentialTarget.isEmpty() ? potentialTarget.GetRandomElement() : null;
+		return potentialTarget.GetRandomElementOrDefault();
 	}
 	
 	private ControllableMob findNextGroupTarget()

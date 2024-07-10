@@ -32,7 +32,7 @@ public readonly struct BuyListSeedPacket: IOutgoingPacket
         writer.WriteInt64(_money); // current money
         writer.WriteInt32(0); // TODO: Find me!
         writer.WriteInt32(_manorId); // manor id
-        if (!_list.isEmpty())
+        if (_list.Count != 0)
         {
             writer.WriteInt16((short)_list.Count); // list length
             foreach (SeedProduction s in _list)

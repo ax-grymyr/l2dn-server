@@ -1269,13 +1269,13 @@ public class VillageMaster: Folk
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return;
 		}
-		
+
 		List<SkillLearn> skills = SkillTreeData.getInstance().getAvailablePledgeSkills(player.getClan());
-		if (skills.isEmpty())
+		if (skills.Count == 0)
 		{
 			if (player.getClan().getLevel() <= 1)
 			{
-				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_HAVE_REACHED_LEVEL_S1);
+				SystemMessagePacket sm = new(SystemMessageId.YOU_DO_NOT_HAVE_ANY_FURTHER_SKILLS_TO_LEARN_COME_BACK_WHEN_YOU_HAVE_REACHED_LEVEL_S1);
 				if (player.getClan().getLevel() <= 1)
 				{
 					sm.Params.addInt(1);
@@ -1289,7 +1289,7 @@ public class VillageMaster: Folk
 			else
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/villagemaster/NoMoreSkills.htm", player);
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
+				NpcHtmlMessagePacket html = new(null, 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}

@@ -241,7 +241,7 @@ public class ExtractableItems: IItemHandler
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
 		}
-		if (!enchantedItems.isEmpty())
+		if (enchantedItems.Count != 0)
 		{
 			List<ItemInfo> items = enchantedItems.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList();
 			InventoryUpdatePacket playerIU = new InventoryUpdatePacket(items);

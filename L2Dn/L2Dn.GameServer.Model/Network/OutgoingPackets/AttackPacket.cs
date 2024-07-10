@@ -68,7 +68,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 	 */
 	public bool hasHits()
 	{
-		return !_hits.isEmpty();
+		return _hits.Count != 0;
 	}
 	
 	public void WriteContent(PacketBitWriter writer)

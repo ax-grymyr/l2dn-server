@@ -360,7 +360,7 @@ public class Siege: Siegable
 				SiegeGuardManager.getInstance().removeSiegeGuards(getCastle()); // Remove all merc entry from db
 			}
 
-			if (getDefenderClans().isEmpty() && // If defender doesn't exist (Pc vs Npc)
+			if (getDefenderClans().Count == 0 && // If defender doesn't exist (Pc vs Npc)
 				getAttackerClans().Count == 1) // Only 1 attacker
 			{
 				SiegeClan scNewOwner = getAttackerClan(_castle.getOwnerId());
@@ -374,7 +374,7 @@ public class Siege: Siegable
 			{
 				// If defender doesn't exist (Pc vs Npc) and only an alliance attacks
 				int? allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
-				if (getDefenderClans().isEmpty() && allyId != null)
+				if (getDefenderClans().Count == 0 && allyId != null)
 				{
 					bool allinsamealliance = true;
 					foreach (SiegeClan sc in getAttackerClans())
@@ -449,7 +449,7 @@ public class Siege: Siegable
 		{
 			SystemMessagePacket sm;
 			_firstOwnerClanId = _castle.getOwnerId();
-			if (getAttackerClans().isEmpty())
+			if (getAttackerClans().Count == 0)
 			{
 				if (_firstOwnerClanId <= 0)
 				{

@@ -103,7 +103,7 @@ public class FenceData: DataReaderBase
 	{
 		WorldRegion? region = World.getInstance().getRegion(location.X, location.Y);
 		List<Fence>? fences = region?.getFences();
-		if (fences == null || fences.isEmpty())
+		if (fences == null || fences.Count == 0)
 		{
 			return false;
 		}

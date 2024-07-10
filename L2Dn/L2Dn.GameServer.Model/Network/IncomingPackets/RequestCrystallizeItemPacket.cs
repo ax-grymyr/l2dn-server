@@ -53,7 +53,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if ((player.getPrivateStoreType() != PrivateStoreType.NONE) || !player.isInCrystallize())
+		if (player.getPrivateStoreType() != PrivateStoreType.NONE || !player.isInCrystallize())
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;
@@ -64,8 +64,8 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			if ((player.getRace() != Race.DWARF) && (player.getClassId() != CharacterClass.FORTUNE_SEEKER) &&
-			    (player.getClassId() != CharacterClass.BOUNTY_HUNTER))
+			if (player.getRace() != Race.DWARF && player.getClassId() != CharacterClass.FORTUNE_SEEKER &&
+			    player.getClassId() != CharacterClass.BOUNTY_HUNTER)
 			{
 				PacketLogger.Instance.Info(player + " used crystalize with classid: " + player.getClassId());
 			}
@@ -77,7 +77,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		if (inventory != null)
 		{
 			Item item = inventory.getItemByObjectId(_objectId);
-			if ((item == null) || item.isHeroItem() || (!Config.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
+			if (item == null || item.isHeroItem() || (!Config.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
@@ -90,13 +90,13 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		}
 		
 		Item itemToRemove = player.getInventory().getItemByObjectId(_objectId);
-		if ((itemToRemove == null) || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
+		if (itemToRemove == null || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
 		
-		if (!itemToRemove.getTemplate().isCrystallizable() || (itemToRemove.getTemplate().getCrystalCount() <= 0) || (itemToRemove.getTemplate().getCrystalType() == CrystalType.NONE))
+		if (!itemToRemove.getTemplate().isCrystallizable() || itemToRemove.getTemplate().getCrystalCount() <= 0 || itemToRemove.getTemplate().getCrystalType() == CrystalType.NONE)
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_CRYSTALLIZED);
 			return ValueTask.CompletedTask;
@@ -171,7 +171,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		}
 		
 		List<ItemChanceHolder> crystallizationRewards = ItemCrystallizationData.getInstance().getCrystallizationRewards(itemToRemove);
-		if ((crystallizationRewards == null) || crystallizationRewards.isEmpty())
+		if (crystallizationRewards == null || crystallizationRewards.Count == 0)
 		{
 			player.sendPacket(SystemMessageId.ANGEL_NEVIT_S_DESCENT_BONUS_TIME_S1);
 			return ValueTask.CompletedTask;

@@ -3184,8 +3184,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						WorldRegion region = getWorldRegion();
 						if (region != null)
 						{
-							bool hasDoors = !region.getDoors().isEmpty();
-							bool hasFences = !region.getFences().isEmpty();
+							bool hasDoors = region.getDoors().Count != 0;
+							bool hasFences = region.getFences().Count != 0;
 							if (hasDoors || hasFences)
 							{
 								double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());

@@ -403,7 +403,7 @@ public sealed class World
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
 			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			if (visibleObjects.Count == 0)
 			{
 				continue;
 			}
@@ -476,7 +476,7 @@ public sealed class World
 			}
 			
 			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			if (visibleObjects.Count == 0)
 			{
 				continue;
 			}
@@ -540,7 +540,7 @@ public sealed class World
 			}
 			
 			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			if (visibleObjects.Count == 0)
 			{
 				continue;
 			}
@@ -630,7 +630,7 @@ public sealed class World
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
 			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			if (visibleObjects.Count == 0)
 			{
 				continue;
 			}
@@ -692,7 +692,7 @@ public sealed class World
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
 			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			if (visibleObjects.Count == 0)
 			{
 				continue;
 			}

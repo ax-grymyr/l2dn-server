@@ -83,7 +83,7 @@ public class MinionList
 	{
 		if (_master.isRaid() || force || Config.FORCE_DELETE_MINIONS)
 		{
-			if (!_spawnedMinions.isEmpty())
+			if (_spawnedMinions.Count != 0)
 			{
 				foreach (Monster minion in _spawnedMinions)
 				{
@@ -97,7 +97,7 @@ public class MinionList
 				_spawnedMinions.Clear();
 			}
 			
-			if (!_respawnTasks.isEmpty())
+			if (_respawnTasks.Count != 0)
 			{
 				foreach (ScheduledFuture task in _respawnTasks)
 				{

@@ -108,7 +108,7 @@ public class DailyMissionDataHolder
 		}
 
 		// Check for specific class restrictions
-		if (!_classRestriction.isEmpty() && !_classRestriction.Contains(player.getClassId()))
+		if (!_classRestriction.IsDefaultOrEmpty && !_classRestriction.Contains(player.getClassId()))
 		{
 			return false;
 		}

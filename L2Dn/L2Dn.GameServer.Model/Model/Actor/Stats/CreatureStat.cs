@@ -432,7 +432,7 @@ public class CreatureStat
 		}
 		double mpConsume = skill.getMpConsume();
 		double nextDanceMpCost = Math.Ceiling(skill.getMpConsume() / 2.0);
-		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
+		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && _creature != null && _creature.getDanceCount() > 0)
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
 		}
@@ -456,7 +456,7 @@ public class CreatureStat
 	{
 		Item weaponInstance = _creature.getActiveWeaponInstance();
 		// 1st order - weapon element
-		if ((weaponInstance != null) && (weaponInstance.getAttackAttributeType() != AttributeType.NONE))
+		if (weaponInstance != null && weaponInstance.getAttackAttributeType() != AttributeType.NONE)
 		{
 			return weaponInstance.getAttackAttributeType();
 		}
@@ -891,7 +891,7 @@ public class CreatureStat
 			}
 			
 			// Pump for summon ABILITY_CHANGE abnormal type.
-			if (_creature.isSummon() && (_creature.getActingPlayer() != null) && _creature.getActingPlayer().hasAbnormalType(AbnormalType.ABILITY_CHANGE))
+			if (_creature.isSummon() && _creature.getActingPlayer() != null && _creature.getActingPlayer().hasAbnormalType(AbnormalType.ABILITY_CHANGE))
 			{
 				foreach (BuffInfo info in _creature.getActingPlayer().getEffectList().getEffects())
 				{
@@ -1020,7 +1020,7 @@ public class CreatureStat
 	public double getSkillEvasionTypeValue(int magicType)
 	{
 		LinkedList<double> skillEvasions = _skillEvasionStat.get(magicType);
-		if ((skillEvasions != null) && !skillEvasions.isEmpty())
+		if (skillEvasions != null && skillEvasions.Count != 0)
 		{
 			return skillEvasions.Last.Value;
 		}
@@ -1038,7 +1038,7 @@ public class CreatureStat
 		_skillEvasionStat.computeIfPresent(magicType, (k, v) =>
 		{
 			v.Remove(value);
-			return !v.isEmpty() ? v : null;
+			return v.Count != 0 ? v : null;
 		});
 	}
 	
@@ -1075,7 +1075,7 @@ public class CreatureStat
 	 */
 	public virtual TimeSpan getReuseTime(Skill skill)
 	{
-		return (skill.isStaticReuse() || skill.isStatic())
+		return skill.isStaticReuse() || skill.isStatic()
 			? skill.getReuseDelay()
 			: skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType());
 	}
@@ -1115,7 +1115,7 @@ public class CreatureStat
 		List<StatHolder> copy = _additionalAdd.ToList();
 		foreach (StatHolder holder in copy)
 		{
-			if ((holder.getStat() == stat) && (holder.getValue() == value))
+			if (holder.getStat() == stat && holder.getValue() == value)
 			{
 				_additionalAdd.Remove(holder);
 				return true;
@@ -1160,7 +1160,7 @@ public class CreatureStat
 		List<StatHolder> copy = _additionalMul.ToList();
 		foreach (StatHolder holder in copy)
 		{
-			if ((holder.getStat() == stat) && (holder.getValue() == value))
+			if (holder.getStat() == stat && holder.getValue() == value)
 			{
 				_additionalMul.Remove(holder);
 				return true;

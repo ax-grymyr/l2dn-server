@@ -189,7 +189,7 @@ public class InstanceManager: DataReaderBase
 							.Select(loc => new Location3D(loc.X, loc.Y, loc.Z))
 							.ToImmutableArray();
 
-						if (locations.isEmpty())
+						if (locations.Length == 0)
 						{
 							_logger.Warn(GetType().Name + ": Missing exit location data for instance " +
 							             template.getName() + " (" + template.getId() + ")!");
@@ -506,7 +506,7 @@ public class InstanceManager: DataReaderBase
 		}
 		
 		// Remove them
-		if (!invalidPenalty.isEmpty())
+		if (invalidPenalty.Count != 0)
 		{
 			try 
 			{

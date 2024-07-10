@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -254,11 +255,11 @@ public class OfflineTraderTable
 					player.setPrivateStoreType(type);
 					player.setOnlineStatus(true, true);
 					player.restoreEffects();
-					if (!Config.OFFLINE_ABNORMAL_EFFECTS.isEmpty())
+					if (!Config.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 					{
 						player.getEffectList()
 							.startAbnormalVisualEffect(
-								Config.OFFLINE_ABNORMAL_EFFECTS[Rnd.get(Config.OFFLINE_ABNORMAL_EFFECTS.Length)]);
+								Config.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
 					}
 
 					player.broadcastUserInfo();

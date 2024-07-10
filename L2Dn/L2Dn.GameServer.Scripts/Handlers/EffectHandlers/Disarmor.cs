@@ -47,7 +47,7 @@ public class Disarmor: AbstractEffect
 		
 		Player player = effected.getActingPlayer();
 		List<Item> unequipped = player.getInventory().unEquipItemInBodySlotAndRecord(_slot);
-		if (!unequipped.isEmpty())
+		if (unequipped.Count != 0)
 		{
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList());
 			player.sendInventoryUpdate(iu);

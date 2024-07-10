@@ -375,7 +375,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				ctx.CastleManorProduction.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
 				
 				// Insert new data
-				if (!list.isEmpty())
+				if (list.Count != 0)
 				{
 					ctx.CastleManorProduction.AddRange(list.Select(sp => new CastleManorProduction()
 					{
@@ -410,7 +410,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				ctx.CastleManorProcure.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
 				
 				// Insert new data
-				if (!list.isEmpty())
+				if (list.Count != 0)
 				{
 					ctx.CastleManorProcure.AddRange(list.Select(cp => new CastleManorProcure()
 					{

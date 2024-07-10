@@ -392,8 +392,7 @@ public class Attackable: Npc
 			}
 
 			damagingParties.Sort((a, b) => a.damage.CompareTo(b.damage));
-			PartyContainer? mostDamageParty =
-				!damagingParties.isEmpty() ? damagingParties[damagingParties.Count - 1] : null;
+			PartyContainer? mostDamageParty = damagingParties.Count != 0 ? damagingParties[^1] : null;
 
 			// Calculate raidboss points
 			if (_isRaid && !_isRaidMinion)

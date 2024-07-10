@@ -603,7 +603,7 @@ public class NpcData: DataReaderBase
 			}
 		}
 
-		if (!template.getParameters().getMinionList("Privates").isEmpty() &&
+		if (template.getParameters().getMinionList("Privates").Count != 0 &&
 		    (template.getParameters().getSet().get("SummonPrivateRate") == null))
 		{
 			_masterMonsterIDs.add(template.getId());
@@ -807,7 +807,7 @@ public class NpcData: DataReaderBase
 				minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
 					
-			if (!minions.isEmpty())
+			if (minions.Count != 0)
 				parameters.put(el.GetAttributeValueAsString("name"), minions);
 		});
 

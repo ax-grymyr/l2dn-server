@@ -162,8 +162,8 @@ public class Castle: AbstractResidence, IEventContainerProvider
 						return;
 					}
 
-					if ((ClanTable.getInstance().getClan(_castle.getOwnerId()).getWarehouse().getAdena() >=
-					     _castleFunction._fee) || !_castleFunction._cwh)
+					if (ClanTable.getInstance().getClan(_castle.getOwnerId()).getWarehouse().getAdena() >=
+					    _castleFunction._fee || !_castleFunction._cwh)
 					{
 						int fee = _castleFunction._fee;
 						if (_castleFunction._endDate is null)
@@ -341,7 +341,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 			_treasury -= amount;
 		}
-		else if ((_treasury + amount) > Inventory.MAX_ADENA)
+		else if (_treasury + amount > Inventory.MAX_ADENA)
 		{
 			_treasury = Inventory.MAX_ADENA;
 		}
@@ -382,7 +382,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public bool checkIfInZone(Location3D location)
 	{
 		SiegeZone zone = getZone();
-		return (zone != null) && zone.isInsideZone(location);
+		return zone != null && zone.isInsideZone(location);
 	}
 	
 	public SiegeZone getZone()
@@ -449,7 +449,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	
 	public void openCloseDoor(Player player, int doorId, bool open)
 	{
-		if ((player.getClanId() != _ownerId) && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
+		if (player.getClanId() != _ownerId && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
 		{
 			return;
 		}
@@ -470,7 +470,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	
 	public void openCloseDoor(Player player, String doorName, bool open)
 	{
-		if ((player.getClanId() != _ownerId) && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
+		if (player.getClanId() != _ownerId && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
 		{
 			return;
 		}
@@ -505,7 +505,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public void setOwner(Clan clan)
 	{
 		// Remove old owner
-		if ((_ownerId > 0) && ((clan == null) || (clan.getId() != _ownerId)))
+		if (_ownerId > 0 && (clan == null || clan.getId() != _ownerId))
 		{
 			Clan oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
 			if (oldOwner != null)
@@ -521,7 +521,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				try
 				{
 					Player oldleader = oldOwner.getLeader().getPlayer();
-					if ((oldleader != null) && (oldleader.getMountType() == MountType.WYVERN))
+					if (oldleader != null && oldleader.getMountType() == MountType.WYVERN)
 					{
 						oldleader.dismount();
 					}
@@ -544,7 +544,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		setShowNpcCrest(false);
 		
 		// if clan have fortress, remove it
-		if ((clan != null) && (clan.getFortId() > 0))
+		if (clan != null && clan.getFortId() > 0)
 		{
 			FortManager.getInstance().getFortByOwner(clan).removeOwner(true);
 		}
@@ -615,7 +615,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			if (door.isDead())
 			{
 				door.doRevive();
-				door.setCurrentHp((isDoorWeak) ? (door.getMaxHp() / 2) : (door.getMaxHp()));
+				door.setCurrentHp(isDoorWeak ? door.getMaxHp() / 2 : door.getMaxHp());
 			}
 			
 			if (door.isOpen())
@@ -703,7 +703,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			return false;
 		}
-		if ((lease > 0) && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
+		if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
 		{
 			return false;
 		}
@@ -711,7 +711,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			_function.put(type, new CastleFunction(this, type, lvl, lease, 0, rate, null, false));
 		}
-		else if ((lvl == 0) && (lease == 0))
+		else if (lvl == 0 && lease == 0)
 		{
 			removeFunction(type);
 		}
@@ -743,7 +743,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		foreach (Door door in DoorData.getInstance().getDoors())
 		{
-			if ((door.getCastle() != null) && (door.getCastle().getResidenceId() == getResidenceId()))
+			if (door.getCastle() != null && door.getCastle().getResidenceId() == getResidenceId())
 			{
 				_doors.add(door);
 			}
@@ -791,7 +791,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	
 	public void setDoorUpgrade(int doorId, int ratio, bool save)
 	{
-		Door door = (getDoors().isEmpty()) ? DoorData.getInstance().getDoor(doorId) : getDoor(doorId);
+		Door door = getDoors().Count == 0 ? DoorData.getInstance().getDoor(doorId) : getDoor(doorId);
 		if (door == null)
 		{
 			return;
@@ -905,7 +905,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	
 	public Clan getOwner()
 	{
-		return (_ownerId != 0) ? ClanTable.getInstance().getClan(_ownerId) : null;
+		return _ownerId != 0 ? ClanTable.getInstance().getClan(_ownerId) : null;
 	}
 	
 	public Siege getSiege()
@@ -1091,7 +1091,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public int getTrapUpgradeLevel(int towerIndex)
 	{
 		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId())[towerIndex];
-		return (spawn != null) ? spawn.getUpgradeLevel() : 0;
+		return spawn != null ? spawn.getUpgradeLevel() : 0;
 	}
 	
 	public void setTrapUpgrade(int towerIndex, int level, bool save)

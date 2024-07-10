@@ -152,7 +152,7 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 		
 		// Show crystallization rewards window.
 		List<ItemChanceHolder> crystallizationRewards = ItemCrystallizationData.getInstance().getCrystallizationRewards(item);
-		if (crystallizationRewards != null && !crystallizationRewards.isEmpty())
+		if (crystallizationRewards != null && crystallizationRewards.Count != 0)
 		{
 			player.setInCrystallize(true);
 			player.sendPacket(new ExGetCrystalizingEstimationPacket(crystallizationRewards));

@@ -64,7 +64,7 @@ public class WorldRegion
 					
 					// Teleport to spawn when too far away.
 					Spawn spawn = mob.getSpawn();
-					if ((spawn != null) && (mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE))
+					if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE)
 					{
 						mob.teleToLocation(spawn.Location);
 					}
@@ -122,7 +122,7 @@ public class WorldRegion
 	
 	public bool areNeighborsActive()
 	{
-		return Config.GRIDS_ALWAYS_ON || (_activeNeighbors.get() > 0);
+		return Config.GRIDS_ALWAYS_ON || _activeNeighbors.get() > 0;
 	}
 	
 	public bool areNeighborsEmpty()
@@ -133,14 +133,14 @@ public class WorldRegion
 			if (worldRegion.isActive())
 			{
 				ICollection<WorldObject> regionObjects = worldRegion.getVisibleObjects();
-				if (regionObjects.isEmpty())
+				if (regionObjects.Count == 0)
 				{
 					continue;
 				}
 				
 				foreach (WorldObject wo in regionObjects)
 				{
-					if ((wo != null) && wo.isPlayable())
+					if (wo != null && wo.isPlayable())
 					{
 						return false;
 					}
@@ -391,7 +391,7 @@ public class WorldRegion
 	
 	public bool isSurroundingRegion(WorldRegion region)
 	{
-		return (region != null) && (_regionX >= (region.getRegionX() - 1)) && (_regionX <= (region.getRegionX() + 1)) && (_regionY >= (region.getRegionY() - 1)) && (_regionY <= (region.getRegionY() + 1));
+		return region != null && _regionX >= region.getRegionX() - 1 && _regionX <= region.getRegionX() + 1 && _regionY >= region.getRegionY() - 1 && _regionY <= region.getRegionY() + 1;
 	}
 	
 	public int getRegionX()

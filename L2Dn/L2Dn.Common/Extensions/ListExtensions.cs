@@ -9,8 +9,10 @@ public static class ListExtensions
         where T: IHasId<TId>
     {
         foreach (T item in list)
+        {
             if (id == item.Id)
                 return item;
+        }
 
         return default;
     }

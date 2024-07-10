@@ -266,7 +266,7 @@ public class RecipeManager
 				return;
 			}
 			
-			if ((_player == null) || (_target == null))
+			if (_player == null || _target == null)
 			{
 				LOGGER.Warn("player or target == null (disconnected?), aborting" + _target + _player);
 				abort();
@@ -296,7 +296,7 @@ public class RecipeManager
 				return;
 			}
 			
-			if (Config.ALT_GAME_CREATION && !_items.isEmpty())
+			if (Config.ALT_GAME_CREATION && _items.Count != 0)
 			{
 				if (!calculateStatUse(true, true))
 				{
@@ -306,7 +306,7 @@ public class RecipeManager
 				grabSomeItems(); // grab (equip) some more items with a nice msg to player
 				
 				// if still not empty, schedule another pass
-				if (!_items.isEmpty())
+				if (_items.Count != 0)
 				{
 					_delay = Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) *
 					         GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK;
@@ -351,7 +351,7 @@ public class RecipeManager
 			}
 			
 			// first take adena for manufacture
-			if ((_target != _player) && (_price > 0)) // customer must pay for services
+			if (_target != _player && _price > 0) // customer must pay for services
 			{
 				// attempt to pay for item
 				Item adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
@@ -369,7 +369,7 @@ public class RecipeManager
 				// handle possible cheaters here
 				// (they click craft then try to get rid of items in order to get free craft)
 			}
-			else if (Rnd.get(100) < (_recipeList.getSuccessRate() + _player.getStat().getValue(Stat.CRAFT_RATE, 0)))
+			else if (Rnd.get(100) < _recipeList.getSuccessRate() + _player.getStat().getValue(Stat.CRAFT_RATE, 0))
 			{
 				rewardPlayer(); // and immediately puts created item in its place
 				updateMakeInfo(true);
@@ -430,7 +430,7 @@ public class RecipeManager
 		private void grabSomeItems()
 		{
 			int grabItems = _itemGrab;
-			while ((grabItems > 0) && !_items.isEmpty())
+			while (grabItems > 0 && _items.Count != 0)
 			{
 				TempItem item = _items[0];
 				int count = item.getQuantity();
@@ -484,7 +484,7 @@ public class RecipeManager
 				}
 			}
 			// determine number of creation passes needed
-			_creationPasses = (_totalItems / _itemGrab) + ((_totalItems % _itemGrab) != 0 ? 1 : 0);
+			_creationPasses = _totalItems / _itemGrab + (_totalItems % _itemGrab != 0 ? 1 : 0);
 			if (_creationPasses < 1)
 			{
 				_creationPasses = 1;
@@ -622,7 +622,7 @@ public class RecipeManager
 			ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
 			
 			// check that the current recipe has a rare production or not
-			if ((rareProdId != -1) && ((rareProdId == itemId) || Config.CRAFT_MASTERWORK))
+			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK))
 			{
 				if (Rnd.get(100) < _recipeList.getRarity())
 				{
@@ -632,7 +632,7 @@ public class RecipeManager
 			}
 			
 			Item item = _target.getInventory().addItem("Manufacture", itemId, itemCount, _target, _player);
-			if (item.isEquipable() && (itemCount == 1) && (Rnd.get(100) < _player.getStat().getValue(Stat.CRAFTING_CRITICAL)))
+			if (item.isEquipable() && itemCount == 1 && Rnd.get(100) < _player.getStat().getValue(Stat.CRAFTING_CRITICAL))
 			{
 				_target.getInventory().addItem("Manufacture Critical", itemId, itemCount, _target, _player);
 			}

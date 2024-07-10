@@ -1,6 +1,5 @@
 ﻿using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Items;
@@ -9,7 +8,6 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
@@ -67,19 +65,19 @@ public class PlayerInventory: Inventory
 	
 	public long getAncientAdena()
 	{
-		return (_ancientAdena != null) ? _ancientAdena.getCount() : 0;
+		return _ancientAdena != null ? _ancientAdena.getCount() : 0;
 	}
-	
+
 	public Item getBeautyTicketsInstance()
 	{
 		return _beautyTickets;
 	}
-	
+
 	public override long getBeautyTickets()
 	{
 		return _beautyTickets != null ? _beautyTickets.getCount() : 0;
 	}
-	
+
 	/**
 	 * Returns the list of items in inventory available for transaction
 	 * @param allowAdena
@@ -90,17 +88,17 @@ public class PlayerInventory: Inventory
 	{
 		return getUniqueItems(allowAdena, allowAncientAdena, true);
 	}
-	
+
 	public ICollection<Item> getUniqueItems(bool allowAdena, bool allowAncientAdena, bool onlyAvailable)
 	{
 		List<Item> list = new();
 		foreach (Item item in _items)
 		{
-			if (!allowAdena && (item.getId() == ADENA_ID))
+			if (!allowAdena && item.getId() == ADENA_ID)
 			{
 				continue;
 			}
-			if (!allowAncientAdena && (item.getId() == ANCIENT_ADENA_ID))
+			if (!allowAncientAdena && item.getId() == ANCIENT_ADENA_ID)
 			{
 				continue;
 			}
@@ -120,7 +118,7 @@ public class PlayerInventory: Inventory
 		}
 		return list;
 	}
-	
+
 	/**
 	 * Returns the list of all items in inventory that have a given item id.
 	 * @param itemId : ID of item
@@ -132,14 +130,14 @@ public class PlayerInventory: Inventory
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if ((itemId == item.getId()) && (includeEquipped || !item.isEquipped()))
+			if (itemId == item.getId() && (includeEquipped || !item.isEquipped()))
 			{
 				result.Add(item);
 			}
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @param itemId
 	 * @param enchantment
@@ -149,7 +147,7 @@ public class PlayerInventory: Inventory
 	{
 		return getAllItemsByItemId(itemId, enchantment, true);
 	}
-	
+
 	/**
 	 * Returns the list of all items in inventory that have a given item id AND a given enchantment level.
 	 * @param itemId : ID of item
@@ -162,14 +160,14 @@ public class PlayerInventory: Inventory
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if ((itemId == item.getId()) && (item.getEnchantLevel() == enchantment) && (includeEquipped || !item.isEquipped()))
+			if (itemId == item.getId() && item.getEnchantLevel() == enchantment && (includeEquipped || !item.isEquipped()))
 			{
 				result.Add(item);
 			}
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @param allowAdena
 	 * @param allowNonTradeable
@@ -187,7 +185,7 @@ public class PlayerInventory: Inventory
 			}
 			else if (feightable)
 			{
-				if ((item.getItemLocation() == ItemLocation.INVENTORY) && item.isFreightable())
+				if (item.getItemLocation() == ItemLocation.INVENTORY && item.isFreightable())
 				{
 					result.Add(item);
 				}
@@ -197,7 +195,7 @@ public class PlayerInventory: Inventory
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Returns the list of items in inventory available for transaction adjusted by tradeList
 	 * @param tradeList
@@ -208,7 +206,7 @@ public class PlayerInventory: Inventory
 		List<TradeItem> result = new();
 		foreach (Item item in _items)
 		{
-			if ((item != null) && item.isAvailable(_owner, false, false))
+			if (item != null && item.isAvailable(_owner, false, false))
 			{
 				TradeItem adjItem = tradeList.adjustAvailableItem(item);
 				if (adjItem != null)
@@ -219,7 +217,7 @@ public class PlayerInventory: Inventory
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Adjust TradeItem according his status in inventory
 	 * @param item : Item to be adjusted
@@ -247,18 +245,18 @@ public class PlayerInventory: Inventory
 			Item adjItem = getItemByItemId(item.getItem().getId());
 			item.setObjectId(adjItem.getObjectId());
 			item.setEnchant(adjItem.getEnchantLevel());
-			
+
 			if (adjItem.getCount() < item.getCount())
 			{
 				item.setCount(adjItem.getCount());
 			}
-			
+
 			return;
 		}
-		
+
 		item.setCount(0);
 	}
-	
+
 	/**
 	 * Adds adena to PcInventory
 	 * @param process : String Identifier of process triggering this action
@@ -273,7 +271,7 @@ public class PlayerInventory: Inventory
 			addItem(process, ADENA_ID, count, actor, reference);
 		}
 	}
-	
+
 	/**
 	 * Adds Beauty Tickets to PcInventory
 	 * @param process : String Identifier of process triggering this action
@@ -288,7 +286,7 @@ public class PlayerInventory: Inventory
 			addItem(process, BEAUTY_TICKET_ID, count, actor, reference);
 		}
 	}
-	
+
 	/**
 	 * Removes adena to PcInventory
 	 * @param process : String Identifier of process triggering this action
@@ -305,7 +303,7 @@ public class PlayerInventory: Inventory
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Removes Beauty Tickets to PcInventory
 	 * @param process : String Identifier of process triggering this action
@@ -322,7 +320,7 @@ public class PlayerInventory: Inventory
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Adds specified amount of ancient adena to player inventory.
 	 * @param process : String Identifier of process triggering this action
@@ -337,7 +335,7 @@ public class PlayerInventory: Inventory
 			addItem(process, ANCIENT_ADENA_ID, count, actor, reference);
 		}
 	}
-	
+
 	/**
 	 * Removes specified amount of ancient adena from player inventory.
 	 * @param process : String Identifier of process triggering this action
@@ -348,9 +346,9 @@ public class PlayerInventory: Inventory
 	 */
 	public bool reduceAncientAdena(String process, long count, Player actor, Object reference)
 	{
-		return (count > 0) && (destroyItemByItemId(process, ANCIENT_ADENA_ID, count, actor, reference) != null);
+		return count > 0 && destroyItemByItemId(process, ANCIENT_ADENA_ID, count, actor, reference) != null;
 	}
-	
+
 	/**
 	 * Adds item in inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -364,25 +362,25 @@ public class PlayerInventory: Inventory
 		Item addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)
 		{
-			if ((addedItem.getId() == ADENA_ID) && !addedItem.Equals(_adena))
+			if (addedItem.getId() == ADENA_ID && !addedItem.Equals(_adena))
 			{
 				_adena = addedItem;
 			}
-			else if ((addedItem.getId() == ANCIENT_ADENA_ID) && !addedItem.Equals(_ancientAdena))
+			else if (addedItem.getId() == ANCIENT_ADENA_ID && !addedItem.Equals(_ancientAdena))
 			{
 				_ancientAdena = addedItem;
 			}
-			else if ((addedItem.getId() == BEAUTY_TICKET_ID) && !addedItem.Equals(_beautyTickets))
+			else if (addedItem.getId() == BEAUTY_TICKET_ID && !addedItem.Equals(_beautyTickets))
 			{
 				_beautyTickets = addedItem;
 			}
-			
+
 			if (actor != null)
 			{
 				// Send inventory update packet
 				InventoryUpdatePacket playerIU = new InventoryUpdatePacket(addedItem);
 				actor.sendInventoryUpdate(playerIU);
-				
+
 				// Notify to scripts
 				EventContainer itemEvents = addedItem.getTemplate().Events;
 				EventContainer playerEvents = actor.Events;
@@ -394,10 +392,10 @@ public class PlayerInventory: Inventory
 				}
 			}
 		}
-		
+
 		return addedItem;
 	}
-	
+
 	/**
 	 * Adds item in inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -411,7 +409,7 @@ public class PlayerInventory: Inventory
 	{
 		return addItem(process, itemId, count, actor, reference, true);
 	}
-	
+
 	/**
 	 * Adds item in inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -427,26 +425,26 @@ public class PlayerInventory: Inventory
 		Item item = base.addItem(process, itemId, count, actor, reference);
 		if (item != null)
 		{
-			if ((item.getId() == ADENA_ID) && !item.Equals(_adena))
+			if (item.getId() == ADENA_ID && !item.Equals(_adena))
 			{
 				_adena = item;
 			}
-			else if ((item.getId() == ANCIENT_ADENA_ID) && !item.Equals(_ancientAdena))
+			else if (item.getId() == ANCIENT_ADENA_ID && !item.Equals(_ancientAdena))
 			{
 				_ancientAdena = item;
 			}
-			else if ((item.getId() == BEAUTY_TICKET_ID) && !item.Equals(_beautyTickets))
+			else if (item.getId() == BEAUTY_TICKET_ID && !item.Equals(_beautyTickets))
 			{
 				_beautyTickets = item;
 			}
-			
+
 			if (actor != null)
 			{
 				// Send inventory update packet
 				if (update)
 				{
 					List<ItemInfo> items = new List<ItemInfo>();
-					if (item.isStackable() && (item.getCount() > count))
+					if (item.isStackable() && item.getCount() > count)
 					{
 						items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 					}
@@ -457,7 +455,7 @@ public class PlayerInventory: Inventory
 
 					InventoryUpdatePacket playerIU = new InventoryUpdatePacket(items);
 					actor.sendInventoryUpdate(playerIU);
-					
+
 					// Adena UI update.
 					if (item.getId() == Inventory.ADENA_ID)
 					{
@@ -469,7 +467,7 @@ public class PlayerInventory: Inventory
 						actor.sendPacket(new ExBloodyCoinCountPacket(actor));
 					}
 				}
-				
+
 				// Notify to scripts
 				EventContainer itemEvents = item.getTemplate().Events;
 				EventContainer playerEvents = actor.Events;
@@ -481,10 +479,10 @@ public class PlayerInventory: Inventory
 				}
 			}
 		}
-        
+
 		return item;
 	}
-	
+
 	/**
 	 * Transfers item to another inventory and checks _adena and _ancientAdena
 	 * @param process string Identifier of process triggering this action
@@ -498,37 +496,37 @@ public class PlayerInventory: Inventory
 	public override Item transferItem(String process, int objectId, long count, ItemContainer target, Player actor, Object reference)
 	{
 		Item item = base.transferItem(process, objectId, count, target, actor, reference);
-		
-		if ((_adena != null) && ((_adena.getCount() <= 0) || (_adena.getOwnerId() != getOwnerId())))
+
+		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
 			_adena = null;
 		}
-		
-		if ((_ancientAdena != null) && ((_ancientAdena.getCount() <= 0) || (_ancientAdena.getOwnerId() != getOwnerId())))
+
+		if (_ancientAdena != null && (_ancientAdena.getCount() <= 0 || _ancientAdena.getOwnerId() != getOwnerId()))
 		{
 			_ancientAdena = null;
 		}
-		
+
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;
 		if (itemEvents.HasSubscribers<OnPlayerItemTransfer>())
 		{
 			itemEvents.NotifyAsync(new OnPlayerItemTransfer(actor, item, target));
 		}
-		
+
 		return item;
 	}
-	
+
 	public override Item detachItem(String process, Item item, long count, ItemLocation newLocation, Player actor, Object reference)
 	{
 		Item detachedItem = base.detachItem(process, item, count, newLocation, actor, reference);
-		if ((detachedItem != null) && (actor != null))
+		if (detachedItem != null && actor != null)
 		{
 			actor.sendItemList();
 		}
 		return detachedItem;
 	}
-	
+
 	/**
 	 * Destroy item from inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -541,7 +539,7 @@ public class PlayerInventory: Inventory
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
-	
+
 	/**
 	 * Destroy item from inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -553,17 +551,17 @@ public class PlayerInventory: Inventory
 	public override Item destroyItem(String process, Item item, long count, Player actor, Object reference)
 	{
 		Item destroyedItem = base.destroyItem(process, item, count, actor, reference);
-		
-		if ((_adena != null) && (_adena.getCount() <= 0))
+
+		if (_adena != null && _adena.getCount() <= 0)
 		{
 			_adena = null;
 		}
-		
-		if ((_ancientAdena != null) && (_ancientAdena.getCount() <= 0))
+
+		if (_ancientAdena != null && _ancientAdena.getCount() <= 0)
 		{
 			_ancientAdena = null;
 		}
-		
+
 		if (destroyedItem != null)
 		{
 			// Adena UI update.
@@ -576,7 +574,7 @@ public class PlayerInventory: Inventory
 			{
 				actor.sendPacket(new ExBloodyCoinCountPacket(actor));
 			}
-			
+
 			// Notify to scripts
 			EventContainer itemEvents = destroyedItem.getTemplate().Events;
 			if (itemEvents.HasSubscribers<OnPlayerItemDestroy>())
@@ -584,10 +582,10 @@ public class PlayerInventory: Inventory
 				itemEvents.NotifyAsync(new OnPlayerItemDestroy(actor, destroyedItem));
 			}
 		}
-		
+
 		return destroyedItem;
 	}
-	
+
 	/**
 	 * Destroys item from inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -602,7 +600,7 @@ public class PlayerInventory: Inventory
 		Item item = getItemByObjectId(objectId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
 	}
-	
+
 	/**
 	 * Destroy item from inventory by using its <b>itemId</b> and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -625,23 +623,23 @@ public class PlayerInventory: Inventory
 				break;
 			}
 		}
-		
+
 		// No item found.
 		if (destroyItem == null)
 		{
 			return null;
 		}
-		
+
 		// Support destroying multiple non stackable items.
-		if (!destroyItem.isStackable() && (count > 1))
+		if (!destroyItem.isStackable() && count > 1)
 		{
 			if (getInventoryItemCount(itemId, -1, false) >= count)
 			{
 				long destroyed = 0;
-				List<ItemInfo> itemInfos = new List<ItemInfo>();  
+				List<ItemInfo> itemInfos = new List<ItemInfo>();
 				foreach (Item item in items)
 				{
-					if (!item.isEquipped() && (this.destroyItem(process, item, 1, actor, reference) != null))
+					if (!item.isEquipped() && this.destroyItem(process, item, 1, actor, reference) != null)
 					{
 						itemInfos.add(new ItemInfo(item, ItemChangeType.REMOVED));
 						if (++destroyed == count)
@@ -659,11 +657,11 @@ public class PlayerInventory: Inventory
 				return null;
 			}
 		}
-		
+
 		// Single item or stackable.
 		return this.destroyItem(process, destroyItem, count, actor, reference);
 	}
-	
+
 	/**
 	 * Drop item from inventory and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -675,17 +673,17 @@ public class PlayerInventory: Inventory
 	public override Item dropItem(String process, Item item, Player actor, Object reference)
 	{
 		Item droppedItem = base.dropItem(process, item, actor, reference);
-		
-		if ((_adena != null) && ((_adena.getCount() <= 0) || (_adena.getOwnerId() != getOwnerId())))
+
+		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
 			_adena = null;
 		}
-		
-		if ((_ancientAdena != null) && ((_ancientAdena.getCount() <= 0) || (_ancientAdena.getOwnerId() != getOwnerId())))
+
+		if (_ancientAdena != null && (_ancientAdena.getCount() <= 0 || _ancientAdena.getOwnerId() != getOwnerId()))
 		{
 			_ancientAdena = null;
 		}
-		
+
 		// Notify to scripts
 		if (droppedItem != null)
 		{
@@ -695,10 +693,10 @@ public class PlayerInventory: Inventory
 				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, droppedItem, droppedItem.Location.Location3D));
 			}
 		}
-		
+
 		return droppedItem;
 	}
-	
+
 	/**
 	 * Drop item from inventory by using its <b>objectID</b> and checks _adena and _ancientAdena
 	 * @param process : String Identifier of process triggering this action
@@ -711,19 +709,19 @@ public class PlayerInventory: Inventory
 	public override Item dropItem(String process, int objectId, long count, Player actor, Object reference)
 	{
 		Item item = base.dropItem(process, objectId, count, actor, reference);
-		
-		if ((_adena != null) && ((_adena.getCount() <= 0) || (_adena.getOwnerId() != getOwnerId())))
+
+		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
 			_adena = null;
 		}
-		
-		if ((_ancientAdena != null) && ((_ancientAdena.getCount() <= 0) || (_ancientAdena.getOwnerId() != getOwnerId())))
+
+		if (_ancientAdena != null && (_ancientAdena.getCount() <= 0 || _ancientAdena.getOwnerId() != getOwnerId()))
 		{
 			_ancientAdena = null;
 		}
-		
+
 		// Notify to scripts
-		if ((item != null))
+		if (item != null)
 		{
 			EventContainer itemEvents = item.getTemplate().Events;
 			if (itemEvents.HasSubscribers<OnPlayerItemDrop>())
@@ -731,10 +729,10 @@ public class PlayerInventory: Inventory
 				itemEvents.NotifyAsync(new OnPlayerItemDrop(actor, item, item.Location.Location3D));
 			}
 		}
-		
+
 		return item;
 	}
-	
+
 	/**
 	 * Adds item to inventory for further adjustments.
 	 * @param item : Item to be added from inventory
@@ -745,10 +743,10 @@ public class PlayerInventory: Inventory
 		{
 			Interlocked.Increment(ref _questItemSize);
 		}
-		
+
 		base.addItem(item);
 	}
-	
+
 	/**
 	 * <b>Overloaded</b>, when removes item from inventory, remove also owner shortcuts.
 	 * @param item : Item to be removed from inventory
@@ -757,13 +755,13 @@ public class PlayerInventory: Inventory
 	{
 		// Removes any reference to the item from Shortcut bar
 		_owner.removeItemFromShortCut(item.getObjectId());
-		
+
 		// Removes active Enchant Scroll
 		if (_owner.isProcessingItem(item.getObjectId()))
 		{
 			_owner.removeRequestsThatProcessesItem(item.getObjectId());
 		}
-		
+
 		if (item.getId() == ADENA_ID)
 		{
 			_adena = null;
@@ -776,15 +774,15 @@ public class PlayerInventory: Inventory
 		{
 			_beautyTickets = null;
 		}
-		
+
 		if (item.isQuestItem())
 		{
 			Interlocked.Decrement(ref _questItemSize);
 		}
-		
+
 		return base.removeItem(item);
 	}
-	
+
 	/**
 	 * @return the quantity of quest items in the inventory
 	 */
@@ -792,7 +790,7 @@ public class PlayerInventory: Inventory
 	{
 		return _questItemSize;
 	}
-	
+
 	/**
 	 * @return the quantity of items in the inventory
 	 */
@@ -800,21 +798,21 @@ public class PlayerInventory: Inventory
 	{
 		return _items.size() - _questItemSize;
 	}
-	
+
 	/**
 	 * Refresh the weight of equipment loaded
 	 */
 	protected override void refreshWeight()
 	{
 		base.refreshWeight();
-		
+
 		_owner.refreshOverloaded(true);
-		
+
 		StatusUpdatePacket su = new StatusUpdatePacket(_owner);
 		su.addUpdate(StatusUpdateType.CUR_LOAD, _owner.getCurrentLoad());
 		_owner.sendPacket(su);
 	}
-	
+
 	/**
 	 * Get back items in inventory from database
 	 */
@@ -825,7 +823,7 @@ public class PlayerInventory: Inventory
 		_ancientAdena = getItemByItemId(ANCIENT_ADENA_ID);
 		_beautyTickets = getItemByItemId(BEAUTY_TICKET_ID);
 	}
-	
+
 	/**
 	 * @param itemList the items that needs to be validated.
 	 * @param sendMessage if {@code true} will send a message of inventory full.
@@ -841,14 +839,14 @@ public class PlayerInventory: Inventory
 			foreach (ItemTemplate item in itemList)
 			{
 				// If the item is not stackable or is stackable and not present in inventory, will need a slot.
-				if (!item.isStackable() || (getInventoryItemCount(item.getId(), -1) <= 0))
+				if (!item.isStackable() || getInventoryItemCount(item.getId(), -1) <= 0)
 				{
 					requiredSlots++;
 				}
 				lootWeight += item.getWeight();
 			}
 		}
-		
+
 		bool inventoryStatusOK = validateCapacity(requiredSlots) && validateWeight(lootWeight);
 		if (!inventoryStatusOK && sendMessage)
 		{
@@ -860,7 +858,7 @@ public class PlayerInventory: Inventory
 		}
 		return inventoryStatusOK;
 	}
-	
+
 	/**
 	 * If the item is not stackable or is stackable and not present in inventory, will need a slot.
 	 * @param item the item to validate.
@@ -869,13 +867,13 @@ public class PlayerInventory: Inventory
 	public bool validateCapacity(Item item)
 	{
 		int slots = 0;
-		if (!item.isStackable() || ((getInventoryItemCount(item.getId(), -1) <= 0) && !item.getTemplate().hasExImmediateEffect()))
+		if (!item.isStackable() || (getInventoryItemCount(item.getId(), -1) <= 0 && !item.getTemplate().hasExImmediateEffect()))
 		{
 			slots++;
 		}
 		return validateCapacity(slots, item.isQuestItem());
 	}
-	
+
 	/**
 	 * If the item is not stackable or is stackable and not present in inventory, will need a slot.
 	 * @param itemId the item Id for the item to validate.
@@ -885,23 +883,23 @@ public class PlayerInventory: Inventory
 	{
 		int slots = 0;
 		Item invItem = getItemByItemId(itemId);
-		if ((invItem == null) || !invItem.isStackable())
+		if (invItem == null || !invItem.isStackable())
 		{
 			slots++;
 		}
 		return validateCapacity(slots, ItemData.getInstance().getTemplate(itemId).isQuestItem());
 	}
-	
+
 	public override bool validateCapacity(long slots)
 	{
 		return validateCapacity(slots, false);
 	}
-	
+
 	public bool validateCapacity(long slots, bool questItem)
 	{
-		return ((slots == 0) && !Config.AUTO_LOOT_SLOT_LIMIT) || questItem ? (getQuestSize() + slots) <= _owner.getQuestInventoryLimit() : (getNonQuestSize() + slots) <= _owner.getInventoryLimit();
+		return (slots == 0 && !Config.AUTO_LOOT_SLOT_LIMIT) || questItem ? getQuestSize() + slots <= _owner.getQuestInventoryLimit() : getNonQuestSize() + slots <= _owner.getInventoryLimit();
 	}
-	
+
 	public override bool validateWeight(long weight)
 	{
 		// Disable weight check for GMs.
@@ -909,9 +907,9 @@ public class PlayerInventory: Inventory
 		{
 			return true;
 		}
-		return ((_totalWeight + weight) <= _owner.getMaxLoad());
+		return _totalWeight + weight <= _owner.getMaxLoad();
 	}
-	
+
 	/**
 	 * Set inventory block for specified IDs<br>
 	 * array reference is used for {@link PlayerInventory#_blockItems}
@@ -924,7 +922,7 @@ public class PlayerInventory: Inventory
 		_blockItems = items;
 		_owner.sendItemList();
 	}
-	
+
 	/**
 	 * Unblock blocked itemIds
 	 */
@@ -934,16 +932,16 @@ public class PlayerInventory: Inventory
 		_blockItems = null;
 		_owner.sendItemList();
 	}
-	
+
 	/**
 	 * Check if player inventory is in block mode.
 	 * @return true if some itemIds blocked
 	 */
 	public bool hasInventoryBlock()
 	{
-		return ((_blockMode != InventoryBlockType.NONE) && (_blockItems != null) && !_blockItems.isEmpty());
+		return _blockMode != InventoryBlockType.NONE && _blockItems != null && _blockItems.Count != 0;
 	}
-	
+
 	/**
 	 * Block all items except adena
 	 */
@@ -951,7 +949,7 @@ public class PlayerInventory: Inventory
 	{
 		setInventoryBlock([ADENA_ID], InventoryBlockType.WHITELIST);
 	}
-	
+
 	/**
 	 * Return block mode
 	 * @return int {@link PlayerInventory#_blockMode}
@@ -960,7 +958,7 @@ public class PlayerInventory: Inventory
 	{
 		return _blockMode;
 	}
-	
+
 	/**
 	 * Return Collection<int> with blocked item ids
 	 * @return Collection<int>
@@ -969,7 +967,7 @@ public class PlayerInventory: Inventory
 	{
 		return _blockItems;
 	}
-	
+
 	/**
 	 * Check if player can use item by itemid
 	 * @param itemId int
@@ -1012,12 +1010,12 @@ public class PlayerInventory: Inventory
 		}
 		return true;
 	}
-	
+
 	public override String ToString()
 	{
 		return GetType().Name + "[" + _owner + "]";
 	}
-	
+
 	/**
 	 * Apply skills of inventory items
 	 */
@@ -1030,8 +1028,8 @@ public class PlayerInventory: Inventory
 			if (item.isEquipped())
 			{
 				item.applySpecialAbilities();
-				
-				if (((item.getLocationSlot() >= Inventory.PAPERDOLL_AGATHION1) && (item.getLocationSlot() <= Inventory.PAPERDOLL_AGATHION5)))
+
+				if (item.getLocationSlot() >= Inventory.PAPERDOLL_AGATHION1 && item.getLocationSlot() <= Inventory.PAPERDOLL_AGATHION5)
 				{
 					AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(item.getId());
 					if (agathionSkills != null)
@@ -1070,25 +1068,25 @@ public class PlayerInventory: Inventory
 			}
 		}
 	}
-	
+
 	/**
 	 * Reduce the number of arrows/bolts owned by the Player and send it Server->Client Packet InventoryUpdate or ItemList (to unequip if the last arrow was consumed).
 	 * @param type
 	 */
 	public override void reduceAmmunitionCount(EtcItemType type)
 	{
-		if ((type != EtcItemType.ARROW) && (type != EtcItemType.BOLT))
+		if (type != EtcItemType.ARROW && type != EtcItemType.BOLT)
 		{
 			LOGGER.Warn(type.ToString(), " which is not ammo type.");
 			return;
 		}
-		
+
 		Weapon weapon = _owner.getActiveWeaponItem();
 		if (weapon == null)
 		{
 			return;
 		}
-		
+
 		Item ammunition = null;
 		switch (weapon.getItemType().AsWeaponType())
 		{
@@ -1108,21 +1106,21 @@ public class PlayerInventory: Inventory
 				return;
 			}
 		}
-		
-		if ((ammunition == null) || (ammunition.getItemType() != type))
+
+		if (ammunition == null || ammunition.getItemType() != type)
 		{
 			return;
 		}
-		
+
 		if (ammunition.getEtcItem().isInfinite())
 		{
 			return;
 		}
-		
+
 		// Reduce item count.
 		updateItemCountNoDbUpdate(null, ammunition, -1, _owner, null);
 	}
-	
+
 	/**
 	 * Reduces item count in the stack, destroys item when count reaches 0.
 	 * @param process
@@ -1142,7 +1140,7 @@ public class PlayerInventory: Inventory
 			{
 				lock (item)
 				{
-					if ((process != null) && (process.Length > 0))
+					if (process != null && process.Length > 0)
 					{
 						item.changeCount(process, countDelta, creator, reference);
 					}

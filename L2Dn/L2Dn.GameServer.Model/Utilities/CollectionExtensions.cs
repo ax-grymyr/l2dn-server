@@ -5,11 +5,6 @@ namespace L2Dn.GameServer.Utilities;
 
 public static class CollectionExtensions
 {
-    public static bool isEmpty<T>(this ICollection<T> list)
-    {
-        return list.Count == 0;
-    }
-
     public static void add<T>(this List<T> list, int index, T value)
     {
         list.Insert(index, value);
