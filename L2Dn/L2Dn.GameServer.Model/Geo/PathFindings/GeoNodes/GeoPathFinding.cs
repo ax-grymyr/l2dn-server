@@ -129,7 +129,7 @@ public class GeoPathFinding: PathFinding
 						// Supposed to find it quite early.
 						if (toVisit[index].getCost() > n.getCost())
 						{
-							toVisit.add(index, n);
+							toVisit.Insert(index, n);
 							added = true;
 							break;
 						}

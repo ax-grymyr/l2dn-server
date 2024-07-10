@@ -235,7 +235,7 @@ public class PlayerRandomCraft
 				
 				if (holder == null)
 				{
-					_rewardList.add(i, getNewReward());
+					_rewardList.Insert(i, getNewReward());
 				}
 				else if (!holder.isLocked())
 				{

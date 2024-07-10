@@ -100,22 +100,22 @@ public class AchievementBox
 						state = AchievementBoxState.AVAILABLE;
 
 					AchievementBoxHolder holder = new AchievementBoxHolder(0, state, type);
-					_achievementBox.add(0, holder);
+					_achievementBox.Insert(0, holder);
 
 					state = (AchievementBoxState)record.BoxStateSlot2;
 					type = (AchievementBoxType)record.BoxTypeSlot2;
 					holder = new AchievementBoxHolder(1, state, type);
-					_achievementBox.add(1, holder);
+					_achievementBox.Insert(1, holder);
 
 					state = (AchievementBoxState)record.BoxStateSlot3;
 					type = (AchievementBoxType)record.BoxTypeSlot3;
 					holder = new AchievementBoxHolder(2, state, type);
-					_achievementBox.add(2, holder);
+					_achievementBox.Insert(2, holder);
 
 					state = (AchievementBoxState)record.BoxStateSlot4;
 					type = (AchievementBoxType)record.BoxTypeSlot4;
 					holder = new AchievementBoxHolder(3, state, type);
-					_achievementBox.add(3, holder);
+					_achievementBox.Insert(3, holder);
 				}
 				catch (Exception e)
 				{
@@ -125,7 +125,7 @@ public class AchievementBox
 			else
 			{
 				storeNew();
-				_achievementBox.add(0, new AchievementBoxHolder(1, AchievementBoxState.AVAILABLE, AchievementBoxType.LOCKED));
+				_achievementBox.Insert(0, new AchievementBoxHolder(1, AchievementBoxState.AVAILABLE, AchievementBoxType.LOCKED));
 			}
 		}
 		catch (Exception e)
@@ -228,7 +228,7 @@ public class AchievementBox
 				{
 					free.setState(AchievementBoxState.OPEN);
 					getAchievementBox().RemoveAt(id - 1);
-					getAchievementBox().add(id - 1, free);
+					getAchievementBox().Insert(id - 1, free);
 					sendBoxUpdate();
 					break;
 				}
@@ -260,7 +260,7 @@ public class AchievementBox
 				setBoxTimeForOpen(ACHIEVEMENT_BOX_2H);
 				holder.setState(AchievementBoxState.UNLOCK_IN_PROGRESS);
 				getAchievementBox().RemoveAt(slotId - 1);
-				getAchievementBox().add(slotId - 1, holder);
+				getAchievementBox().Insert(slotId - 1, holder);
 				sendBoxUpdate();
 				break;
 			}
@@ -269,7 +269,7 @@ public class AchievementBox
 				setBoxTimeForOpen(ACHIEVEMENT_BOX_6H);
 				holder.setState(AchievementBoxState.UNLOCK_IN_PROGRESS);
 				getAchievementBox().RemoveAt(slotId - 1);
-				getAchievementBox().add(slotId - 1, holder);
+				getAchievementBox().Insert(slotId - 1, holder);
 				sendBoxUpdate();
 				break;
 			}
@@ -278,7 +278,7 @@ public class AchievementBox
 				setBoxTimeForOpen(ACHIEVEMENT_BOX_12H);
 				holder.setState(AchievementBoxState.UNLOCK_IN_PROGRESS);
 				getAchievementBox().RemoveAt(slotId - 1);
-				getAchievementBox().add(slotId - 1, holder);
+				getAchievementBox().Insert(slotId - 1, holder);
 				sendBoxUpdate();
 				break;
 			}
@@ -433,7 +433,7 @@ public class AchievementBox
 			AchievementBoxHolder holder = new AchievementBoxHolder(slotId, AchievementBoxState.AVAILABLE, AchievementBoxType.LOCKED);
 			holder.setState(AchievementBoxState.AVAILABLE);
 			holder.setType(AchievementBoxType.LOCKED);
-			getAchievementBox().add(slotId - 1, holder);
+			getAchievementBox().Insert(slotId - 1, holder);
 			sendBoxUpdate();
 		}
 	}

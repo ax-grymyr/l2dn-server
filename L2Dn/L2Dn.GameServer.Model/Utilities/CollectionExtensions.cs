@@ -5,11 +5,6 @@ namespace L2Dn.GameServer.Utilities;
 
 public static class CollectionExtensions
 {
-    public static void add<T>(this List<T> list, int index, T value)
-    {
-        list.Insert(index, value);
-    }
-
     public static T? get<T>(this WeakReference<T> weakReference)
         where T: class
     {
