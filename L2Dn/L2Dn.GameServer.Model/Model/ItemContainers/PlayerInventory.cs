@@ -641,7 +641,7 @@ public class PlayerInventory: Inventory
 				{
 					if (!item.isEquipped() && this.destroyItem(process, item, 1, actor, reference) != null)
 					{
-						itemInfos.add(new ItemInfo(item, ItemChangeType.REMOVED));
+						itemInfos.Add(new ItemInfo(item, ItemChangeType.REMOVED));
 						if (++destroyed == count)
 						{
 							InventoryUpdatePacket iu = new InventoryUpdatePacket(itemInfos);

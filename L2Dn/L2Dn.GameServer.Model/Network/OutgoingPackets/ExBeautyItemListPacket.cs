@@ -25,7 +25,7 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
             List<BeautyItem> colors = new();
             foreach (BeautyItem color in hair.getColors().values())
             {
-                colors.add(color);
+                colors.Add(color);
                 _colorCount++;
             }
             

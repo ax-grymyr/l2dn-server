@@ -81,7 +81,7 @@ public class AdminInstance: IAdminCommandHandler
 					{
 						case "Alone":
 						{
-							members.add(activeChar);
+							members.Add(activeChar);
 							break;
 						}
 						case "Party":
@@ -92,7 +92,7 @@ public class AdminInstance: IAdminCommandHandler
 							}
 							else
 							{
-								members.add(activeChar);
+								members.Add(activeChar);
 							}
 							break;
 						}
@@ -108,7 +108,7 @@ public class AdminInstance: IAdminCommandHandler
 							}
 							else
 							{
-								members.add(activeChar);
+								members.Add(activeChar);
 							}
 							break;
 						}

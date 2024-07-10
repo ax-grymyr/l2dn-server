@@ -911,7 +911,7 @@ public class FortSiege: Siegable
 				
 				if (player.isInSiege())
 				{
-					players.add(player);
+					players.Add(player);
 				}
 			}
 		}
@@ -949,7 +949,7 @@ public class FortSiege: Siegable
 				
 				if (player.isInSiege())
 				{
-					players.add(player);
+					players.Add(player);
 				}
 			}
 		}
@@ -1556,7 +1556,7 @@ public class FortSiege: Siegable
 				spawn.setRespawnDelay(record.RespawnDelay);
 				spawn.setLocationId(0);
 				
-				_siegeGuards.add(spawn);
+				_siegeGuards.Add(spawn);
 			}
 		}
 		catch (Exception e)

@@ -134,7 +134,7 @@ public class ExtractableItems: IItemHandler
 							if (expi.getMaxEnchant() > 0)
 							{
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
-								enchantedItems.add(newItem);
+								enchantedItems.Add(newItem);
 							}
 							addItem(extractedItems, newItem, createItemAmount);
 						}
@@ -146,7 +146,7 @@ public class ExtractableItems: IItemHandler
 								if (expi.getMaxEnchant() > 0)
 								{
 									newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
-									enchantedItems.add(newItem);
+									enchantedItems.Add(newItem);
 								}
 								addItem(extractedItems, newItem, 1);
 								createItemAmount--;
@@ -215,7 +215,7 @@ public class ExtractableItems: IItemHandler
 						if (expi.getMaxEnchant() > 0)
 						{
 							newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
-							enchantedItems.add(newItem);
+							enchantedItems.Add(newItem);
 						}
 						addItem(extractedItems, newItem, createItemAmount);
 					}
@@ -227,7 +227,7 @@ public class ExtractableItems: IItemHandler
 							if (expi.getMaxEnchant() > 0)
 							{
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
-								enchantedItems.add(newItem);
+								enchantedItems.Add(newItem);
 							}
 							addItem(extractedItems, newItem, 1);
 							createItemAmount--;
@@ -262,7 +262,7 @@ public class ExtractableItems: IItemHandler
 				List<ItemHolder> rewards = new();
 				foreach (var entry in extractedItems)
 				{
-					rewards.add(new ItemHolder(entry.Key.getId(), entry.Value));
+					rewards.Add(new ItemHolder(entry.Key.getId(), entry.Value));
 				}
 				
 				player.sendPacket(new ExResultItemAutoPeelPacket(true, request.getTotalPeelCount(), request.getRemainingPeelCount() - 1, rewards));

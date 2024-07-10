@@ -46,12 +46,12 @@ public class CustomMailManager
 								string enchant = split.Length > 2 ? split[2] : "0";
 								if (Util.isDigit(itemId) && Util.isDigit(itemCount))
 								{
-									itemHolders.add(new ItemEnchantHolder(int.Parse(itemId), long.Parse(itemCount), int.Parse(enchant)));
+									itemHolders.Add(new ItemEnchantHolder(int.Parse(itemId), long.Parse(itemCount), int.Parse(enchant)));
 								}
 							}
 							else if (Util.isDigit(str))
 							{
-								itemHolders.add(new ItemEnchantHolder(int.Parse(str), 1));
+								itemHolders.Add(new ItemEnchantHolder(int.Parse(str), 1));
 							}
 						}
 						

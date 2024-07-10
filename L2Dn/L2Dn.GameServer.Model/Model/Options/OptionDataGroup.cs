@@ -28,7 +28,7 @@ public class OptionDataGroup
 				{
 					if (!exclutions.Contains(category))
 					{
-						exclutions.add(category);
+						exclutions.Add(category);
 					}
 
 					continue;

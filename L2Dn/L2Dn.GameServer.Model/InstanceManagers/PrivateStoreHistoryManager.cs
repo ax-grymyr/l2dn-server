@@ -93,7 +93,7 @@ public class PrivateStoreHistoryManager
 				int itemId = transaction.getItemId();
 				if (uniqueItemIds.get(itemId) < Config.STORE_REVIEW_LIMIT)
 				{
-					finalList.add(transaction);
+					finalList.Add(transaction);
 					uniqueItemIds.put(itemId, uniqueItemIds.get(itemId) + 1);
 				}
 			}
@@ -129,7 +129,7 @@ public class PrivateStoreHistoryManager
 		}
 
 		List<ItemHistoryTransaction> list = new();
-		map.ForEach(kvp => list.add(kvp.Value));
+		map.ForEach(kvp => list.Add(kvp.Value));
 		list.Sort(new SortByQuantity());
 		return list;
 	}

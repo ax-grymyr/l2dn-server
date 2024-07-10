@@ -90,14 +90,14 @@ public class HennaData: DataReaderBase
 		{
 			int id = e.GetAttributeValueAsInt32("id");
 			int level = e.GetAttributeValueAsInt32("level");
-			skills.add(SkillData.getInstance().getSkill(id, level));
+			skills.Add(SkillData.getInstance().getSkill(id, level));
 		});
 		
 		element.Elements("classId").ForEach(e =>
 		{
 			string[] ids = ((string)e).Split(",");
 			foreach (string s in ids)
-				wearClassIds.add(int.Parse(s));
+				wearClassIds.Add(int.Parse(s));
 		});
 		
 		Henna henna = new Henna(set);
@@ -139,7 +139,7 @@ public class HennaData: DataReaderBase
 		{
 			if (henna.isAllowedClass(player))
 			{
-				list.add(henna);
+				list.Add(henna);
 			}
 		}
 		return list;

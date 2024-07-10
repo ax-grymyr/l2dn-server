@@ -1136,7 +1136,7 @@ public class Attackable: Npc
 							Item droppedItem = dropItem(mainDamageDealer, drop); // drop the item on the ground
 							if (Config.FAKE_PLAYER_CAN_PICKUP)
 							{
-								mainDamageDealer.getFakePlayerDrops().add(droppedItem);
+								mainDamageDealer.getFakePlayerDrops().Add(droppedItem);
 							}
 						}
 					}

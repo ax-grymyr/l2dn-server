@@ -141,7 +141,7 @@ public class AdminData: DataReaderBase
 		{
 			if (includeHidden || !entry.Value)
 			{
-				tmpGmList.add(entry.Key);
+				tmpGmList.Add(entry.Key);
 			}
 		}
 		return tmpGmList;
@@ -159,11 +159,11 @@ public class AdminData: DataReaderBase
 		{
 			if (!entry.Value)
 			{
-				tmpGmList.add(entry.Key.getName());
+				tmpGmList.Add(entry.Key.getName());
 			}
 			else if (includeHidden)
 			{
-				tmpGmList.add(entry.Key.getName() + " (invis)");
+				tmpGmList.Add(entry.Key.getName() + " (invis)");
 			}
 		}
 		return tmpGmList;

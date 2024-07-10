@@ -54,7 +54,7 @@ public class RangeSortByHp: IAffectScopeHandler
 		// Add object of origin since its skipped in the getVisibleObjects method.
 		if (target.isCreature() && filter((Creature) target))
 		{
-			result.add((Creature) target);
+			result.Add((Creature) target);
 		}
 		
 		// Sort from lowest hp to highest hp.

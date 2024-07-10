@@ -120,7 +120,7 @@ public class EffectList
 		{
 			if (info.getSkill().getBuffType() == SkillBuffType.BUFF)
 			{
-				result.add(info);
+				result.Add(info);
 			}
 		}
 		return result;
@@ -137,7 +137,7 @@ public class EffectList
 		{
 			if (info.getSkill().getBuffType() == SkillBuffType.DANCE)
 			{
-				result.add(info);
+				result.Add(info);
 			}
 		}
 		return result;
@@ -154,7 +154,7 @@ public class EffectList
 		{
 			if (info.getSkill().getBuffType() == SkillBuffType.DEBUFF)
 			{
-				result.add(info);
+				result.Add(info);
 			}
 		}
 		return result;

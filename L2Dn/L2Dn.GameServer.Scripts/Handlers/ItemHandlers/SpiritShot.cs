@@ -115,7 +115,7 @@ public class SpiritShot: IItemHandler
 		{
 			if (!s.isDead())
 			{
-				aliveServitor.add(s);
+				aliveServitor.Add(s);
 			}
 		}
 		

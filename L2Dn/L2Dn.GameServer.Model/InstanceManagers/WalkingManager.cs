@@ -118,7 +118,7 @@ public class WalkingManager: DataReaderBase
 					continue;
 				}
 
-				list.add(new NpcWalkerNode(new Location3D(x, y, z), delay, run, npcString ?? 0, chatString));
+				list.Add(new NpcWalkerNode(new Location3D(x, y, z), delay, run, npcString ?? 0, chatString));
 			}
 			else if (r.Name.LocalName.equals("target"))
 			{

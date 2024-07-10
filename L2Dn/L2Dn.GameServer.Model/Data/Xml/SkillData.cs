@@ -153,17 +153,17 @@ public class SkillData: DataReaderBase
 	public List<Skill> getSiegeSkills(bool addNoble, bool hasCastle)
 	{
 		List<Skill> temp = new();
-		temp.add(_skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)));
-		temp.add(_skills.get(getSkillHashCode(247, 1))); // Build Headquarters
+		temp.Add(_skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)));
+		temp.Add(_skills.get(getSkillHashCode(247, 1))); // Build Headquarters
 		if (addNoble)
 		{
-			temp.add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
+			temp.Add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
 		}
 
 		if (hasCastle)
 		{
-			temp.add(_skills.get(getSkillHashCode(844, 1))); // Outpost Construction
-			temp.add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
+			temp.Add(_skills.get(getSkillHashCode(844, 1))); // Outpost Construction
+			temp.Add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
 		}
 
 		return temp;
@@ -234,7 +234,7 @@ public class SkillData: DataReaderBase
 						skillNode.Elements("effect").ForEach(effectsNode =>
 						{
 							effectParamInfo.computeIfAbsent(effectScope.Value, k => new())
-								.add(parseNamedParamInfo(effectsNode, variableValues));
+								.Add(parseNamedParamInfo(effectsNode, variableValues));
 						});
 
 						break;
@@ -246,7 +246,7 @@ public class SkillData: DataReaderBase
 						skillNode.Elements("condition").ForEach(conditionNode =>
 						{
 							conditionParamInfo.computeIfAbsent(skillConditionScope.Value, k => new())
-								.add(parseNamedParamInfo(conditionNode, variableValues));
+								.Add(parseNamedParamInfo(conditionNode, variableValues));
 						});
 					}
 					else
@@ -594,7 +594,7 @@ public class SkillData: DataReaderBase
 					object value = parseValue(n, false, true, variables);
 					if (value != null)
 					{
-						list.add(value);
+						list.Add(value);
 					}
 
 					break;

@@ -28,7 +28,7 @@ public class ConditionLogicOr: Condition
 			condition.setListener(this);
 		}
 		
-		conditions.add(condition);
+		conditions.Add(condition);
 	}
 	
 	public override void setListener(ConditionListener listener)

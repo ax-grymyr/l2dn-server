@@ -32,7 +32,7 @@ public readonly struct ExQuestUiPacket: IOutgoingPacket
             {
                 if (qs.isStarted() && !qs.isCompleted())
                 {
-                    activeQuests.add(qs);
+                    activeQuests.Add(qs);
                 }
             }
 			

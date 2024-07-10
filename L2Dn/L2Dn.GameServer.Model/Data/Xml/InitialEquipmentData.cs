@@ -54,7 +54,7 @@ public class InitialEquipmentData: DataReaderBase
 			int id = el.GetAttributeValueAsInt32("id");
 			long count = el.Attribute("count").GetInt64(1);
 			bool equipped = el.Attribute("equipped").GetBoolean(false); 
-			equipList.add(new PlayerItemTemplate(id, count, equipped));
+			equipList.Add(new PlayerItemTemplate(id, count, equipped));
 		});
 		
 		_initialEquipmentList.put(classId, equipList);

@@ -56,7 +56,7 @@ public class HennaCombinationData: DataReaderBase
 			}
 		});
 
-		_henna.add(henna);
+		_henna.Add(henna);
 	}
 
 	public List<CombinationHenna> getHenna()

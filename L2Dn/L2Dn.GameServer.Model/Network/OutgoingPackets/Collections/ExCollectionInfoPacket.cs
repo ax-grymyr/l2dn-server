@@ -42,7 +42,7 @@ public readonly struct ExCollectionInfoPacket: IOutgoingPacket
             {
                 if (collection.getCollectionId() == id)
                 {
-                    currentCollection.add(collection);
+                    currentCollection.Add(collection);
                 }
             }
 

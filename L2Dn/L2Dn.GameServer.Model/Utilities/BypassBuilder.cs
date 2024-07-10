@@ -15,7 +15,7 @@ public class BypassBuilder
     public void addParam(BypassParam param)
     {
         Objects.requireNonNull(param, "param cannot be null!");
-        _params.add(param);
+        _params.Add(param);
     }
 	
     public void addParam(string name, string? separator, object? value)

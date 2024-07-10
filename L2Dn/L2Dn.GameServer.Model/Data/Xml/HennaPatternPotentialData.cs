@@ -61,7 +61,7 @@ public class HennaPatternPotentialData: DataReaderBase
 		{
 			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.Attribute("count").GetInt64(1);
-			items.add(new ItemHolder(itemId, itemCount));
+			items.Add(new ItemHolder(itemId, itemCount));
 		});
 		
 		element.Elements("dailyCount").ForEach(el =>
@@ -90,7 +90,7 @@ public class HennaPatternPotentialData: DataReaderBase
 		}
 		else
 		{
-			_enchancedReset.add(new ItemHolder(itemId, itemCount));
+			_enchancedReset.Add(new ItemHolder(itemId, itemCount));
 		}
 	}
 
@@ -174,7 +174,7 @@ public class HennaPatternPotentialData: DataReaderBase
 		{
 			if (potential.getSlotId() == slotId)
 			{
-				skillIds.add(potential.getSkillId());
+				skillIds.Add(potential.getSkillId());
 			}
 		}
 		return skillIds;

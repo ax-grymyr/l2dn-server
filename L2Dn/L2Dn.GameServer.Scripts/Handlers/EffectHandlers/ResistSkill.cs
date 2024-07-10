@@ -26,7 +26,7 @@ public class ResistSkill: AbstractEffect
 			{
 				break;
 			}
-			_skills.add(new SkillHolder(skillId, skillLevel));
+			_skills.Add(new SkillHolder(skillId, skillLevel));
 		}
 		
 		if (_skills.Count == 0)

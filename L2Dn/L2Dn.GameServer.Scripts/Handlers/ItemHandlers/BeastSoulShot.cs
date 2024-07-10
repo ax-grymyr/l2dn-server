@@ -46,7 +46,7 @@ public class BeastSoulShot: IItemHandler
 		{
 			if (!s.isDead())
 			{
-				aliveServitor.add(s);
+				aliveServitor.Add(s);
 			}
 		}
 

@@ -72,7 +72,7 @@ public class MinionList
 	 */
 	public void onMinionSpawn(Monster minion)
 	{
-		_spawnedMinions.add(minion);
+		_spawnedMinions.Add(minion);
 	}
 	
 	/**
@@ -128,7 +128,7 @@ public class MinionList
 		int time = respawnTime < 0 ? _master.isRaid() ? (int) Config.RAID_MINION_RESPAWN_TIMER : 0 : respawnTime;
 		if ((time > 0) && !_master.isAlikeDead())
 		{
-			_respawnTasks.add(ThreadPool.schedule(new MinionRespawnTask(this, minion), time));
+			_respawnTasks.Add(ThreadPool.schedule(new MinionRespawnTask(this, minion), time));
 		}
 	}
 	

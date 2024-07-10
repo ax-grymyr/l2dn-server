@@ -75,7 +75,7 @@ public sealed class CubicData: DataReaderBase
 					skill.addCondition(new HealthCondition(healthCondition.Min, healthCondition.Max));
 			}
 			
-			template.getCubicSkills().add(skill);
+			template.getCubicSkills().Add(skill);
 		}
 
 		if (!cubics.TryAdd((template.getId(), template.getLevel()), template))

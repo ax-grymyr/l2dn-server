@@ -25,7 +25,7 @@ public class Transformation: AbstractEffect
 		{
 			foreach (String id in ids.Split(";"))
 			{
-				_id.add(int.Parse(id));
+				_id.Add(int.Parse(id));
 			}
 		}
 	}

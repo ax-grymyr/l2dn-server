@@ -119,7 +119,7 @@ public class SiegeManager
 					int z = int.Parse(st.nextToken());
 					int npcId = int.Parse(st.nextToken());
 
-					controlTowers.add(new TowerSpawn(npcId, new Location3D(x, y, z)));
+					controlTowers.Add(new TowerSpawn(npcId, new Location3D(x, y, z)));
 				}
 				catch (Exception e)
 				{
@@ -148,10 +148,10 @@ public class SiegeManager
 
 					while (st.hasMoreTokens())
 					{
-						zoneList.add(int.Parse(st.nextToken()));
+						zoneList.Add(int.Parse(st.nextToken()));
 					}
 
-					flameTowers.add(new TowerSpawn(npcId, new Location3D(x, y, z), zoneList));
+					flameTowers.Add(new TowerSpawn(npcId, new Location3D(x, y, z), zoneList));
 				}
 				catch (Exception e)
 				{
@@ -243,7 +243,7 @@ public class SiegeManager
 		List<Siege> sieges = new();
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
-			sieges.add(castle.getSiege());
+			sieges.Add(castle.getSiege());
 		}
 
 		return sieges;

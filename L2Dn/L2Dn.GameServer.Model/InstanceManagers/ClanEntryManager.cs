@@ -330,7 +330,7 @@ public class ClanEntryManager
 			// TODO: Handle Role.
 			if ((p.getPlayerLvl() >= levelMin) && (p.getPlayerLvl() <= levelMax))
 			{
-				result.add(p);
+				result.Add(p);
 			}
 		}
 
@@ -369,7 +369,7 @@ public class ClanEntryManager
 		{
 			if (p.getPlayerName().toLowerCase().contains(name))
 			{
-				result.add(p);
+				result.Add(p);
 			}
 		}
 		return result;
@@ -384,7 +384,7 @@ public class ClanEntryManager
 			{
 				if (p.getClanName().toLowerCase().contains(query))
 				{
-					result.add(p);
+					result.Add(p);
 				}
 			}
 		}
@@ -394,7 +394,7 @@ public class ClanEntryManager
 			{
 				if (p.getClanLeaderName().toLowerCase().contains(query))
 				{
-					result.add(p);
+					result.Add(p);
 				}
 			}
 		}

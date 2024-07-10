@@ -83,7 +83,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		int z = npc.Z;
 		if (npc is { XSpecified: true, YSpecified: true, ZSpecified: true })
 		{
-			_locations.add(new ChanceLocation(new Location(x, y, z, npc.Heading), 100));
+			_locations.Add(new ChanceLocation(new Location(x, y, z, npc.Heading), 100));
 		}
 		else
 		{
@@ -132,7 +132,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public void addSpawnLocation(ChanceLocation loc)
 	{
-		_locations.add(loc);
+		_locations.Add(loc);
 	}
 	
 	public SpawnTemplate getSpawnTemplate()
@@ -222,7 +222,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public void addMinion(MinionHolder minion)
 	{
-		_minions.add(minion);
+		_minions.Add(minion);
 	}
 	
 	public Set<Npc> getSpawnedNpcs()

@@ -9,12 +9,7 @@ public static class CollectionExtensions
     {
         list.Insert(index, value);
     }
-    
-    public static void add<T>(this List<T> list, T value)
-    {
-        list.Add(value);
-    }
-    
+
     public static T? get<T>(this WeakReference<T> weakReference)
         where T: class
     {

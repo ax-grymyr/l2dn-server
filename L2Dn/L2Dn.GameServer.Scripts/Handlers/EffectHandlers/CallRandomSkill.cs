@@ -24,7 +24,7 @@ public class CallRandomSkill: AbstractEffect
 		{
 			foreach (string skill in skills.Split(";"))
 			{
-				_skills.add(new SkillHolder(int.Parse(skill.Split(",")[0]), int.Parse(skill.Split(",")[1])));
+				_skills.Add(new SkillHolder(int.Parse(skill.Split(",")[0]), int.Parse(skill.Split(",")[1])));
 			}
 		}
 	}

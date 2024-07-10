@@ -1139,7 +1139,7 @@ public class AttackableAI: CreatureAI
 			{
 				if (checkSkillTarget(skill, aggro.getAttacker()))
 				{
-					result.add(aggro.getAttacker());
+					result.Add(aggro.getAttacker());
 				}
 			}
 		}
@@ -1149,14 +1149,14 @@ public class AttackableAI: CreatureAI
 			{
 				if (checkSkillTarget(skill, creature))
 				{
-					result.add(creature);
+					result.Add(creature);
 				}
 			}
 
 			// Maybe add self to the list of targets since getVisibleObjects doesn't return yourself.
 			if (checkSkillTarget(skill, npc))
 			{
-				result.add(npc);
+				result.Add(npc);
 			}
 
 			// For heal skills sort by hp missing.
@@ -1196,7 +1196,7 @@ public class AttackableAI: CreatureAI
 			{
 				if (checkTarget(aggro.getAttacker()))
 				{
-					result.add(aggro.getAttacker());
+					result.Add(aggro.getAttacker());
 				}
 			}
 
@@ -1207,7 +1207,7 @@ public class AttackableAI: CreatureAI
 				{
 					if (checkTarget(creature))
 					{
-						result.add(creature);
+						result.Add(creature);
 					}
 				}
 			}

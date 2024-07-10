@@ -54,7 +54,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 								|| (((obj is Merchant) && !(obj is Fisherman)) && (HtmCache.getInstance().getHtm(null, "html/merchant/" + npc.getId() + ".htm") == null)) //
 								|| ((obj is Guard) && (HtmCache.getInstance().getHtm(null, "html/guard/" + npc.getId() + ".htm") == null)))
 							{
-								results.add(npc.getId());
+								results.Add(npc.getId());
 							}
 						}
 					}
@@ -90,7 +90,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 								|| (((obj is Merchant) && !(obj is Fisherman)) && (HtmCache.getInstance().getHtm(null, "html/merchant/" + npc.getId() + ".htm") == null)) //
 								|| ((obj is Guard) && (HtmCache.getInstance().getHtm(null, "html/guard/" + npc.getId() + ".htm") == null)))
 							{
-								results.add(npc.getId());
+								results.Add(npc.getId());
 							}
 						}
 					}

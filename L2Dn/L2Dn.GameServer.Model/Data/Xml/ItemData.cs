@@ -299,7 +299,7 @@ public class ItemData: DataReaderBase
 		List<String> array = new(data.countTokens());
 		while (data.hasMoreTokens())
 		{
-			array.add(data.nextToken());
+			array.Add(data.nextToken());
 		}
 
 		_tables[name] = array.ToImmutableArray();
@@ -536,7 +536,7 @@ public class ItemData: DataReaderBase
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						array.add(int.Parse(item));
+						array.Add(int.Parse(item));
 					}
 					cond = joinAnd(cond, new ConditionPlayerHasClanHall(array));
 					break;
@@ -672,7 +672,7 @@ public class ItemData: DataReaderBase
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						array.add(int.Parse(item));
+						array.Add(int.Parse(item));
 					}
 					cond = joinAnd(cond, new ConditionPlayerHasPet(array));
 					break;
@@ -684,7 +684,7 @@ public class ItemData: DataReaderBase
 					while (st.hasMoreTokens())
 					{
 						string item = st.nextToken().Trim();
-						array.add(int.Parse(item));
+						array.Add(int.Parse(item));
 					}
 					cond = joinAnd(cond, new ConditionPlayerServitorNpcId(array));
 					break;

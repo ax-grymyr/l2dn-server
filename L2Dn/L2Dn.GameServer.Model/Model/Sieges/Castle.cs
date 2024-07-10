@@ -745,7 +745,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			if (door.getCastle() != null && door.getCastle().getResidenceId() == getResidenceId())
 			{
-				_doors.add(door);
+				_doors.Add(door);
 			}
 		}
 	}
@@ -1200,7 +1200,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				Npc npc = spawn.doSpawn(false);
 				spawn.stopRespawn();
 				npc.broadcastInfo();
-				_sideNpcs.add(npc);
+				_sideNpcs.Add(npc);
 			}
 		}
 	}

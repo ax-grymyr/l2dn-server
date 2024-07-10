@@ -311,7 +311,7 @@ public class Quest: AbstractScript, IIdentifiable
 			// If there exists a timer with this name, allow the timer only if the [npc, player] set is unique nulls act as wildcards.
 			if (getQuestTimer(name, npc, player) == null)
 			{
-				_questTimers.get(name).add(new QuestTimer(this, name, time, npc, player, repeating));
+				_questTimers.get(name).Add(new QuestTimer(this, name, time, npc, player, repeating));
 			}
 		}
 	}
@@ -2377,7 +2377,7 @@ public class Quest: AbstractScript, IIdentifiable
 			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) &&
 			    partyMember.IsInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
-				candidates.add(partyMember);
+				candidates.Add(partyMember);
 			}
 		}
 		// if there was no match, return null...
@@ -2440,7 +2440,7 @@ public class Quest: AbstractScript, IIdentifiable
 			temp = partyMember.getQuestState(Name);
 			if (temp != null && temp.getState() == state && partyMember.IsInsideRadius3D(target, Config.ALT_PARTY_RANGE))
 			{
-				candidates.add(partyMember);
+				candidates.Add(partyMember);
 			}
 		}
 		// if there was no match, return null...
@@ -2533,7 +2533,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			for (int i = 0; i < playerChance; i++)
 			{
-				candidates.add(qs);
+				candidates.Add(qs);
 			}
 		}
 		
@@ -2547,7 +2547,7 @@ public class Quest: AbstractScript, IIdentifiable
 			qs = member.getQuestState(Name);
 			if (checkPartyMemberConditions(qs, condition, target))
 			{
-				candidates.add(qs);
+				candidates.Add(qs);
 			}
 		}
 		

@@ -280,7 +280,7 @@ public class CellPathFinding: PathFinding
 				current.@lock();
 				if (i.bufs.Count < i.count)
 				{
-					i.bufs.add(current);
+					i.bufs.Add(current);
 					i.uses++;
 					if (playable)
 					{
@@ -306,7 +306,7 @@ public class CellPathFinding: PathFinding
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(loc.Location);
-		_debugItems.add(item);
+		_debugItems.Add(item);
 	}
 	
 	private class BufferInfo

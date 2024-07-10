@@ -420,7 +420,7 @@ public class ZoneManager: DataReaderBase
 			foreach (ZoneType zone in region.getZones().Values)
 			{
 				if (zone.isInsideZone(location))
-					temp.add(zone);
+					temp.Add(zone);
 			}
 		}
 
@@ -442,7 +442,7 @@ public class ZoneManager: DataReaderBase
 			foreach (ZoneType zone in region.getZones().Values)
 			{
 				if (zone.isInsideZone(location))
-					temp.add(zone);
+					temp.Add(zone);
 			}
 		}
 
@@ -521,7 +521,7 @@ public class ZoneManager: DataReaderBase
 		{
 			if (territory.isInsideZone(obj.getX(), obj.getY(), obj.getZ()))
 			{
-				temp.add(territory);
+				temp.Add(territory);
 			}
 		}
 		return temp;

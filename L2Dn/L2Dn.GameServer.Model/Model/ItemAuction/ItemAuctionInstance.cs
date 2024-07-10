@@ -305,7 +305,7 @@ public class ItemAuctionInstance
 				ItemAuctionBid bid = auction.getBidFor(bidderObjId);
 				if (bid != null)
 				{
-					stack.add(auction);
+					stack.Add(auction);
 				}
 			}
 		}

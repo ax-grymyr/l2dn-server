@@ -730,7 +730,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			if ((door.getFort() != null) && (door.getFort().getResidenceId() == getResidenceId()))
 			{
-				_doors.add(door);
+				_doors.Add(door);
 			}
 		}
 	}

@@ -511,7 +511,7 @@ public abstract class ZoneType: IEventContainerProvider
 		{
 			if (ch != null && ch.isPlayer())
 			{
-				players.add(ch.getActingPlayer());
+				players.Add(ch.getActingPlayer());
 			}
 		}
 		return players;

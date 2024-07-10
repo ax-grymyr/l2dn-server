@@ -396,7 +396,7 @@ public class ControllableMobAI : AttackableAI
 		{
 			if (Util.checkIfInShortRange(((Attackable) _actor).getAggroRange(), _actor, target, true) && checkAutoAttackCondition(target))
 			{
-				potentialTarget.add(target);
+				potentialTarget.Add(target);
 			}
 		});
 		

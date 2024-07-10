@@ -157,7 +157,7 @@ public class ClanHallData: DataReaderBase
 		{
 			if (ch.getType() == ClanHallType.AUCTIONABLE && ch.getOwner() == null)
 			{
-				freeAuctionableHalls.add(ch);
+				freeAuctionableHalls.Add(ch);
 			}
 		}
 

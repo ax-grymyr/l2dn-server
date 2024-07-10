@@ -421,7 +421,7 @@ public abstract class AbstractOlympiadGame
 					return;
 				}
 
-				items.add(new ItemInfo(item, ItemChangeType.MODIFIED));
+				items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.Params.addItemName(item);
 				sm.Params.addLong(holder.getCount());

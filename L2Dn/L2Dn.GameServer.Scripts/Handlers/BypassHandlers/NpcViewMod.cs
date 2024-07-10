@@ -337,7 +337,7 @@ public class NpcViewMod: IBypassHandler
 					double chance = dropGroup.getChance() / 100;
 					foreach (DropHolder dropHolder in dropGroup.getDropList())
 					{
-						dropList.add(new DropHolder(dropHolder.getDropType(), dropHolder.getItemId(),
+						dropList.Add(new DropHolder(dropHolder.getDropType(), dropHolder.getItemId(),
 							dropHolder.getMin(), dropHolder.getMax(), dropHolder.getChance() * chance));
 					}
 				}

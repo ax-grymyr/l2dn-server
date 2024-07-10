@@ -68,7 +68,7 @@ public class InitialShortcutData: DataReaderBase
 				int shortcutLevel = slotElement.Attribute("shortcutLevel").GetInt32(0);
 				int characterType = slotElement.Attribute("characterType").GetInt32(0);
 				Shortcut shortcut = new Shortcut(slotId, pageId, shortcutType, shortcutId, shortcutLevel, 0, characterType);
-				list.add(shortcut);
+				list.Add(shortcut);
 			});
 		});
 		
@@ -140,7 +140,7 @@ public class InitialShortcutData: DataReaderBase
 				}
 			}
 
-			commands.add(new MacroCmd(entry++, type, d1, d2, cmd));
+			commands.Add(new MacroCmd(entry++, type, d1, d2, cmd));
 		});
 
 		_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));

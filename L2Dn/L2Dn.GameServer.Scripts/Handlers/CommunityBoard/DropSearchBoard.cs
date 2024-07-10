@@ -120,7 +120,7 @@ public class DropSearchBoard: IParseBoardHandler
 			DROP_INDEX_CACHE.put(dropHolder.getItemId(), dropList);
 		}
 		
-		dropList.add(new CBDropHolder(npcTemplate, dropHolder));
+		dropList.Add(new CBDropHolder(npcTemplate, dropHolder));
 	}
 	
 	public bool parseCommunityBoardCommand(String command, Player player)
@@ -339,7 +339,7 @@ public class DropSearchBoard: IParseBoardHandler
 			
 			if (item.getName().toLowerCase().contains(itemName.toLowerCase()))
 			{
-				items.add(item);
+				items.Add(item);
 				limit++;
 			}
 			

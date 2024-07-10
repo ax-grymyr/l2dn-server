@@ -116,11 +116,11 @@ public class CastleManorManager: DataReaderBase, IStorable
 						SeedProduction sp = new SeedProduction(seedId, production.Amount, production.Price, production.StartAmount);
 						if (production.NextPeriod)
 						{
-							pNext.add(sp);
+							pNext.Add(sp);
 						}
 						else
 						{
-							pCurrent.add(sp);
+							pCurrent.Add(sp);
 						}
 					}
 					else
@@ -147,11 +147,11 @@ public class CastleManorManager: DataReaderBase, IStorable
 						
 						if (procure.NextPeriod)
 						{
-							next.add(cp);
+							next.Add(cp);
 						}
 						else
 						{
-							current.add(cp);
+							current.Add(cp);
 						}
 					}
 					else
@@ -654,8 +654,8 @@ public class CastleManorManager: DataReaderBase, IStorable
 		{
 			if (!cropIds.Contains(seed.getCropId()))
 			{
-				seeds.add(seed);
-				cropIds.add(seed.getCropId());
+				seeds.Add(seed);
+				cropIds.Add(seed.getCropId());
 			}
 		}
 		cropIds.Clear();

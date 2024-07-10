@@ -368,7 +368,7 @@ public class NpcData: DataReaderBase
 					}
 				});
 
-				dropGroups.add(group);
+				dropGroups.Add(group);
 			});
 
 			el.Elements("item").ForEach(e =>
@@ -393,7 +393,7 @@ public class NpcData: DataReaderBase
 					long min = e.GetAttributeValueAsInt64("min");
 					long max = e.GetAttributeValueAsInt64("max");
 					double chance1 = e.GetAttributeValueAsDouble("chance");
-					dropLists.add(new DropHolder(dropType, itemId, min, max, chance1));
+					dropLists.Add(new DropHolder(dropType, itemId, min, max, chance1));
 				}
 			});
 		});
@@ -448,66 +448,66 @@ public class NpcData: DataReaderBase
 						skill.getCastRange() <= 150 ? AISkillScope.SHORT_RANGE : AISkillScope.LONG_RANGE;
 					if (skill.isSuicideAttack())
 					{
-						aiSkillScopes.add(AISkillScope.SUICIDE);
+						aiSkillScopes.Add(AISkillScope.SUICIDE);
 					}
 					else
 					{
-						aiSkillScopes.add(AISkillScope.GENERAL);
+						aiSkillScopes.Add(AISkillScope.GENERAL);
 
 						if (skill.isContinuous())
 						{
 							if (!skill.isDebuff())
 							{
-								aiSkillScopes.add(AISkillScope.BUFF);
+								aiSkillScopes.Add(AISkillScope.BUFF);
 							}
 							else
 							{
-								aiSkillScopes.add(AISkillScope.DEBUFF);
-								aiSkillScopes.add(AISkillScope.COT);
-								aiSkillScopes.add(shortOrLongRangeScope);
+								aiSkillScopes.Add(AISkillScope.DEBUFF);
+								aiSkillScopes.Add(AISkillScope.COT);
+								aiSkillScopes.Add(shortOrLongRangeScope);
 							}
 						}
 						else if (skill.hasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
 						{
-							aiSkillScopes.add(AISkillScope.NEGATIVE);
-							aiSkillScopes.add(shortOrLongRangeScope);
+							aiSkillScopes.Add(AISkillScope.NEGATIVE);
+							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
 						else if (skill.hasEffectType(EffectType.HEAL))
 						{
-							aiSkillScopes.add(AISkillScope.HEAL);
+							aiSkillScopes.Add(AISkillScope.HEAL);
 						}
 						else if (skill.hasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK,
 							         EffectType.MAGICAL_ATTACK, EffectType.DEATH_LINK, EffectType.HP_DRAIN))
 						{
-							aiSkillScopes.add(AISkillScope.ATTACK);
-							aiSkillScopes.add(AISkillScope.UNIVERSAL);
-							aiSkillScopes.add(shortOrLongRangeScope);
+							aiSkillScopes.Add(AISkillScope.ATTACK);
+							aiSkillScopes.Add(AISkillScope.UNIVERSAL);
+							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
 						else if (skill.hasEffectType(EffectType.SLEEP))
 						{
-							aiSkillScopes.add(AISkillScope.IMMOBILIZE);
+							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
 						}
 						else if (skill.hasEffectType(EffectType.BLOCK_ACTIONS, EffectType.ROOT))
 						{
-							aiSkillScopes.add(AISkillScope.IMMOBILIZE);
-							aiSkillScopes.add(shortOrLongRangeScope);
+							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
+							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
 						else if (skill.hasEffectType(EffectType.MUTE, EffectType.BLOCK_CONTROL))
 						{
-							aiSkillScopes.add(AISkillScope.COT);
-							aiSkillScopes.add(shortOrLongRangeScope);
+							aiSkillScopes.Add(AISkillScope.COT);
+							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
 						else if (skill.hasEffectType(EffectType.DMG_OVER_TIME, EffectType.DMG_OVER_TIME_PERCENT))
 						{
-							aiSkillScopes.add(shortOrLongRangeScope);
+							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
 						else if (skill.hasEffectType(EffectType.RESURRECTION))
 						{
-							aiSkillScopes.add(AISkillScope.RES);
+							aiSkillScopes.Add(AISkillScope.RES);
 						}
 						else
 						{
-							aiSkillScopes.add(AISkillScope.UNIVERSAL);
+							aiSkillScopes.Add(AISkillScope.UNIVERSAL);
 						}
 					}
 
@@ -520,7 +520,7 @@ public class NpcData: DataReaderBase
 							aiSkillLists.put(aiSkillScope, aiSkills);
 						}
 
-						aiSkills.add(skill);
+						aiSkills.Add(skill);
 					}
 				}
 			}
@@ -570,7 +570,7 @@ public class NpcData: DataReaderBase
 				dropLists = new();
 			}
 
-			dropLists.add(new DropHolder(DropType.DROP, Inventory.LCOIN_ID, Config.LCOIN_MIN_QUANTITY,
+			dropLists.Add(new DropHolder(DropType.DROP, Inventory.LCOIN_ID, Config.LCOIN_MIN_QUANTITY,
 				Config.LCOIN_MAX_QUANTITY, Config.LCOIN_DROP_CHANCE));
 		}
 
@@ -696,7 +696,7 @@ public class NpcData: DataReaderBase
 		{
 			if (filter(npcTemplate))
 			{
-				result.add(npcTemplate);
+				result.Add(npcTemplate);
 			}
 		}
 		return result;
@@ -804,7 +804,7 @@ public class NpcData: DataReaderBase
 				int max = e.Attribute("max").GetInt32(0);
 				int respawnTime = e.GetAttributeValueAsInt32("respawnTime");
 				int weightPoint = e.Attribute("weightPoint").GetInt32(0);
-				minions.add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
+				minions.Add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
 					
 			if (minions.Count != 0)

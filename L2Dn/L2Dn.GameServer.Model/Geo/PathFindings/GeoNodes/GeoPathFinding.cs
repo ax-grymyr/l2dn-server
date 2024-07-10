@@ -108,7 +108,7 @@ public class GeoPathFinding: PathFinding
 			}
 			
 			i++;
-			visited.add(node);
+			visited.Add(node);
 			node.attachNeighbors(readNeighbors(node));
 			GeoNode[] neighbors = node.getNeighbors();
 			if (neighbors == null)
@@ -201,7 +201,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // NE
@@ -213,7 +213,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // E
@@ -225,7 +225,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // SE
@@ -237,7 +237,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // S
@@ -249,7 +249,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // SW
@@ -261,7 +261,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // W
@@ -273,7 +273,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		neighbor = pn[idx++]; // NW
@@ -285,7 +285,7 @@ public class GeoPathFinding: PathFinding
 			newNode = readNode(newNodeX, newNodeY, neighbor);
 			if (newNode != null)
 			{
-				neighbors.add(newNode);
+				neighbors.Add(newNode);
 			}
 		}
 		return neighbors.ToArray();

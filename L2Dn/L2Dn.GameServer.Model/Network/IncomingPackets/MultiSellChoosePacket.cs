@@ -294,7 +294,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				
 				if (!added)
 				{
-					summedIngredients.add(ingredient);
+					summedIngredients.Add(ingredient);
 				}
 			}
 			

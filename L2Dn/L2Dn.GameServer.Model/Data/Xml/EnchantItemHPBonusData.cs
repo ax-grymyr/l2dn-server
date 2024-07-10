@@ -36,7 +36,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 		
 		element.Elements("bonus").ForEach(bonusElement =>
 		{
-			bonuses.add((int)bonusElement);
+			bonuses.Add((int)bonusElement);
 		});
 
 		CrystalType grade = element.Attribute("grade").GetEnum<CrystalType>();

@@ -1118,7 +1118,7 @@ public class Formulas
 					{
 						continue;
 					}
-					canceled.add(info);
+					canceled.Add(info);
 					if (canceled.Count >= Max)
 					{
 						break;
@@ -1136,7 +1136,7 @@ public class Formulas
 						{
 							continue;
 						}
-						canceled.add(info);
+						canceled.Add(info);
 						if (canceled.Count >= Max)
 						{
 							break;
@@ -1153,7 +1153,7 @@ public class Formulas
 					BuffInfo info = debuffs[i];
 					if (info.getSkill().canBeDispelled() && Rnd.get(100) <= rate)
 					{
-						canceled.add(info);
+						canceled.Add(info);
 						if (canceled.Count >= Max)
 						{
 							break;

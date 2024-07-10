@@ -45,7 +45,7 @@ public class SubjugationData: DataReaderBase
 			npcs.put(npcId, points);
 		});
 
-		_subjugations.add(new SubjugationHolder(category, hottimes, npcs));
+		_subjugations.Add(new SubjugationHolder(category, hottimes, npcs));
 	}
 
 	public SubjugationHolder getSubjugation(int category)

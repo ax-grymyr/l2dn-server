@@ -61,7 +61,7 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 	 */
 	public NpcSayPacket addStringParameter(string text)
 	{
-		_parameters.add(text);
+		_parameters.Add(text);
 		return this;
 	}
 	
@@ -77,7 +77,7 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 			{
 				if ((item != null) && (item.Length > 0))
 				{
-					_parameters.add(item);
+					_parameters.Add(item);
 				}
 			}
 		}

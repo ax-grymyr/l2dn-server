@@ -39,7 +39,7 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
             }
             else
             {
-                favorites.add(id);
+                favorites.Add(id);
             }
         }
 		

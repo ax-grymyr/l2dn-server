@@ -55,8 +55,8 @@ public class HuntPassData: DataReaderBase
 		}
 		else
 		{
-			_rewards.add(new ItemHolder(itemId, itemCount));
-			_premiumRewards.add(new ItemHolder(premiumitemId, premiumitemCount));
+			_rewards.Add(new ItemHolder(itemId, itemCount));
+			_premiumRewards.Add(new ItemHolder(premiumitemId, premiumitemCount));
 		}
 	}
 	

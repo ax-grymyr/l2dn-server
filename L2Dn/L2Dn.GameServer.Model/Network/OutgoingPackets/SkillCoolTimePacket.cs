@@ -17,7 +17,7 @@ public readonly struct SkillCoolTimePacket: IOutgoingPacket
         {
             if (ts.hasNotPassed() && !SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLevel(), ts.getSkillSubLevel()).isNotBroadcastable())
             {
-                _reuseTimestamps.add(ts);
+                _reuseTimestamps.Add(ts);
             }
         }
     }

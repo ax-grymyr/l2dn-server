@@ -43,7 +43,7 @@ public class MagicLampData: DataReaderBase
 			long sp = el.GetAttributeValueAsInt64("sp");
 			double chance = el.GetAttributeValueAsDouble("chance");
 			
-			LAMPS.add(new MagicLampDataHolder(type, exp, sp, chance, minLevel, maxLevel));
+			LAMPS.Add(new MagicLampDataHolder(type, exp, sp, chance, minLevel, maxLevel));
 		});
 	}
 

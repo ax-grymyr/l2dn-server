@@ -244,7 +244,7 @@ public class Hero
 					}
 				}
 
-				diary.add(diaryEntry);
+				diary.Add(diaryEntry);
 				diaryentries++;
 			}
 
@@ -316,7 +316,7 @@ public class Hero
 								fight.set("result", "<font color=\"ffff00\">draw</font>");
 								draws++;
 							}
-							fights.add(fight);
+							fights.Add(fight);
 							numberOfFights++;
 						}
 					}
@@ -348,7 +348,7 @@ public class Hero
 								fight.set("result", "<font color=\"ffff00\">draw</font>");
 								draws++;
 							}
-							fights.add(fight);
+							fights.Add(fight);
 							numberOfFights++;
 						}
 					}
@@ -737,7 +737,7 @@ public class Hero
 		diaryEntry.set("action", template.getName() + " was defeated");
 		
 		// Add to old list
-		list.add(diaryEntry);
+		list.Add(diaryEntry);
 	}
 	
 	public void setCastleTaken(int charId, int castleId)
@@ -757,7 +757,7 @@ public class Hero
 		diaryEntry.set("action", castle.getName() + " Castle was successfuly taken");
 		
 		// Add to old list
-		list.add(diaryEntry);
+		list.Add(diaryEntry);
 	}
 	
 	public void setDiaryData(int charId, int action, int param)

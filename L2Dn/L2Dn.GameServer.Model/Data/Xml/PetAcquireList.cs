@@ -52,7 +52,7 @@ public class PetAcquireList: DataReaderBase
 			int item = el.Attribute("item").GetInt32(-1);
 			long itemAmount = el.Attribute("itemAmount").GetInt64(-1);
 
-			list.add(new PetSkillAcquireHolder(id, lvl, reqLvl, evolve, item < 0
+			list.Add(new PetSkillAcquireHolder(id, lvl, reqLvl, evolve, item < 0
 				? null
 				: new ItemHolder(item, itemAmount)));
 		});

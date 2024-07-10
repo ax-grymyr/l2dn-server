@@ -123,7 +123,7 @@ public class SkillLearn
 	 */
 	public void addRequiredItem(List<ItemHolder> list)
 	{
-		_requiredItems.add(list);
+		_requiredItems.Add(list);
 	}
 	
 	/**

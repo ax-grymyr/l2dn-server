@@ -59,7 +59,7 @@ public class PrimeShopData: DataReaderBase
 				return;
 			}
 
-			items.add(new PrimeShopItem(itemId, count, item.getWeight(), item.isTradeable() ? 1 : 0));
+			items.Add(new PrimeShopItem(itemId, count, item.getWeight(), item.isTradeable() ? 1 : 0));
 		});
 
 		_primeItems.put(id, new PrimeShopGroup(element, items));

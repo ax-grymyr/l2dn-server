@@ -975,7 +975,7 @@ public class Olympiad
 					hero.set("LEGEND", charId == legendId ? 1 : 0);
 						
 					LOGGER_OLYMPIAD.Info("Hero " + query.Name + "," + charId + "," + heroClass);
-					heroesToBe.add(hero);
+					heroesToBe.Add(hero);
 				}
 			}
 		}
@@ -1014,7 +1014,7 @@ public class Olympiad
 
 			foreach (string name in query.Take(10))
 			{
-				names.add(name);
+				names.Add(name);
 			}
 		}
 		catch (Exception e)

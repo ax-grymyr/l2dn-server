@@ -46,12 +46,12 @@ public class NextAction
 		
 		if (@event != null)
 		{
-			_events.add(@event);
+			_events.Add(@event);
 		}
 		
 		if (intention != null)
 		{
-			_intentions.add(intention);
+			_intentions.Add(intention);
 		}
 		
 		setCallback(callback);
@@ -101,7 +101,7 @@ public class NextAction
 		
 		if (@event != null)
 		{
-			_events.add(@event);
+			_events.Add(@event);
 		}
 	}
 	
@@ -166,7 +166,7 @@ public class NextAction
 		
 		if (intention != null)
 		{
-			_intentions.add(intention);
+			_intentions.Add(intention);
 		}
 	}
 	

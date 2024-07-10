@@ -86,7 +86,7 @@ public class MultisellData: DataReaderBase
 						continue;
 					}
 
-					ingredients.add(ingredient);
+					ingredients.Add(ingredient);
 					lastIngredientId = ingredientEntry.ItemId;
 					lastIngredientCount = ingredientEntry.Count;
 				}
@@ -144,7 +144,7 @@ public class MultisellData: DataReaderBase
 						continue;
 					}
 
-					products.add(product);
+					products.Add(product);
 
 					if (item != null)
 					{
@@ -174,11 +174,11 @@ public class MultisellData: DataReaderBase
 					ItemChanceHolder ingredient = new(57, 0, totalPrice, 0,
 						ingredients[0].isMaintainIngredient());
 					ingredients.Clear();
-					ingredients.add(ingredient);
+					ingredients.Add(ingredient);
 				}
 
 				MultisellEntryHolder entry = new MultisellEntryHolder(ingredients, products);
-				entries.add(entry);
+				entries.Add(entry);
 			}
 
 			return new MultisellListHolder(listId, multiSellList.IsChanceMultiSell, multiSellList.ApplyTaxes,

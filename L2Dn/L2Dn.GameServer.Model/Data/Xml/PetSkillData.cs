@@ -117,7 +117,7 @@ public class PetSkillData: DataReaderBase
 			{
 				continue;
 			}
-			skillIds.add(skillHolder.getSkillId());
+			skillIds.Add(skillHolder.getSkillId());
 		}
 		
 		return skillIds;
@@ -139,7 +139,7 @@ public class PetSkillData: DataReaderBase
 				continue;
 			}
 			
-			skills.add(skill);
+			skills.Add(skill);
 		}
 		
 		return skills;

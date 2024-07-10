@@ -183,7 +183,7 @@ public class PetData
 	 */
 	public void addNewSkill(int skillId, int skillLevel, int petLvl)
 	{
-		_skills.add(new PetSkillLearn(skillId, skillLevel, petLvl));
+		_skills.Add(new PetSkillLearn(skillId, skillLevel, petLvl));
 	}
 	
 	/**

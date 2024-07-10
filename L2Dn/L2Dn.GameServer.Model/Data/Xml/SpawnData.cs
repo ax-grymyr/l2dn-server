@@ -125,7 +125,7 @@ public class SpawnData: DataReaderBase
 		{
 			if (condition(spawnTemplate))
 			{
-				result.add(spawnTemplate);
+				result.Add(spawnTemplate);
 			}
 		}
 		return result;
@@ -169,7 +169,7 @@ public class SpawnData: DataReaderBase
 				{
 					if (condition(spawn))
 					{
-						result.add(spawn);
+						result.Add(spawn);
 					}
 				}
 			}

@@ -1238,7 +1238,7 @@ public class Player: Playable
 				continue;
 			}
 			
-			activeQuests.add(quest);
+			activeQuests.Add(quest);
 		}
 		return activeQuests;
 	}
@@ -2520,7 +2520,7 @@ public class Player: Playable
 			}
 			
 			addSkill(updatedSkill, false);
-			skillsForStore.add(updatedSkill);
+			skillsForStore.Add(updatedSkill);
 			
 			if (Config.AUTO_LEARN_SKILLS)
 			{
@@ -4852,7 +4852,7 @@ public class Player: Playable
 		
 		lock (_lastDamageTaken)
 		{
-			_lastDamageTaken.add(new DamageTakenHolder(attacker, skillId, damage));
+			_lastDamageTaken.Add(new DamageTakenHolder(attacker, skillId, damage));
 			if (_lastDamageTaken.Count > 20)
 			{
 				_lastDamageTaken.RemoveAt(0);
@@ -4945,7 +4945,7 @@ public class Player: Playable
 					if (Rnd.get(100) < itemDropPercent)
 					{
 						this.dropItem("DieDrop", itemDrop, killer, true);
-						droppedItems.add(itemDrop);
+						droppedItems.Add(itemDrop);
 						
 						if (isKarmaDrop)
 						{
@@ -5312,7 +5312,7 @@ public class Player: Playable
 		summons.AddRange(getServitors().values());
 		if (_pet != null)
 		{
-			summons.add(_pet);
+			summons.Add(_pet);
 		}
 		return summons;
 	}
@@ -7254,7 +7254,7 @@ public class Player: Playable
 						continue;
 					}
 					
-					storedSkills.add(skill.getReuseHashCode());
+					storedSkills.Add(skill.getReuseHashCode());
 					
 					TimeStamp t = getSkillReuseTimeStamp(skill.getReuseHashCode());
 
@@ -7287,7 +7287,7 @@ public class Player: Playable
 				TimeStamp t = ts.Value;
 				if ((t != null) && (currentTime < t.getStamp()))
 				{
-					storedSkills.add(hash);
+					storedSkills.Add(hash);
 
 					++buffIndex;
 					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
@@ -12145,7 +12145,7 @@ public class Player: Playable
 					continue;
 				}
 				
-				filteredSkills.add(skill);
+				filteredSkills.Add(skill);
 			}
 			currentSkills = filteredSkills;
 			
@@ -12190,7 +12190,7 @@ public class Player: Playable
 				continue;
 			}
 			
-			finalSkills.add(skill);
+			finalSkills.Add(skill);
 		}
 		return finalSkills;
 	}
@@ -13002,7 +13002,7 @@ public class Player: Playable
 		{
 			_silenceModeExcluded = new();
 		}
-		_silenceModeExcluded.add(playerObjId);
+		_silenceModeExcluded.Add(playerObjId);
 	}
 	
 	private void storeRecipeShopList()
@@ -14397,7 +14397,7 @@ public class Player: Playable
 	{
 		lock (_questTimers)
 		{
-			_questTimers.add(questTimer);
+			_questTimers.Add(questTimer);
 		}
 	}
 	
@@ -14413,7 +14413,7 @@ public class Player: Playable
 	{
 		lock (_timerHolders)
 		{
-			_timerHolders.add(timer);
+			_timerHolders.Add(timer);
 		}
 	}
 	
@@ -14717,7 +14717,7 @@ public class Player: Playable
 				newHolder.setCritDamagePoints(record.CriticalDamagePoints);
 				newHolder.setInUse(record.IsInUse);
                 
-				restoredSpirits.add(newHolder);
+				restoredSpirits.Add(newHolder);
             }
 		}
 		catch (Exception e)
@@ -15047,7 +15047,7 @@ public class Player: Playable
 					int position = shortcut.getSlot() + (shortcut.getPage() * ShortCuts.MAX_SHORTCUTS_PER_BAR);
 					if (!positions.Contains(position))
 					{
-						positions.add(position);
+						positions.Add(position);
 					}
 				}
 			}
@@ -15422,7 +15422,7 @@ public class Player: Playable
 	
 	public void addCollectionFavorite(int id)
 	{
-		_collectionFavorites.add(id);
+		_collectionFavorites.Add(id);
 	}
 	
 	public void removeCollectionFavorite(int id)
@@ -15500,7 +15500,7 @@ public class Player: Playable
 				int collectionId = record.CollectionId;
 				if (CollectionData.getInstance().getCollection(collectionId) != null)
 				{
-					_collections.add(new PlayerCollectionData(collectionId, record.ItemId, record.Index));
+					_collections.Add(new PlayerCollectionData(collectionId, record.ItemId, record.Index));
 				}
             }
 		}
@@ -15670,7 +15670,7 @@ public class Player: Playable
 			List<int> list = new(Inventory.PAPERDOLL_TOTALSLOTS);
 			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 			{
-				list.add(getInventory().getPaperdollObjectId(i));
+				list.Add(getInventory().getPaperdollObjectId(i));
 			}
 			getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_A, list);
 			_dualInventorySetA = list;
@@ -15685,7 +15685,7 @@ public class Player: Playable
 			List<int> list = new(Inventory.PAPERDOLL_TOTALSLOTS);
 			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 			{
-				list.add(0);
+				list.Add(0);
 			}
 			getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_B, list);
 			_dualInventorySetB = list;

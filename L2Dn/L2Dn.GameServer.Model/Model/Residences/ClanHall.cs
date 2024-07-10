@@ -285,7 +285,7 @@ public class ClanHall: AbstractResidence
 		{
 			if (holder.getMinFunctionLevel() <= functionLevel)
 			{
-				result.add(holder);
+				result.Add(holder);
 			}
 		}
 		return result;

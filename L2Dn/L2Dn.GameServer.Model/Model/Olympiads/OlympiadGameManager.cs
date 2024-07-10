@@ -36,7 +36,7 @@ public class OlympiadGameManager: Runnable
 		{
 			OlympiadStadium stadium = new OlympiadStadium(array[i % zonesCount], i);
 			stadium.registerTask(new OlympiadGameTask(stadium));
-			_tasks.add(stadium);
+			_tasks.Add(stadium);
 		}
 		
 		LOGGER.Info("Olympiad System: Loaded " + _tasks.Count + " stadiums.");

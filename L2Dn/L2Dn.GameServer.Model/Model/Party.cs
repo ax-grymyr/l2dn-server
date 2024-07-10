@@ -926,7 +926,7 @@ public class Party : AbstractPlayerGroup
 				{
 					if ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL)
 					{
-						validMembers.add(member);
+						validMembers.Add(member);
 					}
 				}
 				break;
@@ -943,7 +943,7 @@ public class Party : AbstractPlayerGroup
 					int sqLevel = member.getLevel() * member.getLevel();
 					if ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT))
 					{
-						validMembers.add(member);
+						validMembers.Add(member);
 					}
 				}
 				break;
@@ -969,7 +969,7 @@ public class Party : AbstractPlayerGroup
 					int sqLevel = member.getLevel() * member.getLevel();
 					if (sqLevel >= (sqLevelSum / (members.Count * members.Count)))
 					{
-						validMembers.add(member);
+						validMembers.Add(member);
 					}
 				}
 				break;

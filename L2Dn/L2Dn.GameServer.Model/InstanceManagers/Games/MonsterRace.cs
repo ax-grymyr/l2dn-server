@@ -319,7 +319,7 @@ public class MonsterRace
 	public void newRace()
 	{
 		// Edit _history.
-		_history.add(new HistoryInfo(_raceNumber, 0, 0, 0));
+		_history.Add(new HistoryInfo(_raceNumber, 0, 0, 0));
 		
 		// Randomize _npcTemplates.
 		Random.Shared.Shuffle(_npcTemplates);
@@ -388,7 +388,7 @@ public class MonsterRace
 			var records = ctx.DerbyHistory;
 			foreach (MonsterDerbyHistory record in records)
 			{
-				_history.add(new HistoryInfo(record.RaceId, record.First, record.Second, record.OddRate));
+				_history.Add(new HistoryInfo(record.RaceId, record.First, record.Second, record.OddRate));
 				_raceNumber++;
 			}
 		}
@@ -528,7 +528,7 @@ public class MonsterRace
 		// As we get the sum, we can now calculate the odd rate of each lane.
 		foreach (long amount  in sortedLanes.values())
 		{
-			_odds.add((amount == 0) ? 0D : Math.Max(1.25, (sumOfAllLanes * 0.7) / amount));
+			_odds.Add((amount == 0) ? 0D : Math.Max(1.25, (sumOfAllLanes * 0.7) / amount));
 		}
 	}
 	

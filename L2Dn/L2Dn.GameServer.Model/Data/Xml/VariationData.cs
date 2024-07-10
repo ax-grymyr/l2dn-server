@@ -128,7 +128,7 @@ public class VariationData: DataReaderBase
 					}
 				}
 
-				sets.add(new OptionDataCategory(options, itemIds, chance));
+				sets.Add(new OptionDataCategory(options, itemIds, chance));
 			}
 
 			variation.setEffectGroup(order, new OptionDataGroup(sets));
@@ -140,7 +140,7 @@ public class VariationData: DataReaderBase
 			list = new();
 		}
 
-		list.add(variation);
+		list.Add(variation);
 
 		_variations.put(mineralId, list);
 		((EtcItem)ItemData.getInstance().getTemplate(mineralId)).setMineral();

@@ -115,7 +115,7 @@ public class BlessedSpiritShot: IItemHandler
 		{
 			if (!s.isDead())
 			{
-				aliveServitor.add(s);
+				aliveServitor.Add(s);
 			}
 		}
 		

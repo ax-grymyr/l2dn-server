@@ -43,7 +43,7 @@ public class DoubleCast: AbstractEffect
 				Skill s = holder.getSkill();
 				if ((s != null) && !effected.isAffectedBySkill(holder))
 				{
-					_addedToggles.computeIfAbsent(effected.getObjectId(), v => new()).add(holder);
+					_addedToggles.computeIfAbsent(effected.getObjectId(), v => new()).Add(holder);
 					s.applyEffects(effected, effected);
 				}
 			}

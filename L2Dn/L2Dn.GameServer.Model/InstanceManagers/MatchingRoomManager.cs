@@ -55,7 +55,7 @@ public class MatchingRoomManager
 		{
 			if ((player != null) && (player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) && ((classIds == null) || classIds.Contains(player.getClassId())) && ((query == null) || query.isEmpty() || player.getName().ToLower().Contains(query)))
 			{
-				players.add(player);
+				players.Add(player);
 			}
 		}
 		return players;
@@ -88,7 +88,7 @@ public class MatchingRoomManager
 				if (((location < 0) || (room.getLocation() == location)) //
 					&& ((type == PartyMatchingRoomLevelType.ALL) || ((room.getMinLevel() >= requestorLevel) && (room.getMaxLevel() <= requestorLevel))))
 				{
-					result.add(room);
+					result.Add(room);
 				}
 			}
 		}
@@ -110,7 +110,7 @@ public class MatchingRoomManager
 				if ((room.getLocation() == location) //
 					&& ((room.getMinLevel() <= level) && (room.getMaxLevel() >= level)))
 				{
-					result.add(room);
+					result.Add(room);
 				}
 			}
 		}

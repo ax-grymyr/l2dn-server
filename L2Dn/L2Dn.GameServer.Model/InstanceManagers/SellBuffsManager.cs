@@ -116,7 +116,7 @@ public class SellBuffsManager: DataReaderBase
 			count++;
 			if ((count > index) && (count <= (ceiling + index)))
 			{
-				sellList.add(holder);
+				sellList.Add(holder);
 			}
 		}
 		
@@ -274,7 +274,7 @@ public class SellBuffsManager: DataReaderBase
 				
 				if ((count > index) && (count <= ceiling))
 				{
-					skillList.add(skill);
+					skillList.Add(skill);
 				}
 			}
 		}

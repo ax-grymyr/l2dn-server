@@ -41,7 +41,7 @@ public class BuyListTaskManager
 					{
 						if (!PENDING_UPDATES.Contains(product))
 						{
-							PENDING_UPDATES.add(product);
+							PENDING_UPDATES.Add(product);
 						}
 					}
 				}

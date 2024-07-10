@@ -1466,7 +1466,7 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				ipMap.put(ip, new());
 			}
-			ipMap.get(ip).add(player);
+			ipMap.get(ip).Add(player);
 			
 			if (ipMap.get(ip).Count >= multibox)
 			{
@@ -1517,7 +1517,7 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				ipMap.put(pack, new());
 			}
-			ipMap.get(pack).add(player);
+			ipMap.get(pack).Add(player);
 			
 			if (ipMap.get(pack).Count >= multibox)
 			{

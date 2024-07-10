@@ -92,7 +92,7 @@ public class ItemCommissionManager
 		{
 			if (filter(item.getItemInfo().getItem()))
 			{
-				commissionItems.add(item);
+				commissionItems.Add(item);
 				if (commissionItems.Count >= ITEMS_LIMIT_PER_REQUEST)
 				{
 					break;
@@ -130,7 +130,7 @@ public class ItemCommissionManager
 		{
 			if (c.getItemInstance().getOwnerId() == player.getObjectId())
 			{
-				commissionItems.add(c);
+				commissionItems.Add(c);
 				if (commissionItems.Count == MAX_ITEMS_REGISTRED_PER_PLAYER)
 				{
 					break;

@@ -35,7 +35,7 @@ public class AdminOnline: IAdminCommandHandler
 				String? ip = player.getClient()?.IpAddress.ToString();
 				if ((ip != null) && !ips.Contains(ip))
 				{
-					ips.add(ip);
+					ips.Add(ip);
 				}
 				
 				total++;

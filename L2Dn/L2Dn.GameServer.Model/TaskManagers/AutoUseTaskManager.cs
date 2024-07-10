@@ -690,7 +690,7 @@ public class AutoUseTaskManager
 	
 	public void addAutoSkill(Player player, int skillId)
 	{
-		player.getAutoUseSettings().getAutoSkills().add(skillId);
+		player.getAutoUseSettings().getAutoSkills().Add(skillId);
 		startAutoUseTask(player);
 	}
 	

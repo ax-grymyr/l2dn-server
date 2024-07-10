@@ -195,7 +195,7 @@ public class LongTimeEvent: Quest
 									continue;
 								}
 
-								_dropList.add(new EventDropHolder(itemId, minCount, maxCount, finalChance, minLevel,
+								_dropList.Add(new EventDropHolder(itemId, minCount, maxCount, finalChance, minLevel,
 									maxLevel, monsterIds));
 							}
 							catch (FormatException nfe)
@@ -230,7 +230,7 @@ public class LongTimeEvent: Quest
 									continue;
 								}
 
-								_spawnList.add(
+								_spawnList.Add(
 									new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading), respawnTime));
 							}
 							catch (FormatException nfe)
@@ -282,7 +282,7 @@ public class LongTimeEvent: Quest
 						continue;
 					}
 
-					_destroyItemsOnEnd.add(itemId);
+					_destroyItemsOnEnd.Add(itemId);
 
 					// Add item deletion info to manager.
 					if (endtime > DateTime.UtcNow)

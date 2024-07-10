@@ -412,7 +412,7 @@ public class ClanTable
 			{
 				if ((clan != null) && (clan.getAllyId() == allianceId))
 				{
-					clanAllies.add(clan);
+					clanAllies.Add(clan);
 				}
 			}
 		}

@@ -122,7 +122,7 @@ public class SoulShots: IItemHandler
 		{
 			if (!s.isDead())
 			{
-				aliveServitor.add(s);
+				aliveServitor.Add(s);
 			}
 		}
 		

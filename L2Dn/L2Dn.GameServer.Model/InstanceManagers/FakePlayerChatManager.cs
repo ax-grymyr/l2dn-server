@@ -52,7 +52,7 @@ public class FakePlayerChatManager: DataReaderBase
 	private void parseElement(XElement element)
 	{
 		StatSet set = new StatSet(element);
-		MESSAGES.add(new FakePlayerChatHolder(set.getString("fpcName"), set.getString("searchMethod"),
+		MESSAGES.Add(new FakePlayerChatHolder(set.getString("fpcName"), set.getString("searchMethod"),
 				set.getString("searchText"), set.getString("answers")));
 	}
 

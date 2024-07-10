@@ -49,7 +49,7 @@ public class ChangeAttributeCrystal: IItemHandler
 		{
 			if (i.isWeapon() && i.hasAttributes() && (i.getTemplate().getItemGrade() == ITEM_GRADES.get(item.getId())))
 			{
-				itemList.add(new ItemInfo(i));
+				itemList.Add(new ItemInfo(i));
 			}
 		}
 		

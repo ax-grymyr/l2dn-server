@@ -55,7 +55,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					{
 						if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.getId()))
 						{
-							player.getAutoUseSettings().getAutoSkills().add(addedSkill.getId());
+							player.getAutoUseSettings().getAutoSkills().Add(addedSkill.getId());
 							player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.getId());
 						}
 					}
@@ -142,7 +142,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					{
 						if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.getId()))
 						{
-							player.getAutoUseSettings().getAutoSkills().add(addedSkill.getId());
+							player.getAutoUseSettings().getAutoSkills().Add(addedSkill.getId());
 							player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.getId());
 						}
 					}

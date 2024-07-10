@@ -490,7 +490,7 @@ public class RankManager
 			{
 				break;
 			}
-			result.add(rank.getInt("charId"));
+			result.Add(rank.getInt("charId"));
 		}
 		return result;
 	}

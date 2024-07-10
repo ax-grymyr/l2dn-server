@@ -1803,7 +1803,7 @@ public class Npc: Creature
 	{
 		lock (_questTimers)
 		{
-			_questTimers.add(questTimer);
+			_questTimers.Add(questTimer);
 		}
 	}
 	
@@ -1831,7 +1831,7 @@ public class Npc: Creature
 	{
 		lock (_timerHolders)
 		{
-			_timerHolders.add(timer);
+			_timerHolders.Add(timer);
 		}
 	}
 	

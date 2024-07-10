@@ -50,7 +50,7 @@ public class ResidenceFunctionsData: DataReaderBase
 
 			ItemHolder cost = new ItemHolder(costId, costCount);
 			ResidenceFunctionTemplate template = new ResidenceFunctionTemplate(id, level, type, cost, duration, value);
-			_functions.computeIfAbsent(template.getId(), key => new()).add(template);
+			_functions.computeIfAbsent(template.getId(), key => new()).Add(template);
 		});
 	}
 

@@ -149,7 +149,7 @@ public class LimitShopClanData: DataReaderBase
 
 		});
 
-		_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities,
+		_products.Add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities,
 			ingredientEnchants, productionId, 1, 100, false, 0, 0, 0, 0, false, 0, 0, 0, false, 0, 0, 0, false, 0, 0,
 			false, accountDailyLimit, accountMontlyLimit, accountBuyLimit));
 	}

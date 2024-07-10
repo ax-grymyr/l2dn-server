@@ -86,7 +86,7 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 		player.sendPacket(new ExCollectionRegisterPacket(true, _collectionId, _index,
 			new ItemEnchantHolder(item.getId(), count, item.getEnchantLevel())));
 		
-		player.getCollections().add(new PlayerCollectionData(_collectionId, item.getId(), _index));
+		player.getCollections().Add(new PlayerCollectionData(_collectionId, item.getId(), _index));
 		
 		int completeCount = 0;
 		foreach (PlayerCollectionData coll in player.getCollections())

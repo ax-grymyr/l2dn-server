@@ -56,7 +56,7 @@ public class TriggerSkillByDamage: AbstractEffect
 			foreach (String skill in split)
 			{
 				String[] splitSkill = skill.Split(",");
-				_triggerSkills.add(new SkillHolder(int.Parse(splitSkill[0]), int.Parse(splitSkill[1])));
+				_triggerSkills.Add(new SkillHolder(int.Parse(splitSkill[0]), int.Parse(splitSkill[1])));
 			}
 		}
 	}

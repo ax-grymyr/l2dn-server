@@ -91,7 +91,7 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 		{
 			if (group.getName() != null && group.getName().equalsIgnoreCase(name))
 			{
-				result.add(group);
+				result.Add(group);
 			}
 		}
 		return result;

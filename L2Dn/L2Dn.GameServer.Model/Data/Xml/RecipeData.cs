@@ -55,21 +55,21 @@ public class RecipeData: DataReaderBase
 		{
 			string statName = el.GetAttributeValueAsString("name");
 			int value = el.GetAttributeValueAsInt32("value");
-			recipeStatUseList.add(new RecipeStatHolder(statName, value));
+			recipeStatUseList.Add(new RecipeStatHolder(statName, value));
 		});
 
 		element.Elements("altStatChange").ForEach(el =>
 		{
 			string statName = el.GetAttributeValueAsString("name");
 			int value = el.GetAttributeValueAsInt32("value");
-			recipeAltStatChangeList.add(new RecipeStatHolder(statName, value));
+			recipeAltStatChangeList.Add(new RecipeStatHolder(statName, value));
 		});
 
 		element.Elements("ingredient").ForEach(el =>
 		{
 			int ingId = el.GetAttributeValueAsInt32("id");
 			int ingCount = el.GetAttributeValueAsInt32("count");
-			recipePartList.add(new RecipeHolder(ingId, ingCount));
+			recipePartList.Add(new RecipeHolder(ingId, ingCount));
 		});
 
 		XElement prodElem = element.Elements("production").Single();

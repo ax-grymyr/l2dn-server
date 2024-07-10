@@ -85,7 +85,7 @@ public class ArmorSetData: DataReaderBase
 
 		foreach (XmlArmorSetSkill xmlArmorSetSkill in xmlArmorSet.Skills)
 		{
-			skills.add(new ArmorsetSkillHolder(xmlArmorSetSkill.SkillId, xmlArmorSetSkill.SkillLevel,
+			skills.Add(new ArmorsetSkillHolder(xmlArmorSetSkill.SkillId, xmlArmorSetSkill.SkillLevel,
 				xmlArmorSetSkill.MinimumPieces, xmlArmorSetSkill.MinimumEnchant, xmlArmorSetSkill.Optional,
 				xmlArmorSetSkill.SlotMask, xmlArmorSetSkill.BookSlot));
 		}

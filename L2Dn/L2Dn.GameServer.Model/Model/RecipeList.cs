@@ -74,7 +74,7 @@ public class RecipeList
 	 */
 	public void addStatUse(RecipeStatHolder statUse)
 	{
-		_statUse.add(statUse);
+		_statUse.Add(statUse);
 	}
 	
 	/**
@@ -83,7 +83,7 @@ public class RecipeList
 	 */
 	public void addAltStatChange(RecipeStatHolder statChange)
 	{
-		_altStatChange.add(statChange);
+		_altStatChange.Add(statChange);
 	}
 	
 	/**

@@ -170,7 +170,7 @@ public class HomeBoard: IParseBoardHandler
 					targets.Add(pet);
 				}
 				
-				player.getServitors().Values.ForEach(x => targets.add(x));
+				player.getServitors().Values.ForEach(x => targets.Add(x));
 				
 				for (int i = 0; i < buffCount; i++)
 				{

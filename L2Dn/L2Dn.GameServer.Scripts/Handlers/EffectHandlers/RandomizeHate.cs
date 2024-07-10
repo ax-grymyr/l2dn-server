@@ -51,7 +51,7 @@ public class RandomizeHate: AbstractEffect
 					return;
 				}
 				
-				targetList.add(cha);
+				targetList.Add(cha);
 			}
 		});
 

@@ -37,7 +37,7 @@ public abstract class ZoneForm
         Item item = new Item(IdManager.getInstance().getNextId(), itemId);
         item.setCount(num);
         item.spawnMe(new Location3D(x, y, z + 5));
-        ZoneManager.getInstance().getDebugItems().add(item);
+        ZoneManager.getInstance().getDebugItems().Add(item);
     }
 	
     public abstract Location3D getRandomPoint();

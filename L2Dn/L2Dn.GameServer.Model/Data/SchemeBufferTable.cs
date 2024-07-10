@@ -65,7 +65,7 @@ public class SchemeBufferTable: DataReaderBase
 					int skillId = int.Parse(skill);
 					if (_availableBuffs.containsKey(skillId))
 					{
-						schemeList.add(skillId);
+						schemeList.Add(skillId);
 					}
 				}
 
@@ -189,7 +189,7 @@ public class SchemeBufferTable: DataReaderBase
 		{
 			if (skill.getType().equalsIgnoreCase(groupType))
 			{
-				skills.add(skill.getId());
+				skills.Add(skill.getId());
 			}
 		}
 
@@ -206,7 +206,7 @@ public class SchemeBufferTable: DataReaderBase
 		{
 			if (!skillTypes.Contains(skill.getType()))
 			{
-				skillTypes.add(skill.getType());
+				skillTypes.Add(skill.getType());
 			}
 		}
 

@@ -580,7 +580,7 @@ public class RecipeManager
 					}
 					
 					// make new temporary object, just for counting purposes
-					materials.add(new TempItem(item, recipe.getQuantity()));
+					materials.Add(new TempItem(item, recipe.getQuantity()));
 				}
 			}
 			

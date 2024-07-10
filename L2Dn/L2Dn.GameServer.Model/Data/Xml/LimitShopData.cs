@@ -162,7 +162,7 @@ public class LimitShopData: DataReaderBase
 				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " + id);
 		});
 
-		_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds,
+		_products.Add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds,
 			ingredientQuantities, ingredientEnchants, productionId, 1, 100, false, 0, 0, 0, 0,
 			false, 0, 0, 0, false, 0, 0, 0, false, 0, 0, false, accountDailyLimit,
 			accountMontlyLimit, accountBuyLimit));

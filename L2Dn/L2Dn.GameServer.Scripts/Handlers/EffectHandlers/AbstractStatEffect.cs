@@ -85,12 +85,12 @@ public abstract class AbstractStatEffect: AbstractEffect
 
 		if (@params.contains("magicWeapon"))
 		{
-			_conditions.add(new ConditionUsingMagicWeapon(@params.getBoolean("magicWeapon")));
+			_conditions.Add(new ConditionUsingMagicWeapon(@params.getBoolean("magicWeapon")));
 		}
 		
 		if (@params.contains("twoHandWeapon"))
 		{
-			_conditions.add(new ConditionUsingTwoHandWeapon(@params.getBoolean("twoHandWeapon")));
+			_conditions.Add(new ConditionUsingTwoHandWeapon(@params.getBoolean("twoHandWeapon")));
 		}
 	}
 	

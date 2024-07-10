@@ -5383,7 +5383,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			if (filter(skillCaster))
 			{
-				result.add(skillCaster);
+				result.Add(skillCaster);
 			}
 		}
 		return result;

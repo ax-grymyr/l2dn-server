@@ -317,7 +317,7 @@ public class InstanceManager: DataReaderBase
 				else
 				{
 					Condition condition = factory(template, parameters, onlyLeader, showMessageAndHtml);
-					conditions.add(condition);
+					conditions.Add(condition);
 				}
 			}
 
@@ -501,7 +501,7 @@ public class InstanceManager: DataReaderBase
 		{
 			if (entry.Value <= DateTime.UtcNow)
 			{
-				invalidPenalty.add(entry.Key);
+				invalidPenalty.Add(entry.Key);
 			}
 		}
 		

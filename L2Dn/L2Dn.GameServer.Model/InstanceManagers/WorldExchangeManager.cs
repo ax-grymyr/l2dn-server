@@ -760,7 +760,7 @@ public class WorldExchangeManager: DataReaderBase
 			
 			if (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED)
 			{
-				returnList.add(holder);
+				returnList.Add(holder);
 			}
 		}
 		
@@ -790,7 +790,7 @@ public class WorldExchangeManager: DataReaderBase
 			
 			if (ids.Contains(holder.getItemInstance().getId()) && (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED))
 			{
-				returnList.add(holder);
+				returnList.Add(holder);
 			}
 		}
 		
@@ -926,17 +926,17 @@ public class WorldExchangeManager: DataReaderBase
 			{
 				case WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED:
 				{
-					registered.add(holder);
+					registered.Add(holder);
 					break;
 				}
 				case WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD:
 				{
-					sold.add(holder);
+					sold.Add(holder);
 					break;
 				}
 				case WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME:
 				{
-					outTime.add(holder);
+					outTime.Add(holder);
 					break;
 				}
 			}

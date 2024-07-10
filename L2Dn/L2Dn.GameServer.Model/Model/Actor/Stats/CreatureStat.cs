@@ -1089,7 +1089,7 @@ public class CreatureStat
 	 */
 	public bool addAdditionalStat(Stat stat, double value, Func<Creature, StatHolder, bool> condition)
 	{
-		_additionalAdd.add(new StatHolder(stat, value, condition));
+		_additionalAdd.Add(new StatHolder(stat, value, condition));
 		return true;
 	}
 	
@@ -1101,7 +1101,7 @@ public class CreatureStat
 	 */
 	public bool addAdditionalStat(Stat stat, double value)
 	{
-		_additionalAdd.add(new StatHolder(stat, value));
+		_additionalAdd.Add(new StatHolder(stat, value));
 		return true;
 	}
 	
@@ -1134,7 +1134,7 @@ public class CreatureStat
 	 */
 	public bool mulAdditionalStat(Stat stat, double value, Func<Creature, StatHolder, bool> condition)
 	{
-		_additionalMul.add(new StatHolder(stat, value, condition));
+		_additionalMul.Add(new StatHolder(stat, value, condition));
 		return true;
 	}
 	
@@ -1146,7 +1146,7 @@ public class CreatureStat
 	 */
 	public bool mulAdditionalStat(Stat stat, double value)
 	{
-		_additionalMul.add(new StatHolder(stat, value));
+		_additionalMul.Add(new StatHolder(stat, value));
 		return true;
 	}
 	

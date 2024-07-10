@@ -51,7 +51,7 @@ public class OlympiadManager
 					result = new();
 				}
 
-				result.add(classList.Value);
+				result.Add(classList.Value);
 			}
 		}
 

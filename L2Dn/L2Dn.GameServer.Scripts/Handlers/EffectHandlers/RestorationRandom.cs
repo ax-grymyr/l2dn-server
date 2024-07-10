@@ -29,11 +29,11 @@ public class RestorationRandom: AbstractEffect
 			List<RestorationItemHolder> items = new();
 			foreach (StatSet item in group.getList<StatSet>("."))
 			{
-				items.add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
+				items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
 					item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
 			}
 
-			_products.add(new ExtractableProductItem(items, group.getFloat(".chance")));
+			_products.Add(new ExtractableProductItem(items, group.getFloat(".chance")));
 		}
 	}
 

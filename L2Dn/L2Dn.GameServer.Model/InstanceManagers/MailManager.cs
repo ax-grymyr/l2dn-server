@@ -103,7 +103,7 @@ public class MailManager
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 			{
-				inbox.add(msg);
+				inbox.Add(msg);
 			}
 		}
 		return inbox;
@@ -149,7 +149,7 @@ public class MailManager
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 			{
-				outbox.add(msg);
+				outbox.Add(msg);
 			}
 		}
 		return outbox;

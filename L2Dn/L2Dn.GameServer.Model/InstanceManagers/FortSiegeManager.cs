@@ -248,7 +248,7 @@ public class FortSiegeManager
 					int z = int.Parse(st.nextToken());
 					int heading = int.Parse(st.nextToken());
 					int npcId = int.Parse(st.nextToken());
-					commanderSpawns.add(new FortSiegeSpawn(fort.getResidenceId(), new Location(x, y, z, heading), npcId, i));
+					commanderSpawns.Add(new FortSiegeSpawn(fort.getResidenceId(), new Location(x, y, z, heading), npcId, i));
 				}
 				catch (Exception e)
 				{
@@ -273,7 +273,7 @@ public class FortSiegeManager
 					int y = int.Parse(st.nextToken());
 					int z = int.Parse(st.nextToken());
 					int flagId = int.Parse(st.nextToken());
-					flagSpawns.add(new CombatFlag(fort.getResidenceId(), x, y, z, 0, flagId));
+					flagSpawns.Add(new CombatFlag(fort.getResidenceId(), x, y, z, 0, flagId));
 				}
 				catch (Exception e)
 				{

@@ -782,7 +782,7 @@ public class Siege: Siegable
 				{
 					if (member.isInSiege())
 					{
-						result.add(member);
+						result.Add(member);
 					}
 				}
 			}
@@ -815,7 +815,7 @@ public class Siege: Siegable
 					{
 						if (member.isInSiege())
 						{
-							result.add(member);
+							result.Add(member);
 						}
 					}
 				}
@@ -834,7 +834,7 @@ public class Siege: Siegable
 		{
 			if (!player.isInSiege())
 			{
-				result.add(player);
+				result.Add(player);
 			}
 		}
 		return result;
@@ -1480,7 +1480,7 @@ public class Siege: Siegable
 			{
 				Spawn spawn = new Spawn(ts.getId());
 				spawn.Location = new Location(ts.getLocation(), 0);
-				_controlTowers.add((ControlTower) spawn.doSpawn(false));
+				_controlTowers.Add((ControlTower) spawn.doSpawn(false));
 			}
 		}
 		catch (Exception e)
@@ -1504,7 +1504,7 @@ public class Siege: Siegable
 				FlameTower tower = (FlameTower)spawn.doSpawn(false);
 				tower.setUpgradeLevel(ts.getUpgradeLevel());
 				tower.setZoneList(ts.getZoneList());
-				_flameTowers.add(tower);
+				_flameTowers.Add(tower);
 			}
 		}
 		catch (Exception e)

@@ -127,7 +127,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				}
 				
 				addedSuccessItem.updateDatabase(true);
-				resultItems.add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.getObjectId()));
+				resultItems.Add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.getObjectId()));
 			}
 			
 			if (upgradeHolder.isHasCategory(UpgradeDataType.BONUS_TYPE) && Rnd.get(100d) < upgradeHolder.getChanceToReceiveBonusItems())
@@ -144,7 +144,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					}
 
 					addedBonusItem.updateDatabase(true);
-					bonusItems.add(new UniqueItemEnchantHolder(bonusItem, addedBonusItem.getObjectId()));
+					bonusItems.Add(new UniqueItemEnchantHolder(bonusItem, addedBonusItem.getObjectId()));
 				}
 			}
 		}
@@ -164,7 +164,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					}
 
 					addedFailureItem.updateDatabase(true);
-					resultItems.add(new UniqueItemEnchantHolder(failureItem, addedFailureItem.getObjectId()));
+					resultItems.Add(new UniqueItemEnchantHolder(failureItem, addedFailureItem.getObjectId()));
 				}
 			}
 			else

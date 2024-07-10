@@ -68,8 +68,8 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 						                               item.getItem().getName().toLowerCase()
 							                               .contains(searchWord.toLowerCase())))
 						{
-							items.add(new ShopItem(item, vendor, vendor.getPrivateStoreType()));
-							itemIds.add(item.getItem().getId());
+							items.Add(new ShopItem(item, vendor, vendor.getPrivateStoreType()));
+							itemIds.Add(item.getItem().getId());
 						}
 					}
 				}
@@ -97,7 +97,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		{
 			if (itemIds.Contains(transaction.getItemId()))
 			{
-				history.add(transaction);
+				history.Add(transaction);
 			}
 		});
 		
@@ -106,7 +106,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		
 		for (int index = 0; index < history.Count; index++)
 		{
-			historyTemp.add(history[index]);
+			historyTemp.Add(history[index]);
 			
 			if (index == history.Count - 1 || index == MAX_ITEM_PER_PAGE - 1 || (index > 0 && index % (MAX_ITEM_PER_PAGE - 1) == 0))
 			{
