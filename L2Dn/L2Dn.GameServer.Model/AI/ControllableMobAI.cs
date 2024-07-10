@@ -399,7 +399,7 @@ public class ControllableMobAI : AttackableAI
 			}
 		});
 		
-		return !potentialTarget.isEmpty() ? potentialTarget.get(Rnd.get(potentialTarget.size())) : null;
+		return !potentialTarget.isEmpty() ? potentialTarget.get(Rnd.get(potentialTarget.Count)) : null;
 	}
 	
 	private ControllableMob findNextGroupTarget()

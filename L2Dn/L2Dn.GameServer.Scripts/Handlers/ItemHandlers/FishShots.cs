@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 public class FishShots: IItemHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(FishShots));
-	
+
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
 		if (!playable.isPlayer())
@@ -27,38 +27,39 @@ public class FishShots: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
+
 		Player player = playable.getActingPlayer();
 		Item weaponInst = player.getActiveWeaponInstance();
 		Weapon weaponItem = player.getActiveWeaponItem();
-		if ((weaponInst == null) || (weaponItem.getItemType() != WeaponType.FISHINGROD))
+		if (weaponInst == null || weaponItem.getItemType() != WeaponType.FISHINGROD)
 		{
 			return false;
 		}
-		
+
 		if (player.isChargedShot(ShotType.FISH_SOULSHOTS))
 		{
 			return false;
 		}
-		
+
 		long count = item.getCount();
-		bool gradeCheck = item.isEtcItem() && (item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT) && (weaponInst.getTemplate().getCrystalTypePlus() == item.getTemplate().getCrystalTypePlus());
+		bool gradeCheck = item.isEtcItem() && item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT &&
+			weaponInst.getTemplate().getCrystalTypePlus() == item.getTemplate().getCrystalTypePlus();
 		if (!gradeCheck)
 		{
 			player.sendPacket(SystemMessageId.THAT_IS_THE_WRONG_GRADE_OF_SOULSHOT_FOR_THAT_FISHING_POLE);
 			return false;
 		}
-		
+
 		if (count < 1)
 		{
 			return false;
 		}
-		
+
 		player.chargeShot(ShotType.FISH_SOULSHOTS);
 		player.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
 		WorldObject oldTarget = player.getTarget();
 		player.setTarget(player);
-		
+
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
@@ -66,10 +67,12 @@ public class FishShots: IItemHandler
 			return false;
 		}
 
-		skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(player,
-			new MagicSkillUsePacket(player, player, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
+		skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(player,
+			new MagicSkillUsePacket(player, player, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero,
+				TimeSpan.Zero), 600));
+
 		player.setTarget(oldTarget);
-		
+
 		return true;
 	}
 }

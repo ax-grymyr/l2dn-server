@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -141,7 +142,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 		{
 			if (_player != null)
 			{
-				_player.getServitors().values().forEach(s => s.unSummon(_player));
+				_player.getServitors().values().ForEach(s => s.unSummon(_player));
 				_player.teleToLocation(TeleportWhereType.TOWN, null);
 				_player = null;
 			}

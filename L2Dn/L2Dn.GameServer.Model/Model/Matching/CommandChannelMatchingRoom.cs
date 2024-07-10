@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
@@ -54,7 +55,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 
 	protected override void notifyRemovedMember(Player player, bool kicked, bool leaderChanged)
 	{
-		getMembers().forEach(p =>
+		getMembers().ForEach(p =>
 		{
 			p.sendPacket(new ExMPCCRoomInfoPacket(this));
 			p.sendPacket(new ExMPCCRoomMemberPacket(player, this));
@@ -67,7 +68,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 
 	public override void disbandRoom()
 	{
-		getMembers().forEach(p =>
+		getMembers().ForEach(p =>
 		{
 			p.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_MATCHING_ROOM_WAS_CANCELLED);
 			p.sendPacket(ExDissmissMPCCRoomPacket.STATIC_PACKET);

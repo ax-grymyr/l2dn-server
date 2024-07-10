@@ -424,7 +424,7 @@ public class ClanEntryManager
 	public List<PledgeRecruitInfo> getSortedClanList(int clanLevel, int karma, int sortByValue, bool descending)
 	{
 		List<PledgeRecruitInfo> sortedList = new();
-		for (int i = 0; i < sortedList.size(); i++)
+		for (int i = 0; i < sortedList.Count; i++)
 		{
 			PledgeRecruitInfo currentInfo = sortedList.get(i);
 			if (((clanLevel < 0) && (karma >= 0) && (karma != currentInfo.getKarma())) || ((clanLevel >= 0) && (karma < 0) && (clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0))) || ((clanLevel >= 0) && (karma >= 0) && ((clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0)) || (karma != currentInfo.getKarma()))))

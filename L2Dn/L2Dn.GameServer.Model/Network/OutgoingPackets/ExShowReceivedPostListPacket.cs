@@ -27,7 +27,7 @@ public readonly struct ExShowReceivedPostListPacket: IOutgoingPacket
         writer.WriteInt32(DateTime.UtcNow.getEpochSecond());
         if ((_inbox != null) && !_inbox.isEmpty())
         {
-            writer.WriteInt32(_inbox.size());
+            writer.WriteInt32(_inbox.Count);
             foreach (Message msg in _inbox)
             {
                 writer.WriteInt32((int)msg.getMailType());

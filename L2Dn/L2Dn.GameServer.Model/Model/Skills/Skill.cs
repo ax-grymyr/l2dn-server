@@ -1408,7 +1408,7 @@ public class Skill: IIdentifiable
 			    !_isDebuff && info.getEffected().hasServitors())
 			{
 				info.getEffected().getServitors().values()
-					.forEach(s => applyEffects(effector, s, false, TimeSpan.Zero));
+					.ForEach(s => applyEffects(effector, s, false, TimeSpan.Zero));
 			}
 		}
 

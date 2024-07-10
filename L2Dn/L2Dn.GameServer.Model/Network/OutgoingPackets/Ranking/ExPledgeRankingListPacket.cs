@@ -42,11 +42,11 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 		int? clanId = _player.getClanId();
 		var playerData = list.FirstOrDefault(it => it.Value.getInt("clan_id", 0) == clanId);
 		int indexOf = list.OrderBy(r => r.Key).TakeWhile(it => it.Value.getInt("clan_id", 0) == clanId).Count();
-		List<System.Collections.Generic.KeyValuePair<int, StatSet>> limited = isTop150 ? list.OrderBy(r => r.Key).Take(150).ToList() :
-			playerData.Value == null ? new List<System.Collections.Generic.KeyValuePair<int, StatSet>>() :
+		List<KeyValuePair<int, StatSet>> limited = isTop150 ? list.OrderBy(r => r.Key).Take(150).ToList() :
+			playerData.Value == null ? new List<KeyValuePair<int, StatSet>>() :
 			list.Skip(Math.Max(0, indexOf - 10)).Take(20).ToList();
 		
-		writer.WriteInt32(limited.size());
+		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)
 		{

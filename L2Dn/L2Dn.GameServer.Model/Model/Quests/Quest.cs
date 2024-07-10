@@ -2304,7 +2304,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return player;
 		}
-		return party.getMembers().get(Rnd.get(party.getMembers().size()));
+		return party.getMembers().get(Rnd.get(party.getMembers().Count));
 	}
 	
 	/**
@@ -2385,7 +2385,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		// if a match was found from the party, return one of them at random.
-		return candidates.get(Rnd.get(candidates.size()));
+		return candidates.get(Rnd.get(candidates.Count));
 	}
 	
 	/**
@@ -2449,7 +2449,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		
 		// if a match was found from the party, return one of them at random.
-		return candidates.get(Rnd.get(candidates.size()));
+		return candidates.get(Rnd.get(candidates.Count));
 	}
 	
 	/**
@@ -2555,7 +2555,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return null;
 		}
 		
-		qs = candidates.get(getRandom(candidates.size()));
+		qs = candidates.get(getRandom(candidates.Count));
 		return !checkDistanceToTarget(qs.getPlayer(), target) ? null : qs;
 	}
 	

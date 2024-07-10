@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.CommunityBbs.Managers;
@@ -240,7 +241,7 @@ public class Player: Playable
 	/** Stored from last ValidatePosition **/
 	private Location3D _lastServerPosition;
 	
-	private readonly AtomicBoolean _blinkActive = new AtomicBoolean();
+	private bool _blinkActive;
 	
 	/** The number of recommendation obtained by the Player */
 	private int _recomHave; // how much I was recommended by others
@@ -551,7 +552,7 @@ public class Player: Playable
 	
 	private readonly AutoPlaySettingsHolder _autoPlaySettings = new AutoPlaySettingsHolder();
 	private readonly AutoUseSettingsHolder _autoUseSettings = new AutoUseSettingsHolder();
-	private readonly AtomicBoolean _autoPlaying = new AtomicBoolean();
+	private bool _autoPlaying;
 	private bool _resumedAutoPlay;
 	
 	private ScheduledFuture _timedHuntingZoneTask;
@@ -702,7 +703,7 @@ public class Player: Playable
 		if ((party != null) && (party == target.getParty()))
 		{
 			result |= RelationChangedPacket.RELATION_HAS_PARTY;
-			for (int i = 0; i < party.getMembers().size(); i++)
+			for (int i = 0; i < party.getMembers().Count; i++)
 			{
 				if (party.getMembers().get(i) != this)
 				{
@@ -1511,7 +1512,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().forEach(s => rc.addRelation(s, getRelation(this), false));
+				getServitors().values().ForEach(s => rc.addRelation(s, getRelation(this), false));
 			}
 			sendPacket(rc);
 		}
@@ -1539,7 +1540,7 @@ public class Player: Playable
 					}
 					if (hasServitors())
 					{
-						getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+						getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 					}
 				}
 				player.sendPacket(rc);
@@ -1905,7 +1906,7 @@ public class Player: Playable
 		else
 		{
 			getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
-			getServitors().values().forEach(s => s.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING));
+			getServitors().values().ForEach(s => s.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING));
 			if (getPet() != null)
 			{
 				getPet().getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
@@ -3943,7 +3944,7 @@ public class Player: Playable
 	{
 		// Send user info to the current player
 		UserInfoPacket ui = new UserInfoPacket(this, false);
-		types.forEach(x => ui.addComponentType(x));
+		types.ForEach(x => ui.addComponentType(x));
 		sendPacket(ui);
 		
 		// Broadcast char info to all known players
@@ -3993,7 +3994,7 @@ public class Player: Playable
 								}
 								if (hasServitors())
 								{
-									getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+									getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 								}
 							}
 							player.sendPacket(rc);
@@ -4790,7 +4791,7 @@ public class Player: Playable
 		// Unsummon Cubics
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().forEach(x => x.deactivate());
+			_cubics.values().ForEach(x => x.deactivate());
 			_cubics.clear();
 		}
 		
@@ -4806,7 +4807,7 @@ public class Player: Playable
 		
 		if (hasServitors())
 		{
-			getServitors().values().forEach(servitor =>
+			getServitors().values().ForEach(servitor =>
 			{
 				if (servitor.isBetrayed())
 				{
@@ -4852,7 +4853,7 @@ public class Player: Playable
 		lock (_lastDamageTaken)
 		{
 			_lastDamageTaken.add(new DamageTakenHolder(attacker, skillId, damage));
-			if (_lastDamageTaken.size() > 20)
+			if (_lastDamageTaken.Count > 20)
 			{
 				_lastDamageTaken.RemoveAt(0);
 			}
@@ -6293,7 +6294,7 @@ public class Player: Playable
 					}
 					if (hasServitors())
 					{
-						getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+						getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 					}
 				}
 				player.sendPacket(rc);
@@ -8838,7 +8839,7 @@ public class Player: Playable
 	{
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().forEach(x => x.deactivate());
+			_cubics.values().ForEach(x => x.deactivate());
 			_cubics.clear();
 		}
 	}
@@ -9216,7 +9217,7 @@ public class Player: Playable
 		
 		if (hasServitors())
 		{
-			getServitors().values().forEach(s => s.unSummon(this));
+			getServitors().values().ForEach(s => s.unSummon(this));
 		}
 		
 		// Remove Hide.
@@ -9224,7 +9225,7 @@ public class Player: Playable
 		
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().forEach(x => x.deactivate());
+			_cubics.values().ForEach(x => x.deactivate());
 			_cubics.clear();
 			sendPacket(new ExUserInfoCubicPacket(this));
 		}
@@ -9611,11 +9612,11 @@ public class Player: Playable
 	{
 		if (value)
 		{
-			SkillTreeData.getInstance().getNobleSkillAutoGetTree().forEach(skill => addSkill(skill, false));
+			SkillTreeData.getInstance().getNobleSkillAutoGetTree().ForEach(skill => addSkill(skill, false));
 		}
 		else
 		{
-			SkillTreeData.getInstance().getNobleSkillTree().forEach(skill => removeSkill(skill, false, true));
+			SkillTreeData.getInstance().getNobleSkillTree().ForEach(skill => removeSkill(skill, false, true));
 		}
 		_noble = value;
 		sendSkillList();
@@ -9650,7 +9651,7 @@ public class Player: Playable
 		}
 		if (hasServitors())
 		{
-			getServitors().values().forEach(x => x.broadcastStatusUpdate());
+			getServitors().values().ForEach(x => x.broadcastStatusUpdate());
 		}
 	}
 	
@@ -10074,7 +10075,7 @@ public class Player: Playable
 			
 			if (hasServitors())
 			{
-				getServitors().values().forEach(s => s.unSummon(this));
+				getServitors().values().ForEach(s => s.unSummon(this));
 			}
 			
 			if (classIndex == 0)
@@ -10662,7 +10663,7 @@ public class Player: Playable
 			sendPacket(new PetSummonInfoPacket(_pet, 0));
 		}
 		
-		getServitors().values().forEach(s =>
+		getServitors().values().ForEach(s =>
 		{
 			s.setFollowStatus(false);
 			s.teleToLocation(Location, false);
@@ -10749,12 +10750,12 @@ public class Player: Playable
 	
 	public void setBlinkActive(bool value)
 	{
-		_blinkActive.set(value);
+		_blinkActive = value;
 	}
 	
 	public bool isBlinkActive()
 	{
-		return _blinkActive.get();
+		return _blinkActive;
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]
@@ -11215,7 +11216,7 @@ public class Player: Playable
 					}
 				}
 				
-				getServitors().values().forEach(s =>
+				getServitors().values().ForEach(s =>
 				{
 					s.setRestoreSummon(true);
 					s.unSummon(this);
@@ -12700,7 +12701,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().forEach(s => rc1.addRelation(s, relation1, !isInsideZone(ZoneId.PEACE) || !isInsideZone(ZoneId.NO_PVP)));
+				getServitors().values().ForEach(s => rc1.addRelation(s, relation1, !isInsideZone(ZoneId.PEACE) || !isInsideZone(ZoneId.NO_PVP)));
 			}
 		}
 		player.sendPacket(rc1);
@@ -12716,7 +12717,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().forEach(s => rc2.addRelation(s, relation2, !player.isInsideZone(ZoneId.PEACE)));
+				getServitors().values().ForEach(s => rc2.addRelation(s, relation2, !player.isInsideZone(ZoneId.PEACE)));
 			}
 		}
 		sendPacket(rc2);
@@ -14872,12 +14873,12 @@ public class Player: Playable
 	
 	public void setAutoPlaying(bool value)
 	{
-		_autoPlaying.set(value);
+		_autoPlaying = value;
 	}
 	
 	public bool isAutoPlaying()
 	{
-		return _autoPlaying.get();
+		return _autoPlaying;
 	}
 	
 	public void setResumedAutoPlay(bool value)
@@ -14910,8 +14911,8 @@ public class Player: Playable
 		bool shortRange = settings.get(4) == 1;
 		int potionPercent = settings.get(5);
 		bool respectfulHunting = settings.get(6) == 1;
-		int petPotionPercent = settings.size() < 8 ? 0 : settings.get(7);
-		int macroIndex = settings.size() < 9 ? 0 : settings.get(8);
+		int petPotionPercent = settings.Count < 8 ? 0 : settings.get(7);
+		int macroIndex = settings.Count < 9 ? 0 : settings.get(8);
 		
 		getAutoPlaySettings().setAutoPotionPercent(potionPercent);
 		getAutoPlaySettings().setOptions(options);
@@ -15231,7 +15232,7 @@ public class Player: Playable
 	
 	public void restorePetEvolvesByItem()
 	{
-		getInventory().getItems().forEach(it =>
+		getInventory().getItems().ForEach(it =>
 		{
 			// TODO: this needs to be optimized
 			

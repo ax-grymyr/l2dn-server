@@ -107,7 +107,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 			}
 		}
 		
-		writer.WriteInt32(limited.size());
+		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)
 		{

@@ -224,7 +224,7 @@ public class PlayerRandomCraft
 			for (int i = 0; i < 5; i++)
 			{
 				RandomCraftRewardItemHolder holder;
-				if (i > (_rewardList.size() - 1))
+				if (i > (_rewardList.Count - 1))
 				{
 					holder = null;
 				}

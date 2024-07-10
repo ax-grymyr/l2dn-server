@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -42,7 +43,7 @@ public class SchemeBuffer : Npc
 			{
 				summon.stopAllEffects();
 			}
-			player.getServitors().values().forEach(servitor => servitor.stopAllEffects());
+			player.getServitors().Values.ForEach(servitor => servitor.stopAllEffects());
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
 			htmlContent.Replace("%objectId%", getObjectId().ToString());
@@ -59,7 +60,7 @@ public class SchemeBuffer : Npc
 			{
 				summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
 			}
-			player.getServitors().values().forEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
+			player.getServitors().values().ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
 			htmlContent.Replace("%objectId%", getObjectId().ToString());
@@ -90,7 +91,7 @@ public class SchemeBuffer : Npc
 						{
 							skill.applyEffects(this, player.getPet());
 						}
-						player.getServitors().values().forEach(servitor => skill.applyEffects(this, servitor));
+						player.getServitors().values().ForEach(servitor => skill.applyEffects(this, servitor));
 					}
 					else
 					{
@@ -235,7 +236,7 @@ public class SchemeBuffer : Npc
 			foreach (var scheme in schemes)
 			{
 				int cost = getFee(scheme.Value);
-				sb.Append("<font color=\"LEVEL\">" + scheme.Key + " [" + scheme.Value.size() + " skill(s)]" +
+				sb.Append("<font color=\"LEVEL\">" + scheme.Key + " [" + scheme.Value.Count + " skill(s)]" +
 				          ((cost > 0) ? " - cost: " + cost : "") + "</font><br1>");
 				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
 				          "\">Use on Me</a>&nbsp;|&nbsp;");

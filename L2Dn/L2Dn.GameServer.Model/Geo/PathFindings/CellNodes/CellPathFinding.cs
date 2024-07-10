@@ -138,7 +138,7 @@ public class CellPathFinding: PathFinding
 			buffer.free();
 		}
 		
-		if ((path.size() < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
+		if ((path.Count < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
 		{
 			_findSuccess++;
 			return path;
@@ -189,11 +189,11 @@ public class CellPathFinding: PathFinding
 		}
 
 		// Only one postfilter pass for AI.
-		while (playable && remove && (path.size() > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
+		while (playable && remove && (path.Count > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
 		
 		if (debug)
 		{
-			path.forEach(n => dropDebugItem(1061, 1, n));
+			path.ForEach(n => dropDebugItem(1061, 1, n));
 		}
 		
 		_findSuccess++;
@@ -278,7 +278,7 @@ public class CellPathFinding: PathFinding
 				// Not found, allocate temporary buffer.
 				current = new CellNodeBuffer(i.mapSize);
 				current.@lock();
-				if (i.bufs.size() < i.count)
+				if (i.bufs.Count < i.count)
 				{
 					i.bufs.add(current);
 					i.uses++;
@@ -330,7 +330,7 @@ public class CellPathFinding: PathFinding
 		public override String ToString()
 		{
 			StringBuilder stat = new StringBuilder(100);
-			StringUtil.append(stat, mapSize.ToString(), "x", mapSize.ToString(), " num:", bufs.size().ToString(), "/", count.ToString(), " uses:", uses.ToString(), "/", playableUses.ToString());
+			StringUtil.append(stat, mapSize.ToString(), "x", mapSize.ToString(), " num:", bufs.Count.ToString(), "/", count.ToString(), " uses:", uses.ToString(), "/", playableUses.ToString());
 			if (uses > 0)
 			{
 				StringUtil.append(stat, " total/avg(ms):", elapsed.ToString(), "/", (elapsed / uses).ToString());

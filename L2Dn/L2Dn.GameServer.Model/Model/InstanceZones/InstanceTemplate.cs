@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -494,7 +495,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 		// Make list of affected playable objects
 		List<Playable> affected = new();
 		affected.Add(player);
-		player.getServitors().values().forEach(x => affected.add(x));
+		player.getServitors().values().ForEach(x => affected.add(x));
 		if (player.hasPet())
 		{
 			affected.Add(player.getPet());

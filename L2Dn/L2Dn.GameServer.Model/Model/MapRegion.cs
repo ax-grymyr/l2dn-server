@@ -134,7 +134,7 @@ public class MapRegion
 	{
 		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 		{
-			return _spawnLocs.get(Rnd.get(_spawnLocs.size()));
+			return _spawnLocs.get(Rnd.get(_spawnLocs.Count));
 		}
 		return _spawnLocs[0];
 	}
@@ -145,7 +145,7 @@ public class MapRegion
 		{
 			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
-				return _otherSpawnLocs.get(Rnd.get(_otherSpawnLocs.size()));
+				return _otherSpawnLocs.get(Rnd.get(_otherSpawnLocs.Count));
 			}
 			return _otherSpawnLocs[0];
 		}
@@ -158,7 +158,7 @@ public class MapRegion
 		{
 			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
-				return _chaoticSpawnLocs.get(Rnd.get(_chaoticSpawnLocs.size()));
+				return _chaoticSpawnLocs.get(Rnd.get(_chaoticSpawnLocs.Count));
 			}
 			return _chaoticSpawnLocs[0];
 		}
@@ -171,7 +171,7 @@ public class MapRegion
 		{
 			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
-				return _banishSpawnLocs.get(Rnd.get(_banishSpawnLocs.size()));
+				return _banishSpawnLocs.get(Rnd.get(_banishSpawnLocs.Count));
 			}
 			return _banishSpawnLocs[0];
 		}

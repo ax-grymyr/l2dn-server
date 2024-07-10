@@ -65,7 +65,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 				{
 					BuilderUtil.sendSysMessage(activeChar, "NPC " + id + " does not have a default html.");
 				}
-				BuilderUtil.sendSysMessage(activeChar, "Found " + results.size() + " results.");
+				BuilderUtil.sendSysMessage(activeChar, "Found " + results.Count + " results.");
 				break;
 			}
 			case "admin_world_missing_htmls":
@@ -101,7 +101,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 				{
 					BuilderUtil.sendSysMessage(activeChar, "NPC " + id + " does not have a default html.");
 				}
-				BuilderUtil.sendSysMessage(activeChar, "Found " + results.size() + " results.");
+				BuilderUtil.sendSysMessage(activeChar, "Found " + results.Count + " results.");
 				break;
 			}
 			case "admin_next_missing_html":

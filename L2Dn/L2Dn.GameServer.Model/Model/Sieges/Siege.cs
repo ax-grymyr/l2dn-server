@@ -1,4 +1,5 @@
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -594,7 +595,7 @@ public class Siege: Siegable
 							}
 							if (member.hasServitors())
 							{
-								member.getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+								member.getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
 						player.sendPacket(rc);
@@ -654,7 +655,7 @@ public class Siege: Siegable
 							}
 							if (member.hasServitors())
 							{
-								member.getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+								member.getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
 						player.sendPacket(rc);
@@ -854,7 +855,7 @@ public class Siege: Siegable
 	 */
 	public void killedFlag(Npc flag)
 	{
-		getAttackerClans().forEach(siegeClan => siegeClan.removeFlag(flag));
+		getAttackerClans().ForEach(siegeClan => siegeClan.removeFlag(flag));
 	}
 
 	/**
@@ -1486,7 +1487,7 @@ public class Siege: Siegable
 		{
 			LOGGER.Warn(GetType().Name + ": Cannot spawn control tower! " + e);
 		}
-		_controlTowerCount = _controlTowers.size();
+		_controlTowerCount = _controlTowers.Count;
 	}
 
 	/**

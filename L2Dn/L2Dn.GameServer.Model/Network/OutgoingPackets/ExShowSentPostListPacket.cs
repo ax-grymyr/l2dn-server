@@ -22,7 +22,7 @@ public readonly struct ExShowSentPostListPacket: IOutgoingPacket
         writer.WriteInt32(DateTime.UtcNow.getEpochSecond());
         if ((_outbox != null) && !_outbox.isEmpty())
         {
-            writer.WriteInt32(_outbox.size());
+            writer.WriteInt32(_outbox.Count);
             foreach (Message msg in _outbox)
             {
                 writer.WriteInt32(msg.getId());

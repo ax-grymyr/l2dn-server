@@ -128,7 +128,7 @@ public class NpcData: DataReaderBase
 			set.set("baseCON", el.GetAttributeValueAsInt32OrNull("con"));
 			set.set("baseMEN", el.GetAttributeValueAsInt32OrNull("men"));
 
-			el.Elements("vitals").forEach(e =>
+			el.Elements("vitals").ForEach(e =>
 			{
 				set.set("baseHpMax", e.GetAttributeValueAsDouble("hp"));
 				set.set("baseHpReg", e.GetAttributeValueAsDoubleOrNull("hpRegen"));
@@ -136,7 +136,7 @@ public class NpcData: DataReaderBase
 				set.set("baseMpReg", e.GetAttributeValueAsDoubleOrNull("mpRegen"));
 			});
 
-			el.Elements("attack").forEach(e =>
+			el.Elements("attack").ForEach(e =>
 			{
 				set.set("basePAtk", e.GetAttributeValueAsDouble("physical"));
 				set.set("baseMAtk", e.GetAttributeValueAsDouble("magical"));
@@ -151,7 +151,7 @@ public class NpcData: DataReaderBase
 				set.set("width", e.GetAttributeValueAsInt32OrNull("width")); // TODO: Implement me
 			});
 
-			el.Elements("defence").forEach(e =>
+			el.Elements("defence").ForEach(e =>
 			{
 				set.set("basePDef", e.GetAttributeValueAsDouble("physical"));
 				set.set("baseMDef", e.GetAttributeValueAsDouble("magical"));
@@ -160,13 +160,13 @@ public class NpcData: DataReaderBase
 				set.set("baseShldRate", e.GetAttributeValueAsInt32OrNull("shieldRate"));
 			});
 
-			el.Elements("abnormalresist").forEach(e =>
+			el.Elements("abnormalresist").ForEach(e =>
 			{
 				set.set("physicalAbnormalResist", e.GetAttributeValueAsDouble("physical"));
 				set.set("magicAbnormalResist", e.GetAttributeValueAsDouble("magic"));
 			});
 
-			el.Elements("attribute").Elements("attack").forEach(e =>
+			el.Elements("attribute").Elements("attack").ForEach(e =>
 			{
 				string attackAttributeType = e.GetAttributeValueAsString("type");
 				int value = e.GetAttributeValueAsInt32("value");
@@ -207,7 +207,7 @@ public class NpcData: DataReaderBase
 				}
 			});
 
-			el.Elements("attribute").Elements("defence").forEach(e =>
+			el.Elements("attribute").Elements("defence").ForEach(e =>
 			{
 				set.set("baseFireRes", e.GetAttributeValueAsInt32("fire"));
 				set.set("baseWaterRes", e.GetAttributeValueAsInt32("water"));
@@ -218,7 +218,7 @@ public class NpcData: DataReaderBase
 				set.set("baseElementRes", e.GetAttributeValueAsInt32OrNull("default"));
 			});
 
-			el.Elements("speed").Elements("walk").forEach(e =>
+			el.Elements("speed").Elements("walk").ForEach(e =>
 			{
 				double groundWalk = e.GetAttributeValueAsDouble("ground");
 				set.set("baseWalkSpd", groundWalk <= 0d ? 0.1 : groundWalk);
@@ -226,7 +226,7 @@ public class NpcData: DataReaderBase
 				set.set("baseFlyWalkSpd", e.GetAttributeValueAsDoubleOrNull("fly"));
 			});
 
-			el.Elements("speed").Elements("run").forEach(e =>
+			el.Elements("speed").Elements("run").ForEach(e =>
 			{
 				double runSpeed = e.GetAttributeValueAsDouble("ground");
 				set.set("baseRunSpd", runSpeed <= 0d ? 0.1 : runSpeed);
@@ -234,7 +234,7 @@ public class NpcData: DataReaderBase
 				set.set("baseFlyRunSpd", e.GetAttributeValueAsDoubleOrNull("fly"));
 			});
 
-			el.Elements("hittime").forEach(e =>
+			el.Elements("hittime").ForEach(e =>
 			{
 				set.set("hitTime", e.Value); // TODO: Implement me default 600 (value in ms)
 			});

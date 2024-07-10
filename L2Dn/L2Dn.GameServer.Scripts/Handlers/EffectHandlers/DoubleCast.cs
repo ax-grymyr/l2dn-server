@@ -21,19 +21,19 @@ public class DoubleCast: AbstractEffect
 		new SkillHolder(11008, 1),
 		new SkillHolder(11010, 1)
 	];
-	
+
 	private readonly Map<int, List<SkillHolder>> _addedToggles;
-	
+
 	public DoubleCast(StatSet @params)
 	{
 		_addedToggles = new();
 	}
-	
+
 	public override long getEffectFlags()
 	{
 		return EffectFlag.DOUBLE_CAST.getMask();
 	}
-	
+
 	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (effected.isPlayer())
@@ -48,16 +48,17 @@ public class DoubleCast: AbstractEffect
 				}
 			}
 		}
+
 		base.onStart(effector, effected, skill, item);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (effected.isPlayer())
 		{
 			_addedToggles.computeIfPresent(effected.getObjectId(), (k, v) =>
 			{
-				v.forEach(h => effected.stopSkillEffects(h.getSkill()));
+				v.ForEach(h => effected.stopSkillEffects(h.getSkill()));
 				return (object?)null;
 			});
 		}

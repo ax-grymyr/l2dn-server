@@ -46,7 +46,7 @@ public readonly struct ExCollectionInfoPacket: IOutgoingPacket
                 }
             }
 
-            writer.WriteInt32(currentCollection.size());
+            writer.WriteInt32(currentCollection.Count);
             foreach (PlayerCollectionData collection in currentCollection)
             {
                 writer.WriteByte((byte)collection.getIndex());
@@ -64,7 +64,7 @@ public readonly struct ExCollectionInfoPacket: IOutgoingPacket
         }
 
         // favoriteList
-        writer.WriteInt32(_favoriteIds.size());
+        writer.WriteInt32(_favoriteIds.Count);
         foreach (int id in _favoriteIds)
         {
             writer.WriteInt16((short)id);

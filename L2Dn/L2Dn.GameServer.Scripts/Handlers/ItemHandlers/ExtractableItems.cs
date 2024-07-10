@@ -89,7 +89,7 @@ public class ExtractableItems: IItemHandler
 								break;
 							}
 						}
-						if (alreadyExtracted && (exitems.size() >= etcitem.getExtractableCountMax()))
+						if (alreadyExtracted && (exitems.Count >= etcitem.getExtractableCountMax()))
 						{
 							continue;
 						}

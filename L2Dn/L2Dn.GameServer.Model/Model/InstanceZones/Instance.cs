@@ -59,7 +59,7 @@ public class Instance : IIdentifiable, INamable
 		_id = id;
 		_template = template;
 		_startTime = DateTime.UtcNow;
-		_spawns = new(template.getSpawns().size());
+		_spawns = new(template.getSpawns().Count);
 		
 		// Clone and add the spawn templates
 		foreach (SpawnTemplate spawn in template.getSpawns())
@@ -533,7 +533,7 @@ public class Instance : IIdentifiable, INamable
 			foreach (SpawnGroup holder in spawns)
 			{
 				holder.spawnAll(this);
-				holder.getSpawns().forEach(spawn => npcs.AddRange(spawn.getSpawnedNpcs()));
+				holder.getSpawns().ForEach(spawn => npcs.AddRange(spawn.getSpawnedNpcs()));
 			}
 		}
 		catch (Exception e)
@@ -831,8 +831,8 @@ public class Instance : IIdentifiable, INamable
 			_emptyDestroyTask = null;
 		}
 		
-		_ejectDeadTasks.values().forEach(t => t.cancel(true));
-		_ejectDeadTasks.clear();
+		_ejectDeadTasks.Values.ForEach(t => t.cancel(true));
+		_ejectDeadTasks.Clear();
 		
 		// Notify DP scripts
 		if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceDestroy>())

@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -325,7 +326,7 @@ public class SpawnTable
 			{
 				_spawnTable.remove(spawn.getId());
 			}
-			set.forEach(x => notifyRemoved(x));
+			set.ForEach(notifyRemoved);
 			return removed;
 		}
 		notifyRemoved(spawn);

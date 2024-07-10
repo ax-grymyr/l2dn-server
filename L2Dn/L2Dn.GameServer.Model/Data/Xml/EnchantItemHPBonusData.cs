@@ -66,7 +66,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 			return 0;
 		}
 		
-		int bonus = values.get(Math.Min(item.getOlyEnchantLevel(), values.size()) - 1);
+		int bonus = values.get(Math.Min(item.getOlyEnchantLevel(), values.Count) - 1);
 		if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR)
 		{
 			return (int) (bonus * FULL_ARMOR_MODIFIER);

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -164,7 +165,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 									break;
 								}
 
-								if (count == items.size())
+								if (count == items.Count)
 								{
 									player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS_TO_LEARN_THE_SKILL);
 									VillageMaster.showPledgeSkillList(player);
@@ -235,7 +236,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							break;
 						}
 						
-						if (count == items.size())
+						if (count == items.Count)
 						{
 							player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS_TO_LEARN_THE_SKILL);
 							return ValueTask.CompletedTask;
@@ -530,7 +531,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							break;
 						}
 						
-						if (count == items.size())
+						if (count == items.Count)
 						{
 							player.sendPacket(new ExAcquireSkillResultPacket(skillLearn.getSkillId(),
 								skillLearn.getSkillLevel(), false,
@@ -555,7 +556,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							break;
 						}
 						
-						if (count == items.size())
+						if (count == items.Count)
 						{
 							Util.handleIllegalPlayerAction(player, "Somehow " + player + ", level " + player.getLevel() + " lose required item Id: " + item.getId() + " to learn skill while learning skill Id: " + _id + " level " + skillLevel + "!", IllegalActionPunishmentType.NONE);
 						}
@@ -565,7 +566,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			
 			if (!skillLearn.getRemoveSkills().isEmpty())
 			{
-				skillLearn.getRemoveSkills().forEach(skillId =>
+				skillLearn.getRemoveSkills().ForEach(skillId =>
 				{
 					Skill skillToRemove = player.getKnownSkill(skillId);
 					if (skillToRemove != null)

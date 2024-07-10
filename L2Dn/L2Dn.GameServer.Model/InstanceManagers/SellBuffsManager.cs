@@ -130,7 +130,7 @@ public class SellBuffsManager: DataReaderBase
 			previousIndex = index - 10;
 		}
 		
-		emptyFields = ceiling - sellList.size();
+		emptyFields = ceiling - sellList.Count;
 		
 		sb.Append("<br>");
 		sb.Append(HtmlUtil.getMpGauge(250, (long) seller.getCurrentMp(), seller.getMaxMp(), false));

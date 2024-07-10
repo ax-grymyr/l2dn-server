@@ -34,7 +34,7 @@ public class BeastSpiritShot: IItemHandler
 		}
 
 		Summon pet = playable.getPet();
-		if ((pet != null) && pet.isDead())
+		if (pet != null && pet.isDead())
 		{
 			activeOwner.sendPacket(SystemMessageId
 				.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_SERVITOR_SAD_ISN_T_IT);
@@ -50,7 +50,7 @@ public class BeastSpiritShot: IItemHandler
 			}
 		}
 
-		if ((pet == null) && aliveServitor.isEmpty())
+		if (pet == null && aliveServitor.isEmpty())
 		{
 			activeOwner.sendPacket(SystemMessageId
 				.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_SERVITOR_SAD_ISN_T_IT);
@@ -58,11 +58,11 @@ public class BeastSpiritShot: IItemHandler
 		}
 
 		int itemId = item.getId();
-		bool isBlessed = ((itemId == 6647) || (itemId == 20334)); // TODO: Unhardcode these!
+		bool isBlessed = itemId == 6647 || itemId == 20334; // TODO: Unhardcode these!
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		ShotType shotType = isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS;
 		short shotConsumption = 0;
-		if ((pet != null) && !pet.isChargedShot(shotType))
+		if (pet != null && !pet.isChargedShot(shotType))
 		{
 			shotConsumption += pet.getSpiritShotsPerHit();
 		}
@@ -104,14 +104,16 @@ public class BeastSpiritShot: IItemHandler
 		}
 
 		// Pet uses the power of spirit.
-		if ((pet != null) && !pet.isChargedShot(shotType))
+		if (pet != null && !pet.isChargedShot(shotType))
 		{
 			activeOwner.sendMessage(isBlessed
 				? "Your pet uses blessed spiritshot."
-				: "Your pet uses spiritshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
+				: "Your pet uses spiritshot.");
+			// activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
+
 			pet.chargeShot(shotType);
 			// Visual effect change if player has equipped Sapphire level 3 or higher
-			BroochJewel? activeShappireJewel = activeOwner.getActiveShappireJewel(); 
+			BroochJewel? activeShappireJewel = activeOwner.getActiveShappireJewel();
 			if (activeShappireJewel != null)
 			{
 				SkillHolder skill = activeShappireJewel.Value.GetSkill();
@@ -121,23 +123,25 @@ public class BeastSpiritShot: IItemHandler
 			}
 			else
 			{
-				skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
-					new MagicSkillUsePacket(pet, pet, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
+				skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
+					new MagicSkillUsePacket(pet, pet, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero,
+						TimeSpan.Zero), 600));
 			}
 		}
 
-		aliveServitor.forEach(s =>
+		aliveServitor.ForEach(s =>
 		{
 			if (!s.isChargedShot(shotType))
 			{
 				activeOwner.sendMessage(isBlessed
 					? "Your servitor uses blessed spiritshot."
-					: "Your servitor uses spiritshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
-				
+					: "Your servitor uses spiritshot.");
+				// activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
+
 				s.chargeShot(shotType);
-				
+
 				// Visual effect change if player has equipped Sapphire level 3 or higher
-				BroochJewel? activeShappireJewel = activeOwner.getActiveShappireJewel(); 
+				BroochJewel? activeShappireJewel = activeOwner.getActiveShappireJewel();
 				if (activeShappireJewel != null)
 				{
 					SkillHolder skill = activeShappireJewel.Value.GetSkill();
@@ -147,11 +151,13 @@ public class BeastSpiritShot: IItemHandler
 				}
 				else
 				{
-					skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
-						new MagicSkillUsePacket(s, s, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
+					skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
+						new MagicSkillUsePacket(s, s, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero,
+							TimeSpan.Zero), 600));
 				}
 			}
 		});
+
 		return true;
 	}
 }

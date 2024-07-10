@@ -39,7 +39,7 @@ public class OlympiadGameManager: Runnable
 			_tasks.add(stadium);
 		}
 		
-		LOGGER.Info("Olympiad System: Loaded " + _tasks.size() + " stadiums.");
+		LOGGER.Info("Olympiad System: Loaded " + _tasks.Count + " stadiums.");
 	}
 	
 	public bool isBattleStarted()
@@ -70,7 +70,7 @@ public class OlympiadGameManager: Runnable
 				_delay = 0;
 				
 				// set up the games queue
-				for (int i = 0; i < _tasks.size(); i++)
+				for (int i = 0; i < _tasks.Count; i++)
 				{
 					OlympiadGameTask task = _tasks.get(i).getTask();
 					lock (task)
@@ -179,7 +179,7 @@ public class OlympiadGameManager: Runnable
 	
 	public OlympiadGameTask getOlympiadTask(int id)
 	{
-		if ((id < 0) || (id >= _tasks.size()))
+		if ((id < 0) || (id >= _tasks.Count))
 		{
 			return null;
 		}
@@ -188,7 +188,7 @@ public class OlympiadGameManager: Runnable
 	
 	public int getNumberOfStadiums()
 	{
-		return _tasks.size();
+		return _tasks.Count;
 	}
 	
 	public void notifyCompetitorDamage(Player attacker, int damage)
@@ -199,7 +199,7 @@ public class OlympiadGameManager: Runnable
 		}
 		
 		int id = attacker.getOlympiadGameId();
-		if ((id < 0) || (id >= _tasks.size()))
+		if ((id < 0) || (id >= _tasks.Count))
 		{
 			return;
 		}

@@ -10,19 +10,6 @@ public static class CollectionExtensions
         return list.Count == 0;
     }
 
-    public static void forEach<T>(this IEnumerable<T> collection, Action<T> action)
-    {
-        foreach (T item in collection)
-        {
-            action(item);
-        }
-    }
-
-    public static int size<T>(this List<T> list)
-    {
-        return list.Count;
-    }
-
     public static T get<T>(this List<T> list, int index)
     {
         return list[index];

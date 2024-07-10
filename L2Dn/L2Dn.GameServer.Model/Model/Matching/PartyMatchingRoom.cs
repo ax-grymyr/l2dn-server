@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
@@ -60,7 +61,7 @@ public class PartyMatchingRoom: MatchingRoom
 			: SystemMessageId.C1_HAS_LEFT_THE_PARTY_ROOM);
 		sm.Params.addPcName(player);
 
-		getMembers().forEach(p =>
+		getMembers().ForEach(p =>
 		{
 			p.sendPacket(new PartyRoomInfoPacket(this));
 			p.sendPacket(new ExPartyRoomMemberPacket(player, this));
@@ -76,7 +77,7 @@ public class PartyMatchingRoom: MatchingRoom
 
 	public override void disbandRoom()
 	{
-		getMembers().forEach(p =>
+		getMembers().ForEach(p =>
 		{
 			p.sendPacket(SystemMessageId.THE_PARTY_ROOM_HAS_BEEN_DISBANDED);
 			p.sendPacket(ExClosePartyRoomPacket.STATIC_PACKET);

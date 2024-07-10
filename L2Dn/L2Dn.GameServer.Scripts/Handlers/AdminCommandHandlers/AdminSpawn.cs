@@ -647,7 +647,7 @@ public class AdminSpawn: IAdminCommandHandler
 	private void showMonsters(Player activeChar, int level, int from)
 	{
 		List<NpcTemplate> mobs = NpcData.getInstance().getAllMonstersOfLevel(level);
-		int mobsCount = mobs.size();
+		int mobsCount = mobs.Count;
 		StringBuilder tb = new StringBuilder(500 + (mobsCount * 80));
 		tb.Append("<html><title>Spawn Monster:</title><body><p> Level : " + level + "<br>Total NPCs : " + mobsCount + "<br>");
 		
@@ -674,7 +674,7 @@ public class AdminSpawn: IAdminCommandHandler
 	private void showNpcs(Player activeChar, String starting, int from)
 	{
 		List<NpcTemplate> mobs = NpcData.getInstance().getAllNpcStartingWith(starting);
-		int mobsCount = mobs.size();
+		int mobsCount = mobs.Count;
 		StringBuilder tb = new StringBuilder(500 + (mobsCount * 80));
 		tb.Append("<html><title>Spawn Monster:</title><body><p> There are " + mobsCount + " Npcs whose name starts with " + starting + ":<br>");
 		

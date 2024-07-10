@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -47,17 +48,17 @@ public class EffectList
 	private BuffInfo? _shortBuff;
 	
 	/** Count of specific types of buffs. */
-	private readonly AtomicInteger _buffCount = new AtomicInteger();
-	private readonly AtomicInteger _triggerBuffCount = new AtomicInteger();
-	private readonly AtomicInteger _danceCount = new AtomicInteger();
-	private readonly AtomicInteger _toggleCount = new AtomicInteger();
-	private readonly AtomicInteger _debuffCount = new AtomicInteger();
+	private readonly AtomicInteger _buffCount = new();
+	private readonly AtomicInteger _triggerBuffCount = new();
+	private readonly AtomicInteger _danceCount = new();
+	private readonly AtomicInteger _toggleCount = new();
+	private readonly AtomicInteger _debuffCount = new();
 	
 	/** If {@code true} this effect list has buffs removed on any action. */
-	private readonly AtomicInteger _hasBuffsRemovedOnAnyAction = new AtomicInteger();
+	private readonly AtomicInteger _hasBuffsRemovedOnAnyAction = new();
 	
 	/** If {@code true} this effect list has buffs removed on damage. */
-	private readonly AtomicInteger _hasBuffsRemovedOnDamage = new AtomicInteger();
+	private readonly AtomicInteger _hasBuffsRemovedOnDamage = new();
 	
 	/** Effect flags. */
 	private long _effectFlags;
@@ -66,11 +67,11 @@ public class EffectList
 	private readonly Creature _owner;
 	
 	/** Hidden buffs count, prevents iterations. */
-	private readonly AtomicInteger _hiddenBuffs = new AtomicInteger();
+	private readonly AtomicInteger _hiddenBuffs = new();
 	
 	/** Delay task **/
 	private ScheduledFuture? _updateEffectIconTask;
-	private readonly AtomicBoolean _updateAbnormalStatus = new AtomicBoolean();
+	private readonly AtomicBoolean _updateAbnormalStatus = new();
 	
 	/**
 	 * Constructor for effect list.
@@ -460,7 +461,7 @@ public class EffectList
 	{
 		if (!_passives.isEmpty())
 		{
-			_passives.forEach(x => remove(x));
+			_passives.ForEach(x => remove(x));
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -478,7 +479,7 @@ public class EffectList
 	{
 		if (!_options.isEmpty())
 		{
-			_options.forEach(remove);
+			_options.ForEach(remove);
 			
 			// Update stats, effect flags and icons.
 			if (update)
@@ -1291,7 +1292,7 @@ public class EffectList
 		_stackedEffects = abnormalTypeFlags;
 		
 		// Unhide the selected buffs.
-		unhideBuffs.forEach(b =>
+		unhideBuffs.ForEach(b =>
 		{
 			b.setInUse(true);
 			_hiddenBuffs.decrementAndGet();

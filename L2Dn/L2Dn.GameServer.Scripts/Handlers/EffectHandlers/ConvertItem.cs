@@ -100,7 +100,7 @@ public class ConvertItem: AbstractEffect
 			player.sendPacket(sm);
 		}
 		
-		if (count == unequipped.size())
+		if (count == unequipped.Count)
 		{
 			return;
 		}

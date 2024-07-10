@@ -389,7 +389,7 @@ public class WalkingManager: DataReaderBase
 		}
 		
 		List<NpcWalkerNode> nodelist = walk.getRoute().getNodeList();
-		NpcWalkerNode node = nodelist.get(Math.Min(walk.getCurrentNodeId(), nodelist.size() - 1));
+		NpcWalkerNode node = nodelist.get(Math.Min(walk.getCurrentNodeId(), nodelist.Count - 1));
 		if (!npc.IsInsideRadius2D(node.Location, 10))
 		{
 			return;

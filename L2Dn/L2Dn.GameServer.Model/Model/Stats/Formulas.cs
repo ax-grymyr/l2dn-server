@@ -1111,7 +1111,7 @@ public class Formulas
 
 				// Prevent initialization.
 				List<BuffInfo> dances = target.getEffectList().getDances();
-				for (int i = dances.size() - 1; i >= 0; i--) // reverse order
+				for (int i = dances.Count - 1; i >= 0; i--) // reverse order
 				{
 					BuffInfo info = dances.get(i);
 					if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
@@ -1119,17 +1119,17 @@ public class Formulas
 						continue;
 					}
 					canceled.add(info);
-					if (canceled.size() >= Max)
+					if (canceled.Count >= Max)
 					{
 						break;
 					}
 				}
 
-				if (canceled.size() < Max)
+				if (canceled.Count < Max)
 				{
 					// Prevent initialization.
 					List<BuffInfo> buffs = target.getEffectList().getBuffs();
-					for (int i = buffs.size() - 1; i >= 0; i--) // reverse order
+					for (int i = buffs.Count - 1; i >= 0; i--) // reverse order
 					{
 						BuffInfo info = buffs.get(i);
 						if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
@@ -1137,7 +1137,7 @@ public class Formulas
 							continue;
 						}
 						canceled.add(info);
-						if (canceled.size() >= Max)
+						if (canceled.Count >= Max)
 						{
 							break;
 						}
@@ -1148,13 +1148,13 @@ public class Formulas
 			case DispelSlotType.DEBUFF:
 			{
 				List<BuffInfo> debuffs = target.getEffectList().getDebuffs();
-				for (int i = debuffs.size() - 1; i >= 0; i--)
+				for (int i = debuffs.Count - 1; i >= 0; i--)
 				{
 					BuffInfo info = debuffs.get(i);
 					if (info.getSkill().canBeDispelled() && Rnd.get(100) <= rate)
 					{
 						canceled.add(info);
-						if (canceled.size() >= Max)
+						if (canceled.Count >= Max)
 						{
 							break;
 						}

@@ -76,7 +76,7 @@ public class AdminOnline: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Total online: " + online);
 			BuilderUtil.sendSysMessage(activeChar, "Total offline: " + offline);
 			BuilderUtil.sendSysMessage(activeChar, "Max connected: " + World.MAX_CONNECTED_COUNT);
-			BuilderUtil.sendSysMessage(activeChar, "Unique IPs: " + ips.size());
+			BuilderUtil.sendSysMessage(activeChar, "Unique IPs: " + ips.Count);
 			BuilderUtil.sendSysMessage(activeChar, "In peace zone: " + peace);
 			BuilderUtil.sendSysMessage(activeChar, "Not in peace zone: " + notPeace);
 			BuilderUtil.sendSysMessage(activeChar, "In instances: " + instanced);

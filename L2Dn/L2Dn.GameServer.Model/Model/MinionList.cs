@@ -341,7 +341,7 @@ public class MinionList
 	
 	public int countSpawnedMinions()
 	{
-		return _spawnedMinions.size();
+		return _spawnedMinions.Count;
 	}
 	
 	public long lazyCountSpawnedMinionsGroups()

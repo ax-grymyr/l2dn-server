@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -228,8 +229,8 @@ public class NpcViewMod: IBypassHandler
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/NpcView/Skills.htm", player);
 		
-		StringBuilder sb = new StringBuilder();
-		npc.getSkills().values().forEach(s =>
+		StringBuilder sb = new();
+		npc.getSkills().Values.ForEach(s =>
 		{
 			sb.Append("<table width=277 height=32 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 			sb.Append("<tr><td width=32>");
@@ -262,7 +263,7 @@ public class NpcViewMod: IBypassHandler
 		StringBuilder sb = new StringBuilder();
 		if (npc.isAttackable())
 		{
-			((Attackable) npc).getAggroList().values().forEach(a =>
+			((Attackable) npc).getAggroList().Values.ForEach(a =>
 			{
 				sb.Append("<table width=277 height=32 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 				sb.Append("<tr><td width=110>");
@@ -349,8 +350,8 @@ public class NpcViewMod: IBypassHandler
 		
 		dropList.Sort((d1, d2) => d1.getItemId().CompareTo(d2.getItemId()));
 		
-		int pages = dropList.size() / DROP_LIST_ITEMS_PER_PAGE;
-		if ((DROP_LIST_ITEMS_PER_PAGE * pages) < dropList.size())
+		int pages = dropList.Count / DROP_LIST_ITEMS_PER_PAGE;
+		if ((DROP_LIST_ITEMS_PER_PAGE * pages) < dropList.Count)
 		{
 			pages++;
 		}
@@ -374,9 +375,9 @@ public class NpcViewMod: IBypassHandler
 		
 		int start = page > 0 ? page * DROP_LIST_ITEMS_PER_PAGE : 0;
 		int end = (page * DROP_LIST_ITEMS_PER_PAGE) + DROP_LIST_ITEMS_PER_PAGE;
-		if (end > dropList.size())
+		if (end > dropList.Count)
 		{
-			end = dropList.size();
+			end = dropList.Count;
 		}
 		
 		int leftHeight = 0;

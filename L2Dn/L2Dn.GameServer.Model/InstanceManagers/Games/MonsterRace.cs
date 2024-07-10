@@ -283,7 +283,7 @@ public class MonsterRace
 					_race._state = RaceState.RACE_END;
 					
 					// Populate history info with data, stores it in database.
-					HistoryInfo info = _race._history.get(_race._history.size() - 1);
+					HistoryInfo info = _race._history.get(_race._history.Count - 1);
 					info.setFirst(_race.getFirstPlace());
 					info.setSecond(_race.getSecondPlace());
 					info.setOddRate(_race._odds.get(_race.getFirstPlace() - 1));
@@ -397,7 +397,7 @@ public class MonsterRace
 			LOGGER.Error("MonsterRace: Can't load history: " + e);
 		}
 		
-		LOGGER.Info("MonsterRace: loaded " + _history.size() + " records, currently on race #" + _raceNumber);
+		LOGGER.Info("MonsterRace: loaded " + _history.Count + " records, currently on race #" + _raceNumber);
 	}
 	
 	/**

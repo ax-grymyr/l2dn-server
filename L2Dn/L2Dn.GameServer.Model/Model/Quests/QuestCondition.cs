@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 
@@ -23,7 +24,7 @@ public class QuestCondition
 		_condition = cond;
 		_html = null;
 		_perNpcDialog = new();
-		pairs.forEach(pair => _perNpcDialog.put(pair.Key, pair.Value));
+		pairs.ForEach(pair => _perNpcDialog.put(pair.Key, pair.Value));
 	}
 	
 	public bool test(Player player)

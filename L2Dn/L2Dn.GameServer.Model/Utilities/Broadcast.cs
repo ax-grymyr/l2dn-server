@@ -77,7 +77,7 @@ public static class Broadcast
 							}
 							if (creature.hasServitors())
 							{
-								creature.getServitors().values().forEach(s => rc.addRelation(s, relation, isAutoAttackable));
+								creature.getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
 						player.sendPacket(rc);

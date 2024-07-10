@@ -17,7 +17,7 @@ public readonly struct ExPledgeDraftListSearchPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_DRAFT_LIST_SEARCH);
         
-        writer.WriteInt32(_pledgeRecruitList.size());
+        writer.WriteInt32(_pledgeRecruitList.Count);
         foreach (PledgeWaitingInfo prl in _pledgeRecruitList)
         {
             writer.WriteInt32(prl.getPlayerId());

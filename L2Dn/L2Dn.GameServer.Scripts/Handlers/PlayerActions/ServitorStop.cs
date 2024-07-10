@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -20,7 +21,7 @@ public class ServitorStop: IPlayerActionHandler
 			return;
 		}
 		
-		player.getServitors().values().forEach(s =>
+		player.getServitors().Values.ForEach(s =>
 		{
 			if (s.isBetrayed())
 			{

@@ -1468,7 +1468,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			ipMap.get(ip).add(player);
 			
-			if (ipMap.get(ip).size() >= multibox)
+			if (ipMap.get(ip).Count >= multibox)
 			{
 				int count = dualboxIPs.get(ip);
 				if (count == null)
@@ -1519,7 +1519,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			ipMap.get(pack).add(player);
 			
-			if (ipMap.get(pack).size() >= multibox)
+			if (ipMap.get(pack).Count >= multibox)
 			{
 				int count = dualboxIPs.get(pack);
 				if (count == null)

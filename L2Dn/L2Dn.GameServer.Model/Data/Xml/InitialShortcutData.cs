@@ -43,9 +43,9 @@ public class InitialShortcutData: DataReaderBase
 		document.Elements("list").Elements("shortcuts").ForEach(parseShortcut);
 		document.Elements("list").Elements("macros").Elements("macro").ForEach(parseMacro);
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _initialGlobalShortcutList.size() + " initial global shortcuts data.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _initialShortcutData.size() + " initial shortcuts data.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _macroPresets.size() + " macro presets.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _initialGlobalShortcutList.Count + " initial global shortcuts data.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _initialShortcutData.Count + " initial shortcuts data.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _macroPresets.Count + " macro presets.");
 	}
 	
 	/**

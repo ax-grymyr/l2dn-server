@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Residences;
@@ -63,14 +64,14 @@ public class ClanHallAuctionManager
 	private void onStart()
 	{
 		LOGGER.Info(GetType().Name +": Clan Hall Auction has started!");
-		AUCTIONS.clear();
-		ClanHallData.getInstance().getFreeAuctionableHall().forEach(c => AUCTIONS.put(c.getResidenceId(), new ClanHallAuction(c.getResidenceId())));
+		AUCTIONS.Clear();
+		ClanHallData.getInstance().getFreeAuctionableHall().ForEach(c => AUCTIONS.put(c.getResidenceId(), new ClanHallAuction(c.getResidenceId())));
 	}
 	
 	private void onEnd()
 	{
-		AUCTIONS.values().forEach(x => x.finalizeAuctions());
-		AUCTIONS.clear();
+		AUCTIONS.Values.ForEach(x => x.finalizeAuctions());
+		AUCTIONS.Clear();
 		LOGGER.Info(GetType().Name +": Clan Hall Auction has ended!");
 	}
 	

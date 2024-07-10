@@ -152,7 +152,7 @@ public class ItemAuctionInstance
 	
 	private AuctionItem getAuctionItem(int auctionItemId)
 	{
-		for (int i = _items.size(); i-- > 0;)
+		for (int i = _items.Count; i-- > 0;)
 		{
 			AuctionItem item = _items[i];
 			if (item.getAuctionItemId() == auctionItemId)
@@ -478,7 +478,7 @@ public class ItemAuctionInstance
 	
 	private ItemAuction createAuction(DateTime after)
 	{
-		AuctionItem auctionItem = _items[Rnd.get(_items.size())];
+		AuctionItem auctionItem = _items[Rnd.get(_items.Count)];
 		DateTime startingTime = _dateGenerator.nextDate(after);
 		DateTime endingTime = startingTime + TimeSpan.FromMinutes(auctionItem.getAuctionLength());
 		ItemAuction auction = new ItemAuction(_auctionIds.getAndIncrement(), _instanceId, startingTime, endingTime, auctionItem);

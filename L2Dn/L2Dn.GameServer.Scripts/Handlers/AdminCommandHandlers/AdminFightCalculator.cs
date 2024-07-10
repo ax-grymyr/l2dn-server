@@ -106,7 +106,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		else if ((lvl1 != 0) && (npc1 == null))
 		{
 			List<NpcTemplate> npcs = NpcData.getInstance().getAllOfLevel(lvl1);
-			StringBuilder sb = new StringBuilder(50 + (npcs.size() * 200));
+			StringBuilder sb = new StringBuilder(50 + (npcs.Count * 200));
 			sb.Append("<html><title>Select first mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{
@@ -119,7 +119,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		else if ((lvl2 != 0) && (npc2 == null))
 		{
 			List<NpcTemplate> npcs = NpcData.getInstance().getAllOfLevel(lvl2);
-			StringBuilder sb = new StringBuilder(50 + (npcs.size() * 200));
+			StringBuilder sb = new StringBuilder(50 + (npcs.Count * 200));
 			sb.Append("<html><title>Select second mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{

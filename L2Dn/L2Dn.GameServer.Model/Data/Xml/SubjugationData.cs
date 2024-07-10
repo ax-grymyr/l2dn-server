@@ -28,7 +28,7 @@ public class SubjugationData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SubjugationData.xml");
 		document.Elements("list").Elements("purge").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.size() + " data.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.Count + " data.");
 	}
 
 	private void parseElement(XElement element)

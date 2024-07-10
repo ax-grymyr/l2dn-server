@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
@@ -33,7 +34,7 @@ public class OlympiadStadium
 		_stadiumId = stadiumId;
 		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId(), null);
 		_buffers = _instance.getNpcs().Select(n => n.getSpawn()).ToList();
-		_buffers.Select(s => s.getLastSpawn()).forEach(n => n.deleteMe());
+		_buffers.Select(s => s.getLastSpawn()).ForEach(n => n.deleteMe());
 	}
 	
 	public OlympiadStadiumZone getZone()
@@ -58,22 +59,22 @@ public class OlympiadStadium
 	
 	public void openDoors()
 	{
-		_instance.getDoors().forEach(x => x.openMe());
+		_instance.getDoors().ForEach(x => x.openMe());
 	}
 	
 	public void closeDoors()
 	{
-		_instance.getDoors().forEach(x => x.closeMe());
+		_instance.getDoors().ForEach(x => x.closeMe());
 	}
 	
 	public void spawnBuffers()
 	{
-		_buffers.forEach(spawn => spawn.doSpawn(false));
+		_buffers.ForEach(spawn => spawn.doSpawn(false));
 	}
 	
 	public void deleteBuffers()
 	{
-		_buffers.Select(s => s.getLastSpawn()).Where(o => o is not null).forEach(o => o.deleteMe());
+		_buffers.Select(s => s.getLastSpawn()).Where(o => o is not null).ForEach(o => o.deleteMe());
 	}
 	
 	public void broadcastStatusUpdate(Player player)

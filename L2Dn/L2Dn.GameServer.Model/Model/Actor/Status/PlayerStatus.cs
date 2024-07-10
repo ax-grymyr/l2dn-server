@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.AI;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -316,8 +317,8 @@ public class PlayerStatus: PlayableStatus
 					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
 
-				getActiveChar().getServitors().values()
-					.forEach(s => s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE));
+				getActiveChar().getServitors().Values
+					.ForEach(s => s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE));
 				return;
 			}
 

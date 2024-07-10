@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -21,7 +22,7 @@ public class ServitorHold: IPlayerActionHandler
 			return;
 		}
 		
-		player.getServitors().values().forEach(s =>
+		player.getServitors().Values.ForEach(s =>
 		{
 			if (s.isBetrayed())
 			{

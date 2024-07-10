@@ -109,7 +109,7 @@ public class SpawnData: DataReaderBase
 	public void despawnAll()
 	{
 		_logger.Info(GetType().Name + ": Removing all spawns...");
-		_spawns.forEach(x => x.despawnAll());
+		_spawns.ForEach(x => x.despawnAll());
 		_logger.Info(GetType().Name + ": All spawns has been removed!");
 	}
 	

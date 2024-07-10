@@ -6,7 +6,6 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
@@ -24,29 +23,30 @@ public class Harvester: IItemHandler
 		{
 			return false;
 		}
-		else if (!playable.isPlayer())
+
+		if (!playable.isPlayer())
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
+
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");
 			return false;
 		}
-		
+
 		Player player = playable.getActingPlayer();
 		WorldObject target = player.getTarget();
-		if ((target == null) || !target.isMonster() || !((Creature) target).isDead())
+		if (target == null || !target.isMonster() || !((Creature)target).isDead())
 		{
 			player.sendPacket(SystemMessageId.INVALID_TARGET);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
-		
-		skills.forEach(holder => player.useMagic(holder.getSkill(), item, false, false));
+
+		skills.ForEach(holder => player.useMagic(holder.getSkill(), item, false, false));
 		return true;
 	}
 }

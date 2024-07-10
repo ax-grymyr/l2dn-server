@@ -66,7 +66,7 @@ public struct RequestDivideAdenaPacket: IIncomingPacket<GameSession>
 		}
 		
 		List<Player> targets = commandChannel != null ? commandChannel.getMembers() : party.getMembers();
-		if (player.getAdena() < targets.size())
+		if (player.getAdena() < targets.Count)
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA_2);
 			cancelDistribution(request);
@@ -80,7 +80,7 @@ public struct RequestDivideAdenaPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (targets.size() < request.getPlayers().size())
+		if (targets.Count < request.getPlayers().Count)
 		{
 			player.sendPacket(SystemMessageId.THE_DISTRIBUTION_PARTICIPANTS_HAVE_CHANGED_ADENA_DISTRIBUTION_HAS_BEEN_CANCELLED);
 			cancelDistribution(request);
@@ -94,8 +94,8 @@ public struct RequestDivideAdenaPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		long memberAdenaGet = (int)(_adenaCount / targets.size());
-		if (player.reduceAdena("Adena Distribution", memberAdenaGet * targets.size(), player, false))
+		long memberAdenaGet = (int)(_adenaCount / targets.Count);
+		if (player.reduceAdena("Adena Distribution", memberAdenaGet * targets.Count, player, false))
 		{
 			foreach (Player target in targets)
 			{
@@ -109,7 +109,7 @@ public struct RequestDivideAdenaPacket: IIncomingPacket<GameSession>
 				target.addAdena("Adena Distribution", memberAdenaGet, player, false);
 				target.sendPacket(new ExDivideAdenaDonePacket(party.isLeader(target),
 					commandChannel != null && commandChannel.isLeader(target), _adenaCount, memberAdenaGet,
-					targets.size(), player.getName()));
+					targets.Count, player.getName()));
 				
 				target.removeRequest<AdenaDistributionRequest>();
 			}

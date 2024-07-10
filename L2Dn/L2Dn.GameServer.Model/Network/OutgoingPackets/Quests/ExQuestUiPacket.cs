@@ -44,7 +44,7 @@ public readonly struct ExQuestUiPacket: IOutgoingPacket
                 writer.WriteByte(qs.getState());
             }
 
-            writer.WriteInt32(activeQuests.size());
+            writer.WriteInt32(activeQuests.Count);
         }
         else
         {

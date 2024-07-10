@@ -117,7 +117,7 @@ public class SayuneRequest : AbstractRequest
 			else
 			{
 				// Try to find last entry to set player, if not set him to first entry
-				SayuneEntry lastEntry = map.getInnerEntries().get(map.getInnerEntries().size() - 1);
+				SayuneEntry lastEntry = map.getInnerEntries().get(map.getInnerEntries().Count - 1);
 				if (lastEntry != null)
 				{
 					getActiveChar().setXYZ(lastEntry.Location.X, lastEntry.Location.Y, lastEntry.Location.Z);

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
@@ -2830,7 +2831,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					
 					if (hasServitors() && hasAbnormalType(AbnormalType.ABILITY_CHANGE))
 					{
-						getServitors().values().forEach(x => x.broadcastStatusUpdate());
+						getServitors().Values.ForEach(x => x.broadcastStatusUpdate());
 					}
 				}
 				else if (isNpc())
@@ -2942,7 +2943,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 		
-		if (move.onGeodataPathIndex == (move.geoPath.size() - 1))
+		if (move.onGeodataPathIndex == (move.geoPath.Count - 1))
 		{
 			return false;
 		}
@@ -3737,7 +3738,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		m.geoPathAccurateTx = md.geoPathAccurateTx;
 		m.geoPathAccurateTy = md.geoPathAccurateTy;
 		Location3D geoNodeLocation = md.geoPath.get(m.onGeodataPathIndex).Location;
-		if (md.onGeodataPathIndex == md.geoPath.size() - 2)
+		if (md.onGeodataPathIndex == md.geoPath.Count - 2)
 		{
 			m.xDestination = md.geoPathAccurateTx;
 			m.yDestination = md.geoPathAccurateTy;
@@ -3952,7 +3953,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		
 		// Second dual attack is the remaining hits (first hit not included)
-		for (int i = 1; i < attack.getHits().size(); i++)
+		for (int i = 1; i < attack.getHits().Count; i++)
 		{
 			Hit hit = attack.getHits().get(i);
 			Creature target = (Creature) hit.getTarget();

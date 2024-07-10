@@ -1704,7 +1704,7 @@ public class SkillTreeData: DataReaderBase
 			}
 			
 			i = 0;
-			array = new long[list.size()];
+			array = new long[list.Count];
 			foreach (long s  in  list)
 			{
 				array[i++] = s;
@@ -1755,7 +1755,7 @@ public class SkillTreeData: DataReaderBase
 			list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		_allSkillsHashCodes = new long[list.size()];
+		_allSkillsHashCodes = new long[list.Count];
 		int j = 0;
 		foreach (long hashcode  in  list)
 		{

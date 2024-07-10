@@ -42,7 +42,7 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
         }
 		
         List<Player> targets = commandChannel != null ? commandChannel.getMembers() : party.getMembers();
-        if (player.getAdena() < targets.size())
+        if (player.getAdena() < targets.Count)
         {
             player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA_2);
             return ValueTask.CompletedTask;
@@ -55,7 +55,7 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
         }
 		
         int adenaObjectId = player.getInventory().getAdenaInstance().getObjectId();
-        targets.forEach(t =>
+        targets.ForEach(t =>
         {
             t.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_STARTED);
             t.addRequest(new AdenaDistributionRequest(t, player, targets, adenaObjectId, player.getAdena()));

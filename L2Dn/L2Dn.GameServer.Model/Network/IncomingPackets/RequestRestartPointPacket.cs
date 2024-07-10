@@ -276,7 +276,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					List<int> levelList = new(resMAP.Keys);
 					foreach (int level in levelList)
 					{
-						if ((player.getLevel() >= level) && (levelList.LastIndexOf(level) != (levelList.size() - 1)))
+						if ((player.getLevel() >= level) && (levelList.LastIndexOf(level) != (levelList.Count - 1)))
 						{
 							continue;
 						}

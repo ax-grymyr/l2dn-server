@@ -39,7 +39,7 @@ public class SummonMulti: AbstractEffect
 			List<int> summonerLevels = @params.getIntegerList("summonerLevels");
 			List<int> npcIds = @params.getIntegerList("npcIds");
 			_levelTemplates = new();
-			for (int i = 0; i < npcIds.size(); i++)
+			for (int i = 0; i < npcIds.Count; i++)
 			{
 				_levelTemplates.put(summonerLevels.get(i), npcIds.get(i));
 			}

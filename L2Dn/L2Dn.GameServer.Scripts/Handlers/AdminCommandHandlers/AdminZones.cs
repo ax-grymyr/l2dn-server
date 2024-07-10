@@ -318,7 +318,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 		if (holder != null)
 		{
-			if (holder.getNodes().size() < 3)
+			if (holder.getNodes().Count < 3)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "In order to visualize this zone you must have at least 3 points.");
 				return;
@@ -331,7 +331,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			Location3D nextLoc;
 			
 			List<Location3D> list = holder.getNodes();
-			for (int i = 1; i < list.size(); i++)
+			for (int i = 1; i < list.Count; i++)
 			{
 				prevLoc = list.get(i - 1);
 				nextLoc = list.get(i);
@@ -346,17 +346,17 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				}
 			}
 			
-			prevLoc = list.get(list.size() - 1);
+			prevLoc = list.get(list.Count - 1);
 			nextLoc = list.get(0);
 			if (holder.getMinZ() != 0)
 			{
-				exsp.addLine("Min Point " + list.size() + " > 1", Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());
+				exsp.addLine("Min Point " + list.Count + " > 1", Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());
 			}
 			
-			exsp.addLine("Point " + list.size() + " > 1", Colors.White, true, prevLoc.X, prevLoc.Y, prevLoc.Z, nextLoc.X, nextLoc.Y, nextLoc.Z);
+			exsp.addLine("Point " + list.Count + " > 1", Colors.White, true, prevLoc.X, prevLoc.Y, prevLoc.Z, nextLoc.X, nextLoc.Y, nextLoc.Z);
 			if (holder.getMaxZ() != 0)
 			{
-				exsp.addLine("Max Point " + list.size() + " > 1", Colors.RED, true, prevLoc.X, prevLoc.Y, holder.getMaxZ(), nextLoc.X, nextLoc.Y, holder.getMaxZ());
+				exsp.addLine("Max Point " + list.Count + " > 1", Colors.RED, true, prevLoc.X, prevLoc.Y, holder.getMaxZ(), nextLoc.X, nextLoc.Y, holder.getMaxZ());
 			}
 			
 			activeChar.sendPacket(exsp);

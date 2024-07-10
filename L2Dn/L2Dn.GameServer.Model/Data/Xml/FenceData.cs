@@ -32,7 +32,7 @@ public class FenceData: DataReaderBase
 		if (!_fences.isEmpty())
 		{
 			// Remove old fences when reloading
-			_fences.values().forEach(x => removeFence(x));
+			_fences.Values.ForEach(removeFence);
 		}
 
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "FenceData.xml");

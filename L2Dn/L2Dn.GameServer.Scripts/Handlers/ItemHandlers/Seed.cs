@@ -73,7 +73,7 @@ public class Seed: IItemHandler
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills != null)
 		{
-			skills.forEach(holder => player.useMagic(holder.getSkill(), item, false, false));
+			skills.ForEach(holder => player.useMagic(holder.getSkill(), item, false, false));
 		}
 		
 		return true;

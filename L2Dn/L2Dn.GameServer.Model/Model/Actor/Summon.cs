@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -414,7 +415,7 @@ public abstract class Summon: Playable
 			{
 				if (isPet())
 				{
-					getSkills().forEach(kvp => ((Pet) this).storePetSkills(kvp.Key, kvp.Value.getLevel()));
+					getSkills().ForEach(kvp => ((Pet) this).storePetSkills(kvp.Key, kvp.Value.getLevel()));
 					owner.setPet(null);
 				}
 				else

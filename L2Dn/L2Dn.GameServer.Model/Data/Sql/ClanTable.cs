@@ -62,7 +62,7 @@ public class ClanTable
 			}
 		}
 		
-		LOGGER.Info(GetType().Name + ": Restored " + cids.size() + " clans from the database.");
+		LOGGER.Info(GetType().Name + ": Restored " + cids.Count + " clans from the database.");
 		allianceCheck();
 		restoreClanWars();
 	}

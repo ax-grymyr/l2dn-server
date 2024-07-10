@@ -1,4 +1,5 @@
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -549,7 +550,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	// Orc Fortress
 	public void SetOrcFortressOwnerNpcs(bool val)
 	{
-		SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_owner_npcs").forEach(holder =>
+		SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_owner_npcs").ForEach(holder =>
 		{
 			if (val)
 			{
@@ -845,7 +846,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				sm = new SystemMessagePacket(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
 				sm.Params.addString(clan.getName());
 				sm.Params.addCastleId(getResidenceId());
-				World.getInstance().getPlayers().forEach(p => p.sendPacket(sm));
+				World.getInstance().getPlayers().ForEach(p => p.sendPacket(sm));
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
 				if (_fortUpdater[0] != null)

@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -426,7 +427,7 @@ public class Hero
 					StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = (page - 1) * perpage; i < list.size(); i++)
+					for (int i = (page - 1) * perpage; i < list.Count; i++)
 					{
 						breakat = i;
 						StatSet diaryEntry = list.get(i);
@@ -451,7 +452,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (list.size() - 1))
+					if (breakat < (list.Count - 1))
 					{
 						diaryReply.Replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -513,7 +514,7 @@ public class Hero
 					StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = (page - 1) * perpage; i < heroFights.size(); i++)
+					for (int i = (page - 1) * perpage; i < heroFights.Count; i++)
 					{
 						breakat = i;
 						StatSet fight = heroFights.get(i);
@@ -538,7 +539,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (heroFights.size() - 1))
+					if (breakat < (heroFights.Count - 1))
 					{
 						fightReply.Replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -845,7 +846,7 @@ public class Hero
 	 */
 	public void shutdown()
 	{
-		HERO_MESSAGE.Keys.forEach(saveHeroMessage);
+		HERO_MESSAGE.Keys.ForEach(saveHeroMessage);
 	}
 	
 	/**

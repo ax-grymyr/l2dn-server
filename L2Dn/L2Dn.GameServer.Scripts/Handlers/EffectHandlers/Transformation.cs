@@ -38,7 +38,7 @@ public class Transformation: AbstractEffect
 	{
 		if (!_id.isEmpty())
 		{
-			effected.transform(_id.get(Rnd.get(_id.size())), true);
+			effected.transform(_id.get(Rnd.get(_id.Count)), true);
 		}
 	}
 	

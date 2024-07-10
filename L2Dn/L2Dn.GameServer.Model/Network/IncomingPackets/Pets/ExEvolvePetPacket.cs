@@ -55,7 +55,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 		Item controlItem = pet.getControlItem();
 		pet.unSummon(activeChar);
 		List<PetData> pets = PetDataTable.getInstance().getPetDatasByEvolve(controlItem.getId(), evolveLevel);
-		PetData targetPet = pets.get(Rnd.get(pets.size()));
+		PetData targetPet = pets.get(Rnd.get(pets.Count));
 		PetData petData = PetDataTable.getInstance().getPetData(targetPet.getNpcId());
 		if (petData == null || petData.getNpcId() == -1)
 			return;

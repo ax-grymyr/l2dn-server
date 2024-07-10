@@ -42,7 +42,7 @@ public class FakePlayerChatManager: DataReaderBase
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerChatData.xml");
 			document.Elements("list").Elements("fakePlayerChat").ForEach(parseElement);
 			
-			LOGGER.Info(GetType().Name +": Loaded " + CollectionExtensions.size(MESSAGES) + " chat templates.");
+			LOGGER.Info(GetType().Name +": Loaded " + MESSAGES.Count + " chat templates.");
 		}
 		else
 		{
@@ -118,7 +118,7 @@ public class FakePlayerChatManager: DataReaderBase
 				{
 					if (text.equals(chatHolder.getSearchText().get(0)))
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().size())));
+						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
 					}
 					break;
 				}
@@ -126,7 +126,7 @@ public class FakePlayerChatManager: DataReaderBase
 				{
 					if (text.startsWith(chatHolder.getSearchText().get(0)))
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().size())));
+						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
 					}
 					break;
 				}
@@ -142,7 +142,7 @@ public class FakePlayerChatManager: DataReaderBase
 					}
 					if (allFound)
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().size())));
+						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
 					}
 					break;
 				}

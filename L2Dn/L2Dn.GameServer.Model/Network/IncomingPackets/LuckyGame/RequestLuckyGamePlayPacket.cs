@@ -86,7 +86,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 				if (playCount == holder.getMaxModifyRewardGame())
 				{
 					rewards.computeIfAbsent(LuckyGameItemType.RARE, _ => new())
-						.add(modifyReward.get(Rnd.get(modifyReward.size())));
+						.add(modifyReward.get(Rnd.get(modifyReward.Count)));
 					
 					blackCat = true;
 				}

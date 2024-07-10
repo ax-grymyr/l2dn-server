@@ -179,7 +179,7 @@ public class MacroList: IRestorable
 						cmd = st.nextToken();
 					}
 
-					commands.add(new MacroCmd(commands.size(), type, d1, d2, cmd));
+					commands.add(new MacroCmd(commands.Count, type, d1, d2, cmd));
 				}
 
 				_macroses.put(id, new Macro(id, icon, name, descr, acronym, commands));

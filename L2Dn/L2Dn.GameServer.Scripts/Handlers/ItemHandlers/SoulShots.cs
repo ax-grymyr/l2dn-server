@@ -88,7 +88,7 @@ public class SoulShots: IItemHandler
 		}
 		else
 		{
-			skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(player,
+			skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(player,
 				new MagicSkillUsePacket(player, player, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
 		}
 
@@ -191,12 +191,12 @@ public class SoulShots: IItemHandler
 			}
 			else
 			{
-				skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
+				skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
 					new MagicSkillUsePacket(pet, pet, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
 			}
 		}
 		
-		aliveServitor.forEach(s =>
+		aliveServitor.ForEach(s =>
 		{
 			if (!s.isChargedShot(ShotType.SOULSHOTS))
 			{
@@ -213,7 +213,7 @@ public class SoulShots: IItemHandler
 				}
 				else
 				{
-					skills.forEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
+					skills.ForEach(holder => Broadcast.toSelfAndKnownPlayersInRadius(activeOwner,
 						new MagicSkillUsePacket(s, s, holder.getSkillId(), holder.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero), 600));
 				}
 			}

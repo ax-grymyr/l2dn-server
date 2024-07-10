@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
@@ -40,7 +41,7 @@ public class ForumsBBSManager: BaseBBSManager
 	 */
 	public void initRoot()
 	{
-		_table.forEach(x => x.vload());
+		_table.ForEach(x => x.vload());
 		LOGGER.Info(GetType().Name + ": Loaded " + _table.Count + " forums. Last forum id used: " + _lastid);
 	}
 	

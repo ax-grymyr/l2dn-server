@@ -80,7 +80,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		
 		// Freight price from config or normal price per item slot (30)
-		long fee = _items.size() * 30;
+		long fee = _items.Count * 30;
 		long currentAdena = player.getAdena();
 		long slots = 0;
 		foreach (ItemHolder itemHolder in _items)

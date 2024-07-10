@@ -91,12 +91,12 @@ public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 
 	public void spawnAll(Instance instance)
 	{
-		_spawns.forEach(template => template.spawn(instance));
+		_spawns.ForEach(template => template.spawn(instance));
 	}
 
 	public void despawnAll()
 	{
-		_spawns.forEach(template => template.despawn());
+		_spawns.ForEach(template => template.despawn());
 	}
 
 	public SpawnGroup clone()

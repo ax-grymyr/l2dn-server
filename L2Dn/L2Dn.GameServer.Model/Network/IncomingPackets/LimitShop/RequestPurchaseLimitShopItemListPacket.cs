@@ -49,14 +49,14 @@ public struct RequestPurchaseLimitShopItemListPacket: IIncomingPacket<GameSessio
         }
 		
         // Calculate the number of pages.
-        int totalPages = (products.size() / MAX_PAGE_SIZE) + ((products.size() % MAX_PAGE_SIZE) == 0 ? 0 : 1);
+        int totalPages = (products.Count / MAX_PAGE_SIZE) + ((products.Count % MAX_PAGE_SIZE) == 0 ? 0 : 1);
 		
         // Iterate over pages.
         for (int page = 0; page < totalPages; page++)
         {
             // Calculate start and end indices for each page.
             int start = page * MAX_PAGE_SIZE;
-            int end = Math.Min(start + MAX_PAGE_SIZE, products.size());
+            int end = Math.Min(start + MAX_PAGE_SIZE, products.Count);
 			
             // Get the subList for current page.
             List<LimitShopProductHolder> productList = products.Slice(start, end - start);

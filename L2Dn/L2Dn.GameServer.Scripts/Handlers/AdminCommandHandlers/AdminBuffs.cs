@@ -313,7 +313,7 @@ public class AdminBuffs: IAdminCommandHandler
 		htmlContent.Replace("%targetName%", target.getName());
 		htmlContent.Replace("%targetObjId%", target.getObjectId().ToString());
 		htmlContent.Replace("%buffs%", result.getBodyTemplate().ToString());
-		htmlContent.Replace("%effectSize%", effects.size().ToString());
+		htmlContent.Replace("%effectSize%", effects.Count.ToString());
 		activeChar.sendPacket(html);
 		
 		if (Config.GMAUDIT)

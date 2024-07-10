@@ -124,7 +124,7 @@ public class GeoPathFinding: PathFinding
 					dx = targetX - n.getLoc().getNodeX();
 					dy = targetY - n.getLoc().getNodeY();
 					n.setCost(dx * dx + dy * dy);
-					for (int index = 0; index < toVisit.size(); index++)
+					for (int index = 0; index < toVisit.Count; index++)
 					{
 						// Supposed to find it quite early.
 						if (toVisit.get(index).getCost() > n.getCost())

@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -190,7 +191,7 @@ public class SiegeZone : ZoneType
 			
 			if (player.hasServitors())
 			{
-				player.getServitors().values().forEach(servitor =>
+				player.getServitors().values().ForEach(servitor =>
 				{
 					if (servitor.getRace() == Race.SIEGE_WEAPON)
 					{

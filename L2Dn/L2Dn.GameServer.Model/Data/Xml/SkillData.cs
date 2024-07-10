@@ -266,7 +266,7 @@ public class SkillData: DataReaderBase
 			levels.computeIfAbsent(i, k => new()).add(0);
 		}
 
-		skillInfo.forEach(kvp =>
+		skillInfo.ForEach(kvp =>
 		{
 			int level = kvp.Key;
 			Map<int, StatSet> subLevelMap = kvp.Value;
@@ -275,7 +275,7 @@ public class SkillData: DataReaderBase
 				return;
 			}
 
-			subLevelMap.forEach(kvp2 =>
+			subLevelMap.ForEach(kvp2 =>
 			{
 				int subLevel = kvp2.Key;
 				StatSet statSet = kvp2.Value;
@@ -289,9 +289,9 @@ public class SkillData: DataReaderBase
 		});
 
 		effectParamInfo.values().Concat(conditionParamInfo.values()).ForEach(namedParamInfos =>
-			namedParamInfos.forEach(namedParamInfo =>
+			namedParamInfos.ForEach(namedParamInfo =>
 			{
-				namedParamInfo.getInfo().forEach(kvp =>
+				namedParamInfo.getInfo().ForEach(kvp =>
 				{
 					var (level, subLevelMap) = kvp;
 					if (level == -1)
@@ -299,7 +299,7 @@ public class SkillData: DataReaderBase
 						return;
 					}
 
-					subLevelMap.forEach(kvp2 =>
+					subLevelMap.ForEach(kvp2 =>
 					{
 						var (subLevel, statSet) = kvp2;
 						if (subLevel == -1)
@@ -330,14 +330,14 @@ public class SkillData: DataReaderBase
 				}
 			}));
 
-		levels.forEach(kvp => kvp.Value.forEach(subLevel =>
+		levels.ForEach(kvp => kvp.Value.ForEach(subLevel =>
 		{
 			var (level, subLevels) = kvp;
 			StatSet statSet = skillInfo.getOrDefault(level, new()).get(subLevel) ?? new StatSet();
 			skillInfo.getOrDefault(level, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-				.forEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
+				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			skillInfo.getOrDefault(-1, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-				.forEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
+				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			statSet.set(".level", level);
 			statSet.set(".subLevel", subLevel);
 			Skill skill = new Skill(statSet);
@@ -426,7 +426,7 @@ public class SkillData: DataReaderBase
 		Action<T, StatSet> consumer)
 		where T: notnull
 	{
-		paramInfo.forEach(kvp => kvp.Value.forEach(namedParamInfo =>
+		paramInfo.ForEach(kvp => kvp.Value.ForEach(namedParamInfo =>
 		{
 			var (scope, namedParamInfos) = kvp;
 			if ((((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) ||
@@ -438,10 +438,10 @@ public class SkillData: DataReaderBase
 
 				namedParamInfo.getInfo().getOrDefault(level, new())
 					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-					.forEach(x => @params.getSet().TryAdd(x.Key, x.Value));
+					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
 				namedParamInfo.getInfo().getOrDefault(-1, new())
 					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
-					.forEach(x => @params.getSet().TryAdd(x.Key, x.Value));
+					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
 				@params.set(".name", namedParamInfo.getName());
 				consumer(scope, @params);
 			}
@@ -486,10 +486,10 @@ public class SkillData: DataReaderBase
 			}
 		}
 
-		values.forEach(kvp =>
+		values.ForEach(kvp =>
 		{
 			var (level, subLevelMap) = kvp;
-			kvp.Value.forEach(kvp2 =>
+			kvp.Value.ForEach(kvp2 =>
 			{
 				var (subLevel, value) = kvp2;
 				info.computeIfAbsent(level, k => new()).computeIfAbsent(subLevel, k => new StatSet())

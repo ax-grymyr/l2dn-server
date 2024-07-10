@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -62,11 +63,11 @@ public class Summon: AbstractEffect
 		Player player = effected.getActingPlayer();
 		if (player.hasServitors())
 		{
-			player.getServitors().values().forEach(s => s.unSummon(player));
+			player.getServitors().Values.ForEach(s => s.unSummon(player));
 		}
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
-		Servitor summon = new Servitor(template, player);
+		Servitor summon = new(template, player);
 		TimeSpan consumeItemInterval = TimeSpan.FromMilliseconds((_consumeItemInterval > 0
 			? _consumeItemInterval
 			: (template.getRace() != Race.SIEGE_WEAPON ? 240 : 60)) * 1000);

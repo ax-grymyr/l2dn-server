@@ -866,7 +866,7 @@ public class WorldExchangeManager: DataReaderBase
 			}
 		}
 		
-		if (sortedList.size() > 399)
+		if (sortedList.Count > 399)
 		{
 			return sortedList[..399];
 		}

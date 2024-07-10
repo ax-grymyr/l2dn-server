@@ -33,7 +33,7 @@ public class LimitShopClanData: DataReaderBase
 		
 		if (!_products.isEmpty())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _products.size() + " items.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _products.Count + " items.");
 		}
 		else
 		{

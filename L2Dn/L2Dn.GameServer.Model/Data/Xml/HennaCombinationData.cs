@@ -32,7 +32,7 @@ public class HennaCombinationData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaCombinations.xml");
 		document.Elements("list").Elements("henna").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _henna.size() + " henna combinations.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _henna.Count + " henna combinations.");
 	}
 
 	private void parseElement(XElement element)

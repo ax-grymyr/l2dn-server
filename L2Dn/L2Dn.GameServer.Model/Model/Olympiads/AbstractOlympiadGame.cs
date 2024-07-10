@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -224,7 +225,7 @@ public abstract class AbstractOlympiadGame
 					pet.unSummon(player);
 				}
 				
-				player.getServitors().values().forEach(s =>
+				player.getServitors().values().ForEach(s =>
 				{
 					s.stopAllEffectsExceptThoseThatLastThroughDeath();
 					s.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
@@ -412,7 +413,7 @@ public abstract class AbstractOlympiadGame
 		try
 		{
 			List<ItemInfo> items = new List<ItemInfo>();
-			list.forEach(holder =>
+			list.ForEach(holder =>
 			{
 				Item item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
 				if (item == null)

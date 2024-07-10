@@ -33,28 +33,34 @@ public class Attackable: Npc
 	// Raid
 	private bool _isRaid;
 	private bool _isRaidMinion;
+
 	//
 	private bool _champion;
 	private readonly Map<Creature, AggroInfo> _aggroList = new();
 	private bool _canReturnToSpawnPoint = true;
 	private bool _seeThroughSilentMove;
+
 	// Manor
 	private bool _seeded;
 	private Seed _seed;
 	private int _seederObjId;
-	private readonly AtomicReference<ItemHolder> _harvestItem = new();
+	private ItemHolder? _harvestItem;
+
 	// Spoil
 	private int _spoilerObjectId;
 	private bool _plundered;
-	private readonly AtomicReference<ICollection<ItemHolder>> _sweepItems = new();
+	private ICollection<ItemHolder>? _sweepItems;
+
 	// Over-hit
 	private bool _overhit;
 	private double _overhitDamage;
 	private Creature _overhitAttacker;
+
 	// Command channel
 	private CommandChannel _firstCommandChannelAttacked;
 	private CommandChannelTimer _commandChannelTimer;
 	private DateTime? _commandChannelLastAttack;
+
 	// Misc
 	private bool _mustGiveExpSp;
 	
@@ -1144,7 +1150,7 @@ public class Attackable: Npc
 		CursedWeaponsManager.getInstance().checkDrop(this, player);
 		if (isSpoiled() && !_plundered)
 		{
-			_sweepItems.set(npcTemplate.calculateDrops(DropType.SPOIL, this, player));
+			_sweepItems = npcTemplate.calculateDrops(DropType.SPOIL, this, player);
 		}
 		
 		ICollection<ItemHolder> deathItems1 = npcTemplate.calculateDrops(DropType.DROP, this, player);
@@ -1262,7 +1268,7 @@ public class Attackable: Npc
 	 */
 	public override bool isSweepActive()
 	{
-		return _sweepItems.get() != null;
+		return _sweepItems != null;
 	}
 	
 	/**
@@ -1270,7 +1276,7 @@ public class Attackable: Npc
 	 */
 	public List<ItemTemplate> getSpoilLootItems()
 	{
-		ICollection<ItemHolder> sweepItems = _sweepItems.get();
+		ICollection<ItemHolder>? sweepItems = _sweepItems;
 		List<ItemTemplate> lootItems = new();
 		if (sweepItems != null)
 		{
@@ -1285,17 +1291,17 @@ public class Attackable: Npc
 	/**
 	 * @return table containing all Item that can be spoiled.
 	 */
-	public ICollection<ItemHolder> takeSweep()
+	public ICollection<ItemHolder>? takeSweep()
 	{
-		return _sweepItems.getAndSet(null);
+		return Interlocked.Exchange(ref _sweepItems, null);
 	}
 	
 	/**
 	 * @return table containing all Item that can be harvested.
 	 */
-	public ItemHolder takeHarvest()
+	public ItemHolder? takeHarvest()
 	{
-		return _harvestItem.getAndSet(null);
+		return Interlocked.Exchange(ref _harvestItem, null);
 	}
 	
 	/**
@@ -1456,8 +1462,8 @@ public class Attackable: Npc
 		clearAggroList();
 		
 		// Clear Harvester reward
-		_harvestItem.set(null);
-		_sweepItems.set(null);
+		_harvestItem = null;
+		_sweepItems = null;
 		_plundered = false;
 		
 		// fake players
@@ -1549,7 +1555,7 @@ public class Attackable: Npc
 	{
 		_plundered = true;
 		_spoilerObjectId = player.getObjectId();
-		_sweepItems.set(getTemplate().calculateDrops(DropType.SPOIL, this, player));
+		_sweepItems = getTemplate().calculateDrops(DropType.SPOIL, this, player);
 	}
 	
 	/**
@@ -1566,6 +1572,7 @@ public class Attackable: Npc
 			{
 				switch (skillId)
 				{
+					// TODO: un-hardcode numbers
 					case 4303: // Strong type x2
 					{
 						count *= 2;
@@ -1615,7 +1622,7 @@ public class Attackable: Npc
 			{
 				count += diff;
 			}
-			_harvestItem.set(new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR));
+			_harvestItem = new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR);
 		}
 	}
 	

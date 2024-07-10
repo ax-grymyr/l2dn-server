@@ -1,4 +1,5 @@
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -33,15 +34,15 @@ public class FortSiege: Siegable
 	public const String ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN = "orc_fortress_greg_bottom_right";
 	public const String GREG_SPAWN_VAR = "GREG_SPAWN";
 	
-	private bool _hasSpawnedPreparationNpcs = false;
+	private bool _hasSpawnedPreparationNpcs;
 	
-	private static readonly AtomicReference<SpawnTemplate> SPAWN_PREPARATION_NPCS = new();
+	private static SpawnTemplate? SPAWN_PREPARATION_NPCS;
 	
 	private static readonly ZoneType FORTRESS_ZONE = ZoneManager.getInstance().getZoneByName("orc_fortress_general_area");
 	
-	private ScheduledFuture _siegeGregSentryTask = null;
+	private ScheduledFuture _siegeGregSentryTask;
 	
-	private int _flagCount = 0;
+	private int _flagCount;
 	
 	public class ScheduleEndSiegeTask: Runnable
 	{
@@ -92,8 +93,8 @@ public class FortSiege: Siegable
 
 			try
 			{
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate
-					.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate
+					.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).ForEach(holder =>
 					{
 						holder.spawnAll();
 						foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -108,8 +109,8 @@ public class FortSiege: Siegable
 							}
 						}
 					}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate
-					.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate
+					.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).ForEach(holder =>
 					{
 						holder.spawnAll();
 						foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -124,8 +125,8 @@ public class FortSiege: Siegable
 							}
 						}
 					}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate
-					.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate
+					.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).ForEach(holder =>
 					{
 						holder.spawnAll();
 						foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -182,11 +183,11 @@ public class FortSiege: Siegable
 			{
 				_fortSiege._hasSpawnedPreparationNpcs = true;
 
-				SPAWN_PREPARATION_NPCS.set(SpawnData.getInstance()
+				SPAWN_PREPARATION_NPCS = SpawnData.getInstance()
 					.getSpawns()
-					.FirstOrDefault(t => t.getName() != null && t.getName().contains("orc_fortress_preparation_npcs")));
-				
-				SPAWN_PREPARATION_NPCS.get().getGroups().forEach(x => x.spawnAll());
+					.FirstOrDefault(t => t.getName() != null && t.getName().contains("orc_fortress_preparation_npcs"));
+
+				SPAWN_PREPARATION_NPCS.getGroups().ForEach(x => x.spawnAll());
 			}
 
 			try
@@ -404,13 +405,13 @@ public class FortSiege: Siegable
 	// Fort setting
 	protected Set<Spawn> _commanders = new();
 	protected readonly Fort _fort;
-	bool _isInProgress = false;
+	bool _isInProgress;
 	private List<Spawn> _siegeGuards = new();
-	ScheduledFuture? _siegeEnd = null;
-	ScheduledFuture? _siegeRestore = null;
-	ScheduledFuture? _siegeStartTask = null;
+	ScheduledFuture? _siegeEnd;
+	ScheduledFuture? _siegeRestore;
+	ScheduledFuture? _siegeStartTask;
 	// Orc Fortress
-	bool _isInPreparation = false;
+	bool _isInPreparation;
 	
 	public FortSiege(Fort fort)
 	{
@@ -495,14 +496,14 @@ public class FortSiege: Siegable
 					}
 				}
 				
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).forEach(holder => holder.despawnAll()));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).forEach(holder => holder.despawnAll()));
-				SPAWN_PREPARATION_NPCS.get().getGroups().forEach(x => x.despawnAll());
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN).ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN).ForEach(holder => holder.despawnAll()));
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName(ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN).ForEach(holder => holder.despawnAll()));
+				SPAWN_PREPARATION_NPCS.getGroups().ForEach(x => x.despawnAll());
 			}
 			
 			_isInProgress = false; // Flag so that siege instance can be started
@@ -632,7 +633,7 @@ public class FortSiege: Siegable
 			
 			if (_fort.getResidenceId() == FortManager.ORC_FORTRESS)
 			{
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress").ForEach(holder =>
 				{
 					holder.spawnAll();
 					foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -647,7 +648,7 @@ public class FortSiege: Siegable
 						}
 					}
 				}));
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_runners").ForEach(holder =>
 				{
 					holder.spawnAll();
 					foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -664,7 +665,7 @@ public class FortSiege: Siegable
 					
 				}));
 				
-				SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").forEach(holder =>
+				SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_inside").ForEach(holder =>
 				{
 					holder.spawnAll();
 					foreach (NpcSpawnTemplate nst in holder.getSpawns())
@@ -681,7 +682,7 @@ public class FortSiege: Siegable
 					
 				}));
 			}
-			SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").forEach(holder =>
+			SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName("orc_fortress_jeras_guards").ForEach(holder =>
 			{
 				holder.spawnAll();
 				foreach (NpcSpawnTemplate nst in holder.getSpawns())

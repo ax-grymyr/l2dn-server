@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -253,7 +254,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 		if (!_group.getTerritories().isEmpty())
 		{
-			SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().size()));
+			SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().Count));
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();
@@ -280,7 +281,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		}
 		else if (!_spawnTemplate.getTerritories().isEmpty())
 		{
-			SpawnTerritory territory = _spawnTemplate.getTerritories().get(Rnd.get(_spawnTemplate.getTerritories().size()));
+			SpawnTerritory territory = _spawnTemplate.getTerritories().get(Rnd.get(_spawnTemplate.getTerritories().Count));
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();
@@ -419,13 +420,14 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	
 	public void despawn()
 	{
-		_spawnedNpcs.forEach(npc =>
+		_spawnedNpcs.ForEach(npc =>
 		{
 			npc.getSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
 			npc.deleteMe();
 		});
-		_spawnedNpcs.clear();
+
+		_spawnedNpcs.Clear();
 	}
 	
 	public void notifySpawnNpc(Npc npc)

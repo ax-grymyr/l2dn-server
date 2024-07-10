@@ -25,7 +25,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
         List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortress.getResidenceId());
         if ((commanders != null) && !commanders.isEmpty() && _fortress.getSiege().isInProgress())
         {
-            switch (commanders.size())
+            switch (commanders.Count)
             {
                 case 3:
                 {

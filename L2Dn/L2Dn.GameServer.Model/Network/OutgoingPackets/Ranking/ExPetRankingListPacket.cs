@@ -120,12 +120,12 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 			}
 			default:
 			{
-				limited = new List<System.Collections.Generic.KeyValuePair<int, StatSet>>();
+				limited = new List<KeyValuePair<int, StatSet>>();
 				break;
 			}
 		}
 		
-		writer.WriteInt32(limited.size());
+		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)
 		{

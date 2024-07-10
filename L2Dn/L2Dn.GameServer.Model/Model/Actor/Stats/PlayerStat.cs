@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -745,7 +746,7 @@ public class PlayerStat: PlayableStat
 		Player player = getActiveChar();
 		if (player.hasAbnormalType(AbnormalType.ABILITY_CHANGE) && player.hasServitors())
 		{
-			player.getServitors().values().forEach(servitor => servitor.getStat().recalculateStats(broadcast));
+			player.getServitors().Values.ForEach(servitor => servitor.getStat().recalculateStats(broadcast));
 		}
 	}
 }

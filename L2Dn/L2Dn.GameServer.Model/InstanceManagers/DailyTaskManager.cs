@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -247,7 +248,7 @@ public class DailyTaskManager
 	
 	private void resetClanBonus()
 	{
-		ClanTable.getInstance().getClans().forEach(x => x.resetClanBonus());
+		ClanTable.getInstance().getClans().ForEach(x => x.resetClanBonus());
 		LOGGER.Info("Daily clan bonus has been reset.");
 	}
 	
@@ -448,7 +449,7 @@ public class DailyTaskManager
 	
 	private void resetDailyMissionRewards()
 	{
-		DailyMissionData.getInstance().getDailyMissionData().forEach(x => x.reset());
+		DailyMissionData.getInstance().getDailyMissionData().ForEach(x => x.reset());
 	}
 	
 	private void resetTimedHuntingZones()

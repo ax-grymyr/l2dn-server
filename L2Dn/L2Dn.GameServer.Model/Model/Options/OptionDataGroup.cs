@@ -42,7 +42,7 @@ public class OptionDataGroup
 
 				random -= category.getChance();
 			}
-		} while ((result == null) && (exclutions.size() < _categories.size()));
+		} while ((result == null) && (exclutions.Count < _categories.Count));
 
 		return result;
 	}

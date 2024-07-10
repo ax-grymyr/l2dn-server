@@ -25,8 +25,8 @@ public readonly struct RequestPrivateStoreSearchStatisticsPacket: IOutgoingPacke
             InventoryPacketHelper.WriteItem(writer, itemInfo, mostItems.get(i).getCount());
         }
 		
-        writer.WriteInt32(Math.Min(highestItems.size(), 5));
-        for (int i = 0; i < Math.Min(highestItems.size(), 5); i++)
+        writer.WriteInt32(Math.Min(highestItems.Count, 5));
+        for (int i = 0; i < Math.Min(highestItems.Count, 5); i++)
         {
             writer.WriteInt64(highestItems.get(i).getPrice());
             ItemInfo itemInfo = new ItemInfo(new Item(highestItems.get(i).getItemId()));

@@ -299,7 +299,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 			htmlContent.Replace("%bossStatus%", text);
 			htmlContent.Replace("%bossColor%", textColor);
 			htmlContent.Replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
-			htmlContent.Replace("%playersInside%", bossZone != null ? bossZone.getPlayersInside().size().ToString() : "Zone not found!");
+			htmlContent.Replace("%playersInside%", bossZone != null ? bossZone.getPlayersInside().Count.ToString() : "Zone not found!");
 			activeChar.sendPacket(html);
 		}
 		else

@@ -153,7 +153,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		writer.WriteInt32(_inventorySlots);
 		if (!_sellList.isEmpty())
 		{
-			writer.WriteInt16((short)_sellList.size());
+			writer.WriteInt16((short)_sellList.Count);
 			foreach (Item item in _sellList)
 			{
 				InventoryPacketHelper.WriteItem(writer, new ItemInfo(item));
@@ -167,7 +167,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 
 		if (!_refundList.isEmpty())
 		{
-			writer.WriteInt16((short)_refundList.size());
+			writer.WriteInt16((short)_refundList.Count);
 			int i = 0;
 			foreach (Item item in _refundList)
 			{

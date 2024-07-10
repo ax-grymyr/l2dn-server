@@ -71,8 +71,8 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			writer.WriteItemElemental(itemEnchantment);
 			writer.WriteItemEnsoulOptions(itemEnchantment);
 			writer.WriteByte(0); // 286
-			writer.WriteInt16((short)entry.getProducts().size());
-			writer.WriteInt16((short)entry.getIngredients().size());
+			writer.WriteInt16((short)entry.getProducts().Count);
+			writer.WriteInt16((short)entry.getIngredients().Count);
 			foreach (ItemChanceHolder product in entry.getProducts())
 			{
 				ItemTemplate template = ItemData.getInstance().getTemplate(product.getId());

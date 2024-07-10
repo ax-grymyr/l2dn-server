@@ -34,7 +34,7 @@ public readonly struct BuyListSeedPacket: IOutgoingPacket
         writer.WriteInt32(_manorId); // manor id
         if (!_list.isEmpty())
         {
-            writer.WriteInt16((short)_list.size()); // list length
+            writer.WriteInt16((short)_list.Count); // list length
             foreach (SeedProduction s in _list)
             {
                 writer.WriteByte(0); // mask item 0 to print minimum item information

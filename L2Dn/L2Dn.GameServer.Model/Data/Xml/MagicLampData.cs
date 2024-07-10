@@ -28,7 +28,7 @@ public class MagicLampData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MagicLampData.xml");
 		document.Elements("list").Elements("levelRange").ForEach(parseElement);
 		
-		LOGGER.Info("MagicLampData: Loaded " + LAMPS.size() + " magic lamps exp types.");
+		LOGGER.Info("MagicLampData: Loaded " + LAMPS.Count + " magic lamps exp types.");
 	}
 
 	private void parseElement(XElement element)

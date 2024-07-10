@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Utilities;
@@ -194,7 +195,7 @@ public class TimerExecutor<T>
 			return false;
 		}
 		
-		timers.forEach(x => x.cancelTimer());
+		timers.ForEach(x => x.cancelTimer());
 		return true;
 	}
 	

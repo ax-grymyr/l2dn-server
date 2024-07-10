@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
@@ -48,7 +49,7 @@ public class MagicLampManager
 			}
 		}
 		
-		rewards.values().forEach(lamp =>
+		rewards.Values.ForEach(lamp =>
 		{
 			int exp = (int) lamp.getExp();
 			int sp = (int) lamp.getSp();

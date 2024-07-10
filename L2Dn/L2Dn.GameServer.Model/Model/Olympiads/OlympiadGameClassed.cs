@@ -33,8 +33,8 @@ public class OlympiadGameClassed: OlympiadGameNormal
 		Participant[] opponents;
 		while (!classList.isEmpty())
 		{
-			list = classList.get(Rnd.get(classList.size()));
-			if ((list == null) || (list.size() < 2))
+			list = classList.get(Rnd.get(classList.Count));
+			if ((list == null) || (list.Count < 2))
 			{
 				classList.Remove(list);
 				continue;

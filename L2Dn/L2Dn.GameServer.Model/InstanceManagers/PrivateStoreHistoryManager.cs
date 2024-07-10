@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -128,7 +129,7 @@ public class PrivateStoreHistoryManager
 		}
 
 		List<ItemHistoryTransaction> list = new();
-		map.forEach(kvp => list.add(kvp.Value));
+		map.ForEach(kvp => list.add(kvp.Value));
 		list.Sort(new SortByQuantity());
 		return list;
 	}

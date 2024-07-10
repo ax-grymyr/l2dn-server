@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -73,7 +74,7 @@ public class DropSearchBoard: IParseBoardHandler
 	
 	private void buildDropIndex()
 	{
-		NpcData.getInstance().getTemplates(npc => npc.getDropGroups() != null).forEach(npcTemplate =>
+		NpcData.getInstance().getTemplates(npc => npc.getDropGroups() != null).ForEach(npcTemplate =>
 		{
 			foreach (DropGroupHolder dropGroup in npcTemplate.getDropGroups())
 			{
@@ -86,14 +87,14 @@ public class DropSearchBoard: IParseBoardHandler
                 }
 			}
 		});
-		NpcData.getInstance().getTemplates(npc => npc.getDropList() != null).forEach(npcTemplate =>
+		NpcData.getInstance().getTemplates(npc => npc.getDropList() != null).ForEach(npcTemplate =>
 		{
 			foreach (DropHolder dropHolder in npcTemplate.getDropList())
 			{
 				addToDropList(npcTemplate, dropHolder);
 			}
 		});
-		NpcData.getInstance().getTemplates(npc => npc.getSpoilList() != null).forEach(npcTemplate =>
+		NpcData.getInstance().getTemplates(npc => npc.getSpoilList() != null).ForEach(npcTemplate =>
 		{
 			foreach (DropHolder dropHolder in npcTemplate.getSpoilList())
 			{
@@ -101,7 +102,7 @@ public class DropSearchBoard: IParseBoardHandler
 			}
 		});
 
-        DROP_INDEX_CACHE.values().forEach(l
+        DROP_INDEX_CACHE.Values.ForEach(l
             => l.Sort((d1, d2) => d1.npcLevel.CompareTo(d2.npcLevel)));
     }
 	
@@ -143,14 +144,14 @@ public class DropSearchBoard: IParseBoardHandler
 				int itemId = int.Parse(@params[1]);
 				int page = int.Parse(@params[2]);
 				List<CBDropHolder> list = DROP_INDEX_CACHE.get(itemId);
-				int pages = list.size() / 14;
+				int pages = list.Count / 14;
 				if (pages == 0)
 				{
 					pages++;
 				}
 				
 				int start = (page - 1) * 14;
-				int end = Math.Min(list.size() - 1, start + 14);
+				int end = Math.Min(list.Count - 1, start + 14);
 				StringBuilder builder = new StringBuilder();
 				double dropAmountAdenaEffectBonus = player.getStat().getMul(Stat.BONUS_DROP_ADENA, 1);
 				double dropAmountEffectBonus = player.getStat().getMul(Stat.BONUS_DROP_AMOUNT, 1);
@@ -298,7 +299,7 @@ public class DropSearchBoard: IParseBoardHandler
 				}
 				else
 				{
-					NpcSpawnTemplate spawn = spawnList.get(Rnd.get(spawnList.size()));
+					NpcSpawnTemplate spawn = spawnList.get(Rnd.get(spawnList.Count));
 					Location? spawnLocation = spawn.getSpawnLocation();
 					if (spawnLocation != null)
 						player.getRadar().addMarker(spawnLocation.Value.X, spawnLocation.Value.Y, spawnLocation.Value.Z);
@@ -355,7 +356,7 @@ public class DropSearchBoard: IParseBoardHandler
 		
 		int line = 0;
 		
-		StringBuilder builder = new StringBuilder(items.size() * 28);
+		StringBuilder builder = new StringBuilder(items.Count * 28);
 		int i = 0;
 		foreach (ItemTemplate item in items)
 		{

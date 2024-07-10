@@ -19,9 +19,9 @@ public readonly struct ExPledgeRecruitBoardSearchPacket: IOutgoingPacket
     {
         _clanList = clanList;
         _currentPage = currentPage;
-        _totalNumberOfPage = (int)Math.Ceiling((double) _clanList.size() / CLAN_PER_PAGE);
+        _totalNumberOfPage = (int)Math.Ceiling((double) _clanList.Count / CLAN_PER_PAGE);
         _startIndex = (_currentPage - 1) * CLAN_PER_PAGE;
-        _endIndex = (_startIndex + CLAN_PER_PAGE) > _clanList.size() ? _clanList.size() : _startIndex + CLAN_PER_PAGE;
+        _endIndex = (_startIndex + CLAN_PER_PAGE) > _clanList.Count ? _clanList.Count : _startIndex + CLAN_PER_PAGE;
         _clanOnCurrentPage = _endIndex - _startIndex;
     }
 	

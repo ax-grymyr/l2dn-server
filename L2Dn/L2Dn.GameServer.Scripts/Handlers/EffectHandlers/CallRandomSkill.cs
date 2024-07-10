@@ -35,6 +35,6 @@ public class CallRandomSkill: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		SkillCaster.triggerCast(effector, effected, _skills.get(Rnd.get(_skills.size())).getSkill());
+		SkillCaster.triggerCast(effector, effected, _skills.get(Rnd.get(_skills.Count)).getSkill());
 	}
 }

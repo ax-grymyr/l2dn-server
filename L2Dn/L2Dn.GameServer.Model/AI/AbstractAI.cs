@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
@@ -572,7 +573,7 @@ public abstract class AbstractAI : Ctrl
 				{
 					pet.broadcastPacket(new AutoAttackStartPacket(pet.getObjectId()));
 				}
-				_actor.getServitors().values().forEach(s => s.broadcastPacket(new AutoAttackStartPacket(s.getObjectId())));
+				_actor.getServitors().Values.ForEach(s => s.broadcastPacket(new AutoAttackStartPacket(s.getObjectId())));
 			}
 			// Send a Server->Client packet AutoAttackStart to the actor and all Player in its _knownPlayers
 			_actor.broadcastPacket(new AutoAttackStartPacket(_actor.getObjectId()));

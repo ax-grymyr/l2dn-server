@@ -1,4 +1,5 @@
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
@@ -161,7 +162,7 @@ public class AdminInstance: IAdminCommandHandler
 				Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
 				if (instance != null)
 				{
-					instance.getPlayers().forEach(player => player.sendPacket(new ExShowScreenMessagePacket("Your instance has been destroyed by Game Master!", 10000)));
+					instance.getPlayers().ForEach(player => player.sendPacket(new ExShowScreenMessagePacket("Your instance has been destroyed by Game Master!", 10000)));
 					BuilderUtil.sendSysMessage(activeChar, "You destroyed Instance " + instance.getId() + " with " + instance.getPlayersCount() + " players inside.");
 					instance.destroy();
 					sendTemplateDetails(activeChar, instance.getTemplateId());
@@ -196,7 +197,7 @@ public class AdminInstance: IAdminCommandHandler
 			sb.Append("</tr>");
 			sb.Append("</table>");
 			
-			InstanceManager.getInstance().getInstances().Where(inst => (inst.getTemplateId() == templateId)).OrderBy(x => x.getPlayersCount()).forEach(instance =>
+			InstanceManager.getInstance().getInstances().Where(inst => (inst.getTemplateId() == templateId)).OrderBy(x => x.getPlayersCount()).ForEach(instance =>
 			{
 				sb.Append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
 				sb.Append("<tr>");

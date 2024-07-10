@@ -17,7 +17,7 @@ public readonly struct ExSubjugationListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SUBJUGATION_LIST);
         
-        writer.WriteInt32(_playerHolder.size());
+        writer.WriteInt32(_playerHolder.Count);
         foreach (var integerPurgePlayerHolderEntry in _playerHolder)
         {
             writer.WriteInt32(integerPurgePlayerHolderEntry.Key);

@@ -515,7 +515,7 @@ public class InstanceManager: DataReaderBase
 				foreach (int id in invalidPenalty)
 					ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
 
-				invalidPenalty.forEach(x => instanceTimes.remove(x));
+				invalidPenalty.ForEach(x => instanceTimes.remove(x));
 			}
 			catch (Exception e)
 			{

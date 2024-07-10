@@ -322,7 +322,7 @@ public class RaceManager: Npc
 			
 			// Use whole history, pickup from 'last element' and stop at 'latest element - 7'.
 			List<MonsterRace.HistoryInfo> history = MonsterRace.getInstance().getHistory();
-			for (int i = history.size() - 1; i >= Math.Max(0, history.size() - 7); i--)
+			for (int i = history.Count - 1; i >= Math.Max(0, history.Count - 7); i--)
 			{
 				MonsterRace.HistoryInfo info = history.get(i);
 				StringUtil.append(sb, "<tr><td><font color=\"LEVEL\">", "" + info.getRaceId(),

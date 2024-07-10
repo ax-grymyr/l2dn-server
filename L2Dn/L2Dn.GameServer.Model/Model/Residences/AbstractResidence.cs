@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
@@ -212,8 +213,8 @@ public abstract class AbstractResidence: INamable
 		}
 		finally
 		{
-			_functions.values().forEach(x => x.cancelExpiration());
-			_functions.clear();
+			_functions.Values.ForEach(x => x.cancelExpiration());
+			_functions.Clear();
 		}
 	}
 	

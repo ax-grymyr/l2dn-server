@@ -83,7 +83,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 		writer.WriteInt32((int)firstHit.getFlags());
 		writer.WriteInt32((int)firstHit.getGrade()); // GOD
 		writer.WriteLocation3D(_attackerLoc);
-		writer.WriteInt16((short)(_hits.size() - 1));
+		writer.WriteInt16((short)(_hits.Count - 1));
 
 		for (int index = 1; index < _hits.Count; index++)
 		{

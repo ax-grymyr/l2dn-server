@@ -1,4 +1,5 @@
 using L2Dn.Configuration;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
@@ -434,7 +435,7 @@ public class FortSiegeManager
 			player.broadcastUserInfo();
 			InventoryUpdatePacket iu = new InventoryUpdatePacket();
 			player.sendInventoryUpdate(iu);
-			SpawnData.getInstance().getSpawns().forEach(spawnTemplate => spawnTemplate.getGroupsByName(flag.getVariables().getString(FortSiege.GREG_SPAWN_VAR, FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN)).forEach(holder =>
+			SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.getGroupsByName(flag.getVariables().getString(FortSiege.GREG_SPAWN_VAR, FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN)).ForEach(holder =>
 			{
 				holder.spawnAll();
 				foreach (NpcSpawnTemplate nst in holder.getSpawns())
