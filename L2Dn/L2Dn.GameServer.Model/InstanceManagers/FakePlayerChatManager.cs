@@ -116,17 +116,17 @@ public class FakePlayerChatManager: DataReaderBase
 			{
 				case "EQUALS":
 				{
-					if (text.equals(chatHolder.getSearchText().get(0)))
+					if (text.equals(chatHolder.getSearchText()[0]))
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
+						sendChat(player, fpcName, chatHolder.getAnswers().GetRandomElement());
 					}
 					break;
 				}
 				case "STARTS_WITH":
 				{
-					if (text.startsWith(chatHolder.getSearchText().get(0)))
+					if (text.startsWith(chatHolder.getSearchText()[0]))
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
+						sendChat(player, fpcName, chatHolder.getAnswers().GetRandomElement());
 					}
 					break;
 				}
@@ -142,7 +142,7 @@ public class FakePlayerChatManager: DataReaderBase
 					}
 					if (allFound)
 					{
-						sendChat(player, fpcName, chatHolder.getAnswers().get(Rnd.get(chatHolder.getAnswers().Count)));
+						sendChat(player, fpcName, chatHolder.getAnswers().GetRandomElement());
 					}
 					break;
 				}

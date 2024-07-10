@@ -106,7 +106,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		
 		for (int index = 0; index < history.Count; index++)
 		{
-			historyTemp.add(history.get(index));
+			historyTemp.add(history[index]);
 			
 			if (index == history.Count - 1 || index == MAX_ITEM_PER_PAGE - 1 || (index > 0 && index % (MAX_ITEM_PER_PAGE - 1) == 0))
 			{

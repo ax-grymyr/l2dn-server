@@ -27,7 +27,7 @@ public struct ExRequestNewHennaEnchantResetPacket: IIncomingPacket<GameSession>
         ItemHolder enchant;
         try
         {
-            enchant = HennaPatternPotentialData.getInstance().getEnchantReset().get(dailyReset);
+            enchant = HennaPatternPotentialData.getInstance().getEnchantReset()[dailyReset];
         }
         catch (Exception e)
         {

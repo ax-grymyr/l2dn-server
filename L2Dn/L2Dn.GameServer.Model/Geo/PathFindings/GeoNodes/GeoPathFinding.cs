@@ -127,7 +127,7 @@ public class GeoPathFinding: PathFinding
 					for (int index = 0; index < toVisit.Count; index++)
 					{
 						// Supposed to find it quite early.
-						if (toVisit.get(index).getCost() > n.getCost())
+						if (toVisit[index].getCost() > n.getCost())
 						{
 							toVisit.add(index, n);
 							added = true;

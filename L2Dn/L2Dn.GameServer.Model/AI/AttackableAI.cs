@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.Events;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
@@ -312,7 +313,7 @@ public class AttackableAI: CreatureAI
 				else if (!npc.isInCombat()) // must pickup items
 				{
 					int itemIndex = npc.getFakePlayerDrops().Count - 1; // last item dropped - can also use 0 for first item dropped
-					Item droppedItem = npc.getFakePlayerDrops().get(itemIndex);
+					Item droppedItem = npc.getFakePlayerDrops()[itemIndex];
 					if ((droppedItem != null) && droppedItem.isSpawned())
 					{
 						if (npc.Distance2D(droppedItem) > 50)
@@ -750,9 +751,9 @@ public class AttackableAI: CreatureAI
 		}
 		
 		List<Skill> aiSuicideSkills = template.getAISkills(AISkillScope.SUICIDE);
-		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30) && npc.hasSkillChance())
+		if (!aiSuicideSkills.isEmpty() && ((int)((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30) && npc.hasSkillChance())
 		{
-			Skill skill = aiSuicideSkills.get(Rnd.get(aiSuicideSkills.Count));
+			Skill skill = aiSuicideSkills.GetRandomElement();
 			if (SkillCaster.checkUseConditions(npc, skill) && checkSkillTarget(skill, target))
 			{
 				npc.doCast(skill);
@@ -892,7 +893,7 @@ public class AttackableAI: CreatureAI
 			// First use the most important skill - heal. Even reconsider target.
 			if (!template.getAISkills(AISkillScope.HEAL).isEmpty())
 			{
-				Skill healSkill = template.getAISkills(AISkillScope.HEAL).get(Rnd.get(template.getAISkills(AISkillScope.HEAL).Count));
+				Skill healSkill = template.getAISkills(AISkillScope.HEAL).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, healSkill))
 				{
 					Creature healTarget = skillTargetReconsider(healSkill, false);
@@ -913,7 +914,7 @@ public class AttackableAI: CreatureAI
 			// Then use the second most important skill - buff. Even reconsider target.
 			if (!template.getAISkills(AISkillScope.BUFF).isEmpty())
 			{
-				Skill buffSkill = template.getAISkills(AISkillScope.BUFF).get(Rnd.get(template.getAISkills(AISkillScope.BUFF).Count));
+				Skill buffSkill = template.getAISkills(AISkillScope.BUFF).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, buffSkill))
 				{
 					Creature buffTarget = skillTargetReconsider(buffSkill, true);
@@ -930,7 +931,7 @@ public class AttackableAI: CreatureAI
 			// Then try to immobolize target if moving.
 			if (target.isMoving() && !template.getAISkills(AISkillScope.IMMOBILIZE).isEmpty())
 			{
-				Skill immobolizeSkill = template.getAISkills(AISkillScope.IMMOBILIZE).get(Rnd.get(template.getAISkills(AISkillScope.IMMOBILIZE).Count));
+				Skill immobolizeSkill = template.getAISkills(AISkillScope.IMMOBILIZE).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, immobolizeSkill) && checkSkillTarget(immobolizeSkill, target))
 				{
 					npc.doCast(immobolizeSkill);
@@ -942,7 +943,7 @@ public class AttackableAI: CreatureAI
 			// Then try to mute target if he is casting.
 			if (target.isCastingNow() && !template.getAISkills(AISkillScope.COT).isEmpty())
 			{
-				Skill muteSkill = template.getAISkills(AISkillScope.COT).get(Rnd.get(template.getAISkills(AISkillScope.COT).Count));
+				Skill muteSkill = template.getAISkills(AISkillScope.COT).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, muteSkill) && checkSkillTarget(muteSkill, target))
 				{
 					npc.doCast(muteSkill);
@@ -954,7 +955,7 @@ public class AttackableAI: CreatureAI
 			// Try cast short range skill.
 			if (!npc.getShortRangeSkills().isEmpty() && (npc.Distance2D(target) <= 150))
 			{
-				Skill shortRangeSkill = npc.getShortRangeSkills().get(Rnd.get(npc.getShortRangeSkills().Count));
+				Skill shortRangeSkill = npc.getShortRangeSkills().GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
 				{
 					npc.doCast(shortRangeSkill);
@@ -966,7 +967,7 @@ public class AttackableAI: CreatureAI
 			// Try cast long range skill.
 			if (!npc.getLongRangeSkills().isEmpty())
 			{
-				Skill longRangeSkill = npc.getLongRangeSkills().get(Rnd.get(npc.getLongRangeSkills().Count));
+				Skill longRangeSkill = npc.getLongRangeSkills().GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
 				{
 					npc.doCast(longRangeSkill);
@@ -978,7 +979,7 @@ public class AttackableAI: CreatureAI
 			// Finally, if none succeed, try to cast any skill.
 			if (!template.getAISkills(AISkillScope.GENERAL).isEmpty())
 			{
-				Skill generalSkill = template.getAISkills(AISkillScope.GENERAL).get(Rnd.get(template.getAISkills(AISkillScope.GENERAL).Count));
+				Skill generalSkill = template.getAISkills(AISkillScope.GENERAL).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
 				{
 					npc.doCast(generalSkill);
@@ -1182,7 +1183,7 @@ public class AttackableAI: CreatureAI
 		// Return any target.
 		if (!result.isEmpty())
 		{
-			return result.get(Rnd.get(result.Count));
+			return result.GetRandomElement();
 		}
 		
 		return null;
@@ -1216,7 +1217,7 @@ public class AttackableAI: CreatureAI
 			
 			if (!result.isEmpty())
 			{
-				return result.get(Rnd.get(result.Count));
+				return result.GetRandomElement();
 			}
 		}
 		

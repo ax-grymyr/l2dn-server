@@ -426,7 +426,7 @@ public class ClanEntryManager
 		List<PledgeRecruitInfo> sortedList = new();
 		for (int i = 0; i < sortedList.Count; i++)
 		{
-			PledgeRecruitInfo currentInfo = sortedList.get(i);
+			PledgeRecruitInfo currentInfo = sortedList[i];
 			if (((clanLevel < 0) && (karma >= 0) && (karma != currentInfo.getKarma())) || ((clanLevel >= 0) && (karma < 0) && (clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0))) || ((clanLevel >= 0) && (karma >= 0) && ((clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0)) || (karma != currentInfo.getKarma()))))
 			{
 				sortedList.RemoveAt(i--);

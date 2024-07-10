@@ -166,7 +166,7 @@ public class RaceManager: Npc
 				htmlContent.Replace("Mob" + n, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 				
 				// Odd
-				double odd = MonsterRace.getInstance().getOdds().get(i);
+				double odd = MonsterRace.getInstance().getOdds()[i];
 				htmlContent.Replace("Odd" + n, (odd > 0D) ? odd.ToString("N1") : "&$804;");
 			}
 
@@ -251,7 +251,7 @@ public class RaceManager: Npc
 			int bet = ticket.getCustomType2() * 100;
 			
 			// Retrieve HistoryInfo for that race.
-			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory().get(raceId - 1);
+			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory()[raceId - 1];
 			if (info == null)
 			{
 				base.onBypassFeedback(player, "Chat 0");
@@ -293,7 +293,7 @@ public class RaceManager: Npc
 			int bet = ticket.getCustomType2() * 100;
 			
 			// Retrieve HistoryInfo for that race.
-			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory().get(raceId - 1);
+			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory()[raceId - 1];
 			if (info == null)
 			{
 				base.onBypassFeedback(player, "Chat 0");
@@ -324,7 +324,7 @@ public class RaceManager: Npc
 			List<MonsterRace.HistoryInfo> history = MonsterRace.getInstance().getHistory();
 			for (int i = history.Count - 1; i >= Math.Max(0, history.Count - 7); i--)
 			{
-				MonsterRace.HistoryInfo info = history.get(i);
+				MonsterRace.HistoryInfo info = history[i];
 				StringUtil.append(sb, "<tr><td><font color=\"LEVEL\">", "" + info.getRaceId(),
 					"</font> th</td><td><font color=\"LEVEL\">", "" + info.getFirst(),
 					"</font> Lane </td><td><font color=\"LEVEL\">", "" + info.getSecond(),

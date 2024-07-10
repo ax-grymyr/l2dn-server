@@ -20,8 +20,8 @@ public class ShuttleEngine: Runnable
     public ShuttleEngine(ShuttleDataHolder data, Shuttle shuttle)
     {
         _shuttle = shuttle;
-        _door1 = DoorData.getInstance().getDoor(data.getDoors().get(0));
-        _door2 = DoorData.getInstance().getDoor(data.getDoors().get(1));
+        _door1 = DoorData.getInstance().getDoor(data.getDoors()[0]);
+        _door2 = DoorData.getInstance().getDoor(data.getDoors()[1]);
     }
 
 // TODO: Rework me..
@@ -58,7 +58,7 @@ public class ShuttleEngine: Runnable
                 }
                 case 2:
                 {
-                    _shuttle.executePath(_shuttle.getShuttleData().getRoutes().get(0));
+                    _shuttle.executePath(_shuttle.getShuttleData().getRoutes()[0]);
                     break;
                 }
                 case 3:
@@ -83,7 +83,7 @@ public class ShuttleEngine: Runnable
                 }
                 case 5:
                 {
-                    _shuttle.executePath(_shuttle.getShuttleData().getRoutes().get(1));
+                    _shuttle.executePath(_shuttle.getShuttleData().getRoutes()[1]);
                     break;
                 }
             }

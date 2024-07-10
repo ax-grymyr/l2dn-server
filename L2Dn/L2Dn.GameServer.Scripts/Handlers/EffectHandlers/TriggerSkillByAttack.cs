@@ -164,7 +164,7 @@ public class TriggerSkillByAttack: AbstractEffect
 		try
 		{
 			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(@event.getAttacker(),
-				@event.getTarget(), _triggerSkills == null ? _skill.getSkill() : _triggerSkills.get(0).getSkill(),
+				@event.getTarget(), _triggerSkills == null ? _skill.getSkill() : _triggerSkills[0].getSkill(),
 				false, false, false);
 		}
 		catch (Exception e)
@@ -227,7 +227,7 @@ public class TriggerSkillByAttack: AbstractEffect
 			}
 			if (triggerSkill == null)
 			{
-				triggerSkill = _triggerSkills.get(0).getSkill();
+				triggerSkill = _triggerSkills[0].getSkill();
 			}
 			
 			SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);

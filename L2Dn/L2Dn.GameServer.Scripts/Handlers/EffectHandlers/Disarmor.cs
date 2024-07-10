@@ -54,7 +54,7 @@ public class Disarmor: AbstractEffect
 			player.broadcastUserInfo();
 			
 			SystemMessagePacket sm;
-			Item unequippedItem = unequipped.get(0);
+			Item unequippedItem = unequipped[0];
 			if (unequippedItem.getEnchantLevel() > 0)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);

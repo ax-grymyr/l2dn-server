@@ -44,7 +44,7 @@ public struct ExRequestRandomCraftLockSlotPacket: IIncomingPacket<GameSession>
                 if (lcoin != null && lcoin.getCount() >= price)
                 {
                     player.destroyItem("RandomCraft Lock Slot", lcoin, price, player, true);
-                    rc.getRewards().get(_id).@lock();
+                    rc.getRewards()[_id].@lock();
                     player.sendPacket(new ExCraftRandomLockSlotPacket());
                     player.sendPacket(new ExCraftRandomInfoPacket(player));
                 }

@@ -3737,7 +3737,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		m.geoPathGty = md.geoPathGty;
 		m.geoPathAccurateTx = md.geoPathAccurateTx;
 		m.geoPathAccurateTy = md.geoPathAccurateTy;
-		Location3D geoNodeLocation = md.geoPath.get(m.onGeodataPathIndex).Location;
+		Location3D geoNodeLocation = md.geoPath[m.onGeodataPathIndex].Location;
 		if (md.onGeodataPathIndex == md.geoPath.Count - 2)
 		{
 			m.xDestination = md.geoPathAccurateTx;
@@ -3926,7 +3926,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		CreatureAttackTaskManager.getInstance().onSecondHitTimeForDual(this, weapon, attack, hitTime, attackTime, delayForSecondAttack);
 		
 		// First dual attack is the first hit only.
-		Hit hit = attack.getHits().get(0);
+		Hit hit = attack.getHits()[0];
 		Creature target = (Creature) hit.getTarget();
 		if (target == null || target.isDead() || !isInSurroundingRegion(target))
 		{
@@ -3955,7 +3955,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Second dual attack is the remaining hits (first hit not included)
 		for (int i = 1; i < attack.getHits().Count; i++)
 		{
-			Hit hit = attack.getHits().get(i);
+			Hit hit = attack.getHits()[i];
 			Creature target = (Creature) hit.getTarget();
 			if (target == null || target.isDead() || !isInSurroundingRegion(target))
 			{

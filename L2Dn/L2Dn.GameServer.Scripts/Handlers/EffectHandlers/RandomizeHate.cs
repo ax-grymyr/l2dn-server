@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -60,7 +61,7 @@ public class RandomizeHate: AbstractEffect
 		}
 		
 		// Choosing randomly a new target
-		Creature target = targetList.get(Rnd.get(targetList.Count));
+		Creature target = targetList.GetRandomElement();
 		long hate = effectedMob.getHating(effector);
 		effectedMob.stopHating(effector);
 		effectedMob.addDamageHate(target, 0, hate);

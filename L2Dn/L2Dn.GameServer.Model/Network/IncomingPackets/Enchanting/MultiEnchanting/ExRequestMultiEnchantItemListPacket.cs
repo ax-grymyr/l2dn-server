@@ -67,13 +67,13 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 		int[] slots = new int[_slotId];
 		for (int i = 1; i <= _slotId; i++)
 		{
-			if (!request.checkMultiEnchantingItemsByObjectId(_itemObjectId.get(i)))
+			if (!request.checkMultiEnchantingItemsByObjectId(_itemObjectId[i]))
 			{
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
 			
-			slots[i - 1] = getMultiEnchantingSlotByObjectId(request, _itemObjectId.get(i));
+			slots[i - 1] = getMultiEnchantingSlotByObjectId(request, _itemObjectId[i]);
 		}
 		
 		request.setProcessing(true);

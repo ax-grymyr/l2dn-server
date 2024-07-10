@@ -1090,7 +1090,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	
 	public int getTrapUpgradeLevel(int towerIndex)
 	{
-		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId()).get(towerIndex);
+		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId())[towerIndex];
 		return (spawn != null) ? spawn.getUpgradeLevel() : 0;
 	}
 	
@@ -1119,7 +1119,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				LOGGER.Error("Exception: setTrapUpgradeLevel(int towerIndex, int level, int castleId): " + e);
 			}
 		}
-		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId()).get(towerIndex);
+		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId())[towerIndex];
 		if (spawn != null)
 		{
 			spawn.setUpgradeLevel(level);

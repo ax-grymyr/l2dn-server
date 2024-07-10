@@ -208,7 +208,7 @@ public class AchievementBox
 		int id = -1;
 		for (int i = 1; i <= getBoxOwned(); i++)
 		{
-			AchievementBoxHolder holder = getAchievementBox().get(i - 1);
+			AchievementBoxHolder holder = getAchievementBox()[i - 1];
 			if (holder.getState() == AchievementBoxState.AVAILABLE)
 			{
 				free = holder;
@@ -245,7 +245,7 @@ public class AchievementBox
 			return;
 		}
 		
-		AchievementBoxHolder holder = getAchievementBox().get(slotId - 1);
+		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
 		if ((holder == null) || (_boxTimeForOpen != null))
 		{
 			return;
@@ -292,7 +292,7 @@ public class AchievementBox
 			return;
 		}
 		
-		AchievementBoxHolder holder = getAchievementBox().get(slotId - 1);
+		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
 		if ((holder != null) && _owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, _owner, true))
 		{
 			if (_pendingBoxSlotId == slotId)
@@ -326,7 +326,7 @@ public class AchievementBox
 			return;
 		}
 		
-		AchievementBoxHolder holder = getAchievementBox().get(_pendingBoxSlotId - 1);
+		AchievementBoxHolder holder = getAchievementBox()[_pendingBoxSlotId - 1];
 		if (holder != null)
 		{
 			finishAndUnlockChest(_pendingBoxSlotId);
@@ -371,7 +371,7 @@ public class AchievementBox
 			_pendingBoxSlotId = 0;
 		}
 		
-		getAchievementBox().get(id - 1).setState(AchievementBoxState.RECEIVE_REWARD);
+		getAchievementBox()[id - 1].setState(AchievementBoxState.RECEIVE_REWARD);
 		sendBoxUpdate();
 	}
 	
@@ -440,7 +440,7 @@ public class AchievementBox
 	
 	public void getReward(int slotId)
 	{
-		AchievementBoxHolder holder = getAchievementBox().get(slotId - 1);
+		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
 		if (holder.getState() != AchievementBoxState.RECEIVE_REWARD)
 		{
 			return;

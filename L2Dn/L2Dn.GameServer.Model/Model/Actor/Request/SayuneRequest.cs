@@ -98,7 +98,7 @@ public class SayuneRequest : AbstractRequest
 		
 		player.sendPacket(new ExFlyMovePacket(player, type, _mapId, locations));
 		
-		SayuneEntry activeEntry = locations.get(0);
+		SayuneEntry activeEntry = locations[0];
 		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcastPacket(player, type, map.getId(), activeEntry.Location), 1000);
 		player.setXYZ(activeEntry.Location.X, activeEntry.Location.Y, activeEntry.Location.Z);
 	}
@@ -117,7 +117,7 @@ public class SayuneRequest : AbstractRequest
 			else
 			{
 				// Try to find last entry to set player, if not set him to first entry
-				SayuneEntry lastEntry = map.getInnerEntries().get(map.getInnerEntries().Count - 1);
+				SayuneEntry lastEntry = map.getInnerEntries()[^1];
 				if (lastEntry != null)
 				{
 					getActiveChar().setXYZ(lastEntry.Location.X, lastEntry.Location.Y, lastEntry.Location.Z);

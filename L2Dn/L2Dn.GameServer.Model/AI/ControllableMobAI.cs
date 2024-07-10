@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -399,7 +400,7 @@ public class ControllableMobAI : AttackableAI
 			}
 		});
 		
-		return !potentialTarget.isEmpty() ? potentialTarget.get(Rnd.get(potentialTarget.Count)) : null;
+		return !potentialTarget.isEmpty() ? potentialTarget.GetRandomElement() : null;
 	}
 	
 	private ControllableMob findNextGroupTarget()

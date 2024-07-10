@@ -655,7 +655,7 @@ public class AdminSpawn: IAdminCommandHandler
 		int i = from;
 		for (int j = 0; (i < mobsCount) && (j < 50); i++, j++)
 		{
-			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs.get(i).getId() + "\">" + mobs.get(i).getName() + "</a><br1>");
+			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
 		}
 		
 		if (i == mobsCount)
@@ -682,7 +682,7 @@ public class AdminSpawn: IAdminCommandHandler
 		int i = from;
 		for (int j = 0; (i < mobsCount) && (j < 50); i++, j++)
 		{
-			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs.get(i).getId() + "\">" + mobs.get(i).getName() + "</a><br1>");
+			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
 		}
 		
 		if (i == mobsCount)

@@ -705,7 +705,7 @@ public class Player: Playable
 			result |= RelationChangedPacket.RELATION_HAS_PARTY;
 			for (int i = 0; i < party.getMembers().Count; i++)
 			{
-				if (party.getMembers().get(i) != this)
+				if (party.getMembers()[i] != this)
 				{
 					continue;
 				}
@@ -5830,7 +5830,7 @@ public class Player: Playable
 		if (!unequipped.isEmpty())
 		{
 			SystemMessagePacket sm;
-			Item unequippedItem = unequipped.get(0);
+			Item unequippedItem = unequipped[0];
 			if (unequippedItem.getEnchantLevel() > 0)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);
@@ -5867,7 +5867,7 @@ public class Player: Playable
 			if (!unequipped.isEmpty())
 			{
 				SystemMessagePacket sm;
-				Item unequippedItem = unequipped.get(0);
+				Item unequippedItem = unequipped[0];
 				if (unequippedItem.getEnchantLevel() > 0)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);
@@ -14904,15 +14904,15 @@ public class Player: Playable
 			return;
 		}
 		
-		int options = settings.get(0);
-		bool active = Config.RESUME_AUTO_PLAY && (settings.get(1) == 1);
-		bool pickUp = settings.get(2) == 1;
-		int nextTargetMode = settings.get(3);
-		bool shortRange = settings.get(4) == 1;
-		int potionPercent = settings.get(5);
-		bool respectfulHunting = settings.get(6) == 1;
-		int petPotionPercent = settings.Count < 8 ? 0 : settings.get(7);
-		int macroIndex = settings.Count < 9 ? 0 : settings.get(8);
+		int options = settings[0];
+		bool active = Config.RESUME_AUTO_PLAY && (settings[1] == 1);
+		bool pickUp = settings[2] == 1;
+		int nextTargetMode = settings[3];
+		bool shortRange = settings[4] == 1;
+		int potionPercent = settings[5];
+		bool respectfulHunting = settings[6] == 1;
+		int petPotionPercent = settings.Count < 8 ? 0 : settings[7];
+		int macroIndex = settings.Count < 9 ? 0 : settings[8];
 		
 		getAutoPlaySettings().setAutoPotionPercent(potionPercent);
 		getAutoPlaySettings().setOptions(options);
@@ -15704,7 +15704,7 @@ public class Player: Playable
 		for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 		{
 			int existingObjectId = getInventory().getPaperdollObjectId(i);
-			int itemObjectId = itemObjectIds.get(i);
+			int itemObjectId = itemObjectIds[i];
 			if (existingObjectId != itemObjectId)
 			{
 				changed = true;

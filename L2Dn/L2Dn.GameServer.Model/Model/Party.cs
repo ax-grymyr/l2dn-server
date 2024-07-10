@@ -116,7 +116,7 @@ public class Party : AbstractPlayerGroup
 				availableMembers.Add(member);
 			}
 		}
-		return !availableMembers.isEmpty() ? availableMembers.get(Rnd.get(availableMembers.Count)) : null;
+		return !availableMembers.isEmpty() ? availableMembers.GetRandomElement() : null;
 	}
 	
 	/**
@@ -1048,7 +1048,7 @@ public class Party : AbstractPlayerGroup
 		{
 			return null;
 		}
-		return _members.get(0);
+		return _members[0];
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)]

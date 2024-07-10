@@ -34,23 +34,25 @@ public readonly struct ExPledgeRecruitBoardSearchPacket: IOutgoingPacket
         writer.WriteInt32(_clanOnCurrentPage);
         for (int i = _startIndex; i < _endIndex; i++)
         {
-            writer.WriteInt32(_clanList.get(i).getClanId());
-            writer.WriteInt32(_clanList.get(i).getClan().getAllyId() ?? 0);
+            PledgeRecruitInfo recruitInfo = _clanList[i];
+            writer.WriteInt32(recruitInfo.getClanId());
+            writer.WriteInt32(recruitInfo.getClan().getAllyId() ?? 0);
         }
         
         for (int i = _startIndex; i < _endIndex; i++)
         {
-            Clan clan = _clanList.get(i).getClan();
+            PledgeRecruitInfo recruitInfo = _clanList[i];
+            Clan clan = recruitInfo.getClan();
             writer.WriteInt32(clan.getCrestId() ?? 0);
             writer.WriteInt32(clan.getAllyCrestId() ?? 0);
             writer.WriteString(clan.getName());
             writer.WriteString(clan.getLeaderName());
             writer.WriteInt32(clan.getLevel());
             writer.WriteInt32(clan.getMembersCount());
-            writer.WriteInt32(_clanList.get(i).getKarma());
-            writer.WriteString(_clanList.get(i).getInformation());
-            writer.WriteInt32(_clanList.get(i).getApplicationType()); // Helios
-            writer.WriteInt32(_clanList.get(i).getRecruitType()); // Helios
+            writer.WriteInt32(recruitInfo.getKarma());
+            writer.WriteString(recruitInfo.getInformation());
+            writer.WriteInt32(recruitInfo.getApplicationType()); // Helios
+            writer.WriteInt32(recruitInfo.getRecruitType()); // Helios
         }
     }
 }

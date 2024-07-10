@@ -66,7 +66,7 @@ public class BuyListTaskManager
 				Product product;
 				lock (PENDING_UPDATES)
 				{
-					product = PENDING_UPDATES.get(0);
+					product = PENDING_UPDATES[0];
 					PENDING_UPDATES.Remove(product);
 				}
 				product.restock();

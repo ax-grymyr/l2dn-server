@@ -2652,7 +2652,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			return default;
 		}
 		
-		return list.get(getRandom(list.Count));
+		return list[getRandom(list.Count)];
 	}
 	
 	/**

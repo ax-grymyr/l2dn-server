@@ -1113,7 +1113,7 @@ public class Formulas
 				List<BuffInfo> dances = target.getEffectList().getDances();
 				for (int i = dances.Count - 1; i >= 0; i--) // reverse order
 				{
-					BuffInfo info = dances.get(i);
+					BuffInfo info = dances[i];
 					if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
 					{
 						continue;
@@ -1131,7 +1131,7 @@ public class Formulas
 					List<BuffInfo> buffs = target.getEffectList().getBuffs();
 					for (int i = buffs.Count - 1; i >= 0; i--) // reverse order
 					{
-						BuffInfo info = buffs.get(i);
+						BuffInfo info = buffs[i];
 						if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
 						{
 							continue;
@@ -1150,7 +1150,7 @@ public class Formulas
 				List<BuffInfo> debuffs = target.getEffectList().getDebuffs();
 				for (int i = debuffs.Count - 1; i >= 0; i--)
 				{
-					BuffInfo info = debuffs.get(i);
+					BuffInfo info = debuffs[i];
 					if (info.getSkill().canBeDispelled() && Rnd.get(100) <= rate)
 					{
 						canceled.add(info);

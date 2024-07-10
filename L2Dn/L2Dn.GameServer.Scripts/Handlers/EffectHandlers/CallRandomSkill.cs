@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -35,6 +36,6 @@ public class CallRandomSkill: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		SkillCaster.triggerCast(effector, effected, _skills.get(Rnd.get(_skills.Count)).getSkill());
+		SkillCaster.triggerCast(effector, effected, _skills.GetRandomElement().getSkill());
 	}
 }

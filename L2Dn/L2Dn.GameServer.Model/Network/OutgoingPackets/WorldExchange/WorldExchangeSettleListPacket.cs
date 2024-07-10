@@ -75,7 +75,7 @@ public readonly struct WorldExchangeSettleListPacket: IOutgoingPacket
 		List<EnsoulOption> soul = (List<EnsoulOption>) holder.getItemInfo().getSoulCrystalOptions();
 		try
 		{
-			writer.WriteInt32(soul.get(0).getId());
+			writer.WriteInt32(soul[0].getId());
 		}
 		catch (IndexOutOfRangeException ignored)
 		{
@@ -84,7 +84,7 @@ public readonly struct WorldExchangeSettleListPacket: IOutgoingPacket
 		
 		try
 		{
-			writer.WriteInt32(soul.get(1).getId());
+			writer.WriteInt32(soul[1].getId());
 		}
 		catch (IndexOutOfRangeException ignored)
 		{
@@ -94,7 +94,7 @@ public readonly struct WorldExchangeSettleListPacket: IOutgoingPacket
 		List<EnsoulOption> specialSoul = (List<EnsoulOption>) holder.getItemInfo().getSoulCrystalSpecialOptions();
 		try
 		{
-			writer.WriteInt32(specialSoul.get(0).getId());
+			writer.WriteInt32(specialSoul[0].getId());
 		}
 		catch (IndexOutOfRangeException ignored)
 		{

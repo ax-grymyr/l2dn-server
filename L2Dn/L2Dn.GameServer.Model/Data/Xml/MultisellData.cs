@@ -172,7 +172,7 @@ public class MultisellData: DataReaderBase
 					             " at entry " + entryCounter + " of multisell " + listId + ".");
 					// Adjust price.
 					ItemChanceHolder ingredient = new(57, 0, totalPrice, 0,
-						ingredients.get(0).isMaintainIngredient());
+						ingredients[0].isMaintainIngredient());
 					ingredients.Clear();
 					ingredients.add(ingredient);
 				}

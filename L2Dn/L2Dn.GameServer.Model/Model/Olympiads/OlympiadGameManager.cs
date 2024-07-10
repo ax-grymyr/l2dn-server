@@ -72,7 +72,7 @@ public class OlympiadGameManager: Runnable
 				// set up the games queue
 				for (int i = 0; i < _tasks.Count; i++)
 				{
-					OlympiadGameTask task = _tasks.get(i).getTask();
+					OlympiadGameTask task = _tasks[i].getTask();
 					lock (task)
 					{
 						if (!task.isRunning())
@@ -183,7 +183,7 @@ public class OlympiadGameManager: Runnable
 		{
 			return null;
 		}
-		return _tasks.get(id).getTask();
+		return _tasks[id].getTask();
 	}
 	
 	public int getNumberOfStadiums()
@@ -204,7 +204,7 @@ public class OlympiadGameManager: Runnable
 			return;
 		}
 		
-		AbstractOlympiadGame game = _tasks.get(id).getTask().getGame();
+		AbstractOlympiadGame game = _tasks[id].getTask().getGame();
 		if (game != null)
 		{
 			game.addDamage(attacker, damage);

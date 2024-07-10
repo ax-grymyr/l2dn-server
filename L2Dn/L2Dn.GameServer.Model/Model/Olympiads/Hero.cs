@@ -32,12 +32,7 @@ namespace L2Dn.GameServer.Model.Olympiads;
 public class Hero
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Hero));
-	
-	private const String UPDATE_ALL = "UPDATE heroes SET played = 0";
-	private const String INSERT_HERO = "INSERT INTO heroes (charId, class_id, count, legend_count, played, claimed) VALUES (?,?,?,?,?,?)";
-	private const String UPDATE_HERO = "UPDATE heroes SET class_id = ?, count = ?, legend_count = ?, played = ?, claimed = ? WHERE charId = ?";
-	private const String GET_CLAN_ALLY = "SELECT characters.clanid AS clanid, coalesce(clan_data.ally_Id, 0) AS allyId FROM characters LEFT JOIN clan_data ON clan_data.clan_id = characters.clanid WHERE characters.charId = ?";
-	
+
 	private static readonly Map<int, StatSet> HEROES = new();
 	private static readonly Map<int, StatSet> COMPLETE_HEROS = new();
 	private static readonly Map<int, StatSet> HERO_COUNTS = new();
@@ -430,7 +425,7 @@ public class Hero
 					for (int i = (page - 1) * perpage; i < list.Count; i++)
 					{
 						breakat = i;
-						StatSet diaryEntry = list.get(i);
+						StatSet diaryEntry = list[i];
 						fList.Append("<tr><td>");
 						if (color)
 						{
@@ -517,7 +512,7 @@ public class Hero
 					for (int i = (page - 1) * perpage; i < heroFights.Count; i++)
 					{
 						breakat = i;
-						StatSet fight = heroFights.get(i);
+						StatSet fight = heroFights[i];
 						fList.Append("<tr><td>");
 						if (color)
 						{

@@ -283,18 +283,18 @@ public class MonsterRace
 					_race._state = RaceState.RACE_END;
 					
 					// Populate history info with data, stores it in database.
-					HistoryInfo info = _race._history.get(_race._history.Count - 1);
+					HistoryInfo info = _race._history[^1];
 					info.setFirst(_race.getFirstPlace());
 					info.setSecond(_race.getSecondPlace());
-					info.setOddRate(_race._odds.get(_race.getFirstPlace() - 1));
+					info.setOddRate(_race._odds[_race.getFirstPlace() - 1]);
 					
 					_race.saveHistory(info);
 					_race.clearBets();
 					
-					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.FIRST_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S1_SECOND_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S2);
+					SystemMessagePacket msg = new(SystemMessageId.FIRST_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S1_SECOND_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S2);
 					msg.Params.addInt(_race.getFirstPlace());
 					msg.Params.addInt(_race.getSecondPlace());
-					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S1_IS_FINISHED);
+					SystemMessagePacket msg2 = new(SystemMessageId.MONSTER_RACE_S1_IS_FINISHED);
 					msg2.Params.addInt(_race._raceNumber);
 					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(msg, msg2);
 					_race._raceNumber++;

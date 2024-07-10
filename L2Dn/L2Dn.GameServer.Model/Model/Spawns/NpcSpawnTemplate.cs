@@ -254,7 +254,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 
 		if (!_group.getTerritories().isEmpty())
 		{
-			SpawnTerritory territory = _group.getTerritories().get(Rnd.get(_group.getTerritories().Count));
+			SpawnTerritory territory = _group.getTerritories().GetRandomElement();
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();
@@ -281,7 +281,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		}
 		else if (!_spawnTemplate.getTerritories().isEmpty())
 		{
-			SpawnTerritory territory = _spawnTemplate.getTerritories().get(Rnd.get(_spawnTemplate.getTerritories().Count));
+			SpawnTerritory territory = _spawnTemplate.getTerritories().GetRandomElement();
 			for (int i = 0; i < 100; i++)
 			{
 				Location3D loc = territory.getRandomPoint();

@@ -393,7 +393,7 @@ public class NpcViewMod: IBypassHandler
 		{
 			StringBuilder sb = new StringBuilder();
 			int height = 64;
-			DropHolder dropItem = dropList.get(i);
+			DropHolder dropItem = dropList[i];
 			ItemTemplate item = ItemData.getInstance().getTemplate(dropItem.getItemId());
 			
 			// real time server rate calculations

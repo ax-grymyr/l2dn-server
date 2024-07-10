@@ -50,7 +50,7 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
                     continue;
                 }
                 
-                _reqs.add(new Req(99, item.get(0).getId(), item.get(0).getCount(), 50));
+                _reqs.add(new Req(99, item[0].getId(), item[0].getCount(), 50));
             }
         }
     }
@@ -73,7 +73,7 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
         _reqs = new();
         foreach (List<ItemHolder> item in skillLearn.getRequiredItems())
         {
-            _reqs.add(new Req(99, item.get(0).getId(), item.get(0).getCount(), 50));
+            _reqs.add(new Req(99, item[0].getId(), item[0].getCount(), 50));
         }
     }
 	

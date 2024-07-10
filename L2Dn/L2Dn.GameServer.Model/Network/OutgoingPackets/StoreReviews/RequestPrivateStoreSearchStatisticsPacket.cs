@@ -20,18 +20,18 @@ public readonly struct RequestPrivateStoreSearchStatisticsPacket: IOutgoingPacke
         for (int i = 0; i < Math.Min(mostItems.Count, 5); i++)
         {
             writer.WriteInt32((int) mostItems[i].getCount());
-            ItemInfo itemInfo = new ItemInfo(new Item(mostItems.get(i).getItemId()));
+            ItemInfo itemInfo = new ItemInfo(new Item(mostItems[i].getItemId()));
             writer.WriteInt32(InventoryPacketHelper.CalculatePacketSize(itemInfo /* , mostItems.get(i).getCount() */));
-            InventoryPacketHelper.WriteItem(writer, itemInfo, mostItems.get(i).getCount());
+            InventoryPacketHelper.WriteItem(writer, itemInfo, mostItems[i].getCount());
         }
 		
         writer.WriteInt32(Math.Min(highestItems.Count, 5));
         for (int i = 0; i < Math.Min(highestItems.Count, 5); i++)
         {
-            writer.WriteInt64(highestItems.get(i).getPrice());
-            ItemInfo itemInfo = new ItemInfo(new Item(highestItems.get(i).getItemId()));
+            writer.WriteInt64(highestItems[i].getPrice());
+            ItemInfo itemInfo = new ItemInfo(new Item(highestItems[i].getItemId()));
             writer.WriteInt32(InventoryPacketHelper.CalculatePacketSize(itemInfo /* , highestItems.get(i).getCount() */));
-            InventoryPacketHelper.WriteItem(writer, itemInfo, highestItems.get(i).getCount());
+            InventoryPacketHelper.WriteItem(writer, itemInfo, highestItems[i].getCount());
         }
     }
 }

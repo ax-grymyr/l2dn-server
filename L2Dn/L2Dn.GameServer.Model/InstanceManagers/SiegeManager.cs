@@ -269,7 +269,7 @@ public class SiegeManager
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
 			{
-				_flameTowers.get(castleId).get(record.TowerIndex).setUpgradeLevel(record.Level);
+				_flameTowers.get(castleId)[record.TowerIndex].setUpgradeLevel(record.Level);
 			}
 		}
 		catch (Exception e)

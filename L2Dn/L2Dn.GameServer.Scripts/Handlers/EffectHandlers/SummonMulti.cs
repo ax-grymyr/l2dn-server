@@ -41,7 +41,7 @@ public class SummonMulti: AbstractEffect
 			_levelTemplates = new();
 			for (int i = 0; i < npcIds.Count; i++)
 			{
-				_levelTemplates.put(summonerLevels.get(i), npcIds.get(i));
+				_levelTemplates.put(summonerLevels[i], npcIds[i]);
 			}
 		}
 		_expMultiplier = @params.getFloat("expMultiplier", 1);

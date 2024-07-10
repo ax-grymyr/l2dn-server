@@ -333,8 +333,8 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			List<Location3D> list = holder.getNodes();
 			for (int i = 1; i < list.Count; i++)
 			{
-				prevLoc = list.get(i - 1);
-				nextLoc = list.get(i);
+				prevLoc = list[i - 1];
+				nextLoc = list[i];
 				if (holder.getMinZ() != 0)
 				{
 					exsp.addLine("Min Point " + i + " > " + (i + 1), Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());
@@ -346,8 +346,8 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				}
 			}
 			
-			prevLoc = list.get(list.Count - 1);
-			nextLoc = list.get(0);
+			prevLoc = list[^1];
+			nextLoc = list[0];
 			if (holder.getMinZ() != 0)
 			{
 				exsp.addLine("Min Point " + list.Count + " > 1", Colors.CYAN, true, prevLoc.X, prevLoc.Y, holder.getMinZ(), nextLoc.X, nextLoc.Y, holder.getMinZ());

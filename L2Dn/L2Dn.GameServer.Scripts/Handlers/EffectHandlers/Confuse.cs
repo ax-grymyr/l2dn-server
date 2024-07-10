@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -51,7 +52,7 @@ public class Confuse: AbstractEffect
 		if (!targetList.isEmpty())
 		{
 			// Choosing randomly a new target
-			Creature target = targetList.get(Rnd.get(targetList.Count));
+			Creature target = targetList.GetRandomElement();
 			// Attacking the target
 			effected.setTarget(target);
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);

@@ -1,3 +1,4 @@
+using L2Dn.Extensions;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -33,14 +34,14 @@ public class OlympiadGameClassed: OlympiadGameNormal
 		Participant[] opponents;
 		while (!classList.isEmpty())
 		{
-			list = classList.get(Rnd.get(classList.Count));
+			list = classList.GetRandomElement();
 			if ((list == null) || (list.Count < 2))
 			{
 				classList.Remove(list);
 				continue;
 			}
 			
-			opponents = OlympiadGameNormal.createListOfParticipants(list);
+			opponents = createListOfParticipants(list);
 			if (opponents == null)
 			{
 				classList.Remove(list);

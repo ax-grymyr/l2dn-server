@@ -230,7 +230,7 @@ public class PlayerRandomCraft
 				}
 				else
 				{
-					holder = _rewardList.get(i);
+					holder = _rewardList[i];
 				}
 				
 				if (holder == null)
@@ -286,7 +286,7 @@ public class PlayerRandomCraft
 		if (_player.reduceAdena("RandomCraft Make", Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
 		{
 			int madeId = Rnd.get(0, 4);
-			RandomCraftRewardItemHolder holder = _rewardList.get(madeId);
+			RandomCraftRewardItemHolder holder = _rewardList[madeId];
 			_rewardList.Clear();
 			
 			int itemId = holder.getItemId();

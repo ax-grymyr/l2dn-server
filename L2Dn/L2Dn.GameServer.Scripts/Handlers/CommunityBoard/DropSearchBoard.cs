@@ -159,7 +159,7 @@ public class DropSearchBoard: IParseBoardHandler
 				double spoilRateEffectBonus = player.getStat().getMul(Stat.BONUS_SPOIL_RATE, 1);
 				for (int index = start; index <= end; index++)
 				{
-					CBDropHolder cbDropHolder = list.get(index);
+					CBDropHolder cbDropHolder = list[index];
 					
 					// real time server rate calculations
 					double rateChance = 1;
@@ -299,7 +299,7 @@ public class DropSearchBoard: IParseBoardHandler
 				}
 				else
 				{
-					NpcSpawnTemplate spawn = spawnList.get(Rnd.get(spawnList.Count));
+					NpcSpawnTemplate spawn = spawnList.GetRandomElement();
 					Location? spawnLocation = spawn.getSpawnLocation();
 					if (spawnLocation != null)
 						player.getRadar().addMarker(spawnLocation.Value.X, spawnLocation.Value.Y, spawnLocation.Value.Z);

@@ -26,7 +26,7 @@ public class StatMulForLevel: AbstractEffect
 		int index = 0;
 		foreach (int level in @params.getIntegerList("level"))
 		{
-			_values.put(level,amount.get(index++));
+			_values.put(level,amount[index++]);
 		}
 		
 		if (@params.getEnum("mode", StatModifierType.PER) != StatModifierType.PER)

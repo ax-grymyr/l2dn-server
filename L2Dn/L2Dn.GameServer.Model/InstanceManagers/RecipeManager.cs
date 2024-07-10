@@ -432,7 +432,7 @@ public class RecipeManager
 			int grabItems = _itemGrab;
 			while ((grabItems > 0) && !_items.isEmpty())
 			{
-				TempItem item = _items.get(0);
+				TempItem item = _items[0];
 				int count = item.getQuantity();
 				if (count >= grabItems)
 				{
