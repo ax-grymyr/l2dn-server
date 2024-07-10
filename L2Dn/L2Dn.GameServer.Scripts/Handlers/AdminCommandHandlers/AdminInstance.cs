@@ -226,7 +226,7 @@ public class AdminInstance: IAdminCommandHandler
 		InstanceManager instManager = InstanceManager.getInstance();
 		List<InstanceTemplate> templateList = instManager.getInstanceTemplates()
 			.OrderByDescending(x => x.getWorldCount())
-			.Where(template => !CommonUtil.contains(IGNORED_TEMPLATES, template.getId())).ToList();
+			.Where(template => Array.IndexOf(IGNORED_TEMPLATES, template.getId()) < 0).ToList();
 		
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")

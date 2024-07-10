@@ -2693,7 +2693,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		if (target != null && target is T)
 		{
-			return CommonUtil.contains(ids, target.getId());
+			return Array.IndexOf(ids, target.getId()) >= 0;
 		}
 		return false;
 	}

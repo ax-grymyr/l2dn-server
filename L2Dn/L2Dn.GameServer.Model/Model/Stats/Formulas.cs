@@ -264,7 +264,7 @@ public class Formulas
 					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1);
 			}
 
-			return CommonUtil.constrain(rate * statBonus * rateBonus * rateDefenceBonus * balanceMod, 5, 90) > Rnd.get(100);
+			return Math.Clamp(rate * statBonus * rateBonus * rateDefenceBonus * balanceMod, 5, 90) > Rnd.get(100);
 		}
 
 		// Autoattack critical rate.
@@ -282,7 +282,7 @@ public class Formulas
 		}
 
 		// Autoattack critical rate is limited between 3%-97%.
-		rate = CommonUtil.constrain(rate, 3, 97);
+		rate = Math.Clamp(rate, 3, 97);
 
 		balanceMod = 1;
 		if (creature.isPlayable())
@@ -762,7 +762,7 @@ public class Formulas
 		double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
 		double buffDebuffMod = skill.isDebuff() ? target.getStat().getValue(Stat.RESIST_ABNORMAL_DEBUFF, 1) : 1;
 		double rate = baseMod * elementMod * traitMod * buffDebuffMod;
-		double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
+		double finalRate = traitMod > 0 ? Math.Clamp(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
 
 		if (finalRate <= Rnd.get(100) && target != attacker)
 		{
@@ -1174,7 +1174,7 @@ public class Formulas
 
 		return
 			Rnd.get(100) <
-			CommonUtil.constrain(chance, 25, 75); // TODO: i_dispel_by_slot_probability Min = 40, Max = 95.
+			Math.Clamp(chance, 25, 75); // TODO: i_dispel_by_slot_probability Min = 40, Max = 95.
 	}
 
 	/**

@@ -66,7 +66,7 @@ public class TriggerSkillByMagicType: AbstractEffect
 		}
 		
 		Skill eventSkill = @event.getSkill();
-		if (!CommonUtil.contains(_magicTypes, eventSkill.getMagicType()))
+		if (Array.IndexOf(_magicTypes, eventSkill.getMagicType()) < 0)
 		{
 			return;
 		}

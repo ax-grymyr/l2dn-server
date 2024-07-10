@@ -937,7 +937,7 @@ public abstract class Summon: Playable
 		
 		// Sin eater, Big Boom, Wyvern can't attack with attack button.
 		int npcId = getId();
-		if (CommonUtil.contains(PASSIVE_SUMMONS, npcId))
+		if (Array.IndexOf(PASSIVE_SUMMONS, npcId) >= 0)
 		{
 			_owner.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
