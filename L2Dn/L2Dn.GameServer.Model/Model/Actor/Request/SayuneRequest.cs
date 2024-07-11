@@ -14,11 +14,11 @@ public class SayuneRequest : AbstractRequest
 
 	public SayuneRequest(Player player, int mapId): base(player)
 	{
-		_mapId = mapId;
-		
-		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
-		Objects.requireNonNull(map);
+		SayuneEntry? map = SayuneData.getInstance().getMap(mapId);
+		if (map is null)
+			throw new ArgumentException("Invalid mapId", nameof(mapId));
 
+		_mapId = mapId;
 		foreach (SayuneEntry entry in map.getInnerEntries())
 			_possibleEntries.Enqueue(entry);
 	}

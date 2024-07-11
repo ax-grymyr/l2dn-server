@@ -16,8 +16,8 @@ public class FlyMoveStartTask: Runnable
 
 	public FlyMoveStartTask(ZoneType zone, Player player)
 	{
-		Objects.requireNonNull(zone);
-		Objects.requireNonNull(player);
+		ArgumentNullException.ThrowIfNull(zone);
+		ArgumentNullException.ThrowIfNull(player);
 		_player = player;
 		_zone = zone;
 	}

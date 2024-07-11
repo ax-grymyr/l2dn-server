@@ -45,14 +45,14 @@ public class PageBuilder<T>
 	
 	public PageBuilder<T> bodyHandler(Action<int, T, StringBuilder> bodyHandler)
 	{
-		Objects.requireNonNull(bodyHandler, "Body Handler cannot be null!");
+		ArgumentNullException.ThrowIfNull(bodyHandler);
 		_bodyHandler = bodyHandler;
 		return this;
 	}
 	
 	public PageBuilder<T> bodyHandler(IBodyHandler<T> bodyHandler)
 	{
-		Objects.requireNonNull(bodyHandler, "Body Handler cannot be null!");
+		ArgumentNullException.ThrowIfNull(bodyHandler);
 		_bodyHandler = bodyHandler.apply;
 		return this;
 	}
@@ -60,29 +60,30 @@ public class PageBuilder<T>
 	
 	public PageBuilder<T> pageHandler(IPageHandler pageHandler)
 	{
-		Objects.requireNonNull(pageHandler, "Page Handler cannot be null!");
+		ArgumentNullException.ThrowIfNull(pageHandler);
 		_pageHandler = pageHandler;
 		return this;
 	}
 	
 	public PageBuilder<T> formatter(IBypassFormatter formatter)
 	{
-		Objects.requireNonNull(formatter, "Formatter cannot be null!");
+		ArgumentNullException.ThrowIfNull(formatter);
 		_formatter = formatter;
 		return this;
 	}
 	
 	public PageBuilder<T> style(IHtmlStyle style)
 	{
-		Objects.requireNonNull(style, "Style cannot be null!");
+		ArgumentNullException.ThrowIfNull(style);
 		_style = style;
 		return this;
 	}
 	
 	public PageResult build()
 	{
-		Objects.requireNonNull(_bodyHandler, "Body was not set!");
-		
+		if (_bodyHandler is null)
+			throw new InvalidOperationException("Body was not set!");
+
 		int pages = (_elements.Count / _elementsPerPage) + ((_elements.Count % _elementsPerPage) > 0 ? 1 : 0);
 		StringBuilder pagerTemplate = new StringBuilder();
 		if (pages > 1)

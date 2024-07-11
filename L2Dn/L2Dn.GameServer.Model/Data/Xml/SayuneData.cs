@@ -55,7 +55,7 @@ public class SayuneData: DataReaderBase
 		});
 	}
 	
-	public SayuneEntry getMap(int id)
+	public SayuneEntry? getMap(int id)
 	{
 		return _maps.get(id);
 	}

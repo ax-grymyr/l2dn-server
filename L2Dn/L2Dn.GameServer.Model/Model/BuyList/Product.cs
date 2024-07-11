@@ -20,7 +20,7 @@ public class Product
 	
 	public Product(int buyListId, ItemTemplate item, long price, ProductRestock? restock, int baseTax)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		_buyListId = buyListId;
 		_item = item;
 		_price = price < 0 ? item.getReferencePrice() : price;

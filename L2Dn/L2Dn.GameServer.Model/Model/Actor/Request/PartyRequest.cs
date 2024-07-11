@@ -9,8 +9,8 @@ public class PartyRequest: AbstractRequest
 
     public PartyRequest(Player player, Player targetPlayer, Party party): base(player)
     {
-        Objects.requireNonNull(targetPlayer);
-        Objects.requireNonNull(party);
+        ArgumentNullException.ThrowIfNull(targetPlayer);
+        ArgumentNullException.ThrowIfNull(party);
         _targetPlayer = targetPlayer;
         _party = party;
     }

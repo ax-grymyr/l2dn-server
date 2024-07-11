@@ -50,9 +50,9 @@ public class SkillCaster: Runnable
 	private SkillCaster(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType,
 		bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
-		Objects.requireNonNull(caster);
-		Objects.requireNonNull(skill);
-		Objects.requireNonNull(castingType);
+		ArgumentNullException.ThrowIfNull(caster);
+		ArgumentNullException.ThrowIfNull(skill);
+		ArgumentNullException.ThrowIfNull(castingType);
 
 		_caster = new WeakReference<Creature>(caster);
 		_target = new WeakReference<WorldObject>(target);

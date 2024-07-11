@@ -55,7 +55,7 @@ public class WarehouseItem
 	
 	public WarehouseItem(Item item)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		_item = item.getTemplate();
 		_object = item.getObjectId();
 		_count = item.getCount();

@@ -8,11 +8,11 @@ public abstract class AbstractRequest
     private readonly Player _player;
     private DateTime _timestamp;
     private volatile bool _isProcessing;
-    private ScheduledFuture _timeOutTask;
+    private ScheduledFuture? _timeOutTask;
 
-    public AbstractRequest(Player player)
+    protected AbstractRequest(Player player)
     {
-        Objects.requireNonNull(player);
+        ArgumentNullException.ThrowIfNull(player);
         _player = player;
     }
 

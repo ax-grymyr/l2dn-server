@@ -40,7 +40,7 @@ public class TradeItem
 	
 	public TradeItem(Item item, long count, long price)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		_objectId = item.getObjectId();
 		_item = item.getTemplate();
 		_location = item.getLocationSlot();
@@ -69,7 +69,7 @@ public class TradeItem
 	
 	public TradeItem(ItemTemplate item, long count, long price)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		_objectId = 0;
 		_item = item;
 		_location = 0;
@@ -88,7 +88,7 @@ public class TradeItem
 	
 	public TradeItem(TradeItem item, long count, long price)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		_objectId = item.getObjectId();
 		_item = item.getItem();
 		_location = item.getLocationSlot();

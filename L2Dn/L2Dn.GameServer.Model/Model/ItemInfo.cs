@@ -78,7 +78,7 @@ public class ItemInfo
 	 */
 	public ItemInfo(Item item)
 	{
-		Objects.requireNonNull(item);
+		ArgumentNullException.ThrowIfNull(item);
 		
 		// Get the Identifier of the Item
 		_objectId = item.getObjectId();

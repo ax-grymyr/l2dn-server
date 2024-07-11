@@ -14,13 +14,13 @@ public class BypassBuilder
 	
     public void addParam(BypassParam param)
     {
-        Objects.requireNonNull(param, "param cannot be null!");
+        ArgumentNullException.ThrowIfNull(param);
         _params.Add(param);
     }
 	
     public void addParam(string name, string? separator, object? value)
     {
-        Objects.requireNonNull(name, "name cannot be null!");
+        ArgumentNullException.ThrowIfNull(name);
         addParam(new BypassParam(name, separator, value));
     }
 	
