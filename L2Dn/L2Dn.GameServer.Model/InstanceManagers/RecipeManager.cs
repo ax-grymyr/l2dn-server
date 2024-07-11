@@ -31,7 +31,7 @@ public class RecipeManager
 	public void requestBookOpen(Player player, bool isDwarvenCraft)
 	{
 		// Check if player is trying to alter recipe book while engaged in manufacturing.
-		if (!_activeMakers.containsKey(player.getObjectId()))
+		if (!_activeMakers.ContainsKey(player.getObjectId()))
 		{
 			ICollection<RecipeList> recipes = isDwarvenCraft ? player.getDwarvenRecipeBook() : player.getCommonRecipeBook();
 			RecipeBookItemListPacket response = new RecipeBookItemListPacket(recipes, isDwarvenCraft, player.getMaxMp());
@@ -64,7 +64,7 @@ public class RecipeManager
 		}
 		
 		// Check if manufacturer is under manufacturing store or private store.
-		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(manufacturer.getObjectId()))
+		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(manufacturer.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.PLEASE_CLOSE_THE_SETUP_WINDOW_FOR_YOUR_PRIVATE_WORKSHOP_OR_PRIVATE_STORE_AND_TRY_AGAIN);
 			return;
@@ -107,7 +107,7 @@ public class RecipeManager
 		}
 		
 		// Check if player is busy (possible if alt game creation is enabled)
-		if (Config.ALT_GAME_CREATION && _activeMakers.containsKey(player.getObjectId()))
+		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(player.getObjectId()))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_S1);
 			sm.Params.addItemName(recipeList.getItemId());
@@ -280,7 +280,7 @@ public class RecipeManager
 			// return;
 			// }
 			
-			if (Config.ALT_GAME_CREATION && !_activeMakers.containsKey(_player.getObjectId()))
+			if (Config.ALT_GAME_CREATION && !_activeMakers.ContainsKey(_player.getObjectId()))
 			{
 				if (_target != _player)
 				{

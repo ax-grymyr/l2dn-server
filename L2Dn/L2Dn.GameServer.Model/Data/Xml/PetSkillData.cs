@@ -58,13 +58,13 @@ public class PetSkillData: DataReaderBase
 	public int getAvailableLevel(Summon pet, int skillId)
 	{
 		int level = 0;
-		if (!_skillTrees.containsKey(pet.getId()))
+		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
 		{
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return level;
 		}
 		
-		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillHolder.getSkillId() != skillId)
 			{
@@ -105,13 +105,13 @@ public class PetSkillData: DataReaderBase
 	public List<int> getAvailableSkills(Summon pet)
 	{
 		List<int> skillIds = new();
-		if (!_skillTrees.containsKey(pet.getId()))
+		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
 		{
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return skillIds;
 		}
 		
-		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillIds.Contains(skillHolder.getSkillId()))
 			{
@@ -126,12 +126,12 @@ public class PetSkillData: DataReaderBase
 	public List<Skill> getKnownSkills(Summon pet)
 	{
 		List<Skill> skills = new();
-		if (!_skillTrees.containsKey(pet.getId()))
+		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
 		{
 			return skills;
 		}
 		
-		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			Skill skill = skillHolder.getSkill();
 			if (skills.Contains(skill))
@@ -147,12 +147,12 @@ public class PetSkillData: DataReaderBase
 	
 	public Skill getKnownSkill(Summon pet, int skillId)
 	{
-		if (!_skillTrees.containsKey(pet.getId()))
+		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
 		{
 			return null;
 		}
 		
-		foreach (SkillHolder skillHolder in _skillTrees.get(pet.getId()).values())
+		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillHolder.getSkillId() == skillId)
 			{

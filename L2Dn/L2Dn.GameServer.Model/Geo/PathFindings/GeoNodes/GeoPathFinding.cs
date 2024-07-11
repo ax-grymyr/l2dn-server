@@ -18,7 +18,7 @@ public class GeoPathFinding: PathFinding
 	
 	public override bool pathNodesExist(short regionoffset)
 	{
-		return PATH_NODE_INDEX.containsKey(regionoffset);
+		return PATH_NODE_INDEX.ContainsKey(regionoffset);
 	}
 	
 	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)

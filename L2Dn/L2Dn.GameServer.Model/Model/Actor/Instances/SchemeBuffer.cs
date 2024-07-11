@@ -171,7 +171,7 @@ public class SchemeBuffer : Npc
 						return;
 					}
 					
-					if (schemes.containsKey(schemeName))
+					if (schemes.ContainsKey(schemeName))
 					{
 						player.sendMessage("The scheme name already exists.");
 						return;
@@ -192,7 +192,7 @@ public class SchemeBuffer : Npc
 			{
 				string schemeName = st.nextToken();
 				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
-				if ((schemes != null) && schemes.containsKey(schemeName))
+				if ((schemes != null) && schemes.ContainsKey(schemeName))
 				{
 					schemes.remove(schemeName);
 				}

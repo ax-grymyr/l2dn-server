@@ -28,7 +28,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         }
         foreach (CropProcure crop in CastleManorManager.getInstance().getCropProcure(_manorId, false))
         {
-            if (_cropsItems.containsKey(crop.getId()) && (crop.getAmount() > 0))
+            if (_cropsItems.ContainsKey(crop.getId()) && (crop.getAmount() > 0))
             {
                 _castleCrops.put(crop.getId(), crop);
             }
@@ -51,9 +51,9 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
             writer.WriteInt32(seed.getReward(1)); // reward 1 id
             writer.WriteByte(1);
             writer.WriteInt32(seed.getReward(2)); // reward 2 id
-            if (_castleCrops.containsKey(item.getId()))
+
+            if (_castleCrops.TryGetValue(item.getId(), out CropProcure? crop))
             {
-                CropProcure crop = _castleCrops.get(item.getId());
                 writer.WriteInt32(_manorId); // manor
                 writer.WriteInt64(crop.getAmount()); // buy residual
                 writer.WriteInt64(crop.getPrice()); // buy price

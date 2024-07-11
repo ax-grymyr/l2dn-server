@@ -42,7 +42,7 @@ public class ItemLifeTimeTaskManager: Runnable
 	
 	public void add(Item item, DateTime endTime)
 	{
-		if (!ITEMS.containsKey(item))
+		if (!ITEMS.ContainsKey(item))
 		{
 			ITEMS.put(item, endTime);
 		}

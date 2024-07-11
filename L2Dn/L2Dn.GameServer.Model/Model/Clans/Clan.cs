@@ -821,7 +821,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public bool isMember(int id)
 	{
-		return ((id != 0) && _members.containsKey(id));
+		return ((id != 0) && _members.ContainsKey(id));
 	}
 	
 	/**
@@ -1575,7 +1575,7 @@ public class Clan: IIdentifiable, INamable
 	
 	public bool isAtWarWith(int clanId)
 	{
-		return _atWarWith.containsKey(clanId);
+		return _atWarWith.ContainsKey(clanId);
 	}
 	
 	public bool isAtWarWith(Clan clan)
@@ -1584,7 +1584,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			return false;
 		}
-		return _atWarWith.containsKey(clan.getId());
+		return _atWarWith.ContainsKey(clan.getId());
 	}
 	
 	public int getHiredGuards()

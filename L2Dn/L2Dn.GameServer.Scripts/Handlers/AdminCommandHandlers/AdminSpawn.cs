@@ -440,7 +440,7 @@ public class AdminSpawn: IAdminCommandHandler
 					continue;
 				}
 				int npcId = obj.getId();
-				if (npcsFound.containsKey(npcId))
+				if (npcsFound.ContainsKey(npcId))
 				{
 					npcsFound.put(npcId, npcsFound.get(npcId) + 1);
 				}

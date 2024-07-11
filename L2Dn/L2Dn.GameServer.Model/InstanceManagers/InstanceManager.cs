@@ -548,13 +548,12 @@ public class InstanceManager: DataReaderBase
 	{
 		// Check if exists reenter data for player.
 		Map<int, DateTime>? playerData = _playerTimes.GetValueOrDefault(player.getObjectId());
-		if (playerData == null || !playerData.containsKey(id))
+		if (playerData == null || !playerData.TryGetValue(id, out DateTime time))
 		{
 			return DateTime.MinValue;
 		}
 		
 		// If reenter time is higher than current, delete it.
-		DateTime time = playerData.get(id);
 		if (time <= DateTime.UtcNow)
 		{
 			deleteInstanceTime(player, id);

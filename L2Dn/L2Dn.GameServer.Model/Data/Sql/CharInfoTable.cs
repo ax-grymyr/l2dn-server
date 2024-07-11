@@ -325,9 +325,9 @@ public class CharInfoTable
 			memos = new();
 			_memos.put(charId, memos);
 		}
-		else if (memos.containsKey(friendId))
+		else if (memos.TryGetValue(friendId, out string? value))
 		{
-			return memos.get(friendId);
+			return value;
 		}
 		
 		try 

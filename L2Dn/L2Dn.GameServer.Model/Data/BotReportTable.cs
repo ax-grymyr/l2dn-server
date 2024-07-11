@@ -112,9 +112,9 @@ public class BotReportTable
 				int botId = report.BotId;
 				int reporter = report.ReporterId;
 				DateTime date = report.ReportTime;
-				if (_reports.containsKey(botId))
+				if (_reports.TryGetValue(botId, out ReportedCharData? reportedData))
 				{
-					_reports.get(botId).addReporter(reporter, date);
+					reportedData.addReporter(reporter, date);
 				}
 				else
 				{
@@ -228,7 +228,7 @@ public class BotReportTable
 		SystemMessagePacket sm;
 		lock (this)
 		{
-			if (_reports.containsKey(reporterId))
+			if (_reports.ContainsKey(reporterId))
 			{
 				reporter.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_AND_CANNOT_REPORT_OTHER_USERS);
 				return false;
@@ -432,9 +432,9 @@ public class BotReportTable
 	 */
 	private static bool timeHasPassed(Map<int, DateTime> map, int objectId)
 	{
-		if (map.containsKey(objectId))
+		if (map.TryGetValue(objectId, out DateTime value))
 		{
-			return (DateTime.UtcNow - map.get(objectId)) > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
+			return (DateTime.UtcNow - value) > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
 		}
 		
 		return true;
@@ -496,7 +496,7 @@ public class BotReportTable
 		
 		public bool alredyReportedBy(int objectId)
 		{
-			return _reporters.containsKey(objectId);
+			return _reporters.ContainsKey(objectId);
 		}
 		
 		public void addReporter(int objectId, DateTime reportTime)

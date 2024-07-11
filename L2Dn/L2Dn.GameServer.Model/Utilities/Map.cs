@@ -13,11 +13,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     {
     }
 
-    public bool contains(TKey key)
-    {
-        return ContainsKey(key);
-    }
-    
     public ICollection<TValue> values()
     {
         return Values;
@@ -53,11 +48,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         {
             this[pair.Key] = pair.Value;
         }
-    }
-
-    public bool containsKey(TKey key)
-    {
-        return ContainsKey(key);
     }
 
     public void clear()
@@ -114,7 +104,7 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
 
     public void replace(TKey key, TValue newValue)
     {
-        if (containsKey(key))
+        if (ContainsKey(key))
             this[key] = newValue;
     }
 

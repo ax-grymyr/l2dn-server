@@ -575,7 +575,9 @@ public class SkillCaster: Runnable
 				Creature creature = (Creature) obj;
 
 				// Check raid monster/minion attack and check buffing characters who attack raid monsters. Raid is still affected by skills.
-				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && caster.getLevel() >= creature.getLevel() + 9 && (skill.isBad() || (creature.getTarget() == caster && ((Attackable) creature).getAggroList().containsKey(caster))))
+				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() &&
+				    caster.getLevel() >= creature.getLevel() + 9 && (skill.isBad() || (creature.getTarget() == caster &&
+					    ((Attackable)creature).getAggroList().ContainsKey(caster))))
 				{
 					// Skills such as Summon Battle Scar too can trigger magic silence.
 					CommonSkill curse = skill.isBad() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;

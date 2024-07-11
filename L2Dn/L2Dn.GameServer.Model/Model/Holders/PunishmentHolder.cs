@@ -28,11 +28,10 @@ public class PunishmentHolder
 	 */
 	public void stopPunishment(PunishmentTask task)
 	{
-		string key = task.getKey().ToString();
-		if (_holder.containsKey(key))
+		string key = task.getKey();
+		if (_holder.TryGetValue(key, out Map<PunishmentType, PunishmentTask>? punishments))
 		{
 			task.stopPunishment();
-			Map<PunishmentType, PunishmentTask> punishments = _holder.get(key);
 			punishments.remove(task.getType());
 			if (punishments.isEmpty())
 			{
@@ -43,14 +42,14 @@ public class PunishmentHolder
 	
 	public void stopPunishment(PunishmentType type)
 	{
-		foreach (Map<PunishmentType, PunishmentTask> punishments in _holder.values())
+		foreach (Map<PunishmentType, PunishmentTask> punishments in _holder.Values)
 		{
 			foreach (PunishmentTask task in punishments.values())
 			{
 				if (task.getType() == type)
 				{
 					task.stopPunishment();
-					string key = task.getKey().ToString();
+					string key = task.getKey();
 					punishments.remove(task.getType());
 					if (punishments.isEmpty())
 					{
@@ -76,12 +75,8 @@ public class PunishmentHolder
 	 * @param type
 	 * @return {@link PunishmentTask} by specified key and type if exists, null otherwise.
 	 */
-	public PunishmentTask getPunishment(string key, PunishmentType type)
+	public PunishmentTask? getPunishment(string key, PunishmentType type)
 	{
-		if (_holder.containsKey(key))
-		{
-			return _holder.get(key).get(type);
-		}
-		return null;
+		return _holder.GetValueOrDefault(key)?.GetValueOrDefault(type);
 	}
 }

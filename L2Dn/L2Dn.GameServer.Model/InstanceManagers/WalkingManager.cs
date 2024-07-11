@@ -189,7 +189,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	private bool isRegistered(Npc npc)
 	{
-		return _activeRoutes.containsKey(npc.getObjectId());
+		return _activeRoutes.ContainsKey(npc.getObjectId());
 	}
 	
 	/**
@@ -198,7 +198,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public string getRouteName(Npc npc)
 	{
-		return _activeRoutes.containsKey(npc.getObjectId()) ? _activeRoutes.get(npc.getObjectId()).getRoute().getName() : "";
+		return _activeRoutes.GetValueOrDefault(npc.getObjectId())?.getRoute().getName() ?? string.Empty;
 	}
 	
 	/**
@@ -208,9 +208,9 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void startMoving(Npc npc, string routeName)
 	{
-		if (_routes.containsKey(routeName) && (npc != null) && !npc.isDead()) // check, if these route and NPC present
+		if (_routes.ContainsKey(routeName) && (npc != null) && !npc.isDead()) // check, if these route and NPC present
 		{
-			if (!_activeRoutes.containsKey(npc.getObjectId())) // new walk task
+			if (!_activeRoutes.ContainsKey(npc.getObjectId())) // new walk task
 			{
 				// only if not already moved / not engaged in battle... should not happens if called on spawn
 				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
@@ -269,9 +269,8 @@ public class WalkingManager: DataReaderBase
 			}
 			else // walk was stopped due to some reason (arrived to node, script action, fight or something else), resume it
 			{
-				if (_activeRoutes.containsKey(npc.getObjectId()) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
+				if (_activeRoutes.TryGetValue(npc.getObjectId(), out WalkInfo? walk) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
 				{
-					WalkInfo walk = _activeRoutes.get(npc.getObjectId());
 					if (walk == null)
 					{
 						return;
@@ -370,7 +369,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void onArrived(Npc npc)
 	{
-		if (!_activeRoutes.containsKey(npc.getObjectId()))
+		if (!_activeRoutes.TryGetValue(npc.getObjectId(), out WalkInfo? walk))
 		{
 			return;
 		}
@@ -381,7 +380,6 @@ public class WalkingManager: DataReaderBase
 			npc.Events.NotifyAsync(new OnNpcMoveNodeArrived(npc));
 		}
 		
-		WalkInfo walk = _activeRoutes.get(npc.getObjectId());
 		// Opposite should not happen... but happens sometime
 		if ((walk.getCurrentNodeId() < 0) || (walk.getCurrentNodeId() >= walk.getRoute().getNodesCount()))
 		{
@@ -428,9 +426,9 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void onSpawn(Npc npc)
 	{
-		if (_routesToAttach.containsKey(npc.getId()))
+		if (_routesToAttach.TryGetValue(npc.getId(), out NpcRoutesHolder? route))
 		{
-			string routeName = _routesToAttach.get(npc.getId()).getRouteName(npc);
+			string routeName = route.getRouteName(npc);
 			if (!string.IsNullOrEmpty(routeName))
 			{
 				startMoving(npc, routeName);

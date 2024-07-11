@@ -1031,7 +1031,7 @@ public class Olympiad
 			return 0;
 		}
 		
-		if (!NOBLES_RANK.containsKey(objectId))
+		if (!NOBLES_RANK.TryGetValue(objectId, out int nobleRank))
 		{
 			return 0;
 		}
@@ -1045,7 +1045,7 @@ public class Olympiad
 		// Hero point bonus
 		int points = Hero.getInstance().isHero(objectId) || Hero.getInstance().isUnclaimedHero(objectId) ? Config.ALT_OLY_HERO_POINTS : 0;
 		// Rank point bonus
-		switch (NOBLES_RANK.get(objectId))
+		switch (nobleRank)
 		{
 			case 1:
 			{
@@ -1085,7 +1085,7 @@ public class Olympiad
 	
 	public int getNoblePoints(Player player)
 	{
-		if (!NOBLES.containsKey(player.getObjectId()))
+		if (!NOBLES.ContainsKey(player.getObjectId()))
 		{
 			NobleData nobleData = new NobleData()
 			{
@@ -1124,29 +1124,17 @@ public class Olympiad
 	
 	public int getCompetitionDone(int objId)
 	{
-		if (!NOBLES.containsKey(objId))
-		{
-			return 0;
-		}
-		return NOBLES.get(objId).CompetitionsDone;
+		return !NOBLES.TryGetValue(objId, out NobleData? nobleData) ? 0 : nobleData.CompetitionsDone;
 	}
 	
 	public int getCompetitionWon(int objId)
 	{
-		if (!NOBLES.containsKey(objId))
-		{
-			return 0;
-		}
-		return NOBLES.get(objId).CompetitionsWon;
+		return !NOBLES.TryGetValue(objId, out NobleData? nobleData) ? 0 : nobleData.CompetitionsWon;
 	}
 	
 	public int getCompetitionLost(int objId)
 	{
-		if (!NOBLES.containsKey(objId))
-		{
-			return 0;
-		}
-		return NOBLES.get(objId).CompetitionsLost;
+		return !NOBLES.TryGetValue(objId, out NobleData? nobleData) ? 0 : nobleData.CompetitionsLost;
 	}
 	
 	/**
@@ -1156,11 +1144,7 @@ public class Olympiad
 	 */
 	public int getCompetitionDoneWeek(int objId)
 	{
-		if (!NOBLES.containsKey(objId))
-		{
-			return 0;
-		}
-		return NOBLES.get(objId).CompetitionsDoneWeek;
+		return !NOBLES.TryGetValue(objId, out NobleData? nobleData) ? 0 : nobleData.CompetitionsDoneWeek;
 	}
 	
 	/**

@@ -40,7 +40,8 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 		{
 			case 1:
 			{
-				if (!holder.getNormalRewards().containsKey(_level) || info.getCollectedNormalRewards().Contains(_level) || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+				if (!holder.getNormalRewards().ContainsKey(_level) || info.getCollectedNormalRewards().Contains(_level) ||
+				    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;
@@ -54,7 +55,8 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 			}
 			case 2:
 			{
-				if (!holder.getKeyRewards().containsKey(_level) || info.getCollectedKeyRewards().Contains(_level) || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+				if (!holder.getKeyRewards().ContainsKey(_level) || info.getCollectedKeyRewards().Contains(_level) ||
+				    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;

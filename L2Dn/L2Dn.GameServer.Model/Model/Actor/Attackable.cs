@@ -1246,7 +1246,7 @@ public class Attackable: Npc
 	 */
 	public bool isInAggroList(Creature creature)
 	{
-		return _aggroList.containsKey(creature);
+		return _aggroList.ContainsKey(creature);
 	}
 	
 	/**

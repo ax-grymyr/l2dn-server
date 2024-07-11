@@ -81,7 +81,7 @@ public class FindPvP: IBypassHandler
 					
 					if (knownAllyId != null)
 					{
-						if (clanNumbers.containsKey(knownAllyId.Value))
+						if (clanNumbers.ContainsKey(knownAllyId.Value))
 						{
 							clanNumbers.put(knownAllyId.Value, clanNumbers.get(knownAllyId.Value) + 1);
 						}

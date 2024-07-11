@@ -147,12 +147,7 @@ public class AdminDoorControl: IAdminCommandHandler
 				}
 				else
 				{
-					Set<int> doorIds;
-					if (PLAYER_SHOWN_DOORS.containsKey(activeChar))
-					{
-						doorIds = PLAYER_SHOWN_DOORS.get(activeChar);
-					}
-					else
+					if (!PLAYER_SHOWN_DOORS.TryGetValue(activeChar, out Set<int>? doorIds))
 					{
 						doorIds = new();
 						PLAYER_SHOWN_DOORS.put(activeChar, doorIds);

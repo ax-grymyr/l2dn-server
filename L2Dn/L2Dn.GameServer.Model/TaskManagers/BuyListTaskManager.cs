@@ -78,7 +78,7 @@ public class BuyListTaskManager
 	
 	public void add(Product product, DateTime endTime)
 	{
-		if (!PRODUCTS.containsKey(product))
+		if (!PRODUCTS.ContainsKey(product))
 		{
 			PRODUCTS.put(product, endTime);
 		}

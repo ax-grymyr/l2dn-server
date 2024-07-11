@@ -181,7 +181,7 @@ public class PlayerTemplate: CreatureTemplate
 	 */
 	public int getBaseDefBySlot(int slotId)
 	{
-		return _baseSlotDef.containsKey(slotId) ? _baseSlotDef.get(slotId) : 0;
+		return _baseSlotDef.GetValueOrDefault(slotId);
 	}
 
 	/**

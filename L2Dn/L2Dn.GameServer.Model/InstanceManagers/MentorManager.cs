@@ -81,14 +81,14 @@ public class MentorManager
 	
 	public bool isMentor(int objectId)
 	{
-		return _menteeData.containsKey(objectId);
+		return _menteeData.ContainsKey(objectId);
 	}
 	
 	public bool isMentee(int objectId)
 	{
-		foreach (Map<int, Mentee> map in _menteeData.values())
+		foreach (Map<int, Mentee> map in _menteeData.Values)
 		{
-			if (map.containsKey(objectId))
+			if (map.ContainsKey(objectId))
 			{
 				return true;
 			}
@@ -138,9 +138,9 @@ public class MentorManager
 	public void addMentor(int mentorId, int menteeId)
 	{
 		Map<int, Mentee> mentees = _menteeData.computeIfAbsent(mentorId, map => new());
-		if (mentees.containsKey(menteeId))
+		if (mentees.TryGetValue(menteeId, out Mentee? mentee))
 		{
-			mentees.get(menteeId).load(); // Just reloading data if is already there
+			mentee.load(); // Just reloading data if is already there
 		}
 		else
 		{
@@ -154,10 +154,10 @@ public class MentorManager
 	 */
 	public void removeMentor(int mentorId, int menteeId)
 	{
-		if (_menteeData.containsKey(mentorId))
+		if (_menteeData.TryGetValue(mentorId, out Map<int, Mentee>? mentees))
 		{
-			_menteeData.get(mentorId).remove(menteeId);
-			if (_menteeData.get(mentorId).isEmpty())
+			mentees.remove(menteeId);
+			if (mentees.isEmpty())
 			{
 				_menteeData.remove(mentorId);
 				_mentors.remove(mentorId);
@@ -173,13 +173,14 @@ public class MentorManager
 	{
 		foreach (var map in _menteeData)
 		{
-			if (map.Value.containsKey(menteeId))
+			if (map.Value.ContainsKey(menteeId))
 			{
-				if (!_mentors.containsKey(map.Key))
+				if (!_mentors.TryGetValue(map.Key, out Mentee? mentee))
 				{
-					_mentors.put(map.Key, new Mentee(map.Key));
+					_mentors.put(map.Key, mentee = new Mentee(map.Key));
 				}
-				return _mentors.get(map.Key);
+
+				return mentee;
 			}
 		}
 		return null;
@@ -187,11 +188,7 @@ public class MentorManager
 	
 	public ICollection<Mentee> getMentees(int mentorId)
 	{
-		if (_menteeData.containsKey(mentorId))
-		{
-			return _menteeData.get(mentorId).values();
-		}
-		return [];
+		return _menteeData.TryGetValue(mentorId, out Map<int, Mentee>? mentees) ? mentees.Values : [];
 	}
 	
 	/**
@@ -199,19 +196,15 @@ public class MentorManager
 	 * @param menteeId
 	 * @return
 	 */
-	public Mentee getMentee(int mentorId, int menteeId)
+	public Mentee? getMentee(int mentorId, int menteeId)
 	{
-		if (_menteeData.containsKey(mentorId))
-		{
-			return _menteeData.get(mentorId).get(menteeId);
-		}
-		return null;
+		return _menteeData.GetValueOrDefault(mentorId)?.GetValueOrDefault(menteeId);
 	}
 	
-	public bool isAllMenteesOffline(int menteorId, int menteeId)
+	public bool isAllMenteesOffline(int mentorId, int menteeId)
 	{
 		bool isAllMenteesOffline = true;
-		foreach (Mentee men in getMentees(menteorId))
+		foreach (Mentee men in getMentees(mentorId))
 		{
 			if (men.isOnline() && (men.getObjectId() != menteeId))
 			{

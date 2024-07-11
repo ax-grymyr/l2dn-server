@@ -47,7 +47,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
 		Player? player = session.Player;
-		if (_items == null || player == null || !player.getAccountChars().containsKey(_objectId))
+		if (_items == null || player == null || !player.getAccountChars().ContainsKey(_objectId))
 			return ValueTask.CompletedTask;
 
 		// TODO: flood protection

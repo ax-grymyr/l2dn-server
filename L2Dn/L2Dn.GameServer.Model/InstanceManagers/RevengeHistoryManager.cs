@@ -50,20 +50,20 @@ public class RevengeHistoryManager
 			foreach (CharacterRevenge record in ctx.CharacterRevenges)
 			{
 				int charId = record.CharacterId;
-				List<RevengeHistoryHolder> history = REVENGE_HISTORY.containsKey(charId) ? REVENGE_HISTORY.get(charId) : new();
+				List<RevengeHistoryHolder> history = REVENGE_HISTORY.GetValueOrDefault(charId, []);
 				
 				StatSet killer = new StatSet();
 				killer.set("name", record.KillerName);
 				killer.set("clan", record.KillerClan);
 				killer.set("level", record.KillerLevel);
-				killer.set("race", (int)((CharacterClass)record.KillerClass).GetRace());
+				killer.set("race", (int)record.KillerClass.GetRace());
 				killer.set("class", record.KillerClass);
 				
 				StatSet victim = new StatSet();
 				victim.set("name", record.VictimName);
 				victim.set("clan", record.VictimClan);
 				victim.set("level", record.VictimLevel);
-				victim.set("race", (int)((CharacterClass)record.VictimClass).GetRace());
+				victim.set("race", (int)record.VictimClass.GetRace());
 				victim.set("class", record.VictimClass);
 
 				history.Add(new RevengeHistoryHolder(killer, victim, (RevengeType)record.Type,
@@ -157,10 +157,10 @@ public class RevengeHistoryManager
 			int victimObjectId = victim.getObjectId();
 			DateTime currentTime = DateTime.UtcNow;
 			List<RevengeHistoryHolder> removals = new();
-			List<RevengeHistoryHolder> history = REVENGE_HISTORY.containsKey(victimObjectId) ? REVENGE_HISTORY.get(victimObjectId) : new();
+			List<RevengeHistoryHolder> history = REVENGE_HISTORY.GetValueOrDefault(victimObjectId, []);
 			foreach (RevengeHistoryHolder holder in history)
 			{
-				if ((holder.getKillTime() != DateTime.MinValue && holder.getKillTime() + REVENGE_DURATION < currentTime) || //
+				if ((holder.getKillTime() != DateTime.MinValue && holder.getKillTime() + REVENGE_DURATION < currentTime) ||
 					(holder.getShareTime() != DateTime.MinValue && holder.getShareTime() + REVENGE_DURATION < currentTime))
 				{
 					removals.Add(holder);
@@ -464,7 +464,7 @@ public class RevengeHistoryManager
 	
 	private void saveToRevengeHistory(Player player, Player killer, RevengeHistoryHolder revenge, DateTime currentTime, int objectId)
 	{
-		List<RevengeHistoryHolder> targetHistory = REVENGE_HISTORY.containsKey(objectId) ? REVENGE_HISTORY.get(objectId) : new();
+		List<RevengeHistoryHolder> targetHistory = REVENGE_HISTORY.GetValueOrDefault(objectId, []);
 		foreach (RevengeHistoryHolder holder in targetHistory)
 		{
 			if (holder.getVictimName().equals(player.getName()) && holder.getKillerName().equals(killer.getName()) && holder != revenge)

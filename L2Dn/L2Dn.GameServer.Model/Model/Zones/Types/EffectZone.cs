@@ -219,11 +219,11 @@ public class EffectZone : ZoneType
 	
 	public int getSkillLevel(int skillId)
 	{
-		if (_skills == null || !_skills.containsKey(skillId))
+		if (_skills == null || !_skills.TryGetValue(skillId, out int level))
 		{
 			return 0;
 		}
-		return _skills.get(skillId);
+		return level;
 	}
 	
 	private class ApplySkill: Runnable

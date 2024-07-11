@@ -59,7 +59,7 @@ public class ItemManaTaskManager: Runnable
 	
 	public void add(Item item)
 	{
-		if (!ITEMS.containsKey(item))
+		if (!ITEMS.ContainsKey(item))
 		{
 			ITEMS.put(item, DateTime.UtcNow.AddMilliseconds(MANA_CONSUMPTION_RATE));
 		}

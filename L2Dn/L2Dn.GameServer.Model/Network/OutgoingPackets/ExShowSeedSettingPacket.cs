@@ -54,10 +54,10 @@ public readonly struct ExShowSeedSettingPacket: IOutgoingPacket
             writer.WriteInt32(s.getSeedReferencePrice()); // price for castle to produce 1
             writer.WriteInt32(s.getSeedMinPrice()); // min seed price
             writer.WriteInt32(s.getSeedMaxPrice()); // max seed price
+
             // Current period
-            if (_current.containsKey(s.getSeedId()))
+            if (_current.TryGetValue(s.getSeedId(), out SeedProduction? sp))
             {
-                SeedProduction sp = _current.get(s.getSeedId());
                 writer.WriteInt64(sp.getStartAmount()); // sales
                 writer.WriteInt64(sp.getPrice()); // price
             }
@@ -66,10 +66,10 @@ public readonly struct ExShowSeedSettingPacket: IOutgoingPacket
                 writer.WriteInt64(0);
                 writer.WriteInt64(0);
             }
+
             // Next period
-            if (_next.containsKey(s.getSeedId()))
+            if (_next.TryGetValue(s.getSeedId(), out sp))
             {
-                SeedProduction sp = _next.get(s.getSeedId());
                 writer.WriteInt64(sp.getStartAmount()); // sales
                 writer.WriteInt64(sp.getPrice()); // price
             }

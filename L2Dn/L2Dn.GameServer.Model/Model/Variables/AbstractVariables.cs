@@ -98,7 +98,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	 */
 	public bool hasVariable(string name)
 	{
-		return getSet().containsKey(name);
+		return getSet().ContainsKey(name);
 	}
 	
 	/**

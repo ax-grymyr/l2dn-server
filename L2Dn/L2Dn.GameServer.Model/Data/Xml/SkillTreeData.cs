@@ -353,7 +353,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public ICollection<SkillLearn> getRaceSkillTree(Race race)
 	{
-		return _raceSkillTree.containsKey(race) ? _raceSkillTree.get(race).values() : [];
+		return _raceSkillTree.TryGetValue(race, out Map<long, SkillLearn>? skillTree) ? skillTree.Values : [];
 	}
 	
 	/**
@@ -977,12 +977,12 @@ public class SkillTreeData: DataReaderBase
 	{
 		List<SkillLearn> result = new();
 		CharacterClass classId = player.getClassId();
-		if (!_transferSkillTrees.containsKey(classId))
+		if (!_transferSkillTrees.TryGetValue(classId, out Map<long, SkillLearn>? skillTree))
 		{
 			return result;
 		}
 		
-		foreach (SkillLearn skill  in  _transferSkillTrees.get(classId).values())
+		foreach (SkillLearn skill in skillTree.Values)
 		{
 			// If player doesn't know this transfer skill:
 			if (player.getKnownSkill(skill.getSkillId()) == null)
@@ -1589,7 +1589,7 @@ public class SkillTreeData: DataReaderBase
 	
 	public bool isAlchemySkill(int skillId, int skillLevel)
 	{
-		return _alchemySkillTree.containsKey(SkillData.getSkillHashCode(skillId, skillLevel));
+		return _alchemySkillTree.ContainsKey(SkillData.getSkillHashCode(skillId, skillLevel));
 	}
 	
 	/**
@@ -1600,7 +1600,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public bool isHeroSkill(int skillId, int skillLevel)
 	{
-		return _heroSkillTree.containsKey(SkillData.getSkillHashCode(skillId, skillLevel));
+		return _heroSkillTree.ContainsKey(SkillData.getSkillHashCode(skillId, skillLevel));
 	}
 	
 	/**
@@ -1612,7 +1612,7 @@ public class SkillTreeData: DataReaderBase
 	public bool isGMSkill(int skillId, int skillLevel)
 	{
 		long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
-		return _gameMasterSkillTree.containsKey(hashCode) || _gameMasterAuraSkillTree.containsKey(hashCode);
+		return _gameMasterSkillTree.ContainsKey(hashCode) || _gameMasterAuraSkillTree.ContainsKey(hashCode);
 	}
 	
 	/**
@@ -1624,7 +1624,7 @@ public class SkillTreeData: DataReaderBase
 	public bool isClanSkill(int skillId, int skillLevel)
 	{
 		long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
-		return _pledgeSkillTree.containsKey(hashCode) || _subPledgeSkillTree.containsKey(hashCode);
+		return _pledgeSkillTree.ContainsKey(hashCode) || _subPledgeSkillTree.ContainsKey(hashCode);
 	}
 	
 	public bool isRemoveSkill(CharacterClass classId, int skillId)
@@ -1634,7 +1634,7 @@ public class SkillTreeData: DataReaderBase
 	
 	public bool isCurrentClassSkillNoParent(CharacterClass classId, long hashCode)
 	{
-		return _classSkillTrees.getOrDefault(classId, new()).containsKey(hashCode);
+		return _classSkillTrees.getOrDefault(classId, new()).ContainsKey(hashCode);
 	}
 	
 	public bool isAwakenSaveSkill(CharacterClass classId, int skillId)

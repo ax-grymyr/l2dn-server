@@ -230,10 +230,12 @@ public class BlockList
 		{
 			return isBlocked(player, targetId);
 		}
-		if (!OFFLINE_LIST.containsKey(ownerId))
+
+		if (!OFFLINE_LIST.TryGetValue(ownerId, out Set<int>? set))
 		{
-			OFFLINE_LIST.put(ownerId, loadList(ownerId));
+			OFFLINE_LIST.put(ownerId, set = loadList(ownerId));
 		}
-		return OFFLINE_LIST.get(ownerId).Contains(targetId);
+
+		return set.Contains(targetId);
 	}
 }

@@ -92,11 +92,6 @@ public class EquipmentUpgradeNormalHolder
 
 	public bool isHasCategory(UpgradeDataType upgradeDataType)
 	{
-		if (_items.isEmpty())
-		{
-			return false;
-		}
-
-		return _items.containsKey(upgradeDataType);
+		return _items.ContainsKey(upgradeDataType);
 	}
 }

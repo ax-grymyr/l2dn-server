@@ -74,7 +74,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 	public void onPlayerDlgAnswer(OnPlayerDlgAnswer @event)
 	{
 		Player player = @event.getPlayer();
-		if (player.removeAction(PlayerAction.MERCENARY_CONFIRM) && _items.containsKey(player.getObjectId()))
+		if (player.removeAction(PlayerAction.MERCENARY_CONFIRM) && _items.TryGetValue(player.getObjectId(), out Item? item))
 		{
 			if (SiegeGuardManager.getInstance().isTooCloseToAnotherTicket(player))
 			{
@@ -84,7 +84,6 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 			
 			if (@event.getAnswer() == 1)
 			{
-				Item item = _items.get(player.getObjectId());
 				SiegeGuardManager.getInstance().addTicket(item.getId(), player);
 				player.destroyItem("Consume", item.getObjectId(), 1, null, false); // Remove item from char's inventory
 			}

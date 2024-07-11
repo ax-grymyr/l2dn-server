@@ -92,7 +92,7 @@ public class RestorationRandom: AbstractEffect
 				newItem.setEnchantLevel(Rnd.get(createdItem.getMinEnchant(), createdItem.getMaxEnchant()));
 			}
 			
-			if (extractedItems.containsKey(newItem))
+			if (extractedItems.ContainsKey(newItem))
 			{
 				extractedItems.put(newItem, extractedItems.get(newItem) + itemCount);
 			}

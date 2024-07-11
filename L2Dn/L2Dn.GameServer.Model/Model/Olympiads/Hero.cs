@@ -625,9 +625,8 @@ public class Hero
 		foreach (StatSet hero in newHeroes)
 		{
 			int charId = hero.getInt(Olympiad.CHAR_ID);
-			if (COMPLETE_HEROS.containsKey(charId))
+			if (COMPLETE_HEROS.TryGetValue(charId, out StatSet? oldHero))
 			{
-				StatSet oldHero = COMPLETE_HEROS.get(charId);
 				if (hero.getInt(LEGEND_COUNT, 0) == 1)
 				{
 					int count = oldHero.getInt(LEGEND_COUNT);
@@ -697,7 +696,7 @@ public class Hero
 					record.Played = hero.getBoolean(PLAYED, false);
 					record.Claimed = hero.getBoolean(CLAIMED, false);
 					
-					if (!COMPLETE_HEROS.containsKey(heroId))
+					if (!COMPLETE_HEROS.ContainsKey(heroId))
 					{
 						loadHeroClanAlly(ctx, heroId, hero);
 
@@ -797,7 +796,7 @@ public class Hero
 	 */
 	public void saveHeroMessage(int charId)
 	{
-		if (!HERO_MESSAGE.containsKey(charId))
+		if (!HERO_MESSAGE.TryGetValue(charId, out string? message))
 		{
 			return;
 		}
@@ -805,7 +804,6 @@ public class Hero
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			string message = HERO_MESSAGE.get(charId);
 			ctx.Heroes.Where(r => r.CharacterId == charId).ExecuteUpdate(s => s.SetProperty(r => r.Message, message));
 		}
 		catch (Exception e)
@@ -851,7 +849,7 @@ public class Hero
 	 */
 	public bool isHero(int objectId)
 	{
-		return HEROES.containsKey(objectId) && HEROES.get(objectId).getBoolean(CLAIMED);
+		return HEROES.GetValueOrDefault(objectId)?.getBoolean(CLAIMED) ?? false;
 	}
 	
 	/**
@@ -861,7 +859,7 @@ public class Hero
 	 */
 	public bool isUnclaimedHero(int objectId)
 	{
-		return HEROES.containsKey(objectId) && !HEROES.get(objectId).getBoolean(CLAIMED);
+		return HEROES.TryGetValue(objectId, out StatSet? hero) && !hero.getBoolean(CLAIMED);
 	}
 	
 	/**
@@ -870,8 +868,7 @@ public class Hero
 	 */
 	public void claimHero(Player player)
 	{
-		StatSet hero = HEROES.get(player.getObjectId());
-		if (hero == null)
+		if (!HEROES.TryGetValue(player.getObjectId(), out StatSet? hero))
 		{
 			hero = new StatSet();
 			HEROES.put(player.getObjectId(), hero);

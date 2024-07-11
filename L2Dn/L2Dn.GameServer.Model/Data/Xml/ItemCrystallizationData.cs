@@ -145,7 +145,7 @@ public class ItemCrystallizationData: DataReaderBase
 		foreach (ItemTemplate item in ItemData.getInstance().getAllItems())
 		{
 			// Check if the data has not been generated.
-			if (((item is Weapon) || (item is Armor)) && item.isCrystallizable() && !_items.containsKey(item.getId()))
+			if (((item is Weapon) || (item is Armor)) && item.isCrystallizable() && !_items.ContainsKey(item.getId()))
 			{
 				List<ItemChanceHolder> holder = _crystallizationTemplates.get(item.getCrystalType()).get((item is Weapon) ? CrystallizationType.WEAPON : CrystallizationType.ARMOR);
 				if (holder != null)

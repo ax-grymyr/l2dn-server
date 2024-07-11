@@ -54,10 +54,10 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
             writer.WriteInt32(0); // ???
             writer.WriteInt32(s.getCropMinPrice()); // min crop price
             writer.WriteInt32(s.getCropMaxPrice()); // max crop price
+
             // Current period
-            if (_current.containsKey(s.getCropId()))
+            if (_current.TryGetValue(s.getCropId(), out CropProcure? cp))
             {
-                CropProcure cp = _current.get(s.getCropId());
                 writer.WriteInt64(cp.getStartAmount()); // buy
                 writer.WriteInt64(cp.getPrice()); // price
                 writer.WriteByte((byte)cp.getReward()); // reward
@@ -68,10 +68,10 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
                 writer.WriteInt64(0);
                 writer.WriteByte(0);
             }
+
             // Next period
-            if (_next.containsKey(s.getCropId()))
+            if (_next.TryGetValue(s.getCropId(), out cp))
             {
-                CropProcure cp = _next.get(s.getCropId());
                 writer.WriteInt64(cp.getStartAmount()); // buy
                 writer.WriteInt64(cp.getPrice()); // price
                 writer.WriteByte((byte)cp.getReward()); // reward

@@ -392,7 +392,7 @@ public class ClanTable
 		foreach (Clan clan in _clans.values())
 		{
 			int? allyId = clan.getAllyId();
-			if ((allyId != null) && (clan.getId() != allyId) && !_clans.containsKey(allyId.Value))
+			if ((allyId != null) && (clan.getId() != allyId) && !_clans.ContainsKey(allyId.Value))
 			{
 				clan.setAllyId(0);
 				clan.setAllyName(null);

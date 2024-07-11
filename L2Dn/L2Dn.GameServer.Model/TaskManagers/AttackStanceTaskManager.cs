@@ -125,7 +125,7 @@ public class AttackStanceTaskManager: Runnable
 			{
 				actor = actor.getActingPlayer();
 			}
-			return CREATURE_ATTACK_STANCES.containsKey(actor);
+			return CREATURE_ATTACK_STANCES.ContainsKey(actor);
 		}
 		
 		return false;

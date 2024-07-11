@@ -428,7 +428,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
+		if (!_itemBids.TryGetValue(worldExchangeItem.getWorldExchangeId(), out WorldExchangeHolder? itemBid))
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -436,7 +436,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
+		if (itemBid != worldExchangeItem)
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -490,7 +490,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
+		if (!_itemBids.TryGetValue(worldExchangeItem.getWorldExchangeId(), out WorldExchangeHolder? itemBid))
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -498,7 +498,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
+		if (itemBid != worldExchangeItem)
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -565,7 +565,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (!_itemBids.containsKey(worldExchangeItem.getWorldExchangeId()))
+		if (!_itemBids.TryGetValue(worldExchangeItem.getWorldExchangeId(), out WorldExchangeHolder? itemBid))
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -573,7 +573,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (_itemBids.get(worldExchangeItem.getWorldExchangeId()) != worldExchangeItem)
+		if (itemBid != worldExchangeItem)
 		{
 			player.sendPacket(new WorldExchangeSettleListPacket(player));
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.ITEM_OUT_OF_STOCK));
@@ -627,14 +627,13 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		if (!_itemBids.containsKey(worldExchangeId))
+		if (!_itemBids.TryGetValue(worldExchangeId, out WorldExchangeHolder? worldExchangeItem))
 		{
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
 			player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
 			return;
 		}
 		
-		WorldExchangeHolder worldExchangeItem = _itemBids.get(worldExchangeId);
 		if (worldExchangeItem.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 		{
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -820,7 +819,7 @@ public class WorldExchangeManager: DataReaderBase
 			}
 			case WorldExchangeSortType.ITEM_NAME_ASCE:
 			{
-				if ((lang == null) || (!lang.equals("en") && _localItemNames.containsKey(lang)))
+				if ((lang == null) || (!lang.equals("en") && _localItemNames.ContainsKey(lang)))
 				{
 					// TODO extract to comparer classes
 					sortedList.Sort((a, b) =>
@@ -838,7 +837,7 @@ public class WorldExchangeManager: DataReaderBase
 			}
 			case WorldExchangeSortType.ITEM_NAME_DESC:
 			{
-				if ((lang == null) || (!lang.equals("en") && _localItemNames.containsKey(lang)))
+				if ((lang == null) || (!lang.equals("en") && _localItemNames.ContainsKey(lang)))
 				{
 					// TODO extract to comparer classes
 					sortedList.Sort((a, b) =>
@@ -876,16 +875,15 @@ public class WorldExchangeManager: DataReaderBase
 	
 	private string getItemName(string lang, int id, bool isBlessed)
 	{
-		if (!_localItemNames.containsKey(lang))
+		if (!_localItemNames.TryGetValue(lang, out Map<int, string>? names))
 		{
-			return "";
+			return string.Empty;
 		}
 		
-		Map<int, string> names = _localItemNames.get(lang);
-		string name = names.get(id);
-		if (name == null)
+		string? name = names.GetValueOrDefault(id);
+		if (name is null)
 		{
-			return "";
+			return string.Empty;
 		}
 		
 		if (isBlessed)

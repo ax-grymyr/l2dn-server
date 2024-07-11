@@ -79,7 +79,7 @@ public class PrivateStoreHistoryManager
 			foreach (ItemHistoryTransaction transaction in tempList)
 			{
 				int itemId = transaction.getItemId();
-				if (!uniqueItemIds.containsKey(itemId))
+				if (!uniqueItemIds.ContainsKey(itemId))
 				{
 					uniqueItemIds.put(itemId, 0);
 				}

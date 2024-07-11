@@ -194,7 +194,7 @@ public class InitialShortcutData: DataReaderBase
 				}
 				case ShortcutType.SKILL:
 				{
-					if (!player.getSkills().containsKey(shortcutId))
+					if (!player.getSkills().ContainsKey(shortcutId))
 					{
 						continue;
 					}
@@ -219,9 +219,9 @@ public class InitialShortcutData: DataReaderBase
 		}
 		
 		// Register class specific shortcuts.
-		if (_initialShortcutData.containsKey(player.getClassId()))
+		if (_initialShortcutData.TryGetValue(player.getClassId(), out List<Shortcut>? shortcuts))
 		{
-			foreach (Shortcut shortcut in _initialShortcutData.get(player.getClassId()))
+			foreach (Shortcut shortcut in shortcuts)
 			{
 				int shortcutId = shortcut.getId();
 				switch (shortcut.getType())
@@ -238,7 +238,7 @@ public class InitialShortcutData: DataReaderBase
 					}
 					case ShortcutType.SKILL:
 					{
-						if (!player.getSkills().containsKey(shortcut.getId()))
+						if (!player.getSkills().ContainsKey(shortcut.getId()))
 						{
 							continue;
 						}

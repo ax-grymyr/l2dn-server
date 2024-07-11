@@ -67,7 +67,7 @@ public class Henna
 	
 	public int getBaseStats(BaseStat stat)
 	{
-		return !_baseStats.containsKey(stat) ? 0 : _baseStats.get(stat);
+		return _baseStats.GetValueOrDefault(stat);
 	}
 	
 	public Map<BaseStat, int> getBaseStats()

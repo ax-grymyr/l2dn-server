@@ -434,7 +434,7 @@ public abstract class ZoneType: IEventContainerProvider
 	public void removeCharacter(Creature creature)
 	{
 		// Was the character inside this zone?
-		if (_characterList.containsKey(creature.getObjectId()))
+		if (_characterList.ContainsKey(creature.getObjectId()))
 		{
 			// Notify to scripts.
 			if (_eventContainer.HasSubscribers<OnZoneExit>())
@@ -457,7 +457,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isCharacterInZone(Creature creature)
 	{
-		return _characterList.containsKey(creature.getObjectId());
+		return _characterList.ContainsKey(creature.getObjectId());
 	}
 	
 	public virtual AbstractZoneSettings getSettings()

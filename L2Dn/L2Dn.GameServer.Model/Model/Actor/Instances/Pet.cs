@@ -1161,12 +1161,9 @@ public class Pet: Summon
 	{
 		try
 		{
-			const string RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
-			const string DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
-
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
-			if (!SummonEffectTable.getInstance().getPetEffects().containsKey(getControlObjectId()))
+			if (!SummonEffectTable.getInstance().getPetEffects().ContainsKey(getControlObjectId()))
 			{
 				foreach (DbPetSkillReuse record in ctx.PetSkillReuses.Where(r => r.PetItemObjectId == _controlObjectId)
 					         .OrderBy(r => r.BuffIndex))
@@ -1195,9 +1192,10 @@ public class Pet: Summon
 		}
 		finally
 		{
-			if (SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()) != null)
+			if (SummonEffectTable.getInstance().getPetEffects().TryGetValue(getControlObjectId(),
+				    out ICollection<SummonEffectTable.SummonEffect>? effects))
 			{
-				foreach (SummonEffectTable.SummonEffect se in SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()))
+				foreach (SummonEffectTable.SummonEffect se in effects)
 				{
 					if (se != null)
 					{

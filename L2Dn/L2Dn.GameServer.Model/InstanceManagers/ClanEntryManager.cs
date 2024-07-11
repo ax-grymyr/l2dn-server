@@ -157,7 +157,7 @@ public class ClanEntryManager
 	
 	public bool addPlayerApplicationToClan(int clanId, PledgeApplicantInfo info)
 	{
-		if (!_playerLocked.containsKey(info.getPlayerId()))
+		if (!_playerLocked.ContainsKey(info.getPlayerId()))
 		{
 			_applicantList.computeIfAbsent(clanId, k => new()).put(info.getPlayerId(), info);
 			
@@ -188,7 +188,7 @@ public class ClanEntryManager
 	{
 		foreach (var entry in _applicantList)
 		{
-			if (entry.Value.containsKey(playerId))
+			if (entry.Value.ContainsKey(playerId))
 			{
 				return entry.Key;
 			}
@@ -198,7 +198,7 @@ public class ClanEntryManager
 	
 	public bool addToWaitingList(int playerId, PledgeWaitingInfo info)
 	{
-		if (!_playerLocked.containsKey(playerId))
+		if (!_playerLocked.ContainsKey(playerId))
 		{
 			try
 			{
@@ -224,7 +224,7 @@ public class ClanEntryManager
 	
 	public bool removeFromWaitingList(int playerId)
 	{
-		if (_waitingList.containsKey(playerId))
+		if (_waitingList.ContainsKey(playerId))
 		{
 			try
 			{
@@ -245,7 +245,7 @@ public class ClanEntryManager
 	
 	public bool addToClanList(int clanId, PledgeRecruitInfo info)
 	{
-		if (!_clanList.containsKey(clanId) && !_clanLocked.containsKey(clanId))
+		if (!_clanList.ContainsKey(clanId) && !_clanLocked.ContainsKey(clanId))
 		{
 			try
 			{
@@ -275,7 +275,7 @@ public class ClanEntryManager
 	
 	public bool updateClanList(int clanId, PledgeRecruitInfo info)
 	{
-		if (_clanList.containsKey(clanId) && !_clanLocked.containsKey(clanId))
+		if (_clanList.ContainsKey(clanId) && !_clanLocked.ContainsKey(clanId))
 		{
 			try
 			{
@@ -303,7 +303,7 @@ public class ClanEntryManager
 	
 	public bool removeFromClanList(int clanId)
 	{
-		if (_clanList.containsKey(clanId))
+		if (_clanList.ContainsKey(clanId))
 		{
 			try
 			{

@@ -277,17 +277,16 @@ public class PetitionManager
 	
 	private bool isValidPetition(int petitionId)
 	{
-		return _pendingPetitions.containsKey(petitionId);
+		return _pendingPetitions.ContainsKey(petitionId);
 	}
 	
 	public bool rejectPetition(Player respondingAdmin, int petitionId)
 	{
-		if (!isValidPetition(petitionId))
+		if (!_pendingPetitions.TryGetValue(petitionId, out Petition? currPetition))
 		{
 			return false;
 		}
 		
-		Petition currPetition = _pendingPetitions.get(petitionId);
 		if (currPetition.getResponder() != null)
 		{
 			return false;

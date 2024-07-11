@@ -285,11 +285,13 @@ public class AutoPlayTaskManager
 						}
 						
 						// Check creature target.
-						if (player.getAutoPlaySettings().isRespectfulHunting() && !nearby.isPlayable() && nearby.getTarget() != null && nearby.getTarget() != player && !player.getServitors().containsKey(nearby.getTarget().getObjectId()))
+						if (player.getAutoPlaySettings().isRespectfulHunting() && !nearby.isPlayable() &&
+						    nearby.getTarget() != null && nearby.getTarget() != player &&
+						    !player.getServitors().ContainsKey(nearby.getTarget().getObjectId()))
 						{
 							continue; // target
 						}
-						
+
 						// Check next target mode.
 						if (!isTargetModeValid(targetMode, player, nearby))
 						{

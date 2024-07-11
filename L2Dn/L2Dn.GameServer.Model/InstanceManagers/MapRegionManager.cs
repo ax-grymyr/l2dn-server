@@ -321,9 +321,9 @@ public class MapRegionManager: DataReaderBase
 				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
 			}
 			// Opposing race check.
-			if (getMapRegion(player).getBannedRace().containsKey(player.getRace()))
+			if (getMapRegion(player).getBannedRace().TryGetValue(player.getRace(), out string? value))
 			{
-				return _regions.GetValueOrDefault(getMapRegion(player).getBannedRace().get(player.getRace())).getChaoticSpawnLoc();
+				return _regions.GetValueOrDefault(value).getChaoticSpawnLoc();
 			}
 			return getMapRegion(player).getChaoticSpawnLoc();
 		}
@@ -348,9 +348,9 @@ public class MapRegionManager: DataReaderBase
 				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();
 			}
 			// Opposing race check.
-			if (getMapRegion(creature).getBannedRace().containsKey(creature.getRace()))
+			if (getMapRegion(creature).getBannedRace().TryGetValue(creature.getRace(), out string? value))
 			{
-				return _regions.GetValueOrDefault(getMapRegion(creature).getBannedRace().get(creature.getRace())).getChaoticSpawnLoc();
+				return _regions.GetValueOrDefault(value).getChaoticSpawnLoc();
 			}
 			return getMapRegion(creature).getSpawnLoc();
 		}
@@ -372,9 +372,9 @@ public class MapRegionManager: DataReaderBase
 		{
 			Player player = (Player) creature;
 			MapRegion? region = _regions.GetValueOrDefault(point);
-			if (region.getBannedRace().containsKey(player.getRace()))
+			if (region.getBannedRace().TryGetValue(player.getRace(), out string? value))
 			{
-				getRestartRegion(player, region.getBannedRace().get(player.getRace()));
+				getRestartRegion(player, value);
 			}
 			return region;
 		}

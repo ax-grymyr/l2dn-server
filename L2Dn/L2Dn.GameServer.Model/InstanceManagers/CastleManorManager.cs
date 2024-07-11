@@ -111,7 +111,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				foreach(CastleManorProduction production in ctx.CastleManorProduction.Where(p => p.CastleId == castleId))
 				{
 					int seedId = production.SeedId;
-					if (_seeds.containsKey(seedId)) // Don't load unknown seeds
+					if (_seeds.ContainsKey(seedId)) // Don't load unknown seeds
 					{
 						SeedProduction sp = new SeedProduction(seedId, production.Amount, production.Price, production.StartAmount);
 						if (production.NextPeriod)

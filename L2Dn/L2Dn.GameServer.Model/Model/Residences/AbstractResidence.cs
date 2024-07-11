@@ -166,10 +166,11 @@ public abstract class AbstractResidence: INamable
 		}
 		finally
 		{
-			if (_functions.containsKey(func.getId()))
+			if (_functions.TryGetValue(func.getId(), out ResidenceFunction? function))
 			{
-				removeFunction(_functions.get(func.getId()));
+				removeFunction(function);
 			}
+
 			_functions.put(func.getId(), func);
 		}
 	}

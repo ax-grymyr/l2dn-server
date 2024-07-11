@@ -303,7 +303,7 @@ public class Quest: AbstractScript, IIdentifiable
 		
 		lock (_questTimers)
 		{
-			if (!_questTimers.containsKey(name))
+			if (!_questTimers.ContainsKey(name))
 			{
 				_questTimers.put(name, new());
 			}

@@ -35,7 +35,7 @@ public class MacroList: IRestorable
 		if (macro.getId() == 0)
 		{
 			macro.setId(_macroId++);
-			while (_macroses.containsKey(macro.getId()))
+			while (_macroses.ContainsKey(macro.getId()))
 			{
 				macro.setId(_macroId++);
 			}

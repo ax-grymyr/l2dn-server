@@ -83,9 +83,9 @@ public class MatchingRoomManager
 	public List<MatchingRoom> getPartyMathchingRooms(int location, PartyMatchingRoomLevelType type, int requestorLevel)
 	{
 		List<MatchingRoom> result = new();
-		if (_rooms.containsKey(MatchingRoomType.PARTY))
+		if (_rooms.TryGetValue(MatchingRoomType.PARTY, out Map<int, MatchingRoom>? rooms))
 		{
-			foreach (MatchingRoom room in _rooms.get(MatchingRoomType.PARTY).values())
+			foreach (MatchingRoom room in rooms.Values)
 			{
 				if (((location < 0) || (room.getLocation() == location)) //
 					&& ((type == PartyMatchingRoomLevelType.ALL) || ((room.getMinLevel() >= requestorLevel) && (room.getMaxLevel() <= requestorLevel))))
@@ -105,9 +105,9 @@ public class MatchingRoomManager
 	public List<MatchingRoom> getCCMathchingRooms(int location, int level)
 	{
 		List<MatchingRoom> result = new();
-		if (_rooms.containsKey(MatchingRoomType.COMMAND_CHANNEL))
+		if (_rooms.TryGetValue(MatchingRoomType.COMMAND_CHANNEL, out Map<int, MatchingRoom>? rooms))
 		{
-			foreach (MatchingRoom room in _rooms.get(MatchingRoomType.COMMAND_CHANNEL).values())
+			foreach (MatchingRoom room in rooms.Values)
 			{
 				if ((room.getLocation() == location) //
 					&& ((room.getMinLevel() <= level) && (room.getMaxLevel() >= level)))
@@ -126,9 +126,9 @@ public class MatchingRoomManager
 	
 	public MatchingRoom getPartyMathchingRoom(int location, int level)
 	{
-		if (_rooms.containsKey(MatchingRoomType.PARTY))
+		if (_rooms.TryGetValue(MatchingRoomType.PARTY, out Map<int, MatchingRoom>? rooms))
 		{
-			foreach (MatchingRoom room in _rooms.get(MatchingRoomType.PARTY).values())
+			foreach (MatchingRoom room in rooms.Values)
 			{
 				if ((room.getLocation() == location) //
 					&& ((room.getMinLevel() <= level) && (room.getMaxLevel() >= level)))

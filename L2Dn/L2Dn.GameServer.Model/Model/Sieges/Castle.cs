@@ -241,13 +241,9 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	 * @param type
 	 * @return
 	 */
-	public CastleFunction getCastleFunction(int type)
+	public CastleFunction? getCastleFunction(int type)
 	{
-		if (_function.containsKey(type))
-		{
-			return _function.get(type);
-		}
-		return null;
+		return _function.GetValueOrDefault(type);
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]

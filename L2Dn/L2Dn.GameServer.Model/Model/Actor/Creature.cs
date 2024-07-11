@@ -2113,7 +2113,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	
 	public bool hasServitor(int objectId)
 	{
-		return getServitors().containsKey(objectId);
+		return getServitors().ContainsKey(objectId);
 	}
 	
 	/**
@@ -2978,12 +2978,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	
 	public bool isCastingNow(SkillCastingType skillCastingType)
 	{
-		return _skillCasters.containsKey(skillCastingType);
+		return _skillCasters.ContainsKey(skillCastingType);
 	}
 	
 	public bool isCastingNow(Predicate<SkillCaster> filter)
 	{
-		foreach (SkillCaster skillCaster in _skillCasters.values())
+		foreach (SkillCaster skillCaster in _skillCasters.Values)
 		{
 			if (filter(skillCaster))
 			{
@@ -5575,7 +5575,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	
 	public bool isBlockedActionsAllowedSkill(Skill skill)
 	{
-		return _blockActionsAllowedSkills.containsKey(skill.getId());
+		return _blockActionsAllowedSkills.ContainsKey(skill.getId());
 	}
 	
 	protected void initSeenCreatures()

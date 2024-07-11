@@ -63,7 +63,7 @@ public class SchemeBufferTable: DataReaderBase
 					}
 
 					int skillId = int.Parse(skill);
-					if (_availableBuffs.containsKey(skillId))
+					if (_availableBuffs.ContainsKey(skillId))
 					{
 						schemeList.Add(skillId);
 					}
@@ -117,7 +117,7 @@ public class SchemeBufferTable: DataReaderBase
 
 	public void setScheme(int playerId, string schemeName, List<int> list)
 	{
-		if (!_schemesTable.containsKey(playerId))
+		if (!_schemesTable.ContainsKey(playerId))
 		{
 			_schemesTable.put(playerId, new(StringComparer.InvariantCultureIgnoreCase));
 		}

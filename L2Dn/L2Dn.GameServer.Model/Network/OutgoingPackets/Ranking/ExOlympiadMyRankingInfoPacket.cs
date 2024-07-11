@@ -76,9 +76,8 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 		
 		int heroCount = 0;
 		int legendCount = 0;
-		if (Hero.getInstance().getCompleteHeroes().containsKey(_player.getObjectId()))
+		if (Hero.getInstance().getCompleteHeroes().TryGetValue(_player.getObjectId(), out StatSet? hero))
 		{
-			StatSet hero = Hero.getInstance().getCompleteHeroes().get(_player.getObjectId());
 			heroCount = hero.getInt("count", 0);
 			legendCount = hero.getInt("legend_count", 0);
 		}

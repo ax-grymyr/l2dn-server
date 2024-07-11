@@ -1123,9 +1123,9 @@ public class ItemData: DataReaderBase
 					{
 						long old = mask;
 						string item = st.nextToken().Trim();
-						if (SLOTS.containsKey(item))
+						if (SLOTS.TryGetValue(item, out long value))
 						{
-							mask |= SLOTS.get(item);
+							mask |= value;
 						}
 						
 						if (old == mask)

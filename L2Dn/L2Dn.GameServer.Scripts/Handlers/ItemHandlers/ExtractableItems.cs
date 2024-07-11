@@ -278,7 +278,7 @@ public class ExtractableItems: IItemHandler
 	
 	private void addItem(Map<Item, long> extractedItems, Item newItem, long count)
 	{
-		if (extractedItems.containsKey(newItem))
+		if (extractedItems.ContainsKey(newItem))
 		{
 			extractedItems.put(newItem, extractedItems.get(newItem) + count);
 		}

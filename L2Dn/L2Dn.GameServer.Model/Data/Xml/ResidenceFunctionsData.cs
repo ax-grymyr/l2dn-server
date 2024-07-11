@@ -61,9 +61,9 @@ public class ResidenceFunctionsData: DataReaderBase
 	 */
 	public ResidenceFunctionTemplate getFunction(int id, int level)
 	{
-		if (_functions.containsKey(id))
+		if (_functions.TryGetValue(id, out List<ResidenceFunctionTemplate>? functions))
 		{
-			foreach (ResidenceFunctionTemplate template in _functions.get(id))
+			foreach (ResidenceFunctionTemplate template in functions)
 			{
 				if (template.getLevel() == level)
 				{

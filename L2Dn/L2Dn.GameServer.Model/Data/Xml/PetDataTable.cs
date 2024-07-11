@@ -186,13 +186,14 @@ public class PetDataTable: DataReaderBase
 	 * @param petId the pet Id.
 	 * @return the pet data
 	 */
-	public PetData getPetData(int petId)
+	public PetData? getPetData(int petId)
 	{
-		if (!_pets.containsKey(petId))
+		if (!_pets.TryGetValue(petId, out PetData? petData))
 		{
 			LOGGER.Info(GetType().Name + ": Missing pet data for npcid: " + petId);
 		}
-		return _pets.get(petId);
+
+		return petData;
 	}
 	
 	/**

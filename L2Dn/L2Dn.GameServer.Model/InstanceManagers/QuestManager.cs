@@ -103,14 +103,9 @@ public class QuestManager
 	 * @param name the quest name
 	 * @return the quest
 	 */
-	public Quest getQuest(string name)
+	public Quest? getQuest(string name)
 	{
-		if (_quests.containsKey(name))
-		{
-			return _quests.get(name);
-		}
-
-		return null;
+		return _quests.GetValueOrDefault(name);
 	}
 	
 	/**
@@ -171,7 +166,7 @@ public class QuestManager
 	 */
 	public bool removeScript(Quest script)
 	{
-		if (_quests.containsKey(script.Name))
+		if (_quests.ContainsKey(script.Name))
 		{
 			_quests.remove(script.Name);
 			return true;

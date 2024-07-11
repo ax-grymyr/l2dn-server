@@ -497,7 +497,7 @@ public class MonsterRace
 	 */
 	public void setBetOnLane(int lane, long amount, bool saveOnDb)
 	{
-		long sum = (_betsPerLane.containsKey(lane)) ? _betsPerLane.get(lane) + amount : amount;
+		long sum = (_betsPerLane.TryGetValue(lane, out long bet)) ? bet + amount : amount;
 		
 		_betsPerLane.put(lane, sum);
 		

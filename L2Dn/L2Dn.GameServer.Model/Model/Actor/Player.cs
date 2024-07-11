@@ -1070,7 +1070,7 @@ public class Player: Playable
 	 */
 	public bool hasRecipeList(int recipeId)
 	{
-		return _dwarvenRecipeBook.containsKey(recipeId) || _commonRecipeBook.containsKey(recipeId);
+		return _dwarvenRecipeBook.ContainsKey(recipeId) || _commonRecipeBook.ContainsKey(recipeId);
 	}
 	
 	/**
@@ -1187,7 +1187,7 @@ public class Player: Playable
 	 */
 	public bool hasQuestState(string quest)
 	{
-		return _quests.containsKey(quest);
+		return _quests.ContainsKey(quest);
 	}
 	
 	public bool hasAnyCompletedQuestStates(List<int> questIds)
@@ -9759,7 +9759,7 @@ public class Player: Playable
 				return false;
 			}
 			
-			if (getSubClasses().containsKey(classIndex))
+			if (getSubClasses().ContainsKey(classIndex))
 			{
 				return false;
 			}
@@ -10580,11 +10580,11 @@ public class Player: Playable
 			{
 				sendPacket(SystemMessageId.YOU_ARE_NO_LONGER_PROTECTED_FROM_AGGRESSIVE_MONSTERS);
 			}
-			if (Config.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().containsKey(getObjectId()))
+			if (Config.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().ContainsKey(getObjectId()))
 			{
 				CharSummonTable.getInstance().restoreServitor(this);
 			}
-			if (Config.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().containsKey(getObjectId()))
+			if (Config.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().ContainsKey(getObjectId()))
 			{
 				CharSummonTable.getInstance().restorePet(this);
 			}
@@ -12614,7 +12614,7 @@ public class Player: Playable
 		int id;
 		for (id = 1; id <= _bookmarkslot; ++id)
 		{
-			if (!_tpbookmarks.containsKey(id))
+			if (!_tpbookmarks.ContainsKey(id))
 			{
 				break;
 			}
@@ -14107,7 +14107,7 @@ public class Player: Playable
 	public bool hasRequest<T>()
 		where T: AbstractRequest
 	{
-		return _requests.containsKey(typeof(T));
+		return _requests.ContainsKey(typeof(T));
 	}
 	
 	/**

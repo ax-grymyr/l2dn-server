@@ -86,10 +86,8 @@ public class AirShipManager
 			return null;
 		}
 		
-		AirShip airShip;
-		if (_airShips.containsKey(ownerId))
+		if (_airShips.TryGetValue(ownerId, out AirShip? airShip))
 		{
-			airShip = _airShips.get(ownerId);
 			airShip.refreshId();
 		}
 		else
@@ -124,12 +122,12 @@ public class AirShipManager
 	
 	public bool hasAirShipLicense(int ownerId)
 	{
-		return _airShipsInfo.containsKey(ownerId);
+		return _airShipsInfo.ContainsKey(ownerId);
 	}
 	
 	public void registerLicense(int ownerId)
 	{
-		if (!_airShipsInfo.containsKey(ownerId))
+		if (!_airShipsInfo.ContainsKey(ownerId))
 		{
 			StatSet info = new StatSet();
 			info.set("fuel", 600);
@@ -183,12 +181,11 @@ public class AirShipManager
 		}
 		
 		int dockId = ship.getDockId();
-		if (!_teleports.containsKey(dockId))
+		if (!_teleports.TryGetValue(dockId, out AirShipTeleportList? all))
 		{
 			return;
 		}
 		
-		AirShipTeleportList all = _teleports.get(dockId);
 		player.sendPacket(new ExAirShipTeleportListPacket(all.getLocation(), all.getRoute(), all.getFuel()));
 	}
 	

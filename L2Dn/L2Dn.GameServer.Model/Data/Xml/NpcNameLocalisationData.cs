@@ -77,14 +77,7 @@ public class NpcNameLocalisationData: DataReaderBase
 	
 	public bool hasLocalisation(int id)
 	{
-		foreach (Map<int, string[]> data in NPC_NAME_LOCALISATIONS.values())
-		{
-			if (data.containsKey(id))
-			{
-				return true;
-			}
-		}
-		return false;
+		return NPC_NAME_LOCALISATIONS.Values.Any(data => data.ContainsKey(id));
 	}
 	
 	public static NpcNameLocalisationData getInstance()

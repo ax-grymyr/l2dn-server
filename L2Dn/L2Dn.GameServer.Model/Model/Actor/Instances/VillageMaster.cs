@@ -490,7 +490,7 @@ public class VillageMaster: Folk
 					{
 						// retail html contain only 3 subclasses
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Modify.htm", player);
-						if (player.getSubClasses().containsKey(1))
+						if (player.getSubClasses().ContainsKey(1))
 						{
 							htmlText.Replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1).getClassDefinition()).getClientCode());
 						}
@@ -499,7 +499,7 @@ public class VillageMaster: Folk
 							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass npc_%objectId%_Subclass 6 1\">%sub1%</Button>", "");
 						}
 						
-						if (player.getSubClasses().containsKey(2))
+						if (player.getSubClasses().ContainsKey(2))
 						{
 							htmlText.Replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2).getClassDefinition()).getClientCode());
 						}
@@ -508,7 +508,7 @@ public class VillageMaster: Folk
 							htmlText.Replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass npc_%objectId%_Subclass 6 2\">%sub2%</Button>", "");
 						}
 						
-						if (player.getSubClasses().containsKey(3))
+						if (player.getSubClasses().ContainsKey(3))
 						{
 							htmlText.Replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3).getClassDefinition()).getClientCode());
 						}

@@ -292,12 +292,12 @@ public class CursedWeaponsManager: DataReaderBase
 	
 	public bool isCursed(int itemId)
 	{
-		return _cursedWeapons.containsKey(itemId);
+		return _cursedWeapons.ContainsKey(itemId);
 	}
 	
 	public ICollection<CursedWeapon> getCursedWeapons()
 	{
-		return _cursedWeapons.values();
+		return _cursedWeapons.Values;
 	}
 	
 	public ICollection<int> getCursedWeaponsIds()
@@ -305,9 +305,9 @@ public class CursedWeaponsManager: DataReaderBase
 		return _cursedWeapons.Keys;
 	}
 	
-	public CursedWeapon getCursedWeapon(int itemId)
+	public CursedWeapon? getCursedWeapon(int itemId)
 	{
-		return _cursedWeapons.get(itemId);
+		return _cursedWeapons.GetValueOrDefault(itemId);
 	}
 	
 	public void givePassive(int itemId)

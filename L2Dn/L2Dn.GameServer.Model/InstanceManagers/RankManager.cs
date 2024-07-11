@@ -151,9 +151,8 @@ public class RankManager
 				player.set("competitions_lost", record.CompetitionsLost);
 				player.set("olympiad_points", record.OlympiadPoints);
 					
-				if (Hero.getInstance().getCompleteHeroes().containsKey(charId))
+				if (Hero.getInstance().getCompleteHeroes().TryGetValue(charId, out StatSet? hero))
 				{
-					StatSet hero = Hero.getInstance().getCompleteHeroes().get(charId);
 					player.set("count", hero.getInt("count", 0));
 					player.set("legend_count", hero.getInt("legend_count", 0));
 				}

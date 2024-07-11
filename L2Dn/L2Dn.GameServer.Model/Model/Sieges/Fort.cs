@@ -1073,11 +1073,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public int getCastleIdByAmbassador(int npcId)
 	{
-		if ((_envoyCastles == null) || !_envoyCastles.containsKey(npcId))
+		if ((_envoyCastles == null) || !_envoyCastles.TryGetValue(npcId, out int value))
 		{
 			return -1;
 		}
-		return _envoyCastles.get(npcId);
+
+		return value;
 	}
 	
 	/**

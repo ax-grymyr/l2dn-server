@@ -141,9 +141,9 @@ public class Teleporter: Npc
 		if (value == 0)
 		{
 			pom = npcId.ToString();
-			if ((player != null) && QUEST_RECOMENDATIONS.containsKey(npcId))
+			if ((player != null) && QUEST_RECOMENDATIONS.TryGetValue(npcId, out List<TeleporterQuestRecommendationHolder>? holders))
 			{
-				foreach (TeleporterQuestRecommendationHolder rec in QUEST_RECOMENDATIONS.get(npcId))
+				foreach (TeleporterQuestRecommendationHolder rec in holders)
 				{
 					bool breakOuterLoop = false;
 					QuestState qs = player.getQuestState(rec.getQuestName());
