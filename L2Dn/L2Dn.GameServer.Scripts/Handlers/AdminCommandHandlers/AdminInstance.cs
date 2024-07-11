@@ -71,7 +71,7 @@ public class AdminInstance: IAdminCommandHandler
 			case "admin_instancecreate":
 			{
 				int templateId = CommonUtil.parseNextInt(st, 0);
-				InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
+				InstanceTemplate? template = InstanceManager.getInstance().getInstanceTemplate(templateId);
 				if (template != null)
 				{
 					String enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";

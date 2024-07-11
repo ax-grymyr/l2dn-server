@@ -247,7 +247,7 @@ public class Util
 		player.sendPacket(new ShowBoardPacket([
 			"0", "0", "0", "0", "0", "0", player.getName(),
 			player.getObjectId().ToString(), player.getAccountName(), "9", " ", " ",
-			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0"
+			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0",
 		]));
 	}
 
@@ -255,50 +255,5 @@ public class Util
 	{
 		WorldObject? target = World.getInstance().findObject(targetObjId);
 		return target != null && obj.Distance3D(target) <= radius;
-	}
-
-	/**
-	 * Re-Maps a value from one range to another.
-	 * @param input
-	 * @param inputMin
-	 * @param inputMax
-	 * @param outputMin
-	 * @param outputMax
-	 * @return The mapped value
-	 */
-	public static int map(int input, int inputMin, int inputMax, int outputMin, int outputMax)
-	{
-		return (int.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
-			outputMin;
-	}
-
-	/**
-	 * Re-Maps a value from one range to another.
-	 * @param input
-	 * @param inputMin
-	 * @param inputMax
-	 * @param outputMin
-	 * @param outputMax
-	 * @return The mapped value
-	 */
-	public static long map(long input, long inputMin, long inputMax, long outputMin, long outputMax)
-	{
-		return (long.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
-			outputMin;
-	}
-
-	/**
-	 * Re-Maps a value from one range to another.
-	 * @param input
-	 * @param inputMin
-	 * @param inputMax
-	 * @param outputMin
-	 * @param outputMax
-	 * @return The mapped value
-	 */
-	public static double map(double input, double inputMin, double inputMax, double outputMin, double outputMax)
-	{
-		return (double.Clamp(input, inputMin, inputMax) - inputMin) * (outputMax - outputMin) / (inputMax - inputMin) +
-			outputMin;
 	}
 }

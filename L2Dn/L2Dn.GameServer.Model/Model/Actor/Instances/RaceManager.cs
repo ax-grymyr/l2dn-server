@@ -217,8 +217,16 @@ public class RaceManager: Npc
 				{
 					continue;
 				}
-				
-				StringUtil.append(sb, "<tr><td><a action=\"bypass -h npc_%objectId%_ShowTicket ", "" + ticket.getObjectId(), "\">", "" + ticket.getEnchantLevel(), " Race Number</a></td><td align=right><font color=\"LEVEL\">", "" + ticket.getCustomType1(), "</font> Number</td><td align=right><font color=\"LEVEL\">", "" + (ticket.getCustomType2() * 100), "</font> Adena</td></tr>");
+
+				sb.Append("<tr><td><a action=\"bypass -h npc_%objectId%_ShowTicket ");
+				sb.Append(ticket.getObjectId());
+				sb.Append("\">");
+				sb.Append(ticket.getEnchantLevel());
+				sb.Append(" Race Number</a></td><td align=right><font color=\"LEVEL\">");
+				sb.Append(ticket.getCustomType1());
+				sb.Append("</font> Number</td><td align=right><font color=\"LEVEL\">");
+				sb.Append(ticket.getCustomType2() * 100);
+				sb.Append("</font> Adena</td></tr>");
 			}
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 7, player), player);
@@ -325,13 +333,18 @@ public class RaceManager: Npc
 			for (int i = history.Count - 1; i >= Math.Max(0, history.Count - 7); i--)
 			{
 				MonsterRace.HistoryInfo info = history[i];
-				StringUtil.append(sb, "<tr><td><font color=\"LEVEL\">", "" + info.getRaceId(),
-					"</font> th</td><td><font color=\"LEVEL\">", "" + info.getFirst(),
-					"</font> Lane </td><td><font color=\"LEVEL\">", "" + info.getSecond(),
-					"</font> Lane</td><td align=right><font color=00ffff>",
-					info.getOddRate().ToString("N2"), "</font> Times</td></tr>");
+
+				sb.Append("<tr><td><font color=\"LEVEL\">");
+				sb.Append(info.getRaceId());
+				sb.Append("</font> th</td><td><font color=\"LEVEL\">");
+				sb.Append(info.getFirst());
+				sb.Append("</font> Lane </td><td><font color=\"LEVEL\">");
+				sb.Append(info.getSecond());
+				sb.Append("</font> Lane</td><td align=right><font color=00ffff>");
+				sb.Append(info.getOddRate().ToString("N2"));
+				sb.Append("</font> Times</td></tr>");
 			}
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 9, player), player);
 			htmlContent.Replace("%infos%", sb.ToString());
 			htmlContent.Replace("%objectId%", getObjectId().ToString());

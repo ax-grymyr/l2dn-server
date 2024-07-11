@@ -84,18 +84,6 @@ public static class CommonUtil
 		}
 	}
 
-	public static int parseInt(string value, int defaultValue)
-	{
-		try
-		{
-			return int.Parse(value);
-		}
-		catch (Exception e)
-		{
-			return defaultValue;
-		}
-	}
-
 	/**
 	 * @param str - the string whose first letter to capitalize
 	 * @return a string with the first letter of the {@code str} capitalized

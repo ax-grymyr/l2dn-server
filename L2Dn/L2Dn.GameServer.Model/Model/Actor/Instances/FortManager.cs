@@ -1,4 +1,4 @@
-﻿using L2Dn.GameServer.Data;
+﻿using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -8,7 +8,6 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Teleporters;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 
@@ -17,33 +16,33 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 /**
  * Fortress Foreman implementation used for: Area Teleports, Support Magic, Clan Warehouse, Exp Loss Reduction
  */
-public class FortManager : Merchant
+public class FortManager: Merchant
 {
 	protected const int COND_ALL_FALSE = 0;
 	protected const int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	protected const int COND_OWNER = 2;
-	
+
 	public const int ORC_FORTRESS_ID = 122;
-	
+
 	public FortManager(NpcTemplate template): base(template)
 	{
 		setInstanceType(InstanceType.FortManager);
 	}
-	
+
 	public override bool isWarehouse()
 	{
 		return true;
 	}
-	
+
 	private void sendHtmlMessage(Player player, HtmlContent htmlContent)
 	{
 		htmlContent.Replace("%objectId%", getObjectId().ToString());
 		htmlContent.Replace("%npcId%", getId().ToString());
-		
+
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	public override void onBypassFeedback(Player player, String command)
 	{
 		// BypassValidation Exploit plug.
@@ -51,7 +50,7 @@ public class FortManager : Merchant
 		{
 			return;
 		}
-		 
+
 		int condition = validateCondition(player);
 		if (condition <= COND_ALL_FALSE)
 		{
@@ -63,13 +62,14 @@ public class FortManager : Merchant
 		}
 		else if (condition == COND_OWNER)
 		{
-			 StringTokenizer st = new StringTokenizer(command, " ");
-			 String actualCommand = st.nextToken(); // Get actual command
+			StringTokenizer st = new StringTokenizer(command, " ");
+			String actualCommand = st.nextToken(); // Get actual command
 			String val = "";
 			if (st.countTokens() >= 1)
 			{
 				val = st.nextToken();
 			}
+
 			if (actualCommand.equalsIgnoreCase("expel"))
 			{
 				if (player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
@@ -86,6 +86,7 @@ public class FortManager : Merchant
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 					player.sendPacket(html);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("banish_foreigner"))
@@ -93,36 +94,37 @@ public class FortManager : Merchant
 				if (player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
 				{
 					getFort().banishForeigners(); // Move non-clan members off fortress area
-					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-expeled.htm", player); 
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-expeled.htm", player);
 					htmlContent.Replace("%objectId%", getObjectId().ToString());
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 					player.sendPacket(html);
 				}
 				else
 				{
-					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player); 
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
 					htmlContent.Replace("%objectId%", getObjectId().ToString());
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 					player.sendPacket(html);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("receive_report"))
 			{
 				if (getFort().getFortState() < 2)
 				{
-					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-report.htm", player); 
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-report.htm", player);
 
 					htmlContent.Replace("%objectId%", getObjectId().ToString());
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
-						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero; 
+						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
 						htmlContent.Replace("%hr%", time.Hours.ToString());
 						htmlContent.Replace("%min%", time.Minutes.ToString());
 					}
 					else
 					{
-						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero; 
+						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero;
 						htmlContent.Replace("%hr%", time.Hours.ToString());
 						htmlContent.Replace("%min%", time.Minutes.ToString());
 					}
@@ -132,44 +134,47 @@ public class FortManager : Merchant
 				}
 				else
 				{
-					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-castlereport.htm", player); 
+					HtmlContent htmlContent =
+						HtmlContent.LoadFromFile("html/fortress/foreman-castlereport.htm", player);
 
 					htmlContent.Replace("%objectId%", getObjectId().ToString());
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
-						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero; 
+						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
 						htmlContent.Replace("%hr%", time.Hours.ToString());
 						htmlContent.Replace("%min%", time.Minutes.ToString());
 					}
 					else
 					{
-						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero; 
+						TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero;
 						htmlContent.Replace("%hr%", time.Hours.ToString());
 						htmlContent.Replace("%min%", time.Minutes.ToString());
 					}
-					
-					TimeSpan time2 = getFort().getTimeTillNextFortUpdate(); 
+
+					TimeSpan time2 = getFort().getTimeTillNextFortUpdate();
 					htmlContent.Replace("%castle%", getFort().getContractedCastle().getName());
 					htmlContent.Replace("%hr2%", time2.Hours.ToString());
 					htmlContent.Replace("%min2%", time2.Minutes.ToString());
-					
+
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 					player.sendPacket(html);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("operate_door")) // door
-			// control
+				// control
 			{
 				if (player.hasClanPrivilege(ClanPrivilege.CS_OPEN_DOOR))
 				{
 					if (!string.IsNullOrEmpty(val))
 					{
-						 bool open = (int.Parse(val) == 1);
+						bool open = (int.Parse(val) == 1);
 						while (st.hasMoreTokens())
 						{
 							getFort().openCloseDoor(player, int.Parse(st.nextToken()), open);
 						}
+
 						if (open)
 						{
 							if (getFort().getResidenceId() == ORC_FORTRESS_ID)
@@ -177,7 +182,8 @@ public class FortManager : Merchant
 								return;
 							}
 
-							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-opened.htm", player); 
+							HtmlContent htmlContent =
+								HtmlContent.LoadFromFile("html/fortress/foreman-opened.htm", player);
 							htmlContent.Replace("%objectId%", getObjectId().ToString());
 							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 							player.sendPacket(html);
@@ -189,7 +195,8 @@ public class FortManager : Merchant
 								return;
 							}
 
-							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-closed.htm", player); 
+							HtmlContent htmlContent =
+								HtmlContent.LoadFromFile("html/fortress/foreman-closed.htm", player);
 							htmlContent.Replace("%objectId%", getObjectId().ToString());
 							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 							player.sendPacket(html);
@@ -202,8 +209,9 @@ public class FortManager : Merchant
 							return;
 						}
 
-						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/" + getTemplate().getId() + "-d.htm",
-							player); 
+						HtmlContent htmlContent = HtmlContent.LoadFromFile(
+							"html/fortress/" + getTemplate().getId() + "-d.htm",
+							player);
 
 						htmlContent.Replace("%objectId%", getObjectId().ToString());
 						htmlContent.Replace("%npcname%", getName());
@@ -213,11 +221,12 @@ public class FortManager : Merchant
 				}
 				else
 				{
-					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player); 
+					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
 					htmlContent.Replace("%objectId%", getObjectId().ToString());
 					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 					player.sendPacket(html);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("manage_vault"))
@@ -243,6 +252,7 @@ public class FortManager : Merchant
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
 					sendHtmlMessage(player, htmlContent);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("functions"))
@@ -258,7 +268,7 @@ public class FortManager : Merchant
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile(
 							"html/fortress/" + getId() + "-t" +
-							getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() + ".htm", player); 
+							getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() + ".htm", player);
 
 						sendHtmlMessage(player, htmlContent);
 					}
@@ -267,14 +277,14 @@ public class FortManager : Merchant
 				{
 					if (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)
 					{
-						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-nac.htm", player); 
+						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-nac.htm", player);
 						sendHtmlMessage(player, htmlContent);
 					}
 					else
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile(
 							"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm",
-							player); 
+							player);
 
 						htmlContent.Replace("%mp%", ((int)getCurrentMp()).ToString());
 						sendHtmlMessage(player, htmlContent);
@@ -287,34 +297,40 @@ public class FortManager : Merchant
 				else
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-functions.htm", player);
-					
+
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 					{
-						htmlContent.Replace("%xp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel().ToString()));
+						htmlContent.Replace("%xp_regen%",
+							(getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel().ToString()));
 					}
 					else
 					{
 						htmlContent.Replace("%xp_regen%", "0");
 					}
+
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 					{
-						htmlContent.Replace("%hp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel().ToString()));
+						htmlContent.Replace("%hp_regen%",
+							(getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel().ToString()));
 					}
 					else
 					{
 						htmlContent.Replace("%hp_regen%", "0");
 					}
+
 					if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 					{
-						htmlContent.Replace("%mp_regen%", (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel().ToString()));
+						htmlContent.Replace("%mp_regen%",
+							(getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel().ToString()));
 					}
 					else
 					{
 						htmlContent.Replace("%mp_regen%", "0");
 					}
-					
+
 					sendHtmlMessage(player, htmlContent);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("manage"))
@@ -330,24 +346,28 @@ public class FortManager : Merchant
 								player.sendMessage("This fortress has no owner, you cannot change the configuration.");
 								return;
 							}
+
 							val = st.nextToken();
 							if (val.equalsIgnoreCase("hp_cancel"))
 							{
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
 								htmlContent.Replace("%apply%", "recovery hp 0");
 								sendHtmlMessage(player, htmlContent);
 								return;
 							}
 							else if (val.equalsIgnoreCase("mp_cancel"))
 							{
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
 								htmlContent.Replace("%apply%", "recovery mp 0");
 								sendHtmlMessage(player, htmlContent);
 								return;
 							}
 							else if (val.equalsIgnoreCase("exp_cancel"))
 							{
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
 								htmlContent.Replace("%apply%", "recovery exp 0");
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -355,9 +375,10 @@ public class FortManager : Merchant
 							else if (val.equalsIgnoreCase("edit_hp"))
 							{
 								val = st.nextToken();
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player);
 								htmlContent.Replace("%name%", "(HP Recovery Device)");
-								 int percent = int.Parse(val);
+								int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -372,9 +393,13 @@ public class FortManager : Merchant
 										break;
 									}
 								}
-								
-								htmlContent.Replace("%cost%", cost + "</font>Adena /" + (Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
-								htmlContent.Replace("%use%", "Provides additional HP recovery for clan members in the fortress.<font color=\"00FFFF\">" + percent + "%</font>");
+
+								htmlContent.Replace("%cost%",
+									cost + "</font>Adena /" + (Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+									" Day</font>)");
+								htmlContent.Replace("%use%",
+									"Provides additional HP recovery for clan members in the fortress.<font color=\"00FFFF\">" +
+									percent + "%</font>");
 								htmlContent.Replace("%apply%", "recovery hp " + percent);
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -382,10 +407,11 @@ public class FortManager : Merchant
 							else if (val.equalsIgnoreCase("edit_mp"))
 							{
 								val = st.nextToken();
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player);
 
 								htmlContent.Replace("%name%", "(MP Recovery)");
-								 int percent = int.Parse(val);
+								int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -400,8 +426,13 @@ public class FortManager : Merchant
 										break;
 									}
 								}
-								htmlContent.Replace("%cost%", cost + "</font>Adena /" + (Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
-								htmlContent.Replace("%use%", "Provides additional MP recovery for clan members in the fortress.<font color=\"00FFFF\">" + percent + "%</font>");
+
+								htmlContent.Replace("%cost%",
+									cost + "</font>Adena /" + (Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+									" Day</font>)");
+								htmlContent.Replace("%use%",
+									"Provides additional MP recovery for clan members in the fortress.<font color=\"00FFFF\">" +
+									percent + "%</font>");
 								htmlContent.Replace("%apply%", "recovery mp " + percent);
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -410,9 +441,10 @@ public class FortManager : Merchant
 							{
 								val = st.nextToken();
 
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player);
 								htmlContent.Replace("%name%", "(EXP Recovery Device)");
-								 int percent = int.Parse(val);
+								int percent = int.Parse(val);
 								int cost;
 								switch (percent)
 								{
@@ -427,8 +459,13 @@ public class FortManager : Merchant
 										break;
 									}
 								}
-								htmlContent.Replace("%cost%", cost + "</font>Adena /" + (Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
-								htmlContent.Replace("%use%", "Restores the Exp of any clan member who is resurrected in the fortress.<font color=\"00FFFF\">" + percent + "%</font>");
+
+								htmlContent.Replace("%cost%",
+									cost + "</font>Adena /" + (Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+									" Day</font>)");
+								htmlContent.Replace("%use%",
+									"Restores the Exp of any clan member who is resurrected in the fortress.<font color=\"00FFFF\">" +
+									percent + "%</font>");
 								htmlContent.Replace("%apply%", "recovery exp " + percent);
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -443,16 +480,19 @@ public class FortManager : Merchant
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() ==
+										    int.Parse(val))
 										{
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
+											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
+												player);
 											htmlContent.Replace("%val%", val + "%");
 											sendHtmlMessage(player, htmlContent);
 											return;
 										}
 									}
 
-									htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm",
+									htmlContent = HtmlContent.LoadFromFile(
+										"html/fortress/functions-apply_confirmed.htm",
 										player);
 
 									int percent = int.Parse(val);
@@ -464,7 +504,7 @@ public class FortManager : Merchant
 
 											htmlContent = HtmlContent.LoadFromFile(
 												"html/fortress/functions-cancel_confirmed.htm", player);
-											
+
 											break;
 										}
 										case 300:
@@ -488,6 +528,7 @@ public class FortManager : Merchant
 
 									sendHtmlMessage(player, htmlContent);
 								}
+
 								return;
 							}
 							else if (val.equalsIgnoreCase("mp"))
@@ -497,26 +538,31 @@ public class FortManager : Merchant
 									int fee;
 									val = st.nextToken();
 									HtmlContent htmlContent =
-										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player); 
+										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() ==
+										    int.Parse(val))
 										{
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
+											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
+												player);
 
 											htmlContent.Replace("%val%", val + "%");
 											sendHtmlMessage(player, htmlContent);
 											return;
 										}
 									}
-									 int percent = int.Parse(val);
+
+									int percent = int.Parse(val);
 									switch (percent)
 									{
 										case 0:
 										{
 											fee = 0;
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm", player);
+											htmlContent =
+												HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm",
+													player);
 											break;
 										}
 										case 40:
@@ -540,6 +586,7 @@ public class FortManager : Merchant
 
 									sendHtmlMessage(player, htmlContent);
 								}
+
 								return;
 							}
 							else if (val.equalsIgnoreCase("exp"))
@@ -549,26 +596,31 @@ public class FortManager : Merchant
 									int fee;
 									val = st.nextToken();
 									HtmlContent htmlContent =
-										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player); 
+										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
 									if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
 									{
-										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() == int.Parse(val))
+										if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() ==
+										    int.Parse(val))
 										{
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
+											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
+												player);
 
 											htmlContent.Replace("%val%", val + "%");
 											sendHtmlMessage(player, htmlContent);
 											return;
 										}
 									}
-									 int percent = int.Parse(val);
+
+									int percent = int.Parse(val);
 									switch (percent)
 									{
 										case 0:
 										{
 											fee = 0;
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm", player);
+											htmlContent =
+												HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm",
+													player);
 
 											break;
 										}
@@ -593,12 +645,14 @@ public class FortManager : Merchant
 
 									sendHtmlMessage(player, htmlContent);
 								}
+
 								return;
 							}
 						}
 
 						{
-							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/edit_recovery.htm", player); 
+							HtmlContent htmlContent =
+								HtmlContent.LoadFromFile("html/fortress/edit_recovery.htm", player);
 							String hp =
 								"[<a action=\"bypass -h npc_%objectId%_manage recovery edit_hp 300\">300%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_hp 400\">400%</a>]";
 							String exp =
@@ -614,7 +668,8 @@ public class FortManager : Merchant
 									(Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								htmlContent.Replace("%hp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime()
+										?.ToString("dd/MM/yyyy HH:mm"));
 								htmlContent.Replace("%change_hp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery hp_cancel\">Deactivate</a>]" +
 									hp);
@@ -635,7 +690,8 @@ public class FortManager : Merchant
 									(Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								htmlContent.Replace("%exp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime()
+										?.ToString("dd/MM/yyyy HH:mm"));
 								htmlContent.Replace("%change_exp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery exp_cancel\">Deactivate</a>]" +
 									exp);
@@ -656,7 +712,8 @@ public class FortManager : Merchant
 									(Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								htmlContent.Replace("%mp_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime()
+										?.ToString("dd/MM/yyyy HH:mm"));
 								htmlContent.Replace("%change_mp%",
 									"[<a action=\"bypass -h npc_%objectId%_manage recovery mp_cancel\">Deactivate</a>]" +
 									mp);
@@ -680,17 +737,20 @@ public class FortManager : Merchant
 								player.sendMessage("This fortress has no owner, you cannot change the configuration.");
 								return;
 							}
+
 							val = st.nextToken();
 							if (val.equalsIgnoreCase("tele_cancel"))
 							{
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
 								htmlContent.Replace("%apply%", "other tele 0");
 								sendHtmlMessage(player, htmlContent);
 								return;
 							}
 							else if (val.equalsIgnoreCase("support_cancel"))
 							{
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-cancel.htm", player);
 								htmlContent.Replace("%apply%", "other support 0");
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -698,10 +758,11 @@ public class FortManager : Merchant
 							else if (val.equalsIgnoreCase("edit_support"))
 							{
 								val = st.nextToken();
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player);
 
 								htmlContent.Replace("%name%", "Insignia (Supplementary Magic)");
-								 int stage = int.Parse(val);
+								int stage = int.Parse(val);
 								int cost;
 								switch (stage)
 								{
@@ -716,7 +777,10 @@ public class FortManager : Merchant
 										break;
 									}
 								}
-								htmlContent.Replace("%cost%", cost + "</font>Adena /" + (Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+
+								htmlContent.Replace("%cost%",
+									cost + "</font>Adena /" + (Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+									" Day</font>)");
 								htmlContent.Replace("%use%", "Enables the use of supplementary magic.");
 								htmlContent.Replace("%apply%", "other support " + stage);
 								sendHtmlMessage(player, htmlContent);
@@ -725,9 +789,10 @@ public class FortManager : Merchant
 							else if (val.equalsIgnoreCase("edit_tele"))
 							{
 								val = st.nextToken();
-								HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player); 
+								HtmlContent htmlContent =
+									HtmlContent.LoadFromFile("html/fortress/functions-apply.htm", player);
 								htmlContent.Replace("%name%", "Mirror (Teleportation Device)");
-								 int stage = int.Parse(val);
+								int stage = int.Parse(val);
 								int cost;
 								switch (stage)
 								{
@@ -742,8 +807,13 @@ public class FortManager : Merchant
 										break;
 									}
 								}
-								htmlContent.Replace("%cost%", cost + "</font>Adena /" + (Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
-								htmlContent.Replace("%use%", "Teleports clan members in a fort to the target <font color=\"00FFFF\">Stage " + stage + "</font> staging area");
+
+								htmlContent.Replace("%cost%",
+									cost + "</font>Adena /" + (Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) +
+									" Day</font>)");
+								htmlContent.Replace("%use%",
+									"Teleports clan members in a fort to the target <font color=\"00FFFF\">Stage " +
+									stage + "</font> staging area");
 								htmlContent.Replace("%apply%", "other tele " + stage);
 								sendHtmlMessage(player, htmlContent);
 								return;
@@ -754,25 +824,30 @@ public class FortManager : Merchant
 								{
 									int fee;
 									val = st.nextToken();
-									HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
-									
+									HtmlContent htmlContent =
+										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
+
 									if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
 									{
 										if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() == int.Parse(val))
 										{
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
+											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
+												player);
 											htmlContent.Replace("%val%", "Stage " + val);
 											sendHtmlMessage(player, htmlContent);
 											return;
 										}
 									}
-									 int level = int.Parse(val);
+
+									int level = int.Parse(val);
 									switch (level)
 									{
 										case 0:
 										{
 											fee = 0;
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm", player);
+											htmlContent =
+												HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm",
+													player);
 											break;
 										}
 										case 1:
@@ -796,6 +871,7 @@ public class FortManager : Merchant
 
 									sendHtmlMessage(player, htmlContent);
 								}
+
 								return;
 							}
 							else if (val.equalsIgnoreCase("support"))
@@ -805,26 +881,31 @@ public class FortManager : Merchant
 									int fee;
 									val = st.nextToken();
 
-									HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
+									HtmlContent htmlContent =
+										HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
 									if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
 									{
 										if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == int.Parse(val))
 										{
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm", player);
+											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
+												player);
 
 											htmlContent.Replace("%val%", "Stage " + val);
 											sendHtmlMessage(player, htmlContent);
 											return;
 										}
 									}
-									 int level = int.Parse(val);
+
+									int level = int.Parse(val);
 									switch (level)
 									{
 										case 0:
 										{
 											fee = 0;
-											htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm", player);
+											htmlContent =
+												HtmlContent.LoadFromFile("html/fortress/functions-cancel_confirmed.htm",
+													player);
 
 											break;
 										}
@@ -849,6 +930,7 @@ public class FortManager : Merchant
 
 									sendHtmlMessage(player, htmlContent);
 								}
+
 								return;
 							}
 						}
@@ -869,7 +951,8 @@ public class FortManager : Merchant
 									(Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								htmlContent.Replace("%tele_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_TELEPORT).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_TELEPORT).getEndTime()
+										?.ToString("dd/MM/yyyy HH:mm"));
 								htmlContent.Replace("%change_tele%",
 									"[<a action=\"bypass -h npc_%objectId%_manage other tele_cancel\">Deactivate</a>]" +
 									tele);
@@ -890,7 +973,8 @@ public class FortManager : Merchant
 									(Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
 								htmlContent.Replace("%support_period%",
 									"Withdraw the fee for the next time at " +
-									getFort().getFortFunction(Fort.FUNC_SUPPORT).getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
+									getFort().getFortFunction(Fort.FUNC_SUPPORT).getEndTime()
+										?.ToString("dd/MM/yyyy HH:mm"));
 								htmlContent.Replace("%change_support%",
 									"[<a action=\"bypass -h npc_%objectId%_manage other support_cancel\">Deactivate</a>]" +
 									support);
@@ -920,6 +1004,7 @@ public class FortManager : Merchant
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
 					sendHtmlMessage(player, htmlContent);
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("support"))
@@ -930,16 +1015,17 @@ public class FortManager : Merchant
 				{
 					return;
 				}
-				
+
 				try
 				{
-					 int skillId = int.Parse(val);
+					int skillId = int.Parse(val);
 					try
 					{
 						if (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)
 						{
 							return;
 						}
+
 						if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == 0)
 						{
 							return;
@@ -951,6 +1037,7 @@ public class FortManager : Merchant
 						{
 							skillLevel = int.Parse(st.nextToken());
 						}
+
 						skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 						if (skill.hasEffectType(EffectType.SUMMON))
 						{
@@ -981,6 +1068,7 @@ public class FortManager : Merchant
 				{
 					player.sendMessage("Invalid skill level, contact your admin!");
 				}
+
 				return;
 			}
 			else if (actualCommand.equalsIgnoreCase("support_back"))
@@ -993,39 +1081,42 @@ public class FortManager : Merchant
 				HtmlContent htmlContent = HtmlContent.LoadFromFile(
 					"html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm", player);
 
-				htmlContent.Replace("%mp%", ((int) getStatus().getCurrentMp()).ToString());
+				htmlContent.Replace("%mp%", ((int)getStatus().getCurrentMp()).ToString());
 				sendHtmlMessage(player, htmlContent);
 				return;
 			}
-			else if (actualCommand.equalsIgnoreCase("goto")) // goto listId locId
+
+			if (actualCommand.equalsIgnoreCase("goto")) // goto listId locId
 			{
-				 Fort.FortFunction func = getFort().getFortFunction(Fort.FUNC_TELEPORT);
+				Fort.FortFunction func = getFort().getFortFunction(Fort.FUNC_TELEPORT);
 				if ((func == null) || !st.hasMoreTokens())
 				{
 					return;
 				}
-				
-				 int funcLvl = (val.Length >= 4) ? CommonUtil.parseInt(val.Substring(3), -1) : -1;
+
+				int funcLvl = (val.Length >= 4) ? val[3..].Parse(-1) : -1;
 				if (func.getLevel() == funcLvl)
 				{
-					TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), val);
-					if (holder != null)
+					TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), val);
+					if (holder is not null)
 					{
 						holder.doTeleport(player, this, CommonUtil.parseNextInt(st, -1));
 					}
 				}
+
 				return;
 			}
+
 			base.onBypassFeedback(player, command);
 		}
 	}
-	
+
 	public override void showChatWindow(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		String filename = "html/fortress/foreman-no.htm";
-		
-		 int condition = validateCondition(player);
+
+		int condition = validateCondition(player);
 		if (condition > COND_ALL_FALSE)
 		{
 			if (condition == COND_BUSY_BECAUSE_OF_SIEGE)
@@ -1037,14 +1128,14 @@ public class FortManager : Merchant
 				filename = "html/fortress/foreman.htm"; // Owner message window
 			}
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%objectId%", getObjectId().ToString());
 		htmlContent.Replace("%npcname%", getName());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	protected int validateCondition(Player player)
 	{
 		if ((getFort() != null) && (getFort().getResidenceId() > 0) && (player.getClan() != null))
@@ -1058,16 +1149,17 @@ public class FortManager : Merchant
 				return COND_OWNER; // Owner
 			}
 		}
+
 		return COND_ALL_FALSE;
 	}
-	
+
 	private void showVaultWindowDeposit(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		player.setActiveWarehouse(player.getClan().getWarehouse());
 		player.sendPacket(new WarehouseDepositListPacket(1, player, WarehouseDepositListPacket.CLAN));
 	}
-	
+
 	private void showVaultWindowWithdraw(Player player)
 	{
 		if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_VIEW_WAREHOUSE))

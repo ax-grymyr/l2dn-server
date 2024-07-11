@@ -478,7 +478,7 @@ public class ItemAuctionInstance
 	
 	private ItemAuction createAuction(DateTime after)
 	{
-		AuctionItem auctionItem = _items[Rnd.get(_items.Count)];
+		AuctionItem auctionItem = _items.GetRandomElement();
 		DateTime startingTime = _dateGenerator.nextDate(after);
 		DateTime endingTime = startingTime + TimeSpan.FromMinutes(auctionItem.getAuctionLength());
 		ItemAuction auction = new ItemAuction(_auctionIds.getAndIncrement(), _instanceId, startingTime, endingTime, auctionItem);
