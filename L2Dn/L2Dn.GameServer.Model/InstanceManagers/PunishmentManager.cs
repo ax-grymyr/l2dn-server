@@ -39,12 +39,12 @@ public class PunishmentManager
 			foreach (DbPunishment record in ctx.Punishments)
 			{
 				int id = record.Id;
-				String key = record.Key;
+				string key = record.Key;
 				PunishmentAffect affect = (PunishmentAffect)record.Affect;
 				PunishmentType type = (PunishmentType)record.Type;
 				DateTime? expirationTime = record.ExpirationTime;
-				String reason = record.Reason;
-				String punishedBy = record.PunishedBy;
+				string reason = record.Reason;
+				string punishedBy = record.PunishedBy;
 				if (DateTime.UtcNow > expirationTime) // expired task.
 				{
 					expired++;

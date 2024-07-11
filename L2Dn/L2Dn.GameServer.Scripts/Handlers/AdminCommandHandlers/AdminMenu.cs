@@ -33,7 +33,7 @@ public class AdminMenu: IAdminCommandHandler
 		"admin_unban_menu"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_char_manage"))
 		{
@@ -41,10 +41,10 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_teleport_character_to_menu"))
 		{
-			String[] data = command.Split(" ");
+			string[] data = command.Split(" ");
 			if (data.Length == 5)
 			{
-				String playerName = data[1];
+				string playerName = data[1];
 				Player player = World.getInstance().getPlayer(playerName);
 				if (player != null)
 				{
@@ -57,7 +57,7 @@ public class AdminMenu: IAdminCommandHandler
 		{
 			try
 			{
-				String targetName = command.Substring(23);
+				string targetName = command.Substring(23);
 				Player player = World.getInstance().getPlayer(targetName);
 				teleportCharacter(player, activeChar.Location, activeChar, "Admin is teleporting you.");
 			}
@@ -70,7 +70,7 @@ public class AdminMenu: IAdminCommandHandler
 		{
 			try
 			{
-				String targetName = command.Substring(24);
+				string targetName = command.Substring(24);
 				Player player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
@@ -97,7 +97,7 @@ public class AdminMenu: IAdminCommandHandler
 		{
 			try
 			{
-				String targetName = command.Substring(23);
+				string targetName = command.Substring(23);
 				Player player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
@@ -144,9 +144,9 @@ public class AdminMenu: IAdminCommandHandler
 			if (st.countTokens() > 1)
 			{
 				st.nextToken();
-				String player = st.nextToken();
+				string player = st.nextToken();
 				Player plyr = World.getInstance().getPlayer(player);
-				String text;
+				string text;
 				if (plyr != null)
 				{
 					Disconnection.of(plyr).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
@@ -165,7 +165,7 @@ public class AdminMenu: IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(command);
 			if (st.countTokens() > 1)
 			{
-				String subCommand = "admin_ban_char";
+				string subCommand = "admin_ban_char";
 				AdminCommandHandler.getInstance().useAdminCommand(activeChar, subCommand + command.Substring(14), true);
 			}
 			showMainPage(activeChar);
@@ -175,7 +175,7 @@ public class AdminMenu: IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(command);
 			if (st.countTokens() > 1)
 			{
-				String subCommand = "admin_unban_char";
+				string subCommand = "admin_unban_char";
 				AdminCommandHandler.getInstance().useAdminCommand(activeChar, subCommand + command.Substring(16), true);
 			}
 			showMainPage(activeChar);
@@ -183,7 +183,7 @@ public class AdminMenu: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -193,11 +193,11 @@ public class AdminMenu: IAdminCommandHandler
 		handleKill(activeChar, null);
 	}
 	
-	private void handleKill(Player activeChar, String player)
+	private void handleKill(Player activeChar, string player)
 	{
 		WorldObject obj = activeChar.getTarget();
 		Creature target = (Creature) obj;
-		String filename = "main_menu.htm";
+		string filename = "main_menu.htm";
 		if (player != null)
 		{
 			Player plyr = World.getInstance().getPlayer(player);
@@ -230,7 +230,7 @@ public class AdminMenu: IAdminCommandHandler
 		AdminHtml.showAdminHtml(activeChar, filename);
 	}
 	
-	private void teleportCharacter(Player player, Location loc, Player activeChar, String message)
+	private void teleportCharacter(Player player, Location loc, Player activeChar, string message)
 	{
 		if (player != null)
 		{

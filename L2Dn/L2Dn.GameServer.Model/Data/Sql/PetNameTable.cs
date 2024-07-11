@@ -13,7 +13,7 @@ public class PetNameTable
 		return SingletonHolder.INSTANCE;
 	}
 	
-	public bool doesPetNameExist(String name, int petNpcId)
+	public bool doesPetNameExist(string name, int petNpcId)
 	{
 		bool result = true;
 		try
@@ -54,7 +54,7 @@ public class PetNameTable
 		return true;
 	}
 	
-	private static bool isAlphaNumeric(String text)
+	private static bool isAlphaNumeric(string text)
 	{
 		bool result = true;
 		foreach (char aChar in text)

@@ -21,15 +21,15 @@ public class AdminPrimePoints: IAdminCommandHandler
 		"admin_primepoints",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		if (actualCommand.equals("admin_primepoints"))
 		{
 			if (st.hasMoreTokens())
 			{
-				String action = st.nextToken();
+				string action = st.nextToken();
 				Player target = getTarget(activeChar);
 				if ((target == null) || !st.hasMoreTokens())
 				{
@@ -164,7 +164,7 @@ public class AdminPrimePoints: IAdminCommandHandler
 		activeChar.sendPacket(html);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

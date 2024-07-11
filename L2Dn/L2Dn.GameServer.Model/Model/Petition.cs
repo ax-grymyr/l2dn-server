@@ -20,12 +20,12 @@ public class Petition
 	private readonly  int _id;
 	private readonly  PetitionType _type;
 	private PetitionState _state = PetitionState.PENDING;
-	private readonly  String _content;
+	private readonly  string _content;
 	private readonly  Set<CreatureSayPacket> _messageLog = new();
 	private readonly  Player _petitioner;
 	private Player _responder;
 	
-	public Petition(Player petitioner, String petitionText, int petitionType)
+	public Petition(Player petitioner, string petitionText, int petitionType)
 	{
 		_id = IdManager.getInstance().getNextId();
 		_type = (PetitionType)(petitionType - 1);
@@ -81,7 +81,7 @@ public class Petition
 		return PetitionManager.getInstance().getPendingPetitions().remove(getId()) != null;
 	}
 	
-	public String getContent()
+	public string getContent()
 	{
 		return _content;
 	}
@@ -111,7 +111,7 @@ public class Petition
 		return _state;
 	}
 	
-	public String getTypeAsString()
+	public string getTypeAsString()
 	{
 		return _type.ToString().Replace("_", " ");
 	}

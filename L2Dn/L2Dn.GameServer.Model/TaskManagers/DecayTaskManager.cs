@@ -119,7 +119,7 @@ public class DecayTaskManager: Runnable
 		return TimeSpan.MaxValue;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		StringBuilder ret = new StringBuilder();
 		ret.Append("============= DecayTask Manager Report ============");

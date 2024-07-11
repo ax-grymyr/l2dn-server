@@ -20,7 +20,7 @@ public class BlockAction: AbstractEffect
 
 	public BlockAction(StatSet @params)
 	{
-		String[] actions = @params.getString("blockedActions").Split(",");
+		string[] actions = @params.getString("blockedActions").Split(",");
 		foreach (string action in actions)
 		{
 			_blockedActions.add(int.Parse(action));

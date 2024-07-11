@@ -5,21 +5,21 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class QuestSoundHtmlHolder
 {
-	private readonly String _sound;
-	private readonly String _html;
+	private readonly string _sound;
+	private readonly string _html;
 
-	public QuestSoundHtmlHolder(String sound, String html)
+	public QuestSoundHtmlHolder(string sound, string html)
 	{
 		_sound = sound;
 		_html = html;
 	}
 
-	public String getSound()
+	public string getSound()
 	{
 		return _sound;
 	}
 
-	public String getHtml()
+	public string getHtml()
 	{
 		return _html;
 	}

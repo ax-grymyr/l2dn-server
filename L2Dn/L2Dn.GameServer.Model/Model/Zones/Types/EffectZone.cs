@@ -35,7 +35,7 @@ public class EffectZone : ZoneType
 		_removeEffectsOnExit = false;
 	}
 	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		switch (name)
 		{
@@ -71,13 +71,13 @@ public class EffectZone : ZoneType
 			}
 			case "skillIdLvl":
 			{
-				String[] propertySplit =
+				string[] propertySplit =
 					(value.EndsWith(';') ? value[..^1] : value).Split(";");
 				
 				_skills = new();
-				foreach (String skill in propertySplit)
+				foreach (string skill in propertySplit)
 				{
-					String[] skillSplit = skill.Split("-");
+					string[] skillSplit = skill.Split("-");
 					if (skillSplit.Length != 2)
 					{
 						LOGGER.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" + skill + "\"");

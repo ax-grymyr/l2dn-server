@@ -6,9 +6,9 @@ public readonly struct ExNeedToChangeNamePacket: IOutgoingPacket
 {
     private readonly int _type;
     private readonly int _subType;
-    private readonly String _name;
+    private readonly string _name;
 	
-    public ExNeedToChangeNamePacket(int type, int subType, String name)
+    public ExNeedToChangeNamePacket(int type, int subType, string name)
     {
         _type = type;
         _subType = subType;

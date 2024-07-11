@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Model;
  */
 public class WalkInfo
 {
-	private readonly String _routeName;
+	private readonly string _routeName;
 	private ScheduledFuture _walkCheckTask;
 	private bool _blocked = false;
 	private bool _suspended = false;
@@ -22,7 +22,7 @@ public class WalkInfo
 	private bool _forward = true; // Determines first --> last or first <-- last direction
 	private long _lastActionTime; // Debug field
 	
-	public WalkInfo(String routeName)
+	public WalkInfo(string routeName)
 	{
 		_routeName = routeName;
 	}

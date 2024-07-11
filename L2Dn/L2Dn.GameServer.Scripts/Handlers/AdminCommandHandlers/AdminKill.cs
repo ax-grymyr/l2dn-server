@@ -20,7 +20,7 @@ public class AdminKill: IAdminCommandHandler
 		"admin_kill_monster"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_kill"))
 		{
@@ -28,7 +28,7 @@ public class AdminKill: IAdminCommandHandler
 			st.nextToken(); // skip command
 			if (st.hasMoreTokens())
 			{
-				String firstParam = st.nextToken();
+				string firstParam = st.nextToken();
 				Player plyr = World.getInstance().getPlayer(firstParam);
 				if (plyr != null)
 				{
@@ -129,7 +129,7 @@ public class AdminKill: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

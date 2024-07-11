@@ -10,16 +10,16 @@ namespace L2Dn.GameServer.Model.Quests;
 public class QuestCondition
 {
 	private readonly Predicate<Player> _condition;
-	private Map<int, String> _perNpcDialog;
-	private readonly  String _html;
+	private Map<int, string> _perNpcDialog;
+	private readonly  string _html;
 	
-	public QuestCondition(Predicate<Player> cond, String html)
+	public QuestCondition(Predicate<Player> cond, string html)
 	{
 		_condition = cond;
 		_html = html;
 	}
 	
-	public QuestCondition(Predicate<Player> cond, params KeyValuePair<int, String>[] pairs)
+	public QuestCondition(Predicate<Player> cond, params KeyValuePair<int, string>[] pairs)
 	{
 		_condition = cond;
 		_html = null;
@@ -32,7 +32,7 @@ public class QuestCondition
 		return _condition(player);
 	}
 	
-	public String getHtml(Npc npc)
+	public string getHtml(Npc npc)
 	{
 		return _perNpcDialog != null ? _perNpcDialog.get(npc.getId()) : _html;
 	}

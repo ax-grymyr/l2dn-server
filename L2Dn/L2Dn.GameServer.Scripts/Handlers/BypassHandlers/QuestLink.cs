@@ -20,9 +20,9 @@ public class QuestLink: IBypassHandler
 		"Quest"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
-		String quest = "";
+		string quest = "";
 		try
 		{
 			quest = command.Substring(5).Trim();
@@ -94,13 +94,13 @@ public class QuestLink: IBypassHandler
 		}
 		
 		int startCount = 0;
-		String startQuest = null;
+		string startQuest = null;
 		foreach (Quest quest in questList)
 		{
 			QuestState qs = player.getQuestState(quest.Name);
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
-				String startConditionHtml = quest.getStartConditionHtml(player, npc);
+				string startConditionHtml = quest.getStartConditionHtml(player, npc);
 				if (((startConditionHtml != null) && startConditionHtml.Length == 0) || !startingQuests.Contains(quest))
 				{
 					continue;
@@ -114,7 +114,7 @@ public class QuestLink: IBypassHandler
 					sbCanStart.Append("<font color=\"bbaa88\">");
 					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
 
-					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
+					string localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
 					// {
 					// 	NpcStringId ns = (NpcStringId)(int.Parse(quest.getNpcStringId() + "01"));
@@ -135,7 +135,7 @@ public class QuestLink: IBypassHandler
 				{
 					sbCantStart.Append("<font color=\"a62f31\">");
 					sbCantStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
-					String localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
+					string localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
 					// {
 					// 	NpcStringId ns = NpcStringId.getNpcStringId(int.Parse(quest.getNpcStringId() + "01"));
@@ -163,7 +163,7 @@ public class QuestLink: IBypassHandler
 				
 				sbStarted.Append("<font color=\"ffdd66\">");
 				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
-				String localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
+				string localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
 				// 	NpcStringId ns = NpcStringId.getNpcStringId(int.Parse(quest.getNpcStringId() + "02"));
@@ -183,7 +183,7 @@ public class QuestLink: IBypassHandler
 			{
 				sbCompleted.Append("<font color=\"787878\">");
 				sbCompleted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
-				String localisation = quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03</fstring>";
+				string localisation = quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
 				// 	NpcStringId ns = NpcStringId.getNpcStringId(int.Parse(quest.getNpcStringId() + "03"));
@@ -244,9 +244,9 @@ public class QuestLink: IBypassHandler
 	 * @param npc the Npc that chats with the {@code player}
 	 * @param questId the Id of the quest to display the message
 	 */
-	private void showQuestWindow(Player player, Npc npc, String questId)
+	private void showQuestWindow(Player player, Npc npc, string questId)
 	{
-		String content = null;
+		string content = null;
 
 		AbstractScript? script = ScriptManager.GetScript(questId);
 		if (script != null)
@@ -333,7 +333,7 @@ public class QuestLink: IBypassHandler
 		}
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

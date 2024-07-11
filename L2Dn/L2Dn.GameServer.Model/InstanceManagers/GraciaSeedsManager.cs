@@ -9,7 +9,7 @@ public class GraciaSeedsManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GraciaSeedsManager));
 	
-	public const String ENERGY_SEEDS = "EnergySeeds";
+	public const string ENERGY_SEEDS = "EnergySeeds";
 	
 	private const byte SOITYPE = 2;
 	private const byte SOATYPE = 3;

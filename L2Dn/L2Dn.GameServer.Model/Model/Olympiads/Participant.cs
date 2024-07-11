@@ -11,13 +11,13 @@ public class Participant
 {
 	private readonly int objectId;
 	private Player player;
-	private readonly String name;
+	private readonly string name;
 	private readonly int side;
 	private readonly CharacterClass baseClass;
 	private bool disconnected = false;
 	private bool defaulted = false;
 	private readonly NobleData stats;
-	public String clanName;
+	public string clanName;
 	public int? clanId;
 
 	public Participant(Player plr, int olympiadSide)
@@ -61,7 +61,7 @@ public class Participant
 	/**
 	 * @return the name the player's name.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return name;
 	}
@@ -69,7 +69,7 @@ public class Participant
 	/**
 	 * @return the name the player's clan name.
 	 */
-	public String getClanName()
+	public string getClanName()
 	{
 		return clanName;
 	}

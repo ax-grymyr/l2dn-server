@@ -37,7 +37,7 @@ public class GeoNodeLoc: AbstractNodeLoc
 		return HashCode.Combine(_x, _y, _z);
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		if (this == obj)
 		{

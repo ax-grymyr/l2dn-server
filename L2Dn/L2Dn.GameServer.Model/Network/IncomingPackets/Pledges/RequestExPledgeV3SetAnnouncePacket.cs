@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets.Pledges;
 
 public struct RequestExPledgeV3SetAnnouncePacket: IIncomingPacket<GameSession>
 {
-    private String _announce;
+    private string _announce;
     private bool _enterWorldShow;
 
     public void ReadContent(PacketBitReader reader)

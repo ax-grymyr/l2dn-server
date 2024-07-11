@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class StatBonusSpeed: AbstractEffect
 {
-	private readonly Double _stat;
+	private readonly double _stat;
 	private readonly Condition _armorTypeCondition;
 	
 	public StatBonusSpeed(StatSet @params)
@@ -22,10 +22,10 @@ public class StatBonusSpeed: AbstractEffect
 		_stat = (int)@params.getEnum("stat", BaseStat.DEX);
 		
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
-		List<String> armorTypes = @params.getList<string>("armorType");
+		List<string> armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
 		{
-			foreach (String armorType in armorTypes)
+			foreach (string armorType in armorTypes)
 			{
 				try
 				{

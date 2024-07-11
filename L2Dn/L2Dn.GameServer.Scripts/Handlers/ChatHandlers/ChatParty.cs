@@ -19,7 +19,7 @@ public class ChatParty: IChatHandler
 		ChatType.PARTY,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (!activeChar.isInParty())
 		{

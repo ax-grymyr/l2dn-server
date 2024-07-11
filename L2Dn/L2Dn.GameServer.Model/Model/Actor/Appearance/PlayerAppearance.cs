@@ -18,10 +18,10 @@ public class PlayerAppearance
 	private Sex _sex;
 	
 	/** The current visible name of this player, not necessarily the real one */
-	private String _visibleName;
+	private string _visibleName;
 	
 	/** The current visible title of this player, not necessarily the real one */
-	private String _visibleTitle;
+	private string _visibleTitle;
 	
 	/** The default name color is 0xFFFFFF. */
 	private Color _nameColor = Colors.White;
@@ -46,7 +46,7 @@ public class PlayerAppearance
 	/**
 	 * @param visibleName The visibleName to set.
 	 */
-	public void setVisibleName(String visibleName)
+	public void setVisibleName(string visibleName)
 	{
 		_visibleName = visibleName;
 	}
@@ -54,7 +54,7 @@ public class PlayerAppearance
 	/**
 	 * @return Returns the visibleName.
 	 */
-	public String getVisibleName()
+	public string getVisibleName()
 	{
 		if (_visibleName == null)
 		{
@@ -66,7 +66,7 @@ public class PlayerAppearance
 	/**
 	 * @param visibleTitle The visibleTitle to set.
 	 */
-	public void setVisibleTitle(String visibleTitle)
+	public void setVisibleTitle(string visibleTitle)
 	{
 		_visibleTitle = visibleTitle;
 	}
@@ -74,7 +74,7 @@ public class PlayerAppearance
 	/**
 	 * @return Returns the visibleTitle.
 	 */
-	public String getVisibleTitle()
+	public string getVisibleTitle()
 	{
 		if (_visibleTitle == null)
 		{

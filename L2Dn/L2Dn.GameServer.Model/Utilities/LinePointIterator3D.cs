@@ -140,7 +140,7 @@ public class LinePointIterator3D
 		return _srcZ;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[" + _srcX + ", " + _srcY + ", " + _srcZ + "]";
 	}

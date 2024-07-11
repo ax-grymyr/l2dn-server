@@ -20,7 +20,7 @@ public class AdminTargetSay: IAdminCommandHandler
 		"admin_targetsay"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_targetsay"))
 		{
@@ -33,7 +33,7 @@ public class AdminTargetSay: IAdminCommandHandler
 					return false;
 				}
 				
-				String message = command.Substring(16);
+				string message = command.Substring(16);
 				Creature target = (Creature) obj;
 				target.broadcastPacket(new CreatureSayPacket(target, target.isPlayer() ? ChatType.GENERAL : ChatType.NPC_GENERAL, target.getName(), message));
 			}
@@ -46,7 +46,7 @@ public class AdminTargetSay: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

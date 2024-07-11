@@ -21,8 +21,8 @@ public class Transform: IIdentifiable
 	private readonly bool _canSwim;
 	private readonly int _spawnHeight;
 	private readonly bool _canAttack;
-	private readonly String _name;
-	private readonly String _title;
+	private readonly string _name;
+	private readonly string _title;
 	
 	private TransformTemplate _maleTemplate;
 	private TransformTemplate _femaleTemplate;
@@ -76,7 +76,7 @@ public class Transform: IIdentifiable
 	/**
 	 * @return name that's going to be set to the player while is transformed with current transformation
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -84,7 +84,7 @@ public class Transform: IIdentifiable
 	/**
 	 * @return title that's going to be set to the player while is transformed with current transformation
 	 */
-	public String getTitle()
+	public string getTitle()
 	{
 		return _title;
 	}

@@ -36,7 +36,7 @@ public abstract class AbstractNode<Loc>
 		return (31 * 1) + ((_loc == null) ? 0 : _loc.GetHashCode());
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		if (this == obj)
 		{

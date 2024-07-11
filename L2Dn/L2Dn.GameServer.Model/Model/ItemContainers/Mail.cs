@@ -16,7 +16,7 @@ public class Mail: ItemContainer
 		_messageId = messageId;
 	}
 	
-	public override String getName()
+	public override string getName()
 	{
 		return "Mail";
 	}

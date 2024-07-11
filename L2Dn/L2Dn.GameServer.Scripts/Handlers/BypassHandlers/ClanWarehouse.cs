@@ -20,7 +20,7 @@ public class ClanWarehouse: IBypassHandler
 		"depositc"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!Config.ALLOW_WAREHOUSE)
 		{
@@ -106,7 +106,7 @@ public class ClanWarehouse: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

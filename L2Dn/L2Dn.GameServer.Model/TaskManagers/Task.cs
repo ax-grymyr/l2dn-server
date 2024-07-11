@@ -19,7 +19,7 @@ public abstract class Task
 		return null;
 	}
 	
-	public abstract String getName();
+	public abstract string getName();
 	
 	public abstract void onTimeElapsed(TaskManager.ExecutedTask task);
 	

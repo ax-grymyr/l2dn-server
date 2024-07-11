@@ -15,14 +15,14 @@ public class TutorialClose: IBypassHandler
 		"tutorial_close",
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		player.sendPacket(TutorialCloseHtmlPacket.STATIC_PACKET);
 		player.getClient()?.HtmlActionValidator.ClearActions(HtmlActionScope.TUTORIAL_HTML);
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

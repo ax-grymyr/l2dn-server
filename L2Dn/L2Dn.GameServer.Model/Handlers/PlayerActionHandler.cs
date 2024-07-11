@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Handlers;
 /**
  * @author UnAfraid
  */
-public class PlayerActionHandler: IHandler<IPlayerActionHandler, String>
+public class PlayerActionHandler: IHandler<IPlayerActionHandler, string>
 {
-	private readonly Map<String, IPlayerActionHandler> _actions = new();
+	private readonly Map<string, IPlayerActionHandler> _actions = new();
 	
 	protected PlayerActionHandler()
 	{
@@ -25,7 +25,7 @@ public class PlayerActionHandler: IHandler<IPlayerActionHandler, String>
 		_actions.remove(handler.GetType().Name);
 	}
 	
-	public IPlayerActionHandler getHandler(String name)
+	public IPlayerActionHandler getHandler(string name)
 	{
 		return _actions.get(name);
 	}

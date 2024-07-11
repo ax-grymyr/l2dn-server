@@ -11,21 +11,21 @@ public class BuilderContainer: Builder
         _builders = builders;
     }
 
-    public override String toString(Object param)
+    public override string toString(object param)
     {
-        return toString(new Object[]
+        return toString(new object[]
         {
             param
         });
     }
 
-    public override String toString(params Object[] @params)
+    public override string toString(params object[] @params)
     {
         int buildersLength = _builders.Length;
         int paramsLength = @params.Length;
-        String[] builds = new String[buildersLength];
+        string[] builds = new string[buildersLength];
         Builder builder;
-        String build;
+        string build;
         int i;
         int paramIndex;
         int buildTextLen = 0;

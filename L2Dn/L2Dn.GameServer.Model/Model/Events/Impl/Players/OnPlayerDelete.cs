@@ -9,10 +9,10 @@ namespace L2Dn.GameServer.Model.Events.Impl.Players;
 public class OnPlayerDelete: EventBase
 {
 	private readonly int _objectId;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly GameSession _client;
 	
-	public OnPlayerDelete(int objectId, String name, GameSession client)
+	public OnPlayerDelete(int objectId, string name, GameSession client)
 	{
 		_objectId = objectId;
 		_name = name;
@@ -24,7 +24,7 @@ public class OnPlayerDelete: EventBase
 		return _objectId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

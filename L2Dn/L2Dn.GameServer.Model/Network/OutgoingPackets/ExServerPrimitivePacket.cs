@@ -88,14 +88,14 @@ public struct ExServerPrimitivePacket: IOutgoingPacket
 
     private class Point
     {
-        private readonly String _name;
+        private readonly string _name;
         private readonly int _color;
         private readonly bool _isNameColored;
         private readonly int _x;
         private readonly int _y;
         private readonly int _z;
 
-        public Point(String name, int color, bool isNameColored, int x, int y, int z)
+        public Point(string name, int color, bool isNameColored, int x, int y, int z)
         {
             _name = name;
             _color = color;
@@ -108,7 +108,7 @@ public struct ExServerPrimitivePacket: IOutgoingPacket
         /**
          * @return the name
          */
-        public String getName()
+        public string getName()
         {
             return _name;
         }
@@ -160,7 +160,7 @@ public struct ExServerPrimitivePacket: IOutgoingPacket
         private readonly int _y2;
         private readonly int _z2;
 
-        public Line(String name, int color, bool isNameColored, int x, int y, int z, int x2, int y2, int z2): base(name,
+        public Line(string name, int color, bool isNameColored, int x, int y, int z, int x2, int y2, int z2): base(name,
             color, isNameColored, x, y, z)
         {
             _x2 = x2;

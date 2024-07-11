@@ -75,7 +75,7 @@ public abstract class PathFinding
 		return World.WORLD_Y_MIN + (nodeY * 128) + 48;
 	}
 	
-	public virtual String[] getStat()
+	public virtual string[] getStat()
 	{
 		return null;
 	}

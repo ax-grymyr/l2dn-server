@@ -8,16 +8,16 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class SpawnTerritory
 {
-	private readonly String _name;
+	private readonly string _name;
 	private readonly ZoneForm _territory;
 	
-	public SpawnTerritory(String name, ZoneForm territory)
+	public SpawnTerritory(string name, ZoneForm territory)
 	{
 		_name = name;
 		_territory = territory;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

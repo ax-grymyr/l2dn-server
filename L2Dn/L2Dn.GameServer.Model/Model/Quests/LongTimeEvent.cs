@@ -24,14 +24,14 @@ namespace L2Dn.GameServer.Model.Quests;
  */
 public class LongTimeEvent: Quest
 {
-	protected String _eventName;
+	protected string _eventName;
 	protected DateRange _eventPeriod = null;
 	protected bool _active = false;
 	protected bool _enableShrines = false;
 	
 	// Messages
-	protected String _onEnterMsg = "";
-	protected String _endMsg = "";
+	protected string _onEnterMsg = "";
+	protected string _endMsg = "";
 	protected int _enterAnnounceId = -1;
 
 	// NPCs to spawn and their spawn points
@@ -130,9 +130,9 @@ public class LongTimeEvent: Quest
 		{
 			// dd MM-dd MM
 			string currentYear = DateTime.Today.Year.ToString();
-			String start = period.Split("-")[0] + " " + currentYear;
-			String end = period.Split("-")[1] + " " + currentYear;
-			String activePeriod = start + "-" + end;
+			string start = period.Split("-")[0] + " " + currentYear;
+			string end = period.Split("-")[1] + " " + currentYear;
+			string activePeriod = start + "-" + end;
 			_eventPeriod = DateRange.parse(activePeriod, "dd MM yyyy");
 		}
 
@@ -248,8 +248,8 @@ public class LongTimeEvent: Quest
 					{
 						if (d.Name.LocalName.equalsIgnoreCase("add"))
 						{
-							String? msgType = d.Attribute("type")?.GetString();
-							String? msgText = d.Attribute("text")?.GetString();
+							string? msgType = d.Attribute("type")?.GetString();
+							string? msgText = d.Attribute("text")?.GetString();
 							if ((msgType != null) && (msgText != null))
 							{
 								if (msgType.equalsIgnoreCase("onEnd"))

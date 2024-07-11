@@ -19,7 +19,7 @@ public class RaceManager: Npc
 	{
 	}
 	
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		if (command.startsWith("BuyTicket"))
 		{
@@ -42,7 +42,7 @@ public class RaceManager: Npc
 				val = 0;
 			}
 			
-			String search, replace;
+			string search, replace;
 
 			HtmlContent htmlContent;
 			if (val < 10)
@@ -188,7 +188,7 @@ public class RaceManager: Npc
 			for (int i = 0; i < 8; i++)
 			{
 				int n = i + 1;
-				String search = "Mob" + n;
+				string search = "Mob" + n;
 				htmlContent.Replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 			}
 			

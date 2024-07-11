@@ -17,11 +17,11 @@ public class DispelBySlotMyself: AbstractEffect
 	
 	public DispelBySlotMyself(StatSet @params)
 	{
-		String dispel = @params.getString("dispel");
+		string dispel = @params.getString("dispel");
 		if (!string.IsNullOrEmpty(dispel))
 		{
 			_dispelAbnormals = new();
-			foreach (String slot in dispel.Split(";"))
+			foreach (string slot in dispel.Split(";"))
 			{
 				_dispelAbnormals.add(Enum.Parse<AbnormalType>(slot));
 			}

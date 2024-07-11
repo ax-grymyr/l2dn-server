@@ -20,10 +20,10 @@ public class AdminMissingHtmls: IAdminCommandHandler
 		"admin_next_missing_html"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		switch (actualCommand.toLowerCase())
 		{
 			case "admin_geomap_missing_htmls":
@@ -136,7 +136,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -15,12 +15,12 @@ public class AdminLevel: IAdminCommandHandler
 		"admin_set_level"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		WorldObject targetChar = activeChar.getTarget();
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken(); // Get actual command
-		String val = "";
+		string actualCommand = st.nextToken(); // Get actual command
+		string val = "";
 		if (st.countTokens() >= 1)
 		{
 			val = st.nextToken();
@@ -92,7 +92,7 @@ public class AdminLevel: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

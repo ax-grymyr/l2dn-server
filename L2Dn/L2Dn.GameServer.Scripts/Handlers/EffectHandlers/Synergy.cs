@@ -22,11 +22,11 @@ public class Synergy: AbstractEffect
 	
 	public Synergy(StatSet @params)
 	{
-		String requiredSlots = @params.getString("requiredSlots", null);
+		string requiredSlots = @params.getString("requiredSlots", null);
 		if (!string.IsNullOrEmpty(requiredSlots))
 		{
 			_requiredSlots = new();
-			foreach (String slot in requiredSlots.Split(";"))
+			foreach (string slot in requiredSlots.Split(";"))
 			{
 				_requiredSlots.add(Enum.Parse<AbnormalType>(slot));
 			}
@@ -36,11 +36,11 @@ public class Synergy: AbstractEffect
 			_requiredSlots = new();
 		}
 		
-		String optionalSlots = @params.getString("optionalSlots", null);
+		string optionalSlots = @params.getString("optionalSlots", null);
 		if (!string.IsNullOrEmpty(optionalSlots))
 		{
 			_optionalSlots = new();
-			foreach (String slot in optionalSlots.Split(";"))
+			foreach (string slot in optionalSlots.Split(";"))
 			{
 				_optionalSlots.add(Enum.Parse<AbnormalType>(slot));
 			}

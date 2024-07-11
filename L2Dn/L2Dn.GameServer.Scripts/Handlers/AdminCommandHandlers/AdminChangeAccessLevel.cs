@@ -21,9 +21,9 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 		"admin_changelvl"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
-		String[] parts = command.Split(" ");
+		string[] parts = command.Split(" ");
 		if (parts.Length == 2)
 		{
 			try
@@ -46,7 +46,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 		}
 		else if (parts.Length == 3)
 		{
-			String name = parts[1];
+			string name = parts[1];
 			int lvl = int.Parse(parts[2]);
 			Player player = World.getInstance().getPlayer(name);
 			if (player != null)
@@ -79,7 +79,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

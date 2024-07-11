@@ -31,7 +31,7 @@ public class AdminDoorControl: IAdminCommandHandler
 		"admin_showdoors"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		try
 		{
@@ -199,7 +199,7 @@ public class AdminDoorControl: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

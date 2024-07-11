@@ -20,12 +20,12 @@ public class StatUp: AbstractEffect
 	public StatUp(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
-		String stats = @params.getString("stat", "STR");
+		string stats = @params.getString("stat", "STR");
 		if (stats.contains(","))
 		{
 			_singleStat = null;
 			_multipleStats = new();
-			foreach (String stat in stats.Split(","))
+			foreach (string stat in stats.Split(","))
 			{
 				_multipleStats.add(Enum.Parse<Stat>("STAT_" + stat));
 			}

@@ -28,7 +28,7 @@ public class StatHolder
 		return _stat;
 	}
 	
-	public Double getValue()
+	public double getValue()
 	{
 		return _value;
 	}

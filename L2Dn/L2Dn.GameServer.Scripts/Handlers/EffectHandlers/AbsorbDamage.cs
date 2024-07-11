@@ -14,8 +14,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class AbsorbDamage: AbstractEffect
 {
-	private static readonly Map<int, Double> DIFF_DAMAGE_HOLDER = new();
-	private static readonly Map<int, Double> PER_DAMAGE_HOLDER = new();
+	private static readonly Map<int, double> DIFF_DAMAGE_HOLDER = new();
+	private static readonly Map<int, double> PER_DAMAGE_HOLDER = new();
 	
 	private readonly double _damage;
 	private readonly StatModifierType _mode;

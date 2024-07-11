@@ -15,8 +15,8 @@ public class PaperdollCache
 {
 	private readonly Set<Item> _paperdollItems = new();
 	
-	private readonly Map<BaseStat, Double> _baseStatValues = new();
-	private readonly Map<Stat, Double> _statValues = new();
+	private readonly Map<BaseStat, double> _baseStatValues = new();
+	private readonly Map<Stat, double> _statValues = new();
 	private int _maxSetEnchant = -1;
 	
 	public Set<Item> getPaperdollItems()
@@ -39,7 +39,7 @@ public class PaperdollCache
 	
 	public double getBaseStatValue(Player player, BaseStat stat)
 	{
-		Double baseStatValue = _baseStatValues.get(stat);
+		double baseStatValue = _baseStatValues.get(stat);
 		if (baseStatValue != null)
 		{
 			return baseStatValue;
@@ -88,7 +88,7 @@ public class PaperdollCache
 	
 	public double getStats(Stat stat)
 	{
-		Double statValue = _statValues.get(stat);
+		double statValue = _statValues.get(stat);
 		if (statValue != null)
 		{
 			return statValue;

@@ -16,7 +16,7 @@ public class UpgradeEquipment: IBypassHandler
 		"UpgradeEquipment"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if ((target == null) || !target.isNpc() || (((Npc) target).getId() != FERRIS))
 		{
@@ -26,7 +26,7 @@ public class UpgradeEquipment: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

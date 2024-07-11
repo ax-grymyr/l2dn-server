@@ -12,7 +12,7 @@ public class SupportBlessing: IBypassHandler
 		"GiveBlessing"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -32,7 +32,7 @@ public class SupportBlessing: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

@@ -24,20 +24,20 @@ public class AdminEvents: IAdminCommandHandler
 		"admin_event_bypass"
 	};
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
 			return false;
 		}
 		
-		String eventName = "";
-		String eventBypass = "";
+		string eventName = "";
+		string eventBypass = "";
 		StringTokenizer st = new StringTokenizer(command, " ");
 		st.nextToken();
 		if (st.hasMoreTokens())

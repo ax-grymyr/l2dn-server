@@ -297,7 +297,7 @@ public class PetitionManager
 		return (currPetition.endPetitionConsultation(PetitionState.RESPONDER_REJECT));
 	}
 	
-	public bool sendActivePetitionMessage(Player player, String messageText)
+	public bool sendActivePetitionMessage(Player player, string messageText)
 	{
 		// if (!isPlayerInConsultation(player))
 		// return false;
@@ -407,7 +407,7 @@ public class PetitionManager
 		player.sendPacket(htmlMsg);
 	}
 
-	public int submitPetition(Player petitioner, String petitionText, int petitionType)
+	public int submitPetition(Player petitioner, string petitionText, int petitionType)
 	{
 		// Create a new petition instance and add it to the list of pending petitions.
 		Petition newPetition = new Petition(petitioner, petitionText, petitionType);
@@ -415,7 +415,7 @@ public class PetitionManager
 		_pendingPetitions.put(newPetitionId, newPetition);
 		
 		// Notify all GMs that a new petition has been submitted.
-		String msgContent = petitioner.getName() + " has submitted a new petition."; // (ID: " + newPetitionId + ").";
+		string msgContent = petitioner.getName() + " has submitted a new petition."; // (ID: " + newPetitionId + ").";
 		AdminData.getInstance().broadcastToGMs(new CreatureSayPacket(petitioner, ChatType.HERO_VOICE, "Petition System", msgContent));
 		return newPetitionId;
 	}

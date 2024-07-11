@@ -23,7 +23,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 	{
 	}
 	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		if (name.equals("residenceZoneId"))
 		{

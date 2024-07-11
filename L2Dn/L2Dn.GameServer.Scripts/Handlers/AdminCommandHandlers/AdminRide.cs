@@ -27,7 +27,7 @@ public class AdminRide: IAdminCommandHandler
 	
 	private static int JET_BIKE_TRANSFORMATION_ID = 20001;
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		Player player = getRideTarget(activeChar);
 		if (player == null)
@@ -124,7 +124,7 @@ public class AdminRide: IAdminCommandHandler
 		return player;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

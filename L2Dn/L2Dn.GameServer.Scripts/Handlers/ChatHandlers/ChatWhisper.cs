@@ -20,7 +20,7 @@ public class ChatWhisper: IChatHandler
 		ChatType.WHISPER
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
 		{
@@ -46,7 +46,7 @@ public class ChatWhisper: IChatHandler
 			{
 				if (Config.FAKE_PLAYER_CHAT)
 				{
-					String name = FakePlayerData.getInstance().getProperName(target);
+					string name = FakePlayerData.getInstance().getProperName(target);
 					activeChar.sendPacket(new CreatureSayPacket(activeChar, null, "=>" + name, type, text));
 					FakePlayerChatManager.getInstance().manageChat(activeChar, name, text);
 				}

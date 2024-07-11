@@ -191,9 +191,9 @@ public class PurgeRankingManager
 		}
 	}
 	
-	public Map<String, int> getTop5(int category)
+	public Map<string, int> getTop5(int category)
 	{
-		Map<String, int> top5 = new();
+		Map<string, int> top5 = new();
 		for (int i = 1; i <= 5; i++)
 		{
 			try
@@ -209,7 +209,7 @@ public class PurgeRankingManager
 					continue;
 				}
 				
-				String charName = CharInfoTable.getInstance().getNameById(ss.getInt("charId"));
+				string charName = CharInfoTable.getInstance().getNameById(ss.getInt("charId"));
 				int points = ss.getInt("points");
 				top5.put(charName, points);
 			}

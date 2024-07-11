@@ -19,7 +19,7 @@ public class PetDataTable: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetDataTable));
 	
 	private readonly Map<int, PetData> _pets = new();
-	private readonly Map<int, String> _petNames = new();
+	private readonly Map<int, string> _petNames = new();
 	
 	/**
 	 * Instantiates a new pet data table.
@@ -251,19 +251,19 @@ public class PetDataTable: DataReaderBase
 		return _pets.values().Where(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).ToList();
 	}
 	
-	public void setPetName(int objectId, String name)
+	public void setPetName(int objectId, string name)
 	{
 		_petNames.put(objectId, name);
 	}
 	
-	public String getPetName(int objectId)
+	public string getPetName(int objectId)
 	{
 		return _petNames.getOrDefault(objectId, "No name");
 	}
 	
-	public String getNameByItemObjectId(int objectId)
+	public string getNameByItemObjectId(int objectId)
 	{
-		String name = getPetName(objectId);
+		string name = getPetName(objectId);
 		SkillHolder type = PetTypeData.getInstance().getSkillByName(name);
 		if (type == null)
 		{

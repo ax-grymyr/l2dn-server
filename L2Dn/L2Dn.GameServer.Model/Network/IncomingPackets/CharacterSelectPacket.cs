@@ -151,7 +151,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 
 					// Restore player location.
 					PlayerVariables vars = player.getVariables();
-					String restore = vars.getString(PlayerVariables.RESTORE_LOCATION, "");
+					string restore = vars.getString(PlayerVariables.RESTORE_LOCATION, "");
 					if (!string.IsNullOrEmpty(restore))
 					{
 						string[] split = restore.Split(";");

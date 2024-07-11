@@ -22,8 +22,8 @@ public class SiegeStatus: IUserCommandHandler
 		99
 	};
 	
-	private static readonly String INSIDE_SIEGE_ZONE = "Castle Siege in Progress";
-	private static readonly String OUTSIDE_SIEGE_ZONE = "No Castle Siege Area";
+	private static readonly string INSIDE_SIEGE_ZONE = "Castle Siege in Progress";
+	private static readonly string OUTSIDE_SIEGE_ZONE = "No Castle Siege Area";
 	
 	public bool useUserCommand(int id, Player player)
 	{

@@ -15,7 +15,7 @@ public class ExperienceGain: IVoicedCommandHandler
 		"expon"
 	];
 	
-	public bool useVoicedCommand(String command, Player player, String @params)
+	public bool useVoicedCommand(string command, Player player, string @params)
 	{
 		if (command.equals("expoff"))
 		{
@@ -39,7 +39,7 @@ public class ExperienceGain: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return COMMANDS;
 	}

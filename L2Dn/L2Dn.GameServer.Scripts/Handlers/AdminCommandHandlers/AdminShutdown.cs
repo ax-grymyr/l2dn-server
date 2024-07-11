@@ -22,13 +22,13 @@ public class AdminShutdown: IAdminCommandHandler
 		"admin_server_abort"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_server_shutdown"))
 		{
 			try
 			{
-				String val = command.Substring(22);
+				string val = command.Substring(22);
 				if (Util.isDigit(val))
 				{
 					serverShutdown(activeChar, int.Parse(val), false);
@@ -48,7 +48,7 @@ public class AdminShutdown: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(21);
+				string val = command.Substring(21);
 				if (Util.isDigit(val))
 				{
 					serverShutdown(activeChar, int.Parse(val), true);
@@ -71,7 +71,7 @@ public class AdminShutdown: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

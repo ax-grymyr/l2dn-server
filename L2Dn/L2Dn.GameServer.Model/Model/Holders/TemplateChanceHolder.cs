@@ -27,7 +27,7 @@ public class TemplateChanceHolder
 		return (_maxChance > chance) && (chance >= _minChance);
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[TemplateId: " + _templateId + " minChance: " + _minChance + " maxChance: " + _minChance + "]";
 	}

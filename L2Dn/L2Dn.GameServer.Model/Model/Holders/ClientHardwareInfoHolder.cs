@@ -9,14 +9,14 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class ClientHardwareInfoHolder
 {
-	private readonly String _macAddress;
+	private readonly string _macAddress;
 	private readonly int _windowsPlatformId;
 	private readonly int _windowsMajorVersion;
 	private readonly int _windowsMinorVersion;
 	private readonly int _windowsBuildNumber;
 	private readonly int _directxVersion;
 	private readonly int _directxRevision;
-	private readonly String _cpuName;
+	private readonly string _cpuName;
 	private readonly int _cpuSpeed;
 	private readonly int _cpuCoreCount;
 	private readonly int _vgaCount;
@@ -26,13 +26,13 @@ public class ClientHardwareInfoHolder
 	private readonly int _physMemorySlot3;
 	private readonly int _videoMemory;
 	private readonly int _vgaVersion;
-	private readonly String _vgaName;
-	private readonly String _vgaDriverVersion;
+	private readonly string _vgaName;
+	private readonly string _vgaDriverVersion;
 
-	public ClientHardwareInfoHolder(String macAddress, int windowsPlatformId, int windowsMajorVersion,
-		int windowsMinorVersion, int windowsBuildNumber, int directxVersion, int directxRevision, String cpuName,
+	public ClientHardwareInfoHolder(string macAddress, int windowsPlatformId, int windowsMajorVersion,
+		int windowsMinorVersion, int windowsBuildNumber, int directxVersion, int directxRevision, string cpuName,
 		int cpuSpeed, int cpuCoreCount, int vgaCount, int vgaPcxSpeed, int physMemorySlot1, int physMemorySlot2,
-		int physMemorySlot3, int videoMemory, int vgaVersion, String vgaName, String vgaDriverVersion)
+		int physMemorySlot3, int videoMemory, int vgaVersion, string vgaName, string vgaDriverVersion)
 	{
 		_macAddress = macAddress;
 		_windowsPlatformId = windowsPlatformId;
@@ -55,9 +55,9 @@ public class ClientHardwareInfoHolder
 		_vgaDriverVersion = vgaDriverVersion;
 	}
 
-	public ClientHardwareInfoHolder(String info)
+	public ClientHardwareInfoHolder(string info)
 	{
-		String[] split = info.Split(AccountVariables.HWIDSLIT_VAR);
+		string[] split = info.Split(AccountVariables.HWIDSLIT_VAR);
 		_macAddress = split[0];
 		_windowsPlatformId = int.Parse(split[1]);
 		_windowsMajorVersion = int.Parse(split[2]);
@@ -129,7 +129,7 @@ public class ClientHardwareInfoHolder
 	/**
 	 * @return the macAddress
 	 */
-	public String getMacAddress()
+	public string getMacAddress()
 	{
 		return _macAddress;
 	}
@@ -185,7 +185,7 @@ public class ClientHardwareInfoHolder
 	/**
 	 * @return the cpuName
 	 */
-	public String getCpuName()
+	public string getCpuName()
 	{
 		return _cpuName;
 	}
@@ -265,7 +265,7 @@ public class ClientHardwareInfoHolder
 	/**
 	 * @return the vgaName
 	 */
-	public String getVgaName()
+	public string getVgaName()
 	{
 		return _vgaName;
 	}
@@ -273,12 +273,12 @@ public class ClientHardwareInfoHolder
 	/**
 	 * @return the vgaDriverVersion
 	 */
-	public String getVgaDriverVersion()
+	public string getVgaDriverVersion()
 	{
 		return _vgaDriverVersion;
 	}
 
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		return (obj is ClientHardwareInfoHolder) && _macAddress.Equals(((ClientHardwareInfoHolder)obj).getMacAddress());
 	}

@@ -19,18 +19,18 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
 	private readonly int _minLevel;
 	private readonly int _maxLevel;
 	private readonly Set<int> _ids = new();
-	private readonly String _startHour;
-	private readonly String _endHour;
+	private readonly string _startHour;
+	private readonly string _endHour;
 	
 	public MonsterDailyMissionHandler(DailyMissionDataHolder holder): base(holder)
 	{
 		_amount = holder.getRequiredCompletions();
 		_minLevel = holder.getParams().getInt("minLevel", 0);
 		_maxLevel = holder.getParams().getInt("maxLevel", int.MaxValue);
-		String ids = holder.getParams().getString("ids", "");
+		string ids = holder.getParams().getString("ids", "");
 		if (!string.IsNullOrEmpty(ids))
 		{
-			foreach (String s in ids.Split(","))
+			foreach (string s in ids.Split(","))
 			{
 				int id = int.Parse(s);
 				if (!_ids.Contains(id))

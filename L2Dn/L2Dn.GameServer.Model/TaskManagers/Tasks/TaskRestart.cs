@@ -7,7 +7,7 @@ public class TaskRestart : Task
 {
 	private const string NAME = "restart";
 	
-	public override String getName()
+	public override string getName()
 	{
 		return NAME;
 	}

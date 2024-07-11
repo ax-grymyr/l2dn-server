@@ -11,12 +11,12 @@ public class CharInfoTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharInfoTable));
 	
-	private readonly Map<int, String> _names = new();
+	private readonly Map<int, string> _names = new();
 	private readonly Map<int, int> _accessLevels = new();
 	private readonly Map<int, int> _levels = new();
 	private readonly Map<int, CharacterClass> _classes = new();
 	private readonly Map<int, int> _clans = new();
-	private readonly Map<int, Map<int, String>> _memos = new();
+	private readonly Map<int, Map<int, string>> _memos = new();
 	private readonly Map<int, DateTime> _creationDates = new();
 	private readonly Map<int, DateTime> _lastAccess = new();
 	
@@ -51,7 +51,7 @@ public class CharInfoTable
 		}
 	}
 	
-	private void addName(int objectId, String name)
+	private void addName(int objectId, string name)
 	{
 		if ((name != null) && !name.equals(_names.get(objectId)))
 		{
@@ -65,7 +65,7 @@ public class CharInfoTable
 		_accessLevels.remove(objId);
 	}
 	
-	public int getIdByName(String name)
+	public int getIdByName(string name)
 	{
 		if (string.IsNullOrEmpty(name))
 		{
@@ -112,14 +112,14 @@ public class CharInfoTable
 		return -1; // Not found.
 	}
 	
-	public String? getNameById(int id)
+	public string? getNameById(int id)
 	{
 		if (id <= 0)
 		{
 			return null;
 		}
 		
-		String? name = _names.get(id);
+		string? name = _names.get(id);
 		if (name != null)
 		{
 			return name;
@@ -153,7 +153,7 @@ public class CharInfoTable
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public bool doesCharNameExist(String name)
+	public bool doesCharNameExist(string name)
 	{
 		bool result = false;
 		try 
@@ -168,7 +168,7 @@ public class CharInfoTable
 		return result;
 	}
 	
-	public int getAccountCharacterCount(String account)
+	public int getAccountCharacterCount(string account)
 	{
 		try 
 		{
@@ -279,9 +279,9 @@ public class CharInfoTable
 		return 0;
 	}
 	
-	public void setFriendMemo(int charId, int friendId, String memo)
+	public void setFriendMemo(int charId, int friendId, string memo)
 	{
-		Map<int, String> memos = _memos.get(charId);
+		Map<int, string> memos = _memos.get(charId);
 		if (memos == null)
 		{
 			memos = new();
@@ -295,7 +295,7 @@ public class CharInfoTable
 		}
 		
 		// Bypass exploit check.
-		String text = memo.ToLower();
+		string text = memo.ToLower();
 		if (text.Contains("action") && text.Contains("bypass"))
 		{
 			memos.put(friendId, "");
@@ -308,7 +308,7 @@ public class CharInfoTable
 	
 	public void removeFriendMemo(int charId, int friendId)
 	{
-		Map<int, String> memos = _memos.get(charId);
+		Map<int, string> memos = _memos.get(charId);
 		if (memos == null)
 		{
 			return;
@@ -317,9 +317,9 @@ public class CharInfoTable
 		memos.remove(friendId);
 	}
 	
-	public String getFriendMemo(int charId, int friendId)
+	public string getFriendMemo(int charId, int friendId)
 	{
-		Map<int, String>? memos = _memos.get(charId);
+		Map<int, string>? memos = _memos.get(charId);
 		if (memos == null)
 		{
 			memos = new();

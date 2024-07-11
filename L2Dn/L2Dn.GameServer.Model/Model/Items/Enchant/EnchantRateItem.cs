@@ -7,12 +7,12 @@ namespace L2Dn.GameServer.Model.Items.Enchant;
  */
 public class EnchantRateItem
 {
-	private readonly String _name;
+	private readonly string _name;
 	private readonly Set<int> _items = new();
 	private long _slot;
 	private bool? _isMagicWeapon;
 
-	public EnchantRateItem(String name)
+	public EnchantRateItem(string name)
 	{
 		_name = name;
 	}
@@ -20,7 +20,7 @@ public class EnchantRateItem
 	/**
 	 * @return name of enchant group.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

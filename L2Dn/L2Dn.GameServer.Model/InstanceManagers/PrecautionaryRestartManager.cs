@@ -59,7 +59,7 @@ public class PrecautionaryRestartManager
 		}, Config.PRECAUTIONARY_RESTART_DELAY, Config.PRECAUTIONARY_RESTART_DELAY);
 	}
 
-	private static double getCpuLoad(String var)
+	private static double getCpuLoad(string var)
 	{
 		try
 		{

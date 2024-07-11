@@ -11,14 +11,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class SetVCmd: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"set name",
 		"set home",
 		"set group"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String @params)
+	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (command.equals("set"))
 		{
@@ -36,7 +36,7 @@ public class SetVCmd: IVoicedCommandHandler
 			
 			if (@params.startsWith("privileges"))
 			{
-				String val = @params.Substring(11);
+				string val = @params.Substring(11);
 				if (!Util.isDigit(val))
 				{
 					return false;
@@ -60,7 +60,7 @@ public class SetVCmd: IVoicedCommandHandler
         return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

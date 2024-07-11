@@ -74,7 +74,7 @@ public abstract class DataReaderBase
 
     protected static Map<string, object> parseParameters(XElement element)
     {
-        Map<String, Object> parameters = new();
+        Map<string, object> parameters = new();
         foreach (XElement parameterNode in element.Elements())
         {
             switch (parameterNode.Name.LocalName.toLowerCase())

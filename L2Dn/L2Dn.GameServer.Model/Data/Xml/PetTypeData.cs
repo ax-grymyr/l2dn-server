@@ -15,7 +15,7 @@ public class PetTypeData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetTypeData));
 	
 	private readonly Map<int, SkillHolder> _skills = new();
-	private readonly Map<int, String> _names = new();
+	private readonly Map<int, string> _names = new();
 	
 	protected PetTypeData()
 	{
@@ -42,7 +42,7 @@ public class PetTypeData: DataReaderBase
 		_names.put(id, name);
 	}
 
-	public SkillHolder getSkillByName(String name)
+	public SkillHolder getSkillByName(string name)
 	{
 		foreach (var entry in _names)
 		{
@@ -54,7 +54,7 @@ public class PetTypeData: DataReaderBase
 		return null;
 	}
 	
-	public int getIdByName(String name)
+	public int getIdByName(string name)
 	{
 		foreach (var entry in _names)
 		{
@@ -66,12 +66,12 @@ public class PetTypeData: DataReaderBase
 		return 0;
 	}
 	
-	public String getNamePrefix(int id)
+	public string getNamePrefix(int id)
 	{
 		return _names.get(id);
 	}
 	
-	public String getRandomName()
+	public string getRandomName()
 	{
 		return _names.Where(e => e.Key > 100).First().Value;
 	}

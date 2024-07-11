@@ -10,14 +10,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class Banking: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"bank",
 		"withdraw",
 		"deposit"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String @params)
+	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (command.equals("bank"))
 		{
@@ -60,7 +60,7 @@ public class Banking: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

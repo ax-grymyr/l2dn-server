@@ -23,7 +23,7 @@ public class State
 	 * @param state the byte value of the state
 	 * @return the String representation of the quest state (default: Start)
 	 */
-	public static String getStateName(byte state)
+	public static string getStateName(byte state)
 	{
 		switch (state)
 		{
@@ -47,7 +47,7 @@ public class State
 	 * @param statename the String representation of the state
 	 * @return the byte value of the quest state (default: 0)
 	 */
-	public static byte getStateId(String statename)
+	public static byte getStateId(string statename)
 	{
 		switch (statename)
 		{

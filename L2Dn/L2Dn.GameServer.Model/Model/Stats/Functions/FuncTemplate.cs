@@ -20,7 +20,7 @@ public class FuncTemplate
 	private readonly int _order;
 	private readonly double _value;
 
-	public FuncTemplate(Condition attachCond, Condition applayCond, String functionName, int order, Stat stat,
+	public FuncTemplate(Condition attachCond, Condition applayCond, string functionName, int order, Stat stat,
 		double value)
 	{
 		Enums.StatFunction function = Enum.Parse<Enums.StatFunction>(functionName, true);

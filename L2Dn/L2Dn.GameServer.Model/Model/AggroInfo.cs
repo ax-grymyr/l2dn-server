@@ -54,7 +54,7 @@ public class AggroInfo
         _damage = Math.Min(_damage + value, MAX_VALUE);
     }
 	
-    public override bool Equals(Object? obj)
+    public override bool Equals(object? obj)
     {
         if (this == obj)
         {
@@ -74,7 +74,7 @@ public class AggroInfo
         return _attacker.getObjectId();
     }
 	
-    public override String ToString()
+    public override string ToString()
     {
         return "AggroInfo [attacker=" + _attacker + ", hate=" + _hate + ", damage=" + _damage + "]";
     }

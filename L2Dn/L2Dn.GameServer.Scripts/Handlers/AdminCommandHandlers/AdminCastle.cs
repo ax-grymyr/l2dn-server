@@ -25,15 +25,15 @@ public class AdminCastle: IAdminCommandHandler
 		"admin_castlemanage",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		if (actualCommand.equals("admin_castlemanage"))
 		{
 			if (st.hasMoreTokens())
 			{
-				String param = st.nextToken();
+				string param = st.nextToken();
 				Castle castle;
 				if (Util.isDigit(param))
 				{
@@ -56,7 +56,7 @@ public class AdminCastle: IAdminCommandHandler
 				}
 				else
 				{
-					String action = st.nextToken();
+					string action = st.nextToken();
 					Player target = checkTarget(activeChar) ? activeChar.getTarget().getActingPlayer() : null;
 					switch (action)
 					{
@@ -235,7 +235,7 @@ public class AdminCastle: IAdminCommandHandler
 		return ((player.getTarget() != null) && player.getTarget().isPlayer() && (((Player) player.getTarget()).getClan() != null));
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

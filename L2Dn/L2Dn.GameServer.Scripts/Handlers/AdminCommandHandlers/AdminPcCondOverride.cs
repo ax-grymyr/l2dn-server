@@ -27,7 +27,7 @@ public class AdminPcCondOverride: IAdminCommandHandler
 		"admin_set_exception",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		if (st.hasMoreTokens())
@@ -53,7 +53,7 @@ public class AdminPcCondOverride: IAdminCommandHandler
 				{
 					if (st.hasMoreTokens())
 					{
-						String token = st.nextToken();
+						string token = st.nextToken();
 						if (Util.isDigit(token))
 						{
 							PlayerCondOverride ex = (PlayerCondOverride)int.Parse(token);
@@ -110,7 +110,7 @@ public class AdminPcCondOverride: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return COMMANDS;
 	}

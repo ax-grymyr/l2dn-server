@@ -11,9 +11,9 @@ public class DyePotentialFee
 	private readonly int _step;
 	private readonly List<ItemHolder> _items;
 	private readonly int _dailyCount;
-	private readonly Map<int, Double> _enchantExp;
+	private readonly Map<int, double> _enchantExp;
 
-	public DyePotentialFee(int step, List<ItemHolder> items, int dailyCount, Map<int, Double> enchantExp)
+	public DyePotentialFee(int step, List<ItemHolder> items, int dailyCount, Map<int, double> enchantExp)
 	{
 		_step = step;
 		_items = items;
@@ -36,7 +36,7 @@ public class DyePotentialFee
 		return _dailyCount;
 	}
 
-	public Map<int, Double> getEnchantExp()
+	public Map<int, double> getEnchantExp()
 	{
 		return _enchantExp;
 	}

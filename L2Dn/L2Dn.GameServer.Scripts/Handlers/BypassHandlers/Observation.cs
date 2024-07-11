@@ -69,7 +69,7 @@ public class Observation: IBypassHandler
 		//@formatter:on
 	];
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!(target is BroadcastingTower))
 		{
@@ -87,7 +87,7 @@ public class Observation: IBypassHandler
 			return false;
 		}
 		
-		String _command = command.Split(" ")[0].ToLower();
+		string _command = command.Split(" ")[0].ToLower();
 		int param;
 		try
 		{
@@ -146,7 +146,7 @@ public class Observation: IBypassHandler
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

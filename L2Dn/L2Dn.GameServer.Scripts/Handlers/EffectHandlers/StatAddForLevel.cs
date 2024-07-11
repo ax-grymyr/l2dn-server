@@ -37,7 +37,7 @@ public class StatAddForLevel: AbstractEffect
 	
 	public override void pump(Creature effected, Skill skill)
 	{
-		Double amount = _values.get(effected.getLevel());
+		double amount = _values.get(effected.getLevel());
 		if (amount != null)
 		{
 			effected.getStat().mergeAdd(_stat, amount);

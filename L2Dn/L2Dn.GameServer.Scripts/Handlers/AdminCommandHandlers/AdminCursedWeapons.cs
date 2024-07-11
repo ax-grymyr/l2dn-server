@@ -29,7 +29,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 		"admin_cw_info_menu"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
 		int id = 0;
@@ -138,7 +138,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 			CursedWeapon cw = null;
 			try
 			{
-				String parameter = st.nextToken();
+				string parameter = st.nextToken();
 				if (Regex.IsMatch(parameter, "[0-9]+"))
 				{
 					id = int.Parse(parameter);
@@ -205,7 +205,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

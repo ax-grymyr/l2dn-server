@@ -29,10 +29,10 @@ public class AdminPledge: IAdminCommandHandler
 		"admin_pledge"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		WorldObject target = activeChar.getTarget();
 		Player targetPlayer = (target != null) && target.isPlayer() ? (Player) target : null;
 		Clan clan = targetPlayer != null ? targetPlayer.getClan() : null;
@@ -51,13 +51,13 @@ public class AdminPledge: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Missing parameters!");
 					break;
 				}
-				String action = st.nextToken();
+				string action = st.nextToken();
 				if (!st.hasMoreTokens())
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Missing parameters!");
 					break;
 				}
-				String param = st.nextToken();
+				string param = st.nextToken();
 				
 				switch (action)
 				{
@@ -207,7 +207,7 @@ public class AdminPledge: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

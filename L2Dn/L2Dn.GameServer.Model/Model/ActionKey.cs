@@ -95,7 +95,7 @@ public class ActionKey
         _show = show;
     }
 	
-    public String getSqlSaveString(int playerId, int order)
+    public string getSqlSaveString(int playerId, int order)
     {
         return "(" + playerId + ", " + _cat + ", " + order + ", " + _cmd + "," + _key + ", " + _tgKey1 + ", " + _tgKey2 + ", " + _show + ")";
     }

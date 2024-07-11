@@ -18,7 +18,7 @@ public class AdminVitality: IAdminCommandHandler
 		"admin_get_vitality"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
@@ -34,7 +34,7 @@ public class AdminVitality: IAdminCommandHandler
 		int vitality = 0;
 		
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
 		{
 			Player target = (Player) activeChar.getTarget();
@@ -73,7 +73,7 @@ public class AdminVitality: IAdminCommandHandler
 		return false;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

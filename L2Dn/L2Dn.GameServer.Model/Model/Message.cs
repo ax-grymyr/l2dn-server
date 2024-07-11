@@ -24,10 +24,10 @@ public class Message
 	private readonly int _senderId;
 	private readonly int _receiverId;
 	private readonly DateTime _expiration;
-	private String _senderName = null;
-	private String _receiverName = null;
-	private readonly  String _subject;
-	private readonly  String _content;
+	private string _senderName = null;
+	private string _receiverName = null;
+	private readonly  string _subject;
+	private readonly  string _content;
 	private bool _unread;
 	private bool _returned;
 	private MailType _messageType = MailType.REGULAR;
@@ -74,7 +74,7 @@ public class Message
 	/*
 	 * This constructor used for creating new message.
 	 */
-	public Message(int senderId, int receiverId, bool isCod, String subject, String text, long reqAdena)
+	public Message(int senderId, int receiverId, bool isCod, string subject, string text, long reqAdena)
 	{
 		_messageId = IdManager.getInstance().getNextId();
 		_senderId = senderId;
@@ -93,7 +93,7 @@ public class Message
 	/*
 	 * This constructor used for System Mails
 	 */
-	public Message(int receiverId, String subject, String content, MailType sendBySystem)
+	public Message(int receiverId, string subject, string content, MailType sendBySystem)
 	{
 		_messageId = IdManager.getInstance().getNextId();
 		_senderId = -1;
@@ -113,7 +113,7 @@ public class Message
 	/*
 	 * This constructor is used for creating new System message
 	 */
-	public Message(int senderId, int receiverId, String subject, String content, MailType sendBySystem)
+	public Message(int senderId, int receiverId, string subject, string content, MailType sendBySystem)
 	{
 		_messageId = IdManager.getInstance().getNextId();
 		_senderId = senderId;
@@ -204,7 +204,7 @@ public class Message
 		return _receiverId;
 	}
 	
-	public String getSenderName()
+	public string getSenderName()
 	{
 		switch (_messageType)
 		{
@@ -222,7 +222,7 @@ public class Message
 		return _senderName;
 	}
 	
-	public String getReceiverName()
+	public string getReceiverName()
 	{
 		if (_receiverName == null)
 		{
@@ -235,12 +235,12 @@ public class Message
 		return _receiverName;
 	}
 	
-	public String getSubject()
+	public string getSubject()
 	{
 		return _subject;
 	}
 	
-	public String getContent()
+	public string getContent()
 	{
 		return _content;
 	}

@@ -19,11 +19,11 @@ public class Transformation: AbstractEffect
 	
 	public Transformation(StatSet @params)
 	{
-		String ids = @params.getString("transformationId", null);
+		string ids = @params.getString("transformationId", null);
 		_id = new();
 		if (!string.IsNullOrEmpty(ids))
 		{
-			foreach (String id in ids.Split(";"))
+			foreach (string id in ids.Split(";"))
 			{
 				_id.Add(int.Parse(id));
 			}

@@ -19,7 +19,7 @@ public class AdminHeal: IAdminCommandHandler
 		"admin_heal"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_heal"))
 		{
@@ -29,7 +29,7 @@ public class AdminHeal: IAdminCommandHandler
 		{
 			try
 			{
-				String healTarget = command.Substring(11);
+				string healTarget = command.Substring(11);
 				handleHeal(activeChar, healTarget);
 			}
 			catch (IndexOutOfRangeException e)
@@ -44,7 +44,7 @@ public class AdminHeal: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -54,7 +54,7 @@ public class AdminHeal: IAdminCommandHandler
 		handleHeal(activeChar, null);
 	}
 	
-	private void handleHeal(Player activeChar, String player)
+	private void handleHeal(Player activeChar, string player)
 	{
 		WorldObject obj = activeChar.getTarget();
 		if (player != null)

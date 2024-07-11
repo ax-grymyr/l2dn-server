@@ -16,11 +16,11 @@ public class DisableSkill: AbstractEffect
 	
 	public DisableSkill(StatSet @params)
 	{
-		String disable = @params.getString("disable");
+		string disable = @params.getString("disable");
 		if (!string.IsNullOrEmpty(disable))
 		{
 			_disabledSkills = new();
-			foreach (String slot in disable.Split(";"))
+			foreach (string slot in disable.Split(";"))
 			{
 				_disabledSkills.add(int.Parse(slot));
 			}

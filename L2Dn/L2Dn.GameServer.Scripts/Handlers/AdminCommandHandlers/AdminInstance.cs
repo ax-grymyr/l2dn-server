@@ -46,10 +46,10 @@ public class AdminInstance: IAdminCommandHandler
 		148, // Three Bridges Arena
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		
 		switch (actualCommand.toLowerCase())
 		{
@@ -74,7 +74,7 @@ public class AdminInstance: IAdminCommandHandler
 				InstanceTemplate? template = InstanceManager.getInstance().getInstanceTemplate(templateId);
 				if (template != null)
 				{
-					String enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";
+					string enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";
 					List<Player> members = new();
 					
 					switch (enterGroup)
@@ -278,7 +278,7 @@ public class AdminInstance: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

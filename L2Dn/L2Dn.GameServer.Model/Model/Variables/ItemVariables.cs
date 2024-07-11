@@ -10,10 +10,10 @@ public class ItemVariables: AbstractVariables<DbItemVariable>
 	private readonly int _objectId;
 	
 	// Static Constants
-	public const String VISUAL_ID = "visualId";
-	public const String VISUAL_APPEARANCE_STONE_ID = "visualAppearanceStoneId";
-	public const String VISUAL_APPEARANCE_LIFE_TIME = "visualAppearanceLifetime";
-	public const String BLESSED = "blessed";
+	public const string VISUAL_ID = "visualId";
+	public const string VISUAL_APPEARANCE_STONE_ID = "visualAppearanceStoneId";
+	public const string VISUAL_APPEARANCE_LIFE_TIME = "visualAppearanceLifetime";
+	public const string BLESSED = "blessed";
 	
 	public ItemVariables(int objectId)
 	{

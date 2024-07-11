@@ -29,7 +29,7 @@ public class UniqueItemEnchantHolder: ItemEnchantHolder, IUniqueId
 		return _objectId;
 	}
 
-	public String toString()
+	public string toString()
 	{
 		return "[" + GetType().Name + "] ID: " + getId() + ", object ID: " + _objectId + ", count: " +
 		       getCount() + ", enchant level: " + getEnchantLevel();

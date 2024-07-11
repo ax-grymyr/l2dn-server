@@ -6,9 +6,9 @@ public readonly struct ExPrivateStoreBuyingResultPacket: IOutgoingPacket
 {
     private readonly int _objectId;
     private readonly long _count;
-    private readonly String _seller;
+    private readonly string _seller;
 	
-    public ExPrivateStoreBuyingResultPacket(int objectId, long count, String seller)
+    public ExPrivateStoreBuyingResultPacket(int objectId, long count, string seller)
     {
         _objectId = objectId;
         _count = count;

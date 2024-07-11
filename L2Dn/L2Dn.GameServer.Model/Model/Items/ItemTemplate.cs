@@ -89,9 +89,9 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	
 	private int _itemId;
 	private int _displayId;
-	private String _name;
-	private String _additionalName;
-	private String _icon;
+	private string _name;
+	private string _additionalName;
+	private string _icon;
 	private int _weight;
 	private bool _stackable;
 	private MaterialType _materialType;
@@ -475,7 +475,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	/**
 	 * @return the name of the item.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -483,7 +483,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	/**
 	 * @return the item's additional name.
 	 */
-	public String getAdditionalName()
+	public string getAdditionalName()
 	{
 		return _additionalName;
 	}
@@ -891,7 +891,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				
 				if (sendMessage)
 				{
-					String msg = preCondition.getMessage();
+					string msg = preCondition.getMessage();
 					SystemMessageId msgId = preCondition.getMessageId();
 					if (msg != null)
 					{
@@ -1029,7 +1029,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 * Usable in HTML windows.
 	 * @return the icon link in client files
 	 */
-	public String getIcon()
+	public string getIcon()
 	{
 		return _icon;
 	}
@@ -1065,7 +1065,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 * Returns the name of the item followed by the item ID.
 	 * @return the name and the ID of the item
 	 */
-	public override String ToString()
+	public override string ToString()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.Append(_name);

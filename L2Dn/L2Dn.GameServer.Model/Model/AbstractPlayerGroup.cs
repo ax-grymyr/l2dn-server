@@ -134,7 +134,7 @@ public abstract class AbstractPlayerGroup
 	 * Broadcast a text message to this group.
 	 * @param text to broadcast
 	 */
-	public void broadcastString(String text)
+	public void broadcastString(string text)
 	{
 		broadcastPacket(new SystemMessagePacket(text));
 	}
@@ -187,7 +187,7 @@ public abstract class AbstractPlayerGroup
 		return true;
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		if (this == obj)
 		{

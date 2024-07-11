@@ -16,7 +16,7 @@ public class AdminGm: IAdminCommandHandler
 		"admin_gm"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_gm") && activeChar.isGM())
 		{
@@ -27,7 +27,7 @@ public class AdminGm: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -15,7 +15,7 @@ public static class BuilderUtil
 	 * @param player
 	 * @param message
 	 */
-	public static void sendSysMessage(Player player, String message)
+	public static void sendSysMessage(Player player, string message)
 	{
 		if (Config.GM_STARTUP_BUILDER_HIDE)
 		{
@@ -33,7 +33,7 @@ public static class BuilderUtil
 	 * @param player
 	 * @param message
 	 */
-	public static void sendHtmlMessage(Player player, String message)
+	public static void sendHtmlMessage(Player player, string message)
 	{
 		player.sendPacket(new CreatureSayPacket(null, ChatType.GENERAL, "HTML", message));
 	}

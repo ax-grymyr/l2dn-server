@@ -41,7 +41,7 @@ public class AdminEnchant: IAdminCommandHandler
 		"admin_enchant"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_enchant"))
 		{
@@ -221,7 +221,7 @@ public class AdminEnchant: IAdminCommandHandler
 		AdminHtml.showAdminHtml(activeChar, "enchant.htm");
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

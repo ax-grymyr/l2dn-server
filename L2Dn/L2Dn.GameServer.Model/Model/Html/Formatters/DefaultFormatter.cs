@@ -4,7 +4,7 @@ public class DefaultFormatter: IBypassFormatter
 {
     public static readonly DefaultFormatter INSTANCE = new DefaultFormatter();
 
-    public String formatBypass(String bypass, int page)
+    public string formatBypass(string bypass, int page)
     {
         return bypass + " " + page;
     }

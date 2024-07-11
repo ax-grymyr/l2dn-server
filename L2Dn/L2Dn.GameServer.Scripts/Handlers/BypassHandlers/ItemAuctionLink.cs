@@ -18,7 +18,7 @@ public class ItemAuctionLink: IBypassHandler
 		"ItemAuction"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -46,7 +46,7 @@ public class ItemAuctionLink: IBypassHandler
 				return false;
 			}
 			
-			String cmd = st.nextToken();
+			string cmd = st.nextToken();
 			if ("show".equalsIgnoreCase(cmd))
 			{
 				// TODO: flood protectors
@@ -104,7 +104,7 @@ public class ItemAuctionLink: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

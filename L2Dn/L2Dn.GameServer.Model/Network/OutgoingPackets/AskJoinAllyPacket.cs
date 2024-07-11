@@ -4,14 +4,14 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct AskJoinAllyPacket: IOutgoingPacket
 {
-    private readonly String _requestorName;
+    private readonly string _requestorName;
     private readonly int _requestorObjId;
 	
     /**
      * @param requestorObjId
      * @param requestorName
      */
-    public AskJoinAllyPacket(int requestorObjId, String requestorName)
+    public AskJoinAllyPacket(int requestorObjId, string requestorName)
     {
         _requestorName = requestorName;
         _requestorObjId = requestorObjId;

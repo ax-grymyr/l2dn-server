@@ -15,7 +15,7 @@ public class AdminKick: IAdminCommandHandler
 		"admin_kick_non_gm"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_kick"))
 		{
@@ -23,7 +23,7 @@ public class AdminKick: IAdminCommandHandler
 			if (st.countTokens() > 1)
 			{
 				st.nextToken();
-				String player = st.nextToken();
+				string player = st.nextToken();
 				Player plyr = World.getInstance().getPlayer(player);
 				if (plyr != null)
 				{
@@ -48,7 +48,7 @@ public class AdminKick: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

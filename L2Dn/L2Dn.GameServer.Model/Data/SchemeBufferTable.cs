@@ -16,7 +16,7 @@ public class SchemeBufferTable: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SchemeBufferTable));
 
-	private readonly Map<int, Map<String, List<int>>> _schemesTable = new();
+	private readonly Map<int, Map<string, List<int>>> _schemesTable = new();
 	private readonly Map<int, BuffSkillHolder> _availableBuffs = new();
 
 	public SchemeBufferTable()
@@ -115,7 +115,7 @@ public class SchemeBufferTable: DataReaderBase
 		}
 	}
 
-	public void setScheme(int playerId, String schemeName, List<int> list)
+	public void setScheme(int playerId, string schemeName, List<int> list)
 	{
 		if (!_schemesTable.containsKey(playerId))
 		{
@@ -133,7 +133,7 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param playerId : The player objectId to check.
 	 * @return the list of schemes for a given player.
 	 */
-	public Map<String, List<int>> getPlayerSchemes(int playerId)
+	public Map<string, List<int>> getPlayerSchemes(int playerId)
 	{
 		return _schemesTable.get(playerId);
 	}
@@ -143,7 +143,7 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param schemeName : The scheme name to check.
 	 * @return the List holding skills for the given scheme name and player, or null (if scheme or player isn't registered).
 	 */
-	public List<int> getScheme(int playerId, String schemeName)
+	public List<int> getScheme(int playerId, string schemeName)
 	{
 		if ((_schemesTable.get(playerId) == null) || (_schemesTable.get(playerId).get(schemeName) == null))
 		{
@@ -159,7 +159,7 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param skillId : The skill id to check.
 	 * @return true if the skill is already registered on the scheme, or false otherwise.
 	 */
-	public bool getSchemeContainsSkill(int playerId, String schemeName, int skillId)
+	public bool getSchemeContainsSkill(int playerId, string schemeName, int skillId)
 	{
 		List<int> skills = getScheme(playerId, schemeName);
 		if (skills.Count == 0)
@@ -182,7 +182,7 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param groupType : The type of skills to return.
 	 * @return a list of skills ids based on the given groupType.
 	 */
-	public List<int> getSkillsIdsByType(String groupType)
+	public List<int> getSkillsIdsByType(string groupType)
 	{
 		List<int> skills = new();
 		foreach (BuffSkillHolder skill in _availableBuffs.values())
@@ -199,9 +199,9 @@ public class SchemeBufferTable: DataReaderBase
 	/**
 	 * @return a list of all buff types available.
 	 */
-	public List<String> getSkillTypes()
+	public List<string> getSkillTypes()
 	{
-		List<String> skillTypes = new();
+		List<string> skillTypes = new();
 		foreach (BuffSkillHolder skill in _availableBuffs.values())
 		{
 			if (!skillTypes.Contains(skill.getType()))

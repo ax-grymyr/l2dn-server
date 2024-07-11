@@ -10,7 +10,7 @@ public class ScriptDocument
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ScriptDocument));
 	
 	// private Document _document;
-	private readonly String _name;
+	private readonly string _name;
 	//
 	// public ScriptDocument(String name, InputStream input)
 	// {
@@ -52,12 +52,12 @@ public class ScriptDocument
 	/**
 	 * @return Returns the _name.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return _name;
 	}

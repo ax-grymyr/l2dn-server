@@ -4,10 +4,10 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct StartPledgeWarPacket: IOutgoingPacket
 {
-    private readonly String _pledgeName;
-    private readonly String _playerName;
+    private readonly string _pledgeName;
+    private readonly string _playerName;
 	
-    public StartPledgeWarPacket(String pledge, String charName)
+    public StartPledgeWarPacket(string pledge, string charName)
     {
         _pledgeName = pledge;
         _playerName = charName;

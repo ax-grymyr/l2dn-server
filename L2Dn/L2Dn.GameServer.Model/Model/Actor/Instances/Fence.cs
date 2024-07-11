@@ -12,14 +12,14 @@ public class Fence : WorldObject
 	private readonly int _yMin;
 	private readonly int _yMax;
 	
-	private readonly String _name;
+	private readonly string _name;
 	private readonly int _width;
 	private readonly int _length;
 	
 	private FenceState _state;
 	private int[] _heightFences;
 	
-	public Fence(int x, int y, String name, int width, int length, int height, FenceState state): base(IdManager.getInstance().getNextId())
+	public Fence(int x, int y, string name, int width, int length, int height, FenceState state): base(IdManager.getInstance().getNextId())
 	{
 		_xMin = x - (width / 2);
 		_xMax = x + (width / 2);
@@ -44,7 +44,7 @@ public class Fence : WorldObject
 		return getObjectId();
 	}
 	
-	public override String getName()
+	public override string getName()
 	{
 		return _name;
 	}

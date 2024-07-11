@@ -20,7 +20,7 @@ public class NewQuest
 
 	private readonly int _id;
 	private readonly int _questType;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly int _startNpcId;
 	private readonly int _endNpcId;
 	private readonly int _startItemId;
@@ -85,7 +85,7 @@ public class NewQuest
 		return _questType;
 	}
 
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

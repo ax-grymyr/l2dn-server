@@ -13,11 +13,11 @@ namespace L2Dn.GameServer.Handlers;
 /**
  * @author UnAfraid
  */
-public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
+public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminCommandHandler));
 	
-	private readonly Map<String, IAdminCommandHandler> _datatable;
+	private readonly Map<string, IAdminCommandHandler> _datatable;
 	
 	protected AdminCommandHandler()
 	{
@@ -26,7 +26,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 	
 	public void registerHandler(IAdminCommandHandler handler)
 	{
-		foreach (String id in handler.getAdminCommandList())
+		foreach (string id in handler.getAdminCommandList())
 		{
 			_datatable.put(id, handler);
 		}
@@ -35,7 +35,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IAdminCommandHandler handler)
 	{
-		foreach (String id in handler.getAdminCommandList())
+		foreach (string id in handler.getAdminCommandList())
 		{
 			_datatable.remove(id);
 		}
@@ -44,9 +44,9 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 	/**
 	 * WARNING: Please use {@link #useAdminCommand(Player, String, bool)} instead.
 	 */
-	public IAdminCommandHandler getHandler(String adminCommand)
+	public IAdminCommandHandler getHandler(string adminCommand)
 	{
-		String command = adminCommand;
+		string command = adminCommand;
 		if (adminCommand.Contains(" "))
 		{
 			command = adminCommand.Substring(0, adminCommand.IndexOf(' '));
@@ -55,15 +55,15 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, String>
 		return _datatable.get(command);
 	}
 	
-	public void useAdminCommand(Player player, String fullCommand, bool useConfirm)
+	public void useAdminCommand(Player player, string fullCommand, bool useConfirm)
 	{
 		if (!player.isGM())
 		{
 			return;
 		}
 		
-		String command = fullCommand.Split(" ")[0];
-		String commandNoPrefix = command.Substring(6);
+		string command = fullCommand.Split(" ")[0];
+		string commandNoPrefix = command.Substring(6);
 		IAdminCommandHandler handler = getHandler(command);
 		if (handler == null)
 		{

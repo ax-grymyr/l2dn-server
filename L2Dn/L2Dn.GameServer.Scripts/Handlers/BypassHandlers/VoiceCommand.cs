@@ -13,13 +13,13 @@ public class VoiceCommand: IBypassHandler
 		"voice"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		// only voice commands allowed
 		if ((command.Length > 7) && (command[6] == '.'))
 		{
-			String vc;
-			String vparams;
+			string vc;
+			string vparams;
 			int endOfCommand = command.IndexOf(' ', 7);
 			if (endOfCommand > 0)
 			{
@@ -45,7 +45,7 @@ public class VoiceCommand: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

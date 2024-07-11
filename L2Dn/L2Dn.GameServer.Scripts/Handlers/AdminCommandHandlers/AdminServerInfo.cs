@@ -23,7 +23,7 @@ public class AdminServerInfo: IAdminCommandHandler
 		"admin_serverinfo"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_serverinfo"))
 		{
@@ -65,13 +65,13 @@ public class AdminServerInfo: IAdminCommandHandler
 		return true;
 	}
 	
-	private String getServerUpTime()
+	private string getServerUpTime()
 	{
 		TimeSpan time = DateTime.UtcNow - ServerInfo.ServerStarted;
 		return (int)time.TotalDays + " Days, " + time.Hours + " Hours, " + time.Minutes + " Minutes";
 	}
 	
-	private int getPlayersCount(String type)
+	private int getPlayersCount(string type)
 	{
 		switch (type)
 		{
@@ -107,7 +107,7 @@ public class AdminServerInfo: IAdminCommandHandler
 			}
 			case "ALL_REAL":
 			{
-				Set<String> realPlayers = new();
+				Set<string> realPlayers = new();
 				foreach (Player onlinePlayer in World.getInstance().getPlayers())
 				{
 					GameSession? client = onlinePlayer?.getClient(); 
@@ -123,7 +123,7 @@ public class AdminServerInfo: IAdminCommandHandler
 		return 0;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

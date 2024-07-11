@@ -105,7 +105,7 @@ public class SiegeManager
 			List<TowerSpawn> controlTowers = new();
 			for (int i = 1; i < 0xFF; i++)
 			{
-				String settingsKeyName = castle.getName() + "ControlTower" + i;
+				string settingsKeyName = castle.getName() + "ControlTower" + i;
 				if (!parser.containsKey(settingsKeyName))
 				{
 					break;
@@ -131,7 +131,7 @@ public class SiegeManager
 			List<TowerSpawn> flameTowers = new();
 			for (int i = 1; i < 0xFF; i++)
 			{
-				String settingsKeyName = castle.getName() + "FlameTower" + i;
+				string settingsKeyName = castle.getName() + "FlameTower" + i;
 				if (!parser.containsKey(settingsKeyName))
 				{
 					break;

@@ -41,7 +41,7 @@ public class Evolve
 		
 		Item item = null;
 		long petexp = currentPet.getStat().getExp();
-		String oldname = currentPet.getName();
+		string oldname = currentPet.getName();
 		Location3D oldLocation = currentPet.Location.Location3D;
 		PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
 		if (oldData == null)

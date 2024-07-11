@@ -19,7 +19,7 @@ public class CallRandomSkill: AbstractEffect
 	
 	public CallRandomSkill(StatSet @params)
 	{
-		String skills = @params.getString("skills", null);
+		string skills = @params.getString("skills", null);
 		if (skills != null)
 		{
 			foreach (string skill in skills.Split(";"))

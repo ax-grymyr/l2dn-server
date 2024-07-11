@@ -19,7 +19,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 {
     public const int MAX_ITEM_PER_PAGE = 120;
 	
-    private String _searchWord;
+    private string _searchWord;
     private StoreType _storeType;
     private StoreItemType _itemType;
     private StoreSubItemType _itemSubtype;

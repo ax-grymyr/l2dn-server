@@ -17,7 +17,7 @@ public class ChatPartyRoomCommander: IChatHandler
 		ChatType.PARTYROOM_COMMANDER,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (activeChar.isInParty() && activeChar.getParty().isInCommandChannel() && 
 		    activeChar.getParty().getCommandChannel().getLeader().Equals(activeChar))

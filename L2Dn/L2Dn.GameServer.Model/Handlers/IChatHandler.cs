@@ -17,7 +17,7 @@ public interface IChatHandler
 	 * @param text
 	 * @param shareLocation
 	 */
-	void handleChat(ChatType type, Player player, String target, String text, bool shareLocation);
+	void handleChat(ChatType type, Player player, string target, string text, bool shareLocation);
 	
 	/**
 	 * Returns a list of all chat types registered to this handler

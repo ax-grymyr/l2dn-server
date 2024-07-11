@@ -34,7 +34,7 @@ public class MonsterRace
 	protected readonly int[] _npcTemplates; // List holding npc templates, shuffled on a new race.
 	protected readonly List<HistoryInfo> _history = new(); // List holding old race records.
 	protected readonly Map<int, long> _betsPerLane = new(); // Map holding all bets for each lane ; values setted to 0 after every race.
-	protected readonly List<Double> _odds = new(); // List holding sorted odds per lane ; cleared at new odds calculation.
+	protected readonly List<double> _odds = new(); // List holding sorted odds per lane ; cleared at new odds calculation.
 	
 	protected int _raceNumber = 1;
 	protected int _finalCountdown = 0;
@@ -572,7 +572,7 @@ public class MonsterRace
 		return _history;
 	}
 	
-	public List<Double> getOdds()
+	public List<double> getOdds()
 	{
 		return _odds;
 	}

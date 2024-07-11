@@ -59,7 +59,7 @@ public class SupportMagic: IBypassHandler
 	private static readonly int CUBIC_HIGHEST = 34;
 	private static readonly int HASTE_LEVEL_2 = Config.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc() || player.isCursedWeaponEquipped())
 		{
@@ -155,7 +155,7 @@ public class SupportMagic: IBypassHandler
 		}
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

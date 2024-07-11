@@ -16,7 +16,7 @@ public class AdminTarget: IAdminCommandHandler
 		"admin_target"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_target"))
 		{
@@ -25,16 +25,16 @@ public class AdminTarget: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleTarget(String command, Player activeChar)
+	private void handleTarget(string command, Player activeChar)
 	{
 		try
 		{
-			String targetName = command.Substring(13);
+			string targetName = command.Substring(13);
 			Player player = World.getInstance().getPlayer(targetName);
 			if (player != null)
 			{

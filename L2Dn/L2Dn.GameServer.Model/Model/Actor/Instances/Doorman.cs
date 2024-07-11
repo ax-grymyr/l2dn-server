@@ -27,7 +27,7 @@ public class Doorman : Folk
 		return base.isAutoAttackable(attacker);
 	}
 	
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		if (command.startsWith("Chat"))
 		{
@@ -101,7 +101,7 @@ public class Doorman : Folk
 		player.sendPacket(html);
 	}
 	
-	protected virtual void openDoors(Player player, String command)
+	protected virtual void openDoors(Player player, string command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
 		st.nextToken();
@@ -112,7 +112,7 @@ public class Doorman : Folk
 		}
 	}
 	
-	protected virtual void closeDoors(Player player, String command)
+	protected virtual void closeDoors(Player player, string command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
 		st.nextToken();

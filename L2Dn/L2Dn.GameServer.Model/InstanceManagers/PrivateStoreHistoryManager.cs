@@ -257,7 +257,7 @@ public class PrivateStoreHistoryManager
 			}
 		}
 
-		public override String ToString()
+		public override string ToString()
 		{
 			return _transactionDate + "(" + _transactionType + ")" + "[" + _itemId + " +" + _enchantLevel + " c:" +
 			       _count + " p:" + _price + " ]";

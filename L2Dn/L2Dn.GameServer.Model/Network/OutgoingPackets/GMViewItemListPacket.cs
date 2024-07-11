@@ -11,7 +11,7 @@ public readonly struct GMViewItemListPacket: IOutgoingPacket
     private readonly int _sendType;
     private readonly List<Item> _items;
     private readonly int _limit;
-    private readonly String _playerName;
+    private readonly string _playerName;
 	
     public GMViewItemListPacket(int sendType, Player player)
     {

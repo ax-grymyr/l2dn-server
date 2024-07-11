@@ -191,7 +191,7 @@ public class TimerHolder<T>: TimerHolder
 		_eventScript.onTimerEvent(this);
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return "event: " + _event + " params: " + getParams() + " time: " + _timeInMs + " npc: " + getNpc() + " player: " +
 		       getPlayer() + " repeating: " + isRepeating() + " script: " + _eventScript.GetType().Name +

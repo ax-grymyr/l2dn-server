@@ -59,7 +59,7 @@ public class TempItem
     /**
      * @return the itemName.
      */
-    public String getItemName()
+    public string getItemName()
     {
         return _itemName;
     }

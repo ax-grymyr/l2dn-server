@@ -36,7 +36,7 @@ public abstract class AbstractFunction
 	 * Owner can be an armor, weapon, skill, system event, quest, etc.<br>
 	 * Used to remove all functions added by this owner.
 	 */
-	private readonly Object _funcOwner;
+	private readonly object _funcOwner;
 
 	/** Function may be disabled by attached condition. */
 	private readonly Condition _applayCond;
@@ -52,7 +52,7 @@ public abstract class AbstractFunction
 	 * @param value the value
 	 * @param applayCond the apply condition
 	 */
-	public AbstractFunction(Stat stat, int order, Object owner, double value, Condition applayCond)
+	public AbstractFunction(Stat stat, int order, object owner, double value, Condition applayCond)
 	{
 		_stat = stat;
 		_order = order;
@@ -74,7 +74,7 @@ public abstract class AbstractFunction
 	 * Gets the fuction owner.
 	 * @return the function owner
 	 */
-	public Object getFuncOwner()
+	public object getFuncOwner()
 	{
 		return _funcOwner;
 	}

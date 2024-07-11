@@ -115,9 +115,9 @@ public class FriendlyNpc : Attackable
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 	
-	public override String getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player player)
 	{
-		String pom = "";
+		string pom = "";
 		if (value == 0)
 		{
 			pom = npcId.ToString(CultureInfo.InvariantCulture);

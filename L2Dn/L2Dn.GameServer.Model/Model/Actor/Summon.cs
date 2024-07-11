@@ -1110,7 +1110,7 @@ public abstract class Summon: Playable
 		return (_owner != null) && _owner.isOnEvent();
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		StringBuilder sb = new();
 		sb.Append(base.ToString());

@@ -17,21 +17,21 @@ public class ChangePassword: IVoicedCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ChangePassword));
 	
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"changepassword"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String target)
+	public bool useVoicedCommand(string command, Player activeChar, string target)
 	{
 		if (target != null)
 		{
 			StringTokenizer st = new StringTokenizer(target);
 			try
 			{
-				String curpass = null;
-				String newpass = null;
-				String repeatnewpass = null;
+				string curpass = null;
+				string newpass = null;
+				string repeatnewpass = null;
 				if (st.hasMoreTokens())
 				{
 					curpass = st.nextToken();
@@ -83,7 +83,7 @@ public class ChangePassword: IVoicedCommandHandler
 		else
 		{
 			// showHTML(activeChar);
-			String html = HtmCache.getInstance().getHtm("html/mods/ChangePassword.htm");
+			string html = HtmCache.getInstance().getHtm("html/mods/ChangePassword.htm");
 			if (html == null)
 			{
 				html = "<html><body><br><br><center><font color=LEVEL>404:</font> File Not Found</center></body></html>";
@@ -96,7 +96,7 @@ public class ChangePassword: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

@@ -25,7 +25,7 @@ public class Forum
 	private readonly Set<Forum> _children;
 	private readonly Map<int, Topic> _topic = new();
 	private readonly int _forumId;
-	private String _forumName;
+	private string _forumName;
 	private int _forumType;
 	private int _forumPost;
 	private int _forumPerm;
@@ -52,7 +52,7 @@ public class Forum
 	 * @param perm
 	 * @param ownerId
 	 */
-	public Forum(String name, Forum parent, int type, int perm, int ownerId)
+	public Forum(string name, Forum parent, int type, int perm, int ownerId)
 	{
 		_forumName = name;
 		_forumId = ForumsBBSManager.getInstance().getANewID();
@@ -153,7 +153,7 @@ public class Forum
 		return _forumId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		vload();
 		return _forumName;
@@ -169,7 +169,7 @@ public class Forum
 	 * @param name the forum name
 	 * @return the forum for the given name
 	 */
-	public Forum getChildByName(String name)
+	public Forum getChildByName(string name)
 	{
 		vload();
 		foreach (Forum f in _children)

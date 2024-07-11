@@ -28,10 +28,10 @@ public class AdminFence: IAdminCommandHandler
 		"admin_gofence"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_addfence":
@@ -149,7 +149,7 @@ public class AdminFence: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

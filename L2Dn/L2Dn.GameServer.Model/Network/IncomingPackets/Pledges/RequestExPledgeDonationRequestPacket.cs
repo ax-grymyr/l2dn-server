@@ -107,7 +107,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 		}
 	}
 	
-	private static void sendMail(int charId, int amount, String donator)
+	private static void sendMail(int charId, int amount, string donator)
 	{
 		Message msg = new Message(charId, "Clan Rewards for " + donator + " Donation",
 			"The entire clan receives rewards for " + donator + " donation.",

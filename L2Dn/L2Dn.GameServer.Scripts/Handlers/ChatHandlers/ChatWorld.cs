@@ -23,7 +23,7 @@ public class ChatWorld: IChatHandler
 		ChatType.WORLD,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (!Config.ENABLE_WORLD_CHAT)
 		{

@@ -56,24 +56,24 @@ public class FakePlayerChatManager: DataReaderBase
 				set.getString("searchText"), set.getString("answers")));
 	}
 
-	public void manageChat(Player player, String fpcName, String message)
+	public void manageChat(Player player, string fpcName, string message)
 	{
 		ThreadPool.schedule(() => manageResponce(player, fpcName, message), Rnd.get(MIN_DELAY, MAX_DELAY));
 	}
 	
-	public void manageChat(Player player, String fpcName, String message, int minDelay, int maxDelay)
+	public void manageChat(Player player, string fpcName, string message, int minDelay, int maxDelay)
 	{
 		ThreadPool.schedule(() => manageResponce(player, fpcName, message), Rnd.get(minDelay, maxDelay));
 	}
 	
-	private void manageResponce(Player player, String fpcName, String message)
+	private void manageResponce(Player player, string fpcName, string message)
 	{
 		if (player == null)
 		{
 			return;
 		}
 		
-		String text = message.ToLower();
+		string text = message.ToLower();
 		
 		// tricky question
 		if (text.Contains("can you see me"))
@@ -132,7 +132,7 @@ public class FakePlayerChatManager: DataReaderBase
 				case "CONTAINS":
 				{
 					bool allFound = true;
-					foreach (String word in chatHolder.getSearchText())
+					foreach (string word in chatHolder.getSearchText())
 					{
 						if (!text.Contains(word))
 						{
@@ -149,7 +149,7 @@ public class FakePlayerChatManager: DataReaderBase
 		}
 	}
 	
-	public void sendChat(Player player, String fpcName, String message)
+	public void sendChat(Player player, string fpcName, string message)
 	{
 		Spawn spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
 		if (spawn != null)

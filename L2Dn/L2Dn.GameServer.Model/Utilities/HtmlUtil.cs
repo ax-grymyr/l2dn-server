@@ -16,7 +16,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getCpGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getCpGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_CP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_CP_Center", 17, -13);
 	}
@@ -29,7 +29,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getHpGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getHpGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_HP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_HP_Center", 21, -13);
 	}
@@ -42,7 +42,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getHpWarnGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getHpWarnGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_HPWarn_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_HPWarn_Center", 17, -13);
 	}
@@ -55,7 +55,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getHpFillGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getHpFillGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_HPFill_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_HPFill_Center", 17, -13);
 	}
@@ -68,7 +68,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getMpGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getMpGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_MP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_MP_Center", 17, -13);
 	}
@@ -81,7 +81,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getExpGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getExpGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_EXP_bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_EXP_Center", 17, -13);
 	}
@@ -94,7 +94,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getFoodGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getFoodGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_Food_Bg_Center", "L2UI_CT1.Gauges.Gauge_DF_Large_Food_Center", 17, -13);
 	}
@@ -107,7 +107,7 @@ public class HtmlUtil
 	 * @param displayAsPercentage if {@code true} the text in middle will be displayed as percent else it will be displayed as "current / max"
 	 * @return the HTML
 	 */
-	public static String getWeightGauge(int width, long current, long max, bool displayAsPercentage)
+	public static string getWeightGauge(int width, long current, long max, bool displayAsPercentage)
 	{
 		return getWeightGauge(width, current, max, displayAsPercentage, CommonUtil.map(current, 0, max, 1, 5));
 	}
@@ -121,7 +121,7 @@ public class HtmlUtil
 	 * @param level a number from 1 to 5 for the 5 different colors of weight gauge
 	 * @return the HTML
 	 */
-	public static String getWeightGauge(int width, long current, long max, bool displayAsPercentage, long level)
+	public static string getWeightGauge(int width, long current, long max, bool displayAsPercentage, long level)
 	{
 		return getGauge(width, current, max, displayAsPercentage, "L2UI_CT1.Gauges.Gauge_DF_Large_Weight_bg_Center" + level, "L2UI_CT1.Gauges.Gauge_DF_Large_Weight_Center" + level, 17, -13);
 	}
@@ -138,7 +138,7 @@ public class HtmlUtil
 	 * @param top the top adjustment
 	 * @return the HTML
 	 */
-	private static String getGauge(int width, long currentValue, long max, bool displayAsPercentage, String backgroundImage, String image, long imageHeight, long top)
+	private static string getGauge(int width, long currentValue, long max, bool displayAsPercentage, string backgroundImage, string image, long imageHeight, long top)
 	{
 		long current = Math.Min(currentValue, max);
 		StringBuilder sb = new StringBuilder();

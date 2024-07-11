@@ -14,7 +14,7 @@ public class TaskBirthday: Task
 	private const string NAME = "birthday";
 	private int _count = 0;
 	
-	public override String getName()
+	public override string getName()
 	{
 		return NAME;
 	}
@@ -67,7 +67,7 @@ public class TaskBirthday: Task
 					continue;
 				}
 
-				String text = Config.ALT_BIRTHDAY_MAIL_TEXT;
+				string text = Config.ALT_BIRTHDAY_MAIL_TEXT;
 				if (text.Contains("$c1"))
 				{
 					text = text.Replace("$c1", record.Name);
@@ -95,7 +95,7 @@ public class TaskBirthday: Task
 	 * @param num the number to format.
 	 * @return the formatted number starting with a 0 if it is lower or equal than 10.
 	 */
-	private String getNum(int num)
+	private string getNum(int num)
 	{
 		return (num <= 9) ? "0" + num : num.ToString();
 	}

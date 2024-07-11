@@ -33,16 +33,16 @@ public class CustomMailManager
 					if (player != null && player.isOnline())
 					{
 						// Create message.
-						String items = record.Items;
+						string items = record.Items;
 						Message msg = new Message(playerId, record.Subject, record.Message, items.Length > 0 ? MailType.PRIME_SHOP_GIFT : MailType.REGULAR);
 						List<ItemEnchantHolder> itemHolders = new();
-						foreach (String str in items.Split(";"))
+						foreach (string str in items.Split(";"))
 						{
 							if (str.Contains(' '))
 							{
 								string[] split = str.Split(" ");
-								String itemId = split[0];
-								String itemCount = split[1];
+								string itemId = split[0];
+								string itemCount = split[1];
 								string enchant = split.Length > 2 ? split[2] : "0";
 								if (Util.isDigit(itemId) && Util.isDigit(itemCount))
 								{

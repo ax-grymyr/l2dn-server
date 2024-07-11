@@ -273,13 +273,13 @@ public sealed class Q00206Tutorial: Quest
         }
     }
 
-    private void showTutorialHtml(Player player, String html)
+    private void showTutorialHtml(Player player, string html)
     {
         HtmlContent htmlContent = HtmlContent.LoadFromText(getHtm(player, html), player);
         player.sendPacket(new TutorialShowHtmlPacket(htmlContent));
     }
 
-    private void playTutorialVoice(Player player, String voice)
+    private void playTutorialVoice(Player player, string voice)
     {
         player.sendPacket(new PlaySoundPacket(2, voice, 0, 0, player.getX(), player.getY(), player.getZ()));
     }

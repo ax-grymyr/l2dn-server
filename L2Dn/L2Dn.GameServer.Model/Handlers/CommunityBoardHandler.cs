@@ -10,13 +10,13 @@ namespace L2Dn.GameServer.Handlers;
  * Community Board handler.
  * @author Zoey76
  */
-public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
+public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 {
 	private static readonly Logger LOG = LogManager.GetLogger(nameof(CommunityBoardHandler));
 	/** The registered handlers. */
-	private readonly Map<String, IParseBoardHandler> _datatable = new();
+	private readonly Map<string, IParseBoardHandler> _datatable = new();
 	/** The bypasses used by the players. */
-	private readonly Map<int, String> _bypasses = new();
+	private readonly Map<int, string> _bypasses = new();
 	
 	protected CommunityBoardHandler()
 	{
@@ -25,7 +25,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	
 	public void registerHandler(IParseBoardHandler handler)
 	{
-		foreach (String cmd in handler.getCommunityBoardCommands())
+		foreach (string cmd in handler.getCommunityBoardCommands())
 		{
 			_datatable.put(cmd.ToLower(), handler);
 		}
@@ -34,17 +34,17 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IParseBoardHandler handler)
 	{
-		foreach (String cmd in handler.getCommunityBoardCommands())
+		foreach (string cmd in handler.getCommunityBoardCommands())
 		{
 			_datatable.remove(cmd.ToLower());
 		}
 	}
 	
-	public IParseBoardHandler getHandler(String cmd)
+	public IParseBoardHandler getHandler(string cmd)
 	{
 		foreach (IParseBoardHandler cb in _datatable.values())
 		{
-			foreach (String command in cb.getCommunityBoardCommands())
+			foreach (string command in cb.getCommunityBoardCommands())
 			{
 				if (cmd.ToLower().startsWith(command.ToLower()))
 				{
@@ -65,7 +65,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param cmd the command to verify
 	 * @return {@code true} if the command has been registered, {@code false} otherwise
 	 */
-	public bool isCommunityBoardCommand(String cmd)
+	public bool isCommunityBoardCommand(string cmd)
 	{
 		return getHandler(cmd) != null;
 	}
@@ -75,7 +75,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param command the command
 	 * @param player the player
 	 */
-	public void handleParseCommand(String command, Player player)
+	public void handleParseCommand(string command, Player player)
 	{
 		if (player == null)
 		{
@@ -108,7 +108,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param arg4 the fourth argument
 	 * @param arg5 the fifth argument
 	 */
-	public void handleWriteCommand(Player player, String url, String arg1, String arg2, String arg3, String arg4, String arg5)
+	public void handleWriteCommand(Player player, string url, string arg1, string arg2, string arg3, string arg4, string arg5)
 	{
 		if (player == null)
 		{
@@ -121,7 +121,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 			return;
 		}
 		
-		String cmd = "";
+		string cmd = "";
 		switch (url)
 		{
 			case "Topic":
@@ -172,7 +172,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param title the title
 	 * @param bypass the bypass
 	 */
-	public void addBypass(Player player, String title, String bypass)
+	public void addBypass(Player player, string title, string bypass)
 	{
 		_bypasses.put(player.getObjectId(), title + "&" + bypass);
 	}
@@ -182,7 +182,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param player the player
 	 * @return the last bypass used
 	 */
-	public String removeBypass(Player player)
+	public string removeBypass(Player player)
 	{
 		return _bypasses.remove(player.getObjectId());
 	}
@@ -193,7 +193,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, String>
 	 * @param html the HTML to send
 	 * @param player the player
 	 */
-	public static void separateAndSend(String html, Player player)
+	public static void separateAndSend(string html, Player player)
 	{
 		Util.sendCBHtml(player, html);
 	}

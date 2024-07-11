@@ -26,7 +26,7 @@ public class AdminCreateItem: IAdminCommandHandler
 		"admin_use_item"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_itemcreate"))
 		{
@@ -36,19 +36,19 @@ public class AdminCreateItem: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(17);
+				string val = command.Substring(17);
 				StringTokenizer st = new StringTokenizer(val);
 				if (st.countTokens() == 2)
 				{
-					String id = st.nextToken();
+					string id = st.nextToken();
 					int idval = int.Parse(id);
-					String num = st.nextToken();
+					string num = st.nextToken();
 					long numval = long.Parse(num);
 					createItem(activeChar, activeChar, idval, numval);
 				}
 				else if (st.countTokens() == 1)
 				{
-					String id = st.nextToken();
+					string id = st.nextToken();
 					int idval = int.Parse(id);
 					createItem(activeChar, activeChar, idval, 1);
 				}
@@ -67,22 +67,22 @@ public class AdminCreateItem: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(17);
+				string val = command.Substring(17);
 				StringTokenizer st = new StringTokenizer(val);
 				if (st.countTokens() == 2)
 				{
-					String name = st.nextToken();
+					string name = st.nextToken();
 					int idval = getCoinId(name);
 					if (idval > 0)
 					{
-						String num = st.nextToken();
+						string num = st.nextToken();
 						long numval = long.Parse(num);
 						createItem(activeChar, activeChar, idval, numval);
 					}
 				}
 				else if (st.countTokens() == 1)
 				{
-					String name = st.nextToken();
+					string name = st.nextToken();
 					int idval = getCoinId(name);
 					createItem(activeChar, activeChar, idval, 1);
 				}
@@ -108,19 +108,19 @@ public class AdminCreateItem: IAdminCommandHandler
 					return false;
 				}
 				
-				String val = command.Substring(22);
+				string val = command.Substring(22);
 				StringTokenizer st = new StringTokenizer(val);
 				if (st.countTokens() == 2)
 				{
-					String id = st.nextToken();
+					string id = st.nextToken();
 					int idval = int.Parse(id);
-					String num = st.nextToken();
+					string num = st.nextToken();
 					long numval = long.Parse(num);
 					createItem(activeChar, (Player) target, idval, numval);
 				}
 				else if (st.countTokens() == 1)
 				{
-					String id = st.nextToken();
+					string id = st.nextToken();
 					int idval = int.Parse(id);
 					createItem(activeChar, (Player) target, idval, 1);
 				}
@@ -137,20 +137,20 @@ public class AdminCreateItem: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_give_item_to_all"))
 		{
-			String val = command.Substring(22);
+			string val = command.Substring(22);
 			StringTokenizer st = new StringTokenizer(val);
 			int idval = 0;
 			long numval = 0;
 			if (st.countTokens() == 2)
 			{
-				String id = st.nextToken();
+				string id = st.nextToken();
 				idval = int.Parse(id);
-				String num = st.nextToken();
+				string num = st.nextToken();
 				numval = long.Parse(num);
 			}
 			else if (st.countTokens() == 1)
 			{
-				String id = st.nextToken();
+				string id = st.nextToken();
 				idval = int.Parse(id);
 				numval = 1;
 			}
@@ -179,20 +179,20 @@ public class AdminCreateItem: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_delete_item"))
 		{
-			String val = command.Substring(18);
+			string val = command.Substring(18);
 			StringTokenizer st = new StringTokenizer(val);
 			int idval = 0;
 			long numval = 0;
 			if (st.countTokens() == 2)
 			{
-				String id = st.nextToken();
+				string id = st.nextToken();
 				idval = int.Parse(id);
-				String num = st.nextToken();
+				string num = st.nextToken();
 				numval = long.Parse(num);
 			}
 			else if (st.countTokens() == 1)
 			{
-				String id = st.nextToken();
+				string id = st.nextToken();
 				idval = int.Parse(id);
 				numval = 1;
 			}
@@ -224,7 +224,7 @@ public class AdminCreateItem: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_use_item"))
 		{
-			String val = command.Substring(15);
+			string val = command.Substring(15);
 			int idval = int.Parse(val);
 			Item item = (Item) World.getInstance().findObject(idval);
 			int ownerId = item.getOwnerId();
@@ -261,7 +261,7 @@ public class AdminCreateItem: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -291,7 +291,7 @@ public class AdminCreateItem: IAdminCommandHandler
 		target.sendPacket(new ExAdenaInvenCountPacket(target));
 	}
 	
-	private int getCoinId(String name)
+	private int getCoinId(string name)
 	{
 		int id;
 		if (name.equalsIgnoreCase("adena"))

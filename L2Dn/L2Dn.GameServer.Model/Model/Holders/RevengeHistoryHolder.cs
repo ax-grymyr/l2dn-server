@@ -11,14 +11,14 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class RevengeHistoryHolder
 {
-	private readonly String _killerName;
-	private readonly String _killerClanName;
+	private readonly string _killerName;
+	private readonly string _killerClanName;
 	private readonly int _killerLevel;
 	private readonly Race _killerRaceId;
 	private readonly CharacterClass _killerClassId;
 	private readonly DateTime _killTime;
-	private readonly String _victimName;
-	private readonly String _victimClanName;
+	private readonly string _victimName;
+	private readonly string _victimClanName;
 	private readonly int _victimLevel;
 	private readonly Race _victimRaceId;
 	private readonly CharacterClass _victimClassId;
@@ -114,12 +114,12 @@ public class RevengeHistoryHolder
 		_wasShared = wasShared;
 	}
 
-	public String getKillerName()
+	public string getKillerName()
 	{
 		return _killerName;
 	}
 
-	public String getKillerClanName()
+	public string getKillerClanName()
 	{
 		return _killerClanName;
 	}
@@ -184,12 +184,12 @@ public class RevengeHistoryHolder
 		_sharedTeleportRemaining = count;
 	}
 
-	public String getVictimName()
+	public string getVictimName()
 	{
 		return _victimName;
 	}
 
-	public String getVictimClanName()
+	public string getVictimClanName()
 	{
 		return _victimClanName;
 	}

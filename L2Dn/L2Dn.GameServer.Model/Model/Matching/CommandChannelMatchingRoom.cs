@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Matching;
 
 public class CommandChannelMatchingRoom: MatchingRoom
 {
-	public CommandChannelMatchingRoom(String title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader):
+	public CommandChannelMatchingRoom(string title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader):
 		base(title, loot, minLevel, maxLevel, maxmem, leader)
 	{
 	}

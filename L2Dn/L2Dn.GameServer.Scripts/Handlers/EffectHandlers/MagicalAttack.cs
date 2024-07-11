@@ -30,7 +30,7 @@ public class MagicalAttack: AbstractEffect
 		_raceModifier = @params.getDouble("raceModifier", 1);
 		if (@params.contains("races"))
 		{
-			foreach (String race in @params.getString("races", "").Split(";"))
+			foreach (string race in @params.getString("races", "").Split(";"))
 			{
 				_races.add(Enum.Parse<Race>(race));
 			}

@@ -25,7 +25,7 @@ public class NpcData: DataReaderBase
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcData));
 	
 	private readonly Map<int, NpcTemplate> _npcs = new();
-	private readonly Map<String, int> _clans = new();
+	private readonly Map<string, int> _clans = new();
 	private static readonly Set<int> _masterMonsterIDs = new();
 	private static int? _genericClanId;
 	
@@ -63,8 +63,8 @@ public class NpcData: DataReaderBase
 		StatSet set = new StatSet();
 		int npcId = element.GetAttributeValueAsInt32("id");
 		int level = element.Attribute("level").GetInt32(85);
-		String type = element.Attribute("type").GetString("Folk");
-		Map<String, Object> parameters = null;
+		string type = element.Attribute("type").GetString("Folk");
+		Map<string, object> parameters = null;
 		Map<int, Skill> skills = new();
 		Set<int> clans = null;
 		Set<int> ignoreClanNpcIds = null;
@@ -615,7 +615,7 @@ public class NpcData: DataReaderBase
 	 * @param clanName the clan name to get or create its id
 	 * @return the clan id for the given clan name
 	 */
-	private int getOrCreateClanId(String clanName)
+	private int getOrCreateClanId(string clanName)
 	{
 		int id = _clans.get(clanName);
 		if (id == null)
@@ -631,15 +631,15 @@ public class NpcData: DataReaderBase
 	 * @param clanName the clan name to get its id
 	 * @return the clan id for the given clan name if it exists, -1 otherwise
 	 */
-	public int getClanId(String clanName)
+	public int getClanId(string clanName)
 	{
 		int id = _clans.get(clanName);
 		return id != null ? id : -1;
 	}
 	
-	public Set<String> getClansByIds(Set<int> clanIds)
+	public Set<string> getClansByIds(Set<int> clanIds)
 	{
-		Set<String> result = new();
+		Set<string> result = new();
 		if (clanIds == null)
 		{
 			return result;
@@ -672,7 +672,7 @@ public class NpcData: DataReaderBase
 	 * @param name of the template to get.
 	 * @return the template for the given name.
 	 */
-	public NpcTemplate? getTemplateByName(String name)
+	public NpcTemplate? getTemplateByName(string name)
 	{
 		foreach (NpcTemplate npcTemplate in _npcs.values())
 		{
@@ -727,7 +727,7 @@ public class NpcData: DataReaderBase
 	 * @param text of all the NPC templates which its name start with.
 	 * @return the template list for the given letter.
 	 */
-	public List<NpcTemplate> getAllNpcStartingWith(String text)
+	public List<NpcTemplate> getAllNpcStartingWith(string text)
 	{
 		return getTemplates(template => template.isType("Folk") && template.getName().startsWith(text));
 	}
@@ -737,7 +737,7 @@ public class NpcData: DataReaderBase
 	 * @param classTypes of all the templates to get.
 	 * @return the template list for the given class type.
 	 */
-	public List<NpcTemplate> getAllNpcOfClassType(params String[] classTypes)
+	public List<NpcTemplate> getAllNpcOfClassType(params string[] classTypes)
 	{
 		return getTemplates(
 			template => classTypes.Contains(template.getType(), StringComparer.CurrentCultureIgnoreCase));
@@ -765,9 +765,9 @@ public class NpcData: DataReaderBase
 		public static readonly NpcData INSTANCE = new();
 	}
 	
-	private static Map<String, Object> parseParameters(XElement element)
+	private static Map<string, object> parseParameters(XElement element)
 	{
-		Map<String, Object> parameters = new();
+		Map<string, object> parameters = new();
 		
 		element.Elements("param").ForEach(el =>
 		{

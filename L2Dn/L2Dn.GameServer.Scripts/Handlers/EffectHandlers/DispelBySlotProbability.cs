@@ -19,10 +19,10 @@ public class DispelBySlotProbability: AbstractEffect
 	
 	public DispelBySlotProbability(StatSet @params)
 	{
-		String[] dispelEffects = @params.getString("dispel").Split(";");
+		string[] dispelEffects = @params.getString("dispel").Split(";");
 		_rate = @params.getInt("rate", 100);
 		_dispelAbnormals = new();
-		foreach (String slot in dispelEffects)
+		foreach (string slot in dispelEffects)
 		{
 			_dispelAbnormals.add(Enum.Parse<AbnormalType>(slot));
 		}

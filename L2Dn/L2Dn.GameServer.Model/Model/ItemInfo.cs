@@ -466,7 +466,7 @@ public class ItemInfo
 		return _owner;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return _item + "[objId: " + _objectId + ", count: " + _count + "]";
 	}

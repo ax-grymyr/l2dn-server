@@ -15,8 +15,8 @@ public class SendMessageLocalisationData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SendMessageLocalisationData));
 	
 	private const string SPLIT_STRING = "XXX";
-	private static readonly Map<String, Map<String[], String[]>> SEND_MESSAGE_LOCALISATIONS = new();
-	private static String _lang;
+	private static readonly Map<string, Map<string[], string[]>> SEND_MESSAGE_LOCALISATIONS = new();
+	private static string _lang;
 	
 	protected SendMessageLocalisationData()
 	{
@@ -29,7 +29,7 @@ public class SendMessageLocalisationData: DataReaderBase
 		
 		if (Config.MULTILANG_ENABLE)
 		{
-			foreach (String lang in Config.MULTILANG_ALLOWED)
+			foreach (string lang in Config.MULTILANG_ALLOWED)
 			{
 				string filePath = GetFullPath(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
 				if (!File.Exists(filePath))
@@ -61,18 +61,18 @@ public class SendMessageLocalisationData: DataReaderBase
 		}
 	}
 	
-	public static String getLocalisation(Player player, String message)
+	public static string getLocalisation(Player player, string message)
 	{
 		if (Config.MULTILANG_ENABLE && (player != null))
 		{
-			Map<String[], String[]> localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang());
+			Map<string[], string[]> localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang());
 			if (localisations != null)
 			{
 				// No pretty way of doing something like this.
 				// Consider using proper SystemMessages where possible.
-				String[] searchMessage;
-				String[] replacementMessage;
-				String localisation = message;
+				string[] searchMessage;
+				string[] replacementMessage;
+				string localisation = message;
 				bool found;
 				foreach (var entry in localisations)
 				{
@@ -90,7 +90,7 @@ public class SendMessageLocalisationData: DataReaderBase
 					else // Split match.
 					{
 						found = true;
-						foreach (String part in searchMessage)
+						foreach (string part in searchMessage)
 						{
 							if (!localisation.contains(part))
 							{

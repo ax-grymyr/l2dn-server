@@ -205,7 +205,7 @@ public class Doppelganger : Attackable
 		}
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		StringBuilder sb = new();
 		sb.Append(base.ToString());

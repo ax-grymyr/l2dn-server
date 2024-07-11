@@ -90,9 +90,9 @@ public class InitialShortcutData: DataReaderBase
 
 		int macroId = element.GetAttributeValueAsInt32("macroId");
 		int icon = element.GetAttributeValueAsInt32("icon");
-		String name = element.GetAttributeValueAsString("name");
-		String description = element.GetAttributeValueAsString("description");
-		String acronym = element.GetAttributeValueAsString("acronym");
+		string name = element.GetAttributeValueAsString("name");
+		string description = element.GetAttributeValueAsString("description");
+		string acronym = element.GetAttributeValueAsString("acronym");
 		List<MacroCmd> commands = new();
 		int entry = 0;
 

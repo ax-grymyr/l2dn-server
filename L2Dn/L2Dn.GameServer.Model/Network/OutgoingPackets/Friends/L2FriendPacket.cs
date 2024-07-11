@@ -14,7 +14,7 @@ public readonly struct L2FriendPacket: IOutgoingPacket
 	private readonly bool _action;
 	private readonly bool _online;
 	private readonly int _objid;
-	private readonly String _name;
+	private readonly string _name;
 	
 	/**
 	 * @param action - true for adding, false for remove

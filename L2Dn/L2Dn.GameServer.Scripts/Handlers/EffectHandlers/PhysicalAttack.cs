@@ -44,11 +44,11 @@ public class PhysicalAttack: AbstractEffect
 		_ignoreShieldDefence = @params.getBoolean("ignoreShieldDefence", false);
 		_overHit = @params.getBoolean("overHit", false);
 		
-		String abnormals = @params.getString("abnormalType", null);
+		string abnormals = @params.getString("abnormalType", null);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
-			foreach (String slot in abnormals.Split(";"))
+			foreach (string slot in abnormals.Split(";"))
 			{
 				_abnormals.add(Enum.Parse<AbnormalType>(slot));
 			}
@@ -63,7 +63,7 @@ public class PhysicalAttack: AbstractEffect
 		_raceModifier = @params.getDouble("raceModifier", 1);
 		if (@params.contains("races"))
 		{
-			foreach (String race in @params.getString("races", "").Split(";"))
+			foreach (string race in @params.getString("races", "").Split(";"))
 			{
 				_races.add(Enum.Parse<Race>(race));
 			}

@@ -57,7 +57,7 @@ public abstract class Condition
 	 * @param htmlCallback HTML callback function used to display fail HTML to player
 	 * @return {@code true} when all conditions met, otherwise {@code false}
 	 */
-	public bool validate(Npc npc, List<Player> group, Action<Player, String> htmlCallback)
+	public bool validate(Npc npc, List<Player> group, Action<Player, string> htmlCallback)
 	{
 		foreach (Player member in group)
 		{
@@ -82,10 +82,10 @@ public abstract class Condition
 	 * @param member player which doesn't meet condition
 	 * @param htmlCallback HTML callback function used to display fail HTML to player
 	 */
-	private void sendMessage(List<Player> group, Player member, Action<Player, String> htmlCallback)
+	private void sendMessage(List<Player> group, Player member, Action<Player, string> htmlCallback)
 	{
 		// Send HTML message if condition has any
-		String html = _parameters.getString("html", null);
+		string html = _parameters.getString("html", null);
 		if ((html != null) && (htmlCallback != null))
 		{
 			// Send HTML only to player who make request to enter
@@ -98,7 +98,7 @@ public abstract class Condition
 		}
 
 		// Send text message if condition has any
-		String message = _parameters.getString("message", null);
+		string message = _parameters.getString("message", null);
 		if (message != null)
 		{
 			if (_leaderOnly)

@@ -19,7 +19,7 @@ public class AdminHwid: IAdminCommandHandler
 		"admin_hwinfo"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer() ||
 		    (activeChar.getTarget().getActingPlayer().getClient() == null) ||
@@ -50,7 +50,7 @@ public class AdminHwid: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

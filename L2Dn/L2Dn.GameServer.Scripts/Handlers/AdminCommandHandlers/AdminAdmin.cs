@@ -51,7 +51,7 @@ public class AdminAdmin: IAdminCommandHandler
 		"admin_worldchat",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_admin"))
 		{
@@ -190,7 +190,7 @@ public class AdminAdmin: IAdminCommandHandler
 		{
 			try
 			{
-				String mode = command.Substring(15);
+				string mode = command.Substring(15);
 				if (mode.equalsIgnoreCase("on"))
 				{
 					activeChar.setTradeRefusal(true);
@@ -223,8 +223,8 @@ public class AdminAdmin: IAdminCommandHandler
 			st.nextToken();
 			try
 			{
-				String pName = st.nextToken();
-				String pValue = st.nextToken();
+				string pName = st.nextToken();
+				string pValue = st.nextToken();
 				if (!float.TryParse(pValue, CultureInfo.InvariantCulture, out float pVal))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Invalid parameter!");
@@ -324,7 +324,7 @@ public class AdminAdmin: IAdminCommandHandler
 						break;
 					}
 					
-					String valueToken = st.nextToken();
+					string valueToken = st.nextToken();
 					if (!Util.isDigit(valueToken))
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Incorrect syntax, use: //worldchat set <times used>");
@@ -356,15 +356,15 @@ public class AdminAdmin: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	private void showMainPage(Player activeChar, String command)
+	private void showMainPage(Player activeChar, string command)
 	{
 		int mode = 0;
-		String filename = null;
+		string filename = null;
 		try
 		{
 			mode = int.Parse(command.Substring(11));

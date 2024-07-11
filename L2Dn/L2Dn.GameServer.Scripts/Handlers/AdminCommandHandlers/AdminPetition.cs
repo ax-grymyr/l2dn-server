@@ -23,7 +23,7 @@ public class AdminPetition: IAdminCommandHandler
 		"admin_force_peti"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int petitionId = -1;
 		
@@ -92,7 +92,7 @@ public class AdminPetition: IAdminCommandHandler
 					return false;
 				}
 				Player targetPlayer = (Player) targetChar;
-				String val = command.Substring(15);
+				string val = command.Substring(15);
 				petitionId = PetitionManager.getInstance().submitPetition(targetPlayer, val, 9);
 				PetitionManager.getInstance().acceptPetition(activeChar, petitionId);
 			}
@@ -105,7 +105,7 @@ public class AdminPetition: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

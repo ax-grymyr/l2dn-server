@@ -16,7 +16,7 @@ public class DamageBlock: AbstractEffect
 	
 	public DamageBlock(StatSet @params)
 	{
-		String type = @params.getString("type", null);
+		string type = @params.getString("type", null);
 		_blockHp = type.equalsIgnoreCase("BLOCK_HP");
 		_blockMp = type.equalsIgnoreCase("BLOCK_MP");
 	}

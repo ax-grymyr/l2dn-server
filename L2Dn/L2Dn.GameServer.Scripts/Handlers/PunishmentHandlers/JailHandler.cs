@@ -57,7 +57,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.ACCOUNT:
 			{
-				String account = task.getKey();
+				string account = task.getKey();
 				// GameClient client = LoginServerThread.getInstance().getClient(account);
 				// if (client != null)
 				// {
@@ -71,7 +71,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.IP:
 			{
-				String ip = task.getKey();
+				string ip = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					string? ipAddress = player.getClient()?.IpAddress.ToString();
@@ -84,7 +84,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.HWID:
 			{
-				String hwid = task.getKey();
+				string hwid = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					string? macAddress = player.getClient()?.HardwareInfo?.getMacAddress();
@@ -114,7 +114,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.ACCOUNT:
 			{
-				String account = task.getKey();
+				string account = task.getKey();
 				// GameClient client = LoginServerThread.getInstance().getClient(account);
 				// if (client != null)
 				// {
@@ -128,7 +128,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.IP:
 			{
-				String ip = task.getKey();
+				string ip = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					string? ipAddress = player.getClient()?.IpAddress.ToString();
@@ -141,7 +141,7 @@ public class JailHandler: IPunishmentHandler
 			}
 			case PunishmentAffect.HWID:
 			{
-				String hwid = task.getKey();
+				string hwid = task.getKey();
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					string? macAddress = player.getClient()?.HardwareInfo?.getMacAddress();

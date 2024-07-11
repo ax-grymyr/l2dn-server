@@ -24,8 +24,8 @@ public class Time: IUserCommandHandler
 		}
 		
 		int t = GameTimeTaskManager.getInstance().getGameTime();
-		String h = ((t / 60) % 24).ToString();
-		String m;
+		string h = ((t / 60) % 24).ToString();
+		string m;
 		if ((t % 60) < 10)
 		{
 			m = "0" + (t % 60);

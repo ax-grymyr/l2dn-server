@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class SkillMastery: AbstractEffect
 {
-	private readonly Double _stat;
+	private readonly double _stat;
 	
 	public SkillMastery(StatSet @params)
 	{

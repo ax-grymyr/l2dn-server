@@ -5,17 +5,17 @@ namespace L2Dn.GameServer.Model.Variables;
 public class AccountVariables: AbstractVariables<AccountVariable>
 {
 	// Public variable names
-	public const String HWID = "HWID";
-	public const String HWIDSLIT_VAR = "	";
-	public const String PRIME_SHOP_PRODUCT_COUNT = "PSPCount";
-	public const String PRIME_SHOP_PRODUCT_DAILY_COUNT = "PSPDailyCount";
-	public const String LCOIN_SHOP_PRODUCT_COUNT = "LCSCount";
-	public const String LCOIN_SHOP_PRODUCT_DAILY_COUNT = "LCSDailyCount";
-	public const String LCOIN_SHOP_PRODUCT_MONTLY_COUNT = "LCSMontlyCount";
-	public const String VIP_POINTS = "VipPoints";
-	public const String VIP_TIER = "VipTier";
-	public const String VIP_EXPIRATION = "VipExpiration";
-	public const String VIP_ITEM_BOUGHT = "Vip_Item_Bought";
+	public const string HWID = "HWID";
+	public const string HWIDSLIT_VAR = "	";
+	public const string PRIME_SHOP_PRODUCT_COUNT = "PSPCount";
+	public const string PRIME_SHOP_PRODUCT_DAILY_COUNT = "PSPDailyCount";
+	public const string LCOIN_SHOP_PRODUCT_COUNT = "LCSCount";
+	public const string LCOIN_SHOP_PRODUCT_DAILY_COUNT = "LCSDailyCount";
+	public const string LCOIN_SHOP_PRODUCT_MONTLY_COUNT = "LCSMontlyCount";
+	public const string VIP_POINTS = "VipPoints";
+	public const string VIP_TIER = "VipTier";
+	public const string VIP_EXPIRATION = "VipExpiration";
+	public const string VIP_ITEM_BOUGHT = "Vip_Item_Bought";
 
 	private readonly int _accountId;
 	

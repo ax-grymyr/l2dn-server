@@ -28,7 +28,7 @@ public class Shutdown
 	private const int GM_SHUTDOWN = 1;
 	private const int GM_RESTART = 2;
 	private const int ABORT = 3;
-	private static readonly String[] MODE_TEXT =
+	private static readonly string[] MODE_TEXT =
 	{
 		"SIGTERM",
 		"shutting down",

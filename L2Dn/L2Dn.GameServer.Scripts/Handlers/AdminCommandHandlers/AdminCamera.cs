@@ -19,7 +19,7 @@ public class AdminCamera: IAdminCommandHandler
 		"admin_cam3"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
 		{
@@ -28,7 +28,7 @@ public class AdminCamera: IAdminCommandHandler
 		}
 		
 		Creature target = (Creature) activeChar.getTarget();
-		String[] com = command.Split(" ");
+		string[] com = command.Split(" ");
 		switch (com[0])
 		{
 			case "admin_cam":
@@ -65,7 +65,7 @@ public class AdminCamera: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

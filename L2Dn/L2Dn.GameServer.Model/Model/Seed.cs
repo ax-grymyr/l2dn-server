@@ -113,7 +113,7 @@ public class Seed
 		return (int) (_cropReferencePrice * 0.6);
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "SeedData [_id=" + _seedId + ", _level=" + _level + ", _crop=" + _cropId + ", _mature=" + _matureId + ", _type1=" + _reward1 + ", _type2=" + _reward2 + ", _manorId=" + _castleId + ", _isAlternative=" + _isAlternative + ", _limitSeeds=" + _limitSeeds + ", _limitCrops=" + _limitCrops + "]";
 	}

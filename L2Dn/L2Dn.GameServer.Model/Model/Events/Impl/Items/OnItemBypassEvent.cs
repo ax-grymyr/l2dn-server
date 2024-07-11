@@ -11,9 +11,9 @@ public class OnItemBypassEvent: EventBase
 {
 	private readonly Item _item;
 	private readonly Player _player;
-	private readonly String _event;
+	private readonly string _event;
 	
-	public OnItemBypassEvent(Item item, Player player, String @event)
+	public OnItemBypassEvent(Item item, Player player, string @event)
 	{
 		_item = item;
 		_player = player;
@@ -30,7 +30,7 @@ public class OnItemBypassEvent: EventBase
 		return _player;
 	}
 	
-	public String getEvent()
+	public string getEvent()
 	{
 		return _event;
 	}

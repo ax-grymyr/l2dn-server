@@ -17,7 +17,7 @@ public class TerritoryStatus: IBypassHandler
 		"TerritoryStatus"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -60,7 +60,7 @@ public class TerritoryStatus: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

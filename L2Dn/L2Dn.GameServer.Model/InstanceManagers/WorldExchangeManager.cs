@@ -26,7 +26,7 @@ public class WorldExchangeManager: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(WorldExchangeManager));
 	private readonly Map<long, WorldExchangeHolder> _itemBids = new();
 	private readonly Map<int, WorldExchangeItemSubType> _itemCategories = new();
-	private readonly Map<String, Map<int, String>> _localItemNames = new();
+	private readonly Map<string, Map<int, string>> _localItemNames = new();
 	private int _lastWorldExchangeId;
 	
 	private ScheduledFuture _checkStatus = null;
@@ -97,7 +97,7 @@ public class WorldExchangeManager: DataReaderBase
 	// 	_localItemNames.put(doc.getDocumentURI().split("data/lang/")[1].split("/")[0], local);
 	// }
 	
-	public Map<int, String> getItemLocalByLang(String lang)
+	public Map<int, string> getItemLocalByLang(string lang)
 	{
 		return _localItemNames.get(lang);
 	}
@@ -738,7 +738,7 @@ public class WorldExchangeManager: DataReaderBase
 	 * @param lang
 	 * @return items, which player can buy
 	 */
-	public List<WorldExchangeHolder> getItemBids(int ownerId, WorldExchangeItemSubType type, WorldExchangeSortType sortType, String lang)
+	public List<WorldExchangeHolder> getItemBids(int ownerId, WorldExchangeItemSubType type, WorldExchangeSortType sortType, string lang)
 	{
 		if (!Config.ENABLE_WORLD_EXCHANGE)
 		{
@@ -773,7 +773,7 @@ public class WorldExchangeManager: DataReaderBase
 	 * @param lang
 	 * @return items with the same id (used in registration, where shows similar items with price)
 	 */
-	public List<WorldExchangeHolder> getItemBids(List<int> ids, WorldExchangeSortType sortType, String lang)
+	public List<WorldExchangeHolder> getItemBids(List<int> ids, WorldExchangeSortType sortType, string lang)
 	{
 		if (!Config.ENABLE_WORLD_EXCHANGE)
 		{
@@ -803,7 +803,7 @@ public class WorldExchangeManager: DataReaderBase
 	 * @param lang
 	 * @return sort items by type if it needs 399 - that max value which can been in list buffer size - 32768 - list has 11 + cycle of 82 bytes - 32768 / 82 = 399.6 = 32718 for item info + 50 reserved = 32729 item info and initial data + 39 reserved
 	 */
-	private List<WorldExchangeHolder> sortList(List<WorldExchangeHolder> unsortedList, WorldExchangeSortType sortType, String lang)
+	private List<WorldExchangeHolder> sortList(List<WorldExchangeHolder> unsortedList, WorldExchangeSortType sortType, string lang)
 	{
 		List<WorldExchangeHolder> sortedList = new(unsortedList);
 		switch (sortType)
@@ -874,15 +874,15 @@ public class WorldExchangeManager: DataReaderBase
 		return sortedList;
 	}
 	
-	private String getItemName(String lang, int id, bool isBlessed)
+	private string getItemName(string lang, int id, bool isBlessed)
 	{
 		if (!_localItemNames.containsKey(lang))
 		{
 			return "";
 		}
 		
-		Map<int, String> names = _localItemNames.get(lang);
-		String name = names.get(id);
+		Map<int, string> names = _localItemNames.get(lang);
+		string name = names.get(id);
 		if (name == null)
 		{
 			return "";

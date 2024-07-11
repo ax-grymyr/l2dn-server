@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class OfflinePlay: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"offlineplay"
 	};
@@ -34,7 +34,7 @@ public class OfflinePlay: IVoicedCommandHandler
         GlobalEvents.Players.Subscribe(this, ON_PLAYER_LOGIN);
 	}
 	
-	public bool useVoicedCommand(String command, Player player, String target)
+	public bool useVoicedCommand(string command, Player player, string target)
 	{
 		if (command.equals("offlineplay") && Config.ENABLE_OFFLINE_PLAY_COMMAND)
 		{
@@ -77,7 +77,7 @@ public class OfflinePlay: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

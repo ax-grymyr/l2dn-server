@@ -14,16 +14,16 @@ public class AdminSummon: IAdminCommandHandler
 		"admin_summon"
 	};
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int id;
 		long count = 1;
-		String[] data = command.Split(" ");
+		string[] data = command.Split(" ");
 		try
 		{
 			id = int.Parse(data[1]);
@@ -38,7 +38,7 @@ public class AdminSummon: IAdminCommandHandler
 			return false;
 		}
 		
-		String subCommand;
+		string subCommand;
 		if (id < 1000000)
 		{
 			subCommand = "admin_create_item";

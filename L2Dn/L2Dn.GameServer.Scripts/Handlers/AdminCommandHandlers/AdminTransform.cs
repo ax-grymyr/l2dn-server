@@ -18,7 +18,7 @@ public class AdminTransform: IAdminCommandHandler
 		"admin_transform_menu",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_transform_menu"))
 		{
@@ -75,7 +75,7 @@ public class AdminTransform: IAdminCommandHandler
 				return false;
 			}
 			
-			String[] parts = command.Split(" ");
+			string[] parts = command.Split(" ");
 			if ((parts.Length != 2) || !Util.isDigit(parts[1]))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //transform <id>");
@@ -93,7 +93,7 @@ public class AdminTransform: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

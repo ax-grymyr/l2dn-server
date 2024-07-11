@@ -22,7 +22,7 @@ public class AdminGmChat: IAdminCommandHandler
 		"admin_gmchat_menu"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_gmchat"))
 		{
@@ -43,7 +43,7 @@ public class AdminGmChat: IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void snoop(String command, Player activeChar)
+	private void snoop(string command, Player activeChar)
 	{
 		WorldObject target = null;
 		if (command.Length > 12)
@@ -70,7 +70,7 @@ public class AdminGmChat: IAdminCommandHandler
 		activeChar.addSnooped(player);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -79,12 +79,12 @@ public class AdminGmChat: IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleGmChat(String command, Player activeChar)
+	private void handleGmChat(string command, Player activeChar)
 	{
 		try
 		{
 			int offset = 0;
-			String text;
+			string text;
 			if (command.startsWith("admin_gmchat_menu"))
 			{
 				offset = 18;

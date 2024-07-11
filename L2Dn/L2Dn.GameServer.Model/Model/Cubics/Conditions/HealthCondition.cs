@@ -25,7 +25,7 @@ public class HealthCondition: ICubicCondition
         return false;
     }
 
-    public override String ToString()
+    public override string ToString()
     {
         return GetType().Name + " min: " + _min + " max: " + _max;
     }

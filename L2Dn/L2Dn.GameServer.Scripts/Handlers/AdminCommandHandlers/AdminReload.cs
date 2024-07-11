@@ -24,10 +24,10 @@ public class AdminReload: IAdminCommandHandler
 	
 	private const string RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|options|fishing>";
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		if (actualCommand.equalsIgnoreCase("admin_reload"))
 		{
 			if (!st.hasMoreTokens())
@@ -37,7 +37,7 @@ public class AdminReload: IAdminCommandHandler
 				return true;
 			}
 			
-			String type = st.nextToken();
+			string type = st.nextToken();
 			switch (type.toLowerCase())
 			{
 				case "config":
@@ -62,7 +62,7 @@ public class AdminReload: IAdminCommandHandler
 				{
 					if (st.hasMoreElements())
 					{
-						String value = st.nextToken();
+						string value = st.nextToken();
 						if (!Util.isDigit(value))
 						{
 							QuestManager.getInstance().reload(value);
@@ -95,7 +95,7 @@ public class AdminReload: IAdminCommandHandler
 				{
 					if (st.hasMoreElements())
 					{
-						String path = st.nextToken();
+						string path = st.nextToken();
 						string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "html/" + path);
 						if (File.Exists(filePath))
 						{
@@ -341,7 +341,7 @@ public class AdminReload: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

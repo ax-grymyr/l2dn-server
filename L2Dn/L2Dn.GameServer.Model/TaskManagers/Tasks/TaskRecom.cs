@@ -10,7 +10,7 @@ public class TaskRecom : Task
 {
 	private const string NAME = "recommendations";
 	
-	public override String getName()
+	public override string getName()
 	{
 		return NAME;
 	}

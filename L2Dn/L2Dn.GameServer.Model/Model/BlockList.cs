@@ -146,7 +146,7 @@ public class BlockList
 			return;
 		}
 		
-		String charName = CharInfoTable.getInstance().getNameById(targetId);
+		string charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (listOwner.getFriendList().Contains(targetId))
 		{
 			listOwner.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
@@ -183,7 +183,7 @@ public class BlockList
 		
 		SystemMessagePacket sm;
 		
-		String charName = CharInfoTable.getInstance().getNameById(targetId);
+		string charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (!listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);

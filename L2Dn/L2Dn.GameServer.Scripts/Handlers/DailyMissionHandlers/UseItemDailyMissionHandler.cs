@@ -23,10 +23,10 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 		_amount = holder.getRequiredCompletions();
 		_minLevel = holder.getParams().getInt("minLevel", 0);
 		_maxLevel = holder.getParams().getInt("maxLevel", int.MaxValue);
-		String itemIds = holder.getParams().getString("itemIds", "");
+		string itemIds = holder.getParams().getString("itemIds", "");
 		if (!string.IsNullOrEmpty(itemIds))
 		{
-			foreach (String s in itemIds.Split(","))
+			foreach (string s in itemIds.Split(","))
 			{
 				int id = int.Parse(s);
 				if (!_itemIds.Contains(id))

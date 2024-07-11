@@ -120,7 +120,7 @@ public class EnchantItemRequest: AbstractRequest
 		_multiEnchantingItems.clear();
 	}
 	
-	public String getMultiEnchantingItemsLits()
+	public string getMultiEnchantingItemsLits()
 	{
 		return _multiEnchantingItems.toString();
 	}

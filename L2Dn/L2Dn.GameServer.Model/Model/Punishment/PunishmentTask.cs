@@ -19,18 +19,18 @@ public class PunishmentTask: Runnable
 	private readonly PunishmentAffect _affect;
 	private readonly PunishmentType _type;
 	private readonly DateTime? _expirationTime;
-	private readonly String _reason;
-	private readonly String _punishedBy;
+	private readonly string _reason;
+	private readonly string _punishedBy;
 	private bool _isStored;
 	private ScheduledFuture _task = null;
 
-	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime, String reason,
-		String punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)
+	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime, string reason,
+		string punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)
 	{
 	}
 
 	public PunishmentTask(int id, string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime,
-		String reason, String punishedBy, bool isStored)
+		string reason, string punishedBy, bool isStored)
 	{
 		_id = id;
 		_key = key;
@@ -78,7 +78,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return the reason for this punishment.
 	 */
-	public String getReason()
+	public string getReason()
 	{
 		return _reason;
 	}
@@ -86,7 +86,7 @@ public class PunishmentTask: Runnable
 	/**
 	 * @return name of the punishment issuer.
 	 */
-	public String getPunishedBy()
+	public string getPunishedBy()
 	{
 		return _punishedBy;
 	}

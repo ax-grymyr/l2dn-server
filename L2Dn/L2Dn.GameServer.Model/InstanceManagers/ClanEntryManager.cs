@@ -362,7 +362,7 @@ public class ClanEntryManager
 		return result;
 	}
 	
-	public List<PledgeWaitingInfo> queryWaitingListByName(String name)
+	public List<PledgeWaitingInfo> queryWaitingListByName(string name)
 	{
 		List<PledgeWaitingInfo> result = new();
 		foreach (PledgeWaitingInfo p in _waitingList.values())
@@ -375,7 +375,7 @@ public class ClanEntryManager
 		return result;
 	}
 	
-	public List<PledgeRecruitInfo> getSortedClanListByName(String query, int type)
+	public List<PledgeRecruitInfo> getSortedClanListByName(string query, int type)
 	{
 		List<PledgeRecruitInfo> result = new();
 		if (type == 1)

@@ -10,8 +10,8 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
 {
     private readonly Clan _clan;
-    private readonly String _name;
-    private readonly String _leaderName;
+    private readonly string _name;
+    private readonly string _leaderName;
     private readonly ICollection<ClanMember> _members;
     private readonly int _pledgeId;
     private readonly bool _isSubPledge;

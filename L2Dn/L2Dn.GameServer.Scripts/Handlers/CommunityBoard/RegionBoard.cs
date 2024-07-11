@@ -24,29 +24,29 @@ public class RegionBoard: IWriteBoardHandler
 	// @formatter:off
 	private static readonly int[] REGIONS = { 1049, 1052, 1053, 1057, 1060, 1059, 1248, 1247, 1056 };
 	// @formatter:on
-	private static readonly  String[] COMMANDS =
+	private static readonly  string[] COMMANDS =
 	{
 		"_bbsloc"
 	};
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		if (command.equals("_bbsloc"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Region", command);
 			
-			String list = HtmCache.getInstance().getHtm("html/CommunityBoard/region_list.html", player.getLang());
+			string list = HtmCache.getInstance().getHtm("html/CommunityBoard/region_list.html", player.getLang());
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < REGIONS.Length; i++)
 			{
 				Castle castle = CastleManager.getInstance().getCastleById(i + 1);
 				Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
-				String link = list.Replace("%region_id%", i.ToString());
+				string link = list.Replace("%region_id%", i.ToString());
 				link = link.Replace("%region_name%", REGIONS[i].ToString());
 				link = link.Replace("%region_owning_clan%", (clan != null ? clan.getName() : "NPC"));
 				link = link.Replace("%region_owning_clan_alliance%", ((clan != null) && (clan.getAllyName() != null) ? clan.getAllyName() : ""));
@@ -54,7 +54,7 @@ public class RegionBoard: IWriteBoardHandler
 				sb.Append(link);
 			}
 			
-			String html = HtmCache.getInstance().getHtm("html/CommunityBoard/region.html", player.getLang());
+			string html = HtmCache.getInstance().getHtm("html/CommunityBoard/region.html", player.getLang());
 			html = html.Replace("%region_list%", sb.ToString());
 			CommunityBoardHandler.separateAndSend(html, player);
 		}
@@ -62,7 +62,7 @@ public class RegionBoard: IWriteBoardHandler
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Region>", command);
 			
-			String id = command.Replace("_bbsloc;", "");
+			string id = command.Replace("_bbsloc;", "");
 			if (!Util.isDigit(id))
 			{
 				_logger.Warn(nameof(RegionBoard) + ": " + player + " sent and invalid region bypass " + command + "!");
@@ -74,7 +74,7 @@ public class RegionBoard: IWriteBoardHandler
 		return true;
 	}
 	
-	public bool writeCommunityBoardCommand(Player player, String arg1, String arg2, String arg3, String arg4, String arg5)
+	public bool writeCommunityBoardCommand(Player player, string arg1, string arg2, string arg3, string arg4, string arg5)
 	{
 		// TODO: Implement.
 		return false;

@@ -347,7 +347,7 @@ public class SpawnTable
 	 * @param function the function to execute
 	 * @return {@code true} if all procedures were executed, {@code false} otherwise
 	 */
-	public bool forEachSpawn(Func<Spawn, Boolean> function)
+	public bool forEachSpawn(Func<Spawn, bool> function)
 	{
 		foreach (Set<Spawn> set in _spawnTable.values())
 		{

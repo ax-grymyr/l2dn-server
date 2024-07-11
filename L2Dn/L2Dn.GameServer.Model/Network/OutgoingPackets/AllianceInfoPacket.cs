@@ -6,11 +6,11 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct AllianceInfoPacket: IOutgoingPacket
 {
-    private readonly String _name;
+    private readonly string _name;
     private readonly int _total;
     private readonly int _online;
-    private readonly String _leaderC;
-    private readonly String _leaderP;
+    private readonly string _leaderC;
+    private readonly string _leaderP;
     private readonly ClanInfo[] _allies;
 	
     public AllianceInfoPacket(int allianceId)
@@ -57,7 +57,7 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
         }
     }
 	
-    public String getName()
+    public string getName()
     {
         return _name;
     }
@@ -72,12 +72,12 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
         return _online;
     }
 	
-    public String getLeaderC()
+    public string getLeaderC()
     {
         return _leaderC;
     }
 	
-    public String getLeaderP()
+    public string getLeaderP()
     {
         return _leaderP;
     }

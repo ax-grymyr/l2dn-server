@@ -18,11 +18,11 @@ public class AdminOnline: IAdminCommandHandler
 		"admin_online"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equalsIgnoreCase("admin_online"))
 		{
-			List<String> ips = new();
+			List<string> ips = new();
 			int total = 0;
 			int online = 0;
 			int offline = 0;
@@ -32,7 +32,7 @@ public class AdminOnline: IAdminCommandHandler
 			int combat = 0;
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				String? ip = player.getClient()?.IpAddress.ToString();
+				string? ip = player.getClient()?.IpAddress.ToString();
 				if ((ip != null) && !ips.Contains(ip))
 				{
 					ips.Add(ip);
@@ -85,7 +85,7 @@ public class AdminOnline: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

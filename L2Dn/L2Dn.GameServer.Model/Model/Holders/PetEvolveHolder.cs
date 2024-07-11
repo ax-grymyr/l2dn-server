@@ -11,9 +11,9 @@ public class PetEvolveHolder
 	private readonly int _level;
 	private readonly EvolveLevel _evolve;
 	private readonly long _exp;
-	private readonly String _name;
+	private readonly string _name;
 	
-	public PetEvolveHolder(int index, EvolveLevel evolve, String name, int level, long exp)
+	public PetEvolveHolder(int index, EvolveLevel evolve, string name, int level, long exp)
 	{
 		_index = index;
 		_evolve = evolve;
@@ -42,7 +42,7 @@ public class PetEvolveHolder
 		return _exp;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

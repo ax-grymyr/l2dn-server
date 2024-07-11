@@ -23,12 +23,12 @@ public class Bidder
 		return _clan;
 	}
 
-	public String getClanName()
+	public string getClanName()
 	{
 		return _clan.getName();
 	}
 
-	public String getLeaderName()
+	public string getLeaderName()
 	{
 		return _clan.getLeaderName();
 	}

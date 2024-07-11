@@ -11,31 +11,31 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
  */
 public class FriendsBoard: IParseBoardHandler
 {
-	private static readonly String[] COMMANDS =
+	private static readonly string[] COMMANDS =
 	{
 		"_friendlist",
 		"_friendblocklist"
 	};
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		if (command.equals("_friendlist"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Friends List", command);
 			
-			String html = HtmCache.getInstance().getHtm("html/CommunityBoard/friends_list.html", player.getLang());
+			string html = HtmCache.getInstance().getHtm("html/CommunityBoard/friends_list.html", player.getLang());
 			CommunityBoardHandler.separateAndSend(html, player);
 		}
 		else if (command.equals("_friendblocklist"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Ignore list", command);
 			
-			String html = HtmCache.getInstance().getHtm("html/CommunityBoard/friends_block_list.html", player.getLang());
+			string html = HtmCache.getInstance().getHtm("html/CommunityBoard/friends_block_list.html", player.getLang());
 			CommunityBoardHandler.separateAndSend(html, player);
 		}
 		return true;

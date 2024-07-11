@@ -9,7 +9,7 @@ public class FloodProtectorConfig
     /**
      * Type used for identification of logging output.
      */
-    public readonly String FLOOD_PROTECTOR_TYPE;
+    public readonly string FLOOD_PROTECTOR_TYPE;
     /**
      * Flood protection interval in game ticks.
      */
@@ -25,7 +25,7 @@ public class FloodProtectorConfig
     /**
      * Punishment type. Either 'none', 'kick', 'ban' or 'jail'.
      */
-    public String PUNISHMENT_TYPE;
+    public string PUNISHMENT_TYPE;
     /**
      * For how long should the char/account be punished.
      */

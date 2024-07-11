@@ -47,7 +47,7 @@ public class SellBuffsManager: DataReaderBase
 	
 	public void sendSellMenu(Player player)
 	{
-		String html = HtmCache.getInstance()
+		string html = HtmCache.getInstance()
 			.getHtm(HTML_FOLDER + (player.isSellingBuffs() ? "BuffMenu_already.html" : "BuffMenu.html"),
 				player.getLang());
 		
@@ -56,14 +56,14 @@ public class SellBuffsManager: DataReaderBase
 	
 	public void sendBuffChoiceMenu(Player player, int index)
 	{
-		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
+		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildSkillMenu(player, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
 	public void sendBuffEditMenu(Player player)
 	{
-		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
+		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildEditMenu(player));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
@@ -75,12 +75,12 @@ public class SellBuffsManager: DataReaderBase
 			return;
 		}
 		
-		String html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffBuyMenu.html", player.getLang());
+		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffBuyMenu.html", player.getLang());
 		html = html.Replace("%list%", buildBuffMenu(seller, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 	
-	public void startSellBuffs(Player player, String title)
+	public void startSellBuffs(Player player, string title)
 	{
 		player.sitDown();
 		player.setSellingBuffs(true);
@@ -101,7 +101,7 @@ public class SellBuffsManager: DataReaderBase
 		sendSellMenu(player);
 	}
 	
-	private String buildBuffMenu(Player seller, int index)
+	private string buildBuffMenu(Player seller, int index)
 	{
 		int ceiling = 10;
 		int nextIndex = -1;
@@ -205,7 +205,7 @@ public class SellBuffsManager: DataReaderBase
 		return sb.ToString();
 	}
 	
-	private String buildEditMenu(Player player)
+	private string buildEditMenu(Player player)
 	{
 		StringBuilder sb = new StringBuilder();
 		
@@ -257,7 +257,7 @@ public class SellBuffsManager: DataReaderBase
 		return sb.ToString();
 	}
 	
-	private String buildSkillMenu(Player player, int index)
+	private string buildSkillMenu(Player player, int index)
 	{
 		int ceiling = index + 10;
 		int nextIndex = -1;

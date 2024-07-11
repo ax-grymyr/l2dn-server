@@ -11,9 +11,9 @@ public class PledgeWaitingInfo
     private CharacterClass _playerClassId;
     private int _playerLvl;
     private readonly int _karma;
-    private String _playerName;
+    private string _playerName;
 
-    public PledgeWaitingInfo(int playerId, int playerLvl, int karma, CharacterClass classId, String playerName)
+    public PledgeWaitingInfo(int playerId, int playerLvl, int karma, CharacterClass classId, string playerName)
     {
         _playerId = playerId;
         _playerClassId = classId;
@@ -57,7 +57,7 @@ public class PledgeWaitingInfo
         return _karma;
     }
 
-    public String getPlayerName()
+    public string getPlayerName()
     {
         if (isOnline() && !getPlayer().getName().equalsIgnoreCase(_playerName))
         {

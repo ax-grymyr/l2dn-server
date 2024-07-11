@@ -63,25 +63,25 @@ public class TriggerSkillByAttack: AbstractEffect
 		}
 		else
 		{
-			foreach (String s in @params.getString("allowWeapons").Split(","))
+			foreach (string s in @params.getString("allowWeapons").Split(","))
 			{
 				_allowWeapons |= Enum.Parse<WeaponType>(s);
 			}
 		}
 		
 		// Specific skills by level.
-		String triggerSkills = @params.getString("triggerSkills", "");
+		string triggerSkills = @params.getString("triggerSkills", "");
 		if (string.IsNullOrEmpty(triggerSkills))
 		{
 			_triggerSkills = null;
 		}
 		else
 		{
-			String[] split = triggerSkills.Split(";");
+			string[] split = triggerSkills.Split(";");
 			_triggerSkills = new();
-			foreach (String skill in split)
+			foreach (string skill in split)
 			{
-				String[] splitSkill = skill.Split(",");
+				string[] splitSkill = skill.Split(",");
 				_triggerSkills.Add(new SkillHolder(int.Parse(splitSkill[0]), int.Parse(splitSkill[1])));
 			}
 		}

@@ -261,18 +261,18 @@ public class ItemData: DataReaderBase
 		}
 	}
 
-	private String getTableValue(string name)
+	private string getTableValue(string name)
 	{
 		throw new NotImplementedException();
 		//return _tables.get(name)[_currentItem.currentLevel];
 	}
 
-	private String getTableValue(String name, int idx)
+	private string getTableValue(string name, int idx)
 	{
 		return _tables.get(name)[idx - 1];
 	}
 
-	private String getValue(String value, Object template)
+	private string getValue(string value, object template)
 	{
 		// is it a table?
 		if (value[0] == '#')
@@ -296,7 +296,7 @@ public class ItemData: DataReaderBase
 			throw new InvalidOperationException("Table name must start with #");
 
 		StringTokenizer data = new StringTokenizer(element.Value, " ");
-		List<String> array = new(data.countTokens());
+		List<string> array = new(data.countTokens());
 		while (data.hasMoreTokens())
 		{
 			array.Add(data.nextToken());
@@ -1092,7 +1092,7 @@ public class ItemData: DataReaderBase
 					while (st.hasMoreTokens())
 					{
 						ItemTypeMask old = mask;
-						String item = st.nextToken().Trim();
+						string item = st.nextToken().Trim();
 						foreach (WeaponType wt in EnumUtil.GetValues<WeaponType>())
 						{
 							if (wt.ToString().equals(item))
@@ -1294,7 +1294,7 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(String process, int itemId, long count, Creature actor, Object reference)
+	public Item createItem(string process, int itemId, long count, Creature actor, object reference)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
@@ -1387,18 +1387,18 @@ public class ItemData: DataReaderBase
 			sb.Append(item.getObjectId());
 			sb.Append(")");
 
-			String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+			string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
 
-			String referenceName = "no-reference";
+			string referenceName = "no-reference";
 			if (reference is WorldObject)
 			{
 				referenceName = (((WorldObject)reference).getName() != null
 					? ((WorldObject)reference).getName()
 					: "no-name");
 			}
-			else if (reference is String)
+			else if (reference is string)
 			{
-				referenceName = (String)reference;
+				referenceName = (string)reference;
 			}
 
 			// TODO: GMAudit 
@@ -1416,7 +1416,7 @@ public class ItemData: DataReaderBase
 		return item;
 	}
 
-	public Item createItem(String process, int itemId, long count, Player actor)
+	public Item createItem(string process, int itemId, long count, Player actor)
 	{
 		return createItem(process, itemId, count, actor, null);
 	}
@@ -1435,7 +1435,7 @@ public class ItemData: DataReaderBase
 	 * @param actor the player requesting the item destroy.
 	 * @param reference the object referencing current action like NPC selling item or previous item in transformation.
 	 */
-	public void destroyItem(String process, Item item, Player actor, Object reference)
+	public void destroyItem(string process, Item item, Player actor, object reference)
 	{
 		lock (item)
 		{
@@ -1504,18 +1504,18 @@ public class ItemData: DataReaderBase
 				sb.Append(item.getObjectId());
 				sb.Append(")");
 
-				String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+				string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
 
-				String referenceName = "no-reference";
+				string referenceName = "no-reference";
 				if (reference is WorldObject)
 				{
 					referenceName = (((WorldObject)reference).getName() != null
 						? ((WorldObject)reference).getName()
 						: "no-name");
 				}
-				else if (reference is String)
+				else if (reference is string)
 				{
-					referenceName = (String)reference;
+					referenceName = (string)reference;
 				}
 
 				// TODO: GMAudit 

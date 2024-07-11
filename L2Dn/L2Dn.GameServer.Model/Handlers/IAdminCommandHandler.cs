@@ -10,11 +10,11 @@ public interface IAdminCommandHandler
 	 * @param command
 	 * @return command success
 	 */
-	bool useAdminCommand(String command, Player player);
+	bool useAdminCommand(string command, Player player);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 * @return all known itemIds
 	 */
-	String[] getAdminCommandList();
+	string[] getAdminCommandList();
 }

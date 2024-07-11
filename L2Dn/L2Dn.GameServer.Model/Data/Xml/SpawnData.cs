@@ -131,7 +131,7 @@ public class SpawnData: DataReaderBase
 		return result;
 	}
 	
-	public SpawnTemplate getSpawnByName(String name)
+	public SpawnTemplate getSpawnByName(string name)
 	{
 		foreach (SpawnTemplate spawn in _spawns)
 		{
@@ -143,7 +143,7 @@ public class SpawnData: DataReaderBase
 		return null;
 	}
 	
-	public SpawnGroup getSpawnGroupByName(String name)
+	public SpawnGroup getSpawnGroupByName(string name)
 	{
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{

@@ -264,7 +264,7 @@ public class PlayerInventory: Inventory
 	 * @param actor : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void addAdena(String process, long count, Player actor, Object reference)
+	public void addAdena(string process, long count, Player actor, object reference)
 	{
 		if (count > 0)
 		{
@@ -279,7 +279,7 @@ public class PlayerInventory: Inventory
 	 * @param actor : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void addBeautyTickets(String process, long count, Player actor, Object reference)
+	public void addBeautyTickets(string process, long count, Player actor, object reference)
 	{
 		if (count > 0)
 		{
@@ -295,7 +295,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return bool : true if adena was reduced
 	 */
-	public bool reduceAdena(String process, long count, Player actor, Object reference)
+	public bool reduceAdena(string process, long count, Player actor, object reference)
 	{
 		if (count > 0)
 		{
@@ -312,7 +312,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return bool : true if adena was reduced
 	 */
-	public bool reduceBeautyTickets(String process, long count, Player actor, Object reference)
+	public bool reduceBeautyTickets(string process, long count, Player actor, object reference)
 	{
 		if (count > 0)
 		{
@@ -328,7 +328,7 @@ public class PlayerInventory: Inventory
 	 * @param actor : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void addAncientAdena(String process, long count, Player actor, Object reference)
+	public void addAncientAdena(string process, long count, Player actor, object reference)
 	{
 		if (count > 0)
 		{
@@ -344,7 +344,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return bool : true if adena was reduced
 	 */
-	public bool reduceAncientAdena(String process, long count, Player actor, Object reference)
+	public bool reduceAncientAdena(string process, long count, Player actor, object reference)
 	{
 		return count > 0 && destroyItemByItemId(process, ANCIENT_ADENA_ID, count, actor, reference) != null;
 	}
@@ -357,7 +357,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(String process, Item item, Player actor, Object reference)
+	public override Item addItem(string process, Item item, Player actor, object reference)
 	{
 		Item addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)
@@ -405,7 +405,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(String process, int itemId, long count, Player actor, Object reference)
+	public override Item addItem(string process, int itemId, long count, Player actor, object reference)
 	{
 		return addItem(process, itemId, count, actor, reference, true);
 	}
@@ -420,7 +420,7 @@ public class PlayerInventory: Inventory
 	 * @param update : Update inventory (not used by MultiSellChoose packet / it sends update after finish)
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item addItem(String process, int itemId, long count, Player actor, Object reference, bool update)
+	public Item addItem(string process, int itemId, long count, Player actor, object reference, bool update)
 	{
 		Item item = base.addItem(process, itemId, count, actor, reference);
 		if (item != null)
@@ -493,7 +493,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item transferItem(String process, int objectId, long count, ItemContainer target, Player actor, Object reference)
+	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player actor, object reference)
 	{
 		Item item = base.transferItem(process, objectId, count, target, actor, reference);
 
@@ -517,7 +517,7 @@ public class PlayerInventory: Inventory
 		return item;
 	}
 
-	public override Item detachItem(String process, Item item, long count, ItemLocation newLocation, Player actor, Object reference)
+	public override Item detachItem(string process, Item item, long count, ItemLocation newLocation, Player actor, object reference)
 	{
 		Item detachedItem = base.detachItem(process, item, count, newLocation, actor, reference);
 		if (detachedItem != null && actor != null)
@@ -535,7 +535,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItem(String process, Item item, Player actor, Object reference)
+	public override Item destroyItem(string process, Item item, Player actor, object reference)
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
@@ -548,7 +548,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItem(String process, Item item, long count, Player actor, Object reference)
+	public override Item destroyItem(string process, Item item, long count, Player actor, object reference)
 	{
 		Item destroyedItem = base.destroyItem(process, item, count, actor, reference);
 
@@ -595,7 +595,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItem(String process, int objectId, long count, Player actor, Object reference)
+	public override Item destroyItem(string process, int objectId, long count, Player actor, object reference)
 	{
 		Item item = getItemByObjectId(objectId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
@@ -610,7 +610,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference)
+	public override Item destroyItemByItemId(string process, int itemId, long count, Player actor, object reference)
 	{
 		// Attempt to find non equipped items.
 		Item destroyItem = null;
@@ -670,7 +670,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item dropItem(String process, Item item, Player actor, Object reference)
+	public override Item dropItem(string process, Item item, Player actor, object reference)
 	{
 		Item droppedItem = base.dropItem(process, item, actor, reference);
 
@@ -706,7 +706,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item dropItem(String process, int objectId, long count, Player actor, Object reference)
+	public override Item dropItem(string process, int objectId, long count, Player actor, object reference)
 	{
 		Item item = base.dropItem(process, objectId, count, actor, reference);
 
@@ -1011,7 +1011,7 @@ public class PlayerInventory: Inventory
 		return true;
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return GetType().Name + "[" + _owner + "]";
 	}
@@ -1130,7 +1130,7 @@ public class PlayerInventory: Inventory
 	 * @param reference
 	 * @return Amount of items left.
 	 */
-	public bool updateItemCountNoDbUpdate(String process, Item item, long countDelta, Player creator, Object reference)
+	public bool updateItemCountNoDbUpdate(string process, Item item, long countDelta, Player creator, object reference)
 	{
 		List<ItemInfo> items = new List<ItemInfo>();
 		long left = item.getCount() + countDelta;
@@ -1182,7 +1182,7 @@ public class PlayerInventory: Inventory
 	 * @param reference
 	 * @return Amount of items left.
 	 */
-	public bool updateItemCount(String process, Item item, long countDelta, Player creator, Object reference)
+	public bool updateItemCount(string process, Item item, long countDelta, Player creator, object reference)
 	{
 		if (item != null)
 		{

@@ -5,10 +5,10 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExAskModifyPartyLootingPacket: IOutgoingPacket
 {
-	private readonly String _requestor;
+	private readonly string _requestor;
 	private readonly PartyDistributionType _partyDistributionType;
 	
-	public ExAskModifyPartyLootingPacket(String name, PartyDistributionType partyDistributionType)
+	public ExAskModifyPartyLootingPacket(string name, PartyDistributionType partyDistributionType)
 	{
 		_requestor = name;
 		_partyDistributionType = partyDistributionType;

@@ -3,7 +3,7 @@
 public class ActionDataHolder
 {
     private readonly int _id;
-    private readonly String _handler;
+    private readonly string _handler;
     private readonly int _optionId;
 	
     public ActionDataHolder(int id, string handler, int optionId)
@@ -18,7 +18,7 @@ public class ActionDataHolder
         return _id;
     }
 	
-    public String getHandler()
+    public string getHandler()
     {
         return _handler;
     }

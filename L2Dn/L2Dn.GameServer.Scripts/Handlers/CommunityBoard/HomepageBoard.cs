@@ -10,17 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
  */
 public class HomepageBoard: IParseBoardHandler
 {
-	private static readonly String[] COMMANDS =
+	private static readonly string[] COMMANDS =
 	{
 		"_bbslink"
 	};
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
     {
         CommunityBoardHandler.separateAndSend(
             HtmCache.getInstance().getHtm("html/CommunityBoard/homepage.html", player.getLang()), player);

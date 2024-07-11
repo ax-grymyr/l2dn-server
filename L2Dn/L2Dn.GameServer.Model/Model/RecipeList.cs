@@ -27,7 +27,7 @@ public class RecipeList
 	private readonly int _recipeId;
 	
 	/** The name of the RecipeList */
-	private readonly String _recipeName;
+	private readonly string _recipeName;
 	
 	/** The crafting success rate when using the RecipeList */
 	private readonly int _successRate;
@@ -113,7 +113,7 @@ public class RecipeList
 	/**
 	 * @return the name of the RecipeList.
 	 */
-	public String getRecipeName()
+	public string getRecipeName()
 	{
 		return _recipeName;
 	}

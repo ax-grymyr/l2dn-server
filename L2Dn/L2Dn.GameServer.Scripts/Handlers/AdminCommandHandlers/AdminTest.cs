@@ -20,11 +20,11 @@ public class AdminTest: IAdminCommandHandler
 		"admin_skill_test"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_stats"))
 		{
-			foreach (String line in ThreadPool.getStats())
+			foreach (string line in ThreadPool.getStats())
 			{
 				activeChar.sendMessage(line);
 			}
@@ -79,7 +79,7 @@ public class AdminTest: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

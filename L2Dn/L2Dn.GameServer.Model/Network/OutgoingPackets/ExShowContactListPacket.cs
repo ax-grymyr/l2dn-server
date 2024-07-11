@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExShowContactListPacket: IOutgoingPacket
 {
-    private readonly Set<String> _contacts;
+    private readonly Set<string> _contacts;
 	
     public ExShowContactListPacket(Player player)
     {

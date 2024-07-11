@@ -18,7 +18,7 @@ public class RecipeStatHolder
 	 * @param type
 	 * @param value
 	 */
-	public RecipeStatHolder(String type, int value)
+	public RecipeStatHolder(string type, int value)
 	{
 		_type = Enum.Parse<StatType>(type); // TODO: pass value, not string
 		_value = value;

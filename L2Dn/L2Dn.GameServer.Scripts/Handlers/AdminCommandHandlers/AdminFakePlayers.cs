@@ -17,11 +17,11 @@ public class AdminFakePlayers: IAdminCommandHandler
 		"admin_fakechat"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_fakechat"))
 		{
-			String[] words = command.Substring(15).Split(" ");
+			string[] words = command.Substring(15).Split(" ");
 			if (words.Length < 3)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //fakechat playername fpcname message");
@@ -33,13 +33,13 @@ public class AdminFakePlayers: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "Player not found.");
 				return false;
 			}
-			String fpcName = FakePlayerData.getInstance().getProperName(words[1]);
+			string fpcName = FakePlayerData.getInstance().getProperName(words[1]);
 			if (fpcName == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Fake player not found.");
 				return false;
 			}
-			String message = "";
+			string message = "";
 			for (int i = 0; i < words.Length; i++)
 			{
 				if (i < 2)
@@ -55,7 +55,7 @@ public class AdminFakePlayers: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

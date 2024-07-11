@@ -21,10 +21,10 @@ public class AdminAnnouncements: IAdminCommandHandler
 		"admin_announces",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.hasMoreTokens() ? st.nextToken() : "";
+		string cmd = st.hasMoreTokens() ? st.nextToken() : "";
 		switch (cmd)
 		{
 			case "admin_announce":
@@ -36,7 +36,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Syntax: //announce <text to announce here>");
 					return false;
 				}
-				String announce = st.nextToken();
+				string announce = st.nextToken();
 				while (st.hasMoreTokens())
 				{
 					announce += " " + st.nextToken();
@@ -58,18 +58,18 @@ public class AdminAnnouncements: IAdminCommandHandler
 			}
 			case "admin_announces":
 			{
-				String subCmd = st.hasMoreTokens() ? st.nextToken() : "";
+				string subCmd = st.hasMoreTokens() ? st.nextToken() : "";
 				switch (subCmd)
 				{
 					case "add":
 					{
 						if (!st.hasMoreTokens())
 						{
-							String content2 = HtmCache.getInstance().getHtm("html/admin/announces-add.htm", activeChar.getLang());
+							string content2 = HtmCache.getInstance().getHtm("html/admin/announces-add.htm", activeChar.getLang());
 							Util.sendCBHtml(activeChar, content2);
 							break;
 						}
-						String annType = st.nextToken();
+						string annType = st.nextToken();
 						AnnouncementType type = Enum.Parse<AnnouncementType>(annType);
 						// ************************************
 						if (!st.hasMoreTokens())
@@ -77,7 +77,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annInitDelay = st.nextToken();
+						string annInitDelay = st.nextToken();
 						if (!Util.isDigit(annInitDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -90,7 +90,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annDelay = st.nextToken();
+						string annDelay = st.nextToken();
 						if (!Util.isDigit(annDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -108,7 +108,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annRepeat = st.nextToken();
+						string annRepeat = st.nextToken();
 						if (!Util.isDigit(annRepeat))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -125,7 +125,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String content = st.nextToken();
+						string content = st.nextToken();
 						while (st.hasMoreTokens())
 						{
 							content += " " + st.nextToken();
@@ -152,7 +152,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces edit <id>");
 							break;
 						}
-						String annId = st.nextToken();
+						string annId = st.nextToken();
 						if (!Util.isDigit(annId))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces edit <id>");
@@ -167,14 +167,14 @@ public class AdminAnnouncements: IAdminCommandHandler
 						}
 						if (!st.hasMoreTokens())
 						{
-							String content = HtmCache.getInstance().getHtm("html/admin/announces-edit.htm", activeChar.getLang());
-							String announcementId = announce.getId().ToString();
-							String announcementType = announce.getType().ToString();
-							String announcementInital = "0";
-							String announcementDelay = "0";
-							String announcementRepeat = "0";
-							String announcementAuthor = announce.getAuthor();
-							String announcementContent = announce.getContent();
+							string content = HtmCache.getInstance().getHtm("html/admin/announces-edit.htm", activeChar.getLang());
+							string announcementId = announce.getId().ToString();
+							string announcementType = announce.getType().ToString();
+							string announcementInital = "0";
+							string announcementDelay = "0";
+							string announcementRepeat = "0";
+							string announcementAuthor = announce.getAuthor();
+							string announcementContent = announce.getContent();
 							if (announce is AutoAnnouncement)
 							{
 								AutoAnnouncement autoAnnounce = (AutoAnnouncement) announce;
@@ -193,7 +193,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							Util.sendCBHtml(activeChar, content);
 							break;
 						}
-						String annType = st.nextToken();
+						string annType = st.nextToken();
 						AnnouncementType type = Enum.Parse<AnnouncementType>(annType);
 						switch (announce.getType())
 						{
@@ -240,7 +240,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annInitDelay = st.nextToken();
+						string annInitDelay = st.nextToken();
 						if (!Util.isDigit(annInitDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -253,7 +253,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annDelay = st.nextToken();
+						string annDelay = st.nextToken();
 						if (!Util.isDigit(annDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -271,7 +271,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						String annRepeat = st.nextToken();
+						string annRepeat = st.nextToken();
 						if (!Util.isDigit(annRepeat))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
@@ -283,7 +283,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							repeat = -1;
 						}
 						// ************************************
-						String content1 = "";
+						string content1 = "";
 						if (st.hasMoreTokens())
 						{
 							content1 = st.nextToken();
@@ -318,7 +318,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces remove <announcement id>");
 							break;
 						}
-						String token = st.nextToken();
+						string token = st.nextToken();
 						if (!Util.isDigit(token))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces remove <announcement id>");
@@ -350,7 +350,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Auto announcements has been successfully restarted.");
 							break;
 						}
-						String token = st.nextToken();
+						string token = st.nextToken();
 						if (!Util.isDigit(token))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
@@ -384,7 +384,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
 							break;
 						}
-						String token = st.nextToken();
+						string token = st.nextToken();
 						if (!Util.isDigit(token))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
@@ -394,14 +394,14 @@ public class AdminAnnouncements: IAdminCommandHandler
 						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce != null)
 						{
-							String content = HtmCache.getInstance().getHtm("html/admin/announces-show.htm", activeChar.getLang());
-							String announcementId = announce.getId().ToString();
-							String announcementType = announce.getType().ToString();
-							String announcementInital = "0";
-							String announcementDelay = "0";
-							String announcementRepeat = "0";
-							String announcementAuthor = announce.getAuthor();
-							String announcementContent = announce.getContent();
+							string content = HtmCache.getInstance().getHtm("html/admin/announces-show.htm", activeChar.getLang());
+							string announcementId = announce.getId().ToString();
+							string announcementType = announce.getType().ToString();
+							string announcementInital = "0";
+							string announcementDelay = "0";
+							string announcementRepeat = "0";
+							string announcementAuthor = announce.getAuthor();
+							string announcementContent = announce.getContent();
 							if (announce is AutoAnnouncement)
 							{
 								AutoAnnouncement autoAnnounce = (AutoAnnouncement) announce;
@@ -427,14 +427,14 @@ public class AdminAnnouncements: IAdminCommandHandler
 						int page = 0;
 						if (st.hasMoreTokens())
 						{
-							String token = st.nextToken();
+							string token = st.nextToken();
 							if (Util.isDigit(token))
 							{
 								page = int.Parse(token);
 							}
 						}
 						
-						String content = HtmCache.getInstance().getHtm("html/admin/announces-list.htm", activeChar.getLang());
+						string content = HtmCache.getInstance().getHtm("html/admin/announces-list.htm", activeChar.getLang());
 						PageResult result = PageBuilder.newBuilder(AnnouncementsTable.getInstance().getAllAnnouncements().ToList(), 8, "bypass admin_announces list").
 							currentPage(page).bodyHandler((pages, announcement, sb) =>
 						{
@@ -479,7 +479,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 		return false;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

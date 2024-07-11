@@ -25,7 +25,7 @@ public readonly struct ExSendUiEventPacket: IOutgoingPacket
 	private readonly int _endTime;
 	private readonly int _endTime2;
 	private readonly NpcStringId _npcstringId;
-	private readonly List<String> _params;
+	private readonly List<string> _params;
 	
 	/**
 	 * Remove UI
@@ -57,7 +57,7 @@ public readonly struct ExSendUiEventPacket: IOutgoingPacket
 	 * @param endTime
 	 * @param text
 	 */
-	public ExSendUiEventPacket(Player player, bool hide, bool countUp, int startTime, int endTime, String text)
+	public ExSendUiEventPacket(Player player, bool hide, bool countUp, int startTime, int endTime, string text)
 		: this(player, hide ? 1 : 0, countUp ? 1 : 0, startTime / 60, startTime % 60, endTime / 60, endTime % 60, (NpcStringId)(-1),
 			text)
 	{
@@ -120,7 +120,7 @@ public readonly struct ExSendUiEventPacket: IOutgoingPacket
 		writer.WriteInt32((int)_npcstringId);
 		if (_params != null)
 		{
-			foreach (String param in _params)
+			foreach (string param in _params)
 			{
 				writer.WriteString(param);
 			}

@@ -450,12 +450,12 @@ public class Servitor : Summon, Runnable
 		}
 	}
 	
-	public override bool destroyItem(String process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		return getOwner().destroyItem(process, objectId, count, reference, sendMessage);
 	}
 	
-	public override bool destroyItemByItemId(String process, int itemId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		return getOwner().destroyItemByItemId(process, itemId, count, reference, sendMessage);
 	}

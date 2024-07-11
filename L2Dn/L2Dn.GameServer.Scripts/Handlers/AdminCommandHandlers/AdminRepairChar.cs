@@ -21,20 +21,20 @@ public class AdminRepairChar: IAdminCommandHandler
 		"admin_repair"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		handleRepair(command);
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleRepair(String command)
+	private void handleRepair(string command)
 	{
-		String[] parts = command.Split(" ");
+		string[] parts = command.Split(" ");
 		if (parts.Length != 2)
 		{
 			return;

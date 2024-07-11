@@ -27,7 +27,7 @@ public class DamageDoneInfo
         return _damage;
     }
 	
-    public override bool Equals(Object? obj)
+    public override bool Equals(object? obj)
     {
         return (this == obj) || ((obj is DamageDoneInfo) && (((DamageDoneInfo) obj).getAttacker() == _attacker));
     }

@@ -10,10 +10,10 @@ public class EnchantItemGroup
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemGroup));
 	private readonly List<RangeChanceHolder> _chances = new();
-	private readonly String _name;
+	private readonly string _name;
 	private int _maximumEnchant = -1;
 
-	public EnchantItemGroup(String name)
+	public EnchantItemGroup(string name)
 	{
 		_name = name;
 	}
@@ -21,7 +21,7 @@ public class EnchantItemGroup
 	/**
 	 * @return name of current enchant item group.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

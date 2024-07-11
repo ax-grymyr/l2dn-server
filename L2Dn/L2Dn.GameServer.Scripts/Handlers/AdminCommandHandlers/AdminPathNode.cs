@@ -12,7 +12,7 @@ public class AdminPathNode: IAdminCommandHandler
 		"admin_path_find"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_path_find"))
 		{
@@ -45,7 +45,7 @@ public class AdminPathNode: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

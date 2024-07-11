@@ -18,7 +18,7 @@ public class AdminDisconnect: IAdminCommandHandler
 		"admin_character_disconnect"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_character_disconnect"))
 		{
@@ -27,7 +27,7 @@ public class AdminDisconnect: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

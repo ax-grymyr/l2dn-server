@@ -17,7 +17,7 @@ public class PrivateWarehouse: IBypassHandler
 		"depositp"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!Config.ALLOW_WAREHOUSE)
 		{
@@ -75,7 +75,7 @@ public class PrivateWarehouse: IBypassHandler
 		player.sendPacket(new WarehouseWithdrawalListPacket(2, player, WarehouseWithdrawalListPacket.PRIVATE));
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

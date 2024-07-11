@@ -545,7 +545,7 @@ public class Npc: Creature
 	 * @param player
 	 * @param command The command string received from client
 	 */
-	public virtual void onBypassFeedback(Player player, String command)
+	public virtual void onBypassFeedback(Player player, string command)
 	{
 		if (canInteract(player))
 		{
@@ -605,9 +605,9 @@ public class Npc: Creature
 	 * @param player The player that speaks to this NPC
 	 * @return the pathfile of the selected HTML file in function of the npcId and of the page number.
 	 */
-	public virtual String getHtmlPath(int npcId, int value, Player player)
+	public virtual string getHtmlPath(int npcId, int value, Player player)
 	{
-		String pom = "";
+		string pom = "";
 		if (value == 0)
 		{
 			pom = npcId.ToString(CultureInfo.InvariantCulture);
@@ -617,7 +617,7 @@ public class Npc: Creature
 			pom = npcId + "-" + value;
 		}
 		
-		String temp = "html/default/" + pom + ".htm";
+		string temp = "html/default/" + pom + ".htm";
 		if (Config.HTM_CACHE)
 		{
 			// If not running lazy cache the file must be in the cache or it does not exist
@@ -646,7 +646,7 @@ public class Npc: Creature
 	 * @param type
 	 * @return bool
 	 */
-	private bool showPkDenyChatWindow(Player player, String type)
+	private bool showPkDenyChatWindow(Player player, string type)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + type + "/" + getId() + "-pk.htm", player);
 		if (htmlContent.FileLoaded)
@@ -717,7 +717,7 @@ public class Npc: Creature
 		}
 		
 		int npcId = getTemplate().getId();
-		String filename;
+		string filename;
 		switch (npcId)
 		{
 			case 31690:
@@ -776,7 +776,7 @@ public class Npc: Creature
 	 * @param player The Player that talk with the Npc
 	 * @param filename The filename that contains the text to send
 	 */
-	public void showChatWindow(Player player, String filename)
+	public void showChatWindow(Player player, string filename)
 	{
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
@@ -872,7 +872,7 @@ public class Npc: Creature
 					// announce pk
 					if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 					{
-						String msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
+						string msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
 						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
@@ -903,7 +903,7 @@ public class Npc: Creature
 				// announce pvp
 				if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 				{
-					String msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
+					string msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
 					if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
@@ -1431,7 +1431,7 @@ public class Npc: Creature
 	 * @param radius - radius to send event
 	 * @param reference - WorldObject to pass, if needed
 	 */
-	public void broadcastEvent(String eventName, int radius, WorldObject reference)
+	public void broadcastEvent(string eventName, int radius, WorldObject reference)
 	{
 		World.getInstance().forEachVisibleObjectInRange<Npc>(this, radius, obj =>
 		{
@@ -1448,7 +1448,7 @@ public class Npc: Creature
 	 * @param receiver the receiver
 	 * @param reference the reference
 	 */
-	public void sendScriptEvent(String eventName, WorldObject receiver, WorldObject reference)
+	public void sendScriptEvent(string eventName, WorldObject receiver, WorldObject reference)
 	{
 		if (reference is Npc npc && npc.Events.HasSubscribers<OnNpcEventReceived>())
 		{
@@ -1537,7 +1537,7 @@ public class Npc: Creature
 		return dropItem(creature, item.getId(), item.getCount());
 	}
 	
-	public override String getName()
+	public override string getName()
 	{
 		return getTemplate().getName();
 	}
@@ -1645,7 +1645,7 @@ public class Npc: Creature
 	 * @param chatType the chat type
 	 * @param text the text
 	 */
-	public void broadcastSay(ChatType chatType, String text)
+	public void broadcastSay(ChatType chatType, string text)
 	{
 		Broadcast.toKnownPlayers(this, new NpcSayPacket(this, chatType, text));
 	}
@@ -1661,7 +1661,7 @@ public class Npc: Creature
 		NpcSayPacket npcSay = new NpcSayPacket(this, chatType, npcStringId);
 		if (parameters != null)
 		{
-			foreach (String parameter in parameters)
+			foreach (string parameter in parameters)
 			{
 				if (parameter != null)
 				{
@@ -1691,7 +1691,7 @@ public class Npc: Creature
 	 * @param text the text
 	 * @param radius the radius
 	 */
-	public void broadcastSay(ChatType chatType, String text, int radius)
+	public void broadcastSay(ChatType chatType, string text, int radius)
 	{
 		Broadcast.toKnownPlayersInRadius(this, new NpcSayPacket(this, chatType, text), radius);
 	}
@@ -1856,7 +1856,7 @@ public class Npc: Creature
 		}
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.Append(GetType().Name);

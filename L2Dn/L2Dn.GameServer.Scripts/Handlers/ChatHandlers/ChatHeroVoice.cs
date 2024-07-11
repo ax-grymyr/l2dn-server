@@ -18,7 +18,7 @@ public class ChatHeroVoice: IChatHandler
 		ChatType.HERO_VOICE,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (!activeChar.isHero() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{

@@ -18,11 +18,11 @@ public class AdminGraciaSeeds: IAdminCommandHandler
 		"admin_set_sodstate"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken(); // Get actual command
-		String val = "";
+		string actualCommand = st.nextToken(); // Get actual command
+		string val = "";
 		if (st.countTokens() >= 1)
 		{
 			val = st.nextToken();
@@ -59,7 +59,7 @@ public class AdminGraciaSeeds: IAdminCommandHandler
 		activeChar.sendPacket(html);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

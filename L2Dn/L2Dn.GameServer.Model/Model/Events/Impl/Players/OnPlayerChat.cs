@@ -10,11 +10,11 @@ namespace L2Dn.GameServer.Model.Events.Impl.Players;
 public class OnPlayerChat: EventBase
 {
 	private readonly Player _player;
-	private readonly String _target;
-	private readonly String _text;
+	private readonly string _target;
+	private readonly string _text;
 	private readonly ChatType _type;
 	
-	public OnPlayerChat(Player player, String target, String text, ChatType type)
+	public OnPlayerChat(Player player, string target, string text, ChatType type)
 	{
 		_player = player;
 		_target = target;
@@ -29,12 +29,12 @@ public class OnPlayerChat: EventBase
 		return _player;
 	}
 	
-	public String getTarget()
+	public string getTarget()
 	{
 		return _target;
 	}
 	
-	public String getText()
+	public string getText()
 	{
 		return _text;
 	}

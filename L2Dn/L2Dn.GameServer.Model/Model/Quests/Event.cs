@@ -14,5 +14,5 @@ public abstract class Event: Quest
 	
 	public abstract bool eventStart(Player eventMaker);
 	public abstract bool eventStop();
-	public abstract bool eventBypass(Player player, String bypass);
+	public abstract bool eventBypass(Player player, string bypass);
 }

@@ -14,7 +14,7 @@ public class PlayerRefund: ItemContainer
         _owner = owner;
     }
 
-    public override String getName()
+    public override string getName()
     {
         return "Refund";
     }

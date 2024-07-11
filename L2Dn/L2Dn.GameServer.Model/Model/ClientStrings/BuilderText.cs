@@ -2,19 +2,19 @@
 
 public class BuilderText: Builder
 {
-    private readonly String _text;
+    private readonly string _text;
 
-    public BuilderText(String text)
+    public BuilderText(string text)
     {
         _text = text;
     }
 
-    public override String toString(Object param)
+    public override string toString(object param)
     {
         return ToString();
     }
 
-    public override String toString(params Object[] @params)
+    public override string toString(params object[] @params)
     {
         return ToString();
     }
@@ -24,7 +24,7 @@ public class BuilderText: Builder
         return -1;
     }
 
-    public override String ToString()
+    public override string ToString()
     {
         return _text;
     }

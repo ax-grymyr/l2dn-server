@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class AutoPotion: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"apon",
 		"apoff",
@@ -17,7 +17,7 @@ public class AutoPotion: IVoicedCommandHandler
 		"potionoff"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String target)
+	public bool useVoicedCommand(string command, Player activeChar, string target)
 	{
 		if (!Config.AUTO_POTIONS_ENABLED || (activeChar == null))
 		{
@@ -50,7 +50,7 @@ public class AutoPotion: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

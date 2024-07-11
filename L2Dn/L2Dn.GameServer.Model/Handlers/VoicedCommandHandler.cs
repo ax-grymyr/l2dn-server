@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Handlers;
 /**
  * @author UnAfraid
  */
-public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, String>
+public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, string>
 {
-	private readonly Map<String, IVoicedCommandHandler> _datatable;
+	private readonly Map<string, IVoicedCommandHandler> _datatable;
 	
 	protected VoicedCommandHandler()
 	{
@@ -17,7 +17,7 @@ public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, String>
 	
 	public void registerHandler(IVoicedCommandHandler handler)
 	{
-		foreach (String id in handler.getVoicedCommandList())
+		foreach (string id in handler.getVoicedCommandList())
 		{
 			_datatable.put(id, handler);
 		}
@@ -26,13 +26,13 @@ public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, String>
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IVoicedCommandHandler handler)
 	{
-		foreach (String id in handler.getVoicedCommandList())
+		foreach (string id in handler.getVoicedCommandList())
 		{
 			_datatable.remove(id);
 		}
 	}
 	
-	public IVoicedCommandHandler getHandler(String voicedCommand)
+	public IVoicedCommandHandler getHandler(string voicedCommand)
 	{
 		return _datatable.get(voicedCommand.Contains(" ") ? voicedCommand.Substring(0, voicedCommand.IndexOf(' ')) : voicedCommand);
 	}

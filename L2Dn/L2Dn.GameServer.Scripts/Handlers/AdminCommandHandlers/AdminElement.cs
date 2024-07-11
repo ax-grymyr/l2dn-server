@@ -29,7 +29,7 @@ public class AdminElement: IAdminCommandHandler
 		"admin_setls"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int armorType = -1;
 		if (command.startsWith("admin_setlh"))
@@ -65,7 +65,7 @@ public class AdminElement: IAdminCommandHandler
 		{
 			try
 			{
-				String[] args = command.Split(" ");
+				string[] args = command.Split(" ");
 				AttributeType type = Enum.Parse<AttributeType>(args[1]);
 				int value = int.Parse(args[2]);
 				if ((!Enum.IsDefined(type) || (value < 0) || (value > 450)))
@@ -86,7 +86,7 @@ public class AdminElement: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -121,8 +121,8 @@ public class AdminElement: IAdminCommandHandler
 		
 		if (itemInstance != null)
 		{
-			String old;
-			String current;
+			string old;
+			string current;
 			AttributeHolder element = itemInstance.getAttribute(type);
 			if (element == null)
 			{

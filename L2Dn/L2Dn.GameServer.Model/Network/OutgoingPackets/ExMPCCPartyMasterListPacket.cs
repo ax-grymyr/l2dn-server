@@ -5,9 +5,9 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExMPCCPartyMasterListPacket: IOutgoingPacket
 {
-    private readonly Set<String> _leadersName;
+    private readonly Set<string> _leadersName;
 	
-    public ExMPCCPartyMasterListPacket(Set<String> leadersName)
+    public ExMPCCPartyMasterListPacket(Set<string> leadersName)
     {
         _leadersName = leadersName;
     }

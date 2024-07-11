@@ -1868,7 +1868,7 @@ public class SkillTreeData: DataReaderBase
 			}
 		}
 		
-		String className = GetType().Name;
+		string className = GetType().Name;
 		_logger.Info(className + ": Loaded " + classSkillTreeCount + " Class skills for " + _classSkillTrees.size() + " class skill trees.");
 		_logger.Info(className + ": Loaded " + _subClassSkillTree.size() + " sub-class skills.");
 		_logger.Info(className + ": Loaded " + _dualClassSkillTree.size() + " dual-class skills.");

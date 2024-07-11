@@ -43,7 +43,7 @@ public class MatchingRoomManager
 		return _waitingList == null ? new() : _waitingList;
 	}
 	
-	public List<Player> getPlayerInWaitingList(int minLevel, int maxLevel, List<CharacterClass> classIds, String query)
+	public List<Player> getPlayerInWaitingList(int minLevel, int maxLevel, List<CharacterClass> classIds, string query)
 	{
 		if (_waitingList == null)
 		{

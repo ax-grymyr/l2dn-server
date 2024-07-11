@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnClanWhItemAdd: EventBase
 {
-	private readonly String _process;
+	private readonly string _process;
 	private readonly Player _player;
 	private readonly Item _item;
 	private readonly ItemContainer _container;
 	
-	public OnClanWhItemAdd(String process, Player player, Item item, ItemContainer container)
+	public OnClanWhItemAdd(string process, Player player, Item item, ItemContainer container)
 	{
 		_process = process;
 		_player = player;
@@ -23,7 +23,7 @@ public class OnClanWhItemAdd: EventBase
 		_container = container;
 	}
 	
-	public String getProcess()
+	public string getProcess()
 	{
 		return _process;
 	}

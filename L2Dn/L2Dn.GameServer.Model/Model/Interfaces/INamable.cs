@@ -2,5 +2,5 @@
 
 public interface INamable
 {
-    String getName();
+    string getName();
 }

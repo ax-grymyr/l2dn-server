@@ -13,14 +13,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class CastleVCmd: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"opendoors",
 		"closedoors",
 		"ridewyvern"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String @params)
+	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		switch (command)
 		{
@@ -131,7 +131,7 @@ public class CastleVCmd: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

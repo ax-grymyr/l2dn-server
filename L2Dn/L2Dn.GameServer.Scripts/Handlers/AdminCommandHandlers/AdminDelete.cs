@@ -20,7 +20,7 @@ public class AdminDelete: IAdminCommandHandler
 		"admin_delete_group" // for territory spawns
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.contains("group"))
 		{
@@ -28,7 +28,7 @@ public class AdminDelete: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_delete"))
 		{
-			String[] Split = command.Split(" ");
+			string[] Split = command.Split(" ");
 			handleDelete(activeChar, (Split.Length > 1) && Util.isDigit(Split[1]) ? int.Parse(Split[1]) : 0);
 		}
 		return true;
@@ -155,7 +155,7 @@ public class AdminDelete: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

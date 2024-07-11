@@ -11,7 +11,7 @@ public class NewQuestGoal
 {
 	private readonly int _itemId;
 	private readonly int _count;
-	private readonly String _goalMessage;
+	private readonly string _goalMessage;
 
 	public NewQuestGoal(XElement? element)
 	{
@@ -47,7 +47,7 @@ public class NewQuestGoal
 		_goalMessage = goalString;
 	}
 
-	public NewQuestGoal(int itemId, int count, String goalMessage)
+	public NewQuestGoal(int itemId, int count, string goalMessage)
 	{
 		_itemId = itemId;
 		_count = count;
@@ -64,7 +64,7 @@ public class NewQuestGoal
 		return _count;
 	}
 
-	public String getMessage()
+	public string getMessage()
 	{
 		return _goalMessage;
 	}

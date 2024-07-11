@@ -16,10 +16,10 @@ public class OpTargetWeaponAttackTypeSkillCondition: ISkillCondition
 	
 	public OpTargetWeaponAttackTypeSkillCondition(StatSet @params)
 	{
-		List<String> weaponTypes = @params.getList<string>("weaponType");
+		List<string> weaponTypes = @params.getList<string>("weaponType");
 		if (weaponTypes != null)
 		{
-			foreach (String type in weaponTypes)
+			foreach (string type in weaponTypes)
 			{
 				_weaponTypes.add(Enum.Parse<WeaponType>(type));
 			}

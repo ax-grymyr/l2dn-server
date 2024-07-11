@@ -79,7 +79,7 @@ public class StaticObject: Creature
 		_type = type;
 	}
 	
-	public void setMap(String texture, int x, int y)
+	public void setMap(string texture, int x, int y)
 	{
 		_map = new ShowTownMapPacket("town_map." + texture, x, y);
 	}

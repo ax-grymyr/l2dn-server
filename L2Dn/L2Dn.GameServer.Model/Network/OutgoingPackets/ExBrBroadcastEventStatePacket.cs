@@ -17,8 +17,8 @@ public readonly struct ExBrBroadcastEventStatePacket: IOutgoingPacket
     private readonly int _param2;
     private readonly int _param3;
     private readonly int _param4;
-    private readonly String _param5;
-    private readonly String _param6;
+    private readonly string _param5;
+    private readonly string _param6;
 	
     public ExBrBroadcastEventStatePacket(int eventId, int eventState)
     {
@@ -26,7 +26,7 @@ public readonly struct ExBrBroadcastEventStatePacket: IOutgoingPacket
         _eventState = eventState;
     }
 	
-    public ExBrBroadcastEventStatePacket(int eventId, int eventState, int param0, int param1, int param2, int param3, int param4, String param5, String param6)
+    public ExBrBroadcastEventStatePacket(int eventId, int eventState, int param0, int param1, int param2, int param3, int param4, string param5, string param6)
     {
         _eventId = eventId;
         _eventState = eventState;

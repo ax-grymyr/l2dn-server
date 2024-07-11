@@ -9,10 +9,10 @@ public class Announcement: IAnnouncement
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Announcement));
 	protected int _id;
 	private AnnouncementType _type;
-	private String _content;
-	private String _author;
+	private string _content;
+	private string _author;
 	
-	public Announcement(AnnouncementType type, String content, String author)
+	public Announcement(AnnouncementType type, string content, string author)
 	{
 		_type = type;
 		_content = content;
@@ -42,22 +42,22 @@ public class Announcement: IAnnouncement
 		_type = type;
 	}
 	
-	public String getContent()
+	public string getContent()
 	{
 		return _content;
 	}
 	
-	public void setContent(String content)
+	public void setContent(string content)
 	{
 		_content = content;
 	}
 	
-	public String getAuthor()
+	public string getAuthor()
 	{
 		return _author;
 	}
 	
-	public void setAuthor(String author)
+	public void setAuthor(string author)
 	{
 		_author = author;
 	}

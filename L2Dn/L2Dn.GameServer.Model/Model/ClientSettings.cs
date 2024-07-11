@@ -21,7 +21,7 @@ public class ClientSettings
 	{
 		_player = player;
 		
-		String variable = _player.getVariables().getString(PlayerVariables.CLIENT_SETTINGS, "");
+		string variable = _player.getVariables().getString(PlayerVariables.CLIENT_SETTINGS, "");
 
 		StatSet settings = new StatSet();
 		if (!string.IsNullOrEmpty(variable))

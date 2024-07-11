@@ -82,7 +82,7 @@ public class SiegeZone : ZoneType
 		return (Settings) base.getSettings();
 	}
 	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		if (name.equals("castleId"))
 		{
@@ -281,7 +281,7 @@ public class SiegeZone : ZoneType
 	 * Sends a message to all players in this zone
 	 * @param message
 	 */
-	public void announceToPlayers(String message)
+	public void announceToPlayers(string message)
 	{
 		foreach (Player player in getPlayersInside())
 		{

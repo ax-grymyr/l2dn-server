@@ -14,12 +14,12 @@ public     BuilderObject(int id)
         _index = id - 1;
     }
 
-    public override String toString(Object param)
+    public override string toString(object param)
     {
         return param == null ? "null" : param.ToString();
     }
 
-    public override String toString(params Object[] @params)
+    public override string toString(params object[] @params)
     {
         if ((@params == null) || (@params.Length == 0))
         {
@@ -34,7 +34,7 @@ public     BuilderObject(int id)
         return _index;
     }
 
-    public override String ToString()
+    public override string ToString()
     {
         return "[PARAM-" + (_index + 1) + "]";
     }

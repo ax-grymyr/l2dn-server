@@ -468,7 +468,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 	}
 	
-	public void openCloseDoor(Player player, String doorName, bool open)
+	public void openCloseDoor(Player player, string doorName, bool open)
 	{
 		if (player.getClanId() != _ownerId && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
 		{
@@ -871,7 +871,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		return null;
 	}
 	
-	public Door getDoor(String doorName)
+	public Door getDoor(string doorName)
 	{
 		foreach (Door door in _doors)
 		{

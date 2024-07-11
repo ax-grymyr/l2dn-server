@@ -24,7 +24,7 @@ public class UniqueItemHolder: ItemHolder, IUniqueId
 		return _objectId;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[" + GetType().Name + "] ID: " + getId() + ", object ID: " + _objectId + ", count: " + getCount();
 	}

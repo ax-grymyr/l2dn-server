@@ -19,11 +19,11 @@ public struct CreatureSayPacket: IOutgoingPacket
     private List<string> _parameters;
     private readonly bool _shareLocation;
 
-    public CreatureSayPacket(Player sender, Player receiver, String name, ChatType chatType, String text)
+    public CreatureSayPacket(Player sender, Player receiver, string name, ChatType chatType, string text)
         : this(sender, receiver, name, chatType, text, false)
     {
     }
-    public CreatureSayPacket(Player sender, Player receiver, String name, ChatType chatType, String text, bool shareLocation)
+    public CreatureSayPacket(Player sender, Player receiver, string name, ChatType chatType, string text, bool shareLocation)
     {
         _sender = sender;
         _senderName = name;
@@ -56,12 +56,12 @@ public struct CreatureSayPacket: IOutgoingPacket
         }
     }
 	
-    public CreatureSayPacket(Creature? sender, ChatType chatType, String senderName, String text)
+    public CreatureSayPacket(Creature? sender, ChatType chatType, string senderName, string text)
         : this(sender, chatType, senderName, text, false)
     {
     }
 	
-    public CreatureSayPacket(Creature? sender, ChatType chatType, String senderName, String text, bool shareLocation)
+    public CreatureSayPacket(Creature? sender, ChatType chatType, string senderName, string text, bool shareLocation)
     {
         _sender = sender;
         _chatType = chatType;
@@ -119,7 +119,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         }
         else if (_parameters != null)
         {
-            foreach (String s in _parameters)
+            foreach (string s in _parameters)
             {
                 writer.WriteString(s);
             }

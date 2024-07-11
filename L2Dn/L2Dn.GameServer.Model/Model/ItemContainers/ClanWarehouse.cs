@@ -16,7 +16,7 @@ public class ClanWarehouse: Warehouse
 		_clan = clan;
 	}
 
-	public override String getName()
+	public override string getName()
 	{
 		return "ClanWarehouse";
 	}
@@ -41,7 +41,7 @@ public class ClanWarehouse: Warehouse
 		return (_items.size() + slots) <= Config.WAREHOUSE_SLOTS_CLAN;
 	}
 
-	public override Item addItem(String process, int itemId, long count, Player actor, Object reference)
+	public override Item addItem(string process, int itemId, long count, Player actor, object reference)
 	{
 		Item item = base.addItem(process, itemId, count, actor, reference);
 
@@ -55,7 +55,7 @@ public class ClanWarehouse: Warehouse
 		return item;
 	}
 
-	public override Item addItem(String process, Item item, Player actor, Object reference)
+	public override Item addItem(string process, Item item, Player actor, object reference)
 	{
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;
@@ -67,7 +67,7 @@ public class ClanWarehouse: Warehouse
 		return base.addItem(process, item, actor, reference);
 	}
 
-	public override Item destroyItem(String process, Item item, long count, Player actor, Object reference)
+	public override Item destroyItem(string process, Item item, long count, Player actor, object reference)
 	{
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;
@@ -79,8 +79,8 @@ public class ClanWarehouse: Warehouse
 		return base.destroyItem(process, item, count, actor, reference);
 	}
 
-	public override Item transferItem(String process, int objectId, long count, ItemContainer target, Player actor,
-		Object reference)
+	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player actor,
+		object reference)
 	{
 		Item item = getItemByObjectId(objectId);
 

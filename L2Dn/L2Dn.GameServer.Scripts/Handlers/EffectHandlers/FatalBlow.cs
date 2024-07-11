@@ -29,11 +29,11 @@ public class FatalBlow: AbstractEffect
 		_criticalChance = @params.getDouble("criticalChance", 0);
 		_overHit = @params.getBoolean("overHit", false);
 		
-		String abnormals = @params.getString("abnormalType", null);
+		string abnormals = @params.getString("abnormalType", null);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
-			foreach (String slot in abnormals.Split(";"))
+			foreach (string slot in abnormals.Split(";"))
 			{
 				_abnormals.add(Enum.Parse<AbnormalType>(slot));
 			}

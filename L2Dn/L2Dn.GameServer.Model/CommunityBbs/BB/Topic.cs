@@ -14,9 +14,9 @@ public class Topic
 	
 	private readonly int _id;
 	private readonly int _forumId;
-	private readonly String _topicName;
+	private readonly string _topicName;
 	private readonly DateTime _date;
-	private readonly String _ownerName;
+	private readonly string _ownerName;
 	private readonly int _ownerId;
 	private readonly int _type;
 	private readonly int _cReply;
@@ -32,7 +32,7 @@ public class Topic
 	 * @param type
 	 * @param cReply
 	 */
-	public Topic(TopicConstructorType ct, int id, int fid, String name, DateTime date, String oname, int oid, int type, int cReply)
+	public Topic(TopicConstructorType ct, int id, int fid, string name, DateTime date, string oname, int oid, int type, int cReply)
 	{
 		_id = id;
 		_forumId = fid;
@@ -92,12 +92,12 @@ public class Topic
 	/**
 	 * @return the topic name
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _topicName;
 	}
 	
-	public String getOwnerName()
+	public string getOwnerName()
 	{
 		return _ownerName;
 	}

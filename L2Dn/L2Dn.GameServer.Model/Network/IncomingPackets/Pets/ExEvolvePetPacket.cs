@@ -69,7 +69,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 		if (evolveLevel == EvolveLevel.First)
 		{
 			var skillType = PetTypeData.getInstance().getRandomSkill();
-			String name = PetTypeData.getInstance().getNamePrefix(skillType.Key) + " " + PetTypeData.getInstance().getRandomName();
+			string name = PetTypeData.getInstance().getNamePrefix(skillType.Key) + " " + PetTypeData.getInstance().getRandomName();
 			evolved.addSkill(skillType.Value.getSkill());
 			evolved.setName(name);
 			PetDataTable.getInstance().setPetName(controlItem.getObjectId(), name);

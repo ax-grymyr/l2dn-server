@@ -20,7 +20,7 @@ public class FindPvP: IBypassHandler
 		"FindPvP"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!Config.ENABLE_FIND_PVP || !target.isNpc())
 		{
@@ -130,7 +130,7 @@ public class FindPvP: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

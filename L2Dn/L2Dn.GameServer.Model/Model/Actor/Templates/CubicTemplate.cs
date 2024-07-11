@@ -110,7 +110,7 @@ public class CubicTemplate: CreatureTemplate
 		_conditions.Add(condition);
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return "Cubic id: " + _id + " level: " + _level + " slot: " + _slot + " duration: " + _duration + " delay: " +
 		       _delay + " maxCount: " + _maxCount + " useUp: " + _useUp + " power: " + _power + Environment.NewLine +

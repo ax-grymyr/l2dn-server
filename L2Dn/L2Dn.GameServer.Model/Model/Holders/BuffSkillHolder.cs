@@ -8,10 +8,10 @@ public class BuffSkillHolder
 	private readonly int _id;
 	private readonly int _level;
 	private readonly int _price;
-	private readonly String _type;
-	private readonly String _description;
+	private readonly string _type;
+	private readonly string _description;
 	
-	public BuffSkillHolder(int id, int level, int price, String type, String description)
+	public BuffSkillHolder(int id, int level, int price, string type, string description)
 	{
 		_id = id;
 		_level = level;
@@ -35,12 +35,12 @@ public class BuffSkillHolder
 		return _price;
 	}
 	
-	public String getType()
+	public string getType()
 	{
 		return _type;
 	}
 	
-	public String getDescription()
+	public string getDescription()
 	{
 		return _description;
 	}

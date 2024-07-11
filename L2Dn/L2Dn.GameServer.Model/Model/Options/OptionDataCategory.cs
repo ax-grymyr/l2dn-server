@@ -8,11 +8,11 @@ namespace L2Dn.GameServer.Model.Options;
  */
 public class OptionDataCategory
 {
-	private readonly Map<Options, Double> _options;
+	private readonly Map<Options, double> _options;
 	private readonly Set<int> _itemIds;
 	private readonly double _chance;
 
-	public OptionDataCategory(Map<Options, Double> options, Set<int> itemIds, double chance)
+	public OptionDataCategory(Map<Options, double> options, Set<int> itemIds, double chance)
 	{
 		_options = options;
 		_itemIds = itemIds;

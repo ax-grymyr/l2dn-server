@@ -244,10 +244,10 @@ public class PlayerStatus: PlayableStatus
 				smsg.Params.addString(getActiveChar().getName());
 
 				// Localisation related.
-				String targetName = attacker.getName();
+				string targetName = attacker.getName();
 				if (Config.MULTILANG_ENABLE && attacker.isNpc())
 				{
-					String[] localisation = NpcNameLocalisationData.getInstance()
+					string[] localisation = NpcNameLocalisationData.getInstance()
 						.getLocalisation(getActiveChar().getLang(), attacker.getId());
 					if (localisation != null)
 					{

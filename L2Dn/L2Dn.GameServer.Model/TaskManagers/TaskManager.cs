@@ -31,7 +31,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 		private readonly TaskManager _taskManager;
 		private readonly Task task;
 		private readonly TaskTypes type;
-		private readonly String[] pars;
+		private readonly string[] pars;
 		public ScheduledFuture scheduled;
 		
 		public ExecutedTask(TaskManager taskManager, Task ptask, TaskTypes ptype, DbGlobalTask rset)
@@ -41,7 +41,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 			type = ptype;
 			id = rset.Id;
 			lastActivation = rset.LastRun;
-			pars = new String[]
+			pars = new string[]
 			{
 				rset.TaskParam1,
 				rset.TaskParam2,
@@ -71,7 +71,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 			}
 		}
 		
-		public override bool Equals(Object? obj)
+		public override bool Equals(object? obj)
 		{
 			return (this == obj) || ((obj is ExecutedTask) && (id == ((ExecutedTask) obj).id));
 		}
@@ -96,7 +96,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 			return id;
 		}
 		
-		public String[] getParams()
+		public string[] getParams()
 		{
 			return pars;
 		}
@@ -225,7 +225,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 			case TaskTypes.TYPE_GLOBAL_TASK:
 			{
 				interval = TimeSpan.FromMilliseconds(long.Parse(task.getParams()[0]) * 86400000);
-				String[] hour = task.getParams()[1].Split(":");
+				string[] hour = task.getParams()[1].Split(":");
 				
 				if (hour.Length != 3)
 				{
@@ -265,12 +265,12 @@ public class TaskManager // TODO: needs to be completely rewritten
 		return false;
 	}
 	
-	public static bool addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3)
+	public static bool addUniqueTask(string task, TaskTypes type, string param1, string param2, string param3)
 	{
 		return addUniqueTask(task, type, param1, param2, param3, null);
 	}
 	
-	private static bool addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3, DateTime? lastActivation)
+	private static bool addUniqueTask(string task, TaskTypes type, string param1, string param2, string param3, DateTime? lastActivation)
 	{
 		try 
 		{
@@ -299,12 +299,12 @@ public class TaskManager // TODO: needs to be completely rewritten
 		return false;
 	}
 	
-	public static bool addTask(String task, TaskTypes type, String param1, String param2, String param3)
+	public static bool addTask(string task, TaskTypes type, string param1, string param2, string param3)
 	{
 		return addTask(task, type, param1, param2, param3, null);
 	}
 	
-	private static bool addTask(String task, TaskTypes type, String param1, String param2, String param3, DateTime? lastActivation)
+	private static bool addTask(string task, TaskTypes type, string param1, string param2, string param3, DateTime? lastActivation)
 	{
 		try 
 		{

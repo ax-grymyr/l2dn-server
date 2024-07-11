@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Handlers;
 /**
  * @author nBd, UnAfraid
  */
-public class BypassHandler: IHandler<IBypassHandler, String>
+public class BypassHandler: IHandler<IBypassHandler, string>
 {
-	private readonly Map<String, IBypassHandler> _datatable;
+	private readonly Map<string, IBypassHandler> _datatable;
 	
 	protected BypassHandler()
 	{
@@ -17,7 +17,7 @@ public class BypassHandler: IHandler<IBypassHandler, String>
 	
 	public void registerHandler(IBypassHandler handler)
 	{
-		foreach (String element in handler.getBypassList())
+		foreach (string element in handler.getBypassList())
 		{
 			_datatable.put(element.ToLower(), handler);
 		}
@@ -26,15 +26,15 @@ public class BypassHandler: IHandler<IBypassHandler, String>
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IBypassHandler handler)
 	{
-		foreach (String element in handler.getBypassList())
+		foreach (string element in handler.getBypassList())
 		{
 			_datatable.remove(element.ToLower());
 		}
 	}
 	
-	public IBypassHandler getHandler(String commandValue)
+	public IBypassHandler getHandler(string commandValue)
 	{
-		String command = commandValue;
+		string command = commandValue;
 		if (command.Contains(" "))
 		{
 			command = command.Substring(0, command.IndexOf(' '));

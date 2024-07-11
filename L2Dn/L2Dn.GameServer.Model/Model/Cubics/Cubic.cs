@@ -285,7 +285,7 @@ public class Cubic: Creature
 	/**
 	 * @return the owner's name.
 	 */
-	public override String getName()
+	public override string getName()
 	{
 		return _owner.getName();
 	}

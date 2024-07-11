@@ -8,12 +8,12 @@ namespace L2Dn.GameServer.Model.Html;
 
 public static class PageBuilder
 {
-	public static PageBuilder<T> newBuilder<T>(List<T> elements, int elementsPerPage, String bypass)
+	public static PageBuilder<T> newBuilder<T>(List<T> elements, int elementsPerPage, string bypass)
 	{
 		return new PageBuilder<T>(elements, elementsPerPage, bypass.Trim());
 	}
 	
-	public static PageBuilder<T> newBuilder<T>(T[] elements, int elementsPerPage, String bypass)
+	public static PageBuilder<T> newBuilder<T>(T[] elements, int elementsPerPage, string bypass)
 	{
 		return new PageBuilder<T>(elements.ToList(), elementsPerPage, bypass.Trim());
 	}
@@ -23,14 +23,14 @@ public class PageBuilder<T>
 {
 	private readonly List<T> _elements;
 	private readonly int _elementsPerPage;
-	private readonly String _bypass;
+	private readonly string _bypass;
 	private int _currentPage = 0;
 	private IPageHandler _pageHandler = DefaultPageHandler.INSTANCE;
 	private IBypassFormatter _formatter = DefaultFormatter.INSTANCE;
 	private IHtmlStyle _style = DefaultStyle.INSTANCE;
 	private Action<int, T, StringBuilder> _bodyHandler;
 	
-	public PageBuilder(List<T> elements, int elementsPerPage, String bypass)
+	public PageBuilder(List<T> elements, int elementsPerPage, string bypass)
 	{
 		_elements = elements;
 		_elementsPerPage = elementsPerPage;

@@ -345,7 +345,7 @@ public class ClanHall: AbstractResidence
 		}
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return GetType().Name + ":" + getName() + "[" + getResidenceId() + "]";
 	}

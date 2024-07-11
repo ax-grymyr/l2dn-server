@@ -9,13 +9,13 @@ public class PledgeApplicantInfo
 {
 	private readonly int _playerId;
 	private readonly int _requestClanId;
-	private String _playerName;
+	private string _playerName;
 	private int _playerLvl;
 	private CharacterClass _classId;
 	private readonly int _karma;
-	private readonly String _message;
+	private readonly string _message;
 	
-	public PledgeApplicantInfo(int playerId, String playerName, int playerLevel, int karma, int requestClanId, String message)
+	public PledgeApplicantInfo(int playerId, string playerName, int playerLevel, int karma, int requestClanId, string message)
 	{
 		_playerId = playerId;
 		_requestClanId = requestClanId;
@@ -35,7 +35,7 @@ public class PledgeApplicantInfo
 		return _requestClanId;
 	}
 	
-	public String getPlayerName()
+	public string getPlayerName()
 	{
 		if (isOnline() && !getPlayer().getName().equalsIgnoreCase(_playerName))
 		{
@@ -63,7 +63,7 @@ public class PledgeApplicantInfo
 		return _classId;
 	}
 	
-	public String getMessage()
+	public string getMessage()
 	{
 		return _message;
 	}

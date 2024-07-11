@@ -24,12 +24,12 @@ public class ClanBoard: IWriteBoardHandler
 		"_bbsclan_clanhome"
 	};
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		if (command.equals("_bbsclan"))
 		{
@@ -265,7 +265,7 @@ public class ClanBoard: IWriteBoardHandler
 			}
             else
             {
-                String html = string.Concat(
+                string html = string.Concat(
                     "<html><body><center><br><br><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbshome\">HOME</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;",
                     clanId.ToString(),
                     "\"> &amp;$802; </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixwidth=600><a action=\"bypass _bbsclan_clanhome;",
@@ -297,7 +297,7 @@ public class ClanBoard: IWriteBoardHandler
         }
 	}
 	
-	public bool writeCommunityBoardCommand(Player player, String arg1, String arg2, String arg3, String arg4, String arg5)
+	public bool writeCommunityBoardCommand(Player player, string arg1, string arg2, string arg3, string arg4, string arg5)
 	{
 		// the only Write bypass that comes to this handler is "Write Notice Set _ Content Content Content";
 		// arg1 = Set, arg2 = _

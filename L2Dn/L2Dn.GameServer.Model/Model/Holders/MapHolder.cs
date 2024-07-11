@@ -24,7 +24,7 @@ public class MapHolder
 		return _y;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[" + GetType().Name + "] X: " + _x + ", Y: " + _y;
 	}

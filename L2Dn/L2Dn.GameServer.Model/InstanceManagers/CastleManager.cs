@@ -79,7 +79,7 @@ public class CastleManager
 		return null;
 	}
 	
-	public Castle getCastle(String name)
+	public Castle getCastle(string name)
 	{
 		foreach (Castle temp in _castles.values())
 		{

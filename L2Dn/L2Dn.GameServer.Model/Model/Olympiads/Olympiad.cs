@@ -31,8 +31,8 @@ public class Olympiad
 	private static readonly Map<int, NobleData> NOBLES = new();
 	private static readonly Map<int, int> NOBLES_RANK = new();
 	
-	public const String OLYMPIAD_HTML_PATH = "html/olympiad/";
-	public const String UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
+	public const string OLYMPIAD_HTML_PATH = "html/olympiad/";
+	public const string UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
 	
 	private static readonly FrozenSet<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);
 	
@@ -45,15 +45,15 @@ public class Olympiad
 	public static readonly int DEFAULT_POINTS = Config.ALT_OLY_START_POINTS;
 	protected static readonly int WEEKLY_POINTS = Config.ALT_OLY_WEEKLY_POINTS;
 	
-	public const String CHAR_ID = "charId";
-	public const String CLASS_ID = "class_id";
-	public const String CHAR_NAME = "char_name";
-	public const String POINTS = "olympiad_points";
-	public const String COMP_DONE = "competitions_done";
-	public const String COMP_WON = "competitions_won";
-	public const String COMP_LOST = "competitions_lost";
-	public const String COMP_DRAWN = "competitions_drawn";
-	public const String COMP_DONE_WEEK = "competitions_done_week";
+	public const string CHAR_ID = "charId";
+	public const string CLASS_ID = "class_id";
+	public const string CHAR_NAME = "char_name";
+	public const string POINTS = "olympiad_points";
+	public const string COMP_DONE = "competitions_done";
+	public const string COMP_WON = "competitions_won";
+	public const string COMP_LOST = "competitions_lost";
+	public const string COMP_DRAWN = "competitions_drawn";
+	public const string COMP_DONE_WEEK = "competitions_done_week";
 	
 	protected DateTime _olympiadEnd;
 	protected DateTime _validationEnd;
@@ -987,9 +987,9 @@ public class Olympiad
 		return heroesToBe;
 	}
 	
-	public List<String> getClassLeaderBoard(CharacterClass classId)
+	public List<string> getClassLeaderBoard(CharacterClass classId)
 	{
-		List<String> names = new();
+		List<string> names = new();
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

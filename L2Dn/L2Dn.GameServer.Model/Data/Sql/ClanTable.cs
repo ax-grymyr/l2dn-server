@@ -94,7 +94,7 @@ public class ClanTable
 		return _clans.get(clanId);
 	}
 	
-	public Clan getClanByName(String clanName)
+	public Clan getClanByName(string clanName)
 	{
 		foreach (Clan clan in _clans.values())
 		{
@@ -112,7 +112,7 @@ public class ClanTable
 	 * @param clanName
 	 * @return NULL if clan with same name already exists
 	 */
-	public Clan? createClan(Player player, String clanName)
+	public Clan? createClan(Player player, string clanName)
 	{
 		if (player == null)
 		{
@@ -291,7 +291,7 @@ public class ClanTable
 		}, delay);
 	}
 	
-	public bool isAllyExists(String allyName)
+	public bool isAllyExists(string allyName)
 	{
 		foreach (Clan clan in _clans.values())
 		{

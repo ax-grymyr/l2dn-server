@@ -26,7 +26,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		"admin_fcs",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		try
 		{
@@ -50,12 +50,12 @@ public class AdminFightCalculator: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleStart(String pars, Player activeChar)
+	private void handleStart(string pars, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(pars);
 		int lvl1 = 0;
@@ -64,7 +64,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		int mid2 = 0;
 		while (st.hasMoreTokens())
 		{
-			String s = st.nextToken();
+			string s = st.nextToken();
 			if (s.equals("lvl1"))
 			{
 				lvl1 = int.Parse(st.nextToken());
@@ -98,7 +98,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 			npc2 = NpcData.getInstance().getTemplate(mid2);
 		}
 		
-		String replyMSG;
+		string replyMSG;
 		if ((npc1 != null) && (npc2 != null))
 		{
 			replyMSG = "<html><title>Selected mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td>level " + lvl1 + "</td><td>level " + lvl2 + "</td></tr><tr><td>id " + npc1.getId() + "</td><td>id " + npc2.getId() + "</td></tr><tr><td>" + npc1.getName() + "</td><td>" + npc2.getName() + "</td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator_show " + npc1.getId() + " " + npc2.getId() + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
@@ -139,9 +139,9 @@ public class AdminFightCalculator: IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void handleShow(String pars, Player activeChar)
+	private void handleShow(string pars, Player activeChar)
 	{
-		String trimmedParams = pars.Trim();
+		string trimmedParams = pars.Trim();
 		Creature npc1 = null;
 		Creature npc2 = null;
 		if (string.IsNullOrEmpty(trimmedParams))

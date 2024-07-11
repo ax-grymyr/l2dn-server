@@ -39,7 +39,7 @@ public class FortDoorman: Doorman
         player.sendPacket(html);
     }
 
-    protected override void openDoors(Player player, String command)
+    protected override void openDoors(Player player, string command)
     {
         StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
         st.nextToken();
@@ -50,7 +50,7 @@ public class FortDoorman: Doorman
         }
     }
 
-    protected override void closeDoors(Player player, String command)
+    protected override void closeDoors(Player player, string command)
     {
         StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
         st.nextToken();

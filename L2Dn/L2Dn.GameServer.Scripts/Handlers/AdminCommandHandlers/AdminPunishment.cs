@@ -39,14 +39,14 @@ public class AdminPunishment: IAdminCommandHandler
 		"admin_unjail"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
 		if (!st.hasMoreTokens())
 		{
 			return false;
 		}
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_punishment":
@@ -60,14 +60,14 @@ public class AdminPunishment: IAdminCommandHandler
 				}
 				else
 				{
-					String subcmd = st.nextToken();
+					string subcmd = st.nextToken();
 					switch (subcmd)
 					{
 						case "info":
 						{
-							String key = st.hasMoreTokens() ? st.nextToken() : null;
-							String af = st.hasMoreTokens() ? st.nextToken() : null;
-							String name = key;
+							string key = st.hasMoreTokens() ? st.nextToken() : null;
+							string af = st.hasMoreTokens() ? st.nextToken() : null;
+							string name = key;
 							if ((key == null) || (af == null))
 							{
 								BuilderUtil.sendSysMessage(activeChar, "Not enough data specified!");
@@ -94,7 +94,7 @@ public class AdminPunishment: IAdminCommandHandler
 								if (PunishmentManager.getInstance().hasPunishment(key, affect, type))
 								{
 									DateTime? expiration = PunishmentManager.getInstance().getPunishmentExpiration(key, affect, type);
-									String expire = "never";
+									string expire = "never";
 									if (expiration != null)
 									{
 										expire = expiration.Value.ToString("yyyy.MM.dd HH:mm:ss");
@@ -117,7 +117,7 @@ public class AdminPunishment: IAdminCommandHandler
 							Player target = null;
 							if (st.hasMoreTokens())
 							{
-								String playerName = st.nextToken();
+								string playerName = st.nextToken();
 								if (string.IsNullOrEmpty(playerName) && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
 								{
 									return useAdminCommand("admin_punishment", activeChar);
@@ -152,11 +152,11 @@ public class AdminPunishment: IAdminCommandHandler
 			case "admin_punishment_add":
 			{
 				// Add new punishment
-				String key = st.hasMoreTokens() ? st.nextToken() : null;
-				String af = st.hasMoreTokens() ? st.nextToken() : null;
-				String t = st.hasMoreTokens() ? st.nextToken() : null;
-				String exp = st.hasMoreTokens() ? st.nextToken() : null;
-				String reason = st.hasMoreTokens() ? st.nextToken() : null;
+				string key = st.hasMoreTokens() ? st.nextToken() : null;
+				string af = st.hasMoreTokens() ? st.nextToken() : null;
+				string t = st.hasMoreTokens() ? st.nextToken() : null;
+				string exp = st.hasMoreTokens() ? st.nextToken() : null;
+				string reason = st.hasMoreTokens() ? st.nextToken() : null;
 				
 				// Let's grab the other part of the reason if there is..
 				if (reason != null)
@@ -174,7 +174,7 @@ public class AdminPunishment: IAdminCommandHandler
 					}
 				}
 				
-				String name = key;
+				string name = key;
 				if ((key == null) || (af == null) || (t == null) || (exp == null) || (reason == null))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Please fill all the fields!");
@@ -244,10 +244,10 @@ public class AdminPunishment: IAdminCommandHandler
 			case "admin_punishment_remove":
 			{
 				// Remove punishment.
-				String key = st.hasMoreTokens() ? st.nextToken() : null;
-				String af = st.hasMoreTokens() ? st.nextToken() : null;
-				String t = st.hasMoreTokens() ? st.nextToken() : null;
-				String name = key;
+				string key = st.hasMoreTokens() ? st.nextToken() : null;
+				string af = st.hasMoreTokens() ? st.nextToken() : null;
+				string t = st.hasMoreTokens() ? st.nextToken() : null;
+				string name = key;
 				if ((key == null) || (af == null) || (t == null))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Not enough data specified!");
@@ -283,7 +283,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
 				}
 				break;
 			}
@@ -291,7 +291,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.BAN), activeChar);
 				}
 				break;
 			}
@@ -299,7 +299,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
 				}
 				break;
 			}
@@ -307,7 +307,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.ACCOUNT, PunishmentType.BAN), activeChar);
 				}
 				break;
 			}
@@ -315,7 +315,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.HWID, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.HWID, PunishmentType.BAN, 0, "Banned by admin"), activeChar);
 				}
 				break;
 			}
@@ -323,7 +323,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.HWID, PunishmentType.BAN), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.HWID, PunishmentType.BAN), activeChar);
 				}
 				break;
 			}
@@ -331,7 +331,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned by admin"), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned by admin"), activeChar);
 				}
 				break;
 			}
@@ -339,7 +339,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN), activeChar);
 				}
 				break;
 			}
@@ -347,7 +347,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL, 0, "Jailed by admin"), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_add {0} {1} {2} {3} {4}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL, 0, "Jailed by admin"), activeChar);
 				}
 				break;
 			}
@@ -355,7 +355,7 @@ public class AdminPunishment: IAdminCommandHandler
 			{
 				if (st.hasMoreTokens())
 				{
-					return useAdminCommand(String.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL), activeChar);
+					return useAdminCommand(string.Format("admin_punishment_remove {0} {1} {2}", st.nextToken(), PunishmentAffect.CHARACTER, PunishmentType.JAIL), activeChar);
 				}
 				break;
 			}
@@ -363,7 +363,7 @@ public class AdminPunishment: IAdminCommandHandler
 		return true;
 	}
 	
-	private static String findCharId(String key)
+	private static string findCharId(string key)
 	{
 		int charId = CharInfoTable.getInstance().getIdByName(key);
 		if (charId > 0) // Yeah its a char name!
@@ -373,7 +373,7 @@ public class AdminPunishment: IAdminCommandHandler
 		return key;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

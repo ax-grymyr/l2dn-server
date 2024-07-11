@@ -16,12 +16,12 @@ public class Post
 	public class CPost
 	{
 		private int _postId;
-		private String _postOwner;
+		private string _postOwner;
 		private int _postOwnerId;
 		private DateTime _postDate;
 		private int _postTopicId;
 		private int _postForumId;
-		private String _postText;
+		private string _postText;
 		
 		public void setPostId(int postId)
 		{
@@ -33,12 +33,12 @@ public class Post
 			return _postId;
 		}
 		
-		public void setPostOwner(String postOwner)
+		public void setPostOwner(string postOwner)
 		{
 			_postOwner = postOwner;
 		}
 		
-		public String getPostOwner()
+		public string getPostOwner()
 		{
 			return _postOwner;
 		}
@@ -83,12 +83,12 @@ public class Post
 			return _postForumId;
 		}
 		
-		public void setPostText(String postText)
+		public void setPostText(string postText)
 		{
 			_postText = postText;
 		}
 		
-		public String getPostText()
+		public string getPostText()
 		{
 			if (_postText == null)
 			{
@@ -96,7 +96,7 @@ public class Post
 			}
 			
 			// Bypass exploit check.
-			String text = _postText.ToLower();
+			string text = _postText.ToLower();
 			if (text.Contains("action") && text.Contains("bypass"))
 			{
 				return "";
@@ -117,7 +117,7 @@ public class Post
 	 * @param postForumId
 	 * @param txt
 	 */
-	public Post(String postOwner, int postOwnerId, DateTime date, int tid, int postForumId, String txt)
+	public Post(string postOwner, int postOwnerId, DateTime date, int tid, int postForumId, string txt)
 	{
 		_post = new();
 		CPost cp = new CPost();

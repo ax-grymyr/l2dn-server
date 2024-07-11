@@ -37,7 +37,7 @@ public class AttributeHolder
 		_value += with;
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return _type + " +" + _value;
 	}

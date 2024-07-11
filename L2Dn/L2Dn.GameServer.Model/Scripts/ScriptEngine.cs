@@ -7,9 +7,9 @@ namespace L2Dn.GameServer.Scripts;
  */
 public class ScriptEngine
 {
-	public static readonly Map<String, ParserFactory> PARSER_FACTORIES = new();
+	public static readonly Map<string, ParserFactory> PARSER_FACTORIES = new();
 	
-	protected static Parser createParser(String name)
+	protected static Parser createParser(string name)
 	{
 		ParserFactory s = PARSER_FACTORIES.get(name);
 		// if (s == null) // shape not found

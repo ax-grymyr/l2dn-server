@@ -35,7 +35,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		"admin_mobgroup_invul"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_mobmenu"))
 		{
@@ -116,11 +116,11 @@ public class AdminMobGroup: IAdminCommandHandler
 	
 	private void showMainPage(Player activeChar)
 	{
-		String filename = "mobgroup.htm";
+		string filename = "mobgroup.htm";
 		AdminHtml.showAdminHtml(activeChar, filename);
 	}
 	
-	private void returnToChar(String command, Player activeChar)
+	private void returnToChar(string command, Player activeChar)
 	{
 		int groupId;
 		try
@@ -142,7 +142,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.returnGroup(activeChar);
 	}
 	
-	private void idle(String command, Player activeChar)
+	private void idle(string command, Player activeChar)
 	{
 		int groupId;
 		
@@ -164,7 +164,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setIdleMode();
 	}
 	
-	private void setNormal(String command, Player activeChar)
+	private void setNormal(string command, Player activeChar)
 	{
 		int groupId;
 		try
@@ -185,7 +185,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setAttackRandom();
 	}
 	
-	private void attack(String command, Player activeChar, Creature target)
+	private void attack(string command, Player activeChar, Creature target)
 	{
 		int groupId;
 		try
@@ -206,7 +206,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setAttackTarget(target);
 	}
 	
-	private void follow(String command, Player activeChar, Creature target)
+	private void follow(string command, Player activeChar, Creature target)
 	{
 		int groupId;
 		try
@@ -227,7 +227,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setFollowMode(target);
 	}
 	
-	private void createGroup(String command, Player activeChar)
+	private void createGroup(string command, Player activeChar)
 	{
 		int groupId;
 		int templateId;
@@ -235,7 +235,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		
 		try
 		{
-			String[] cmdParams = command.Split(" ");
+			string[] cmdParams = command.Split(" ");
 			groupId = int.Parse(cmdParams[1]);
 			templateId = int.Parse(cmdParams[2]);
 			mobCount = int.Parse(cmdParams[3]);
@@ -264,7 +264,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		BuilderUtil.sendSysMessage(activeChar, "Mob group " + groupId + " created.");
 	}
 	
-	private void removeGroup(String command, Player activeChar)
+	private void removeGroup(string command, Player activeChar)
 	{
 		int groupId;
 		
@@ -294,7 +294,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		}
 	}
 	
-	private void spawnGroup(String command, Player activeChar)
+	private void spawnGroup(string command, Player activeChar)
 	{
 		int groupId;
 		bool topos = false;
@@ -304,7 +304,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		
 		try
 		{
-			String[] cmdParams = command.Split(" ");
+			string[] cmdParams = command.Split(" ");
 			groupId = int.Parse(cmdParams[1]);
 			
 			try
@@ -346,7 +346,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		BuilderUtil.sendSysMessage(activeChar, "Mob group " + groupId + " spawned.");
 	}
 	
-	private void unspawnGroup(String command, Player activeChar)
+	private void unspawnGroup(string command, Player activeChar)
 	{
 		int groupId;
 		
@@ -373,7 +373,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		BuilderUtil.sendSysMessage(activeChar, "Mob group " + groupId + " unspawned.");
 	}
 	
-	private void killGroup(String command, Player activeChar)
+	private void killGroup(string command, Player activeChar)
 	{
 		int groupId;
 		
@@ -398,7 +398,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.killGroup(activeChar);
 	}
 	
-	private void setCasting(String command, Player activeChar)
+	private void setCasting(string command, Player activeChar)
 	{
 		int groupId;
 		
@@ -422,10 +422,10 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setCastMode();
 	}
 	
-	private void noMove(String command, Player activeChar)
+	private void noMove(string command, Player activeChar)
 	{
 		int groupId;
-		String enabled;
+		string enabled;
 		
 		try
 		{
@@ -465,7 +465,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		activeChar.sendPacket(new SetupGaugePacket(activeChar.getObjectId(), 0, TimeSpan.FromMilliseconds(4000)));
 	}
 	
-	private void attackGrp(String command, Player activeChar)
+	private void attackGrp(string command, Player activeChar)
 	{
 		int groupId;
 		int othGroupId;
@@ -498,10 +498,10 @@ public class AdminMobGroup: IAdminCommandHandler
 		group.setAttackGroup(othGroup);
 	}
 	
-	private void invul(String command, Player activeChar)
+	private void invul(string command, Player activeChar)
 	{
 		int groupId;
-		String enabled;
+		string enabled;
 		
 		try
 		{
@@ -535,10 +535,10 @@ public class AdminMobGroup: IAdminCommandHandler
 		}
 	}
 	
-	private void teleportGroup(String command, Player activeChar)
+	private void teleportGroup(string command, Player activeChar)
 	{
 		int groupId;
-		String targetPlayerStr = null;
+		string targetPlayerStr = null;
 		Player targetPlayer = null;
 		
 		try
@@ -582,7 +582,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		activeChar.sendPacket(SystemMessageId.EMPTY_3);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

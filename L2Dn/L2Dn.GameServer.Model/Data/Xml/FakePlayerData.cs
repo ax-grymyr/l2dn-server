@@ -17,9 +17,9 @@ public class FakePlayerData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FakePlayerData));
 	
 	private readonly Map<int, FakePlayerHolder> _fakePlayerInfos = new();
-	private readonly Map<String, String> _fakePlayerNames = new();
-	private readonly Map<String, int> _fakePlayerIds = new();
-	private readonly Set<String> _talkableFakePlayerNames = new();
+	private readonly Map<string, string> _fakePlayerNames = new();
+	private readonly Map<string, int> _fakePlayerIds = new();
+	private readonly Set<string> _talkableFakePlayerNames = new();
 	
 	protected FakePlayerData()
 	{
@@ -50,7 +50,7 @@ public class FakePlayerData: DataReaderBase
 	{
 		int npcId = element.GetAttributeValueAsInt32("npcId");
 		NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
-		String name = template.getName();
+		string name = template.getName();
 		if (CharInfoTable.getInstance().getIdByName(name) > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Could not create fake player template " + npcId + ", player name already exists.");
@@ -67,17 +67,17 @@ public class FakePlayerData: DataReaderBase
 		}
 	}
 	
-	public int getNpcIdByName(String name)
+	public int getNpcIdByName(string name)
 	{
 		return _fakePlayerIds.get(name);
 	}
 	
-	public String getProperName(String name)
+	public string getProperName(string name)
 	{
 		return _fakePlayerNames.get(name.ToLower());
 	}
 	
-	public bool isTalkable(String name)
+	public bool isTalkable(string name)
 	{
 		return _talkableFakePlayerNames.Contains(name.ToLower());
 	}

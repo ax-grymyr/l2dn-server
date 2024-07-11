@@ -22,10 +22,10 @@ public class AdminOlympiad: IAdminCommandHandler
 		"admin_setolypoints",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_olympiad_game":
@@ -203,7 +203,7 @@ public class AdminOlympiad: IAdminCommandHandler
 	
 	private int parseInt(StringTokenizer st)
 	{
-		String token = st.nextToken();
+		string token = st.nextToken();
 		if (!Util.isDigit(token))
 		{
 			return -1;
@@ -257,7 +257,7 @@ public class AdminOlympiad: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

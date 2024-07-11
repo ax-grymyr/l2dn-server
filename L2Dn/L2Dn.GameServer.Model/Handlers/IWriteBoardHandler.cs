@@ -18,5 +18,5 @@ public interface IWriteBoardHandler: IParseBoardHandler
 	 * @param arg5 the fifth argument
 	 * @return
 	 */
-	bool writeCommunityBoardCommand(Player player, String arg1, String arg2, String arg3, String arg4, String arg5);
+	bool writeCommunityBoardCommand(Player player, string arg1, string arg2, string arg3, string arg4, string arg5);
 }

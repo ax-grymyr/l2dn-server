@@ -10,7 +10,7 @@ public readonly struct GMViewWarehouseWithdrawListPacket: IOutgoingPacket
 {
     private readonly int _sendType;
     private readonly ICollection<Item> _items;
-    private readonly String _playerName;
+    private readonly string _playerName;
     private readonly long _money;
 	
     public GMViewWarehouseWithdrawListPacket(int sendType, Player player)

@@ -135,7 +135,7 @@ public class Defender : Attackable
 		if (!skill.isBad())
 		{
 			Creature target = this;
-			double lowestHpValue = Double.MaxValue;
+			double lowestHpValue = double.MaxValue;
 			foreach (Creature nearby in World.getInstance().getVisibleObjectsInRange<Creature>(this, skill.getCastRange()))
 			{
 				if ((nearby == null) || nearby.isDead() || !GeoEngine.getInstance().canSeeTarget(this, nearby))

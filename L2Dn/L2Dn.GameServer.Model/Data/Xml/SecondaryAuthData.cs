@@ -13,11 +13,11 @@ public class SecondaryAuthData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SecondaryAuthData));
 	
-	private readonly Set<String> _forbiddenPasswords = new();
+	private readonly Set<string> _forbiddenPasswords = new();
 	private bool _enabled = false;
 	private int _maxAttempts = 5;
 	private int _banTime = 480;
-	private String _recoveryLink = "";
+	private string _recoveryLink = "";
 	
 	protected SecondaryAuthData()
 	{
@@ -59,17 +59,17 @@ public class SecondaryAuthData: DataReaderBase
 		return _banTime;
 	}
 	
-	public String getRecoveryLink()
+	public string getRecoveryLink()
 	{
 		return _recoveryLink;
 	}
 	
-	public Set<String> getForbiddenPasswords()
+	public Set<string> getForbiddenPasswords()
 	{
 		return _forbiddenPasswords;
 	}
 	
-	public bool isForbiddenPassword(String password)
+	public bool isForbiddenPassword(string password)
 	{
 		return _forbiddenPasswords.Contains(password);
 	}

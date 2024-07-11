@@ -26,7 +26,7 @@ public class NightStatModify: AbstractEffect
 	private static bool START_LISTENER = true;
 	
 	private readonly Stat _stat;
-	private readonly Double _amount;
+	private readonly double _amount;
 	protected StatModifierType _mode;
 	
 	public NightStatModify(StatSet @params)

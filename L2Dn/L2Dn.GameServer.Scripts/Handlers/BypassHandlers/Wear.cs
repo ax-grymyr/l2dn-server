@@ -17,7 +17,7 @@ public class Wear: IBypassHandler
 		"Wear"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -65,7 +65,7 @@ public class Wear: IBypassHandler
 		player.sendPacket(new ShopPreviewListPacket(buyList, player.getAdena()));
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

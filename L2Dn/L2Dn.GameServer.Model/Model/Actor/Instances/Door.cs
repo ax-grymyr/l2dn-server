@@ -409,7 +409,7 @@ public class Door : Creature
 		}
 	}
 	
-	private void manageGroupOpen(bool open, String groupName)
+	private void manageGroupOpen(bool open, string groupName)
 	{
 		Set<int> set = DoorData.getInstance().getDoorsByGroup(groupName);
 		Door first = null;
@@ -450,7 +450,7 @@ public class Door : Creature
 		}
 	}
 	
-	public override String getName()
+	public override string getName()
 	{
 		return getTemplate().getName();
 	}
@@ -495,7 +495,7 @@ public class Door : Creature
 		return getTemplate().isWall();
 	}
 	
-	public String getGroupName()
+	public string getGroupName()
 	{
 		return getTemplate().getGroupName();
 	}

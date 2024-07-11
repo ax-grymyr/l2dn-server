@@ -13,7 +13,7 @@ public class DefaultPageHandler: IPageHandler
         _pagesOffset = pagesOffset;
     }
 
-    public void apply(String bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter,
+    public void apply(string bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter,
         IHtmlStyle style)
     {
         int pagerStart = Math.Max(currentPage - _pagesOffset, 0);

@@ -2,5 +2,5 @@
 
 public interface IBypassFormatter
 {
-    String formatBypass(String bypass, int page);
+    string formatBypass(string bypass, int page);
 }

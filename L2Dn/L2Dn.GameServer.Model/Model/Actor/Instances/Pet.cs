@@ -459,7 +459,7 @@ public class Pet: Summon
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successfull
 	 */
-	public override bool destroyItem(String process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		Item item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		if (item == null)
@@ -503,7 +503,7 @@ public class Pet: Summon
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successfull
 	 */
-	public override bool destroyItemByItemId(String process, int itemId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		Item item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
 		if (item == null)
@@ -788,7 +788,7 @@ public class Pet: Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(String process, int objectId, long count, Inventory target, Player actor, WorldObject reference)
+	public Item transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject reference)
 	{
 		Item oldItem = _inventory.getItemByObjectId(objectId);
 		Item playerOldItem = target.getItemByItemId(oldItem.getId());
@@ -1011,7 +1011,7 @@ public class Pet: Summon
 			_restoreSummon = false;
 		}
 
-		String req;
+		string req;
 		if (!_respawned)
 		{
 			req = "INSERT INTO pets (name,level,curHp,curMp,exp,sp,fed,ownerId,restore,item_obj_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
@@ -1161,8 +1161,8 @@ public class Pet: Summon
 	{
 		try
 		{
-			const String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
-			const String DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
+			const string RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,skill_sub_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";
+			const string DELETE_SKILL_SAVE = "DELETE FROM character_pet_skills_save WHERE petObjItemId=?";
 
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -1463,7 +1463,7 @@ public class Pet: Summon
 		return getPetLevelData().getPetSpiritShot();
 	}
 
-	public override void setName(String name)
+	public override void setName(string name)
 	{
 		Item controlItem = getControlItem();
 		if (controlItem != null)

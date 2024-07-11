@@ -26,13 +26,13 @@ public class AdminExpSp: IAdminCommandHandler
 		"admin_remove_exp_sp"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_add_exp_sp"))
 		{
 			try
 			{
-				String val = command.Substring(16);
+				string val = command.Substring(16);
 				if (!adminAddExpSp(activeChar, val))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //add_exp_sp exp sp");
@@ -47,7 +47,7 @@ public class AdminExpSp: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(19);
+				string val = command.Substring(19);
 				if (!adminRemoveExpSP(activeChar, val))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //remove_exp_sp exp sp");
@@ -62,7 +62,7 @@ public class AdminExpSp: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -91,7 +91,7 @@ public class AdminExpSp: IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private bool adminAddExpSp(Player activeChar, String expSp)
+	private bool adminAddExpSp(Player activeChar, string expSp)
 	{
 		WorldObject target = activeChar.getTarget();
 		Player player = null;
@@ -110,8 +110,8 @@ public class AdminExpSp: IAdminCommandHandler
 			return false;
 		}
 		
-		String exp = st.nextToken();
-		String sp = st.nextToken();
+		string exp = st.nextToken();
+		string sp = st.nextToken();
 		long expval = 0;
 		long spval = 0;
 		try
@@ -134,7 +134,7 @@ public class AdminExpSp: IAdminCommandHandler
 		return true;
 	}
 	
-	private bool adminRemoveExpSP(Player activeChar, String expSp)
+	private bool adminRemoveExpSP(Player activeChar, string expSp)
 	{
 		WorldObject target = activeChar.getTarget();
 		Player player = null;
@@ -153,8 +153,8 @@ public class AdminExpSp: IAdminCommandHandler
 			return false;
 		}
 		
-		String exp = st.nextToken();
-		String sp = st.nextToken();
+		string exp = st.nextToken();
+		string sp = st.nextToken();
 		long expval = 0;
 		int spval = 0;
 		try

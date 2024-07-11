@@ -6,15 +6,15 @@ namespace L2Dn.GameServer.CommunityBbs.Managers;
 
 public abstract class BaseBBSManager
 {
-	public abstract void parsecmd(String command, Player player);
+	public abstract void parsecmd(string command, Player player);
 	
-	public abstract void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player player);
+	public abstract void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player);
 	
 	/**
 	 * @param html
 	 * @param acha
 	 */
-	protected void send1001(String html, Player acha)
+	protected void send1001(string html, Player acha)
 	{
 		if (html.Length < 8192)
 		{
@@ -36,7 +36,7 @@ public abstract class BaseBBSManager
 	 * @param string2
 	 * @param string3
 	 */
-	protected void send1002(Player player, String str, String string2, String string3)
+	protected void send1002(Player player, string str, string string2, string string3)
 	{
 		string[] args =
 		[

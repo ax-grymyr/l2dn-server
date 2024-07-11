@@ -157,9 +157,9 @@ public class MacroList: IRestorable
 			{
 				int id = record.Id;
 				int? icon = record.Icon;
-				String name = record.Name;
-				String descr = record.Description;
-				String acronym = record.Acronym;
+				string name = record.Name;
+				string descr = record.Description;
+				string acronym = record.Acronym;
 				List<MacroCmd> commands = new();
 				StringTokenizer st1 = new StringTokenizer(record.Commands, ";");
 				while (st1.hasMoreTokens())
@@ -173,7 +173,7 @@ public class MacroList: IRestorable
 					MacroType type = (MacroType)int.Parse(st.nextToken());
 					int d1 = int.Parse(st.nextToken());
 					int d2 = int.Parse(st.nextToken());
-					String cmd = "";
+					string cmd = "";
 					if (st.hasMoreTokens())
 					{
 						cmd = st.nextToken();

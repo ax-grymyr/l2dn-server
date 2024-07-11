@@ -45,7 +45,7 @@ public class TimedHuntingZoneData: DataReaderBase
 	private void parseElement(XElement element)
 	{
 		int id = element.GetAttributeValueAsInt32("id");
-		String name = element.Attribute("name").GetString("");
+		string name = element.Attribute("name").GetString("");
 		int initialTime = 0;
 		int maxAddedTime = 0;
 		int resetDelay = 0;
@@ -68,35 +68,35 @@ public class TimedHuntingZoneData: DataReaderBase
 
 		element.Elements("enterLocation").ForEach(el =>
 		{
-			String[] coordinates = ((string)el).Split(",");
+			string[] coordinates = ((string)el).Split(",");
 			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation1").ForEach(el =>
 		{
-			String[] coordinates = ((string)el).Split(",");
+			string[] coordinates = ((string)el).Split(",");
 			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation2").ForEach(el =>
 		{
-			String[] coordinates = ((string)el).Split(",");
+			string[] coordinates = ((string)el).Split(",");
 			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("subEnterLocation3").ForEach(el =>
 		{
-			String[] coordinates = ((string)el).Split(",");
+			string[] coordinates = ((string)el).Split(",");
 			enterLocations = enterLocations.Add(new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2])));
 		});
 
 		element.Elements("exitLocation").ForEach(el =>
 		{
-			String[] coordinates = ((string)el).Split(",");
+			string[] coordinates = ((string)el).Split(",");
 			exitLocation = new Location3D(int.Parse(coordinates[0]), int.Parse(coordinates[1]),
 				int.Parse(coordinates[2]));
 		});

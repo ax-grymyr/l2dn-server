@@ -23,9 +23,9 @@ public class ContactList
 	private readonly Player _player;
 	private readonly Set<string> _contacts = new();
 	
-	private const String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
-	private const String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
-	private const String QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
+	private const string QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
+	private const string QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
+	private const string QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
 	
 	public ContactList(Player player)
 	{
@@ -59,7 +59,7 @@ public class ContactList
 		}
 	}
 	
-	public bool add(String name)
+	public bool add(string name)
 	{
 		SystemMessagePacket sm;
 		
@@ -88,7 +88,7 @@ public class ContactList
 		}
 		else
 		{
-			foreach (String contactName in _contacts)
+			foreach (string contactName in _contacts)
 			{
 				if (contactName.equalsIgnoreCase(name))
 				{
@@ -122,7 +122,7 @@ public class ContactList
 		return true;
 	}
 	
-	public void remove(String name)
+	public void remove(string name)
 	{
 		int contactId = CharInfoTable.getInstance().getIdByName(name);
 		if (!_contacts.Contains(name))
@@ -154,7 +154,7 @@ public class ContactList
 		}
 	}
 	
-	public Set<String> getAllContacts()
+	public Set<string> getAllContacts()
 	{
 		return _contacts;
 	}

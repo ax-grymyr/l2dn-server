@@ -57,7 +57,7 @@ public class AdminTeleport: IAdminCommandHandler
 		"admin_sendhome"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_instant_move"))
 		{
@@ -102,7 +102,7 @@ public class AdminTeleport: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(11);
+				string val = command.Substring(11);
 				StringTokenizer st = new StringTokenizer(val);
 				int x = int.Parse(st.nextToken());
 				int y = int.Parse(st.nextToken());
@@ -117,7 +117,7 @@ public class AdminTeleport: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(14);
+				string val = command.Substring(14);
 				teleportTo(activeChar, val);
 			}
 			catch (IndexOutOfRangeException e)
@@ -135,7 +135,7 @@ public class AdminTeleport: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(25);
+				string val = command.Substring(25);
 				teleportCharacter(activeChar, val);
 			}
 			catch (IndexOutOfRangeException e)
@@ -149,7 +149,7 @@ public class AdminTeleport: IAdminCommandHandler
 		{
 			try
 			{
-				String targetName = command.Substring(17);
+				string targetName = command.Substring(17);
 				Player player = World.getInstance().getPlayer(targetName);
 				teleportToCharacter(activeChar, player);
 			}
@@ -177,13 +177,13 @@ public class AdminTeleport: IAdminCommandHandler
 		{
 			try
 			{
-				String[] param = command.Split(" ");
+				string[] param = command.Split(" ");
 				if (param.Length != 2)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //recall <playername>");
 					return false;
 				}
-				String targetName = param[1];
+				string targetName = param[1];
 				Player player = World.getInstance().getPlayer(targetName);
 				if (player != null)
 				{
@@ -210,9 +210,9 @@ public class AdminTeleport: IAdminCommandHandler
 			int z = activeChar.getZ();
 			try
 			{
-				String val = command.Substring(8);
+				string val = command.Substring(8);
 				StringTokenizer st = new StringTokenizer(val);
-				String dir = st.nextToken();
+				string dir = st.nextToken();
 				if (st.hasMoreTokens())
 				{
 					intVal = int.Parse(st.nextToken());
@@ -259,7 +259,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			else if (st.countTokens() == 1)
 			{
-				String name = st.nextToken();
+				string name = st.nextToken();
 				Player player = World.getInstance().getPlayer(name);
 				if (player == null)
 				{
@@ -284,7 +284,7 @@ public class AdminTeleport: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -295,7 +295,7 @@ public class AdminTeleport: IAdminCommandHandler
 	 */
 	private void teleportHome(Player player)
 	{
-		String regionName;
+		string regionName;
 		switch (player.getRace())
 		{
 			case Race.ELF:
@@ -334,7 +334,7 @@ public class AdminTeleport: IAdminCommandHandler
 		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), true);
 	}
 	
-	private void teleportTo(Player activeChar, String coords)
+	private void teleportTo(Player activeChar, string coords)
 	{
 		try
 		{
@@ -382,7 +382,7 @@ public class AdminTeleport: IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void teleportCharacter(Player activeChar, String coords)
+	private void teleportCharacter(Player activeChar, string coords)
 	{
 		WorldObject target = activeChar.getTarget();
 		Player player = null;
@@ -405,11 +405,11 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				StringTokenizer st = new StringTokenizer(coords);
-				String x1 = st.nextToken();
+				string x1 = st.nextToken();
 				int x = int.Parse(x1);
-				String y1 = st.nextToken();
+				string y1 = st.nextToken();
 				int y = int.Parse(y1);
-				String z1 = st.nextToken();
+				string z1 = st.nextToken();
 				int z = int.Parse(z1);
 				teleportCharacter(player, new Location3D(x, y, z), null);
 			}
@@ -464,7 +464,7 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 	}
 	
-	private void changeCharacterPosition(Player activeChar, String name)
+	private void changeCharacterPosition(Player activeChar, string name)
 	{
 		int x = activeChar.getX();
 		int y = activeChar.getY();

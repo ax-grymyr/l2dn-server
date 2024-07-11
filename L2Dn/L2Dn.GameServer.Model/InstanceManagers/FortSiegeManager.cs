@@ -260,7 +260,7 @@ public class FortSiegeManager
 			
 			for (int i = 1; i < 4; i++)
 			{
-				String spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Flag" + i);
+				string spawnParams = parser.getString(fort.getName().Replace(" ", "") + "Flag" + i);
 				if (string.IsNullOrEmpty(spawnParams))
 				{
 					break;

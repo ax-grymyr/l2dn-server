@@ -24,9 +24,9 @@ public class Merchant: Folk
         return base.isAutoAttackable(attacker);
     }
 
-    public override String getHtmlPath(int npcId, int value, Player player)
+    public override string getHtmlPath(int npcId, int value, Player player)
     {
-        String pom;
+        string pom;
         if (value == 0)
         {
             pom = npcId.ToString(CultureInfo.InvariantCulture);

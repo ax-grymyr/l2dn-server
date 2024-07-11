@@ -5,10 +5,10 @@ namespace L2Dn.GameServer.Model.Ensoul;
 public class EnsoulOption: SkillHolder
 {
     private readonly int _id;
-    private readonly String _name;
-    private readonly String _desc;
+    private readonly string _name;
+    private readonly string _desc;
 
-    public EnsoulOption(int id, String name, String desc, int skillId, int skillLevel): base(skillId, skillLevel)
+    public EnsoulOption(int id, string name, string desc, int skillId, int skillLevel): base(skillId, skillLevel)
     {
         _id = id;
         _name = name;
@@ -20,17 +20,17 @@ public class EnsoulOption: SkillHolder
         return _id;
     }
 
-    public String getName()
+    public string getName()
     {
         return _name;
     }
 
-    public String getDesc()
+    public string getDesc()
     {
         return _desc;
     }
 
-    public override String ToString()
+    public override string ToString()
     {
         return "Ensoul Id: " + _id + " Name: " + _name + " Desc: " + _desc;
     }

@@ -39,7 +39,7 @@ public class Teleporter: Npc
 		return attacker.isMonster() || base.isAutoAttackable(attacker);
 	}
 	
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		// Process bypass
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -52,7 +52,7 @@ public class Teleporter: Npc
 			}
 			case "showTeleports":
 			{
-				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.ToString();
+				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.ToString();
 				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -69,7 +69,7 @@ public class Teleporter: Npc
 			}
 			case "showTeleportsHunting":
 			{
-				String listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.ToString();
+				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.ToString();
 				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -88,7 +88,7 @@ public class Teleporter: Npc
 					return;
 				}
 				
-				String listName = st.nextToken();
+				string listName = st.nextToken();
 				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -126,7 +126,7 @@ public class Teleporter: Npc
 	{
 		if (st.hasMoreTokens())
 		{
-			String token = st.nextToken();
+			string token = st.nextToken();
 			if (Util.isDigit(token))
 			{
 				return int.Parse(token);
@@ -135,9 +135,9 @@ public class Teleporter: Npc
 		return defaultVal;
 	}
 	
-	public override String getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player player)
 	{
-		String pom;
+		string pom;
 		if (value == 0)
 		{
 			pom = npcId.ToString();
@@ -183,7 +183,7 @@ public class Teleporter: Npc
 		}
 		
 		// Teleporter is on castle ground
-		String filename = "html/teleporter/castleteleporter-no.htm";
+		string filename = "html/teleporter/castleteleporter-no.htm";
 		if ((player.getClan() != null) && (getCastle().getOwnerId() == player.getClanId())) // Clan owns castle
 		{
 			filename = getHtmlPath(getId(), 0, player); // Owner message window
@@ -195,7 +195,7 @@ public class Teleporter: Npc
 		sendHtmlMessage(player, filename);
 	}
 	
-	private void sendHtmlMessage(Player player, String filename)
+	private void sendHtmlMessage(Player player, string filename)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%objectId%", getObjectId().ToString());

@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class Online: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"online"
 	};
 	
-	public bool useVoicedCommand(String command, Player player, String target)
+	public bool useVoicedCommand(string command, Player player, string target)
 	{
 		if (command.equals("online") && Config.ENABLE_ONLINE_COMMAND)
 		{
@@ -32,7 +32,7 @@ public class Online: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

@@ -9,9 +9,9 @@ public class Augment: IBypassHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(Augment));
     
-	private static readonly String[] COMMANDS = ["Augment"];
+	private static readonly string[] COMMANDS = ["Augment"];
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{

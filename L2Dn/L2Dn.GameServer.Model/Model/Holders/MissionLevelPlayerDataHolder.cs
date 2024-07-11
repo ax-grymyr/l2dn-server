@@ -27,12 +27,12 @@ public class MissionLevelPlayerDataHolder
 	{
 	}
 
-	public MissionLevelPlayerDataHolder(String variable)
+	public MissionLevelPlayerDataHolder(string variable)
 	{
-		foreach (String data in variable.Split(";"))
+		foreach (string data in variable.Split(";"))
 		{
-			List<String> values = data.Split(":").ToList();
-			String key = values[0];
+			List<string> values = data.Split(":").ToList();
+			string key = values[0];
 			values.RemoveAt(0);
 			if (key.Equals("CurrentLevel"))
 			{
@@ -65,8 +65,8 @@ public class MissionLevelPlayerDataHolder
 			}
 
 			List<int> valuesData = new();
-			String[] missions = values.Count == 0 || string.IsNullOrEmpty(values[0]) ? Array.Empty<string>() : values[0].Split(",");
-			foreach (String mission in missions)
+			string[] missions = values.Count == 0 || string.IsNullOrEmpty(values[0]) ? Array.Empty<string>() : values[0].Split(",");
+			foreach (string mission in missions)
 			{
 				valuesData.Add(int.Parse(mission));
 			}
@@ -95,7 +95,7 @@ public class MissionLevelPlayerDataHolder
 		}
 	}
 
-	public String getVariablesFromInfo()
+	public string getVariablesFromInfo()
 	{
 		StringBuilder sb = new StringBuilder();
 		// CurrentLevel:5;LevelXP:10;ListOfBaseRewards:2,19,20;ListOfKeyRewards:;SpecialRewards:;BonusRewards:;ListOfBonusRewards:;

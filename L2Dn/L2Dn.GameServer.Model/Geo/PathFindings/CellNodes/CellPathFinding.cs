@@ -29,11 +29,11 @@ public class CellPathFinding: PathFinding
 	{
 		try
 		{
-			String[] array = Config.PATHFIND_BUFFERS.Split(";");
+			string[] array = Config.PATHFIND_BUFFERS.Split(";");
 			_allBuffers = new BufferInfo[array.Length];
 			
-			String buf;
-			String[] args;
+			string buf;
+			string[] args;
 			for (int i = 0; i < array.Length; i++)
 			{
 				buf = array[i];
@@ -327,7 +327,7 @@ public class CellPathFinding: PathFinding
 			bufs = new(count);
 		}
 
-		public override String ToString()
+		public override string ToString()
 		{
 			StringBuilder stat = new(100);
 			stat.Append(mapSize);
@@ -358,9 +358,9 @@ public class CellPathFinding: PathFinding
 		}
 	}
 
-	public override String[] getStat()
+	public override string[] getStat()
 	{
-		String[] result = new String[_allBuffers.Length + 1];
+		string[] result = new string[_allBuffers.Length + 1];
 		for (int i = 0; i < _allBuffers.Length; i++)
 		{
 			result[i] = _allBuffers[i].ToString();

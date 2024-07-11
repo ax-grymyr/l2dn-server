@@ -42,7 +42,7 @@ public class DamageZone : ZoneType
 		setTargetType(InstanceType.Playable); // default only playabale
 	}
 	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		if (name.equals("dmgHPSec"))
 		{

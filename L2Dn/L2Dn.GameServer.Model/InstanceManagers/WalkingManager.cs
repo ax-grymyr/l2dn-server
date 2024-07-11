@@ -43,7 +43,7 @@ public class WalkingManager: DataReaderBase
 	public const byte REPEAT_RANDOM = 3;
 	
 	private readonly Set<int> _targetedNpcIds = new();
-	private readonly Map<String, WalkRoute> _routes = new(); // all available routes
+	private readonly Map<string, WalkRoute> _routes = new(); // all available routes
 	private readonly Map<int, WalkInfo> _activeRoutes = new(); // each record represents NPC, moving by predefined route from _routes, and moving progress
 	private readonly Map<int, NpcRoutesHolder> _routesToAttach = new(); // each record represents NPC and all available routes for it
 	private readonly Map<Npc, ScheduledFuture> _startMoveTasks = new();
@@ -169,7 +169,7 @@ public class WalkingManager: DataReaderBase
 		return !walk.isStoppedByAttack() && !walk.isSuspended();
 	}
 	
-	public WalkRoute getRoute(String route)
+	public WalkRoute getRoute(string route)
 	{
 		return _routes.get(route);
 	}
@@ -196,7 +196,7 @@ public class WalkingManager: DataReaderBase
 	 * @param npc
 	 * @return name of route
 	 */
-	public String getRouteName(Npc npc)
+	public string getRouteName(Npc npc)
 	{
 		return _activeRoutes.containsKey(npc.getObjectId()) ? _activeRoutes.get(npc.getObjectId()).getRoute().getName() : "";
 	}
@@ -206,7 +206,7 @@ public class WalkingManager: DataReaderBase
 	 * @param npc NPC to move
 	 * @param routeName name of route to move by
 	 */
-	public void startMoving(Npc npc, String routeName)
+	public void startMoving(Npc npc, string routeName)
 	{
 		if (_routes.containsKey(routeName) && (npc != null) && !npc.isDead()) // check, if these route and NPC present
 		{
@@ -430,7 +430,7 @@ public class WalkingManager: DataReaderBase
 	{
 		if (_routesToAttach.containsKey(npc.getId()))
 		{
-			String routeName = _routesToAttach.get(npc.getId()).getRouteName(npc);
+			string routeName = _routesToAttach.get(npc.getId()).getRouteName(npc);
 			if (!string.IsNullOrEmpty(routeName))
 			{
 				startMoving(npc, routeName);

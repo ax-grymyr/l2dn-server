@@ -26,7 +26,7 @@ public class ItemPointHolder: ItemHolder
 		return _points;
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[" + GetType().Name + "] ID: " + getId() + ", count: " + getCount() + ", points: " + _points;
 	}

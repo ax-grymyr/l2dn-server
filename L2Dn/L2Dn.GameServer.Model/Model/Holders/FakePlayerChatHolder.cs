@@ -5,12 +5,12 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class FakePlayerChatHolder
 {
-	private readonly String _fpcName;
-	private readonly String _searchMethod;
-	private readonly List<String> _searchText;
-	private readonly List<String> _answers;
+	private readonly string _fpcName;
+	private readonly string _searchMethod;
+	private readonly List<string> _searchText;
+	private readonly List<string> _answers;
 	
-	public FakePlayerChatHolder(String fpcName, String searchMethod, String searchText, String answers)
+	public FakePlayerChatHolder(string fpcName, string searchMethod, string searchText, string answers)
 	{
 		_fpcName = fpcName;
 		_searchMethod = searchMethod;
@@ -18,22 +18,22 @@ public class FakePlayerChatHolder
 		_answers = answers.Split(";").ToList();
 	}
 	
-	public String getFpcName()
+	public string getFpcName()
 	{
 		return _fpcName;
 	}
 	
-	public String getSearchMethod()
+	public string getSearchMethod()
 	{
 		return _searchMethod;
 	}
 	
-	public List<String> getSearchText()
+	public List<string> getSearchText()
 	{
 		return _searchText;
 	}
 	
-	public List<String> getAnswers()
+	public List<string> getAnswers()
 	{
 		return _answers;
 	}

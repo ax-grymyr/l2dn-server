@@ -18,10 +18,10 @@ public class AdminHtml: IAdminCommandHandler
 		"admin_loadhtml"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		switch (actualCommand.toLowerCase())
 		{
 			case "admin_html":
@@ -32,7 +32,7 @@ public class AdminHtml: IAdminCommandHandler
 					return false;
 				}
 				
-				String path = st.nextToken();
+				string path = st.nextToken();
 				showAdminHtml(activeChar, path);
 				break;
 			}
@@ -44,7 +44,7 @@ public class AdminHtml: IAdminCommandHandler
 					return false;
 				}
 				
-				String path = st.nextToken();
+				string path = st.nextToken();
 				showHtml(activeChar, path, true);
 				break;
 			}
@@ -57,7 +57,7 @@ public class AdminHtml: IAdminCommandHandler
 	 * @param activeChar activeChar where html is shown
 	 * @param path relative path from directory data/html/admin/ to html
 	 */
-	public static void showAdminHtml(Player activeChar, String path)
+	public static void showAdminHtml(Player activeChar, string path)
 	{
 		showHtml(activeChar, "html/admin/" + path, false);
 	}
@@ -68,9 +68,9 @@ public class AdminHtml: IAdminCommandHandler
 	 * @param path relative path from Config.DATAPACK_ROOT to html.
 	 * @param reload {@code true} will reload html and show it {@code false} will show it from cache.
 	 */
-	private static void showHtml(Player activeChar, String path, bool reload)
+	private static void showHtml(Player activeChar, string path, bool reload)
 	{
-		String? content;
+		string? content;
 		if (!reload)
 		{
 			content = HtmCache.getInstance().getHtm(path, activeChar.getLang());
@@ -89,7 +89,7 @@ public class AdminHtml: IAdminCommandHandler
 		activeChar.sendPacket(html);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Model.Conditions;
 public abstract class Condition: ConditionListener
 {
 	private ConditionListener _listener;
-	private String _msg;
+	private string _msg;
 	private SystemMessageId _msgId;
 	private bool _addName = false;
 	private bool _result;
@@ -21,7 +21,7 @@ public abstract class Condition: ConditionListener
 	 * Sets the message.
 	 * @param msg the new message
 	 */
-	public void setMessage(String msg)
+	public void setMessage(string msg)
 	{
 		_msg = msg;
 	}
@@ -30,7 +30,7 @@ public abstract class Condition: ConditionListener
 	 * Gets the message.
 	 * @return the message
 	 */
-	public String getMessage()
+	public string getMessage()
 	{
 		return _msg;
 	}

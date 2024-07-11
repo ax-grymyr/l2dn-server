@@ -46,7 +46,7 @@ public class DateRange
 		return _startTime;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return "DateRange: From: " + _startTime + " To: " + _endTime;
 	}

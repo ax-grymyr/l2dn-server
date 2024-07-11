@@ -6,13 +6,13 @@ public class PledgeRecruitInfo
 {
     private int _clanId;
     private int _karma;
-    private String _information;
-    private String _detailedInformation;
+    private string _information;
+    private string _detailedInformation;
     private readonly Clan _clan;
     private readonly int _applicationType;
     private readonly int _recruitType;
 	
-    public PledgeRecruitInfo(int clanId, int karma, String information, String detailedInformation, int applicationType, int recruitType)
+    public PledgeRecruitInfo(int clanId, int karma, string information, string detailedInformation, int applicationType, int recruitType)
     {
         _clanId = clanId;
         _karma = karma;
@@ -33,12 +33,12 @@ public class PledgeRecruitInfo
         _clanId = clanId;
     }
 	
-    public String getClanName()
+    public string getClanName()
     {
         return _clan.getName();
     }
 	
-    public String getClanLeaderName()
+    public string getClanLeaderName()
     {
         return _clan.getLeaderName();
     }
@@ -58,22 +58,22 @@ public class PledgeRecruitInfo
         _karma = karma;
     }
 	
-    public String getInformation()
+    public string getInformation()
     {
         return _information;
     }
 	
-    public void setInformation(String information)
+    public void setInformation(string information)
     {
         _information = information;
     }
 	
-    public String getDetailedInformation()
+    public string getDetailedInformation()
     {
         return _detailedInformation;
     }
 	
-    public void setDetailedInformation(String detailedInformation)
+    public void setDetailedInformation(string detailedInformation)
     {
         _detailedInformation = detailedInformation;
     }

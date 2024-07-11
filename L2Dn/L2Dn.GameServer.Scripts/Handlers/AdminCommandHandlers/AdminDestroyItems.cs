@@ -21,7 +21,7 @@ public class AdminDestroyItems: IAdminCommandHandler
 		"admin_destroyallitems"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		PlayerInventory inventory = activeChar.getInventory();
 		List<ItemInfo> itemsToUpdate = new List<ItemInfo>(); 
@@ -41,7 +41,7 @@ public class AdminDestroyItems: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

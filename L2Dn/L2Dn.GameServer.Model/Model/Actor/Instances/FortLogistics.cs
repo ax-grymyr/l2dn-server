@@ -23,7 +23,7 @@ public class FortLogistics : Merchant
 		setInstanceType(InstanceType.FortLogistics);
 	}
 	
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		if (player.getLastFolkNPC().getObjectId() != getObjectId())
 		{
@@ -31,7 +31,7 @@ public class FortLogistics : Merchant
 		}
 		
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken(); // Get actual command
+		string actualCommand = st.nextToken(); // Get actual command
 		bool isMyLord = player.isClanLeader() && (player.getClan().getFortId() == (getFort() != null ? getFort().getResidenceId() : -1));
 
 		if (actualCommand.equalsIgnoreCase("rewards"))
@@ -156,7 +156,7 @@ public class FortLogistics : Merchant
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		
-		String filename;
+		string filename;
 		if (value == 0)
 		{
 			filename = "html/fortress/logistics.htm";
@@ -182,9 +182,9 @@ public class FortLogistics : Merchant
 		player.sendPacket(html);
 	}
 	
-	public override String getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player player)
 	{
-		String pom = "";
+		string pom = "";
 		if (value == 0)
 		{
 			pom = "logistics";

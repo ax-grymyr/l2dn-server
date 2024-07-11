@@ -7,7 +7,7 @@ public class TaskCleanUp : Task
 {
 	private const string NAME = "clean_up";
 	
-	public override String getName()
+	public override string getName()
 	{
 		return NAME;
 	}

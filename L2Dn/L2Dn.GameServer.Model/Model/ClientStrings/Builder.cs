@@ -2,13 +2,13 @@
 
 public abstract class Builder
 {
-    public abstract String toString(Object param);
+    public abstract string toString(object param);
 	
-    public abstract String toString(params Object[] @params);
+    public abstract string toString(params object[] @params);
 	
     public abstract int getIndex();
 	
-    public static Builder newBuilder(String text)
+    public static Builder newBuilder(string text)
     {
         List<Builder> builders = new();
 		
@@ -38,7 +38,7 @@ public abstract class Builder
                         subTextLen = index1 - index2;
                         if (subTextLen != 0)
                         {
-                            builders.Add(new BuilderText(new String(array, index2, subTextLen)));
+                            builders.Add(new BuilderText(new string(array, index2, subTextLen)));
                         }
 						
                         builders.Add(new BuilderObject(paramId));
@@ -54,7 +54,7 @@ public abstract class Builder
             subTextLen = index1 - index2;
             if (subTextLen != 0)
             {
-                builders.Add(new BuilderText(new String(array, index2, subTextLen)));
+                builders.Add(new BuilderText(new string(array, index2, subTextLen)));
             }
         }
 		

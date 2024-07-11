@@ -9,10 +9,10 @@ namespace L2Dn.GameServer.Model.Events.Impl.Players;
 public class OnPlayerRestore: EventBase
 {
 	private readonly int _objectId;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly GameSession _client;
 	
-	public OnPlayerRestore(int objectId, String name, GameSession client)
+	public OnPlayerRestore(int objectId, string name, GameSession client)
 	{
 		_objectId = objectId;
 		_name = name;
@@ -24,7 +24,7 @@ public class OnPlayerRestore: EventBase
 		return _objectId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

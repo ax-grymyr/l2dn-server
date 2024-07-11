@@ -4,10 +4,10 @@ namespace L2Dn.GameServer.Model.ItemAuction;
 
 public class AuctionDateGenerator
 {
-	public const String FIELD_INTERVAL = "interval";
-	public const String FIELD_DAY_OF_WEEK = "day_of_week";
-	public const String FIELD_HOUR_OF_DAY = "hour_of_day";
-	public const String FIELD_MINUTE_OF_HOUR = "minute_of_hour";
+	public const string FIELD_INTERVAL = "interval";
+	public const string FIELD_DAY_OF_WEEK = "day_of_week";
+	public const string FIELD_HOUR_OF_DAY = "hour_of_day";
+	public const string FIELD_MINUTE_OF_HOUR = "minute_of_hour";
 	
 	private DateTime _calendar;
 	

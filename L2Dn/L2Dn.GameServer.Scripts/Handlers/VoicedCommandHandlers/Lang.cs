@@ -12,12 +12,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
 
 public class Lang: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"lang"
 	};
 	
-	public bool useVoicedCommand(String command, Player activeChar, String @params)
+	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (!Config.MULTILANG_ENABLE || !Config.MULTILANG_VOICED_ALLOW)
 		{
@@ -27,7 +27,7 @@ public class Lang: IVoicedCommandHandler
 		if (@params == null)
 		{
 			StringBuilder html = new StringBuilder(100);
-			foreach (String lang in Config.MULTILANG_ALLOWED)
+			foreach (string lang in Config.MULTILANG_ALLOWED)
             {
                 html.Append("<button value=\"" + lang.toUpperCase() + "\" action=\"bypass -h voice .lang " + lang +
                     "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><br>");
@@ -43,7 +43,7 @@ public class Lang: IVoicedCommandHandler
 		StringTokenizer st = new StringTokenizer(@params);
 		if (st.hasMoreTokens())
 		{
-			String lang = st.nextToken().Trim();
+			string lang = st.nextToken().Trim();
 			if (activeChar.setLang(lang))
 			{
                 HtmlContent msg = HtmlContent.LoadFromFile("html/mods/Lang/Ok.htm", null);
@@ -67,7 +67,7 @@ public class Lang: IVoicedCommandHandler
 		return false;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

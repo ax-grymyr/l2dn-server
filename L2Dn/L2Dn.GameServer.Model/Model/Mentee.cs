@@ -11,7 +11,7 @@ public class Mentee
     private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Mentee));
 	
     private readonly int _objectId;
-    private String _name;
+    private string _name;
     private CharacterClass _classId;
     private int _currentLevel;
 	
@@ -55,7 +55,7 @@ public class Mentee
         return _objectId;
     }
 	
-    public String getName()
+    public string getName()
     {
         return _name;
     }

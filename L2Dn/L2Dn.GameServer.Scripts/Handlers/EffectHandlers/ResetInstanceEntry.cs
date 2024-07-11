@@ -17,11 +17,11 @@ public class ResetInstanceEntry: AbstractEffect
 	
 	public ResetInstanceEntry(StatSet @params)
 	{
-		String instanceIds = @params.getString("instanceId", null);
+		string instanceIds = @params.getString("instanceId", null);
 		if (!string.IsNullOrEmpty(instanceIds))
 		{
 			_instanceId = new();
-			foreach (String id in instanceIds.Split(";"))
+			foreach (string id in instanceIds.Split(";"))
 			{
 				_instanceId.add(int.Parse(id));
 			}
@@ -42,7 +42,7 @@ public class ResetInstanceEntry: AbstractEffect
 		foreach (int instanceId in _instanceId)
 		{
 			InstanceManager.getInstance().deleteInstanceTime(effector.getActingPlayer(), instanceId);
-			String instanceName = InstanceManager.getInstance().getInstanceName(instanceId);
+			string instanceName = InstanceManager.getInstance().getInstanceName(instanceId);
 			effector.sendMessage(instanceName + " entry has been reset.");
 		}
 	}

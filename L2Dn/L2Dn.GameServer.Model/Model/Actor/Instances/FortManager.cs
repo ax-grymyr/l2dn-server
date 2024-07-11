@@ -43,7 +43,7 @@ public class FortManager: Merchant
 		player.sendPacket(html);
 	}
 
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		// BypassValidation Exploit plug.
 		if (player.getLastFolkNPC().getObjectId() != getObjectId())
@@ -63,8 +63,8 @@ public class FortManager: Merchant
 		else if (condition == COND_OWNER)
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
-			String actualCommand = st.nextToken(); // Get actual command
-			String val = "";
+			string actualCommand = st.nextToken(); // Get actual command
+			string val = "";
 			if (st.countTokens() >= 1)
 			{
 				val = st.nextToken();
@@ -653,11 +653,11 @@ public class FortManager: Merchant
 						{
 							HtmlContent htmlContent =
 								HtmlContent.LoadFromFile("html/fortress/edit_recovery.htm", player);
-							String hp =
+							string hp =
 								"[<a action=\"bypass -h npc_%objectId%_manage recovery edit_hp 300\">300%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_hp 400\">400%</a>]";
-							String exp =
+							string exp =
 								"[<a action=\"bypass -h npc_%objectId%_manage recovery edit_exp 45\">45%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_exp 50\">50%</a>]";
-							String mp =
+							string mp =
 								"[<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 40\">40%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 50\">50%</a>]";
 							if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
 							{
@@ -938,9 +938,9 @@ public class FortManager: Merchant
 						{
 							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/edit_other.htm", player);
 
-							String tele =
+							string tele =
 								"[<a action=\"bypass -h npc_%objectId%_manage other edit_tele 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_tele 2\">Level 2</a>]";
-							String support =
+							string support =
 								"[<a action=\"bypass -h npc_%objectId%_manage other edit_support 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_support 2\">Level 2</a>]";
 							if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
 							{
@@ -1114,7 +1114,7 @@ public class FortManager: Merchant
 	public override void showChatWindow(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		String filename = "html/fortress/foreman-no.htm";
+		string filename = "html/fortress/foreman-no.htm";
 
 		int condition = validateCondition(player);
 		if (condition > COND_ALL_FALSE)

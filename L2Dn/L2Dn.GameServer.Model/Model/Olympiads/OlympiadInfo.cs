@@ -8,15 +8,15 @@ namespace L2Dn.GameServer.Model.Olympiads;
  */
 public class OlympiadInfo
 {
-	private readonly String _name;
-	private readonly String _clan;
+	private readonly string _name;
+	private readonly string _clan;
 	private readonly int? _clanId;
 	private readonly CharacterClass _classId;
 	private readonly int _dmg;
 	private readonly int _curPoints;
 	private readonly int _diffPoints;
 
-	public OlympiadInfo(String name, String clan, int? clanId, CharacterClass classId, int dmg, int curPoints, int diffPoints)
+	public OlympiadInfo(string name, string clan, int? clanId, CharacterClass classId, int dmg, int curPoints, int diffPoints)
 	{
 		_name = name;
 		_clan = clan;
@@ -30,7 +30,7 @@ public class OlympiadInfo
 	/**
 	 * @return the name the player's name.
 	 */
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}
@@ -38,7 +38,7 @@ public class OlympiadInfo
 	/**
 	 * @return the name the player's clan name.
 	 */
-	public String getClanName()
+	public string getClanName()
 	{
 		return _clan;
 	}

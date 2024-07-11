@@ -8,12 +8,12 @@ namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
  */
 public class OnNpcEventReceived: EventBase
 {
-	private readonly String _eventName;
+	private readonly string _eventName;
 	private readonly Npc _sender;
 	private readonly Npc _receiver;
 	private readonly WorldObject _reference;
 	
-	public OnNpcEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
+	public OnNpcEventReceived(string eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		_eventName = eventName;
 		_sender = sender;
@@ -21,7 +21,7 @@ public class OnNpcEventReceived: EventBase
 		_reference = reference;
 	}
 	
-	public String getEventName()
+	public string getEventName()
 	{
 		return _eventName;
 	}

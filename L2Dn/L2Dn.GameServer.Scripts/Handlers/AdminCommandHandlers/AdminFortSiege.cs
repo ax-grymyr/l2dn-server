@@ -31,9 +31,9 @@ public class AdminFortSiege: IAdminCommandHandler
 		"admin_removefort"
 	};
 	
-	public bool useAdminCommand(String commandValue, Player activeChar)
+	public bool useAdminCommand(string commandValue, Player activeChar)
 	{
-		String command = commandValue;
+		string command = commandValue;
 		StringTokenizer st = new StringTokenizer(command, " ");
 		command = st.nextToken(); // Get actual command
 		
@@ -162,7 +162,7 @@ public class AdminFortSiege: IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

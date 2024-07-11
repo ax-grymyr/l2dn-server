@@ -437,7 +437,7 @@ public class Party : AbstractPlayerGroup
 	 * @param name player the player to be removed from the party.
 	 * @param type the message type {@link PartyMessageType}.
 	 */
-	public void removePartyMember(String name, PartyMessageType type)
+	public void removePartyMember(string name, PartyMessageType type)
 	{
 		removePartyMember(getPlayerByName(name), type);
 	}
@@ -588,7 +588,7 @@ public class Party : AbstractPlayerGroup
 	 * Change party leader (used for string arguments)
 	 * @param name the name of the player to set as the new party leader
 	 */
-	public void changePartyLeader(String name)
+	public void changePartyLeader(string name)
 	{
 		setLeader(getPlayerByName(name));
 	}
@@ -635,7 +635,7 @@ public class Party : AbstractPlayerGroup
 	 * @param name
 	 * @return
 	 */
-	private Player getPlayerByName(String name)
+	private Player getPlayerByName(string name)
 	{
 		foreach (Player member in _members)
 		{

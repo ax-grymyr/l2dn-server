@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnItemCreate: EventBase
 {
-	private readonly String _process;
+	private readonly string _process;
 	private readonly Item _item;
 	private readonly Creature _creature;
-	private readonly Object _reference;
+	private readonly object _reference;
 	
-	public OnItemCreate(String process, Item item, Creature actor, Object reference)
+	public OnItemCreate(string process, Item item, Creature actor, object reference)
 	{
 		_process = process;
 		_item = item;
@@ -22,7 +22,7 @@ public class OnItemCreate: EventBase
 		_reference = reference;
 	}
 	
-	public String getProcess()
+	public string getProcess()
 	{
 		return _process;
 	}
@@ -37,7 +37,7 @@ public class OnItemCreate: EventBase
 		return _creature;
 	}
 	
-	public Object getReference()
+	public object getReference()
 	{
 		return _reference;
 	}

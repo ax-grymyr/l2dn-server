@@ -298,7 +298,7 @@ public class OfflineTraderTable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int traderId = trader.getObjectId();
-			String title = null;
+			string title = null;
 			ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == traderId).ExecuteDelete();
 
 			// Trade is done - clear info

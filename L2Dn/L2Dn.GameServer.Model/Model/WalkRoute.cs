@@ -16,7 +16,7 @@ public class WalkRoute
         _repeatWalk = (_repeatType >= 0) && (_repeatType <= 2) && repeat;
     }
 	
-    public String getName()
+    public string getName()
     {
         return _name;
     }

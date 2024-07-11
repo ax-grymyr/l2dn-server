@@ -33,7 +33,7 @@ public class NpcViewMod: IBypassHandler
 	
 	private const int DROP_LIST_ITEMS_PER_PAGE = 10;
 	
-	public bool useBypass(String command, Player player, Creature bypassOrigin)
+	public bool useBypass(string command, Player player, Creature bypassOrigin)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
@@ -44,7 +44,7 @@ public class NpcViewMod: IBypassHandler
 			return false;
 		}
 		
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		switch (actualCommand.toLowerCase())
 		{
 			case "view":
@@ -83,7 +83,7 @@ public class NpcViewMod: IBypassHandler
 					return false;
 				}
 				
-				String dropListTypeString = st.nextToken();
+				string dropListTypeString = st.nextToken();
 				try
 				{
 					DropType dropListType = Enum.Parse<DropType>(dropListTypeString);
@@ -168,7 +168,7 @@ public class NpcViewMod: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}
@@ -287,7 +287,7 @@ public class NpcViewMod: IBypassHandler
 		player.sendPacket(html);
 	}
 	
-	private static String getDropListButtons(Npc npc)
+	private static string getDropListButtons(Npc npc)
 	{
 		StringBuilder sb = new StringBuilder();
 		List<DropGroupHolder> dropListGroups = npc.getTemplate().getDropGroups();
@@ -388,7 +388,7 @@ public class NpcViewMod: IBypassHandler
 		double spoilRateEffectBonus = player.getStat().getMul(Stat.BONUS_SPOIL_RATE, 1);
 		StringBuilder leftSb = new StringBuilder();
 		StringBuilder rightSb = new StringBuilder();
-		String limitReachedMsg = "";
+		string limitReachedMsg = "";
 		for (int i = start; i < end; i++)
 		{
 			StringBuilder sb = new StringBuilder();

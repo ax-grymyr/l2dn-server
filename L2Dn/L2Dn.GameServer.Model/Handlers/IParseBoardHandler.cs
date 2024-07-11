@@ -14,11 +14,11 @@ public interface IParseBoardHandler
 	 * @param player the player
 	 * @return
 	 */
-	bool parseCommunityBoardCommand(String command, Player player);
+	bool parseCommunityBoardCommand(string command, Player player);
 	
 	/**
 	 * Gets the community board commands.
 	 * @return the community board commands
 	 */
-	String[] getCommunityBoardCommands();
+	string[] getCommunityBoardCommands();
 }

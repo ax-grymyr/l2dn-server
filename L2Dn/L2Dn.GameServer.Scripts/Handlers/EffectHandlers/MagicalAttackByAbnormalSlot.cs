@@ -22,11 +22,11 @@ public class MagicalAttackByAbnormalSlot: AbstractEffect
 	{
 		_power = @params.getDouble("power", 0);
 		
-		String abnormals = @params.getString("abnormalType", null);
+		string abnormals = @params.getString("abnormalType", null);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
 			_abnormals = new();
-			foreach (String slot in abnormals.Split(";"))
+			foreach (string slot in abnormals.Split(";"))
 			{
 				if (Enum.TryParse(slot, out AbnormalType val))
 					_abnormals.add(val);

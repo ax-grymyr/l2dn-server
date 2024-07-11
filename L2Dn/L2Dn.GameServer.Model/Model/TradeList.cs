@@ -20,7 +20,7 @@ public class TradeList
 	private readonly Player _owner;
 	private Player _partner;
 	private readonly Set<TradeItem> _items = new();
-	private String _title;
+	private string _title;
 	private bool _packaged;
 	
 	private bool _confirmed = false;

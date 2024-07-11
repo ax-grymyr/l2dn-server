@@ -12,9 +12,9 @@ public class MacroCmd
     private readonly MacroType _type;
     private readonly int _d1; // skill_id or page for shortcuts
     private readonly int _d2; // shortcut
-    private readonly String _cmd;
+    private readonly string _cmd;
 	
-    public MacroCmd(int entry, MacroType type, int d1, int d2, String cmd)
+    public MacroCmd(int entry, MacroType type, int d1, int d2, string cmd)
     {
         _entry = entry;
         _type = type;
@@ -63,7 +63,7 @@ public class MacroCmd
      * Gets the command.
      * @return the command
      */
-    public String getCmd()
+    public string getCmd()
     {
         return _cmd;
     }

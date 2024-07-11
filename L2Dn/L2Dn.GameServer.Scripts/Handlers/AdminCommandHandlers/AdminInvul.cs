@@ -19,7 +19,7 @@ public class AdminInvul: IAdminCommandHandler
 		"admin_setundying"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_invul"))
 		{
@@ -51,14 +51,14 @@ public class AdminInvul: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
 	private void handleInvul(Player activeChar)
 	{
-		String text;
+		string text;
 		if (activeChar.isInvul())
 		{
 			activeChar.setInvul(false);
@@ -74,7 +74,7 @@ public class AdminInvul: IAdminCommandHandler
 	
 	private void handleUndying(Player activeChar, Creature target)
 	{
-		String text;
+		string text;
 		if (target.isUndying())
 		{
 			target.setUndying(false);

@@ -20,7 +20,7 @@ public class SoulEating: AbstractEffect
 {
 	private readonly SoulType _type;
 	private readonly int _expNeeded;
-	private readonly Double _maxSouls;
+	private readonly double _maxSouls;
 	
 	public SoulEating(StatSet @params)
 	{

@@ -20,7 +20,7 @@ public class AttackAttribute: AbstractEffect
 	public AttackAttribute(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
-		String attributes = @params.getString("attribute", "FIRE");
+		string attributes = @params.getString("attribute", "FIRE");
 		if (attributes.contains(","))
 		{
 			_singleStat = null;

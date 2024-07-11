@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Holders;
 public class TimedHuntingZoneHolder
 {
 	private readonly int _id;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly int _initialTime;
 	private readonly int _maximumAddedTime;
 	private readonly TimeSpan _resetDelay;
@@ -30,7 +30,7 @@ public class TimedHuntingZoneHolder
 	private readonly Location3D? _exitLocation;
 	private readonly ImmutableArray<MapHolder> _maps;
 
-	public TimedHuntingZoneHolder(int id, String name, int initialTime, int maximumAddedTime, TimeSpan resetDelay,
+	public TimedHuntingZoneHolder(int id, string name, int initialTime, int maximumAddedTime, TimeSpan resetDelay,
 		int entryItemId, int entryFee, int minLevel, int maxLevel, int remainRefillTime, int refillTimeMax,
 		bool pvpZone, bool noPvpZone, int instanceId, bool soloInstance, bool weekly, bool useWorldPrefix,
 		bool zonePremiumUserOnly, ImmutableArray<Location3D> enterLocations, Location3D? exitLocation)
@@ -73,7 +73,7 @@ public class TimedHuntingZoneHolder
 		return _id;
 	}
 
-	public String getZoneName()
+	public string getZoneName()
 	{
 		return _name;
 	}

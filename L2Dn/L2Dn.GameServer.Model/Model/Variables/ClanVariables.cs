@@ -9,8 +9,8 @@ public class ClanVariables: AbstractVariables<DbClanVariable>
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanVariables));
 	
 	// Public variable names.
-	public const String CONTRIBUTION = "CONTRIBUTION_";
-	public const String CONTRIBUTION_WEEKLY = "CONTRIBUTION_WEEKLY_";
+	public const string CONTRIBUTION = "CONTRIBUTION_";
+	public const string CONTRIBUTION_WEEKLY = "CONTRIBUTION_WEEKLY_";
 	
 	private readonly int _objectId;
 	

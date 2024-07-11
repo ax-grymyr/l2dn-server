@@ -7,7 +7,7 @@ public class TaskShutdown : Task
 {
 	private const string NAME = "shutdown";
 	
-	public override String getName()
+	public override string getName()
 	{
 		return NAME;
 	}

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminSuperHaste: IAdminCommandHandler
 {
-	public static readonly String[] ADMIN_COMMANDS =
+	public static readonly string[] ADMIN_COMMANDS =
 	{
 		"admin_superhaste",
 		"admin_superhaste_menu",
@@ -23,10 +23,10 @@ public class AdminSuperHaste: IAdminCommandHandler
 	
 	private static int SUPER_HASTE_ID = 7029;
 	
-	public bool useAdminCommand(String command, Player player)
+	public bool useAdminCommand(string command, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_superhaste":
@@ -66,7 +66,7 @@ public class AdminSuperHaste: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct AskJoinPledgePacket: IOutgoingPacket
 {
     private readonly Player _requestor;
-    private readonly String _pledgeName;
+    private readonly string _pledgeName;
 	
-    public AskJoinPledgePacket(Player requestor, String pledgeName)
+    public AskJoinPledgePacket(Player requestor, string pledgeName)
     {
         _requestor = requestor;
         _pledgeName = pledgeName;

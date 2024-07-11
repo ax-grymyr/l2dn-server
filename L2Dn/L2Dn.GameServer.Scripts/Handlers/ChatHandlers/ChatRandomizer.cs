@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
  */
 class ChatRandomizer
 {
-	public static String randomize(String text)
+	public static string randomize(string text)
 	{
 		StringBuilder textOut = new StringBuilder();
 		foreach (char c in text)

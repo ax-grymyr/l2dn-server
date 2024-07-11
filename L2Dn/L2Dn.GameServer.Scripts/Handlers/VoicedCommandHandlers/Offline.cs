@@ -11,12 +11,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
  */
 public class Offline: IVoicedCommandHandler
 {
-	private static readonly String[] VOICED_COMMANDS =
+	private static readonly string[] VOICED_COMMANDS =
 	{
 		"offline"
 	};
 	
-	public bool useVoicedCommand(String command, Player player, String target)
+	public bool useVoicedCommand(string command, Player player, string target)
 	{
 		if (command.equals("offline") && Config.ENABLE_OFFLINE_COMMAND && (Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE))
 		{
@@ -39,7 +39,7 @@ public class Offline: IVoicedCommandHandler
 		return true;
 	}
 	
-	public String[] getVoicedCommandList()
+	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

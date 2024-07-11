@@ -22,8 +22,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
  */
 public class DropSearchBoard: IParseBoardHandler
 {
-	private const String NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
-	private static readonly String[] COMMAND =
+	private const string NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
+	private static readonly string[] COMMAND =
 	{
 		"_bbs_search_item",
 		"_bbs_search_drop",
@@ -56,7 +56,7 @@ public class DropSearchBoard: IParseBoardHandler
 		/**
 		 * only for debug
 		 */
-		public override String ToString()
+		public override string ToString()
 		{
 			return "DropHolder [itemId=" + itemId + ", npcId=" + npcId + ", npcLevel=" + npcLevel + ", min=" + min + ", max=" + max + ", chance=" + chance + ", isSpoil=" + isSpoil + "]";
 		}
@@ -123,19 +123,19 @@ public class DropSearchBoard: IParseBoardHandler
 		dropList.Add(new CBDropHolder(npcTemplate, dropHolder));
 	}
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
     {
-        String? navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
-		String[] @params = command.Split(" ");
-        String? html = HtmCache.getInstance()
+        string? navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
+		string[] @params = command.Split(" ");
+        string? html = HtmCache.getInstance()
             .getHtm("html/CommunityBoard/Custom/dropsearch/main.html", player.getLang());
         
 		switch (@params[0])
 		{
 			case "_bbs_search_item":
 			{
-				String itemName = buildItemName(@params);
-				String result = buildItemSearchResult(itemName);
+				string itemName = buildItemName(@params);
+				string result = buildItemSearchResult(itemName);
 				html = html.Replace("%searchResult%", result);
 				break;
 			}
@@ -321,7 +321,7 @@ public class DropSearchBoard: IParseBoardHandler
 	 * @param itemName
 	 * @return
 	 */
-	private String buildItemSearchResult(String itemName)
+	private string buildItemSearchResult(string itemName)
 	{
 		int limit = 0;
 		List<ItemTemplate> items = new();
@@ -367,7 +367,7 @@ public class DropSearchBoard: IParseBoardHandler
 				builder.Append("<tr>");
 			}
 			
-			String icon = item.getIcon();
+			string icon = item.getIcon();
 			if (icon == null)
 			{
 				icon = "icon.etc_question_mark_i00";
@@ -407,12 +407,12 @@ public class DropSearchBoard: IParseBoardHandler
 	 * @param params
 	 * @return
 	 */
-	private String buildItemName(String[] @params)
+	private string buildItemName(string[] @params)
     {
         return string.Join(" ", @params);
 	}
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
 		return COMMAND;
 	}

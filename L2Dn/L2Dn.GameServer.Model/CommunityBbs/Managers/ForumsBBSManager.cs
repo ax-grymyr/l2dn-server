@@ -64,7 +64,7 @@ public class ForumsBBSManager: BaseBBSManager
 		}
 	}
 	
-	public override void parsecmd(String command, Player player)
+	public override void parsecmd(string command, Player player)
 	{
 	}
 	
@@ -73,7 +73,7 @@ public class ForumsBBSManager: BaseBBSManager
 	 * @param name the forum name
 	 * @return the forum by name
 	 */
-	public Forum getForumByName(String name)
+	public Forum getForumByName(string name)
 	{
 		foreach (Forum f in _table)
 		{
@@ -94,7 +94,7 @@ public class ForumsBBSManager: BaseBBSManager
 	 * @param oid the oid
 	 * @return the new forum
 	 */
-	public Forum createNewForum(String name, Forum parent, int type, int perm, int oid)
+	public Forum createNewForum(string name, Forum parent, int type, int perm, int oid)
 	{
 		Forum forum = new Forum(name, parent, type, perm, oid);
 		forum.insertIntoDb();
@@ -127,7 +127,7 @@ public class ForumsBBSManager: BaseBBSManager
 		return null;
 	}
 	
-	public override void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player player)
+	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 	}
 	

@@ -20,13 +20,13 @@ public class SchemeBuffer : Npc
 	{
 	}
 	
-	public override void onBypassFeedback(Player player, String commandValue)
+	public override void onBypassFeedback(Player player, string commandValue)
 	{
 		// Simple hack to use createscheme bypass with a space.
-		String command = commandValue.Replace("createscheme ", "createscheme;");
+		string command = commandValue.Replace("createscheme ", "createscheme;");
 		
 		StringTokenizer st = new StringTokenizer(command, ";");
-		String currentCommand = st.nextToken();
+		string currentCommand = st.nextToken();
 		if (currentCommand.startsWith("menu"))
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
@@ -73,7 +73,7 @@ public class SchemeBuffer : Npc
 		}
 		else if (currentCommand.startsWith("givebuffs"))
 		{
-			String schemeName = st.nextToken();
+			string schemeName = st.nextToken();
 			int cost = int.Parse(st.nextToken());
 			bool buffSummons = st.hasMoreTokens() && st.nextToken().equalsIgnoreCase("pet");
 			if (buffSummons && (player.getPet() == null) && !player.hasServitors())
@@ -106,8 +106,8 @@ public class SchemeBuffer : Npc
 		}
 		else if (currentCommand.startsWith("skill"))
 		{
-			String groupType = st.nextToken();
-			String schemeName = st.nextToken();
+			string groupType = st.nextToken();
+			string schemeName = st.nextToken();
 			int skillId = int.Parse(st.nextToken());
 			int page = int.Parse(st.nextToken());
 			List<int> skills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
@@ -148,7 +148,7 @@ public class SchemeBuffer : Npc
 		{
 			try
 			{
-				String schemeName = st.nextToken().Trim();
+				string schemeName = st.nextToken().Trim();
 				if (schemeName.Length > 14)
 				{
 					player.sendMessage("Scheme's name must contain up to 14 chars.");
@@ -162,7 +162,7 @@ public class SchemeBuffer : Npc
 					return;
 				}
 
-				Map<String, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
 				if (schemes != null)
 				{
 					if (schemes.Count == Config.BUFFER_MAX_SCHEMES)
@@ -190,8 +190,8 @@ public class SchemeBuffer : Npc
 		{
 			try
 			{
-				String schemeName = st.nextToken();
-				Map<String, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+				string schemeName = st.nextToken();
+				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
 				if ((schemes != null) && schemes.containsKey(schemeName))
 				{
 					schemes.remove(schemeName);
@@ -205,9 +205,9 @@ public class SchemeBuffer : Npc
 		}
 	}
 	
-	public override String getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player player)
 	{
-		String filename = "";
+		string filename = "";
 		if (value == 0)
 		{
 			filename = npcId.ToString(CultureInfo.InvariantCulture);
@@ -226,7 +226,7 @@ public class SchemeBuffer : Npc
 	private void showGiveBuffsWindow(Player player)
 	{
 		StringBuilder sb = new StringBuilder(200);
-		Map<String, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+		Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
 		if ((schemes == null) || schemes.isEmpty())
 		{
 			sb.Append("<font color=\"LEVEL\">You haven't defined any scheme.</font>");
@@ -263,7 +263,7 @@ public class SchemeBuffer : Npc
 	 * @param schemeName : The scheme to make check.
 	 * @param page The page.
 	 */
-	private void showEditSchemeWindow(Player player, String groupType, String schemeName, int page)
+	private void showEditSchemeWindow(Player player, string groupType, string schemeName, int page)
 	{
 		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
 
@@ -287,7 +287,7 @@ public class SchemeBuffer : Npc
 	 * @param pageValue The page.
 	 * @return a String representing skills available to selection for a given groupType.
 	 */
-	private String getGroupSkillList(Player player, String groupType, String schemeName, int pageValue)
+	private string getGroupSkillList(Player player, string groupType, string schemeName, int pageValue)
 	{
 		// Retrieve the entire skills list based on group type.
 		List<int> skills = SchemeBufferTable.getInstance().getSkillsIdsByType(groupType);
@@ -372,13 +372,13 @@ public class SchemeBuffer : Npc
 	 * @param schemeName : The scheme to make check.
 	 * @return a string representing all groupTypes available. The group currently on selection isn't linkable.
 	 */
-	private static String getTypesFrame(String groupType, String schemeName)
+	private static string getTypesFrame(string groupType, string schemeName)
 	{
 		StringBuilder sb = new StringBuilder(500);
 		sb.Append("<table>");
 		
 		int count = 0;
-		foreach (String type in SchemeBufferTable.getInstance().getSkillTypes())
+		foreach (string type in SchemeBufferTable.getInstance().getSkillTypes())
 		{
 			if (count == 0)
 			{

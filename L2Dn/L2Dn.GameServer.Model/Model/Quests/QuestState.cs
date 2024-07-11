@@ -20,14 +20,14 @@ public class QuestState
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(QuestState));
 	
 	// Constants
-	private const String COND_VAR = "cond";
-	private const String COUNT_VAR = "count";
-	private const String RESTART_VAR = "restartTime";
-	private const String MEMO_VAR = "memoState";
-	private const String MEMO_EX_VAR = "memoStateEx";
+	private const string COND_VAR = "cond";
+	private const string COUNT_VAR = "count";
+	private const string RESTART_VAR = "restartTime";
+	private const string MEMO_VAR = "memoState";
+	private const string MEMO_EX_VAR = "memoStateEx";
 	
 	/** The name of the quest of this QuestState */
-	private readonly String _questName;
+	private readonly string _questName;
 	
 	/** The "owner" of this QuestState object */
 	private readonly Player _player;
@@ -42,7 +42,7 @@ public class QuestState
 	private bool _simulated = false;
 	
 	/** A map of key=>value pairs containing the quest state variables and their values */
-	private Map<String, String> _vars;
+	private Map<string, string> _vars;
 	
 	/**
 	 * bool flag letting QuestStateManager know to exit quest when cleaning up
@@ -66,7 +66,7 @@ public class QuestState
 	/**
 	 * @return the name of the quest of this QuestState
 	 */
-	public String getQuestName()
+	public string getQuestName()
 	{
 		return _questName;
 	}
@@ -173,7 +173,7 @@ public class QuestState
 	 * @param variable String pointing out the name of the variable for quest
 	 * @param value String pointing out the value of the variable for quest
 	 */
-	public void setInternal(String variable, String value)
+	public void setInternal(string variable, string value)
 	{
 		if (_simulated)
 		{
@@ -206,7 +206,7 @@ public class QuestState
 		_vars.put(variable, value);
 	}
 	
-	public void set(String variable, int value)
+	public void set(string variable, int value)
 	{
 		if (_simulated)
 		{
@@ -230,7 +230,7 @@ public class QuestState
 	 * @param variable String indicating the name of the variable for quest
 	 * @param value String indicating the value of the variable for quest
 	 */
-	public void set(String variable, String value)
+	public void set(string variable, string value)
 	{
 		if (_simulated)
 		{
@@ -242,13 +242,13 @@ public class QuestState
 			_vars = new();
 		}
 		
-		String newValue = value;
+		string newValue = value;
 		if (newValue == null)
 		{
 			newValue = "";
 		}
 		
-		String old = _vars.put(variable, newValue);
+		string old = _vars.put(variable, newValue);
 		if (old != null)
 		{
 			Quest.updateQuestVarInDb(this, variable, newValue);
@@ -384,7 +384,7 @@ public class QuestState
 	 * Removes a quest variable from the list of existing quest variables.
 	 * @param variable the name of the variable to remove
 	 */
-	public void unset(String variable)
+	public void unset(string variable)
 	{
 		if (_simulated)
 		{
@@ -396,7 +396,7 @@ public class QuestState
 			return;
 		}
 		
-		String old = _vars.remove(variable);
+		string old = _vars.remove(variable);
 		if (old != null)
 		{
 			if (COND_VAR.Equals(variable))
@@ -412,7 +412,7 @@ public class QuestState
 	 * @param variable the name of the variable to get
 	 * @return the value of the variable from the list of quest variables
 	 */
-	public String get(String variable)
+	public string get(string variable)
 	{
 		if (_vars == null)
 		{
@@ -426,14 +426,14 @@ public class QuestState
 	 * @param variable the name of the variable to get
 	 * @return the integer value of the variable or 0 if the variable does not exist or its value is not an integer
 	 */
-	public int getInt(String variable)
+	public int getInt(string variable)
 	{
 		if (_vars == null)
 		{
 			return 0;
 		}
 		
-		String varStr = _vars.get(variable);
+		string varStr = _vars.get(variable);
 		if (string.IsNullOrEmpty(varStr))
 		{
 			return 0;
@@ -537,7 +537,7 @@ public class QuestState
 	 * @see #getInt(String)
 	 * @see #getCond()
 	 */
-	public bool isSet(String variable)
+	public bool isSet(string variable)
 	{
 		return get(variable) != null;
 	}
@@ -888,7 +888,7 @@ public class QuestState
 	 */
 	public bool isNowAvailable()
 	{
-		String val = get(RESTART_VAR);
+		string val = get(RESTART_VAR);
 		return (val != null) && (new DateTime(long.Parse(val)) <= DateTime.Now);
 	}
 	

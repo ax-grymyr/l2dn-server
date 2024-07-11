@@ -2,6 +2,6 @@
 
 public interface IHtmlStyle
 {
-    String applyBypass(String bypass, String name, bool isEnabled);
-    String applySeparator();
+    string applyBypass(string bypass, string name, bool isEnabled);
+    string applySeparator();
 }

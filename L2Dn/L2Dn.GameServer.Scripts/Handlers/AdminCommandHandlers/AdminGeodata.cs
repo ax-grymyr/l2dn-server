@@ -47,10 +47,10 @@ public class AdminGeodata: IAdminCommandHandler
 		"admin_ge"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		switch (actualCommand.toLowerCase())
 		{
 			case "admin_geo_pos":
@@ -178,7 +178,7 @@ public class AdminGeodata: IAdminCommandHandler
 				
 				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-				String fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
+				string fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
 				IRegion region = GeoEngine.getInstance().getRegion(GeoEngine.getGeoX(activeChar.getX()), GeoEngine.getGeoY(activeChar.getY()));
 				if (region is NullRegion)
 				{
@@ -222,7 +222,7 @@ public class AdminGeodata: IAdminCommandHandler
 						{
 							int x = ((worldX - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 							int y = ((worldY - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-							String fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
+							string fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
 							if (region.saveToFile(fileName))
 							{
 								BuilderUtil.sendSysMessage(activeChar, "Saved region " + x + "_" + y + " at " + fileName);
@@ -395,7 +395,7 @@ public class AdminGeodata: IAdminCommandHandler
 			}
 			case "admin_geoedit":
 			{
-				String content = HtmCache.getInstance().getHtm("html/admin/geoedit.htm", activeChar.getLang());
+				string content = HtmCache.getInstance().getHtm("html/admin/geoedit.htm", activeChar.getLang());
 				
 				// Follow player heading.
 				int direction = getPlayerDirection(activeChar);
@@ -497,7 +497,7 @@ public class AdminGeodata: IAdminCommandHandler
 					break;
 				}
 				
-				String content = HtmCache.getInstance().getHtm("html/admin/geoedit_cell.htm", activeChar.getLang());
+				string content = HtmCache.getInstance().getHtm("html/admin/geoedit_cell.htm", activeChar.getLang());
 				
 				// Follow player heading.
 				int direction = getPlayerDirection(activeChar);
@@ -630,7 +630,7 @@ public class AdminGeodata: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

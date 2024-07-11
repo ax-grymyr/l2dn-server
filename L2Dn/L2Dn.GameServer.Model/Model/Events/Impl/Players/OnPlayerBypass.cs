@@ -9,9 +9,9 @@ namespace L2Dn.GameServer.Model.Events.Impl.Players;
 public class OnPlayerBypass: TerminateEventBase
 {
 	private readonly Player _player;
-	private readonly String _command;
+	private readonly string _command;
 	
-	public OnPlayerBypass(Player player, String command)
+	public OnPlayerBypass(Player player, string command)
 	{
 		_player = player;
 		_command = command;
@@ -22,7 +22,7 @@ public class OnPlayerBypass: TerminateEventBase
 		return _player;
 	}
 	
-	public String getCommand()
+	public string getCommand()
 	{
 		return _command;
 	}

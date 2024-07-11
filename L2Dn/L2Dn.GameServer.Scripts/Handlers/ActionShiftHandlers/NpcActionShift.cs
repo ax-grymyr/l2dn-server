@@ -93,7 +93,7 @@ public class NpcActionShift: IActionShiftHandler
 				NpcSpawnTemplate template = spawn.getNpcSpawnTemplate();
 				if (template != null)
 				{
-					String fileName = template.getSpawnTemplate().getFile().Replace('\\', '/');
+					string fileName = template.getSpawnTemplate().getFile().Replace('\\', '/');
 				
 					htmlContent.Replace("%spawnfile%", fileName.Replace("spawns/", ""));
 					htmlContent.Replace("%spawnname%", template.getSpawnTemplate().getName() ?? string.Empty);
@@ -140,10 +140,10 @@ public class NpcActionShift: IActionShiftHandler
 			
 			if (npc.hasAI())
 			{
-				Set<String> clans = NpcData.getInstance().getClansByIds(npc.getTemplate().getClans());
+				Set<string> clans = NpcData.getInstance().getClansByIds(npc.getTemplate().getClans());
 				Set<int> ignoreClanNpcIds = npc.getTemplate().getIgnoreClanNpcIds();
-				String clansString = !clans.isEmpty() ? string.Join(", ", clans) : "";
-				String ignoreClanNpcIdsString = ignoreClanNpcIds != null ? string.Join(", ", ignoreClanNpcIds) : "";
+				string clansString = !clans.isEmpty() ? string.Join(", ", clans) : "";
+				string ignoreClanNpcIdsString = ignoreClanNpcIds != null ? string.Join(", ", ignoreClanNpcIds) : "";
 				
 				htmlContent.Replace("%ai_intention%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Intention:</font></td><td align=right width=170>" + npc.getAI().getIntention() + "</td></tr></table></td></tr>");
 				htmlContent.Replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + npc.getAI().GetType().Name + "</td></tr></table></td></tr>");
@@ -160,7 +160,7 @@ public class NpcActionShift: IActionShiftHandler
 				htmlContent.Replace("%ai_enemy_clan%", "");
 			}
 			
-			String routeName = WalkingManager.getInstance().getRouteName(npc);
+			string routeName = WalkingManager.getInstance().getRouteName(npc);
 			if (!string.IsNullOrEmpty(routeName))
 			{
 				htmlContent.Replace("%route%", "<tr><td><table width=270 border=0><tr><td width=100><font color=LEVEL>Route:</font></td><td align=right width=170>" + routeName + "</td></tr></table></td></tr>");

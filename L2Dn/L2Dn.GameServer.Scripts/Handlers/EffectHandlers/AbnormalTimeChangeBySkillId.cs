@@ -23,10 +23,10 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 	{
 		_time = @params.getDouble("time", -1);
 		_mode = @params.getEnum("mode", StatModifierType.PER);
-		String skillIds = @params.getString("ids", null);
+		string skillIds = @params.getString("ids", null);
 		if (!string.IsNullOrEmpty(skillIds))
 		{
-			foreach (String id in skillIds.Split(","))
+			foreach (string id in skillIds.Split(","))
 			{
 				_skillIds.add(int.Parse(id));
 			}

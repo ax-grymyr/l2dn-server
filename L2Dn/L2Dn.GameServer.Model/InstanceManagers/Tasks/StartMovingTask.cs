@@ -10,9 +10,9 @@ namespace L2Dn.GameServer.InstanceManagers.Tasks;
 public class StartMovingTask: Runnable
 {
 	Npc _npc;
-	String _routeName;
+	string _routeName;
 	
-	public StartMovingTask(Npc npc, String routeName)
+	public StartMovingTask(Npc npc, string routeName)
 	{
 		_npc = npc;
 		_routeName = routeName;

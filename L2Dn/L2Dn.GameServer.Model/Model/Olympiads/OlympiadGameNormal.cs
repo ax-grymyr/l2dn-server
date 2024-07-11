@@ -493,7 +493,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		
 		try
 		{
-			String winner = "draw";
+			string winner = "draw";
 			
 			// Calculate Fight time
 			TimeSpan _fightTime = (DateTime.UtcNow - _startTime);
@@ -663,7 +663,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 	}
 	
-	public override String[] getPlayerNames()
+	public override string[] getPlayerNames()
 	{
 		return [_playerOne.getName(), _playerTwo.getName()];
 	}

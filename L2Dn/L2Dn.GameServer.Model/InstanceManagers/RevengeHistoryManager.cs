@@ -188,7 +188,7 @@ public class RevengeHistoryManager
 		}
 	}
 	
-	public void locateKiller(Player player, String killerName)
+	public void locateKiller(Player player, string killerName)
 	{
 		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
 		if (history == null)
@@ -274,7 +274,7 @@ public class RevengeHistoryManager
 		return true;
 	}
 	
-	public void teleportToKiller(Player player, String killerName)
+	public void teleportToKiller(Player player, string killerName)
 	{
 		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
 		if (history == null)
@@ -324,7 +324,7 @@ public class RevengeHistoryManager
 		}
 	}
 	
-	public void teleportToSharedKiller(Player player, String victimName, String killerName)
+	public void teleportToSharedKiller(Player player, string victimName, string killerName)
 	{
 		if (player.getName().equals(killerName))
 		{

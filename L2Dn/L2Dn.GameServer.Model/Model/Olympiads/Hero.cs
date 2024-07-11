@@ -38,16 +38,16 @@ public class Hero
 	private static readonly Map<int, StatSet> HERO_COUNTS = new();
 	private static readonly Map<int, List<StatSet>> HERO_FIGHTS = new();
 	private static readonly Map<int, List<StatSet>> HERO_DIARY = new();
-	private static readonly Map<int, String> HERO_MESSAGE = new();
+	private static readonly Map<int, string> HERO_MESSAGE = new();
 	
-	public const String COUNT = "count";
-	public const String LEGEND_COUNT = "legend_count";
-	public const String PLAYED = "played";
-	public const String CLAIMED = "claimed";
-	public const String CLAN_NAME = "clan_name";
-	public const String CLAN_CREST = "clan_crest";
-	public const String ALLY_NAME = "ally_name";
-	public const String ALLY_CREST = "ally_crest";
+	public const string COUNT = "count";
+	public const string LEGEND_COUNT = "legend_count";
+	public const string PLAYED = "played";
+	public const string CLAIMED = "claimed";
+	public const string CLAN_NAME = "clan_name";
+	public const string CLAN_CREST = "clan_crest";
+	public const string ALLY_NAME = "ally_name";
+	public const string ALLY_CREST = "ally_crest";
 	
 	public const int ACTION_RAID_KILLED = 1;
 	public const int ACTION_HERO_GAINED = 2;
@@ -159,8 +159,8 @@ public class Hero
 		{
 			int? clanId = record.ClanId;
 			int? allyId = record.AllyId;
-			String? clanName = null;
-			String? allyName = null;
+			string? clanName = null;
+			string? allyName = null;
 			int? clanCrest = null;
 			int? allyCrest = null;
 			if (clanId != null)
@@ -290,8 +290,8 @@ public class Hero
 					bool classed = record.Classed;
 					if (charId == charOneId)
 					{
-						String name = CharInfoTable.getInstance().getNameById(charTwoId);
-						String cls = ClassListData.getInstance().getClass(charTwoClass).getClientCode();
+						string name = CharInfoTable.getInstance().getNameById(charTwoId);
+						string cls = ClassListData.getInstance().getClass(charTwoClass).getClientCode();
 						if ((name != null) && (cls != null))
 						{
 							StatSet fight = new StatSet();
@@ -322,8 +322,8 @@ public class Hero
 					}
 					else if (charId == charTwoId)
 					{
-						String name = CharInfoTable.getInstance().getNameById(charOneId);
-						String cls = ClassListData.getInstance().getClass(charOneClass).getClientCode();
+						string name = CharInfoTable.getInstance().getNameById(charOneId);
+						string cls = ClassListData.getInstance().getClass(charOneClass).getClientCode();
 						if ((name != null) && (cls != null))
 						{
 							StatSet fight = new StatSet();
@@ -404,8 +404,8 @@ public class Hero
 		List<StatSet> mainList = HERO_DIARY.get(charid);
 		if (mainList != null)
 		{
-			String htmContent = HtmCache.getInstance().getHtm("html/olympiad/herodiary.htm", player.getLang());
-			String heroMessage = HERO_MESSAGE.get(charid);
+			string htmContent = HtmCache.getInstance().getHtm("html/olympiad/herodiary.htm", player.getLang());
+			string heroMessage = HERO_MESSAGE.get(charid);
 			if ((htmContent != null) && (heroMessage != null))
 			{
 				HtmlContent diaryReply = HtmlContent.LoadFromText(htmContent, player); 
@@ -490,7 +490,7 @@ public class Hero
 		List<StatSet> heroFights = HERO_FIGHTS.get(charid);
 		if (heroFights != null)
 		{
-			String htmContent = HtmCache.getInstance().getHtm("html/olympiad/herohistory.htm", player.getLang());
+			string htmContent = HtmCache.getInstance().getHtm("html/olympiad/herohistory.htm", player.getLang());
 			if (htmContent != null)
 			{
 				HtmlContent fightReply = HtmlContent.LoadFromText(htmContent, player); 
@@ -786,7 +786,7 @@ public class Hero
 	 * @param player the player instance
 	 * @param message String to set
 	 */
-	public void setHeroMessage(Player player, String message)
+	public void setHeroMessage(Player player, string message)
 	{
 		HERO_MESSAGE.put(player.getObjectId(), message);
 	}

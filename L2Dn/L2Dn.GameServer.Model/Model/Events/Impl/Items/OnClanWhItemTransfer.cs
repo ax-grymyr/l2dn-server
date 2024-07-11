@@ -10,13 +10,13 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnClanWhItemTransfer: EventBase
 {
-	private readonly String _process;
+	private readonly string _process;
 	private readonly Player _player;
 	private readonly Item _item;
 	private readonly long _count;
 	private readonly ItemContainer _container;
 	
-	public OnClanWhItemTransfer(String process, Player player, Item item, long count, ItemContainer container)
+	public OnClanWhItemTransfer(string process, Player player, Item item, long count, ItemContainer container)
 	{
 		_process = process;
 		_player = player;
@@ -25,7 +25,7 @@ public class OnClanWhItemTransfer: EventBase
 		_container = container;
 	}
 	
-	public String getProcess()
+	public string getProcess()
 	{
 		return _process;
 	}

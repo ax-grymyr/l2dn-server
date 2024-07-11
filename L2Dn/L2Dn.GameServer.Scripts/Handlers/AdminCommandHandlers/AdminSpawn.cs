@@ -48,7 +48,7 @@ public class AdminSpawn: IAdminCommandHandler
 		"admin_top_spawn_count"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_show_spawns"))
 		{
@@ -115,7 +115,7 @@ public class AdminSpawn: IAdminCommandHandler
 			try
 			{
 				st.nextToken();
-				String letter = st.nextToken();
+				string letter = st.nextToken();
 				int from = 0;
 				try
 				{
@@ -263,10 +263,10 @@ public class AdminSpawn: IAdminCommandHandler
 			try
 			{
 				st.nextToken();
-				String id = st.nextToken();
-				String x = st.nextToken();
-				String y = st.nextToken();
-				String z = st.nextToken();
+				string id = st.nextToken();
+				string x = st.nextToken();
+				string y = st.nextToken();
+				string z = st.nextToken();
 				int h = activeChar.getHeading();
 				if (st.hasMoreTokens())
 				{
@@ -288,17 +288,17 @@ public class AdminSpawn: IAdminCommandHandler
 				StringTokenizer st = new StringTokenizer(command, " ");
 				
 				// Get the first token (the command itself).
-				String cmd = st.nextToken();
+				string cmd = st.nextToken();
 				
 				// Get the second token (the NPC ID or name).
-				String npcId = st.nextToken();
+				string npcId = st.nextToken();
 				
 				// If the second token is not a digit, search for the NPC template by name.
 				if (!Util.isDigit(npcId))
 				{
 					// Initialize the variables.
 					StringBuilder searchParam = new StringBuilder();
-					String[] pars = command.Split(" ");
+					string[] pars = command.Split(" ");
 					NpcTemplate searchTemplate = null;
 					NpcTemplate template = null;
 					int pos = 1;
@@ -370,12 +370,12 @@ public class AdminSpawn: IAdminCommandHandler
 			try
 			{
 				// Split the command into an array of words.
-				String[] pars = command.Split(" ");
+				string[] pars = command.Split(" ");
 				StringBuilder searchParam = new StringBuilder();
 				int pos = -1;
 				
 				// Concatenate all words in the command except the first and last word.
-				foreach (String param in pars)
+				foreach (string param in pars)
 				{
 					pos++;
 					if ((pos > 0) && (pos < (pars.Length - 1)))
@@ -385,7 +385,7 @@ public class AdminSpawn: IAdminCommandHandler
 					}
 				}
 				
-				String searchString = searchParam.ToString().Trim();
+				string searchString = searchParam.ToString().Trim();
 				// If the search string is a number, use it as the NPC ID.
 				if (Util.isDigit(searchString))
 				{
@@ -400,7 +400,7 @@ public class AdminSpawn: IAdminCommandHandler
 				// If there are more than two words in the command, try to parse the last word as the teleport index.
 				if (pars.Length > 2)
 				{
-					String lastParam = pars[pars.Length - 1];
+					string lastParam = pars[pars.Length - 1];
 					if (Util.isDigit(lastParam))
 					{
 						teleportIndex = int.Parse(lastParam);
@@ -422,7 +422,7 @@ public class AdminSpawn: IAdminCommandHandler
 			int count = 5;
 			if (st.hasMoreTokens())
 			{
-				String nextToken = st.nextToken();
+				string nextToken = st.nextToken();
 				if (Util.isDigit(nextToken))
 				{
 					count = int.Parse(nextToken);
@@ -464,7 +464,7 @@ public class AdminSpawn: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -542,7 +542,7 @@ public class AdminSpawn: IAdminCommandHandler
 		}
 	}
 	
-	private void spawnMonster(Player activeChar, String monsterIdValue, int respawnTime, int mobCount, bool permanentValue)
+	private void spawnMonster(Player activeChar, string monsterIdValue, int respawnTime, int mobCount, bool permanentValue)
 	{
 		WorldObject target = activeChar.getTarget();
 		if (target == null)
@@ -551,7 +551,7 @@ public class AdminSpawn: IAdminCommandHandler
 		}
 		
 		NpcTemplate template1;
-		String monsterId = monsterIdValue;
+		string monsterId = monsterIdValue;
 		if (Regex.IsMatch(monsterId, "[0-9]+"))
 		{
 			// First parameter was an ID number
@@ -671,7 +671,7 @@ public class AdminSpawn: IAdminCommandHandler
 		activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 	}
 	
-	private void showNpcs(Player activeChar, String starting, int from)
+	private void showNpcs(Player activeChar, string starting, int from)
 	{
 		List<NpcTemplate> mobs = NpcData.getInstance().getAllNpcStartingWith(starting);
 		int mobsCount = mobs.Count;

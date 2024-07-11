@@ -14,14 +14,14 @@ public class AdminHide: IAdminCommandHandler
 		"admin_hide"
 	};
 	
-	public bool useAdminCommand(String command, Player player)
+	public bool useAdminCommand(string command, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
 		
 		try
 		{
-			String param = st.nextToken();
+			string param = st.nextToken();
 			switch (param)
 			{
 				case "on":
@@ -60,7 +60,7 @@ public class AdminHide: IAdminCommandHandler
 		}
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

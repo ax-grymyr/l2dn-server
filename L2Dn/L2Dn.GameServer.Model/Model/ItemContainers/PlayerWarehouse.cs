@@ -12,7 +12,7 @@ public class PlayerWarehouse: Warehouse
         _owner = owner;
     }
 
-    public override String getName()
+    public override string getName()
     {
         return "Warehouse";
     }

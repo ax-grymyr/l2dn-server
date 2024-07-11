@@ -96,7 +96,7 @@ public class Instance : IIdentifiable, INamable
 		return _id;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _template.getName();
 	}
@@ -115,7 +115,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param key parameter name
 	 * @param value parameter value
 	 */
-	public void setParameter(String key, Object value)
+	public void setParameter(string key, object value)
 	{
 		if (value == null)
 		{
@@ -132,7 +132,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param key parameter name
 	 * @param value parameter value
 	 */
-	public void setParameter(String key, bool value)
+	public void setParameter(string key, bool value)
 	{
 		_parameters.set(key, value);
 	}
@@ -409,7 +409,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param name name of group to be checked
 	 * @return {@code true} if group exist, otherwise {@code false}
 	 */
-	public bool isSpawnGroupExist(String name)
+	public bool isSpawnGroupExist(string name)
 	{
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{
@@ -429,7 +429,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param name name of group
 	 * @return list which contains spawn data from spawn group
 	 */
-	public List<SpawnGroup> getSpawnGroup(String name)
+	public List<SpawnGroup> getSpawnGroup(string name)
 	{
 		List<SpawnGroup> spawns = new();
 		foreach (SpawnTemplate spawnTemplate in _spawns)
@@ -443,7 +443,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param name
 	 * @return {@code List} of NPCs that are part of specified group
 	 */
-	public List<Npc> getNpcsOfGroup(String name)
+	public List<Npc> getNpcsOfGroup(string name)
 	{
 		return getNpcsOfGroup(name, null);
 	}
@@ -453,7 +453,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param filterValue
 	 * @return {@code List} of NPCs that are part of specified group and matches filter specified
 	 */
-	public List<Npc> getNpcsOfGroup(String groupName, Predicate<Npc> filterValue)
+	public List<Npc> getNpcsOfGroup(string groupName, Predicate<Npc> filterValue)
 	{
 		Predicate<Npc> filter = filterValue;
 		if (filter == null)
@@ -486,7 +486,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param filterValue
 	 * @return {@code Npc} instance of an NPC that is part of a group and matches filter specified
 	 */
-	public Npc getNpcOfGroup(String groupName, Predicate<Npc> filterValue)
+	public Npc getNpcOfGroup(string groupName, Predicate<Npc> filterValue)
 	{
 		Predicate<Npc> filter = filterValue;
 		if (filter == null)
@@ -518,7 +518,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param name name of group which should be spawned
 	 * @return list that contains NPCs spawned by this method
 	 */
-	public List<Npc> spawnGroup(String name)
+	public List<Npc> spawnGroup(string name)
 	{
 		List<SpawnGroup> spawns = getSpawnGroup(name);
 		if (spawns == null)
@@ -547,7 +547,7 @@ public class Instance : IIdentifiable, INamable
 	 * De-spawns NPCs from group (defined in XML template) from the instance world.
 	 * @param name of group which should be de-spawned
 	 */
-	public void despawnGroup(String name)
+	public void despawnGroup(string name)
 	{
 		List<SpawnGroup> spawns = getSpawnGroup(name);
 		if (spawns == null)
@@ -1278,12 +1278,12 @@ public class Instance : IIdentifiable, INamable
 		broadcastPacket().SendPackets(sm);
 	}
 	
-	public override bool Equals(Object? obj)
+	public override bool Equals(object? obj)
 	{
 		return (obj is Instance) && (((Instance) obj).getId() == getId());
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return _template.getName() + "(" + _id + ")";
 	}

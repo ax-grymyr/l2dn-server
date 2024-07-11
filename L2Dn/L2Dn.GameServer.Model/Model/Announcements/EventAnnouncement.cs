@@ -7,9 +7,9 @@ public class EventAnnouncement: IAnnouncement
 {
     private readonly int _id;
     private readonly DateRange _range;
-    private String _content;
+    private string _content;
 
-    public EventAnnouncement(DateRange range, String content)
+    public EventAnnouncement(DateRange range, string content)
     {
         _id = IdManager.getInstance().getNextId();
         _range = range;
@@ -36,22 +36,22 @@ public class EventAnnouncement: IAnnouncement
         return _range.isWithinRange(DateTime.Now);
     }
 
-    public String getContent()
+    public string getContent()
     {
         return _content;
     }
 
-    public void setContent(String content)
+    public void setContent(string content)
     {
         _content = content;
     }
 
-    public String getAuthor()
+    public string getAuthor()
     {
         return "N/A";
     }
 
-    public void setAuthor(String author)
+    public void setAuthor(string author)
     {
         throw new NotSupportedException();
     }

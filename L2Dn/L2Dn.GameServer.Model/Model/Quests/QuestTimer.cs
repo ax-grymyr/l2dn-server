@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Quests;
 
 public class QuestTimer
 {
-	protected readonly String _name;
+	protected readonly string _name;
 	protected readonly Quest _quest;
 	protected readonly Npc _npc;
 	protected readonly Player _player;
@@ -74,7 +74,7 @@ public class QuestTimer
 	 * @param player : Player instance attached to the desired timer (null if no player attached)
 	 * @return bool
 	 */
-	public bool equals(Quest quest, String name, Npc npc, Player player)
+	public bool equals(Quest quest, string name, Npc npc, Player player)
 	{
 		if ((quest == null) || (quest != _quest))
 		{
@@ -114,7 +114,7 @@ public class QuestTimer
 		return _player;
 	}
 	
-	public override String ToString()
+	public override string ToString()
 	{
 		return _name;
 	}

@@ -5,14 +5,14 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct AskJoinPartyPacket: IOutgoingPacket
 {
-    private readonly String _requestorName;
+    private readonly string _requestorName;
     private readonly PartyDistributionType _partyDistributionType;
 	
     /**
      * @param requestorName
      * @param partyDistributionType
      */
-    public AskJoinPartyPacket(String requestorName, PartyDistributionType partyDistributionType)
+    public AskJoinPartyPacket(string requestorName, PartyDistributionType partyDistributionType)
     {
         _requestorName = requestorName;
         _partyDistributionType = partyDistributionType;

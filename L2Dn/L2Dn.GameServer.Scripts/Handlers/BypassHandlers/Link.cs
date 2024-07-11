@@ -18,7 +18,7 @@ public class Link: IBypassHandler
 		"Link"
 	};
 	
-	private static readonly Set<String> VALID_LINKS = new();
+	private static readonly Set<string> VALID_LINKS = new();
 	static Link()
 	{
 		VALID_LINKS.add("common/craft_01.htm");
@@ -42,9 +42,9 @@ public class Link: IBypassHandler
 		VALID_LINKS.add("warehouse/privatewh.htm");
 	}
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
-		String htmlPath = command.Substring(4).Trim();
+		string htmlPath = command.Substring(4).Trim();
 		if (string.IsNullOrEmpty(htmlPath))
 		{
 			_logger.Warn(player + " sent empty link html!");
@@ -68,7 +68,7 @@ public class Link: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

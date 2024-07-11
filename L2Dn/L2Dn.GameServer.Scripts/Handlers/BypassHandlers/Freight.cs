@@ -19,7 +19,7 @@ public class Freight: IBypassHandler
 		"package_deposit"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -64,7 +64,7 @@ public class Freight: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

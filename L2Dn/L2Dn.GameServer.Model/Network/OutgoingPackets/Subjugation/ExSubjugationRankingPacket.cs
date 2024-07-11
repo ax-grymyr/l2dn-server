@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
 
 public readonly struct ExSubjugationRankingPacket: IOutgoingPacket
 {
-    private readonly Map<String, int> _ranking;
+    private readonly Map<string, int> _ranking;
     private readonly int _category;
     private readonly int _objectId;
 	

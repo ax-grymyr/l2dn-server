@@ -24,7 +24,7 @@ public abstract class ItemContainer
 	
 	public abstract ItemLocation getBaseLocation();
 	
-	public virtual String getName()
+	public virtual string getName()
 	{
 		return "ItemContainer";
 	}
@@ -161,7 +161,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item addItem(String process, Item item, Player actor, Object reference)
+	public virtual Item addItem(string process, Item item, Player actor, object reference)
 	{
 		Item newItem = item;
 		Item olditem = getItemByItemId(newItem.getId());
@@ -201,7 +201,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item addItem(String process, int itemId, long count, Player actor, Object reference)
+	public virtual Item addItem(string process, int itemId, long count, Player actor, object reference)
 	{
 		Item item = getItemByItemId(itemId);
 		
@@ -266,7 +266,7 @@ public abstract class ItemContainer
 	 * @param reference Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item transferItem(String process, int objectId, long countValue, ItemContainer target, Player actor, Object reference)
+	public virtual Item transferItem(string process, int objectId, long countValue, ItemContainer target, Player actor, object reference)
 	{
 		if (target == null)
 		{
@@ -350,7 +350,7 @@ public abstract class ItemContainer
 	 * @param reference Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return the detached item instance if operation completes successfully, {@code null} if the item does not exist in this container anymore or item count is not available
 	 */
-	public virtual Item detachItem(String process, Item item, long count, ItemLocation newLocation, Player actor, Object reference)
+	public virtual Item detachItem(string process, Item item, long count, ItemLocation newLocation, Player actor, object reference)
 	{
 		if (item == null)
 		{
@@ -403,7 +403,7 @@ public abstract class ItemContainer
 	 * @param reference Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return the detached item instance if operation completes successfully, {@code null} if the item does not exist in this container anymore or item count is not available
 	 */
-	public Item detachItem(String process, int itemObjectId, long count, ItemLocation newLocation, Player actor, Object reference)
+	public Item detachItem(string process, int itemObjectId, long count, ItemLocation newLocation, Player actor, object reference)
 	{
 		Item item = getItemByObjectId(itemObjectId);
 		if (item == null)
@@ -421,7 +421,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item destroyItem(String process, Item item, Player actor, Object reference)
+	public virtual Item destroyItem(string process, Item item, Player actor, object reference)
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
@@ -435,7 +435,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item destroyItem(String process, Item item, long count, Player actor, Object reference)
+	public virtual Item destroyItem(string process, Item item, long count, Player actor, object reference)
 	{
 		lock (item)
 		{
@@ -478,7 +478,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item destroyItem(String process, int objectId, long count, Player actor, Object reference)
+	public virtual Item destroyItem(string process, int objectId, long count, Player actor, object reference)
 	{
 		Item item = getItemByObjectId(objectId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
@@ -493,7 +493,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference)
+	public virtual Item destroyItemByItemId(string process, int itemId, long count, Player actor, object reference)
 	{
 		Item item = getItemByItemId(itemId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
@@ -505,7 +505,7 @@ public abstract class ItemContainer
 	 * @param actor : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void destroyAllItems(String process, Player actor, Object reference)
+	public void destroyAllItems(string process, Player actor, object reference)
 	{
 		foreach (Item item in _items)
 		{

@@ -17,11 +17,11 @@ public class IllegalPlayerActionTask: Runnable
 {
 	private static readonly Logger AUDIT_LOGGER = LogManager.GetLogger("audit");
 	
-	private readonly String _message;
+	private readonly string _message;
 	private readonly IllegalActionPunishmentType _punishment;
 	private readonly Player _actor;
 	
-	public IllegalPlayerActionTask(Player actor, String message, IllegalActionPunishmentType punishment)
+	public IllegalPlayerActionTask(Player actor, string message, IllegalActionPunishmentType punishment)
 	{
 		_message = message;
 		_punishment = punishment;

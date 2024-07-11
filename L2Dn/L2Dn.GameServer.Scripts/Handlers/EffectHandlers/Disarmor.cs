@@ -25,7 +25,7 @@ public class Disarmor: AbstractEffect
 	{
 		_unequippedItems = new();
 		
-		String slot = @params.getString("slot", "chest");
+		string slot = @params.getString("slot", "chest");
 		_slot = ItemData.SLOTS.getOrDefault(slot, (long) ItemTemplate.SLOT_NONE);
 		if (_slot == ItemTemplate.SLOT_NONE)
 		{

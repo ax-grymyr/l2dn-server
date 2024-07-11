@@ -50,7 +50,7 @@ public class MobGroup
 		return _mobs;
 	}
 	
-	public String getStatus()
+	public string getStatus()
 	{
 		try
 		{

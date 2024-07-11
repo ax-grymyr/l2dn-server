@@ -8,7 +8,7 @@ public class TransformLevelData
 {
     private readonly int _level;
     private readonly  double _levelMod;
-    private Map<Stat, Double> _stats;
+    private Map<Stat, double> _stats;
 	
     public TransformLevelData(StatSet set)
     {

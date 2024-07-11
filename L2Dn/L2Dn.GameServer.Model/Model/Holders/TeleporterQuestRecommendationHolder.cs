@@ -8,11 +8,11 @@ namespace L2Dn.GameServer.Model.Holders;
 public class TeleporterQuestRecommendationHolder
 {
 	private readonly int _npcId;
-	private readonly String _questName;
+	private readonly string _questName;
 	private readonly QuestCondType[] _conditions; // -1 = all conditions
-	private readonly String _html;
+	private readonly string _html;
 
-	public TeleporterQuestRecommendationHolder(int npcId, String questName, QuestCondType[] conditions, String html)
+	public TeleporterQuestRecommendationHolder(int npcId, string questName, QuestCondType[] conditions, string html)
 	{
 		_npcId = npcId;
 		_questName = questName;
@@ -25,7 +25,7 @@ public class TeleporterQuestRecommendationHolder
 		return _npcId;
 	}
 
-	public String getQuestName()
+	public string getQuestName()
 	{
 		return _questName;
 	}
@@ -35,7 +35,7 @@ public class TeleporterQuestRecommendationHolder
 		return _conditions;
 	}
 
-	public String getHtml()
+	public string getHtml()
 	{
 		return _html;
 	}

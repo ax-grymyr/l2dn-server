@@ -15,7 +15,7 @@ public class PetExtractWindow: IBypassHandler
 		"pet_extract_window",
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -31,7 +31,7 @@ public class PetExtractWindow: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

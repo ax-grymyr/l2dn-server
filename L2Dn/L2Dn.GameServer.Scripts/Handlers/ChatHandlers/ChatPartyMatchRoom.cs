@@ -18,7 +18,7 @@ public class ChatPartyMatchRoom: IChatHandler
 		ChatType.PARTYMATCH_ROOM,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String target, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		MatchingRoom room = activeChar.getMatchingRoom();
 		if (room != null)

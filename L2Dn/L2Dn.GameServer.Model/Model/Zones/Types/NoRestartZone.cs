@@ -18,7 +18,7 @@ public class NoRestartZone: ZoneType
 		
 	}
 	
-	public override void setParameter(String name, String value)
+	public override void setParameter(string name, string value)
 	{
 		if (name.equalsIgnoreCase("default_enabled"))
 		{

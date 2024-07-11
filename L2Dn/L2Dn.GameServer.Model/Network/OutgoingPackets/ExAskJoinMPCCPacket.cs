@@ -4,12 +4,12 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExAskJoinMPCCPacket: IOutgoingPacket
 {
-    private readonly String _requestorName;
+    private readonly string _requestorName;
 	
     /**
      * @param requestorName
      */
-    public ExAskJoinMPCCPacket(String requestorName)
+    public ExAskJoinMPCCPacket(string requestorName)
     {
         _requestorName = requestorName;
     }

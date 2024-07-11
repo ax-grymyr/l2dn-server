@@ -11,10 +11,10 @@ public class OnPlayerSelect: TerminateEventBase
 {
 	private readonly Player _player;
 	private readonly int _objectId;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly GameSession _client;
 	
-	public OnPlayerSelect(Player player, int objectId, String name, GameSession client)
+	public OnPlayerSelect(Player player, int objectId, string name, GameSession client)
 	{
 		_player = player;
 		_objectId = objectId;
@@ -32,7 +32,7 @@ public class OnPlayerSelect: TerminateEventBase
 		return _objectId;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

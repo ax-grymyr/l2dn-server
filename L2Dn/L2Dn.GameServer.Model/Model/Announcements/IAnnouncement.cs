@@ -12,11 +12,11 @@ public interface IAnnouncement : IStorable, IUpdatable, IDeletable
 	
     bool isValid();
 	
-    String getContent();
+    string getContent();
 	
-    void setContent(String content);
+    void setContent(string content);
 	
-    String getAuthor();
+    string getAuthor();
 	
-    void setAuthor(String author);
+    void setAuthor(string author);
 }

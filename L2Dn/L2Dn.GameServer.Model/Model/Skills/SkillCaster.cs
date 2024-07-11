@@ -984,7 +984,7 @@ public class SkillCaster: Runnable
 		return _castingType == SkillCastingType.NORMAL || _castingType == SkillCastingType.NORMAL_SECOND;
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return base.ToString() + " [caster: " + _caster.get() + " skill: " + _skill + " target: " + _target.get() + " type: " + _castingType + "]";
 	}

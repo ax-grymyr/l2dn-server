@@ -13,7 +13,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	private int _currentState;
 	private ScheduledFuture? _task;
 	
-	public AutoAnnouncement(AnnouncementType type, String content, String author, TimeSpan initial, TimeSpan delay, int repeat)
+	public AutoAnnouncement(AnnouncementType type, string content, string author, TimeSpan initial, TimeSpan delay, int repeat)
 		: base(type, content, author)
 	{
 		_initial = initial;

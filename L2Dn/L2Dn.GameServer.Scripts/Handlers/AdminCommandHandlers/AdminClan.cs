@@ -27,10 +27,10 @@ public class AdminClan: IAdminCommandHandler
 		"admin_clan_force_pending"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
-		String cmd = st.nextToken();
+		string cmd = st.nextToken();
 		switch (cmd)
 		{
 			case "admin_clan_info":
@@ -117,7 +117,7 @@ public class AdminClan: IAdminCommandHandler
 			{
 				if (st.hasMoreElements())
 				{
-					String token = st.nextToken();
+					string token = st.nextToken();
 					if (!Util.isDigit(token))
 					{
 						break;
@@ -152,7 +152,7 @@ public class AdminClan: IAdminCommandHandler
 	 */
 	private Player getPlayer(Player activeChar, StringTokenizer st)
 	{
-		String val;
+		string val;
 		Player player = null;
 		if (st.hasMoreTokens())
 		{
@@ -190,7 +190,7 @@ public class AdminClan: IAdminCommandHandler
 		return player;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

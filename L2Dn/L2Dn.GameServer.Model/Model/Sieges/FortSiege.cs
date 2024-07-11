@@ -29,10 +29,10 @@ public class FortSiege: Siegable
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(FortSiege));
 	
-	public const String ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN = "orc_fortress_greg_upper_left";
-	public const String ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN = "orc_fortress_greg_upper_right";
-	public const String ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN = "orc_fortress_greg_bottom_right";
-	public const String GREG_SPAWN_VAR = "GREG_SPAWN";
+	public const string ORC_FORTRESS_GREG_UPPER_LEFT_SPAWN = "orc_fortress_greg_upper_left";
+	public const string ORC_FORTRESS_GREG_UPPER_RIGHT_SPAWN = "orc_fortress_greg_upper_right";
+	public const string ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN = "orc_fortress_greg_bottom_right";
+	public const string GREG_SPAWN_VAR = "GREG_SPAWN";
 	
 	private bool _hasSpawnedPreparationNpcs;
 	
@@ -742,7 +742,7 @@ public class FortSiege: Siegable
 		}
 	}
 	
-	public void announceToPlayer(SystemMessagePacket sm, String s)
+	public void announceToPlayer(SystemMessagePacket sm, string s)
 	{
 		sm.Params.addString(s);
 		announceToPlayer(sm);

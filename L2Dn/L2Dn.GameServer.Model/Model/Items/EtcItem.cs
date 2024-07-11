@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Model.Items;
 */
 public class EtcItem: ItemTemplate
 {
-	private String _handler;
+	private string _handler;
 	private EtcItemType _type;
 	private List<ExtractableProduct> _extractableItems;
 	private int _extractableCountMin;
@@ -61,7 +61,7 @@ public class EtcItem: ItemTemplate
 	/**
  * @return the handler name, null if no handler for item.
  */
-	public String getHandlerName()
+	public string getHandlerName()
 	{
 		return _handler;
 	}

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminManor: IAdminCommandHandler
 {
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		CastleManorManager manor = CastleManorManager.getInstance();
 
@@ -40,9 +40,9 @@ public class AdminManor: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
-		return new String[]
+		return new string[]
 		{
 			"admin_manor"
 		};

@@ -14,10 +14,10 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 {
 	private readonly int _objectId;
 	private readonly Player _friend;
-	private readonly String _name;
+	private readonly string _name;
 	private readonly int _lastAccess;
 	
-	public ExFriendDetailInfoPacket(Player player, String name)
+	public ExFriendDetailInfoPacket(Player player, string name)
 	{
 		_objectId = player.getObjectId();
 		_name = name;

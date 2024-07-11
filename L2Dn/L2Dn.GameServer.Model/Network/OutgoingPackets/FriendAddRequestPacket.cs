@@ -4,12 +4,12 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct FriendAddRequestPacket: IOutgoingPacket
 {
-    private readonly String _requestorName;
+    private readonly string _requestorName;
 	
     /**
      * @param requestorName
      */
-    public FriendAddRequestPacket(String requestorName)
+    public FriendAddRequestPacket(string requestorName)
     {
         _requestorName = requestorName;
     }

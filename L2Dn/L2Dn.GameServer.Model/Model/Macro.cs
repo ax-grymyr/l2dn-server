@@ -6,9 +6,9 @@ public class Macro: IIdentifiable, INamable
 {
     private int _id;
     private readonly int? _icon;
-    private readonly String _name;
-    private readonly String _descr;
-    private readonly String _acronym;
+    private readonly string _name;
+    private readonly string _descr;
+    private readonly string _acronym;
     private readonly List<MacroCmd> _commands;
 
     /**
@@ -20,7 +20,7 @@ public class Macro: IIdentifiable, INamable
      * @param acronym the macro acronym
      * @param list the macro command list
      */
-    public Macro(int id, int? icon, String name, String descr, String acronym, List<MacroCmd> list)
+    public Macro(int id, int? icon, string name, string descr, string acronym, List<MacroCmd> list)
     {
         _id = id;
         _icon = icon;
@@ -61,7 +61,7 @@ public class Macro: IIdentifiable, INamable
      * Gets the macro name.
      * @return the name
      */
-    public String getName()
+    public string getName()
     {
         return _name;
     }
@@ -70,7 +70,7 @@ public class Macro: IIdentifiable, INamable
      * Gets the macro description.
      * @return the description
      */
-    public String getDescr()
+    public string getDescr()
     {
         return _descr;
     }
@@ -79,7 +79,7 @@ public class Macro: IIdentifiable, INamable
      * Gets the macro acronym.
      * @return the acronym
      */
-    public String getAcronym()
+    public string getAcronym()
     {
         return _acronym;
     }

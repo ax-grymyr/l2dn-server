@@ -67,7 +67,7 @@ public class ItemChanceHolder: ItemHolder
 		return null;
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
 		return "[" + GetType().Name + "] ID: " + getId() + ", count: " + getCount() + ", chance: " + _chance;
 	}

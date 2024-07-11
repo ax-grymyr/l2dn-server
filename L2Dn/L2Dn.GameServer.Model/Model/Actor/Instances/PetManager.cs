@@ -16,9 +16,9 @@ public class PetManager: Merchant
 		setInstanceType(InstanceType.PetManager);
 	}
 
-	public override String getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player player)
 	{
-		String pom = "";
+		string pom = "";
 		if (value == 0)
 		{
 			pom = npcId.ToString(CultureInfo.InvariantCulture);
@@ -46,11 +46,11 @@ public class PetManager: Merchant
 		player.sendPacket(html);
 	}
 
-	public override void onBypassFeedback(Player player, String command)
+	public override void onBypassFeedback(Player player, string command)
 	{
 		if (command.startsWith("exchange"))
 		{
-			String[] @params = command.Split(" ");
+			string[] @params = command.Split(" ");
 			int val = int.Parse(@params[1]);
 			switch (val)
 			{
@@ -73,7 +73,7 @@ public class PetManager: Merchant
 		}
 		else if (command.startsWith("evolve"))
 		{
-			String[] @params = command.Split(" ");
+			string[] @params = command.Split(" ");
 			int val = int.Parse(@params[1]);
 			bool ok = false;
 			switch (val)
@@ -116,7 +116,7 @@ public class PetManager: Merchant
 		}
 		else if (command.startsWith("restore"))
 		{
-			String[] @params = command.Split(" ");
+			string[] @params = command.Split(" ");
 			int val = int.Parse(@params[1]);
 			bool ok = false;
 			switch (val)

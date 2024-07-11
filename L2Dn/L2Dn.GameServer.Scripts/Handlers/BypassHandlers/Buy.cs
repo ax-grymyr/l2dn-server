@@ -15,7 +15,7 @@ public class Buy: IBypassHandler
 		"Buy"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!(target is Merchant))
 		{
@@ -42,7 +42,7 @@ public class Buy: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

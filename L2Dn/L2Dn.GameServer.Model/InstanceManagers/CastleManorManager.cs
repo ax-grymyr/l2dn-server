@@ -633,12 +633,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 		return _mode == ManorMode.MODIFIABLE;
 	}
 	
-	public String getCurrentModeName()
+	public string getCurrentModeName()
 	{
 		return _mode.ToString();
 	}
 	
-	public String getNextModeChange()
+	public string getNextModeChange()
 	{
 		return _nextModeChange.ToString("dd/MM HH:mm:ss");
 	}

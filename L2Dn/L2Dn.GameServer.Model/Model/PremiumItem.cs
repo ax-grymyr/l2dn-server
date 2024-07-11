@@ -4,9 +4,9 @@ public class PremiumItem
 {
     private readonly int _itemId;
     private long _count;
-    private readonly String _sender;
+    private readonly string _sender;
 	
-    public PremiumItem(int itemid, long count, String sender)
+    public PremiumItem(int itemid, long count, string sender)
     {
         _itemId = itemid;
         _count = count;
@@ -28,7 +28,7 @@ public class PremiumItem
         return _count;
     }
 	
-    public String getSender()
+    public string getSender()
     {
         return _sender;
     }

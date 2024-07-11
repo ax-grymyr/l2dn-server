@@ -13,7 +13,7 @@ public abstract class MatchingRoom: IIdentifiable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MatchingRoom));
 
 	private readonly int _id;
-	private String _title;
+	private string _title;
 	private PartyDistributionType _loot;
 	private int _minLevel;
 	private int _maxLevel;
@@ -21,7 +21,7 @@ public abstract class MatchingRoom: IIdentifiable
 	private Set<Player> _members;
 	private Player _leader;
 
-	public MatchingRoom(String title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader)
+	public MatchingRoom(string title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader)
 	{
 		_id = MatchingRoomManager.getInstance().addMatchingRoom(this);
 		_title = title;
@@ -153,7 +153,7 @@ public abstract class MatchingRoom: IIdentifiable
 		return _maxCount;
 	}
 
-	public String getTitle()
+	public string getTitle()
 	{
 		return _title;
 	}
@@ -188,7 +188,7 @@ public abstract class MatchingRoom: IIdentifiable
 		_maxCount = maxCount;
 	}
 
-	public void setTitle(String title)
+	public void setTitle(string title)
 	{
 		_title = title;
 	}

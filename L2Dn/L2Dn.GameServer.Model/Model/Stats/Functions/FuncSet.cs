@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Model.Stats.Functions;
  */
 public class FuncSet: AbstractFunction
 {
-	public FuncSet(Stat stat, int order, Object owner, double value, Condition applayCond)
+	public FuncSet(Stat stat, int order, object owner, double value, Condition applayCond)
 		: base(stat, order, owner, value, applayCond)
 	{
 	}

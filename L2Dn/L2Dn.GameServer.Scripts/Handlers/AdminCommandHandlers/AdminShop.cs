@@ -27,7 +27,7 @@ public class AdminShop: IAdminCommandHandler
 		"admin_exc_multisell"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_buy"))
 		{
@@ -71,12 +71,12 @@ public class AdminShop: IAdminCommandHandler
 		return true;
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleBuyRequest(Player activeChar, String command)
+	private void handleBuyRequest(Player activeChar, string command)
 	{
 		int val = -1;
 		try

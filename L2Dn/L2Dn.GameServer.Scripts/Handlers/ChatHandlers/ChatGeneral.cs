@@ -21,15 +21,15 @@ public class ChatGeneral: IChatHandler
 		ChatType.GENERAL,
 	};
 	
-	public void handleChat(ChatType type, Player activeChar, String paramsValue, String text, bool shareLocation)
+	public void handleChat(ChatType type, Player activeChar, string paramsValue, string text, bool shareLocation)
 	{
 		bool vcdUsed = false;
 		if (text.startsWith("."))
 		{
 			StringTokenizer st = new StringTokenizer(text);
 			IVoicedCommandHandler vch;
-			String command = "";
-			String @params = paramsValue;
+			string command = "";
+			string @params = paramsValue;
 			if (st.countTokens() > 1)
 			{
 				command = st.nextToken().Substring(1);

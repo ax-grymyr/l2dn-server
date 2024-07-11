@@ -61,9 +61,9 @@ public class AdminSkill: IAdminCommandHandler
 	
 	private static Skill[] adminSkills;
 	
-	public bool useAdminCommand(String commandValue, Player activeChar)
+	public bool useAdminCommand(string commandValue, Player activeChar)
 	{
-		String command = commandValue;
+		string command = commandValue;
 		if (command.equals("admin_show_skills"))
 		{
 			showMainPage(activeChar);
@@ -72,7 +72,7 @@ public class AdminSkill: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(20);
+				string val = command.Substring(20);
 				removeSkillsPage(activeChar, int.Parse(val));
 			}
 			catch (IndexOutOfRangeException e)
@@ -88,7 +88,7 @@ public class AdminSkill: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(18);
+				string val = command.Substring(18);
 				AdminHtml.showAdminHtml(activeChar, "skills/" + val + ".htm");
 			}
 			catch (IndexOutOfRangeException e)
@@ -100,7 +100,7 @@ public class AdminSkill: IAdminCommandHandler
 		{
 			try
 			{
-				String val = command.Substring(15);
+				string val = command.Substring(15);
 				adminAddSkill(activeChar, val);
 			}
 			catch (Exception e)
@@ -112,7 +112,7 @@ public class AdminSkill: IAdminCommandHandler
 		{
 			try
 			{
-				String id = command.Substring(19);
+				string id = command.Substring(19);
 				int idval = int.Parse(id);
 				adminRemoveSkill(activeChar, idval);
 			}
@@ -168,7 +168,7 @@ public class AdminSkill: IAdminCommandHandler
 		{
 			try
 			{
-				String[] val = command.Split(" ");
+				string[] val = command.Split(" ");
 				adminAddClanSkill(activeChar, int.Parse(val[1]), int.Parse(val[2]));
 			}
 			catch (Exception e)
@@ -178,7 +178,7 @@ public class AdminSkill: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_setskill"))
 		{
-			String[] Split = command.Split(" ");
+			string[] Split = command.Split(" ");
 			int id = int.Parse(Split[1]);
 			int level = int.Parse(Split[2]);
 			Skill skill = SkillData.getInstance().getSkill(id, level);
@@ -477,7 +477,7 @@ public class AdminSkill: IAdminCommandHandler
 	 * @param activeChar the active Game Master.
 	 * @param value
 	 */
-	private void adminAddSkill(Player activeChar, String value)
+	private void adminAddSkill(Player activeChar, string value)
 	{
 		WorldObject target = activeChar.getTarget();
 		if ((target == null) || !target.isPlayer())
@@ -497,8 +497,8 @@ public class AdminSkill: IAdminCommandHandler
 			Skill skill = null;
 			try
 			{
-				String id = st.nextToken();
-				String level = st.countTokens() == 1 ? st.nextToken() : null;
+				string id = st.nextToken();
+				string level = st.countTokens() == 1 ? st.nextToken() : null;
 				int idval = int.Parse(id);
 				int levelval = level == null ? 1 : int.Parse(level);
 				skill = SkillData.getInstance().getSkill(idval, levelval);
@@ -509,7 +509,7 @@ public class AdminSkill: IAdminCommandHandler
 			}
 			if (skill != null)
 			{
-				String name = skill.getName();
+				string name = skill.getName();
 				// Player's info.
 				player.sendMessage("Admin gave you the skill " + name + ".");
 				player.addSkill(skill, true);
@@ -542,7 +542,7 @@ public class AdminSkill: IAdminCommandHandler
 		Skill skill = SkillData.getInstance().getSkill(idval, player.getSkillLevel(idval));
 		if (skill != null)
 		{
-			String skillname = skill.getName();
+			string skillname = skill.getName();
 			player.sendMessage("Admin removed the skill " + skillname + " from your skills list.");
 			player.removeSkill(skill);
 			// Admin information
@@ -595,7 +595,7 @@ public class AdminSkill: IAdminCommandHandler
 			return;
 		}
 		
-		String skillname = skill.getName();
+		string skillname = skill.getName();
 		sm = new SystemMessagePacket(SystemMessageId.THE_CLAN_SKILL_S1_HAS_BEEN_ADDED);
 		sm.Params.addSkillName(skill);
 		player.sendPacket(sm);
@@ -612,7 +612,7 @@ public class AdminSkill: IAdminCommandHandler
 		showMainPage(activeChar);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

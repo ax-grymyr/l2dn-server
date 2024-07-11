@@ -36,7 +36,7 @@ public class PlayerFreight: ItemContainer
         return ItemLocation.FREIGHT;
     }
 
-    public override String getName()
+    public override string getName()
     {
         return "Freight";
     }

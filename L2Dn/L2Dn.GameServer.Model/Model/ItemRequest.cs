@@ -52,7 +52,7 @@ public class ItemRequest
         return _objectId;
     }
 	
-    public override bool Equals(Object? obj)
+    public override bool Equals(object? obj)
     {
         if (this == obj)
         {

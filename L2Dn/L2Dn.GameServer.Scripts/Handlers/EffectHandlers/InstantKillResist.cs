@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class InstantKillResist: AbstractEffect
 {
-	private readonly Double _amount;
+	private readonly double _amount;
 	
 	public InstantKillResist(StatSet @params)
 	{

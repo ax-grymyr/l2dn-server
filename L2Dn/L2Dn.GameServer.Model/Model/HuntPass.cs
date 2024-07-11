@@ -75,7 +75,7 @@ public class HuntPass
 		store();
 	}
 	
-	public String getAccountName()
+	public string getAccountName()
 	{
 		return _user.getAccountName();
 	}

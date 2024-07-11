@@ -25,15 +25,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class HomeBoard: IParseBoardHandler
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(HomeBoard));
-	private static readonly String NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
+	private static readonly string NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
 	
-	private static readonly String[] COMMANDS =
+	private static readonly string[] COMMANDS =
 	{
 		"_bbshome",
 		"_bbstop",
 	};
 	
-	private static readonly String[] CUSTOM_COMMANDS =
+	private static readonly string[] CUSTOM_COMMANDS =
 	{
 		Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
 		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
@@ -45,10 +45,10 @@ public class HomeBoard: IParseBoardHandler
 		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null
 	};
 	
-	private static readonly Func<String, Player, bool> COMBAT_CHECK = (command, player) =>
+	private static readonly Func<string, Player, bool> COMBAT_CHECK = (command, player) =>
 	{
 		bool commandCheck = false;
-		foreach (String c in CUSTOM_COMMANDS)
+		foreach (string c in CUSTOM_COMMANDS)
 		{
 			if ((c != null) && command.StartsWith(c))
 			{
@@ -61,15 +61,15 @@ public class HomeBoard: IParseBoardHandler
 	
 	private static readonly Predicate<Player> KARMA_CHECK = player => Config.COMMUNITYBOARD_KARMA_DISABLED && (player.getReputation() < 0);
 	
-	public String[] getCommunityBoardCommands()
+	public string[] getCommunityBoardCommands()
 	{
-		List<String> commands = new();
+		List<string> commands = new();
 		commands.AddRange(COMMANDS);
 		commands.AddRange(CUSTOM_COMMANDS);
         return commands.Where(x => x != null).ToArray();
     }
 	
-	public bool parseCommunityBoardCommand(String command, Player player)
+	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		// Old custom conditions check move to here
 		if (COMBAT_CHECK(command, player))
@@ -84,11 +84,11 @@ public class HomeBoard: IParseBoardHandler
 			return false;
 		}
 		
-		String returnHtml = null;
-		String navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
+		string returnHtml = null;
+		string navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
-			String customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			string customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			CommunityBoardHandler.getInstance().addBypass(player, "Home", command);
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/" + customPath + "home.html", player.getLang());
 			if (!Config.CUSTOM_CB_ENABLED)
@@ -100,8 +100,8 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbstop;"))
 		{
-			String customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
-			String path = command.Replace("_bbstop;", "");
+			string customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			string path = command.Replace("_bbstop;", "");
 			if ((path.Length > 0) && path.endsWith(".html"))
 			{
 				returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/" + customPath + path, player.getLang());
@@ -109,32 +109,32 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbsmultisell"))
 		{
-			String fullBypass = command.Replace("_bbsmultisell;", "");
-			String[] buypassOptions = fullBypass.Split(",");
+			string fullBypass = command.Replace("_bbsmultisell;", "");
+			string[] buypassOptions = fullBypass.Split(",");
 			int multisellId = int.Parse(buypassOptions[0]);
-			String page = buypassOptions[1];
+			string page = buypassOptions[1];
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/" + page + ".html", player.getLang());
 			MultisellData.getInstance().separateAndSend(multisellId, player, null, false);
 		}
 		else if (command.startsWith("_bbsexcmultisell"))
 		{
-			String fullBypass = command.Replace("_bbsexcmultisell;", "");
-			String[] buypassOptions = fullBypass.Split(",");
+			string fullBypass = command.Replace("_bbsexcmultisell;", "");
+			string[] buypassOptions = fullBypass.Split(",");
 			int multisellId = int.Parse(buypassOptions[0]);
-			String page = buypassOptions[1];
+			string page = buypassOptions[1];
 			returnHtml = HtmCache.getInstance().getHtm( "html/CommunityBoard/Custom/" + page + ".html", player.getLang());
 			MultisellData.getInstance().separateAndSend(multisellId, player, null, true);
 		}
 		else if (command.startsWith("_bbssell"))
 		{
-			String page = command.Replace("_bbssell;", "");
+			string page = command.Replace("_bbssell;", "");
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/" + page + ".html", player.getLang());
 			player.sendPacket(new ExBuySellListPacket(BuyListData.getInstance().getBuyList(423), player, 0));
 			player.sendPacket(new ExBuySellListPacket(player, false));
 		}
 		else if (command.startsWith("_bbsteleport"))
 		{
-			String teleBuypass = command.Replace("_bbsteleport;", "");
+			string teleBuypass = command.Replace("_bbsteleport;", "");
 			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_TELEPORT_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
@@ -151,10 +151,10 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbsbuff"))
 		{
-			String fullBypass = command.Replace("_bbsbuff;", "");
-			String[] buypassOptions = fullBypass.Split(";");
+			string fullBypass = command.Replace("_bbsbuff;", "");
+			string[] buypassOptions = fullBypass.Split(";");
 			int buffCount = buypassOptions.Length - 1;
-			String page = buypassOptions[buffCount];
+			string page = buypassOptions[buffCount];
 			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_BUFF_PRICE * buffCount))
 			{
 				player.sendMessage("Not enough currency!");
@@ -199,7 +199,7 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbsheal"))
 		{
-			String page = command.Replace("_bbsheal;", "");
+			string page = command.Replace("_bbsheal;", "");
 			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_HEAL_PRICE))
 			{
 				player.sendMessage("Not enough currency!");
@@ -252,8 +252,8 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbspremium"))
 		{
-			String fullBypass = command.Replace("_bbspremium;", "");
-			String[] buypassOptions = fullBypass.Split(",");
+			string fullBypass = command.Replace("_bbspremium;", "");
+			string[] buypassOptions = fullBypass.Split(",");
 			int premiumDays = int.Parse(buypassOptions[0]);
 			if ((premiumDays < 1) || (premiumDays > 30) || (player.getInventory().getInventoryItemCount(Config.COMMUNITY_PREMIUM_COIN_ID, -1) < (Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)))
 			{

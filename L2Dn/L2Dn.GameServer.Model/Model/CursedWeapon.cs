@@ -23,7 +23,7 @@ public class CursedWeapon : INamable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CursedWeapon));
 	
 	// _name is the name of the cursed weapon associated with its ID.
-	private readonly String _name;
+	private readonly string _name;
 	// _itemId is the Item ID of the cursed weapon.
 	private readonly int _itemId;
 	// _skillId is the skills ID.
@@ -51,7 +51,7 @@ public class CursedWeapon : INamable
 	private int _playerPkKills = 0;
 	protected int transformationId = 0;
 	
-	public CursedWeapon(int itemId, int skillId, String name)
+	public CursedWeapon(int itemId, int skillId, string name)
 	{
 		_name = name;
 		_itemId = itemId;
@@ -541,7 +541,7 @@ public class CursedWeapon : INamable
 		return _endTime;
 	}
 	
-	public String getName()
+	public string getName()
 	{
 		return _name;
 	}

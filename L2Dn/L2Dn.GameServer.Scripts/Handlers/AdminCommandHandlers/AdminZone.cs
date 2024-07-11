@@ -27,7 +27,7 @@ public class AdminZone: IAdminCommandHandler
 		"admin_zone_visual_clear"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
@@ -35,7 +35,7 @@ public class AdminZone: IAdminCommandHandler
 		}
 		
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken(); // Get actual command
+		string actualCommand = st.nextToken(); // Get actual command
 		
 		// String val = "";
 		// if (st.countTokens() >= 1) {val = st.nextToken();}
@@ -62,7 +62,7 @@ public class AdminZone: IAdminCommandHandler
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_zone_visual"))
 		{
-			String next = st.nextToken();
+			string next = st.nextToken();
 			if (next.equalsIgnoreCase("all"))
 			{
 				foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.Location.Location3D))
@@ -151,7 +151,7 @@ public class AdminZone: IAdminCommandHandler
 		BuilderUtil.sendSysMessage(activeChar, "GeoRegion: " + geoX + "_" + geoY + "");
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

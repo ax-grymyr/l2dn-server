@@ -15,61 +15,61 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	 * Overriding following methods to prevent from doing useless database operations if there is no changes since player's login.
 	 */
 
-	public override void set(String name, bool value)
+	public override void set(string name, bool value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, byte value)
+	public override void set(string name, byte value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, short value)
+	public override void set(string name, short value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, int value)
+	public override void set(string name, int value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, long value)
+	public override void set(string name, long value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, float value)
+	public override void set(string name, float value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, double value)
+	public override void set(string name, double value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, String value)
+	public override void set(string name, string value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set<T>(String name, T value)
+	public override void set<T>(string name, T value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
 	
-	public override void set(String name, Object value)
+	public override void set(string name, object value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
@@ -81,7 +81,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	 * @param value
 	 * @param markAsChanged
 	 */
-	public void set(String name, String value, bool markAsChanged)
+	public void set(string name, string value, bool markAsChanged)
 	{
 		if (markAsChanged)
 		{
@@ -96,7 +96,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	 * @param name
 	 * @return
 	 */
-	public bool hasVariable(String name)
+	public bool hasVariable(string name)
 	{
 		return getSet().containsKey(name);
 	}
@@ -125,7 +125,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	 * Removes variable
 	 * @param name
 	 */
-	public override void remove(String name)
+	public override void remove(string name)
 	{
 		_hasChanges = 1;
 		getSet().remove(name);

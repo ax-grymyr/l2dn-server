@@ -33,9 +33,9 @@ public class AdminBuffs: IAdminCommandHandler
 	private const string FONT_RED1 = "<font color=\"FF0000\">";
 	private const string FONT_RED2 = "</font>";
 	
-	public bool useAdminCommand(String commandValue, Player activeChar)
+	public bool useAdminCommand(string commandValue, Player activeChar)
 	{
-		String command = commandValue;
+		string command = commandValue;
 		if (command.startsWith("admin_buff"))
 		{
 			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
@@ -82,7 +82,7 @@ public class AdminBuffs: IAdminCommandHandler
 			command = st.nextToken();
 			if (st.hasMoreTokens())
 			{
-				String playername = st.nextToken();
+				string playername = st.nextToken();
 				Player player = World.getInstance().getPlayer(playername);
 				if (player != null)
 				{
@@ -164,7 +164,7 @@ public class AdminBuffs: IAdminCommandHandler
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
-			String val = st.nextToken();
+			string val = st.nextToken();
 			try
 			{
 				int radius = int.Parse(val);
@@ -186,7 +186,7 @@ public class AdminBuffs: IAdminCommandHandler
 			Player player = null;
 			if (st.hasMoreTokens())
 			{
-				String playername = st.nextToken();
+				string playername = st.nextToken();
 				
 				try
 				{
@@ -255,7 +255,7 @@ public class AdminBuffs: IAdminCommandHandler
 		SkillTreeData.getInstance().addSkills(gmchar, toAuraSkills);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -272,7 +272,7 @@ public class AdminBuffs: IAdminCommandHandler
 			effects.AddRange(target.getEffectList().getPassives());
 		}
 		
-		String pageLink = "bypass -h admin_getbuffs" + (passive ? "_ps " : " ") + target.getName();
+		string pageLink = "bypass -h admin_getbuffs" + (passive ? "_ps " : " ") + target.getName();
 		PageResult result = PageBuilder.newBuilder(effects, 3, pageLink).currentPage(page).
 			style(ButtonsStyle.INSTANCE).bodyHandler((pages, info, sb) =>
 		{

@@ -35,10 +35,10 @@ public class AdminGrandBoss: IAdminCommandHandler
 		"admin_grandboss_abort",
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
-		String actualCommand = st.nextToken();
+		string actualCommand = st.nextToken();
 		switch (actualCommand.toLowerCase())
 		{
 			case "admin_grandboss":
@@ -186,9 +186,9 @@ public class AdminGrandBoss: IAdminCommandHandler
 		{
 			int bossStatus = GrandBossManager.getInstance().getStatus(grandBossId);
 			NoRestartZone bossZone = null;
-			String textColor = null;
-			String text = null;
-			String htmlPatch = null;
+			string textColor = null;
+			string text = null;
+			string htmlPatch = null;
 			int deadStatus = 0;
 			
 			switch (grandBossId)
@@ -292,7 +292,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 			}
 			
 			StatSet info = GrandBossManager.getInstance().getStatSet(grandBossId);
-			String bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
+			string bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(htmlPatch, activeChar);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
@@ -320,7 +320,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 		// return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

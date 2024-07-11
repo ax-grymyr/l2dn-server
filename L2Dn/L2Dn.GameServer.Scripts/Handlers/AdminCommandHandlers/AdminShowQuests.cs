@@ -35,12 +35,12 @@ public class AdminShowQuests: IAdminCommandHandler
 		"COMPLETED"
 	};
 	
-	public bool useAdminCommand(String command, Player activeChar)
+	public bool useAdminCommand(string command, Player activeChar)
 	{
-		String[] cmdParams = command.Split(" ");
+		string[] cmdParams = command.Split(" ");
 		Player target = null;
 		WorldObject targetObject = null;
-		String[] val = new String[4];
+		string[] val = new string[4];
 		val[0] = null;
 		if (cmdParams.Length > 1)
 		{
@@ -144,7 +144,7 @@ public class AdminShowQuests: IAdminCommandHandler
 		actor.sendPacket(adminReply);
 	}
 	
-	private void showQuestMenu(Player target, Player actor, String[] val)
+	private void showQuestMenu(Player target, Player actor, string[] val)
 	{
 		try
 		{
@@ -170,7 +170,7 @@ public class AdminShowQuests: IAdminCommandHandler
 				case "name":
 				{
 					QuestState qs = target.getQuestState(val[1]);
-					String state = (qs != null) ? _states[qs.getState()] : "CREATED";
+					string state = (qs != null) ? _states[qs.getState()] : "CREATED";
 					replyMSG.Append("Character: <font color=\"LEVEL\">" + target.getName() + "</font><br>Quest: <font color=\"LEVEL\">" + val[1] + "</font><br>State: <font color=\"LEVEL\">" + state + "</font><br><br>");
 					replyMSG.Append("<center><table width=250><tr><td>Var</td><td>Value</td><td>New Value</td><td>&nbsp;</td></tr>");
 
@@ -178,7 +178,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					var query = ctx.CharacterQuests.Where(r => r.CharacterId == ID && r.Name == name);
 					foreach (var record in query)
 					{
-						String var_name = record.Variable;
+						string var_name = record.Variable;
 						if (var_name.equals("<state>"))
 						{
 							continue;
@@ -213,8 +213,8 @@ public class AdminShowQuests: IAdminCommandHandler
 					bool exqdb = true;
 					bool exqch = true;
 					int qnumber = int.Parse(val[1]);
-					String state = null;
-					String qname = null;
+					string state = null;
+					string qname = null;
 					QuestState qs = null;
 					
 					Quest quest = QuestManager.getInstance().getQuest(qnumber);
@@ -247,7 +247,7 @@ public class AdminShowQuests: IAdminCommandHandler
 							var query = ctx.CharacterQuests.Where(r => r.CharacterId == ID && r.Name == qname);
 							foreach (var record in query)
 							{
-								String var_name = record.Variable;
+								string var_name = record.Variable;
 								if (var_name.equals("<state>"))
 								{
 									continue;
@@ -289,10 +289,10 @@ public class AdminShowQuests: IAdminCommandHandler
 		}
 	}
 	
-	private void setQuestVar(Player target, Player actor, String[] val)
+	private void setQuestVar(Player target, Player actor, string[] val)
 	{
 		QuestState qs = target.getQuestState(val[0]);
-		String[] outval = new String[3];
+		string[] outval = new string[3];
 		qs.setSimulated(false);
 		
 		if (val[1].equals("state"))
@@ -352,7 +352,7 @@ public class AdminShowQuests: IAdminCommandHandler
 		showQuestMenu(target, actor, outval);
 	}
 	
-	public String[] getAdminCommandList()
+	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -11,11 +11,11 @@ public interface IVoicedCommandHandler
 	 * @param params
 	 * @return command success
 	 */
-	bool useVoicedCommand(String command, Player player, String pars);
+	bool useVoicedCommand(string command, Player player, string pars);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 * @return all known itemIds
 	 */
-	String[] getVoicedCommandList();
+	string[] getVoicedCommandList();
 }

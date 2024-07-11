@@ -16,7 +16,7 @@ public class EnsoulWindow: IBypassHandler
 		"show_extract_ensoul_window"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -36,7 +36,7 @@ public class EnsoulWindow: IBypassHandler
 		return false;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

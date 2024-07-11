@@ -18,7 +18,7 @@ public class PlayerHelp: IBypassHandler
 		"player_help"
 	};
 	
-	public bool useBypass(String command, Player player, Creature target)
+	public bool useBypass(string command, Player player, Creature target)
 	{
 		try
 		{
@@ -27,14 +27,14 @@ public class PlayerHelp: IBypassHandler
 				return false;
 			}
 			
-			String path = command.Substring(12);
+			string path = command.Substring(12);
 			if (path.Contains(".."))
 			{
 				return false;
 			}
 			
 			StringTokenizer st = new StringTokenizer(path);
-			String[] cmd = st.nextToken().Split("#");
+			string[] cmd = st.nextToken().Split("#");
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/help/" + cmd[0], player);
 			NpcHtmlMessagePacket html;
@@ -57,7 +57,7 @@ public class PlayerHelp: IBypassHandler
 		return true;
 	}
 	
-	public String[] getBypassList()
+	public string[] getBypassList()
 	{
 		return COMMANDS;
 	}

@@ -20,12 +20,12 @@ public class DefenceAttribute: AbstractEffect
 	public DefenceAttribute(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
-		String attributes = @params.getString("attribute", "FIRE");
+		string attributes = @params.getString("attribute", "FIRE");
 		if (attributes.contains(","))
 		{
 			_singleStat = null;
 			_multipleStats = new Set<Stat>();
-			foreach (String attribute in attributes.Split(","))
+			foreach (string attribute in attributes.Split(","))
 			{
 				_multipleStats.add(Enum.Parse<Stat>(attribute + "_RES"));
 			}

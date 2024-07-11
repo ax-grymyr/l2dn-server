@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Settings;
 
 public readonly struct ExUiSettingPacket: IOutgoingPacket
 {
-    public const String SPLIT_VAR = "	";
+    public const string SPLIT_VAR = "	";
 	
     private readonly byte[] _uiKeyMapping;
 	

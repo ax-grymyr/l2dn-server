@@ -56,7 +56,7 @@ public struct ExShowScreenMessagePacket: IOutgoingPacket
 	 * @param position the position on the screen
 	 * @param time the display time
 	 */
-	public ExShowScreenMessagePacket(String text, int position, int time)
+	public ExShowScreenMessagePacket(string text, int position, int time)
 	{
 		_type = 2;
 		_sysMessageId = -1;
@@ -81,7 +81,7 @@ public struct ExShowScreenMessagePacket: IOutgoingPacket
 	 * @param fade the fade effect
 	 * @param showEffect upper effect
 	 */
-	public ExShowScreenMessagePacket(String text, int position, int time, int size, bool fade, bool showEffect)
+	public ExShowScreenMessagePacket(string text, int position, int time, int size, bool fade, bool showEffect)
 	{
 		_type = 1;
 		_sysMessageId = -1;
@@ -190,7 +190,7 @@ public struct ExShowScreenMessagePacket: IOutgoingPacket
 	 * @param params the String parameters
 	 */
 	public ExShowScreenMessagePacket(int type, int messageId, int position, int unk1, int size, int unk2, int unk3,
-		bool showEffect, int time, bool fade, String text, NpcStringId npcString, string parameters)
+		bool showEffect, int time, bool fade, string text, NpcStringId npcString, string parameters)
 	{
 		_type = type;
 		_sysMessageId = messageId;

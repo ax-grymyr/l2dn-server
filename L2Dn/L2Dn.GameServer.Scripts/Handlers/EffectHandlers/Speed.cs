@@ -25,10 +25,10 @@ public class Speed: AbstractEffect
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 		
 		ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
-		List<String> weaponTypes = @params.getList<string>("weaponType");
+		List<string> weaponTypes = @params.getList<string>("weaponType");
 		if (weaponTypes != null)
 		{
-			foreach (String weaponType in weaponTypes)
+			foreach (string weaponType in weaponTypes)
 			{
 				try
 				{

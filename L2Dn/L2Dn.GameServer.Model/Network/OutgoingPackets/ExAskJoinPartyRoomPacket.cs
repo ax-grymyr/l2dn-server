@@ -5,8 +5,8 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExAskJoinPartyRoomPacket: IOutgoingPacket
 {
-    private readonly String _charName;
-    private readonly String _roomName;
+    private readonly string _charName;
+    private readonly string _roomName;
 	
     public ExAskJoinPartyRoomPacket(Player player)
     {
