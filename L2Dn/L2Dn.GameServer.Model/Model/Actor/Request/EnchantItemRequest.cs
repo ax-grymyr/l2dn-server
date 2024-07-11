@@ -32,12 +32,12 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public void clearMultiSuccessEnchantList()
 	{
-		_successEnchant.clear();
+		_successEnchant.Clear();
 	}
 	
 	public void clearMultiFailureEnchantList()
 	{
-		_failureEnchant.clear();
+		_failureEnchant.Clear();
 	}
 	
 	public Map<int, int[]> getMultiSuccessEnchantList()
@@ -117,7 +117,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public void clearMultiEnchantingItemsBySlot()
 	{
-		_multiEnchantingItems.clear();
+		_multiEnchantingItems.Clear();
 	}
 	
 	public string getMultiEnchantingItemsLits()
@@ -137,7 +137,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public void clearMultiFailReward()
 	{
-		_multiFailRewardItems.clear();
+		_multiFailRewardItems.Clear();
 	}
 	
 	public Map<int, ItemHolder> getMultiEnchantFailItems()

@@ -1332,7 +1332,7 @@ public class Item: WorldObject
 
 		lock (_elementals)
 		{
-			_elementals.clear();
+			_elementals.Clear();
 		}
 
 		try

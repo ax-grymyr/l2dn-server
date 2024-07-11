@@ -142,7 +142,7 @@ public class ClanHallAuction
 			Bidder highestBidder = potentialHighestBidder;
 			ClanHall clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId);
 			clanHall.setOwner(highestBidder.getClan());
-			getBids().clear();
+			getBids().Clear();
 			
 			try 
 			{

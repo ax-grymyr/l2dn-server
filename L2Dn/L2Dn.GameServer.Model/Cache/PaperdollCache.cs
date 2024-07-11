@@ -26,8 +26,8 @@ public class PaperdollCache
 	
 	public void clearCachedStats()
 	{
-		_baseStatValues.clear();
-		_statValues.clear();
+		_baseStatValues.Clear();
+		_statValues.Clear();
 		
 		clearMaxSetEnchant();
 	}

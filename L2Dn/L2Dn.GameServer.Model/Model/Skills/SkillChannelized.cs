@@ -39,7 +39,7 @@ public class SkillChannelized
 				channelizer.abortCast();
 			}
 		}
-		_channelizers.clear();
+		_channelizers.Clear();
 	}
 	
 	public bool isChannelized()

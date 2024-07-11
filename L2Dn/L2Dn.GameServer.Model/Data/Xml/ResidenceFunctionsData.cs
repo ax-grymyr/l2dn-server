@@ -27,7 +27,7 @@ public class ResidenceFunctionsData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		_functions.clear();
+		_functions.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ResidenceFunctions.xml");
 		document.Elements("list").Elements("function").ForEach(parseElement);

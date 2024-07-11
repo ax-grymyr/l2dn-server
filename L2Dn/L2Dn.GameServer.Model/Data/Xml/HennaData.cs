@@ -34,8 +34,8 @@ public class HennaData: DataReaderBase
 	
 	public void load()
 	{
-		_hennaItemIdList.clear();
-		_hennaDyeIdList.clear();
+		_hennaItemIdList.Clear();
+		_hennaDyeIdList.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaList.xml");
 		document.Elements("list").Elements("henna").ForEach(parseElement);

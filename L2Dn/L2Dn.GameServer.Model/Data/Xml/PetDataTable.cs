@@ -31,7 +31,7 @@ public class PetDataTable: DataReaderBase
 	
 	public void load()
 	{
-		_pets.clear();
+		_pets.Clear();
 		
 		LoadXmlDocuments(DataFileLocation.Data, "stats/pets").ForEach(t =>
 		{

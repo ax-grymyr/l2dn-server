@@ -89,7 +89,7 @@ public class InstanceManager: DataReaderBase
 	public void load()
 	{
 		// Load instance names
-		_instanceNames.clear();
+		_instanceNames.Clear();
 
 		LoadXmlDocument<XmlInstanceNameList>(DataFileLocation.Data, "InstanceNames.xml")
 			.Instances
@@ -98,14 +98,14 @@ public class InstanceManager: DataReaderBase
 		_logger.Info(GetType().Name +": Loaded " + _instanceNames.size() + " instance names.");
 		
 		// Load instance templates
-		_instanceTemplates.clear();
+		_instanceTemplates.Clear();
 
 		LoadXmlDocuments<XmlInstance>(DataFileLocation.Data, "instances", true)
 			.ForEach(t => parseInstanceTemplate(t.FilePath, t.Document));
 		
 		_logger.Info(GetType().Name +": Loaded " + _instanceTemplates.Count + " instance templates.");
 		// Load player's reenter data
-		_playerTimes.clear();
+		_playerTimes.Clear();
 		restoreInstanceTimes();
 		_logger.Info(GetType().Name +": Loaded instance reenter times for " + _playerTimes.Count + " players.");
 	}

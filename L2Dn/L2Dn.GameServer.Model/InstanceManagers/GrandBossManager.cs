@@ -189,9 +189,9 @@ public class GrandBossManager: IStorable
 	{
 		storeMe();
 		
-		_bosses.clear();
-		_storedInfo.clear();
-		_bossStatus.clear();
+		_bosses.Clear();
+		_storedInfo.Clear();
+		_bossStatus.Clear();
 	}
 	
 	/**

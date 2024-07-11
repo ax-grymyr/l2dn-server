@@ -22,7 +22,7 @@ public class SubjugationGacha: DataReaderBase
 	
 	public void load()
 	{
-		_subjugations.clear();
+		_subjugations.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SubjugationGacha.xml");
 		document.Elements("list").Elements("purge").ForEach(parseElement);

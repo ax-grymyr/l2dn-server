@@ -23,7 +23,7 @@ public class PetExtractData: DataReaderBase
 	
 	public void load()
 	{
-		_extractionData.clear();
+		_extractionData.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetExtractData.xml");
 		document.Elements("list").Elements("extraction").ForEach(parseElement);

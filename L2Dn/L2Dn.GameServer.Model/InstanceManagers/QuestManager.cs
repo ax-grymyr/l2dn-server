@@ -74,7 +74,7 @@ public class QuestManager
 				quest.unload(false);
 			}
 		}
-		_quests.clear();
+		_quests.Clear();
 	}
 	
 	/**

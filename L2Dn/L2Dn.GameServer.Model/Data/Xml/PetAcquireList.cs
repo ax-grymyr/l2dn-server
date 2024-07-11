@@ -23,7 +23,7 @@ public class PetAcquireList: DataReaderBase
 	
 	public void load()
 	{
-		_skills.clear();
+		_skills.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetAcquireList.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);

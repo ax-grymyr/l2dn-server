@@ -753,7 +753,7 @@ public class Instance : IIdentifiable, INamable
 				door.decayMe();
 			}
 		}
-		_doors.clear();
+		_doors.Clear();
 	}
 	
 	/**

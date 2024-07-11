@@ -177,8 +177,8 @@ public class SkillData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
-		_skills.clear();
-		_skillsMaxLevel.clear();
+		_skills.Clear();
+		_skillsMaxLevel.Clear();
 
 		LoadXmlDocuments(DataFileLocation.Data, "stats/skills").ForEach(t =>
 		{

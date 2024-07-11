@@ -1035,7 +1035,7 @@ public class Npc: Creature
 		// Clear script variables
 		if (hasVariables())
 		{
-			getVariables().getSet().clear();
+			getVariables().getSet().Clear();
 		}
 		
 		// Reset targetable state

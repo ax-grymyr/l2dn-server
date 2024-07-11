@@ -69,7 +69,7 @@ public struct RequestRecipeShopListSetPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        player.getManufactureItems().clear();
+        player.getManufactureItems().Clear();
         foreach (ManufactureItem i in _items)
         {
             RecipeList list = RecipeData.getInstance().getRecipeList(i.getRecipeId());

@@ -91,8 +91,8 @@ public class ChallengePoint
 	
 	public void restoreChallengePoints()
 	{
-		_challengePoints.clear();
-		_challengePointsRecharges.clear();
+		_challengePoints.Clear();
+		_challengePointsRecharges.Clear();
 
 		try
 		{

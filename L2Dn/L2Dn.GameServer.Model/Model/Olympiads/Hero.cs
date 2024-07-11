@@ -63,12 +63,12 @@ public class Hero
 	
 	private void init()
 	{
-		HEROES.clear();
-		COMPLETE_HEROS.clear();
-		HERO_COUNTS.clear();
-		HERO_FIGHTS.clear();
-		HERO_DIARY.clear();
-		HERO_MESSAGE.clear();
+		HEROES.Clear();
+		COMPLETE_HEROS.Clear();
+		HERO_COUNTS.Clear();
+		HERO_FIGHTS.Clear();
+		HERO_DIARY.Clear();
+		HERO_MESSAGE.Clear();
 		
 		try 
 		{
@@ -392,10 +392,10 @@ public class Hero
 	
 	public void resetData()
 	{
-		HERO_DIARY.clear();
-		HERO_FIGHTS.clear();
-		HERO_COUNTS.clear();
-		HERO_MESSAGE.clear();
+		HERO_DIARY.Clear();
+		HERO_FIGHTS.Clear();
+		HERO_COUNTS.Clear();
+		HERO_MESSAGE.Clear();
 	}
 	
 	public void showHeroDiary(Player player, int heroclass, int charid, int page)

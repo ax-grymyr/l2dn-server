@@ -23,7 +23,7 @@ public class NpcNameLocalisationData: DataReaderBase
 	
 	public void load()
 	{
-		NPC_NAME_LOCALISATIONS.clear();
+		NPC_NAME_LOCALISATIONS.Clear();
 		
 		if (Config.MULTILANG_ENABLE)
 		{

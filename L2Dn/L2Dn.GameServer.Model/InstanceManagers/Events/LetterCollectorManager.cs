@@ -89,9 +89,9 @@ public class LetterCollectorManager
 	public void resetField()
 	{
 		_minLevel = 1;
-		_rewards.clear();
-		_words.clear();
-		_needToSumAllChance.clear();
+		_rewards.Clear();
+		_words.Clear();
+		_needToSumAllChance.Clear();
 	}
 	
 	public void setLetters(Map<string, int> letters)

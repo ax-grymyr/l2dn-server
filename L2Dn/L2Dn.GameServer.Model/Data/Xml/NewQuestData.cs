@@ -25,7 +25,7 @@ public class NewQuestData: DataReaderBase
 	
 	public void load()
 	{
-		_newQuestData.clear();
+		_newQuestData.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "NewQuestData.xml");
 		document.Elements("list").Elements("quest").ForEach(parseElement);

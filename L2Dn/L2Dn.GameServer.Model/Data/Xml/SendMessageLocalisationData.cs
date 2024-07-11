@@ -25,7 +25,7 @@ public class SendMessageLocalisationData: DataReaderBase
 	
 	public void load()
 	{
-		SEND_MESSAGE_LOCALISATIONS.clear();
+		SEND_MESSAGE_LOCALISATIONS.Clear();
 		
 		if (Config.MULTILANG_ENABLE)
 		{

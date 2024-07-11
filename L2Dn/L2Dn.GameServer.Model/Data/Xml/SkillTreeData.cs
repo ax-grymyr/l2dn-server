@@ -87,25 +87,25 @@ public class SkillTreeData: DataReaderBase
 	public void load()
 	{
 		_loading = true;
-		_classSkillTrees.clear();
-		_collectSkillTree.clear();
-		_fishingSkillTree.clear();
-		_pledgeSkillTree.clear();
-		_subClassSkillTree.clear();
-		_subPledgeSkillTree.clear();
-		_transferSkillTrees.clear();
-		_transformSkillTree.clear();
-		_nobleSkillTree.clear();
-		_abilitySkillTree.clear();
-		_alchemySkillTree.clear();
-		_heroSkillTree.clear();
-		_gameMasterSkillTree.clear();
-		_gameMasterAuraSkillTree.clear();
-		_raceSkillTree.clear();
-		_revelationSkillTree.clear();
-		_dualClassSkillTree.clear();
-		_removeSkillCache.clear();
-		_awakeningSaveSkillTree.clear();
+		_classSkillTrees.Clear();
+		_collectSkillTree.Clear();
+		_fishingSkillTree.Clear();
+		_pledgeSkillTree.Clear();
+		_subClassSkillTree.Clear();
+		_subPledgeSkillTree.Clear();
+		_transferSkillTrees.Clear();
+		_transformSkillTree.Clear();
+		_nobleSkillTree.Clear();
+		_abilitySkillTree.Clear();
+		_alchemySkillTree.Clear();
+		_heroSkillTree.Clear();
+		_gameMasterSkillTree.Clear();
+		_gameMasterAuraSkillTree.Clear();
+		_raceSkillTree.Clear();
+		_revelationSkillTree.Clear();
+		_dualClassSkillTree.Clear();
+		_removeSkillCache.Clear();
+		_awakeningSaveSkillTree.Clear();
 		
 		// Load files.
 		LoadXmlDocuments<XmlSkillTreeList>(DataFileLocation.Data, "skillTrees", true)
@@ -1677,7 +1677,7 @@ public class SkillTreeData: DataReaderBase
 			{
 				array[i++] = h;
 			}
-			tempMap.clear();
+			tempMap.Clear();
 			Array.Sort(array);
 			_skillsByClassIdHashCodes.put(cls, array);
 		}

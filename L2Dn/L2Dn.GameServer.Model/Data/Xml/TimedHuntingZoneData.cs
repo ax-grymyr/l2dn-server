@@ -26,7 +26,7 @@ public class TimedHuntingZoneData: DataReaderBase
 	
 	public void load()
 	{
-		_timedHuntingZoneData.clear();
+		_timedHuntingZoneData.Clear();
         
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TimedHuntingZoneData.xml");
 		document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(false)).Elements("zone")

@@ -1253,7 +1253,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	private void initSpecialEnvoys()
 	{
 		_specialEnvoys.clear();
-		_envoyCastles.clear();
+		_envoyCastles.Clear();
 		_availableCastles.clear();
 		try 
 		{

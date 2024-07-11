@@ -23,7 +23,7 @@ public class LuckyGameData: DataReaderBase
 	
 	public void load()
 	{
-		_luckyGame.clear();
+		_luckyGame.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "LuckyGameData.xml");
 		document.Elements("list").Elements("luckygame").ForEach(parseElement);

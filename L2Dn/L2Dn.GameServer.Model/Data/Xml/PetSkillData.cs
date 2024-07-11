@@ -24,7 +24,7 @@ public class PetSkillData: DataReaderBase
 	
 	public void load()
 	{
-		_skillTrees.clear();
+		_skillTrees.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetSkillData.xml");
 		document.Elements("list").Elements("skill").ForEach(parseElement);

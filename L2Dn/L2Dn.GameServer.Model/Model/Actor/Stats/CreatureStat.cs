@@ -802,8 +802,8 @@ public class CreatureStat
 	
 	protected void resetStats()
 	{
-		_statsAdd.clear();
-		_statsMul.clear();
+		_statsAdd.Clear();
+		_statsMul.Clear();
 		_vampiricSum = 0;
 		_mpVampiricSum = 0;
 		

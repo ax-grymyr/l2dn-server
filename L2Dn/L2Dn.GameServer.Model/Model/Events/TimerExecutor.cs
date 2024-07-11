@@ -155,7 +155,7 @@ public class TimerExecutor<T>
 				timer.cancelTimer();
 			}
 		}
-		_timers.clear();
+		_timers.Clear();
 	}
 	
 	/**

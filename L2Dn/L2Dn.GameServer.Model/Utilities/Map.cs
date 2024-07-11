@@ -50,11 +50,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         }
     }
 
-    public void clear()
-    {
-        Clear();
-    }
-
     public int size()
     {
         return Count;

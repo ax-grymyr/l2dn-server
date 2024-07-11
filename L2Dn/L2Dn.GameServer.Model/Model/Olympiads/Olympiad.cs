@@ -102,7 +102,7 @@ public class Olympiad
 	
 	private void load()
 	{
-		NOBLES.clear();
+		NOBLES.Clear();
 		
 		bool loaded = false;
 		try 
@@ -262,7 +262,7 @@ public class Olympiad
 	
 	public void loadNoblesRank()
 	{
-		NOBLES_RANK.clear();
+		NOBLES_RANK.Clear();
 		Map<int, int> tmpPlace = new();
 		try 
 		{
@@ -1168,7 +1168,7 @@ public class Olympiad
 		{
 			LOGGER.Warn("Olympiad System: Couldn't delete nobles from DB!");
 		}
-		NOBLES.clear();
+		NOBLES.Clear();
 	}
 	
 	/**

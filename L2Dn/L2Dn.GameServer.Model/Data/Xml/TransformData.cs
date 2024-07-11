@@ -29,7 +29,7 @@ public class TransformData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		_transformData.clear();
+		_transformData.Clear();
 		
 		LoadXmlDocuments(DataFileLocation.Data, "stats/transformations").ForEach(t =>
 		{

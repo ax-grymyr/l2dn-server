@@ -378,7 +378,7 @@ public class Duel
 	{
 		if ((_playerA == null) || (_playerB == null) || _playerA.isInDuel() || _playerB.isInDuel())
 		{
-			_playerConditions.clear();
+			_playerConditions.Clear();
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
@@ -762,7 +762,7 @@ public class Duel
 		if ((_playerA == null) || (_playerB == null))
 		{
 			// clean up
-			_playerConditions.clear();
+			_playerConditions.Clear();
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
@@ -824,7 +824,7 @@ public class Duel
 		broadcastToTeam2(duelEnd);
 		
 		// clean up
-		_playerConditions.clear();
+		_playerConditions.Clear();
 		DuelManager.getInstance().removeDuel(this);
 	}
 	

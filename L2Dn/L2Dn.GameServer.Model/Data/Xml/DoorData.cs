@@ -29,8 +29,8 @@ public class DoorData: DataReaderBase
 	
 	public void load()
 	{
-		_doors.clear();
-		_groups.clear();
+		_doors.Clear();
+		_groups.Clear();
 		
 		LoadXmlDocument<XmlDoorList>(DataFileLocation.Data, "DoorData.xml")
 			.Doors.ForEach(xmlDoor =>

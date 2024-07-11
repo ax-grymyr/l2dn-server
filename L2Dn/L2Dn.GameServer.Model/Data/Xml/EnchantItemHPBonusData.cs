@@ -45,7 +45,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 	
 	public void load()
 	{
-		_armorHPBonuses.clear();
+		_armorHPBonuses.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/enchantHPBonus.xml");
 		document.Elements("list").Elements("enchantHP").ForEach(parseEnchant);

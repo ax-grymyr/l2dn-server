@@ -36,7 +36,7 @@ public class ShuttleData: DataReaderBase
 			{
 				shuttle.deleteMe();
 			}
-			_shuttleInstances.clear();
+			_shuttleInstances.Clear();
 		}
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ShuttleData.xml");

@@ -25,7 +25,7 @@ public class BeautyShopData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
-		_beautyList.clear();
+		_beautyList.Clear();
 
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "BeautyShop.xml");
 		document.Elements("list").Elements("race").ForEach(loadElement);

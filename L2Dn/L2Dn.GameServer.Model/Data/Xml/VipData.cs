@@ -28,7 +28,7 @@ public class VipData: DataReaderBase
 			return;
 		}
 		
-		_vipTiers.clear();
+		_vipTiers.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Vip.xml");
 		document.Elements("list").Elements("vip").ForEach(parseElement);

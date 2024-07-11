@@ -84,7 +84,7 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
             }
         }
         
-        _next.clear();
-        _current.clear();
+        _next.Clear();
+        _current.Clear();
     }
 }

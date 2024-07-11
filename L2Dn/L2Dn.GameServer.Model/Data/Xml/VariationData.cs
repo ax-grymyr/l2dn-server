@@ -26,9 +26,9 @@ public class VariationData: DataReaderBase
 	
 	public void load()
 	{
-		_itemGroups.clear();
-		_variations.clear();
-		_fees.clear();
+		_itemGroups.Clear();
+		_variations.Clear();
+		_fees.Clear();
 
 		XmlVariationData variationData = LoadXmlDocument<XmlVariationData>(DataFileLocation.Data,
 			"stats/augmentation/Variations.xml");

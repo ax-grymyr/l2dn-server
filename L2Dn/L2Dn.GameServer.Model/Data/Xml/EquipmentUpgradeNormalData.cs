@@ -39,8 +39,8 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 	public void load()
 	{
 		_commission = -1;
-		_discount.clear();
-		_upgrades.clear();
+		_discount.Clear();
+		_upgrades.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeNormalData.xml");
 		document.Elements("list").Elements("params").ForEach(el => _commission = el.GetAttributeValueAsInt32("commission"));

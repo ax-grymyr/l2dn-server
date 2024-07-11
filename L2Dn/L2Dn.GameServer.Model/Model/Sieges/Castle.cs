@@ -494,7 +494,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			removeFunction(fc);
 		}
-		_function.clear();
+		_function.Clear();
 	}
 	
 	// This method updates the castle tax rate
@@ -589,7 +589,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			removeFunction(fc);
 		}
-		_function.clear();
+		_function.Clear();
 	}
 	
 	/**

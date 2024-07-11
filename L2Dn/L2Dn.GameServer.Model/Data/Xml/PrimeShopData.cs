@@ -27,7 +27,7 @@ public class PrimeShopData: DataReaderBase
 	
 	public void load()
 	{
-		_primeItems.clear();
+		_primeItems.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PrimeShop.xml");
 		document.Elements("list").Where(el => el.Attribute("enabled").GetBoolean(false)).Elements("item")

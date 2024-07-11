@@ -30,7 +30,7 @@ public class StaticObjectData: DataReaderBase
 	
 	public void load()
 	{
-		_staticObjects.clear();
+		_staticObjects.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "StaticObjects.xml");
 		document.Elements("list").Elements("object").ForEach(parseElement);

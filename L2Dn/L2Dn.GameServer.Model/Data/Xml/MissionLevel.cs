@@ -25,7 +25,7 @@ public class MissionLevel: DataReaderBase
 	
 	public void load()
 	{
-		_template.clear();
+		_template.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MissionLevel.xml");
 		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.GetAttributeValueAsInt32("season"));
@@ -37,7 +37,7 @@ public class MissionLevel: DataReaderBase
 		}
 		else
 		{
-			_template.clear();
+			_template.Clear();
 		}
 	}
 

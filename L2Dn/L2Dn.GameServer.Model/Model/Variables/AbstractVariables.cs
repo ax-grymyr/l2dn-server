@@ -191,7 +191,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 			GetQuery(ctx).ExecuteDelete();
 			
 			// Clear all entries
-			getSet().clear();
+			getSet().Clear();
 		}
 		catch (Exception e)
 		{

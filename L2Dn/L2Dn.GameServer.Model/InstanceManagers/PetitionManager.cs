@@ -32,14 +32,14 @@ public class PetitionManager
 	public void clearCompletedPetitions()
 	{
 		int numPetitions = _pendingPetitions.size();
-		_completedPetitions.clear();
+		_completedPetitions.Clear();
 		LOGGER.Info(GetType().Name +": Completed petition data cleared. " + numPetitions + " petitions removed.");
 	}
 	
 	public void clearPendingPetitions()
 	{
 		int numPetitions = _pendingPetitions.size();
-		_pendingPetitions.clear();
+		_pendingPetitions.Clear();
 		LOGGER.Info(GetType().Name +": Pending petition queue cleared. " + numPetitions + " petitions removed.");
 	}
 	

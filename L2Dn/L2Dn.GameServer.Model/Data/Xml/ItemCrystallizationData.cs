@@ -35,11 +35,11 @@ public class ItemCrystallizationData: DataReaderBase
 	
 	public void load()
 	{
-		_crystallizationTemplates.clear();
+		_crystallizationTemplates.Clear();
 		foreach (CrystalType crystalType in EnumUtil.GetValues<CrystalType>())
 			_crystallizationTemplates.put(crystalType, new());
 		
-		_items.clear();
+		_items.Clear();
 		
 		_weaponDestroyGroup = new RewardItemsOnFailure();
 		_armorDestroyGroup = new RewardItemsOnFailure();

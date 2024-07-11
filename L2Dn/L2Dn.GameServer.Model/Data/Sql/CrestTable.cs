@@ -28,7 +28,7 @@ public class CrestTable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
-		_crests.clear();
+		_crests.Clear();
 		Set<int> crestsInUse = new();
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{

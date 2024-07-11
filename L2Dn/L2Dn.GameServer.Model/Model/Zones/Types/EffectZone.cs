@@ -213,7 +213,7 @@ public class EffectZone : ZoneType
 	{
 		if (_skills != null)
 		{
-			_skills.clear();
+			_skills.Clear();
 		}
 	}
 	

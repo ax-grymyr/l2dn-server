@@ -47,15 +47,15 @@ public class RankManager
 	{
 		// Load charIds All
 		_snapshotList = _mainList;
-		_mainList.clear();
+		_mainList.Clear();
 		_snapshotOlyList = _mainOlyList;
-		_mainOlyList.clear();
+		_mainOlyList.Clear();
 		_snapshotPvpList = _mainPvpList;
-		_mainPvpList.clear();
+		_mainPvpList.Clear();
 		_snapshotPetList = _mainPetList;
-		_mainPetList.clear();
+		_mainPetList.Clear();
 		_snapshotClanList = _mainClanList;
-		_mainClanList.clear();
+		_mainClanList.Clear();
 		
 		try 
 		{

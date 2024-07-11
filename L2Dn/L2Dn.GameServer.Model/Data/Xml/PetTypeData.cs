@@ -24,7 +24,7 @@ public class PetTypeData: DataReaderBase
 	
 	public void load()
 	{
-		_skills.clear();
+		_skills.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetTypes.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);

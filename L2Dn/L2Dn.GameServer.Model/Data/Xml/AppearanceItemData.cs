@@ -49,7 +49,7 @@ public class AppearanceItemData: DataReaderBase
 		*/
 		//@formatter:on
 		
-		_stoneMap.clear();
+		_stoneMap.Clear();
 	}
 
 	private void loadElement(XElement element)

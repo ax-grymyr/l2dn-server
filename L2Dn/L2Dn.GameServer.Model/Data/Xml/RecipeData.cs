@@ -29,7 +29,7 @@ public class RecipeData: DataReaderBase
 	
 	public void load()
 	{
-		_recipes.clear();
+		_recipes.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Recipes.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);

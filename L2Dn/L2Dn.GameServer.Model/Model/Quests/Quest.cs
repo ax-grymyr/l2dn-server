@@ -2641,7 +2641,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 			timers.Clear();
 		}
-		_questTimers.clear();
+		_questTimers.Clear();
 		
 		if (removeFromList)
 		{

@@ -4792,7 +4792,7 @@ public class Player: Playable
 		if (!_cubics.isEmpty())
 		{
 			_cubics.values().ForEach(x => x.deactivate());
-			_cubics.clear();
+			_cubics.Clear();
 		}
 		
 		if (isChannelized())
@@ -6892,7 +6892,7 @@ public class Player: Playable
 	            : ctx.CharacterRecipeBooks.Where(r =>
 		            r.CharacterId == characterId && r.ClassIndex == _classIndex && r.Type == 1);
 
-			_dwarvenRecipeBook.clear();
+			_dwarvenRecipeBook.Clear();
 
 			RecipeData rd = RecipeData.getInstance();            
             foreach (var record in query)
@@ -8020,7 +8020,7 @@ public class Player: Playable
 	 */
 	private void recalcHennaStats()
 	{
-		_hennaBaseStats.clear();
+		_hennaBaseStats.Clear();
 		foreach (HennaPoten hennaPoten in _hennaPoten)
 		{
 			Henna henna = hennaPoten.getHenna();
@@ -8839,7 +8839,7 @@ public class Player: Playable
 		if (!_cubics.isEmpty())
 		{
 			_cubics.values().ForEach(x => x.deactivate());
-			_cubics.clear();
+			_cubics.Clear();
 		}
 	}
 	
@@ -9225,7 +9225,7 @@ public class Player: Playable
 		if (!_cubics.isEmpty())
 		{
 			_cubics.values().ForEach(x => x.deactivate());
-			_cubics.clear();
+			_cubics.Clear();
 			sendPacket(new ExUserInfoCubicPacket(this));
 		}
 		
@@ -11738,7 +11738,7 @@ public class Player: Playable
 	 */
 	public void clearSouls()
 	{
-		_souls.clear();
+		_souls.Clear();
 		stopSoulTask();
 		sendPacket(new EtcStatusUpdatePacket(this));
 	}
@@ -12116,7 +12116,7 @@ public class Player: Playable
 	
 	public void removeAllTransformSkills()
 	{
-		_transformSkills.clear();
+		_transformSkills.Clear();
 	}
 	
 	/**
@@ -13043,7 +13043,7 @@ public class Player: Playable
 	{
 		if (_manufactureItems != null)
 		{
-			_manufactureItems.clear();
+			_manufactureItems.Clear();
 		}
 		
 		try 
@@ -15597,7 +15597,7 @@ public class Player: Playable
 	{
 		if (_purgePoints != null)
 		{
-			_purgePoints.clear();
+			_purgePoints.Clear();
 		}
 		
 		try 

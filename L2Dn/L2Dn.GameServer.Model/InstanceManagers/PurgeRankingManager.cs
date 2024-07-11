@@ -144,7 +144,7 @@ public class PurgeRankingManager
 						Player onlinePlayer = World.getInstance().getPlayer(charId);
 						if (onlinePlayer != null)
 						{
-							onlinePlayer.getPurgePoints().clear();
+							onlinePlayer.getPurgePoints().Clear();
 							onlinePlayer.sendPacket(
 								new ExSubjugationSidebarPacket(null, new PurgePlayerHolder(0, 0, 0)));
 						}
@@ -156,7 +156,7 @@ public class PurgeRankingManager
 		}
 
 		// Clear ranking.
-		_ranking.clear();
+		_ranking.Clear();
 		
 		// Restore ranking.
 		for (int category = 1; category <= 9; category++)

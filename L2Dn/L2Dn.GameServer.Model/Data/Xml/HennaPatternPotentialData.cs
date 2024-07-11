@@ -32,9 +32,9 @@ public class HennaPatternPotentialData: DataReaderBase
 	
 	public void load()
 	{
-		_potenFees.clear();
-		_potenExpTable.clear();
-		_potentials.clear();
+		_potenFees.Clear();
+		_potenExpTable.Clear();
+		_potentials.Clear();
 		_enchancedReset.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaPatternPotential.xml");

@@ -97,9 +97,9 @@ public class ItemData: DataReaderBase
 	
 	private void load()
 	{
-		_armors.clear();
-		_etcItems.clear();
-		_weapons.clear();
+		_armors.Clear();
+		_etcItems.Clear();
+		_weapons.Clear();
 
 		LoadXmlDocuments(DataFileLocation.Data, "stats/items", true).ForEach(t =>
 		{

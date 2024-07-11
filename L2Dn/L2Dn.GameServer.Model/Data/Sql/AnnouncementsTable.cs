@@ -27,7 +27,7 @@ public class AnnouncementsTable
 	
 	private void load()
 	{
-		_announcements.clear();
+		_announcements.Clear();
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

@@ -29,7 +29,7 @@ public class RandomCraftData: DataReaderBase
 	
 	public void load()
 	{
-		EXTRACT_DATA.clear();
+		EXTRACT_DATA.Clear();
 
 		{
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "RandomCraftExtractData.xml");
@@ -42,7 +42,7 @@ public class RandomCraftData: DataReaderBase
 			LOGGER.Info(GetType().Name + ": Loaded " + extractCount + " extraction data.");
 		}
 		
-		REWARD_DATA.clear();
+		REWARD_DATA.Clear();
 
 		{
 			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "RandomCraftRewardData.xml");
@@ -59,7 +59,7 @@ public class RandomCraftData: DataReaderBase
 		else if (rewardCount > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Random craft rewards should be more than " + rewardCount + ".");
-			REWARD_DATA.clear();
+			REWARD_DATA.Clear();
 		}
 		
 		randomizeRewards();

@@ -36,7 +36,7 @@ public class InitialShortcutData: DataReaderBase
 	
 	public void load()
 	{
-		_initialShortcutData.clear();
+		_initialShortcutData.Clear();
 		_initialGlobalShortcutList.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/initialShortcuts.xml");

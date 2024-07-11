@@ -44,7 +44,7 @@ public class ItemAuctionManager: DataReaderBase
 	
 	public void load()
 	{
-		_managerInstances.clear();
+		_managerInstances.Clear();
 
 		LoadXmlDocument(DataFileLocation.Data, "ItemAuctions.xml").Elements("list").Elements("instance")
 			.ForEach(parseElement);

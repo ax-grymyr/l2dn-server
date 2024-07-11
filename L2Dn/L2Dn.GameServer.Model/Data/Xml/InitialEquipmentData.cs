@@ -30,7 +30,7 @@ public class InitialEquipmentData: DataReaderBase
 
 	public void load()
 	{
-		_initialEquipmentList.clear();
+		_initialEquipmentList.Clear();
 
 		const string normal = "stats/initialEquipment.xml";
 		const string @event = "stats/initialEquipmentEvent.xml";

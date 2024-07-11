@@ -24,7 +24,7 @@ public class RaidTeleportListData: DataReaderBase
 	
 	public void load()
 	{
-		_teleports.clear();
+		_teleports.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "RaidTeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);

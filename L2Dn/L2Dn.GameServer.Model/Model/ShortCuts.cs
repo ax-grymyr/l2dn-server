@@ -148,7 +148,7 @@ public class ShortCuts : IRestorable
 	
 	public bool restoreMe()
 	{
-		_shortCuts.clear();
+		_shortCuts.Clear();
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

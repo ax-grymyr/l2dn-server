@@ -33,7 +33,7 @@ public class FishingData: DataReaderBase
 	
 	public void load()
 	{
-		_baitData.clear();
+		_baitData.Clear();
 		
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Fishing.xml");
 		document.Elements("list").ForEach(el =>

@@ -147,7 +147,7 @@ public class MacroList: IRestorable
 
 	public bool restoreMe()
 	{
-		_macroses.clear();
+		_macroses.Clear();
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

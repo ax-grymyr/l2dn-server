@@ -93,7 +93,7 @@ internal class AntiFeedManager
 	 */
 	public void clear()
 	{
-		_lastDeathTimes.clear();
+		_lastDeathTimes.Clear();
 	}
 	
 	/**
@@ -244,7 +244,7 @@ internal class AntiFeedManager
 		Map<int, AtomicInteger> @event = _eventIPs.get(eventId);
 		if (@event != null)
 		{
-			@event.clear();
+			@event.Clear();
 		}
 	}
 	

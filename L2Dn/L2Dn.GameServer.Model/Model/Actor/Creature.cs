@@ -1454,7 +1454,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void resetTimeStamps()
 	{
-		_reuseTimeStampsSkills.clear();
+		_reuseTimeStampsSkills.Clear();
 	}
 	
 	/**
@@ -1533,7 +1533,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void resetDisabledSkills()
 	{
-		_disabledSkills.clear();
+		_disabledSkills.Clear();
 	}
 	
 	/**
@@ -5345,7 +5345,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (_summonedNpcs != null)
 		{
-			_summonedNpcs.clear();
+			_summonedNpcs.Clear();
 		}
 	}
 	

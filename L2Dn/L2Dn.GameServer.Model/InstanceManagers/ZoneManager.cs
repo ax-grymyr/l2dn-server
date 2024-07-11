@@ -139,7 +139,7 @@ public class ZoneManager: DataReaderBase
 		{
 			foreach (ZoneRegion zoneRegion in zoneRegions)
 			{
-				zoneRegion.getZones().clear();
+				zoneRegion.getZones().Clear();
 				count++;
 			}
 		}
@@ -314,7 +314,7 @@ public class ZoneManager: DataReaderBase
 	{
 		_classZones = _zoneTypes.Values.ToFrozenDictionary(info => info.ZoneType, _ => new Map<int, ZoneType>());
 		
-		_spawnTerritories.clear();
+		_spawnTerritories.Clear();
 
 		LoadXmlDocuments<XmlZones>(DataFileLocation.Data, "zones")
 			.Where(tuple => tuple.Document.Enabled)

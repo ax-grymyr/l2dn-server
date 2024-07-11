@@ -30,10 +30,10 @@ public class FakePlayerData: DataReaderBase
 	{
 		if (Config.FAKE_PLAYERS_ENABLED)
 		{
-			_fakePlayerInfos.clear();
-			_fakePlayerNames.clear();
-			_fakePlayerIds.clear();
-			_talkableFakePlayerNames.clear();
+			_fakePlayerInfos.Clear();
+			_fakePlayerNames.Clear();
+			_fakePlayerIds.Clear();
+			_talkableFakePlayerNames.Clear();
 			
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerVisualData.xml");
 			document.Elements("list").Elements("fakePlayer").ForEach(parseElement);
