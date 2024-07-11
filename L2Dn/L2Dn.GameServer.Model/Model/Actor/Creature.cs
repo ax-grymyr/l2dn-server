@@ -3133,7 +3133,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			else // Mouse click movement.
 			{
 				// Stop movement when player has clicked far away and intersected with an obstacle.
-				double distance = MathUtil.hypot(dx, dy);
+				double distance = double.Hypot(dx, dy);
 				if (distance > 3000)
 				{
 					double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
@@ -3589,7 +3589,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						{
 							for (int sY = yMin; sY < yMax; sY += 500)
 							{
-								double tempDistance = MathUtil.hypot(sX - originalLoc.X, sY - originalLoc.Y);
+								double tempDistance = double.Hypot(sX - originalLoc.X, sY - originalLoc.Y);
 								if (tempDistance < shortDistance)
 								{
 									List<AbstractNodeLoc> tempPath = PathFinding.getInstance().findPath(curLoc, new Location3D(sX, sY, originalLoc.Z), getInstanceWorld(), false);
@@ -3665,7 +3665,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Apply Z distance for flying or swimming for correct timing calculations
 		if ((_isFlying || isInWater) && !verticalMovementOnly)
 		{
-			distance = MathUtil.hypot(distance, dLoc.Z);
+			distance = double.Hypot(distance, dLoc.Z);
 		}
 		
 		// Calculate the number of ticks between the current position and the destination.
@@ -3752,7 +3752,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		
 		// Calculate and set the heading of the Creature.
-		double distance = MathUtil.hypot(m.xDestination - curX, m.yDestination - curY);
+		double distance = double.Hypot(m.xDestination - curX, m.yDestination - curY);
 		if (distance != 0)
 		{
 			setHeading(new Location2D(curX, curY).HeadingTo(new Location2D(m.xDestination, m.yDestination)));

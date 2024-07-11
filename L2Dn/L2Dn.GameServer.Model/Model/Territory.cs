@@ -144,7 +144,7 @@ public class Territory
 				int zmin = _zMin;
 				foreach (Point p1 in _points)
 				{
-					double distance = MathUtil.hypot(p1._x - x, p1._y - y);
+					double distance = double.Hypot(p1._x - x, p1._y - y);
 					if ((curdistance == 0) || (distance < curdistance))
 					{
 						curdistance = distance;

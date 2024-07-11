@@ -877,7 +877,7 @@ public class CreatureAI: AbstractAI
 			
 			double dx = worldPosition.X - x;
 			double dy = worldPosition.Y - y;
-			double dist = MathUtil.hypot(dx, dy);
+			double dist = double.Hypot(dx, dy);
 			
 			double sin = dy / dist;
 			double cos = dx / dist;

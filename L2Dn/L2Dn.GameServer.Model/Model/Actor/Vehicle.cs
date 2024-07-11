@@ -126,7 +126,7 @@ public abstract class Vehicle : Creature
 						m.zDestination = point.Location.Z;
 						m.heading = 0;
 						
-						double distance = MathUtil.hypot(point.Location.X - getX(), point.Location.Y - getY());
+						double distance = double.Hypot(point.Location.X - getX(), point.Location.Y - getY());
 						if (distance > 1)
 						{
 							setHeading(new Location2D(getX(), getY()).HeadingTo(point.Location));

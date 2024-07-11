@@ -89,7 +89,7 @@ public class ZoneCylinder: ZoneForm
 	
 	public override double getDistanceToZone(int x, int y)
 	{
-		return MathUtil.hypot(_x - x, _y - y) - _rad;
+		return double.Hypot(_x - x, _y - y) - _rad;
 	}
 	
 	// getLowZ() / getHighZ() - These two functions were added to cope with the demand of the new fishing algorithms, wich are now able to correctly place the hook in the water, thanks to getHighZ(). getLowZ() was added, considering potential future modifications.

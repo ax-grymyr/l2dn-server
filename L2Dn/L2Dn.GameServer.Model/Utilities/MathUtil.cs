@@ -2,11 +2,6 @@
 
 public static class MathUtil
 {
-    public static double hypot(double x, double y)
-    {
-        return Math.Sqrt(x * x + y * y);
-    }
-
     /**
      * @param objectsSize : The overall elements size.
      * @param pageSize : The number of elements per page.
