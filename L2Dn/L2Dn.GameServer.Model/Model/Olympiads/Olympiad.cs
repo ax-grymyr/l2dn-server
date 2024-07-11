@@ -257,7 +257,7 @@ public class Olympiad
 	
 	public int getOlympiadRank(Player player)
 	{
-		return NOBLES_RANK.getOrDefault(player.getObjectId(), 0);
+		return NOBLES_RANK.GetValueOrDefault(player.getObjectId(), 0);
 	}
 	
 	public void loadNoblesRank()

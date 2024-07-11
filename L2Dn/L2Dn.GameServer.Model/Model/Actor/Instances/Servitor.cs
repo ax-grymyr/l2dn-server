@@ -233,11 +233,13 @@ public class Servitor : Summon, Runnable
 		}
 		
 		// Clear list for overwrite
-		if (SummonEffectTable.getInstance().getServitorEffectsOwner().getOrDefault(getOwner().getObjectId(), new()).ContainsKey(getOwner().getClassIndex()))
+		if (SummonEffectTable.getInstance().getServitorEffectsOwner().GetValueOrDefault(getOwner().getObjectId())?
+		    .ContainsKey(getOwner().getClassIndex()) ?? false)
 		{
-			SummonEffectTable.getInstance().getServitorEffects(getOwner()).getOrDefault(getReferenceSkill(), new List<SummonEffectTable.SummonEffect>()).Clear();
+			SummonEffectTable.getInstance().getServitorEffects(getOwner()).GetValueOrDefault(getReferenceSkill())
+				?.Clear();
 		}
-		
+
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

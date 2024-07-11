@@ -259,7 +259,7 @@ public class PetDataTable: DataReaderBase
 	
 	public string getPetName(int objectId)
 	{
-		return _petNames.getOrDefault(objectId, "No name");
+		return _petNames.GetValueOrDefault(objectId, "No name");
 	}
 	
 	public string getNameByItemObjectId(int objectId)

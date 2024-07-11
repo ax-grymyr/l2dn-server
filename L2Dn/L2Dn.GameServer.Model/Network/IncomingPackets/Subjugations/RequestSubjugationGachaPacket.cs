@@ -48,7 +48,7 @@ public struct RequestSubjugationGachaPacket: IIncomingPacket<GameSession>
                     if (Rnd.get(maxBound - rate) < itemChance)
                     {
                         int itemId = subjugationDataArray[index].Key;
-                        rewards.put(itemId, rewards.getOrDefault(itemId, 0) + 1);
+                        rewards.put(itemId, rewards.GetValueOrDefault(itemId) + 1);
                         player.addItem("Purge Gacha", itemId, 1, player, true);
                         break;
                     }

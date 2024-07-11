@@ -71,13 +71,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return GetOrAdd(key, factory);
     }
 
-    public TValue getOrDefault(TKey key, TValue defaultValue)
-    {
-        if (TryGetValue(key, out var value))
-            return value;
-        return defaultValue;
-    }
-
     public TResult computeIfPresent<TResult>(TKey key, Func<TKey, TValue, TResult> func)
     {
         if (TryGetValue(key, out var value))

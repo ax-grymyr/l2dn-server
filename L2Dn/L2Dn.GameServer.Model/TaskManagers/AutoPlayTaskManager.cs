@@ -177,7 +177,7 @@ public class AutoPlayTaskManager
 								Weapon weapon = player.getActiveWeaponItem();
 								if (weapon != null)
 								{
-									int idleCount = IDLE_COUNT.getOrDefault(player, 0);
+									int idleCount = IDLE_COUNT.GetValueOrDefault(player);
 									if (idleCount > 10)
 									{
 										bool ranged = weapon.getItemType().isRanged();

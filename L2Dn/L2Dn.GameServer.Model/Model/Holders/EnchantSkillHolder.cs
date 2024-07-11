@@ -55,11 +55,11 @@ public class EnchantSkillHolder
 
 	public void addRequiredItem(SkillEnchantType type, ItemHolder item)
 	{
-		_requiredItems.computeIfAbsent(type, k => new()).add(item);
+		_requiredItems.computeIfAbsent(type, k => []).add(item);
 	}
 
 	public Set<ItemHolder> getRequiredItems(SkillEnchantType type)
 	{
-		return _requiredItems.getOrDefault(type, new());
+		return _requiredItems.GetValueOrDefault(type, []);
 	}
 }

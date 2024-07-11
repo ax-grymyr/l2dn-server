@@ -36,7 +36,7 @@ public class SpawnTable
 	 */
 	public Set<Spawn> getSpawns(int npcId)
 	{
-		return _spawnTable.getOrDefault(npcId, new());
+		return _spawnTable.GetValueOrDefault(npcId, []);
 	}
 	
 	/**

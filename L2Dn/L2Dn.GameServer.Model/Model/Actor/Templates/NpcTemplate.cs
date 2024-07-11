@@ -520,12 +520,12 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 
 	public List<Skill> getAISkills(AISkillScope aiSkillScope)
 	{
-		return _aiSkillLists.getOrDefault(aiSkillScope, new());
+		return _aiSkillLists.GetValueOrDefault(aiSkillScope, []);
 	}
 
-	public void setAISkillLists(Map<AISkillScope, List<Skill>> aiSkillLists)
+	public void setAISkillLists(Map<AISkillScope, List<Skill>>? aiSkillLists)
 	{
-		_aiSkillLists = aiSkillLists != null ? aiSkillLists : new();
+		_aiSkillLists = aiSkillLists ?? [];
 	}
 
 	public Set<int> getClans()

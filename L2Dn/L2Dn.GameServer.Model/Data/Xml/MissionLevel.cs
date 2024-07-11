@@ -105,9 +105,9 @@ public class MissionLevel: DataReaderBase
 		return _currentSeason;
 	}
 	
-	public MissionLevelHolder getMissionBySeason(int season)
+	public MissionLevelHolder? getMissionBySeason(int season)
 	{
-		return _template.getOrDefault(season, null);
+		return _template.GetValueOrDefault(season);
 	}
 	
 	public static MissionLevel getInstance()

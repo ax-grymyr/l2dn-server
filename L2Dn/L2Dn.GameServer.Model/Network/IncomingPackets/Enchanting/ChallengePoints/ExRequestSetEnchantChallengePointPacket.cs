@@ -73,7 +73,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 		    int remainingRecharges = player.getChallengeInfo().getChallengePointsRecharges(groupId, _useType);
 		    if (remainingRecharges < EnchantChallengePointData.getInstance().getMaxTicketCharge())
 		    {
-			    int remainingPoints = player.getChallengeInfo().getChallengePoints().getOrDefault(groupId, 0);
+			    int remainingPoints = player.getChallengeInfo().getChallengePoints().GetValueOrDefault(groupId);
 			    int fee = EnchantChallengePointData.getInstance().getFeeForOptionIndex(_useType);
 			    if (remainingPoints >= fee)
 			    {

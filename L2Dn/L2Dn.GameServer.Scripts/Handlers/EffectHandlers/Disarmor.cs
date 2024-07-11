@@ -26,7 +26,7 @@ public class Disarmor: AbstractEffect
 		_unequippedItems = new();
 		
 		string slot = @params.getString("slot", "chest");
-		_slot = ItemData.SLOTS.getOrDefault(slot, (long) ItemTemplate.SLOT_NONE);
+		_slot = ItemData.SLOTS.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
 		if (_slot == ItemTemplate.SLOT_NONE)
 		{
 			LOGGER.Error("Unknown bodypart slot for effect: " + slot);

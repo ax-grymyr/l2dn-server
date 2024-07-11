@@ -944,10 +944,10 @@ public class CreatureStat
 			{
 				statAddResetValue = stat.GetInfo().ResetAddValue;
 				statMulResetValue = stat.GetInfo().ResetMulValue;
-				addsValue = adds.getOrDefault(stat, statAddResetValue);
-				mulsValue = muls.getOrDefault(stat, statMulResetValue);
-				statAddValue = _statsAdd.getOrDefault(stat, statAddResetValue);
-				statMulValue = _statsMul.getOrDefault(stat, statMulResetValue);
+				addsValue = adds.GetValueOrDefault(stat, statAddResetValue);
+				mulsValue = muls.GetValueOrDefault(stat, statMulResetValue);
+				statAddValue = _statsAdd.GetValueOrDefault(stat, statAddResetValue);
+				statMulValue = _statsMul.GetValueOrDefault(stat, statMulResetValue);
 				if (addsValue.Equals(statAddResetValue) || mulsValue.Equals(statMulResetValue) ||
 				    !addsValue.Equals(statAddValue) || !mulsValue.Equals(statMulValue))
 				{

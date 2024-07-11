@@ -26,9 +26,9 @@ public class RewardItemsOnFailure
 		_maxEnchantLevel = Math.Max(_maxEnchantLevel, enchantLevel);
 	}
 
-	public ItemChanceHolder getRewardItem(CrystalType grade, int enchantLevel)
+	public ItemChanceHolder? getRewardItem(CrystalType grade, int enchantLevel)
 	{
-		return _rewards.getOrDefault(grade, new()).getOrDefault(enchantLevel, null);
+		return _rewards.GetValueOrDefault(grade)?.GetValueOrDefault(enchantLevel);
 	}
 
 	public bool checkIfRewardUnavailable(CrystalType grade, int enchantLevel)

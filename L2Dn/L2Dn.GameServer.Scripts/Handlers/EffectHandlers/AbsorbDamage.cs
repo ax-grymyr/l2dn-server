@@ -36,7 +36,7 @@ public class AbsorbDamage: AbstractEffect
 		
 		int objectId = ev.getTarget().getObjectId();
 		
-		double damageLeft = DIFF_DAMAGE_HOLDER.getOrDefault(objectId, 0d);
+		double damageLeft = DIFF_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
 		double newDamage = Math.Max(ev.getDamage() - damageLeft, 0);
 		
@@ -63,7 +63,7 @@ public class AbsorbDamage: AbstractEffect
 		
 		int objectId = ev.getTarget().getObjectId();
 		
-		double damagePercent = PER_DAMAGE_HOLDER.getOrDefault(objectId, 0d);
+		double damagePercent = PER_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double currentDamage = ev.getDamage();
 		double newDamage = currentDamage - ((currentDamage / 100) * damagePercent);
 

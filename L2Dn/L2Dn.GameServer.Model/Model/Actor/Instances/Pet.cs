@@ -1079,7 +1079,7 @@ public class Pet: Summon
 
 		// Clear list for overwrite
 		SummonEffectTable.getInstance().getPetEffects()
-			.getOrDefault(getControlObjectId(), new List<SummonEffectTable.SummonEffect>()).Clear();
+			.GetValueOrDefault(getControlObjectId())?.Clear();
 
 		try
 		{

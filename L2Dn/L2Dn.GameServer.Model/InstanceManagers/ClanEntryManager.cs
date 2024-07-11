@@ -130,17 +130,17 @@ public class ClanEntryManager
 	
 	public Map<int, PledgeApplicantInfo> getApplicantListForClan(int clanId)
 	{
-		return _applicantList.getOrDefault(clanId, new());
+		return _applicantList.GetValueOrDefault(clanId, []);
 	}
 	
-	public PledgeApplicantInfo getPlayerApplication(int clanId, int playerId)
+	public PledgeApplicantInfo? getPlayerApplication(int clanId, int playerId)
 	{
-		return _applicantList.getOrDefault(clanId, new()).get(playerId);
+		return _applicantList.GetValueOrDefault(clanId)?.GetValueOrDefault(playerId);
 	}
 	
 	public bool removePlayerApplication(int clanId, int playerId)
 	{
-		Map<int, PledgeApplicantInfo> clanApplicantList = _applicantList.get(clanId);
+		Map<int, PledgeApplicantInfo>? clanApplicantList = _applicantList.GetValueOrDefault(clanId);
 		
 		try 
 		{

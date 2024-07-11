@@ -1629,17 +1629,17 @@ public class SkillTreeData: DataReaderBase
 	
 	public bool isRemoveSkill(CharacterClass classId, int skillId)
 	{
-		return _removeSkillCache.getOrDefault(classId, new()).Contains(skillId);
+		return _removeSkillCache.GetValueOrDefault(classId)?.Contains(skillId) ?? false;
 	}
 	
 	public bool isCurrentClassSkillNoParent(CharacterClass classId, long hashCode)
 	{
-		return _classSkillTrees.getOrDefault(classId, new()).ContainsKey(hashCode);
+		return _classSkillTrees.GetValueOrDefault(classId)?.ContainsKey(hashCode) ?? false;
 	}
 	
 	public bool isAwakenSaveSkill(CharacterClass classId, int skillId)
 	{
-		return _awakeningSaveSkillTree.getOrDefault(classId, new()).Contains(skillId);
+		return _awakeningSaveSkillTree.GetValueOrDefault(classId)?.Contains(skillId) ?? false;
 	}
 	
 	/**

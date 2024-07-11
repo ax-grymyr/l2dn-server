@@ -170,7 +170,7 @@ public sealed class TransformTemplate
 	 */
 	public int getDefense(int type, int defaultValue)
 	{
-		return (_baseDefense == null) ? defaultValue : _baseDefense.getOrDefault(type, defaultValue);
+		return (_baseDefense == null) ? defaultValue : _baseDefense.GetValueOrDefault(type, defaultValue);
 	}
 	
 	private void addStats(Stat stat, double value)
@@ -189,7 +189,7 @@ public sealed class TransformTemplate
 	 */
 	public double getStats(Stat stat, double defaultValue)
 	{
-		return _baseStats == null ? defaultValue : _baseStats.getOrDefault(stat, defaultValue);
+		return _baseStats == null ? defaultValue : _baseStats.GetValueOrDefault(stat, defaultValue);
 	}
 	
 	/**

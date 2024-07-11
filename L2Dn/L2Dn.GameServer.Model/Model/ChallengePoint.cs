@@ -159,17 +159,12 @@ public class ChallengePoint
 	
 	public int getChallengePointsRecharges(int groupId, int optionIndex)
 	{
-		Map<int, int> options = _challengePointsRecharges.get(groupId);
-		if (options != null)
-		{
-			return options.getOrDefault(optionIndex, 0);
-		}
-		return 0;
+		return _challengePointsRecharges.GetValueOrDefault(groupId)?.GetValueOrDefault(optionIndex) ?? 0;
 	}
 	
 	public void addChallengePointsRecharge(int groupId, int optionIndex, int amount)
 	{
-		Map<int, int> options = _challengePointsRecharges.get(groupId);
+		Map<int, int>? options = _challengePointsRecharges.GetValueOrDefault(groupId);
 		if (options == null)
 		{
 			options = new();
@@ -212,7 +207,7 @@ public class ChallengePoint
 	
 	public bool canAddPoints(int categoryId, int points)
 	{
-		int totalPoints = _challengePoints.getOrDefault(categoryId, 0) + points;
+		int totalPoints = _challengePoints.GetValueOrDefault(categoryId) + points;
 		int maxPoints = EnchantChallengePointData.getInstance().getMaxPoints();
 		return maxPoints > totalPoints;
 	}

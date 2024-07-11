@@ -55,7 +55,7 @@ public class GiveItemByExp: AbstractEffect
 		}
 		
 		Player player = playable.getActingPlayer();
-		long sum = PLAYER_VALUES.getOrDefault(player, 0L) + exp;
+		long sum = PLAYER_VALUES.GetValueOrDefault(player) + exp;
 		if (sum >= _exp)
 		{
 			PLAYER_VALUES.remove(player);

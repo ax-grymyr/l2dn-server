@@ -33,7 +33,7 @@ public class TransformLevelData
 	
     public double getStats(Stat stat, double defaultValue)
     {
-        return _stats == null ? defaultValue : _stats.getOrDefault(stat, defaultValue);
+        return _stats == null ? defaultValue : _stats.GetValueOrDefault(stat, defaultValue);
     }
 	
     public int getLevel()

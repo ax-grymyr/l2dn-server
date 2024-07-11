@@ -125,7 +125,7 @@ public class ArmorSet
 	 */
 	public double getStatsBonus(BaseStat stat)
 	{
-		return _stats.getOrDefault(stat, 0d);
+		return _stats.GetValueOrDefault(stat);
 	}
 	
 	/**

@@ -8185,7 +8185,7 @@ public class Player: Playable
 	 */
 	public int getHennaValue(BaseStat stat)
 	{
-		return _hennaBaseStats.getOrDefault(stat, 0);
+		return _hennaBaseStats.GetValueOrDefault(stat);
 	}
 	
 	public int getAvailableHennaSlots()
@@ -11646,7 +11646,7 @@ public class Player: Playable
 	 */
 	public int getChargedSouls(SoulType type)
 	{
-		return _souls.getOrDefault(type, 0);
+		return _souls.GetValueOrDefault(type);
 	}
 	
 	/**
@@ -12125,7 +12125,7 @@ public class Player: Playable
 	 */
 	public override Skill getKnownSkill(int skillId)
 	{
-		return !_transformSkills.isEmpty() ? _transformSkills.getOrDefault(skillId, base.getKnownSkill(skillId)) : base.getKnownSkill(skillId);
+		return _transformSkills.GetValueOrDefault(skillId, base.getKnownSkill(skillId));
 	}
 	
 	/**

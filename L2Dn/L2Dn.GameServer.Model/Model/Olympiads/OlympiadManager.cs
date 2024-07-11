@@ -336,7 +336,7 @@ public class OlympiadManager
 			return;
 		}
 
-		_classBasedRegisters.getOrDefault(getClassGroup(player), new()).remove(objId);
+		_classBasedRegisters.GetValueOrDefault(getClassGroup(player))?.remove(objId);
 	}
 
 	public int getCountOpponents()

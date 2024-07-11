@@ -139,7 +139,7 @@ internal class AntiFeedManager
 		
 		int addrHash = client.IpAddress.GetHashCode();
 		AtomicInteger connectionCount = @event.computeIfAbsent(addrHash, k => new AtomicInteger());
-		if ((connectionCount.get() + 1) <= (max + Config.DUALBOX_CHECK_WHITELIST.getOrDefault(addrHash, 0)))
+		if ((connectionCount.get() + 1) <= (max + Config.DUALBOX_CHECK_WHITELIST.GetValueOrDefault(addrHash, 0)))
 		{
 			connectionCount.incrementAndGet();
 			return true;
@@ -276,7 +276,7 @@ internal class AntiFeedManager
 		{
 			limit += value;
 		}
-		
+
 		return limit;
 	}
 	

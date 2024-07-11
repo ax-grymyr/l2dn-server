@@ -99,7 +99,7 @@ public class DoorData: DataReaderBase
 	
 	public Set<int> getDoorsByGroup(string groupName)
 	{
-		return _groups.getOrDefault(groupName, new());
+		return _groups.GetValueOrDefault(groupName, []);
 	}
 	
 	public ICollection<Door> getDoors()

@@ -72,17 +72,17 @@ public class MatchingRoomManager
 	
 	public void removeMatchingRoom(MatchingRoom room)
 	{
-		_rooms.getOrDefault(room.getRoomType(), new()).remove(room.getId());
+		_rooms.GetValueOrDefault(room.getRoomType(), []).remove(room.getId());
 	}
 	
-	public Map<int, MatchingRoom> getPartyMathchingRooms()
+	public Map<int, MatchingRoom>? getPartyMathchingRooms()
 	{
-		return _rooms.get(MatchingRoomType.PARTY);
+		return _rooms.GetValueOrDefault(MatchingRoomType.PARTY);
 	}
 	
 	public List<MatchingRoom> getPartyMathchingRooms(int location, PartyMatchingRoomLevelType type, int requestorLevel)
 	{
-		List<MatchingRoom> result = new();
+		List<MatchingRoom> result = [];
 		if (_rooms.TryGetValue(MatchingRoomType.PARTY, out Map<int, MatchingRoom>? rooms))
 		{
 			foreach (MatchingRoom room in rooms.Values)
@@ -97,14 +97,14 @@ public class MatchingRoomManager
 		return result;
 	}
 	
-	public Map<int, MatchingRoom> getCCMathchingRooms()
+	public Map<int, MatchingRoom>? getCCMathchingRooms()
 	{
-		return _rooms.get(MatchingRoomType.COMMAND_CHANNEL);
+		return _rooms.GetValueOrDefault(MatchingRoomType.COMMAND_CHANNEL);
 	}
 	
 	public List<MatchingRoom> getCCMathchingRooms(int location, int level)
 	{
-		List<MatchingRoom> result = new();
+		List<MatchingRoom> result = [];
 		if (_rooms.TryGetValue(MatchingRoomType.COMMAND_CHANNEL, out Map<int, MatchingRoom>? rooms))
 		{
 			foreach (MatchingRoom room in rooms.Values)
@@ -119,9 +119,9 @@ public class MatchingRoomManager
 		return result;
 	}
 	
-	public MatchingRoom getCCMatchingRoom(int roomId)
+	public MatchingRoom? getCCMatchingRoom(int roomId)
 	{
-		return _rooms.getOrDefault(MatchingRoomType.COMMAND_CHANNEL, new()).get(roomId);
+		return _rooms.GetValueOrDefault(MatchingRoomType.COMMAND_CHANNEL)?.GetValueOrDefault(roomId);
 	}
 	
 	public MatchingRoom getPartyMathchingRoom(int location, int level)
@@ -140,9 +140,9 @@ public class MatchingRoomManager
 		return null;
 	}
 	
-	public MatchingRoom getPartyMathchingRoom(int roomId)
+	public MatchingRoom? getPartyMathchingRoom(int roomId)
 	{
-		return _rooms.getOrDefault(MatchingRoomType.PARTY, new()).get(roomId);
+		return _rooms.GetValueOrDefault(MatchingRoomType.PARTY)?.GetValueOrDefault(roomId);
 	}
 	
 	public static MatchingRoomManager getInstance()

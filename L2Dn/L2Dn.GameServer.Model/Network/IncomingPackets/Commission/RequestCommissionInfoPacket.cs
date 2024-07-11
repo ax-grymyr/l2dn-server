@@ -31,7 +31,7 @@ public struct RequestCommissionInfoPacket: IIncomingPacket<GameSession>
         Item itemInstance = player.getInventory().getItemByObjectId(_itemObjectId);
         if (itemInstance != null)
         {
-            player.sendPacket(player.getLastCommissionInfos().getOrDefault(itemInstance.getId(), ExResponseCommissionInfoPacket.EMPTY));
+            player.sendPacket(player.getLastCommissionInfos().GetValueOrDefault(itemInstance.getId(), ExResponseCommissionInfoPacket.EMPTY));
         }
         else
         {

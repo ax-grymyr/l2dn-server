@@ -27,7 +27,7 @@ public class SkillChannelized
 	
 	public Map<int, Creature> getChannelizers(int skillId)
 	{
-		return _channelizers.getOrDefault(skillId, new());
+		return _channelizers.GetValueOrDefault(skillId, []);
 	}
 	
 	public void abortChannelization()

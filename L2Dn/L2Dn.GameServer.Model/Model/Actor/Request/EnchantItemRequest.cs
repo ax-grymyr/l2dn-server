@@ -97,7 +97,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public int getMultiEnchantingItemsBySlot(int slot)
 	{
-		return _multiEnchantingItems.getOrDefault(slot, -1);
+		return _multiEnchantingItems.GetValueOrDefault(slot, -1);
 	}
 	
 	public void changeMultiEnchantingItemsBySlot(int slot, int objectId)

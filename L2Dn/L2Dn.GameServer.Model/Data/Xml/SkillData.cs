@@ -332,11 +332,12 @@ public class SkillData: DataReaderBase
 
 		levels.ForEach(kvp => kvp.Value.ForEach(subLevel =>
 		{
+			// TODO: review code and refactor
 			var (level, subLevels) = kvp;
-			StatSet statSet = skillInfo.getOrDefault(level, new()).get(subLevel) ?? new StatSet();
-			skillInfo.getOrDefault(level, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+			StatSet statSet = skillInfo.GetValueOrDefault(level, []).get(subLevel) ?? new StatSet();
+			skillInfo.GetValueOrDefault(level, new()).GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
 				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
-			skillInfo.getOrDefault(-1, new()).getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+			skillInfo.GetValueOrDefault(-1, new()).GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
 				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			statSet.set(".level", level);
 			statSet.set(".subLevel", subLevel);
@@ -428,19 +429,20 @@ public class SkillData: DataReaderBase
 	{
 		paramInfo.ForEach(kvp => kvp.Value.ForEach(namedParamInfo =>
 		{
+			// TODO: review code and refactor
 			var (scope, namedParamInfos) = kvp;
 			if ((((namedParamInfo.getFromLevel() == null) && (namedParamInfo.getToLevel() == null)) ||
 			     ((namedParamInfo.getFromLevel() <= level) && (namedParamInfo.getToLevel() >= level))) //
 			    && (((namedParamInfo.getFromSubLevel() == null) && (namedParamInfo.getToSubLevel() == null)) ||
 			        ((namedParamInfo.getFromSubLevel() <= subLevel) && (namedParamInfo.getToSubLevel() >= subLevel))))
 			{
-				StatSet @params = namedParamInfo.getInfo().getOrDefault(level, new()).get(subLevel) ?? new StatSet();
+				StatSet @params = namedParamInfo.getInfo().GetValueOrDefault(level, new()).get(subLevel) ?? new StatSet();
 
-				namedParamInfo.getInfo().getOrDefault(level, new())
-					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+				namedParamInfo.getInfo().GetValueOrDefault(level, new())
+					.GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
 					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
-				namedParamInfo.getInfo().getOrDefault(-1, new())
-					.getOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+				namedParamInfo.getInfo().GetValueOrDefault(-1, new())
+					.GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
 					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
 				@params.set(".name", namedParamInfo.getName());
 				consumer(scope, @params);
@@ -468,13 +470,13 @@ public class SkillData: DataReaderBase
 		Map<int, Map<int, StatSet>> info)
 	{
 		Map<int, Map<int, object>> values = parseValues(element);
-		object generalValue = values.getOrDefault(-1, new()).get(-1);
+		object? generalValue = values.GetValueOrDefault(-1)?.GetValueOrDefault(-1);
 		if (generalValue != null)
 		{
 			string stringGeneralValue = generalValue?.ToString() ?? string.Empty;
 			if (stringGeneralValue.startsWith("@"))
 			{
-				Map<int, Map<int, object>> variableValue = variableValues.get(stringGeneralValue);
+				Map<int, Map<int, object>>? variableValue = variableValues.GetValueOrDefault(stringGeneralValue);
 				if (variableValue != null)
 				{
 					values = variableValue;
@@ -536,7 +538,7 @@ public class SkillData: DataReaderBase
 								Map<string, double> variables = new();
 								variables.put("index", (i - fromLevel) + 1d);
 								variables.put("subIndex", (j - fromSubLevel) + 1d);
-								object @base = values.getOrDefault(i, new()).get(-1);
+								object? @base = values.GetValueOrDefault(i)?.GetValueOrDefault(-1);
 								string baseText = @base?.ToString() ?? string.Empty;
 								if ((@base != null) && !(@base is StatSet) && (!baseText.equalsIgnoreCase("true") &&
 								                                               !baseText.equalsIgnoreCase("false")))

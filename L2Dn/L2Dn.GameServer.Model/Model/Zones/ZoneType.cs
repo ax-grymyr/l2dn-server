@@ -599,14 +599,15 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		if (_enabledInInstance != null)
 		{
-			return _enabledInInstance.getOrDefault(instanceId, _enabled);
+			return _enabledInInstance.GetValueOrDefault(instanceId, _enabled);
 		}
+
 		return _enabled;
 	}
 	
 	public virtual void oustAllPlayers()
 	{
-		foreach (Creature obj in _characterList.values())
+		foreach (Creature obj in _characterList.Values)
 		{
 			if (obj != null && obj.isPlayer() && obj.getActingPlayer().isOnline())
 			{

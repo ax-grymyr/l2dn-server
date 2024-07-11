@@ -307,7 +307,7 @@ public abstract class Playable: Creature
 	 */
 	public int getReplacementSkill(int originalId)
 	{
-		return _replacedSkills.getOrDefault(originalId, originalId);
+		return _replacedSkills.GetValueOrDefault(originalId, originalId);
 	}
 	
 	/**
@@ -317,7 +317,7 @@ public abstract class Playable: Creature
 	 */
 	public int getOriginalSkill(int replacementId)
 	{
-		return _originalSkills.getOrDefault(replacementId, replacementId);
+		return _originalSkills.GetValueOrDefault(replacementId, replacementId);
 	}
 	
 	/**
