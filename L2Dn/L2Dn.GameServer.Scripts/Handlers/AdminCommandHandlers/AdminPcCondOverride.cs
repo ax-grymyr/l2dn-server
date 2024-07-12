@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
@@ -54,9 +55,9 @@ public class AdminPcCondOverride: IAdminCommandHandler
 					if (st.hasMoreTokens())
 					{
 						string token = st.nextToken();
-						if (Util.isDigit(token))
+						if (int.TryParse(token, CultureInfo.InvariantCulture, out int tokenInt))
 						{
-							PlayerCondOverride ex = (PlayerCondOverride)int.Parse(token);
+							PlayerCondOverride ex = (PlayerCondOverride)tokenInt;
 							if (Enum.IsDefined(ex))
 							{
 								if (activeChar.canOverrideCond(ex))

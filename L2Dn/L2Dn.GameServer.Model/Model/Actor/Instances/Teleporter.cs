@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data;
+﻿using System.Globalization;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -127,9 +128,9 @@ public class Teleporter: Npc
 		if (st.hasMoreTokens())
 		{
 			string token = st.nextToken();
-			if (Util.isDigit(token))
+			if (int.TryParse(token, CultureInfo.InvariantCulture, out int value))
 			{
-				return int.Parse(token);
+				return value;
 			}
 		}
 		return defaultVal;

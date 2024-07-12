@@ -2363,7 +2363,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_NO_ALLIANCE_CAN_BE_CREATED);
 			return;
 		}
-		if (!Util.isAlphaNumeric(allyName))
+		if (string.IsNullOrEmpty(allyName) || !allyName.ContainsAlphaNumericOnly())
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ALLIANCE_NAME_PLEASE_TRY_AGAIN);
 			return;

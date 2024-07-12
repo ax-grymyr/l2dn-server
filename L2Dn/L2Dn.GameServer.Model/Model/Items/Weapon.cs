@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -57,10 +58,12 @@ public class Weapon: ItemTemplate
 		_mpConsume = set.getInt("mp_consume", 0);
 		_baseAttackRange = set.getInt("attack_range", 40);
 		string[] damageRange = set.getString("damage_range", "").Split(";"); // 0?;0?;fan sector;base attack angle
-		if ((damageRange.Length > 1) && Util.isDigit(damageRange[2]) && Util.isDigit(damageRange[3]))
+		if ((damageRange.Length >= 4) &&
+		    int.TryParse(damageRange[2], CultureInfo.InvariantCulture, out int baseAttackRadius) &&
+		    int.TryParse(damageRange[3], CultureInfo.InvariantCulture, out int baseAttackAngle))
 		{
-			_baseAttackRadius = int.Parse(damageRange[2]);
-			_baseAttackAngle = int.Parse(damageRange[3]);
+			_baseAttackRadius = baseAttackRadius;
+			_baseAttackAngle = baseAttackAngle;
 		}
 		else
 		{

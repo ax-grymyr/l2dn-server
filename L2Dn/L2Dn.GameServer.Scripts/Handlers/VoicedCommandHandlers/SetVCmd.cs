@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -37,12 +38,11 @@ public class SetVCmd: IVoicedCommandHandler
 			if (@params.startsWith("privileges"))
 			{
 				string val = @params.Substring(11);
-				if (!Util.isDigit(val))
+				if (!int.TryParse(val, CultureInfo.InvariantCulture, out int n))
 				{
 					return false;
 				}
 
-				int n = int.Parse(val);
 				if ((activeChar.getClanPrivileges() <= (ClanPrivilege)n) || !activeChar.isClanLeader())
 				{
 					return false;

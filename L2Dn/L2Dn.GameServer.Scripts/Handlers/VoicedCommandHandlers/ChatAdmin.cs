@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
@@ -46,9 +47,9 @@ public class ChatAdmin: IVoicedCommandHandler
 					if (st.hasMoreTokens())
 					{
 						string token = st.nextToken();
-						if (Util.isDigit(token))
+						if (int.TryParse(token, CultureInfo.InvariantCulture, out int value))
 						{
-							expirationTime = int.Parse(token);
+							expirationTime = value;
 						}
 					}
 					

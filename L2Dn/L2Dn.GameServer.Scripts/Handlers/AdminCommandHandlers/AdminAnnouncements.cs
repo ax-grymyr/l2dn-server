@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Handlers;
@@ -78,12 +79,12 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annInitDelay = st.nextToken();
-						if (!Util.isDigit(annInitDelay))
+						if (!int.TryParse(annInitDelay, CultureInfo.InvariantCulture, out int initDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int initDelay = int.Parse(annInitDelay) * 1000;
+						initDelay *= 1000;
 						// ************************************
 						if (!st.hasMoreTokens())
 						{
@@ -91,12 +92,12 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annDelay = st.nextToken();
-						if (!Util.isDigit(annDelay))
+						if (!int.TryParse(annDelay, CultureInfo.InvariantCulture, out int delay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int delay = int.Parse(annDelay) * 1000;
+						delay *= 1000;
 						if ((delay < (10 * 1000)) && ((type == AnnouncementType.AUTO_NORMAL) || (type == AnnouncementType.AUTO_CRITICAL)))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Delay cannot be less then 10 seconds!");
@@ -109,12 +110,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annRepeat = st.nextToken();
-						if (!Util.isDigit(annRepeat))
+						if (!int.TryParse(annRepeat, CultureInfo.InvariantCulture, out int repeat))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int repeat = int.Parse(annRepeat);
 						if (repeat == 0)
 						{
 							repeat = -1;
@@ -153,12 +153,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annId = st.nextToken();
-						if (!Util.isDigit(annId))
+						if (!int.TryParse(annId, CultureInfo.InvariantCulture, out int id))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces edit <id>");
 							break;
 						}
-						int id = int.Parse(annId);
 						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce == null)
 						{
@@ -241,12 +240,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annInitDelay = st.nextToken();
-						if (!Util.isDigit(annInitDelay))
+						if (!int.TryParse(annInitDelay, CultureInfo.InvariantCulture, out int initDelay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int initDelay = int.Parse(annInitDelay);
 						// ************************************
 						if (!st.hasMoreTokens())
 						{
@@ -254,12 +252,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annDelay = st.nextToken();
-						if (!Util.isDigit(annDelay))
+						if (!int.TryParse(annDelay, CultureInfo.InvariantCulture, out int delay))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int delay = int.Parse(annDelay);
 						if ((delay < 10) && ((type == AnnouncementType.AUTO_NORMAL) || (type == AnnouncementType.AUTO_CRITICAL)))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Delay cannot be less then 10 seconds!");
@@ -272,12 +269,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string annRepeat = st.nextToken();
-						if (!Util.isDigit(annRepeat))
+						if (!int.TryParse(annRepeat, CultureInfo.InvariantCulture, out int repeat))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						int repeat = int.Parse(annRepeat);
 						if (repeat == 0)
 						{
 							repeat = -1;
@@ -300,12 +296,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 						announce.setType(type);
 						announce.setContent(content1);
 						announce.setAuthor(activeChar.getName());
-						if (announce is AutoAnnouncement)
+						if (announce is AutoAnnouncement announcement)
 						{
-							AutoAnnouncement autoAnnounce = (AutoAnnouncement) announce;
-							autoAnnounce.setInitial(TimeSpan.FromMilliseconds(initDelay * 1000));
-							autoAnnounce.setDelay(TimeSpan.FromMilliseconds(delay * 1000));
-							autoAnnounce.setRepeat(repeat);
+							announcement.setInitial(TimeSpan.FromMilliseconds(initDelay * 1000));
+							announcement.setDelay(TimeSpan.FromMilliseconds(delay * 1000));
+							announcement.setRepeat(repeat);
 						}
 						announce.updateMe();
 						BuilderUtil.sendSysMessage(activeChar, "Announcement has been successfully edited!");
@@ -319,12 +314,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string token = st.nextToken();
-						if (!Util.isDigit(token))
+						if (!int.TryParse(token, CultureInfo.InvariantCulture, out int id))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces remove <announcement id>");
 							break;
 						}
-						int id = int.Parse(token);
 						if (AnnouncementsTable.getInstance().deleteAnnouncement(id))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Announcement has been successfully removed!");
@@ -351,12 +345,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string token = st.nextToken();
-						if (!Util.isDigit(token))
+						if (!int.TryParse(token, CultureInfo.InvariantCulture, out int id))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
 							break;
 						}
-						int id = int.Parse(token);
 						IAnnouncement announce1 = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce1 != null)
 						{
@@ -385,12 +378,11 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						string token = st.nextToken();
-						if (!Util.isDigit(token))
+						if (!int.TryParse(token, CultureInfo.InvariantCulture, out int id))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
 							break;
 						}
-						int id = int.Parse(token);
 						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce != null)
 						{
@@ -428,9 +420,9 @@ public class AdminAnnouncements: IAdminCommandHandler
 						if (st.hasMoreTokens())
 						{
 							string token = st.nextToken();
-							if (Util.isDigit(token))
+							if (int.TryParse(token, CultureInfo.InvariantCulture, out int value))
 							{
-								page = int.Parse(token);
+								page = value;
 							}
 						}
 						

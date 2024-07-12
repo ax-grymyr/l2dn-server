@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using L2Dn.Extensions;
 using L2Dn.GameServer.CommunityBbs.Managers;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -134,7 +135,7 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.YOU_MUST_WAIT_10_DAYS_BEFORE_CREATING_A_NEW_CLAN);
 			return null;
 		}
-		if (!Util.isAlphaNumeric(clanName) || (clanName.Length < 2))
+		if (string.IsNullOrEmpty(clanName) || !clanName.ContainsAlphaNumericOnly() || clanName.Length < 2)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return null;

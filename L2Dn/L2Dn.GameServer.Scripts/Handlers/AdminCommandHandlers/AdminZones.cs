@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
@@ -137,12 +138,11 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 							break;
 						}
 						string indexToken = st.nextToken();
-						if (!Util.isDigit(indexToken))
+						if (!int.TryParse(indexToken, CultureInfo.InvariantCulture, out int index))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Node index should be int!");
 							break;
 						}
-						int index = int.Parse(indexToken);
 						changePoint(activeChar, index);
 						break;
 					}
@@ -154,12 +154,11 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 							break;
 						}
 						string indexToken = st.nextToken();
-						if (!Util.isDigit(indexToken))
+						if (!int.TryParse(indexToken, CultureInfo.InvariantCulture, out int index))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Node index should be int!");
 							break;
 						}
-						int index = int.Parse(indexToken);
 						deletePoint(activeChar, index);
 						showPoints(activeChar);
 						break;

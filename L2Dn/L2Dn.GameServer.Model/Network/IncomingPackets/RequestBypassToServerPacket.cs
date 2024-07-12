@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
@@ -119,12 +120,12 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 					id = _command.Substring(4);
 				}
 				
-				if (Util.isDigit(id))
+				if (int.TryParse(id, CultureInfo.InvariantCulture, out int objectId))
 				{
-					WorldObject obj = World.getInstance().findObject(int.Parse(id));
+					WorldObject? obj = World.getInstance().findObject(objectId);
 					if (obj != null && obj.isNpc() && endOfId > 0 && player.IsInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
 					{
-						((Npc)obj).onBypassFeedback(player, _command.Substring(endOfId + 1));
+						((Npc)obj).onBypassFeedback(player, _command[(endOfId + 1)..]);
 					}
 				}
 				

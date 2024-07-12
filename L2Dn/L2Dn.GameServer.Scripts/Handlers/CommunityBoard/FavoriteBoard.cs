@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Db;
@@ -100,7 +101,7 @@ public class FavoriteBoard: IParseBoardHandler
 		else if (command.startsWith("_bbsdelfav_"))
 		{
 			string favId = command.Replace("_bbsdelfav_", "");
-			if (!Util.isDigit(favId))
+			if (!int.TryParse(favId, CultureInfo.InvariantCulture, out int id))
 			{
                 _logger.Warn(nameof(FavoriteBoard) + ": Couldn't delete favorite link, " + favId + " it's not a valid ID!");
 				return false;
@@ -109,7 +110,6 @@ public class FavoriteBoard: IParseBoardHandler
 			try
             {
                 int playerId = player.getObjectId();
-                int id = int.Parse(favId);
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.BbsFavorites.Where(r => r.Id == id && r.PlayerId == playerId).ExecuteDelete();
 

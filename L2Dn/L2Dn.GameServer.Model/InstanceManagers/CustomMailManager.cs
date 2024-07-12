@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -41,17 +42,19 @@ public class CustomMailManager
 							if (str.Contains(' '))
 							{
 								string[] split = str.Split(" ");
-								string itemId = split[0];
-								string itemCount = split[1];
-								string enchant = split.Length > 2 ? split[2] : "0";
-								if (Util.isDigit(itemId) && Util.isDigit(itemCount))
+								string itemIdStr = split[0];
+								string itemCountStr = split[1];
+								string enchantStr = split.Length > 2 ? split[2] : "0";
+								if (int.TryParse(itemIdStr, CultureInfo.InvariantCulture, out int itemId) &&
+								    long.TryParse(itemCountStr, CultureInfo.InvariantCulture, out long itemCount) &&
+								    int.TryParse(enchantStr, CultureInfo.InvariantCulture, out int enchant))
 								{
-									itemHolders.Add(new ItemEnchantHolder(int.Parse(itemId), long.Parse(itemCount), int.Parse(enchant)));
+									itemHolders.Add(new ItemEnchantHolder(itemId, itemCount, enchant));
 								}
 							}
-							else if (Util.isDigit(str))
+							else if (int.TryParse(str, CultureInfo.InvariantCulture, out int itemId))
 							{
-								itemHolders.Add(new ItemEnchantHolder(int.Parse(str), 1));
+								itemHolders.Add(new ItemEnchantHolder(itemId, 1));
 							}
 						}
 						

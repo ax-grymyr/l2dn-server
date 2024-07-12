@@ -325,14 +325,14 @@ public class AdminAdmin: IAdminCommandHandler
 					}
 					
 					string valueToken = st.nextToken();
-					if (!Util.isDigit(valueToken))
+					if (!int.TryParse(valueToken, CultureInfo.InvariantCulture, out int valueTokenInt))
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Incorrect syntax, use: //worldchat set <times used>");
 						break;
 					}
 					
 					BuilderUtil.sendSysMessage(activeChar, targetPlayer.getName() + ": times used changed from " + targetPlayer.getWorldChatPoints() + " to " + valueToken);
-					targetPlayer.setWorldChatUsed(int.Parse(valueToken));
+					targetPlayer.setWorldChatUsed(valueTokenInt);
 					if (Config.ENABLE_WORLD_CHAT)
 					{
 						targetPlayer.sendPacket(new ExWorldCharCntPacket(targetPlayer));

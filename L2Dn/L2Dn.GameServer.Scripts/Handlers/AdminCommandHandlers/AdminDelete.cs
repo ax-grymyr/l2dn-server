@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
@@ -28,8 +29,11 @@ public class AdminDelete: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_delete"))
 		{
-			string[] Split = command.Split(" ");
-			handleDelete(activeChar, (Split.Length > 1) && Util.isDigit(Split[1]) ? int.Parse(Split[1]) : 0);
+			string[] split = command.Split(" ");
+			if (split.Length <= 1 || !int.TryParse(split[1], CultureInfo.InvariantCulture, out int range))
+				range = 0;
+
+			handleDelete(activeChar, range);
 		}
 		return true;
 	}

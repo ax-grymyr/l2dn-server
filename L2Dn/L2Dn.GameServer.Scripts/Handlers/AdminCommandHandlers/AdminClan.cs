@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
@@ -118,11 +119,10 @@ public class AdminClan: IAdminCommandHandler
 				if (st.hasMoreElements())
 				{
 					string token = st.nextToken();
-					if (!Util.isDigit(token))
+					if (!int.TryParse(token, CultureInfo.InvariantCulture, out int clanId))
 					{
 						break;
 					}
-					int clanId = int.Parse(token);
 					Clan clan = ClanTable.getInstance().getClan(clanId);
 					if (clan == null)
 					{
@@ -158,9 +158,9 @@ public class AdminClan: IAdminCommandHandler
 		{
 			val = st.nextToken();
 			// From the HTML we receive player's object Id.
-			if (Util.isDigit(val))
+			if (int.TryParse(val, CultureInfo.InvariantCulture, out int value))
 			{
-				player = World.getInstance().getPlayer(int.Parse(val));
+				player = World.getInstance().getPlayer(value);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);

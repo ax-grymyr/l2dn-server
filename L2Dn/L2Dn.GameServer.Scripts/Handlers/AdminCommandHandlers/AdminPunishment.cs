@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net;
 using System.Text;
 using L2Dn.GameServer.Cache;
@@ -180,13 +181,12 @@ public class AdminPunishment: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Please fill all the fields!");
 					break;
 				}
-				if (!Util.isDigit(exp) && !exp.equals("-1"))
+				if (!int.TryParse(exp, CultureInfo.InvariantCulture, out int expirationTime))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Incorrect value specified for expiration time!");
 					break;
 				}
 				
-				int expirationTime = int.Parse(exp);
 				DateTime? expTime = null;
 				if (expirationTime > 0)
 				{

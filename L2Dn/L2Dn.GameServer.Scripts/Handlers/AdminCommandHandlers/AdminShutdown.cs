@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -29,9 +30,9 @@ public class AdminShutdown: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(22);
-				if (Util.isDigit(val))
+				if (int.TryParse(val, CultureInfo.InvariantCulture, out int valInt))
 				{
-					serverShutdown(activeChar, int.Parse(val), false);
+					serverShutdown(activeChar, valInt, false);
 				}
 				else
 				{
@@ -49,9 +50,9 @@ public class AdminShutdown: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(21);
-				if (Util.isDigit(val))
+				if (int.TryParse(val, CultureInfo.InvariantCulture, out int valInt))
 				{
-					serverShutdown(activeChar, int.Parse(val), true);
+					serverShutdown(activeChar, valInt, true);
 				}
 				else
 				{

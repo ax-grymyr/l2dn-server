@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -63,14 +64,13 @@ public class AdminReload: IAdminCommandHandler
 					if (st.hasMoreElements())
 					{
 						string value = st.nextToken();
-						if (!Util.isDigit(value))
+						if (!int.TryParse(value, CultureInfo.InvariantCulture, out int questId))
 						{
 							QuestManager.getInstance().reload(value);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest Name:" + value + ".");
 						}
 						else
 						{
-							int questId = int.Parse(value);
 							QuestManager.getInstance().reload(questId);
 							AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Quest ID:" + questId + ".");
 						}

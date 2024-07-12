@@ -155,8 +155,8 @@ public class SchemeBuffer : Npc
 					return;
 				}
 				// Simple hack to use spaces, dots, commas, minus, plus, exclamations or question marks.
-				if (!Util.isAlphaNumeric(schemeName.Replace(" ", "").Replace(".", "").Replace(",", "").Replace("-", "")
-					    .Replace("+", "").Replace("!", "").Replace("?", "")))
+				if (!schemeName.Replace(" ", "").Replace(".", "").Replace(",", "").Replace("-", "")
+					    .Replace("+", "").Replace("!", "").Replace("?", "").ContainsAlphaNumericOnly())
 				{
 					player.sendMessage("Please use plain alphanumeric characters.");
 					return;

@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
@@ -446,8 +447,9 @@ public class AdminEffects: IAdminCommandHandler
 			{
 				param1 = st.nextToken();
 			}
-			
-			if ((param1 != null) && !Util.isDigit(param1))
+
+			int page = 0;
+			if (!string.IsNullOrEmpty(param1) && !int.TryParse(param1, CultureInfo.InvariantCulture, out page))
 			{
 				AbnormalVisualEffect ave;
 				
@@ -465,9 +467,9 @@ public class AdminEffects: IAdminCommandHandler
 				if (st.countTokens() == 1)
 				{
 					param2 = st.nextToken();
-					if (Util.isDigit(param2))
+					if (int.TryParse(param2, CultureInfo.InvariantCulture, out int value))
 					{
-						radius = int.Parse(param2);
+						radius = value;
 					}
 				}
 				
@@ -491,19 +493,6 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			else
 			{
-				int page = 0;
-				if (param1 != null)
-				{
-					try
-					{
-						page = int.Parse(param1);
-					}
-					catch (FormatException nfe)
-					{
-						BuilderUtil.sendSysMessage(activeChar, "Incorrect page.");
-					}
-				}
-
 				PageResult result = PageBuilder
 					.newBuilder(EnumUtil.GetValues<AbnormalVisualEffect>().ToList(), 100, "bypass -h admin_ave_abnormal")
 					.currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, ave, sb) =>

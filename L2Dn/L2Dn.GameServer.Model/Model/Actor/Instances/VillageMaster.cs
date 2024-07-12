@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
@@ -1076,11 +1077,14 @@ public class VillageMaster: Folk
 			
 			return;
 		}
-		if (!Util.isAlphaNumeric(clanName) || !isValidName(clanName) || (2 > clanName.Length))
+
+		if (string.IsNullOrEmpty(clanName) || !clanName.ContainsAlphaNumericOnly() || !isValidName(clanName) ||
+		    2 > clanName.Length)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
+
 		if (clanName.Length > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
@@ -1179,11 +1183,14 @@ public class VillageMaster: Folk
 			player.sendMessage("Pledge don't exists.");
 			return;
 		}
-		if (!Util.isAlphaNumeric(pledgeName) || !isValidName(pledgeName) || (2 > pledgeName.Length))
+
+		if (string.IsNullOrEmpty(pledgeName) || !pledgeName.ContainsAlphaNumericOnly() || !isValidName(pledgeName) ||
+		    2 > pledgeName.Length)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
+
 		if (pledgeName.Length > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);

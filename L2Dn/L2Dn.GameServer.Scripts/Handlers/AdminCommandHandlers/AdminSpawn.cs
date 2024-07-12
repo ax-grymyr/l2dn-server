@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using L2Dn.GameServer.Data;
@@ -294,7 +295,7 @@ public class AdminSpawn: IAdminCommandHandler
 				string npcId = st.nextToken();
 				
 				// If the second token is not a digit, search for the NPC template by name.
-				if (!Util.isDigit(npcId))
+				if (!int.TryParse(npcId, CultureInfo.InvariantCulture, out int _))
 				{
 					// Initialize the variables.
 					StringBuilder searchParam = new StringBuilder();
@@ -387,11 +388,7 @@ public class AdminSpawn: IAdminCommandHandler
 				
 				string searchString = searchParam.ToString().Trim();
 				// If the search string is a number, use it as the NPC ID.
-				if (Util.isDigit(searchString))
-				{
-					npcId = int.Parse(searchString);
-				}
-				else
+				if (!int.TryParse(searchString, CultureInfo.InvariantCulture, out npcId))
 				{
 					// Otherwise, use it as the NPC name and look up the NPC ID.
 					npcId = NpcData.getInstance().getTemplateByName(searchString).getId();
@@ -400,10 +397,10 @@ public class AdminSpawn: IAdminCommandHandler
 				// If there are more than two words in the command, try to parse the last word as the teleport index.
 				if (pars.Length > 2)
 				{
-					string lastParam = pars[pars.Length - 1];
-					if (Util.isDigit(lastParam))
+					string lastParam = pars[^1];
+					if (int.TryParse(lastParam, CultureInfo.InvariantCulture, out int value))
 					{
-						teleportIndex = int.Parse(lastParam);
+						teleportIndex = value;
 					}
 				}
 			}
@@ -423,9 +420,9 @@ public class AdminSpawn: IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				string nextToken = st.nextToken();
-				if (Util.isDigit(nextToken))
+				if (int.TryParse(nextToken, CultureInfo.InvariantCulture, out int v))
 				{
-					count = int.Parse(nextToken);
+					count = v;
 				}
 				if (count <= 0)
 				{

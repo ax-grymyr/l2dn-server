@@ -88,46 +88,6 @@ public class Util
 	}
 
 	/**
-	 * @param text - the text to check
-	 * @return {@code true} if {@code text} contains only numbers, {@code false} otherwise
-	 */
-	public static bool isDigit(string? text)
-	{
-		if (string.IsNullOrEmpty(text))
-			return false;
-
-		foreach (char c in text)
-		{
-			if (!char.IsDigit(c))
-			{
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param text - the text to check
-	 * @return {@code true} if {@code text} contains only letters and/or numbers, {@code false} otherwise
-	 */
-	public static bool isAlphaNumeric(string? text)
-	{
-		if (string.IsNullOrEmpty(text))
-			return false;
-
-		foreach (char c in text)
-		{
-			if (!char.IsLetterOrDigit(c))
-			{
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
 	 * Format the specified digit using the digit grouping symbol "," (comma).<br>
 	 * For example, 123456789 becomes 123,456,789.
 	 * @param amount - the amount of adena

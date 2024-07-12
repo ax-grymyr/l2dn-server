@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
@@ -63,7 +64,7 @@ public class RegionBoard: IWriteBoardHandler
 			CommunityBoardHandler.getInstance().addBypass(player, "Region>", command);
 			
 			string id = command.Replace("_bbsloc;", "");
-			if (!Util.isDigit(id))
+			if (!int.TryParse(id, CultureInfo.InvariantCulture, out int value))
 			{
 				_logger.Warn(nameof(RegionBoard) + ": " + player + " sent and invalid region bypass " + command + "!");
 				return false;

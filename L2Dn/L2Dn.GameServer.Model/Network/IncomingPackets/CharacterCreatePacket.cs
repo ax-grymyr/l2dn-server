@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Sql;
+﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
@@ -86,7 +87,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		}
 		
 		// Last Verified: May 30, 2009 - Gracia Final
-		if (!Util.isAlphaNumeric(_name) || !IsValidName(_name))
+		if (string.IsNullOrEmpty(_name) || !_name.ContainsAlphaNumericOnly() || !IsValidName(_name))
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.IncorrectName);
 			connection.Send(ref createFailPacket);

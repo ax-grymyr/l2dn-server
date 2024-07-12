@@ -204,11 +204,12 @@ public class AdminOlympiad: IAdminCommandHandler
 	private int parseInt(StringTokenizer st)
 	{
 		string token = st.nextToken();
-		if (!Util.isDigit(token))
+		if (!int.TryParse(token, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int value))
 		{
 			return -1;
 		}
-		return int.Parse(token, NumberStyles.HexNumber);
+
+		return value;
 	}
 	
 	private NobleData getPlayerSet(Player player)

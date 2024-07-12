@@ -1,3 +1,4 @@
+using System.Globalization;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
@@ -35,9 +36,9 @@ public class AdminCastle: IAdminCommandHandler
 			{
 				string param = st.nextToken();
 				Castle castle;
-				if (Util.isDigit(param))
+				if (int.TryParse(param, CultureInfo.InvariantCulture, out int castleId))
 				{
-					castle = CastleManager.getInstance().getCastleById(int.Parse(param));
+					castle = CastleManager.getInstance().getCastleById(castleId);
 				}
 				else
 				{
