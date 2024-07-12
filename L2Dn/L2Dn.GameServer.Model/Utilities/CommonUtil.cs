@@ -83,25 +83,4 @@ public static class CommonUtil
 			return defaultVal;
 		}
 	}
-
-	/**
-	 * @param str - the string whose first letter to capitalize
-	 * @return a string with the first letter of the {@code str} capitalized
-	 */
-	public static string capitalizeFirst(string str)
-	{
-		if (string.IsNullOrEmpty(str))
-		{
-			return str;
-		}
-
-		char[] arr = str.ToCharArray();
-		char c = arr[0];
-		if (char.IsLetter(c))
-		{
-			arr[0] = char.ToUpper(c);
-		}
-
-		return new string(arr);
-	}
 }

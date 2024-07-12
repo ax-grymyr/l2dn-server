@@ -199,7 +199,7 @@ public class NpcViewMod: IBypassHandler
 			}
 		}
 		
-		htmlContent.Replace("%atktype%", CommonUtil.capitalizeFirst(npc.getAttackType().ToString().toLowerCase()));
+		htmlContent.Replace("%atktype%", npc.getAttackType().ToString().toLowerCase().CapitalizeFirstLetter());
 		htmlContent.Replace("%atkrange%", npc.getStat().getPhysicalAttackRange().ToString());
 		htmlContent.Replace("%patk%", npc.getPAtk().ToString());
 		htmlContent.Replace("%pdef%", npc.getPDef().ToString());

@@ -1,4 +1,5 @@
 using System.Globalization;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
@@ -226,7 +227,7 @@ public class AdminCastle: IAdminCommandHandler
 			htmlContent.Replace("%castleName%", castle.getName());
 			htmlContent.Replace("%ownerName%", ownerClan != null ? ownerClan.getLeaderName() : "NPC");
 			htmlContent.Replace("%ownerClan%", ownerClan != null ? ownerClan.getName() : "NPC");
-			htmlContent.Replace("%castleSide%", CommonUtil.capitalizeFirst(castle.getSide().ToString().toLowerCase()));
+			htmlContent.Replace("%castleSide%", castle.getSide().ToString().toLowerCase().CapitalizeFirstLetter());
 			player.sendPacket(html);
 		}
 	}
