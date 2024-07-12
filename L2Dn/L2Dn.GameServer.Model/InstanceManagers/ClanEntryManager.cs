@@ -48,7 +48,7 @@ public class ClanEntryManager
 					removeFromClanList(clanId);
 				}
 			}
-			LOGGER.Info(GetType().Name +": Loaded " + _clanList.size() + " clan entries.");
+			LOGGER.Info(GetType().Name +": Loaded " + _clanList.Count + " clan entries.");
 		}
 		catch (Exception e)
 		{
@@ -76,7 +76,7 @@ public class ClanEntryManager
 						record.Class, record.CharacterName));
 			}
 			
-			LOGGER.Info(GetType().Name +": Loaded " + _waitingList.size() + " players in waiting list.");
+			LOGGER.Info(GetType().Name +": Loaded " + _waitingList.Count + " players in waiting list.");
 		}
 		catch (Exception e)
 		{
@@ -105,7 +105,7 @@ public class ClanEntryManager
 						record.Karma, record.ClanId, record.Message));
 			}
 			
-			LOGGER.Info(GetType().Name +": Loaded " + _applicantList.size() + " player applications.");
+			LOGGER.Info(GetType().Name +": Loaded " + _applicantList.Count + " player applications.");
 		}
 		catch (Exception e)
 		{

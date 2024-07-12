@@ -188,7 +188,7 @@ public class ChallengePoint
 	public ChallengePointInfoHolder[] initializeChallengePoints()
 	{
 		Map<int, int> challengePoints = getChallengePoints();
-		ChallengePointInfoHolder[] info = new ChallengePointInfoHolder[challengePoints.size()];
+		ChallengePointInfoHolder[] info = new ChallengePointInfoHolder[challengePoints.Count];
 		int i = 0;
 		foreach (var entry in challengePoints)
 		{

@@ -18,7 +18,7 @@ public readonly struct ExHeroListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_HERO_LIST);
         
-        writer.WriteInt32(_heroList.size());
+        writer.WriteInt32(_heroList.Count);
         foreach (StatSet hero in _heroList.Values)
         {
             writer.WriteString(hero.getString(Olympiad.CHAR_NAME));

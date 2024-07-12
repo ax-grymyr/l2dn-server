@@ -28,7 +28,7 @@ public class SiegeScheduleData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Config, "SiegeSchedule.xml");
 		document.Elements("list").Elements("schedule").ForEach(parseElement);
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _scheduleData.size() + " siege schedulers.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _scheduleData.Count + " siege schedulers.");
 	}
 
 	private void parseElement(XElement element)

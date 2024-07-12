@@ -125,7 +125,7 @@ public class DecayTaskManager: Runnable
 		ret.Append("============= DecayTask Manager Report ============");
 		ret.Append(Environment.NewLine);
 		ret.Append("Tasks count: ");
-		ret.Append(DECAY_SCHEDULES.size());
+		ret.Append(DECAY_SCHEDULES.Count);
 		ret.Append(Environment.NewLine);
 		ret.Append("Tasks dump:");
 		ret.Append(Environment.NewLine);

@@ -252,7 +252,7 @@ public class Olympiad
 			}
 		}
 		
-		LOGGER.Info("Olympiad System: Loaded " + NOBLES.size() + " Nobles");
+		LOGGER.Info("Olympiad System: Loaded " + NOBLES.Count + " Nobles");
 	}
 	
 	public int getOlympiadRank(Player player)
@@ -282,10 +282,10 @@ public class Olympiad
 			LOGGER.Warn("Olympiad System: Error loading noblesse data from database for Ranking: ", e);
 		}
 		
-		int rank1 = (int) Math.Round(tmpPlace.size() * 0.01);
-		int rank2 = (int) Math.Round(tmpPlace.size() * 0.10);
-		int rank3 = (int) Math.Round(tmpPlace.size() * 0.25);
-		int rank4 = (int) Math.Round(tmpPlace.size() * 0.50);
+		int rank1 = (int) Math.Round(tmpPlace.Count * 0.01);
+		int rank2 = (int) Math.Round(tmpPlace.Count * 0.10);
+		int rank3 = (int) Math.Round(tmpPlace.Count * 0.25);
+		int rank4 = (int) Math.Round(tmpPlace.Count * 0.50);
 		if (rank1 == 0)
 		{
 			rank1 = 1;
@@ -461,7 +461,7 @@ public class Olympiad
 	
 	protected static int getNobleCount()
 	{
-		return NOBLES.size();
+		return NOBLES.Count;
 	}
 	
 	public static NobleData getNobleStats(int playerId)

@@ -32,7 +32,7 @@ public class ResidenceFunctionsData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ResidenceFunctions.xml");
 		document.Elements("list").Elements("function").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _functions.size() + " functions.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _functions.Count + " functions.");
 	}
 
 	private void parseElement(XElement element)

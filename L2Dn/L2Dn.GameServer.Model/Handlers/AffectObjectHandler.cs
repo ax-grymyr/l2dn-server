@@ -34,7 +34,7 @@ public class AffectObjectHandler: IHandler<IAffectObjectHandler, AffectObject>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static AffectObjectHandler getInstance()

@@ -34,7 +34,7 @@ public class TimedHuntingZoneData: DataReaderBase
 		
 		if (!_timedHuntingZoneData.isEmpty())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _timedHuntingZoneData.size() + " timed hunting zones.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _timedHuntingZoneData.Count + " timed hunting zones.");
 		}
 		else
 		{
@@ -141,7 +141,7 @@ public class TimedHuntingZoneData: DataReaderBase
 	
 	public int getSize()
 	{
-		return _timedHuntingZoneData.size();
+		return _timedHuntingZoneData.Count;
 	}
 	
 	public static TimedHuntingZoneData getInstance()

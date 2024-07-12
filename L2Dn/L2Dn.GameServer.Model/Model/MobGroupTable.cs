@@ -31,7 +31,7 @@ public class MobGroupTable
 	
     public int getGroupCount()
     {
-        return _groupMap.size();
+        return _groupMap.Count;
     }
 	
     public MobGroup getGroupForMob(ControllableMob mobInst)

@@ -45,11 +45,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         }
     }
 
-    public int size()
-    {
-        return Count;
-    }
-
     public bool containsValue(TValue value)
     {
         return Values.Contains(value);

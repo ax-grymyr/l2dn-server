@@ -33,7 +33,7 @@ public class VipData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Vip.xml");
 		document.Elements("list").Elements("vip").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _vipTiers.size() + " vips.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _vipTiers.Count + " vips.");
 	}
 
 	private void parseElement(XElement element)

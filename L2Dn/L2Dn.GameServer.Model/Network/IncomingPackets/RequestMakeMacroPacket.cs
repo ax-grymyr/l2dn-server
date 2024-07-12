@@ -56,7 +56,7 @@ public struct RequestMakeMacroPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
         
-        if (player.getMacros().getAllMacroses().size() > 48)
+        if (player.getMacros().getAllMacroses().Count > 48)
         {
             // You may create up to 48 macros.
             player.sendPacket(SystemMessageId.YOU_MAY_CREATE_UP_TO_48_MACROS);

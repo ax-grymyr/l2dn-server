@@ -514,7 +514,7 @@ public class Clan: IIdentifiable, INamable
 	
 	public int getMembersCount()
 	{
-		return _members.size();
+		return _members.Count;
 	}
 	
 	public int getSubPledgeMembersCount(int subpl)
@@ -2453,7 +2453,7 @@ public class Clan: IIdentifiable, INamable
 			case 0:
 			{
 				// Upgrade to 1
-				if ((player.getSp() >= 1000) && (player.getAdena() >= 150000) && (_members.size() >= 1) && player.reduceAdena("ClanLvl", 150000, player.getTarget(), true))
+				if ((player.getSp() >= 1000) && (player.getAdena() >= 150000) && (_members.Count >= 1) && player.reduceAdena("ClanLvl", 150000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 1000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2466,7 +2466,7 @@ public class Clan: IIdentifiable, INamable
 			case 1:
 			{
 				// Upgrade to 2
-				if ((player.getSp() >= 15000) && (player.getAdena() >= 300000) && (_members.size() >= 1) && player.reduceAdena("ClanLvl", 300000, player.getTarget(), true))
+				if ((player.getSp() >= 15000) && (player.getAdena() >= 300000) && (_members.Count >= 1) && player.reduceAdena("ClanLvl", 300000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 15000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2479,7 +2479,7 @@ public class Clan: IIdentifiable, INamable
 			case 2:
 			{
 				// Upgrade to 3 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 100000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.size() >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 100, player.getTarget(), true))
+				if ((player.getSp() >= 100000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 100, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 100000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2495,7 +2495,7 @@ public class Clan: IIdentifiable, INamable
 			case 3:
 			{
 				// Upgrade to 4 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 1000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.size() >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 5000, player.getTarget(), true))
+				if ((player.getSp() >= 1000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 5000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 1000000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2511,7 +2511,7 @@ public class Clan: IIdentifiable, INamable
 			case 4:
 			{
 				// Upgrade to 5 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 5000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.size() >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 10000, player.getTarget(), true))
+				if ((player.getSp() >= 5000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 10000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 5000000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2841,7 +2841,7 @@ public class Clan: IIdentifiable, INamable
 	
 	public int getWarCount()
 	{
-		return _atWarWith.size();
+		return _atWarWith.Count;
 	}
 	
 	public void addWar(int clanId, ClanWar war)

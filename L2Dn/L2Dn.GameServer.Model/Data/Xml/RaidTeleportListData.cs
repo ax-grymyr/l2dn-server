@@ -29,7 +29,7 @@ public class RaidTeleportListData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "RaidTeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _teleports.size() + " teleports.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _teleports.Count + " teleports.");
 	}
 
 	private void parseElement(XElement element)

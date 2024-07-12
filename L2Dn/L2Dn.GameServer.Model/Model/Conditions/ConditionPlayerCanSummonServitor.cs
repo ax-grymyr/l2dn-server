@@ -30,7 +30,7 @@ public class ConditionPlayerCanSummonServitor: Condition
 		{
 			canSummon = false;
 		}
-		else if (player.getServitors().size() >= 4)
+		else if (player.getServitors().Count >= 4)
 		{
 			canSummon = false;
 		}

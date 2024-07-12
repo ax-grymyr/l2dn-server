@@ -193,7 +193,7 @@ public class SkillData: DataReaderBase
 			});
 		}
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _skills.size() + " Skills.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " Skills.");
 	}
 
 	public void reload()

@@ -25,8 +25,8 @@ public class LetterCollectorManager
 	
 	public void init()
 	{
-		LOGGER.Info(GetType().Name +": Loaded " + _rewards.size() + " words.");
-		LOGGER.Info(GetType().Name +": Loaded " + _letter.size() + " letters.");
+		LOGGER.Info(GetType().Name +": Loaded " + _rewards.Count + " words.");
+		LOGGER.Info(GetType().Name +": Loaded " + _letter.Count + " letters.");
 	}
 	
 	public int getMinLevel()

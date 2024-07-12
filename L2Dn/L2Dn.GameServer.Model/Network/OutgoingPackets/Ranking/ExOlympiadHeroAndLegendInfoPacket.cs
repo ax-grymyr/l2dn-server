@@ -71,11 +71,11 @@ public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 					{
 						if (!wroteCount)
 						{
-							writer.WriteInt32(Hero.getInstance().getHeroes().size() - 1);
+							writer.WriteInt32(Hero.getInstance().getHeroes().Count - 1);
 							wroteCount = true;
 						}
 
-						if (Hero.getInstance().getHeroes().size() > 1)
+						if (Hero.getInstance().getHeroes().Count > 1)
 						{
 							writer.WriteSizedString(record.Name);
 							writer.WriteSizedString(clan?.getName() ?? string.Empty);

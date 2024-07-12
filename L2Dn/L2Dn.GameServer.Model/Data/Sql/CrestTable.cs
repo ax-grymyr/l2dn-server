@@ -85,7 +85,7 @@ public class CrestTable
 			LOGGER.Warn("There was an error while loading crests from database:", e);
 		}
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _crests.size() + " Crests.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _crests.Count + " Crests.");
 		
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{

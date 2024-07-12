@@ -56,7 +56,7 @@ public class ChatHandler: IHandler<IChatHandler, ChatType>
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static ChatHandler getInstance()

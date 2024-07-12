@@ -36,7 +36,7 @@ public class RandomCraftData: DataReaderBase
 			document.Elements("list").Elements("extract").Elements("item").ForEach(parseExtractElement);
 		}
 
-		int extractCount = EXTRACT_DATA.size();
+		int extractCount = EXTRACT_DATA.Count;
 		if (extractCount > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + extractCount + " extraction data.");
@@ -51,7 +51,7 @@ public class RandomCraftData: DataReaderBase
 			document.Elements("list").Elements("rewards").Elements("item").ForEach(parseRewardElement);
 		}
 		
-		int rewardCount = REWARD_DATA.size();
+		int rewardCount = REWARD_DATA.Count;
 		if (rewardCount > 4)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + rewardCount + " rewards.");

@@ -238,7 +238,7 @@ public class AirShipManager
 			LOGGER.Warn(GetType().Name + ": Could not load airships table: " + e);
 		}
 
-		LOGGER.Info(GetType().Name +": Loaded " + _airShipsInfo.size() + " private airships");
+		LOGGER.Info(GetType().Name +": Loaded " + _airShipsInfo.Count + " private airships");
 	}
 	
 	private void storeInDb(int ownerId)

@@ -172,7 +172,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte((byte)_player.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
 		writer.WriteByte((byte)_player.getPrivateStoreType()); // Confirmed
 
-		writer.WriteInt16((short)_player.getCubics().size()); // Confirmed
+		writer.WriteInt16((short)_player.getCubics().Count); // Confirmed
 		foreach (int cubicId in _player.getCubics().Keys)
 		{
 			writer.WriteInt16((short)cubicId);

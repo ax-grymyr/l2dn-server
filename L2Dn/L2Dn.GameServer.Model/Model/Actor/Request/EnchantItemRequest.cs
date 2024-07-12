@@ -112,7 +112,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public int getMultiEnchantingItemsCount()
 	{
-		return _multiEnchantingItems.size();
+		return _multiEnchantingItems.Count;
 	}
 	
 	public void clearMultiEnchantingItemsBySlot()
@@ -132,7 +132,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public int getMultiFailItemsCount()
 	{
-		return _multiFailRewardItems.size();
+		return _multiFailRewardItems.Count;
 	}
 	
 	public void clearMultiFailReward()

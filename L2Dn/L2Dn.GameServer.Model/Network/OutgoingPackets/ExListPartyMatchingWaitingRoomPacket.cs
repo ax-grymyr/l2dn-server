@@ -46,7 +46,7 @@ public readonly struct ExListPartyMatchingWaitingRoomPacket: IOutgoingPacket
             Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
             writer.WriteInt32((instance != null) && (instance.getTemplateId() >= 0) ? instance.getTemplateId() : -1);
             Map<int, DateTime> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player);
-            writer.WriteInt32(instanceTimes.size());
+            writer.WriteInt32(instanceTimes.Count);
             foreach (var entry in instanceTimes)
             {
                 TimeSpan instanceTime = entry.Value - DateTime.UtcNow;

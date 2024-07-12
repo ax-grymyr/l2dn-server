@@ -33,7 +33,7 @@ public readonly struct ExPartyRoomMemberPacket: IOutgoingPacket
             writer.WriteInt32(MapRegionManager.getInstance().getBBs(member.Location.Location2D));
             writer.WriteInt32((int)_room.getMemberType(member));
             Map<int, DateTime> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(member);
-            writer.WriteInt32(instanceTimes.size());
+            writer.WriteInt32(instanceTimes.Count);
 
             DateTime now = DateTime.UtcNow;
             foreach (var entry in instanceTimes)

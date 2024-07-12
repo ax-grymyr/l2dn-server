@@ -34,7 +34,7 @@ public class TargetHandler: IHandler<ITargetTypeHandler, TargetType>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static TargetHandler getInstance()

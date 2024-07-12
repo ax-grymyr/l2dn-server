@@ -34,7 +34,7 @@ public class AffectScopeHandler: IHandler<IAffectScopeHandler, AffectScope>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static AffectScopeHandler getInstance()

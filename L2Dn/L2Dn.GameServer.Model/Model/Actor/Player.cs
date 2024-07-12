@@ -9973,7 +9973,7 @@ public class Player: Playable
 	
 	public int getTotalSubClasses()
 	{
-		return getSubClasses().size();
+		return getSubClasses().Count;
 	}
 	
 	public CharacterClass getBaseClass()
@@ -12587,7 +12587,7 @@ public class Player: Playable
 			return;
 		}
 		
-		if (_tpbookmarks.size() >= _bookmarkslot)
+		if (_tpbookmarks.Count >= _bookmarkslot)
 		{
 			sendPacket(SystemMessageId.YOU_HAVE_NO_SPACE_TO_SAVE_THE_TELEPORT_LOCATION);
 			return;

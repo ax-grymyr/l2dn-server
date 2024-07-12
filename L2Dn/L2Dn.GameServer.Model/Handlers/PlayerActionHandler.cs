@@ -32,7 +32,7 @@ public class PlayerActionHandler: IHandler<IPlayerActionHandler, string>
 	
 	public int size()
 	{
-		return _actions.size();
+		return _actions.Count;
 	}
 	
 	public static PlayerActionHandler getInstance()

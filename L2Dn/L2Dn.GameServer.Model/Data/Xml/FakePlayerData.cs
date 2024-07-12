@@ -38,7 +38,7 @@ public class FakePlayerData: DataReaderBase
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerVisualData.xml");
 			document.Elements("list").Elements("fakePlayer").ForEach(parseElement);
 
-			LOGGER.Info(GetType().Name + ": Loaded " + _fakePlayerInfos.size() + " templates.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _fakePlayerInfos.Count + " templates.");
 		}
 		else
 		{

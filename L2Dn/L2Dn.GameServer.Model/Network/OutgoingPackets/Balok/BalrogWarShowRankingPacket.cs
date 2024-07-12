@@ -18,7 +18,7 @@ public readonly struct BalrogWarShowRankingPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_BALROGWAR_SHOW_RANKING);
         
-        writer.WriteInt32(_rankingData.size());
+        writer.WriteInt32(_rankingData.Count);
         int rank = 0;
         foreach (var entry in _rankingData)
         {

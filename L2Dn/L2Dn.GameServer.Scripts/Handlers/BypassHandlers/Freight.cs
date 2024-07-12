@@ -52,7 +52,7 @@ public class Freight: IBypassHandler
 		}
 		else if (command.equalsIgnoreCase(COMMANDS[1]))
 		{
-			if (player.getAccountChars().size() < 1)
+			if (player.getAccountChars().Count < 1)
 			{
 				player.sendPacket(SystemMessageId.THAT_CHARACTER_DOES_NOT_EXIST);
 			}

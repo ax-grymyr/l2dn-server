@@ -43,7 +43,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                 writer.WriteInt32(0); // 228
 
                 Summon pet = member.getPet();
-                writer.WriteInt32(member.getServitors().size() + (pet != null ? 1 : 0)); // Summon size, one only atm
+                writer.WriteInt32(member.getServitors().Count + (pet != null ? 1 : 0)); // Summon size, one only atm
                 if (pet != null)
                 {
                     writer.WriteInt32(pet.getObjectId());

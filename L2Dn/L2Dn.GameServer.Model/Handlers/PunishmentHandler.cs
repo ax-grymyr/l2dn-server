@@ -34,7 +34,7 @@ public class PunishmentHandler: IHandler<IPunishmentHandler, PunishmentType>
 	
 	public int size()
 	{
-		return _handlers.size();
+		return _handlers.Count;
 	}
 	
 	public static PunishmentHandler getInstance()

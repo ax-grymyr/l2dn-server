@@ -50,7 +50,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/enchantHPBonus.xml");
 		document.Elements("list").Elements("enchantHP").ForEach(parseEnchant);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _armorHPBonuses.size() + " enchant HP bonuses.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _armorHPBonuses.Count + " enchant HP bonuses.");
 	}
 	
 	/**

@@ -57,7 +57,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	/**

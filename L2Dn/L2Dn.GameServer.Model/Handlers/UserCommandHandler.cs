@@ -39,7 +39,7 @@ public class UserCommandHandler: IHandler<IUserCommandHandler, int>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static UserCommandHandler getInstance()

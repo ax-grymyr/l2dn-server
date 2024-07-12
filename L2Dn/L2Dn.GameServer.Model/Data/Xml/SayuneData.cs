@@ -28,7 +28,7 @@ public class SayuneData: DataReaderBase
 		document.Elements("list").Elements("map").ForEach(parseElement);
 		
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _maps.size() + " maps.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _maps.Count + " maps.");
 	}
 
 	private void parseElement(XElement element)

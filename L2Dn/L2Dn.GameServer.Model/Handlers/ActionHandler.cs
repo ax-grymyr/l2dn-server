@@ -48,7 +48,7 @@ public class ActionHandler: IHandler<IActionHandler, InstanceType>
 	
 	public int size()
 	{
-		return _actions.size();
+		return _actions.Count;
 	}
 	
 	private static class SingletonHolder

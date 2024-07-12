@@ -29,7 +29,7 @@ public class AppearanceItemData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "AppearanceStones.xml");
 		document.Elements("list").Elements("appearance_stone").ForEach(loadElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.size() + " stones.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.Count + " stones.");
 		
 		//@formatter:off
 		/*

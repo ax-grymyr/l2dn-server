@@ -124,7 +124,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static AdminCommandHandler getInstance()

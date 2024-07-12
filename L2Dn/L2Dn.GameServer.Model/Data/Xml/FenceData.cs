@@ -38,12 +38,12 @@ public class FenceData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "FenceData.xml");
 		document.Elements("list").Elements("fence").ForEach(spawnFence);
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _fences.size() + " fences.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _fences.Count + " fences.");
 	}
 
 	public int getLoadedElementsCount()
 	{
-		return _fences.size();
+		return _fences.Count;
 	}
 
 	private void spawnFence(XElement fenceNode)

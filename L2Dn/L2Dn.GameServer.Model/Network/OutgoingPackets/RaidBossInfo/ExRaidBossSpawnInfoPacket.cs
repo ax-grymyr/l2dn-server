@@ -18,7 +18,7 @@ public readonly struct ExRaidBossSpawnInfoPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_RAID_BOSS_SPAWN_INFO);
         
         writer.WriteInt32(0); // BossRespawnFactor
-        writer.WriteInt32(_statuses.size()); // count
+        writer.WriteInt32(_statuses.Count); // count
         foreach (var entry in _statuses)
         {
             writer.WriteInt32(entry.Key);

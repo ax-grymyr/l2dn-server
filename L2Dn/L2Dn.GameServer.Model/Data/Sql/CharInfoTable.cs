@@ -39,7 +39,7 @@ public class CharInfoTable
 			LOGGER.Warn(GetType().Name + ": Couldn't retrieve all char id/name/access: " + e);
 		}
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _names.size() + " char names.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _names.Count + " char names.");
 	}
 	
 	public void addName(Player player)

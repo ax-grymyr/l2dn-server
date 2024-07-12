@@ -27,7 +27,7 @@ public class SkillConditionHandler
 	
 	public int size()
 	{
-		return _skillConditionHandlerFactories.size();
+		return _skillConditionHandlerFactories.Count;
 	}
 	
 	private static class SingletonHolder

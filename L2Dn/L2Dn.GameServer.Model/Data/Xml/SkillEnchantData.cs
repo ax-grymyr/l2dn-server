@@ -35,9 +35,9 @@ public class SkillEnchantData: DataReaderBase
 		document.Elements("list").Elements("chances").Elements("chance").ForEach(parseChanceElement);
 		document.Elements("list").Elements("itemsPoints").Elements("star").ForEach(parseItemPointStarElement);
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _enchantStarMap.size() + " star levels.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _enchantItemMap.size() + " enchant items.");
-		LOGGER.Info(GetType().Name + ": Loaded " + _skillEnchantMap.size() + " skill enchants.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _enchantStarMap.Count + " star levels.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _enchantItemMap.Count + " enchant items.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _skillEnchantMap.Count + " skill enchants.");
 	}
 
 	private void parseSkillElement(XElement element)

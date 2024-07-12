@@ -35,7 +35,7 @@ public class StaticObjectData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "StaticObjects.xml");
 		document.Elements("list").Elements("object").ForEach(parseElement);
         
-		LOGGER.Info(GetType().Name + ": Loaded " + _staticObjects.size() + " static object templates.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _staticObjects.Count + " static object templates.");
 	}
 	
 	private void parseElement(XElement element)

@@ -13,7 +13,7 @@ public readonly struct ItemDeletionInfoPacket: IOutgoingPacket
 		
         // Items.
         Map<int, DateTime> itemDates = ItemDeletionInfoManager.getInstance().getItemDates();
-        writer.WriteInt32(itemDates.size());
+        writer.WriteInt32(itemDates.Count);
         foreach (var info in itemDates)
         {
             writer.WriteInt32(info.Key); // item

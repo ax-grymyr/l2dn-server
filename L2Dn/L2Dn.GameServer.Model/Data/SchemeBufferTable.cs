@@ -78,7 +78,7 @@ public class SchemeBufferTable: DataReaderBase
 			LOGGER.Warn("SchemeBufferTable: Failed to load buff schemes: " + e);
 		}
 
-		LOGGER.Info("SchemeBufferTable: Loaded " + count + " players schemes and " + _availableBuffs.size() +
+		LOGGER.Info("SchemeBufferTable: Loaded " + count + " players schemes and " + _availableBuffs.Count +
 		            " available buffs.");
 	}
 
@@ -121,7 +121,7 @@ public class SchemeBufferTable: DataReaderBase
 		{
 			_schemesTable.put(playerId, new(StringComparer.InvariantCultureIgnoreCase));
 		}
-		else if (_schemesTable.get(playerId).size() >= Config.BUFFER_MAX_SCHEMES)
+		else if (_schemesTable.get(playerId).Count >= Config.BUFFER_MAX_SCHEMES)
 		{
 			return;
 		}

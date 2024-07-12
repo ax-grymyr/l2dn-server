@@ -115,10 +115,10 @@ public class ItemData: DataReaderBase
 		}
 
 		buildFastLookupTable();
-		LOGGER.Info(GetType().Name + ": Loaded " + _etcItems.size() + " Etc Items");
-		LOGGER.Info(GetType().Name + ": Loaded " + _armors.size() + " Armor Items");
-		LOGGER.Info(GetType().Name + ": Loaded " + _weapons.size() + " Weapon Items");
-		LOGGER.Info(GetType().Name + ": Loaded " + (_etcItems.size() + _armors.size() + _weapons.size()) +
+		LOGGER.Info(GetType().Name + ": Loaded " + _etcItems.Count + " Etc Items");
+		LOGGER.Info(GetType().Name + ": Loaded " + _armors.Count + " Armor Items");
+		LOGGER.Info(GetType().Name + ": Loaded " + _weapons.Count + " Weapon Items");
+		LOGGER.Info(GetType().Name + ": Loaded " + (_etcItems.Count + _armors.Count + _weapons.Count) +
 		            " Items in total.");
 	}
 

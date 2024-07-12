@@ -31,7 +31,7 @@ public readonly struct ExGetBossRecordPacket: IOutgoingPacket
         }
         else
         {
-            writer.WriteInt32(_bossRecordInfo.size()); // list size
+            writer.WriteInt32(_bossRecordInfo.Count); // list size
             foreach (var entry in _bossRecordInfo)
             {
                 writer.WriteInt32(entry.Key);

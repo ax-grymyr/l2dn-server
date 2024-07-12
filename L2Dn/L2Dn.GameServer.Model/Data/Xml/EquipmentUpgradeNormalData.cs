@@ -58,7 +58,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 		
 		if (!_upgrades.isEmpty())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.size() + " upgrade-normal equipment data. Adena commission is " + _commission + ".");
+			LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.Count + " upgrade-normal equipment data. Adena commission is " + _commission + ".");
 		}
 		
 		if (!_discount.isEmpty())

@@ -30,7 +30,7 @@ public readonly struct ExShowProcureCropDetailPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_PROCURE_CROP_DETAIL);
         
         writer.WriteInt32(_cropId); // crop id
-        writer.WriteInt32(_castleCrops.size()); // size
+        writer.WriteInt32(_castleCrops.Count); // size
         foreach (var entry in _castleCrops)
         {
             CropProcure crop = entry.Value;

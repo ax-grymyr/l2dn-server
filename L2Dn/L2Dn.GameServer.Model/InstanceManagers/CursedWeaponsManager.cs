@@ -43,7 +43,7 @@ public class CursedWeaponsManager: DataReaderBase
 		
 		restore();
 		controlPlayers();
-		LOGGER.Info(GetType().Name +": Loaded " + _cursedWeapons.size() + " cursed weapons.");
+		LOGGER.Info(GetType().Name +": Loaded " + _cursedWeapons.Count + " cursed weapons.");
 	}
 	
 	private void parseElement(XElement element)

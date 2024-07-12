@@ -26,7 +26,7 @@ public readonly struct ExInzoneWaitingPacket: IOutgoingPacket
         
         writer.WriteByte(!_hide); // Grand Crusade
         writer.WriteInt32(_currentTemplateId);
-        writer.WriteInt32(_instanceTimes.size());
+        writer.WriteInt32(_instanceTimes.Count);
         foreach (var entry in _instanceTimes)
         {
             TimeSpan instanceTime = entry.Value - DateTime.UtcNow;

@@ -53,13 +53,13 @@ public class ItemCrystallizationData: DataReaderBase
 			el.Elements("weapon").ForEach(e => _weaponDestroyGroup = getFormedHolder(e));
 		});
 		
-		if (_crystallizationTemplates.size() > 0)
+		if (_crystallizationTemplates.Count > 0)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _crystallizationTemplates.size() + " crystallization templates.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _crystallizationTemplates.Count + " crystallization templates.");
 		}
-		if (_items.size() > 0)
+		if (_items.Count > 0)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _items.size() + " pre-defined crystallizable items.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _items.Count + " pre-defined crystallizable items.");
 		}
 		
 		// Generate remaining data.
@@ -111,7 +111,7 @@ public class ItemCrystallizationData: DataReaderBase
 	
 	public int getLoadedCrystallizationTemplateCount()
 	{
-		return _crystallizationTemplates.size();
+		return _crystallizationTemplates.Count;
 	}
 	
 	private List<ItemChanceHolder> calculateCrystallizeRewards(ItemTemplate item, List<ItemChanceHolder> crystallizeRewards)
@@ -141,7 +141,7 @@ public class ItemCrystallizationData: DataReaderBase
 	
 	private void generateCrystallizationData()
 	{
-		int previousCount = _items.size();
+		int previousCount = _items.Count;
 		foreach (ItemTemplate item in ItemData.getInstance().getAllItems())
 		{
 			// Check if the data has not been generated.
@@ -155,7 +155,7 @@ public class ItemCrystallizationData: DataReaderBase
 			}
 		}
 		
-		int generated = _items.size() - previousCount;
+		int generated = _items.Count - previousCount;
 		if (generated > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Generated " + generated + " crystallizable items from templates.");

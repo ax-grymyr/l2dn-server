@@ -219,12 +219,12 @@ public class VariationData: DataReaderBase
 	
 	public int getVariationCount()
 	{
-		return _variations.size();
+		return _variations.Count;
 	}
 	
 	public int getFeeCount()
 	{
-		return _fees.size();
+		return _fees.Count;
 	}
 	
 	/**

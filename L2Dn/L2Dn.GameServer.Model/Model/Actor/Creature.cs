@@ -5335,7 +5335,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public int getSummonedNpcCount()
 	{
-		return _summonedNpcs != null ? _summonedNpcs.size() : 0;
+		return _summonedNpcs != null ? _summonedNpcs.Count : 0;
 	}
 	
 	/**

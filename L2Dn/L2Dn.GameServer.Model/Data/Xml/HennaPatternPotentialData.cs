@@ -46,7 +46,7 @@ public class HennaPatternPotentialData: DataReaderBase
 			element.Elements("hiddenPotentials").Elements("poten").ForEach(parseHiddenPotenElement);
 		});
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _potenFees.size() + " dye pattern fee data.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _potenFees.Count + " dye pattern fee data.");
 		
 	}
 
@@ -125,7 +125,7 @@ public class HennaPatternPotentialData: DataReaderBase
 	
 	public int getMaxPotenEnchantStep()
 	{
-		return _potenFees.size();
+		return _potenFees.Count;
 	}
 	
 	public List<ItemHolder> getEnchantReset()

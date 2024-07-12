@@ -277,7 +277,7 @@ public class WorldExchangeManager: DataReaderBase
 		}
 		
 		Map<WorldExchangeItemStatusType, List<WorldExchangeHolder>> playerBids = getPlayerBids(player.getObjectId());
-		if (playerBids.size() >= 10)
+		if (playerBids.Count >= 10)
 		{
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.NO_SLOTS_AVAILABLE));
 			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);

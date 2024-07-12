@@ -33,7 +33,7 @@ public class MissionLevel: DataReaderBase
 		
 		if (_currentSeason > 0)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _template.size() + " seasons.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _template.Count + " seasons.");
 		}
 		else
 		{

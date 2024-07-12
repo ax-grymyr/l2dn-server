@@ -139,7 +139,7 @@ public class BotReportTable
 				}
 			}
 			
-			LOGGER.Info(GetType().Name + ": Loaded " + _reports.size() + " bot reports");
+			LOGGER.Info(GetType().Name + ": Loaded " + _reports.Count + " bot reports");
 		}
 		catch (Exception e)
 		{
@@ -491,7 +491,7 @@ public class BotReportTable
 		
 		public int getReportCount()
 		{
-			return _reporters.size();
+			return _reporters.Count;
 		}
 		
 		public bool alredyReportedBy(int objectId)

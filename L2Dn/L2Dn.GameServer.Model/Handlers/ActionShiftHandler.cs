@@ -43,7 +43,7 @@ public class ActionShiftHandler: IHandler<IActionShiftHandler, InstanceType>
 	
 	public int size()
 	{
-		return _actionsShift.size();
+		return _actionsShift.Count;
 	}
 	
 	public static ActionShiftHandler getInstance()

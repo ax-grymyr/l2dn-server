@@ -58,7 +58,7 @@ public class WalkingManager: DataReaderBase
 	public void load()
 	{
 		LoadXmlDocument(DataFileLocation.Data, "Routes.xml").Elements("routes").Elements("route").ForEach(parseRoute);
-		LOGGER.Info(GetType().Name +": Loaded " + _routes.size() + " walking routes.");
+		LOGGER.Info(GetType().Name +": Loaded " + _routes.Count + " walking routes.");
 	}
 
 	private void parseRoute(XElement element)

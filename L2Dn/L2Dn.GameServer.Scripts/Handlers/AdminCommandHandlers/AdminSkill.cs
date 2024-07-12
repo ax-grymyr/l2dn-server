@@ -313,8 +313,8 @@ public class AdminSkill: IAdminCommandHandler
 			member.sendSkillList();
 		}
 		
-		BuilderUtil.sendSysMessage(activeChar, "You gave " + skills.size() + " skills to " + player.getName() + "'s clan " + clan.getName() + ".");
-		player.sendMessage("Your clan received " + skills.size() + " skills.");
+		BuilderUtil.sendSysMessage(activeChar, "You gave " + skills.Count + " skills to " + player.getName() + "'s clan " + clan.getName() + ".");
+		player.sendMessage("Your clan received " + skills.Count + " skills.");
 	}
 	
 	/**

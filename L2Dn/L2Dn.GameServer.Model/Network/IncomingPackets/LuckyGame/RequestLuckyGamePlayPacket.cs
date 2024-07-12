@@ -97,7 +97,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			list.Select(item => ItemData.getInstance().getTemplate(item.getId()).getWeight()).Sum()).Sum();
 		
 		// Check inventory capacity
-		if (!rewards.isEmpty() && (!player.getInventory().validateCapacity(rewards.size()) || !player.getInventory().validateWeight(totalWeight)))
+		if (!rewards.isEmpty() && (!player.getInventory().validateCapacity(rewards.Count) || !player.getInventory().validateWeight(totalWeight)))
 		{
 			player.sendPacket(_type == LuckyGameType.LUXURY ? ExBettingLuckyGameResultPacket.LUXURY_INVALID_CAPACITY : ExBettingLuckyGameResultPacket.NORMAL_INVALID_CAPACITY);
 			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_EITHER_FULL_OR_OVERWEIGHT);

@@ -32,7 +32,7 @@ public readonly struct SellListProcurePacket: IOutgoingPacket
         
         writer.WriteInt64(_money); // money
         writer.WriteInt32(0); // lease ?
-        writer.WriteInt16((short)_sellList.size()); // list size
+        writer.WriteInt16((short)_sellList.Count); // list size
         foreach (var entry in _sellList)
         {
             Item item = entry.Key;

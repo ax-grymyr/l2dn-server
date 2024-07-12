@@ -121,7 +121,7 @@ public class VipManager
 	
 	private VipInfo getVipInfo(long points)
 	{
-		for (byte i = 0; i < VipData.getInstance().getVipTiers().size(); i++)
+		for (byte i = 0; i < VipData.getInstance().getVipTiers().Count; i++)
 		{
 			if (points < VipData.getInstance().getVipTiers().get(i).getPointsRequired())
 			{

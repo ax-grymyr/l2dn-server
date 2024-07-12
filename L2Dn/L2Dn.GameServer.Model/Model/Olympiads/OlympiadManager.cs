@@ -341,7 +341,7 @@ public class OlympiadManager
 
 	public int getCountOpponents()
 	{
-		return _nonClassBasedRegisters.size() + _classBasedRegisters.size();
+		return _nonClassBasedRegisters.size() + _classBasedRegisters.Count;
 	}
 
 	private static class SingletonHolder

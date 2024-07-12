@@ -77,7 +77,7 @@ public class SummonCubic: AbstractEffect
 			double allowedCubicCount = player.getStat().getValue(Stat.MAX_CUBIC, 1);
 			
 			// Extra cubics are removed, one by one, randomly.
-			int currentCubicCount = player.getCubics().size();
+			int currentCubicCount = player.getCubics().Count;
 			if (currentCubicCount >= allowedCubicCount)
 			{
 				player.getCubics().Values.Skip((int)(currentCubicCount * Rnd.nextDouble())).FirstOrDefault()?.deactivate();

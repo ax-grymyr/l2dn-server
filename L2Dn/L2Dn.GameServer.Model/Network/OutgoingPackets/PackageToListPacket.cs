@@ -16,7 +16,7 @@ public readonly struct PackageToListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.PACKAGE_TO_LIST);
         
-        writer.WriteInt32(_players.size());
+        writer.WriteInt32(_players.Count);
         foreach (var entry in _players)
         {
             writer.WriteInt32(entry.Key);

@@ -44,17 +44,17 @@ public class NpcData: DataReaderBase
 			t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
 		});
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _npcs.size() + " NPCs.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _npcs.Count + " NPCs.");
 
 		if (Config.CUSTOM_NPC_DATA)
 		{
-			int npcCount = _npcs.size();
+			int npcCount = _npcs.Count;
 			LoadXmlDocuments(DataFileLocation.Data, "stats/npcs/custom").ForEach(t =>
 			{
 				t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
 			});
 		
-			LOGGER.Info(GetType().Name + ": Loaded " + (_npcs.size() - npcCount) + " custom NPCs.");
+			LOGGER.Info(GetType().Name + ": Loaded " + (_npcs.Count - npcCount) + " custom NPCs.");
 		}
 	}
 
@@ -620,7 +620,7 @@ public class NpcData: DataReaderBase
 		int id = _clans.get(clanName);
 		if (id == null)
 		{
-			id = _clans.size();
+			id = _clans.Count;
 			_clans.put(clanName, id);
 		}
 		return id;

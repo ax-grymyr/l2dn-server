@@ -44,7 +44,7 @@ public class BypassHandler: IHandler<IBypassHandler, string>
 	
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	public static BypassHandler getInstance()

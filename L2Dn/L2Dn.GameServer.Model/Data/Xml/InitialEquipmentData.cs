@@ -37,7 +37,7 @@ public class InitialEquipmentData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, Config.INITIAL_EQUIPMENT_EVENT ? @event : normal);
 		document.Elements("list").Elements("equipment").ForEach(parseEquipment);
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.size() + " initial equipment data.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.Count + " initial equipment data.");
 	}
 	
 	/**

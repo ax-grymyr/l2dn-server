@@ -35,7 +35,7 @@ public class PrimeShopData: DataReaderBase
 		
 		if (!_primeItems.isEmpty())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _primeItems.size() + " items.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _primeItems.Count + " items.");
 		}
 		else
 		{

@@ -64,7 +64,7 @@ public class GrandBossManager: IStorable
 				}
 			}
 
-			LOGGER.Info(GetType().Name + ": Loaded " + _storedInfo.size() + " instances.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _storedInfo.Count + " instances.");
 		}
 		catch (Exception e)
 		{

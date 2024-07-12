@@ -130,7 +130,7 @@ public class Forum
 	public int getTopicSize()
 	{
 		vload();
-		return _topic.size();
+		return _topic.Count;
 	}
 	
 	public Topic getTopic(int j)

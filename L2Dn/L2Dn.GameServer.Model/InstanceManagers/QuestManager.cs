@@ -82,7 +82,7 @@ public class QuestManager
 	 */
 	public void report()
 	{
-		LOGGER.Info(GetType().Name +": Loaded " + _quests.size() + " quests.");
+		LOGGER.Info(GetType().Name +": Loaded " + _quests.Count + " quests.");
 	}
 	
 	/**

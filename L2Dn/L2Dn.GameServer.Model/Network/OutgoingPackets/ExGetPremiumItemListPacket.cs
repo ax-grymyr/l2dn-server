@@ -18,7 +18,7 @@ public readonly struct ExGetPremiumItemListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_GET_PREMIUM_ITEM_LIST);
         
-        writer.WriteInt32(_map.size());
+        writer.WriteInt32(_map.Count);
         foreach (var entry in _map)
         {
             PremiumItem item = entry.Value;

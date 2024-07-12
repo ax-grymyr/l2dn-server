@@ -47,7 +47,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 				{
 					if (_scope == 0) // all
 					{
-						int count = _playerList.size() > 150 ? 150 : _playerList.size();
+						int count = _playerList.Count > 150 ? 150 : _playerList.Count;
 						writer.WriteInt32(count);
 						foreach (int id in _playerList.Keys)
 						{
@@ -90,7 +90,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;
-								int last = _playerList.size() >= (id + 10) ? id + 10 : id + (_playerList.size() - id);
+								int last = _playerList.Count >= (id + 10) ? id + 10 : id + (_playerList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));
@@ -137,7 +137,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 					if (_scope == 0) // all
 					{
 						int count = 0;
-						for (int j = 1; j <= _playerList.size(); j++)
+						for (int j = 1; j <= _playerList.Count; j++)
 						{
 							StatSet player = _playerList.get(j);
 							if (_race == player.getInt("race"))
@@ -214,7 +214,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;
-								int last = raceList.size() >= (id + 10) ? id + 10 : id + (raceList.size() - id);
+								int last = raceList.Count >= (id + 10) ? id + 10 : id + (raceList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));
@@ -261,7 +261,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								i++;
 							}
 						}
-						writer.WriteInt32(clanList.size());
+						writer.WriteInt32(clanList.Count);
 						foreach (int id in clanList.Keys)
 						{
 							StatSet player = clanList.get(id);
@@ -397,7 +397,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 					if (_scope == 0) // all
 					{
 						int count = 0;
-						for (int j = 1; j <= _playerList.size(); j++)
+						for (int j = 1; j <= _playerList.Count; j++)
 						{
 							StatSet player = _playerList.get(j);
 							if (_class == player.getInt("classId"))
@@ -419,7 +419,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
 								writer.WriteInt32(i); // server rank
-								if (_snapshotList.size() > 0)
+								if (_snapshotList.Count > 0)
 								{
 									Map<int, StatSet> snapshotClassList = new();
 									int j = 1;
@@ -476,7 +476,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;
-								int last = classList.size() >= (id + 10) ? id + 10 : id + (classList.size() - id);
+								int last = classList.Count >= (id + 10) ? id + 10 : id + (classList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));

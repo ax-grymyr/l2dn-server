@@ -27,7 +27,7 @@ public class ConditionHandler
 	
 	public int size()
 	{
-		return _conditionHandlerFactories.size();
+		return _conditionHandlerFactories.Count;
 	}
 	
 	private static class SingletonHolder

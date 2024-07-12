@@ -57,7 +57,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return _datatable.Count;
 	}
 	
 	/**

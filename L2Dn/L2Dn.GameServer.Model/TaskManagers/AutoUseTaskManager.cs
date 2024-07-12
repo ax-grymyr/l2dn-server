@@ -480,7 +480,7 @@ public class AutoUseTaskManager
 						occurrences++;
 					}
 				}
-				if (occurrences == player.getServitors().size())
+				if (occurrences == player.getServitors().Count)
 				{
 					return false;
 				}

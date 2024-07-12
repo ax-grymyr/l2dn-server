@@ -24,7 +24,7 @@ public readonly struct ExPvpMatchCcRecordPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_PVP_MATCH_CCRECORD);
         
         writer.WriteInt32(_state); // 0 - initialize, 1 - update, 2 - finish
-        writer.WriteInt32(Math.Min(_players.size(), 25));
+        writer.WriteInt32(Math.Min(_players.Count, 25));
         int counter = 0;
         foreach (var entry in _players)
         {

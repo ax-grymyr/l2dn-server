@@ -31,14 +31,14 @@ public class PetitionManager
 	
 	public void clearCompletedPetitions()
 	{
-		int numPetitions = _pendingPetitions.size();
+		int numPetitions = _pendingPetitions.Count;
 		_completedPetitions.Clear();
 		LOGGER.Info(GetType().Name +": Completed petition data cleared. " + numPetitions + " petitions removed.");
 	}
 	
 	public void clearPendingPetitions()
 	{
-		int numPetitions = _pendingPetitions.size();
+		int numPetitions = _pendingPetitions.Count;
 		_pendingPetitions.Clear();
 		LOGGER.Info(GetType().Name +": Pending petition queue cleared. " + numPetitions + " petitions removed.");
 	}
@@ -154,7 +154,7 @@ public class PetitionManager
 	
 	public int getPendingPetitionCount()
 	{
-		return _pendingPetitions.size();
+		return _pendingPetitions.Count;
 	}
 	
 	public int getPlayerTotalPetitionCount(Player player)
@@ -334,7 +334,7 @@ public class PetitionManager
 
 	public void sendPendingPetitionList(Player player)
 	{
-		StringBuilder content = new StringBuilder(600 + (_pendingPetitions.size() * 300));
+		StringBuilder content = new StringBuilder(600 + (_pendingPetitions.Count * 300));
 		content.Append(
 			"<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass " +
 			"admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +

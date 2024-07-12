@@ -29,7 +29,7 @@ public class PetSkillData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetSkillData.xml");
 		document.Elements("list").Elements("skill").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _skillTrees.size() + " skills.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _skillTrees.Count + " skills.");
 	}
 
 	private void parseElement(XElement element)

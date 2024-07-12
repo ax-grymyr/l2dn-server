@@ -83,7 +83,7 @@ public class ClanTable
 	 */
 	public int getClanCount()
 	{
-		return _clans.size();
+		return _clans.Count;
 	}
 	
 	/**

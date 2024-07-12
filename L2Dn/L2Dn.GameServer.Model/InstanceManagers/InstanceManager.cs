@@ -95,7 +95,7 @@ public class InstanceManager: DataReaderBase
 			.Instances
 			.ForEach(instance => _instanceNames.put(instance.Id, instance.Name));
 		
-		_logger.Info(GetType().Name +": Loaded " + _instanceNames.size() + " instance names.");
+		_logger.Info(GetType().Name +": Loaded " + _instanceNames.Count + " instance names.");
 		
 		// Load instance templates
 		_instanceTemplates.Clear();

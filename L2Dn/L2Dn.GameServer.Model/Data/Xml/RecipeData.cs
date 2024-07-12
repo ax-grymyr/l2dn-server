@@ -34,7 +34,7 @@ public class RecipeData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Recipes.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _recipes.size() + " recipes.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _recipes.Count + " recipes.");
 	}
 
 	private void parseElement(XElement element)

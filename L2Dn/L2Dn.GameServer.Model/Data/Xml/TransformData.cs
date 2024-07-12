@@ -36,7 +36,7 @@ public class TransformData: DataReaderBase
 			t.Document.Elements("list").Elements("transform").ForEach(x => loadElement(t.FilePath, x));
 		});
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _transformData.size() + " transform templates.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _transformData.Count + " transform templates.");
 	}
 	
 	private void loadElement(string filePath, XElement element)

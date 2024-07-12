@@ -56,7 +56,7 @@ public class PetDataTable: DataReaderBase
 			LOGGER.Warn(GetType().Name + ": Problem loading pet names! " + e);
 		}
 		
-		LOGGER.Info(GetType().Name + ": Loaded " + _pets.size() + " pets.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _pets.Count + " pets.");
 	}
 
 	private void loadElement(string filePath, XElement element)

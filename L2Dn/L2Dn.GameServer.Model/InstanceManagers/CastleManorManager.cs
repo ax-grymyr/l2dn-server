@@ -81,7 +81,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Seeds.xml");
 		document.Elements("list").Elements("castle").ForEach(parseElement);
 		
-		LOGGER.Info(GetType().Name +": Loaded " + _seeds.size() + " seeds.");
+		LOGGER.Info(GetType().Name +": Loaded " + _seeds.Count + " seeds.");
 	}
 
 	private void parseElement(XElement element)

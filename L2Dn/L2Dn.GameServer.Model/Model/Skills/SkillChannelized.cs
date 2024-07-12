@@ -22,7 +22,7 @@ public class SkillChannelized
 	
 	public int getChannerlizersSize(int skillId)
 	{
-		return getChannelizers(skillId).size();
+		return getChannelizers(skillId).Count;
 	}
 	
 	public Map<int, Creature> getChannelizers(int skillId)

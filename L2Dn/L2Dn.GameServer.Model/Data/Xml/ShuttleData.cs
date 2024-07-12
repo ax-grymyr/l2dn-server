@@ -43,7 +43,7 @@ public class ShuttleData: DataReaderBase
 		document.Elements("list").Elements("shuttle").ForEach(parseElement);
 		
 		init();
-		LOGGER.Info(GetType().Name + ": Loaded " + _shuttles.size() + " shuttles.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _shuttles.Count + " shuttles.");
 	}
 
 	private void parseElement(XElement element)

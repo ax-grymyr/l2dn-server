@@ -54,6 +54,6 @@ public class RewardItemsOnFailure
 
 	public int size()
 	{
-		return _rewards.Values.Sum(rewards => rewards.size());
+		return _rewards.Values.Sum(rewards => rewards.Count);
 	}
 }

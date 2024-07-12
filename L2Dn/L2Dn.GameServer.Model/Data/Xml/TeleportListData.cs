@@ -31,7 +31,7 @@ public class TeleportListData: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);
 		
-		_teleportCount = _teleports.size();
+		_teleportCount = _teleports.Count;
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleportCount + " teleports.");
 	}
 

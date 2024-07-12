@@ -60,11 +60,11 @@ public class ExtractableItems: IItemHandler
 		List<Item> enchantedItems = new();
 		if (etcitem.getExtractableCountMin() > 0)
 		{
-			while (extractedItems.size() < etcitem.getExtractableCountMin())
+			while (extractedItems.Count < etcitem.getExtractableCountMin())
 			{
 				foreach (ExtractableProduct expi in exitems)
 				{
-					if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.size() == etcitem.getExtractableCountMax()))
+					if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.Count == etcitem.getExtractableCountMax()))
 					{
 						break;
 					}
@@ -160,7 +160,7 @@ public class ExtractableItems: IItemHandler
 		{
 			foreach (ExtractableProduct expi in exitems)
 			{
-				if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.size() == etcitem.getExtractableCountMax()))
+				if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.Count == etcitem.getExtractableCountMax()))
 				{
 					break;
 				}

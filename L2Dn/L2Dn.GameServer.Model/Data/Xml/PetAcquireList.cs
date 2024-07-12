@@ -30,7 +30,7 @@ public class PetAcquireList: DataReaderBase
 		
 		if (!_skills.isEmpty())
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _skills.size() + " pet skills.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " pet skills.");
 		}
 		else
 		{

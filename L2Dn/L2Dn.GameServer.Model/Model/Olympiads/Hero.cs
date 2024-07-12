@@ -139,8 +139,8 @@ public class Hero
 			LOGGER.Error("Hero System: Couldnt load Heroes: " + e);
 		}
 		
-		LOGGER.Info("Hero System: Loaded " + HEROES.size() + " Heroes.");
-		LOGGER.Info("Hero System: Loaded " + COMPLETE_HEROS.size() + " all time Heroes.");
+		LOGGER.Info("Hero System: Loaded " + HEROES.Count + " Heroes.");
+		LOGGER.Info("Hero System: Loaded " + COMPLETE_HEROS.Count + " all time Heroes.");
 	}
 	
 	private static void loadHeroClanAlly(GameServerDbContext ctx, int charId, StatSet hero)

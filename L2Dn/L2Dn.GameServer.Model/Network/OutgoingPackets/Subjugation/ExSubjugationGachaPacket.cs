@@ -16,7 +16,7 @@ public readonly struct ExSubjugationGachaPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SUBJUGATION_GACHA);
 
-        writer.WriteInt32(_rewards.size());
+        writer.WriteInt32(_rewards.Count);
         foreach (var entry in _rewards)
         {
             writer.WriteInt32(entry.Key);

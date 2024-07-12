@@ -21,7 +21,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 	{
 		initializate();
 		startAllTasks();
-		LOGGER.Info(GetType().Name + ": Loaded " + _tasks.size() + " Tasks.");
+		LOGGER.Info(GetType().Name + ": Loaded " + _tasks.Count + " Tasks.");
 	}
 	
 	public class ExecutedTask: Runnable

@@ -1672,7 +1672,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			i = 0;
 			tempMap = getCompleteClassSkillTree(cls);
-			array = new long[tempMap.size()];
+			array = new long[tempMap.Count];
 			foreach (long h  in  tempMap.Keys)
 			{
 				array[i++] = h;
@@ -1829,25 +1829,25 @@ public class SkillTreeData: DataReaderBase
 		int classSkillTreeCount = 0;
 		foreach (Map<long, SkillLearn> classSkillTree  in  _classSkillTrees.Values)
 		{
-			classSkillTreeCount += classSkillTree.size();
+			classSkillTreeCount += classSkillTree.Count;
 		}
 		
 		int transferSkillTreeCount = 0;
 		foreach (Map<long, SkillLearn> trasferSkillTree  in  _transferSkillTrees.Values)
 		{
-			transferSkillTreeCount += trasferSkillTree.size();
+			transferSkillTreeCount += trasferSkillTree.Count;
 		}
 		
 		int raceSkillTreeCount = 0;
 		foreach (Map<long, SkillLearn> raceSkillTree  in  _raceSkillTree.Values)
 		{
-			raceSkillTreeCount += raceSkillTree.size();
+			raceSkillTreeCount += raceSkillTree.Count;
 		}
 		
 		int revelationSkillTreeCount = 0;
 		foreach (Map<long, SkillLearn> revelationSkillTree  in  _revelationSkillTree.Values)
 		{
-			revelationSkillTreeCount += revelationSkillTree.size();
+			revelationSkillTreeCount += revelationSkillTree.Count;
 		}
 		
 		int dwarvenOnlyFishingSkillCount = 0;
@@ -1869,26 +1869,26 @@ public class SkillTreeData: DataReaderBase
 		}
 		
 		string className = GetType().Name;
-		_logger.Info(className + ": Loaded " + classSkillTreeCount + " Class skills for " + _classSkillTrees.size() + " class skill trees.");
-		_logger.Info(className + ": Loaded " + _subClassSkillTree.size() + " sub-class skills.");
-		_logger.Info(className + ": Loaded " + _dualClassSkillTree.size() + " dual-class skills.");
-		_logger.Info(className + ": Loaded " + transferSkillTreeCount + " transfer skills for " + _transferSkillTrees.size() + " transfer skill trees.");
-		_logger.Info(className + ": Loaded " + raceSkillTreeCount + " race skills for " + _raceSkillTree.size() + " race skill trees.");
-		_logger.Info(className + ": Loaded " + _fishingSkillTree.size() + " fishing skills, " + dwarvenOnlyFishingSkillCount + " Dwarven only fishing skills.");
-		_logger.Info(className + ": Loaded " + _collectSkillTree.size() + " collect skills.");
-		_logger.Info(className + ": Loaded " + _pledgeSkillTree.size() + " clan skills, " + (_pledgeSkillTree.size() - resSkillCount) + " for clan and " + resSkillCount + " residential.");
-		_logger.Info(className + ": Loaded " + _subPledgeSkillTree.size() + " sub-pledge skills.");
-		_logger.Info(className + ": Loaded " + _transformSkillTree.size() + " transform skills.");
-		_logger.Info(className + ": Loaded " + _nobleSkillTree.size() + " noble skills.");
-		_logger.Info(className + ": Loaded " + _heroSkillTree.size() + " hero skills.");
-		_logger.Info(className + ": Loaded " + _gameMasterSkillTree.size() + " game master skills.");
-		_logger.Info(className + ": Loaded " + _gameMasterAuraSkillTree.size() + " game master aura skills.");
-		_logger.Info(className + ": Loaded " + _abilitySkillTree.size() + " ability skills.");
-		_logger.Info(className + ": Loaded " + _alchemySkillTree.size() + " alchemy skills.");
-		_logger.Info(className + ": Loaded " + _awakeningSaveSkillTree.size() + " class awaken save skills.");
+		_logger.Info(className + ": Loaded " + classSkillTreeCount + " Class skills for " + _classSkillTrees.Count + " class skill trees.");
+		_logger.Info(className + ": Loaded " + _subClassSkillTree.Count + " sub-class skills.");
+		_logger.Info(className + ": Loaded " + _dualClassSkillTree.Count + " dual-class skills.");
+		_logger.Info(className + ": Loaded " + transferSkillTreeCount + " transfer skills for " + _transferSkillTrees.Count + " transfer skill trees.");
+		_logger.Info(className + ": Loaded " + raceSkillTreeCount + " race skills for " + _raceSkillTree.Count + " race skill trees.");
+		_logger.Info(className + ": Loaded " + _fishingSkillTree.Count + " fishing skills, " + dwarvenOnlyFishingSkillCount + " Dwarven only fishing skills.");
+		_logger.Info(className + ": Loaded " + _collectSkillTree.Count + " collect skills.");
+		_logger.Info(className + ": Loaded " + _pledgeSkillTree.Count + " clan skills, " + (_pledgeSkillTree.Count - resSkillCount) + " for clan and " + resSkillCount + " residential.");
+		_logger.Info(className + ": Loaded " + _subPledgeSkillTree.Count + " sub-pledge skills.");
+		_logger.Info(className + ": Loaded " + _transformSkillTree.Count + " transform skills.");
+		_logger.Info(className + ": Loaded " + _nobleSkillTree.Count + " noble skills.");
+		_logger.Info(className + ": Loaded " + _heroSkillTree.Count + " hero skills.");
+		_logger.Info(className + ": Loaded " + _gameMasterSkillTree.Count + " game master skills.");
+		_logger.Info(className + ": Loaded " + _gameMasterAuraSkillTree.Count + " game master aura skills.");
+		_logger.Info(className + ": Loaded " + _abilitySkillTree.Count + " ability skills.");
+		_logger.Info(className + ": Loaded " + _alchemySkillTree.Count + " alchemy skills.");
+		_logger.Info(className + ": Loaded " + _awakeningSaveSkillTree.Count + " class awaken save skills.");
 		_logger.Info(className + ": Loaded " + revelationSkillTreeCount + " Revelation skills.");
 		
-		int commonSkills = _commonSkillTree.size();
+		int commonSkills = _commonSkillTree.Count;
 		if (commonSkills > 0)
 		{
 			_logger.Info(className + ": Loaded " + commonSkills + " common skills.");

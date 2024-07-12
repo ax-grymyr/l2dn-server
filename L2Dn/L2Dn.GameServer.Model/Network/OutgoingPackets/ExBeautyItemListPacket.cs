@@ -38,7 +38,7 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_BEAUTY_ITEM_LIST);
         
         writer.WriteInt32(HAIR_TYPE);
-        writer.WriteInt32(_beautyData.getHairList().size());
+        writer.WriteInt32(_beautyData.getHairList().Count);
         foreach (BeautyItem hair in _beautyData.getHairList().Values)
         {
             writer.WriteInt32(0); // ?
@@ -49,7 +49,7 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
             writer.WriteInt32(1); // Limit
         }
         writer.WriteInt32(FACE_TYPE);
-        writer.WriteInt32(_beautyData.getFaceList().size());
+        writer.WriteInt32(_beautyData.getFaceList().Count);
         foreach (BeautyItem face in _beautyData.getFaceList().Values)
         {
             writer.WriteInt32(0); // ?
