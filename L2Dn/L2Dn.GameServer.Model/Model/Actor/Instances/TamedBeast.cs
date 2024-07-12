@@ -224,7 +224,7 @@ public class TamedBeast: FeedableBeast
 			{
 				// instead of calculating this value each time, let's get this now and pass it on
 				int totalBuffsAvailable = 0;
-				foreach (Skill skill in getTemplate().getSkills().values())
+				foreach (Skill skill in getTemplate().getSkills().Values)
 				{
 					// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
 					if (skill.isContinuous() && !skill.isDebuff())
@@ -313,7 +313,7 @@ public class TamedBeast: FeedableBeast
 		// use of more than one debuff at this moment is acceptable
 		if (HPRatio >= 0.8)
 		{
-			foreach (Skill skill in getTemplate().getSkills().values())
+			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a debuff, check if the attacker has it already [ attacker.getEffect(Skill skill) ]
 				if (skill.isDebuff() && (Rnd.get(3) < 1) && ((attacker != null) && attacker.isAffectedBySkill(skill.getId())))
@@ -333,7 +333,7 @@ public class TamedBeast: FeedableBeast
 			}
 			
 			// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
-			foreach (Skill skill in getTemplate().getSkills().values())
+			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
 				if ((Rnd.get(5) < chance) && skill.hasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
@@ -480,7 +480,7 @@ public class TamedBeast: FeedableBeast
 			Skill buffToGive = null;
 			
 			// get this npc's skills: getSkills()
-			foreach (Skill skill in _tamedBeast.getTemplate().getSkills().values())
+			foreach (Skill skill in _tamedBeast.getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
 				if (skill.isContinuous() && !skill.isDebuff())

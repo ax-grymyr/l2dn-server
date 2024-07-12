@@ -495,7 +495,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 		// Make list of affected playable objects
 		List<Playable> affected = new();
 		affected.Add(player);
-		player.getServitors().values().ForEach(x => affected.Add(x));
+		player.getServitors().Values.ForEach(x => affected.Add(x));
 		if (player.hasPet())
 		{
 			affected.Add(player.getPet());

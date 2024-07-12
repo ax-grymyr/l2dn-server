@@ -1432,7 +1432,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 
 		Map<int, string> chars = player.getAccountChars();
-		string replyMSG = string.Join("<br1>", chars.values());
+		string replyMSG = string.Join("<br1>", chars.Values);
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/accountinfo.htm", activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);

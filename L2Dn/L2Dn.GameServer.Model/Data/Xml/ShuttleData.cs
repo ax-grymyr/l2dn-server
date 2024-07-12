@@ -32,7 +32,7 @@ public class ShuttleData: DataReaderBase
 	{
 		if (!_shuttleInstances.isEmpty())
 		{
-			foreach (Shuttle shuttle in _shuttleInstances.values())
+			foreach (Shuttle shuttle in _shuttleInstances.Values)
 			{
 				shuttle.deleteMe();
 			}
@@ -103,7 +103,7 @@ public class ShuttleData: DataReaderBase
 
 	private void init()
 	{
-		foreach (ShuttleDataHolder data in _shuttles.values())
+		foreach (ShuttleDataHolder data in _shuttles.Values)
 		{
 			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()));
 			shuttle.setData(data);
@@ -120,7 +120,7 @@ public class ShuttleData: DataReaderBase
 	
 	public Shuttle getShuttle(int id)
 	{
-		foreach (Shuttle shuttle in _shuttleInstances.values())
+		foreach (Shuttle shuttle in _shuttleInstances.Values)
 		{
 			if ((shuttle.getObjectId() == id) || (shuttle.getId() == id))
 			{

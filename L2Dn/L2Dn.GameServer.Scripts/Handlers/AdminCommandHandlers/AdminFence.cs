@@ -156,7 +156,7 @@ public class AdminFence: IAdminCommandHandler
 	
 	private void sendHtml(Player activeChar, int page)
 	{
-		PageResult result = PageBuilder.newBuilder(FenceData.getInstance().getFences().values().ToList(), 10, "bypass -h admin_listfence").currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, fence, sb) =>
+		PageResult result = PageBuilder.newBuilder(FenceData.getInstance().getFences().Values.ToList(), 10, "bypass -h admin_listfence").currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, fence, sb) =>
 		{
 			sb.Append("<tr><td>");
 			sb.Append(fence.getName() == null ? fence.getId() : fence.getName());

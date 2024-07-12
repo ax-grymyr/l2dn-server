@@ -53,7 +53,7 @@ public class ServitorShareSkills: AbstractEffect
 				return;
 			}
 			
-			ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().values();
+			ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().Values;
 			for (int i = 0; i < SERVITOR_SHARE_PASSIVE_SKILLS.Length; i++)
 			{
 				int passiveSkillId = SERVITOR_SHARE_PASSIVE_SKILLS[i];
@@ -87,7 +87,7 @@ public class ServitorShareSkills: AbstractEffect
 		}
 		
 		Player player = effected.getActingPlayer();
-		ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().values();
+		ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().Values;
 		for (int i = 0; i < SERVITOR_SHARE_PASSIVE_SKILLS.Length; i++)
 		{
 			int passiveSkillId = SERVITOR_SHARE_PASSIVE_SKILLS[i];

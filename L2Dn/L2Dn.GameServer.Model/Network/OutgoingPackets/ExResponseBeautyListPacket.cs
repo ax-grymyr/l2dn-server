@@ -37,7 +37,7 @@ public readonly struct ExResponseBeautyListPacket: IOutgoingPacket
         writer.WriteInt64(_player.getBeautyTickets());
         writer.WriteInt32(_type);
         writer.WriteInt32(_beautyItem.size());
-        foreach (BeautyItem item in _beautyItem.values())
+        foreach (BeautyItem item in _beautyItem.Values)
         {
             writer.WriteInt32(item.getId());
             writer.WriteInt32(1); // Limit

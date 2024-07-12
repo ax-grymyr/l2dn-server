@@ -280,7 +280,7 @@ public class VariationData: DataReaderBase
 		{
 			// FIXME This will happen when the data is pre-rework or when augments were manually given, but still that's a cheap solution
 			_logger.Warn(GetType().Name + ": Cancellation fee not found for item [" + itemId + "] and mineral [" + mineralId + "]");
-			fee = fees.values().FirstOrDefault();
+			fee = fees.Values.FirstOrDefault();
 			if (fee == null)
 				return -1;
 		}

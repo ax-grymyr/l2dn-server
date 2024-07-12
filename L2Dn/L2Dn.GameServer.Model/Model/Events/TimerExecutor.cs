@@ -148,7 +148,7 @@ public class TimerExecutor<T>
 	 */
 	public void cancelAllTimers()
 	{
-		foreach (Set<TimerHolder<T>> set in _timers.values())
+		foreach (Set<TimerHolder<T>> set in _timers.Values)
 		{
 			foreach (TimerHolder<T> timer in set)
 			{
@@ -233,7 +233,7 @@ public class TimerExecutor<T>
 	private void removeAndCancelTimers(Predicate<TimerHolder<T>> condition)
 	{
 		ArgumentNullException.ThrowIfNull(condition);
-		ICollection<Set<TimerHolder<T>>> allTimers = _timers.values();
+		ICollection<Set<TimerHolder<T>>> allTimers = _timers.Values;
 		foreach (Set<TimerHolder<T>> timers in allTimers)
 		{
 			removeAndCancelTimers(timers, condition);

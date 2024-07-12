@@ -520,13 +520,13 @@ public class MonsterRace
 		
 		// Pass a first loop in order to calculate total sum of all lanes.
 		long sumOfAllLanes = 0;
-		foreach (long amount in sortedLanes.values())
+		foreach (long amount in sortedLanes.Values)
 		{
 			sumOfAllLanes += amount;
 		}
 		
 		// As we get the sum, we can now calculate the odd rate of each lane.
-		foreach (long amount  in sortedLanes.values())
+		foreach (long amount  in sortedLanes.Values)
 		{
 			_odds.Add((amount == 0) ? 0D : Math.Max(1.25, (sumOfAllLanes * 0.7) / amount));
 		}

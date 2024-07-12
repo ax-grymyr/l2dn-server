@@ -80,7 +80,7 @@ public class SummonCubic: AbstractEffect
 			int currentCubicCount = player.getCubics().size();
 			if (currentCubicCount >= allowedCubicCount)
 			{
-				player.getCubics().values().Skip((int)(currentCubicCount * Rnd.nextDouble())).FirstOrDefault()?.deactivate();
+				player.getCubics().Values.Skip((int)(currentCubicCount * Rnd.nextDouble())).FirstOrDefault()?.deactivate();
 			}
 		}
 		

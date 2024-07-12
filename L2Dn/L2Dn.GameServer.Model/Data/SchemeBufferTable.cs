@@ -185,7 +185,7 @@ public class SchemeBufferTable: DataReaderBase
 	public List<int> getSkillsIdsByType(string groupType)
 	{
 		List<int> skills = new();
-		foreach (BuffSkillHolder skill in _availableBuffs.values())
+		foreach (BuffSkillHolder skill in _availableBuffs.Values)
 		{
 			if (skill.getType().equalsIgnoreCase(groupType))
 			{
@@ -202,7 +202,7 @@ public class SchemeBufferTable: DataReaderBase
 	public List<string> getSkillTypes()
 	{
 		List<string> skillTypes = new();
-		foreach (BuffSkillHolder skill in _availableBuffs.values())
+		foreach (BuffSkillHolder skill in _availableBuffs.Values)
 		{
 			if (!skillTypes.Contains(skill.getType()))
 			{

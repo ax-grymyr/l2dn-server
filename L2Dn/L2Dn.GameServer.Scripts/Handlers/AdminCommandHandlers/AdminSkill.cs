@@ -301,7 +301,7 @@ public class AdminSkill: IAdminCommandHandler
 		}
 		
 		Map<int, SkillLearn> skills = SkillTreeData.getInstance().getMaxPledgeSkills(clan, includeSquad);
-		foreach (SkillLearn s in skills.values())
+		foreach (SkillLearn s in skills.Values)
 		{
 			clan.addNewSkill(SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel()));
 		}

@@ -13,7 +13,7 @@ public readonly struct SkillCoolTimePacket: IOutgoingPacket
     public SkillCoolTimePacket(Player player)
     {
         _reuseTimestamps = new List<TimeStamp>();
-        foreach (TimeStamp ts in player.getSkillReuseTimeStamps().values())
+        foreach (TimeStamp ts in player.getSkillReuseTimeStamps().Values)
         {
             if (ts.hasNotPassed() && !SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLevel(), ts.getSkillSubLevel()).isNotBroadcastable())
             {

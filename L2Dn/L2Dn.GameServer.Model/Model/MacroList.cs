@@ -75,7 +75,7 @@ public class MacroList: IRestorable
 	
 	public void sendAllMacros()
 	{
-		ICollection<Macro> allMacros = _macroses.values();
+		ICollection<Macro> allMacros = _macroses.Values;
 		int count = allMacros.Count;
 		
 		lock (_macroses)

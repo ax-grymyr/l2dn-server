@@ -375,7 +375,7 @@ public class BotReportTable
 	{
 		lock (_charRegistry)
 		{
-			foreach (ReporterCharData rcd in _charRegistry.values())
+			foreach (ReporterCharData rcd in _charRegistry.Values)
 			{
 				rcd.setPoints(7);
 			}

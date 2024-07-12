@@ -600,7 +600,7 @@ public class SkillCaster: Runnable
 
 					if (caster.hasTriggerSkills())
 					{
-						foreach (OptionSkillHolder holder in caster.getTriggerSkills().values())
+						foreach (OptionSkillHolder holder in caster.getTriggerSkills().Values)
 						{
 							if (((skill.isMagic() && holder.getSkillType() == OptionSkillType.MAGIC) || (skill.isPhysical() && holder.getSkillType() == OptionSkillType.ATTACK)) && Rnd.get(100) < holder.getChance())
 							{

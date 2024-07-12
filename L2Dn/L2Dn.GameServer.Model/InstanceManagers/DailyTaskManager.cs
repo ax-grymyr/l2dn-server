@@ -173,7 +173,7 @@ public class DailyTaskManager
 		{
 			int VP = player.getVitalityPoints();
 			player.setVitalityPoints(VP + vitality, false);
-			foreach (SubClassHolder subclass in player.getSubClasses().values())
+			foreach (SubClassHolder subclass in player.getSubClasses().Values)
 			{
 				int VPS = subclass.getVitalityPoints();
 				subclass.setVitalityPoints(VPS + vitality);
@@ -214,7 +214,7 @@ public class DailyTaskManager
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.setVitalityPoints(PlayerStat.MAX_VITALITY_POINTS, false);
-			foreach (SubClassHolder subclass in player.getSubClasses().values())
+			foreach (SubClassHolder subclass in player.getSubClasses().Values)
 			{
 				subclass.setVitalityPoints(PlayerStat.MAX_VITALITY_POINTS);
 			}
@@ -580,7 +580,7 @@ public class DailyTaskManager
 	
 	private void resetDailyPrimeShopData()
 	{
-		foreach (PrimeShopGroup holder in PrimeShopData.getInstance().getPrimeItems().values())
+		foreach (PrimeShopGroup holder in PrimeShopData.getInstance().getPrimeItems().Values)
 		{
 			// Update data for offline players.
 			try

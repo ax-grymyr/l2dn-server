@@ -43,7 +43,7 @@ public class EventDropManager
 			return;
 		}
 		
-		foreach (List<EventDropHolder> eventDrops in EVENT_DROPS.values())
+		foreach (List<EventDropHolder> eventDrops in EVENT_DROPS.Values)
 		{
 			foreach (EventDropHolder drop in eventDrops)
 			{

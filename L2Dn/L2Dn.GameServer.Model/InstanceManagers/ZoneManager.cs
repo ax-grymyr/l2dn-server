@@ -125,7 +125,7 @@ public class ZoneManager: DataReaderBase
 		// Backup old zone settings
 		foreach (Map<int, ZoneType> map in _classZones.Values)
 		{
-			foreach (ZoneType zone in map.values())
+			foreach (ZoneType zone in map.Values)
 			{
 				if (zone.getSettings() != null)
 				{
@@ -517,7 +517,7 @@ public class ZoneManager: DataReaderBase
 	public List<SpawnTerritory> getSpawnTerritories(WorldObject obj)
 	{
 		List<SpawnTerritory> temp = new();
-		foreach (SpawnTerritory territory in _spawnTerritories.values())
+		foreach (SpawnTerritory territory in _spawnTerritories.Values)
 		{
 			if (territory.isInsideZone(obj.getX(), obj.getY(), obj.getZ()))
 			{

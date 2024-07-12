@@ -754,7 +754,7 @@ public class Olympiad
 			return;
 		}
 		
-		foreach (NobleData nobleInfo in NOBLES.values())
+		foreach (NobleData nobleInfo in NOBLES.Values)
 		{
 			nobleInfo.OlympiadPoints += WEEKLY_POINTS;
 		}
@@ -771,7 +771,7 @@ public class Olympiad
 			return;
 		}
 		
-		foreach (NobleData nobleInfo in NOBLES.values())
+		foreach (NobleData nobleInfo in NOBLES.Values)
 		{
 			nobleInfo.CompetitionsDoneWeek = 0;
 		}

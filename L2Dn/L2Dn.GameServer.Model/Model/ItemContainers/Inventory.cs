@@ -470,12 +470,12 @@ public abstract class Inventory: ItemContainer
 			
 			if (update)
 			{
-				foreach (Skill skill in removedSkills.values())
+				foreach (Skill skill in removedSkills.Values)
 				{
 					playable.removeSkill(skill, skill.isPassive());
 				}
 				
-				foreach (Skill skill in addedSkills.values())
+				foreach (Skill skill in addedSkills.Values)
 				{
 					playable.addSkill(skill);
 				}
@@ -800,7 +800,7 @@ public abstract class Inventory: ItemContainer
 			
 			if (!addedSkills.isEmpty())
 			{
-				foreach (Skill skill in addedSkills.values())
+				foreach (Skill skill in addedSkills.Values)
 				{
 					playable.addSkill(skill);
 				}

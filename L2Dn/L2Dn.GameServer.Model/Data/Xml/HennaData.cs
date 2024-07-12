@@ -135,7 +135,7 @@ public class HennaData: DataReaderBase
 	public List<Henna> getHennaList(Player player)
 	{
 		List<Henna> list = new();
-		foreach (Henna henna in _hennaDyeIdList.values())
+		foreach (Henna henna in _hennaDyeIdList.Values)
 		{
 			if (henna.isAllowedClass(player))
 			{

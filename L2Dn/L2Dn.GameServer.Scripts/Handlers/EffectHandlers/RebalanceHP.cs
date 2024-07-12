@@ -54,7 +54,7 @@ public class RebalanceHP: AbstractEffect
 					currentHPs += summon.getCurrentHp();
 				}
 				
-				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().values())
+				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().Values)
 				{
 					if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, servitors, true))
 					{
@@ -105,7 +105,7 @@ public class RebalanceHP: AbstractEffect
 					summon.setCurrentHp(newHP);
 				}
 				
-				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().values())
+				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().Values)
 				{
 					if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, servitors, true))
 					{

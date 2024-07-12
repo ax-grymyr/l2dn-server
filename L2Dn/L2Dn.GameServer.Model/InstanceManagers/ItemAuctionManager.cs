@@ -71,7 +71,7 @@ public class ItemAuctionManager: DataReaderBase
 	
 	public void shutdown()
 	{
-		foreach (ItemAuctionInstance instance in _managerInstances.values())
+		foreach (ItemAuctionInstance instance in _managerInstances.Values)
 		{
 			instance.shutdown();
 		}

@@ -138,7 +138,7 @@ public class PlayerAI : PlayableAI
 		// Summons in defending mode defend its master when attacked.
 		if (_actor.getActingPlayer().hasServitors())
 		{
-			foreach (Summon summon in _actor.getActingPlayer().getServitors().values())
+			foreach (Summon summon in _actor.getActingPlayer().getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{
@@ -155,7 +155,7 @@ public class PlayerAI : PlayableAI
 		// Summons in defending mode defend its master when attacked.
 		if (_actor.getActingPlayer().hasServitors())
 		{
-			foreach (Summon summon in _actor.getActingPlayer().getServitors().values())
+			foreach (Summon summon in _actor.getActingPlayer().getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{

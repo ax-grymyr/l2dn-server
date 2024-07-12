@@ -28,7 +28,7 @@ public class SacrificeSummon: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().values())
+		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().Values)
 		{
 			summon.abortAttack();
 			summon.abortCast();

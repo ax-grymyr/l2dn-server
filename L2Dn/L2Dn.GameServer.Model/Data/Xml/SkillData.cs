@@ -288,7 +288,7 @@ public class SkillData: DataReaderBase
 			});
 		});
 
-		effectParamInfo.values().Concat(conditionParamInfo.values()).ForEach(namedParamInfos =>
+		effectParamInfo.Values.Concat(conditionParamInfo.Values).ForEach(namedParamInfos =>
 			namedParamInfos.ForEach(namedParamInfo =>
 			{
 				namedParamInfo.getInfo().ForEach(kvp =>

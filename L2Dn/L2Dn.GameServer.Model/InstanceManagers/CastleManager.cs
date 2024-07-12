@@ -45,7 +45,7 @@ public class CastleManager
 		if (nearestCastle == null)
 		{
 			long maxDistance = maxDistanceValue;
-			foreach (Castle castle in _castles.values())
+			foreach (Castle castle in _castles.Values)
 			{
 				double distance = castle.getDistance(obj);
 				if (maxDistance > distance)
@@ -69,7 +69,7 @@ public class CastleManager
 		{
 			return null;
 		}
-		foreach (Castle temp in _castles.values())
+		foreach (Castle temp in _castles.Values)
 		{
 			if (temp.getOwnerId() == clan.getId())
 			{
@@ -81,7 +81,7 @@ public class CastleManager
 	
 	public Castle getCastle(string name)
 	{
-		foreach (Castle temp in _castles.values())
+		foreach (Castle temp in _castles.Values)
 		{
 			if (temp.getName().equalsIgnoreCase(name.Trim()))
 			{
@@ -93,7 +93,7 @@ public class CastleManager
 	
 	public Castle getCastle(Location3D location)
 	{
-		foreach (Castle temp in _castles.values())
+		foreach (Castle temp in _castles.Values)
 		{
 			if (temp.checkIfInZone(location))
 			{
@@ -110,13 +110,13 @@ public class CastleManager
 	
 	public ICollection<Castle> getCastles()
 	{
-		return _castles.values();
+		return _castles.Values;
 	}
 	
 	public bool hasOwnedCastle()
 	{
 		bool hasOwnedCastle = false;
-		foreach (Castle castle in _castles.values())
+		foreach (Castle castle in _castles.Values)
 		{
 			if (castle.getOwnerId() > 0)
 			{
@@ -233,7 +233,7 @@ public class CastleManager
 					_castles.put(castle.Id, new Castle(castle.Id, castle.Name));
 			}
 			
-			LOGGER.Info(GetType().Name +": Loaded " + _castles.values().Count + " castles.");
+			LOGGER.Info(GetType().Name +": Loaded " + _castles.Values.Count + " castles.");
 		}
 		catch (Exception e)
 		{
@@ -243,7 +243,7 @@ public class CastleManager
 	
 	public void activateInstances()
 	{
-		foreach (Castle castle in _castles.values())
+		foreach (Castle castle in _castles.Values)
 		{
 			castle.activateInstance();
 		}
@@ -257,7 +257,7 @@ public class CastleManager
 	public int getSiegeDates(DateTime siegeDate)
 	{
 		int count = 0;
-		foreach (DateTime date in _castleSiegeDate.values())
+		foreach (DateTime date in _castleSiegeDate.Values)
 		{
 			if (Algorithms.Abs(date - siegeDate) < TimeSpan.FromMilliseconds(1000))
 			{

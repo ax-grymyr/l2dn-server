@@ -88,7 +88,7 @@ public class ItemCommissionManager
 	public void showAuctions(Player player, Predicate<ItemTemplate> filter)
 	{
 		List<CommissionItem> commissionItems = new();
-		foreach (CommissionItem item in _commissionItems.values())
+		foreach (CommissionItem item in _commissionItems.Values)
 		{
 			if (filter(item.getItemInfo().getItem()))
 			{
@@ -126,7 +126,7 @@ public class ItemCommissionManager
 	public void showPlayerAuctions(Player player)
 	{
 		List<CommissionItem> commissionItems = new();
-		foreach (CommissionItem c in _commissionItems.values())
+		foreach (CommissionItem c in _commissionItems.Values)
 		{
 			if (c.getItemInstance().getOwnerId() == player.getObjectId())
 			{
@@ -187,7 +187,7 @@ public class ItemCommissionManager
 		lock (this)
 		{
 			long playerRegisteredItems = 0;
-			foreach (CommissionItem item in _commissionItems.values())
+			foreach (CommissionItem item in _commissionItems.Values)
 			{
 				if (item.getItemInstance().getOwnerId() == player.getObjectId())
 				{
@@ -457,7 +457,7 @@ public class ItemCommissionManager
 	 */
 	public bool hasCommissionItems(int objectId)
 	{
-		foreach (CommissionItem item in _commissionItems.values())
+		foreach (CommissionItem item in _commissionItems.Values)
 		{
 			if (item.getItemInstance().getObjectId() == objectId)
 			{
@@ -474,7 +474,7 @@ public class ItemCommissionManager
 	 */
 	public bool hasCommissionedItemId(Player player, int itemId)
 	{
-		foreach (CommissionItem item in _commissionItems.values())
+		foreach (CommissionItem item in _commissionItems.Values)
 		{
 			if ((item.getItemInstance().getOwnerId() == player.getObjectId()) && (item.getItemInstance().getTemplate().getId() == itemId))
 			{

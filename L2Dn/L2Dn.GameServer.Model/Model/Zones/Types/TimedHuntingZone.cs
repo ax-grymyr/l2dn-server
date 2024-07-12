@@ -54,7 +54,7 @@ public class TimedHuntingZone : ZoneType
 						player.setInsideZone(ZoneId.PVP, true);
 						if (player.hasServitors())
 						{
-							player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.PVP, true));
+							player.getServitors().Values.ForEach(s => s.setInsideZone(ZoneId.PVP, true));
 						}
 						if (player.hasPet())
 						{
@@ -66,7 +66,7 @@ public class TimedHuntingZone : ZoneType
 						player.setInsideZone(ZoneId.NO_PVP, true);
 						if (player.hasServitors())
 						{
-							player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.NO_PVP, true));
+							player.getServitors().Values.ForEach(s => s.setInsideZone(ZoneId.NO_PVP, true));
 						}
 						if (player.hasPet())
 						{
@@ -112,7 +112,7 @@ public class TimedHuntingZone : ZoneType
 					player.setInsideZone(ZoneId.PVP, false);
 					if (player.hasServitors())
 					{
-						player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.PVP, false));
+						player.getServitors().Values.ForEach(s => s.setInsideZone(ZoneId.PVP, false));
 					}
 					if (player.hasPet())
 					{
@@ -129,7 +129,7 @@ public class TimedHuntingZone : ZoneType
 					player.setInsideZone(ZoneId.NO_PVP, false);
 					if (player.hasServitors())
 					{
-						player.getServitors().values().ForEach(s => s.setInsideZone(ZoneId.NO_PVP, false));
+						player.getServitors().Values.ForEach(s => s.setInsideZone(ZoneId.NO_PVP, false));
 					}
 					if (player.hasPet())
 					{

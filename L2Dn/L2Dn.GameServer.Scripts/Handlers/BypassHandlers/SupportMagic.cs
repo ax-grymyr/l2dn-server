@@ -103,7 +103,7 @@ public class SupportMagic: IBypassHandler
 		
 		if (isSummon)
 		{
-			foreach (Summon s in player.getServitors().values())
+			foreach (Summon s in player.getServitors().Values)
 			{
 				npc.setTarget(s);
 				foreach (SkillHolder skill in SUMMON_BUFFS)

@@ -29,7 +29,7 @@ public class OpNeedSummonOrPetSkillCondition: ISkillCondition
 			return true;
 		}
 		
-		foreach (Summon summon in caster.getServitors().values())
+		foreach (Summon summon in caster.getServitors().Values)
 		{
 			if (_npcIds.Contains(summon.getId()))
 			{

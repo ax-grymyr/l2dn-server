@@ -64,7 +64,7 @@ public class StaticObjectData: DataReaderBase
 	 */
 	public ICollection<StaticObject> getStaticObjects()
 	{
-		return _staticObjects.values();
+		return _staticObjects.Values;
 	}
 	
 	/**

@@ -42,7 +42,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	
 	public IParseBoardHandler getHandler(string cmd)
 	{
-		foreach (IParseBoardHandler cb in _datatable.values())
+		foreach (IParseBoardHandler cb in _datatable.Values)
 		{
 			foreach (string command in cb.getCommunityBoardCommands())
 			{

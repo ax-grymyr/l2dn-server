@@ -191,7 +191,7 @@ public class SiegeZone : ZoneType
 			
 			if (player.hasServitors())
 			{
-				player.getServitors().values().ForEach(servitor =>
+				player.getServitors().Values.ForEach(servitor =>
 				{
 					if (servitor.getRace() == Race.SIEGE_WEAPON)
 					{

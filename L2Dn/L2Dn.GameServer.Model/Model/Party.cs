@@ -260,7 +260,7 @@ public class Party : AbstractPlayerGroup
 				{
 					player.sendPacket(new ExPartyPetWindowAddPacket(pet));
 				}
-				pMember.getServitors().values().ForEach(s => player.sendPacket(new ExPartyPetWindowAddPacket(s)));
+				pMember.getServitors().Values.ForEach(s => player.sendPacket(new ExPartyPetWindowAddPacket(s)));
 			}
 		}
 		
@@ -291,7 +291,7 @@ public class Party : AbstractPlayerGroup
 			broadcastPacket(new ExPartyPetWindowAddPacket(pet));
 		}
 		
-		player.getServitors().values().ForEach(s => broadcastPacket(new ExPartyPetWindowAddPacket(s)));
+		player.getServitors().Values.ForEach(s => broadcastPacket(new ExPartyPetWindowAddPacket(s)));
 		
 		// adjust party level
 		if (player.getLevel() > _partyLvl)
@@ -317,7 +317,7 @@ public class Party : AbstractPlayerGroup
 				{
 					summon.updateEffectIcons();
 				}
-				member.getServitors().values().ForEach(x => x.updateEffectIcons());
+				member.getServitors().Values.ForEach(x => x.updateEffectIcons());
 				
 				// send hp status update
 				member.sendPacket(su);
@@ -510,7 +510,7 @@ public class Party : AbstractPlayerGroup
 			{
 				broadcastPacket(new ExPartyPetWindowDeletePacket(pet));
 			}
-			player.getServitors().values().ForEach(s => player.sendPacket(new ExPartyPetWindowDeletePacket(s)));
+			player.getServitors().Values.ForEach(s => player.sendPacket(new ExPartyPetWindowDeletePacket(s)));
 			
 			// Close the CCInfoWindow
 			if (isInCommandChannel())
@@ -799,7 +799,7 @@ public class Party : AbstractPlayerGroup
 				// The servitor penalty
 				float penalty = 1;
 				
-				foreach (Summon summon in member.getServitors().values())
+				foreach (Summon summon in member.getServitors().Values)
 				{
 					if (((Servitor) summon).getExpMultiplier() > 1)
 					{

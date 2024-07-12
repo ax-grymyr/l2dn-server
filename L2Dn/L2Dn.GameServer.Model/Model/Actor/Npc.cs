@@ -934,7 +934,7 @@ public class Npc: Creature
 		{
 			Player killerPlayer = killer.getActingPlayer();
 			new MpRewardTask(killerPlayer, this);
-			foreach (Summon summon in killerPlayer.getServitors().values())
+			foreach (Summon summon in killerPlayer.getServitors().Values)
 			{
 				new MpRewardTask(summon, this);
 			}
@@ -948,7 +948,7 @@ public class Npc: Creature
 						if ((member != killerPlayer) && (member.Distance3D(this) <= Config.ALT_PARTY_RANGE))
 						{
 							new MpRewardTask(member, this);
-							foreach (Summon summon in member.getServitors().values())
+							foreach (Summon summon in member.getServitors().Values)
 							{
 								new MpRewardTask(summon, this);
 							}

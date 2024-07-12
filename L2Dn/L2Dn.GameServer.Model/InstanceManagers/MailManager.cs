@@ -54,13 +54,13 @@ public class MailManager
 	
 	public ICollection<Message> getMessages()
 	{
-		return _messages.values();
+		return _messages.Values;
 	}
 	
 	public bool hasUnreadPost(Player player)
 	{
 		int objectId = player.getObjectId();
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
 			{
@@ -73,7 +73,7 @@ public class MailManager
 	public int getInboxSize(int objectId)
 	{
 		int size = 0;
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 			{
@@ -86,7 +86,7 @@ public class MailManager
 	public int getOutboxSize(int objectId)
 	{
 		int size = 0;
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 			{
@@ -99,7 +99,7 @@ public class MailManager
 	public List<Message> getInbox(int objectId)
 	{
 		List<Message> inbox = new();
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 			{
@@ -125,7 +125,7 @@ public class MailManager
 	public int getMailsInProgress(int objectId)
 	{
 		int count = 0;
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getMailType() == MailType.REGULAR))
 			{
@@ -145,7 +145,7 @@ public class MailManager
 	public List<Message> getOutbox(int objectId)
 	{
 		List<Message> outbox = new();
-		foreach (Message msg in _messages.values())
+		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 			{

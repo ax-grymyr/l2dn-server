@@ -60,7 +60,7 @@ public class SchemeBuffer : Npc
 			{
 				summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
 			}
-			player.getServitors().values().ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
+			player.getServitors().Values.ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
 			htmlContent.Replace("%objectId%", getObjectId().ToString());
@@ -91,7 +91,7 @@ public class SchemeBuffer : Npc
 						{
 							skill.applyEffects(this, player.getPet());
 						}
-						player.getServitors().values().ForEach(servitor => skill.applyEffects(this, servitor));
+						player.getServitors().Values.ForEach(servitor => skill.applyEffects(this, servitor));
 					}
 					else
 					{

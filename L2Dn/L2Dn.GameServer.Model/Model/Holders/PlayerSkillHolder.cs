@@ -15,7 +15,7 @@ public class PlayerSkillHolder: ISkillsHolder
 
 	public PlayerSkillHolder(Player player)
 	{
-		foreach (Skill skill in player.getSkills().values())
+		foreach (Skill skill in player.getSkills().Values)
 		{
 			// Adding only skills that can be learned by the player.
 			if (SkillTreeData.getInstance().isSkillAllowed(player, skill))

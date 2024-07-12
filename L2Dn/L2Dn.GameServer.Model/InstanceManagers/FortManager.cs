@@ -29,7 +29,7 @@ public class FortManager
 		if (nearestFort == null)
 		{
 			long maxDistance = maxDistanceValue;
-			foreach (Fort fort in _forts.values())
+			foreach (Fort fort in _forts.Values)
 			{
 				double distance = fort.getDistance(obj);
 				if (maxDistance > distance)
@@ -44,7 +44,7 @@ public class FortManager
 	
 	public Fort getFortById(int fortId)
 	{
-		foreach (Fort f in _forts.values())
+		foreach (Fort f in _forts.Values)
 		{
 			if (f.getResidenceId() == fortId)
 			{
@@ -60,7 +60,7 @@ public class FortManager
 		{
 			return null;
 		}
-		foreach (Fort f in _forts.values())
+		foreach (Fort f in _forts.Values)
 		{
 			if (f.getOwnerClan() == clan)
 			{
@@ -72,7 +72,7 @@ public class FortManager
 	
 	public Fort? getFort(string name)
 	{
-		foreach (Fort f in _forts.values())
+		foreach (Fort f in _forts.Values)
 		{
 			if (f.getName().equalsIgnoreCase(name.Trim()))
 			{
@@ -84,7 +84,7 @@ public class FortManager
 	
 	public Fort? getFort(Location3D location)
 	{
-		foreach (Fort f in _forts.values())
+		foreach (Fort f in _forts.Values)
 		{
 			if (f.checkIfInZone(location))
 			{
@@ -103,7 +103,7 @@ public class FortManager
 	
 	public ICollection<Fort> getForts()
 	{
-		return _forts.values();
+		return _forts.Values;
 	}
 	
 	public void loadInstances()
@@ -116,8 +116,8 @@ public class FortManager
 				_forts.put(fort.Id, new Fort(fort.Id, fort.Name));
 			}
 
-			LOGGER.Info(GetType().Name +": Loaded " + _forts.values().Count + " fortress.");
-			foreach (Fort fort in _forts.values())
+			LOGGER.Info(GetType().Name +": Loaded " + _forts.Values.Count + " fortress.");
+			foreach (Fort fort in _forts.Values)
 			{
 				fort.getSiege().loadSiegeGuard();
 			}
@@ -130,7 +130,7 @@ public class FortManager
 	
 	public void activateInstances()
 	{
-		foreach (Fort fort in _forts.values())
+		foreach (Fort fort in _forts.Values)
 		{
 			fort.activateInstance();
 		}

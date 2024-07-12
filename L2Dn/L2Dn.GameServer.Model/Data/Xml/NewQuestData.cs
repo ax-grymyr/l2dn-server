@@ -46,7 +46,7 @@ public class NewQuestData: DataReaderBase
 	
 	public ICollection<NewQuest> getQuests()
 	{
-		return _newQuestData.values();
+		return _newQuestData.Values;
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class NewQuestData: DataReaderBase
 	 */
 	public static NewQuestData getInstance()
 	{
-		return NewQuestData.SingletonHolder.INSTANCE;
+		return SingletonHolder.INSTANCE;
 	}
 	
 	private static class SingletonHolder

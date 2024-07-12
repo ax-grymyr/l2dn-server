@@ -1961,7 +1961,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		// Summons.
 		if (player.hasServitors())
 		{
-			foreach (Summon summon in player.getServitors().values())
+			foreach (Summon summon in player.getServitors().Values)
 			{
 				PetInventory summonInventory = summon.getInventory();
 				if (summonInventory != null)

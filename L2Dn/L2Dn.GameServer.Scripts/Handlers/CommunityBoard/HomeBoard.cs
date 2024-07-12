@@ -216,7 +216,7 @@ public class HomeBoard: IParseBoardHandler
 					player.getPet().setCurrentMp(player.getPet().getMaxMp());
 					player.getPet().setCurrentCp(player.getPet().getMaxCp());
 				}
-				foreach (Summon summon in player.getServitors().values())
+				foreach (Summon summon in player.getServitors().Values)
 				{
 					summon.setCurrentHp(summon.getMaxHp());
 					summon.setCurrentMp(summon.getMaxMp());

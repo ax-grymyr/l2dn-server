@@ -501,13 +501,13 @@ public abstract class ZoneType: IEventContainerProvider
 	
 	public ICollection<Creature> getCharactersInside()
 	{
-		return _characterList.values();
+		return _characterList.Values;
 	}
 	
 	public List<Player> getPlayersInside()
 	{
 		List<Player> players = new();
-		foreach (Creature ch in _characterList.values())
+		foreach (Creature ch in _characterList.Values)
 		{
 			if (ch != null && ch.isPlayer())
 			{
@@ -529,7 +529,7 @@ public abstract class ZoneType: IEventContainerProvider
 			return;
 		}
 		
-		foreach (Creature creature in _characterList.values())
+		foreach (Creature creature in _characterList.Values)
 		{
 			if (creature != null && creature.isPlayer())
 			{
@@ -626,7 +626,7 @@ public abstract class ZoneType: IEventContainerProvider
 			return;
 		}
 		
-		foreach (Creature creature in _characterList.values())
+		foreach (Creature creature in _characterList.Values)
 		{
 			if (creature != null && creature.isPlayer())
 			{

@@ -444,7 +444,7 @@ public class SkillTreeData: DataReaderBase
 	public List<Skill> getNobleSkillTree()
 	{
 		List<Skill> result = new();
-		foreach (SkillLearn skill in _nobleSkillTree.values())
+		foreach (SkillLearn skill in _nobleSkillTree.Values)
 		{
 			result.Add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
@@ -458,7 +458,7 @@ public class SkillTreeData: DataReaderBase
 	public List<Skill> getNobleSkillAutoGetTree()
 	{
 		List<Skill> result = new();
-		foreach (SkillLearn skill in _nobleSkillTree.values())
+		foreach (SkillLearn skill in _nobleSkillTree.Values)
 		{
 			if (skill.isAutoGet())
 			{
@@ -475,7 +475,7 @@ public class SkillTreeData: DataReaderBase
 	public List<Skill> getHeroSkillTree()
 	{
 		List<Skill> result = new();
-		foreach (SkillLearn skill in _heroSkillTree.values())
+		foreach (SkillLearn skill in _heroSkillTree.Values)
 		{
 			result.Add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
@@ -489,7 +489,7 @@ public class SkillTreeData: DataReaderBase
 	public List<Skill> getGMSkillTree()
 	{
 		List<Skill> result = new();
-		foreach (SkillLearn skill in _gameMasterSkillTree.values())
+		foreach (SkillLearn skill in _gameMasterSkillTree.Values)
 		{
 			result.Add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
@@ -503,7 +503,7 @@ public class SkillTreeData: DataReaderBase
 	public List<Skill> getGMAuraSkillTree()
 	{
 		List<Skill> result = new();
-		foreach (SkillLearn skill in _gameMasterAuraSkillTree.values())
+		foreach (SkillLearn skill in _gameMasterAuraSkillTree.Values)
 		{
 			result.Add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
@@ -518,7 +518,7 @@ public class SkillTreeData: DataReaderBase
 	public bool hasAvailableSkills(Player player, CharacterClass classId)
 	{
 		Map<long, SkillLearn> skills = getCompleteClassSkillTree(classId);
-		foreach (SkillLearn skill in skills.values())
+		foreach (SkillLearn skill in skills.Values)
 		{
 			if (skill.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION || skill.isAutoGet() ||
 			    skill.isLearnedByFS() || skill.getGetLevel() > player.getLevel())
@@ -756,7 +756,7 @@ public class SkillTreeData: DataReaderBase
 				}
 			}
 		}
-		return holder.getSkills().values();
+		return holder.getSkills().Values;
 	}
 	
 	/**
@@ -776,7 +776,7 @@ public class SkillTreeData: DataReaderBase
 		}
 		
 		Race race = player.getRace();
-		foreach (SkillLearn skill in skills.values())
+		foreach (SkillLearn skill in skills.Values)
 		{
 			if (!skill.isAutoGet())
 			{
@@ -865,7 +865,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		List<SkillLearn> result = new();
 		Race playerRace = player.getRace();
-		foreach (SkillLearn skill  in  _fishingSkillTree.values())
+		foreach (SkillLearn skill  in  _fishingSkillTree.Values)
 		{
 			// If skill is Race specific and the player's race isn't allowed, skip it.
 			if (!skill.getRaces().isEmpty() && !skill.getRaces().Contains(playerRace))
@@ -902,7 +902,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		List<SkillLearn> result = new();
 		Map<long, SkillLearn> revelationSkills = _revelationSkillTree.get(type);
-		foreach (SkillLearn skill  in  revelationSkills.values())
+		foreach (SkillLearn skill  in  revelationSkills.Values)
 		{
 			Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if (oldSkill == null)
@@ -921,7 +921,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableAlchemySkills(Player player)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _alchemySkillTree.values())
+		foreach (SkillLearn skill  in  _alchemySkillTree.Values)
 		{
 			if (skill.isLearnedByNpc() && player.getLevel() >= skill.getGetLevel())
 			{
@@ -950,7 +950,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableCollectSkills(Player player)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _collectSkillTree.values())
+		foreach (SkillLearn skill  in  _collectSkillTree.Values)
 		{
 			Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if (oldSkill != null)
@@ -1002,7 +1002,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		List<SkillLearn> result = new();
 		Race race = player.getRace();
-		foreach (SkillLearn skill  in  _transformSkillTree.values())
+		foreach (SkillLearn skill  in  _transformSkillTree.Values)
 		{
 			if (player.getLevel() >= skill.getGetLevel() && (skill.getRaces().isEmpty() || skill.getRaces().Contains(race)))
 			{
@@ -1031,7 +1031,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailablePledgeSkills(Clan clan)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _pledgeSkillTree.values())
+		foreach (SkillLearn skill  in  _pledgeSkillTree.Values)
 		{
 			if (!skill.isResidencialSkill() && clan.getLevel() >= skill.getGetLevel())
 			{
@@ -1061,7 +1061,7 @@ public class SkillTreeData: DataReaderBase
 	public Map<int, SkillLearn> getMaxPledgeSkills(Clan clan, bool includeSquad)
 	{
 		Map<int, SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _pledgeSkillTree.values())
+		foreach (SkillLearn skill  in  _pledgeSkillTree.Values)
 		{
 			if (!skill.isResidencialSkill() && clan.getLevel() >= skill.getGetLevel())
 			{
@@ -1075,7 +1075,7 @@ public class SkillTreeData: DataReaderBase
 		
 		if (includeSquad)
 		{
-			foreach (SkillLearn skill  in  _subPledgeSkillTree.values())
+			foreach (SkillLearn skill  in  _subPledgeSkillTree.Values)
 			{
 				if (clan.getLevel() >= skill.getGetLevel())
 				{
@@ -1098,7 +1098,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableSubPledgeSkills(Clan clan)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _subPledgeSkillTree.values())
+		foreach (SkillLearn skill  in  _subPledgeSkillTree.Values)
 		{
 			if (clan.getLevel() >= skill.getGetLevel() && clan.isLearnableSubSkill(skill.getSkillId(), skill.getSkillLevel()))
 			{
@@ -1116,7 +1116,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableSubClassSkills(Player player)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _subClassSkillTree.values())
+		foreach (SkillLearn skill  in  _subClassSkillTree.Values)
 		{
 			Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1))
@@ -1135,7 +1135,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableDualClassSkills(Player player)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _dualClassSkillTree.values())
+		foreach (SkillLearn skill  in  _dualClassSkillTree.Values)
 		{
 			Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1))
@@ -1156,7 +1156,7 @@ public class SkillTreeData: DataReaderBase
 	public List<SkillLearn> getAvailableResidentialSkills(int residenceId)
 	{
 		List<SkillLearn> result = new();
-		foreach (SkillLearn skill  in  _pledgeSkillTree.values())
+		foreach (SkillLearn skill  in  _pledgeSkillTree.Values)
 		{
 			if (skill.isResidencialSkill() && skill.getResidenceIds().Contains(residenceId))
 			{
@@ -1427,7 +1427,7 @@ public class SkillTreeData: DataReaderBase
 		}
 		else
 		{
-			foreach (SkillLearn s  in  skillTree.values())
+			foreach (SkillLearn s  in  skillTree.Values)
 			{
 				if (player.getLevel() < s.getGetLevel() && (minLevel == 0 || minLevel > s.getGetLevel()))
 				{
@@ -1450,7 +1450,7 @@ public class SkillTreeData: DataReaderBase
 		int minLevelForNewSkill = getMinLevelForNewSkill(player, completeClassSkillTree);
 		if (minLevelForNewSkill > 0)
 		{
-			foreach (SkillLearn skill  in  completeClassSkillTree.values())
+			foreach (SkillLearn skill  in  completeClassSkillTree.Values)
 			{
 				if (skill.getGetLevel() > Config.PLAYER_MAXIMUM_LEVEL)
 				{
@@ -1649,7 +1649,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public void addSkills(Player gmchar, bool auraSkills)
 	{
-		ICollection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.values() : _gameMasterSkillTree.values();
+		ICollection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.Values : _gameMasterSkillTree.Values;
 		SkillData st = SkillData.getInstance();
 		foreach (SkillLearn sl  in  skills)
 		{
@@ -1687,7 +1687,7 @@ public class SkillTreeData: DataReaderBase
 		_skillsByRaceHashCodes = new();
 		foreach (Race r  in  EnumUtil.GetValues<Race>())
 		{
-			foreach (SkillLearn s in  _fishingSkillTree.values())
+			foreach (SkillLearn s in  _fishingSkillTree.Values)
 			{
 				if (s.getRaces().Contains(r))
 				{
@@ -1695,7 +1695,7 @@ public class SkillTreeData: DataReaderBase
 				}
 			}
 			
-			foreach (SkillLearn s  in  _transformSkillTree.values())
+			foreach (SkillLearn s  in  _transformSkillTree.Values)
 			{
 				if (s.getRaces().Contains(r))
 				{
@@ -1716,7 +1716,7 @@ public class SkillTreeData: DataReaderBase
 		}
 		
 		// Skills available for all classes and races
-		foreach (SkillLearn s  in  _commonSkillTree.values())
+		foreach (SkillLearn s  in  _commonSkillTree.Values)
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1724,7 +1724,7 @@ public class SkillTreeData: DataReaderBase
 			}
 		}
 		
-		foreach (SkillLearn s  in  _fishingSkillTree.values())
+		foreach (SkillLearn s  in  _fishingSkillTree.Values)
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1732,7 +1732,7 @@ public class SkillTreeData: DataReaderBase
 			}
 		}
 		
-		foreach (SkillLearn s  in  _transformSkillTree.values())
+		foreach (SkillLearn s  in  _transformSkillTree.Values)
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1740,17 +1740,17 @@ public class SkillTreeData: DataReaderBase
 			}
 		}
 		
-		foreach (SkillLearn s  in  _collectSkillTree.values())
+		foreach (SkillLearn s  in  _collectSkillTree.Values)
 		{
 			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		foreach (SkillLearn s  in  _abilitySkillTree.values())
+		foreach (SkillLearn s  in  _abilitySkillTree.Values)
 		{
 			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		foreach (SkillLearn s  in  _alchemySkillTree.values())
+		foreach (SkillLearn s  in  _alchemySkillTree.Values)
 		{
 			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
@@ -1827,31 +1827,31 @@ public class SkillTreeData: DataReaderBase
 	private void report()
 	{
 		int classSkillTreeCount = 0;
-		foreach (Map<long, SkillLearn> classSkillTree  in  _classSkillTrees.values())
+		foreach (Map<long, SkillLearn> classSkillTree  in  _classSkillTrees.Values)
 		{
 			classSkillTreeCount += classSkillTree.size();
 		}
 		
 		int transferSkillTreeCount = 0;
-		foreach (Map<long, SkillLearn> trasferSkillTree  in  _transferSkillTrees.values())
+		foreach (Map<long, SkillLearn> trasferSkillTree  in  _transferSkillTrees.Values)
 		{
 			transferSkillTreeCount += trasferSkillTree.size();
 		}
 		
 		int raceSkillTreeCount = 0;
-		foreach (Map<long, SkillLearn> raceSkillTree  in  _raceSkillTree.values())
+		foreach (Map<long, SkillLearn> raceSkillTree  in  _raceSkillTree.Values)
 		{
 			raceSkillTreeCount += raceSkillTree.size();
 		}
 		
 		int revelationSkillTreeCount = 0;
-		foreach (Map<long, SkillLearn> revelationSkillTree  in  _revelationSkillTree.values())
+		foreach (Map<long, SkillLearn> revelationSkillTree  in  _revelationSkillTree.Values)
 		{
 			revelationSkillTreeCount += revelationSkillTree.size();
 		}
 		
 		int dwarvenOnlyFishingSkillCount = 0;
-		foreach (SkillLearn fishSkill  in  _fishingSkillTree.values())
+		foreach (SkillLearn fishSkill  in  _fishingSkillTree.Values)
 		{
 			if (fishSkill.getRaces().Contains(Race.DWARF))
 			{
@@ -1860,7 +1860,7 @@ public class SkillTreeData: DataReaderBase
 		}
 		
 		int resSkillCount = 0;
-		foreach (SkillLearn pledgeSkill  in  _pledgeSkillTree.values())
+		foreach (SkillLearn pledgeSkill  in  _pledgeSkillTree.Values)
 		{
 			if (pledgeSkill.isResidencialSkill())
 			{

@@ -225,7 +225,7 @@ public abstract class AbstractOlympiadGame
 					pet.unSummon(player);
 				}
 				
-				player.getServitors().values().ForEach(s =>
+				player.getServitors().Values.ForEach(s =>
 				{
 					s.stopAllEffectsExceptThoseThatLastThroughDeath();
 					s.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
@@ -308,7 +308,7 @@ public abstract class AbstractOlympiadGame
 				pet.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
 			}
 			
-			foreach (Summon s in player.getServitors().values())
+			foreach (Summon s in player.getServitors().Values)
 			{
 				if (!s.isDead())
 				{

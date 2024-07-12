@@ -349,7 +349,7 @@ public class SpawnTable
 	 */
 	public bool forEachSpawn(Func<Spawn, bool> function)
 	{
-		foreach (Set<Spawn> set in _spawnTable.values())
+		foreach (Set<Spawn> set in _spawnTable.Values)
 		{
 			foreach (Spawn spawn in set)
 			{

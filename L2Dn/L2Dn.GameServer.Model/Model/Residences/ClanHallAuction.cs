@@ -110,7 +110,7 @@ public class ClanHallAuction
 	{
 		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId);
 		if (getBids().Count != 0)
-			return getBids().values().Select(b => b.getBid()).Max();
+			return getBids().Values.Select(b => b.getBid()).Max();
 		return clanHall.getMinBid();
 	}
 
@@ -121,12 +121,12 @@ public class ClanHallAuction
 	
 	public Bidder? getHighestBidder()
 	{
-		return getBids().values().MaxBy(x => x.getBid());
+		return getBids().Values.MaxBy(x => x.getBid());
 	}
 	
 	public int getBidCount()
 	{
-		return getBids().values().Count;
+		return getBids().Values.Count;
 	}
 	
 	public void returnAdenas(Bidder bidder)

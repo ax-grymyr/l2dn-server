@@ -67,7 +67,7 @@ public class QuestManager
 		LOGGER.Info("Unloading all server scripts.");
 		
 		// Unload quests.
-		foreach (Quest quest in _quests.values())
+		foreach (Quest quest in _quests.Values)
 		{
 			if (quest != null)
 			{
@@ -91,7 +91,7 @@ public class QuestManager
 	public void save()
 	{
 		// Save quests.
-		foreach (Quest quest in _quests.values())
+		foreach (Quest quest in _quests.Values)
 		{
 			quest.onSave();
 		}
@@ -115,7 +115,7 @@ public class QuestManager
 	 */
 	public Quest getQuest(int questId)
 	{
-		foreach (Quest q in _quests.values())
+		foreach (Quest q in _quests.Values)
 		{
 			if (q.getId() == questId)
 			{

@@ -434,7 +434,7 @@ public class NpcData: DataReaderBase
 		if (skills != null)
 		{
 			Map<AISkillScope, List<Skill>> aiSkillLists = null;
-			foreach (Skill skill in skills.values())
+			foreach (Skill skill in skills.Values)
 			{
 				if (!skill.isPassive())
 				{
@@ -674,7 +674,7 @@ public class NpcData: DataReaderBase
 	 */
 	public NpcTemplate? getTemplateByName(string name)
 	{
-		foreach (NpcTemplate npcTemplate in _npcs.values())
+		foreach (NpcTemplate npcTemplate in _npcs.Values)
 		{
 			if (npcTemplate.getName().equalsIgnoreCase(name))
 			{
@@ -692,7 +692,7 @@ public class NpcData: DataReaderBase
 	public List<NpcTemplate> getTemplates(Predicate<NpcTemplate> filter)
 	{
 		List<NpcTemplate> result = new();
-		foreach (NpcTemplate npcTemplate in _npcs.values())
+		foreach (NpcTemplate npcTemplate in _npcs.Values)
 		{
 			if (filter(npcTemplate))
 			{

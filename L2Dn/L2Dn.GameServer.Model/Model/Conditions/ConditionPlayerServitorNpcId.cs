@@ -37,7 +37,7 @@ public class ConditionPlayerServitorNpcId : Condition
 		{
 			return true;
 		}
-		foreach (Summon summon in effector.getServitors().values())
+		foreach (Summon summon in effector.getServitors().Values)
 		{
 			if (_npcIds.Contains(summon.getId()))
 			{

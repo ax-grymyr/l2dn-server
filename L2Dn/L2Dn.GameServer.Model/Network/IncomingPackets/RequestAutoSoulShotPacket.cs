@@ -76,7 +76,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 					    soulshotCount += pet.getSoulShotsPerHit();
 				    }
 
-				    foreach (Summon servitor in player.getServitors().values())
+				    foreach (Summon servitor in player.getServitors().Values)
 				    {
 					    soulshotCount += servitor.getSoulShotsPerHit();
 				    }
@@ -95,7 +95,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 					    spiritshotCount += pet.getSpiritShotsPerHit();
 				    }
 
-				    foreach (Summon servitor in player.getServitors().values())
+				    foreach (Summon servitor in player.getServitors().Values)
 				    {
 					    spiritshotCount += servitor.getSpiritShotsPerHit();
 				    }
@@ -128,7 +128,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 				    pet.rechargeShots(isSoulshot, isSpiritshot, false);
 			    }
 
-			    foreach (Summon summon in player.getServitors().values())
+			    foreach (Summon summon in player.getServitors().Values)
 			    {
 				    // Send message
 				    if (!summon.isChargedShot(item.getTemplate().getDefaultAction() == ActionType.SUMMON_SOULSHOT

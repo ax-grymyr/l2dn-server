@@ -57,7 +57,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                     writer.WriteByte((byte)pet.getLevel());
                 }
 
-                ICollection<Summon> servitors = member.getServitors().values();
+                ICollection<Summon> servitors = member.getServitors().Values;
                 foreach (Summon servitor in servitors)
                 {
                     writer.WriteInt32(servitor.getObjectId());

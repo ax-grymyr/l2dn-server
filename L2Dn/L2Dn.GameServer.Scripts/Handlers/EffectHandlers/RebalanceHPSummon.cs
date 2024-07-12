@@ -37,7 +37,7 @@ public class RebalanceHPSummon: AbstractEffect
 		double fullHP = 0;
 		double currentHPs = 0;
 		
-		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().values())
+		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().Values)
 		{
 			if (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
 			{
@@ -51,7 +51,7 @@ public class RebalanceHPSummon: AbstractEffect
 		
 		double percentHP = currentHPs / fullHP;
 		double newHP;
-		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().values())
+		foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().Values)
 		{
 			if (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
 			{

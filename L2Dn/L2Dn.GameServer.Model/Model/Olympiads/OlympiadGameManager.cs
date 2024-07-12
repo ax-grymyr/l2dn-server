@@ -131,7 +131,7 @@ public class OlympiadGameManager: Runnable
 						}
 					}
 					
-					foreach (Set<int> list in OlympiadManager.getInstance().getRegisteredClassBased().values())
+					foreach (Set<int> list in OlympiadManager.getInstance().getRegisteredClassBased().Values)
 					{
 						foreach (int id in list)
 						{

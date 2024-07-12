@@ -36,7 +36,7 @@ public readonly struct RecipeShopSellListPacket: IOutgoingPacket
         else
         {
             writer.WriteInt32(_manufacturer.getManufactureItems().size());
-            foreach (ManufactureItem item in _manufacturer.getManufactureItems().values())
+            foreach (ManufactureItem item in _manufacturer.getManufactureItems().Values)
             {
                 writer.WriteInt32(item.getRecipeId());
                 writer.WriteInt32(0); // CanCreate?

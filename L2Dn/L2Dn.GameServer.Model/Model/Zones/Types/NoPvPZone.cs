@@ -72,7 +72,7 @@ public class NoPvPZone : ZoneType
 						revalidateInZone(player.getPet());
 					}
 					
-					foreach (Summon summon in player.getServitors().values())
+					foreach (Summon summon in player.getServitors().Values)
 					{
 						revalidateInZone(summon);
 					}

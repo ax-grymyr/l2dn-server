@@ -13,11 +13,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     {
     }
 
-    public ICollection<TValue> values()
-    {
-        return Values;
-    }
-    
     public TValue? get(TKey key)
     {
         TryGetValue(key, out var value);

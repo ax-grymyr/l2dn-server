@@ -175,7 +175,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 			
 			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
-				manor.updateCurrentProduction(_manorId, productInfo.values());
+				manor.updateCurrentProduction(_manorId, productInfo.Values);
 			}
 		}
 

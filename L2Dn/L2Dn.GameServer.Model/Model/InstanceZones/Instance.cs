@@ -367,7 +367,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public ICollection<Door> getDoors()
 	{
-		return _doors.values();
+		return _doors.Values;
 	}
 	
 	/**
@@ -746,7 +746,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	private void removeDoors()
 	{
-		foreach (Door door in _doors.values())
+		foreach (Door door in _doors.Values)
 		{
 			if (door != null)
 			{

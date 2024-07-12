@@ -44,7 +44,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
                 Playable pet = null;
                 if (player.hasServitors())
                 {
-                    foreach (Summon summon in player.getServitors().values())
+                    foreach (Summon summon in player.getServitors().Values)
                     {
                         skill = summon.getKnownSkill(_magicId);
                         if (skill != null)

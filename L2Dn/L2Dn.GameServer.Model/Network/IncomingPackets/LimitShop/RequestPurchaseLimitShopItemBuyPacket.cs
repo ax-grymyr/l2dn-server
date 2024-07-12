@@ -463,7 +463,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 		}
 
 		player.sendPacket(new ExPurchaseLimitShopItemResultPacket(true, _shopIndex, _productId,
-			Math.Max(remainingInfo - _amount, 0), rewards.values()));
+			Math.Max(remainingInfo - _amount, 0), rewards.Values));
 		
 		player.sendItemList();
 		

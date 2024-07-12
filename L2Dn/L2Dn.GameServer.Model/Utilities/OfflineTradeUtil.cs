@@ -112,7 +112,7 @@ public class OfflineTradeUtil
 			}
 		}
 		
-		player.getServitors().values().ForEach(s =>
+		player.getServitors().Values.ForEach(s =>
 		{
 			s.setRestoreSummon(true);
 			s.unSummon(player);

@@ -117,7 +117,7 @@ public class AutoPlayTaskManager
 						// Logic adjustment for summons not attacking when in offline play.
 						if (player.isOfflinePlay() && player.hasSummon())
 						{
-							foreach (Summon summon in player.getServitors().values())
+							foreach (Summon summon in player.getServitors().Values)
 							{
 								if (summon.hasAI() && !summon.isMoving() && !summon.isDisabled() &&
 								    summon.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK &&
@@ -140,7 +140,7 @@ public class AutoPlayTaskManager
 						// Summon Attack.
 						if (player.hasSummon() && player.getAutoUseSettings().getAutoActions().Contains(SUMMON_ATTACK_ACTION))
 						{
-							foreach (Summon summon in player.getServitors().values())
+							foreach (Summon summon in player.getServitors().Values)
 							{
 								if (summon.hasAI() && !summon.isMoving() && !summon.isDisabled() && summon.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK && summon.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST && creature.isAutoAttackable(player) && GeoEngine.getInstance().canSeeTarget(player, creature))
 								{
@@ -410,7 +410,7 @@ public class AutoPlayTaskManager
 				// Pets must follow their owner.
 				if (player.hasServitors())
 				{
-					foreach (Summon summon in player.getServitors().values())
+					foreach (Summon summon in player.getServitors().Values)
 					{
 						summon.followOwner();
 					}

@@ -170,7 +170,7 @@ public class CharSummonTable
 				if (player.hasServitors())
 				{
 					Servitor servitor = null;
-					foreach (Summon summon in player.getServitors().values())
+					foreach (Summon summon in player.getServitors().Values)
 					{
 						if (summon is Servitor)
 						{

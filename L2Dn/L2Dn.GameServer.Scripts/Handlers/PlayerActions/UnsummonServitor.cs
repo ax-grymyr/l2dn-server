@@ -17,7 +17,7 @@ public class UnsummonServitor: IPlayerActionHandler
 		bool canUnsummon = true;
 		if (player.hasServitors())
 		{
-			foreach (Summon s in player.getServitors().values())
+			foreach (Summon s in player.getServitors().Values)
 			{
 				if (s.isBetrayed())
 				{

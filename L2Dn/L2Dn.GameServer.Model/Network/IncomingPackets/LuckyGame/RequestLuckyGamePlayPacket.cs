@@ -93,7 +93,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		int totalWeight = rewards.values().Select(list =>
+		int totalWeight = rewards.Values.Select(list =>
 			list.Select(item => ItemData.getInstance().getTemplate(item.getId()).getWeight()).Sum()).Sum();
 		
 		// Check inventory capacity

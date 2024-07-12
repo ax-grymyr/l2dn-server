@@ -83,7 +83,7 @@ public class AnnouncementsTable
 	 */
 	private void sendAnnouncements(Player player, AnnouncementType type)
 	{
-		foreach (IAnnouncement announce in _announcements.values())
+		foreach (IAnnouncement announce in _announcements.Values)
 		{
 			if (announce.isValid() && (announce.getType() == type))
 			{
@@ -131,7 +131,7 @@ public class AnnouncementsTable
 	 */
 	public ICollection<IAnnouncement> getAllAnnouncements()
 	{
-		return _announcements.values();
+		return _announcements.Values;
 	}
 	
 	/**

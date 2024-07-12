@@ -225,7 +225,7 @@ public abstract class AbstractResidence: INamable
 	 */
 	public bool hasFunction(ResidenceFunctionType type)
 	{
-		foreach (ResidenceFunction function  in  _functions.values())
+		foreach (ResidenceFunction function  in  _functions.Values)
 		{
 			ResidenceFunctionTemplate template = function.getTemplate();
 			if (template != null && template.getType() == type)
@@ -242,7 +242,7 @@ public abstract class AbstractResidence: INamable
 	 */
 	public ResidenceFunction getFunction(ResidenceFunctionType type)
 	{
-		foreach (ResidenceFunction function  in  _functions.values())
+		foreach (ResidenceFunction function  in  _functions.Values)
 		{
 			if (function.getType() == type)
 			{
@@ -259,7 +259,7 @@ public abstract class AbstractResidence: INamable
 	 */
 	public ResidenceFunction getFunction(int id, int level)
 	{
-		foreach (ResidenceFunction func  in  _functions.values())
+		foreach (ResidenceFunction func  in  _functions.Values)
 		{
 			if (func.getId() == id && func.getLevel() == level)
 			{
@@ -275,7 +275,7 @@ public abstract class AbstractResidence: INamable
 	 */
 	public ResidenceFunction getFunction(int id)
 	{
-		foreach (ResidenceFunction func  in  _functions.values())
+		foreach (ResidenceFunction func  in  _functions.Values)
 		{
 			if (func.getId() == id)
 			{
@@ -302,7 +302,7 @@ public abstract class AbstractResidence: INamable
 	public DateTime? getFunctionExpiration(ResidenceFunctionType type)
 	{
 		ResidenceFunction function = null;
-		foreach (ResidenceFunction func in _functions.values())
+		foreach (ResidenceFunction func in _functions.Values)
 		{
 			if (func.getTemplate().getType() == type)
 			{
@@ -319,7 +319,7 @@ public abstract class AbstractResidence: INamable
 	 */
 	public ICollection<ResidenceFunction> getFunctions()
 	{
-		return _functions.values();
+		return _functions.Values;
 	}
 	
 	public override bool Equals(object? obj)

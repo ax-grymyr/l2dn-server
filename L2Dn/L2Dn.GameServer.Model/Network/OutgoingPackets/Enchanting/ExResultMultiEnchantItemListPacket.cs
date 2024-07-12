@@ -87,7 +87,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 			writer.WriteInt32(_successEnchant.size());
 			if (_successEnchant.size() != 0)
 			{
-				foreach (int[] success in _successEnchant.values())
+				foreach (int[] success in _successEnchant.Values)
 				{
 					writer.WriteInt32(success[0]);
 					writer.WriteInt32(success[1]);
@@ -103,7 +103,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		writer.WriteInt32(_failureEnchant.size());
 		if (_failureEnchant.size() != 0)
 		{
-			foreach (int failure in _failureEnchant.values())
+			foreach (int failure in _failureEnchant.Values)
 			{
 				writer.WriteInt32(failure);
 				writer.WriteInt32(0);
@@ -119,7 +119,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(request.getMultiFailItemsCount());
 			var failureReward = request.getMultiEnchantFailItems();
-			foreach (ItemHolder failure in failureReward.values())
+			foreach (ItemHolder failure in failureReward.Values)
 			{
 				writer.WriteInt32(failure.getId());
 				writer.WriteInt32((int) failure.getCount());

@@ -27,7 +27,7 @@ public class ShortCuts : IRestorable
 	
 	public ICollection<Shortcut> getAllShortCuts()
 	{
-		return _shortCuts.values();
+		return _shortCuts.Values;
 	}
 	
 	public Shortcut getShortCut(int slot, int page)
@@ -114,7 +114,7 @@ public class ShortCuts : IRestorable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void deleteShortCutByObjectId(int objectId)
 	{
-		foreach (Shortcut shortcut in _shortCuts.values())
+		foreach (Shortcut shortcut in _shortCuts.Values)
 		{
 			if ((shortcut.getType() == ShortcutType.ITEM) && (shortcut.getId() == objectId))
 			{
@@ -202,7 +202,7 @@ public class ShortCuts : IRestorable
 	public void updateShortCuts(int skillId, int skillLevel, int skillSubLevel)
 	{
 		// Update all the shortcuts for this skill
-		foreach (Shortcut sc in _shortCuts.values())
+		foreach (Shortcut sc in _shortCuts.Values)
 		{
 			if ((sc.getId() == skillId) && (sc.getType() == ShortcutType.SKILL))
 			{

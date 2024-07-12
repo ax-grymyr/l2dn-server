@@ -507,7 +507,7 @@ public class Duel
 		}
 		
 		// restore player conditions
-		_playerConditions.values().ForEach(x => x.restoreCondition());
+		_playerConditions.Values.ForEach(x => x.restoreCondition());
 	}
 	
 	/**
@@ -1007,7 +1007,7 @@ public class Duel
 		// if he's either playerA or playerB cancel the duel and port the players back
 		if ((player == _playerA) || (player == _playerB))
 		{
-			foreach (PlayerCondition cond in _playerConditions.values())
+			foreach (PlayerCondition cond in _playerConditions.Values)
 			{
 				cond.teleportBack();
 				cond.getPlayer().setInDuel(0);

@@ -142,7 +142,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 		{
 			if (_player != null)
 			{
-				_player.getServitors().values().ForEach(s => s.unSummon(_player));
+				_player.getServitors().Values.ForEach(s => s.unSummon(_player));
 				_player.teleToLocation(TeleportWhereType.TOWN, null);
 				_player = null;
 			}

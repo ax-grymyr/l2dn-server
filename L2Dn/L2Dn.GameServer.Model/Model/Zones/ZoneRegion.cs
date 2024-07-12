@@ -41,7 +41,7 @@ public class ZoneRegion
             return;
         }
 		
-        foreach (ZoneType z in _zones.values())
+        foreach (ZoneType z in _zones.Values)
         {
             z.revalidateInZone(creature);
         }
@@ -49,7 +49,7 @@ public class ZoneRegion
 	
     public void removeFromZones(Creature creature)
     {
-        foreach (ZoneType z in _zones.values())
+        foreach (ZoneType z in _zones.Values)
         {
             z.removeCharacter(creature);
         }
@@ -62,7 +62,7 @@ public class ZoneRegion
         int down = y - range;
         int left = x + range;
         int right = x - range;
-        foreach (ZoneType e in _zones.values())
+        foreach (ZoneType e in _zones.Values)
         {
             if (e is PeaceZone)
             {
@@ -97,7 +97,7 @@ public class ZoneRegion
 	
     public void onDeath(Creature creature)
     {
-        foreach (ZoneType z in _zones.values())
+        foreach (ZoneType z in _zones.Values)
         {
             if (z.isInsideZone(creature))
             {
@@ -108,7 +108,7 @@ public class ZoneRegion
 	
     public void onRevive(Creature creature)
     {
-        foreach (ZoneType z in _zones.values())
+        foreach (ZoneType z in _zones.Values)
         {
             if (z.isInsideZone(creature))
             {

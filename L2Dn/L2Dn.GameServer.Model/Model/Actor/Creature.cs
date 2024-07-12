@@ -231,7 +231,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Copy the skills of the Npc from its template to the Creature Instance
 			// The skills list can be affected by spell effects so it's necessary to make a copy
 			// to avoid that a spell affecting a Npc, affects others Npc of the same type too.
-			foreach (Skill skill in template.getSkills().values())
+			foreach (Skill skill in template.getSkills().Values)
 			{
 				addSkill(skill);
 			}
@@ -241,7 +241,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Copy the skills of the Summon from its template to the Creature Instance
 			// The skills list can be affected by spell effects so it's necessary to make a copy
 			// to avoid that a spell affecting a Summon, affects others Summon of the same type too.
-			foreach (Skill skill in template.getSkills().values())
+			foreach (Skill skill in template.getSkills().Values)
 			{
 				addSkill(skill);
 			}
@@ -1393,7 +1393,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (group > 0 && !_reuseTimeStampsItems.isEmpty())
 		{
 			DateTime currentTime = DateTime.UtcNow;
-			foreach (TimeStamp ts in _reuseTimeStampsItems.values())
+			foreach (TimeStamp ts in _reuseTimeStampsItems.Values)
 			{
 				if (ts.getSharedReuseGroup() == group)
 				{
@@ -4005,7 +4005,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		if (_triggerSkills != null)
 		{
-			foreach (OptionSkillHolder holder in _triggerSkills.values())
+			foreach (OptionSkillHolder holder in _triggerSkills.Values)
 			{
 				if (((!hit.isCritical() && holder.getSkillType() == OptionSkillType.ATTACK) || (holder.getSkillType() == OptionSkillType.CRITICAL && hit.isCritical())) && Rnd.get(100) < holder.getChance())
 				{
@@ -4330,7 +4330,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public ICollection<Skill> getAllSkills()
 	{
-		return _skills.values();
+		return _skills.Values;
 	}
 	
 	public void removeAllSkills()
@@ -5312,7 +5312,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public ICollection<Npc> getSummonedNpcs()
 	{
-		return _summonedNpcs != null ? _summonedNpcs.values() : new List<Npc>();
+		return _summonedNpcs != null ? _summonedNpcs.Values : new List<Npc>();
 	}
 	
 	/**
@@ -5361,7 +5361,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	
 	public ICollection<SkillCaster> getSkillCasters()
 	{
-		return _skillCasters.values();
+		return _skillCasters.Values;
 	}
 	
 	public SkillCaster addSkillCaster(SkillCastingType castingType, SkillCaster skillCaster)
@@ -5379,7 +5379,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		Predicate<SkillCaster> filter = s => filterValue(s) && filters.All(f => f(s));
 		
 		List<SkillCaster> result = new();
-		foreach (SkillCaster skillCaster in _skillCasters.values())
+		foreach (SkillCaster skillCaster in _skillCasters.Values)
 		{
 			if (filter(skillCaster))
 			{
@@ -5393,7 +5393,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		Predicate<SkillCaster> filter = s => filterValue(s) && filters.All(f => f(s));
 		
-		foreach (SkillCaster skillCaster in _skillCasters.values())
+		foreach (SkillCaster skillCaster in _skillCasters.Values)
 		{
 			if (filter(skillCaster))
 			{

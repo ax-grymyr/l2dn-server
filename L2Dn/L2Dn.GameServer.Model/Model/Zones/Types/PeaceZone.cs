@@ -82,7 +82,7 @@ public class PeaceZone : ZoneType
 						revalidateInZone(player.getPet());
 					}
 					
-					foreach (Summon summon in player.getServitors().values())
+					foreach (Summon summon in player.getServitors().Values)
 					{
 						revalidateInZone(summon);
 					}

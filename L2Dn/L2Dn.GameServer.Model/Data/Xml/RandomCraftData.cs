@@ -121,7 +121,7 @@ public class RandomCraftData: DataReaderBase
 	private void randomizeRewards()
 	{
 		_randomRewardIndex = -1;
-		_randomRewards = REWARD_DATA.values().ToArray();
+		_randomRewards = REWARD_DATA.Values.ToArray();
 		Random.Shared.Shuffle(_randomRewards);
 	}
 	

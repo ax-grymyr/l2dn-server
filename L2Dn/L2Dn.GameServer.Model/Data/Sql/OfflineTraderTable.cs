@@ -106,7 +106,7 @@ public class OfflineTraderTable
 								}
 
 								trade.Title = pc.getStoreName();
-								ctx.CharacterOfflineTradeItems.AddRange(pc.getManufactureItems().values().Select(i =>
+								ctx.CharacterOfflineTradeItems.AddRange(pc.getManufactureItems().Values.Select(i =>
 									new CharacterOfflineTradeItem
 									{
 										CharacterId = pc.getObjectId(),
@@ -372,7 +372,7 @@ public class OfflineTraderTable
 									title = trader.getStoreName();
 								}
 
-								ctx.CharacterOfflineTradeItems.AddRange(trader.getManufactureItems().values().Select(
+								ctx.CharacterOfflineTradeItems.AddRange(trader.getManufactureItems().Values.Select(
 									i =>
 										new CharacterOfflineTradeItem
 										{

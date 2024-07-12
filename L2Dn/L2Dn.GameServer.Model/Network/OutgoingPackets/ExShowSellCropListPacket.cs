@@ -41,7 +41,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         
         writer.WriteInt32(_manorId); // manor id
         writer.WriteInt32(_cropsItems.size()); // size
-        foreach (Item item in _cropsItems.values())
+        foreach (Item item in _cropsItems.Values)
         {
             Seed seed = CastleManorManager.getInstance().getSeedByCrop(item.getId());
             writer.WriteInt32(item.getObjectId()); // Object id

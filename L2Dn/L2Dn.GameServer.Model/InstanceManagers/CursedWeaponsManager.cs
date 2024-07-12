@@ -125,7 +125,7 @@ public class CursedWeaponsManager: DataReaderBase
 			// then we'd better make sure that it FULLY cleans up inactive cursed weapons!
 			// Undesired effects result otherwise, such as player with no zariche but with karma
 			// or a lost-child entry in the cursed weapons table, without a corresponding one in items...
-			foreach (CursedWeapon cw in _cursedWeapons.values())
+			foreach (CursedWeapon cw in _cursedWeapons.Values)
 			{
 				if (cw.isActivated())
 				{
@@ -169,7 +169,7 @@ public class CursedWeaponsManager: DataReaderBase
 			return;
 		}
 		
-		foreach (CursedWeapon cw in _cursedWeapons.values())
+		foreach (CursedWeapon cw in _cursedWeapons.Values)
 		{
 			if (cw.isActive())
 			{
@@ -237,7 +237,7 @@ public class CursedWeaponsManager: DataReaderBase
 			return;
 		}
 		
-		foreach (CursedWeapon cw in _cursedWeapons.values())
+		foreach (CursedWeapon cw in _cursedWeapons.Values)
 		{
 			if (cw.isActivated() && (player.getObjectId() == cw.getPlayerId()))
 			{
@@ -259,7 +259,7 @@ public class CursedWeaponsManager: DataReaderBase
 	
 	public int checkOwnsWeaponId(int ownerId)
 	{
-		foreach (CursedWeapon cw in _cursedWeapons.values())
+		foreach (CursedWeapon cw in _cursedWeapons.Values)
 		{
 			if (cw.isActivated() && (ownerId == cw.getPlayerId()))
 			{
@@ -284,7 +284,7 @@ public class CursedWeaponsManager: DataReaderBase
 	
 	public void saveData()
 	{
-		foreach (CursedWeapon cw in _cursedWeapons.values())
+		foreach (CursedWeapon cw in _cursedWeapons.Values)
 		{
 			cw.saveData();
 		}

@@ -362,7 +362,7 @@ public class BuffInfo
 		// Cancels the ticking task.
 		if (_tasks != null)
 		{
-			foreach (EffectTaskInfo effectTask in _tasks.values())
+			foreach (EffectTaskInfo effectTask in _tasks.Values)
 			{
 				ScheduledFuture schedule = effectTask.getScheduledFuture();
 				if (schedule != null && !schedule.isCancelled() && !schedule.isDone())

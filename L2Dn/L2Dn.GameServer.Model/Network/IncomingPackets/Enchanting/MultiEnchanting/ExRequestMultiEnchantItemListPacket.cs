@@ -410,7 +410,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			}
 		}
 		
-		foreach (ItemHolder failure in failureReward.values())
+		foreach (ItemHolder failure in failureReward.Values)
 		{
 			request.addMultiEnchantFailItems(failure);
 		}

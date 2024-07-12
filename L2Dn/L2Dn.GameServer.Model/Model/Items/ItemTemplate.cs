@@ -490,7 +490,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	
 	public ICollection<AttributeHolder> getAttributes()
 	{
-		return _elementals != null ? _elementals.values() : null;
+		return _elementals != null ? _elementals.Values : null;
 	}
 	
 	public AttributeHolder getAttribute(AttributeType type)

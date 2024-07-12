@@ -170,7 +170,7 @@ public class HennaPatternPotentialData: DataReaderBase
 	public ICollection<int> getSkillIdsBySlotId(int slotId)
 	{
 		List<int> skillIds = new();
-		foreach (DyePotential potential in _potentials.values())
+		foreach (DyePotential potential in _potentials.Values)
 		{
 			if (potential.getSlotId() == slotId)
 			{

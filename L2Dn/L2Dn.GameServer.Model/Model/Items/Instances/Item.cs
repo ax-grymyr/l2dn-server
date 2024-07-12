@@ -1171,7 +1171,7 @@ public class Item: WorldObject
 
 		try
 		{
-			foreach (AttributeHolder attribute in _elementals.values())
+			foreach (AttributeHolder attribute in _elementals.Values)
 			{
 				ctx.ItemElementals.Add(new DbItemElemental()
 				{
@@ -1191,7 +1191,7 @@ public class Item: WorldObject
 
 	public ICollection<AttributeHolder> getAttributes()
 	{
-		return _elementals != null ? _elementals.values() : null;
+		return _elementals != null ? _elementals.Values : null;
 	}
 
 	public bool hasAttributes()
@@ -1217,7 +1217,7 @@ public class Item: WorldObject
 			}
 			else if (_elementals != null && _elementals.Count != 0)
 			{
-				return _elementals.values().First();
+				return _elementals.Values.First();
 			}
 		}
 		return null;

@@ -1363,7 +1363,7 @@ public class Skill: IIdentifiable
 			{
 				if (effected.hasServitors())
 				{
-					effected.getServitors().values()
+					effected.getServitors().Values
 						.ForEach(s => applyEffects(effector, s, _isRecoveryHerb, TimeSpan.Zero));
 				}
 
@@ -1407,7 +1407,7 @@ public class Skill: IIdentifiable
 			if (addContinuousEffects && _isSharedWithSummon && info.getEffected().isPlayer() && isContinuous() &&
 			    !_isDebuff && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values()
+				info.getEffected().getServitors().Values
 					.ForEach(s => applyEffects(effector, s, false, TimeSpan.Zero));
 			}
 		}
@@ -1644,7 +1644,7 @@ public class Skill: IIdentifiable
 				if (_effectTypes == null)
 				{
 					Set<EffectType> effectTypesSet = new();
-					foreach (List<AbstractEffect> effectList in _effectLists.values())
+					foreach (List<AbstractEffect> effectList in _effectLists.Values)
 					{
 						if (effectList != null)
 						{

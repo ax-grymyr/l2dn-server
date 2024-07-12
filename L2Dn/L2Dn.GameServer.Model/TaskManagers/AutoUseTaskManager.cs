@@ -256,7 +256,7 @@ public class AutoUseTaskManager
 						{
 							if (player.hasServitors())
 							{
-								foreach (Summon summon in player.getServitors().values())
+								foreach (Summon summon in player.getServitors().Values)
 								{
 									skill = summon.getKnownSkill(skillId);
 									if (skill != null)
@@ -334,7 +334,7 @@ public class AutoUseTaskManager
 						{
 							if (player.hasServitors())
 							{
-								foreach (Summon summon in player.getServitors().values())
+								foreach (Summon summon in player.getServitors().Values)
 								{
 									skill = summon.getKnownSkill(skillId);
 									if (skill == null)
@@ -473,7 +473,7 @@ public class AutoUseTaskManager
 					return false;
 				}
 				int occurrences = 0;
-				foreach (Summon servitor in player.getServitors().values())
+				foreach (Summon servitor in player.getServitors().Values)
 				{
 					if (servitor.isAffectedBySkill(skill.getId()))
 					{

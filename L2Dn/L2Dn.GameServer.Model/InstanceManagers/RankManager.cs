@@ -454,7 +454,7 @@ public class RankManager
 	public int getPlayerRaceRank(Player player)
 	{
 		int playerOid = player.getObjectId();
-		foreach (StatSet stats in _mainList.values())
+		foreach (StatSet stats in _mainList.Values)
 		{
 			if (stats.getInt("charId") != playerOid)
 			{
@@ -468,7 +468,7 @@ public class RankManager
 	public int getPlayerClassRank(Player player)
 	{
 		int playerOid = player.getObjectId();
-		foreach (StatSet stats in _mainList.values())
+		foreach (StatSet stats in _mainList.Values)
 		{
 			if (stats.getInt("charId") != playerOid)
 			{

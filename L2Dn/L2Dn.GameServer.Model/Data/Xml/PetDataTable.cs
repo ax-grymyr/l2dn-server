@@ -151,7 +151,7 @@ public class PetDataTable: DataReaderBase
 	 */
 	public PetData getPetDataByItemId(int itemId)
 	{
-		foreach (PetData data in _pets.values())
+		foreach (PetData data in _pets.Values)
 		{
 			if (data.getItemId() == itemId)
 			{
@@ -249,7 +249,7 @@ public class PetDataTable: DataReaderBase
 
 	public List<PetData> getPetDatasByEvolve(int itemId, EvolveLevel evolveLevel)
 	{
-		return _pets.values().Where(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).ToList();
+		return _pets.Values.Where(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).ToList();
 	}
 	
 	public void setPetName(int objectId, string name)

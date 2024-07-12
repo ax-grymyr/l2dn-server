@@ -261,7 +261,7 @@ public class SummonAI : PlayableAI, Runnable
 		Creature owner = getActor().getOwner();
 		if ((owner != null) && owner.getActingPlayer().hasServitors())
 		{
-			foreach (Summon summon in owner.getActingPlayer().getServitors().values())
+			foreach (Summon summon in owner.getActingPlayer().getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{

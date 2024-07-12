@@ -26,7 +26,7 @@ public struct RequestBrProductListPacket: IIncomingPacket<GameSession>
         {
             case 0: // Home page
             {
-                player.sendPacket(new ExBRProductListPacket(player, 0, PrimeShopData.getInstance().getPrimeItems().values()));
+                player.sendPacket(new ExBRProductListPacket(player, 0, PrimeShopData.getInstance().getPrimeItems().Values));
                 break;
             }
             case 1: // History

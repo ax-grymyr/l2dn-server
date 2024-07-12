@@ -62,7 +62,7 @@ public class SayuneData: DataReaderBase
 	
 	public ICollection<SayuneEntry> getMaps()
 	{
-		return _maps.values();
+		return _maps.Values;
 	}
 	
 	/**

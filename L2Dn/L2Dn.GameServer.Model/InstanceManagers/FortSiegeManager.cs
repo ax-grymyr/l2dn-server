@@ -348,7 +348,7 @@ public class FortSiegeManager
 	
 	public ICollection<FortSiege> getSieges()
 	{
-		return _sieges.values();
+		return _sieges.Values;
 	}
 	
 	public FortSiege getSiege(int fortId)

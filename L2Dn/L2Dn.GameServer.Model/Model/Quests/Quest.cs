@@ -2633,7 +2633,7 @@ public class Quest: AbstractScript, IIdentifiable
 		
 		// Cancel all pending timers before reloading.
 		// If timers ought to be restarted, the quest can take care of it with its code (example: save global data indicating what timer must be restarted).
-		foreach (List<QuestTimer> timers in _questTimers.values())
+		foreach (List<QuestTimer> timers in _questTimers.Values)
 		{
 			foreach (QuestTimer timer in timers)
 			{

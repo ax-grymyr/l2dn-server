@@ -745,7 +745,7 @@ public class WorldExchangeManager: DataReaderBase
 		}
 		
 		List<WorldExchangeHolder> returnList = new();
-		foreach (WorldExchangeHolder holder in _itemBids.values())
+		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
 			if (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 			{
@@ -780,7 +780,7 @@ public class WorldExchangeManager: DataReaderBase
 		}
 		
 		List<WorldExchangeHolder> returnList = new();
-		foreach (WorldExchangeHolder holder in _itemBids.values())
+		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
 			if (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 			{
@@ -908,7 +908,7 @@ public class WorldExchangeManager: DataReaderBase
 		List<WorldExchangeHolder> registered = new();
 		List<WorldExchangeHolder> sold = new();
 		List<WorldExchangeHolder> outTime = new();
-		foreach (WorldExchangeHolder holder in _itemBids.values())
+		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
 			if (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE)
 			{
@@ -971,7 +971,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 		
-		foreach (WorldExchangeHolder holder in _itemBids.values())
+		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
 			if ((holder.getOldOwnerId() == player.getObjectId()) && ((holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD) || (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME)))
 			{
@@ -991,7 +991,7 @@ public class WorldExchangeManager: DataReaderBase
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (WorldExchangeHolder holder in _itemBids.values())
+			foreach (WorldExchangeHolder holder in _itemBids.Values)
 			{
 				if (!holder.hasChanges())
 				{
@@ -1066,7 +1066,7 @@ public class WorldExchangeManager: DataReaderBase
 	{
 		long totalPrice = 0;
 		long totalItemCount = 0;
-		foreach (WorldExchangeHolder holder in _itemBids.values())
+		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
 			if (holder.getItemInstance().getTemplate().getId() != itemId)
 			{

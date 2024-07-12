@@ -90,7 +90,7 @@ public class QuestLink: IBypassHandler
 				}
 			}
 			
-			questList = orderedQuests.values().ToList();
+			questList = orderedQuests.Values.ToList();
 		}
 		
 		int startCount = 0;

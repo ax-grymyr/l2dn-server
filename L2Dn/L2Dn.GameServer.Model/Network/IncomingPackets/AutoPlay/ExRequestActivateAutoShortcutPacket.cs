@@ -48,7 +48,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			{
 				if (player.hasServitors())
 				{
-					foreach (Summon summon in player.getServitors().values())
+					foreach (Summon summon in player.getServitors().Values)
 					{
 						skill = summon.getKnownSkill(skillId);
 						if (skill != null)

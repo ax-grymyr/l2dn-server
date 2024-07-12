@@ -22,7 +22,7 @@ public readonly struct ExSubJobInfoPacket: IOutgoingPacket
         _type = type;
         _subs = new();
         _subs.Add(new SubInfo(0, player.getBaseClass(), player.getStat().getBaseLevel(), SubclassType.BASECLASS));
-        foreach (SubClassHolder sub in player.getSubClasses().values())
+        foreach (SubClassHolder sub in player.getSubClasses().Values)
         {
             _subs.Add(new SubInfo(sub.getClassIndex(), sub.getClassDefinition(), sub.getLevel(),
                 sub.isDualClass() ? SubclassType.DUALCLASS : SubclassType.SUBCLASS));

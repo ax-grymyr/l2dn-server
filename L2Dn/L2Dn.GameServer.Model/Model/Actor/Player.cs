@@ -1023,7 +1023,7 @@ public class Player: Playable
 	 */
 	public ICollection<RecipeList> getCommonRecipeBook()
 	{
-		return _commonRecipeBook.values();
+		return _commonRecipeBook.Values;
 	}
 	
 	/**
@@ -1031,7 +1031,7 @@ public class Player: Playable
 	 */
 	public ICollection<RecipeList> getDwarvenRecipeBook()
 	{
-		return _dwarvenRecipeBook.values();
+		return _dwarvenRecipeBook.Values;
 	}
 	
 	/**
@@ -1192,7 +1192,7 @@ public class Player: Playable
 	
 	public bool hasAnyCompletedQuestStates(List<int> questIds)
 	{
-		foreach (QuestState questState in _quests.values())
+		foreach (QuestState questState in _quests.Values)
 		{
 			if (questIds.Contains(questState.getQuest().getId()) && questState.isCompleted())
 			{
@@ -1216,7 +1216,7 @@ public class Player: Playable
 	 */
 	public ICollection<QuestState> getAllQuestStates()
 	{
-		return _quests.values();
+		return _quests.Values;
 	}
 	
 	/**
@@ -1225,7 +1225,7 @@ public class Player: Playable
 	public ICollection<Quest> getAllActiveQuests()
 	{
 		List<Quest> activeQuests = new();
-		foreach (QuestState questState in _quests.values())
+		foreach (QuestState questState in _quests.Values)
 		{
 			if (!questState.isStarted())
 			{
@@ -1512,7 +1512,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().ForEach(s => rc.addRelation(s, getRelation(this), false));
+				getServitors().Values.ForEach(s => rc.addRelation(s, getRelation(this), false));
 			}
 			sendPacket(rc);
 		}
@@ -1540,7 +1540,7 @@ public class Player: Playable
 					}
 					if (hasServitors())
 					{
-						getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
+						getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 					}
 				}
 				player.sendPacket(rc);
@@ -1906,7 +1906,7 @@ public class Player: Playable
 		else
 		{
 			getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
-			getServitors().values().ForEach(s => s.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING));
+			getServitors().Values.ForEach(s => s.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING));
 			if (getPet() != null)
 			{
 				getPet().getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
@@ -3994,7 +3994,7 @@ public class Player: Playable
 								}
 								if (hasServitors())
 								{
-									getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
+									getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 								}
 							}
 							player.sendPacket(rc);
@@ -4791,7 +4791,7 @@ public class Player: Playable
 		// Unsummon Cubics
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().ForEach(x => x.deactivate());
+			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
 		}
 		
@@ -4807,7 +4807,7 @@ public class Player: Playable
 		
 		if (hasServitors())
 		{
-			getServitors().values().ForEach(servitor =>
+			getServitors().Values.ForEach(servitor =>
 			{
 				if (servitor.isBetrayed())
 				{
@@ -5288,7 +5288,7 @@ public class Player: Playable
 	
 	public Summon getAnyServitor()
 	{
-		return getServitors().values().FirstOrDefault();
+		return getServitors().Values.FirstOrDefault();
 	}
 	
 	public Summon getFirstServitor()
@@ -5298,7 +5298,7 @@ public class Player: Playable
 			return null;
 		}
 		
-		return getServitors().values().FirstOrDefault();
+		return getServitors().Values.FirstOrDefault();
 	}
 	
 	public override Summon getServitor(int objectId)
@@ -5309,7 +5309,7 @@ public class Player: Playable
 	public List<Summon> getServitorsAndPets()
 	{
 		List<Summon> summons = new();
-		summons.AddRange(getServitors().values());
+		summons.AddRange(getServitors().Values);
 		if (_pet != null)
 		{
 			summons.Add(_pet);
@@ -6294,7 +6294,7 @@ public class Player: Playable
 					}
 					if (hasServitors())
 					{
-						getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
+						getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 					}
 				}
 				player.sendPacket(rc);
@@ -6565,7 +6565,7 @@ public class Player: Playable
 				// Restore Subclass Data (cannot be done earlier in function)
 				if (restoreSubClassData(player) && (activeClassId != player.getBaseClass()))
 				{
-					foreach (SubClassHolder subClass in player.getSubClasses().values())
+					foreach (SubClassHolder subClass in player.getSubClasses().Values)
 					{
 						if (subClass.getClassDefinition() == activeClassId)
 						{
@@ -6697,7 +6697,7 @@ public class Player: Playable
 			
 			if (player.hasServitors())
 			{
-				foreach (Summon summon in player.getServitors().values())
+				foreach (Summon summon in player.getServitors().Values)
 				{
 					summon.setOwner(player);
 				}
@@ -7157,7 +7157,7 @@ public class Player: Playable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
-			foreach (SubClassHolder subClass in getSubClasses().values())
+			foreach (SubClassHolder subClass in getSubClasses().Values)
 			{
                 int classIndex = subClass.getClassIndex();
                 CharacterSubClass? record =
@@ -7323,7 +7323,7 @@ public class Player: Playable
             ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId).ExecuteDelete();
 			
 			DateTime currentTime = DateTime.UtcNow;
-			foreach (TimeStamp ts in getItemReuseTimeStamps().values())
+			foreach (TimeStamp ts in getItemReuseTimeStamps().Values)
 			{
 				if ((ts != null) && (currentTime < ts.getStamp()))
 				{
@@ -8838,7 +8838,7 @@ public class Player: Playable
 	{
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().ForEach(x => x.deactivate());
+			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
 		}
 	}
@@ -8848,7 +8848,7 @@ public class Player: Playable
 		if (!_cubics.isEmpty())
 		{
 			bool broadcast = false;
-			foreach (Cubic cubic in _cubics.values())
+			foreach (Cubic cubic in _cubics.Values)
 			{
 				if (cubic.isGivenByOther())
 				{
@@ -9216,7 +9216,7 @@ public class Player: Playable
 		
 		if (hasServitors())
 		{
-			getServitors().values().ForEach(s => s.unSummon(this));
+			getServitors().Values.ForEach(s => s.unSummon(this));
 		}
 		
 		// Remove Hide.
@@ -9224,7 +9224,7 @@ public class Player: Playable
 		
 		if (!_cubics.isEmpty())
 		{
-			_cubics.values().ForEach(x => x.deactivate());
+			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
 			sendPacket(new ExUserInfoCubicPacket(this));
 		}
@@ -9650,7 +9650,7 @@ public class Player: Playable
 		}
 		if (hasServitors())
 		{
-			getServitors().values().ForEach(x => x.broadcastStatusUpdate());
+			getServitors().Values.ForEach(x => x.broadcastStatusUpdate());
 		}
 	}
 	
@@ -9807,7 +9807,7 @@ public class Player: Playable
 			CharacterClass subTemplate = classId;
 			Map<long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(subTemplate);
 			Map<int, Skill> prevSkillList = new();
-			foreach (SkillLearn skillInfo in skillTree.values())
+			foreach (SkillLearn skillInfo in skillTree.Values)
 			{
 				if ((skillInfo.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION) && !Config.AUTO_LEARN_DIVINE_INSPIRATION)
 				{
@@ -9944,7 +9944,7 @@ public class Player: Playable
 	
 	public bool hasDualClass()
 	{
-		foreach (SubClassHolder subClass in _subClasses.values())
+		foreach (SubClassHolder subClass in _subClasses.Values)
 		{
 			if (subClass.isDualClass())
 			{
@@ -9956,7 +9956,7 @@ public class Player: Playable
 	
 	public SubClassHolder getDualClass()
 	{
-		foreach (SubClassHolder subClass in _subClasses.values())
+		foreach (SubClassHolder subClass in _subClasses.Values)
 		{
 			if (subClass.isDualClass())
 			{
@@ -10074,7 +10074,7 @@ public class Player: Playable
 			
 			if (hasServitors())
 			{
-				getServitors().values().ForEach(s => s.unSummon(this));
+				getServitors().Values.ForEach(s => s.unSummon(this));
 			}
 			
 			if (classIndex == 0)
@@ -10403,7 +10403,7 @@ public class Player: Playable
 			{
 				pet.teleToLocation(Location, true);
 			}
-			foreach (Summon summon in getServitors().values())
+			foreach (Summon summon in getServitors().Values)
 			{
 				if (!summon.isInsideZone(ZoneId.SIEGE))
 				{
@@ -10662,7 +10662,7 @@ public class Player: Playable
 			sendPacket(new PetSummonInfoPacket(_pet, 0));
 		}
 		
-		getServitors().values().ForEach(s =>
+		getServitors().Values.ForEach(s =>
 		{
 			s.setFollowStatus(false);
 			s.teleToLocation(Location, false);
@@ -11215,7 +11215,7 @@ public class Player: Playable
 					}
 				}
 				
-				getServitors().values().ForEach(s =>
+				getServitors().Values.ForEach(s =>
 				{
 					s.setRestoreSummon(true);
 					s.unSummon(this);
@@ -12111,7 +12111,7 @@ public class Player: Playable
 	
 	public ICollection<Skill> getAllTransformSkills()
 	{
-		return _transformSkills.values();
+		return _transformSkills.Values;
 	}
 	
 	public void removeAllTransformSkills()
@@ -12178,7 +12178,7 @@ public class Player: Playable
 			}
 			
 			// Include transformation skills.
-            foreach (Skill skill in _transformSkills.values()) 
+            foreach (Skill skill in _transformSkills.Values) 
 			    currentSkills.Add(skill);
 		}
 		
@@ -12667,7 +12667,7 @@ public class Player: Playable
 	
 	public ICollection<TeleportBookmark> getTeleportBookmarks()
 	{
-		return _tpbookmarks.values();
+		return _tpbookmarks.Values;
 	}
 	
 	public override void sendInfo(Player player)
@@ -12700,7 +12700,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().ForEach(s => rc1.addRelation(s, relation1, !isInsideZone(ZoneId.PEACE) || !isInsideZone(ZoneId.NO_PVP)));
+				getServitors().Values.ForEach(s => rc1.addRelation(s, relation1, !isInsideZone(ZoneId.PEACE) || !isInsideZone(ZoneId.NO_PVP)));
 			}
 		}
 		player.sendPacket(rc1);
@@ -12716,7 +12716,7 @@ public class Player: Playable
 			}
 			if (hasServitors())
 			{
-				getServitors().values().ForEach(s => rc2.addRelation(s, relation2, !player.isInsideZone(ZoneId.PEACE)));
+				getServitors().Values.ForEach(s => rc2.addRelation(s, relation2, !player.isInsideZone(ZoneId.PEACE)));
 			}
 		}
 		sendPacket(rc2);
@@ -13017,7 +13017,7 @@ public class Player: Playable
                 ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
                 int slot = 1;
-				foreach (ManufactureItem item in _manufactureItems.values())
+				foreach (ManufactureItem item in _manufactureItems.Values)
 				{
                     ctx.CharacterRecipeShopLists.Add(new CharacterRecipeShopList()
                     {
@@ -13312,7 +13312,7 @@ public class Player: Playable
 	{
 		int nextLevel = -1;
 		Map<long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(getClassId());
-		foreach (SkillLearn sl in skillTree.values())
+		foreach (SkillLearn sl in skillTree.Values)
 		{
 			if ((sl.getSkillId() == skill.getId()) && (nextLevel < sl.getSkillLevel()) && (getLevel() >= (sl.getGetLevel() - levelDiff)))
 			{
@@ -14030,7 +14030,7 @@ public class Player: Playable
 	public int getSummonPoints()
 	{
 		int totalPoints = 0;
-		foreach (Summon summon in getServitors().values())
+		foreach (Summon summon in getServitors().Values)
 		{
 			totalPoints += summon.getSummonPoints();
 		}
@@ -14048,7 +14048,7 @@ public class Player: Playable
 	
 	public bool canRequest(AbstractRequest request)
 	{
-		foreach (AbstractRequest r in _requests.values())
+		foreach (AbstractRequest r in _requests.Values)
 		{
 			if (!request.canWorkWith(r))
 			{
@@ -14089,7 +14089,7 @@ public class Player: Playable
 	
 	public bool hasItemRequest()
 	{
-		foreach (AbstractRequest request in _requests.values())
+		foreach (AbstractRequest request in _requests.Values)
 		{
 			if (request.isItemRequest())
 			{
@@ -14116,7 +14116,7 @@ public class Player: Playable
 	 */
 	public bool isProcessingItem(int objectId)
 	{
-		foreach (AbstractRequest request in _requests.values())
+		foreach (AbstractRequest request in _requests.Values)
 		{
 			if (request.isUsing(objectId))
 			{

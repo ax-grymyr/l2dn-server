@@ -1135,7 +1135,7 @@ public class AttackableAI: CreatureAI
 		List<Creature> result = new();
 		if (isBad)
 		{
-			foreach (AggroInfo aggro in npc.getAggroList().values())
+			foreach (AggroInfo aggro in npc.getAggroList().Values)
 			{
 				if (checkSkillTarget(skill, aggro.getAttacker()))
 				{
@@ -1192,7 +1192,7 @@ public class AttackableAI: CreatureAI
 		if (randomTarget)
 		{
 			List<Creature> result = new();
-			foreach (AggroInfo aggro in npc.getAggroList().values())
+			foreach (AggroInfo aggro in npc.getAggroList().Values)
 			{
 				if (checkTarget(aggro.getAttacker()))
 				{
@@ -1220,7 +1220,7 @@ public class AttackableAI: CreatureAI
 
 		long searchValue = long.MinValue;
 		Creature creature1 = null;
-		foreach (AggroInfo aggro in npc.getAggroList().values())
+		foreach (AggroInfo aggro in npc.getAggroList().Values)
 		{
 			if (checkTarget(aggro.getAttacker()) && aggro.getHate() > searchValue)
 			{

@@ -44,7 +44,7 @@ public class PunishmentHolder
 	{
 		foreach (Map<PunishmentType, PunishmentTask> punishments in _holder.Values)
 		{
-			foreach (PunishmentTask task in punishments.values())
+			foreach (PunishmentTask task in punishments.Values)
 			{
 				if (task.getType() == type)
 				{

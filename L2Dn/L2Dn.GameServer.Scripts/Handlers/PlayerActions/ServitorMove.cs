@@ -22,7 +22,7 @@ public class ServitorMove: IPlayerActionHandler
 		
 		if (player.getTarget() != null)
 		{
-			foreach (Summon summon in player.getServitors().values())
+			foreach (Summon summon in player.getServitors().Values)
 			{
 				if ((summon != player.getTarget()) && !summon.isMovementDisabled())
 				{

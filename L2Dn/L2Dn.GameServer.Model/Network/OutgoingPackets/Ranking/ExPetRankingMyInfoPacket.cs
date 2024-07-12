@@ -40,7 +40,7 @@ public readonly struct ExPetRankingMyInfoPacket: IOutgoingPacket
 		{
 			int typeRank = 1;
 			bool found = false;
-			foreach (StatSet ss in _rankingList.values())
+			foreach (StatSet ss in _rankingList.Values)
 			{
 				if (ss.getInt("petType", -1) == PetDataTable.getInstance().getTypeByIndex(_player.getPetEvolve(_petId).getIndex()))
 				{
@@ -59,7 +59,7 @@ public readonly struct ExPetRankingMyInfoPacket: IOutgoingPacket
 			}
 			int snapshotTypeRank = 1;
 			bool snapshotFound = false;
-			foreach (StatSet ss in _snapshotList.values())
+			foreach (StatSet ss in _snapshotList.Values)
 			{
 				if (ss.getInt("petType", -1) == PetDataTable.getInstance().getTypeByIndex(_player.getPetEvolve(_petId).getIndex()))
 				{

@@ -245,7 +245,7 @@ public class Transform: IIdentifiable
 					}
 					
 					// Add collection skills.
-					foreach (SkillLearn s in SkillTreeData.getInstance().getCollectSkillTree().values())
+					foreach (SkillLearn s in SkillTreeData.getInstance().getCollectSkillTree().Values)
 					{
 						Skill skill = player.getKnownSkill(s.getSkillId());
 						if (skill != null)

@@ -104,7 +104,7 @@ public class DoorData: DataReaderBase
 	
 	public ICollection<Door> getDoors()
 	{
-		return _doors.values();
+		return _doors.Values;
 	}
 	
 	public bool checkIfDoorsBetween(Location3D location, Location3D targetLocation, Instance? instance = null,

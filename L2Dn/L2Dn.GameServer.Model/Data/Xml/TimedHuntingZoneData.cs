@@ -136,7 +136,7 @@ public class TimedHuntingZoneData: DataReaderBase
 	
 	public ICollection<TimedHuntingZoneHolder> getAllHuntingZones()
 	{
-		return _timedHuntingZoneData.values();
+		return _timedHuntingZoneData.Values;
 	}
 	
 	public int getSize()

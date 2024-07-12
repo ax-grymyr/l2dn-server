@@ -42,7 +42,7 @@ public class BeastSpiritShot: IItemHandler
 		}
 
 		List<Summon> aliveServitor = new();
-		foreach (Summon s in playable.getServitors().values())
+		foreach (Summon s in playable.getServitors().Values)
 		{
 			if (!s.isDead())
 			{

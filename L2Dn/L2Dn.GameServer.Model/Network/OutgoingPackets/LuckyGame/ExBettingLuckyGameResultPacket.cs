@@ -33,7 +33,7 @@ public readonly struct ExBettingLuckyGameResultPacket: IOutgoingPacket
         _type = type;
         _rewards = rewards;
         _ticketCount = ticketCount;
-        _size = rewards.Count == 0 ? 0 : rewards.values().Select(i => i.Count).Sum();
+        _size = rewards.Count == 0 ? 0 : rewards.Values.Select(i => i.Count).Sum();
     }
 	
     public void WriteContent(PacketBitWriter writer)

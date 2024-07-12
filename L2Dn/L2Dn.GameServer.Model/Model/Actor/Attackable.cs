@@ -492,7 +492,7 @@ public class Attackable: Npc
 					// If this attacker have servitor, get Exp Penalty applied for the servitor.
 					float penalty = 1;
 					
-					foreach (Summon summon in attacker.getServitors().values())
+					foreach (Summon summon in attacker.getServitors().Values)
 					{
 						if (((Servitor) summon).getExpMultiplier() > 1)
 						{
@@ -948,7 +948,7 @@ public class Attackable: Npc
 		
 		// While Interacting over This Map Removing Object is Not Allowed
 		// Go through the aggroList of the Attackable
-		foreach (AggroInfo ai in _aggroList.values())
+		foreach (AggroInfo ai in _aggroList.Values)
 		{
 			if (ai == null)
 			{
@@ -982,7 +982,7 @@ public class Attackable: Npc
 		
 		// While iterating over this map removing objects is not allowed
 		// Go through the aggroList of the Attackable
-		foreach (AggroInfo ai in _aggroList.values())
+		foreach (AggroInfo ai in _aggroList.Values)
 		{
 			if (ai.checkHate(this) > maxHate)
 			{
@@ -1024,7 +1024,7 @@ public class Attackable: Npc
 		}
 		
 		List<Creature> result = new();
-		foreach (AggroInfo ai in _aggroList.values())
+		foreach (AggroInfo ai in _aggroList.Values)
 		{
 			ai.checkHate(this);
 			

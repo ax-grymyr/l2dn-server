@@ -13,7 +13,7 @@ public readonly struct ExPledgeEnemyInfoListPacket: IOutgoingPacket
     public ExPledgeEnemyInfoListPacket(Clan playerClan)
     {
         _playerClan = playerClan;
-        _warList = playerClan.getWarList().values()
+        _warList = playerClan.getWarList().Values
             .Where(it =>
                 (it.getClanWarState(playerClan) == ClanWarState.MUTUAL) ||
                 (it.getAttackerClanId() == playerClan.getId())).ToList();

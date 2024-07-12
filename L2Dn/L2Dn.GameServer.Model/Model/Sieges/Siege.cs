@@ -595,7 +595,7 @@ public class Siege: Siegable
 							}
 							if (member.hasServitors())
 							{
-								member.getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
+								member.getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
 						player.sendPacket(rc);
@@ -655,7 +655,7 @@ public class Siege: Siegable
 							}
 							if (member.hasServitors())
 							{
-								member.getServitors().values().ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
+								member.getServitors().Values.ForEach(s => rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
 						player.sendPacket(rc);

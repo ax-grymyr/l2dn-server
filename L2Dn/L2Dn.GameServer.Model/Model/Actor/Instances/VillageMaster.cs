@@ -442,7 +442,7 @@ public class VillageMaster: Folk
 							content2.Append("<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">" + ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode() + "</a><br>");
 						}
 
-						foreach (SubClassHolder holder in player.getSubClasses().values())
+						foreach (SubClassHolder holder in player.getSubClasses().Values)
 						{
 							if (checkVillageMaster(holder.getClassDefinition()))
 							{
@@ -477,7 +477,7 @@ public class VillageMaster: Folk
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyCustom.htm", player);
 						StringBuilder content3 = new StringBuilder(200);
 						int classIndex = 1;
-						foreach (SubClassHolder holder in player.getSubClasses().values())
+						foreach (SubClassHolder holder in player.getSubClasses().Values)
 						{
 							content3.Append("Sub-class " + classIndex++ +
 							                "<br><a action=\"bypass -h npc_%objectId%_Subclass 6 " +
@@ -543,7 +543,7 @@ public class VillageMaster: Folk
 					
 					if (allowAddition && !player.getSubClasses().isEmpty())
 					{
-						foreach (SubClassHolder holder in player.getSubClasses().values())
+						foreach (SubClassHolder holder in player.getSubClasses().Values)
 						{
 							if (holder.getLevel() < 75)
 							{
@@ -807,7 +807,7 @@ public class VillageMaster: Folk
 				}
 			
 				// scan for already used subclasses
-				foreach (SubClassHolder subList in player.getSubClasses().values())
+				foreach (SubClassHolder subList in player.getSubClasses().Values)
 				{
 					CharacterClass subClassId = subList.getClassDefinition();
 					if (subClassId.EqualsOrChildOf(classId))
@@ -923,7 +923,7 @@ public class VillageMaster: Folk
 			return false;
 		}
 		
-		foreach (SubClassHolder sub in player.getSubClasses().values())
+		foreach (SubClassHolder sub in player.getSubClasses().Values)
 		{
 			CharacterClass subClassId = sub.getClassDefinition();
 			if (subClassId.EqualsOrChildOf(classId))

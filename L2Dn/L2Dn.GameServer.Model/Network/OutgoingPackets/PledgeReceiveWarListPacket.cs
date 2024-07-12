@@ -13,7 +13,7 @@ public readonly struct PledgeReceiveWarListPacket: IOutgoingPacket
     {
         _clan = clan;
         _tab = tab;
-        _clanList = clan.getWarList().values();
+        _clanList = clan.getWarList().Values;
     }
 	
     public void WriteContent(PacketBitWriter writer)
