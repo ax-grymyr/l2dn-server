@@ -58,7 +58,7 @@ public class Polygon
 
     public bool contains(int x, int y)
     {
-        if (_npoints <= 2 || !_bounds.contains(x, y))
+        if (_npoints <= 2 || !_bounds.Contains(x, y))
         {
             return false;
         }
@@ -166,7 +166,7 @@ public class Polygon
 
     public bool intersects(int x, int y, int w, int h)
     {
-        if (_npoints <= 0 || !_bounds.intersects(x, y, w, h))
+        if (_npoints <= 0 || !_bounds.Intersects(x, y, w, h))
         {
             return false;
         }

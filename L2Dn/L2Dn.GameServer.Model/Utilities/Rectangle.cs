@@ -1,65 +1,50 @@
 ﻿namespace L2Dn.GameServer.Utilities;
 
-public readonly struct Rectangle(int _x, int _y, int _width, int _height)
+public readonly record struct Rectangle(int X, int Y, int Width, int Height)
 {
-    public int x => _x;
-    public int y => _y;
-    public int width => _width;
-    public int height => _height;
-
-    public bool contains(int xx, int yy)
+    public bool Contains(int x, int y)
     {
-        int w = this.width;
-        int h = this.height;
-        if ((w | h) < 0)
+        if ((Width | Height) < 0)
         {
             // At least one of the dimensions is negative...
             return false;
         }
 
         // Note: if either dimension is zero, tests below must return false...
-        int x = this.x;
-        int y = this.y;
-        if (xx < x || yy < y)
-        {
+        if (x < X || y < Y)
             return false;
-        }
 
-        w += x;
-        h += y;
-        //    overflow || intersect
-        return ((w < x || w > xx) &&
-                (h < y || h > yy));
+        int w = Width + X;
+        int h = Height + Y;
+
+        // overflow || intersect
+        return (w < X || w > x) && (h < Y || h > y);
     }
 
-    public bool intersects(int rx, int ry, int rw, int rh)
-    {
-        return intersects(new Rectangle(rx, ry, rw, rh));
-    }
+    public bool Intersects(int rx, int ry, int rw, int rh) => Intersects(new Rectangle(rx, ry, rw, rh));
 
-    public bool intersects(Rectangle r)
+    public bool Intersects(Rectangle r)
     {
-        int tw = this.width;
-        int th = this.height;
-        int rw = r.width;
-        int rh = r.height;
+        int tw = Width;
+        int th = Height;
+        int rw = r.Width;
+        int rh = r.Height;
         if (rw <= 0 || rh <= 0 || tw <= 0 || th <= 0)
-        {
             return false;
-        }
 
-        int tx = this.x;
-        int ty = this.y;
-        int rx = r.x;
-        int ry = r.y;
+        int tx = X;
+        int ty = Y;
+        int rx = r.X;
+        int ry = r.Y;
         rw += rx;
         rh += ry;
         tw += tx;
         th += ty;
-        //      overflow || intersect
-        return ((rw < rx || rw > tx) &&
-                (rh < ry || rh > ty) &&
-                (tw < tx || tw > rx) &&
-                (th < ty || th > ry));
+
+        // overflow || intersect
+        return (rw < rx || rw > tx) &&
+            (rh < ry || rh > ty) &&
+            (tw < tx || tw > rx) &&
+            (th < ty || th > ry);
     }
 }

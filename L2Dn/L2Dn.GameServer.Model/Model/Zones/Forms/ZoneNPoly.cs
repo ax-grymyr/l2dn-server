@@ -87,10 +87,10 @@ public class ZoneNPoly: ZoneForm
 
 	public override Location3D getRandomPoint()
 	{
-		int minX = _p.getBounds().x;
-		int maxX = _p.getBounds().x + _p.getBounds().width;
-		int minY = _p.getBounds().y;
-		int maxY = _p.getBounds().y + _p.getBounds().height;
+		int minX = _p.getBounds().X;
+		int maxX = _p.getBounds().X + _p.getBounds().Width;
+		int minY = _p.getBounds().Y;
+		int maxY = _p.getBounds().Y + _p.getBounds().Height;
 
 		int x = Rnd.get(minX, maxX);
 		int y = Rnd.get(minY, maxY);
