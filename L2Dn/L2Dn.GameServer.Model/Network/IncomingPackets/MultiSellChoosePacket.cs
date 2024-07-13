@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -36,8 +37,8 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 	private short _earthDefence;
 	private short _holyDefence;
 	private short _darkDefence;
-	private EnsoulOption[] _soulCrystalOptions;
-	private EnsoulOption[] _soulCrystalSpecialOptions;
+	private EnsoulOption?[] _soulCrystalOptions;
+	private EnsoulOption?[] _soulCrystalSpecialOptions;
 
 	public void ReadContent(PacketBitReader reader)
 	{
@@ -109,7 +110,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				if (player.isGM())
 				{
 					player.sendMessage("Multisell " + _listId +
-					                   " is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
+						" is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
 				}
 				else
 				{
@@ -119,13 +120,13 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		if ((_soulCrystalOptions != null && CommonUtil.contains(_soulCrystalOptions, null)) ||
-		    (_soulCrystalSpecialOptions != null && CommonUtil.contains(_soulCrystalSpecialOptions, null)))
+		if (_soulCrystalOptions != null && _soulCrystalOptions.ContainsNull() ||
+		    (_soulCrystalSpecialOptions != null && _soulCrystalSpecialOptions.ContainsNull()))
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested multisell entry with invalid soul crystal options. Multisell: " +
-			                           _listId + " entry: " + _entryId);
-			
+				" requested multisell entry with invalid soul crystal options. Multisell: " +
+				_listId + " entry: " + _entryId);
+
 			player.setMultiSell(null);
 			return ValueTask.CompletedTask;
 		}
@@ -134,27 +135,27 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		if (entries.IsDefaultOrEmpty)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested empty multisell entry. Multisell: " + _listId + " entry: " +
-			                           _entryId);
-			
+				" requested empty multisell entry. Multisell: " + _listId + " entry: " +
+				_entryId);
+
 			return ValueTask.CompletedTask;
 		}
 
 		if (entries.IsDefaultOrEmpty)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested empty multisell entry. Multisell: " + _listId + " entry: " +
-			                           _entryId);
-			
+				" requested empty multisell entry. Multisell: " + _listId + " entry: " +
+				_entryId);
+
 			return ValueTask.CompletedTask;
 		}
 
 		if (_entryId < 0 || _entryId >= entries.Length)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
-			                           _entryId);
-			
+				" requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
+				_entryId);
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -162,9 +163,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		if (entry == null)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " requested inexistant prepared multisell entry. Multisell: " + _listId +
-			                           " entry: " + _entryId);
-			
+				" requested inexistant prepared multisell entry. Multisell: " + _listId +
+				" entry: " + _entryId);
+
 			player.setMultiSell(null);
 			return ValueTask.CompletedTask;
 		}
@@ -172,9 +173,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		if (!entry.isStackable() && _amount > 1)
 		{
 			PacketLogger.Instance.Warn("Character: " + player.getName() +
-			                           " is trying to set amount > 1 on non-stackable multisell. Id: " + _listId +
-			                           " entry: " + _entryId);
-			
+				" is trying to set amount > 1 on non-stackable multisell. Id: " + _listId +
+				" entry: " + _entryId);
+
 			player.setMultiSell(null);
 			return ValueTask.CompletedTask;
 		}
@@ -223,42 +224,42 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
 					    return ValueTask.CompletedTask;
 					}
-			
+
 					continue;
 				}
-				
-				ItemTemplate template = ItemData.getInstance().getTemplate(product.getId());
+
+				ItemTemplate? template = ItemData.getInstance().getTemplate(product.getId());
 				if (template == null)
 				{
 					player.setMultiSell(null);
 				    return ValueTask.CompletedTask;
 				}
-				
+
 				long totalCount = checked(list.getProductCount(product) * _amount);
 				if (totalCount < 1 || totalCount > int.MaxValue)
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 				    return ValueTask.CompletedTask;
 				}
-				
+
 				if (!template.isStackable() || player.getInventory().getItemByItemId(product.getId()) == null)
 				{
 					slots++;
 				}
-				
+
 				weight += totalCount * template.getWeight();
 				if (!inventory.validateWeight(weight))
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (slots > 0 && !inventory.validateCapacity(slots))
 				{
 					player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				// If this is a chance multisell, reset slots and weight because only one item should be selected.
 				// We just need to check if conditions for every item is met.
 				if (list.isChanceMultisell())
@@ -267,7 +268,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					weight = 0;
 				}
 			}
-			
+
 			// Check for enchanted item if its present in the inventory.
 			if (itemEnchantment != null && inventory.getItemByObjectId(itemEnchantment.getObjectId()) == null)
 			{
@@ -276,7 +277,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				player.sendPacket(sm);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Check for enchanted level and ingredient count requirements.
 			List<ItemChanceHolder> summedIngredients = new();
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
@@ -284,20 +285,21 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				bool added = false;
 				foreach (ItemChanceHolder summedIngredient in summedIngredients)
 				{
-					if (summedIngredient.getId() == ingredient.getId() && summedIngredient.getEnchantmentLevel() == ingredient.getEnchantmentLevel())
+					if (summedIngredient.getId() == ingredient.getId() &&
+					    summedIngredient.getEnchantmentLevel() == ingredient.getEnchantmentLevel())
 					{
 						summedIngredients.Add(new ItemChanceHolder(ingredient.getId(), ingredient.getChance(), ingredient.getCount() + summedIngredient.getCount(), ingredient.getEnchantmentLevel(), ingredient.isMaintainIngredient()));
 						summedIngredients.Remove(summedIngredient);
 						added = true;
 					}
 				}
-				
+
 				if (!added)
 				{
 					summedIngredients.Add(ingredient);
 				}
 			}
-			
+
 			foreach (ItemChanceHolder ingredient in summedIngredients)
 			{
 				if (ingredient.getEnchantmentLevel() > 0)
@@ -310,7 +312,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 							found++;
 						}
 					}
-					
+
 					if (found < ingredient.getCount())
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
@@ -324,9 +326,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				    return ValueTask.CompletedTask;
 				}
 			}
-			
+
 			bool itemEnchantmentProcessed = itemEnchantment == null;
-			
+
 			// Take all ingredients
 			List<ItemInfo> itemsToUpdate = new List<ItemInfo>();
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
@@ -335,7 +337,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					continue;
 				}
-				
+
 				long totalCount = checked(list.getIngredientCount(ingredient) * _amount);
 				SpecialItemType specialItem = (SpecialItemType)ingredient.getId();
 				if (Enum.IsDefined(specialItem))
@@ -452,7 +454,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					}
 				}
 			}
-			
+
 			// Generate the appropriate items
 			List<ItemChanceHolder> products = entry.getProducts();
 			if (list.isChanceMultisell())
@@ -460,7 +462,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				ItemChanceHolder randomProduct = ItemChanceHolder.getRandomHolder(entry.getProducts());
 				products = randomProduct != null ? [randomProduct] : [];
 			}
-			
+
 			foreach (ItemChanceHolder product in products)
 			{
 				long totalCount = checked(list.getProductCount(product) * _amount);
@@ -507,7 +509,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					// Give item.
 					Item addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
-					
+
 					// Check if the newly given item should be enchanted.
 					if (itemEnchantmentProcessed && list.isMaintainEnchantment() && itemEnchantment != null && 
 					    addedItem.isEquipable() && addedItem.getTemplate().GetType() == itemEnchantment.getItem().GetType())
@@ -564,19 +566,19 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 								addedItem.addSpecialAbility(ensoul, 0, 2, false);
 							}
 						}
-						
+
 						addedItem.updateDatabase(true);
-						
+
 						// Mark that we have already upgraded the item.
 						itemEnchantmentProcessed = false;
 					}
-					
+
 					if (product.getEnchantmentLevel() > 0)
 					{
 						addedItem.setEnchantLevel(product.getEnchantmentLevel());
 						addedItem.updateDatabase(true);
 					}
-					
+
 					if (addedItem.getCount() > 1)
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
@@ -597,17 +599,17 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						sm.Params.addItemName(addedItem);
 						player.sendPacket(sm);
 					}
-					
+
 					// Inventory update.
 					itemsToUpdate.Add(new ItemInfo(addedItem));
 					player.sendPacket(new ExMultiSellResultPacket(true, 0, (int) addedItem.getCount()));
 				}
 			}
-			
+
 			// Update inventory and weight.
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(itemsToUpdate);
 			player.sendInventoryUpdate(iu);
-			
+
 			// Finally, give the tax to the castle.
 			if (npc != null && list.isApplyTaxes())
 			{
@@ -616,7 +618,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					if (ingredient.getId() == Inventory.ADENA_ID)
 					{
-						taxPaid += (long)((ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate()) * _amount);
+						taxPaid += (long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount);
 					}
 				}
 				if (taxPaid > 0)
@@ -630,7 +632,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Re-send multisell after successful exchange of inventory-only shown items.
 		if (list.isInventoryOnly())
 		{
@@ -639,7 +641,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	/**
 	 * @param player
 	 * @param list
@@ -664,19 +666,19 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
 						return false;
 					}
-					
+
 					if (!player.isClanLeader())
 					{
 						player.sendPacket(SystemMessageId.AVAILABLE_ONLY_TO_THE_CLAN_LEADER);
 						return false;
 					}
-					
+
 					if (clan.getReputationScore() < totalCount)
 					{
 						player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 						return false;
 					}
-					
+
 					return true;
 				}
 				case SpecialItemType.FAME:
@@ -732,7 +734,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return false;
 		}
-		
+
 		return true;
     }
 }

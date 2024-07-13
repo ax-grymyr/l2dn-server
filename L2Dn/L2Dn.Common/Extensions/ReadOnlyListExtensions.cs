@@ -2,6 +2,18 @@
 
 public static class ReadOnlyListExtensions
 {
+    public static bool ContainsNull<T>(this IReadOnlyList<T?> collection)
+        where T: class
+    {
+        for (int index = 0; index < collection.Count; index++)
+        {
+            if (collection[index] is null)
+                return true;
+        }
+
+        return false;
+    }
+
     public static void ForEach<T>(this IReadOnlyList<T> collection, Action<T> action)
     {
         for (int index = 0; index < collection.Count; index++)
