@@ -70,7 +70,7 @@ public class AdminInstance: IAdminCommandHandler
 			}
 			case "admin_instancecreate":
 			{
-				int templateId = CommonUtil.parseNextInt(st, 0);
+				int templateId = st.nextToken().Trim().TryParseOrDefault(0);
 				InstanceTemplate? template = InstanceManager.getInstance().getInstanceTemplate(templateId);
 				if (template != null)
 				{
@@ -140,8 +140,8 @@ public class AdminInstance: IAdminCommandHandler
 			}
 			case "admin_instanceteleport":
 			{
-				Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
-				if (instance != null)
+				Instance? instance = InstanceManager.getInstance().getInstance(st.nextToken().Trim().TryParseOrDefault(-1));
+				if (instance is not null)
 				{
 					Location? loc = instance.getEnterLocation();
 					if (loc != null)
@@ -159,7 +159,7 @@ public class AdminInstance: IAdminCommandHandler
 			}
 			case "admin_instancedestroy":
 			{
-				Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
+				Instance? instance = InstanceManager.getInstance().getInstance(st.nextToken().Trim().TryParseOrDefault(-1));
 				if (instance != null)
 				{
 					instance.getPlayers().ForEach(player => player.sendPacket(new ExShowScreenMessagePacket("Your instance has been destroyed by Game Master!", 10000)));

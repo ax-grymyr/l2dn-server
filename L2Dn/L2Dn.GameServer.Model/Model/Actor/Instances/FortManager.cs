@@ -1094,13 +1094,14 @@ public class FortManager: Merchant
 					return;
 				}
 
-				int funcLvl = (val.Length >= 4) ? val[3..].Parse(-1) : -1;
+				int funcLvl = (val.Length >= 4) ? val[3..].TryParseOrDefault(-1) : -1;
 				if (func.getLevel() == funcLvl)
 				{
 					TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), val);
 					if (holder is not null)
 					{
-						holder.doTeleport(player, this, CommonUtil.parseNextInt(st, -1));
+						int locId = st.nextToken().Trim().TryParseOrDefault(-1);
+						holder.doTeleport(player, this, locId);
 					}
 				}
 

@@ -1,4 +1,6 @@
-﻿namespace L2Dn.Extensions;
+﻿using System.Globalization;
+
+namespace L2Dn.Extensions;
 
 public static class StringExtensions
 {
@@ -27,12 +29,12 @@ public static class StringExtensions
         return s;
     }
 
-    public static T Parse<T>(this string? s, T defaultValue, IFormatProvider? provider = null)
+    public static T TryParseOrDefault<T>(this string? s, T defaultValue, IFormatProvider? provider = null)
         where T: IParsable<T>
     {
         if (s is null)
             return defaultValue;
 
-        return T.TryParse(s, provider, out T? result) ? result : defaultValue;
+        return T.TryParse(s, provider ?? CultureInfo.InvariantCulture, out T? result) ? result : defaultValue;
     }
 }

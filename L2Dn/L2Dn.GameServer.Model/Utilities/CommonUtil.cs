@@ -70,17 +70,4 @@ public static class CommonUtil
 
 		return false;
 	}
-
-	public static int parseNextInt(StringTokenizer st, int defaultVal)
-	{
-		try
-		{
-			string value = st.nextToken().Trim();
-			return int.Parse(value);
-		}
-		catch (Exception e)
-		{
-			return defaultVal;
-		}
-	}
 }

@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
@@ -175,7 +176,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 					}
 					case "list":
 					{
-						int page = CommonUtil.parseNextInt(st, 0);
+						int page = st.nextToken().Trim().TryParseOrDefault(0);
 						buildHtmlWindow(activeChar, page);
 						return false;
 					}
