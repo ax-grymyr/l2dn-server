@@ -107,7 +107,7 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public bool checkMultiEnchantingItemsByObjectId(int objectId)
 	{
-		return _multiEnchantingItems.containsValue(objectId);
+		return _multiEnchantingItems.Values.Contains(objectId);
 	}
 	
 	public int getMultiEnchantingItemsCount()

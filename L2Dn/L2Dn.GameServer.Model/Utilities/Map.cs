@@ -40,11 +40,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         }
     }
 
-    public bool containsValue(TValue value)
-    {
-        return Values.Contains(value);
-    }
-
     public string toString()
     {
         // TODO:
