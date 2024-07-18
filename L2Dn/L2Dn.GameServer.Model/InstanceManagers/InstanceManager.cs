@@ -490,13 +490,11 @@ public class InstanceManager: DataReaderBase
 	{
 		// When player don't have any instance penalty
 		Map<int, DateTime>? instanceTimes = _playerTimes.GetValueOrDefault(player.getObjectId());
-		if (instanceTimes == null || instanceTimes.isEmpty())
-		{
-			return new();
-		}
-		
+		if (instanceTimes == null || instanceTimes.Count == 0)
+			return [];
+
 		// Find passed penalty
-		List<int> invalidPenalty = new();
+		List<int> invalidPenalty = [];
 		foreach (var entry in instanceTimes)
 		{
 			if (entry.Value <= DateTime.UtcNow)

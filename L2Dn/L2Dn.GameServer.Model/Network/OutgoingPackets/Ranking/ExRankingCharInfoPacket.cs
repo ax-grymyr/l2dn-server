@@ -23,7 +23,7 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RANKING_CHAR_INFO);
 
-        if (!_playerList.isEmpty())
+        if (_playerList.Count != 0)
         {
             foreach (int id in _playerList.Keys)
             {

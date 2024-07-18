@@ -16,7 +16,7 @@ public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_OLYMPIAD_HERO_AND_LEGEND_INFO);
 		
-		if (!Hero.getInstance().getHeroes().isEmpty())
+		if (Hero.getInstance().getHeroes().Count != 0)
 		{
 			try
 			{

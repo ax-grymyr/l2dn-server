@@ -231,7 +231,7 @@ public class MinionList
 				initializeNpc(_list._master, _minion);
 				
 				// assist master
-				if (!_list._master.getAggroList().isEmpty())
+				if (_list._master.getAggroList().Count != 0)
 				{
 					_minion.getAggroList().putAll(_list._master.getAggroList());
 					_minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _minion.getAggroList().Keys.First());

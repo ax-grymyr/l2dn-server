@@ -237,7 +237,7 @@ public class ExtractableItems: IItemHandler
 			}
 		}
 		
-		if (extractedItems.isEmpty() && !specialReward)
+		if (extractedItems.Count == 0 && !specialReward)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
 		}

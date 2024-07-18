@@ -36,7 +36,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (player.getPremiumItemList().isEmpty())
+        if (player.getPremiumItemList().Count == 0)
         {
             Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Player: " + player.getName() + " try to get item with empty list!", Config.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
@@ -74,7 +74,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
             player.deletePremiumItem(_itemNum);
         }
 		
-        if (player.getPremiumItemList().isEmpty())
+        if (player.getPremiumItemList().Count == 0)
         {
             player.sendPacket(SystemMessageId.THERE_ARE_NO_MORE_DIMENSIONAL_ITEMS_TO_BE_FOUND);
         }

@@ -42,7 +42,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 		writer.WriteInt32((int)_classId); // class id (default 148) or caller class id for personal rank
 		writer.WriteInt32(_serverId); // 0 - all servers, server id - for caller server
 		writer.WriteInt32(933); // unk, 933 all time
-		if (!_playerList.isEmpty())
+		if (_playerList.Count != 0)
 		{
 			writeFilteredRankingData(writer, _category, _category.getScopeByGroup(_rankingType), _classId);
 		}
@@ -71,7 +71,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 
 	private void writeScopeData(PacketBitWriter writer, RankingOlympiadScope scope, IEnumerable<System.Collections.Generic.KeyValuePair<int, StatSet>> list, IEnumerable<System.Collections.Generic.KeyValuePair<int, StatSet>> snapshot)
 	{
-		List<System.Collections.Generic.KeyValuePair<int, StatSet>> limited;
+		List<KeyValuePair<int, StatSet>> limited;
 		switch (scope)
 		{
 			case RankingOlympiadScope.TOP_100:
@@ -102,7 +102,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 			}
 			default:
 			{
-				limited = new List<System.Collections.Generic.KeyValuePair<int, StatSet>>();
+				limited = new List<KeyValuePair<int, StatSet>>();
 				break;
 			}
 		}

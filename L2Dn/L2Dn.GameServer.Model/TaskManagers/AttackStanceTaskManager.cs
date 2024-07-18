@@ -34,7 +34,7 @@ public class AttackStanceTaskManager: Runnable
 		
 		_working = true;
 		
-		if (!CREATURE_ATTACK_STANCES.isEmpty())
+		if (CREATURE_ATTACK_STANCES.Count != 0)
 		{
 			try
 			{

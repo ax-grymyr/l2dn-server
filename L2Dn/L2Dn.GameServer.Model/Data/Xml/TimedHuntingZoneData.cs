@@ -32,7 +32,7 @@ public class TimedHuntingZoneData: DataReaderBase
 		document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(false)).Elements("zone")
 			.ForEach(parseElement);
 		
-		if (!_timedHuntingZoneData.isEmpty())
+		if (_timedHuntingZoneData.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _timedHuntingZoneData.Count + " timed hunting zones.");
 		}

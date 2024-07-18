@@ -39,7 +39,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 		writer.WriteByte((byte)_scope);
 		writer.WriteInt32(_race);
 		writer.WriteInt32((int)_player.getClassId());
-		if (!_playerList.isEmpty())
+		if (_playerList.Count != 0)
 		{
 			switch (_group)
 			{
@@ -59,7 +59,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							writer.WriteInt32(player.getInt("classId"));
 							writer.WriteInt32(player.getInt("race"));
 							writer.WriteInt32(id); // server rank
-							if (!_snapshotList.isEmpty())
+							if (_snapshotList.Count != 0)
 							{
 								foreach (int id2 in _snapshotList.Keys)
 								{
@@ -109,7 +109,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									writer.WriteInt32(plr.getInt("classId"));
 									writer.WriteInt32(plr.getInt("race"));
 									writer.WriteInt32(id2); // server rank
-									if (!_snapshotList.isEmpty())
+									if (_snapshotList.Count != 0)
 									{
 										foreach (int id3 in _snapshotList.Keys)
 										{
@@ -159,7 +159,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
 								writer.WriteInt32(i); // server rank
-								if (!_snapshotList.isEmpty())
+								if (_snapshotList.Count != 0)
 								{
 									Map<int, StatSet> snapshotRaceList = new();
 									int j = 1;
@@ -272,7 +272,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							writer.WriteInt32(player.getInt("classId"));
 							writer.WriteInt32(player.getInt("race"));
 							writer.WriteInt32(id); // clan rank
-							if (!_snapshotList.isEmpty())
+							if (_snapshotList.Count != 0)
 							{
 								foreach (int id2 in _snapshotList.Keys)
 								{
@@ -331,7 +331,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
 								writer.WriteInt32(id); // friend rank
-								if (!_snapshotList.isEmpty())
+								if (_snapshotList.Count != 0)
 								{
 									foreach (int id2 in _snapshotList.Keys)
 									{
@@ -370,7 +370,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						writer.WriteInt32((int)_player.getBaseClass());
 						writer.WriteInt32((int)_player.getRace());
 						writer.WriteInt32(1); // clan rank
-						if (!_snapshotList.isEmpty())
+						if (_snapshotList.Count != 0)
 						{
 							foreach (int id in _snapshotList.Keys)
 							{

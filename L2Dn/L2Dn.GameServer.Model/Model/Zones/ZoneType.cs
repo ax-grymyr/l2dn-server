@@ -524,7 +524,7 @@ public abstract class ZoneType: IEventContainerProvider
 	public void broadcastPacket<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if (_characterList.isEmpty())
+		if (_characterList.Count == 0)
 		{
 			return;
 		}
@@ -621,7 +621,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public void movePlayersTo(Location loc)
 	{
-		if (_characterList.isEmpty())
+		if (_characterList.Count == 0)
 		{
 			return;
 		}

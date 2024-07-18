@@ -1390,7 +1390,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public TimeSpan? getReuseDelayOnGroup(int group)
 	{
-		if (group > 0 && !_reuseTimeStampsItems.isEmpty())
+		if (group > 0 && _reuseTimeStampsItems.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			foreach (TimeStamp ts in _reuseTimeStampsItems.Values)
@@ -1564,7 +1564,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return true;
 		}
 		
-		if (_disabledSkills.isEmpty())
+		if (_disabledSkills.Count == 0)
 		{
 			return false;
 		}
@@ -2100,7 +2100,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool hasSummon()
 	{
-		return getPet() != null || !getServitors().isEmpty();
+		return getPet() != null || getServitors().Count != 0;
 	}
 	
 	/**
@@ -2121,7 +2121,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool hasServitors()
 	{
-		return !getServitors().isEmpty();
+		return getServitors().Count != 0;
 	}
 	
 	public void removeServitor(int objectId)
@@ -2973,7 +2973,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isCastingNow()
 	{
-		return !_skillCasters.isEmpty();
+		return _skillCasters.Count != 0;
 	}
 	
 	public bool isCastingNow(SkillCastingType skillCastingType)
@@ -4338,14 +4338,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (isPlayer())
 		{
 			Player player = getActingPlayer();
-			while (!_skills.isEmpty())
+			while (_skills.Count != 0)
 			{
 				player.removeSkill(_skills.First().Value);
 			}
 		}
 		else
 		{
-			while (!_skills.isEmpty())
+			while (_skills.Count != 0)
 			{
 				removeSkill(_skills.First().Value, true);
 			}
@@ -5104,7 +5104,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	
 	public bool hasTriggerSkills()
 	{
-		return _triggerSkills != null && !_triggerSkills.isEmpty();
+		return _triggerSkills != null && _triggerSkills.Count != 0;
 	}
 	
 	public Map<int, OptionSkillHolder> getTriggerSkills()

@@ -25,7 +25,7 @@ public class PlayerAutoSaveTaskManager: Runnable
 		}
 		_working = true;
 		
-		if (!PLAYER_TIMES.isEmpty())
+		if (PLAYER_TIMES.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			List<Player> toRemove = new List<Player>();

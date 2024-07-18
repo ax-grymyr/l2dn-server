@@ -33,7 +33,7 @@ public class PrimeShopData: DataReaderBase
 		document.Elements("list").Where(el => el.Attribute("enabled").GetBoolean(false)).Elements("item")
 			.ForEach(parseElement);
 		
-		if (!_primeItems.isEmpty())
+		if (_primeItems.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _primeItems.Count + " items.");
 		}

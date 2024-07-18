@@ -26,7 +26,7 @@ public sealed class CreatureAttackTaskManager
 	{
 		public void run()
 		{
-			if (creatureAttackData.isEmpty())
+			if (creatureAttackData.Count == 0)
 				return;
 			
 			DateTime currentTime = DateTime.UtcNow;
@@ -64,7 +64,7 @@ public sealed class CreatureAttackTaskManager
 	{
 		public void run()
 		{
-			if (creatureFinishData.isEmpty())
+			if (creatureFinishData.Count == 0)
 				return;
 			
 			DateTime currentTime = DateTime.UtcNow;

@@ -567,7 +567,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		Set<SkillLearn> result = new();
 		Map<long, SkillLearn> skills = getCompleteClassSkillTree(classId);
-		if (skills.isEmpty())
+		if (skills.Count == 0)
 		{
 			// The Skill Tree for this class is undefined.
 			_logger.Warn(GetType().Name + ": Skilltree for class " + classId + " is not defined!");
@@ -768,7 +768,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		List<SkillLearn> result = new();
 		Map<long, SkillLearn> skills = getCompleteClassSkillTree(player.getClassId());
-		if (skills.isEmpty())
+		if (skills.Count == 0)
 		{
 			// The Skill Tree for this class is undefined, so we return an empty list.
 			_logger.Warn(GetType().Name + ": Skill Tree for this class Id(" + player.getClassId() + ") is not defined!");
@@ -1421,7 +1421,7 @@ public class SkillTreeData: DataReaderBase
 	public int getMinLevelForNewSkill(Player player, Map<long, SkillLearn> skillTree)
 	{
 		int minLevel = 0;
-		if (skillTree.isEmpty())
+		if (skillTree.Count == 0)
 		{
 			_logger.Warn(GetType().Name + ": SkillTree is not defined for getMinLevelForNewSkill!");
 		}
@@ -1441,8 +1441,8 @@ public class SkillTreeData: DataReaderBase
 	public ICollection<SkillLearn> getNextAvailableSkills(Player player, CharacterClass classId, bool includeByFs, bool includeAutoGet)
 	{
 		Map<long, SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
-		Set<SkillLearn> result = new();
-		if (completeClassSkillTree.isEmpty())
+		Set<SkillLearn> result = [];
+		if (completeClassSkillTree.Count == 0)
 		{
 			return result;
 		}

@@ -27,7 +27,7 @@ public class DecayTaskManager: Runnable
 		}
 		_working = true;
 
-		if (!DECAY_SCHEDULES.isEmpty())
+		if (DECAY_SCHEDULES.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			List<Creature> creatures = DECAY_SCHEDULES.Where(c => currentTime > c.Value).Select(x => x.Key).ToList();

@@ -798,7 +798,7 @@ public class Olympiad
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	protected void saveNobleData()
 	{
-		if (NOBLES.isEmpty())
+		if (NOBLES.Count == 0)
 		{
 			return;
 		}
@@ -1026,7 +1026,7 @@ public class Olympiad
 	
 	private int getOlympiadTradePoint(int objectId)
 	{
-		if ((_period != 1) || NOBLES_RANK.isEmpty())
+		if ((_period != 1) || NOBLES_RANK.Count == 0)
 		{
 			return 0;
 		}

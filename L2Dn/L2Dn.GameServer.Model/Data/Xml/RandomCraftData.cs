@@ -19,8 +19,8 @@ public class RandomCraftData: DataReaderBase
 	private static readonly Map<int, RandomCraftExtractDataHolder> EXTRACT_DATA = new();
 	private static readonly Map<int, RandomCraftRewardDataHolder> REWARD_DATA = new();
 	
-	private RandomCraftRewardDataHolder[] _randomRewards = Array.Empty<RandomCraftRewardDataHolder>();
-	private int _randomRewardIndex = 0;
+	private RandomCraftRewardDataHolder[] _randomRewards = [];
+	private int _randomRewardIndex;
 	
 	protected RandomCraftData()
 	{
@@ -95,7 +95,7 @@ public class RandomCraftData: DataReaderBase
 
 	public bool isEmpty()
 	{
-		return REWARD_DATA.isEmpty();
+		return REWARD_DATA.Count == 0;
 	}
 	
 	[MethodImpl(MethodImplOptions.Synchronized)] 

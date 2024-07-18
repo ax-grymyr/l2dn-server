@@ -46,7 +46,7 @@ public class DispelBySlot: AbstractEffect
 
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (_dispelAbnormals.isEmpty())
+		if (_dispelAbnormals.Count == 0)
 		{
 			return;
 		}

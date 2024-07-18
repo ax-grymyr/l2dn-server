@@ -227,7 +227,7 @@ public class SchemeBuffer : Npc
 	{
 		StringBuilder sb = new StringBuilder(200);
 		Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
-		if ((schemes == null) || schemes.isEmpty())
+		if ((schemes == null) || schemes.Count == 0)
 		{
 			sb.Append("<font color=\"LEVEL\">You haven't defined any scheme.</font>");
 		}

@@ -69,7 +69,7 @@ public class StatSet
 	 */
 	public bool isEmpty()
 	{
-		return _set.isEmpty();
+		return _set.Count == 0;
 	}
 	
 	/**
@@ -439,7 +439,7 @@ public class StatSet
 			return;
 		}
 		
-		if ((map == null) || map.isEmpty())
+		if ((map == null) || map.Count == 0)
 		{
 			remove(key);
 			return;
@@ -917,7 +917,7 @@ public class StatSet
 		}
 		
 		Map<K, V> originalList = (Map<K, V>)obj;
-		if (!originalList.isEmpty() && ((!originalList.Keys.All(k=>k is K)) || 
+		if (originalList.Count != 0 && ((!originalList.Keys.All(k=>k is K)) ||
 		                                (!originalList.Values.All(v=>v is V))))
 		{
 			LOGGER.Warn($"getMap<{typeof(K).Name}, {typeof(V).Name}>(\"{key}\") requested with wrong type: " +

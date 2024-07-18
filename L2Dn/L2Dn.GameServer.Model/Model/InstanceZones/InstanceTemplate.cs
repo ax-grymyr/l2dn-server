@@ -149,7 +149,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 */
 	public void setParameters(Map<string, object> set)
 	{
-		if (!set.isEmpty())
+		if (set.Count != 0)
 		{
 			_parameters = new StatSet(set);
 		}

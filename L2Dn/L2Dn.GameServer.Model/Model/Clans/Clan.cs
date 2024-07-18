@@ -1599,7 +1599,7 @@ public class Clan: IIdentifiable, INamable
 	
 	public bool isAtWar()
 	{
-		return !_atWarWith.isEmpty();
+		return _atWarWith.Count != 0;
 	}
 	
 	public Map<int, ClanWar> getWarList()

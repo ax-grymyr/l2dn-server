@@ -33,7 +33,7 @@ public class PunishmentHolder
 		{
 			task.stopPunishment();
 			punishments.remove(task.getType());
-			if (punishments.isEmpty())
+			if (punishments.Count == 0)
 			{
 				_holder.remove(key);
 			}
@@ -51,7 +51,7 @@ public class PunishmentHolder
 					task.stopPunishment();
 					string key = task.getKey();
 					punishments.remove(task.getType());
-					if (punishments.isEmpty())
+					if (punishments.Count == 0)
 					{
 						_holder.remove(key);
 					}

@@ -346,7 +346,7 @@ public class PetitionManager
 			"<td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" " +
 			"height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
 
-		if (_pendingPetitions.isEmpty())
+		if (_pendingPetitions.Count == 0)
 		{
 			content.Append("<tr><td>There are no currently pending petitions.</td></tr>");
 		}
@@ -455,6 +455,6 @@ public class PetitionManager
 	
 	private static class SingletonHolder
 	{
-		public static readonly PetitionManager INSTANCE = new PetitionManager();
+		public static readonly PetitionManager INSTANCE = new();
 	}
 }

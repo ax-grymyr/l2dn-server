@@ -56,14 +56,14 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 		document.Elements("list").Elements("discount").Elements("item").ForEach(parseDiscountElement);
 		document.Elements("list").Elements("upgrade").ForEach(parseUpgradeElement);
 		
-		if (!_upgrades.isEmpty())
+		if (_upgrades.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.Count + " upgrade-normal equipment data. Adena commission is " + _commission + ".");
 		}
 		
-		if (!_discount.isEmpty())
+		if (_discount.Count != 0)
 		{
-			LOGGER.Info(GetType().Name + ": Loaded " + _discount.size() + " upgrade-normal discount data.");
+			LOGGER.Info(GetType().Name + ": Loaded " + _discount.Count + " upgrade-normal discount data.");
 		}
 	}
 

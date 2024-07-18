@@ -33,7 +33,7 @@ public class ChallengePoint
 	{
 		// LOGGER.info("Storing Challenge Points for " + _owner);
 		
-		if (_challengePoints.isEmpty())
+		if (_challengePoints.Count == 0)
 		{
 			return;
 		}

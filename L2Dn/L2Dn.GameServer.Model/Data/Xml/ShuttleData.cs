@@ -30,7 +30,7 @@ public class ShuttleData: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)] 
 	public void load()
 	{
-		if (!_shuttleInstances.isEmpty())
+		if (_shuttleInstances.Count != 0)
 		{
 			foreach (Shuttle shuttle in _shuttleInstances.Values)
 			{

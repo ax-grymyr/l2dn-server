@@ -4789,7 +4789,7 @@ public class Player: Playable
 		// }
 		
 		// Unsummon Cubics
-		if (!_cubics.isEmpty())
+		if (_cubics.Count != 0)
 		{
 			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
@@ -5286,18 +5286,13 @@ public class Player: Playable
 		return _servitors;
 	}
 	
-	public Summon getAnyServitor()
+	public Summon? getAnyServitor()
 	{
 		return getServitors().Values.FirstOrDefault();
 	}
 	
-	public Summon getFirstServitor()
+	public Summon? getFirstServitor()
 	{
-		if (getServitors().isEmpty())
-		{
-			return null;
-		}
-		
 		return getServitors().Values.FirstOrDefault();
 	}
 	
@@ -5546,7 +5541,7 @@ public class Player: Playable
 	
 	public bool hasManufactureShop()
 	{
-		return (_manufactureItems != null) && !_manufactureItems.isEmpty();
+		return (_manufactureItems != null) && _manufactureItems.Count != 0;
 	}
 	
 	/**
@@ -8836,7 +8831,7 @@ public class Player: Playable
 	
 	public void stopCubics()
 	{
-		if (!_cubics.isEmpty())
+		if (_cubics.Count != 0)
 		{
 			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
@@ -8845,7 +8840,7 @@ public class Player: Playable
 	
 	public void stopCubicsByOthers()
 	{
-		if (!_cubics.isEmpty())
+		if (_cubics.Count != 0)
 		{
 			bool broadcast = false;
 			foreach (Cubic cubic in _cubics.Values)
@@ -9222,7 +9217,7 @@ public class Player: Playable
 		// Remove Hide.
 		getEffectList().stopEffects(AbnormalType.HIDE);
 		
-		if (!_cubics.isEmpty())
+		if (_cubics.Count != 0)
 		{
 			_cubics.Values.ForEach(x => x.deactivate());
 			_cubics.Clear();
@@ -9850,7 +9845,7 @@ public class Player: Playable
 	public bool modifySubClass(int classIndex, CharacterClass newClassId, bool isDualClass)
 	{
 		// Notify to scripts before class is removed.
-		if (!getSubClasses().isEmpty() && Events.HasSubscribers<OnPlayerProfessionCancel>())
+		if (getSubClasses().Count != 0 && Events.HasSubscribers<OnPlayerProfessionCancel>())
 		{
 			CharacterClass classId = getSubClasses().get(classIndex).getClassDefinition();
 			Events.NotifyAsync(new OnPlayerProfessionCancel(this, classId));
@@ -9930,7 +9925,7 @@ public class Player: Playable
 		{
 			return false;
 		}
-		if (_subClasses.isEmpty())
+		if (_subClasses.Count == 0)
 		{
 			return false;
 		}
@@ -12106,7 +12101,7 @@ public class Player: Playable
 	
 	public bool hasTransformSkills()
 	{
-		return !_transformSkills.isEmpty();
+		return _transformSkills.Count != 0;
 	}
 	
 	public ICollection<Skill> getAllTransformSkills()
@@ -12134,7 +12129,7 @@ public class Player: Playable
 	public ICollection<Skill> getSkillList()
 	{
 		ICollection<Skill> currentSkills = getAllSkills();
-		if (isTransformed() && !_transformSkills.isEmpty())
+		if (isTransformed() && _transformSkills.Count != 0)
 		{
 			// Include transformation skills and those skills that are allowed during transformation.
 			List<Skill> filteredSkills = new();
@@ -14084,7 +14079,7 @@ public class Player: Playable
 	 */
 	public bool hasRequests()
 	{
-		return !_requests.isEmpty();
+		return _requests.Count != 0;
 	}
 	
 	public bool hasItemRequest()

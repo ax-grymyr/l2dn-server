@@ -25,7 +25,7 @@ public class ItemLifeTimeTaskManager: Runnable
 		}
 		_working = true;
 		
-		if (!ITEMS.isEmpty())
+		if (ITEMS.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			List<Item> itemsToDelete = ITEMS.Where(x => currentTime > x.Value).Select(x => x.Key).ToList();

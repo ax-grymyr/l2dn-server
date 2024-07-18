@@ -561,7 +561,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExShowScreenMessagePacket(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME));
 		}
 		
-		if (!player.getPremiumItemList().isEmpty())
+		if (player.getPremiumItemList().Count != 0)
 		{
 			connection.Send(ExNotifyPremiumItemPacket.STATIC_PACKET);
 		}

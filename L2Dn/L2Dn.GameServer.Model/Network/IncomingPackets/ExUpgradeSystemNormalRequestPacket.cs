@@ -102,7 +102,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			foreach (ItemHolder material in upgradeHolder.getItems(UpgradeDataType.MATERIAL))
 			{
 				player.destroyItemByItemId("UpgradeNormalEquipment", material.getId(),
-					material.getCount() - (discounts.isEmpty() ? 0 : discounts.get(material.getId())), player, true);
+					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.getId())), player, true);
 			}
 		}
 		

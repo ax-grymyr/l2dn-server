@@ -798,7 +798,7 @@ public abstract class Inventory: ItemContainer
 				item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder => holder.getSkill().activateSkill(playable, playable));
 			}
 			
-			if (!addedSkills.isEmpty())
+			if (addedSkills.Count != 0)
 			{
 				foreach (Skill skill in addedSkills.Values)
 				{

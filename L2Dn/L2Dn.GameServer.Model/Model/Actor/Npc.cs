@@ -1723,7 +1723,7 @@ public class Npc: Creature
 			if ((npcSpawnTemplate != null) && (npcSpawnTemplate.getParameters() != null) && !npcSpawnTemplate.getParameters().isEmpty())
 			{
 				StatSet @params = getTemplate().getParameters();
-				if ((@params != null) && !@params.getSet().isEmpty())
+				if ((@params != null) && @params.getSet().Count != 0)
 				{
 					StatSet set = new StatSet();
 					set.merge(@params);

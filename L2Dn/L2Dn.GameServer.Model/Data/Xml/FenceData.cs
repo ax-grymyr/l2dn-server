@@ -29,7 +29,7 @@ public class FenceData: DataReaderBase
 
 	public void load()
 	{
-		if (!_fences.isEmpty())
+		if (_fences.Count != 0)
 		{
 			// Remove old fences when reloading
 			_fences.Values.ForEach(removeFence);

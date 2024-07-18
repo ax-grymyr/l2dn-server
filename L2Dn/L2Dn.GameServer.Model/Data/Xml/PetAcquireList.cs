@@ -28,7 +28,7 @@ public class PetAcquireList: DataReaderBase
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetAcquireList.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);
 		
-		if (!_skills.isEmpty())
+		if (_skills.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " pet skills.");
 		}

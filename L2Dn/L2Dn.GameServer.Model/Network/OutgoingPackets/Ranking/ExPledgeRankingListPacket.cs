@@ -27,7 +27,7 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_RANKING_LIST);
 		
 		writer.WriteByte((byte)_category);
-		if (!_rankingClanList.isEmpty())
+		if (_rankingClanList.Count != 0)
 		{
 			writeScopeData(writer, _category == 0, _rankingClanList, _snapshotClanList);
 		}

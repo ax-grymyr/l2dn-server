@@ -41,7 +41,7 @@ public readonly struct ExPvpRankingListPacket: IOutgoingPacket
 		writer.WriteByte((byte)_tabId);
 		writer.WriteByte((byte)_type);
 		writer.WriteInt32((int)_race);
-		if (!_playerList.isEmpty() && (_type != 255) && (_race != (Race)255))
+		if (_playerList.Count != 0 && (_type != 255) && (_race != (Race)255))
 		{
 			writeFilteredRankingData(writer, _tabId, _tabId.getScopeByGroup(_type), _race, _class);
 		}

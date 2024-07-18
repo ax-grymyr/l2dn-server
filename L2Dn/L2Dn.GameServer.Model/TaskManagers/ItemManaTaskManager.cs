@@ -27,7 +27,7 @@ public class ItemManaTaskManager: Runnable
 		}
 		_working = true;
 		
-		if (!ITEMS.isEmpty())
+		if (ITEMS.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			List<Item> toRemove = new List<Item>();

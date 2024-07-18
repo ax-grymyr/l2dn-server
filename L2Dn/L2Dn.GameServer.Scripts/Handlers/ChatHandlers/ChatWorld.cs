@@ -31,7 +31,7 @@ public class ChatWorld: IChatHandler
 		}
 		
 		DateTime now = DateTime.UtcNow;
-		if (!REUSE.isEmpty())
+		if (REUSE.Count != 0)
 		{
 			List<int> expired = REUSE.Where(r => r.Value <= now).Select(r => r.Key).ToList();
 			foreach (int id in expired)

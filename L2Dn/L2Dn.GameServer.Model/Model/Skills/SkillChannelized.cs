@@ -46,7 +46,7 @@ public class SkillChannelized
 	{
 		foreach (Map<int, Creature> map in _channelizers.Values)
 		{
-			if (!map.isEmpty())
+			if (map.Count != 0)
 			{
 				return true;
 			}

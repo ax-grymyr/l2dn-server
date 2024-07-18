@@ -26,7 +26,7 @@ public readonly struct WorldExchangeSettleListPacket: IOutgoingPacket
 		writer.WritePacketCode(OutgoingPacketCodes.EX_WORLD_EXCHANGE_SETTLE_LIST);
 		
 		Map<WorldExchangeItemStatusType, List<WorldExchangeHolder>> holders = WorldExchangeManager.getInstance().getPlayerBids(_player.getObjectId());
-		if (holders.isEmpty())
+		if (holders.Count == 0)
 		{
 			writer.WriteInt32(0); // RegiItemDataList
 			writer.WriteInt32(0); // RecvItemDataList

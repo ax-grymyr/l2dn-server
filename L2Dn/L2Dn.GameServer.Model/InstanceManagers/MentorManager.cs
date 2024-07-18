@@ -157,7 +157,7 @@ public class MentorManager
 		if (_menteeData.TryGetValue(mentorId, out Map<int, Mentee>? mentees))
 		{
 			mentees.remove(menteeId);
-			if (mentees.isEmpty())
+			if (mentees.Count == 0)
 			{
 				_menteeData.remove(mentorId);
 				_mentors.remove(mentorId);

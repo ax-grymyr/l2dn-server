@@ -430,7 +430,7 @@ public class VillageMaster: Folk
 					}
 					break;
 				case 2: // Change Class - Initial
-					if (player.getSubClasses().isEmpty())
+					if (player.getSubClasses().Count == 0)
 					{
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ChangeNo.htm", player);
 					}
@@ -465,7 +465,7 @@ public class VillageMaster: Folk
 					}
 					break;
 				case 3: // Change/Cancel Subclass - Initial
-					if ((player.getSubClasses() == null) || player.getSubClasses().isEmpty())
+					if ((player.getSubClasses() == null) || player.getSubClasses().Count == 0)
 					{
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyEmpty.htm", player);
 						break;
@@ -541,7 +541,7 @@ public class VillageMaster: Folk
 						allowAddition = false;
 					}
 					
-					if (allowAddition && !player.getSubClasses().isEmpty())
+					if (allowAddition && player.getSubClasses().Count != 0)
 					{
 						foreach (SubClassHolder holder in player.getSubClasses().Values)
 						{

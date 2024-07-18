@@ -102,7 +102,7 @@ public class RestorationRandom: AbstractEffect
 			}
 		}
 		
-		if (!extractedItems.isEmpty())
+		if (extractedItems.Count != 0)
 		{
 			List<ItemInfo> items = new List<ItemInfo>();
 			foreach (var entry in extractedItems)

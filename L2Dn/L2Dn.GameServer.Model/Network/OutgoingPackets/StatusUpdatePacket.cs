@@ -52,7 +52,7 @@ public struct StatusUpdatePacket: IOutgoingPacket
 	
     public bool hasUpdates()
     {
-        return !_updates.isEmpty();
+        return _updates.Count != 0;
     }
 	
     public void WriteContent(PacketBitWriter writer)

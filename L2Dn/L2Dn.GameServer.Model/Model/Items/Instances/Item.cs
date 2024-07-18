@@ -1196,7 +1196,7 @@ public class Item: WorldObject
 
 	public bool hasAttributes()
 	{
-		return _elementals != null && !_elementals.isEmpty();
+		return _elementals != null && _elementals.Count != 0;
 	}
 
 	public AttributeHolder getAttribute(AttributeType type)

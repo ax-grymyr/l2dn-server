@@ -19,11 +19,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return value;
     }
 
-    public bool isEmpty()
-    {
-        return Count == 0;
-    }
-
     public TValue? remove(TKey key)
     {
         TryRemove(key, out TValue? value);

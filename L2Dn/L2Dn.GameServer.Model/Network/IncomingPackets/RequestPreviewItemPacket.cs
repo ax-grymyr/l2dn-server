@@ -172,7 +172,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (!itemList.isEmpty())
+	    if (itemList.Count != 0)
 	    {
 		    player.sendPacket(new ShopPreviewInfoPacket(itemList));
 		    // Schedule task

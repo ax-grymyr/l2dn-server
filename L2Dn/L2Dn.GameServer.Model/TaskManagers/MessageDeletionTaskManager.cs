@@ -29,7 +29,7 @@ public class MessageDeletionTaskManager: Runnable
 		}
 		_working = true;
 		
-		if (!PENDING_MESSAGES.isEmpty())
+		if (PENDING_MESSAGES.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
 			List<int> toRemove = new List<int>();

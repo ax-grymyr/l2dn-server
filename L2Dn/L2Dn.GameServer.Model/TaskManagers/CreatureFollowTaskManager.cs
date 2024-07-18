@@ -41,7 +41,7 @@ public class CreatureFollowTaskManager
 			}
 			_workingNormal = true;
 			
-			if (!NORMAL_FOLLOW_CREATURES.isEmpty())
+			if (NORMAL_FOLLOW_CREATURES.Count != 0)
 			{
 				foreach (var entry in NORMAL_FOLLOW_CREATURES)
 				{
@@ -70,7 +70,7 @@ public class CreatureFollowTaskManager
 			}
 			_workingAttack = true;
 			
-			if (!ATTACK_FOLLOW_CREATURES.isEmpty())
+			if (ATTACK_FOLLOW_CREATURES.Count != 0)
 			{
 				foreach (var entry in ATTACK_FOLLOW_CREATURES)
 				{

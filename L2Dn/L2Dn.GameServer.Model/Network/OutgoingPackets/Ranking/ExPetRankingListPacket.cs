@@ -37,7 +37,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 		writer.WriteByte((byte)_tabId);
 		writer.WriteInt16((short)_type);
 		writer.WriteInt32(_petItemObjectId);
-		if (!_playerList.isEmpty())
+		if (_playerList.Count != 0)
 		{
 			writeFilteredRankingData(writer, _tabId, _tabId.getScopeByGroup(_season));
 		}

@@ -292,7 +292,7 @@ public class Attackable: Npc
 	{
 		try
 		{
-			if (_aggroList.isEmpty())
+			if (_aggroList.Count == 0)
 			{
 				return;
 			}
@@ -470,7 +470,7 @@ public class Attackable: Npc
 				return;
 			}
 			
-			if (!rewards.isEmpty())
+			if (rewards.Count != 0)
 			{
 				foreach (DamageDoneInfo reward in rewards.Values)
 				{
@@ -730,7 +730,7 @@ public class Attackable: Npc
 	
 	public Creature getMainDamageDealer()
 	{
-		if (_aggroList.isEmpty())
+		if (_aggroList.Count == 0)
 		{
 			return null;
 		}
@@ -938,7 +938,7 @@ public class Attackable: Npc
 	 */
 	public Creature getMostHated()
 	{
-		if (_aggroList.isEmpty() || isAlikeDead())
+		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
@@ -970,7 +970,7 @@ public class Attackable: Npc
 	 */
 	public List<Creature> get2MostHated()
 	{
-		if (_aggroList.isEmpty() || isAlikeDead())
+		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
@@ -1018,7 +1018,7 @@ public class Attackable: Npc
 	
 	public List<Creature> getHateList()
 	{
-		if (_aggroList.isEmpty() || isAlikeDead())
+		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
@@ -1039,7 +1039,7 @@ public class Attackable: Npc
 	 */
 	public long getHating(Creature target)
 	{
-		if (_aggroList.isEmpty() || (target == null))
+		if (_aggroList.Count == 0 || (target == null))
 		{
 			return 0;
 		}
@@ -1798,7 +1798,7 @@ public class Attackable: Npc
 			{
 				_aggroList.remove(creature);
 			}
-			if (_aggroList.isEmpty())
+			if (_aggroList.Count == 0)
 			{
 				if (getAI() is AttackableAI)
 				{

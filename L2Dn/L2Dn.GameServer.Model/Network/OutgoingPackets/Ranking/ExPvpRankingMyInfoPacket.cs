@@ -23,7 +23,7 @@ public readonly struct ExPvpRankingMyInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PVP_RANKING_MY_INFO);
         
-        if (!_playerList.isEmpty())
+        if (_playerList.Count != 0)
         {
             bool found = false;
             foreach (int id in _playerList.Keys)
