@@ -5,16 +5,16 @@ namespace L2Dn.GameServer.Utilities;
 
 public class BypassParser: StatSet
 {
-    private const string ALLOWED_CHARS = "a-zA-Z0-9-_`!@#%^&*()\\[\\]|\\\\/";
-    private static readonly Regex _regex = new Regex(
-        $"([{ALLOWED_CHARS}]*)=('([{ALLOWED_CHARS} ]*)'|[{ALLOWED_CHARS}]*)");
-	
+    private const string AllowedChars = @"a-zA-Z0-9-_`!@#%^&*()\[\]|\\/";
+    private const string RegexPattern = $"([{AllowedChars}]*)=('([{AllowedChars} ]*)'|[{AllowedChars}]*)";
+    private static readonly Regex _regex = new(RegexPattern);
+
     public BypassParser(string bypass): base(new Map<string, object>())
     {
-        process(bypass);
+        Process(bypass);
     }
-	
-    private void process(string bypass)
+
+    private void Process(string bypass)
     {
         MatchCollection matches = _regex.Matches(bypass);
         foreach (Match match in matches)
