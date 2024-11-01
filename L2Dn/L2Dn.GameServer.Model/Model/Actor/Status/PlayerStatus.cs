@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Model.Actor.Status;
 
 public class PlayerStatus: PlayableStatus
 {
-	private double _currentCp = 0; // Current CP of the Player
+	private double _currentCp; // Current CP of the Player
 
 	public PlayerStatus(Player player)
 		: base(player)

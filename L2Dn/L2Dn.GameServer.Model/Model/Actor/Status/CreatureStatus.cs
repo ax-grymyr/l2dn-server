@@ -15,15 +15,15 @@ public class CreatureStatus
 	
 	private readonly Creature _creature;
 	
-	private double _currentHp = 0; // Current HP of the Creature
-	private double _currentMp = 0; // Current MP of the Creature
+	private double _currentHp; // Current HP of the Creature
+	private double _currentMp; // Current MP of the Creature
 	
 	/** Array containing all clients that need to be notified about hp/mp updates of the Creature */
 	private Set<Creature> _StatusListener;
 	
 	private ScheduledFuture _regTask;
 	
-	protected int _flagsRegenActive = 0;
+	protected int _flagsRegenActive;
 	
 	protected const int REGEN_FLAG_CP = 4; // TODO: enum
 	private const int REGEN_FLAG_HP = 1;

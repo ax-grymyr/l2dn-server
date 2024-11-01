@@ -8,7 +8,6 @@ public class ControllableAirShipStat: VehicleStat
     {
     }
 
-
     public override ControllableAirShip getActiveChar()
     {
         return (ControllableAirShip)base.getActiveChar();

@@ -1858,15 +1858,15 @@ public class Npc: Creature
 	
 	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 		sb.Append(GetType().Name);
-		sb.Append(":");
+		sb.Append(':');
 		sb.Append(getName());
-		sb.Append("(");
+		sb.Append('(');
 		sb.Append(getId());
 		sb.Append(")[");
 		sb.Append(getObjectId());
-		sb.Append("]");
+		sb.Append(']');
 		return sb.ToString();
 	}
 }

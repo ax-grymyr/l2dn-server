@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Actor.Status;
 
 public class PetStatus: SummonStatus
 {
-    private int _currentFed = 0; // Current Fed of the Pet
+    private int _currentFed; // Current Fed of the Pet
 
     public PetStatus(Pet activeChar): base(activeChar)
     {

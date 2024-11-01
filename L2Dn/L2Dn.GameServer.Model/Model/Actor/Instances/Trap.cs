@@ -25,7 +25,7 @@ public class Trap: Npc
 {
 	private const int TICK = 1000; // 1s
 	private bool _hasLifeTime;
-	private bool _isInArena = false;
+	private bool _isInArena;
 	private bool _isTriggered;
 	private readonly int _lifeTime;
 	private Player _owner;
@@ -33,7 +33,7 @@ public class Trap: Npc
 	private readonly SkillHolder _skill;
 	private int _remainingTime;
 	// Tasks
-	private ScheduledFuture _trapTask = null;
+	private ScheduledFuture _trapTask;
 	
 	public Trap(NpcTemplate template, int instanceId, int lifeTime): base(template)
 	{

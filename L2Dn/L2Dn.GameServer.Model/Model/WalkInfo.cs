@@ -14,19 +14,19 @@ namespace L2Dn.GameServer.Model;
 public class WalkInfo
 {
 	private readonly string _routeName;
-	private ScheduledFuture _walkCheckTask;
-	private bool _blocked = false;
-	private bool _suspended = false;
-	private bool _stoppedByAttack = false;
-	private int _currentNode = 0;
+	private ScheduledFuture? _walkCheckTask;
+	private bool _blocked;
+	private bool _suspended;
+	private bool _stoppedByAttack;
+	private int _currentNode;
 	private bool _forward = true; // Determines first --> last or first <-- last direction
 	private long _lastActionTime; // Debug field
-	
+
 	public WalkInfo(string routeName)
 	{
 		_routeName = routeName;
 	}
-	
+
 	/**
 	 * @return name of route of this WalkInfo.
 	 */
@@ -34,7 +34,7 @@ public class WalkInfo
 	{
 		return WalkingManager.getInstance().getRoute(_routeName);
 	}
-	
+
 	/**
 	 * @return current node of this WalkInfo.
 	 */
@@ -42,7 +42,7 @@ public class WalkInfo
 	{
 		return getRoute().getNodeList()[Math.Min(Math.Max(0, _currentNode), getRoute().getNodeList().Count - 1)];
 	}
-	
+
 	/**
 	 * Calculate next node for this WalkInfo and send debug message from given npc
 	 * @param npc NPC to debug message to be sent from
@@ -118,7 +118,7 @@ public class WalkInfo
 			}
 		}
 	}
-	
+
 	/**
 	 * @return {@code true} if walking task is blocked, {@code false} otherwise,
 	 */
@@ -126,7 +126,7 @@ public class WalkInfo
 	{
 		return _blocked;
 	}
-	
+
 	/**
 	 * @param value
 	 */
@@ -134,7 +134,7 @@ public class WalkInfo
 	{
 		_blocked = value;
 	}
-	
+
 	/**
 	 * @return {@code true} if walking task is suspended, {@code false} otherwise,
 	 */
@@ -142,7 +142,7 @@ public class WalkInfo
 	{
 		return _suspended;
 	}
-	
+
 	/**
 	 * @param value
 	 */
@@ -150,7 +150,7 @@ public class WalkInfo
 	{
 		_suspended = value;
 	}
-	
+
 	/**
 	 * @return {@code true} if walking task shall be stopped by attack, {@code false} otherwise,
 	 */
@@ -158,7 +158,7 @@ public class WalkInfo
 	{
 		return _stoppedByAttack;
 	}
-	
+
 	/**
 	 * @param value
 	 */
@@ -166,7 +166,7 @@ public class WalkInfo
 	{
 		_stoppedByAttack = value;
 	}
-	
+
 	/**
 	 * @return the id of the current node in this walking task.
 	 */
@@ -174,7 +174,7 @@ public class WalkInfo
 	{
 		return _currentNode;
 	}
-	
+
 	/**
 	 * @return {@code long} last action time used only for debugging.
 	 */
@@ -182,7 +182,7 @@ public class WalkInfo
 	{
 		return _lastActionTime;
 	}
-	
+
 	/**
 	 * @param value
 	 */
@@ -190,7 +190,7 @@ public class WalkInfo
 	{
 		_lastActionTime = value;
 	}
-	
+
 	/**
 	 * @return walking check task.
 	 */
@@ -198,7 +198,7 @@ public class WalkInfo
 	{
 		return _walkCheckTask;
 	}
-	
+
 	/**
 	 * @param task walking check task.
 	 */
@@ -206,11 +206,11 @@ public class WalkInfo
 	{
 		_walkCheckTask = task;
 	}
-	
+
 	public override string ToString()
 	{
 		return "WalkInfo [_routeName=" + _routeName + ", _walkCheckTask=" + _walkCheckTask + ", _blocked=" + _blocked +
-		       ", _suspended=" + _suspended + ", _stoppedByAttack=" + _stoppedByAttack + ", _currentNode=" +
-		       _currentNode + ", _forward=" + _forward + ", _lastActionTime=" + _lastActionTime + "]";
+			", _suspended=" + _suspended + ", _stoppedByAttack=" + _stoppedByAttack + ", _currentNode=" +
+			_currentNode + ", _forward=" + _forward + ", _lastActionTime=" + _lastActionTime + "]";
 	}
 }
