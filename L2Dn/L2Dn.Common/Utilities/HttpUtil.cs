@@ -9,7 +9,11 @@ public static class HttpUtil
 
     public static async Task<byte[]> DownloadFileAsync(string url)
     {
-        using HttpClient client = new();
+        using HttpClientHandler clientHandler = new();
+        clientHandler.ServerCertificateCustomValidationCallback =
+            HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+
+        using HttpClient client = new(clientHandler);
         return await client.GetByteArrayAsync(url).ConfigureAwait(false);
     } 
 }
