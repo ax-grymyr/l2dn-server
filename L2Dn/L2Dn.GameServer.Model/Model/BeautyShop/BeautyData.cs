@@ -1,29 +1,17 @@
-﻿using L2Dn.GameServer.Utilities;
+﻿using System.Collections.Frozen;
+using L2Dn.GameServer.Db;
+using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.BeautyShop;
 
-public class BeautyData
+public sealed class BeautyData(
+    Race race,
+    Sex sex,
+    FrozenDictionary<int, BeautyItem> hairList,
+    FrozenDictionary<int, BeautyItem> faceList)
 {
-    private readonly Map<int, BeautyItem> _hairList = new();
-    private readonly Map<int, BeautyItem> _faceList = new();
-	
-    public void addHair(BeautyItem hair)
-    {
-        _hairList.put(hair.getId(), hair);
-    }
-	
-    public void addFace(BeautyItem face)
-    {
-        _faceList.put(face.getId(), face);
-    }
-	
-    public Map<int, BeautyItem> getHairList()
-    {
-        return _hairList;
-    }
-	
-    public Map<int, BeautyItem> getFaceList()
-    {
-        return _faceList;
-    }
+    public Race Race => race;
+    public Sex Sex => sex;
+    public FrozenDictionary<int, BeautyItem> getHairList() => hairList;
+    public FrozenDictionary<int, BeautyItem> getFaceList() => faceList;
 }

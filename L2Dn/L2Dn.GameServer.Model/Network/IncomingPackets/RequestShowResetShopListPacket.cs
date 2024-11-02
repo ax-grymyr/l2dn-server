@@ -26,72 +26,74 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        BeautyData beautyData = BeautyShopData.getInstance().getBeautyData(player.getRace(), player.getAppearance().getSex());
+        BeautyData? beautyData = BeautyShopData.getInstance()
+            .getBeautyData(player.getRace(), player.getAppearance().getSex());
+
         int requiredAdena = 0;
         if (_hairId > 0)
         {
-            BeautyItem hair = beautyData.getHairList().get(_hairId);
+            BeautyItem? hair = beautyData?.getHairList().GetValueOrDefault(_hairId);
             if (hair == null)
             {
                 player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
                     ExResponseBeautyRegistResetPacket.RESTORE, ExResponseBeautyRegistResetPacket.FAILURE));
-                
+
                 return ValueTask.CompletedTask;
             }
-			
+
             requiredAdena += hair.getResetAdena();
             if (_colorId > 0)
             {
-                BeautyItem color = hair.getColors().get(_colorId);
+                BeautyItem? color = hair.getColors().GetValueOrDefault(_colorId);
                 if (color == null)
                 {
                     player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
                         ExResponseBeautyRegistResetPacket.RESTORE, ExResponseBeautyRegistResetPacket.FAILURE));
-                    
+
                     return ValueTask.CompletedTask;
                 }
-				
+
                 requiredAdena += color.getResetAdena();
             }
         }
-		
+
         if (_faceId > 0)
         {
-            BeautyItem face = beautyData.getFaceList().get(_faceId);
+            BeautyItem? face = beautyData?.getFaceList().GetValueOrDefault(_faceId);
             if (face == null)
             {
                 player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
                     ExResponseBeautyRegistResetPacket.RESTORE, ExResponseBeautyRegistResetPacket.FAILURE));
-                
+
                 return ValueTask.CompletedTask;
             }
-			
+
             requiredAdena += face.getResetAdena();
         }
-		
-        if ((player.getAdena() < requiredAdena))
+
+        if (player.getAdena() < requiredAdena)
         {
             player.sendPacket(new ExResponseBeautyRegistResetPacket(player, ExResponseBeautyRegistResetPacket.RESTORE,
                 ExResponseBeautyRegistResetPacket.FAILURE));
-            
+
             return ValueTask.CompletedTask;
         }
-		
-        if ((requiredAdena > 0) && !player.reduceAdena(GetType().Name, requiredAdena, null, true))
+
+        if (requiredAdena > 0 && !player.reduceAdena(GetType().Name, requiredAdena, null, true))
         {
             player.sendPacket(new ExResponseBeautyRegistResetPacket(player, ExResponseBeautyRegistResetPacket.RESTORE,
                 ExResponseBeautyRegistResetPacket.FAILURE));
-            
+
             return ValueTask.CompletedTask;
         }
-		
+
         player.getVariables().remove("visualHairId");
         player.getVariables().remove("visualHairColorId");
         player.getVariables().remove("visualFaceId");
 
         player.sendPacket(new ExResponseBeautyRegistResetPacket(player, ExResponseBeautyRegistResetPacket.RESTORE,
             ExResponseBeautyRegistResetPacket.SUCCESS));
-        
+
         return ValueTask.CompletedTask;
     }
 }

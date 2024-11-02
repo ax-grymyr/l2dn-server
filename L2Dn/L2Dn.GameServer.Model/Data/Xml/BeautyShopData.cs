@@ -1,98 +1,64 @@
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Frozen;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.BeautyShop;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
-using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author Sdw
- */
-public class BeautyShopData: DataReaderBase
+public sealed class BeautyShopData: DataReaderBase
 {
-	private readonly Map<Race, Map<Sex, BeautyData>> _beautyList = new(); // TODO: key must be tuple (Race, Sex)
-	
-	protected BeautyShopData()
-	{
-		load();
-	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)]
-	public void load()
-	{
-		_beautyList.Clear();
+	private FrozenDictionary<(Race, Sex), BeautyData> _beautyData = FrozenDictionary<(Race, Sex), BeautyData>.Empty;
 
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, "BeautyShop.xml");
-		document.Elements("list").Elements("race").ForEach(loadElement);
-	}
-	
-	private void loadElement(XElement element)
+	private BeautyShopData()
 	{
-		Race race = element.Attribute("type").GetEnum<Race>();
-		Map<Sex, BeautyData> map = new(); 
-		element.Elements("sex").ForEach(el =>
-		{
-			Sex sex = el.GetAttributeValueAsEnum<Sex>("type", true);
-			BeautyData beautyData = new BeautyData();
-			el.Elements("hair").ForEach(he =>
-			{
-				int id = he.GetAttributeValueAsInt32("id");
-				int adena = he.Attribute("adena").GetInt32(0);
-				int resetAdena = he.Attribute("reset_adena").GetInt32(0);
-				int beautyShopTicket = he.Attribute("beauty_shop_ticket").GetInt32(0);
-				BeautyItem hair = new BeautyItem(id, adena, resetAdena, beautyShopTicket);
-				
-				he.Elements("color").ForEach(ce =>
-				{
-					int colorId = ce.GetAttributeValueAsInt32("id");
-					int colorAdena = ce.Attribute("adena").GetInt32(0);
-					int colorResetAdena = ce.Attribute("reset_adena").GetInt32(0);
-					int colorBeautyShopTicket = ce.Attribute("beauty_shop_ticket").GetInt32(0);
-					BeautyItem color = new BeautyItem(colorId, colorAdena, colorResetAdena, colorBeautyShopTicket);
-					hair.addColor(color);
-				});
-				
-				beautyData.addHair(hair);
-			});
-			
-			el.Elements("face").ForEach(fe =>
-			{
-				int id = fe.GetAttributeValueAsInt32("id");
-				int adena = fe.Attribute("adena").GetInt32(0);
-				int resetAdena = fe.Attribute("reset_adena").GetInt32(0);
-				int beautyShopTicket = fe.Attribute("beauty_shop_ticket").GetInt32(0);
-				BeautyItem face = new BeautyItem(id, adena, resetAdena, beautyShopTicket);
-				beautyData.addFace(face);
-			});
-
-			map.put(sex, beautyData);
-		});
-						
-		_beautyList.put(race, map);
+		Load();
 	}
-	
+
+	private void Load()
+	{
+		static BeautyItem ConvertToBeautyItem(XmlBeautyShopItem item, FrozenDictionary<int, BeautyItem>? colors = null)
+			=> new(item.Id, item.Adena, item.ResetAdena, item.BeautyShopTicket, colors);
+
+		XmlBeautyShopData data = LoadXmlDocument<XmlBeautyShopData>(DataFileLocation.Data, "BeautyShop.xml");
+		_beautyData =
+			(from raceData in data.Races
+				let race = Enum.Parse<Race>(raceData.Type, true)
+				from sexData in raceData.SexData
+				let sex = Enum.Parse<Sex>(sexData.Type, true)
+				let hairList =
+					(from hairData in sexData.Hairs
+						let colors =
+							(from colorData in hairData.Colors
+								select ConvertToBeautyItem(colorData))
+							.ToFrozenDictionary(item => item.getId())
+						select ConvertToBeautyItem(hairData, colors))
+					.ToFrozenDictionary(item => item.getId())
+				let faceList =
+					(from faceData in sexData.Faces
+						select ConvertToBeautyItem(faceData))
+					.ToFrozenDictionary(item => item.getId())
+				select new BeautyData(race, sex, hairList, faceList))
+			.ToFrozenDictionary(x => (x.Race, x.Sex));
+	}
+
 	public bool hasBeautyData(Race race, Sex sex)
 	{
-		return _beautyList.TryGetValue(race, out Map<Sex, BeautyData>? sexSet) && sexSet.ContainsKey(sex);
+		return _beautyData.ContainsKey((race, sex));
 	}
-	
+
 	public BeautyData? getBeautyData(Race race, Sex sex)
 	{
-		return _beautyList.GetValueOrDefault(race)?.GetValueOrDefault(sex);
+		return _beautyData.GetValueOrDefault((race, sex));
 	}
-	
+
 	public static BeautyShopData getInstance()
 	{
-		return SingletonHolder.INSTANCE;
+		return SingletonHolder.Instance;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly BeautyShopData INSTANCE = new();
+		public static readonly BeautyShopData Instance = new();
 	}
 }
