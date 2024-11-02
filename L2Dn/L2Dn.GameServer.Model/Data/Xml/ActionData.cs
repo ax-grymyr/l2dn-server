@@ -12,15 +12,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class ActionData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ActionData));
-	
+
 	private FrozenDictionary<int, ActionDataHolder> _actionData = FrozenDictionary<int, ActionDataHolder>.Empty;
 	private FrozenDictionary<int, int> _actionSkillsData = FrozenDictionary<int, int>.Empty; // skillId, actionId
-	
+
 	private ActionData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		XmlActionData document = LoadXmlDocument<XmlActionData>(DataFileLocation.Data, "ActionData.xml");
@@ -37,10 +37,10 @@ public class ActionData: DataReaderBase
 		}
 
 		_actionSkillsData = actionSkillsData.ToFrozenDictionary();
-		
+
 		_logger.Info(GetType().Name + ": Loaded " + _actionData.Count + " player actions.");
 	}
-	
+
 	/**
 	 * @param id
 	 * @return the ActionDataHolder for specified id
@@ -49,7 +49,7 @@ public class ActionData: DataReaderBase
 	{
 		return _actionData.GetValueOrDefault(id);
 	}
-	
+
 	/**
 	 * @param skillId
 	 * @return the actionId corresponding to the skillId or -1 if no actionId is found for the specified skill.
@@ -58,12 +58,12 @@ public class ActionData: DataReaderBase
 	{
 		return _actionSkillsData.GetValueOrDefault(skillId, -1);
 	}
-	
+
 	public ImmutableArray<int> getActionIdList()
 	{
 		return _actionData.Keys;
 	}
-	
+
 	/**
 	 * Gets the single instance of ActionData.
 	 * @return single instance of ActionData
@@ -72,7 +72,7 @@ public class ActionData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ActionData INSTANCE = new();

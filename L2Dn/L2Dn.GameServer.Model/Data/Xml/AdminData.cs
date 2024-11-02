@@ -17,15 +17,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class AdminData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminData));
-	
+
 	private FrozenDictionary<int, AccessLevel> _accessLevels = FrozenDictionary<int, AccessLevel>.Empty;
 
 	private FrozenDictionary<string, AdminCommandAccessRight> _adminCommandAccessRights =
 		FrozenDictionary<string, AdminCommandAccessRight>.Empty;
-	
+
 	private readonly Map<Player, bool> _gmList = new();
 	private int _highestLevel;
-	
+
 	private AdminData()
 	{
 		load();
@@ -59,10 +59,10 @@ public class AdminData: DataReaderBase
 		{
 			return _accessLevels.GetValueOrDefault(-1);
 		}
-		
+
 		return _accessLevels.GetValueOrDefault(accessLevelNum);
 	}
-	
+
 	/**
 	 * Gets the master access level.
 	 * @return the master access level
@@ -71,7 +71,7 @@ public class AdminData: DataReaderBase
 	{
 		return _accessLevels.GetValueOrDefault(_highestLevel);
 	}
-	
+
 	/**
 	 * Checks for access level.
 	 * @param id the id
@@ -81,7 +81,7 @@ public class AdminData: DataReaderBase
 	{
 		return _accessLevels.ContainsKey(id);
 	}
-	
+
 	/**
 	 * Checks for access.
 	 * @param adminCommand the admin command
@@ -100,7 +100,8 @@ public class AdminData: DataReaderBase
 				Dictionary<string, AdminCommandAccessRight> dict = _adminCommandAccessRights.ToDictionary();
 				dict[adminCommand] = acar;
 				_adminCommandAccessRights = dict.ToFrozenDictionary();
-				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " auto setting accesslevel: " + accessLevel.getLevel() + " !");
+				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand +
+					" auto setting accesslevel: " + accessLevel.getLevel() + " !");
 			}
 			else
 			{
@@ -111,7 +112,7 @@ public class AdminData: DataReaderBase
 
 		return acar.hasAccess(accessLevel);
 	}
-	
+
 	/**
 	 * Require confirm.
 	 * @param command the command
@@ -125,10 +126,10 @@ public class AdminData: DataReaderBase
 			_logger.Info(GetType().Name + ": No rights defined for admin command " + command + ".");
 			return false;
 		}
-		
+
 		return acar.getRequireConfirm();
 	}
-	
+
 	/**
 	 * Gets the all GMs.
 	 * @param includeHidden the include hidden
@@ -144,9 +145,10 @@ public class AdminData: DataReaderBase
 				tmpGmList.Add(entry.Key);
 			}
 		}
+
 		return tmpGmList;
 	}
-	
+
 	/**
 	 * Gets the all GM names.
 	 * @param includeHidden the include hidden
@@ -166,9 +168,10 @@ public class AdminData: DataReaderBase
 				tmpGmList.Add(entry.Key.getName() + " (invis)");
 			}
 		}
+
 		return tmpGmList;
 	}
-	
+
 	/**
 	 * Add a Player player to the Set _gmList.
 	 * @param player the player
@@ -178,7 +181,7 @@ public class AdminData: DataReaderBase
 	{
 		_gmList.put(player, hidden);
 	}
-	
+
 	/**
 	 * Delete a GM.
 	 * @param player the player
@@ -187,7 +190,7 @@ public class AdminData: DataReaderBase
 	{
 		_gmList.remove(player);
 	}
-	
+
 	/**
 	 * Checks if is GM online.
 	 * @param includeHidden the include hidden
@@ -202,9 +205,10 @@ public class AdminData: DataReaderBase
 				return true;
 			}
 		}
+
 		return false;
 	}
-	
+
 	/**
 	 * Send list to player.
 	 * @param player the player
@@ -214,7 +218,7 @@ public class AdminData: DataReaderBase
 		if (isGmOnline(player.isGM()))
 		{
 			player.sendPacket(SystemMessageId.GM_LIST);
-			
+
 			foreach (string name in getAllGmNames(player.isGM()))
 			{
 				SystemMessagePacket sm = new(SystemMessageId.GM_C1);
@@ -224,10 +228,11 @@ public class AdminData: DataReaderBase
 		}
 		else
 		{
-			player.sendPacket(SystemMessageId.THERE_ARE_NO_GMS_CURRENTLY_VISIBLE_IN_THE_PUBLIC_LIST_AS_THEY_MAY_BE_PERFORMING_OTHER_FUNCTIONS_AT_THE_MOMENT);
+			player.sendPacket(SystemMessageId
+				.THERE_ARE_NO_GMS_CURRENTLY_VISIBLE_IN_THE_PUBLIC_LIST_AS_THEY_MAY_BE_PERFORMING_OTHER_FUNCTIONS_AT_THE_MOMENT);
 		}
 	}
-	
+
 	/**
 	 * Broadcast to GMs.
 	 * @param packet the packet
@@ -240,7 +245,7 @@ public class AdminData: DataReaderBase
 			gm.sendPacket(packet);
 		}
 	}
-	
+
 	/**
 	 * Broadcast message to GMs.
 	 * @param message the message
@@ -252,9 +257,10 @@ public class AdminData: DataReaderBase
 		{
 			gm.sendMessage(message);
 		}
+
 		return message;
 	}
-	
+
 	/**
 	 * Gets the single instance of AdminTable.
 	 * @return AccessLevels: the one and only instance of this class
@@ -263,7 +269,7 @@ public class AdminData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly AdminData INSTANCE = new AdminData();

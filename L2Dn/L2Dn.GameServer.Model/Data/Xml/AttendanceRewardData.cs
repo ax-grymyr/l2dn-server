@@ -1,74 +1,62 @@
-using System.Xml.Linq;
-using L2Dn.Extensions;
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.Utilities;
+using L2Dn.Model.DataPack;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * @author Mobius
- */
-public class AttendanceRewardData: DataReaderBase
+public sealed class AttendanceRewardData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AttendanceRewardData));
-	private readonly List<ItemHolder> _rewards = new();
-	private int _rewardsCount;
-	
-	protected AttendanceRewardData()
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(AttendanceRewardData));
+	private ImmutableArray<ItemHolder> _rewards = ImmutableArray<ItemHolder>.Empty;
+
+	private AttendanceRewardData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (Config.ENABLE_ATTENDANCE_REWARDS)
 		{
-			_rewards.Clear();
+			static bool CheckItem(XmlAttendanceReward item)
+			{
+				bool itemExists = ItemData.getInstance().getTemplate(item.Id) is not null;
+				if (!itemExists)
+					_logger.Info(nameof(AttendanceRewardData) + ": Item with id " + item.Id + " does not exist.");
 
-			XDocument document = LoadXmlDocument(DataFileLocation.Data, "AttendanceRewards.xml");
-			document.Elements("list").Elements("item").ForEach(loadElement);
-			
-			_rewardsCount = _rewards.Count;
-			LOGGER.Info(GetType().Name + ": Loaded " + _rewardsCount + " rewards.");
+				return itemExists;
+			}
+
+			_rewards = LoadXmlDocument<XmlAttendanceRewardList>(DataFileLocation.Data, "AttendanceRewards.xml")
+				.Items.Where(CheckItem).Select(item => new ItemHolder(item.Id, item.Count))
+				.ToImmutableArray();
+
+			_logger.Info(GetType().Name + ": Loaded " + _rewards.Length + " rewards.");
 		}
 		else
 		{
-			LOGGER.Info(GetType().Name + ": Disabled.");
+			_logger.Info(GetType().Name + ": Disabled.");
 		}
 	}
 
-	private void loadElement(XElement element)
-	{
-		int itemId = element.GetAttributeValueAsInt32("id");
-		int itemCount = element.GetAttributeValueAsInt32("count");
-		if (ItemData.getInstance().getTemplate(itemId) == null)
-		{
-			LOGGER.Info(GetType().Name + ": Item with id " + itemId + " does not exist.");
-		}
-		else
-		{
-			_rewards.Add(new ItemHolder(itemId, itemCount));
-		}
-	}
-
-	public List<ItemHolder> getRewards()
+	public ImmutableArray<ItemHolder> getRewards()
 	{
 		return _rewards;
 	}
-	
+
 	public int getRewardsCount()
 	{
-		return _rewardsCount;
+		return _rewards.Length;
 	}
-	
+
 	public static AttendanceRewardData getInstance()
 	{
-		return SingletonHolder.INSTANCE;
+		return SingletonHolder.Instance;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly AttendanceRewardData INSTANCE = new();
+		public static readonly AttendanceRewardData Instance = new();
 	}
 }

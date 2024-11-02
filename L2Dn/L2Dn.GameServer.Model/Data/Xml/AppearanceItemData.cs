@@ -16,21 +16,21 @@ namespace L2Dn.GameServer.Data.Xml;
 public class AppearanceItemData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AppearanceItemData));
-	
+
 	private readonly Map<int, AppearanceStone> _stoneMap = new();
-	
+
 	protected AppearanceItemData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "AppearanceStones.xml");
 		document.Elements("list").Elements("appearance_stone").ForEach(loadElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _stoneMap.Count + " stones.");
-		
+
 		//@formatter:off
 		/*
 		foreach (Item item in ItemData.getInstance().getAllItems())
@@ -43,53 +43,50 @@ public class AppearanceItemData: DataReaderBase
 			{
 				continue;
 			}
-			
+
 			System.out.println("Unhandled appearance stone: " + item);
 		}
 		*/
 		//@formatter:on
-		
+
 		_stoneMap.Clear();
 	}
 
 	private void loadElement(XElement element)
 	{
-		AppearanceStone stone = new AppearanceStone(element);
-		
+		AppearanceStone stone = new(element);
+
 		element.Elements("grade").ForEach(el =>
 		{
 			CrystalType type = Enum.Parse<CrystalType>(el.Value);
 			stone.addCrystalType(type);
 		});
-		
+
 		element.Elements("targetType").ForEach(el =>
 		{
 			AppearanceTargetType type = Enum.Parse<AppearanceTargetType>(el.Value);
 			stone.addTargetType(type);
 		});
-		
+
 		element.Elements("bodyPart").ForEach(el =>
 		{
 			long part = ItemData.SLOTS.get(el.Value);
 			stone.addBodyPart(part);
 		});
-		
+
 		element.Elements("race").ForEach(el =>
 		{
 			Race race = Enum.Parse<Race>(el.Value);
 			stone.addRace(race);
 		});
-		
+
 		element.Elements("raceNot").ForEach(el =>
 		{
 			Race raceNot = Enum.Parse<Race>(el.Value);
 			stone.addRaceNot(raceNot);
 		});
 
-		element.Elements("visual").ForEach(el =>
-		{
-			stone.addVisualId(new AppearanceHolder(el));
-		});
+		element.Elements("visual").ForEach(el => { stone.addVisualId(new AppearanceHolder(el)); });
 
 		if (ItemData.getInstance().getTemplate(stone.getId()) != null)
 		{
@@ -105,7 +102,7 @@ public class AppearanceItemData: DataReaderBase
 	{
 		return _stoneMap.get(stone);
 	}
-	
+
 	/**
 	 * Gets the single instance of AppearanceItemData.
 	 * @return single instance of AppearanceItemData
@@ -114,9 +111,9 @@ public class AppearanceItemData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly AppearanceItemData INSTANCE = new AppearanceItemData();
+		public static readonly AppearanceItemData INSTANCE = new();
 	}
 }

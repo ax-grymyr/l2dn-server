@@ -16,7 +16,7 @@ public class AgathionData: DataReaderBase
 
 	private static FrozenDictionary<int, AgathionSkillHolder> _agathionSkills =
 		FrozenDictionary<int, AgathionSkillHolder>.Empty;
-	
+
 	private AgathionData()
 	{
 		load();
@@ -83,17 +83,17 @@ public class AgathionData: DataReaderBase
 
 		return skills;
 	}
-	
+
 	public AgathionSkillHolder? getSkills(int agathionId)
 	{
 		return _agathionSkills.GetValueOrDefault(agathionId);
 	}
-	
+
 	public static AgathionData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly AgathionData INSTANCE = new();

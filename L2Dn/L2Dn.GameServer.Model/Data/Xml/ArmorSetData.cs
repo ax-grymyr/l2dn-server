@@ -16,15 +16,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class ArmorSetData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ArmorSetData));
-	
+
 	private ArmorSet[] _armorSets;
 	private List<ArmorSet>[] _itemSets;
-	
+
 	private ArmorSetData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		Dictionary<int, ArmorSet> armorSetMap = new();
@@ -37,12 +37,12 @@ public class ArmorSetData: DataReaderBase
 		_armorSets = new ArmorSet[count];
 		foreach (var armorSet in armorSetMap)
 			_armorSets[armorSet.Key] = armorSet.Value;
-		
+
 		count = armorSetItems.Keys.Max() + 1;
 		_itemSets = new List<ArmorSet>[count];
 		foreach (var armorSet in armorSetItems)
 			_itemSets[armorSet.Key] = armorSet.Value;
-		
+
 		_logger.Info(GetType().Name + ": Loaded " + armorSetMap.Count + " armor sets.");
 	}
 
@@ -64,7 +64,7 @@ public class ArmorSetData: DataReaderBase
 			if (item == null)
 			{
 				_logger.Warn("Attempting to register non existing required item: " + itemId + " to a set: " +
-				             filePath);
+					filePath);
 			}
 			else if (!requiredItems.add(itemId))
 				_logger.Warn("Attempting to register duplicate required item " + item + " to a set: " + filePath);
@@ -77,7 +77,7 @@ public class ArmorSetData: DataReaderBase
 			if (item == null)
 			{
 				_logger.Warn("Attempting to register non existing optional item: " + itemId + " to a set: " +
-				             filePath);
+					filePath);
 			}
 			else if (!optionalItems.add(itemId))
 				_logger.Warn("Attempting to register duplicate optional item " + item + " to a set: " + filePath);
@@ -104,7 +104,7 @@ public class ArmorSetData: DataReaderBase
 				itemList = new List<ArmorSet>();
 				armorSetItems[itemId] = itemList;
 			}
-			
+
 			itemList.Add(set);
 		}
 	}
@@ -117,10 +117,10 @@ public class ArmorSetData: DataReaderBase
 	{
 		if (setId >= 0 && setId < _armorSets.Length)
 			return _armorSets[setId];
-	
+
 		return null;
 	}
-	
+
 	/**
 	 * @param itemId the item id that is attached to a set
 	 * @return the armor set associated to the given item id
@@ -135,10 +135,10 @@ public class ArmorSetData: DataReaderBase
 				return sets;
 			}
 		}
-		
+
 		return new();
 	}
-	
+
 	/**
 	 * Gets the single instance of ArmorSetsData
 	 * @return single instance of ArmorSetsData
@@ -147,7 +147,7 @@ public class ArmorSetData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ArmorSetData INSTANCE = new();
