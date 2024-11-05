@@ -146,16 +146,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/** This creature's target. */
 	private WorldObject _target;
 	
-	// set by the start of attack, in game ticks
+	// set by the start of attack
 	private DateTime _attackEndTime;
 	private DateTime _disableRangedAttackEndTime;
+	private bool _abortAttack;
 	
 	private CreatureAI _ai;
 	
 	/** Future Skill Cast */
 	protected Map<SkillCastingType, SkillCaster> _skillCasters = new();
 	
-	private readonly AtomicInteger _abnormalShieldBlocks = new AtomicInteger();
+	private readonly AtomicInteger _abnormalShieldBlocks = new();
 	
 	private readonly Map<int, RelationCache> _knownRelations = new();
 	
@@ -1098,8 +1099,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						_disableRangedAttackEndTime = currentTime.AddMilliseconds(int.MaxValue);
 					}
 
-					CreatureAttackTaskManager.getInstance()
-						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+					scheduleHitTimeNotDual(weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 				case WeaponType.PISTOLS:
@@ -1112,16 +1112,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						_disableRangedAttackEndTime = currentTime.AddMilliseconds(int.MaxValue);
 					}
 
-					CreatureAttackTaskManager.getInstance()
-						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+					scheduleHitTimeNotDual(weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 				case WeaponType.FIST:
 				{
 					if (!isPlayer())
 					{
-						CreatureAttackTaskManager.getInstance()
-							.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+						scheduleHitTimeNotDual(weaponItem, attack, timeToHit, timeAtk);
 						break;
 					}
 
@@ -1132,16 +1130,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				case WeaponType.DUALBLUNT:
 				case WeaponType.DUALDAGGER:
 				{
-					int delayForSecondAttack =
-						Formulas.calculateTimeToHit(timeAtk, weaponType, isTwoHanded, true) - timeToHit;
-					CreatureAttackTaskManager.getInstance().onFirstHitTimeForDual(this, weaponItem, attack, timeToHit,
-						timeAtk, delayForSecondAttack);
+					int delayForSecondAttack = Formulas.calculateTimeToHit(timeAtk, weaponType, isTwoHanded, true) -
+					                           timeToHit;
+					
+					scheduleFirstHitTimeForDual(weaponItem, attack, timeToHit, timeAtk, delayForSecondAttack);
 					break;
 				}
 				default:
 				{
-					CreatureAttackTaskManager.getInstance()
-						.onHitTimeNotDual(this, weaponItem, attack, timeToHit, timeAtk);
+					scheduleHitTimeNotDual(weaponItem, attack, timeToHit, timeAtk);
 					break;
 				}
 			}
@@ -3008,7 +3005,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (isAttackingNow())
 		{
-			CreatureAttackTaskManager.getInstance().abortAttack(this);
+			_abortAttack = true;
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 	}
@@ -3912,9 +3909,41 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 		}
 		
-		CreatureAttackTaskManager.getInstance().onAttackFinish(this, attack, attackTime - hitTime);
+		scheduleAttackFinish(attack, attackTime - hitTime);
 	}
-	
+
+	private async void scheduleAttackFinish(AttackPacket attack, int delay)
+	{
+		_abortAttack = false;
+		await System.Threading.Tasks.Task.Delay(Math.Max(delay, 0)).ConfigureAwait(false);
+		if (!_abortAttack)
+			onAttackFinish(attack);
+	}
+
+	private async void scheduleHitTimeNotDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime)
+	{
+		_abortAttack = false;
+		await System.Threading.Tasks.Task.Delay(Math.Max(hitTime, 0)).ConfigureAwait(false);
+		if (!_abortAttack)
+			onHitTimeNotDual(weapon, attack, hitTime, attackTime);
+	}
+
+	private async void scheduleFirstHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
+	{
+		_abortAttack = false;
+		await System.Threading.Tasks.Task.Delay(Math.Max(hitTime, 0)).ConfigureAwait(false);
+		if (!_abortAttack)
+			onFirstHitTimeForDual(weapon, attack, hitTime, attackTime, delayForSecondAttack);
+	}
+
+	private async void scheduleSecondHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
+	{
+		_abortAttack = false;
+		await System.Threading.Tasks.Task.Delay(Math.Max(delayForSecondAttack, 0)).ConfigureAwait(false);
+		if (!_abortAttack)
+			onSecondHitTimeForDual(weapon, attack, hitTime, delayForSecondAttack, attackTime);
+	}
+
 	public void onFirstHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
 	{
 		if (_isDead)
@@ -3923,8 +3952,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 		
-		CreatureAttackTaskManager.getInstance().onSecondHitTimeForDual(this, weapon, attack, hitTime, attackTime, delayForSecondAttack);
-		
+		scheduleSecondHitTimeForDual(weapon, attack, hitTime, attackTime, delayForSecondAttack);
+
 		// First dual attack is the first hit only.
 		Hit hit = attack.getHits()[0];
 		Creature target = (Creature) hit.getTarget();
@@ -3972,7 +4001,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 		}
 		
-		CreatureAttackTaskManager.getInstance().onAttackFinish(this, attack, attackTime - (hitTime1 + hitTime2));
+		scheduleAttackFinish(attack, attackTime - (hitTime1 + hitTime2));
 	}
 	
 	public void onHitTarget(Creature target, Weapon weapon, Hit hit)
