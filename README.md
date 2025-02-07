@@ -13,7 +13,7 @@ The project code initially is the port of the L2J server written in Java.
 - [x] Make code compile
 - [x] Make the server able to run without crashes
 - [ ] Make main functionality work, see [Test Plan](https://l2dn.readthedocs.io/en/latest/TestPlan/) 
-  * Teleports, skills, fighting are working         
+  * Teleports, skills, fighting are working
 - [ ] Port scripts (quests, events, etc)
   * Most of the handlers have been ported, including GM commands 
   * Tutorial quest for Dwarf fighters has been ported as a quest example 
