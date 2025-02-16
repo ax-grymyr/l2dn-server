@@ -35,6 +35,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.GameServer.Scripts", "L2Dn.GameServer.Scripts\L2Dn.GameServer.Scripts.csproj", "{3C481907-5B17-42B7-939A-AEA051AB413F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{D0D1C649-0380-4215-BB98-E9CB894967FE}"
+	ProjectSection(SolutionItems) = preProject
+		Tools\.editorconfig = Tools\.editorconfig
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildDataPackDb", "Tools\BuildDataPackDb\BuildDataPackDb.csproj", "{E5F30E23-AABE-4765-99F3-035FC63944B3}"
 EndProject
