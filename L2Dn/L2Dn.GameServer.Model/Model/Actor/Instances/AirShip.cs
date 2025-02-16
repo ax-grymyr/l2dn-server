@@ -15,7 +15,7 @@ public class AirShip : Vehicle
 {
 	public AirShip(CreatureTemplate template):base(template)
 	{
-		setInstanceType(InstanceType.AirShip);
+		InstanceType = InstanceType.AirShip;
 		setAI(new AirShipAI(this));
 	}
 	

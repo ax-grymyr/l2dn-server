@@ -11,7 +11,7 @@ public class Fisherman: Merchant
 {
     public Fisherman(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Fisherman);
+        InstanceType = InstanceType.Fisherman;
     }
 
     public override string getHtmlPath(int npcId, int value, Player player)

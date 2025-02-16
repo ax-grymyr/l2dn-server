@@ -16,7 +16,7 @@ public class FlameTower: Tower
 
     public FlameTower(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.FlameTower);
+        InstanceType = InstanceType.FlameTower;
     }
 
     public override bool doDie(Creature killer)

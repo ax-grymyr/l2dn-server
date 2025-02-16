@@ -18,13 +18,14 @@ namespace L2Dn.GameServer.Model;
 /**
  * Base class for all interactive objects.
  */
-public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocation, IEquatable<WorldObject>
+public abstract class WorldObject(int objectId)
+	: IIdentifiable, INamable, IUniqueId, IHasLocation, IEquatable<WorldObject>
 {
+	/** Object ID */
+	private readonly int _objectId = objectId;
+
 	/** Name */
 	private string _name = string.Empty;
-
-	/** Object ID */
-	private int _objectId;
 
 	/** World Region */
 	private WorldRegion? _worldRegion;
@@ -35,19 +36,10 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	/** Instance */
 	private Instance? _instance;
 
-	/** Instance type */
-	private InstanceType _instanceType;
-
 	private bool _isSpawned;
 	private bool _isInvisible;
 	private bool _isTargetable = true;
 	private Map<string, object>? _scripts;
-
-	protected WorldObject(int objectId)
-	{
-		setInstanceType(InstanceType.WorldObject);
-		_objectId = objectId;
-	}
 
 	public abstract int getId();
 
@@ -57,29 +49,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	 * Gets the instance type of object.
 	 * @return the instance type
 	 */
-	public InstanceType getInstanceType()
-	{
-		return _instanceType;
-	}
-
-	/**
-	 * Sets the instance type.
-	 * @param newInstanceType the instance type to set
-	 */
-	protected void setInstanceType(InstanceType newInstanceType)
-	{
-		_instanceType = newInstanceType;
-	}
-
-	/**
-	 * Verifies if object is of any given instance types.
-	 * @param instanceTypes the instance types to verify
-	 * @return {@code true} if object is of any given instance types, {@code false} otherwise
-	 */
-	public bool isInstanceTypes(InstanceType instanceType)
-	{
-		return _instanceType.IsType(instanceType);
-	}
+	public InstanceType InstanceType { get; protected set; } = InstanceType.WorldObject;
 
 	public void onAction(Player player)
 	{
@@ -88,7 +58,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 
 	public virtual void onAction(Player player, bool interact)
 	{
-		IActionHandler handler = ActionHandler.getInstance().getHandler(getInstanceType());
+		IActionHandler handler = ActionHandler.getInstance().getHandler(InstanceType);
 		if (handler != null)
 		{
 			handler.action(player, this, interact);
@@ -99,7 +69,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 
 	public virtual void onActionShift(Player player)
 	{
-		IActionShiftHandler handler = ActionShiftHandler.getInstance().getHandler(getInstanceType());
+		IActionShiftHandler handler = ActionShiftHandler.getInstance().getHandler(InstanceType);
 		if (handler != null)
 		{
 			handler.action(player, this, true);
@@ -123,13 +93,6 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 		World.getInstance().removeVisibleObject(this, _worldRegion);
 		World.getInstance().removeObject(this);
 		return true;
-	}
-
-	public virtual void refreshId()
-	{
-		World.getInstance().removeObject(this);
-		IdManager.getInstance().releaseId(ObjectId);
-		_objectId = IdManager.getInstance().getNextId();
 	}
 
 	public virtual bool spawnMe()

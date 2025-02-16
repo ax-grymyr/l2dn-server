@@ -87,7 +87,7 @@ public class TriggerSkillBySkillAttack: AbstractEffect
 			return;
 		}
 		
-		if ((@event.getDamage() < _minDamage) || ((_chance < 100) && (Rnd.get(100) > _chance)) || !@event.getAttacker().getInstanceType().IsType(_attackerType))
+		if ((@event.getDamage() < _minDamage) || ((_chance < 100) && (Rnd.get(100) > _chance)) || !@event.getAttacker().InstanceType.IsType(_attackerType))
 		{
 			return;
 		}

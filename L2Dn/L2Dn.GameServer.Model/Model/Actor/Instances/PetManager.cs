@@ -13,7 +13,7 @@ public class PetManager: Merchant
 {
 	public PetManager(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.PetManager);
+		InstanceType = InstanceType.PetManager;
 	}
 
 	public override string getHtmlPath(int npcId, int value, Player player)

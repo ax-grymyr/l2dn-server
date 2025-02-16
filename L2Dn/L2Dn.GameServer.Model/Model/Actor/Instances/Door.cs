@@ -32,7 +32,7 @@ public class Door : Creature
 	
 	public Door(DoorTemplate template, bool? isOpened = null): base(template)
 	{
-		setInstanceType(InstanceType.Door);
+		InstanceType = InstanceType.Door;
 		setInvul(false);
 		setLethalable(false);
 		_open = isOpened ?? template.isOpenByDefault();

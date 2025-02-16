@@ -17,7 +17,7 @@ public class EventMonster: Monster
 
     public EventMonster(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.EventMob);
+        InstanceType = InstanceType.EventMob;
     }
 
     public void eventSetBlockOffensiveSkills(bool value)

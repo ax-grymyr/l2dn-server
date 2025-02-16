@@ -15,7 +15,7 @@ public class Doorman : Folk
 {
 	public Doorman(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Doorman);
+		InstanceType = InstanceType.Doorman;
 	}
 	
 	public override bool isAutoAttackable(Creature attacker)

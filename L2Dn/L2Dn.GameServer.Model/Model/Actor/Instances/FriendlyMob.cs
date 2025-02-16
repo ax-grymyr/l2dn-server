@@ -11,7 +11,7 @@ public class FriendlyMob: Attackable
 {
     public FriendlyMob(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.FriendlyMob);
+        InstanceType = InstanceType.FriendlyMob;
     }
 
     public override bool isAutoAttackable(Creature attacker)

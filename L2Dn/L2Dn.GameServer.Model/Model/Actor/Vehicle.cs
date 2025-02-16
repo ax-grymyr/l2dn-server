@@ -17,7 +17,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
-public abstract class Vehicle : Creature
+public abstract class Vehicle: Creature
 {
 	protected int _dockId;
 	protected readonly Set<Player> _passengers = new();
@@ -28,11 +28,11 @@ public abstract class Vehicle : Creature
 	protected int _runState;
 	private ScheduledFuture _monitorTask;
 	private Location3D _monitorLocation;
-	
-	public Vehicle(CreatureTemplate template): base(template)
+
+	protected Vehicle(CreatureTemplate template): base(template)
 	{
+		InstanceType = InstanceType.Vehicle;
 		_monitorLocation = base.Location.Location3D;
-		setInstanceType(InstanceType.Vehicle);
 		setFlying(true);
 	}
 	

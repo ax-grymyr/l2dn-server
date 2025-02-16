@@ -32,7 +32,7 @@ public class Teleporter: Npc
 	
 	public Teleporter(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Teleporter);
+		InstanceType = InstanceType.Teleporter;
 	}
 	
 	public override bool isAutoAttackable(Creature attacker)

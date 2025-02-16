@@ -114,9 +114,10 @@ public class Npc: Creature
 	 */
 	public Npc(NpcTemplate template): base(template)
 	{
+		InstanceType = InstanceType.Npc;
+		
 		// Call the Creature constructor to set the _template of the Creature, copy skills from template to object
 		// and link _calculators to NPC_STD_CALCULATOR
-		setInstanceType(InstanceType.Npc);
 		initCharStatusUpdateValues();
 		setTargetable(getTemplate().isTargetable());
 

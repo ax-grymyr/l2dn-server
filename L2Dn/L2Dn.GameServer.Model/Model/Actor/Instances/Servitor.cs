@@ -30,7 +30,7 @@ public class Servitor : Summon, Runnable
 	
 	public Servitor(NpcTemplate template, Player owner): base(template, owner)
 	{
-		setInstanceType(InstanceType.Servitor);
+		InstanceType = InstanceType.Servitor;
 		setShowSummonAnimation(true);
 	}
 	

@@ -13,7 +13,7 @@ public class ControlTower: Tower
 
     public ControlTower(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.ControlTower);
+        InstanceType = InstanceType.ControlTower;
     }
 
     public override bool doDie(Creature killer)

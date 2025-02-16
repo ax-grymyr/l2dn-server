@@ -8,7 +8,7 @@ public class FlyTerrainObject: Npc
 {
     public FlyTerrainObject(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.FlyTerrainObject);
+        InstanceType = InstanceType.FlyTerrainObject;
         setFlying(true);
     }
 

@@ -16,7 +16,7 @@ public class AirShipManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AirShipManager));
 	
-	private CreatureTemplate _airShipTemplate = null;
+	private CreatureTemplate _airShipTemplate;
 	private readonly Map<int, StatSet> _airShipsInfo = new();
 	private readonly Map<int, AirShip> _airShips = new();
 	private readonly Map<int, AirShipTeleportList> _teleports = new();
@@ -88,7 +88,7 @@ public class AirShipManager
 		
 		if (_airShips.TryGetValue(ownerId, out AirShip? airShip))
 		{
-			airShip.refreshId();
+			//airShip.refreshId(); // TODO: Recreate airship
 		}
 		else
 		{

@@ -14,7 +14,7 @@ public class EffectPoint : Npc
 	
 	public EffectPoint(NpcTemplate template, Creature owner): base(template)
 	{
-		setInstanceType(InstanceType.EffectPoint);
+		InstanceType = InstanceType.EffectPoint;
 		setInvul(false);
 		
 		_owner = owner == null ? null : owner.getActingPlayer();

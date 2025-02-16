@@ -22,7 +22,7 @@ public class SiegeFlag: Npc
 	
 	public SiegeFlag(Player player, NpcTemplate template, bool advanced): base(template)
 	{
-		setInstanceType(InstanceType.SiegeFlag);
+		InstanceType = InstanceType.SiegeFlag;
 		
 		_clan = player.getClan();
 		_canTalk = true;

@@ -11,7 +11,7 @@ public class Merchant: Folk
 {
     public Merchant(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Merchant);
+        InstanceType = InstanceType.Merchant;
     }
 
     public override bool isAutoAttackable(Creature attacker)

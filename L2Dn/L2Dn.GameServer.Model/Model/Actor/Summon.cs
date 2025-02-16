@@ -54,7 +54,7 @@ public abstract class Summon: Playable
 	public Summon(NpcTemplate template, Player owner)
 		: base(template)
 	{
-		setInstanceType(InstanceType.Summon);
+		InstanceType = InstanceType.Summon;
 		setInstance(owner.getInstanceWorld()); // set instance to same as owner
 		setShowSummonAnimation(true);
 		_owner = owner;

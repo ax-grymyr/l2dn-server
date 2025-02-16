@@ -27,7 +27,7 @@ public class ControllableAirShip : AirShip
 	
 	public ControllableAirShip(CreatureTemplate template, int ownerId): base(template)
 	{
-		setInstanceType(InstanceType.ControllableAirShip);
+		InstanceType = InstanceType.ControllableAirShip;
 		_ownerId = ownerId;
 		_helmId = IdManager.getInstance().getNextId(); // not forget to release !
 	}
@@ -251,13 +251,6 @@ public class ControllableAirShip : AirShip
 		
 		broadcastPacket(new DeleteObjectPacket(_helmId));
 		return true;
-	}
-	
-	public override void refreshId()
-	{
-		base.refreshId();
-		IdManager.getInstance().releaseId(_helmId);
-		_helmId = IdManager.getInstance().getNextId();
 	}
 	
 	public override void sendInfo(Player player)

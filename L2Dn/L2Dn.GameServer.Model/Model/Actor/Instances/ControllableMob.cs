@@ -21,7 +21,7 @@ public class ControllableMob: Monster
 
     public ControllableMob(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.ControllableMob);
+        InstanceType = InstanceType.ControllableMob;
     }
 
     protected override CreatureAI initAI()

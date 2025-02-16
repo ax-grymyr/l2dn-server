@@ -850,7 +850,7 @@ public class Player: Playable
 	 */
 	private Player(int objectId, PlayerTemplate template, int accountId, string accountName, PlayerAppearance app): base(objectId, template)
 	{
-		setInstanceType(InstanceType.Player);
+		InstanceType = InstanceType.Player;
 		_accountName = accountName;
 		_accountId = accountId;
 		app.setOwner(this);

@@ -26,7 +26,7 @@ public class Guard: Attackable
 	 */
 	public Guard(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Guard);
+		InstanceType = InstanceType.Guard;
 	}
 
 	public bool isAutoAttackable(Creature attacker)

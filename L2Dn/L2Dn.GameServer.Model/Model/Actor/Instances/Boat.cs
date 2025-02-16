@@ -13,7 +13,7 @@ public class Boat: Vehicle
 
     public Boat(CreatureTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Boat);
+        InstanceType = InstanceType.Boat;
         setAI(new BoatAI(this));
     }
 

@@ -13,6 +13,6 @@ public class FeedableBeast : Monster
 {
     public FeedableBeast(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.FeedableBeast);
+        InstanceType = InstanceType.FeedableBeast;
     }
 }

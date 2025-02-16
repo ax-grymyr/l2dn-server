@@ -1,7 +1,6 @@
-﻿using System.Collections.Frozen;
+﻿using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Enums;
-
 
 public enum InstanceType
 {
@@ -85,98 +84,124 @@ public enum InstanceType
 
 public static class InstanceTypeUtil
 {
-	// TODO: this must be simple array
-	private static readonly FrozenDictionary<InstanceType, InstanceType?> _parentInstanceTypes =
-		new (InstanceType, InstanceType?)[]
-		{
-			(InstanceType.WorldObject, null),
-			(InstanceType.Item, InstanceType.WorldObject),
-			(InstanceType.Creature, InstanceType.WorldObject),
-			(InstanceType.Npc, InstanceType.Creature),
-			(InstanceType.Playable, InstanceType.Creature),
-			(InstanceType.Summon, InstanceType.Playable),
-			(InstanceType.Player, InstanceType.Playable),
-			(InstanceType.Folk, InstanceType.Npc),
-			(InstanceType.Merchant, InstanceType.Folk),
-			(InstanceType.Warehouse, InstanceType.Folk),
-			(InstanceType.StaticObject, InstanceType.Creature),
-			(InstanceType.Door, InstanceType.Creature),
-			(InstanceType.TerrainObject, InstanceType.Npc),
-			(InstanceType.EffectPoint, InstanceType.Npc),
-			(InstanceType.CommissionManager, InstanceType.Npc),
-			// Summons, Pets, Decoys and Traps
-			(InstanceType.Servitor, InstanceType.Summon),
-			(InstanceType.Pet, InstanceType.Summon),
-			(InstanceType.Cubic, InstanceType.Creature),
-			(InstanceType.Decoy, InstanceType.Creature),
-			(InstanceType.Trap, InstanceType.Npc),
-			// Attackable
-			(InstanceType.Attackable, InstanceType.Npc),
-			(InstanceType.Guard, InstanceType.Attackable),
-			(InstanceType.Monster, InstanceType.Attackable),
-			(InstanceType.Chest, InstanceType.Monster),
-			(InstanceType.ControllableMob, InstanceType.Monster),
-			(InstanceType.FeedableBeast, InstanceType.Monster),
-			(InstanceType.TamedBeast, InstanceType.FeedableBeast),
-			(InstanceType.FriendlyMob, InstanceType.Attackable),
-			(InstanceType.RaidBoss, InstanceType.Monster),
-			(InstanceType.GrandBoss, InstanceType.RaidBoss),
-			(InstanceType.FriendlyNpc, InstanceType.Attackable),
-			// FlyMobs
-			(InstanceType.FlyTerrainObject, InstanceType.Npc),
-			// Vehicles
-			(InstanceType.Vehicle, InstanceType.Creature),
-			(InstanceType.Boat, InstanceType.Vehicle),
-			(InstanceType.AirShip, InstanceType.Vehicle),
-			(InstanceType.Shuttle, InstanceType.Vehicle),
-			(InstanceType.ControllableAirShip, InstanceType.AirShip),
-			// Siege
-			(InstanceType.Defender, InstanceType.Attackable),
-			(InstanceType.Artefact, InstanceType.Folk),
-			(InstanceType.ControlTower, InstanceType.Npc),
-			(InstanceType.FlameTower, InstanceType.Npc),
-			(InstanceType.SiegeFlag, InstanceType.Npc),
-			// Fort Siege
-			(InstanceType.FortCommander, InstanceType.Defender),
-			// Fort NPCs
-			(InstanceType.FortLogistics, InstanceType.Merchant),
-			(InstanceType.FortManager, InstanceType.Merchant),
-			// City NPCs
-			(InstanceType.BroadcastingTower, InstanceType.Npc),
-			(InstanceType.Fisherman, InstanceType.Merchant),
-			(InstanceType.OlympiadManager, InstanceType.Npc),
-			(InstanceType.PetManager, InstanceType.Merchant),
-			(InstanceType.Teleporter, InstanceType.Npc),
-			(InstanceType.VillageMaster, InstanceType.Folk),
-			// Doormens
-			(InstanceType.Doorman, InstanceType.Folk),
-			(InstanceType.FortDoorman, InstanceType.Doorman),
-			// Custom
-			(InstanceType.ClassMaster, InstanceType.Folk),
-			(InstanceType.SchemeBuffer, InstanceType.Npc),
-			(InstanceType.EventMob, InstanceType.Npc),
-		}.ToFrozenDictionary(t => t.Item1, t => t.Item2);
-
-	public static InstanceType? GetParent(this InstanceType instanceType)
+	private readonly struct InstanceTypeInfo(ulong mask, InstanceType? parent)
 	{
-		return _parentInstanceTypes.GetValueOrDefault(instanceType);
+		public readonly ulong Mask = mask;
+		public readonly InstanceType? Parent = parent;
 	}
 
+	private static readonly InstanceTypeInfo[] _instanceTypes = CreateInfo();
+
+	public static InstanceType? GetParent(this InstanceType instanceType) =>
+		instanceType >= 0 && (int)instanceType < _instanceTypes.Length
+			? _instanceTypes[(int)instanceType].Parent
+			: null;
+
+	/// <summary>
+	/// Verifies if the instance is of given instance type.
+	/// </summary>
+	/// <param name="instanceType"></param>
+	/// <param name="other"></param>
+	/// <returns></returns>
 	public static bool IsType(this InstanceType instanceType, InstanceType other)
 	{
-		// TODO make mask and use it
-		if (instanceType == other)
-			return true;
+		if (instanceType >= 0 && (int)instanceType < _instanceTypes.Length)
+			return (_instanceTypes[(int)instanceType].Mask & (1UL << (int)other)) != 0;
+		
+		return instanceType == other;
+	}
 
-		InstanceType? parent = instanceType.GetParent();
-		while (parent != null)
+	private static InstanceTypeInfo[] CreateInfo()
+	{
+		int count = EnumUtil.GetValues<InstanceType>().Length;
+		InstanceType?[] parents = new InstanceType?[count];
+
+		parents[(int)InstanceType.WorldObject] = null;
+		parents[(int)InstanceType.Item] = InstanceType.WorldObject;
+		parents[(int)InstanceType.Creature] = InstanceType.WorldObject;
+		parents[(int)InstanceType.Npc] = InstanceType.Creature;
+		parents[(int)InstanceType.Playable] = InstanceType.Creature;
+		parents[(int)InstanceType.Summon] = InstanceType.Playable;
+		parents[(int)InstanceType.Player] = InstanceType.Playable;
+		parents[(int)InstanceType.Folk] = InstanceType.Npc;
+		parents[(int)InstanceType.Merchant] = InstanceType.Folk;
+		parents[(int)InstanceType.Warehouse] = InstanceType.Folk;
+		parents[(int)InstanceType.StaticObject] = InstanceType.Creature;
+		parents[(int)InstanceType.Door] = InstanceType.Creature;
+		parents[(int)InstanceType.TerrainObject] = InstanceType.Npc;
+		parents[(int)InstanceType.EffectPoint] = InstanceType.Npc;
+		parents[(int)InstanceType.CommissionManager] = InstanceType.Npc;
+		// Summons, Pets, Decoys and Traps
+		parents[(int)InstanceType.Servitor] = InstanceType.Summon;
+		parents[(int)InstanceType.Pet] = InstanceType.Summon;
+		parents[(int)InstanceType.Cubic] = InstanceType.Creature;
+		parents[(int)InstanceType.Decoy] = InstanceType.Creature;
+		parents[(int)InstanceType.Trap] = InstanceType.Npc;
+		// Attackable
+		parents[(int)InstanceType.Attackable] = InstanceType.Npc;
+		parents[(int)InstanceType.Guard] = InstanceType.Attackable;
+		parents[(int)InstanceType.Monster] = InstanceType.Attackable;
+		parents[(int)InstanceType.Chest] = InstanceType.Monster;
+		parents[(int)InstanceType.ControllableMob] = InstanceType.Monster;
+		parents[(int)InstanceType.FeedableBeast] = InstanceType.Monster;
+		parents[(int)InstanceType.TamedBeast] = InstanceType.FeedableBeast;
+		parents[(int)InstanceType.FriendlyMob] = InstanceType.Attackable;
+		parents[(int)InstanceType.RaidBoss] = InstanceType.Monster;
+		parents[(int)InstanceType.GrandBoss] = InstanceType.RaidBoss;
+		parents[(int)InstanceType.FriendlyNpc] = InstanceType.Attackable;
+		// FlyMobs
+		parents[(int)InstanceType.FlyTerrainObject] = InstanceType.Npc;
+		// Vehicles
+		parents[(int)InstanceType.Vehicle] = InstanceType.Creature;
+		parents[(int)InstanceType.Boat] = InstanceType.Vehicle;
+		parents[(int)InstanceType.AirShip] = InstanceType.Vehicle;
+		parents[(int)InstanceType.Shuttle] = InstanceType.Vehicle;
+		parents[(int)InstanceType.ControllableAirShip] = InstanceType.AirShip;
+		// Siege
+		parents[(int)InstanceType.Defender] = InstanceType.Attackable;
+		parents[(int)InstanceType.Artefact] = InstanceType.Folk;
+		parents[(int)InstanceType.ControlTower] = InstanceType.Npc;
+		parents[(int)InstanceType.FlameTower] = InstanceType.Npc;
+		parents[(int)InstanceType.SiegeFlag] = InstanceType.Npc;
+		// Fort Siege
+		parents[(int)InstanceType.FortCommander] = InstanceType.Defender;
+		// Fort NPCs
+		parents[(int)InstanceType.FortLogistics] = InstanceType.Merchant;
+		parents[(int)InstanceType.FortManager] = InstanceType.Merchant;
+		// City NPCs
+		parents[(int)InstanceType.BroadcastingTower] = InstanceType.Npc;
+		parents[(int)InstanceType.Fisherman] = InstanceType.Merchant;
+		parents[(int)InstanceType.OlympiadManager] = InstanceType.Npc;
+		parents[(int)InstanceType.PetManager] = InstanceType.Merchant;
+		parents[(int)InstanceType.Teleporter] = InstanceType.Npc;
+		parents[(int)InstanceType.VillageMaster] = InstanceType.Folk;
+		// Doormens
+		parents[(int)InstanceType.Doorman] = InstanceType.Folk;
+		parents[(int)InstanceType.FortDoorman] = InstanceType.Doorman;
+		// Custom
+		parents[(int)InstanceType.ClassMaster] = InstanceType.Folk;
+		parents[(int)InstanceType.SchemeBuffer] = InstanceType.Npc;
+		parents[(int)InstanceType.EventMob] = InstanceType.Npc;
+
+		InstanceTypeInfo[] instanceTypes = new InstanceTypeInfo[count];
+		
+		// Calculate masks
+		for (int index = 0; index < parents.Length; ++index)
 		{
-			if (parent.Value == other)
-				return true;
-			
-			parent = parent.Value.GetParent();
+			InstanceType type = (InstanceType)index;
+			InstanceType? parent = parents[index];
+			ulong mask = 1UL << index;
+			if (parent is not null)
+			{
+				if (parent.Value > type)
+					throw new InvalidOperationException($"Invalid instance type hierarchy: {parent.Value} > {type}");
+				
+				mask |= instanceTypes[(int)parent.Value].Mask;
+			}
+
+			instanceTypes[index] = new InstanceTypeInfo(mask, parent);
 		}
 
-		return false;
+		return instanceTypes;
 	}
 }

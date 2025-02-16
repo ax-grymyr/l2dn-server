@@ -17,7 +17,7 @@ public class GrandBoss: Monster
      */
     public GrandBoss(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.GrandBoss);
+        InstanceType = InstanceType.GrandBoss;
         setIsRaid(true);
         setLethalable(false);
     }

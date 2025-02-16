@@ -15,7 +15,7 @@ public class Chest: Monster
 
     public Chest(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Chest);
+        InstanceType = InstanceType.Chest;
         setRandomWalking(false);
         _specialDrop = false;
     }

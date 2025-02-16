@@ -123,7 +123,7 @@ public class Item: WorldObject
 	 */
 	public Item(int objectId, int itemId): base(objectId)
 	{
-		setInstanceType(InstanceType.Item);
+		InstanceType = InstanceType.Item;
 		_itemId = itemId;
 		_itemTemplate = ItemData.getInstance().getTemplate(itemId);
 		if (_itemId == 0 || _itemTemplate == null)
@@ -147,7 +147,7 @@ public class Item: WorldObject
 	 */
 	public Item(int objectId, ItemTemplate itemTemplate): base(objectId)
 	{
-		setInstanceType(InstanceType.Item);
+		InstanceType = InstanceType.Item;
 		_itemTemplate = itemTemplate;
 		_itemId = itemTemplate.getId();
 		if (_itemId == 0)

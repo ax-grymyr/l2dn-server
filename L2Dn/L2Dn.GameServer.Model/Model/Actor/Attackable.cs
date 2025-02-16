@@ -74,7 +74,7 @@ public class Attackable: Npc
 	 */
 	public Attackable(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Attackable);
+		InstanceType = InstanceType.Attackable;
 		setInvul(false);
 		_mustGiveExpSp = true;
 	}

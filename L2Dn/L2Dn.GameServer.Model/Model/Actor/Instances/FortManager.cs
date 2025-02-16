@@ -26,7 +26,7 @@ public class FortManager: Merchant
 
 	public FortManager(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.FortManager);
+		InstanceType = InstanceType.FortManager;
 	}
 
 	public override bool isWarehouse()

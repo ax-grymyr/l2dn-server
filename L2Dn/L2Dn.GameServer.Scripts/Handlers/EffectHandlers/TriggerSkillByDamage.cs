@@ -93,7 +93,7 @@ public class TriggerSkillByDamage: AbstractEffect
 			return;
 		}
 		
-		if (!@event.getAttacker().getInstanceType().IsType(_attackerType))
+		if (!@event.getAttacker().InstanceType.IsType(_attackerType))
 		{
 			return;
 		}

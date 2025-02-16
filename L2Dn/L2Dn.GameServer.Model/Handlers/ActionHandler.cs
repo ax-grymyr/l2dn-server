@@ -32,9 +32,9 @@ public class ActionHandler: IHandler<IActionHandler, InstanceType>
 		_actions.remove(handler.getInstanceType());
 	}
 	
-	public IActionHandler getHandler(InstanceType iType)
+	public IActionHandler? getHandler(InstanceType iType)
 	{
-		IActionHandler result = null;
+		IActionHandler? result = null;
 		for (InstanceType? t = iType; t != null; t = t.Value.GetParent())
 		{
 			result = _actions.get(t.Value);
@@ -43,6 +43,7 @@ public class ActionHandler: IHandler<IActionHandler, InstanceType>
 				break;
 			}
 		}
+		
 		return result;
 	}
 	

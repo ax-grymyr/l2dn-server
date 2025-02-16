@@ -35,7 +35,7 @@ public class Monster: Attackable
 	 */
 	public Monster(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Monster);
+		InstanceType = InstanceType.Monster;
 		setAutoAttackable(true);
 	}
 

@@ -14,7 +14,7 @@ public class Folk: Npc
 {
 	public Folk(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Folk);
+		InstanceType = InstanceType.Folk;
 		setInvul(false);
 	}
 	

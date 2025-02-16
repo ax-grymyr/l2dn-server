@@ -186,7 +186,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * Creates a creature.
 	 * @param template the creature template
 	 */
-	public Creature(CreatureTemplate template): this(IdManager.getInstance().getNextId(), template)
+	protected Creature(CreatureTemplate template)
+		: this(IdManager.getInstance().getNextId(), template)
 	{
 	}
 	
@@ -211,15 +212,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param objectId Identifier of the object to initialized
 	 * @param template The CreatureTemplate to apply to the object
 	 */
-	public Creature(int objectId, CreatureTemplate template): base(objectId)
+	protected Creature(int objectId, CreatureTemplate template): base(objectId)
 	{
 		ArgumentNullException.ThrowIfNull(template, nameof(template));
 
+		InstanceType = InstanceType.Creature;
 		_effectList = new EffectList(this);
 		_isRunning = isPlayer();
 		_lastZoneValidateLocation = new Location3D(base.getX(), base.getY(), base.getZ());
 		
-		setInstanceType(InstanceType.Creature);
 		// Set its template to the new Creature
 		_template = template;
 		_eventContainer = new EventContainer($"Creature {objectId}", template.Events);

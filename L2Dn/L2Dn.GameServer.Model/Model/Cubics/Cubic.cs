@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -26,11 +25,11 @@ public class Cubic: Creature
 	private ScheduledFuture _skillUseTask;
 	private ScheduledFuture _expireTask;
 	
-	public Cubic(Player owner, Player caster, CubicTemplate template): base(template)
+	public Cubic(Player owner, Player? caster, CubicTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Cubic);
+		InstanceType = InstanceType.Cubic;
 		_owner = owner;
-		_caster = caster == null ? owner : caster;
+		_caster = caster ?? owner;
 		_template = template;
 		activate();
 	}

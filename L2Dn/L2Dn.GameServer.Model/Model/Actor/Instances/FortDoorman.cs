@@ -12,7 +12,7 @@ public class FortDoorman: Doorman
 {
     public FortDoorman(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.FortDoorman);
+        InstanceType = InstanceType.FortDoorman;
     }
 
     public override void showChatWindow(Player player)

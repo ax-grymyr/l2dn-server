@@ -86,7 +86,7 @@ public class VillageMaster: Folk
 	 */
 	public VillageMaster(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.VillageMaster);
+		InstanceType = InstanceType.VillageMaster;
 	}
 	
 	public override bool isAutoAttackable(Creature attacker)

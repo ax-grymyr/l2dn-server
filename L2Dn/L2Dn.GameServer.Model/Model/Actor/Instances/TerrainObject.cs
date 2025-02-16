@@ -8,7 +8,7 @@ public class TerrainObject: Npc
 {
     public TerrainObject(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.TerrainObject);
+        InstanceType = InstanceType.TerrainObject;
     }
 
     public override void onAction(Player player, bool interact)

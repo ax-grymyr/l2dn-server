@@ -25,7 +25,7 @@ public class RaidBoss: Monster
      */
     public RaidBoss(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.RaidBoss);
+        InstanceType = InstanceType.RaidBoss;
         setIsRaid(true);
         setLethalable(false);
     }

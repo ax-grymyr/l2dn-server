@@ -45,7 +45,7 @@ public class StaticObject: Creature
 	 */
 	public StaticObject(CreatureTemplate template, int staticId): base(template)
 	{
-		setInstanceType(InstanceType.StaticObject);
+		InstanceType = InstanceType.StaticObject;
 		_staticObjectId = staticId;
 	}
 	

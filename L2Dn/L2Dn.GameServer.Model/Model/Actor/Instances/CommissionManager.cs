@@ -9,7 +9,7 @@ public class CommissionManager: Npc
 {
     public CommissionManager(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.CommissionManager);
+        InstanceType = InstanceType.CommissionManager;
     }
 
     public override bool isAutoAttackable(Creature attacker)

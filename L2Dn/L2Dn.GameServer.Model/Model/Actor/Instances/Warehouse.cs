@@ -8,7 +8,7 @@ public class Warehouse: Folk
 {
     public Warehouse(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Warehouse);
+        InstanceType = InstanceType.Warehouse;
     }
 
     public override bool isAutoAttackable(Creature attacker)

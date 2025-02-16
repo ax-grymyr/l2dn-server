@@ -339,7 +339,7 @@ public class Pet: Summon
 	 */
 	public Pet(NpcTemplate template, Player owner, Item control, int level): base(template, owner)
 	{
-		setInstanceType(InstanceType.Pet);
+		InstanceType = InstanceType.Pet;
 
 		_controlObjectId = control.ObjectId;
 		getStat().setLevel(Math.Max(level, PetDataTable.getInstance().getPetMinLevel(template.getId())));

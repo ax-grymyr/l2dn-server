@@ -58,7 +58,7 @@ public class TriggerSkillByDeathBlow: AbstractEffect
 			return;
 		}
 		
-		if (((_chance < 100) && (Rnd.get(100) > _chance)) || !@event.getAttacker().getInstanceType().IsType(_attackerType))
+		if (((_chance < 100) && (Rnd.get(100) > _chance)) || !@event.getAttacker().InstanceType.IsType(_attackerType))
 		{
 			return;
 		}

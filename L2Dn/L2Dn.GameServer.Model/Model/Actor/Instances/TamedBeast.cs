@@ -36,15 +36,15 @@ public class TamedBeast: FeedableBeast
 	
 	public TamedBeast(int npcTemplateId): base(NpcData.getInstance().getTemplate(npcTemplateId))
 	{
-		setInstanceType(InstanceType.TamedBeast);
+		InstanceType = InstanceType.TamedBeast;
 		setHome(this);
 	}
 
 	public TamedBeast(int npcTemplateId, Player owner, int foodSkillId, Location3D location,
 		bool isFreyaBeast = false): base(NpcData.getInstance().getTemplate(npcTemplateId))
 	{
+		InstanceType = InstanceType.TamedBeast;
 		_isFreyaBeast = isFreyaBeast;
-		setInstanceType(InstanceType.TamedBeast);
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
 		setFoodType(foodSkillId);

@@ -203,7 +203,7 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		
 		// check obj class
-		if (!creature.isInstanceTypes(_target))
+		if (!creature.InstanceType.IsType(_target))
 		{
 			return false;
 		}

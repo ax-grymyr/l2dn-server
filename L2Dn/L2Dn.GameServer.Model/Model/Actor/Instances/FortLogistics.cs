@@ -20,7 +20,7 @@ public class FortLogistics : Merchant
 	
 	public FortLogistics(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.FortLogistics);
+		InstanceType = InstanceType.FortLogistics;
 	}
 	
 	public override void onBypassFeedback(Player player, string command)

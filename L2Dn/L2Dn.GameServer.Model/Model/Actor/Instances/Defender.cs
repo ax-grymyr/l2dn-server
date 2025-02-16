@@ -17,7 +17,7 @@ public class Defender : Attackable
 	
 	public Defender(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Defender);
+		InstanceType = InstanceType.Defender;
 	}
 
 	public override void addDamage(Creature attacker, int damage, Skill skill)

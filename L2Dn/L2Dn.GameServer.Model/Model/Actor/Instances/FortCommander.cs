@@ -16,7 +16,7 @@ public class FortCommander : Defender
 	
 	public FortCommander(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.FortCommander);
+		InstanceType = InstanceType.FortCommander;
 		_canTalk = true;
 	}
 	

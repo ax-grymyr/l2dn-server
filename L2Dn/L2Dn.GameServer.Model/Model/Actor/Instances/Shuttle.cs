@@ -13,7 +13,7 @@ public class Shuttle: Vehicle
 
 	public Shuttle(CreatureTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Shuttle);
+		InstanceType = InstanceType.Shuttle;
 		setAI(new ShuttleAI(this));
 	}
 

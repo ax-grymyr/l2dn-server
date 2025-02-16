@@ -23,7 +23,7 @@ public class Artefact: Npc
      */
     public Artefact(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.Artefact);
+        InstanceType = InstanceType.Artefact;
     }
 
     public override void onSpawn()

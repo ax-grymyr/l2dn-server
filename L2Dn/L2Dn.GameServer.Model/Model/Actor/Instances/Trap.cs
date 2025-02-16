@@ -37,7 +37,7 @@ public class Trap: Npc
 	
 	public Trap(NpcTemplate template, int instanceId, int lifeTime): base(template)
 	{
-		setInstanceType(InstanceType.Trap);
+		InstanceType = InstanceType.Trap;
 		setInstanceById(instanceId);
 		setName(template.getName());
 		setInvul(false);

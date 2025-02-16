@@ -28,7 +28,7 @@ public class Decoy : Creature
 	
 	public Decoy(NpcTemplate template, Player owner, TimeSpan totalLifeTime, bool aggressive): base(template)
 	{
-		setInstanceType(InstanceType.Decoy);
+		InstanceType = InstanceType.Decoy;
 		
 		_owner = owner;
 		setXYZInvisible(owner.Location.Location3D);

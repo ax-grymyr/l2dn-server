@@ -16,7 +16,7 @@ public class FriendlyNpc : Attackable
 	
 	public FriendlyNpc(NpcTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.FriendlyNpc);
+		InstanceType = InstanceType.FriendlyNpc;
 		setCanReturnToSpawnPoint(false);
 	}
 	

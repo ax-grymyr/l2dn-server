@@ -10,7 +10,7 @@ public class BroadcastingTower: Npc
 {
     public BroadcastingTower(NpcTemplate template): base(template)
     {
-        setInstanceType(InstanceType.BroadcastingTower);
+        InstanceType = InstanceType.BroadcastingTower;
     }
 
     public override void showChatWindow(Player player, int value)

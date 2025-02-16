@@ -44,13 +44,13 @@ public abstract class Playable: Creature
 	 */
 	public Playable(int objectId, CreatureTemplate template): base(objectId, template)
 	{
-		setInstanceType(InstanceType.Playable);
+		InstanceType = InstanceType.Playable;
 		setInvul(false);
 	}
 	
 	public Playable(CreatureTemplate template): base(template)
 	{
-		setInstanceType(InstanceType.Playable);
+		InstanceType = InstanceType.Playable;
 		setInvul(false);
 	}
 	

@@ -28,6 +28,6 @@ public class ConditionTargetNpcType: Condition
 			return false;
 		}
 
-		return Array.IndexOf(_npcType, effected.getInstanceType()) >= 0;
+		return Array.IndexOf(_npcType, effected.InstanceType) >= 0;
 	}
 }
