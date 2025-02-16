@@ -14,7 +14,7 @@ public readonly struct StopMoveInVehiclePacket: IOutgoingPacket
 
     public StopMoveInVehiclePacket(Player player, int boatId)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _boatId = boatId;
         _location = player.getInVehiclePosition();
         _heading = player.getHeading();

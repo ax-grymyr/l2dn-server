@@ -40,7 +40,7 @@ public class FavoriteBoard: IParseBoardHandler
 			StringBuilder sb = new StringBuilder();
 			try
             {
-                int playerId = player.getObjectId(); 
+                int playerId = player.ObjectId; 
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 IOrderedQueryable<DbBbsFavorite> query = ctx.BbsFavorites
                     .Where(r => r.PlayerId == playerId)
@@ -84,7 +84,7 @@ public class FavoriteBoard: IParseBoardHandler
                         Created = DateTime.UtcNow,
                         Title = parts[0].Trim(),
                         ByPass = parts[1].Trim(),
-                        PlayerId = player.getObjectId(),
+                        PlayerId = player.ObjectId,
                     });
 
                     ctx.SaveChanges();
@@ -109,7 +109,7 @@ public class FavoriteBoard: IParseBoardHandler
 			
 			try
             {
-                int playerId = player.getObjectId();
+                int playerId = player.ObjectId;
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.BbsFavorites.Where(r => r.Id == id && r.PlayerId == playerId).ExecuteDelete();
 

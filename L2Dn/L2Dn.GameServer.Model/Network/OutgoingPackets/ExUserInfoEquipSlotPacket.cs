@@ -34,7 +34,7 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
         ImmutableArray<InventorySlot> allSlots = EnumUtil.GetValues<InventorySlot>();
         
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_EQUIP_SLOT);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt16((short)allSlots.Length); // 152
         _helper.WriteMask(writer);
         PlayerInventory inventory = _player.getInventory();

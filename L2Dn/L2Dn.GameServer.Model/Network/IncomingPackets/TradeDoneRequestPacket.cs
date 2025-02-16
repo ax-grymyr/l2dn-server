@@ -38,7 +38,7 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
 		
         if (_response == 1)
         {
-            if (trade.getPartner() == null || World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null)
+            if (trade.getPartner() == null || World.getInstance().getPlayer(trade.getPartner().ObjectId) == null)
             {
                 // Trade partner not found, cancel trade
                 player.cancelActiveTrade();

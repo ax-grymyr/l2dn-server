@@ -591,7 +591,7 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 			
 			spawn.getLastSpawn().broadcastInfo();
-			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.getObjectId());
+			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId);
 		}
 		catch (Exception e)
 		{
@@ -633,7 +633,7 @@ public class AdminSpawn: IAdminCommandHandler
 				spawn.stopRespawn();
 			}
 			spawn.getLastSpawn().broadcastInfo();
-			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.getObjectId());
+			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId);
 		}
 		catch (Exception e)
 		{

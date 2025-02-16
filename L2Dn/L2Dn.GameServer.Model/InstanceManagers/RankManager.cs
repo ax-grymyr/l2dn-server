@@ -438,7 +438,7 @@ public class RankManager
 	
 	public int getPlayerGlobalRank(Player player)
 	{
-		int playerOid = player.getObjectId();
+		int playerOid = player.ObjectId;
 		foreach (var entry in _mainList)
 		{
 			StatSet stats = entry.Value;
@@ -453,7 +453,7 @@ public class RankManager
 	
 	public int getPlayerRaceRank(Player player)
 	{
-		int playerOid = player.getObjectId();
+		int playerOid = player.ObjectId;
 		foreach (StatSet stats in _mainList.Values)
 		{
 			if (stats.getInt("charId") != playerOid)
@@ -467,7 +467,7 @@ public class RankManager
 	
 	public int getPlayerClassRank(Player player)
 	{
-		int playerOid = player.getObjectId();
+		int playerOid = player.ObjectId;
 		foreach (StatSet stats in _mainList.Values)
 		{
 			if (stats.getInt("charId") != playerOid)

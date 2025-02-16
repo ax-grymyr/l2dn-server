@@ -18,7 +18,7 @@ public readonly struct FlyToLocationPacket: IOutgoingPacket
 
     public FlyToLocationPacket(Creature creature, Location3D destination, FlyType type)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _origin = new Location3D(creature.getX(), creature.getY(), creature.getZ());
         _destination = destination;
         _type = type;
@@ -31,7 +31,7 @@ public readonly struct FlyToLocationPacket: IOutgoingPacket
     public FlyToLocationPacket(Creature creature, Location3D destination, FlyType type, int flySpeed, int flyDelay,
         int animationSpeed)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _origin = new Location3D(creature.getX(), creature.getY(), creature.getZ());
         _destination = destination;
         _type = type;

@@ -14,8 +14,8 @@ public readonly struct ExAirShipStopMovePacket: IOutgoingPacket
 	
     public ExAirShipStopMovePacket(Player player, AirShip ship, int x, int y, int z)
     {
-        _playerId = player.getObjectId();
-        _airShipId = ship.getObjectId();
+        _playerId = player.ObjectId;
+        _airShipId = ship.ObjectId;
         _x = x;
         _y = y;
         _z = z;

@@ -23,7 +23,7 @@ public readonly struct ExStopMoveInAirShipPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_STOP_MOVE_IN_AIR_SHIP);
 
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_shipObjId);
         writer.WriteLocation(_location);
     }

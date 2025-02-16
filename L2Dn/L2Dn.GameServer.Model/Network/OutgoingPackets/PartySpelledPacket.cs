@@ -32,7 +32,7 @@ public readonly struct PartySpelledPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.PARTY_SPELLED);
         
         writer.WriteInt32(_creature.isServitor() ? 2 : _creature.isPet() ? 1 : 0);
-        writer.WriteInt32(_creature.getObjectId());
+        writer.WriteInt32(_creature.ObjectId);
         writer.WriteInt32(_effects.Count + _effects2.Count);
         foreach (BuffInfo info in _effects)
         {

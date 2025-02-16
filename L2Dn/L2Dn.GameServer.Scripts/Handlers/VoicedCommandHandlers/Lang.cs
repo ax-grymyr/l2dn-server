@@ -52,7 +52,7 @@ public class Lang: IVoicedCommandHandler
 				{
 					if (obj.isNpc() && NpcNameLocalisationData.getInstance().hasLocalisation(obj.getId()))
 					{
-						activeChar.sendPacket(new DeleteObjectPacket(obj.getObjectId()));
+						activeChar.sendPacket(new DeleteObjectPacket(obj.ObjectId));
 						ThreadPool.schedule(() => activeChar.sendPacket(new NpcInfoPacket((Npc) obj)), 1000);
 					}
 				}

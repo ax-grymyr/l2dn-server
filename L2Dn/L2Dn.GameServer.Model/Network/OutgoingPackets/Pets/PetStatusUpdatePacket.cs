@@ -34,7 +34,7 @@ public readonly struct PetStatusUpdatePacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.PET_STATUS_UPDATE);
 		writer.WriteInt32(_summon.getSummonType());
-		writer.WriteInt32(_summon.getObjectId());
+		writer.WriteInt32(_summon.ObjectId);
 		writer.WriteInt32(_summon.getX());
 		writer.WriteInt32(_summon.getY());
 		writer.WriteInt32(_summon.getZ());

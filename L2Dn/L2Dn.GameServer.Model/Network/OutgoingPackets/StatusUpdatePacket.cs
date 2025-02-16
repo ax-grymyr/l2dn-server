@@ -21,7 +21,7 @@ public struct StatusUpdatePacket: IOutgoingPacket
     public StatusUpdatePacket(WorldObject obj)
     {
         _updates = new();
-        _objectId = obj.getObjectId();
+        _objectId = obj.ObjectId;
         _isPlayable = obj.isPlayable();
     }
 	
@@ -47,7 +47,7 @@ public struct StatusUpdatePacket: IOutgoingPacket
 	
     public void addCaster(WorldObject obj)
     {
-        _casterObjectId = obj.getObjectId();
+        _casterObjectId = obj.ObjectId;
     }
 	
     public bool hasUpdates()

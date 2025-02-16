@@ -46,7 +46,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 	public RelationChangedPacket(Playable activeChar, long relation, bool autoAttackable)
 	{
 		_singleRelation = true;
-		_relation.ObjId = activeChar.getObjectId();
+		_relation.ObjId = activeChar.ObjectId;
 		_relation.RelationCode = relation;
 		_relation.AutoAttackable = autoAttackable;
 		_relation.Reputation = activeChar.getReputation();
@@ -66,7 +66,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 			_relations = new();
 		
 		Relation r = new Relation();
-		r.ObjId = activeChar.getObjectId();
+		r.ObjId = activeChar.ObjectId;
 		r.RelationCode = relation;
 		r.AutoAttackable = autoAttackable;
 		r.Reputation = activeChar.getReputation();

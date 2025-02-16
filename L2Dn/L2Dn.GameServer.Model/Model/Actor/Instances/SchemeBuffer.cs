@@ -30,8 +30,8 @@ public class SchemeBuffer : Npc
 		if (currentCommand.startsWith("menu"))
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("cleanup"))
@@ -46,8 +46,8 @@ public class SchemeBuffer : Npc
 			player.getServitors().Values.ForEach(servitor => servitor.stopAllEffects());
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("heal"))
@@ -63,8 +63,8 @@ public class SchemeBuffer : Npc
 			player.getServitors().Values.ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (currentCommand.startsWith("support"))
@@ -82,7 +82,7 @@ public class SchemeBuffer : Npc
 			}
 			else if ((cost == 0) || ((Config.BUFFER_ITEM_ID == 57) && player.reduceAdena("NPC Buffer", cost, this, true)) || ((Config.BUFFER_ITEM_ID != 57) && player.destroyItemByItemId("NPC Buffer", Config.BUFFER_ITEM_ID, cost, player, true)))
 			{
-				foreach (int skillId in SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName))
+				foreach (int skillId in SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName))
 				{
 					Skill skill = SkillData.getInstance().getSkill(skillId, SchemeBufferTable.getInstance().getAvailableBuff(skillId).getLevel());
 					if (buffSummons)
@@ -110,7 +110,7 @@ public class SchemeBuffer : Npc
 			string schemeName = st.nextToken();
 			int skillId = int.Parse(st.nextToken());
 			int page = int.Parse(st.nextToken());
-			List<int> skills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
+			List<int> skills = SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName);
 			if (currentCommand.startsWith("skillselect") && !schemeName.equalsIgnoreCase("none"))
 			{
 				Skill skill = SkillData.getInstance().getSkill(skillId, SkillData.getInstance().getMaxLevel(skillId));
@@ -162,7 +162,7 @@ public class SchemeBuffer : Npc
 					return;
 				}
 
-				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
 				if (schemes != null)
 				{
 					if (schemes.Count == Config.BUFFER_MAX_SCHEMES)
@@ -178,7 +178,7 @@ public class SchemeBuffer : Npc
 					}
 				}
 				
-				SchemeBufferTable.getInstance().setScheme(player.getObjectId(), schemeName.Trim(), new List<int>());
+				SchemeBufferTable.getInstance().setScheme(player.ObjectId, schemeName.Trim(), new List<int>());
 				showGiveBuffsWindow(player);
 			}
 			catch (Exception e)
@@ -191,7 +191,7 @@ public class SchemeBuffer : Npc
 			try
 			{
 				string schemeName = st.nextToken();
-				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
 				if ((schemes != null) && schemes.ContainsKey(schemeName))
 				{
 					schemes.remove(schemeName);
@@ -226,7 +226,7 @@ public class SchemeBuffer : Npc
 	private void showGiveBuffsWindow(Player player)
 	{
 		StringBuilder sb = new StringBuilder(200);
-		Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.getObjectId());
+		Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
 		if ((schemes == null) || schemes.Count == 0)
 		{
 			sb.Append("<font color=\"LEVEL\">You haven't defined any scheme.</font>");
@@ -251,8 +251,8 @@ public class SchemeBuffer : Npc
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 1, player), player);
 		htmlContent.Replace("%schemes%", sb.ToString());
 		htmlContent.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
@@ -265,7 +265,7 @@ public class SchemeBuffer : Npc
 	 */
 	private void showEditSchemeWindow(Player player, string groupType, string schemeName, int page)
 	{
-		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
+		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName);
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 2, player), player);
 		htmlContent.Replace("%schemename%", schemeName);
@@ -275,8 +275,8 @@ public class SchemeBuffer : Npc
 		
 		htmlContent.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
 		htmlContent.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 
@@ -307,7 +307,7 @@ public class SchemeBuffer : Npc
 		// Cut skills list up to page number.
 		skills = skills.GetRange((page - 1) * PAGE_LIMIT, Math.Min(page * PAGE_LIMIT, skills.Count));
 
-		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
+		List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName);
 		StringBuilder sb = new StringBuilder(skills.Count * 150);
 		int row = 0;
 		foreach (int skillId in skills)
@@ -344,7 +344,7 @@ public class SchemeBuffer : Npc
 		sb.Append("<br><img src=\"L2UI.SquareGray\" width=277 height=1><table width=\"100%\" bgcolor=000000><tr>");
 		if (page > 1)
 		{
-			sb.Append("<td align=left width=70><a action=\"bypass npc_" + getObjectId() + "_editschemes;" +
+			sb.Append("<td align=left width=70><a action=\"bypass npc_" + ObjectId + "_editschemes;" +
 			          groupType + ";" + schemeName + ";" + (page - 1) + "\">Previous</a></td>");
 		}
 		else
@@ -355,7 +355,7 @@ public class SchemeBuffer : Npc
 		sb.Append("<td align=center width=100>Page " + page + "</td>");
 		if (page < max)
 		{
-			sb.Append("<td align=right width=70><a action=\"bypass npc_" + getObjectId() + "_editschemes;" +
+			sb.Append("<td align=right width=70><a action=\"bypass npc_" + ObjectId + "_editschemes;" +
 			          groupType + ";" + schemeName + ";" + (page + 1) + "\">Next</a></td>");
 		}
 		else

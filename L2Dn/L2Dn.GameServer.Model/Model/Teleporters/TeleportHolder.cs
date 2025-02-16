@@ -92,7 +92,7 @@ public class TeleportHolder
 	 */
 	public void showTeleportList(Player player, Npc npc)
 	{
-		showTeleportList(player, npc, "npc_" + npc.getObjectId() + "_teleport");
+		showTeleportList(player, npc, "npc_" + npc.ObjectId + "_teleport");
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class TeleportHolder
 		// Send html message
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/teleports.htm", player);
 		htmlContent.Replace("%locations%", sbF.ToString());
-		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 		player.sendPacket(msg);
 	}
 
@@ -197,7 +197,7 @@ public class TeleportHolder
 			if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && npc.getCastle().getSiege().isInProgress())
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/castleteleporter-busy.htm", player);
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 				player.sendPacket(msg);
 				return;
 			}

@@ -241,7 +241,7 @@ public class AutoPlayTaskManager
 						}
 						
 						// Try to pick it up.
-						if (!droppedItem.isProtected() || droppedItem.getOwnerId() == player.getObjectId())
+						if (!droppedItem.isProtected() || droppedItem.getOwnerId() == player.ObjectId)
 						{
 							player.doPickupItem(droppedItem);
 							
@@ -287,7 +287,7 @@ public class AutoPlayTaskManager
 						// Check creature target.
 						if (player.getAutoPlaySettings().isRespectfulHunting() && !nearby.isPlayable() &&
 						    nearby.getTarget() != null && nearby.getTarget() != player &&
-						    !player.getServitors().ContainsKey(nearby.getTarget().getObjectId()))
+						    !player.getServitors().ContainsKey(nearby.getTarget().ObjectId))
 						{
 							continue; // target
 						}

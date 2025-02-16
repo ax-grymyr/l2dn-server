@@ -27,7 +27,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
         {
             if ((member != null) && (member != _exclude))
             {
-                writer.WriteInt32(member.getObjectId());
+                writer.WriteInt32(member.ObjectId);
                 writer.WriteString(member.getName());
                 writer.WriteInt32((int)member.getCurrentCp()); // c4
                 writer.WriteInt32(member.getMaxCp()); // c4
@@ -46,7 +46,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                 writer.WriteInt32(member.getServitors().Count + (pet != null ? 1 : 0)); // Summon size, one only atm
                 if (pet != null)
                 {
-                    writer.WriteInt32(pet.getObjectId());
+                    writer.WriteInt32(pet.ObjectId);
                     writer.WriteInt32(pet.getId() + 1000000);
                     writer.WriteByte((byte)pet.getSummonType());
                     writer.WriteString(pet.getName());
@@ -60,7 +60,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                 ICollection<Summon> servitors = member.getServitors().Values;
                 foreach (Summon servitor in servitors)
                 {
-                    writer.WriteInt32(servitor.getObjectId());
+                    writer.WriteInt32(servitor.ObjectId);
                     writer.WriteInt32(servitor.getId() + 1000000);
                     writer.WriteByte((byte)servitor.getSummonType());
                     writer.WriteString(servitor.getName());

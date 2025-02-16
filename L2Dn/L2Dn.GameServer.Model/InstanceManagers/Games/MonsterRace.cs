@@ -303,11 +303,11 @@ public class MonsterRace
 				case 1140: // 19 min
 				{
 					Npc[] monsters = _race.getMonsters();
-					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(new DeleteObjectPacket(monsters[0].getObjectId()),
-						new DeleteObjectPacket(monsters[1].getObjectId()), new DeleteObjectPacket(monsters[2].getObjectId()),
-						new DeleteObjectPacket(monsters[3].getObjectId()), new DeleteObjectPacket(monsters[4].getObjectId()),
-						new DeleteObjectPacket(monsters[5].getObjectId()), new DeleteObjectPacket(monsters[6].getObjectId()),
-						new DeleteObjectPacket(monsters[7].getObjectId()));
+					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(new DeleteObjectPacket(monsters[0].ObjectId),
+						new DeleteObjectPacket(monsters[1].ObjectId), new DeleteObjectPacket(monsters[2].ObjectId),
+						new DeleteObjectPacket(monsters[3].ObjectId), new DeleteObjectPacket(monsters[4].ObjectId),
+						new DeleteObjectPacket(monsters[5].ObjectId), new DeleteObjectPacket(monsters[6].ObjectId),
+						new DeleteObjectPacket(monsters[7].ObjectId));
 					break;
 				}
 			}

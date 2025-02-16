@@ -105,8 +105,8 @@ public class ManaHealByLevel: AbstractEffect
 			effected.broadcastStatusUpdate(effector);
 		}
 		
-		SystemMessagePacket sm = new SystemMessagePacket(effector.getObjectId() != effected.getObjectId() ? SystemMessageId.YOU_HAVE_RECOVERED_S2_MP_WITH_C1_S_HELP : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
-		if (effector.getObjectId() != effected.getObjectId())
+		SystemMessagePacket sm = new SystemMessagePacket(effector.ObjectId != effected.ObjectId ? SystemMessageId.YOU_HAVE_RECOVERED_S2_MP_WITH_C1_S_HELP : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
+		if (effector.ObjectId != effected.ObjectId)
 		{
 			sm.Params.addString(effector.getName());
 		}

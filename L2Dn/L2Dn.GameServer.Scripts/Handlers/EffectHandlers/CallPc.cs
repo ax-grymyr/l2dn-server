@@ -67,7 +67,7 @@ public class CallPc: AbstractEffect
 
 				target.addScript(new SummonRequestHolder(player));
 				
-				ConfirmDialogPacket confirm = new(30000, player.getObjectId(), SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT);
+				ConfirmDialogPacket confirm = new(30000, player.ObjectId, SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT);
 				confirm.Params.addString(player.getName());
 				confirm.Params.addZoneName(player.getX(), player.getY(), player.getZ());
 				target.sendPacket(confirm);

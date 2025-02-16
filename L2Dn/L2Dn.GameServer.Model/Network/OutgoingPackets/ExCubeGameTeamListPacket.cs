@@ -34,13 +34,13 @@ public readonly struct ExCubeGameTeamListPacket: IOutgoingPacket
         writer.WriteInt32(_bluePlayers.Count);
         foreach (Player player in _bluePlayers)
         {
-            writer.WriteInt32(player.getObjectId());
+            writer.WriteInt32(player.ObjectId);
             writer.WriteString(player.getName());
         }
         writer.WriteInt32(_redPlayers.Count);
         foreach (Player player in _redPlayers)
         {
-            writer.WriteInt32(player.getObjectId());
+            writer.WriteInt32(player.ObjectId);
             writer.WriteString(player.getName());
         }
     }

@@ -97,7 +97,7 @@ public class PetInventory: Inventory
     {
         foreach (Item item in _items)
         {
-            getOwner().transferItem("return", item.getObjectId(), item.getCount(), getOwner().getOwner().getInventory(),
+            getOwner().transferItem("return", item.ObjectId, item.getCount(), getOwner().getOwner().getInventory(),
                 getOwner().getOwner(), getOwner());
         }
     }

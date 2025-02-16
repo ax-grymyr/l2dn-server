@@ -45,7 +45,7 @@ public struct ExWorldExchangeItemListPacket: IIncomingPacket<GameSession>
         if (_itemIdList == null)
         {
             List<WorldExchangeHolder> holders = WorldExchangeManager.getInstance()
-                .getItemBids(player.getObjectId(), _category, _sortType, lang);
+                .getItemBids(player.ObjectId, _category, _sortType, lang);
             
             player.sendPacket(new WorldExchangeItemListPacket(holders, _category));
         }

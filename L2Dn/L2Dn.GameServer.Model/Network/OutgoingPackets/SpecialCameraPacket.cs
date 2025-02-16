@@ -75,7 +75,7 @@ public readonly struct SpecialCameraPacket: IOutgoingPacket
 	public SpecialCameraPacket(Creature creature, int force, int angle1, int angle2, int time, int range, int duration,
 		int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
-		_id = creature.getObjectId();
+		_id = creature.ObjectId;
 		_force = force;
 		_angle1 = angle1;
 		_angle2 = angle2;

@@ -35,8 +35,8 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (player.getFriendList().Contains(requestor.getObjectId()) //
-			|| requestor.getFriendList().Contains(player.getObjectId()))
+		if (player.getFriendList().Contains(requestor.ObjectId) //
+			|| requestor.getFriendList().Contains(player.ObjectId))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ALREADY_ON_YOUR_FRIEND_LIST);
 			sm.Params.addString(player.getName());
@@ -51,14 +51,14 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterFriends.Add(new CharacterFriend()
 				{
-					CharacterId = requestor.getObjectId(),
-					FriendId = player.getObjectId()
+					CharacterId = requestor.ObjectId,
+					FriendId = player.ObjectId
 				});
 
 				ctx.CharacterFriends.Add(new CharacterFriend()
 				{
-					FriendId = requestor.getObjectId(),
-					CharacterId = player.getObjectId()
+					FriendId = requestor.ObjectId,
+					CharacterId = player.ObjectId
 				});
 
 				ctx.SaveChanges();
@@ -70,13 +70,13 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 				msg = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_FRIEND_LIST);
 				msg.Params.addString(player.getName());
 				requestor.sendPacket(msg);
-				requestor.getFriendList().add(player.getObjectId());
+				requestor.getFriendList().add(player.ObjectId);
 				
 				// has joined as friend.
 				msg = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_FRIEND_LIST_2);
 				msg.Params.addString(requestor.getName());
 				player.sendPacket(msg);
-				player.getFriendList().add(requestor.getObjectId());
+				player.getFriendList().add(requestor.ObjectId);
 				
 				// Send notifications for both player in order to show them online
 				player.sendPacket(new FriendAddRequestResultPacket(requestor, 1));

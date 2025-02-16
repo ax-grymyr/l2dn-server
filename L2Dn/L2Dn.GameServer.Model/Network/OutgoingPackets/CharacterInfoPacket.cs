@@ -75,12 +75,12 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	public CharacterInfoPacket(Player player, bool gmSeeInvis)
 	{
 		_player = player;
-		_objId = player.getObjectId();
+		_objId = player.ObjectId;
 		_clan = player.getClan();
 		if (_player.getVehicle() != null && _player.getInVehiclePosition() != null)
 		{
 			_location = new Location(_player.getInVehiclePosition(), _player.getHeading());
-			_vehicleId = _player.getVehicle().getObjectId();
+			_vehicleId = _player.getVehicle().ObjectId;
 		}
 		else
 		{
@@ -105,7 +105,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	public CharacterInfoPacket(Decoy decoy, bool gmSeeInvis)
 		: this(decoy.getActingPlayer(), gmSeeInvis)
 	{
-		_objId = decoy.getObjectId();
+		_objId = decoy.ObjectId;
 		_location = decoy.Location;
 	}
 

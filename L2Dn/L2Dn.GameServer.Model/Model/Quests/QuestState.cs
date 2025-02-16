@@ -448,7 +448,7 @@ public class QuestState
 		{
 			LOGGER.Warn(
 				"Quest " + _questName + ", method getInt(" + variable + "), tried to parse a non-integer value (" +
-				varStr + "). Char Id: " + _player.getObjectId(), nfe);
+				varStr + "). Char Id: " + _player.ObjectId, nfe);
 		}
 		
 		return varInt;

@@ -13,7 +13,7 @@ public readonly struct ExPutItemResultForVariationCancelPacket: IOutgoingPacket
 	
     public ExPutItemResultForVariationCancelPacket(Item item, long price)
     {
-        _itemObjId = item.getObjectId();
+        _itemObjId = item.ObjectId;
         _itemId = item.getDisplayId();
         _price = price;
         _itemAug1 = item.getAugmentation().getOption1Id();

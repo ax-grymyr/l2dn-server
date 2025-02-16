@@ -70,7 +70,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 			}
 			if (!_isMulti)
 			{
-				writer.WriteInt32(request.getEnchantingItem().getObjectId());
+				writer.WriteInt32(request.getEnchantingItem().ObjectId);
 			}
 			else
 			{

@@ -32,7 +32,7 @@ public class RankingHistory
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _player.getObjectId();
+			int characterId = _player.ObjectId;
 			var record = ctx.CharacterRankingHistory.SingleOrDefault(r => r.CharacterId == characterId && r.Date == today);
 			if (record is null)
 			{
@@ -70,7 +70,7 @@ public class RankingHistory
 			try 
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				int characterId = _player.getObjectId();
+				int characterId = _player.ObjectId;
 				var query = ctx.CharacterRankingHistory.Where(r => r.CharacterId == characterId)
 					.OrderByDescending(r => r.Date);
 

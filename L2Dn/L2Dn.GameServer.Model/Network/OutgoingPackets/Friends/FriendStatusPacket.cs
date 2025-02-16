@@ -25,7 +25,7 @@ public readonly struct FriendStatusPacket: IOutgoingPacket
 	
 	public FriendStatusPacket(Player player, int type)
 	{
-		_objectId = player.getObjectId();
+		_objectId = player.ObjectId;
 		_classId = player.getActiveClass();
 		_level = player.getLevel();
 		_name = player.getName();

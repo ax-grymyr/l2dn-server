@@ -232,7 +232,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		}
 		
 		writer.WritePacketCode(OutgoingPacketCodes.NPC_INFO);
-		writer.WriteInt32(_npc.getObjectId());
+		writer.WriteInt32(_npc.ObjectId);
 		writer.WriteByte(_npc.isShowSummonAnimation() ? (byte)2 : (byte)0); // // 0=teleported 1=default 2=summoned
 		writer.WriteInt16(38); // 338 - mask_bits_38
 		_helper.WriteMask(writer);

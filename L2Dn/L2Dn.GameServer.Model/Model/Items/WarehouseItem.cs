@@ -57,7 +57,7 @@ public class WarehouseItem
 	{
 		ArgumentNullException.ThrowIfNull(item);
 		_item = item.getTemplate();
-		_object = item.getObjectId();
+		_object = item.ObjectId;
 		_count = item.getCount();
 		_owner = item.getOwnerId();
 		_locationSlot = item.getLocationSlot();

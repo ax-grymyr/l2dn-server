@@ -1315,7 +1315,7 @@ public class ItemData: DataReaderBase
 			else if (!Config.AUTO_LOOT ||
 			         ((reference is EventMonster) && ((EventMonster)reference).eventDropOnGround()))
 			{
-				item.setOwnerId(actor.getObjectId());
+				item.setOwnerId(actor.ObjectId);
 				itemLootShedule = ThreadPool.schedule(new ResetOwner(item), 15000);
 				item.setItemLootShedule(itemLootShedule);
 			}
@@ -1341,7 +1341,7 @@ public class ItemData: DataReaderBase
 				sb.Append("CREATE:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(item.getObjectId());
+				sb.Append(item.ObjectId);
 				sb.Append(":+");
 				sb.Append(item.getEnchantLevel());
 				sb.Append(" ");
@@ -1360,7 +1360,7 @@ public class ItemData: DataReaderBase
 				sb.Append("CREATE:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(item.getObjectId());
+				sb.Append(item.ObjectId);
 				sb.Append(":");
 				sb.Append(item.getTemplate().getName());
 				sb.Append("(");
@@ -1384,7 +1384,7 @@ public class ItemData: DataReaderBase
 			sb.Append(" name: ");
 			sb.Append(item.getItemName());
 			sb.Append(" objId: ");
-			sb.Append(item.getObjectId());
+			sb.Append(item.ObjectId);
 			sb.Append(")");
 
 			string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
@@ -1446,7 +1446,7 @@ public class ItemData: DataReaderBase
 			item.setLastChange(ItemChangeType.REMOVED);
 			
 			World.getInstance().removeObject(item);
-			IdManager.getInstance().releaseId(item.getObjectId());
+			IdManager.getInstance().releaseId(item.ObjectId);
 			
 			if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 			{
@@ -1456,7 +1456,7 @@ public class ItemData: DataReaderBase
 					sb.Append("DELETE:");
 					sb.Append(process);
 					sb.Append(", item ");
-					sb.Append(item.getObjectId());
+					sb.Append(item.ObjectId);
 					sb.Append(":+");
 					sb.Append(item.getEnchantLevel());
 					sb.Append(" ");
@@ -1477,7 +1477,7 @@ public class ItemData: DataReaderBase
 					sb.Append("DELETE:");
 					sb.Append(process);
 					sb.Append(", item ");
-					sb.Append(item.getObjectId());
+					sb.Append(item.ObjectId);
 					sb.Append(":");
 					sb.Append(item.getTemplate().getName());
 					sb.Append("(");
@@ -1501,7 +1501,7 @@ public class ItemData: DataReaderBase
 				sb.Append(" count: ");
 				sb.Append(item.getCount());
 				sb.Append(" itemObjId: ");
-				sb.Append(item.getObjectId());
+				sb.Append(item.ObjectId);
 				sb.Append(")");
 
 				string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
@@ -1529,7 +1529,7 @@ public class ItemData: DataReaderBase
 				try
 				{
 					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-					int itemId = item.getObjectId();
+					int itemId = item.ObjectId;
 					// Delete the pet in db
 					ctx.Pets.Where(pet => pet.ItemObjectId == itemId).ExecuteDelete();
 				}

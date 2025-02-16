@@ -138,7 +138,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		int sharedReuseGroup = item.getSharedReuseGroup();
 		if (reuseDelay > TimeSpan.Zero)
 		{
-			TimeSpan reuse = player.getItemRemainingReuseTime(item.getObjectId());
+			TimeSpan reuse = player.getItemRemainingReuseTime(item.ObjectId);
 			if (reuse > TimeSpan.Zero)
 			{
 				reuseData(player, item, reuse);
@@ -396,7 +396,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 				if (etcItem.isMineral())
 				{
 					player.sendPacket(ExShowVariationMakeWindowPacket.STATIC_PACKET);
-					player.sendPacket(new ExPutIntensiveResultForVariationMakePacket(item.getObjectId()));
+					player.sendPacket(new ExPutIntensiveResultForVariationMakePacket(item.ObjectId));
 				}
 				else if (etcItem.isEnsoulStone())
 				{

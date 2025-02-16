@@ -18,10 +18,10 @@ public struct RequestPledgeWaitingAppliedPacket: IIncomingPacket<GameSession>
         if (player == null || (player.getClan() != null))
             return ValueTask.CompletedTask;
 
-        int clanId = ClanEntryManager.getInstance().getClanIdForPlayerApplication(player.getObjectId());
+        int clanId = ClanEntryManager.getInstance().getClanIdForPlayerApplication(player.ObjectId);
         if (clanId > 0)
         {
-            player.sendPacket(new ExPledgeWaitingListAppliedPacket(clanId, player.getObjectId()));
+            player.sendPacket(new ExPledgeWaitingListAppliedPacket(clanId, player.ObjectId));
         }
         
         return ValueTask.CompletedTask;

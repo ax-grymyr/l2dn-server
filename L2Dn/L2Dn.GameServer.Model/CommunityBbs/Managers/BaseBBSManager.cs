@@ -42,7 +42,7 @@ public abstract class BaseBBSManager
 		[
 			"0", "0", "0", "0", "0", "0", 
 			player.getName(),
-			player.getObjectId().ToString(),
+			player.ObjectId.ToString(),
 			player.getAccountName(),
 			"9",
 			string2, // subject?

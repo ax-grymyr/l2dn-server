@@ -25,7 +25,7 @@ public struct RequestGetOffVehiclePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!player.isInBoat() || player.getBoat().getObjectId() != _boatId || player.getBoat().isMoving() ||
+        if (!player.isInBoat() || player.getBoat().ObjectId != _boatId || player.getBoat().isMoving() ||
             !player.IsInsideRadius3D(_location, 1000))
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -35,7 +35,7 @@ public struct RequestGetOffVehiclePacket: IIncomingPacket<GameSession>
         player.broadcastPacket(new StopMoveInVehiclePacket(player, _boatId));
         player.setVehicle(null);
         player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-        player.broadcastPacket(new GetOffVehiclePacket(player.getObjectId(), _boatId, _location));
+        player.broadcastPacket(new GetOffVehiclePacket(player.ObjectId, _boatId, _location));
         player.setXYZ(_location);
         player.setInsideZone(ZoneId.PEACE, false);
         player.revalidateZone(true);

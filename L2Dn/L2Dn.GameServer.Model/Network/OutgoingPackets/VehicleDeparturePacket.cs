@@ -17,7 +17,7 @@ public readonly struct VehicleDeparturePacket: IOutgoingPacket
 	
     public VehicleDeparturePacket(Boat boat)
     {
-        _objId = boat.getObjectId();
+        _objId = boat.ObjectId;
         _x = boat.getXdestination();
         _y = boat.getYdestination();
         _z = boat.getZdestination();

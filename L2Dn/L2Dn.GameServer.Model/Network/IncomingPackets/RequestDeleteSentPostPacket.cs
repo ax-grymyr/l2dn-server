@@ -49,7 +49,7 @@ public struct RequestDeleteSentPostPacket: IIncomingPacket<GameSession>
             {
                 continue;
             }
-            if (msg.getSenderId() != player.getObjectId())
+            if (msg.getSenderId() != player.ObjectId)
             {
                 Util.handleIllegalPlayerAction(player, player + " tried to delete not own post!", Config.DEFAULT_PUNISH);
                 return ValueTask.CompletedTask;

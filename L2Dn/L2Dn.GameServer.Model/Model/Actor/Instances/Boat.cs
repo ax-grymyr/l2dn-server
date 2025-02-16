@@ -57,7 +57,7 @@ public class Boat: Vehicle
     {
         base.stopMove(loc);
 
-        broadcastPacket(new VehicleStartedPacket(getObjectId(), 0));
+        broadcastPacket(new VehicleStartedPacket(ObjectId, 0));
         broadcastPacket(new VehicleInfoPacket(this));
     }
 

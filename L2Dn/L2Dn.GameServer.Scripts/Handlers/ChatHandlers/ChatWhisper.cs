@@ -63,7 +63,7 @@ public class ChatWhisper: IChatHandler
 		}
 		
 		Player receiver = World.getInstance().getPlayer(target);
-		if ((receiver != null) && !receiver.isSilenceMode(activeChar.getObjectId()))
+		if ((receiver != null) && !receiver.isSilenceMode(activeChar.ObjectId))
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
@@ -85,7 +85,7 @@ public class ChatWhisper: IChatHandler
 				activeChar.sendMessage("Player belongs to the opposing faction.");
 				return;
 			}
-			if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.getWhisperers().Contains(receiver.getObjectId()) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+			if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.getWhisperers().Contains(receiver.ObjectId) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				var sm = new SystemMessagePacket(SystemMessageId.CHARACTERS_LV_S1_OR_LOWER_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_IT);
 				sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);
@@ -97,10 +97,10 @@ public class ChatWhisper: IChatHandler
 				// Allow reciever to send PMs to this char, which is in silence mode.
 				if (Config.SILENCE_MODE_EXCLUDE && activeChar.isSilenceMode())
 				{
-					activeChar.addSilenceModeExcluded(receiver.getObjectId());
+					activeChar.addSilenceModeExcluded(receiver.ObjectId);
 				}
 				
-				receiver.getWhisperers().add(activeChar.getObjectId());
+				receiver.getWhisperers().add(activeChar.ObjectId);
 				receiver.sendPacket(new CreatureSayPacket(activeChar, receiver, activeChar.getName(), type, text));
 				activeChar.sendPacket(new CreatureSayPacket(activeChar, receiver, "=>" + receiver.getName(), type, text));
 			}

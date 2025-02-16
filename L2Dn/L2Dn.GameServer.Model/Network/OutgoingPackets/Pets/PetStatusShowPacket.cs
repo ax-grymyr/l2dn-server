@@ -14,7 +14,7 @@ public readonly struct PetStatusShowPacket: IOutgoingPacket
 	public PetStatusShowPacket(Summon summon)
 	{
 		_summonType = summon.getSummonType();
-		_summonObjectId = summon.getObjectId();
+		_summonObjectId = summon.ObjectId;
 	}
 	
 	public void WriteContent(PacketBitWriter writer)

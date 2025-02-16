@@ -36,7 +36,7 @@ public class Harvesting: AbstractEffect
 		
 		Player player = effector.getActingPlayer();
 		Monster monster = (Monster) effected;
-		if (player.getObjectId() != monster.getSeederId())
+		if (player.ObjectId != monster.getSeederId())
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_HARVEST);
 		}

@@ -257,7 +257,7 @@ public class Olympiad
 	
 	public int getOlympiadRank(Player player)
 	{
-		return NOBLES_RANK.GetValueOrDefault(player.getObjectId(), 0);
+		return NOBLES_RANK.GetValueOrDefault(player.ObjectId, 0);
 	}
 	
 	public void loadNoblesRank()
@@ -1085,7 +1085,7 @@ public class Olympiad
 	
 	public int getNoblePoints(Player player)
 	{
-		if (!NOBLES.ContainsKey(player.getObjectId()))
+		if (!NOBLES.ContainsKey(player.ObjectId))
 		{
 			NobleData nobleData = new NobleData()
 			{
@@ -1094,10 +1094,10 @@ public class Olympiad
 				OlympiadPoints = DEFAULT_POINTS
 			};
 
-			addNobleStats(player.getObjectId(), nobleData);
+			addNobleStats(player.ObjectId, nobleData);
 		}
 		
-		return NOBLES.get(player.getObjectId()).OlympiadPoints;
+		return NOBLES.get(player.ObjectId).OlympiadPoints;
 	}
 	
 	public int getLastNobleOlympiadPoints(int objId)

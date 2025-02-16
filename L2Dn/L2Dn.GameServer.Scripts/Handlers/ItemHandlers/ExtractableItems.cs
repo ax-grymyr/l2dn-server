@@ -50,7 +50,7 @@ public class ExtractableItems: IItemHandler
 		
 		// destroy item
 		if (!DailyTaskManager.RESET_ITEMS.Contains(item.getId()) &&
-		    !player.destroyItem("Extract", item.getObjectId(), 1, player, true))
+		    !player.destroyItem("Extract", item.ObjectId, 1, player, true))
 		{
 			return false;
 		}

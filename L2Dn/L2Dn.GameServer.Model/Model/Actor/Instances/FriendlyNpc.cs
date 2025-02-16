@@ -78,7 +78,7 @@ public class FriendlyNpc : Attackable
 		}
 		
 		// Check if the Player already target the GuardInstance
-		if (getObjectId() != player.getTargetId())
+		if (ObjectId != player.getTargetId())
 		{
 			// Set the target of the Player player
 			player.setTarget(this);
@@ -98,7 +98,7 @@ public class FriendlyNpc : Attackable
 				// Open a chat window on client with the text of the GuardInstance
 				if (Events.HasSubscribers<OnNpcQuestStart>())
 				{
-					player.setLastQuestNpcObject(getObjectId());
+					player.setLastQuestNpcObject(ObjectId);
 				}
 
 				if (Events.HasSubscribers<OnNpcFirstTalk>())

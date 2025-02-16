@@ -38,7 +38,7 @@ public struct RequestWithdrawalPledgePacket: IIncomingPacket<GameSession>
         }
 		
         Clan clan = player.getClan();
-        clan.removeClanMember(player.getObjectId(), DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS));
+        clan.removeClanMember(player.ObjectId, DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS));
 		
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_LEFT_THE_CLAN);
         sm.Params.addString(player.getName());

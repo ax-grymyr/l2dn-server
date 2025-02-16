@@ -13,7 +13,7 @@ public readonly struct ExStopMoveInShuttlePacket: IOutgoingPacket
 
     public ExStopMoveInShuttlePacket(Player player, int boatId)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _boatId = boatId;
         _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }

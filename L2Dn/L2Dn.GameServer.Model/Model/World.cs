@@ -124,7 +124,7 @@ public sealed class World
 	 */
 	public void addObject(WorldObject @object)
 	{
-		_allObjects.TryAdd(@object.getObjectId(), @object);
+		_allObjects.TryAdd(@object.ObjectId, @object);
 	
 		if (@object.isPlayer())
 		{
@@ -134,7 +134,7 @@ public sealed class World
 				return;
 			}
 			
-			Player existingPlayer = _allPlayers.GetOrAdd(@object.getObjectId(), newPlayer);
+			Player existingPlayer = _allPlayers.GetOrAdd(@object.ObjectId, newPlayer);
 			if (existingPlayer != newPlayer)
 			{
 				LeaveWorldPacket packet = LeaveWorldPacket.STATIC_PACKET;
@@ -162,7 +162,7 @@ public sealed class World
 	 */
 	public void removeObject(WorldObject @object)
 	{
-		_allObjects.TryRemove(@object.getObjectId(), out _);
+		_allObjects.TryRemove(@object.ObjectId, out _);
 		if (@object.isPlayer())
 		{
 			Player player = (Player) @object;
@@ -170,17 +170,17 @@ public sealed class World
 			{
 				return;
 			}
-			_allPlayers.TryRemove(@object.getObjectId(), out _);
+			_allPlayers.TryRemove(@object.ObjectId, out _);
 			
 			if (Config.FACTION_SYSTEM_ENABLED)
 			{
 				if (player.isGood())
 				{
-					_allGoodPlayers.TryRemove(player.getObjectId(), out _);
+					_allGoodPlayers.TryRemove(player.ObjectId, out _);
 				}
 				else if (player.isEvil())
 				{
-					_allEvilPlayers.TryRemove(player.getObjectId(), out _);
+					_allEvilPlayers.TryRemove(player.ObjectId, out _);
 				}
 			}
 		}
@@ -273,7 +273,7 @@ public sealed class World
 				{
 					if (player.isInStoreSellOrBuyMode())
 					{
-						_allStoreModeBuySellPlayers[player.getObjectId()] = player;
+						_allStoreModeBuySellPlayers[player.ObjectId] = player;
 					}
 				}
 			}
@@ -367,11 +367,11 @@ public sealed class World
 	{
 		if (player.isGood())
 		{
-			_allGoodPlayers.put(player.getObjectId(), player);
+			_allGoodPlayers.put(player.ObjectId, player);
 		}
 		else if (player.isEvil())
 		{
-			_allEvilPlayers.put(player.getObjectId(), player);
+			_allEvilPlayers.put(player.ObjectId, player);
 		}
 	}
 	
@@ -431,7 +431,7 @@ public sealed class World
 					
 					if (obj.isPlayer())
 					{
-						obj.sendPacket(new DeleteObjectPacket(wo.getObjectId()));
+						obj.sendPacket(new DeleteObjectPacket(wo.ObjectId));
 					}
 				}
 				
@@ -451,7 +451,7 @@ public sealed class World
 					
 					if (wo.isPlayer())
 					{
-						wo.sendPacket(new DeleteObjectPacket(obj.getObjectId()));
+						wo.sendPacket(new DeleteObjectPacket(obj.ObjectId));
 					}
 				}
 			}
@@ -504,7 +504,7 @@ public sealed class World
 					
 					if (obj.isPlayer())
 					{
-						obj.sendPacket(new DeleteObjectPacket(wo.getObjectId()));
+						obj.sendPacket(new DeleteObjectPacket(wo.ObjectId));
 					}
 				}
 				
@@ -524,7 +524,7 @@ public sealed class World
 					
 					if (wo.isPlayer())
 					{
-						wo.sendPacket(new DeleteObjectPacket(obj.getObjectId()));
+						wo.sendPacket(new DeleteObjectPacket(obj.ObjectId));
 					}
 				}
 			}
@@ -774,7 +774,7 @@ public sealed class World
 			Summon summon = (Summon) @object;
 			summon.unSummon(summon.getOwner());
 		}
-		else if (_allObjects.remove(@object.getObjectId()) != null)
+		else if (_allObjects.remove(@object.ObjectId) != null)
 		{
 			if (@object.isNpc())
 			{
@@ -790,7 +790,7 @@ public sealed class World
 			}
 			else if (@object.isCreature())
 			{
-				LOGGER.Warn("Deleting object " + @object.getName() + " OID[" + @object.getObjectId() + "] from invalid location X:" + @object.getX() + " Y:" + @object.getY() + " Z:" + @object.getZ());
+				LOGGER.Warn("Deleting object " + @object.getName() + " OID[" + @object.ObjectId + "] from invalid location X:" + @object.getX() + " Y:" + @object.getY() + " Z:" + @object.getZ());
 				((Creature) @object).deleteMe();
 			}
 			

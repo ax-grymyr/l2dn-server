@@ -239,7 +239,7 @@ public class CursedWeaponsManager: DataReaderBase
 		
 		foreach (CursedWeapon cw in _cursedWeapons.Values)
 		{
-			if (cw.isActivated() && (player.getObjectId() == cw.getPlayerId()))
+			if (cw.isActivated() && (player.ObjectId == cw.getPlayerId()))
 			{
 				cw.setPlayer(player);
 				cw.setItem(player.getInventory().getItemByItemId(cw.getItemId()));

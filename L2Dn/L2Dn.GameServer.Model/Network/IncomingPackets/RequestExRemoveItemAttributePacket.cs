@@ -88,7 +88,7 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 			}
 			
 			player.sendPacket(sm);
-			player.sendPacket(new ExBaseAttributeCancelResultPacket(targetItem.getObjectId(), _element));
+			player.sendPacket(new ExBaseAttributeCancelResultPacket(targetItem.ObjectId, _element));
 		}
 		else
 		{

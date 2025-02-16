@@ -25,7 +25,7 @@ public struct CannotMoveAnymoreInVehiclePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.isInBoat() && (player.getBoat().getObjectId() == _boatId))
+        if (player.isInBoat() && (player.getBoat().ObjectId == _boatId))
         {
             player.setInVehiclePosition(_location.Location3D);
             player.setHeading(_location.Heading);

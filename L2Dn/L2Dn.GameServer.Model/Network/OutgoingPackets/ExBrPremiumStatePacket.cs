@@ -16,7 +16,7 @@ public readonly struct ExBrPremiumStatePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_BR_PREMIUM_STATE);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteByte(_player.hasPremiumStatus() || _player.getVipTier() > 0);
     }
 }

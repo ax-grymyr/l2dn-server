@@ -60,8 +60,8 @@ public class Link: IBypassHandler
 		if (VALID_LINKS.Contains(htmlPath) && (!htmlPath.startsWith("teleporter/") || player.getTarget() is Teleporter))
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + htmlPath, player);
-			htmlContent.Replace("%objectId%", (target?.getObjectId() ?? 0).ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(target?.getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", (target?.ObjectId ?? 0).ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(target?.ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 

@@ -92,7 +92,7 @@ public class BeeHive: AbstractScript
 			// Check if already spawned.
 			foreach (Monster monster in World.getInstance().getVisibleObjects<Monster>(killer))
 			{
-				if (monster.getScriptValue() == killer.getObjectId())
+				if (monster.getScriptValue() == killer.ObjectId)
 				{
 					return;
 				}
@@ -110,7 +110,7 @@ public class BeeHive: AbstractScript
 				{
 					spawn = addSpawn(isLow ? PLAYER_70_MONSTER : PLAYER_80_MONSTER, npc.Location, false, DESPAWN_TIME);
 				}
-				spawn.setScriptValue(killer.getObjectId());
+				spawn.setScriptValue(killer.ObjectId);
 				spawn.setShowSummonAnimation(true);
 				addAttackPlayerDesire(spawn, killer.hasPet() ? killer.getPet() : killer);
 			}

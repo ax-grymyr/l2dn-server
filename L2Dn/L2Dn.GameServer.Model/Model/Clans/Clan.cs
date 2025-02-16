@@ -2144,7 +2144,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
-		if (player.getObjectId() == target.getObjectId())
+		if (player.ObjectId == target.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
@@ -2226,7 +2226,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 		
-		if (player.getObjectId() == target.getObjectId())
+		if (player.ObjectId == target.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
@@ -2865,7 +2865,7 @@ public class Clan: IIdentifiable, INamable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void addMemberOnlineTime(Player player)
 	{
-		ClanMember clanMember = getClanMember(player.getObjectId());
+		ClanMember clanMember = getClanMember(player.ObjectId);
 		if (clanMember != null)
 		{
 			clanMember.setOnlineTime(clanMember.getOnlineTime() + TimeSpan.FromMinutes(1));
@@ -2964,7 +2964,7 @@ public class Clan: IIdentifiable, INamable
 	
 	public bool canClaimBonusReward(Player player, ClanRewardType type)
 	{
-		ClanMember clanMember = getClanMember(player.getObjectId());
+		ClanMember clanMember = getClanMember(player.ObjectId);
 		return (clanMember != null) && (getAvailableBonus(type) != null) && !clanMember.isRewardClaimed(type);
 	}
 	

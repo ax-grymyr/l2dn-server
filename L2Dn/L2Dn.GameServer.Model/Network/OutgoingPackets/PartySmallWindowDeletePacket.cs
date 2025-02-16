@@ -16,7 +16,7 @@ public readonly struct PartySmallWindowDeletePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.PARTY_SMALL_WINDOW_DELETE);
         
-        writer.WriteInt32(_member.getObjectId());
+        writer.WriteInt32(_member.ObjectId);
         writer.WriteString(_member.getName());
     }
 }

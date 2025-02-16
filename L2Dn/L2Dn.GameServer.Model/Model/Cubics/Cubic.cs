@@ -248,7 +248,7 @@ public class Cubic: Creature
 			sm.Params.addString(getName());
 			sm.Params.addString(target.getName());
 			sm.Params.addInt(damage);
-			sm.Params.addPopup(target.getObjectId(), _owner.getObjectId(), (damage * -1));
+			sm.Params.addPopup(target.ObjectId, _owner.ObjectId, (damage * -1));
 			_owner.sendPacket(sm);
 		}
 	}

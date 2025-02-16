@@ -24,7 +24,7 @@ public readonly struct ExCubeGameChangeTeamPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_BLOCK_UP_SET_LIST);
         
         writer.WriteInt32(5);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_fromRedTeam);
         writer.WriteInt32(!_fromRedTeam);
     }

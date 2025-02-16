@@ -23,7 +23,7 @@ public struct RequestExPledgeEnemyInfoListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         Clan clan = ClanTable.getInstance().getClan(_playerClan);
-        if (clan != null && clan.getClanMember(player.getObjectId()) != null)
+        if (clan != null && clan.getClanMember(player.ObjectId) != null)
         {
             player.sendPacket(new ExPledgeEnemyInfoListPacket(clan));
         }

@@ -30,7 +30,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
         if (_itemCount <= 0)
             return ValueTask.CompletedTask;
         
-        if (player.getObjectId() != _charId)
+        if (player.ObjectId != _charId)
         {
             Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Incorrect owner, Player: " + player.getName(), Config.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;

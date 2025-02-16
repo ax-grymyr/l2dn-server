@@ -38,7 +38,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
         }
 		
         Player partner = trade.getPartner();
-        if ((partner == null) || (World.getInstance().getPlayer(partner.getObjectId()) == null) || (partner.getActiveTradeList() == null))
+        if ((partner == null) || (World.getInstance().getPlayer(partner.ObjectId) == null) || (partner.getActiveTradeList() == null))
         {
             // Trade partner not found, cancel trade
             if (partner != null)

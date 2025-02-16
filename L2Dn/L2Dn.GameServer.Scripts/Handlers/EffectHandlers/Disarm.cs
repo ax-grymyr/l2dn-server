@@ -53,7 +53,7 @@ public class Disarm: AbstractEffect
 		player.sendInventoryUpdate(iu);
 		player.broadcastUserInfo();
 		
-		_disarmedPlayers.put(player.getObjectId(), itemToDisarm.getObjectId());
+		_disarmedPlayers.put(player.ObjectId, itemToDisarm.ObjectId);
 	}
 	
 	public override void onExit(Creature effector, Creature effected, Skill skill)
@@ -64,7 +64,7 @@ public class Disarm: AbstractEffect
 			return;
 		}
 		
-		int itemObjectId = _disarmedPlayers.remove(effected.getObjectId());
+		int itemObjectId = _disarmedPlayers.remove(effected.ObjectId);
 		if (itemObjectId == null)
 		{
 			return;

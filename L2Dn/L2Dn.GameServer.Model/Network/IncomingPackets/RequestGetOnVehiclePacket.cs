@@ -31,7 +31,7 @@ public struct RequestGetOnVehiclePacket: IIncomingPacket<GameSession>
         if (player.isInBoat())
         {
             boat = player.getBoat();
-            if (boat.getObjectId() != _boatId)
+            if (boat.ObjectId != _boatId)
             {
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
                 return ValueTask.CompletedTask;
@@ -49,7 +49,7 @@ public struct RequestGetOnVehiclePacket: IIncomingPacket<GameSession>
 
         player.setInVehiclePosition(_location);
         player.setVehicle(boat);
-        player.broadcastPacket(new GetOnVehiclePacket(player.getObjectId(), boat.getObjectId(), _location));
+        player.broadcastPacket(new GetOnVehiclePacket(player.ObjectId, boat.ObjectId, _location));
         player.setXYZ(boat.getX(), boat.getY(), boat.getZ());
         player.setInsideZone(ZoneId.PEACE, true);
         player.revalidateZone(true);

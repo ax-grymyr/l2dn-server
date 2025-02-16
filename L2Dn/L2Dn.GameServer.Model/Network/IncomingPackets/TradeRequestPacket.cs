@@ -60,7 +60,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		
 		// If target and acting player are the same, trade request is ignored
 		// and the following system message is sent to acting player.
-		if (target.getObjectId() == player.getObjectId())
+		if (target.ObjectId == player.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			return ValueTask.CompletedTask;
@@ -188,7 +188,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		}
 		
 		player.onTransactionRequest(partner);
-		partner.sendPacket(new SendTradeRequestPacket(player.getObjectId()));
+		partner.sendPacket(new SendTradeRequestPacket(player.ObjectId));
 		sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_REQUESTED_A_TRADE_WITH_C1);
 		sm.Params.addString(partner.getName());
 		player.sendPacket(sm);

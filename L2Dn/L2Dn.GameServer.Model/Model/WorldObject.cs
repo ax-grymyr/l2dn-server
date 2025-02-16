@@ -51,6 +51,8 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 
 	public abstract int getId();
 
+	public int ObjectId => _objectId;
+
 	/**
 	 * Gets the instance type of object.
 	 * @return the instance type
@@ -126,7 +128,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	public virtual void refreshId()
 	{
 		World.getInstance().removeObject(this);
-		IdManager.getInstance().releaseId(getObjectId());
+		IdManager.getInstance().releaseId(ObjectId);
 		_objectId = IdManager.getInstance().getNextId();
 	}
 
@@ -209,11 +211,6 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	public virtual void setName(string value)
 	{
 		_name = value;
-	}
-
-	public virtual int getObjectId()
-	{
-		return _objectId;
 	}
 
 	public abstract void sendInfo(Player player);
@@ -759,12 +756,12 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 
 	public bool Equals(WorldObject? obj)
 	{
-		return obj is not null && obj.getObjectId() == getObjectId();
+		return obj is not null && obj.ObjectId == ObjectId;
 	}
 
 	public override bool Equals(object? obj)
 	{
-		return obj is WorldObject worldObject && worldObject.getObjectId() == getObjectId();
+		return obj is WorldObject worldObject && worldObject.ObjectId == ObjectId;
 	}
 
 	public override string ToString()

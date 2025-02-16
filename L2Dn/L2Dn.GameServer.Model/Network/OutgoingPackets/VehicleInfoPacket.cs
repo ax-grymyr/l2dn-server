@@ -16,7 +16,7 @@ public readonly struct VehicleInfoPacket: IOutgoingPacket
 	
     public VehicleInfoPacket(Boat boat)
     {
-        _objId = boat.getObjectId();
+        _objId = boat.ObjectId;
         _x = boat.getX();
         _y = boat.getY();
         _z = boat.getZ();

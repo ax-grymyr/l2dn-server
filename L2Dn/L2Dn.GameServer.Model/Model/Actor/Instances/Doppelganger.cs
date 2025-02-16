@@ -23,7 +23,7 @@ public class Doppelganger : Attackable
 	public Doppelganger(NpcTemplate template, Player owner): base(template)
 	{
 		setSummoner(owner);
-		setCloneObjId(owner.getObjectId());
+		setCloneObjId(owner.ObjectId);
 		setClanId(owner.getClanId());
 		setInstance(owner.getInstanceWorld()); // set instance to same as owner
 		setXYZInvisible(new Location3D(owner.getX() + Rnd.get(-100, 100), owner.getY() + Rnd.get(-100, 100), owner.getZ()));
@@ -133,7 +133,7 @@ public class Doppelganger : Attackable
 		}
 		
 		// Prevents the double spam of system messages, if the target is the owning player.
-		if (target.getObjectId() != getSummoner().getObjectId())
+		if (target.ObjectId != getSummoner().ObjectId)
 		{
 			if (getActingPlayer().isInOlympiadMode() && (target.isPlayer()) && ((Player) target).isInOlympiadMode() && (((Player) target).getOlympiadGameId() == getActingPlayer().getOlympiadGameId()))
 			{
@@ -151,7 +151,7 @@ public class Doppelganger : Attackable
 				sm.Params.addNpcName(this);
 				sm.Params.addString(target.getName());
 				sm.Params.addInt(damage);
-				sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+				sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
 			}
 			
 			sendPacket(sm);
@@ -168,7 +168,7 @@ public class Doppelganger : Attackable
 			sm.Params.addNpcName(this);
 			sm.Params.addString(attacker.getName());
 			sm.Params.addInt((int) damage);
-			sm.Params.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
+			sm.Params.addPopup(ObjectId, attacker.ObjectId, (int) -damage);
 			sendPacket(sm);
 		}
 	}

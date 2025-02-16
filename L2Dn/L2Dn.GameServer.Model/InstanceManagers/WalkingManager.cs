@@ -165,7 +165,7 @@ public class WalkingManager: DataReaderBase
 			return false;
 		}
 		
-		WalkInfo walk = monster != null ? _activeRoutes.get(monster.getObjectId()) : _activeRoutes.get(npc.getObjectId());
+		WalkInfo walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
 		return !walk.isStoppedByAttack() && !walk.isSuspended();
 	}
 	
@@ -189,7 +189,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	private bool isRegistered(Npc npc)
 	{
-		return _activeRoutes.ContainsKey(npc.getObjectId());
+		return _activeRoutes.ContainsKey(npc.ObjectId);
 	}
 	
 	/**
@@ -198,7 +198,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public string getRouteName(Npc npc)
 	{
-		return _activeRoutes.GetValueOrDefault(npc.getObjectId())?.getRoute().getName() ?? string.Empty;
+		return _activeRoutes.GetValueOrDefault(npc.ObjectId)?.getRoute().getName() ?? string.Empty;
 	}
 	
 	/**
@@ -210,7 +210,7 @@ public class WalkingManager: DataReaderBase
 	{
 		if (_routes.ContainsKey(routeName) && (npc != null) && !npc.isDead()) // check, if these route and NPC present
 		{
-			if (!_activeRoutes.ContainsKey(npc.getObjectId())) // new walk task
+			if (!_activeRoutes.ContainsKey(npc.ObjectId)) // new walk task
 			{
 				// only if not already moved / not engaged in battle... should not happens if called on spawn
 				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
@@ -256,7 +256,7 @@ public class WalkingManager: DataReaderBase
 					}
 					
 					npc.setWalker();
-					_activeRoutes.put(npc.getObjectId(), walk); // register route
+					_activeRoutes.put(npc.ObjectId, walk); // register route
 				}
 				else
 				{
@@ -269,7 +269,7 @@ public class WalkingManager: DataReaderBase
 			}
 			else // walk was stopped due to some reason (arrived to node, script action, fight or something else), resume it
 			{
-				if (_activeRoutes.TryGetValue(npc.getObjectId(), out WalkInfo? walk) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
+				if (_activeRoutes.TryGetValue(npc.ObjectId, out WalkInfo? walk) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
 				{
 					if (walk == null)
 					{
@@ -307,7 +307,7 @@ public class WalkingManager: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void cancelMoving(Npc npc)
 	{
-		WalkInfo walk = _activeRoutes.remove(npc.getObjectId());
+		WalkInfo walk = _activeRoutes.remove(npc.ObjectId);
 		if (walk != null)
 		{
 			ScheduledFuture task = walk.getWalkCheckTask();
@@ -324,7 +324,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void resumeMoving(Npc npc)
 	{
-		WalkInfo walk = _activeRoutes.get(npc.getObjectId());
+		WalkInfo walk = _activeRoutes.get(npc.ObjectId);
 		if (walk != null)
 		{
 			walk.setSuspended(false);
@@ -347,7 +347,7 @@ public class WalkingManager: DataReaderBase
 			return;
 		}
 		
-		WalkInfo walk = monster != null ? _activeRoutes.get(monster.getObjectId()) : _activeRoutes.get(npc.getObjectId());
+		WalkInfo walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
 		walk.setSuspended(suspend);
 		walk.setStoppedByAttack(stoppedByAttack);
 		
@@ -369,7 +369,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void onArrived(Npc npc)
 	{
-		if (!_activeRoutes.TryGetValue(npc.getObjectId(), out WalkInfo? walk))
+		if (!_activeRoutes.TryGetValue(npc.ObjectId, out WalkInfo? walk))
 		{
 			return;
 		}

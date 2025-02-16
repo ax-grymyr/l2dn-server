@@ -16,7 +16,7 @@ public readonly struct RidePacket: IOutgoingPacket
 
     public RidePacket(Player player)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _mounted = player.isMounted();
         _rideType = player.getMountType();
         _rideNpcId = player.getMountNpcId() + 1000000;

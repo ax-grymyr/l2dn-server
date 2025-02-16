@@ -17,7 +17,7 @@ public readonly struct PrivateStoreManageListBuyPacket: IOutgoingPacket
     public PrivateStoreManageListBuyPacket(int sendType, Player player)
     {
         _sendType = sendType;
-        _objId = player.getObjectId();
+        _objId = player.ObjectId;
         _playerAdena = player.getAdena();
         _itemList = player.getInventory().getUniqueItems(false, true);
         _buyList = player.getBuyList().getItems();

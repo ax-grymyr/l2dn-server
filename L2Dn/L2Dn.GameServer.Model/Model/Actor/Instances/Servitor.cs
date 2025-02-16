@@ -211,7 +211,7 @@ public class Servitor : Summon, Runnable
 		{
 			if (isDead())
 			{
-				CharSummonTable.getInstance().removeServitor(getOwner(), getObjectId());
+				CharSummonTable.getInstance().removeServitor(getOwner(), ObjectId);
 			}
 			else
 			{
@@ -233,7 +233,7 @@ public class Servitor : Summon, Runnable
 		}
 		
 		// Clear list for overwrite
-		if (SummonEffectTable.getInstance().getServitorEffectsOwner().GetValueOrDefault(getOwner().getObjectId())?
+		if (SummonEffectTable.getInstance().getServitorEffectsOwner().GetValueOrDefault(getOwner().ObjectId)?
 		    .ContainsKey(getOwner().getClassIndex()) ?? false)
 		{
 			SummonEffectTable.getInstance().getServitorEffects(getOwner()).GetValueOrDefault(getReferenceSkill())
@@ -245,7 +245,7 @@ public class Servitor : Summon, Runnable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all current stored effects for summon to avoid dupe
-			int ownerId = getOwner().getObjectId();
+			int ownerId = getOwner().ObjectId;
 			int ownerClassIndex = getOwner().getClassIndex();
 			ctx.SummonSkillReuses.Where(r =>
 					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill)
@@ -326,15 +326,15 @@ public class Servitor : Summon, Runnable
 
 					// XXX: Rework me!
 					if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
-						    .ContainsKey(getOwner().getObjectId()))
+						    .ContainsKey(getOwner().ObjectId))
 					{
-						SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new());
+						SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().ObjectId, new());
 					}
 
-					if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+					if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
 						    .ContainsKey(getOwner().getClassIndex()))
 					{
-						SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+						SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
 							.put(getOwner().getClassIndex(), new());
 					}
 
@@ -368,10 +368,10 @@ public class Servitor : Summon, Runnable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int ownerId = getOwner().getObjectId();
+			int ownerId = getOwner().ObjectId;
 			int ownerClassIndex = getOwner().getClassIndex();
-			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().getObjectId()) ||
-			    !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).ContainsKey(getOwner().getClassIndex()) ||
+			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().ObjectId) ||
+			    !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId).ContainsKey(getOwner().getClassIndex()) ||
 			    !SummonEffectTable.getInstance().getServitorEffects(getOwner()).ContainsKey(getReferenceSkill()))
 			{
 				IQueryable<DbSummonSkillReuse> query = ctx.SummonSkillReuses.Where(r =>
@@ -390,16 +390,16 @@ public class Servitor : Summon, Runnable
 					if (skill.hasEffects(EffectScope.GENERAL))
 					{
 						if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
-							    .ContainsKey(getOwner().getObjectId()))
+							    .ContainsKey(getOwner().ObjectId))
 						{
 							SummonEffectTable.getInstance().getServitorEffectsOwner()
-								.put(getOwner().getObjectId(), new());
+								.put(getOwner().ObjectId, new());
 						}
 
-						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
 							    .ContainsKey(getOwner().getClassIndex()))
 						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId())
+							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
 								.put(getOwner().getClassIndex(), new());
 						}
 
@@ -426,8 +426,8 @@ public class Servitor : Summon, Runnable
 		}
 		finally
 		{
-			if (SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().getObjectId()) &&
-			    SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).ContainsKey(getOwner().getClassIndex()) &&
+			if (SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().ObjectId) &&
+			    SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId).ContainsKey(getOwner().getClassIndex()) &&
 			    SummonEffectTable.getInstance().getServitorEffects(getOwner()).ContainsKey(getReferenceSkill()))
 			{
 				foreach (SummonEffectTable.SummonEffect se in SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()))
@@ -452,7 +452,7 @@ public class Servitor : Summon, Runnable
 		
 		if (!_restoreSummon)
 		{
-			CharSummonTable.getInstance().removeServitor(owner, getObjectId());
+			CharSummonTable.getInstance().removeServitor(owner, ObjectId);
 		}
 	}
 	

@@ -20,8 +20,8 @@ public readonly struct ExShowChannelingEffectPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_CHANNELING_EFFECT);
         
-        writer.WriteInt32(_caster.getObjectId());
-        writer.WriteInt32(_target.getObjectId());
+        writer.WriteInt32(_caster.ObjectId);
+        writer.WriteInt32(_target.ObjectId);
         writer.WriteInt32(_state);
     }
 }

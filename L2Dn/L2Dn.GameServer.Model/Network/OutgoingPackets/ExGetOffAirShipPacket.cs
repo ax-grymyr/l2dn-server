@@ -13,8 +13,8 @@ public readonly struct ExGetOffAirShipPacket: IOutgoingPacket
 
     public ExGetOffAirShipPacket(Creature creature, Creature ship, Location3D location)
     {
-        _playerId = creature.getObjectId();
-        _airShipId = ship.getObjectId();
+        _playerId = creature.ObjectId;
+        _airShipId = ship.ObjectId;
         _location = location;
     }
 

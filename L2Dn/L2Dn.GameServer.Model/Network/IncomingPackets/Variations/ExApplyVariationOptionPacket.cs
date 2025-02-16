@@ -33,7 +33,7 @@ public struct ExApplyVariationOptionPacket: IIncomingPacket<GameSession>
         int option1Id = augment.getOption1Id();
         int option2Id = augment.getOption2Id();
 		
-        if ((targetItem.getObjectId() != _enchantedObjectId) || (_option1 != option1Id) || (_option2 != option2Id))
+        if ((targetItem.ObjectId != _enchantedObjectId) || (_option1 != option1Id) || (_option2 != option2Id))
         {
             player.sendPacket(new ApplyVariationOptionPacket(0, 0, 0, 0));
             return ValueTask.CompletedTask;

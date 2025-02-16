@@ -293,7 +293,7 @@ public class HomeBoard: IParseBoardHandler
 		int count = 0;
 		try
         {
-            int playerId = player.getObjectId();
+            int playerId = player.ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             count = ctx.BbsFavorites.Count(r => r.PlayerId == playerId);
 		}

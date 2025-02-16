@@ -34,7 +34,7 @@ public static class RefinePacketHelper
 		if (feeItem != null)
 		{
 			// GemStones must belong to owner
-			if (feeItem.getOwnerId() != player.getObjectId())
+			if (feeItem.getOwnerId() != player.ObjectId)
 			{
 				return false;
 			}
@@ -63,7 +63,7 @@ public static class RefinePacketHelper
 		}
 		
 		// Item must belong to owner
-		if (mineralItem.getOwnerId() != player.getObjectId())
+		if (mineralItem.getOwnerId() != player.ObjectId)
 		{
 			return false;
 		}
@@ -91,7 +91,7 @@ public static class RefinePacketHelper
 		}
 		
 		// Item must belong to owner
-		if (item.getOwnerId() != player.getObjectId())
+		if (item.getOwnerId() != player.ObjectId)
 		{
 			return false;
 		}

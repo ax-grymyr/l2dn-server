@@ -454,17 +454,17 @@ public class Duel
 		{
 			foreach (Player player in _playerA.getParty().getMembers())
 			{
-				_playerConditions.put(player.getObjectId(), new Duel.PlayerCondition(player, _partyDuel));
+				_playerConditions.put(player.ObjectId, new Duel.PlayerCondition(player, _partyDuel));
 			}
 			foreach (Player player in _playerB.getParty().getMembers())
 			{
-				_playerConditions.put(player.getObjectId(), new Duel.PlayerCondition(player, _partyDuel));
+				_playerConditions.put(player.ObjectId, new Duel.PlayerCondition(player, _partyDuel));
 			}
 		}
 		else
 		{
-			_playerConditions.put(_playerA.getObjectId(), new Duel.PlayerCondition(_playerA, _partyDuel));
-			_playerConditions.put(_playerB.getObjectId(), new Duel.PlayerCondition(_playerB, _partyDuel));
+			_playerConditions.put(_playerA.ObjectId, new Duel.PlayerCondition(_playerA, _partyDuel));
+			_playerConditions.put(_playerB.ObjectId, new Duel.PlayerCondition(_playerB, _partyDuel));
 		}
 	}
 	
@@ -713,12 +713,12 @@ public class Duel
 		{
 			foreach (Player temp in looser.getParty().getMembers())
 			{
-				temp.broadcastPacket(new SocialActionPacket(temp.getObjectId(), 7));
+				temp.broadcastPacket(new SocialActionPacket(temp.ObjectId, 7));
 			}
 		}
 		else
 		{
-			looser.broadcastPacket(new SocialActionPacket(looser.getObjectId(), 7));
+			looser.broadcastPacket(new SocialActionPacket(looser.ObjectId, 7));
 		}
 	}
 	
@@ -1019,7 +1019,7 @@ public class Duel
 		else
 		// teleport the player back & delete his PlayerCondition record
 		{
-			PlayerCondition cond = _playerConditions.remove(player.getObjectId());
+			PlayerCondition cond = _playerConditions.remove(player.ObjectId);
 			if (cond != null)
 			{
 				cond.teleportBack();
@@ -1030,7 +1030,7 @@ public class Duel
 	
 	public void onBuff(Player player, Skill debuff)
 	{
-		PlayerCondition cond = _playerConditions.get(player.getObjectId());
+		PlayerCondition cond = _playerConditions.get(player.ObjectId);
 		if (cond != null)
 		{
 			cond.registerDebuff(debuff);

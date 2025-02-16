@@ -33,9 +33,9 @@ public class FortDoorman: Doorman
             htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + ".htm", player);
         }
 
-        htmlContent.Replace("%objectId%", getObjectId().ToString());
+        htmlContent.Replace("%objectId%", ObjectId.ToString());
 
-        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
         player.sendPacket(html);
     }
 

@@ -14,14 +14,14 @@ public readonly struct ExValidateLocationInShuttlePacket: IOutgoingPacket
     public ExValidateLocationInShuttlePacket(Player player)
     {
         _player = player;
-        _shipId = _player.getShuttle().getObjectId();
+        _shipId = _player.getShuttle().ObjectId;
         _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_VALIDATE_LOCATION_IN_SHUTTLE);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_shipId);
         writer.WriteLocation(_location);
     }

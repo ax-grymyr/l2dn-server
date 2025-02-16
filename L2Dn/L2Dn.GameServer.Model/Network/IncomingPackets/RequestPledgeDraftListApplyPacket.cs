@@ -35,7 +35,7 @@ public struct RequestPledgeDraftListApplyPacket: IIncomingPacket<GameSession>
         {
             case 0: // remove
             {
-                if (ClanEntryManager.getInstance().removeFromWaitingList(player.getObjectId()))
+                if (ClanEntryManager.getInstance().removeFromWaitingList(player.ObjectId))
                 {
                     player.sendPacket(SystemMessageId.ENTRY_APPLICATION_CANCELLED_YOU_MAY_APPLY_TO_A_NEW_CLAN_AFTER_5_MIN);
                 }
@@ -44,15 +44,15 @@ public struct RequestPledgeDraftListApplyPacket: IIncomingPacket<GameSession>
             }
             case 1: // add
             {
-                PledgeWaitingInfo pledgeDraftList = new PledgeWaitingInfo(player.getObjectId(), player.getLevel(), _karma, player.getClassId(), player.getName());
-                if (ClanEntryManager.getInstance().addToWaitingList(player.getObjectId(), pledgeDraftList))
+                PledgeWaitingInfo pledgeDraftList = new PledgeWaitingInfo(player.ObjectId, player.getLevel(), _karma, player.getClassId(), player.getName());
+                if (ClanEntryManager.getInstance().addToWaitingList(player.ObjectId, pledgeDraftList))
                 {
                     player.sendPacket(SystemMessageId.YOU_ARE_ADDED_TO_THE_WAITING_LIST_IF_YOU_DO_NOT_JOIN_A_CLAN_IN_30_D_YOU_WILL_BE_AUTOMATICALLY_DELETED_FROM_THE_LIST_IN_CASE_OF_LEAVING_THE_WAITING_LIST_YOU_WILL_NOT_BE_ABLE_TO_JOIN_IT_AGAIN_FOR_5_MIN);
                 }
                 else
                 {
                     SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_MAY_APPLY_FOR_ENTRY_IN_S1_MIN_AFTER_CANCELLING_YOUR_APPLICATION);
-                    sm.Params.addLong((long)ClanEntryManager.getInstance().getPlayerLockTime(player.getObjectId()).TotalMinutes);
+                    sm.Params.addLong((long)ClanEntryManager.getInstance().getPlayerLockTime(player.ObjectId).TotalMinutes);
                     player.sendPacket(sm);
                 }
                 break;

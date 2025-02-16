@@ -35,7 +35,7 @@ public struct RequestPledgeWaitingApplyPacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 		
-        PledgeApplicantInfo info = new PledgeApplicantInfo(player.getObjectId(), player.getName(), player.getLevel(), _karma, _clanId, _message);
+        PledgeApplicantInfo info = new PledgeApplicantInfo(player.ObjectId, player.getName(), player.getLevel(), _karma, _clanId, _message);
         if (ClanEntryManager.getInstance().addPlayerApplicationToClan(_clanId, info))
         {
             player.sendPacket(new ExPledgeRecruitApplyInfoPacket(ClanEntryStatus.WAITING));
@@ -49,7 +49,7 @@ public struct RequestPledgeWaitingApplyPacket: IIncomingPacket<GameSession>
         else
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_MAY_APPLY_FOR_ENTRY_IN_S1_MIN_AFTER_CANCELLING_YOUR_APPLICATION);
-            sm.Params.addLong((long)ClanEntryManager.getInstance().getPlayerLockTime(player.getObjectId()).TotalMinutes);
+            sm.Params.addLong((long)ClanEntryManager.getInstance().getPlayerLockTime(player.ObjectId).TotalMinutes);
             player.sendPacket(sm);
         }
 

@@ -18,7 +18,7 @@ public readonly struct AskJoinPledgePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.ASK_JOIN_PLEDGE);
         
-        writer.WriteInt32(_requestor.getObjectId());
+        writer.WriteInt32(_requestor.ObjectId);
         writer.WriteString("");
         writer.WriteString(_pledgeName);
         writer.WriteInt32(0);

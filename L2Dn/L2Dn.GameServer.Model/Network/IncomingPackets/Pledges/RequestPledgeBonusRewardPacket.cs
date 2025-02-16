@@ -27,7 +27,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 		
         Clan clan = player.getClan();
-        ClanMember member = clan.getClanMember(player.getObjectId());
+        ClanMember member = clan.getClanMember(player.ObjectId);
         if (clan.canClaimBonusReward(player, _type))
         {
             ClanRewardBonus bonus = _type.getAvailableBonus(player.getClan());

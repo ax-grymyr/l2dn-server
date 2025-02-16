@@ -206,7 +206,7 @@ public class PlayerStat: PlayableStat
 		if (levelIncreased)
 		{
 			getActiveChar().setCurrentCp(getMaxCp());
-			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
+			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().ObjectId, SocialActionPacket.LEVEL_UP));
 			getActiveChar().sendPacket(SystemMessageId.YOUR_LEVEL_HAS_INCREASED);
 			getActiveChar().notifyFriends(FriendStatusPacket.MODE_LEVEL);
 		}
@@ -250,7 +250,7 @@ public class PlayerStat: PlayableStat
 				pet.getStat().getExpForLevel(availableLevel);
 				pet.setCurrentHp(pet.getMaxHp());
 				pet.setCurrentMp(pet.getMaxMp());
-				pet.broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
+				pet.broadcastPacket(new SocialActionPacket(getActiveChar().ObjectId, SocialActionPacket.LEVEL_UP));
 				pet.updateAndBroadcastStatus(1);
 			}
 		}
@@ -390,7 +390,7 @@ public class PlayerStat: PlayableStat
 			level = ExperienceData.getInstance().getMaxLevel() - 1;
 		}
 		
-		CharInfoTable.getInstance().setLevel(getActiveChar().getObjectId(), level);
+		CharInfoTable.getInstance().setLevel(getActiveChar().ObjectId, level);
 		
 		if (getActiveChar().isSubClassActive())
 		{

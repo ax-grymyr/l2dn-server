@@ -82,7 +82,7 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 		}
 		
 		// attempting to destroy scroll
-		if (player.getInventory().destroyItem("Blessing", targetScroll.getObjectId(), 1, player, item) == null)
+		if (player.getInventory().destroyItem("Blessing", targetScroll.ObjectId, 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			Util.handleIllegalPlayerAction(player, player + " tried to bless with a scroll he doesn't have", Config.DEFAULT_PUNISH);

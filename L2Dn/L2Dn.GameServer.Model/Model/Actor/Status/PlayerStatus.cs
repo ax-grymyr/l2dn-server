@@ -257,7 +257,7 @@ public class PlayerStatus: PlayableStatus
 
 				smsg.Params.addString(targetName);
 				smsg.Params.addInt(fullValue);
-				smsg.Params.addPopup(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);
+				smsg.Params.addPopup(getActiveChar().ObjectId, attacker.ObjectId, -fullValue);
 				getActiveChar().sendPacket(smsg);
 
 				if ((tDmg > 0) && (summon != null) && (attackerPlayer != null))

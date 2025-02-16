@@ -34,7 +34,7 @@ public class AbsorbDamage: AbstractEffect
 			return;
 		}
 		
-		int objectId = ev.getTarget().getObjectId();
+		int objectId = ev.getTarget().ObjectId;
 		
 		double damageLeft = DIFF_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
@@ -61,7 +61,7 @@ public class AbsorbDamage: AbstractEffect
 			return;
 		}
 		
-		int objectId = ev.getTarget().getObjectId();
+		int objectId = ev.getTarget().ObjectId;
 		
 		double damagePercent = PER_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double currentDamage = ev.getDamage();
@@ -76,12 +76,12 @@ public class AbsorbDamage: AbstractEffect
 		if (_mode == StatModifierType.DIFF)
 		{
 			effected.Events.UnsubscribeAll<OnCreatureDamageReceived>(this);
-			DIFF_DAMAGE_HOLDER.remove(effected.getObjectId());
+			DIFF_DAMAGE_HOLDER.remove(effected.ObjectId);
 		}
 		else
 		{
 			effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedPerEvent);
-			PER_DAMAGE_HOLDER.remove(effected.getObjectId());
+			PER_DAMAGE_HOLDER.remove(effected.ObjectId);
 		}
 	}
 	
@@ -89,12 +89,12 @@ public class AbsorbDamage: AbstractEffect
 	{
 		if (_mode == StatModifierType.DIFF)
 		{
-			DIFF_DAMAGE_HOLDER.put(effected.getObjectId(), _damage);
+			DIFF_DAMAGE_HOLDER.put(effected.ObjectId, _damage);
 			effected.Events.Subscribe<OnCreatureDamageReceived>(this, ev => onDamageReceivedDiffEvent(ev, effected, skill));
 		}
 		else
 		{
-			PER_DAMAGE_HOLDER.put(effected.getObjectId(), _damage);
+			PER_DAMAGE_HOLDER.put(effected.ObjectId, _damage);
 			effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedPerEvent);
 		}
 	}

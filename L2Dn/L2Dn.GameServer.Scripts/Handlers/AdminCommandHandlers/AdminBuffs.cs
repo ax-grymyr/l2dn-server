@@ -290,7 +290,7 @@ public class AdminBuffs: IAdminCommandHandler
 				sb.Append("</td><td>");
 				sb.Append(info.getSkill().isToggle() ? "T" : info.getSkill().isPassive() ? "P" : info.getTime() + "s");
 				sb.Append("</td><td><button value=\"X\" action=\"bypass -h admin_stopbuff ");
-				sb.Append(target.getObjectId());
+				sb.Append(target.ObjectId);
 				sb.Append(" ");
 				sb.Append(info.getSkill().getId());
 				sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
@@ -311,7 +311,7 @@ public class AdminBuffs: IAdminCommandHandler
 		htmlContent.Replace("%buffsText%", passive ? "Hide Passives" : "Show Passives");
 		htmlContent.Replace("%passives%", passive ? "" : "_ps");
 		htmlContent.Replace("%targetName%", target.getName());
-		htmlContent.Replace("%targetObjId%", target.getObjectId().ToString());
+		htmlContent.Replace("%targetObjId%", target.ObjectId.ToString());
 		htmlContent.Replace("%buffs%", result.getBodyTemplate().ToString());
 		htmlContent.Replace("%effectSize%", effects.Count.ToString());
 		activeChar.sendPacket(html);

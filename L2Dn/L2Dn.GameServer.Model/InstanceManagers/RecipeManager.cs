@@ -31,7 +31,7 @@ public class RecipeManager
 	public void requestBookOpen(Player player, bool isDwarvenCraft)
 	{
 		// Check if player is trying to alter recipe book while engaged in manufacturing.
-		if (!_activeMakers.ContainsKey(player.getObjectId()))
+		if (!_activeMakers.ContainsKey(player.ObjectId))
 		{
 			ICollection<RecipeList> recipes = isDwarvenCraft ? player.getDwarvenRecipeBook() : player.getCommonRecipeBook();
 			RecipeBookItemListPacket response = new RecipeBookItemListPacket(recipes, isDwarvenCraft, player.getMaxMp());
@@ -44,7 +44,7 @@ public class RecipeManager
 	
 	public void requestMakeItemAbort(Player player)
 	{
-		_activeMakers.remove(player.getObjectId());
+		_activeMakers.remove(player.ObjectId);
 	}
 	
 	public void requestManufactureItem(Player manufacturer, int recipeListId, Player player)
@@ -64,7 +64,7 @@ public class RecipeManager
 		}
 		
 		// Check if manufacturer is under manufacturing store or private store.
-		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(manufacturer.getObjectId()))
+		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(manufacturer.ObjectId))
 		{
 			player.sendPacket(SystemMessageId.PLEASE_CLOSE_THE_SETUP_WINDOW_FOR_YOUR_PRIVATE_WORKSHOP_OR_PRIVATE_STORE_AND_TRY_AGAIN);
 			return;
@@ -75,7 +75,7 @@ public class RecipeManager
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
-				_activeMakers.put(manufacturer.getObjectId(), maker);
+				_activeMakers.put(manufacturer.ObjectId, maker);
 				ThreadPool.schedule(maker, 100);
 			}
 			else
@@ -107,7 +107,7 @@ public class RecipeManager
 		}
 		
 		// Check if player is busy (possible if alt game creation is enabled)
-		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(player.getObjectId()))
+		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(player.ObjectId))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_S1);
 			sm.Params.addItemName(recipeList.getItemId());
@@ -121,7 +121,7 @@ public class RecipeManager
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
-				_activeMakers.put(player.getObjectId(), maker);
+				_activeMakers.put(player.ObjectId, maker);
 				ThreadPool.schedule(maker, 100);
 			}
 			else
@@ -280,7 +280,7 @@ public class RecipeManager
 			// return;
 			// }
 			
-			if (Config.ALT_GAME_CREATION && !_activeMakers.ContainsKey(_player.getObjectId()))
+			if (Config.ALT_GAME_CREATION && !_activeMakers.ContainsKey(_player.ObjectId))
 			{
 				if (_target != _player)
 				{
@@ -315,13 +315,13 @@ public class RecipeManager
 					MagicSkillUsePacket msk = new MagicSkillUsePacket(_player, _skillId, _skillLevel, _delay, TimeSpan.Zero);
 					_player.broadcastPacket(msk);
 					
-					_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
+					_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 					ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 				}
 				else
 				{
 					// for alt mode, sleep delay msec before finishing
-					_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
+					_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 					
 					try
 					{
@@ -354,7 +354,7 @@ public class RecipeManager
 			if (_target != _player && _price > 0) // customer must pay for services
 			{
 				// attempt to pay for item
-				Item adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
+				Item adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().ObjectId, _price, _player.getInventory(), _player);
 				if (adenatransfer == null)
 				{
 					_target.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
@@ -398,7 +398,7 @@ public class RecipeManager
 			}
 			// update load and mana bar of craft window
 			updateCurMp();
-			_activeMakers.remove(_player.getObjectId());
+			_activeMakers.remove(_player.ObjectId);
 			_player.setCrafting(false);
 			_target.sendItemList();
 		}
@@ -506,7 +506,7 @@ public class RecipeManager
 						// rest (wait for HP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
+							_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 						}
 						else
@@ -528,7 +528,7 @@ public class RecipeManager
 						// rest (wait for MP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGaugePacket(_player.getObjectId(), 0, _delay));
+							_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
 						}
 						else
@@ -611,7 +611,7 @@ public class RecipeManager
 		{
 			updateMakeInfo(false);
 			_player.setCrafting(false);
-			_activeMakers.remove(_player.getObjectId());
+			_activeMakers.remove(_player.ObjectId);
 		}
 		
 		private void rewardPlayer()

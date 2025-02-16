@@ -98,7 +98,7 @@ public abstract class AbstractDailyMissionHandler
 					if (clan != null)
 					{
 						int expAmount = (int) holder.getCount();
-						clan.addExp(player.getObjectId(), expAmount);
+						clan.addExp(player.ObjectId, expAmount);
 						SystemMessagePacket packet = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 						packet.Params.addItemName(MISSION_LEVEL_POINTS).addLong(expAmount);
 						player.sendPacket(packet);

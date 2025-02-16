@@ -53,7 +53,7 @@ public class ControllableAirShip : AirShip
 		{
 			return false;
 		}
-		return player.getClanId() == _ownerId || player.getObjectId() == _ownerId;
+		return player.getClanId() == _ownerId || player.ObjectId == _ownerId;
 	}
 	
 	public override int getOwnerId()
@@ -68,7 +68,7 @@ public class ControllableAirShip : AirShip
 	
 	public override int getCaptainId()
 	{
-		return _captain != null ? _captain.getObjectId() : 0;
+		return _captain != null ? _captain.ObjectId : 0;
 	}
 	
 	public override int getHelmObjectId()

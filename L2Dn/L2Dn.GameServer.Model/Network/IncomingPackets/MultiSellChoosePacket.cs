@@ -103,7 +103,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		{
 			if (npc == null //
 			    || !list.isNpcAllowed(npc.getId()) //
-			    || !list.checkNpcObjectId(npc.getObjectId()) //
+			    || !list.checkNpcObjectId(npc.ObjectId) //
 			    || player.getInstanceId() != npc.getInstanceId() //
 			    || !player.IsInsideRadius3D(npc, Npc.INTERACTION_DISTANCE))
 			{

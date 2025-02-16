@@ -43,7 +43,7 @@ public class ItemCommissionManager
 			foreach (DbItem item in ctx.Items.Where(r => r.Location == (int)ItemLocation.COMMISSION))
 			{
 				Item itemInstance = new Item(item);
-				itemInstances.put(itemInstance.getObjectId(), itemInstance);
+				itemInstances.put(itemInstance.ObjectId, itemInstance);
 			}
 
 			foreach (DbCommissionItem item in ctx.CommissionItems)
@@ -128,7 +128,7 @@ public class ItemCommissionManager
 		List<CommissionItem> commissionItems = new();
 		foreach (CommissionItem c in _commissionItems.Values)
 		{
-			if (c.getItemInstance().getOwnerId() == player.getObjectId())
+			if (c.getItemInstance().getOwnerId() == player.ObjectId)
 			{
 				commissionItems.Add(c);
 				if (commissionItems.Count == MAX_ITEMS_REGISTRED_PER_PLAYER)
@@ -189,7 +189,7 @@ public class ItemCommissionManager
 			long playerRegisteredItems = 0;
 			foreach (CommissionItem item in _commissionItems.Values)
 			{
-				if (item.getItemInstance().getOwnerId() == player.getObjectId())
+				if (item.getItemInstance().getOwnerId() == player.ObjectId)
 				{
 					playerRegisteredItems++;
 				}
@@ -251,7 +251,7 @@ public class ItemCommissionManager
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				DbCommissionItem dbCommissionItem = new DbCommissionItem()
 				{
-					ItemObjectId = itemInstance.getObjectId(),
+					ItemObjectId = itemInstance.ObjectId,
 					PricePerUnit = pricePerUnit,
 					StartTime = startTime,
 					DurationInDays = durationInDays,
@@ -304,7 +304,7 @@ public class ItemCommissionManager
 			return;
 		}
 		
-		if (commissionItem.getItemInstance().getOwnerId() != player.getObjectId())
+		if (commissionItem.getItemInstance().getOwnerId() != player.ObjectId)
 		{
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
@@ -354,7 +354,7 @@ public class ItemCommissionManager
 		}
 		
 		Item itemInstance = commissionItem.getItemInstance();
-		if (itemInstance.getOwnerId() == player.getObjectId())
+		if (itemInstance.getOwnerId() == player.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
@@ -459,7 +459,7 @@ public class ItemCommissionManager
 	{
 		foreach (CommissionItem item in _commissionItems.Values)
 		{
-			if (item.getItemInstance().getObjectId() == objectId)
+			if (item.getItemInstance().ObjectId == objectId)
 			{
 				return true;
 			}
@@ -476,7 +476,7 @@ public class ItemCommissionManager
 	{
 		foreach (CommissionItem item in _commissionItems.Values)
 		{
-			if ((item.getItemInstance().getOwnerId() == player.getObjectId()) && (item.getItemInstance().getTemplate().getId() == itemId))
+			if ((item.getItemInstance().getOwnerId() == player.ObjectId) && (item.getItemInstance().getTemplate().getId() == itemId))
 			{
 				return true;
 			}

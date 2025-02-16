@@ -38,7 +38,7 @@ public class DoorActionShift: IActionShiftHandler
 			htmlContent.Replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) door.getCurrentMp(), door.getMaxMp(), false));
 			// Basic info
 			htmlContent.Replace("%doorName%", door.getName());
-			htmlContent.Replace("%objId%", door.getObjectId().ToString());
+			htmlContent.Replace("%objId%", door.ObjectId.ToString());
 			htmlContent.Replace("%doorId%", door.getId().ToString());
 			// Position info
 			htmlContent.Replace("%position%", door.getX() + ", " + door.getY() + ", " + door.getZ());

@@ -24,7 +24,7 @@ public readonly struct ExManageMpccRoomMemberPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_MANAGE_PARTY_ROOM_MEMBER);
         
         writer.WriteInt32((int)_type);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteString(_player.getName());
         writer.WriteInt32((int)_player.getClassId());
         writer.WriteInt32(_player.getLevel());

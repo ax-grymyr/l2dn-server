@@ -18,8 +18,8 @@ public readonly struct MoveToPawnPacket: IOutgoingPacket
 
     public MoveToPawnPacket(Creature creature, WorldObject target, int distance)
     {
-        _objectId = creature.getObjectId();
-        _targetId = target.getObjectId();
+        _objectId = creature.ObjectId;
+        _targetId = target.ObjectId;
         _distance = distance;
         _x = creature.getX();
         _y = creature.getY();

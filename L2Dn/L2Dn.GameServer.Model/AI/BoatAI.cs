@@ -17,7 +17,7 @@ public class BoatAI: VehicleAI
         {
             if (!_clientMoving)
             {
-                _actor.broadcastPacket(new VehicleStartedPacket(getActor().getObjectId(), 1));
+                _actor.broadcastPacket(new VehicleStartedPacket(getActor().ObjectId, 1));
             }
 
             _clientMoving = true;
@@ -36,7 +36,7 @@ public class BoatAI: VehicleAI
         if (_clientMoving || (loc != null))
         {
             _clientMoving = false;
-            _actor.broadcastPacket(new VehicleStartedPacket(getActor().getObjectId(), 0));
+            _actor.broadcastPacket(new VehicleStartedPacket(getActor().ObjectId, 0));
             _actor.broadcastPacket(new VehicleInfoPacket(getActor()));
         }
     }

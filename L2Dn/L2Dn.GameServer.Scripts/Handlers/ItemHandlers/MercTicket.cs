@@ -60,7 +60,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 			return false;
 		}
 		
-		_items.put(player.getObjectId(), item);
+		_items.put(player.ObjectId, item);
 		ConfirmDialogPacket dlg = new ConfirmDialogPacket(SystemMessageId.PLACE_S1_IN_THE_CURRENT_LOCATION_AND_DIRECTION_DO_YOU_WISH_TO_CONTINUE, 15000);
 		dlg.Params.addNpcName(holder.getNpcId());
 		player.sendPacket(dlg);
@@ -74,7 +74,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 	public void onPlayerDlgAnswer(OnPlayerDlgAnswer @event)
 	{
 		Player player = @event.getPlayer();
-		if (player.removeAction(PlayerAction.MERCENARY_CONFIRM) && _items.TryGetValue(player.getObjectId(), out Item? item))
+		if (player.removeAction(PlayerAction.MERCENARY_CONFIRM) && _items.TryGetValue(player.ObjectId, out Item? item))
 		{
 			if (SiegeGuardManager.getInstance().isTooCloseToAnotherTicket(player))
 			{
@@ -85,10 +85,10 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 			if (@event.getAnswer() == 1)
 			{
 				SiegeGuardManager.getInstance().addTicket(item.getId(), player);
-				player.destroyItem("Consume", item.getObjectId(), 1, null, false); // Remove item from char's inventory
+				player.destroyItem("Consume", item.ObjectId, 1, null, false); // Remove item from char's inventory
 			}
 			
-			_items.remove(player.getObjectId());
+			_items.remove(player.ObjectId);
 		}
 	}
 }

@@ -29,9 +29,9 @@ public readonly struct ExPvpRankingMyInfoPacket: IOutgoingPacket
             foreach (int id in _playerList.Keys)
             {
                 StatSet ss = _playerList.get(id);
-                if (ss.getInt("charId") == _player.getObjectId())
+                if (ss.getInt("charId") == _player.ObjectId)
                 {
-                    int playerId = _player.getObjectId();
+                    int playerId = _player.ObjectId;
                     var snapshotValue = _snapshotList.FirstOrDefault(it => it.Value.getInt("charId") == playerId);
                     found = true;
                     writer.WriteInt64(ss.getInt("points")); // pvp points

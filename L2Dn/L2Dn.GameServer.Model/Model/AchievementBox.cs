@@ -81,7 +81,7 @@ public class AchievementBox
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.getObjectId();
+			int characterId = _owner.ObjectId;
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record != null)
 			{
@@ -140,7 +140,7 @@ public class AchievementBox
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AchievementBoxes.Add(new DbAchievementBox()
 			{
-				CharacterId = _owner.getObjectId(),
+				CharacterId = _owner.ObjectId,
 				BoxOwned = _boxOwned,
 				MonsterPoint = _monsterPoints,
 				PvpPoint = _pvpPoints,
@@ -161,7 +161,7 @@ public class AchievementBox
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.getObjectId();
+			int characterId = _owner.ObjectId;
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record is null)
 			{

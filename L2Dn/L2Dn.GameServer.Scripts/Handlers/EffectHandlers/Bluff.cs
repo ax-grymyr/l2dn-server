@@ -39,8 +39,8 @@ public class Bluff: AbstractEffect
 			return;
 		}
 		
-		effected.broadcastPacket(new StartRotationPacket(effected.getObjectId(), effected.getHeading(), 1, 65535));
-		effected.broadcastPacket(new StopRotationPacket(effected.getObjectId(), effector.getHeading(), 65535));
+		effected.broadcastPacket(new StartRotationPacket(effected.ObjectId, effected.getHeading(), 1, 65535));
+		effected.broadcastPacket(new StopRotationPacket(effected.ObjectId, effector.getHeading(), 65535));
 		effected.setHeading(effector.getHeading());
 	}
 }

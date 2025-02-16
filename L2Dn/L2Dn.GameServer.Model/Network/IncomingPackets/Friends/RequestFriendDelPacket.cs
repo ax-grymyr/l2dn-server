@@ -48,7 +48,7 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
         try
         {
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            int playerId = player.getObjectId();
+            int playerId = player.ObjectId;
             ctx.CharacterFriends.Where(r =>
                     r.CharacterId == playerId && r.FriendId == id || r.CharacterId == id && r.FriendId == playerId)
                 .ExecuteDelete();
@@ -64,11 +64,11 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
             Player target = World.getInstance().getPlayer(_name);
             if (target != null)
             {
-                target.getFriendList().remove(player.getObjectId());
+                target.getFriendList().remove(player.ObjectId);
                 target.sendPacket(new FriendRemovePacket(player.getName(), 1));
             }
 			
-            CharInfoTable.getInstance().removeFriendMemo(player.getObjectId(), id);
+            CharInfoTable.getInstance().removeFriendMemo(player.ObjectId, id);
         }
         catch (Exception e)
         {

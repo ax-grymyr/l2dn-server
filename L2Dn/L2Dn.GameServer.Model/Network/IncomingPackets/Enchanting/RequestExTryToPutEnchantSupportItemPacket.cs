@@ -57,7 +57,7 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
             return ValueTask.CompletedTask;
         }
 		
-        request.setSupportItem(support.getObjectId());
+        request.setSupportItem(support.ObjectId);
         request.setTimestamp(DateTime.UtcNow);
         player.sendPacket(new ExPutEnchantSupportItemResultPacket(_supportObjectId));
         player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, false));

@@ -20,7 +20,7 @@ public readonly struct CharacterSelectedPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTED);
         
         writer.WriteString(_player.getName());
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteString(_player.getTitle());
         writer.WriteInt32(_sessionId);
         writer.WriteInt32(_player.getClanId() ?? 0);

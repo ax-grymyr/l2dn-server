@@ -16,8 +16,8 @@ public readonly struct ExPartyPetWindowDeletePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PARTY_PET_WINDOW_DELETE);
         
-        writer.WriteInt32(_summon.getObjectId());
+        writer.WriteInt32(_summon.ObjectId);
         writer.WriteByte((byte)_summon.getSummonType());
-        writer.WriteInt32(_summon.getOwner().getObjectId());
+        writer.WriteInt32(_summon.getOwner().ObjectId);
     }
 }

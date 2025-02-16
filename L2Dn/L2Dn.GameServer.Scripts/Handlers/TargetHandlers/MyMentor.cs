@@ -22,7 +22,7 @@ public class MyMentor: ITargetTypeHandler
 	{
 		if (creature.isPlayer())
 		{
-			Mentee mentor = MentorManager.getInstance().getMentor(creature.getObjectId());
+			Mentee mentor = MentorManager.getInstance().getMentor(creature.ObjectId);
 			if (mentor != null)
 			{
 				return mentor.getPlayer();

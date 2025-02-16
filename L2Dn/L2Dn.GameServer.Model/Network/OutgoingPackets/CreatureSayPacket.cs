@@ -32,7 +32,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         _shareLocation = shareLocation;
         if (receiver != null)
         {
-            if (receiver.getFriendList().Contains(sender.getObjectId()))
+            if (receiver.getFriendList().Contains(sender.ObjectId))
             {
                 _mask |= 0x01;
             }
@@ -40,7 +40,7 @@ public struct CreatureSayPacket: IOutgoingPacket
             {
                 _mask |= 0x02;
             }
-            if ((MentorManager.getInstance().getMentee(receiver.getObjectId(), sender.getObjectId()) != null) || (MentorManager.getInstance().getMentee(sender.getObjectId(), receiver.getObjectId()) != null))
+            if ((MentorManager.getInstance().getMentee(receiver.ObjectId, sender.ObjectId) != null) || (MentorManager.getInstance().getMentee(sender.ObjectId, receiver.ObjectId) != null))
             {
                 _mask |= 0x04;
             }
@@ -92,7 +92,7 @@ public struct CreatureSayPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SAY2);
-        writer.WriteInt32(_sender?.getObjectId() ?? 0);
+        writer.WriteInt32(_sender?.ObjectId ?? 0);
         writer.WriteInt32((int)_chatType);
         if (_senderName != null)
         {

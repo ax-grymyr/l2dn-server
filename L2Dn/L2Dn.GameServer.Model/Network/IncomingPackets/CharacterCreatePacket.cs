@@ -250,7 +250,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		
 		if (GlobalEvents.Players.HasSubscribers<OnPlayerCreate>())
 		{
-			GlobalEvents.Players.Notify(new OnPlayerCreate(newChar, newChar.getObjectId(), newChar.getName(), session));
+			GlobalEvents.Players.Notify(new OnPlayerCreate(newChar, newChar.ObjectId, newChar.getName(), session));
 		}
 		
 		newChar.setOnlineStatus(true, false);

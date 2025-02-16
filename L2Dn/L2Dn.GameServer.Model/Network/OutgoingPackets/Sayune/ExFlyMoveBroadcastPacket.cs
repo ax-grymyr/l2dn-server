@@ -17,7 +17,7 @@ public readonly struct ExFlyMoveBroadcastPacket: IOutgoingPacket
 	
     public ExFlyMoveBroadcastPacket(Player player, SayuneType type, int mapId, Location3D targetLoc)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _type = type;
         _mapId = mapId;
         _currentLoc = player.Location.Location3D;

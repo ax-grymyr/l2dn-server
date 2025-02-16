@@ -57,7 +57,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 	public FakePlayerInfoPacket(Npc npc)
 	{
 		_npc = npc;
-		_objId = npc.getObjectId();
+		_objId = npc.ObjectId;
 		_x = npc.getX();
 		_y = npc.getY();
 		_z = npc.getZ();

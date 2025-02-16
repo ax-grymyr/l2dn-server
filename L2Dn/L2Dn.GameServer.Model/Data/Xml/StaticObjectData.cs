@@ -55,7 +55,7 @@ public class StaticObjectData: DataReaderBase
 		obj.setName(name);
 		obj.setMap(texture, mapX, mapY);
 		obj.spawnMe(new Location3D(x, y, z));
-		_staticObjects.put(obj.getObjectId(), obj);
+		_staticObjects.put(obj.ObjectId, obj);
 	}
 	
 	/**

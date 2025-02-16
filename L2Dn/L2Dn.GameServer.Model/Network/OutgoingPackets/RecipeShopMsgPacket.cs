@@ -16,7 +16,7 @@ public readonly struct RecipeShopMsgPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.RECIPE_SHOP_MSG);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteString(_player.getStoreName());
     }
 }

@@ -32,7 +32,7 @@ public readonly struct ExUpgradeSystemNormalResultPacket: IOutgoingPacket
         writer.WriteInt32(_resultItems.Count); // Array of result items (success/failure) start.
         foreach (UniqueItemEnchantHolder item in _resultItems)
         {
-            writer.WriteInt32(item.getObjectId());
+            writer.WriteInt32(item.ObjectId);
             writer.WriteInt32(item.getId());
             writer.WriteInt32(item.getEnchantLevel());
             writer.WriteInt32((int)item.getCount());
@@ -42,7 +42,7 @@ public readonly struct ExUpgradeSystemNormalResultPacket: IOutgoingPacket
         writer.WriteInt32(_bonusItems.Count); // Array of bonus items start.
         foreach (UniqueItemEnchantHolder bonus in _bonusItems)
         {
-            writer.WriteInt32(bonus.getObjectId());
+            writer.WriteInt32(bonus.ObjectId);
             writer.WriteInt32(bonus.getId());
             writer.WriteInt32(bonus.getEnchantLevel());
             writer.WriteInt32((int)bonus.getCount());

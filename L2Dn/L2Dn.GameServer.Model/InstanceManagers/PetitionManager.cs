@@ -81,12 +81,12 @@ public class PetitionManager
 	{
 		foreach (Petition currPetition in _pendingPetitions.Values)
 		{
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == player.ObjectId))
 			{
 				return (currPetition.endPetitionConsultation(PetitionState.PETITIONER_CANCEL));
 			}
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
+			if ((currPetition.getResponder() != null) && (currPetition.getResponder().ObjectId == player.ObjectId))
 			{
 				return (currPetition.endPetitionConsultation(PetitionState.RESPONDER_CANCEL));
 			}
@@ -106,7 +106,7 @@ public class PetitionManager
 					continue;
 				}
 				
-				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == petitioner.getObjectId()))
+				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == petitioner.ObjectId))
 				{
 					foreach (CreatureSayPacket logMessage in currPetition.getLogMessages())
 					{
@@ -133,7 +133,7 @@ public class PetitionManager
 				continue;
 			}
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
+			if ((currPetition.getResponder() != null) && (currPetition.getResponder().ObjectId == player.ObjectId))
 			{
 				return (currPetition.endPetitionConsultation(PetitionState.COMPLETED));
 			}
@@ -172,7 +172,7 @@ public class PetitionManager
 				continue;
 			}
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == player.ObjectId))
 			{
 				petitionCount++;
 			}
@@ -185,7 +185,7 @@ public class PetitionManager
 				continue;
 			}
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == player.ObjectId))
 			{
 				petitionCount++;
 			}
@@ -239,7 +239,7 @@ public class PetitionManager
 					continue;
 				}
 				
-				if (((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId())) || ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId())))
+				if (((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == player.ObjectId)) || ((currPetition.getResponder() != null) && (currPetition.getResponder().ObjectId == player.ObjectId)))
 				{
 					return true;
 				}
@@ -265,7 +265,7 @@ public class PetitionManager
 					continue;
 				}
 				
-				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == petitioner.getObjectId()))
+				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == petitioner.ObjectId))
 				{
 					return true;
 				}
@@ -308,7 +308,7 @@ public class PetitionManager
 				continue;
 			}
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().ObjectId == player.ObjectId))
 			{
 				cs = new CreatureSayPacket(player, ChatType.PETITION_PLAYER, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
@@ -318,7 +318,7 @@ public class PetitionManager
 				return true;
 			}
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
+			if ((currPetition.getResponder() != null) && (currPetition.getResponder().ObjectId == player.ObjectId))
 			{
 				cs = new CreatureSayPacket(player, ChatType.PETITION_GM, player.getName(), messageText);
 				currPetition.addLogMessage(cs);

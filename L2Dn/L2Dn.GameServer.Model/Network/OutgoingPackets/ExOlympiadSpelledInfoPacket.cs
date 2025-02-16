@@ -14,7 +14,7 @@ public readonly struct ExOlympiadSpelledInfoPacket: IOutgoingPacket
     {
         _effects = new List<BuffInfo>();
         _effects2 = new List<Skill>();
-        _playerId = player.getObjectId();
+        _playerId = player.ObjectId;
     }
 	
     public void addSkill(BuffInfo info)

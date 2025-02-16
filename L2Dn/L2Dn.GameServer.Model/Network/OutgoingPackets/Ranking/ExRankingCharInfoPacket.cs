@@ -28,7 +28,7 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
             foreach (int id in _playerList.Keys)
             {
                 StatSet player = _playerList.get(id);
-                if (player.getInt("charId") == _player.getObjectId())
+                if (player.getInt("charId") == _player.ObjectId)
                 {
                     writer.WriteInt32(id); // server rank
                     writer.WriteInt32(player.getInt("raceRank")); // race rank

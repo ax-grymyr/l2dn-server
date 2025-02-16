@@ -396,7 +396,7 @@ public class AdminTeleport: IAdminCommandHandler
 			return;
 		}
 		
-		if (player.getObjectId() == activeChar.getObjectId())
+		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 		}
@@ -452,7 +452,7 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 		
 		Player player = target.getActingPlayer();
-		if (player.getObjectId() == activeChar.getObjectId())
+		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 		}
@@ -501,7 +501,7 @@ public class AdminTeleport: IAdminCommandHandler
 			if (template1 == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect monster template.");
-				LOGGER.Warn("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				LOGGER.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' template.");
 				return;
 			}
 			
@@ -509,7 +509,7 @@ public class AdminTeleport: IAdminCommandHandler
 			if (spawn == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect monster spawn.");
-				LOGGER.Warn("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				LOGGER.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' spawn.");
 				return;
 			}
 			
@@ -535,7 +535,7 @@ public class AdminTeleport: IAdminCommandHandler
 					spawn.stopRespawn();
 				}
 				
-				BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.getObjectId() + ".");
+				BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId + ".");
 			}
 			catch (Exception e)
 			{

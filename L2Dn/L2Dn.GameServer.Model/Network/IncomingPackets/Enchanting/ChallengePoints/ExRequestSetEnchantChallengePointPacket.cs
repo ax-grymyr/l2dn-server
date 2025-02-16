@@ -117,7 +117,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 			    : 0;
 
 	    player.sendPacket(new ExChangedEnchantTargetItemProbListPacket(
-		    new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(item.getObjectId(),
+		    new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(item.ObjectId,
 			    (int)((chance + challengePointsChance + enchantRateStat) * 100), (int)(chance * 100),
 			    (int)(challengePointsChance * 100), (int)(enchantRateStat * 100))));
 

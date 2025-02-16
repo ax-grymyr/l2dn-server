@@ -13,7 +13,7 @@ public readonly struct ChangeMoveTypePacket: IOutgoingPacket
 	
     public ChangeMoveTypePacket(Creature creature)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _running = creature.isRunning();
     }
 	

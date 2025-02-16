@@ -34,7 +34,7 @@ public readonly struct ExChooseInventoryAttributeItemPacket: IOutgoingPacket
         {
             if (item.isElementable())
             {
-                _items.add(item.getObjectId());
+                _items.add(item.ObjectId);
             }
         }
     }

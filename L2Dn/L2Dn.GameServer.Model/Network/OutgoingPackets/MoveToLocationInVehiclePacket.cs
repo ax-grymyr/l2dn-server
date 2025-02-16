@@ -19,8 +19,8 @@ public readonly struct MoveToLocationInVehiclePacket: IOutgoingPacket
      */
     public MoveToLocationInVehiclePacket(Player player, Location3D destination, Location3D origin)
     {
-        _objectId = player.getObjectId();
-        _boatId = player.getBoat().getObjectId();
+        _objectId = player.ObjectId;
+        _boatId = player.getBoat().ObjectId;
         _destination = destination;
         _origin = origin;
     }

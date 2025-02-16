@@ -41,7 +41,7 @@ public readonly struct GMViewWarehouseWithdrawListPacket: IOutgoingPacket
             foreach (Item item in _items)
             {
                 InventoryPacketHelper.WriteItem(writer, item);
-                writer.WriteInt32(item.getObjectId());
+                writer.WriteInt32(item.ObjectId);
             }
         }
         else

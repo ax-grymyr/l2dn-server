@@ -55,13 +55,13 @@ public class SummonPet: AbstractEffect
 		}
 		
 		Item collar = holder.getItem();
-		if (player.getInventory().getItemByObjectId(collar.getObjectId()) != collar)
+		if (player.getInventory().getItemByObjectId(collar.ObjectId) != collar)
 		{
 			LOGGER.Warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
 			return;
 		}
 		
-		PetEvolveHolder evolveData = player.getPetEvolve(collar.getObjectId());
+		PetEvolveHolder evolveData = player.getPetEvolve(collar.ObjectId);
 		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(collar.getId(), evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(collar.getId(), evolveData.getEvolve(), evolveData.getIndex());
 		if ((petData == null) || (petData.getNpcId() == -1))
 		{

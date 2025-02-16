@@ -40,9 +40,9 @@ public class PetManager: Merchant
 		}
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcname%", getName());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 
@@ -110,7 +110,7 @@ public class PetManager: Merchant
 			if (!ok)
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/evolve_no.htm", player);
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}
@@ -152,7 +152,7 @@ public class PetManager: Merchant
 			if (!ok)
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/restore_no.htm", player);
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 				player.sendPacket(html);
 			}
 		}
@@ -169,13 +169,13 @@ public class PetManager: Merchant
 			player.addItem("", itemIdgive, 1, this, true);
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/" + getId() + ".htm", player);
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/exchange_no.htm", player);
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 	}

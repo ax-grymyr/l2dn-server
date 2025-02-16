@@ -196,9 +196,9 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void addAllowed(Player player)
 	{
-		if (!_allowed.Contains(player.getObjectId()))
+		if (!_allowed.Contains(player.ObjectId))
 		{
-			_allowed.add(player.getObjectId());
+			_allowed.add(player.ObjectId);
 		}
 	}
 	
@@ -209,7 +209,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public bool isAllowed(Player player)
 	{
-		return _allowed.Contains(player.getObjectId());
+		return _allowed.Contains(player.ObjectId);
 	}
 	
 	/**
@@ -316,7 +316,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		foreach (Player player in _players)
 		{
-			if (player.getObjectId() == id)
+			if (player.ObjectId == id)
 			{
 				return player;
 			}
@@ -1022,7 +1022,7 @@ public class Instance : IIdentifiable, INamable
 			player.sendPacket(sm);
 			
 			// Start eject task
-			_ejectDeadTasks.put(player.getObjectId(), ThreadPool.schedule(() =>
+			_ejectDeadTasks.put(player.ObjectId, ThreadPool.schedule(() =>
 			{
 				if (player.isDead())
 				{
@@ -1038,7 +1038,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void doRevive(Player player)
 	{
-		ScheduledFuture task = _ejectDeadTasks.remove(player.getObjectId());
+		ScheduledFuture task = _ejectDeadTasks.remove(player.ObjectId);
 		if (task != null)
 		{
 			task.cancel(true);

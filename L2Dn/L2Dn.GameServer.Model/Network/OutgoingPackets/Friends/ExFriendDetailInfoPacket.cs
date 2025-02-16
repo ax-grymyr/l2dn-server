@@ -19,7 +19,7 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 	
 	public ExFriendDetailInfoPacket(Player player, string name)
 	{
-		_objectId = player.getObjectId();
+		_objectId = player.ObjectId;
 		_name = name;
 		_friend = World.getInstance().getPlayer(_name);
 		
@@ -73,7 +73,7 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 		{
 			writer.WriteString(_friend.getName());
 			writer.WriteInt32((int)_friend.getOnlineStatus());
-			writer.WriteInt32(_friend.getObjectId());
+			writer.WriteInt32(_friend.ObjectId);
 			writer.WriteInt16((short)_friend.getLevel());
 			writer.WriteInt16((short)_friend.getClassId());
 			writer.WriteInt32(_friend.getClanId() ?? 0);
@@ -87,7 +87,7 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 			writer.WriteByte((byte)createDate.Month);
 			writer.WriteByte((byte)createDate.Day);
 			writer.WriteInt32(_lastAccess);
-			writer.WriteString(CharInfoTable.getInstance().getFriendMemo(_objectId, _friend.getObjectId()));
+			writer.WriteString(CharInfoTable.getInstance().getFriendMemo(_objectId, _friend.ObjectId));
 		}
 	}
 }

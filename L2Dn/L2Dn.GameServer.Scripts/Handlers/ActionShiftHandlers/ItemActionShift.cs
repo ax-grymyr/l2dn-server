@@ -17,7 +17,7 @@ public class ItemActionShift: IActionShiftHandler
 			string html =
 				"<html><head><title>" + target.getName() +
 				"</title></head><body><center><font color=\"LEVEL\">Item Info</font></center><br><table border=0><tr><td>Object ID: </td><td>" +
-				target.getObjectId() + "</td></tr><tr><td>Item ID: </td><td>" + target.getId() +
+				target.ObjectId + "</td></tr><tr><td>Item ID: </td><td>" + target.getId() +
 				"</td></tr><tr><td>Owner ID: </td><td>" + ((Item)target).getOwnerId() +
 				"</td></tr><tr><td>Location: </td><td>" + target.Location +
 				"</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>" + target.GetType().Name +

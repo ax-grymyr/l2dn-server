@@ -51,7 +51,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 		
 		if ((_slotOneItemId != -1 && combinationHennas.getItemOne() != inventory.getItemByObjectId(_slotOneItemId).getId()) || (_slotTwoItemId != -1 && combinationHennas.getItemTwo() != inventory.getItemByObjectId(_slotTwoItemId).getId()))
 		{
-			PacketLogger.Instance.Info(GetType().Name + ": player " + player.getName() + " - " + player.getObjectId() +
+			PacketLogger.Instance.Info(GetType().Name + ": player " + player.getName() + " - " + player.ObjectId +
 			                           " have modified client or combination data is outdated!");
 		}
 		

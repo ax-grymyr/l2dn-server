@@ -23,7 +23,7 @@ public class SummonEffectTable
 	
 	public Map<int, ICollection<SummonEffect>> getServitorEffects(Player owner)
 	{
-		Map<int, Map<int, ICollection<SummonEffect>>> servitorMap = _servitorEffects.get(owner.getObjectId());
+		Map<int, Map<int, ICollection<SummonEffect>>> servitorMap = _servitorEffects.get(owner.ObjectId);
 		if (servitorMap == null)
 		{
 			return null;

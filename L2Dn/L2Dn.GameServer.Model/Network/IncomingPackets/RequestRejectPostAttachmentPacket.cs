@@ -42,7 +42,7 @@ public struct RequestRejectPostAttachmentPacket: IIncomingPacket<GameSession>
         if (msg == null)
             return ValueTask.CompletedTask;
 		
-        if (msg.getReceiverId() != player.getObjectId())
+        if (msg.getReceiverId() != player.ObjectId)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;

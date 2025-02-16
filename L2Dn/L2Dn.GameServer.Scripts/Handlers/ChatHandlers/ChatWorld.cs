@@ -69,7 +69,7 @@ public class ChatWorld: IChatHandler
 			// Verify if player is not spaming.
 			if (Config.WORLD_CHAT_INTERVAL > TimeSpan.Zero)
 			{
-				if (REUSE.TryGetValue(activeChar.getObjectId(), out DateTime instant) && instant > now)
+				if (REUSE.TryGetValue(activeChar.ObjectId, out DateTime instant) && instant > now)
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_S1_SEC_UNTIL_YOU_ARE_ABLE_TO_USE_WORLD_CHAT);
 					msg.Params.addInt((int)(instant - now).TotalSeconds);
@@ -123,7 +123,7 @@ public class ChatWorld: IChatHandler
 			activeChar.sendPacket(new ExWorldCharCntPacket(activeChar));
 			if (Config.WORLD_CHAT_INTERVAL > TimeSpan.Zero)
 			{
-				REUSE.put(activeChar.getObjectId(), now + Config.WORLD_CHAT_INTERVAL);
+				REUSE.put(activeChar.ObjectId, now + Config.WORLD_CHAT_INTERVAL);
 			}
 		}
 	}

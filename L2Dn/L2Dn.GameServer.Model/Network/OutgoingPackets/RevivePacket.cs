@@ -9,7 +9,7 @@ public readonly struct RevivePacket: IOutgoingPacket
 	
     public RevivePacket(WorldObject obj)
     {
-        _objectId = obj.getObjectId();
+        _objectId = obj.ObjectId;
     }
 	
     public void WriteContent(PacketBitWriter writer)

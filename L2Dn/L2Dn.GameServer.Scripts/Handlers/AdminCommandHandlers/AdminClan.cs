@@ -60,7 +60,7 @@ public class AdminClan: IAdminCommandHandler
 				htmlContent.Replace("%clan_points%", clan.getReputationScore().ToString());
 				htmlContent.Replace("%clan_players_count%", clan.getMembersCount().ToString());
 				htmlContent.Replace("%clan_ally%", clan.getAllyId() > 0 ? clan.getAllyName() : "Not in ally");
-				htmlContent.Replace("%current_player_objectId%", player.getObjectId().ToString());
+				htmlContent.Replace("%current_player_objectId%", player.ObjectId.ToString());
 				htmlContent.Replace("%current_player_name%", player.getName());
 				activeChar.sendPacket(html);
 				break;
@@ -80,7 +80,7 @@ public class AdminClan: IAdminCommandHandler
 					return false;
 				}
 				
-				ClanMember member = clan.getClanMember(player.getObjectId());
+				ClanMember member = clan.getClanMember(player.ObjectId);
 				if (member != null)
 				{
 					if (player.isAcademyMember())

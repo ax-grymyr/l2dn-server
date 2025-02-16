@@ -72,7 +72,7 @@ public class AggroInfo
 
     public override int GetHashCode()
     {
-        return _attacker.getObjectId();
+        return _attacker.ObjectId;
     }
 
     public override string ToString()

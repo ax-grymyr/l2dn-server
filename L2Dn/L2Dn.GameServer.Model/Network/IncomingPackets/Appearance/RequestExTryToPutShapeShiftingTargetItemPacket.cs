@@ -46,7 +46,7 @@ public struct RequestExTryToPutShapeShiftingTargetItemPacket: IIncomingPacket<Ga
 			return ValueTask.CompletedTask;
 		}
 		
-		if (stone.getOwnerId() != player.getObjectId() || targetItem.getOwnerId() != player.getObjectId())
+		if (stone.getOwnerId() != player.ObjectId || targetItem.getOwnerId() != player.ObjectId)
 		{
 			player.sendPacket(ExPutShapeShiftingTargetItemResultPacket.FAILED);
 			player.removeRequest<ShapeShiftingItemRequest>();
@@ -67,7 +67,7 @@ public struct RequestExTryToPutShapeShiftingTargetItemPacket: IIncomingPacket<Ga
 			return ValueTask.CompletedTask;
 		}
 		
-		if ((stone = inventory.getItemByObjectId(stone.getObjectId())) == null)
+		if ((stone = inventory.getItemByObjectId(stone.ObjectId)) == null)
 		{
 			player.sendPacket(ExPutShapeShiftingTargetItemResultPacket.FAILED);
 			player.removeRequest<ShapeShiftingItemRequest>();

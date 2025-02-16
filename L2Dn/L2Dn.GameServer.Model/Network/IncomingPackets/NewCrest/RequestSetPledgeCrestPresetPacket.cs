@@ -29,7 +29,7 @@ public struct RequestSetPledgeCrestPresetPacket: IIncomingPacket<GameSession>
         if (clan.getLevel() < 3)
             return ValueTask.CompletedTask;
 		
-        if (clan.getLeader().getObjectId() == player.getObjectId())
+        if (clan.getLeader().getObjectId() == player.ObjectId)
         {
             if (_emblemType == 0)
             {

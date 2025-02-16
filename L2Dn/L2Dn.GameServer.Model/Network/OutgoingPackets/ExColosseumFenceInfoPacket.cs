@@ -15,7 +15,7 @@ public readonly struct ExColosseumFenceInfoPacket: IOutgoingPacket
     private readonly int _clientState;
 
     public ExColosseumFenceInfoPacket(Fence fence)
-        : this(fence.getObjectId(), fence.getX(), fence.getY(), fence.getZ(), fence.getWidth(), fence.getLength(),
+        : this(fence.ObjectId, fence.getX(), fence.getY(), fence.getZ(), fence.getWidth(), fence.getLength(),
             fence.getState())
     {
     }

@@ -166,7 +166,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					
 					if (GlobalEvents.Players.HasSubscribers<OnPlayerSelect>())
 					{
-						OnPlayerSelect onPlayerSelect = new(player, player.getObjectId(), player.getName(), session);
+						OnPlayerSelect onPlayerSelect = new(player, player.ObjectId, player.getName(), session);
 						if (GlobalEvents.Players.Notify(onPlayerSelect) && onPlayerSelect.Terminate)
 						{
 							LeaveWorldPacket leaveWorldPacket = new();

@@ -119,7 +119,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 		// Proceed the sell
 		foreach (UniqueItemHolder i in _items)
 		{
-			Item item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "sell");
+			Item item = player.checkItemManipulation(i.ObjectId, i.getCount(), "sell");
 			if (item == null || !item.isSellable())
 			{
 				continue;
@@ -138,11 +138,11 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 
 			if (Config.ALLOW_REFUND)
 			{
-				player.getInventory().transferItem("Sell", i.getObjectId(), i.getCount(), player.getRefund(), player, merchant);
+				player.getInventory().transferItem("Sell", i.ObjectId, i.getCount(), player.getRefund(), player, merchant);
 			}
 			else
 			{
-				player.getInventory().destroyItem("Sell", i.getObjectId(), i.getCount(), player, merchant);
+				player.getInventory().destroyItem("Sell", i.ObjectId, i.getCount(), player, merchant);
 			}
 		}
 		

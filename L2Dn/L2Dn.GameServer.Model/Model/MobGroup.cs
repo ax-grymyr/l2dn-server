@@ -104,7 +104,7 @@ public class MobGroup
 				continue;
 			}
 			
-			if (groupMember.getObjectId() == mobInst.getObjectId())
+			if (groupMember.ObjectId == mobInst.ObjectId)
 			{
 				return true;
 			}

@@ -204,11 +204,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	public override void handleDisconnect(Player player)
 	{
-		if (player.getObjectId() == _playerOne.getObjectId())
+		if (player.ObjectId == _playerOne.getObjectId())
 		{
 			_playerOne.setDisconnected(true);
 		}
-		else if (player.getObjectId() == _playerTwo.getObjectId())
+		else if (player.ObjectId == _playerTwo.getObjectId())
 		{
 			_playerTwo.setDisconnected(true);
 		}

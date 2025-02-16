@@ -103,7 +103,7 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_player.getY());
 		writer.WriteInt32(_player.getZ());
 		writer.WriteInt32(_player.getHeading());
-		writer.WriteInt32(_player.getObjectId());
+		writer.WriteInt32(_player.ObjectId);
 		writer.WriteString(_player.getName());
 		writer.WriteInt32((int)_player.getRace());
 		writer.WriteInt32((int)_player.getAppearance().getSex());

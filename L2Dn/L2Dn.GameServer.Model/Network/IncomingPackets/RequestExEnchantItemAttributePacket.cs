@@ -90,7 +90,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			case ItemLocation.INVENTORY:
 			case ItemLocation.PAPERDOLL:
 			{
-				if (item.getOwnerId() != player.getObjectId())
+				if (item.getOwnerId() != player.ObjectId)
 				{
 					player.removeRequest<EnchantItemAttributeRequest>();
 					return ValueTask.CompletedTask;

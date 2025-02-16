@@ -32,7 +32,7 @@ public class OlympiadStat: IUserCommandHandler
 			return false;
 		}
 		
-		int nobleObjId = player.getObjectId();
+		int nobleObjId = player.ObjectId;
 		WorldObject target = player.getTarget();
 		if ((target == null) || !target.isPlayer() || (target.getActingPlayer().getClassId().GetLevel() < 2))
 		{

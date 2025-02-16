@@ -100,7 +100,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 	    player.setClanJoinTime(DateTime.UtcNow);
 	    player.broadcastUserInfo();
 
-	    ClanEntryManager.getInstance().removePlayerApplication(_clanId, player.getObjectId());
+	    ClanEntryManager.getInstance().removePlayerApplication(_clanId, player.ObjectId);
 
 	    return ValueTask.CompletedTask;
     }

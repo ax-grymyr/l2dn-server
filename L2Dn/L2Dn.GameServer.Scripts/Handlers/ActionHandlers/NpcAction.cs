@@ -88,7 +88,7 @@ public class NpcAction: IActionHandler
 					// Open a chat window on client with the text of the Npc
 					if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 					{
-						player.setLastQuestNpcObject(target.getObjectId());
+						player.setLastQuestNpcObject(target.ObjectId);
 					}
 					
 					if (npc.Events.HasSubscribers<OnNpcFirstTalk>())

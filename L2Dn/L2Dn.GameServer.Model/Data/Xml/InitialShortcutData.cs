@@ -189,7 +189,7 @@ public class InitialShortcutData: DataReaderBase
 					{
 						continue;
 					}
-					shortcutId = item.getObjectId();
+					shortcutId = item.ObjectId;
 					break;
 				}
 				case ShortcutType.SKILL:
@@ -233,7 +233,7 @@ public class InitialShortcutData: DataReaderBase
 						{
 							continue;
 						}
-						shortcutId = item.getObjectId();
+						shortcutId = item.ObjectId;
 						break;
 					}
 					case ShortcutType.SKILL:

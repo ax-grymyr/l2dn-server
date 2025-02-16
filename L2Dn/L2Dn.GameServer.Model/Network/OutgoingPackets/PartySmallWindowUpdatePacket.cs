@@ -19,7 +19,7 @@ public readonly struct PartySmallWindowUpdatePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.PARTY_SMALL_WINDOW_UPDATE);
         
-        writer.WriteInt32(_member.getObjectId());
+        writer.WriteInt32(_member.ObjectId);
         writer.WriteInt16((short)_type);
 
         if (_type.HasFlag(PartySmallWindowUpdateType.CURRENT_CP))

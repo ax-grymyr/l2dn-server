@@ -81,12 +81,12 @@ public class FenceData: DataReaderBase
 
 	private void addFence(Fence fence)
 	{
-		_fences.put(fence.getObjectId(), fence);
+		_fences.put(fence.ObjectId, fence);
 	}
 
 	public void removeFence(Fence fence)
 	{
-		_fences.remove(fence.getObjectId());
+		_fences.remove(fence.ObjectId);
 	}
 
 	public Map<int, Fence> getFences()

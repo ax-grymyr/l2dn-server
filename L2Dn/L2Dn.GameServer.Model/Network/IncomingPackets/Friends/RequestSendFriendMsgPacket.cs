@@ -33,7 +33,7 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 		
         Player targetPlayer = World.getInstance().getPlayer(_reciever);
-        if ((targetPlayer == null) || !targetPlayer.getFriendList().Contains(player.getObjectId()))
+        if ((targetPlayer == null) || !targetPlayer.getFriendList().Contains(player.ObjectId))
         {
             player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
             return ValueTask.CompletedTask;

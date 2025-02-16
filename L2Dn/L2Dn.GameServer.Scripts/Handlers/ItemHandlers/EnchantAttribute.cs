@@ -29,7 +29,7 @@ public class EnchantAttribute: IItemHandler
 			return false;
 		}
 		
-		player.addRequest(new EnchantItemAttributeRequest(player, item.getObjectId()));
+		player.addRequest(new EnchantItemAttributeRequest(player, item.ObjectId));
 		player.sendPacket(new ExChooseInventoryAttributeItemPacket(player, item));
 		return true;
 	}

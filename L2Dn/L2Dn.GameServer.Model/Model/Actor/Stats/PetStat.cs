@@ -51,7 +51,7 @@ public class PetStat: SummonStat
 		getActiveChar().broadcastStatusUpdate();
 		if (levelIncreased)
 		{
-			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().getObjectId(), SocialActionPacket.LEVEL_UP));
+			getActiveChar().broadcastPacket(new SocialActionPacket(getActiveChar().ObjectId, SocialActionPacket.LEVEL_UP));
 		}
 		// Send a Server->Client packet PetInfo to the Player
 		getActiveChar().updateAndBroadcastStatus(1);
@@ -74,7 +74,7 @@ public class PetStat: SummonStat
 		{
 			if (getActiveChar() != null)
 			{
-				LOGGER.Warn("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getId() +
+				LOGGER.Warn("Pet objectId:" + getActiveChar().ObjectId + ", NpcId:" + getActiveChar().getId() +
 				            ", level:" + level + " is missing data from pets_stats table!");
 			}
 			

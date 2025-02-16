@@ -32,7 +32,7 @@ public class TrapTask: Runnable
                     _trap.setRemainingTime(_trap.getRemainingTime() - TICK);
                     if (_trap.getRemainingTime() < _trap.getLifeTime() - 15000)
                     {
-                        _trap.broadcastPacket(new SocialActionPacket(_trap.getObjectId(), 2));
+                        _trap.broadcastPacket(new SocialActionPacket(_trap.ObjectId, 2));
                     }
 
                     if (_trap.getRemainingTime() <= 0)

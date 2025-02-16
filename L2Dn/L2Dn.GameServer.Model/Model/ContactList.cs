@@ -40,12 +40,12 @@ public class ContactList
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _player.getObjectId();
+			int characterId = _player.ObjectId;
 			var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
 			foreach (var contactId in query)
 			{
 				string contactName = CharInfoTable.getInstance().getNameById(contactId);
-				if ((contactName == null) || contactName.equals(_player.getName()) || (contactId == _player.getObjectId()))
+				if ((contactName == null) || contactName.equals(_player.getName()) || (contactId == _player.ObjectId))
 				{
 					continue;
 				}
@@ -103,7 +103,7 @@ public class ContactList
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterContacts.Add(new DbCharacterContact()
 			{
-				CharacterId = _player.getObjectId(),
+				CharacterId = _player.ObjectId,
 				ContactId = contactId
 			});
 
@@ -141,7 +141,7 @@ public class ContactList
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _player.getObjectId();
+			int characterId = _player.ObjectId;
 			ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
 			
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);

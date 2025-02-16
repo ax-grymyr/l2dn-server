@@ -26,7 +26,7 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ABNORMAL_STATUS_UPDATE_FROM_TARGET);
 
-        writer.WriteInt32(_creature.getObjectId());
+        writer.WriteInt32(_creature.ObjectId);
         writer.WriteInt16((short)_effects.Count);
         
         foreach (BuffInfo info in _effects)

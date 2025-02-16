@@ -25,7 +25,7 @@ public class FortLogistics : Merchant
 	
 	public override void onBypassFeedback(Player player, string command)
 	{
-		if (player.getLastFolkNPC().getObjectId() != getObjectId())
+		if (player.getLastFolkNPC().ObjectId != ObjectId)
 		{
 			return;
 		}
@@ -46,8 +46,8 @@ public class FortLogistics : Merchant
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
@@ -72,8 +72,8 @@ public class FortLogistics : Merchant
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
 			
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
@@ -96,8 +96,8 @@ public class FortLogistics : Merchant
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-1.htm", player); // TODO: Missing HTML?
 			}
 			
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
@@ -137,8 +137,8 @@ public class FortLogistics : Merchant
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
 			
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}
 		else
@@ -167,7 +167,7 @@ public class FortLogistics : Merchant
 		}
 		
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcId%", getId().ToString());
 		if (getFort().getOwnerClan() != null)
 		{
@@ -178,7 +178,7 @@ public class FortLogistics : Merchant
 			htmlContent.Replace("%clanname%", "NPC");
 		}
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	

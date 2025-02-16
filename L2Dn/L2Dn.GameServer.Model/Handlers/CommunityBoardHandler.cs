@@ -174,7 +174,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	 */
 	public void addBypass(Player player, string title, string bypass)
 	{
-		_bypasses.put(player.getObjectId(), title + "&" + bypass);
+		_bypasses.put(player.ObjectId, title + "&" + bypass);
 	}
 	
 	/**
@@ -184,7 +184,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	 */
 	public string removeBypass(Player player)
 	{
-		return _bypasses.remove(player.getObjectId());
+		return _bypasses.remove(player.ObjectId);
 	}
 	
 	/**

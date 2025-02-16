@@ -492,7 +492,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// Removes itself from the summoned list.
 			if (_summoner != null)
 			{
-				_summoner.removeSummonedNpc(getObjectId());
+				_summoner.removeSummonedNpc(ObjectId);
 			}
 			
 			// Enable AI.
@@ -650,14 +650,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (isPlayable())
 		{
-			broadcastPacket(new SocialActionPacket(getObjectId(), id));
+			broadcastPacket(new SocialActionPacket(ObjectId, id));
 		}
 		else
 		{
 			WorldRegion region = getWorldRegion();
 			if (region != null && region.areNeighborsActive())
 			{
-				broadcastPacket(new SocialActionPacket(getObjectId(), id));
+				broadcastPacket(new SocialActionPacket(ObjectId, id));
 			}
 		}
 	}
@@ -809,7 +809,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		location = location with { Z = location.Z + 5 };
 
 		// Send teleport packet where needed.
-		broadcastPacket(new TeleportToLocationPacket(getObjectId(), location));
+		broadcastPacket(new TeleportToLocationPacket(ObjectId, location));
 
 		// Change instance world.
 		if (getInstanceWorld() != instance)
@@ -1087,7 +1087,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							sendPacket(SystemMessageId.YOUR_CROSSBOW_IS_PREPARING_TO_FIRE);
 						}
 
-						sendPacket(new SetupGaugePacket(getObjectId(), SetupGaugePacket.RED, reuse));
+						sendPacket(new SetupGaugePacket(ObjectId, SetupGaugePacket.RED, reuse));
 					}
 
 					// Calculate and set the disable delay of the bow in function of the Attack Speed
@@ -1369,7 +1369,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void addTimeStampItem(Item item, TimeSpan reuse, DateTime? systime)
 	{
-		_reuseTimeStampsItems.put(item.getObjectId(), new TimeStamp(item, reuse, systime));
+		_reuseTimeStampsItems.put(item.ObjectId, new TimeStamp(item, reuse, systime));
 	}
 	
 	/**
@@ -1785,7 +1785,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Removes itself from the summoned list.
 		if (_summoner != null)
 		{
-			_summoner.removeSummonedNpc(getObjectId());
+			_summoner.removeSummonedNpc(ObjectId);
 		}
 		
 		// Remove all active, passive and option effects, do not broadcast changes.
@@ -3379,7 +3379,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (_target != null)
 		{
-			return _target.getObjectId();
+			return _target.ObjectId;
 		}
 		return 0;
 	}
@@ -5289,7 +5289,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 		}
 		
-		_summonedNpcs.put(npc.getObjectId(), npc);
+		_summonedNpcs.put(npc.ObjectId, npc);
 		
 		npc.setSummoner(this);
 	}

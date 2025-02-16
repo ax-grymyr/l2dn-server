@@ -15,12 +15,12 @@ public readonly struct ExMentorListPacket: IOutgoingPacket
         if (player.isMentor())
         {
             _type = 1;
-            _mentees = MentorManager.getInstance().getMentees(player.getObjectId());
+            _mentees = MentorManager.getInstance().getMentees(player.ObjectId);
         }
         else if (player.isMentee())
         {
             _type = 2;
-            _mentees = [MentorManager.getInstance().getMentor(player.getObjectId())];
+            _mentees = [MentorManager.getInstance().getMentor(player.ObjectId)];
         }
         // else if (player.isInCategory(CategoryType.SIXTH_CLASS_GROUP)) // Not a mentor, Not a mentee, so can be a mentor
         // {

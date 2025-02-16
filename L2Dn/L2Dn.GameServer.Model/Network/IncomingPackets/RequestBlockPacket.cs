@@ -78,7 +78,7 @@ public struct RequestBlockPacket: IIncomingPacket<GameSession>
                     return ValueTask.CompletedTask;
                 }
 				
-                if (player.getObjectId() == targetId)
+                if (player.ObjectId == targetId)
                     return ValueTask.CompletedTask;
 				
                 if (_type == BLOCK)

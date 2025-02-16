@@ -662,7 +662,7 @@ public class Door : Creature
 		sb.Append("[");
 		sb.Append(getTemplate().getId());
 		sb.Append("](");
-		sb.Append(getObjectId());
+		sb.Append(ObjectId);
 		sb.Append(")");
 		return sb.ToString();
 	}

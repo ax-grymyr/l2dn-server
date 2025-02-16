@@ -43,7 +43,7 @@ public class TakeFort: AbstractEffect
 					Player player = effector.getActingPlayer();
 					FortSiegeManager.getInstance().dropCombatFlag(player, FortManager.ORC_FORTRESS);
 					
-					Message mail = new Message(player.getObjectId(), "Orc Fortress", "", MailType.NPC);
+					Message mail = new Message(player.ObjectId, "Orc Fortress", "", MailType.NPC);
 					Mail attachment = mail.createAttachments();
 					attachment.addItem("Orc Fortress", Inventory.ADENA_ID, 30_000_000, player, player);
 					MailManager.getInstance().sendMessage(mail);

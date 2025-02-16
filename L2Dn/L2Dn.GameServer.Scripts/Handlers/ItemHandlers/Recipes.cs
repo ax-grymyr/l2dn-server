@@ -92,7 +92,7 @@ public class Recipes: IItemHandler
 			player.registerCommonRecipeList(rp, true);
 		}
 		
-		player.destroyItem("Consume", item.getObjectId(), 1, null, false);
+		player.destroyItem("Consume", item.ObjectId, 1, null, false);
 		
 		sm = new SystemMessagePacket(SystemMessageId.S1_ADDED);
 		sm.Params.addItemName(item);

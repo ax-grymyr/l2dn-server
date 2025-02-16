@@ -18,7 +18,7 @@ public readonly struct ExRequestNewInvitePartyInquiryPacket: IOutgoingPacket
 	public ExRequestNewInvitePartyInquiryPacket(Player player, int reqType, ChatType sayType)
 	{
 		_player = player;
-		_userID = _player.getObjectId();
+		_userID = _player.ObjectId;
 		_reqType = reqType;
 		_sayType = sayType;
 		

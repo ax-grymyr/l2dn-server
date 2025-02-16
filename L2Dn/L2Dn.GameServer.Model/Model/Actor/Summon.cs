@@ -345,7 +345,7 @@ public abstract class Summon: Playable
 		
 		if (owner != null)
 		{
-			owner.sendPacket(new PetDeletePacket(getSummonType(), getObjectId()));
+			owner.sendPacket(new PetDeletePacket(getSummonType(), ObjectId));
 			Party party = owner.getParty();
 			if (party != null)
 			{
@@ -358,7 +358,7 @@ public abstract class Summon: Playable
 			}
 			else
 			{
-				owner.removeServitor(getObjectId());
+				owner.removeServitor(ObjectId);
 			}
 		}
 		
@@ -378,7 +378,7 @@ public abstract class Summon: Playable
 		
 		if (!isPet())
 		{
-			CharSummonTable.getInstance().removeServitor(_owner, getObjectId());
+			CharSummonTable.getInstance().removeServitor(_owner, ObjectId);
 		}
 	}
 	
@@ -420,10 +420,10 @@ public abstract class Summon: Playable
 				}
 				else
 				{
-					owner.removeServitor(getObjectId());
+					owner.removeServitor(ObjectId);
 				}
 				
-				owner.sendPacket(new PetDeletePacket(getSummonType(), getObjectId()));
+				owner.sendPacket(new PetDeletePacket(getSummonType(), ObjectId));
 				Party party = owner.getParty();
 				if (party != null)
 				{
@@ -713,7 +713,7 @@ public abstract class Summon: Playable
 		}
 		
 		// Prevents the double spam of system messages, if the target is the owning player.
-		if (target.getObjectId() != _owner.getObjectId())
+		if (target.ObjectId != _owner.ObjectId)
 		{
 			if (crit)
 			{
@@ -743,7 +743,7 @@ public abstract class Summon: Playable
 				sm.Params.addNpcName(this);
 				sm.Params.addString(target.getName());
 				sm.Params.addInt(damage);
-				sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+				sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
 			}
 			
 			sendPacket(sm);
@@ -760,7 +760,7 @@ public abstract class Summon: Playable
 			sm.Params.addNpcName(this);
 			sm.Params.addString(attacker.getName());
 			sm.Params.addInt((int) damage);
-			sm.Params.addPopup(getObjectId(), attacker.getObjectId(), (int) -damage);
+			sm.Params.addPopup(ObjectId, attacker.ObjectId, (int) -damage);
 			sendPacket(sm);
 		}
 	}
@@ -873,7 +873,7 @@ public abstract class Summon: Playable
 	public override void onTeleported()
 	{
 		base.onTeleported();
-		sendPacket(new TeleportToLocationPacket(getObjectId(), Location));
+		sendPacket(new TeleportToLocationPacket(ObjectId, Location));
 	}
 	
 	public override bool isUndead()

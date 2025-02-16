@@ -243,7 +243,7 @@ public class PlayerInventory: Inventory
 		if (notAllEquipped)
 		{
 			Item adjItem = getItemByItemId(item.getItem().getId());
-			item.setObjectId(adjItem.getObjectId());
+			item.setObjectId(adjItem.ObjectId);
 			item.setEnchant(adjItem.getEnchantLevel());
 
 			if (adjItem.getCount() < item.getCount())
@@ -754,12 +754,12 @@ public class PlayerInventory: Inventory
 	protected override bool removeItem(Item item)
 	{
 		// Removes any reference to the item from Shortcut bar
-		_owner.removeItemFromShortCut(item.getObjectId());
+		_owner.removeItemFromShortCut(item.ObjectId);
 
 		// Removes active Enchant Scroll
-		if (_owner.isProcessingItem(item.getObjectId()))
+		if (_owner.isProcessingItem(item.ObjectId))
 		{
-			_owner.removeRequestsThatProcessesItem(item.getObjectId());
+			_owner.removeRequestsThatProcessesItem(item.ObjectId);
 		}
 
 		if (item.getId() == ADENA_ID)

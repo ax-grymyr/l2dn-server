@@ -25,7 +25,7 @@ public class PetAction: IActionHandler
 		}
 
 		Pet pet = (Pet)target;
-		bool isOwner = player.getObjectId() == pet.getOwner().getObjectId();
+		bool isOwner = player.ObjectId == pet.getOwner().ObjectId;
 		if (isOwner && (player != pet.getOwner()))
 		{
 			pet.updateRefOwner(player);

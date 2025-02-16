@@ -56,7 +56,7 @@ public class CombatFlag
 		
 		// Player holding it data
 		_player = player;
-		_playerId = _player.getObjectId();
+		_playerId = _player.ObjectId;
 		_itemInstance = null;
 		
 		// Equip with the weapon

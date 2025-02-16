@@ -72,14 +72,14 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 			string name = PetTypeData.getInstance().getNamePrefix(skillType.Key) + " " + PetTypeData.getInstance().getRandomName();
 			evolved.addSkill(skillType.Value.getSkill());
 			evolved.setName(name);
-			PetDataTable.getInstance().setPetName(controlItem.getObjectId(), name);
+			PetDataTable.getInstance().setPetName(controlItem.ObjectId, name);
 		}
 		
 		activeChar.setPet(evolved);
 		evolved.setShowSummonAnimation(true);
 		evolved.setEvolveLevel(evolveLevel);
 		evolved.setRunning();
-		evolved.storeEvolvedPets((int)evolveLevel, evolved.getPetData().getIndex(), controlItem.getObjectId());
+		evolved.storeEvolvedPets((int)evolveLevel, evolved.getPetData().getIndex(), controlItem.ObjectId);
 		controlItem.setEnchantLevel(evolved.getLevel());
 		evolved.spawnMe(pet.Location.Location3D);
 		evolved.startFeed();

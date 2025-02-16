@@ -24,7 +24,7 @@ public struct RequestPledgeRecruitApplyInfoPacket: IIncomingPacket<GameSession>
         {
             status = ClanEntryStatus.ORDERED;
         }
-        else if ((player.getClan() == null) && (ClanEntryManager.getInstance().isPlayerRegistred(player.getObjectId())))
+        else if ((player.getClan() == null) && (ClanEntryManager.getInstance().isPlayerRegistred(player.ObjectId)))
         {
             status = ClanEntryStatus.WAITING;
         }

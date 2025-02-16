@@ -57,7 +57,7 @@ public struct RequestVoteNewPacket: IIncomingPacket<GameSession>
         }
 		
         Player target = (Player)obj;
-        if (target.getObjectId() != _targetId)
+        if (target.ObjectId != _targetId)
             return ValueTask.CompletedTask;
 		
         if (target == player)

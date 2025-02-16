@@ -15,7 +15,7 @@ internal readonly struct MoveToLocationPacket: IOutgoingPacket
 
     public MoveToLocationPacket(Creature creature)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _x = creature.getX();
         _y = creature.getY();
         _z = creature.getZ();

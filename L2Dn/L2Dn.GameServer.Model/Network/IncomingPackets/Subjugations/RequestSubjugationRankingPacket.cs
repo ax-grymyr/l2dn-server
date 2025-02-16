@@ -20,7 +20,7 @@ public struct RequestSubjugationRankingPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        player.sendPacket(new ExSubjugationRankingPacket(_rankingCategory, player.getObjectId()));
+        player.sendPacket(new ExSubjugationRankingPacket(_rankingCategory, player.ObjectId));
         
         return ValueTask.CompletedTask;
     }

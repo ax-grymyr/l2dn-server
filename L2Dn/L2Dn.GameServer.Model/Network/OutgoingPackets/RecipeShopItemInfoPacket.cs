@@ -23,7 +23,7 @@ public readonly struct RecipeShopItemInfoPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.RECIPE_SHOP_ITEM_INFO);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_recipeId);
         writer.WriteInt32((int)_player.getCurrentMp());
         writer.WriteInt32(_player.getMaxMp());

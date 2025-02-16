@@ -25,7 +25,7 @@ public readonly struct ExMPCCRoomMemberPacket: IOutgoingPacket
         writer.WriteInt32(_room.getMembersCount());
         foreach (Player member in _room.getMembers())
         {
-            writer.WriteInt32(member.getObjectId());
+            writer.WriteInt32(member.ObjectId);
             writer.WriteString(member.getName());
             writer.WriteInt32(member.getLevel());
             writer.WriteInt32((int)member.getClassId());

@@ -35,7 +35,7 @@ public struct ExRequestUserWatcherAddPacket: IIncomingPacket<GameSession>
         }
 		
         // You cannot add yourself to your own friend list.
-        if (targetId == player.getObjectId())
+        if (targetId == player.ObjectId)
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOURSELF_TO_YOUR_SURVEILLANCE_LIST);
             return ValueTask.CompletedTask;
@@ -59,7 +59,7 @@ public struct ExRequestUserWatcherAddPacket: IIncomingPacket<GameSession>
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterSurveillances.Add(new CharacterSurveillance()
             {
-                CharacterId = player.getObjectId(),
+                CharacterId = player.ObjectId,
                 TargetId = targetId
             });
 

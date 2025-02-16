@@ -15,7 +15,7 @@ public readonly struct ExMoveToLocationAirShipPacket: IOutgoingPacket
 	
     public ExMoveToLocationAirShipPacket(Creature creature)
     {
-        _objId = creature.getObjectId();
+        _objId = creature.ObjectId;
         _tx = creature.getXdestination();
         _ty = creature.getYdestination();
         _tz = creature.getZdestination();

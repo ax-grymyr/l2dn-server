@@ -314,7 +314,7 @@ public class DailyTaskManager
 			{
 				foreach (Item item in player.getInventory().getAllItemsByItemId(itemId))
 				{
-					player.getItemReuseTimeStamps().remove(item.getObjectId());
+					player.getItemReuseTimeStamps().remove(item.ObjectId);
 					update = true;
 				}
 			}

@@ -252,7 +252,7 @@ public class SkillCaster: Runnable
 		{
 			// Face the target
 			caster.setHeading(caster.HeadingTo(target));
-			caster.broadcastPacket(new ExRotationPacket(caster.getObjectId(), caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
+			caster.broadcastPacket(new ExRotationPacket(caster.ObjectId, caster.getHeading())); // TODO: Not sent in retail. Probably moveToPawn is enough
 
 			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it while (double) casting, because that will screw up animation... some fucked up stuff, right?
 			if (caster.isPlayer() && !caster.isCastingNow() && target.isCreature())
@@ -296,7 +296,7 @@ public class SkillCaster: Runnable
 				if (worldPosition != null)
 				{
 					ThreadPool.schedule(
-						() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.getObjectId(),
+						() => player.broadcastPacket(new ExMagicSkillUseGroundPacket(player.ObjectId,
 							_skill.getDisplayId(), worldPosition.Value)), 100);
 				}
 			}
@@ -320,7 +320,7 @@ public class SkillCaster: Runnable
 			}
 
 			// Show the gauge bar for casting.
-			caster.sendPacket(new SetupGaugePacket(caster.getObjectId(), SetupGaugePacket.BLUE, displayedCastTime));
+			caster.sendPacket(new SetupGaugePacket(caster.ObjectId, SetupGaugePacket.BLUE, displayedCastTime));
 		}
 
 		// Consume reagent item.
@@ -330,7 +330,7 @@ public class SkillCaster: Runnable
 			Item requiredItem = caster.getInventory().getItemByItemId(_skill.getItemConsumeId());
 			if (_skill.isBad() || requiredItem.getTemplate().getDefaultAction() == ActionType.NONE) // Non reagent items are removed at finishSkill or item handler.
 			{
-				caster.destroyItem(_skill.ToString(), requiredItem.getObjectId(), _skill.getItemConsumeCount(), caster, false);
+				caster.destroyItem(_skill.ToString(), requiredItem.ObjectId, _skill.getItemConsumeCount(), caster, false);
 			}
 		}
 
@@ -505,7 +505,7 @@ public class SkillCaster: Runnable
 		}
 
 		// Consume skill reduced item on success.
-		if (_item != null && _item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS && _skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && !caster.destroyItem(_skill.ToString(), _item.getObjectId(), _skill.getItemConsumeCount(), target, true))
+		if (_item != null && _item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS && _skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && !caster.destroyItem(_skill.ToString(), _item.ObjectId, _skill.getItemConsumeCount(), target, true))
 		{
 			return false;
 		}
@@ -643,7 +643,7 @@ public class SkillCaster: Runnable
 							((Creature) obj).addAttackerToAttackByList(caster);
 
 							// Summoning a servitor should not renew your own PvP flag time.
-							if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.isServitor() || obj.getObjectId() != player.getFirstServitor().getObjectId()))
+							if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.isServitor() || obj.ObjectId != player.getFirstServitor().ObjectId))
 							{
 								player.updatePvPStatus();
 							}
@@ -751,7 +751,7 @@ public class SkillCaster: Runnable
 		// If aborted, broadcast casting aborted.
 		if (aborted)
 		{
-			caster.broadcastPacket(new MagicSkillCanceledPacket(caster.getObjectId())); // broadcast packet to stop animations client-side
+			caster.broadcastPacket(new MagicSkillCanceledPacket(caster.ObjectId)); // broadcast packet to stop animations client-side
 			caster.sendPacket(new ActionFailedPacket(_castingType)); // send an "action failed" packet to the caster
 		}
 

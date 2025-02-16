@@ -1518,7 +1518,7 @@ public abstract class Inventory: ItemContainer
 	public int getPaperdollObjectId(int slot)
 	{
 		Item item = _paperdoll[slot];
-		return (item != null) ? item.getObjectId() : 0;
+		return (item != null) ? item.ObjectId : 0;
 	}
 	
 	/**

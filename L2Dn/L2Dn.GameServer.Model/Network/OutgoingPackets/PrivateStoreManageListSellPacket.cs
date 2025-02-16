@@ -17,7 +17,7 @@ public readonly struct PrivateStoreManageListSellPacket: IOutgoingPacket
     public PrivateStoreManageListSellPacket(int sendType, Player player, bool isPackageSale)
     {
         _sendType = sendType;
-        _objId = player.getObjectId();
+        _objId = player.ObjectId;
         _playerAdena = player.getAdena();
         player.getSellList().updateItems();
         _packageSale = isPackageSale;

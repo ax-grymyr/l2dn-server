@@ -409,7 +409,7 @@ public abstract class ZoneType: IEventContainerProvider
 				return;
 			}
 			
-			if (_characterList.TryAdd(creature.getObjectId(), creature))
+			if (_characterList.TryAdd(creature.ObjectId, creature))
 			{
 				// Notify to scripts.
 				if (_eventContainer.HasSubscribers<OnZoneEnter>())
@@ -434,7 +434,7 @@ public abstract class ZoneType: IEventContainerProvider
 	public void removeCharacter(Creature creature)
 	{
 		// Was the character inside this zone?
-		if (_characterList.ContainsKey(creature.getObjectId()))
+		if (_characterList.ContainsKey(creature.ObjectId))
 		{
 			// Notify to scripts.
 			if (_eventContainer.HasSubscribers<OnZoneExit>())
@@ -443,7 +443,7 @@ public abstract class ZoneType: IEventContainerProvider
 			}
 			
 			// Unregister player.
-			_characterList.remove(creature.getObjectId());
+			_characterList.remove(creature.ObjectId);
 			
 			// Notify Zone implementation.
 			onExit(creature);
@@ -457,7 +457,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isCharacterInZone(Creature creature)
 	{
-		return _characterList.ContainsKey(creature.getObjectId());
+		return _characterList.ContainsKey(creature.ObjectId);
 	}
 	
 	public virtual AbstractZoneSettings getSettings()

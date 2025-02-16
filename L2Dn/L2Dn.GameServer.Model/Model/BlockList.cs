@@ -21,10 +21,10 @@ public class BlockList
 	public BlockList(Player owner)
 	{
 		_owner = owner;
-		_blockList = OFFLINE_LIST.get(owner.getObjectId());
+		_blockList = OFFLINE_LIST.get(owner.ObjectId);
 		if (_blockList == null)
 		{
-			_blockList = loadList(_owner.getObjectId());
+			_blockList = loadList(_owner.ObjectId);
 		}
 	}
 	
@@ -42,7 +42,7 @@ public class BlockList
 	
 	public void playerLogout()
 	{
-		OFFLINE_LIST.put(_owner.getObjectId(), _blockList);
+		OFFLINE_LIST.put(_owner.ObjectId, _blockList);
 	}
 	
 	private static Set<int> loadList(int objId)
@@ -80,7 +80,7 @@ public class BlockList
 			{
 				ctx.CharacterFriends.Add(new CharacterFriend()
 				{
-					CharacterId = _owner.getObjectId(),
+					CharacterId = _owner.ObjectId,
 					FriendId = targetId,
 					Relation = 1
 				});
@@ -90,7 +90,7 @@ public class BlockList
 			else
 			// remove
 			{
-				int characterId = _owner.getObjectId();
+				int characterId = _owner.ObjectId;
 				ctx.CharacterFriends
 					.Where(r => r.CharacterId == characterId && r.FriendId == targetId && r.Relation == 1)
 					.ExecuteDelete();
@@ -104,7 +104,7 @@ public class BlockList
 	
 	public bool isInBlockList(Player target)
 	{
-		return _blockList.Contains(target.getObjectId());
+		return _blockList.Contains(target.ObjectId);
 	}
 	
 	public bool isInBlockList(int targetId)

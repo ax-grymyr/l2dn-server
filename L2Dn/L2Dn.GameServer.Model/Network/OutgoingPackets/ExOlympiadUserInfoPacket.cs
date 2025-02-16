@@ -58,7 +58,7 @@ public readonly struct ExOlympiadUserInfoPacket: IOutgoingPacket
         if (_player != null)
         {
             writer.WriteByte((byte)_player.getOlympiadSide());
-            writer.WriteInt32(_player.getObjectId());
+            writer.WriteInt32(_player.ObjectId);
             writer.WriteString(_player.getName());
             writer.WriteInt32((int)_player.getClassId());
         }

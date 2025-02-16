@@ -74,7 +74,7 @@ public class CharSummonTable
 	
 	public void removeServitor(Player player, int summonObjectId)
 	{
-		_servitors.computeIfPresent(player.getObjectId(), (k, v) =>
+		_servitors.computeIfPresent(player.ObjectId, (k, v) =>
 		{
 			v.remove(summonObjectId);
 			return !v.isEmpty() ? v : null;
@@ -82,7 +82,7 @@ public class CharSummonTable
 
 		try
 		{
-			int ownerId = player.getObjectId();
+			int ownerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterSummons.Where(p => p.OwnerId == ownerId && p.SummonId == summonObjectId)
 				.ExecuteDelete();
@@ -95,14 +95,14 @@ public class CharSummonTable
 	
 	public void restorePet(Player player)
 	{
-		Item item = player.getInventory().getItemByObjectId(_pets.get(player.getObjectId()));
+		Item item = player.getInventory().getItemByObjectId(_pets.get(player.ObjectId));
 		if (item == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet summoning item for: " + player);
 			return;
 		}
 		
-		PetEvolveHolder evolveData = player.getPetEvolve(item.getObjectId());
+		PetEvolveHolder evolveData = player.getPetEvolve(item.ObjectId);
 		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve(), evolveData.getIndex());
 		if (petData == null)
 		{
@@ -146,7 +146,7 @@ public class CharSummonTable
 	{
 		try 
 		{
-			int ownerId = player.getObjectId();
+			int ownerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var summons = ctx.CharacterSummons.Where(s => s.OwnerId == ownerId);
 			Skill skill;
@@ -205,7 +205,7 @@ public class CharSummonTable
 			return;
 		}
 		
-		_servitors.computeIfAbsent(summon.getOwner().getObjectId(), k => new()).add(summon.getObjectId());
+		_servitors.computeIfAbsent(summon.getOwner().ObjectId, k => new()).add(summon.ObjectId);
 		
 		try 
 		{
@@ -216,8 +216,8 @@ public class CharSummonTable
 				
 			var dbSummon = new CharacterSummon
 			{
-				OwnerId = summon.getOwner().getObjectId(),
-				SummonId = summon.getObjectId(),
+				OwnerId = summon.getOwner().ObjectId,
+				SummonId = summon.ObjectId,
 				SummonSkillId = summon.getReferenceSkill(),
 				CurrentHp = (int) summon.getCurrentHp(),
 				CurrentMp =(int) summon.getCurrentMp(), 

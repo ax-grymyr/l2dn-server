@@ -38,7 +38,7 @@ public class Sow: AbstractEffect
 		Player player = effector.getActingPlayer();
 		Monster target = (Monster) effected;
 		
-		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.getObjectId()))
+		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.ObjectId))
 		{
 			return;
 		}

@@ -14,8 +14,8 @@ public readonly struct ExMoveToLocationInShuttlePacket: IOutgoingPacket
 
     public ExMoveToLocationInShuttlePacket(Player player, Location3D from)
     {
-        _objectId = player.getObjectId();
-        _airShipId = player.getShuttle().getObjectId();
+        _objectId = player.ObjectId;
+        _airShipId = player.getShuttle().ObjectId;
         _targetLocation = player.getInVehiclePosition();
         _fromLocation = from;
     }

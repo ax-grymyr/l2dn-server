@@ -179,7 +179,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (receiverId == player.getObjectId())
+		if (receiverId == player.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_SEND_A_MAIL_TO_YOURSELF);
 			return ValueTask.CompletedTask;
@@ -201,7 +201,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (BlockList.isInBlockList(receiverId, player.getObjectId()))
+		if (BlockList.isInBlockList(receiverId, player.ObjectId))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BLOCKED_YOU_YOU_CANNOT_SEND_MAIL_TO_THIS_CHARACTER);
 			sm.Params.addString(_receiver);
@@ -209,7 +209,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (MailManager.getInstance().getOutboxSize(player.getObjectId()) >= OUTBOX_SIZE)
+		if (MailManager.getInstance().getOutboxSize(player.ObjectId) >= OUTBOX_SIZE)
 		{
 			player.sendPacket(SystemMessageId.THE_MAIL_LIMIT_240_HAS_BEEN_EXCEEDED_AND_THIS_CANNOT_BE_FORWARDED);
 			return ValueTask.CompletedTask;
@@ -228,7 +228,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 		// 	return ValueTask.CompletedTask;
 		// }
 		
-		Message msg = new Message(player.getObjectId(), receiverId, _isCod, _subject, _text, _reqAdena);
+		Message msg = new Message(player.ObjectId, receiverId, _isCod, _subject, _text, _reqAdena);
 		if (removeItems(player, msg))
 		{
 			MailManager.getInstance().sendMessage(msg);

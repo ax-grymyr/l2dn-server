@@ -33,7 +33,7 @@ public readonly struct ExAirShipInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_AIR_SHIP_INFO);
         
-        writer.WriteInt32(_ship.getObjectId());
+        writer.WriteInt32(_ship.ObjectId);
         writer.WriteInt32(_x);
         writer.WriteInt32(_y);
         writer.WriteInt32(_z);

@@ -40,7 +40,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 			{
 				if (player.reduceAdena("Pledge donation", 100000, null, true))
 				{
-					clan.addExp(player.getObjectId(), 50);
+					clan.addExp(player.ObjectId, 50);
 				}
 				else
 				{
@@ -53,7 +53,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 				if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) >= 100)
 				{
 					player.destroyItemByItemId("Pledge donation", Inventory.LCOIN_ID, 100, player, true);
-					clan.addExp(player.getObjectId(), 100);
+					clan.addExp(player.ObjectId, 100);
 					player.setHonorCoins(player.getHonorCoins() + 100);
 				}
 				else
@@ -67,7 +67,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 				if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) >= 500)
 				{
 					player.destroyItemByItemId("Pledge donation", Inventory.LCOIN_ID, 500, player, true);
-					clan.addExp(player.getObjectId(), 500);
+					clan.addExp(player.ObjectId, 500);
 					player.setHonorCoins(player.getHonorCoins() + 500);
 				}
 				else

@@ -130,7 +130,7 @@ public class AdminOlympiad: IAdminCommandHandler
 					
 					if (player.isNoble())
 					{
-						NobleData nobleData = Olympiad.getNobleStats(player.getObjectId());
+						NobleData nobleData = Olympiad.getNobleStats(player.ObjectId);
 						if (nobleData == null)
 						{
 							BuilderUtil.sendSysMessage(activeChar, "This player hasn't played on Olympiad yet!");
@@ -214,7 +214,7 @@ public class AdminOlympiad: IAdminCommandHandler
 	
 	private NobleData getPlayerSet(Player player)
 	{
-		NobleData statDat = Olympiad.getNobleStats(player.getObjectId());
+		NobleData statDat = Olympiad.getNobleStats(player.ObjectId);
 		if (statDat == null)
 		{
 			statDat = new NobleData();
@@ -227,7 +227,7 @@ public class AdminOlympiad: IAdminCommandHandler
 			statDat.CompetitionsDrawn = 0;
 			statDat.CompetitionsDoneWeek = 0;
 			//statDat.set("to_save", true);
-			Olympiad.addNobleStats(player.getObjectId(), statDat);
+			Olympiad.addNobleStats(player.ObjectId, statDat);
 		}
 		
 		return statDat;

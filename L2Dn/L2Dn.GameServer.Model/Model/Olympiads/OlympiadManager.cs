@@ -77,7 +77,7 @@ public class OlympiadManager
 
 	private bool isRegistered(Player noble, Player player, bool showMessage)
 	{
-		int objId = noble.getObjectId();
+		int objId = noble.ObjectId;
 		if (_nonClassBasedRegisters.Contains(objId))
 		{
 			if (showMessage)
@@ -128,7 +128,7 @@ public class OlympiadManager
 				continue;
 			}
 
-			if (game.containsParticipant(noble.getObjectId()))
+			if (game.containsParticipant(noble.ObjectId))
 			{
 				if (!showMessage)
 				{
@@ -177,7 +177,7 @@ public class OlympiadManager
 			return false;
 		}
 
-		int charId = player.getObjectId();
+		int charId = player.ObjectId;
 		if (Olympiad.getInstance().getRemainingWeeklyMatches(charId) < 1)
 		{
 			player.sendPacket(SystemMessageId.THE_MAXIMUM_NUMBER_OF_MATCHES_YOU_CAN_PARTICIPATE_IN_1_WEEK_IS_25);
@@ -295,7 +295,7 @@ public class OlympiadManager
 			return false;
 		}
 
-		int objId = noble.getObjectId();
+		int objId = noble.ObjectId;
 		if (_nonClassBasedRegisters.remove(objId))
 		{
 			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
@@ -330,7 +330,7 @@ public class OlympiadManager
 			task.getGame().handleDisconnect(player);
 		}
 
-		int objId = player.getObjectId();
+		int objId = player.ObjectId;
 		if (_nonClassBasedRegisters.remove(objId))
 		{
 			return;

@@ -59,7 +59,7 @@ public class SoulShots: IItemHandler
 			ssCount = weaponItem.getReducedSoulShot();
 		}
 		
-		if (!player.destroyItemWithoutTrace("Consume", item.getObjectId(), ssCount, null, false))
+		if (!player.destroyItemWithoutTrace("Consume", item.ObjectId, ssCount, null, false))
 		{
 			if (!player.disableAutoShot(itemId))
 			{
@@ -166,7 +166,7 @@ public class SoulShots: IItemHandler
 		}
 		
 		// If the player doesn't have enough beast soulshot remaining, remove any auto soulshot task.
-		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
+		if (!activeOwner.destroyItemWithoutTrace("Consume", item.ObjectId, shotConsumption, null, false))
 		{
 			if (!activeOwner.disableAutoShot(itemId))
 			{

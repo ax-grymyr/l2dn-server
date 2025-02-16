@@ -182,14 +182,14 @@ public struct ExPetEquipItemPacket: IIncomingPacket<GameSession>
 			Item oldItem = pet.getInventory().getPaperdollItemByItemId((int) item.getTemplate().getBodyPart());
 			if (oldItem != null)
 			{
-				pet.transferItem("UnequipFromPet", oldItem.getObjectId(), 1, player.getInventory(), player, null);
+				pet.transferItem("UnequipFromPet", oldItem.ObjectId, 1, player.getInventory(), player, null);
 			}
 			if (player.isCastingNow())
 			{
 				// Create and Bind the next action to the AI.
 				player.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () =>
 				{
-					Item transferedItem = player.transferItem("UnequipFromPet", item.getObjectId(), 1, pet.getInventory(), null);
+					Item transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
 					pet.useEquippableItem(transferedItem, false);
 					sendInfos(pet, player);
 				}));
@@ -199,14 +199,14 @@ public struct ExPetEquipItemPacket: IIncomingPacket<GameSession>
 				// Equip or unEquip.
 				ThreadPool.schedule(() =>
 				{
-					Item transferedItem = player.transferItem("UnequipFromPet", item.getObjectId(), 1, pet.getInventory(), null);
+					Item transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
 					pet.useEquippableItem(transferedItem, false);
 					sendInfos(pet, player);
 				}, player.getAttackEndTime() - DateTime.UtcNow);
 			}
 			else
 			{
-				Item transferedItem = player.transferItem("UnequipFromPet", item.getObjectId(), 1, pet.getInventory(), null);
+				Item transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
 				pet.useEquippableItem(transferedItem, false);
 				sendInfos(pet, player);
 			}

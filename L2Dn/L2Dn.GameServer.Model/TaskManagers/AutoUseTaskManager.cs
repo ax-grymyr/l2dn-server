@@ -130,7 +130,7 @@ public class AutoUseTaskManager
 						}
 						
 						TimeSpan reuseDelay = item.getReuseDelay();
-						if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
+						if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
 						{
 							EtcItem etcItem = item.getEtcItem();
 							IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
@@ -165,7 +165,7 @@ public class AutoUseTaskManager
 						else
 						{
 							TimeSpan reuseDelay = item.getReuseDelay();
-							if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
+							if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
 							{
 								EtcItem etcItem = item.getEtcItem();
 								IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
@@ -207,7 +207,7 @@ public class AutoUseTaskManager
 								else
 								{
 									TimeSpan reuseDelay = item.getReuseDelay();
-									if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.getObjectId()) <= TimeSpan.Zero))
+									if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
 									{
 										EtcItem etcItem = item.getEtcItem();
 										IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);

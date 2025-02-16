@@ -23,7 +23,7 @@ public struct RequestReceivedPostListPacket: IIncomingPacket<GameSession>
         // return;
         // }
 		
-        connection.Send(new ExShowReceivedPostListPacket(player.getObjectId()));
+        connection.Send(new ExShowReceivedPostListPacket(player.ObjectId));
         return ValueTask.CompletedTask;
     }
 }

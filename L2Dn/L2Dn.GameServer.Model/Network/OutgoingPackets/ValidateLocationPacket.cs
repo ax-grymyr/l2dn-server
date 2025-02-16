@@ -12,7 +12,7 @@ public readonly struct ValidateLocationPacket: IOutgoingPacket
 	
     public ValidateLocationPacket(WorldObject obj)
     {
-        _objectId = obj.getObjectId();
+        _objectId = obj.ObjectId;
         _location = obj.Location;
     }
 	

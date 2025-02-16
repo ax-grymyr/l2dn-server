@@ -24,7 +24,7 @@ public abstract class AbstractPlayerGroup
 		List<int> ids = new();
 		forEachMember(m =>
 		{
-			ids.Add(m.getObjectId());
+			ids.Add(m.ObjectId);
 			return true;
 		});
 		return ids;
@@ -51,7 +51,7 @@ public abstract class AbstractPlayerGroup
 		{
 			return 0;
 		}
-		return leader.getObjectId();
+		return leader.ObjectId;
 	}
 	
 	/**
@@ -72,7 +72,7 @@ public abstract class AbstractPlayerGroup
 			return false;
 		}
 		
-		return leader.getObjectId() == player.getObjectId();
+		return leader.ObjectId == player.ObjectId;
 	}
 	
 	/**

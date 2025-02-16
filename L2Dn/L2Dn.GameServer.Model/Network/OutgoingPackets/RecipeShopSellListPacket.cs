@@ -25,7 +25,7 @@ public readonly struct RecipeShopSellListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.RECIPE_SHOP_SELL_LIST);
         
-        writer.WriteInt32(_manufacturer.getObjectId());
+        writer.WriteInt32(_manufacturer.ObjectId);
         writer.WriteInt32((int) _manufacturer.getCurrentMp()); // Creator's MP
         writer.WriteInt32(_manufacturer.getMaxMp()); // Creator's MP
         writer.WriteInt64(_buyer.getAdena()); // Buyer Adena

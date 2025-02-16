@@ -16,8 +16,8 @@ public readonly struct ExMoveToLocationInAirShipPacket: IOutgoingPacket
      */
     public ExMoveToLocationInAirShipPacket(Player player)
     {
-        _objectId = player.getObjectId();
-        _airShipId = player.getAirShip().getObjectId();
+        _objectId = player.ObjectId;
+        _airShipId = player.getAirShip().ObjectId;
         _destination = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 

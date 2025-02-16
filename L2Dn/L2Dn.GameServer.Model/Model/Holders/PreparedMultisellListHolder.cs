@@ -25,7 +25,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 		_inventoryOnly = inventoryOnly;
 		if (npc != null)
 		{
-			_npcObjectId = npc.getObjectId();
+			_npcObjectId = npc.ObjectId;
 			_taxRate = npc.getCastleTaxRate(TaxType.BUY);
 		}
 

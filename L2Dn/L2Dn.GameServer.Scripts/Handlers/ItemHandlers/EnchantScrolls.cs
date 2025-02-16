@@ -29,7 +29,7 @@ public class EnchantScrolls: IItemHandler
 			return false;
 		}
 		
-		player.addRequest(new EnchantItemRequest(player, item.getObjectId()));
+		player.addRequest(new EnchantItemRequest(player, item.ObjectId));
 		player.sendPacket(new ChooseInventoryItemPacket(item.getId()));
 		return true;
 	}

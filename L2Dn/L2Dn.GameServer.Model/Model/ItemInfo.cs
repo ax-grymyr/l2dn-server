@@ -81,7 +81,7 @@ public class ItemInfo
 		ArgumentNullException.ThrowIfNull(item);
 		
 		// Get the Identifier of the Item
-		_objectId = item.getObjectId();
+		_objectId = item.ObjectId;
 		
 		// Get the Item of the Item
 		_item = item.getTemplate();

@@ -27,7 +27,7 @@ public readonly struct PrivateStoreListSellPacket: IOutgoingPacket
         {
             writer.WritePacketCode(OutgoingPacketCodes.PRIVATE_STORE_LIST);
             
-            writer.WriteInt32(_seller.getObjectId());
+            writer.WriteInt32(_seller.ObjectId);
             writer.WriteInt32(_seller.getSellList().isPackaged());
             writer.WriteInt64(_player.getAdena());
             writer.WriteInt32(0);

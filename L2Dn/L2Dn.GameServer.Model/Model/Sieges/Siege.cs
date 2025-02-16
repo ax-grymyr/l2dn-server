@@ -237,7 +237,7 @@ public class Siege: Siegable
 							Player player = member.getPlayer();
 							if (player != null && player.isNoble())
 							{
-								Hero.getInstance().setCastleTaken(player.getObjectId(), getCastle().getResidenceId());
+								Hero.getInstance().setCastleTaken(player.ObjectId, getCastle().getResidenceId());
 							}
 						}
 					}
@@ -581,7 +581,7 @@ public class Siege: Siegable
 
 					long relation = member.getRelation(player);
 					bool isAutoAttackable = member.isAutoAttackable(player);
-					RelationCache oldrelation = member.getKnownRelations().get(player.getObjectId());
+					RelationCache oldrelation = member.getKnownRelations().get(player.ObjectId);
 					if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 					{
 						RelationChangedPacket rc = new RelationChangedPacket();
@@ -599,7 +599,7 @@ public class Siege: Siegable
 							}
 						}
 						player.sendPacket(rc);
-						member.getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
+						member.getKnownRelations().put(player.ObjectId, new RelationCache(relation, isAutoAttackable));
 					}
 				});
 			}
@@ -641,7 +641,7 @@ public class Siege: Siegable
 
 					long relation = member.getRelation(player);
 					bool isAutoAttackable = member.isAutoAttackable(player);
-					RelationCache oldrelation = member.getKnownRelations().get(player.getObjectId());
+					RelationCache oldrelation = member.getKnownRelations().get(player.ObjectId);
 					if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 					{
 						RelationChangedPacket rc = new RelationChangedPacket();
@@ -659,7 +659,7 @@ public class Siege: Siegable
 							}
 						}
 						player.sendPacket(rc);
-						member.getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
+						member.getKnownRelations().put(player.ObjectId, new RelationCache(relation, isAutoAttackable));
 					}
 				});
 			}

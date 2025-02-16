@@ -49,7 +49,7 @@ public class TimeStamp
 	public TimeStamp(Item item, TimeSpan reuse, DateTime? systime)
 	{
 		_id1 = item.getId();
-		_id2 = item.getObjectId();
+		_id2 = item.ObjectId;
 		_id3 = 0;
 		_reuse = reuse;
 		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;

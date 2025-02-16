@@ -24,14 +24,8 @@ public class UniqueItemEnchantHolder: ItemEnchantHolder, IUniqueId
 		_objectId = objectId;
 	}
 
-	public int getObjectId()
-	{
-		return _objectId;
-	}
+	public int ObjectId => _objectId;
 
-	public string toString()
-	{
-		return "[" + GetType().Name + "] ID: " + getId() + ", object ID: " + _objectId + ", count: " +
-		       getCount() + ", enchant level: " + getEnchantLevel();
-	}
+	public override string ToString() =>
+		$"[{GetType().Name}] ID: {getId()}, object ID: {_objectId}, count: {getCount()}, enchant level: {getEnchantLevel()}";
 }

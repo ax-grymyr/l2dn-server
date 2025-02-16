@@ -18,14 +18,9 @@ public class UniqueItemHolder: ItemHolder, IUniqueId
 	{
 		_objectId = objectId;
 	}
+
+	public int ObjectId => _objectId;
 	
-	public int getObjectId()
-	{
-		return _objectId;
-	}
-	
-	public override string ToString()
-	{
-		return "[" + GetType().Name + "] ID: " + getId() + ", object ID: " + _objectId + ", count: " + getCount();
-	}
+	public override string ToString() =>
+		$"[{GetType().Name}] ID: {getId()}, object ID: {_objectId}, count: {getCount()}";
 }

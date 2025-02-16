@@ -16,7 +16,7 @@ public readonly struct DoorStatusUpdatePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.DOOR_STATUS_UPDATE);
         
-        writer.WriteInt32(_door.getObjectId());
+        writer.WriteInt32(_door.ObjectId);
         writer.WriteInt32(!_door.isOpen());
         writer.WriteInt32(_door.getDamage());
         writer.WriteInt32(_door.isEnemy());

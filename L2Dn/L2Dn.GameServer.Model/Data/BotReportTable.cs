@@ -192,7 +192,7 @@ public class BotReportTable
 		}
 		
 		Creature bot = ((Creature) target);
-		if ((!bot.isPlayer() && !bot.isFakePlayer()) || (bot.isFakePlayer() && !((Npc) bot).getTemplate().isFakePlayerTalkable()) || (target.getObjectId() == reporter.getObjectId()))
+		if ((!bot.isPlayer() && !bot.isFakePlayer()) || (bot.isFakePlayer() && !((Npc) bot).getTemplate().isFakePlayerTalkable()) || (target.ObjectId == reporter.ObjectId))
 		{
 			return false;
 		}
@@ -221,9 +221,9 @@ public class BotReportTable
 			return false;
 		}
 		
-		ReportedCharData rcd = _reports.get(bot.getObjectId());
-		ReporterCharData rcdRep = _charRegistry.get(reporter.getObjectId());
-		int reporterId = reporter.getObjectId();
+		ReportedCharData rcd = _reports.get(bot.ObjectId);
+		ReporterCharData rcdRep = _charRegistry.get(reporter.ObjectId);
+		int reporterId = reporter.ObjectId;
 		
 		SystemMessagePacket sm;
 		lock (this)
@@ -279,7 +279,7 @@ public class BotReportTable
 			if (rcd == null)
 			{
 				rcd = new ReportedCharData();
-				_reports.put(bot.getObjectId(), rcd);
+				_reports.put(bot.ObjectId, rcd);
 			}
 			rcd.addReporter(reporterId, curTime);
 			if (rcdRep == null)

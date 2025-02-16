@@ -68,7 +68,7 @@ public readonly struct WarehouseWithdrawalListPacket: IOutgoingPacket
             foreach (Item item in _items)
             {
                 InventoryPacketHelper.WriteItem(writer, item);
-                writer.WriteInt32(item.getObjectId());
+                writer.WriteInt32(item.ObjectId);
                 writer.WriteInt32(0);
                 writer.WriteInt32(0);
             }

@@ -10,7 +10,7 @@ public readonly struct ExBRGamePointPacket: IOutgoingPacket
 	
     public ExBRGamePointPacket(Player player)
     {
-        _charId = player.getObjectId();
+        _charId = player.ObjectId;
         _charPoints = player.getPrimePoints();
     }
 	

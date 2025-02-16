@@ -14,7 +14,7 @@ public readonly struct ExValidateLocationInAirShipPacket: IOutgoingPacket
     public ExValidateLocationInAirShipPacket(Player player)
     {
         _player = player;
-        _shipId = _player.getAirShip().getObjectId();
+        _shipId = _player.getAirShip().ObjectId;
         _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 
@@ -22,7 +22,7 @@ public readonly struct ExValidateLocationInAirShipPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_VALIDATE_LOCATION_IN_AIR_SHIP);
 
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_shipId);
         writer.WriteLocation(_location);
     }

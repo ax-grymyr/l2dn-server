@@ -240,7 +240,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			if (npc != null)
 			{
-				content = content.Replace("%objectId%", npc.getObjectId().ToString());
+				content = content.Replace("%objectId%", npc.ObjectId.ToString());
 			}
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
@@ -248,12 +248,12 @@ public class Quest: AbstractScript, IIdentifiable
 
 			if (questwindow && _questId > 0 && _questId < 20000 && _questId != 999)
 			{
-				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.getObjectId(), _questId, htmlContent);
+				NpcQuestHtmlMessagePacket npcReply = new NpcQuestHtmlMessagePacket(npc?.ObjectId, _questId, htmlContent);
 				player.sendPacket(npcReply);
 			}
 			else
 			{
-				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.ObjectId, 0, htmlContent);
 				player.sendPacket(npcReply);
 			}
 			
@@ -672,7 +672,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return;
 		}
 		
-		player.setLastQuestNpcObject(npc.getObjectId());
+		player.setLastQuestNpcObject(npc.ObjectId);
 		showResult(player, res, npc);
 	}
 	
@@ -1478,7 +1478,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try
 		{
-			int characterId = player.getObjectId();
+			int characterId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Get list of quests owned by the player from database
@@ -1564,7 +1564,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			int characterId = qs.getPlayer().getObjectId();
+			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
 				
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -1609,7 +1609,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			int characterId = qs.getPlayer().getObjectId();
+			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
 			
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -1631,7 +1631,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		try 
 		{
-			int characterId = qs.getPlayer().getObjectId();
+			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			IQueryable<CharacterQuest> query =

@@ -214,7 +214,7 @@ public class Item: WorldObject
 		WorldRegion oldregion = getWorldRegion();
 
 		// Create a server->client GetItem packet to pick up the Item
-		creature.broadcastPacket(new GetItemPacket(this, creature.getObjectId()));
+		creature.broadcastPacket(new GetItemPacket(this, creature.ObjectId));
 
 		lock (this)
 		{
@@ -260,7 +260,7 @@ public class Item: WorldObject
 				sb.Append("SETOWNER:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(getObjectId());
+				sb.Append(ObjectId);
 				sb.Append(":+");
 				sb.Append(_enchantLevel);
 				sb.Append(" ");
@@ -279,7 +279,7 @@ public class Item: WorldObject
 				sb.Append("SETOWNER:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(getObjectId());
+				sb.Append(ObjectId);
 				sb.Append(":");
 				sb.Append(_itemTemplate.getName());
 				sb.Append("(");
@@ -455,7 +455,7 @@ public class Item: WorldObject
 				sb.Append("CHANGE:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(getObjectId());
+				sb.Append(ObjectId);
 				sb.Append(":+");
 				sb.Append(_enchantLevel);
 				sb.Append(" ");
@@ -476,7 +476,7 @@ public class Item: WorldObject
 				sb.Append("CHANGE:");
 				sb.Append(process);
 				sb.Append(", item ");
-				sb.Append(getObjectId());
+				sb.Append(ObjectId);
 				sb.Append(":");
 				sb.Append(_itemTemplate.getName());
 				sb.Append("(");
@@ -498,7 +498,7 @@ public class Item: WorldObject
 			sb.Append("(id: ");
 			sb.Append(_itemId);
 			sb.Append(" objId: ");
-			sb.Append(getObjectId());
+			sb.Append(ObjectId);
 			sb.Append(" name: ");
 			sb.Append(getName());
 			sb.Append(" count: ");
@@ -882,8 +882,8 @@ public class Item: WorldObject
 			&& (_itemTemplate.getType2() != ItemTemplate.TYPE2_MONEY ||
 				_itemTemplate.getType1() != ItemTemplate.TYPE1_SHIELD_ARMOR) // not money, not shield
 			&& (pet == null ||
-				getObjectId() != pet.getControlObjectId()) // Not Control item of currently summoned pet
-			&& !player.isProcessingItem(getObjectId()) // Not momentarily used enchant scroll
+				ObjectId != pet.getControlObjectId()) // Not Control item of currently summoned pet
+			&& !player.isProcessingItem(ObjectId) // Not momentarily used enchant scroll
 			&& (allowAdena || _itemId != Inventory.ADENA_ID) // Not Adena
 			&& !player.isCastingNow(s => s.getSkill().getItemConsumeId() != _itemId) && (allowNonTradeable ||
 				(isTradeable() && !(_itemTemplate.getItemType() == EtcItemType.PET_COLLAR &&
@@ -1043,7 +1043,7 @@ public class Item: WorldObject
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			ctx.ItemVariations.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -1064,7 +1064,7 @@ public class Item: WorldObject
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == itemId);
 			if (record is not null)
 			{
@@ -1110,7 +1110,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			DbItemVariation? record = ctx.ItemVariations.SingleOrDefault(r => r.ItemId == itemId);
 			if (record is null)
 			{
@@ -1156,7 +1156,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -1175,7 +1175,7 @@ public class Item: WorldObject
 			{
 				ctx.ItemElementals.Add(new DbItemElemental()
 				{
-					ItemId = getObjectId(),
+					ItemId = ObjectId,
 					Type = (byte)attribute.getType(),
 					Value = attribute.getValue()
 				});
@@ -1313,7 +1313,7 @@ public class Item: WorldObject
 
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemElementals.Where(r => r.ItemId == itemId && r.Type == (byte)type).ExecuteDelete();
 		}
@@ -1337,7 +1337,7 @@ public class Item: WorldObject
 
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemElementals.Where(r => r.ItemId == itemId).ExecuteDelete();
 		}
@@ -1575,7 +1575,7 @@ public class Item: WorldObject
 		setXYZ(loc);
 
 		setDropTime(DateTime.UtcNow);
-		setDropperObjectId(dropper != null ? dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
+		setDropperObjectId(dropper != null ? dropper.ObjectId : 0); // Set the dropper Id for the knownlist packets in sendInfo
 
 		// Add the Item dropped in the world as a visible object
 		WorldRegion region = getWorldRegion();
@@ -1612,7 +1612,7 @@ public class Item: WorldObject
 
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DbItem? item = ctx.Items.SingleOrDefault(r => r.ObjectId == itemId);
 			if (item is null)
@@ -1659,7 +1659,7 @@ public class Item: WorldObject
 	 */
 	private void insertIntoDb()
 	{
-		if (_existsInDb || getObjectId() == 0 || _wear)
+		if (_existsInDb || ObjectId == 0 || _wear)
 		{
 			return;
 		}
@@ -1675,7 +1675,7 @@ public class Item: WorldObject
 				Location = (int)_loc,
 				LocationData = _locData,
 				EnchantLevel = _enchantLevel,
-				ObjectId = getObjectId(),
+				ObjectId = ObjectId,
 				CustomType1 = _type1,
 				CustomType2 = _type2,
 				ManaLeft = _mana,
@@ -1717,7 +1717,7 @@ public class Item: WorldObject
 
 		try
 		{
-			int itemId = getObjectId();
+			int itemId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			ctx.ItemVariables.Where(r => r.ItemId == itemId).ExecuteDelete();
@@ -2254,7 +2254,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			int itemObjectId = getObjectId();
+			int itemObjectId = ObjectId;
 			int optionId = option.getId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId && r.OptionId == optionId).ExecuteDelete();
@@ -2315,7 +2315,7 @@ public class Item: WorldObject
 	{
 		try
 		{
-			int itemObjectId = getObjectId();
+			int itemObjectId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.ItemSpecialAbilities.Where(r => r.ItemId == itemObjectId).OrderBy(r => r.Position);
 			foreach (var record in query)
@@ -2369,7 +2369,7 @@ public class Item: WorldObject
 				return record;
 			}
 
-			int itemObjectId = getObjectId();
+			int itemObjectId = ObjectId;
 			for (int i = 0; i < _ensoulOptions.Length; i++)
 			{
 				if (_ensoulOptions[i] == null)
@@ -2463,7 +2463,7 @@ public class Item: WorldObject
 	public ItemVariables getVariables()
 	{
 		ItemVariables vars = getScript<ItemVariables>();
-		return vars != null ? vars : addScript(new ItemVariables(getObjectId()));
+		return vars != null ? vars : addScript(new ItemVariables(ObjectId));
 	}
 
 	public int getVisualId()
@@ -2731,7 +2731,7 @@ public class Item: WorldObject
 		StringBuilder sb = new();
 		sb.Append(_itemTemplate);
 		sb.Append('[');
-		sb.Append(getObjectId());
+		sb.Append(ObjectId);
 		sb.Append(']');
 		return sb.ToString();
 	}

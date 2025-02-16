@@ -81,7 +81,7 @@ public class IllegalPlayerActionTask: Runnable
 				}
 				case IllegalActionPunishmentType.KICKBAN:
 				{
-					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId().ToString(),
+					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.ObjectId.ToString(),
 						PunishmentAffect.CHARACTER, PunishmentType.BAN,
 						DateTime.UtcNow + TimeSpan.FromSeconds(Config.DEFAULT_PUNISH_PARAM),
 						_message, GetType().Name));
@@ -89,7 +89,7 @@ public class IllegalPlayerActionTask: Runnable
 				}
 				case IllegalActionPunishmentType.JAIL:
 				{
-					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.getObjectId().ToString(),
+					PunishmentManager.getInstance().startPunishment(new PunishmentTask(_actor.ObjectId.ToString(),
 						PunishmentAffect.CHARACTER, PunishmentType.JAIL,
 						DateTime.UtcNow + TimeSpan.FromSeconds(Config.DEFAULT_PUNISH_PARAM), _message,
 						GetType().Name));

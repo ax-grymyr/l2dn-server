@@ -32,7 +32,7 @@ public class NpcActionShift: IActionShiftHandler
 			ClanHall clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.getId());
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/npcinfo.htm", player);
-			htmlContent.Replace("%objid%", target.getObjectId().ToString());
+			htmlContent.Replace("%objid%", target.ObjectId.ToString());
 			htmlContent.Replace("%class%", npc.GetType().Name);
 			htmlContent.Replace("%race%", npc.getTemplate().getRace().ToString());
 			htmlContent.Replace("%id%", npc.getTemplate().getId().ToString());

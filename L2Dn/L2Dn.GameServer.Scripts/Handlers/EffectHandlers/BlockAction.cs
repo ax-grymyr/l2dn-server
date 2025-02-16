@@ -41,13 +41,13 @@ public class BlockAction: AbstractEffect
 	{
 		if (_blockedActions.Contains(BotReportTable.PARTY_ACTION_BLOCK_ID))
 		{
-			PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId().ToString(),
+			PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
 				PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, null, "block action debuff", "system", true));
 		}
 
 		if (_blockedActions.Contains(BotReportTable.CHAT_BLOCK_ID))
 		{
-			PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId().ToString(),
+			PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
 				PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, null, "block action debuff", "system", true));
 		}
 	}
@@ -56,13 +56,13 @@ public class BlockAction: AbstractEffect
 	{
 		if (_blockedActions.Contains(BotReportTable.PARTY_ACTION_BLOCK_ID))
 		{
-			PunishmentManager.getInstance().stopPunishment(effected.getObjectId().ToString(),
+			PunishmentManager.getInstance().stopPunishment(effected.ObjectId.ToString(),
 				PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
 		}
 
 		if (_blockedActions.Contains(BotReportTable.CHAT_BLOCK_ID))
 		{
-			PunishmentManager.getInstance().stopPunishment(effected.getObjectId().ToString(),
+			PunishmentManager.getInstance().stopPunishment(effected.ObjectId.ToString(),
 				PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
 		}
 	}

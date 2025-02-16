@@ -658,7 +658,7 @@ public class AdminEffects: IAdminCommandHandler
 					return false;
 				}
 				Creature creature = (Creature) target;
-				creature.broadcastPacket(new SocialActionPacket(creature.getObjectId(), action));
+				creature.broadcastPacket(new SocialActionPacket(creature.ObjectId, action));
 			}
 			else
 			{

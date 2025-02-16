@@ -367,7 +367,7 @@ public class TradeList
 			// Synchronization order to avoid deadlock
 			TradeList sync1;
 			TradeList sync2;
-			if (getOwner().getObjectId() > partnerList.getOwner().getObjectId())
+			if (getOwner().ObjectId > partnerList.getOwner().ObjectId)
 			{
 				sync1 = partnerList;
 				sync2 = this;
@@ -424,7 +424,7 @@ public class TradeList
 	private bool validate()
 	{
 		// Check for Owner validity
-		if ((_owner == null) || (World.getInstance().getPlayer(_owner.getObjectId()) == null))
+		if ((_owner == null) || (World.getInstance().getPlayer(_owner.ObjectId) == null))
 		{
 			LOGGER.Warn("Invalid owner of TradeList");
 			return false;
@@ -908,7 +908,7 @@ public class TradeList
 				{
 					continue;
 				}
-				objectId = oldItem.getObjectId();
+				objectId = oldItem.ObjectId;
 				oldItem = player.checkItemManipulation(objectId, item.getCount(), "sell");
 				if (oldItem == null)
 				{

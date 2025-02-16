@@ -13,7 +13,7 @@ public readonly struct ExCuriousHouseMemberUpdatePacket: IOutgoingPacket
 
     public ExCuriousHouseMemberUpdatePacket(Player player)
     {
-        _objId = player.getObjectId();
+        _objId = player.ObjectId;
         _maxHp = player.getMaxHp();
         _maxCp = player.getMaxCp();
         _currentHp = (int)player.getCurrentHp();

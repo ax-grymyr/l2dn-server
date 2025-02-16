@@ -256,7 +256,7 @@ public class ItemAuction
 			return;
 		}
 		
-		int playerObjId = player.getObjectId();
+		int playerObjId = player.ObjectId;
 		
 		lock (_auctionBids)
 		{
@@ -342,7 +342,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_5_MIN:
 				{
-					if (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId())
+					if (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId)
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_3_MIN;
 						_endingTime += ENDING_TIME_EXTEND_3;
@@ -352,7 +352,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_3_MIN:
 				{
-					if ((Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()))
+					if ((Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
@@ -361,7 +361,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A:
 				{
-					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B))
+					if ((getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B))
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
@@ -370,7 +370,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B:
 				{
-					if ((getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId()) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A))
+					if ((getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A))
 					{
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
@@ -428,7 +428,7 @@ public class ItemAuction
 			}
 		}
 		
-		int playerObjId = player.getObjectId();
+		int playerObjId = player.ObjectId;
 		
 		lock (_auctionBids)
 		{
@@ -514,7 +514,7 @@ public class ItemAuction
 	 */
 	public long getLastBid(Player player)
 	{
-		ItemAuctionBid bid = getBidFor(player.getObjectId());
+		ItemAuctionBid bid = getBidFor(player.ObjectId);
 		return bid != null ? bid.getLastBid() : -1L;
 	}
 	

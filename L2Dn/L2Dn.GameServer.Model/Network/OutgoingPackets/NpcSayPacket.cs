@@ -31,7 +31,7 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 	
 	public NpcSayPacket(Npc npc, ChatType messageType, string text)
 	{
-		_objectId = npc.getObjectId();
+		_objectId = npc.ObjectId;
 		_textType = messageType;
 		_npcId = 1000000 + npc.getTemplate().getDisplayId();
 		_text = text;
@@ -48,7 +48,7 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 	
 	public NpcSayPacket(Npc npc, ChatType messageType, NpcStringId npcString)
 	{
-		_objectId = npc.getObjectId();
+		_objectId = npc.ObjectId;
 		_textType = messageType;
 		_npcId = 1000000 + npc.getTemplate().getDisplayId();
 		_npcString = npcString;

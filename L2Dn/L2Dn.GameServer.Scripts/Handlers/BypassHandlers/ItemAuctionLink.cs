@@ -79,7 +79,7 @@ public class ItemAuctionLink: IBypassHandler
 			else if ("cancel".equalsIgnoreCase(cmd))
 			{
 				bool returned = false;
-				foreach (ItemAuction auction in au.getAuctionsByBidder(player.getObjectId()))
+				foreach (ItemAuction auction in au.getAuctionsByBidder(player.ObjectId))
 				{
 					if (auction.cancelBid(player))
 					{

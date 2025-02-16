@@ -210,7 +210,7 @@ public class Evolve
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int itemObjectId = removedItem.getObjectId();
+			int itemObjectId = removedItem.ObjectId;
 			ctx.Pets.Where(p => p.ItemObjectId == itemObjectId).ExecuteDelete();
 		}
 		catch (Exception e)

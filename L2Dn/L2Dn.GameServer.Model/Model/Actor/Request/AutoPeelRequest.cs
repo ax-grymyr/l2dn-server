@@ -50,6 +50,6 @@ public class AutoPeelRequest: AbstractRequest
 
     public override bool isUsing(int objectId)
     {
-        return _item.getObjectId() == objectId;
+        return _item.ObjectId == objectId;
     }
 }

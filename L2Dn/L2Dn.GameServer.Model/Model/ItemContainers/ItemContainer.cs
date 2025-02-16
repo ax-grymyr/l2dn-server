@@ -34,7 +34,7 @@ public abstract class ItemContainer
 	 */
 	public virtual int getOwnerId()
 	{
-		return getOwner() == null ? 0 : getOwner().getObjectId();
+		return getOwner() == null ? 0 : getOwner().ObjectId;
 	}
 	
 	/**
@@ -95,7 +95,7 @@ public abstract class ItemContainer
 	{
 		foreach (Item item in _items)
 		{
-			if (objectId == item.getObjectId())
+			if (objectId == item.ObjectId)
 			{
 				return item;
 			}

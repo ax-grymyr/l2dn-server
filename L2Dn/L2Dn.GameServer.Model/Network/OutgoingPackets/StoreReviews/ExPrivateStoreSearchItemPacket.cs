@@ -33,7 +33,7 @@ public readonly struct ExPrivateStoreSearchItemPacket: IOutgoingPacket
             {
                 ShopItem shopItem = _items[itemIndex];
                 writer.WriteSizedString(shopItem.getOwner().getName()); // Vendor name
-                writer.WriteInt32(shopItem.getOwner().getObjectId());
+                writer.WriteInt32(shopItem.getOwner().ObjectId);
                 writer.WriteByte((byte)(shopItem.getStoreType() == PrivateStoreType.PACKAGE_SELL ? 2 : shopItem.getStoreType() == PrivateStoreType.SELL ? 0 : 1)); // store type (maybe "sold"/buy/Package (translated as Total Score...))
                 writer.WriteInt64(shopItem.getPrice()); // Price
                 writer.WriteInt32(shopItem.getOwner().getX()); // X

@@ -59,7 +59,7 @@ public class MailManager
 	
 	public bool hasUnreadPost(Player player)
 	{
-		int objectId = player.getObjectId();
+		int objectId = player.ObjectId;
 		foreach (Message msg in _messages.Values)
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
@@ -112,7 +112,7 @@ public class MailManager
 	public int getUnreadCount(Player player)
 	{
 		int count = 0;
-		foreach (Message message in getInbox(player.getObjectId()))
+		foreach (Message message in getInbox(player.ObjectId))
 		{
 			if (message.isUnread())
 			{

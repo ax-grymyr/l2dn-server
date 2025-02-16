@@ -113,7 +113,7 @@ public class AdminRide: IAdminCommandHandler
 	private Player getRideTarget(Player activeChar)
 	{
 		Player player = null;
-		if ((activeChar.getTarget() == null) || (activeChar.getTarget().getObjectId() == activeChar.getObjectId()) || !activeChar.getTarget().isPlayer())
+		if ((activeChar.getTarget() == null) || (activeChar.getTarget().ObjectId == activeChar.ObjectId) || !activeChar.getTarget().isPlayer())
 		{
 			player = activeChar;
 		}

@@ -33,7 +33,7 @@ public readonly struct ServerObjectInfoPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SERVER_OBJECT_INFO);
-        writer.WriteInt32(_activeChar.getObjectId());
+        writer.WriteInt32(_activeChar.ObjectId);
         writer.WriteInt32(_displayId + 1000000);
         writer.WriteString(_name); // name
         writer.WriteInt32(_isAttackable);

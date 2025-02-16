@@ -26,6 +26,6 @@ public readonly struct ExCubeGameRemovePlayerPacket: IOutgoingPacket
         writer.WriteInt32(2);
         writer.WriteInt32(-1);
         writer.WriteInt32(_isRedTeam);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
     }
 }

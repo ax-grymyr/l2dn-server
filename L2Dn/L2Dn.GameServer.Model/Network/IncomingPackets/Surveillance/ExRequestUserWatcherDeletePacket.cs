@@ -46,7 +46,7 @@ public struct ExRequestUserWatcherDeletePacket: IIncomingPacket<GameSession>
 		
         try
         {
-            int characterId = player.getObjectId();
+            int characterId = player.ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterSurveillances.Where(r => r.CharacterId == characterId && r.TargetId == targetId)
                 .ExecuteDelete();

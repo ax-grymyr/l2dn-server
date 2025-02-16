@@ -137,13 +137,13 @@ public class AdminAdmin: IAdminCommandHandler
 			}
 			
 			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
-			if (Hero.getInstance().isHero(target.getObjectId()))
+			if (Hero.getInstance().isHero(target.ObjectId))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This player has already claimed the hero status.");
 				return false;
 			}
 			
-			if (!Hero.getInstance().isUnclaimedHero(target.getObjectId()))
+			if (!Hero.getInstance().isUnclaimedHero(target.ObjectId))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This player cannot claim the hero status.");
 				return false;

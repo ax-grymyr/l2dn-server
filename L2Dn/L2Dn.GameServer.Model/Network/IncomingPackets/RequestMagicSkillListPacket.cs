@@ -22,7 +22,7 @@ public struct RequestMagicSkillListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        if (player.getObjectId() != _objectId)
+        if (player.ObjectId != _objectId)
         {
             PacketLogger.Instance.Warn("Player: " + player + " requested " + GetType().Name +
                                        " with different object id: " + _objectId);

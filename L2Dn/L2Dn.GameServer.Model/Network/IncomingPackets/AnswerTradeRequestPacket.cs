@@ -39,7 +39,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
         
-        if (World.getInstance().getPlayer(partner.getObjectId()) == null)
+        if (World.getInstance().getPlayer(partner.ObjectId) == null)
         {
             // Trade partner not found, cancel trade
             player.sendPacket(new TradeDonePacket(0));

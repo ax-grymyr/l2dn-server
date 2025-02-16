@@ -28,7 +28,7 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
         if (item == null)
             return ValueTask.CompletedTask;
 		
-        if (item.getOwnerId() != player.getObjectId())
+        if (item.getOwnerId() != player.ObjectId)
         {
             Util.handleIllegalPlayerAction(player,
                 "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +

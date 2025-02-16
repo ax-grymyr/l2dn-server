@@ -107,7 +107,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
 	    {
 		    target.onAction(player);
 	    }
-	    else if ((target.getObjectId() != player.getObjectId()) &&
+	    else if ((target.ObjectId != player.ObjectId) &&
 	             (player.getPrivateStoreType() == PrivateStoreType.NONE) && (player.getActiveRequester() == null))
 	    {
 		    target.onForcedAttack(player);

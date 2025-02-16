@@ -52,7 +52,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
         request.setProcessing(true);
 		
         item = request.getItem();
-        if (item.getObjectId() != _itemObjectId || item.getOwnerId() != player.getObjectId())
+        if (item.ObjectId != _itemObjectId || item.getOwnerId() != player.ObjectId)
         {
             player.removeRequest<AutoPeelRequest>();
             return ValueTask.CompletedTask;

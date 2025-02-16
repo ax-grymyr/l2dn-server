@@ -57,7 +57,7 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 		TimeSpan reuseDelay = item.getReuseDelay();
 		if (reuseDelay > TimeSpan.Zero)
 		{
-			TimeSpan reuse = pet.getItemRemainingReuseTime(item.getObjectId());
+			TimeSpan reuse = pet.getItemRemainingReuseTime(item.ObjectId);
 			if (reuse > TimeSpan.Zero)
 				return ValueTask.CompletedTask;
 		}

@@ -16,7 +16,7 @@ public readonly struct ExUserInfoCubicPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_CUBIC);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         
         writer.WriteInt16((short)_player.getCubics().Count);
         foreach (int cubicId in _player.getCubics().Keys)

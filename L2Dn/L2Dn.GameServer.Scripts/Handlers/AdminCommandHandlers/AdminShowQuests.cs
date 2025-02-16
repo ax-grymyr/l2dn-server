@@ -129,7 +129,7 @@ public class AdminShowQuests: IAdminCommandHandler
 	{
 		StringBuilder replyMSG = new StringBuilder("<html><body><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Player: " + target.getName() + "</center></td><td width=45><button value=\"Back\" action=\"bypass -h admin_admin6\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
 
-		int ID = target.getObjectId();
+		int ID = target.ObjectId;
 		replyMSG.Append("Quest Menu for <font color=\"LEVEL\">" + target.getName() + "</font> (ID:" + ID + ")<br><center>");
 		replyMSG.Append("<table width=250><tr><td><button value=\"CREATED\" action=\"bypass -h admin_charquestmenu " + target.getName() + " 0\" width=85 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.Append("<tr><td><button value=\"STARTED\" action=\"bypass -h admin_charquestmenu " + target.getName() + " 1\" width=85 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
@@ -148,7 +148,7 @@ public class AdminShowQuests: IAdminCommandHandler
 	{
 		try
 		{
-			int ID = target.getObjectId();
+			int ID = target.ObjectId;
 			StringBuilder replyMSG = new StringBuilder("<html><body>");
 			
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

@@ -231,7 +231,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 		
 		if (condition &&
 		    ((!targetClientSettings.isPartyRequestRestrictedFromFriends() &&
-		      target.getFriendList().Contains(requestor.getObjectId())) ||
+		      target.getFriendList().Contains(requestor.ObjectId)) ||
 		     (!targetClientSettings.isPartyRequestRestrictedFromClan() && clanCheck)))
 		{
 			condition = false;

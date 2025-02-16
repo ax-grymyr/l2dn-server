@@ -15,7 +15,7 @@ public readonly struct TargetUnselectedPacket: IOutgoingPacket
      */
     public TargetUnselectedPacket(Creature creature)
     {
-        _targetObjId = creature.getObjectId();
+        _targetObjId = creature.ObjectId;
         _x = creature.getX();
         _y = creature.getY();
         _z = creature.getZ();

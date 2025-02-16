@@ -42,7 +42,7 @@ public class TerritoryStatus: IBypassHandler
 
 		htmlContent.Replace("%castlename%", npc.getCastle().getName());
 		htmlContent.Replace("%taxpercent%", npc.getCastle().getTaxPercent(TaxType.BUY).ToString());
-		htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+		htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 		
 		{
 			if (npc.getCastle().getResidenceId() > 6)
@@ -55,7 +55,7 @@ public class TerritoryStatus: IBypassHandler
 			}
 		}
 		
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 		return true;
 	}

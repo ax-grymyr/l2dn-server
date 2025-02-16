@@ -144,9 +144,9 @@ public class RaceManager: Npc
 			}
 			
 			htmlContent.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -171,9 +171,9 @@ public class RaceManager: Npc
 			}
 
 			htmlContent.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
 
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -192,9 +192,9 @@ public class RaceManager: Npc
 				htmlContent.Replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 			}
 			
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
 
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -219,7 +219,7 @@ public class RaceManager: Npc
 				}
 
 				sb.Append("<tr><td><a action=\"bypass -h npc_%objectId%_ShowTicket ");
-				sb.Append(ticket.getObjectId());
+				sb.Append(ticket.ObjectId);
 				sb.Append("\">");
 				sb.Append(ticket.getEnchantLevel());
 				sb.Append(" Race Number</a></td><td align=right><font color=\"LEVEL\">");
@@ -231,8 +231,8 @@ public class RaceManager: Npc
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 7, player), player);
 			htmlContent.Replace("%tickets%", sb.ToString());
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -272,9 +272,9 @@ public class RaceManager: Npc
 			htmlContent.Replace("%bet%", bet.ToString());
 			htmlContent.Replace("%firstLane%", info.getFirst().ToString());
 			htmlContent.Replace("%odd%", (lane == info.getFirst()) ? info.getOddRate().ToString("N2") : "0.01");
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			htmlContent.Replace("%ticketObjectId%", val.ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -347,8 +347,8 @@ public class RaceManager: Npc
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 9, player), player);
 			htmlContent.Replace("%infos%", sb.ToString());
-			htmlContent.Replace("%objectId%", getObjectId().ToString());
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			htmlContent.Replace("%objectId%", ObjectId.ToString());
+			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}

@@ -799,7 +799,7 @@ public class Player: Playable
 				}
 			}
 		}
-		if (target.getSurveillanceList().Contains(getObjectId()))
+		if (target.getSurveillanceList().Contains(ObjectId))
 		{
 			result |= RelationChangedPacket.RELATION_SURVEILLANCE;
 		}
@@ -1108,7 +1108,7 @@ public class Player: Playable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterRecipeBooks.Add(new CharacterRecipeBook()
 			{
-				CharacterId = getObjectId(),
+				CharacterId = ObjectId,
 				Id = recipeId,
 				ClassIndex = (short)(isDwarf ? _classIndex : 0),
 				Type = isDwarf ? 1 : 0
@@ -1118,7 +1118,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("SQL exception while inserting recipe: " + recipeId + " from character " + getObjectId() + ": "+ e);
+			LOGGER.Warn("SQL exception while inserting recipe: " + recipeId + " from character " + ObjectId + ": "+ e);
 		}
 	}
 	
@@ -1127,7 +1127,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			int classIndex = isDwarf ? _classIndex : 0;
 			ctx.CharacterRecipeBooks
 				.Where(r => r.CharacterId == characterId && r.Id == recipeId && r.ClassIndex == classIndex)
@@ -1135,7 +1135,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("SQL exception while deleting recipe: " + recipeId + " from character " + getObjectId(), e);
+			LOGGER.Warn("SQL exception while deleting recipe: " + recipeId + " from character " + ObjectId, e);
 		}
 	}
 	
@@ -1526,7 +1526,7 @@ public class Player: Playable
 			
 			long relation = getRelation(player);
 			bool isAutoAttackable = this.isAutoAttackable(player);
-			RelationCache oldrelation = getKnownRelations().get(player.getObjectId());
+			RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
 			if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 			{
 				RelationChangedPacket rc = new RelationChangedPacket();
@@ -1544,7 +1544,7 @@ public class Player: Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
+				getKnownRelations().put(player.ObjectId, new RelationCache(relation, isAutoAttackable));
 			}
 		});
 	}
@@ -1994,7 +1994,7 @@ public class Player: Playable
 		}
 		
 		// Check if the item is owned by this player.
-		if (item.getOwnerId() != getObjectId())
+		if (item.getOwnerId() != ObjectId)
 		{
 			return;
 		}
@@ -2073,7 +2073,7 @@ public class Player: Playable
 					events.NotifyAsync(new OnPlayerItemEquip(this, item));
 				}
 				
-				getDualInventorySet()[item.getLocationSlot()] = item.getObjectId();
+				getDualInventorySet()[item.getLocationSlot()] = item.ObjectId;
 			}
 			else
 			{
@@ -2230,7 +2230,7 @@ public class Player: Playable
 				msg.Params.addPcName(this);
 				_clan.broadcastToOnlineMembers(msg);
 				_clan.broadcastToOnlineMembers(new PledgeShowMemberListDeletePacket(getName()));
-				_clan.removeClanMember(getObjectId(), null);
+				_clan.removeClanMember(ObjectId, null);
 				sendPacket(SystemMessageId.CONGRATULATIONS_YOU_WILL_NOW_GRADUATE_FROM_THE_CLAN_ACADEMY_AND_LEAVE_YOUR_CURRENT_CLAN_YOU_CAN_NOW_JOIN_A_CLAN_WITHOUT_BEING_SUBJECT_TO_ANY_PENALTIES);
 				
 				// receive graduation gift
@@ -2293,7 +2293,7 @@ public class Player: Playable
 			updateAbnormalVisualEffects();
 			sendSkillList();
 			
-			CharInfoTable.getInstance().setClassId(getObjectId(), id);
+			CharInfoTable.getInstance().setClassId(ObjectId, id);
 		}
 	}
 	
@@ -3665,26 +3665,26 @@ public class Player: Playable
 		// TODO: if we remove objects that are not visible from the World, we'll have to remove this check
 		if (World.getInstance().findObject(objectId) == null)
 		{
-			LOGGER.Info(getObjectId() + ": player tried to " + action + " item not available in World");
+			LOGGER.Info(ObjectId + ": player tried to " + action + " item not available in World");
 			return null;
 		}
 		
 		Item item = _inventory.getItemByObjectId(objectId);
-		if ((item == null) || (item.getOwnerId() != getObjectId()))
+		if ((item == null) || (item.getOwnerId() != ObjectId))
 		{
-			LOGGER.Info(getObjectId() + ": player tried to " + action + " item he is not owner of");
+			LOGGER.Info(ObjectId + ": player tried to " + action + " item he is not owner of");
 			return null;
 		}
 		
 		if ((count < 0) || ((count > 1) && !item.isStackable()))
 		{
-			LOGGER.Info(getObjectId() + ": player tried to " + action + " item with invalid count: " + count);
+			LOGGER.Info(ObjectId + ": player tried to " + action + " item with invalid count: " + count);
 			return null;
 		}
 		
 		if (count > item.getCount())
 		{
-			LOGGER.Info(getObjectId() + ": player tried to " + action + " more items than he owns");
+			LOGGER.Info(ObjectId + ": player tried to " + action + " more items than he owns");
 			return null;
 		}
 		
@@ -3980,7 +3980,7 @@ public class Player: Playable
 						// Update relation.
 						long relation = getRelation(player);
 						bool isAutoAttackable = this.isAutoAttackable(player);
-						RelationCache oldrelation = getKnownRelations().get(player.getObjectId());
+						RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
 						if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 						{
 							RelationChangedPacket rc = new RelationChangedPacket();
@@ -3998,7 +3998,7 @@ public class Player: Playable
 								}
 							}
 							player.sendPacket(rc);
-							getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
+							getKnownRelations().put(player.ObjectId, new RelationCache(relation, isAutoAttackable));
 						}
 					}
 				});
@@ -4240,7 +4240,7 @@ public class Player: Playable
 				return;
 			}
 			
-			if ((target.getOwnerId() != 0) && (target.getOwnerId() != getObjectId()) && !isInLooterParty(target.getOwnerId()))
+			if ((target.getOwnerId() != 0) && (target.getOwnerId() != ObjectId) && !isInLooterParty(target.getOwnerId()))
 			{
 				if (target.getId() == Inventory.ADENA_ID)
 				{
@@ -4269,7 +4269,7 @@ public class Player: Playable
 				return;
 			}
 			
-			if ((target.getItemLootShedule() != null) && ((target.getOwnerId() == getObjectId()) || isInLooterParty(target.getOwnerId())))
+			if ((target.getItemLootShedule() != null) && ((target.getOwnerId() == ObjectId) || isInLooterParty(target.getOwnerId())))
 			{
 				target.resetOwnerTimer();
 			}
@@ -4463,7 +4463,7 @@ public class Player: Playable
 			if (oldTarget.Equals(newTarget)) // no target change?
 			{
 				// Validate location of the target.
-				if ((newTarget != null) && (newTarget.getObjectId() != getObjectId()))
+				if ((newTarget != null) && (newTarget.ObjectId != ObjectId))
 				{
 					sendPacket(new ValidateLocationPacket(newTarget));
 				}
@@ -4479,7 +4479,7 @@ public class Player: Playable
 			Creature target = (Creature) newTarget;
 			
 			// Validate location of the new target.
-			if (newTarget.getObjectId() != getObjectId())
+			if (newTarget.ObjectId != ObjectId)
 			{
 				sendPacket(new ValidateLocationPacket(target));
 			}
@@ -4497,7 +4497,7 @@ public class Player: Playable
 			sendPacket(su);
 			
 			// To others the new target, and not yourself!
-			Broadcast.toKnownPlayers(this, new TargetSelectedPacket(getObjectId(), newTarget.getObjectId(), getX(), getY(), getZ()));
+			Broadcast.toKnownPlayers(this, new TargetSelectedPacket(ObjectId, newTarget.ObjectId, getX(), getY(), getZ()));
 			
 			// Send buffs
 			sendPacket(new ExAbnormalStatusUpdateFromTargetPacket(target));
@@ -4821,7 +4821,7 @@ public class Player: Playable
 		stopRentPet();
 		stopWaterTask();
 		
-		AntiFeedManager.getInstance().setLastDeathTime(getObjectId());
+		AntiFeedManager.getInstance().setLastDeathTime(ObjectId);
 		
 		// FIXME: Karma reduction tempfix.
 		if (getReputation() < 0)
@@ -5338,7 +5338,7 @@ public class Player: Playable
 	
 	public void addServitor(Summon servitor)
 	{
-		_servitors.put(servitor.getObjectId(), servitor);
+		_servitors.put(servitor.ObjectId, servitor);
 	}
 	
 	/**
@@ -5620,7 +5620,7 @@ public class Player: Playable
 		_privateStoreType = privateStoreType;
 		if (Config.OFFLINE_DISCONNECT_FINISHED && (privateStoreType == PrivateStoreType.NONE) && ((_client == null) || _client.IsDetached))
 		{
-			OfflineTraderTable.getInstance().removeTrader(getObjectId());
+			OfflineTraderTable.getInstance().removeTrader(ObjectId);
 			Disconnection.of(this).storeMe().deleteMe();
 		}
 	}
@@ -5658,11 +5658,11 @@ public class Player: Playable
 			_apprentice = 0;
 			_sponsor = 0;
 			_activeWarehouse = null;
-			CharInfoTable.getInstance().removeClanId(getObjectId());
+			CharInfoTable.getInstance().removeClanId(ObjectId);
 			return;
 		}
 		
-		if (!clan.isMember(getObjectId()))
+		if (!clan.isMember(ObjectId))
 		{
 			// char has been kicked from clan
 			setClan(null);
@@ -5670,7 +5670,7 @@ public class Player: Playable
 		}
 		
 		_clanId = clan.getId();
-		CharInfoTable.getInstance().setClanId(getObjectId(), _clanId.Value);
+		CharInfoTable.getInstance().setClanId(ObjectId, _clanId.Value);
 	}
 	
 	/**
@@ -5690,7 +5690,7 @@ public class Player: Playable
 		{
 			return false;
 		}
-		return getObjectId() == _clan.getLeaderId();
+		return ObjectId == _clan.getLeaderId();
 	}
 	
 	/**
@@ -6205,7 +6205,7 @@ public class Player: Playable
 			try 
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				int characterId = getObjectId();
+				int characterId = ObjectId;
 				ctx.Characters.Where(c => c.Id == characterId)
 					.ExecuteUpdate(s => s.SetProperty(c => c.AccessLevel, accessLevel.getLevel()));
 			}
@@ -6276,7 +6276,7 @@ public class Player: Playable
 			
 			long relation = getRelation(player);
 			bool isAutoAttackable = this.isAutoAttackable(player);
-			RelationCache oldrelation = getKnownRelations().get(player.getObjectId());
+			RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
 			if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 			{
 				RelationChangedPacket rc = new RelationChangedPacket();
@@ -6293,7 +6293,7 @@ public class Player: Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
+				getKnownRelations().put(player.ObjectId, new RelationCache(relation, isAutoAttackable));
 			}
 		});
 	}
@@ -6325,7 +6325,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			ctx.Characters.Where(c => c.Id == characterId).ExecuteUpdate(s =>
 				s.SetProperty(c => c.OnlineStatus, getOnlineStatus()).SetProperty(c => c.LastAccess, DateTime.UtcNow));
 		}
@@ -6356,7 +6356,7 @@ public class Player: Playable
 			
 			ctx.Characters.Add(new Character()
 			{
-				Id = getObjectId(),
+				Id = ObjectId,
 				AccountId = _accountId,
                 Name = getName(),
                 Level = (short)getLevel(),
@@ -6495,7 +6495,7 @@ public class Player: Playable
 
 				if (player.getClan() != null)
 				{
-					if (player.getClan().getLeaderId() != player.getObjectId())
+					if (player.getClan().getLeaderId() != player.ObjectId)
 					{
 						if (player.getPowerGrade() == 0)
 						{
@@ -6683,7 +6683,7 @@ public class Player: Playable
 			}
 			
 			// Restore pet if exists in the world
-			player.setPet(World.getInstance().getPet(player.getObjectId()));
+			player.setPet(World.getInstance().getPet(player.ObjectId));
 			Summon pet = player.getPet();
 			if (pet != null)
 			{
@@ -6740,7 +6740,7 @@ public class Player: Playable
 			
 			if (_forumMail == null)
 			{
-				ForumsBBSManager.getInstance().createNewForum(getName(), ForumsBBSManager.getInstance().getForumByName("MailRoot"), Forum.MAIL, Forum.OWNERONLY, getObjectId());
+				ForumsBBSManager.getInstance().createNewForum(getName(), ForumsBBSManager.getInstance().getForumByName("MailRoot"), Forum.MAIL, Forum.OWNERONLY, ObjectId);
 				setMail(ForumsBBSManager.getInstance().getForumByName("MailRoot").getChildByName(getName()));
 			}
 		}
@@ -6760,7 +6760,7 @@ public class Player: Playable
 			
 			if (_forumMemo == null)
 			{
-				ForumsBBSManager.getInstance().createNewForum(_accountName, ForumsBBSManager.getInstance().getForumByName("MemoRoot"), Forum.MEMO, Forum.OWNERONLY, getObjectId());
+				ForumsBBSManager.getInstance().createNewForum(_accountName, ForumsBBSManager.getInstance().getForumByName("MemoRoot"), Forum.MEMO, Forum.OWNERONLY, ObjectId);
 				setMemo(ForumsBBSManager.getInstance().getForumByName("MemoRoot").getChildByName(_accountName));
 			}
 		}
@@ -6782,7 +6782,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = player.getObjectId();
+			int characterId = player.ObjectId;
 			var query = ctx.CharacterSubClasses.Where(r => r.CharacterId == characterId).OrderBy(r => r.ClassIndex);
 			foreach (var record in query)
 			{
@@ -6881,7 +6881,7 @@ public class Player: Playable
 		try 
 		{
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             var query = loadCommon
 	            ? ctx.CharacterRecipeBooks.Where(r => r.CharacterId == characterId)
 	            : ctx.CharacterRecipeBooks.Where(r =>
@@ -6923,7 +6923,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			var query = ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId);
 			foreach (var record in query)
 			{
@@ -6945,7 +6945,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
 				.ExecuteUpdate(s => s.SetProperty(c => c.ItemCount, newcount));
 		}
@@ -6960,7 +6960,7 @@ public class Player: Playable
 		try 
 		{
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             ctx.CharacterPremiumItems.Where(r => r.CharacterId == characterId && r.ItemNumber == itemNum)
 	            .ExecuteDelete();
 		}
@@ -7062,7 +7062,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
             Character? character = ctx.Characters.SingleOrDefault(r => r.Id == characterId);
             if (character is null)
             {
@@ -7151,7 +7151,7 @@ public class Player: Playable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			foreach (SubClassHolder subClass in getSubClasses().Values)
 			{
                 int classIndex = subClass.getClassIndex();
@@ -7191,7 +7191,7 @@ public class Player: Playable
 		
 		try
 		{
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			
 			// Delete all current stored effects for char to avoid dupe
@@ -7313,7 +7313,7 @@ public class Player: Playable
 	{
 		try 
 		{
-			int characterId = getObjectId();
+			int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId).ExecuteDelete();
 			
@@ -7460,7 +7460,7 @@ public class Player: Playable
 		{
 			try 
 			{
-                int characterId = getObjectId();
+                int characterId = ObjectId;
                 int skillId = oldSkill.getId();
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -7503,7 +7503,7 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
-  			int characterId = getObjectId();
+  			int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if ((oldSkill != null) && (newSkill != null))
 			{
@@ -7560,7 +7560,7 @@ public class Player: Playable
 		int classIndex = (newClassIndex > -1) ? newClassIndex : _classIndex;
 		try
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (Skill addSkill in newSkills)
 			{
@@ -7598,7 +7598,7 @@ public class Player: Playable
 		{
             const string RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level,skill_sub_level FROM character_skills WHERE charId=? AND class_index=?";
             
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -7614,7 +7614,7 @@ public class Player: Playable
 					Skill skill = SkillData.getInstance().getSkill(id, level, subLevel);
 					if (skill == null)
 					{
-						LOGGER.Warn("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + getObjectId());
+						LOGGER.Warn("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + ObjectId);
 						continue;
 					}
 					
@@ -7644,7 +7644,7 @@ public class Player: Playable
 	{
 		try
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterSkillReuses.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
@@ -7695,7 +7695,7 @@ public class Player: Playable
 	{
 		try 
         {
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterItemReuses.Where(r => r.CharacterId == characterId);
 			foreach (var record in query)
@@ -7762,7 +7762,7 @@ public class Player: Playable
 		
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex);
 			DateTime currentTime = DateTime.UtcNow;
@@ -7883,7 +7883,7 @@ public class Player: Playable
 		
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterHennas.Where(r => r.CharacterId == characterId && r.ClassIndex == _classIndex && r.Slot == slot).ExecuteDelete();
 		}
@@ -7964,7 +7964,7 @@ public class Player: Playable
 					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                     ctx.CharacterHennas.Add(new CharacterHenna()
                     {
-                        CharacterId = getObjectId(),
+                        CharacterId = ObjectId,
                         SymbolId = henna.getDyeId(),
                         Slot = slotId,
                         ClassIndex = (byte)_classIndex
@@ -8036,7 +8036,7 @@ public class Player: Playable
 		int pos = 0;
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterHennaPotens.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
@@ -8070,7 +8070,7 @@ public class Player: Playable
 			{
 				try 
 				{
-					int characterId = getObjectId();
+					int characterId = ObjectId;
                     int slotPosition = _hennaPoten[i].getSlotPosition();
 					
                     using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -8301,7 +8301,7 @@ public class Player: Playable
 		}
 		
 		// Check if the attacker isn't the Player Pet
-		if ((attacker == this) || (attacker == _pet) || attacker.hasServitor(attacker.getObjectId()))
+		if ((attacker == this) || (attacker == _pet) || attacker.hasServitor(attacker.ObjectId))
 		{
 			return false;
 		}
@@ -8406,7 +8406,7 @@ public class Player: Playable
 			}
 			
 			// Check if the attacker is not in the same clan
-			if ((clan != null) && clan.isMember(attacker.getObjectId()))
+			if ((clan != null) && clan.isMember(attacker.ObjectId))
 			{
 				return false;
 			}
@@ -9779,7 +9779,7 @@ public class Player: Playable
 				// Store the basic info about this new sub-class.
                 ctx.CharacterSubClasses.Add(new CharacterSubClass()
                 {
-                    CharacterId = getObjectId(),
+                    CharacterId = ObjectId,
                     SubClass = newClass.getClassDefinition(),
                     Exp = newClass.getExp(),
                     Sp = newClass.getSp(),
@@ -9878,7 +9878,7 @@ public class Player: Playable
 		
 		try
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -10162,7 +10162,7 @@ public class Player: Playable
 			
 			_shortCuts.restoreMe();
 			sendPacket(new ShortCutInitPacket(this));
-			broadcastPacket(new SocialActionPacket(getObjectId(), SocialActionPacket.LEVEL_UP));
+			broadcastPacket(new SocialActionPacket(ObjectId, SocialActionPacket.LEVEL_UP));
 			sendPacket(new SkillCoolTimePacket(this));
 			sendStorageMaxCount();
 			
@@ -10239,7 +10239,7 @@ public class Player: Playable
 		{
 			_taskWater.cancel(false);
 			_taskWater = null;
-			sendPacket(new SetupGaugePacket(getObjectId(), 2, TimeSpan.Zero));
+			sendPacket(new SetupGaugePacket(ObjectId, 2, TimeSpan.Zero));
 		}
 	}
 	
@@ -10248,7 +10248,7 @@ public class Player: Playable
 		if (!isDead() && (_taskWater == null))
 		{
 			TimeSpan timeinwater = TimeSpan.FromMilliseconds(getStat().getValue(Stat.BREATH, 60000));
-			sendPacket(new SetupGaugePacket(getObjectId(), 2, timeinwater));
+			sendPacket(new SetupGaugePacket(ObjectId, 2, timeinwater));
 			_taskWater = ThreadPool.scheduleAtFixedRate(new WaterTask(this), timeinwater, TimeSpan.FromSeconds(1));
 		}
 	}
@@ -10575,11 +10575,11 @@ public class Player: Playable
 			{
 				sendPacket(SystemMessageId.YOU_ARE_NO_LONGER_PROTECTED_FROM_AGGRESSIVE_MONSTERS);
 			}
-			if (Config.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().ContainsKey(getObjectId()))
+			if (Config.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().ContainsKey(ObjectId))
 			{
 				CharSummonTable.getInstance().restoreServitor(this);
 			}
-			if (Config.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().ContainsKey(getObjectId()))
+			if (Config.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().ContainsKey(ObjectId))
 			{
 				CharSummonTable.getInstance().restorePet(this);
 			}
@@ -10789,7 +10789,7 @@ public class Player: Playable
 	{
 		if (!_snoopListener.isEmpty())
 		{
-			SnoopPacket sn = new SnoopPacket(getObjectId(), getName(), type, name, text);
+			SnoopPacket sn = new SnoopPacket(ObjectId, getName(), type, name, text);
 			foreach (Player pci in _snoopListener)
 			{
 				if (pci != null)
@@ -10843,9 +10843,9 @@ public class Player: Playable
 	public bool validateItemManipulation(int objectId, string action)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
-		if ((item == null) || (item.getOwnerId() != getObjectId()))
+		if ((item == null) || (item.getOwnerId() != ObjectId))
 		{
-			LOGGER.Info(getObjectId() + ": player tried to " + action + " item he is not owner of");
+			LOGGER.Info(ObjectId + ": player tried to " + action + " item he is not owner of");
 			return false;
 		}
 		
@@ -11000,7 +11000,7 @@ public class Player: Playable
 				LOGGER.Error("deleteMe() called on offline character " + this);
 			}
 			setOnlineStatus(false, true);
-			CharInfoTable.getInstance().setLastAccess(getObjectId(), DateTime.UtcNow);
+			CharInfoTable.getInstance().setLastAccess(ObjectId, DateTime.UtcNow);
 		}
 		catch (Exception e)
 		{
@@ -11227,7 +11227,7 @@ public class Player: Playable
 			// set the status for pledge member list to OFFLINE
 			try
 			{
-				ClanMember clanMember = _clan.getClanMember(getObjectId());
+				ClanMember clanMember = _clan.getClanMember(ObjectId);
 				if (clanMember != null)
 				{
 					clanMember.setPlayer(null);
@@ -11403,7 +11403,7 @@ public class Player: Playable
 			sm.Params.addString(getName());
 			foreach (Player p in World.getInstance().getPlayers())
 			{
-				if (p.getSurveillanceList().Contains(getObjectId()))
+				if (p.getSurveillanceList().Contains(ObjectId))
 				{
 					p.sendPacket(sm);
 					p.sendPacket(surveillanceUpdate);
@@ -11559,7 +11559,7 @@ public class Player: Playable
 	{
 		string? ipAddress = _client?.IpAddress.ToString();
 		string? macAddress = _client?.HardwareInfo?.getMacAddress();
-		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
+		return PunishmentManager.getInstance().hasPunishment(ObjectId.ToString(), PunishmentAffect.CHARACTER, PunishmentType.JAIL) //
 		       || PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.JAIL) //
 		       || (ipAddress != null && PunishmentManager.getInstance().hasPunishment(ipAddress, PunishmentAffect.IP, PunishmentType.JAIL)) //
 		       || (macAddress != null && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.JAIL));
@@ -11572,7 +11572,7 @@ public class Player: Playable
 	{
 		string? ipAddress = _client?.IpAddress.ToString();
 		string? macAddress = _client?.HardwareInfo?.getMacAddress();
-		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
+		return PunishmentManager.getInstance().hasPunishment(ObjectId.ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN) //
 			|| PunishmentManager.getInstance().hasPunishment(getAccountName(), PunishmentAffect.ACCOUNT, PunishmentType.CHAT_BAN) //
 			|| (ipAddress != null && PunishmentManager.getInstance().hasPunishment(ipAddress, PunishmentAffect.IP, PunishmentType.CHAT_BAN)) //
 			|| (macAddress != null && PunishmentManager.getInstance().hasPunishment(macAddress, PunishmentAffect.HWID, PunishmentType.CHAT_BAN));
@@ -11890,7 +11890,7 @@ public class Player: Playable
 			}
 			else
 			{
-				sendPacket(new ExMagicAttackInfoPacket(getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.EVADED));
+				sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.EVADED));
 			}
 			return;
 		}
@@ -11913,15 +11913,15 @@ public class Player: Playable
 			{
 				if (skill.isMagic())
 				{
-					sendPacket(new ExMagicAttackInfoPacket(getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.M_CRITICAL));
+					sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.M_CRITICAL));
 				}
 				else if (skill.isPhysical())
 				{
-					sendPacket(new ExMagicAttackInfoPacket(getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.P_CRITICAL));
+					sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.P_CRITICAL));
 				}
 				else
 				{
-					sendPacket(new ExMagicAttackInfoPacket(getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.CRITICAL));
+					sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.CRITICAL));
 				}
 			}
 		}
@@ -11979,7 +11979,7 @@ public class Player: Playable
 			{
 				sm.Params.addInt((int) elementalDamage);
 			}
-			sm.Params.addPopup(target.getObjectId(), getObjectId(), -damage);
+			sm.Params.addPopup(target.ObjectId, ObjectId, -damage);
 			sendPacket(sm);
 		}
 	}
@@ -12437,7 +12437,7 @@ public class Player: Playable
 			
 			try 
 			{
-                int characterId = getObjectId();
+                int characterId = ObjectId;
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteUpdate(s =>
 	                s.SetProperty(r => r.Icon, icon).SetProperty(r => r.Tag, tag).SetProperty(r => r.Name, name));
@@ -12457,7 +12457,7 @@ public class Player: Playable
 		{
 			try
 			{
-                int characterId = getObjectId();
+                int characterId = ObjectId;
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId && r.Id == id).ExecuteDelete();
 			}
@@ -12495,7 +12495,7 @@ public class Player: Playable
 				return;
 			}
 			
-			destroyItem("Consume", _inventory.getItemByItemId(13016).getObjectId(), 1, null, false);
+			destroyItem("Consume", _inventory.getItemByItemId(13016).ObjectId, 1, null, false);
 			setTeleportLocation(new Location(bookmark.Location, 0));
 			doCast(CommonSkill.MY_TELEPORT.getSkill());
 		}
@@ -12603,7 +12603,7 @@ public class Player: Playable
 				return;
 			}
 			
-			destroyItem("Consume", _inventory.getItemByItemId(Config.BOOKMARK_CONSUME_ITEM_ID).getObjectId(), 1, null, true);
+			destroyItem("Consume", _inventory.getItemByItemId(Config.BOOKMARK_CONSUME_ITEM_ID).ObjectId, 1, null, true);
 		}
 		
 		int id;
@@ -12622,7 +12622,7 @@ public class Player: Playable
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterTeleportBookmarks.Add(new CharacterTeleportBookmark()
             {
-                CharacterId = getObjectId(),
+                CharacterId = ObjectId,
                 Id = id,
                 X = x,
                 Y = y,
@@ -12646,7 +12646,7 @@ public class Player: Playable
 	{
 		try
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
@@ -12671,7 +12671,7 @@ public class Player: Playable
 		{
 			setXYZ(getBoat().Location.Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
-			player.sendPacket(new GetOnVehiclePacket(getObjectId(), getBoat().getObjectId(), _inVehiclePosition));
+			player.sendPacket(new GetOnVehiclePacket(ObjectId, getBoat().ObjectId, _inVehiclePosition));
 		}
 		else if (isInAirShip())
 		{
@@ -12863,14 +12863,14 @@ public class Player: Playable
 		_friendList.clear();
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.Relation == 0)
 	            .Select(r => r.FriendId);
 
             foreach (int friendId in query)
 			{
-				if (friendId == getObjectId())
+				if (friendId == ObjectId)
 				{
 					continue;
 				}
@@ -12907,12 +12907,12 @@ public class Player: Playable
 		_surveillanceList.clear();
 		try
 		{
-			int characterId = getObjectId();
+			int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterSurveillances.Where(r => r.CharacterId == characterId).Select(r => r.TargetId);
             foreach (int targetId in query)
             {
-				if (targetId == getObjectId())
+				if (targetId == ObjectId)
 				{
 					continue;
 				}
@@ -12935,14 +12935,14 @@ public class Player: Playable
 		
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
 			int friendId = CharInfoTable.getInstance().getIdByName(name);
             
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterFriends.Where(r => r.CharacterId == characterId && r.FriendId == friendId).
                 ExecuteUpdate(s => s.SetProperty(r => r.Memo, memo));
 			
-			CharInfoTable.getInstance().setFriendMemo(getObjectId(), friendId, memo);
+			CharInfoTable.getInstance().setFriendMemo(ObjectId, friendId, memo);
 		}
 		catch (Exception e)
 		{
@@ -13006,7 +13006,7 @@ public class Player: Playable
 		{
 			try
 			{
-                int characterId = getObjectId(); 
+                int characterId = ObjectId; 
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
                 ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).ExecuteDelete();
@@ -13029,7 +13029,7 @@ public class Player: Playable
 			}
 			catch (Exception e)
 			{
-				LOGGER.Error("Could not store recipe shop for playerId " + getObjectId() + ": " + e);
+				LOGGER.Error("Could not store recipe shop for playerId " + ObjectId + ": " + e);
 			}
 		}
 	}
@@ -13043,7 +13043,7 @@ public class Player: Playable
 		
 		try 
 		{
-            int characterId = getObjectId(); 
+            int characterId = ObjectId; 
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterRecipeShopLists.Where(r => r.CharacterId == characterId).OrderBy(r => r.Index);
 
@@ -13054,7 +13054,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore recipe shop list data for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore recipe shop list data for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -13445,7 +13445,7 @@ public class Player: Playable
 	{
 		try 
         {
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             bool petItems = ctx.Items.Where(r =>
 	            r.OwnerId == characterId &&
@@ -13455,7 +13455,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not check Items in Pet Inventory for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not check Items in Pet Inventory for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -13476,7 +13476,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             CharacterRecoBonus? record = ctx.CharacterRecoBonuses.Where(r => r.CharacterId == characterId).
                 SingleOrDefault();
@@ -13489,7 +13489,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore Recommendations for player: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore Recommendations for player: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -13500,7 +13500,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             CharacterRecoBonus? record = ctx.CharacterRecoBonuses.SingleOrDefault(r => r.CharacterId == characterId);
 
@@ -13518,7 +13518,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not update Recommendations for player: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not update Recommendations for player: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -13713,7 +13713,7 @@ public class Player: Playable
 	public PlayerVariables getVariables()
 	{
 		PlayerVariables vars = getScript<PlayerVariables>();
-		return vars != null ? vars : addScript(new PlayerVariables(getObjectId()));
+		return vars != null ? vars : addScript(new PlayerVariables(ObjectId));
 	}
 	
 	/**
@@ -13740,7 +13740,7 @@ public class Player: Playable
 	
 	public bool isPartyBanned()
 	{
-		return PunishmentManager.getInstance().hasPunishment(getObjectId().ToString(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
+		return PunishmentManager.getInstance().hasPunishment(ObjectId.ToString(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
 	}
 	
 	/**
@@ -13895,7 +13895,7 @@ public class Player: Playable
 	 */
 	public bool isMentor()
 	{
-		return MentorManager.getInstance().isMentor(getObjectId());
+		return MentorManager.getInstance().isMentor(ObjectId);
 	}
 	
 	/**
@@ -13903,7 +13903,7 @@ public class Player: Playable
 	 */
 	public bool isMentee()
 	{
-		return MentorManager.getInstance().isMentee(getObjectId());
+		return MentorManager.getInstance().isMentee(ObjectId);
 	}
 	
 	/**
@@ -14690,7 +14690,7 @@ public class Player: Playable
 		List<ElementalSpiritDataHolder> restoredSpirits = new();
 		try 
 		{
-            int characterId = getObjectId(); 
+            int characterId = ObjectId; 
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.CharacterSpirits.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
@@ -15234,7 +15234,7 @@ public class Player: Playable
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 
-                int itemObjectId = it.getObjectId(); 
+                int itemObjectId = it.ObjectId; 
                 
                 var query = 
                     from ev in ctx.PetEvolves
@@ -15252,12 +15252,12 @@ public class Player: Playable
                 foreach (var record in query)
                 {
                     EvolveLevel evolveLevel = (EvolveLevel)record.EvolveLevel;
-  				    _petEvolves.put(it.getObjectId(), new PetEvolveHolder(record.Index, evolveLevel, record.Name, record.Level, record.Exp));
+  				    _petEvolves.put(it.ObjectId, new PetEvolveHolder(record.Index, evolveLevel, record.Name, record.Level, record.Exp));
                 }
 			}
 			catch (Exception e)
 			{
-				LOGGER.Error("Could not restore pet evolve for playerId: " + getObjectId() + ": " + e);
+				LOGGER.Error("Could not restore pet evolve for playerId: " + ObjectId + ": " + e);
 			}
 		});
 	}
@@ -15451,7 +15451,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store collection for playerId " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not store collection for playerId " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -15475,7 +15475,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store collection favorite for playerId " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not store collection favorite for playerId " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -15501,7 +15501,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore collection list data for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore collection list data for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -15547,7 +15547,7 @@ public class Player: Playable
         }
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore collection favorite list data for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore collection favorite list data for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -15560,7 +15560,7 @@ public class Player: Playable
 	{
 		try 
 		{
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 	
 			ctx.CharacterPurges.Where(r => r.CharacterId == characterId).ExecuteDelete();
@@ -15584,7 +15584,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store subjugation data for playerId " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not store subjugation data for playerId " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -15597,7 +15597,7 @@ public class Player: Playable
 		
 		try 
         {
-            int characterId = getObjectId();
+            int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             var query = ctx.CharacterPurges.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
@@ -15607,7 +15607,7 @@ public class Player: Playable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore subjugation data for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore subjugation data for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	

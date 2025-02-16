@@ -19,7 +19,7 @@ public readonly struct GetItemPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.GET_ITEM);
         
         writer.WriteInt32(_playerId);
-        writer.WriteInt32(_item.getObjectId());
+        writer.WriteInt32(_item.ObjectId);
         writer.WriteInt32(_item.getX());
         writer.WriteInt32(_item.getY());
         writer.WriteInt32(_item.getZ());

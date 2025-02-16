@@ -22,7 +22,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 	public AttackPacket(Creature attacker, Creature target)
 	{
 		_hits = new List<Hit>();
-		_attackerObjId = attacker.getObjectId();
+		_attackerObjId = attacker.ObjectId;
 		_attackerLoc = attacker.Location.Location3D;
 		_targetLoc = target.Location.Location3D;
 		Player player = attacker.getActingPlayer();

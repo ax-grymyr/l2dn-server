@@ -29,13 +29,13 @@ public struct FinishRotatingPacket: IIncomingPacket<GameSession>
         if (player.isInAirShip() && player.getAirShip().isCaptain(player))
         {
             player.getAirShip().setHeading(_degree);
-            sr = new StopRotationPacket(player.getAirShip().getObjectId(), _degree, 0);
+            sr = new StopRotationPacket(player.getAirShip().ObjectId, _degree, 0);
             player.getAirShip().broadcastPacket(sr);
         }
         else
         {
             player.setHeading(_degree);
-            sr = new StopRotationPacket(player.getObjectId(), _degree, 0);
+            sr = new StopRotationPacket(player.ObjectId, _degree, 0);
             player.broadcastPacket(sr);
         }
 

@@ -10,7 +10,7 @@ public readonly struct PrivateStoreMsgBuyPacket: IOutgoingPacket
 	
     public PrivateStoreMsgBuyPacket(Player player)
     {
-        _objId = player.getObjectId();
+        _objId = player.ObjectId;
         if (player.getBuyList() != null)
         {
             _storeMsg = player.getBuyList().getTitle();

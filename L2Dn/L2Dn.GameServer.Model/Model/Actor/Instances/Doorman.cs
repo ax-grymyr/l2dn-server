@@ -95,9 +95,9 @@ public class Doorman : Folk
 		}
 		
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	
@@ -128,7 +128,7 @@ public class Doorman : Folk
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 	

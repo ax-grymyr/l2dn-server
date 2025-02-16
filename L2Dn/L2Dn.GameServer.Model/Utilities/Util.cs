@@ -206,7 +206,7 @@ public class Util
 	{
 		player.sendPacket(new ShowBoardPacket([
 			"0", "0", "0", "0", "0", "0", player.getName(),
-			player.getObjectId().ToString(), player.getAccountName(), "9", " ", " ",
+			player.ObjectId.ToString(), player.getAccountName(), "9", " ", " ",
 			text.Replace("<br>", Environment.NewLine), "0", "0", "0", "0",
 		]));
 	}

@@ -30,7 +30,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		TimeSpan reuseDelay, int reuseGroup, int actionId, SkillCastingType castingType, bool isGroundTargetSkill)
 	{
 		_creature = creature;
-		_targetObjectId = target.getObjectId();
+		_targetObjectId = target.ObjectId;
 		_targetLocation = target.Location.Location3D;
 		_skillId = skillId;
 		_skillLevel = skillLevel;
@@ -65,7 +65,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		writer.WritePacketCode(OutgoingPacketCodes.MAGIC_SKILL_USE);
 
 		writer.WriteInt32((int)_castingType); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
-		writer.WriteInt32(_creature.getObjectId());
+		writer.WriteInt32(_creature.ObjectId);
 		writer.WriteInt32(_targetObjectId);
 		writer.WriteInt32(_skillId);
 		writer.WriteInt32(_skillLevel);

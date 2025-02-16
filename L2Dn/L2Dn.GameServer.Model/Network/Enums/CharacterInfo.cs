@@ -165,7 +165,7 @@ public sealed class CharacterInfo: IHasId<int>
 		    }
 	    }
 
-	    Id = player.getObjectId();
+	    Id = player.ObjectId;
 	    Name = player.getName();
 	    AccessLevel = player.getAccessLevel()?.getLevel() ?? 0;
 	    Level = player.getLevel();

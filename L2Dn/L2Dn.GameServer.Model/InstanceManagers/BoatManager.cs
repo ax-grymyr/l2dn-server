@@ -80,7 +80,7 @@ public class BoatManager
 		npcDat.set("baseMDef", 100);
 		CreatureTemplate template = new CreatureTemplate(npcDat);
 		Boat boat = new Boat(template);
-		_boats.put(boat.getObjectId(), boat);
+		_boats.put(boat.ObjectId, boat);
 		boat.setHeading(heading);
 		boat.setXYZInvisible(new Location3D(x, y, z));
 		boat.spawnMe();

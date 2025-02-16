@@ -29,7 +29,7 @@ public struct RequestTargetActionMenuPacket: IIncomingPacket<GameSession>
 		
         foreach (WorldObject obj in World.getInstance().getVisibleObjects<WorldObject>(player))
         {
-            if (_objectId == obj.getObjectId())
+            if (_objectId == obj.ObjectId)
             {
                 if (obj.isTargetable() && obj.isAutoAttackable(player))
                 {

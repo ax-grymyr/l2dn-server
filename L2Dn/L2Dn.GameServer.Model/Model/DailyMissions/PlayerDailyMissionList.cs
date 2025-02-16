@@ -28,7 +28,7 @@ public class PlayerDailyMissionList
 
     private void restore()
     {
-        int characterId = _owner.getObjectId();
+        int characterId = _owner.ObjectId;
 
         try
         {
@@ -52,7 +52,7 @@ public class PlayerDailyMissionList
 
     public void storeEntry(DailyMissionPlayerEntry entry)
     {
-        int characterId = _owner.getObjectId();
+        int characterId = _owner.ObjectId;
         int rewardId = entry.getRewardId();
 
         try
@@ -80,7 +80,7 @@ public class PlayerDailyMissionList
 
     public void store()
     {
-        int characterId = _owner.getObjectId();
+        int characterId = _owner.ObjectId;
 
         try
         {
@@ -154,7 +154,7 @@ public class PlayerDailyMissionList
     {
         if (_entries.TryRemove(rewardId, out _) && deleteFromDb)
         {
-            int characterId = _owner.getObjectId();
+            int characterId = _owner.ObjectId;
 
             try
             {

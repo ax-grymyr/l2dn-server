@@ -14,8 +14,8 @@ public readonly struct ValidateLocationInVehiclePacket: IOutgoingPacket
 
     public ValidateLocationInVehiclePacket(Player player)
     {
-        _objectId = player.getObjectId();
-        _boatObjId = player.getBoat().getObjectId();
+        _objectId = player.ObjectId;
+        _boatObjId = player.getBoat().ObjectId;
         _location = player.getInVehiclePosition();
         _heading = player.getHeading();
     }

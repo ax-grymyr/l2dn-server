@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 internal readonly struct StopMovePacket(int objectId, int x, int y, int z, int heading)
     : IOutgoingPacket
 {
-    public StopMovePacket(Creature creature): this(creature.getObjectId(), creature.getX(), creature.getY(), creature.getZ(), creature.getHeading())
+    public StopMovePacket(Creature creature): this(creature.ObjectId, creature.getX(), creature.getY(), creature.getZ(), creature.getHeading())
     {
     }
     

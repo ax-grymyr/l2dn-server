@@ -56,7 +56,7 @@ public class Mail: ItemContainer
 			}
 			else
 			{
-				transferItem("Expire", item.getObjectId(), item.getCount(), wh, null, null);
+				transferItem("Expire", item.ObjectId, item.getCount(), wh, null, null);
 			}
 		}
 	}

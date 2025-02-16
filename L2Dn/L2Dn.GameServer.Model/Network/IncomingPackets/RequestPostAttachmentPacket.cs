@@ -75,7 +75,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 		if (msg == null)
 			return ValueTask.CompletedTask;
 		
-		if (msg.getReceiverId() != player.getObjectId())
+		if (msg.getReceiverId() != player.ObjectId)
 		{
 			Util.handleIllegalPlayerAction(player, player + " tried to get not own attachment!", Config.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
@@ -173,7 +173,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			}
 			
 			long count = item.getCount();
-			Item newItem = attachments.transferItem(attachments.getName(), item.getObjectId(), item.getCount(), player.getInventory(), player, null);
+			Item newItem = attachments.transferItem(attachments.getName(), item.ObjectId, item.getCount(), player.getInventory(), player, null);
 			if (newItem == null)
 				return ValueTask.CompletedTask;
 			

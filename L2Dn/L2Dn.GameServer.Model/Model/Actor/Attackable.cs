@@ -238,7 +238,7 @@ public class Attackable: Npc
 		{
 			if ((killer.getClan() != null) && (Rnd.get(100) < 2))
 			{
-				killer.getClan().addExp(killer.getObjectId(), 1);
+				killer.getClan().addExp(killer.ObjectId, 1);
 			}
 			
 			// Notify to scripts.
@@ -435,7 +435,7 @@ public class Attackable: Npc
 						p.sendPacket(sm);
 						if (p.isNoble())
 						{
-							Hero.getInstance().setRBkilled(p.getObjectId(), getId());
+							Hero.getInstance().setRBkilled(p.ObjectId, getId());
 						}
 					});
 				}
@@ -448,7 +448,7 @@ public class Attackable: Npc
 					player.sendPacket(sm);
 					if (player.isNoble())
 					{
-						Hero.getInstance().setRBkilled(player.getObjectId(), getId());
+						Hero.getInstance().setRBkilled(player.ObjectId, getId());
 					}
 				}
 			}
@@ -527,7 +527,7 @@ public class Attackable: Npc
 							if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
 							{
 								attacker.sendPacket(SystemMessageId.OVER_HIT);
-								attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfoPacket.OVERHIT));
+								attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
 								exp += calculateOverhitExp(exp);
 							}
 							
@@ -675,7 +675,7 @@ public class Attackable: Npc
 						if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
 						{
 							attacker.sendPacket(SystemMessageId.OVER_HIT);
-							attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.getObjectId(), getObjectId(), ExMagicAttackInfoPacket.OVERHIT));
+							attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
 							exp += calculateOverhitExp(exp);
 						}
 						
@@ -1330,7 +1330,7 @@ public class Attackable: Npc
 	 */
 	public bool checkSpoilOwner(Player sweeper, bool sendMessage)
 	{
-		if ((sweeper.getObjectId() != _spoilerObjectId) && !sweeper.isInLooterParty(_spoilerObjectId))
+		if ((sweeper.ObjectId != _spoilerObjectId) && !sweeper.isInLooterParty(_spoilerObjectId))
 		{
 			if (sendMessage)
 			{
@@ -1553,7 +1553,7 @@ public class Attackable: Npc
 	public void setPlundered(Player player)
 	{
 		_plundered = true;
-		_spoilerObjectId = player.getObjectId();
+		_spoilerObjectId = player.ObjectId;
 		_sweepItems = getTemplate().calculateDrops(DropType.SPOIL, this, player);
 	}
 	
@@ -1563,7 +1563,7 @@ public class Attackable: Npc
 	 */
 	public void setSeeded(Player seeder)
 	{
-		if ((_seed != null) && (_seederObjId == seeder.getObjectId()))
+		if ((_seed != null) && (_seederObjId == seeder.ObjectId))
 		{
 			_seeded = true;
 			int count = 1;
@@ -1635,7 +1635,7 @@ public class Attackable: Npc
 		if (!_seeded)
 		{
 			_seed = seed;
-			_seederObjId = seeder.getObjectId();
+			_seederObjId = seeder.ObjectId;
 		}
 	}
 	

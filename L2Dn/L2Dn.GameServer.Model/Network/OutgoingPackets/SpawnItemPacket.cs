@@ -16,7 +16,7 @@ public readonly struct SpawnItemPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.SPAWN_ITEM);
         
-        writer.WriteInt32(_item.getObjectId());
+        writer.WriteInt32(_item.ObjectId);
         writer.WriteInt32(_item.getDisplayId());
         writer.WriteInt32(_item.getX());
         writer.WriteInt32(_item.getY());

@@ -24,7 +24,7 @@ public struct CannotMoveAnymoreInShuttlePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.isInShuttle() && (player.getShuttle().getObjectId() == _boatId))
+        if (player.isInShuttle() && (player.getShuttle().ObjectId == _boatId))
         {
             player.setInVehiclePosition(_location.Location3D);
             player.setHeading(_location.Heading);

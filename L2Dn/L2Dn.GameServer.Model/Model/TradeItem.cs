@@ -41,7 +41,7 @@ public class TradeItem
 	public TradeItem(Item item, long count, long price)
 	{
 		ArgumentNullException.ThrowIfNull(item);
-		_objectId = item.getObjectId();
+		_objectId = item.ObjectId;
 		_item = item.getTemplate();
 		_location = item.getLocationSlot();
 		_enchant = item.getEnchantLevel();

@@ -75,7 +75,7 @@ public class SocialAction: IPlayerActionHandler
 		
 		if (player.canMakeSocialAction())
 		{
-			player.broadcastPacket(new SocialActionPacket(player.getObjectId(), id));
+			player.broadcastPacket(new SocialActionPacket(player.ObjectId, id));
 			
 			// Notify to scripts
 			if (player.Events.HasSubscribers<OnPlayerSocialAction>())
@@ -132,7 +132,7 @@ public class SocialAction: IPlayerActionHandler
 		}
 		
 		int distance = (int) player.Distance2D(target);
-		if ((distance > 125) || (distance < 15) || (player.getObjectId() == target.getObjectId()))
+		if ((distance > 125) || (distance < 15) || (player.ObjectId == target.ObjectId))
 		{
 			player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
 			return;
@@ -319,7 +319,7 @@ public class SocialAction: IPlayerActionHandler
 			return;
 		}
 		
-		player.setMultiSocialAction(id, partner.getObjectId());
+		player.setMultiSocialAction(id, partner.ObjectId);
 		sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_REQUESTED_A_COUPLE_ACTION_WITH_C1);
 		sm.Params.addPcName(partner);
 		player.sendPacket(sm);
@@ -328,7 +328,7 @@ public class SocialAction: IPlayerActionHandler
 		    (partner.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE))
 		{
 			NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO,
-				() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id)));
+				() => partner.sendPacket(new ExAskCoupleActionPacket(player.ObjectId, id)));
 			player.getAI().setNextAction(nextAction);
 			return;
 		}
@@ -336,11 +336,11 @@ public class SocialAction: IPlayerActionHandler
 		if (player.isCastingNow())
 		{
 			NextAction nextAction = new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST,
-				() => partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id)));
+				() => partner.sendPacket(new ExAskCoupleActionPacket(player.ObjectId, id)));
 			player.getAI().setNextAction(nextAction);
 			return;
 		}
 
-		partner.sendPacket(new ExAskCoupleActionPacket(player.getObjectId(), id));
+		partner.sendPacket(new ExAskCoupleActionPacket(player.ObjectId, id));
 	}
 }

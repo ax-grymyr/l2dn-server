@@ -158,7 +158,7 @@ public class AdminScan: IAdminCommandHandler
 			BypassBuilder builder = createBypassBuilder(parser, "bypass -h admin_deleteNpcByObjectId");
 			string npcName = character.getName();
 			builder.AddParam("page", page);
-			builder.AddParam("objectId", character.getObjectId());
+			builder.AddParam("objectId", character.ObjectId);
 			sb.Append("<tr>");
 			sb.Append("<td width=\"45\">").Append(character.getId()).Append("</td>");
 			sb.Append("<td><a action=\"bypass -h admin_move_to ").Append(character.getX()).Append(SPACE).Append(character.getY()).Append(SPACE).Append(character.getZ()).Append("\">").Append(string.IsNullOrEmpty(npcName) ? "No name NPC" : npcName).Append("</a></td>");

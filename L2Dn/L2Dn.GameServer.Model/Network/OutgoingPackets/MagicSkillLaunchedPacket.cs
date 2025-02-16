@@ -16,7 +16,7 @@ internal readonly struct MagicSkillLaunchedPacket: IOutgoingPacket
     public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel, SkillCastingType castingType,
         ICollection<WorldObject> targets)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _skillId = skillId;
         _skillLevel = skillLevel;
         _castingType = castingType;
@@ -46,7 +46,7 @@ internal readonly struct MagicSkillLaunchedPacket: IOutgoingPacket
         
         foreach (WorldObject target in _targets)
         {
-            writer.WriteInt32(target.getObjectId());
+            writer.WriteInt32(target.ObjectId);
         }
     }
 }

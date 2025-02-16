@@ -2,5 +2,5 @@
 
 public interface IUniqueId
 {
-    int getObjectId();
+    int ObjectId { get; }
 }

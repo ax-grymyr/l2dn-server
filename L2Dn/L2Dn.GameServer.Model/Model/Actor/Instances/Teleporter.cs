@@ -199,9 +199,9 @@ public class Teleporter: Npc
 	private void sendHtmlMessage(Player player, string filename)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcname%", getName());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 }

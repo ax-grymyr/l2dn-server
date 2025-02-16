@@ -489,7 +489,7 @@ public class InstanceManager: DataReaderBase
 	public Map<int, DateTime> getAllInstanceTimes(Player player)
 	{
 		// When player don't have any instance penalty
-		Map<int, DateTime>? instanceTimes = _playerTimes.GetValueOrDefault(player.getObjectId());
+		Map<int, DateTime>? instanceTimes = _playerTimes.GetValueOrDefault(player.ObjectId);
 		if (instanceTimes == null || instanceTimes.Count == 0)
 			return [];
 
@@ -508,7 +508,7 @@ public class InstanceManager: DataReaderBase
 		{
 			try 
 			{
-				int playerId = player.getObjectId();
+				int playerId = player.ObjectId;
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				foreach (int id in invalidPenalty)
 					ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
@@ -545,7 +545,7 @@ public class InstanceManager: DataReaderBase
 	public DateTime getInstanceTime(Player player, int id)
 	{
 		// Check if exists reenter data for player.
-		Map<int, DateTime>? playerData = _playerTimes.GetValueOrDefault(player.getObjectId());
+		Map<int, DateTime>? playerData = _playerTimes.GetValueOrDefault(player.ObjectId);
 		if (playerData == null || !playerData.TryGetValue(id, out DateTime time))
 		{
 			return DateTime.MinValue;
@@ -569,12 +569,12 @@ public class InstanceManager: DataReaderBase
 	{
 		try 
 		{
-			int playerId = player.getObjectId();
+			int playerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
-			if (_playerTimes.get(player.getObjectId()) != null)
+			if (_playerTimes.get(player.ObjectId) != null)
 			{
-				_playerTimes.get(player.getObjectId()).remove(id);
+				_playerTimes.get(player.ObjectId).remove(id);
 			}
 		}
 		catch (Exception e)

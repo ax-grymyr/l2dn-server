@@ -47,7 +47,7 @@ public class RollingDice: IItemHandler
 		int y = player.getY() + y1;
 		int z = player.getZ();
 		Location3D destination = GeoEngine.getInstance().getValidLocation(player.Location.Location3D, new Location3D(x, y, z), player.getInstanceWorld());
-		Broadcast.toSelfAndKnownPlayers(player, new DicePacket(player.getObjectId(), itemId, number, destination));
+		Broadcast.toSelfAndKnownPlayers(player, new DicePacket(player.ObjectId, itemId, number, destination));
 		
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ROLLED_A_S2);
 		sm.Params.addString(player.getName());

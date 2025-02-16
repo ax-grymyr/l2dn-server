@@ -38,7 +38,7 @@ public class OfflineTraderTable
 					{
 						var trade = new CharacterOfflineTrade
 						{
-							CharacterId = pc.getObjectId(), // Char Id
+							CharacterId = pc.ObjectId, // Char Id
 							Time = pc.getOfflineStartTime() ?? DateTime.UtcNow,
 							Type = (byte)(pc.isSellingBuffs() ? PrivateStoreType.SELL_BUFFS : pc.getPrivateStoreType()),
 						};
@@ -56,7 +56,7 @@ public class OfflineTraderTable
 								ctx.CharacterOfflineTradeItems.AddRange(pc.getBuyList().getItems().Select(i =>
 									new CharacterOfflineTradeItem
 									{
-										CharacterId = pc.getObjectId(),
+										CharacterId = pc.ObjectId,
 										ItemId = i.getItem().getId(),
 										Count = i.getCount(),
 										Price = i.getPrice()
@@ -78,7 +78,7 @@ public class OfflineTraderTable
 									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellingBuffs().Select(holder =>
 										new CharacterOfflineTradeItem
 										{
-											CharacterId = pc.getObjectId(),
+											CharacterId = pc.ObjectId,
 											ItemId = holder.getSkillId(),
 											Count = 0,
 											Price = holder.getPrice()
@@ -89,7 +89,7 @@ public class OfflineTraderTable
 									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellList().getItems().Select(i =>
 										new CharacterOfflineTradeItem
 										{
-											CharacterId = pc.getObjectId(),
+											CharacterId = pc.ObjectId,
 											ItemId = i.getObjectId(),
 											Count = i.getCount(),
 											Price = i.getPrice()
@@ -109,7 +109,7 @@ public class OfflineTraderTable
 								ctx.CharacterOfflineTradeItems.AddRange(pc.getManufactureItems().Values.Select(i =>
 									new CharacterOfflineTradeItem
 									{
-										CharacterId = pc.getObjectId(),
+										CharacterId = pc.ObjectId,
 										ItemId = i.getRecipeId(),
 										Count = 0,
 										Price = i.getCost()
@@ -125,7 +125,7 @@ public class OfflineTraderTable
 				}
 				catch (Exception e)
 				{
-					LOGGER.Warn(GetType().Name + ": Error while saving offline trader: " + pc.getObjectId() + " " + e,
+					LOGGER.Warn(GetType().Name + ": Error while saving offline trader: " + pc.ObjectId + " " + e,
 						e);
 				}
 			}
@@ -297,7 +297,7 @@ public class OfflineTraderTable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int traderId = trader.getObjectId();
+			int traderId = trader.ObjectId;
 			string title = null;
 			ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == traderId).ExecuteDelete();
 
@@ -404,7 +404,7 @@ public class OfflineTraderTable
 				catch (Exception e)
 				{
 					LOGGER.Warn(
-						GetType().Name + ": Error while saving offline trader: " + trader.getObjectId() + " " + e, e);
+						GetType().Name + ": Error while saving offline trader: " + trader.ObjectId + " " + e, e);
 				}
 			}
 		}

@@ -154,7 +154,7 @@ public class RevengeHistoryManager
 		try
 		{
 			bool found = false;
-			int victimObjectId = victim.getObjectId();
+			int victimObjectId = victim.ObjectId;
 			DateTime currentTime = DateTime.UtcNow;
 			List<RevengeHistoryHolder> removals = new();
 			List<RevengeHistoryHolder> history = REVENGE_HISTORY.GetValueOrDefault(victimObjectId, []);
@@ -190,7 +190,7 @@ public class RevengeHistoryManager
 	
 	public void locateKiller(Player player, string killerName)
 	{
-		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
+		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.ObjectId);
 		if (history == null)
 		{
 			return;
@@ -276,7 +276,7 @@ public class RevengeHistoryManager
 	
 	public void teleportToKiller(Player player, string killerName)
 	{
-		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
+		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.ObjectId);
 		if (history == null)
 		{
 			return;
@@ -331,7 +331,7 @@ public class RevengeHistoryManager
 			return;
 		}
 		
-		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
+		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.ObjectId);
 		if (history == null)
 		{
 			return;
@@ -377,7 +377,7 @@ public class RevengeHistoryManager
 	
 	public void requestHelp(Player player, Player killer, int type)
 	{
-		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.getObjectId());
+		List<RevengeHistoryHolder> history = REVENGE_HISTORY.get(player.ObjectId);
 		if (history == null)
 		{
 			return;
@@ -451,7 +451,7 @@ public class RevengeHistoryManager
 					continue;
 				}
 				
-				int targetObjectId = target.getObjectId();
+				int targetObjectId = target.ObjectId;
 				saveToRevengeHistory(player, killer, revenge, currentTime, targetObjectId);
 				
 				target.sendPacket(new ExPvpBookShareRevengeNewRevengeInfoPacket(player.getName(), killer.getName(), RevengeType.HELP_REQUEST));
@@ -480,7 +480,7 @@ public class RevengeHistoryManager
 	
 	public List<RevengeHistoryHolder> getHistory(Player player)
 	{
-		return REVENGE_HISTORY.get(player.getObjectId());
+		return REVENGE_HISTORY.get(player.ObjectId);
 	}
 	
 	public static RevengeHistoryManager getInstance()

@@ -23,7 +23,7 @@ public class ElementalSpirit
 	
 	public ElementalSpirit(ElementalType type, Player owner)
 	{
-		_data = new ElementalSpiritDataHolder(type, owner.getObjectId());
+		_data = new ElementalSpiritDataHolder(type, owner.ObjectId);
 		_template = ElementalSpiritData.getInstance().getSpirit(type, _data.getStage());
 		_owner = owner;
 	}

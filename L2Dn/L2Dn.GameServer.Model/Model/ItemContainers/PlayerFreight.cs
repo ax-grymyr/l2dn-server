@@ -18,7 +18,7 @@ public class PlayerFreight: ItemContainer
     public PlayerFreight(Player owner)
     {
         _owner = owner;
-        _ownerId = owner.getObjectId();
+        _ownerId = owner.ObjectId;
     }
 
     public override int getOwnerId()

@@ -29,7 +29,7 @@ public struct MonsterRaceInfoPacket: IOutgoingPacket
         writer.WriteInt32(8);
         for (int i = 0; i < 8; i++)
         {
-            writer.WriteInt32(_monsters[i].getObjectId()); // npcObjectID
+            writer.WriteInt32(_monsters[i].ObjectId); // npcObjectID
             writer.WriteInt32(_monsters[i].getTemplate().getDisplayId() + 1000000); // npcID
             writer.WriteInt32(14107); // origin X
             writer.WriteInt32(181875 + (58 * (7 - i))); // origin Y

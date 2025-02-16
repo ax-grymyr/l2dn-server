@@ -15,7 +15,7 @@ public readonly struct MyTargetSelectedPacket: IOutgoingPacket
      */
     public MyTargetSelectedPacket(Player player, Creature target)
     {
-        _objectId = (target is ControllableAirShip) ? ((ControllableAirShip) target).getHelmObjectId() : target.getObjectId();
+        _objectId = (target is ControllableAirShip) ? ((ControllableAirShip) target).getHelmObjectId() : target.ObjectId;
         _color = target.isAutoAttackable(player) ? (player.getLevel() - target.getLevel()) : 0;
     }
 	

@@ -20,7 +20,7 @@ public struct RequestExPvpBookShareRevengeListPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (_objectId != player.getObjectId())
+        if (_objectId != player.ObjectId)
             return ValueTask.CompletedTask;
 		
         player.sendPacket(new ExPvpBookShareRevengeListPacket(player));

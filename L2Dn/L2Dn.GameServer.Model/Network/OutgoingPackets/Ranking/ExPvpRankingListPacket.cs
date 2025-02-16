@@ -122,7 +122,7 @@ public readonly struct ExPvpRankingListPacket: IOutgoingPacket
 			}
 			case RankingScope.SELF:
 			{
-				int playerId = _player.getObjectId();
+				int playerId = _player.ObjectId;
 				var playerData = list.FirstOrDefault(it => it.Value.getInt("charId", 0) == playerId);
 				int indexOf = list.TakeWhile(it => it.Value.getInt("charId", 0) != playerId).Count();
 				limited = (playerData.Key == 0

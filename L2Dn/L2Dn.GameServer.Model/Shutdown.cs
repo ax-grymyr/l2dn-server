@@ -137,7 +137,7 @@ public class Shutdown
 		
 		if (player != null)
 		{
-			LOGGER.Warn("GM: " + player.getName() + "(" + player.getObjectId() + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+			LOGGER.Warn("GM: " + player.getName() + "(" + player.ObjectId + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 		}
 		else
 		{
@@ -198,11 +198,11 @@ public class Shutdown
 	{
 		if (_countdownFinished)
 		{
-			LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.getObjectId() + ") " : "") + "shutdown ABORT failed because countdown has finished.");
+			LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.ObjectId + ") " : "") + "shutdown ABORT failed because countdown has finished.");
 			return;
 		}
 		
-		LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.getObjectId() + ") " : "") + "issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+		LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.ObjectId + ") " : "") + "issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_counterInstance != null)
 		{
 			_counterInstance.abort();

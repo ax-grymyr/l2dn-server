@@ -16,10 +16,10 @@ public readonly struct ExPartyPetWindowUpdatePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PARTY_PET_WINDOW_UPDATE);
         
-        writer.WriteInt32(_summon.getObjectId());
+        writer.WriteInt32(_summon.ObjectId);
         writer.WriteInt32(_summon.getTemplate().getDisplayId() + 1000000);
         writer.WriteByte((byte)_summon.getSummonType());
-        writer.WriteInt32(_summon.getOwner().getObjectId());
+        writer.WriteInt32(_summon.getOwner().ObjectId);
         writer.WriteInt32((int) _summon.getCurrentHp());
         writer.WriteInt32(_summon.getMaxHp());
         writer.WriteInt32((int) _summon.getCurrentMp());

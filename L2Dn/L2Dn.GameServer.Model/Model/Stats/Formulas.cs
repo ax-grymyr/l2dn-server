@@ -738,7 +738,7 @@ public class Formulas
 				sm.Params.addString(target.getName());
 				sm.Params.addSkillName(skill);
 				attacker.sendPacket(sm);
-				attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.RESISTED));
+				attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.ObjectId, target.ObjectId, ExMagicAttackInfoPacket.RESISTED));
 				return false;
 			}
 		}
@@ -770,7 +770,7 @@ public class Formulas
 			sm.Params.addString(target.getName());
 			sm.Params.addSkillName(skill);
 			attacker.sendPacket(sm);
-			attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfoPacket.RESISTED));
+			attacker.sendPacket(new ExMagicAttackInfoPacket(attacker.ObjectId, target.ObjectId, ExMagicAttackInfoPacket.RESISTED));
 			return false;
 		}
 		return true;

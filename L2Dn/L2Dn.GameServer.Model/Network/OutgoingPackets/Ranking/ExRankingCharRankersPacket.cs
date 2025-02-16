@@ -86,7 +86,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						foreach (int id in _playerList.Keys)
 						{
 							StatSet player = _playerList.get(id);
-							if (player.getInt("charId") == _player.getObjectId())
+							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;
@@ -210,7 +210,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						foreach (int id in raceList.Keys)
 						{
 							StatSet player = raceList.get(id);
-							if (player.getInt("charId") == _player.getObjectId())
+							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;
@@ -317,7 +317,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								}
 							}
 						}
-						friendList.add(_player.getObjectId());
+						friendList.add(_player.ObjectId);
 						writer.WriteInt32(count);
 						foreach (int id in _playerList.Keys)
 						{
@@ -375,7 +375,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							foreach (int id in _snapshotList.Keys)
 							{
 								StatSet snapshot = _snapshotList.get(id);
-								if (_player.getObjectId() == snapshot.getInt("charId"))
+								if (_player.ObjectId == snapshot.getInt("charId"))
 								{
 									writer.WriteInt32(id); // server rank snapshot
 									writer.WriteInt32(snapshot.getInt("raceRank", 0)); // race rank snapshot
@@ -472,7 +472,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						foreach (int id in classList.Keys)
 						{
 							StatSet player = classList.get(id);
-							if (player.getInt("charId") == _player.getObjectId())
+							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
 								int first = id > 10 ? (id - 9) : 1;

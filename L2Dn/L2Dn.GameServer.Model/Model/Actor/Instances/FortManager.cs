@@ -36,17 +36,17 @@ public class FortManager: Merchant
 
 	private void sendHtmlMessage(Player player, HtmlContent htmlContent)
 	{
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcId%", getId().ToString());
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 
 	public override void onBypassFeedback(Player player, string command)
 	{
 		// BypassValidation Exploit plug.
-		if (player.getLastFolkNPC().getObjectId() != getObjectId())
+		if (player.getLastFolkNPC().ObjectId != ObjectId)
 		{
 			return;
 		}
@@ -75,15 +75,15 @@ public class FortManager: Merchant
 				if (player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-expel.htm", player);
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 				else
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 
@@ -95,15 +95,15 @@ public class FortManager: Merchant
 				{
 					getFort().banishForeigners(); // Move non-clan members off fortress area
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-expeled.htm", player);
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 				else
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 
@@ -115,7 +115,7 @@ public class FortManager: Merchant
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-report.htm", player);
 
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
 						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
@@ -129,7 +129,7 @@ public class FortManager: Merchant
 						htmlContent.Replace("%min%", time.Minutes.ToString());
 					}
 
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 				else
@@ -137,7 +137,7 @@ public class FortManager: Merchant
 					HtmlContent htmlContent =
 						HtmlContent.LoadFromFile("html/fortress/foreman-castlereport.htm", player);
 
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
 						TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
@@ -156,7 +156,7 @@ public class FortManager: Merchant
 					htmlContent.Replace("%hr2%", time2.Hours.ToString());
 					htmlContent.Replace("%min2%", time2.Minutes.ToString());
 
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 
@@ -184,8 +184,8 @@ public class FortManager: Merchant
 
 							HtmlContent htmlContent =
 								HtmlContent.LoadFromFile("html/fortress/foreman-opened.htm", player);
-							htmlContent.Replace("%objectId%", getObjectId().ToString());
-							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+							htmlContent.Replace("%objectId%", ObjectId.ToString());
+							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 							player.sendPacket(html);
 						}
 						else
@@ -197,8 +197,8 @@ public class FortManager: Merchant
 
 							HtmlContent htmlContent =
 								HtmlContent.LoadFromFile("html/fortress/foreman-closed.htm", player);
-							htmlContent.Replace("%objectId%", getObjectId().ToString());
-							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+							htmlContent.Replace("%objectId%", ObjectId.ToString());
+							NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 							player.sendPacket(html);
 						}
 					}
@@ -213,17 +213,17 @@ public class FortManager: Merchant
 							"html/fortress/" + getTemplate().getId() + "-d.htm",
 							player);
 
-						htmlContent.Replace("%objectId%", getObjectId().ToString());
+						htmlContent.Replace("%objectId%", ObjectId.ToString());
 						htmlContent.Replace("%npcname%", getName());
-						NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+						NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 						player.sendPacket(html);
 					}
 				}
 				else
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-noprivs.htm", player);
-					htmlContent.Replace("%objectId%", getObjectId().ToString());
-					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+					htmlContent.Replace("%objectId%", ObjectId.ToString());
+					NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 					player.sendPacket(html);
 				}
 
@@ -1131,9 +1131,9 @@ public class FortManager: Merchant
 		}
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcname%", getName());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
 

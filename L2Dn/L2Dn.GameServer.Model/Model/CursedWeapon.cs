@@ -338,7 +338,7 @@ public class CursedWeapon : INamable
 		
 		// Player holding it data
 		_player = player;
-		_playerId = _player.getObjectId();
+		_playerId = _player.ObjectId;
 		_playerReputation = _player.getReputation();
 		_playerPkKills = _player.getPkKills();
 		saveData();
@@ -375,7 +375,7 @@ public class CursedWeapon : INamable
 		// Refresh player stats
 		_player.broadcastUserInfo();
 		
-		SocialActionPacket atk = new SocialActionPacket(_player.getObjectId(), 17);
+		SocialActionPacket atk = new SocialActionPacket(_player.ObjectId, 17);
 		_player.broadcastPacket(atk);
 		
 		sm = new SystemMessagePacket(SystemMessageId.THE_S2_S_OWNER_HAS_APPEARED_IN_S1_THE_TREASURE_CHEST_CONTAINS_S2_ADENA_FIXED_REWARD_S3_ADDITIONAL_REWARD_S4_THE_ADENA_WILL_BE_GIVEN_TO_THE_LAST_OWNER_AT_23_59);

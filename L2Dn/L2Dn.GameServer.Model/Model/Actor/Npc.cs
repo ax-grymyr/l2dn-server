@@ -651,8 +651,8 @@ public class Npc: Creature
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + type + "/" + getId() + "-pk.htm", player);
 		if (htmlContent.FileLoaded)
 		{
-			htmlContent.Replace("%objectId%", getObjectId().ToString(CultureInfo.InvariantCulture));
-			player.sendPacket(new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent));
+			htmlContent.Replace("%objectId%", ObjectId.ToString(CultureInfo.InvariantCulture));
+			player.sendPacket(new NpcHtmlMessagePacket(ObjectId, 0, htmlContent));
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return true;
 		}
@@ -763,8 +763,8 @@ public class Npc: Creature
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%npcname%", getName());
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -780,8 +780,8 @@ public class Npc: Creature
 	{
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
-		htmlContent.Replace("%objectId%", getObjectId().ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+		htmlContent.Replace("%objectId%", ObjectId.ToString());
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
@@ -1275,7 +1275,7 @@ public class Npc: Creature
 		if (value != _displayEffect)
 		{
 			_displayEffect = value;
-			broadcastPacket(new ExChangeNpcStatePacket(getObjectId(), value));
+			broadcastPacket(new ExChangeNpcStatePacket(ObjectId, value));
 		}
 	}
 	
@@ -1865,7 +1865,7 @@ public class Npc: Creature
 		sb.Append('(');
 		sb.Append(getId());
 		sb.Append(")[");
-		sb.Append(getObjectId());
+		sb.Append(ObjectId);
 		sb.Append(']');
 		return sb.ToString();
 	}

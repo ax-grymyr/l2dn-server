@@ -19,7 +19,7 @@ public readonly struct NpcInfoAbnormalVisualEffectPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.NPC_INFO_ABNORMAL_VISUAL_EFFECT);
 
-        writer.WriteInt32(_npc.getObjectId());
+        writer.WriteInt32(_npc.ObjectId);
         writer.WriteInt32(_npc.getTransformationDisplayId());
         Set<AbnormalVisualEffect> abnormalVisualEffects = _npc.getEffectList().getCurrentAbnormalVisualEffects();
         Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null)

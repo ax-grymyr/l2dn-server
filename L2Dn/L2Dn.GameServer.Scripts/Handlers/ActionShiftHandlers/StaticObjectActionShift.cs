@@ -20,7 +20,7 @@ public class StaticObjectActionShift: IActionShiftHandler
 			string html =
 				"<html><body><center><font color=\"LEVEL\">Static Object Info</font></center><br><table border=0><tr><td>Coords X,Y,Z: </td><td>" +
 				target.getX() + ", " + target.getY() + ", " + target.getZ() + "</td></tr><tr><td>Object ID: </td><td>" +
-				target.getObjectId() + "</td></tr><tr><td>Static Object ID: </td><td>" + target.getId() +
+				target.ObjectId + "</td></tr><tr><td>Static Object ID: </td><td>" + target.getId() +
 				"</td></tr><tr><td>Mesh Index: </td><td>" + ((StaticObject)target).getMeshIndex() +
 				"</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>" + target.GetType().Name +
 				"</td></tr></table></body></html>"; 

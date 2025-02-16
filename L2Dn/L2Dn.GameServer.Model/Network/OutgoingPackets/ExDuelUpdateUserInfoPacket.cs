@@ -16,7 +16,7 @@ public readonly struct ExDuelUpdateUserInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_DUEL_UPDATE_USER_INFO);
         writer.WriteString(_player.getName());
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32((int)_player.getClassId());
         writer.WriteInt32(_player.getLevel());
         writer.WriteInt32((int) _player.getCurrentHp());

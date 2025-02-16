@@ -40,7 +40,7 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
                 : 0;
 
         player.sendPacket(new ExChangedEnchantTargetItemProbListPacket(
-            new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(request.getEnchantingItem().getObjectId(),
+            new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(request.getEnchantingItem().ObjectId,
                 (int)((chance + enchantRateStat) * 100), (int)(chance * 100), 0, (int)(enchantRateStat * 100))));
 
         return ValueTask.CompletedTask;

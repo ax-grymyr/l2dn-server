@@ -12,12 +12,12 @@ public class SkillChannelized
 	
 	public void addChannelizer(int skillId, Creature channelizer)
 	{
-		_channelizers.computeIfAbsent(skillId, k => new()).put(channelizer.getObjectId(), channelizer);
+		_channelizers.computeIfAbsent(skillId, k => new()).put(channelizer.ObjectId, channelizer);
 	}
 	
 	public void removeChannelizer(int skillId, Creature channelizer)
 	{
-		getChannelizers(skillId).remove(channelizer.getObjectId());
+		getChannelizers(skillId).remove(channelizer.ObjectId);
 	}
 	
 	public int getChannerlizersSize(int skillId)

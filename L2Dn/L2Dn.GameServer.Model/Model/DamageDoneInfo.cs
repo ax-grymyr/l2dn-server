@@ -34,6 +34,6 @@ public class DamageDoneInfo
 	
     public override int GetHashCode()
     {
-        return _attacker.getObjectId();
+        return _attacker.ObjectId;
     }
 }

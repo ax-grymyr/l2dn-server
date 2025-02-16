@@ -195,7 +195,7 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.SUMMON_INFO);
 
-		writer.WriteInt32(_summon.getObjectId());
+		writer.WriteInt32(_summon.ObjectId);
 		writer.WriteByte((byte)_value); // 0=teleported 1=default 2=summoned
 		writer.WriteInt16(38); // 338 - mask_bits_38
 		_helper.WriteMask(writer);

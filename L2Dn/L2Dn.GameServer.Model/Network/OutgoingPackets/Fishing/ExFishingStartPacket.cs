@@ -27,7 +27,7 @@ public readonly struct ExFishingStartPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_FISHING_START);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteByte((byte)_fishType);
         writer.WriteLocation3D(_baitLocation);
         writer.WriteByte(1); // 0 = newbie, 1 = normal, 2 = night

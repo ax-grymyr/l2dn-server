@@ -20,7 +20,7 @@ public readonly struct StaticObjectInfoPacket: IOutgoingPacket
     public StaticObjectInfoPacket(StaticObject staticObject)
     {
         _staticObjectId = staticObject.getId();
-        _objectId = staticObject.getObjectId();
+        _objectId = staticObject.ObjectId;
         _type = 0;
         _isTargetable = true;
         _meshIndex = staticObject.getMeshIndex();
@@ -35,7 +35,7 @@ public readonly struct StaticObjectInfoPacket: IOutgoingPacket
     public StaticObjectInfoPacket(Door door, bool targetable)
     {
         _staticObjectId = door.getId();
-        _objectId = door.getObjectId();
+        _objectId = door.ObjectId;
         _type = 1;
         _isTargetable = door.isTargetable() || targetable;
         _meshIndex = door.getMeshIndex();

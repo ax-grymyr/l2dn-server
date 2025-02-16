@@ -22,7 +22,7 @@ public readonly struct ExRpItemLinkPacket: IOutgoingPacket
         if ((player != null) && player.isOnline())
         {
             writer.WriteByte(1);
-            writer.WriteInt32(player.getObjectId());
+            writer.WriteInt32(player.ObjectId);
         }
         else
         {

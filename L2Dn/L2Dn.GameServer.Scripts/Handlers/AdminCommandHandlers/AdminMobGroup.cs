@@ -462,7 +462,7 @@ public class AdminMobGroup: IAdminCommandHandler
 	private void doAnimation(Player activeChar)
 	{
 		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUsePacket(activeChar, 1008, 1, TimeSpan.FromMilliseconds(4000), TimeSpan.Zero), 1500);
-		activeChar.sendPacket(new SetupGaugePacket(activeChar.getObjectId(), 0, TimeSpan.FromMilliseconds(4000)));
+		activeChar.sendPacket(new SetupGaugePacket(activeChar.ObjectId, 0, TimeSpan.FromMilliseconds(4000)));
 	}
 	
 	private void attackGrp(string command, Player activeChar)

@@ -12,7 +12,7 @@ internal readonly struct ExTeleportToLocationActivatePacket: IOutgoingPacket
 
     public ExTeleportToLocationActivatePacket(Creature creature)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _loc = creature.Location;
     }
 

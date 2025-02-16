@@ -20,6 +20,6 @@ public class TargetMyMenteeSkillCondition: ISkillCondition
 		{
 			return false;
 		}
-		return MentorManager.getInstance().getMentee(caster.getObjectId(), target.getObjectId()) != null;
+		return MentorManager.getInstance().getMentee(caster.ObjectId, target.ObjectId) != null;
 	}
 }

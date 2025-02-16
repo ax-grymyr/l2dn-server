@@ -58,7 +58,7 @@ public class CharmOfCourage: IItemHandler
 			return false;
 		}
 		
-		if (player.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false))
+		if (player.destroyItemWithoutTrace("Consume", item.ObjectId, 1, null, false))
 		{
 			player.setCharmOfCourage(true);
 			player.sendPacket(new EtcStatusUpdatePacket(player));

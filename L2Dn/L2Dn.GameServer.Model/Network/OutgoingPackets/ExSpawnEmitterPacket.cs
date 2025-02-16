@@ -14,7 +14,7 @@ public readonly struct ExSpawnEmitterPacket: IOutgoingPacket
         _npcObjectId = npcObjectId;
     }
 	
-    public ExSpawnEmitterPacket(Player player, Npc npc): this(player.getObjectId(), npc.getObjectId())
+    public ExSpawnEmitterPacket(Player player, Npc npc): this(player.ObjectId, npc.ObjectId)
     {
     }
 	

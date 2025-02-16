@@ -53,7 +53,7 @@ public class BuffInfo
 	 */
 	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item item, Options.Options option)
 	{
-		_effectorObjectId = effector?.getObjectId() ?? 0;
+		_effectorObjectId = effector?.ObjectId ?? 0;
 		_effector = effector;
 		_effected = effected;
 		_skill = skill;

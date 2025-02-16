@@ -47,7 +47,7 @@ public class AttackStanceTaskManager: Runnable
 						Creature creature = entry.Key;
 						if (creature != null)
 						{
-							creature.broadcastPacket(new AutoAttackStopPacket(creature.getObjectId()));
+							creature.broadcastPacket(new AutoAttackStopPacket(creature.ObjectId));
 							creature.getAI().setAutoAttacking(false);
 							if (creature.isPlayer() && creature.hasSummon())
 							{
@@ -55,9 +55,9 @@ public class AttackStanceTaskManager: Runnable
 								Summon pet = creature.getPet();
 								if (pet != null)
 								{
-									pet.broadcastPacket(new AutoAttackStopPacket(pet.getObjectId()));
+									pet.broadcastPacket(new AutoAttackStopPacket(pet.ObjectId));
 								}
-								creature.getServitors().Values.ForEach(s => s.broadcastPacket(new AutoAttackStopPacket(s.getObjectId())));
+								creature.getServitors().Values.ForEach(s => s.broadcastPacket(new AutoAttackStopPacket(s.ObjectId)));
 							}
 
 							toRemove.Add(creature);

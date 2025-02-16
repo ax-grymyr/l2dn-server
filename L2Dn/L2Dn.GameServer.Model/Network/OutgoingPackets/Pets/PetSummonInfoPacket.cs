@@ -78,7 +78,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.PET_INFO);
 		writer.WriteByte((byte)_summon.getSummonType());
-		writer.WriteInt32(_summon.getObjectId());
+		writer.WriteInt32(_summon.ObjectId);
 		writer.WriteInt32(_summon.getTemplate().getDisplayId() + 1000000);
 		writer.WriteInt32(_summon.getX());
 		writer.WriteInt32(_summon.getY());

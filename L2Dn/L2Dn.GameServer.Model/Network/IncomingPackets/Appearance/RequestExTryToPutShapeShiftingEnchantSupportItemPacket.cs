@@ -48,8 +48,8 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 			return ValueTask.CompletedTask;
 		}
 		
-		if (stone.getOwnerId() != player.getObjectId() || targetItem.getOwnerId() != player.getObjectId() || 
-		    extractItem.getOwnerId() != player.getObjectId())
+		if (stone.getOwnerId() != player.ObjectId || targetItem.getOwnerId() != player.ObjectId || 
+		    extractItem.getOwnerId() != player.ObjectId)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
@@ -68,7 +68,7 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 			return ValueTask.CompletedTask;
 		}
 		
-		if ((stone = inventory.getItemByObjectId(stone.getObjectId())) == null)
+		if ((stone = inventory.getItemByObjectId(stone.ObjectId)) == null)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
@@ -104,7 +104,7 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 		}
 		
 		if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() || 
-		    extractItem.getObjectId() == targetItem.getObjectId())
+		    extractItem.ObjectId == targetItem.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);

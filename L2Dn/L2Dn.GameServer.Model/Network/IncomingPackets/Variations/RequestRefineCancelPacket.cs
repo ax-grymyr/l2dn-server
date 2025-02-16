@@ -34,7 +34,7 @@ public struct RequestRefineCancelPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (targetItem.getOwnerId() != player.getObjectId())
+        if (targetItem.getOwnerId() != player.ObjectId)
         {
             Util.handleIllegalPlayerAction(player,
                 "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +

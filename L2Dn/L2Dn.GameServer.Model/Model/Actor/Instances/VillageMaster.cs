@@ -270,7 +270,7 @@ public class VillageMaster: Folk
 				}
 				
 				HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 				player.sendPacket(msg);
 			}
 		}
@@ -296,7 +296,7 @@ public class VillageMaster: Folk
 					player);
 			}
 
-			NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(msg);
 		}
 		else if (actualCommand.equalsIgnoreCase("recover_clan"))
@@ -328,7 +328,7 @@ public class VillageMaster: Folk
 			if (player.isTransformed())
 			{
 				HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_NoTransformed.htm", player);
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(ObjectId, 0, htmlText1);
 				player.sendPacket(msg);
 				return;
 			}
@@ -336,7 +336,7 @@ public class VillageMaster: Folk
 			if (player.hasSummon())
 			{
 				HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_NoSummon.htm", player);
-				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
+				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(ObjectId, 0, htmlText1);
 				player.sendPacket(msg);
 				return;
 			}
@@ -412,13 +412,13 @@ public class VillageMaster: Folk
 						if ((player.getRace() == Race.ELF) || (player.getRace() == Race.DARK_ELF))
 						{
 							HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Fail_Elves.htm", player);
-							html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
+							html = new NpcHtmlMessagePacket(ObjectId, 0, htmlText1);
 							player.sendPacket(html);
 						}
 						else if (player.getRace() == Race.KAMAEL)
 						{
 							HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Fail_Kamael.htm", player);
-							html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText1);
+							html = new NpcHtmlMessagePacket(ObjectId, 0, htmlText1);
 							player.sendPacket(html);
 						}
 						else
@@ -712,8 +712,8 @@ public class VillageMaster: Folk
 
 			if (htmlText is not null)
 			{
-				htmlText.Replace("%objectId%", getObjectId().ToString());
-				html = new NpcHtmlMessagePacket(getObjectId(), 0, htmlText);
+				htmlText.Replace("%objectId%", ObjectId.ToString());
+				html = new NpcHtmlMessagePacket(ObjectId, 0, htmlText);
 				player.sendPacket(html);
 			}
 		}

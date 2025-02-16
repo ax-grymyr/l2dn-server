@@ -787,7 +787,7 @@ public class Hero
 	 */
 	public void setHeroMessage(Player player, string message)
 	{
-		HERO_MESSAGE.put(player.getObjectId(), message);
+		HERO_MESSAGE.put(player.ObjectId, message);
 	}
 	
 	/**
@@ -868,10 +868,10 @@ public class Hero
 	 */
 	public void claimHero(Player player)
 	{
-		if (!HEROES.TryGetValue(player.getObjectId(), out StatSet? hero))
+		if (!HEROES.TryGetValue(player.ObjectId, out StatSet? hero))
 		{
 			hero = new StatSet();
-			HEROES.put(player.getObjectId(), hero);
+			HEROES.put(player.ObjectId, hero);
 		}
 		
 		hero.set(CLAIMED, true);
@@ -881,20 +881,20 @@ public class Hero
 		{
 			clan.addReputationScore(Config.HERO_POINTS);
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_C1_HAS_BECOME_THE_HERO_CLAN_REPUTATION_POINTS_S2);
-			sm.Params.addString(CharInfoTable.getInstance().getNameById(player.getObjectId()));
+			sm.Params.addString(CharInfoTable.getInstance().getNameById(player.ObjectId));
 			sm.Params.addInt(Config.HERO_POINTS);
 			clan.broadcastToOnlineMembers(sm);
 		}
 		
 		player.setHero(true);
-		player.broadcastPacket(new SocialActionPacket(player.getObjectId(), 20016)); // Hero Animation
+		player.broadcastPacket(new SocialActionPacket(player.ObjectId, 20016)); // Hero Animation
 		player.broadcastUserInfo();
 		
 		// Set Gained hero and reload data
-		setHeroGained(player.getObjectId());
-		loadFights(player.getObjectId());
-		loadDiary(player.getObjectId());
-		HERO_MESSAGE.put(player.getObjectId(), "");
+		setHeroGained(player.ObjectId);
+		loadFights(player.ObjectId);
+		loadDiary(player.ObjectId);
+		HERO_MESSAGE.put(player.ObjectId, "");
 		
 		if (player.Events.HasSubscribers<OnPlayerTakeHero>())
 		{

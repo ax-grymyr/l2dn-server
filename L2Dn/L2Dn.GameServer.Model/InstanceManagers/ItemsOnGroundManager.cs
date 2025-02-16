@@ -188,7 +188,7 @@ public class ItemsOnGroundManager: Runnable
 
 				ctx.ItemsOnGround.Add(new ItemOnGround()
 				{
-					ObjectId = item.getObjectId(),
+					ObjectId = item.ObjectId,
 					ItemId = item.getId(),
 					Count = item.getCount(),
 					EnchantLevel = item.getEnchantLevel(),

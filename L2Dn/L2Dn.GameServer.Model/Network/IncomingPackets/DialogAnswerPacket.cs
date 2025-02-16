@@ -127,7 +127,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 	    else if (_messageId == SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT)
 	    {
 		    SummonRequestHolder holder = player.removeScript<SummonRequestHolder>();
-		    if (_answer == 1 && holder != null && holder.getSummoner().getObjectId() == _requesterId)
+		    if (_answer == 1 && holder != null && holder.getSummoner().ObjectId == _requesterId)
 		    {
 			    player.teleToLocation(holder.Location, true);
 		    }

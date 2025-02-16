@@ -131,7 +131,7 @@ public class ItemSkillsTemplate: IItemHandler
 			}
 		}
 		
-		if (successfulUse && checkConsume(item, hasConsumeSkill) && !playable.destroyItem("Consume", item.getObjectId(), 1, playable, false))
+		if (successfulUse && checkConsume(item, hasConsumeSkill) && !playable.destroyItem("Consume", item.ObjectId, 1, playable, false))
 		{
 			playable.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			return false;
@@ -176,7 +176,7 @@ public class ItemSkillsTemplate: IItemHandler
 	{
 		TimeSpan remainingTime = (skill != null)
 			? playable.getSkillRemainingReuseTime(skill.getReuseHashCode())
-			: playable.getItemRemainingReuseTime(item.getObjectId());
+			: playable.getItemRemainingReuseTime(item.ObjectId);
 		
 		bool isAvailable = remainingTime <= TimeSpan.Zero;
 		if (playable.isPlayer() && !isAvailable)

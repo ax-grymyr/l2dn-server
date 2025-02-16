@@ -250,7 +250,7 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		
 		Player player = target.getActingPlayer();
-		if (player.getObjectId() == activeChar.getObjectId())
+		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 		}

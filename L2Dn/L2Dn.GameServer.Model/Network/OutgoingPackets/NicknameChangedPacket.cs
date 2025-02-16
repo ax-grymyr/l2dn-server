@@ -10,7 +10,7 @@ public readonly struct NicknameChangedPacket: IOutgoingPacket
 	
     public NicknameChangedPacket(Creature creature)
     {
-        _objectId = creature.getObjectId();
+        _objectId = creature.ObjectId;
         _title = creature.getTitle();
     }
 	

@@ -21,7 +21,7 @@ public readonly struct PartySmallWindowAddPacket: IOutgoingPacket
         
         writer.WriteInt32(_party.getLeaderObjectId()); // c3
         writer.WriteInt32((int)_party.getDistributionType()); // c3
-        writer.WriteInt32(_member.getObjectId());
+        writer.WriteInt32(_member.ObjectId);
         writer.WriteString(_member.getName());
         writer.WriteInt32((int)_member.getCurrentCp()); // c4
         writer.WriteInt32(_member.getMaxCp()); // c4

@@ -140,7 +140,7 @@ public class AdminPledge: IAdminCommandHandler
 						if ((level >= 0) && (level <= ClanLevelData.getInstance().getMaxLevel()))
 						{
 							clan.changeLevel(level);
-							clan.setExp(activeChar.getObjectId(), ClanLevelData.getInstance().getLevelExp(level));
+							clan.setExp(activeChar.ObjectId, ClanLevelData.getInstance().getLevelExp(level));
 							foreach (Player member in clan.getOnlineMembers(0))
 							{
 								member.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);

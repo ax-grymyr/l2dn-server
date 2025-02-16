@@ -551,12 +551,12 @@ public abstract class AbstractAI : Ctrl
 				Summon pet = _actor.getPet();
 				if (pet != null)
 				{
-					pet.broadcastPacket(new AutoAttackStartPacket(pet.getObjectId()));
+					pet.broadcastPacket(new AutoAttackStartPacket(pet.ObjectId));
 				}
-				_actor.getServitors().Values.ForEach(s => s.broadcastPacket(new AutoAttackStartPacket(s.getObjectId())));
+				_actor.getServitors().Values.ForEach(s => s.broadcastPacket(new AutoAttackStartPacket(s.ObjectId)));
 			}
 			// Send a Server->Client packet AutoAttackStart to the actor and all Player in its _knownPlayers
-			_actor.broadcastPacket(new AutoAttackStartPacket(_actor.getObjectId()));
+			_actor.broadcastPacket(new AutoAttackStartPacket(_actor.ObjectId));
 			setAutoAttacking(true);
 		}
 		
@@ -587,7 +587,7 @@ public abstract class AbstractAI : Ctrl
 		}
 		else if (_clientAutoAttacking)
 		{
-			_actor.broadcastPacket(new AutoAttackStopPacket(_actor.getObjectId()));
+			_actor.broadcastPacket(new AutoAttackStopPacket(_actor.ObjectId));
 			setAutoAttacking(false);
 		}
 	}

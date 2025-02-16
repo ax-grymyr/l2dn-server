@@ -14,7 +14,7 @@ public class Hit
     public Hit(WorldObject target, int damage, bool miss, bool crit, byte shld, bool soulshot, ItemGrade ssGrade)
     {
         _target = new WeakReference<WorldObject>(target);
-        _targetId = target.getObjectId();
+        _targetId = target.ObjectId;
         _damage = damage;
         _ssGrade = ssGrade;
 		

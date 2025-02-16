@@ -119,11 +119,11 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 					}
 					case "hide":
 					{
-						ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+						ZoneNodeHolder holder = _zones.get(activeChar.ObjectId);
 						if (holder != null)
 						{
 							ExServerPrimitivePacket exsp = new ExServerPrimitivePacket(
-								"DebugPoint_" + activeChar.getObjectId(), activeChar.getX(), activeChar.getY(),
+								"DebugPoint_" + activeChar.ObjectId, activeChar.getX(), activeChar.getY(),
 								activeChar.getZ());
 							
 							exsp.addPoint(Colors.Black, 0, 0, 0);
@@ -166,7 +166,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 					}
 					case "clear":
 					{
-						_zones.remove(activeChar.getObjectId());
+						_zones.remove(activeChar.ObjectId);
 						break;
 					}
 					case "dump":
@@ -195,7 +195,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void setMinZ(Player activeChar, int minZ)
 	{
-		_zones.computeIfAbsent(activeChar.getObjectId(), key => new ZoneNodeHolder(activeChar)).setMinZ(minZ);
+		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setMinZ(minZ);
 	}
 	
 	/**
@@ -204,7 +204,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void setMaxZ(Player activeChar, int maxZ)
 	{
-		_zones.computeIfAbsent(activeChar.getObjectId(), key => new ZoneNodeHolder(activeChar)).setMaxZ(maxZ);
+		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setMaxZ(maxZ);
 	}
 	
 	private void buildZonesEditorWindow(Player activeChar)
@@ -249,7 +249,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		if (zoneType != null && zoneType.getZone() is ZoneNPoly)
 		{
 			ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
-			ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val => new ZoneNodeHolder(activeChar));
+			ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.ObjectId, val => new ZoneNodeHolder(activeChar));
 			holder.getNodes().Clear();
 			holder.setName(zoneType.getName());
 			holder.setMinZ(zone.getLowZ());
@@ -276,7 +276,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "You cannot use symbols like: < > & \" $ \\");
 			return;
 		}
-		_zones.computeIfAbsent(activeChar.getObjectId(), key => new ZoneNodeHolder(activeChar)).setName(name);
+		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setName(name);
 	}
 	
 	/**
@@ -315,7 +315,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void showPoints(Player activeChar)
 	{
-		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		ZoneNodeHolder holder = _zones.get(activeChar.ObjectId);
 		if (holder != null)
 		{
 			if (holder.getNodes().Count < 3)
@@ -324,7 +324,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				return;
 			}
 
-			ExServerPrimitivePacket exsp = new ExServerPrimitivePacket("DebugPoint_" + activeChar.getObjectId(),
+			ExServerPrimitivePacket exsp = new ExServerPrimitivePacket("DebugPoint_" + activeChar.ObjectId,
 				activeChar.getX(), activeChar.getY(), activeChar.getZ());
 
 			Location3D prevLoc;
@@ -369,7 +369,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void changePoint(Player activeChar, int index)
 	{
-		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		ZoneNodeHolder holder = _zones.get(activeChar.ObjectId);
 		if (holder != null)
 		{
 			Location3D loc = holder.getNodes()[index];
@@ -387,7 +387,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void deletePoint(Player activeChar, int index)
 	{
-		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		ZoneNodeHolder holder = _zones.get(activeChar.ObjectId);
 		if (holder != null)
 		{
 			Location3D loc = holder.getNodes()[index];
@@ -398,7 +398,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 				if (holder.getNodes().Count == 0)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Since node list is empty destroying session!");
-					_zones.remove(activeChar.getObjectId());
+					_zones.remove(activeChar.ObjectId);
 				}
 			}
 		}
@@ -409,7 +409,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void dumpPoints(Player activeChar)
 	{
-		ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		ZoneNodeHolder holder = _zones.get(activeChar.ObjectId);
 		if (holder != null && holder.getNodes().Count != 0)
 		{
 			if (string.IsNullOrEmpty(holder.getName()))
@@ -461,7 +461,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		if (player.hasAction(PlayerAction.ADMIN_POINT_PICKING))
 		{
 			Location3D newLocation = ev.getLocation();
-			ZoneNodeHolder holder = _zones.computeIfAbsent(player.getObjectId(), key => new ZoneNodeHolder(player));
+			ZoneNodeHolder holder = _zones.computeIfAbsent(player.ObjectId, key => new ZoneNodeHolder(player));
 			Location3D? changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
@@ -494,7 +494,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		Player player = ev.getPlayer();
 		if (player.removeAction(PlayerAction.ADMIN_SHOW_TERRITORY) && ev.getAnswer() == 1)
 		{
-			ZoneNodeHolder holder = _zones.get(player.getObjectId());
+			ZoneNodeHolder holder = _zones.get(player.ObjectId);
 			if (holder != null)
 			{
 				List<Location3D> list = holder.getNodes();
@@ -524,7 +524,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void buildHtmlWindow(Player activeChar, int page)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/zone_editor_create.htm", activeChar);
-		ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key => new ZoneNodeHolder(activeChar));
+		ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar));
 		AtomicInteger position = new AtomicInteger(page * 20);
 
 		PageResult result = PageBuilder.newBuilder(holder.getNodes(), 20, "bypass -h admin_zones list")

@@ -41,7 +41,7 @@ public class Fence : WorldObject
 	
 	public override int getId()
 	{
-		return getObjectId();
+		return ObjectId;
 	}
 	
 	public override string getName()

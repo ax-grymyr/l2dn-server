@@ -25,7 +25,7 @@ public readonly struct TradeStartPacket: IOutgoingPacket
 
         if (_partner != null)
         {
-            if (player.getFriendList().Contains(_partner.getObjectId()))
+            if (player.getFriendList().Contains(_partner.ObjectId))
             {
                 _mask |= 0x01;
             }
@@ -35,8 +35,8 @@ public readonly struct TradeStartPacket: IOutgoingPacket
                 _mask |= 0x02;
             }
 
-            if ((MentorManager.getInstance().getMentee(player.getObjectId(), _partner.getObjectId()) != null) ||
-                (MentorManager.getInstance().getMentee(_partner.getObjectId(), player.getObjectId()) != null))
+            if ((MentorManager.getInstance().getMentee(player.ObjectId, _partner.ObjectId) != null) ||
+                (MentorManager.getInstance().getMentee(_partner.ObjectId, player.ObjectId) != null))
             {
                 _mask |= 0x04;
             }
@@ -75,7 +75,7 @@ public readonly struct TradeStartPacket: IOutgoingPacket
         }
         else
         {
-            writer.WriteInt32(_partner.getObjectId());
+            writer.WriteInt32(_partner.ObjectId);
             writer.WriteByte((byte)_mask); // some kind of mask
             if ((_mask & 0x10) == 0)
             {

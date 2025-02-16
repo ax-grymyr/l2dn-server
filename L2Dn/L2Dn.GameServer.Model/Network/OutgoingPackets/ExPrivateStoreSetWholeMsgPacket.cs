@@ -10,7 +10,7 @@ public readonly struct ExPrivateStoreSetWholeMsgPacket: IOutgoingPacket
 	
     public ExPrivateStoreSetWholeMsgPacket(Player player, string msg)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _msg = msg;
     }
 	

@@ -37,7 +37,7 @@ public readonly struct SellListProcurePacket: IOutgoingPacket
         {
             Item item = entry.Key;
             writer.WriteInt16((short)item.getTemplate().getType1());
-            writer.WriteInt32(item.getObjectId());
+            writer.WriteInt32(item.ObjectId);
             writer.WriteInt32(item.getDisplayId());
             writer.WriteInt64(entry.Value); // count
             writer.WriteInt16((short)item.getTemplate().getType2());

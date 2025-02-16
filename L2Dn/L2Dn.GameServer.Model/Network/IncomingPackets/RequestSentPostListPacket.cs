@@ -20,7 +20,7 @@ public struct RequestSentPostListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        player.sendPacket(new ExShowSentPostListPacket(player.getObjectId()));
+        player.sendPacket(new ExShowSentPostListPacket(player.ObjectId));
         
         return ValueTask.CompletedTask;
     }

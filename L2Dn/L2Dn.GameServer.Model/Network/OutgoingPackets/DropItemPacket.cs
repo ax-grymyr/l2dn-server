@@ -24,7 +24,7 @@ public readonly struct DropItemPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.DROP_ITEM);
         
         writer.WriteInt32(_objectId);
-        writer.WriteInt32(_item.getObjectId());
+        writer.WriteInt32(_item.ObjectId);
         writer.WriteInt32(_item.getDisplayId());
         writer.WriteInt32(_item.getX());
         writer.WriteInt32(_item.getY());

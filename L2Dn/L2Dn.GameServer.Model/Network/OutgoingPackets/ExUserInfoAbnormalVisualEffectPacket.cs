@@ -18,7 +18,7 @@ public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_ABNORMAL_VISUAL_EFFECT);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_player.getTransformationId());
         Set<AbnormalVisualEffect> abnormalVisualEffects = _player.getEffectList().getCurrentAbnormalVisualEffects();
         Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ? _player.getTeam() : Team.NONE;

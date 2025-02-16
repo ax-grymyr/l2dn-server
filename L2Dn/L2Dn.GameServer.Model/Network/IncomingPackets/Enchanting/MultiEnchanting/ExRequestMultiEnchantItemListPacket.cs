@@ -54,7 +54,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			player.removeRequest<EnchantItemRequest>();
 			player.removeRequest<EnchantItemRequest>();
 			player.sendPacket(new ExResultSetMultiEnchantItemListPacket(player, 1));
-			PacketLogger.Instance.Warn("MultiEnchant - player " + player.getObjectId() + " " + player.getName() +
+			PacketLogger.Instance.Warn("MultiEnchant - player " + player.ObjectId + " " + player.getName() +
 			                           " trying enchant items, when scroll count is less than items!");
 			
 			return ValueTask.CompletedTask;
@@ -103,9 +103,9 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			
 			if (scrollTemplate.getMaxEnchantLevel() < enchantItem.getEnchantLevel())
 			{
-				PacketLogger.Instance.Warn("MultiEnchant - player " + player.getObjectId() + " " + player.getName() +
+				PacketLogger.Instance.Warn("MultiEnchant - player " + player.ObjectId + " " + player.getName() +
 				                           " trying over-enchant item " + enchantItem.getItemName() + " " +
-				                           enchantItem.getObjectId());
+				                           enchantItem.ObjectId);
 				
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
@@ -119,7 +119,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			
 			lock (enchantItem)
 			{
-				if ((enchantItem.getOwnerId() != player.getObjectId()) || !enchantItem.isEnchantable())
+				if ((enchantItem.getOwnerId() != player.ObjectId) || !enchantItem.isEnchantable())
 				{
 					player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 					player.removeRequest<EnchantItemRequest>();
@@ -164,23 +164,23 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							if (enchantItem.getEnchantLevel() > 0)
 							{
 								LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName())
-									.Append(" [").Append(player.getObjectId()).Append("] Account:")
+									.Append(" [").Append(player.ObjectId).Append("] Account:")
 									.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 									.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 									.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
-									.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
+									.Append(") [").Append(enchantItem.ObjectId).Append("], ")
 									.Append(scroll.getName()).Append("(").Append(scroll.getCount()).Append(") [")
-									.Append(scroll.getObjectId()).Append("]").ToString());
+									.Append(scroll.ObjectId).Append("]").ToString());
 							}
 							else
 							{
 								LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName())
-									.Append(" [").Append(player.getObjectId()).Append("] Account:")
+									.Append(" [").Append(player.ObjectId).Append("] Account:")
 									.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 									.Append(", ").Append(enchantItem.getName()).Append("(")
-									.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
+									.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.ObjectId)
 									.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
-									.Append(") [").Append(scroll.getObjectId()).Append("]").ToString());
+									.Append(") [").Append(scroll.ObjectId).Append("]").ToString());
 							}
 						}
 						break;
@@ -198,23 +198,23 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								if (enchantItem.getEnchantLevel() > 0)
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Safe Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
-										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
+										.Append(") [").Append(enchantItem.ObjectId).Append("], ")
 										.Append(scroll.getName()).Append("(").Append(scroll.getCount()).Append(") [")
-										.Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(scroll.ObjectId).Append("]").ToString());
 								}
 								else
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Safe Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
-										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
+										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.ObjectId)
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
-										.Append(") [").Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(") [").Append(scroll.ObjectId).Append("]").ToString());
 								}
 							}
 						}
@@ -240,23 +240,23 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								if (enchantItem.getEnchantLevel() > 0)
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Blessed Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
-										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
+										.Append(") [").Append(enchantItem.ObjectId).Append("], ")
 										.Append(scroll.getName()).Append("(").Append(scroll.getCount()).Append(") [")
-										.Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(scroll.ObjectId).Append("]").ToString());
 								}
 								else
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Blessed Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
-										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
+										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.ObjectId)
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
-										.Append(") [").Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(") [").Append(scroll.ObjectId).Append("]").ToString());
 								}
 							}
 						}
@@ -280,25 +280,25 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 									if (enchantItem.getEnchantLevel() > 0)
 									{
 										LOGGER_ENCHANT.Info(sb.Append("Unable to destroy, Character:")
-											.Append(player.getName()).Append(" [").Append(player.getObjectId())
+											.Append(player.getName()).Append(" [").Append(player.ObjectId)
 											.Append("] Account:").Append(player.getAccountName()).Append(" IP:")
 											.Append(session.IpAddress).Append(", +")
 											.Append(enchantItem.getEnchantLevel()).Append(" ")
 											.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
-											.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
+											.Append(") [").Append(enchantItem.ObjectId).Append("], ")
 											.Append(scroll.getName()).Append("(").Append(scroll.getCount())
-											.Append(") [").Append(scroll.getObjectId()).Append("]").ToString());
+											.Append(") [").Append(scroll.ObjectId).Append("]").ToString());
 									}
 									else
 									{
 										LOGGER_ENCHANT.Info(sb.Append("Unable to destroy, Character:")
-											.Append(player.getName()).Append(" [").Append(player.getObjectId())
+											.Append(player.getName()).Append(" [").Append(player.ObjectId)
 											.Append("] Account:").Append(player.getAccountName()).Append(" IP:")
 											.Append(session.IpAddress).Append(", ").Append(enchantItem.getName())
 											.Append("(").Append(enchantItem.getCount()).Append(") [")
-											.Append(enchantItem.getObjectId()).Append("], ").Append(scroll.getName())
+											.Append(enchantItem.ObjectId).Append("], ").Append(scroll.getName())
 											.Append("(").Append(scroll.getCount()).Append(") [")
-											.Append(scroll.getObjectId()).Append("]").ToString());
+											.Append(scroll.ObjectId).Append("]").ToString());
 									}
 								}
 
@@ -359,23 +359,23 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								if (enchantItem.getEnchantLevel() > 0)
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", +").Append(enchantItem.getEnchantLevel()).Append(" ")
 										.Append(enchantItem.getName()).Append("(").Append(enchantItem.getCount())
-										.Append(") [").Append(enchantItem.getObjectId()).Append("], ")
+										.Append(") [").Append(enchantItem.ObjectId).Append("], ")
 										.Append(scroll.getName()).Append("(").Append(scroll.getCount()).Append(") [")
-										.Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(scroll.ObjectId).Append("]").ToString());
 								}
 								else
 								{
 									LOGGER_ENCHANT.Info(sb.Append("Fail, Character:").Append(player.getName())
-										.Append(" [").Append(player.getObjectId()).Append("] Account:")
+										.Append(" [").Append(player.ObjectId).Append("] Account:")
 										.Append(player.getAccountName()).Append(" IP:").Append(session.IpAddress)
 										.Append(", ").Append(enchantItem.getName()).Append("(")
-										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.getObjectId())
+										.Append(enchantItem.getCount()).Append(") [").Append(enchantItem.ObjectId)
 										.Append("], ").Append(scroll.getName()).Append("(").Append(scroll.getCount())
-										.Append(") [").Append(scroll.getObjectId()).Append("]").ToString());
+										.Append(") [").Append(scroll.ObjectId).Append("]").ToString());
 								}
 							}
 						}

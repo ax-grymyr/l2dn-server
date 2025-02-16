@@ -22,7 +22,7 @@ public class Participant
 
 	public Participant(Player plr, int olympiadSide)
 	{
-		objectId = plr.getObjectId();
+		objectId = plr.ObjectId;
 		player = plr;
 		name = plr.getName();
 		side = olympiadSide;

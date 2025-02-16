@@ -22,7 +22,7 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
     private readonly bool _hasSponsor;
 
     public PledgeShowMemberListUpdatePacket(Player player)
-        : this(player.getClan().getClanMember(player.getObjectId()))
+        : this(player.getClan().getClanMember(player.ObjectId))
     {
     }
 

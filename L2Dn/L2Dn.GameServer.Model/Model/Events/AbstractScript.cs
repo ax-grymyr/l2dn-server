@@ -199,7 +199,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			return;
 		}
 		
-		player.setLastQuestNpcObject(npc.getObjectId());
+		player.setLastQuestNpcObject(npc.ObjectId);
 		showResult(player, res, npc);
 	}
 	/**
@@ -260,11 +260,11 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			HtmlContent htmlContent = HtmlContent.LoadFromText(res, player);
 			if (npc != null)
 			{
-				htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+				htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 			}
 			htmlContent.Replace("%playername%", player.getName());
 
-			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.ObjectId, 0, htmlContent);
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
@@ -304,13 +304,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			if (npc != null)
 			{
-				content = content.Replace("%objectId%", npc.getObjectId().ToString());
+				content = content.Replace("%objectId%", npc.ObjectId.ToString());
 			}
 			
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
 			htmlContent.Replace("%playername%", player.getName());
 
-			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.getObjectId(), 0, htmlContent);
+			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.ObjectId, 0, htmlContent);
 			player.sendPacket(npcReply);
 			
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -1979,7 +1979,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		// Mail attachments.
 		if (Config.ALLOW_MAIL)
 		{
-			List<Message> inbox = MailManager.getInstance().getInbox(player.getObjectId());
+			List<Message> inbox = MailManager.getInstance().getInbox(player.ObjectId);
 			foreach (int itemId in itemIds)
 			{
 				foreach (Message message in inbox)
@@ -1991,7 +1991,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 					}
 				}
 			}
-			List<Message> outbox = MailManager.getInstance().getOutbox(player.getObjectId());
+			List<Message> outbox = MailManager.getInstance().getOutbox(player.ObjectId);
 			foreach (int itemId in itemIds)
 			{
 				foreach (Message message in outbox)

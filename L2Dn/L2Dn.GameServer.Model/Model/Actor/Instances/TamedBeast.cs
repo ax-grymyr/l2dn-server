@@ -383,7 +383,7 @@ public class TamedBeast: FeedableBeast
 				if ((item != null) && (item.getCount() >= 1))
 				{
 					owner.destroyItem("BeastMob", item, 1, _tamedBeast, true);
-					_tamedBeast.broadcastPacket(new SocialActionPacket(_tamedBeast.getObjectId(), 3));
+					_tamedBeast.broadcastPacket(new SocialActionPacket(_tamedBeast.ObjectId, 3));
 				}
 				else
 				{

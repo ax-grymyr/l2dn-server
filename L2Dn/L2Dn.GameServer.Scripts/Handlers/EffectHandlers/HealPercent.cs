@@ -66,7 +66,7 @@ public class HealPercent: AbstractEffect
 			}
 			
 			SystemMessagePacket sm;
-			if (effector.getObjectId() != effected.getObjectId())
+			if (effector.ObjectId != effected.ObjectId)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S2_HP_HAS_BEEN_RECOVERED_BY_C1);
 				sm.Params.addString(effector.getName());

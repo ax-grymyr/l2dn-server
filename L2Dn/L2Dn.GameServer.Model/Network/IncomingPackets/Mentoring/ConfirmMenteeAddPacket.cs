@@ -49,13 +49,13 @@ public struct ConfirmMenteeAddPacket: IIncomingPacket<GameSession>
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 ctx.CharacterMentees.Add(new CharacterMentee()
                 {
-                    CharacterId = mentee.getObjectId(),
-                    MentorId = mentor.getObjectId()
+                    CharacterId = mentee.ObjectId,
+                    MentorId = mentor.ObjectId
                 });
 
                 ctx.SaveChanges();
 				
-                MentorManager.getInstance().addMentor(mentor.getObjectId(), mentee.getObjectId());
+                MentorManager.getInstance().addMentor(mentor.ObjectId, mentee.ObjectId);
 				
                 // Notify to scripts
                 if (mentor.Events.HasSubscribers<OnPlayerMenteeAdd>())

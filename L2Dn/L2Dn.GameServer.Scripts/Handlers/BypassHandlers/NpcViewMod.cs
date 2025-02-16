@@ -281,7 +281,7 @@ public class NpcViewMod: IBypassHandler
 		htmlContent.Replace("%aggrolist%", sb.ToString());
 		htmlContent.Replace("%npc_name%", npc.getName());
 		htmlContent.Replace("%npcId%", npc.getId().ToString());
-		htmlContent.Replace("%objid%", npc.getObjectId().ToString());
+		htmlContent.Replace("%objid%", npc.ObjectId.ToString());
 
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(html);
@@ -298,12 +298,12 @@ public class NpcViewMod: IBypassHandler
 			sb.Append("<table width=275 cellpadding=0 cellspacing=0><tr>");
 			if ((dropListGroups != null) || (dropListDeath != null))
 			{
-				sb.Append("<td align=center><button value=\"Show Drop\" width=100 height=25 action=\"bypass NpcViewMod dropList DROP " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
+				sb.Append("<td align=center><button value=\"Show Drop\" width=100 height=25 action=\"bypass NpcViewMod dropList DROP " + npc.ObjectId + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			
 			if (dropListSpoil != null)
 			{
-				sb.Append("<td align=center><button value=\"Show Spoil\" width=100 height=25 action=\"bypass NpcViewMod dropList SPOIL " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
+				sb.Append("<td align=center><button value=\"Show Spoil\" width=100 height=25 action=\"bypass NpcViewMod dropList SPOIL " + npc.ObjectId + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			
 			sb.Append("</tr></table>");
@@ -362,7 +362,7 @@ public class NpcViewMod: IBypassHandler
 			pagesSb.Append("<table><tr>");
 			for (int i = 0; i < pages; i++)
 			{
-				pagesSb.Append("<td align=center><button value=\"" + (i + 1) + "\" width=20 height=20 action=\"bypass NpcViewMod dropList " + dropType + " " + npc.getObjectId() + " " + i + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
+				pagesSb.Append("<td align=center><button value=\"" + (i + 1) + "\" width=20 height=20 action=\"bypass NpcViewMod dropList " + dropType + " " + npc.ObjectId + " " + i + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
 			pagesSb.Append("</tr></table>");
 		}

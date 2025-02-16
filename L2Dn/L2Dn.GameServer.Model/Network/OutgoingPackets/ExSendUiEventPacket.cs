@@ -93,7 +93,7 @@ public readonly struct ExSendUiEventPacket: IOutgoingPacket
 	public ExSendUiEventPacket(Player player, int type, int countUp, int startTime, int startTime2, int endTime,
 		int endTime2, NpcStringId npcstringId, params string[] @params)
 	{
-		_objectId = player.getObjectId();
+		_objectId = player.ObjectId;
 		_type = type;
 		_countUp = countUp;
 		_startTime = startTime;

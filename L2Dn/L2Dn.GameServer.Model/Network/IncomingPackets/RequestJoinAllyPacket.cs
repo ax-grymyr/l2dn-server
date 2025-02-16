@@ -47,7 +47,7 @@ public struct RequestJoinAllyPacket: IIncomingPacket<GameSession>
         sm.Params.addString(player.getClan().getAllyName());
         sm.Params.addString(player.getName());
         target.sendPacket(sm);
-        target.sendPacket(new AskJoinAllyPacket(player.getObjectId(), player.getClan().getAllyName()));
+        target.sendPacket(new AskJoinAllyPacket(player.ObjectId, player.getClan().getAllyName()));
 
         return ValueTask.CompletedTask;
     }

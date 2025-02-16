@@ -74,7 +74,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
 		foreach (Item item in player.getInventory().getItems())
 		{
 			if (!item.isEquipped() && item.isSellable() &&
-			    (pet == null || item.getObjectId() != pet.getControlObjectId()))
+			    (pet == null || item.ObjectId != pet.getControlObjectId()))
 				_sellList.Add(item);
 		}
 

@@ -92,7 +92,7 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 		}
 		
 		// Target already in friend list.
-		if (player.getFriendList().Contains(friend.getObjectId()))
+		if (player.getFriendList().Contains(friend.ObjectId))
 		{
 			player.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
 			return ValueTask.CompletedTask;

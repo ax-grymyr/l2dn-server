@@ -54,7 +54,7 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        int adenaObjectId = player.getInventory().getAdenaInstance().getObjectId();
+        int adenaObjectId = player.getInventory().getAdenaInstance().ObjectId;
         targets.ForEach(t =>
         {
             t.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_STARTED);

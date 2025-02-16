@@ -219,7 +219,7 @@ public class Party : AbstractPlayerGroup
 	{
 		foreach (Player member in _members)
 		{
-			if ((member != null) && (member.getObjectId() != player.getObjectId()))
+			if ((member != null) && (member.ObjectId != player.ObjectId))
 			{
 				member.sendPacket(packet);
 			}
@@ -529,7 +529,7 @@ public class Party : AbstractPlayerGroup
 				if (isInCommandChannel())
 				{
 					// delete the whole command channel when the party who opened the channel is disbanded
-					if (_commandChannel.getLeader().getObjectId() == getLeader().getObjectId())
+					if (_commandChannel.getLeader().ObjectId == getLeader().ObjectId)
 					{
 						_commandChannel.disbandChannel();
 					}
@@ -1077,7 +1077,7 @@ public class Party : AbstractPlayerGroup
 			return;
 		}
 		
-		if (_changeDistributionTypeAnswers.Contains(member.getObjectId()))
+		if (_changeDistributionTypeAnswers.Contains(member.ObjectId))
 		{
 			return;
 		}
@@ -1088,7 +1088,7 @@ public class Party : AbstractPlayerGroup
 			return;
 		}
 		
-		_changeDistributionTypeAnswers.add(member.getObjectId());
+		_changeDistributionTypeAnswers.add(member.ObjectId);
 		if (_changeDistributionTypeAnswers.size() >= (getMemberCount() - 1))
 		{
 			finishLootRequest(true);

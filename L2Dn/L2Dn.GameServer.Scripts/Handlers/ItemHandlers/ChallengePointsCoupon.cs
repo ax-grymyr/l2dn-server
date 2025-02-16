@@ -69,7 +69,7 @@ public class ChallengePointsCoupon: IItemHandler
 		Player player = playable.getActingPlayer();
 		if (player.getChallengeInfo().canAddPoints(categoryId, pointsToGive))
 		{
-			player.destroyItem("Challenge Coupon", item.getObjectId(), 1, null, false);
+			player.destroyItem("Challenge Coupon", item.ObjectId, 1, null, false);
 			player.getChallengeInfo().getChallengePoints().compute(categoryId,
 				(k, v) => v == null
 					? Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), pointsToGive)

@@ -36,7 +36,7 @@ public struct RequestSentPostPacket: IIncomingPacket<GameSession>
         // return;
         // }
 		
-        if (msg.getSenderId() != player.getObjectId())
+        if (msg.getSenderId() != player.ObjectId)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to read not own post!", Config.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;

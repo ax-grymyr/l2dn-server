@@ -380,7 +380,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 		
 		player.spawnMe(player.Location.Location3D);
-		connection.Send(new ExRotationPacket(player.getObjectId(), player.getHeading()));
+		connection.Send(new ExRotationPacket(player.ObjectId, player.getHeading()));
 		
 		if (player.isCursedWeaponEquipped())
 		{
@@ -840,7 +840,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		Clan clan = player.getClan();
 		if (clan != null)
 		{
-			clan.getClanMember(player.getObjectId()).setPlayer(player);
+			clan.getClanMember(player.ObjectId).setPlayer(player);
 			
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_S1_HAS_LOGGED_IN);
 			msg.Params.addString(player.getName());

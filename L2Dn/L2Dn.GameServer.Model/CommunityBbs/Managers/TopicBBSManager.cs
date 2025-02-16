@@ -64,10 +64,10 @@ public class TopicBBSManager: BaseBBSManager
 			{
 				DateTime currentTime = DateTime.UtcNow;
 				f.vload();
-				Topic t = new Topic(TopicConstructorType.CREATE, getInstance().getMaxID(f) + 1, int.Parse(ar2), ar5, currentTime, player.getName(), player.getObjectId(), Topic.MEMO, 0);
+				Topic t = new Topic(TopicConstructorType.CREATE, getInstance().getMaxID(f) + 1, int.Parse(ar2), ar5, currentTime, player.getName(), player.ObjectId, Topic.MEMO, 0);
 				f.addTopic(t);
 				getInstance().setMaxID(t.getID(), f);
-				Post p = new Post(player.getName(), player.getObjectId(), currentTime, t.getID(), f.getID(), ar4);
+				Post p = new Post(player.getName(), player.ObjectId, currentTime, t.getID(), f.getID(), ar4);
 				PostBBSManager.getInstance().addPostByTopic(p, t);
 				parsecmd("_bbsmemo", player);
 			}

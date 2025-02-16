@@ -19,7 +19,7 @@ public readonly struct ExShuttleMovePacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SUTTLE_MOVE);
 
-        writer.WriteInt32(_shuttle.getObjectId());
+        writer.WriteInt32(_shuttle.ObjectId);
         writer.WriteInt32((int)_shuttle.getStat().getMoveSpeed());
         writer.WriteInt32((int)_shuttle.getStat().getRotationSpeed());
         writer.WriteLocation3D(_location);

@@ -18,7 +18,7 @@ public readonly struct ExUserInfoInventoryWeightPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_INVEN_WEIGHT);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_player.getCurrentLoad());
         writer.WriteInt32(_player.getMaxLoad());
     }

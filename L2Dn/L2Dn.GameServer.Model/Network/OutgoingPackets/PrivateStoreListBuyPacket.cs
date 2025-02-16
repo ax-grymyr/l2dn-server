@@ -13,7 +13,7 @@ public readonly struct PrivateStoreListBuyPacket: IOutgoingPacket
 	
     public PrivateStoreListBuyPacket(Player player, Player storePlayer)
     {
-        _objId = storePlayer.getObjectId();
+        _objId = storePlayer.ObjectId;
         _playerAdena = player.getAdena();
         storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed
         _items = storePlayer.getBuyList().getAvailableItems(player.getInventory());

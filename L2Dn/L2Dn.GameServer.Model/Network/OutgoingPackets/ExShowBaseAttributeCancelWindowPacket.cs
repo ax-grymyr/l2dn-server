@@ -29,7 +29,7 @@ public readonly struct ExShowBaseAttributeCancelWindowPacket: IOutgoingPacket
         writer.WriteInt32(_items.Count);
         foreach (Item item in _items)
         {
-            writer.WriteInt32(item.getObjectId());
+            writer.WriteInt32(item.ObjectId);
             writer.WriteInt64(getPrice(item));
         }
     }

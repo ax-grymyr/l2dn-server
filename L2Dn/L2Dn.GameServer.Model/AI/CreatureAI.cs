@@ -505,7 +505,7 @@ public class CreatureAI: AbstractAI
 	protected override void onEvtActionBlocked(Creature attacker)
 	{
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
-		_actor.broadcastPacket(new AutoAttackStopPacket(_actor.getObjectId()));
+		_actor.broadcastPacket(new AutoAttackStopPacket(_actor.ObjectId));
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(_actor))
 		{
 			AttackStanceTaskManager.getInstance().removeAttackStanceTask(_actor);
@@ -755,7 +755,7 @@ public class CreatureAI: AbstractAI
 		
 		if (!AttackStanceTaskManager.getInstance().hasAttackStanceTask(_actor))
 		{
-			_actor.broadcastPacket(new AutoAttackStopPacket(_actor.getObjectId()));
+			_actor.broadcastPacket(new AutoAttackStopPacket(_actor.ObjectId));
 		}
 		
 		// Launch actions corresponding to the Event Think

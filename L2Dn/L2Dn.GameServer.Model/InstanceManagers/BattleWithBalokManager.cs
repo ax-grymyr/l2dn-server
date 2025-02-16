@@ -23,9 +23,9 @@ public class BattleWithBalokManager
 	public void addPointsForPlayer(Player player, bool isScorpion)
 	{
 		int pointsToAdd = isScorpion ? Config.BALOK_POINTS_PER_MONSTER * 10 : Config.BALOK_POINTS_PER_MONSTER;
-		int currentPoints = _playerPoints.computeIfAbsent(player.getObjectId(), pts => 0);
+		int currentPoints = _playerPoints.computeIfAbsent(player.ObjectId, pts => 0);
 		int sum = pointsToAdd + currentPoints;
-		_playerPoints.put(player.getObjectId(), sum);
+		_playerPoints.put(player.ObjectId, sum);
 	}
 	
 	public Map<int, int> getTopPlayers(int count)
@@ -37,7 +37,7 @@ public class BattleWithBalokManager
 	
 	public int getPlayerRank(Player player)
 	{
-		if (!_playerPoints.TryGetValue(player.getObjectId(), out int points))
+		if (!_playerPoints.TryGetValue(player.ObjectId, out int points))
 		{
 			return 0;
 		}
@@ -47,7 +47,7 @@ public class BattleWithBalokManager
 	
 	public int getMonsterPoints(Player player)
 	{
-		return _playerPoints.computeIfAbsent(player.getObjectId(), pts => 0);
+		return _playerPoints.computeIfAbsent(player.ObjectId, pts => 0);
 	}
 	
 	public int getReward()

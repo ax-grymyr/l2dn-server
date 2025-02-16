@@ -112,7 +112,7 @@ public class QuestLink: IBypassHandler
 					startQuest = quest.Name;
 					
 					sbCanStart.Append("<font color=\"bbaa88\">");
-					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
+					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 
 					string localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
@@ -134,7 +134,7 @@ public class QuestLink: IBypassHandler
 				else
 				{
 					sbCantStart.Append("<font color=\"a62f31\">");
-					sbCantStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
+					sbCantStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 					string localisation = quest.isCustomQuest() ? quest.getPath() : "<fstring>" + quest.getNpcStringId() + "01</fstring>";
 					// if (Config.MULTILANG_ENABLE)
 					// {
@@ -162,7 +162,7 @@ public class QuestLink: IBypassHandler
 				startQuest = quest.Name;
 				
 				sbStarted.Append("<font color=\"ffdd66\">");
-				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
+				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 				string localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
@@ -182,7 +182,7 @@ public class QuestLink: IBypassHandler
 			else if (qs.isCompleted())
 			{
 				sbCompleted.Append("<font color=\"787878\">");
-				sbCompleted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.Name + "\">");
+				sbCompleted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 				string localisation = quest.isCustomQuest() ? quest.getPath() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03</fstring>";
 				// if (Config.MULTILANG_ENABLE)
 				// {
@@ -226,9 +226,9 @@ public class QuestLink: IBypassHandler
 		
 		// Send a Server=>Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
 		HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
-		htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
+		htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 
-		player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent));
+		player.sendPacket(new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent));
 	}
 	
 	/**
@@ -270,7 +270,7 @@ public class QuestLink: IBypassHandler
 			if ((qs == null) && (q.getId() >= 1) && (q.getId() < 20000) && (player.getAllActiveQuests().Count > 40))
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fullquest.html", player);
-				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent);
+				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 				player.sendPacket(html);
 				return;
 			}
@@ -286,8 +286,8 @@ public class QuestLink: IBypassHandler
 		if (content != null)
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
-			htmlContent.Replace("%objectId%", npc.getObjectId().ToString());
-			player.sendPacket(new NpcHtmlMessagePacket(npc.getObjectId(), 0, htmlContent));
+			htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
+			player.sendPacket(new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent));
 		}
 		
 		// Send a Server=>Client ActionFailedPacket to the Player in order to avoid that the client wait another packet

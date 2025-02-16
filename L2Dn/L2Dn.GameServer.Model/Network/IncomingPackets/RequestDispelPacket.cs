@@ -44,12 +44,12 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
         if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
             return ValueTask.CompletedTask;
 
-        if (player.getObjectId() == _objectId)
+        if (player.ObjectId == _objectId)
             player.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
         else
         {
             Summon pet = player.getPet();
-            if (pet != null && pet.getObjectId() == _objectId)
+            if (pet != null && pet.ObjectId == _objectId)
                 pet.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
 			
             Summon servitor = player.getServitor(_objectId);

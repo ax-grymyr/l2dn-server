@@ -16,7 +16,7 @@ public readonly struct DoorInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.DOOR_INFO);
         
-        writer.WriteInt32(_door.getObjectId());
+        writer.WriteInt32(_door.ObjectId);
         writer.WriteInt32(_door.getId());
     }
 }

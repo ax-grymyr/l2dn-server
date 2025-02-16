@@ -21,10 +21,10 @@ public readonly struct FriendAddRequestResultPacket: IOutgoingPacket
 	public FriendAddRequestResultPacket(Player player, int result)
 	{
 		_result = result;
-		_charId = player.getObjectId();
+		_charId = player.ObjectId;
 		_charName = player.getName();
 		_onlineStatus = player.getOnlineStatus();
-		_charObjectId = player.getObjectId();
+		_charObjectId = player.ObjectId;
 		_charLevel = player.getLevel();
 		_charClassId = player.getActiveClass();
 	}

@@ -78,7 +78,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		long weight = 0;
 		foreach (CropHolder i in _items)
 		{
-			Item item = player.getInventory().getItemByObjectId(i.getObjectId());
+			Item item = player.getInventory().getItemByObjectId(i.ObjectId);
 			if (item == null || item.getCount() < i.getCount() || item.getId() != i.getId())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -154,7 +154,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			}
 			
 			CropProcure cp = i.getCropProcure();
-			if (!cp.decreaseAmount(i.getCount()) || (fee > 0 && !player.reduceAdena("Manor", fee, manager, true)) || !player.destroyItem("Manor", i.getObjectId(), i.getCount(), manager, true))
+			if (!cp.decreaseAmount(i.getCount()) || (fee > 0 && !player.reduceAdena("Manor", fee, manager, true)) || !player.destroyItem("Manor", i.ObjectId, i.getCount(), manager, true))
 			{
 				continue;
 			}

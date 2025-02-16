@@ -61,7 +61,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    }
 
 	    // Lets prevent using same item twice. Also stackable item check.
-	    if (itemOne.getObjectId() == itemTwo.getObjectId() && (!itemOne.isStackable() ||
+	    if (itemOne.ObjectId == itemTwo.ObjectId && (!itemOne.isStackable() ||
 	                                                           player.getInventory()
 		                                                           .getInventoryItemCount(
 			                                                           itemOne.getTemplate().getId(), -1) < 2))

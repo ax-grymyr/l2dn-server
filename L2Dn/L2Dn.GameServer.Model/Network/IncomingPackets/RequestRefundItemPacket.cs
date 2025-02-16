@@ -119,7 +119,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 			
 			Item item = refund[idx];
 			ItemTemplate template = item.getTemplate();
-			objectIds[i] = item.getObjectId();
+			objectIds[i] = item.ObjectId;
 			
 			// second check for duplicates - object ids
 			for (int j = 0; j < i; j++)

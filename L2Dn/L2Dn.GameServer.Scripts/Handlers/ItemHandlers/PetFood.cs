@@ -42,7 +42,7 @@ public class PetFood: IItemHandler
 			if (activeChar.isPet())
 			{
 				Pet pet = (Pet)activeChar;
-				if (pet.destroyItem("Consume", item.getObjectId(), 1, null, false))
+				if (pet.destroyItem("Consume", item.ObjectId, 1, null, false))
 				{
 					pet.broadcastPacket(new MagicSkillUsePacket(pet, pet, skillId, skillLevel, TimeSpan.Zero,
 						TimeSpan.Zero));
@@ -63,7 +63,7 @@ public class PetFood: IItemHandler
 				{
 					Set<int> foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId()).getFood();
 					if (foodIds.Contains(item.getId()) &&
-					    player.destroyItem("Consume", item.getObjectId(), 1, null, false))
+					    player.destroyItem("Consume", item.ObjectId, 1, null, false))
 					{
 						player.broadcastPacket(new MagicSkillUsePacket(player, player, skillId, skillLevel,
 							TimeSpan.Zero, TimeSpan.Zero));

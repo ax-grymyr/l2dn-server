@@ -26,7 +26,7 @@ public readonly struct ExCubeGameAddPlayerPacket: IOutgoingPacket
         writer.WriteInt32(1);
         writer.WriteInt32(-1);
         writer.WriteInt32(_isRedTeam);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteString(_player.getName());
     }
 }

@@ -51,7 +51,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if (stone.getOwnerId() != player.getObjectId() || targetItem.getOwnerId() != player.getObjectId())
+		if (stone.getOwnerId() != player.ObjectId || targetItem.getOwnerId() != player.ObjectId)
 		{
 			player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
 			player.removeRequest<ShapeShiftingItemRequest>();
@@ -73,7 +73,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 		
-		if ((stone = inventory.getItemByObjectId(stone.getObjectId())) == null)
+		if ((stone = inventory.getItemByObjectId(stone.ObjectId)) == null)
 		{
 			player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
 			player.removeRequest<ShapeShiftingItemRequest>();
@@ -106,7 +106,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 			
-			if (extractItem.getOwnerId() != player.getObjectId())
+			if (extractItem.getOwnerId() != player.ObjectId)
 			{
 				player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
 				player.removeRequest<ShapeShiftingItemRequest>();
@@ -141,7 +141,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 			
-			if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() || extractItem.getObjectId() == targetItem.getObjectId())
+			if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() || extractItem.ObjectId == targetItem.ObjectId)
 			{
 				player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
 				player.removeRequest<ShapeShiftingItemRequest>();
@@ -246,7 +246,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			itemsToUpdate.Add(new ItemInfo(extractItem, ItemChangeType.MODIFIED));
 		}
 		
-		if (inventory.getItemByObjectId(stone.getObjectId()) == null)
+		if (inventory.getItemByObjectId(stone.ObjectId) == null)
 		{
 			itemsToUpdate.Add(new ItemInfo(stone, ItemChangeType.REMOVED));
 		}

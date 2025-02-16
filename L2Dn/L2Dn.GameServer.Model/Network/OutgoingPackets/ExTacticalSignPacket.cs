@@ -18,7 +18,7 @@ public readonly struct ExTacticalSignPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_TACTICAL_SIGN);
         
-        writer.WriteInt32(_target.getObjectId());
+        writer.WriteInt32(_target.ObjectId);
         writer.WriteInt32(_tokenId);
     }
 }

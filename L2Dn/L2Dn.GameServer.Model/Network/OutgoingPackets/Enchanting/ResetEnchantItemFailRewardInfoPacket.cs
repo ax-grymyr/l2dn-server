@@ -33,7 +33,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 		Item enchantItem = request.getEnchantingItem();
 		Item addedItem = new Item(enchantItem.getId());
-		addedItem.setOwnerId(_player.getObjectId());
+		addedItem.setOwnerId(_player.ObjectId);
 		addedItem.setEnchantLevel(request.getEnchantingItem().getEnchantLevel());
 		EnchantSupportItem? enchantSupportItem = null;
 		ItemHolder result = null;
@@ -64,7 +64,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		
 		writer.WritePacketCode(OutgoingPacketCodes.EX_RES_ENCHANT_ITEM_FAIL_REWARD_INFO);
 		
-		writer.WriteInt32(enchantItem.getObjectId());
+		writer.WriteInt32(enchantItem.ObjectId);
 		
 		int challengeGroup = _player.getChallengeInfo().getNowGroup();
 		int challengePoint = _player.getChallengeInfo().getNowPoint();

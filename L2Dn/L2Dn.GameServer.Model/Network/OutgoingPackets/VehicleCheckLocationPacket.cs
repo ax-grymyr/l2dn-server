@@ -19,7 +19,7 @@ public readonly struct VehicleCheckLocationPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.VEHICLE_CHECK_LOCATION);
         
-        writer.WriteInt32(_boat.getObjectId());
+        writer.WriteInt32(_boat.ObjectId);
         writer.WriteInt32(_boat.getX());
         writer.WriteInt32(_boat.getY());
         writer.WriteInt32(_boat.getZ());

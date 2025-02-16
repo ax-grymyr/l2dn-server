@@ -46,7 +46,7 @@ public class StaticObjectAction: IActionHandler
 					: "html/signboard/pvp_signboard.htm";
 				
 				HtmlContent html = HtmlContent.LoadFromFile(filename, player);
-				NpcHtmlMessagePacket htmlPacket = new NpcHtmlMessagePacket(staticObject.getObjectId(), 0, html);
+				NpcHtmlMessagePacket htmlPacket = new NpcHtmlMessagePacket(staticObject.ObjectId, 0, html);
 				player.sendPacket(htmlPacket);
 			}
 			else if (staticObject.getType() == 0)

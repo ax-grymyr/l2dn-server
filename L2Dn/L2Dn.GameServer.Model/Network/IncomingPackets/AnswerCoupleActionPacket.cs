@@ -31,7 +31,7 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
         if (target == null)
             return ValueTask.CompletedTask;
 		
-        if (target.getMultiSocialTarget() != player.getObjectId() || target.getMultiSociaAction() != _actionId)
+        if (target.getMultiSocialTarget() != player.ObjectId || target.getMultiSociaAction() != _actionId)
             return ValueTask.CompletedTask;
 		
         if (_answer == 0) // cancel
@@ -41,7 +41,7 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
         else if (_answer == 1) // approve
         {
             int distance = (int)player.Distance2D(target);
-            if (distance > 125 || distance < 15 || player.getObjectId() == target.getObjectId())
+            if (distance > 125 || distance < 15 || player.ObjectId == target.ObjectId)
             {
                 player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
                 target.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
@@ -49,12 +49,12 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
             }
             
             int heading = player.HeadingTo(target);
-            player.broadcastPacket(new ExRotationPacket(player.getObjectId(), heading));
+            player.broadcastPacket(new ExRotationPacket(player.ObjectId, heading));
             player.setHeading(heading);
             heading = target.HeadingTo(player);
             target.setHeading(heading);
-            target.broadcastPacket(new ExRotationPacket(target.getObjectId(), heading));
-            player.broadcastPacket(new SocialActionPacket(player.getObjectId(), _actionId));
+            target.broadcastPacket(new ExRotationPacket(target.ObjectId, heading));
+            player.broadcastPacket(new SocialActionPacket(player.ObjectId, _actionId));
             target.broadcastPacket(new SocialActionPacket(_objectId, _actionId));
         }
         else if (_answer == -1) // refused

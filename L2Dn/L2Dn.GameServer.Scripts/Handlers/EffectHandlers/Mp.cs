@@ -69,7 +69,7 @@ public class Mp: AbstractEffect
 			}
 			
 			SystemMessagePacket sm;
-			if (effector.getObjectId() != effected.getObjectId())
+			if (effector.ObjectId != effected.ObjectId)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_MP_WITH_C1_S_HELP);
 				sm.Params.addString(effector.getName());

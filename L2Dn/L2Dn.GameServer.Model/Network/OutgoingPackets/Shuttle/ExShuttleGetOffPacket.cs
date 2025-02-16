@@ -13,8 +13,8 @@ public readonly struct ExShuttleGetOffPacket: IOutgoingPacket
 	
     public ExShuttleGetOffPacket(Player player, Model.Actor.Instances.Shuttle shuttle, int x, int y, int z)
     {
-        _playerObjectId = player.getObjectId();
-        _shuttleObjectId = shuttle.getObjectId();
+        _playerObjectId = player.ObjectId;
+        _shuttleObjectId = shuttle.ObjectId;
         _x = x;
         _y = y;
         _z = z;

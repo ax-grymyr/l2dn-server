@@ -15,7 +15,7 @@ public readonly struct ExFlyMovePacket: IOutgoingPacket
 	
     public ExFlyMovePacket(Player player, SayuneType type, int mapId, List<SayuneEntry> locations)
     {
-        _objectId = player.getObjectId();
+        _objectId = player.ObjectId;
         _type = type;
         _mapId = mapId;
         _locations = locations;

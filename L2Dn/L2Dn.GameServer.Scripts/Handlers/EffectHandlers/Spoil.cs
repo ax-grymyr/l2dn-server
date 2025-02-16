@@ -45,7 +45,7 @@ public class Spoil: AbstractEffect
 			return;
 		}
 		
-		target.setSpoilerObjectId(effector.getObjectId());
+		target.setSpoilerObjectId(effector.ObjectId);
 		effector.sendPacket(SystemMessageId.THE_SPOIL_CONDITION_HAS_BEEN_ACTIVATED);
 		target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, effector);
 	}

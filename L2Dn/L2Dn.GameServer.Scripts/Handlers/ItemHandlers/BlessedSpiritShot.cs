@@ -52,7 +52,7 @@ public class BlessedSpiritShot: IItemHandler
 		}
 		
 		// Consume Blessed SpiritShot if player has enough of them
-		if (!player.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
+		if (!player.destroyItemWithoutTrace("Consume", item.ObjectId, weaponItem.getSpiritShotCount(), null, false))
 		{
 			if (!player.disableAutoShot(itemId))
 			{
@@ -160,7 +160,7 @@ public class BlessedSpiritShot: IItemHandler
 			return false;
 		}
 		
-		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
+		if (!activeOwner.destroyItemWithoutTrace("Consume", item.ObjectId, shotConsumption, null, false))
 		{
 			if (!activeOwner.disableAutoShot(itemId))
 			{

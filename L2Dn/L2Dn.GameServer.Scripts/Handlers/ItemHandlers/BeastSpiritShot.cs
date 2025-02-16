@@ -93,7 +93,7 @@ public class BeastSpiritShot: IItemHandler
 			return false;
 		}
 
-		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
+		if (!activeOwner.destroyItemWithoutTrace("Consume", item.ObjectId, shotConsumption, null, false))
 		{
 			if (!activeOwner.disableAutoShot(itemId))
 			{

@@ -56,7 +56,7 @@ public class FishShots: IItemHandler
 		}
 
 		player.chargeShot(ShotType.FISH_SOULSHOTS);
-		player.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
+		player.destroyItemWithoutTrace("Consume", item.ObjectId, 1, null, false);
 		WorldObject oldTarget = player.getTarget();
 		player.setTarget(player);
 

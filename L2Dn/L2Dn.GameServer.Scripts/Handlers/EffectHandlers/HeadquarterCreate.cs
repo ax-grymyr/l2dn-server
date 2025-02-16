@@ -31,7 +31,7 @@ public class HeadquarterCreate: AbstractEffect
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		Player player = effector.getActingPlayer();
-		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
+		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.ObjectId))
 		{
 			return;
 		}

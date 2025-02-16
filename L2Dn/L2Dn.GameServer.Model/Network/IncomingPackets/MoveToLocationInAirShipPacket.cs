@@ -54,7 +54,7 @@ public struct MoveToLocationInAirShipPacket: IIncomingPacket<GameSession>
         }
 
         AirShip airShip = player.getAirShip();
-        if (airShip.getObjectId() != _shipId)
+        if (airShip.ObjectId != _shipId)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

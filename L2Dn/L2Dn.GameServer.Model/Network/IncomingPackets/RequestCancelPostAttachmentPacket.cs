@@ -39,7 +39,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 		if (msg == null)
 			return ValueTask.CompletedTask;
 
-		if (msg.getSenderId() != player.getObjectId())
+		if (msg.getSenderId() != player.ObjectId)
 		{
 			Util.handleIllegalPlayerAction(player, player + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
@@ -91,7 +91,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 			
-			if (item.getOwnerId() != player.getObjectId())
+			if (item.getOwnerId() != player.ObjectId)
 			{
 				Util.handleIllegalPlayerAction(player, player + " tried to get not own item from cancelled attachment!", Config.DEFAULT_PUNISH);
 				return ValueTask.CompletedTask;
@@ -142,7 +142,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 			}
 			
 			long count = item.getCount();
-			Item newItem = attachments.transferItem(attachments.getName(), item.getObjectId(), count,
+			Item newItem = attachments.transferItem(attachments.getName(), item.ObjectId, count,
 				player.getInventory(), player, null);
 			
 			if (newItem == null)

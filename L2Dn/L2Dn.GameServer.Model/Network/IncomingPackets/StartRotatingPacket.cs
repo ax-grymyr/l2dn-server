@@ -27,11 +27,11 @@ public struct StartRotatingPacket: IIncomingPacket<GameSession>
 		
         if (player.isInAirShip() && player.getAirShip().isCaptain(player))
         {
-            player.getAirShip().broadcastPacket(new StartRotationPacket(player.getAirShip().getObjectId(), _degree, _side, 0));
+            player.getAirShip().broadcastPacket(new StartRotationPacket(player.getAirShip().ObjectId, _degree, _side, 0));
         }
         else
         {
-            player.broadcastPacket(new StartRotationPacket(player.getObjectId(), _degree, _side, 0));
+            player.broadcastPacket(new StartRotationPacket(player.ObjectId, _degree, _side, 0));
         }
 
         return ValueTask.CompletedTask;

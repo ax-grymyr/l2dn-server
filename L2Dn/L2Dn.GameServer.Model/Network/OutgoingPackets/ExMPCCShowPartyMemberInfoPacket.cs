@@ -21,7 +21,7 @@ public readonly struct ExMPCCShowPartyMemberInfoPacket: IOutgoingPacket
         foreach (Player pc in _party.getMembers())
         {
             writer.WriteString(pc.getName());
-            writer.WriteInt32(pc.getObjectId());
+            writer.WriteInt32(pc.ObjectId);
             writer.WriteInt32((int)pc.getClassId());
         }
     }

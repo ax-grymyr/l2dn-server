@@ -43,7 +43,7 @@ public readonly struct RecipeShopManageListPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.RECIPE_SHOP_MANAGE_LIST);
         
-        writer.WriteInt32(_seller.getObjectId());
+        writer.WriteInt32(_seller.ObjectId);
         writer.WriteInt32((int) _seller.getAdena());
         writer.WriteInt32(!_isDwarven);
         if (_recipes == null)

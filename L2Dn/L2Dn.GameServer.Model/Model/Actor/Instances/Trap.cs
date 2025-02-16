@@ -87,7 +87,7 @@ public class Trap: Npc
 	 */
 	public bool canBeSeen(Creature creature)
 	{
-		if ((creature != null) && _playersWhoDetectedMe.Contains(creature.getObjectId()))
+		if ((creature != null) && _playersWhoDetectedMe.Contains(creature.ObjectId))
 		{
 			return true;
 		}
@@ -236,7 +236,7 @@ public class Trap: Npc
 			sm.Params.addString(getName());
 			sm.Params.addString(target.getName());
 			sm.Params.addInt(damage);
-			sm.Params.addPopup(target.getObjectId(), getObjectId(), (damage * -1));
+			sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
 			_owner.sendPacket(sm);
 		}
 	}
@@ -265,7 +265,7 @@ public class Trap: Npc
 			return;
 		}
 		
-		_playersWhoDetectedMe.add(detector.getObjectId());
+		_playersWhoDetectedMe.add(detector.ObjectId);
 		
 		// Notify to scripts
 		if (Events.HasSubscribers<OnTrapAction>())

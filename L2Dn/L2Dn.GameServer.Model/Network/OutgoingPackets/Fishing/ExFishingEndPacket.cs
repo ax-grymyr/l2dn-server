@@ -19,7 +19,7 @@ public readonly struct ExFishingEndPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_FISHING_END);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteByte((byte)_reason);
     }
 }

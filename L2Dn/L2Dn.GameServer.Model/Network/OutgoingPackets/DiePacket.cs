@@ -22,7 +22,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 	public DiePacket(Creature creature)
 	{
-		_objectId = creature.getObjectId();
+		_objectId = creature.ObjectId;
 		_isSweepable = creature.isAttackable() && creature.isSweepActive();
 		if (creature.isPlayer())
 		{

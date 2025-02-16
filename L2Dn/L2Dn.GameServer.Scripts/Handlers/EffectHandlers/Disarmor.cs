@@ -69,7 +69,7 @@ public class Disarmor: AbstractEffect
 			
 			player.sendPacket(sm);
 			effected.getInventory().blockItemSlot(_slot);
-			_unequippedItems.put(effected.getObjectId(), unequippedItem.getObjectId());
+			_unequippedItems.put(effected.ObjectId, unequippedItem.ObjectId);
 		}
 	}
 	
@@ -80,7 +80,7 @@ public class Disarmor: AbstractEffect
 			return;
 		}
 		
-		int disarmedObjId = _unequippedItems.remove(effected.getObjectId());
+		int disarmedObjId = _unequippedItems.remove(effected.ObjectId);
 		if ((disarmedObjId != null) && (disarmedObjId > 0))
 		{
 			Player player = effected.getActingPlayer();

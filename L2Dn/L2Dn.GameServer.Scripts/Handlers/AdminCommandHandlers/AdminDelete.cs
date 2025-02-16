@@ -98,7 +98,7 @@ public class AdminDelete: IAdminCommandHandler
 				{
 					SpawnTable.getInstance().deleteSpawn(spawn, true);
 				}
-				BuilderUtil.sendSysMessage(player, "Deleted " + target.getName() + " from " + target.getObjectId() + ".");
+				BuilderUtil.sendSysMessage(player, "Deleted " + target.getName() + " from " + target.ObjectId + ".");
 			}
 			else
 			{
@@ -154,7 +154,7 @@ public class AdminDelete: IAdminCommandHandler
 					npcSpawnTemplate.despawn();
 				}
 				
-				BuilderUtil.sendSysMessage(player, "Deleted " + target.getName() + " group from " + target.getObjectId() + ".");
+				BuilderUtil.sendSysMessage(player, "Deleted " + target.getName() + " group from " + target.ObjectId + ".");
 			}
 		}
 	}

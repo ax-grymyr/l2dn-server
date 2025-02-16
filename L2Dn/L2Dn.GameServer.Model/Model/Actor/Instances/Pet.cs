@@ -69,7 +69,7 @@ public class Pet: Summon
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore pet evolve for playerId: " + getObjectId() + ": " + e);
+			LOGGER.Error("Could not restore pet evolve for playerId: " + ObjectId + ": " + e);
 		}
 	}
 	
@@ -202,7 +202,7 @@ public class Pet: Summon
 				BuffInfo buffInfo = _pet.getOwner() != null ? _pet.getOwner().getEffectList().getBuffInfoBySkillId(49300) : null;
 				int buffLvl = buffInfo == null ? 0 : buffInfo.getSkill().getLevel();
 				int feedCons = buffLvl != 0 ? getFeedConsume() + getFeedConsume() / 100 * buffLvl * 50 : getFeedConsume();
-				if (_pet.getOwner() == null || pet == null || pet.getObjectId() != _pet.getObjectId())
+				if (_pet.getOwner() == null || pet == null || pet.ObjectId != _pet.ObjectId)
 				{
 					_pet.stopFeed();
 					return;
@@ -268,7 +268,7 @@ public class Pet: Summon
 			}
 			catch (Exception e)
 			{
-				LOGGER_PET.Error("Pet [ObjectId: " + _pet.getObjectId() + "] a feed task error has occurred: " + e);
+				LOGGER_PET.Error("Pet [ObjectId: " + _pet.ObjectId + "] a feed task error has occurred: " + e);
 			}
 		}
 
@@ -286,7 +286,7 @@ public class Pet: Summon
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public static Pet spawnPet(NpcTemplate template, Player owner, Item control)
 	{
-		Pet existingPet = World.getInstance().getPet(owner.getObjectId());
+		Pet existingPet = World.getInstance().getPet(owner.ObjectId);
 		if (existingPet != null) // owner has a pet listed in world
 		{
 			existingPet.unSummon(owner);
@@ -299,7 +299,7 @@ public class Pet: Summon
 			pet.restoreSkills();
 			pet.restorePetEvolvesByItem();
 			pet.setTitle(owner.getName());
-			World.getInstance().addPet(owner.getObjectId(), pet);
+			World.getInstance().addPet(owner.ObjectId, pet);
 		}
 		return pet;
 	}
@@ -314,7 +314,7 @@ public class Pet: Summon
 			pet.restoreSkills();
 			pet.restorePetEvolvesByItem();
 			pet.setTitle(getOwner().getName());
-			World.getInstance().addPet(getOwner().getObjectId(), pet);
+			World.getInstance().addPet(getOwner().ObjectId, pet);
 		}
 		return pet;
 	}
@@ -341,7 +341,7 @@ public class Pet: Summon
 	{
 		setInstanceType(InstanceType.Pet);
 
-		_controlObjectId = control.getObjectId();
+		_controlObjectId = control.ObjectId;
 		getStat().setLevel(Math.Max(level, PetDataTable.getInstance().getPetMinLevel(template.getId())));
 		_inventory = new PetInventory(this);
 		_inventory.restore();
@@ -391,11 +391,11 @@ public class Pet: Summon
 	{
 		if (num <= 0)
 		{
-			sendPacket(new ExChangeNpcStatePacket(getObjectId(), 0x64)); // TODO: what numbers mean?
+			sendPacket(new ExChangeNpcStatePacket(ObjectId, 0x64)); // TODO: what numbers mean?
 		}
 		else if (_curFed <= 0 && num > 0)
 		{
-			sendPacket(new ExChangeNpcStatePacket(getObjectId(), 0x65));
+			sendPacket(new ExChangeNpcStatePacket(ObjectId, 0x65));
 		}
 		_curFed = num > getMaxFed() ? getMaxFed() : num;
 	}
@@ -600,7 +600,7 @@ public class Pet: Summon
 				return;
 			}
 
-			if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().getObjectId() && !getOwner().isInLooterParty(target.getOwnerId()))
+			if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().ObjectId && !getOwner().isInLooterParty(target.getOwnerId()))
 			{
 				if (target.getId() == Inventory.ADENA_ID)
 				{
@@ -623,7 +623,7 @@ public class Pet: Summon
 				return;
 			}
 
-			if (target.getItemLootShedule() != null && (target.getOwnerId() == getOwner().getObjectId() || getOwner().isInLooterParty(target.getOwnerId())))
+			if (target.getItemLootShedule() != null && (target.getOwnerId() == getOwner().ObjectId || getOwner().isInLooterParty(target.getOwnerId())))
 			{
 				target.resetOwnerTimer();
 			}
@@ -829,7 +829,7 @@ public class Pet: Summon
 	public void destroyControlItem(Player owner, bool evolve)
 	{
 		// remove the pet instance from world
-		World.getInstance().removePet(owner.getObjectId());
+		World.getInstance().removePet(owner.ObjectId);
 
 		// delete from inventory
 		try
@@ -874,7 +874,7 @@ public class Pet: Summon
 		}
 		catch (Exception e)
 		{
-			LOGGER_PET.Error("Failed to delete Pet [ObjectId: " + getObjectId() + "]: " + e);
+			LOGGER_PET.Error("Failed to delete Pet [ObjectId: " + ObjectId + "]: " + e);
 		}
 	}
 
@@ -895,7 +895,7 @@ public class Pet: Summon
 
 	public void dropItemHere(Item item, bool protect)
 	{
-		Item dropit = _inventory.dropItem("Drop", item.getObjectId(), item.getCount(), getOwner(), this);
+		Item dropit = _inventory.dropItem("Drop", item.ObjectId, item.getCount(), getOwner(), this);
 		if (dropit != null)
 		{
 			if (protect)
@@ -925,7 +925,7 @@ public class Pet: Summon
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int controlObjectId = control.getObjectId();
+			int controlObjectId = control.ObjectId;
 
 			Pet pet;
 			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == controlObjectId);
@@ -1042,7 +1042,7 @@ public class Pet: Summon
 			record.Exp = getStat().getExp();
 			record.Sp = getStat().getSp();
 			record.Fed = _curFed;
-			record.OwnerId = getOwner().getObjectId();
+			record.OwnerId = getOwner().ObjectId;
 			record.Restore = _restoreSummon;
 
 			ctx.SaveChanges();
@@ -1050,16 +1050,16 @@ public class Pet: Summon
 			_respawned = true;
 			if (_restoreSummon)
 			{
-				CharSummonTable.getInstance().getPets().put(getOwner().getObjectId(), getControlObjectId());
+				CharSummonTable.getInstance().getPets().put(getOwner().ObjectId, getControlObjectId());
 			}
 			else
 			{
-				CharSummonTable.getInstance().getPets().remove(getOwner().getObjectId());
+				CharSummonTable.getInstance().getPets().remove(getOwner().ObjectId);
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER_PET.Error("Failed to store Pet [ObjectId: " + getObjectId() + "] data: " + e);
+			LOGGER_PET.Error("Failed to store Pet [ObjectId: " + ObjectId + "] data: " + e);
 		}
 
 		Item itemInst = getControlItem();
@@ -1240,7 +1240,7 @@ public class Pet: Summon
 			{
 				_inventory.deleteMe();
 			}
-			World.getInstance().removePet(owner.getObjectId());
+			World.getInstance().removePet(owner.ObjectId);
 		}
 	}
 
@@ -1344,7 +1344,7 @@ public class Pet: Summon
 
 	public void updateRefOwner(Player owner)
 	{
-		int oldOwnerId = getOwner().getObjectId();
+		int oldOwnerId = getOwner().ObjectId;
 		setOwner(owner);
 		World.getInstance().removePet(oldOwnerId);
 		World.getInstance().addPet(oldOwnerId, this);

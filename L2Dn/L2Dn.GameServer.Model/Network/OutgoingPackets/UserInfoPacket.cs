@@ -102,7 +102,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		
 		writer.WritePacketCode(OutgoingPacketCodes.USER_INFO);
 		
-		writer.WriteInt32(_player.getObjectId());
+		writer.WriteInt32(_player.ObjectId);
 		writer.WriteInt32(initSize);
 		writer.WriteInt16(29); // 362 - 29
 		_helper.WriteMask(writer);
@@ -234,7 +234,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getX());
 			writer.WriteInt32(_player.getY());
 			writer.WriteInt32(_player.getZ());
-			writer.WriteInt32(_player.isInVehicle() ? _player.getVehicle().getObjectId() : 0);
+			writer.WriteInt32(_player.isInVehicle() ? _player.getVehicle().ObjectId : 0);
 		}
 		
 		if (_helper.HasComponent(UserInfoType.SPEED))
@@ -468,7 +468,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			{
 				relation |= 32; // Clan member
 			}
-			if (clan.getLeaderId() == player.getObjectId())
+			if (clan.getLeaderId() == player.ObjectId)
 			{
 				relation |= 64; // Clan leader
 			}

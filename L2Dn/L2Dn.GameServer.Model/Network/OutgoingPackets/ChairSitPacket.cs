@@ -18,7 +18,7 @@ public readonly struct ChairSitPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.CHAIR_SIT);
         
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_staticObjectId);
     }
 }

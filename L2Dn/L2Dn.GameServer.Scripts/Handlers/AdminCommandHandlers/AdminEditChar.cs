@@ -900,7 +900,7 @@ public class AdminEditChar: IAdminCommandHandler
 			if (player != null)
 			{
 				player.setNoble(!player.isNoble());
-				if (player.getObjectId() != activeChar.getObjectId())
+				if (player.ObjectId != activeChar.ObjectId)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "You've changed nobless status of: " + player.getName());
 				}
@@ -1167,7 +1167,7 @@ public class AdminEditChar: IAdminCommandHandler
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		htmlContent.Replace("%name%", player.getName());
 		htmlContent.Replace("%level%", player.getLevel().ToString());
-		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.getObjectId() + "\">" + player.getClan().getName() + "</a>" : null);
+		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.ObjectId + "\">" + player.getClan().getName() + "</a>" : null);
 		htmlContent.Replace("%xp%", player.getExp().ToString());
 		htmlContent.Replace("%sp%", player.getSp().ToString());
 		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
@@ -1631,7 +1631,7 @@ public class AdminEditChar: IAdminCommandHandler
 		htmlContent.Replace("%race%", target.getTemplate().getRace().ToString());
 		if (target.isPet())
 		{
-			int objId = target.getActingPlayer().getObjectId();
+			int objId = target.getActingPlayer().ObjectId;
 			htmlContent.Replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
 		}
 		else

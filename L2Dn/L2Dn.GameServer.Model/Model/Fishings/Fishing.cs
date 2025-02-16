@@ -231,7 +231,7 @@ public sealed class Fishing
 
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStartPacket(_player, -1, _baitLocation.Value));
-		_player.sendPacket(new ExUserInfoFishingPacket(_player.getObjectId(), true, _baitLocation.Value));
+		_player.sendPacket(new ExUserInfoFishingPacket(_player.ObjectId, true, _baitLocation.Value));
 		_player.sendPacket(new PlaySoundPacket(1, "sf_p_01", 0, 0, 0, 0, 0));
 		_player.sendPacket(SystemMessageId.YOU_CAST_YOUR_LINE_AND_START_TO_FISH);
 	}
@@ -324,7 +324,7 @@ public sealed class Fishing
 		finally
 		{
 			_player.broadcastPacket(new ExFishingEndPacket(_player, reason));
-			_player.sendPacket(new ExUserInfoFishingPacket(_player.getObjectId(), false));
+			_player.sendPacket(new ExUserInfoFishingPacket(_player.ObjectId, false));
 		}
 	}
 

@@ -21,7 +21,7 @@ public class Bypass: IItemHandler
 		Player player = (Player)playable;
 		int itemId = item.getId();
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/item/" + itemId + ".htm", player);
-		htmlContent.Replace("%itemId%", item.getObjectId().ToString());
+		htmlContent.Replace("%itemId%", item.ObjectId.ToString());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, item.getId(), htmlContent);
 		player.sendPacket(html);
 		

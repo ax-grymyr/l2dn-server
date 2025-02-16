@@ -171,7 +171,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 		addedItem.updateDatabase(true);
 		
 		// Send result packet.
-		player.sendPacket(new ExUpgradeSystemResultPacket(addedItem.getObjectId(), 1));
+		player.sendPacket(new ExUpgradeSystemResultPacket(addedItem.ObjectId, 1));
 		player.sendItemList();
         
         return ValueTask.CompletedTask;

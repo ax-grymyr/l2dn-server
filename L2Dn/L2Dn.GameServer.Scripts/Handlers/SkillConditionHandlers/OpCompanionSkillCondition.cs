@@ -29,7 +29,7 @@ public class OpCompanionSkillCondition: ISkillCondition
 				}
 				case SkillConditionCompanionType.MY_SUMMON:
 				{
-					return target.isSummon() && (caster.getServitor(target.getObjectId()) != null);
+					return target.isSummon() && (caster.getServitor(target.ObjectId) != null);
 				}
 			}
 		}

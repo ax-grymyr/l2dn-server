@@ -18,7 +18,7 @@ public readonly struct ChangeWaitTypePacket: IOutgoingPacket
 	
 	public ChangeWaitTypePacket(Creature creature, int newMoveType)
 	{
-		_objectId = creature.getObjectId();
+		_objectId = creature.ObjectId;
 		_moveType = newMoveType;
 		_x = creature.getX();
 		_y = creature.getY();

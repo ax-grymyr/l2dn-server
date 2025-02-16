@@ -43,7 +43,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 			int i = 1;
 			foreach (var record in query1)
 			{
-				if (record.CharacterId == _player.getObjectId())
+				if (record.CharacterId == _player.ObjectId)
 				{
 					currentPlace = i;
 					currentWins = record.CompetitionsWon;
@@ -59,7 +59,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 			i = 1;
 			foreach (var record in query2)
 			{
-				if (record.CharacterId == _player.getObjectId())
+				if (record.CharacterId == _player.ObjectId)
 				{
 					previousPlace = i;
 					previousWins = record.CompetitionsWon;
@@ -76,7 +76,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 		
 		int heroCount = 0;
 		int legendCount = 0;
-		if (Hero.getInstance().getCompleteHeroes().TryGetValue(_player.getObjectId(), out StatSet? hero))
+		if (Hero.getInstance().getCompleteHeroes().TryGetValue(_player.ObjectId, out StatSet? hero))
 		{
 			heroCount = hero.getInt("count", 0);
 			legendCount = hero.getInt("legend_count", 0);

@@ -40,7 +40,7 @@ public readonly struct ExCubeGameExtendedChangePointsPacket: IOutgoingPacket
         writer.WriteInt32(_bluePoints);
         writer.WriteInt32(_redPoints);
         writer.WriteInt32(_isRedTeam);
-        writer.WriteInt32(_player.getObjectId());
+        writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_playerPoints);
     }
 }

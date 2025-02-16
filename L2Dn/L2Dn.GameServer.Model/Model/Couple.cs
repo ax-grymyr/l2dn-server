@@ -42,8 +42,8 @@ public class Couple
 	
 	public Couple(Player player1, Player player2)
 	{
-		_player1Id = player1.getObjectId();
-		_player2Id = player2.getObjectId();
+		_player1Id = player1.ObjectId;
+		_player2Id = player2.ObjectId;
 		
 		_affiancedDate = DateTime.UtcNow;
 		_weddingDate = null;

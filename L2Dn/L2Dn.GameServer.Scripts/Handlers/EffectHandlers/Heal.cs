@@ -97,10 +97,10 @@ public class Heal: AbstractEffect
 			{
 				amount *= 3;
 				effector.sendPacket(SystemMessageId.M_CRITICAL);
-				effector.sendPacket(new ExMagicAttackInfoPacket(effector.getObjectId(), effected.getObjectId(), ExMagicAttackInfoPacket.CRITICAL_HEAL));
+				effector.sendPacket(new ExMagicAttackInfoPacket(effector.ObjectId, effected.ObjectId, ExMagicAttackInfoPacket.CRITICAL_HEAL));
 				if (effected.isPlayer() && (effected != effector))
 				{
-					effected.sendPacket(new ExMagicAttackInfoPacket(effector.getObjectId(), effected.getObjectId(), ExMagicAttackInfoPacket.CRITICAL_HEAL));
+					effected.sendPacket(new ExMagicAttackInfoPacket(effector.ObjectId, effected.ObjectId, ExMagicAttackInfoPacket.CRITICAL_HEAL));
 				}
 			}
 		}

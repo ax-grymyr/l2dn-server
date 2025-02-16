@@ -114,7 +114,7 @@ public class ShuttleData: DataReaderBase
 			shuttle.getStat().setRotationSpeed(0);
 			shuttle.registerEngine(new ShuttleEngine(data, shuttle));
 			shuttle.runEngine(1000);
-			_shuttleInstances.put(shuttle.getObjectId(), shuttle);
+			_shuttleInstances.put(shuttle.ObjectId, shuttle);
 		}
 	}
 	
@@ -122,7 +122,7 @@ public class ShuttleData: DataReaderBase
 	{
 		foreach (Shuttle shuttle in _shuttleInstances.Values)
 		{
-			if ((shuttle.getObjectId() == id) || (shuttle.getId() == id))
+			if ((shuttle.ObjectId == id) || (shuttle.getId() == id))
 			{
 				return shuttle;
 			}

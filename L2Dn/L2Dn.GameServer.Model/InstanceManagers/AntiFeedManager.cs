@@ -59,8 +59,8 @@ internal class AntiFeedManager
 			return false;
 		}
 
-		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.ContainsKey(targetPlayer.getObjectId()) &&
-		    (DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.getObjectId())) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
+		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.ContainsKey(targetPlayer.ObjectId) &&
+		    (DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.ObjectId)) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
 		{
 			return false;
 		}
