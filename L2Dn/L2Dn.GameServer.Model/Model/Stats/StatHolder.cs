@@ -3,38 +3,9 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Stats;
 
-/**
- * @author UnAfraid
- */
-public class StatHolder
+public sealed class StatHolder(Stat stat, double value, Func<Creature, StatHolder, bool>? condition = null)
 {
-	private readonly Stat _stat;
-	private readonly double _value;
-	private readonly Func<Creature, StatHolder, bool> _condition;
-	
-	public StatHolder(Stat stat, double value, Func<Creature, StatHolder, bool> condition)
-	{
-		_stat = stat;
-		_value = value;
-		_condition = condition;
-	}
-	
-	public StatHolder(Stat stat, double value): this(stat, value, null)
-	{
-	}
-	
-	public Stat getStat()
-	{
-		return _stat;
-	}
-	
-	public double getValue()
-	{
-		return _value;
-	}
-	
-	public bool verifyCondition(Creature creature)
-	{
-		return (_condition == null) || _condition(creature, this);
-	}
+    public Stat Stat => stat;
+    public double Value => value;
+    public bool VerifyCondition(Creature creature) => condition is null || condition(creature, this);
 }
