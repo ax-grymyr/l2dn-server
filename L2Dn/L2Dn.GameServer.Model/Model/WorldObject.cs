@@ -49,7 +49,7 @@ public abstract class WorldObject(int objectId)
 	 * Gets the instance type of object.
 	 * @return the instance type
 	 */
-	public InstanceType InstanceType { get; protected set; } = InstanceType.WorldObject;
+	public InstanceType InstanceType { get; protected init; } = InstanceType.WorldObject;
 
 	public void onAction(Player player)
 	{
