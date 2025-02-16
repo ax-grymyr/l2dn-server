@@ -3,20 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Events.Impl.Npcs;
 
-/**
- * @author UnAfraid
- */
-public class OnNpcMoveFinished: EventBase
+public sealed class OnNpcMoveFinished(Npc npc): EventBase
 {
-	private readonly Npc _npc;
-	
-	public OnNpcMoveFinished(Npc npc)
-	{
-		_npc = npc;
-	}
-	
-	public Npc getNpc()
-	{
-		return _npc;
-	}
+	public Npc Npc => npc;
 }

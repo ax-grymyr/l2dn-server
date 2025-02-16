@@ -43,26 +43,14 @@ public interface Ctrl
 	 * @param intention the intention
 	 * @param args
 	 */
-	void setIntention(CtrlIntention intention, params object?[] args);
+	void setIntention(CtrlIntention intention, object? arg0 = null, object? arg1 = null, object? arg2 = null,
+		object? arg3 = null, object? arg4 = null);
 
 	/**
 	 * Event, that notifies about previous step result, or user command, that does not change current general intention.
 	 * @param evt the event
-	 */
-	void notifyEvent(CtrlEvent evt);
-
-	/**
-	 * Notify an event.
-	 * @param evt the event
-	 * @param arg0 the arg0
-	 */
-	void notifyEvent(CtrlEvent evt, object arg0);
-
-	/**
-	 * Notify an event.
-	 * @param evt the event
 	 * @param arg0 the arg0
 	 * @param arg1 the arg1
 	 */
-	void notifyEvent(CtrlEvent evt, object arg0, object arg1);
+	void notifyEvent(CtrlEvent evt, object? arg0 = null, object? arg1 = null);
 }

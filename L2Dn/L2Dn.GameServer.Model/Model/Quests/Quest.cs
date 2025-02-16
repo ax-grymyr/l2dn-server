@@ -2093,7 +2093,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addMoveFinishedId(params int[] npcIds)
 	{
-		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.getNpc()), npcIds);
+		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.Npc), npcIds);
 	}
 	
 	/**
@@ -2102,7 +2102,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addMoveFinishedId(IReadOnlyCollection<int> npcIds)
 	{
-		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.getNpc()), npcIds);
+		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.Npc), npcIds);
 	}
 	
 	/**

@@ -5,9 +5,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
@@ -33,77 +31,43 @@ public class CreatureAI: AbstractAI
 {
 	private OnNpcMoveFinished? _onNpcMoveFinished;
 	
-	public class IntentionCommand
+	public sealed class IntentionCommand(CtrlIntention intention, object? arg0, object? arg1)
 	{
-		protected readonly CtrlIntention _crtlIntention;
-		protected readonly object? _arg0;
-		protected readonly object? _arg1;
-		
-		public IntentionCommand(CtrlIntention pIntention, object? pArg0, object? pArg1)
-		{
-			_crtlIntention = pIntention;
-			_arg0 = pArg0;
-			_arg1 = pArg1;
-		}
-		
-		public CtrlIntention getCtrlIntention()
-		{
-			return _crtlIntention;
-		}
-		
-		public object getArg0()
-		{
-			return _arg0;
-		}
-		
-		public object getArg1()
-		{
-			return _arg1;
-		}
+		public CtrlIntention getCtrlIntention() => intention;
+		public object getArg0() => arg0;
+		public object getArg1() => arg1;
 	}
-	
+
 	/**
 	 * Cast Task
 	 * @author Zoey76
 	 */
-	public class CastTask : Runnable
+	public sealed class CastTask(
+		Creature actor,
+		Skill skill,
+		WorldObject target,
+		Item item,
+		bool forceUse,
+		bool dontMove)
+		: Runnable
 	{
-		private readonly Creature _creature;
-		private readonly WorldObject _target;
-		private readonly Skill _skill;
-		private readonly Item _item;
-		private readonly bool _forceUse;
-		private readonly bool _dontMove;
-		
-		public CastTask(Creature actor, Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove)
-		{
-			_creature = actor;
-			_target = target;
-			_skill = skill;
-			_item = item;
-			_forceUse = forceUse;
-			_dontMove = dontMove;
-		}
-		
 		public void run()
 		{
-			if (_creature.isAttackingNow())
+			if (actor.isAttackingNow())
 			{
-				_creature.abortAttack();
+				actor.abortAttack();
 			}
-			_creature.getAI().changeIntentionToCast(_skill, _target, _item, _forceUse, _dontMove);
+
+			actor.getAI().changeIntentionToCast(skill, target, item, forceUse, dontMove);
 		}
 	}
-	
+
 	public CreatureAI(Creature creature): base(creature)
 	{
 	}
 	
-	public virtual IntentionCommand getNextIntention()
-	{
-		return null;
-	}
-	
+	public virtual IntentionCommand? getNextIntention() => null;
+
 	protected override void onEvtAttacked(Creature attacker)
 	{
 		clientStartAutoAttack();
@@ -160,8 +124,8 @@ public class CreatureAI: AbstractAI
 		changeIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		
 		// Check if region and its neighbors are active.
-		WorldRegion region = _actor.getWorldRegion();
-		if ((region == null) || !region.areNeighborsActive())
+		WorldRegion? region = _actor.getWorldRegion();
+		if (region is null || !region.areNeighborsActive())
 		{
 			return;
 		}

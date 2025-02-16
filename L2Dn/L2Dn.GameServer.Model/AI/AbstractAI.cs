@@ -2,20 +2,16 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
 
 /**
- * Mother class of all objects AI in the world.<br>
- * AbastractAI:<br>
- * <li>CreatureAI</li>
+ * Mother class of all objects AI in the world.
  */
 public abstract class AbstractAI : Ctrl
 {
@@ -47,12 +43,12 @@ public abstract class AbstractAI : Ctrl
 	/** Different internal state flags */
 	protected int _moveToPawnTimeout;
 	
-	private NextAction _nextAction;
+	private NextAction? _nextAction;
 	
 	/**
 	 * @return the _nextAction
 	 */
-	public NextAction getNextAction()
+	public NextAction? getNextAction()
 	{
 		return _nextAction;
 	}
@@ -108,7 +104,8 @@ public abstract class AbstractAI : Ctrl
 	 * @param intention The new Intention to set to the AI
 	 * @param args The first parameters of the Intention (optional target)
 	 */
-	public void setIntention(CtrlIntention intention, params object?[] args)
+	public void setIntention(CtrlIntention intention, object? arg0 = null, object? arg1 = null, object? arg2 = null, 
+		object? arg3 = null, object? arg4 = null)
 	{
 		// Stop the follow mode if necessary
 		if ((intention != CtrlIntention.AI_INTENTION_FOLLOW) && (intention != CtrlIntention.AI_INTENTION_ATTACK))
@@ -136,72 +133,54 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlIntention.AI_INTENTION_ATTACK:
 			{
-				onIntentionAttack((Creature)args[0]);
+				onIntentionAttack((Creature)arg0);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_CAST:
 			{
-				onIntentionCast((Skill)args[0], (WorldObject)args[1], args.Length > 2 ? (Item)args[2] : null,
-					(args.Length > 3) && (bool)args[3], (args.Length > 4) && (bool)args[4]);
+				onIntentionCast((Skill)arg0, (WorldObject)arg1, (Item?)arg2, (bool?)arg3 ?? false,
+					(bool?)arg4 ?? false);
 
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_MOVE_TO:
 			{
-				onIntentionMoveTo((Location3D)args[0]);
+				onIntentionMoveTo((Location3D)arg0);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_FOLLOW:
 			{
-				onIntentionFollow((Creature)args[0]);
+				onIntentionFollow((Creature)arg0);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_PICK_UP:
 			{
-				onIntentionPickUp((WorldObject)args[0]);
+				onIntentionPickUp((WorldObject)arg0);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_INTERACT:
 			{
-				onIntentionInteract((WorldObject)args[0]);
+				onIntentionInteract((WorldObject)arg0);
 				break;
 			}
 		}
 		
 		// If do move or follow intention drop next action.
-		if ((_nextAction != null) && _nextAction.getIntentions().Contains(intention))
+		if (_nextAction is not null && _nextAction.Intentions.Contains(intention))
 		{
 			_nextAction = null;
 		}
 	}
 	
 	/**
-	 * Launch the CreatureAI onEvt method corresponding to the Event.<br>
-	 * <font color=#FF0000><b><u>Caution</u>: The current general intention won't be change (ex : If the character attack and is stunned, he will attack again after the stunned period)</b></font>
-	 * @param evt The event whose the AI must be notified
-	 */
-	public void notifyEvent(CtrlEvent evt)
-	{
-		notifyEvent(evt, null, null);
-	}
-	
-	/**
-	 * Launch the CreatureAI onEvt method corresponding to the Event. <font color=#FF0000><b><u>Caution</u>: The current general intention won't be change (ex : If the character attack and is stunned, he will attack again after the stunned period)</b></font>
-	 * @param evt The event whose the AI must be notified
-	 * @param arg0 The first parameter of the Event (optional target)
-	 */
-	public void notifyEvent(CtrlEvent evt, object arg0)
-	{
-		notifyEvent(evt, arg0, null);
-	}
-	
-	/**
-	 * Launch the CreatureAI onEvt method corresponding to the Event. <font color=#FF0000><b><u>Caution</u>: The current general intention won't be change (ex : If the character attack and is stunned, he will attack again after the stunned period)</b></font>
+	 * Launch the CreatureAI onEvt method corresponding to the Event.
+	 * <font color=#FF0000><b><u>Caution</u>: The current general intention won't be change
+	 * (ex : If the character attack and is stunned, he will attack again after the stunned period)</b></font>
 	 * @param evt The event whose the AI must be notified
 	 * @param arg0 The first parameter of the Event (optional target)
 	 * @param arg1 The second parameter of the Event (optional target)
 	 */
-	public void notifyEvent(CtrlEvent evt, object arg0, object arg1)
+	public void notifyEvent(CtrlEvent evt, object? arg0 = null, object? arg1 = null)
 	{
 		if ((!_actor.isSpawned() && !_actor.isTeleporting()) || !_actor.hasAI())
 		{
@@ -217,12 +196,12 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ATTACKED:
 			{
-				onEvtAttacked((Creature) arg0);
+				onEvtAttacked((Creature)arg0);
 				break;
 			}
 			case CtrlEvent.EVT_AGGRESSION:
 			{
-				onEvtAggression((Creature) arg0, (int) arg1);
+				onEvtAggression((Creature)arg0, (int)arg1);
 				break;
 			}
 			case CtrlEvent.EVT_ACTION_BLOCKED:
@@ -269,7 +248,7 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ARRIVED_REVALIDATE:
 			{
-				// this is disregarded if the char is not moving any more
+				// this is disregarded if the char is not moving anymore
 				if (_actor.isMoving())
 				{
 					onEvtArrivedRevalidate();
@@ -311,9 +290,9 @@ public abstract class AbstractAI : Ctrl
 		}
 		
 		// Do next action.
-		if ((_nextAction != null) && _nextAction.getEvents().Contains(evt))
+		if (_nextAction is not null && _nextAction.Events.Contains(evt))
 		{
-			_nextAction.doAction();
+			_nextAction.DoAction();
 		}
 	}
 	
@@ -370,7 +349,8 @@ public abstract class AbstractAI : Ctrl
 	protected abstract void onEvtFinishCasting();
 	
 	/**
-	 * Cancel action client side by sending Server->Client packet ActionFailed to the Player actor. <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
+	 * Cancel action client side by sending Server->Client packet ActionFailed to the Player actor.
+	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
 	 */
 	protected virtual void clientActionFailed()
 	{
@@ -662,7 +642,7 @@ public abstract class AbstractAI : Ctrl
 	 * @param target The Creature to follow
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public  void startFollow(Creature target)
+	public void startFollow(Creature target)
 	{
 		startFollow(target, -1);
 	}
@@ -673,7 +653,7 @@ public abstract class AbstractAI : Ctrl
 	 * @param range
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public  void startFollow(Creature target, int range)
+	public void startFollow(Creature target, int range)
 	{
 		stopFollow();
 		setTarget(target);
@@ -706,12 +686,12 @@ public abstract class AbstractAI : Ctrl
 		return _target;
 	}
 	
-	protected void setCastTarget(WorldObject target)
+	protected void setCastTarget(WorldObject? target)
 	{
 		_castTarget = target;
 	}
 	
-	public WorldObject getCastTarget()
+	public WorldObject? getCastTarget()
 	{
 		return _castTarget;
 	}

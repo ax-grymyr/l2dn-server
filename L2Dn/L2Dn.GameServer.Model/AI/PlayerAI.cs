@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Geometry;
@@ -15,7 +14,7 @@ public class PlayerAI : PlayableAI
 {
 	private bool _thinking; // to prevent recursive thinking
 	
-	private IntentionCommand _nextIntention;
+	private IntentionCommand? _nextIntention;
 	
 	public PlayerAI(Player player): base(player)
 	{
