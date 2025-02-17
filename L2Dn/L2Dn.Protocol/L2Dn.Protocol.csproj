@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
+      <ProjectReference Include="..\L2Dn.Unsafe\L2Dn.Unsafe.csproj" />
     </ItemGroup>
 
     <ItemGroup>

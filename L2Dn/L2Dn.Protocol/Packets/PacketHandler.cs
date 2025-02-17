@@ -1,5 +1,4 @@
 ﻿using L2Dn.Network;
-using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.Packets;
@@ -10,7 +9,7 @@ public class PacketHandler<TSession>
     private static readonly Logger _logger = LogManager.GetLogger(nameof(PacketHandler<TSession>));
     private readonly PacketHandlerHelper<TSession>?[] _helpers = new PacketHandlerHelper<TSession>?[256];
     private long _defaultStates;
-    
+
     public PacketRegistration RegisterPacket<TPacket>(int code)
         where TPacket: struct, IIncomingPacket<TSession> =>
         code switch
@@ -26,7 +25,7 @@ public class PacketHandler<TSession>
     {
         if (_helpers[code] is not null)
             throw new InvalidOperationException($"Packet with code {code:X8} already registered");
-        
+
         PacketHandlerHelper helper = _helpers[code] = new PacketHandlerHelper<TSession, TPacket>(code);
         helper.AllowedStates = _defaultStates;
         return new PacketRegistration(helper);
@@ -55,11 +54,11 @@ public class PacketHandler<TSession>
     }
 
     public void SetDefaultAllowedStates<TAllowedStates>(TAllowedStates states)
-        where TAllowedStates: struct, Enum
+        where TAllowedStates: unmanaged, Enum
     {
         _defaultStates = states.ToInt64();
     }
-    
+
     internal void OnConnectedInternal(Connection connection, TSession session) => OnConnected(connection, session);
 
     internal void OnDisconnectedInternal(Connection connection, TSession session) =>
@@ -67,8 +66,8 @@ public class PacketHandler<TSession>
 
     internal bool OnPacketInvalidStateInternal(Connection connection, TSession session) =>
         OnPacketInvalidState(connection, session);
-    
-    
+
+
     protected virtual void OnConnected(Connection connection, TSession session)
     {
     }
@@ -78,7 +77,7 @@ public class PacketHandler<TSession>
     }
 
     /// <summary>
-    /// Packet received when the current session state in not in the list of the allowed states for the packet. 
+    /// Packet received when the current session state in not in the list of the allowed states for the packet.
     /// </summary>
     /// <param name="connection"></param>
     /// <param name="session"></param>

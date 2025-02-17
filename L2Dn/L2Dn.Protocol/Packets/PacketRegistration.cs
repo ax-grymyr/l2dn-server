@@ -1,6 +1,4 @@
-﻿using L2Dn.Utilities;
-
-namespace L2Dn.Packets;
+﻿namespace L2Dn.Packets;
 
 public struct PacketRegistration
 {
@@ -12,7 +10,7 @@ public struct PacketRegistration
     }
 
     public void WithAllowedStates<TAllowedStates>(TAllowedStates states)
-        where TAllowedStates: struct, Enum
+        where TAllowedStates: unmanaged, Enum
     {
         if (_helper is not null)
             _helper.AllowedStates = states.ToInt64();

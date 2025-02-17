@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace L2Dn;
 
@@ -94,6 +95,155 @@ public static class EnumExtensions
 
         throw new InvalidOperationException("Unsupported enum size");
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static TEnum BitwiseComplement<TEnum>(this TEnum value)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return BitwiseComplementPrivate<byte, TEnum>(value);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return BitwiseComplementPrivate<ushort, TEnum>(value);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return BitwiseComplementPrivate<uint, TEnum>(value);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return BitwiseComplementPrivate<ulong, TEnum>(value);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static TEnum BitwiseOr<TEnum>(TEnum left, TEnum right)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return BitwiseOrPrivate<byte, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return BitwiseOrPrivate<ushort, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return BitwiseOrPrivate<uint, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return BitwiseOrPrivate<ulong, TEnum>(left, right);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static TEnum BitwiseAnd<TEnum>(this TEnum left, TEnum right)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return BitwiseAndPrivate<byte, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return BitwiseAndPrivate<ushort, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return BitwiseAndPrivate<uint, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return BitwiseAndPrivate<ulong, TEnum>(left, right);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static TEnum BitwiseXor<TEnum>(TEnum left, TEnum right)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return BitwiseXorPrivate<byte, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return BitwiseXorPrivate<ushort, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return BitwiseXorPrivate<uint, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return BitwiseXorPrivate<ulong, TEnum>(left, right);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static bool Equal<TEnum>(this TEnum left, TEnum right)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return EqualPrivate<byte, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return EqualPrivate<ushort, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return EqualPrivate<uint, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return EqualPrivate<ulong, TEnum>(left, right);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int Compare<TEnum>(this TEnum left, TEnum right)
+        where TEnum: unmanaged, Enum
+    {
+        if (Unsafe.SizeOf<TEnum>() == 1)
+            return ComparePrivate<byte, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 2)
+            return ComparePrivate<ushort, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 4)
+            return ComparePrivate<uint, TEnum>(left, right);
+
+        if (Unsafe.SizeOf<TEnum>() == 8)
+            return ComparePrivate<ulong, TEnum>(left, right);
+
+        throw new InvalidOperationException("Unsupported enum size");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static bool EqualPrivate<TInteger, TEnum>(TEnum value1, TEnum value2)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IComparisonOperators<TInteger, TInteger, bool> =>
+        ToIntPrivate<TInteger, TEnum>(value1) == ToIntPrivate<TInteger, TEnum>(value2);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static int ComparePrivate<TInteger, TEnum>(TEnum value1, TEnum value2)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IComparisonOperators<TInteger, TInteger, bool> =>
+        ToIntPrivate<TInteger, TEnum>(value1).CompareFast(ToIntPrivate<TInteger, TEnum>(value2));
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static TEnum BitwiseAndPrivate<TInteger, TEnum>(TEnum value1, TEnum value2)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IBitwiseOperators<TInteger, TInteger, TInteger> =>
+        ToEnumPrivate<TInteger, TEnum>(ToIntPrivate<TInteger, TEnum>(value1) & ToIntPrivate<TInteger, TEnum>(value2));
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static TEnum BitwiseOrPrivate<TInteger, TEnum>(TEnum value1, TEnum value2)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IBitwiseOperators<TInteger, TInteger, TInteger> =>
+        ToEnumPrivate<TInteger, TEnum>(ToIntPrivate<TInteger, TEnum>(value1) | ToIntPrivate<TInteger, TEnum>(value2));
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static TEnum BitwiseXorPrivate<TInteger, TEnum>(TEnum value1, TEnum value2)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IBitwiseOperators<TInteger, TInteger, TInteger> =>
+        ToEnumPrivate<TInteger, TEnum>(ToIntPrivate<TInteger, TEnum>(value1) ^ ToIntPrivate<TInteger, TEnum>(value2));
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static TEnum BitwiseComplementPrivate<TInteger, TEnum>(TEnum value)
+        where TEnum: unmanaged, Enum
+        where TInteger: unmanaged, IBitwiseOperators<TInteger, TInteger, TInteger> =>
+        ToEnumPrivate<TInteger, TEnum>(~ToIntPrivate<TInteger, TEnum>(value));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     private static unsafe TInteger ToIntPrivate<TInteger, TEnum>(TEnum value)

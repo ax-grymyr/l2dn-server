@@ -1,22 +1,19 @@
-﻿using System.Collections.Immutable;
-using L2Dn.GameServer.Configuration;
-using L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Network;
-using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Network;
 
 public sealed class GameSession(byte[]? encryptionKey): Session
 {
     private HtmlActionValidator? _validator;
-    
+
     public GameSessionState State { get; set; } = GameSessionState.ProtocolVersion;
     public ServerConfig Config => ServerConfig.Instance;
-    
+
     public byte[]? EncryptionKey => encryptionKey;
     public int PlayKey1 { get; set; }
     public int AccountId { get; set; }
@@ -24,7 +21,7 @@ public sealed class GameSession(byte[]? encryptionKey): Session
     public int ProtocolVersion { get; set; }
     public bool IsProtocolOk { get; set; }
     public CharacterInfoList? Characters { get; set; }
-    
+
     public Player? Player { get; set; }
     public object PlayerLock { get; } = new();
     public bool IsDetached { get; set; }

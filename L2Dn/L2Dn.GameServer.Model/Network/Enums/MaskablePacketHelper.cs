@@ -5,7 +5,7 @@ using L2Dn.Utilities;
 namespace L2Dn.GameServer.Network.Enums;
 
 public class MaskablePacketHelper<T> // TODO refactor this, UserInfoType, NpcInfoType, etc must be mask itself
-    where T: struct, Enum
+    where T: unmanaged, Enum
 {
     private readonly int _maskSizeInBytes;
     private ulong _mask;
@@ -14,15 +14,15 @@ public class MaskablePacketHelper<T> // TODO refactor this, UserInfoType, NpcInf
     {
         if (maskSizeInBytes is < 1 or > 8)
             throw new ArgumentOutOfRangeException(nameof(maskSizeInBytes));
-        
+
         _maskSizeInBytes = maskSizeInBytes;
     }
-    
+
     public void AddAllComponents()
     {
         EnumUtil.GetValues<T>().ForEach(AddComponent);
     }
-    
+
     public void AddComponent(T component)
     {
         int componentIndex = component.ToInt32();

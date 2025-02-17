@@ -11,4 +11,8 @@
       <PackageReference Include="NLog" Version="5.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\L2Dn.Unsafe\L2Dn.Unsafe.csproj" />
+    </ItemGroup>
+
 </Project>
