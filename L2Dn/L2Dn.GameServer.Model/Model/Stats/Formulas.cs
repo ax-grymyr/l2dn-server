@@ -27,14 +27,14 @@ public class Formulas
 {
 	/** Regeneration Task period. */
 	private const int HP_REGENERATE_PERIOD = 3000; // 3 secs
-	
+
 	public const byte SHIELD_DEFENSE_FAILED = 0; // no shield defense
 	public const byte SHIELD_DEFENSE_SUCCEED = 1; // normal shield defense
 	public const byte SHIELD_DEFENSE_PERFECT_BLOCK = 2; // perfect block
-	
+
 	public const int SKILL_LAUNCH_TIME = 500; // The time to pass after the skill launching until the skill to affect targets. In milliseconds
 	private const byte MELEE_ATTACK_RANGE = 40;
-	
+
 	/**
 	 * Return the period between 2 regeneration task (3s for Creature, 5 Min for Door).
 	 * @param creature
@@ -44,11 +44,11 @@ public class Formulas
 	{
 		return creature.isDoor() ? HP_REGENERATE_PERIOD * 100 : HP_REGENERATE_PERIOD;
 	}
-	
+
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, bool backstab, double power, byte shld, bool ss)
 	{
 		double defence = target.getPDef();
-		
+
 		switch (shld)
 		{
 			case SHIELD_DEFENSE_SUCCEED:
@@ -61,7 +61,7 @@ public class Formulas
 				return 1;
 			}
 		}
-		
+
 		// Critical
 		double criticalMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1);
 		double criticalPositionMod = attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, attacker.PositionTo(target));
@@ -76,7 +76,7 @@ public class Formulas
 		double attributeMod = calcAttributeBonus(attacker, target, skill);
 		double randomMod = attacker.getRandomDamageMultiplier();
 		double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
-		
+
 		// Initial damage
 		double ssmod = ss ? 2 * attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1) : 1; // 2.04 for dual weapon?
 		double cdMult = criticalMod * ((criticalPositionMod - 1) / 2 + 1) * ((criticalVulnMod - 1) / 2 + 1);
@@ -1296,7 +1296,7 @@ public class Formulas
 			return 0;
 		}
 
-		switch (traitType.getType())
+		switch (traitType.GetTypeOfTrait())
 		{
 			case 2:
 			{
@@ -1326,7 +1326,7 @@ public class Formulas
 	public static double calcWeaknessBonus(Creature attacker, Creature target, TraitType traitType)
 	{
 		double result = 1;
-		foreach (TraitType trait in TraitTypeUtil.getAllWeakness())
+		foreach (TraitType trait in TraitTypeUtil.WeaknessList)
 		{
 			if (traitType != trait && target.getStat().hasDefenceTrait(trait) &&
 			    attacker.getStat().hasAttackTrait(trait) && !target.getStat().isInvulnerableTrait(traitType))
@@ -1355,7 +1355,7 @@ public class Formulas
 		double weaknessBonus = 1.0;
 		foreach (TraitType traitType in EnumUtil.GetValues<TraitType>())
 		{
-			if (traitType.getType() == 2)
+			if (traitType.GetTypeOfTrait() == 2)
 			{
 				weaknessBonus *= calcGeneralTraitBonus(attacker, target, traitType, true);
 				if (weaknessBonus == 0)
